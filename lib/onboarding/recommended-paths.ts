@@ -31,8 +31,8 @@ export function getRecommendedPath(
         },
         {
           href: `/study-plan`,
-          label: "試験日から学習計画を作成",
-          description: "目標日と1日の学習時間で自動プラン化",
+          label: "学習期間を選んで計画を作成",
+          description: "学習期間と1日の学習時間で自動プラン化。試験日程は次の資格で確認",
           estMin: 5,
         },
       ],

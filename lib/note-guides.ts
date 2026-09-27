@@ -2,7 +2,7 @@ import type { ExamCode } from "@/lib/questions/types";
 import type { NoteLinkSource } from "@/components/analytics/TrackedNoteLink";
 
 export type NoteGuideKind = "free" | "paid";
-export type NoteGuideAccount = "ipa_quiz_ai" | "sikaku_rakutoru";
+export type NoteGuideAccount = "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";
 
 export interface NoteGuideLink {
   /**
@@ -26,6 +26,15 @@ export interface NoteGuideLink {
 // 注意: これらのURLが note.com 上で現在も公開されているかは未確認。
 // 新規追加も死リンク削除も、実際にURLを開いて確認してから行うこと。
 export const EXAM_NOTE_GUIDES: Partial<Record<ExamCode, NoteGuideLink>> = {
+  // 出典: note.com/api/v3/notes/n076a2e17ba95 (2026-09-27、公開・無料・匿名閲覧可)。
+  eisei1: {
+    kind: "free",
+    href: "https://note.com/anzen_ai_jp/n/n076a2e17ba95",
+    label: "第一種衛生管理者の誤答を次の1問につなぐ復習メモ",
+    source: "exam_eisei1",
+    account: "anzen_ai_jp",
+    description: "公表問題で迷った選択肢を整理し、次に解く問題を選ぶ手順を確認できます。",
+  },
   sa: {
     kind: "free",
     href: "https://note.com/sikaku_rakutoru/n/n9e207dfe4421",
