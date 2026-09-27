@@ -1,0 +1,113 @@
+import type { Question } from "@/lib/questions/types";
+
+const examUrl = "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf";
+const rulesUrl = "https://www.mansion-info.mlit.go.jp/wp-content/uploads/2025/03/01_%E7%AE%A1%E7%90%86%E8%A6%8F%E7%B4%84%EF%BC%88%E5%8D%98%E6%A3%9F%E5%9E%8B%EF%BC%89.pdf";
+
+/** 公式問題・正答と令和6年6月改正版マンション標準管理規約を全肢照合。 */
+export const KANRI_BATCH_06: Question[] = [
+  {
+    id: "kanri-2025-annual-gakka-q32", exam: "kanri", session: "gakka", year: 2025,
+    season: "annual", qNumber: 32, officialAnswerNumber: "4", type: "multiple-choice",
+    category: "標準管理規約", topicTags: ["窓ガラス", "保存行為", "緊急時"], difficulty: 3,
+    question: "窓ガラスに関する次の記述のうち、標準管理規約（単棟型）によれば、最も適切なものはどれか。",
+    choices: {
+      ア: "住戸の賃借人が窓ガラスを割った場合、管理組合がその責任と負担において修繕する。",
+      イ: "空き巣が窓ガラスを割った場合、その住戸の区分所有者がその責任と負担において修繕する。",
+      ウ: "窓ガラスを断熱性に優れた複層ガラスへ交換する工事は、原則として区分所有者がその責任と負担で行う。",
+      エ: "台風で窓ガラスが割れ、住戸に雨が吹き込む緊急の状況では、区分所有者自身の判断で同様の仕様のガラスへ張り替えられる。",
+    },
+    answer: "エ", explanation: "正解は4。窓ガラスは共用部分だが専用使用の対象となる。住戸の使用に支障が生じ、緊急を要する保存行為では、区分所有者が事前承認なしに同様の仕様で張り替えられる（21条3項）。",
+    choiceExplanations: {
+      ア: "不適切。窓ガラスは専有部分ではなく、専用使用部分の通常の使用に伴う保存行為は専用使用権を有する区分所有者の責任と負担による（7条2項、21条1項）。",
+      イ: "不適切。空き巣による破損は通常の使用に伴う保存行為に当たらず、管理組合が責任と負担を負うのが原則（21条1項）。",
+      ウ: "不適切。断熱性能を上げる窓ガラスの改良工事は、原則として管理組合が計画修繕として実施する（22条1項）。",
+      エ: "適切。雨の吹き込みで住戸の使用に支障があり、保存行為が緊急を要するときは、理事長の事前承認を要しない（21条3項ただし書）。",
+    },
+    explanationCoverage: "full", hasImage: false, sourcePdfUrl: examUrl, sourceAnswerUrl: examUrl,
+    sourceAttribution: "出典：令和7年度 管理業務主任者試験問題 問32を改題（一般社団法人マンション管理業協会）",
+    officialReferenceUrls: [rulesUrl], license: "KANRIKYO-educational-reuse", needsReview: false,
+    lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
+  },
+  {
+    id: "kanri-2025-annual-gakka-q33", exam: "kanri", session: "gakka", year: 2025,
+    season: "annual", qNumber: 33, officialAnswerNumber: "4", type: "multiple-choice",
+    category: "標準管理規約", topicTags: ["駐車場", "使用契約", "修繕積立金"], difficulty: 3,
+    question: "駐車場の使用に関する次の記述のうち、標準管理規約（単棟型）によれば、最も不適切なものはどれか。",
+    choices: {
+      ア: "駐車場使用契約を結んだ区分所有者が住戸を譲渡した場合、譲受人が駐車場を使うには管理組合と新たな契約を結ぶ。",
+      イ: "駐車場使用契約では、常時駐車する車の所有者、車両番号、車種をあらかじめ管理組合に届け出る。",
+      ウ: "駐車場使用料の値上げは、総会で決議すれば、駐車場使用者の個別の同意がなくても可能である。",
+      エ: "管理費が不足すれば、駐車場使用料の余剰分を管理費に充当できる。",
+    },
+    answer: "エ", explanation: "正解は4。標準管理規約29条は駐車場等の使用料をその管理費用に充て、余剰分は修繕積立金として積み立てる。管理費不足を理由に余剰分を管理費へ回すことはできない。",
+    choiceExplanations: {
+      ア: "適切。15条3項で住戸の譲渡・貸与により従前の駐車場使用契約は失効する。譲受人は別途契約が必要。",
+      イ: "適切。15条関係の駐車場使用契約書ひな型は、常時駐車車両の所有者・番号・車種の事前届出を定める。",
+      ウ: "適切。使用料額は48条の総会議決事項。15条関係のコメントも料金設定を管理組合で定める前提としている。",
+      エ: "不適切。29条は使用料の余剰を修繕積立金として積み立てると定める。管理費への充当にはならない。",
+    },
+    explanationCoverage: "full", hasImage: false, sourcePdfUrl: examUrl, sourceAnswerUrl: examUrl,
+    sourceAttribution: "出典：令和7年度 管理業務主任者試験問題 問33を改題（一般社団法人マンション管理業協会）",
+    officialReferenceUrls: [rulesUrl], license: "KANRIKYO-educational-reuse", needsReview: false,
+    lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
+  },
+  {
+    id: "kanri-2025-annual-gakka-q34", exam: "kanri", session: "gakka", year: 2025,
+    season: "annual", qNumber: 34, officialAnswerNumber: "1", type: "multiple-choice",
+    category: "標準管理規約", topicTags: ["専有部分の貸与", "賃借人", "誓約書"], difficulty: 3,
+    question: "区分所有者が専有部分を貸与する場合について、標準管理規約（単棟型）によれば、最も不適切なものはどれか。",
+    choices: {
+      ア: "賃借人に規約・使用細則を守らせる条項を設けた賃貸借契約書の写しを、区分所有者は管理組合に提出しなければならない。",
+      イ: "賃借人が規約・使用細則を守る旨の誓約書を、区分所有者は管理組合に提出させなければならない。",
+      ウ: "暴力団員への貸与を禁止する規約がある場合、賃借人が暴力団員でなく、契約後もならない旨を賃貸借契約に定める。",
+      エ: "暴力団員への貸与を禁止する規約がある場合、賃借人に暴力団員でなく、契約後もならない旨の誓約書を管理組合へ提出させる。",
+    },
+    answer: "ア", explanation: "正解は1。19条2項は規約・使用細則の遵守条項を賃貸借契約に定め、賃借人に誓約書を管理組合へ提出させるが、契約書の写しの提出までは求めていない。",
+    choiceExplanations: {
+      ア: "不適切。19条2項に賃貸借契約への遵守条項と誓約書の提出はあるが、契約書の写しの提出義務はない。",
+      イ: "適切。19条2項は賃借人に規約・使用細則を守る旨の誓約書を管理組合へ提出させる。",
+      ウ: "適切。暴力団員排除条項を採る場合、19条の2第1項はその確約を賃貸借契約に定める。",
+      エ: "適切。同条2項は暴力団員でないことと契約後もならないことを確約する誓約書の提出を求める。",
+    },
+    explanationCoverage: "full", hasImage: false, sourcePdfUrl: examUrl, sourceAnswerUrl: examUrl,
+    sourceAttribution: "出典：令和7年度 管理業務主任者試験問題 問34を改題（一般社団法人マンション管理業協会）",
+    officialReferenceUrls: [rulesUrl], license: "KANRIKYO-educational-reuse", needsReview: false,
+    lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
+  },
+  {
+    id: "kanri-2025-annual-gakka-q35", exam: "kanri", session: "gakka", year: 2025,
+    season: "annual", qNumber: 35, officialAnswerNumber: "2", type: "multiple-choice",
+    category: "標準管理規約", topicTags: ["専有部分の修繕", "事前届出", "責任"], difficulty: 3,
+    question: "専有部分の修繕等について、標準管理規約（単棟型）によれば、不適切な記述はいくつあるか。\nア　共用部分・他の専有部分に影響しない修繕なら、業者の出入りがあっても事前届出は不要である。\nイ　理事長等は、承認判断に必要な範囲で工事箇所を調査でき、区分所有者は正当な理由なく拒めない。\nウ　フローリング工事は専門家への確認が必要で、特別な調査費用を申請者に負担させることができる。\nエ　理事長承認後の工事で他の専有部分に影響が出た場合、区分所有者と管理組合が共同で責任を負う。",
+    choices: { ア: "一つ", イ: "二つ", ウ: "三つ", エ: "四つ" },
+    answer: "イ", explanation: "正解は2。アとエが不適切。承認不要の工事でも業者出入り等について管理組合が事前把握する必要があれば届出を要する（17条7項）。工事後の影響は発注した区分所有者の責任と負担で措置する（同条6項）。",
+    choiceExplanations: {
+      ア: "一つではない。アは17条7項の事前届出を見落とし、エも17条6項の発注者の責任を管理組合と共同としている。",
+      イ: "正しい。アとエの二つが不適切。イは17条5項、ウは17条関係コメントの専門家確認・費用負担に沿う。",
+      ウ: "三つではない。理事長等の必要な調査とフローリング工事の専門家確認・特別費用の申請者負担は適切。",
+      エ: "四つではない。ア・エは不適切だが、イ・ウは適切なため二つにとどまる。",
+    },
+    explanationCoverage: "full", hasImage: false, sourcePdfUrl: examUrl, sourceAnswerUrl: examUrl,
+    sourceAttribution: "出典：令和7年度 管理業務主任者試験問題 問35を改題（一般社団法人マンション管理業協会）",
+    officialReferenceUrls: [rulesUrl], license: "KANRIKYO-educational-reuse", needsReview: false,
+    lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
+  },
+  {
+    id: "kanri-2025-annual-gakka-q36", exam: "kanri", session: "gakka", year: 2025,
+    season: "annual", qNumber: 36, officialAnswerNumber: "3", type: "multiple-choice",
+    category: "標準管理規約", topicTags: ["理事会", "監事", "訴訟"], difficulty: 3,
+    question: "理事会について、標準管理規約（単棟型）によれば、適切な記述はいくつあるか。\nア　理事会は理事の半数以上の出席で開き、議事は出席理事の過半数で決する。\nイ　理事会は理事長、副理事長、会計担当理事に加えて監事も選任・解任できる。\nウ　出席できない理事に、議事について代替措置を認めるなどの配慮が必要である。\nエ　理事会決議により、理事長は規約違反行為の差止め等の訴訟を管理組合を代表して提起できる。",
+    choices: { ア: "一つ", イ: "二つ", ウ: "三つ", エ: "四つ" },
+    answer: "ウ", explanation: "正解は3。ア・ウ・エが適切。監事は総会の決議で選任・解任するため、理事会が監事も選任できるとするイは不適切。",
+    choiceExplanations: {
+      ア: "一つではない。アは53条1項、ウは理事会出席のコメント、エは67条3項に沿い、適切な記述は三つ。",
+      イ: "二つではない。監事は35条2項により総会で選任・解任するのでイだけが不適切。",
+      ウ: "正しい。ア・ウ・エの三つが適切。理事会が選任する役職に監事は含まれない（51条2項）。",
+      エ: "四つではない。理事会は監事を選任・解任できないため、イは不適切。",
+    },
+    explanationCoverage: "full", hasImage: false, sourcePdfUrl: examUrl, sourceAnswerUrl: examUrl,
+    sourceAttribution: "出典：令和7年度 管理業務主任者試験問題 問36を改題（一般社団法人マンション管理業協会）",
+    officialReferenceUrls: [rulesUrl], license: "KANRIKYO-educational-reuse", needsReview: false,
+    lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
+  },
+];
