@@ -10,5 +10,15 @@ export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl">): string {
   if (q.year === 2011 && /tokubetsu/.test(q.sourcePdfUrl)) return "2011年度 特別試験";
   if (q.year === 2020 && q.season === "autumn") return "令和2年度 10月試験";
+  if (q.season === "published") {
+    const officialUpload = /^https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/(20\d{2})\/(0[1-9]|1[0-2])\//.exec(q.sourcePdfUrl);
+    if (officialUpload && Number(officialUpload[1]) === q.year) {
+      return `${q.year}年${Number(officialUpload[2])}月公表問題`;
+    }
+    const jafpEdition = /^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\/g[23]_(20\d{2})(0[1-9]|1[0-2])_/.exec(q.sourcePdfUrl);
+    if (jafpEdition && Number(jafpEdition[1]) === q.year) {
+      return `${q.year}年${Number(jafpEdition[2])}月公表問題`;
+    }
+  }
   return formatYearSeason(q.year, q.season);
 }

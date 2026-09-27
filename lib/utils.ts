@@ -68,7 +68,7 @@ export function seasonLabel(season: string): string {
 
 export function formatYearSeason(year: number, season: string): string {
   if (["may", "september", "january"].includes(season)) return `${year}年${seasonLabel(season)}`;
-  if (season === "published") return `${year}年5月公表問題`;
+  if (season === "published") return `${year}年公表問題`;
   const reiwa = year - 2018;
   const era = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
   // 年1回の国家試験（介護福祉士等）は年度だけで回を特定する。

@@ -2,7 +2,8 @@ import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionSourceEdition } from "@/lib/questions/source-label";
+import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
   ip: "ITパスポート試験はIT全般の基礎知識を幅広く問う、職種を問わずITを活用するすべての社会人・学生向けの国家試験です。",
@@ -93,7 +94,7 @@ export function groupByYearSeason(questions: Question[]): YearSeasonGroup[] {
         year: q.year,
         season: q.season,
         key,
-        label: formatYearSeason(q.year, q.season),
+        label: questionSourceEdition(q),
         count: 1,
       });
     }
