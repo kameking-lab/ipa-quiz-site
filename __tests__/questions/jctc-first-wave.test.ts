@@ -42,15 +42,15 @@ describe("JCTC 2026 first-stage publication", () => {
     expect(telecom.deferred.map((item) => item.number)).toEqual([1, 2, 3, 5, 6]);
   });
 
-  it("publishes fifteen distinct 2025 late gardening questions against the official PDFs", () => {
+  it("publishes twenty distinct 2025 late gardening questions against the official PDFs", () => {
     const selected = ZOEN2_QUESTIONS.filter((question) => question.year === 2025);
     expect(garden2025.officialQuestionCount).toBe(40);
-    expect(garden2025.publishedCount).toBe(15);
-    expect(selected.map((question) => question.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 18]);
+    expect(garden2025.publishedCount).toBe(20);
+    expect(selected.map((question) => question.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 18, 19, 21, 23, 25, 26]);
     expect(selected.every((question) => question.season === "late")).toBe(true);
-    expect(selected.map((question) => question.officialAnswerNumber)).toEqual(["3", "2", "3", "4", "1", "1", "1", "3", "1", "1", "1", "4", "3", "2", "3"]);
-    expect(selected.map((question) => question.answer)).toEqual(["ウ", "イ", "ウ", "エ", "ア", "ア", "ア", "ウ", "ア", "ア", "ア", "エ", "ウ", "イ", "ウ"]);
-    expect(garden2025.deferred.map((item) => item.number)).toEqual([9, 16, 17]);
+    expect(selected.map((question) => question.officialAnswerNumber)).toEqual(["3", "2", "3", "4", "1", "1", "1", "3", "1", "1", "1", "4", "3", "2", "3", "1", "1", "4", "4", "4"]);
+    expect(selected.map((question) => question.answer)).toEqual(["ウ", "イ", "ウ", "エ", "ア", "ア", "ア", "ウ", "ア", "ア", "ア", "エ", "ウ", "イ", "ウ", "ア", "ア", "エ", "エ", "エ"]);
+    expect(garden2025.deferred.map((item) => item.number)).toEqual([9, 16, 17, 20, 22, 24]);
     expect(garden2025.deferred.every((item) => item.reason.includes("図"))).toBe(true);
     expect(new Set(ZOEN2_QUESTIONS.map((question) => question.id)).size).toBe(ZOEN2_QUESTIONS.length);
     for (const kind of ["question", "answer"] as const) {
