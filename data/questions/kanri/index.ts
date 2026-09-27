@@ -8,6 +8,7 @@ import { KANRI_BATCH_07 } from "./2025-batch-07";
 import { KANRI_BATCH_08 } from "./2025-batch-08";
 import { KANRI_BATCH_09 } from "./2025-batch-09";
 import { KANRI_BATCH_10 } from "./2025-batch-10";
+import { KANRI_POLICY_GUIDELINE_QUESTIONS } from "./2025-policy-guideline";
 import { KANRI_REPAIR_GUIDELINE_QUESTIONS } from "./2025-repair-guideline";
 
 const sourcePdfUrl = "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf";
@@ -129,5 +130,5 @@ const KANRI_PILOT_QUESTIONS: Question[] = [
   },
 ];
 
-export const KANRI_QUESTIONS: Question[] = [...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02, ...KANRI_BATCH_03, ...KANRI_BATCH_04, ...KANRI_BATCH_05, ...KANRI_BATCH_06, ...KANRI_BATCH_07, ...KANRI_BATCH_08, ...KANRI_BATCH_09, ...KANRI_BATCH_10, ...KANRI_REPAIR_GUIDELINE_QUESTIONS]
+export const KANRI_QUESTIONS: Question[] = [...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02, ...KANRI_BATCH_03, ...KANRI_BATCH_04, ...KANRI_BATCH_05, ...KANRI_BATCH_06, ...KANRI_BATCH_07, ...KANRI_BATCH_08, ...KANRI_BATCH_09, ...KANRI_BATCH_10, ...KANRI_REPAIR_GUIDELINE_QUESTIONS, ...KANRI_POLICY_GUIDELINE_QUESTIONS]
   .sort((a, b) => a.qNumber - b.qNumber);
