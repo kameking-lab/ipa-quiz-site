@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
 import { KANRI_BATCH_02 } from "./2025-batch-02";
+import { KANRI_REPAIR_GUIDELINE_QUESTIONS } from "./2025-repair-guideline";
 
 const sourcePdfUrl = "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf";
 const civilCodeUrl = "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20250401";
@@ -120,5 +121,5 @@ const KANRI_PILOT_QUESTIONS: Question[] = [
   },
 ];
 
-export const KANRI_QUESTIONS: Question[] = [...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02]
+export const KANRI_QUESTIONS: Question[] = [...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02, ...KANRI_REPAIR_GUIDELINE_QUESTIONS]
   .sort((a, b) => a.qNumber - b.qNumber);
