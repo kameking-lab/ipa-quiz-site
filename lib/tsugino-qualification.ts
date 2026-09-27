@@ -16,6 +16,12 @@ const QUALIFICATION_IDS: Partial<Record<ExamCode, string>> = {
   sm: "sm",
   es: "es",
   au: "au",
+  fp3: "fp-3kyu",
+  fp2: "fp2",
+  denko2: "denko2",
+  takken: "takken",
+  civil2: "doboku-sekou-2kyu",
+  eisei1: "eisei-kanrisha-1shu",
 };
 
 /** Qualification schedules live on 次の資格, not in this question bank. */
