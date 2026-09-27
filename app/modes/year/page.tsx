@@ -45,6 +45,7 @@ const VALID_EXAMS: ExamCode[] = [
   "au",
   "takken",
   "tohan",
+  "kanri",
 ];
 
 function isExamCode(s: unknown): s is ExamCode {
