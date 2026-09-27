@@ -148,6 +148,25 @@ export function getNoteGuide(exam: ExamCode): NoteGuideLink | undefined {
   return EXAM_NOTE_GUIDES[exam];
 }
 
+// 主無料ガイドを保持したまま、同じ試験の別テーマを扱う公開済み無料記事を併記する。
+export const EXAM_NOTE_RELATED_FREE_GUIDES: Partial<Record<ExamCode, readonly NoteGuideLink[]>> = {
+  // note公開APIで2026-09-27に status=published / price=0 / is_limited=false を確認。
+  ip: [
+    {
+      kind: "free",
+      href: "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+      label: "スコアレポートから次の学習範囲を決める",
+      source: "exam_ip_score_report",
+      account: "ipa_quiz_ai",
+      description: "分野別評価点の読み方と、再受験までに重点を置く分野の決め方を確認できます。",
+    },
+  ],
+};
+
+export function getNoteGuideRelatedFree(exam: ExamCode): readonly NoteGuideLink[] {
+  return EXAM_NOTE_RELATED_FREE_GUIDES[exam] ?? [];
+}
+
 // 主リンク(上記 EXAM_NOTE_GUIDES)を隠さずに、有料教材を「補助リンク」として
 // 追加で出すための別テーブル。既存の EXAM_NOTE_GUIDES / getNoteGuide の形・
 // 挙動・既存テストは一切変更しない(下位互換の拡張)。
