@@ -41,15 +41,15 @@ function q(partial: Partial<Question> = {}): Question {
 }
 
 describe("buildQuestionContext", () => {
-  it("見出しセクションを順に含む（現在の問題→問題文→正解→標準解説）", () => {
+  it("見出しセクションを順に含む（現在の問題→問題文→正解→サイト掲載の解説）", () => {
     const out = buildQuestionContext(q());
     expect(out).toContain("# 現在の問題");
     expect(out).toContain("## 問題文");
     expect(out).toContain("## 正解");
-    expect(out).toContain("## 標準解説（参考）");
-    // 順序: 問題文 → 正解 → 標準解説
+    expect(out).toContain("## サイト掲載の解説（参考・公式見解とは限らない）");
+    // 順序: 問題文 → 正解 → サイト掲載の解説
     expect(out.indexOf("## 問題文")).toBeLessThan(out.indexOf("## 正解"));
-    expect(out.indexOf("## 正解")).toBeLessThan(out.indexOf("## 標準解説（参考）"));
+    expect(out.indexOf("## 正解")).toBeLessThan(out.indexOf("## サイト掲載の解説（参考・公式見解とは限らない）"));
   });
 
   it("topicTags が空ならタグ行を出さない／あれば , 連結で出す", () => {
@@ -104,7 +104,7 @@ describe("buildQuestionContext", () => {
       },
       lawReferenceDate: "2026-04-01",
     }), "ア", false);
-    expect(out).toContain("## 選択肢別の標準解説（参考）");
+    expect(out).toContain("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
     expect(out).toContain("- ア: 選任は必要なので、この肢は正しい。");
     expect(out).toContain("- イ: 専任の義務はないので、この肢は誤り。");
     expect(out).toContain("- 法令・制度の基準日: 2026-04-01");

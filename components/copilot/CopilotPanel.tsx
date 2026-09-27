@@ -1199,10 +1199,10 @@ export function CopilotPanel({
       {/* AI disclaimer */}
       {messages.some((m) => m.role === "assistant") && (
         <div className="px-3 pb-1 text-[11px] leading-snug text-zinc-500 dark:text-zinc-400">
-          <p>※ AI の回答は誤りを含む可能性があります。問題の標準解説と受験する資格の公式資料でご確認ください。</p>
+          <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
           {selectedChoice && question.choices && question.choiceExplanations && (
             <details className="mt-1">
-              <summary className="cursor-pointer font-medium underline underline-offset-2">選択肢別の標準解説で確認</summary>
+              <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
               <ul className="mt-1 space-y-1 pl-3">
                 {getChoiceKeys(question.choices)
                   .filter((key) => selectedChoice.split("・").includes(key) ||
@@ -1213,9 +1213,11 @@ export function CopilotPanel({
                     </li>
                   ))}
               </ul>
-              <a href={question.sourceAnswerUrl ?? question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block underline underline-offset-2">
-                試験実施団体の公表PDFを開く
-              </a>
+              {(question.sourceAnswerUrl || question.sourcePdfUrl) && (
+                <a href={question.sourceAnswerUrl || question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block underline underline-offset-2">
+                  問題データの出典PDFを開く
+                </a>
+              )}
             </details>
           )}
         </div>
