@@ -35,6 +35,9 @@ for (const width of [390, 1280]) {
     await expect(page).toHaveURL(/\/ipa$/);
     await expect(page.locator('main a[href="/ip"]').first()).toBeInViewport();
     await expect(page.getByRole("tablist")).toHaveCount(0);
+    // Scrolling to the back link can leave the pointer over the sticky nav's
+    // hover menu, which then covers the link in desktop Chromium.
+    await page.mouse.move(5, 850);
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(page).toHaveURL(/\/$/);
 
@@ -45,6 +48,7 @@ for (const width of [390, 1280]) {
     const healthConsultant = page.getByRole("region", { name: "労働衛生コンサルタント", exact: true });
     await expect(safetyConsultant.getByRole("link", { name: /^産業安全一般/ })).toHaveCount(1);
     await expect(healthConsultant.getByRole("link", { name: /^労働衛生一般/ })).toHaveCount(1);
+    await page.mouse.move(5, 850);
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(domains).toBeVisible();
 
@@ -67,17 +71,12 @@ for (const width of [390, 1280]) {
   });
 }
 
-test("home countdown only shows dated events with an official source", async ({ page }) => {
+test("home sends exam schedule questions to 次の資格", async ({ page }) => {
   await page.goto("/");
-  const countdown = page.getByRole("region", { name: "試験日が近い資格" });
-  // 公式確認済みの日程がすべて過ぎた後は帯ごと出ない。出ている場合は出典リンク付き。
-  if (await countdown.count()) {
-    const items = countdown.getByRole("listitem");
-    const n = await items.count();
-    expect(n).toBeGreaterThan(0);
-    for (let i = 0; i < n; i += 1) {
-      await expect(items.nth(i)).toContainText(/あと\s*\d+\s*日|実施中/);
-      await expect(items.nth(i).locator('a[target="_blank"][href^="https://www."]')).toHaveCount(1);
-    }
-  }
+  await expect(page.getByRole("region", { name: "試験日が近い資格" })).toHaveCount(0);
+  const schedules = page.getByRole("region", { name: "試験日と申込締切を確認" });
+  await expect(schedules.getByRole("link", { name: "次の資格の日程カレンダーへ" }))
+    .toHaveAttribute("href", "https://tsugino-shikaku.jp/calendar");
+  await expect(schedules.getByRole("link", { name: "応用情報の日程" }))
+    .toHaveAttribute("href", "https://tsugino-shikaku.jp/shikaku/ap");
 });

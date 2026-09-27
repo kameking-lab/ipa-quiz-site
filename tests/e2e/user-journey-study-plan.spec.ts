@@ -48,6 +48,14 @@ test.describe("study plan: HTTP & structure", () => {
     const newPlanSection = page.locator("[aria-labelledby='new-plan']");
     await expect(newPlanSection).toBeVisible({ timeout: 15000 });
   });
+
+  test("the planner uses a study period and sends exam dates to Tsugino", async ({ page }) => {
+    await page.goto("/study-plan");
+    await page.getByRole("button", { name: /次へ/ }).click();
+    await expect(page.getByRole("combobox", { name: "学習期間" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "次の資格", exact: true })).toHaveAttribute("href", /tsugino-shikaku\.jp\/shikaku\/ap/);
+    await expect(page.locator("input[type=date]")).toHaveCount(0);
+  });
 });
 
 test.describe("study plan: result page", () => {

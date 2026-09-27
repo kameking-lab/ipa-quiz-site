@@ -7,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
-import { daysUntil } from "@/lib/learning/analytics";
 import type { ExamCode } from "@/lib/questions/types";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 const EXAM_OPTIONS: { code: ExamCode; label: string }[] = [
   { code: "ip", label: "IT パスポート" },
@@ -36,9 +36,9 @@ interface StoredEntry {
 
 export function StudyPlanClient() {
   const [exam, setExam] = useState<ExamCode>("fe");
-  const [examDate, setExamDate] = useState("");
+  const [studyWeeks, setStudyWeeks] = useState(4);
   const [plan, setPlan] = useState<{
-    daysLeft: number;
+    studyDays: number;
     targetPerDay: number;
     totalTarget: number;
     examAnswered: number;
@@ -64,9 +64,7 @@ export function StudyPlanClient() {
   const expectedQuestions = cfg?.sessions.reduce((sum, session) => sum + session.expectedQuestions, 0) ?? 60;
 
   function generatePlan() {
-    if (!examDate) return;
-    const days = daysUntil(examDate);
-    if (days <= 0) return;
+    const days = studyWeeks * 7;
 
     // Derive exam from question ID prefix (e.g. "ap-2023h-am-q1" → "ap")
     const examEntries = entries.filter((e) => e.id.startsWith(`${exam}-`));
@@ -82,7 +80,7 @@ export function StudyPlanClient() {
     const phase2Days = Math.max(0, days - phase1Days - 14);
 
     setPlan({
-      daysLeft: days,
+      studyDays: days,
       targetPerDay,
       totalTarget: targetPerDay * days,
       examAnswered: uniqueAnswered,
@@ -93,8 +91,6 @@ export function StudyPlanClient() {
     });
   }
 
-  const today = new Date().toISOString().slice(0, 10);
-
   return (
     <div className="space-y-6">
       <Card>
@@ -103,6 +99,14 @@ export function StudyPlanClient() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
+            <a
+              href={tsuginoScheduleUrl(exam)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-2 inline-block text-sm text-sky-700 underline underline-offset-4 dark:text-sky-300"
+            >
+              試験日・申込締切を「次の資格」で確認
+            </a>
             <label
               htmlFor="study-plan-exam"
               className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
@@ -123,25 +127,26 @@ export function StudyPlanClient() {
 
           <div>
             <label
-              htmlFor="study-plan-date"
+              htmlFor="study-plan-weeks"
               className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
-              試験日
+              学習期間
             </label>
-            <input
-              id="study-plan-date"
-              type="date"
-              value={examDate}
-              min={today}
-              onChange={(e) => { setExamDate(e.target.value); setPlan(null); }}
+            <select
+              id="study-plan-weeks"
+              value={studyWeeks}
+              onChange={(e) => { setStudyWeeks(Number(e.target.value)); setPlan(null); }}
               className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-            />
+            >
+              <option value={2}>2週間</option>
+              <option value={4}>4週間</option>
+              <option value={8}>8週間</option>
+            </select>
           </div>
 
           <Button
             variant="primary"
             onClick={generatePlan}
-            disabled={!examDate}
             className="w-full"
           >
             学習プランを生成
@@ -152,7 +157,7 @@ export function StudyPlanClient() {
       {plan && (
         <>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            <StatCard label="残り日数" value={`${plan.daysLeft}日`} />
+            <StatCard label="学習期間" value={`${plan.studyDays}日`} />
             <StatCard label="1日の目標" value={`${plan.targetPerDay}問`} />
             <StatCard label="総目標問題数" value={plan.totalTarget.toLocaleString()} />
           </div>
@@ -203,7 +208,7 @@ export function StudyPlanClient() {
                       {plan.phase1Days}日間
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">残り日数の半分まで</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">選んだ学習期間の前半</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
@@ -227,7 +232,7 @@ export function StudyPlanClient() {
                       {plan.phase2Days}日間
                     </span>
                   </div>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">残り14日まで</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">知識習得後から仕上げまで</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">

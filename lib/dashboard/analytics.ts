@@ -1,6 +1,5 @@
 import type { ExamCode } from "@/lib/questions/types";
 import type { HistoryEntry } from "@/lib/storage/history";
-import { nextExamSitting } from "@/lib/constants/exam-schedule";
 
 /** Minimal question metadata needed for analytics (avoids bundling full Question data). */
 export interface QuestionMeta {
@@ -126,12 +125,6 @@ export function computeExamProbabilities(
 
 export function estimateStudyMinutes(totalEntries: number): number {
   return Math.round(totalEntries * 1.25);
-}
-
-export function daysUntilNextExam(now: Date = new Date()): { date: Date; days: number; label: string } {
-  // Delegates to the shared exam-schedule master so the countdown rolls to the
-  // next sitting automatically and there is one place to update IPA dates.
-  return nextExamSitting(now);
 }
 
 export function radarSlots(stats: CategoryStat[], slots = 10): CategoryStat[] {

@@ -4,7 +4,7 @@ import { StudyPlanClient } from "./StudyPlanClient";
 
 export const metadata: Metadata = {
   title: "AI 学習プラン",
-  description: "試験日を入力すると、残り日数から1日の目標問題数と弱点分野を自動算出します。",
+  description: "学習期間を選ぶと、1日の目標問題数と学習の進め方を算出します。試験日程は次の資格で確認できます。",
   robots: { index: false, follow: false },
 };
 
@@ -21,7 +21,7 @@ export default function StudyPlanPage() {
         </div>
         <h1 className="text-2xl font-bold tracking-tight">AI 学習プラン</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          試験日を設定すると、残り日数・1日の目標問題数・弱点分野を自動算出します。
+          学習期間を選ぶと、1日の目標問題数と学習の進め方を算出します。試験日程は「次の資格」で確認できます。
         </p>
       </div>
       <StudyPlanClient />

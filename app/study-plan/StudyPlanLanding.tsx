@@ -44,7 +44,7 @@ export function StudyPlanLanding() {
           自動学習スケジュール作成
         </h1>
         <p className="mt-2 text-sm text-muted-foreground sm:text-base">
-          試験日まで残り何日？1日に何分とれる？それだけ答えれば、
+          学習期間は2・4・8週間から選択。1日に何分とれるかを入力すると、
           IPA 全 13 区分に対応した「序盤→中盤→終盤」の個別最適スケジュールを自動生成します。
           進捗はブラウザに保存され、複数試験の並行受験にも対応します。
         </p>
@@ -73,8 +73,8 @@ export function StudyPlanLanding() {
                           {examLabel(p.input.exam)}
                         </div>
                         <div className="text-xs text-muted-foreground">
-                          試験日 {p.input.examDate} ・{" "}
-                          {LEVEL_LABELS[p.input.level]} ・残り{" "}
+                          計画終了日 {p.input.examDate} ・{" "}
+                          {LEVEL_LABELS[p.input.level]} ・計画期間{" "}
                           {p.summary.daysRemaining} 日
                         </div>
                       </div>

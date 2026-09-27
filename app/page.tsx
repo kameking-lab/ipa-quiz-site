@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
-import { HomeExamCountdown } from "@/components/home/landing/HomeExamCountdown";
+import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
 import { HomeNoteGuides, HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
 import { HomeHero } from "@/components/home/landing/HomeHero";
 import { HomeStudyModes } from "@/components/home/landing/HomeStudyModes";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { getUpcomingExamEvents } from "@/lib/home/exam-schedule";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 
@@ -19,18 +18,14 @@ export const metadata: Metadata = {
   twitter: { title, description },
 };
 
-// 「試験日が近い資格」のカウントダウンは JST の日付で変わるため、1時間ごとに再生成する。
-export const revalidate = 3600;
-
 export default function HomePage() {
   const domains = getHomeDirectory();
-  const events = getUpcomingExamEvents(new Date());
 
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-12 pt-4 sm:px-6 sm:pt-8">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
-      <HomeExamCountdown events={events} />
+      <HomeScheduleLink />
       <HomeDirectory domains={domains} />
       <div className="mt-6"><TotalAnswerCounter /></div>
       <HomeStudyModes />
