@@ -353,9 +353,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kanrikyo.or.jp/kanri/mondaiseikai/index.html",
     officialReuseTermsUrl: "https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf",
     status: "live",
-    reuseSummary: "令和7年度の公式全50問から、問題・正解・各選択肢の理由を確認した12問を先行収録。",
+    reuseSummary: "令和7年度の公式全50問から、問題・正解・各選択肢の理由を確認した16問を先行収録。",
     attributionTemplate: "出典：令和○年度 管理業務主任者試験問題 問○",
-    remainingWork: ["令和7年度の残る38問を公式正答・一次根拠と照合", "令和8年度試験の公表後に法令基準日を確認して追加"],
+    remainingWork: ["令和7年度の残る34問を公式正答・一次根拠と照合", "令和8年度試験の公表後に法令基準日を確認して追加"],
   },
   {
     slug: "gyoseishoshi",
