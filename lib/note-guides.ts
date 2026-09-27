@@ -150,7 +150,8 @@ export function getNoteGuide(exam: ExamCode): NoteGuideLink | undefined {
 
 // 主無料ガイドを保持したまま、同じ試験の別テーマを扱う公開済み無料記事を併記する。
 export const EXAM_NOTE_RELATED_FREE_GUIDES: Partial<Record<ExamCode, readonly NoteGuideLink[]>> = {
-  // note公開APIで2026-09-27に status=published / price=0 / is_limited=false を確認。
+  // 2026-09-27に各URLのnote公開APIで status=published / price=0 / is_limited=false と
+  // 正しいアカウントを確認。追加3記事の本文には対応する過去問AIの有効な導線がある。
   ip: [
     {
       kind: "free",
@@ -159,6 +160,34 @@ export const EXAM_NOTE_RELATED_FREE_GUIDES: Partial<Record<ExamCode, readonly No
       source: "exam_ip_score_report",
       account: "ipa_quiz_ai",
       description: "分野別評価点の読み方と、再受験までに重点を置く分野の決め方を確認できます。",
+    },
+    {
+      kind: "free",
+      href: "https://note.com/ipa_quiz_ai/n/ncd8e18eecdc0",
+      label: "マネジメント系の3分野を公開問題で見分ける",
+      source: "exam_ip_management",
+      account: "ipa_quiz_ai",
+      description: "プロジェクト・サービス・監査の用語を問題文から区別する手がかりを確認できます。",
+    },
+  ],
+  sg: [
+    {
+      kind: "free",
+      href: "https://note.com/ipa_quiz_ai/n/n496b2aa12deb",
+      label: "科目Aの法規3分野を問題文から見分ける",
+      source: "exam_sg_law",
+      account: "ipa_quiz_ai",
+      description: "個人情報保護法・不正アクセス禁止法・著作権法の判別ポイントを確認できます。",
+    },
+  ],
+  fe: [
+    {
+      kind: "free",
+      href: "https://note.com/ipa_quiz_ai/n/n4c77f7855c7a",
+      label: "旧午前問題を科目Aの練習に使うときの注意点",
+      source: "exam_fe_legacy_questions",
+      account: "ipa_quiz_ai",
+      description: "古い公開問題を選ぶ際、制度や出題範囲の違いをどう見分けるか確認できます。",
     },
   ],
 };

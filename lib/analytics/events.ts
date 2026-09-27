@@ -49,6 +49,9 @@ export type AnalyticsEvent =
         | "exam_fe"
         | "exam_ip"
         | "exam_ip_score_report"
+        | "exam_ip_management"
+        | "exam_sg_law"
+        | "exam_fe_legacy_questions"
         | "exam_civil2"
         | "exam_library";
       account: "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";

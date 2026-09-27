@@ -107,6 +107,7 @@ describe("ExamNoteGuide", () => {
     expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ }).map((link) => link.getAttribute("href"))).toEqual([
       "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
       "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+      "https://note.com/ipa_quiz_ai/n/ncd8e18eecdc0",
     ]);
     expect(screen.getAllByRole("link", { name: /有料記事を読む/ }).map((link) => link.getAttribute("href"))).toEqual([
       "https://note.com/ipa_quiz_ai/n/n4d660d858d53",
@@ -136,6 +137,18 @@ describe("ExamNoteGuide", () => {
       source: "exam_ip_score_report",
       account: "ipa_quiz_ai",
     });
+  });
+
+  it("links the reciprocal free SG and FE articles from their exam pages", () => {
+    const { unmount } = render(<ExamNoteGuide exam="sg" />);
+    expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ })[1]).toHaveAttribute(
+      "href", "https://note.com/ipa_quiz_ai/n/n496b2aa12deb",
+    );
+    unmount();
+    render(<ExamNoteGuide exam="fe" />);
+    expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ })[1]).toHaveAttribute(
+      "href", "https://note.com/ipa_quiz_ai/n/n4c77f7855c7a",
+    );
   });
 
   it("renders no supplement block for exams without an approved paid pairing", () => {

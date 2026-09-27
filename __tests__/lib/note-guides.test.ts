@@ -75,6 +75,20 @@ describe("note-guides", () => {
         account: "ipa_quiz_ai",
         description: "分野別評価点の読み方と、再受験までに重点を置く分野の決め方を確認できます。",
       },
+      {
+        kind: "free",
+        href: "https://note.com/ipa_quiz_ai/n/ncd8e18eecdc0",
+        label: "マネジメント系の3分野を公開問題で見分ける",
+        source: "exam_ip_management",
+        account: "ipa_quiz_ai",
+        description: "プロジェクト・サービス・監査の用語を問題文から区別する手がかりを確認できます。",
+      },
+    ]);
+    expect(getNoteGuideRelatedFree("sg")?.map((guide) => guide.href)).toEqual([
+      "https://note.com/ipa_quiz_ai/n/n496b2aa12deb",
+    ]);
+    expect(getNoteGuideRelatedFree("fe")?.map((guide) => guide.href)).toEqual([
+      "https://note.com/ipa_quiz_ai/n/n4c77f7855c7a",
     ]);
     expect(getNoteGuideRelatedFree("sa")).toEqual([]);
   });
