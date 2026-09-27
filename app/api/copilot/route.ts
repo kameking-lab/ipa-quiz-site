@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { getProvider, resolveModel } from "@/lib/ai/provider";
+import { getProvider } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
 import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
+import { getQuestionById } from "@/lib/questions/load";
+import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
@@ -16,21 +18,11 @@ import { tierForModel } from "@/lib/ai/cost-tracker";
 export const runtime = "nodejs";
 
 const STREAM_TIMEOUT_MS = 35_000;
+// Google 公式の最新テキスト Flash（2026-09-27）。他の AI ルートは変えない。
+export const COPILOT_MODEL = "gemini-3.8-flash";
 
 const BodySchema = z.object({
-  question: z.custom<Question>((v) => {
-    if (typeof v !== "object" || v === null) return false;
-    const q = v as Record<string, unknown>;
-    const choices = q.choices as Record<string, unknown> | null;
-    return (
-      typeof q.id === "string" && q.id.length > 0 &&
-      typeof q.question === "string" && q.question.length > 0 &&
-      typeof choices === "object" && choices !== null &&
-      typeof choices.ア === "string" &&
-      ((typeof q.answer === "string" && q.answer.length > 0) ||
-       (Array.isArray(q.answer) && q.answer.length > 0 && q.answer.every(key => typeof key === "string" && typeof choices[key] === "string")))
-    );
-  }),
+  question: z.object({ id: z.string().min(1).max(120) }),
   messages: z
     .array(
       z.object({
@@ -38,8 +30,8 @@ const BodySchema = z.object({
         content: z.string().min(1).max(4000),
       }),
     )
-    .min(1),
-  selectedChoice: z.string().optional(),
+    .min(1).max(20),
+  selectedChoice: z.string().max(40).optional(),
   isCorrect: z.boolean().optional(),
   quickAction: z.string().optional(),
   learnerProfile: z
@@ -68,6 +60,23 @@ export async function POST(req: Request) {
       { status: 400 },
     );
   }
+
+  // 問題文・選択肢・正答・標準解説はクライアント入力を信頼しない。
+  const question: Question | undefined = getQuestionById(payload.question.id);
+  if (!question) {
+    return NextResponse.json(
+      { error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" },
+      { status: 400 },
+    );
+  }
+  const selectedKeys = payload.selectedChoice?.split("・") ?? [];
+  const selectedChoice = selectedKeys.length > 0 &&
+    selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)
+    ? payload.selectedChoice
+    : undefined;
+  const isCorrect = selectedChoice === undefined
+    ? undefined
+    : isCompleteSelectionCorrect(question.answer, selectedKeys);
 
   const ip = getClientIp(req);
   const feedbackToken = readFeedbackTokenInfo(req);
@@ -101,16 +110,16 @@ export async function POST(req: Request) {
   const quickAction = payload.quickAction as QuickActionId | undefined;
 
   const rag = await runCopilotRAGPipeline({
-    question: payload.question,
+    question,
     messages: payload.messages,
     quickAction,
   });
 
   const { system, userMessages } = assembleCopilotPrompt({
-    question: payload.question,
+    question,
     messages: payload.messages,
-    selectedChoice: payload.selectedChoice,
-    isCorrect: payload.isCorrect,
+    selectedChoice,
+    isCorrect,
     quickAction,
     learnerProfile: payload.learnerProfile as LearnerProfile | undefined,
     character: payload.character,
@@ -122,7 +131,7 @@ export async function POST(req: Request) {
 
   let provider: LLMProvider;
   try {
-    provider = await getProvider();
+    provider = await getProvider("gemini");
   } catch {
     return NextResponse.json(
       {
@@ -149,18 +158,17 @@ export async function POST(req: Request) {
     }
   }
 
-  const model = resolveModel("free");
+  const model = COPILOT_MODEL;
 
-  // Hard ceiling per length, aligned with the 300字 / 600字 caps in prompts.ts
-  // (1 Japanese char ≒ 1.5–2 Gemini tokens). The budget is a backstop: it must
-  // be tight enough that a "5行" answer can't physically sprawl to 10+ lines
-  // (即修正⑤), but with enough headroom not to truncate a legitimate answer.
+  // Gemini 3.8 Flash counts hidden thinking tokens within maxOutputTokens.
+  // Keep the visible answer length in prompts.ts, with enough token headroom
+  // for the model to finish rather than returning only thought tokens.
   const maxTokens =
     payload.responseLength === "short"
-      ? 180
+      ? 800
       : payload.responseLength === "medium"
-        ? 440
-        : 900;
+        ? 1200
+        : 1800;
 
   const isRealProvider = provider.name !== "mock";
   const inputChars = system.length + userMessages.reduce((n, m) => n + m.content.length, 0);

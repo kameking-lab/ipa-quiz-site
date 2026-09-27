@@ -9,7 +9,7 @@ import type { LLMProvider, StreamChatParams } from "../provider";
  * 返すので実体は存在する。any を使わずに型だけここで補う。
  */
 type GenerationConfigWithThinking = GenerationConfig & {
-  thinkingConfig?: { thinkingBudget?: number; includeThoughts?: boolean };
+  thinkingConfig?: { thinkingBudget?: number; includeThoughts?: boolean; thinkingLevel?: "low" | "medium" | "high" };
 };
 type UsageMetadataWithThoughts = UsageMetadata & { thoughtsTokenCount?: number };
 
@@ -36,6 +36,10 @@ export function createGeminiProvider(): LLMProvider {
       // thinkingBudget は「未指定」と「0」を区別する必要がある（0 = 思考オフ）。
       if (params.thinkingBudget !== undefined) {
         generationConfig.thinkingConfig = { thinkingBudget: params.thinkingBudget };
+      } else if (modelName === "gemini-3.8-flash") {
+        // Chat is latency-sensitive. Gemini 3.8 defaults to medium thinking;
+        // low preserves room for the visible answer within maxOutputTokens.
+        generationConfig.thinkingConfig = { thinkingLevel: "low" };
       }
 
       const model = client.getGenerativeModel({

@@ -100,8 +100,8 @@ describe("採点ルートだけが grading 層を使う（用途別の使い分�
     expect(read("app/api/scoring/route.ts")).toMatch(/resolveModel\("grading"\)/);
   });
 
-  it("copilot / generate-question は free のまま（採点以外で上位モデルを浪費しない）", () => {
-    expect(read("app/api/copilot/route.ts")).toMatch(/resolveModel\("free"\)/);
+  it("copilot は明示された Gemini Flash、generate-question は free を使う", () => {
+    expect(read("app/api/copilot/route.ts")).toMatch(/COPILOT_MODEL = "gemini-3\.8-flash"/);
     expect(read("app/api/copilot/route.ts")).not.toMatch(
       /resolveModel\("grading"\)/,
     );

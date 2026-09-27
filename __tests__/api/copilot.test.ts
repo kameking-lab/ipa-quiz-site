@@ -86,6 +86,26 @@ describe("POST /api/copilot", () => {
     expect(res.status).toBe(400);
   });
 
+  it("rejects a question ID outside the published corpus", async () => {
+    const res = await POST(makeReq({
+      question: { id: "not-a-published-question", question: "偽の問題", answer: "ア" },
+      messages: [{ role: "user", content: "解説して" }],
+    }, "10.2.0.8"));
+    expect(res.status).toBe(400);
+    expect((await res.json()).error).toBe("unknown_question");
+  });
+
+  it("uses a published ID even if the browser sends altered answer data", async () => {
+    const res = await POST(makeReq({
+      question: { ...validQuestion, answer: "偽", explanation: "偽の解説" },
+      selectedChoice: "ア",
+      isCorrect: false,
+      messages: [{ role: "user", content: "この問題を解説して" }],
+    }, "10.2.0.9"));
+    expect(res.status).toBe(200);
+    expect(await drainStream(res)).toBeTruthy();
+  });
+
   it("returns a streamed text/plain body via mock provider with expected headers", async () => {
     const res = await POST(
       makeReq(

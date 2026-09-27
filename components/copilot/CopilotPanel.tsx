@@ -128,6 +128,7 @@ interface Props {
   question: Question;
   selectedChoice?: string;
   isCorrect?: boolean;
+  initialPrompt?: string;
   onRateLimitHit: () => void;
   onClose?: () => void;
   headerRight?: React.ReactNode;
@@ -222,13 +223,14 @@ export function CopilotPanel({
   question,
   selectedChoice,
   isCorrect,
+  initialPrompt,
   onRateLimitHit,
   onClose,
   headerRight,
   className,
 }: Props) {
   const [messages, setMessages] = React.useState<Message[]>([]);
-  const [input, setInput] = React.useState("");
+  const [input, setInput] = React.useState(initialPrompt ?? "");
   const [streaming, setStreaming] = React.useState(false);
   const [streamStatus, setStreamStatus] = React.useState<StreamStatus>("idle");
   const [usage, setUsage] = React.useState(() => readAiUsage());
@@ -302,7 +304,7 @@ export function CopilotPanel({
   React.useEffect(() => {
 
     setMessages([]);
-    setInput("");
+    setInput(initialPrompt ?? "");
     // Question-change abort is system-driven, not user-driven, so leave the
     // userStoppedRef flag false to avoid annotating the discarded message.
     userStoppedRef.current = false;
@@ -313,7 +315,7 @@ export function CopilotPanel({
     setShareOpen(false);
     setToast(null);
     setProfile(buildLearnerProfileFromHistory());
-  }, [question.id]);
+  }, [question.id, initialPrompt]);
 
   // Detect Web Speech API availability once
   React.useEffect(() => {
@@ -404,7 +406,7 @@ export function CopilotPanel({
           headers: { "content-type": "application/json" },
           signal: controller.signal,
           body: JSON.stringify({
-            question,
+            question: { id: question.id },
             selectedChoice,
             isCorrect,
             tier: "free",
@@ -413,7 +415,7 @@ export function CopilotPanel({
             character: characterState.id,
             characterEnabled: characterState.enabled,
             responseLength,
-            messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
+            messages: nextMessages.slice(-20).map((m) => ({ role: m.role, content: m.content })),
           }),
         });
 
@@ -1357,6 +1359,7 @@ export function CopilotMobileSheet({
   question,
   selectedChoice,
   isCorrect,
+  initialPrompt,
   onRateLimitHit,
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
@@ -1460,6 +1463,7 @@ export function CopilotMobileSheet({
               question={question}
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
+              initialPrompt={initialPrompt}
               onRateLimitHit={onRateLimitHit}
               onClose={() => setOpen(false)}
               className="rounded-t-2xl"
@@ -1481,6 +1485,7 @@ export function CopilotDesktopFloating({
   question,
   selectedChoice,
   isCorrect,
+  initialPrompt,
   onRateLimitHit,
   headerRight,
   defaultOpen = false,
@@ -1588,6 +1593,7 @@ export function CopilotDesktopFloating({
               question={question}
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
+              initialPrompt={initialPrompt}
               onRateLimitHit={onRateLimitHit}
               onClose={() => setOpen(false)}
               headerRight={headerRight}

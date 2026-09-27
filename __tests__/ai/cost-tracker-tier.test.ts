@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -27,6 +27,19 @@ describe("tierForModel — モデル ID から課金層を導出", () => {
     expect(tierForModel("gemini-2.5-flash")).toBe("flash");
     // "flash-lite" は "flash" を含む。判定順が逆だと flash 層に落ちて 3 倍過大になる。
     expect(tierForModel("gemini-2.5-flash-lite")).toBe("flash-lite");
+  });
+
+  it("Gemini 3.8 Flash は専用の単価層に割り当てる", () => {
+    expect(tierForModel("gemini-3.8-flash")).toBe("flash-3.8");
+    vi.useFakeTimers();
+    try {
+      vi.setSystemTime(new Date("2026-09-27T00:00:00Z"));
+      expect(costJpy("flash-3.8", 1_000_000, 1_000_000)).toBeCloseTo(675, 5);
+      vi.setSystemTime(new Date("2027-01-01T00:00:00Z"));
+      expect(costJpy("flash-3.8", 1_000_000, 1_000_000)).toBeCloseTo(1350, 5);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it("未知モデル・未定義は最上位単価(pro)にフォールバックする", () => {
