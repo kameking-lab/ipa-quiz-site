@@ -6,17 +6,17 @@ import { getQualificationByExamCode, isExamPublished } from "@/lib/qualification
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
 
-const officialAnswers = new Map([[1, "4"], [2, "2"], [3, "3"], [4, "2"], [5, "4"], [6, "4"], [7, "1"], [8, "3"], [9, "1"], [10, "3"], [11, "2"], [12, "4"], [13, "3"], [14, "2"], [15, "4"], [20, "4"], [21, "2"], [22, "2"], [23, "1"], [47, "2"], [48, "1"], [49, "1"], [50, "2"]]);
+const officialAnswers = new Map([[1, "4"], [2, "2"], [3, "3"], [4, "2"], [5, "4"], [6, "4"], [7, "1"], [8, "3"], [9, "1"], [10, "3"], [11, "2"], [12, "4"], [13, "3"], [14, "2"], [15, "4"], [20, "4"], [21, "2"], [22, "2"], [23, "1"], [24, "2"], [25, "4"], [27, "1"], [47, "2"], [48, "1"], [49, "1"], [50, "2"]]);
 const labels = ["ア", "イ", "ウ", "エ"] as const;
 
 describe("2025 管理業務主任者 pilot", () => {
-  it("publishes only the 23 independently checked questions from the official 50", () => {
+  it("publishes only the 26 independently checked questions from the official 50", () => {
     expect(isExamPublished("kanri")).toBe(true);
     expect(getQualificationByExamCode("kanri")?.officialReuseTermsUrl)
       .toBe("https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf");
     expect(EXAM_CONFIGS.kanri.sessions[0]?.expectedQuestions).toBe(50);
     expect(defaultPracticeSession("kanri")).toBe("gakka");
-    expect(KANRI_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 47, 48, 49, 50]);
+    expect(KANRI_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 22, 23, 24, 25, 27, 47, 48, 49, 50]);
   });
 
   it("keeps official answers, four numbered choices, full explanations, and sources aligned", () => {
