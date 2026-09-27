@@ -114,7 +114,7 @@ interface OtherCardDef {
   code: ExamCode;
   name: string;
   sub: string;
-  domain: Exclude<HomeDomainId, "it" | "safety">;
+  domain: Exclude<HomeDomainId, "it">;
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
@@ -139,6 +139,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
   { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
   { code: "kanri", name: "管理業務主任者", sub: "2025年の公式過去問29問を先行収録", domain: "money" },
+  { code: "eisei1", name: "第一種衛生管理者", sub: "2026年4月公表試験（労働生理10問）", domain: "safety" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
@@ -239,7 +240,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/e-learning/exams",
         allLabel: "安全衛生の試験をすべて見る",
       },
-      safetyItems(),
+      [...byDomain("safety"), ...safetyItems()],
       safetyOtherItems(),
     ),
     domain(
