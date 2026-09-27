@@ -15,6 +15,8 @@ describe("original exam provenance", () => {
     expect(questionSourceEdition({year:2025,season:"published",sourcePdfUrl:"https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252114.pdf"})).toBe("2025年10月公表問題");
     expect(questionSourceEdition({year:2026,season:"published",sourcePdfUrl:"https://www.exam.or.jp/wp-content/uploads/2026/04/LC20260415-1.pdf"})).toBe("2026年4月公表問題");
     expect(questionSourceEdition({year:2025,season:"published",sourcePdfUrl:"https://example.com/questions.pdf"})).toBe("2025年公表問題");
+    expect(questionSourceEdition({year:2025,season:"published",sourcePdfUrl:"https://www.jafp.or.jp/exam/mohan/files/g2_202505_qa.pdf"})).toBe("2025年5月公表問題");
+    expect(questionSourceEdition({year:2026,season:"published",sourcePdfUrl:"https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf"})).toBe("2026年5月公表問題");
   });
   it("uses the actual answer link rather than inventing a CMS hash", () => {
     expect(getOfficialAnswerPdfUrl("https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_qs.pdf")).toBe("https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_ans.pdf");

@@ -15,6 +15,10 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
     if (officialUpload && Number(officialUpload[1]) === q.year) {
       return `${q.year}年${Number(officialUpload[2])}月公表問題`;
     }
+    const jafpEdition = /^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\/g[23]_(20\d{2})(0[1-9]|1[0-2])_/.exec(q.sourcePdfUrl);
+    if (jafpEdition && Number(jafpEdition[1]) === q.year) {
+      return `${q.year}年${Number(jafpEdition[2])}月公表問題`;
+    }
   }
   return formatYearSeason(q.year, q.season);
 }
