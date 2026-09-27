@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { EXAM_NOTE_GUIDES, EXAM_NOTE_SUPPLEMENTS, getNoteGuide, getNoteGuideSupplement } from "@/lib/note-guides";
+import { EXAM_NOTE_GUIDES, EXAM_NOTE_SUPPLEMENTS, getNoteGuide, getNoteGuideRelatedFree, getNoteGuideSupplement } from "@/lib/note-guides";
 import type { ExamCode } from "@/lib/questions/types";
 
 describe("note-guides", () => {
@@ -62,6 +62,21 @@ describe("note-guides", () => {
     });
     expect(getNoteGuide("ap")?.href).toBe("https://note.com/ipa_quiz_ai/n/n550db5ff2054");
     expect(getNoteGuide("ap")?.account).toBe("ipa_quiz_ai");
+  });
+
+  it("adds the published free IP score report article without replacing the primary guide", () => {
+    expect(getNoteGuide("ip")?.href).toBe("https://note.com/ipa_quiz_ai/n/nbabb9742557b");
+    expect(getNoteGuideRelatedFree("ip")).toEqual([
+      {
+        kind: "free",
+        href: "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+        label: "スコアレポートから次の学習範囲を決める",
+        source: "exam_ip_score_report",
+        account: "ipa_quiz_ai",
+        description: "分野別評価点の読み方と、再受験までに重点を置く分野の決め方を確認できます。",
+      },
+    ]);
+    expect(getNoteGuideRelatedFree("sa")).toEqual([]);
   });
 
   it("wires fe/sg to the ipa_quiz_ai account articles verified on 2026-09-13", () => {

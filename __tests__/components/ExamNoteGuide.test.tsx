@@ -104,9 +104,10 @@ describe("ExamNoteGuide", () => {
 
   it("shows each verified IP and AP supplement without hiding the free guide", () => {
     const { unmount } = render(<ExamNoteGuide exam="ip" />);
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href", "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
-    );
+    expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ }).map((link) => link.getAttribute("href"))).toEqual([
+      "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
+      "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+    ]);
     expect(screen.getAllByRole("link", { name: /有料記事を読む/ }).map((link) => link.getAttribute("href"))).toEqual([
       "https://note.com/ipa_quiz_ai/n/n4d660d858d53",
       "https://note.com/ipa_quiz_ai/n/n2cf8042d489d",
@@ -122,6 +123,19 @@ describe("ExamNoteGuide", () => {
       "https://note.com/ipa_quiz_ai/n/n8d6aed684597",
       "https://note.com/ipa_quiz_ai/n/n47fb9d6b6fa2",
     ]);
+  });
+
+  it("shows the score report article as a related free IP guide with its own tracking source", () => {
+    render(<ExamNoteGuide exam="ip" />);
+    const related = screen.getAllByRole("link", { name: /無料ガイドを読む/ })[1];
+    expect(related).toHaveAttribute("href", "https://note.com/ipa_quiz_ai/n/nc09b275bef06");
+    expect(screen.getByText("スコアレポートから次の学習範囲を決める")).toBeInTheDocument();
+    fireEvent.click(related!);
+    expect(trackEvent).toHaveBeenCalledWith({
+      name: "note_outbound_click",
+      source: "exam_ip_score_report",
+      account: "ipa_quiz_ai",
+    });
   });
 
   it("renders no supplement block for exams without an approved paid pairing", () => {
@@ -151,6 +165,8 @@ describe("ExamNoteGuide", () => {
           exam === "ip" ? undefined : actual.getNoteGuideSupplement(exam as never),
         getNoteGuideSupplements: (exam: string) =>
           exam === "ip" ? [] : actual.getNoteGuideSupplements(exam as never),
+        getNoteGuideRelatedFree: (exam: string) =>
+          exam === "ip" ? [] : actual.getNoteGuideRelatedFree(exam as never),
       };
     });
     const { ExamNoteGuide: ExamNoteGuideWithPaidMock } = await import(

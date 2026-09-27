@@ -179,10 +179,10 @@ describe("QuestionAnswerCard — after-answer note guide placement", () => {
     expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
     expect(screen.getByText("正解！")).toBeTruthy(); // reveal did happen
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href",
+    expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ }).map((link) => link.getAttribute("href"))).toEqual([
       "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
-    );
+      "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+    ]);
   });
 
   // ガイドが無いときに空カードを出さない分岐は残っている。13区分すべてが結線済みで
