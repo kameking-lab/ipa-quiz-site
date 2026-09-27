@@ -78,7 +78,7 @@ export function ScheduleResultClient({ planId }: { planId: string }) {
           {examLabel(plan.input.exam)} 学習スケジュール
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-          <span>試験日 {plan.input.examDate}</span>
+          <span>計画終了日 {plan.input.examDate}</span>
           <span>レベル {LEVEL_LABELS[plan.input.level]}</span>
           <span>
             平日 {plan.input.weekdayMinutes}分 / 休日 {plan.input.weekendMinutes}分
