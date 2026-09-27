@@ -53,7 +53,7 @@ test.describe("study plan: HTTP & structure", () => {
     await page.goto("/study-plan");
     await page.getByRole("button", { name: /次へ/ }).click();
     await expect(page.getByRole("combobox", { name: "学習期間" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "次の資格" })).toHaveAttribute("href", /tsugino-shikaku\.jp\/shikaku\/ap/);
+    await expect(page.getByRole("link", { name: "次の資格", exact: true })).toHaveAttribute("href", /tsugino-shikaku\.jp\/shikaku\/ap/);
     await expect(page.locator("input[type=date]")).toHaveCount(0);
   });
 });
