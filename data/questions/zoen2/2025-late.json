@@ -4,7 +4,7 @@
   "season": "late",
   "session": "gakka",
   "officialQuestionCount": 40,
-  "publishedCount": 25,
+  "publishedCount": 27,
   "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_mondaia.pdf",
   "questionSha256": "9c198ab4b6286fb7c30b2fbd70efd576aa5d71070c9fca8f4c67472ffa111864",
   "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_seitou.pdf",
@@ -566,6 +566,56 @@
       "officialReferenceUrls": [
         "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000080.html",
         "https://laws.e-gov.go.jp/law/324AC0000000100?occasion_date=20241213"
+      ]
+    },
+    {
+      "number": 35,
+      "pdfPage": 14,
+      "category": "関連法規",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [1],
+      "question": "「労働基準法」に関する記述のうち，誤っているものはどれか。",
+      "choices": [
+        "労働者は，労働契約の締結の際に明示された労働時間や賃金が事実と相違したときは，30日以上前に契約解除の予告をした場合に限り，労働契約を解除することができる。",
+        "使用者は，労働者に対して，毎週少なくとも1回の休日，又は4週間を通じ4日以上の休日を与えなければならない。",
+        "親権者又は後見人は，未成年者の賃金を代わって受け取ることはできない。",
+        "使用者は，妊産婦が請求した場合には，時間外労働をさせてはならない。"
+      ],
+      "explanation": "明示された労働条件が事実と相違するとき，労働者は即時に労働契約を解除できます。30日以上前の予告を条件とする1は誤りで，公式正答も1です。",
+      "choiceExplanations": [
+        "労働基準法第15条第2項は即時解除を認めており，30日前の予告は不要です。",
+        "毎週1回以上，又は4週間を通じ4日以上の休日を与える必要があり，適当です。",
+        "未成年者本人の賃金を親権者や後見人が代わって受け取ることはできず，適当です。",
+        "妊産婦が請求した場合には時間外労働をさせてはならず，適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/keiyaku/index.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=73022000"
+      ]
+    },
+    {
+      "number": 36,
+      "pdfPage": 15,
+      "category": "関連法規",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [2],
+      "question": "「労働安全衛生法」に関する記述のうち，誤っているものはどれか。",
+      "choices": [
+        "建設業を行う事業者は，常時50人以上の労働者を使用する事業場ごとに，業務区分に応じて衛生管理者を選任し，その者に衛生に係る技術的事項を管理させなければならない。",
+        "建設業を行う事業者は，労働者が1週間以上の連続した休暇をとった後に業務に就くときは，安全又は衛生のための教育を行わなければならない。",
+        "建設業を行う事業者は，常時使用する労働者に対し，1年以内ごとに1回，健康診断を行わなければならない。",
+        "建設業を行う事業者は，常時50人以上の労働者を使用する事業場において，労働者に対し，心理的な負担の程度を把握するための検査を行わなければならない。"
+      ],
+      "explanation": "安全衛生教育の法定の実施契機は雇入れ時と作業内容の変更時などです。1週間以上の連続休暇後というだけで教育を義務づける2は誤りで，公式正答も2です。",
+      "choiceExplanations": [
+        "常時50人以上の事業場では衛生管理者の選任が必要で，適当です。",
+        "休暇の長さだけを理由に安全衛生教育を義務づける規定はなく，誤りです。",
+        "常時使用する労働者には1年以内ごとに1回の定期健康診断が必要で，適当です。",
+        "常時50人以上の事業場ではストレスチェックが義務づけられており，適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://anzeninfo.mhlw.go.jp/yougo/yougo68_1.html",
+        "https://www.startup-roudou.mhlw.go.jp/study/jigyonushi_kajuroudou.html"
       ]
     }
   ],
