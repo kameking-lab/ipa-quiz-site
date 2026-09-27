@@ -198,7 +198,7 @@ export default function PrivacyPage() {
               この説明はアクセス解析に関するものです。
             </p>
             <p>
-              一部の読み物ページでは <strong>Google AdSense</strong> による広告を本文末尾に掲載します。
+              資格試験のトップページと一部の読み物記事では、ページ末尾に <strong>Google AdSense</strong> の広告枠を設けています。
               Google などの第三者配信事業者は Cookie を使用し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
               Google が広告 Cookie を使用することで、Google とそのパートナーは利用者に適した広告を表示できます。
               利用者は{" "}
