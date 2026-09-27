@@ -40,7 +40,12 @@ describe("FP2 2026年5月公表 学科", () => {
 
   it.each(reviewed)("$id matches the official stem, choices, answer and figure", (q) => {
     const source = extraction.questions[q.qNumber - 1]!;
-    expect(q.question).toBe(source.stem);
+    if ("figure" in source) {
+      expect(q.question.startsWith(source.stem)).toBe(true);
+      expect(q.question.length).toBeGreaterThan(source.stem.length);
+    } else {
+      expect(q.question).toBe(source.stem);
+    }
     expect(KEYS.map((key) => q.choices?.[key])).toEqual(source.choices);
     expect(q.answer).toBe(KEYS[source.answer - 1]);
     expect(Object.keys(q.choiceExplanations ?? {})).toEqual([...KEYS]);
@@ -49,6 +54,7 @@ describe("FP2 2026年5月公表 学科", () => {
     expect(q.sourcePdfUrl).toBe(PAPER_URL);
     expect(q.sourceAnswerUrl).toBe(PAPER_URL);
     expect(q.sourceAttribution).toContain("日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）");
+    expect(q.sourceAttribution).toContain("加工して作成");
     const figure = "figure" in source ? source.figure : undefined;
     expect(q.hasImage).toBe(Boolean(figure));
     expect(q.imageUrls ?? []).toEqual(figure ? [figure.url] : []);
@@ -58,6 +64,14 @@ describe("FP2 2026年5月公表 学科", () => {
     }
     for (const url of q.officialReferenceUrls ?? []) expect(url).toMatch(/^https:\/\/laws\.e-gov\.go\.jp\/law\/\w+\?occasion_date=20250401$/);
     expect(ledgerRows[String(q.qNumber)]?.status).toBe("accepted");
+  });
+
+  it("makes all three figure questions readable without relying on the image", () => {
+    const stems = new Map(FP2_2026_MAY_QUESTIONS.map((q) => [q.qNumber, q.question]));
+    expect(stems.get(14)).toContain("旧制度の対象：一般の生命保険料 10万円");
+    expect(stems.get(55)).toContain("実子Ｃさん（相続放棄）");
+    expect(stems.get(55)).toContain("孫Ｅさん");
+    expect(stems.get(59)).toContain("特定居住用宅地等：330㎡");
   });
 
   it("backs every reviewed question with raw first-party claude-opus-5-5 solve and explain receipts", () => {

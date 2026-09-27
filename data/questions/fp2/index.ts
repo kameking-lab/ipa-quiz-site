@@ -36,7 +36,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
     "lastUpdated": "2026-09-23"
@@ -73,7 +73,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/shussan/index.html",
       "https://www.mhlw.go.jp/stf/newpage_22308.html",
@@ -115,7 +115,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html"
     ],
@@ -155,7 +155,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html",
       "https://www.mhlw.go.jp/content/04_nenkin_20230331.pdf"
@@ -196,7 +196,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/stf/nenkin_shikumi_010.html",
       "https://www.mhlw.go.jp/stf/nenkin_shikumi_011.html"
@@ -237,7 +237,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/stf/nenkin_shikumi_012.html"
     ],
@@ -277,7 +277,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/kouteki_nenkin_simulator_guide/ideco/",
       "https://www.mhlw.go.jp/content/12500000/001230769.pdf"
@@ -318,7 +318,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm",
       "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5231.htm",
@@ -360,7 +360,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.mlit.go.jp/report/interview/daijin190507.html",
       "https://www.mlit.go.jp/common/001201075.pdf"
@@ -401,7 +401,7 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
     "hasImage": false,
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
-    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
+    "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）を加工して作成。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/economy/keiei_innovation/sangyokinyu/index.html"
     ],

@@ -80,7 +80,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "日本FP協会・金融財政事情研究会が公表した学科・実技の問題を収録。",
     attributionTemplate: "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定（公表年月）",
-      remainingWork: ["2026年5月公表の問11〜60の追加", "法改正影響の継続確認"],
+      remainingWork: ["次回公表分の追加", "法改正影響の継続確認"],
   },
   {
     slug: "denken3",
