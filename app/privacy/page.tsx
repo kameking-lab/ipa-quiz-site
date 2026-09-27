@@ -199,7 +199,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               資格試験のトップページと一部の読み物記事では、ページ末尾に <strong>Google AdSense</strong> の広告枠を設けています。
-              Google などの第三者配信事業者は Cookie を使用し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
+              Google などの第三者配信事業者は、広告配信・効果測定・不正利用防止のため、Cookie、ウェブビーコン、IPアドレスなどの技術で閲覧情報を取得し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
               Google が広告 Cookie を使用することで、Google とそのパートナーは利用者に適した広告を表示できます。
               利用者は{" "}
               <a
@@ -308,7 +308,7 @@ export default function PrivacyPage() {
               This service is primarily intended for users in Japan and operates in accordance with the Japanese Act on the Protection of Personal Information (個人情報保護法).
             </p>
             <p>
-              <strong>EU / EEA residents (GDPR):</strong> If you are located in the European Economic Area, you may have rights under the General Data Protection Regulation, including the right to access, correct, or request deletion of your personal data. Because this service does not collect personal data without login and does not serve targeted advertising, most anonymous interactions fall outside the scope of GDPR data-subject rights. For any request, please contact us via{" "}
+              <strong>EU / EEA residents (GDPR):</strong> If you are located in the European Economic Area, you may have rights under the General Data Protection Regulation, including the right to access, correct, or request deletion of your personal data. When advertising is enabled, Google and its partners may use cookies and other identifiers for personalized or non-personalized ads, as described in Section 3. For any request, please contact us via{" "}
               <a
                 href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                 target="_blank"

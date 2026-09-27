@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -71,7 +72,9 @@ export default function SearchPage() {
           </p>
         </header>
 
-        <SearchClient />
+        <Suspense fallback={<p role="status" className="text-sm text-muted-foreground">検索フォームを準備しています。</p>}>
+          <SearchClient />
+        </Suspense>
       </div>
     </main>
   );
