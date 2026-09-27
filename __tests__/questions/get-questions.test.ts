@@ -66,7 +66,8 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("denko1");
     expect(codes).toContain("tohan");
     expect(codes).toContain("denken1");
-    expect(codes.length).toBe(33);
+    expect(codes).toContain("kanri");
+    expect(codes.length).toBe(34);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

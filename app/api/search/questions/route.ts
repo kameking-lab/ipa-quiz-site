@@ -19,7 +19,7 @@ const EXAM_CODES = [
   "sc",
   "sm",
   "au",
-  "fp1", "fp2", "fp3", "takken", "tohan",
+  "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ] as const;
 
 const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"] as const;

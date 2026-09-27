@@ -39,6 +39,7 @@ export const EXAM_LABELS: Record<string, string> = {
   shakai: "社会福祉士",
   seishin: "精神保健福祉士",
   tohan: "登録販売者",
+  kanri: "管理業務主任者",
 };
 
 export function examLabel(exam: string): string {

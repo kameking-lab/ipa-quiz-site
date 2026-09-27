@@ -11,8 +11,8 @@ import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition }
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
 export const metadata: Metadata = {
-  title: "FP・電気・施工管理・福祉・登録販売者の公式公開過去問",
-  description: "FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・土木・管工事・造園・電気通信工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、公式問題・正答と学習用解説で学べます。",
+  title: "FP・電気・施工管理・不動産・福祉などの公式公開過去問",
+  description: "公開中の資格について、年度・科目別に公式問題と正答を確認し、学習用解説を使って演習できます。資格ごとの収録数は一覧で確認できます。",
   alternates: { canonical: "/qualifications" },
 };
 
@@ -37,7 +37,7 @@ export default function QualificationsPage() {
         <Badge variant="soft" className="mb-3">公式公開資料から収録</Badge>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・1級・2級土木施工管理・2級管工事施工管理・2級造園施工管理・2級電気通信工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、年度と科目から選べます。
+          公開中の資格を年度と科目から選べます。各カードに現在の収録数と公式資料へのリンクを表示しています。
         </p>
       </header>
 

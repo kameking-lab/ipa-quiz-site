@@ -28,6 +28,7 @@ import { CIVIL1_QUESTIONS } from "./civil1";
 import { SHAKAI_QUESTIONS } from "./shakai";
 import { SEISHIN_QUESTIONS } from "./seishin";
 import { TOHAN_QUESTIONS } from "./tohan";
+import { KANRI_QUESTIONS } from "./kanri";
 import { DENKEN3_QUESTIONS } from "./denken3";
 import { DENKEN2_QUESTIONS } from "./denken2";
 import { DENKEN1_QUESTIONS } from "./denken1";
@@ -79,6 +80,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
   ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
+  ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
