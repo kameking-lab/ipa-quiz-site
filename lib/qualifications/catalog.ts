@@ -379,9 +379,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/",
     officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/",
     status: "live",
-    reuseSummary: "2026年4月公表試験（2025年7月～12月実施分）から、労働生理の問35～問44を公式問題と照合して収録。",
+    reuseSummary: "2026年4月公表試験（2025年7月～12月実施分）から、労働衛生の問30～問34、労働生理の問35～問44を公式問題と照合して収録。",
     attributionTemplate: "出典：安全衛生技術試験協会 令和8年4月公表 第一種衛生管理者免許試験",
-    remainingWork: ["2026年4月公表分の残る34問を照合して追加", "2026年1月以降に施行された法令を扱う問題は別途更新確認"],
+    remainingWork: ["2026年4月公表分の残る29問を照合して追加", "2026年1月以降に施行された法令を扱う問題は別途更新確認"],
   },
   {
     slug: "boki3",

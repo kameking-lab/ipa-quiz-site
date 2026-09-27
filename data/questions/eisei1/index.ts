@@ -1,8 +1,10 @@
 import type { Question } from "@/lib/questions/types";
+import { EISEI1_2026_BATCH_02 } from "./2026-batch-02";
 
 const sourcePdfUrl = "https://www.exam.or.jp/wp-content/uploads/2026/04/LC20260415-1.pdf";
 
 export const EISEI1_QUESTIONS: Question[] = [
+  ...EISEI1_2026_BATCH_02,
   {
     id: "eisei1-2026-published-gakka-q35", exam: "eisei1", session: "gakka", year: 2026,
     season: "published", qNumber: 35, officialAnswerNumber: "4", type: "multiple-choice",
