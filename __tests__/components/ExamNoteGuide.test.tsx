@@ -60,6 +60,14 @@ describe("ExamNoteGuide", () => {
     expect(screen.getByLabelText("無料の答案ガイド")).toBeInTheDocument();
   });
 
+  it("links the first-class hygiene exam to its free review note", () => {
+    render(<ExamNoteGuide exam="eisei1" />);
+    expect(screen.getByText("第一種衛生管理者の誤答を次の1問につなぐ復習メモ")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href", "https://note.com/anzen_ai_jp/n/n076a2e17ba95",
+    );
+  });
+
   it("renders the verified AU guide with the exam_au source and fires a labelled click", () => {
     render(<ExamNoteGuide exam="au" />);
     expect(screen.getByText("noteの無料ガイド")).toBeInTheDocument();
