@@ -138,7 +138,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
   { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
-  { code: "kanri", name: "管理業務主任者", sub: "2025年の公式過去問16問を先行収録", domain: "money" },
+  { code: "kanri", name: "管理業務主任者", sub: "2025年の公式過去問23問を先行収録", domain: "money" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
