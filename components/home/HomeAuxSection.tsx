@@ -6,6 +6,7 @@ import { CalendarClock, MessageCircleQuestion, RotateCcw } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
 import { EXAM_LABELS } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 const VALID_EXAM_IDS = new Set<string>(Object.keys(EXAM_LABELS));
 
@@ -47,12 +48,21 @@ export function HomeAuxSection() {
           <div className="min-w-0 flex-1">
             <p className="text-xs text-zinc-500 dark:text-zinc-400">受験日・申込期間</p>
             <a
+              href={tsuginoScheduleUrl(resume?.exam)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline underline-offset-4"
+            >
+              次の資格で日程・申込締切を確認
+            </a>
+            <span className="mx-2 text-zinc-400" aria-hidden="true">·</span>
+            <a
               href="https://www.ipa.go.jp/shiken/mousikomi/schedule.html"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline underline-offset-4"
             >
-              試験区分ごとの公式日程を確認
+              IPA公式日程
             </a>
             <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
               2026年度のAP・高度試験・SCはCBT方式。区分・科目ごとに期間が異なります。

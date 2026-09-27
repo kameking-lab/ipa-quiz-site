@@ -9,6 +9,7 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { daysUntil } from "@/lib/learning/analytics";
 import type { ExamCode } from "@/lib/questions/types";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 const EXAM_OPTIONS: { code: ExamCode; label: string }[] = [
   { code: "ip", label: "IT パスポート" },
@@ -103,6 +104,14 @@ export function StudyPlanClient() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
+            <a
+              href={tsuginoScheduleUrl(exam)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-2 inline-block text-sm text-sky-700 underline underline-offset-4 dark:text-sky-300"
+            >
+              試験日・申込締切を「次の資格」で確認
+            </a>
             <label
               htmlFor="study-plan-exam"
               className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
