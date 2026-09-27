@@ -825,6 +825,52 @@
     "lastUpdated": "2026-09-27"
   },
   {
+    "id": "fp1-2026-may-gakka-q21",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 21,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "株価指数先物",
+      "取引最終日",
+      "SQ"
+    ],
+    "difficulty": 4,
+    "question": "大阪取引所における株価指数先物取引に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "株価指数先物取引では、対象とする株価指数の変動によっては、差し入れた証拠金の額を上回る損失が発生する場合がある。",
+      "イ": "株価指数先物取引は、祝日取引の対象とされており、国内の一定の祝日にも取引を行うことができる。",
+      "ウ": "株価指数先物取引のうち、日経225先物やＴＯＰＩＸ先物の立会には、日中立会と夜間立会（ナイト・セッション）があり、いずれの立会においても、オープニング・オークションとクロージング・オークションが導入されている。",
+      "エ": "株価指数先物取引のうち、日経225先物やＴＯＰＩＸ先物の取引最終日は、原則として、各限月の第２金曜日（ＳＱ日）となり、ＳＱ日までに反対売買で決済されなかった建玉は、最終清算数値（ＳＱ値）により決済される。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "日経225先物やTOPIX先物の取引最終日は、原則としてSQ日の前営業日です。第2金曜日のSQ日自体を取引最終日とする4が最も不適切です。未決済の建玉はSQ値で最終決済されます。",
+    "choiceExplanations": {
+      "ア": "適切です。先物取引は証拠金を差し入れて行うため、相場変動による損失が証拠金を上回る場合があります。",
+      "イ": "適切です。大阪取引所の株価指数先物は所定の祝日取引の対象です。",
+      "ウ": "適切です。日中・夜間の各立会にオープニングとクロージングのオークションがあります。",
+      "エ": "最も不適切です。取引最終日は原則として第2金曜日のSQ日の前営業日で、SQ日ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://www.jpx.co.jp/derivatives/products/domestic/225futures/01.html",
+      "https://www.jpx.co.jp/derivatives/rules/holidaytrading/",
+      "https://www.jpx.co.jp/derivatives/rules/trading-hours/"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-09-27"
+  },
+  {
     "id": "fp1-2026-may-gakka-q22",
     "exam": "fp1",
     "session": "gakka",
@@ -862,6 +908,191 @@
     "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
     "officialReferenceUrls": [
       "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/portfolio-risk-return-part-2"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-09-27"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q24",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 24,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "日本投資者保護基金",
+      "FX",
+      "分別管理"
+    ],
+    "difficulty": 4,
+    "question": "日本投資者保護基金に関する次の記述のうち、適切なものはいくつあるか。なお、記載のない事項については考慮しないものとする。\n(a)顧客がＡ証券会社で行っている外国為替証拠金取引に係る証拠金について、Ａ証券会社の破綻時において区分管理がなされていないために返還されない場合であっても、日本投資者保護基金による補償を受けることはできない。\n(b)顧客がＢ証券会社で購入した社債について、その発行会社が破綻したために元金の償還や利子の支払がなされない場合であっても、日本投資者保護基金による補償を受けることはできない。\n(c)顧客がＣ証券会社で購入した上場株式について、Ｃ証券会社の破綻時において分別管理がなされていないために返還されず、日本投資者保護基金による補償を受ける場合、補償額は、当該株式の取得価額に基づき算出され、1,000万円が上限となる。",
+    "choices": {
+      "ア": "１つ",
+      "イ": "２つ",
+      "ウ": "３つ",
+      "エ": "０（なし）"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "適切なのは(a)と(b)の2つです。FX取引の証拠金と社債発行会社の破綻による損失は基金の補償対象外です。一方、証券会社が分別管理に違反して顧客株式を返せない場合の補償は取得価額ではなく時価で評価されます。",
+    "choiceExplanations": {
+      "ア": "(a)だけではありません。FX取引の証拠金が補償対象外という(a)に加え、発行会社の破綻による損失を対象外とする(b)も適切です。",
+      "イ": "適切です。(a)と(b)が正しく、(c)は補償額の評価を取得価額とする点が誤りなので2つです。",
+      "ウ": "(c)は誤りです。証券会社が返還できない顧客資産の補償は有価証券の時価で評価し、1人1,000万円が上限です。",
+      "エ": "(a)と(b)が適切なので、0ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://jipf.or.jp/qa/"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-09-27"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q25",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 25,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "事業所得",
+      "必要経費",
+      "事業用車両"
+    ],
+    "difficulty": 4,
+    "question": "居住者に係る所得税の事業所得に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "個人事業主が支払った事業所得を生ずべき事業の用に供する資産に係る固定資産税や不動産取得税は、事業所得の金額の計算上、必要経費に算入することができる。",
+      "イ": "個人事業主が支出した交際費で、事業所得を生ずべき事業の遂行上、直接必要と認められるものについては、事業所得の金額の計算上、その支出額の全額を必要経費に算入することができる。",
+      "ウ": "個人事業主が、事業所得を生ずべき事業の用に供している取得価額150万円の車両を売却した場合、事業所得の金額の計算上、当該車両の売却価額を総収入金額に算入し、当該車両の未償却残高を必要経費に算入することができる。",
+      "エ": "個人事業主が、生計を一にする親族が発行済株式の全部を保有する会社が所有する建物を賃借して事業所得を生ずべき事業の用に供している場合において、当該会社に支払った適正な賃借料は、事業所得の金額の計算上、必要経費に算入することができる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "取得価額150万円の事業用車両は通常の減価償却資産です。その売却による所得は原則として譲渡所得で計算し、売却価額を事業所得の総収入、未償却残高を事業所得の必要経費とする3が最も不適切です。",
+    "choiceExplanations": {
+      "ア": "適切です。事業用資産に係る固定資産税や不動産取得税は、事業所得の必要経費に算入できます。",
+      "イ": "適切です。個人事業の遂行に直接必要な交際費には、法人の交際費に適用されるような一律の損金算入限度額はありません。",
+      "ウ": "最も不適切です。取得価額150万円の事業用車両の売却は原則として譲渡所得の対象であり、売却収入と未償却残高を事業所得で直接処理しません。",
+      "エ": "適切です。賃貸人は親族本人ではなく別人格の会社です。事業用建物について会社に支払う適正な賃借料は必要経費になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2215.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3105.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2210.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-09-27"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q27",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 27,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "損益通算",
+      "非上場株式",
+      "不動産所得"
+    ],
+    "difficulty": 4,
+    "question": "居住者に係る所得税の損益通算等に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "非上場株式を譲渡したことにより生じた譲渡損失の金額は、確定申告をした場合であっても、同一年中に支払を受けた非上場株式の配当に係る配当所得の金額と損益通算することができない。",
+      "イ": "特定口座（源泉徴収選択口座）内の上場株式を譲渡したことにより生じた譲渡損失の金額は、確定申告をすることにより、同一年中に非上場株式を譲渡したことにより生じた譲渡所得の金額と通算することができる。",
+      "ウ": "不動産所得の金額の計算上生じた損失の金額のうち、不動産所得を生ずべき業務の用に供する建物の取得に要した負債の利子の額に相当する部分の金額は、他の所得の金額と損益通算することができない。",
+      "エ": "所有する賃貸アパートを取り壊したことにより生じた損失の金額は、当該貸付が事業的規模で行われていた場合、不動産所得の金額の計算上、その損失の金額を控除する前の不動産所得の金額を限度として必要経費に算入することができる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "非上場株式の譲渡損失を非上場株式の配当所得と損益通算する制度はありません。したがって1が適切です。上場株式等の譲渡損失の特例は、所定の上場株式等の配当等に限られます。",
+    "choiceExplanations": {
+      "ア": "適切です。一般株式等である非上場株式の譲渡損失は、非上場株式の配当所得から控除できません。",
+      "イ": "上場株式等の譲渡損失は、一般株式等である非上場株式の譲渡益とは通算できません。",
+      "ウ": "不動産所得の損失のうち損益通算が制限される借入金利子は土地等の取得に係るものです。建物の取得に係る利子ではありません。",
+      "エ": "事業的規模の賃貸用固定資産の取壊し損失は全額を必要経費に算入できます。所得金額までの限度は事業的規模に満たない場合の扱いです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1391.htm",
+      "https://www.keisan.nta.go.jp/r1yokuaru/aoiroshinkoku/shunyukingaku/shunyukingaku/fudosan_kashitsuke.html"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-09-27"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q28",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 28,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "扶養控除",
+      "配偶者控除",
+      "準確定申告"
+    ],
+    "difficulty": 4,
+    "question": "居住者に係る所得税の所得控除に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、ほかに必要とされる要件等はすべて満たしているものとする。",
+    "choices": {
+      "ア": "Ａさん（50歳）と同居していた父Ｂさん（75歳）が病気により入院し、2025年12月31日時点においても入院中であった場合に、父Ｂさんが老人扶養親族に該当するときは、2025年分の所得税において、Ａさんは父Ｂさんについて同居老親等として扶養控除の適用を受けることができる。",
+      "イ": "Ｃさん（45歳）の妻Ｄさん（45歳）が2025年４月に死亡した場合に、妻Ｄさんが控除対象配偶者に該当し、かつ、Ｃさんがひとり親に該当するときは、2025年分の所得税において、Ｃさんは配偶者控除とひとり親控除の両方の適用を受けることができる。",
+      "ウ": "Ｅさん（50歳）の妻Ｆさん（50歳）が2025年４月に死亡した場合に、妻Ｆさんの準確定申告において、長女Ｇさん（16歳）に係る扶養控除の適用を受けるときは、2025年分の所得税において、Ｅさんは長女Ｇさんに係る扶養控除の適用を受けることができない。",
+      "エ": "Ｈさん（60歳）が妻Ｉさん（60歳）および長男Ｊさん（28歳）と2025年12月31日時点で同居している場合に、2025年分の所得税において、長男Ｊさんが妻Ｉさんに係る扶養控除の適用を受けるときは、同年分の所得税において、Ｈさんは妻Ｉさんに係る配偶者控除の適用を受けることができない。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "死亡した妻の準確定申告で長女の扶養控除を受けても、同年末に父の扶養親族の要件を満たせば父も扶養控除を受けられます。これを認めない3が最も不適切です。判定時点が死亡時と年末で異なります。",
+    "choiceExplanations": {
+      "ア": "適切です。病気療養のための入院は、長期に及んでも同居老親等の同居として扱えます。",
+      "イ": "適切です。年の途中で配偶者が死亡した場合、要件を満たせば配偶者控除とひとり親控除を併用できます。",
+      "ウ": "最も不適切です。死亡した妻の準確定申告での扶養控除と、年末の夫の扶養控除は、各判定時点の要件を満たせば両方適用できます。",
+      "エ": "適切です。年末に同じ人について複数の納税者が重複して扶養控除・配偶者控除を受けることはできません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm",
+      "https://www.nta.go.jp/law/shitsugi/gensen/03/10.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180_qa.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1191_qa.htm"
     ],
     "license": "KINZAI-reuse-with-attribution",
     "lawReferenceDate": "2025-10-01",
