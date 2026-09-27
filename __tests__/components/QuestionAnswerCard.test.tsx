@@ -182,6 +182,7 @@ describe("QuestionAnswerCard — after-answer note guide placement", () => {
     expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ }).map((link) => link.getAttribute("href"))).toEqual([
       "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
       "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
+      "https://note.com/ipa_quiz_ai/n/ncd8e18eecdc0",
     ]);
   });
 
