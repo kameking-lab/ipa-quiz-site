@@ -91,3 +91,21 @@ describe("CopilotMobileSheet — 閉じたらトリガーへフォーカス復�
     });
   });
 });
+
+describe("解答直後の AI 質問", () => {
+  it.each(["desktop", "mobile"])("%s で誤答の質問文を編集可能な状態で開く", (kind) => {
+    const props = {
+      question,
+      selectedChoice: "ア",
+      isCorrect: false,
+      initialPrompt: "なぜ選択肢アは違うの？",
+      onRateLimitHit: () => {},
+      defaultOpen: true,
+    };
+    const view = render(kind === "desktop"
+      ? <CopilotDesktopFloating {...props} />
+      : <CopilotMobileSheet {...props} />);
+    const input = view.getByRole("textbox", { name: "AIへの質問を入力（Enter で送信、Shift+Enter で改行）" }) as HTMLTextAreaElement;
+    expect(input.value).toBe("なぜ選択肢アは違うの？");
+  });
+});

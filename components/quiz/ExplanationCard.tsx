@@ -121,7 +121,7 @@ export function ExplanationCard({
         >
           <span className="flex items-center gap-2">
             <Sparkles className="h-4 w-4" />
-            なぜ間違えた？ AI が分析
+            なぜ間違えた？ AIに質問する
           </span>
           <ArrowRight className="h-4 w-4" />
         </button>
@@ -186,7 +186,7 @@ export function ExplanationCard({
           className="sm:flex-1"
         >
           <Sparkles className="h-4 w-4" />
-          もっと詳しく（AI）
+          この問題をAIに質問
         </Button>
         <Button
           variant="primary"

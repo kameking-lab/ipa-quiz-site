@@ -115,13 +115,13 @@ export default async function AdminApiUsagePage() {
           icon={<DollarSign className="h-4 w-4" />}
           label="推定コスト 1時間"
           value={`¥${stats.estimatedCostJpy.last1h.toFixed(2)}`}
-          sub="Gemini 2.5 Flash-Lite 前提"
+          sub="固定単価の概算。モデル別実費ではありません"
         />
         <KpiCard
           icon={<DollarSign className="h-4 w-4" />}
           label="推定コスト 24時間"
           value={`¥${stats.estimatedCostJpy.last24h.toFixed(2)}`}
-          sub="Gemini 2.5 Flash-Lite 前提"
+          sub="固定単価の概算。モデル別実費ではありません"
         />
       </section>
 

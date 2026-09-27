@@ -530,6 +530,7 @@ export function QuizPlayer({
         question={question}
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
+        initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}
         headerRight={
@@ -546,6 +547,7 @@ export function QuizPlayer({
         question={question}
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
+        initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}
         key={`mobile-${question.id}-${copilotQuery ?? ""}`}
