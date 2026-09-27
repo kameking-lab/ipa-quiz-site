@@ -1,9 +1,11 @@
 import type { Question } from "@/lib/questions/types";
 import { EISEI1_2026_BATCH_02 } from "./2026-batch-02";
+import { EISEI1_2026_BATCH_03 } from "./2026-batch-03";
 
 const sourcePdfUrl = "https://www.exam.or.jp/wp-content/uploads/2026/04/LC20260415-1.pdf";
 
 export const EISEI1_QUESTIONS: Question[] = [
+  ...EISEI1_2026_BATCH_03,
   ...EISEI1_2026_BATCH_02,
   {
     id: "eisei1-2026-published-gakka-q35", exam: "eisei1", session: "gakka", year: 2026,
