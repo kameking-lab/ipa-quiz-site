@@ -179,6 +179,7 @@ export async function POST(req: Request) {
     userMessages,
     model,
     maxTokens,
+    temperature: 0.2,
     clientSignal: req.signal,
     citationFooter: rag.citationFooter,
     hasGrounding: rag.hasGrounding,

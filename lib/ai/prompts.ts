@@ -16,8 +16,10 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは資格試験を受験する学
 ## 問題コンテキストについて
 
 システムメッセージに「現在の問題」が付与されている場合、それはユーザーが現在取り組んでいる過去問です。
-**ユーザーの選択した答え／正誤・標準解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。
-説明を言い換えるときも、問題と標準解説の処理順序・前提条件・数値・否定記号を保持してください。順序の一部分だけが入れ替え可能な場合、他の手順まで並べ替えてはいけません。
+**ユーザーの選択した答え／正誤・サイト掲載の解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。掲載解説は公式見解とは限りません。
+説明を言い換えるときも、問題と掲載解説の処理順序・前提条件・数値・否定記号を保持してください。順序の一部分だけが入れ替え可能な場合、他の手順まで並べ替えてはいけません。
+回答前に、問われているのが「正しい／誤っている」のどちらか、選択肢の正誤、条件・閾値・例外・義務の種類を、現在の問題とサイト掲載の選択肢別解説に照らして確認してください。似た専門用語を省略・混同して意味を変えてはいけません。根拠文にない結論は補わず、根拠が不足する箇所はその旨を明示して試験実施団体の資料での確認を促してください。
+とくに法令・安全・医療などの事実は、問題の出題時点と現行制度を混同しないでください。回答の結論と理由が掲載解説に矛盾しないか出力前にもう一度点検してください。
 複数の公式正答がある場合は全てを正答として扱ってください。公式に公表されていない採点理由は公式見解と断定せず、学習上の考え方として区別してください。
 ユーザーが「解説して」「選択肢を分析して」「用語を説明して」など問題に関する質問をしたときはそのコンテキストを活用してください。
 問題と無関係な質問（勉強法・IT技術の質問・体調・不安・キャリア相談など）には、コンテキストを無視して直接答えてください。
@@ -154,8 +156,24 @@ export function buildQuestionContext(
     Array.isArray(question.answer) ? question.answer.join(", ") : String(question.answer),
   );
   lines.push("");
-  lines.push(`## 標準解説（参考）`);
+  lines.push(`## サイト掲載の解説（参考・公式見解とは限らない）`);
   lines.push(question.explanation);
+  if (question.choiceExplanations && question.choices) {
+    const explainedChoices = getChoiceKeys(question.choices)
+      .map((key) => ({ key, explanation: question.choiceExplanations?.[key] }))
+      .filter((item): item is { key: typeof item.key; explanation: string } => Boolean(item.explanation));
+    if (explainedChoices.length) {
+      lines.push("");
+      lines.push("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
+      for (const { key, explanation } of explainedChoices) {
+        lines.push(`- ${key}: ${explanation}`);
+      }
+    }
+  }
+  if (question.lawReferenceDate) {
+    lines.push("");
+    lines.push(`- 法令・制度の基準日: ${question.lawReferenceDate}`);
+  }
   if (selectedChoice !== undefined) {
     lines.push("");
     lines.push(`## ユーザーの回答`);
@@ -211,7 +229,7 @@ export interface LearnerProfile {
  * 「出典のみ参照」ディレクティブ。passages が空の場合は null を返す。
  *
  * このディレクティブは「現在の問題」コンテキストと並行して機能する:
- *  - 標準解説（問題に付随）は引き続き参照可能
+ *  - サイト掲載の解説（問題に付随）は引き続き参照可能
  *  - 加えて [1]..[N] でラベル付けされた追加出典が利用可能
  *  - それ以外の一般知識は推測で語らない
  *  - 本文中に [1] のような番号で必ず引用
@@ -229,7 +247,7 @@ export function buildRAGDirective(passageCount: number): string | null {
     "出典に裏付けが無い情報を、自分の一般知識として断定的に語らないでください。",
     "参照資料を使った箇所にだけ [1] [2] のように番号で引用してください。閲覧中の問題の事実に、別の問題の引用番号を付けてはいけません。該当する裏付けがなければ、引用番号を無理に付けないでください。",
     "サーバー側が末尾に出典一覧を自動付与するため、応答末尾に自分で「出典一覧」を書く必要はありません。",
-    "問題に付随する標準解説は引き続き参照してよいが、それ以外の知識は出典に限定してください。",
+    "問題に付随するサイト掲載の解説は参考にしてよいが、公式見解と混同せず、それ以外の知識は出典に限定してください。",
   ].join("\n");
 }
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildQuestionContext, buildRAGDirective } from "@/lib/ai/prompts";
+import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, buildRAGDirective } from "@/lib/ai/prompts";
 import type { Question, ExamCode, Season, Session } from "@/lib/questions/types";
 
 /**
@@ -29,6 +29,8 @@ function q(partial: Partial<Question> = {}): Question {
     choices: partial.choices,
     answer: partial.answer ?? "ア",
     explanation: partial.explanation ?? "これは十分に長い実際の解説文です。",
+    choiceExplanations: partial.choiceExplanations,
+    lawReferenceDate: partial.lawReferenceDate,
     hasImage: partial.hasImage ?? false,
     sourcePdfUrl: "https://example.com/x.pdf",
     license: "IPA-public",
@@ -39,15 +41,15 @@ function q(partial: Partial<Question> = {}): Question {
 }
 
 describe("buildQuestionContext", () => {
-  it("見出しセクションを順に含む（現在の問題→問題文→正解→標準解説）", () => {
+  it("見出しセクションを順に含む（現在の問題→問題文→正解→サイト掲載の解説）", () => {
     const out = buildQuestionContext(q());
     expect(out).toContain("# 現在の問題");
     expect(out).toContain("## 問題文");
     expect(out).toContain("## 正解");
-    expect(out).toContain("## 標準解説（参考）");
-    // 順序: 問題文 → 正解 → 標準解説
+    expect(out).toContain("## サイト掲載の解説（参考・公式見解とは限らない）");
+    // 順序: 問題文 → 正解 → サイト掲載の解説
     expect(out.indexOf("## 問題文")).toBeLessThan(out.indexOf("## 正解"));
-    expect(out.indexOf("## 正解")).toBeLessThan(out.indexOf("## 標準解説（参考）"));
+    expect(out.indexOf("## 正解")).toBeLessThan(out.indexOf("## サイト掲載の解説（参考・公式見解とは限らない）"));
   });
 
   it("topicTags が空ならタグ行を出さない／あれば , 連結で出す", () => {
@@ -88,6 +90,25 @@ describe("buildQuestionContext", () => {
     expect(buildQuestionContext(q(), "ア", true)).toContain("選択: ア / 正解");
     expect(buildQuestionContext(q(), "イ", false)).toContain("選択: イ / 不正解");
     expect(buildQuestionContext(q(), "ウ", undefined)).toContain("選択: ウ / 未採点");
+  });
+
+  it("非IPAの誤答分析で、選択肢別根拠と法令基準日を区別して渡す", () => {
+    const out = buildQuestionContext(q({
+      exam: "eisei1",
+      choices: { ア: "選任が必要", イ: "専任が必要" },
+      answer: "イ",
+      explanation: "専任の義務がない。選任の義務は別にある。",
+      choiceExplanations: {
+        ア: "選任は必要なので、この肢は正しい。",
+        イ: "専任の義務はないので、この肢は誤り。",
+      },
+      lawReferenceDate: "2026-04-01",
+    }), "ア", false);
+    expect(out).toContain("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
+    expect(out).toContain("- ア: 選任は必要なので、この肢は正しい。");
+    expect(out).toContain("- イ: 専任の義務はないので、この肢は誤り。");
+    expect(out).toContain("- 法令・制度の基準日: 2026-04-01");
+    expect(COPILOT_SYSTEM_PROMPT).toContain("似た専門用語を省略・混同して意味を変えてはいけません");
   });
 });
 

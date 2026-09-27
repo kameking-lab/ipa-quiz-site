@@ -24,6 +24,8 @@ import {
   PinOff,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
+import { getChoiceKeys } from "@/lib/questions/answers";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { setCopilotPanelOpen } from "@/lib/copilot/visibility";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
@@ -1196,9 +1198,29 @@ export function CopilotPanel({
 
       {/* AI disclaimer */}
       {messages.some((m) => m.role === "assistant") && (
-        <p className="px-3 pb-1 text-[10px] leading-snug text-zinc-400 dark:text-zinc-600">
-          ※ AI の回答は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
-        </p>
+        <div className="px-3 pb-1 text-[11px] leading-snug text-zinc-500 dark:text-zinc-400">
+          <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
+          {selectedChoice && question.choices && question.choiceExplanations && (
+            <details className="mt-1">
+              <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
+              <ul className="mt-1 space-y-1 pl-3">
+                {getChoiceKeys(question.choices)
+                  .filter((key) => selectedChoice.split("・").includes(key) ||
+                    (Array.isArray(question.answer) ? question.answer : [question.answer]).includes(key))
+                  .map((key) => question.choiceExplanations?.[key] && (
+                    <li key={key}>
+                      {choiceDisplayLabel(question.exam, key)}: {question.choiceExplanations[key]}
+                    </li>
+                  ))}
+              </ul>
+              {(question.sourceAnswerUrl || question.sourcePdfUrl) && (
+                <a href={question.sourceAnswerUrl || question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block underline underline-offset-2">
+                  問題データの出典PDFを開く
+                </a>
+              )}
+            </details>
+          )}
+        </div>
       )}
 
       {/* Input form */}
