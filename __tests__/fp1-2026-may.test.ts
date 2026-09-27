@@ -11,11 +11,11 @@ import { parseQuestionBlocks } from "@/components/quiz/QuestionBody";
 
 describe("FP1 2026 May academic pilot", () => {
   it("exposes exactly the reviewed part of the official basic paper", () => {
-    expect(FP1_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 20, 22, 48]);
-    expect(FP1_QUESTIONS.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "3", "2", "3", "4", "4", "3", "4", "1", "1", "3", "2", "2"]);
-    expect(FP1_QUESTIONS.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "ウ", "イ", "ウ", "エ", "エ", "ウ", "エ", "ア", "ア", "ウ", "イ", "イ"]);
-    expect(QUESTIONS_BY_EXAM.fp1).toHaveLength(15);
-    expect(getQuestionsByExamStrict("fp1")).toHaveLength(15);
+    expect(FP1_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 22, 48]);
+    expect(FP1_QUESTIONS.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "3", "2", "3", "4", "4", "3", "4", "1", "4", "4", "2", "1", "3", "1", "3", "2", "2"]);
+    expect(FP1_QUESTIONS.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "ウ", "イ", "ウ", "エ", "エ", "ウ", "エ", "ア", "エ", "エ", "イ", "ア", "ウ", "ア", "ウ", "イ", "イ"]);
+    expect(QUESTIONS_BY_EXAM.fp1).toHaveLength(20);
+    expect(getQuestionsByExamStrict("fp1")).toHaveLength(20);
     expect(defaultPracticeSession("fp1")).toBe("gakka");
     expect(EXAM_CONFIGS.fp1.sessions[0]?.expectedQuestions).toBe(50);
   });
