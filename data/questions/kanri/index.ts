@@ -1,12 +1,13 @@
 import type { Question } from "@/lib/questions/types";
+import { KANRI_BATCH_02 } from "./2025-batch-02";
 
 const sourcePdfUrl = "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r07.pdf";
 const civilCodeUrl = "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20250401";
 const standardContractUrl = "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/content/001630188.pdf";
 const unfinishedBuildingPrecedentUrl = "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-6997.pdf";
 
-/** 2025年の公式50問から、原文・正答・全肢の根拠を確認した5問のみ公開。 */
-export const KANRI_QUESTIONS: Question[] = [
+/** 2025年の公式50問から、原文・正答・全肢の根拠を確認した設問のみ公開。 */
+const KANRI_PILOT_QUESTIONS: Question[] = [
   {
     id: "kanri-2025-annual-gakka-q1", exam: "kanri", session: "gakka", year: 2025,
     season: "annual", qNumber: 1, officialAnswerNumber: "4", type: "multiple-choice",
@@ -118,3 +119,6 @@ export const KANRI_QUESTIONS: Question[] = [
     lastUpdated: "2026-09-27", lawReferenceDate: "2025-04-01",
   },
 ];
+
+export const KANRI_QUESTIONS: Question[] = [...KANRI_PILOT_QUESTIONS, ...KANRI_BATCH_02]
+  .sort((a, b) => a.qNumber - b.qNumber);
