@@ -325,6 +325,23 @@ export default async function ExamTopPage({
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
         </header>
 
+        {code === "eisei2" && (
+          <section aria-label="受験日程と受験条件" className="mb-8 rounded-2xl border border-border bg-card p-5">
+            <h2 className="font-semibold text-foreground">受験日程と受験条件を確認する</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              公表問題の演習を進めながら、次の資格で今後の日程と申込条件を確認できます。
+            </p>
+            <a
+              href="https://tsugino-shikaku.jp/shikaku/eisei-kanrisha-2shu?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=eisei2_two_editions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+            >
+              次の資格で第二種衛生管理者の日程を見る ↗
+            </a>
+          </section>
+        )}
+
         {/* Big CTA */}
         <section aria-label="今すぐ解く" className="mb-8">
           {code === "fp2" || code === "fp3" ? (

@@ -45,6 +45,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // ────────────────────────────────────────────────────────────────────────────
 
 import { EISEI1_QUESTIONS } from "./eisei1";
+import { EISEI2_QUESTIONS } from "./eisei2";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -84,6 +85,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
   ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
+  ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
