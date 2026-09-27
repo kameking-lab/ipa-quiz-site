@@ -50,9 +50,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kinzai.or.jp/fp/news-fp/50260.html",
     officialReuseTermsUrl: "https://www.kinzai.or.jp/ginou/license_terms.html",
     status: "live",
-    reuseSummary: "2026年5月の学科・基礎編50問中、公式問題・模範解答と照合した20問を収録。",
+    reuseSummary: "2026年5月の学科・基礎編50問中、公式問題・模範解答と照合した25問を収録。",
     attributionTemplate: "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）",
-    remainingWork: ["2026年5月・学科基礎編の未収録30問の照合", "応用編の段階的収録", "法改正影響の継続確認"],
+    remainingWork: ["2026年5月・学科基礎編の未収録25問の照合", "応用編の段階的収録", "法改正影響の継続確認"],
   },
   {
     slug: "fp3",
