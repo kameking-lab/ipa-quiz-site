@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import source2025 from "./2025-october.json";
 import { EISEI1_2026_BATCH_02 } from "./2026-batch-02";
 import { EISEI1_2026_BATCH_03 } from "./2026-batch-03";
 import { EISEI1_2026_BATCH_04 } from "./2026-batch-04";
@@ -261,4 +262,5 @@ export const EISEI1_QUESTIONS: Question[] = [
     license: "EXAM-OR-JP-attributed", needsReview: false,
     lastUpdated: "2026-09-27",
   },
+  ...(source2025 as Question[]),
 ];
