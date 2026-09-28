@@ -35,13 +35,55 @@ function toItalicList(items: string[]): string {
 // これ以外（ap/sc/nw/db/es 等）は午後がモック/記述式で旗艦採点を出さない。
 const ESSAY_FLAGSHIP_EXAMS = new Set<ExamCode>(["st", "sa", "pm", "sm", "au"]);
 
+// IPA's current exam format, not the morning/afternoon labels used by old papers.
+// IP has one CBT paper; SG has A/B in one 120-minute sitting; FE has separate A/B.
+// Source: https://www.ipa.go.jp/shiken/kubun/{sg,fe}.html and
+// https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html
+function cbtSections(exam: ExamCode): {
+  intro: string;
+  knowledge: string;
+  application: string;
+  weekly: string;
+  finalMonth: string;
+} | null {
+  if (exam === "ip") {
+    return {
+      intro: "通年実施のCBT方式で、100問を120分で解く試験です。科目A・Bや午後・論文の区分はありません。",
+      knowledge: "ストラテジ・マネジメント・テクノロジの三分野を四択で確認します。公開問題を時間を測って解き、誤答した用語と選択肢の違いを説明できるようにします。",
+      application: "長い設問や計算問題は条件を整理して解きます。記述答案を作る練習は不要です。",
+      weekly: "- 平日朝：公開問題を10問解き、誤答を記録する\n- 平日夜：解説を読み、弱点用語を確認する\n- 週末：三分野を混ぜた四択演習を時間制限付きで行う",
+      finalMonth: "直前1ヶ月は三分野の誤答を解き直し、100問・120分の時間配分を確認します。",
+    };
+  }
+  if (exam === "sg") {
+    return {
+      intro: "通年実施のCBT方式で、科目Aと事例を扱う科目Bを合わせて60問・120分で解きます。午後試験や論文はありません。",
+      knowledge: "科目Aの知識問題では、用語の定義だけでなく管理策を選ぶ理由を確認します。",
+      application: "科目Bの事例問題は多肢選択式です。状況とリスクを整理し、選択肢の根拠を説明する練習をします。記述答案や論文を書く試験ではありません。",
+      weekly: "- 平日朝：科目Aの知識問題を10問解く\n- 平日夜：誤答の根拠と関連する管理策を確認する\n- 週末：科目Bの事例問題を時間制限付きで解く",
+      finalMonth: "直前1ヶ月は科目A・Bを組み合わせて解き、60問・120分の時間配分を確認します。",
+    };
+  }
+  if (exam === "fe") {
+    return {
+      intro: "通年実施のCBT方式で、科目A（60問・90分）と科目B（20問・100分）を受験します。現在の試験に午後記述・論文はありません。",
+      knowledge: "科目Aは四択の知識問題です。過去問と公開問題で基礎を確認し、誤答の理由を説明できるようにします。",
+      application: "科目Bはアルゴリズムとプログラミング、情報セキュリティを中心とする多肢選択式です。擬似言語を手でトレースし、条件や変数の変化を追います。記述答案や論文は書きません。",
+      weekly: "- 平日朝：科目Aの知識問題を10問解く\n- 平日夜：科目Bの擬似言語を手でトレースする\n- 週末：科目Bを時間制限付きで演習し、誤答を復習する",
+      finalMonth: "直前1ヶ月は科目Bのアルゴリズム演習を重ね、科目A・Bそれぞれの時間配分を確認します。",
+    };
+  }
+  return null;
+}
+
 /* ========== 1. 試験概要 + 合格戦略（13本） ========== */
 
 export function buildOverviewPost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
+  const cbt = cbtSections(exam);
   const slug = `${exam}-goukaku-benkyouhou`;
   const title = `${p.label} 合格までの勉強法・学習時間・出題傾向ガイド【${CURRENT_YEAR}年最新】`;
-  const description = `${p.label}の合格率・出題範囲・午前午後の傾向・推奨学習時間${p.studyHours}までを実務目線で整理。AI解説付き過去問学習の進め方も紹介。`;
+  const description = `${p.label}の合格率・出題範囲・${cbt ? "現行CBTの科目構成" : "科目A・Bの傾向"}・推奨学習時間${p.studyHours}までを整理。AI解説付き過去問学習の進め方も紹介。`;
 
   // 論文区分のみ、午後論述パートから旗艦=午後論述 AI 採点へ自然送客（実データの
   // ある st/sa/pm/sm/au 限定。それ以外は誇大になるため出さない）。
@@ -51,7 +93,7 @@ export function buildOverviewPost(exam: ExamCode, idx: number): BlogPost {
 
   const body = `# ${p.label} 合格までの勉強法
 
-${p.label}は ${p.targetAudience} を主対象にした国家試験で、IPA（情報処理推進機構）が春期・秋期に実施しています。本記事では、合格率の傾向・推奨学習時間・出題範囲・午前午後の戦略・直近の頻出論点を、最新の出題動向に沿って整理します。
+${p.label}は ${p.targetAudience} を主対象にした国家試験です。${cbt ? cbt.intro : "2026年度からCBT方式で実施され、従来の午前・午後は科目A・Bと呼ばれます。"}本記事では、推奨学習時間・出題範囲・現行形式に沿った学習法を整理します。
 
 > 本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず [IPA 公式ページ](https://www.ipa.go.jp/shiken/) で確認してください。
 
@@ -65,11 +107,11 @@ ${toItalicList(p.topics)}
 
 実務未経験の受験者は、上記すべてを浅く広く押さえようとすると挫折しやすいため、得意分野を 1 つ決めて深掘りし、残りは過去問演習で補強する戦略が現実的です。
 
-## 午前試験（基礎知識）の戦略
+## ${cbt ? "知識問題の対策" : "科目A（旧午前）の戦略"}
 
 ${p.morningStrategy}
 
-午前試験は知識の網羅性が問われるため、「過去 3 年分を 95% 取れる状態」を作ったうえで本番に臨むのが王道です。過去問AI では、年度別・分野別に過去問を絞り込めるため、頻出論点だけを集中的に回す学習が可能です。
+${cbt ? cbt.knowledge : "知識問題は過去問を反復し、誤答の理由まで説明できるようにします。過去問AI では年度別・分野別に問題を絞り込めます。"}
 
 ### 頻出のつまずきポイント
 
@@ -77,28 +119,28 @@ ${toItalicList(p.hardSpots)}
 
 これらは AI コパイロットに「どう違うのか比較表で」と質問することで、理解の死角を素早く埋められます。
 
-## 午後試験（記述・論文）の戦略
+## ${exam === "ip" ? "四択の応用問題" : exam === "sg" ? "科目Bの事例問題" : exam === "fe" ? "科目Bのアルゴリズム問題" : "科目B（旧午後）の戦略"}
 
 ${p.afternoonStrategy}
 
-午後試験では、知識を「自分の言葉で書ける」状態に仕上げる必要があります。具体的には次のステップで仕上げるのが効率的です。
+${cbt ? cbt.application : "科目Bでは、出題形式に合わせて長文の条件整理や記述・論述の練習をします。具体的には次の手順で仕上げます。"}
+
+${cbt ? "" : `
 
 1. 過去問の模範解答を **音読** して記述パターンを身体化する
 2. 同じ事例を見ない状態で **再現答案** を書く
 3. AI コパイロットに「採点基準と差分を提示して」と依頼する
 4. 差分の多かった用語を単語帳化して直前期に回す
 
-特に高度区分では、論述構成（章立て）の設計力が合否を分けます。同じ知識量でも、構成の良し悪しで評価が大きく変わるため、論文系の試験では最低でも 5 本の答案を書いてから本番に臨みたいところです。${flagshipEssayCta}
+${ESSAY_FLAGSHIP_EXAMS.has(exam) || exam === "es" ? "論述式の区分では答案構成を練習し、設問の題意に沿って書けるか確かめます。" : "記述式の区分では、設問の条件と解答根拠を短く正確に示す練習をします。"}${flagshipEssayCta}`}
 
 ## 推奨学習スケジュール
 
 ${p.studyHours} という学習時間を 6 ヶ月でこなす場合、週 12〜20 時間の確保が必要になります。社会人の方は次のような配分が現実的です。
 
-- 平日朝 30 分：午前過去問 10 問（過去問AI）
-- 平日夜 30 分：解答解説の読み込み＋AI コパイロット
-- 週末 4〜5 時間：午後問題の演習＋復習
+${cbt ? cbt.weekly : "- 平日朝：科目A（旧午前）の過去問演習\n- 平日夜：誤答の根拠を確認\n- 週末：科目B（旧午後）の演習と復習"}
 
-直前 1 ヶ月は午後問題に集中し、過去 3 年分の本試験を時間制限つきで解き切る習慣を作ります。
+${cbt ? cbt.finalMonth : "直前1ヶ月は科目Bを時間制限付きで解き、科目Aの誤答も復習します。"}
 
 ## よくある誤解
 
@@ -131,8 +173,8 @@ ${p.studyHours} という学習時間を 6 ヶ月でこなす場合、週 12〜2
 ## まとめ
 
 - ${p.label}は推奨 ${p.studyHours} の学習投資が必要
-- 直近の合格率は ${p.passRate}、午前は過去問反復が王道
-- 午後・論文は「構成 → 再現答案 → AI 添削」の三段階で仕上げる
+- 直近の合格率は ${p.passRate}。知識問題は過去問反復で仕上げる
+- ${cbt ? "現行CBTの出題形式に合わせて選択肢の根拠と時間配分を確認する" : "科目B（旧午後）は区分ごとの記述・論述形式に合わせて練習する"}
 - 過去問AI で過去問を高速演習し、AI コパイロットで弱点を埋める
 
 [${p.label} 過去問一覧](/${exam}) から学習を始めましょう。
@@ -158,9 +200,10 @@ ${p.studyHours} という学習時間を 6 ヶ月でこなす場合、週 12〜2
 
 export function buildLastMonthPost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
+  const cbt = cbtSections(exam);
   const slug = `${exam}-cyokusen-1kagetsu`;
   const title = `${p.label} 直前1ヶ月で合格点に乗せる詰め込み学習法`;
-  const description = `${p.label}本試験まで残り1ヶ月の段階で何をすべきかを、午前・午後・論文の優先順位とともに解説。直前期に効く頻出論点と過去問の回し方を紹介。`;
+  const description = `${p.label}本試験まで残り1ヶ月の段階で何をすべきかを、${cbt ? "現行CBTの出題形式" : "科目A・B"}に沿って解説。直前期に効く頻出論点と過去問の回し方を紹介。`;
 
   // 論文区分のみ、直前期の午後本番演習パートから旗艦=午後論述 AI 採点へ送客
   // （実データのある st/sa/pm/sm/au 限定。overview と同じゲートで誇大回避）。
@@ -170,7 +213,7 @@ export function buildLastMonthPost(exam: ExamCode, idx: number): BlogPost {
   // FE のみ、午後＝科目B（アルゴリズム・擬似言語）なので土台ピラーへ送客。
   const kamokuBCta =
     exam === "fe"
-      ? `\n\n基本情報の午後は科目B（アルゴリズムと擬似言語）が中心です。トレースの型が固まっていなければ、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で読み方を最短で整理してから本番演習に入ると伸びます。`
+      ? `\n\n基本情報の科目Bはアルゴリズムとプログラミングが中心です。トレースの型が固まっていなければ、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で読み方を整理してから本番演習に入りましょう。`
       : "";
   // FAQ 用の短縮 CTA（同じ ESSAY_FLAGSHIP_EXAMS / FE ゲートで誇大回避）。
   const faqEssayCta = ESSAY_FLAGSHIP_EXAMS.has(exam)
@@ -178,7 +221,7 @@ export function buildLastMonthPost(exam: ExamCode, idx: number): BlogPost {
     : "";
   const faqKamokuBCta =
     exam === "fe"
-      ? ` 午後の科目B（擬似言語）が不安なら[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku)でトレースの型を固めてから本番演習に入りましょう。`
+      ? ` 科目B（擬似言語）が不安なら[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku)でトレースの型を固めてから本番演習に入りましょう。`
       : "";
 
   const body = `# ${p.label} 直前1ヶ月で合格点に乗せる詰め込み学習法
@@ -191,35 +234,37 @@ export function buildLastMonthPost(exam: ExamCode, idx: number): BlogPost {
 
 1. 過去問演習の量を 2 倍にする
 2. **間違えた問題のみ** を 3 周以上回す
-3. 午後・論文は本番形式で時間を測って解く
+3. ${cbt ? "現行CBTと同じ形式・時間で演習する" : "科目B（旧午後）を本番形式で時間を測って解く"}
 
 新しい参考書を読みたくなる気持ちは合格者全員が経験していますが、ROI は確実に下がります。手元の過去問を回すほうが必ず点数につながります。
 
 ## 第1週：弱点把握フェーズ
 
-最初の 7 日は **弱点の可視化** に集中します。過去 5 年分の午前を解き、分野別の正答率を出します。${p.label} の場合、特に注意したい分野は次の通りです。
+最初の 7 日は **弱点の可視化** に集中します。${cbt ? "公開問題と過去問で、分野別の誤答を確認します。" : "過去問で科目A（旧午前）の分野別の誤答を確認します。"}${p.label} の場合、特に注意したい分野は次の通りです。
 
 ${toItalicList(p.hardSpots)}
 
 正答率が 60% を下回る分野が 2 つ以上ある場合、その分野の出題傾向を AI コパイロットに「過去5年分の傾向で多い論点を箇条書きで」と質問し、論点リストを作ります。
 
-## 第2週：午前試験の底上げ
+## 第2週：${cbt ? "知識問題の底上げ" : "科目A（旧午前）の底上げ"}
 
-午前は過去問 3 周が基本です。1 周目は通読、2 周目は誤答だけ、3 周目は誤答かつ自信のなかった問題のみ。${p.morningStrategy}
+知識問題は、1周目で全体を確認し、2周目以降は誤答と自信のなかった問題を優先します。${p.morningStrategy}
 
 時間配分の練習も忘れずに行いましょう。1 問あたりの判断速度を上げるため、過去問AI の年度別モードでタイマー付きで解くのが効果的です。
 
-## 第3週：午後試験の本番演習
+## 第3週：${exam === "ip" ? "四択の時間配分演習" : cbt ? "科目Bの本番演習" : "科目B（旧午後）の本番演習"}
 
 ${p.afternoonStrategy}
 
-午後は **時間配分が合否を分けます**。過去 3 年分を本番と同じ時間制限で解き、解き終わったら以下を書き出します。
+${cbt ? cbt.finalMonth : "科目Bは時間配分が重要です。公開問題・過去問を時間制限付きで解き、解き終わったら以下を振り返ります。"}
+
+${cbt ? "" : `
 
 - どの問題で時間を取られたか
 - 設問 1 と設問 2 のどちらで点を落としたか
 - 用語の読み違い・条件の見落としはどこか
 
-これを残り 14 日間、3 回分繰り返すだけで時間配分の感覚が劇的に良くなります。${flagshipEssayCta}${kamokuBCta}
+複数回演習し、苦手な設問を重点的に復習します。${flagshipEssayCta}`}${kamokuBCta}
 
 ## 第4週：仕上げと体調管理
 
@@ -265,7 +310,7 @@ ${p.afternoonStrategy}
 ## まとめ
 
 - 直前 1 ヶ月は新規教材を増やさない
-- 第1週で弱点可視化、第2週で午前底上げ、第3週で午後演習、第4週で仕上げ
+- 第1週で弱点可視化、第2週で知識問題の底上げ、第3週で${cbt ? "現行形式の演習" : "科目B演習"}、第4週で仕上げ
 - 時間配分の練習は本番と同じ条件で行う
 - 捨てる論点を決めて、確実に取れる問題で点を積む
 
@@ -288,6 +333,7 @@ ${p.afternoonStrategy}
 
 export function buildFrequentTopicsPost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
+  const cbt = cbtSections(exam);
   const slug = `${exam}-hinnshutsu-ronten-toppu10`;
   const title = `${p.label} 頻出論点トップ10と押さえ方｜過去5年分の傾向分析`;
   const description = `${p.label}の過去5年分の出題傾向から、合格に直結する頻出論点トップ10を抽出。各論点ごとの出題形式と効率的な押さえ方をまとめました。`;
@@ -310,11 +356,13 @@ ${p.label} の出題範囲は広大ですが、出題側にも明確な「頻出
 
 ## 頻出論点トップ10
 
+${cbt ? cbt.intro : "2026年度からのCBTでは、従来の午前・午後が科目A・Bに名称変更されています。"}
+
 ${ranks
   .map(
     (topic, i) => `### ${i + 1}. ${topic}
 
-${topic} は ${p.label} の中核論点であり、午前試験・午後試験ともに登場頻度が高い分野です。出題形式は以下のパターンが多く確認されています。
+${topic} は ${p.label} の重要論点です。問題演習では、次の観点で理解を確認します。
 
 - 用語の定義・特徴を問う四択
 - 類似概念との違いを問う比較選択
@@ -383,6 +431,7 @@ ${topic} は ${p.label} の中核論点であり、午前試験・午後試験�
 
 export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
+  const cbt = cbtSections(exam);
   const slug = `${exam}-yoru-tokurensyu`;
   const title = `${p.label} 過去問の解き方完全ガイド｜AI解説で時短する5ステップ`;
   const description = `${p.label}の過去問を効率的に回すための5ステップを紹介。AIコパイロットを使った時短解説の取り方、復習タイミング、選択肢分析の手順までまとめました。`;
@@ -395,7 +444,7 @@ export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
   // FE のみ、午後＝科目B（アルゴリズム・擬似言語）なので土台ピラーへ送客。
   const kamokuBCta =
     exam === "fe"
-      ? `\n\n基本情報の午後は科目B（アルゴリズムと擬似言語）が中心です。トレースで詰まるなら、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で擬似言語の読み方を体系的に押さえておくと、過去問演習の効率が上がります。`
+      ? `\n\n基本情報の科目Bはアルゴリズムとプログラミングが中心です。トレースで詰まるなら、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で擬似言語の読み方を体系的に押さえておくと、過去問演習の効率が上がります。`
       : "";
   // FAQ 用の短縮 CTA（同じ ESSAY_FLAGSHIP_EXAMS / FE ゲートで誇大回避）。
   const faqEssayCta = ESSAY_FLAGSHIP_EXAMS.has(exam)
@@ -403,7 +452,7 @@ export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
     : "";
   const faqKamokuBCta =
     exam === "fe"
-      ? ` 午後＝科目B（擬似言語）のトレースで詰まるなら[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku)で読み方を体系化しましょう。`
+      ? ` 科目B（擬似言語）のトレースで詰まるなら[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku)で読み方を体系化しましょう。`
       : "";
 
   const body = `# ${p.label} 過去問の解き方完全ガイド
@@ -440,11 +489,11 @@ ${p.label} の頻出論点は、表現を変えて何度も出題されます。
 
 エビングハウスの忘却曲線に従い、誤答した問題は **1週間後・1ヶ月後** に再演習するのが定着の鉄則です。過去問AI の復習モードで誤答問題のみを抽出できるため、再演習は数分で完了します。
 
-## 午後・論文への接続
+## ${exam === "ip" ? "四択の応用問題へ" : cbt ? "科目Bの問題へ" : "科目B（旧午後）への接続"}
 
 ${p.afternoonStrategy}
 
-午前で身につけた知識を午後の長文問題で使えるようにするには、各論点の「実務的な使われ方」を意識する必要があります。AI コパイロットに「${p.exampleSubjects[0]} の実務での具体例を 3 つ」と依頼すれば、知識を実務文脈に紐付けられます。${flagshipEssayCta}${kamokuBCta}
+${cbt ? cbt.application : "科目Aで身につけた知識を科目Bの問題で使えるようにするには、設問の条件を整理する練習が必要です。"}AI コパイロットに「${p.exampleSubjects[0]} の実務での具体例を 3 つ」と依頼すれば、知識を実務文脈に紐付けられます。${flagshipEssayCta}${kamokuBCta}
 
 ## よくある失敗パターン
 
