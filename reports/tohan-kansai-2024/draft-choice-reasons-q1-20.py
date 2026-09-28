@@ -1,4 +1,4 @@
-"""Build unpublished, source-grounded choice explanations for questions 1-10.
+"""Build unpublished, source-grounded choice explanations for questions 1-20.
 
 The statement judgments below were checked against the April 2024 MHLW
 exam-writing guide. Output remains a draft until independent review.
@@ -76,10 +76,92 @@ REVIEW = {
         "手引きの小児の目安は7歳以上15歳未満で、5歳以上ではない。",
         "小児は血液脳関門が未発達で、医薬品成分が脳に達しやすい。",
     ]),
+    11: ([20], "誤正正正", [
+        "高齢者の体力・生理機能の衰えには個人差が大きい。",
+        "取り違えや飲み忘れに備え、家族・介護関係者の協力が重要な場合がある。",
+        "説明の理解や表示の読取りが難しい場合があり、情報提供には配慮が必要。",
+        "副作用の口渇は誤嚥を誘発し得る。",
+    ]),
+    12: ([20, 21], "誤誤正正", [
+        "母体と胎児の血液は血液-胎盤関門により混ざらず、成分移行の程度は未解明なことも多い。",
+        "妊娠の有無にはプライバシー配慮が必要だが、使用者の状況把握も重要。聞取り不要とはいえない。",
+        "妊婦では一般用医薬品による対処自体が適切か慎重に考える。",
+        "妊婦への安全性評価は難しく、『相談すること』とする医薬品が多い。",
+    ]),
+    13: ([21, 22], "誤誤正正", [
+        "慢性疾患でも一般用医薬品が症状を悪化させたり治療を妨げたりする。",
+        "処方薬との併用可否は登録販売者には判断困難なことが多く、処方医・薬剤師への相談が必要。",
+        "疾患の程度と医薬品の種類に応じ、問題があれば使用を避けられる情報提供が重要。",
+        "治療中でなくても、特定症状を悪化させる配合成分がある。",
+    ]),
+    14: ([22, 23], "正正誤誤", [
+        "購入直後に使うとは限らず、使用期限まで余裕をもって販売する。",
+        "医薬品には高い水準で均一な品質が必要。",
+        "表示使用期限は未開封で適切に保管した場合の期限。",
+        "適切に保管しても経時劣化を避けることはできない。",
+    ]),
+    15: ([23, 24], "正誤正正", [
+        "一般用医薬品は軽い疾病の初期段階などで自ら選択し、治療・予防・QOL改善に使う。",
+        "生活習慣病の『治療』は一般用医薬品の役割ではなく、役割は症状発現の予防など。",
+        "一般用医薬品にもドーピング対象成分があり、薬剤師等への確認が必要。",
+        "乳幼児や妊婦では一般用医薬品で対処できる範囲が成人より狭い場合がある。",
+    ]),
+    16: ([24, 25], "誤正誤正", [
+        "登録販売者が担うのは第二類・第三類医薬品の販売等で、全ての一般用医薬品ではない。",
+        "購入者が自ら適切に選び使えるよう働きかけることが重要。",
+        "購入者の情報受容意識が乏しくても、状況把握と情報提供のために対話を図る。",
+        "販売量を必要量にするなど、継続的な対話機会を確保する配慮が重要。",
+    ]),
+    17: ([26, 27], "誤誤正誤", [
+        "サリドマイド製剤は催眠鎮静剤等として販売されたのであり、解熱鎮痛薬ではない。",
+        "R体とS体は体内で相互転換するため、R体のみを製剤化しても催奇形性を避けられない。",
+        "サリドマイドは血液-胎盤関門を通過し胎児へ移行する。",
+        "日本での販売停止・回収は1962年で、西ドイツの警告が出た1961年中ではない。",
+    ]),
+    18: ([27, 28], "誤誤正正", [
+        "原因となったのはHIV混入原料からの血液凝固因子製剤で、免疫グロブリン製剤ではない。",
+        "サリドマイド・スモン訴訟はHIV訴訟より前に起きていた。",
+        "和解を踏まえた薬事法改正で製薬企業に感染症報告が義務づけられた。",
+        "血液製剤の安全確保のため検査と献血時問診が充実した。",
+    ]),
+    19: ([28, 29], "正正正誤", [
+        "ヒト乾燥硬膜を介したCJD感染をめぐる損害賠償訴訟である。",
+        "和解は生物由来製品の感染等被害救済制度創設の契機となった。",
+        "CJDは認知症様症状を経て死に至る重篤な神経難病。",
+        "プリオンは脂質ではなくタンパク質の一種。",
+    ]),
 }
 
 draft = []
-for q in questions[:10]:
+for q in questions[:20]:
+    if q["number"] == 20:
+        expected = {
+            "ａ": ("フィブリノゲン製剤", "問題の対象は特定のフィブリノゲン製剤と血液凝固第IX因子製剤。"),
+            "ｂ": ("国及び製薬企業", "訴訟の被告は国と製薬企業。"),
+            "ｃ": ("議員立法", "早期・一律救済のため議員立法で2008年1月に特別措置法が成立。"),
+        }
+        choices = []
+        for i, choice in enumerate(q["choices"], 1):
+            given = dict(re.findall(r"([ａｂｃ])：([^　]+)", choice))
+            assert len(given) == 3, (q["number"], i, given)
+            wrong = [label for label in "ａｂｃ" if given[label] != expected[label][0]]
+            labels = wrong or list("ａｂｃ")
+            choices.append({
+                "number": i,
+                "correct": not wrong,
+                "reason": " ".join(f"{label}は{expected[label][0]}。{expected[label][1]}" for label in labels),
+            })
+        assert sum(x["correct"] for x in choices) == 1
+        assert choices[q["officialAnswerNumber"] - 1]["correct"]
+        draft.append({
+            "number": 20,
+            "status": "SOURCE_GROUNDED_DRAFT_INDEPENDENT_REVIEW_PENDING",
+            "guidelineUrl": GUIDE,
+            "guidelinePdfPages": [29],
+            "fillReviews": {k: {"correct": v[0], "reason": v[1]} for k, v in expected.items()},
+            "choiceReasons": choices,
+        })
+        continue
     pages, judgments, reasons = REVIEW[q["number"]]
     assert len(judgments) == len(reasons) == 4
     statements = {
@@ -113,6 +195,6 @@ for q in questions[:10]:
         "choiceReasons": choices,
     })
 
-output = ROOT / "draft-choice-reasons-q1-10.json"
+output = ROOT / "draft-choice-reasons-q1-20.json"
 output.write_text(json.dumps(draft, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Drafted {len(draft)} question reviews and {sum(len(x['choiceReasons']) for x in draft)} choice reasons; release HOLD")
