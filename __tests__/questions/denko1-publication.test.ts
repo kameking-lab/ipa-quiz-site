@@ -5,6 +5,8 @@ import { createElement } from "react";
 import { render, screen } from "@testing-library/react";
 import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
 import { ExplanationCard } from "@/components/quiz/ExplanationCard";
+import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
+import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
 import { buildQuestionContext } from "@/lib/ai/prompts";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
@@ -13,6 +15,7 @@ import { getChoiceKeys } from "@/lib/questions/answers";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { shuffleChoices } from "@/lib/questions/filter";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { groupByYearSeason } from "@/lib/seo/exam-meta";
 
 // 公式解答PDF(20260401_co_first_a01.pdf)の正答。イロハニ→アイウエ。
 const OFFICIAL = "ハロハニニロイハニイ" + "ニニニニイニハハハイ" + "ニロニイニニニイイハ" + "ニハロイニロロロハニ" + "イロイニイロロロイハ";
@@ -74,6 +77,34 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     for (const key of getChoiceKeys(shuffled.choices)) {
       expect([shuffled.choiceImageUrls?.[key], shuffled.choiceExplanations?.[key]]).toEqual(before.get(shuffled.choices?.[key]));
     }
+  });
+
+  it("offers the 2025 lower and 2026 upper papers as separate year links", () => {
+    const years = groupByYearSeason(DENKO1_QUESTIONS);
+    expect(years.map(({ key, count }) => [key, count])).toEqual([
+      ["2026-first", 50],
+      ["2025-second", 50],
+    ]);
+    const { container } = render(createElement(ExamBrowseTabs, { exam: "denko1", years, categories: [] }));
+    const first = container.querySelector('a[href="/denko1/2026-first"]');
+    const second = container.querySelector('a[href="/denko1/2025-second"]');
+    expect(first?.textContent).toContain("2026");
+    expect(second?.textContent).toContain("2025");
+    expect(first?.textContent).toContain("50問");
+    expect(second?.textContent).toContain("50問");
+  });
+
+  it("renders all four 2025 question 46 diagram choices on the question page", () => {
+    const q = SECOND.find((item) => item.qNumber === 46)!;
+    const { container } = render(createElement(QuestionAnswerCard, {
+      questionId: q.id, choices: q.choices!, choiceImageUrls: q.choiceImageUrls,
+      answerKey: q.answer, exam: q.exam, year: q.year, season: q.season,
+      session: q.session, qNumber: q.qNumber,
+    }));
+    expect(container.querySelectorAll('[role="radio"]')).toHaveLength(4);
+    const imageSources = Array.from(container.querySelectorAll('[role="radio"] img')).map((img) => img.getAttribute("src"));
+    expect(imageSources).toEqual(getChoiceKeys(q.choices).map((key) => q.choiceImageUrls?.[key]));
+    expect(imageSources.every((src) => src && existsSync(join(process.cwd(), "public", src)))).toBe(true);
   });
 
   it("shows 2025 lower explanations and passes all four reasons to the paid Gemini context", () => {
