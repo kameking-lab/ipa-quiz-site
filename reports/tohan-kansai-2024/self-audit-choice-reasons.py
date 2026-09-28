@@ -83,4 +83,7 @@ for question in questions:
 assert sum(counts.values()) == 600
 print("PASS: all 120 draft questions and 600 choice reasons are internally consistent with staged choices and official answer positions")
 print(counts)
-print("HOLD: author-side structural audit only; independent source-content review remains 0/600")
+progress = json.loads((ROOT / "qa-progress-20260928.json").read_text(encoding="utf-8"))
+independent_count = progress.get("independentReview", {}).get("choiceReasons", 0)
+assert 0 <= independent_count <= 600
+print(f"HOLD: structural audit only; independent source-content review {independent_count}/600")
