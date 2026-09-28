@@ -67,5 +67,6 @@ describe("POST /api/copilot/exam-library", () => {
     await response.text();
     expect(prompt.value).toContain("公式正答: 未登録・採点なし");
     expect(prompt.value).not.toContain("公式正答: （2）");
+    expect(prompt.value).not.toContain("選択肢2が公式正答です");
   });
 });
