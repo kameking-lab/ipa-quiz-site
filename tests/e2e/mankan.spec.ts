@@ -4,7 +4,7 @@ test.describe("マンション管理士試験", () => {
   test("the exam top names the source, the law reference dates and the independence notice", async ({ page }) => {
     await page.goto("/mankan");
     await expect(page.getByText(/令和6年度・令和7年度のマンション管理士試験/).first()).toBeVisible();
-    await expect(page.getByText(/マンション管理センターとは関係ありません/).first()).toBeVisible();
+    await expect(page.getByText(/同センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 
@@ -16,6 +16,9 @@ test.describe("マンション管理士試験", () => {
     await expect(choices).toHaveCount(4);
     await choices.nth(1).click();
     await expect(page.getByText("正解！").first()).toBeVisible();
+    // 出典・独自解説の注記は「AI生成」バッジの開閉パネル（AiTransparencyDisclaimer）内にある。
+    await page.getByText("AI生成").first().click();
     await expect(page.getByText(/出典：令和7年度 マンション管理士試験 問1/).filter({ visible: true }).first()).toBeVisible();
+    await expect(page.getByText(/マンション管理センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
   });
 });
