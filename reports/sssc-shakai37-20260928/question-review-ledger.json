@@ -289,7 +289,11 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。",
+      "independentRationaleStatus": "PARTIAL_HOLD",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent",
+      "independentReviewHoldReason": "オルポート原著9ページを直接表示していないため独立PASS保留。"
     },
     {
       "number": 18,
@@ -310,7 +314,10 @@
         "https://www.undrr.org/terminology/resilience",
         "https://www.undrr.org/building-risk-knowledge/understanding-risk",
         "https://www.mhlw.go.jp/web/t_doc?dataId=00010690&dataType=0&pageNo=1"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 19,
@@ -333,7 +340,10 @@
         "https://www.gov.uk/government/history/past-prime-ministers/clement-attlee",
         "https://www.gov.uk/government/history/past-prime-ministers/tony-blair",
         "https://www.gov.uk/government/history/past-prime-ministers/gordon-brown"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 20,
@@ -357,7 +367,10 @@
         "https://www.shakyo.or.jp/tsuite/gaiyo/history/seien/1908sosiki.html",
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/minseiiin/index.html",
         "https://www.pref.okayama.jp/page/detail-80975.html"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 21,
@@ -378,7 +391,10 @@
         "https://cpb-us-e1.wpmucdn.com/blogs.uoregon.edu/dist/d/16656/files/2018/11/Nirje-The-Normalization-Principle-and-Its-Human-Management-Implications-2f3t9mm.pdf",
         "https://mn.gov/web/prod/static/mnddc/live/bengtNirje/bengt_nirje11.html",
         "https://mn.gov/web/prod/static/mnddc/live/bengtNirje/bengt_nirje28.html"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 22,
@@ -400,7 +416,10 @@
         "https://www.worldbank.org/en/news/factsheet/2022/05/02/fact-sheet-an-adjustment-to-global-poverty-lines",
         "https://www.oecd.org/en/data/indicators/poverty-rate.html",
         "https://hdr.undp.org/content/human-development-index-what-it-and-what-it-not"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 23,
@@ -418,7 +437,11 @@
       ],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。",
+      "independentRationaleStatus": "PARTIAL_HOLD",
+      "independentEvidenceFile": "independent-review-q17-23-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent",
+      "independentReviewHoldReason": "総務省制度原文などの直接照合が不足するため独立PASS保留。"
     },
     {
       "number": 24,
@@ -2297,5 +2320,7 @@
     }
   ],
   "primarySourceVerifiedCount": 16,
-  "publicationStatus": "HOLD"
+  "publicationStatus": "HOLD",
+  "independentRationaleVerifiedCount": 5,
+  "independentReviewScope": "問17〜23の画像・正答を別担当が照合。問18〜22の全25肢は一次資料で独立再照合PASS、問17・23は部分確認HOLD。残りは未査読。"
 }
