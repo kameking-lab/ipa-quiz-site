@@ -88,8 +88,8 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     const { container } = render(createElement(ExamBrowseTabs, { exam: "denko1", years, categories: [] }));
     const first = container.querySelector('a[href="/denko1/2026-first"]');
     const second = container.querySelector('a[href="/denko1/2025-second"]');
-    expect(first?.textContent).toContain("2026");
-    expect(second?.textContent).toContain("2025");
+    expect(first?.textContent).toContain("令和8年度 上期");
+    expect(second?.textContent).toContain("令和7年度 下期");
     expect(first?.textContent).toContain("50問");
     expect(second?.textContent).toContain("50問");
   });
@@ -111,7 +111,7 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
   it("shows 2025 lower explanations and passes all four reasons to the paid Gemini context", () => {
     const q = SECOND.find((item) => item.qNumber === 25)!;
     const context = buildQuestionContext(q, "イ", false);
-    expect(context).toContain("2025");
+    expect(context).toContain("令和7年度 下期");
     for (const reason of Object.values(q.choiceExplanations ?? {})) {
       expect(context).toContain(reason);
     }
