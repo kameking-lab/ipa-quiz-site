@@ -43,8 +43,20 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--exam", choices=("all", "shakai37"), default="all")
     args = parser.parse_args()
     cache = Path(args.cache)
+    if args.exam == "shakai37":
+        path = cache / "shakai37/s_kijun_seitou.pdf"
+        answers = parse(lines_of(path))
+        assert sorted(answers) == list(range(1, 130))
+        payload = {
+            "sourceFile": {"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()},
+            "answers": {str(k): v for k, v in sorted(answers.items())},
+        }
+        Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print("shakai37", len(answers), "official answers")
+        return
     files = {
         "kaigo": cache / "kaigo38/k_kijun_seitou.pdf",
         "shakai": cache / "shakai38/s_kijun_seitou.pdf",

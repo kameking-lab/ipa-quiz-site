@@ -1,10 +1,12 @@
 """Build verbatim question records for SSSC welfare exams.
 
-Canonical characters come from the official exam PDF text layer (not OCR).
+Canonical characters come from the official exam PDF text layer (not OCR),
+except for explicitly logged font-map errors confirmed in the rendered PDF
+and the center's own accessible HTML.
 Structure (question boundaries, paragraph breaks, ruby readings) comes from the
 official accessible HTML published by the same center. Every non-whitespace
 character of the HTML is aligned to the PDF; the only tolerated differences are
-listed in ALLOWED_* below and are logged in the output.
+listed in ALLOWED_* or the exam-specific glyph overrides and are logged.
 """
 from __future__ import annotations
 
@@ -149,9 +151,10 @@ def html_text(fragment: str) -> str:
 
 
 class Aligner:
-    def __init__(self, pdf_chars: list[str]):
+    def __init__(self, pdf_chars: list[str], glyph_overrides: dict[tuple[str, str], str] | None = None):
         self.pdf = pdf_chars
         self.pdf_nonws = [i for i, c in enumerate(pdf_chars) if not c.isspace()]
+        self.glyph_overrides = glyph_overrides or {}
 
     def align(self, html_chars: list[str]):
         a = "".join(self.pdf[i] for i in self.pdf_nonws)
@@ -163,7 +166,11 @@ class Aligner:
             if op == "equal":
                 for k in range(j2 - j1):
                     mapping[j1 + k] = self.pdf_nonws[i1 + k]
-            elif op == "replace" and i2 - i1 == j2 - j1 and all((a[i1 + k], b[j1 + k]) in ALLOWED_REPLACE for k in range(i2 - i1)):
+            elif op == "replace" and i2 - i1 == j2 - j1 and all(
+                (a[i1 + k], b[j1 + k]) in ALLOWED_REPLACE
+                or (a[i1 + k], b[j1 + k]) in self.glyph_overrides
+                for k in range(i2 - i1)
+            ):
                 for k in range(j2 - j1):
                     mapping[j1 + k] = self.pdf_nonws[i1 + k]
             else:
@@ -199,7 +206,7 @@ def build(exam: str, cfg: dict):
                     continue
                 html_chars.append(ch)
                 refs.append((fi, pos))
-        mapping, issues = Aligner(pdf_chars).align(html_chars)
+        mapping, issues = Aligner(pdf_chars, cfg.get("glyph_overrides")).align(html_chars)
         tolerated = []
         for op, pa, hb, j1 in issues:
             fi = refs[j1][0] if j1 < len(refs) else None
@@ -318,7 +325,12 @@ def build(exam: str, cfg: dict):
                     last_pdf = m
                     html_br_since = False
                     pch = pdf_chars[m]
-                    out.append(pch)
+                    override = cfg.get("glyph_overrides", {}).get((pch, ch))
+                    if override:
+                        log["normalizations"].append({"op": "pdf-glyph-map", "pdf": pch,
+                                                       "html": ch, "rendered": override,
+                                                       "file": info[m][0], "page": info[m][1]})
+                    out.append(override or pch)
                     if KANJI.match(pch):
                         base_run.append(m)
                     else:
@@ -437,6 +449,16 @@ CONFIGS = {
         "halves": [
             {"name": "am", "html": "listen_am.html", "pdfs": [f"sp_am_{i:02d}_38.pdf" for i in range(1, 13)]},
             {"name": "pm", "html": "listen_pm.html", "pdfs": [f"ss_pm_{i:02d}_38.pdf" for i in range(1, 8)]},
+        ],
+    },
+    "shakai37": {
+        "dir": "shakai37",
+        # The PDF text layer maps the visible 梗 in 脳梗塞 to 伷 once; the
+        # official accessible HTML and the rendered PDF both read 梗.
+        "glyph_overrides": {("伷", "梗"): "梗"},
+        "halves": [
+            {"name": "am", "html": "listen_ss_am_37.html", "pdfs": [f"sp_am_{i:02d}_37.pdf" for i in range(1, 13)]},
+            {"name": "pm", "html": "listen_ss_pm_37.html", "pdfs": [f"ss_pm_{i:02d}_37.pdf" for i in range(1, 8)]},
         ],
     },
     "seishin": {
