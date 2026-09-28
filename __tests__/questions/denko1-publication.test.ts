@@ -66,7 +66,7 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
   });
 
   it("keeps choice images with their text and explanation after shuffling", () => {
-    const q = DENKO1_QUESTIONS.find((item) => item.qNumber === 46)!;
+    const q = SECOND.find((item) => item.qNumber === 46)!;
     const before = new Map(getChoiceKeys(q.choices).map((key) => [q.choices?.[key], [q.choiceImageUrls?.[key], q.choiceExplanations?.[key]]]));
     const random = vi.spyOn(Math, "random").mockReturnValue(0);
     const shuffled = shuffleChoices(q);
