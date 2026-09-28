@@ -333,13 +333,19 @@
         4
       ],
       "modelReviewStatus": "REVISE",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "MODEL_REVISION_REQUESTED"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "モデル査読REVISEかつ全5肢の一次資料確認未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "国立国会図書館法令索引、全国社会福祉協議会自身の沿革、厚労省民生委員制度史、岡山県教育史年表で全5肢の年を照合。感化法1900年、中央慈善協会1908年、恤救規則1874年、大阪府方面委員1918年、岡山孤児院1887年。",
+      "primaryReviewSources": [
+        "https://hourei.ndl.go.jp/simple/detail?current=-1&lawId=0000005991",
+        "https://www.shakyo.or.jp/tsuite/gaiyo/history/seien/1908sosiki.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/minseiiin/index.html",
+        "https://www.pref.okayama.jp/page/detail-80975.html"
+      ]
     },
     {
       "number": 21,
@@ -1734,14 +1740,21 @@
         2
       ],
       "modelReviewStatus": "REVISE",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "MODEL_REVISION_REQUESTED",
         "LAW_OR_POLICY_TIMING_NEEDS_SOURCE"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "モデル査読REVISEかつ全5肢の一次資料確認未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "厚労省の2018年法改正説明、2020年自治体事務通知、生活困窮者自立支援法、一時生活支援事業通知、住居確保給付金FAQで全5肢確認。健康管理支援は生活保護法上の被保護者支援、住居確保給付金の審査決定支給は福祉事務所設置自治体、一時生活支援は住居のない人への宿泊場所・食事の提供、外国籍も条件次第で対象。",
+      "primaryReviewSources": [
+        "https://www.mhlw.go.jp/content/12000000/000868686.pdf",
+        "https://www.mhlw.go.jp/content/000620018.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=82ab3701&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/content/000621870.pdf",
+        "https://corona-support.mhlw.go.jp/jukyokakuhokyufukin/faq.html"
+      ]
     },
     {
       "number": 100,
@@ -2253,6 +2266,6 @@
       "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
     }
   ],
-  "primarySourceVerifiedCount": 8,
+  "primarySourceVerifiedCount": 10,
   "publicationStatus": "HOLD"
 }

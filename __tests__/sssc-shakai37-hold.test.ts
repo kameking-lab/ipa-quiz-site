@@ -71,10 +71,10 @@ describe("第37回社会福祉士: 一次資料の準備と公開HOLD", () => {
     expect(EXAM_CONFIGS.shakai.yearRange).toEqual({ start: 2025, end: 2025 });
   });
 
-  it("問題別台帳は一次資料確認済み8問と保留121問を区別し、公開はHOLDする", () => {
+  it("問題別台帳は一次資料確認済み10問と保留119問を区別し、公開はHOLDする", () => {
     expect(ledger.questions.map((row) => row.number)).toEqual(Array.from({ length: 129 }, (_, i) => i + 1));
     expect(ledger.questions.filter((row) => row.modelReviewStatus === "PASS")).toHaveLength(127);
-    const verified = [15, 16, 30, 44, 45, 47, 52, 85];
+    const verified = [15, 16, 20, 30, 44, 45, 47, 52, 85, 99];
     const partial = readJson<{ publicationStatus: string; questions: Record<string, { choiceExplanations: string[]; primarySources: string[] }> }>("verified-explanations.partial.json");
     expect(ledger.publicationStatus).toBe("HOLD");
     expect(ledger.primarySourceVerifiedCount).toBe(verified.length);
