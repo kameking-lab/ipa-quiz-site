@@ -301,11 +301,16 @@
         3
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "国連防災機関の仙台防災枠組用語集で回復・適応能力を確認。発災・対応・復旧の循環は同機関のリスク低減の説明、積極的にニーズへ働きかける行為は厚労省告示のアウトリーチ等の説明と照合。残る楽観態度と一時的コミュニティは定義上の能力ではない。",
+      "primaryReviewSources": [
+        "https://www.undrr.org/terminology/resilience",
+        "https://www.undrr.org/building-risk-knowledge/understanding-risk",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00010690&dataType=0&pageNo=1"
+      ]
     },
     {
       "number": 19,
@@ -317,11 +322,18 @@
         3
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "英国政府の歴代首相公式略歴で5人の在任期間と政策を照合。サッチャー期の民営化・規制緩和と政府役割縮小が明記され、アトリー期は福祉国家構築、チャーチル後期はその受容と確認した。",
+      "primaryReviewSources": [
+        "https://www.gov.uk/government/history/past-prime-ministers/margaret-thatcher",
+        "https://www.gov.uk/government/history/past-prime-ministers/winston-churchill",
+        "https://www.gov.uk/government/history/past-prime-ministers/clement-attlee",
+        "https://www.gov.uk/government/history/past-prime-ministers/tony-blair",
+        "https://www.gov.uk/government/history/past-prime-ministers/gordon-brown"
+      ]
     },
     {
       "number": 20,
@@ -357,11 +369,16 @@
         4
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "ニィリエ本人の1969年論考の再録で全5肢を照合。日常生活を社会の通常のパターンに近づける原則、大規模混合施設への反対、男女の自然な交わり、本人の選択尊重を確認。本人インタビューでも確認した。",
+      "primaryReviewSources": [
+        "https://cpb-us-e1.wpmucdn.com/blogs.uoregon.edu/dist/d/16656/files/2018/11/Nirje-The-Normalization-Principle-and-Its-Human-Management-Implications-2f3t9mm.pdf",
+        "https://mn.gov/web/prod/static/mnddc/live/bengtNirje/bengt_nirje11.html",
+        "https://mn.gov/web/prod/static/mnddc/live/bengtNirje/bengt_nirje28.html"
+      ]
     },
     {
       "number": 22,
@@ -373,11 +390,17 @@
         4
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "国連SDG1の指標1.1.1が国際貧困線以下の人口割合であること、世界銀行が国際貧困線を設定することを一次資料確認。OECDの相対的貧困率、UNDPのHDIは別の指標。ラウントリーの第1次貧困とタウンゼントの相対的剥奪もSDG1.1.1の参照基準ではない。試験時2025年と現在でドル額が改定され得るため金額を固定しない。",
+      "primaryReviewSources": [
+        "https://sdgs.un.org/goals/goal1",
+        "https://www.worldbank.org/en/news/factsheet/2022/05/02/fact-sheet-an-adjustment-to-global-poverty-lines",
+        "https://www.oecd.org/en/data/indicators/poverty-rate.html",
+        "https://hdr.undp.org/content/human-development-index-what-it-and-what-it-not"
+      ]
     },
     {
       "number": 23,
@@ -2266,6 +2289,6 @@
       "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
     }
   ],
-  "primarySourceVerifiedCount": 10,
+  "primarySourceVerifiedCount": 14,
   "publicationStatus": "HOLD"
 }
