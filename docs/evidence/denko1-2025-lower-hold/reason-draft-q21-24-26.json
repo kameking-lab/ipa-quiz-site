@@ -1,0 +1,24 @@
+{
+  "status": "DRAFT_UNREVIEWED_PUBLICATION_HOLD",
+  "examSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "answerSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "visualEvidence": "visual-q21-30.json",
+  "supportSources": [
+    "https://jeea.or.jp/course/contents/05204/",
+    "https://www.safety-shikoku.meti.go.jp/03_electric/electric_hyosyo_seminar/electric_seminar/r7_seminar/2025semina.pdf",
+    "https://www.safety-kinki.meti.go.jp/electric/accident/r5/index.html",
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2018/09/300928-5.pdf",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/non_specified_electrical.html"
+  ],
+  "questionCount": 5,
+  "choiceReasonDraftCount": 20,
+  "choiceReasonReviewedCount": 0,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 21, "answer": "ロ", "principle": "設問は不適切な主遮断装置を選ぶ。JISキュービクルのPF・S形は変圧器合計300 kVA以下、CB形は4000 kVA以下（日本電気技術者協会の解説）。", "choices": { "イ": "500 kVAでCB形の高圧交流遮断器はCB形の容量上限4000 kVA以下であり、適用可能。", "ロ": "400 kVAをPF・S形とするが、PF・S形の適用上限300 kVAを超えるため不適切。", "ハ": "300 kVAでCB形の高圧交流遮断器は容量上限以下であり、適用可能。", "ニ": "200 kVAでPF・S形は300 kVA以下の範囲であり、適用可能。" } },
+    { "number": 22, "answer": "ロ", "principle": "公式PDF8ページの機器写真と公式正答を組で確認した用途問題。写真を欠いた文字抽出だけでは識別できない。", "choices": { "イ": "大電流を小電流に変成するのは変流器の用途で、写真の機器の用途ではない。", "ロ": "写真の機器は高調波電流を抑制する用途の機器であり、公式正答と一致する。機器固有の型式・構造は写真だけから断定しない。", "ハ": "負荷の力率改善は進相コンデンサなどの用途で、写真の機器に対する設問の正答ではない。", "ニ": "高電圧を低電圧に変成するのは変圧器・計器用変圧器の用途で、写真の機器とは異なる。" } },
+    { "number": 23, "answer": "ニ", "principle": "GR付PASのSOGは地絡時にPASを開放し、短絡過電流時は開放をいったんロックして、上流系統の停電で無電圧になった後に開放する。経産省産業保安監督部の資料にあるSO/G動作と照合。", "choices": { "イ": "需要家側の事故を切り離して一般送配電側への波及を抑える目的があり、正しい。", "ロ": "需要家側の地絡事故では地絡継電器の検出でPASを開放し、配電線全体の停止を避ける動作で、正しい。", "ハ": "短絡過電流時にはPASをロックし、上流側が一時停電して無電圧となった後に開放するSO動作の説明で、正しい。", "ニ": "短絡の大電流をPAS単独で配電線を停めずに遮断するという説明は誤り。SO動作は上流側の一時停電後の無電圧開放を要する。" } },
+    { "number": 24, "answer": "イ", "principle": "設問は誤りを選ぶ。経産省の電気設備技術基準解説では2種金属製可とう電線管の方が1種より機械的強度と耐水性に優れる。", "choices": { "イ": "1種の方が2種より耐水性に優れるという逆転した記述で誤り。2種の方が耐水性能に優れる。", "ロ": "金属製可とう電線管は電気用品安全法の対象品目に含まれるため正しい。", "ハ": "1種金属製可とう電線管の軟鋼片厚さは0.8 mm以上という規定に合う。", "ニ": "金属製可とう電線管は手で曲げて配線の取り回しに使う可とう管で、正しい。" } },
+    { "number": 26, "answer": "ニ", "principle": "公式PDF8ページの写真にはロープ・金具・レバーがあり、電線を引いて張力をかける張線器の形状に一致。", "choices": { "イ": "トルクレンチはねじの締付トルクを管理する工具で、写真のロープ付き張力工具ではない。", "ロ": "呼び線挿入器は管路へ通線用の呼び線を送り込む器具で、写真の張線用レバーとロープの組合せではない。", "ハ": "ケーブルジャッキはケーブルドラムを支持して回転させる器具で、写真の手持ち張力工具とは異なる。", "ニ": "写真の工具はロープをつかんでレバー操作で張力をかける張線器である。" } }
+  ]
+}
