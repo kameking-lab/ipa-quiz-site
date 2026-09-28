@@ -19,6 +19,7 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  "https://cbt-s.com/examinee/ipa_cbt-faq/detail/4342.html",
   "https://cbt-s.com/page/itee_id",
   "https://www.ipa.go.jp/shiken/",
   "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html",
@@ -32,9 +33,15 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
+  "https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/order.html",
 ] as const;
 
-const ALLOWED_HOSTS = new Set(["www.ipa.go.jp", "cbt-s.com"]);
+const ALLOWED_HOSTS = new Set([
+  "www.ipa.go.jp",
+  "www3.jitec.ipa.go.jp",
+  "cbt-s.com",
+]);
 
 // In markdown link form `[text](url)`, the URL ends at the closing paren, so the
 // character class excludes `)`. Trailing sentence punctuation is stripped below.
