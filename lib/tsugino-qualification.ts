@@ -31,3 +31,11 @@ export function tsuginoScheduleUrl(exam?: ExamCode): string {
     ? `${TSUGINO_ORIGIN}/shikaku/${qualificationId}`
     : `${TSUGINO_ORIGIN}/calendar`;
 }
+
+/** Only link to a qualification-specific learning hub when the mapping is known. */
+export function tsuginoLearningUrl(exam?: ExamCode): string | null {
+  const qualificationId = exam ? QUALIFICATION_IDS[exam] : undefined;
+  return qualificationId
+    ? `${TSUGINO_ORIGIN}/learn/${qualificationId}`
+    : null;
+}
