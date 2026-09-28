@@ -431,13 +431,16 @@
         5
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "LAW_OR_POLICY_TIMING_NEEDS_SOURCE"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "厚生労働省告示第207号の本文と別表で全5肢を照合。数値目標は平均寿命そのものではなく健康寿命、女性のライフステージ課題は明記、社会環境の整備と社会参加を推進し、生活習慣病の発症・重症化予防を重視する。",
+      "primaryReviewSources": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00012990&dataType=0&pageNo=1"
+      ]
     },
     {
       "number": 25,
@@ -465,13 +468,17 @@
         3
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "LAW_OR_POLICY_TIMING_NEEDS_SOURCE"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "社会福祉法14～16・18・19条と厚労省の福祉事務所解説で5肢を照合。設置義務は都道府県・市、町村は任意。現業員・指導監督員には社会福祉主事を要し、現業員の標準数は事務所ごと。都道府県の事務には老人福祉法の措置事務を含まない。",
+      "primaryReviewSources": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=82001000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/fukusijimusyo/index.html"
+      ]
     },
     {
       "number": 27,
@@ -2289,6 +2296,6 @@
       "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
     }
   ],
-  "primarySourceVerifiedCount": 14,
+  "primarySourceVerifiedCount": 16,
   "publicationStatus": "HOLD"
 }
