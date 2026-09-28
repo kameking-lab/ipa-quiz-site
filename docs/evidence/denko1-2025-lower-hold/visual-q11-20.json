@@ -1,0 +1,21 @@
+{
+  "sourcePdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "sourceUrl": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "reviewedAt": "2026-09-28",
+  "status": "VISUAL_REVIEW_ONLY_PUBLICATION_HOLD",
+  "pages": [5, 6, 7],
+  "visualReviewedCount": 10,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 11, "page": 5, "officialAnswer": "ロ", "verified": "変圧器鉄損について正しいものを選ぶ。抽出済みの四肢と原本表示が一致。", "extractIssue": "特段の図表欠落なし。" },
+    { "number": 12, "page": 6, "officialAnswer": "ロ", "verified": "LEDランプについて誤っているものを選ぶ。選択肢ロはLEDチップの順方向電圧が直流100 V以上と記載。", "extractIssue": "特段の図表欠落なし。" },
+    { "number": 13, "page": 6, "officialAnswer": "ニ", "verified": "四肢はすべて交流電源・整流器・蓄電池・負荷の異なる接続図。ニは整流器の直流側に蓄電池と負荷が並列。", "extractIssue": "choicesRawにはイ・ロ・ハ・ニのラベルしかなく、四つの選択肢の実体である回路図は全欠落。" },
+    { "number": 14, "page": 6, "officialAnswer": "イ", "verified": "写真のダウンライトの矢印先に日本照明工業会SB・SGI・SG形適合品マーク。", "extractIssue": "選択判断に必要な写真と拡大表示マークが抽出テキストにない。" },
+    { "number": 15, "page": 6, "officialAnswer": "イ", "verified": "写真は屋外機と縦長の貯湯ユニットから成る機器。設問は機器内で二酸化炭素を利用すると指定。", "extractIssue": "選択判断に必要な機器写真が抽出テキストにない。" },
+    { "number": 16, "page": 7, "officialAnswer": "ニ", "verified": "自然循環ボイラ図の①は燃焼ガス側の蒸発管、②はタービンへ向かう過熱器、③は給水ポンプ側の節炭器。", "extractIssue": "抽出テキストでは①②③の位置と流路が分からない。" },
+    { "number": 17, "page": 7, "officialAnswer": "イ", "verified": "揚水ポンプ入力の選択肢イは9.8QH/(ηpηm) kW、ロは逆比、ハはH/Qを含む式、ニは効率を乗算する式。", "extractIssue": "分数と添字の順序が抽出で破損し、choicesRawだけでは選択肢を確定できない。" },
+    { "number": 18, "page": 7, "officialAnswer": "イ", "verified": "架空送電線の雷害対策の四肢（アークホーン・洗浄装置・ダンパ・シリコンコンパウンド）は原本表示と一致。", "extractIssue": "特段の図表欠落なし。" },
+    { "number": 19, "page": 7, "officialAnswer": "ニ", "verified": "単相変圧器の並行運転条件の四肢（極性・変圧比・インピーダンス電圧・効率）は原本表示と一致。", "extractIssue": "特段の図表欠落なし。" },
+    { "number": 20, "page": 7, "officialAnswer": "ニ", "verified": "高圧短絡保護装置の組合せ四肢。ニは過電流継電器と高圧真空遮断器。", "extractIssue": "特段の図表欠落なし。" }
+  ]
+}
