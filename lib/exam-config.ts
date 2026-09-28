@@ -682,11 +682,23 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
   },
+  mankan: {
+    code: "mankan",
+    nameFull: "マンション管理士試験",
+    urlSlug: "mankan",
+    level: "advanced",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "試験問題",
+      categories: ["区分所有法", "民法", "被災区分所有法", "マンション建替え円滑化法", "都市計画法・建築基準法", "標準管理規約", "維持保全・建物設備", "マンション管理適正化法", "会計・税務"],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2024, end: 2025 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

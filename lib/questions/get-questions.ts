@@ -42,6 +42,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   eisei2: async () => isExamPublished("eisei2") ? (await import("@/data/questions/eisei2")).EISEI2_QUESTIONS : [],
   soukan: async () => isExamPublished("soukan") ? (await import("@/data/questions/soukan")).SOUKAN_QUESTIONS : [],
   hoikushi: async () => isExamPublished("hoikushi") ? (await import("@/data/questions/hoikushi")).HOIKUSHI_QUESTIONS : [],
+  mankan: async () => isExamPublished("mankan") ? (await import("@/data/questions/mankan")).MANKAN_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

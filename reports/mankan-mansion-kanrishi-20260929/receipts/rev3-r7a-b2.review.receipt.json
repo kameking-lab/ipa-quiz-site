@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 167932,
+  "stop_reason": "end_turn",
+  "session_id": "70b11c35-1db4-464b-ac3b-1767d959161a",
+  "total_cost_usd": 1.1333501999999998,
+  "usage": {
+    "input_tokens": 44,
+    "cache_creation_input_tokens": 59825,
+    "cache_read_input_tokens": 1509931,
+    "output_tokens": 14523,
+    "output_tokens_details": {
+      "thinking_tokens": 4373
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 59825,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 2808,
+        "cache_read_input_tokens": 87276,
+        "cache_creation_input_tokens": 641,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 641
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 44,
+      "outputTokens": 14523,
+      "cacheReadInputTokens": 1509931,
+      "cacheCreationInputTokens": 59825,
+      "webSearchRequests": 0,
+      "costUSD": 1.0712221999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4373,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 53028,
+      "outputTokens": 1820,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.06212799999999998,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 34,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"11\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2025-04-01&elm=MainProvision-Article%5B9%5D&response_format=xml\",\"excerpt\":\"前項に規定する場合において、区分所有法第三十五条第一項の通知をするときは、前条第五項に規定する議案の要領のほか、次の事項をも通知しなければならない。一 売却を必要とする理由 二 復旧又は建替えをしない理由 三 復旧に要する費用の概算額\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2025-04-01&elm=MainProvision-Article%5B9%5D&response_format=xml\",\"excerpt\":\"前項第三号の事項は、各区分所有者の衡平を害しないように定めなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2025-04-01&elm=MainProvision-Article%5B9%5D&response_format=xml\",\"excerpt\":\"第四項の区分所有者集会を招集した者は、当該区分所有者集会の会日より少なくとも一月前までに、当該招集の際に通知すべき事項について区分所有者に対し説明を行うための説明会を開催しなければならない。\"}]},\"12\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=96\",\"excerpt\":\"前二項の規定による詐欺による意思表示の取消しは、善意でかつ過失がない第三者に対抗することができない。\"}]},\"13\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=296\",\"excerpt\":\"留置権者は、債権の全部の弁済を受けるまでは、留置物の全部についてその権利を行使することができる。\"}]},\"14\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=469\",\"excerpt\":\"債務者は、対抗要件具備時より前に取得した譲渡人に対する債権による相殺をもって譲受人に対抗することができる。\"}]},\"15\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/403AC0000000090\",\"excerpt\":\"期間の定めがある建物の賃貸借をする場合においては、公正証書による等書面によって契約をするときに限り、第三十条の規定にかかわらず、契約の更新がないこととする旨を定めることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=446\",\"excerpt\":\"保証契約は、書面でしなければ、その効力を生じない。\"}]},\"16\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=641\",\"excerpt\":\"請負人が仕事を完成しない間は、注文者は、いつでも損害を賠償して契約の解除をすることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=129AC0000000089;article=634\",\"excerpt\":\"次に掲げる場合において、請負人が既にした仕事の結果のうち可分な部分の給付によって注文者が利益を受けるときは、その部分を仕事の完成とみなす。この場合において、請負人は、注文者が受ける利益の割合に応じて報酬を請求することができる。\"}]},\"17\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/403AC0000000090\",\"excerpt\":\"建物の借賃の増額について当事者間に協議が調わないときは、その請求を受けた者は、増額を正当とする裁判が確定するまでは、相当と認める額の建物の借賃を支払うことをもって足りる。\"}]},\"18\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=337AC0000000069;article=4\",\"excerpt\":\"第一条に規定する建物の部分及び附属の建物は、規約により共用部分とすることができる。この場合には、その旨の登記をしなければ、これをもつて第三者に対抗することができない。\"}]},\"19\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=414AC0000000078;article=14\",\"excerpt\":\"組合は、前項の公告があるまでは、組合の成立又は定款若しくは事業計画をもって、組合員その他の第三者に対抗することができない。\"}]},\"20\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=343AC0000000100;article=13\",\"excerpt\":\"都市再開発の方針は、市街化区域内において、計画的な再開発が必要な市街地について定めること。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/articles;lawId=343AC0000000100;article=13\",\"excerpt\":\"この場合において、市街化区域及び区域区分が定められていない都市計画区域については、少なくとも道路、公園及び下水道を定めるものとし、第一種低層住居専用地域、第二種低層住居専用地域、第一種中高層住居専用地域、第二種中高層住居専用地域、第一種住居地域、第二種住居地域、準住居地域及び田園住居地域については、義務教育施設をも定めるものとする。\"}]}}",
+  "ttft_ms": 6485,
+  "type": "result",
+  "duration_ms": 204514,
+  "uuid": "1d0af4ba-9d7f-46e3-97b4-e89051957dee",
+  "ttft_stream_ms": 2100,
+  "time_to_request_ms": 591,
+  "first_content_frame_ms": 2101,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

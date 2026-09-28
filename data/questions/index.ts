@@ -48,6 +48,7 @@ import { EISEI1_QUESTIONS } from "./eisei1";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
 import { HOIKUSHI_QUESTIONS } from "./hoikushi";
+import { MANKAN_QUESTIONS } from "./mankan";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -90,6 +91,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
   ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),
+  ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
