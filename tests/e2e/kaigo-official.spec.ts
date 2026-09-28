@@ -8,8 +8,11 @@ test.describe("介護福祉士 第37回・第38回", () => {
     await expect(page.getByText(/同センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
     await page.goto("/kaigo/2024-annual");
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
+    await expect(page.getByText(/第37回（試験日 令和7年1月26日）の全125問/)).toBeVisible();
+    await expect(page.getByText(/第38回（試験日 令和8年1月25日）の全125問/)).toHaveCount(0);
     await page.goto("/kaigo/2025-annual");
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
+    await expect(page.getByText(/第38回（試験日 令和8年1月25日）の全125問/)).toBeVisible();
     await expect(page.getByText(/総合問題 問題114〜125/).first()).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
