@@ -2,12 +2,12 @@
 
 2026-09-28。作成者と別の担当者が、[試験センターの問題PDF](https://www.sssc.or.jp/shakai/past_exam/)の表示画像と[公式正答PDF](https://www.sssc.or.jp/shakai/past_exam/pdf/no37/s_kijun_seitou.pdf)を再取得し、`sources.json` のSHA-256と一致することを確認した。問17〜18は `sp_am_03_37.pdf` の3ページ、問19〜21は `sp_am_04_37.pdf` の1ページ、問22〜23は同2ページを表示画像で照合。原文・5肢・正答に差異なし。問17〜23の正答は順に **1,2 / 3 / 3 / 4 / 4 / 4 / 3**。
 
-この記録の「PASS」は、既存の隔離修正解説を別担当が各5肢について一次資料で再照合した意味。年度全体の公開承認ではない。問17・23は調査途中のためHOLDのまま。
+この記録の「PASS」は、既存の隔離修正解説を別担当が各5肢について一次資料で再照合した意味。年度全体の公開承認ではない。問17は下記の追加照合で独立PASS、問23も別の追加証跡で独立PASSとした。年度の公開HOLDは維持する。
 
-## 問17：HOLD（5肢のうち第2肢の原著直接照合が未了）
+## 問17：独立PASS（5肢、2026-09-28追加照合）
 
 1. スティグマは身体の印に始まるが、ゴッフマンの[原著抜粋](https://selfteachingresources.pbworks.com/f/Stigma%2Band%2BIdentity%2B-%2BGoffman.pdf)は他の属性にも展開する。試験上は正答に含まれる。説明時に「身体に限定」と誤解させない。
-2. オルポートの定義は『The Nature of Prejudice』p.9に帰せられる。[原著の書誌](https://books.google.com/books/about/The_nature_of_prejudice.html?id=5AE7AAAAMAAJ)と[学術書中の原著引用](https://www.cambridge.org/core/books/cambridge-handbook-of-the-psychology-of-prejudice/an-introduction-to-the-psychology-of-prejudice/3B8E513565B8E3F699732FE2132FAEEB)で確認したが、原著9ページの直接表示が未了。正答の位置は公式PDFで確認。
+2. オルポートの[『The Nature of Prejudice』原著1954年版p.9の表示本文](https://www.scribd.com/document/843855405/2015-188638-The-Nature-Of-Prejudice)を直接閲覧。民族的偏見を、誤った柔軟性のない一般化に基づく反感であり集団やその構成員に向けられるものとして定義している。試験肢の日本語は前半の核心に合致する。原著の全文転載はしない。書誌は[Google Books](https://books.google.com/books/about/The_nature_of_prejudice.html?id=5AE7AAAAMAAJ)でも確認。
 3. リップマンの[『Public Opinion』原著](https://alor.org/Storage/Library/PDF/Lippman_W-Public_Opinion.pdf)はステレオタイプを扱う。ダブル・コンティンジェンシーという説明は別概念で、この帰属は誤り。
 4. ミルズの[『The Power Elite』原著](https://www.marxists.org/subject/humanism/mills-c-wright/power-elite.htm)は政治・経済・軍事の権力中枢を論じる。コールマンへの帰属は誤り。
 5. [レマートの原著抜粋](https://selfteachingresources.pbworks.com/f/Primary%2Band%2BSecondary%2BDeviation%2BLemert.pdf)に一次・二次逸脱の区別がある。ミルズへの帰属は誤り。
@@ -54,4 +54,4 @@
 
 ## 継続条件
 
-独立PASSはこの5問・25肢のみ。問17・23は画像・正答確認済みでも解説の独立PASSには算入しない。その他の年度問題もHOLD。`APPROVED.json` と公開ローダーを変更しない。
+初回時点の独立PASSは5問・25肢だった。問17は原著直接閲覧で追加PASS、問23は別の追加証跡によりPASSへ更新した。129問の公開HOLD、`APPROVED.json` と公開ローダーの未変更は維持する。
