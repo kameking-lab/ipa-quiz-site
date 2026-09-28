@@ -11,7 +11,7 @@ import { extractFaq } from "@/lib/blog/faq";
 // 「同じ試験日に同時受験できるか」を正面から扱う専用ページが無かった。新記事
 // ipa-shiken-fukusuu-kubun-juken を追加した。この記事が
 // (1) 複数区分/制度の記事として登録され、
-// (2) 公式の核心事実（同一試験日は1区分のみ・CBT通年区分は別日程で年に複数可）を正しく述べ、
+// (2) 公式の核心事実（AP・高度・SCは各期1回・1区分、通年CBTは別日程で受験可能）を正しく述べ、
 // (3) ロードマップ/申込フロー/各ハブへ funnel し（誇大な採点訴求はしない）、
 // (4) 既存の関連記事から inbound を受け orphan 化せず、
 // (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
@@ -30,31 +30,25 @@ describe("複数区分 同時受験の可否記事の事実性と funnel", () =>
     expect(post!.tags).toContain("制度");
   });
 
-  it("核心事実（同一試験日は1区分のみ・CBT通年区分は別日程で年に複数可）を正しく述べている", () => {
+  it("核心事実（各期1回・1区分、通年CBTは別日程で受験可能）を正しく述べている", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    // 同一試験日は同時受験不可・1 区分のみ
+    // AP・高度・SCは同じ期に複数区分を申し込めない。
     expect(body).toContain("同じ試験日に複数の区分を同時受験することはできません");
-    expect(body).toContain("1 区分のみ");
-    // 方式の違い（CBT 通年 vs 春秋 PBT）
-    expect(body).toContain("CBT 方式");
-    expect(body).toContain("PBT 方式");
+    expect(body).toContain("申込みは1回のみ");
+    expect(body).toContain("同じ期に複数の試験区分は申し込めません");
+    // 通年CBTと期間制CBTは別の申込制度。
+    expect(body).toContain("通年CBT");
+    expect(body).toContain("期間制CBT");
     // 時期をずらせば年に複数可能
-    expect(body).toContain("時期をずらせば");
-    // 制度移行の hedge（CBT 化で柔軟になる方向・断定しない）
-    expect(body).toContain("CBT 化");
+    expect(body).toContain("時期を分ければ、複数資格を狙えます");
+    expect(body).toContain("前期にNW、後期にDB");
   });
 
-  // 同時受験不可の「例示」は、実際に同じ季に実施される区分の組でなければ成立しない。
-  // 高度の実施季は 春期=ST/SA/NW/SM・秋期=PM/DB/ES/AU・AP/SC=春秋両方
-  // (IPA list.html／exam-data-invariants と整合)。session89 まで例示が「同じ秋期に NW」
-  // 「同じ春期に AP と PM」と季違いの組(NW=春期・PM=秋期で同じ試験日に並ばない)を挙げ、
-  // 同時受験不可の理由(同一試験日に重なる)を誤って示していた。同一季の組へ是正したのを pin。
-  it("同時受験不可の例示が同一季に実施される区分の組になっている", () => {
+  // 2026年度は同日衝突ではなく各期1区分の申込制限。
+  it("2026年度の同じ期にAPとNWを併願できない例がある", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    // 正: 春期=AP+NW / 秋期=DB+PM（いずれも同じ季・同じ試験日に重なる組）
-    expect(body).toContain("同じ春期に AP（応用情報）と NW（ネットワーク）");
-    expect(body).toContain("同じ秋期に DB（データベース）と PM（プロジェクトマネージャ）");
-    // 誤: 季違いの組（NW は春期・PM は秋期）を例示しない
+    expect(body).toContain("前期にAPとNWを両方申し込むことはできません");
+    expect(body).toContain("科目A群と科目B群の実施日が離れていても");
     expect(body).not.toContain("同じ秋期に NW");
     expect(body).not.toContain("同じ春期に AP と PM");
   });
