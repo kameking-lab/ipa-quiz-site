@@ -29,7 +29,7 @@ const FeedbackGateModal = dynamic(
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Loader2, Timer, Share2, Check, Copy } from "lucide-react";
+import { ArrowLeft, Loader2, Timer, Share2, Check, Copy, Sparkles } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
@@ -41,6 +41,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
 import { AchievementToast } from "@/components/motivation/AchievementToast";
+import { tsuginoLearningUrl, tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 export function quizModeLabel(mode: string): string {
   const labels: Record<string, string> = { random: "ランダム", year: "年度別", topic: "分野別", review: "復習", starred: "あとで復習", mock: "模試", sequential: "順番に解く", unanswered: "未回答" };
@@ -346,6 +347,12 @@ export function QuizPlayer({
         mode={mode}
         labelOverride={completionLabel}
         shareHref={completionShareHref}
+        scheduleUrl={tsuginoScheduleUrl(question?.exam)}
+        learningUrl={tsuginoLearningUrl(question?.exam)}
+        onReviewLast={question && revealed ? () => {
+          setCompleted(false);
+          setCopilotQuery("open");
+        } : undefined}
         onRetry={() => {
           setStats({ answered: 0, correct: 0 });
           setElapsed(0);
@@ -641,6 +648,9 @@ export function QuizCompleteScreen({
   backLabel = "モード選択に戻る",
   labelOverride,
   shareHref,
+  scheduleUrl,
+  learningUrl,
+  onReviewLast,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -651,6 +661,9 @@ export function QuizCompleteScreen({
   backLabel?: string;
   labelOverride?: string;
   shareHref?: string;
+  scheduleUrl?: string;
+  learningUrl?: string | null;
+  onReviewLast?: () => void;
 }) {
   const [copied, setCopied] = React.useState(false);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -736,6 +749,12 @@ export function QuizCompleteScreen({
         </div>
 
         <div className="flex flex-col gap-2">
+          {onReviewLast ? (
+            <Button variant="outline" onClick={onReviewLast} className="w-full">
+              <Sparkles className="h-4 w-4" aria-hidden="true" />
+              最後の問題をAIに質問
+            </Button>
+          ) : null}
           <Button variant="primary" onClick={onRetry} className="w-full">
             もう一度挑戦
           </Button>
@@ -743,6 +762,22 @@ export function QuizCompleteScreen({
             <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
+
+        {scheduleUrl ? (
+          <nav aria-label="次の資格で日程と学習先を確認" className="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
+            <p className="font-semibold text-sky-950 dark:text-sky-100">この資格の次の一歩</p>
+            <div className="mt-2 flex flex-col gap-2">
+              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+                試験日・申込締切を次の資格で確認 ↗
+              </a>
+              {learningUrl ? (
+                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+                  対応する学習・教材を次の資格で選ぶ ↗
+                </a>
+              ) : null}
+            </div>
+          </nav>
+        ) : null}
 
         {/* 旗艦＝午後II論述AI採点への導線。論述区分 (ST/SA/PM/SM/AU) を解き終えた
             読者にだけ 1 回だけ提示する（解説カードと違い問題ごとに繰り返さない）。
