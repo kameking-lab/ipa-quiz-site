@@ -1,0 +1,28 @@
+{
+  "status": "DRAFT_UNREVIEWED_PUBLICATION_HOLD",
+  "examSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "answerSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "visualEvidence": "visual-q41-50.json",
+  "sharedFigurePage": 13,
+  "supportSources": [
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2024/06/kanki_koujigyousya.pdf",
+    "https://www.mitsubishielectric.co.jp/fa/products/mvd/mvsw/pmerit/"
+  ],
+  "questionCount": 1,
+  "choiceReasonDraftCount": 4,
+  "choiceReasonReviewedCount": 0,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    {
+      "number": 43,
+      "answer": "イ",
+      "principle": "共有単線図③のaは屋外区分開閉器、bは断路器、cは受電用遮断器。停止時に断路器bを開く前に負荷電流を切る。公式PDF14ページの矢印順を選択肢ごとに確認する。",
+      "choices": {
+        "イ": "b→a→cは断路器bを最初に開く。bには負荷電流を遮断する能力がないため、この順序は最も不適切。",
+        "ロ": "c→b→aは遮断器cで負荷電流を切ってから断路器bを開くので、bの無負荷開路条件を満たす。",
+        "ハ": "a→b→cは負荷開閉器aで先に受電を止め、無負荷を確認してからbを開く順序。bを通電中に先行開路しない。",
+        "ニ": "c→a→bは遮断器cで負荷電流を切り、さらに区分開閉器aを開いてからbを開く。bは無負荷で開路する。"
+      }
+    }
+  ]
+}
