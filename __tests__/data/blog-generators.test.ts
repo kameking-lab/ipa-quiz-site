@@ -731,12 +731,14 @@ describe("blog 午前I免除 post — 高度試験 spring/autumn grouping is cor
 // 「午後II：120分で1問選択」). exam-data の SC profile は既に単一午後・記述で正。
 // Pin the unified 午後 so the abolished 午後I/午後II split can't silently regress.
 describe("blog SC merit post — 午後 structure is the unified 記述式 test (post-2023)", () => {
-  it("sc-shikaku-merit describes 午前I・午前II・午後 の 3部構成, not the old 4部構成", () => {
+  it("sc-shikaku-merit describes 科目A-1・科目A-2・科目B and 2026 dates", () => {
     const post = getBlogPostBySlug("sc-shikaku-merit");
     expect(post).toBeDefined();
     const body = post!.body;
-    expect(body).toContain("午前 I・午前 II・午後（記述式）の 3 部構成");
-    expect(body).toContain("午後：150 分で 4 問中 2 問選択（記述式）");
+    expect(body).toContain("科目A-1・科目A-2・科目B（記述式）の3科目");
+    expect(body).toContain("科目Bは150分で4問中2問");
+    expect(body).toContain("10月17日〜27日");
+    expect(body).not.toContain("年 2 回開催（春期・秋期）");
     // The abolished pre-2023 split must be gone from this SC-specific article.
     expect(body).not.toContain("午前 I・午前 II・午後 I・午後 II の 4 部構成");
     expect(body).not.toContain("午後 I：90 分で 2 問選択");

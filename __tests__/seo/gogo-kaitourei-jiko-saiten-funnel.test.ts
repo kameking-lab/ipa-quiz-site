@@ -41,9 +41,10 @@ describe("午後 解答例・自己採点記事の事実性と funnel", () => {
     expect(body).toContain("一例");
     // 部分点の内訳は非公開＝1点単位の自己採点はできない（誇大回避）
     expect(body).toContain("非公開");
-    // 公式入手先（許諾・使用料不要）への出典リンク
+    // 公式入手先と、2026年度の実施問題が非公開である旨
     expect(body).toContain("ipa.go.jp/shiken/mondai-kaiotu");
-    expect(body).toContain("許諾");
+    expect(body).toContain("2026年度のAP・高度・SC");
+    expect(body).toContain("当年度の試験問題は非公開");
   });
 
   it("記述式区分（AP/NW/DB/SC/ES）のハブへ funnel する", () => {
