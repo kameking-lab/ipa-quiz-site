@@ -33,7 +33,7 @@ export interface ExamConfig {
 
 // ------- Shared category lists -------
 
-/** 社会福祉士・精神保健福祉士の共通科目（第38回／第28回は同一の問題冊子）。 */
+/** 社会福祉士・精神保健福祉士の共通科目（第38回／第28回、第37回／第27回はそれぞれ同一の問題冊子）。 */
 const SSSC_COMMON_SUBJECTS = [
   "医学概論", "心理学と心理的支援", "社会学と社会システム", "社会福祉の原理と政策", "社会保障",
   "権利擁護を支える法制度", "地域福祉と包括的支援体制", "障害者福祉", "刑事司法と福祉",
@@ -592,7 +592,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
   },
   tohan: {
     code: "tohan",

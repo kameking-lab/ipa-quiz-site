@@ -1,0 +1,99 @@
+{
+  "startedAt": "2026-09-28T15:34:17.018Z",
+  "finishedAt": "2026-09-28T15:37:35.527Z",
+  "mode": "review",
+  "tag": "review",
+  "batch": "batch3.json",
+  "candidate": "batch3.draft.json",
+  "referenceNotes": "reports/sssc-shakai37-20260928/independent-review-*.md @ f802f78329f49cf067f9087ad75aab4561e06e90 (PR #609)",
+  "requestedModel": "claude-opus-5-5",
+  "tools": [
+    "WebFetch",
+    "WebSearch"
+  ],
+  "exitCode": 0,
+  "isError": false,
+  "numTurns": 29,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 28,
+      "outputTokens": 12762,
+      "cacheReadInputTokens": 2181641,
+      "cacheCreationInputTokens": 206796,
+      "webSearchRequests": 0,
+      "costUSD": 2.3460482,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4872,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 649447,
+      "outputTokens": 8640,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 9,
+      "costUSD": 0.7826469999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "stderr": "",
+  "questionCount": 12,
+  "statuses": [
+    [
+      26,
+      "FIX"
+    ],
+    [
+      27,
+      "PASS"
+    ],
+    [
+      28,
+      "FIX"
+    ],
+    [
+      29,
+      "FIX"
+    ],
+    [
+      30,
+      "PASS"
+    ],
+    [
+      31,
+      "PASS"
+    ],
+    [
+      32,
+      "PASS"
+    ],
+    [
+      33,
+      "PASS"
+    ],
+    [
+      34,
+      "FIX"
+    ],
+    [
+      35,
+      "PASS"
+    ],
+    [
+      36,
+      "PASS"
+    ],
+    [
+      37,
+      "PASS"
+    ]
+  ]
+}

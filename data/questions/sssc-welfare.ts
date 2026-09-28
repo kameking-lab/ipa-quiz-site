@@ -24,20 +24,27 @@ export type SsscSource = {
   fiscalYear: number;
   examDate: string;
   answerUrl: string;
+  /** 法改正注意書きに表示する出題時点（省略時は第38回・第28回の「令和8年1〜2月」）。 */
+  lawNoticePeriod?: string;
+  /** 解説の最終更新日（省略時は 2026-09-26）。 */
+  lastUpdated?: string;
   questionPdfs: Record<string, { url: string; sha256: string }>;
+  /** 公開データから除外した問題（原文と一次資料から公式正答を一意に説明できないもの）。 */
+  withheld?: { session: SsscSourceItem["session"]; number: number; status: string; reason: string }[];
   questions: SsscSourceItem[];
 };
 
 /** 独自解説であることを各問題の出典欄に表示する。 */
 export const SSSC_INDEPENDENCE_NOTICE = "解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。";
 
-const LAW_NOTICE = "※出題時点（令和8年1〜2月）の制度に基づく解説です。その後の法改正等で結論が変わる場合があります。";
+const lawNotice = (period = "令和8年1〜2月") =>
+  `※出題時点（${period}）の制度に基づく解説です。その後の法改正等で結論が変わる場合があります。`;
 
 const SESSION_LABEL: Record<SsscSourceItem["session"], string> = { kyotsu: "共通科目", senmon: "専門科目" };
 
 export function toSsscQuestion(
   exam: ExamCode,
-  edition: Pick<SsscSource, "title" | "fiscalYear" | "examDate" | "answerUrl">,
+  edition: Pick<SsscSource, "title" | "fiscalYear" | "examDate" | "answerUrl" | "lawNoticePeriod" | "lastUpdated">,
   pdfs: SsscSource["questionPdfs"],
   item: SsscSourceItem,
 ): Question {
@@ -66,7 +73,7 @@ export function toSsscQuestion(
     choices: Object.fromEntries(keys.map((key, index) => [key, item.choices[index]])),
     answer: answerKeys.length === 1 ? answerKeys[0]! : (answerKeys as ChoiceKey[]),
     ...(answerKeys.length > 1 ? { requiredSelections: answerKeys.length } : {}),
-    explanation: item.lawSensitive ? `${item.summary}\n${LAW_NOTICE}` : item.summary,
+    explanation: item.lawSensitive ? `${item.summary}\n${lawNotice(edition.lawNoticePeriod)}` : item.summary,
     choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]])),
     explanationCoverage: "full",
     hasImage: false,
@@ -74,6 +81,6 @@ export function toSsscQuestion(
     sourceAnswerUrl: edition.answerUrl,
     sourceAttribution: `出典：公益財団法人社会福祉振興・試験センター ${edition.title} ${SESSION_LABEL[item.session]} 問題${item.number}。${SSSC_INDEPENDENCE_NOTICE}`,
     license: "SSSC-reuse",
-    lastUpdated: "2026-09-26",
+    lastUpdated: edition.lastUpdated ?? "2026-09-26",
   };
 }

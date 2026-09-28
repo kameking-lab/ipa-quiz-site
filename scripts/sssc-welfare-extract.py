@@ -467,6 +467,19 @@ CONFIGS = {
             {"name": "pm", "html": "listen_pm.html", "pdfs": [f"se_pm_{i:02d}_28.pdf" for i in range(1, 7)]},
         ],
     },
+    "seishin27": {
+        "dir": "seishin27",
+        "halves": [
+            {"name": "pm", "html": "listen_se_pm_27.html", "pdfs": [f"se_pm_{i:02d}_27.pdf" for i in range(1, 7)]},
+        ],
+    },
+    "seishin27common": {
+        # 共通科目は社会福祉士第37回と同じPDF（sp_am_*_37.pdf）。読み上げHTMLは精神保健福祉士側の午前版。
+        "dir": "seishin27",
+        "halves": [
+            {"name": "am", "html": "listen_se_am_27.html", "pdfs": [f"sp_am_{i:02d}_37.pdf" for i in range(1, 13)]},
+        ],
+    },
 }
 
 if __name__ == "__main__":
@@ -474,7 +487,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("exam", choices=sorted(CONFIGS))
-    parser.add_argument("--cache", required=True, help="folder holding kaigo38/, shakai38/, seishin28/ downloads")
+    parser.add_argument("--cache", required=True, help="folder holding kaigo38/, shakai38/, seishin28/, shakai37/, seishin27/ downloads")
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
     ROOT = Path(args.cache)

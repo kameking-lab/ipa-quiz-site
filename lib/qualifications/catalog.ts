@@ -274,9 +274,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.sssc.or.jp/seishin/past_exam/index.html",
     officialReuseTermsUrl: "https://www.sssc.or.jp/pastissues/index.html",
     status: "live",
-    reuseSummary: "第28回（令和7年度）の専門科目48問と共通科目84問、全選択肢の解説を収録。",
+    reuseSummary: "第28回（令和7年度）の専門科目48問・共通科目84問と、第27回（令和6年度）の専門科目48問・共通科目81問、全選択肢の解説を収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回精神保健福祉士国家試験 問題○",
-    remainingWork: ["第27回・第26回の追加", "法改正で成立しなくなった問題の失効管理"],
+    remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
   },
   {
     slug: "sekou-kenchiku1",

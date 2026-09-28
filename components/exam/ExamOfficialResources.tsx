@@ -171,12 +171,17 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
       {
         label: "社会福祉振興・試験センター 過去の試験問題",
         href: "https://www.sssc.or.jp/seishin/past_exam/index.html",
-        description: "第28回の専門科目・共通科目の問題PDF掲載ページ。",
+        description: "第28回・第27回の専門科目・共通科目の問題PDF掲載ページ。",
       },
       {
         label: "第28回 合格基準・正答一覧",
         href: "https://www.sssc.or.jp/seishin/past_exam/pdf/no28/se_kijun_seitou.pdf",
         description: "専門科目48問・共通科目84問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
+      },
+      {
+        label: "第27回 合格基準・正答一覧",
+        href: "https://www.sssc.or.jp/seishin/past_exam/pdf/no27/se_kijun_seitou.pdf",
+        description: "専門科目48問・共通科目84問の公式正答。本サイトの掲載分はこのPDFと全問照合済み。",
       },
     ] : exam === "kaigo" ? [
       {
