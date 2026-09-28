@@ -15,12 +15,12 @@ import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
+import { COPILOT_MODEL } from "@/lib/copilot/model";
 
 export const runtime = "nodejs";
 
 const STREAM_TIMEOUT_MS = 35_000;
-// Google 公式の最新テキスト Flash（2026-09-27）。他の AI ルートは変えない。
-export const COPILOT_MODEL = "gemini-3.8-flash";
+export { COPILOT_MODEL } from "@/lib/copilot/model";
 
 const BodySchema = z.object({
   question: z.object({ id: z.string().min(1).max(120) }),

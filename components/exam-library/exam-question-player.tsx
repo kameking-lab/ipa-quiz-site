@@ -30,6 +30,7 @@ import { Markdown } from "@/components/ui/markdown";
 import { extractExamChoices } from "@/lib/exam-library-choices";
 import { ExamQuestionFigure } from "@/components/exam-library/exam-question-figure";
 import { ChoiceExplanationPanel } from "@/components/exam-library/choice-explanation-panel";
+import { ExamLibraryCopilot } from "@/components/exam-library/exam-copilot";
 import { ExamDeviceSavePanel } from "@/components/exam-library/exam-device-save-panel";
 import {
   boilerAnswerPage,
@@ -747,6 +748,13 @@ export function ExamQuestionPlayer({
                     ) : null}
                   </div>
                 </div>
+
+                <ExamLibraryCopilot
+                  key={current.id}
+                  examId={examId}
+                  questionId={current.id}
+                  selectedChoice={currentAnswer?.choice ?? null}
+                />
 
                 {current.choiceCount > 0 && status !== "correct" ? (
                   <button type="button" onClick={retryCurrent} className={`${secondaryButton} mt-4`}>

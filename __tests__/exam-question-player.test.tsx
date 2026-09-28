@@ -102,6 +102,15 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.queryByText("関連する解説記事")).not.toBeInTheDocument();
   });
 
+  it("offers contextual AI questions only after the answer is revealed", () => {
+    renderPlayer();
+    expect(screen.queryByRole("button", { name: "この問題をAIに質問" })).not.toBeInTheDocument();
+    answer(2);
+    fireEvent.click(screen.getByRole("button", { name: "この問題をAIに質問" }));
+    expect(screen.getByRole("textbox", { name: "どこが分からないですか？" })).toBeInTheDocument();
+    expect(screen.getByText(/AIの説明は公式見解ではありません/)).toBeInTheDocument();
+  });
+
   // safety-free-02 (労働衛生工学区分) の公開検証: reports/revenue-eco-20260913/receipts/
   // safety-free-02-eisei-kijutsu.json (ok:true) -> data/exam-library/official-catalog.json
   // の cskohyo-CS20251911(subject: 労働衛生工学) に付与した noteLinks と同じ形。
