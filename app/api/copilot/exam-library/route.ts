@@ -43,6 +43,15 @@ export async function POST(req: Request) {
     ? parsed.data.selectedChoice : null;
   const answerKnown = isScorableQuestion(question);
   const sourceUrl = officialPdfPageUrl(examSourcePdfUrl(entry), question.sourcePages?.[0]);
+  // The source text usually includes every choice, but validated presentation
+  // overlays can hold the exact choices displayed by the player separately.
+  const displayedQuestion = question.presentation
+    ? [
+        question.presentation.prompt,
+        "表示中の選択肢:",
+        ...question.presentation.choices.map((choice) => `（${choice.number}）${choice.text}`),
+      ].join("\n")
+    : question.text;
   const choiceReasons = answerKnown
     ? (question.choiceExplanation?.choices.map((choice) => `（${choice.number}）${choice.reason}`).join("\n") ?? "")
     : "";
@@ -55,7 +64,7 @@ export async function POST(req: Request) {
     `試験: ${entry.label} / ${entry.subject}`,
     `問題: 問${question.sourceQuestionNumber ?? question.number}（${question.id}）`,
     `公表元の問題PDF${entry.sourceMode === "official-archive-copy" ? "の保存コピー" : ""}: ${sourceUrl}`,
-    `問題文・選択肢:\n${question.text.slice(0, 16000)}`,
+    `問題文・選択肢:\n${displayedQuestion.slice(0, 16000)}`,
     `学習者の選択: ${selectedChoice === null ? "未選択" : `（${selectedChoice}）`}`,
     `公式正答: ${answerKnown ? `（${question.correctChoice}）` : "未登録・採点なし"}`,
     studyExplanation ? `サイトの学習用解説（非公式）:\n${studyExplanation.slice(0, 6000)}` : "",

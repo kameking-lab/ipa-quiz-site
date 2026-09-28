@@ -69,4 +69,23 @@ describe("POST /api/copilot/exam-library", () => {
     expect(prompt.value).not.toContain("公式正答: （2）");
     expect(prompt.value).not.toContain("選択肢2が公式正答です");
   });
+
+  it("includes choices from the validated presentation when the source text stores them separately", async () => {
+    loadPaper.mockReturnValueOnce([{
+      ...question,
+      text: "選択肢を含まない元の設問",
+      presentation: {
+        sourceHash: "validated-by-loader",
+        prompt: "表示中の設問",
+        choices: [{ number: 1, text: "保護具A" }, { number: 2, text: "保護具B" }],
+        figures: [],
+      },
+    }]);
+    const response = await POST(request());
+    expect(response.status).toBe(200);
+    await response.text();
+    expect(prompt.value).toContain("表示中の設問");
+    expect(prompt.value).toContain("（1）保護具A");
+    expect(prompt.value).toContain("（2）保護具B");
+  });
 });
