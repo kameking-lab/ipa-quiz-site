@@ -1,0 +1,96 @@
+{
+  "review": "independent-original-figure-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEdited": false,
+  "draftFile": "reason-draft-q45-47-50.json",
+  "draftSha256": "3D859D704D317C9C9CE39BB5E299B6CB338E7DFC80F6430EFB6F077F6FF25505",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "figurePrintedPage": 13,
+    "choicesPrintedPage": 15,
+    "visualCheck": "共有単線図と印刷15ページのCVT断面図を原本画像で目視確認。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "otherPrimarySources": [
+    "https://www.swcc.co.jp/sfcc/products/detail/sfcc003_2030.html",
+    "https://densen.yazaki-group.com/app/files/2021/05/spec_003.pdf",
+    "https://fa-faq.mitsubishielectric.co.jp/faq/show/15032",
+    "https://dl.mitsubishielectric.co.jp/dl/fa/document/catalog/i_motor/l74101121/L74101121-Q.pdf"
+  ],
+  "reviewedQuestions": 5,
+  "reviewedChoices": 20,
+  "questionReviews": [
+    {
+      "number": 45,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "figureCheck": "⑤は計器用変圧器の二次側から電圧計Vへ至る回路にあり、切換スイッチVSの前段に描かれた試験用端子。",
+      "choiceChecks": {
+        "イ": "電流切換スイッチは下のASであり⑤の記号・位置と異なる。",
+        "ロ": "電圧切換スイッチは⑤より右のVSであり⑤はスイッチではない。",
+        "ハ": "電流端子は下のCT二次回路にあり⑤の電圧回路と異なる。",
+        "ニ": "⑤は電圧端子で、位置・記号とも原本に一致。"
+      },
+      "draftFinding": "正誤・理由一致。"
+    },
+    {
+      "number": 47,
+      "officialAnswer": "ハ",
+      "draftAnswerMatches": true,
+      "figureCheck": "⑦は高圧主回路を囲むCT記号で二次が過電流継電器I>と電流計Aに接続。",
+      "choiceChecks": {
+        "イ": "地絡電流検出は零相変流器などの役割で、⑦の三相主回路CTの主目的ではない。",
+        "ロ": "高電圧を低電圧にするのはVT/PTで、⑦はCT。",
+        "ハ": "高圧電路の電流を計測・保護用の電流に変成する。",
+        "ニ": "過電圧抑制は避雷器等の役割でCTの役割ではない。"
+      },
+      "draftFinding": "正誤・理由一致。"
+    },
+    {
+      "number": 48,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "figureCheck": "⑧は原本共有図でLBSと明記され、開閉器の傍にヒューズ記号が付く。",
+      "choiceChecks": {
+        "イ": "ヒューズ付断路器ではない。図中の機器名はLBS。",
+        "ロ": "高圧カットアウトは別枝にPCと明記されており⑧ではない。",
+        "ハ": "遮断器を主体とするものではなくLBS。",
+        "ニ": "限流ヒューズ付高圧交流負荷開閉器で図のLBSとヒューズ記号に一致。"
+      },
+      "draftFinding": "正誤・理由一致。"
+    },
+    {
+      "number": 49,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "figureCheck": "印刷15ページのロだけが導体、架橋ポリエチレン絶縁体、ビニルシースをそれぞれ独立して備えた単心3本のより合わせ。図⑨の低圧動力幹線CVTに一致。",
+      "choiceChecks": {
+        "イ": "共通外装内に3心を収め、各心に半導電層・銅シールドがある高圧系構造。",
+        "ロ": "単心CV 3条のトリプレックス形で正しい。メーカー仕様書も600V CVTを同構造と定義。",
+        "ハ": "3本の独立したシースはあるが各心に半導電層・銅シールドがあり、図の低圧600V CVTと異なる。",
+        "ニ": "共通シースで各心がビニル絶縁体。CVTの架橋ポリエチレン絶縁・単心3本とは異なる。"
+      },
+      "draftFinding": "正答と全四肢の判定は一致。初稿イは『3心が共通外装』だけだったが、執筆担当が各心の半導電層・銅シールドを追記済み。"
+    },
+    {
+      "number": 50,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "figureCheck": "印刷13ページ⑩直前の動力制御盤内記号はスター・デルタ始動器を示す。電動機の三つの巻線の始端・終端6点を盤へ引き出し、接地線は設問から除外。",
+      "choiceChecks": {
+        "イ": "3本は三相電源を単純に直入れする場合の線数で、盤内でスター・デルタ切替を行えない。",
+        "ロ": "4本では三つの巻線の六端子を個別に盤へ戻せない。",
+        "ハ": "5本でも六端子に不足。",
+        "ニ": "三巻線各2端子で6本。接地線は別で数えない。"
+      },
+      "draftFinding": "正誤・理由一致。『各相巻線の両端を制御盤へ戻す』という6本の理由は妥当。"
+    }
+  ]
+}

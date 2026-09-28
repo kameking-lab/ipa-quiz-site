@@ -1,0 +1,57 @@
+{
+  "review": "independent-JIS-symbol-and-operation-order-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEditedByReviewer": false,
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "figurePrintedPage": 13,
+    "choicesPrintedPages": [14, 15],
+    "visualCheck": "共有単線図③・⑥と、問43の矢印順および問46の図のみの四肢を原本画像で照合。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "symbolSource": {
+    "url": "https://www.mitsubishielectric.co.jp/fa/ssl/learn/el/eln/course/fa_0120/cha_0/pdf/00000000_01.pdf",
+    "note": "三菱電機のJIS C 0617シリーズ図記号表、印刷3～4ページ。電磁接触器07-13-02、交流遮断器07-13-05、負荷開閉器07-13-08、断路器07-13-06、避雷器07-22-03。"
+  },
+  "reviewedQuestions": 2,
+  "reviewedChoices": 8,
+  "questionReviews": [
+    {
+      "number": 43,
+      "draftFile": "reason-draft-q43.json",
+      "draftSha256": "C0F7C38FE707F90EB758B0DEDA85BDF4D4AC11832C43F7C3902733EAABF5AC8D",
+      "officialAnswer": "イ",
+      "draftAnswerMatches": true,
+      "figureCheck": "③のaは上流負荷開閉器、bは断路器、cは遮断器。断路器bに負荷電流遮断能力はない。",
+      "choiceChecks": {
+        "イ": "b→a→c。通電・負荷中に断路器bを先に開くため最も不適切。",
+        "ロ": "c→b→a。cで負荷を切ってからbを開く。",
+        "ハ": "a→b→c。上流の負荷開閉器aで電源を切ってからbを開く。",
+        "ニ": "c→a→b。cとaを先に開きbを無負荷で開く。"
+      },
+      "draftFinding": "正誤一致。初稿のaは『屋外区分開閉器』のみだったが、執筆担当が『負荷開閉器』を追記済み。"
+    },
+    {
+      "number": 46,
+      "draftFile": "reason-draft-q46.json",
+      "draftSha256": "155BC43907302F35972F9C709D7746090FE638C2F66018A9788E0CB6E6DBF548",
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "figureCheck": "⑥には避雷器枝回路が入る。全選択肢の下部は避雷器、上部記号のみが異なる。",
+      "choiceChecks": {
+        "イ": "上部は電磁接触器07-13-02。避雷器用の断路器ではない。",
+        "ロ": "上部の×は交流遮断器07-13-05。避雷器用の断路器ではない。",
+        "ハ": "上部の小丸は負荷開閉器07-13-08。避雷器用の断路器ではない。",
+        "ニ": "上部の短い横線は断路器07-13-06。避雷器と直列の組合せで正答。"
+      },
+      "draftFinding": "草案の正誤は一致。初稿は上部記号の名称が未確定だったが、執筆担当がJIS C 0617に沿ってイ・ロ・ハ・ニを確定名称へ修正し、diagramSymbolIdentificationPending=falseに更新済み。"
+    }
+  ]
+}
