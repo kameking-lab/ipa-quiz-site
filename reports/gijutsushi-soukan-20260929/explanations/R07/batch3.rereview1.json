@@ -1,0 +1,59 @@
+{
+  "questions": [
+    {
+      "number": 25,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://ja.wikipedia.org/wiki/4M_(%E5%AE%89%E5%85%A8%E5%B7%A5%E5%AD%A6)",
+          "checked": "4MはMan・Machine・Media（作業環境・マニュアル等）・Managementで構成される。4EはEngineering・Education・Enforcementに、Example（率先垂範・事例提示）またはEnvironment（環境的対策）を加えたもので、Economyは含まれない（Wikipediaは一次資料ではないため補助的な裏付け。総監キーワード集では確認できていない）"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "problems": "肢3の理由にある「長期間の対応は社会経済活動への影響が大きいことも考慮されている」は、閲覧した一次資料で確認できなかった。それ以外の主張（最も警戒する期間は1週間、事前避難が必要な地域はその後さらに1週間「巨大地震注意」と同様の対応、調査中の発表条件、日常生活を継続しつつ注意する行動）は確認できた。ガイドラインは基準日後の令和7年8月に改訂・改称されているため、lawSensitive=true は妥当。",
+      "fixes": {
+        "3": "巨大地震警戒が発表された場合に最も警戒する期間は、最初の地震発生から1週間を基本とする。1か月間とする記述は誤りで、これが正答。",
+        "lawSensitive": true
+      },
+      "evidence": [
+        {
+          "url": "https://www.bousai.go.jp/jishin/nankai/rinji/nankai_e_learning/jichitai/review/",
+          "checked": "「巨大地震警戒」の場合の期間は地震発生から2週間。事前避難が必要な地域では、最初の1週間は事前避難を実施し、その後さらに1週間は事前避難を終了しつつ「巨大地震注意」と同様の対応を続ける"
+        },
+        {
+          "url": "https://www.bousai.go.jp/jishin/nankai/rinji/index4.html",
+          "checked": "地震発生後の避難では間に合わない可能性のある住民は1週間の事前避難。その他は「地震の発生に注意しながら通常の生活を行いましょう」"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/kishou/know/jishin/nteq/info_criterion.html",
+          "checked": "臨時情報（調査中）の発表条件：監視領域内でM6.8以上の地震が発生、または想定震源域内のプレート境界で通常と異なるゆっくりすべりの可能性がある場合など"
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=336AC0000000223;article=60",
+          "checked": "災害対策基本法60条1項：災害が発生し、又は発生するおそれがある場合に、市町村長は必要と認める地域の必要と認める居住者等に対し立退きを指示できる（避難指示）。同3項：立退き避難がかえって危険な場合に、高所への移動などの緊急安全確保措置を指示できる（緊急安全確保）"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=336AC0000000223;article=56",
+          "checked": "56条1項：市町村長は立退きの準備その他の措置について必要な通知又は警告をすることができる。同2項：要配慮者の円滑かつ迅速な避難の確保のため、必要な情報の提供その他の配慮をする。高齢者等避難の根拠は「指示」ではなく通知・警告等である"
+        },
+        {
+          "url": "https://www.bousai.go.jp/oukyu/hinanjouhou/r3_hinanjouhou_guideline/",
+          "checked": "警戒レベル3高齢者等避難＝避難に時間を要する人が避難を開始するタイミング、レベル4避難指示＝全員避難、レベル5緊急安全確保＝命の危険が極めて高い段階。ガイドラインは基準日後の令和8年3月に改定されているため、lawSensitive=true は妥当"
+        }
+      ]
+    }
+  ]
+}

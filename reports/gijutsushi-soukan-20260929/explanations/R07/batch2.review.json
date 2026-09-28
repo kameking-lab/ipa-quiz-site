@@ -1,0 +1,136 @@
+{
+  "questions": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=347AC0000000057;article=66_10",
+          "checked": "労働安全衛生法66条の10第2項：事業者は、検査を行った医師等から労働者に結果が通知されるようにしなければならない。医師等は、労働者の同意を得ないで結果を事業者に提供してはならない。肖4の不適切の根拠と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=347M50002000032;article=52_9",
+          "checked": "労働安全衛生規則52条の9：常時使用する労働者に対し1年以内ごとに1回、定期に実施する。検査項目は①心理的な負担の原因、②心身の自覚症状、③他の労働者による支援の3項目。肢1・肢3と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=347M50002000032;article=52_14",
+          "checked": "規則52条の14：医師等に一定規模の集団ごとに集計・分析させること（第1項）と、その結果を勘案して心理的負担を軽減する適切な措置を講ずること（第2項）は、いずれも努力義務。肢5と一致。"
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/hourei_seido_tetsuzuki/anzen_eisei/stress_check.html",
+          "checked": "（検索結果の要約で確認）令和7年法律第33号（2025年5月14日公布）により、50人未満の事業場も実施義務化（公布後3年以内に施行）。基準日より後の改正のため、lawSensitive=true は妥当。"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=349AC0000000116;article=1",
+          "checked": "雇用保険法1条の目的に、失業時・雇用継続困難時・教育訓練受講時・子の養育のための休業時等の給付と、失業の予防・能力開発等が含まれる。肢1と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=349AC0000000116;article=33",
+          "checked": "33条1項：重責解雇と正当な理由のない自己都合退職は、待期満了後1か月以上3か月以内の間で公共職業安定所長が定める期間、基本手当を支給しない（給付制限であり、不支給ではない）。肢2が不適切である根拠と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=349AC0000000116;article=10",
+          "checked": "10条3項：高年齢被保険者には高年齢求職者給付金、短期雇用特例被保険者には特例一時金、日雇労働被保険者には日雇労働求職者給付金。肢3と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=349AC0000000116;article=60_2",
+          "checked": "60条の2：教育訓練給付金支給対象者（被保険者と、被保険者であった者で一定期間内の者）が指定教育訓練を修了した場合に支給。肢4と一致。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=349AC0000000116;article=61_4",
+          "checked": "61条の4：対象家族は、配偶者・父母・子（これらに準ずる者として厚生労働省令で定めるものを含む）と配偶者の父母。"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=403M50002000025;article=3",
+          "checked": "育児・介護休業法施行規則3条：準ずる者は祖父母・兄弟姉妹・孫。同居・扶養の要件は定められていない。肢5と一致。"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://bizhint.jp/keyword/60856",
+          "checked": "日本の専門職制度は1960年代頃から既存制度の穴を埋めるものとして登場した、との記述（二次資料）。1990年代後半に新たに導入されたとする肢1の誤りと、草稿の『早くから普及』の記述と整合。"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 16,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 17,
+      "status": "FIX",
+      "problems": "肢3の理由にある『往復50km分の距離』は、原文に距離の条件がないのに作られた数値。算術平均は200+350+1080+980+480=3090÷50=61.8点、幾何平均は√16=4倍、調和平均は2/(1/25+1/15)=18.75km/h、3.2倍の計算も、すべて検算して正しいことを確認した。",
+      "fixes": {
+        "3": "誤りです。（ア）の幾何平均と（ウ）の算術平均は正しい選択です。しかし（イ）を算術平均で20km/hとすると誤りです。同じ道のりを往復する場合、往復の総距離を総所要時間で割った平均速度は、調和平均の18.75km/hになります（例えば片道75kmなら、行き3時間・帰り5時間で150km÷8時間＝18.75km/h）。"
+      },
+      "evidence": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://isms.jp/isms/about.html",
+          "checked": "（検索結果の要約で確認）ISMS適合性評価制度は、わが国の情報セキュリティ全体の向上に貢献し、諸外国からも信頼を得られる情報セキュリティレベルを達成することを目的とする。JIPDECのISMS-ACが運用。肢2と一致。"
+        },
+        {
+          "url": "https://www.ipa.go.jp/security/jisec/about/about.html",
+          "checked": "（検索結果の要約で確認）CC（ISO/IEC 15408）は、IT関連製品・システムが適切に設計され、その設計が正しく実装されていることを評価する国際標準。組織の運用・管理は評価対象外で、肢4が不適切である根拠と一致。"
+        },
+        {
+          "url": "https://ipa.go.jp/security/jisec/ccra",
+          "checked": "（検索結果の要約で確認）CCRAでは、CCに基づき評価・認証された製品がアレンジメント参加国間で相互に通用する。肢5と一致。"
+        }
+      ]
+    }
+  ]
+}

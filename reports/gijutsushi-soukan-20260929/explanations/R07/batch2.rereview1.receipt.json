@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-09-28T17:45:37.537Z",
+  "finishedAt": "2026-09-28T17:45:50.332Z",
+  "mode": "review",
+  "tag": "rereview1",
+  "batch": "batch2.json",
+  "candidate": "batch2.rereview1.candidate.json",
+  "strict": true,
+  "requestedModel": "claude-opus-5-5",
+  "tools": [
+    "WebFetch",
+    "WebSearch"
+  ],
+  "exitCode": 0,
+  "isError": false,
+  "numTurns": 1,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 285,
+      "cacheReadInputTokens": 130709,
+      "cacheCreationInputTokens": 11332,
+      "webSearchRequests": 0,
+      "costUSD": 0.1225058,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 242,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "stderr": "",
+  "questionCount": 1,
+  "statuses": [
+    [
+      17,
+      "PASS"
+    ]
+  ]
+}

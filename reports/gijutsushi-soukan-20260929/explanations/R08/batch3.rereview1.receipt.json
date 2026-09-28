@@ -1,0 +1,59 @@
+{
+  "startedAt": "2026-09-28T17:45:37.820Z",
+  "finishedAt": "2026-09-28T17:47:36.484Z",
+  "mode": "review",
+  "tag": "rereview1",
+  "batch": "batch3.json",
+  "candidate": "batch3.rereview1.candidate.json",
+  "strict": true,
+  "requestedModel": "claude-opus-5-5",
+  "tools": [
+    "WebFetch",
+    "WebSearch"
+  ],
+  "exitCode": 0,
+  "isError": false,
+  "numTurns": 17,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 5614,
+      "cacheReadInputTokens": 1773229,
+      "cacheCreationInputTokens": 25423,
+      "webSearchRequests": 0,
+      "costUSD": 0.6704057999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1083,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 356162,
+      "outputTokens": 4309,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 4,
+      "costUSD": 0.417707,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "stderr": "",
+  "questionCount": 2,
+  "statuses": [
+    [
+      21,
+      "PASS"
+    ],
+    [
+      26,
+      "PASS"
+    ]
+  ]
+}

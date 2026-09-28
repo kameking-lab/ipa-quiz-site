@@ -1,0 +1,97 @@
+{
+  "questions": [
+    {
+      "number": 21,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/416AC0000000122",
+          "checked": "公益通報者保護法第11条。第1項は従事者の指定、第2項は体制整備等の措置を事業者の義務としている。第3項は、常時使用する労働者の数が300人以下の事業者について「定めるように努めなければ」「とるように努めなければ」と読み替える（努力義務）。選択肢2の理由と一致する。"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    },
+    {
+      "number": 25,
+      "status": "FIX",
+      "problems": "4Eの4つ目のEを「Example（模範・事例）」と断定している。一般的な解説ではExampleとされることが多いが、Environment（環境）とする資料もあり、一次資料で一意に確定できない。正答の根拠は「Economyは含まれない」の一点で足りるため、断定を避けた表現に改める。",
+      "fixes": {
+        "4": "4E対策の4つは、Education（教育）、Engineering（技術・工学）、Enforcement（強化・徹底）に、一般にExample（模範・事例）を加えたものとされる（Environmentとする資料もある）。いずれの場合もEconomy（経済）は含まれないため、記述は不適切で、これが正答。",
+        "summary": "4M（Man・Machine・Media・Management）で要因を分析し、4Eで対策を検討するのが事故分析・対策の定番手法である。4EはEducation・Engineering・Enforcementに、Example（模範・事例）など（資料によりEnvironment）を加えた4観点であり、Economy（経済）は含まれない。Economyを含めた選択肢4が不適切で正答。"
+      },
+      "evidence": []
+    },
+    {
+      "number": 26,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/347AC0000000057",
+          "checked": "労働安全衛生法第1条（目的）は、職場における労働者の安全と健康の確保と快適な職場環境の形成の促進を目的としている。第3条第1項は「事業者は…職場における労働者の安全と健康を確保するようにしなければならない」と定め、責務の主体を事業者としている。選択肢4の理由と一致する。"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "problems": "内容は正しい（巨大地震警戒対応は1週間を基本とし、その後1週間は巨大地震注意対応）。ただし本ガイドラインは基準日後の令和7年8月に改訂され、名称も「南海トラフ地震臨時情報防災対応ガイドライン」に変わっている。基準日後に改訂があるため lawSensitive を true にする。",
+      "fixes": {
+        "lawSensitive": true
+      },
+      "evidence": []
+    },
+    {
+      "number": 28,
+      "status": "FIX",
+      "problems": "(a) 基準日後の令和8年3月に「避難情報に関するガイドライン」が改定されているため、lawSensitive を true にすべき。(b) ガイドラインでは、警戒レベル3の高齢者等避難で高齢者等がとる行動は、危険な場所からの立退き避難、または自宅等が安全なら屋内安全確保とされている。「立退き避難の開始を求め」とだけ書くのは不正確なので改める。",
+      "fixes": {
+        "5": "高齢者等避難（警戒レベル3）は、災害が発生するおそれがある段階で、避難に時間を要する高齢者等に危険な場所からの避難（立退き避難、または安全な場合は屋内安全確保）を促し、その他の者にも準備等を促す情報であり、「指示」ではない。災害発生後に立退き避難を指示するとした点が誤りで、これが正答。",
+        "lawSensitive": true
+      },
+      "evidence": []
+    },
+    {
+      "number": 29,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://www.mlit.go.jp/sogoseisaku/maintenance/02research/02_01.html",
+          "checked": "2023年3月時点で建設後50年以上経過する施設の割合は、道路橋が約37%、トンネル約25%、河川管理施設約22%、水道管路約9%、下水道管渠約7%、港湾施設約27%。最も高いのは道路橋で、下水道管渠は1割未満。選択肢1の理由と一致する。"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": []
+    }
+  ]
+}

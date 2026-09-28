@@ -651,11 +651,23 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["published"],
     yearRange: { start: 2025, end: 2026 },
   },
+  soukan: {
+    code: "soukan",
+    nameFull: "技術士第二次試験 総合技術監理部門",
+    urlSlug: "soukan",
+    level: "advanced",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "必須科目Ⅰ－1（択一式）",
+      categories: ["経済性管理", "人的資源管理", "情報管理", "安全管理", "社会環境管理"],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

@@ -1,0 +1,28 @@
+{
+  "questions": [
+    {
+      "number": 34,
+      "status": "PASS",
+      "problems": "",
+      "fixes": {},
+      "evidence": [
+        {
+          "url": "https://laws.e-gov.go.jp/api/1/articles;lawId=354AC0000000049;article=149",
+          "checked": "Opened this page. Article 149, paragraph 2 of the Act on Rationalization of Energy Use (省エネ法) says the manufacturer judgment standards are set by weighing the energy performance of the most efficient specified energy-consuming equipment, the future outlook for technology development, and other circumstances. This matches choice 2 and its explanation (top runner system based on the Energy Conservation Act)."
+        },
+        {
+          "url": "https://www.enecho.meti.go.jp/about/whitepaper/2025/html/2-2-2.html",
+          "checked": "Direct fetch returned 403. The search-result snippet for this page (Energy White Paper 2025, section on promoting cogeneration) says that cogeneration makes effective use of exhaust heat from power generation to reach high overall energy efficiency and reduce primary energy use, and that the government aims for further use and wider adoption of high-efficiency cogeneration through continued support, with fuel decarbonization in view, toward carbon neutrality. This matches the explanation for choice 5 and the summary, and confirms that 'being phased out' is wrong."
+        },
+        {
+          "url": "https://www.enecho.meti.go.jp/about/pamphlet/energy2025/01.html",
+          "checked": "Direct fetch not attempted. The search-result snippet from the Agency for Natural Resources and Energy says S+3E means taking Safety as the premise, putting stable supply (Energy Security) first, and pursuing Economic Efficiency and Environment. This matches choice 1 and its explanation."
+        },
+        {
+          "url": "https://www.env.go.jp/council/35hairyo-keiyaku/y352-01/ref06-2.pdf",
+          "checked": "Fetched this Ministry of the Environment PDF but could not extract its text. The search-result snippet says ESCO providers cover everything from diagnosis and design/construction through operation and maintenance, all costs are paid from the savings in utility bills (electricity, heating, water) that the energy-saving retrofit produces, and the ESCO guarantees the energy savings. This matches choice 4 and its explanation."
+        }
+      ]
+    }
+  ]
+}
