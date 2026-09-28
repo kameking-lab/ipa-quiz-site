@@ -15,6 +15,9 @@ export function hasUnrenderableContent(q: Question): boolean {
   // 電験三種の2024年度上期法規問8は、公式表の行・数値・単位を
   // 「【表】」以下に全文文字起こししている。画像フラグだけで除外しない。
   if (q.exam === "denken3" && q.id === "denken3-2024-upper-law-q08" && q.question.includes("【表】") && q.question.includes("0.1 MΩ") && q.question.includes("0.2 MΩ")) return false;
+  // 貸金業務取扱主任者 第19回問48は、損益計算書の科目・金額を全文文字起こしして
+  // ステムに含めている（原本は表組みだが数値の欠落はない）。
+  if (q.exam === "kashikin" && q.id === "kashikin-2024-annual-gakka-q48") return false;
   if (q.hasImage) return true;
   return /次の表|以下の表|下の表|表のように|表に示す|表のとおり|次の図|以下の図|下の図|図のように|図に示す|図中の/.test(q.question);
 }
