@@ -29,12 +29,16 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/about/koudo_menjo.html",
   "https://www.ipa.go.jp/shiken/about/menjo-fe.html",
   "https://www.ipa.go.jp/shiken/goukaku/index.html",
+  "https://www.ipa.go.jp/shiken/goukaku/happyobi.html",
+  "https://www.ipa.go.jp/shiken/goukaku/hassou.html",
+  "https://www.ipa.go.jp/shiken/goukaku/sg_fe_happyobi_2026.html",
   "https://www.ipa.go.jp/shiken/goukaku/shinsei_01.html",
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
   "https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html",
   "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/order.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/past_pass_2026.html",
 ] as const;
 
 const ALLOWED_HOSTS = new Set([

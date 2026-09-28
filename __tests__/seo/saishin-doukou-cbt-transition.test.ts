@@ -15,19 +15,19 @@ import { getBlogPostBySlug } from "@/data/blog";
 // (4) cbt-vs-pbt 詳細記事へ内部リンクで funnel する、ことを pin する（崩れたら落ちる）。
 
 const SLUG = "ipa-saishin-doukou";
-const IPA_OFFICIAL = "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html";
+const IPA_OFFICIAL = "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html";
 
 describe("最新動向2026 記事の応用情報・高度試験 CBT 移行 反映", () => {
   it("記事が存在する", () => {
     expect(getBlogPostBySlug(SLUG), `${SLUG} が存在しない`).toBeDefined();
   });
 
-  it("令和8年度からの CBT 移行予定（対象＝応用情報・高度・支援士）を述べている", () => {
+  it("令和8年度の期間制 CBT と確定した前期日程を述べている", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).toContain("令和8年度（2026年度）");
-    expect(body).toContain("CBT方式へ移行する予定");
-    // 「予定」段階であることを明示（断定回避）
-    expect(body).toContain("「予定」段階");
+    expect(body).toContain("期間制CBT方式で実施");
+    expect(body).toContain("11月24日〜12月6日");
+    expect(body).not.toContain("CBT方式へ移行する予定");
   });
 
   it("IPA 公式の durable fact（試験時間は変更なし・科目A／科目B 名称）を述べている", () => {
