@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
@@ -22,10 +21,6 @@ import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 
-const FeedbackGateModal = dynamic(
-  () => import("@/components/FeedbackGateModal").then((m) => m.FeedbackGateModal),
-  { ssr: false },
-);
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
@@ -88,7 +83,6 @@ export function QuizPlayer({
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
-  const [upsellOpen, setUpsellOpen] = React.useState(false);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
@@ -194,18 +188,6 @@ export function QuizPlayer({
       recordReview(question.id, correct);
       setStats((s) => {
         const next = { answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) };
-        if (next.answered === 10) {
-          try {
-            const alreadyShown = localStorage.getItem(LS_KEYS.feedbackGateShown) === "true";
-            const alreadySubmitted = localStorage.getItem(LS_KEYS.feedbackSubmitted) === "true";
-            if (!alreadyShown && !alreadySubmitted) {
-              localStorage.setItem(LS_KEYS.feedbackGateShown, "true");
-              setUpsellOpen(true);
-            }
-          } catch {
-            // ignore
-          }
-        }
         const allStats = history.getStats();
         const newlyUnlocked = evaluateAchievementsAfterAnswer(
           allStats.total,
@@ -293,8 +275,6 @@ export function QuizPlayer({
       if (e.key === "Escape") {
         if (showKeyboardHelp) {
           setShowKeyboardHelp(false);
-        } else if (upsellOpen) {
-          setUpsellOpen(false);
         } else if (copilotQuery) {
           setCopilotQuery(null);
         }
@@ -302,7 +282,7 @@ export function QuizPlayer({
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery, showKeyboardHelp]);
+  }, [question, revealed, onSelect, goNext, toggleStar, copilotQuery, showKeyboardHelp]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -538,7 +518,6 @@ export function QuizPlayer({
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-        onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}
         headerRight={
           copilotQuery === "why-wrong" ? (
@@ -555,19 +534,10 @@ export function QuizPlayer({
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-        onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}
         key={`mobile-${question.id}-${copilotQuery ?? ""}`}
       />
 
-
-      {upsellOpen && (
-        <FeedbackGateModal
-          open={upsellOpen}
-          onClose={() => setUpsellOpen(false)}
-          source="ai-limit"
-        />
-      )}
 
       <FireworksBurst
         active={burst !== null}

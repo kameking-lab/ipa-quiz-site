@@ -119,7 +119,7 @@ describe("POST /api/copilot", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("Content-Type")).toContain("text/plain");
     expect(res.headers.get("X-Provider")).toBe("mock");
-    expect(res.headers.get("X-RateLimit-Limit")).toBeTruthy();
+    expect(res.headers.get("X-RateLimit-Limit")).toBeNull();
     expect(res.headers.get("X-RAG-Enabled")).toMatch(/^[01]$/);
 
     const body = await drainStream(res);
@@ -138,5 +138,19 @@ describe("POST /api/copilot", () => {
       ),
     );
     expect(res.status).toBe(400);
+  });
+
+  it("does not call paid Gemini when the shared abuse counter is unavailable", async () => {
+    process.env.GEMINI_API_KEY = "test-key";
+    try {
+      const res = await POST(makeReq({
+        question: { id: validQuestion.id },
+        messages: [{ role: "user", content: "解説して" }],
+      }, "10.2.0.10"));
+      expect(res.status).toBe(503);
+      expect((await res.json()).error).toBe("rate_limit_unavailable");
+    } finally {
+      delete process.env.GEMINI_API_KEY;
+    }
   });
 });

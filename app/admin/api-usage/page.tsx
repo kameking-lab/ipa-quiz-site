@@ -3,7 +3,7 @@ import { Activity, AlertTriangle, CheckCircle2, DollarSign, Lock, Shield, Zap } 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getApiUsageStats } from "@/lib/rate-limit";
-import { IP_LIMITS, COST_JPY_PER_REQUEST, TRACKED_ENDPOINTS } from "@/lib/rate-limit";
+import { IP_LIMITS, COPILOT_MINUTE_LIMIT, COPILOT_GLOBAL_LIMITS, COST_JPY_PER_REQUEST, COPILOT_COST_JPY_PER_REQUEST, TRACKED_ENDPOINTS } from "@/lib/rate-limit";
 
 export const metadata: Metadata = {
   title: "API使用量ダッシュボード（管理画面）",
@@ -87,11 +87,11 @@ export default async function AdminApiUsagePage() {
               <span className="text-muted-foreground">回 / 日</span>
             </span>
             <span className="text-muted-foreground">
-              推定単価: <span className="font-mono font-semibold text-foreground">{COST_JPY_PER_REQUEST}円</span> / リクエスト
+              コパイロット推定単価: <span className="font-mono font-semibold text-foreground">{COPILOT_COST_JPY_PER_REQUEST.toFixed(3)}円</span> / リクエスト
             </span>
           </div>
           <p className="mt-2 text-xs text-muted-foreground">
-            ※ 既存の機能別制限（無料10回/日 + フィードバック後9999回）とは独立した追加レイヤーです。
+            ※ コパイロットは {COPILOT_MINUTE_LIMIT}回/分（IP単位）、{COPILOT_GLOBAL_LIMITS.hour}回/時・{COPILOT_GLOBAL_LIMITS.day}回/日（サイト全体）。他のAI機能には別の無料枠があります。
           </p>
         </CardContent>
       </Card>
@@ -115,13 +115,13 @@ export default async function AdminApiUsagePage() {
           icon={<DollarSign className="h-4 w-4" />}
           label="推定コスト 1時間"
           value={`¥${stats.estimatedCostJpy.last1h.toFixed(2)}`}
-          sub="固定単価の概算。モデル別実費ではありません"
+          sub="モデル別標準トークン数による概算。実費ではありません"
         />
         <KpiCard
           icon={<DollarSign className="h-4 w-4" />}
           label="推定コスト 24時間"
           value={`¥${stats.estimatedCostJpy.last24h.toFixed(2)}`}
-          sub="固定単価の概算。モデル別実費ではありません"
+          sub="モデル別標準トークン数による概算。実費ではありません"
         />
       </section>
 
@@ -167,7 +167,8 @@ export default async function AdminApiUsagePage() {
               <tbody>
                 {TRACKED_ENDPOINTS.map((ep, i) => {
                   const s = stats.byEndpoint[ep];
-                  const cost24h = Math.round(s.last24h * COST_JPY_PER_REQUEST * 100) / 100;
+                  const unitCost = ep === "copilot" ? COPILOT_COST_JPY_PER_REQUEST : COST_JPY_PER_REQUEST;
+                  const cost24h = Math.round(s.last24h * unitCost * 100) / 100;
                   return (
                     <tr
                       key={ep}
