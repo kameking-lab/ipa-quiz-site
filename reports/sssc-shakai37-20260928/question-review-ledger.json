@@ -1058,17 +1058,22 @@
       "modelReviewStatus": "PASS",
       "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
+        "DATA_VINTAGE_MISMATCH",
+        "OFFICIAL_SOURCE_ATTRIBUTION_ERROR",
         "STATISTICAL_CLAIMS_NEED_SOURCE"
       ],
       "explanationPublished": false,
       "reviewDisposition": "PRIMARY_VERIFIED",
-      "primaryReviewReason": "内閣府令和5年版障害者白書・厚労省令和4年生活のしづらさ調査（参考集計と第61表）・令和5年度障害者雇用実態調査で全5肢確認。施設入所率は知的10.1%対身体1.7%、親との同一世帯（19～64歳）は療育手帳91.2%対身体障害者手帳47.5%、65歳以上は在宅身体73%対在宅知的15%、30時間以上は身体75.1%対知的64.2%。",
+      "primaryReviewReason": "公式原本の「令和5年版障害者白書（厚生労働省）」は発行主体の不整合。内閣府白書（2016年在宅・2018年施設データ）の施設入所率は知的12.1%対身体1.7%、厚労省令和4年調査反映資料は知的10.1%対身体1.7%。第61表の19～64歳同居世帯内の親比率は療育手帳91.2%対身体障害者手帳47.5%。65歳以上は在宅身体73%対在宅知的15%、30時間以上は身体75.1%対知的64.2%。年度と分母を区別したうえで5肢の結論を確認。",
       "primaryReviewSources": [
-        "https://www8.cao.go.jp/shougai/whitepaper/r05hakusho/zenbun/h2_03_01_01.html",
+        "https://www8.cao.go.jp/shougai/whitepaper/r05hakusho/zenbun/siryo_01.html",
         "https://www.mhlw.go.jp/toukei/list/dl/seikatsu_chousa_b_r04_02.pdf",
         "https://www.mhlw.go.jp/toukei/list/dl/seikatsu_chousa_c_r04-06.xlsx",
         "https://www.mhlw.go.jp/content/11601000/001233721.pdf"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q52-53-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 53,
@@ -1084,7 +1089,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q52-53-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 54,
@@ -2405,6 +2413,6 @@
   ],
   "primarySourceVerifiedCount": 16,
   "publicationStatus": "HOLD",
-  "independentRationaleVerifiedCount": 33,
-  "independentReviewScope": "問17〜51の画像・正答を別担当が照合。問18〜22・24〜51の全165肢は一次資料で独立再照合PASS、問17・23は部分確認HOLD。残りは未査読。"
+  "independentRationaleVerifiedCount": 35,
+  "independentReviewScope": "問17〜53の画像・正答を別担当が照合。問18〜22・24〜53の全175肢は一次資料で独立再照合PASS、問17・23は部分確認HOLD。問52の公式原本出典表記不整合と資料版差を記録。残りは未査読。"
 }
