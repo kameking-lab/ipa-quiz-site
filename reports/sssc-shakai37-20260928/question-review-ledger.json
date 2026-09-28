@@ -2236,7 +2236,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 110,
@@ -2253,7 +2256,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 111,
@@ -2271,7 +2277,10 @@
       ],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 112,
@@ -2287,7 +2296,11 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PARTIAL_HOLD",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent",
+      "independentReviewHoldReason": "1982年バークレイ報告原著p.33の現物直接閲覧未了。大学博士論文の原著引用で正答肢3は間接確認、他4肢の帰属も原著未照合。"
     },
     {
       "number": 113,
@@ -2303,7 +2316,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 114,
@@ -2319,7 +2335,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q109-114-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 115,
@@ -2595,6 +2614,6 @@
   ],
   "primarySourceVerifiedCount": 16,
   "publicationStatus": "HOLD",
-  "independentRationaleVerifiedCount": 96,
-  "independentReviewScope": "問17〜108の画像・正答を別担当が照合。問17〜68・70〜75・77〜108の全450肢を独立PASS。問124〜129の全30肢も公式PDF画像・正答を再確認してPASS。計96問・480肢。問69・76は部分確認HOLD、他31問は未査読。問52の公式原本出典表記不整合と資料版差、問58の精神障害要件の補足、問107の指定版ガイドラインにある就業禁止の限定条件を記録。"
+  "independentRationaleVerifiedCount": 101,
+  "independentReviewScope": "問17〜114の画像・正答を別担当が照合。問17〜68・70〜75・77〜111・113〜114の全475肢を独立PASS。問124〜129の全30肢も公式PDF画像・正答を再確認してPASS。計101問・505肢。問69・76・112は部分確認HOLD、他25問（問1〜16・115〜123）は未査読。問52の公式原本出典表記不整合と資料版差、問58の精神障害要件、問107の指定版ガイドラインにある就業禁止の限定条件を記録。"
 }
