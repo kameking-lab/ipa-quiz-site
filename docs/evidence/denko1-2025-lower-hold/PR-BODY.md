@@ -13,7 +13,8 @@
 - Questions 1–10 have 40 choice-reason drafts independently checked against the official paper, answer key, and the pre-exam METI Article 149. The public approval marker remains absent.
 - Questions 11–20 have 40 additional choice-reason drafts checked independently against the official text and visual diagrams; Q16 and Q18 wording was corrected based on that review.
 - Questions 21–24 and 26 have 20 additional reason drafts awaiting independent review; Q25 photo-only choices still need component identification.
+- Questions 27–30 have 16 additional reason drafts awaiting an independent law/current-standard review.
 - Notable extraction errors: missing exponent sign in Q1, fragmented 100 V in Q3/Q4, missing equipment photos and picture-only choices, missing μ in Q39, and unrecoverable switch order in Q43.
 
 ## Publication gate
-PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **100/200**, independent review **80/200**, and public approval **0/200**. Normalized content and source/rights checks remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
+PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **116/200**, independent review **80/200**, and public approval **0/200**. Normalized content and source/rights checks remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
