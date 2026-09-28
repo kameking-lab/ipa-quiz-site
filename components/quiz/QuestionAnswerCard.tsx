@@ -16,6 +16,7 @@ import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
+import { posthogCapture } from "@/lib/posthog";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 
@@ -113,6 +114,9 @@ export function QuestionAnswerCard({
       } catch {
         /* ignore storage errors */
       }
+      // /q/* の inline 回答は元々未計測だった。QuizPlayer と同じイベント名を使うことで、
+      // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
+      posthogCapture("question_answered", { questionId, exam, correct });
     },
     [questionId, exam, year, season, session, qNumber, part],
   );

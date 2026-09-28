@@ -47,6 +47,8 @@ export type PostHogEventName =
   | "contact_form_submitted"
   | "note_outbound_click"
   | "book_click"
+  | "exam_library_answered"
+  | "exam_library_ai_query"
   | "referrer_with_utm";
 
 export type PostHogEventProps = Record<string, string | number | boolean | null | undefined>;

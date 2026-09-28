@@ -97,6 +97,31 @@ describe("admin middleware — configured", () => {
 });
 
 /**
+ * /admin/exam-usage (資格別 e ラーニング利用状況ダッシュボード) は他の /admin/* と
+ * 同じ Basic-Auth 保護下にあることを明示的に固定する。matcher は /admin/:path* の
+ * ワイルドカードで既にカバーしているが、新ページ追加時に個別のリグレッションが
+ * 起きていないことをピンで確認する。
+ */
+describe("admin middleware — /admin/exam-usage is Basic-Auth protected", () => {
+  function examUsageReq(headers: Record<string, string> = {}): NextRequest {
+    return new NextRequest("https://www.kakomon-ai.jp/admin/exam-usage", { headers });
+  }
+
+  it("returns 503 when admin auth is unconfigured", () => {
+    delete process.env.ADMIN_BASIC_USER;
+    delete process.env.ADMIN_BASIC_PASS;
+    expect(middleware(examUsageReq()).status).toBe(503);
+  });
+
+  it("returns 401 without credentials, and 200 with the correct ones, when configured", () => {
+    process.env.ADMIN_BASIC_USER = REAL_USER;
+    process.env.ADMIN_BASIC_PASS = REAL_PASS;
+    expect(middleware(examUsageReq()).status).toBe(401);
+    expect(middleware(examUsageReq({ authorization: basic(REAL_USER, REAL_PASS) })).status).toBe(200);
+  });
+});
+
+/**
  * 410 Gone — 後継ページの無い削除済みルートはクローラに「もう辿らなくてよい」と
  * 明示するため 410 を返す。301（後継あり）は next.config.ts の redirects() 側。
  * ここでガードするのは「削除ページが本当に 410 を返す」「admin 認証を壊さない」

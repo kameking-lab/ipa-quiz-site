@@ -68,7 +68,7 @@ describe("fetchFunnelData", () => {
         json: async () => ({
           results: [
             ["quiz_started", 60],
-            ["$pageview", "100"], // coerced via Number()
+            ["page_view", "100"], // coerced via Number()
             ["", 999], // blank name → skipped
           ],
         }),
@@ -84,13 +84,25 @@ describe("fetchFunnelData", () => {
       "論文問題ファネル",
       "ブログ読了ファネル",
     ]);
-    expect(res.event_counts).toEqual({ quiz_started: 60, $pageview: 100 });
+    expect(res.event_counts).toEqual({ quiz_started: 60, page_view: 100 });
     expect(Object.keys(res.event_counts)).not.toContain("");
 
     // The quiz funnel's first step has no predecessor → drop_pct null.
     const quiz = res.funnels[0].steps;
-    expect(quiz[0]).toMatchObject({ event: "$pageview", count: 100, drop_pct: null });
+    expect(quiz[0]).toMatchObject({ event: "page_view", count: 100, drop_pct: null });
     expect(quiz[1]).toMatchObject({ event: "quiz_started", count: 60 });
+  });
+
+  it("queries the explicit page_view event the client sends, never the disabled $pageview autocapture", async () => {
+    setEnv(true);
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ results: [] }) });
+    vi.stubGlobal("fetch", fetchMock);
+
+    await fetchFunnelData(7);
+
+    const body = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body)) as { query: { query: string } };
+    expect(body.query.query).toContain("'page_view'");
+    expect(body.query.query).not.toContain("$pageview");
   });
 
   it("degrades to zero counts but stays configured when the probe fails", async () => {

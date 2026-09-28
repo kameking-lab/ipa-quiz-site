@@ -20,6 +20,9 @@ import {
 } from "lucide-react";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
+import { posthogCapture } from "@/lib/posthog";
+import { findExamEntry } from "@/lib/exam-library-catalog";
+import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
 import Image from "next/image";
 import answerFiguresJson from "@/data/exam-library/answer-figures.json";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
@@ -159,6 +162,13 @@ export function ExamQuestionPlayer({
   const tabRestoredRef = useRef(false);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
 
+  // admin/exam-usage の資格別集計キー。ハブが未対応のカタログ項目は null のまま送る
+  // (examId だけは残るが、資格別ランキングには計上されない)。
+  const hubSlug = useMemo(() => {
+    const entry = findExamEntry(examId);
+    return entry ? (qualificationHubForEntry(entry)?.slug ?? null) : null;
+  }, [examId]);
+
   // 端末内の保存データはマウント後だけ読む（サーバー描画では常に「なし」）
   const savedRaw = useSyncExternalStore(
     subscribeExamProgress,
@@ -256,9 +266,10 @@ export function ExamQuestionPlayer({
         ...answers,
         [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true },
       }, current.id);
+      posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
       focusLater(feedbackRef);
     },
-    [answers, commit, current, currentAnswer?.memo, submitted],
+    [answers, commit, current, currentAnswer?.memo, examId, hubSlug, submitted],
   );
 
   const submitAnswer = useCallback(() => {
@@ -278,8 +289,9 @@ export function ExamQuestionPlayer({
       },
       current.id,
     );
+    posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
     focusLater(feedbackRef);
-  }, [answers, commit, current, currentAnswer?.memo, draftChoice, submitted]);
+  }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted]);
 
   const retryCurrent = useCallback(() => {
     if (!current) return;
