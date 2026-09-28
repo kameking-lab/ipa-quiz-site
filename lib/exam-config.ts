@@ -395,8 +395,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       label: "学科",
       categories: ["電気理論・配電", "電気機器・発変電", "高圧設備・材料・施工", "設備図・検査・法令", "配線図(単線結線図)"],
     }],
-    seasons: ["first"],
-    yearRange: { start: 2026, end: 2026 },
+    seasons: ["first", "second"],
+    yearRange: { start: 2025, end: 2026 },
   },
   takken: {
     code: "takken",

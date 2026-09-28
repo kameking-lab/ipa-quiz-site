@@ -1,0 +1,35 @@
+{
+  "review": "independent-original-photo-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEditedByReviewer": false,
+  "draftFile": "reason-draft-q25.json",
+  "reviewedDraftSha256": "B1C8EF5BCAC46A0BC834B748FFF35E572FFB145E75606C689912BA39D5EFBF30",
+  "originalFinding": "初稿イは『動作表示棒付き高圧限流ヒューズ』と誤同定。執筆担当へ訂正を伝達し、現草案は『金属系あと施工アンカー』へ修正済み。",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "printedPage": 8,
+    "visualCheck": "写真四点を原本と高倍率表示で確認。イの突出部分・割り入り金属筒は金属系あと施工アンカー形状。型式までは確定しない。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56",
+    "answer": "イ"
+  },
+  "primaryProductSources": [
+    "https://sanko-techno.co.jp/products/metal/anchor09/",
+    "https://www.nichifu.co.jp/product/?search%5Bcategory%5D%5B%5D=%E8%A3%B8%E5%9C%A7%E7%9D%80%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%96"
+  ],
+  "reviewedQuestions": 1,
+  "reviewedChoices": 4,
+  "choiceChecks": {
+    "イ": "電線接続には使わない。コンクリートに器具・支持材を固定する金属系あと施工アンカーの写真。現草案の用途説明は妥当。商品型式の断定は不可。",
+    "ロ": "ボルト締付け式の電線接続金具の写真で、電線接続に使う。",
+    "ハ": "筒状圧着スリーブの写真で、電線接続に使う。",
+    "ニ": "透明な差込形コネクタの写真で、電線接続に使う。"
+  },
+  "draftFinding": "修正後の全四肢の正誤・理由は原本写真と公式正答に合う。"
+}

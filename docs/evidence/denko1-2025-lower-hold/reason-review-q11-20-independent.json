@@ -1,0 +1,123 @@
+{
+  "status": "INDEPENDENT_REVIEW_COMPLETED_PUBLICATION_HOLD",
+  "reviewedAt": "2026-09-28",
+  "scope": "令和7年度第一種電気工事士下期学科試験・問11〜20の解説草案40肢",
+  "draftPath": "docs/evidence/denko1-2025-lower-hold/reason-draft-q11-20.json",
+  "draftSha256": "df6eeccf08da77ebbcc7021aa6310889ee915416d27e60623f429b7e41248bc1",
+  "officialQuestionPdf": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "officialQuestionPdfSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "officialAnswerPdf": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "visualEvidence": "docs/evidence/denko1-2025-lower-hold/visual-q11-20.json",
+  "reviewedQuestionCount": 10,
+  "reviewedChoiceCount": 40,
+  "answerKeyMismatchCount": 0,
+  "materialCorrectionCount": 1,
+  "precisionSuggestionCount": 1,
+  "publicationApprovedCount": 0,
+  "publicationNote": "査読結果は公開承認ではない。元の草案・公開ローダー・承認ファイルは未変更。公開HOLDを維持する。",
+  "questions": [
+    {
+      "number": 11, "questionPdfPage": 5, "officialAnswer": "ロ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: 周波数が変われば鉄損を一定とすることはできない。",
+        "ロ": "PASS: 周波数一定で一次電圧が高まれば磁束密度が増し、一般に鉄損が増える。",
+        "ハ": "PASS: 鉄損にはうず電流損が含まれ、その成分より小さいとはいえない。",
+        "ニ": "PASS: 鉄損にはヒステリシス損が含まれ、その成分より小さいとはいえない。"
+      }
+    },
+    {
+      "number": 12, "questionPdfPage": 6, "officialAnswer": "ロ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: pn接合の発光という説明と一致。",
+        "ロ": "PASS: 直流100 V以上は個々のLEDチップの順方向電圧ではない。",
+        "ハ": "PASS: LEDの発光はエレクトロルミネセンスに該当する。",
+        "ニ": "PASS: 青色LEDと黄色蛍光体を用いる白色化方式は存在する。"
+      }
+    },
+    {
+      "number": 13, "questionPdfPage": 6, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "figureCheck": "公式PDFの四つの回路図を視認。イは整流器・蓄電池・負荷が直列経路、ロは負荷が整流器の交流側、ハは蓄電池が交流側、ニは整流器直流出力に蓄電池と負荷が並列。",
+      "choiceReviews": {
+        "イ": "PASS: 蓄電池と負荷が整流器直流側で並列にならず、草案の直列経路という読みは図と一致。",
+        "ロ": "PASS: 負荷は整流器の交流側にあり、直流負荷の浮動給電ではない。",
+        "ハ": "PASS: 蓄電池が交流電源側に接続されている。",
+        "ニ": "PASS: 蓄電池と負荷が整流器直流側に並列接続されている。"
+      }
+    },
+    {
+      "number": 14, "questionPdfPage": 6, "officialAnswer": "イ", "draftAnswerMatches": true,
+      "figureCheck": "写真の矢印先に『日本照明工業会 SB・SGI・SG形適合品』と表示された埋込形照明器具を視認。",
+      "choiceReviews": {
+        "イ": "PASS: 断熱材施工天井への埋込用途を示すマークの説明と合う。",
+        "ロ": "PASS: 非常用照明の認定を示すマークではない。",
+        "ハ": "PASS: 屋外の防雨・防水性能を示すマークではない。",
+        "ニ": "PASS: ライティングダクト取付適合の表示ではない。"
+      }
+    },
+    {
+      "number": 15, "questionPdfPage": 6, "officialAnswer": "イ", "draftAnswerMatches": true,
+      "figureCheck": "写真に屋外ユニットと貯湯ユニットを視認。問題文は機器内の二酸化炭素利用を明示。",
+      "choiceReviews": {
+        "イ": "PASS: CO2冷媒の自然冷媒ヒートポンプ給湯器に合う。",
+        "ロ": "PASS: パワーコンディショナは写真・CO2冷媒給湯という条件に合わない。",
+        "ハ": "PASS: 家庭用燃料電池は写真のCO2冷媒ヒートポンプと原理が違う。",
+        "ニ": "PASS: 水電解装置は写真の給湯器ではない。"
+      }
+    },
+    {
+      "number": 16, "questionPdfPage": 7, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "figureCheck": "流路を視認。①はドラムにつながる蒸発管、②はドラムからタービンへ至る蒸気を加熱する過熱器、③は給水ポンプからの水を予熱する節炭器。ロの表示は①過熱器・②蒸発管・③節炭器。",
+      "choiceReviews": {
+        "イ": "PASS: ①は合うが、②を節炭器、③を過熱器とするため誤り。",
+        "ロ": "CORRECTION_REQUIRED: 草案は『②③も流路の役割が合わない』とするが、公式図の③は節炭器で、選択肢ロの③は正しい。①②だけが入れ違い。",
+        "ハ": "PASS: ①過熱器・②節炭器・③蒸発管はいずれも位置と合わない。",
+        "ニ": "PASS: ①蒸発管・②過熱器・③節炭器で図と一致。"
+      },
+      "proposedCorrection": {
+        "choice": "ロ",
+        "replaceWith": "ロは①を過熱器、②を蒸発管としているが、図では①がドラムにつながる蒸発管、②がタービンへ向かう過熱器である。③の節炭器は合っている。"
+      }
+    },
+    {
+      "number": 17, "questionPdfPage": 7, "officialAnswer": "イ", "draftAnswerMatches": true,
+      "figureCheck": "公式PDFの分数を視認。イ=9.8QH/(ηpηm)、ロ=9.8ηpηm/(QH)、ハ=9.8Hηpηm/Q、ニ=9.8QHηpηm。",
+      "choiceReviews": {
+        "イ": "PASS: 水動力9.8QHをポンプ効率と電動機効率で割る。",
+        "ロ": "PASS: QHが分母で、揚水量・揚程との関係および単位が不適切。",
+        "ハ": "PASS: Qが分母で、揚水量との関係が不適切。",
+        "ニ": "PASS: 効率を乗じており必要入力を過小評価する。"
+      }
+    },
+    {
+      "number": 18, "questionPdfPage": 7, "officialAnswer": "イ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: アークホーンをがいしに取り付ける雷害対策に合う。",
+        "ロ": "PASS: がいし洗浄は汚損対策である。",
+        "ハ": "PRECISION_SUGGESTION: ダンパが雷害対策ではなく電線振動対策という判定は正しい。ただし『ギャロッピング等』は一般的なダンパの代表対象として広すぎるので省くことを推奨。",
+        "ニ": "PASS: シリコンコンパウンドは表面の撥水・汚損対策である。"
+      },
+      "proposedPrecisionEdit": {
+        "choice": "ハ",
+        "replaceWith": "電線のダンパは風などによる電線の機械的振動を抑えるためのもので、雷放電への対策ではない。"
+      }
+    },
+    {
+      "number": 19, "questionPdfPage": 7, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: 並列接続には極性一致が必要。",
+        "ロ": "PASS: 変圧比が異なると無負荷時の二次電圧差による循環電流が生じる。",
+        "ハ": "PASS: インピーダンス電圧は適切な負荷分担に関わる。",
+        "ニ": "PASS: 効率一致は並行運転の必要条件ではない。"
+      }
+    },
+    {
+      "number": 20, "questionPdfPage": 7, "officialAnswer": "ニ", "draftAnswerMatches": true,
+      "choiceReviews": {
+        "イ": "PASS: 過電流継電器は合うが、高圧柱上気中開閉器は短絡電流を遮断する機器ではない。",
+        "ロ": "PASS: 高圧真空遮断器は合うが、地絡継電器は地絡検出用である。",
+        "ハ": "PASS: 地絡方向継電器・高圧柱上気中開閉器とも短絡保護の組合せに合わない。",
+        "ニ": "PASS: 過電流継電器による短絡過電流検出と高圧真空遮断器による遮断の組合せ。"
+      }
+    }
+  ]
+}

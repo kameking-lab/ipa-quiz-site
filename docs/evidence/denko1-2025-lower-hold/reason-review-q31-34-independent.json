@@ -1,0 +1,90 @@
+{
+  "review": "independent-primary-source-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEdited": false,
+  "draftFile": "reason-draft-q31-34.json",
+  "draftSha256": "1B4490F3100CBAECE8E4D93FBBDFC3DA08DAD6E4658631EC5324CF262836E2B9",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+    "figurePrintedPage": 10,
+    "choicesPrintedPage": 11,
+    "figureCheck": "共有図の②は高圧地中引込線、③は建物貫通後の引込部、④はケーブルラック、⑤は受電設備。原本画像を目視照合。"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "legalVersion": {
+    "date": "2024-10-22",
+    "interpretation": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+    "commentary": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-3.pdf"
+  },
+  "otherPrimarySources": [
+    "https://www.mlit.go.jp/gobuild/content/001879271.pdf",
+    "https://www.mlit.go.jp/gobuild/content/001879364.pdf",
+    "https://www.mlit.go.jp/gobuild/content/001472440.pdf",
+    "https://www.jeea.or.jp/course/contents/02202/"
+  ],
+  "reviewedQuestions": 4,
+  "reviewedChoices": 16,
+  "questionReviews": [
+    {
+      "number": 31,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "source": "2024-10-22版解釈120条2項2号、4項1・2号、123条2項3号、同版解説120条",
+      "choiceChecks": {
+        "イ": "適切。FEPは地中ケーブル保護管として用いられる。原本②は構内高圧地中引込線。",
+        "ロ": "不適切。20mは需要場所の高圧15m以下という表示省略例外を超える。直接埋設式にも120条4項3号により表示規定が準用される。",
+        "ハ": "適切。123条2項3号により管路式地中電線を収める金属製管路はD種接地規定の例外。",
+        "ニ": "適切。120条4項1号は重量物の圧力を受ける場所で1.2m以上、同2号ハは所定の堅ろうながい装ケーブルを認める。"
+      },
+      "draftFinding": "正誤一致。ロは120条4項3号が2項2号を準用することまで記すと正確。",
+      "correctionProposal": "ロに『直接埋設式も120条4項3号で表示義務が準用される』を補足。"
+    },
+    {
+      "number": 32,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "source": "国交省令和7年公共建築工事標準仕様書・令和4年標準図（防水鋳鉄管と管路口防水装置）、JIS C 8380製品規格",
+      "choiceChecks": {
+        "イ": "適切。JIS C 8380はケーブル保護用合成樹脂被覆鋼管。受電室内の高圧ケーブル防護に合致。",
+        "ロ": "不適切。防水鋳鉄管には管路口防水装置を組み合わせる。二重壁内への水抜きは浸水防止装置を代替しない。",
+        "ハ": "適切。接地線の保護に硬質ポリ塩化ビニル電線管を用いる施工は原本の接地端子盤への立上りに合致。",
+        "ニ": "適切。ピット内高圧ケーブルの樹脂製クリート支持は絶縁・保持の施工として妥当。"
+      },
+      "draftFinding": "正誤一致。防水鋳鉄管と防水装置の組合せを国交省仕様書で確認。"
+    },
+    {
+      "number": 33,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "source": "2024-10-22版解釈164条1項4号、国交省令和4年公共建築改修工事標準仕様書2.14.5",
+      "choiceChecks": {
+        "イ": "適切。受電室の壁貫通部には適切な防火措置が必要。",
+        "ロ": "適切。電灯幹線と動力幹線はともに低圧のケーブルであり、設問条件だけで両者間のセパレータは義務とならない。",
+        "ハ": "適切。ケーブル重量に耐えるラックをアンカーボルトで堅固に支持する。",
+        "ニ": "不適切。金属製ケーブルラックのD種接地省略は乾燥場所かつ金属部分4m以下、または交流対地150V以下で8m以下等の条件が必要。15mはどちらも超える。"
+      },
+      "draftFinding": "正誤一致。ただし草案ニ末尾の『独立査読で確認する』は査読完了により削除できる。",
+      "correctionProposal": "ニを『解釈164条1項4号の接地省略は乾燥場所で4m以下、一定の低対地電圧条件でも8m以下。15mでは省略できない。』に置換。"
+    },
+    {
+      "number": 34,
+      "officialAnswer": "ハ",
+      "draftAnswerMatches": true,
+      "source": "2024-10-22版解釈15条1項1・2号・15-1表、https://www.jeea.or.jp/course/contents/02202/",
+      "choiceChecks": {
+        "イ": "適切。電気技術者協会の一次解説は可変リアクトルで供試物の充電電流を補償し試験用電源容量を節減すると説明。",
+        "ロ": "適切。絶縁耐力試験前後の絶縁抵抗測定と安全確認は試験手順に合う。",
+        "ハ": "不適切。15条1項2号のケーブル直流代替は15-1表の交流試験電圧の2倍で、1.5倍ではない。",
+        "ニ": "適切。最大使用電圧7000V以下の交流電路は15-1表で最大使用電圧の1.5倍を連続10分間。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    }
+  ]
+}
