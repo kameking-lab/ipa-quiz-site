@@ -1,7 +1,11 @@
 import { describe, expect, it, vi } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { createElement } from "react";
+import { render, screen } from "@testing-library/react";
 import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
+import { ExplanationCard } from "@/components/quiz/ExplanationCard";
+import { buildQuestionContext } from "@/lib/ai/prompts";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
@@ -12,21 +16,27 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 
 // 公式解答PDF(20260401_co_first_a01.pdf)の正答。イロハニ→アイウエ。
 const OFFICIAL = "ハロハニニロイハニイ" + "ニニニニイニハハハイ" + "ニロニイニニニイイハ" + "ニハロイニロロロハニ" + "イロイニイロロロイハ";
+const OFFICIAL_2025_LOWER = "ニニハハイイハロロロ" + "ロロニイイニイイニニ" + "ロロニイイニロニロハ" + "ロロニハハロハイイイ" + "ロロイニニニハニロニ";
 const TO_SITE: Record<string, string> = { イ: "ア", ロ: "イ", ハ: "ウ", ニ: "エ" };
+const FIRST = DENKO1_QUESTIONS.filter((q) => q.year === 2026 && q.season === "first");
+const SECOND = DENKO1_QUESTIONS.filter((q) => q.year === 2025 && q.season === "second");
 
 describe("第一種電気工事士 令和8年度上期学科(出題例)", () => {
-  it("is live and publishes all 50 questions in order", () => {
+  it("is live and publishes two complete 50-question papers", () => {
     expect(getQualificationByExamCode("denko1")?.status).toBe("live");
-    expect(DENKO1_QUESTIONS).toHaveLength(50);
-    expect(DENKO1_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
-    expect(QUESTIONS_BY_EXAM.denko1).toHaveLength(50);
+    expect(DENKO1_QUESTIONS).toHaveLength(100);
+    expect(FIRST.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+    expect(SECOND.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+    expect(new Set(DENKO1_QUESTIONS.map((q) => q.id)).size).toBe(100);
+    expect(QUESTIONS_BY_EXAM.denko1).toHaveLength(100);
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko1");
     expect(ALL_EXAM_CODES).not.toContain("denko1");
     expect(EXAM_CONFIGS.denko1.sessions[0]?.expectedQuestions).toBe(50);
   });
 
-  it("matches the official answer key", () => {
-    expect(DENKO1_QUESTIONS.map((q) => q.answer).join("")).toBe([...OFFICIAL].map((kana) => TO_SITE[kana]).join(""));
+  it("matches both official answer keys", () => {
+    expect(FIRST.map((q) => q.answer).join("")).toBe([...OFFICIAL].map((kana) => TO_SITE[kana]).join(""));
+    expect(SECOND.map((q) => q.answer).join("")).toBe([...OFFICIAL_2025_LOWER].map((kana) => TO_SITE[kana]).join(""));
   });
 
   it.each(DENKO1_QUESTIONS)("$id has four choices, four reasons, attribution and rendered figures", (q) => {
@@ -34,9 +44,10 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(Object.values(q.choiceExplanations ?? {}).every((reason) => reason.trim().length > 10)).toBe(true);
     expect(q.explanation.trim().length).toBeGreaterThanOrEqual(40);
-    expect(q.sourceAttribution).toMatch(/^出典：令和8年度第一種電気工事士上期学科試験（出題例）問\d+（電気技術者試験センター）/);
-    expect(q.sourcePdfUrl).toBe("https://www.shiken.or.jp/construction/upload/20260401_co_first_q01.pdf");
-    expect(q.sourceAnswerUrl).toBe("https://www.shiken.or.jp/construction/upload/20260401_co_first_a01.pdf");
+    expect(q.sourceAttribution).toMatch(/^出典：令和[78]年度.*第一種電気工事士.*問\d+（電気技術者試験センター）/);
+    const paperDate = q.year === 2025 ? "20251005" : "20260401";
+    expect(q.sourcePdfUrl).toBe(`https://www.shiken.or.jp/construction/upload/${paperDate}_co_first_q01.pdf`);
+    expect(q.sourceAnswerUrl).toBe(`https://www.shiken.or.jp/construction/upload/${paperDate}_co_first_a01.pdf`);
     expect(hasUnrenderableContent(q)).toBe(false);
     for (const url of [...(q.imageUrls ?? []), ...Object.values(q.choiceImageUrls ?? {})]) {
       expect(existsSync(join(process.cwd(), "public", url)), url).toBe(true);
@@ -45,10 +56,12 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
 
   it("covers the wiring-diagram questions with the shared official diagrams", () => {
     for (const q of DENKO1_QUESTIONS.filter((item) => item.qNumber >= 30 && item.qNumber <= 34)) {
-      expect(q.imageUrls).toContain("/images/denko1/2026-first/facility-plan.png");
+      const suffix = q.year === 2025 ? "2025-second" : "2026-first";
+      expect(q.imageUrls).toContain(`/images/denko1/${suffix}/facility-plan.png`);
     }
     for (const q of DENKO1_QUESTIONS.filter((item) => item.qNumber >= 41)) {
-      expect(q.imageUrls).toContain("/images/denko1/2026-first/single-line.png");
+      const suffix = q.year === 2025 ? "2025-second" : "2026-first";
+      expect(q.imageUrls).toContain(`/images/denko1/${suffix}/single-line.png`);
     }
   });
 
@@ -61,6 +74,20 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     for (const key of getChoiceKeys(shuffled.choices)) {
       expect([shuffled.choiceImageUrls?.[key], shuffled.choiceExplanations?.[key]]).toEqual(before.get(shuffled.choices?.[key]));
     }
+  });
+
+  it("shows 2025 lower explanations and passes all four reasons to the paid Gemini context", () => {
+    const q = SECOND.find((item) => item.qNumber === 25)!;
+    const context = buildQuestionContext(q, "イ", false);
+    expect(context).toContain("2025");
+    for (const reason of Object.values(q.choiceExplanations ?? {})) {
+      expect(context).toContain(reason);
+    }
+    render(createElement(ExplanationCard, { question: q, selected: "イ", isCorrect: false, starred: false,
+      onToggleStar: () => {}, onNext: () => {}, onAskAI: () => {} }));
+    expect(screen.getByRole("region", { name: "不正解の解説" })).toBeTruthy();
+    expect(screen.getByRole("region", { name: "不正解の解説" }).textContent).toContain(q.choiceExplanations?.イ);
+    expect(screen.getByText("選択肢ごとの解説")).toBeTruthy();
   });
 
   it("names the examination center as author without a reuse-terms link in JSON-LD", () => {

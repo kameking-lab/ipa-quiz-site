@@ -157,7 +157,7 @@ def build(question_pdf: Path) -> None:
             raise ValueError(f"Incomplete or conflicting Q{number}")
         image = f"media/q{number:02}.png"
         top, bottom = row["rowY"]
-        crop(pdf, row["page"], fitz.Rect(87, max(78, top - 3), 680, min(930, bottom + 3)), MEDIA / f"q{number:02}.png")
+        crop(pdf, row["page"], fitz.Rect(87, max(78, top - 3), 680, min(960, bottom + 3)), MEDIA / f"q{number:02}.png")
         shared = "media/shared-q30-34.png" if 30 <= number <= 34 else "media/shared-q41-50.png" if 41 <= number <= 50 else None
         candidate = {
             "number": number,
