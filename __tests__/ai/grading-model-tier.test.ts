@@ -101,10 +101,11 @@ describe("採点ルートだけが grading 層を使う（用途別の使い分�
   });
 
   it("copilot は明示された Gemini Flash、generate-question は free を使う", () => {
-    expect(read("app/api/copilot/route.ts")).toMatch(/COPILOT_MODEL = "gemini-3\.8-flash"/);
-    expect(read("app/api/copilot/route.ts")).not.toMatch(
-      /resolveModel\("grading"\)/,
-    );
+    expect(read("lib/copilot/model.ts")).toMatch(/COPILOT_MODEL = "gemini-3\.8-flash"/);
+    for (const route of ["app/api/copilot/route.ts", "app/api/copilot/exam-library/route.ts"]) {
+      expect(read(route)).toMatch(/COPILOT_MODEL/);
+      expect(read(route)).not.toMatch(/resolveModel\("grading"\)/);
+    }
     expect(read("app/api/generate-question/route.ts")).toMatch(
       /resolveModel\("free"\)/,
     );
