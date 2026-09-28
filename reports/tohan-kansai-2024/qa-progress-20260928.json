@@ -63,6 +63,26 @@
     58,
     59,
     60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
     114
   ],
   "pdfPageImageChecked": [
@@ -106,6 +126,26 @@
     58,
     59,
     60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
     114
   ],
   "pdfPageImageCheckScope": {
@@ -113,7 +153,8 @@
     "41": "公式前半PDFの該当ページ画像で成分表を含む問題文・選択肢を目視照合。1問。",
     "114": "公式後半PDFの該当ページ画像で成分表を含む問題文・選択肢を目視照合。1問。",
     "independentSecondReview": false,
-    "42-60": "公式前半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問44の6錠成分表、問51の100mL成分表を含む。19問。"
+    "42-60": "公式前半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問44の6錠成分表、問51の100mL成分表を含む。19問。",
+    "61-80": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。20問。"
   },
   "sourceGroundedChoiceReasonDrafts": {
     "questions": [
@@ -176,14 +217,35 @@
       57,
       58,
       59,
-      60
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80
     ],
-    "choices": 300,
+    "choices": 400,
     "independentReviewComplete": 0,
     "file": [
       "draft-choice-reasons-q1-20.json",
       "draft-choice-reasons-q21-40.json",
-      "draft-choice-reasons-q41-60.json"
+      "draft-choice-reasons-q41-60.json",
+      "draft-choice-reasons-q61-80.json"
     ]
   },
   "correctedCandidateExtraction": {
@@ -192,8 +254,8 @@
     "22": "配合成分表の行が混線していたため原本の4行を再構成した。"
   },
   "remaining": {
-    "fullPdfPageImageQuestionChecks": 79,
-    "sourceGroundedChoiceReasonDrafts": 300,
+    "fullPdfPageImageQuestionChecks": 59,
+    "sourceGroundedChoiceReasonDrafts": 200,
     "independentChoiceReasonReviews": 600,
     "independentQuestionReviews": 120,
     "reuseConditionsAndThirdPartyRightsReview": "PENDING"
