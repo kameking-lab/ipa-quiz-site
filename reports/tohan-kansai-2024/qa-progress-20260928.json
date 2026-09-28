@@ -391,7 +391,7 @@
       120
     ],
     "choices": 600,
-    "independentReviewComplete": 150,
+    "independentReviewComplete": 195,
     "file": [
       "draft-choice-reasons-q1-20.json",
       "draft-choice-reasons-q21-40.json",
@@ -409,8 +409,8 @@
   "remaining": {
     "fullPdfPageImageQuestionChecks": 0,
     "sourceGroundedChoiceReasonDrafts": 0,
-    "independentChoiceReasonReviews": 450,
-    "independentQuestionReviews": 90,
+    "independentChoiceReasonReviews": 405,
+    "independentQuestionReviews": 81,
     "reuseConditionsAndThirdPartyRightsReview": "PRIMARY_SOURCE_TERMS_CHECKED_THIRD_PARTY_CLEARANCE_PENDING"
   },
   "publicLoaderChanged": false,
@@ -423,7 +423,7 @@
     "fillChoices": 15,
     "singleChoices": 20,
     "method": "初稿の全肢について候補肢の正誤・選択ラベルと理由文の対応、公式正答位置、引用PDFページ範囲、空理由をプログラム再検査。内容の独立査読ではない。",
-    "independentReviewComplete": 150,
+    "independentReviewComplete": 195,
     "script": "self-audit-choice-reasons.py"
   },
   "independentReview": {
@@ -448,7 +448,16 @@
       18,
       19,
       20,
+      21,
       22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
       40,
       41,
       44,
@@ -459,7 +468,7 @@
       114,
       116
     ],
-    "choiceReasons": 150,
+    "choiceReasons": 195,
     "officialAnswerPositions": 120,
     "evidence": "independent-qa-20260928.md",
     "releaseHold": true
