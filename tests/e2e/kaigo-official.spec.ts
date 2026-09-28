@@ -1,11 +1,13 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("介護福祉士 第38回", () => {
-  test("exam hub and year page show 125 official questions with the independence notice", async ({ page }) => {
+test.describe("介護福祉士 第37回・第38回", () => {
+  test("exam hub shows 250 questions and each year shows 125 with the independence notice", async ({ page }) => {
     await page.goto("/kaigo");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("介護福祉士");
-    await expect(page.getByText("収録 125 問")).toBeVisible();
+    await expect(page.getByText("収録 250 問")).toBeVisible();
     await expect(page.getByText(/同センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
+    await page.goto("/kaigo/2024-annual");
+    await expect(page.getByText("125 問", { exact: true })).toBeVisible();
     await page.goto("/kaigo/2025-annual");
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
     await expect(page.getByText(/総合問題 問題114〜125/).first()).toBeVisible();
@@ -33,5 +35,16 @@ test.describe("介護福祉士 第38回", () => {
     await expect(figures.first()).toBeVisible();
     expect(await figures.first().evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(100);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+
+  test("第37回問題121は公式系図を表示し、選択肢2を正答として採点する", async ({ page }) => {
+    await page.goto("/q/kaigo/2024-annual/gakka/q121");
+    const figure = page.getByRole("img", { name: "問121の図表1" });
+    await expect(figure).toBeVisible();
+    expect(await figure.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(500);
+    const choices = page.getByRole("radio");
+    await expect(choices).toHaveCount(5);
+    await choices.nth(1).click();
+    await expect(page.getByText("正解！").first()).toBeVisible();
   });
 });

@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { QuestionBody } from "@/components/quiz/QuestionBody";
-import { KAIGO_INDEPENDENCE_NOTICE, KAIGO_QUESTIONS } from "@/data/questions/kaigo";
+import { KAIGO_INDEPENDENCE_NOTICE, KAIGO_2025_QUESTIONS } from "@/data/questions/kaigo";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel } from "@/lib/questions/display";
@@ -44,9 +44,9 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
   it("件数ゲート: 1〜125を欠落・重複なく、公式の科目区分どおりに公開する", () => {
     expect(isExamPublished("kaigo")).toBe(true);
     expect(EXAM_CONFIGS.kaigo.sessions[0]?.expectedQuestions).toBe(125);
-    expect(KAIGO_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 125 }, (_, i) => i + 1));
+    expect(KAIGO_2025_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 125 }, (_, i) => i + 1));
     for (const [subject, first, last] of SUBJECT_RANGES) {
-      const numbers = KAIGO_QUESTIONS.filter((q) => q.category === subject).map((q) => q.qNumber);
+      const numbers = KAIGO_2025_QUESTIONS.filter((q) => q.category === subject).map((q) => q.qNumber);
       expect(numbers, subject).toEqual(Array.from({ length: last - first + 1 }, (_, i) => first + i));
     }
     expect(defaultPracticeSession("kaigo")).toBe("gakka");
@@ -57,7 +57,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
     expect(keys.sourceFiles.kaigo.sha256).toBe(sources.kaigo.files["k_kijun_seitou.pdf"]?.sha256);
     expect(data.answerSha256).toBe(keys.sourceFiles.kaigo.sha256);
     expect(Object.keys(keys.kaigo)).toHaveLength(125);
-    for (const q of KAIGO_QUESTIONS) {
+    for (const q of KAIGO_2025_QUESTIONS) {
       const official = keys.kaigo[String(q.qNumber)];
       expect(official, q.id).toHaveLength(1);
       expect(q.officialAnswerNumber, q.id).toBe(String(official![0]));
@@ -75,7 +75,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
     }
     expect(transcription.questions).toHaveLength(125);
     for (const source of transcription.questions) {
-      const q = KAIGO_QUESTIONS[source.number - 1]!;
+      const q = KAIGO_2025_QUESTIONS[source.number - 1]!;
       expect(q.question, q.id).toBe(composeOfficial(source));
       expect(Object.values(q.choices ?? {}), q.id).toEqual(source.choices);
       expect(q.category, q.id).toBe(source.subject);
@@ -88,7 +88,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
 
   it("ふりがなは「親文字｛よみ｝」で保持し、親文字は漢字列に限る", () => {
     let count = 0;
-    for (const q of KAIGO_QUESTIONS) {
+    for (const q of KAIGO_2025_QUESTIONS) {
       for (const text of [q.question, ...Object.values(q.choices ?? {})]) {
         const opens = [...text.matchAll(/｛/g)].length;
         const valid = [...text.matchAll(/[㐀-鿿々]+｛[ぁ-ゖー]+｝/g)].length;
@@ -104,7 +104,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
   });
 
   it("全125問に5肢すべての独自解説と、センターと無関係である旨の表示がある", () => {
-    for (const q of KAIGO_QUESTIONS) {
+    for (const q of KAIGO_2025_QUESTIONS) {
       expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual([...keysOf]);
       expect(Object.values(q.choiceExplanations ?? {}).every((reason) => reason.trim().length >= 25), q.id).toBe(true);
       expect(q.explanation.trim().length, q.id).toBeGreaterThan(40);
@@ -117,7 +117,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
       expect(q.sourcePdfUrl.startsWith("https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/"), q.id).toBe(true);
       expect(q.sourceAnswerUrl).toBe("https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf");
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
-      expect(findQuestionByRoute(KAIGO_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id).toBe(q.id);
+      expect(findQuestionByRoute(KAIGO_2025_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id).toBe(q.id);
     }
   });
 
@@ -143,7 +143,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
   });
 
   it("問題49の選択肢図は公式PDF 27ページから切り出し、ハッシュを固定する", () => {
-    const q49 = KAIGO_QUESTIONS[48]!;
+    const q49 = KAIGO_2025_QUESTIONS[48]!;
     const images = data.questions[48]!.choiceImages!;
     expect(images).toHaveLength(5);
     for (const [index, image] of images.entries()) {

@@ -514,7 +514,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       ],
     }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
   },
   civil1: {
     code: "civil1",
