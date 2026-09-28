@@ -1,7 +1,7 @@
 """Validate the unpublished 2024 Kansai tohan source candidate.
 
-This checks extraction shape and the official key. It deliberately cannot
-approve transcription or explanations; those require per-question review.
+This checks extraction shape, the official key and the review manifest. It
+cannot approve publication; rights and public attribution are separate gates.
 """
 
 import json
@@ -20,18 +20,22 @@ OFFICIAL_KEY = (
 questions = json.loads((ROOT / "extracted-questions.json").read_text(encoding="utf-8"))
 receipt = json.loads((ROOT / "source-receipt.json").read_text(encoding="utf-8"))
 reviews = json.loads((ROOT / "review-manifest.json").read_text(encoding="utf-8"))
+progress = json.loads((ROOT / "qa-progress-20260928.json").read_text(encoding="utf-8"))
 
-assert receipt["status"] == "HOLD_UNREVIEWED"
+assert receipt["status"].startswith("HOLD_")
 assert receipt["publishedCount"] == 0
 assert receipt["review"]["releaseApproved"] is False
+assert progress["releaseStatus"] == "HOLD"
 assert len(questions) == receipt["candidateCount"] == 120
 assert [q["number"] for q in questions] == list(range(1, 121))
 assert [r["number"] for r in reviews] == list(range(1, 121))
 assert all(
-    r[field] == "PENDING"
+    r[field] == "REVIEWED"
     for r in reviews
     for field in ("transcription", "independentChoiceReasons", "guidelineAnswerCheck", "independentReview")
 )
+assert progress["independentReview"]["questions"] == list(range(1, 121))
+assert progress["independentReview"]["choiceReasons"] == 600
 assert "".join(str(q["officialAnswerNumber"]) for q in questions) == receipt["officialAnswerKey"]
 assert len(receipt["officialAnswerKey"]) == 120
 assert receipt["officialAnswerKey"] == OFFICIAL_KEY

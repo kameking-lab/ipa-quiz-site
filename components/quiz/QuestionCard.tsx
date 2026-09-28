@@ -7,6 +7,7 @@ import { questionNumberLabel } from "@/lib/questions/display";
 import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { QuestionBody } from "./QuestionBody";
 import { TTSButton } from "./TTSButton";
+import { TohanSourceNotice } from "./TohanSourceNotice";
 
 export function QuestionCard({
   question,
@@ -47,6 +48,7 @@ export function QuestionCard({
         )}
         <QuestionBody text={question.question} />
         <QuestionFigures question={question} />
+        <TohanSourceNotice question={question} />
         {hasUnrenderableContent(question) && (
           <div className="mt-3 flex items-start gap-1.5 rounded-xl border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs text-amber-800 dark:border-amber-700/50 dark:bg-amber-950/30 dark:text-amber-200">
             <span className="shrink-0">※</span>
