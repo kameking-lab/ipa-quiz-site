@@ -395,6 +395,7 @@ export default async function QuestionPage({
         <section aria-label="選択肢と解答" className="mt-4">
           <h2 className="sr-only">選択肢</h2>
           <QuestionAnswerCard
+            question={q}
             questionId={q.id}
             choices={q.choices}
             choiceImageUrls={q.choiceImageUrls}

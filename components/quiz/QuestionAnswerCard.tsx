@@ -3,9 +3,10 @@
 import { QuestionBody } from "./QuestionBody";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
@@ -15,11 +16,22 @@ import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
-import type { ChoiceKey, ExamCode, QuestionPart, Season, Session } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+
+const CopilotDesktopFloating = dynamic(
+  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotDesktopFloating),
+  { ssr: false },
+);
+const CopilotMobileSheet = dynamic(
+  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotMobileSheet),
+  { ssr: false },
+);
 
 
 interface Props {
+  /** Present on real question pages; enables a one-click, in-place AI follow-up. */
+  question?: Question;
   questionId: string;
   choices: Partial<Record<ChoiceKey, string>>;
   choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
@@ -57,6 +69,7 @@ interface Props {
  *     so stats stay honest.
  */
 export function QuestionAnswerCard({
+  question,
   questionId,
   choices,
   choiceImageUrls,
@@ -77,6 +90,7 @@ export function QuestionAnswerCard({
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
+  const [copilotRequest, setCopilotRequest] = React.useState(0);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -247,6 +261,16 @@ export function QuestionAnswerCard({
               <BookOpenCheck className="h-4 w-4 text-primary" aria-hidden="true" />
               解説を読む
             </a>
+            {question && (
+              <button
+                type="button"
+                onClick={() => setCopilotRequest((request) => request + 1)}
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
+              >
+                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                {answered && !isCorrect ? "誤答をAIに質問" : "この問題をAIに質問"}
+              </button>
+            )}
             {nextHref && (
               <Link
                 href={nextHref}
@@ -259,6 +283,26 @@ export function QuestionAnswerCard({
           </div>
           <ExamNoteGuide exam={exam} />
         </div>
+      )}
+      {question && copilotRequest > 0 && (
+        <>
+          <CopilotDesktopFloating
+            key={`desktop-${copilotRequest}`}
+            question={question}
+            selectedChoice={answered ? (multiSelect ? formatSelection(picked) : selected) : undefined}
+            isCorrect={answered ? isCorrect : undefined}
+            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
+            defaultOpen
+          />
+          <CopilotMobileSheet
+            key={`mobile-${copilotRequest}`}
+            question={question}
+            selectedChoice={answered ? (multiSelect ? formatSelection(picked) : selected) : undefined}
+            isCorrect={answered ? isCorrect : undefined}
+            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
+            defaultOpen
+          />
+        </>
       )}
     </div>
   );
