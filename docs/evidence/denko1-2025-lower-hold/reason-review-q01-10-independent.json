@@ -1,0 +1,29 @@
+{
+  "reviewer": "independent-primary-source-audit",
+  "reviewedAt": "2026-09-28",
+  "status": "TECHNICAL_REVIEW_PASS_PUBLICATION_HOLD",
+  "questionCount": 10,
+  "choiceCount": 40,
+  "draftSource": "reason-draft-q01-10.json",
+  "questionSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "questionSourceSha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451",
+  "answerSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "answerSourceSha256": "f377a1db85db4544c7c0d5b443cb7d6c139ba90f87826523eb6444625c8c8a56",
+  "regulationSource": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+  "regulationVersion": "2024-10-22（試験日2025-10-05より前）",
+  "method": "公式問題PDFの印刷3〜5ページで設問・図・表・イロハニを視認し、別冊公式正答の問番号と照合。計算は図の値から再計算した。問9は経産省『電気設備の技術基準の解釈』2024-10-22版第149条第1項第1号に照合。各肢を個別判定した。",
+  "questions": [
+    {"number":1,"page":3,"officialAnswer":"ニ","check":"原本は100 V、d=1×10^-3 m。E=V/d=1×10^5 V/m。PDFテキスト抽出で指数の負号が落ちるため画像で確認。","choices":{"イ":"REJECT: 10^2は3桁小さい。","ロ":"REJECT: 10^3は2桁小さい。","ハ":"REJECT: 10^4は1桁小さい。","ニ":"ACCEPT: 10^5が100/10^-3に一致。"},"draftVerdict":"PASS"},
+    {"number":2,"page":3,"officialAnswer":"ニ","check":"S開で60−36=24 Vが2 Ω、I=12 A、R=3 Ω。S閉でR||6=2 Ω、上流2 Ωとの等分圧で30 V。","choices":{"イ":"REJECT: 3は抵抗Rの値[Ω]で電圧ではない。","ロ":"REJECT: 12はS開の電流[A]で電圧ではない。","ハ":"REJECT: 24はS開の上流抵抗の電圧降下である。","ニ":"ACCEPT: S閉時の並列枝電圧は30 V。"},"draftVerdict":"PASS"},
+    {"number":3,"page":3,"officialAnswer":"ハ","check":"原本図と本文は交流100 V、ω=500 rad/s、3 Ω、8 mH。XL=4 Ω、|Z|=5 Ω、I=20 A。抽出文字の『10 V 0』は100 V。","choices":{"イ":"REJECT: 9 Aは100/5に一致しない。","ロ":"REJECT: 14 Aは100/5に一致しない。","ハ":"ACCEPT: 20 Aが正しい。","ニ":"REJECT: 約33 AはLを無視して100/3とする値。"},"draftVerdict":"PASS"},
+    {"number":4,"page":3,"officialAnswer":"ハ","check":"原本図は交流100 V実効値・ダイオード・10 Ω抵抗の直列。半波整流の平均電力は100^2/(2×10)=500 W。抽出文字の『10 V 0』は100 V。","choices":{"イ":"REJECT: 100 Wではない。","ロ":"REJECT: 200 Wではない。","ハ":"ACCEPT: 半周期だけ通電するので500 W。","ニ":"REJECT: 1000 Wはダイオードなしの全波通電相当。"},"draftVerdict":"PASS"},
+    {"number":5,"page":4,"officialAnswer":"イ","check":"原本図は5 ΩのΔ抵抗3本と3 ΩのYリアクタンス3本。線間電圧Vが各Δ抵抗に加わり、有効電力3V²/5 W。リアクタンスの有効電力は0。","choices":{"イ":"ACCEPT: Δ抵抗3枝の合計3V²/5。","ロ":"REJECT: V²/3はYリアクタンスの無効電力である。","ハ":"REJECT: V²/5はΔ抵抗1枝分だけ。","ニ":"REJECT: V²は3V²/5に一致しない。"},"draftVerdict":"PASS"},
+    {"number":6,"page":4,"officialAnswer":"イ","check":"A・B閉では対称でV=104×10.2/(10.2+0.2)=102 V。B開では上外線・中性線0.2 Ωずつと負荷10.2 Ω、V=104×10.2/10.6≈100.08 V、約1.92 V低下。","choices":{"イ":"ACCEPT: 約2 V下がる。","ロ":"REJECT: 中性線にも電流が生じるため不変ではない。","ハ":"REJECT: 1 V上昇ではなく低下。","ニ":"REJECT: 3 V上昇ではなく低下。"},"draftVerdict":"PASS"},
+    {"number":7,"page":4,"officialAnswer":"ハ","check":"上下の800 W・100 V・遅れ力率0.8は各10 A。対称で中性線電流0 A。外線2本の損失2×10²×0.4=80 W。","choices":{"イ":"REJECT: 40 Wは外線1本分のみ。","ロ":"REJECT: 60 Wは計算結果80 Wと不一致。","ハ":"ACCEPT: 外線40 Wずつで80 W。","ニ":"REJECT: 120 Wは中性線にも40 Wを誤加算した値。"},"draftVerdict":"PASS"},
+    {"number":8,"page":5,"officialAnswer":"ロ","check":"原本図は一次6000 V、二次100 Vを2区間、抵抗負荷50 Aと70 A。損失・励磁電流無視で二次12 kW、一次電流12000/6000=2 A。","choices":{"イ":"REJECT: 1 Aなら一次6 kWで不足。","ロ":"ACCEPT: 2 Aなら一次12 kW。","ハ":"REJECT: 3 Aなら一次18 kWで過大。","ニ":"REJECT: 4 Aなら一次24 kWで過大。"},"draftVerdict":"PASS"},
+    {"number":9,"page":5,"officialAnswer":"ロ","check":"原本表は幹線遮断器100 A、イ2 m・直径2.0 mm/24 A、ロ5 m・5.5 mm²/34 A、ハ7 m・8 mm²/42 A、ニ10 m・14 mm²/61 A。経産省2024-10-22版解釈第149条第1項第1号は3 m以内、超過時55%以上、または8 m以内かつ35%以上。","choices":{"イ":"ACCEPT as suitable: 2 mは3 m以内。","ロ":"REJECT as unsuitable: 5 mは8 m以内だが34 A<35 A。問の正答。","ハ":"ACCEPT as suitable: 7 m≤8 mかつ42 A≥35 A。","ニ":"ACCEPT as suitable: 10 m>8 mだが61 A≥55 A。"},"draftVerdict":"PASS","primaryClause":"第149条第1項第1号イ・ロ"},
+    {"number":10,"page":5,"officialAnswer":"ロ","check":"原本は22 kW、4極、60 Hz、滑り5%。同期速度120×60/4=1800 min^-1、実速度1800×0.95=1710 min^-1。","choices":{"イ":"REJECT: 1620は滑り10%相当。","ロ":"ACCEPT: 1710は滑り5%。","ハ":"REJECT: 1800は同期速度で滑り0%。","ニ":"REJECT: 1890は同期速度より速い。"},"draftVerdict":"PASS"}
+  ],
+  "publicationApprovalCount": 0,
+  "publicationHoldReason": "正規化候補・図版・法令最終QAと権利条件の公開ゲートが未完了。"
+}

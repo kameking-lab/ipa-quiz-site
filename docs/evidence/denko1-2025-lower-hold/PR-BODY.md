@@ -10,13 +10,8 @@
 - Answer PDF: https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf
 - `python scripts/denko1-2025-lower-stage.py <problem.pdf> <answer.pdf> --check` passed: 50 unique question numbers, 50 matching answer numbers, four extracted choice labels each.
 - Visual ledger: `docs/evidence/denko1-2025-lower-hold/visual-q01-10.json` through `visual-q41-50.json`; 50/50 questions inspected against pages 3–15.
-- Questions 1–10 have 40 choice-reason drafts independently checked against the official paper, answer key, and the pre-exam METI Article 149. The public approval marker remains absent.
-- Questions 11–20 have 40 additional choice-reason drafts checked independently against the official text and visual diagrams; Q16 and Q18 wording was corrected based on that review.
-- Questions 21–24 and 26 have 20 additional reason drafts independently checked against the official paper, images, and primary technical sources; Q22 photo and Q23 short-circuit timing were made more precise. Q25 photo-only choices still need component identification.
-- Questions 27–30 have 16 additional reason drafts awaiting an independent law/current-standard review.
-- Questions 31–34 have 16 additional reason drafts, using the shared wiring diagram on page 10; independent review of the installation and testing conditions remains pending.
-- Questions 35–40 have 24 additional reason drafts awaiting an independent law/current-standard review; Q39's OCR lost the micro symbol in 100 μF.
+- All 50 questions and 200 choice reasons have separate independent review evidence in `reason-review-*-independent.json`, including Q1–10's four-choice primary-source recheck against official pages 3–5 and the pre-exam METI Article 149. Q25's photo component, Q29's grounding condition, Q35's grounding class, Q39's 100 μF and appliance classification, Q42's crimp tool, and Q46's diagram symbols were corrected or refined.
 - Notable extraction errors: missing exponent sign in Q1, fragmented 100 V in Q3/Q4, missing equipment photos and picture-only choices, missing μ in Q39, and unrecoverable switch order in Q43.
 
 ## Publication gate
-PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **176/200**, independent review **100/200**, and public approval **0/200**. Normalized content and source/rights checks remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
+PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **200/200**, independent review **200/200**, and public approval **0/200**. Normalized candidates and source/rights final QA remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
