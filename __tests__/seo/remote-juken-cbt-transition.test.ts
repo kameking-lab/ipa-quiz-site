@@ -2,12 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import { getBlogPostBySlug } from "@/data/blog";
 
-// ipa-zaitaku-remote-juken の「オンライン化の動向」節は、高度試験の CBT 化を
-// 「議論されています」と forward-looking な未確定 framing で述べ、かつ CBT 区分の
-// 列挙から基本情報（FE）を欠いていた stale claim だった（s129 が cbt-vs-pbt で
-// 是正したのと同型）。IPA は令和8年度（2026年度）から応用情報・高度・支援士を
-// CBT へ移行する予定を公表済みなので、確定済みの durable fact へ追従しつつ
-// canonical 解説 cbt-vs-pbt へ funnel する。「予定」段階の明示で断定回避。
+// 2026年度のAP・高度・SCは通常試験を期間制CBTで実施する。
+// 通年CBTと期間制CBTを区別し、在宅受験の可否を明確にする。
 
 const SLUG = "ipa-zaitaku-remote-juken";
 
@@ -18,17 +14,17 @@ describe("在宅受験記事の CBT 移行 動向 追従", () => {
 
   it("CBT 化済み区分の列挙に基本情報を含む", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain(
-      "ITパスポート・情報セキュリティマネジメント・基本情報",
-    );
+    expect(body).toContain("ITパスポート（IP）");
+    expect(body).toContain("情報セキュリティマネジメント（SG）");
+    expect(body).toContain("基本情報技術者（FE）");
   });
 
-  it("高度試験の CBT 化を確定済みの令和8年度移行予定として述べている", () => {
+  it("2026年度の高度試験を期間制CBTとして説明する", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("令和8年度（2026年度）");
-    expect(body).toContain("CBT 方式へ移行する予定");
-    // 「議論されています」という未確定 framing を残していない
+    expect(body).toContain("AP・高度・SCも2026年度からCBT方式");
+    expect(body).toContain("科目A群とB群を同時に予約");
     expect(body).not.toContain("CBT 化や、論述試験のオンライン採点化が議論");
+    expect(body).not.toContain("PBT 試験（AP / 高度試験）");
   });
 
   it("canonical 解説 cbt-vs-pbt へ内部リンクで funnel している", () => {
@@ -41,10 +37,8 @@ describe("在宅受験記事の CBT 移行 動向 追従", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     // FE はCBT通年（令和3年度以降）で PBT ではない。会場説明の内部矛盾を防ぐ。
     expect(body).not.toContain("FE 一部");
-    expect(body).toContain("PBT 試験（AP / 高度試験）");
-    expect(body).toContain("CBT 試験（IP・SG・FE）");
-    // まとめの CBT 区分列挙も FE を含む（s132 が本文を直した際の取り残し是正・s133）
-    expect(body).not.toContain("CBT 試験（IP・SG）");
+    expect(body).toContain("SG）・基本情報技術者（FE）");
+    expect(body).toContain("通常試験はCBT");
   });
 
   // 海外受験の事実性是正（s133）: タイ・ベトナム等で実施されるのは ITPEC の
