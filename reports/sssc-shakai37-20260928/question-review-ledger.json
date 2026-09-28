@@ -463,7 +463,10 @@
       "primaryReviewReason": "厚生労働省告示第207号の本文と別表で全5肢を照合。数値目標は平均寿命そのものではなく健康寿命、女性のライフステージ課題は明記、社会環境の整備と社会参加を推進し、生活習慣病の発症・重症化予防を重視する。",
       "primaryReviewSources": [
         "https://www.mhlw.go.jp/web/t_doc?dataId=00012990&dataType=0&pageNo=1"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 25,
@@ -479,7 +482,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
+      "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 26,
@@ -501,7 +507,10 @@
       "primaryReviewSources": [
         "https://www.mhlw.go.jp/web/t_doc?dataId=82001000&dataType=0&pageNo=1",
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/fukusijimusyo/index.html"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 27,
@@ -519,7 +528,10 @@
       ],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 28,
@@ -535,7 +547,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 29,
@@ -551,7 +566,10 @@
       "priorityFlags": [],
       "explanationPublished": false,
       "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。",
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 30,
@@ -572,7 +590,10 @@
       "primaryReviewReason": "2021年度社会保障費用統計の全5肢を照合。年金40.2%、医療34.2%、福祉その他25.6%、政策分野最大は保健42.3%、社会保険料46.2%と公費40.4%。2020年度GDP比は日本25.36%、フランス35.62%。",
       "primaryReviewSources": [
         "https://www.ipss.go.jp/ss-cost/j/fsss-R03/R03.pdf"
-      ]
+      ],
+      "independentRationaleStatus": "PASS",
+      "independentEvidenceFile": "independent-review-q24-30-20260928.md",
+      "independentReviewer": "separate-GPT6-Sol-agent"
     },
     {
       "number": 31,
@@ -2321,6 +2342,6 @@
   ],
   "primarySourceVerifiedCount": 16,
   "publicationStatus": "HOLD",
-  "independentRationaleVerifiedCount": 5,
-  "independentReviewScope": "問17〜23の画像・正答を別担当が照合。問18〜22の全25肢は一次資料で独立再照合PASS、問17・23は部分確認HOLD。残りは未査読。"
+  "independentRationaleVerifiedCount": 12,
+  "independentReviewScope": "問17〜30の画像・正答を別担当が照合。問18〜22・24〜30の全60肢は一次資料で独立再照合PASS、問17・23は部分確認HOLD。残りは未査読。"
 }
