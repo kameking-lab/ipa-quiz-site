@@ -1,0 +1,23 @@
+{
+  "status": "DRAFT_UNREVIEWED_PUBLICATION_HOLD",
+  "examSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+  "answerSource": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+  "visualEvidence": "visual-q31-40.json",
+  "sharedFigurePage": 10,
+  "supportSources": [
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-3.pdf",
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/dengikaishakukaisetsu.pdf",
+    "https://www.jeea.or.jp/course/contents/02202/"
+  ],
+  "questionCount": 4,
+  "choiceReasonDraftCount": 16,
+  "choiceReasonReviewedCount": 0,
+  "choiceReasonApprovedCount": 0,
+  "questions": [
+    { "number": 31, "answer": "ロ", "principle": "公式PDF10ページの共有図②は高圧地中引込線。高圧地中電線路の埋設表示は、需要場所の長さ15 m以下の例外以外で必要。", "choices": { "イ": "FEPは地中電線を保護する波付硬質合成樹脂管として用いられ、設問の施工に適合する。", "ロ": "直接埋設式の高圧地中電線路が20 mなら15 m以下の表示省略例外に入らず、電圧の表示を省くのは不適切。", "ハ": "鋼管を使った管路式の接地省略は、管路に関する設問条件では適切とされる。接地が必要な金属製接続箱等と混同しない。", "ニ": "堅ろうながい装を有するケーブルを所定の深さ1.2 mに埋設する施工は適切。" } },
+    { "number": 32, "answer": "ロ", "principle": "共有図③は引込線の建物貫通と接地端子盤への経路。浸水を防ぐため貫通部の防水装置が必要。", "choices": { "イ": "受電室内の高圧ケーブル防護管にJIS C 8380のケーブル保護用合成樹脂被覆鋼管を用いることは適切。", "ロ": "防水鋳鉄管の建物内側プルボックスに水抜きを設けても、貫通部の浸水防止装置を省略する理由にはならない。", "ハ": "接地端子盤へ立ち上げる接地線を硬質ポリ塩化ビニル電線管で保護する施工は適切。", "ニ": "ピット内の高圧引込ケーブルを樹脂製クリートで支持する施工は適切。" } },
+    { "number": 33, "answer": "ニ", "principle": "共有図④は受電室のケーブルラック。防火区画、ケーブル支持、低圧幹線の共架、金属ラックの接地を別々に判定する。", "choices": { "イ": "ケーブルラックの壁貫通部に延焼を防ぐ適切な防火措置を施すのは適切。", "ロ": "同一ケーブルラックに電灯幹線と動力幹線のケーブルを布設し、この設問条件で両者のセパレータを省くのは適切。", "ハ": "ケーブル重量に耐える構造をアンカーボルトでスラブから堅固に支持するのは適切。", "ニ": "金属製ケーブルラックのD種接地を、15 mの長さと乾燥場所だけを理由に省略するのは不適切。接地省略の法令・仕様条件を独立査読で確認する。" } },
+    { "number": 34, "answer": "ハ", "principle": "共有図⑤は高圧受電設備。交流耐力試験電圧の最大使用電圧倍率と、ケーブルで交流試験を直流試験に代える倍率を区別する。", "choices": { "イ": "長いケーブルの静電容量が大きいとき、リアクトルで無効電力を補償し試験用電源容量を軽減する方法は適切。", "ロ": "絶縁耐力試験の前後に絶縁抵抗と安全状態を確認する手順は適切。", "ハ": "ケーブルの直流耐力試験を交流の1.5倍とするのは不適切。該当する直流試験電圧は交流試験電圧の2倍。", "ニ": "交流耐力試験で電路と大地の間に最大使用電圧の1.5倍を連続10分間加える設問の条件は適切。" } }
+  ]
+}
