@@ -47,7 +47,7 @@ def main() -> None:
         number = q["number"]
         answer = answers[str(number)]
         review = reviews[str(number)]
-        assert review["status"] in ("PASS", "REVISE"), (number, review["status"])
+        assert review["status"] == "PASS", (number, review["status"])
         assert not review["sourceChecks"], (number, review["sourceChecks"])
         assert len(q["choices"]) == len(review["choiceExplanations"]) == 5, number
         assert all(len(reason.strip()) >= 25 for reason in review["choiceExplanations"]), number
