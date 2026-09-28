@@ -98,7 +98,8 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     const q = SECOND.find((item) => item.qNumber === 46)!;
     const { container } = render(createElement(QuestionAnswerCard, {
       questionId: q.id, choices: q.choices!, choiceImageUrls: q.choiceImageUrls,
-      answerKey: q.answer, exam: q.exam, year: q.year, season: q.season,
+      answerKey: getChoiceKeys(q.choices).find((key) => key === q.answer)!,
+      exam: q.exam, year: q.year, season: q.season,
       session: q.session, qNumber: q.qNumber,
     }));
     expect(container.querySelectorAll('[role="radio"]')).toHaveLength(4);
