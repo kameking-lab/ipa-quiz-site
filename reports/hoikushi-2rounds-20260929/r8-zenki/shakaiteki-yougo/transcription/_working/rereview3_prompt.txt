@@ -1,0 +1,28 @@
+あなたは保育士試験「社会的養護」科目の過去問解説の査読者です。以下のURLに実際にWebFetchで
+アクセスし、こども家庭庁「児童養護施設入所児童等調査の概要（令和5年2月1日現在）」PDFの本文から
+数値を抽出してください（既存の答えは与えません。あなた自身でPDFを取得して数値を読み取ること）。
+
+URL: https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/8aba23f3-abb8-4f95-8202-f0fd487fbe16/5c104d63/20240229_policies_shakaiteki-yougo_86.pdf
+
+このPDFはバイナリ圧縮されており、WebFetchでのテキスト抽出が一度で失敗する場合があります。
+その場合は同じURLに対してWebFetchを条件・プロンプトを変えて複数回試すか、WebSearchで
+「児童養護施設入所児童等調査の概要 令和5年 ファミリーホーム 虐待経験」
+「児童養護施設入所児童等調査の概要 令和5年 児童自立支援施設 心身の状況 反応性愛着障害」
+等のキーワードで検索し、こども家庭庁・厚生労働省等の一次情報・報道発表資料で数値を確認して
+ください。ツールを実際に呼び出さずに数値を推測で答えることは禁止します。
+
+## 確認してほしい数値
+1. ファミリーホームに委託されている子どものうち、「虐待経験あり」の割合（％）
+2. 児童自立支援施設に入所する子どもの「心身の状況」（該当あり、複数回答）のうち、
+   割合が最も高い項目とその割合（％）、および「反応性愛着障害」の割合（％）
+
+## 出力形式（前置き・コードブロックなし、このJSON形式のみ）
+{
+  "familyHomeAbuseExperiencePercent": "実際に確認した数値（％）。確認できなければnull",
+  "childSelfRelianceFacilityMostCommonCondition": "最も割合が高かった項目名。確認できなければnull",
+  "childSelfRelianceFacilityMostCommonPercent": "その割合（％）。確認できなければnull",
+  "reactiveAttachmentDisorderPercent": "反応性愛着障害の割合（％）。確認できなければnull",
+  "toolsActuallyUsed": ["実際に呼び出したツール名を列挙。例: WebFetch, WebSearch"],
+  "evidenceUrls": ["実際に確認できたURL"],
+  "notes": "確認の経緯や、確認できなかった場合の理由"
+}

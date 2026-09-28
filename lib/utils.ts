@@ -43,6 +43,7 @@ export const EXAM_LABELS: Record<string, string> = {
   eisei1: "第一種衛生管理者",
   eisei2: "第二種衛生管理者",
   soukan: "技術士 総合技術監理部門",
+  hoikushi: "保育士試験",
 };
 
 export function examLabel(exam: string): string {

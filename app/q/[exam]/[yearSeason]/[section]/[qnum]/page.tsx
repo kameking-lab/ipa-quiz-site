@@ -486,7 +486,7 @@ export default async function QuestionPage({
               </ul>
             </nav>
           )}
-          {(q.license === "SSSC-reuse" || q.license === "IPEJ-attributed") && q.sourceAttribution && (
+          {(q.license === "SSSC-reuse" || q.license === "IPEJ-attributed" || q.license === "HOYOKYO-attributed") && q.sourceAttribution && (
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
