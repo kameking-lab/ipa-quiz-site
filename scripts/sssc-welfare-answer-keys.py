@@ -3,6 +3,8 @@
 Usage: py -3.12 scripts/sssc-welfare-answer-keys.py --cache DIR --out reports/sssc-welfare-20260926/answer-keys.json
 The 精神保健福祉士 key lists 専門科目 1-48 and 共通科目 1-84 separately; the common
 section must equal the 社会福祉士 key for questions 1-84 (same paper).
+--exam seishin27 reads cache/seishin27/se_kijun_seitou.pdf (第27回) and checks the
+common section against reports/sssc-shakai37-20260928/answer-keys.json (第37回).
 """
 from __future__ import annotations
 
@@ -43,7 +45,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", required=True)
     parser.add_argument("--out", required=True)
-    parser.add_argument("--exam", choices=("all", "shakai37"), default="all")
+    parser.add_argument("--exam", choices=("all", "shakai37", "seishin27"), default="all")
     args = parser.parse_args()
     cache = Path(args.cache)
     if args.exam == "shakai37":
@@ -56,6 +58,25 @@ def main() -> None:
         }
         Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print("shakai37", len(answers), "official answers")
+        return
+    if args.exam == "seishin27":
+        path = cache / "seishin27/se_kijun_seitou.pdf"
+        lines = lines_of(path)
+        split = lines.index("【社会福祉士・精神保健福祉士共通科目】")
+        senmon = parse(lines[:split])
+        kyotsu = parse(lines[split:])
+        assert sorted(senmon) == list(range(1, 49))
+        assert sorted(kyotsu) == list(range(1, 85))
+        shakai37 = json.loads((Path(__file__).resolve().parents[1] / "reports/sssc-shakai37-20260928/answer-keys.json").read_text(encoding="utf-8"))["answers"]
+        assert all(kyotsu[n] == shakai37[str(n)] for n in range(1, 85))
+        payload = {
+            "sourceFile": {"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()},
+            "senmon": {str(k): v for k, v in sorted(senmon.items())},
+            "kyotsu": {str(k): v for k, v in sorted(kyotsu.items())},
+            "kyotsuEqualsShakai37Questions1to84": True,
+        }
+        Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print("seishin27", len(senmon), "senmon +", len(kyotsu), "kyotsu official answers")
         return
     files = {
         "kaigo": cache / "kaigo38/k_kijun_seitou.pdf",

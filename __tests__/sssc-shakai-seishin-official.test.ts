@@ -3,7 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { ALL_QUESTIONS } from "@/data/questions";
-import { SEISHIN_QUESTIONS } from "@/data/questions/seishin";
+import { SEISHIN_QUESTIONS as ALL_SEISHIN_QUESTIONS } from "@/data/questions/seishin";
 import { SHAKAI_QUESTIONS } from "@/data/questions/shakai";
 import { SSSC_INDEPENDENCE_NOTICE } from "@/data/questions/sssc-welfare";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -24,6 +24,8 @@ const sources = readJson<Record<"shakai" | "seishin", { files: Record<string, { 
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 const compose = (q: Transcribed) => [...(q.case ? [q.case] : []), q.stem, ...q.notes].join("\n");
 const range = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => from + i);
+// このファイルは第28回（令和7年度）を検査する。第27回は sssc-seishin27-official.test.ts。
+const SEISHIN_QUESTIONS = ALL_SEISHIN_QUESTIONS.filter((q) => q.year === 2025);
 
 function expectVerbatim(questions: Question[], transcription: Transcription, numbers: number[]) {
   const byNumber = new Map(transcription.questions.map((q) => [q.number, q]));
