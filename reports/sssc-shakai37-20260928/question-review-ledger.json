@@ -241,14 +241,17 @@
         2
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "STATISTICAL_CLAIMS_NEED_SOURCE",
         "LAW_OR_POLICY_TIMING_NEEDS_SOURCE"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "総務省令和4年度版『過疎対策の現況』pp.27-28,85,115および第1章で全5肢確認。第1次産業13.7%、人口比9.3%、過疎関係市町村51.5%、高齢者比率40.0%対全国34.9%、地域要件に財政力等を確認。",
+      "primaryReviewSources": [
+        "https://www.soumu.go.jp/main_content/000944363.pdf"
+      ]
     },
     {
       "number": 16,
@@ -751,13 +754,18 @@
         1
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
-      "priorityFlags": [
-        "UNVERIFIED_EXACT_PERCENTAGES"
-      ],
+      "primarySourceRationaleStatus": "VERIFIED",
+      "priorityFlags": [],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "総務省令和6年版地方財政白書第10・27・28図の公開CSVと本文で全5肢を照合。市町村民生37.2/総務12.7/教育11.8%、都道府県民生15.0%、都道府県老人福祉41.4%、市町村児童福祉38.3%、災害救助費2012年7011億→2022年333億。",
+      "primaryReviewSources": [
+        "https://www.soumu.go.jp/menu_seisaku/hakusyo/chihou/r06data/2024data/r06czb01-02.html",
+        "https://www.soumu.go.jp/menu_seisaku/hakusyo/chihou/r06data/2024data/csv/z-010.csv",
+        "https://www.soumu.go.jp/menu_seisaku/hakusyo/chihou/r06data/2024data/r06czb01-04.html",
+        "https://www.soumu.go.jp/menu_seisaku/hakusyo/chihou/r06data/2024data/csv/z-027.csv",
+        "https://www.soumu.go.jp/menu_seisaku/hakusyo/chihou/r06data/2024data/csv/z-028.csv"
+      ]
     },
     {
       "number": 45,
@@ -905,13 +913,19 @@
         2
       ],
       "modelReviewStatus": "PASS",
-      "primarySourceRationaleStatus": "UNVERIFIED",
+      "primarySourceRationaleStatus": "VERIFIED",
       "priorityFlags": [
         "STATISTICAL_CLAIMS_NEED_SOURCE"
       ],
       "explanationPublished": false,
-      "reviewDisposition": "HOLD",
-      "primaryReviewReason": "数値・年次・条文を含む原稿の全5肢一次資料照合未了。"
+      "reviewDisposition": "PRIMARY_VERIFIED",
+      "primaryReviewReason": "内閣府令和5年版障害者白書・厚労省令和4年生活のしづらさ調査（参考集計と第61表）・令和5年度障害者雇用実態調査で全5肢確認。施設入所率は知的10.1%対身体1.7%、親との同一世帯（19～64歳）は療育手帳91.2%対身体障害者手帳47.5%、65歳以上は在宅身体73%対在宅知的15%、30時間以上は身体75.1%対知的64.2%。",
+      "primaryReviewSources": [
+        "https://www8.cao.go.jp/shougai/whitepaper/r05hakusho/zenbun/h2_03_01_01.html",
+        "https://www.mhlw.go.jp/toukei/list/dl/seikatsu_chousa_b_r04_02.pdf",
+        "https://www.mhlw.go.jp/toukei/list/dl/seikatsu_chousa_c_r04-06.xlsx",
+        "https://www.mhlw.go.jp/content/11601000/001233721.pdf"
+      ]
     },
     {
       "number": 53,
@@ -2239,6 +2253,6 @@
       "primaryReviewReason": "全5肢の制度・概念・適用時点を一次資料で照合していない。"
     }
   ],
-  "primarySourceVerifiedCount": 5,
+  "primarySourceVerifiedCount": 8,
   "publicationStatus": "HOLD"
 }
