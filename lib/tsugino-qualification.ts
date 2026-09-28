@@ -22,6 +22,7 @@ const QUALIFICATION_IDS: Partial<Record<ExamCode, string>> = {
   takken: "takken",
   civil2: "doboku-sekou-2kyu",
   eisei1: "eisei-kanrisha-1shu",
+  kaigo: "care-worker",
 };
 
 /** Qualification schedules live on 次の資格, not in this question bank. */
