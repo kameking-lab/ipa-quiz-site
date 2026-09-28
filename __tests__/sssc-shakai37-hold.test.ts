@@ -28,6 +28,7 @@ describe("第37回社会福祉士: 一次資料の準備と公開HOLD", () => {
   const source = readJson<Source>("source-transcription.json");
   const keys = readJson<{ sourceFile: { sha256: string }; answers: Record<string, number[]> }>("answer-keys.json");
   const manifest = readJson<{ files: Record<string, { url: string; sha256: string }>; examDate: string; round: number; fiscalYear: number }>("sources.json");
+  const ledger = readJson<{ questions: Array<{ number: number; officialAnswer: number[]; modelReviewStatus: string; primarySourceRationaleStatus: string; explanationPublished: boolean }> }>("question-review-ledger.json");
 
   it("19科目・全129問・全5肢が公式PDFと読み上げHTMLの文字照合を通る", () => {
     expect(source.exam).toBe("shakai37");
@@ -68,5 +69,15 @@ describe("第37回社会福祉士: 一次資料の準備と公開HOLD", () => {
     expect(SHAKAI_QUESTIONS).toHaveLength(129);
     expect(SHAKAI_QUESTIONS.every((question) => question.year === 2025)).toBe(true);
     expect(EXAM_CONFIGS.shakai.yearRange).toEqual({ start: 2025, end: 2025 });
+  });
+
+  it("問題別台帳は129問すべての解説を未確認・非公開として追跡する", () => {
+    expect(ledger.questions.map((row) => row.number)).toEqual(Array.from({ length: 129 }, (_, i) => i + 1));
+    expect(ledger.questions.filter((row) => row.modelReviewStatus === "PASS")).toHaveLength(127);
+    for (const row of ledger.questions) {
+      expect(row.officialAnswer, String(row.number)).toEqual(keys.answers[String(row.number)]);
+      expect(row.primarySourceRationaleStatus, String(row.number)).toBe("UNVERIFIED");
+      expect(row.explanationPublished, String(row.number)).toBe(false);
+    }
   });
 });
