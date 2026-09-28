@@ -43,7 +43,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験三種の過去問</h1>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-        2024・2025年度／4科目・16回分。320問（(a)(b)は各1問）、全肢解説318問・公式正答と一般解説2問を収録しています。
+        2024・2025年度／4科目・16回分。320問（(a)(b)は各1問）、全肢解説319問・公式正答と一般解説1問を収録しています。
       </p>
 
       <section aria-label="年度と期を選ぶ" className="mt-7 rounded-2xl border border-border bg-card p-4 sm:p-5">
@@ -87,7 +87,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
         </div>
       </section>
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-        問題・正答の出典：一般財団法人 電気技術者試験センター。2問は公式正答と一般解説を掲載し、選択肢ごとの解説は確認後に追加します。
+        問題・正答の出典：一般財団法人 電気技術者試験センター。電力1問は公式正答と一般解説を掲載し、選択肢ごとの解説は図表の根拠を確認後に追加します。
       </p>
     </main>
   );
