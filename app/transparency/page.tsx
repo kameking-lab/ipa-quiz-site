@@ -97,6 +97,15 @@ async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
 
 const REPORTS = [
   {
+    month: "2026-09",
+    highlights: [
+      "AI コパイロットの初回10回の質問ゲートを撤廃",
+      "IP単位の連続利用制限と月間費用上限でAPIを保護",
+    ],
+    cost: "AI 利用費は集計後に公開",
+    next: ["適正利用制限の実績を確認し、通常学習への影響を監視"],
+  },
+  {
     month: "2026-05",
     highlights: [
       "AI 解説 disclaimer の視認性向上（ExplanationCard の文字サイズ拡大・枠線追加）",
@@ -219,7 +228,7 @@ export default async function TransparencyPage() {
             </li>
             <li>
               <strong>運営コストはシェア・フィードバックで支える。</strong>
-              金銭的負担はお願いしません。AI 利用は初回 10 回 + フィードバック投稿後ほぼ無制限です。
+              金銭的負担はお願いしません。AI コパイロットは無料で質問でき、連続利用や大量送信には適正利用制限があります。
             </li>
             <li>
               <strong>意思決定を公開する。</strong>

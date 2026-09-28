@@ -14,10 +14,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
  *   1. KV absent → checkIpRateLimit fails OPEN ({ ok: true }) and never fetches;
  *      stats report enabled:false with all-zero buckets (SSOT fallback);
  *   2. KV present → per-IP minute/hour/day INCR counts gate, in that precedence,
- *      against IP_LIMITS (10 / 100 / 500); over-limit returns the reset boundary;
+ *      against IP_LIMITS (10 / 100 / 500), with a 20/minute copilot override;
  *   3. a KV failure (non-ok / throw) also fails OPEN — availability over strictness;
- *   4. usage aggregation sums 24 hourly buckets per endpoint, derives cost from
- *      COST_JPY_PER_REQUEST (§12 SSOT), and merges top-IP sorted sets.
+ *   4. usage aggregation sums 24 hourly buckets per endpoint and prices
+ *      copilot traffic with the current model's rate.
  */
 
 function req(ip = "1.2.3.4"): Request {
@@ -57,6 +57,8 @@ describe("lib/rate-limit constants (SSOT)", () => {
     disableKv();
     const mod = await import("@/lib/rate-limit");
     expect(mod.IP_LIMITS).toEqual({ minute: 10, hour: 100, day: 500 });
+    expect(mod.COPILOT_MINUTE_LIMIT).toBe(20);
+    expect(mod.COPILOT_GLOBAL_LIMITS).toEqual({ hour: 500, day: 5_000 });
     expect(mod.COST_JPY_PER_REQUEST).toBe(0.055);
     expect(mod.TRACKED_ENDPOINTS).toEqual([
       "copilot",
@@ -76,6 +78,13 @@ describe("checkIpRateLimit — KV disabled (fail open)", () => {
     await expect(mod.checkIpRateLimit(req(), "copilot")).resolves.toEqual({ ok: true });
     expect(fetchMock).not.toHaveBeenCalled();
   });
+
+  it("fails closed for a real paid copilot call", async () => {
+    disableKv();
+    const mod = await import("@/lib/rate-limit");
+    const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
+    expect(result).toMatchObject({ ok: false, reason: "unavailable" });
+  });
 });
 
 describe("checkIpRateLimit — KV enabled", () => {
@@ -94,7 +103,7 @@ describe("checkIpRateLimit — KV enabled", () => {
 
   it("blocks on the minute window first, with a future reset boundary", async () => {
     enableKv();
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(11, 200, 600))));
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(21, 200, 600))));
     const mod = await import("@/lib/rate-limit");
     const before = Date.now();
     const res = await mod.checkIpRateLimit(req(), "copilot");
@@ -129,6 +138,49 @@ describe("checkIpRateLimit — KV enabled", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("nope", { status: 500 })));
     const mod = await import("@/lib/rate-limit");
     await expect(mod.checkIpRateLimit(req(), "copilot")).resolves.toEqual({ ok: true });
+  });
+
+  it("allows an eleventh copilot question in the same minute", async () => {
+    enableKv();
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(11, 11, 11))));
+    const mod = await import("@/lib/rate-limit");
+    await expect(mod.checkIpRateLimit(req(), "copilot", { requireKv: true })).resolves.toEqual({ ok: true });
+  });
+
+  it("retains the tighter burst limit for other AI endpoints", async () => {
+    enableKv();
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(11, 11, 11))));
+    const mod = await import("@/lib/rate-limit");
+    const result = await mod.checkIpRateLimit(req(), "scoring");
+    expect(result).toMatchObject({ ok: false, reason: "minute" });
+  });
+
+  it("blocks distributed copilot traffic at the shared hourly cap", async () => {
+    enableKv();
+    vi.stubGlobal("fetch", vi.fn()
+      .mockResolvedValueOnce(kvResponse(counts(1, 1, 1)))
+      .mockResolvedValueOnce(kvResponse([501, 1, 501, 1])));
+    const mod = await import("@/lib/rate-limit");
+    const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
+    expect(result).toMatchObject({ ok: false, reason: "hour" });
+  });
+
+  it("fails closed if the shared copilot admission counter fails", async () => {
+    enableKv();
+    vi.stubGlobal("fetch", vi.fn()
+      .mockResolvedValueOnce(kvResponse(counts(1, 1, 1)))
+      .mockResolvedValueOnce(new Response("failure", { status: 500 })));
+    const mod = await import("@/lib/rate-limit");
+    const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
+    expect(result).toMatchObject({ ok: false, reason: "unavailable" });
+  });
+
+  it("fails closed for paid copilot when the KV pipeline fails", async () => {
+    enableKv();
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("nope", { status: 500 })));
+    const mod = await import("@/lib/rate-limit");
+    const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
+    expect(result).toMatchObject({ ok: false, reason: "unavailable" });
   });
 
   it("fails OPEN when fetch throws", async () => {
@@ -172,9 +224,9 @@ describe("getApiUsageStats", () => {
     expect(stats.byEndpoint.scoring).toEqual({ last1h: 0, last24h: 0 });
     expect(stats.totalLast1h).toBe(5);
     expect(stats.totalLast24h).toBe(8);
-    // cost = total × COST_JPY_PER_REQUEST (0.055), rounded to 2 decimals.
-    expect(stats.estimatedCostJpy.last1h).toBe(0.28); // 5 × 0.055 = 0.275 → 0.28
-    expect(stats.estimatedCostJpy.last24h).toBe(0.44); // 8 × 0.055 = 0.44
+    // Copilot requests use the current Gemini model's estimate, not the old Flash-Lite value.
+    expect(stats.estimatedCostJpy.last1h).toBe(Math.round(5 * mod.COPILOT_COST_JPY_PER_REQUEST * 100) / 100);
+    expect(stats.estimatedCostJpy.last24h).toBe(Math.round(8 * mod.COPILOT_COST_JPY_PER_REQUEST * 100) / 100);
     // merged across both hour buckets: 1.2.3.4 = 7+3 = 10, then 5.6.7.8 = 2.
     expect(stats.topIps).toEqual([
       { ip: "1.2.3.4", count24h: 10 },

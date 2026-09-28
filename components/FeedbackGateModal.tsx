@@ -35,7 +35,7 @@ export interface PublicFeedbackEntry {
 interface Props {
   open: boolean;
   onClose: () => void;
-  /** Optional: where the gate fired ("ai-limit" | "question-milestone" など) */
+  /** Optional source for feedback analytics. */
   source?: string;
 }
 
@@ -113,12 +113,12 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
       <DialogContent>
         {/* radix Dialog は開いた時点の DialogTitle しか読み上げず、送信後にフォームを
             成功ビューへ差し替えても再アナウンスしない。常設の live region で送信中・
-            送信完了(無料枠解放)を SR へ通知する(WCAG 4.1.3 status messages)。 */}
+            送信完了を SR へ通知する(WCAG 4.1.3 status messages)。 */}
         <p role="status" aria-live="polite" className="sr-only">
           {submitting
             ? "送信しています。少々お待ちください。"
             : submitted
-              ? "フィードバックを受け付けました。AI コパイロットが実質無制限になりました。"
+              ? "フィードバックを受け付けました。ご協力ありがとうございます。"
               : ""}
         </p>
         {submitted ? (
@@ -128,7 +128,7 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
                 <Heart className="h-5 w-5" />
                 <span className="text-sm font-semibold">フィードバックありがとうございます</span>
               </div>
-              <DialogTitle>これ以降、AI コパイロットを実質無制限でお使いいただけます</DialogTitle>
+              <DialogTitle>フィードバックを受け付けました</DialogTitle>
               <DialogDescription>
                 いただいたご意見は、過去問 AI プロジェクトの改善にすべて目を通させていただきます。
               </DialogDescription>
@@ -171,7 +171,7 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
               </div>
               <DialogTitle>使い心地を一言だけ教えてください</DialogTitle>
               <DialogDescription>
-                ご投稿いただくと、AI コパイロットを以降ほぼ無制限でお使いいただけます。所要 10 秒。
+                改善の参考にします。回答は任意です。所要 10 秒。
               </DialogDescription>
             </DialogHeader>
 

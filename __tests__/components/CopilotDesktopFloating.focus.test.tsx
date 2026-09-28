@@ -50,7 +50,6 @@ describe("CopilotDesktopFloating — 閉じたらトリガーへフォーカス�
         question={question}
         selectedChoice="イ"
         isCorrect
-        onRateLimitHit={() => {}}
         defaultOpen
       />,
     );
@@ -77,7 +76,6 @@ describe("CopilotMobileSheet — 閉じたらトリガーへフォーカス復�
         question={question}
         selectedChoice="イ"
         isCorrect
-        onRateLimitHit={() => {}}
         defaultOpen
       />,
     );
@@ -99,7 +97,6 @@ describe("解答直後の AI 質問", () => {
       selectedChoice: "ア",
       isCorrect: false,
       initialPrompt: "なぜ選択肢アは違うの？",
-      onRateLimitHit: () => {},
       defaultOpen: true,
     };
     const view = render(kind === "desktop"

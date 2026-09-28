@@ -44,6 +44,14 @@ function request(questionId = question.id): Request {
 }
 
 describe("POST /api/copilot/exam-library", () => {
+  it("continues answering after ten questions without a feedback gate", async () => {
+    for (let count = 0; count < 11; count += 1) {
+      const response = await POST(request());
+      expect(response.status).toBe(200);
+      await response.text();
+    }
+  });
+
   it("rejects IDs that do not belong to a trusted published paper", async () => {
     const response = await POST(request(`${examId}-missing`));
     expect(response.status).toBe(400);

@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { FREE_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
+import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 
 const PAGE_PATH = "/why-kakomon-ai";
 const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較";
@@ -82,7 +82,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "料金",
-    kakomonAi: `無料で全機能。AI コパイロットは初回 ${FREE_AI_DAILY_LIMIT} 回まで無料（フィードバック後ほぼ無制限）`,
+    kakomonAi: `無料で全機能。${AI_QUOTA_COPY}`,
     doujou: "基本無料（広告表示あり）",
     yobikou: "月数千円〜数万円の有料モデルが中心",
   },
@@ -142,7 +142,7 @@ const RESPECT_POINTS = [
 const FAQS = [
   {
     q: "本当に無料で全機能使えますか？",
-    a: `はい。教育貢献プロジェクトとして、AI コパイロット以外のすべての機能を無料で公開しています。AI コパイロットは API コスト管理のため初回 ${FREE_AI_DAILY_LIMIT} 回までを無料枠とし、フィードバックを投稿いただくとその後はほぼ無制限でご利用いただけます。`,
+    a: `はい。教育貢献プロジェクトとして無料で公開しています。${AI_QUOTA_COPY}`,
   },
   {
     q: "AI 解説の精度はどの程度信頼できますか？",
@@ -391,7 +391,7 @@ export default function WhyKakomonAiPage() {
           まずは 1 問だけ試してみる
         </h2>
         <p className="mt-1 text-xs text-muted-foreground">
-          会員登録不要・無料。AI コパイロットの引用カードは初回 10 問まで体感できます。
+          会員登録不要・無料。AI コパイロットに問題の疑問を続けて質問できます。連続利用には制限があります。
         </p>
         <Button asChild variant="primary" size="lg" className="mt-4 font-semibold">
           <Link href="/ap">
