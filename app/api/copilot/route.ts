@@ -12,6 +12,7 @@ import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
+import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 
@@ -131,7 +132,9 @@ export async function POST(req: Request) {
 
   let provider: LLMProvider;
   try {
-    provider = await getProvider("gemini");
+    provider = process.env.GEMINI_API_KEY
+      ? createCopilotGeminiProvider(process.env.GEMINI_API_KEY)
+      : await getProvider("mock");
   } catch {
     return NextResponse.json(
       {
@@ -179,7 +182,6 @@ export async function POST(req: Request) {
     userMessages,
     model,
     maxTokens,
-    temperature: 0.2,
     clientSignal: req.signal,
     citationFooter: rag.citationFooter,
     hasGrounding: rag.hasGrounding,
@@ -194,11 +196,18 @@ export async function POST(req: Request) {
             promptTokens: usage?.promptTokens,
             outputTokens: usage?.outputTokens,
             thoughtsTokens: usage?.thoughtsTokens,
+            totalTokens: usage?.totalTokens,
           });
           await recordAiCost({
             tier: tierForModel(model),
             inputTokens: usage?.promptTokens ?? estimateTokens(inputChars),
-            outputTokens: (usage?.outputTokens ?? estimateTokens(outputChars)) + (usage?.thoughtsTokens ?? 0),
+            // Stream interruption may hide usageMetadata, including billable
+            // thinking tokens. Reserve the whole generation budget in that case.
+            outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
+              ? Math.max(0, usage.totalTokens - usage.promptTokens)
+              : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
+                ? usage.outputTokens + usage.thoughtsTokens
+                : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
             label: "copilot",
           });
         }
@@ -213,6 +222,7 @@ export async function POST(req: Request) {
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
+      "X-Model": provider.name === "mock" ? "mock" : model,
       "X-Timeout-Ms": String(STREAM_TIMEOUT_MS),
       "X-RAG-Enabled": ragEnabled() ? "1" : "0",
       "X-RAG-Passages": String(rag.ragResult.passages.length),

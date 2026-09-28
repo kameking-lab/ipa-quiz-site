@@ -25,6 +25,8 @@ export interface StreamCompletion {
    * かつ出力トークンとして課金される。
    */
   thoughtsTokens?: number;
+  /** Provider-reported complete token total, including hidden thinking. */
+  totalTokens?: number;
   /** maxOutputTokens に達して応答が途中で打ち切られたか */
   truncated: boolean;
 }
