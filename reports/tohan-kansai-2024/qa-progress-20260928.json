@@ -103,7 +103,26 @@
     98,
     99,
     100,
-    114
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120
   ],
   "pdfPageImageChecked": [
     21,
@@ -186,7 +205,26 @@
     98,
     99,
     100,
-    114
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120
   ],
   "pdfPageImageCheckScope": {
     "21-40": "公式前半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問22の配合成分表、問40の6カプセル成分表を含む。20問。",
@@ -195,7 +233,8 @@
     "independentSecondReview": false,
     "42-60": "公式前半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問44の6錠成分表、問51の100mL成分表を含む。19問。",
     "61-80": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。20問。",
-    "81-100": "公式後半PDFの該当ページ画像で問題文・条文穴埋め表・四記述・五肢の対応を目視照合。20問。法令解説は2024年試験用の令和6年4月手引き時点。"
+    "81-100": "公式後半PDFの該当ページ画像で問題文・条文穴埋め表・四記述・五肢の対応を目視照合。20問。法令解説は2024年試験用の令和6年4月手引き時点。",
+    "101-120": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問112の穴埋め表、問114・116の成分・疾患表を含む20問。問114は再照合。"
   },
   "sourceGroundedChoiceReasonDrafts": {
     "questions": [
@@ -298,16 +337,37 @@
       97,
       98,
       99,
-      100
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
     ],
-    "choices": 500,
+    "choices": 600,
     "independentReviewComplete": 0,
     "file": [
       "draft-choice-reasons-q1-20.json",
       "draft-choice-reasons-q21-40.json",
       "draft-choice-reasons-q41-60.json",
       "draft-choice-reasons-q61-80.json",
-      "draft-choice-reasons-q81-100.json"
+      "draft-choice-reasons-q81-100.json",
+      "draft-choice-reasons-q101-120.json"
     ]
   },
   "correctedCandidateExtraction": {
@@ -316,8 +376,8 @@
     "22": "配合成分表の行が混線していたため原本の4行を再構成した。"
   },
   "remaining": {
-    "fullPdfPageImageQuestionChecks": 39,
-    "sourceGroundedChoiceReasonDrafts": 100,
+    "fullPdfPageImageQuestionChecks": 20,
+    "sourceGroundedChoiceReasonDrafts": 0,
     "independentChoiceReasonReviews": 600,
     "independentQuestionReviews": 120,
     "reuseConditionsAndThirdPartyRightsReview": "PENDING"
