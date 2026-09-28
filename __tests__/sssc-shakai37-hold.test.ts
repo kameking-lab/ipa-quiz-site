@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
@@ -28,7 +28,7 @@ describe("第37回社会福祉士: 一次資料の準備と公開HOLD", () => {
   const source = readJson<Source>("source-transcription.json");
   const keys = readJson<{ sourceFile: { sha256: string }; answers: Record<string, number[]> }>("answer-keys.json");
   const manifest = readJson<{ files: Record<string, { url: string; sha256: string }>; examDate: string; round: number; fiscalYear: number }>("sources.json");
-  const ledger = readJson<{ questions: Array<{ number: number; officialAnswer: number[]; modelReviewStatus: string; primarySourceRationaleStatus: string; explanationPublished: boolean }> }>("question-review-ledger.json");
+  const ledger = readJson<{ primarySourceVerifiedCount: number; publicationStatus: string; questions: Array<{ number: number; officialAnswer: number[]; modelReviewStatus: string; primarySourceRationaleStatus: string; reviewDisposition: string; primaryReviewReason: string; explanationPublished: boolean }> }>("question-review-ledger.json");
 
   it("19科目・全129問・全5肢が公式PDFと読み上げHTMLの文字照合を通る", () => {
     expect(source.exam).toBe("shakai37");
@@ -71,13 +71,27 @@ describe("第37回社会福祉士: 一次資料の準備と公開HOLD", () => {
     expect(EXAM_CONFIGS.shakai.yearRange).toEqual({ start: 2025, end: 2025 });
   });
 
-  it("問題別台帳は129問すべての解説を未確認・非公開として追跡する", () => {
+  it("問題別台帳は一次資料確認済み5問と保留124問を区別し、公開はHOLDする", () => {
     expect(ledger.questions.map((row) => row.number)).toEqual(Array.from({ length: 129 }, (_, i) => i + 1));
     expect(ledger.questions.filter((row) => row.modelReviewStatus === "PASS")).toHaveLength(127);
+    const verified = [16, 30, 45, 47, 85];
+    const partial = readJson<{ publicationStatus: string; questions: Record<string, { choiceExplanations: string[]; primarySources: string[] }> }>("verified-explanations.partial.json");
+    expect(ledger.publicationStatus).toBe("HOLD");
+    expect(ledger.primarySourceVerifiedCount).toBe(verified.length);
+    expect(partial.publicationStatus).toBe("HOLD");
+    expect(Object.keys(partial.questions).map(Number).sort((a, b) => a - b)).toEqual(verified);
+    expect(existsSync(path.join(report, "APPROVED.json"))).toBe(false);
+    expect(existsSync(path.join(process.cwd(), "data/questions/shakai/2024-annual.json"))).toBe(false);
     for (const row of ledger.questions) {
       expect(row.officialAnswer, String(row.number)).toEqual(keys.answers[String(row.number)]);
-      expect(row.primarySourceRationaleStatus, String(row.number)).toBe("UNVERIFIED");
+      expect(row.primarySourceRationaleStatus, String(row.number)).toBe(verified.includes(row.number) ? "VERIFIED" : "UNVERIFIED");
+      expect(row.reviewDisposition, String(row.number)).toBe(verified.includes(row.number) ? "PRIMARY_VERIFIED" : "HOLD");
+      expect(row.primaryReviewReason.length, String(row.number)).toBeGreaterThan(0);
       expect(row.explanationPublished, String(row.number)).toBe(false);
+      if (verified.includes(row.number)) {
+        expect(partial.questions[String(row.number)]?.choiceExplanations).toHaveLength(5);
+        expect(partial.questions[String(row.number)]?.primarySources.length).toBeGreaterThan(0);
+      }
     }
   });
 });
