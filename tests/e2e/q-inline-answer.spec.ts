@@ -75,4 +75,15 @@ test.describe("/q inline answer", () => {
     await page.keyboard.press("Enter");
     await expect(page.getByText(/正解|不正解/).first()).toBeVisible();
   });
+
+  test("an anonymous learner can ask AI about a wrong answer without leaving the question", async ({ page }) => {
+    await page.goto("/q/tohan/2025-kansai/gakka/q1");
+    const urlBefore = page.url();
+    await page.getByRole("radio").first().click();
+    await page.getByRole("button", { name: "誤答をAIに質問" }).click();
+    const dialog = page.getByRole("dialog", { name: "AI コパイロット" }).first();
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("textbox", { name: /AIへの質問を入力/ })).toBeVisible();
+    expect(page.url()).toBe(urlBefore);
+  });
 });
