@@ -75,9 +75,14 @@ export async function POST(req: Request) {
   const feedbackToken = readFeedbackTokenInfo(req);
   const rl = await checkRateLimit({ ip, feedbackSubmitted: feedbackToken.valid, feedbackTokenId: feedbackToken.id });
   if (!rl.ok) {
+    const message = rl.reason === "daily"
+      ? feedbackToken.valid
+        ? "本日の利用上限に達しました。JST 0:00 にリセットされます。"
+        : "AIコパイロットの初回無料枠（10回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
+      : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json({
       error: "rate_limited",
-      message: rl.reason === "daily" ? "本日のAI利用上限に達しました。翌日以降にお試しください。" : "少し速いようです。1分ほど待ってから再度お試しください。",
+      message,
       reason: rl.reason,
       resetAt: rl.resetAt,
     }, { status: 429, headers: { "X-Error-Type": "rate_limited" } });
