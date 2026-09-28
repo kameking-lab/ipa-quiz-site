@@ -1,0 +1,32 @@
+{
+  "asOfJst": "2026-09-28",
+  "releaseStatus": "HOLD",
+  "sourcePdfSha256Matched": ["前半", "後半", "解答", "手引き"],
+  "machineCharacterTriage": {
+    "questionsScanned": 120,
+    "scope": "PDFテキストに対する候補問題文の文字包含率。配列の順序・図表・選択肢の意味は保証しない。",
+    "belowThresholdAfterCorrections": 0
+  },
+  "questionBodySourceTextChecked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 22, 41, 114],
+  "pdfPageImageChecked": [22, 41, 114],
+  "sourceGroundedChoiceReasonDrafts": {
+    "questions": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "choices": 50,
+    "independentReviewComplete": 0,
+    "file": "draft-choice-reasons-q1-10.json"
+  },
+  "correctedCandidateExtraction": {
+    "2": "LD50の50が欠落していたため原本から補った。",
+    "3": "Good Vigilance PracticeとGood Post-marketingの語間を原本どおり補った。",
+    "22": "配合成分表の行が混線していたため原本の4行を再構成した。"
+  },
+  "remaining": {
+    "fullPdfPageImageQuestionChecks": 117,
+    "sourceGroundedChoiceReasonDrafts": 550,
+    "independentChoiceReasonReviews": 600,
+    "independentQuestionReviews": 120,
+    "reuseConditionsAndThirdPartyRightsReview": "PENDING"
+  },
+  "publicLoaderChanged": false,
+  "approvedLedgerChanged": false
+}
