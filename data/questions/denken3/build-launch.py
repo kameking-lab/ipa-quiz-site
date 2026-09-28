@@ -13,10 +13,9 @@ OUTPUT = BASE / "launch.json"
 CHOICES = {str(i): kana for i, kana in enumerate("アイウエオ", 1)}
 SESSIONS = {"theory": "riron", "power": "denryoku", "machinery": "kikai", "law": "houki"}
 CATEGORIES = {"theory": "理論", "power": "電力", "machinery": "機械", "law": "法規"}
-HOLDS = {("2026-03-22", "power", 1, None), ("2026-03-22", "law", 4, None)}
+HOLDS = {("2026-03-22", "power", 1, None)}
 HOLD_SUMMARY = {
     ("2026-03-22", "power", 1, None): "この設問は、水力発電所を落差を得る方法と河川流量の利用方法という二つの軸で整理する問題です。各空欄が分類名・貯水の有無・需要に合わせた運転のどれを問うか、公式問題文と照らして読み分けます。",
-    ("2026-03-22", "law", 4, None): "この設問は、機械器具の接地について使用電圧、設置場所、漏電遮断器、接地抵抗値、接地線の条件を比較する問題です。各選択肢の条件を分けて、公式の技術基準と照らして判断します。",
 }
 INTERNAL = re.compile(r"\b(?:HOLD|FIX|TODO)\b|未確認|要確認|確認待ち|準備中|仮置き")
 PUBLIC_INTERNAL = re.compile(r"\b(?:HOLD|FIX|TODO)\b")
@@ -59,7 +58,7 @@ def build():
             key = (row["examDate"], row["subject"], row["questionNumber"], row["part"])
             require(key in expected and key not in reviewed, f"duplicate or unofficial reviewed unit {key}")
             reviewed[key] = row
-    require(len(reviewed) == 318 and set(expected) - set(reviewed) == HOLDS, "reviewed set changed")
+    require(len(reviewed) == 319 and set(expected) - set(reviewed) == HOLDS, "reviewed set changed")
 
     questions = []
     for key, (session, paper, unit) in expected.items():
@@ -131,4 +130,4 @@ if __name__ == "__main__":
         require(OUTPUT.is_file() and OUTPUT.read_text(encoding="utf-8") == rendered, "launch.json differs from pinned sources")
     else:
         OUTPUT.write_text(rendered, encoding="utf-8")
-    print("Denken 3 launch data: 16 papers, 320 units, 318 full + 2 official-summary")
+    print("Denken 3 launch data: 16 papers, 320 units, 319 full + 1 official-summary")
