@@ -3,6 +3,8 @@
 // preserving the existing in-memory layer (lib/rate-limit/server.ts) as the sole guard.
 
 import { getClientIp } from "@/lib/rate-limit/server";
+import { costJpy, tierForModel } from "@/lib/ai/cost-tracker";
+import { COPILOT_MODEL } from "@/lib/copilot/model";
 
 const KV_URL = process.env.KV_REST_API_URL?.replace(/\/$/, "");
 const KV_TOKEN = process.env.KV_REST_API_TOKEN;
@@ -15,12 +17,20 @@ export const IP_LIMITS = {
   day: 500,
 } as const;
 
-// Estimated cost per LLM request (Gemini 2.5 Flash-Lite, avg 1200 in + 600 out tokens)
+// A learner can ask more than ten follow-up questions in one sitting, while
+// the hourly/day limits still stop sustained automated use.
+export const COPILOT_MINUTE_LIMIT = 20;
+export const COPILOT_GLOBAL_LIMITS = { hour: 500, day: 5_000 } as const;
+
+// Legacy estimate for non-copilot endpoints. Counts alone cannot give actual cost.
 export const COST_JPY_PER_REQUEST = 0.055;
+// Copilot uses a different model; derive its estimate from the same pricing
+// table used by the monthly cost cap, including introductory pricing dates.
+export const COPILOT_COST_JPY_PER_REQUEST = costJpy(tierForModel(COPILOT_MODEL), 1200, 600);
 
 export type IpRateLimitResult =
   | { ok: true }
-  | { ok: false; reason: "minute" | "hour" | "daily"; resetAt: number };
+  | { ok: false; reason: "minute" | "hour" | "daily" | "unavailable"; resetAt: number };
 
 type KvPipelineEntry = { result: unknown } | { error: string };
 
@@ -51,8 +61,12 @@ async function kvPipeline(commands: unknown[][]): Promise<unknown[]> {
 export async function checkIpRateLimit(
   req: Request,
   endpoint: string,
+  options: { requireKv?: boolean } = {},
 ): Promise<IpRateLimitResult> {
-  if (!KV_ENABLED) return { ok: true };
+  // Paid copilot calls must not fail open when the shared counter is unavailable.
+  if (!KV_ENABLED) return options.requireKv
+    ? { ok: false, reason: "unavailable", resetAt: Date.now() + 60_000 }
+    : { ok: true };
 
   const ip = getClientIp(req);
   const now = Date.now();
@@ -83,7 +97,11 @@ export async function checkIpRateLimit(
   const hrCount = Number(results[2] ?? 0);
   const dayCount = Number(results[4] ?? 0);
 
-  if (minCount > IP_LIMITS.minute) {
+  if (options.requireKv && [results[0], results[2], results[4]].some((value) => value == null || !Number.isFinite(Number(value)))) {
+    return { ok: false, reason: "unavailable", resetAt: now + 60_000 };
+  }
+
+  if (minCount > (endpoint === "copilot" ? COPILOT_MINUTE_LIMIT : IP_LIMITS.minute)) {
     return { ok: false, reason: "minute", resetAt: (minBucket + 1) * 60_000 };
   }
   if (hrCount > IP_LIMITS.hour) {
@@ -91,6 +109,28 @@ export async function checkIpRateLimit(
   }
   if (dayCount > IP_LIMITS.day) {
     return { ok: false, reason: "daily", resetAt: (dayBucket + 1) * 86_400_000 };
+  }
+
+  // Atomic shared admission counters prevent a distributed client from
+  // bypassing the per-IP limits and exhausting the monthly Gemini budget.
+  if (endpoint === "copilot") {
+    const globalHourKey = `rl:global:copilot:h:${hrBucket}`;
+    const globalDayKey = `rl:global:copilot:d:${dayBucket}`;
+    const global = await kvPipeline([
+      ["INCR", globalHourKey],
+      ["EXPIRE", globalHourKey, 7200],
+      ["INCR", globalDayKey],
+      ["EXPIRE", globalDayKey, 172800],
+    ]);
+    if (options.requireKv && [global[0], global[2]].some((value) => value == null || !Number.isFinite(Number(value)))) {
+      return { ok: false, reason: "unavailable", resetAt: now + 60_000 };
+    }
+    if (Number(global[0] ?? 0) > COPILOT_GLOBAL_LIMITS.hour) {
+      return { ok: false, reason: "hour", resetAt: (hrBucket + 1) * 3_600_000 };
+    }
+    if (Number(global[2] ?? 0) > COPILOT_GLOBAL_LIMITS.day) {
+      return { ok: false, reason: "daily", resetAt: (dayBucket + 1) * 86_400_000 };
+    }
   }
 
   return { ok: true };
@@ -171,6 +211,10 @@ export async function getApiUsageStats(): Promise<ApiUsageStats> {
 
   const totalLast1h = TRACKED_ENDPOINTS.reduce((s, e) => s + byEndpoint[e].last1h, 0);
   const totalLast24h = TRACKED_ENDPOINTS.reduce((s, e) => s + byEndpoint[e].last24h, 0);
+  const estimatedLast1h = byEndpoint.copilot.last1h * COPILOT_COST_JPY_PER_REQUEST
+    + (totalLast1h - byEndpoint.copilot.last1h) * COST_JPY_PER_REQUEST;
+  const estimatedLast24h = byEndpoint.copilot.last24h * COPILOT_COST_JPY_PER_REQUEST
+    + (totalLast24h - byEndpoint.copilot.last24h) * COST_JPY_PER_REQUEST;
 
   // Merge top IPs from both hour buckets
   const ipCounts = new Map<string, number>();
@@ -197,8 +241,8 @@ export async function getApiUsageStats(): Promise<ApiUsageStats> {
     byEndpoint,
     topIps,
     estimatedCostJpy: {
-      last1h: Math.round(totalLast1h * COST_JPY_PER_REQUEST * 100) / 100,
-      last24h: Math.round(totalLast24h * COST_JPY_PER_REQUEST * 100) / 100,
+      last1h: Math.round(estimatedLast1h * 100) / 100,
+      last24h: Math.round(estimatedLast24h * 100) / 100,
     },
   };
 }

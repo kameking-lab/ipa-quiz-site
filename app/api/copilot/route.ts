@@ -3,7 +3,6 @@ import { z } from "zod";
 import { getProvider } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
 import { getQuestionById } from "@/lib/questions/load";
@@ -79,29 +78,16 @@ export async function POST(req: Request) {
     ? undefined
     : isCompleteSelectionCorrect(question.answer, selectedKeys);
 
-  const ip = getClientIp(req);
-  const feedbackToken = readFeedbackTokenInfo(req);
-  const feedbackSubmitted = feedbackToken.valid;
-  const rl = await checkRateLimit({
-    ip,
-    feedbackSubmitted,
-    feedbackTokenId: feedbackToken.id,
+  const ipRl = await checkIpRateLimit(req, "copilot", {
+    requireKv: Boolean(process.env.GEMINI_API_KEY),
   });
-  if (!rl.ok) {
-    const message =
-      rl.reason === "daily"
-        ? feedbackSubmitted
-          ? "本日の利用上限に達しました。JST 0:00 にリセットされます。"
-          : "AI コパイロットの初回無料枠（10 回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
-        : "少し速いようです。1分ほど待ってから再度お試しください。";
-    return NextResponse.json(
-      { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
-      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
-    );
-  }
-
-  const ipRl = await checkIpRateLimit(req, "copilot");
   if (!ipRl.ok) {
+    if (ipRl.reason === "unavailable") {
+      return NextResponse.json(
+        { error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" },
+        { status: 503, headers: { "X-Error-Type": "server_error", "Retry-After": "60" } },
+      );
+    }
     return NextResponse.json(
       { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt },
       { status: 429, headers: { "X-Error-Type": "rate_limited" } },
@@ -218,9 +204,6 @@ export async function POST(req: Request) {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "no-store, no-cache, must-revalidate",
-      "X-RateLimit-Limit": String(rl.limit),
-      "X-RateLimit-Remaining": String(rl.remaining),
-      "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
       "X-Model": provider.name === "mock" ? "mock" : model,
       "X-Timeout-Ms": String(STREAM_TIMEOUT_MS),

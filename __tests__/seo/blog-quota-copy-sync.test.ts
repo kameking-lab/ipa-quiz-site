@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
-import { FREE_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
+import { AI_QUOTA_COPY_SHORT } from "@/lib/constants/ai-quota";
 
 // The free AI-copilot quota is owned by lib/constants/ai-quota.ts
 // (FREE_AI_DAILY_LIMIT = 10). The constant's own comment records that some
@@ -23,10 +23,11 @@ describe("blog copy: AI quota claims derive from the SSOT, never a stale literal
     expect(offenders).toEqual([]);
   });
 
-  it("the roadmap article reflects the enforced free-quota number, not 30", () => {
+  it("the roadmap article reflects the current no-ten-question-gate copy", () => {
     const post = getBlogPostBySlug("kakomon-ai-roadmap-2026");
     expect(post).toBeDefined();
-    expect(post!.body).toContain(`${FREE_AI_DAILY_LIMIT} 回`);
+    expect(post!.body).toContain(AI_QUOTA_COPY_SHORT);
+    expect(post!.body).not.toContain("初回 10 回");
     expect(post!.body).not.toContain("30 回");
   });
 });

@@ -67,14 +67,6 @@ import { CitationCards } from "@/components/copilot/CitationCards";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
-import {
-  FREE_DAILY_LIMIT_CLIENT,
-  POST_FEEDBACK_DAILY_LIMIT_CLIENT,
-  incrementAiUsage,
-  readAiUsage,
-  readFeedbackSubmitted,
-  syncFeedbackUnlockFromResponse,
-} from "@/lib/storage/rate-limit-client";
 import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
 import type { ChatSession, SharePayload } from "@/lib/chat/types";
@@ -131,7 +123,6 @@ interface Props {
   selectedChoice?: string;
   isCorrect?: boolean;
   initialPrompt?: string;
-  onRateLimitHit: () => void;
   onClose?: () => void;
   headerRight?: React.ReactNode;
   className?: string;
@@ -164,21 +155,6 @@ function getSpeechRecognitionCtor(): (new () => SpeechRecognitionInstance) | nul
   if (typeof window === "undefined") return null;
   const w = window as WindowWithSpeech;
   return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
-}
-
-function usageCounterClass(remaining: number): string {
-  if (remaining <= 3) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
-  if (remaining <= 10) return "bg-yellow-100 text-yellow-700 dark:bg-yellow-950/60 dark:text-yellow-300";
-  return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300";
-}
-
-function jstResetTime(): string {
-  const now = new Date();
-  const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
-  const tomorrow = new Date(jst);
-  tomorrow.setUTCHours(24, 0, 0, 0);
-  const local = new Date(tomorrow.getTime() - 9 * 60 * 60 * 1000);
-  return local.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 }
 
 function buildShareUrl(question: Question, messages: Message[]): string {
@@ -226,7 +202,6 @@ export function CopilotPanel({
   selectedChoice,
   isCorrect,
   initialPrompt,
-  onRateLimitHit,
   onClose,
   headerRight,
   className,
@@ -235,8 +210,6 @@ export function CopilotPanel({
   const [input, setInput] = React.useState(initialPrompt ?? "");
   const [streaming, setStreaming] = React.useState(false);
   const [streamStatus, setStreamStatus] = React.useState<StreamStatus>("idle");
-  const [usage, setUsage] = React.useState(() => readAiUsage());
-  const [feedbackSubmitted, setFeedbackSubmittedState] = React.useState(false);
   const [errorState, setErrorState] = React.useState<{
     type: "server_error" | "network_error" | "timeout";
     retryFn: () => void;
@@ -272,17 +245,6 @@ export function CopilotPanel({
   >("idle");
   const [responseLength, setResponseLength] = React.useState<ResponseLength>("medium");
 
-  React.useEffect(() => {
-     
-    setFeedbackSubmittedState(readFeedbackSubmitted());
-    const onStorage = () => setFeedbackSubmittedState(readFeedbackSubmitted());
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
-
-  const dailyLimit = feedbackSubmitted
-    ? POST_FEEDBACK_DAILY_LIMIT_CLIENT
-    : FREE_DAILY_LIMIT_CLIENT;
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
   // Distinguishes a user-initiated stop (Stop button) from a system-side abort
@@ -371,11 +333,6 @@ export function CopilotPanel({
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
 
-      if (usage.count >= dailyLimit) {
-        onRateLimitHit();
-        return;
-      }
-
       setErrorState(null);
       lastSendArgsRef.current = { text: trimmed, quickAction };
 
@@ -421,17 +378,12 @@ export function CopilotPanel({
           }),
         });
 
-        // 旧方式(自己申告ヘッダ)で解除済みのユーザーを、サーバの実際の枠に合わせる。
-        syncFeedbackUnlockFromResponse(res);
-        setFeedbackSubmittedState(readFeedbackSubmitted());
-
         if (res.status === 429) {
           const body = (await res.json()) as { message?: string; reason?: string };
           setMessages((prev) => [
             ...prev,
             { role: "assistant", content: body.message ?? "レート制限に達しました。" },
           ]);
-          if (body.reason === "daily") onRateLimitHit();
           setStreaming(false);
           setStreamStatus("idle");
           return;
@@ -521,7 +473,6 @@ export function CopilotPanel({
           had_timeout: isTimeout,
           had_server_error: isServerError,
         });
-        setUsage(incrementAiUsage());
       } catch (err) {
         if ((err as Error).name === "AbortError") {
           // User-initiated stop: keep whatever was already streamed and mark
@@ -571,13 +522,10 @@ export function CopilotPanel({
     },
     [
       streaming,
-      usage.count,
-      dailyLimit,
       messages,
       question,
       selectedChoice,
       isCorrect,
-      onRateLimitHit,
       profile,
       responseLength,
     ],
@@ -772,39 +720,9 @@ export function CopilotPanel({
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
           <span className="text-sm font-semibold">AI コパイロット</span>
-          {feedbackSubmitted ? (
-            <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
-              ほぼ無制限
-            </span>
-          ) : (() => {
-            const remaining = Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0);
-            return (
-              <div className="group/usage relative ml-2 flex items-center gap-1.5">
-                <span
-                  className={cn(
-                    "cursor-default rounded-full px-2 py-0.5 text-[10px] font-medium",
-                    usageCounterClass(remaining),
-                  )}
-                >
-                  残り {remaining}/{FREE_DAILY_LIMIT_CLIENT} 回
-                </span>
-                <span className="hidden text-[10px] text-zinc-500 dark:text-zinc-400 sm:inline">
-                  · JST 0:00 リセット
-                </span>
-                <div className="invisible absolute left-0 top-full z-50 mt-1.5 w-64 rounded-xl border border-zinc-200 bg-white p-3 text-[11px] leading-relaxed text-zinc-600 shadow-lg group-hover/usage:visible dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
-                  <p className="mb-1 font-semibold text-zinc-800 dark:text-zinc-200">AI 利用回数について</p>
-                  <p>クイックアクションまたはテキスト送信のたびに 1 回消費します。</p>
-                  <p className="mt-1">フィードバックを 1 度ご投稿いただくと、これ以降ほぼ無制限でお使いいただけます（教育貢献プロジェクト）。</p>
-                  <p className="mt-1">毎日 JST 0:00（端末時刻で{jstResetTime()} ごろ）にリセットされます。</p>
-                  {remaining === 0 && (
-                    <p className="mt-1 font-semibold text-red-600 dark:text-red-400">
-                      初回無料枠を使い切りました。
-                    </p>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
+          <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300" title="短時間の連続利用などには適正利用制限があります">
+            無料で質問
+          </span>
         </div>
         <div className="flex items-center gap-1">
           {hasMessages && (
@@ -909,17 +827,9 @@ export function CopilotPanel({
       <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-xs text-zinc-500 dark:text-zinc-400">クイックアクション</span>
-          {!feedbackSubmitted && (
-            <span className="text-[10px] text-zinc-400 dark:text-zinc-500">各ボタンで AI 1 回消費</span>
-          )}
+          <span className="text-[10px] text-zinc-400 dark:text-zinc-500">連続利用には制限があります</span>
         </div>
-        {!feedbackSubmitted && Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0) === 0 ? (
-          <p className="rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-700 dark:bg-sky-950/30 dark:text-sky-300">
-            初回無料枠（{FREE_DAILY_LIMIT_CLIENT} 回）を使い切りました。
-            フィードバックを 1 度ご投稿いただくと、以降ほぼ無制限でご利用いただけます。
-          </p>
-        ) : (
-          <>
+        <>
             <div
               id="copilot-quickactions-list"
               className="flex flex-wrap gap-1.5"
@@ -1004,8 +914,7 @@ export function CopilotPanel({
                   : `+他 ${hiddenQuickActionCount} 個を見る`}
               </button>
             )}
-          </>
-        )}
+        </>
       </div>
 
       {/* Messages */}
@@ -1382,7 +1291,6 @@ export function CopilotMobileSheet({
   selectedChoice,
   isCorrect,
   initialPrompt,
-  onRateLimitHit,
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
@@ -1486,7 +1394,6 @@ export function CopilotMobileSheet({
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
               initialPrompt={initialPrompt}
-              onRateLimitHit={onRateLimitHit}
               onClose={() => setOpen(false)}
               className="rounded-t-2xl"
             />
@@ -1508,7 +1415,6 @@ export function CopilotDesktopFloating({
   selectedChoice,
   isCorrect,
   initialPrompt,
-  onRateLimitHit,
   headerRight,
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean }) {
@@ -1616,7 +1522,6 @@ export function CopilotDesktopFloating({
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
               initialPrompt={initialPrompt}
-              onRateLimitHit={onRateLimitHit}
               onClose={() => setOpen(false)}
               headerRight={headerRight}
               className="h-full"

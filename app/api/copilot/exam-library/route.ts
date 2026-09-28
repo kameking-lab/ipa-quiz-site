@@ -4,7 +4,6 @@ import { getProvider, type LLMProvider } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, estimateTokens, recordAiCost } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkIpRateLimit } from "@/lib/rate-limit";
-import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { EXAM_ID_PATTERN, examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
@@ -71,24 +70,13 @@ export async function POST(req: Request) {
     choiceReasons ? `サイトの選択肢別解説（非公式）:\n${choiceReasons.slice(0, 8000)}` : "",
   ].filter(Boolean).join("\n\n");
 
-  const ip = getClientIp(req);
-  const feedbackToken = readFeedbackTokenInfo(req);
-  const rl = await checkRateLimit({ ip, feedbackSubmitted: feedbackToken.valid, feedbackTokenId: feedbackToken.id });
-  if (!rl.ok) {
-    const message = rl.reason === "daily"
-      ? feedbackToken.valid
-        ? "本日の利用上限に達しました。JST 0:00 にリセットされます。"
-        : "AIコパイロットの初回無料枠（10回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
-      : "少し速いようです。1分ほど待ってから再度お試しください。";
-    return NextResponse.json({
-      error: "rate_limited",
-      message,
-      reason: rl.reason,
-      resetAt: rl.resetAt,
-    }, { status: 429, headers: { "X-Error-Type": "rate_limited" } });
-  }
-  const ipRl = await checkIpRateLimit(req, "copilot");
+  const ipRl = await checkIpRateLimit(req, "copilot", {
+    requireKv: Boolean(process.env.GEMINI_API_KEY),
+  });
   if (!ipRl.ok) {
+    if (ipRl.reason === "unavailable") {
+      return NextResponse.json({ error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" }, { status: 503, headers: { "Retry-After": "60" } });
+    }
     return NextResponse.json({ error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt }, { status: 429 });
   }
 
@@ -136,9 +124,6 @@ export async function POST(req: Request) {
   return new Response(stream, { headers: {
     "Content-Type": "text/plain; charset=utf-8",
     "Cache-Control": "no-store, no-cache, must-revalidate",
-    "X-RateLimit-Limit": String(rl.limit),
-    "X-RateLimit-Remaining": String(rl.remaining),
-    "X-RateLimit-Reset": String(rl.resetAt),
     "X-Provider": provider.name,
     "X-Model": provider.name === "mock" ? "mock" : COPILOT_MODEL,
     "X-RAG-Enabled": "0",
