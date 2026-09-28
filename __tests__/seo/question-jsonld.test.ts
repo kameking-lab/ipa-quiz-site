@@ -117,6 +117,15 @@ describe("sessionLabel", () => {
       "mondai-b": true,
           kyotsu: true,
           senmon: true,
+          "hoiku-genri": true,
+          "kyoiku-genri": true,
+          "shakaiteki-yougo": true,
+          "kodomo-katei-fukushi": true,
+          "shakai-fukushi": true,
+          "hoiku-shinrigaku": true,
+          "kodomo-hoken": true,
+          "kodomo-shokueiyou": true,
+          "hoiku-jisshu-riron": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

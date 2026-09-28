@@ -70,7 +70,8 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("eisei1");
     expect(codes).toContain("eisei2");
     expect(codes).toContain("soukan");
-    expect(codes.length).toBe(37);
+    expect(codes).toContain("hoikushi");
+    expect(codes.length).toBe(38);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

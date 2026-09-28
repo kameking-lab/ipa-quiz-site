@@ -663,11 +663,30 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
   },
+  hoikushi: {
+    code: "hoikushi",
+    nameFull: "保育士試験",
+    urlSlug: "hoikushi",
+    level: "basic",
+    sessions: [
+      { session: "hoiku-genri", urlSlug: "hoiku-genri", expectedQuestions: 20, label: "保育原理", categories: ["保育原理"] },
+      { session: "kyoiku-genri", urlSlug: "kyoiku-genri", expectedQuestions: 10, label: "教育原理", categories: ["教育原理"] },
+      { session: "shakaiteki-yougo", urlSlug: "shakaiteki-yougo", expectedQuestions: 10, label: "社会的養護", categories: ["社会的養護"] },
+      { session: "kodomo-katei-fukushi", urlSlug: "kodomo-katei-fukushi", expectedQuestions: 20, label: "子ども家庭福祉", categories: ["子ども家庭福祉"] },
+      { session: "shakai-fukushi", urlSlug: "shakai-fukushi", expectedQuestions: 20, label: "社会福祉", categories: ["社会福祉"] },
+      { session: "hoiku-shinrigaku", urlSlug: "hoiku-shinrigaku", expectedQuestions: 20, label: "保育の心理学", categories: ["保育の心理学"] },
+      { session: "kodomo-hoken", urlSlug: "kodomo-hoken", expectedQuestions: 20, label: "子どもの保健", categories: ["子どもの保健"] },
+      { session: "kodomo-shokueiyou", urlSlug: "kodomo-shokueiyou", expectedQuestions: 20, label: "子どもの食と栄養", categories: ["子どもの食と栄養"] },
+      { session: "hoiku-jisshu-riron", urlSlug: "hoiku-jisshu-riron", expectedQuestions: 20, label: "保育実習理論", categories: ["保育実習理論"] },
+    ],
+    seasons: ["early", "late"],
+    yearRange: { start: 2025, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
