@@ -19,4 +19,4 @@
 - Notable extraction errors: missing exponent sign in Q1, fragmented 100 V in Q3/Q4, missing equipment photos and picture-only choices, missing μ in Q39, and unrecoverable switch order in Q43.
 
 ## Publication gate
-PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **156/200**, independent review **100/200**, and public approval **0/200**. Normalized content and source/rights checks remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
+PDF text extraction cannot establish correct equations, diagrams, photos, or picture choices. The visual review is **50/50**. Choice-reason drafts are **176/200**, independent review **100/200**, and public approval **0/200**. Normalized content and source/rights checks remain outstanding. Public addition remains **0 questions**. Do not merge as a launch or modify APPROVED/public loaders until all review steps pass.
