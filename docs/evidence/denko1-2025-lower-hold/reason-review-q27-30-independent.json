@@ -1,0 +1,81 @@
+{
+  "review": "independent-primary-source-audit",
+  "reviewDate": "2026-09-28",
+  "examDate": "2025-10-05",
+  "status": "REVIEWED_PUBLICATION_HOLD",
+  "publicationHold": true,
+  "draftEdited": false,
+  "draftFile": "reason-draft-q27-30.json",
+  "draftSha256": "3E1AB15906F4D730BCF3F2A99772E7DB101087CCD2F3AC2ED6C286E83AB25951",
+  "officialQuestion": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_q01.pdf",
+    "sha256": "635c811dbee7dd6c5605c856a8250285a4c99ef80a0609793600cb0d011ef451"
+  },
+  "officialAnswer": {
+    "url": "https://www.shiken.or.jp/construction/upload/20251005_co_first_a01.pdf",
+    "sha256": "F377A1DB85DB4544C7C0D5B443CB7D6C139BA90F87826523EB6444625C8C8A56"
+  },
+  "legalVersion": {
+    "date": "2024-10-22",
+    "interpretation": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+    "commentary": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-3.pdf"
+  },
+  "reviewedQuestions": 4,
+  "reviewedChoices": 16,
+  "questionReviews": [
+    {
+      "number": 27,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "source": "経産省2024-10-22版解釈163条1項1・2・3・6号",
+      "choiceChecks": {
+        "イ": "適切。ダクト相互と電線相互の堅ろう・電気的に完全な接続は163条1項1号。",
+        "ロ": "不適切。水平設置5mは支持点間3m以下を超える。6m特例は立入制限場所での垂直取付けのみ。",
+        "ハ": "適切。非換気型ダクトの終端閉そくは163条1項3号。",
+        "ニ": "適切。300V以下のバスダクトはD種接地、163条1項6号。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    },
+    {
+      "number": 28,
+      "officialAnswer": "ニ",
+      "draftAnswerMatches": true,
+      "source": "経産省2024-10-22版解釈159条1項1・3号、3項5号",
+      "choiceChecks": {
+        "イ": "不適切。屋外用ビニル絶縁電線は金属管工事の電線から除外。",
+        "ロ": "不適切。159条は低圧屋内配線の金属管工事を対象とし、高圧屋内配線を高圧絶縁電線で金属管工事にする条件を満たさない。",
+        "ハ": "不適切。159条1項3号は管内の電線接続点を禁ずる。",
+        "ニ": "適切。400Vは300V超だが、規定の接触防護措置を施せばD種接地を選べる。"
+      },
+      "draftFinding": "実質的な誤りなし。"
+    },
+    {
+      "number": 29,
+      "officialAnswer": "ロ",
+      "draftAnswerMatches": true,
+      "source": "経産省2024-10-22版解釈120条1・2・3項、123条1項2号・2項および同版解説120条",
+      "choiceChecks": {
+        "イ": "適切。15m超の高圧管路に埋設表示が必要。解説120条は表示印刷テープを地表と管路の間に埋設する方法を明示。",
+        "ロ": "不適切。120条1項は地中電線路の電線にケーブルを要求。",
+        "ハ": "適切。123条1項2号は金属製電線接続箱にD種接地を要求し、低圧限定ではない。2項例外は支持金物、防食部分、管路式の金属管路であり、通常の接続箱を含まない。",
+        "ニ": "適切。120条3項2号イは暗きょ内電線を不燃性又は自消性のある難燃性の管・トラフに収める耐燃措置を認める。"
+      },
+      "draftFinding": "正誤は一致。ただしハ末尾の『詳細な適用電圧・例外は公開前の法令査読で確定する』は未確認表現で、一次資料で確定済み。",
+      "correctionProposal": "ハの末尾を『解釈123条1項2号は金属製電線接続箱にD種接地を求める。2項の例外は支持金物、防食部分、管路式の金属管路であり、この接続箱には当たらない。』に置換。"
+    },
+    {
+      "number": 30,
+      "officialAnswer": "ハ",
+      "draftAnswerMatches": true,
+      "figureCheck": "公式問題PDFの印刷10ページ共有図①にUGSと明記。設問・選択肢は印刷11ページ。",
+      "source": "https://san-eisha.co.jp/products/sh304-rm646/ （UGS製造者の製品仕様・SOG動作）",
+      "choiceChecks": {
+        "イ": "適切。地絡保護の動作協調は波及事故防止に必要。",
+        "ロ": "適切。需要家側地絡を継電装置で検出し開放する。",
+        "ハ": "不適切。UGSは負荷開閉器であり短絡大電流そのものを遮断する能力を要求しない。過電流ロック後、上流遮断・無電圧で開放する。",
+        "ニ": "適切。上流遮断までの短絡電流に耐える定格短時間耐電流を受電点の想定短絡電流以上とする。"
+      },
+      "draftFinding": "実質的な誤りなし。図の①をUGSと読めている。"
+    }
+  ]
+}
