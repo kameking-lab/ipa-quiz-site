@@ -67,8 +67,8 @@ describe("Denken 3 fixed launch data", () => {
     expect(getSessionNeighbors(secondPart, questions).prev?.id).toBe(firstPart.id);
   });
 
-  it("keeps the 318 reviewed stems, choices, answers and explanations byte-for-byte in the adapter", () => {
-    expect(reviewed.size).toBe(318);
+  it("keeps the 319 reviewed stems, choices, answers and explanations byte-for-byte in the adapter", () => {
+    expect(reviewed.size).toBe(319);
     for (const q of questions) {
       const subject = q.id.match(/-(theory|power|machinery|law)-/)?.[1];
       const source = official.get(key(q.examDate!, subject!, q.qNumber, q.part ?? null));
@@ -98,10 +98,10 @@ describe("Denken 3 fixed launch data", () => {
     }
   });
 
-  it("publishes two official-answer-only units without draft reasons or internal markers", () => {
+  it("publishes one official-answer-only unit without draft reasons or internal markers", () => {
     const summary = questions.filter((q) => q.explanationCoverage === "official-summary");
     expect(summary.map((q) => q.id)).toEqual([
-      "denken3-2025-lower-power-q01", "denken3-2025-lower-law-q04",
+      "denken3-2025-lower-power-q01",
     ]);
     for (const q of summary) {
       expect(q.choiceExplanations).toBeUndefined();
@@ -109,7 +109,17 @@ describe("Denken 3 fixed launch data", () => {
       expect(q.explanation).toContain("公式正答");
       expect(JSON.stringify(q)).not.toMatch(/\b(?:HOLD|FIX|TODO)\b|未確認|要確認|確認待ち|準備中|仮置き/u);
     }
-    expect(questions.filter((q) => q.explanationCoverage === "full")).toHaveLength(318);
+    expect(questions.filter((q) => q.explanationCoverage === "full")).toHaveLength(319);
+  });
+
+  it("explains all five choices for 2025 lower law question 4 without implying a universal 100 V earth voltage", () => {
+    const q = questions.find((item) => item.id === "denken3-2025-lower-law-q04");
+    expect(q?.answer).toBe("エ");
+    expect(q?.explanationCoverage).toBe("full");
+    expect(Object.keys(q?.choiceExplanations ?? {})).toEqual([...kana]);
+    expect(q?.choiceExplanations?.イ).toContain("通常の100 V回路");
+    expect(q?.choiceExplanations?.イ).toContain("使用電圧だけでは対地電圧は一意に定まらない");
+    expect(q?.choiceExplanations?.エ).toContain("水気のある場所");
   });
 
   it("would detect a changed answer, source URL or reviewed explanation", () => {
