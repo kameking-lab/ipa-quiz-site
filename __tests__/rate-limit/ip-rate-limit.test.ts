@@ -96,7 +96,7 @@ describe("checkIpRateLimit — KV enabled", () => {
 
   it("allows when all counts are within limits", async () => {
     enableKv();
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(3, 30, 100))));
+    vi.stubGlobal("fetch", vi.fn().mockImplementation(async () => kvResponse(counts(3, 30, 100))));
     const mod = await import("@/lib/rate-limit");
     await expect(mod.checkIpRateLimit(req(), "copilot")).resolves.toEqual({ ok: true });
   });
@@ -142,7 +142,7 @@ describe("checkIpRateLimit — KV enabled", () => {
 
   it("allows an eleventh copilot question in the same minute", async () => {
     enableKv();
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(counts(11, 11, 11))));
+    vi.stubGlobal("fetch", vi.fn().mockImplementation(async () => kvResponse(counts(11, 11, 11))));
     const mod = await import("@/lib/rate-limit");
     await expect(mod.checkIpRateLimit(req(), "copilot", { requireKv: true })).resolves.toEqual({ ok: true });
   });
