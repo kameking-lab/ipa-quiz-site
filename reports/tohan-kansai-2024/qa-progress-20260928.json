@@ -23,6 +23,16 @@
     8,
     9,
     10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
     21,
     22,
     23,
@@ -125,6 +135,26 @@
     120
   ],
   "pdfPageImageChecked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
     21,
     22,
     23,
@@ -234,7 +264,8 @@
     "42-60": "公式前半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問44の6錠成分表、問51の100mL成分表を含む。19問。",
     "61-80": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。20問。",
     "81-100": "公式後半PDFの該当ページ画像で問題文・条文穴埋め表・四記述・五肢の対応を目視照合。20問。法令解説は2024年試験用の令和6年4月手引き時点。",
-    "101-120": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問112の穴埋め表、問114・116の成分・疾患表を含む20問。問114は再照合。"
+    "101-120": "公式後半PDFの該当ページ画像で問題文・四記述・五肢の対応を目視照合。問112の穴埋め表、問114・116の成分・疾患表を含む20問。問114は再照合。",
+    "1-20": "公式前半PDFの3〜16ページ画像で問題文・四記述・五肢を目視照合。問20の穴埋め表を含む20問。新たな候補転記ミスなし。"
   },
   "sourceGroundedChoiceReasonDrafts": {
     "questions": [
@@ -376,12 +407,23 @@
     "22": "配合成分表の行が混線していたため原本の4行を再構成した。"
   },
   "remaining": {
-    "fullPdfPageImageQuestionChecks": 20,
+    "fullPdfPageImageQuestionChecks": 0,
     "sourceGroundedChoiceReasonDrafts": 0,
     "independentChoiceReasonReviews": 600,
     "independentQuestionReviews": 120,
-    "reuseConditionsAndThirdPartyRightsReview": "PENDING"
+    "reuseConditionsAndThirdPartyRightsReview": "PRIMARY_SOURCE_TERMS_CHECKED_THIRD_PARTY_CLEARANCE_PENDING"
   },
   "publicLoaderChanged": false,
-  "approvedLedgerChanged": false
+  "approvedLedgerChanged": false,
+  "authorSideChoiceReasonSelfAudit": {
+    "questions": 120,
+    "choices": 600,
+    "truthTableChoices": 450,
+    "pairChoices": 115,
+    "fillChoices": 15,
+    "singleChoices": 20,
+    "method": "初稿の全肢について候補肢の正誤・選択ラベルと理由文の対応、公式正答位置、引用PDFページ範囲、空理由をプログラム再検査。内容の独立査読ではない。",
+    "independentReviewComplete": 0,
+    "script": "self-audit-choice-reasons.py"
+  }
 }
