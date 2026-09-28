@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Sparkles,
   TrendingUp,
+  Trophy,
   Users,
 } from "lucide-react";
 
@@ -31,6 +32,7 @@ const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity 
   { href: "/admin/metrics", title: "メトリクス", desc: "主要 KPI ダッシュボード", icon: BarChart3 },
   { href: "/admin/stats", title: "統計", desc: "学習・利用統計", icon: LineChart },
   { href: "/admin/funnel", title: "ファネル", desc: "獲得〜継続の導線分析", icon: TrendingUp },
+  { href: "/admin/exam-usage", title: "資格別利用状況", desc: "資格別の回答数ランキング・eラーニング利用状況", icon: Trophy },
   { href: "/admin/retention", title: "リテンション", desc: "継続率・復帰率", icon: Users },
   { href: "/admin/api-usage", title: "API 使用量", desc: "AI コスト・リクエスト数", icon: Gauge },
   { href: "/admin/moderation", title: "モデレーション", desc: "投稿コンテンツの確認", icon: ShieldCheck },

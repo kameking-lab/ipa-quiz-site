@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Sparkles } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
+import { posthogCapture } from "@/lib/posthog";
+import { findExamEntry } from "@/lib/exam-library-catalog";
+import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -12,6 +15,11 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
   questionId: string;
   selectedChoice: number | null;
 }) {
+  // admin/exam-usage の資格別集計キー。ハブが未対応のカタログ項目は null のまま送る。
+  const hubSlug = useMemo(() => {
+    const entry = findExamEntry(examId);
+    return entry ? (qualificationHubForEntry(entry)?.slug ?? null) : null;
+  }, [examId]);
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -28,6 +36,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     setDraft("");
     setError("");
     setBusy(true);
+    posthogCapture("exam_library_ai_query", { examId, hubSlug: hubSlug ?? undefined });
     const controller = new AbortController();
     abortRef.current = controller;
     try {
