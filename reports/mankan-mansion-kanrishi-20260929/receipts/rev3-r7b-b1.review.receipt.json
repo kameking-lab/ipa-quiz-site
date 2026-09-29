@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 219314,
+  "stop_reason": "end_turn",
+  "session_id": "0c71ed0b-bad1-4da7-8a60-e632bbfcb973",
+  "total_cost_usd": 1.6737433999999998,
+  "usage": {
+    "input_tokens": 46,
+    "cache_creation_input_tokens": 71575,
+    "cache_read_input_tokens": 1790607,
+    "output_tokens": 18864,
+    "output_tokens_details": {
+      "thinking_tokens": 6227
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 71575,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6716,
+        "cache_read_input_tokens": 99026,
+        "cache_creation_input_tokens": 641,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 641
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 46,
+      "outputTokens": 18864,
+      "cacheReadInputTokens": 1790607,
+      "cacheCreationInputTokens": 71575,
+      "webSearchRequests": 0,
+      "costUSD": 1.3081854,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6227,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 345813,
+      "outputTokens": 1949,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.365558,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 26,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"26\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"３ 区分所有者は、第１項ただし書の場合又はあらかじめ理事長に申請して書面又は電磁的方法による承認を受けた場合を除き、敷地及び共用部分等の保存行為を行うことができない。ただし、専有部分の使用に支障が生じている場合に、当該専有部分を所有する区分所有者が行う保存行為の実施が、緊急を要するものであるときは、この限りでない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"第23条 前２条により管理を行う者は、管理を行うために必要な範囲内において、他の者が管理する専有部分若しくは専用使用部分への立入り又は自らこれに保存行為を実施することを請求することができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"３ 前項の場合において、正当な理由なく立入り又は保存行為の実施を拒否した者は、その結果生じた損害を賠償しなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"⑤ バルコニー等の経年劣化への対応については、③のとおり管理組合がその責任と負担において、計画修繕として行うものである。\"}]},\"27\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"なお、理事会運営細則を別途定め、部会を設ける場合は、理事会の決議事項につき決定するのは、あくまで、理事全員による理事会であることを明確にする必要がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"６ 監事は、前項に規定する場合において、必要があると認めるときは、理事長に対し、理事会の招集を請求することができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"③ ①のほかにも、共用部分の軽微な変更及び狭義の管理行為については、大規模マンションなど、それぞれのマンションの実態に応じて、機動的な組合運営を行う観点から、これらのうち特定の事項について、理事会の決議事項として規約に定めることも可能である。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２ 次条第１項第五号に掲げる事項については、理事の過半数の承諾があるときは、書面又は電磁的方法による決議によることができる。\"}]},\"28\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"ウ\":\"適切。令和6年6月改正で新設された第67条の2により、区分所有者が第31条の届出を行わないことで敷地・共用部分等の管理に支障を及ぼし、又はそのおそれがある場合、理事長は理事会の決議を経てその所在等を探索でき、探索に要した費用を当該区分所有者に請求できる。\",\"エ\":\"適切。第60条第5項により、収納金が全ての債務を消滅させるのに足りないときは、管理組合は理事会の決議により定める弁済の充当の順序に従って充当できる。弁済期が先に到来したものから充当する順序を理事会で定めることは、この規定に基づく取扱いとして適切である。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"その範囲、承認を必要とする理由及び審査すべき点については、別添２に考え方を示している。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"（専有部分の修繕等） 第17条 区分所有者は、その専有部分について、修繕、模様替え又は建物に定着する物件の取付け若しくは取替え（以下「修繕等」という。）であって共用部分又は他の専有部分に影響を与えるおそれのあるものを行おうとするときは、あらかじめ、理事長（第35条に定める理事長をいう。以下同じ。）にその旨を申請し、書面による承認を受けなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"しては、床のフローリング、ユニットバスの設置、主要構造部に直接取り付けるエアコンの設置、配管（配線）の枝管（枝線）の取付け・取替え、間取りの変更等がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"３ 理事長、副理事長及び会計担当理事は、理事会の決議によって、理事のうちから選任し、又は解任する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"第39条 副理事長は、理事長を補佐し、理事長に事故があるときは、その職務を代理し、理事長が欠けたときは、その職務を行う。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"第６７条の２ 区分所有者が第３１条の規定に違反し必要な届出を行わないことにより、敷地及び共用部分等の管理に支障を及ぼし、又は及ぼすおそれがある場合には、理事長は、理事会の決議を経て、区分所有者の所在等を探索することができる。 ２ 前項の場合において、理事長は、探索に要した費用について、違約金としての弁護士費用等を加算して、当該区分所有者に請求することができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"５ 収納金が全ての債務を消滅させるのに足りないときは、管理組合は、理事会の決議により定める弁済の充当の順序に従い、その弁済を充当することができる。\"}]},\"29\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"エ\":\"不適切。令和6年6月7日時点の第43条第4項では、議案の要領をも通知しなければならないのは、会議の目的が第47条第3項第一号（規約の制定・変更・廃止）、第二号（敷地及び共用部分等の重大変更）若しくは第四号（大規模滅失の復旧）の決議又は建替え決議・マンション敷地売却決議である場合に限られる。区分所有法59条の競売請求訴訟の提起は第47条第3項第三号であり、対象に含まれない。※令和7年10月改正後の標準管理規約では第43条第1項で全ての総会について議案の要領を示して通知することとされたため、改正後の規約を前提とすると結論が異なる点に注意。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"３ 第１項の通知は、対象物件内に居住する組合員及び前項の届出のない組合員に対しては、その内容を所定の掲示場所に掲示することをもって、これに代えることができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"第４３条 総会を招集するには、少なくとも会議を開く日の２週間前（会議の目的が建替え決議又はマンション敷地売却決議であるときは２か月前）までに、会議の日時、場所（WEB 会議システム等を用いて会議を開催するときは、その開催方法）及び目的を示して、組合員に通知を発しなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"３ 監事は、管理組合の業務の執行及び財産の状況について不正があると認めるときは、臨時総会を招集することができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"４ 第１項の通知をする場合において、会議の目的が第４７条第３項第一号、第二号若しくは第四号に掲げる事項の決議又は建替え決議若しくはマンション敷地売却決議であるときは、その議案の要領をも通知しなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001746771.pdf\",\"excerpt\":\"三 区分所有法第５８条第１項、第５９条第１項又は第６０条第１項の訴えの提起\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"建物内に住所を有する区分所有者又は前項の通知を受けるべき場所を通知しない区分所有者に対する第一項の通知は、規約に特別の定めがあるときは、建物内の見やすい場所に掲示してすることができる。\"}]},\"30\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２ 前項の通知は、管理組合に対し組合員が届出をしたあて先に発するものとする。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"７ 第45条第２項の場合には、第１項の通知を発した後遅滞なく、その通知の内容を、所定の掲示場所に掲示しなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"② 専門委員会は、検討対象に関心が強い組合員を中心に構成されるものである。必要に応じ検討対象に関する専門的知識を有する者（組合員以外も含む。）の参加を求めることもできる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"第67条 区分所有者若しくはその同居人又は専有部分の貸与を受けた者若しくはその同居人（以下「区分所有者等」という。）が、法令、規約又は使用細則等に違反したとき、又は対象物件内における共同生活の秩序を乱す行為を行ったときは、理事長は、理事会の決議を経てその区分所有者等に対し、その是正等のため必要な勧告又は指示若しくは警告を行うことができる。\"}]},\"31\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"議決権は、書面又は代理人によつても行使することができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"⑥ 書面による議決権の行使とは、総会には出席しないで、総会の開催前に各議案ごとの賛否を記載した書面（いわゆる「議決権行使書」）を総会の招集者に提出することである。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"７ 前６項の場合において、組合員が書面、電磁的方法又は代理人によって議決権を行使したときは、当該組合員の数は出席した組合員の数に、当該議決権の数は出席した組合員の議決権の数に、それぞれ算入する。\"}]},\"32\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"九 土地及び共用部分等の変更及び運営\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"第50条 次の各号に掲げる事項については、団地総会の決議を経なければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"六 管理費等及び使用料の額並びに賦課徴収方法\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"一 管理組合が管理する土地及び共用部分等（以下本条及び第50条において「組合管理部分」という。）の保安、保全、保守、清掃、消毒及びごみ処理\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"３ 議長は、前項の手続きをした後遅滞なく、議事録を理事長に引き渡さなければならない。 ４ 理事長は、議事録を保管し、その棟の区分所有者又は利害関係人の書面による請求があったときは、議事録の閲覧をさせなければならない。\"}]},\"33\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"適切。複合用途型規約第25条第2項は、全体管理費等の額について、住戸部分のために必要となる費用と店舗部分のために必要となる費用をあらかじめ按分した上で、住戸部分の区分所有者又は店舗部分の区分所有者ごとに各区分所有者の全体共用部分の共有持分に応じて算出すると定めている（規約本文の規定であり、コメントでもその算出方法が説明されている）。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"２ 全体管理費等の額については、住戸部分のために必要となる費用と店舗部分のために必要となる費用をあらかじめ按分した上で、住戸部分の区分所有者又は店舗部分の区分所有者ごとに各区分所有者の全体共用部分の共有持分に応じて算出するものとする。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"第14条 区分所有者は、別表第４に掲げるバルコニー、玄関扉、シャッター、窓枠、窓ガラス、一階に面する庭、店舗前面敷地及び屋上テラス（以下この条、第21条第１項及び別表第４において「バルコニー等」という。）に\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"① 住宅部会及び店舗部会は管理組合としての意思を決定する機関ではないが、それぞれ住宅部分、店舗部分の一部共用部分の管理等について協議する組織として位置づけるものである。\"}]},\"34\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://ja.wikibooks.org/wiki/%E4%BC%81%E6%A5%AD%E4%BC%9A%E8%A8%88%E5%8E%9F%E5%89%87_(%E6%90%8D%E7%9B%8A%E8%A8%88%E7%AE%97%E6%9B%B8%E5%8E%9F%E5%89%87)\",\"excerpt\":\"すべての費用及び収益は、その支出及び収入に基づいて計上し、その発生した期間に正しく割当てられるように処理しなければならない。\"},{\"url\":\"https://biz.moneyforward.com/accounting/basic/74466/\",\"excerpt\":\"前払費用及び前受収益は、これを当期の損益計算から除去し、未払費用及び未収収益は、当期の損益計算に計上しなければならない\"}]},\"35\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://ja.wikibooks.org/wiki/%E4%BC%81%E6%A5%AD%E4%BC%9A%E8%A8%88%E5%8E%9F%E5%89%87_(%E6%90%8D%E7%9B%8A%E8%A8%88%E7%AE%97%E6%9B%B8%E5%8E%9F%E5%89%87)\",\"excerpt\":\"すべての費用及び収益は、その支出及び収入に基づいて計上し、その発生した期間に正しく割当てられるように処理しなければならない。\"},{\"url\":\"https://biz.moneyforward.com/accounting/basic/74466/\",\"excerpt\":\"前払費用及び前受収益は、これを当期の損益計算から除去し、未払費用及び未収収益は、当期の損益計算に計上しなければならない\"}]}}",
+  "ttft_ms": 3320,
+  "type": "result",
+  "duration_ms": 242430,
+  "uuid": "8ce38812-bd1a-42ac-a26e-4a758d71c21c",
+  "ttft_stream_ms": 1313,
+  "time_to_request_ms": 499,
+  "first_content_frame_ms": 1313,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

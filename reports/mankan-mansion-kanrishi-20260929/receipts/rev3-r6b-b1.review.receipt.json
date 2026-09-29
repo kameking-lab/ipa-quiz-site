@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 361500,
+  "stop_reason": "end_turn",
+  "session_id": "5ce4efae-3e46-4938-9be5-15278e81df4e",
+  "total_cost_usd": 2.8210064000000004,
+  "usage": {
+    "input_tokens": 68,
+    "cache_creation_input_tokens": 123893,
+    "cache_read_input_tokens": 3739292,
+    "output_tokens": 30950,
+    "output_tokens_details": {
+      "thinking_tokens": 11725
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 123893,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6897,
+        "cache_read_input_tokens": 150051,
+        "cache_creation_input_tokens": 1934,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1934
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 68,
+      "outputTokens": 30950,
+      "cacheReadInputTokens": 3739292,
+      "cacheCreationInputTokens": 123893,
+      "webSearchRequests": 0,
+      "costUSD": 2.3582744,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 11725,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 423727,
+      "outputTokens": 3801,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 2,
+      "costUSD": 0.46273200000000003,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 40,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"26\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ウ\":\"不適切。マンション管理士との継続的な顧問契約の締結は、総会の決議事項である「その他管理組合の業務に関する重要事項」（標準管理規約48条）にあたると解される。理事会決議だけでは決められず、総会決議が必要である。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"② 専門委員会は、検討対象に関心が強い組合員を中心に構成されるものである。必要に応じ検討対象に関する専門的知識を有する者（組合員以外も含む。）の参加を求めることもできる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"６ 管理組合と理事長との利益が相反する事項については、理事長は、代表権を有しない。この場合においては、監事又は理事長以外の理事が管理組合を代表する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"第37条の２ 役員は、次に掲げる場合には、理事会において、当該取引につき重要な事実を開示し、その承認を受けなければならない。一 役員が自己又は第三者のために管理組合と取引をしようとするとき。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"第48条 次の各号に掲げる事項については、総会の決議を経なければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"十六 組合管理部分に関する管理委託契約の締結十七 その他管理組合の業務に関する重要事項\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"26 3\"}]},\"27\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"３ 区分所有者がその所有する専有部分を、他の区分所有者又は第三者に譲渡又は貸与したときは、その区分所有者の駐車場使用契約は効力を失う。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"⑦ 車両の保管責任については、管理組合が負わない旨を駐車場使用契約又は駐車場使用細則に規定することが望ましい。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"区分所有者が第六条第一項に規定する行為をした場合又はその行為をするおそれがある場合には、他の区分所有者の全員又は管理組合法人は、区分所有者の共同の利益のため、その行為を停止し、その行為の結果を除去し、又はその行為を予防するため必要な措置を執ることを請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"４ 前三項の規定は、占有者が第六条第三項において準用する同条第一項に規定する行為をした場合及びその行為をするおそれがある場合に準用する。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"27 3\"}]},\"28\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"FIX\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"イ\":\"適切。建替えに係る合意形成に必要となる事項の調査の費用は、修繕積立金から取り崩せる（標準管理規約28条1項4号）。決議前の段階なので、反対者が負担した分を除く必要はない。\",\"エ\":\"不適切。建替え決議後、マンション建替組合の設立認可までの計画・設計等の費用は修繕積立金から取り崩せる。ただし、管理組合の消滅時に建替え不参加者に帰属する修繕積立金相当額は除いた金額が限度とされている（標準管理規約28条2項。令和6年6月7日時点の条番号。令和7年改正後も同じく28条2項だが、文言は「その事業に参加しない区分所有者」に改められている）。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"四 建物の建替え及びマンション敷地売却（以下「建替え等」という。）に係る合意形成に必要となる事項の調査\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"２ 前項にかかわらず、区分所有法第 62条第１項の建替え決議（以下「建替え決議」という。）又は建替えに関する区分所有者全員の合意の後であっても、マンションの建替え等の円滑化に関する法律（平成 14 年法律第 78 号。以下「円滑化法」という。）第９条のマンション建替組合の設立の認可又は円滑化法第45条のマンション建替事業の認可までの間において、建物の建替えに係る計画又は設計等に必要がある場合には、その経費に充当するため、管理組合は、修繕積立金から管理組合の消滅時に建替え不参加者に帰属する修繕積立金相当額を除いた金額を限度として、修繕積立金を取り崩すことができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"⑧ 建替え等に係る調査に必要な経費の支出は、各マンションの実態に応じて、管理費から支出する旨管理規約に規定することもできる。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"28 4\"}]},\"29\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"FIX\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"イ\":\"誤り。適切なのは三つである。イは不適切で、理事長は理事会の承認なしに保険金額の請求・受領について区分所有者を代理する（令和6年6月7日時点の標準管理規約24条2項。令和7年改正で24条の2第1項に移った）。\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２ 区分所有者の承諾を得て専有部分を占有する者は、会議の目的につき利害関係を有する場合には、総会に出席して意見を述べることができる。この場合において、総会に出席して意見を述べようとする者は、あらかじめ理事長にその旨を通知しなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"２ 理事長は、前項の契約に基づく保険金額の請求及び受領について、区分所有者を代理する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２ 次条第１項第五号に掲げる事項については、理事の過半数の承諾があるときは、書面又は電磁的方法による決議によることができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"五 第17 条、第21 条及び第22 条に定める承認又は不承認\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"29 3\"}]},\"30\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"FIX\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"イ\":\"不適切。区分所有者等以外の第三者が敷地・共用部分等で不法行為をした場合、理事長は理事会の決議を経て、損害賠償金の請求について訴訟その他の法的措置をとれる（令和6年6月7日時点の標準管理規約67条3項2号）。総会決議は要らない。なお、令和7年改正で損害賠償金の請求に関する定めは24条の2第2項に移っている。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"２ 前項の規定に基づき訴訟を提起するには、集会の決議によらなければならない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/002002667.pdf\",\"excerpt\":\"３ 区分所有者等がこの規約若しくは使用細則等に違反したとき、又は区分所有者等若しくは区分所有者等以外の第三者が敷地及び共用部分等において不法行為を行ったときは、理事長は、理事会の決議を経て、次の措置を講ずることができる。一 行為の差止め、排除又は原状回復のための必要な措置の請求に関し、管理組合を代表して、訴訟その他法的措置を追行すること二 敷地及び共用部分等について生じた損害賠償金又は不当利得による返還金の請求又は受領に関し、区分所有者のために、訴訟において原告又は被告となること、その他法的措置をとること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"第67条 区分所有者若しくはその同居人又は専有部分の貸与を受けた者若しくはその同居人（以下「区分所有者等」という。）が、法令、規約又は使用細則等に違反したとき、又は対象物件内における共同生活の秩序を乱す行為を行ったときは、理事長は、理事会の決議を経てその区分所有者等に対し、その是正等のため必要な勧告又は指示若しくは警告を行うことができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999013.pdf\",\"excerpt\":\"２ 区分所有者は、その同居人又はその所有する専有部分の貸与を受けた者若しくはその同居人が前項の行為を行った場合には、その是正等のため必要な措置を講じなければならない。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"30 2\"}]},\"31\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ウ\":\"不適切。令和6年度試験時点の区分所有法69条1項では、建替え承認決議は団地管理組合の集会で「議決権の4分の3以上」の多数で行い、議決権は土地の持分割合による（同条2項）。出席組合員の頭数や出席者の議決権を基準とする要件ではない。なお、令和7年改正区分所有法（令和8年4月1日施行）では「議決権の過半数を有する団地建物所有者が出席し、出席した団地建物所有者の議決権の4分の3以上」に改められたが、それでも組合員数（頭数）の要件はないため、本肢が不適切であることは変わらない。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-06-07&response_format=xml\",\"excerpt\":\"当該土地（これに関する権利を含む。）の共有者である当該団地内建物の団地建物所有者で構成される同条に規定する団体又は団地管理組合法人の集会において議決権の四分の三以上の多数による承認の決議（以下「建替え承認決議」という。）を得たときは\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-06-07&response_format=xml\",\"excerpt\":\"２前条第二項の規定は、前項本文の各区分所有者の議決権について準用する。この場合において、前条第二項中「当該特定建物の所在する土地（これに関する権利を含む。）」とあるのは、「当該団地内建物の敷地」と読み替えるものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000069\",\"excerpt\":\"議決権の過半数（これを上回る割合を第六十六条において準用する第三十条第一項の規約で定めた場合にあつては、その割合以上）を有する団地建物所有者が出席し、出席した団地建物所有者の議決権の四分の三以上の多数による承認の決議（以下この条において「建替え承認決議」という。）\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"２ 棟総会は、その棟の区分所有者が当該棟の区分所有者総数の５分の１以上及び第71条第１項に定める議決権総数の５分の１以上に当たる区分所有者の同意を得て、招集する。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"31 2\"}]},\"32\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"役員の選任方法は、一般的に合理的であると考えられる方法、例えば各棟の戸数、面積に比例してあらかじめ員数を割り当てる方法等、団地内の区分所有者の意向を公平に反映するような方法について配慮する必要がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"第 55 条 理事会の会議（WEB 会議システム等を用いて開催する会議を含む。）は、理事の半数以上が出席しなければ開くことができず、その議事は出席理事の過半数で決する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"２ 第50 条の規定にかかわらず、理事会は、前項第十五号の決議をした場合においては、当該決議に係る応急的な修繕工事の実施に充てるための資金の借入れ及び団地修繕積立金及び各棟修繕積立金の取崩しについて決議することができる。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"32 3\"}]},\"33\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"第28条 管理組合は、各団地建物所有者が納入する団地修繕積立金を積み立てるものとし、積み立てた団地修繕積立金は、土地、附属施設及び団地共用部分の、次の各号に掲げる特別の管理に要する経費に充当する場合に限って取り崩すことができる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999014.pdf\",\"excerpt\":\"第31条 駐車場使用料その他の土地及び共用部分等に係る使用料（以下「使用料」という。）は、それらの管理に要する費用に充てるほか、団地建物所有者の土地の共有持分に応じて棟ごとに各棟修繕積立金として積み立てる。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"ただし、専有部分の使用に支障が生じている場合に、当該専有部分を所有する区分所有者が行う保存行為の実施が、緊急を要するものであるときは、この限りでない。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"⑧ 第３項ただし書は、例えば、台風等で住戸の窓ガラスが割れた場合に、専有部分への雨の吹き込みを防ぐため、割れたものと同様の仕様の窓ガラスに張り替えるというようなケースが該当する。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001999015.pdf\",\"excerpt\":\"第60条関係① 住宅部会及び店舗部会は管理組合としての意思を決定する機関ではないが、それぞれ住宅部分、店舗部分の一部共用部分の管理等について協議する組織として位置づけるものである。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"33 3\"}]},\"34\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"evidence\":[{\"url\":\"https://anabuki-m.jp/information/cashflow/6352/\",\"excerpt\":\"『発生主義』では、収支計算が現金の入出金という計上基準ではなく、収入および支出を発生事実に基づき認識します。\"},{\"url\":\"https://anabuki-m.jp/information/cashflow/6352/\",\"excerpt\":\"すでに当期に物品が納入（支出の発生事実）されているので、当期の支出として計上する一方、未払金を計上することになり、翌期に現金で支払った場合は、資産（現金・預金）の減少を計上します。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"34 4\"}]},\"35\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/363AC0000000108\",\"excerpt\":\"事業者のうち、その課税期間に係る基準期間における課税売上高が千万円以下である者（適格請求書発行事業者を除く。）については、第五条第一項の規定にかかわらず、その課税期間中に国内において行つた課税資産の譲渡等及び特定課税仕入れにつき、消費税を納める義務を免除する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/1/lawdata/363AC0000000108\",\"excerpt\":\"土地（土地の上に存する権利を含む。）の譲渡及び貸付け（一時的に使用させる場合その他の政令で定める場合を除く。）\"},{\"url\":\"https://www.nta.go.jp/law/shitsugi/shohi/02/26.htm\",\"excerpt\":\"マンション管理組合は、その居住者である区分所有者を構成員とする組合であり、その組合員との間で行う取引は営業に該当しません。\"},{\"url\":\"https://www.nta.go.jp/law/shitsugi/shohi/02/26.htm\",\"excerpt\":\"イ　駐車場の貸付け………組合員である区分所有者に対する貸付けに係るものは不課税となりますが、組合員以外の者に対する貸付けに係るものは消費税の課税対象となります。\"},{\"url\":\"https://www.mankan.org/pdf/R6_answer.pdf\",\"excerpt\":\"35 3\"}]}}",
+  "ttft_ms": 60434,
+  "type": "result",
+  "duration_ms": 459901,
+  "uuid": "3073baed-c299-4bb4-85f2-d7846a943b57",
+  "ttft_stream_ms": 1301,
+  "time_to_request_ms": 293,
+  "first_content_frame_ms": 1302,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}
