@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 112806,
+  "stop_reason": "end_turn",
+  "session_id": "89d7de38-a589-4ebd-8531-cd7d6e11ae85",
+  "total_cost_usd": 1.0125844,
+  "usage": {
+    "input_tokens": 26,
+    "cache_creation_input_tokens": 57647,
+    "cache_read_input_tokens": 809472,
+    "output_tokens": 10458,
+    "output_tokens_details": {
+      "thinking_tokens": 2174
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 57647,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 3727,
+        "cache_read_input_tokens": 83698,
+        "cache_creation_input_tokens": 2041,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2041
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 26,
+      "outputTokens": 10458,
+      "cacheReadInputTokens": 809472,
+      "cacheCreationInputTokens": 57647,
+      "webSearchRequests": 0,
+      "costUSD": 0.8323344,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2174,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 163780,
+      "outputTokens": 1294,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.18025,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"46\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"マンションが団地を構成する場合には、各棟固有の事情を踏まえつつ、全棟の連携をとって、全体としての適切な管理がなされるように配慮することが重要である。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"さらに、マンションの状況によっては、外部の専門家が、管理組合の管理者等又は役員に就任することも考えられるが、その場合には、マンションの区分所有者等が当該管理者等又は役員の選任や業務の監視等を適正に行うとともに、監視・監督の強化のための措置等を講じることにより適正な業務運営を担保することが重要である。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"管理組合を構成するマンションの区分所有者等は、管理組合の一員としての役割を十分認識して、管理組合の運営に関心を持ち、積極的に参加する等、その役割を適切に果たすよう努める必要がある。\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"マンションが建設後相当の期間が経過した場合等に、修繕等のほか、これらの特例を活用した建替え等を含め、どのような措置をとるべきか、様々な区分所有者等間の意向を調整し、合意形成を図っておくことが重要である。\"}]},\"47\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"第一項の認定の更新の申請があった場合において、同項の期間（以下この項及び次項において「認定の有効期間」という。）の満了の日までにその申請に対する処分がされないときは、従前の認定は、認定の有効期間の満了後もその処分がされるまでの間は、なおその効力を有する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"計画作成都道府県知事等は、認定管理者等が認定管理計画に従って管理計画認定マンションの管理を行っていないと認めるときは、当該認定管理者等に対し、相当の期限を定めて、その改善に必要な措置を命ずることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"計画作成都道府県知事等は、次に掲げる場合には、第五条の四の認定（第五条の七第一項の変更の認定を含む。以下同じ。）を取り消すことができる。一認定管理者等が前条の規定による命令に違反したとき。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"都道府県等は、マンション管理適正化推進計画の作成及び変更並びにマンション管理適正化推進計画に基づく措置の実施に関して特に必要があると認めるときは、関係地方公共団体、管理組合、マンション管理業者その他の関係者に対し、調査を実施するため必要な協力を求めることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/413M60000800110?asof=2024-06-01&response_format=xml\",\"excerpt\":\"法第五条の七第一項の国土交通省令で定める軽微な変更は、次に掲げるものとする。…三監事の変更\"}]},\"48\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"直前の事業年度の終了の日時点における修繕積立金の三ヶ月以上の滞納額が全体の一割以内であること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"長期修繕計画の計画期間の最終年度において、借入金の残高のない長期修繕計画となっていること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"長期修繕計画の作成または見直しが七年以内に行われていること\"},{\"url\":\"https://www.mlit.go.jp/jutakukentiku/house/content/001909548.pdf\",\"excerpt\":\"マンションの管理状況に係る情報取得の円滑化のため、管理規約において、管理組合の財務・管理に関する情報の書面の交付（または電磁的方法による提供）について定められていること\"}]},\"49\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"誤り。正しいのは三つである。アは正しい。マンション管理士は、国土交通省令で定める期間（5年、施行規則41条）ごとに登録講習機関が行う講習を受けなければならず（法41条）、これに違反したときは、国土交通大臣は登録を取り消すことができる（法33条2項）。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"マンション管理士は、国土交通省令で定める期間ごとに、次条から第四十一条の四までの規定により国土交通大臣の登録を受けた者（以下この節において「登録講習機関」という。）が国土交通省令で定めるところにより行う講習（以下この節において「講習」という。）を受けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"国土交通大臣は、マンション管理士が第四十条、第四十一条又は第四十二条の規定に違反したときは、その登録を取り消し、又は期間を定めてマンション管理士の名称の使用の停止を命ずることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/413M60000800110?asof=2024-06-01&response_format=xml\",\"excerpt\":\"法第四十一条の国土交通省令で定める期間は、五年とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/413M60000800110?asof=2024-06-01&response_format=xml\",\"excerpt\":\"法第三十三条の規定によりマンション管理士の登録を取り消された者は、前項の通知を受けた日から起算して十日以内に、登録証を国土交通大臣に返納しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"管理業務主任者証の交付を受けようとする者は、第六十一条の二において準用する第四十一条の二から第四十一条の四までの規定により国土交通大臣の登録を受けた者（以下この節において「登録講習機関」という。）が国土交通省令で定めるところにより行う講習（以下この節において「講習」という。）で交付の申請の日前六月以内に行われるものを受けなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"四第六十五条第一項第二号から第四号まで又は同条第二項第二号若しくは第三号のいずれかに該当することにより第五十九条第一項の登録を取り消され、その取消しの日から二年を経過しない者\"}]},\"50\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"マンション管理業者は、第一項から第三項までの規定により交付すべき書面を作成するときは、管理業務主任者をして、当該書面に記名させなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"マンション管理業者は、管理組合から管理事務の委託を受けることを内容とする契約を締結したときは、当該管理組合の管理者等（当該マンション管理業者が当該管理組合の管理者等である場合又は当該管理組合に管理者等が置かれていない場合にあっては、当該管理組合を構成するマンションの区分所有者等全員）に対し、遅滞なく、次に掲げる事項を記載した書面を交付しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/413M60000800110?asof=2024-06-01&response_format=xml\",\"excerpt\":\"マンション管理業者は、法第七十七条第一項の規定により管理事務に関する報告を行うときは、管理事務を委託した管理組合の事業年度終了後、遅滞なく、当該期間における管理受託契約に係るマンションの管理の状況について次に掲げる事項を記載した管理事務報告書を作成し、管理業務主任者をして、これを管理者等に交付して説明をさせなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/412AC1000000149?asof=2024-06-01&response_format=xml\",\"excerpt\":\"マンション管理業者は、国土交通省令で定めるところにより、当該マンション管理業者の業務及び財産の状況を記載した書類をその事務所ごとに備え置き、その業務に係る関係者の求めに応じ、これを閲覧させなければならない。\"}]}}",
+  "ttft_ms": 2163,
+  "type": "result",
+  "duration_ms": 123133,
+  "uuid": "22eefb68-79fd-4c7d-a972-bd6db7901223",
+  "ttft_stream_ms": 1029,
+  "time_to_request_ms": 139,
+  "first_content_frame_ms": 1029,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

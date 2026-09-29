@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 283738,
+  "stop_reason": "end_turn",
+  "session_id": "41ab2eae-d08a-41e8-baf4-8f21a8c3156d",
+  "total_cost_usd": 1.7665428,
+  "usage": {
+    "input_tokens": 44,
+    "cache_creation_input_tokens": 73427,
+    "cache_read_input_tokens": 1680359,
+    "output_tokens": 24889,
+    "output_tokens_details": {
+      "thinking_tokens": 9137
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 73427,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 8610,
+        "cache_read_input_tokens": 101142,
+        "cache_creation_input_tokens": 377,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 377
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 44,
+      "outputTokens": 24889,
+      "cacheReadInputTokens": 1680359,
+      "cacheCreationInputTokens": 73427,
+      "webSearchRequests": 0,
+      "costUSD": 1.4214438000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 9137,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 294244,
+      "outputTokens": 4171,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.34509900000000004,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 31,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"11\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2024-04-01&response_format=xml\",\"excerpt\":\"その権利（以下「敷地共有持分等」という。）を有する者（以下「敷地共有者等」という。）は、その政令の施行の日から起算して三年が経過する日までの間は、この法律の定めるところにより、集会を開き、及び管理者を置くことができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2024-04-01&response_format=xml\",\"excerpt\":\"第五節（第三十条から第三十三条まで、第三十四条第二項、第三項ただし書及び第五項ただし書、第三十五条第一項ただし書及び第四項、第三十七条第二項、第四十二条第五項、第四十三条、第四十四条、第四十五条第四項並びに第四十六条第二項を除く。）の規定を\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/407AC0000000043?asof=2024-04-01&response_format=xml\",\"excerpt\":\"区分所有法第二十六条第一項中「共用部分並びに第二十一条に規定する場合における当該建物の敷地及び附属施設（次項及び第四十七条第六項において「共用部分等」という。）」とあるのは「敷地共有持分等（特別措置法第二条に規定する敷地共有持分等をいう。以下同じ。）に係る土地」と、「集会の決議を実行し、並びに規約で定めた行為をする」とあるのは「及び敷地共有者等集会の決議を実行する」と\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&response_format=xml\",\"excerpt\":\"第一項の通知は、区分所有者が管理者に対して通知を受けるべき場所を通知したときはその場所に、これを通知しなかつたときは区分所有者の所有する専有部分が所在する場所にあててすれば足りる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2024-04-01&response_format=xml\",\"excerpt\":\"集会の招集の通知は、会日より少なくとも一週間前に、会議の目的たる事項を示して、各区分所有者に発しなければならない。\"}]},\"12\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"各共有者は、共有物の全部について、その持分に応じた使用をすることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"共有者は、善良な管理者の注意をもって、共有物の使用をしなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"各共有者は、前各項の規定にかかわらず、保存行為をすることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"共有物の管理に関する事項（次条第一項に規定する共有物の管理者の選任及び解任を含み、共有物に前条第一項に規定する変更を加えるものを除く。次項において同じ。）は、各共有者の持分の価格に従い、その過半数で決する。\"}]},\"13\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債権者が債務の履行を受けることを拒み、又は受けることができない場合において、その債務の目的が特定物の引渡しであるときは、債務者は、履行の提供をした時からその引渡しをするまで、自己の財産に対するのと同一の注意をもって、その物を保存すれば足りる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債権者が債務の履行を受けることを拒み、又は受けることができないことによって、その履行の費用が増加したときは、その増加額は、債権者の負担とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債権者が債務の履行を受けることを拒み、又は受けることができない場合において、履行の提供があった時以後に当事者双方の責めに帰することができない事由によってその債務の履行が不能となったときは、その履行の不能は、債権者の責めに帰すべき事由によるものとみなす。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債権者の責めに帰すべき事由によって債務を履行することができなくなったときは、債権者は、反対給付の履行を拒むことができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債務の不履行が債権者の責めに帰すべき事由によるものであるときは、債権者は、前二条の規定による契約の解除をすることができない。\"}]},\"14\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ア\":\"誤り。賃借人の用法違反（契約の本旨に反する使用）による損害賠償は、賃貸人が返還を受けた時から1年以内に請求しなければならない（民法第622条で準用する第600条第1項）。また、その請求権の時効は、賃貸人が返還を受けた時から1年を経過するまでは完成しない（同条第2項）。債務不履行に基づく損害賠償請求権の消滅時効期間は、権利を行使できることを知った時から5年・行使できる時から10年であり（第166条第1項）、「知った時から3年」ではない。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"契約の本旨に反する使用又は収益によって生じた損害の賠償及び借主が支出した費用の償還は、貸主が返還を受けた時から一年以内に請求しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"前項の損害賠償の請求権については、貸主が返還を受けた時から一年を経過するまでの間は、時効は、完成しない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"債権者が権利を行使することができることを知った時から五年間行使しないとき。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"賃貸人は、賃借人が賃貸借に基づいて生じた金銭の給付を目的とする債務を履行しないときは、敷金をその債務の弁済に充てることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"賃借人が賃貸人に修繕が必要である旨を通知し、又は賃貸人がその旨を知ったにもかかわらず、賃貸人が相当の期間内に必要な修繕をしないとき。\"},{\"url\":\"https://nemogyo.jp/blog-entry-204.html\",\"excerpt\":\"同居人のＣを、賃借人Ｂの負う『善管注意義務』についての履行補助者と考えます。そして、信義則上『賃借人Ｂの善管注意義務についての履行補助者』である同居人の妻Ｃの過失は、賃借人Ｂの過失と同視され\"}]},\"15\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"エ\":\"正しい。賃借人の債務不履行を理由に原賃貸借が解除された場合、賃貸人は解除を転借人に対抗でき、明渡しを請求できる（判例）。この場合、転貸借は、原則として賃貸人が転借人に目的物の返還を請求した時に、転貸人の転借人に対する債務の履行不能により終了する（最判平成9年2月25日）。なお、民法第613条第3項は合意解除を転借人に対抗できないと定めたうえで、そのただし書で、解除の当時に賃貸人が債務不履行による解除権を有していたときはこの限りでないとしている。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"賃借人が適法に賃借物を転貸したときは、転借人は、賃貸人と賃借人との間の賃貸借に基づく賃借人の債務の範囲を限度として、賃貸人に対して転貸借に基づく債務を直接履行する義務を負う。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"賃借人が適法に賃借物を転貸した場合には、賃貸人は、賃借人との間の賃貸借を合意により解除したことをもって転借人に対抗することができない。ただし、その解除の当時、賃貸人が賃借人の債務不履行による解除権を有していたときは、この限りでない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"賃借人は、賃借物について賃貸人の負担に属する必要費を支出したときは、賃貸人に対し、直ちにその償還を請求することができる。\"},{\"url\":\"https://www.sak-office.jp/hanrei/minnpou2/13\",\"excerpt\":\"賃貸借が賃借人の債務不履行を理由とする解除により終了した場合、賃貸人の承諾のある転貸借は、原則として、賃貸人が転借人に対して目的物の返還を請求した時に、転貸人の転借人に対する債務の履行不能により終了する。\"}]},\"16\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"受任者は、委任の本旨に従い、善良な管理者の注意をもって、委任事務を処理する義務を負う。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"受任者は、委任者の許諾を得たとき、又はやむを得ない事由があるときでなければ、復受任者を選任することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"受任者は、委任者の請求があるときは、いつでも委任事務の処理の状況を報告し、委任が終了した後は、遅滞なくその経過及び結果を報告しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"委任は、各当事者がいつでもその解除をすることができる。\"}]},\"17\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"前条の場合には、家庭裁判所は、利害関係人又は検察官の請求によって、相続財産の清算人を選任しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"第二十七条から第二十九条までの規定は、前条第一項の相続財産の清算人（以下この章において単に「相続財産の清算人」という。）について準用する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"管理人は、第百三条に規定する権限を超える行為を必要とするときは、家庭裁判所の許可を得て、その行為をすることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"第九百五十二条第二項の公告があったときは、相続財産の清算人は、全ての相続債権者及び受遺者に対し、二箇月以上の期間を定めて、その期間内にその請求の申出をすべき旨を公告しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2024-04-01&response_format=xml\",\"excerpt\":\"家庭裁判所は、利害関係人又は検察官の請求によって、いつでも、相続財産の管理人の選任その他の相続財産の保存に必要な処分を命ずることができる。\"}]},\"18\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"FIX\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{\"ウ\":\"誤り。共用部分である旨の登記をするときは、登記官が職権で、その建物の表題部所有者の登記又は権利に関する登記を抹消する（不動産登記法第58条第4項）。したがって、一部共用部分を共用すべき区分所有者が所有権の登記名義人として登記されることはない。\"},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/416AC0000000123?asof=2024-04-01&response_format=xml\",\"excerpt\":\"登記官は、共用部分である旨の登記又は団地共用部分である旨の登記をするときは、職権で、当該建物について表題部所有者の登記又は権利に関する登記を抹消しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/416AC0000000123?asof=2024-04-01&response_format=xml\",\"excerpt\":\"区分建物にあっては、表題部所有者から所有権を取得した者も、前項の登記を申請することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/416AC0000000123?asof=2024-04-01&response_format=xml\",\"excerpt\":\"所有権の登記名義人について相続の開始があったときは、当該相続により所有権を取得した者は、自己のために相続の開始があったことを知り、かつ、当該所有権を取得したことを知った日から三年以内に、所有権の移転の登記を申請しなければならない。\"},{\"url\":\"https://www.nagoyasogo-touki.com/touki-column/juridical-person/\",\"excerpt\":\"相続財産管理人が申請人となって、『年月日相続人不存在』を原因として、登記名義人表示を『亡何某』から『亡何某相続財産』に変更します。\"}]},\"19\":{\"status\":\"FIX\",\"choiceStatus\":{\"ア\":\"FIX\",\"イ\":\"FIX\",\"ウ\":\"PASS\",\"エ\":\"FIX\"},\"fixedChoiceExplanations\":{\"ア\":\"正しい。マンション敷地売却組合では、分配金取得計画及びその変更は総会の議決事項とされている（法第128条第7号）。特別の議決（法第130条）の対象ではないため、通常の総会の議決（法第129条で準用する第29条第1項により、出席者の議決権の過半数）で決することができる。\",\"イ\":\"誤り。「組合員の議決権及び敷地利用権の持分の価格の各4分の3以上」という要件は、マンション敷地売却組合の特別の議決（法第130条）の要件である。同条で特別の議決を要する定款変更の重要事項は、事業に要する経費の分担に関する事項の変更と総代会の新設又は廃止に限られ（施行令第30条）、参加組合員に関する事項の変更は含まれない。なお、マンション建替組合では参加組合員に関する事項の変更は特別の議決事項である（施行令第13条第1項第2号）。ただし、その要件は組合員の議決権及び持分割合の各4分の3以上である（法第30条第1項）。\",\"エ\":\"誤り。法第9条第2項により、建替組合の設立認可を申請しようとする建替え合意者は、組合の設立について、建替え合意者の4分の3以上の同意を得なければならない。ただし、同意した者の区分所有法第38条の議決権の合計が、建替え合意者の議決権の合計の4分の3以上となる場合に限られる。5分の4以上ではない。\"},\"fixedExplanation\":\"マンション建替え円滑化法の組合（建替組合・敷地売却組合）について、総会の議決事項と特別議決事項、組合員による総会招集請求の要件、建替組合の設立認可申請に必要な同意割合を問う問題。なお、同法はその後の改正で「マンションの再生等の円滑化に関する法律」に改称されている。本解説は令和6年4月1日時点の条文に基づく。\",\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414AC0000000078?asof=2024-04-01&response_format=xml\",\"excerpt\":\"次に掲げる事項は、総会の議決を経なければならない。一定款の変更二資金計画の変更三借入金の借入れ及びその方法並びに借入金の利率及び償還方法四経費の収支予算五予算をもって定めるものを除くほか、組合の負担となるべき契約六賦課金の額及び賦課徴収の方法七分配金取得計画及びその変更八組合の解散九その他定款で定める事項\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414AC0000000078?asof=2024-04-01&response_format=xml\",\"excerpt\":\"第百二十八条第一号に掲げる事項のうち政令で定める重要な事項及び同条第八号に掲げる事項は、組合員の議決権及び敷地利用権の持分の価格の各四分の三以上で決する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414CO0000000367?asof=2024-04-01&response_format=xml\",\"excerpt\":\"法第百三十条の政令で定める重要な事項は、次に掲げるものとする。一事業に要する経費の分担に関する事項の変更二総代会の新設又は廃止\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414CO0000000367?asof=2024-04-01&response_format=xml\",\"excerpt\":\"定款の変更のうち法第三十条第一項の政令で定める重要な事項は、次に掲げるものとする。一施行マンションの変更二参加組合員に関する事項の変更三事業に要する経費の分担に関する事項の変更四総代会の新設又は廃止\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414AC0000000078?asof=2024-04-01&response_format=xml\",\"excerpt\":\"組合員が総組合員の五分の一以上の同意を得て、会議の目的である事項及び招集の理由を記載した書面を組合に提出して総会の招集を請求したときは、理事長は、その請求のあった日から起算して二十日以内に臨時総会を招集しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/414AC0000000078?asof=2024-04-01&response_format=xml\",\"excerpt\":\"前項の規定による認可を申請しようとする建替え合意者は、組合の設立について、建替え合意者の四分の三以上の同意（同意した者の区分所有法第三十八条の議決権の合計が、建替え合意者の同条の議決権の合計の四分の三以上となる場合に限る。）を得なければならない。\"}]},\"20\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"都道府県又は市町村は、次項の規定による場合を除くほか、都市計画の案を作成しようとする場合において必要があると認めるときは、公聴会の開催等住民の意見を反映させるために必要な措置を講ずるものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"次に掲げる都市計画は都道府県が、その他の都市計画は市町村が定める。一都市計画区域の整備、開発及び保全の方針に関する都市計画二区域区分に関する都市計画三都市再開発方針等に関する都市計画\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"高度地区は、用途地域内において市街地の環境を維持し、又は土地利用の増進を図るため、建築物の高さの最高限度又は最低限度を定める地区とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"高度利用地区は、用途地域内の市街地における土地の合理的かつ健全な高度利用と都市機能の更新とを図るため、建築物の容積率の最高限度及び最低限度、建築物の建蔽率の最高限度、建築物の建築面積の最低限度並びに壁面の位置の制限を定める地区とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"都道府県は、市又は人口、就業者数その他の事項が政令で定める要件に該当する町村の中心の市街地を含み、かつ、自然的及び社会的条件並びに人口、土地利用、交通量その他国土交通省令で定める事項に関する現況及び推移を勘案して、一体の都市として総合的に整備し、開発し、及び保全する必要がある区域を都市計画区域として指定するものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/343AC0000000100?asof=2024-04-01&response_format=xml\",\"excerpt\":\"都道府県は、都市計画区域外の区域のうち、相当数の建築物その他の工作物（以下「建築物等」という。）の建築若しくは建設又はこれらの敷地の造成が現に行われ、又は行われると見込まれる区域を含み\"}]}}",
+  "ttft_ms": 45151,
+  "type": "result",
+  "duration_ms": 284867,
+  "uuid": "38f72e1b-6487-4a6e-acce-c733cb843d07",
+  "ttft_stream_ms": 1376,
+  "time_to_request_ms": 452,
+  "first_content_frame_ms": 1376,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}

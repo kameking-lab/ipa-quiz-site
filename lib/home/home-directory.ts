@@ -143,6 +143,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },
   { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },
   { code: "hoikushi", name: "保育士試験", sub: "筆記9科目（令和7年度後期・令和8年度前期）", domain: "welfare" },
+  { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
 ];
 

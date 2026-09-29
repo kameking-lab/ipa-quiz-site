@@ -1,0 +1,117 @@
+{
+  "duration_api_ms": 163075,
+  "stop_reason": "end_turn",
+  "session_id": "6d8827ab-0866-4165-b9cb-c8beb6c89ba9",
+  "total_cost_usd": 1.1117034000000001,
+  "usage": {
+    "input_tokens": 32,
+    "cache_creation_input_tokens": 59624,
+    "cache_read_input_tokens": 1042782,
+    "output_tokens": 16746,
+    "output_tokens_details": {
+      "thinking_tokens": 5244
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 59624,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 6512,
+        "cache_read_input_tokens": 85696,
+        "cache_creation_input_tokens": 2020,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2020
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 32,
+      "outputTokens": 16746,
+      "cacheReadInputTokens": 1042782,
+      "cacheCreationInputTokens": 59624,
+      "webSearchRequests": 0,
+      "costUSD": 1.0205964,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5244,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 85317,
+      "outputTokens": 1158,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.091107,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 18,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "{\"1\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"第一条に規定する建物の部分及び附属の建物は、規約により共用部分とすることができる。この場合には、その旨の登記をしなければ、これをもつて第三者に対抗することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/416AC0000000123?asof=2025-04-01&response_format=xml\",\"excerpt\":\"共用部分である旨の登記又は団地共用部分である旨の登記は、当該共用部分である旨の登記又は団地共用部分である旨の登記をする建物の表題部所有者又は所有権の登記名義人以外の者は、申請することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/416CO0000000379?asof=2025-04-01&response_format=xml\",\"excerpt\":\"所有権以外の権利に関する登記があるときは、当該権利に関する登記に係る権利の登記名義人（当該権利に関する登記が抵当権の登記である場合において、抵当証券が発行されているときは、当該抵当証券の所持人又は裏書人を含む。）の承諾を証する当該登記名義人が作成した情報又は当該登記名義人に対抗することができる裁判があったことを証する情報\"}]},\"2\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"管理者に不正な行為その他その職務を行うに適しない事情があるときは、各区分所有者は、その解任を裁判所に請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"区分所有者は、規約に別段の定めがない限り集会の決議によつて、管理者を選任し、又は解任することができる。\"}]},\"3\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"一部の区分所有者のみの共用に供されるべきことが明らかな共用部分（以下「一部共用部分」という。）をそれらの区分所有者が管理するときも、同様とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前条第二項に規定する事項についての区分所有者全員の規約の設定、変更又は廃止は、当該一部共用部分を共用すべき区分所有者の四分の一を超える者又はその議決権の四分の一を超える議決権を有する者が反対したときは、することができない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の場合において、一部共用部分（附属の建物であるものを除く。）で床面積を有するものがあるときは、その一部共用部分の床面積は、これを共用すべき各区分所有者の専有部分の床面積の割合により配分して、それぞれその区分所有者の専有部分の床面積に算入するものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"管理者は、規約に特別の定めがあるときは、共用部分を所有することができる。\"}]},\"4\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"専有部分が数人の共有に属するときは、前項の通知は、第四十条の規定により定められた議決権を行使すべき者（その者がないときは、共有者の一人）にすれば足りる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"第一項の通知をする場合において、会議の目的たる事項が第十七条第一項、第三十一条第一項、第六十一条第五項、第六十二条第一項、第六十八条第一項又は第六十九条第七項に規定する決議事項であるときは、その議案の要領をも通知しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"共用部分の変更（その形状又は効用の著しい変更を伴わないものを除く。）は、区分所有者及び議決権の各四分の三以上の多数による集会の決議で決する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の場合において、共用部分の変更が専有部分の使用に特別の影響を及ぼすべきときは、その専有部分の所有者の承諾を得なければならない。\"}]},\"5\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の決議は、区分所有者及び議決権の各四分の三以上の多数でする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の規定に基づき訴訟を提起するには、集会の決議によらなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"集会の議事は、この法律又は規約に別段の定めがない限り、区分所有者及び議決権の各過半数で決する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"第一項本文に規定する場合を除いて、建物の一部が滅失したときは、集会において、区分所有者及び議決権の各四分の三以上の多数で、滅失した共用部分を復旧する旨の決議をすることができる。\"}]},\"6\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の場合において、議事録が書面で作成されているときは、議長及び集会に出席した区分所有者の二人がこれに署名しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"区分所有者の五分の一以上で議決権の五分の一以上を有するものは、管理者に対し、会議の目的たる事項を示して、集会の招集を請求することができる。ただし、この定数は、規約で減ずることができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"議決権は、書面で、又は代理人によつて行使することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"専有部分が数人の共有に属するときは、共有者は、議決権を行使すべき者一人を定めなければならない。\"}]},\"7\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"占有者は、建物又はその敷地若しくは附属施設の使用方法につき、区分所有者が規約又は集会の決議に基づいて負う義務と同一の義務を負う。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"区分所有者は、共用部分、建物の敷地若しくは共用部分以外の建物の附属施設につき他の区分所有者に対して有する債権又は規約若しくは集会の決議に基づき他の区分所有者に対して有する債権について、債務者の区分所有権（共用部分に関する権利及び敷地利用権を含む。）及び建物に備え付けた動産の上に先取特権を有する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"区分所有者の全員又は管理組合法人は、集会の決議に基づき、訴えをもつて、当該行為に係る占有者が占有する専有部分の使用又は収益を目的とする契約の解除及びその専有部分の引渡しを請求することができる。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"区分所有者の承諾を得て専有部分を占有する者は、会議の目的たる事項につき利害関係を有する場合には、集会に出席して意見を述べることができる。\"}]},\"8\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項第三号の決議は、区分所有者及び議決権の各四分の三以上の多数でする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"理事の任期は、二年とする。ただし、規約で三年以内において別段の期間を定めたときは、その期間とする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"管理組合法人と理事との利益が相反する事項については、監事が管理組合法人を代表する。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"理事が欠けた場合において、事務が遅滞することにより損害を生ずるおそれがあるときは、裁判所は、利害関係人又は検察官の請求により、仮理事を選任しなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"第二十五条、第四十九条第六項及び第七項並びに前条の規定は、監事に準用する。\"}]},\"9\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"建替え決議においては、次の事項を定めなければならない。一新たに建築する建物（以下この項において「再建建物」という。）の設計の概要二建物の取壊し及び再建建物の建築に要する費用の概算額三前号に規定する費用の分担に関する事項四再建建物の区分所有権の帰属に関する事項\"}]},\"10\":{\"status\":\"PASS\",\"choiceStatus\":{\"ア\":\"PASS\",\"イ\":\"PASS\",\"ウ\":\"PASS\",\"エ\":\"PASS\"},\"fixedChoiceExplanations\":{},\"evidence\":[{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"当該団地内建物について第六十八条第一項（第一号を除く。）の規定により第六十六条において準用する第三十条第一項の規約が定められているときは、第六十二条第一項の規定にかかわらず、当該団地内建物の敷地の共有者である当該団地内建物の区分所有者で構成される第六十五条に規定する団体又は団地管理組合法人の集会において、当該団地内建物の区分所有者及び議決権の各五分の四以上の多数で、当該団地内建物につき一括して、その全部を取り壊し\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"ただし、当該集会において、当該各団地内建物ごとに、それぞれその区分所有者の三分の二以上の者であつて第三十八条に規定する議決権の合計の三分の二以上の議決権を有するものがその一括建替え決議に賛成した場合でなければならない。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"前項の集会における各団地建物所有者の議決権は、第六十六条において準用する第三十八条の規定にかかわらず、第六十六条において準用する第三十条第一項の規約に別段の定めがある場合であつても、当該特定建物の所在する土地（これに関する権利を含む。）の持分の割合によるものとする。\"},{\"url\":\"https://laws.e-gov.go.jp/api/2/law_data/337AC0000000069?asof=2025-04-01&response_format=xml\",\"excerpt\":\"建替え決議の日から二年以内に建物の取壊しの工事に着手しない場合には、第五項の規定により区分所有権又は敷地利用権を売り渡した者は、この期間の満了の日から六月以内に、買主が支払つた代金に相当する金銭をその区分所有権又は敷地利用権を現在有する者に提供して、これらの権利を売り渡すべきことを請求することができる。\"}]}}",
+  "ttft_ms": 4042,
+  "type": "result",
+  "duration_ms": 188445,
+  "uuid": "1c604ecb-7fa6-4d36-b8ee-2d525577e979",
+  "ttft_stream_ms": 1146,
+  "time_to_request_ms": 232,
+  "first_content_frame_ms": 1146,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "_exitCode": 0,
+  "_requestedModel": "claude-opus-5-5",
+  "_toolsAllowed": [
+    "WebFetch",
+    "WebSearch"
+  ]
+}
