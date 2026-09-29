@@ -45,6 +45,7 @@ export const EXAM_LABELS: Record<string, string> = {
   soukan: "技術士 総合技術監理部門",
   hoikushi: "保育士試験",
   mankan: "マンション管理士",
+  kashikin: "貸金業務取扱主任者",
 };
 
 export function examLabel(exam: string): string {
