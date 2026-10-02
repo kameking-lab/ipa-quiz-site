@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const published = QUALIFICATION_CATALOG.filter((item) => item.status === "live");
 const questionCounts: Record<string, number> = Object.fromEntries(
-  published.map((item) => [item.slug, item.examCode ? (QUESTIONS_BY_EXAM[item.examCode]?.length ?? 0) : 0]),
+  published.map((item) => [item.slug, item.examCode ? getQuestionsByExamStrict(item.examCode).length : 0]),
 );
 const fp2PracticalCount = FP2_PRACTICAL_EDITIONS.reduce(
   (sum, edition) => sum + (getPracticalEdition(edition)?.questions.length ?? 0), 0,
