@@ -1,3 +1,5 @@
+import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
+import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
@@ -33,15 +35,18 @@ export default function QualificationsPage() {
       <Button asChild variant="ghost" size="sm" className="mb-4">
         <Link href="/"><ArrowLeft className="h-4 w-4" />分野選択へ戻る</Link>
       </Button>
-      <header className="mb-8">
+      <header className="mb-6">
         <Badge variant="soft" className="mb-3">公式公開資料から収録</Badge>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          公開中の資格を年度と科目から選べます。各カードに現在の収録数と公式資料へのリンクを表示しています。
+          資格名で検索し、年度と科目から学習を始められます。収録範囲と公式資料は下の一覧で確認できます。
         </p>
       </header>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="/#home-directory-title" />
+      <details id="qualification-coverage" className="group mt-6 rounded-2xl border border-border bg-card p-4">
+        <summary className="min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
         {published.map((item) => (
           <article key={item.slug} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <div className="mb-3 flex items-center justify-between gap-3">
@@ -61,7 +66,8 @@ export default function QualificationsPage() {
             </div>
           </article>
         ))}
-      </div>
+        </div>
+      </details>
 
       <p className="mt-8 rounded-xl border border-border bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
         解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。各問題画面から公式問題PDFと公式正答を確認できます。

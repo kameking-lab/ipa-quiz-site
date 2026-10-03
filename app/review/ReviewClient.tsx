@@ -6,7 +6,9 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { LS_KEYS } from "@/lib/storage/keys";
+import { readLastQuestion } from "@/lib/storage/last-question";
+import { EXAM_LABELS, examLabel } from "@/lib/utils";
+import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
 import type { Question } from "@/lib/questions/types";
 
@@ -44,6 +46,8 @@ export function ReviewClient() {
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
   const [done, setDone] = useState(false);
   const [initialized, setInitialized] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [lastExam, setLastExam] = useState<string | null>(null);
   const [emptyMeta, setEmptyMeta] = useState<{
     seenCount: number;
     scheduledCount: number;
@@ -55,15 +59,23 @@ export function ReviewClient() {
     void (async () => {
       try {
         const raw = localStorage.getItem(REVIEW_KEY);
-        const loaded: ReviewStore = raw ? (JSON.parse(raw) as ReviewStore) : {};
+        let loaded: ReviewStore = {};
+        try {
+          const parsed: unknown = raw ? JSON.parse(raw) : {};
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+            loaded = Object.fromEntries(Object.entries(parsed).filter(([, record]) => {
+              if (!record || typeof record !== "object") return false;
+              const r = record as Partial<ReviewRecord>;
+              return typeof r.nextReviewAt === "string" && /^\d{4}-\d{2}-\d{2}$/.test(r.nextReviewAt) && typeof r.level === "number" && typeof r.correctStreak === "number";
+            }));
+          }
+        } catch { /* A damaged schedule must not prevent reading the existing answer history. */ }
         setStore(loaded);
 
+        const last = readLastQuestion();
+        if (last && Object.hasOwn(EXAM_LABELS, last.exam)) setLastExam(last.exam);
         const today = getTodayStr();
-        const historyRaw = localStorage.getItem(LS_KEYS.history);
-        const history: Array<{ questionId: string }> = historyRaw
-          ? (JSON.parse(historyRaw) as Array<{ questionId: string }>)
-          : [];
-        const historyIds = [...new Set(history.map((h) => h.questionId))];
+        const historyIds = createHistoryStore().getAnsweredIds();
 
         const reviewStore = Object.fromEntries(
           Object.entries(loaded).map(([id, r]) => [id, { nextReviewAt: r.nextReviewAt }]),
@@ -75,6 +87,7 @@ export function ReviewClient() {
           body: JSON.stringify({ historyIds, reviewStore, today }),
         });
 
+        if (!res.ok) throw new Error("review-load-failed");
         if (res.ok) {
           const data = (await res.json()) as {
             questions: Question[];
@@ -92,6 +105,7 @@ export function ReviewClient() {
 
         setInitialized(true);
       } catch {
+        setLoadError(true);
         setInitialized(true);
       }
     })();
@@ -141,6 +155,8 @@ export function ReviewClient() {
       </div>
     );
   }
+
+  if (loadError) return <Card><CardContent className="py-8 text-center"><p role="alert" className="font-semibold">復習問題を読み込めませんでした</p><p className="mt-2 text-sm text-muted-foreground">学習履歴はこの端末に残っています。通信状態を確認して、もう一度お試しください。</p><Button onClick={() => window.location.reload()} className="mt-4">もう一度読み込む</Button></CardContent></Card>;
 
   if (dueQuestions.length === 0) {
     const isFreshUser = emptyMeta.seenCount === 0;
@@ -201,10 +217,10 @@ export function ReviewClient() {
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Button asChild variant="primary" className="w-full">
-            <Link href="/ap">{isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
+            <Link href={lastExam ? `/${lastExam}` : "/#choose-qualification"}>{lastExam ? `${examLabel(lastExam)}の問題を解く` : isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
           </Button>
           <Button asChild variant="outline" className="w-full">
-            <Link href="/mock-exam">模試で実力チェック</Link>
+            <Link href="/#choose-qualification">別の資格を選ぶ</Link>
           </Button>
         </div>
       </div>
@@ -240,7 +256,7 @@ export function ReviewClient() {
             もう一度
           </Button>
           <Button asChild variant="outline" className="flex-1">
-            <Link href="/ipa">試験選択に戻る</Link>
+            <Link href="/#choose-qualification">試験選択に戻る</Link>
           </Button>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, BookOpenText, ShieldCheck, UserRound } from "lucide-react";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 import { NOTE_PROFILE_URL } from "@/lib/external-links";
-import { getNoteGuide } from "@/lib/note-guides";
+import { getNoteGuide, isVerifiedFreeNoteGuide } from "@/lib/note-guides";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
@@ -12,7 +12,7 @@ const HOME_GUIDE_EXAMS: readonly ExamCode[] = ["ip", "sg", "fe", "ap", "civil2"]
 export function HomeNoteGuides() {
   const guides = HOME_GUIDE_EXAMS.flatMap((exam) => {
     const guide = getNoteGuide(exam);
-    return guide && guide.kind === "free" ? [{ exam, guide }] : [];
+    return guide && isVerifiedFreeNoteGuide(guide) ? [{ exam, guide }] : [];
   });
   if (guides.length === 0) return null;
   return (

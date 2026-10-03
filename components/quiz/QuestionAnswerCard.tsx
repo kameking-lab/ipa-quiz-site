@@ -9,7 +9,6 @@ import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
@@ -260,9 +259,9 @@ export function QuestionAnswerCard({
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
+              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90"
             >
-              <BookOpenCheck className="h-4 w-4 text-primary" aria-hidden="true" />
+              <BookOpenCheck className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
               解説を読む
             </a>
             {question && (
@@ -278,14 +277,13 @@ export function QuestionAnswerCard({
             {nextHref && (
               <Link
                 href={nextHref}
-                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90"
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
               >
                 次の問題へ
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             )}
           </div>
-          <ExamNoteGuide exam={exam} />
         </div>
       )}
       {question && copilotRequest > 0 && (

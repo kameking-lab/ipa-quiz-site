@@ -138,7 +138,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
   { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
-  { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度公式問題（100問）", domain: "money" },
+  { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度の公式公開問題", domain: "money" },
   { code: "eisei1", name: "第一種衛生管理者", sub: "2025年10月・2026年4月公表（88問）", domain: "safety" },
   { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },
   { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },

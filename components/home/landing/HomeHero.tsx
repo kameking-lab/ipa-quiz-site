@@ -1,92 +1,35 @@
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
-import { DOMAIN_THEME } from "./domain-theme";
-
-function HeroBackdrop() {
-  // 画像を読まずに奥行きを出す装飾。LCP/CLS に影響しないよう absolute + aria-hidden。
-  return (
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      className="pointer-events-none absolute inset-0 h-full w-full"
-      preserveAspectRatio="xMidYMid slice"
-      viewBox="0 0 800 400"
-    >
-      <defs>
-        <pattern id="home-hero-dots" width="22" height="22" patternUnits="userSpaceOnUse">
-          <circle cx="2" cy="2" r="1.3" className="fill-indigo-300/40 dark:fill-indigo-400/15" />
-        </pattern>
-      </defs>
-      <rect width="800" height="400" fill="url(#home-hero-dots)" />
-      <circle cx="720" cy="40" r="150" className="fill-sky-200/50 dark:fill-sky-500/10" />
-      <circle cx="610" cy="380" r="120" className="fill-emerald-200/50 dark:fill-emerald-500/10" />
-      <circle cx="40" cy="390" r="110" className="fill-amber-200/40 dark:fill-amber-500/10" />
-    </svg>
-  );
-}
+import { HomeQuestionPreview } from "./HomeQuestionPreview";
+import { HomeQualificationFinder } from "./HomeQualificationFinder";
 
 export function HomeHero({ domains }: { domains: readonly HomeDirectoryDomain[] }) {
   const qualificationCount = domains.reduce((sum, d) => sum + d.qualificationCount, 0);
   const questionCount = domains.reduce((sum, d) => sum + d.totalQuestions, 0);
-
   return (
-    <section
-      aria-labelledby="home-hero-title"
-      className="relative overflow-hidden rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-emerald-50 px-5 py-6 shadow-sm dark:border-indigo-950 dark:from-indigo-950/60 dark:via-zinc-950 dark:to-emerald-950/40 sm:px-9 sm:py-9"
-    >
-      <HeroBackdrop />
-      <div className="relative">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300 sm:text-sm">
-              公式公開過去問 × 学習用解説
-            </p>
-            <h1 id="home-hero-title" className="mt-2 text-balance text-[1.7rem] font-bold leading-tight tracking-tight sm:text-4xl">
-              資格の過去問を、
-              <br />
-              無料で1問ずつ。
-            </h1>
+    <section aria-labelledby="home-hero-title" className="relative overflow-hidden rounded-[2rem] border border-indigo-100 bg-gradient-to-br from-indigo-50 via-background to-emerald-50 p-4 dark:border-indigo-950 dark:from-indigo-950/50 dark:to-emerald-950/30 sm:p-7 lg:p-8">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl dark:bg-sky-700/10" />
+      <div className="relative grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+        <div className="flex flex-col lg:py-6">
+          <div className="flex items-start justify-between gap-3">
+            <div><p className="text-xs font-semibold text-indigo-700 dark:text-indigo-300">公式公開過去問 × 学習用解説</p>
+              <h1 id="home-hero-title" className="mt-2 text-balance text-[1.65rem] font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.4rem]">1問わかると、<br />次が楽しくなる。</h1>
+            </div>
+            <ChihuahuaMascot size={84} alt="一緒に学ぶチワワ" className="h-14 w-14 sm:h-16 sm:w-16" />
           </div>
-          <ChihuahuaMascot size={84} alt="一緒に学ぶチワワ" className="h-16 w-16 sm:h-24 sm:w-24" />
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">資格の過去問を、無料で1問ずつ。答え合わせから解説、復習まで、自分のペースで。</p>
+          <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground"><div className="flex gap-1"><dd className="font-bold tabular-nums text-foreground">{qualificationCount}</dd><dt>資格・区分</dt></div><div className="flex gap-1"><dd className="font-bold tabular-nums text-foreground">{questionCount.toLocaleString("ja-JP")}</dd><dt>問を収録</dt></div></dl>
+          <div className="hidden lg:block"><HomeQuestionPreview /></div>
+          <ol aria-label="学習の流れ" className="mt-4 hidden gap-2 lg:grid">
+            {["まず1問、選んで解く", "正答と解説で理由を確認", "学習履歴から復習へ"].map((label, index) => <li key={label} className="flex items-center gap-3 text-sm"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-indigo-200 bg-background text-xs font-bold text-primary dark:border-indigo-800">{index + 1}</span>{label}</li>)}
+          </ol>
+          <p className="mt-5 hidden items-start gap-2 text-xs leading-relaxed text-muted-foreground lg:flex"><Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />公式問題・正答と、学習用に作成した解説を区別して表示。各問題から出典を確認できます。</p>
+          <Link href="/transparency" className="mt-2 hidden min-h-11 items-center gap-1 text-xs font-semibold text-primary hover:underline lg:inline-flex">解説と運営について<ArrowRight aria-hidden="true" className="h-3 w-3" /></Link>
         </div>
-        <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-700 dark:text-zinc-300">
-          試験実施機関が公開した過去問を、公式正答と学習用解説で解けます。登録不要。まずは分野を選んでください。
-        </p>
-        <dl className="mt-4 flex flex-wrap gap-2 text-xs">
-          <div className="inline-flex items-baseline gap-1 rounded-full border border-indigo-200 bg-white/80 px-3 py-1 dark:border-indigo-900 dark:bg-zinc-900/70">
-            <dt className="text-muted-foreground">資格・区分</dt>
-            <dd className="font-bold tabular-nums">{qualificationCount}</dd>
-          </div>
-          <div className="inline-flex items-baseline gap-1 rounded-full border border-indigo-200 bg-white/80 px-3 py-1 dark:border-indigo-900 dark:bg-zinc-900/70">
-            <dt className="text-muted-foreground">収録</dt>
-            <dd className="font-bold tabular-nums">{questionCount.toLocaleString("ja-JP")}問</dd>
-          </div>
-        </dl>
-
-        <nav aria-label="分野から選ぶ" className="mt-5">
-          <ul className="grid grid-cols-2 gap-2 sm:grid-cols-5">
-            {domains.map((d) => {
-              const theme = DOMAIN_THEME[d.id];
-              const Icon = theme.icon;
-              return (
-                <li key={d.id} className={d.id === "it" ? "col-span-2 sm:col-span-1" : undefined}>
-                  <a
-                    href={`#domain-${d.id}`}
-                    className={`flex min-h-14 items-center gap-2.5 rounded-2xl border px-3 py-2 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary ${theme.heroChip}`}
-                  >
-                    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl ${theme.tile}`}>
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-sm font-bold leading-tight">{d.title}</span>
-                      <span className="block text-[11px] text-muted-foreground">{d.qualificationCount}資格・区分</span>
-                    </span>
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+        <HomeQualificationFinder domains={domains} />
+        <div className="-mt-5 lg:hidden"><HomeQuestionPreview idSuffix="mobile" /></div>
       </div>
     </section>
   );

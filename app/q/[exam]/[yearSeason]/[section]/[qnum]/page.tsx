@@ -42,6 +42,7 @@ import {
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
+import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
@@ -496,6 +497,12 @@ export default async function QuestionPage({
           />
         </details>
       </section>
+
+      <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
+        {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
+        <Link href="/review" className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
+      </nav>
+      <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 
       {/* Category-level study guidance */}
       <div className="print:hidden">

@@ -1361,7 +1361,7 @@ export function CopilotMobileSheet({
         <button
           ref={fabRef}
           onClick={() => setOpen(true)}
-          className="bottom-above-tabbar fixed right-4 z-40 flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-xl hover:bg-sky-700 sm:hidden"
+          className="my-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/30 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft sm:hidden"
         >
           <Sparkles className="h-4 w-4" />
           AIに聞く

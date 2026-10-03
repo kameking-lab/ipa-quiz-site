@@ -40,6 +40,10 @@ const MOCK_PRESETS = [
   { label: "未回答モード", desc: "まだ解いていない問題だけ出題", href: (e: string) => `/quiz?mode=unanswered&exam=${e}` },
 ] as const;
 
+function YearLink({ exam, item: g }: { exam: ExamCode; item: YearItem }) {
+  return <li><Link href={`/${exam}/${g.key}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:border-primary/40 hover:shadow-sm"><span className="min-w-0 font-medium">{g.label}{g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}{g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}</span><span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-muted px-2 py-0.5 font-semibold">{g.count}問</span><ChevronRight aria-hidden="true" className="h-4 w-4" /></span></Link></li>;
+}
+
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
   const [tab, setTab] = React.useState<string>("year");
   const partialFirstStage = exam === "zoen2" || exam === "zoen1" || exam === "tsushin2" || exam === "tsushin1";
@@ -77,27 +81,11 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
             年度データがまだ登録されていません。
           </p>
         ) : (
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {years.map((g) => (
-              <li key={g.key}>
-                <Link
-                  href={`/${exam}/${g.key}`}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                >
-                  <span className="min-w-0 font-medium text-foreground">{g.label}
-                    {g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}
-                    {g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}
-                  </span>
-                  <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
-                      {g.count}問
-                    </span>
-                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <p className="mb-2 text-xs font-semibold text-muted-foreground">直近の収録年度・回</p>
+            <ul className="grid gap-2 sm:grid-cols-2">{years.slice(0, 4).map((item) => <YearLink key={item.key} item={item} exam={exam} />)}</ul>
+            {years.length > 4 && <details className="group mt-3 rounded-xl border border-border"><summary className="flex min-h-12 cursor-pointer items-center justify-between px-4 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">以前の年度・回も見る（残り{years.length - 4}件）<ChevronRight aria-hidden="true" className="h-4 w-4 transition group-open:rotate-90" /></summary><ul className="grid gap-2 p-3 pt-0 sm:grid-cols-2">{years.slice(4).map((item) => <YearLink key={item.key} item={item} exam={exam} />)}</ul></details>}
+          </div>
         )}
       </TabsContent>
 

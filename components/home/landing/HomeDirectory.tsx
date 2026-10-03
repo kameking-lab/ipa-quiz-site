@@ -54,8 +54,8 @@ function DomainSection({ domain }: { domain: HomeDirectoryDomain }) {
   const headingId = `domain-${domain.id}-title`;
   const compactLabel = domain.id === "it" ? "高度試験・支援士" : "ほかの免許試験";
   return (
-    <section id={`domain-${domain.id}`} aria-labelledby={headingId} className="scroll-mt-20 rounded-3xl border border-border bg-card/60 p-4 shadow-sm sm:p-6">
-      <div className="mb-4 flex items-start gap-3">
+    <details id={`domain-${domain.id}`} aria-labelledby={headingId} className="group scroll-mt-20 rounded-2xl border border-border bg-card/60 p-4 sm:px-5">
+      <summary className="flex min-h-16 cursor-pointer list-none items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
         <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl shadow-sm ${theme.tile}`}>
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
@@ -66,8 +66,9 @@ function DomainSection({ domain }: { domain: HomeDirectoryDomain }) {
             {domain.qualificationCount}資格・区分 / {formatCount(domain.totalQuestions)}問
           </p>
         </div>
-      </div>
-      <div className={`grid grid-cols-2 gap-2.5 sm:gap-3 ${domain.id === "it" ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+        <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground transition group-open:rotate-90" aria-hidden="true" />
+      </summary>
+      <div className={`mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 ${domain.id === "it" ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
         {domain.featured.map((item) => <FeaturedCard key={item.key} item={item} theme={theme} />)}
       </div>
       {domain.compact.length > 0 && domain.id === "it" ? (
@@ -97,16 +98,16 @@ function DomainSection({ domain }: { domain: HomeDirectoryDomain }) {
         {domain.allLabel}
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>
-    </section>
+    </details>
   );
 }
 
 export function HomeDirectory({ domains }: { domains: readonly HomeDirectoryDomain[] }) {
   return (
     <section aria-labelledby="home-directory-title" className="mt-10">
-      <h2 id="home-directory-title" className="mb-1 text-lg font-bold sm:text-xl">資格を選んで、今すぐ解く</h2>
+      <h2 id="home-directory-title" className="mb-1 scroll-mt-20 text-lg font-bold sm:text-xl">すべての収録資格・区分</h2>
       <p className="mb-4 text-xs text-muted-foreground">問題数と「期分・回分」は、現在このサイトで解ける公式公開問題の数です。</p>
-      <div className="space-y-5">
+      <div className="space-y-2">
         {domains.map((domain) => <DomainSection key={domain.id} domain={domain} />)}
       </div>
     </section>
