@@ -47,7 +47,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
+import { ExplanationLayers, ExplanationStructureLabel } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
@@ -221,8 +221,7 @@ export default async function QuestionPage({
   const { questions: crossExamByTopic, mode: crossExamMode } =
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
-  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
-    .filter((post) => !["civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
+  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
@@ -413,7 +412,7 @@ export default async function QuestionPage({
         </section>
       )}
 
-      {/* Explanation — 3-layer structured */}
+      {/* Explanation — label follows the available source layers */}
       <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
         <details open className="group">
           <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
@@ -426,9 +425,7 @@ export default async function QuestionPage({
                   解説
                 </h2>
                 {showRealExplanation && (
-                  <p className="text-[11px] text-muted-foreground">
-                    結論 → 詳細 → 補足 の 3 層構成
-                  </p>
+                  <ExplanationStructureLabel explanation={q.explanation} />
                 )}
               </div>
             </div>
