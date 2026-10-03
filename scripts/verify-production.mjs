@@ -427,7 +427,7 @@ async function main() {
     const sponsoredLinks = await ngPage.$$eval('a[rel~="sponsored"]', els => els.map(e => e.href)).catch(() => []);
     results.ngChecks.affiliateDisclosure = {
       sponsoredLinksOnHome: sponsoredLinks.length,
-      amazonTagInHtml: homeContent.includes('safeaisite22-22'),
+      closedAmazonTagInHtml: homeContent.includes('tag=safeaisite22-22'),
     };
     await ngBrowser.close();
 

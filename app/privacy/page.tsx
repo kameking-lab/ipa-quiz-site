@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAmazonLinkDisclosure } from "@/data/recommended-books";
 import {
   AlertCircle,
   ArrowLeft,
@@ -337,8 +338,8 @@ export default function PrivacyPage() {
               >
                 /recommended-books
               </Link>
-              ）および試験区分別ページ・クイズ解説ページの一部に、Amazon アソシエイト・楽天アフィリエイトのリンクを掲載しています。
-              これらのリンクを経由して商品をご購入いただいた場合、当サービスの運営費の一部として収益が発生することがあります。
+              ）および試験区分別ページ・クイズ解説ページの一部に、楽天アフィリエイトのリンクを掲載しています。{getAmazonLinkDisclosure()}
+              アフィリエイトリンクを経由して商品をご購入いただいた場合、当サービスの運営費の一部として収益が発生することがあります。
               アフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与しており、リンク近くに「PR」と明示しています。
               アフィリエイト収入は教育コンテンツの維持・改善に充てており、紹介する書籍の選定はアフィリエイト報酬の有無に左右されません。
               詳細は{" "}

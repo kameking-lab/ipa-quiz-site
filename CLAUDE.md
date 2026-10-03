@@ -259,5 +259,5 @@ Stripe 本実装はフェーズ4。
 ## 14. 姉妹プロジェクトと共有する構成
 
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
-- アフィリエイト ID（環境変数名はコードと一致させること）: `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
+- アフィリエイト ID（環境変数名はコードと一致させること）: `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=`（過去問AIでは2026-10-03に閉鎖が確認された `safeaisite22-22` を通常商品リンクへ切り替え。再設定しない。他サイト・別IDの状態はこの変更の対象外）, `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
 - フェーズ4 で相互送客バナーを実装

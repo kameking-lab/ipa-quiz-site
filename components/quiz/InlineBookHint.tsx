@@ -5,6 +5,7 @@ import { TrackedBookLink } from "@/components/analytics/TrackedBookLink";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
+  getAmazonAssociateTag,
   isAsinFilled,
   type RecommendedBook,
 } from "@/data/recommended-books";
@@ -82,10 +83,10 @@ export function InlineBookHint({
               retailer="amazon"
               placement="quiz_inline_hint"
               target="_blank"
-              rel="noopener noreferrer sponsored"
+              rel={getAmazonAssociateTag() ? "noopener noreferrer sponsored" : "noopener noreferrer"}
               className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground hover:underline"
             >
-              <span className="text-[9px] opacity-60">[PR]</span>
+              {getAmazonAssociateTag() && <span className="text-[9px] opacity-60">[PR]</span>}
               Amazon で見る
               <ExternalLink className="h-3 w-3" />
             </TrackedBookLink>

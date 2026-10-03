@@ -29,8 +29,22 @@ export function isRakutenIdFilled(id: string | undefined): boolean {
   return !!id && id.trim() !== "" && id !== PLACEHOLDER_RAKUTEN;
 }
 
+/** This site's former associate ID was confirmed closed on 2026-10-03. Keep legacy env values safe. */
+const CLOSED_AMAZON_ASSOCIATE_TAG = "safeaisite22-22";
+
+export function getAmazonAssociateTag(): string {
+  const configured = process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG ?? "";
+  return configured.trim() === CLOSED_AMAZON_ASSOCIATE_TAG ? "" : configured;
+}
+
+export function getAmazonLinkDisclosure(): string {
+  return getAmazonAssociateTag()
+    ? "Amazonのリンクにはアフィリエイトリンクが含まれます。"
+    : "Amazonのリンクは紹介タグのない通常の商品リンクです。Amazon購入による紹介料は受け取りません。";
+}
+
 export function buildAmazonUrl(asin: string): string {
-  const tag = process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG ?? "";
+  const tag = getAmazonAssociateTag();
   const base = `https://www.amazon.co.jp/dp/${asin}`;
   return tag ? `${base}?tag=${tag}` : base;
 }
