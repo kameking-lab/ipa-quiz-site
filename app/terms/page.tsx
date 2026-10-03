@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAmazonAssociateTag, getAmazonLinkDisclosure } from "@/data/recommended-books";
 import {
   AlertOctagon,
   ArrowLeft,
@@ -223,7 +224,7 @@ export default function TermsPage() {
               >
                 おすすめ問題集
               </Link>
-              」ページなど一部のページには、Amazonアソシエイト・楽天アフィリエイトなどのアフィリエイトリンクが含まれます。
+              」ページなど一部のページには、楽天アフィリエイトなどのアフィリエイトリンクが含まれます。
               ユーザーがこれらのリンクから商品を購入された場合、当サービス運営者に紹介料が支払われ、運営費の一部に充当されます。
             </p>
             <p>
@@ -232,8 +233,9 @@ export default function TermsPage() {
               価格・在庫・最新版情報については、リンク先の販売ページの表示が最新です。
             </p>
             <p>
-              当サービスは Amazon.co.jp を宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定された
-              アフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+              {getAmazonAssociateTag()
+                ? "当サービスは Amazon.co.jp を宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。"
+                : getAmazonLinkDisclosure()}
             </p>
           </Section>
 

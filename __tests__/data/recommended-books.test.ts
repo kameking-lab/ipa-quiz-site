@@ -3,6 +3,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
+  getAmazonAssociateTag,
+  getAmazonLinkDisclosure,
   buildRakutenUrl,
   getDifficultyLabel,
   getRecommendedBooks,
@@ -20,7 +22,7 @@ import { ESSAY_EXAM_CODES as ESSAY_GRADING_EXAM_CODES } from "@/lib/essay/load";
 // sitemap. The URL builders and "is this id real?" gates are load-bearing for
 // revenue (a dropped affiliate tag = lost commission) and for UX (linking a
 // placeholder asin = a 404). We pin the gate logic and URL formats here; the
-// affiliate IDs themselves are env-driven (§14) and never hardcoded in source,
+// configurable affiliate IDs are env-driven (§14); the closed legacy tag is blocked,
 // so the tests stub the env to exercise both the with-id and no-id branches.
 
 describe("isAsinFilled / isRakutenIdFilled — placeholder gates", () => {
@@ -52,11 +54,27 @@ describe("buildAmazonUrl — affiliate tag appending", () => {
     vi.unstubAllEnvs();
   });
 
-  it("appends ?tag=<associate-tag> when the env var is set", () => {
-    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "safeaisite22-22");
+  it("preserves another configured tag without applying this closure to it", () => {
+    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "shikakucal-22");
     expect(buildAmazonUrl("4297152991")).toBe(
-      "https://www.amazon.co.jp/dp/4297152991?tag=safeaisite22-22",
+      "https://www.amazon.co.jp/dp/4297152991?tag=shikakucal-22",
     );
+  });
+
+  it.each(["safeaisite22-22", " safeaisite22-22 "])("removes only the closed legacy tag %s and preserves every catalog ASIN", (tag) => {
+    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", tag);
+    expect(getAmazonAssociateTag()).toBe("");
+    expect(getAmazonLinkDisclosure()).toContain("紹介料は受け取りません");
+    for (const books of Object.values(RECOMMENDED_BOOKS)) {
+      for (const book of books) {
+        if (isAsinFilled(book.asin)) expect(buildAmazonUrl(book.asin)).toBe(`https://www.amazon.co.jp/dp/${book.asin}`);
+      }
+    }
+  });
+
+  it("does not suppress a similar but different tag", () => {
+    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "safeaisite22-22-other");
+    expect(buildAmazonUrl("4297152991")).toBe("https://www.amazon.co.jp/dp/4297152991?tag=safeaisite22-22-other");
   });
 
   it("falls back to the bare /dp/ url when the tag env var is empty", () => {

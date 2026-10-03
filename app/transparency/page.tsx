@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAmazonLinkDisclosure } from "@/data/recommended-books";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -348,18 +349,18 @@ export default async function TransparencyPage() {
         <Card>
           <CardContent className="space-y-3 pt-4 text-sm text-zinc-700 dark:text-zinc-300">
             <p>
-              本サービスでは以下のページに Amazon アソシエイト・楽天アフィリエイトのリンクを使用しています。
+              本サービスでは以下のページに 楽天アフィリエイトのリンクを使用しています。{getAmazonLinkDisclosure()}
               すべてのアフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与し、リンク近くに「PR」と明示しています。
             </p>
             <ul className="list-disc space-y-1.5 pl-5">
               <li>
-                <strong>/recommended-books/[試験区分]</strong> — 書籍カードの「Amazonで見る」「楽天で見る」ボタン（Amazon アソシエイト <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">safeaisite22-22</code> / 楽天 <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">hb.afl.rakuten.co.jp</code> 経由）
+                <strong>/recommended-books/[試験区分]</strong> — 書籍カードの「Amazonで見る」「楽天で見る」ボタン（Amazon 商品リンク / 楽天 <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">hb.afl.rakuten.co.jp</code> 経由）
               </li>
               <li>
-                <strong>/[試験区分]（試験区分別トップページ）</strong> — おすすめ参考書一覧の「Amazon →」ボタン（Amazon アソシエイト）
+                <strong>/[試験区分]（試験区分別トップページ）</strong> — おすすめ参考書一覧の「Amazon →」ボタン（Amazon 商品リンク）
               </li>
               <li>
-                <strong>クイズ解説ページ内 InlineBookHint</strong> — 問題解説下部の参考書ヒント「Amazon で見る」リンク（Amazon アソシエイト）
+                <strong>クイズ解説ページ内 InlineBookHint</strong> — 問題解説下部の参考書ヒント「Amazon で見る」リンク（Amazon 商品リンク）
               </li>
             </ul>
             <p>
