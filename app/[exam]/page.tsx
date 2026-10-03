@@ -39,7 +39,7 @@ const ExamBrowseTabs = dynamic(
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
-import { NwNoteMaterialIndex } from "@/components/exam/NwNoteMaterialIndex";
+import { ExamNoteMaterialIndex } from "@/components/exam/ExamNoteMaterialIndex";
 import {
   ExamDeepLead,
   ExamMainTopics,
@@ -513,7 +513,7 @@ export default async function ExamTopPage({
         <ExamOfficialResources exam={code} />
 
         <ExamNoteGuide exam={code} />
-        <NwNoteMaterialIndex exam={code} />
+        <ExamNoteMaterialIndex exam={code} />
 
         {/* Recommended books */}
         {books.length > 0 && (
