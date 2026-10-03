@@ -5,6 +5,8 @@ import { FP2_2026_MAY_QUESTIONS } from "../../data/questions/fp2";
 test("FP2 academic papers expose four complete official sessions and preserve the 2026 pilot label", async ({ page }) => {
   await page.goto("/fp2");
   await expect(page.getByText(`収録 ${240 + FP2_2026_MAY_QUESTIONS.length} 問`)).toBeVisible();
+  // Older sessions remain available through the native disclosure.
+  await page.locator("summary").filter({ hasText: "以前の年度・回も見る" }).click();
   await expect(page.getByRole("link", { name: /2024年5月試験/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /2024年9月試験/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /2025年1月試験/ }).first()).toBeVisible();

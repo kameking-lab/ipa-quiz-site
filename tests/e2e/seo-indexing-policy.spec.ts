@@ -37,5 +37,7 @@ test("IPA index fallback is not described as a PDF", async ({ request }) => {
   const response = await request.get("/q/ip/2019-autumn/am/q52");
   expect(response.ok()).toBe(true);
   const html = await response.text();
-  expect(html).toMatch(/出典:\s*(?:<!-- -->)?IPA公式の過去問一覧/);
+  const renderedText = html.replace(/<!--[\s\S]*?-->/g, "");
+  expect(renderedText).toContain("公式問題の公開ページ（IPA公式の過去問一覧）");
+  expect(renderedText).not.toContain("公式問題PDF（IPA公式の過去問一覧）");
 });

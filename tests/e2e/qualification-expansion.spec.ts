@@ -53,8 +53,8 @@ for (const c of cases) {
     await expect(explanations).toBeVisible();
     await expect(explanations.locator("..").locator("dd")).toHaveCount(c.choiceCount);
 
-    await page.getByText("AI生成", { exact: true }).click();
-    const officialAnswer = page.getByRole("link", { name: /公式解答 PDF/ }).first();
+    await expect(page.getByRole("group", { name: "AI生成の解説に関する詳細" })).toBeVisible();
+    const officialAnswer = page.getByRole("link", { name: /^公式正答PDF/ }).first();
     await expect(officialAnswer).toHaveAttribute("href", c.answerUrl);
 
     await page.goBack();
