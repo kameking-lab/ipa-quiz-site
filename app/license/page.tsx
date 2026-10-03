@@ -69,6 +69,27 @@ export default function LicensePage() {
         </div>
 
         <div>
+          <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">管理業務主任者試験の出典・利用条件</h2>
+          <p className="mb-2">
+            管理業務主任者試験の公表問題・正解と、その使用に関する留意点は、
+            一般社団法人マンション管理業協会の公式資料で確認できます。
+            各問題の出典とあわせて、公式の利用条件をご確認ください。
+          </p>
+          <ul className="list-inside list-disc space-y-2">
+            <li>
+              <a href="https://www.kanrikyo.or.jp/kanri/mondaiseikai/index.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
+                公式の試験問題・正解
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
+                公式の過去問題使用条件（PDF）
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">AI 生成解説・オリジナルコンテンツ</h2>
           <p className="mb-2">
             AI コパイロットが生成する解説・補足説明・類題は、本サービスが独自に生成するものです。
