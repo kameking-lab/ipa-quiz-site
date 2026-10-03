@@ -50,6 +50,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers, ExplanationStructureLabel } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
+import { TohanSourceNotice } from "@/components/quiz/TohanSourceNotice";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
@@ -385,6 +386,7 @@ export default async function QuestionPage({
         )}
         <QuestionBody text={q.question} />
         <QuestionFigures question={q} />
+        <TohanSourceNotice question={q} />
       </section>
 
       {/* Choices + solve-in-place. The choice text ships in the prerendered
