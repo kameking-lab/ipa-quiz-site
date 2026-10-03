@@ -131,6 +131,20 @@ function LayerBody({
   );
 }
 
+/** Describe exactly the same source layers that the body renders. */
+export function ExplanationStructureLabel({ explanation }: { explanation: string }) {
+  const layers = splitLayers(explanation);
+  if (layers.length === 0) return null;
+
+  return (
+    <p className="text-[11px] text-muted-foreground">
+      {layers.length === 1
+        ? "解説本文"
+        : `${layers.map((layer) => layer.label).join(" → ")} の ${layers.length} 層構成`}
+    </p>
+  );
+}
+
 export function ExplanationLayers({ explanation }: { explanation: string }) {
   const layers = splitLayers(explanation);
   if (layers.length === 0) return null;
