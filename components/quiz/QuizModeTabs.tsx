@@ -72,7 +72,11 @@ export function QuizModeTabs({ active, exam = "ap" }: Props) {
       aria-label="クイズモード切替"
       className="mx-auto w-full max-w-2xl px-4 pt-3 sm:px-6"
     >
-      <div className="flex items-center gap-1 overflow-x-auto rounded-xl border border-border bg-muted/30 p-1">
+      <details className="rounded-xl border border-border bg-muted/30 sm:hidden">
+        <summary className="flex min-h-11 cursor-pointer items-center px-3 text-sm font-semibold">学習モード：{TABS.find((t) => t.key === active)?.label ?? "年度別"}</summary>
+        <div className="grid grid-cols-2 gap-1 p-2 pt-0">{TABS.map((t) => <Link key={t.key} href={modeHref(t.href(exam), t.key)} aria-current={t.key === active ? "page" : undefined} className={t.key === active ? "flex min-h-11 items-center gap-2 rounded-lg bg-background px-3 text-xs font-semibold text-primary" : "flex min-h-11 items-center gap-2 rounded-lg px-3 text-xs font-medium hover:bg-background"}>{t.icon}{t.label}</Link>)}</div>
+      </details>
+      <div className="hidden items-center gap-1 rounded-xl border border-border bg-muted/30 p-1 sm:flex">
         {TABS.map((t) => {
           const isActive = t.key === active;
           return (
@@ -80,7 +84,7 @@ export function QuizModeTabs({ active, exam = "ap" }: Props) {
               key={t.key}
               href={modeHref(t.href(exam), t.key)}
               aria-current={isActive ? "page" : undefined}
-              className={`inline-flex shrink-0 items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+              className={`inline-flex min-h-11 shrink-0 items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 isActive
                   ? "bg-background text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"

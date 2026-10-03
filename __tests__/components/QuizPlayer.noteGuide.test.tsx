@@ -82,7 +82,7 @@ describe("QuizPlayer — after-answer note guide placement", () => {
     vi.resetModules();
     vi.doMock("@/lib/note-guides", async () => {
       const actual = await vi.importActual<typeof import("@/lib/note-guides")>("@/lib/note-guides");
-      return { ...actual, getNoteGuide: () => undefined, getNoteGuideSupplement: () => undefined };
+      return { ...actual, getNoteGuide: () => undefined, getNoteGuideSupplement: () => undefined, getVerifiedFreeNoteGuides: () => [] };
     });
     const { QuizPlayer: QuizPlayerWithNoGuide } = await import("@/components/quiz/QuizPlayer");
     render(<QuizPlayerWithNoGuide question={auQuestion} index={0} total={10} mode="random" onNext={() => {}} />);

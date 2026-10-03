@@ -7,13 +7,11 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole("img", { name: "一緒に学ぶチワワ" })).toBeVisible();
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-    // 分野ジャンプ（ヒーロー内）はファーストビューに収まる。
-    const domains = page.getByRole("navigation", { name: "分野から選ぶ" });
-    const domainLinks = domains.getByRole("link");
-    await expect(domainLinks).toHaveCount(6);
-    for (const name of [/^IT・情報処理/, /^安全衛生/, /^電気/, /^建設・施工管理/, /^お金・不動産/, /^福祉・介護/]) {
-      await expect(domains.getByRole("link", { name })).toBeInViewport();
-    }
+    const finder = page.locator("#choose-qualification");
+    await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();
+    await expect(finder.locator('a[href="/ip"]')).toBeInViewport();
+    const filters = finder.getByRole("button", { pressed: false });
+    expect(await filters.count()).toBe(6);
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
@@ -26,10 +24,9 @@ for (const width of [390, 1280]) {
     await expect(page.locator('#domain-it a[href="/ip"]')).toContainText(/[1-9][\d,]*問/);
     await expect(main.getByText(/^0問$/)).toHaveCount(0);
 
-    // 分野ジャンプ → IPA → 資格選択。
-    await domains.getByRole("link", { name: /^安全衛生/ }).click();
-    await expect(page).toHaveURL(/#domain-safety$/);
-    await expect(page.locator("#domain-safety").getByRole("heading", { name: "安全衛生" })).toBeInViewport();
+    // Native disclosures retain every link and are usable without script.
+    await page.locator("#domain-it > summary").click();
+    await expect(page.locator('#domain-it a[href="/ip"]')).toBeVisible();
 
     await main.locator('a[href="/ipa"]').first().click();
     await expect(page).toHaveURL(/\/ipa$/);
@@ -41,6 +38,7 @@ for (const width of [390, 1280]) {
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(page).toHaveURL(/\/$/);
 
+    await page.locator("#domain-safety > summary").click();
     await main.locator('a[href="/e-learning/exams"]').first().click();
     await expect(page).toHaveURL(/\/e-learning\/exams$/);
     await expect(page.getByRole("link", { name: /^第一種衛生管理者/ })).toBeVisible();
@@ -50,22 +48,15 @@ for (const width of [390, 1280]) {
     await expect(healthConsultant.getByRole("link", { name: /^労働衛生一般/ })).toHaveCount(1);
     await page.mouse.move(5, 850);
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
-    await expect(domains).toBeVisible();
+    await expect(finder).toBeVisible();
 
+    await page.locator("#domain-electrical > summary").click();
     await main.locator('a[href="/qualifications"]').first().click();
     await expect(page).toHaveURL(/\/qualifications$/);
-    await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
-    await expect(page.locator('a[href="/civil2"]')).toBeVisible();
-    await expect(page.locator('a[href="/kankoji2"]')).toBeVisible();
-    await expect(page.locator('a[href="/zoen2"]')).toBeVisible();
-    await expect(page.locator('a[href="/tsushin2"]')).toBeVisible();
-    await expect(page.locator('a[href="/kaigo"]')).toBeVisible();
-    await expect(page.locator('a[href="/civil1"]')).toBeVisible();
-    await expect(page.locator('a[href="/denko1"]')).toBeVisible();
-    await expect(page.locator('a[href="/denken2"]')).toBeVisible();
-    await expect(page.locator('a[href="/shakai"]')).toBeVisible();
-    await expect(page.locator('a[href="/seishin"]')).toBeVisible();
-    await expect(page.locator('a[href="/tohan"]')).toBeVisible();
+    await page.locator("#qualification-coverage > summary").click();
+    const coverage = page.locator("#qualification-coverage");
+    await expect(coverage.getByRole("heading", { name: "FP3級" })).toBeVisible();
+    for (const href of ["/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/civil1", "/denko1", "/denken2", "/shakai", "/seishin", "/tohan"]) await expect(coverage.locator(`a[href="${href}"]`)).toBeVisible();
     await page.goBack();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });

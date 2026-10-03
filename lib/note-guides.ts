@@ -1,3 +1,4 @@
+import { NOTE_FREE_VERIFICATIONS } from "./note-free-verifications";
 import type { ExamCode } from "@/lib/questions/types";
 import type { NoteLinkSource } from "@/components/analytics/TrackedNoteLink";
 
@@ -298,4 +299,16 @@ export const EXAM_NOTE_EXTRA_SUPPLEMENTS: Partial<Record<ExamCode, readonly Note
 export function getNoteGuideSupplements(exam: ExamCode): readonly NoteGuideLink[] {
   const primary = getNoteGuideSupplement(exam);
   return primary ? [primary, ...(EXAM_NOTE_EXTRA_SUPPLEMENTS[exam] ?? [])] : EXAM_NOTE_EXTRA_SUPPLEMENTS[exam] ?? [];
+}
+
+/** Site promotion is limited to explicitly verified public, entirely free entry articles. */
+export function isVerifiedFreeNoteGuide(guide: NoteGuideLink): boolean {
+  const proof = NOTE_FREE_VERIFICATIONS[guide.href];
+  return guide.kind === "free" && proof?.status === "published" && proof.price === 0 &&
+    proof.isLimited === false && proof.owner === guide.account;
+}
+
+export function getVerifiedFreeNoteGuides(exam: ExamCode): readonly NoteGuideLink[] {
+  const primary = getNoteGuide(exam);
+  return [...(primary ? [primary] : []), ...getNoteGuideRelatedFree(exam)].filter(isVerifiedFreeNoteGuide);
 }

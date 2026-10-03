@@ -14,7 +14,7 @@ for (const width of [360, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     // トップの IT・情報処理カードから資格ページへ直接進める。
-    const qualification = page.locator('#domain-it a[href="/ip"]');
+    const qualification = page.locator('#choose-qualification a[href="/ip"]');
     await qualification.click({ trial: true });
     await coordinateClick(page, qualification);
     await expect(page).toHaveURL(/\/ip$/);

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
@@ -146,105 +146,15 @@ describe("QuestionAnswerCard — solve in place", () => {
   });
 });
 
-// The AU note guide (verified: reports/revenue-eco-20260913/receipts/free-01-au-am2.json)
-// must only ever appear after the reader has actually answered/revealed, never before,
-// and must not appear for exams without a registered guide. Nothing about the existing
-// answer/navigation/storage logic changes here.
-describe("QuestionAnswerCard — after-answer note guide placement", () => {
-  const auProps = { ...baseProps, exam: "au" as const };
-
-  it("does not show the AU note-guide link before selection/reveal", () => {
-    render(<QuestionAnswerCard {...auProps} />);
-    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-  });
-
-  it("shows the AU note-guide link after answering, pointing at the verified URL", () => {
-    render(<QuestionAnswerCard {...auProps} />);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href",
-      "https://note.com/sikaku_rakutoru/n/n573e38ac5dea",
-    );
-  });
-
-  it("shows the AU note-guide link after 答えだけ見る (reveal-only) too", () => {
-    render(<QuestionAnswerCard {...auProps} />);
-    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toBeInTheDocument();
-  });
-
-  it("shows the IP note-guide link only after reveal (all 13 exams are mapped as of 2026-09-13)", () => {
-    render(<QuestionAnswerCard {...baseProps} />); // baseProps.exam === "ip"
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByText("正解！")).toBeTruthy(); // reveal did happen
-    expect(screen.getAllByRole("link", { name: /無料ガイドを読む/ }).map((link) => link.getAttribute("href"))).toEqual([
-      "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
-      "https://note.com/ipa_quiz_ai/n/nc09b275bef06",
-      "https://note.com/ipa_quiz_ai/n/ncd8e18eecdc0",
-    ]);
-  });
-
-  // ガイドが無いときに空カードを出さない分岐は残っている。13区分すべてが結線済みで
-  // 実在の ExamCode では再現できなくなったため、getNoteGuide を差し替えて確認する。
-  it("shows no note guide block when the exam has no registered guide, even after reveal", async () => {
-    vi.resetModules();
-    vi.doMock("@/lib/note-guides", async () => {
-      const actual = await vi.importActual<typeof import("@/lib/note-guides")>("@/lib/note-guides");
-      return { ...actual, getNoteGuide: () => undefined, getNoteGuideSupplement: () => undefined };
-    });
-    const { QuestionAnswerCard: CardWithNoGuide } = await import(
-      "@/components/quiz/QuestionAnswerCard"
-    );
-    render(<CardWithNoGuide {...baseProps} />);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByText("正解！")).toBeTruthy();
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
-    vi.doUnmock("@/lib/note-guides");
-    vi.resetModules();
-  });
-
-  it("shows the SC note-guide link after answering, same route as AU", () => {
-    render(<QuestionAnswerCard {...baseProps} exam="sc" />);
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href",
-      "https://note.com/sikaku_rakutoru/n/nee848928ccb7",
-    );
-  });
-
-  it("shows the PM note-guide link after answering, same route as AU/SC", () => {
-    render(<QuestionAnswerCard {...baseProps} exam="pm" />);
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href",
-      "https://note.com/sikaku_rakutoru/n/n20f719f019ac",
-    );
-  });
-
-  it("shows the DB note-guide link after answering, same route as AU/SC/PM", () => {
-    render(<QuestionAnswerCard {...baseProps} exam="db" />);
-    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
-      "href",
-      "https://note.com/sikaku_rakutoru/n/n8b0780e3c3b8",
-    );
-  });
-
-  it("does not change existing answer counting/history instrumentation", () => {
-    render(<QuestionAnswerCard {...auProps} />);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    // Same recording contract as the non-guide exams: exactly one entry, correct.
-    const entries = createHistoryStore().getAllEntries();
-    expect(entries).toHaveLength(1);
-    expect(entries[0]).toMatchObject({ id: auProps.questionId, selected: "イ", correct: true });
-    // The guide's presence does not add a second/duplicate history write.
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toBeInTheDocument();
+describe("QuestionAnswerCard — explanation before supplementary guides", () => {
+  it("keeps note cards out of the answer-to-explanation path after solving or revealing", () => {
+    const { rerender } = render(<QuestionAnswerCard {...baseProps} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 ア/ }));
+    expect(screen.getByRole("link", { name: "解説を読む" })).toHaveAttribute("href", "#explanation");
+    expect(screen.queryByText(/noteの/)).not.toBeInTheDocument();
+    expect(createHistoryStore().getAllEntries()).toHaveLength(1);
+    rerender(<QuestionAnswerCard {...baseProps} exam="au" />);
+    expect(screen.queryByRole("link", { name: /ガイドを読む/ })).not.toBeInTheDocument();
   });
 });
 
