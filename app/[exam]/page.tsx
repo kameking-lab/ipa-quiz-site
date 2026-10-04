@@ -60,6 +60,7 @@ import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
   getAmazonAssociateTag,
+  getAmazonLinkDisclosure,
   getDifficultyLabel,
   isAsinFilled,
 } from "@/data/recommended-books";
@@ -549,11 +550,11 @@ export default async function ExamTopPage({
                     </div>
                     {isAsinFilled(b.asin) && (
                       <div className="flex shrink-0 flex-col items-end gap-0.5">
-                        {getAmazonAssociateTag() && <span className="text-[9px] text-zinc-400 dark:text-zinc-500">PR</span>}
+                        {getAmazonAssociateTag(`/${code}`) && <span className="text-[9px] text-zinc-400 dark:text-zinc-500">PR</span>}
                         <a
-                          href={buildAmazonUrl(b.asin)}
+                          href={buildAmazonUrl(b.asin, `/${code}`)}
                           target="_blank"
-                          rel={getAmazonAssociateTag() ? "noopener noreferrer sponsored" : "noopener noreferrer"}
+                          rel={getAmazonAssociateTag(`/${code}`) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
                           className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-3 py-2 text-xs font-semibold text-white hover:bg-amber-600"
                           style={{ minWidth: 88, minHeight: 44 }}
                         >
@@ -565,6 +566,11 @@ export default async function ExamTopPage({
                 </li>
               ))}
             </ul>
+            {code === "ip" && (
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                {getAmazonLinkDisclosure(`/${code}`)}
+              </p>
+            )}
           </section>
         )}
 

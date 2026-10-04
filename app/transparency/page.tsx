@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAmazonLinkDisclosure } from "@/data/recommended-books";
+import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -349,8 +349,11 @@ export default async function TransparencyPage() {
         <Card>
           <CardContent className="space-y-3 pt-4 text-sm text-zinc-700 dark:text-zinc-300">
             <p>
-              本サービスでは以下のページに 楽天アフィリエイトのリンクを使用しています。{getAmazonLinkDisclosure()}
+              本サービスでは以下のページの一部にアフィリエイトリンクを使用しています。{AMAZON_ASSOCIATE_DISCLOSURE}
               すべてのアフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与し、リンク近くに「PR」と明示しています。
+            </p>
+            <p>
+              Amazonの紹介タグ付きリンクは、ITパスポートの推薦書一覧・試験トップ・2011年度秋期の午前問1に掲載しています。
             </p>
             <ul className="list-disc space-y-1.5 pl-5">
               <li>

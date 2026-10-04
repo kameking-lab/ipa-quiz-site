@@ -516,7 +516,11 @@ export default async function QuestionPage({
 
       {/* Inline book recommendation tied to the category */}
       <div className="print:hidden">
-        <InlineBookHint exam={q.exam} category={q.category} />
+        <InlineBookHint
+          exam={q.exam}
+          category={q.category}
+          pagePath={`/q/${p.exam}/${p.yearSeason}/${p.section}/${p.qnum}`}
+        />
       </div>
 
       {/* 旗艦＝午後II論述AI採点への導線（論述区分 ST/SA/PM/SM/AU のみ自己ゲート） */}
