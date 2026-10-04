@@ -72,6 +72,25 @@ describe("buildAmazonUrl — affiliate tag appending", () => {
     }
   });
 
+  it.each(["/recommended-books/ip", "/ip", "/q/ip/2011-autumn/am/q1"])("restores the verified new ID only for %s while preserving IP product targets", (pagePath) => {
+    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "safeaisite22-22");
+    expect(getAmazonAssociateTag(pagePath)).toBe("safeaisite202-22");
+    expect(getAmazonLinkDisclosure(pagePath)).toBe("Amazonのアソシエイトとして、過去問AIは適格販売により収入を得ています。");
+    expect(RECOMMENDED_BOOKS.ip.map((book) => book.asin)).toEqual([
+      "4297152991", "4297152436", "4815638209", "4297152304", "4867751901", "4300117527",
+    ]);
+    for (const book of RECOMMENDED_BOOKS.ip) {
+      expect(buildAmazonUrl(book.asin, pagePath)).toBe(`https://www.amazon.co.jp/dp/${book.asin}?tag=safeaisite202-22`);
+    }
+  });
+
+  it.each(["/ap", "/recommended-books/ap", "/q/ip/2011-autumn/am/q2", "/q/ip/2012-spring/am/q1", "/ip/"])("keeps the closed legacy tag blocked outside the approved exact routes: %s", (pagePath) => {
+    vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "safeaisite22-22");
+    expect(getAmazonAssociateTag(pagePath)).toBe("");
+    expect(buildAmazonUrl("4297152436", pagePath)).toBe("https://www.amazon.co.jp/dp/4297152436");
+    expect(getAmazonLinkDisclosure(pagePath)).toContain("紹介料は受け取りません");
+  });
+
   it("does not suppress a similar but different tag", () => {
     vi.stubEnv("NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG", "safeaisite22-22-other");
     expect(buildAmazonUrl("4297152991")).toBe("https://www.amazon.co.jp/dp/4297152991?tag=safeaisite22-22-other");

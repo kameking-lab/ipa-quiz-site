@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAmazonAssociateTag, getAmazonLinkDisclosure } from "@/data/recommended-books";
+import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import {
   AlertOctagon,
   ArrowLeft,
@@ -233,9 +233,7 @@ export default function TermsPage() {
               価格・在庫・最新版情報については、リンク先の販売ページの表示が最新です。
             </p>
             <p>
-              {getAmazonAssociateTag()
-                ? "当サービスは Amazon.co.jp を宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。"
-                : getAmazonLinkDisclosure()}
+              {AMAZON_ASSOCIATE_DISCLOSURE}
             </p>
           </Section>
 

@@ -32,19 +32,32 @@ export function isRakutenIdFilled(id: string | undefined): boolean {
 /** This site's former associate ID was confirmed closed on 2026-10-03. Keep legacy env values safe. */
 const CLOSED_AMAZON_ASSOCIATE_TAG = "safeaisite22-22";
 
-export function getAmazonAssociateTag(): string {
+// The reapplication/media registration was confirmed on 2026-10-04.
+// Restore only the three previously measured product-link surfaces.
+const RESTORED_AMAZON_ASSOCIATE_TAG = "safeaisite202-22";
+const RESTORED_AMAZON_ROUTES = new Set([
+  "/recommended-books/ip",
+  "/ip",
+  "/q/ip/2011-autumn/am/q1",
+]);
+
+export const AMAZON_ASSOCIATE_DISCLOSURE =
+  "Amazonのアソシエイトとして、過去問AIは適格販売により収入を得ています。";
+
+export function getAmazonAssociateTag(pagePath?: string): string {
+  if (pagePath && RESTORED_AMAZON_ROUTES.has(pagePath)) return RESTORED_AMAZON_ASSOCIATE_TAG;
   const configured = process.env.NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG ?? "";
   return configured.trim() === CLOSED_AMAZON_ASSOCIATE_TAG ? "" : configured;
 }
 
-export function getAmazonLinkDisclosure(): string {
-  return getAmazonAssociateTag()
-    ? "Amazonのリンクにはアフィリエイトリンクが含まれます。"
+export function getAmazonLinkDisclosure(pagePath?: string): string {
+  return getAmazonAssociateTag(pagePath)
+    ? AMAZON_ASSOCIATE_DISCLOSURE
     : "Amazonのリンクは紹介タグのない通常の商品リンクです。Amazon購入による紹介料は受け取りません。";
 }
 
-export function buildAmazonUrl(asin: string): string {
-  const tag = getAmazonAssociateTag();
+export function buildAmazonUrl(asin: string, pagePath?: string): string {
+  const tag = getAmazonAssociateTag(pagePath);
   const base = `https://www.amazon.co.jp/dp/${asin}`;
   return tag ? `${base}?tag=${tag}` : base;
 }

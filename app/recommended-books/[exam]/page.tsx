@@ -146,7 +146,7 @@ export default async function RecommendedBooksExamPage({
         url: absUrl,
         itemListElement: books.map((book, index) => {
           const productUrl = isAsinFilled(book.asin)
-            ? buildAmazonUrl(book.asin)
+            ? buildAmazonUrl(book.asin, `/recommended-books/${exam}`)
             : `${absUrl}#${book.id}`;
           const product: Record<string, unknown> = {
             "@type": "Product",
@@ -407,7 +407,7 @@ export default async function RecommendedBooksExamPage({
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">
         <p className="font-semibold">アフィリエイトに関する表示</p>
         <p className="mt-1">
-          {getAmazonLinkDisclosure()}
+          {getAmazonLinkDisclosure(`/recommended-books/${exam}`)}
           楽天のアフィリエイトリンクを経由してご購入いただいた場合、運営費の一部として収益が発生することがあります。
           価格・在庫・最新版情報はリンク先の表示が最新です。
         </p>
@@ -419,7 +419,7 @@ export default async function RecommendedBooksExamPage({
 function BookCard({ book, exam }: { book: RecommendedBook; exam: ExamCode }) {
   const amazonReady = isAsinFilled(book.asin);
   const rakutenReady = isRakutenIdFilled(book.rakutenId);
-  const amazonUrl = amazonReady ? buildAmazonUrl(book.asin) : null;
+  const amazonUrl = amazonReady ? buildAmazonUrl(book.asin, `/recommended-books/${exam}`) : null;
   const rakutenUrl = rakutenReady ? buildRakutenUrl(book.rakutenId) : null;
 
   return (
@@ -461,7 +461,7 @@ function BookCard({ book, exam }: { book: RecommendedBook; exam: ExamCode }) {
         {(amazonUrl || rakutenUrl) ? (
           <div>
             <p className="mb-1.5 text-[10px] text-zinc-400 dark:text-zinc-500">
-              {getAmazonAssociateTag() ? "PR（アフィリエイトリンク）" : rakutenUrl ? "購入先（楽天はPR）" : "購入先"}
+              {getAmazonAssociateTag(`/recommended-books/${exam}`) ? "PR（アフィリエイトリンク）" : rakutenUrl ? "購入先（楽天はPR）" : "購入先"}
             </p>
             <div className="flex flex-wrap gap-2">
               {amazonUrl && (
@@ -473,7 +473,7 @@ function BookCard({ book, exam }: { book: RecommendedBook; exam: ExamCode }) {
                     retailer="amazon"
                     placement="recommended_books_page"
                     target="_blank"
-                    rel={getAmazonAssociateTag() ? "noopener noreferrer sponsored" : "noopener noreferrer"}
+                    rel={getAmazonAssociateTag(`/recommended-books/${exam}`) ? "noopener noreferrer sponsored" : "noopener noreferrer"}
                   >
                     Amazonで見る
                     <ExternalLink className="h-3.5 w-3.5" />

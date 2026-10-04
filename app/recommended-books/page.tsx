@@ -4,7 +4,7 @@ import { ArrowLeft, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { RECOMMENDED_BOOKS, getAmazonLinkDisclosure } from "@/data/recommended-books";
+import { RECOMMENDED_BOOKS, AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import { EXAM_LABELS } from "@/lib/utils";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import type { ExamCode } from "@/lib/questions/types";
@@ -159,7 +159,7 @@ export default function RecommendedBooksIndexPage() {
       <section className="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">
         <p className="font-semibold">アフィリエイトに関する表示</p>
         <p className="mt-1">
-          {getAmazonLinkDisclosure()}
+          {AMAZON_ASSOCIATE_DISCLOSURE}
           楽天のアフィリエイトリンクを経由してご購入いただいた場合、運営費の一部として収益が発生することがあります。
           価格・在庫はリンク先の表示が最新です。
         </p>
