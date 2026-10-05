@@ -3,7 +3,8 @@ import Link from "next/link";
 import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { getHomeDirectory } from "@/lib/home/home-directory";
 import { StatsCharts } from "./StatsCharts";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -152,7 +153,9 @@ const REPORTS = [
 export const revalidate = 300;
 
 export default async function TransparencyPage() {
-  const total = ALL_QUESTIONS.length;
+  const domains = getHomeDirectory();
+  const total = domains.reduce((sum, domain) => sum + domain.totalQuestions, 0);
+  const qualificationCount = domains.reduce((sum, domain) => sum + domain.qualificationCount, 0);
   const byExam = Object.entries(QUESTIONS_BY_EXAM)
     .map(([code, list]) => ({
       exam: code,
@@ -317,8 +320,8 @@ export default async function TransparencyPage() {
           収録問題数・利用状況などの運営実態を公開しています。
         </p>
         <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <MetricCard label="総収録問題" value={total.toLocaleString("ja-JP")} sub="全試験区分合計" />
-          <MetricCard label="試験区分" value="13 区分" sub="IP / SG / FE / AP / ほか" />
+          <MetricCard label="公開中の問題数" value={total.toLocaleString("ja-JP")} sub="ホーム掲載資格・区分の合計" />
+          <MetricCard label="資格・区分" value={qualificationCount.toLocaleString("ja-JP")} sub="ホームと同じ公開範囲" />
           <MetricCard label="利用料" value="¥0" sub="全機能無料" />
           <MetricCard label="運営スタイル" value="ボランティア有志による運営" sub="教育貢献" />
         </div>
