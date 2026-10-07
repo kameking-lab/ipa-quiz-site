@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function Denken1Page() {
           })}
         </div>
       </section>
+      <ExamYearArchiveLinks exam="denken1" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
         問題・正答の出典：一般財団法人 電気技術者試験センター「令和8年度第一種電気主任技術者一次試験」。問題文は空欄ごとの設問に分けて整形しています（改変あり）。
       </p>
