@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { FP1_QUESTIONS } from "@/data/questions/fp1";
+import legacy from "@/data/questions/fp1/launch.json";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
@@ -11,17 +12,17 @@ import { parseQuestionBlocks } from "@/components/quiz/QuestionBody";
 
 describe("FP1 2026 May academic pilot", () => {
   it("exposes exactly the reviewed part of the official basic paper", () => {
-    expect(FP1_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24, 25, 27, 28, 48]);
-    expect(FP1_QUESTIONS.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "3", "2", "3", "4", "4", "3", "4", "1", "4", "4", "2", "1", "3", "1", "3", "4", "2", "2", "3", "1", "3", "2"]);
-    expect(FP1_QUESTIONS.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "ウ", "イ", "ウ", "エ", "エ", "ウ", "エ", "ア", "エ", "エ", "イ", "ア", "ウ", "ア", "ウ", "エ", "イ", "イ", "ウ", "ア", "ウ", "イ"]);
-    expect(QUESTIONS_BY_EXAM.fp1).toHaveLength(25);
-    expect(getQuestionsByExamStrict("fp1")).toHaveLength(25);
+    expect(legacy.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24, 25, 27, 28, 48]);
+    expect(legacy.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "3", "2", "3", "4", "4", "3", "4", "1", "4", "4", "2", "1", "3", "1", "3", "4", "2", "2", "3", "1", "3", "2"]);
+    expect(legacy.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "ウ", "イ", "ウ", "エ", "エ", "ウ", "エ", "ア", "エ", "エ", "イ", "ア", "ウ", "ア", "ウ", "エ", "イ", "イ", "ウ", "ア", "ウ", "イ"]);
+    expect(QUESTIONS_BY_EXAM.fp1).toHaveLength(50);
+    expect(getQuestionsByExamStrict("fp1")).toHaveLength(50);
     expect(defaultPracticeSession("fp1")).toBe("gakka");
     expect(EXAM_CONFIGS.fp1.sessions[0]?.expectedQuestions).toBe(50);
   });
 
   it("preserves four options, per-option explanations, official provenance and the law date", () => {
-    for (const q of FP1_QUESTIONS) {
+    for (const q of FP1_QUESTIONS.filter(q => legacy.some(old => old.id === q.id))) {
       expect(getChoiceKeys(q.choices)).toEqual(["ア", "イ", "ウ", "エ"]);
       expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ", "ウ", "エ"]);
       expect(q.choices?.[q.answer as "ア" | "イ" | "ウ" | "エ"]).toBeTruthy();
@@ -34,7 +35,7 @@ describe("FP1 2026 May academic pilot", () => {
       expect(q.sourceAnswerUrl).toBe("https://www.kinzai.or.jp/fp/news-fp/50274.html");
     }
     expect(getQualificationByExamCode("fp1")?.status).toBe("live");
-    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("50問中");
+    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("基礎編50問");
   });
 
   it("renders the supplied coefficient table as a real table", () => {

@@ -1,0 +1,1113 @@
+[
+  {
+    "id": "fp1-2026-may-gakka-q12",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 12,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "リスク管理",
+    "topicTags": [
+      "法人税基本通達9-3-5の2"
+    ],
+    "difficulty": 4,
+    "question": "Ｘ株式会社（以下、「Ｘ社」という）の代表取締役であるＡさんは、以下の定期保険\nへの加入を検討している。Ｘ社の初回の保険料支払時の経理処理として、次のうち最\nも適切なものはどれか。 \n \n保険の種類 ： 無配当定期保険（特約付加なし） \n契約年月日 ： 2026年７月１日 \n契約者（＝保険料負担者） ： Ｘ社 \n被保険者 ： Ａさん（加入時における被保険者の年齢65歳） \n死亡保険金受取人 ： Ｘ社 \n保険期間・保険料払込期間 ： 100歳満了 \n基本保険金額 ： １億円 \n最高解約返戻率 ： 65.0％（経過５年目） \n年払保険料 ： 540万円",
+    "choices": {
+      "ア": "|借方|貸方|\n|---|---|\n|定期保険料 324万円|現預金 540万円|\n|前払保険料 216万円||",
+      "イ": "|借方|貸方|\n|---|---|\n|定期保険料 270万円|現預金 540万円|\n|前払保険料 270万円||",
+      "ウ": "|借方|貸方|\n|---|---|\n|定期保険料 216万円|現預金 540万円|\n|前払保険料 324万円||",
+      "エ": "|借方|貸方|\n|---|---|\n|定期保険料 189万円|現預金 540万円|\n|前払保険料 351万円||"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。65％は最高解約返戻率が50％超70％以下の区分。資産計上40％の216万円、損金算入60％の324万円、貸方540万円となる。",
+    "choiceExplanations": {
+      "ア": "65％は最高解約返戻率が50％超70％以下の区分。資産計上40％の216万円、損金算入60％の324万円、貸方540万円となる。",
+      "イ": "資産50％・費用50％とする区分ではない。最高解約返戻率65％では40％を資産計上する。",
+      "ウ": "資産60％・費用40％は別の返戻率区分。本問の216万円を資産、324万円を費用とする。",
+      "エ": "65％の返戻率をそのまま資産計上割合にしてはならない。所定の資産計上割合40％を使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5364-2.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/09/09_03.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q19",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 19,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "公式問題p12"
+    ],
+    "difficulty": 4,
+    "question": "以下の表に記載されている割引債の１年複利計算による最終利回り（空欄①）と固\n定利付債の単利計算による最終利回り（空欄②）の組合せとして、次のうち最も適切\nなものはどれか。なお、税金や手数料等は考慮せず、計算結果は表示単位の小数点以\n下第３位を四捨五入すること。\n\n|項目|割引債|固定利付債|\n|---|---|---|\n|単価|88.42円|98.85円|\n|償還価格|100.00円|100.00円|\n|表面利率|―|1.08％|\n|最終利回り|（①）％|（②）％|\n|残存期間|８年|４年|",
+    "choices": {
+      "ア": "① 1.55   ② 1.36",
+      "イ": "① 1.63   ② 1.36",
+      "ウ": "① 1.55   ② 1.38",
+      "エ": "① 1.63   ② 1.38"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "公式正答は3。割引債は{(100/88.42)^(1/8)−1}×100≒1.55％。利付債は{1.08+(100−98.85)/4}/98.85×100≒1.38％となる。",
+    "choiceExplanations": {
+      "ア": "割引債は1.55％で合うが、利付債の利回りは1.38％。利付債の購入価格98.85を分母にする。",
+      "イ": "割引債1.63％は複利計算と一致せず、利付債1.36％も購入価格を分母にする計算と一致しない。",
+      "ウ": "割引債は{(100/88.42)^(1/8)−1}×100≒1.55％。利付債は{1.08+(100−98.85)/4}/98.85×100≒1.38％となる。",
+      "エ": "利付債1.38％は合うが、割引債は1年複利で1.55％。償還差益を単利換算しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q23",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 23,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "普通分配金と元本払戻金"
+    ],
+    "difficulty": 4,
+    "question": "居住者であるＡさんは、2023年４月に特定口座（源泉徴収選択口座）で、国内の上\n場株式を投資対象とするＸファンド（公募追加型株式投資信託、当初１口１円、年１\n回分配）10,000口を基準価額12,000円で購入した。下記の〈Ｘファンドの分配金実績・\n分配落後基準価額の推移〉に基づき、2026年３月期における10,000口当たりの収益分\n配金について、所得税および復興特別所得税、住民税の源泉（特別）徴収後の手取金額\nとして、次のうち最も適切なものはどれか。なお、源泉（特別）徴収される税額は円\n未満切捨てとすること。\n\n〈Ｘファンドの分配金実績・分配落後基準価額の推移〉\n（10,000口当たりの金額）\n|決算日|2024年３月期|2025年３月期|2026年３月期|\n|---|---|---|---|\n|分配金実績|500円|600円|400円|\n|分配落後基準価額|11,800円|11,900円|11,700円|",
+    "choices": {
+      "ア": "319円",
+      "イ": "340円",
+      "ウ": "360円",
+      "エ": "380円"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。2024年の元本払戻金200円で個別元本は11,800円。2025年は全600円が普通分配金。2026年は分配落後11,700円なので元本払戻金100円・普通分配金300円。所得税等45円、住民税15円を別々に円未満切捨てし、400−45−15＝340円。",
+    "choiceExplanations": {
+      "ア": "400円全部を普通分配金とすると319円になるが、元本払戻金100円は非課税。課税対象は300円。",
+      "イ": "2024年の元本払戻金200円で個別元本は11,800円。2025年は全600円が普通分配金。2026年は分配落後11,700円なので元本払戻金100円・普通分配金300円。所得税等45円、住民税15円を別々に円未満切捨てし、400−45−15＝340円。",
+      "ウ": "課税対象の普通分配金300円に所得税等15.315％と住民税5％がかかる。合計控除60円なので360円ではない。",
+      "エ": "非課税の元本払戻金を400円全部とせず、普通分配金300円への徴収60円を差し引く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm",
+      "https://www.imaj.or.jp/glossary/detail/58.html"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q26",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 26,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "同一年の退職手当合算と重複勤続"
+    ],
+    "difficulty": 4,
+    "question": "居住者であるＡさんは、2025年１月に勤務先を退職し、2025年２月に退職手当を受\nけ取るとともに、2025年３月に確定拠出年金の老齢給付金を一時金として一括で受け\n取った。Ａさんが受け取った退職手当および確定拠出年金の老齢給付金が下記のとお\nりである場合、Ａさんの2025年分の退職所得の金額として、次のうち最も適切なもの\nはどれか。 \n \n なお、Ａさんは、障害者および特別障害者には該当せず、役員等として勤務した期\n間はなかったものとする。また、記載のない事項については考慮しないものとする。 \n \n〈Ａさんが受け取った退職手当および確定拠出年金の老齢給付金〉 \n・退職手当 \n\n支給額 ： 2,400万円 \n支給月 ： 2025年２月 \n勤続年数 ： 36年10カ月（勤続期間：1988年４月１日～2025年１月31日） \n・確定拠出年金の老齢給付金 \n\n支給額 ： 450万円 \n支給月 ： 2025年３月 \n加入年数 ： 10年１カ月（加入期間：2015年１月～2025年１月） \n掛金拠出額累計 ： 270万円 \n\n※支給額は、いずれも2025年において収入すべき金額であり、所得税および復興\n特別所得税、住民税について源泉徴収等される前の金額である。 \n\n※Ａさんは、支払者に「退職所得の受給に関する申告書」を提出している。",
+    "choices": {
+      "ア": "210万円",
+      "イ": "295万円",
+      "ウ": "385万円",
+      "エ": "430万円"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。収入2,400＋450＝2,850万円。勤続36年10カ月は37年で、控除800＋70×17＝1,990万円。DC期間はすべて重複するため控除を増やさず、(2,850−1,990)/2＝430万円。 本問は2025年中の同年受給です。2026年1月1日以後のDC一時金に係る前年以前９年内の調整とは区別します。",
+    "choiceExplanations": {
+      "ア": "同じ2025年に受けた退職手当とDC一時金は合算し、勤続期間の重複を調整する。210万円ではない。",
+      "イ": "掛金拠出額累計270万円をDC一時金から機械的に控除しない。退職所得の収入と控除のルールで計算する。",
+      "ウ": "DCの加入期間は勤続期間と重複し、別途11年分の控除を丸ごと追加できない。",
+      "エ": "収入2,400＋450＝2,850万円。勤続36年10カ月は37年で、控除800＋70×17＝1,990万円。DC期間はすべて重複するため控除を増やさず、(2,850−1,990)/2＝430万円。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1420.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/gensen/2735.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q29",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 29,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "所得税基本通達148-1、青色申告"
+    ],
+    "difficulty": 4,
+    "question": "居住者に係る所得税の青色申告に関する次の記述のうち、最も不適切なものはどれ\nか。",
+    "choices": {
+      "ア": "青色申告者が、不動産所得を生ずべき業務と事業所得を生ずべき業務を営む場合、\n貸借対照表はそれぞれの業務に係るものの区分ごとに各別に作成し、損益計算書は２\nつの業務に係るものを合併して作成する。",
+      "イ": "青色申告者が、青色申告書を提出する年分に生じた純損失の金額を前年に繰り戻し、\n前年分の所得に対する所得税額の還付を受けるためには、前年分の所得税について青\n色申告書を提出している必要がある。",
+      "ウ": "事業所得の金額の計算上、売上原価の計算における棚卸資産の評価方法として低価\n法を選定することができるのは、青色申告者に限られる。",
+      "エ": "青色申告者が行う不動産の貸付が事業的規模に満たない場合、その業務に従事する\n配偶者に支払う給与の額は、労務の対価として適正な額であっても、不動産所得の金\n額の計算上、青色事業専従者給与として必要経費に算入することができない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。貸借対照表は不動産所得と事業所得を合併して作成でき、損益計算書は業務ごとに区分する。記述は両者を逆にしており不適切。",
+    "choiceExplanations": {
+      "ア": "貸借対照表は不動産所得と事業所得を合併して作成でき、損益計算書は業務ごとに区分する。記述は両者を逆にしており不適切。",
+      "イ": "純損失を前年へ繰り戻すには、前年分についても青色申告書を提出していることが必要。",
+      "ウ": "所得税の棚卸資産の低価法は青色申告者に限られる。法人税の評価方法と混同しない。",
+      "エ": "青色事業専従者給与を不動産所得から控除するには事業的規模の貸付であることが必要。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/20/01.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm",
+      "https://laws.e-gov.go.jp/law/340CO0000000096?occasion_date=20251001",
+      "https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shinkoku/annai/23200002.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q30",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 30,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "法人税法施行令28条"
+    ],
+    "difficulty": 4,
+    "question": "法人税における棚卸資産の評価方法に関する次の記述のうち、最も不適切なものは\nどれか。なお、各選択肢において、法人はいずれも内国法人（普通法人）であるもの\nとする。",
+    "choices": {
+      "ア": "棚卸資産の評価方法は、原則として、法人の行う事業の種類ごとに、かつ、商品ま\nたは製品（副産物および作業くずを除く）、半製品、仕掛品等の棚卸資産の区分ごとに\n選定しなければならない。",
+      "イ": "低価法は、棚卸資産について、個別法、先入先出法、総平均法、移動平均法および\n売価還元法のいずれかの方法で算出した取得価額と、最終仕入原価法で算出した取得\n価額とを比較し、いずれか低いほうをその評価額とする方法である。",
+      "ウ": "新たに設立した法人が、納税地の所轄税務署長に対し、所定の期限までに棚卸資産\nの評価方法の届出をしなかった場合、棚卸資産の評価方法は、最終仕入原価法となる。",
+      "エ": "棚卸資産の評価方法を変更する場合、原則として、新たな評価方法を採用しようと\nする事業年度開始の日の前日までに、棚卸資産の評価方法の変更承認申請書を納税地\nの所轄税務署長に提出し、その承認を受ける必要がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。低価法の比較相手は期末の価額であり、最終仕入原価法による取得価額ではない。原価法の評価額と期末価額を比較する。",
+    "choiceExplanations": {
+      "ア": "原則として事業の種類と棚卸資産の区分ごとに評価方法を選定する。",
+      "イ": "低価法の比較相手は期末の価額であり、最終仕入原価法による取得価額ではない。原価法の評価額と期末価額を比較する。",
+      "ウ": "所定の届出がない場合の法定評価方法は最終仕入原価法。",
+      "エ": "変更承認申請は原則として変更予定の事業年度開始日の前日までに提出し、承認を受ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/340CO0000000097",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/05/05_02_02.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q31",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 31,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "法人税法施行令133条の2、法人税基本通達7-1-13"
+    ],
+    "difficulty": 4,
+    "question": "法人税における減価償却資産に関する次の記述のうち、最も不適切なものはどれか。\nなお、各選択肢において、法人はいずれも製造業を営む内国法人（普通法人）である\nものとし、取得した減価償却資産は貸付の用に供するものではないものとする。また、\n当期とは2025年４月１日から2026年３月31日までの事業年度であるものとする。",
+    "choices": {
+      "ア": "当期に取得した特許権や商標権の減価償却費の計算にあたっては、その取得の日か\nら事業の用に供したものとして取り扱う。",
+      "イ": "当期に新築した本社建物に係る不動産取得税および登録免許税を支払った場合、そ\nの税額は、当該建物の取得価額に算入せず、租税公課として損金の額に算入すること\nができる。",
+      "ウ": "当期に取得価額が10万円未満の減価償却資産を取得して事業の用に供した場合、そ\nの使用可能期間の長短にかかわらず、当期において取得価額の全額を損金の額に算入\nすることができる。",
+      "エ": "前期に取得した減価償却資産について一括償却（３年均等償却）を選択したが、当期\nにおいて火災により当該資産が滅失した場合、当期において当該資産の未償却残高の\n全額を損金の額に算入することができる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。一括償却資産は滅失しても未償却残高をその年に一括で損金算入しない。3年均等の償却を続ける。",
+    "choiceExplanations": {
+      "ア": "特許権等の工業所有権は取得の日から事業の用に供したものとして取り扱う。",
+      "イ": "不動産取得税や登録免許税は、取得価額に算入せず損金経理することができる。",
+      "ウ": "本問の10万円未満の資産は、事業供用年度に全額損金算入できる少額資産に該当する。",
+      "エ": "一括償却資産は滅失しても未償却残高をその年に一括で損金算入しない。3年均等の償却を続ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/law/shitsugi/hojin/04/03.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/07/07_01_02.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/07/07_01_01.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/07/07_03_01.htm",
+      "https://laws.e-gov.go.jp/law/340CO0000000097?occasion_date=20251001"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q32",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 32,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "簡易課税とインボイス"
+    ],
+    "difficulty": 4,
+    "question": "消費税に関する次の記述のうち、最も不適切なものはどれか。なお、記載のない事\n項については考慮しないものとする。",
+    "choices": {
+      "ア": "簡易課税制度の適用を受ける事業者が、第１種事業から第６種事業までのうち２種\n類以上の事業を行い、そのうち１種類の事業の課税売上高が全体の課税売上高の75％\n以上を占める場合、その事業のみなし仕入率を全体の課税売上に対して適用すること\nができる。",
+      "イ": "課税事業者である被相続人の相続が開始した場合、被相続人が提出した簡易課税制\n度選択届出書の効力は、相続により被相続人の事業を承継した相続人には及ばず、当\n該相続人が簡易課税制度の適用を受けようとするときは、新たに簡易課税制度選択届\n出書を提出する必要がある。",
+      "ウ": "適格請求書発行事業者が国内において行った課税資産の譲渡等が小売業や飲食店業\nに係るものである場合、適格請求書発行事業者は、適格請求書に代えて、適格請求書\nの記載事項を簡易なものとした適格簡易請求書を交付することができる。",
+      "エ": "免税事業者である個人事業者が適格請求書発行事業者の登録を受けた場合、原則と\nして、登録日以後２年を経過する日の属する課税期間までの各課税期間については、\nその登録の取消しを受けることができない。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。2年の規定は納税義務の免除制限についての規定であり、登録取消しの届出そのものを2年間できないとする規定ではない。",
+    "choiceExplanations": {
+      "ア": "一種類の事業の売上高が全体の75％以上なら、所定の特例によりその事業のみなし仕入率を全体へ適用できる。",
+      "イ": "簡易課税制度選択届出書の効力は相続人に引き継がれない。相続人が選択するために自身の届出が必要。",
+      "ウ": "小売業や飲食店業等では、相手方の名称等を簡略化した適格簡易請求書の交付が認められる。",
+      "エ": "2年の規定は納税義務の免除制限についての規定であり、登録取消しの届出そのものを2年間できないとする規定ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/zeimokubetsu/shohi/keigenzeiritsu/invoice_shinsei.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/shohi/13/01.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/shohi/01/04.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q33",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 33,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "タックスプランニング",
+    "topicTags": [
+      "法人税法22条"
+    ],
+    "difficulty": 4,
+    "question": "Ｘ株式会社（以下、「Ｘ社」という）とその役員の間の取引における法人税および所\n得税の取扱いに関する次の記述のうち、最も不適切なものはどれか。なお、記載のな\nい事項については考慮しないものとする。",
+    "choices": {
+      "ア": "役員が所有する土地（取得価額1,300万円、時価2,800万円）を3,000万円でＸ社に譲\n渡した場合、役員側では譲渡価額3,000万円が譲渡所得の収入金額となる。",
+      "イ": "Ｘ社が所有する土地（取得価額1,400万円、時価1,200万円）を1,100万円で役員に譲\n渡した場合、役員側では時価と譲受価額との差額100万円が給与所得の収入金額となる。",
+      "ウ": "役員がＸ社から無利息で金銭を借り入れた場合、原則として、Ｘ社側では通常収受\nすべき利息の額を益金の額に算入し、役員側では通常支払うべき利息の額が給与所得\nの収入金額となる。",
+      "エ": "借地権の設定にあたって権利金を授受する取引上の慣行がある地域において、役員\nが所有する土地をＸ社に建物の所有を目的として賃貸する場合に、Ｘ社から役員に権\n利金や相当の地代の支払がなく、「土地の無償返還に関する届出書」の提出がないとき\nは、原則として、Ｘ社側では借地権の受贈益が認定課税される。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。会社から受ける時価超過の200万円は役員への給与に当たり、譲渡所得の収入金額へ全3,000万円を入れる記述は不適切。譲渡対価部分と給与部分を分ける。",
+    "choiceExplanations": {
+      "ア": "会社から受ける時価超過の200万円は役員への給与に当たり、譲渡所得の収入金額へ全3,000万円を入れる記述は不適切。譲渡対価部分と給与部分を分ける。",
+      "イ": "会社から低額で取得した100万円の経済的利益は役員の給与所得となる。",
+      "ウ": "会社側は通常の利息を認識し、役員側は無利息貸付による経済的利益を給与として取り扱うのが原則。",
+      "エ": "権利金の慣行があり、権利金・相当の地代・無償返還届のいずれもないという本問の条件では、会社に借地権の受贈益が認定される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/340AC0000000034",
+      "https://laws.e-gov.go.jp/law/340AC0000000033"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q34",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 34,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産鑑定評価基準"
+    ],
+    "difficulty": 4,
+    "question": "不動産鑑定評価基準に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "原価法は、価格時点における対象不動産の再調達原価を求め、この再調達原価につ\nいて減価修正を行って対象不動産の試算価格（積算価格）を求める手法であり、対象\n不動産が土地のみである場合においても、再調達原価を適切に求めることができると\nきは適用することができるものとされている。",
+      "イ": "収益還元法は、対象不動産が将来生み出すであろうと期待される純収益の現在価値\nの総和を求めることにより対象不動産の試算価格（収益価格）を求める手法であり、\n賃貸用不動産または賃貸以外の事業の用に供する不動産の価格を求める場合に特に有\n効とされている。",
+      "ウ": "収益還元法において、収益価格を求める方法には、一期間の純収益を還元利回りに\nよって還元する直接法と、連続する複数の期間に発生する純収益および復帰価格をそ\nの発生時期に応じて現在価値に割り引き、それぞれを合計する間接法がある。",
+      "エ": "取引事例比較法の適用にあたっては、多数の取引事例を収集する必要があり、当該\n取引事例は、原則として、近隣地域または同一需給圏内の類似地域に存する不動産に\n係るもののうちから選択するものとされている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "公式正答は3。正式な方法名は直接還元法とDCF法。記述の直接法・間接法という名称は不動産鑑定評価基準と一致しない。",
+    "choiceExplanations": {
+      "ア": "土地のみでも再調達原価を適切に求められる場合は原価法を適用できる。",
+      "イ": "収益還元法は将来の純収益の現在価値から評価し、賃貸用や事業用不動産の評価に特に有効。",
+      "ウ": "正式な方法名は直接還元法とDCF法。記述の直接法・間接法という名称は不動産鑑定評価基準と一致しない。",
+      "エ": "近隣地域又は同一需給圏内の類似地域等から適切な取引事例を選定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html",
+      "https://www.mlit.go.jp/common/001204083.pdf"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q35",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 35,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "宅地建物取引業法34条の2"
+    ],
+    "difficulty": 4,
+    "question": "宅地建物取引業法に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "専任媒介契約の有効期間は、依頼者の申出により更新することができるが、その更\n新の時から３カ月を超えることはできない。",
+      "イ": "宅地について宅地建物取引業者と専任媒介契約を締結した依頼者は、その有効期間\nにおいて、当該宅地について他の宅地建物取引業者に重ねて媒介を依頼することはで\nきない。",
+      "ウ": "専任媒介契約を締結した宅地建物取引業者は、契約の相手方を探索するため、一定\n期間内に、その目的物である宅地または建物につき、所在、規模、形質、売買すべき\n価額などの事項を指定流通機構に登録しなければならない。",
+      "エ": "専任媒介契約を締結した宅地建物取引業者は、原則として、依頼者に対し、当該専\n任媒介契約に係る業務の処理状況を２週間に１回以上報告しなければならないが、特\n約によりその報告の頻度を減らし、または行わないものとすることができる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。2週間に1回以上という報告義務を減らす特約は依頼者に不利で無効。特約で報告をしないことにはできない。",
+    "choiceExplanations": {
+      "ア": "依頼者の申出により更新できるが、更新時から3カ月を超える期間にはできない。",
+      "イ": "専任媒介の有効期間中は他の宅建業者に重ねて媒介を依頼できない。自己発見取引の可否は専属専任との違い。",
+      "ウ": "専任媒介では指定流通機構への所定事項の登録が必要。",
+      "エ": "2週間に1回以上という報告義務を減らす特約は依頼者に不利で無効。特約で報告をしないことにはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/327AC1000000176"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q36",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 36,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "借地借家法7条"
+    ],
+    "difficulty": 4,
+    "question": "借地借家法に関する次の記述のうち、最も不適切なものはどれか。なお、本問にお\nける普通借地権とは、定期借地権等以外の借地権をいう。また、記載のない事項につ\nいては考慮しないものとする。",
+    "choices": {
+      "ア": "普通借地契約において、存続期間中は地代等を増額しない旨の特約をした場合、そ\nの特約は有効となる。",
+      "イ": "普通借地権の存続期間が満了する前に建物が滅失し、借地権者が残存期間を超えて\n存続すべき建物を築造した場合に、その築造について借地権設定者の承諾があるとき\nは、普通借地権は、原則として、その承諾があった日または建物が築造された日のい\nずれか早い日から30年間存続する。",
+      "ウ": "普通借地権の存続期間が満了し、普通借地契約を更新する場合において、当事者間\nの合意により更新後の期間を50年と定めることは可能である。",
+      "エ": "普通借地権の存続期間が満了し、借地権設定者が普通借地契約を更新しない場合、\n借地権者は、借地権設定者に対し、借地権者が権原により借地上に建築した建物につ\nいて時価で買い取るべきことを請求することができる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。承諾に基づく再築の場合は原則20年であり、30年ではない。承諾日又は築造日の早い日から起算する。",
+    "choiceExplanations": {
+      "ア": "地代等を増額しない旨の特約は有効で、その特約に従う。",
+      "イ": "承諾に基づく再築の場合は原則20年であり、30年ではない。承諾日又は築造日の早い日から起算する。",
+      "ウ": "法定期間より長い期間を当事者が合意でき、更新後50年とすることも可能。",
+      "エ": "契約が更新されない場合、借地権者は権原により建築した建物等の時価による買取りを請求できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/403AC0000000090"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q37",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 37,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "高齢者の居住の安定確保に関する法律52条"
+    ],
+    "difficulty": 4,
+    "question": "高齢者の居住の安定確保に関する法律（高齢者住まい法）における終身建物賃貸借\nに関する次の記述のうち、最も適切なものはどれか。なお、記載のない事項について\nは考慮しないものとする。",
+    "choices": {
+      "ア": "終身建物賃貸借は、賃借人の死亡に至るまで存続し、かつ、賃借人が死亡した時に\n終了する建物の賃貸借であり、その賃貸借契約は公正証書によってしなければならな\nい。",
+      "イ": "終身建物賃貸借契約において、賃貸借期間中は建物の借賃を減額しない旨の特約を\nした場合、その特約は有効となる。",
+      "ウ": "終身建物賃貸借契約において、賃借人となることができるのは、自ら居住するため\nに住宅を必要とする70歳以上の者であって、単身者または同居人が配偶者や70歳以上\nの親族である者に限られる。",
+      "エ": "終身建物賃貸借契約において、賃借人は、老人ホームへの入所により賃貸住宅に居\n住することが困難となった場合や親族と同居するために賃貸住宅に居住する必要がな\nくなった場合であっても、当該契約を解約することはできない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。終身建物賃貸借では借賃を減額しない旨の特約があるとき、その特約に従う。",
+    "choiceExplanations": {
+      "ア": "契約は公正証書等の書面により行うもので、公正証書だけに限定されない。",
+      "イ": "終身建物賃貸借では借賃を減額しない旨の特約があるとき、その特約に従う。",
+      "ウ": "年齢要件は60歳以上であり、70歳以上ではない。同居する親族についても本問の70歳という要件は誤り。",
+      "エ": "老人ホームへの入所や親族との同居等によって居住する必要がなくなる場合など、法定事由に基づく解約ができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/413AC0000000026?occasion_date=20251001"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q38",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 38,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "建築基準法52条"
+    ],
+    "difficulty": 4,
+    "question": "建築基準法における建蔽率および容積率に関する次の記述のうち、最も不適切なも\nのはどれか。",
+    "choices": {
+      "ア": "建築物の建蔽率および容積率の算定において、建築基準法第42条第２項の規定によっ\nて道路の境界線とみなされる線と道との間の部分の敷地（セットバック部分）は、敷\n地面積に算入されない。",
+      "イ": "共同住宅の屋内において、共用の廊下または階段の用に供する部分については、原\n則として、その水平投影面積は建築物の建蔽率の算定の基礎となる建築面積に算入さ\nれず、その床面積は建築物の容積率の算定の基礎となる延べ面積に算入されない。",
+      "ウ": "建築物の地階でその天井が地盤面からの高さ１ｍ以下にあるものの住宅の用途に供\nする部分の床面積は、原則として、当該建築物の住宅等の用途に供する部分の床面積\nの合計の３分の１を限度として、建築物の容積率の算定の基礎となる延べ面積に算入\nされない。",
+      "エ": "専ら自動車または自転車の停留または駐車のための施設の用途に供する部分（自動\n車車庫等部分）の床面積は、原則として、その敷地内の建築物の各階の床面積の合計\nの５分の１を限度として、建築物の容積率の算定の基礎となる延べ面積に算入されない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。共用廊下・階段の床面積の容積率上の不算入を、建築面積・建蔽率の不算入へそのまま広げている点が誤り。",
+    "choiceExplanations": {
+      "ア": "セットバック部分は敷地面積に算入しないため、その部分を建蔽率・容積率の分母へ入れない。",
+      "イ": "共用廊下・階段の床面積の容積率上の不算入を、建築面積・建蔽率の不算入へそのまま広げている点が誤り。",
+      "ウ": "所定の住宅の地階は、住宅等の床面積の合計の3分の1を限度として容積率計算から除外できる。",
+      "エ": "駐車施設等の床面積は、原則として各階床面積の合計の5分の1を限度に容積率計算から除外できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000201",
+      "https://laws.e-gov.go.jp/law/325CO0000000338"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q39",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 39,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "農地法3条"
+    ],
+    "difficulty": 4,
+    "question": "農地法に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "農業者である個人が、所有する農地を他の農業者に農地として譲渡する場合、農業\n委員会の許可を受けるにあたっては、原則として、譲受人またはその世帯員等がその\n取得後において耕作の事業に供すべき農地の面積の合計が5,000㎡以上でなければなら\nない。",
+      "イ": "個人が農地の所有権を相続により取得した場合、当該権利を取得したことを知った\n時点からおおむね10カ月以内に、農業委員会にその旨を届け出なければならない。",
+      "ウ": "農業者である個人が、所有する市街化区域内にある農地を駐車場用地として自ら転\n用する場合、あらかじめ農業委員会に届け出れば、農地の転用に係る都道府県知事等\nの許可を受ける必要はない。",
+      "エ": "農業者である個人が、所有する農地に農作物の育成のための農業用施設を建設する\n場合に、その農地が200㎡未満であるときは、農地の転用に係る都道府県知事等の許可\nを受ける必要はない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。農地取得の下限面積要件は2023年4月1日に廃止されており、5,000㎡以上を原則とする記述は基準日時点で不適切。",
+    "choiceExplanations": {
+      "ア": "農地取得の下限面積要件は2023年4月1日に廃止されており、5,000㎡以上を原則とする記述は基準日時点で不適切。",
+      "イ": "相続等による権利取得は農業委員会への届出が必要で、期間は取得を知った時点からおおむね10カ月以内。",
+      "ウ": "市街化区域内の農地転用は、あらかじめ農業委員会へ届け出ることで都道府県知事等の許可が不要となる。",
+      "エ": "自らの農業用施設に供する200㎡未満の農地転用には許可不要の例外がある。本問はその条件を満たす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/327AC0000000229"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q40",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 40,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "不動産登記法76条の3、租税特別措置法84条の2の3"
+    ],
+    "difficulty": 4,
+    "question": "登録免許税に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "婚姻期間が20年以上である夫婦において、夫からの贈与により固定資産税評価額\n1,000万円の居住用家屋を取得した妻が、贈与税の配偶者控除の適用を受けた場合、そ\nの居住用家屋の所有権移転登記について登録免許税は課されない。",
+      "イ": "夫の相続について、相続税の申告期限までに遺産分割協議が成立しないことにより、\n法定相続分に基づいて相続税の申告をした妻が、遺産に属する固定資産税評価額5,000\n万円の土地に係る相続人申告登記の申請をした場合、その登記について登録免許税は\n課されない。",
+      "ウ": "母の相続により固定資産税評価額500万円の家屋を取得した父が、当該家屋の所有権\n移転登記をしないまま死亡し、長女が当該家屋を相続により取得した場合、長女を当\n該家屋の所有権の登記名義人とするため、あらかじめ父をその登記名義人とする登記\nについては、登録免許税は課されない。",
+      "エ": "父の相続により長男が土地を取得した場合に、当該土地の固定資産税評価額が200万\n円以下であるときは、当該土地の所有権移転登記について登録免許税は課されない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。相続人申告登記は登録免許税が課されない。相続に基づく所有権移転登記そのものとは異なる。",
+    "choiceExplanations": {
+      "ア": "贈与税の配偶者控除は登録免許税の非課税制度ではない。贈与による所有権移転登記には登録免許税がかかる。",
+      "イ": "相続人申告登記は登録免許税が課されない。相続に基づく所有権移転登記そのものとは異なる。",
+      "ウ": "死亡した相続人を登記名義人とする非課税特例は土地を対象とし、本問の家屋には適用されない。",
+      "エ": "少額土地の相続登記の免税特例は評価額100万円以下が基準であり、200万円以下ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/416AC0000000123",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm",
+      "https://www.city.sakado.lg.jp/site/akiya/40588.html"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q41",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 41,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "不動産",
+    "topicTags": [
+      "租税特別措置法35条"
+    ],
+    "difficulty": 4,
+    "question": "「居住用財産を譲渡した場合の3,000万円の特別控除」（以下、「本特例」という）に\n関する次の記述のうち、適切なものはいくつあるか。なお、本問において、ほかに必要\nとされる要件等はすべて満たしているものとする。 \n(a) Ａさんが借地上にある居住用家屋とともに借地権を第三者に譲渡した場合、居住\n用家屋の譲渡は本特例の対象となるが、借地権の譲渡は本特例の対象とならない。 \n(b) Ｂさんとその配偶者が協議離婚をし、Ｂさんが所有する居住用マンションを元配\n偶者に財産分与した場合、Ｂさんは、その財産分与にあたって本特例の適用を受け\nることができる。 \n(c) Ｃさんとその配偶者が家屋と敷地のそれぞれについて２分の１ずつの共有持分を\n有する自宅を共同して第三者に譲渡し、本特例の適用を受ける場合、Ｃさんと配偶\n者のそれぞれの譲渡所得の金額の計算上、いずれも最大3,000万円を控除することが\nできる。",
+    "choices": {
+      "ア": "１つ",
+      "イ": "２つ",
+      "ウ": "３つ",
+      "エ": "０（なし）"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。(a)は誤りで、家屋とともに譲渡する借地権も対象。(b)は離婚後の元配偶者への財産分与について要件を満たせば対象。(c)は共有者各人が要件を満たすとそれぞれ最大3,000万円の控除を受けられる。適切なのは2つ。",
+    "choiceExplanations": {
+      "ア": "適切なのは(b)(c)の2つであり、1つではない。(a)の借地権も家屋とともに譲渡する敷地に関する権利として対象となる。",
+      "イ": "(a)は誤りで、家屋とともに譲渡する借地権も対象。(b)は離婚後の元配偶者への財産分与について要件を満たせば対象。(c)は共有者各人が要件を満たすとそれぞれ最大3,000万円の控除を受けられる。適切なのは2つ。",
+      "ウ": "(a)は借地権を対象外とする点で誤り。3つすべて適切ではない。",
+      "エ": "(b)(c)は適切であり、適切なものがないという組合せではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3308.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q42",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 42,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "民法549条"
+    ],
+    "difficulty": 4,
+    "question": "民法における贈与に関する次の記述のうち、最も不適切なものはどれか。",
+    "choices": {
+      "ア": "定期贈与は、贈与者が死亡した場合には、当然にその効力が失われるが、受贈者が\n死亡した場合には、その相続人に定期の給付を受ける権利が承継される。",
+      "イ": "書面によらない贈与は、履行が終了した部分を除き、贈与者または受贈者が解除を\nすることができる。",
+      "ウ": "負担付贈与は、受贈者に一定の給付をなすべき義務を負わせる贈与であり、その受\n贈者の負担から利益を受ける者は贈与者以外の第三者とすることもできる。",
+      "エ": "遺言者が作成した遺言書の内容が、その作成後にした死因贈与の内容と抵触すると\nきは、その抵触する部分については、死因贈与により遺言書の内容を撤回したものと\nみなされる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。定期贈与は贈与者又は受贈者の死亡によって効力を失う。受贈者死亡時に相続人へ承継されるとする記述は不適切。",
+    "choiceExplanations": {
+      "ア": "定期贈与は贈与者又は受贈者の死亡によって効力を失う。受贈者死亡時に相続人へ承継されるとする記述は不適切。",
+      "イ": "書面によらない贈与は、既に履行を終えた部分を除き、各当事者が解除できる。",
+      "ウ": "負担付贈与の負担の利益を受ける相手は贈与者に限らず第三者でもよい。",
+      "エ": "後の死因贈与が先の遺言と抵触する場合、その抵触部分は遺言者の後の生前処分により撤回したものとみなされる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/129AC0000000089"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q43",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 43,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続税法5条"
+    ],
+    "difficulty": 4,
+    "question": "贈与税に関する次の記述のうち、最も適切なものはどれか。なお、記載のない事項\nについては考慮しないものとする。",
+    "choices": {
+      "ア": "契約者（＝保険料負担者）および被保険者をＡさん、死亡保険金受取人を妻Ｂさん\nとする終身保険において、契約者（＝保険料負担者）を妻Ｂさんに変更した場合、妻\nＢさんは、その変更時において、Ａさんが負担していた保険料に相当する額の贈与を\n受けたものとみなされる。",
+      "イ": "Ｃさんが、父Ｄさんの所有する土地を無償で借り受けて当該土地上に家屋を建築し、\n居住の用に供した場合、原則として、Ｃさんは、父Ｄさんから当該土地に係る借地権\nの贈与を受けたものとみなされる。",
+      "ウ": "相続時精算課税適用者であるＥさんが、2026年４月に特定贈与者である母Ｆさんか\nら相続税評価額2,000万円の土地の贈与を受けた後、母Ｆさんが2026年10月に死亡した\n場合に、2027年３月15日までに母Ｆさんの相続に係る相続税の申告をすることができ\nないときは、Ｅさんは、当該土地の贈与について贈与税の申告をしなければならない。",
+      "エ": "Ｇさんが、2026年４月に叔父Ｈさんから家屋の贈与を受けた後、養子縁組により叔\n父Ｈさんの養子となり、2026年10月に叔父Ｈさん（養親）から土地の贈与を受けて相\n続時精算課税を選択した場合、家屋に係る贈与税額の計算上、課税価格から暦年課税\nに係る基礎控除額が控除され、土地に係る贈与税額の計算上、課税価格から相続時精\n算課税に係る基礎控除額が控除される。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。養子縁組前の贈与は暦年課税、養子縁組後に選択した相続時精算課税の贈与は別区分。各区分の基礎控除をそれぞれ適用する。",
+    "choiceExplanations": {
+      "ア": "契約者を変更しただけで、直ちに既払保険料相当額の贈与税が課されるとは限らない。保険金等の受取り時の保険料負担者との関係で判定する。",
+      "イ": "土地の使用貸借では借地権の価額をゼロとして取り扱い、子が土地を無償で借りても借地権贈与の認定はしない。",
+      "ウ": "相続時精算課税の特定贈与者が贈与年に死亡した場合はその贈与財産を相続税の対象に含め、相続税申告期限が翌年3月15日を過ぎるという理由だけで贈与税の申告を求めない。",
+      "エ": "養子縁組前の贈与は暦年課税、養子縁組後に選択した相続時精算課税の贈与は別区分。各区分の基礎控除をそれぞれ適用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4552.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4429.htm",
+      "https://www.nta.go.jp/law/shitsugi/sozoku/14/05.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/10.htm",
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20251001"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q44",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 44,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "民法887条"
+    ],
+    "difficulty": 4,
+    "question": "民法における相続分に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "被相続人に長男と孫（長男の子）がいる場合に、長男が被相続人の相続開始前に死\n亡していたときや相続の放棄をしたときは、孫は代襲相続人となり、長男が受けるべ\nきであった相続分を代襲する。",
+      "イ": "相続人が被相続人の兄と姉と弟の３人である場合に、兄と姉は被相続人と父母を同\nじくするが、弟は被相続人と父母の一方のみを同じくするときは、弟の法定相続分は\n５分の１となる。",
+      "ウ": "共同相続人のなかに被相続人から生計の資本として贈与を受けた者がいる場合に、\nその贈与が特別受益とされるときは、被相続人が相続開始時において有した財産の価\n額からその贈与の価額を控除したものを相続財産とみなし、各共同相続人の相続分が\n算定される。",
+      "エ": "寄与分は、被相続人の財産の維持または増加について特別の寄与をした相続人の相\n続分に加算されるものであり、その寄与として認められるものは、被相続人に対して\n無償で行った療養看護に限られる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "公式正答は2。父母の一方だけを同じくする弟の相続分は父母双方を同じくする兄姉の半分。重み2:2:1で弟は1/5となる。",
+    "choiceExplanations": {
+      "ア": "相続放棄は代襲相続の原因ではない。死亡や欠格・廃除の場合と区別する。",
+      "イ": "父母の一方だけを同じくする弟の相続分は父母双方を同じくする兄姉の半分。重み2:2:1で弟は1/5となる。",
+      "ウ": "特別受益は贈与額を相続財産に加えて計算する持戻しであり、最初に財産から控除する記述は逆。",
+      "エ": "寄与分は療養看護に限られず、被相続人の事業に関する労務の提供や財産上の給付などの特別の寄与も対象。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/129AC0000000089"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q45",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 45,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "不動産登記規則37条の3"
+    ],
+    "difficulty": 4,
+    "question": "法定相続情報証明制度（以下、「本制度」という）に関する次の記述のうち、最も不\n適切なものはどれか。",
+    "choices": {
+      "ア": "本制度は、被相続人が相続開始時において有した財産が預貯金のみであり、被相続\n人名義の不動産がない場合であっても利用することができる。",
+      "イ": "本制度に基づき、登記所において法定相続情報一覧図の写しの交付を受けるにあたっ\nては、請求する通数にかかわらず、手数料は徴収されない。",
+      "ウ": "本制度の申出人は、申出日の翌年から５年間、法定相続情報一覧図の写しの再交付\nを受けることができる。",
+      "エ": "本制度により交付を受けた法定相続情報一覧図の写しには法定相続情報番号が記載\nされており、相続登記や商業登記、法人登記等の登記申請においては、その番号の申\n請書への記載をもって、法定相続情報一覧図の写しの添付に代えることができる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は4。法定相続情報番号による写し添付の省略を、商業・法人登記等にも一律に広げている点が不適切。対象となる登記申請を区別する。",
+    "choiceExplanations": {
+      "ア": "不動産がなく預貯金だけの相続でも法定相続情報証明制度を利用できる。",
+      "イ": "法定相続情報一覧図の写しの交付について手数料はかからない。",
+      "ウ": "一覧図は申出日の翌年から5年間保存され、その保存期間中に申出人が再交付を受けられる。",
+      "エ": "法定相続情報番号による写し添付の省略を、商業・法人登記等にも一律に広げている点が不適切。対象となる登記申請を区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://houmukyoku.moj.go.jp/homu/page7_000013.html",
+      "https://houmukyoku.moj.go.jp/homu/page7_00025.html",
+      "https://laws.e-gov.go.jp/law/417M60000010018"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q46",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 46,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "相続税法3条"
+    ],
+    "difficulty": 4,
+    "question": "相続税の課税財産等に関する次の記述のうち、最も適切なものはどれか。なお、各\n選択肢において、相続人は日本国籍と国内に住所を有する個人であり、記載のない事\n項については考慮しないものとする。",
+    "choices": {
+      "ア": "被相続人の配偶者が、被相続人に係る準確定申告書を提出し、被相続人が納付した\n予定納税額の一部の還付を受けた場合、還付金は相続税の課税対象となり、その還付\n加算金は所得税の課税対象となる。",
+      "イ": "退職年金を受給している者が死亡し、その相続人が当該年金を継続して受給するこ\nととなった場合、当該年金の受給に関する権利は、相続税の課税対象とならず、所得\n税の課税対象となる。",
+      "ウ": "代償分割の方法により相続財産の全部または一部の分割が行われた場合に、相続人\nが他の共同相続人から代償財産として交付を受けた現金は、相続税の課税対象となら\nず、贈与税の課税対象となる。",
+      "エ": "特別寄与者に対して特別寄与料を支払った相続人が納付すべき相続税の額は、原則\nとして、その支払がなかったものとした場合において当該相続人が納付すべき相続税\nの額から、当該特別寄与料の額を控除した金額となる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。準確定申告に伴う還付金は被相続人に帰属する財産として相続税の対象。還付加算金は受ける者の雑所得として所得税の対象となる。",
+    "choiceExplanations": {
+      "ア": "準確定申告に伴う還付金は被相続人に帰属する財産として相続税の対象。還付加算金は受ける者の雑所得として所得税の対象となる。",
+      "イ": "相続人が取得する退職年金等の継続受給権は、要件に応じて相続税の課税対象となる。所得税だけの対象とする記述は誤り。",
+      "ウ": "遺産分割に伴う代償金は相続による取得として扱う。共同相続人から受けた現金というだけで贈与税の対象にはしない。",
+      "エ": "特別寄与料は支払った相続人の相続税の課税価格から控除する。算出された相続税額から寄与料額を直接控除する制度ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4105.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/09.htm",
+      "https://www.nta.go.jp/law/shitsugi/shotoku/03/01.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4173.htm",
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20251001",
+      "https://www.nta.go.jp/law/shitsugi/sozoku/02/01.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4123.htm",
+      "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/01/03.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q47",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 47,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "2024年以後相続時精算課税110万円基礎控除"
+    ],
+    "difficulty": 4,
+    "question": "Ａさんは、下記の〈贈与財産の概要〉のとおり、父母から贈与を受けていたが、2026\n年５月24日に父が死亡した。Ａさんが贈与を受けた財産につき、父の相続に係る相続\n税の課税価格に加算される金額として、次のうち最も適切なものはどれか。なお、い\nずれの財産も贈与税の課税対象となり、ほかに贈与は受けていないものとする。また、\nＡさんは贈与を受けた財産について贈与税の各種非課税制度の適用を受けていないも\nのとする。\n\n〈贈与財産の概要〉\n|贈与日|贈与者|贈与財産の種類|贈与税の課税方式|贈与時の価額（相続税評価額）|\n|---|---|---|---|---|\n|2023年10月10日|父|現金|暦年課税|200万円|\n|2023年10月10日|母|現金|暦年課税|200万円|\n|2024年11月20日|父|現金|相続時精算課税|500万円|\n|2025年２月10日|父|現金|相続時精算課税|2,000万円|\n|2025年２月10日|母|土地|相続時精算課税|2,000万円|",
+    "choices": {
+      "ア": "2,425万円",
+      "イ": "2,480万円",
+      "ウ": "2,535万円",
+      "エ": "2,590万円"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切です。2023年の父からの暦年贈与200万円を加算し、2024年の精算課税贈与500万円から110万円を控除して390万円。2025年は父母の贈与各2,000万円に基礎控除110万円を半分ずつ配分するため、父は2,000−55＝1,945万円。200＋390＋1,945＝2,535万円です。母の贈与財産自体は父の相続へ加算しませんが、2025年の控除のあん分に影響します。",
+    "choiceExplanations": {
+      "ア": "2,425万円ではありません。2023年の父からの暦年贈与200万円は全額加算します。2024年の父からの精算課税贈与は500−110＝390万円。2025年は父母各2,000万円で基礎控除110万円をあん分し、父の控除は55万円、父の加算額は1,945万円です。合計は2,535万円となります。",
+      "イ": "2,480万円は2025年の父だけに基礎控除110万円全額を適用した計算です。同年に母からも相続時精算課税による2,000万円の贈与があるため、父の控除は110×2,000÷4,000＝55万円になります。合計は200＋390＋1,945＝2,535万円です。",
+      "ウ": "適切です。2023年の父からの暦年贈与200万円を加算し、2024年の精算課税贈与500万円から110万円を控除して390万円。2025年は父母の贈与各2,000万円に基礎控除110万円を半分ずつ配分するため、父は2,000−55＝1,945万円。200＋390＋1,945＝2,535万円です。母の贈与財産自体は父の相続へ加算しませんが、2025年の控除のあん分に影響します。",
+      "エ": "2,590万円は2025年の父からの精算課税贈与2,000万円に基礎控除を適用しない計算です。父に配分される55万円を差し引き、2023年200万円と2024年390万円を加えると2,535万円です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4161.htm",
+      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4410.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q49",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 49,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "土地の無償返還届"
+    ],
+    "difficulty": 4,
+    "question": "Ａさんは、父から建物の敷地となっている下記のＸ土地およびＹ土地を相続により\n取得した。Ｘ土地およびＹ土地の相続税評価額の合計額として、次のうち最も適切な\nものはどれか。 \n \nＸ土地 \n \n\n・Ａさんの父は、第三者であるＢ株式会社にＸ土地を貸し付け、通常の\n地代を収受していた（権利金は収受していない）。Ｘ土地については「土\n地の無償返還に関する届出書」が税務署長に提出されている。 \n\n・Ｂ株式会社はＸ土地上にアパートを建築して、第三者に賃貸（入居率\nは100％）していた。 \n\n・Ｘ土地の自用地価額は4,000万円、借地権割合は60％、借家権割合は30％\nである。 \n \nＹ土地 \n \n\n・Ａさんの父は、第三者であるＣ株式会社にＹ土地を貸し付け、相当の\n地代を収受していた（権利金は収受していない）。Ｙ土地については「相\n当の地代の改訂方法に関する届出書」が税務署長に提出されている。 \n\n・Ｃ株式会社はＹ土地を自社の社屋の敷地として利用している。 \n\n・Ｙ土地の自用地価額は5,000万円、借地権割合は60％、借家権割合は30％\nである。",
+    "choices": {
+      "ア": "7,200万円",
+      "イ": "7,280万円",
+      "ウ": "8,200万円",
+      "エ": "8,280万円"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "公式正答は1。Xは無償返還届出があり、自用地価額4,000万円の80％＝3,200万円。Yは相当の地代を収受する貸宅地で、自用地価額5,000万円の80％＝4,000万円。合計7,200万円。",
+    "choiceExplanations": {
+      "ア": "Xは無償返還届出があり、自用地価額4,000万円の80％＝3,200万円。Yは相当の地代を収受する貸宅地で、自用地価額5,000万円の80％＝4,000万円。合計7,200万円。",
+      "イ": "Xの賃貸建物の借家権割合を、土地所有者である父の貸宅地評価に重ねて適用しない。届出等の条件に基づく評価は合計7,200万円。",
+      "ウ": "Yも自用地価額の80％で評価するため、5,000万円をそのまま加算する8,200万円ではない。",
+      "エ": "XとYそれぞれの貸付と届出の条件を区分して80％評価する。借家権割合を余分に重ねた組合せではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/850605/01.htm"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  },
+  {
+    "id": "fp1-2026-may-gakka-q50",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "may",
+    "qNumber": 50,
+    "examDate": "2026-05-24",
+    "type": "multiple-choice",
+    "category": "相続・事業承継",
+    "topicTags": [
+      "経営承継円滑化法4条"
+    ],
+    "difficulty": 4,
+    "question": "中小企業における経営の承継の円滑化に関する法律による「遺留分に関する民法の\n特例」（以下、「本特例」という）に関する次の記述のうち、最も適切なものはどれか。\nなお、本問における推定相続人とは、相続が開始した場合に相続人となるべき者のう\nち、被相続人の兄弟姉妹およびこれらの者の子以外の者をいう。",
+    "choices": {
+      "ア": "本特例の対象となる後継者は、旧代表者の推定相続人のうち、旧代表者からの贈与\nにより非上場株式を取得したことにより特例中小会社の総株主の議決権の過半数を有\nし、かつ、当該特例中小会社の代表者である者に限られる。",
+      "イ": "後継者が旧代表者からの贈与により取得した非上場株式について、除外合意をする\n場合は、その全部または一部を合意の対象とすることができるが、固定合意をする場\n合は、その全部を合意の対象としなければならない。",
+      "ウ": "後継者が旧代表者からの贈与により取得した非上場株式について除外合意をする場\n合、併せて、後継者以外の推定相続人が旧代表者からの贈与により取得した財産の価\n額を、遺留分を算定するための財産の価額に算入しない旨の定めをすることができる。",
+      "エ": "本特例に係る合意について家庭裁判所の許可を受けるためには、原則として、当該\n合意の当事者全員が家庭裁判所に出向いて申立てを行い、当該合意が当事者全員の真\n意に出たものであることを明らかにする必要がある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "公式正答は3。株式の除外合意と併せ、後継者以外の推定相続人が贈与で取得した財産を遺留分算定基礎へ算入しない旨の合意ができる。",
+    "choiceExplanations": {
+      "ア": "後継者は旧代表者の推定相続人に限られない。推定相続人以外の後継者も制度の対象となり得る。",
+      "イ": "固定合意も取得した株式の全部又は一部を対象にでき、必ず全部とする必要はない。",
+      "ウ": "株式の除外合意と併せ、後継者以外の推定相続人が贈与で取得した財産を遺留分算定基礎へ算入しない旨の合意ができる。",
+      "エ": "家庭裁判所への申立ては後継者が行うもので、原則として当事者全員が出向いて申立てる制度ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。解説は独自に作成。 表は原資料の行・列対応を保ってMarkdown形式で再構成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/420AC0000000033?occasion_date=20251001"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "needsReview": false,
+    "lawReferenceDate": "2025-10-01",
+    "lastUpdated": "2026-10-07"
+  }
+]
