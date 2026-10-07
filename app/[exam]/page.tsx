@@ -313,7 +313,10 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
-          {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の2026年5月実施・1級学科試験の基礎編50問を、公式問題と模範解答を照合して収録しています。応用編と2026年9月実施分は、この演習には含みません。</p>}
+          {code === "fp1" && <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+            <p>金融財政事情研究会の2026年5月実施・1級学科試験の基礎編50問を、公式問題と模範解答を照合して収録しています。応用編と2026年9月実施分は、この演習には含みません。</p>
+            <Link href="/fp1/applied/202605/51" className="inline-flex min-h-[44px] items-center text-primary underline">学科応用編 問51の問題・模範解答を見る（4空欄）</Link>
+          </div>}
           {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和7年度下期の学科試験50問と、令和8年度上期CBT方式で試験センターが公表した出題例50問を収録しています。いずれも一般問題40問・配線図問題10問です。</p>}
           {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）社会福祉士国家試験の全129問（共通科目84問・専門科目45問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第27回・第28回（令和6・7年度）精神保健福祉士国家試験の専門科目（各48問）と、社会福祉士と同じ共通科目（第28回84問、第27回は掲載保留3問を除く81問）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}

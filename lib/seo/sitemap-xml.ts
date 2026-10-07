@@ -20,6 +20,7 @@ import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { getAllEssayQuestions } from "@/lib/essay/load";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
+import { FP1_APPLIED_EDITIONS, fp1AppliedQuestionPath, getFp1AppliedEdition } from "@/lib/fp1/applied";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import {
   QUALIFICATION_HUBS,
@@ -219,6 +220,15 @@ function getFpPracticalRoutes(): UrlEntry[] {
   };
   append("fp2", FP2_PRACTICAL_EDITIONS, getFp2PracticalEdition);
   append("fp3", FP3_PRACTICAL_EDITIONS, getFp3PracticalEdition);
+  entries.push({ url: `${SITE_BASE_URL}/fp1/applied`, changeFrequency: "yearly", priority: 0.7 });
+  for (const edition of FP1_APPLIED_EDITIONS) {
+    const data = getFp1AppliedEdition(edition);
+    if (!data) throw new Error(`Missing fp1 applied edition: ${edition}`);
+    entries.push({ url: `${SITE_BASE_URL}/fp1/applied/${edition}`, changeFrequency: "yearly", priority: 0.6 });
+    for (const question of data.questions) {
+      entries.push({ url: `${SITE_BASE_URL}${fp1AppliedQuestionPath(edition, question.number)}`, changeFrequency: "yearly", priority: 0.5 });
+    }
+  }
   return entries;
 }
 
