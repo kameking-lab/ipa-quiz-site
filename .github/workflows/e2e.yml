@@ -48,6 +48,20 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Configure bounded APT downloads
+        run: |
+          set -euo pipefail
+          # Match the current runner-images acquire bounds, after older image overrides.
+          sudo tee /etc/apt/apt.conf.d/zzzz-e2e-acquire >/dev/null <<'EOF'
+          Acquire::Retries "1";
+          Acquire::http::Timeout "15";
+          Acquire::https::Timeout "15";
+          EOF
+          # Both failed runs reached this HTTPS mirror while Azure HTTP package downloads stalled.
+          printf '%s\n' 'https://archive.ubuntu.com/ubuntu' | sudo tee /etc/apt/apt-mirrors.txt >/dev/null
+          apt-config dump Acquire::Retries Acquire::http::Timeout Acquire::https::Timeout
+          cat /etc/apt/apt-mirrors.txt
+
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
 
