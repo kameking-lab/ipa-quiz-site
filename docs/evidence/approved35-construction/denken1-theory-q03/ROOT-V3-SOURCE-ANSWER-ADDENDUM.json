@@ -1,0 +1,29 @@
+{
+  "atUtc": "2026-10-07T17:56:01.872523+00:00",
+  "verdict": "PASS_SOURCE_FIELDS_ANSWERS_COMPLETENESS_V3_DELTA_ONLY",
+  "priorReceiptSha256": "421e3351049130e396ab6f1cd6e8c5640ca3d31f5963e9ef1fd2a54d5acafc4c",
+  "priorCandidateSha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+  "candidateSha256": "f33010e05d0b7a691788567dd9296f01a00af4602712b324aff0be6fed00839a",
+  "exactDifferences": [
+    {
+      "path": "$[1].choiceExplanations.ウ",
+      "before": "正しい。図2では比較器の反転入力が接地されており，切替境界はV_{+,1}=0である。V_B=−V_Lを(1)の分圧式に代入するとR_2 V_A−R_1 V_L=0。したがって上側しきい値はV_A=(R_1/R_2)V_L。ここでV_Lは負の出力−V_Lの大きさであるため，しきい値の符号は正になる。",
+      "after": "正しい。図1で比較器の反転入力は接地されている。図2の入出力特性より，切替境界はV_{+,1}=0である。V_B=−V_Lを(1)の分圧式に代入するとR_2 V_A−R_1 V_L=0。したがって上側しきい値はV_A=(R_1/R_2)V_L。ここでV_Lは負の出力−V_Lの大きさであるため，しきい値の符号は正になる。"
+    },
+    {
+      "path": "$[1].explanation",
+      "before": "図2では比較器の反転入力が接地されており，切替境界はV_{+,1}=0である。V_B=−V_Lを(1)の分圧式に代入するとR_2 V_A−R_1 V_L=0。したがって上側しきい値はV_A=(R_1/R_2)V_L。ここでV_Lは負の出力−V_Lの大きさであるため，しきい値の符号は正になる。",
+      "after": "図1で比較器の反転入力は接地されている。図2の入出力特性より，切替境界はV_{+,1}=0である。V_B=−V_Lを(1)の分圧式に代入するとR_2 V_A−R_1 V_L=0。したがって上側しきい値はV_A=(R_1/R_2)V_L。ここでV_Lは負の出力−V_Lの大きさであるため，しきい値の符号は正になる。"
+    }
+  ],
+  "originalStemFiveUnchanged": true,
+  "allFifteenChoiceStringsAndOrderUnchanged": true,
+  "allFiveOfficialAnswerFieldsUnchanged": true,
+  "correctedExplanationLocatorOnly": true,
+  "originalQuestions": 1,
+  "practiceBlanks": 5,
+  "choiceExplanationCount": 75,
+  "priorSourceAndIndependentAnswerGatesInherited": true,
+  "independentPrimaryExplanationAstraFinalStillRequired": true,
+  "publishAllowed": false
+}

@@ -14,11 +14,11 @@ const OFFICIAL = {
 } as const;
 
 describe("denken1 2026 partial launch", () => {
-  it("has precisely the four selected original questions and all five blanks", () => {
-    expect(DENKEN1_QUESTIONS).toHaveLength(20);
-    expect(new Set(DENKEN1_QUESTIONS.map((q) => q.id)).size).toBe(20);
+  it("has precisely the five selected original questions and all five blanks", () => {
+    expect(DENKEN1_QUESTIONS).toHaveLength(25);
+    expect(new Set(DENKEN1_QUESTIONS.map((q) => q.id)).size).toBe(25);
     for (const [subject, sheet] of Object.entries(OFFICIAL)) {
-      const rows = DENKEN1_QUESTIONS.filter((q) => q.subject === subject);
+      const rows = DENKEN1_QUESTIONS.filter((q) => q.subject === subject && q.qNumber === sheet.number);
       expect(rows).toHaveLength(5);
       rows.forEach((q, i) => {
         expect([q.exam, q.year, q.season, q.session, q.qNumber, q.part]).toEqual([

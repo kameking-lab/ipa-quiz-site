@@ -1,0 +1,1271 @@
+{
+  "atUtc": "2026-10-07T17:52:22.015147+00:00",
+  "sourceQuestion": {
+    "url": "https://www.shiken.or.jp/chief/upload/20260830_ch_first_q01.pdf",
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-source\\20260830_ch_first_q01.pdf",
+    "sha256": "6a6a509a9cd2e9a36c79e90561345e0fc093389796ffd482833109057b0aa7f5",
+    "bytes": 1860950
+  },
+  "firstAuthorFreeze": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\FIRST-AUTHOR-FROZEN.json",
+    "sha256": "829ca98fd78f119922078e15914b8201cad7032de63b64a536631aea1f458153",
+    "bytes": 6727
+  },
+  "officialAnswerObservedAfterFreeze": [
+    "ヘ",
+    "ハ",
+    "カ",
+    "ヲ",
+    "ヌ"
+  ],
+  "officialAnswerMatchesAuthor": true,
+  "primarySourceIsOfficialProblemWithCircuitAndStatedSlopes": true,
+  "all75OptionReasons": [
+    {
+      "blank": 1,
+      "officialKana": "イ",
+      "displayKey": "ア",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。0は切替時の比較器入力V_{+,1}である。節点Aのしきい値や任意のV_A,V_Bに対する入力電位が常に0という意味ではない。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ロ",
+      "displayKey": "イ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。周期の形だが抵抗比がR_2/R_1に逆転している。移動幅は(R_1/R_2)(V_H+V_L)である。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ハ",
+      "displayKey": "ウ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_LはV_B=−V_Lを代入した上側しきい値である。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ニ",
+      "displayKey": "エ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_1/R_2と増加速度の分母V_Lは合うが，移動幅にV_H−V_Lを使っている。異符号の上下しきい値の差はV_H+V_Lになる。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ホ",
+      "displayKey": "オ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_Lは上側しきい値の符号を逆にした式であり，V_B=−V_Lからは得られない。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ヘ",
+      "displayKey": "カ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "正しい。図1で理想演算増幅器の入力電流は0である。非反転入力の電位をxとすると，(V_A−x)/R_1+(V_B−x)/R_2=0。整理してx=(R_2 V_A+R_1 V_B)/(R_1+R_2)となる。V_A側の係数はR_2，V_B側の係数はR_1であり，接続抵抗と係数を取り違えない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ト",
+      "displayKey": "キ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_Hは下側しきい値の負号を落とした式である。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "チ",
+      "displayKey": "ク",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。増加時間の形だが抵抗比がR_2/R_1に逆転している。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "リ",
+      "displayKey": "ケ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_2/R_1)V_Hは下側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ヌ",
+      "displayKey": "コ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)は増加時間と減少時間を加えた全周期である。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ル",
+      "displayKey": "サ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_2/R_1)V_Lは上側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ヲ",
+      "displayKey": "シ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)/(R_2V_L)は出力−V_Lの間の増加時間である。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ワ",
+      "displayKey": "ス",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。全周期の電圧因子を(V_H−V_L)^2にした式である。移動幅と逆速度の和はいずれもV_H+V_Lを含むので，正しくは(V_H+V_L)^2となる。この式の次元は時間[s]であり，空欄1が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "カ",
+      "displayKey": "セ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_HはV_B=V_Hを代入した下側しきい値である。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 1,
+      "officialKana": "ヨ",
+      "displayKey": "ソ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。V_A側の係数をR_1，V_B側をR_2とした分圧式では，図1の節点で(V_A−x)/R_1+(V_B−x)/R_2=0を一般には満たさない。空欄(1)には任意のV_A,V_Bについて成立する分圧電位(R_2V_A+R_1V_B)/(R_1+R_2)が必要であり，しきい値を入れることはできない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "イ",
+      "displayKey": "ア",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。0は切替時の比較器入力V_{+,1}である。節点Aのしきい値や任意のV_A,V_Bに対する入力電位が常に0という意味ではない。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ロ",
+      "displayKey": "イ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。周期の形だが抵抗比がR_2/R_1に逆転している。移動幅は(R_1/R_2)(V_H+V_L)である。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ハ",
+      "displayKey": "ウ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "正しい。図1で比較器の反転入力は接地されている。図2の入出力特性より，切替境界はV_{+,1}=0である。V_B=−V_Lを(1)の分圧式に代入するとR_2 V_A−R_1 V_L=0。したがって上側しきい値はV_A=(R_1/R_2)V_L。ここでV_Lは負の出力−V_Lの大きさであるため，しきい値の符号は正になる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ニ",
+      "displayKey": "エ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_1/R_2と増加速度の分母V_Lは合うが，移動幅にV_H−V_Lを使っている。異符号の上下しきい値の差はV_H+V_Lになる。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ホ",
+      "displayKey": "オ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_Lは上側しきい値の符号を逆にした式であり，V_B=−V_Lからは得られない。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ヘ",
+      "displayKey": "カ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_2V_A/(R_1+R_2)+R_1V_B/(R_1+R_2)は図1の抵抗接続に対応した非反転入力の分圧電位である。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ト",
+      "displayKey": "キ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_Hは下側しきい値の負号を落とした式である。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "チ",
+      "displayKey": "ク",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。増加時間の形だが抵抗比がR_2/R_1に逆転している。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "リ",
+      "displayKey": "ケ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_2/R_1)V_Hは下側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ヌ",
+      "displayKey": "コ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)は増加時間と減少時間を加えた全周期である。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ル",
+      "displayKey": "サ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_2/R_1)V_Lは上側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ヲ",
+      "displayKey": "シ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)/(R_2V_L)は出力−V_Lの間の増加時間である。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ワ",
+      "displayKey": "ス",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。全周期の電圧因子を(V_H−V_L)^2にした式である。移動幅と逆速度の和はいずれもV_H+V_Lを含むので，正しくは(V_H+V_L)^2となる。この式の次元は時間[s]であり，空欄2が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "カ",
+      "displayKey": "セ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_HはV_B=V_Hを代入した下側しきい値である。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 2,
+      "officialKana": "ヨ",
+      "displayKey": "ソ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。V_A側の係数をR_1，V_B側をR_2とした分圧式では，図1の節点で(V_A−x)/R_1+(V_B−x)/R_2=0を一般には満たさない。空欄(2)はV_B=−V_LのときのR_2V_A−R_1V_L=0を解くため，(R_1/R_2)V_Lとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "イ",
+      "displayKey": "ア",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。0は切替時の比較器入力V_{+,1}である。節点Aのしきい値や任意のV_A,V_Bに対する入力電位が常に0という意味ではない。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ロ",
+      "displayKey": "イ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。周期の形だが抵抗比がR_2/R_1に逆転している。移動幅は(R_1/R_2)(V_H+V_L)である。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ハ",
+      "displayKey": "ウ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_LはV_B=−V_Lを代入した上側しきい値である。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ニ",
+      "displayKey": "エ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_1/R_2と増加速度の分母V_Lは合うが，移動幅にV_H−V_Lを使っている。異符号の上下しきい値の差はV_H+V_Lになる。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ホ",
+      "displayKey": "オ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_Lは上側しきい値の符号を逆にした式であり，V_B=−V_Lからは得られない。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ヘ",
+      "displayKey": "カ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_2V_A/(R_1+R_2)+R_1V_B/(R_1+R_2)は図1の抵抗接続に対応した非反転入力の分圧電位である。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ト",
+      "displayKey": "キ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_Hは下側しきい値の負号を落とした式である。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "チ",
+      "displayKey": "ク",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。増加時間の形だが抵抗比がR_2/R_1に逆転している。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "リ",
+      "displayKey": "ケ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_2/R_1)V_Hは下側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ヌ",
+      "displayKey": "コ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)は増加時間と減少時間を加えた全周期である。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ル",
+      "displayKey": "サ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_2/R_1)V_Lは上側しきい値に現れる抵抗比R_1/R_2を逆にしている。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ヲ",
+      "displayKey": "シ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)/(R_2V_L)は出力−V_Lの間の増加時間である。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ワ",
+      "displayKey": "ス",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。全周期の電圧因子を(V_H−V_L)^2にした式である。移動幅と逆速度の和はいずれもV_H+V_Lを含むので，正しくは(V_H+V_L)^2となる。この式の次元は時間[s]であり，空欄3が求める電位[V]の式ではない。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "カ",
+      "displayKey": "セ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "正しい。V_B=V_Hの状態でV_Aが減少すると，V_{+,1}=0で出力が切り替わる。(1)の分子R_2 V_A+R_1 V_Hを0とおくと，下側しきい値はV_A=−(R_1/R_2)V_Hとなる。上側しきい値に用いたV_Lをそのまま使うのではなく，切替直前の出力V_Hを用いる。"
+    },
+    {
+      "blank": 3,
+      "officialKana": "ヨ",
+      "displayKey": "ソ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。V_A側の係数をR_1，V_B側をR_2とした分圧式では，図1の節点で(V_A−x)/R_1+(V_B−x)/R_2=0を一般には満たさない。空欄(3)はV_B=V_HのときのR_2V_A+R_1V_H=0を解くため，−(R_1/R_2)V_Hとなる。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "イ",
+      "displayKey": "ア",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。0は切替時の比較器入力V_{+,1}である。節点Aのしきい値や任意のV_A,V_Bに対する入力電位が常に0という意味ではない。電圧の式または0という値だけでは，容量Cと抵抗R_3で決まる時間を表せない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ロ",
+      "displayKey": "イ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。周期の形だが抵抗比がR_2/R_1に逆転している。移動幅は(R_1/R_2)(V_H+V_L)である。全周期は減少時間も含むため，ここで必要な増加区間だけの時間とは異なる。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ハ",
+      "displayKey": "ウ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_LはV_B=−V_Lを代入した上側しきい値である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ニ",
+      "displayKey": "エ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_1/R_2と増加速度の分母V_Lは合うが，移動幅にV_H−V_Lを使っている。異符号の上下しきい値の差はV_H+V_Lになる。空欄(4)には移動幅(R_1/R_2)(V_H+V_L)を速度V_L/(CR_3)で割った時間が必要である。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ホ",
+      "displayKey": "オ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_Lは上側しきい値の符号を逆にした式であり，V_B=−V_Lからは得られない。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ヘ",
+      "displayKey": "カ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_2V_A/(R_1+R_2)+R_1V_B/(R_1+R_2)は図1の抵抗接続に対応した非反転入力の分圧電位である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ト",
+      "displayKey": "キ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_Hは下側しきい値の負号を落とした式である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "チ",
+      "displayKey": "ク",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。増加時間の形だが抵抗比がR_2/R_1に逆転している。空欄(4)には移動幅(R_1/R_2)(V_H+V_L)を速度V_L/(CR_3)で割った時間が必要である。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "リ",
+      "displayKey": "ケ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_2/R_1)V_Hは下側しきい値に現れる抵抗比R_1/R_2を逆にしている。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ヌ",
+      "displayKey": "コ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)は増加時間と減少時間を加えた全周期である。全周期は減少時間も含むため，ここで必要な増加区間だけの時間とは異なる。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ル",
+      "displayKey": "サ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_2/R_1)V_Lは上側しきい値に現れる抵抗比R_1/R_2を逆にしている。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ヲ",
+      "displayKey": "シ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "正しい。V_Aの移動幅は上側しきい値と下側しきい値の差であり，ΔV=(R_1/R_2)(V_H+V_L)。問題文よりV_B=−V_Lのときの増加速度はV_L/(CR_3)である。時間=移動幅/速度だから，t_L=CR_1R_3(V_H+V_L)/(R_2V_L)。上下のしきい値は異符号なので，移動幅にはV_H−V_LではなくV_H+V_Lを用いる。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ワ",
+      "displayKey": "ス",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。全周期の電圧因子を(V_H−V_L)^2にした式である。移動幅と逆速度の和はいずれもV_H+V_Lを含むので，正しくは(V_H+V_L)^2となる。全周期は減少時間も含むため，ここで必要な増加区間だけの時間とは異なる。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "カ",
+      "displayKey": "セ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_HはV_B=V_Hを代入した下側しきい値である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 4,
+      "officialKana": "ヨ",
+      "displayKey": "ソ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。V_A側の係数をR_1，V_B側をR_2とした分圧式では，図1の節点で(V_A−x)/R_1+(V_B−x)/R_2=0を一般には満たさない。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "イ",
+      "displayKey": "ア",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。0は切替時の比較器入力V_{+,1}である。節点Aのしきい値や任意のV_A,V_Bに対する入力電位が常に0という意味ではない。電圧の式または0という値だけでは，容量Cと抵抗R_3で決まる時間を表せない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ロ",
+      "displayKey": "イ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。周期の形だが抵抗比がR_2/R_1に逆転している。移動幅は(R_1/R_2)(V_H+V_L)である。空欄(5)は増加時間と減少時間の和であり，抵抗比R_1/R_2と電圧因子(V_H+V_L)^2の両方が必要である。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ハ",
+      "displayKey": "ウ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_LはV_B=−V_Lを代入した上側しきい値である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ニ",
+      "displayKey": "エ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_1/R_2と増加速度の分母V_Lは合うが，移動幅にV_H−V_Lを使っている。異符号の上下しきい値の差はV_H+V_Lになる。この式は増加側の片道時間の形であり，減少時間も加えたT=CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)にはならない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ホ",
+      "displayKey": "オ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_Lは上側しきい値の符号を逆にした式であり，V_B=−V_Lからは得られない。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ヘ",
+      "displayKey": "カ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。R_2V_A/(R_1+R_2)+R_1V_B/(R_1+R_2)は図1の抵抗接続に対応した非反転入力の分圧電位である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ト",
+      "displayKey": "キ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_1/R_2)V_Hは下側しきい値の負号を落とした式である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "チ",
+      "displayKey": "ク",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。増加時間の形だが抵抗比がR_2/R_1に逆転している。この式は増加側の片道時間の形であり，減少時間も加えたT=CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)にはならない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "リ",
+      "displayKey": "ケ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_2/R_1)V_Hは下側しきい値に現れる抵抗比R_1/R_2を逆にしている。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ヌ",
+      "displayKey": "コ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "正しい。増加時間はt_L=CR_1R_3(V_H+V_L)/(R_2V_L)。減少時は傾き−V_H/(CR_3)で同じ幅ΔV=(R_1/R_2)(V_H+V_L)を戻るため，t_H=CR_1R_3(V_H+V_L)/(R_2V_H)。周期T=t_L+t_H=CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)。V_HとV_Lが同じ大きさとは問題に指定されていないので，一般式のまま両時間を加える。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ル",
+      "displayKey": "サ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。(R_2/R_1)V_Lは上側しきい値に現れる抵抗比R_1/R_2を逆にしている。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ヲ",
+      "displayKey": "シ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。CR_1R_3(V_H+V_L)/(R_2V_L)は出力−V_Lの間の増加時間である。この式は増加側の片道時間の形であり，減少時間も加えたT=CR_1R_3(V_H+V_L)^2/(R_2V_HV_L)にはならない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ワ",
+      "displayKey": "ス",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。全周期の電圧因子を(V_H−V_L)^2にした式である。移動幅と逆速度の和はいずれもV_H+V_Lを含むので，正しくは(V_H+V_L)^2となる。空欄(5)は増加時間と減少時間の和であり，抵抗比R_1/R_2と電圧因子(V_H+V_L)^2の両方が必要である。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "カ",
+      "displayKey": "セ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。−(R_1/R_2)V_HはV_B=V_Hを代入した下側しきい値である。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    },
+    {
+      "blank": 5,
+      "officialKana": "ヨ",
+      "displayKey": "ソ",
+      "sourcePhysicalPages": [
+        8,
+        9
+      ],
+      "sourceLocators": [
+        "図1のR_1/R_2接続・理想特性",
+        "本文の切替条件V_{+,1}=0",
+        "本文の積分器傾き−V_B/(CR_3)",
+        "図2の出力V_H/−V_L"
+      ],
+      "reason": "誤り。V_A側の係数をR_1，V_B側をR_2とした分圧式では，図1の節点で(V_A−x)/R_1+(V_B−x)/R_2=0を一般には満たさない。この式は電圧[V]を表し，求める時間[s]の式ではない。"
+    }
+  ],
+  "externalNewRulesIntroduced": false,
+  "strictGenerationReceipt": null,
+  "strictRequirementInvented": false,
+  "figureCorrection": {
+    "originalFigure1CropRetained": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-figure1-original.png",
+      "sha256": "338b4de4503003af6d14c4c63555e6298851cc1a6f0760f59e657a6755ff1026",
+      "bytes": 38413
+    },
+    "finalFigure1Crop": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-figure1-original-v2.png",
+      "sha256": "bde1519fc062e6c4712c7c2d55a9276129e68bdc10950b208f26f8576a2606e6",
+      "bytes": 40526
+    },
+    "reason": "Initial exact crop clipped part of the V_B label; widen right margin only, no diagram content modified.",
+    "clipPdfPoints": [
+      75,
+      85,
+      282,
+      351
+    ],
+    "finalFigure2Crop": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\q03-figure2-original.png",
+      "sha256": "7672f8232e0205f82a6dc80f69bc7b1f4602bb98dd0b5777c982f11b2d7263f0",
+      "bytes": 9105
+    },
+    "finalCropsVisuallyVerified": true
+  },
+  "independentTechnicalPass": false,
+  "publicAllowed": false,
+  "candidatePin": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\CANDIDATE-5-UNITS-v3.json",
+    "sha256": "f33010e05d0b7a691788567dd9296f01a00af4602712b324aff0be6fed00839a",
+    "bytes": 42970
+  },
+  "previousClaimsRetained": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-q03-next\\CLAIMS-PRIMARY-EVIDENCE.json",
+    "sha256": "627575c6b5137f7d8f8830d0005a22e45131e385b461beb7dfaeaff98fb16063",
+    "bytes": 48207
+  },
+  "astraDiagramLocatorCorrection": {
+    "old": "図2では比較器の反転入力が接地されており，切替境界はV_{+,1}=0である。",
+    "new": "図1で比較器の反転入力は接地されている。図2の入出力特性より，切替境界はV_{+,1}=0である。",
+    "onlyAffected": "part2 explanation + officialハ/internalウ correct-choice reason",
+    "sourceQuestionChoicesAnswersUnchanged": true
+  }
+}
