@@ -1,0 +1,56 @@
+{
+  "atUtc": "2026-10-07T12:40:57.389695+00:00",
+  "baseCommit": "9e8f37c0e7b13f703f21dd1c2bfc95ca891fbf2c",
+  "worktree": "C:\\wt\\approved35-construction-20261007",
+  "candidateSha256": "a38a116d0ba3a187a13250fd33e54f9abe8889dfe96df367d5bc505f1f19c8b6",
+  "nativeNewPracticeRows": 5,
+  "officialOriginalQuestionsAdded": 1,
+  "sharedOriginalChoices": 15,
+  "optionExplanationEntries": 75,
+  "existing15RowsUnchanged": true,
+  "launchSha256": "cfde0172bcad28dd371acc495b413b87e126d6448284961a62f4b262da64202e",
+  "imageSha256": "f79d4817332e0fd0083413633616543cbc3fa3ac8c55ac0821b96cca17503355",
+  "changes": [
+    {
+      "path": "data/questions/denken1/index.ts",
+      "beforeSha256": "ea606c8522594ea6e832de755e2bdce06eafc9027dda2544356253b82d1e1671",
+      "afterSha256": "1ee2207ce359de191a6b9a1cb04840782908be313efeaa5272ac0c37d434cf38"
+    },
+    {
+      "path": "app/denken1/page.tsx",
+      "beforeSha256": "f0f4d05c30226c8a4f0c2fe2612d9a6b56c6aa58988779cedafb1ee04c9e3ce8",
+      "afterSha256": "738ba7fd41df6acdfe7bb91da48504b90ade27774ff5c21e94bbb65bba97f85c"
+    },
+    {
+      "path": "lib/exam-config.ts",
+      "beforeSha256": "66ae1213661a410d05829c9acea5fd364af1ca2e274ecd9f02f6f8c7c5e507ab",
+      "afterSha256": "a273658c4ae5cc9d8d3a5514aee30fbc63dbdeada0d1fec0dc5835f397c13590"
+    },
+    {
+      "path": "lib/home/home-directory.ts",
+      "beforeSha256": "aa712e4be12e41151497d3f5240e659a2fdc2d91861b1bd04e7bddaecf91b295",
+      "afterSha256": "9a642255889fc2c9b7ba622ea4fe5477a1a7d95433b93943b4a0b815a20a269b"
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "beforeSha256": "c67b87e6311d576069cc8c69cfd8b5691e061b394b952913b02455cd9dad9703",
+      "afterSha256": "459634616c42e134f187751ad0297e657059b2a1b18e86a7d7d1e2bc649bb150"
+    },
+    {
+      "path": "lib/seo/exam-meta.ts",
+      "beforeSha256": "7e12af72c8d4cec743f56b76a7440a1fd8a07464681d9746ce1f3274d14fac76",
+      "afterSha256": "cbd6744f871ba3c485c090a3b4bcb239f24792f31d8e48ff057b85c74a50cec4"
+    },
+    {
+      "path": "__tests__/questions/denken1-launch-data.test.ts",
+      "beforeSha256": "62b866182f87503ada91a5997ebdc79e7c07ee33c2048172ff8e679900b43b02",
+      "afterSha256": "2e7ed15b8f62f8396079d53fd511f4096cef608d702ddb9afcaf58a87a697f60"
+    }
+  ],
+  "independentTechnicalReceiptSha256": "984fed79f2bd5f93f34193885d74d21e14356d8f1fc4794f5511fe9dea03780e",
+  "astraFinalReview": null,
+  "eecPriorUsageNoticeReceipt": null,
+  "strictContractSpecificToDenken1NotFound": true,
+  "publicAllowed": false,
+  "mergeAllowed": false
+}
