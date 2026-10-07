@@ -104,7 +104,7 @@ export default async function QuizPage({
     mode !== "year" ||
     sp.year !== "2026" ||
     sp.season !== "primary" ||
-    !["denryoku", "kikai", "houki"].includes(sp.session ?? "")
+    !["riron", "denryoku", "kikai", "houki"].includes(sp.session ?? "")
   )) redirect("/denken1");
   const isSearchPool = sp.source === "search";
   const session = isSearchPool
