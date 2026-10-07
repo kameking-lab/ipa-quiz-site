@@ -1,0 +1,2042 @@
+{
+  "qualification": "保健師国家試験",
+  "round": 112,
+  "examDate": "2026-02-13",
+  "session": "am",
+  "status": "PRIVATE_PREPARED_REVIEWED_ADDITION_NOT_REGISTERED",
+  "publicAllowed": false,
+  "liveLearningEnabled": false,
+  "whole110Complete": false,
+  "latestTwoRoundsComplete": false,
+  "sourceAttributionsBySet": {
+    "next6": "出典：厚生労働省 第112回保健師国家試験 午前問題。改行・空白・表の配置を整理して作成。解説は独自作成であり厚生労働省の公式解説ではありません。",
+    "stats4": "出典：厚生労働省 第112回保健師国家試験 午前問題。空白と改行を整理し、χ²の上付き文字をUnicode表記に加工。解説・計算例は独自作成であり公式解説ではありません。"
+  },
+  "questions": [
+    {
+      "id": "hokenshi-112-am-q9",
+      "questionNumber": 9,
+      "physicalPdfPage": 10,
+      "printedPage": 4,
+      "question": "Aさん（76歳、女性、無職）は要介護1となり、1人暮らしが難しくなったため、同じ県内のB市に居住する息子家族と同居することになった。息子は勤め先のC健康保険組合の被用者であり、Aさんから保健師に「B市へ転居したら医療保険はどのようになりますか」と相談があった。Aさんに説明する内容で正しいのはどれか。",
+      "choices": [
+        "「共済保険に加入します」",
+        "「後期高齢者医療制度の対象のままです」",
+        "「C健康保険組合の被扶養者となります」",
+        "「B市の国民健康保険に加入となります」"
+      ],
+      "officialAnswer": [
+        2
+      ],
+      "choiceExplanations": [
+        "誤り。設問のAさんは76歳で、後期高齢者医療の対象年齢に達している。息子家族との同居という与件から共済保険への加入を導くことはできない。確認すべきなのは同居先の勤務先ではなく、本人の年齢に対応する制度である。",
+        "正しい。高齢者の医療の確保に関する法律第50条は、広域連合の区域内に住所を有する75歳以上の者を被保険者とする。Aさんは76歳で、同じ県内の息子宅への転居後も対象年齢に該当する。要介護1という与件を医療保険の加入区分の変更理由にしない。",
+        "誤り。息子が健康保険組合の被用者でも、76歳のAさんがその被扶養者へ移るという結論にはならない。親子関係や同居の有無だけで医療保険を選ばず、本人が後期高齢者医療の対象であることを優先して制度を照合する。",
+        "誤り。転居先がB市であることから、その市の国民健康保険へ加入すると判断してはいけない。Aさんは後期高齢者医療の対象であり、同じ県内での住所変更と制度の加入区分を分けて考える。"
+      ],
+      "explanation": "正答は2。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q9-agedlaw.html",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=82115000&dataType=0&pageNo=1",
+          "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=82115000&dataType=0&pageNo=1",
+          "status": 200,
+          "sha256": "afc9e6bb9f760b4f074b22be2f279510168f96d3fb35f3746d4002b818a7101c",
+          "retrievedAt": "2026-10-07T12:36:12.919917+00:00",
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null
+    },
+    {
+      "id": "hokenshi-112-am-q12",
+      "questionNumber": 12,
+      "physicalPdfPage": 11,
+      "printedPage": 5,
+      "question": "感染症発生動向調査事業について正しいのはどれか。",
+      "choices": [
+        "保健所が積極的疫学調査として実施する。",
+        "4類感染症は全ての患者について集計する。",
+        "医療機関は患者居住地を管轄する保健所へ報告する。",
+        "2009年の新型インフルエンザの流行を契機に開始された。"
+      ],
+      "officialAnswer": [
+        2
+      ],
+      "choiceExplanations": [
+        "誤り。設問の患者発生情報の通常の把握は、診断した医師等からの届出を基礎に集計する仕組みである。個別事例で感染源や接触者等を調べる積極的疫学調査そのものと取り違えない。ただし、厚生労働省の事業説明には病原体情報を積極的疫学調査として国や地方自治体が調べることも含まれるため、発生動向調査の事業全体から積極的疫学調査を除外するという意味ではない。",
+        "正しい。厚生労働省の医師向け届出案内では四類感染症は全数把握の対象である。診断した全ての医師が患者の発生を届け出るという仕組みであり、指定された医療機関のみの定点把握と区別する。",
+        "誤り。患者の居住地だけを基準に報告先を決めるという説明は正確ではない。感染症法第12条は医師が最寄りの保健所長を経由して届け出ることを定める。届出経路と患者の住所の情報を混同しない。",
+        "誤り。厚生労働省の発生動向調査の説明では開始は昭和56年で、平成11年4月の感染症法施行により仕組みが整えられた。2009年の新型インフルエンザ流行を事業開始の契機とする肢は、公式に示された開始時期と一致しない。"
+      ],
+      "explanation": "正答は2。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q12-surveillance.html",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000115283.html",
+          "finalUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000115283.html",
+          "status": 200,
+          "sha256": "c6b38be90c92ea204bb8b31a88ac276ac4d237fb44e8f6f818ae89dbf09badb9",
+          "retrievedAt": "2026-10-07T12:36:12.919917+00:00",
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "hokenshi-q12-notification.html",
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kekkaku-kansenshou11/01.html",
+          "finalUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kekkaku-kansenshou11/01.html",
+          "status": 200,
+          "sha256": "f7b43cb5774f20404dea2a3959c8654d55d660c3b91cc72ced7fe82d46b69391",
+          "retrievedAt": "2026-10-07T12:36:12.920917+00:00",
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "hokenshi-q12-infection-law.json",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000114",
+          "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/410AC0000000114",
+          "status": 200,
+          "sha256": "0ea2ecff7e6074d9db888a7accb49945f7e6b928f3dfc56a246f67839e98d976",
+          "retrievedAt": "2026-10-07T12:36:12.920917+00:00",
+          "sourceQC": null,
+          "publicAllowed": false,
+          "law_info": {
+            "law_type": "Act",
+            "law_id": "410AC0000000114",
+            "law_num": "平成十年法律第百十四号",
+            "law_num_era": "Heisei",
+            "law_num_year": 10,
+            "law_num_type": "Act",
+            "law_num_num": "114",
+            "promulgation_date": "1998-10-02"
+          },
+          "revision_info": {
+            "law_revision_id": "410AC0000000114_20261001_507AC0000000087",
+            "law_type": "Act",
+            "law_title": "感染症の予防及び感染症の患者に対する医療に関する法律",
+            "law_title_kana": "かんせんしょうのよぼうおよびかんせんしょうのかんじゃにたいするいりょうにかんするほうりつ",
+            "abbrev": "感染症予防法,感染症法",
+            "category": "厚生",
+            "updated": "2026-07-01T12:23:48+09:00",
+            "amendment_promulgate_date": "2025-12-12",
+            "amendment_enforcement_date": "2026-10-01",
+            "amendment_enforcement_comment": null,
+            "amendment_scheduled_enforcement_date": null,
+            "amendment_law_id": "507AC0000000087",
+            "amendment_law_title": "医療法等の一部を改正する法律",
+            "amendment_law_title_kana": null,
+            "amendment_law_num": "令和七年法律第八十七号",
+            "amendment_type": "3",
+            "repeal_status": "None",
+            "repeal_date": null,
+            "remain_in_force": false,
+            "mission": "New",
+            "current_revision_status": "CurrentEnforced"
+          }
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null
+    },
+    {
+      "id": "hokenshi-112-am-q15",
+      "questionNumber": 15,
+      "physicalPdfPage": 12,
+      "printedPage": 6,
+      "question": "災害対策基本法に基づく市町村の役割はどれか。",
+      "choices": [
+        "避難所の指定",
+        "傷病者の広域搬送",
+        "基幹災害拠点病院の整備",
+        "被災者生活再建支援金の支給"
+      ],
+      "officialAnswer": [
+        1
+      ],
+      "choiceExplanations": [
+        "正しい。災害対策基本法第49条の7は、市町村長が一定の基準に適合する公共施設等を指定避難所として指定することを定める。設問はこの法に基づく役割を尋ねるため、指定の主体と条文を照合する。",
+        "誤り。傷病者の広域搬送は、市町村だけの役割として捉えるものではなく、国・都道府県、医療関係機関、緊急輸送関係省庁が分担する体制である。令和7年4月修正の厚生労働省防災業務計画は、厚生労働省の部局・日本赤十字社等又は被災都道府県・市町村が、広域後方医療施設等への救急患者の搬送について必要に応じ緊急輸送関係省庁へ要請することを定める。また、被災都道府県からの要請に基づき、厚生労働省が関係機関へ広域後方医療活動の実施を要請する役割も示す。災害対策基本法が市町村長に定める指定避難所の指定と、この広域の搬送体制を区別する。市町村が搬送の要請・連携に関与しないとは説明しない。",
+        "誤り。基幹災害拠点病院は都道府県単位で整備する拠点であり、整備事業の対象は都道府県又は知事の要請を受けた病院開設者が整備・運営する病院である。指定要件では都道府県医療審議会等の承認、都道府県による要件確認・指定解除を定める。市町村の指定避難所の指定と、都道府県を中心とする拠点病院の整備・指定を区別する。市町村立病院の開設者として整備に関与する可能性まで否定しない。",
+        "誤り。被災者生活再建支援法第3条は都道府県による支給を定め、第4条第1項は支給事務全部の支援法人への委託を認める。内閣府の手続図では市区町村が申請を受け付け、都道府県が取りまとめて支援法人へ送付し、支援法人が被災世帯に支給する。市町村の受付と支給主体を区別する。第4条第2項では事務の一部を市町村に委託できるため、市町村が支給手続きに一切関与しないという説明ではない。"
+      ],
+      "explanation": "正答は1。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q15-disaster-law.json",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/336AC0000000223",
+          "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/336AC0000000223",
+          "status": 200,
+          "sha256": "f476bdb21e5d37746c555db106085f485529ae1bf09d4e5406ca86db16e97b24",
+          "retrievedAt": "2026-10-07T12:36:13.316347+00:00",
+          "sourceQC": null,
+          "publicAllowed": false,
+          "law_info": {
+            "law_type": "Act",
+            "law_id": "336AC0000000223",
+            "law_num": "昭和三十六年法律第二百二十三号",
+            "law_num_era": "Showa",
+            "law_num_year": 36,
+            "law_num_type": "Act",
+            "law_num_num": "223",
+            "promulgation_date": "1961-11-15"
+          },
+          "revision_info": {
+            "law_revision_id": "336AC0000000223_20260916_508AC0000000043",
+            "law_type": "Act",
+            "law_title": "災害対策基本法",
+            "law_title_kana": "さいがいたいさくきほんほう",
+            "abbrev": "災対法",
+            "category": "災害対策",
+            "updated": "2026-09-15T15:44:27+09:00",
+            "amendment_promulgate_date": "2026-06-19",
+            "amendment_enforcement_date": "2026-09-16",
+            "amendment_enforcement_comment": null,
+            "amendment_scheduled_enforcement_date": null,
+            "amendment_law_id": "508AC0000000043",
+            "amendment_law_title": "廃棄物の処理及び清掃に関する法律等の一部を改正する法律",
+            "amendment_law_title_kana": null,
+            "amendment_law_num": "令和八年法律第四十三号",
+            "amendment_type": "3",
+            "repeal_status": "None",
+            "repeal_date": null,
+            "remain_in_force": false,
+            "mission": "New",
+            "current_revision_status": "CurrentEnforced"
+          }
+        },
+        {
+          "name": "q15-basic-plan-index.html",
+          "url": "https://www.bousai.go.jp/taisaku/keikaku/kihon.html",
+          "path": "sources/q15-basic-plan-index.html",
+          "sha256": "f770c284aaa04e615038f39f2862c230dee8f165922eb873d91ee369a53cea7a",
+          "bytes": 18340,
+          "retrievedAt": "2026-10-07T12:51:31.767831+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "links": [
+            {
+              "label": "このページの本文へ移動",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/kihon.html#contents"
+            },
+            {
+              "label": "御意見・ご感想",
+              "url": "https://form.cao.go.jp/bousai/opinion-0001.html"
+            },
+            {
+              "label": "サイトマップ",
+              "url": "https://www.bousai.go.jp/sitemap.html"
+            },
+            {
+              "label": "English",
+              "url": "https://www.bousai.go.jp/index-e.html"
+            },
+            {
+              "label": "",
+              "url": "https://www.bousai.go.jp/index.html"
+            },
+            {
+              "label": "御意見・ご感想",
+              "url": "https://form.cao.go.jp/bousai/opinion-0001.html"
+            },
+            {
+              "label": "サイトマップ",
+              "url": "https://www.bousai.go.jp/sitemap.html"
+            },
+            {
+              "label": "English",
+              "url": "https://www.bousai.go.jp/index-e.html"
+            },
+            {
+              "label": "一般向け",
+              "url": "https://www.bousai.go.jp/oyakudachi/info_general.html"
+            },
+            {
+              "label": "企業・団体向け",
+              "url": "https://www.bousai.go.jp/oyakudachi/info_kigyou.html"
+            },
+            {
+              "label": "地方自治体向け",
+              "url": "https://www.bousai.go.jp/oyakudachi/info_jichitai.html"
+            },
+            {
+              "label": "検索の使い方",
+              "url": "https://www.cao.go.jp/search/notice-search.html"
+            },
+            {
+              "label": "内閣府ホーム",
+              "url": "https://www.cao.go.jp/"
+            },
+            {
+              "label": "内閣府の政策",
+              "url": "https://www.cao.go.jp/seisaku/seisaku.html"
+            },
+            {
+              "label": "防災情報のページ",
+              "url": "https://www.bousai.go.jp/index.html"
+            },
+            {
+              "label": "防災対策制度",
+              "url": "https://www.bousai.go.jp/taisaku/index.html"
+            },
+            {
+              "label": "防災計画",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/index.html"
+            },
+            {
+              "label": "防災基本計画が修正",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/kihon.html#syusei"
+            },
+            {
+              "label": "概要 (PDF形式：482KB)",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/pdf/kihon_gaiyou.pdf"
+            },
+            {
+              "label": "新旧対照表 (PDF形式：297KB)",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/pdf/kihon_newold.pdf"
+            },
+            {
+              "label": "防災基本計画 (PDF形式：1.78MB)",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/pdf/kihon_basic_plan.pdf"
+            },
+            {
+              "label": "防災基本計画添付資料",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/siryo.html"
+            },
+            {
+              "label": "このページの先頭へ",
+              "url": "https://www.bousai.go.jp/taisaku/keikaku/kihon.html#container"
+            },
+            {
+              "label": "アクセシビリティ",
+              "url": "https://www.bousai.go.jp/webaccessibility.html"
+            },
+            {
+              "label": "サイトマップ",
+              "url": "https://www.bousai.go.jp/sitemap.html"
+            },
+            {
+              "label": "このホームページについて",
+              "url": "https://www.bousai.go.jp/notice.html"
+            },
+            {
+              "label": "プライバシーポリシー",
+              "url": "https://www.cao.go.jp/notice/privacy.html"
+            },
+            {
+              "label": "アクセス",
+              "url": "https://www.cao.go.jp/about/address.html"
+            }
+          ]
+        },
+        {
+          "name": "q15-basic-plan.pdf",
+          "url": "https://www.bousai.go.jp/taisaku/keikaku/pdf/kihon_basic_plan.pdf",
+          "path": "sources/q15-basic-plan.pdf",
+          "sha256": "3277a2b047fbfa147bf51840a7a61ffbea37e0265f12b9b0cb5c19cc4aaa1d80",
+          "bytes": 1865079,
+          "retrievedAt": "2026-10-07T12:51:32.174452+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "pages": 359
+        },
+        {
+          "name": "q15-support-law.pdf",
+          "url": "https://www.bousai.go.jp/taisaku/seikatsusaiken/pdf/201204hou.pdf",
+          "path": "sources/q15-support-law.pdf",
+          "sha256": "f221141c285726cb4186f1d0d7065a4d8762aaf4aba86e10ed86c260a86abb49",
+          "bytes": 283119,
+          "retrievedAt": "2026-10-07T12:51:32.725060+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "pages": 8
+        },
+        {
+          "name": "q15-support-overview.pdf",
+          "url": "https://www.bousai.go.jp/taisaku/seikatsusaiken/pdf/140612gaiyou.pdf",
+          "path": "sources/q15-support-overview.pdf",
+          "sha256": "783ce75dda9cb18962d7871fb25c3af22f5bb96e283503387e1fc388e92e7c34",
+          "bytes": 150296,
+          "retrievedAt": "2026-10-07T12:51:32.990681+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "pages": 3
+        },
+        {
+          "name": "q15-hospital-index.html",
+          "url": "https://www.mhlw.go.jp/stf/newpage_61825.html",
+          "path": "sources/q15-hospital-index.html",
+          "sha256": "3bdfdac128e5c08935db8d49ea6b2738d6f5fc7fb89de43cd7271c3af940273f",
+          "bytes": 50323,
+          "retrievedAt": "2026-10-07T12:51:33.289468+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "links": [
+            {
+              "label": "",
+              "url": "https://www.mhlw.go.jp/"
+            },
+            {
+              "label": "本文へ",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html#content"
+            },
+            {
+              "label": "お問合わせ窓口",
+              "url": "https://www.mhlw.go.jp/otoiawase/index.html"
+            },
+            {
+              "label": "よくある御質問",
+              "url": "https://www.mhlw.go.jp/qa/index.html"
+            },
+            {
+              "label": "サイトマップ",
+              "url": "https://www.mhlw.go.jp/sitemap/index.html"
+            },
+            {
+              "label": "国民参加の場",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+            },
+            {
+              "label": "点字ダウンロード",
+              "url": "https://www.mhlw.go.jp/tenji/index.html"
+            },
+            {
+              "label": "",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "Japanese",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "English",
+              "url": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jaen/"
+            },
+            {
+              "label": "中文(简体字)",
+              "url": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jazh/"
+            },
+            {
+              "label": "中文(繁體字)",
+              "url": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jazhb/"
+            },
+            {
+              "label": "한국어",
+              "url": "https://translation.mhlw.go.jp/LUCMHLW/ns/w1/jako/"
+            },
+            {
+              "label": "点字ダウンロード",
+              "url": "https://www.mhlw.go.jp/tenji/index.html"
+            },
+            {
+              "label": "サイト閲覧支援ツール起動",
+              "url": "javascript:ptspkLoader('toggle')"
+            },
+            {
+              "label": "(ヘルプ)",
+              "url": "https://www.mhlw.go.jp/etsuranshien/index.html"
+            },
+            {
+              "label": "標準",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "大",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "特大",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "テーマ別に探す",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "テーマ別に探す",
+              "url": "https://www.mhlw.go.jp/theme/index.html"
+            },
+            {
+              "label": "テーマ別に探す",
+              "url": "https://www.mhlw.go.jp/theme/index.html"
+            },
+            {
+              "label": "テーマ別に探すトップへ",
+              "url": "https://www.mhlw.go.jp/theme/index.html"
+            },
+            {
+              "label": "健康・医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+            },
+            {
+              "label": "福祉・介護",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+            },
+            {
+              "label": "雇用・労働",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+            },
+            {
+              "label": "年金",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+            },
+            {
+              "label": "他分野の取り組み",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+            },
+            {
+              "label": "健康・医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+            },
+            {
+              "label": "健康",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/index.html"
+            },
+            {
+              "label": "食品",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/index.html"
+            },
+            {
+              "label": "医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/index.html"
+            },
+            {
+              "label": "医療保険",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html"
+            },
+            {
+              "label": "医薬品・医療機器",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/index.html"
+            },
+            {
+              "label": "生活衛生",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000099450.html"
+            },
+            {
+              "label": "水道",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suido/index.html"
+            },
+            {
+              "label": "福祉・介護",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+            },
+            {
+              "label": "障害者福祉",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/index.html"
+            },
+            {
+              "label": "生活保護・福祉一般",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/index.html"
+            },
+            {
+              "label": "介護・高齢者福祉",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/index.html"
+            },
+            {
+              "label": "雇用・労働",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+            },
+            {
+              "label": "雇用",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/index.html"
+            },
+            {
+              "label": "人材開発",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/index.html"
+            },
+            {
+              "label": "労働基準",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/index.html"
+            },
+            {
+              "label": "雇用環境・均等",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyoukintou/index.html"
+            },
+            {
+              "label": "職場における子育て支援",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/index.html"
+            },
+            {
+              "label": "非正規雇用（有期・パート・派遣労働）",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/part_haken/index.html"
+            },
+            {
+              "label": "労働政策全般",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudouzenpan/index.html"
+            },
+            {
+              "label": "相談窓口等",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/soudanmadogutitou/index.html"
+            },
+            {
+              "label": "年金",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+            },
+            {
+              "label": "年金・日本年金機構関係",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+            },
+            {
+              "label": "他分野の取り組み",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+            },
+            {
+              "label": "「年収の壁」への対応",
+              "url": "https://www.mhlw.go.jp/stf/taiou_001_00002.html"
+            },
+            {
+              "label": "国際関係",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kokusai/index.html"
+            },
+            {
+              "label": "研究事業",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kenkyujigyou/index.html"
+            },
+            {
+              "label": "社会保障全般",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/shakaihoshou/index.html"
+            },
+            {
+              "label": "戦没者遺族等への援護",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/senbotsusha/index.html"
+            },
+            {
+              "label": "災害・危機管理",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000055967.html"
+            },
+            {
+              "label": "情報政策",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/jyouhouseisaku/index.html"
+            },
+            {
+              "label": "規制改革・行政手続関係",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/kansoka/index_00003.html"
+            },
+            {
+              "label": "医薬品等行政評価・監視委員会",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index_00005.html"
+            },
+            {
+              "label": "性的マイノリティに関する厚生労働省の取組",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/shougaishakoyou/index_00007.html"
+            },
+            {
+              "label": "中東呼吸器症候群（MERS）",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou/kekkaku-kansenshou19/mers.html"
+            },
+            {
+              "label": "デング熱",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000131101.html"
+            },
+            {
+              "label": "予防接種",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/index.html"
+            },
+            {
+              "label": "新型コロナワクチン",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_00184.html"
+            },
+            {
+              "label": "後期高齢者医療制度",
+              "url": "https://www.mhlw.go.jp/bunya/shakaihosho/iryouseido01/info02d.html"
+            },
+            {
+              "label": "診療報酬改定",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000106602.html"
+            },
+            {
+              "label": "出産一時金",
+              "url": "https://www.mhlw.go.jp/bunya/iryouhoken/iryouhoken09/07-2.html"
+            },
+            {
+              "label": "食品中の放射性物質への対応",
+              "url": "https://www.mhlw.go.jp/shinsai_jouhou/shokuhin.html"
+            },
+            {
+              "label": "後発医薬品の使用促進",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/kouhatu-iyaku/index.html"
+            },
+            {
+              "label": "風しん",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/"
+            },
+            {
+              "label": "難病対策",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/nanbyou/"
+            },
+            {
+              "label": "消費税と診療報酬について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/iryouhoken14/index.html"
+            },
+            {
+              "label": "保健医療2035",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hokabunya/shakaihoshou/hokeniryou2035/index.html"
+            },
+            {
+              "label": "ジカウイルス感染症",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000109881.html"
+            },
+            {
+              "label": "12月1日は世界エイズデー",
+              "url": "https://www.mhlw.go.jp/bunya/kenkou/eizu/"
+            },
+            {
+              "label": "くるみんマークについて",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kodomo/shokuba_kosodate/kurumin/index.html"
+            },
+            {
+              "label": "認知症施策",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/ninchi/index.html"
+            },
+            {
+              "label": "介護サービス情報公表システム",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hukushi_kaigo/kaigo_koureisha/kouhyou/"
+            },
+            {
+              "label": "自殺",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/jisatsu/index.html"
+            },
+            {
+              "label": "世界自閉症啓発デー2017",
+              "url": "https://www.worldautismawarenessday.jp/"
+            },
+            {
+              "label": "労働者派遣法の改正",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000077386.html"
+            },
+            {
+              "label": "教育訓練給付制度について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/kyouiku.html"
+            },
+            {
+              "label": "SAFEコンソーシアム",
+              "url": "https://safeconsortium.mhlw.go.jp/"
+            },
+            {
+              "label": "中小企業お役立ち",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudouseisaku/chushoukigyou/index.html"
+            },
+            {
+              "label": "若者の就職支援",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/jakunen/index.html"
+            },
+            {
+              "label": "個別労働紛争解決制度",
+              "url": "https://www.mhlw.go.jp/general/seido/chihou/kaiketu/index.html"
+            },
+            {
+              "label": "人材確保対策",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000053276.html"
+            },
+            {
+              "label": "労働基準法の見直し",
+              "url": "https://www.mhlw.go.jp/stf/houdou/0000073981.html"
+            },
+            {
+              "label": "高度プロフェッショナル制度",
+              "url": "https://www.mhlw.go.jp/stf/houdou/0000073981.html"
+            },
+            {
+              "label": "働き方・休み方改善ポータルサイト",
+              "url": "https://work-holiday.mhlw.go.jp/"
+            },
+            {
+              "label": "能力開発基本調査",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/chousa/r1/index_00003.html"
+            },
+            {
+              "label": "サポステ",
+              "url": "https://saposute-net.mhlw.go.jp/"
+            },
+            {
+              "label": "ストレスチェック",
+              "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei12/"
+            },
+            {
+              "label": "外国人技能実習制度",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/01.html"
+            },
+            {
+              "label": "日本年金機構における不正アクセスによる情報流出事案について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000152638.html"
+            },
+            {
+              "label": "年金記録の再確認をお願いします",
+              "url": "https://www.nenkin.go.jp/service/nenkinkiroku/torikumi/sonota/kini-cam/20140331.html"
+            },
+            {
+              "label": "「ねんきんネット」であなたの年金を簡単確認",
+              "url": "https://www.nenkin.go.jp/denshibenri_kojin/n_net/index.html"
+            },
+            {
+              "label": "保険料が払えないと思っている方へ",
+              "url": "https://www.nenkin.go.jp/service/kokunen/menjo/20150428.html"
+            },
+            {
+              "label": "iDeCo（個人型確定拠出年金）",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/kyoshutsu/ideco.html"
+            },
+            {
+              "label": "社会保障改革",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/hokabunya/shakaihoshou/kaikaku.html"
+            },
+            {
+              "label": "戦没者の遺品をお持ちの方へ",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000039987.html"
+            },
+            {
+              "label": "ロシア連邦政府等から提供された抑留者に関する資料について",
+              "url": "https://www.mhlw.go.jp/topics/bukyoku/syakai/soren/"
+            },
+            {
+              "label": "出産なび",
+              "url": "https://www.mhlw.go.jp/stf/birth-navi/index.html"
+            },
+            {
+              "label": "難聴への対応",
+              "url": "https://www.mhlw.go.jp/nanntyou/index.html"
+            },
+            {
+              "label": "報道・広報",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "報道・広報",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+            },
+            {
+              "label": "報道・広報",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+            },
+            {
+              "label": "報道・広報トップへ",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+            },
+            {
+              "label": "大臣記者会見",
+              "url": "https://www.mhlw.go.jp/stf/kaiken/index.html"
+            },
+            {
+              "label": "報道発表資料",
+              "url": "https://www.mhlw.go.jp/stf/houdou/index.html"
+            },
+            {
+              "label": "広報・出版",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/kouhou_shuppan/"
+            },
+            {
+              "label": "行事・会議の予定",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/"
+            },
+            {
+              "label": "国民参加の場",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "政策についてトップへ",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "分野別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+            },
+            {
+              "label": "組織別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+            },
+            {
+              "label": "各種助成金・奨励金等の制度",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+            },
+            {
+              "label": "審議会・研究会等",
+              "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+            },
+            {
+              "label": "国会会議録",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+            },
+            {
+              "label": "予算および決算・税制の概要",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+            },
+            {
+              "label": "政策評価・独法評価",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+            },
+            {
+              "label": "厚生労働省について",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "厚生労働省について",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+            },
+            {
+              "label": "厚生労働省について",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+            },
+            {
+              "label": "厚生労働省についてトップへ",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+            },
+            {
+              "label": "大臣・副大臣・政務官の紹介",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/profile/"
+            },
+            {
+              "label": "幹部名簿",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html"
+            },
+            {
+              "label": "所在地案内",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shozaiannai/index.html"
+            },
+            {
+              "label": "主な仕事（所掌事務）",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shigoto/"
+            },
+            {
+              "label": "地方厚生（支）局",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/chihoukouseikyoku/index.html"
+            },
+            {
+              "label": "労働局・労働基準監督署・ハローワーク",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/roudoukyoku/index.html"
+            },
+            {
+              "label": "施設等機関",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/sisetu/index.html"
+            },
+            {
+              "label": "中央労働委員会",
+              "url": "https://www.mhlw.go.jp/churoi/"
+            },
+            {
+              "label": "資格・試験情報",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/"
+            },
+            {
+              "label": "採用情報",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/"
+            },
+            {
+              "label": "統計情報・白書",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "統計情報・白書",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+            },
+            {
+              "label": "統計情報・白書",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+            },
+            {
+              "label": "統計情報・白書トップへ",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+            },
+            {
+              "label": "各種統計調査",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/toukei/"
+            },
+            {
+              "label": "白書、年次報告書",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/hakusho/"
+            },
+            {
+              "label": "調査票情報を利用したい方へ",
+              "url": "https://www.mhlw.go.jp/stf/toukei/goriyou/chousahyo.html"
+            },
+            {
+              "label": "所管の法令等",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "所管の法令等",
+              "url": "https://www.mhlw.go.jp/shokanhourei/index.html"
+            },
+            {
+              "label": "所管の法令等",
+              "url": "https://www.mhlw.go.jp/shokanhourei/index.html"
+            },
+            {
+              "label": "所管の法令等トップへ",
+              "url": "https://www.mhlw.go.jp/shokanhourei/index.html"
+            },
+            {
+              "label": "国会提出法案",
+              "url": "https://www.mhlw.go.jp/shokanhourei/teishutsuhouan/"
+            },
+            {
+              "label": "所管の法令、告示・通達等",
+              "url": "https://www.mhlw.go.jp/hourei/"
+            },
+            {
+              "label": "覚書等",
+              "url": "https://www.mhlw.go.jp/stf/newpage_19921.html"
+            },
+            {
+              "label": "申請・募集・情報公開",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html"
+            },
+            {
+              "label": "申請・募集・情報公開",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+            },
+            {
+              "label": "申請・募集・情報公開",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+            },
+            {
+              "label": "申請・募集・情報公開トップへ",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+            },
+            {
+              "label": "電子申請（申請・届出等の手続案内）",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/denshishinesei/"
+            },
+            {
+              "label": "法令適用事前確認手続",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/houreitekiyou/"
+            },
+            {
+              "label": "調達情報",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/choutatsujouhou/"
+            },
+            {
+              "label": "グレーゾーン解消制度・新事業特例制度",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gray_zone/gray_zone.html"
+            },
+            {
+              "label": "公益通報者の保護",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/kouekitsuhousha/"
+            },
+            {
+              "label": "情報公開・個人情報保護",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/jouhoukoukai/"
+            },
+            {
+              "label": "デジタル・ガバメントの推進",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/denshiseihu/"
+            },
+            {
+              "label": "公文書管理",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseibunsho/"
+            },
+            {
+              "label": "行政手続法に基づく申出",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseitetsuzuki_moushide/index.html"
+            },
+            {
+              "label": "行政不服審査法に基づく審理員候補者名簿",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseihuhukushinsa/index.html"
+            },
+            {
+              "label": "ホーム",
+              "url": "https://www.mhlw.go.jp/index.html"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "分野別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+            },
+            {
+              "label": "健康・医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+            },
+            {
+              "label": "医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/index.html"
+            },
+            {
+              "label": "災害医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000089060.html"
+            },
+            {
+              "label": "災害拠点病院一覧（令和８年４月１日現在）.pdf［572KB］",
+              "url": "https://www.mhlw.go.jp/content/10800000/001705093.pdf"
+            },
+            {
+              "label": "災害拠点病院指定要件についてのQ&A（第１版）（令和３年３月４日）［252KB］",
+              "url": "https://www.mhlw.go.jp/content/10800000/000749616.pdf"
+            },
+            {
+              "label": "災害拠点病院指定要件の一部改正について（令和５年２月28日医政発0228第１号）［353KB］",
+              "url": "https://www.mhlw.go.jp/content/10800000/001064197.pdf"
+            },
+            {
+              "label": "災害拠点病院指定要件の一部改正について（令和元年7月17日医政発0717第8号）［399KB］",
+              "url": "https://www.mhlw.go.jp/content/10800000/000749617.pdf"
+            },
+            {
+              "label": "災害拠点病院指定要件の一部改正及び医療機関の平時からの協定締結の必要性について(平成30年9月5日医政発0905第8号)",
+              "url": "https://www.mhlw.go.jp/content/10800000/000356993.pdf"
+            },
+            {
+              "label": "災害拠点病院への傷病者受入れ体制の確保に関する調査結果について（平成27年3月24日医政地発0324第2号）",
+              "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000089051.pdf"
+            },
+            {
+              "label": "災害拠点病院への傷病者受入れ体制の確保について（通知）（平成26年10月15日医政地発1015第1号）",
+              "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000089049.pdf"
+            },
+            {
+              "label": "",
+              "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000089049.pdf"
+            },
+            {
+              "label": "PDFファイルを見るためには、Adobe Readerというソフトが必要です。Adobe Readerは無料で配布されていますので、こちらからダウンロードしてください。",
+              "url": "https://get.adobe.com/jp/reader/"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "分野別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+            },
+            {
+              "label": "健康・医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+            },
+            {
+              "label": "健康",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/index.html"
+            },
+            {
+              "label": "食品",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/index.html"
+            },
+            {
+              "label": "医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryou/index.html"
+            },
+            {
+              "label": "医療保険",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/index.html"
+            },
+            {
+              "label": "医薬品・医療機器",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iyakuhin/index.html"
+            },
+            {
+              "label": "生活衛生",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000099450.html"
+            },
+            {
+              "label": "水道",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suido/index.html"
+            },
+            {
+              "label": "福祉・介護",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+            },
+            {
+              "label": "雇用・労働",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+            },
+            {
+              "label": "年金",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+            },
+            {
+              "label": "他分野の取り組み",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+            },
+            {
+              "label": "組織別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+            },
+            {
+              "label": "各種助成金・奨励金等の制度",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+            },
+            {
+              "label": "審議会・研究会等",
+              "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+            },
+            {
+              "label": "国会会議録",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+            },
+            {
+              "label": "予算および決算・税制の概要",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+            },
+            {
+              "label": "政策評価・独法評価",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+            },
+            {
+              "label": "ページの先頭へ",
+              "url": "https://www.mhlw.go.jp/stf/newpage_61825.html#top"
+            },
+            {
+              "label": "国民参加の場",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/sanka/"
+            },
+            {
+              "label": "テーマ別に探す",
+              "url": "https://www.mhlw.go.jp/theme/index.html"
+            },
+            {
+              "label": "テーマ別に探すトップへ",
+              "url": "https://www.mhlw.go.jp/theme/index.html"
+            },
+            {
+              "label": "健康・医療",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/index.html"
+            },
+            {
+              "label": "福祉・介護",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/index.html"
+            },
+            {
+              "label": "雇用・労働",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/index.html"
+            },
+            {
+              "label": "年金",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/index.html"
+            },
+            {
+              "label": "他分野の取り組み",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hokabunya/index.html"
+            },
+            {
+              "label": "報道・広報",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+            },
+            {
+              "label": "報道・広報トップへ",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/index.html"
+            },
+            {
+              "label": "大臣記者会見",
+              "url": "https://www.mhlw.go.jp/stf/kaiken/index.html"
+            },
+            {
+              "label": "報道発表資料",
+              "url": "https://www.mhlw.go.jp/stf/houdou/index.html"
+            },
+            {
+              "label": "広報・出版",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/kouhou_shuppan/"
+            },
+            {
+              "label": "行事・会議の予定",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/gyouji_kaigi/"
+            },
+            {
+              "label": "国民参加の場",
+              "url": "https://www.mhlw.go.jp/houdou_kouhou/sanka/index.html"
+            },
+            {
+              "label": "政策について",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "政策についてトップへ",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/index.html"
+            },
+            {
+              "label": "分野別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/index.html"
+            },
+            {
+              "label": "組織別の政策一覧",
+              "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/soshiki/index.html"
+            },
+            {
+              "label": "各種助成金・奨励金等の制度",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/joseikin_shoureikin/index.html"
+            },
+            {
+              "label": "審議会・研究会等",
+              "url": "https://www.mhlw.go.jp/stf/shingi/indexshingi.html"
+            },
+            {
+              "label": "国会会議録",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/kaigiroku/"
+            },
+            {
+              "label": "予算および決算・税制の概要",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/yosan/"
+            },
+            {
+              "label": "政策評価・独法評価",
+              "url": "https://www.mhlw.go.jp/seisakunitsuite/seisakuhyouka/"
+            },
+            {
+              "label": "厚生労働省について",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+            },
+            {
+              "label": "厚生労働省についてトップへ",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/index.html"
+            },
+            {
+              "label": "大臣・副大臣・政務官の紹介",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/profile/"
+            },
+            {
+              "label": "幹部名簿",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/kanbumeibo/index.html"
+            },
+            {
+              "label": "所在地案内",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shozaiannai/index.html"
+            },
+            {
+              "label": "主な仕事（所掌事務）",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shigoto/"
+            },
+            {
+              "label": "地方厚生（支）局",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/chihoukouseikyoku/index.html"
+            },
+            {
+              "label": "労働局・労働基準監督署・ハローワーク",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/roudoukyoku/index.html"
+            },
+            {
+              "label": "施設等機関",
+              "url": "https://www.mhlw.go.jp/stf/kouseiroudoushou/sisetu/index.html"
+            },
+            {
+              "label": "中央労働委員会",
+              "url": "https://www.mhlw.go.jp/churoi/"
+            },
+            {
+              "label": "資格・試験情報",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/"
+            },
+            {
+              "label": "採用情報",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/saiyou/"
+            },
+            {
+              "label": "統計情報・白書",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+            },
+            {
+              "label": "統計情報・白書トップへ",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/index.html"
+            },
+            {
+              "label": "各種統計調査",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/toukei/"
+            },
+            {
+              "label": "白書、年次報告書",
+              "url": "https://www.mhlw.go.jp/toukei_hakusho/hakusho/"
+            },
+            {
+              "label": "調査票情報を利用したい方へ",
+              "url": "https://www.mhlw.go.jp/stf/toukei/goriyou/chousahyo.html"
+            },
+            {
+              "label": "所管の法令等",
+              "url": "https://www.mhlw.go.jp/shokanhourei/index.html"
+            },
+            {
+              "label": "所管の法令等トップへ",
+              "url": "https://www.mhlw.go.jp/shokanhourei/index.html"
+            },
+            {
+              "label": "国会提出法案",
+              "url": "https://www.mhlw.go.jp/shokanhourei/teishutsuhouan/"
+            },
+            {
+              "label": "所管の法令、告示・通達等",
+              "url": "https://www.mhlw.go.jp/hourei/"
+            },
+            {
+              "label": "覚書等",
+              "url": "https://www.mhlw.go.jp/stf/newpage_19921.html"
+            },
+            {
+              "label": "申請・募集・情報公開",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+            },
+            {
+              "label": "申請・募集・情報公開トップへ",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/index.html"
+            },
+            {
+              "label": "電子申請（申請・届出等の手続案内）",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/denshishinesei/"
+            },
+            {
+              "label": "法令適用事前確認手続",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/houreitekiyou/"
+            },
+            {
+              "label": "調達情報",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/choutatsujouhou/"
+            },
+            {
+              "label": "グレーゾーン解消制度・新事業特例制度",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gray_zone/gray_zone.html"
+            },
+            {
+              "label": "公益通報者の保護",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/kouekitsuhousha/"
+            },
+            {
+              "label": "情報公開・個人情報保護",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/jouhoukoukai/"
+            },
+            {
+              "label": "デジタル・ガバメントの推進",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/denshiseihu/"
+            },
+            {
+              "label": "公文書管理",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseibunsho/"
+            },
+            {
+              "label": "行政手続法に基づく申出",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseitetsuzuki_moushide/index.html"
+            },
+            {
+              "label": "行政不服審査法に基づく審理員候補者名簿",
+              "url": "https://www.mhlw.go.jp/shinsei_boshu/gyouseihuhukushinsa/index.html"
+            },
+            {
+              "label": "他府省",
+              "url": "https://www.mhlw.go.jp/link/"
+            },
+            {
+              "label": "所管の法人等",
+              "url": "https://www.mhlw.go.jp/link/#navAncLink-houjin"
+            },
+            {
+              "label": "図書館利用案内",
+              "url": "https://www.mhlw.go.jp/library/opac4/opac/top"
+            },
+            {
+              "label": "クローズアップ厚生労働省一覧",
+              "url": "https://www.mhlw.go.jp/closeup/index.html"
+            },
+            {
+              "label": "情報配信サービスメルマガ登録",
+              "url": "https://www.mhlw.go.jp/mailmagazine/"
+            },
+            {
+              "label": "WEBマガジン「厚生労働」",
+              "url": "https://www.mhlw.go.jp/web_magazine/"
+            },
+            {
+              "label": "facebook",
+              "url": "https://www.mhlw.go.jp/stf/facebook.html"
+            },
+            {
+              "label": "Ｘ（旧Twitter）",
+              "url": "https://www.mhlw.go.jp/stf/twitter.html"
+            },
+            {
+              "label": "SNS一覧",
+              "url": "https://www.mhlw.go.jp/stf/SNSpage.html"
+            },
+            {
+              "label": "利用規約・リンク・著作権等",
+              "url": "https://www.mhlw.go.jp/chosakuken/index.html"
+            },
+            {
+              "label": "個人情報保護方針",
+              "url": "https://www.mhlw.go.jp/kojinjouhouhogo/index.html"
+            },
+            {
+              "label": "シンボルマークとキャッチフレーズについて",
+              "url": "https://www.mhlw.go.jp/kouseiroudoushou/symbol/index.html"
+            },
+            {
+              "label": "アクセシビリティについて",
+              "url": "https://www.mhlw.go.jp/accessibility/index.html"
+            },
+            {
+              "label": "サイトの使い方(ヘルプ)",
+              "url": "https://www.mhlw.go.jp/tsukaikata/index.html"
+            },
+            {
+              "label": "RSSについて",
+              "url": "https://www.mhlw.go.jp/rss/index.html"
+            },
+            {
+              "label": "ホームページへのご意見",
+              "url": "https://www.mhlw.go.jp/form/pub/mhlw01/getmail"
+            },
+            {
+              "label": "",
+              "url": "https://www.mhlw.go.jp/"
+            },
+            {
+              "label": "03-5253-1111",
+              "url": "tel:0352531111"
+            }
+          ]
+        },
+        {
+          "name": "q15-hospital-establishment.html",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta6395&dataType=1&pageNo=1",
+          "path": "sources/q15-hospital-establishment.html",
+          "sha256": "9023b3dac277896f7e275f73c54b23b94f94161cd72af9c35e198dadf36333ab",
+          "bytes": 9185,
+          "retrievedAt": "2026-10-07T12:51:33.571528+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "links": [
+            {
+              "label": "",
+              "url": "javascript:ptspkLoader('toggle')"
+            }
+          ]
+        },
+        {
+          "name": "q15-hospital-2023-requirements.pdf",
+          "url": "https://www.mhlw.go.jp/content/10800000/001064197.pdf",
+          "path": "sources/q15-hospital-2023-requirements.pdf",
+          "sha256": "2fd967c65cc46a01ea4c34e83c5626f83390ffbf104d4b1a94d2f14ef6c75888",
+          "retrievedAt": "2026-10-07T12:52:33.498659+00:00",
+          "pages": 7,
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "q15-mhlw-business-plan-2025.pdf",
+          "url": "https://www.mhlw.go.jp/content/10600000/001591704.pdf",
+          "path": "sources/q15-mhlw-business-plan-2025.pdf",
+          "sha256": "896e106bd67bad7e08f32e3b7153fc613061a7c4036954b0174b7da90ddaf052",
+          "bytes": 1355927,
+          "retrievedAt": "2026-10-07T13:06:04.356164+00:00",
+          "localReused": false,
+          "sourceDocumentRevision": "2025-04",
+          "pages": 101,
+          "targetPages": [
+            1,
+            40,
+            41
+          ],
+          "sourceAccuracyQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null
+    },
+    {
+      "id": "hokenshi-112-am-q20",
+      "questionNumber": 20,
+      "physicalPdfPage": 14,
+      "printedPage": 8,
+      "question": "成育過程にある者及びその保護者並びに妊産婦に対し必要な成育医療等を切れ目なく提供するための施策の総合的な推進に関する法律〈成育基本法〉で定めているのはどれか。",
+      "choices": [
+        "不妊治療の保険適用",
+        "新生児マススクリーニング検査の実施",
+        "こどもまんなか社会の実現に向けた施策",
+        "成育過程における死亡原因に関する情報収集等の体制"
+      ],
+      "officialAnswer": [
+        4
+      ],
+      "choiceExplanations": [
+        "誤り。不妊治療の保険適用という具体的な制度項目を、成育基本法に明記された情報収集体制と混同しない。成育基本法が妊娠や出産に関する施策を広く対象とすることと、肢1の具体的な保険適用がこの法に定められることは別である。",
+        "誤り。新生児マススクリーニング検査は母子保健の施策に関連するが、設問は成育基本法が明示的に定めた事項を選ぶ問題である。この法の第15条第2項に対応するのは死亡原因の情報収集等の体制であり、具体的な検査名と一般的な政策対象を混同しない。",
+        "誤り。こどもまんなか社会という政策表現と、成育基本法に明記された事項を分けて確認する。子どもを対象とする施策という共通点だけで正答とせず、対象法の条文に対応する肢4を選ぶ。",
+        "正しい。成育基本法第15条第2項は、成育過程にある者が死亡した場合の死亡の原因に関する情報について、収集・管理・活用等の体制、データベース等の整備を国と地方公共団体の施策として定めている。肢4はこの条文に直接対応する。"
+      ],
+      "explanation": "正答は4。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q20-childlaw.json",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/430AC1000000104",
+          "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/430AC1000000104",
+          "status": 200,
+          "sha256": "7599b1287c6ec3f4db6c6d81561194d6aa822c2a262c79959f2770f700740151",
+          "retrievedAt": "2026-10-07T12:36:13.349005+00:00",
+          "sourceQC": null,
+          "publicAllowed": false,
+          "law_info": {
+            "law_type": "Act",
+            "law_id": "430AC1000000104",
+            "law_num": "平成三十年法律第百四号",
+            "law_num_era": "Heisei",
+            "law_num_year": 30,
+            "law_num_type": "Act",
+            "law_num_num": "104",
+            "promulgation_date": "2018-12-14"
+          },
+          "revision_info": {
+            "law_revision_id": "430AC1000000104_20230401_504AC0000000076",
+            "law_type": "Act",
+            "law_title": "成育過程にある者及びその保護者並びに妊産婦に対し必要な成育医療等を切れ目なく提供するための施策の総合的な推進に関する法律",
+            "law_title_kana": "せいいくかていにあるものおよびそのほごしゃならびににんさんぷにたいしひつようなせいいくいりょうとうをきれめなくていきょうするためのせさくのそうごうてきなすいしんにかんするほうりつ",
+            "abbrev": "成育基本法",
+            "category": "社会福祉",
+            "updated": "2024-07-22T00:45:03+09:00",
+            "amendment_promulgate_date": "2022-06-22",
+            "amendment_enforcement_date": "2023-04-01",
+            "amendment_enforcement_comment": null,
+            "amendment_scheduled_enforcement_date": null,
+            "amendment_law_id": "504AC0000000076",
+            "amendment_law_title": "こども家庭庁設置法の施行に伴う関係法律の整備に関する法律",
+            "amendment_law_title_kana": null,
+            "amendment_law_num": "令和四年法律第七十六号",
+            "amendment_type": "3",
+            "repeal_status": "None",
+            "repeal_date": null,
+            "remain_in_force": false,
+            "mission": "New",
+            "current_revision_status": "CurrentEnforced"
+          }
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null
+    },
+    {
+      "id": "hokenshi-112-am-q22",
+      "questionNumber": 22,
+      "physicalPdfPage": 15,
+      "printedPage": 9,
+      "question": "都道府県に自殺対策計画の策定を義務付けているのはどれか。",
+      "choices": [
+        "自殺対策基本法",
+        "自殺総合対策大綱",
+        "自殺対策加速化プラン",
+        "精神保健及び精神障害者福祉に関する法律〈精神保健福祉法〉"
+      ],
+      "officialAnswer": [
+        1
+      ],
+      "choiceExplanations": [
+        "正しい。自殺対策基本法第13条第1項は、都道府県が自殺総合対策大綱と地域の実情を勘案し、都道府県自殺対策計画を定めることを規定する。計画策定の法的な根拠を問うため、法律そのものを選ぶ。",
+        "誤り。自殺総合対策大綱は計画策定で勘案する国の指針である。大綱の策定を定める第12条と、都道府県計画を定める第13条を区別すると、策定義務の法律上の根拠は自殺対策基本法だと分かる。",
+        "誤り。プランという名称の施策と、都道府県計画を定める法律上の規定を混同しない。自殺対策基本法第13条第1項が都道府県の計画を定めるため、肢3ではなく法律名を示す肢1が対応する。",
+        "誤り。精神保健福祉法と自殺対策には関連があるが、設問の都道府県自殺対策計画の根拠条文は自殺対策基本法第13条第1項である。関連する分野の法律であることだけを理由に選ばない。"
+      ],
+      "explanation": "正答は1。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q22-suicide-law.html",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=82aa8247&dataType=0&pageNo=1",
+          "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=82aa8247&dataType=0&pageNo=1",
+          "status": 200,
+          "sha256": "e731a6f52047d6071fc0412c38f10896035cdcc4e957c34e82428591e0253d41",
+          "retrievedAt": "2026-10-07T12:36:13.385722+00:00",
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null
+    },
+    {
+      "id": "hokenshi-112-am-q25",
+      "questionNumber": 25,
+      "physicalPdfPage": 16,
+      "printedPage": 10,
+      "question": "インフルエンザに罹患したAさん（8歳、小学2年生）の経過を以下に示す。\n【日付・経過の表】\nAさんの出席停止期間が終了し、登校できる日はどれか。",
+      "choices": [
+        "1月19日",
+        "1月20日",
+        "1月21日",
+        "1月22日",
+        "1月23日"
+      ],
+      "officialAnswer": [
+        3
+      ],
+      "choiceExplanations": [
+        "誤り。1月18日に解熱したため、翌19日は解熱した後の1日目である。小学生では解熱した後2日を経過する条件を満たさず、19日を最初の登校可能日にはできない。発症後の日数だけで判断しない。",
+        "誤り。1月19日と20日が解熱した後の2日間に当たる。20日をその2日間の経過後の最初の日と数えてはいけない。この条件による最初の登校可能日は翌21日になる。",
+        "正しい。表では発症が1月13日、解熱が1月18日である。発症日・解熱日を0日と数え、発症後5日が14〜18日、解熱後2日が19〜20日になる。両方の条件を経過した最初の日は1月21日で、公式正答A025の3に一致する。",
+        "誤り。1月22日は21日より後であり、設問が求める出席停止期間の終了に伴う最初の登校可能日ではない。22日に登校してはいけないという意味ではない。最短日を21日と求める問題と、後日に登校可能かという別の問いを区別する。",
+        "誤り。1月23日は必要な日数を経過した最初の日である21日より2日後である。23日に登校すること自体を禁止する肢ではなく、設問の最短の登校可能日には対応しない。解熱当日を1日目としたり、発症後と解熱後の日数を足し合わせたりしない。"
+      ],
+      "explanation": "正答は3。各肢の判断理由と一次資料の条文・説明を照合する。出題時点と現在の制度を区別し、公開前に対象条項の変更を再確認する。",
+      "primaryReferences": [
+        {
+          "name": "hokenshi-q25-schoolrules.json",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/333M50000080018",
+          "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/333M50000080018",
+          "status": 200,
+          "sha256": "2b010fba153b7a9ec3823c15cc86cb086bf58fe7b7ac29f69830a208eea84a18",
+          "retrievedAt": "2026-10-07T12:36:13.428450+00:00",
+          "sourceQC": null,
+          "publicAllowed": false,
+          "law_info": {
+            "law_type": "MinisterialOrdinance",
+            "law_id": "333M50000080018",
+            "law_num": "昭和三十三年文部省令第十八号",
+            "law_num_era": "Showa",
+            "law_num_year": 33,
+            "law_num_type": "MinisterialOrdinance",
+            "law_num_num": "018",
+            "promulgation_date": "1958-06-13"
+          },
+          "revision_info": {
+            "law_revision_id": "333M50000080018_20230508_505M60000080022",
+            "law_type": "MinisterialOrdinance",
+            "law_title": "学校保健安全法施行規則",
+            "law_title_kana": "がっこうほけんあんぜんほうしこうきそく",
+            "abbrev": "",
+            "category": "教育",
+            "updated": "2024-07-21T21:09:52+09:00",
+            "amendment_promulgate_date": "2023-04-28",
+            "amendment_enforcement_date": "2023-05-08",
+            "amendment_enforcement_comment": null,
+            "amendment_scheduled_enforcement_date": null,
+            "amendment_law_id": "505M60000080022",
+            "amendment_law_title": "学校保健安全法施行規則の一部を改正する省令",
+            "amendment_law_title_kana": null,
+            "amendment_law_num": "令和五年文部科学省令第二十二号",
+            "amendment_type": "3",
+            "repeal_status": "None",
+            "repeal_date": null,
+            "remain_in_force": false,
+            "mission": "New",
+            "current_revision_status": "CurrentEnforced"
+          }
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "historicalLawTextBeforeExam": null,
+      "table": {
+        "header": [
+          "日",
+          "月",
+          "火",
+          "水",
+          "木",
+          "金",
+          "土"
+        ],
+        "rows": [
+          {
+            "dates": [
+              "1月11日",
+              "1月12日",
+              "1月13日",
+              "1月14日",
+              "1月15日",
+              "1月16日",
+              "1月17日"
+            ],
+            "events": [
+              "",
+              "",
+              "体温38.0℃、だるさのため早退する",
+              "インフルエンザと診断される",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "dates": [
+              "1月18日",
+              "1月19日",
+              "1月20日",
+              "1月21日",
+              "1月22日",
+              "1月23日",
+              "1月24日"
+            ],
+            "events": [
+              "解熱し症状が改善する",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "sourcePhysicalPage": 16,
+        "sourcePng": "sources/hokenshi112-am-physical-page16.png",
+        "sourcePngSha256": "3cd9ef7bc97c0f97e859932aa5fc8fbf5d3174554a590b42a554842c2256b9ec",
+        "formattingChange": "公式表の曜日・日付・出来事の位置関係を保持した構造転記。本文に表を省略しない。"
+      }
+    },
+    {
+      "id": "hokenshi-112-am-q29",
+      "questionNumber": 29,
+      "physicalPdfPage": 18,
+      "printedPage": 12,
+      "question": "野菜摂取量と糖尿病の有無の関係を検討するために、1日の野菜摂取量、糖尿病の有無、属性情報を収集した。\n野菜摂取量と年齢に関連のあることが分かっているとき、適切な解析方法はどれか。",
+      "choices": [
+        "野菜摂取量で層化を行う。",
+        "糖尿病の有無で標準化を行う。",
+        "年齢で調整する多変量解析を行う。",
+        "年齢と野菜摂取量でマッチングを行う。",
+        "解析対象として糖尿病を有する人に限定する。"
+      ],
+      "officialAnswer": [
+        3
+      ],
+      "choiceExplanations": [
+        "誤り。調べたい主な要因は野菜摂取量であり、その量で分けるだけでは年齢の違いを調整できない。潜在的な交絡を調べる層化では第三の変数を用いるので、年齢を考慮する方法との違いを確認する。",
+        "誤り。糖尿病の有無はこの検討の結果側の変数である。結果の有無で標準化すると述べるだけでは、野菜摂取量と関連する年齢を調整した比較にならない。結果変数と調整変数を取り違えない。",
+        "正しい。年齢を調整変数として含め、野菜摂取量と糖尿病の有無の関連を検討する方法が対応する。二値の結果を扱う一例は年齢と摂取量を含むロジスティック回帰である。設問の情報だけで年齢が交絡因子と確定したとは断定せず、考慮すべき変数として調整する。調整後の関連だけで因果効果も確定しない。",
+        "誤り。年齢だけでなく、調べたい要因そのものの野菜摂取量までマッチングすると、比較したい摂取量の違いを消すおそれがある。CDCは検討したい曝露でマッチングしないことを説明する。マッチング一般が無効という意味ではない。",
+        "誤り。糖尿病のある人だけにすると結果の有無が変化せず、糖尿病のない人との比較ができない。野菜摂取量と糖尿病の有無の関連を調べる目的に適合せず、年齢の調整の代わりにもならない。"
+      ],
+      "primaryReferences": [
+        {
+          "name": "stats-cdc-analysis.html",
+          "url": "https://www.cdc.gov/field-epi-manual/php/chapters/analyze-interpret-data.html",
+          "path": "sources/stats-cdc-analysis.html",
+          "sha256": "0f448d3dcdab07373b1af3b3a1117076c5b4862e8f16b0a30814da3da9f3f765",
+          "bytes": 160950,
+          "retrievedAt": "2026-10-07T12:55:21.057417+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "stats-cdc-matching.html",
+          "url": "https://www.cdc.gov/field-epi-manual/php/chapters/design-conduct-analyze-field-studies.html",
+          "path": "sources/stats-cdc-matching.html",
+          "sha256": "a5eb7af001572045f80b6bb7e52a900bea131453d4f9adf998bf4f748024ae28",
+          "bytes": 92313,
+          "retrievedAt": "2026-10-07T12:55:21.057417+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_ORIGINAL_PAGE_READ_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "hokenshi-112-am-q30",
+      "questionNumber": 30,
+      "physicalPdfPage": 19,
+      "printedPage": 13,
+      "question": "同じスクリーニング検査を有病率（有病割合）が1%の集団Aと20%の集団Bに行った。\n評価指標と集団の関係について正しいのはどれか。",
+      "choices": [
+        "特異度は集団Aより集団Bの方が高い。",
+        "敏感度は集団Aより集団Bの方が高い。",
+        "集団Aと集団Bで評価指標は一致している。",
+        "陰性反応的中度は集団Aより集団Bの方が高い。",
+        "陽性反応的中度は集団Aより集団Bの方が高い。"
+      ],
+      "officialAnswer": [
+        5
+      ],
+      "choiceExplanations": [
+        "誤り。特異度は病気のない人のうち陰性となる割合である。有病率が高いという与件だけで特異度も高いとはいえない。この設問では同じ検査の敏感度・特異度を一定とする標準的な比較を行う。実際の集団では対象者の特性等によって検査性能が変わる場合もあり、検査名が同じなら必ず不変と一般化しない。",
+        "誤り。敏感度は病気のある人のうち陽性となる割合である。集団全体の有病率の違いから、病気のある人に対する陽性率まで高いとは導けない。敏感度・特異度を一定と置く比較と、有病率によって変わる的中度を区別する。",
+        "誤り。敏感度・特異度を一定としても、陽性者や陰性者の中の病気のある人の割合は有病率に依存する。したがって的中度を含めて全評価指標が一致するとする肢は適切ではない。具体例の数値は独自に置いた仮定であり、実測値ではない。",
+        "誤り。敏感度・特異度が一定で完全な検査ではない通常の比較では、有病率が高いBの陰性者には病気を持つ人が相対的に多く、陰性反応的中度は低くなる。NPV=(1-p)Sp/((1-p)Sp+p(1-Se))の分母に偽陰性のp(1-Se)が入ることを確認する。",
+        "正しい。敏感度・特異度が一定で完全な検査ではない通常の比較では、有病率の高いBで陽性反応的中度が高くなる。PPV=pSe/(pSe+(1-p)(1-Sp))で、陽性者のうち真陽性が占める割合を求める。完全検査などで的中度が1に飽和する例外まで、必ず厳密に増加すると一般化しない。"
+      ],
+      "primaryReferences": [
+        {
+          "name": "stats-cdc-predictive-definitions.html",
+          "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson5/appendixa.html",
+          "path": "sources/stats-cdc-predictive-definitions.html",
+          "sha256": "8ff608609550e342ff9f15fd9db68c28ad6b536af91fbe002b937cfbb4dddce9",
+          "bytes": 91756,
+          "retrievedAt": "2026-10-07T12:55:20.933377+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "stats-cdc-predictive-prevalence.html",
+          "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson5/quizanswers.html",
+          "path": "sources/stats-cdc-predictive-prevalence.html",
+          "sha256": "6373a04b6716acf81d9515e1fb0f1f45cb89c1d3c5a87559bf7782f339eed0b1",
+          "bytes": 99172,
+          "retrievedAt": "2026-10-07T12:55:21.561092+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_ORIGINAL_PAGE_READ_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "authorCreatedExample": {
+        "notOfficialGivenData": true,
+        "assumptions": "各集団10000人、Se=0.90、Sp=0.95を固定する独自例。個別患者への診断助言ではない。",
+        "tables": [
+          {
+            "prevalence": "1/100",
+            "n": 10000,
+            "TP": 90,
+            "FN": 10,
+            "TN": 9405,
+            "FP": 495,
+            "PPVExact": "2/13",
+            "NPVExact": "1881/1883",
+            "PPV": 0.15384615384615385,
+            "NPV": 0.9989378651088688
+          },
+          {
+            "prevalence": "1/5",
+            "n": 10000,
+            "TP": 1800,
+            "FN": 200,
+            "TN": 7600,
+            "FP": 400,
+            "PPVExact": "9/11",
+            "NPVExact": "38/39",
+            "PPV": 0.8181818181818182,
+            "NPV": 0.9743589743589743
+          }
+        ]
+      }
+    },
+    {
+      "id": "hokenshi-112-am-q31",
+      "questionNumber": 31,
+      "physicalPdfPage": 19,
+      "printedPage": 13,
+      "question": "令和元年の時点で「1日の果物摂取量が100g未満の者」は20歳以上の60%である。\n20歳以上の集団から無作為に選んだ100人の中で「1日の果物摂取量が100g未満の者」の人数が従う確率分布として適切なのはどれか。",
+      "choices": [
+        "F分布",
+        "t分布",
+        "正規分布",
+        "二項分布",
+        "χ²〈カイ2乗〉分布"
+      ],
+      "officialAnswer": [
+        4
+      ],
+      "choiceExplanations": [
+        "誤り。F分布は連続分布であり、この問題が数えている0人から100人までの整数の人数を直接表す分布ではない。各人の該当・非該当という二つの結果を100人について数える構造に対応させる。",
+        "誤り。t分布は連続分布であり、該当者数が取り得る0〜100の整数に確率を割り当てるモデルではない。標本から推定する統計量の分布と、該当する人の人数そのものの分布を混同しない。",
+        "誤り。n=100、p=0.6では二項分布を正規分布で近似する方法はあるが、該当人数の基本モデルは二項分布である。近似として連続分布を利用できることと、人数がその分布に厳密に従うことは異なる。",
+        "正しい。各人が該当する確率をp=0.6と一定に置き、独立な二値の試行として100人の該当人数Xを数える標準モデルではXはBinomial(100,0.6)に従う。P(X=k)=C(100,k)0.6^k0.4^(100-k)、平均60、分散24である。母集団サイズを指定した有限集団の非復元抽出なら厳密には超幾何分布であり、この独立試行モデルと区別する。",
+        "誤り。χ²分布は連続分布で、0〜100の整数の該当人数そのものに対応しない。人数を使って後から計算する適合度検定等の統計量と、集計前の人数Xの分布を取り違えない。"
+      ],
+      "primaryReferences": [
+        {
+          "name": "stats-nist-binomial.html",
+          "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+          "path": "sources/stats-nist-binomial.html",
+          "sha256": "3944aac11d4e4f539115905807db1a26e050fb08a46c819dba76bbefa612cb15",
+          "bytes": 9897,
+          "retrievedAt": "2026-10-07T12:55:19.892519+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_ORIGINAL_PAGE_READ_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING",
+      "authorCalculation": {
+        "mean": 60,
+        "variance": 24,
+        "standardDeviation": 4.898979485566356,
+        "assumptions": "独立・一定確率p=0.6の二値試行。母集団規模未指定。"
+      }
+    },
+    {
+      "id": "hokenshi-112-am-q32",
+      "questionNumber": 32,
+      "physicalPdfPage": 20,
+      "printedPage": 14,
+      "question": "薬剤Aが薬剤Bと比較して高頻度に肝機能障害を起こすかどうか、データベースを用いて評価した。\n統計的仮説検定およびその解釈として正しいのはどれか。",
+      "choices": [
+        "p値は肝機能障害発症確率のことである。",
+        "有意水準は統計的仮説検定を実施した後で決める。",
+        "対立仮説は「薬剤Aと薬剤Bの肝機能障害発症頻度に差はない」である。",
+        "有意水準より大きなp値が得られた場合、薬剤Aと薬剤Bの肝機能障害発症頻度が同程度であると示されたことにはならない。",
+        "有意水準より小さなp値が得られた場合、分析に用いた人数によらず薬剤Aは薬剤Bと比較して高頻度に肝機能障害を引き起こすと判断する。"
+      ],
+      "officialAnswer": [
+        4
+      ],
+      "choiceExplanations": [
+        "誤り。p値は帰無仮説と解析モデルを仮定したとき、観測された統計量と同程度以上に極端な結果が得られる確率である。薬剤を服用した個人が肝機能障害を発症する確率や、帰無仮説が真である確率を表す値ではない。",
+        "誤り。有意水準は結果を見る前に定める。得られたp値に合わせて後から有意水準を変えると、事前に設定した誤りの確率による判断ではなくなる。例えばα=0.05は説明用の慣用例であり、この設問に指定された値ではない。",
+        "誤り。「差はない」は通常の二群比較で帰無仮説側に置く内容であり、対立仮説ではない。Aが高頻度かという片側の問いでは、対立仮説はAの頻度がBより高い方向に対応する。片側・両側の設定と検定方法は事前に整える。",
+        "正しい。p値が有意水準より大きく帰無仮説を棄却できない場合、差を示す証拠が不十分という判断である。同程度や同等性が証明されたとはいえず、検出力不足等の可能性も考える。同等性を示す目的なら、そのための許容幅と検定計画が別に必要である。",
+        "誤り。小さいp値だけで薬剤Aが肝機能障害を引き起こすという因果判断はできない。効果の方向・大きさ、不確実性、標本人数や検定の前提、データベース研究の交絡等を確認する。人数は精度・検出力に関わり、統計的有意性だけでは臨床的な重要性も確定しない。"
+      ],
+      "primaryReferences": [
+        {
+          "name": "stats-nist-pvalue.html",
+          "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc131.htm",
+          "path": "sources/stats-nist-pvalue.html",
+          "sha256": "388fced16552298e72bc3c94252f3127b38211739a5d203bec54d7e90e27597c",
+          "bytes": 6922,
+          "retrievedAt": "2026-10-07T12:55:19.939430+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "stats-nist-tests.html",
+          "url": "https://www.itl.nist.gov/div898/handbook/prc/section1/prc13.htm",
+          "path": "sources/stats-nist-tests.html",
+          "sha256": "0b2b3837573ce6d399305ff074f612b90d2352f6fa79160579b8f43729a38fef",
+          "bytes": 9297,
+          "retrievedAt": "2026-10-07T12:55:19.890848+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "stats-cdc-analysis.html",
+          "url": "https://www.cdc.gov/field-epi-manual/php/chapters/analyze-interpret-data.html",
+          "path": "sources/stats-cdc-analysis.html",
+          "sha256": "0f448d3dcdab07373b1af3b3a1117076c5b4862e8f16b0a30814da3da9f3f765",
+          "bytes": 160950,
+          "retrievedAt": "2026-10-07T12:55:21.057417+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_ORIGINAL_PAGE_READ_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING"
+    }
+  ]
+}

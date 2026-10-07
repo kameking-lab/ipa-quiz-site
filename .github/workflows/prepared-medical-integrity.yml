@@ -1,0 +1,23 @@
+name: Prepared medical integrity
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/prepared-medical/hokenshi112/**'
+      - '.github/workflows/prepared-medical-integrity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  prepared-medical-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Preserve private gates, original pilot and reviewed question objects
+        run: node --test data/prepared-medical/hokenshi112/validate.test.mjs data/prepared-medical/hokenshi112/reviewed13/validate.test.mjs

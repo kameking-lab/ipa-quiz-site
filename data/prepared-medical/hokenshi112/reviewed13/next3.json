@@ -1,0 +1,183 @@
+{
+  "qualification": "保健師国家試験",
+  "round": 112,
+  "examDate": "2026-02-13",
+  "session": "am",
+  "authorModel": "GPT-6.1 Sol",
+  "publicAllowed": false,
+  "sourceAttribution": "出典：厚生労働省 第112回保健師国家試験 午前。改行・空白・百分率記号の表示を整理。解説は独自作成であり公式解説ではない。",
+  "questions": [
+    {
+      "id": "hokenshi-112-am-q33",
+      "questionNumber": 33,
+      "physicalPdfPage": 20,
+      "printedPage": 14,
+      "question": "人口に関連する指標の説明で正しいのはどれか。",
+      "choices": [
+        "75歳以上の人口割合を高齢化率という。",
+        "老年化指数は（老年人口÷総人口）×100で算出する。",
+        "老年人口指数は（老年人口÷年少人口）×100で算出する。",
+        "高齢化社会から高齢社会へ移行する所要期間を倍加年数という。",
+        "総人口に占める高齢者の割合が20%以上の社会を超高齢社会という。"
+      ],
+      "officialAnswer": [
+        4
+      ],
+      "choiceExplanations": [
+        "誤り。高齢化率は総人口に占める65歳以上人口の割合である。75歳以上人口の割合とは分ける。年齢の下限と分母を確認すると、この肢は下限が異なる。",
+        "誤り。総務省統計局の定義で老年化指数の分母は15歳未満人口である。65歳以上人口を総人口で割って百分率にする式は高齢化率であり、老年化指数ではない。",
+        "誤り。老年人口指数の分母は15～64歳人口（生産年齢人口）である。老年人口を年少人口で割る式は老年化指数に対応し、似た名前の二つの指数を取り違えている。",
+        "正しい。内閣府の高齢社会白書は、高齢化率が7%を超えてから、その倍の14%に達するまでの所要年数を倍加年数と説明する。人口の人数そのものが2倍になる年数でも、高齢化率が14%から21%になる年数でもない。",
+        "誤り。一般に超高齢社会の目安として用いられる高齢化率は21%であり、この肢の20%ではない。ここでいう高齢者は65歳以上人口で、総人口に対する割合をみる。境界を法律上の一律な分類と説明するものではない。"
+      ],
+      "explanation": "正答は4。各肢の定義と一次資料を照合する。これは独自作成解説であり公式の理由ではない。",
+      "primaryReferences": [
+        {
+          "name": "population-stat-age-indices.html",
+          "url": "https://www.stat.go.jp/library/faq/faq02/faq02a11.html",
+          "path": "sources/population-stat-age-indices.html",
+          "sha256": "f6767e616e76363603a9af13e01c3915d992478d061279f34a2c1ace8b843431",
+          "bytes": 13669,
+          "pages": null,
+          "retrievedAt": "2026-10-07T13:15:26.136721+00:00",
+          "localReadAt": "2026-10-07T13:16:43.789619+00:00",
+          "localReused": true,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "population-cao-doubling-2024.pdf",
+          "url": "https://www8.cao.go.jp/kourei/whitepaper/w-2024/zenbun/pdf/1s1s_02.pdf",
+          "path": "sources/population-cao-doubling-2024.pdf",
+          "sha256": "47bc9664d90a81fa34f44bb419a93ac5aae65a4468b62805c33ae2c9c499f525",
+          "bytes": 449934,
+          "pages": 3,
+          "retrievedAt": "2026-10-07T13:16:44.164558+00:00",
+          "localReadAt": "2026-10-07T13:16:44.239998+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "population-mhlw-age-society.pdf",
+          "url": "https://www.mhlw.go.jp/content/12000000/001135382.pdf",
+          "path": "sources/population-mhlw-age-society.pdf",
+          "sha256": "7e0ec4ddcda5bc45d5df6db086df6418d1ed8b69df9e2f7b8214c7c85c4ce5a3",
+          "bytes": 3553903,
+          "pages": 12,
+          "retrievedAt": "2026-10-07T13:16:45.033283+00:00",
+          "localReadAt": "2026-10-07T13:16:45.149853+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false,
+          "actualPublisher": "東京都社会福祉協議会・東京都福祉人材センター（MHLW hosted; third-party pamphlet）",
+          "reuseScope": "Cited for author explanation only. No pamphlet text/image republication permission asserted."
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "hokenshi-112-am-q34",
+      "questionNumber": 34,
+      "physicalPdfPage": 21,
+      "printedPage": 15,
+      "question": "オタワ憲章で提唱されているヘルスプロモーションの活動方針で正しいのはどれか。2つ選べ。",
+      "choices": [
+        "共生社会の実現",
+        "個人技術の向上",
+        "適正技術の使用",
+        "地域資源の有効活用",
+        "健康的な公共政策づくり"
+      ],
+      "officialAnswer": [
+        2,
+        5
+      ],
+      "choiceExplanations": [
+        "誤り。共生や公正は健康づくりと関係する価値であるが、この語はオタワ憲章が列挙する五つの活動方針の名称ではない。憲章に社会的公正や公平が無関係という意味ではない。",
+        "正しい。Develop Personal Skillsに対応する。憲章は情報提供、健康教育、生活技能を通じて、人が自らの健康と環境をよりよく管理し選択できるようにすることを示す。",
+        "誤り。適正技術の使用という名称は、オタワ憲章の五つの活動方針に含まれない。健康活動で適切な技術が不要という判断ではなく、設問が列挙された活動方針を尋ねている点で区別する。",
+        "誤り。地域の人的・物的資源の活用は、地域活動の強化についての説明に登場するが、それ自体は五つの活動方針の名称ではない。Strengthen Community Actionsは、地域自身による優先順位決定、意思決定、計画、実施と主体性の強化を含むため、資源の有効活用だけに置き換えない。",
+        "正しい。Build Healthy Public Policyに対応する。医療の部門だけでなく各部門の政策決定で健康への影響を考慮し、法制度、財政措置、税制、組織の変更などを組み合わせる活動方針である。"
+      ],
+      "explanation": "正答は2・5。各肢の定義と一次資料を照合する。これは独自作成解説であり公式の理由ではない。",
+      "primaryReferences": [
+        {
+          "name": "promotion-who-ottawa.pdf",
+          "url": "https://www.afro.who.int/sites/default/files/2017-06/hpr%20ottawa_charter.pdf",
+          "path": "sources/promotion-who-ottawa.pdf",
+          "sha256": "c7b00a9da08c0e4ed7e1284009bc8f20b2c5e757e36f0ba602e37e9b9d1e8820",
+          "bytes": 17812,
+          "pages": 4,
+          "retrievedAt": "2026-10-07T13:15:27.079614+00:00",
+          "localReadAt": "2026-10-07T13:16:43.789619+00:00",
+          "localReused": true,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "hokenshi-112-am-q35",
+      "questionNumber": 35,
+      "physicalPdfPage": 21,
+      "printedPage": 15,
+      "question": "A市の保健師は通いの場に参加している高齢者を対象に、基本チェックリストを使用して生活機能を評価することにした。\n運動機能の低下を判断する基準に含まれる項目はどれか。2つ選べ。",
+      "choices": [
+        "友人の家を訪ねていますか",
+        "15分位続けて歩いていますか",
+        "週に1回以上は外出していますか",
+        "転倒に対する不安は大きいですか",
+        "バスや電車で1人で外出していますか"
+      ],
+      "officialAnswer": [
+        2,
+        4
+      ],
+      "choiceExplanations": [
+        "誤り。基本チェックリストの項目4であり、項目1～5の主として手段的ADLに関する区分に入る。外出や訪問に運動能力が関係することと、運動器区分の指定項目に該当することを分ける。",
+        "正しい。項目8であり、項目6～10の運動器の機能に関する区分に含まれる。歩行の持続を尋ねる質問で、原チェックリストは「いいえ」を該当側に置く。これ一項目だけで臨床診断や全体の判定が確定するとは説明しない。",
+        "誤り。項目16であり、項目16・17の閉じこもりに関する区分である。外出が少ない背景として運動機能低下があり得ても、チェックリストの区分上は運動器の項目6～10とは異なる。",
+        "正しい。項目10であり、転倒発生のリスクを中心とした運動器の区分に含まれる。実際に転んだ経験を尋ねる項目9と、転倒への不安を尋ねる項目10を混同しない。原チェックリストでは、この不安の質問は「はい」を該当側に置く。",
+        "誤り。項目1であり、主として手段的ADLに関する区分に入る。バス・電車を使って一人で外出できるかという生活行為の項目で、運動器区分の質問そのものではない。"
+      ],
+      "explanation": "正答は2・4。各肢の定義と一次資料を照合する。これは独自作成解説であり公式の理由ではない。",
+      "primaryReferences": [
+        {
+          "name": "checklist-mhlw-domain-guide.pdf",
+          "url": "https://www.mhlw.go.jp/topics/2009/05/dl/tp0501-1c_0002.pdf",
+          "path": "sources/checklist-mhlw-domain-guide.pdf",
+          "sha256": "c0a4a63b4ac62549136700b0e44a9711c05054181d101dbf29ccbb182c1ab1db",
+          "bytes": 469423,
+          "pages": 9,
+          "retrievedAt": "2026-10-07T13:15:26.183028+00:00",
+          "localReadAt": "2026-10-07T13:16:43.790619+00:00",
+          "localReused": true,
+          "sourceQC": null,
+          "publicAllowed": false
+        },
+        {
+          "name": "checklist-mhlw-question-table.pdf",
+          "url": "https://www.mhlw.go.jp/content/000545093.pdf",
+          "path": "sources/checklist-mhlw-question-table.pdf",
+          "sha256": "f5f3e3857b3f1c4a582566ab82ac8a8414859856b282e3f9791c13528688035e",
+          "bytes": 8222323,
+          "pages": 102,
+          "retrievedAt": "2026-10-07T13:16:45.364499+00:00",
+          "localReadAt": "2026-10-07T13:16:45.545032+00:00",
+          "localReused": false,
+          "sourceQC": null,
+          "publicAllowed": false
+        }
+      ],
+      "needsReview": true,
+      "publicAllowed": false,
+      "sourceConfidence": "AUTHOR_PRIMARY_READ_INDEPENDENT_REVIEW_PENDING"
+    }
+  ]
+}
