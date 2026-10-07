@@ -1,0 +1,165 @@
+{
+  "atUtc": "2026-10-07T17:45:59.750045+00:00",
+  "status": "PASS_NUMERICAL_CIRCUIT_INVARIANTS",
+  "candidateSha256": "56e8dd0ac6268274219170ec1bb14737e82ee06efb98622e4196abb4cf81a930",
+  "rootExactAlgebraDiffSha256": "1d90dd7c88df1c80c8e7010a3f8bcaad201ea9482c62a8d0cbb36aeabbffc5db",
+  "primaryBasis": "Official Q physical8 slope−V_B/(CR_3), switching input0, physical9 figure1 resistance topology",
+  "cases": [
+    {
+      "parameters": {
+        "R_1": 20000,
+        "R_2": 10000,
+        "R_3": 30000,
+        "C": 1e-06,
+        "V_H": 8,
+        "V_L": 3,
+        "V_A": -2,
+        "V_B": 5
+      },
+      "selectedValues": [
+        2.666666666666667,
+        6.0,
+        -16.0,
+        0.22,
+        0.3025
+      ],
+      "returnTime": 0.08249999999999999,
+      "circuitResiduals": {
+        "inputKcl": -5.421010862427522e-20,
+        "upperSwitchKcl": 0.0,
+        "lowerSwitchKcl": 0.0,
+        "risingEndpoint": 0.0,
+        "fallingEndpoint": 0.0
+      },
+      "asymmetricOutputCase": true,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "R_1": 11000,
+        "R_2": 33000,
+        "R_3": 51000,
+        "C": 2e-06,
+        "V_H": 4,
+        "V_L": 9,
+        "V_A": 7,
+        "V_B": -6
+      },
+      "selectedValues": [
+        3.75,
+        3.0,
+        -1.3333333333333333,
+        0.04911111111111111,
+        0.15961111111111112
+      ],
+      "returnTime": 0.11050000000000001,
+      "circuitResiduals": {
+        "inputKcl": 0.0,
+        "upperSwitchKcl": 0.0,
+        "lowerSwitchKcl": 0.0,
+        "risingEndpoint": 0.0,
+        "fallingEndpoint": -6.661338147750939e-16
+      },
+      "asymmetricOutputCase": true,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "R_1": 17000,
+        "R_2": 23000,
+        "R_3": 19000,
+        "C": 3e-07,
+        "V_H": 6,
+        "V_L": 6,
+        "V_A": 11,
+        "V_B": -3
+      },
+      "selectedValues": [
+        5.050000000000001,
+        4.434782608695652,
+        -4.434782608695652,
+        0.00842608695652174,
+        0.016852173913043476
+      ],
+      "returnTime": 0.008426086956521736,
+      "circuitResiduals": {
+        "inputKcl": -1.0842021724855044e-19,
+        "upperSwitchKcl": 5.421010862427522e-20,
+        "lowerSwitchKcl": -5.421010862427522e-20,
+        "risingEndpoint": 1.7763568394002505e-15,
+        "fallingEndpoint": 1.7763568394002505e-15
+      },
+      "asymmetricOutputCase": false,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "R_1": 40000,
+        "R_2": 10000,
+        "R_3": 75000,
+        "C": 5e-08,
+        "V_H": 12,
+        "V_L": 2,
+        "V_A": -8,
+        "V_B": 3
+      },
+      "selectedValues": [
+        0.7999999999999998,
+        8.0,
+        -48.0,
+        0.105,
+        0.1225
+      ],
+      "returnTime": 0.0175,
+      "circuitResiduals": {
+        "inputKcl": 0.0,
+        "upperSwitchKcl": 0.0,
+        "lowerSwitchKcl": 0.0,
+        "risingEndpoint": 0.0,
+        "fallingEndpoint": -7.105427357601002e-15
+      },
+      "asymmetricOutputCase": true,
+      "pass": true
+    },
+    {
+      "parameters": {
+        "R_1": 13000,
+        "R_2": 29000,
+        "R_3": 37000,
+        "C": 8e-07,
+        "V_H": 5,
+        "V_L": 7,
+        "V_A": 2,
+        "V_B": 10
+      },
+      "selectedValues": [
+        4.476190476190476,
+        3.1379310344827585,
+        -2.2413793103448274,
+        0.022746798029556647,
+        0.05459231527093596
+      ],
+      "returnTime": 0.03184551724137931,
+      "circuitResiduals": {
+        "inputKcl": 0.0,
+        "upperSwitchKcl": -2.710505431213761e-20,
+        "lowerSwitchKcl": 0.0,
+        "risingEndpoint": 4.440892098500626e-16,
+        "fallingEndpoint": -4.440892098500626e-16
+      },
+      "asymmetricOutputCase": true,
+      "pass": true
+    }
+  ],
+  "wrongOptionBlankPairsRejectedAcrossCases": 70,
+  "meaningfulChecks": [
+    "Comparator input Kirchhoff residual",
+    "Both switching boundary signs",
+    "Integrator rising and falling endpoints",
+    "Unequal positive/negative saturation timing",
+    "Symmetric output nonzero period",
+    "Each of 70 wrong blank-choice pairings differs from required value for at least one case"
+  ],
+  "independentAstraContentVerdict": null,
+  "publicAllowed": false
+}
