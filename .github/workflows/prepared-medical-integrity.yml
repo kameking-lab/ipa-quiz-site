@@ -20,4 +20,4 @@ jobs:
         with:
           node-version: 22
       - name: Preserve private gates, original pilot and reviewed question objects
-        run: node --test --test-isolation=none data/prepared-medical/hokenshi112/validate.test.mjs data/prepared-medical/hokenshi112/reviewed13/validate.test.mjs
+        run: node --test data/prepared-medical/hokenshi112/validate.test.mjs data/prepared-medical/hokenshi112/reviewed13/validate.test.mjs
