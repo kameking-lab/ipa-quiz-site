@@ -7,15 +7,16 @@ const KANA = [..."イロハニホヘトチリヌルヲワカヨ"];
 const KEYS = [..."アイウエオカキクケコサシスセソ"];
 // Read independently from the 2026-08-30 official answer PDF by subject/row.
 const OFFICIAL = {
+  theory: { session: "riron", number: 2, answers: [..."ロヘホカイ"], paper: "q01" },
   power: { session: "denryoku", number: 2, answers: [..."チハヲワリ"], paper: "q02" },
   machinery: { session: "kikai", number: 3, answers: [..."ホカヌチリ"], paper: "q03" },
   law: { session: "houki", number: 1, answers: [..."ハヘヲヌリ"], paper: "q04" },
 } as const;
 
 describe("denken1 2026 partial launch", () => {
-  it("has precisely the three selected original questions and all five blanks", () => {
-    expect(DENKEN1_QUESTIONS).toHaveLength(15);
-    expect(new Set(DENKEN1_QUESTIONS.map((q) => q.id)).size).toBe(15);
+  it("has precisely the four selected original questions and all five blanks", () => {
+    expect(DENKEN1_QUESTIONS).toHaveLength(20);
+    expect(new Set(DENKEN1_QUESTIONS.map((q) => q.id)).size).toBe(20);
     for (const [subject, sheet] of Object.entries(OFFICIAL)) {
       const rows = DENKEN1_QUESTIONS.filter((q) => q.subject === subject);
       expect(rows).toHaveLength(5);

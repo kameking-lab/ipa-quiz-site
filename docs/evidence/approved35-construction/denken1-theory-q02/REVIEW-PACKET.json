@@ -1,0 +1,104 @@
+{
+  "atUtc": "2026-10-07T12:36:46.555448+00:00",
+  "qualification": "denken1",
+  "exam": "令和8年度第一種電気主任技術者一次試験",
+  "subject": "理論",
+  "baseCommit": "9e8f37c0e7b13f703f21dd1c2bfc95ca891fbf2c",
+  "worktree": "C:/wt/approved35-construction-20261007",
+  "scope": {
+    "officialOriginalQuestions": 1,
+    "officialOriginalLabel": "A問2",
+    "officialAnswerBlanks": 5,
+    "practiceRows": 5,
+    "sharedOriginalChoices": 15,
+    "uniqueOriginalChoiceGroups": 1,
+    "choiceExplanationEntries": 75,
+    "independentQuestionCountIsNot75": true,
+    "fullSubjectPaperClaim": false,
+    "fullExamPeriodClaim": false
+  },
+  "schema": {
+    "rowIds": [
+      "denken1-2026-theory-q02-1",
+      "denken1-2026-theory-q02-2",
+      "denken1-2026-theory-q02-3",
+      "denken1-2026-theory-q02-4",
+      "denken1-2026-theory-q02-5"
+    ],
+    "sharing": "Every row repeats identical stem and same 15 choice values; each adds one distinct blank selector.",
+    "sourceRefs": {
+      "questionPdf": "denken1-source/20260830_ch_first_q01.pdf",
+      "physicalPages": [
+        6,
+        7
+      ],
+      "answerPdf": "denken1-source/20260830_ch_first_a01.pdf",
+      "answerPhysicalPage": 1
+    },
+    "originalKanaToNativeKeys": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ",
+      "ホ": "オ",
+      "ヘ": "カ",
+      "ト": "キ",
+      "チ": "ク",
+      "リ": "ケ",
+      "ヌ": "コ",
+      "ル": "サ",
+      "ヲ": "シ",
+      "ワ": "ス",
+      "カ": "セ",
+      "ヨ": "ソ"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-candidate\\CANDIDATE-5-UNITS-V2.json",
+      "sha256": "a38a116d0ba3a187a13250fd33e54f9abe8889dfe96df367d5bc505f1f19c8b6"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-candidate\\FIRST-AUTHOR-FROZEN-V2.json",
+      "sha256": "6bf2a4bbd509e10219a489350e6e4218e0bbff082d9bba4fe30978815633cae2"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-candidate\\CLAIMS-PRIMARY-EVIDENCE-V2.json",
+      "sha256": "f7514f7cf9d497bfdb653c56035705a9765ea00a19cdff6916f54c39c580048a"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-candidate\\V2-CORRECTION-RECEIPT.json",
+      "sha256": "16570d7823eb4be468941b205df2ae228c7614a441acfcbb82c700060eba940f"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-source\\FIGURE-RECEIPT.json",
+      "sha256": "976ea83b549cfc6d9f4243c8c155fdadf01f0fae1327aa78adb56a78bff4fbd8"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\construction\\denken1-source\\q02-concentration-original.png",
+      "sha256": "f79d4817332e0fd0083413633616543cbc3fa3ac8c55ac0821b96cca17503355"
+    }
+  ],
+  "rights": {
+    "url": "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
+    "observed": "FAQ277 education use grants permission-free and fee-free use conditional on attribution and modification notice; usage notice is requested.",
+    "publicTermsWordingAdded": false,
+    "usageNoticeSent": false,
+    "conditionReviewRequiredBeforePublication": true
+  },
+  "gates": {
+    "independentBlindTranscription": "reviewer e9949fa5 frozen before candidate read; machine comparison pending",
+    "independentTechnicalPass": false,
+    "strictFirstPartyGenerationReceipt": null,
+    "strictGuardNotRelaxed": true,
+    "newApiCalls": 0,
+    "publicPublishAllowed": false,
+    "mergeAllowed": false,
+    "noteActions": 0
+  },
+  "preservation": {
+    "existingNative15Rows": "unchanged",
+    "existingGenerationEvidence": "immutable",
+    "v1AuthorFreezeAndCandidate": "immutable"
+  }
+}

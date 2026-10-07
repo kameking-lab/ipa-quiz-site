@@ -1,0 +1,47 @@
+{
+  "atUtc": "2026-10-07T12:47:42.312903+00:00",
+  "worktree": "C:\\wt\\approved35-construction-20261007",
+  "candidateSha256": "a38a116d0ba3a187a13250fd33e54f9abe8889dfe96df367d5bc505f1f19c8b6",
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exit": 0,
+    "result": "PASS"
+  },
+  "lint": {
+    "command": "pnpm lint",
+    "exit": 0,
+    "errors": 0,
+    "warnings": 1,
+    "existingWarningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs:3"
+  },
+  "targetTests": {
+    "command": "pnpm test -- __tests__/questions/denken1-launch-data.test.ts",
+    "exit": 0,
+    "files": 1,
+    "tests": 2,
+    "result": "PASS"
+  },
+  "allTests": {
+    "command": "pnpm test",
+    "exit": 0,
+    "files": 438,
+    "tests": 4348,
+    "durationSeconds": 52.03,
+    "result": "PASS"
+  },
+  "ordinaryBuild": {
+    "command": "pnpm build",
+    "exit": 1,
+    "reason": "Turbopack rejects dependency junction outside filesystem root; no authored compilation error observed"
+  },
+  "webpackBuild": {
+    "command": "pnpm build --webpack",
+    "result": "HOLD_UNCHANGED_BASELINE_ROUTE_EXPORT",
+    "exit": 1,
+    "compilePassedSeconds": 77,
+    "evidence": "BASELINE-BUILD-BLOCKER.json"
+  },
+  "noDependencyInstall": true,
+  "externalPublishCount": 0,
+  "currentGeneratedNextTypecheck": "Initial clean typecheck PASS; after next generated route types, the same unchanged baseline export error prevents full build."
+}

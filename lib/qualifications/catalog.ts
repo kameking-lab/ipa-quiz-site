@@ -106,9 +106,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.shiken.or.jp/chief/first/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
     status: "live",
-    reuseSummary: "令和8年度一次試験の電力・機械・法規から各1原問の5空欄、計15空欄を収録。公式の解答群15肢で練習できます。",
+    reuseSummary: "令和8年度一次試験の理論・電力・機械・法規から各1原問の5空欄、計20空欄を収録。公式の解答群15肢で練習できます。",
     attributionTemplate: "出典：令和○年度第一種電気主任技術者一次試験○○科目A問題問○",
-    remainingWork: ["同年度の残る原問・理論科目", "過年度と二次試験"],
+    remainingWork: ["同年度の残る原問", "過年度と二次試験"],
   },
   {
     slug: "denken2",

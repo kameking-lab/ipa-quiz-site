@@ -1,0 +1,58 @@
+{
+  "atUtc": "2026-10-07T12:43:57.833043+00:00",
+  "officialNoticeClause": {
+    "url": "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
+    "locator": "FAQ277 留意点後の「なお」段落（web normalized line92）",
+    "purpose": "利用状況を参考にするため",
+    "requestedFields": [
+      "法人名・部署",
+      "担当者氏名",
+      "住所",
+      "電話番号",
+      "メールアドレス",
+      "使用する問題の試験名",
+      "使用目的"
+    ],
+    "permissionParagraphSeparatelyStatesNoPermissionOrFeeRequired": true,
+    "providerAcknowledgementBeforeUseExplicitlyRequired": false,
+    "inference": "Use notification is requested, but the page does not say permission or a reply must be obtained first."
+  },
+  "priorScopeSearch": {
+    "evidenceFile": "EEC-NOTICE-SEARCH-HITS.json",
+    "scannedFiles": 288,
+    "priorReport": "reports/sikaku-next-20260926/site/DENKEN2-STATUS.md:16",
+    "priorReportRecordsNoticeRequested": true,
+    "sentReceipt": null,
+    "appliesSameDomainAndPurpose": null,
+    "noMailAbsenceClaim": true,
+    "mailboxesAccessed": false,
+    "externalMessagesSent": 0
+  },
+  "guardRequirements": {
+    "astra": {
+      "path": ".cursor/rules/qualification-media-control-plane.mdc",
+      "line": 32,
+      "instruction": "主要UX、情報設計、公開可否、根拠衝突の独立最終審査はgpt-6-astra。実装担当と同じagentを最終審査者にしない。",
+      "applies": true
+    },
+    "strictOpusConditional": {
+      "path": ".cursor/rules/qualification-media-control-plane.mdc",
+      "line": 33,
+      "instruction": "strict契約が実claude-opus-5-5/firstParty receiptを要求する対象はCodexモデルへ置換しない。",
+      "appliesToDenken1ExplicitEvidence": null,
+      "searched": [
+        "current scripts",
+        "data/questions/denken1",
+        "docs/evidence/denken1-2026",
+        "__tests__/questions"
+      ],
+      "matchingDenken1StrictContractCount": 0,
+      "authorAddedNullFieldNotNewRequirement": true
+    }
+  },
+  "publicAllowed": false,
+  "remaining": [
+    "Root final publication decision after Astra review.",
+    "No existing usage-notice receipt found in stated search scope; broader correspondence history is unverified."
+  ]
+}

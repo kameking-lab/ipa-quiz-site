@@ -349,6 +349,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     urlSlug: "denken1",
     level: "advanced",
     sessions: [
+      { session: "riron", urlSlug: "riron", expectedQuestions: 5, label: "理論", categories: ["理論"] },
       { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 5, label: "電力", categories: ["電力"] },
       { session: "kikai", urlSlug: "kikai", expectedQuestions: 5, label: "機械", categories: ["機械"] },
       { session: "houki", urlSlug: "houki", expectedQuestions: 5, label: "法規", categories: ["法規"] },
