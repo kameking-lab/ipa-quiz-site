@@ -10,3 +10,7 @@
 - typecheck初回・lint・全4348testsはPASS。通常buildは依存junction制約，webpackはcompile PASS後，未変更baseのcopilot余剰exportで型HOLD。詳細は CHECKS-CURRENT と BASELINE-BUILD-BLOCKER。
 - 独立最終Astraのexactcommit確認とroot公開判断はまだ未完。新公開・note操作・メール送信0。
 - EECのFAQ277は教育利用の許諾・使用料不要を明示，使用状況連絡も依頼している。既送通知receiptは未確認で送付済を捏造しない。利用条件の文言は公開UIへ追加していない。
+
+## Git blobのbyte hash追補
+
+現著者V2のa38a116d…はCRLF・33706bytesの原記録を指します。Git commitの同一JSONはLF・33354bytesへ正規化され，blob SHA-256は `0f54ebedff1b3639a39b4e2b0c86259306983117a1a150a95565a9fd44912331` です。CRLF→LFの全byte一致とJSON semantic一致を独立最終担当が確認しました。原V2・原転記・原一次査読receiptは上書きしていません。内容の変更はありません。詳細は SOURCE-BLOB-NORMALIZATION.json。
