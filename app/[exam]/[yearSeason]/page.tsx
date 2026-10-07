@@ -99,7 +99,7 @@ export async function generateMetadata({
   const pool = getQuestionsByExamStrict(exam as ExamCode).filter(q => q.year === parsed.year && q.season === parsed.season);
   const commonOnly = pool.length > 0 && pool.every(q => q.session === "am1");
   const label = pool[0] ? questionSourceEdition(pool[0]) : formatYearSeason(parsed.year, parsed.season);
-  const histLabel = commonOnly ? "高度試験共通 午前I" : examLabelAt(exam as ExamCode, parsed.year, parsed.season);
+  const histLabel = commonOnly ? `${examLabel(exam as ExamCode)}向け 高度試験共通 午前I` : examLabelAt(exam as ExamCode, parsed.year, parsed.season);
   const title = `${label} ${histLabel} 過去問一覧`;
   const description = `${label}の${histLabel}の収録問題を一覧で確認できます。解説付きで効率的に学習を進められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -143,7 +143,7 @@ export default async function ExamYearSeasonPage({
 
   const commonOnly = pool.every(q => q.session === "am1");
   const label = questionSourceEdition(pool[0]!);
-  const histLabel = commonOnly ? "高度試験共通 午前I" : examLabelAt(code, parsed.year, parsed.season);
+  const histLabel = commonOnly ? `${examLabel(code)}向け 高度試験共通 午前I` : examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
 
   const sessionMap = new Map<string, typeof pool>();
