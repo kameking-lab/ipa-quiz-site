@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -86,6 +87,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
           })}
         </div>
       </section>
+      <ExamYearArchiveLinks exam="denken3" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
         問題・正答の出典：一般財団法人 電気技術者試験センター。電力1問は公式正答と一般解説を掲載し、選択肢ごとの解説は図表の根拠を確認後に追加します。
       </p>
