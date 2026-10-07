@@ -5,7 +5,8 @@ import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { KANRI_QUESTIONS } from "@/data/questions/kanri";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
-import { EXAM_DESCRIPTIONS } from "@/lib/seo/exam-meta";
+import { EXAM_DESCRIPTIONS, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { generateMetadata } from "@/app/[exam]/page";
 
 const playable = KANRI_QUESTIONS.filter(isPracticeReadyQuestion);
 
@@ -45,5 +46,25 @@ describe("learner-facing qualification coverage", () => {
   it("keeps catalog and hub summaries free of stale availability claims", () => {
     const summaries = [QUALIFICATION_CATALOG.find((entry) => entry.examCode === "kanri")?.reuseSummary, EXAM_DESCRIPTIONS.kanri].join(" ");
     expect(summaries).not.toMatch(/16問|残り34問|各50問、計100問収録/);
+  });
+});
+
+describe("管理業務主任者 hub metadata matches the playable two-paper coverage", () => {
+  it("advertises both official years and the strict published count across social metadata", async () => {
+    const pool = getQuestionsByExamStrict("kanri");
+    expect(pool.filter((q) => q.year === 2024)).toHaveLength(48);
+    expect(pool.filter((q) => q.year === 2025)).toHaveLength(50);
+    expect(pool).toHaveLength(98);
+    const metadata = await generateMetadata({ params: Promise.resolve({ exam: "kanri" }) });
+    const description = String(metadata.description);
+    expect(description).toContain("2024・2025年度公式問題");
+    expect(description).toContain(`${pool.length}問を2回分`);
+    expect(description).toContain("年度ごとの掲載範囲と法令基準日");
+    expect(description).not.toContain("2025年度公式50問から");
+    expect(metadata.openGraph?.description).toBe(description);
+    expect(metadata.twitter?.description).toBe(description);
+    expect(metadata.title).toBe("管理業務主任者 過去問一覧・AI解説");
+    expect(metadata.alternates?.canonical).toBe("/kanri");
+    expect(metadata.robots).toBeUndefined();
   });
 });
