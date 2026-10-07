@@ -45,8 +45,28 @@ describe("matched paid article and free qualification index", () => {
     expect(posthogCapture).toHaveBeenCalledExactlyOnceWith("note_outbound_click", { source: `exam_${exam}`, account: "ipa_quiz_ai" });
   });
 
-  it("does not add purchase cards to qualifications outside the approved three", () => {
-    for (const exam of ["ip", "sg", "fe", "ap", "sc", "kanri", "eisei1"] as const) {
+  it("identifies SC's one original-case purchase without creating a new index", () => {
+    render(<ExamNoteMaterialIndex exam="sc" />);
+    const card = screen.getByRole("complementary", { name: "SCの補助教材" });
+    const link = within(card).getByRole("link", { name: /SC・権限とログと鍵のレビュー帳を確認する/ });
+    expect(within(card).getAllByRole("link")).toHaveLength(1);
+    expect(link).toHaveAttribute("href", "https://note.com/ipa_quiz_ai/n/ne91a9ace70fe");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    expect(card).toHaveTextContent("買い切り単品 1,080円");
+    expect(card).toHaveTextContent("情報処理安全確保支援士（SC）");
+    expect(card).toHaveTextContent("架空3ケース");
+    expect(card).toHaveTextContent("空欄レビュー表");
+    expect(card).toHaveTextContent("公式過去問や公式採点基準の転載");
+    expect(card).toHaveTextContent("続きの購入は任意です。");
+    expect(card).not.toHaveTextContent("索引は無料");
+    fireEvent.click(link);
+    expect(trackEvent).toHaveBeenCalledExactlyOnceWith({ name: "note_outbound_click", source: "exam_sc", account: "ipa_quiz_ai" });
+    expect(posthogCapture).toHaveBeenCalledExactlyOnceWith("note_outbound_click", { source: "exam_sc", account: "ipa_quiz_ai" });
+  });
+
+  it("does not add purchase cards to qualifications outside the approved four", () => {
+    for (const exam of ["ip", "sg", "fe", "ap", "kanri", "eisei1"] as const) {
       const { container, unmount } = render(<ExamNoteMaterialIndex exam={exam} />);
       expect(container).toBeEmptyDOMElement();
       unmount();

@@ -32,6 +32,17 @@ const MATERIAL_INDEXES: Partial<Record<ExamCode, MaterialIndex>> = {
 };
 
 export function ExamNoteMaterialIndex({ exam }: { exam: ExamCode }) {
+  if (exam === "sc") {
+    return (
+      <aside aria-label="SCの補助教材" className="mb-8 rounded-2xl border border-border bg-muted/20 p-4 sm:p-5">
+        <h2 className="flex items-center gap-2 text-sm font-semibold">
+          <BookOpenText aria-hidden="true" className="h-4 w-4 shrink-0 text-muted-foreground" />
+          SCの記述答案を補う教材
+        </h2>
+        <ExamNotePaidMaterial exam={exam} />
+      </aside>
+    );
+  }
   if (exam === "nw") return <NwNoteMaterialIndex exam={exam} />;
   const index = MATERIAL_INDEXES[exam];
   if (!index) return null;

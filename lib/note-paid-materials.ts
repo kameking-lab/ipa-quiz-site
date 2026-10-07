@@ -15,6 +15,16 @@ export interface NotePaidMaterial {
 // Anonymous note v3 metadata and public previews checked on 2026-10-07.
 // These are optional individual purchases, separate from free site practice.
 export const NOTE_PAID_MATERIALS: Partial<Record<ExamCode, NotePaidMaterial>> = {
+  sc: {
+    title: "権限・ログ・鍵の見落としを減らす：対策を根拠で選ぶレビュー帳",
+    href: "https://note.com/ipa_quiz_ai/n/ne91a9ace70fe",
+    audience: "情報処理安全確保支援士（SC）で、認証・認可、ログ、暗号化の基本は学んだものの、対策が必要な理由を短く説明できない人向けです。",
+    deliverable: "権限・ログ・暗号鍵の架空3ケースの設計文、問い、解答の作り方、誤答の修正例と空欄レビュー表を収録しています。",
+    difference: "無料サイトの選択式過去問・解説で知識を確認した後に、対象・脅威・対策・検証・残るリスクを対応させる独自の記述演習です。公式過去問や公式採点基準の転載、実システムの設定手順書ではありません。",
+    priceYen: 1080,
+    cta: "SC・権限とログと鍵のレビュー帳を確認する",
+    source: "exam_sc",
+  },
   st: {
     title: "令和6年度春期ITストラテジスト午後Ⅱ・問1｜DXの技術検証を経営判断へつなぐ答案設計",
     href: "https://note.com/ipa_quiz_ai/n/nc9483a96082a",
