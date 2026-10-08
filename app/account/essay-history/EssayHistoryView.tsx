@@ -124,7 +124,7 @@ export function EssayHistoryView() {
                         {q?.title ?? entry.questionId}
                       </p>
                       <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        スコア {entry.totalScore} / 合格率予測 {entry.passProbability}%
+                        参考スコア {entry.totalScore}（合否の予測ではありません）
                       </p>
                     </div>
                     <ChevronRight className="h-4 w-4 flex-shrink-0 text-zinc-400" />

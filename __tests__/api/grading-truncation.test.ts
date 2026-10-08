@@ -42,7 +42,7 @@ vi.mock("@/lib/ai/provider", async () => {
         }
         yield JSON.stringify({
           totalScore: 80,
-          subResults: [{ label: "設問1", score: 16, goodPoints: ["良い"], improvements: [] }],
+          subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: ["良い"], improvements: []})),
           overallComment: "よくできています",
           rank: "A",
           passProbability: 80,

@@ -133,7 +133,8 @@ function safeParseScoring(
       subResults?: Array<Partial<SubScoringResult>>;
     };
     if (!afternoonContentSchema.safeParse(obj).success || typeof obj.totalScore !== "number" || !Array.isArray(obj.subResults)) return null;
-    if (obj.subResults.some((s) => !question.subQuestions.some((q) => q.label === s.label))) return null;
+    if (obj.subResults.length !== question.subQuestions.length
+      || obj.subResults.some((s) => !question.subQuestions.some((q) => q.label === s.label))) return null;
     const subResults: SubScoringResult[] = obj.subResults.map((s) => {
       const label = String(s.label ?? "");
       const sub = question.subQuestions.find((q) => q.label === label);

@@ -97,7 +97,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     stubStream(
       JSON.stringify({
         totalScore: 80,
-        subResults: [{ label: "設問1", score: 16, goodPoints: [], improvements: [] }],
+        subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: [], improvements: []})),
         overallComment: "ok",
       }),
     );

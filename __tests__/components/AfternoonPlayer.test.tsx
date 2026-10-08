@@ -104,7 +104,7 @@ describe("AfternoonPlayer — 採点進行状況の live region 通知", () => {
 });
 
 describe("AfternoonPlayer ungraded response", () => {
-  it.each([{status:"unavailable"},{gradingMode:"simplified",totalScore:70,subResults:[]}])("never shows fabricated scores and retains answers", async body => {
+  it.each([{status:"unavailable"},{gradingMode:"simplified",totalScore:70,subResults:[]},{status:"graded",gradingMode:"ai",questionId:"ap-2024a-pm-q1",totalScore:70,subResults:[{label:"設問1",score:20,goodPoints:[],improvements:[]}],overallComment:"partial"}])("never shows fabricated scores and retains answers", async body => {
     vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify(body))));
     render(<AfternoonPlayer questions={[makeQuestion()]} />);
     const input=screen.getByLabelText("設問1 の解答"); fireEvent.change(input,{target:{value:"保持する答案"}});
