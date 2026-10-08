@@ -44,7 +44,7 @@ describe("FP1 applied discovery", () => {
     const xml = renderFpPracticalSitemapXml();
     const doc = new DOMParser().parseFromString(xml, "application/xml");
     const paths = [...doc.querySelectorAll("loc")].map((item) => new URL(item.textContent!).pathname).filter((path) => path.startsWith("/fp1/applied"));
-    expect(paths).toEqual(["/fp1/applied", "/fp1/applied/202605", "/fp1/applied/202605/51", "/fp1/applied/202605/52"]);
+    expect(paths).toEqual(["/fp1/applied", "/fp1/applied/202605", "/fp1/applied/202605/51", "/fp1/applied/202605/52", "/fp1/applied/202605/53"]);
     expect(new Set(paths).size).toBe(paths.length);
   });
 });
