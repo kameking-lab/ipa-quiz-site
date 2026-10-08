@@ -25,12 +25,12 @@ describe("FP1 applied native reader", () => {
     expect(screen.getByLabelText("出典")).toHaveTextContent("解説は独自制作");
   });
 
-  it("exposes only question51 and uses its own canonical rather than the MCQ route", async () => {
-    expect(generateStaticParams()).toEqual([{ edition: "202605", number: "51" }]);
+  it("exposes questions51 and52 and uses its own canonical rather than the MCQ route", async () => {
+    expect(generateStaticParams()).toEqual([{ edition: "202605", number: "51" }, { edition: "202605", number: "52" }]);
     const metadata = await generateMetadata({ params: Promise.resolve({ edition: "202605", number: "51" }) });
     expect(metadata.alternates?.canonical).toBe("/fp1/applied/202605/51");
     expect(metadata.description).toContain("2025-10-01");
-    const absent = await generateMetadata({ params: Promise.resolve({ edition: "202605", number: "52" }) });
+    const absent = await generateMetadata({ params: Promise.resolve({ edition: "202605", number: "53" }) });
     expect(absent.robots).toEqual({ index: false });
   });
 });
