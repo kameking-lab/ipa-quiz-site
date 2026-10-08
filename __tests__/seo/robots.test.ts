@@ -33,6 +33,7 @@ describe("robots()", () => {
     expect(disallow).toContain("/api/");
     expect(disallow).toContain("/admin/");
     expect(disallow).toContain("/auth/");
+    expect(disallow).toContain("/chat/share");
   });
 
   it("allows /api/og despite disallowing /api/ (SNS og:image scrapers)", () => {
@@ -46,6 +47,11 @@ describe("robots()", () => {
       .filter((d) => "/api/og".startsWith(d))
       .sort((a, b) => b.length - a.length)[0];
     expect("/api/og".length).toBeGreaterThan((matchedDisallow ?? "").length);
+  });
+
+  it("public noindex pages remain crawlable to expose their noindex", () => {
+    expect(disallow).not.toContain("/api-docs");
+    expect(disallow).not.toContain("/demo/");
   });
 
   it("advertises the sitemap index", () => {

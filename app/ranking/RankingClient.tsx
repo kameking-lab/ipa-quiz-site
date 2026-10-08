@@ -19,7 +19,6 @@ import { examLabel } from "@/lib/utils";
 import {
   getMockScores,
   getNickname,
-  recordMockScore,
   setNickname,
 } from "@/lib/learning/mock-scores";
 import type { MockScore } from "@/lib/learning/mock-scores";
@@ -28,8 +27,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const BUCKETS = [0, 30, 40, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95];
 
 /**
- * Synthetic distribution roughly matching IPA published statistics —
- * skewed normal centered around 55-60, used until real DB-backed ranking lands.
+ * Display-only invented distribution. It represents no people or IPA statistics.
  */
 const SYNTHETIC_DISTRIBUTION: Record<string, number[]> = {
   default: [120, 320, 540, 760, 920, 1100, 980, 720, 480, 280, 140, 60, 25],
@@ -39,6 +37,7 @@ export function RankingClient() {
   const [exam, setExam] = React.useState<ExamCode>("ap");
   const [nickname, setNicknameState] = React.useState("");
   const [scores, setScores] = React.useState<MockScore[]>([]);
+  const [samplePct, setSamplePct] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     setNicknameState(getNickname());
@@ -54,9 +53,7 @@ export function RankingClient() {
   const latest = examScores[examScores.length - 1];
   const latestPct = latest ? Math.round((latest.score / latest.total) * 100) : null;
   const distribution = SYNTHETIC_DISTRIBUTION[exam] ?? SYNTHETIC_DISTRIBUTION.default;
-  const totalCount = distribution.reduce((a, b) => a + b, 0);
-  const percentile = latestPct !== null ? computePercentile(latestPct, distribution) : null;
-  const userBucket = latestPct !== null ? bucketIndex(latestPct) : -1;
+  const userBucket = samplePct !== null ? bucketIndex(samplePct) : -1;
 
   const chartData = distribution.map((count, i) => ({
     range: `${BUCKETS[i]}-${BUCKETS[i + 1] ?? 100}`,
@@ -114,11 +111,7 @@ export function RankingClient() {
                 value={`${latestPct}%`}
                 highlight={(latestPct ?? 0) >= 60}
               />
-              <Stat
-                label="パーセンタイル"
-                value={percentile !== null ? `上位 ${100 - percentile}%` : "—"}
-                highlight={(percentile ?? 0) >= 60}
-              />
+
             </div>
           ) : (
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -126,20 +119,20 @@ export function RankingClient() {
             </p>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            母集団: 約 {totalCount.toLocaleString()} 名（β 期間中はモックデータ）
+            この端末に保存された模試結果です。全国順位や合格可能性を示すものではありません。
           </p>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">スコア分布</CardTitle>
+          <CardTitle className="text-base">仮の分布を使った表示デモ</CardTitle>
         </CardHeader>
         <CardContent>
           <div
             className="h-72 w-full"
             role="img"
-            aria-label="模試の得点率分布を示す棒グラフ"
+            aria-label="架空の分布による表示デモ。実受験者の人数ではありません"
           >
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
@@ -147,7 +140,7 @@ export function RankingClient() {
                 <XAxis dataKey="range" tick={{ fontSize: 10 }} />
                 <YAxis tick={{ fontSize: 10 }} />
                 <Tooltip />
-                <Bar dataKey="count" name="人数">
+                <Bar dataKey="count" name="表示用の仮値">
                   {chartData.map((d, i) => (
                     <Cell key={i} fill={d.isYou ? "#0284c7" : "#cbd5e1"} />
                   ))}
@@ -155,9 +148,9 @@ export function RankingClient() {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          {latest && (
+          {samplePct !== null && (
             <p className="mt-3 text-xs text-sky-700 dark:text-sky-300">
-              青いバーがあなたの位置です。
+              青いバーはデモのサンプル得点率 {samplePct}% の位置です。実際の全国順位ではありません。
             </p>
           )}
         </CardContent>
@@ -201,12 +194,12 @@ export function RankingClient() {
 
       <Card className="border-sky-200 bg-sky-50/40 dark:border-sky-900/40 dark:bg-sky-950/20">
         <CardContent className="pt-6 text-sm text-zinc-700 dark:text-zinc-300">
-          <p className="mb-2 font-medium">模試スコアを記録するには？</p>
+          <p className="mb-2 font-medium">表示デモを試す</p>
           <p className="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-            今後の模試モード完了時に、自動的にここに記録されます。テスト用のサンプル登録も可能です。
+            模試を完了した結果だけを履歴に記録します。デモのサンプルはこの画面内だけで使い、学習履歴に保存しません。
           </p>
-          <Button size="sm" variant="outline" onClick={() => addSample(exam, setScores)}>
-            サンプルスコアを追加
+          <Button size="sm" variant="outline" onClick={() => setSamplePct(Math.floor(50 + Math.random() * 44))}>
+            保存しないサンプルを表示
           </Button>
         </CardContent>
       </Card>
@@ -244,22 +237,4 @@ function bucketIndex(pct: number): number {
     if (pct >= BUCKETS[i]) return i;
   }
   return 0;
-}
-
-function computePercentile(pct: number, distribution: number[]): number {
-  const idx = bucketIndex(pct);
-  const total = distribution.reduce((a, b) => a + b, 0);
-  let below = 0;
-  for (let i = 0; i < idx; i++) below += distribution[i];
-  return Math.round((below / total) * 100);
-}
-
-function addSample(
-  exam: ExamCode,
-  setScores: React.Dispatch<React.SetStateAction<MockScore[]>>,
-) {
-  const total = 80;
-  const score = Math.floor(40 + Math.random() * 35);
-  recordMockScore({ exam, score, total });
-  setScores(getMockScores());
 }

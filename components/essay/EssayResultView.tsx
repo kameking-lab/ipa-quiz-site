@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CheckCircle2, AlertTriangle, XCircle, Sparkles, MinusCircle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SimplifiedGradingNotice } from "@/components/SimplifiedGradingNotice";
+
 import type {
   EssayGradingResult,
   EssayQuestion,
@@ -40,24 +40,24 @@ function weakestAxis(result: EssayGradingResult): { key: string; label: string }
 const RANK_META: Record<EssayRank, { label: string; sub: string; classes: string; ring: string }> = {
   A: {
     label: "A",
-    sub: "合格濃厚（70%+）",
+    sub: "設問への対応が良好",
     classes: "bg-emerald-100 text-emerald-900 dark:bg-emerald-900/40 dark:text-emerald-100",
     ring: "ring-emerald-500/30",
   },
   B: {
     label: "B",
-    sub: "ボーダー（40-70%）",
+    sub: "改善点を確認",
     classes: "bg-amber-100 text-amber-900 dark:bg-amber-900/40 dark:text-amber-100",
     ring: "ring-amber-500/30",
   },
   C: {
     label: "C",
-    sub: "不合格濃厚（40%未満）",
+    sub: "構成と具体性を見直す",
     classes: "bg-orange-100 text-orange-900 dark:bg-orange-900/40 dark:text-orange-100",
     ring: "ring-orange-500/30",
   },
   fail: {
-    label: "不合格",
+    label: "要見直し",
     sub: "設問理解不足",
     classes: "bg-red-100 text-red-900 dark:bg-red-900/40 dark:text-red-100",
     ring: "ring-red-500/30",
@@ -70,6 +70,9 @@ interface Props {
 }
 
 export function EssayResultView({ result, question }: Props) {
+  if (result.gradingMode === "simplified") {
+    return <p role="status">この結果は内容を評価したものではありません。答案を確認して、AI評価を再度お試しください。</p>;
+  }
   const meta = RANK_META[result.rank];
   return (
     <div className="space-y-5">
@@ -83,13 +86,13 @@ export function EssayResultView({ result, question }: Props) {
             </div>
             <div className="flex-1">
               <p className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                AI 総合判定 — {INDUSTRY_LABELS[result.industry]}
+                AIによる学習用の参考評価 — {INDUSTRY_LABELS[result.industry]}
               </p>
               <h2 className="mt-1 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
                 {meta.sub}
               </h2>
               <div className="mt-3 flex flex-wrap items-center gap-2">
-                <Badge variant="outline">合格率予測: {result.passProbability}%</Badge>
+                <Badge variant="outline">実際の合格率・合否の予測ではありません</Badge>
                 {result.model && (
                   <Badge variant="outline" className="text-[10px]">
                     model: {result.model}
@@ -98,11 +101,6 @@ export function EssayResultView({ result, question }: Props) {
               </div>
             </div>
           </div>
-          {result.gradingMode === "simplified" && (
-            <div className="mt-5">
-              <SimplifiedGradingNotice />
-            </div>
-          )}
           {result.overallAdvice && (
             <div className="mt-5 rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm leading-relaxed text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200">
               <p className="mb-2 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
@@ -218,7 +216,7 @@ export function EssayResultView({ result, question }: Props) {
         <span>
           <span className="font-medium">評価ランク A/B/C/D の判定基準とは？</span>
           <span className="mt-0.5 block text-xs text-zinc-500 dark:text-zinc-400">
-            午後II論文がA判定（合格）になる基準と、近づけるための答案づくりを解説
+            実際の試験の評価区分と、答案づくりの注意点を解説
           </span>
         </span>
         <ArrowRight className="h-4 w-4 flex-shrink-0" />

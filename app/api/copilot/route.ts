@@ -19,7 +19,6 @@ import { COPILOT_MODEL } from "@/lib/copilot/model";
 export const runtime = "nodejs";
 
 const STREAM_TIMEOUT_MS = 35_000;
-export { COPILOT_MODEL } from "@/lib/copilot/model";
 
 const BodySchema = z.object({
   question: z.object({ id: z.string().min(1).max(120) }),

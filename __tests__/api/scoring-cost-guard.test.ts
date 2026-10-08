@@ -97,7 +97,7 @@ describe("/api/scoring — コスト上限装置への配線", () => {
     stubStream(
       JSON.stringify({
         totalScore: 80,
-        subResults: [{ label: "設問1", score: 16, goodPoints: [], improvements: [] }],
+        subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: [], improvements: []})),
         overallComment: "ok",
       }),
     );
@@ -135,7 +135,7 @@ describe("/api/scoring — コスト上限装置への配線", () => {
     const { POST } = await import("@/app/api/scoring/route");
 
     const res = await POST(makeReq("10.1.0.3"));
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     await res.text();
 
     expect(checkMonthlyCostCap).not.toHaveBeenCalled();

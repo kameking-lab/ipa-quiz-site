@@ -1,6 +1,6 @@
 import type * as React from "react";
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 
 // recharts は ResizeObserver（jsdom に無い）を使うため、各 export を子をそのまま
 // 通す no-op に差し替える。検証対象の role="img"/aria-label はチャートのラッパ
@@ -34,7 +34,19 @@ describe("RankingClient — スコア分布チャートの代替テキスト (WC
   it("スコア分布の棒グラフが role=img と説明ラベルを持つ", () => {
     render(<RankingClient />);
     expect(
-      screen.getByRole("img", { name: "模試の得点率分布を示す棒グラフ" }),
+      screen.getByRole("img", { name: "架空の分布による表示デモ。実受験者の人数ではありません" }),
     ).toBeInTheDocument();
   });
 });
+
+  it("display samples never enter real learning storage", () => {
+    localStorage.clear();
+    render(<RankingClient />);
+    const before = {...localStorage};
+    fireEvent.click(screen.getByRole("button", {name: "保存しないサンプルを表示"}));
+    expect({...localStorage}).toEqual(before);
+    expect(screen.getByText(/青いバーはデモのサンプル/)).toBeInTheDocument();
+    expect(screen.getByText("履歴はまだありません。")).toBeInTheDocument();
+    cleanup(); render(<RankingClient />);
+    expect(screen.queryByText(/青いバーはデモのサンプル/)).toBeNull();
+  });

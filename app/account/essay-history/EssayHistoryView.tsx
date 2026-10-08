@@ -23,7 +23,7 @@ const RANK_TEXT: Record<EssayRank, string> = {
   A: "A",
   B: "B",
   C: "C",
-  fail: "不合格",
+  fail: "要見直し",
 };
 
 export function EssayHistoryView() {
@@ -86,7 +86,7 @@ export function EssayHistoryView() {
               <Stat label="A 評価" value={`${summary.ranks.A}`} accent="emerald" />
               <Stat label="B 評価" value={`${summary.ranks.B}`} accent="amber" />
               <Stat
-                label="C / 不合格"
+                label="C / 要見直し"
                 value={`${summary.ranks.C + summary.ranks.fail}`}
                 accent="red"
               />
@@ -124,7 +124,7 @@ export function EssayHistoryView() {
                         {q?.title ?? entry.questionId}
                       </p>
                       <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        スコア {entry.totalScore} / 合格率予測 {entry.passProbability}%
+                        参考スコア {entry.totalScore}（合否の予測ではありません）
                       </p>
                     </div>
                     <ChevronRight className="h-4 w-4 flex-shrink-0 text-zinc-400" />

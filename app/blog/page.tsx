@@ -1,3 +1,4 @@
+import { publicBlogDates } from "@/lib/blog/editorial";
 import { Rss } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -63,8 +64,8 @@ export default function BlogIndexPage() {
           headline: p.title,
           description: p.description,
           url: `${SITE_BASE_URL}/blog/${p.slug}`,
-          datePublished: p.publishedAt,
-          dateModified: p.updatedAt ?? p.publishedAt,
+          datePublished: publicBlogDates(p).published,
+          dateModified: publicBlogDates(p).modified,
         })),
       },
       {

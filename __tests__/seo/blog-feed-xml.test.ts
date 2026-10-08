@@ -44,10 +44,10 @@ describe("renderBlogFeedXml", () => {
     }
   });
 
-  it("every item carries a permalink guid and an RFC-822 pubDate", () => {
+  it("every item carries a permalink; unknown publication dates are omitted", () => {
     expect((xml.match(/<guid isPermaLink="true">/g) ?? []).length).toBe(posts.length);
     const pubDates = [...xml.matchAll(/<pubDate>([^<]+)<\/pubDate>/g)].map((m) => m[1]);
-    expect(pubDates).toHaveLength(posts.length);
+    expect(pubDates).toHaveLength(posts.filter(p => p.editorialDates?.firstPublishedAt).length);
     for (const d of pubDates) {
       // toUTCString() always ends in " GMT" and parses back to a valid date.
       expect(d.endsWith(" GMT")).toBe(true);

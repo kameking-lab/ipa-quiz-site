@@ -1,3 +1,4 @@
+import { publicBlogDates, isBlogAdEligible } from "@/lib/blog/editorial";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -59,8 +60,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       siteName: SITE_NAME,
       locale: "ja_JP",
-      publishedTime: post.publishedAt,
-      modifiedTime: post.updatedAt ?? post.publishedAt,
+      publishedTime: publicBlogDates(post).published,
+      modifiedTime: publicBlogDates(post).modified,
       tags: post.tags,
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: post.title }],
     },
@@ -126,8 +127,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
         width: 1200,
         height: 630,
       },
-      datePublished: post.publishedAt,
-      dateModified: post.updatedAt ?? post.publishedAt,
+      datePublished: publicBlogDates(post).published,
+      dateModified: publicBlogDates(post).modified,
       inLanguage: "ja",
       keywords: post.tags.join(", "),
       author: {
@@ -226,7 +227,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
     "@graph": graphNodes,
   };
 
-  const formattedDate = post.publishedAt.slice(0, 10);
+  const dates = publicBlogDates(post);
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
@@ -284,15 +285,15 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           {post.description}
         </p>
-        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-500">
-          公開: <time dateTime={post.publishedAt}>{formattedDate}</time>
-          {post.updatedAt ? (
-            <>
-              {" "}
-              / 更新: <time dateTime={post.updatedAt}>{post.updatedAt.slice(0, 10)}</time>
-            </>
-          ) : null}
-        </p>
+        {(dates.published || dates.modified) && (
+          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-500">
+            {dates.published && <>公開: <time dateTime={dates.published}>{dates.published.slice(0, 10)}</time></>}
+            {dates.modified && <>{dates.published ? " / " : ""}本文編集: <time dateTime={dates.modified}>{dates.modified.slice(0, 10)}</time></>}
+          </p>
+        )}
+        {post.editorialKind === "study-guide" && <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">編集上の学習ガイドです。受験者の実測調査・出題頻度ランキングではありません。</p>}
+        {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
+
       </header>
 
       <article>
@@ -444,7 +445,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </p>
       </section>
 
-      <ContentEndAd />
+      {isBlogAdEligible(post) && <ContentEndAd />}
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">

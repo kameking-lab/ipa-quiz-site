@@ -1,3 +1,4 @@
+import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
 import { SITE_BASE_URL, SITE_NAME, SITE_TAGLINE } from "./config";
 
@@ -9,7 +10,7 @@ import { SITE_BASE_URL, SITE_NAME, SITE_TAGLINE } from "./config";
 export const FEED_PATH = "/feed.xml";
 
 const FEED_TITLE = `${SITE_NAME} ブログ`;
-const FEED_DESCRIPTION = `${SITE_TAGLINE}。IPA 情報処理技術者試験の午後AI採点・基本情報 科目B 対策・勉強法の最新記事。`;
+const FEED_DESCRIPTION = `${SITE_TAGLINE}。IPA 情報処理技術者試験の午後AI採点・基本情報 科目B 対策・勉強法の学習記事。`;
 
 function xmlEscape(s: string): string {
   return s
@@ -30,12 +31,13 @@ export function renderBlogFeedXml(): string {
   const posts = getAllBlogSummaries(); // 新着順（publishedAt 降順）
   const selfUrl = `${SITE_BASE_URL}${FEED_PATH}`;
   const lastBuild =
-    posts.length > 0 ? toRfc822(posts[0].updatedAt ?? posts[0].publishedAt) : "";
+    toRfc822(new Date().toISOString());
 
   const items = posts
     .map((p) => {
       const url = `${SITE_BASE_URL}/blog/${p.slug}`;
-      const pub = toRfc822(p.updatedAt ?? p.publishedAt);
+      const published = publicBlogDates(p).published;
+      const pub = published ? toRfc822(published) : "";
       const parts = [
         `<title>${xmlEscape(p.title)}</title>`,
         `<link>${xmlEscape(url)}</link>`,

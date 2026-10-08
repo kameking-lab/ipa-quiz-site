@@ -23,6 +23,7 @@ import {
   FREE_ESSAY_LIMIT_PER_MONTH,
 } from "@/lib/storage/essay-rate-limit";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { isGradedEssay } from "@/lib/ai/grading-contract";
 import { EssayResultView } from "./EssayResultView";
 
 const INDUSTRY_OPTIONS: Industry[] = [
@@ -98,7 +99,7 @@ export function EssayEditor({ question }: Props) {
     if (!canSubmit) return;
     if (!isPremium && remaining <= 0) {
       setError(
-        "今月の AI 添削上限（月3回）に達しました。Premium にアップグレードすると無制限です。",
+        "今月の AI 添削上限（月3回）に達しました。翌月に利用枠が更新されます。",
       );
       return;
     }
@@ -115,7 +116,10 @@ export function EssayEditor({ question }: Props) {
         const data = (await res.json().catch(() => null)) as { message?: string } | null;
         throw new Error(data?.message ?? `採点に失敗しました（HTTP ${res.status}）`);
       }
-      const data = (await res.json()) as EssayGradingResult;
+      const data: unknown = await res.json();
+      if (!isGradedEssay(data) || data.questionId !== question.id || data.industry !== industry) {
+        throw new Error("内容の評価を確認できませんでした。答案・利用回数・履歴は変更していません。");
+      }
       setResult(data);
 
       // Persist usage + history
@@ -204,7 +208,7 @@ export function EssayEditor({ question }: Props) {
             </span>
             <span>
               {isPremium ? (
-                <Badge variant="success">Premium · 無制限</Badge>
+                <Badge variant="success">無料で利用できます</Badge>
               ) : (
                 <Badge variant={remaining > 0 ? "outline" : "danger"}>
                   今月残り {remaining} / {FREE_ESSAY_LIMIT_PER_MONTH} 回

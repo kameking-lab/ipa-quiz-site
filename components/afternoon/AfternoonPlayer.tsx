@@ -1,5 +1,7 @@
 "use client";
 
+import { isGradedAfternoon } from "@/lib/ai/grading-contract";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Clock, Send, ChevronRight } from "lucide-react";
 
@@ -114,6 +116,12 @@ export function AfternoonPlayer({ questions }: Props) {
         const m = buf.match(/(\{[\s\S]*\})/);
         if (!m) throw new Error("invalid response");
         parsed = JSON.parse(m[1]) as AfternoonScoringResult;
+      }
+      if (!isGradedAfternoon(parsed) || parsed.questionId !== active.id
+        || parsed.subResults.length !== active.subQuestions.length
+        || parsed.subResults.some((s) => !active.subQuestions.some((q) => q.label === s.label))) {
+        setErrors((e) => ({ ...e, [active.id]: "内容の評価を完了できませんでした。答案はそのまま残っています。" }));
+        return;
       }
       setResults((prev) => ({ ...prev, [active.id]: parsed }));
     } catch {

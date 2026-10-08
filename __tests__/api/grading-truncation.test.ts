@@ -42,7 +42,7 @@ vi.mock("@/lib/ai/provider", async () => {
         }
         yield JSON.stringify({
           totalScore: 80,
-          subResults: [{ label: "設問1", score: 16, goodPoints: ["良い"], improvements: [] }],
+          subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: ["良い"], improvements: []})),
           overallComment: "よくできています",
           rank: "A",
           passProbability: 80,
@@ -128,8 +128,10 @@ describe("/api/scoring — thinking budget と打ち切り開示", () => {
     seen.truncate = true;
     const res = await scoringPOST(req("http://localhost/api/scoring", scoringBody));
     const json = JSON.parse(await res.text());
-    expect(json.gradingMode).toBe("simplified");
-    expect(json.overallComment).toContain("出力上限");
+    expect(json.status).toBe("unavailable");
+    expect(res.status).toBe(503);
+    expect(json.error).toBe("truncated_response");
+    expect(json).not.toHaveProperty("totalScore");
   });
 
   it("思考トークンを出力トークンとして計上する", async () => {
@@ -154,9 +156,11 @@ describe("/api/essay-grade — thinking budget と打ち切り開示", () => {
     seen.truncate = true;
     const res = await essayPOST(req("http://localhost/api/essay-grade", essayBody));
     const json = await res.json();
-    expect(json.gradingMode).toBe("simplified");
-    expect(res.headers.get("X-Grading-Mode")).toBe("simplified");
-    expect(json.overallAdvice).toContain("出力上限");
+    expect(json.status).toBe("unavailable");
+    expect(res.status).toBe(503);
+    expect(res.headers.get("X-Grading-Mode")).toBe("unavailable");
+    expect(json.error).toBe("truncated_response");
+    expect(json).not.toHaveProperty("rank");
   });
 
   it("思考トークンを出力トークンとして計上する", async () => {

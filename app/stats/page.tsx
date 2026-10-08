@@ -375,7 +375,7 @@ export default async function StatsPage() {
             <PolicyRow label="運営形態" value="個人ボランティア運営（教育貢献プロジェクト）" />
             <PolicyRow label="利用料金" value="完全無料（全機能）" />
             <PolicyRow label="会員登録" value="不要" />
-            <PolicyRow label="広告" value="一部の読み物ページの本文末尾に掲載" />
+            <PolicyRow label="広告" value="試験区分ページと、記事ごとの出典・内容確認を完了した学習記事の本文末尾に掲載" />
             <PolicyRow
               label="個人情報"
               value="学習履歴は端末の localStorage のみ。AI 呼び出し時の IP は非可逆ハッシュとして保存。"

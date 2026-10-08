@@ -3,13 +3,8 @@ import { describe, expect, it } from "vitest";
 import { getAllBlogSummaries, getBlogPostBySlug } from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
-// 土台（基本情報 科目B）クラスタに「過去問がない／サンプル問題だけ」という
-// post-CBT の悩み系ロングテール記事 fe-kamoku-b-kakomon-nai を追加した。
-// この記事は (1) IPA 公式の事実（CBT 本試験問題は非公開・公開サンプルは科目B 20問）
-// を正しく述べ、(2) モックに依存しない安全な土台導線（科目B ピラー／擬似言語記事／
-// アルゴリズム分野別プール）へ funnel し、(3) ピラー fe-kamoku-b-taisaku から
-// inbound リンクを受けて orphan 化しない、ことを pin する。
-// 文言や導線が崩れたらここで落ちる（「崩れたら落ちる」）。
+// Keep distinct official partial publications, separate samples, useful practice
+// links, and structured FAQ. Never pin the obsolete non-public-questions claim.
 
 const SLUG = "fe-kamoku-b-kakomon-nai";
 const PILLAR = "fe-kamoku-b-taisaku";
@@ -22,15 +17,17 @@ describe("FE 科目B『過去問がない』記事の事実性と土台 funnel",
     expect(post!.tags).toContain("科目B");
   });
 
-  it("CBT 非公開・公式サンプル問題という事実を本文で述べている（誇大回避）", () => {
+  it("公式の実出題部分と別のサンプルセットを区別している", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    // 本試験問題が非公開であること（IPA 明記の事実）
-    expect(body).toContain("非公開");
-    // 唯一の公式素材＝公開サンプル問題（20問）に言及
-    expect(body).toContain("サンプル問題");
-    expect(body).toContain("20 問");
-    // CBT 方式に言及（過去問が無い理由）
-    expect(body).toContain("CBT");
+    expect(body).toContain("2025年7月4日公開");
+    expect(body).toContain("2026年7月1日公開");
+    expect(body.match(/20問中6問/g)).toHaveLength(2);
+    expect(body).toContain("2022年12月26日");
+    expect(body).toContain("20問サンプル問題セット");
+    expect(body).toContain("別資料");
+    expect(body).not.toContain("CBT方式のため公開されていません");
+    expect(getBlogPostBySlug(PILLAR)!.body).toContain("一部が公式公開されています");
+    expect(getBlogPostBySlug(PILLAR)!.body).not.toContain("CBT方式のため公開されていません");
   });
 
   it("モック非依存の安全な土台導線へ funnel している", () => {

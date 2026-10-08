@@ -97,7 +97,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     stubStream(
       JSON.stringify({
         totalScore: 80,
-        subResults: [{ label: "設問1", score: 16, goodPoints: [], improvements: [] }],
+        subResults: ["設問1", "設問2", "設問3", "設問4"].map(label => ({label, score: 20, goodPoints: [], improvements: []})),
         overallComment: "ok",
       }),
     );
@@ -123,7 +123,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
 
   it("/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
-    stubStream("これは JSON ではないので簡易採点へフォールバックするが、課金は発生している。");
+    stubStream("これはJSONではないので評価不能だが、呼出し使用量は計上する。");
     const { POST } = await import("@/app/api/essay-grade/route");
 
     const res = await POST(
@@ -141,7 +141,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
         }),
       }),
     );
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     await drain(res);
 
     expect(recordAiCost).toHaveBeenCalledTimes(1);
