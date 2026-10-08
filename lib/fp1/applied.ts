@@ -53,6 +53,19 @@ export const fp1AppliedEditionSchema = z.object({
     answers: z.tuple([calculationAnswer("①"), calculationAnswer("②")]),
     sourceAttribution: text, processingDisclosure: text,
     references: z.array(z.object({ label: text, url: z.string().url() }).strict()).min(1),
+  }).strict(), z.object({
+    id: z.literal("fp1-2026-may-applied-q53"), type: z.literal("originalnumericcloze"),
+    number: z.literal(53), title: text,
+    sourcePages: z.tuple([z.literal(3), z.literal(6)]),
+    sourcePrintedPages: z.tuple([z.literal(2), z.literal(5)]), sourceAnswerPage: z.literal(2),
+    sharedCase, instruction: text,
+    sections: z.tuple([
+      z.object({ heading: text, number: z.literal("Ⅰ"), paragraphs: z.array(text).length(2) }).strict(),
+      z.object({ heading: text, number: z.literal("Ⅱ"), paragraphs: z.array(text).length(3) }).strict(),
+    ]),
+    blanks: z.tuple([blank("①"), blank("②"), blank("③"), blank("④"), blank("⑤"), blank("⑥"), blank("⑦")]),
+    sourceAttribution: text, processingDisclosure: text,
+    references: z.array(z.object({ label: text, url: z.string().url() }).strict()).min(1),
   }).strict()]),
 }).strict();
 
