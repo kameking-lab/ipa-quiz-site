@@ -102,3 +102,14 @@ describe("AfternoonPlayer — 採点進行状況の live region 通知", () => {
     await waitFor(() => expect(status).toHaveTextContent("採点中"));
   });
 });
+
+describe("AfternoonPlayer ungraded response", () => {
+  it.each([{status:"unavailable"},{gradingMode:"simplified",totalScore:70,subResults:[]}])("never shows fabricated scores and retains answers", async body => {
+    vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify(body))));
+    render(<AfternoonPlayer questions={[makeQuestion()]} />);
+    const input=screen.getByLabelText("設問1 の解答"); fireEvent.change(input,{target:{value:"保持する答案"}});
+    fireEvent.click(screen.getByRole("button",{name:/採点する/}));
+    await waitFor(()=>expect(screen.getByText(/内容の評価を完了できませんでした/)).toBeInTheDocument());
+    expect(input).toHaveValue("保持する答案"); expect(screen.queryByText(/総合 70/)).toBeNull();
+  });
+});

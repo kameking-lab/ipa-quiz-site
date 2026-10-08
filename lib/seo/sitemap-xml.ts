@@ -1,3 +1,4 @@
+import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getLastUpdatedISO } from "@/lib/questions/last-updated";
 import { SITE_BASE_URL } from "./config";
@@ -147,7 +148,7 @@ const STATIC_ROUTES: UrlEntry[] = [
 function getBlogRoutes(): UrlEntry[] {
   return getAllBlogSummaries().map((p) => ({
     url: `${SITE_BASE_URL}/blog/${p.slug}`,
-    lastModified: p.updatedAt ?? p.publishedAt,
+    lastModified: publicBlogDates(p).modified ?? publicBlogDates(p).published,
     changeFrequency: "monthly",
     priority: HUB_BLOG_SLUGS.has(p.slug) ? 0.8 : 0.7,
   }));

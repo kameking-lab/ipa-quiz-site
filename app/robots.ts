@@ -23,10 +23,8 @@ export default function robots(): MetadataRoute.Robots {
           // site's own internal navigation (review C-3). noindex keeps the
           // pages out of the index without blocking the crawl path.
           "/chat/share",
-          // 開発者向け Public API β ドキュメントは検索インデックス対象外
-          "/api-docs",
-          // デモページは検索インデックス対象外（主要動線からの遷移用）
-          "/demo/",
+          // Public noindex pages (/api-docs, /demo/*) must remain crawlable
+          // so crawlers can actually read their noindex directives.
         ],
       },
     ],

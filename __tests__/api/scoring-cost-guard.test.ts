@@ -135,7 +135,7 @@ describe("/api/scoring — コスト上限装置への配線", () => {
     const { POST } = await import("@/app/api/scoring/route");
 
     const res = await POST(makeReq("10.1.0.3"));
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     await res.text();
 
     expect(checkMonthlyCostCap).not.toHaveBeenCalled();

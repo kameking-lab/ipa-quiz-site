@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { afternoonContentSchema, gradingUnavailable } from "@/lib/ai/grading-contract";
 
 import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provider";
 import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
@@ -119,49 +120,6 @@ function clampScore(raw: number, maxScore: number): number {
   return Math.max(0, Math.min(maxScore, Math.round(raw)));
 }
 
-function buildMockScoring(
-  question: AfternoonQuestion,
-  answers: AfternoonAnswer[],
-): AfternoonScoringResult {
-  const subResults: SubScoringResult[] = question.subQuestions.map((sub) => {
-    const text = answers.find((a) => a.label === sub.label)?.text ?? "";
-    const len = text.trim().length;
-    // 長さヒューリスティックは「配点に対する得点率」を出す。素点をそのまま
-    // 返すと、配点 20 の設問に 70 点が入り「70 / 20」と表示されてしまう。
-    let ratio = 0;
-    if (len === 0) ratio = 0;
-    else if (len < 5) ratio = 0.2;
-    else if (sub.maxLength && len > sub.maxLength * 1.5) ratio = 0.4;
-    else ratio = 0.7;
-    const maxScore = sub.points ?? 100;
-    return {
-      label: sub.label,
-      score: Math.round(ratio * maxScore),
-      goodPoints: len > 0 ? ["解答が記入されています", "設問の構造を理解しています"] : [],
-      improvements:
-        len === 0
-          ? ["まず解答を記入しましょう"]
-          : [
-              "ルーブリックのキーワードを盛り込みましょう",
-              "結論と理由を明確に分けて書きましょう",
-            ],
-      modelAnswer: sub.modelAnswer,
-    };
-  });
-  // totalScore は 100 点満点。配点合計が 100 でない大問でも比率で正規化する。
-  const earned = subResults.reduce((acc, r) => acc + r.score, 0);
-  const possible = question.subQuestions.reduce((acc, s) => acc + (s.points ?? 100), 0);
-  const totalScore = possible > 0 ? Math.round((earned / possible) * 100) : 0;
-  return {
-    questionId: question.id,
-    totalScore,
-    subResults,
-    gradingMode: "simplified",
-    overallComment:
-      "AI 採点を利用できなかったため、解答の記入状況にもとづく簡易判定を表示しています。記述内容そのものは評価していないため、得点は目安としてお使いください。",
-  };
-}
-
 function safeParseScoring(
   raw: string,
   question: AfternoonQuestion,
@@ -174,7 +132,8 @@ function safeParseScoring(
     const obj = JSON.parse(json) as Partial<AfternoonScoringResult> & {
       subResults?: Array<Partial<SubScoringResult>>;
     };
-    if (typeof obj.totalScore !== "number" || !Array.isArray(obj.subResults)) return null;
+    if (!afternoonContentSchema.safeParse(obj).success || typeof obj.totalScore !== "number" || !Array.isArray(obj.subResults)) return null;
+    if (obj.subResults.some((s) => !question.subQuestions.some((q) => q.label === s.label))) return null;
     const subResults: SubScoringResult[] = obj.subResults.map((s) => {
       const label = String(s.label ?? "");
       const sub = question.subQuestions.find((q) => q.label === label);
@@ -199,20 +158,6 @@ function safeParseScoring(
   } catch {
     return null;
   }
-}
-
-function streamObject(obj: AfternoonScoringResult): ReadableStream {
-  const text = JSON.stringify(obj);
-  const encoder = new TextEncoder();
-  return new ReadableStream({
-    async start(controller) {
-      const chunks = text.match(/.{1,256}/gs) ?? [text];
-      for (const c of chunks) {
-        controller.enqueue(encoder.encode(c));
-      }
-      controller.close();
-    },
-  });
 }
 
 export async function POST(req: Request) {
@@ -269,26 +214,15 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json(
       {
-        error: "provider_unavailable",
-        message: "AI採点サービスが一時的に利用できません。",
+        ...gradingUnavailable("provider_unavailable"),
       },
       { status: 503, headers: { "X-Error-Type": "server_error" } },
     );
   }
 
-  // Mock provider returns prose, not JSON — short-circuit to deterministic mock scoring
-  // so the UI stays usable without GEMINI_API_KEY.
   if (provider.name === "mock") {
-    const mock = buildMockScoring(question, payload.answers);
-    return new Response(streamObject(mock), {
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "X-RateLimit-Limit": String(rl.limit),
-        "X-RateLimit-Remaining": String(rl.remaining),
-        "X-RateLimit-Reset": String(rl.resetAt),
-        "X-Provider": provider.name,
-        "X-Grading-Mode": "simplified",
-      },
+    return NextResponse.json(gradingUnavailable("provider_unavailable"), {
+      status: 503, headers: { "X-Provider": provider.name, "X-Grading-Mode": "unavailable" },
     });
   }
 
@@ -311,9 +245,6 @@ export async function POST(req: Request) {
 
   // Collect the full response, parse JSON, then stream the validated object back.
   // (Streaming raw LLM output would risk leaking partial/invalid JSON to the client.)
-  const encoder = new TextEncoder();
-  const stream = new ReadableStream({
-    async start(controller) {
       let buf = "";
       // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
       const completed: { value?: StreamCompletion } = {};
@@ -358,17 +289,14 @@ export async function POST(req: Request) {
           route: "/api/scoring",
           extra: { questionId: question.id, provider: provider.name, model },
         });
-        const fallback = buildMockScoring(question, payload.answers);
-        fallback.overallComment =
-          "AI採点中にエラーが発生したため、簡易判定を表示しています。少し時間を置いて再度お試しください。";
-        controller.enqueue(encoder.encode(JSON.stringify(fallback)));
-        controller.close();
-        return;
+        return NextResponse.json(gradingUnavailable("provider_error"), {
+          status: 503, headers: { "X-Grading-Mode": "unavailable" },
+        });
       }
 
       // 成功時も実測値を残す。思考トークンが maxOutputTokens を食い潰して
       // 黙って簡易判定に落ちる事故を、再発時に数値で追えるようにするため。
-      console.info("[scoring] graded", {
+      console.info("[scoring] response received", {
         questionId: question.id,
         model,
         finishReason: completed.value?.finishReason,
@@ -377,12 +305,12 @@ export async function POST(req: Request) {
         thoughtsTokens: completed.value?.thoughtsTokens,
       });
 
-      let parsed = safeParseScoring(buf, question);
-      if (!parsed) {
+      const parsed = safeParseScoring(buf, question);
+      if (!parsed || completed.value?.truncated) {
         // 課金は発生済みなのに中身は簡易判定、という状態。頻度を後から追えるよう
         // サーバ側に必ず残す（利用者には gradingMode:"simplified" で開示する）。
         const usage = completed.value;
-        console.warn("[scoring] mock-fallback: AI応答の解析に失敗", {
+        console.warn("[scoring] unavailable: AI応答の解析に失敗", {
           questionId: question.id,
           provider: provider.name,
           model,
@@ -391,7 +319,7 @@ export async function POST(req: Request) {
           truncated: usage?.truncated ?? false,
           outputTokens: usage?.outputTokens,
           thoughtsTokens: usage?.thoughtsTokens,
-          rawHead: buf.slice(0, 200),
+
         });
         // ログだけでは誰も気づけない。課金は発生しているのに中身は簡易判定
         // という状態が続くのが最悪なので、運用側にも上げる（同一事象は
@@ -406,19 +334,11 @@ export async function POST(req: Request) {
             rawChars: buf.length,
           }),
         });
-        parsed = buildMockScoring(question, payload.answers);
-        if (usage?.truncated) {
-          // 「解析できなかった」ではなく「出力上限で切れた」と切り分けて出す。
-          parsed.overallComment =
-            "AI 採点の応答が出力上限で途中終了したため、簡易判定を表示しています。記述内容そのものは評価していないため、得点は目安としてお使いください。";
-        }
+        return NextResponse.json(gradingUnavailable(usage?.truncated ? "truncated_response" : "invalid_response"), {
+          status: 503, headers: { "X-Grading-Mode": "unavailable" },
+        });
       }
-      controller.enqueue(encoder.encode(JSON.stringify(parsed)));
-      controller.close();
-    },
-  });
-
-  return new Response(stream, {
+  return NextResponse.json({ ...parsed, status: "graded" }, {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "X-RateLimit-Limit": String(rl.limit),

@@ -85,14 +85,15 @@ describe("/api/scoring — 簡易判定の開示", () => {
     const { POST } = await import("@/app/api/scoring/route");
 
     const res = await POST(req("/api/scoring", SCORING_BODY, "10.8.0.1"));
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     const body = JSON.parse(await res.text()) as { gradingMode?: string };
 
     // 開示が無いと利用者は AI 採点と区別できない（＝ここが落ちる）。
-    expect(body.gradingMode).toBe("simplified");
+    expect(body).toMatchObject({status: "unavailable"});
+    expect(body).not.toHaveProperty("subResults");
     // 頻度を後から追えないと、静かに壊れ続ける。
     expect(warn).toHaveBeenCalled();
-    expect(warn.mock.calls.some((c) => String(c[0]).includes("mock-fallback"))).toBe(true);
+    expect(warn.mock.calls.some((c) => String(c[0]).includes("unavailable"))).toBe(true);
     warn.mockRestore();
   });
 
@@ -119,12 +120,13 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
     const { POST } = await import("@/app/api/essay-grade/route");
 
     const res = await POST(req("/api/essay-grade", ESSAY_BODY, "10.8.0.3"));
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(503);
     const body = (await res.json()) as { gradingMode?: string };
 
-    expect(body.gradingMode).toBe("simplified");
-    expect(res.headers.get("X-Grading-Mode")).toBe("simplified");
-    expect(warn.mock.calls.some((c) => String(c[0]).includes("mock-fallback"))).toBe(true);
+    expect(body).toMatchObject({status: "unavailable"});
+    expect(body).not.toHaveProperty("subResults");
+    expect(res.headers.get("X-Grading-Mode")).toBe("unavailable");
+    expect(warn.mock.calls.some((c) => String(c[0]).includes("unavailable"))).toBe(true);
     warn.mockRestore();
   });
 
@@ -134,9 +136,9 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
         rank: "B",
         passProbability: 55,
         subResults: [
-          { key: "ア", score: 60, axes: {}, goodPoints: [], improvements: [], missingElements: [] },
-          { key: "イ", score: 60, axes: {}, goodPoints: [], improvements: [], missingElements: [] },
-          { key: "ウ", score: 60, axes: {}, goodPoints: [], improvements: [], missingElements: [] },
+          { key: "ア", score: 60, axes: { relevance: 60, logic: 60, concreteness: 60, industryFit: 60 }, goodPoints: [], improvements: [], missingElements: [] },
+          { key: "イ", score: 60, axes: { relevance: 60, logic: 60, concreteness: 60, industryFit: 60 }, goodPoints: [], improvements: [], missingElements: [] },
+          { key: "ウ", score: 60, axes: { relevance: 60, logic: 60, concreteness: 60, industryFit: 60 }, goodPoints: [], improvements: [], missingElements: [] },
         ],
         overallAdvice: "ok",
         unnecessaryElements: [],
@@ -155,14 +157,11 @@ describe("UI と文言", () => {
   const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
   it("採点結果 UI は gradingMode:'simplified' のとき告知を描画する", () => {
-    for (const rel of [
-      "components/afternoon/AfternoonResultView.tsx",
-      "components/essay/EssayResultView.tsx",
-    ]) {
-      const src = read(rel);
-      expect(src).toContain("SimplifiedGradingNotice");
-      expect(src).toMatch(/gradingMode === "simplified"/);
-    }
+    const afternoon = read("components/afternoon/AfternoonResultView.tsx");
+    expect(afternoon).toContain("内容を評価したものではありません");
+    const essay = read("components/essay/EssayResultView.tsx");
+    expect(essay).toMatch(/gradingMode === "simplified"/);
+    expect(essay).toContain("内容を評価したものではありません");
   });
 
   it("告知は「簡易判定」と「内容は評価していない」ことを明示する", () => {

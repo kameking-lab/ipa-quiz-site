@@ -36,6 +36,10 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
+  // IPA source manifest and independent FE review, verified 2026-10-08.
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2025r07.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2026r08.html",
+  "https://www.ipa.go.jp/shiken/syllabus/henkou/2022/20221226.html",
   "https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html",
   "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/order.html",
   "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/past_pass_2026.html",

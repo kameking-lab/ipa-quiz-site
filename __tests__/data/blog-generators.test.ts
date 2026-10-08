@@ -10,7 +10,6 @@ import {
 import { getBlogPostBySlug } from "@/data/blog";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
-import { CURRENT_YEAR } from "@/lib/constants/current-year";
 import type { ExamCode } from "@/lib/questions/types";
 
 // Characterization tests for the per-exam blog post generators
@@ -122,25 +121,13 @@ describe("blog template generators — flagship 午後論述AI採点(/essay) CTA
   }
 });
 
-describe("blog template generators — 最新 titles stay evergreen (no frozen year)", () => {
-  // The overview/analysis titles advertise themselves as 最新 and must track
-  // CURRENT_YEAR (evaluated at build time, JST) rather than freeze a calendar
-  // year — otherwise a "2024〜2025年" title silently rots while claiming 最新.
-  // generators.ts line-10 comment documents this contract; pin it.
-  const DATED = [
-    { name: "overview", build: buildOverviewPost },
-    { name: "analysis", build: buildAnalysisPost },
-  ] as const;
-
-  for (const g of DATED) {
-    it(`${g.name} title references CURRENT_YEAR and freezes no other 4-digit year`, () => {
-      const title = g.build("ap", 0).title;
-      expect(title).toContain(`${CURRENT_YEAR}年最新`);
-      // No stray 20xx that isn't CURRENT_YEAR (catches a re-frozen range).
-      const years = title.match(/20\d{2}/g) ?? [];
-      for (const y of years) {
-        expect(y).toBe(String(CURRENT_YEAR));
-      }
+describe("blog templates never advertise clock-based freshness", () => {
+  for (const g of [{name:"overview",build:buildOverviewPost},{name:"analysis",build:buildAnalysisPost}]) {
+    it(`${g.name} is a study guide without an automatic latest-year claim`, () => {
+      const post=g.build("ap",0);
+      expect(post.title).not.toMatch(/20\d{2}|最新/);
+      expect(post.editorialDates?.firstPublishedAt).toBeNull();
+      expect(post.editorialDates?.lastEditedAt).toBe("2026-10-08");
     });
   }
 });
