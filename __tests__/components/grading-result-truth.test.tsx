@@ -30,8 +30,8 @@ describe("grading presentation",()=>{
 
 describe("stored grading history presentation",()=>{
  it("retains stored legacy values while hiding uncalibrated pass predictions",()=>{
-  const before=JSON.stringify(history.entries);render(<EssayHistoryView/>);
-  expect(screen.queryByText(/合格率予測|99%/)).toBeNull();
+  history.entries[0]!.rank="fail";const before=JSON.stringify(history.entries);render(<EssayHistoryView/>);
+  expect(screen.queryByText(/合格率予測|99%|不合格/)).toBeNull();
   expect(screen.getByText("参考スコア 80（合否の予測ではありません）")).toBeInTheDocument();
   expect(history.clear).not.toHaveBeenCalled();expect(JSON.stringify(history.entries)).toBe(before);
  });
