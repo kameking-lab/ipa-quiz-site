@@ -124,6 +124,13 @@ def main():
     val_ok = all(emap[k]["officialAnswer"] == amap[k]["value"] for k in emap if k in amap)
     gate("explanation-answer-consistency", val_ok)
 
+    cm = json.loads((pkt / "claims-matrix.json").read_text(encoding="utf-8"))
+    cids = {c["id"] for c in cm["claims"]}
+    refs = {r for e in ex["explanations"] for r in e.get("claims", [])}
+    gate("explanation-claims-resolve", refs <= cids, "missing: " + ",".join(sorted(refs - cids)) if refs - cids else f"{len(refs)} refs resolve")
+    unverified = [c["id"] for c in cm["claims"] if not c.get("verifiedByMainSession")]
+    gate("claims-verified-by-main-session", not unverified, ",".join(unverified))
+
     if len(sys.argv) >= 4:
         qpdf, apdf = Path(sys.argv[2]), Path(sys.argv[3])
         gate("question-pdf-sha256", hashlib.sha256(qpdf.read_bytes()).hexdigest() == Q_SHA)
