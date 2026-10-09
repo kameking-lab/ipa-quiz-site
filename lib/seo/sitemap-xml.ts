@@ -211,7 +211,7 @@ function getFpPracticalRoutes(): UrlEntry[] {
       const data = getEdition(edition);
       if (!data) throw new Error(`Missing ${exam} practical edition: ${edition}`);
       entries.push({ url: `${SITE_BASE_URL}/${exam}/practical/${edition}`, changeFrequency: "yearly", priority: 0.6 });
-      for (const question of [...data.questions, ...getFp1ExtensionQuestions(edition)]) {
+      for (const question of data.questions) {
         entries.push({
           url: `${SITE_BASE_URL}/${exam}/practical/${edition}/${question.number}`,
           changeFrequency: "yearly",

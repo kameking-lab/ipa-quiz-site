@@ -89,8 +89,8 @@ describe("renderSitemapIndexXml", () => {
   it("lists each public FP practical hub, edition and question once", () => {
     const practicalLocs = locs(renderFpPracticalSitemapXml());
     const expected = [
-      "/fp1/applied", "/fp1/applied/202605", "/fp1/applied/202605/51", "/fp1/applied/202605/52",
-      "/fp1/applied/202605/53",
+      "/fp1/applied", "/fp1/applied/202605",
+      ...Array.from({ length: 10 }, (_, i) => `/fp1/applied/202605/${51 + i}`),
       ...(["fp2", "fp3"] as const).map((exam) => `/${exam}/practical`),
       ...FP2_PRACTICAL_EDITIONS.flatMap((edition) => [
         `/fp2/practical/${edition}`,
@@ -103,6 +103,8 @@ describe("renderSitemapIndexXml", () => {
     ];
     expect(practicalLocs.toSorted()).toEqual(expected.toSorted());
     expect(new Set(practicalLocs).size).toBe(practicalLocs.length);
+    const appliedLocs = locs(renderFpPracticalSitemapXml()).filter((path) => /^\/fp1\/applied\/202605\/\d+$/.test(path));
+    expect(appliedLocs).toEqual(Array.from({ length: 10 }, (_, i) => `/fp1/applied/202605/${51 + i}`));
   });
 
   it("lists exactly one question chunk per getSitemapChunkCount()", () => {
