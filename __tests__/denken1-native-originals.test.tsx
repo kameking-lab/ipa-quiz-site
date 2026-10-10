@@ -53,6 +53,8 @@ describe("Denken1 source-reviewed native originals", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<NativeReader question={question} readerConfig={{
       examName: "電験一種", examPath: "/denken1", sourceAnswerUrl: part.sourceAnswerUrl, sourceIndexUrl: part.sourceIndexUrl,
     }} />), "text/html");
+    expect(doc.body.textContent).toMatch(/文中の\s*□\s*に/);
+    expect(doc.body.textContent).not.toMatch(/文中の\s*\(0\)\s*に/);
     expect([...doc.querySelectorAll("select")].map(select => select.getAttribute("aria-label")))
       .toEqual(question.slots.map(field => `空欄${field.slot}`));
     expect(doc.querySelectorAll('select[aria-label$="・定義"], select[aria-label$="・単位"]')).toHaveLength(0);
