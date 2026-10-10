@@ -1,4 +1,7 @@
 import { describe, expect, it } from "vitest";
+import { renderToStaticMarkup } from "react-dom/server";
+import { createElement } from "react";
+import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
@@ -65,5 +68,13 @@ describe("home directory", () => {
   it("uses unique keys and in-site hrefs", () => {
     expect(new Set(all.map((i) => i.href)).size).toBe(all.length);
     for (const item of all) expect(item.href.startsWith("/")).toBe(true);
+  });
+
+  it("renders every live qualification link in the initial HTML without disclosure controls", () => {
+    const html = renderToStaticMarkup(createElement(HomeDirectory, { domains }));
+    expect(html).not.toContain("<details");
+    const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]?.replaceAll("&amp;", "&"));
+    for (const item of all) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
+    expect(hrefs.length).toBe(all.length + domains.length);
   });
 });

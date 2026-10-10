@@ -27,11 +27,12 @@ describe("qualification discovery", () => {
     expect(screen.getByRole("searchbox")).toHaveValue("");
     expect(screen.getByRole("button", { name: /^ITパスポート/ })).toHaveAttribute("aria-expanded", "false");
   });
-  it("keeps every real qualification href in server-rendered native disclosures", () => {
+  it("keeps every real qualification href in visible server-rendered genres", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<HomeDirectory domains={domains} />), "text/html");
     const hrefs = new Set(Array.from(doc.querySelectorAll("a")).map((a) => a.getAttribute("href")));
     for (const item of domains.flatMap((d) => [...d.featured, ...d.compact])) expect(hrefs).toContain(item.href);
-    expect(doc.querySelectorAll("details[id^=domain-]")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("section[id^=domain-]")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("details[id^=domain-]")).toHaveLength(0);
   });
   it("lists each hygiene qualification once using its official paper hub", () => {
     const items = domains.flatMap((d) => [...d.featured, ...d.compact]);

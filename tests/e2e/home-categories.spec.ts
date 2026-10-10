@@ -27,8 +27,7 @@ for (const width of [390, 1280]) {
     await expect(page.locator('#domain-it a[href="/ip"]')).toContainText(/[1-9][\d,]*問/);
     await expect(main.getByText(/^0問$/)).toHaveCount(0);
 
-    // Native disclosures retain every link and are usable without script.
-    await page.locator("#domain-it > summary").click();
+    // Genre links are visible on initial load without opening a disclosure.
     await expect(page.locator('#domain-it a[href="/ip"]')).toBeVisible();
 
     await main.locator('a[href="/ipa"]').first().click();
@@ -41,7 +40,7 @@ for (const width of [390, 1280]) {
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(page).toHaveURL(/\/$/, { timeout: 30_000 });
 
-    await page.locator("#domain-safety > summary").click();
+    await expect(page.locator('#domain-safety a[href="/e-learning/exams"]')).toBeVisible();
     await main.locator('a[href="/e-learning/exams"]').first().click();
     await expect(page).toHaveURL(/\/e-learning\/exams$/, { timeout: 30_000 });
     await expect(page.getByRole("link", { name: /^第一種衛生管理者/ })).toBeVisible();
@@ -53,7 +52,7 @@ for (const width of [390, 1280]) {
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(finder).toBeVisible();
 
-    await page.locator("#domain-electrical > summary").click();
+    await expect(page.locator('#domain-electrical a[href="/qualifications"]')).toBeVisible();
     await main.locator('a[href="/qualifications"]').first().click();
     await expect(page).toHaveURL(/\/qualifications$/, { timeout: 30_000 });
     await page.locator("#qualification-coverage > summary").click();
