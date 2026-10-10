@@ -3,13 +3,13 @@ import { describe, expect, it } from "vitest";
 import { FP1_QUESTIONS } from "@/data/questions/fp1";
 import { getChoiceKeys } from "@/lib/questions/answers";
 
-const september = FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "september");
+const september = FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "september" && q.qNumber <= 3);
 
 describe("FP1 September 2026 initial basic batch", () => {
-  it("publishes only sourced questions 1 to 3 while preserving May's complete basic paper", () => {
+  it("retains the sourced initial questions 1 to 3 while preserving May's complete basic paper", () => {
     expect(september.map(q => q.qNumber)).toEqual([1, 2, 3]);
     expect(FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "may")).toHaveLength(50);
-    expect(new Set(FP1_QUESTIONS.map(q => q.id)).size).toBe(53);
+    expect(new Set(FP1_QUESTIONS.map(q => q.id)).size).toBe(FP1_QUESTIONS.length);
   });
 
   it("retains the official answer key, four explained choices, law date, and official source links", () => {

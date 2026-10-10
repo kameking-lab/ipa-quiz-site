@@ -1,10 +1,11 @@
 import raw from "@/data/questions/fp1/applied-2026-may-extension.json";
+import q51q55Raw from "@/data/questions/fp1/applied-2026-september-q51-q55.json";
+import q56q60Raw from "@/data/questions/fp1/applied-2026-september-q56-q60.json";
 import septemberRaw from "@/data/questions/fp1/applied-2026-september-q61-q65.json";
 import { parseFp1AppliedExtension, publishableExtensionQuestions } from "./applied-extension";
 import { parseFp1SeptemberAppliedParts } from "./september-applied-parts";
 const extension = parseFp1AppliedExtension(raw);
-// Q51-55 and Q56-60 are appended here when their independent public parts land.
-const septemberExtension = parseFp1SeptemberAppliedParts([septemberRaw]);
+const septemberExtension = parseFp1SeptemberAppliedParts([q51q55Raw, q56q60Raw, septemberRaw]);
 export function getFp1PublishedExtension(edition: string) {
   if (edition === extension.edition) return extension;
   return edition === septemberExtension.edition ? septemberExtension : null;
