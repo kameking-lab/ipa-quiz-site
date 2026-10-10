@@ -48,10 +48,12 @@ export type ExamCode =
   | "josanshi"
   | "rigaku-ryohoshi"
   | "sagyo-ryohoshi"
-  | "shino-kunrenshi";
+  | "shino-kunrenshi"
+  | "rinsho-kensagishi"
+  | "shinryo-hoshasengishi";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi">;
 
 export type Session =
   | "am"
