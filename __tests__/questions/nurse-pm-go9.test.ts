@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import candidates from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-CANDIDATES.json";
 import receipts from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-RECEIPTS.json";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
@@ -26,9 +27,9 @@ describe("nine separately verified nursing PM originals", () => {
     expect(proof.addedIds).toEqual(expectedIds);
     expect(candidates.map(question => question.id)).toEqual(expectedIds);
     expect(receipts.map(receipt => receipt.id)).toEqual(expectedIds);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(proof.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(proof.totalOriginals);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(proof.totalChoices);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(am7.totalChoices);
     expect(proof.totalOriginals).toBe(451);
     expect(proof.totalChoices).toBe(1863);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
@@ -89,10 +90,10 @@ describe("nine separately verified nursing PM originals", () => {
 
   it("shows exact partial coverage and continues to exclude the officially unscored original", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後224問");
-    expect(home).toContain("計451原問");
-    expect(home).toContain("全1863肢");
-    expect(home).toContain("第115回は午前114問・午後113問、第114回は午前113問・午後111問");
+    expect(home).toContain("午前233問と午後224問");
+    expect(home).toContain("計457原問");
+    expect(home).toContain("全1888肢");
+    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(113);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(111);
