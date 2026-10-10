@@ -10,7 +10,7 @@ export function questionNumberLabel(q: Pick<Question, "qNumber" | "part">): stri
 }
 
 /** 公式問題が選択肢を算用数字 1〜5 で示す試験。表示も原本の番号に合わせる。 */
-const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["kaigo", "shakai", "seishin", "kanri", "mankan"];
+const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["kaigo", "shakai", "seishin", "kanri", "mankan", "kangoshi"];
 
 /** 公式問題が選択肢をＡ〜Ｅで示す試験。内部キー ア〜オ と順番で対応させる。 */
 const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];

@@ -50,6 +50,7 @@ import { SOUKAN_QUESTIONS } from "./soukan";
 import { HOIKUSHI_QUESTIONS } from "./hoikushi";
 import { MANKAN_QUESTIONS } from "./mankan";
 import { KASHIKIN_QUESTIONS } from "./kashikin";
+import { KANGOSHI_QUESTIONS } from "./kangoshi";
 import { SHAROUSHI_QUESTIONS } from "./sharoushi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -95,6 +96,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),
   ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
   ...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
+  ...(isExamPublished("kangoshi") ? { kangoshi: KANGOSHI_QUESTIONS } : {}),
   ...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
 };
 

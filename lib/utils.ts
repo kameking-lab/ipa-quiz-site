@@ -46,6 +46,7 @@ export const EXAM_LABELS: Record<string, string> = {
   hoikushi: "保育士試験",
   mankan: "マンション管理士",
   kashikin: "貸金業務取扱主任者",
+  kangoshi: "看護師",
   sharoushi: "社会保険労務士",
 };
 
