@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -16,6 +17,8 @@ function toJstDateTimeISO(iso: string): string {
 
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string): string {
+  const parsed = parsePracticeSession(session);
+  if (parsed) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
     am: "午前",
     am1: "午前I",

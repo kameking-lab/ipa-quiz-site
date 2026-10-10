@@ -713,8 +713,11 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     urlSlug: "sharoushi",
     level: "advanced",
     sessions: [{
-      session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "択一式（労働基準法及び労働安全衛生法・一部10問）",
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "択一式・労働基準法及び労働安全衛生法（収録中の一部10問）",
       categories: ["労働基準法", "労働安全衛生法"],
+    }, {
+      session: "rousai", urlSlug: "rousai", expectedQuestions: 10, label: "択一式・労災保険法及び徴収法（収録中の一部10問）",
+      categories: ["労働者災害補償保険法", "労働保険徴収法"],
     }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
