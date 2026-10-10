@@ -2,8 +2,8 @@
   "status": "LOCAL_CANDIDATE_NOT_RELEASED",
   "sourceMechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
   "officialPaperOriginals": 680,
-  "localCandidateOriginals": 608,
-  "heldOriginals": 72,
+  "localCandidateOriginals": 610,
+  "heldOriginals": 70,
   "heldIds": [
     "33-anma-massage-shiatsushi-108",
     "33-anma-massage-shiatsushi-109",
@@ -71,12 +71,10 @@
     "34-anma-massage-shiatsushi-127",
     "34-anma-massage-shiatsushi-128",
     "34-anma-massage-shiatsushi-147",
-    "34-hari-kyu-13",
     "34-hari-kyu-179",
     "34-hari-kyu-32",
     "34-hari-kyu-35",
-    "34-hari-kyu-63",
-    "34-hari-kyu-96"
+    "34-hari-kyu-63"
   ],
   "files": {
     "ahaki-anma-2025.json": {
@@ -92,8 +90,8 @@
       "sha256": "5855ae7d18f44315e213a61ac5aac32d3341bce006a73397eff57516fb048fa2"
     },
     "ahaki-hari-kyu-2026.json": {
-      "count": 174,
-      "sha256": "c8e0b48a980b3917a93692070401e28945fae5a3ad476bff4b598e34076059a8"
+      "count": 176,
+      "sha256": "131609a2073c9a9c1ae8308eae687055299fac52469ab65db4f806f6fad407ee"
     }
   },
   "sourceReceipts": {
@@ -4352,7 +4350,41 @@
       "examTrack": "kyuu_only",
       "officialQuestionPdfSha256": "d8197497e0aef5bd1ada8648a58001157799426a4af125066a2f5e545913ef30",
       "officialAnswerHtmlSha256": "19d72b488194a3eb24a1884bcfca21b05850cb303b1bf7b1ea420adf05926625"
+    },
+    "ahaki-hari-kyu-2026-annual-am-q13": {
+      "sourcePacketSha256": "54ec23b15b1dbb5768c15eef7eb786dc73e10f9264041d3e83027f3980c783dc",
+      "savedDraftSha256": "fd232a29f0778740ab229d4a2acbd8b22a5455fc118c9332d32823b7d54a44c0",
+      "examTrack": "common",
+      "officialQuestionPdfSha256": "3e9d8dbaf43246b90b40cb051679f5cc892fc4d738f8019afc63d3b8195c2887",
+      "officialAnswerHtmlSha256": "19d72b488194a3eb24a1884bcfca21b05850cb303b1bf7b1ea420adf05926625",
+      "questionPageImageSha256": "3d8dbc658a8388c37c1e797071b31ea8642f209fb6d996bb08521c2c4d536812",
+      "localDeltaCandidateSha256": "5f627f31e73a4b4922bb95bdf47d40904c66e48cc678ae9da5c6eedff3fbd80f",
+      "reviewResultSha256": "42b0dd7a34c4645e886faafdda1b444b189b13389bffa9719ac47e08e09c1df8",
+      "primaryEvidenceScope": "e-Gov act as of 2026-02-22, Main Provision Articles 4/6/13-7/13-8"
+    },
+    "ahaki-hari-kyu-2026-annual-pm-q96": {
+      "sourcePacketSha256": "bbaa1ad361330c28ee70df0cc0f94b5c54afb0bdce1de848c1ed0701189eafdd",
+      "savedDraftSha256": "b8469d5352100fa0edb74c77c2dbfc0412c2dcb04707a697e53935f079ed29b1",
+      "examTrack": "common",
+      "officialQuestionPdfSha256": "d8197497e0aef5bd1ada8648a58001157799426a4af125066a2f5e545913ef30",
+      "officialAnswerHtmlSha256": "19d72b488194a3eb24a1884bcfca21b05850cb303b1bf7b1ea420adf05926625",
+      "questionPageImageSha256": "b990d5876b7cfc557b946f97da8f1c11a3cea91f95008c81e916ef76da1fe6a7",
+      "localDeltaCandidateSha256": "bbd97e74057b35b2be2db387f001f25b63afe96a21f99eb0d6004f3fd8eb4273",
+      "reviewResultSha256": "ca38487201418b3355b47623d2aeebb4440aa685d4123df397634f7493a7e688",
+      "primaryEvidenceScope": "Suwen Blood-Qi-Form-Will chapter attribution only"
     }
   },
-  "publicationCompleteTwoRounds": false
+  "publicationCompleteTwoRounds": false,
+  "twoQuestionLocalDelta": {
+    "adoptedIds": [
+      "ahaki-hari-kyu-2026-annual-am-q13",
+      "ahaki-hari-kyu-2026-annual-pm-q96"
+    ],
+    "sourceCandidateSha256": [
+      "5f627f31e73a4b4922bb95bdf47d40904c66e48cc678ae9da5c6eedff3fbd80f",
+      "bbd97e74057b35b2be2db387f001f25b63afe96a21f99eb0d6004f3fd8eb4273"
+    ],
+    "sourceBaseline608MechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
+    "heldOriginalsRemaining": 70
+  }
 }
