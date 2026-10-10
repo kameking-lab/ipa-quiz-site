@@ -6,7 +6,7 @@ import { DENKEN3_NATIVE_QUESTIONS, denken3NativeQuestionPath, getDenken3NativePa
 export const dynamicParams = false;
 export const generateStaticParams = () => DENKEN3_NATIVE_QUESTIONS.map(q => ({ edition: q.sitting, subject: q.subject, number: `q${q.number}` }));
 type Props = { params: Promise<{ edition: string; subject: string; number: string }> };
-const names = { theory: "理論", power: "電力", law: "法規" };
+const names = { theory: "理論", power: "電力", machine: "機械", law: "法規" };
 function resolve(edition: string, subject: string, number: string) {
   if (!/^q(?:[1-9]|1[0-8])$/.test(number)) return undefined;
   return getDenken3NativeQuestion(edition, subject, Number(number.slice(1)));

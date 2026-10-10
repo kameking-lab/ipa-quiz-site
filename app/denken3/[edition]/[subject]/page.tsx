@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DENKEN3_NATIVE_PARTS, denken3NativeQuestionPath, denken3NativeSubjectPath, getDenken3NativePart } from "@/lib/denken3/native";
+import { DENKEN3_NATIVE_SUBJECTS, denken3NativeQuestionPath, denken3NativeSubjectPath, getDenken3NativePart } from "@/lib/denken3/native";
 
 export const dynamicParams = false;
-export const generateStaticParams = () => DENKEN3_NATIVE_PARTS.map(part => ({ edition: part.sitting, subject: part.subject }));
+export const generateStaticParams = () => DENKEN3_NATIVE_SUBJECTS.map(part => ({ edition: part.sitting, subject: part.subject }));
 type Props = { params: Promise<{ edition: string; subject: string }> };
-const names = { theory: "理論", power: "電力", law: "法規" };
+const names = { theory: "理論", power: "電力", machine: "機械", law: "法規" };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject } = await params;
   const part = getDenken3NativePart(edition, subject);
