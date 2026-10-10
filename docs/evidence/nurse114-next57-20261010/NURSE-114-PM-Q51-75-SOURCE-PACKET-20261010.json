@@ -1,0 +1,752 @@
+{
+  "scope": "MHLW 114th nursing exam afternoon original Q51-75",
+  "status": "source-only; 25 originals, all choices and 25 official keys checked against rendered pages",
+  "questionCount": 25,
+  "officialAnswerKeyCount": 25,
+  "choiceCount": 100,
+  "figureQuestionCount": 2,
+  "pdfTextGlyphRepairs": [
+    {
+      "question": 51,
+      "field": "choice2",
+      "visualReading": "鼓膜穿孔",
+      "sourcePage": 21
+    },
+    {
+      "question": 55,
+      "field": "stem",
+      "visualReading": "令和3年（2021年）",
+      "sourcePage": 22
+    },
+    {
+      "question": 56,
+      "field": "stem,choices2,4",
+      "visualReading": "Aさん（81歳、男性）、白内障の有無、前立腺肥大症の有無",
+      "sourceAnnotation": [
+        "cataract",
+        "prostatic hyperplasia"
+      ],
+      "sourcePage": 23
+    },
+    {
+      "question": 58,
+      "field": "stem",
+      "visualReading": "要支援1",
+      "sourcePage": 23
+    },
+    {
+      "question": 59,
+      "field": "stem",
+      "visualReading": "4歳",
+      "sourcePage": 24
+    },
+    {
+      "question": 61,
+      "field": "choice2",
+      "visualReading": "2心拍",
+      "sourcePage": 24
+    },
+    {
+      "question": 70,
+      "field": "choices2,4",
+      "visualReading": "入院3か月以上、2職種",
+      "sourcePage": 27
+    },
+    {
+      "question": 72,
+      "field": "choice3",
+      "visualReading": "1人の看護師が1人の患者",
+      "sourcePage": 28
+    },
+    {
+      "question": 74,
+      "field": "choices2,4",
+      "visualReading": "（DPAT）、（Psychological First Aid：PFA）、発災1か月後",
+      "sourcePage": 29
+    },
+    {
+      "question": 75,
+      "field": "stem",
+      "visualReading": "生後1か月",
+      "sourcePage": 29
+    }
+  ],
+  "questionPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\official-pm-pdfs\\tp250428-05c_01.pdf",
+    "sha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb"
+  },
+  "officialAnswerPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp250428-05seitou.pdf",
+    "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+  },
+  "questions": [
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 51,
+      "questionPdfPhysicalPage": 21,
+      "questionPdfPrintedPage": 15,
+      "stem": "伝音性難聴について正しいのはどれか。",
+      "choices": [
+        "加齢で増悪する。",
+        "鼓膜穿孔は原因となる。",
+        "内耳から中枢側の障害で発生する。",
+        "アミノグリコシド系抗菌薬が原因である。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p21.png",
+        "sha256": "0ca04ade8691aa2deade19c75b4ed28e7f50a174c1cc6870ae7bfbc288783917"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 52,
+      "questionPdfPhysicalPage": 21,
+      "questionPdfPrintedPage": 15,
+      "stem": "散瞳薬を用いた眼底検査を受ける成人への説明で適切なのはどれか。",
+      "choices": [
+        "｢角膜を観察します｣",
+        "｢検査後に抗菌薬を点眼します｣",
+        "｢眼を閉じた状態で検査室に誘導します｣",
+        "｢点眼後30 分で散瞳薬の効果が現れます｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p21.png",
+        "sha256": "0ca04ade8691aa2deade19c75b4ed28e7f50a174c1cc6870ae7bfbc288783917"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 53,
+      "questionPdfPhysicalPage": 21,
+      "questionPdfPrintedPage": 15,
+      "stem": "梅毒に\nsyphilis\nついて正しいのはどれか。",
+      "choices": [
+        "ワクチンによる予防が可能である。",
+        "パートナーの検査は不要である。",
+        "ウイルス感染症である。",
+        "ばら疹を認める。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p21.png",
+        "sha256": "0ca04ade8691aa2deade19c75b4ed28e7f50a174c1cc6870ae7bfbc288783917"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 54,
+      "questionPdfPhysicalPage": 22,
+      "questionPdfPrintedPage": 16,
+      "stem": "高齢者の看護におけるストレングスモデルの説明で適切なのはどれか。",
+      "choices": [
+        "自分で健康行動を判断して決められるよう支援すること",
+        "高齢者自身が健康的な生活を送るための活動を支援すること",
+        "健康課題の解決に向けて自分の能力を活かせるよう支援すること",
+        "特定の健康課題について効果的に遂行できるという自信を高めるよう支援す\nること"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p22.png",
+        "sha256": "9fb7c987998f040d160f239caebf047786506f93d69a8b9587316b3acf12338e"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 55,
+      "questionPdfPhysicalPage": 22,
+      "questionPdfPrintedPage": 16,
+      "stem": "日本の令和3年（2021年）の人口動態統計に基づく、65 歳以上85 歳未満における\n不慮の事故による死亡状況をグラフに示す。\nD はどれか。",
+      "choices": [
+        "窒\n息",
+        "交通事故",
+        "溺死及び溺水",
+        "転倒、転落、墜落"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p22.png",
+        "sha256": "9fb7c987998f040d160f239caebf047786506f93d69a8b9587316b3acf12338e"
+      },
+      "figurePresent": true,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "figure": {
+        "kind": "original four-group mortality bar chart, A–D across ages 65–84",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p22.png",
+          "sha256": "9fb7c987998f040d160f239caebf047786506f93d69a8b9587316b3acf12338e"
+        },
+        "visualCheck": "Four groups ages 65–69, 70–74, 75–79, 80–84. Bars A white, B slashed, C opposite slashed, D dark; retain official original chart and legend."
+      }
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 56,
+      "questionPdfPhysicalPage": 23,
+      "questionPdfPrintedPage": 17,
+      "stem": "Aさん（81歳、男性）は、大腸内視鏡検査を受けることになった。\n検査前にA さんへ看護師が確認する項目で最も優先されるのはどれか。",
+      "choices": [
+        "義歯の使用",
+        "白内障の有無",
+        "保持できない姿勢",
+        "前立腺肥大症の有無"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p23.png",
+        "sha256": "d4c26cd8685a605955f9a5344cdb1fdea17c7037700d2d8b79ab486029e3637a"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 57,
+      "questionPdfPhysicalPage": 23,
+      "questionPdfPrintedPage": 17,
+      "stem": "全身麻酔下で肺切除術を受ける高齢者への説明で優先度が高いのはどれか。",
+      "choices": [
+        "術前にベッド上で排泄の練習をすること",
+        "術前に手術部看護師の訪問があること",
+        "術前に深呼吸や排痰の練習をすること",
+        "術後に四肢の自動運動をすること"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p23.png",
+        "sha256": "d4c26cd8685a605955f9a5344cdb1fdea17c7037700d2d8b79ab486029e3637a"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 58,
+      "questionPdfPhysicalPage": 23,
+      "questionPdfPrintedPage": 17,
+      "stem": "要支援1の認定を受けた高齢者が、介護予防通所リハビリテーションの利用を開\n始した。｢普段からトイレに何度も行く｣と頻尿を気にしている。\n施設にいる看護師の援助で適切なのはどれか。",
+      "choices": [
+        "施設のトイレの場所を一緒に確認する。",
+        "車椅子でトイレに移送する。",
+        "紙オムツの使用を勧める。",
+        "排泄時に更衣を介助する。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p23.png",
+        "sha256": "d4c26cd8685a605955f9a5344cdb1fdea17c7037700d2d8b79ab486029e3637a"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 59,
+      "questionPdfPhysicalPage": 24,
+      "questionPdfPrintedPage": 18,
+      "stem": "標準的な成長・発達をしている4歳の男児に対して採血を行う。看護師が男児に\n採血についてのプレパレーションを実施した。\nその後に伝えることで適切なのはどれか。",
+      "choices": [
+        "｢痛くないよ｣",
+        "｢すぐに終わっちゃうよ｣",
+        "｢何か聞きたいことはないかな｣",
+        "｢やらないと病気になっちゃうよ｣"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p24.png",
+        "sha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 60,
+      "questionPdfPhysicalPage": 24,
+      "questionPdfPrintedPage": 18,
+      "stem": "標準的な成長・発達をしている子どもが｢ばい菌が体内に入ることで病気になる｣\nと考えるようになるのは、ピアジェ, J.\nPiaget, J.\nの認知的発達段階のどれか。",
+      "choices": [
+        "感覚運動期",
+        "前操作期",
+        "具体的操作期",
+        "形式的操作期"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p24.png",
+        "sha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 61,
+      "questionPdfPhysicalPage": 24,
+      "questionPdfPrintedPage": 18,
+      "stem": "乳児の心拍測定で正しいのはどれか。",
+      "choices": [
+        "心拍数110/分は正常である。",
+        "聴診ではⅠ音とⅡ音で2心拍である。",
+        "バスタオルで体幹および四肢を固定して測定する。",
+        "呼吸周期に関連した心拍リズムの不整は異常である。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p24.png",
+        "sha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 62,
+      "questionPdfPhysicalPage": 24,
+      "questionPdfPrintedPage": 18,
+      "stem": "保護者による子どもへの虐待に対する外来の看護師の対応で適切なのはどれか。",
+      "choices": [
+        "子どもの全身の観察では、保護者の同意を得る必要がある。",
+        "プライバシー保護のため、他職種との情報共有はしない。",
+        "子どもや保護者の発言内容や様子を記録に残す。",
+        "保護者の同席のもと子どもから話を聞く。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p24.png",
+        "sha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 63,
+      "questionPdfPhysicalPage": 25,
+      "questionPdfPrintedPage": 19,
+      "stem": "事業主は雇用している女性労働者が妊婦健康診査を受けるために必要な時間を確\n保できるようにしなければならないと規定している法律はどれか。",
+      "choices": [
+        "母体保護法",
+        "労働基準法",
+        "雇用の分野における男女の均等な機会及び待遇の確保等に関する法律¹男女\n雇用機会均等法¼",
+        "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律\n¹育児・介護休業法¼"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p25.png",
+        "sha256": "63b974c5f2f69a17e3f064d982cd4e98bf389de298e2b8194c501c7afcd2a720"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 64,
+      "questionPdfPhysicalPage": 25,
+      "questionPdfPrintedPage": 19,
+      "stem": "Leopold¹レオポルド¼触診法で分かるのはどれか。",
+      "choices": [
+        "胎\n向",
+        "胎児の筋緊張",
+        "胎盤付着部位",
+        "胎児の健康状態"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p25.png",
+        "sha256": "63b974c5f2f69a17e3f064d982cd4e98bf389de298e2b8194c501c7afcd2a720"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 65,
+      "questionPdfPhysicalPage": 25,
+      "questionPdfPrintedPage": 19,
+      "stem": "子宮口全開大のときに破水した。\nこの破水はどれか。",
+      "choices": [
+        "前期破水",
+        "早期破水",
+        "遅滞破水",
+        "適時破水"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p25.png",
+        "sha256": "63b974c5f2f69a17e3f064d982cd4e98bf389de298e2b8194c501c7afcd2a720"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 66,
+      "questionPdfPhysicalPage": 26,
+      "questionPdfPrintedPage": 20,
+      "stem": "頭位で出生した直後の児の頭部に腫脹を認めた。腫脹は骨縫合を越え、波動を触\nれず、数日後に消失した。\n出生直後に認められた児頭の腫脹で考えられるのはどれか。",
+      "choices": [
+        "産\n瘤",
+        "骨重積",
+        "頭血腫",
+        "帽状腱膜下血腫"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p26.png",
+        "sha256": "dbc0a21c8f67c1b4cf182f9d699e8bec72c5b63b538795e79135cfab40d7a6e6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 67,
+      "questionPdfPhysicalPage": 26,
+      "questionPdfPrintedPage": 20,
+      "stem": "患者が看護師を愛情深い親のような存在とみなし、看護師に対して肯定的な感情\nを抱くのはどれか。",
+      "choices": [
+        "投\n影",
+        "共依存",
+        "反動形成",
+        "陽性転移"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p26.png",
+        "sha256": "dbc0a21c8f67c1b4cf182f9d699e8bec72c5b63b538795e79135cfab40d7a6e6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 68,
+      "questionPdfPhysicalPage": 26,
+      "questionPdfPrintedPage": 20,
+      "stem": "精神障害のある人のリカバリーで正しいのはどれか。",
+      "choices": [
+        "症状の回復がゴールである。",
+        "直線的なプロセスをたどる。",
+        "主体的に人生を新たに生き直すことである。",
+        "ストレス脆弱性に焦点を当てた支援である。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p26.png",
+        "sha256": "dbc0a21c8f67c1b4cf182f9d699e8bec72c5b63b538795e79135cfab40d7a6e6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 69,
+      "questionPdfPhysicalPage": 27,
+      "questionPdfPrintedPage": 21,
+      "stem": "精神疾患の治療を受けている人との共同創造¹コプロダクション¼で正しいのはど\nれか。",
+      "choices": [
+        "患者が医療者の指示に従って治療を受ける。",
+        "患者が医療者から病気や治療について十分な説明を受ける。",
+        "治療やケアの計画から提供まで医療者と患者がともに関わる。",
+        "自ら助けを求めることが難しい人に対して、積極的に働きかけ支援を提供す\nる。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p27.png",
+        "sha256": "42653985b5397782171c9e5d564cd5aadbd75bf8934fa6abff69c14f35413de9"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 70,
+      "questionPdfPhysicalPage": 27,
+      "questionPdfPrintedPage": 21,
+      "stem": "退院後生活環境相談員について正しいのはどれか。",
+      "choices": [
+        "措置入院の患者に対して選任される。",
+        "入院3か月以上の患者が支援対象である。",
+        "患者が居住の場を確保できるように調整する。",
+        "担当できるのは精神保健福祉士と社会福祉士の2職種である。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p27.png",
+        "sha256": "42653985b5397782171c9e5d564cd5aadbd75bf8934fa6abff69c14f35413de9"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 71,
+      "questionPdfPhysicalPage": 28,
+      "questionPdfPrintedPage": 22,
+      "stem": "病院の看護部の組織図を示す。\n①の役割について正しいのはどれか。",
+      "choices": [
+        "他部門に命令をする。",
+        "組織の意思決定を行う。",
+        "各機能を調整する責任をもつ。",
+        "専門的な知識をもとに他部門に助言を行う。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p28.png",
+        "sha256": "4b4613927a438be14bd4fd593500550afd485548bff39e43de8a11d84cff9d76"
+      },
+      "figurePresent": true,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "figure": {
+        "kind": "original nursing department organization chart with circled 1",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p28.png",
+          "sha256": "4b4613927a438be14bd4fd593500550afd485548bff39e43de8a11d84cff9d76"
+        },
+        "visualCheck": "Top box, two subordinate boxes including circled 1 on upper right, then three branches and lower boxes; retain original geometry."
+      }
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 72,
+      "questionPdfPhysicalPage": 28,
+      "questionPdfPrintedPage": 22,
+      "stem": "プライマリナーシングの説明で適切なのはどれか。",
+      "choices": [
+        "業務を短時間で効率よく実施できる。",
+        "リーダーの調整力が看護チームの目標達成に影響する。",
+        "1人の看護師が1人の患者の入院から退院まで一貫して責任をもつ。",
+        "日替わりで受け持ち看護師が変わるので看護ケアの継続が難しくなる。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p28.png",
+        "sha256": "4b4613927a438be14bd4fd593500550afd485548bff39e43de8a11d84cff9d76"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 73,
+      "questionPdfPhysicalPage": 29,
+      "questionPdfPrintedPage": 23,
+      "stem": "医療安全について正しいのはどれか。",
+      "choices": [
+        "患者から暴力を受けたと報告した医療従事者に暴力発生の責任を問う。",
+        "与薬前に薬物の間違いに気づけばインシデントレポートは不要である。",
+        "医療過誤とは医療事故の発生原因に医療機関、医療従事者の過失がある場合\nをいう。",
+        "インシデントを起こした医療従事者は気持ちが落ち着いた数日後にレポート\nを提出する。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p29.png",
+        "sha256": "9a60fbb5cb349a73b776f82e7d5ebe03dfb396148bdb4a774543c584fc33582c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 74,
+      "questionPdfPhysicalPage": 29,
+      "questionPdfPrintedPage": 23,
+      "stem": "災害時のこころのケアで正しいのはどれか。",
+      "choices": [
+        "こころのケアは発災直後から数週間で終了する。",
+        "災害派遣精神医療チーム（DPAT）は航空機事故が発生したときにも活動す\nる。",
+        "こころのケアチームを組織化する目的は福祉避難所で医療活動を行うためで\nある。",
+        "サイコロジカルファーストエイド（Psychological First Aid：PFA）は発災\n1か月後に精神科医が行う。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p29.png",
+        "sha256": "9a60fbb5cb349a73b776f82e7d5ebe03dfb396148bdb4a774543c584fc33582c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 75,
+      "questionPdfPhysicalPage": 29,
+      "questionPdfPrintedPage": 23,
+      "stem": "生後1か月の乳児健康診査の際、外国籍の両親から子どもの予防接種について質\n問があった。父親は長期に日本で就労するため、子どもは定期予防接種を受けるこ\nとができる。両親は｢日本語が難しく、予防接種のスケジュールがよく分からない｣\nと看護師に言った。\n看護師の対応で適切なのはどれか。",
+      "choices": [
+        "母国の大使館への相談を勧める。",
+        "医療で使う言葉を覚えるように促す。",
+        "地区担当の保健師への電話相談を提案する。",
+        "両親が理解できる言語で書かれたパンフレットを渡す。"
+      ],
+      "choiceCount": 4,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p29.png",
+        "sha256": "9a60fbb5cb349a73b776f82e7d5ebe03dfb396148bdb4a774543c584fc33582c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    }
+  ]
+}

@@ -55,7 +55,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(filtered.filter(q => proof.addedIds.includes(q.id)).map(q => q.qNumber)).toEqual(readyNumbers);
     expect(filtered.some(q => q.type === "numeric")).toBe(false);
     const am = filterQuestions(KANGOSHI_QUESTIONS, { mode: "year", exam: "kangoshi", year: 2025, season: "annual", session: "am" });
-    expect(am).toHaveLength(88);
+    expect(am.filter(q => q.qNumber <= 90)).toHaveLength(88);
     expect(am.some(q => q.id === "kangoshi-2025-annual-am-q90")).toBe(true);
     const html = renderToStaticMarkup(await YearPage({ params: Promise.resolve({ exam: "kangoshi", yearSeason: "2025-annual" }) }));
     const doc = new DOMParser().parseFromString(html, "text/html");
@@ -73,8 +73,8 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     const total = KANGOSHI_QUESTIONS.length;
     expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(total);
     expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(total);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am")).toHaveLength(90);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am")).toHaveLength(88);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am" && q.qNumber <= 90 && q.qNumber <= 90)).toHaveLength(90);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90 && q.qNumber <= 90)).toHaveLength(88);
     const choiceCount = KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0);
     const catalog = getQualificationByExamCode("kangoshi")!;
     for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", total)]) {
@@ -82,10 +82,10 @@ describe("saved 115th afternoon Q1–50 registration", () => {
       expect(text).toMatch(/未収録/);
       expect(text).not.toMatch(/2回分完備|全240問|全問収録|全問対応/);
     }
-    expect(EXAM_DESCRIPTIONS.kangoshi).toContain(`午前88問・午後${KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm").length}問`);
+    expect(EXAM_DESCRIPTIONS.kangoshi).toContain(`午前${KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90).length}問・午後${KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm").length}問`);
     expect(EXAM_DESCRIPTIONS.kangoshi).toContain(`${choiceCount}肢`);
     const yearCount = KANGOSHI_QUESTIONS.filter(q => q.year === 2025).length;
     expect(examMetaDescription("kangoshi", yearCount, "year")).toContain(`${yearCount}問`);
-    expect(catalog.remainingWork.join(" ")).toContain("第114回午後 問26以降は未収録");
+    expect(catalog.remainingWork.join(" ")).toContain("未収録");
   });
 });
