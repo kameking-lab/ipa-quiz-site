@@ -97,7 +97,7 @@ const QuestionSchema = z.object({
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   answer: z.union([z.string().min(1), z.array(z.string().min(1))]),
-  requiredSelections: z.number().int().min(2).max(4).optional(),
+  requiredSelections: z.number().int().min(1).max(4).optional(),
   explanation: z.string().min(1),
   choiceExplanations: z.record(z.string(), z.string()).optional(),
   modelAnswer: z.string().optional(),
