@@ -1,0 +1,117 @@
+{
+  "calls": [
+    {
+      "scope": "round-115-am-q51-75",
+      "requestSha256": "8ed48bcae0e69e5ba315fdbef4874c914c7cb0d399a48262847c3e86aba22090",
+      "requestedModel": "claude-opus-5-5",
+      "actualServedModels": [
+        "claude-opus-5-5"
+      ],
+      "providerFromModelUsage": {
+        "claude-opus-5-5": "firstParty"
+      },
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 16295,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 102539,
+          "webSearchRequests": 0,
+          "costUSD": 1.14622,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 5521,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "cliRequestTotalCostUSD": 1.14622,
+      "costInterpretation": "CLI request-level list-cost field only; not verified Claude Max billing or actual payment.",
+      "numTurns": 1,
+      "subtype": "success",
+      "outputSha256": "35cb002e7f06538b766ee7cbb2eaeb2a00c42f3e88840adb884e5b8921b4ff28",
+      "cloudSessionSubmitted": false
+    },
+    {
+      "scope": "round-114-am-q51-75",
+      "requestSha256": "5252717b84064bf61559156ea888abc6ffa893dadc40ff1c9071f3f9c338a215",
+      "requestedModel": "claude-opus-5-5",
+      "actualServedModels": [
+        "claude-opus-5-5"
+      ],
+      "providerFromModelUsage": {
+        "claude-opus-5-5": "firstParty"
+      },
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 15585,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 142162,
+          "webSearchRequests": 0,
+          "costUSD": 1.449004,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4645,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "cliRequestTotalCostUSD": 1.449004,
+      "costInterpretation": "CLI request-level list-cost field only; not verified Claude Max billing or actual payment.",
+      "numTurns": 1,
+      "subtype": "success",
+      "outputSha256": "5a5ca5568821329c4b387c79baac5d28590673988320844e06b360679e8e7ef5",
+      "cloudSessionSubmitted": false
+    },
+    {
+      "scope": [
+        [
+          115,
+          51
+        ],
+        [
+          114,
+          54
+        ],
+        [
+          114,
+          56
+        ]
+      ],
+      "requestSha256": "820b026f03b0e23937bf2f7b6283c3aebc5f5a6c68e52d1d19ff1b9679b212d4",
+      "requestedModel": "claude-sonnet-5-5",
+      "actualServedModels": [
+        "claude-sonnet-5-5"
+      ],
+      "providerFromModelUsage": {
+        "claude-sonnet-5-5": "firstParty"
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4698,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 151010,
+          "webSearchRequests": 0,
+          "costUSD": 0.651024,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2263,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "cliRequestTotalCostUSD": 0.651024,
+      "costInterpretation": "CLI request-level list-cost field only; not verified Claude Max billing or actual payment.",
+      "numTurns": 1,
+      "subtype": "success",
+      "outputSha256": "605aed3b0ef9f94e7883380e39ab381281f9223c7811fdfaab2efc64219a3f26",
+      "cloudSessionSubmitted": false
+    }
+  ],
+  "costInterpretation": "CLI request-level list-cost fields only; these are not verified Claude Max billing or actual payment."
+}
