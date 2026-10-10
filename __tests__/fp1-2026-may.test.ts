@@ -35,7 +35,8 @@ describe("FP1 2026 May academic pilot", () => {
       expect(q.sourceAnswerUrl).toBe("https://www.kinzai.or.jp/fp/news-fp/50274.html");
     }
     expect(getQualificationByExamCode("fp1")?.status).toBe("live");
-    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("基礎編50問");
+    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("2026年5月学科は基礎50問・応用15原問62回答欄");
+    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("2026年9月学科は基礎49/50問（問10は確認中）と応用全15原問57回答欄");
   });
 
   it("renders the supplied coefficient table as a real table", () => {
