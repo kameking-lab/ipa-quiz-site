@@ -173,6 +173,8 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   kashikin: "貸金業務取扱主任者資格試験",
   sharoushi: "社会保険労務士試験",
   kangoshi: "看護師国家試験",
+  hokenshi: "保健師国家試験",
+  josanshi: "助産師国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -267,6 +269,8 @@ const EXAM_META_DESC_DIVERSE: Record<
     `社会保険労務士試験 第58・57回の択一式から${c}問を科目別に一部収録。労基安衛・労災保険・雇用保険・健康保険・厚生年金保険・一般常識の公式正答と全選択肢の理由を確認できます。`,
   kangoshi: (c) =>
     `看護師国家試験の収録済み${c}原問を演習。公式正答と全選択肢の理由・数値記入の計算過程を確認できます。第115・114回の午前と午後の確認済み問題を部分収録。第115回午前 問32・79と未確認問題・未整備図は未収録です。`,
+  hokenshi: (c) => `保健師国家試験の収録候補${c}問。公開前の原文・正答・解説確認を進めています。`,
+  josanshi: (c) => `助産師国家試験の収録候補${c}問。公開前の原文・正答・解説確認を進めています。`,
 };
 
 export function examMetaDescription(

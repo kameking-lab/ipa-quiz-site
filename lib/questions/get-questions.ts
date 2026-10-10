@@ -46,6 +46,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   kashikin: async () => isExamPublished("kashikin") ? (await import("@/data/questions/kashikin")).KASHIKIN_QUESTIONS : [],
   sharoushi: async () => isExamPublished("sharoushi") ? (await import("@/data/questions/sharoushi")).SHAROUSHI_QUESTIONS : [],
   kangoshi: async () => isExamPublished("kangoshi") ? (await import("@/data/questions/kangoshi")).KANGOSHI_QUESTIONS : [],
+  hokenshi: async () => isExamPublished("hokenshi") ? (await import("@/data/questions/hokenshi")).HOKENSHI_QUESTIONS : [],
+  josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questions/josanshi")).JOSANSHI_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */
