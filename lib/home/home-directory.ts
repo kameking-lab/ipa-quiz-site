@@ -152,6 +152,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "rigaku-ryohoshi", name: "理学療法士", sub: "第61・60回 午前・午後の確認済み179原問を部分収録", domain: "welfare" },
   { code: "sagyo-ryohoshi", name: "作業療法士", sub: "第61・60回 午前・午後の確認済み299原問を部分収録", domain: "welfare" },
+  { code: "rinsho-kogishi", name: "臨床工学技士", sub: "第39・38回の午前・午後から確認済み157問を部分収録", domain: "welfare" },
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み186原問を部分収録", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み307原問を部分収録", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
