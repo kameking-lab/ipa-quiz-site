@@ -477,7 +477,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-08_09.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第61・60回の午後から、原文・正答・全肢解説を確認した142問を部分収録。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
+    reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した298問を部分収録。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の原本図・専門根拠・代替正答の局所確認", "最新2回の残る午前・午後問題"],
   },
   {
@@ -490,7 +490,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-10.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第56・55回の午後から、原文・正答・全肢解説を確認した76問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
+    reuseSummary: "第56・55回の午前・午後から、原文・正答・全肢解説を確認した184問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の別冊図と専門根拠の局所確認", "最新2回の残る午前・午後問題"],
   },
   {
