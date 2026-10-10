@@ -1,3 +1,4 @@
+import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
 import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
@@ -329,7 +330,7 @@ export function renderMainSitemapXml(): string {
 
 export function renderExamsSitemapXml(): string {
   // Exam routes already carry per-entry lastModified from getExamHubRoutes().
-  return renderUrlSet(getExamHubRoutes());
+  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 }))]);
 }
 
 export function renderFpPracticalSitemapXml(): string {
