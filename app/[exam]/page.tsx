@@ -269,7 +269,9 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = hasAm1 && hasAm2;
-  const summary = EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
+  const summary = code === "hokenshi" || code === "josanshi"
+    ? examMetaDescription(code, publishedOriginalCount)
+    : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
   return (
     <main className="relative flex-1">
