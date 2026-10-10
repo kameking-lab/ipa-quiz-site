@@ -206,7 +206,7 @@ export function QuestionAnswerCard({
         </p>
       )}
       {numeric ? (
-        <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} disabled={revealed} onAnswer={onNumericAnswer} />
+        <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} specification={question!.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
       ) : <div
         role={multiSelect ? "group" : "radiogroup"}
         data-shortcuts-ready={shortcutsReady}

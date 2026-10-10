@@ -8,6 +8,8 @@ import { GET } from "@/app/api/v1/questions/route";
 import { buildOpenApiSpec } from "@/lib/api/openapi";
 import { nurseNumericQuestion as question } from "@/__tests__/fixtures/nurse-numeric-question";
 
+import { nurseDecimalQuestion as decimalQuestion } from "@/__tests__/fixtures/nurse-decimal-question";
+
 const grade = (answer: string | string[]) => POST(new Request("http://localhost/api/v1/grade", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ questionId: question.id, answer }) }));
 beforeEach(() => { findQuestionById.mockReset(); getQuestionsForExam.mockReset(); });
 describe("Public API v1 numeric boundary", () => {
@@ -20,6 +22,16 @@ describe("Public API v1 numeric boundary", () => {
     expect(result).not.toHaveProperty("choices");
     expect(result).not.toHaveProperty("correctAnswer");
     expect(result).not.toHaveProperty("explanation");
+  });
+  it.each(["23.4","23.4375",["2","3","4"]])("keeps decimal API grading explicitly unsupported for %j", async answer => {
+    findQuestionById.mockResolvedValue(decimalQuestion);
+    const response=await POST(new Request("http://localhost/api/v1/grade",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({questionId:decimalQuestion.id,answer})}));
+    expect(response.status).toBe(400);
+    const body=await response.json();
+    expect(body).toMatchObject({error:"unsupported",questionType:"numeric",numericAnswer:{format:"decimal",precision:1,unit:"BMI"}});
+    expect(body).not.toHaveProperty("correctAnswer");
+    expect(body).not.toHaveProperty("choices");
+    expect(body).not.toHaveProperty("explanation");
   });
   it("keeps the existing nurse-listing exclusion without even loading its pool", async () => {
     const response = await GET(new Request("http://localhost/api/v1/questions?exam=kangoshi"));
@@ -48,7 +60,7 @@ describe("Public API v1 numeric boundary", () => {
   it("documents the numeric listing format and the explicit unsupported grade boundary", () => {
     const spec = buildOpenApiSpec("http://localhost");
     expect(spec.components.schemas.Question.properties.type.enum).toContain("numeric");
-    expect(spec.components.schemas.NumericAnswer.properties.format.enum).toEqual(["integer"]);
+    expect(spec.components.schemas.NumericAnswer.properties.format.enum).toEqual(["integer", "decimal"]);
     expect(spec.paths["/grade"].post.description).toContain("400");
     expect(spec.paths["/grade"].post.description).toContain("unsupported");
   });

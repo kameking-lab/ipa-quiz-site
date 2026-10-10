@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "baseCommit": "615c36f163815642df5f0831aba1c99dd7dba511",
+  "registryOriginals": 281,
+  "registryObjectChanges": 0,
+  "sourceHeightCm": 160,
+  "sourceWeightKg": 60,
+  "unroundedBMI": "23.4375",
+  "officialAnswer": "23.4",
+  "specification": {
+    "format": "decimal",
+    "precision": 1,
+    "unit": "BMI"
+  },
+  "acceptedInputExamples": [
+    "23.4",
+    "２３．４",
+    " 23.4 ",
+    "023.4"
+  ],
+  "rejectedInputExamples": [
+    "23.4foo",
+    "23.4375",
+    "23.40",
+    "+23.4",
+    "2.34e1"
+  ],
+  "inputNeverRounded": true,
+  "integer42ContractUnchanged": true,
+  "checks": {
+    "unitPassed": 89,
+    "unitFailed": 0,
+    "typecheck": "PASS",
+    "targetedLint": "PASS",
+    "IMEBlankEnterHistoryReturn": "PASS",
+    "publicAPIV1Unsupported400": "PASS"
+  },
+  "productionBuild": "parent combined CI",
+  "publicPushes": 0,
+  "pullRequests": 0,
+  "modelCalls": 0
+}

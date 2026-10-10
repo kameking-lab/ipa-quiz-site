@@ -71,7 +71,10 @@ const QuestionSchema = z.object({
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
   type: z.enum(["multiple-choice", "numeric", "descriptive", "essay"]),
-  numericAnswer: z.object({ format: z.literal("integer"), unit: z.string().trim().min(1) }).optional(),
+  numericAnswer: z.discriminatedUnion("format", [
+    z.object({ format: z.literal("integer"), unit: z.string().trim().min(1) }),
+    z.object({ format: z.literal("decimal"), precision: z.literal(1), unit: z.string().trim().min(1) }),
+  ]).optional(),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),

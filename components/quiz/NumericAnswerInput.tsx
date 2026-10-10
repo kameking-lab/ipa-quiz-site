@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
+import type { Question } from "@/lib/questions/types";
 import { normalizeNumericAnswer } from "@/lib/questions/numeric";
 
-export function NumericAnswerInput({ unit, disabled, onAnswer }: {
+export function NumericAnswerInput({ unit, specification, disabled, onAnswer }: {
   unit: string;
+  specification?: Question["numericAnswer"];
   disabled: boolean;
   onAnswer: (normalized: string) => void;
 }) {
@@ -14,7 +16,7 @@ export function NumericAnswerInput({ unit, disabled, onAnswer }: {
   const [invalid, setInvalid] = React.useState(false);
   const submit = () => {
     if (disabled) return;
-    const normalized = normalizeNumericAnswer(value);
+    const normalized = normalizeNumericAnswer(value, specification);
     if (normalized === undefined) {
       setInvalid(true);
       return;
@@ -29,7 +31,7 @@ export function NumericAnswerInput({ unit, disabled, onAnswer }: {
         <input
           id={id}
           type="text"
-          inputMode="numeric"
+          inputMode={specification?.format === "decimal" ? "decimal" : "numeric"}
           autoComplete="off"
           value={value}
           disabled={disabled}
@@ -50,8 +52,8 @@ export function NumericAnswerInput({ unit, disabled, onAnswer }: {
         <span aria-hidden="true" className="text-sm text-muted-foreground">{unit}</span>
         <Button type="submit" variant="primary" disabled={disabled || value.trim() === ""}>採点する</Button>
       </div>
-      <p id={`${id}-help`} className="mt-2 text-xs text-muted-foreground">単位を除いた整数を入力してください。</p>
-      {invalid && <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">数字だけで整数を入力してください。</p>}
+      <p id={`${id}-help`} className="mt-2 text-xs text-muted-foreground">{specification?.format === "decimal" ? "単位を除いた小数第1位までの数値を入力してください。" : "単位を除いた整数を入力してください。"}</p>
+      {invalid && <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">{specification?.format === "decimal" ? "小数第1位までの数値を入力してください。" : "数字だけで整数を入力してください。"}</p>}
     </form>
   );
 }

@@ -457,7 +457,7 @@ export function QuizPlayer({
               </p>
             )}
             {numeric ? (
-              <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} disabled={revealed} onAnswer={onNumericAnswer} />
+              <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
             ) : <div
               role={multiSelect ? "group" : "radiogroup"}
               aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
