@@ -12,7 +12,7 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 const proof = JSON.parse(readFileSync(path.join(process.cwd(), "docs/evidence/nurse-pm115-q1-50-20261010/INTEGRATION.json"), "utf8")) as {
   addedIds: string[]; heldIdsNotRegistered: string[]; previousObjectHashes: { id: string; sha256: string }[];
 };
-const pm = KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm");
+const pm = KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm" && q.qNumber <= 50);
 const readyNumbers = [2, 4, 6, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 23, 24, 25, 26, 27, 29, 30, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 46, 47, 49, 50];
 function canonical(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(canonical);
@@ -51,7 +51,8 @@ describe("saved 115th afternoon Q1–50 registration", () => {
 
   it("keeps AM/PM pools and same-number year links distinct", async () => {
     const filtered = filterQuestions(KANGOSHI_QUESTIONS, { mode: "year", exam: "kangoshi", year: 2025, season: "annual", session: "pm", inOrder: true });
-    expect(filtered.map(q => q.qNumber)).toEqual(readyNumbers);
+    expect(filtered.every(q => q.session === "pm")).toBe(true);
+    expect(filtered.filter(q => proof.addedIds.includes(q.id)).map(q => q.qNumber)).toEqual(readyNumbers);
     expect(filtered.some(q => q.type === "numeric")).toBe(false);
     const am = filterQuestions(KANGOSHI_QUESTIONS, { mode: "year", exam: "kangoshi", year: 2025, season: "annual", session: "am" });
     expect(am).toHaveLength(88);
@@ -59,7 +60,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     const html = renderToStaticMarkup(await YearPage({ params: Promise.resolve({ exam: "kangoshi", yearSeason: "2025-annual" }) }));
     const doc = new DOMParser().parseFromString(html, "text/html");
     const queries = [...doc.querySelectorAll('a[href^="/quiz?"]')].map(a => new URL(a.getAttribute("href")!, "https://www.kakomon-ai.jp").searchParams);
-    const pmQuestions = queries.filter(q => q.get("session") === "pm" && q.has("question"));
+    const pmQuestions = queries.filter(q => q.get("session") === "pm" && proof.addedIds.includes(q.get("question") ?? ""));
     expect(pmQuestions.map(q => q.get("question")).sort()).toEqual(pm.map(q => q.id).sort());
     for (const session of ["am", "pm"]) {
       const query = queries.find(q => q.get("question") === `kangoshi-2025-annual-${session}-q2`);
@@ -68,20 +69,20 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     }
   });
 
-  it("reports214 partial originals without advertising two complete sittings", () => {
-    expect(KANGOSHI_QUESTIONS).toHaveLength(214);
-    expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(214);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024)).toHaveLength(90);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025)).toHaveLength(124);
-    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(884);
+  it("reports the current partial originals without advertising two complete sittings", () => {
+    expect(KANGOSHI_QUESTIONS).toHaveLength(268);
+    expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(268);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024)).toHaveLength(102);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025)).toHaveLength(166);
+    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(1107);
     const catalog = getQualificationByExamCode("kangoshi")!;
-    for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 214)]) {
-      expect(text).toContain("214原問");
-      expect(text).toMatch(/午後.?14問/);
+    for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 268)]) {
+      expect(text).toContain("268原問");
+      expect(text).toMatch(/未収録/);
       expect(text).not.toMatch(/2回分完備|全240問|全問収録|全問対応/);
     }
-    expect(EXAM_DESCRIPTIONS.kangoshi).toContain("午前88問・午後36問");
-    expect(examMetaDescription("kangoshi", 124, "year")).toContain("124問");
-    expect(catalog.remainingWork.join(" ")).toContain("第114回午後は未収録");
+    expect(EXAM_DESCRIPTIONS.kangoshi).toContain("午前88問・午後78問");
+    expect(examMetaDescription("kangoshi", 166, "year")).toContain("166問");
+    expect(catalog.remainingWork.join(" ")).toContain("第114回午後 問26以降は未収録");
   });
 });
