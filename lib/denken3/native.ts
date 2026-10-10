@@ -11,6 +11,7 @@ import nextPower2025 from "@/data/questions/denken3/native-2025-lower-power-next
 import followMachine2026 from "@/data/questions/denken3/native-2026-upper-machine-follow.json";
 import followTheory2025 from "@/data/questions/denken3/native-2025-lower-theory-follow.json";
 import followMachine2025 from "@/data/questions/denken3/native-2025-lower-machine-follow.json";
+import followPower2025 from "@/data/questions/denken3/native-2025-lower-power-follow.json";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 
 const nonempty = z.string().trim().min(1);
@@ -51,6 +52,7 @@ const expected = [
   { sitting: "2026-upper", subject: "machine", numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 14, packet: "6caba4e531c2f8b9ce7cbf0686f9a19aa7e63b470dc8859889f9e71a84d1eb28" },
   { sitting: "2025-lower", subject: "theory", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
   { sitting: "2025-lower", subject: "machine", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
+  { sitting: "2025-lower", subject: "power", numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17], fields: 12, packet: "a9980c1c7482214ddbf3522b604e6844787406d8518cb3d1305a1dcea0385b3f" },
 ] as const;
 function parsePart(raw: unknown, rule: (typeof expected)[number]) {
   const item = part.parse(raw);
@@ -86,10 +88,10 @@ function parsePart(raw: unknown, rule: (typeof expected)[number]) {
   if (item.questions.reduce((sum, q) => sum + q.slots.length, 0) !== rule.fields) throw new Error(`Denken3 source field count mismatch: ${rule.sitting}`);
   return item;
 }
-const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025, followMachine2026, followTheory2025, followMachine2025];
+const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025, followMachine2026, followTheory2025, followMachine2025, followPower2025];
 export const DENKEN3_NATIVE_PARTS = raws.map((raw, index) => parsePart(raw, expected[index]!));
 export const DENKEN3_NATIVE_QUESTIONS = DENKEN3_NATIVE_PARTS.flatMap(item => item.questions);
-if (DENKEN3_NATIVE_QUESTIONS.length !== 112 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 112) throw new Error("Denken3 native original count mismatch");
+if (DENKEN3_NATIVE_QUESTIONS.length !== 121 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 121) throw new Error("Denken3 native original count mismatch");
 const subjectMap: Record<string, string> = { riron: "theory", denryoku: "power", kikai: "machine", houki: "law" };
 const sittingMap: Record<string, string> = { first: "upper", second: "lower" };
 const identity = (year: number, sitting: string, subject: string, number: number, examDate: string) => `${year}:${sitting}:${subject}:${number}:${examDate}`;

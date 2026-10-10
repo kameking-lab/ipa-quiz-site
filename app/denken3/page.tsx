@@ -90,7 +90,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </section>
       <section aria-labelledby="denken3-native" className="mt-9">
         <h2 id="denken3-native" className="text-xl font-bold">原本画像付きの原問演習</h2>
-        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済み112原問・136回答欄を原問単位で掲載。旧演習と重なる2025年度下期の理論18原問・機械18原問・電力7原問・法規8原問を除いた純増は{DENKEN3_NEW_ORIGINAL_COUNT}原問です。両期の理論・機械Q17・Q18は、各科目で本試験では一方だけ解答します。未確認の問題と二次試験は掲載していません。</p>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済み121原問・148回答欄を原問単位で掲載。旧演習と重なる2025年度下期の理論18原問・機械18原問・電力16原問・法規8原問を除いた純増は{DENKEN3_NEW_ORIGINAL_COUNT}原問です。両期の理論・機械Q17・Q18は、各科目で本試験では一方だけ解答します。未確認の問題と二次試験は掲載していません。</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">{DENKEN3_NATIVE_SUBJECTS.map(part => {
           const label = part.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期";
           const name = part.subject === "theory" ? "理論" : part.subject === "power" ? "電力" : part.subject === "machine" ? "機械" : "法規";
