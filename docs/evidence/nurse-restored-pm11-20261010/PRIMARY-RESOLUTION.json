@@ -1,0 +1,83 @@
+{
+  "sourceCandidateSha256": "fb4c044fb50846a5ff2f6808b23ccf26d214022fe992f6087434f9d1dbf8af64",
+  "officialAnswerKeyPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+  "ready": {
+    "1": {
+      "evidence": [
+        "https://www.mhlw.go.jp/toukei/saikin/hw/k-tyosa/k-tyosa22/dl/04.pdf"
+      ],
+      "basis": "MHLW 2022 survey, III symptoms, Figure 17 and text p18: both sexes back pain followed by shoulder stiffness."
+    },
+    "3": {
+      "evidence": [
+        "https://www.mhlw.go.jp/content/001512842.pdf"
+      ],
+      "basis": "MHLW Long-Term Care Insurance overview, July 2025, pp4/7: user shares 1/2/3 tenths; 3 tenths highest."
+    },
+    "5": {
+      "evidence": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=80089100&dataType=0&pageNo=1"
+      ],
+      "basis": "MHLW full statute, Article 15 items 2 and 5; distinction between training about home visiting care and operating a visiting nurse service."
+    },
+    "15": {
+      "evidence": [
+        "https://webview.isho.jp/journal/detail/abs/10.11477/mf.1402222555"
+      ],
+      "basis": "Clinical article 'Oliguria, anuria' (medicina 26(7), 1989) defines usual oliguria as <=400mL/day; removed unnecessary 100mL lower-bound assertion."
+    },
+    "21": {
+      "evidence": [
+        "https://www.jstage.jst.go.jp/article/jjsnr/28/1/28_20041022002/_pdf/-char/ja"
+      ],
+      "basis": "Original nursing research on gluteal injection-site selection notes middle gluteal recommendation and nerve injury risk; removed categorical claim that gluteus maximus is never used."
+    },
+    "22": {
+      "evidence": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/kaigosyokuin/dl/text_04.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/kaigosyokuin/dl/text_09.pdf"
+      ],
+      "basis": "MHLW oral suction teaching materials: nonsterile gloves permissible, <=20kPa, minimise discomfort and repeat after assessment if necessary. The <=15-second line belongs to tracheal suction, so no numeric oral limit is asserted."
+    },
+    "44": {
+      "evidence": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=84aa0500&dataType=0&pageNo=1"
+      ],
+      "basis": "MHLW ministerial ordinance Articles 3(2), 5, 22(3), 30(2). Wording narrowed from generalized local ordinance claim to designated visiting nursing federal standard."
+    },
+    "45": {
+      "evidence": [
+        "https://www.mhlw.go.jp/content/11120000/001245822.pdf",
+        "https://www.pmda.go.jp/RMP/www/650034/a19a4dd3-bdc9-4ab0-8a26-c9eaf32b79d3/650034_8219701S1025_03_001RMPm.pdf"
+      ],
+      "basis": "MHLW 2024 home narcotics self-management manual pp16-17; PMDA fentanyl-patch patient guide p20. Corrected subject from narcotics practitioner to patient/family."
+    },
+    "48": {
+      "evidence": [
+        "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/530191_2171018K1039_1_10"
+      ],
+      "basis": "PMDA Nitropen sublingual 0.3mg insert, 2023-08 edition: room temperature, effects in minutes, sit due to orthostatic hypotension, dissolve sublingually."
+    }
+  },
+  "figureVerifiedPendingSiteAsset": {
+    "20": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q1-25-renders\\115-pm-q20-four-numbered-breathing-waveforms.png",
+      "sha256": "e454a65b3f0025aa33ac61001f111aaf4ed4385996e9d4fd168d196052d4404c",
+      "page": 11,
+      "visualConclusion": "Original top-to-bottom ①–④; ③ waxing and waning breaths with apnoea = Cheyne–Stokes."
+    },
+    "28": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q26-50-renders\\115-pm-physical-p14.png",
+      "sha256": "a417b16710745104ed05d8d771521d3c23646d575142f86863aba1273860df7e",
+      "page": 14,
+      "visualConclusion": "ABO original table rows verified; ④ anti-A+, anti-B+, A-cells−, B-cells− = AB."
+    }
+  },
+  "hold": {
+    "7": "Original Japanese Denver assessment chart with exact 90% neck-control marker not obtained; official answer is 4 months but chart-level check remains.",
+    "31": "As-of-2026-04-01 medical ordinance Article 19 version and all alternatives not independently verified in exact text.",
+    "32": "PM Q32 is separate from the AM Q32 publication rejection; direct primary review of its four alternatives remains in progress."
+  },
+  "noNewModelCall": true,
+  "originalReady36Untouched": true
+}
