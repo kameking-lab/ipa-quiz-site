@@ -8,6 +8,7 @@ import manifest from "@/docs/evidence/medical44-prepublication-20261010/MANIFEST
 import hokenshiRaw from "@/data/questions/hokenshi/medical44-prepublication.json";
 import josanshiRaw from "@/data/questions/josanshi/medical44-prepublication.json";
 import { isExamPublished } from "@/lib/qualifications/catalog";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const questions = [...hokenshiRaw, ...josanshiRaw];
 const gateReady = [...HOKENSHI_QUESTIONS, ...JOSANSHI_QUESTIONS];
@@ -36,8 +37,26 @@ describe("medical Q45–55 prepublication candidate", () => {
       questions.filter(question => !question.needsReview).map(question => question.id).sort(),
     );
     for (const question of gateReady) {
-      expect(question).toEqual(questions.find(source => source.id === question.id));
+      const source = questions.find(source => source.id === question.id);
+      if (question.id === "hokenshi-2024-annual-am-q54") {
+        // The official shared case is identical; only the PDF's flattened table is
+        // rendered as a readable Markdown table in the live version.
+        expect({ ...question, question: source?.question }).toEqual(source);
+        for (const row of [
+          "| Ａちゃん | 出生時 | 43.0 cm | 1,900 g | － |",
+          "| Ａちゃん | 1 か月児健康診査時（1 か月0 日） | 46.0 cm | 2,600 g | － |",
+          "| Ａちゃん | 4 か月児健康診査時（4 か月0 日） | 57.0 cm | 4,900 g | 15.0 |",
+          "| Ｂちゃん | 出生時 | 46.5 cm | 2,400 g | － |",
+          "| Ｂちゃん | 1 か月児健康診査時（1 か月0 日） | 47.0 cm | 3,200 g | － |",
+          "| Ｂちゃん | 4 か月児健康診査時（4 か月0 日） | 58.0 cm | 5,300 g | 15.8 |",
+        ]) {
+          expect(question.question).toContain(row);
+        }
+      } else {
+        expect(question).toEqual(source);
+      }
     }
+    expect(HOKENSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(16);
     expect(isExamPublished("hokenshi")).toBe(true);
     expect(isExamPublished("josanshi")).toBe(true);
     expect(QUESTIONS_BY_EXAM.hokenshi?.map(question => question.id)).toEqual(HOKENSHI_QUESTIONS.map(question => question.id));
