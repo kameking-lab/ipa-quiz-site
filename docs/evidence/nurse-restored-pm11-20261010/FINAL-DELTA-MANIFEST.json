@@ -1,0 +1,62 @@
+{
+  "sourceCandidateSha256": "fb4c044fb50846a5ff2f6808b23ccf26d214022fe992f6087434f9d1dbf8af64",
+  "officialKeyPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+  "existingReadyUntouched": 36,
+  "newReadyNumbers": [
+    1,
+    3,
+    5,
+    15,
+    21,
+    22,
+    31,
+    32,
+    44,
+    45,
+    48
+  ],
+  "newReadyCount": 11,
+  "newReadyFiles": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q1-50-held-source-delta\\additional-ready.json",
+      "sha256": "d0e511987b6b044a32dab2564c71bb4e6c1d5a2a913b27b67b006f07b0b2f5dc"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q1-50-held-source-delta\\pm-q31-direct-primary-ready.json",
+      "sha256": "e1af24e0003ecbabc6b269bc00f583a21d7583d21b85aad29739620bf0e599ab"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q1-50-held-source-delta\\pm-q32-direct-primary-ready.json",
+      "sha256": "409c97c43bc2a4e2db90aee9ba151ddc9b6ed4b1d8f5d6c4d8120e38f591aeeb"
+    }
+  ],
+  "figureVerifiedPendingSiteAssetNumbers": [
+    20,
+    28
+  ],
+  "figureAssetManifest": {
+    "20": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q1-25-renders\\115-pm-q20-four-numbered-breathing-waveforms.png",
+      "sha256": "e454a65b3f0025aa33ac61001f111aaf4ed4385996e9d4fd168d196052d4404c",
+      "page": 11,
+      "visualConclusion": "Original top-to-bottom ①–④; ③ waxing and waning breaths with apnoea = Cheyne–Stokes."
+    },
+    "28": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q26-50-renders\\115-pm-physical-p14.png",
+      "sha256": "a417b16710745104ed05d8d771521d3c23646d575142f86863aba1273860df7e",
+      "page": 14,
+      "visualConclusion": "ABO original table rows verified; ④ anti-A+, anti-B+, A-cells−, B-cells− = AB."
+    }
+  },
+  "remainingContentHoldNumbers": [
+    7
+  ],
+  "remainingContentHoldReason": {
+    "7": "Japanese Denver 90-percent item-chart value not obtained; official key is 4 months, but exact chart criterion remains unverified."
+  },
+  "pmQ31AsOf20260401LawVersionChecked": true,
+  "pmQ32DistinctFromAmQ32Rejection": true,
+  "amQ32Touched": false,
+  "newModelCalls": 0,
+  "publicationsOrPushes": 0
+}

@@ -1,21 +1,31 @@
 {
-  "status": "PASS_LOCAL_ONLY",
-  "publication": "none",
-  "baseCommit": "8494407c7d3b42729a6b788cdd17385d090fdf8d",
-  "addedOriginals": 54,
-  "addedChoices": 223,
-  "registeredOriginals": 268,
-  "registeredChoices": 1107,
-  "numericOriginals": 1,
+  "status": "PASS",
+  "baseCommit": "c9123c52b52627a76f235a8def0f113cab689459",
+  "addedOriginals": 11,
+  "addedChoices": 44,
+  "addedIds": [
+    "kangoshi-2025-annual-pm-q1",
+    "kangoshi-2025-annual-pm-q3",
+    "kangoshi-2025-annual-pm-q5",
+    "kangoshi-2025-annual-pm-q15",
+    "kangoshi-2025-annual-pm-q21",
+    "kangoshi-2025-annual-pm-q22",
+    "kangoshi-2025-annual-pm-q44",
+    "kangoshi-2025-annual-pm-q45",
+    "kangoshi-2025-annual-pm-q48",
+    "kangoshi-2025-annual-pm-q31",
+    "kangoshi-2025-annual-pm-q32"
+  ],
+  "registeredOriginals": 279,
+  "registeredChoices": 1151,
   "byYearSession": {
     "2024-am": 90,
     "2024-pm": 12,
     "2025-am": 88,
-    "2025-pm": 78
+    "2025-pm": 89
   },
   "completeTwoSittings": 0,
-  "previous214ObjectsUnchanged": true,
-  "previousObjectHashes": [
+  "previous268ObjectHashes": [
     {
       "id": "kangoshi-2024-annual-am-q1",
       "sha256": "30a9539bfc5b5511ae8db601c6c628ad0fc7395e77b35ccf629bec2e69955940"
@@ -375,6 +385,54 @@
     {
       "id": "kangoshi-2024-annual-am-q90",
       "sha256": "7b95d788347b2da83727e06f6d3317a5652af3241a2d154c958c52f5c00155a4"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q6",
+      "sha256": "40318d0954889134dde69276e9fab50b5c1c3cae39deac7183534f016b6fc0a3"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q7",
+      "sha256": "e4ca9ee30d595697b2b73c9c0a1823a3ca321a30f5d042a77dbd2cf16dd423cb"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q8",
+      "sha256": "e1ccf5588b5a4537ee46d25cebf364bd3482c94603fa671a14b75e70d555fe82"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q11",
+      "sha256": "d3c279e0f7edf568b81c47a7ff50720e76748ffa81f280cd545e1548d83848af"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q12",
+      "sha256": "4be1a1674a559e91f52d17bfce886220b8b25b282aa078586b5e3c6cb034340b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q14",
+      "sha256": "5401ccd23578e801fa03f2052562d79e6861d5f587967bdf26cdf27b2775b446"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q15",
+      "sha256": "0a7d46ab90d81d0c3b5415800e13160516f3c5250157e867669471d08a7ffb6f"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q16",
+      "sha256": "3d6d610887515eb27f4d3a9c87182bd6401b309db531e571488aa6ebcf50619e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q17",
+      "sha256": "98ea60ebe3f60903a6554e56c02edb7518e00e470f576ce53a0d98b1667a3f69"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q21",
+      "sha256": "5937f4f789953e09c73b5baebd709197b58d331696e602ee2987068ac576824b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q23",
+      "sha256": "60fe4cca419ac97e18ce4770b3f81ddba374ad90b5603f2a61f280f514071711"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q25",
+      "sha256": "926dd2ecf50e88c56e41d22f5da90fe3999060881e9b33efd30d379c29b1334d"
     },
     {
       "id": "kangoshi-2025-annual-am-q1",
@@ -871,638 +929,208 @@
     {
       "id": "kangoshi-2025-annual-pm-q50",
       "sha256": "b45dd6c9eb83c44c499928c6274d312bf9e79008f4ac5a765a13657839f6e81d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q52",
+      "sha256": "ef0669b29bab19d81ee6366b9385be9d1ac570b050eef47c41131001635fd72e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q53",
+      "sha256": "04953c94d4061edd6f9a88292061d3fb3086e80e759921781e53e5d8594f7e29"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q54",
+      "sha256": "e9d617cbf938c4ce8df54414d4c605bb6b822ca92d0a67e947e81bebae0cafb3"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q55",
+      "sha256": "3435efd176606db0f05436f9aab40798004f9b7df85cd8bffe975e1aa5f483ee"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q56",
+      "sha256": "b9e968d61523263fa20dc30d2cbe601aed6080a9745518885c1dbe36a5c027d8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q57",
+      "sha256": "0b59ea933216197092340208daec2d69674748a2b89de730a70294d87ef620c5"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q59",
+      "sha256": "1a31e81af5a4a741e29298d9626f4ebb6ae612297049e819232d7a9c2903979a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q60",
+      "sha256": "c4e190e4fb4e23d53c35b0bf1047172bba42589cb0519c5e2234499904e217d7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q64",
+      "sha256": "accf45f03291159b943c3a3f4442dfbea8b31a4a49a7021b9f3eb61daf6cdd75"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q65",
+      "sha256": "515eebed16c74885929f2dab790124558082cefff30abc1d02be7065d7c3bb44"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q66",
+      "sha256": "5bbe29ad18c7eba8b326954158d37215389edc76c835bc7ff500eb486510baac"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q69",
+      "sha256": "f1aee858ce09851c8fe5e5c5b6747d4f93c8c2cde850ed44918f98281759f2c7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q70",
+      "sha256": "fef5ac41041fbbf3d6f3234c2225e0c1a87abcfddd91df826aa2cee44054e0cc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q71",
+      "sha256": "3949ae0267750c78567e3023f25dc15e74acce4a8727ebd919ed7538183538c2"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q72",
+      "sha256": "de2bc3aad95541c9ea12ed6b6299b20a1e13b10b37af4a78157a5c6ae1db2a9a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q75",
+      "sha256": "d58058fcfe7594f8e62cecf65c7a8c8d4c2fa13c9ed50721082b8477247b4d34"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q76",
+      "sha256": "70b4d6191143a2d480d7bb2064eaab5981be277d9e9962df62a14891c63573ad"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q80",
+      "sha256": "fefeb8993ea46ac52b4fd98353789f40da7aabaf5eae9794c121061bce190a2c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q84",
+      "sha256": "78550867ebfc72668bb0898cc019644aeb0c14d76f11681e0cc1f13a5cfe653d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q90",
+      "sha256": "990d93d9dd1b4a8ab85e92e66339ccffb68362503a459afc937a03603facd6db"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q91",
+      "sha256": "f6f0df5faf6842eeda30acea3cba3594c1ded05361ebb20e07b2a0f1b6660d7e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q92",
+      "sha256": "eb43b0fcbc59c8d916f70c4f441a2bda64383c97949cfc5e996e3d9313cf8ac7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q93",
+      "sha256": "c7a83ce05fe44ad61cbd13abb946168dd31cf289fb1a244da78346e4d5a9adc2"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q94",
+      "sha256": "a0d4aa37b4f5a34aeea7cab4ea99e7fbcc5f0b355a84ad134c4f1188c3c70eeb"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q95",
+      "sha256": "e93b1b10efd96d54aa20f3d16af61ad4fd9d565beaf286a7af6952ee59932050"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q96",
+      "sha256": "384cc41e4aed4cb50fb0a4f73d2f6f9d3bc0f4cba5dfdbcd7421a0566bce2ca3"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q101",
+      "sha256": "ce1ad080f74a8ad9759353cd164a026f1c337c7f0962d81ab285d7ba5dfd4b15"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q102",
+      "sha256": "4872ebc986e31f791e79924a2d7308abe59f3b2cbe05e5440b3479d0a9700d71"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q103",
+      "sha256": "062d2b77c5a4b033228ffc65dac2492b0c5b009ece35bda4ad8773fd0f855cda"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q104",
+      "sha256": "38c29fcea973eb8b148c30a61be1449a3f956859ac5f41e87b067a70f01fccd8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q106",
+      "sha256": "f95e943c0963f55a89ffe6e9229da108f67155fcef5dc23f4c5603f7fcdc5fa7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q107",
+      "sha256": "1cc52c1d3ff0435442a1995e65e17bf9360a2cbbd6d061d00d34fa07d454981c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q108",
+      "sha256": "54dc3acaba3b82e0cd0b5d5ae4299be44f8516d535c73d1f6ae660afcf243747"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q110",
+      "sha256": "274b5947df7a0f165b95824ea6a53f16562515a21bfa00c179762bcbf7d7af22"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q111",
+      "sha256": "1cb007e74a543c9a836f3e99a32ada03b994cb2b230c45ffe37646a213a90f69"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q112",
+      "sha256": "5e2a3697817c57325cea7fcc556e4498f5852eceb6b653ffb9c1d6a3abc57399"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q113",
+      "sha256": "84e44e5a3600bbcb5bd7bb23b5afcbb37bb49f4f82ca84a68676666aace76905"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q114",
+      "sha256": "3146bc64fef6ed794317b6644d6425bd1ecf6273a4561c9393c1b6ad5592f674"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q115",
+      "sha256": "294add49b888294a0756ec955ebeb10df952dae0c152e74a5f937cfb1931bdbc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q116",
+      "sha256": "7bd53d61ebb8a68a01dc5ec33e4362028630526925d6956694519b8cfd4aa0dc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q117",
+      "sha256": "4b021604ae4f05cb31fcaf9ca506c43041f6ce1223dba182e8e08d71dc769574"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q119",
+      "sha256": "b069a8da0b3896a5a9375c299403f5cfa944a056e4b36d16c8ef28677c7b5254"
     }
   ],
-  "batches": [
+  "previous268Changes": 0,
+  "candidateFiles": [
     {
-      "file": "pm115-q51-75-local-site-candidate.json",
-      "candidateSha256": "dca74fc71dd92180a2604acae5ad2ca2ae17af1dc7c5656e2b8edb3601a9126c",
-      "sourcePacketFile": "NURSE-115-PM-Q51-75-SOURCE-PACKET-20261010.json",
-      "sourcePacketSha256": "cb2b2e5c033b55f00ee7b04cbfe6d113ca22de35a8df987611197656bf2073b2",
-      "draftSha256": "c07292c110262465adcfa06c76bb66c6b3bc4bfe9c50a3789f5a0b86507a2ae7",
-      "officialKeyPdf": {
-        "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
-        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp260424-05seitou.pdf",
-        "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
-      },
-      "added": 16,
-      "choices": 65,
-      "sourceChecks": [
-        {
-          "id": "kangoshi-2025-annual-pm-q52",
-          "objectSha256": "ef0669b29bab19d81ee6366b9385be9d1ac570b050eef47c41131001635fd72e",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q53",
-          "objectSha256": "04953c94d4061edd6f9a88292061d3fb3086e80e759921781e53e5d8594f7e29",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q54",
-          "objectSha256": "e9d617cbf938c4ce8df54414d4c605bb6b822ca92d0a67e947e81bebae0cafb3",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q55",
-          "objectSha256": "3435efd176606db0f05436f9aab40798004f9b7df85cd8bffe975e1aa5f483ee",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q56",
-          "objectSha256": "b9e968d61523263fa20dc30d2cbe601aed6080a9745518885c1dbe36a5c027d8",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q57",
-          "objectSha256": "0b59ea933216197092340208daec2d69674748a2b89de730a70294d87ef620c5",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q59",
-          "objectSha256": "1a31e81af5a4a741e29298d9626f4ebb6ae612297049e819232d7a9c2903979a",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q60",
-          "objectSha256": "c4e190e4fb4e23d53c35b0bf1047172bba42589cb0519c5e2234499904e217d7",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q64",
-          "objectSha256": "accf45f03291159b943c3a3f4442dfbea8b31a4a49a7021b9f3eb61daf6cdd75",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q65",
-          "objectSha256": "515eebed16c74885929f2dab790124558082cefff30abc1d02be7065d7c3bb44",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q66",
-          "objectSha256": "5bbe29ad18c7eba8b326954158d37215389edc76c835bc7ff500eb486510baac",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q69",
-          "objectSha256": "f1aee858ce09851c8fe5e5c5b6747d4f93c8c2cde850ed44918f98281759f2c7",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q70",
-          "objectSha256": "fef5ac41041fbbf3d6f3234c2225e0c1a87abcfddd91df826aa2cee44054e0cc",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q71",
-          "objectSha256": "3949ae0267750c78567e3023f25dc15e74acce4a8727ebd919ed7538183538c2",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q72",
-          "objectSha256": "de2bc3aad95541c9ea12ed6b6299b20a1e13b10b37af4a78157a5c6ae1db2a9a",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q75",
-          "objectSha256": "d58058fcfe7594f8e62cecf65c7a8c8d4c2fa13c9ed50721082b8477247b4d34",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "5"
-          ],
-          "requiredSelections": 1
-        }
-      ]
+      "file": "additional-ready.json",
+      "sha256": "d0e511987b6b044a32dab2564c71bb4e6c1d5a2a913b27b67b006f07b0b2f5dc"
     },
     {
-      "file": "pm115-q76-90-local-site-candidate.json",
-      "candidateSha256": "b0064b3078b4b4b1e54bf9c53e1072ebb6e0f99150df7bb4d355024a7308f198",
-      "sourcePacketFile": "NURSE-115-PM-Q76-90-SOURCE-PACKET-20261010.json",
-      "sourcePacketSha256": "eef6989feda1696a2566e63d5b03486ce9a83ea4f4650956d8e453f14d91d512",
-      "draftSha256": "26d916f8b3eeaa11714e9f72377a70096a7873ded09464a8aefc771bb1512ba1",
-      "officialKeyPdf": {
-        "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
-        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp260424-05seitou.pdf",
-        "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
-      },
-      "added": 4,
-      "choices": 20,
-      "sourceChecks": [
-        {
-          "id": "kangoshi-2025-annual-pm-q76",
-          "objectSha256": "70b4d6191143a2d480d7bb2064eaab5981be277d9e9962df62a14891c63573ad",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q80",
-          "objectSha256": "fefeb8993ea46ac52b4fd98353789f40da7aabaf5eae9794c121061bce190a2c",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q84",
-          "objectSha256": "78550867ebfc72668bb0898cc019644aeb0c14d76f11681e0cc1f13a5cfe653d",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2",
-            "5"
-          ],
-          "requiredSelections": 2
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q90",
-          "objectSha256": "990d93d9dd1b4a8ab85e92e66339ccffb68362503a459afc937a03603facd6db",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3",
-            "4"
-          ],
-          "requiredSelections": 2
-        }
-      ]
+      "file": "pm-q31-direct-primary-ready.json",
+      "sha256": "e1af24e0003ecbabc6b269bc00f583a21d7583d21b85aad29739620bf0e599ab"
     },
     {
-      "file": "pm115-q91-105-local-site-candidate.json",
-      "candidateSha256": "3551e3c13ec204cf29789bed3b75654185aa8e73f9b7a16bb450985e8b05fa5b",
-      "sourcePacketFile": "NURSE-115-PM-Q91-105-SOURCE-PACKET-20261010.json",
-      "sourcePacketSha256": "6571bfc7c3f1e5b96fb92432cb9b5e00609963a231242d6572b14eb55c5ddf59",
-      "draftSha256": "e83b961bc28397b7a9f740149ac3b356d7516fc5ece558864f3b37c9f8a60ccf",
-      "officialKeyPdf": {
-        "officialUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/seitou_kangoshi.pdf",
-        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\official-pm-pdfs\\seitou_kangoshi_final_115.pdf",
-        "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
-      },
-      "added": 10,
-      "choices": 41,
-      "sourceChecks": [
-        {
-          "id": "kangoshi-2025-annual-pm-q91",
-          "objectSha256": "f6f0df5faf6842eeda30acea3cba3594c1ded05361ebb20e07b2a0f1b6660d7e",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q92",
-          "objectSha256": "eb43b0fcbc59c8d916f70c4f441a2bda64383c97949cfc5e996e3d9313cf8ac7",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q93",
-          "objectSha256": "c7a83ce05fe44ad61cbd13abb946168dd31cf289fb1a244da78346e4d5a9adc2",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q94",
-          "objectSha256": "a0d4aa37b4f5a34aeea7cab4ea99e7fbcc5f0b355a84ad134c4f1188c3c70eeb",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q95",
-          "objectSha256": "e93b1b10efd96d54aa20f3d16af61ad4fd9d565beaf286a7af6952ee59932050",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q96",
-          "objectSha256": "384cc41e4aed4cb50fb0a4f73d2f6f9d3bc0f4cba5dfdbcd7421a0566bce2ca3",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q101",
-          "objectSha256": "ce1ad080f74a8ad9759353cd164a026f1c337c7f0962d81ab285d7ba5dfd4b15",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q102",
-          "objectSha256": "4872ebc986e31f791e79924a2d7308abe59f3b2cbe05e5440b3479d0a9700d71",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2",
-            "3"
-          ],
-          "requiredSelections": 2
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q103",
-          "objectSha256": "062d2b77c5a4b033228ffc65dac2492b0c5b009ece35bda4ad8773fd0f855cda",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q104",
-          "objectSha256": "38c29fcea973eb8b148c30a61be1449a3f956859ac5f41e87b067a70f01fccd8",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        }
-      ]
-    },
-    {
-      "file": "pm115-q106-120-local-site-candidate.json",
-      "candidateSha256": "c935480d68241de57e179db38eb9b2c814518dd0a8543ccc05078774e9036859",
-      "sourcePacketFile": "NURSE-115-PM-Q106-120-SOURCE-PACKET-20261010.json",
-      "sourcePacketSha256": "90de55446b92f2dae5da2a8a1d58a25f62f8aee0977c4297f048a1ae2752665d",
-      "draftSha256": "dd4014de72e9e8423f1c9531ed8ae059ef7c0697b917e0f180a5e93de0d1f607",
-      "officialKeyPdf": {
-        "officialUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/seitou_kangoshi.pdf",
-        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\official-pm-pdfs\\seitou_kangoshi_final_115.pdf",
-        "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
-      },
-      "added": 12,
-      "choices": 49,
-      "sourceChecks": [
-        {
-          "id": "kangoshi-2025-annual-pm-q106",
-          "objectSha256": "f95e943c0963f55a89ffe6e9229da108f67155fcef5dc23f4c5603f7fcdc5fa7",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q107",
-          "objectSha256": "1cc52c1d3ff0435442a1995e65e17bf9360a2cbbd6d061d00d34fa07d454981c",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q108",
-          "objectSha256": "54dc3acaba3b82e0cd0b5d5ae4299be44f8516d535c73d1f6ae660afcf243747",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q110",
-          "objectSha256": "274b5947df7a0f165b95824ea6a53f16562515a21bfa00c179762bcbf7d7af22",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q111",
-          "objectSha256": "1cb007e74a543c9a836f3e99a32ada03b994cb2b230c45ffe37646a213a90f69",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q112",
-          "objectSha256": "5e2a3697817c57325cea7fcc556e4498f5852eceb6b653ffb9c1d6a3abc57399",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q113",
-          "objectSha256": "84e44e5a3600bbcb5bd7bb23b5afcbb37bb49f4f82ca84a68676666aace76905",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4",
-            "5"
-          ],
-          "requiredSelections": 2
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q114",
-          "objectSha256": "3146bc64fef6ed794317b6644d6425bd1ecf6273a4561c9393c1b6ad5592f674",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q115",
-          "objectSha256": "294add49b888294a0756ec955ebeb10df952dae0c152e74a5f937cfb1931bdbc",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q116",
-          "objectSha256": "7bd53d61ebb8a68a01dc5ec33e4362028630526925d6956694519b8cfd4aa0dc",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q117",
-          "objectSha256": "4b021604ae4f05cb31fcaf9ca506c43041f6ce1223dba182e8e08d71dc769574",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2025-annual-pm-q119",
-          "objectSha256": "b069a8da0b3896a5a9375c299403f5cfa944a056e4b36d16c8ef28677c7b5254",
-          "sharedCaseIncluded": true,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        }
-      ]
-    },
-    {
-      "file": "pm114-q1-25-local-site-candidate.json",
-      "candidateSha256": "2f7dcda714e06773a079865dd9d80c61098db4ad488210d529c289ff7c84453c",
-      "sourcePacketFile": "NURSE-114-PM-Q1-25-SOURCE-PACKET-20261010.json",
-      "sourcePacketSha256": "b517d9f3847f522c9cf0dece38342460d41e14226276b2f44880307f2da9b945",
-      "draftSha256": "0ae017cb077f63b13f0e7b7b91329f4457711109bc1bf6055b9b1dc23eeed5a7",
-      "officialKeyPdf": {
-        "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
-        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp250428-05seitou.pdf",
-        "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
-      },
-      "added": 12,
-      "choices": 48,
-      "sourceChecks": [
-        {
-          "id": "kangoshi-2024-annual-pm-q6",
-          "objectSha256": "40318d0954889134dde69276e9fab50b5c1c3cae39deac7183534f016b6fc0a3",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q7",
-          "objectSha256": "e4ca9ee30d595697b2b73c9c0a1823a3ca321a30f5d042a77dbd2cf16dd423cb",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q8",
-          "objectSha256": "e1ccf5588b5a4537ee46d25cebf364bd3482c94603fa671a14b75e70d555fe82",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q11",
-          "objectSha256": "d3c279e0f7edf568b81c47a7ff50720e76748ffa81f280cd545e1548d83848af",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q12",
-          "objectSha256": "4be1a1674a559e91f52d17bfce886220b8b25b282aa078586b5e3c6cb034340b",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q14",
-          "objectSha256": "5401ccd23578e801fa03f2052562d79e6861d5f587967bdf26cdf27b2775b446",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "3"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q15",
-          "objectSha256": "0a7d46ab90d81d0c3b5415800e13160516f3c5250157e867669471d08a7ffb6f",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "1"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q16",
-          "objectSha256": "3d6d610887515eb27f4d3a9c87182bd6401b309db531e571488aa6ebcf50619e",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q17",
-          "objectSha256": "98ea60ebe3f60903a6554e56c02edb7518e00e470f576ce53a0d98b1667a3f69",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q21",
-          "objectSha256": "5937f4f789953e09c73b5baebd709197b58d331696e602ee2987068ac576824b",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q23",
-          "objectSha256": "60fe4cca419ac97e18ce4770b3f81ddba374ad90b5603f2a61f280f514071711",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "4"
-          ],
-          "requiredSelections": 1
-        },
-        {
-          "id": "kangoshi-2024-annual-pm-q25",
-          "objectSha256": "926dd2ecf50e88c56e41d22f5da90fe3999060881e9b33efd30d379c29b1334d",
-          "sharedCaseIncluded": false,
-          "officialAcceptedAnswerNumbers": [
-            "2"
-          ],
-          "requiredSelections": 1
-        }
-      ]
+      "file": "pm-q32-direct-primary-ready.json",
+      "sha256": "409c97c43bc2a4e2db90aee9ba151ddc9b6ed4b1d8f5d6c4d8120e38f591aeeb"
     }
   ],
-  "heldIdsNotRegistered": [
-    "kangoshi-2024-annual-pm-q1",
-    "kangoshi-2024-annual-pm-q10",
-    "kangoshi-2024-annual-pm-q13",
-    "kangoshi-2024-annual-pm-q18",
-    "kangoshi-2024-annual-pm-q19",
-    "kangoshi-2024-annual-pm-q2",
-    "kangoshi-2024-annual-pm-q20",
-    "kangoshi-2024-annual-pm-q22",
-    "kangoshi-2024-annual-pm-q24",
-    "kangoshi-2024-annual-pm-q3",
-    "kangoshi-2024-annual-pm-q4",
-    "kangoshi-2024-annual-pm-q5",
-    "kangoshi-2024-annual-pm-q9",
-    "kangoshi-2025-annual-pm-q100",
-    "kangoshi-2025-annual-pm-q105",
-    "kangoshi-2025-annual-pm-q109",
-    "kangoshi-2025-annual-pm-q118",
-    "kangoshi-2025-annual-pm-q120",
-    "kangoshi-2025-annual-pm-q51",
-    "kangoshi-2025-annual-pm-q58",
-    "kangoshi-2025-annual-pm-q61",
-    "kangoshi-2025-annual-pm-q62",
-    "kangoshi-2025-annual-pm-q63",
-    "kangoshi-2025-annual-pm-q67",
-    "kangoshi-2025-annual-pm-q68",
-    "kangoshi-2025-annual-pm-q73",
-    "kangoshi-2025-annual-pm-q74",
-    "kangoshi-2025-annual-pm-q77",
-    "kangoshi-2025-annual-pm-q78",
-    "kangoshi-2025-annual-pm-q79",
-    "kangoshi-2025-annual-pm-q81",
-    "kangoshi-2025-annual-pm-q82",
-    "kangoshi-2025-annual-pm-q83",
-    "kangoshi-2025-annual-pm-q85",
-    "kangoshi-2025-annual-pm-q86",
-    "kangoshi-2025-annual-pm-q87",
-    "kangoshi-2025-annual-pm-q88",
-    "kangoshi-2025-annual-pm-q89",
-    "kangoshi-2025-annual-pm-q97",
-    "kangoshi-2025-annual-pm-q98",
-    "kangoshi-2025-annual-pm-q99"
+  "am32NeverTouched": true,
+  "held115PmQ1to50": [
+    7,
+    20,
+    28
   ],
-  "questionOrAssetDeletions": 0,
+  "publication": "none",
+  "modelCalls": 0,
   "publicPushes": 0,
   "pullRequests": 0,
-  "modelCalls": 0,
-  "checks": {
-    "testsPassed": 49,
-    "testsFailed": 0,
+  "verification": {
+    "unitTests": 49,
+    "unitPassed": 49,
     "typecheck": "PASS",
     "targetedLint": "PASS",
-    "dataValidator": {
-      "ok": 268,
-      "fail": 0,
-      "warn": 5
-    },
-    "sourceMechanicalQA": "54 exact original stems/choices/official keys,22 shared case texts verified",
-    "previous214ObjectChanges": 0
+    "dataValidated": 279,
+    "dataFailures": 0,
+    "dataWarnings": 5
   }
 }
