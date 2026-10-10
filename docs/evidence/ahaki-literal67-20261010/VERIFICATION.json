@@ -1,0 +1,139 @@
+{
+  "status": "LOCAL_VERIFIED_NOT_DEPLOYED",
+  "baseCommit": "0229b5f753d808639759a8a92ba74c31726cccfc",
+  "integrationSha256": "01f8b9ffbd9febfccd368169e8a165856ccca9b3915dbc2f32228041ca04f4a9",
+  "counts": {
+    "oldPreserved": 608,
+    "addedOriginals": 67,
+    "addedChoiceExplanations": 268,
+    "localTotal": 675,
+    "officialTotal": 680,
+    "separatelyOwnedExcluded": 2,
+    "afterSeparateTwoMerged": 677,
+    "materialHolds": 3,
+    "latestTwoComplete": false
+  },
+  "checks": {
+    "focusedUnit": {
+      "exitCode": 0,
+      "files": 2,
+      "passed": 6,
+      "failed": 0
+    },
+    "typecheck": {
+      "incremental": false,
+      "exitCode": 0
+    },
+    "scopedLint": {
+      "exitCode": 0
+    },
+    "validator": {
+      "fail": 0,
+      "ok": 675,
+      "questions": 675,
+      "warn": 68,
+      "exitCode": 0
+    },
+    "oldObjects": {
+      "changed": 0,
+      "fullObjectHashesChecked": 608
+    },
+    "nonAhakiData": {
+      "trackedFilesChecked": 900,
+      "comparison": "Git blob identity with CRLF normalized to LF",
+      "changedFiles": []
+    },
+    "diffCheck": {
+      "exitCode": 0
+    },
+    "productionBuild": "NOT_RUN"
+  },
+  "addedIds": [
+    "ahaki-hari-kyu-2025-annual-am-q6",
+    "ahaki-anma-2025-annual-am-q29",
+    "ahaki-anma-2025-annual-am-q33",
+    "ahaki-anma-2025-annual-am-q37",
+    "ahaki-anma-2025-annual-am-q39",
+    "ahaki-anma-2025-annual-am-q40",
+    "ahaki-anma-2025-annual-am-q42",
+    "ahaki-anma-2025-annual-am-q43",
+    "ahaki-anma-2025-annual-am-q44",
+    "ahaki-hari-kyu-2025-annual-am-q32",
+    "ahaki-hari-kyu-2025-annual-am-q34",
+    "ahaki-hari-kyu-2025-annual-am-q35",
+    "ahaki-hari-kyu-2026-annual-am-q32",
+    "ahaki-hari-kyu-2026-annual-am-q35",
+    "ahaki-anma-2025-annual-am-q54",
+    "ahaki-anma-2025-annual-am-q68",
+    "ahaki-anma-2025-annual-am-q70",
+    "ahaki-anma-2025-annual-am-q77",
+    "ahaki-anma-2025-annual-am-q78",
+    "ahaki-hari-kyu-2025-annual-am-q75",
+    "ahaki-hari-kyu-2026-annual-am-q63",
+    "ahaki-anma-2025-annual-pm-q94",
+    "ahaki-anma-2025-annual-pm-q95",
+    "ahaki-anma-2025-annual-pm-q98",
+    "ahaki-anma-2025-annual-pm-q108",
+    "ahaki-anma-2025-annual-pm-q109",
+    "ahaki-anma-2025-annual-pm-q115",
+    "ahaki-anma-2025-annual-pm-q116",
+    "ahaki-anma-2025-annual-pm-q117",
+    "ahaki-anma-2025-annual-pm-q118",
+    "ahaki-anma-2025-annual-pm-q119",
+    "ahaki-anma-2025-annual-pm-q120",
+    "ahaki-anma-2025-annual-pm-q122",
+    "ahaki-anma-2025-annual-pm-q128",
+    "ahaki-anma-2025-annual-pm-q144",
+    "ahaki-anma-2025-annual-pm-q157",
+    "ahaki-anma-2026-annual-pm-q112",
+    "ahaki-anma-2026-annual-pm-q115",
+    "ahaki-anma-2026-annual-pm-q127",
+    "ahaki-anma-2026-annual-pm-q128",
+    "ahaki-hari-kyu-2025-annual-pm-q108",
+    "ahaki-hari-kyu-2025-annual-pm-q115",
+    "ahaki-hari-kyu-2025-annual-pm-q116",
+    "ahaki-hari-kyu-2025-annual-pm-q120",
+    "ahaki-hari-kyu-2025-annual-pm-q123",
+    "ahaki-hari-kyu-2025-annual-pm-q124",
+    "ahaki-hari-kyu-2025-annual-pm-q125",
+    "ahaki-hari-kyu-2025-annual-pm-q133",
+    "ahaki-hari-kyu-2025-annual-pm-q136",
+    "ahaki-hari-kyu-2025-annual-pm-q137",
+    "ahaki-hari-kyu-2025-annual-pm-q149",
+    "ahaki-hari-kyu-2025-annual-pm-q155",
+    "ahaki-hari-kyu-2025-annual-pm-q163",
+    "ahaki-hari-kyu-2025-annual-pm-q165",
+    "ahaki-hari-kyu-2025-annual-pm-q167",
+    "ahaki-hari-kyu-2025-annual-pm-q168",
+    "ahaki-hari-kyu-2025-annual-pm-q170",
+    "ahaki-hari-kyu-2025-annual-pm-q171",
+    "ahaki-hari-kyu-2025-annual-pm-q172",
+    "ahaki-hari-kyu-2025-annual-pm-q173",
+    "ahaki-hari-kyu-2025-annual-pm-q174",
+    "ahaki-hari-kyu-2025-annual-pm-q175",
+    "ahaki-hari-kyu-2025-annual-pm-q177",
+    "ahaki-hari-kyu-2025-annual-pm-q178",
+    "ahaki-hari-kyu-2025-annual-pm-q179",
+    "ahaki-hari-kyu-2025-annual-pm-q180",
+    "ahaki-hari-kyu-2026-annual-pm-q179"
+  ],
+  "materialHoldsNotReassessed": [
+    "33-hari-kyu-156",
+    "34-anma-massage-shiatsushi-147",
+    "33-anma-massage-shiatsushi-124"
+  ],
+  "separatelyOwnedIdsExcluded": [
+    "34-hari-kyu-13",
+    "34-hari-kyu-96"
+  ],
+  "boundaries": {
+    "newImages": 0,
+    "beautyGateChanges": 0,
+    "newModelRequests": 0,
+    "push": 0,
+    "publication": 0,
+    "httpRequests": 0
+  },
+  "warnings": "Validator retains 68 length/short-question warnings. Saved choice explanations were not regenerated.",
+  "mergeNote": "Separate Q13/Q96 additions are not included in this commit. Merge both sets once, then update aggregate assertions to 677 and remaining material holds to 3."
+}
