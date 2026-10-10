@@ -1,0 +1,45 @@
+{
+  "publicPacketSha256": "02e66161851bf58b3e358bbd13f1e1d14ee642d0f7a8564443ddb7bb0e910f4f",
+  "packetQuestionCount": 50,
+  "packetChoiceCount": 202,
+  "officialAnswerCount": 50,
+  "officialPdfSources": {
+    "115": {
+      "questionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "sha256": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
+        "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66"
+      },
+      "morningSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_02.pdf",
+        "sha256": "857c8b58ae2111db783ded0fd0a09b10a3ee571cb864d3c81290e023d54c289b"
+      }
+    },
+    "114": {
+      "questionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_01.pdf",
+        "sha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+        "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+      },
+      "morningSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_02.pdf",
+        "sha256": "8872c24011055a54ed1b85ae2e71816b0bbd606cc1ee22c343e62b68fdddfc6a"
+      }
+    }
+  },
+  "figureQuestions": [
+    "115 Q63",
+    "114 Q51",
+    "114 Q54"
+  ],
+  "textLayerVisualCorrections": [
+    "114 Q64: the PDF text layer is corrupt; the visible official page reads 尿蛋白＋.",
+    "114 Q68: the visible official page reads 子宮頸管無力症の要因."
+  ]
+}
