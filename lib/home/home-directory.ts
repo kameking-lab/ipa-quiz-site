@@ -148,6 +148,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
+  { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み306原問を部分収録", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み286原問を部分収録", domain: "welfare" },
   { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用322原問を部分収録", domain: "welfare" },
@@ -287,8 +289,8 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "福祉・介護・医薬品",
-        lead: "介護福祉士国家試験と登録販売者試験。",
+        title: "医療・福祉",
+        lead: "医療・福祉の国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
