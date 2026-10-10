@@ -503,7 +503,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jaame.or.jp/ce/past-test.html",
     officialReuseTermsUrl: "https://www.jaame.or.jp/privacy.html",
     status: "live",
-    reuseSummary: "第39回（令和7年度）・第38回（令和6年度）の午前・午後から、原本・正答・全肢解説を確認した157問を部分収録。全360問は未収録。問題と正答の出典は医療機器センター、解説は独自作成です。掲載可否はオーナーが判断します。",
+    reuseSummary: "第39回（令和7年度）・第38回（令和6年度）の午前・午後から、原本・正答・全肢解説を確認した220問を部分収録。全360問は未収録。問題と正答の出典は医療機器センター、解説は独自作成です。掲載可否はオーナーが判断します。",
     remainingWork: ["午前・午後の未収録問題と専門根拠・図の局所確認", "両回の未収録問題", "掲載可否はオーナー確認"],
   },
   {
