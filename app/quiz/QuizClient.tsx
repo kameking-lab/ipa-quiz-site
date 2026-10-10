@@ -42,13 +42,14 @@ function deriveSessionPool(
   poolIds: string[],
   mode: QuizMode,
   categoryById?: Record<string, string>,
+  wrongOnly = false,
 ): string[] {
   let ids = [...poolIds];
   if (mode === "review" || mode === "unanswered") {
     const history = createHistoryStore();
     if (mode === "review") {
       const wrong = new Set(history.getWrongIds());
-      const starred = new Set(history.getStarredIds());
+      const starred = new Set(wrongOnly ? [] : history.getStarredIds());
       ids = ids.filter((id) => wrong.has(id) || starred.has(id));
     } else {
       const answered = new Set(history.getAnsweredIds());
@@ -90,6 +91,8 @@ export function QuizClient({
   completionLabel,
   completionShareHref,
   categoryById,
+  wrongOnly = false,
+  initialQuestionId,
 }: {
   poolIds: string[];
   mode: QuizMode;
@@ -99,6 +102,8 @@ export function QuizClient({
   completionLabel?: string;
   completionShareHref?: string;
   categoryById?: Record<string, string>;
+  wrongOnly?: boolean;
+  initialQuestionId?: string;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -106,22 +111,49 @@ export function QuizClient({
   const [loadError, setLoadError] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
   const cache = React.useRef<Map<string, Question>>(new Map());
+  const initializedPool = React.useRef<string | null>(null);
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
      
-    setSessionIds(deriveSessionPool(poolIds, mode, categoryById));
-    setIndex(0);
+    const url = new URL(window.location.href);
+    const signature = JSON.stringify([mode, wrongOnly, poolIds, initialQuestionId]);
+    if (initializedPool.current === signature) return;
+    initializedPool.current = signature;
+    const currentId = initialQuestionId ?? url.searchParams.get("question");
+    url.searchParams.delete("question");
+    const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
+    let ids = deriveSessionPool(poolIds, mode, categoryById, wrongOnly);
+    try {
+      const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
+      const available = new Set(poolIds);
+      if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= MAX_POOL &&
+          saved.every((id) => typeof id === "string" && available.has(id)) && saved.includes(currentId)) {
+        ids = saved as string[];
+      } else if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
+        ids = [currentId, ...ids].slice(0, MAX_POOL);
+      }
+      window.sessionStorage.setItem(sessionKey, JSON.stringify(ids));
+    } catch { /* Unavailable storage still allows an exact question URL. */ }
+    if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
+      ids = [currentId, ...ids].slice(0, MAX_POOL);
+    }
+    const startIndex = currentId ? Math.max(0, ids.indexOf(currentId)) : 0;
+    setSessionIds(ids);
+    setIndex(startIndex);
     setLoadError(false);
     cache.current.clear();
     startSession(mode);
-  }, [poolIds, mode, categoryById]);
+  }, [poolIds, mode, categoryById, wrongOnly, initialQuestionId]);
 
   // Load current + prefetch next whenever index advances.
   React.useEffect(() => {
     if (!sessionIds || sessionIds.length === 0) return;
     const currentId = sessionIds[index];
     if (!currentId) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set("question", currentId);
+    window.history.replaceState(null, "", url);
 
     let cancelled = false;
     const shuffle = mode === "random";

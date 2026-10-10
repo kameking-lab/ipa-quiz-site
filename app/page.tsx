@@ -1,10 +1,9 @@
+import "./home-study.css";
 import type { Metadata } from "next";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
 import { HomeNoteGuides, HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
 import { HomeHero } from "@/components/home/landing/HomeHero";
-import { HomeStudyModes } from "@/components/home/landing/HomeStudyModes";
-import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
@@ -22,15 +21,15 @@ export default function HomePage() {
   const domains = getHomeDirectory();
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-12 pt-4 sm:px-6 sm:pt-8">
+    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
       <HomeDirectory domains={domains} />
-      <div className="mt-6"><TotalAnswerCounter /></div>
-      <HomeStudyModes />
+      <div className="study-context">
       <HomeScheduleLink />
       <HomeNoteGuides />
       <HomeTrust />
+      </div>
     </main>
   );
 }

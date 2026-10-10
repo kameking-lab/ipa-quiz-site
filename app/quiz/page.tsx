@@ -32,6 +32,8 @@ export const metadata: Metadata = {
 
 interface SearchParams {
   mode?: string;
+  scope?: string;
+  reviewKind?: string;
   exam?: string;
   examGroup?: string;
   year?: string;
@@ -42,6 +44,7 @@ interface SearchParams {
   categoryGroup?: string;
   calc?: string;
   order?: string;
+  question?: string;
   /**
    * Optional pool cap. The home "3問だけ試す" CTA and the onboarding tour send
    * `limit=3` for the '3問体験' flow; without this server-side slice the
@@ -107,7 +110,7 @@ export default async function QuizPage({
     !["riron", "denryoku", "kikai", "houki"].includes(sp.session ?? "")
   )) redirect("/denken1");
   const isSearchPool = sp.source === "search";
-  const session = isSearchPool
+  const session = isSearchPool || (mode === "review" && sp.scope === "exam")
     ? undefined
     : parsePracticeSession(sp.session) ?? (examGroup?.length ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
   const examQuestions = await getQuestionsForExam(exam);
@@ -155,6 +158,7 @@ export default async function QuizPage({
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}
+        initialQuestionId={sp.question}
         mode={mode}
         backHref={backHref}
         backLabel={isSearchPool ? "検索結果に戻る" : undefined}
@@ -162,6 +166,7 @@ export default async function QuizPage({
         completionLabel={isSearchPool ? "検索結果から選んだ問題" : undefined}
         completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
+        wrongOnly={mode === "review" && sp.reviewKind === "wrong"}
       />
     </>
   );

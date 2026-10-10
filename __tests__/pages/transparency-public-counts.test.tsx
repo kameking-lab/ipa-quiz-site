@@ -35,10 +35,11 @@ describe("transparency published counts", () => {
     expect(qualifications).toBeGreaterThan(13);
 
     const home = render(<HomePage />);
-    const homeQuestions = within(home.container).getByText("問を収録").previousElementSibling;
-    const homeQualifications = within(home.container).getByText("資格・区分").previousElementSibling;
+    const published = within(home.container).getByRole("group", { name: "公開収録数" });
+    const homeQuestions = within(published).getByText("公開中の問題数").nextElementSibling;
+    const homeQualifications = within(published).getByText("資格・区分").nextElementSibling;
     expect(homeQuestions?.textContent).toBe(questions.toLocaleString("ja-JP"));
-    expect(homeQualifications?.textContent).toBe(String(qualifications));
+    expect(homeQualifications?.textContent).toBe(qualifications.toLocaleString("ja-JP"));
 
     const transparency = render(await TransparencyPage());
     const questionsCard = within(transparency.container).getByText("公開中の問題数").parentElement;

@@ -35,7 +35,6 @@ import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
-import { AchievementToast } from "@/components/motivation/AchievementToast";
 import { tsuginoLearningUrl, tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
 export function quizModeLabel(mode: string): string {
@@ -83,6 +82,7 @@ export function QuizPlayer({
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
+  const answerResultRef = React.useRef<HTMLDivElement>(null);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
@@ -91,7 +91,6 @@ export function QuizPlayer({
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
-  const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
 
@@ -160,6 +159,10 @@ export function QuizPlayer({
     (selection: string, correct: boolean) => {
       if (!question) return;
       setRevealed(true);
+      requestAnimationFrame(() => {
+        answerResultRef.current?.focus({ preventScroll: true });
+        answerResultRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
+      });
       posthogCapture("question_answered", {
         questionId: question.id,
         exam: question.exam,
@@ -189,14 +192,11 @@ export function QuizPlayer({
       setStats((s) => {
         const next = { answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) };
         const allStats = history.getStats();
-        const newlyUnlocked = evaluateAchievementsAfterAnswer(
+        evaluateAchievementsAfterAnswer(
           allStats.total,
           allStats.correct,
           correct ? combo + 1 : 0,
         );
-        if (newlyUnlocked.length > 0 && !pendingAchievement) {
-          setPendingAchievement(newlyUnlocked[0].id);
-        }
         return next;
       });
 
@@ -213,7 +213,7 @@ export function QuizPlayer({
         }
       }
     },
-    [question, history, combo, pendingAchievement],
+    [question, history, combo],
   );
 
   const onSelect = React.useCallback(
@@ -242,8 +242,9 @@ export function QuizPlayer({
     const handler = (e: KeyboardEvent) => {
       if (!question) return;
       if (e.target instanceof HTMLElement) {
-        const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA") return;
+        const control = e.target.closest('input, textarea, select, button, a, [contenteditable="true"], [role="dialog"]');
+        const choiceShortcut = !revealed && e.target.closest('[role="radio"], [role="checkbox"]') && CHOICE_SHORTCUTS.includes(e.key);
+        if (control && !choiceShortcut) return;
       }
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+R reloads, Ctrl/Cmd+1–4
       // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
@@ -474,7 +475,7 @@ export function QuizPlayer({
             </div>
 
             {revealed && (
-              <>
+              <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-24 space-y-4 outline-none" aria-label="解答結果">
                 <ExplanationCard
                   question={question}
                   selected={selectionLabel}
@@ -491,7 +492,7 @@ export function QuizPlayer({
                 <ExamNoteGuide exam={question.exam as ExamCode} />
                 <GenerateSimilar baseQuestion={question} />
                 <QuestionCommentBox questionId={question.id} />
-              </>
+              </div>
             )}
 
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
@@ -545,13 +546,6 @@ export function QuizPlayer({
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
-
-      {pendingAchievement && (
-        <AchievementToast
-          achievementId={pendingAchievement}
-          onClose={() => setPendingAchievement(null)}
-        />
-      )}
     </div>
   );
 }

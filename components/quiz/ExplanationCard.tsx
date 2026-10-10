@@ -108,6 +108,14 @@ export function ExplanationCard({
         </div>
       </div>
 
+      <div className="sticky top-24 z-20 -mx-4 mb-4 flex items-center justify-between gap-3 border-y border-border bg-background px-4 py-2 shadow-sm sm:static sm:mx-0 sm:rounded-xl sm:border sm:shadow-none">
+        <span className="text-sm font-semibold">{isCorrect ? "正解です" : `正解は ${answerLabel}`}</span>
+        <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold">
+          {nextLabel}
+          <ArrowRight className="h-4 w-4" />
+        </Button>
+      </div>
+
       {question.explanationCoverage === "official-summary" && (
         <p className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
           公式正答と一般解説を掲載しています。選択肢ごとの解説は掲載していません。
@@ -187,15 +195,6 @@ export function ExplanationCard({
         >
           <Sparkles className="h-4 w-4" />
           この問題をAIに質問
-        </Button>
-        <Button
-          variant="primary"
-          size="lg"
-          onClick={onNext}
-          className="font-semibold shadow-md sm:flex-1"
-        >
-          {nextLabel}
-          <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
 
