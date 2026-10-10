@@ -1,0 +1,43 @@
+{
+  "status": "CANDIDATE_ONLY_NOT_PUBLISHED",
+  "baseDraftEvidence": "docs/evidence/sharoushi-next30-20261010/QA.json",
+  "legalReferenceDates": {"2026": "2026-04-10", "2025": "2025-04-11"},
+  "sourceVerifiedCandidates": [
+    {
+      "year": 2026,
+      "questionNumber": 9,
+      "officialAnswer": "D",
+      "dispositions": [
+        {"priorIssue": "旧安衛則35条の例外廃止経緯", "status": "not_required_for_explanation", "reason": "解説は廃止経緯を述べず、2026-04-10時点の安衛則35条本文に業種免除がないことを根拠とする。"},
+        {"priorIssue": "雇入時健康診断の常時使用要件", "status": "verified", "sourceKey": "26q9-safety-rules-43"}
+      ],
+      "otherChoiceEvidenceKeys": ["26q9-safety-59", "26q9-safety-rules-35", "26q9-dispatch-45"]
+    },
+    {
+      "year": 2026,
+      "questionNumber": 10,
+      "officialAnswer": "B",
+      "dispositions": [
+        {"priorIssue": "安衛法施行令22条3項の有害物", "status": "verified", "sourceKey": "26q10-safety-decree-22"},
+        {"priorIssue": "採用選考時の健康診断の目的", "status": "verified", "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai/hourei_seido/kosei/kensin.html"},
+        {"priorIssue": "安衛則50条の3の基準日時点効力", "status": "verified", "sourceKey": "26q10-safety-rules-50-3", "revisionId": "347M50002000032_20260401_508M60000100003"},
+        {"priorIssue": "健診費用と受診時間賃金の混同", "status": "summary_and_choice_B_revised", "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/1.html"}
+      ],
+      "otherChoiceEvidenceKeys": ["26q10-safety-rules-13", "26q10-safety-rules-45", "26q10-safety-rules-48", "26q10-safety-rules-50-2"]
+    },
+    {
+      "year": 2025,
+      "questionNumber": 8,
+      "officialAnswer": "D",
+      "dispositions": [
+        {"priorIssue": "柱書BからCへの公式訂正", "status": "verified", "source": "2025-correction.pdf; SHA256 3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead"},
+        {"priorIssue": "特定元方事業者の業種限定", "status": "verified", "sourceKey": "25q8-safety-15"},
+        {"priorIssue": "安衛法3条3項の旧文言", "status": "verified", "sourceKey": "25q8-safety-3"}
+      ],
+      "otherChoiceEvidenceKeys": ["25q8-safety-29", "25q8-safety-rules-2", "25q8-safety-rules-11", "25q8-safety-rules-15", "25q8-safety-rules-12-3"],
+      "administrativeInterpretationUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2043&dataType=1&pageNo=1"
+    }
+  ],
+  "heldRoukiQuestions": ["2026-Q2", "2026-Q5", "2026-Q7", "2025-Q1", "2025-Q7", "2025-Q9", "2025-Q10"],
+  "heldAnswerDisagreementsOutsideRouki": ["2026-rousai-Q6", "2026-rousai-Q7", "2025-rousai-Q7"]
+}
