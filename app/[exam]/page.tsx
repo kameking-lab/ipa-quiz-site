@@ -313,12 +313,12 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
-          {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の1級学科試験を収録。2026年5月は基礎全50問と応用全15原問62回答欄、2026年9月は基礎49/50問と応用全15原問57回答欄を掲載しています。9月の基礎問10は解説の根拠を確認中です。</p>}
+          {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の1級学科試験を収録。2026年5月は基礎全50問と応用全15原問62回答欄、2026年9月は基礎全50問と応用全15原問57回答欄を掲載しています。</p>}
           {code === "fp1" && <p className="mt-3 text-sm">
             <Link href="/fp1/applied/202605" className="inline-flex min-h-[44px] items-center text-primary underline">2026年5月 学科応用編の問題一覧を見る（問51〜65・15原問・62回答欄）</Link>
           </p>}
           {code === "fp1" && <p className="mt-2 text-sm">
-            <Link href="/fp1/2026-september" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科基礎編を解く（49/50問）</Link>
+            <Link href="/fp1/2026-september" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科基礎編を解く（50問）</Link>
           </p>}
           {code === "fp1" && <p className="mt-2 text-sm"><Link href="/fp1/applied/202609" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科応用編を解く（問51–65・15原問57回答欄）</Link></p>}
           {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和7年度下期の学科試験50問と、令和8年度上期CBT方式で試験センターが公表した出題例50問を収録しています。いずれも一般問題40問・配線図問題10問です。</p>}

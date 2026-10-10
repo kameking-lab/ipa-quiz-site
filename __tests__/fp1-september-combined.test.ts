@@ -10,11 +10,11 @@ import { getFp1AppliedEdition } from "@/lib/fp1/applied";
 import { parseFp1SeptemberAppliedParts } from "@/lib/fp1/september-applied-parts";
 
 describe("FP1 September combined publication boundary", () => {
-  it("keeps May unchanged and publishes every September basic original except held Q10", () => {
+  it("keeps May unchanged and publishes every September basic original including Q10", () => {
     expect(FP1_QUESTIONS.filter(q => q.season === "may")).toEqual([...mayLaunch, ...mayAddition].sort((a,b) => a.qNumber-b.qNumber));
     const september = FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "september");
-    expect(september.map(q => q.qNumber)).toEqual(Array.from({length:50},(_,i)=>i+1).filter(n => n!==10));
-    expect(new Set(FP1_QUESTIONS.map(q => q.id)).size).toBe(99);
+    expect(september.map(q => q.qNumber)).toEqual(Array.from({length:50},(_,i)=>i+1));
+    expect(new Set(FP1_QUESTIONS.map(q => q.id)).size).toBe(100);
     expect(september.every(q => q.session === "gakka" && q.lawReferenceDate === "2026-04-01")).toBe(true);
     expect(september.every(q => Object.keys(q.choices ?? {}).length === 4 && Object.keys(q.choiceExplanations ?? {}).length === 4)).toBe(true);
   });
