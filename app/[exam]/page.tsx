@@ -1,3 +1,4 @@
+import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -337,7 +338,8 @@ export default async function ExamTopPage({
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
           {code === "mankan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益財団法人マンション管理センターが公表した令和6年度・令和7年度のマンション管理士試験（各50問・四肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和6年度は2024年4月1日、令和7年度は2025年4月1日）時点です。令和6年度問40は公式正解の法的根拠に一次資料で到達できず保留しています。出典：公益財団法人マンション管理センター。解説は過去問AIの独自作成で、同センターとは関係ありません。</p>}
           {code === "kashikin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">一般社団法人日本貸金業協会が公表した第20回（令和7年度）・第19回（令和6年度）の貸金業務取扱主任者資格試験問題（各回50問・四肢択一）から{questions.length}問を収録。法令・制度は各回の試験実施日時点です。出典：一般社団法人日本貸金業協会。解説は過去問AIの独自作成で、日本貸金業協会とは関係ありません。</p>}
-          {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回 労基安衛 択一の一部16問収録。第58回（令和8年度）は問1・3・4・5・6・8・9・10、第57回（令和7年度）は問2・3・4・5・6・8・9・10を収録しています（両回とも「労働基準法及び労働安全衛生法」択一式10問のうち8問ずつ）。第58回の問2・7、第57回の問1・7、他の科目、選択式は収録していません。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。問題文は数字を算用数字に統一したほかは原文どおりで、解説は過去問AIの独自作成です。</p>}
+          {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回 労基安衛 択一の一部16問収録。第58回（令和8年度）は問1・3・4・5・6・8・9・10、第57回（令和7年度）は問2・3・4・5・6・8・9・10を収録しています（両回とも「労働基準法及び労働安全衛生法」択一式10問のうち8問ずつ）。第58回の問2・7、第57回の問1・7、他の科目は収録していません。選択式は専用の一覧に掲載しています。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。問題文は数字を算用数字に統一したほかは原文どおりで、解説は過去問AIの独自作成です。</p>}
+          {code === "sharoushi" && <p className="mt-3 text-sm"><Link href="/sharoushi/sentaku" className="inline-flex min-h-[44px] items-center text-primary underline">選択式の問題一覧（{PUBLISHED_SENTAKU.length}原問・{PUBLISHED_SENTAKU.length * 5}空欄）</Link></p>}
           {code === "kangoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">午前178問と午後103問、計{questions.length}原問を収録しています。第115・114回 午前 問1〜90のうち178問収録。第115回午後91問（問1〜120の確認済み問題）と第114回午後12問（問1〜25の確認済み問題）を合わせ計281原問。第115回は午前88問・午後91問、第114回は午前90問・午後12問です。択一・複数選択1159肢と数値記入1問の正答・解説を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。午前 問79と未確認問題・未整備の図は保留しています。午前 問91以降と第114回午後 問26以降は未収録です。出典：厚生労働省。問題文は改行・字間・番号書式のみ調整し、図は公式問題PDF・別冊から引用。解説は過去問AIの独自作成で、厚生労働省とは関係ありません。</p>}
         </header>
 

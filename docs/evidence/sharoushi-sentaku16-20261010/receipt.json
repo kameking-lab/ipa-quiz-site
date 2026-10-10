@@ -1,0 +1,46 @@
+{
+  "scope": "57/58選択式16原問80空欄",
+  "originalQuestions": 16,
+  "blanks": 80,
+  "requestedModel": "claude-sonnet-5-5",
+  "actualServedModels": [
+    "claude-sonnet-5-5"
+  ],
+  "sourcePacketSha256": "f52bd491bf4a9e86ae227e94ae9da2686afed1d0e3131b3cd2ee415392654c87",
+  "requestSha256": "5cb1751d5e8c1b5666455862965de893ed1f30def97d57f036fc606675639fd4",
+  "status": "draft-saved-awaiting-qa",
+  "startedAtUtc": "2026-10-10T04:13:26.914964+00:00",
+  "tools": [],
+  "maxTurns": 1,
+  "newAuthenticationSetup": false,
+  "publicationAdded": 0,
+  "processId": 25360,
+  "returnCode": 0,
+  "finishedAtUtc": "2026-10-10T04:16:23.946162+00:00",
+  "responseBytes": 41303,
+  "responseSha256": "c4c98bc98203f4f1e8c1f0f8e9bfcdd6cd9716399b2385394b1cfaaa90b2ea26",
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 24156,
+      "cacheReadInputTokens": 142387,
+      "cacheCreationInputTokens": 62699,
+      "webSearchRequests": 0,
+      "costUSD": 0.5065987000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 9736,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "providerFromModelUsage": {
+    "claude-sonnet-5-5": "firstParty"
+  },
+  "numTurns": 1,
+  "isError": false,
+  "totalCostUSD": 0.5065987000000001,
+  "draftSha256": "997688ac4dfd868fcf1ea8ab0b69bd9d6697461d84cb01babf5126f3bd5024e8",
+  "draftQuestionCount": 16
+}
