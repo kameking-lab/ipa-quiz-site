@@ -73,7 +73,7 @@ export type Fp1AppliedEdition = z.infer<typeof fp1AppliedEditionSchema>;
 export type Fp1AppliedQuestion = Fp1AppliedEdition["questions"][number];
 
 const MAY_EDITION = fp1AppliedEditionSchema.parse(raw);
-export const FP1_APPLIED_EDITIONS = [MAY_EDITION.edition] as const;
+export const FP1_APPLIED_EDITIONS = [MAY_EDITION.edition, "202609"] as const;
 
 export function getFp1AppliedEdition(edition: string): Fp1AppliedEdition | null {
   return edition === MAY_EDITION.edition ? MAY_EDITION : null;

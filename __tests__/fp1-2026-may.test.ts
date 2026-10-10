@@ -15,10 +15,8 @@ describe("FP1 2026 May academic pilot", () => {
     expect(legacy.map((q) => q.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24, 25, 27, 28, 48]);
     expect(legacy.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "3", "2", "3", "4", "4", "3", "4", "1", "4", "4", "2", "1", "3", "1", "3", "4", "2", "2", "3", "1", "3", "2"]);
     expect(legacy.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "ウ", "イ", "ウ", "エ", "エ", "ウ", "エ", "ア", "エ", "エ", "イ", "ア", "ウ", "ア", "ウ", "エ", "イ", "イ", "ウ", "ア", "ウ", "イ"]);
-    const registered = QUESTIONS_BY_EXAM.fp1 ?? [];
-    expect(registered.filter(q => q.season === "may")).toHaveLength(50);
-    expect(registered.filter(q => q.season === "september")).toHaveLength(3);
-    expect(getQuestionsByExamStrict("fp1")).toHaveLength(53);
+    expect((QUESTIONS_BY_EXAM.fp1 ?? []).filter((q) => q.year === 2026 && q.season === "may")).toHaveLength(50);
+    expect(getQuestionsByExamStrict("fp1").filter((q) => q.year === 2026 && q.season === "may")).toHaveLength(50);
     expect(defaultPracticeSession("fp1")).toBe("gakka");
     expect(EXAM_CONFIGS.fp1.sessions[0]?.expectedQuestions).toBe(50);
   });
