@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-figure-go-20261010/INTEGRATION.json";
 
@@ -16,8 +16,8 @@ describe("nursing PM original figures added after 416 originals", () => {
   it("retains all 416 previous question objects and adds exactly the two documented originals", () => {
     expect(proof.previous416ObjectHashes).toHaveLength(416);
     for (const old of proof.previous416ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
     expect(proof.figures.map(figure => figure.id).sort()).toEqual([
       "kangoshi-2024-annual-pm-q19", "kangoshi-2025-annual-pm-q58",
     ]);

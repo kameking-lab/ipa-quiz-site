@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
 import candidates from "@/docs/evidence/nurse-pm-four-later-20261010/SOURCE-CANDIDATES.json";
@@ -14,9 +15,9 @@ describe("four additional primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("09c9cbded397176332eba2f3dbc175d6d29b9008");
     expect(proof.previous433ObjectHashes).toHaveLength(433);
     for (const old of proof.previous433ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(go9.totalChoices);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(am7.totalChoices);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id).sort()).toEqual(proof.sourceChecks.map(check => check.id).sort());
   });
@@ -48,10 +49,10 @@ describe("four additional primary-verified nursing PM originals", () => {
 
   it("shows the new partial collection and the official exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後224問");
-    expect(home).toContain("計451原問");
-    expect(home).toContain("全1863肢");
-    expect(home).toContain("第115回は午前114問・午後113問、第114回は午前113問・午後111問");
+    expect(home).toContain("午前234問と午後224問");
+    expect(home).toContain("計458原問");
+    expect(home).toContain("全1893肢");
+    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前118問・午後111問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });

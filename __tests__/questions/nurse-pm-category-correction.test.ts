@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 import delta from "@/docs/evidence/nurse-pm-category-correction-20261010/DELTA.json";
 import before427 from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 import { historicalNurseHash, nurseObjectHash } from "./nurse-pm-category-hash";
@@ -13,7 +13,7 @@ describe("114th nursing afternoon official section metadata correction", () => {
     expect(delta.affectedCount).toBe(32);
     expect(delta.changes).toHaveLength(32);
     expect(new Set(delta.changes.map(change => change.id)).size).toBe(32);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
     for (const change of delta.changes) {
       const question = byId.get(change.id)!;
       expect(question.year, change.id).toBe(2024);

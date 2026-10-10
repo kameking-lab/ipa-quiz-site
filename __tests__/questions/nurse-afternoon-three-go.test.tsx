@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 
@@ -13,9 +14,9 @@ describe("nursing PM three primary-evidence originals", () => {
     expect(proof.baseCommit).toBe("7a6aa981");
     expect(proof.previous427ObjectHashes).toHaveLength(427);
     for (const old of proof.previous427ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
-    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(go9.totalChoices);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(am7.totalChoices);
     expect(KANGOSHI_QUESTIONS.filter(q => q.numericAnswer)).toHaveLength(2);
     for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
   });
@@ -45,9 +46,9 @@ describe("nursing PM three primary-evidence originals", () => {
 
   it("presents the updated partial-collection numbers on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後224問");
-    expect(home).toContain("計451原問");
-    expect(home).toContain("全1863肢");
+    expect(home).toContain("午前234問と午後224問");
+    expect(home).toContain("計458原問");
+    expect(home).toContain("全1893肢");
     expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
   });
 });

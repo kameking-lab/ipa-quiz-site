@@ -12,21 +12,22 @@ import threeLater from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATIO
 import fourLater from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
 import fiveNext from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 const canonical = (v: unknown): unknown => Array.isArray(v)?v.map(canonical):v&&typeof v === "object"?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([k,x])=>[k,canonical(x)])):v;
 const hash=(v:unknown)=>createHash("sha256").update(JSON.stringify(canonical(v))).digest("hex");
 const laterGos = [threeLater, fourLater, fiveNext, go9];
 const laterIds = laterGos.flatMap(batch => batch.sourceChecks.map(check => check.id));
 const expectedNurseTotal = laterGos.reduce((count, batch) => { expect(batch.previousOriginals).toBe(count); return batch.totalOriginals; }, 430);
-const expectedChoiceTotal = go9.totalChoices;
+const expectedChoiceTotal = am7.totalChoices;
 describe("frozen next nurse and labor consultant bundle",()=>{
   it("retains every root281 nurse and16 labor consultant original with identical contents",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
     for(const item of proof.previousNurse281ObjectHashes)expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
     for(const item of proof.previousSharoushi16ObjectHashes)expect(hash(SHAROUSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(expectedNurseTotal);expect(SHAROUSHI_QUESTIONS).toHaveLength(40);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(expectedNurseTotal + am7.addedOriginals);expect(SHAROUSHI_QUESTIONS).toHaveLength(40);
     expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(expectedChoiceTotal);
     expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(200);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(expectedNurseTotal);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(40);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(expectedNurseTotal + am7.addedOriginals);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(40);
     for(const id of proof.excludedLaterGoIds)expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(afternoonGo.addedIds.includes(id));
     expect(new Set(laterIds).size).toBe(laterIds.length);
     expect(laterIds).toHaveLength(laterGos.reduce((n, batch) => n + batch.addedOriginals, 0));

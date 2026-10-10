@@ -1,0 +1,31 @@
+{
+  "scope": "Source-only AM115 Q109, no site registration/publication",
+  "id": "kangoshi-2025-annual-am-q109",
+  "sourcePacketSha256": "40fac0f7b6143b2e9c64e719e5049e37800f568b6c8135ca54c2075022316c36",
+  "existingDraftSha256": "28ccb86d5191d67d06e5815fe63a8f101521b390dc544bf5279cbad8f587bdfb",
+  "officialQuestionPdfSha256": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1",
+  "officialAnswerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+  "officialKeyRow": "A109 3",
+  "sourcePhysicalPage": 48,
+  "sourcePageImageSha256": "b8349cf103f2c3cb43e8eae97ae84eeaf6e6be1a7a91cfce553ee47a130eb63f",
+  "originalQuestionAndChoices": "109 このときのA さんの状態で正常から逸脱しているのはどれか。\n 1．血　圧\n 2．排便回数\n 3．体重の増加量\n 4．胎動の無自覚",
+  "ncchdCurvePdfSha256": "361a69c6aa02daefc40d0b61a239f9ef4cbb0a3ab8406987ee0e2a66508761b4",
+  "ncchdOriginalPageImageSha256": "1ca55b3caff0fdc9eba799b83dc092c36e8a5bb1caacbf03761893a6c342f17f",
+  "bmiExact": 23.437499999999996,
+  "modelPacketSha256": "a9e0802d94261e035c5b16e3357e42366b509f2c73643ccfd015562185892cb2",
+  "rawModelResultSha256": "ec3a816987958d037113c839fc4d1a0c8f878b298874b3378f00458fb7531f90",
+  "actualModel": "claude-sonnet-5-5",
+  "provider": "firstParty",
+  "modelIssues": [
+    "既存草稿の「4週で4kgは急」は、パケットに4週あたりの増加量の基準がなく、根拠のない閾値を示唆する。修正案では、BMI区分別の曲線に対する妊娠17週時点の累積+6kgを根拠に置き換えた。",
+    "既存草稿は妊娠前BMI（23.4375、普通）の算出と、曲線の「目安」「個人差を考慮し厳格指導しない」という注記を欠いていた。修正案で補った。",
+    "既存草稿の reviewFlags にある「基準値の確認は未了」は、BMI区分別の目安と胎動初覚時期が根拠パケットで一部補われたため、更新が必要。",
+    "17週付近の+6kgが帯より上にあるという点は、ユーザー提供のローカル画像確認の報告に依拠する。私自身は厚労省・NCCHDのPDF画像を閲覧しておらず、独立に検証したとは主張しない。",
+    "曲線の帯の上限値は厳密に読み取っていないため、解説に具体的な上限kg値は書かない。",
+    "食生活指針2021の「BMI普通は全期間で10〜13kg、個別に緩やかに」はパケットの記述に基づく。解説本文には17週時点の基準として使わず、全期間の目安との混同を避けた。",
+    "胎動の根拠はNHS（英国）の一般的な目安であり、日本の公式資料ではない。選択肢4は「珍しくない」程度の穏当な表現にとどめた。",
+    "血圧の選択肢に妊娠高血圧症候群の診断閾値は、パケットにないため追加していない。"
+  ],
+  "remainingModelHoldReasons": [],
+  "modelTextUsedWithoutCodexRewriting": true
+}
