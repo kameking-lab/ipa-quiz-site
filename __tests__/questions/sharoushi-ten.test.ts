@@ -2,7 +2,6 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { ALL_QUESTIONS } from "@/data/questions";
 import { SHAROUSHI_QUESTIONS } from "@/data/questions/sharoushi";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel } from "@/lib/questions/display";
@@ -37,13 +36,14 @@ const commas = (s: string) => s.replace(/(?<=\d)，(?=\d{3})/g, ",");
 const nfkc = (s: string) => s.normalize("NFKC").replace(/\s/g, "");
 
 describe("社会保険労務士試験 第58・57回 労働基準法及び労働安全衛生法 択一の先行10問", () => {
+  const gakka = SHAROUSHI_QUESTIONS.filter((q) => q.session === "gakka");
   const expected = manifest.sittings.flatMap((s) => s.questions.map((q) => ({ sitting: s, q })));
 
   it("先行マニフェストの10問50肢を保持し、全体では16問80肢", () => {
     expect(expected).toHaveLength(10);
-    expect(SHAROUSHI_QUESTIONS.map((q) => `${q.year}-${q.qNumber}`)).toEqual(expect.arrayContaining(expected.map(({ sitting, q }) => `${sitting.year}-${q.questionNumber}`)));
-    expect(ALL_QUESTIONS.filter((q) => q.exam === "sharoushi")).toHaveLength(16);
-    expect(SHAROUSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(80);
+    expect(gakka.map((q) => `${q.year}-${q.qNumber}`)).toEqual(expect.arrayContaining(expected.map(({ sitting, q }) => `${sitting.year}-${q.questionNumber}`)));
+    expect(gakka).toHaveLength(16);
+    expect(gakka.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(80);
     expect(getQualificationByExamCode("sharoushi")?.status).toBe("live");
   });
 
@@ -61,7 +61,7 @@ describe("社会保険労務士試験 第58・57回 労働基準法及び労働�
 
   for (const { sitting, q: source } of expected) {
     it(`第${sitting.sittingNumber}回 問${source.questionNumber}: 原文・公式正答・全肢解説・出典・法令基準日`, () => {
-      const q = SHAROUSHI_QUESTIONS.find((x) => x.year === sitting.year && x.qNumber === source.questionNumber)!;
+      const q = gakka.find((x) => x.year === sitting.year && x.qNumber === source.questionNumber)!;
       const t = transcriptB.questions.find((x) => x.year === sitting.year && x.questionNumber === source.questionNumber)!;
       expect(q.question).toBe(commas(t.stem));
       KEYS.forEach((key, i) => expect(q.choices?.[key]).toBe(commas(t.choices[LETTERS[i]])));
