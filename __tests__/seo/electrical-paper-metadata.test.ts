@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { generateMetadata } from "@/app/[exam]/page";
+import { DENKEN1_NATIVE_QUESTIONS, DENKEN1_PUBLISHED_ORIGINAL_COUNT } from "@/lib/denken1/native";
 import {
   EXAM_DESCRIPTIONS,
   examMetaDescription,
@@ -7,21 +8,32 @@ import {
 } from "@/lib/seo/exam-meta";
 
 describe("electrical exam metadata matches the published papers", () => {
-  it("counts original Denken1 questions separately from their five blanks", () => {
-    const pool = getQuestionsByExamStrict("denken1");
-    expect(new Set(pool.map((q) => `${q.year}/${q.season}`))).toEqual(new Set(["2026/primary"]));
-    const originals = (session: string) => new Set(
-      pool.filter((q) => q.session === session).map((q) => q.qNumber),
-    ).size;
-    expect([originals("riron"), originals("denryoku"), originals("kikai"), originals("houki")]).toEqual([2, 1, 1, 1]);
-    expect(pool).toHaveLength(25);
+  it("counts distinct Denken1 originals across native papers and legacy quiz blanks", () => {
+    const legacy = getQuestionsByExamStrict("denken1");
+    expect(new Set(legacy.map((q) => `${q.year}/${q.season}`))).toEqual(new Set(["2026/primary"]));
+    expect(legacy).toHaveLength(25);
+    const subjectBySession: Record<string, string> = {
+      riron: "theory", denryoku: "power", kikai: "machine", houki: "law",
+    };
+    const legacyOriginals = new Set(legacy.map((q) => `${q.year}/${subjectBySession[q.session]}/${q.qNumber}`));
+    const nativeOriginals = new Set(DENKEN1_NATIVE_QUESTIONS.map((q) => `${q.year}/${q.subject}/${q.number}`));
+    const nativeSlots = DENKEN1_NATIVE_QUESTIONS.reduce((count, q) => count + q.slots.length, 0);
+    const overlap = [...legacyOriginals].filter((id) => nativeOriginals.has(id));
+    const union = new Set([...legacyOriginals, ...nativeOriginals]);
+    expect(legacyOriginals.size).toBe(5);
+    expect(nativeOriginals.size).toBe(36);
+    expect(nativeSlots).toBe(204);
+    expect(overlap).toHaveLength(2);
+    expect(union.size).toBe(DENKEN1_PUBLISHED_ORIGINAL_COUNT);
+    expect(union.size).toBe(39);
+    expect(new Set(DENKEN1_NATIVE_QUESTIONS.map((q) => q.year))).toEqual(new Set([2025, 2026]));
 
-    const description = examMetaDescription("denken1", pool.length);
-    expect(description).toContain(`理論${originals("riron")}原問`);
-    expect(description).toContain(`電力・機械・法規の各${originals("denryoku")}原問`);
-    expect(description).toContain(`計${pool.length}空欄`);
-    expect(description).toContain("他の原問、過年度、二次試験は未収録");
-    expect(EXAM_DESCRIPTIONS.denken1).toContain(`理論${originals("riron")}原問`);
+    const description = examMetaDescription("denken1", legacy.length);
+    expect(description).toContain(`従来${legacyOriginals.size}原問・${legacy.length}空欄`);
+    expect(description).toContain(`${nativeOriginals.size}原問・${nativeSlots}回答欄`);
+    expect(description).toContain(`${union.size}件`);
+    expect(EXAM_DESCRIPTIONS.denken1).toContain(`${nativeOriginals.size}原問・${nativeSlots}回答欄`);
+    expect(EXAM_DESCRIPTIONS.denken1).toContain(`${union.size}件`);
   });
 
   it("identifies both Denko1 papers across search and social metadata", async () => {
