@@ -12,9 +12,9 @@ describe("nursing PM three primary-evidence originals", () => {
     expect(proof.baseCommit).toBe("7a6aa981");
     expect(proof.previous427ObjectHashes).toHaveLength(427);
     for (const old of proof.previous427ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(437);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(437);
-    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(1807);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(442);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(442);
+    expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(1827);
     expect(KANGOSHI_QUESTIONS.filter(q => q.numericAnswer)).toHaveLength(2);
     for (const id of proof.keptUnregistered) expect(byId.has(id), id).toBe(false);
   });
@@ -44,9 +44,9 @@ describe("nursing PM three primary-evidence originals", () => {
 
   it("presents the updated partial-collection numbers on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後210問");
-    expect(home).toContain("計437原問");
-    expect(home).toContain("全1807肢");
+    expect(home).toContain("午前227問と午後215問");
+    expect(home).toContain("計442原問");
+    expect(home).toContain("全1827肢");
     expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
   });
 });
