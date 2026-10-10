@@ -65,8 +65,8 @@ const clozeQuestion = z.object({
 }).strict();
 const calcQuestion = z.object({
   ...commonShape, type: z.literal("originalworkedcalculation"),
-  readerKind: z.enum(["calculation-with-working", "single-calculation-with-working"]),
-  workingRequired: z.literal(true),
+  readerKind: z.enum(["calculation-with-working", "single-calculation-with-working", "calculation-answer-only", "single-calculation-answer-only"]),
+  workingRequired: z.boolean(),
   dependsOn: z.object({ question: posInt, label: circled }).strict().optional(),
   answers: z.array(calcField).min(1),
 }).strict();
@@ -118,6 +118,7 @@ function checkQuestion(q: Question, ext: Extension, path: (string | number)[], b
     if (MASKED_TOKENS.some((token) => f.officialAnswer.includes(token))) bad([...path, fieldKey, i, "officialAnswer"], "伏字を回答欄にできません");
     if (f.kind === "numeric" && !NUMERIC_ANSWER.test(f.officialAnswer)) bad([...path, fieldKey, i, "officialAnswer"], "numeric 欄は数値のみ（単位は unit）です");
   });
+  if (q.type === "originalworkedcalculation" && q.workingRequired === q.readerKind.endsWith("answer-only")) bad([...path, "workingRequired"], "原問の計算過程記載要否とreader形式が一致しません");
   checkTables(q.blocks, [...path, "blocks"], bad);
   if (q.law.referenceDate !== ext.lawReferenceDate && !q.law.temporalOverride) bad([...path, "law", "referenceDate"], "版の法令基準日と異なる場合は原問の基準日注記が必要です");
   if (q.type === "originalmixedcloze") {

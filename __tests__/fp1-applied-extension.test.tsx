@@ -140,7 +140,7 @@ describe("FP1 detached original-format extension", () => {
     const ext = parseFp1AppliedExtension(fixture());
     render(<AppliedExtensionSharedCase sharedCase={ext.sharedCases[0]!} pdfUrl={testUrl} />);
     expect(screen.getByLabelText("共通設例")).toHaveTextContent("原問範囲: 問101～103 / 収録: 問101");
-    expect(generateStaticParams()).toEqual(Array.from({ length: 10 }, (_, i) => ({ edition: "202605", number: String(51 + i) })));
+    expect(generateStaticParams()).toEqual(Array.from({ length: 15 }, (_, i) => ({ edition: "202605", number: String(51 + i) })));
     const missing = fixture(); missing.sharedCases[0]!.includedQuestionNumbers.push(102);
     expect(() => parseFp1AppliedExtension(missing)).toThrow();
     const law = fixture(); law.questions[0]!.law.referenceDate = "2001-01-01";
