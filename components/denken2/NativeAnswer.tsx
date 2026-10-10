@@ -25,8 +25,9 @@ function SelectChoice({ label, bank, value, onChange }: {
 export function NativeAnswer({ question }: { question: ElectricalNativeQuestion }) {
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [revealed, setRevealed] = useState(false);
+  const isMultipleChoice = question.id.startsWith("denken3-");
   const groups = question.choiceGroups;
-  const paired = question.year === 2026 && question.subject === "machine" && question.number === 7;
+  const paired = question.id.startsWith("denken2-") && question.year === 2026 && question.subject === "machine" && question.number === 7;
   const groupEntries = Object.entries(groups);
   const flat = isFlat(groups);
   const choose = (key: string, value: string) => {
@@ -45,9 +46,10 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
       {question.slots.map(field => {
         const [definitionBank, unitBank] = banksFor(field.slot);
         return <div key={field.slot} className="rounded-xl border border-border p-4">
-          <h3 className="mb-3 font-semibold">空欄 ({field.slot})</h3>
+          <h3 className="mb-3 font-semibold">{isMultipleChoice ? `設問 (${field.slot})` : `空欄 (${field.slot})`}</h3>
+          {field.prompt ? <p className="mb-4 whitespace-pre-wrap break-words text-sm leading-7">{field.prompt}</p> : null}
           <div className={paired ? "grid gap-3 sm:grid-cols-2" : ""}>
-            <SelectChoice label={paired ? `空欄${field.slot}・定義` : `空欄${field.slot}`}
+            <SelectChoice label={paired ? `空欄${field.slot}・定義` : isMultipleChoice ? `設問${field.slot}の選択肢` : `空欄${field.slot}`}
               bank={definitionBank} value={selected[`${field.slot}-a`] ?? ""}
               onChange={value => choose(`${field.slot}-a`, value)} />
             {unitBank ? <SelectChoice label={`空欄${field.slot}・単位`}

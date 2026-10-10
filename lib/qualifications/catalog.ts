@@ -92,9 +92,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.shiken.or.jp/chief/third/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
     status: "live",
-    reuseSummary: "公式に公表された過去問題と正答を、年度・科目ごとに収録。",
+    reuseSummary: "従来320回答単位・264原問を保持し、2026年度上期の理論・電力・法規から31原問を追加。固有295原問を収録。2025年度下期法規の確認済み5原問は旧演習との重複を除いて数えています。",
     attributionTemplate: "出典：令和○年度○期第三種電気主任技術者試験 ○○科目",
-    remainingWork: ["一般解説のみの2問について全肢解説を独立確認", "数式・図のアクセシビリティを継続改善"],
+    remainingWork: ["2026年度上期の未掲載原問と法規の保留問を一次根拠で確認", "数式・図のアクセシビリティを継続改善"],
   },
   {
     slug: "denken1",
