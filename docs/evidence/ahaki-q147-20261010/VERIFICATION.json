@@ -1,0 +1,71 @@
+{
+  "status": "LOCAL_CHECKS_COMPLETED_INDEPENDENT_REVIEW_PENDING",
+  "base": "b98cc8d7b3bef7fc0dcb6204f6f56d111e10dfa8",
+  "publication": false,
+  "checks": {
+    "targetedTests": {
+      "status": "PASS",
+      "files": 3,
+      "tests": 9
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "status": "PASS"
+    },
+    "lintDefault": {
+      "command": "pnpm lint",
+      "status": "NATIVE_PROCESS_FAILURE",
+      "exitCode": 3221225477,
+      "eslintDiagnostics": false
+    },
+    "lintHeap": {
+      "command": "node --max-old-space-size=8192 node_modules/eslint/bin/eslint.js",
+      "status": "PASS",
+      "errors": 0,
+      "warnings": 1,
+      "warningPath": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs"
+    },
+    "fullUnit": {
+      "command": "pnpm test",
+      "status": "PASS",
+      "files": 509,
+      "tests": 4738
+    },
+    "buildDefault": {
+      "command": "pnpm build",
+      "status": "ENVIRONMENT_FAILURE",
+      "reason": "Turbopack rejects the shared dependency junction outside the dedicated worktree filesystem root; no source diagnostics."
+    },
+    "buildWebpack": {
+      "command": "pnpm build --webpack",
+      "status": "PASS",
+      "exitCode": 0,
+      "generatedPages": 10698
+    },
+    "generatedQ147": {
+      "status": "PASS",
+      "path": ".next/server/app/q/ahaki-anma/2026-annual/pm/q147.html",
+      "sha256": "ab8c05c57615da5e6feb49f8e6a7174bee83b7d4886c6f94a3384644996734e4",
+      "checks": {
+        "officialCase": true,
+        "sarcopenia": true,
+        "officialAllAcceptedKeys": true,
+        "primaryUrl": true,
+        "fourChoices": true
+      }
+    },
+    "diffWhitespace": {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  },
+  "logDirectory": "C:/Users/kanet/20260522/note-automation/reports/codex-takeover-20261010/ahaki-last3",
+  "logSha256": {
+    "TYPECHECK.log": "7516f2ae613df43e61b265012de22b138aa76bea49a4664ad67de8507f7ab8c6",
+    "LINT.log": "c4d4062a4ecfdb0f85738a2277f12bdf32c9651c2b8bcd6acb4c3b89ada0c28c",
+    "LINT-HEAP.log": "7f0e83f7b02e3653161bb0240df0e0c70b3eb611e9606250ce3782c399da9022",
+    "FULLUNIT.log": "d9e88a62bf99f6530ab9760f6dd5deb410ac8a0039e8ea18bc382f17afbbc102",
+    "BUILD.log": "3316a3f691ee3563c20481b1151a62addb35682c36bb76f343130b7957b4b015",
+    "BUILD-WEBPACK.log": "df6c6c399a57764766b95ed5c4bee95220745e04581a68df09660e48ab10a100"
+  }
+}

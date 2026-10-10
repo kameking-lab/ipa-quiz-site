@@ -571,9 +571,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_34_anma_am.pdf",
     officialReuseTermsUrl: "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_34_anma_am.pdf",
     status: "live",
-    reuseSummary: "第34・33回の公式問題320原問から318原問を部分収録。第34回159問・第33回159問です。原本と公式正答を照合した四肢択一の全肢解説を掲載し、残る2原問は原文の字形または説明を確認中です。解説は過去問AIの独自作成です。",
+    reuseSummary: "第34・33回の公式問題320原問から319原問を部分収録。第34回160問・第33回159問です。四肢の全肢解説を掲載し、第34回午後問147は公式が受理する1〜4のいずれか1つを選ぶと正答です。第33回午後問124は解説根拠を確認中です。解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回あん摩マッサージ指圧師国家試験 午前・午後 問○（問題・正答）",
-    remainingWork: ["第34・33回の未掲載2原問の説明を個別確認"],
+    remainingWork: ["第33回午後問124の説明根拠を個別確認"],
   },
   {
     slug: "ahaki-hari-kyu",

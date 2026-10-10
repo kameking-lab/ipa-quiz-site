@@ -28,7 +28,7 @@ describe("Ahaki original-image literal delta", () => {
       expect(row.reviewedPages.length, row.siteId).toBeGreaterThan(0);
       expect(row.officialAcceptedChoices, row.siteId).toHaveLength(1);
     }
-    expect(all).toHaveLength(677);
+    expect(all).toHaveLength(678);
   });
   it("renders each single-question case after its question exactly once", () => {
     const rows = proof.newRows.filter((row) => row.mode === "inline_case_once_in_official_order");
@@ -47,7 +47,7 @@ describe("Ahaki original-image literal delta", () => {
   it("retains verified Greek glyphs and excludes separately owned or material-held originals", () => {
     expect(byId.get("ahaki-anma-2025-annual-am-q29")!.choices).toEqual({ ア: "α 波", イ: "β 波", ウ: "θ 波", エ: "δ 波" });
     expect(byId.get("ahaki-hari-kyu-2026-annual-pm-q179")!.choices?.ウ).toBe("Aδ線維");
-    for (const id of ["ahaki-hari-kyu-2025-annual-pm-q156", "ahaki-anma-2025-annual-pm-q124", "ahaki-anma-2026-annual-pm-q147"]) {
+    for (const id of ["ahaki-hari-kyu-2025-annual-pm-q156", "ahaki-anma-2025-annual-pm-q124"]) {
       expect(byId.has(id), id).toBe(false);
     }
     expect(proof.newModelRequests).toBe(0);
