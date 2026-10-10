@@ -11,17 +11,18 @@ import {
   DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeQuestionPaths, getDenken3NativeQuestion,
 } from "@/lib/denken3/native";
 import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
+import powerFollowProof from "@/docs/evidence/denken3-lower-power-native9-20261010/INTEGRATION.json";
 import lineEndingProof from "@/docs/evidence/next75-line-ending-reconciliation-20261010.json";
 
 describe("Denken3 reviewed native originals", () => {
-  it("keeps legacy units and counts the fifty-one 2025 lower native overlaps once", () => {
+  it("keeps legacy units and counts the sixty 2025 lower native overlaps once", () => {
     expect(DENKEN3_QUESTIONS).toHaveLength(320);
     expect(DENKEN3_NATIVE_PARTS.map(p => `${p.sitting}:${p.subject}:${p.questions.length}:${p.questions.reduce((n, q) => n + q.slots.length, 0)}`))
-      .toEqual(["2026-upper:theory:18:22", "2026-upper:power:8:8", "2026-upper:law:5:5", "2025-lower:law:5:5", "2026-upper:power:9:12", "2026-upper:machine:8:8", "2026-upper:law:3:6", "2025-lower:law:3:5", "2025-lower:power:7:7", "2026-upper:machine:10:14", "2025-lower:theory:18:22", "2025-lower:machine:18:22"]);
-    expect(DENKEN3_NATIVE_QUESTIONS).toHaveLength(112);
-    expect(DENKEN3_NATIVE_QUESTIONS.reduce((n, q) => n + q.slots.length, 0)).toBe(136);
+      .toEqual(["2026-upper:theory:18:22", "2026-upper:power:8:8", "2026-upper:law:5:5", "2025-lower:law:5:5", "2026-upper:power:9:12", "2026-upper:machine:8:8", "2026-upper:law:3:6", "2025-lower:law:3:5", "2025-lower:power:7:7", "2026-upper:machine:10:14", "2025-lower:theory:18:22", "2025-lower:machine:18:22", "2025-lower:power:9:12"]);
+    expect(DENKEN3_NATIVE_QUESTIONS).toHaveLength(121);
+    expect(DENKEN3_NATIVE_QUESTIONS.reduce((n, q) => n + q.slots.length, 0)).toBe(148);
     expect(DENKEN3_NATIVE_SUBJECTS.map(p => `${p.sitting}:${p.subject}:${p.questions.length}`))
-      .toEqual(["2026-upper:theory:18", "2026-upper:power:17", "2026-upper:law:8", "2025-lower:law:8", "2026-upper:machine:18", "2025-lower:power:7", "2025-lower:theory:18", "2025-lower:machine:18"]);
+      .toEqual(["2026-upper:theory:18", "2026-upper:power:17", "2026-upper:law:8", "2025-lower:law:8", "2026-upper:machine:18", "2025-lower:power:16", "2025-lower:theory:18", "2025-lower:machine:18"]);
     expect(DENKEN3_NEW_ORIGINAL_COUNT).toBe(61);
     expect(DENKEN3_PUBLISHED_ORIGINAL_COUNT).toBe(325);
     expect(getDenken3NativeQuestion("2026-upper", "law", 4)).toBeUndefined();
@@ -45,7 +46,7 @@ describe("Denken3 reviewed native originals", () => {
 
   it("preserves every printed choice, both B-part stems, and the Q17/Q18 alternative rule", () => {
     for (const q of DENKEN3_NATIVE_QUESTIONS) {
-      expect(q.slots).toHaveLength((q.subject === "theory" || q.subject === "machine") && q.number >= 15 || q.subject === "power" && q.sitting === "2026-upper" && q.number >= 15 || q.subject === "law" && q.number >= 11 ? 2 : 1);
+      expect(q.slots).toHaveLength((q.subject === "theory" || q.subject === "machine") && q.number >= 15 || q.subject === "power" && q.number >= 15 || q.subject === "law" && q.number >= 11 ? 2 : 1);
       for (const slot of q.slots) {
         expect(Object.keys(slot.choiceExplanations)).toHaveLength(5);
         expect(slot.choiceExplanations[slot.officialAnswer]).toBeTruthy();
@@ -72,7 +73,7 @@ describe("Denken3 reviewed native originals", () => {
 
   it("matches and decodes all official page images, and indexes only GO routes", async () => {
     const pages = new Map(DENKEN3_NATIVE_QUESTIONS.flatMap(q => q.sourcePages.map(p => [p.url, p] as const)));
-    expect(pages.size).toBe(132);
+    expect(pages.size).toBe(141);
     for (const page of pages.values()) {
       const data = readFileSync(join(process.cwd(), "public", page.url.slice(1)));
       expect(createHash("sha256").update(data).digest("hex")).toBe(page.sha256);
@@ -81,11 +82,11 @@ describe("Denken3 reviewed native originals", () => {
       expect(image.width).toBeGreaterThan(300);
     }
     const routes = denken3NativeQuestionPaths();
-    expect(routes).toHaveLength(112);
+    expect(routes).toHaveLength(121);
     const xml = renderExamsSitemapXml();
     for (const path of routes) expect(xml).toContain(path);
     for (const number of [4, 6, 7]) expect(xml).not.toContain(`/denken3/2026-upper/law/q${number}`);
-    expect(xml).not.toContain("/denken3/2025-lower/power/q1");
+    expect(xml).not.toContain("/denken3/2025-lower/power/q1</loc>");
   });
   it("uses the corrected machine Q15 key and keeps each theory/machine alternative unanswered", () => {
     expect(getDenken3NativeQuestion("2026-upper", "machine", 15)?.slots.map(field => field.officialAnswer)).toEqual(["3", "3"]);
@@ -106,6 +107,37 @@ describe("Denken3 reviewed native originals", () => {
         expect(doc.body.textContent).toContain("選択問題の一方だけを本試験で解答します");
         expect(doc.body.textContent).not.toContain("公式正答：");
       }
+    }
+  });
+  it("reuses nine accepted lower power originals without changing old native or legacy data", () => {
+    for (const [path, digest] of Object.entries(powerFollowProof.old112NativeAnd320LegacyFilesGitBlobSha256)) {
+      const content = readFileSync(join(process.cwd(), path), "utf8").replace(/\r\n/g, "\n");
+      expect(createHash("sha256").update(content).digest("hex")).toBe(digest);
+    }
+    const added = DENKEN3_NATIVE_QUESTIONS.filter(q => q.sitting === "2025-lower" && q.subject === "power" && q.number >= 9);
+    expect(added.map(q => q.number)).toEqual([9, 10, 11, 12, 13, 14, 15, 16, 17]);
+    expect(added.reduce((sum, q) => sum + q.slots.length, 0)).toBe(12);
+    for (const q of added) {
+      const saved = JSON.parse(readFileSync(join(process.cwd(), `data/questions/denken3/reviewed/20260322-power-q${String(q.number).padStart(2, "0")}-${String(q.number).padStart(2, "0")}.json`), "utf8")) as Array<{ question: string; choices: Record<string, string>; officialAnswer: string; explanation: string; choiceExplanations: Record<string, string>; part?: string }>;
+      expect(q.questionText).toBe([...new Set(saved.map(item => item.question))].join("\n\n"));
+      expect(q.alternateQuestionRule).toBeNull();
+      for (const [index, original] of saved.entries()) {
+        const field = q.slots[index]!;
+        expect(field.officialAnswer).toBe(original.officialAnswer);
+        expect(field.explanation).toBe(original.explanation);
+        expect(field.choiceExplanations).toEqual(original.choiceExplanations);
+        expect(saved.length === 1 ? q.choiceGroups : q.choiceGroups[`(${original.part})`]).toEqual(original.choices);
+        expect(field.prompt).toBe(saved.length === 1 ? "" : original.question);
+      }
+      const doc = new DOMParser().parseFromString(renderToStaticMarkup(<NativeReader question={q} readerConfig={{
+        examName: "電験三種", examPath: "/denken3", editionSlug: "2025-lower", editionLabel: "2025年度下期",
+        sourceAnswerUrl: "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf", sourceIndexUrl: "https://www.shiken.or.jp/chief/third/qa/",
+      }} />), "text/html");
+      expect(doc.querySelectorAll("select")).toHaveLength(saved.length);
+      expect([...doc.querySelectorAll("select")].every(select => select.value === "")).toBe(true);
+      expect(doc.body.textContent).not.toContain("公式正答：");
+      expect(doc.body.textContent).not.toContain("選択問題の一方だけを本試験で解答します");
+      expect(doc.querySelector(`img[src="${q.sourcePages[0]!.url}"]`)).not.toBeNull();
     }
   });
 });
