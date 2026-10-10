@@ -8,6 +8,7 @@ import { isNumericAnswerCorrect, numericQuestionIssue } from "@/lib/questions/nu
 import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { ChoiceKey } from "@/lib/questions/types";
 import proof from "@/docs/evidence/nurse114-next57-20261010/INTEGRATION.json";
+import afternoonGo from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
 
 const canonical=(value:unknown):unknown=>Array.isArray(value)?value.map(canonical):value && typeof value === "object"?Object.fromEntries(Object.entries(value).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([key,v])=>[key,canonical(v)])):value;
 const hash=(value:unknown)=>createHash("sha256").update(JSON.stringify(canonical(value))).digest("hex");
@@ -23,7 +24,7 @@ describe("saved114th afternoon next57 registration",()=>{
     expect(added.filter(q=>q.type === "numeric")).toHaveLength(1);
     expect(added.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(238);
     expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(KANGOSHI_QUESTIONS.length);
-    for(const held of proof.heldIdsNotRegistered)expect(KANGOSHI_QUESTIONS.some(q=>q.id===held),held).toBe(false);
+    for(const held of proof.heldIdsNotRegistered)expect(KANGOSHI_QUESTIONS.some(q=>q.id===held),held).toBe(afternoonGo.addedIds.includes(held));
     expect(proof.heldIdsNotRegistered).toHaveLength(38);
     for(const n of [27,45,55,71,80])expect(KANGOSHI_QUESTIONS.some(q=>q.id===`kangoshi-2024-annual-pm-q${n}`)).toBe(false);
   });

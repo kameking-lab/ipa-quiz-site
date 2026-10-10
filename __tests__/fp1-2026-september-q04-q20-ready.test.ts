@@ -10,12 +10,12 @@ const answers = [3,2,1,4,3,3,2,2,1,1,1,4,3,1,4,2];
 const keys = ["ア","イ","ウ","エ"];
 
 describe("FP1 September verified basic part", () => {
-  it("registers the 16 ready questions without publishing held Q10 or changing May 50", () => {
+  it("keeps the 16 ready questions and separately registers Q10 without changing May 50", () => {
     expect(ready.map(q => q.qNumber)).toEqual(numbers);
     expect(ready.map(q => Number(q.officialAnswerNumber))).toEqual(answers);
     expect(FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "may")).toHaveLength(50);
     expect(FP1_QUESTIONS.filter(q => q.year === 2026 && q.season === "september" && numbers.includes(q.qNumber)).map(q => q.qNumber)).toEqual(numbers);
-    expect(FP1_QUESTIONS.some(q => q.year === 2026 && q.season === "september" && q.qNumber === 10)).toBe(false);
+    expect(FP1_QUESTIONS.some(q => q.year === 2026 && q.season === "september" && q.qNumber === 10)).toBe(true);
     expect(FP1_QUESTIONS.filter(q => q.season === "may").map(q => q.id).sort()).toEqual(
       [...mayLaunch,...mayAddition].map(q => q.id).sort()
     );

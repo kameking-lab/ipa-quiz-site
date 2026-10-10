@@ -1,0 +1,37 @@
+{
+  "status": "LOCAL_IMPLEMENTATION_VERIFIED",
+  "base": "9aebb3c230e04b8259a40d2ee79c0c482485b247",
+  "storedOriginals": 16,
+  "storedFields": 80,
+  "publicCandidateOriginals": 7,
+  "publicCandidateFields": 35,
+  "heldOriginals": 9,
+  "publishedAdded": 0,
+  "multipleChoiceDataChanged": 0,
+  "candidateSha256": "47297b8e5b815af91548eb71e9c912c36fed19c2a4ac984769e175acf8fdd991",
+  "sourcePacketSha256": "f52bd491bf4a9e86ae227e94ae9da2686afed1d0e3131b3cd2ee415392654c87",
+  "tests": {
+    "newContractAndReader": 9,
+    "relatedExistingAndSitemap": 66,
+    "typecheck": "PASS",
+    "targetedLint": "PASS",
+    "diffCheck": "PASS",
+    "mobile390": "PASS shared20 and perBlank4; closed initially; real click; 5 fields; no horizontal overflow"
+  },
+  "productionBuild": {
+    "status": "FAILED_EXISTING_ROUTES",
+    "compiled": true,
+    "typecheck": true,
+    "error": "Invariant: Expected workStore to be initialized. This is a bug in Next.js.",
+    "examples": [
+      "/q/sc/2025-autumn/am2/q25",
+      "/q/denko1/2025-second/gakka/q12",
+      "/ap/2025-autumn"
+    ],
+    "causeConfirmed": false,
+    "alternative": "Actual final reader rendered with webpack-generated production CSS and Playwright at 390px."
+  },
+  "modelCalls": 0,
+  "reviewerActualModel": "Codex; exact variant not observable",
+  "remaining": "9 originals gated pending targeted primary checks. Root publication/CI gate required."
+}

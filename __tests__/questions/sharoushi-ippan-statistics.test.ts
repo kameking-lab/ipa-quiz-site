@@ -14,7 +14,7 @@ describe("社労士一般常識の指定統計6問", () => {
   it("各年度の公式問1～3だけを科目別ルートに載せる", () => {
     const pool = SHAROUSHI_QUESTIONS.filter((q) => q.session === "ippan");
     expect(pool).toHaveLength(6);
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(27);
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(40);
     for (const q of pool) {
       expect(answers[q.year]?.[q.qNumber]).toBe(q.officialAnswerNumber);
       expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);

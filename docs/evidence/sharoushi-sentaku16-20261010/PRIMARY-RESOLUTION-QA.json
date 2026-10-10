@@ -1,0 +1,191 @@
+{
+  "status": "TARGETED_PRIMARY_GO",
+  "checkedAtUtc": "2026-10-10T04:26:53.875329+00:00",
+  "scope": "保存済み16原問のうち7原問の指定された保留論点と局所隣接修正のみ。全稿二重査読ではない。",
+  "sourcePacketSha256": "f52bd491bf4a9e86ae227e94ae9da2686afed1d0e3131b3cd2ee415392654c87",
+  "originalDraftSha256": "997688ac4dfd868fcf1ea8ab0b69bd9d6697461d84cb01babf5126f3bd5024e8",
+  "candidateSha256": "d8089b050e02e1d921be375d622ba840971bbd7a2d903bcd0b37741cce91df67",
+  "diffSha256": "4d6d71e6f4d2a62053a6d01d84763733d2aa8eff091b6074d6ac845eed9c9886",
+  "originalsPreserved": 16,
+  "blanksPreserved": 80,
+  "officialKeysMatched": 80,
+  "answerTextsExact": 80,
+  "changedBlankExplanations": 21,
+  "targetedOriginals": 7,
+  "perOriginal": [
+    {
+      "id": "sharoushi-2025-sentaku-q04",
+      "decision": "GO",
+      "lawAsOf": "2025-04-11",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2025-sentaku-q05",
+      "decision": "GO",
+      "lawAsOf": "2025-04-11",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q02",
+      "decision": "GO",
+      "lawAsOf": "2026-04-10",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q03",
+      "decision": "GO",
+      "lawAsOf": "2026-04-10",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q04",
+      "decision": "GO",
+      "lawAsOf": "2026-04-10",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q05",
+      "decision": "GO",
+      "lawAsOf": "2026-04-10",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    },
+    {
+      "id": "sharoushi-2026-sentaku-q07",
+      "decision": "GO",
+      "lawAsOf": "2026-04-10",
+      "scope": "指定HOLDの解消。未対象箇所の以前のevidenceStatusは保持。"
+    }
+  ],
+  "calculations": {
+    "Q2B": {
+      "monthly": 10000,
+      "dailyBeforeGuarantee": 4000,
+      "dailyGuarantee": 6000,
+      "combined": 14000,
+      "result": 14000
+    },
+    "Q2DE": {
+      "grade": 8,
+      "grade8Days": 503,
+      "grade9Days": 391,
+      "grade13Days": 101,
+      "minDays": 492
+    },
+    "Q7E": {
+      "standardBonusEach": 1500000,
+      "standardBonusTotal": 3000000,
+      "annualDiv12": 250000,
+      "totalRemuneration": 550000,
+      "basicPension": 100000,
+      "thresholdFY2026": 650000,
+      "pensionPayable": 100000
+    }
+  },
+  "statisticsNotes": {
+    "2025Q4": "2023年平均と2013年比較、統計トピックス142物理9頁",
+    "2025Q5": "令和3年度分保険料の令和5年度最終納付率。白書2024本文290頁",
+    "2026Q4": "2025年6月1日実雇用率2.41%。小数第3位上昇。2025年6月所定内給与の男女比76.6",
+    "2026Q5": "年度末全額免除・猶予592万人44.0%。任意加入者を除く分母、丸め済み人数から逆算しない"
+  },
+  "newModelCalls": 0,
+  "modelReason": "公式同数値例、施行日時点の規則・別表と有理数演算で算式が直接確定したため追加Opusは不要。",
+  "draftActualModel": [
+    "claude-sonnet-5-5"
+  ],
+  "reviewer": "Codex; exact current model label unavailable; Astra execution not claimed",
+  "sources": [
+    {
+      "receipt": "primary\\330M50002000022-asof20260410-receipt.json",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/330M50002000022_20260401_508M60000100057",
+      "sha256": "4ce1eb0168afb056cde7cf5ce20c2e66795ad0174b0c2613f2d73303edc35b28"
+    },
+    {
+      "receipt": "primary\\349AC0000000116-asof20260410-receipt.json",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116_20251001_506AC0000000026",
+      "sha256": "a11df64bcbe27e4c871f7b38c57b05ccc2117cb6457be783205c4271e6091703"
+    },
+    {
+      "receipt": "primary\\350M50002000003-asof20260410-receipt.json",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003_20260408_508M60000100077",
+      "sha256": "09eb8c67fe866991efa450d8f9b6ff9a8616cf2047c47ca50aaf15fc5e718721"
+    },
+    {
+      "receipt": "primary\\disability2025-receipt.json",
+      "url": "https://www.mhlw.go.jp/stf/newpage_67490.html",
+      "sha256": "d72a4ff5890c4cb08480329959e0356b52eb5b5d2a568714ae5ea600eca357c6"
+    },
+    {
+      "receipt": "primary\\ikukyu300-receipt.json",
+      "url": "https://www.mhlw.go.jp/content/11909000/001029776.pdf",
+      "sha256": "32169bde3dd7354be971b51d7b028de2fb7b0c7fe36604e526c57bd6326a1355"
+    },
+    {
+      "receipt": "primary\\izoku-receipt.json",
+      "url": "https://www.nenkin.go.jp/service/jukyu/seido/izokunenkin/jukyu-yoken/20150424.html",
+      "sha256": "376c7656a857cb090b00dba68468918ea48d590251caac14a09bd2cbebc4c877"
+    },
+    {
+      "receipt": "primary\\pension2024-receipt.json",
+      "url": "https://www.mhlw.go.jp/content/001617995.pdf",
+      "sha256": "ead3ef87caf0a20a4b31256fdf6694233f102c9e8b6df84987ed04fb5a890a79"
+    },
+    {
+      "receipt": "primary\\premium2023-receipt.json",
+      "url": "https://www.mhlw.go.jp/content/12508000/001268073.pdf",
+      "sha256": "42f1689bc6ba6ff5def003ad8bac0427e70dcecd2bb2987318daec3095de5797"
+    },
+    {
+      "receipt": "primary\\rousai-multiple.json",
+      "url": "https://www.mhlw.go.jp/content/000662505.pdf",
+      "sha256": "024df696fd4de9e480ccce0062feb547edbbe6febc40b7fb382c0635df405111"
+    },
+    {
+      "receipt": "primary\\standard-bonus-receipt.json",
+      "url": "https://www.nenkin.go.jp/service/yougo/hagyo/hyojunshoyo.html",
+      "sha256": "bff7aa07d61d0a98b1089609b24729a28f020f619ff0678a494edd0bd8bf7690"
+    },
+    {
+      "receipt": "primary\\stats-topics142.json",
+      "url": "https://www.stat.go.jp/data/topics/pdf/topics142.pdf",
+      "sha256": "c6b3b76d51b6f4bf76c30234eccf554a2c5df468da9586d167eb9fcb8cc5ac0f"
+    },
+    {
+      "receipt": "primary\\wage2025-notes-receipt.json",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/chingin/kouzou/z2025/chuui.html",
+      "sha256": "1432619c4758bffd109e81a0f44c777b307c706b6390c756a7a12c10de67ccc5"
+    },
+    {
+      "receipt": "primary\\wage2025-sex-receipt.json",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/chingin/kouzou/z2025/dl/02.pdf",
+      "sha256": "e389ea719f5ea055a8a41e8364537c0771aa3b6a864eed020a3df8da0bca98af"
+    },
+    {
+      "receipt": "primary\\wage2025-trend-receipt.json",
+      "url": "https://www.mhlw.go.jp/toukei/itiran/roudou/chingin/kouzou/z2025/dl/01.pdf",
+      "sha256": "532ba9b0330193ba0c1aa10848872a9f452fae636fa4ef277a8ca68ce891ed2a"
+    },
+    {
+      "receipt": "primary\\white2024-index-receipt.json",
+      "url": "https://www.mhlw.go.jp/stf/wp/hakusyo/kousei/23/index.html",
+      "sha256": "e38bd1d0076b4fccc987e5b255b7e5b20b85ec2fd9f724463c8dd775117fa9cd"
+    },
+    {
+      "receipt": "primary\\white2024-pension-receipt.json",
+      "url": "https://www.mhlw.go.jp/wp/hakusyo/kousei/23/dl/2-04.pdf",
+      "sha256": "03c96abdac72c6b88a598aa0d3addf9919051e7d7d61547ac021a8ce275f65c8"
+    },
+    {
+      "receipt": "primary\\white2025-ch1-receipt.json",
+      "url": "https://www.mhlw.go.jp/wp/hakusyo/kousei/25/dl/1-01.pdf",
+      "sha256": "28f884056a0f8e667ec64784195cb8a824f55ba6d6349cb34e3d12306968eb5d"
+    },
+    {
+      "receipt": "primary\\zaishoku2026-receipt.json",
+      "url": "https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/zaishoku/20150401-01.html",
+      "sha256": "3a93e2f0e0b59c0b0af0f4626c81b402efa0aa1ab155bc749d17870d0ec0ac8f"
+    }
+  ],
+  "publicationAdded": 0,
+  "integrationStatus": "HOLD_REQUIRES_ORIGINAL_CLOZE_CONTRACT",
+  "allManuscriptSecondReview": false
+}
