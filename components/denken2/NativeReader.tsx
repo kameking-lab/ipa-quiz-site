@@ -45,16 +45,18 @@ export function NativeReader({ question, readerConfig }: {
     sourceAnswerUrl: edition.sourceAnswerUrl, sourceIndexUrl: edition.sourceIndexUrl,
   } : null);
   if (!config) throw new Error("Native edition missing");
-  const subjectPath = `${config.examPath}/${question.year}-primary/${question.subject}`;
+  const editionSlug = config.editionSlug ?? `${question.year}-primary`;
+  const editionLabel = config.editionLabel ?? `${question.year}年度 一次試験`;
+  const subjectPath = `${config.examPath}/${editionSlug}/${question.subject}`;
   const name = subjectName[question.subject];
   return <main className="mx-auto w-full min-w-0 max-w-4xl px-4 py-8 sm:py-12">
     <nav className="mb-6 flex flex-wrap gap-2 text-sm">
       <Link href={config.examPath} className="text-primary underline">{config.examName}</Link>
       <span>/</span>
-      <Link href={subjectPath} className="text-primary underline">{question.year}年度 {name}</Link>
+      <Link href={subjectPath} className="text-primary underline">{editionLabel} {name}</Link>
       <span>/ 問{question.number}</span>
     </nav>
-    <h1 className="text-2xl font-bold sm:text-3xl">{config.examName} {question.year}年度 一次試験 {name} 問{question.number}</h1>
+    <h1 className="text-2xl font-bold sm:text-3xl">{config.examName} {editionLabel} {name} 問{question.number}</h1>
     <p className="mt-3 text-sm text-muted-foreground">試験日 {question.examDate}。{config.lawReferenceDate ? `法令基準日 ${config.lawReferenceDate}。` : question.year === 2025 && question.subject === "law" ? "法令基準日 2025-04-01。" : ""}1原問・{question.subject === "machine" && question.year === 2026 && question.number === 7 && config.examPath === "/denken2" ? "定義5欄＋単位5欄" : `${question.slots.length}欄`}。{question.alternateQuestionRule ? config.examPath === "/denken2" ? "問7と問8は選択問題で、実際の試験ではどちらか一方を解答します。" : "選択問題の一方だけを本試験で解答します。" : ""}</p>
     <section aria-label="問題本文" className="mt-7 border-t border-border pt-6">
       <h2 className="sr-only">問題本文</h2>

@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
 import sourcePacket from "@/docs/evidence/nurse-pm-five-next-20261010/SOURCE-PACKET-Q47-RUBY-REPAIRED.json";
@@ -14,9 +15,9 @@ describe("five additional primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("33728f49d5ce70c2265fe570f0155bf69c1bd0d0");
     expect(proof.previous437ObjectHashes).toHaveLength(437);
     for (const old of proof.previous437ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(442);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(442);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1827);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(go9.totalChoices);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id)).toEqual(proof.addedIds);
     expect(proof.addedIds).toEqual([39, 40, 42, 47, 49].map(qNumber => `kangoshi-2024-annual-pm-q${qNumber}`));
@@ -44,7 +45,7 @@ describe("five additional primary-verified nursing PM originals", () => {
       expect(question.sourceAnswerUrl).toContain("mhlw.go.jp");
       expect(isPracticeReadyQuestion(question)).toBe(true);
     }
-    for (const id of proof.keptUnregistered) expect(byId.has(id), id).toBe(false);
+    for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
   });
 
   it("repairs only the Q47 ruby transcription against the rendered official page", () => {
@@ -59,10 +60,10 @@ describe("five additional primary-verified nursing PM originals", () => {
 
   it("shows precise partial totals and the official excluded-original caveat", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後215問");
-    expect(home).toContain("午後215原問を加え、計442原問");
-    expect(home).toContain("全1827肢");
-    expect(home).toContain("第115回は午前114問・午後107問、第114回は午前113問・午後108問");
+    expect(home).toContain("午前227問と午後224問");
+    expect(home).toContain("午後224原問を加え、計451原問");
+    expect(home).toContain("全1863肢");
+    expect(home).toContain("第115回は午前114問・午後113問、第114回は午前113問・午後111問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });
