@@ -1,0 +1,832 @@
+{
+  "scope": "MHLW 114th nursing afternoon Q91-105 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "ad331456466cef8e5aca241c4f020d42f4d165febf6c21218ba4a040221bc834",
+  "draftSha256": "691da29e37e59b4fe4e0a21e35cc93a93a9821d8e7f7cd1e73ac66cf32aed4ba",
+  "readyQuestionCount": 9,
+  "heldQuestionCount": 6,
+  "readyChoiceCount": 38,
+  "heldChoiceCount": 25,
+  "reviewStatuses": [
+    {
+      "question": 91,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 92,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 93,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "終末期の聴覚保持は一般に教育される知見であり、個別の根拠文献は提示していない。"
+      ]
+    },
+    {
+      "question": 94,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "術中尿量200mLなど水分バランスの解釈は、提示された情報の範囲での判断である。"
+      ]
+    },
+    {
+      "question": 95,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "尿量0.5mL/kg/時は境界的な値で、基準は施設や指針により異なる。公式正答に沿って解説したが、閾値の出典は未確認。",
+        "心拍数100/分を許容とする目安も指針により異なる可能性がある。"
+      ]
+    },
+    {
+      "question": 96,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "入浴温度や時間の具体的な基準は、施設の心臓リハビリ指針で異なる可能性がある。"
+      ]
+    },
+    {
+      "question": 97,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "貧血の原因が血尿か否かは設問情報だけでは断定できない。"
+      ]
+    },
+    {
+      "question": 98,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 99,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 100,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "バイタルサインや検査値は脱水の確定に不足しており、あくまで可能性に基づく判断である。"
+      ]
+    },
+    {
+      "question": 101,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 102,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 103,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 104,
+      "status": "ready",
+      "reason": [
+        "official stem supplies the 20–30% interval and official key selects 25%; no guideline-edition assumption needed"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 105,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q91",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 91,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（88歳、男性）は妻（82歳）と2人で暮らしている。息子2人は独立して生活\nしている。要介護度は5で、エアマットレスを使用している。食事は妻の介助で1日1回ペースト食を食べているがむせることもあり、食事が全くとれない日もある。排\n泄はオムツを使用し、毎日訪問介護サービスを利用して、オムツ交換と陰部洗浄を受\nけている。訪問看護は週3回利用している。A さんは妻が話しかけると返事はする\nが自発的な会話はない。着替えをするときに上肢を動かすと苦痛表情がある。\n\nA さんの家族への助言で適切なのはどれか。",
+      "choices": {
+        "ア": "体位変換を2時間ごとに行う。",
+        "イ": "関節可動域訓練を1週間に1回行う。",
+        "ウ": "ペースト食を食べる回数を1日3回にする。",
+        "エ": "食事を摂取できないときにも口腔ケアを実施する。"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "要介護5で経口摂取が不安定な終末期に近い高齢者への助言を問う。経口摂取量が少なくても口腔内の清潔と湿潤を保つことは、誤嚥性肺炎や口腔内トラブルの予防、快適さの維持に重要である。",
+      "choiceExplanations": {
+        "ア": "エアマットレス使用中であり、一律に2時間ごとと決める必要はない。体位変換の間隔は皮膚の状態や苦痛に応じて個別に調整するので、最も適切とはいえない。",
+        "イ": "関節拘縮予防は必要だが、週1回では頻度が不十分である。一方、上肢を動かすと苦痛表情があり、無理な訓練は適さない。正解にならない。",
+        "ウ": "むせがあり摂取量も不安定なため、回数を3回に増やすと誤嚥や疲労の負担が増す。本人の状態に合わせた無理のない食事が望ましい。",
+        "エ": "食事をとれない日も口腔内の汚染や乾燥は生じ、誤嚥性肺炎や不快感の原因となる。口腔ケアは毎日続けるべきで、適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=36",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問91（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=36"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q92",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 92,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（88歳、男性）は妻（82歳）と2人で暮らしている。息子2人は独立して生活\nしている。要介護度は5で、エアマットレスを使用している。食事は妻の介助で1日1回ペースト食を食べているがむせることもあり、食事が全くとれない日もある。排\n泄はオムツを使用し、毎日訪問介護サービスを利用して、オムツ交換と陰部洗浄を受\nけている。訪問看護は週3回利用している。A さんは妻が話しかけると返事はする\nが自発的な会話はない。着替えをするときに上肢を動かすと苦痛表情がある。\n\n2か月後、A さんは食事を口から食べることができなくなり、かかりつけの医\n師から家族へ、そろそろ看取りの時期であり、看取りの場所を決めるように説明が\nあった。息子たちから｢父が長年住んだ家で最期まで過ごさせてあげたいと母とも\n話していますが、母が1人でみるのは大変だと思い心配しています｣と訪問看護師\nに話があった。\nこのときの訪問看護師の対応で適切なのはどれか。",
+      "choices": {
+        "ア": "看取りまでの支援体制を説明する。",
+        "イ": "血圧が低下したら入院が必要なことを説明する。",
+        "ウ": "決定した看取りの場所は変更できないことを伝える。",
+        "エ": "かかりつけの医師と訪問看護師で治療方法を決定する。"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "自宅での看取りを希望しつつ介護者の妻の負担を心配する家族に対し、訪問看護師は不安を軽減するため、利用できる支援体制を具体的に示すことが適切である。",
+      "choiceExplanations": {
+        "ア": "24時間連絡体制、訪問診療・訪問看護、介護サービスなど支援体制を説明すれば、家族の不安に応えられ、在宅看取りの意思決定を支えられる。",
+        "イ": "血圧低下で入院が必要と決めつける説明は不適切である。看取り期の低下は自然な経過で、在宅での対応も可能であり、希望も損なう。",
+        "ウ": "看取りの場所は、病状や家族の状況の変化に応じて見直すことができる。変更不可と伝えると不安や圧力を与えるため誤りである。",
+        "エ": "治療方針は本人・家族の意向を尊重して医師が中心となり決定する。看護師が医師と二者で決めるのは役割と意思決定の面で不適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=36",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問92（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=36"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q98",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 98,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（57歳、男性）は、芳香族アミンを扱う化学工場に39 年勤務している。\n現病歴：ここ数か月で次第に尿の色が濃くなった。いきまないと排尿できなくなり、\n泌尿器科を受診し、採血および尿検査を受けた。\n既往歴：特記すべき点なし。\n生活歴：喫煙40 本/日を36 年間、焼酎120 mL の飲酒をほぼ毎日、20 年間続けてい\nる。\n身体所見：顔面、四肢に浮腫なし、黒色便なし、血便なし。\n検査所見：赤血球308 万/μL、Hb 9.9 g/dL、血清アルブミン4.2 g/dL、血清総ビリ\nルビン0.2 mg/dL、血糖102 mg/dL、ヘモグロビンA1c〈HbA1c〉 5.4 %。\n\nA さんは膀胱全摘出術および回腸導管造設術を受けることになった。\nA さんへの術前の説明で正しいのはどれか。",
+      "choices": {
+        "ア": "｢浴槽のお湯に入ることはできません｣",
+        "イ": "｢水分の摂り過ぎに注意が必要です｣",
+        "ウ": "｢肛門から尿が出ます｣",
+        "エ": "｢尿意は感じません｣"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "膀胱全摘出術と回腸導管造設術では、尿は回腸導管から腹壁のストーマへ排出される。膀胱を失うため尿意は感じなくなる。",
+      "choiceExplanations": {
+        "ア": "ストーマ装具を装着すれば入浴は可能である。浴槽に入れないという説明は誤りである。",
+        "イ": "尿路変更後は尿量維持と感染予防のため、むしろ水分摂取を勧める。摂り過ぎに注意が必要という説明は適切でない。",
+        "ウ": "回腸導管では尿は腹部のストーマから排出され、肛門からは出ない。肛門から出るのは尿管S状結腸吻合などで別の術式である。",
+        "エ": "膀胱が摘出されるため尿意は生じない。尿は持続的にストーマから出て、装具で受けるという説明が正しい。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=40",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問98（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=40"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q99",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 99,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（57歳、男性）は、芳香族アミンを扱う化学工場に39 年勤務している。\n現病歴：ここ数か月で次第に尿の色が濃くなった。いきまないと排尿できなくなり、\n泌尿器科を受診し、採血および尿検査を受けた。\n既往歴：特記すべき点なし。\n生活歴：喫煙40 本/日を36 年間、焼酎120 mL の飲酒をほぼ毎日、20 年間続けてい\nる。\n身体所見：顔面、四肢に浮腫なし、黒色便なし、血便なし。\n検査所見：赤血球308 万/μL、Hb 9.9 g/dL、血清アルブミン4.2 g/dL、血清総ビリ\nルビン0.2 mg/dL、血糖102 mg/dL、ヘモグロビンA1c〈HbA1c〉 5.4 %。\n\nA さんは術後から、これまでにはなかった勃起障害が出現した。A さんのテス\nトステロン値は13.5 pg/mL（50歳代の基準値：4.6〜19.6pg/mL）であった。\nA さんの勃起不全の原因で考えられるのはどれか。",
+      "choices": {
+        "ア": "性ホルモン分泌の低下",
+        "イ": "神経損傷",
+        "ウ": "糖尿病",
+        "エ": "喫\n煙"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "術後から新たに勃起障害が出現し、テストステロン値は基準範囲内である。膀胱全摘出時に勃起に関わる骨盤神経が損傷された可能性が最も高い。",
+      "choiceExplanations": {
+        "ア": "テストステロン値13.5pg/mLは50歳代の基準範囲内であり、性ホルモン低下が原因とは考えにくい。",
+        "イ": "膀胱全摘出術では骨盤内の自律神経(勃起神経)を損傷しやすい。術後に初めて生じ、ホルモンが正常である点とも合致する。",
+        "ウ": "HbA1c 5.4%、血糖102mg/dLで糖尿病は否定的である。原因とは考えにくい。",
+        "エ": "喫煙は勃起不全の危険因子だが、これまでなかった症状が術後から生じた点を説明できない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=41",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問99（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=40"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q101",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 101,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（80歳、女性）は、アパートの1階に1人で暮らしている。半年前に軽度の\nAlzheimer〈アルツハイマー〉型認知症と診断され、抗認知症薬の内服治療を開始し\nた。要支援2の認定を受けている。\nA さんが屋内でぐったりしているのを訪問した近所の人が発見し、救急搬送され\nた。来院時のバイタルサインは、体温36.5 ℃、呼吸数20/分、脈拍92/分、血圧\n130/82 mmHg で、皮膚に軽度の発汗がみられた。頭痛や吐き気はなかった。看護師\nがA さんに状況を聞くと、最近は食欲がなく、食べたり飲んだりしていなかったし、\n昨日は排尿回数も普段より少なかったと話した。\n\nA さんは、経過を観察するため入院となった。入院2日、A さんの全身状態は\n改善し、食事が開始された。A さんは歩行時にふらつきがあるため、看護師が見\n守ることになった。看護師はベッドから離れるときは、ナースコールを押すように\nA さんに説明した。そのときA さんは｢忘れずにできるかしら｣と呟いた。しばら\nくすると、Aさんが1人で移動しているところを看護師が発見した。\nA さんへの対応で適切なのはどれか。",
+      "choices": {
+        "ア": "ヒッププロテクターを使用する。",
+        "イ": "ベッドサイドに車椅子を設置する。",
+        "ウ": "ナースコールが目立つように目印をつける。",
+        "エ": "爪先が床につくようにベッドの高さを調整する。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "軽度の認知症で「忘れずにできるか」と不安を述べている。記憶に頼らず、視覚的な手がかりでナースコール使用を促す環境調整が適切である。",
+      "choiceExplanations": {
+        "ア": "ヒッププロテクターは転倒時の骨折リスクを下げるが、転倒そのものの予防や行動の改善にはつながらない。",
+        "イ": "車椅子をベッドサイドに置くと、自力で移動を誘発して転倒の危険が増す。見守りが必要な状況に合わない。",
+        "ウ": "ナースコールを目立たせれば、忘れても気づけて押しやすくなる。認知機能の低下を補う適切な環境調整である。",
+        "エ": "足底が床につく高さは立ち上がり時の安定に有用だが、ナースコール忘れへの直接の対応にはなっていない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=43",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問101（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=42"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q102",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 102,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（80歳、女性）は、アパートの1階に1人で暮らしている。半年前に軽度の\nAlzheimer〈アルツハイマー〉型認知症と診断され、抗認知症薬の内服治療を開始し\nた。要支援2の認定を受けている。\nA さんが屋内でぐったりしているのを訪問した近所の人が発見し、救急搬送され\nた。来院時のバイタルサインは、体温36.5 ℃、呼吸数20/分、脈拍92/分、血圧\n130/82 mmHg で、皮膚に軽度の発汗がみられた。頭痛や吐き気はなかった。看護師\nがA さんに状況を聞くと、最近は食欲がなく、食べたり飲んだりしていなかったし、\n昨日は排尿回数も普段より少なかったと話した。\n\n入院3日。A さんは明日の退院が決まった。看護師が朝食後に抗認知症薬の配\n薬に行くと、A さんが｢もう薬の時間ですか｣と言った。また、自分の病室を間違\nえることが数回あった。\nA さんが退院後の在宅療養を継続するために、看護師が担当の介護支援専門員\nへ伝える情報で最も適切なのはどれか。",
+      "choices": {
+        "ア": "歩行状態",
+        "イ": "食事の摂取量",
+        "ウ": "入院中の治療内容",
+        "エ": "認知機能障害の出現状況"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "薬の時間を忘れて何度も尋ねる、病室を間違えるといった様子は認知機能障害の出現を示す。介護支援専門員への連携では、その状況を伝えることが最も適切である。",
+      "choiceExplanations": {
+        "ア": "歩行状態も在宅生活には重要だが、提示された場面の観察(薬、病室の間違い)とは異なる情報で、最も適切とはいえない。",
+        "イ": "食事摂取量も重要だが、場面から得られた認知機能に関する観察の方が、在宅療養の継続に直結する。",
+        "ウ": "入院中の治療内容は共有される情報だが、場面の観察が示す生活上の課題という点では優先度が低い。",
+        "エ": "薬の時間の確認や病室の間違いは認知機能の低下を示す。在宅でのサービス調整に必要な情報で、最も適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=43",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問102（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=42"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q103",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 103,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（12歳、男児）は、肥満を心配した保護者に連れられて来院した。A 君と保護\n者は、医師から｢1日の食事内容を毎日記録し、1週後に再診してください｣と説明さ\nれた。\n既往歴と家族歴：特記すべきことはない。\n生活歴：スナック菓子などの間食を好む。時間があればポータブル型のゲーム機で\nサッカーゲームばかりして、就寝時刻は毎晩午前0時を過ぎる。A 君は、\n学校生活は楽しく思っているが朝起きられず遅刻して登校することが多い。\nまた、運動することが嫌いなため運動の習慣はない。\n身体所見：身長153.0 cm （標準152.4cm）、体重61.7 kg （標準44.1kg）。血圧\n100/60 mmHg。心音と呼吸音に異常はない。腹部は平坦、軟で、肝臓と\n脾臓を触知しない。\n\nA 君の肥満度（%）に最も近いのはどれか。",
+      "choices": {
+        "ア": "25",
+        "イ": "30",
+        "ウ": "35",
+        "エ": "40",
+        "オ": "45"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "肥満度(%)=(実測体重-標準体重)÷標準体重×100で求める。(61.7-44.1)÷44.1×100は約39.9%となり、最も近いのは40である。",
+      "choiceExplanations": {
+        "ア": "25%は(実測-標準)÷標準の計算結果(約39.9%)と大きく異なる。",
+        "イ": "30%も計算結果の約39.9%より低く、最も近い値とはいえない。",
+        "ウ": "35%は約39.9%より低く、40の方が近いため誤りである。",
+        "エ": "体重差17.6kgを標準体重44.1kgで割ると約0.399、すなわち約40%となり、最も近い。",
+        "オ": "45%は計算結果の約39.9%より高く、最も近い値ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=44",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問103（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=44"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q104",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 104,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（12歳、男児）は、肥満を心配した保護者に連れられて来院した。A 君と保護\n者は、医師から｢1日の食事内容を毎日記録し、1週後に再診してください｣と説明さ\nれた。\n既往歴と家族歴：特記すべきことはない。\n生活歴：スナック菓子などの間食を好む。時間があればポータブル型のゲーム機で\nサッカーゲームばかりして、就寝時刻は毎晩午前0時を過ぎる。A 君は、\n学校生活は楽しく思っているが朝起きられず遅刻して登校することが多い。\nまた、運動することが嫌いなため運動の習慣はない。\n身体所見：身長153.0 cm （標準152.4cm）、体重61.7 kg （標準44.1kg）。血圧\n100/60 mmHg。心音と呼吸音に異常はない。腹部は平坦、軟で、肝臓と\n脾臓を触知しない。\n\nA 君の1週間の食事内容の記録によると、野菜が不足し、高カロリーな菓子類\nや甘い飲み物を好んで摂取していることが判明した。A 君と保護者は｢食事内容を\n見直し、体重を減らすことが大切です｣と医師から説明され、食事摂取基準のパン\nフレットを渡された。パンフレットには、学童期の脂質エネルギー比率（%エネルギー）は20〜30 % と記載されている。A 君が診療を終えて帰宅する際、保護者は\n看護師に｢痩せるために脂質は可能な限り0%にしないとだめですね｣と話した。\n脂質エネルギー比率（%エネルギー）に関する看護師の助言で適切なのはどれか。",
+      "choices": {
+        "ア": "｢標準的な目標量である25 % 程度が良いですよ｣",
+        "イ": "｢当面は35 % くらいだとストレスがないでしょう｣",
+        "ウ": "｢その通りです。0%に近づける努力をしましょう｣",
+        "エ": "｢10 % 程度で成人になるまで続けるのが効果的です｣",
+        "オ": "｢脂質は急に減らさず、野菜の摂取で栄養を補いましょう｣"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "パンフレットに学童期の脂質エネルギー比率20〜30%とある。脂質は成長に必須の栄養素であり、0%を目指すのは誤りで、目標量の範囲内にとどめるよう助言するのが適切である。",
+      "choiceExplanations": {
+        "ア": "目標量は20〜30%であり、25%程度は範囲内である。脂質は成長・発達に必要で、過度に制限しない助言として適切である。",
+        "イ": "35%は目標量の上限30%を超えており、肥満の改善を目指す状況では適切ではない。",
+        "ウ": "脂質を0%に近づけると脂溶性ビタミンや必須脂肪酸が不足し、成長に悪影響が出るため誤りである。",
+        "エ": "10%程度は目標量の下限20%を大きく下回り、成長期の児に長期間続けると栄養不足の恐れがある。",
+        "オ": "急激な脂質制限を避ける点は妥当だが、目標量の範囲に言及しておらず、設問の問いに直接答えていない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=45",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問104（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=44"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q105",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 105,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（12歳、男児）は、肥満を心配した保護者に連れられて来院した。A 君と保護\n者は、医師から｢1日の食事内容を毎日記録し、1週後に再診してください｣と説明さ\nれた。\n既往歴と家族歴：特記すべきことはない。\n生活歴：スナック菓子などの間食を好む。時間があればポータブル型のゲーム機で\nサッカーゲームばかりして、就寝時刻は毎晩午前0時を過ぎる。A 君は、\n学校生活は楽しく思っているが朝起きられず遅刻して登校することが多い。\nまた、運動することが嫌いなため運動の習慣はない。\n身体所見：身長153.0 cm （標準152.4cm）、体重61.7 kg （標準44.1kg）。血圧\n100/60 mmHg。心音と呼吸音に異常はない。腹部は平坦、軟で、肝臓と\n脾臓を触知しない。\n\nA 君の保護者は｢この機会に、A の生活リズムの乱れも改善したいと思います。\nどんなことから始めるのが良いですか｣と看護師に尋ねた。\n看護師の説明で適切なのはどれか。",
+      "choices": {
+        "ア": "｢ゲーム機で遊ぶのを禁止しましょう｣",
+        "イ": "｢起床したら朝日を浴びると良いでしょう｣",
+        "ウ": "｢サッカークラブに所属すると良いでしょう｣",
+        "エ": "｢しばらく学校を休ませて自宅で生活リズムを整えましょう｣"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "夜更かしによる生活リズムの乱れに対しては、朝日を浴びて体内時計を整えることが取り組みやすい第一歩である。禁止や登校制限など極端な方法は避ける。",
+      "choiceExplanations": {
+        "ア": "ゲームの全面禁止は本人の意欲や信頼関係を損なう。使用時間のルールを共に決めるなど現実的な対応が望ましい。",
+        "イ": "起床後に朝日を浴びると体内時計がリセットされ、睡眠・覚醒リズムの改善につながる。実行しやすく、適切である。",
+        "ウ": "運動の習慣づけは有益だが、運動嫌いの本人にクラブ加入をいきなり勧めても継続は難しい。生活リズムの改善の第一歩ではない。",
+        "エ": "学校生活を楽しんでおり、休ませると生活リズムはかえって乱れやすい。登校を続けながら改善する方が望ましい。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=45",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問105（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=44"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q93",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 93,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（88歳、男性）は妻（82歳）と2人で暮らしている。息子2人は独立して生活\nしている。要介護度は5で、エアマットレスを使用している。食事は妻の介助で1日1回ペースト食を食べているがむせることもあり、食事が全くとれない日もある。排\n泄はオムツを使用し、毎日訪問介護サービスを利用して、オムツ交換と陰部洗浄を受\nけている。訪問看護は週3回利用している。A さんは妻が話しかけると返事はする\nが自発的な会話はない。着替えをするときに上肢を動かすと苦痛表情がある。\n\nA さんは声をかけても返答したり目を開けたりすることもなく、穏やかな表情\nで眠っていることが多くなった。A さんの妻は｢夫は話しかけても何も答えてくれ\nないので、どうしたらよいか分かりません｣と訪問看護師に話した。\nこのときの妻への声かけで適切なのはどれか。",
+      "choices": {
+        "ア": "｢A さんの体にできるだけ触れるようにしましょう｣",
+        "イ": "｢A さんは苦痛を感じることはありません｣",
+        "ウ": "｢A さんが休めるよう静かにしましょう｣",
+        "エ": "｢A さんの世話を頑張りましょう｣"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "反応が乏しくなった終末期の患者でも、聴覚や触覚は最後まで保たれるとされる。家族が関わる方法を具体的に示し、無力感を和らげることが適切である。",
+      "choiceExplanations": {
+        "ア": "触れる、手を握る、声をかけるなど、反応がなくても家族ができるケアを示せる。家族の役割実感と患者の安心につながり、適切である。",
+        "イ": "苦痛がないと断定する根拠はなく、患者の状態を評価せずに言い切るのは不適切である。家族の安心を損なう恐れもある。",
+        "ウ": "静かな環境は大切だが、患者と家族の関わりを控えさせる意味にもなり得る。妻の「どうしたらよいか」に具体的に応えていない。",
+        "エ": "妻は高齢で介護負担が大きい。さらに頑張るよう促す声かけは負担を増し、気持ちの受容にもならないため不適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=37",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問93（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=36"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q94",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 94,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（55歳、男性、会社員）。激しい胸痛で救急搬送され、心筋梗塞と診断された。冠動脈バイパス術〈CABG〉を受け、ICU に入室した。\n手術中の輸液量2,700 mL、輸血量400 mL、出血量280 mL、尿量200 mL であっ\nた。手術から6時間が経過し、人工呼吸器が装着され、心囊ドレーンと、胸腔ドレー\nンが留置中である。\n身体所見：体温37.1 ℃、脈拍63/分、血圧126/62 mmHg、末梢冷感はなし。肺野全\n体に湿性ラ音を聴取、漿液性の気道分泌物を認める。\n検査所見：吸入酸素濃度40 %、動脈血酸素分圧〈PaO₂〉95 Torr、動脈血炭酸ガス分圧\n〈PaCO₂〉36 Torr、中心静脈圧12 cmH2O、心エコー検査では左室駆出率\n〈LVEF〉45 %、心囊液の貯留なし。胸部エックス線写真では両肺野の広範\nに透過性の低下を認める。\n\nA さんに起こっている可能性が高い合併症はどれか。",
+      "choices": {
+        "ア": "低心拍出量症候群\n〈LOS〉",
+        "イ": "心タンポナーデ",
+        "ウ": "肺水腫",
+        "エ": "無気肺"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "CABG術後6時間で、湿性ラ音、漿液性の分泌物、CVP高値、両肺野の透過性低下がみられる。術中の水分バランスも過剰で、肺水腫の可能性が最も高い。",
+      "choiceExplanations": {
+        "ア": "血圧と脈拍が保たれ、末梢冷感もない。LVEF 45%で、低心拍出を示す所見に乏しく、可能性は高くない。",
+        "イ": "心エコーで心嚢液の貯留がない。ドレーンも留置中で、心タンポナーデを示す所見はなく、否定的である。",
+        "ウ": "輸液過多、CVP上昇、湿性ラ音、漿液性分泌物、両肺野の広範な透過性低下が一致する。肺水腫が最も考えやすい。",
+        "エ": "無気肺は通常、局所的な含気低下や換気量低下を示す。広範な湿性ラ音や水分過剰所見の方が肺水腫をよく説明する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=38",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問94（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=38"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q95",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 95,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "45",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（55歳、男性、会社員）。激しい胸痛で救急搬送され、心筋梗塞と診断された。冠動脈バイパス術〈CABG〉を受け、ICU に入室した。\n手術中の輸液量2,700 mL、輸血量400 mL、出血量280 mL、尿量200 mL であっ\nた。手術から6時間が経過し、人工呼吸器が装着され、心囊ドレーンと、胸腔ドレー\nンが留置中である。\n身体所見：体温37.1 ℃、脈拍63/分、血圧126/62 mmHg、末梢冷感はなし。肺野全\n体に湿性ラ音を聴取、漿液性の気道分泌物を認める。\n検査所見：吸入酸素濃度40 %、動脈血酸素分圧〈PaO₂〉95 Torr、動脈血炭酸ガス分圧\n〈PaCO₂〉36 Torr、中心静脈圧12 cmH2O、心エコー検査では左室駆出率\n〈LVEF〉45 %、心囊液の貯留なし。胸部エックス線写真では両肺野の広範\nに透過性の低下を認める。\n\n術後2日、A さんは人工呼吸管理を離脱し、離床が検討されたが中止となった。\n看護師がA さんの離床中止を判断した指標はどれか。2つ選べ。",
+      "choices": {
+        "ア": "ドレーンが留置中である。",
+        "イ": "安静時の呼吸数が20/分である。",
+        "ウ": "安静時の心拍数が100/分である。",
+        "エ": "新たな不整脈（心房細動）が発生している。",
+        "オ": "時間尿量0.5 mL/kg/時が3時間持続している。"
+      },
+      "answer": [
+        "エ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "心臓手術後の離床は、循環動態や臓器灌流の安定が前提である。新たな不整脈と尿量低下は循環が不安定で離床に耐えにくいことを示す指標となる。",
+      "choiceExplanations": {
+        "ア": "ドレーン留置中でも、固定や管理を整えれば離床できる場合が多い。ドレーンがあるだけでは中止の指標にならない。",
+        "イ": "安静時の呼吸数20/分は正常範囲内であり、呼吸状態悪化の指標とはいえない。離床中止の根拠にならない。",
+        "ウ": "安静時心拍数100/分は軽度の頻脈だが、一般に中止基準とされる程度ではない。単独では離床中止の判断指標にならない。",
+        "エ": "心房細動など新たな不整脈は、心拍出量低下や血行動態悪化を招き得る。離床負荷で悪化する恐れがあり、中止の指標となる。",
+        "オ": "尿量0.5mL/kg/時が3時間続くのは腎灌流低下や循環不全を示唆する。循環の不安定さを示し、離床中止の指標となる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=38",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問95（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=38"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q96",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 96,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（55歳、男性、会社員）。激しい胸痛で救急搬送され、心筋梗塞と診断された。冠動脈バイパス術〈CABG〉を受け、ICU に入室した。\n手術中の輸液量2,700 mL、輸血量400 mL、出血量280 mL、尿量200 mL であっ\nた。手術から6時間が経過し、人工呼吸器が装着され、心囊ドレーンと、胸腔ドレー\nンが留置中である。\n身体所見：体温37.1 ℃、脈拍63/分、血圧126/62 mmHg、末梢冷感はなし。肺野全\n体に湿性ラ音を聴取、漿液性の気道分泌物を認める。\n検査所見：吸入酸素濃度40 %、動脈血酸素分圧〈PaO₂〉95 Torr、動脈血炭酸ガス分圧\n〈PaCO₂〉36 Torr、中心静脈圧12 cmH2O、心エコー検査では左室駆出率\n〈LVEF〉45 %、心囊液の貯留なし。胸部エックス線写真では両肺野の広範\nに透過性の低下を認める。\n\n術後3日、心臓リハビリテーションが開始された。\nA さんは｢傷の痛みはありますが、血管をつないだから安心ですね。落ちついた\nら、家族と温泉に行きたいです｣と看護師に話した。\nA さんの生活指導で適切なのはどれか。",
+      "choices": {
+        "ア": "｢肩までお湯に入りましょう｣",
+        "イ": "｢お湯の温度は43 ℃以上にしましょう｣",
+        "ウ": "｢食後1時間以上経過してから入浴しましょう｣",
+        "エ": "｢心筋梗塞による心不全があるので入浴は控えましょう｣"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "心臓リハビリ期の入浴指導では、心臓への負荷を避ける方法が基本である。食後すぐの入浴を避け、ぬるめの湯で過ごすことが重要である。",
+      "choiceExplanations": {
+        "ア": "肩まで浸かる全身浴は静水圧と温熱で心負荷が大きい。胸骨の創もあり、半身浴などの負担が少ない方法が望ましい。",
+        "イ": "43℃以上の熱い湯は血圧変動や頻脈を招き、心負荷が大きい。ぬるめの湯が勧められるため不適切である。",
+        "ウ": "食後すぐは消化のため血流が腹部に集まり、入浴の負荷が重なる。食後1時間以上あけるのは適切な助言である。",
+        "エ": "入浴は一律に禁止ではなく、心機能や症状に応じて方法を工夫して可能である。LVEF 45%でも禁止とする根拠は乏しい。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=39",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問96（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=38"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q97",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 97,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（57歳、男性）は、芳香族アミンを扱う化学工場に39 年勤務している。\n現病歴：ここ数か月で次第に尿の色が濃くなった。いきまないと排尿できなくなり、\n泌尿器科を受診し、採血および尿検査を受けた。\n既往歴：特記すべき点なし。\n生活歴：喫煙40 本/日を36 年間、焼酎120 mL の飲酒をほぼ毎日、20 年間続けてい\nる。\n身体所見：顔面、四肢に浮腫なし、黒色便なし、血便なし。\n検査所見：赤血球308 万/μL、Hb 9.9 g/dL、血清アルブミン4.2 g/dL、血清総ビリ\nルビン0.2 mg/dL、血糖102 mg/dL、ヘモグロビンA1c〈HbA1c〉 5.4 %。\n\nA さんの尿所見で予測されるのはどれか。",
+      "choices": {
+        "ア": "蛋白尿",
+        "イ": "尿糖陽性",
+        "ウ": "肉眼的血尿",
+        "エ": "ビリルビン尿"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "芳香族アミンへの長期職業曝露と大量喫煙があり、尿の濃染や排尿困難から膀胱癌が疑われる。膀胱癌で最も多い尿所見は肉眼的血尿である。",
+      "choiceExplanations": {
+        "ア": "血清アルブミンは正常で浮腫もなく、ネフローゼなど蛋白尿が目立つ病態を示す所見に乏しい。予測は難しい。",
+        "イ": "血糖102mg/dL、HbA1c 5.4%で糖尿病は否定的である。尿糖陽性は予測されない。",
+        "ウ": "芳香族アミン曝露と喫煙は膀胱癌の危険因子である。無痛性の肉眼的血尿が典型で、尿の色が濃いという経過とも合う。",
+        "エ": "血清総ビリルビンは0.2mg/dLと正常で、黄疸や肝胆道疾患を示す所見はない。ビリルビン尿は予測されない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=40",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問97（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=40"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q100",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 100,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（80歳、女性）は、アパートの1階に1人で暮らしている。半年前に軽度の\nAlzheimer〈アルツハイマー〉型認知症と診断され、抗認知症薬の内服治療を開始し\nた。要支援2の認定を受けている。\nA さんが屋内でぐったりしているのを訪問した近所の人が発見し、救急搬送され\nた。来院時のバイタルサインは、体温36.5 ℃、呼吸数20/分、脈拍92/分、血圧\n130/82 mmHg で、皮膚に軽度の発汗がみられた。頭痛や吐き気はなかった。看護師\nがA さんに状況を聞くと、最近は食欲がなく、食べたり飲んだりしていなかったし、\n昨日は排尿回数も普段より少なかったと話した。\n\nこのときに看護師が追加で収集する情報で優先度が高いのはどれか。",
+      "choices": {
+        "ア": "睡眠状況",
+        "イ": "口渇の有無",
+        "ウ": "ADL の状況",
+        "エ": "抗認知症薬の内服状況"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "食欲低下、飲水不足、尿量減少、発汗があり、脱水が疑われる。脱水の評価では口渇の有無の確認が優先度が高い。高齢者は口渇を自覚しにくいことにも注意する。",
+      "choiceExplanations": {
+        "ア": "睡眠状況も情報の一つだが、今回の経過(飲水不足、尿量減少)から優先されるのは脱水の評価である。",
+        "イ": "口渇は脱水の症状であり、飲水不足、尿量減少と合わせて脱水の程度を評価できる。優先度が高い。",
+        "ウ": "ADLは退院後の生活を考えるうえで必要だが、来院時の状態を把握する緊急性は脱水評価より低い。",
+        "エ": "内服状況も重要だが、頭痛や吐き気はなく、食事と飲水不足の経過から、まず脱水の評価が優先される。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=42",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問100（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=42"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    }
+  ]
+}

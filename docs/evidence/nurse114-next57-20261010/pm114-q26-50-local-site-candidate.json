@@ -1,0 +1,1350 @@
+{
+  "scope": "MHLW 114th nursing afternoon Q26-50 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+  "draftSha256": "3b3f4a7e6ec683dffa329f5a8c16c73e3af0bc8ca2de81552485c2a7887bf163",
+  "readyQuestionCount": 9,
+  "heldQuestionCount": 16,
+  "readyChoiceCount": 36,
+  "heldChoiceCount": 64,
+  "reviewStatuses": [
+    {
+      "question": 26,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 27,
+      "status": "hold",
+      "reason": [
+        "official figure asset is not yet integrated",
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": {
+        "kind": "original chart comparing sodium-ion concentration and water amount at baseline and collapse",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p14.png",
+          "sha256": "09782c815d4d84f51830a74892da57c357ed35dc931c607548cb00da9ad66e9b"
+        },
+        "visualCheck": "Both baseline bars are 100%; at collapse sodium-ion concentration is lower while water amount is slightly lower but exceeds sodium as a relative proportion. Preserve original labels and axis."
+      },
+      "reviewFlags": [
+        "図の棒グラフの読み取りは提供された目視確認メモ（基準は両方100%、意識消失時はNa濃度が低下し水分量はわずかに減少）にのみ基づく。具体的な数値は未確認。",
+        "低張性脱水でヘマトクリットが上昇するかは赤血球の膨張も関わるため、解説の表現を専門家が確認することが望ましい。"
+      ]
+    },
+    {
+      "question": 28,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "除菌判定までの間隔（4週間以上）は一般的な診療指針に基づく記載で、114回試験時点の最新ガイドラインでの確認が望ましい。"
+      ]
+    },
+    {
+      "question": 29,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "軽費老人ホームも老人福祉法上の施設であり、選択肢1を不適切とする理由は出題意図に基づく解釈。法令条文の根拠は要確認。",
+        "養護老人ホームなど他の措置先は選択肢にないため、解説では言及を最小限にとどめた。"
+      ]
+    },
+    {
+      "question": 30,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "令和4年度の指定難病の正確な疾病数は未確認。300疾病台であることのみ記載しており、公式数の確認が必要。",
+        "自己負担割合や月額上限の詳細は114回試験時点の制度に基づき要確認。"
+      ]
+    },
+    {
+      "question": 31,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 32,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 33,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 34,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 35,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "検査量3mLや判定基準の詳細は、公式手順書での確認が望ましい。"
+      ]
+    },
+    {
+      "question": 36,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 37,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 38,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "薬物相互作用の程度は薬剤ごとに異なるため、個別の添付文書での確認が必要。"
+      ]
+    },
+    {
+      "question": 39,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "電気カーペットを避ける理由（ノイズ混入）は一般的な注意点として記載。機器や施設の指示を確認するのが望ましい。"
+      ]
+    },
+    {
+      "question": 40,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "開設主体の範囲や管理者要件の詳細は114回試験時点の制度で要確認。"
+      ]
+    },
+    {
+      "question": 41,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "足浴の適温は一般的な目安であり、施設の基準での確認が望ましい。"
+      ]
+    },
+    {
+      "question": 42,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "カテーテル交換間隔や体位の角度は製品や指針によって異なるため、要確認。"
+      ]
+    },
+    {
+      "question": 43,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "相談先の優先度は出題意図に基づく解釈。市町村ごとの体制の違いがあるため要確認。"
+      ]
+    },
+    {
+      "question": 44,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 45,
+      "status": "hold",
+      "reason": [
+        "official figure asset is not yet integrated",
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": {
+        "kind": "original adult chest diagram with four numbered compression locations",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q26-50-renders\\114-pm-physical-p19.png",
+          "sha256": "f3cedf4367da8b138754a2b26d777fff5a6ac9d13d64746d60cff00aa8ab718b"
+        },
+        "visualCheck": "Numbered dots 1 upper-left, 2 right-chest, 3 low sternum, 4 mid sternum; preserve exact diagram and labels when publishing."
+      },
+      "reviewFlags": [
+        "図の点位置は提供された目視確認メモ（①左上、②右胸、③胸骨下部、④胸骨中央）のみに基づく。図の掲載時は原図を正しい問題に紐づけること。",
+        "③を剣状突起に近いとする記述は図の詳細を確認できないため、推測を含む。"
+      ]
+    },
+    {
+      "question": 46,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 47,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "マーキングの方法（皮膚への印か刺青か）は施設により異なるため、要確認。"
+      ]
+    },
+    {
+      "question": 48,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "臨死期には下顎呼吸なども見られるが、本問の選択肢にはない。"
+      ]
+    },
+    {
+      "question": 49,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "絶食時間や安静時間は施設の手順により異なるため、要確認。"
+      ]
+    },
+    {
+      "question": 50,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "急性膵炎の診断では血清アミラーゼも用いられるが、本問の選択肢にはない。"
+      ]
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q26",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 26,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "血漿中の重炭酸イオン濃度が基準値よりも高くなるのはどれか。",
+      "choices": {
+        "ア": "過換気",
+        "イ": "腎不全\nrenal failure",
+        "ウ": "重篤な1型糖尿病\ntype1diabetes mellitus",
+        "エ": "慢性的な換気障害"
+      },
+      "answer": "エ",
+      "explanation": "重炭酸イオンが基準値より高いのは代謝性アルカローシス、または呼吸性アシドーシスに対する腎代償の状態です。慢性的な換気障害ではCO2が貯留し、腎臓が重炭酸イオンを保持して代償します。",
+      "choiceExplanations": {
+        "ア": "過換気ではCO2が過剰に排出されて呼吸性アルカローシスとなります。急性期は重炭酸イオンがむしろ低下するため、誤りです。",
+        "イ": "腎不全では酸の排泄と重炭酸イオンの再吸収が障害され、代謝性アシドーシスとなって重炭酸イオンは低下します。",
+        "ウ": "重篤な1型糖尿病ではケトアシドーシスとなり、ケトン体を緩衝するために重炭酸イオンが消費されて低下します。",
+        "エ": "慢性的な換気障害ではCO2が貯留して呼吸性アシドーシスとなり、腎臓の代償で重炭酸イオンが上昇します。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=13",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問26（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q31",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 31,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "フィンク, S. L.\nFink, S. L.\nが提唱した危機モデルの最終段階はどれか。",
+      "choices": {
+        "ア": "受\n容",
+        "イ": "適\n応",
+        "ウ": "問題解決",
+        "エ": "ラポール"
+      },
+      "answer": "イ",
+      "explanation": "フィンクの危機モデルは、衝撃、防御的退行、承認、適応の4段階です。最終段階は適応です。",
+      "choiceExplanations": {
+        "ア": "受容はキューブラー・ロスの死の受容過程の最終段階として知られ、フィンクのモデルの用語ではありません。",
+        "イ": "適応はフィンクの危機モデルの最終段階です。これが正解です。",
+        "ウ": "問題解決はカプランの危機モデルなどで用いられる概念で、フィンクのモデルの段階名ではありません。",
+        "エ": "ラポールは信頼関係を意味する用語で、危機モデルの段階ではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問31（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q32",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 32,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "入院して間もない片麻痺がある患者から｢着替えがうまくできない。ひとりでで\nきるようになりたい｣と訴えがあった。\n最初に行う看護師の対応で最も適切なのはどれか。",
+      "choices": {
+        "ア": "｢繰り返し練習しましょう｣",
+        "イ": "｢できないところは手伝います｣",
+        "ウ": "｢着替えるところを見せてください｣",
+        "エ": "｢着替えのパンフレットを参考にしましょう｣"
+      },
+      "answer": "ウ",
+      "explanation": "患者が自立への意欲を示した場面では、看護師はまず実際の動作を観察して、できない部分や原因をアセスメントします。そのうえで練習や援助を計画します。",
+      "choiceExplanations": {
+        "ア": "繰り返し練習は有効な場合もありますが、現状を把握する前に提案するのは最初の対応として適切ではありません。",
+        "イ": "できない部分を一律に手伝うと、自立したいという患者の意向に沿わず、残存機能の活用も妨げます。",
+        "ウ": "着替える様子を見て、麻痺側の状況やできない動作を把握するのが最初の対応です。これが正解です。",
+        "エ": "パンフレットの提示は情報提供にとどまり、個別の状況を把握しないまま行う対応は最初としては不十分です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問32（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q33",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 33,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "うっ血乳頭が出現するのはどれか。",
+      "choices": {
+        "ア": "舌\n癌\ntongue cancer",
+        "イ": "貧\n血",
+        "ウ": "門脈圧亢進",
+        "エ": "頭蓋内圧亢進"
+      },
+      "answer": "エ",
+      "explanation": "うっ血乳頭は、頭蓋内圧亢進により視神経乳頭が腫脹する所見です。脳腫瘍、脳出血、水頭症などで認められます。",
+      "choiceExplanations": {
+        "ア": "舌癌は口腔内の悪性腫瘍で、視神経乳頭の変化は直接起こしません。",
+        "イ": "貧血では眼底に出血や網膜の蒼白が見られることがありますが、うっ血乳頭の原因ではありません。",
+        "ウ": "門脈圧亢進は食道静脈瘤や腹水の原因となり、視神経乳頭の腫脹とは関係しません。",
+        "エ": "頭蓋内圧亢進は視神経鞘を介して乳頭の腫脹を起こします。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=16",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問33（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q34",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 34,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "シリンジポンプを使用する際に生じるサイフォニング現象の原因はどれか。",
+      "choices": {
+        "ア": "内蔵バッテリーの残量が少ない。",
+        "イ": "輸液ラインに血液の逆流がある。",
+        "ウ": "輸液ラインに大量の空気がある。",
+        "エ": "刺入部とシリンジに高低差がある。"
+      },
+      "answer": "エ",
+      "explanation": "サイフォニング現象は、シリンジポンプが刺入部より高い位置にあるとき、落差で薬液が意図せず流れ込む現象です。ポンプは患者の心臓の高さにそろえて設置します。",
+      "choiceExplanations": {
+        "ア": "バッテリー残量の低下は、作動停止や警報の原因になりますが、サイフォニングとは関係ありません。",
+        "イ": "血液の逆流は閉塞や圧の変化に関わる事象で、サイフォニングの原因ではありません。",
+        "ウ": "ライン内の空気は空気塞栓や流量異常に関わる問題で、サイフォニングの原因ではありません。",
+        "エ": "刺入部とシリンジの高低差により、落差で薬液が流れ込みます。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=16",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問34（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q36",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 36,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "人工肛門周囲の皮膚を清潔にする方法で適切なのはどれか。",
+      "choices": {
+        "ア": "装具を外して洗浄する。",
+        "イ": "石けんは使用しない。",
+        "ウ": "洗浄後に消毒をする。",
+        "エ": "洗浄後はドライヤーで乾燥させる。"
+      },
+      "answer": "ア",
+      "explanation": "人工肛門周囲の皮膚は、装具を外して微温湯と泡立てた弱酸性石けんで洗浄し、水分を押さえ拭きします。消毒は皮膚障害の原因となるため行いません。",
+      "choiceExplanations": {
+        "ア": "装具を外して皮膚を直接洗浄し、排泄物や粘着剤を取り除きます。これが正解です。",
+        "イ": "石けんを使わないと皮脂や粘着剤が落ちにくいため、弱酸性石けんを泡立てて洗います。",
+        "ウ": "通常は消毒を行いません。消毒は皮膚を刺激して障害や装具の密着不良を招きます。",
+        "エ": "ドライヤーの熱風は皮膚の乾燥や熱傷の原因となります。ガーゼで押さえ拭きし、自然乾燥させます。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=16",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問36（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q37",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 37,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "半座位で頸静脈怒張がみられるのはどれか。",
+      "choices": {
+        "ア": "右心不全\nright heart failure",
+        "イ": "広範囲熱傷\nextensive burns",
+        "ウ": "大動脈瘤破裂\nruptured aortic aneurysm",
+        "エ": "アナフィラキシーショック\nanaphylactic shock"
+      },
+      "answer": "ア",
+      "explanation": "頸静脈怒張は、右心系のうっ血や中心静脈圧の上昇で見られます。右心不全では右房圧が上昇するため、半座位でも頸静脈が怒張します。",
+      "choiceExplanations": {
+        "ア": "右心不全では静脈還流がうっ滞して中心静脈圧が上昇し、頸静脈怒張が見られます。これが正解です。",
+        "イ": "広範囲熱傷では血漿成分の喪失で循環血液量が減少し、頸静脈は虚脱しやすくなります。",
+        "ウ": "大動脈瘤破裂は大量出血による循環血液量減少性ショックで、頸静脈は怒張しません。",
+        "エ": "アナフィラキシーショックは血管拡張による分布異常性ショックで、頸静脈は虚脱傾向となります。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問37（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q44",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 44,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "地域包括ケアシステムの構成要素はどれか。",
+      "choices": {
+        "ア": "交\n通",
+        "イ": "雇\n用",
+        "ウ": "情\n報",
+        "エ": "住まい"
+      },
+      "answer": "エ",
+      "explanation": "地域包括ケアシステムの構成要素は、医療、介護、介護予防、住まい、生活支援です。選択肢の中では住まいが該当します。",
+      "choiceExplanations": {
+        "ア": "交通は地域づくりに関連しますが、地域包括ケアシステムの構成要素としては挙げられません。",
+        "イ": "雇用は地域の福祉施策に関連しますが、構成要素ではありません。",
+        "ウ": "情報は支援に必要ですが、構成要素として定められてはいません。",
+        "エ": "住まいは構成要素の一つで、高齢者が安心して暮らす基盤です。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=19",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問44（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q46",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 46,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "高次脳機能障害のある患者が買い物に行った際に示す行動で失行はどれか。",
+      "choices": {
+        "ア": "何を買いに来たのか忘れる。",
+        "イ": "買い物かごの使い方が分からない。",
+        "ウ": "献立に合わせた買い物ができない。",
+        "エ": "スーパーと自宅の往復で道に迷う。"
+      },
+      "answer": "イ",
+      "explanation": "失行は、運動麻痺や理解障害がないのに、目的に合った行為や道具の使用ができなくなる状態です。買い物かごの使い方が分からない行動が該当します。",
+      "choiceExplanations": {
+        "ア": "買う物を忘れるのは記憶障害の症状で、失行ではありません。",
+        "イ": "道具の使い方が分からなくなるのは、観念性失行などの失行の症状です。これが正解です。",
+        "ウ": "献立に合わせた買い物ができないのは、計画立案や段取りの障害で、遂行機能障害にあたります。",
+        "エ": "慣れた場所で道に迷うのは、地誌的見当識障害（視空間認知の障害）で、失行ではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=19",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問46（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q27",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 27,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（15歳、男子）は、蒸し暑い夏の午後に行われたサッカーの試合に出ていた。\nA 君は試合中に大量の汗をかいて、気分が悪くなったので多量の水道水を飲み、\n日陰で休んでいたが、突然、意識消失して倒れた。このときのA 君の細胞外液の\nナトリウムイオン濃度と水分量の正常時に対する割合を図に示す。\nこのときのA 君の体液の状態で正しいのはどれか。",
+      "choices": {
+        "ア": "細胞内液は減少している。",
+        "イ": "血漿浸透圧は上昇している。",
+        "ウ": "循環血液量は減少している。",
+        "エ": "ヘマトクリットは低下している。"
+      },
+      "answer": "ウ",
+      "explanation": "大量の発汗後に水道水を多量に飲んでおり、図ではNa濃度が低下し水分量も減少している低張性脱水の状態と読み取れます。細胞外液が減少するため循環血液量は減少し、循環不全で意識消失が起こりやすくなります。",
+      "choiceExplanations": {
+        "ア": "細胞外液が低浸透圧になると水が細胞内へ移動し、細胞内液はむしろ増加します。減少とする記述は誤りです。",
+        "イ": "Na濃度が低下しているため血漿浸透圧は低下しています。上昇は高張性脱水の所見であり、誤りです。",
+        "ウ": "細胞外液量の減少に伴い血漿量も減り、循環血液量は減少しています。これが正解です。",
+        "エ": "血漿量の減少で血液が濃縮されるため、ヘマトクリットは上昇する方向になります。低下は誤りです。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=14",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問27（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q28",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 28,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "ヘリコバクター・ピロリ感染症\nHelicobacter pylori infection\nで正しいのはどれか。",
+      "choices": {
+        "ア": "尿素呼気検査は診断に有用である。",
+        "イ": "除菌後の判定は除菌終了後の翌日に行う。",
+        "ウ": "ヘリコバクター・ピロリ〈Helicobacter pylori〉は胃の粘膜下層に生息する。",
+        "エ": "ヘリコバクター・ピロリ〈Helicobacter pylori〉は尿素を作り出して胃酸から\n身を守る。"
+      },
+      "answer": "ア",
+      "explanation": "ピロリ感染の診断には尿素呼気試験、便中抗原、血清抗体などがあります。ピロリ菌はウレアーゼで尿素をアンモニアに分解し、胃酸を中和して胃粘液層に生息します。",
+      "choiceExplanations": {
+        "ア": "尿素呼気検査は13C標識尿素を服用し、呼気中の13CO2を測定する非侵襲的な検査で、診断と除菌判定に有用です。これが正解です。",
+        "イ": "除菌後の判定は、薬剤の影響を避けるため除菌終了から少なくとも4週間以上あけて行います。翌日では誤りです。",
+        "ウ": "ピロリ菌は胃上皮表面の粘液層に生息し、粘膜下層には侵入しません。",
+        "エ": "ピロリ菌は尿素を作るのではなく、ウレアーゼで尿素を分解してアンモニアを産生し、胃酸を中和します。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=14",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問28（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q29",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 29,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "高齢者虐待の防止、高齢者の養護者に対する支援等に関する法律〈高齢者虐待防\n止法〉で保護された高齢者が入所する社会福祉施設はどれか。",
+      "choices": {
+        "ア": "軽費老人ホーム",
+        "イ": "有料老人ホーム",
+        "ウ": "特別養護老人ホーム",
+        "エ": "サービス付き高齢者向け住宅"
+      },
+      "answer": "ウ",
+      "explanation": "高齢者虐待防止法に基づき、養護者から虐待を受けた高齢者は、市町村がやむを得ない事由による措置として老人福祉法上の施設などへ入所させることがあります。選択肢のうち、この措置の入所先として該当するのは特別養護老人ホームです。",
+      "choiceExplanations": {
+        "ア": "軽費老人ホームは低額で入所できる老人福祉法上の施設ですが、本問で想定される保護先としては選択されません。",
+        "イ": "有料老人ホームは民間事業者が運営する契約型の施設で、社会福祉施設ではありません。",
+        "ウ": "特別養護老人ホームは、やむを得ない事由による措置の入所先になり得る社会福祉施設です。これが正解です。",
+        "エ": "サービス付き高齢者向け住宅は住宅施策上の賃貸住宅で、社会福祉施設ではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問29（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q30",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 30,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "難病の患者に対する医療等に関する法律〈難病法〉に規定されているのはどれか。",
+      "choices": {
+        "ア": "市町村が難病相談支援センターを設置する。",
+        "イ": "指定難病の医療費は全額を公費で負担する。",
+        "ウ": "令和4年度（2022年度）の指定難病数は56 疾病である。",
+        "エ": "特定医療費（指定難病）の支給認定は居住地の都道府県・指定都市が行う。"
+      },
+      "answer": "エ",
+      "explanation": "難病法では、特定医療費（指定難病）の支給認定は申請者の居住地の都道府県・指定都市が行います。医療費は全額公費ではなく、自己負担割合と月額上限があります。",
+      "choiceExplanations": {
+        "ア": "難病相談支援センターは、市町村ではなく都道府県が設置する機関です。",
+        "イ": "指定難病の医療費は全額公費ではなく、自己負担割合（原則2割）と所得に応じた月額上限が設けられています。",
+        "ウ": "指定難病数は令和4年度時点で300を超えており、56疾病ではありません。56は過去の特定疾患の数と混同しやすい数字です。",
+        "エ": "支給認定は居住地の都道府県・指定都市が行います。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問30（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q35",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 35,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "嚥下障害を評価する改訂水飲みテストで正しいのはどれか。",
+      "choices": {
+        "ア": "嚥下後10 秒間で評価する。",
+        "イ": "嚥下後の呼吸状態を評価する。",
+        "ウ": "嚥下動作の準備期を評価する。",
+        "エ": "80 mL の水で嚥下状態を評価する。"
+      },
+      "answer": "イ",
+      "explanation": "改訂水飲みテストは、冷水を少量口に含ませて嚥下してもらい、嚥下後のむせや呼吸の変化、湿性嗄声などを評価します。主に口腔期から咽頭期の障害を評価するものです。",
+      "choiceExplanations": {
+        "ア": "嚥下後に評価する時間の規定は10秒ではなく、実際の判定は嚥下の有無、むせ、呼吸状態、声の変化などで行います。",
+        "イ": "嚥下後の呼吸状態の変化は評価項目に含まれます。これが正解です。",
+        "ウ": "準備期（咀嚼）は水を用いるテストでは評価しにくく、主な対象は嚥下反射の誘発や咽頭の状態です。",
+        "エ": "水の量は3mLと少量で行います。80mLを飲んで評価するのは別の検査で、これは誤りです。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=16",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問35（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q38",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 38,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "経口薬と飲料の関係で正しいのはどれか。",
+      "choices": {
+        "ア": "テトラサイクリン系抗菌薬は、牛乳によって作用が減弱される。",
+        "イ": "非ステロイド性抗炎症薬は、炭酸飲料によって吸収速度が速まる。",
+        "ウ": "テオフィリンは、カフェインを含む飲料によって作用が減弱される。",
+        "エ": "カルシウム拮抗薬は、グレープフルーツジュースによって作用が減弱され\nる。"
+      },
+      "answer": "ア",
+      "explanation": "テトラサイクリン系抗菌薬は、牛乳に含まれるカルシウムとキレートを形成して吸収が低下し、作用が減弱します。他の選択肢は相互作用の方向や内容が異なります。",
+      "choiceExplanations": {
+        "ア": "牛乳のカルシウムと結合して吸収が低下し、作用が減弱します。これが正解です。",
+        "イ": "炭酸飲料でNSAIDsの吸収速度が速まるという一般的な知見は乏しく、誤りです。",
+        "ウ": "テオフィリンとカフェインは中枢刺激などが相加的に強まり、副作用が増強するおそれがあります。減弱ではありません。",
+        "エ": "グレープフルーツジュースはCYP3A4を阻害し、カルシウム拮抗薬の血中濃度を上げて作用を増強します。減弱ではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問38（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q39",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 39,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Holter〈ホルター〉心電図検査の説明で正しいのはどれか。",
+      "choices": {
+        "ア": "就寝時は電極を外す。",
+        "イ": "電極は四肢に装着する。",
+        "ウ": "検査中は電気カーペットを使用しない。",
+        "エ": "検査中は普段の生活よりも活動量を減らす。"
+      },
+      "answer": "ウ",
+      "explanation": "Holter心電図は日常生活下で24時間程度の心電図を連続記録する検査です。電極は胸部に装着し、通常の生活を送りながら行動を記録します。電気的雑音を避ける注意が必要です。",
+      "choiceExplanations": {
+        "ア": "就寝中も記録を続けるため、電極は外しません。夜間の不整脈を捉える目的もあります。",
+        "イ": "電極は主に胸部に装着します。四肢に付ける方法は一般的ではありません。",
+        "ウ": "電気カーペットなどはノイズの原因になるため、検査中は使用を避けます。これが正解です。",
+        "エ": "普段の生活で生じる不整脈や症状を記録するため、活動量を減らす必要はなく、通常通り過ごします。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問39（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q40",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 40,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "訪問看護事業所について正しいのはどれか。",
+      "choices": {
+        "ア": "24 時間対応が義務付けられている。",
+        "イ": "自宅以外への訪問看護は認められない。",
+        "ウ": "特定非営利活動法人〈NPO〉は事業所を開設できる。",
+        "エ": "従事する看護師は臨床経験5年以上と定められている。"
+      },
+      "answer": "ウ",
+      "explanation": "訪問看護事業所は、法人格を持つ事業者であれば開設でき、特定非営利活動法人も開設できます。24時間対応は義務ではなく、体制を整える場合の加算で評価されます。",
+      "choiceExplanations": {
+        "ア": "24時間対応は事業所の義務ではなく、24時間対応体制加算などの算定要件です。",
+        "イ": "自宅だけでなく、居住系施設などへの訪問看護も条件を満たせば認められます。",
+        "ウ": "NPO法人を含む法人は訪問看護事業所を開設できます。これが正解です。",
+        "エ": "従事する看護師に5年以上の臨床経験という規定はありません。管理者の資格要件と混同しないよう注意が必要です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問40（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q41",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 41,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "糖尿病の在\ndiabetes mellitus宅療養者に行うフットケアの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "｢素足で過ごしましょう｣",
+        "イ": "｢足の皮膚を保湿してください｣",
+        "ウ": "｢足浴には42 ℃のお湯を使ってください｣",
+        "エ": "｢爪は指の先端よりも短く切ってください｣"
+      },
+      "answer": "イ",
+      "explanation": "糖尿病では神経障害や血流障害で足病変を起こしやすいため、足の保湿、清潔、観察、爪の適切な手入れなどのフットケアが重要です。",
+      "choiceExplanations": {
+        "ア": "素足は外傷や感染のリスクが高く、靴下や適切な靴で保護するよう指導します。",
+        "イ": "皮膚の乾燥は亀裂や感染のもとになるため、保湿を勧めます。これが正解です。",
+        "ウ": "神経障害で温度感覚が鈍いため、足浴は37〜40℃程度のぬるめにします。42℃は熱傷の危険があります。",
+        "エ": "爪を短く切りすぎると、巻き爪や皮膚損傷の原因になります。指先と同じ程度の長さで、スクエアオフに整えます。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問41（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q42",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 42,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "胃瘻からの経管栄養を行う在宅療養者の家族に説明する内容で正しいのはどれ\nか。",
+      "choices": {
+        "ア": "流動（ミキサー）食は注入できる。",
+        "イ": "注入前に胃瘻の瘻孔部を消毒する。",
+        "ウ": "胃瘻カテーテルは週に1回交換する。",
+        "エ": "注入中は体位を15 度のFowler〈ファウラー〉位にする。"
+      },
+      "answer": "ア",
+      "explanation": "胃瘻の経管栄養では、カテーテルの太さや種類によって、ミキサー食や半固形化栄養剤も注入できます。ただし詰まりを防ぐ工夫が必要です。",
+      "choiceExplanations": {
+        "ア": "胃瘻は太いカテーテルのため、流動（ミキサー）食を注入できます。これが正解です。",
+        "イ": "瘻孔部の消毒は通常不要で、清潔にするには洗浄を行い、水分をよく拭き取ります。",
+        "ウ": "交換は週1回ではなく、バルーン型で1〜2か月に1回、バンパー型で4〜6か月に1回が目安です。",
+        "エ": "注入中は逆流や誤嚥を避けるため、30度以上の角度、できれば座位に近い姿勢にします。15度では低すぎます。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問42（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q43",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 43,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aちゃん（1歳7か月、女児）は先天性水頭症のため脳室―腹腔〈V-P〉シャント造\n設術を受けて退院した。A ちゃんは歩行障害があり、母親が1人で育てている。\n退院後、訪問看護師が訪問すると、A ちゃんの母親は｢子どもが泣くとイライラし\nます。この先A を育てていく自信がなく、経済的にも生活していけるか不安です｣\nと話した。\nこのとき、訪問看護師が母親に勧める相談先で最も適切なのはどれか。",
+      "choices": {
+        "ア": "居住地の社会福祉協議会",
+        "イ": "居住地の保健センター",
+        "ウ": "障害児の子育てグループ",
+        "エ": "入院していた病院の医療相談室"
+      },
+      "answer": "イ",
+      "explanation": "育児不安やイライラ、経済的不安がある場面では、乳幼児の健診や育児相談を担い、保健師が関わる市町村の保健センターが身近な総合的相談先として最適です。",
+      "choiceExplanations": {
+        "ア": "社会福祉協議会は福祉サービスや貸付などの相談先ですが、育児不安と支援全体を調整する窓口としては最適ではありません。",
+        "イ": "保健センターでは保健師が育児・健康相談を行い、必要な福祉制度や支援につなぎます。これが正解です。",
+        "ウ": "障害児の子育てグループは情報交換や心の支えになりますが、経済的不安を含めた総合的な相談には不十分です。",
+        "エ": "入院先の医療相談室は医療ソーシャルワーカーが対応しますが、退院後の地域での育児支援は居住地の窓口が適切です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問43（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q45",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 45,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "成人の心肺蘇生法における圧迫部位を図に示す。\n正しいのはどれか。",
+      "choices": {
+        "ア": "①",
+        "イ": "②",
+        "ウ": "③",
+        "エ": "④"
+      },
+      "answer": "エ",
+      "explanation": "成人の胸骨圧迫は、胸骨の下半分（胸の真ん中）に手掌基部を置いて行います。図では④が胸骨の中央に位置する点です。",
+      "choiceExplanations": {
+        "ア": "①は図で左上に示された位置で、胸骨の圧迫位置ではありません。",
+        "イ": "②は図で右胸部に示された位置で、圧迫部位として適切ではありません。",
+        "ウ": "③は図で胸骨のさらに下側に示された位置です。剣状突起に近い低い位置は避けるべき部位と考えられます。",
+        "エ": "④は胸骨中央にあたる適切な圧迫位置です。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=19",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問45（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q47",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 47,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "乳房温存療法で放射線治療を受ける乳癌患者へ\nbreast cancer\nの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "｢頭髪の脱毛が生じます｣",
+        "イ": "｢嚥下障害が予測されます｣",
+        "ウ": "｢皮膚にマーキングを行います｣",
+        "エ": "｢同居家族への被曝に注意してください｣"
+      },
+      "answer": "ウ",
+      "explanation": "乳房温存療法の放射線治療は外部照射が中心で、照射範囲を正確に合わせるため皮膚にマーキングを行います。有害事象は照射部位に限られ、家族への被曝の心配はありません。",
+      "choiceExplanations": {
+        "ア": "頭髪の脱毛は化学療法で見られる有害事象で、乳房への照射では頭部が照射範囲外なので起こりません。",
+        "イ": "嚥下障害は頭頸部や食道への照射で起こる症状で、乳房照射では通常予測されません。",
+        "ウ": "照射位置を毎回再現するため、皮膚にマーキングを行います。これが正解です。",
+        "エ": "外部照射では体内に放射線源が残らないため、家族への被曝の心配はありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=20",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問47（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q48",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 48,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "臨死期にある患者に出現する呼吸の変化で正しいのはどれか。",
+      "choices": {
+        "ア": "過呼吸",
+        "イ": "奇異呼吸",
+        "ウ": "Kussmaul〈クスマウル〉呼吸",
+        "エ": "Cheyne-Stokes〈チェーン-ストークス〉呼吸"
+      },
+      "answer": "エ",
+      "explanation": "臨死期には呼吸中枢の機能低下により、無呼吸と深い呼吸が周期的に繰り返されるCheyne-Stokes呼吸が出現します。",
+      "choiceExplanations": {
+        "ア": "過呼吸は不安などで見られる呼吸の変化で、臨死期に特徴的な呼吸ではありません。",
+        "イ": "奇異呼吸は胸郭損傷などで吸気時に胸壁が陥凹する状態で、臨死期に特徴的な変化ではありません。",
+        "ウ": "Kussmaul呼吸は糖尿病ケトアシドーシスなど代謝性アシドーシスで見られる深く大きな呼吸です。",
+        "エ": "Cheyne-Stokes呼吸は臨死期にしばしば出現する周期的な呼吸です。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=20",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問48（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q49",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 49,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "超音波ガイド下で肝生検を受ける成人への説明で正しいのはどれか。",
+      "choices": {
+        "ア": "｢検査前の絶食は不要です｣",
+        "イ": "｢検査はうつぶせで実施します｣",
+        "ウ": "｢検査中は指示に合わせて息を止めてください｣",
+        "エ": "｢検査後すぐに歩行できます｣"
+      },
+      "answer": "ウ",
+      "explanation": "超音波ガイド下肝生検では、穿刺時に肝臓の位置を安定させるため、指示に合わせて息を止めます。検査前の絶食と検査後の安静も必要です。",
+      "choiceExplanations": {
+        "ア": "出血や嘔吐などのリスクに備え、検査前は絶食とするのが一般的です。不要とする説明は誤りです。",
+        "イ": "体位は仰臥位または左側臥位で、右腕を挙上して肋間を広げます。うつぶせでは行いません。",
+        "ウ": "穿刺時に呼吸による肝臓の動きを止めるため、指示に合わせて息を止めます。これが正解です。",
+        "エ": "検査後は出血の観察のため、数時間の安静が必要です。すぐ歩行はできません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=20",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問49（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q50",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 50,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（42歳、男性）は、同僚との飲酒中に上腹部から背部の激しい痛みと嘔吐\nがあり、救急搬送された。搬送時の心電図には異常を認めない。\nA さんの状態をアセスメントするための血液検査項目で優先度が高いのはどれ\nか。",
+      "choices": {
+        "ア": "アルブミン",
+        "イ": "トロポニン",
+        "ウ": "中性脂肪",
+        "エ": "リパーゼ"
+      },
+      "answer": "エ",
+      "explanation": "飲酒を契機とする上腹部から背部の激痛と嘔吐は急性膵炎を疑う所見です。心電図に異常がなく、膵酵素であるリパーゼの測定が優先されます。",
+      "choiceExplanations": {
+        "ア": "アルブミンは栄養状態や肝機能の指標で、急性膵炎の診断にはあまり役立たないため優先度は高くありません。",
+        "イ": "トロポニンは心筋障害の指標ですが、心電図に異常がなく症状や経過が膵炎に合うため、優先度は高くありません。",
+        "ウ": "中性脂肪は膵炎の原因として関わる場合がありますが、診断の優先度は膵酵素より低くなります。",
+        "エ": "リパーゼは膵炎の診断に有用な膵酵素です。これが正解です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=21",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問50（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    }
+  ]
+}

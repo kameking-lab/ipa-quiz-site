@@ -58,8 +58,13 @@ export function buildOpenApiSpec(baseUrl: string) {
         NumericAnswer: {
           type: "object",
           required: ["format", "unit"],
+          oneOf: [
+            { properties: { format: { enum: ["integer"] } } },
+            { properties: { format: { enum: ["decimal"] } }, required: ["precision"] },
+          ],
           properties: {
-            format: { type: "string", enum: ["integer"] },
+            format: { type: "string", enum: ["integer", "decimal"] },
+            precision: { type: "integer", enum: [1], description: "小数記入の場合は必須。小数第1位まで。整数記入では省略。" },
             unit: { type: "string", minLength: 1, example: "滴/分" },
           },
         },

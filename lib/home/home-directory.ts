@@ -1,3 +1,4 @@
+import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
 import "server-only";
 
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
@@ -145,7 +146,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "hoikushi", name: "保育士試験", sub: "筆記9科目（令和8年度前期・154問）", domain: "welfare" },
   { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
-  { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 労基安衛 択一の一部16問収録", domain: "welfare" },
+  { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前 問1〜75のうち149原問収録", domain: "welfare" },
 ];
 
@@ -156,9 +157,9 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
     href: `/${def.code}`,
     name: def.name,
     sub: def.sub,
-    questionCount: examQuestionCount(def.code) + practical,
+    questionCount: examQuestionCount(def.code) + practical + (def.code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0),
     periodLabel: `${examPeriodCount(def.code)}期分`,
-    extra: practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
+    extra: def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
   };
 }
 

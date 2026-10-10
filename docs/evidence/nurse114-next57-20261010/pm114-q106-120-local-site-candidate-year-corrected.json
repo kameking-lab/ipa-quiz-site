@@ -1,0 +1,822 @@
+{
+  "scope": "MHLW 114th nursing afternoon Q106-120 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "745b3840ff54e986dc4c498891b87a6a55176f755a1692446b1ea853adbcf915",
+  "draftSha256": "38950a6c76ea36249967529bfaa036497bdd5ace3581122d106e90f2dc32b664",
+  "readyQuestionCount": 12,
+  "heldQuestionCount": 3,
+  "readyChoiceCount": 49,
+  "heldChoiceCount": 13,
+  "reviewStatuses": [
+    {
+      "question": 106,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 107,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "実臨床では尿流出後にカテーテルを少し進める指導もあり、手技の細部は施設の指導に差がある。公式正答は3として扱った。"
+      ]
+    },
+    {
+      "question": 108,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 109,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 110,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 111,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 112,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 113,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "離脱症状の出現時期は薬剤の半減期や使用量で変わるため、個別の症例では異なる場合がある。"
+      ]
+    },
+    {
+      "question": 114,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 115,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 116,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 117,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "介護保険と障害福祉サービスの区分は第114回当時の制度に基づく。"
+      ],
+      "targetedReviewReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q117-targeted-review.json"
+    },
+    {
+      "question": 118,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 119,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 120,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "播種性の判断は医師の診察を要する。看護師の視診は感染対策の優先度を決める目的である。"
+      ]
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q106",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 106,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（5歳6か月、男児）は、二分脊椎のため、繰り返し使用できるカテーテルに\nよる間欠的自己導尿を両親が実施している。現在、間欠的自己導尿は、保育所での実\n施を含めて1日6回行うよう医師が指示しており、自宅では両親が導尿している。A\n君は下肢の運動機能障害があるが、自分で車椅子からトイレに移動でき、指先の微細\nな動きもできる。\n外来受診の際に母親から｢地元の小学校に入学予定です。小学生になったら自分で\n導尿できたほうが良いと聞きました。A も間欠的自己導尿をやってみたい、と言っ\nています。どのように進めたらよいか分からず、焦っています｣と看護師に相談が\nあった。\n\n母親への説明で、最も適切なのはどれか。",
+      "choices": {
+        "ア": "｢手順の中で、A 君ができることを段階的に行いましょう｣",
+        "イ": "｢手技の失敗を繰り返すことが、A 君の自信につながります｣",
+        "ウ": "｢入学までに、A 君が自分で最後までできるようにしましょう｣",
+        "エ": "｢最初のステップは、A 君がカテーテルの挿入を自分でできることです｣"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "5歳6か月で手指の巧緻性と移乗能力があり、自己導尿への意欲もある。手順を分け、できる部分から段階的に任せて成功体験を積み、自立を支える。焦る母親には見通しを示す説明が適切である。",
+      "choiceExplanations": {
+        "ア": "適切。手順を分解し、できる部分から段階的に練習することで成功体験を重ね、発達に合わせて自立へつなげられる。",
+        "イ": "不適切。失敗の繰り返しは自信低下や意欲喪失につながる。失敗を避けて成功を重ねる支援が望ましい。",
+        "ウ": "不適切。入学までに完全自立という期限の設定は子どもと母親の負担になる。個々の習得状況に合わせて進める。",
+        "エ": "不適切。カテーテル挿入は最も難度が高く、最初に求める段階ではない。習得しやすい準備や片付けなどから始める。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=46",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問106（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=46"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q108",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 108,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（5歳6か月、男児）は、二分脊椎のため、繰り返し使用できるカテーテルに\nよる間欠的自己導尿を両親が実施している。現在、間欠的自己導尿は、保育所での実\n施を含めて1日6回行うよう医師が指示しており、自宅では両親が導尿している。A\n君は下肢の運動機能障害があるが、自分で車椅子からトイレに移動でき、指先の微細\nな動きもできる。\n外来受診の際に母親から｢地元の小学校に入学予定です。小学生になったら自分で\n導尿できたほうが良いと聞きました。A も間欠的自己導尿をやってみたい、と言っ\nています。どのように進めたらよいか分からず、焦っています｣と看護師に相談が\nあった。\n\n11 歳になったA 君は間欠的自己導尿を自分で実施している。本日の定期受診時\nの尿検査で、尿蛋白＋、赤血球（−）、白血球2＋、尿の混濁＋の所見がみられた。\n受診に付き添った父親から｢最近、A は親の言うことを聞かないし、あまり口を\nきいてくれません。家では自立して間欠的自己導尿を行っていますが、学校でも\nやっているのか心配です｣と発言があった。A 君の水分摂取や運動の状況は以前と\n変わらない。\n外来看護師の対応で最も適切なのはどれか。",
+      "choices": {
+        "ア": "導尿の必要性をA 君に説明する。",
+        "イ": "学校での導尿の状況についてA 君と話す。",
+        "ウ": "父親に、親が学校に行って導尿を実施するよう伝える。",
+        "エ": "導尿の手順が書かれた表を渡し、できたところにA 君にシールを貼っても\nらう。"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "11歳で尿混濁と白血球増加があり尿路感染が疑われるが、水分摂取や運動に変化はない。思春期に入って反抗や無口がみられ、学校での導尿が実施できていない可能性がある。まず本人と学校での状況を話し合い、理由を把握する。",
+      "choiceExplanations": {
+        "ア": "不適切。必要性は既に理解している可能性が高く、実施できない理由を確かめる前の一方的な説明は有効でない。",
+        "イ": "正解。学校での実施状況や困りごと(場所、羞恥心、友人の目)を本人と話し、尿路感染の背景を把握する。",
+        "ウ": "不適切。親が学校で実施すれば自立を妨げ、思春期の自尊心も傷つける。学校との環境調整で対応する。",
+        "エ": "不適切。手順表とシールは幼児向けの方法で、11歳には不適切である。原因の把握もできない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=47",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問108（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=46"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q109",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 109,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（30歳、初産婦）は妊娠39週3日で陣痛発来した。その後、陣痛が増強して\n順調な分娩進行と診断され、入院後に分娩した。\nA さんの分娩経過を以下に示す。\n2 時00 分\n陣痛周期10 分\n5 時30 分\n入院\n15 時00 分\n分娩室入室\n15 時30 分\n子宮口全開大\n15 時40 分\n自然破水\n16 時20 分\n児娩出\n16 時30 分\n胎盤娩出\n18 時30 分\n帰室\n\nA さんの分娩所要時間はどれか。",
+      "choices": {
+        "ア": "13 時間00 分",
+        "イ": "14 時間20 分",
+        "ウ": "14 時間30 分",
+        "エ": "16 時間30 分"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "分娩所要時間は規則的な陣痛(10分周期)の開始から胎盤娩出までである。2時00分から16時30分までで14時間30分となる。",
+      "choiceExplanations": {
+        "ア": "不適切。13時間00分は入院(5時30分)から帰室(18時30分)までの時間で、分娩所要時間の定義と異なる。",
+        "イ": "不適切。14時間20分は陣痛開始から児娩出(16時20分)までで、胎盤娩出まで含めていない。",
+        "ウ": "正解。陣痛周期10分(2時00分)から胎盤娩出(16時30分)までで14時間30分となる。",
+        "エ": "不適切。16時間30分は陣痛開始から帰室(18時30分)までで、分娩第4期の観察時間を含んでいる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=48",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問109（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=48"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q110",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 110,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（30歳、初産婦）は妊娠39週3日で陣痛発来した。その後、陣痛が増強して\n順調な分娩進行と診断され、入院後に分娩した。\nA さんの分娩経過を以下に示す。\n2 時00 分\n陣痛周期10 分\n5 時30 分\n入院\n15 時00 分\n分娩室入室\n15 時30 分\n子宮口全開大\n15 時40 分\n自然破水\n16 時20 分\n児娩出\n16 時30 分\n胎盤娩出\n18 時30 分\n帰室\n\n分娩直後の出血量は300 mL であった。分娩後1時間の出血量20 mL、子宮底は\n臍下2横指で硬度良好、脈拍75/分、血圧100/74 mmHg であった。分娩後2時間\nの出血は20 mL、子宮底は臍下1横指で硬度良好。脈拍75/分、血圧126/56\nmmHg であった。児への早期授乳後に下腹部の痛みを訴えている。尿意があり少\n量の排尿があった。\nA さんのアセスメントで適切なのはどれか。",
+      "choices": {
+        "ア": "尿閉である。",
+        "イ": "下腹部痛は異常である。",
+        "ウ": "子宮復古が良好である。",
+        "エ": "分娩時異常出血である。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "分娩後2時間で出血は計約340mL、子宮底は臍下1横指で硬度良好、バイタルも安定しており、子宮復古は良好である。授乳による下腹部痛は後陣痛と考えられる。",
+      "choiceExplanations": {
+        "ア": "不適切。少量でも排尿があり、尿閉とは判断できない。膀胱充満は子宮復古を妨げるため、排尿状況の観察は継続する。",
+        "イ": "不適切。早期授乳でオキシトシンが分泌され子宮収縮が起こるため、授乳時の下腹部痛は後陣痛として生理的に起こりうる。",
+        "ウ": "正解。子宮底は下降し硬度良好、出血も少なく、バイタルも安定していて子宮復古は良好と判断できる。",
+        "エ": "不適切。分娩時異常出血は500mL以上とされる。本例は約340mLで基準を下回る。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=49",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問110（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=48"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q111",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 111,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（30歳、初産婦）は妊娠39週3日で陣痛発来した。その後、陣痛が増強して\n順調な分娩進行と診断され、入院後に分娩した。\nA さんの分娩経過を以下に示す。\n2 時00 分\n陣痛周期10 分\n5 時30 分\n入院\n15 時00 分\n分娩室入室\n15 時30 分\n子宮口全開大\n15 時40 分\n自然破水\n16 時20 分\n児娩出\n16 時30 分\n胎盤娩出\n18 時30 分\n帰室\n\n児は出生2時間後、寝衣を着用しコットに収容された。児のバイタルサインは、\n体温（腋窩温）36.4 ℃、呼吸数40/分、心拍数120/分であった。また末梢の冷感は\nあるが、チアノーゼは認めなかった。排尿、排便はない。児の頰を軽く突くと刺激\nの方向を向き、口を開ける動作がみられる。また、腋窩と鼠径部に胎脂が付着して\nいる。\nこのときに必要なケアはどれか。",
+      "choices": {
+        "ア": "掛け物を温めたものに交換する。",
+        "イ": "口腔内吸引をする。",
+        "ウ": "肛門刺激をする。",
+        "エ": "沐浴をする。"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "出生2時間後の新生児で、体温は正常下限に近く末梢冷感がある。チアノーゼはなく、哺乳準備行動(探索反射)がみられる。体温低下を防ぐため保温を優先する。",
+      "choiceExplanations": {
+        "ア": "正解。体温36.4℃で末梢冷感があるため、掛け物を温めたものに替えて保温し、低体温を予防する。",
+        "イ": "不適切。呼吸数40/分でチアノーゼもなく、呼吸状態は安定している。口腔内吸引は不要で、刺激になる。",
+        "ウ": "不適切。肛門刺激は排便確認や胎便排出の目的で行うものではなく、この時点で必要ない。排泄は経過観察する。",
+        "エ": "不適切。出生直後の沐浴は低体温を招く。体温が安定するまで沐浴は行わず、胎脂も保護作用があるため除去しない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=49",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問111（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=48"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q112",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 112,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（21歳、女性、大学生）は、1人で暮らしている。友人関係のトラブルでう\nつ状態になり、3か月前から精神科クリニックへの通院を開始した。頓用の抗不安薬\nを処方され不安が高まったときに服用していたが、徐々に酩酊や陶酔感を得るために\n服用するようになった。最近は指示された抗不安薬の量では酩酊や陶酔感が得られな\nくなってきたため、数日分の薬を溜めて一度に大量に服用するようになった。抗不安\n薬を大量に使用した翌日は大学を休むことが続いていた。\n\nA さんの現在の状態はどれか。",
+      "choices": {
+        "ア": "急性中毒の状態である。",
+        "イ": "拘禁反応が出現している。",
+        "ウ": "有害な使用〈乱用〉である。",
+        "エ": "フラッシュバックが出現している。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "処方外の目的で酩酊や陶酔を得るために服用し、量を増やして大学を休むなど社会的な支障も出ている。依存症候群の基準が確認できていない段階でも、有害な使用(乱用)に該当する。",
+      "choiceExplanations": {
+        "ア": "不適切。急性中毒は物質摂取直後の一過性の状態を指す。経過全体の使用パターンを問う本設問の状態とは異なる。",
+        "イ": "不適切。拘禁反応は拘禁など閉鎖環境でのストレスにより生じる心因反応で、本例に該当しない。",
+        "ウ": "正解。陶酔目的の服用で、健康や生活(欠席)に支障を来しており、有害な使用〈乱用〉と判断される。",
+        "エ": "不適切。フラッシュバックは過去の外傷体験や薬物体験の再体験で、本例にそのような記述はない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=50",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問112（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=50"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q114",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 114,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（21歳、女性、大学生）は、1人で暮らしている。友人関係のトラブルでう\nつ状態になり、3か月前から精神科クリニックへの通院を開始した。頓用の抗不安薬\nを処方され不安が高まったときに服用していたが、徐々に酩酊や陶酔感を得るために\n服用するようになった。最近は指示された抗不安薬の量では酩酊や陶酔感が得られな\nくなってきたため、数日分の薬を溜めて一度に大量に服用するようになった。抗不安\n薬を大量に使用した翌日は大学を休むことが続いていた。\n\n入院後5日、物質使用障害〈依存症〉の診断を受け、治療によって状態が安定した\nA さんは退院の準備をすることになった。A さんは1人暮らしを続けながら復学\nを希望している。\nA さんに利用を勧める社会資源はどれか。",
+      "choices": {
+        "ア": "行動援護",
+        "イ": "同行援護",
+        "ウ": "セルフヘルプグループ",
+        "エ": "共同生活援助〈グループホーム〉"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "物質使用障害のある人が1人暮らしを続けながら復学する場合、同じ経験を持つ仲間との相互支援が回復と断薬の継続に有効である。セルフヘルプグループの利用が勧められる。",
+      "choiceExplanations": {
+        "ア": "不適切。行動援護は知的・精神障害により行動上著しい困難がある人の外出時の支援で、Aさんには該当しない。",
+        "イ": "不適切。同行援護は視覚障害のある人の外出時の情報提供や移動支援である。Aさんには必要ない。",
+        "ウ": "正解。NAなどのセルフヘルプグループは、仲間との体験共有で回復と再使用予防を支える。",
+        "エ": "不適切。共同生活援助は共同生活が必要な人向けの住まいの場であり、1人暮らし継続を希望するAさんには合わない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=51",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問114（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=50"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q115",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 115,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（65歳、女性）は、夫と2人で暮らしている。友人の死去後、食事量が減り、\n1か月前から気分の落ち込みが強くなった。夫が積極的に散歩に誘っても、A さん\nは｢体がだるい｣｢何をしても意味がない｣と話し、寝つきも悪くなり、日中ほとんどの\n時間を臥床して過ごすようになった。心配した夫に連れられて精神科外来を受診した\nところ、うつ病と診断され、選択的セロトニン再取り込み阻害薬〈SSRI〉と不眠時の\n睡眠薬が処方された。夫から精神科外来の看護師に｢日常生活で気を付けることはあ\nりますか｣と質問があった。\n\nA さんと夫に看護師が説明する内容で適切なのはどれか。",
+      "choices": {
+        "ア": "｢毎朝運動をする習慣を作りましょう｣",
+        "イ": "｢食欲がないときは食事の回数を減らしましょう｣",
+        "ウ": "｢薬の飲み始めは吐き気や下痢に注意してください｣",
+        "エ": "｢眠れないときは睡眠薬を早朝に飲んで構いません｣"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "うつ病でSSRIを開始する夫婦への説明。SSRIでは服用初期に悪心や下痢などの消化器症状が出やすいため、あらかじめ伝えて継続服用を支援する。",
+      "choiceExplanations": {
+        "ア": "不適切。症状が強く意欲が低下している時期に習慣化を求めるのは負担になる。励ましや運動の強要は避け、できる範囲で促す。",
+        "イ": "不適切。食欲低下時に回数を減らすと低栄養になる。少量ずつ、食べやすいものを工夫するよう勧める。",
+        "ウ": "正解。SSRIでは服用開始時に悪心や下痢が生じやすく、多くは一時的である。自己中断せず相談するよう伝える。",
+        "エ": "不適切。睡眠薬を早朝に飲むと日中の眠気やふらつきが残る。就寝前に服用するもので、指示と異なる服用は不適切である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=52",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問115（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=52"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q116",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 116,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "15",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（65歳、女性）は、夫と2人で暮らしている。友人の死去後、食事量が減り、\n1か月前から気分の落ち込みが強くなった。夫が積極的に散歩に誘っても、A さん\nは｢体がだるい｣｢何をしても意味がない｣と話し、寝つきも悪くなり、日中ほとんどの\n時間を臥床して過ごすようになった。心配した夫に連れられて精神科外来を受診した\nところ、うつ病と診断され、選択的セロトニン再取り込み阻害薬〈SSRI〉と不眠時の\n睡眠薬が処方された。夫から精神科外来の看護師に｢日常生活で気を付けることはあ\nりますか｣と質問があった。\n\nA さんの症状は半年ほどで落ち着き、夫との散歩や料理を楽しみ、特に問題な\nく過ごせるようになった。精神科受診を終了して1年後、A さんは再び家にこも\nりがちになった。夫の話では、急に料理の作り方や人の名前を何度も確認するな\nど、家事に時間がかかるようになった。A さんは｢何もできないと思っているで\nしょ｣と、ささいなことに怒ったり、急に泣き出すことが増え、夫と一緒に精神科\n外来を再受診した。\n頭部MRI 検査の結果、多発性脳梗塞がみられ、血管性認知症と診断された。A\nさんは｢自分が認知症なんて信じられない。もう治らない｣と話した。\nA さんに認められるのはどれか。2つ選べ。",
+      "choices": {
+        "ア": "感情失禁",
+        "イ": "観念奔逸",
+        "ウ": "強迫行為",
+        "エ": "心気妄想",
+        "オ": "実行機能障害"
+      },
+      "answer": [
+        "ア",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "多発性脳梗塞による血管性認知症では、感情失禁(些細なことで怒る、急に泣き出す)と、実行機能障害(段取りの困難や家事に時間がかかる)がみられる。",
+      "choiceExplanations": {
+        "ア": "正解。ささいなことで怒ったり急に泣き出す状態は、血管性認知症に多い感情失禁にあたる。",
+        "イ": "不適切。観念奔逸は躁状態で考えが次々に飛ぶ症状で、本例の経過には当てはまらない。",
+        "ウ": "不適切。強迫行為は不合理と分かりつつ繰り返す行為で、確認が増える背景は記憶障害であり強迫ではない。",
+        "エ": "不適切。心気妄想は重い病気だと確信する妄想で、本例では述べられていない。",
+        "オ": "正解。料理の手順を確認したり家事に時間がかかるのは、段取りや計画の障害である実行機能障害である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=53",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問116（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=52"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q117",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 117,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（65歳、女性）は、夫と2人で暮らしている。友人の死去後、食事量が減り、\n1か月前から気分の落ち込みが強くなった。夫が積極的に散歩に誘っても、A さん\nは｢体がだるい｣｢何をしても意味がない｣と話し、寝つきも悪くなり、日中ほとんどの\n時間を臥床して過ごすようになった。心配した夫に連れられて精神科外来を受診した\nところ、うつ病と診断され、選択的セロトニン再取り込み阻害薬〈SSRI〉と不眠時の\n睡眠薬が処方された。夫から精神科外来の看護師に｢日常生活で気を付けることはあ\nりますか｣と質問があった。\n\nA さんは要介護2の認定を受け、介護サービスを検討することになった。体調\nが良いときは、夫の料理を手伝ったり散歩に出かけている。排泄や着替えは時間を\nかけて1人で行えるが、入浴は夫の介助が必要である。夫は｢入浴のサポートを受\nけたり、自分が不在のときに泊まれる場所はないか｣と話している。外来看護師が\nA さんの希望を聞くと｢人が多い場所は苦手です。家の近くで好きなときに通えた\nり、家に来てもらえると安心です｣と話した。\nA さんに紹介するサービスで適切なのはどれか。",
+      "choices": {
+        "ア": "小規模多機能型居宅介護",
+        "イ": "認知症対応型通所介護",
+        "ウ": "自立訓練",
+        "エ": "療養介護"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "要介護2で、入浴介助、夫不在時の宿泊、人の多い場所が苦手で自宅近くの通いや訪問を希望している。通い・訪問・泊まりを一つの事業所で柔軟に組み合わせられる小規模多機能型居宅介護が適切である。",
+      "choiceExplanations": {
+        "ア": "正解。小規模多機能型居宅介護は、通い・訪問・泊まりを同じ小規模事業所で提供し、本人の希望と夫のニーズを満たす。",
+        "イ": "不適切。認知症対応型通所介護は日帰りの通いのみで、訪問や宿泊の希望に応えられない。",
+        "ウ": "不適切。自立訓練は障害福祉サービスで、介護保険の要介護認定者の希望に合わない。",
+        "エ": "不適切。療養介護は障害福祉サービスで、医療的ケアの必要な重度障害者が対象であり、本例に適さない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=53",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問117（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=52",
+        "https://www.mhlw.go.jp/content/12300000/001113809.pdf#page=34"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q118",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 118,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "午後1時に震度6強の地震が発生し、避難所が開設された。地震発生の2時間後、\n避難所に救護所が設置され、近隣の病院から医療救護班が派遣された。医療救護班が\n複数の被災者に対応するなか、Aさん（54歳、男性）が搬送されてきた。A さんは右\n大腿部に4cm の切創があり出血部位をタオルで押さえている。すぐに看護師が切創\n部の処置を介助することになった。\n\nこのときの看護師の感染予防対策で正しいのはどれか。",
+      "choices": {
+        "ア": "ゴーグルを装着して処置の介助を行う。",
+        "イ": "使い捨て手袋を1時間ごとに交換する。",
+        "ウ": "処置を行う前に破傷風のワクチンを受ける。",
+        "エ": "看護師が着用するガウンにA さん用と記載しA さん専用にする。"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "出血を伴う切創の処置介助では、血液・体液への曝露を想定し、標準予防策として適切な個人防護具を使う。血液の飛散が起こりうるため、ゴーグルで眼を保護する。",
+      "choiceExplanations": {
+        "ア": "正解。出血を伴う処置では血液の飛散がありうるため、ゴーグルで眼粘膜を保護する。",
+        "イ": "不適切。手袋は時間ではなく、処置ごとに交換し、汚染したらすぐ交換する。1時間ごとは根拠が乏しく、手指衛生も必要である。",
+        "ウ": "不適切。破傷風ワクチンは処置の直前に受けるものではなく、感染予防の主眼は患者の創傷管理である。",
+        "エ": "不適切。ガウンはA氏専用にするものではなく、処置ごとに使い捨てにし、患者間で使い回さない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=54",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問118（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=54"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q119",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 119,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "午後1時に震度6強の地震が発生し、避難所が開設された。地震発生の2時間後、\n避難所に救護所が設置され、近隣の病院から医療救護班が派遣された。医療救護班が\n複数の被災者に対応するなか、Aさん（54歳、男性）が搬送されてきた。A さんは右\n大腿部に4cm の切創があり出血部位をタオルで押さえている。すぐに看護師が切創\n部の処置を介助することになった。\n\n発災翌日、避難所には150 名ほどの避難者が登録をしている。医療救護班の医師\nから｢この数日間で、インフルエンザの患者が病院で増えている。避難所でも注意\nしたほうがよい｣と看護師に助言があった。看護師は避難所運営者と連携して、避\n難所でのインフルエンザの集団発生防止策を立てることにした。午前9時現在、避\n難者の中には発熱や咳をしている有症者はいない。\n避難所での集団感染を防止する対策で適切なのはどれか。",
+      "choices": {
+        "ア": "避難所の床を毎日アルコールで清掃する。",
+        "イ": "共同のトイレにあるタオルを毎日交換する。",
+        "ウ": "避難所の居住スペースの換気を1日1回行う。",
+        "エ": "避難者に入所時からの体調を健康チェック表に記載してもらう。"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "避難者に有症者がいない時点でのインフルエンザ集団発生予防策を問う。入所時からの体調を健康チェック表に記録してもらうことで、発熱や咳の者を早期に発見し、隔離や受診につなげられる。",
+      "choiceExplanations": {
+        "ア": "不適切。インフルエンザは主に飛沫・接触で感染するが、床を毎日アルコールで清掃することの優先度は高くない。手指衛生などが重要である。",
+        "イ": "不適切。共同タオルの使用自体が感染の媒介になるため、共用せず、ペーパータオルなどを使うべきである。",
+        "ウ": "不適切。換気は1日1回では不十分で、こまめに複数回行う必要がある。",
+        "エ": "正解。体調を継続的に記録して有症者を早期に把握し、隔離や受診につなげることで集団発生を防ぐ。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=54",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問119（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=54"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q107",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 107,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "A君（5歳6か月、男児）は、二分脊椎のため、繰り返し使用できるカテーテルに\nよる間欠的自己導尿を両親が実施している。現在、間欠的自己導尿は、保育所での実\n施を含めて1日6回行うよう医師が指示しており、自宅では両親が導尿している。A\n君は下肢の運動機能障害があるが、自分で車椅子からトイレに移動でき、指先の微細\nな動きもできる。\n外来受診の際に母親から｢地元の小学校に入学予定です。小学生になったら自分で\n導尿できたほうが良いと聞きました。A も間欠的自己導尿をやってみたい、と言っ\nています。どのように進めたらよいか分からず、焦っています｣と看護師に相談が\nあった。\n\nその後、看護師は、A 君が小学校で自立して間欠的自己導尿ができるようケア\n計画を立てた。\n間欠的自己導尿の実施についてA 君に伝えることで適切なのはどれか。",
+      "choices": {
+        "ア": "｢おしっこの出口をきれいにするため外側から内側に向かって拭くよ｣",
+        "イ": "｢カテーテルの先はピンセット〈鑷子〉で持つよ｣",
+        "ウ": "｢カテーテルを入れておしっこが出てきたらその位置でカテーテルを止める\nよ｣",
+        "エ": "｢おしっこが出なくなったらカテーテルを急いで抜くよ｣"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "小学校での自立を見据え、年齢に合う言葉で手技の要点を伝える設問。カテーテルは尿の流出を確認した位置で保持するという内容が正答とされる。",
+      "choiceExplanations": {
+        "ア": "不適切。尿道口の清拭は汚染を広げないよう、中心から外側へ拭くのが基本であり、外側から内側は逆である。",
+        "イ": "不適切。繰り返し使用するカテーテルの自己導尿では清潔操作として手洗いを行い、鑷子を使う必要はない。学校でも実施しにくい。",
+        "ウ": "正解。尿の流出を確認したら、その位置でカテーテルを保持して排尿を待つと子どもに伝えやすい。",
+        "エ": "不適切。尿が止まっても急いで抜くと残尿や粘膜損傷の原因になる。ゆっくり抜き、再度流出があれば待つ。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=46",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問107（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=46"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q113",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 113,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（21歳、女性、大学生）は、1人で暮らしている。友人関係のトラブルでう\nつ状態になり、3か月前から精神科クリニックへの通院を開始した。頓用の抗不安薬\nを処方され不安が高まったときに服用していたが、徐々に酩酊や陶酔感を得るために\n服用するようになった。最近は指示された抗不安薬の量では酩酊や陶酔感が得られな\nくなってきたため、数日分の薬を溜めて一度に大量に服用するようになった。抗不安\n薬を大量に使用した翌日は大学を休むことが続いていた。\n\nある日の夜、A さんと突然連絡がつかなくなったことを心配した母親が、A さ\nんのアパートを訪ねると、意識を失っているA さんを発見した。すぐに救急車を\n呼び、A さんは救命救急センターへ搬送された。翌朝、同じ病院の精神科病棟に\n転棟し、器質的検査および生理的検査では異常が認められなかった。救急隊からの\n情報によると、アパートには抗不安薬を大量に服用した痕跡があった。\n入院後48 時間から72 時間にかけてA さんに出現する可能性が高い症状はどれ\nか。",
+      "choices": {
+        "ア": "幻\n覚",
+        "イ": "感情鈍麻",
+        "ウ": "思考途絶",
+        "エ": "妄想気分"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "抗不安薬(ベンゾジアゼピン系)を大量に服用した後、中断すると離脱症状が現れる。入院後48〜72時間では、不安、不眠、せん妄、幻覚、けいれんなどが出現しうる。",
+      "choiceExplanations": {
+        "ア": "正解。ベンゾジアゼピン離脱では、せん妄に伴う幻覚(幻視など)が48〜72時間頃に出現しやすい。",
+        "イ": "不適切。感情鈍麻は統合失調症などの陰性症状で、薬物離脱で典型的にみられる症状ではない。",
+        "ウ": "不適切。思考途絶は統合失調症で思考の流れが突然止まる症状で、離脱症状として典型的でない。",
+        "エ": "不適切。妄想気分は統合失調症の初期にみられる漠然とした不気味な感じで、離脱症状として典型的でない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=50",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問113（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=50"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q120",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 120,
+      "subject": "午後（状況設定問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "午後1時に震度6強の地震が発生し、避難所が開設された。地震発生の2時間後、\n避難所に救護所が設置され、近隣の病院から医療救護班が派遣された。医療救護班が\n複数の被災者に対応するなか、Aさん（54歳、男性）が搬送されてきた。A さんは右\n大腿部に4cm の切創があり出血部位をタオルで押さえている。すぐに看護師が切創\n部の処置を介助することになった。\n\n発災3日後、Bさん（72歳、男性）が救護所を訪れた。地震で自宅が半壊したた\nめ、妻と避難所で生活している。B さんは、左胸部から左腋窩にかけてピリピリと\nした持続する痛みを訴えた。看護師が観察すると、痛みの部位に沿って水疱を伴う\n浮腫性紅斑が確認できた。体温36.5 ℃、呼吸数12/分、脈拍66/分、血圧126/80\nmmHg。\n看護師がB さんに行う観察で優先度が高いのはどれか。",
+      "choices": {
+        "ア": "痛みの持続時間を問診する。",
+        "イ": "1週間の睡眠状況を問診する。",
+        "ウ": "痛みが限局しているか触診する。",
+        "エ": "全身性の浮腫性紅斑か視診する。",
+        "オ": "ステロイド薬の長期投与の有無を問診する。"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "片側の胸部から腋窩にかけて、神経に沿ったピリピリする痛みと水疱を伴う紅斑がみられ、帯状疱疹が疑われる。避難所での感染拡大の観点から、全身性の紅斑かどうかを視診し、播種性帯状疱疹や水痘との区別を優先して行う。",
+      "choiceExplanations": {
+        "ア": "不適切。痛みの持続時間は有用な情報だが、感染拡大の判断を左右する観察ではなく、優先度は高くない。",
+        "イ": "不適切。睡眠状況は生活への影響の把握にはなるが、緊急度や感染対策の判断に直結しない。",
+        "ウ": "不適切。痛みが皮膚の神経支配領域に限局しているかは診断の補助にはなるが、優先度は全身性の発疹確認に劣る。",
+        "エ": "正解。発疹が全身性なら播種性帯状疱疹や水痘の可能性があり、空気感染の対策や隔離、早期受診が必要になる。",
+        "オ": "不適切。ステロイドの長期投与の有無は免疫抑制の確認として意義があるが、救護所での初期の優先観察ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=55",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問120（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=54"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "targetedReviewReceipts": [
+    "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q117-targeted-review.json"
+  ]
+}

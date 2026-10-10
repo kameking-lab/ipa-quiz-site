@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-10T04:52:08.239802+00:00",
+  "mergeInput": "295e4d9eb466a71f813c62e46bd826f2f96ef9a2",
+  "nativeParent": "320142afa8fb0c1c791c3b2d94bf5b387d8c93d8",
+  "counts": {
+    "mcOriginals": 27,
+    "mcChoices": 135,
+    "nativeOriginals": 7,
+    "nativeFields": 35,
+    "totalOriginals": 34,
+    "twoExamOriginalDenominator": 156,
+    "remainingOriginals": 122,
+    "completeTwoExams": false
+  },
+  "freeze": {
+    "allSavedOriginals": 16,
+    "allFields": 80,
+    "publicOriginals": 7,
+    "heldOriginals": 9,
+    "sha256": "47297b8e5b815af91548eb71e9c912c36fed19c2a4ac984769e175acf8fdd991",
+    "changed": false
+  },
+  "preservation": {
+    "questionFilesComparedToMergeInput": 860,
+    "changedExistingFiles": [],
+    "comparison": "git show bytes vs worktree bytes, CRLF normalized; exact existing object content preserved"
+  },
+  "tests": {
+    "fullInitial": {
+      "passed": 4612,
+      "failed": 7,
+      "failureType": "all 15000ms timeout",
+      "filesPassed": 475,
+      "filesFailed": 5
+    },
+    "targetedRetry": {
+      "passed": 58,
+      "failed": 2,
+      "includesNative10": true,
+      "maxWorkers": 2
+    },
+    "remainingTimeoutDiagnostic": {
+      "passed": 12,
+      "failed": 0,
+      "maxWorkers": 1,
+      "testTimeoutMs": 60000,
+      "testCodeChanged": false
+    },
+    "finalCountUi": {
+      "passed": 26,
+      "failed": 0
+    },
+    "fullSingleRunPass": false,
+    "typecheck": "PASS",
+    "targetedLint": "PASS",
+    "diffCheck": "PASS"
+  },
+  "build": {
+    "productionBuildPass": false,
+    "selectiveCli": {
+      "staticCount": 1,
+      "failedRoute": "/_global-error",
+      "failure": "Invariant: Expected workStore to be initialized. This is a bug in Next.js.",
+      "limitation": "Selective path output matched four source paths, but only global-error reached SSG; Windows filtering suspected, not asserted as cause."
+    },
+    "explicitRouteDiagnostic": {
+      "via": "NEXT_PRIVATE_APP_PATHS temporary shell variable; no config change",
+      "selected": [
+        "/about/page.tsx",
+        "/sharoushi/sentaku/page.tsx",
+        "/sharoushi/sentaku/[edition]/page.tsx",
+        "/sharoushi/sentaku/[edition]/[number]/page.tsx"
+      ],
+      "staticCount": 13,
+      "compiled": true,
+      "typechecked": true,
+      "failedRoute": "/sharoushi/sentaku/2025/4",
+      "failure": "Invariant: Expected workStore to be initialized. This is a bug in Next.js."
+    },
+    "conclusion": "Same invariant occurs in common error route and new native route. Local production SSG remains unresolved; root production CI required. No unsupported claim that native SSG passed."
+  },
+  "mobileFixture": "Reuse previous actual reader + production CSS 390px before/after answers-open PASS; frozen reader/data unchanged",
+  "models": {
+    "newCalls": 0,
+    "actualCodexVariant": "not observable"
+  },
+  "published": false,
+  "pushed": false,
+  "logSha256": {
+    "fullunit-merged.log": "8ffbb392a7f241be1586880a1ee33af777c6f49dc344a419020d4d4e34037471",
+    "fullunit-timeout-recheck.log": "ba8f7a23f665a8ca65d279f58c7697877fdc11cef62b35552bd1659b0254c49c",
+    "fullunit-final2-diagnostic.log": "1952946d877f345ab156c99e17a1353a2d80005fbba9667301b056d458baefce",
+    "count-ui-tests-merged.log": "9052a7e4feba4091e3576b52d0e4f8744e91331166d7764fb904cca7fb2d23c7",
+    "selective-build-merged.log": "67f376245d08dc94986825b73b55d0dc04ffd0e99b7effd0edb0b882aba57dad",
+    "explicit-route-build-merged.log": "61f75be044d3bb2ea7b64bdd55fc538675c05bf52366ce9ab80b91116daeaf3c"
+  }
+}
