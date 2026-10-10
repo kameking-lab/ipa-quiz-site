@@ -1,5 +1,47 @@
 [
   {
+    "id": "yakuzaishi-2026-annual-required-q1",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 1,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "水100 mLに、ある有機溶媒100 mLを加えると二液相が形成され、上層が水相となった。この有機溶媒はどれか。1つ選べ。",
+    "choices": {
+      "ア": "ジエチルエーテル",
+      "イ": "1-オクタノール",
+      "ウ": "n-ヘキサン",
+      "エ": "トルエン",
+      "オ": "クロロホルム"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "二液相で上層が水相になるのは、水よりも密度の大きい有機溶媒を加えた場合です。水は約1.0 g/mLです。選択肢のうちこれより重いのはクロロホルム(約1.48 g/mL)だけで、有機層が下層になります。他の4つは水より軽く、水と分離すると有機層が上層になります。密度の数値は問題文には書かれていませんが、PubChemが収録するILO国際化学物質安全性カード(ICSC)などの公的資料の値(おおむね20〜25℃)と一致します。クロロホルムは約1.48 g/mLで水より重く、他の4つは約0.66〜0.87 g/mLで水より軽いです。",
+    "choiceExplanations": {
+      "ア": "ジエチルエーテルは密度が約0.71 g/mLで水より軽く、水とも混和しにくいです。分離すると有機層が上層になるため、水相が上層になる条件に合いません。",
+      "イ": "1-オクタノールは密度が約0.83 g/mL(20℃)で水より軽いです。水と分離したとき有機層が上層になるため、誤りです。",
+      "ウ": "n-ヘキサンは密度が約0.66 g/mLで水より軽く、水に混和しません。有機層が上層になるため、誤りです。",
+      "エ": "トルエンは密度が約0.87 g/mLで水より軽いです。有機層が上層になるため、誤りです。",
+      "オ": "クロロホルムは密度が約1.48 g/mLで水より重く、水に混和しません。そのため有機層が下層、水相が上層になります。公式正答は5で、これと一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問1（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "yakuzaishi-2026-annual-required-q4",
     "exam": "yakuzaishi",
     "session": "required",
@@ -2394,6 +2436,48 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "yakuzaishi-2026-annual-required-q76",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 76,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療機関において特定生物由来製品を患者に投与した際に、特定生物由来製品取扱医療関係者による記録が必要な項目に該当しないのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "患者の氏名",
+      "イ": "製品の名称",
+      "ウ": "製品の製造番号又は製造記号",
+      "エ": "投与した年月日",
+      "オ": "製品を購入した卸売販売業者の名称"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "特定生物由来製品を使用した場合は、感染症が起きたときに追跡できるよう、使用対象者の氏名・住所、製品の名称、製造番号または製造記号、使用した年月日などを記録し、一定期間保存します。購入した卸売販売業者の名称は記録項目に含まれません。したがって5が正解です(該当しないものを選ぶ問題)。",
+    "choiceExplanations": {
+      "ア": "記録が必要な項目です。使用対象者の氏名(および住所)を記録します。",
+      "イ": "記録が必要な項目です。「特定生物由来製品の名称」は、どの製品を使ったかを特定する記録事項です。",
+      "ウ": "記録が必要な項目です。製造番号または製造記号は、ロット単位の追跡に使います。",
+      "エ": "記録が必要な項目です。「使用日」(使用の対象者に使用した年月日)は、感染症が起きたときに使用時期を特定するための記録事項です。",
+      "オ": "正しい(該当しない)。購入した卸売販売業者の名称は、医療関係者による記録項目に含まれません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問76（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "yakuzaishi-2026-annual-required-q77",
     "exam": "yakuzaishi",
     "session": "required",
@@ -3768,6 +3852,276 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "yakuzaishi-2026-annual-theory-q145",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 145,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医薬品の製造販売承認申請のために実施する試験に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "薬効薬理試験とは、被験物質の治療用量及びそれ以上の曝露に関連した生理機能に対する潜在的な望ましくない薬力学的作用を検討する試験である。",
+      "イ": "副次的薬理試験とは、被験物質の期待した治療標的に関連しない作用又は効果の機序に関する試験である。",
+      "ウ": "薬物動態試験とは、被験物質の吸収、分布、代謝又は排泄を明らかにするための試験である。",
+      "エ": "物理的化学的性質並びに規格及び試験方法の設定に関する試験は、GQP に従い実施しなければならない。",
+      "オ": "安定性試験には、長期保存試験、加速試験及び生物学的同等性試験の3 種類がある。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は2と3です。2は副次的薬理試験の定義として正しい記述です。3は薬物動態試験(吸収・分布・代謝・排泄)の定義として正しい記述です。",
+    "choiceExplanations": {
+      "ア": "誤りです。「望ましくない薬力学的作用」を調べる試験は安全性薬理試験の説明です。薬効薬理試験は、期待する薬効を裏づける作用を調べる試験です。",
+      "イ": "正しい記述です。副次的薬理試験は、治療標的に関連しない作用やその作用機序を調べる試験です。",
+      "ウ": "正しい記述です。薬物動態試験は、被験物質のADME(吸収、分布、代謝、排泄)を明らかにする試験です。",
+      "エ": "誤りです。GQPは製造販売業者が行う品質管理の基準です。承認申請のための物理的化学的性質や規格及び試験方法の試験に、GQPに従う義務はありません。",
+      "オ": "誤りです。生物学的同等性試験は安定性試験ではありません。安定性試験は、長期保存試験、加速試験、苛酷試験などで構成されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問145（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q146",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 146,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医薬品の製造販売業の総括製造販売責任者に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "総括製造販売責任者の設置について、厚生労働大臣の承認を受けなければならない。",
+      "イ": "処方箋医薬品の場合は、品目ごとに総括製造販売責任者を設置しなければならない。",
+      "ウ": "医薬品の品質管理及び製造販売後安全管理に関する業務を適正かつ円滑に遂行しうる能力を有する者でなければならない。",
+      "エ": "製造所に勤務する従業者を監督し、製造所の構造設備及び物品を管理しなければならない。",
+      "オ": "医薬品の品質管理を公正かつ適正に行うために必要があるときは、製造販売業者に対し、意見を書面により述べなければならない。"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は3と5です。総括製造販売責任者は、品質管理と製造販売後安全管理の業務を適正に遂行できる能力を持つ者です。必要なときは、製造販売業者に書面で意見を述べる義務があります。",
+    "choiceExplanations": {
+      "ア": "誤りです。設置にあたって大臣の承認を受ける必要はありません。",
+      "イ": "誤りです。総括製造販売責任者は、品目ごとではなく製造販売業の許可単位で設置します。処方箋医薬品かどうかで設置単位は変わりません。",
+      "ウ": "正しい記述です。総括製造販売責任者に求められる能力の要件として適切です。",
+      "エ": "誤りです。製造所の従業者の監督や構造設備・物品の管理は、製造所の製造管理者の業務です。",
+      "オ": "正しい記述です。品質管理を適正に行うため必要があるときは、製造販売業者に書面で意見を述べなければなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問146（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q147",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 147,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "毒物及び劇物取締法に関する記述として正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "特定毒物を使用することができるのは、毒物劇物取扱責任者又は特定毒物使用者である。",
+      "イ": "毒物又は劇物の一般販売業の登録にあたっては、販売しようとする毒物又は劇物の品目を登録しなければならない。",
+      "ウ": "毒物劇物営業者は、毒物又は劇物を 18 歳未満の者に交付してはならない。",
+      "エ": "毒物劇物販売業者の登録の有効期間は6 年である。",
+      "オ": "毒物劇物営業者は、一般消費者の生活の用に供される毒物又は劇物については、飲食物に通常使用される容器を使用して販売することができる。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は3と4です。毒物劇物営業者は、18歳未満の者に毒物・劇物を交付できません。販売業の登録の有効期間は6年です。",
+    "choiceExplanations": {
+      "ア": "誤りです。特定毒物を使用できるのは特定毒物研究者または特定毒物使用者です。毒物劇物取扱責任者は使用者に当たりません。",
+      "イ": "誤りです。一般販売業は、すべての毒物・劇物を販売できる登録です。品目の登録が必要なのは農業用品目販売業や特定品目販売業などで、取り扱う品目が限られます。",
+      "ウ": "正しい記述です。18歳未満の者への交付は禁止されています。",
+      "エ": "正しい記述です。販売業の登録の有効期間は6年です。",
+      "オ": "誤りです。飲食物の容器として通常使用される容器に、毒物・劇物を入れて販売してはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問147（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q148",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 148,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "公費負担医療に関する説明として正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "医療に要した費用の全額が公費負担となるものはない。",
+      "イ": "法律や条例等に基づいて、国及び地方自治体が医療に関する給付を行う。",
+      "ウ": "「感染症の予防及び感染症の患者に対する医療に関する法律」に基づく特定の感染症に罹患した患者に対する公費負担医療がある。",
+      "エ": "生活保護法における医療扶助は、公費負担医療に該当しない。",
+      "オ": "公費負担医療を受ける場合、国立病院又は公立病院で受診する必要がある。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は2と3です。公費負担医療は、法律や条例に基づいて国や地方自治体が医療の給付を行う制度です。感染症法に基づく公費負担医療もあります。",
+    "choiceExplanations": {
+      "ア": "誤りです。費用の全額が公費で賄われる制度もあります。したがって「全額公費負担となるものはない」とはいえません。",
+      "イ": "正しい記述です。公費負担医療の基本的な説明です。",
+      "ウ": "正しい記述です。感染症法に基づき、特定の感染症の患者への医療に公費負担があります。",
+      "エ": "誤りです。生活保護法の医療扶助は、公費負担医療の代表的なものです。",
+      "オ": "誤りです。国立・公立病院に限られません。制度ごとに指定された医療機関で受診します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問148（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q149",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 149,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "我が国の公的医療保険制度に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "保険料は、保険の種類に関わらず全国で統一された同じ金額である。",
+      "イ": "加入者が療養の給付を受けた際、一旦、全額を支払い、保険給付分は申請して受け取る。",
+      "ウ": "保険調剤を受けるには、保険医等が交付した処方箋が必要である。",
+      "エ": "療養の給付の範囲は、健康保険と国民健康保険では異なる。",
+      "オ": "健康保険は、被用者保険である。"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は3と5です。保険調剤には保険医等が交付した処方箋が必要です。健康保険は被用者保険に当たります。",
+    "choiceExplanations": {
+      "ア": "誤りです。保険料は保険者や制度ごとに異なり、全国一律ではありません。",
+      "イ": "誤りです。療養の給付は現物給付が原則で、窓口では自己負担分のみを支払います。",
+      "ウ": "正しい記述です。保険調剤は、保険医等が交付した処方箋に基づいて行われます。",
+      "エ": "誤りです。療養の給付の範囲は、健康保険と国民健康保険で基本的に同じです。",
+      "オ": "正しい記述です。健康保険は、会社などに勤務する被用者が加入する被用者保険です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問149（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q150",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 150,
+    "officialAnswerNumber": "4,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "薬剤師が服薬指導時に患者の解釈モデルを尋ねているのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "症状を教えてください。",
+      "イ": "医師から何と言われましたか。",
+      "ウ": "これまでにお薬を飲んで、副作用を経験したことはありますか。",
+      "エ": "お薬の効果や副作用について、どのようなご不安をお持ちですか。",
+      "オ": "お薬を服用するにあたって、どのような支援が必要だとお考えですか。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は4と5です。解釈モデルとは、患者自身が病気や薬について抱いている考え、不安、期待のことです。4と5はそれを患者の言葉で尋ねています。",
+    "choiceExplanations": {
+      "ア": "誤りです。症状という客観的な情報を尋ねる質問で、患者の考えや受け止め方を尋ねてはいません。",
+      "イ": "誤りです。医師から受けた説明という情報を確認する質問です。患者自身の解釈や考えを直接尋ねてはいません。",
+      "ウ": "誤りです。副作用の経験の有無という既往歴の確認で、患者の考えを尋ねてはいません。",
+      "エ": "正しい記述です。効果や副作用への不安という、患者自身の受け止め方を尋ねています。",
+      "オ": "正しい記述です。服用に必要な支援についての患者自身の考えを尋ねています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問150（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "yakuzaishi-2026-annual-theory-q152",
     "exam": "yakuzaishi",
     "session": "theory",
@@ -4887,6 +5241,51 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "yakuzaishi-2026-annual-theory-q192",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 192,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "がんの進行度を判定する TNM 分類に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "原発臓器を問わず同一の基準で評価する。",
+      "イ": "T は原発巣の大きさや浸潤の程度を示す。",
+      "ウ": "N は遠隔転移の有無と広がりを示す。",
+      "エ": "M はリンパ節転移の有無と広がりを示す。",
+      "オ": "T、N、M の組合せにより病期（ステージ）を決定できる。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "TNM分類のTは原発巣の大きさや浸潤の程度、Nはリンパ節転移、Mは遠隔転移を表します。これらの組合せで病期を決定します。よって2と5が正しいです。",
+    "choiceExplanations": {
+      "ア": "基準は臓器ごとに異なります。同一の基準で評価するという記述は誤りです。",
+      "イ": "正しい記述です。TNM分類のTは原発巣（主な腫瘍）の大きさや周囲組織への浸潤の程度を表し、数字が大きいほど腫瘍が大きいか、周囲へ広がっていることを示します。",
+      "ウ": "Nはリンパ節転移の有無と広がりを示します。遠隔転移を示すのはMです。誤りです。",
+      "エ": "Mは遠隔転移の有無を示します。リンパ節転移を示すのはNです。誤りです。",
+      "オ": "正しい記述です。T、N、Mの組合せから病期（ステージ）が決まります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問192（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "yakuzaishi-2026-annual-theory-q194",
     "exam": "yakuzaishi",
     "session": "theory",
@@ -5905,6 +6304,51 @@
     "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677931.pdf",
     "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
     "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学実践問題） 問276（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-practical-q278",
+    "exam": "yakuzaishi",
+    "session": "practical",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 278,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学実践問題）",
+    "topicTags": [
+      "一般問題（薬学実践問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "問278-279　58歳女性。2年前に右乳房の浸潤性乳管がんと診断され、右乳房全切除及び腋窩リンパ節郭清が施行された。病理検査の結果、ホルモン受容体陰性、HER2 に対する免疫組織化学染色 1＋の HER2 低発現乳がんと診断され、術後補助療法として放射線治療（胸壁・鎖骨上窩照射）が施行された。半年前、局所再発及び肺転移が確認され、ドキソルビシン＋シクロホスファミド併用療法にて全身化学療法が開始された。初期には治療が奏効していたが、4コース後に画像上で肺転移及び鎖骨上窩リンパ節の増大を認めた。今回の入院では、トラスツズマブ デルクステカンを導入することになった。\n\nトラスツズマブ デルクステカンの副作用のうち、この患者の背景からリスクが高まると考えられるのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "Infusion reaction",
+      "イ": "間質性肺疾患",
+      "ウ": "下痢",
+      "エ": "心機能低下",
+      "オ": "末梢神経障害"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "患者には胸壁・鎖骨上窩への放射線治療歴と肺転移があり、間質性肺疾患のリスクが高まると考えられます（2）。また、前治療でドキソルビシン（アントラサイクリン系）を投与されており、心機能低下のリスクが高まると考えられます（4）。",
+    "choiceExplanations": {
+      "ア": "本剤の副作用としてinfusion reactionが起こり得ないという意味ではありません。ただし、問題文の患者背景（胸壁・鎖骨上窩への放射線治療歴、肺転移、ドキソルビシン＋シクロホスファミドによる前治療）には、infusion reactionのリスクを特に高める事項は示されていません。そのため、この患者で特にリスクが高まる副作用としては選べません。",
+      "イ": "正しい。胸部への放射線治療歴と肺転移が背景にあります。",
+      "ウ": "本剤の副作用として下痢が起こり得ないという意味ではありません。ただし、問題文の患者背景（胸壁・鎖骨上窩への放射線治療歴、肺転移、ドキソルビシン＋シクロホスファミドによる前治療）には、下痢のリスクを特に高める事項は示されていません。そのため、この患者で特にリスクが高まる副作用としては選べません。",
+      "エ": "正しい。ドキソルビシンによる前治療歴が背景にあります。",
+      "オ": "原文の条件にこの副作用のリスクを高める背景はありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677931.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学実践問題） 問278（問題・最終正答）。原文・選択肢は出典照合済み。解説は過去問AIが独自作成。",
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-10"
