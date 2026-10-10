@@ -1,20 +1,17 @@
-import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 
-const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([key, item]) => [key, canonical(item)])) : value;
-const sha = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
-const hash = (value: unknown) => sha(JSON.stringify(canonical(value)));
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 
 describe("nursing PM three primary-evidence originals", () => {
   it("preserves the previous 427 question objects and the excluded originals", () => {
     expect(proof.baseCommit).toBe("7a6aa981");
     expect(proof.previous427ObjectHashes).toHaveLength(427);
-    for (const old of proof.previous427ObjectHashes) expect(hash(byId.get(old.id)), old.id).toBe(old.sha256);
+    for (const old of proof.previous427ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
     expect(KANGOSHI_QUESTIONS).toHaveLength(430);
     expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(430);
     expect(KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(1778);
@@ -26,7 +23,7 @@ describe("nursing PM three primary-evidence originals", () => {
     expect(proof.sourceChecks).toHaveLength(3);
     for (const check of proof.sourceChecks) {
       const q = byId.get(check.id)!;
-      expect(hash(q), check.id).toBe(check.objectSha256);
+      expect(historicalNurseHash(q, check.id), check.id).toBe(check.objectSha256);
       expect(q.year).toBe(check.year);
       expect(q.session).toBe("pm");
       expect(q.qNumber).toBe(check.qNumber);
