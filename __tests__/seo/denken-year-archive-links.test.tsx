@@ -50,7 +50,15 @@ describe("dedicated electrical-exam hubs link to existing year archives", () => 
 
   it.each(["denken2", "denken1"] as const)("keeps %s empty-slot units, scope and subject quizzes", (exam) => {
     const doc = documentFor(renderToStaticMarkup(exam === "denken2" ? Denken2Page() : Denken1Page()));
-    expect(doc.body.textContent).toContain(`全${getQuestionsByExamStrict(exam as ExamCode).length}空欄`);
+    if (exam === "denken2") {
+      expect(doc.body.textContent).toContain(`14原問・${getQuestionsByExamStrict(exam).length}空欄`);
+      expect(doc.body.textContent).toContain("計30原問");
+      expect(doc.querySelectorAll('a[href^="/denken2/2026-primary/"][href$="/theory"], a[href^="/denken2/2026-primary/"][href$="/machine"]')).toHaveLength(2);
+      expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/theory"], a[href^="/denken2/2025-primary/"][href$="/machine"]')).toHaveLength(2);
+      expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/power"], a[href^="/denken2/2025-primary/"][href$="/law"]')).toHaveLength(2);
+    } else {
+      expect(doc.body.textContent).toContain(`全${getQuestionsByExamStrict(exam as ExamCode).length}空欄`);
+    }
     expect(doc.body.textContent).toContain("未収録");
     const quizzes = [...doc.querySelectorAll('a[href^="/quiz?"]')];
     expect(quizzes).toHaveLength(new Set(getQuestionsByExamStrict(exam).map(q => q.session)).size);
