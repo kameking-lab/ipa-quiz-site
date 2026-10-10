@@ -146,7 +146,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 労基安衛 択一の一部10問収録", domain: "welfare" },
-  { code: "kangoshi", name: "看護師", sub: "第115・114回 午前必修の一部20問収録", domain: "welfare" },
+  { code: "kangoshi", name: "看護師", sub: "第115・114回 午前の必修問題50問収録", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {

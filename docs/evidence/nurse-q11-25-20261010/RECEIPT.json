@@ -1,0 +1,119 @@
+{
+  "scope": "看護師国家試験 第115回・第114回 午前 問11〜25（新規30問・122肢。第115回問24・25は5肢）。既存の問1〜10（PR #651・#654）は再生成・削除・再査読していない。",
+  "publication": "一般掲載可否はオーナーが判断する。許諾取得の記録はない。",
+  "sources": {
+    "questionPdf": {
+      "115": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+      "114": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_01.pdf"
+    },
+    "supplementPdf114": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_02.pdf#page=4",
+    "answerPdf": {
+      "115": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "114": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1"
+    },
+    "sha256": {
+      "tp260424-05a_01.pdf": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1",
+      "tp250428-05a_01.pdf": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+      "tp250428-05a_02.pdf": "8872c24011055a54ed1b85ae2e71816b0bbd606cc1ee22c343e62b68fdddfc6a",
+      "tp260424-05seitou.pdf": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+      "tp250428-05seitou.pdf": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+    },
+    "reuse": "問題PDF・正答PDFは本セッションで保存済みのものを再利用。114回別冊（tp250428-05a_02.pdf）のみ今回1回取得。PDFはcommitしない。",
+    "pageLocators": {
+      "115": {
+        "Q11-12": 9,
+        "Q13-14": 10,
+        "Q15-17": 11,
+        "Q18-21": 12,
+        "Q22-23": 13,
+        "Q24-25": 14
+      },
+      "114": {
+        "Q11-12": 9,
+        "Q13-15": 10,
+        "Q16-19": 11,
+        "Q20-23": 12,
+        "Q24-25": 13,
+        "Q13-ECG": "別冊 4-5"
+      }
+    }
+  },
+  "figures": {
+    "assets": {
+      "/questions/kangoshi/2024-annual/q13-ecg1.png": "85f3cc5db8e8ba1007aaf6137d1d5ced8f9815d89b2bf7fb0698565d5a0b9e32",
+      "/questions/kangoshi/2024-annual/q13-ecg2.png": "6ad51e72ca6886905ec17f7ccfaced7d2eb1d20b6e6fc3123789d55c69adfc48",
+      "/questions/kangoshi/2024-annual/q13-ecg3.png": "fb08510700e6e7e85b7b500eaf32f35c048e076bd4f42a6691cfc54842137ff9",
+      "/questions/kangoshi/2024-annual/q13-ecg4.png": "ea4fe3f51fd301a39d109b1690d5012267241c150b0908a4805ac84d29bbc568",
+      "/questions/kangoshi/2025-annual/q13-figure.png": "779c18a71c30c5ab2e6835b1273c22a8f100215dd80a64f6e6462a1851a99427",
+      "/questions/kangoshi/2025-annual/q16-choice1.png": "b9bb7af9eec31965e58e3d2636d5d49270b28055ee15835f33c066ff0d9fcdf6",
+      "/questions/kangoshi/2025-annual/q16-choice2.png": "574f5b852f1174f44691470c7578e22231d620be3bc4316e2764d325420d943f",
+      "/questions/kangoshi/2025-annual/q16-choice3.png": "fbf27491621ed81ceba7c10d14ab01841352fcbba8645354cebc30d04951eab8",
+      "/questions/kangoshi/2025-annual/q16-choice4.png": "b64aeff37a9e69b20aad5aba4cdf4e66cc39eec4457228c2ed47f44b8b8ce1f6",
+      "/questions/kangoshi/2025-annual/q22-choice1.png": "21ea6e6a45e851dcfa9f5630cb193be77d1501d984f686762cd28a503b3804db",
+      "/questions/kangoshi/2025-annual/q22-choice2.png": "12664023b16c1ed16c871a59a46f8b060fd59ba4ca4c4e8e24bd9ad6037d7884",
+      "/questions/kangoshi/2025-annual/q22-choice3.png": "96b561265e3c44b58f508fd3e3fccc631161975803ff00904095a0f1ca77b3c6",
+      "/questions/kangoshi/2025-annual/q22-choice4.png": "3b7ee12584dd820c970d3a4b5f890021174c6e4a5a92371c2e04e7fb3af6bd64"
+    },
+    "cropScript": "crop-figures.py（公式PDFを2.5倍でレンダリングして切り出し）",
+    "answerMapping": {
+      "115-Q13": "正答1＝図の①（患者の右上腹部）",
+      "115-Q16": "正答2＝図2（側臥位で膝を抱え背中を丸めた体位）",
+      "115-Q22": "正答4＝図4（リザーバー付きマスク）",
+      "114-Q13": "正答4＝別冊No.1の④（幅広いQRSの規則的な頻拍）"
+    },
+    "choiceText": "115-Q16の選択肢文は図の説明（原典は図のみ）で、出典表示にその旨を明記。115-Q22の選択肢名は原典の図の見出し。"
+  },
+  "mechanicalCheck": {
+    "script": "mech-check.py",
+    "result": "mech-check-result.json",
+    "questions": 30,
+    "choices": 122,
+    "officialAnswersMatched": 30,
+    "missingFields": 0,
+    "figureAnswersMatched": 4,
+    "imageConfirmed": [
+      "115-Q24 本文の「疼」（文字情報は「仏」）",
+      "114-Q19 肢1の「溢」（文字情報で欠落）",
+      "114-Q13/Q18/Q22 本文の括弧・別冊表記",
+      "115-Q22 選択肢名（図の見出しで文字情報なし）"
+    ],
+    "oldQuestions": "既存の問1〜10は追記前後のhash一致（2025: e1aa128ea6ff1132…, 2024: 315de4ae0455d15b…）。削除0件。"
+  },
+  "explanations": {
+    "count": 122,
+    "officialAnswerVerdictConsistent": true,
+    "externalPrimarySourcesFetched": [],
+    "datedGuidanceCited": [
+      "日本蘇生協議会 JRC蘇生ガイドライン2020（114-Q25の解説で年を明記、追加取得なし）"
+    ]
+  },
+  "independentReview": {
+    "file": "sonnet-review.json",
+    "model": {
+      "requested": "sonnet",
+      "servedModelInTranscript": "2 \"model\":\"claude-sonnet-5-5\"",
+      "method": "in-process subagent の実行記録（JSONL）の API 応答 model 値。独立セッションIDはない"
+    },
+    "result": "3点中 OK 2・FIX 1（反映済み）"
+  },
+  "author": {
+    "role": "転記・図の切り出し・全122肢解説・実装・機械照合",
+    "configured_model": "claude-opus-5-5",
+    "session_context.model": "claude-opus-5-5",
+    "external_metadata.last_served_model": "claude-opus-5-5",
+    "method": "mcp claude-code-remote get_session（自セッション）2026-10-10T01:11Z",
+    "session": "session_01892M4YAZz8N3TuugeWVyJ7",
+    "cliVersion": "2.1.296",
+    "effort": "high",
+    "provider": "firstParty（推定）: ANTHROPIC_BASE_URL のホストが api.anthropic.com、Bedrock/Vertex 設定なし。サービスmetadataに provider 値そのものは出ていない。",
+    "serviceReportedUsage": {
+      "note": "get_session の external_metadata.usage（セッション累計、この作業だけの値ではない）",
+      "input_tokens": 69377,
+      "output_tokens": 160025,
+      "cache_read_tokens": 46521571,
+      "cache_write_tokens": 803683,
+      "cost_usd": 16.2997268,
+      "rate_limit": "seven_day allowed_warning"
+    }
+  }
+}
