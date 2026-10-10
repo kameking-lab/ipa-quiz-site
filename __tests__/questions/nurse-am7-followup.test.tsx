@@ -18,6 +18,7 @@ import q106 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q106-GO-CANDIDA
 import q112 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q112-GO-CANDIDATE.json";
 import hold from "@/docs/evidence/nurse-am112-publication-hold-20261010/DELTA.json";
 import historical from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import q109 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q109-115-GO-CANDIDATE.json";
 
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
@@ -37,12 +38,12 @@ describe("six publication-ready nursing AM originals", () => {
     }
     expect(proof.addedIds).toHaveLength(6);
     expect(saved.map(question => question.id).sort()).toEqual(proof.addedIds);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(proof.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals);
     expect(proof.totalOriginals).toBe(proof.previousOriginals + proof.addedOriginals);
     expect(proof.totalOriginals).toBe(457);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1888);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices);
     expect(proof.totalChoices).toBe(proof.previousChoices + proof.addedChoices);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(457);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals);
     for (const id of proof.heldIdsUnchanged) expect(byId.has(id), id).toBe(false);
   });
 
@@ -118,15 +119,16 @@ describe("six publication-ready nursing AM originals", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
     const catalog = QUALIFICATION_CATALOG.find(item => item.examCode === "kangoshi")!;
     for (const text of [home, catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
-      expect(text).toContain("計457原問");
-      expect(text).toContain("全1888肢");
-      expect(text).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
+      expect(text).toContain("計461原問");
+      expect(text).toContain("全1906肢");
+      expect(text).toContain("午後228原問");
+      expect(text).toContain("第115回は午前116問・午後115問、第114回は午前117問・午後113問");
       expect(text).toContain("午前 問32は厚生労働省が採点対象から除外");
     }
-    expect(home).toContain("午前233問と午後224問");
+    expect(home).toContain("午前233問と午後228問");
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(117);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(116);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(111);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(113);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(113);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(115);
   });
 });
