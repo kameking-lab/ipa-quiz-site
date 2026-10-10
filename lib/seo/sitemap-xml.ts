@@ -1,3 +1,4 @@
+import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getLastUpdatedISO } from "@/lib/questions/last-updated";
@@ -226,7 +227,7 @@ function getFpPracticalRoutes(): UrlEntry[] {
     const data = getFp1AppliedEdition(edition);
     if (!data) throw new Error(`Missing fp1 applied edition: ${edition}`);
     entries.push({ url: `${SITE_BASE_URL}/fp1/applied/${edition}`, changeFrequency: "yearly", priority: 0.6 });
-    for (const question of data.questions) {
+    for (const question of [...data.questions, ...getFp1ExtensionQuestions(edition)]) {
       entries.push({ url: `${SITE_BASE_URL}${fp1AppliedQuestionPath(edition, question.number)}`, changeFrequency: "yearly", priority: 0.5 });
     }
   }

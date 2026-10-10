@@ -1,3 +1,5 @@
+import { getFp1ExtensionQuestions, getFp1PublishedExtension } from "@/lib/fp1/published-extension";
+import { AppliedExtensionPage } from "@/app/fp1/applied/_components/extension-page";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,11 +8,13 @@ import { FP1_APPLIED_EDITIONS, fp1AppliedQuestionPath, getFp1AppliedEdition } fr
 interface RouteParams { edition: string; number: string }
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return FP1_APPLIED_EDITIONS.flatMap((edition) => getFp1AppliedEdition(edition)!.questions.map((question) => ({ edition, number: String(question.number) })));
+  return FP1_APPLIED_EDITIONS.flatMap((edition) => [...getFp1AppliedEdition(edition)!.questions, ...getFp1ExtensionQuestions(edition)].map((question) => ({ edition, number: String(question.number) })));
 }
 
 export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
   const { edition, number } = await params;
+  const extensionQuestion = getFp1ExtensionQuestions(edition).find((q) => String(q.number) === number);
+  if (extensionQuestion) return { title: `FP1級 2026年5月 学科応用編 問${number}｜問題・模範解答`, description: extensionQuestion.title, alternates: { canonical: fp1AppliedQuestionPath(edition, extensionQuestion.number) } };
   const data = getFp1AppliedEdition(edition);
   const question = data?.questions.find((item) => String(item.number) === number);
   if (!data || !question) return { title: "問題が見つかりません", robots: { index: false } };
@@ -19,6 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
 
 export default async function Fp1AppliedQuestionPage({ params }: { params: Promise<RouteParams> }) {
   const { edition, number } = await params;
+  const extension = getFp1PublishedExtension(edition);
+  const extensionQuestion = getFp1ExtensionQuestions(edition).find((q) => String(q.number) === number);
+  if (extension && extensionQuestion) return <AppliedExtensionPage data={extension} question={extensionQuestion} />;
   const data = getFp1AppliedEdition(edition);
   const question = data?.questions.find((item) => String(item.number) === number);
   if (!data || !question) notFound();
