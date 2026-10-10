@@ -16,9 +16,9 @@ describe("nursing PM nine verified follow-up originals", () => {
     expect(proof.baseCommit).toBe("79f7f333d2618ed19c033cf353b8ddc29d7ea2c9");
     expect(proof.previous418ObjectHashes).toHaveLength(418);
     for (const old of proof.previous418ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(430);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(430);
-    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(1778);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(433);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(433);
+    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(1791);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(proof.sourceChecks).toHaveLength(9);
     expect(proof.figureAssets).toHaveLength(5);
@@ -67,9 +67,9 @@ describe("nursing PM nine verified follow-up originals", () => {
 
   it("shows matching partial-collection counts and the unchanged exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後203問");
-    expect(home).toContain("計430原問");
-    expect(home).toContain("全1778肢");
+    expect(home).toContain("午前227問と午後206問");
+    expect(home).toContain("計433原問");
+    expect(home).toContain("全1791肢");
     expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
   });
 });
