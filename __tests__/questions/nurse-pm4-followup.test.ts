@@ -1,3 +1,4 @@
+import primary11 from "@/docs/evidence/nurse-primary11-20261011/INTEGRATION.json";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -21,14 +22,14 @@ describe("four independently verified nursing PM originals", () => {
       "kangoshi-2025-annual-pm-q78",
       "kangoshi-2025-annual-pm-q83",
     ]);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(464);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(467);
     expect(integration.totalOriginals).toBe(integration.previousOriginals + integration.addedOriginals);
     expect(integration.totalChoices).toBe(integration.previousChoices + integration.addedChoices);
     expect(integration.addedChoices).toBe(18);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1918);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(464);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1931);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(467);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
-    for (const id of integration.heldIdsUnchanged) expect(byId.has(id), id).toBe(false);
+    for (const id of integration.heldIdsUnchanged) expect(byId.has(id), id).toBe(primary11.addedIds.includes(id));
   });
 
   it("keeps the exact official stems, all choices, keys, source pages, and saved explanations", () => {
@@ -61,7 +62,7 @@ describe("four independently verified nursing PM originals", () => {
     expect(q83.officialAnswerNumber).toBe("23");
     expect(q83.requiredSelections).toBe(2);
     expect(q83.answer).toHaveLength(2);
-    for (const [year, session, count] of [[2024, "am", 118], [2024, "pm", 114], [2025, "am", 117], [2025, "pm", 115]] as const) {
+    for (const [year, session, count] of [[2024, "am", 118], [2024, "pm", 116], [2025, "am", 117], [2025, "pm", 116]] as const) {
       expect(KANGOSHI_QUESTIONS.filter(question => question.year === year && question.session === session), `${year}-${session}`).toHaveLength(count);
     }
   });
