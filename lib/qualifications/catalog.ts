@@ -519,9 +519,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_34_harikyu_am.pdf",
     officialReuseTermsUrl: "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_34_harikyu_am.pdf",
     status: "live",
-    reuseSummary: "第34・33回の公式問題360原問から322原問を部分収録。第34回174問・第33回148問です。午後問161〜170ははり師専用、171〜180はきゅう師専用であり、共通問題と合わせた冊子の原問数を二試験に重複加算しません。残る38原問は原文の字形または説明を確認中です。解説は過去問AIの独自作成です。",
+    reuseSummary: "第34・33回の公式問題360原問から324原問を部分収録。第34回176問・第33回148問です。午後問161〜170ははり師専用、171〜180はきゅう師専用であり、共通問題と合わせた冊子の原問数を二試験に重複加算しません。残る36原問は原文の字形または説明を確認中です。解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回はり師・きゅう師国家試験 午前・午後 問○（問題・正答）",
-    remainingWork: ["第34・33回の未掲載38原問の字形・説明を個別確認"],
+    remainingWork: ["第34・33回の未掲載36原問の字形・説明を個別確認"],
   },
   {
     slug: "boki3",
