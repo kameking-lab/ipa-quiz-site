@@ -71,7 +71,7 @@ describe("home directory", () => {
   });
 
   it("shows the current partial OT and orthoptist counts in their cards", () => {
-    for (const [code, count] of [["sagyo-ryohoshi", 281], ["shino-kunrenshi", 167]] as const) {
+    for (const [code, count] of [["sagyo-ryohoshi", 298], ["shino-kunrenshi", 184]] as const) {
       const item = all.find((entry) => entry.key === code);
       expect(item?.questionCount).toBe(count);
       expect(item?.sub).toContain(`${count}原問`);

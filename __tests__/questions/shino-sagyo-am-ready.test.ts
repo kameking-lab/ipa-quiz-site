@@ -8,8 +8,8 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午前の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 139, 281],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 91, 167],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 139, 298],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 91, 184],
   ] as const)("%s は保存済み原本で確認した午前問だけ追加する", async (exam, questions, amCount, totalCount) => {
     const loaded = await getQuestionsForExam(exam);
     expect(loaded).toEqual(questions);
@@ -33,7 +33,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
 
   it("共有設例を原問ごとに表示し、保留は公開集合に混ぜない", () => {
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(448);
+    expect(all).toHaveLength(482);
     const ids = new Set(all.map(question => question.id));
     for (const original of integration.heldDrafts) {
       const parts = original.identity.match(/^(.+)-(\d+)-am-(\d+)$/);

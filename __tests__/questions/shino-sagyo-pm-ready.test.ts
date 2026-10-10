@@ -9,8 +9,8 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 142],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 76],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 159],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 93],
   ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
     const loaded = (await getQuestionsForExam(exam)).filter(question => question.session === "pm");
     expect(loaded).toEqual(questions.filter(question => question.session === "pm"));
@@ -43,7 +43,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
         : (question.year === 2025 ? 56 : 55);
       return `${question.exam}-${round}-pm-${question.qNumber}`;
     }));
-    expect(all).toHaveLength(218);
+    expect(all).toHaveLength(252);
     expect(integration.draftOriginals).toBe(135);
     expect(integration.heldDrafts).toHaveLength(15);
     expect(integration.excludedBeforeDraft).toHaveLength(9);
