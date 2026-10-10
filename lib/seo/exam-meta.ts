@@ -182,6 +182,8 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   hokenshi: "保健師国家試験",
   josanshi: "助産師国家試験",
   "rigaku-ryohoshi": "理学療法士国家試験",
+  "sagyo-ryohoshi": "作業療法士国家試験",
+  "shino-kunrenshi": "視能訓練士国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -285,6 +287,8 @@ const EXAM_META_DESC_DIVERSE: Record<
   hokenshi: (c) => `保健師国家試験の第112・111回から公式原文・正答・全肢解説を確認した${c}問を部分収録。局所査読待ちの問題は未収録です。`,
   josanshi: (c) => `助産師国家試験の第109・108回から公式原文・正答・全肢解説を確認した${c}問を部分収録。局所査読待ちの問題は未収録です。`,
   "rigaku-ryohoshi": (c) => `理学療法士国家試験の第61・60回、午前・午後の計400原問から、公式原文・正答・五肢解説を照合した${c}原問を部分収録。図表や採点形式、説明根拠が未確認の問題は未収録で、両回の完備ではありません。`,
+  "sagyo-ryohoshi": (c) => `作業療法士国家試験の第61・60回午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
+  "shino-kunrenshi": (c) => `視能訓練士国家試験の第56・55回午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
 };
 
 export function examMetaDescription(
