@@ -164,7 +164,7 @@ export default async function ExamYearSeasonPage({
           q.question.length > 140
             ? `${q.question.slice(0, 140)}…`
             : q.question,
-        href: q.type === "multiple-choice"
+        href: (q.type === "multiple-choice" || q.type === "numeric")
           ? `/quiz?${new URLSearchParams({ mode: "year", exam: q.exam, year: String(q.year), season: q.season, session: q.session, question: q.id, order: "1", returnTo: `/${exam}/${yearSeason}` }).toString()}`
           : questionPagePath(q),
       })),
@@ -358,7 +358,7 @@ export default async function ExamYearSeasonPage({
 
         <section aria-label="クイズを始める" className="mb-8">
           <div className="grid gap-2 sm:grid-cols-2">
-            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => q.type === "multiple-choice")).map(([session]) => (
+            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
               <Button key={session} asChild variant="gradient" size="lg" className="w-full">
                 <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
                   {practiceSessionLabel(session as typeof pool[number]["session"])}を解く
