@@ -47,7 +47,7 @@ export function NativeReader({ question }: { question: NativeQuestion }) {
       <span>/ 問{question.number}</span>
     </nav>
     <h1 className="text-2xl font-bold sm:text-3xl">電験二種 {question.year}年度 一次試験 {name} 問{question.number}</h1>
-    <p className="mt-3 text-sm text-muted-foreground">試験日 {question.examDate}。1原問・{question.subject === "machine" && question.year === 2026 && question.number === 7 ? "定義5欄＋単位5欄" : "5欄"}。{question.alternateQuestionRule ? "問7と問8は選択問題で、実際の試験ではどちらか一方を解答します。" : ""}</p>
+    <p className="mt-3 text-sm text-muted-foreground">試験日 {question.examDate}。{question.year === 2025 && question.subject === "law" ? "法令基準日 2025-04-01。" : ""}1原問・{question.subject === "machine" && question.year === 2026 && question.number === 7 ? "定義5欄＋単位5欄" : "5欄"}。{question.alternateQuestionRule ? "問7と問8は選択問題で、実際の試験ではどちらか一方を解答します。" : ""}</p>
     <section aria-label="問題本文" className="mt-7 border-t border-border pt-6">
       <h2 className="sr-only">問題本文</h2>
       <p className="whitespace-pre-wrap break-words text-base leading-8 [overflow-wrap:anywhere]">{question.questionText}</p>

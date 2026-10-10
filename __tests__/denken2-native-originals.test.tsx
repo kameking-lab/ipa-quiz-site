@@ -12,15 +12,20 @@ import {
 import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
 
 describe("Denken2 native original boundary", () => {
-  it("keeps the 2026 power/law 14 originals and 70 blank quizzes while adding 16+16 native originals", () => {
+  it("keeps the 2026 power/law 14 originals and 70 blank quizzes while adding 16+16+11 native originals", () => {
     expect(DENKEN2_QUESTIONS).toHaveLength(70);
     expect(new Set(DENKEN2_QUESTIONS.map(q => `${q.session}:${q.qNumber}`)).size).toBe(14);
     expect(NATIVE_EDITIONS.map(item => item.year)).toEqual([2026, 2025]);
-    expect(NATIVE_QUESTIONS).toHaveLength(32);
+    expect(NATIVE_QUESTIONS).toHaveLength(43);
     expect(NATIVE_EDITIONS.map(item => item.questions.reduce(
       (sum, q) => sum + (q.year === 2026 && q.subject === "machine" && q.number === 7 ? 10 : 5), 0,
     ))).toEqual([85, 80]);
-    expect(new Set(NATIVE_QUESTIONS.map(q => q.id)).size).toBe(32);
+    expect(new Set(NATIVE_QUESTIONS.map(q => q.id)).size).toBe(43);
+    expect(NATIVE_QUESTIONS.reduce((sum, q) => sum + (q.year === 2026 && q.subject === "machine" && q.number === 7 ? 10 : 5), 0)).toBe(220);
+    expect(NATIVE_QUESTIONS.filter(q => q.year === 2025 && q.subject === "power")).toHaveLength(7);
+    expect(NATIVE_QUESTIONS.filter(q => q.year === 2025 && q.subject === "law")).toHaveLength(4);
+    for (const number of [3, 5, 6]) expect(getNativeQuestion(2025, "law", number)).toBeUndefined();
+    expect(getNativeQuestion(2025, "power", 7)?.questionText).toContain("文中の□に");
   });
 
   it("preserves machine 2026 Q7 as one original with A/B/C tables and ten answer inputs", () => {
@@ -45,7 +50,7 @@ describe("Denken2 native original boundary", () => {
 
   it("has every source image byte-identical, decodable, and linked from native question routes", async () => {
     const pages = new Map(NATIVE_QUESTIONS.flatMap(q => q.sourcePages.map(page => [page.url, page] as const)));
-    expect(pages.size).toBe(59);
+    expect(pages.size).toBe(74);
     for (const page of pages.values()) {
       const data = readFileSync(join(process.cwd(), "public", page.url.slice(1)));
       expect(createHash("sha256").update(data).digest("hex")).toBe(page.sha256);
@@ -55,7 +60,7 @@ describe("Denken2 native original boundary", () => {
       expect(image.height).toBeGreaterThan(300);
     }
     const routes = nativeQuestionPaths();
-    expect(routes).toHaveLength(32);
+    expect(routes).toHaveLength(43);
     const sitemap = renderExamsSitemapXml();
     for (const route of routes) expect(sitemap).toContain(route);
   });

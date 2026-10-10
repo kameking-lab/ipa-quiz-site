@@ -55,6 +55,7 @@ describe("dedicated electrical-exam hubs link to existing year archives", () => 
       expect(doc.body.textContent).toContain("計30原問");
       expect(doc.querySelectorAll('a[href^="/denken2/2026-primary/"][href$="/theory"], a[href^="/denken2/2026-primary/"][href$="/machine"]')).toHaveLength(2);
       expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/theory"], a[href^="/denken2/2025-primary/"][href$="/machine"]')).toHaveLength(2);
+      expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/power"], a[href^="/denken2/2025-primary/"][href$="/law"]')).toHaveLength(2);
     } else {
       expect(doc.body.textContent).toContain(`全${getQuestionsByExamStrict(exam as ExamCode).length}空欄`);
     }

@@ -1,6 +1,7 @@
 import { z } from "zod";
 import raw2026 from "@/data/questions/denken2/native-2026-theory-machine.json";
 import raw2025 from "@/data/questions/denken2/native-2025-theory-machine.json";
+import raw2025PowerLaw from "@/data/questions/denken2/native-2025-power-law-go11.json";
 
 const text = z.string().trim().min(1);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -14,7 +15,7 @@ const image = z.object({
   sha256: hash,
 }).strict();
 const question = z.object({
-  id: z.string().regex(/^denken2-20\d\d-primary-(theory|machine)-q0[1-8]$/),
+  id: z.string().regex(/^denken2-20\d\d-primary-(theory|power|machine|law)-q0[1-8]$/),
   year: z.number().int(),
   season: z.literal("primary"),
   examDate: text,
@@ -40,6 +41,10 @@ const edition = z.object({
   sourcePacketSha256: hash,
   questions: z.array(question).length(16),
 }).strict();
+const partialEdition = edition.safeExtend({
+  excludedPrimaryHolds: z.array(z.string()).length(3),
+  questions: z.array(question).length(11),
+});
 
 export type NativeQuestion = z.infer<typeof question>;
 export type NativeSubject = NativeQuestion["subject"];
@@ -110,8 +115,30 @@ function parseEdition(input: unknown, expectedYear: number): z.infer<typeof edit
 
 export const NATIVE_2026 = parseEdition(raw2026, 2026);
 export const NATIVE_2025 = parseEdition(raw2025, 2025);
+const GO_2025_POWER_LAW = partialEdition.parse(raw2025PowerLaw);
+if (GO_2025_POWER_LAW.year !== 2025 || GO_2025_POWER_LAW.examDate !== NATIVE_2025.examDate
+  || GO_2025_POWER_LAW.sourceIndexUrl !== NATIVE_2025.sourceIndexUrl
+  || GO_2025_POWER_LAW.sourceAnswerUrl !== NATIVE_2025.sourceAnswerUrl
+  || GO_2025_POWER_LAW.sourceAnswerPdfSha256 !== NATIVE_2025.sourceAnswerPdfSha256
+  || GO_2025_POWER_LAW.sourcePacketSha256 !== "f0a20036710d21190064c6f2bb77a31db802488bdea0264bce42d69785ee3106"
+  || GO_2025_POWER_LAW.excludedPrimaryHolds.join(",") !== "law-q03,law-q05,law-q06") {
+  throw new Error("2025 power/law source or legal HOLD boundary changed");
+}
+const expectedPowerLaw = [...Array.from({ length: 7 }, (_, i) => ["power", i + 1] as const),
+  ...[1, 2, 4, 7].map(number => ["law", number] as const)];
+for (const [index, [subject, number]] of expectedPowerLaw.entries()) {
+  const q = GO_2025_POWER_LAW.questions[index];
+  if (!q || q.id !== `denken2-2025-primary-${subject}-q${String(number).padStart(2, "0")}`
+    || q.subject !== subject || q.number !== number || q.year !== 2025 || q.examDate !== "2025-08-31"
+    || q.alternateQuestionRule !== null || Object.keys(q.choiceGroups).length !== 15
+    || Object.values(q.choiceGroups).some(value => typeof value !== "string")
+    || q.slots.some((field, slot) => field.slot !== slot + 1 || !("officialAnswer" in field)
+      || !Object.keys(q.choiceGroups).some(label => normalize(label) === normalize(field.officialAnswer)))) {
+    throw new Error(`2025 power/law original or answer bank changed: ${subject} Q${number}`);
+  }
+}
 export const NATIVE_EDITIONS = [NATIVE_2026, NATIVE_2025];
-export const NATIVE_QUESTIONS = NATIVE_EDITIONS.flatMap(item => item.questions);
+export const NATIVE_QUESTIONS = [...NATIVE_EDITIONS.flatMap(item => item.questions), ...GO_2025_POWER_LAW.questions];
 export const nativeSubjectPath = (year: number, subject: NativeSubject) => `/denken2/${year}-primary/${subject}`;
 export const nativeQuestionPath = (year: number, subject: NativeSubject, number: number) => `${nativeSubjectPath(year, subject)}/q${number}`;
 export const nativeQuestionPaths = () => NATIVE_QUESTIONS.map(q => nativeQuestionPath(q.year, q.subject, q.number));

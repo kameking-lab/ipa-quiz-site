@@ -4,11 +4,11 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
-import { NATIVE_EDITIONS, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
+import { NATIVE_EDITIONS, NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
 
 export const metadata: Metadata = {
   title: "電験二種 一次試験 過去問｜2025・2026年度の収録範囲",
-  description: "第二種電気主任技術者一次試験の2026年度理論・電力・機械・法規と、2025年度理論・機械を原問単位で収録。公式問題の図・正答と全欄の解説を確認できます。",
+  description: "第二種電気主任技術者一次試験の2026年度30原問と、2025年度理論・機械16原問、電力・法規11原問を収録。公式問題の図・正答と全欄の解説を確認できます。",
   alternates: { canonical: "/denken2" },
 };
 
@@ -26,6 +26,7 @@ export default function Denken2Page() {
   const total = DENKEN2_QUESTIONS.length;
   const native2026 = NATIVE_EDITIONS.find(item => item.year === 2026);
   const native2025 = NATIVE_EDITIONS.find(item => item.year === 2025);
+  const native2025Total = NATIVE_QUESTIONS.filter(q => q.year === 2025).length;
   const originalCount2026 = total / 5 + (native2026?.questions.length ?? 0);
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
@@ -38,7 +39,7 @@ export default function Denken2Page() {
         電力・法規は空欄ごとの演習、理論・機械は原問単位の演習で、公式問題の図・数式・正答を確認できます。
       </p>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        2025年度は理論・機械の{native2025?.questions.length ?? 0}原問・80回答欄を収録しています。2025年度の電力・法規と二次試験は未収録です。問7と問8が選択問題の科目は、両原問を掲載していますが、本試験では一方だけ解答します。
+        2025年度は理論・機械の{native2025?.questions.length ?? 0}原問・80回答欄、電力・法規の11原問・55回答欄、計{native2025Total}原問を収録しています。法規の問3・問5・問6と二次試験は未収録です。問7と問8が選択問題の科目は、両原問を掲載していますが、本試験では一方だけ解答します。
       </p>
 
       <section aria-labelledby="denken2-subjects" className="mt-8">
@@ -92,9 +93,24 @@ export default function Denken2Page() {
           })}
         </div>
       </section>
+      <section aria-labelledby="denken2-native-2025-power-law" className="mt-9">
+        <h2 id="denken2-native-2025-power-law" className="text-xl font-bold">2025年度 電力・法規の原問を解く</h2>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">電力7原問・35回答欄、法規4原問・20回答欄を収録。法規の問3・問5・問6は法令の一次根拠を確認中のため掲載していません。</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {(["power", "law"] as const).map(subject => {
+            const questions = getNativeSubjectQuestions(2025, subject);
+            const name = subject === "power" ? "電力" : "法規";
+            return <Link key={subject} href={nativeSubjectPath(2025, subject)}
+              className="flex min-h-32 items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40">
+              <span><span className="block text-xl font-bold">{name}</span><span className="mt-2 block text-sm text-muted-foreground">{questions.length}原問・{questions.length * 5}回答欄</span></span>
+              <ArrowRight className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
+            </Link>;
+          })}
+        </div>
+      </section>
       <ExamYearArchiveLinks exam="denken2" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-        問題・正答の出典：一般財団法人 電気技術者試験センター「第二種電気主任技術者一次試験（2025・2026年度）」。電力・法規は空欄ごとの演習に分けて整形し、理論・機械は原問単位で原本画像とともに掲載しています。解説は当サイトが独自に作成しました。
+        問題・正答の出典：一般財団法人 電気技術者試験センター「第二種電気主任技術者一次試験（2025・2026年度）」。2026年度の電力・法規は空欄ごとの演習に分けて整形し、2025年度の収録原問と2026年度の理論・機械は原問単位で原本画像とともに掲載しています。解説は当サイトが独自に作成しました。
       </p>
     </main>
   );
