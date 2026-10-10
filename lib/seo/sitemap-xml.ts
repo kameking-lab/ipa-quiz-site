@@ -225,9 +225,10 @@ function getFpPracticalRoutes(): UrlEntry[] {
   entries.push({ url: `${SITE_BASE_URL}/fp1/applied`, changeFrequency: "yearly", priority: 0.7 });
   for (const edition of FP1_APPLIED_EDITIONS) {
     const data = getFp1AppliedEdition(edition);
-    if (!data) throw new Error(`Missing fp1 applied edition: ${edition}`);
+    const questions = [...(data?.questions ?? []), ...getFp1ExtensionQuestions(edition)];
+    if (questions.length === 0) throw new Error(`Missing fp1 applied edition: ${edition}`);
     entries.push({ url: `${SITE_BASE_URL}/fp1/applied/${edition}`, changeFrequency: "yearly", priority: 0.6 });
-    for (const question of [...data.questions, ...getFp1ExtensionQuestions(edition)]) {
+    for (const question of questions) {
       entries.push({ url: `${SITE_BASE_URL}${fp1AppliedQuestionPath(edition, question.number)}`, changeFrequency: "yearly", priority: 0.5 });
     }
   }

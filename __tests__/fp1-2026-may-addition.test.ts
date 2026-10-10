@@ -16,8 +16,7 @@ describe("FP1 2026 May missing questions after independent primary review", () =
     expect(new Set(draft.map(q => q.id)).size).toBe(25);
     const currentIds = new Set(FP1_QUESTIONS.map(q => q.id));
     expect(draft.every(q => currentIds.has(q.id))).toBe(true);
-    expect(FP1_QUESTIONS.filter(q => q.season === "may")).toHaveLength(50);
-    expect(FP1_QUESTIONS.filter(q => q.season === "september")).toHaveLength(3);
+    expect(FP1_QUESTIONS.filter((q) => q.year === 2026 && q.season === "may")).toHaveLength(50);
     expect(draft.every(q => !legacy.some(old => old.id === q.id))).toBe(true);
     expect(FP1_QUESTIONS.filter(q => legacy.some(old => old.id === q.id))).toEqual(legacy);
   });

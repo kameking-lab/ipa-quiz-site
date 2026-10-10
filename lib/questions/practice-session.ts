@@ -1,7 +1,7 @@
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron"];
+export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "pm", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
