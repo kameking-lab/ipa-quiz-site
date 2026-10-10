@@ -76,6 +76,6 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
     expect(late.explanation).toContain("1,320円");
     expect(late.explanation).toContain("1,300円");
     expect(late.explanation).toContain("11月2日");
-    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(77);
+    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(87);
   });
 });
