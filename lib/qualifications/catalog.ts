@@ -529,9 +529,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した170原問を部分収録。第61回は午前18問・午後71問、第60回は午前24問・午後57問です。残り230原問は未収録で、両回の完備ではありません。図表、公式正答の代替記載、説明根拠が不足する問は収録していません。",
+    reuseSummary: "第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した179原問を部分収録。第61回は午前19問・午後74問、第60回は午前24問・午後62問です。残り221原問は未収録で、両回の完備ではありません。図表、公式正答の代替記載、説明根拠が不足する問は収録していません。",
     attributionTemplate: "出典：厚生労働省「第○回理学療法士国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
-    remainingWork: ["未収録230原問の原文・公式正答・図表・説明根拠の確認", "第61回午後問30・第60回午後問31の公式代替正答の採点形式確認"],
+    remainingWork: ["未収録221原問の原文・公式正答・図表・説明根拠の確認", "第61回午後問30・第60回午後問31の公式代替正答の採点形式確認"],
   },
   {
     slug: "kangoshi",

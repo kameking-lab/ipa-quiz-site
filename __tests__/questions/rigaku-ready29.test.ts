@@ -13,10 +13,10 @@ describe("理学療法士の部分収録", () => {
   it("保存した29原問のみを公開母集団へ入れ、保留35原問を混入させない", async () => {
     const loaded = await getQuestionsForExam("rigaku-ryohoshi");
     expect(loaded).toEqual(RIGAKU_RYOHOUSHI_QUESTIONS);
-    expect(loaded).toHaveLength(170);
+    expect(loaded).toHaveLength(179);
     expect(original29).toHaveLength(29);
     for (const original of original29) expect(loaded.find((q) => q.id === original.id)).toEqual(original);
-    expect(new Set(loaded.map((question) => question.id)).size).toBe(170);
+    expect(new Set(loaded.map((question) => question.id)).size).toBe(179);
     expect(loaded.map((question) => question.session)).toEqual(expect.arrayContaining(["am", "pm"]));
     expect(original29.filter((question) => question.year === 2026 && question.session === "am")).toHaveLength(7);
     expect(original29.filter((question) => question.year === 2026 && question.session === "pm")).toHaveLength(6);
