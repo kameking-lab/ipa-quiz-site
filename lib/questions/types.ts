@@ -132,6 +132,8 @@ export interface Question {
   scoringCriteria?: string;
   hasImage: boolean;
   imageUrls?: string[];
+  /** 原本図表の内容を表す代替テキスト。imageUrls と同じ順序。 */
+  imageAltTexts?: string[];
   sourcePdfUrl: string;
   /** 公式の正答表。問題PDFと同一の場合も明示して保持する。 */
   sourceAnswerUrl?: string;
