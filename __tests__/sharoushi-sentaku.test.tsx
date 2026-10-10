@@ -8,12 +8,12 @@ import { generateMetadata, generateStaticParams } from "@/app/sharoushi/sentaku/
 const keys = [[3,16,6,4,7],[8,17,4,16,18],[18,15,8,10,3],[2,17,6,12,9],[3,15,5,14,9],[15,4,10,7,20],[7,1,16,19,11],[19,11,14,7,4],[19,20,10,5,15],[3,2,4,1,3],[4,4,3,4,2],[2,3,4,3,3],[7,18,3,12,14],[15,9,18,11,3],[20,2,11,8,16],[9,16,2,10,14]];
 const clone=()=>structuredClone(SENTAKU_ORIGINALS);
 describe("社労士選択式 原問契約",()=>{
- it("科目別択一27原問と選択7原問を分離して計34原問とする",()=>{
+ it("科目別択一40原問と選択16原問を分離して計56原問とする",()=>{
   const mc=getQuestionsByExamStrict("sharoushi");
-  expect(mc).toHaveLength(27);
+  expect(mc).toHaveLength(40);
   expect(mc.some(q=>q.session==="sentaku")).toBe(false);
-  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(34);
-  expect(PUBLISHED_SENTAKU.flatMap(q=>q.blanks)).toHaveLength(35);
+  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(56);
+  expect(PUBLISHED_SENTAKU.flatMap(q=>q.blanks)).toHaveLength(80);
  });
  it("16原問80空欄の公式キーと20語群を保持する",()=>{
   expect(SENTAKU_ORIGINALS).toHaveLength(16);
@@ -34,14 +34,17 @@ describe("社労士選択式 原問契約",()=>{
   const dates=clone();dates[0].lawAsOf="2026-04-10";expect(()=>parseSentakuOriginals(dates)).toThrow();
   const bank=structuredClone(getSentakuQuestion("2026","2")!);if(bank.wordBankMode==="per-blank-4")bank.blankWordBanks.A.pop();expect(()=>parseSentakuOriginals([bank])).toThrow();
  });
- it("未解消の事実がある原問を公開承認にできない",()=>{const all=clone();all[1].review.status="approved";expect(()=>parseSentakuOriginals(all)).toThrow();});
- it("公開は7原問35欄のみで保留9原問はrouteとsitemapに出ない",()=>{
-  expect(PUBLISHED_SENTAKU).toHaveLength(7);expect(generateStaticParams()).toHaveLength(7);
-  expect(sentakuSitemapPaths()).toHaveLength(10);
-  for(const q of SENTAKU_ORIGINALS.filter(q=>q.review.status==="hold")){expect(getSentakuQuestion(String(q.year),String(q.questionNumber))).toBeUndefined();expect(sentakuSitemapPaths()).not.toContain(`/sharoushi/sentaku/${q.year}/${q.questionNumber}`);}
+ it("未解消の事実がある原問を公開承認にできない",()=>{const all=clone();all[1].blanks[2].reviewFlags=["unresolved-source"];expect(()=>parseSentakuOriginals(all)).toThrow();});
+ it("公開16原問80欄がcanonicalとsitemapに一意に揃い、範囲外は非公開",()=>{
+  expect(PUBLISHED_SENTAKU).toHaveLength(16);expect(generateStaticParams()).toHaveLength(16);
+  expect(sentakuSitemapPaths()).toHaveLength(19);
+  expect(new Set(sentakuSitemapPaths()).size).toBe(19);
+  for(const q of SENTAKU_ORIGINALS){expect(getSentakuQuestion(String(q.year),String(q.questionNumber))).toEqual(q);expect(sentakuSitemapPaths()).toContain(`/sharoushi/sentaku/${q.year}/${q.questionNumber}`);}
   expect(getSentakuQuestion("2026","02")).toBeUndefined();
+  expect(getSentakuQuestion("2026","9")).toBeUndefined();
+  expect(getSentakuQuestion("2024","1")).toBeUndefined();
  });
- it("canonicalを原問URLへ固定する",async()=>{const m=await generateMetadata({params:Promise.resolve({edition:"2026",number:"2"})});expect(m.alternates?.canonical).toBe("/sharoushi/sentaku/2026/2");});
+ it("canonicalを原問URLへ固定する",async()=>{for(const q of PUBLISHED_SENTAKU){const m=await generateMetadata({params:Promise.resolve({edition:String(q.year),number:String(q.questionNumber)})});expect(m.alternates?.canonical).toBe(`/sharoushi/sentaku/${q.year}/${q.questionNumber}`);}});
  it.each([["2025","4","共通の語群（①〜⑳）"],["2026","2","空欄ごとの語群（各①〜④）"]])("%s/%sのreaderは解答を最初に開かず原語群を表示する",(year,number,title)=>{
   const {container}=render(<SentakuReader question={getSentakuQuestion(year,number)!}/>);
   expect(screen.getByRole("heading",{name:title})).toBeInTheDocument();

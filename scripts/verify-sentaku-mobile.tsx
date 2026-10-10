@@ -9,7 +9,7 @@ async function main(){
 const out=process.argv[2] ?? "test-results/sentaku-mobile";mkdirSync(out,{recursive:true});
 const cssFiles=readdirSync(".next/static/css").filter(f=>f.endsWith(".css"));const css=cssFiles.map(f=>readFileSync(`.next/static/css/${f}`,"utf8")).join("\n");
 const browser=await chromium.launch({headless:true});const results=[];
-for(const [year,number] of [["2025","4"],["2026","2"]]){
+for(const [year,number] of [["2025","1"],["2026","1"],["2026","2"]]){
 const q=getSentakuQuestion(year,number)!;const html=renderToStaticMarkup(<SentakuReader question={q}/>);
 const page=await browser.newPage({viewport:{width:390,height:844}});
 await page.route("**/*",route=>route.abort());await page.setContent(`<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${css}</style></head><body>${html}</body></html>`);

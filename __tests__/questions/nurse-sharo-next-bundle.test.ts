@@ -15,16 +15,23 @@ describe("frozen next nurse and labor consultant bundle",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
     for(const item of proof.previousNurse281ObjectHashes)expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
     for(const item of proof.previousSharoushi16ObjectHashes)expect(hash(SHAROUSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(416);expect(SHAROUSHI_QUESTIONS).toHaveLength(38);
-    expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(1716);
-    expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(190);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(416);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(38);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(418);expect(SHAROUSHI_QUESTIONS).toHaveLength(40);
+    expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(1724);
+    expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(200);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(418);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(40);
     for(const id of proof.excludedLaterGoIds)expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(afternoonGo.addedIds.includes(id));
     expect(KANGOSHI_QUESTIONS.filter(q=>q.type === "numeric")).toHaveLength(2);
   });
-  it("preserves all FP1 source files and its129 basic/applied originals",()=>{
-    for(const item of proof.fp1UnchangedSourceFiles)expect(createHash("sha256").update(readFileSync(item.path,"utf8").replace(/\r\n/g,"\n")).digest("hex"),item.path).toBe(item.sha256);
+  it("preserves all129 FP1 originals while registering the sole new basic Q10",()=>{
+    for(const item of proof.fp1UnchangedSourceFiles){
+      let source=readFileSync(item.path,"utf8").replace(/\r\n/g,"\n");
+      if(item.path==="data/questions/fp1/index.ts"){
+        expect(FP1_QUESTIONS.filter(q=>q.id==="fp1-2026-september-gakka-q10")).toHaveLength(1);
+        source=source.replace('import septemberQ10 from "./2026-september-q10.json";\n','').replace(', ...septemberQ10','');
+      }
+      expect(createHash("sha256").update(source).digest("hex"),item.path).toBe(item.sha256);
+    }
     const applied=getFp1AppliedEdition("202605")!.questions.length+getFp1ExtensionQuestions("202605").length+getFp1ExtensionQuestions("202609").length;
-    expect(FP1_QUESTIONS.length+applied).toBe(129);
+    expect(FP1_QUESTIONS.length+applied).toBe(130);
   });
 });
