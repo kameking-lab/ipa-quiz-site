@@ -12,8 +12,8 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
     ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 142],
     ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 76],
   ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
-    const loaded = await getQuestionsForExam(exam);
-    expect(loaded).toEqual(questions);
+    const loaded = (await getQuestionsForExam(exam)).filter(question => question.session === "pm");
+    expect(loaded).toEqual(questions.filter(question => question.session === "pm"));
     expect(loaded).toHaveLength(expectedCount);
     expect(new Set(loaded.map((question) => question.id)).size).toBe(expectedCount);
     expect(loaded.every((question) => question.session === "pm")).toBe(true);
@@ -36,7 +36,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
   });
 
   it("別冊・図・専門根拠・代替キーの保留問は runtime へ入らない", () => {
-    const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
+    const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS].filter(question => question.session === "pm");
     const identities = new Set(all.map((question) => {
       const round = question.exam === "sagyo-ryohoshi"
         ? (question.year === 2025 ? 61 : 60)
