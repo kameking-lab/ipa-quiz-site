@@ -731,6 +731,19 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
   },
+  yakuzaishi: {
+    code: "yakuzaishi",
+    nameFull: "薬剤師国家試験",
+    urlSlug: "yakuzaishi",
+    level: "advanced",
+    sessions: [
+      { session: "required", urlSlug: "required", expectedQuestions: 90, label: "必須問題", categories: ["必須問題"] },
+      { session: "theory", urlSlug: "theory", expectedQuestions: 105, label: "薬学理論問題", categories: ["一般問題（薬学理論問題）"] },
+      { session: "practical", urlSlug: "practical", expectedQuestions: 150, label: "薬学実践問題", categories: ["一般問題（薬学実践問題）"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   kangoshi: {
     code: "kangoshi",
     nameFull: "看護師国家試験",
@@ -748,7 +761,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

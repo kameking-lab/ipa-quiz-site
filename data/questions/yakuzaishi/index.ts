@@ -1,0 +1,9 @@
+import type { Question } from "@/lib/questions/types";
+import paper2026 from "./2026-annual.json";
+import paper2025 from "./2025-annual.json";
+
+/** Verified partial coverage of the 111th and 110th pharmacist exams. */
+export const YAKUZAISHI_QUESTIONS: Question[] = [
+  ...(paper2026 as Question[]),
+  ...(paper2025 as Question[]),
+].sort((a, b) => b.year - a.year || a.qNumber - b.qNumber);
