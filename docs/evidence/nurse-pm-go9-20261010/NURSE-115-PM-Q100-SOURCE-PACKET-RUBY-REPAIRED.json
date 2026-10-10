@@ -1,0 +1,57 @@
+{
+  "scope": "MHLW 115th nursing afternoon original Q100 only, shared case Q100-102 retained",
+  "status": "source-only, visually repaired English ruby extraction",
+  "originalSourcePacketSha256": "6571bfc7c3f1e5b96fb92432cb9b5e00609963a231242d6572b14eb55c5ddf59",
+  "repair": {
+    "fields": [
+      "sharedCaseText",
+      "choices[0]"
+    ],
+    "removedExtractorArtifacts": [
+      "\nchronic subdural hematoma\n",
+      "\nosteoarthritis of the left knee\n",
+      "\nhypertension\n",
+      "\ndyslipidemia\n",
+      "osteoarthritis of the left knee\n"
+    ],
+    "officialPdfPhysicalPage": 42,
+    "officialPageImageSha256": "5b38c67ffe5dddb18532aae4d0bd1c1975a754c3a739e6a4cfa2648b2aa927ef",
+    "japaneseCharactersChanged": false
+  },
+  "question": {
+    "round": 115,
+    "session": "afternoon",
+    "question": 100,
+    "questionPdfPhysicalPage": 42,
+    "questionPdfPrintedPage": 36,
+    "sharedCaseQuestionNumbers": [
+      100,
+      101,
+      102
+    ],
+    "sharedCaseText": "次の文を読み100～102 の問いに答えよ。\nA さん（68 歳、女性、事務員）は夫（74 歳、事務所長）と息子（39 歳、会社員）と3 人\nで暮らしている。\n現病歴： 2 か月前に自宅の廊下で転倒し、壁に右前額部をぶつけたが、そのまま様子\nをみていた。3 週前から軽い頭痛があり、左上下肢の脱力感と言葉が出にく\nいなどの症状が出現した。かかりつけの病院を受診し、慢性硬膜下血腫と診\n断され、入院して穿頭ドレナージ術を受けた。\n既往歴： 48 歳から左変形性膝関節症で鎮痛薬を内服し、医師から体重コントロー\nルを指導されていた。\n58 歳から高血圧症と脂質異常症のため内服治療中であった。\n生活歴： 入院前の日常生活動作〈ADL〉は自立しており、左膝関節痛のため室内は壁\nや家具に手をついて移動し、外出時はT 字杖を使用していた。家事をしな\nがら夫の事務所を手伝っていた。\n身体所見： 身長154 cm、体重72 kg。",
+    "sharedCaseSourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p42.png",
+      "sha256": "5b38c67ffe5dddb18532aae4d0bd1c1975a754c3a739e6a4cfa2648b2aa927ef"
+    },
+    "stem": "手術後5 日、A さんは左上肢に軽度の麻痺はあるが、病棟内を歩行器でゆっく\nりと歩けるようになった。A さんは、歩き始めると徐々に右側に寄っていく。ま\nた、左側の壁に歩行器をぶつけそうになったり、A さんの左側に看護師がいても\n気が付かず、そのまま通り過ぎようとしたりする。\nこのときのA さんの状況で考えられるのはどれか。",
+    "choices": [
+      "左変形性膝関節症の悪化",
+      "半側空間無視",
+      "聴覚障害",
+      "視野障害"
+    ],
+    "choiceCount": 4,
+    "officialAcceptedAnswerNumbers": [
+      "2"
+    ],
+    "answerKind": "select_one",
+    "requiredSelections": 1,
+    "sourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p42.png",
+      "sha256": "5b38c67ffe5dddb18532aae4d0bd1c1975a754c3a739e6a4cfa2648b2aa927ef"
+    },
+    "figurePresent": false,
+    "transcriptionStatus": "visually verified against original PDF page"
+  }
+}

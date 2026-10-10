@@ -1,0 +1,1920 @@
+{
+  "status": "PASS",
+  "publication": "none",
+  "baseCommit": "33728f49d5ce70c2265fe570f0155bf69c1bd0d0",
+  "previousOriginals": 437,
+  "addedOriginals": 5,
+  "totalOriginals": 442,
+  "totalChoices": 1827,
+  "numericQuestions": 2,
+  "previous437ObjectHashes": [
+    {
+      "id": "kangoshi-2024-annual-am-q1",
+      "sha256": "30a9539bfc5b5511ae8db601c6c628ad0fc7395e77b35ccf629bec2e69955940"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q10",
+      "sha256": "ee7a8bacb5893c34fdb013593ecb2b477c518ca4f5eeb9a3a8537b9387df50f3"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q100",
+      "sha256": "e3c4e49245eea039a2257de48b563a6ca53106f492dfe9abfe725fb96eb29d1b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q102",
+      "sha256": "daba5af1e73fa181b5409b4e7d7a309ce70cd6e44f37285b85f1bf6a55e2589b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q104",
+      "sha256": "e2657bba77ac135ece36deffc523d4d60359dccec41f9dcf4391fbbf543eba95"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q105",
+      "sha256": "e3a83e504c58752b1530804a925ad005bca907fe98d881aaa09e81fda8e8e7a0"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q107",
+      "sha256": "f5b4b8e50b261bb25f7edb7ced0bf2bfc283faadcfde5914c9b423820c4ac1be"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q108",
+      "sha256": "57a607c5c9cf60b50db78b28df02899e2ac3d2084ce05fef68de197c7a33cf06"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q11",
+      "sha256": "0179a389c102b591fb5762a1b048ca3ff80c5603ed19a0ded7bf2253ef3cc79c"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q110",
+      "sha256": "4e288134db0a1477ab535f18a48b8627a6e0be4bcd102a284e2a12c1e0e3c7fd"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q111",
+      "sha256": "ce4cc9efc5ab8b7fbd7f30d0970805c0b9c5f45c641b992da229e42a46721791"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q113",
+      "sha256": "e2980443c7c5a52a42eff55878d98f3e697d0180b6f09f111fef29133683ee91"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q115",
+      "sha256": "5db8cac1a92a613f9c37dda3dfbb46f96a2983169f34e7a9cd723c140d6d1ad0"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q116",
+      "sha256": "933060550dfe1b0f98adf47a73986a9882e1f3ce47bb3875b8da600c8b2847d3"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q117",
+      "sha256": "83579fd14b0c710e1c1b235d7e357914caff263b36a3964c31a29731a7056596"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q118",
+      "sha256": "e3d76ea11a89d04bb888f520ba8542a8dffca4554db61cca513e2f42816fcd90"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q119",
+      "sha256": "9ed678a77ac5e665487c32cb1b77ccae47ae70582f21d292ea5d7abb771e7eb3"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q12",
+      "sha256": "bb9a41dd44b82d34d2e08f8a6a2ab48f56b3a7ce7584ba986a275addfdd9b015"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q120",
+      "sha256": "fc2271e9ea9fedbebcc1f75ab73d5d81ce31680a513e349e490a19fb7d0c0618"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q13",
+      "sha256": "0c31ffc071db42ec71ff3a6ac82b467fe986a06291f85eb3f33187419d8b7c04"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q14",
+      "sha256": "104446ce983e9f9cbe4bc4eed7b0487b2a77fb76553dcc415f444de5608fd4bc"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q15",
+      "sha256": "b286484e88eba940477560e261263a1dd7d42ce3fc58d9ea6ceb5ce46bfef0fb"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q16",
+      "sha256": "e01f8a7f6472c4a0b7bf73931721acee066b3942a895f5c3da991e2a243a9de3"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q17",
+      "sha256": "5cb4d258cda48e31b0405c2886a2a5236161241a6d50f64d2f0449859666e812"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q18",
+      "sha256": "ef243de23af0ce523484df3a556e81a17125f56ac7d4dc7c4dbd7741c74db6a5"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q19",
+      "sha256": "e9378f411d2fa1783962237855044cfabadbbc9691fdf0fa7526410f7b7c343b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q2",
+      "sha256": "5307b19453ebd7b4e7e7f4e56eb254535be0c3b91e6492cc2c6f1a751f0c7b3d"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q20",
+      "sha256": "3c246af05666cf139daf446ab8d9a2cc423d4d00519231fdafdfad1abeaeb9c7"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q21",
+      "sha256": "1e1921a1c3278f99637130e999e3f03ce66ffc21b976af5d38587007fa24e319"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q22",
+      "sha256": "aa9d466061f0ae3545f476f97154419244fc97a06f82ce618662378351acf3ba"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q23",
+      "sha256": "722bea09b86bba9d072721004e5db29b8e722a81e7760e62b9414daa1dc22e68"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q24",
+      "sha256": "f9591f4eb871a29bea802a7666902db503c8cae63a07e5c6b5dafd43f0cdb8d9"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q25",
+      "sha256": "7043fd287c1cb55c6c165f214c55a48c87f576d31041e367f140f7fb60b43704"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q26",
+      "sha256": "4801939500a69a36e8f62815cb4a206716f36c278157896ff3bbb8d87b7ef87b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q27",
+      "sha256": "d317809e651001cb8077b5cfb9175aed910658fabd75462d8a5d64bd4946195f"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q28",
+      "sha256": "f4d6d11cb6993ee63a5cef644d5ac3015aa4418a2e36d83ffed91603d2a4f661"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q29",
+      "sha256": "d38ff9209f61e15e78f48574f5352fed12035d5f493f94dd37888b8248dd5b7d"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q3",
+      "sha256": "a3fef2a58b8ab1a79dce024417c594a53a1d20e0b450dc57ec94720e48d395fa"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q30",
+      "sha256": "ac725a92e2d02713d03db66bef502733d64c8808f2aa2440b76c3518b3dbe66a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q31",
+      "sha256": "7707adf30e3f075e40699901c1ea0259eac52467a0168c46c45449a29ac7448e"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q32",
+      "sha256": "8dd41827d5436c513af4beeafd949dca4e11c0dda5df59927b34dd4485a51440"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q33",
+      "sha256": "76ed2f6b678ffabbfce0cdb217dca931019377fd6e6afa7b0137ae8be8945757"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q34",
+      "sha256": "2652a526ae6ca6986b8ff3c5155fc0428e3098ec021319fee785cc6ab7d13669"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q35",
+      "sha256": "09a7a114fc511b6b38db9e4806f07e29874687e64ac839fb51d1888572f79419"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q36",
+      "sha256": "3ca7487a35c20c8662d9d5cbeda59c849aa7ad10161e7086da3254bab64321df"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q37",
+      "sha256": "4a73a328b3e0206b8bf57a2b274e0e57d46c1ae43a900b6cc4606379d0930de3"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q38",
+      "sha256": "ca0dcaa0360c1eab5e81bff20d1c4f00238d24db4c37010cdde86eeedadf71de"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q39",
+      "sha256": "089c38ac04bd5f0af21ca67315f39196e29d4559387d974fa05a022e3be8da64"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q4",
+      "sha256": "d2d7b55c15de447b75c0f77352adab55878eb230144c23eead94f36d6a37011a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q40",
+      "sha256": "10909fcde7b396ce01d9b621a3895760411558ed49302afc2be860ab528198db"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q41",
+      "sha256": "dcf6fd5d24088545c33488a8b3c5cafcf361231b635ebdd15f022e155650d999"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q42",
+      "sha256": "39f302d00033c04cd4eabb8e310676ed470c544b21ce49cf4c9d2e7d488fc487"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q43",
+      "sha256": "08d2f7542334459a1c80d549c3045d33f92b4858c208c1c012770f974971e706"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q44",
+      "sha256": "0da2eb4cb0e87aa6151244fc13ee5e172bf5a4e8ee80ba44a7331ebd32a79e03"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q45",
+      "sha256": "1a62249770cda98f090229864fa81e1b3f2f2da458d1d3d19bafb7b747d1df1d"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q46",
+      "sha256": "21364962a3a60a56f0025138d92e973b1be4057e00b25aba0cf4a25d9d8992e8"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q47",
+      "sha256": "60300c15f2c0dd837fd732a9a0d8c8603a1387a51d054cf0532ec9bf4f8f38f9"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q48",
+      "sha256": "1af723e44e083d75c82eb43b9ed5b471355040cdfb851286ce553ce4cdfe5562"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q49",
+      "sha256": "5c979d46fc3efc6995de37ce7d0f9f9e421a81719c628f498a37534d30e3db4f"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q5",
+      "sha256": "3cf187e628267c458b6187dd2a04f37ab701b7dd1045784c17e521609443cf10"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q50",
+      "sha256": "f9f331c738f02a4aa04bd53bf5adcc36cfdcb98186ac51945dfdef9dd73a84b5"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q51",
+      "sha256": "20028d1ad81f8a85d22e0a0fb80bae73e8de162ed1d2521913df66475ab1dcff"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q52",
+      "sha256": "abdc0571cf76898386200b0a95a73ae9098ac1c6554014b1438970a454ac12e1"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q53",
+      "sha256": "1f3e5381155b5eb92e4337f7ed3bcbaefda260d4c3319a361b3494dfa8e7364c"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q54",
+      "sha256": "44b89935e985244b5ec11e8b52bb94a636c5e2f0a1209d63c5df9827a88a22cd"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q55",
+      "sha256": "0afa19a3f63bc6dd9b39e760a753f5fc34c83355294c643cffc5abe83d4d1d4e"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q56",
+      "sha256": "665dff06bcab82613972dbbf6d59e054ab19c103fffaead5a3d23673ed2f476b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q57",
+      "sha256": "b1358eef90c06b7fb25f72c69abea67cd7dd23c5df57c12a3f642acd9dc4dd04"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q58",
+      "sha256": "e7505622ed0f8c6a0cf27bf292ff94032cfbb76a820fad0d2be5ea3f43d2279a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q59",
+      "sha256": "bdd3a2632e39a2493c1d785e6bb390bc991e08e6e13a139ad684ba55cba1c53f"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q6",
+      "sha256": "02644d361d60c996d491f1241907e2443e298e4e523b86e4eeaf669a96ff1efd"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q60",
+      "sha256": "f8413bf945c85e9b69bfbf16673c9fb6757764cd92e679b36a7db752061407d1"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q61",
+      "sha256": "cd848d4e69b0f6d6c019266b18f12ebff92cfa5375da64fef7f258d97f384abc"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q62",
+      "sha256": "65ff5c531c3678d5c2dee59a37dccda60852ad0d2c9f2cc85c8e7356f40f89fd"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q63",
+      "sha256": "bb605987953e391f1d006c2aefa5248f881febee24d9b51ce371e0a808bce3b1"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q64",
+      "sha256": "0bc5d7e992d59cd4419c765fc35d954014ddc586edfd7cdbaa8b8eea7df813ad"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q65",
+      "sha256": "383d1aa775c68e7017ddf02a49d6c9950d91cfc03b5f552b3ec5b2c70410177a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q66",
+      "sha256": "34fa5a435aff00c7ac370ab2275f5604a82f67fa6d78bfe0249663de2673a218"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q67",
+      "sha256": "b0f7cf077e2329dc70c9020af0aa3ee8390a60ac5d50c8a773e4a1f640e362eb"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q68",
+      "sha256": "d1f81871865c2501c0162c0c632d36639a5f55873b7a7c15e3c053568bf8e6df"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q69",
+      "sha256": "4b2e50de6db4d4769250ecf2edd8f91d9f0ad3486d9e633809eb82aa98e21925"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q7",
+      "sha256": "461bedfbe008ac27dfaf42a05187fffac8dcdf686825483f449e6cf58962f368"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q70",
+      "sha256": "42971a930de95b00588331e5b071b003fab54f83aba19da7cb66dfae7d947675"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q71",
+      "sha256": "b69ac6f1f97f3962d0363823c84e9ee2e348b3942fa91c3ad4c9e3712ee64fa8"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q72",
+      "sha256": "b9491a5b1220ff6e8444411df1d8da9fb197fe513b691433bfe259af5ed3f130"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q73",
+      "sha256": "71ef25d67358e3c9f99f7153782f11ae7f69124deedec742d6a42ecd396bce0b"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q74",
+      "sha256": "fefbae6919728cfad369b3f513138c3d221d3f159d7014ab757aca8ff304a2a5"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q75",
+      "sha256": "e993d877d8375b933eca8b616abfa3c4fdd4c571a562b7285c46710b95ecbe9e"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q76",
+      "sha256": "c625e9b7cb338f4ac9ae5b3760632ecce1664ff5a625485a465b951163b46838"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q77",
+      "sha256": "259bdba254ecaa9ab67817bd30ca94b2f70f5392b0feea2d62a5909c6fd304a9"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q78",
+      "sha256": "398184298ba36fc874ab1e146bebc7e080681c3c89a45c605078638588a65f82"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q79",
+      "sha256": "67fa44f23db7e769f122471e359c8e4241c4ebe2e0f583692b1bc48ba85e1618"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q8",
+      "sha256": "cf355774f09dc12d03aac4537867c1aaa967065880480063dde5c49af4af7ca5"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q80",
+      "sha256": "4c6c89c8af0e60bfca98f64cef0027a10a09006560fe6e535aa6195796d66c70"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q81",
+      "sha256": "f753ed591e2e2bb160e874275f670c7cbb78156a98e11e2ef010320f054ed017"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q82",
+      "sha256": "928e4fb233b1ac4b19c6f3572bb84691931592ed85a6c0a4576042d0c6acc88a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q83",
+      "sha256": "65b4301673f4dfb6c1a8ea544b5a22f6b22f439f84cd42aae06fc66506016ea2"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q84",
+      "sha256": "422cfeb811036792cba4fb1fc6afacb0b553827fd971c49488e0d6da91b6aaac"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q85",
+      "sha256": "09c2c66a72875186968abc457bb87d32f71df6269d8cf2f8b4e760ef5f695eb0"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q86",
+      "sha256": "9f9ff1baacb023a3fd9c4d3461c1bcd3fc4e4f3b1e33bff57a4155f4f167f078"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q87",
+      "sha256": "4e841cc683b686acd5aebcdb1de02853ad7960fa8ef891da23c045a08fc1adfa"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q88",
+      "sha256": "261b55a31dba991f7ff0fb71078b15465195ead63395de27d18c61ac32778a40"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q89",
+      "sha256": "3bf4115f8f4600c08203dea8dc8aaddb36408d7ab9b53ef44efc7326184688ff"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q9",
+      "sha256": "18200c6f1268b7e52f877d3f9afb4aa824093c46e48247df9c5c2ff6e9281b48"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q90",
+      "sha256": "7b95d788347b2da83727e06f6d3317a5652af3241a2d154c958c52f5c00155a4"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q91",
+      "sha256": "545e6734c3d82094265c7ac2f2c71668fa7dc848e95387a4048ff652810a89cd"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q92",
+      "sha256": "b5d16399c10426a53dc9a18d41baad1a362a44aaa2b1bb540ed2489dfdefb132"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q93",
+      "sha256": "8fad970d92fe74b376547f1e1bdb95e5befd9f2677f150411421325d710cef32"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q94",
+      "sha256": "ff414734a7231bf0d3b4c359e012f719549f2b2b036fd1038d9f9012b003fd63"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q95",
+      "sha256": "1ca52f0273ea442ea1c5783d6cf183f0eec396a6d882aa0388bee8d7ea372721"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q96",
+      "sha256": "4d74a7921ff088858c2c8a20e6b83900741000183c131ee19b5f34924a12592a"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q97",
+      "sha256": "d7f2f2eed8746e0a81ef5253e9e89b1ff1f6579d2ab72442f6cc30f22d80844f"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q99",
+      "sha256": "de5311247a393eeb15a4f5a1093784f78457f0bd3affe08eb5dc8ec8f299ae3f"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q1",
+      "sha256": "ec01d8f54a4438b3e107127c1fd0951c59b22ad2d13c258b431fe0d139fd8a75"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q10",
+      "sha256": "6a58a6e6acbdabc28444dcb89735940806e87ed7167826cd736b507ab181fce3"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q100",
+      "sha256": "7fe5d56653183db02575ed1896a5f90bf2c38d17338ed809152f1f1c5a962901"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q101",
+      "sha256": "8ca201336a475e78fc2e2072643dad34c9c83f0691d1a7d2389afeda3aaf8e06"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q102",
+      "sha256": "4072b389ba0c49e43114d4201f50d3f6a3c0cbb21febbd598605f111c1270871"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q103",
+      "sha256": "2e6ba5cf9e3057553232f94b1b87ffaaf17bca86c7733099b188cfa2040fb535"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q104",
+      "sha256": "df91538f98184f720db251dcc881452649ba6d33f6dce7ef914e48b6988ce09a"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q105",
+      "sha256": "6982216dcb81afa7b465d65361b2f81adb15b5cd8f7e0b17cb60d5ee022abb52"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q106",
+      "sha256": "7d7c00ed80870bd60f776119d8c33f546effc5a9e3c2d6e572e328e3365b41ce"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q108",
+      "sha256": "5c0dd5eae643203931ae6537da0a1f02e058280eda41bf3287b8f0086dc18951"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q109",
+      "sha256": "21dacacfc0a8521e5f64258b2f6b2b520d0eeed96dde2511883cd2cd964901a1"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q11",
+      "sha256": "d3c279e0f7edf568b81c47a7ff50720e76748ffa81f280cd545e1548d83848af"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q110",
+      "sha256": "dea5d0bc84245931064fc8a779131d94f4ff8bf826065ca13e019cdeb248f4d9"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q111",
+      "sha256": "22d2daaec0dc81705cb971b69a868719dcd98348502919438f151502b1f2e4cf"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q112",
+      "sha256": "ed5d4adc83ceb616b41808d4f1db70ddf66607d438a186249aae2f4314f2e893"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q114",
+      "sha256": "4847fe5ce1c9f0df9aa3ddce33ca13c22e4795279b2b8e81b4b0174953ccbc78"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q115",
+      "sha256": "ea6d7fd94cf8345b68218ba6654a2d0b8b6cd15459ffe171f762c0d2133d437e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q116",
+      "sha256": "51c8c74802dbe1125d17bb8fcdadce39d5b2f186f547c5f17330b4612c4004a1"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q117",
+      "sha256": "11e70876c7251806b20ac449c0381f8390fb6b8fd6abbfbff9eb49aad49e265c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q118",
+      "sha256": "f5d0c52ce8fd8d6883fddbc8b93c6886a14e1d743a323b61c712e0b71a74422d"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q119",
+      "sha256": "6773b1cac334edc42adc61428e5175e59d4524b0a4bc751bf0c5b76c6f1ce008"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q12",
+      "sha256": "4be1a1674a559e91f52d17bfce886220b8b25b282aa078586b5e3c6cb034340b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q120",
+      "sha256": "aace0b76547f1333f28744ce4209587bb6a6a7cea8e135cd4bedf8773ae20231"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q13",
+      "sha256": "627571551b14c076693bc4598b74c32c551ac1f4b4ab80d2a4d092c0d6da8e70"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q14",
+      "sha256": "5401ccd23578e801fa03f2052562d79e6861d5f587967bdf26cdf27b2775b446"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q15",
+      "sha256": "0a7d46ab90d81d0c3b5415800e13160516f3c5250157e867669471d08a7ffb6f"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q16",
+      "sha256": "3d6d610887515eb27f4d3a9c87182bd6401b309db531e571488aa6ebcf50619e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q17",
+      "sha256": "98ea60ebe3f60903a6554e56c02edb7518e00e470f576ce53a0d98b1667a3f69"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q18",
+      "sha256": "eb662baf801178985ff2eb1188a89fdcbdb80c2ec8df070cf4c56b8474b018ec"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q19",
+      "sha256": "a96abcca0c0f7c4a65c88fb7b2fb8602be5d3a49852df664395bbfec6af99f44"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q2",
+      "sha256": "477f3675593edadf6923c6d5832a11380a88733590e2e7583b23f2089adf62ba"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q21",
+      "sha256": "5937f4f789953e09c73b5baebd709197b58d331696e602ee2987068ac576824b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q22",
+      "sha256": "8fbab3206edc318ee716ed2b2bfc0651ed7cdb2171af3e59d608f990196704d8"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q23",
+      "sha256": "60fe4cca419ac97e18ce4770b3f81ddba374ad90b5603f2a61f280f514071711"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q24",
+      "sha256": "0f69054057c1c4669566a5e0e654f534212082ffacbe28255d4b51921ff776e0"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q25",
+      "sha256": "926dd2ecf50e88c56e41d22f5da90fe3999060881e9b33efd30d379c29b1334d"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q26",
+      "sha256": "af3fcf2bc5d21d9f5dda71b2d04100080dbf4607f0b2c2ed5e76fb0b24b14835"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q27",
+      "sha256": "52c6d9fd59ccda860f60e14b4b0bd66765f522713c8bb0f73c5c419ce399aa69"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q28",
+      "sha256": "f6d9f7ded759ee2742aeb87148dbeaf10d6b191197a39bf07b4cf36316689c70"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q29",
+      "sha256": "8731541bb32412987abc92a65b03aec8275f9e651f0348940a378ea053d2a6e1"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q30",
+      "sha256": "5344d433c4ac6f5fef79d234246db8c61ec9d4d4cdf2e2fc8377c7f8a9358b56"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q31",
+      "sha256": "960340abe844272fe45367e3883a55ed9914bdd64e23c27a9515257e51243fa2"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q32",
+      "sha256": "f0e5ecd88c691e538d67968a60f12a07dea980ab35f1be3006b9e5faf0d0ea32"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q33",
+      "sha256": "63358b919e8d309689436428c414a460b400aec75b683ecaee730fec3b27bc4e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q34",
+      "sha256": "6c3f8f59f5d28e97b9f2c490281fc17c5855dc02b10b8af1c4c0e235a750b353"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q35",
+      "sha256": "f13f5c5359a790eee52a7f0f5bb1769d5850913ee97e0cd9c533ce65cb2012fd"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q36",
+      "sha256": "fc88230e4fa8ad9dc0197f52cd05bc41ff43a6e66dcda07ba5b63650960296d1"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q37",
+      "sha256": "f6733591abfed01096199ab07d44db75caa408f816409b192cd0396caa596b98"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q4",
+      "sha256": "e126ceed3a6f2d7b9cdaadeb131347b57c131712e1416951b39250a68c7e4a36"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q41",
+      "sha256": "24d143055284ce50262a549abcb7df0f0b6f0e525dcbc9153c21cac10da2e13c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q44",
+      "sha256": "a822a5857cc157b4d78696c9637b31f9c771771bfabaddcdffd82cd878fe58a1"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q45",
+      "sha256": "1e0ad36c94bf83bb5a53a5e8d356cfef6bf97b1b4cceee9810afb5c01b5cc64e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q46",
+      "sha256": "b5f663d5765f8fbb2c644ae7cf4188715d5b6a190d4657f4aff7255bad020962"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q48",
+      "sha256": "d0137c1b6c2344821fd713477e308c11d3adf5d45a387a8cc3240b3e06529ea5"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q5",
+      "sha256": "34de7030d017f2e56f96f64ab4f7fc2be30f91e39f7e5f25303682f800889935"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q50",
+      "sha256": "64408ba8190078e345ba8882843c063cb49664bbf54668f04c30ecb0072ba7cd"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q51",
+      "sha256": "28e2d255f1776b08a34dd8e4c25addd0b6aa458332c7428741ec306cfc5fc3e2"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q52",
+      "sha256": "d59ab0d17d07e0a6a1c87ed65b61ca6e29e484a44178f1923a584f7c51115b7a"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q53",
+      "sha256": "47f63052e59f0e7ae12544f0f13d239c71e26a7b67eef6545d3b7a21fa551928"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q54",
+      "sha256": "3f6ae151fb02fe72b9bff2bc0b86c8923542b0bdd50600a56fa29482880a3011"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q55",
+      "sha256": "e2b2e60cb6c85c9a1018a5209ee6c89a735d5381ba497f19a87611565527b69b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q57",
+      "sha256": "1fbe11f1daa9de1a732eca0844c50a9ea579460bfc183312b1aeb7e4f0b71a3a"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q58",
+      "sha256": "7c1e85f47a0c3cebc8cda51b411be1b6ae328c8d47637aacb18fd5f04bf91bfe"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q59",
+      "sha256": "fae99fa762ed475dab00a4091c3a17d15a5deaa265422eea6b662f043c2e3d38"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q6",
+      "sha256": "40318d0954889134dde69276e9fab50b5c1c3cae39deac7183534f016b6fc0a3"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q63",
+      "sha256": "753c733d131d6d0be5d54e61fdb379ac0c50cde01f4d79117542d0cc976ea0d7"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q64",
+      "sha256": "c3f351e802ab804260040f80bbb22adec2a3767e3cb4764cd3aabb70b44bea08"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q65",
+      "sha256": "d623798b0d1a4e6eec0d8fd21be426b5e4660aaa2ee9efd89d9d6c73693cabbf"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q66",
+      "sha256": "9384922c3164d3a16f409096fc7b7f453e43d8ff44a4ada700305634ccd8868c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q67",
+      "sha256": "55a0f795e997315ba361013f6f3d79e0ce532feecc36559e5e569108ad6af387"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q68",
+      "sha256": "ab610c6154185ea38a16b09967fb40b2ce9334d6f56616b8cc11c1e3340e0b45"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q69",
+      "sha256": "865d548258e9eb4d359a24f106c2feaac05299c64b96c1c95cd24d48b81e0c37"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q7",
+      "sha256": "e4ca9ee30d595697b2b73c9c0a1823a3ca321a30f5d042a77dbd2cf16dd423cb"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q71",
+      "sha256": "0018de307aa8d85a510d09336a639e6393de78c8b5cb608f3080a8db28b15dec"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q72",
+      "sha256": "d08198fa918a2c712963fa698643a915cd8aa5c6611117147312d3f44afbcb06"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q73",
+      "sha256": "5697447bc5f6f81e1d1c2538cee8ca22695c5858b0b49dbca37b9dedad154edd"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q74",
+      "sha256": "8537b66c84aab2bbe9aeb806c8ac6933871cc679c16b7c6a884ec126404b7d6b"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q75",
+      "sha256": "1eaca896268c567edd6f4bcd5410f595f6d68e2285c9ee376c227f849edc47ce"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q76",
+      "sha256": "9832fee3120637efe5bbb582a5df2777819ea2129e91dd241cfbc35b9b8c3192"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q77",
+      "sha256": "cfcc7d3391915dadc8d07139156255e2c20b2f9dff79f4032a692481fd933a2a"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q78",
+      "sha256": "b1515b1be917c0f7dd2af0ce134dbc3075adbecfaf7aecbe30bc9daff155dcb3"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q79",
+      "sha256": "6dbb1cb8f379b571f19442be0e4dbb235c251f81101319cd3e14c0bdbf158cf7"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q8",
+      "sha256": "e1ccf5588b5a4537ee46d25cebf364bd3482c94603fa671a14b75e70d555fe82"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q80",
+      "sha256": "3a2a0b8045fddd9bf96a0af083a00c0aeb9e758e4213e0918aa739e043119177"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q81",
+      "sha256": "2be9bc4d539204d3858f43d4472e21d5f99966e4e6bf23c7fec78556fd49205a"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q82",
+      "sha256": "34df3e286d2ec5c4c877fc5050f6f6e7b957d1b6bb28d1823fc436653561008c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q83",
+      "sha256": "abd677b707a899ba282d47ba3df326363d626f12c8064b664ee83ea8689cce2c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q84",
+      "sha256": "dde49dcc32d6c8132a6007d3aa2f6d29be2eb79e6d0fdb95b8a3deb0f6da9713"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q85",
+      "sha256": "bf1298b7a83a67e667d431f7c228ec6b42034ece1d749e7c1a3af1ce9f2a9115"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q86",
+      "sha256": "fc3c1666bb25020d82cc3c6e9c36cbb64fb63d14b4766746ae8e78c54eb69a6e"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q87",
+      "sha256": "d8c77d604c04bae9a0bb9b2127993d1e74eca967ef7a7f0f0273b0e2d4ed828c"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q88",
+      "sha256": "eb67652f553e2f891f11b298de4a39c31b5fc65212ee788b902ed4ba552951ec"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q9",
+      "sha256": "e144280279afdad129e0a35ea33b8ff5df94c79e0ff7cdbb1fe6daef374cb1fb"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q90",
+      "sha256": "9cf2f6e94b48fe4731d5a1b332dce659b630213752da4fb0ee1c658eac263d07"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q91",
+      "sha256": "dc6a4244fb2f002f9ebd7e18189185ff90a51550689e936140014fe3740a8ec4"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q92",
+      "sha256": "79da26e0bc06cb555913c3f764d3b4e79429cd9f087ca1504cea4a4a59c66ef8"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q93",
+      "sha256": "ad8add85a7f496fbf7ca21a12986de6e1ecc7806a63793833f64fe9be04a95b2"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q94",
+      "sha256": "f0cd04dc44709da6b5d5560a1fb849eb6115ed9a65fb90e988cc792df72d8087"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q95",
+      "sha256": "7f5d2400a59d102245fbf3195c291775103d5888bade914847da0bdc23d3c17f"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q96",
+      "sha256": "27c9b33b877bab50ef8e77ba53a7493d2f4a3af0ad6816ce4d73b2a572164503"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q97",
+      "sha256": "eb30523295649813d6fed88bec152c4aaed14ad83400fdfc5b468c2a11e2f7a5"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q98",
+      "sha256": "2a169c80a7c440870b4afae2fa5e83f6ccc1c7a1dde4187978d4904f9a4102f9"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q99",
+      "sha256": "8e7d71c0becb212e029f502fa5ae0b76cff6a1fdc9dfb0211f6046d71ecead49"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q1",
+      "sha256": "ce58b51fe9812fc5af1682cb8aa18dc42e9cabf766461c8b44ad4a12beab08eb"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q10",
+      "sha256": "947ba85e5d8e5f1d065b1d5ce80535557dea6badd5bc771184805658407ab7af"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q100",
+      "sha256": "6d34489287d274c90776431f724f3d9d0aef0dc98e56b235b2c5b2e22e49ada6"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q101",
+      "sha256": "488682723aff81cb2d305e6b7526aba3f0cd03aaecae2bf99518eafcd43b501f"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q102",
+      "sha256": "39a59e3533bc3b062fec8295a0b12e5237b14be70e9d411fb32760cdf96375c5"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q104",
+      "sha256": "7b5eb1037bc38dc509342c94361544f055a8e2bca4a7f09092513da03c17cf9c"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q105",
+      "sha256": "af4981eb15247088db216808ab2c589ce9b0c1a9da3d1f35ba316de529cfb2a2"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q106",
+      "sha256": "073dba8b8751b3807d1d9d9661f49e81577c6f17d450b2f1fd0a54ff276957e0"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q107",
+      "sha256": "9b4b7a80e80c5bd0a617a59159f23c0b39aa34c0ea2dc381f547155c06d0ded4"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q108",
+      "sha256": "03e1aae1df06bb4c2c75bde3cb8f403e638cb420ebc18edd77ccc4cd2bbafe8f"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q11",
+      "sha256": "43d6a82aa0c3c1c8bcc2d231f8bf18668fd83f3b1dd023ad64064f4aebcdf8f4"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q110",
+      "sha256": "896f995dbcda78f31026cbb8ddde87d318f5f5193d1270ddba6752c1218939b8"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q111",
+      "sha256": "6f2f20cd20e39eb5636c0f094f1a1cf28b6aa99231d03e065e119cac5d108308"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q112",
+      "sha256": "a34266a0f49a87401eb4a89a31e6f7a2732ef3c4efe652dba014b0125b112f5e"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q113",
+      "sha256": "d921112fb816e94e3d7cc1e03f7038c2d63edf26c5701fbcf1ed5198e00589c9"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q114",
+      "sha256": "fa2b6849876678ae40f69d2d5355467caa17967dbfa1f2e60301f83c99defe93"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q115",
+      "sha256": "ba46fc536b761d1fe45215cabbfbc44622dbaa6b3a5455f8aaa57b6821f995e4"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q116",
+      "sha256": "a05e588d4fa3de2a8a6d1161b2ec631dd283264a59410f6159c84eebbf9c8775"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q117",
+      "sha256": "c1c269e5f3e3f1f79825d63b5b7bcf81f0c07cf7f719bd90ac3ba1c3986718fa"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q118",
+      "sha256": "8aeebb36a5ea2cf37e8582ce22e4590f30717046e89b73f84e2e900a9945c142"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q119",
+      "sha256": "28a7da2742301d61a4cebeca0f93a8f54d5a867dfbff5f9dbcaf9f16ade40d13"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q12",
+      "sha256": "5fd0cdf305fa21ac28121fb370f79628f35bcde8a4b923baa9135be20bb5000d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q120",
+      "sha256": "f6bf5814c9082cd07d59bb27b480ccb56bc55c8c0b1f64624c53645802aefeb3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q13",
+      "sha256": "8b4831fffe24a5a2d893633f565b8d3b9bed8a5a539252ac7c79e77b51cff4f8"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q14",
+      "sha256": "acbc9bd9f1d6b62ce726297253b8ac5539389cdc83fb3d48f8184d6a510c59c5"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q15",
+      "sha256": "875a08ebef4008b708002b197e2a68a50c1fc41df2bfadd949d79202f2a91e7c"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q16",
+      "sha256": "0d10b841f3eab6572efe685de4795fce9f38044a834150b2683e7efa33344110"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q17",
+      "sha256": "edcec23068b03f3d378a3e481b823d260ee08c10cdaa7ff58da0bff50a862512"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q18",
+      "sha256": "862a1840e543574cc229881801e55f78dae01b59d8de5b780d0bc8810a7252de"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q19",
+      "sha256": "b807776807c9ec37d6c81830174e13b92603ee7548151d08b24ead102551cbec"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q2",
+      "sha256": "3007ee67763495281aa33af11e40d54b54e7613df1bf6e685e8298156dc5ec78"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q20",
+      "sha256": "a45e2ec0b0158de73545ae1eedb6ffd94ff63f204e8960d24c727ec84c1b16b0"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q21",
+      "sha256": "b77a90d0694692839bbcaed986ba254c1b59d923c3d0bddd9adaba2796369f37"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q22",
+      "sha256": "561f534a4daa2a6147388882d22f31e392bfa951cfb9a2ab1bcedcc0e1475953"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q23",
+      "sha256": "1540fa2d22ed5960d71f34f8da7af357eb9d67e95c1dd87e38c4b53b325c9d98"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q24",
+      "sha256": "d3a531fe1500f313d7828687dfbd152434d8e33ce6e33539589467273fefe904"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q25",
+      "sha256": "097ad3357e3b48b9be4f7e11f9aed3c3f453341861d6c14451940c0ea7509aca"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q26",
+      "sha256": "5346674e6a228567b6d47fc146f678096dbabd3421ee6a9a5545bd10d11ce888"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q27",
+      "sha256": "d2409a4e7261e280da11f379d1a1013fb74d83d37e88e6ea2060e3264fbdb8f0"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q28",
+      "sha256": "bcaa946bb337a550264b0dd33f7b43554a274492854df47e73802334324e584e"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q29",
+      "sha256": "061188640e77e7589cda005135021ea0eb27fcd223f7eabcac2f2dabae70315c"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q3",
+      "sha256": "e815eab9378a5523765ee3f32cd84b1e0c3b6a0398d21c96ecc3011f605e5d49"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q30",
+      "sha256": "13a8a52c0ecd6a81e3fe94a03a94a79dae7b7b182eaeee258e92974f84a7df26"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q31",
+      "sha256": "cc89c048f1d9a146af3e14e13109f5e7c51cb4d61b479557f03d2e699ab91013"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q33",
+      "sha256": "01ca30808b86786e9c4577cd16edb4a26651b8043fff1c94abe214849e3108bd"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q34",
+      "sha256": "52c421f7cc078721ca4691d06dbdc234d9defbcc949a1fd74da00a46e965985c"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q35",
+      "sha256": "51f9e2a7f003f79b032e371c4322103e22bf5adcb930d9ddcdc75f9cd7aa3e2d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q36",
+      "sha256": "0dcacb0346dcd338a362b9e61b8142b2f992351f8b55a28df833fdd58074828f"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q37",
+      "sha256": "e627fa9c83a6d2d3689e9252f5fc5d9119ada540a2828988ca06f92588930029"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q38",
+      "sha256": "971530facd75f2cadffc2f7c86bb6b8f780a223dd6f13ff8cca07bfa84cd92f6"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q39",
+      "sha256": "139404f5126c10ea58fe20b7ebcc132d8d05c404b5bc9628a0580eb49bdf0ad7"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q4",
+      "sha256": "b38e6c0411aa5f2d9c7a856ce796a74f24cc75a0db5da525a284fc584198e007"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q40",
+      "sha256": "edf60cb2c3b58e5ef2d8f43ebf91db52327234cbe254ba505ab090be5ab65244"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q41",
+      "sha256": "c0e77ce00d023ad5dc620471143386af8d70ce7f5f555193748a48cc88edda68"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q42",
+      "sha256": "2e23c848213aeb886b06e79e587f4320bfd7b6aa3a94f1f1ff226e5b4913bd0f"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q43",
+      "sha256": "87c32cf5a07d4c040debc4fa6da2f1f07dae96f1b750eb87c8e90ac7c35964cf"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q44",
+      "sha256": "68987ca85632b946cc053cebf89bd0b34b2bec03b5c2e8d72082c4b5a9acecc2"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q45",
+      "sha256": "9d38ac66a36fb88ccbc9468fc494387c9a21398814611237bbc28dec68bfa42c"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q46",
+      "sha256": "37e8594e2e7b04f544f50dbda06c1b7c83215f12695e2582cfade949fb815238"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q47",
+      "sha256": "bc9dfc22d27afb05843c87de513a3d508e83a18a1ffdd0efe8740d761497760d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q48",
+      "sha256": "b9a0e116baf26dc92bb3d96e29761a1375d75e1d9f1d7e284ae51e8ed0221724"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q49",
+      "sha256": "c6b39ab7e599539badbaffa091aee6b7560a29f5bcada52f135c436c1e14cafc"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q5",
+      "sha256": "c4c57cc9f4c454f8763680fc33c96469e08db62dea73abef8bbe6b79052bac14"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q50",
+      "sha256": "5f08307b7e9d42bbf3584a1ee7faa2c081e2424d597cc1bf8199f07dcc974c02"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q51",
+      "sha256": "58d81e57854b47b5093890b054329ff8465fcb62a957071c7082b984f1971d6d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q52",
+      "sha256": "a5c655d4efdec48f2aee84f111b870e97d6835d190095bfadb0a0aa566896c51"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q53",
+      "sha256": "383ce285350465f2ea1c5f9b81d57ecfc17d3c21124c5291e9ac693c8d12263b"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q54",
+      "sha256": "8d771e29d54a2d8f8948b64b8adb1362920d3c7a7c17a0bedb460eed1993f1c6"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q55",
+      "sha256": "0fdc6845dae4c995593e6acf5d48e3605e0ef6025c6edc64de4893791e99bb0d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q56",
+      "sha256": "e0ea0afa3a2ceceb240623b0406998df5226b8908481867228e8557db0971cf6"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q57",
+      "sha256": "615d6f23295db1d038994340d839b98386993a3bdcdab17efceaec92edfdda0b"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q58",
+      "sha256": "7d7ca767da1986a2b07a033fffa31333df5391f0823ef0b487963b9df84f12eb"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q59",
+      "sha256": "fba17c249cfc03058abc709fb3cee4c3cc05c84e7ac0eb3da62c1b7d09032ab7"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q6",
+      "sha256": "c0351e77c17b197bd8454b2d83bdd245d7fb09e1857ecffa7e1abf0e921436b6"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q60",
+      "sha256": "574574a597be0d8de1f3a263419ca83096ea7ee56bb0d029b28474c90fe1cd96"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q61",
+      "sha256": "757242b7f077d25f32818fe6b423bd0124c86fd6d9a76765d81d1aef311878c1"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q62",
+      "sha256": "fcca1c0896d14084597c0929099354c1c28b2fe5389633aa420e8775a30ca4be"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q63",
+      "sha256": "11fb89c22265ed455d23300132e3dce7da3559a3b20a296aad47eda74bfe1840"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q64",
+      "sha256": "9d3e3b81a85c5a998eb04f313ef51800b01605444c39c3c4f4f9ef47dd6440f1"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q65",
+      "sha256": "cda4f21db1dcdb2111223e3e458f9fedd6559d7db0330506c09c506f29eb0018"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q66",
+      "sha256": "a1647dc240515efe1c9631d4456b1fd7f65b850eca4cf0f6db27e6d951c252ee"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q67",
+      "sha256": "af24290b2e7aa9c79819f2527e0f170ae4c5f294dacb7bdf5cfd546d4dba622e"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q68",
+      "sha256": "d632c4c1bb0498c79664eb459fc4a84f79cecd6b450b287979028315267f7ee3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q69",
+      "sha256": "8f9ea29b76e5241fba3da8832a46decb956a85d7f3d068a7e1e9d3ca5461fc25"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q7",
+      "sha256": "285b901299bced11df926fb54f3c44726f882d9d90aa6fe40ea66bb0c6405c42"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q70",
+      "sha256": "43d15268ccffab59568a57e708ff53f295f3e58d854e4a3b934058dd4a3cc1ff"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q71",
+      "sha256": "c532b8867ae61729653eaa3145bc4cd47fd16ca1130a27c66b64a1133a19cfcd"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q72",
+      "sha256": "c0db02db2690cce5424907e521ca93f1b15b9e53507b5c71777c8079102a0f84"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q73",
+      "sha256": "ea5510ba75de44dc023cf17780b6f80bbdc4c67838b0b4ce0a0a930ac984c64a"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q74",
+      "sha256": "27a5be86795ea6627988d066d47fc2937045af8a354cb291ff5fdd036f6e5de8"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q75",
+      "sha256": "7a24b640f525e5e54779dbfbad2194efd279182681a07541dd1486c075bca918"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q76",
+      "sha256": "2c3fbeb845ab65abe30e45e2630842c2943c7fa6a84aeee5c429da12bd45dac1"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q77",
+      "sha256": "f550196bcb14d1c018906a1ded906975c95fc985f7c7d4fdaf3f347beec61e7b"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q78",
+      "sha256": "f4950d0e3dd137796f610673e954e4225c2c8c9ddfbca7be142dbe2e15ee8cd1"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q8",
+      "sha256": "0922a12810acf0efafcf7ebed3f58339fc4f2d5c168bdaba06814bc307e7c793"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q80",
+      "sha256": "9f2ef95e7154eea1a4d7ef2c9a3316298f4f19d8ba3cbe5e4c0579c4d34ed0b8"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q81",
+      "sha256": "b211cc13dddfaee4e3ccd4e74421958dc765b1ebbb3f89a7a146655197f8fefe"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q82",
+      "sha256": "0a81852edd6733a7d0ec678b041e90e7e6dabe524080ab1443ec7c8eb76e728b"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q83",
+      "sha256": "fdafc17e5afece592d6e6b7b07a44870ca20ae04ca2debc371bc3403a3428fb3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q84",
+      "sha256": "b5d483c85271a3b095dba9729e8b32987e0a4bf37f41b167470cd2f2a59f84d3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q85",
+      "sha256": "286f1b25e22fefddf0681d2b4f005c2774d4527afd709adc4c2f8e05f51d685d"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q86",
+      "sha256": "9501f656287a2b537d4b4801b1cef465d1ff02ede969332cb6ef11f456fe8d88"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q87",
+      "sha256": "b74fb4504e3e25328d49c22f56f42f7e0cddcbd3454126f65cf67915cdbfee07"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q88",
+      "sha256": "b441a8d7e385b982a17f6ee4d15804f805eb46a9fb608819c9b0b5a0274a432a"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q89",
+      "sha256": "19461c111851fd56ba2a072711c01c1cc801b545aef0c87665107fe64ed8a896"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q9",
+      "sha256": "114d3ed72307ab715407b99fc7d7f5e8265c9bb7efdeba7de37290e4d4e5c574"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q90",
+      "sha256": "4f31cc6a1d023075787c430c68b40ac62f5cf699afd7fdd8f7b2786494220bfd"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q91",
+      "sha256": "9ce07b4c42260fc1244ed26aabf77a86886dcb198b5354f4d4d64e92632784b3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q93",
+      "sha256": "cf5853fff216f61bc722912aff45d766f463f5972c42b35b7303f3efdc30e617"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q94",
+      "sha256": "bb234a2095c7fff13c2f7a760833c7baf84374a59fda183ac1754d27f3c418e9"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q95",
+      "sha256": "c59689aeea05eb91e2b193990d5434c74a8e4bb58d90e98b4228a784a0dba2d3"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q96",
+      "sha256": "c9ed2ec1402cc06864fca30f6dae8865944b316ad7e1e87a7f8714f5f2230bf2"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q97",
+      "sha256": "7fba6065244674b12faaa439282fc30daca5c26bf1cbc9376f662ca65d1641b2"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q98",
+      "sha256": "5e0eaa0ce1a04777aaee9a88f2f3d4cf0c653ba3b460547e4d3ebc33ac986308"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q1",
+      "sha256": "01fd2fd64409ad94fd8f0a7a22a2a1d4b3e3a28481111f145b4ad7fa4258a0cb"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q10",
+      "sha256": "ed1faf1287d3dcdc992f8c6e14921cf006c3650ea764ec34d5cee01c2d4a40c7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q101",
+      "sha256": "ce1ad080f74a8ad9759353cd164a026f1c337c7f0962d81ab285d7ba5dfd4b15"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q102",
+      "sha256": "4872ebc986e31f791e79924a2d7308abe59f3b2cbe05e5440b3479d0a9700d71"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q103",
+      "sha256": "062d2b77c5a4b033228ffc65dac2492b0c5b009ece35bda4ad8773fd0f855cda"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q104",
+      "sha256": "38c29fcea973eb8b148c30a61be1449a3f956859ac5f41e87b067a70f01fccd8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q106",
+      "sha256": "f95e943c0963f55a89ffe6e9229da108f67155fcef5dc23f4c5603f7fcdc5fa7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q107",
+      "sha256": "1cc52c1d3ff0435442a1995e65e17bf9360a2cbbd6d061d00d34fa07d454981c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q108",
+      "sha256": "54dc3acaba3b82e0cd0b5d5ae4299be44f8516d535c73d1f6ae660afcf243747"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q109",
+      "sha256": "d141369838b78569fcf365d3ac75f33b14b6f5d77c779391eeea72784f7dff3a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q11",
+      "sha256": "dfa181e3d291a665a90ac2d84be61a2134feada07be21e8a973f171b4a785724"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q110",
+      "sha256": "274b5947df7a0f165b95824ea6a53f16562515a21bfa00c179762bcbf7d7af22"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q111",
+      "sha256": "1cb007e74a543c9a836f3e99a32ada03b994cb2b230c45ffe37646a213a90f69"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q112",
+      "sha256": "5e2a3697817c57325cea7fcc556e4498f5852eceb6b653ffb9c1d6a3abc57399"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q113",
+      "sha256": "84e44e5a3600bbcb5bd7bb23b5afcbb37bb49f4f82ca84a68676666aace76905"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q114",
+      "sha256": "3146bc64fef6ed794317b6644d6425bd1ecf6273a4561c9393c1b6ad5592f674"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q115",
+      "sha256": "294add49b888294a0756ec955ebeb10df952dae0c152e74a5f937cfb1931bdbc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q116",
+      "sha256": "7bd53d61ebb8a68a01dc5ec33e4362028630526925d6956694519b8cfd4aa0dc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q117",
+      "sha256": "4b021604ae4f05cb31fcaf9ca506c43041f6ce1223dba182e8e08d71dc769574"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q118",
+      "sha256": "0165c11e7fdcb06746fc6fc24dda1d4c2b5a89b5ba6d7ea0c5059e315dced6bf"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q119",
+      "sha256": "b069a8da0b3896a5a9375c299403f5cfa944a056e4b36d16c8ef28677c7b5254"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q12",
+      "sha256": "5f8cd1b3b843992ca315eb7d02f7807692b4e62d84399fd4bcc8a076a2fdc4e8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q13",
+      "sha256": "31b9c37901640e857d639c25d20982f48d445495dd708f8b46cbe12634a527f8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q14",
+      "sha256": "07e7d10983b79d3d86c1df5e1d598cf4776b97de4beaf76ae6afb5de7ea5d012"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q15",
+      "sha256": "150ebc1fa94f650fbd690e4b2ee42250cbb14a324379f28956dba267918b67c3"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q16",
+      "sha256": "fb0c3da82d2ccd8fb10f7ecd2aa46223ee5ba6242400daae9b10d17d337965d7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q17",
+      "sha256": "0918643313db3f4acea6d7018eac60eca9499785b3d278cc4146d2b7cbd7d39a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q18",
+      "sha256": "91154a5aae30ad1cee7cdb6e515f9c809148f784a4bf3bffe076dceb1b2cde36"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q19",
+      "sha256": "e28e036d5b93ca39b3c67658b1aab2fd17e607a16d1f06c873c45754a56dd8de"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q2",
+      "sha256": "be815de50d9bede271e4babd62a31a91280cb3591f634b8af8f153f88a42745d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q20",
+      "sha256": "80f44992df9d5f996ed4e53a38c1f829d6b54263ae67eb6eccde2d01696e054a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q21",
+      "sha256": "8b4255feafad15c60b03ee0bb0288179ced7ddba35f2ba90525447ffe09d227c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q22",
+      "sha256": "2f4b9900b0f14137cf45fd9bb19b1e3c43f55adf9a7fce5ea50d112f9ac6f398"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q23",
+      "sha256": "04cd6087edabb9341f9558b3e933a40f759b02ce01a5f6272497fe8715c058a3"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q24",
+      "sha256": "6e86ad1a7182a25d3f5700615a7229f7ec73359eed47f11bed6b515c3dfb54fa"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q25",
+      "sha256": "7b7aad8ed8b9b629675a691e2e063d4d9cde615f1d2e6432360122555e393b59"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q26",
+      "sha256": "5b8a9f56f3bc966b42d395c6d5ccd5aafd6a611ecb697f26ab2a606d90b33608"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q27",
+      "sha256": "b2bcf173a42da15630bb79d2844686f2d0cf8e064aa12e2c125a96b92677b8b8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q28",
+      "sha256": "8878396ab25883bc2ba537a81197207780acb0261ef923f9dc813b2c88e25b8c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q29",
+      "sha256": "652272937b99bcdd0f415818029ca0e2621de6bb43572d8a9c02f8be17883965"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q3",
+      "sha256": "1344233d58c544f653212d33ce4f633f4211439c107da8e538211aab3c4256ac"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q30",
+      "sha256": "a79beec27b4cc50f110059185415dcd54f38a4df275f3d798e60f28138a56ee6"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q31",
+      "sha256": "b9be5db2de82b0daac76c8d40e61bf28450aa81c2a8fc4a7d5c32a9b7c856807"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q32",
+      "sha256": "13f3e4ed1769a60362cd69a1b0f434266e2c08d6c5ab20d1a2e3a864e8ccca97"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q33",
+      "sha256": "7e41510fbd5d7c1c1e489d01e99b0e670c7d558511b8a45afbfaca066533f9c0"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q34",
+      "sha256": "20b7d66d46937d50482c364a72e4c78acea662dcdd0a87ed5baeb79281c027be"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q35",
+      "sha256": "ec1b5455a606e4bf2edc5b7b4314b1a411f10c701241c1a23a0a8db4ab1446f9"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q36",
+      "sha256": "7f36d0566c24b8d64977852f5a89ff87d2a921fba7c2460863bfe416ed921796"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q37",
+      "sha256": "b22851c3f0dfc98aefdfc20fc486bd49901ebb1831b713708d01aaa0dbe811ee"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q38",
+      "sha256": "a25f161896b4206115307f08e200c02e403c5a2046f59b7ee94f24996f9b18a1"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q39",
+      "sha256": "a596c62e01d258702ab4ae6689ff90b77e25b8689c698f6243c3c3aff255a846"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q4",
+      "sha256": "820f8f475f04f7351dc2085ce175341f2aa5479976fef8f281ea3c928eab46ed"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q40",
+      "sha256": "b6b4fe370ef93e9ad09868ec66f73ddf84282109a7a1b7fcfd456d8e87e6443e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q41",
+      "sha256": "0d77c970d1596a2cefecde81cb3bca3706bd71a9ce18091f07d140daa7755151"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q42",
+      "sha256": "5a32165bf355055133f50226862213aee016c18e00173efe5c24b007671ac726"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q43",
+      "sha256": "9fac6633fde3af2ed4f2754794b5d66b28bd9161a64174ef7a1ca535540430d7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q44",
+      "sha256": "194403bc81ba0978c7de4f74a8d203c043156cb194005a0858d15a58288fde19"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q45",
+      "sha256": "2498c49802a7e0f9bf22327147f274f9ce4f962d1924ad8a0e2105d98f3480bd"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q46",
+      "sha256": "11a3b4109ded626ea702d8a25a8be72f51c0e09615dc0edd9632a6d1c3d4c6f7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q47",
+      "sha256": "2d51fb96c794fca922175c9bbf6995498d4671fe7ae287d9ef6089efe80a598d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q48",
+      "sha256": "3a12e242b3c70c8c95176269bf8595a793431ca41e8369fb2c1b56c2e80b9b47"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q49",
+      "sha256": "010ee5661b9fc631ade1d0e015cda25a1450cd60e7a9804dcab778605ca3063d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q5",
+      "sha256": "20312d86dc58f524833f9ac61768868377a10b0cf153571c9592aa878680d270"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q50",
+      "sha256": "b45dd6c9eb83c44c499928c6274d312bf9e79008f4ac5a765a13657839f6e81d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q51",
+      "sha256": "06750626fe273e6bd03d34f6e04048fc5edb0d26e2ea86969dcd531cf2c0dd58"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q52",
+      "sha256": "ef0669b29bab19d81ee6366b9385be9d1ac570b050eef47c41131001635fd72e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q53",
+      "sha256": "04953c94d4061edd6f9a88292061d3fb3086e80e759921781e53e5d8594f7e29"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q54",
+      "sha256": "e9d617cbf938c4ce8df54414d4c605bb6b822ca92d0a67e947e81bebae0cafb3"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q55",
+      "sha256": "3435efd176606db0f05436f9aab40798004f9b7df85cd8bffe975e1aa5f483ee"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q56",
+      "sha256": "b9e968d61523263fa20dc30d2cbe601aed6080a9745518885c1dbe36a5c027d8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q57",
+      "sha256": "0b59ea933216197092340208daec2d69674748a2b89de730a70294d87ef620c5"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q58",
+      "sha256": "2d16dbc5752a82f78d9dbc7a0471d067f71a2d7f5b2c6dbac98bac37ef108048"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q59",
+      "sha256": "1a31e81af5a4a741e29298d9626f4ebb6ae612297049e819232d7a9c2903979a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q6",
+      "sha256": "9ace5ca64850948a36f0d42f554b42581876a1d0843c5395d3abedb0d6b81a7c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q60",
+      "sha256": "c4e190e4fb4e23d53c35b0bf1047172bba42589cb0519c5e2234499904e217d7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q61",
+      "sha256": "04f033a63929ff258484c5edab2696c658845510ec4745fdd5210071a935b413"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q62",
+      "sha256": "6fdc3a58eaf5c8c8993f80c87695ac8969e1e3f3e2e890e8e7fb9644eae911ea"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q63",
+      "sha256": "ad7d609a9bf51bfedcf9b232ace8b878c5b8a97c2627a102f1c7d9bb76be623e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q64",
+      "sha256": "accf45f03291159b943c3a3f4442dfbea8b31a4a49a7021b9f3eb61daf6cdd75"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q65",
+      "sha256": "515eebed16c74885929f2dab790124558082cefff30abc1d02be7065d7c3bb44"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q66",
+      "sha256": "5bbe29ad18c7eba8b326954158d37215389edc76c835bc7ff500eb486510baac"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q67",
+      "sha256": "f69605d937a66def9e087ed92ad4b3cbb339be978c5e67b1c3161ad6238db5c9"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q68",
+      "sha256": "065563a71e48b7cfa59751617266fa7973493fdd27d664c445f1ed84405ff198"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q69",
+      "sha256": "f1aee858ce09851c8fe5e5c5b6747d4f93c8c2cde850ed44918f98281759f2c7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q70",
+      "sha256": "fef5ac41041fbbf3d6f3234c2225e0c1a87abcfddd91df826aa2cee44054e0cc"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q71",
+      "sha256": "3949ae0267750c78567e3023f25dc15e74acce4a8727ebd919ed7538183538c2"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q72",
+      "sha256": "de2bc3aad95541c9ea12ed6b6299b20a1e13b10b37af4a78157a5c6ae1db2a9a"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q73",
+      "sha256": "8d1b8b9c534cd11c913f3ab6b7d5b6951004ce61f8eef077a3b50ea636681440"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q74",
+      "sha256": "272fdda6ee3c28160c904c21c234cfb5c8f502dd225cc1018cab270d94bcebd7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q75",
+      "sha256": "d58058fcfe7594f8e62cecf65c7a8c8d4c2fa13c9ed50721082b8477247b4d34"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q76",
+      "sha256": "70b4d6191143a2d480d7bb2064eaab5981be277d9e9962df62a14891c63573ad"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q79",
+      "sha256": "c23f19d908708efeeb26337f92a28231f5ce0f792b92661e8cfc32665c8c7d22"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q8",
+      "sha256": "d153339b1e024e131e6d5f47cc42a412e8a709a9ed05f7a8a021fc03b41beff8"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q80",
+      "sha256": "fefeb8993ea46ac52b4fd98353789f40da7aabaf5eae9794c121061bce190a2c"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q81",
+      "sha256": "8b67448d18dcc390caa341e0c1d09bcc98bcd8e51d34fb18324cad90ca3dde4b"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q84",
+      "sha256": "78550867ebfc72668bb0898cc019644aeb0c14d76f11681e0cc1f13a5cfe653d"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q85",
+      "sha256": "20b7478306f9d7a6f02526ae04c54bf27a7a2dacee94299860c0ff4f055d7413"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q86",
+      "sha256": "c66f98ad7f5b3f37223495fe6d90bdc895c3999db0053cd239f833347c31d716"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q89",
+      "sha256": "b891c868ae504d91ebedbaaa286e435e63e64e75cd2a2068ca7bb9d56b86929f"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q9",
+      "sha256": "71062401aa70bd01923d7caf7652840854d43a74c920e52d0cacc04a8354be4e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q90",
+      "sha256": "990d93d9dd1b4a8ab85e92e66339ccffb68362503a459afc937a03603facd6db"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q91",
+      "sha256": "f6f0df5faf6842eeda30acea3cba3594c1ded05361ebb20e07b2a0f1b6660d7e"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q92",
+      "sha256": "eb43b0fcbc59c8d916f70c4f441a2bda64383c97949cfc5e996e3d9313cf8ac7"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q93",
+      "sha256": "c7a83ce05fe44ad61cbd13abb946168dd31cf289fb1a244da78346e4d5a9adc2"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q94",
+      "sha256": "a0d4aa37b4f5a34aeea7cab4ea99e7fbcc5f0b355a84ad134c4f1188c3c70eeb"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q95",
+      "sha256": "e93b1b10efd96d54aa20f3d16af61ad4fd9d565beaf286a7af6952ee59932050"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q96",
+      "sha256": "384cc41e4aed4cb50fb0a4f73d2f6f9d3bc0f4cba5dfdbcd7421a0566bce2ca3"
+    }
+  ],
+  "addedIds": [
+    "kangoshi-2024-annual-pm-q39",
+    "kangoshi-2024-annual-pm-q40",
+    "kangoshi-2024-annual-pm-q42",
+    "kangoshi-2024-annual-pm-q47",
+    "kangoshi-2024-annual-pm-q49"
+  ],
+  "sourceChecks": [
+    {
+      "id": "kangoshi-2024-annual-pm-q39",
+      "year": 2024,
+      "qNumber": 39,
+      "objectSha256": "d0484ffcc3de5ce97e2d72704b01372ffbc44e35acad693c0811f7d4bc6dd1fb",
+      "candidateFileSha256": "b47697df125d913234ee4623ac34fb7ea40946e53ffa58d02f2bda31a3f2c94b",
+      "receiptFileSha256": "fa6ce32421ad3d641f15c3d46913c4db04ebfea81fc51930d295f9d9ebaeabb0",
+      "sourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+      "sourcePdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "sourcePageImageSha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269",
+      "sourceStem": "Holter〈ホルター〉心電図検査の説明で正しいのはどれか。",
+      "sourceChoices": [
+        "就寝時は電極を外す。",
+        "電極は四肢に装着する。",
+        "検査中は電気カーペットを使用しない。",
+        "検査中は普段の生活よりも活動量を減らす。"
+      ],
+      "officialKey": [
+        "3"
+      ],
+      "physicalPage": 17,
+      "primaryReferenceUrls": [
+        "https://www.ncvc.go.jp/hospital/section/treatment/laboratorymedicine/physiofunction/detail03/"
+      ]
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q40",
+      "year": 2024,
+      "qNumber": 40,
+      "objectSha256": "0062d7011c1846c2733151b69a5d887d217c87badd55a43da9e36ec162dfed98",
+      "candidateFileSha256": "af8983a3c8ff1ccea74e1950559404bb763f956e91d0bf71212a36fec83a1207",
+      "receiptFileSha256": "cef26fde63d6270ce04a485c5bad15deea94d5c89ed28feef04838f01fe2276e",
+      "sourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+      "sourcePdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "sourcePageImageSha256": "b940205c54ed4c98a8de3303cd5c5ad1a78c1868ab3ab6f08f878a38663e8269",
+      "sourceStem": "訪問看護事業所について正しいのはどれか。",
+      "sourceChoices": [
+        "24 時間対応が義務付けられている。",
+        "自宅以外への訪問看護は認められない。",
+        "特定非営利活動法人〈NPO〉は事業所を開設できる。",
+        "従事する看護師は臨床経験5年以上と定められている。"
+      ],
+      "officialKey": [
+        "3"
+      ],
+      "physicalPage": 17,
+      "primaryReferenceUrls": [
+        "https://www.zenhokan.or.jp/nursing_3/",
+        "https://kouseikyoku.mhlw.go.jp/kantoshinetsu/shinsei/shido_kansa/kango/R06houmonnkanngoryouyouhi_00002.html",
+        "https://www.zenhokan.or.jp/wp-content/uploads/h29-shisetu-pamphlet.pdf"
+      ]
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q42",
+      "year": 2024,
+      "qNumber": 42,
+      "objectSha256": "9f1bc3cccdba267d106f438246a50f7f5efeb045bb714a30ca955d63a166fa00",
+      "candidateFileSha256": "41cfa91a2cbb02a21b1b4e03d7330204dc918768e3aee469ce55b9f3b8e4ee8b",
+      "receiptFileSha256": "0d52d4d9f9b10923e36b82b8811a89664246a33e07d791c1dfd2ad1469b68792",
+      "sourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+      "sourcePdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "sourcePageImageSha256": "9c9a6606ab01ecb73ec654d560cbd28c9d19f582059c03455c36ffb51ba5702b",
+      "sourceStem": "胃瘻からの経管栄養を行う在宅療養者の家族に説明する内容で正しいのはどれ\nか。",
+      "sourceChoices": [
+        "流動（ミキサー）食は注入できる。",
+        "注入前に胃瘻の瘻孔部を消毒する。",
+        "胃瘻カテーテルは週に1回交換する。",
+        "注入中は体位を15 度のFowler〈ファウラー〉位にする。"
+      ],
+      "officialKey": [
+        "1"
+      ],
+      "physicalPage": 18,
+      "primaryReferenceUrls": [
+        "https://kcmc.kanagawa-pho.jp/data/media/kanagawa-pho/page/department/home_medical_support/2020_iryoucare3-2.pdf",
+        "https://nagasaki-nurse.or.jp/nursenet/reference/iroukanri.pdf",
+        "https://m.createmedic.co.jp/files/user/general/pdf/manual_peg_b_2026.pdf"
+      ]
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q47",
+      "year": 2024,
+      "qNumber": 47,
+      "objectSha256": "05c39d027b4780bfdcb395d2eda9aa8c651a0c7443588af5e421b8f1cd739811",
+      "candidateFileSha256": "5a151302c10e6610f73dd2932822670c4f840a28bce455e01d9105fd9a324a2c",
+      "receiptFileSha256": "765c71d71e24e91277624b995571fc810d68816de79c78e9e85577bb54e4f942",
+      "sourcePacketSha256": "df58be37b31d49a7169f43b98a9ca1244a92638351487092e1ac6990a406313b",
+      "sourcePdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "sourcePageImageSha256": "6c35e30d5a9398d518908a6c35f5edb0925c67f1b552c9b536389337271398ce",
+      "sourceStem": "乳房温存療法で放射線治療を受ける乳癌患者への説明で適切なのはどれか。",
+      "sourceChoices": [
+        "｢頭髪の脱毛が生じます｣",
+        "｢嚥下障害が予測されます｣",
+        "｢皮膚にマーキングを行います｣",
+        "｢同居家族への被曝に注意してください｣"
+      ],
+      "officialKey": [
+        "3"
+      ],
+      "physicalPage": 20,
+      "primaryReferenceUrls": [
+        "https://www.cancer.gov/about-cancer/treatment/types/radiation-therapy/external-beam",
+        "https://www.tmig.or.jp/department/central/radiation-oncology/"
+      ]
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q49",
+      "year": 2024,
+      "qNumber": 49,
+      "objectSha256": "28dd5339d393dad4194597baf0155face145111ad9bab70c56626d433b98da47",
+      "candidateFileSha256": "464fde4e5b14183faa6131dbd787174acc8946a74b49f435b9d65d529ba96df4",
+      "receiptFileSha256": "e1033e11862221c31c906cf7927366936733ddf081f81ec007c777f8ff3b4ba8",
+      "sourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+      "sourcePdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "sourcePageImageSha256": "6c35e30d5a9398d518908a6c35f5edb0925c67f1b552c9b536389337271398ce",
+      "sourceStem": "超音波ガイド下で肝生検を受ける成人への説明で正しいのはどれか。",
+      "sourceChoices": [
+        "｢検査前の絶食は不要です｣",
+        "｢検査はうつぶせで実施します｣",
+        "｢検査中は指示に合わせて息を止めてください｣",
+        "｢検査後すぐに歩行できます｣"
+      ],
+      "officialKey": [
+        "3"
+      ],
+      "physicalPage": 20,
+      "primaryReferenceUrls": [
+        "https://www.niddk.nih.gov/health-information/diagnostic-tests/liver-biopsy",
+        "https://www.chelwest.nhs.uk/your-visit/patient-leaflets/imaging/ultrasound-guided-liver-biopsy"
+      ]
+    }
+  ],
+  "q47OriginalSourcePacketSha256": "4cef1eaa3c153a88fe46cc27e8356ce08e314468de1a490922bca581b8e25d92",
+  "q47RubyRepairedSourcePacketSha256": "df58be37b31d49a7169f43b98a9ca1244a92638351487092e1ac6990a406313b",
+  "q47Repair": {
+    "physicalPage": 20,
+    "field": "question47.stem",
+    "before": "乳房温存療法で放射線治療を受ける乳癌患者へ\nbreast cancer\nの説明で適切なのはどれか。",
+    "after": "乳房温存療法で放射線治療を受ける乳癌患者への説明で適切なのはどれか。",
+    "reason": "The English breast cancer text is ruby over 乳癌 in the official rendered page."
+  },
+  "keptUnregistered": [
+    "kangoshi-2025-annual-am-q32",
+    "kangoshi-2025-annual-pm-q77",
+    "kangoshi-2024-annual-pm-q70",
+    "kangoshi-2024-annual-pm-q43"
+  ]
+}

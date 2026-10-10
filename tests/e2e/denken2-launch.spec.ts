@@ -11,7 +11,9 @@ for (const [session, label] of SUBJECTS) {
   test(`denken2 ${label} card starts the 2026 first-stage paper`, async ({ page }) => {
     await page.goto("/denken2");
     await expect(page.getByRole("heading", { name: "令和8年度 一次試験の科目を選ぶ" })).toBeVisible();
-    await expect(page.getByText(/理論・機械と過年度、二次試験は未収録/)).toBeVisible();
+    await expect(page.getByRole("heading", { name: "令和8年度 理論・機械の原問を解く" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "2025年度 理論・機械の原問を解く" })).toBeVisible();
+    await expect(page.getByText(/法規の問3・問5・問6と二次試験は未収録です/)).toBeVisible();
     const card = page.getByRole("link", { name: new RegExp(`${label}を解く`) });
     await expect(card).toContainText("35空欄");
     await card.click();

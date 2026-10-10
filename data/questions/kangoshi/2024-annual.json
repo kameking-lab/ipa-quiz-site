@@ -6101,12 +6101,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 26,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6138,18 +6138,150 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q28",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 28,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "ヘリコバクター・ピロリ感染症\nHelicobacter pylori infection\nで正しいのはどれか。",
+    "choices": {
+      "ア": "尿素呼気検査は診断に有用である。",
+      "イ": "除菌後の判定は除菌終了後の翌日に行う。",
+      "ウ": "ヘリコバクター・ピロリ〈Helicobacter pylori〉は胃の粘膜下層に生息する。",
+      "エ": "ヘリコバクター・ピロリ〈Helicobacter pylori〉は尿素を作り出して胃酸から\n身を守る。"
+    },
+    "answer": "ア",
+    "explanation": "ピロリ感染の診断には尿素呼気試験、便中抗原、血清抗体などがあります。ピロリ菌はウレアーゼで尿素をアンモニアに分解し、胃酸を中和して胃粘液層に生息します。",
+    "choiceExplanations": {
+      "ア": "尿素呼気検査は13C標識尿素を服用し、呼気中の13CO2を測定する非侵襲的な検査で、診断と除菌判定に有用です。これが正解です。",
+      "イ": "除菌終了の翌日では、除菌薬の影響などで検査が偽陰性となり得る。薬剤の影響を避けて適切な間隔を置いて判定するため、翌日は誤り。",
+      "ウ": "ピロリ菌は胃上皮表面の粘液層に生息し、粘膜下層には侵入しません。",
+      "エ": "ピロリ菌は尿素を作るのではなく、ウレアーゼで尿素を分解してアンモニアを産生し、胃酸を中和します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=14",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問28（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+      "https://www.jshr.jp/medical/journal/file/guideline2016.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q29",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 29,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "高齢者虐待の防止、高齢者の養護者に対する支援等に関する法律〈高齢者虐待防\n止法〉で保護された高齢者が入所する社会福祉施設はどれか。",
+    "choices": {
+      "ア": "軽費老人ホーム",
+      "イ": "有料老人ホーム",
+      "ウ": "特別養護老人ホーム",
+      "エ": "サービス付き高齢者向け住宅"
+    },
+    "answer": "ウ",
+    "explanation": "虐待から高齢者を保護する際、老人福祉法第11条に基づく「やむを得ない事由による措置」の入所先として、選択肢では特別養護老人ホームが該当します。軽費老人ホームも老人福祉施設ですが、同条が定める措置による入所先としては挙げられていません。",
+    "choiceExplanations": {
+      "ア": "軽費老人ホームも老人福祉法第5条の3に列挙される老人福祉施設です。ただし、同法第11条の保護に用いる入所措置先としては列挙されません。",
+      "イ": "有料老人ホームは契約で利用する住まいで、老人福祉法第11条の入所措置先ではありません。",
+      "ウ": "老人福祉法第11条第1項第2号は、やむを得ない事由がある場合の特別養護老人ホームへの入所措置を定めています。これが公表正答の3です。",
+      "エ": "サービス付き高齢者向け住宅は住宅として利用するもので、老人福祉法第11条の入所措置先ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問29（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=82111000&dataType=0&pageNo=1",
+      "https://www.mhlw.go.jp/content/12304250/001683364.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q30",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 30,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "難病の患者に対する医療等に関する法律〈難病法〉に規定されているのはどれか。",
+    "choices": {
+      "ア": "市町村が難病相談支援センターを設置する。",
+      "イ": "指定難病の医療費は全額を公費で負担する。",
+      "ウ": "令和4年度（2022年度）の指定難病数は56 疾病である。",
+      "エ": "特定医療費（指定難病）の支給認定は居住地の都道府県・指定都市が行う。"
+    },
+    "answer": "エ",
+    "explanation": "難病法に基づく特定医療費（指定難病）の支給認定は、居住地を所管する都道府県・指定都市が行います。令和4年度の指定難病は338疾病で、医療費の助成制度には所得等に応じた患者の一部自己負担があります。",
+    "choiceExplanations": {
+      "ア": "難病相談支援センターについて、難病法は都道府県による設置を規定しています。市町村が設置するとした記述は異なります。",
+      "イ": "指定難病の医療費は全額公費ではありません。所得等に応じて患者の一部自己負担があります。",
+      "ウ": "厚生労働省の令和4年7月資料では、指定難病は338疾病です。56疾病ではありません。",
+      "エ": "特定医療費（指定難病）の支給認定を担うのは居住地の都道府県・指定都市です。これが公表正答の4です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=15",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問30（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/content/10905000/000969148.pdf",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=80ab4067&dataType=0&pageNo=1"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q31",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 31,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "2",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6187,12 +6319,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 32,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6230,12 +6362,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 33,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6273,12 +6405,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 34,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6310,18 +6442,62 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q35",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 35,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "嚥下障害を評価する改訂水飲みテストで正しいのはどれか。",
+    "choices": {
+      "ア": "嚥下後10 秒間で評価する。",
+      "イ": "嚥下後の呼吸状態を評価する。",
+      "ウ": "嚥下動作の準備期を評価する。",
+      "エ": "80 mL の水で嚥下状態を評価する。"
+    },
+    "answer": "イ",
+    "explanation": "改訂水飲みテストでは冷水3mLを用い、嚥下の有無、むせ、嚥下後の呼吸状態や湿性嗄声を観察します。日本摂食嚥下リハビリテーション学会の評価基準にも「呼吸切迫」「呼吸良好」が含まれます。",
+    "choiceExplanations": {
+      "ア": "評価は「嚥下後10秒間」という固定時間では規定されません。嚥下、むせ、呼吸、湿性嗄声などから判定します。",
+      "イ": "呼吸状態は評価基準に含まれます。呼吸切迫か良好かを観察するため、これが公表正答の2です。",
+      "ウ": "改訂水飲みテストは少量の水の嚥下で誤嚥をスクリーニングするもので、咀嚼などの準備期を評価する検査ではありません。",
+      "エ": "学会資料で規定された水量は3mLです。80mLではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=16",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問35（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.jsdr.or.jp/wp-content/uploads/file/doc/assessment2019-announce.pdf",
+      "https://www.jans.or.jp/jans/assets/file/committee/Clinical%20Jp210630_2.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q36",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 36,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "1",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6359,12 +6535,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 37,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "1",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6396,18 +6572,194 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q39",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 39,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "Holter〈ホルター〉心電図検査の説明で正しいのはどれか。",
+    "choices": {
+      "ア": "就寝時は電極を外す。",
+      "イ": "電極は四肢に装着する。",
+      "ウ": "検査中は電気カーペットを使用しない。",
+      "エ": "検査中は普段の生活よりも活動量を減らす。"
+    },
+    "answer": "ウ",
+    "explanation": "ホルター心電図は日常生活中の長時間の心電図を記録します。国立循環器病研究センターは、記録に影響する電気カーペットや電気毛布の使用を避けるよう案内しています。",
+    "choiceExplanations": {
+      "ア": "就寝中も心電図を記録するため、電極は外しません。",
+      "イ": "長時間記録用の電極は胸部に装着します。四肢に装着するとの説明は本検査に合いません。",
+      "ウ": "電気カーペットは心電図記録に影響する家電機器として使用を避けます。これが公表正答の3です。",
+      "エ": "普段の生活の中で起こる症状と心電図の関係を記録するため、指示がない限り活動量を意図的に減らしません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問39（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.ncvc.go.jp/hospital/section/treatment/laboratorymedicine/physiofunction/detail03/"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q40",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 40,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "訪問看護事業所について正しいのはどれか。",
+    "choices": {
+      "ア": "24 時間対応が義務付けられている。",
+      "イ": "自宅以外への訪問看護は認められない。",
+      "ウ": "特定非営利活動法人〈NPO〉は事業所を開設できる。",
+      "エ": "従事する看護師は臨床経験5年以上と定められている。"
+    },
+    "answer": "ウ",
+    "explanation": "訪問看護ステーションの開設には法人格や人員・設備などの基準があり、全国訪問看護事業協会はNPO法人を開設主体の例として明記しています。",
+    "choiceExplanations": {
+      "ア": "24時間対応体制は一律の開設義務ではなく、体制を整えて届け出る場合の加算として扱われます。",
+      "イ": "訪問先は持ち家などの自宅だけに限定されません。居住形態と保険上の条件を満たす住宅型有料老人ホーム等でも、外部の訪問看護を利用できます。",
+      "ウ": "開設条件を満たしたNPO法人も訪問看護ステーションを開設できます。これが公表正答の3です。",
+      "エ": "開設時の人員基準には看護職員の配置数などが示されていますが、全従事看護師に臨床経験5年以上を求める基準ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=17",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問40（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.zenhokan.or.jp/nursing_3/",
+      "https://kouseikyoku.mhlw.go.jp/kantoshinetsu/shinsei/shido_kansa/kango/R06houmonnkanngoryouyouhi_00002.html",
+      "https://www.zenhokan.or.jp/wp-content/uploads/h29-shisetu-pamphlet.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q41",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 41,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "糖尿病の在\ndiabetes mellitus宅療養者に行うフットケアの説明で適切なのはどれか。",
+    "choices": {
+      "ア": "｢素足で過ごしましょう｣",
+      "イ": "｢足の皮膚を保湿してください｣",
+      "ウ": "｢足浴には42 ℃のお湯を使ってください｣",
+      "エ": "｢爪は指の先端よりも短く切ってください｣"
+    },
+    "answer": "イ",
+    "explanation": "糖尿病では末梢神経障害による感覚低下や血流障害により足の傷に気付きにくく、治りにくくなります。乾燥による亀裂を防ぐため、足の皮膚は保湿します。ただし足趾の間には保湿剤を塗らず、清潔に乾燥させます。",
+    "choiceExplanations": {
+      "ア": "素足では傷に気付かず感染するおそれがあります。足を守る靴と靴下を用います。",
+      "イ": "足の皮膚の乾燥や亀裂を防ぐため保湿します。足趾間は湿りすぎを避けます。これが公表正答の2です。",
+      "ウ": "感覚低下があると熱傷に気付きにくいため、42℃の湯を勧めません。熱くないぬるま湯を使い、温度を確認します。",
+      "エ": "爪を指先より短く切りすぎると皮膚損傷や巻き爪につながります。爪はまっすぐ切り、角を深く切り込みません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問41（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q42",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 42,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "胃瘻からの経管栄養を行う在宅療養者の家族に説明する内容で正しいのはどれ\nか。",
+    "choices": {
+      "ア": "流動（ミキサー）食は注入できる。",
+      "イ": "注入前に胃瘻の瘻孔部を消毒する。",
+      "ウ": "胃瘻カテーテルは週に1回交換する。",
+      "エ": "注入中は体位を15 度のFowler〈ファウラー〉位にする。"
+    },
+    "answer": "ア",
+    "explanation": "胃瘻では、調製方法や使用するカテーテルを確認したうえで流動（ミキサー）食を注入できます。注入時は上半身を起こし、瘻孔周囲は洗浄を基本とします。",
+    "choiceExplanations": {
+      "ア": "胃瘻から流動（ミキサー）食を注入できます。適した調製・器具を医療者と確認します。これが公表正答の1です。",
+      "イ": "在宅での通常の瘻孔周囲ケアは洗浄と乾燥が基本です。注入ごとの消毒は必要ありません。",
+      "ウ": "カテーテル本体の交換は型や状態によって異なりますが、通常は月単位です。週1回の固定水確認と本体交換を混同しません。",
+      "エ": "逆流・誤嚥の予防には注入時に上半身を少なくとも30度程度起こします。15度という説明は適切ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問42（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://kcmc.kanagawa-pho.jp/data/media/kanagawa-pho/page/department/home_medical_support/2020_iryoucare3-2.pdf",
+      "https://nagasaki-nurse.or.jp/nursenet/reference/iroukanri.pdf",
+      "https://m.createmedic.co.jp/files/user/general/pdf/manual_peg_b_2026.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q44",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 44,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6445,12 +6797,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 46,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "2",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6482,18 +6834,62 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q47",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 47,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "乳房温存療法で放射線治療を受ける乳癌患者への説明で適切なのはどれか。",
+    "choices": {
+      "ア": "｢頭髪の脱毛が生じます｣",
+      "イ": "｢嚥下障害が予測されます｣",
+      "ウ": "｢皮膚にマーキングを行います｣",
+      "エ": "｢同居家族への被曝に注意してください｣"
+    },
+    "answer": "ウ",
+    "explanation": "乳房温存療法後の乳房への外部照射では、毎回同じ位置に照射するため皮膚に目印を付けます。外部照射で患者の体に放射線が残ることはありません。",
+    "choiceExplanations": {
+      "ア": "乳房への外部照射は局所治療です。頭部は照射範囲外なので、頭髪の脱毛をこの照射の結果として説明するのは適切ではありません。",
+      "イ": "乳房への照射で嚥下に関わる頭頸部を照射するわけではなく、嚥下障害を通常の予測症状とする説明は適切ではありません。",
+      "ウ": "照射位置を毎回再現できるよう、治療計画時に皮膚に印を付けます。これが公表正答の3です。",
+      "エ": "外部照射を受けても患者自身が放射性になるわけではなく、同居家族への被曝を避けるよう説明する必要はありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問47（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.cancer.gov/about-cancer/treatment/types/radiation-therapy/external-beam",
+      "https://www.tmig.or.jp/department/central/radiation-oncology/"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q48",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 48,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6525,18 +6921,62 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q49",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 49,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "超音波ガイド下で肝生検を受ける成人への説明で正しいのはどれか。",
+    "choices": {
+      "ア": "｢検査前の絶食は不要です｣",
+      "イ": "｢検査はうつぶせで実施します｣",
+      "ウ": "｢検査中は指示に合わせて息を止めてください｣",
+      "エ": "｢検査後すぐに歩行できます｣"
+    },
+    "answer": "ウ",
+    "explanation": "超音波ガイド下の肝生検では、穿刺中の呼吸で肝臓が動くため、医療者の指示に合わせて短時間息を止めます。",
+    "choiceExplanations": {
+      "ア": "検査前の飲食は一律に「不要」とは説明できず、実施施設の絶食指示に従います。",
+      "イ": "経皮的肝生検では通常、仰向けで右腕を頭上に置く体位です。うつぶせとする説明は適切ではありません。",
+      "ウ": "呼吸による肝臓の動きを抑えるため、指示された数秒間、息を止めます。これが公表正答の3です。",
+      "エ": "出血などの観察のため、検査後は数時間の安静が必要であり、直後に歩行できるとは説明しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問49（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.niddk.nih.gov/health-information/diagnostic-tests/liver-biopsy",
+      "https://www.chelwest.nhs.uk/your-visit/patient-leaflets/imaging/ultrasound-guided-liver-biopsy"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q50",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 50,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6574,12 +7014,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 51,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "2",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6611,18 +7051,62 @@
     "lastUpdated": "2026-10-10"
   },
   {
+    "id": "kangoshi-2024-annual-pm-q52",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 52,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "散瞳薬を用いた眼底検査を受ける成人への説明で適切なのはどれか。",
+    "choices": {
+      "ア": "｢角膜を観察します｣",
+      "イ": "｢検査後に抗菌薬を点眼します｣",
+      "ウ": "｢眼を閉じた状態で検査室に誘導します｣",
+      "エ": "｢点眼後30 分で散瞳薬の効果が現れます｣"
+    },
+    "answer": "エ",
+    "explanation": "散瞳薬点眼後は効果が出るまで時間を置いて眼底を観察する。薬剤によって差はあるが、トロピカミド点眼液の電子添文では点眼後15～30分で瞳孔径が最大となった臨床試験が示されており、30分程度の説明が適切である。",
+    "choiceExplanations": {
+      "ア": "眼底検査で観察するのは網膜・視神経乳頭などの眼底であり、角膜の観察ではない。",
+      "イ": "眼底検査後に抗菌薬を点眼する定型的な必要はなく、検査後の説明としては不適切。",
+      "ウ": "眼を閉じたままでは危険で、散瞳後はまぶしさや見えにくさがあるため、安全に配慮し目を開けて誘導する。",
+      "エ": "適切。散瞳薬の種類によって時間は異なるが、トロピカミド点眼液の電子添文には点眼後15～30分で瞳孔径が最大となった臨床試験があり、30分程度の待機は妥当である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問52（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+      "https://pins.japic.or.jp/pdf/newPINS/00051457.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
     "id": "kangoshi-2024-annual-pm-q53",
     "exam": "kangoshi",
     "session": "pm",
     "year": 2024,
     "season": "annual",
     "qNumber": 53,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6660,12 +7144,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 54,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6703,12 +7187,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 57,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6746,12 +7230,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 58,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "1",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6789,12 +7273,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 59,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6832,12 +7316,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 64,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "1",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6875,12 +7359,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 65,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6918,12 +7402,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 66,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "1",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -6961,12 +7445,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 67,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -7004,12 +7488,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 68,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -7047,12 +7531,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 69,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -7090,12 +7574,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 72,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -7133,12 +7617,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 73,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -7176,12 +7660,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 75,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9133,12 +9617,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 27,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9183,12 +9667,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 45,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9233,12 +9717,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 55,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9283,12 +9767,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 71,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "4",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9387,12 +9871,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 74,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "2",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9484,12 +9968,12 @@
     "year": 2024,
     "season": "annual",
     "qNumber": 63,
-    "subject": "午後（必修問題）",
+    "subject": "午後（一般問題）",
     "officialAnswerNumber": "3",
     "type": "multiple-choice",
-    "category": "必修問題",
+    "category": "一般問題",
     "topicTags": [
-      "必修問題",
+      "一般問題",
       "第114回"
     ],
     "difficulty": 2,
@@ -9516,6 +10000,136 @@
     "officialReferenceUrls": [
       "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
       "https://www.mhlw.go.jp/bunya/koyoukintou/seisaku05/01.html"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q43",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 43,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "Aちゃん（1歳7か月、女児）は先天性水頭症のため脳室―腹腔〈V-P〉シャント造\n設術を受けて退院した。A ちゃんは歩行障害があり、母親が1人で育てている。\n退院後、訪問看護師が訪問すると、A ちゃんの母親は｢子どもが泣くとイライラし\nます。この先A を育てていく自信がなく、経済的にも生活していけるか不安です｣\nと話した。\nこのとき、訪問看護師が母親に勧める相談先で最も適切なのはどれか。",
+    "choices": {
+      "ア": "居住地の社会福祉協議会",
+      "イ": "居住地の保健センター",
+      "ウ": "障害児の子育てグループ",
+      "エ": "入院していた病院の医療相談室"
+    },
+    "answer": "イ",
+    "explanation": "育児への不安と生活上の不安を訴える母親には、居住地で母子保健・育児相談を行い、必要な支援先を調整する保健センターが選択肢の中で最も適切です。",
+    "choiceExplanations": {
+      "ア": "社会福祉協議会は福祉サービス等の相談先になり得ますが、乳幼児の健康と育児を継続して相談する地域窓口としては保健センターが適切です。",
+      "イ": "保健センターでは保健師等が育児・健康上の不安を受け止め、必要に応じて福祉などの関係機関につなぎます。これが公表正答の2です。",
+      "ウ": "子育てグループは経験共有や相互支援の場になりますが、この場面では育児と生活の両方の困りごとを評価し支援につなぐ相談窓口が先です。",
+      "エ": "入院先の医療相談室も医療・社会資源の相談先ですが、退院後に暮らす地域での継続的な母子支援には居住地の保健センターが適切です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問43（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/file/06-Seisakujouhou-11900000-Koyoukintoujidoukateikyoku/kosodatesedaigaidorain.pdf",
+      "https://www.mhlw.go.jp/file/05-Shingikai-11901000-Koyoukintoujidoukateikyoku-Soumuka/0001.pdf"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q20",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 20,
+    "subject": "午後（必修問題）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必修問題",
+    "topicTags": [
+      "必修問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "左前腕に持続点滴静脈内注射をしている患者の更衣で適切なのはどれか。",
+    "choices": {
+      "ア": "左袖から脱ぎ、右袖から着る。",
+      "イ": "左袖から脱ぎ、左袖から着る。",
+      "ウ": "右袖から脱ぎ、左袖から着る。",
+      "エ": "右袖から脱ぎ、右袖から着る。"
+    },
+    "answer": "ウ",
+    "explanation": "点滴中の更衣では、脱ぐ際は点滴のない健側から、着る際は点滴側から行う「脱健着患」の順序で、刺入部やルートへの負担を抑えます。左前腕に点滴があるので、右袖から脱ぎ、左袖から着ます。",
+    "choiceExplanations": {
+      "ア": "左袖から先に脱ぐと、点滴側の腕やルートを衣服が引っ張りやすくなります。着る際も右袖からでは順序が逆です。",
+      "イ": "左袖から着る点は適切ですが、脱ぐ際に点滴側の左袖を先に外すのは避けます。",
+      "ウ": "健側の右袖から脱ぎ、点滴側の左袖から着る順序です。これが公表正答の3です。",
+      "エ": "右袖から脱ぐ点は適切ですが、着る際に健側の右袖を先に通すと点滴側の袖通しに負担がかかります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問20（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.kyoritsu-wu.ac.jp/academics/undergraduate/kango/news/detail.html?id=3618"
+    ],
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q56",
+    "exam": "kangoshi",
+    "session": "pm",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 56,
+    "subject": "午後（一般問題）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "一般問題",
+      "第114回"
+    ],
+    "difficulty": 2,
+    "question": "Aさん（81歳、男性）は、大腸内視鏡検査を受けることになった。\n検査前にA さんへ看護師が確認する項目で最も優先されるのはどれか。",
+    "choices": {
+      "ア": "義歯の使用",
+      "イ": "白内障の有無",
+      "ウ": "保持できない姿勢",
+      "エ": "前立腺肥大症の有無"
+    },
+    "answer": "エ",
+    "explanation": "大腸内視鏡検査の前処置に使われることがあるブチルスコポラミン臭化物は、前立腺肥大による排尿障害がある人には禁忌で、排尿障害がなくても前立腺肥大があれば注意が必要です。したがって、選択肢の中では前立腺肥大症の有無を優先して確認します。",
+    "choiceExplanations": {
+      "ア": "義歯は検査や鎮静の準備時に確認し得ますが、この選択肢の中で鎮痙薬の投与可否に直結する確認項目ではありません。",
+      "イ": "白内障と、抗コリン薬で注意する閉塞隅角緑内障とは異なります。この選択肢では最優先になりません。",
+      "ウ": "体位を保持できるかも検査準備で確認しますが、選択肢の中では鎮痙薬の禁忌・注意に関わる既往の確認を優先します。",
+      "エ": "正解。ブチルスコポラミン臭化物の電子添文は、前立腺肥大による排尿障害を禁忌、排尿障害を伴わない前立腺肥大を注意対象としています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問56（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/780069_1242401A1315_2_03"
     ],
     "license": "MHLW-attributed",
     "needsReview": false,
