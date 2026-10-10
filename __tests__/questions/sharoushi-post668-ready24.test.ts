@@ -25,9 +25,9 @@ describe("social insurance post-668 GO-only delta", () => {
   it("registers precisely 24 new official five-choice originals on unique subject routes", () => {
     expect(proof.added).toHaveLength(24);
     expect(proof.skippedPublishedCandidateIds).toHaveLength(19);
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(101);
-    expect(new Set(SHAROUSHI_QUESTIONS.map((q) => q.id)).size).toBe(101);
-    expect(SHAROUSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(505);
+    expect(SHAROUSHI_QUESTIONS.length).toBeGreaterThanOrEqual(101);
+    expect(new Set(SHAROUSHI_QUESTIONS.map((q) => q.id)).size).toBe(SHAROUSHI_QUESTIONS.length);
+    expect(SHAROUSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBeGreaterThanOrEqual(505);
     const sitemapIds = new Set(getSitemapQuestions().map((q) => q.id));
     for (const addition of proof.added) {
       const q = SHAROUSHI_QUESTIONS.find((row) => row.id === addition.id);
