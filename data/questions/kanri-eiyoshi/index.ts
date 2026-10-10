@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import ready40Am from "./2026-round40-am.json";
 
-/** 第40回午前の確認済み問題を部分収録する予定。GO 確定済みの Question[] が届くまでは空。 */
-export const KANRI_EIYOSHI_QUESTIONS: Question[] = [];
+/** 第40回午前97原問のうち、公式問題・正答を照合した17原問を部分収録。 */
+export const KANRI_EIYOSHI_QUESTIONS: Question[] = ready40Am as Question[];

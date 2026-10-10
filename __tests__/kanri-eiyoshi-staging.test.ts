@@ -4,19 +4,34 @@ import { QUALIFICATION_CATALOG, getQualificationByExamCode, isExamPublished } fr
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { KANRI_EIYOSHI_QUESTIONS } from "@/data/questions/kanri-eiyoshi";
 import { KANRI_QUESTIONS } from "@/data/questions/kanri";
+import { getHomeDirectory } from "@/lib/home/home-directory";
+import { getIndexableQuestions, getSitemapQuestions } from "@/lib/seo/sitemap-pagination";
 
-// The new occupation has no publishable fixed-ready question yet. The existing
-// `kanri` code is a different qualification and must not be reused as an alias.
+// `kanri` is a separate qualification and must not be reused as an alias.
 describe("kanri-eiyoshi publication gate", () => {
-  it("keeps the new examination unlisted and its question pool empty", async () => {
-    expect(getQualificationByExamCode("kanri-eiyoshi")?.status).toBe("terms-review-required");
-    expect(isExamPublished("kanri-eiyoshi")).toBe(false);
-    expect(KANRI_EIYOSHI_QUESTIONS).toEqual([]);
-    expect(await getQuestionsForExam("kanri-eiyoshi")).toEqual([]);
-    expect(getRegisteredExamCodes()).not.toContain("kanri-eiyoshi");
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("kanri-eiyoshi");
+  it("registers only the 17 source-verified originals from round 40 AM", async () => {
+    expect(getQualificationByExamCode("kanri-eiyoshi")?.status).toBe("live");
+    expect(isExamPublished("kanri-eiyoshi")).toBe(true);
+    expect(KANRI_EIYOSHI_QUESTIONS).toHaveLength(17);
+    expect(await getQuestionsForExam("kanri-eiyoshi")).toHaveLength(17);
+    expect(getRegisteredExamCodes()).toContain("kanri-eiyoshi");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("kanri-eiyoshi");
     expect(QUALIFICATION_CATALOG.filter((entry) => entry.examCode === "kanri-eiyoshi")).toHaveLength(1);
     expect(EXAM_CONFIGS["kanri-eiyoshi"].sessions[0]?.expectedQuestions).toBe(97);
+    const homeEntries = getHomeDirectory().flatMap((domain) => [...domain.featured, ...domain.compact]);
+    expect(homeEntries.filter((entry) => entry.key === "kanri-eiyoshi")).toHaveLength(1);
+    expect(homeEntries.find((entry) => entry.key === "kanri-eiyoshi")?.questionCount).toBe(17);
+    expect(getIndexableQuestions().filter((question) => question.exam === "kanri-eiyoshi")).toHaveLength(17);
+    expect(getSitemapQuestions().filter((question) => question.exam === "kanri-eiyoshi")).toHaveLength(17);
+    expect(KANRI_EIYOSHI_QUESTIONS.map((question) => question.qNumber)).toEqual([7, 17, 20, 22, 28, 30, 32, 34, 35, 38, 70, 71, 73, 74, 75, 77, 81]);
+    for (const question of KANRI_EIYOSHI_QUESTIONS) {
+      expect(Object.keys(question.choices ?? {})).toHaveLength(5);
+      expect(Object.keys(question.choiceExplanations ?? {})).toHaveLength(5);
+      expect(Object.keys(question.choices ?? {})).toContain(question.answer);
+      expect(question.hasImage).toBe(false);
+      expect(question.sourcePdfUrl).toBe("https://www.mhlw.go.jp/content/10900000/001663681.pdf");
+      expect(question.sourceAnswerUrl).toBe("https://www.mhlw.go.jp/content/10900000/001683038.pdf");
+    }
   });
 
   it("preserves the separately published building management qualification", async () => {

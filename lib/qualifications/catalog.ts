@@ -490,10 +490,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "厚生労働省",
     officialQuestionsUrl: "https://www.mhlw.go.jp/content/10900000/001663681.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
-    status: "terms-review-required",
-    reuseSummary: "第40回午前の確認済み問題を部分収録する予定です。確認済み問題の統合と一般掲載可否の確認が終わるまで公開しません。第39回は対象外です。",
+      status: "live",
+      reuseSummary: "第40回午前97原問のうち、公式問題・正答と照合済みの17原問を部分収録。残る午前80原問、午後および第39回は未収録です。解説は当サイトが作成しました。",
     attributionTemplate: "出典：厚生労働省「第40回管理栄養士国家試験」午前 問○（問題・正答）",
-    remainingWork: ["第40回午前 問70〜97の採否（GO/HOLD）の確定", "確認済み問題の正答を厚生労働省の正答PDF（https://www.mhlw.go.jp/content/10900000/001683038.pdf）と照合して統合", "一般掲載可否のオーナー確認（再利用条件は未確認）"],
+      remainingWork: ["第40回午前の残る80原問、午後と第39回の出題・解説の確認", "掲載可否はサイトオーナーが判断。出典表記は権利許諾の取得を意味しません。"],
   },
   {
     slug: "boki3",
