@@ -55,6 +55,14 @@ export function buildOpenApiSpec(baseUrl: string) {
             },
           },
         },
+        NumericAnswer: {
+          type: "object",
+          required: ["format", "unit"],
+          properties: {
+            format: { type: "string", enum: ["integer"] },
+            unit: { type: "string", minLength: 1, example: "滴/分" },
+          },
+        },
         Question: {
           type: "object",
           required: ["id", "exam", "year", "season", "qNumber", "type", "category", "question"],
@@ -67,9 +75,10 @@ export function buildOpenApiSpec(baseUrl: string) {
             qNumber: { type: "integer", example: 1 },
             type: {
               type: "string",
-              enum: ["multiple-choice", "descriptive", "essay"],
+              enum: ["multiple-choice", "numeric", "descriptive", "essay"],
               example: "multiple-choice",
             },
+            numericAnswer: { $ref: "#/components/schemas/NumericAnswer" },
             category: { type: "string", example: "テクノロジ系" },
             topicTags: { type: "array", items: { type: "string" } },
             difficulty: { type: "integer", minimum: 1, maximum: 5 },
@@ -111,6 +120,9 @@ export function buildOpenApiSpec(baseUrl: string) {
           required: ["error"],
           properties: {
             error: { type: "string", example: "rate_limited" },
+            questionType: { type: "string", description: "採点対象外の問題形式" },
+            supportedQuestionTypes: { type: "array", items: { type: "string", enum: ["multiple-choice"] } },
+            numericAnswer: { $ref: "#/components/schemas/NumericAnswer" },
             message: { type: "string" },
             resetAt: { type: "integer", description: "リセット時刻（UNIX ms）" },
           },
@@ -211,7 +223,7 @@ export function buildOpenApiSpec(baseUrl: string) {
           tags: ["grade"],
           summary: "解答の採点",
           description:
-            "現状は多肢選択（multiple-choice）のみ対応。記述・論述問題は `error: \"unsupported\"` を返します。",
+            "多肢選択（multiple-choice）のみ採点対応。数値記入（numeric）・記述・論述問題は400と error: unsupported を返します。問題形式と対応形式を返し、numeric では整数・単位の形式情報を含みます。",
           requestBody: {
             required: true,
             content: {

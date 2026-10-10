@@ -40,4 +40,18 @@ The real, unpublished fixture is the 115th national nursing examination morning 
 
 Raw local logs and JSON receipts are in `note-automation/reports/claude-capacity-20261010/NURSE-NUMERIC-*-20261010.*`.
 
-Q90 remains unregistered. The integrating owner must compare the candidate to this numeric contract, then run the required CI/build/anonymous release checks on the combined commit. This task did not run a production build or modify the separately documented multiple-choice-only Public API v1 grade endpoint.
+Q90 remains unregistered. The integrating owner must compare the candidate to this numeric contract, then run the required CI/build/anonymous release checks on the combined commit. The initial implementation receipt preceded the following additional API-boundary and production-render checks.
+
+
+## Public API boundary and production fixture verification
+
+Public API v1 grading remains multiple-choice-only. A numeric request returns HTTP 400 `unsupported` with the actual `questionType`, `supportedQuestionTypes`, and numeric format/unit metadata, without disclosing its answer or fabricating choices. The registered API exam allowlist remains unchanged; `kangoshi` requests return the existing HTTP 400 `invalid_request`. The serializer and OpenAPI schema preserve numeric format information if a numeric question enters an already allowed exam pool.
+
+- Numeric API boundary and existing OpenAPI tests: **15 passed, 0 failed**.
+- Local `next build --webpack`: passed; 8,630 routes included two temporary unpublished fixture routes. Those temporary source routes were removed after checking and are excluded from commits.
+- Real production-mode QuizPlayer at localhost with the official Q90 fixture: **6 checks passed**. Its initial view showed no official answer and no invented choices. Invalid mixed text recorded no attempt. Full-width digits plus Enter graded once, revealed the explanation and retained the question. Back navigation, reload, last-position state, unanswered filtering and subsequent reentry retained the saved outcome correctly.
+- Browser exceptions: **0**. Four screenshots were saved; the initial and graded mobile views were visually inspected.
+- These checks registered no question and made no Git push, PR, model request or external browser/API request. The owned localhost server was stopped after verification.
+
+Production UI receipt and screenshots: `note-automation/reports/claude-capacity-20261010/nurse-numeric-production-ui/`.
+Build log: `note-automation/reports/claude-capacity-20261010/NURSE-NUMERIC-PRODUCTION-BUILD-20261010.log`.
