@@ -57,6 +57,17 @@ describe("Public API v1 numeric boundary", () => {
     expect((await (await grade("ウ")).json()).correct).toBe(false);
     expect((await (await grade(["ウ", "ア"])).json()).correct).toBe(true);
   });
+  it.each([
+    [["ア", "ウ"], true], [["エ", "ア"], true], [["ウ", "エ"], true],
+    [["ア"], false], [["ア", "ウ", "エ"], false],
+    [["ア", "ア"], false], [["ア", "イ"], false],
+  ])("grades exactly two of three accepted choices for %j", async (answer, correct) => {
+    findQuestionById.mockResolvedValue({ ...question, type: "multiple-choice", numericAnswer: undefined,
+      choices: { ア: "A", イ: "B", ウ: "C", エ: "D" }, answer: ["ア", "ウ", "エ"], requiredSelections: 2 });
+    const response = await grade(answer as string[]);
+    expect(response.status).toBe(200);
+    expect((await response.json()).correct).toBe(correct);
+  });
   it("documents the numeric listing format and the explicit unsupported grade boundary", () => {
     const spec = buildOpenApiSpec("http://localhost");
     expect(spec.components.schemas.Question.properties.type.enum).toContain("numeric");

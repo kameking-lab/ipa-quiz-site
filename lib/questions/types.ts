@@ -124,9 +124,9 @@ export interface Question {
   choices?: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey | ChoiceKey[] | string;
   /**
-   * 1問で選ぶ肢の数。2以上なら answer の全肢をそろえて選んだ場合だけ正解
-   * （2級施工管理の「二つとも答えなさい」形式）。省略時は1で、answer の配列は
-   * 訂正等で個別に正解と認められた肢の一覧として扱う。
+   * 1問で選ぶ肢の数。answer の許容肢から、この数を重複なしで選ぶ。
+   * 「二つとも」は許容肢2・選択数2、「3肢中いずれか2つ」は許容肢3・選択数2。
+   * 省略時は1で、answer の配列は個別に正解と認められた肢の一覧として扱う。
    */
   requiredSelections?: number;
   explanation: string;

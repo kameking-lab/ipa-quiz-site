@@ -6,7 +6,7 @@ import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/pro
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
 import { getQuestionById } from "@/lib/questions/load";
-import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
+import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
     : undefined;
   const isCorrect = selectedChoice === undefined
     ? undefined
-    : isCompleteSelectionCorrect(question.answer, selectedKeys);
+    : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question));
 
   const ipRl = await checkIpRateLimit(req, "copilot", {
     requireKv: Boolean(process.env.GEMINI_API_KEY),
