@@ -47,8 +47,8 @@ describe("115th nurse AM Q99 primary-source adoption candidate", () => {
         "https://www.jstage.jst.go.jp/article/jsdt/50/11/50_725/_pdf",
       ],
     });
-    expect(createHash("sha256").update(bytes).digest("hex")).toBe(
-      "cb7d3419559256d3499b08f6835f3e8ad1d79f1651d82e4741b56cd3c7e47aba",
+    expect(createHash("sha256").update(bytes.toString("utf8").replace(/\r\n/g, "\n")).digest("hex")).toBe(
+      "582cc97f801d8b72d7bf4b9655b6163a5f1dce37398a520535daa63e434c65b1",
     );
   });
 });
