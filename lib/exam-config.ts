@@ -788,7 +788,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "臨床工学技士国家試験",
     urlSlug: "rinsho-kogishi",
     level: "advanced",
-    sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["午後"] }],
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["午前"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["午後"] },
+    ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
