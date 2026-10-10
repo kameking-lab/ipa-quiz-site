@@ -12,9 +12,9 @@ const answers: Record<number, Record<number, string>> = {
 
 describe("社労士一般常識の指定統計6問", () => {
   it("各年度の公式問1～3だけを科目別ルートに載せる", () => {
-    const pool = SHAROUSHI_QUESTIONS.filter((q) => q.session === "ippan");
+    const pool = SHAROUSHI_QUESTIONS.filter((q) => q.session === "ippan" && q.qNumber <= 3);
     expect(pool).toHaveLength(6);
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(62);
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(86);
     for (const q of pool) {
       expect(answers[q.year]?.[q.qNumber]).toBe(q.officialAnswerNumber);
       expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);

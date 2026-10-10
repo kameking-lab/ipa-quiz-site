@@ -75,8 +75,8 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(total);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am" && q.qNumber <= 90)).toHaveLength(90);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90)).toHaveLength(88);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(113);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(111);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(115);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(113);
     const choiceCount = KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0);
     const catalog = getQualificationByExamCode("kangoshi")!;
     for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", total)]) {
