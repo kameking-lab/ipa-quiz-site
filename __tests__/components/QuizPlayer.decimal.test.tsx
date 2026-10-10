@@ -20,6 +20,8 @@ beforeEach(() => {
 describe("QuizPlayer original decimal", () => {
   it("does not reveal the decimal answer initially, reject extra precision, or grade during IME", () => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
+    expect(screen.getByText(/^数値を入力し、Enter/)).toBeInTheDocument();
+    expect(screen.queryByText(/^整数を入力し、Enter/)).toBeNull();
     const input=screen.getByRole("textbox",{name:"解答（BMI）"});
     expect(input).toHaveAttribute("inputmode","decimal");
     expect(input).toHaveValue("");

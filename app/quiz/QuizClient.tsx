@@ -71,7 +71,8 @@ function deriveSessionPool(
   } else if (mode === "random" || mode === "unanswered" || mode === "weakness") {
     shuffleInPlace(ids);
   }
-  return ids.slice(0, MAX_POOL);
+  // An annual sitting must include every available original in source order.
+  return mode === "year" ? ids : ids.slice(0, MAX_POOL);
 }
 
 async function fetchQuestion(id: string, shuffle: boolean): Promise<Question> {
@@ -124,19 +125,22 @@ export function QuizClient({
     url.searchParams.delete("question");
     const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
     let ids = deriveSessionPool(poolIds, mode, categoryById, wrongOnly);
+    const sessionLimit = mode === "year" ? poolIds.length : MAX_POOL;
     try {
       const saved: unknown = JSON.parse(window.sessionStorage.getItem(sessionKey) ?? "null");
       const available = new Set(poolIds);
-      if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= MAX_POOL &&
-          saved.every((id) => typeof id === "string" && available.has(id)) && saved.includes(currentId)) {
+      if (currentId && Array.isArray(saved) && saved.length > 0 && saved.length <= sessionLimit &&
+          saved.every((id) => typeof id === "string" && available.has(id)) && saved.includes(currentId) &&
+          // Annual pools always follow the latest complete source order, including new additions.
+          (mode !== "year" || (saved.length === ids.length && saved.every((id, i) => id === ids[i])))) {
         ids = saved as string[];
       } else if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
-        ids = [currentId, ...ids].slice(0, MAX_POOL);
+        ids = [currentId, ...ids].slice(0, sessionLimit);
       }
       window.sessionStorage.setItem(sessionKey, JSON.stringify(ids));
     } catch { /* Unavailable storage still allows an exact question URL. */ }
     if (currentId && poolIds.includes(currentId) && !ids.includes(currentId)) {
-      ids = [currentId, ...ids].slice(0, MAX_POOL);
+      ids = [currentId, ...ids].slice(0, sessionLimit);
     }
     const startIndex = currentId ? Math.max(0, ids.indexOf(currentId)) : 0;
     setSessionIds(ids);
