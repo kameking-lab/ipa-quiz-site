@@ -179,6 +179,8 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   yakuzaishi: "薬剤師国家試験",
   "ahaki-anma": "あん摩マッサージ指圧師国家試験",
   "ahaki-hari-kyu": "はり師・きゅう師国家試験",
+  hokenshi: "保健師国家試験",
+  josanshi: "助産師国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -279,6 +281,8 @@ const EXAM_META_DESC_DIVERSE: Record<
     `あん摩マッサージ指圧師国家試験の第34・33回から確認済み${c}原問を部分収録。公式正答と四肢それぞれの学習用解説を確認できます。`,
   "ahaki-hari-kyu": (c) =>
     `はり師・きゅう師国家試験の第34・33回から確認済み${c}原問を部分収録。共通問題、はり師専用問題、きゅう師専用問題を原本どおり区別しています。`,
+  hokenshi: (c) => `保健師国家試験の第112・111回から公式原文・正答・全肢解説を確認した${c}問を部分収録。局所査読待ちの問題は未収録です。`,
+  josanshi: (c) => `助産師国家試験の第109・108回から公式原文・正答・全肢解説を確認した${c}問を部分収録。局所査読待ちの問題は未収録です。`,
 };
 
 export function examMetaDescription(

@@ -1,0 +1,84 @@
+{
+  "status": "PARTIAL_LIVE_CANDIDATE_LOCAL_COMMIT",
+  "publicationGo": true,
+  "baseCommit": "2d018a0206f1b32d45bb89bdb62f989d309071df",
+  "source44Manifest": "docs/evidence/medical44-prepublication-20261010/MANIFEST.json",
+  "source44ManifestSha256": "41ef3f62b5c68392a0788f4f6d1b6918b24bbba959e1e02d58291f7d6c73cd0e",
+  "raw44DataSha256": {
+    "hokenshi": "f722b6b47f8c69466800be71c1e3ca6b66038788866ac9774ed4b55c4d8a1f3c",
+    "josanshi": "725f468f266c8efa491d243765f7837b6c9ccb84b7868d8e8d3c3fece56659ac"
+  },
+  "readyOriginalCount": 34,
+  "readyByQualification": {
+    "hokenshi": 16,
+    "josanshi": 18
+  },
+  "heldOriginalCount": 10,
+  "readyIds": {
+    "hokenshi": [
+      "hokenshi-2025-annual-pm-q47",
+      "hokenshi-2025-annual-pm-q48",
+      "hokenshi-2025-annual-pm-q50",
+      "hokenshi-2025-annual-pm-q52",
+      "hokenshi-2025-annual-pm-q53",
+      "hokenshi-2025-annual-pm-q54",
+      "hokenshi-2024-annual-am-q45",
+      "hokenshi-2024-annual-am-q46",
+      "hokenshi-2024-annual-am-q47",
+      "hokenshi-2024-annual-am-q48",
+      "hokenshi-2024-annual-am-q49",
+      "hokenshi-2024-annual-am-q50",
+      "hokenshi-2024-annual-am-q51",
+      "hokenshi-2024-annual-am-q52",
+      "hokenshi-2024-annual-am-q54",
+      "hokenshi-2024-annual-am-q55"
+    ],
+    "josanshi": [
+      "josanshi-2025-annual-am-q45",
+      "josanshi-2025-annual-am-q46",
+      "josanshi-2025-annual-am-q47",
+      "josanshi-2025-annual-am-q48",
+      "josanshi-2025-annual-am-q49",
+      "josanshi-2025-annual-am-q50",
+      "josanshi-2025-annual-am-q51",
+      "josanshi-2025-annual-am-q52",
+      "josanshi-2025-annual-am-q53",
+      "josanshi-2025-annual-am-q54",
+      "josanshi-2025-annual-am-q55",
+      "josanshi-2024-annual-am-q45",
+      "josanshi-2024-annual-am-q46",
+      "josanshi-2024-annual-am-q49",
+      "josanshi-2024-annual-am-q50",
+      "josanshi-2024-annual-am-q53",
+      "josanshi-2024-annual-am-q54",
+      "josanshi-2024-annual-am-q55"
+    ]
+  },
+  "heldIds": {
+    "hokenshi": [
+      "hokenshi-2025-annual-pm-q45",
+      "hokenshi-2025-annual-pm-q46",
+      "hokenshi-2025-annual-pm-q49",
+      "hokenshi-2025-annual-pm-q51",
+      "hokenshi-2025-annual-pm-q55",
+      "hokenshi-2024-annual-am-q53"
+    ],
+    "josanshi": [
+      "josanshi-2024-annual-am-q47",
+      "josanshi-2024-annual-am-q48",
+      "josanshi-2024-annual-am-q51",
+      "josanshi-2024-annual-am-q52"
+    ]
+  },
+  "gate": "Both catalog statuses are live. index.ts exports only needsReview===false rows: hokenshi16 and josanshi18. Ten targeted explanation HOLD rows stay in raw evidence only and are absent from public loaders.",
+  "excludedSpecificHold": "The separate hokenshi 112 AM Q36–38 private-source STOP is outside these Q45–55 intervals and untouched.",
+  "quality": {
+    "focusedTests": "4/4 PASS",
+    "typecheck": "PASS",
+    "scopedLint": "PASS",
+    "diffCheck": "PASS"
+  },
+  "push": false,
+  "deployment": false,
+  "readyChoiceCount": 142
+}
