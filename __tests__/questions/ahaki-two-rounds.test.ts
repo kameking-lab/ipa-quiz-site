@@ -12,20 +12,20 @@ const all = [...AHAKI_ANMA_QUESTIONS, ...AHAKI_HARI_KYUU_QUESTIONS];
 const keys = ["ア", "イ", "ウ", "エ"];
 
 describe("Ahaki official booklet partial publication", () => {
-  it("registers only the 608 saved, source-matched originals from the two rounds", async () => {
-    expect(all).toHaveLength(608);
-    expect(new Set(all.map((q) => q.id)).size).toBe(608);
-    expect(source.localCandidateOriginals).toBe(608);
+  it("registers only the 675 saved, source-matched originals from the two rounds", async () => {
+    expect(all).toHaveLength(675);
+    expect(new Set(all.map((q) => q.id)).size).toBe(675);
+    expect(source.localCandidateOriginals).toBe(675);
     expect(source.officialPaperOriginals).toBe(680);
-    expect(source.heldOriginals).toBe(72);
-    expect(source.heldIds).toHaveLength(72);
-    expect(coverage.sections.reduce((total, section) => total + section.numbers.length, 0)).toBe(72);
-    expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2025)).toHaveLength(131);
-    expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2026)).toHaveLength(155);
-    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2025)).toHaveLength(148);
-    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2026)).toHaveLength(174);
-    expect(await getQuestionsForExam("ahaki-anma")).toHaveLength(286);
-    expect(await getQuestionsForExam("ahaki-hari-kyu")).toHaveLength(322);
+    expect(source.heldOriginals).toBe(5);
+    expect(source.heldIds).toHaveLength(5);
+    expect(coverage.sections.reduce((total, section) => total + section.numbers.length, 0)).toBe(5);
+    expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2025)).toHaveLength(159);
+    expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2026)).toHaveLength(159);
+    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2025)).toHaveLength(179);
+    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2026)).toHaveLength(178);
+    expect(await getQuestionsForExam("ahaki-anma")).toHaveLength(318);
+    expect(await getQuestionsForExam("ahaki-hari-kyu")).toHaveLength(357);
     expect(getAvailableExams()).toContain("ahaki-anma");
     expect(getAvailableExams()).toContain("ahaki-hari-kyu");
     expect(isExamPublished("ahaki-anma")).toBe(true);
@@ -57,11 +57,11 @@ describe("Ahaki official booklet partial publication", () => {
       expect(q.subject, q.id).toBe(expected);
       expect(q.category, q.id).toBe(expected);
     }
-    expect(AHAKI_HARI_KYUU_QUESTIONS.filter((q) => q.qNumber >= 161 && q.qNumber <= 170)).toHaveLength(15);
-    expect(AHAKI_HARI_KYUU_QUESTIONS.filter((q) => q.qNumber >= 171 && q.qNumber <= 180)).toHaveLength(10);
+    expect(AHAKI_HARI_KYUU_QUESTIONS.filter((q) => q.qNumber >= 161 && q.qNumber <= 170)).toHaveLength(20);
+    expect(AHAKI_HARI_KYUU_QUESTIONS.filter((q) => q.qNumber >= 171 && q.qNumber <= 180)).toHaveLength(20);
     const ids = new Set(all.map((q) => q.id));
     const heldRouteIds = coverage.sections.flatMap((section) => section.numbers.map((number) => `${section.exam}-${section.year}-annual-${section.session}-q${number}`));
-    expect(new Set(heldRouteIds).size).toBe(72);
+    expect(new Set(heldRouteIds).size).toBe(5);
     for (const identity of source.heldIds) {
       const parts = /^(33|34)-(anma-massage-shiatsushi|hari-kyu)-(\d+)$/.exec(identity);
       expect(parts, identity).not.toBeNull();

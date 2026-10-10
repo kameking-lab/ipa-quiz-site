@@ -149,8 +149,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み306原問を部分収録", domain: "welfare" },
-  { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み286原問を部分収録", domain: "welfare" },
-  { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用322原問を部分収録", domain: "welfare" },
+  { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
+  { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用357原問を部分収録", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
