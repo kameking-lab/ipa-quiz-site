@@ -35,6 +35,8 @@ describe("Denken2 native original boundary", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<NativeReader question={q} />), "text/html");
     expect(doc.querySelectorAll('[aria-label="原本の表と解答群"] table')).toHaveLength(3);
     expect(doc.querySelectorAll('select')).toHaveLength(10);
+    expect(doc.querySelectorAll('select[aria-label$="・定義"]')).toHaveLength(5);
+    expect(doc.querySelectorAll('select[aria-label$="・単位"]')).toHaveLength(5);
     expect(doc.body.textContent).not.toContain("公式正答：");
     expect(doc.querySelectorAll('[aria-label="公式問題原本画像"] img').length).toBeGreaterThan(0);
   });

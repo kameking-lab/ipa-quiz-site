@@ -26,7 +26,7 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [revealed, setRevealed] = useState(false);
   const groups = question.choiceGroups;
-  const paired = question.year === 2026 && question.subject === "machine" && question.number === 7;
+  const paired = question.slots.some(field => typeof field.officialDefinition === "string");
   const groupEntries = Object.entries(groups);
   const flat = isFlat(groups);
   const choose = (key: string, value: string) => {

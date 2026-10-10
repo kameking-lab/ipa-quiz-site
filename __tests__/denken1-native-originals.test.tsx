@@ -47,6 +47,18 @@ describe("Denken1 source-reviewed native originals", () => {
     expect(doc.querySelectorAll("button")).toHaveLength(1);
   });
 
+  it("uses ordinary blank labels for Denken1 machine Q7 despite its shared year and number", () => {
+    const question = getDenken1NativeQuestion(2026, "machine", 7)!;
+    const part = DENKEN1_NATIVE_PARTS.find(p => p.year === 2026 && p.subject === "machine")!;
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(<NativeReader question={question} readerConfig={{
+      examName: "電験一種", examPath: "/denken1", sourceAnswerUrl: part.sourceAnswerUrl, sourceIndexUrl: part.sourceIndexUrl,
+    }} />), "text/html");
+    expect([...doc.querySelectorAll("select")].map(select => select.getAttribute("aria-label")))
+      .toEqual(question.slots.map(field => `空欄${field.slot}`));
+    expect(doc.querySelectorAll('select[aria-label$="・定義"], select[aria-label$="・単位"]')).toHaveLength(0);
+    expect(doc.body.textContent).not.toContain("公式正答：");
+  });
+
   it("has byte-identical, decodable official images and an exact native sitemap", async () => {
     const pages = new Map(DENKEN1_NATIVE_QUESTIONS.flatMap(q => q.sourcePages.map(p => [p.url, p] as const)));
     expect(pages.size).toBe(64);
