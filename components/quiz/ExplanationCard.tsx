@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -43,7 +44,7 @@ export function ExplanationCard({
   const selectedChoiceExplanation = selected
     ? question.choiceExplanations?.[selected as ChoiceKey]
     : undefined;
-  const answerLabel = Array.isArray(question.answer)
+  const answerLabel = question.type === "numeric" ? formatNumericAnswer(question) : Array.isArray(question.answer)
     ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : choiceDisplayLabel(question.exam, question.answer as ChoiceKey);
 
@@ -83,8 +84,8 @@ export function ExplanationCard({
             {isCorrect ? "正解!" : "不正解"}
           </span>
           <span className="text-xs text-zinc-700 dark:text-zinc-300">
-            正解: {Array.isArray(question.answer) ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join(", ") : choiceDisplayLabel(question.exam, question.answer as ChoiceKey)}
-            {selected ? ` / あなた: ${choiceDisplayLabel(question.exam, selected as ChoiceKey)}` : ""}
+            正解: {answerLabel}
+            {selected ? ` / あなた: ${question.type === "numeric" ? formatNumericAnswer(question, selected) : choiceDisplayLabel(question.exam, selected as ChoiceKey)}` : ""}
           </span>
         </div>
         <div className="flex items-start gap-1.5">

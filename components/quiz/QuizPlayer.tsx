@@ -7,6 +7,8 @@ import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
+import { NumericAnswerInput } from "./NumericAnswerInput";
+import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
@@ -80,6 +82,7 @@ export function QuizPlayer({
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   // 「二つとも答えなさい」形式で選択中の肢。規定数そろった時点で採点する。
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
+  const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -127,6 +130,7 @@ export function QuizPlayer({
      
     setSelected(undefined);
     setPicked([]);
+    setNumericSelected(undefined);
     setRevealed(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
@@ -236,6 +240,12 @@ export function QuizPlayer({
     },
     [question, revealed, picked, commitAnswer],
   );
+
+  const onNumericAnswer = React.useCallback((value: string) => {
+    if (!question || question.type !== "numeric" || revealed) return;
+    setNumericSelected(value);
+    commitAnswer(value, isNumericAnswerCorrect(question, value));
+  }, [question, revealed, commitAnswer]);
 
   const toggleStar = React.useCallback(() => {
     if (!question) return;
@@ -360,15 +370,16 @@ export function QuizPlayer({
     );
   }
 
-  const answerKey = usesNumberedChoices(question.exam)
+  const numeric = question.type === "numeric";
+  const answerKey = numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
     ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = requiredSelections > 1;
-  const isCorrect = multiSelect
+  const isCorrect = numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
     ? isCompleteSelectionCorrect(question.answer, picked)
     : isAcceptedAnswer(question.answer, selected);
-  const selectionLabel = multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
+  const selectionLabel = numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -445,7 +456,9 @@ export function QuizPlayer({
                 正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
               </p>
             )}
-            <div
+            {numeric ? (
+              <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} disabled={revealed} onAnswer={onNumericAnswer} />
+            ) : <div
               role={multiSelect ? "group" : "radiogroup"}
               aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
               className="space-y-2"
@@ -469,7 +482,7 @@ export function QuizPlayer({
                     {...choiceRoving.getRadioProps(idx)}
                   />
                 ))}
-            </div>
+            </div>}
 
             <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
               {revealed
@@ -503,7 +516,7 @@ export function QuizPlayer({
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
+                : numeric ? "整数を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">

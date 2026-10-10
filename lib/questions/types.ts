@@ -80,7 +80,7 @@ export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "seco
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
-export type QuestionType = "multiple-choice" | "descriptive" | "essay";
+export type QuestionType = "multiple-choice" | "numeric" | "descriptive" | "essay";
 
 /**
  * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
@@ -107,6 +107,8 @@ export interface Question {
   subject?: string;
   officialAnswerNumber?: string;
   type: QuestionType;
+  /** 数値記入。answer は単位を除いた正規化済み非負整数文字列。 */
+  numericAnswer?: { format: "integer"; unit: string };
   category: string;
   topicTags: string[];
   difficulty: Difficulty;

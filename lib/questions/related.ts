@@ -6,7 +6,7 @@ import type { ExamCode, Question } from "./types";
 const MORNING_KNOWLEDGE_SESSIONS = new Set(["am", "am1", "am2", "kamoku-a"]);
 
 function isMorningKnowledge(q: Question): boolean {
-  return q.type === "multiple-choice" && MORNING_KNOWLEDGE_SESSIONS.has(q.session);
+  return (q.type === "multiple-choice" || q.type === "numeric") && MORNING_KNOWLEDGE_SESSIONS.has(q.session);
 }
 
 /**

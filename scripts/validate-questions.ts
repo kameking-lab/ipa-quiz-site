@@ -11,6 +11,7 @@
 
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
@@ -69,7 +70,8 @@ const QuestionSchema = z.object({
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"]),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
-  type: z.enum(["multiple-choice", "descriptive", "essay"]),
+  type: z.enum(["multiple-choice", "numeric", "descriptive", "essay"]),
+  numericAnswer: z.object({ format: z.literal("integer"), unit: z.string().trim().min(1) }).optional(),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
@@ -245,6 +247,18 @@ function validate(questions: Question[]): ValidationResult {
       continue;
     }
     numSet.add(answerUnit);
+
+    if (q.type === "numeric") {
+      const numericIssue = numericQuestionIssue(q);
+      if (numericIssue || !q.sourceAnswerUrl || !q.sourceAttribution) {
+        fail++;
+        byExam[examKey].fail++;
+        const message = numericIssue ?? "numeric requires official answer URL and source attribution";
+        issues.push({ id: q.id, level: "error", message });
+        console.error(`[FAIL] ${q.id}: ${message}`);
+        continue;
+      }
+    }
 
     // Multiple-choice specific checks
     if (q.type === "multiple-choice") {
