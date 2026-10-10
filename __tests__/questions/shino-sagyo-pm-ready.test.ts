@@ -3,18 +3,19 @@ import { SAGYO_RYOHOSHI_QUESTIONS } from "@/data/questions/sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import integration from "@/docs/evidence/shino-sagyo-pm-ready-20261010/INTEGRATION.json";
+import laterIntegration from "@/docs/evidence/shino-sagyo-pm57-end-ready-20261010/INTEGRATION.json";
 
 const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS],
-  ] as const)("%s は原典照合済み60問のみ公開する", async (exam, questions) => {
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 142],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 76],
+  ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
     const loaded = await getQuestionsForExam(exam);
     expect(loaded).toEqual(questions);
-    expect(loaded).toHaveLength(60);
-    expect(new Set(loaded.map((question) => question.id)).size).toBe(60);
+    expect(loaded).toHaveLength(expectedCount);
+    expect(new Set(loaded.map((question) => question.id)).size).toBe(expectedCount);
     expect(loaded.every((question) => question.session === "pm")).toBe(true);
     expect(new Set(loaded.map((question) => question.year))).toEqual(new Set([2024, 2025]));
 
@@ -42,12 +43,16 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
         : (question.year === 2025 ? 56 : 55);
       return `${question.exam}-${round}-pm-${question.qNumber}`;
     }));
-    expect(all).toHaveLength(120);
+    expect(all).toHaveLength(218);
     expect(integration.draftOriginals).toBe(135);
     expect(integration.heldDrafts).toHaveLength(15);
     expect(integration.excludedBeforeDraft).toHaveLength(9);
     expect(integration.readyProvenance).toHaveLength(120);
-    for (const held of [...integration.heldDrafts, ...integration.excludedBeforeDraft]) {
+    expect(laterIntegration.draftOriginals).toBe(119);
+    expect(laterIntegration.heldDrafts).toHaveLength(21);
+    expect(laterIntegration.excludedBeforeDraft).toHaveLength(7);
+    expect(laterIntegration.readyProvenance).toHaveLength(98);
+    for (const held of [...integration.heldDrafts, ...integration.excludedBeforeDraft, ...laterIntegration.heldDrafts, ...laterIntegration.excludedBeforeDraft]) {
       expect(identities.has(held.identity)).toBe(false);
     }
   });
