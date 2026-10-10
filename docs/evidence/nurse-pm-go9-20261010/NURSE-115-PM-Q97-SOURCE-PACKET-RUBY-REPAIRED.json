@@ -1,0 +1,49 @@
+{
+  "scope": "MHLW 115th nursing afternoon original Q97 only, shared case Q97-99 retained",
+  "status": "source-only, visually repaired ruby extraction",
+  "originalSourcePacketSha256": "6571bfc7c3f1e5b96fb92432cb9b5e00609963a231242d6572b14eb55c5ddf59",
+  "repair": {
+    "field": "stem",
+    "removedExtractorArtifact": "Basedow disease standalone line is small ruby, not running text",
+    "originalTextSpan": "診察の結果、\nBasedow disease\nBasedow〈バセドウ〉病が疑われ",
+    "visualTextSpan": "診察の結果、Basedow〈バセドウ〉病が疑われ",
+    "officialPdfPhysicalPage": 40,
+    "officialPageImageSha256": "f7495f32fddd804104164ef51cdc9bf6354fc405cc146d84c92a0ab71ccd6d42"
+  },
+  "question": {
+    "round": 115,
+    "session": "afternoon",
+    "question": 97,
+    "questionPdfPhysicalPage": 40,
+    "questionPdfPrintedPage": 34,
+    "sharedCaseQuestionNumbers": [
+      97,
+      98,
+      99
+    ],
+    "sharedCaseText": "次の文を読み97～99 の問いに答えよ。\nA さん（21 歳、女性、大学生）は半年ほど前から疲れやすさを自覚していた。その\n後、安静時にも息切れと動悸が出現するようになり、1 か月前から所属するテニス\nサークルを休んでいる。数日前からは手が震えるようになり、学業にも支障が出てき\nた。頻繁に汗が出ると自覚しており、母親から「首が腫れている」と指摘され受診し\nた。受診時は、身長160 cm、体重44 kg で半年前から6 kg 減少している。体温\n37.5 ℃、呼吸数22/分、脈拍132/分、血圧152/70　mmHg であった。",
+    "sharedCaseSourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p40.png",
+      "sha256": "f7495f32fddd804104164ef51cdc9bf6354fc405cc146d84c92a0ab71ccd6d42"
+    },
+    "stem": "診察の結果、Basedow〈バセドウ〉病が疑われ、甲状腺アイソトープ（123I）摂取率\n検査を受けることになった。\n検査前の食事で制限するのはどれか。",
+    "choices": [
+      "果　物",
+      "肉　類",
+      "海藻類",
+      "緑黄色野菜"
+    ],
+    "choiceCount": 4,
+    "officialAcceptedAnswerNumbers": [
+      "3"
+    ],
+    "answerKind": "select_one",
+    "requiredSelections": 1,
+    "sourcePageImage": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm115-q91-105-renders\\115-pm-physical-p40.png",
+      "sha256": "f7495f32fddd804104164ef51cdc9bf6354fc405cc146d84c92a0ab71ccd6d42"
+    },
+    "figurePresent": false,
+    "transcriptionStatus": "visually verified against original PDF page"
+  }
+}
