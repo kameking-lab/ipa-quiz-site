@@ -4,10 +4,11 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
+import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT, denken1NativeSubjectPath } from "@/lib/denken1/native";
 
 export const metadata: Metadata = {
-  title: "電験一種 一次試験 過去問｜令和8年度 理論・電力・機械・法規",
-  description: "第一種電気主任技術者一次試験の令和8年度公式問題から理論2原問と電力・機械・法規の各1原問、計25空欄を収録。15肢の解答群と全肢の理由を確認できます。",
+  title: "電験一種 一次試験 過去問｜2025・2026年度の収録範囲",
+  description: "第一種電気主任技術者一次試験の2025・2026年度から確認済みの理論・電力・機械36原問を原問単位で収録。従来の2026年度5原問・25空欄も保持しています。",
   alternates: { canonical: "/denken1" },
 };
 
@@ -29,7 +30,7 @@ export default function Denken1Page() {
         原問の空欄(1)〜(5)を1問ずつ、公式の解答群(イ)〜(ヨ)の15肢から選ぶ形式で、全{total}空欄に全肢の解説があります。
       </p>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        収録範囲：理論A問2・問3・電力A問2・機械A問3・法規A問1のみ。同年度の他の原問、過年度、二次試験は未収録です。
+        2025・2026年度の理論・電力・機械36原問・204回答欄を原問単位でも確認できます。従来の5原問と重なる2原問を重複計上せず、掲載する固有の原問は計{DENKEN1_PUBLISHED_ORIGINAL_COUNT}件です。両年度の全問と二次試験は未収録です。
       </p>
       <section aria-labelledby="denken1-subjects" className="mt-8">
         <h2 id="denken1-subjects" className="text-xl font-bold">令和8年度 一次試験の科目を選ぶ</h2>
@@ -53,9 +54,24 @@ export default function Denken1Page() {
           })}
         </div>
       </section>
+      <section aria-labelledby="denken1-native-subjects" className="mt-9">
+        <h2 id="denken1-native-subjects" className="text-xl font-bold">2025・2026年度の原問を年・科目から選ぶ</h2>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済みの原問だけを掲載します。2026年度理論の問4は個別の確認事項が残るため、この一覧には含めていません。</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {DENKEN1_NATIVE_PARTS.map(part => {
+            const name = { theory: "理論", power: "電力", machine: "機械", law: "法規" }[part.subject];
+            const fields = part.questions.reduce((sum, q) => sum + q.slots.length, 0);
+            return <Link key={`${part.year}-${part.subject}`} href={denken1NativeSubjectPath(part.year, part.subject)}
+              className="flex min-h-32 items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm hover:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40">
+              <span><span className="block text-xl font-bold">{part.year}年度 {name}</span><span className="mt-2 block text-sm text-muted-foreground">{part.questions.length}原問・{fields}回答欄</span></span>
+              <ArrowRight className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
+            </Link>;
+          })}
+        </div>
+      </section>
       <ExamYearArchiveLinks exam="denken1" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-        問題・正答の出典：一般財団法人 電気技術者試験センター「令和8年度第一種電気主任技術者一次試験」。問題文は空欄ごとの設問に分けて整形しています（改変あり）。
+        問題・正答の出典：一般財団法人 電気技術者試験センター「2025・2026年度第一種電気主任技術者一次試験」。従来の2026年度5原問は空欄ごとの演習に分けて整形し、追加した原問は公式ページ画像とともに原問単位で掲載しています。解説は当サイトが作成しました。
       </p>
     </main>
   );

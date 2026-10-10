@@ -1,5 +1,6 @@
 import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
 import { NATIVE_QUESTIONS, nativeQuestionPaths, nativeSubjectPath } from "@/lib/denken2/native";
+import { DENKEN1_NATIVE_QUESTIONS, denken1NativeQuestionPaths, denken1NativeSubjectPath } from "@/lib/denken1/native";
 import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
@@ -332,7 +333,8 @@ export function renderMainSitemapXml(): string {
 export function renderExamsSitemapXml(): string {
   // Exam routes already carry per-entry lastModified from getExamHubRoutes().
   const nativeSubjects = [...new Set(NATIVE_QUESTIONS.map(q => nativeSubjectPath(q.year, q.subject)))];
-  const nativeRoutes = [...nativeSubjects, ...nativeQuestionPaths()]
+  const denken1Subjects = [...new Set(DENKEN1_NATIVE_QUESTIONS.map(q => denken1NativeSubjectPath(q.year, q.subject)))];
+  const nativeRoutes = [...nativeSubjects, ...nativeQuestionPaths(), ...denken1Subjects, ...denken1NativeQuestionPaths()]
     .map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly" as const, priority: 0.6 }));
   return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes]);
 }

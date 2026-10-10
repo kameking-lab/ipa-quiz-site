@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import type { NativeQuestion } from "@/lib/denken2/native";
+import type { ElectricalNativeQuestion } from "@/lib/electrical/native-types";
 
 type Bank = Record<string, string>;
 const normalized = (label: string) => label.replace(/[()（）]/g, "").normalize("NFKC");
-const isFlat = (groups: NativeQuestion["choiceGroups"]): groups is Bank =>
+const isFlat = (groups: ElectricalNativeQuestion["choiceGroups"]): groups is Bank =>
   Object.values(groups).every(value => typeof value === "string");
 const entries = (bank: Bank) => Object.entries(bank);
 
@@ -22,11 +22,11 @@ function SelectChoice({ label, bank, value, onChange }: {
   </label>;
 }
 
-export function NativeAnswer({ question }: { question: NativeQuestion }) {
+export function NativeAnswer({ question }: { question: ElectricalNativeQuestion }) {
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [revealed, setRevealed] = useState(false);
   const groups = question.choiceGroups;
-  const paired = question.year === 2026 && question.subject === "machine" && question.number === 7;
+  const paired = question.slots.some(field => typeof field.officialDefinition === "string");
   const groupEntries = Object.entries(groups);
   const flat = isFlat(groups);
   const choose = (key: string, value: string) => {
@@ -55,19 +55,24 @@ export function NativeAnswer({ question }: { question: NativeQuestion }) {
               onChange={value => choose(`${field.slot}-b`, value)} /> : null}
           </div>
           {revealed ? <div className="mt-4 border-t border-border pt-4 text-sm leading-7">
-            {"officialDefinition" in field
+            {typeof field.officialDefinition === "string"
               ? <p className="font-bold text-primary">公式正答：定義 {field.officialDefinition} ／ 単位 {field.officialUnit}</p>
               : <p className="font-bold text-primary">公式正答：{field.officialAnswer}</p>}
             <p className="mt-1">{(() => {
               const first = selected[`${field.slot}-a`];
               const second = selected[`${field.slot}-b`];
               if (!first) return "未回答";
-              if ("officialDefinition" in field) return normalized(first) === normalized(field.officialDefinition)
+              if (typeof field.officialDefinition === "string" && typeof field.officialUnit === "string") return normalized(first) === normalized(field.officialDefinition)
                 && !!second && normalized(second) === normalized(field.officialUnit) ? "正解" : "選択を確認";
               return normalized(first) === normalized(field.officialAnswer) ? "正解" : "選択を確認";
             })()}</p>
             <p className="mt-2">{field.explanation}</p>
             <p className="mt-2 whitespace-pre-wrap">{field.derivation}</p>
+            {field.choiceExplanations ? <details className="mt-4 rounded-lg border border-border p-3">
+              <summary className="cursor-pointer font-semibold">全選択肢の理由（{Object.keys(field.choiceExplanations).length}肢）</summary>
+              <dl className="mt-3 space-y-3">{Object.entries(field.choiceExplanations).map(([label, reason]) =>
+                <div key={label}><dt className="font-bold">{label} {flat ? groups[label] : ""}</dt><dd>{reason}</dd></div>)}</dl>
+            </details> : null}
           </div> : null}
         </div>;
       })}
