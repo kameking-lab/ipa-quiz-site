@@ -21,12 +21,12 @@ describe("four independently verified nursing PM originals", () => {
       "kangoshi-2025-annual-pm-q78",
       "kangoshi-2025-annual-pm-q83",
     ]);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(461);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(462);
     expect(integration.totalOriginals).toBe(integration.previousOriginals + integration.addedOriginals);
     expect(integration.totalChoices).toBe(integration.previousChoices + integration.addedChoices);
     expect(integration.addedChoices).toBe(18);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1906);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(461);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1910);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(462);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     for (const id of integration.heldIdsUnchanged) expect(byId.has(id), id).toBe(false);
   });
@@ -61,7 +61,7 @@ describe("four independently verified nursing PM originals", () => {
     expect(q83.officialAnswerNumber).toBe("23");
     expect(q83.requiredSelections).toBe(2);
     expect(q83.answer).toHaveLength(2);
-    for (const [year, session, count] of [[2024, "am", 117], [2024, "pm", 113], [2025, "am", 116], [2025, "pm", 115]] as const) {
+    for (const [year, session, count] of [[2024, "am", 117], [2024, "pm", 113], [2025, "am", 117], [2025, "pm", 115]] as const) {
       expect(KANGOSHI_QUESTIONS.filter(question => question.year === year && question.session === session), `${year}-${session}`).toHaveLength(count);
     }
   });
