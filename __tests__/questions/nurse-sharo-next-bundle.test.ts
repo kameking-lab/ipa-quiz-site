@@ -7,6 +7,7 @@ import { FP1_QUESTIONS } from "@/data/questions/fp1";
 import { getFp1AppliedEdition } from "@/lib/fp1/applied";
 import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import proof from "@/docs/evidence/nurse-sharo-next-bundle-20261010/INTEGRATION.json";
+import afternoonGo from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
 const canonical = (v: unknown): unknown => Array.isArray(v)?v.map(canonical):v&&typeof v === "object"?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([k,x])=>[k,canonical(x)])):v;
 const hash=(v:unknown)=>createHash("sha256").update(JSON.stringify(canonical(v))).digest("hex");
 describe("frozen next nurse and labor consultant bundle",()=>{
@@ -14,11 +15,11 @@ describe("frozen next nurse and labor consultant bundle",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
     for(const item of proof.previousNurse281ObjectHashes)expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
     for(const item of proof.previousSharoushi16ObjectHashes)expect(hash(SHAROUSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(387);expect(SHAROUSHI_QUESTIONS).toHaveLength(27);
-    expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(1598);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(416);expect(SHAROUSHI_QUESTIONS).toHaveLength(27);
+    expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(1716);
     expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(135);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(387);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(27);
-    for(const id of proof.excludedLaterGoIds)expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(false);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(416);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(27);
+    for(const id of proof.excludedLaterGoIds)expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(afternoonGo.addedIds.includes(id));
     expect(KANGOSHI_QUESTIONS.filter(q=>q.type === "numeric")).toHaveLength(2);
   });
   it("preserves all FP1 source files and its129 basic/applied originals",()=>{
