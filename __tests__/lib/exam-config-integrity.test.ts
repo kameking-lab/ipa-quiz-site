@@ -8,6 +8,7 @@ import {
   type SessionConfig,
 } from "@/lib/exam-config";
 import type { ExamCode } from "@/lib/questions/types";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 // EXAM_CONFIGS は全試験区分の中核設定レジストリで、PDF 出典 URL(urlSlug)・学習プラン
 // の想定問題数(expectedQuestions)・PDF クロール年範囲(yearRange)・分野別スケジュール
@@ -42,8 +43,8 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
   });
 
   it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
-    const keys = ENTRIES.map(([k]) => k);
-    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.sort());
+    const publishedKeys = ENTRIES.map(([k]) => k).filter(isExamPublished);
+    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(publishedKeys.sort());
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko2");
