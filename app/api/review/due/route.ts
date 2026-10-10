@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
     const q = await findQuestionById(id);
     if (!q) continue;
-    if (q.type !== "multiple-choice" || !isPracticeReadyQuestion(q)) continue;
+    if ((q.type !== "multiple-choice" && q.type !== "numeric") || !isPracticeReadyQuestion(q)) continue;
 
     dueQuestions.push(q);
   }

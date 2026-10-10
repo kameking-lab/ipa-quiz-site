@@ -9,6 +9,8 @@ import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
+import { NumericAnswerInput } from "./NumericAnswerInput";
+import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
@@ -33,9 +35,9 @@ interface Props {
   /** Present on real question pages; enables a one-click, in-place AI follow-up. */
   question?: Question;
   questionId: string;
-  choices: Partial<Record<ChoiceKey, string>>;
+  choices?: Partial<Record<ChoiceKey, string>>;
   choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
-  answerKey: ChoiceKey | ChoiceKey[];
+  answerKey: Question["answer"];
   answerText?: string;
   exam: ExamCode;
   year: number;
@@ -84,13 +86,23 @@ export function QuestionAnswerCard({
   nextHref,
   requiredSelections = 1,
 }: Props) {
-  const multiSelect = requiredSelections > 1;
+  const numeric = question?.type === "numeric";
+  const multiSelect = !numeric && requiredSelections > 1;
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   // 「二つとも答えなさい」形式で選択中の肢（採点前は何度でも選び直せる）。
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
+  const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
   const [copilotRequest, setCopilotRequest] = React.useState(0);
+
+  React.useEffect(() => {
+    setSelected(undefined);
+    setPicked([]);
+    setNumericSelected(undefined);
+    setRevealed(false);
+    setCopilotRequest(0);
+  }, [questionId]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -139,11 +151,19 @@ export function QuestionAnswerCard({
     [revealed, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
 
+  const onNumericAnswer = React.useCallback((value: string) => {
+    if (!question || !numeric || revealed) return;
+    setNumericSelected(value);
+    setRevealed(true);
+    recordOutcome(value, isNumericAnswerCorrect(question, value));
+  }, [question, numeric, revealed, recordOutcome]);
+
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
     if (revealed) return;
     setSelected(undefined);
     setPicked([]);
+    setNumericSelected(undefined);
     setRevealed(true);
   }, [revealed]);
 
@@ -172,10 +192,10 @@ export function QuestionAnswerCard({
     };
   }, [revealed, keys, onSelect]);
 
-  const answered = multiSelect ? picked.length === requiredSelections : selected !== undefined;
-  const isCorrect = multiSelect ? isCompleteSelectionCorrect(answerKey, picked) : isAcceptedAnswer(answerKey, selected);
-  const answerLabel = usesNumberedChoices(exam)
-    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
+  const answered = numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
+  const isCorrect = numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked) : isAcceptedAnswer(answerKey, selected);
+  const answerLabel = numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
+    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
 
   return (
@@ -185,7 +205,9 @@ export function QuestionAnswerCard({
           正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
         </p>
       )}
-      <div
+      {numeric ? (
+        <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} disabled={revealed} onAnswer={onNumericAnswer} />
+      ) : <div
         role={multiSelect ? "group" : "radiogroup"}
         data-shortcuts-ready={shortcutsReady}
         aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
@@ -196,7 +218,7 @@ export function QuestionAnswerCard({
             key={key}
             choiceKey={key}
             displayLabel={choiceDisplayLabel(exam, key)}
-            text={choices[key]!}
+            text={choices![key]!}
             imageUrl={choiceImageUrls?.[key]}
             imageAlt={choiceImageAlt(exam, key)}
             revealed={revealed}
@@ -209,7 +231,7 @@ export function QuestionAnswerCard({
             {...roving.getRadioProps(idx)}
           />
         ))}
-      </div>
+      </div>}
 
       {/* Screen-reader announcement of the outcome. */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
@@ -291,7 +313,7 @@ export function QuestionAnswerCard({
           <CopilotDesktopFloating
             key={`desktop-${copilotRequest}`}
             question={question}
-            selectedChoice={answered ? (multiSelect ? formatSelection(picked) : selected) : undefined}
+            selectedChoice={answered ? (numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
             isCorrect={answered ? isCorrect : undefined}
             initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
             defaultOpen
@@ -299,7 +321,7 @@ export function QuestionAnswerCard({
           <CopilotMobileSheet
             key={`mobile-${copilotRequest}`}
             question={question}
-            selectedChoice={answered ? (multiSelect ? formatSelection(picked) : selected) : undefined}
+            selectedChoice={answered ? (numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
             isCorrect={answered ? isCorrect : undefined}
             initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
             defaultOpen

@@ -119,7 +119,7 @@ export function countApTopicGroups(allQuestions: Question[]): TopicGroupCount[] 
       q.session !== "kamoku-a"
     )
       continue;
-    if (q.type !== "multiple-choice") continue;
+    if (q.type !== "multiple-choice" && q.type !== "numeric") continue;
     let m = idx.get(q.exam);
     if (!m) {
       m = new Map();
