@@ -1,20 +1,26 @@
 import { describe, expect, it } from "vitest";
 import { RINSHO_KOGISHI_QUESTIONS } from "@/data/questions/rinsho-kogishi";
 import firstReady from "@/data/questions/rinsho-kogishi/pm01-24-ready.json";
+import footerOnly from "@/data/questions/rinsho-kogishi/footer-only-followup.json";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceExam } from "@/lib/questions/source-label";
 
 describe("clinical engineering partial source gate", () => {
-  it("preserves the first 46 and adds only 111 source-clean originals", () => {
+  it("preserves the first 157 and adds only 63 proven page-footer originals", () => {
     const qs = RINSHO_KOGISHI_QUESTIONS;
     expect(firstReady).toHaveLength(46);
-    expect(qs).toHaveLength(157);
-    expect(getQuestionsByExamStrict("rinsho-kogishi")).toHaveLength(157);
-    expect(getExamQuestionCount("rinsho-kogishi")).toBe(157);
+    expect(footerOnly).toHaveLength(63);
+    expect(qs).toHaveLength(220);
+    expect(getQuestionsByExamStrict("rinsho-kogishi")).toHaveLength(220);
+    expect(getExamQuestionCount("rinsho-kogishi")).toBe(220);
     expect(qs.every((q) => ["am", "pm"].includes(q.session) && !q.hasImage && q.needsReview === false)).toBe(true);
-    expect(new Set(qs.map((q) => q.id)).size).toBe(157);
+    expect(new Set(qs.map((q) => q.id)).size).toBe(220);
+    expect(footerOnly.filter((q) => q.year === 2025 && q.session === "am")).toHaveLength(16);
+    expect(footerOnly.filter((q) => q.year === 2025 && q.session === "pm")).toHaveLength(14);
+    expect(footerOnly.filter((q) => q.year === 2024 && q.session === "am")).toHaveLength(20);
+    expect(footerOnly.filter((q) => q.year === 2024 && q.session === "pm")).toHaveLength(13);
     expect(qs.some((q) => q.id === "rinsho-kogishi-2024-annual-pm-q12")).toBe(false);
     expect(qs.some((q) => q.id === "rinsho-kogishi-2025-annual-pm-q11")).toBe(false);
     expect(qs.some((q) => q.id === "rinsho-kogishi-2025-annual-pm-q88")).toBe(false);
