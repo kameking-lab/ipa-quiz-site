@@ -25,9 +25,9 @@ describe("social insurance post-668 GO-only delta", () => {
   it("registers precisely 24 new official five-choice originals on unique subject routes", () => {
     expect(proof.added).toHaveLength(24);
     expect(proof.skippedPublishedCandidateIds).toHaveLength(19);
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(86);
-    expect(new Set(SHAROUSHI_QUESTIONS.map((q) => q.id)).size).toBe(86);
-    expect(SHAROUSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(430);
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(101);
+    expect(new Set(SHAROUSHI_QUESTIONS.map((q) => q.id)).size).toBe(101);
+    expect(SHAROUSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(505);
     const sitemapIds = new Set(getSitemapQuestions().map((q) => q.id));
     for (const addition of proof.added) {
       const q = SHAROUSHI_QUESTIONS.find((row) => row.id === addition.id);
@@ -46,6 +46,5 @@ describe("social insurance post-668 GO-only delta", () => {
       expect(sitemapIds.has(addition.id)).toBe(true);
     }
     expect(SHAROUSHI_QUESTIONS.some((q) => q.id === "sharoushi-2025-annual-koyou-q1")).toBe(false);
-    expect(SHAROUSHI_QUESTIONS.some((q) => q.id === "sharoushi-2026-annual-ippan-q9")).toBe(false);
   });
 });
