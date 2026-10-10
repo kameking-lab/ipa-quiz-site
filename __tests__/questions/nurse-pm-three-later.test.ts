@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATION.json";
 import candidates from "@/docs/evidence/nurse-pm-three-later-20261010/SOURCE-CANDIDATES.json";
@@ -13,9 +14,9 @@ describe("three later primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("669b9da832b6980a10303ec76a407766c51f71e5");
     expect(proof.previous430ObjectHashes).toHaveLength(430);
     for (const old of proof.previous430ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(442);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(442);
-    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(1827);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(go9.totalChoices);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id).sort()).toEqual(proof.sourceChecks.map(check => check.id).sort());
   });
@@ -42,14 +43,14 @@ describe("three later primary-verified nursing PM originals", () => {
       expect(question.sourceAnswerUrl).toContain("mhlw.go.jp");
       expect(isPracticeReadyQuestion(question)).toBe(true);
     }
-    for (const id of proof.keptUnregistered) expect(byId.has(id), id).toBe(false);
+    for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
   });
 
   it("shows the matching partial-collection counts on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前227問と午後215問");
-    expect(home).toContain("計442原問");
-    expect(home).toContain("全1827肢");
-    expect(home).toContain("第115回は午前114問・午後107問、第114回は午前113問・午後108問");
+    expect(home).toContain("午前227問と午後224問");
+    expect(home).toContain("計451原問");
+    expect(home).toContain("全1863肢");
+    expect(home).toContain("第115回は午前114問・午後113問、第114回は午前113問・午後111問");
   });
 });

@@ -13,6 +13,7 @@ import afternoonThree from "@/docs/evidence/nurse-afternoon-three-go-20261010/IN
 import laterThree from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATION.json";
 import laterFour from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
 import laterFive from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
+import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 
 const added=KANGOSHI_QUESTIONS.filter(q=>proof.addedIds.includes(q.id));
@@ -23,6 +24,7 @@ const laterVerifiedIds = new Set([
   ...laterThree.sourceChecks.map(check => check.id),
   ...laterFour.sourceChecks.map(check => check.id),
   ...laterFive.sourceChecks.map(check => check.id),
+  ...go9.sourceChecks.map(check => check.id),
 ]);
 
 describe("saved114th afternoon next57 registration",()=>{

@@ -11,12 +11,13 @@ import afternoonGo from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION
 import threeLater from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATION.json";
 import fourLater from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
 import fiveNext from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
+import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 const canonical = (v: unknown): unknown => Array.isArray(v)?v.map(canonical):v&&typeof v === "object"?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([k,x])=>[k,canonical(x)])):v;
 const hash=(v:unknown)=>createHash("sha256").update(JSON.stringify(canonical(v))).digest("hex");
-const laterGos = [threeLater, fourLater, fiveNext];
+const laterGos = [threeLater, fourLater, fiveNext, go9];
 const laterIds = laterGos.flatMap(batch => batch.sourceChecks.map(check => check.id));
 const expectedNurseTotal = laterGos.reduce((count, batch) => { expect(batch.previousOriginals).toBe(count); return batch.totalOriginals; }, 430);
-const expectedChoiceTotal = fiveNext.totalChoices;
+const expectedChoiceTotal = go9.totalChoices;
 describe("frozen next nurse and labor consultant bundle",()=>{
   it("retains every root281 nurse and16 labor consultant original with identical contents",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
