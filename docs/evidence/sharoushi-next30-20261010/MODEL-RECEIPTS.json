@@ -1,0 +1,125 @@
+[
+  {
+    "batch": "rouki-recovery",
+    "requestSha256": "9a4c5b1cd8de7ef78b882d126479589d40bde848de4f49bce078948ca63d844f",
+    "actualInitModel": "claude-opus-5-5",
+    "servedModels": [
+      "claude-haiku-5-5",
+      "claude-opus-5-5"
+    ],
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 42,
+        "outputTokens": 57993,
+        "thinkingTokens": 23042,
+        "cacheReadInputTokens": 956009,
+        "cacheCreationInputTokens": 146307,
+        "webSearchRequests": 0,
+        "costUSD": 2.5216858,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-haiku-5-5": {
+        "inputTokens": 725190,
+        "outputTokens": 67008,
+        "thinkingTokens": 42032,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 14,
+        "costUSD": 0.24602300000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000
+      }
+    },
+    "numTurnsFinalCall": 1,
+    "subtypeFinalCall": "success",
+    "sourceSession": "public-only Claude Max session; local transcript retained outside this repository",
+    "draftSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e"
+  },
+  {
+    "batch": "rousai-2026-recovery",
+    "requestSha256": "261ed5cc08b46378ae7c0ddb67e2c7f388797eab5eb2c82414db10b27bdc34ab",
+    "actualInitModel": "claude-opus-5-5",
+    "servedModels": [
+      "claude-haiku-5-5",
+      "claude-opus-5-5"
+    ],
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 36,
+        "outputTokens": 43343,
+        "cacheReadInputTokens": 627524,
+        "cacheCreationInputTokens": 58008,
+        "webSearchRequests": 0,
+        "costUSD": 1.4565728,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 16090,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-haiku-5-5": {
+        "inputTokens": 760465,
+        "outputTokens": 51871,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 9,
+        "costUSD": 0.19198200000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 32481,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "numTurnsFinalCall": 45,
+    "subtypeFinalCall": "success",
+    "sourceSession": "public-only Claude Max session; local transcript retained outside this repository",
+    "draftSha256": "f55ef665fb573d4895a316d4e05942b94388cb8a24fa8ae793f7a5550bc855c3"
+  },
+  {
+    "batch": "rousai-2025-recovery",
+    "requestSha256": "9a4c5b1cd8de7ef78b882d126479589d40bde848de4f49bce078948ca63d844f",
+    "actualInitModel": "claude-opus-5-5",
+    "servedModels": [
+      "claude-haiku-5-5",
+      "claude-opus-5-5"
+    ],
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 42,
+        "outputTokens": 54290,
+        "thinkingTokens": 24139,
+        "cacheReadInputTokens": 643469,
+        "cacheCreationInputTokens": 91676,
+        "webSearchRequests": 0,
+        "costUSD": 1.9480697999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "claude-haiku-5-5": {
+        "inputTokens": 774089,
+        "outputTokens": 57971,
+        "thinkingTokens": 39528,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 8,
+        "costUSD": 0.1863944,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000
+      }
+    },
+    "numTurnsFinalCall": 1,
+    "subtypeFinalCall": "success",
+    "sourceSession": "public-only Claude Max session; local transcript retained outside this repository",
+    "draftSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa"
+  }
+]
