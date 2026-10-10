@@ -876,6 +876,16 @@ export function isPdfDocumentUrl(url: string | undefined): boolean {
 export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
   if (!isPdfDocumentUrl(url)) {
     if (url?.startsWith("https://www.kinzai.or.jp/")) return kind === "question" ? "主催団体の公式問題" : "主催団体の模範解答";
+    if (url) {
+      try {
+        const host = new URL(url).hostname.toLowerCase();
+        if (host === "ahaki.or.jp" || host === "www.ahaki.or.jp") {
+          return kind === "question" ? "試験実施機関の公式問題" : "試験実施機関の公式正答";
+        }
+      } catch {
+        return "IPA公式の過去問一覧";
+      }
+    }
     return "IPA公式の過去問一覧";
   }
   return kind === "question" ? "問題PDF" : "公式解答PDF";

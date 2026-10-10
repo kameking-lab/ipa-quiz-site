@@ -557,7 +557,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/content/001677927.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第111回・第110回の公式問題と最終正答に照合済みの306原問を部分収録。単答142問、2肢選択164問で、全選択肢の独自解説を掲載。共通症例文は対応する設問に保持。原本・解説・計算根拠等が未確認の問題は未収録。両回全690問の完成ではありません。",
+    reuseSummary: "第111回・第110回の公式問題と最終正答に照合済みの307原問を部分収録。単答142問、2肢選択165問で、全選択肢の独自解説を掲載。共通症例文は対応する設問に保持。原本・解説・計算根拠等が未確認の問題は未収録。両回全690問の完成ではありません。",
     attributionTemplate: "出典：厚生労働省「第○回薬剤師国家試験」問○（問題・最終正答）",
     remainingWork: ["一般掲載可否のオーナー確認", "未収録問題の出典・図表・共通症例・計算の確認", "後着10問の根拠・解説差分を保持"],
   },
