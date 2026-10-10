@@ -744,11 +744,25 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  "kanri-eiyoshi": {
+    code: "kanri-eiyoshi",
+    nameFull: "管理栄養士国家試験",
+    urlSlug: "kanri-eiyoshi",
+    level: "basic",
+    // 非公開の足場。第40回午前は原本で全97問。初回候補は問70〜97のみで、収録数は公開時に実データから算出する。
+    // カテゴリは試験回の広い表示名とし、公開時に検証済み Question[] の分類を確認する。
+    sessions: [{
+      session: "am", urlSlug: "am", expectedQuestions: 97, label: "午前",
+      categories: ["第40回午前"],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2026, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "kanri-eiyoshi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
