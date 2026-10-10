@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUtc": "2026-10-10T02:01:49.361458+00:00",
+  "scope": "PR655保存済み一次根拠確認済み6原問30肢の独立内容確認のみ",
+  "verdict": "GO",
+  "fixedHead": "8492edad51f315857bd497512363037cffa5fb72",
+  "candidatePath": "data/questions/sharoushi/candidates/rouki-source-verified.json",
+  "candidateSha256": "5c903c28f976d939c47e964549aab6bc747014a51732d90f18fb635d317226ed",
+  "modelEvidence": {
+    "requestedLabel": "Astra（親タスクの指定）",
+    "actualLabel": "GPT-6系のCodex。正確な実行variantは本環境から確認不可",
+    "externalModelCalls": 0,
+    "receiptFabricated": false
+  },
+  "counts": {
+    "reviewedOriginalQuestions": 6,
+    "reviewedChoices": 30,
+    "reviewedChoiceExplanations": 30,
+    "publishedOriginalQuestionsBaseline": 10,
+    "newlyPublishedByThisReview": 0,
+    "candidateIncludedInPublicIndex": false
+  },
+  "method": [
+    "保存済み公式原問・公式解答・正誤票の該当箇所と照合。5問はNFKC/空白正規化により設問と25肢一致、数式のある2026Q5は公式PDF画像で条件と5式を確認。",
+    "公式正答表画像により2025Q8=D/Q9=C/Q10=E、2026Q5=C/Q9=D/Q10=Bを確認。",
+    "2025Q8正誤票の設問内B→Cが反映済み。2026正誤票は別科目一般常識で、この6問の正答に影響なし。",
+    "保存e-Gov条文本文・該当別表・愛知労働局一次資料と必要な厚労省通達/FAQ/労働局本文を直接確認。報告票の評価は証拠に用いない。",
+    "public index.tsは2025/2026 annual.jsonのみ参照しcandidateを未参照と確認。"
+  ],
+  "questionReviews": [
+    {
+      "id": "sharoushi-2025-annual-gakka-q8",
+      "verdict": "GO",
+      "officialAnswer": "D",
+      "candidateAnswer": "エ",
+      "lawReferenceDate": "2025-04-11",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "安衛法3(3)、基発602第一1(2)。建設工事以外の注文者も対象。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "安衛法29(1)と15。元方事業者の義務と特定元方事業者を区別。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "安衛則2(2)、2025-04-01施行版。選任報告の電子申請。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "安衛則15の産業医巡視は原則毎月、条件付き2月。衛生管理者の毎週巡視は11。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "安衛則12の3。専属要件・コンサルタント例外と専任を区別。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "25q8-safety-3",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_3&response_format=json",
+          "revisionId": "347AC0000000057_20220617_504AC0000000068",
+          "savedResponseSha256": "d9c7bc86a660eadea7fab6bd6cbed6f4a6c9e0e6dfc645a1e42499c311b36f8d"
+        },
+        {
+          "key": "25q8-safety-15",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_15&response_format=json",
+          "revisionId": "347AC0000000057_20220617_504AC0000000068",
+          "savedResponseSha256": "606d3ead2e0bd352b0ca93b7c3bc7f8048d86c63c967e65ed19c4b5794f1eb64"
+        },
+        {
+          "key": "25q8-safety-29",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_29&response_format=json",
+          "revisionId": "347AC0000000057_20220617_504AC0000000068",
+          "savedResponseSha256": "2e233c76dea7744ec6a9398b2a28c6733ef2707a381ebeb89151b026ca085af9"
+        },
+        {
+          "key": "25q8-safety-rules-2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_2&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "8c4cb30cb54ef05a2b73babf893e7a8309f07b1ee32eccc09d366d7cb5378b0b"
+        },
+        {
+          "key": "25q8-safety-rules-11",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_11&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "ef05767deab9ad2ecdce1d21aa70d96d2ea4eaf07f15d8efb791d358b51d8275"
+        },
+        {
+          "key": "25q8-safety-rules-15",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_15&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "2fbc821a6e94722efbc2fe7db267eee0cb0f53f40fd9c41fa208fedf188cb3e6"
+        },
+        {
+          "key": "25q8-safety-rules-12-3",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_12_3&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "75bd5ce112fc03ec21d7262740c721772b320bf98102eeddb411cc3c839ef001"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%AD%A3%E8%AA%A4%E7%A5%A8%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E8%A9%A6%E9%A8%93%EF%BC%89_2025.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_3&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_15&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2025-04-11&elm=MainProvision-Article_29&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_2&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_11&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_15&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_12_3&response_format=json",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2043&dataType=1&pageNo=1"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q9",
+      "verdict": "GO",
+      "officialAnswer": "C",
+      "candidateAnswer": "ウ",
+      "lawReferenceDate": "2025-04-11",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "安衛令20、クレーン則68。5t以上の移動式クレーンは移動式クレーン運転士免許。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "クレーン則21/22、安衛則37。3t床上操作式は特別教育。小型移動式講習との自動互換なし、科目省略と区別。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "安衛令20。機体重量3t未満の車両系建設機械は61条就業制限の対象外。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "安衛令20。ショベルローダーの基準は最大荷重1t以上。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "安衛令20。玉掛けの基準はクレーン等のつり上げ荷重1t以上であり実際の荷の重量ではない。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "25q9-safety-decree-20",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2025-04-11&elm=MainProvision-Article_20&response_format=json",
+          "revisionId": "347CO0000000318_20250401_505CO0000000265",
+          "savedResponseSha256": "af27b5088b83f92b17741ebd606b5bdad0e8389069c6103540cbf065a62e87e1"
+        },
+        {
+          "key": "25q9-crane-rules-21",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_21&response_format=json",
+          "revisionId": "347M50002000034_20250401_507M60000100014",
+          "savedResponseSha256": "7c321c786bf32ac6eede5f945623d45897ffaa350511dfd4dfbb1e2d5596a901"
+        },
+        {
+          "key": "25q9-crane-rules-22",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_22&response_format=json",
+          "revisionId": "347M50002000034_20250401_507M60000100014",
+          "savedResponseSha256": "557fbd065890c57e0f27c3541f712facb3fb09d83526552ed1420ab9953b44ae"
+        },
+        {
+          "key": "25q9-crane-rules-68",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_68&response_format=json",
+          "revisionId": "347M50002000034_20250401_507M60000100014",
+          "savedResponseSha256": "b50ba6ce13fc2b807aca05a88f54d17be919cd25c49748a270785708c1d3e622"
+        },
+        {
+          "key": "25q9-safety-rules-36",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_36&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "58ea7129206e18343de190e9c528903f8be5ba6b7fa97994ad6ca76ebeac47f7"
+        },
+        {
+          "key": "25q9-safety-rules-37",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_37&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "ce12991bec8de6f3f03dd41aff8a06a16477164607e8f87822980bf7a9fa88d9"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%AD%A3%E8%AA%A4%E7%A5%A8%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E8%A9%A6%E9%A8%93%EF%BC%89_2025.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2025-04-11&elm=MainProvision-Article_20&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_21&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_22&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2025-04-11&elm=MainProvision-Article_68&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_36&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_37&response_format=json"
+      ]
+    },
+    {
+      "id": "sharoushi-2025-annual-gakka-q10",
+      "verdict": "GO",
+      "officialAnswer": "E",
+      "candidateAnswer": "オ",
+      "lawReferenceDate": "2025-04-11",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "粉じん則25/26。該当屋内作業場の測定は6月以内ごと。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "安衛則587(1)/607。溶鉱炉等暑熱の測定は半月以内ごと。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "安衛則588/590。対象騒音は6月以内ごと。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "安衛令別表3第二7、特化則36/別表1。純物質の塩素と塩素含有製剤の除外を区別。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "酸欠則3。作業開始前に毎日測定、半月ではない。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "25q10-dust-rules-25",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/354M50002000018?asof=2025-04-11&elm=MainProvision-Article_25&response_format=json",
+          "revisionId": "354M50002000018_20240401_504M60000100091",
+          "savedResponseSha256": "b93891b97b62ccd19ed2c371e53a2b0959da19edeb2d860f4ad010173473b0f2"
+        },
+        {
+          "key": "25q10-dust-rules-26",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/354M50002000018?asof=2025-04-11&elm=MainProvision-Article_26&response_format=json",
+          "revisionId": "354M50002000018_20240401_504M60000100091",
+          "savedResponseSha256": "602db435dc75e2beb11a354c62120d38a28ce26dad5e9ba2a96393da4d5bba95"
+        },
+        {
+          "key": "25q10-safety-rules-587",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_587&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "30e0cd3f435443363c836f3d1675f5bbc94f7f386f9e5151057f7471e6f12890"
+        },
+        {
+          "key": "25q10-safety-rules-588",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_588&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "e4e408436786edaf8177cbe7aef06ef2d77eb81dfaf3122d9fbca9373a9507c4"
+        },
+        {
+          "key": "25q10-safety-rules-590",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_590&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "63777421c58605260d1394ba4ce2bee9ad5640e571f8c795ab0c8acf01373d84"
+        },
+        {
+          "key": "25q10-safety-rules-607",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_607&response_format=json",
+          "revisionId": "347M50002000032_20250401_506M60000100164",
+          "savedResponseSha256": "4097567d490124d0e5cbb831e8b911ecc01be181ad41b50f870f2602aa778313"
+        },
+        {
+          "key": "25q10-chem-rules-36",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2025-04-11&elm=MainProvision-Article_36&response_format=json",
+          "revisionId": "347M50002000039_20240401_505M60000100069",
+          "savedResponseSha256": "1be026996a0fb0a03e209b1fe2e7b18be6d170908c4b286cdcdcbfbd35a3b9b8"
+        },
+        {
+          "key": "25q10-oxygen-rules-3",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2025-04-11&elm=MainProvision-Article_3&response_format=json",
+          "revisionId": "347M50002000042_20230401_504M60000100082",
+          "savedResponseSha256": "754ba2efa3363b321ca768dbc71a0e7856403f9ac46968c4ebba0a63e8437898"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%AD%A3%E8%AA%A4%E7%A5%A8%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E8%A9%A6%E9%A8%93%EF%BC%89_2025.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/354M50002000018?asof=2025-04-11&elm=MainProvision-Article_25&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/354M50002000018?asof=2025-04-11&elm=MainProvision-Article_26&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_587&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_588&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_590&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2025-04-11&elm=MainProvision-Article_607&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2025-04-11&elm=MainProvision-Article_36&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2025-04-11&elm=MainProvision-Article_3&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2025-04-11&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2025-04-11&response_format=json"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q5",
+      "verdict": "GO",
+      "officialAnswer": "C",
+      "candidateAnswer": "ウ",
+      "lawReferenceDate": "2026-04-10",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "住宅手当20,000円を除外しており不適切。費用に応じない定額住宅手当は算入。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "通勤手当10,000円を除外しており不適切。固定定額の通勤手当は算入。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "労基法37(5)、労基則19(1)(4)/21、愛知労働局資料。算入43万円、家族手当除外、年250日×7h/12で約2948.5714円。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "固定通勤・住宅手当の両方を除外しており不適切。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "扶養子数に応じた家族手当まで算入しており不適切。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "26q5-labour-37",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10&elm=MainProvision-Article_37&response_format=json",
+          "revisionId": "322AC0000000049_20250601_504AC0000000068",
+          "savedResponseSha256": "a1b26f269995a383ff5ca631985b3c31ab71693241c52d952c1a33c009faa5fd"
+        },
+        {
+          "key": "26q5-labour-rules-19",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-04-10&elm=MainProvision-Article_19&response_format=json",
+          "revisionId": "322M40000100023_20260401_508M60000100057",
+          "savedResponseSha256": "b6ce4907337dfff8e69672e89d5554e346acb8256fbb3aa6d70abc4768245ac1"
+        },
+        {
+          "key": "26q5-labour-rules-21",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-04-10&elm=MainProvision-Article_21&response_format=json",
+          "revisionId": "322M40000100023_20260401_508M60000100057",
+          "savedResponseSha256": "a874618ba4838f1e51bb4c7eb80bef7024601b6f72a60af51edb64dfb066a4ab"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2026/09/%E7%AC%AC58%E5%9B%9E%EF%BC%88R%EF%BC%98%E5%B9%B4%E5%BA%A6%EF%BC%89%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AB%E4%BF%82%E3%82%8B%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10&elm=MainProvision-Article_37&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-04-10&elm=MainProvision-Article_19&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-04-10&elm=MainProvision-Article_21&response_format=json",
+        "https://jsite.mhlw.go.jp/aichi-roudoukyoku/var/rev0/0119/6635/warimashikiso.pdf"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q9",
+      "verdict": "GO",
+      "officialAnswer": "D",
+      "candidateAnswer": "エ",
+      "lawReferenceDate": "2026-04-10",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "派遣法45(1)/(3)、安衛法59。雇入れ時教育は派遣元の義務。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "安衛法59(1)、安衛則35。金融業の一律除外なし。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "安衛法59(1)。雇入れ時教育は臨時労働者も対象。健診43条の常時使用要件と区別。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "安衛法59(2)。作業内容変更時の教育にも1項を準用。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "安衛法59(3)。特別教育の義務に常時10人の規模要件なし。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "26q9-safety-59",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-04-10&elm=MainProvision-Article_59&response_format=json",
+          "revisionId": "347AC0000000057_20260401_507AC0000000033",
+          "savedResponseSha256": "e7b78dd46981752a1239cb694fc40d44816835de4bff1a0dc9e32b22160d86e4"
+        },
+        {
+          "key": "26q9-safety-rules-35",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_35&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "583ca2e06467b9016e6c9e2a178483012f3f53f6941834d68fb6363828ae8047"
+        },
+        {
+          "key": "26q9-dispatch-45",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/360AC0000000088?asof=2026-04-10&elm=MainProvision-Article_45&response_format=json",
+          "revisionId": "360AC0000000088_20260401_507AC0000000063",
+          "savedResponseSha256": "fa870d0dcdd76559b2fc20dd359fc4c91fede687d7d2dcf8f0a92ec1e0b619e1"
+        },
+        {
+          "key": "26q9-safety-rules-43",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_43&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "fad56bfa6e426da33e912c626ce8be26eb6d91d6dc0155f15fc1e77235a3ef9a"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2026/09/%E7%AC%AC58%E5%9B%9E%EF%BC%88R%EF%BC%98%E5%B9%B4%E5%BA%A6%EF%BC%89%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AB%E4%BF%82%E3%82%8B%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-04-10&elm=MainProvision-Article_59&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_35&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/360AC0000000088?asof=2026-04-10&elm=MainProvision-Article_45&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_43&response_format=json"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q10",
+      "verdict": "GO",
+      "officialAnswer": "B",
+      "candidateAnswer": "イ",
+      "lawReferenceDate": "2026-04-10",
+      "originalAndAnswerMatch": true,
+      "choiceChecks": [
+        {
+          "officialChoice": "A",
+          "verdict": "PASS",
+          "basis": "安衛則43、大阪労働局の雇入れ時健診案内。採用選考ではなく適正配置・入職後管理。"
+        },
+        {
+          "officialChoice": "B",
+          "verdict": "PASS",
+          "basis": "厚労省FAQ、基発602の13(2)。法定健診費用は事業者負担、一般健診受診時間の賃金と区別。"
+        },
+        {
+          "officialChoice": "C",
+          "verdict": "PASS",
+          "basis": "安衛則45/13(1)(3)。深夜・重量物・病原体が対象、給食・高所は列挙なし。"
+        },
+        {
+          "officialChoice": "D",
+          "verdict": "PASS",
+          "basis": "安衛則50の2/50の3。常時使用、過去6月平均月4回以上、受診後3月以内、66(5)の代替健診を除外。"
+        },
+        {
+          "officialChoice": "E",
+          "verdict": "PASS",
+          "basis": "安衛令22(3)、安衛則48。対象有害業務の配置替え時も歯科健診が必要。"
+        }
+      ],
+      "primaryEvidence": [
+        {
+          "key": "26q10-safety-decree-22",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-04-10&elm=MainProvision-Article_22&response_format=json",
+          "revisionId": "347CO0000000318_20260401_507CO0000000361",
+          "savedResponseSha256": "00f0e030e9f271135b37c251a57cf835060c8f715b3b3a2f312dce2e70b99008"
+        },
+        {
+          "key": "26q10-safety-rules-48",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_48&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "03c9f8311dfa7997c501c72c34b57e243feffa64faa0cfee2d2ace286b61a8cc"
+        },
+        {
+          "key": "26q10-safety-rules-50-2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_50_2&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "c00b935380dfe470ae87d934226c3c24382ba48e5989dd42f5ac6675d8d18bd6"
+        },
+        {
+          "key": "26q10-safety-rules-50-3",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_50_3&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "36a2ac41aa51e127223c2dd3eb0e3a5a2a9dfe855e664c2ecb04ad5a47c613f9"
+        },
+        {
+          "key": "26q10-safety-rules-13",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_13&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "ad97a9da5887ac84f9a113df9e5c3f5a75665cccf968611111ea1b892e482e70"
+        },
+        {
+          "key": "26q10-safety-rules-45",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_45&response_format=json",
+          "revisionId": "347M50002000032_20260401_508M60000100003",
+          "savedResponseSha256": "b62354ce6592a0905bf6a95788f28267a8ad91fc3f39815cc5c0118812050c04"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://www.sharosi-siken.or.jp/wp-content/uploads/2026/09/%E7%AC%AC58%E5%9B%9E%EF%BC%88R%EF%BC%98%E5%B9%B4%E5%BA%A6%EF%BC%89%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AB%E4%BF%82%E3%82%8B%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-04-10&elm=MainProvision-Article_22&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_48&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_50_2&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_50_3&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_13&response_format=json",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-04-10&elm=MainProvision-Article_45&response_format=json",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/1.html",
+        "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai/hourei_seido/kosei/kensin.html"
+      ]
+    }
+  ],
+  "additionalPrimaryReads": [
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2043&dataType=1&pageNo=1",
+      "title": "昭和47年9月18日基発602号",
+      "sections": [
+        "第一1(2)：注文者",
+        "13(2)：健診費用と受診時間賃金の区別"
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/1.html",
+      "topic": "健康診断費用の負担"
+    },
+    {
+      "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai/hourei_seido/kosei/kensin.html",
+      "topic": "雇入れ時健康診断の目的"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-answers.pdf",
+      "sha256": "33cbc50ea0af6754cb61a86cc92ecdcdb08b2e2d47126577bbb53dcebc7e7093"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-correction.pdf",
+      "sha256": "3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-questions.pdf",
+      "sha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2026-answers.pdf",
+      "sha256": "a8a3a3ec7cc577949f3b8dab54a46fa5f5f155962e5ca1f0dc6eafbf0ada5091"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2026-correction.pdf",
+      "sha256": "2fdf15d0e6273188e8e7b99cd28b8801f5f191e3e757d994281959518d74dc1c"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2026-questions.pdf",
+      "sha256": "e3b8a2c31ec8802cc90710bfc406651e125e596d55aa66035265ab7495f26b42"
+    },
+    {
+      "path": "C:\\wt\\claude-sharoushi-next30-20261010\\docs\\evidence\\sharoushi-next30-20261010\\egov-article-excerpts.json",
+      "sha256": "040ff26fb64a35dc9e8303e9b9b26125acc6cdd1e9830f38bc3612150d2baaf8"
+    },
+    {
+      "path": "C:\\wt\\claude-sharoushi-next30-20261010\\docs\\evidence\\sharoushi-next30-20261010\\egov-2025-q10-annexes.json",
+      "sha256": "97570d8d8bb1dc76c401f9031d1f498932b6a157831e052b898973b6e71eee26"
+    },
+    {
+      "path": "C:\\wt\\claude-sharoushi-next30-20261010\\docs\\evidence\\sharoushi-next30-20261010\\mhlw-2026-q5-primary.json",
+      "sha256": "c960dad9420fe6c93c1e1bed231e3c3789c70c24dbc1fa101e6450ca1dd975d7"
+    }
+  ],
+  "findings": [],
+  "limits": [
+    "内容確認GOであり公開実行/最新CI/統合後構成の判定ではない。",
+    "法令4HOLDおよび労災20は対象外。一般掲載許諾の判断・再調査は実施していない。",
+    "原稿再生成・source/worktree編集・push・merge・新認証を実施していない。"
+  ],
+  "worktreeStatusAtEnd": ""
+}

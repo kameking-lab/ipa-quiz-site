@@ -36,14 +36,14 @@ const LETTERS = ["A", "B", "C", "D", "E"];
 const commas = (s: string) => s.replace(/(?<=\d)，(?=\d{3})/g, ",");
 const nfkc = (s: string) => s.normalize("NFKC").replace(/\s/g, "");
 
-describe("社会保険労務士試験 第58・57回 労働基準法及び労働安全衛生法 択一の一部10問", () => {
+describe("社会保険労務士試験 第58・57回 労働基準法及び労働安全衛生法 択一の先行10問", () => {
   const expected = manifest.sittings.flatMap((s) => s.questions.map((q) => ({ sitting: s, q })));
 
-  it("公開するのはマニフェストの10問50肢だけ", () => {
+  it("先行マニフェストの10問50肢を保持し、全体では16問80肢", () => {
     expect(expected).toHaveLength(10);
-    expect(SHAROUSHI_QUESTIONS.map((q) => `${q.year}-${q.qNumber}`).sort()).toEqual(expected.map(({ sitting, q }) => `${sitting.year}-${q.questionNumber}`).sort());
-    expect(ALL_QUESTIONS.filter((q) => q.exam === "sharoushi")).toHaveLength(10);
-    expect(SHAROUSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(50);
+    expect(SHAROUSHI_QUESTIONS.map((q) => `${q.year}-${q.qNumber}`)).toEqual(expect.arrayContaining(expected.map(({ sitting, q }) => `${sitting.year}-${q.questionNumber}`)));
+    expect(ALL_QUESTIONS.filter((q) => q.exam === "sharoushi")).toHaveLength(16);
+    expect(SHAROUSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(80);
     expect(getQualificationByExamCode("sharoushi")?.status).toBe("live");
   });
 

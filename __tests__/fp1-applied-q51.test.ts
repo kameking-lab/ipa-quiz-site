@@ -12,7 +12,9 @@ describe("FP1 applied Q51 original format", () => {
     expect(data.questions[0]!.blanks!.map((item) => item.officialAnswer)).toEqual(["３分の２（以上）", "１（年間）", "１年６（カ月）", "イ"]);
     expect(data.questions[0]!.choicesForBlank4!.map((item) => item.label)).toEqual(["イ", "ロ", "ハ"]);
     expect(data.lawReferenceDate).toBe("2025-10-01");
-    expect(FP1_QUESTIONS).toHaveLength(50);
+    const mayBasic = FP1_QUESTIONS.filter((item) => item.year === 2026 && item.season === "may");
+    expect(mayBasic.map((item) => item.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+    expect(FP1_QUESTIONS.every((item) => item.session === "gakka" && item.qNumber >= 1 && item.qNumber <= 50)).toBe(true);
     expect(FP1_QUESTIONS.some((item) => item.qNumber === 51)).toBe(false);
     expect(getFp1AppliedEdition("202609")).toBeNull();
   });

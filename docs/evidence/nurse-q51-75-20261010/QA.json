@@ -1,0 +1,34 @@
+{
+  "newQuestionCount": 50,
+  "newChoiceCount": 202,
+  "figureQuestionCount": 3,
+  "roundBreakdown": {
+    "115": {
+      "questionCount": 25,
+      "choiceCount": 102
+    },
+    "114": {
+      "questionCount": 25,
+      "choiceCount": 100
+    }
+  },
+  "candidateSha256": "e496e4b64ff916fc22e9b39f8b4d72a00a775032dee4c959cc5dda2fddb2e734",
+  "preservedOldQ1to25Sha256": {
+    "2025": "2cb38a9f41eaa7ddae31c46342f4f30e1e044a36e067f958d6c6b328f1463438",
+    "2024": "4cae88f41b411add927d30e7673834914660d4e385f2033978ecd5b9de5bde93"
+  },
+  "unresolvedReviewFlags": [],
+  "targetedSonnetReviewSha256": "605aed3b0ef9f94e7883380e39ab381281f9223c7811fdfaab2efc64219a3f26",
+  "mechanicalChecks": [
+    "official answers 50/50",
+    "choice explanations 202/202",
+    "figure-question assets 3/3 (four PNG files)",
+    "existing Q1-25 in each round unchanged",
+    "pnpm typecheck: PASS",
+    "pnpm validate:questions: PASS (legacy/global warnings remain)",
+    "eslint data/questions/kangoshi/index.ts: PASS",
+    "git diff --check: PASS"
+  ],
+  "releaseStatus": "local candidate only; no Cloud submission or push; PR/main/production pending root integration",
+  "coverageCaveat": "Neither exam round is complete. Q26-50 in each round is a separate existing release, and round 115 Q32 is an officially excluded question handled separately."
+}
