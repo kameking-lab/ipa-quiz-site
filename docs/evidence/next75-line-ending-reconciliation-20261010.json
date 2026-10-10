@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "candidateHead": "df57e8dcdf24ec46c2ea2f82f22f310fcbbf760b",
+  "rawAndSourceDataChanged": false,
+  "cause": "Git text checkout changes CRLF to LF on Linux; tests formerly pinned Windows working bytes.",
+  "comparison": "Every canonical LF working file equals its exact Git blob; no other byte transformation.",
+  "files": [
+    {
+      "path": "data/questions/denken3/native-2026-upper-theory.json",
+      "originalWorkingSha256": "af5caaca4b8c472ab2284b1f3db3699b1f4bc8bb09bd897b80ed0a5be0b8cbd7",
+      "gitBlobSha256": "1280e99ed52c47ffa38ced8cd5d533545af609d23a49dda5e02f063f5cd76fb1",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "data/questions/denken3/native-2026-upper-power.json",
+      "originalWorkingSha256": "685c5bacaac1a5723419bc1a6356874c5a6fbca2039ec97c58ed7b05cd8889fa",
+      "gitBlobSha256": "95a28beed4e54d49e1987c4657d1c47805be1c887201aae54f2ae4c6f6edc26d",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "data/questions/denken3/native-2026-upper-law.json",
+      "originalWorkingSha256": "ba655e87f4da67592ac843352a48fd6b64658d936f5ec1c54434491594d5a8d9",
+      "gitBlobSha256": "67f9e41a2ab73ae942be13ba64dedc6fe84d57d5c638e08df4db433887a410d7",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "data/questions/denken3/native-2025-lower-law.json",
+      "originalWorkingSha256": "00801e99aa5c5be49b65381548a5eaa52a4b9a96ba6e83bf3eb6ad690e0405b0",
+      "gitBlobSha256": "5664344348f4bd58a59661ccaffd6206f6f6bdcbbfbb58a359bdbcfaa614eef5",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "docs/evidence/nurse-pm-go9-20261010/NURSE-115-PM-Q98-SOURCE-PACKET-RUBY-REPAIRED.json",
+      "originalWorkingSha256": "8ba7813634f5c02c53b877861eedecfbfe406a472d72a76387c3f4ef16f68c8f",
+      "gitBlobSha256": "cf1925a185a1748cc02680488095d20a80414a5182f72965022f31f7ccabed7d",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "docs/evidence/nurse-pm-go9-20261010/NURSE-115-PM-Q97-SOURCE-PACKET-RUBY-REPAIRED.json",
+      "originalWorkingSha256": "149a2893cdf74e798ae0e92bc4cc56cd637ca37437c0bbc48917072f3a4959d0",
+      "gitBlobSha256": "63993d7f45234f19ec699f2475b3d56ce25c2e3546cc69f900883c2d5b5e252b",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "docs/evidence/nurse-pm-go9-20261010/NURSE-115-PM-Q99-SOURCE-PACKET-RUBY-REPAIRED.json",
+      "originalWorkingSha256": "56edd491a8e6e55630b94fe8afe0f045f525192dc90ea5816ccc0fcae6216b96",
+      "gitBlobSha256": "e9585ec7d06f94891c3bec090a2f846efa91bc1377572c263bbda65a7c90f745",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "docs/evidence/nurse-pm-go9-20261010/NURSE-115-PM-Q105-SOURCE-PACKET-RUBY-REPAIRED.json",
+      "originalWorkingSha256": "4810ab80c5fcbbb70da051a21c4c060cea16b461636728b8e6de16e5d11b7e17",
+      "gitBlobSha256": "d258b4333575763963579bd13a611267fbe230398dde171abdee67291e84be84",
+      "onlyDifference": "CRLF versus LF"
+    },
+    {
+      "path": "docs/evidence/nurse-pm-go9-20261010/NURSE-115-PM-Q100-SOURCE-PACKET-RUBY-REPAIRED.json",
+      "originalWorkingSha256": "5a0c7affbd9c8c6944d40e5a67c3d3177c7b611b5bc6656dcf669d887af9a586",
+      "gitBlobSha256": "3f2e0bbaeefa538014cfa21ef5c634dde822065fb4efc1f8641df41b2fec3a18",
+      "onlyDifference": "CRLF versus LF"
+    }
+  ]
+}

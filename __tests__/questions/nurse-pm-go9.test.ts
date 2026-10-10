@@ -7,6 +7,7 @@ import proof from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import candidates from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-CANDIDATES.json";
 import receipts from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-RECEIPTS.json";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
+import lineEndingProof from "@/docs/evidence/next75-line-ending-reconciliation-20261010.json";
 
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 const expectedIds = [
@@ -66,8 +67,12 @@ describe("nine separately verified nursing PM originals", () => {
     }
     for (const check of proof.sourceChecks) {
       if (!check.repairedSourcePacketFile) continue;
-      const bytes = readFileSync(`docs/evidence/nurse-pm-go9-20261010/${check.repairedSourcePacketFile}`);
-      expect(createHash("sha256").update(bytes).digest("hex"), check.id).toBe(check.repairedSourcePacketSha256);
+      const path = `docs/evidence/nurse-pm-go9-20261010/${check.repairedSourcePacketFile}`;
+      const bytes = readFileSync(path);
+      const recorded = lineEndingProof.files.find(file => file.path === path)!;
+      expect(recorded.originalWorkingSha256, check.id).toBe(check.repairedSourcePacketSha256);
+      expect(createHash("sha256").update(bytes.toString("utf8").replace(/\r\n/g, "\n")).digest("hex"), check.id)
+        .toBe(recorded.gitBlobSha256);
       const repaired = JSON.parse(bytes.toString("utf8")) as {
         originalSourcePacketSha256: string;
         question: { sharedCaseText?: string; stem: string; choices: string[] };

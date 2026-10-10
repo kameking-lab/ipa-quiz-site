@@ -11,6 +11,7 @@ import {
   DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeQuestionPaths, getDenken3NativeQuestion,
 } from "@/lib/denken3/native";
 import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
+import lineEndingProof from "@/docs/evidence/next75-line-ending-reconciliation-20261010.json";
 
 describe("Denken3 reviewed native originals", () => {
   it("keeps legacy units and counts the fifteen 2025 lower native overlaps once", () => {
@@ -33,8 +34,12 @@ describe("Denken3 reviewed native originals", () => {
       "native-2026-upper-law.json": "ba655e87f4da67592ac843352a48fd6b64658d936f5ec1c54434491594d5a8d9",
       "native-2025-lower-law.json": "00801e99aa5c5be49b65381548a5eaa52a4b9a96ba6e83bf3eb6ad690e0405b0",
     })) {
-      const bytes = readFileSync(join(process.cwd(), "data/questions/denken3", filename));
-      expect(createHash("sha256").update(bytes).digest("hex")).toBe(digest);
+      const path = `data/questions/denken3/${filename}`;
+      const bytes = readFileSync(join(process.cwd(), path));
+      const recorded = lineEndingProof.files.find(file => file.path === path)!;
+      expect(recorded.originalWorkingSha256).toBe(digest);
+      expect(createHash("sha256").update(bytes.toString("utf8").replace(/\r\n/g, "\n")).digest("hex"))
+        .toBe(recorded.gitBlobSha256);
     }
   });
 
