@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
@@ -232,7 +232,7 @@ export function QuizPlayer({
       if (required > 1) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
-        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next));
+        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required));
         return;
       }
       setSelected(key);
@@ -377,7 +377,7 @@ export function QuizPlayer({
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = requiredSelections > 1;
   const isCorrect = numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
-    ? isCompleteSelectionCorrect(question.answer, picked)
+    ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
     : isAcceptedAnswer(question.answer, selected);
   const selectionLabel = numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
@@ -453,7 +453,7 @@ export function QuizPlayer({
 
             {multiSelect && !revealed && (
               <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
-                正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
+                {selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
               </p>
             )}
             {numeric ? (

@@ -4,7 +4,7 @@ import { QuestionBody } from "./QuestionBody";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
@@ -140,7 +140,7 @@ export function QuestionAnswerCard({
         setPicked(next);
         if (next.length === requiredSelections) {
           setRevealed(true);
-          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next));
+          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next, requiredSelections));
         }
         return;
       }
@@ -193,7 +193,7 @@ export function QuestionAnswerCard({
   }, [revealed, keys, onSelect]);
 
   const answered = numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
-  const isCorrect = numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked) : isAcceptedAnswer(answerKey, selected);
+  const isCorrect = numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
@@ -202,7 +202,7 @@ export function QuestionAnswerCard({
     <div className="space-y-4">
       {multiSelect && !revealed && (
         <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
-          正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
+          {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
         </p>
       )}
       {numeric ? (

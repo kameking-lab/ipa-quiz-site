@@ -22,10 +22,20 @@ export function requiredSelectionCount(question: Pick<Question, "requiredSelecti
   return Number.isInteger(count) && count > 1 ? count : 1;
 }
 
-/** 複数肢をそろえて選ぶ形式の採点。選んだ肢の集合が正答の集合と完全に一致した場合だけ正解。 */
-export function isCompleteSelectionCorrect(answer: Question["answer"], selected: readonly string[]): boolean {
-  const keys = Array.isArray(answer) ? answer : [answer];
-  return selected.length === keys.length && new Set(selected).size === selected.length && keys.every(key => selected.includes(key));
+/** 許容された正答肢から指定数を選ぶ。指定数の省略時は従来の全肢一致を保つ。 */
+export function isCompleteSelectionCorrect(answer: Question["answer"], selected: readonly string[], requiredSelections?: number): boolean {
+  const keys: readonly string[] = Array.isArray(answer) ? answer : [answer];
+  const count = requiredSelections ?? keys.length;
+  return Number.isInteger(count) && count > 0 && count <= keys.length &&
+    new Set(keys).size === keys.length && selected.length === count &&
+    new Set(selected).size === count && selected.every(key => keys.includes(key));
+}
+
+export function selectionInstruction(answer: Question["answer"], count: number): string {
+  const accepted = Array.isArray(answer) ? answer.length : 1;
+  return accepted > count
+    ? "正答として認められる" + accepted + "肢のうち、" + count + "肢選ぶと採点します"
+    : "正解は" + count + "つあります。" + count + "つ選ぶと採点します";
 }
 
 /** 解答記録用に、選んだ肢を肢の並び順で連結する（例: "イ・エ"）。 */
