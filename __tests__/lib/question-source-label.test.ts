@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { questionSourceExam, questionSourceEdition } from "@/lib/questions/source-label";
-import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
+import { EXAM_CONFIGS, getOfficialAnswerPdfUrl } from "@/lib/exam-config";
+import { examLabel, EXAM_LABELS } from "@/lib/utils";
 
 describe("original exam provenance", () => {
   it("does not attribute borrowed common AM1 papers to an exam held in the opposite season", () => {
@@ -20,5 +21,18 @@ describe("original exam provenance", () => {
   });
   it("uses the actual answer link rather than inventing a CMS hash", () => {
     expect(getOfficialAnswerPdfUrl("https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_qs.pdf")).toBe("https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f3yi-att/2009h21a_ap_am_ans.pdf");
+  });
+  it.each([
+    ["hokenshi", "保健師"],
+    ["josanshi", "助産師"],
+    ["rigaku-ryohoshi", "理学療法士"],
+    ["sagyo-ryohoshi", "作業療法士"],
+    ["shino-kunrenshi", "視能訓練士"],
+  ] as const)("uses the existing Japanese name for %s on questions and quizzes", (exam, label) => {
+    expect(EXAM_CONFIGS[exam].nameFull).toBe(`${label}国家試験`);
+    expect(EXAM_LABELS[exam]).toBe(label);
+    expect(examLabel(exam)).toBe(label);
+    expect(questionSourceExam({ exam, year: 2024, season: "annual", session: "am" })).toBe(label);
+    expect(questionSourceExam({ exam, year: 2025, season: "annual", session: "pm" })).toBe(label);
   });
 });

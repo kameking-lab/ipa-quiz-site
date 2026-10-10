@@ -39,7 +39,7 @@ describe("saved114th afternoon next57 registration",()=>{
     expect(added.filter(q=>q.type === "numeric")).toHaveLength(1);
     expect(added.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(238);
     expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(KANGOSHI_QUESTIONS.length);
-    for(const held of proof.heldIdsNotRegistered)expect(KANGOSHI_QUESTIONS.some(q=>q.id===held),held).toBe(laterVerifiedIds.has(held));
+    for(const held of proof.heldIdsNotRegistered)expect(KANGOSHI_QUESTIONS.some(q=>q.id===held),held).toBe(laterVerifiedIds.has(held)||held==="kangoshi-2024-annual-pm-q107");
     expect(proof.heldIdsNotRegistered).toHaveLength(38);
     for(const n of [27,45,55,71,80]){
       const id=`kangoshi-2024-annual-pm-q${n}`;

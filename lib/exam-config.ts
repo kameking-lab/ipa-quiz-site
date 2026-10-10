@@ -765,6 +765,24 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  "sagyo-ryohoshi": {
+    code: "sagyo-ryohoshi",
+    nameFull: "作業療法士国家試験",
+    urlSlug: "sagyo-ryohoshi",
+    level: "advanced",
+    sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2024, end: 2025 },
+  },
+  "shino-kunrenshi": {
+    code: "shino-kunrenshi",
+    nameFull: "視能訓練士国家試験",
+    urlSlug: "shino-kunrenshi",
+    level: "advanced",
+    sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 75, label: "午後", categories: ["午後"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2024, end: 2025 },
+  },
   kangoshi: {
     code: "kangoshi",
     nameFull: "看護師国家試験",
@@ -802,11 +820,23 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
   },
+  "rigaku-ryohoshi": {
+    code: "rigaku-ryohoshi",
+    nameFull: "理学療法士国家試験",
+    urlSlug: "rigaku-ryohoshi",
+    level: "advanced",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
@@ -846,6 +876,16 @@ export function isPdfDocumentUrl(url: string | undefined): boolean {
 export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
   if (!isPdfDocumentUrl(url)) {
     if (url?.startsWith("https://www.kinzai.or.jp/")) return kind === "question" ? "主催団体の公式問題" : "主催団体の模範解答";
+    if (url) {
+      try {
+        const host = new URL(url).hostname.toLowerCase();
+        if (host === "ahaki.or.jp" || host === "www.ahaki.or.jp") {
+          return kind === "question" ? "試験実施機関の公式問題" : "試験実施機関の公式正答";
+        }
+      } catch {
+        return "IPA公式の過去問一覧";
+      }
+    }
     return "IPA公式の過去問一覧";
   }
   return kind === "question" ? "問題PDF" : "公式解答PDF";
