@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "./nurse-am6-publication-proof";
+import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATION.json";
 import candidates from "@/docs/evidence/nurse-pm-three-later-20261010/SOURCE-CANDIDATES.json";
@@ -15,9 +15,9 @@ describe("three later primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("669b9da832b6980a10303ec76a407766c51f71e5");
     expect(proof.previous430ObjectHashes).toHaveLength(430);
     for (const old of proof.previous430ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
-    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(am7.totalChoices);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals);
+    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id).sort()).toEqual(proof.sourceChecks.map(check => check.id).sort());
   });
@@ -49,9 +49,9 @@ describe("three later primary-verified nursing PM originals", () => {
 
   it("shows the matching partial-collection counts on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前233問と午後224問");
-    expect(home).toContain("計457原問");
-    expect(home).toContain("全1888肢");
-    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
+    expect(home).toContain("午前233問と午後228問");
+    expect(home).toContain("計461原問");
+    expect(home).toContain("全1906肢");
+    expect(home).toContain("第115回は午前116問・午後115問、第114回は午前117問・午後113問");
   });
 });
