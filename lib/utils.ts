@@ -48,6 +48,7 @@ export const EXAM_LABELS: Record<string, string> = {
   kashikin: "貸金業務取扱主任者",
   sharoushi: "社会保険労務士",
   kangoshi: "看護師",
+  yakuzaishi: "薬剤師",
 };
 
 export function examLabel(exam: string): string {
