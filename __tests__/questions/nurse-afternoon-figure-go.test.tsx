@@ -16,8 +16,8 @@ describe("nursing PM original figures added after 416 originals", () => {
   it("retains all 416 previous question objects and adds exactly the two documented originals", () => {
     expect(proof.previous416ObjectHashes).toHaveLength(416);
     for (const old of proof.previous416ObjectHashes) expect(hash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(427);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(427);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(430);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(430);
     expect(proof.figures.map(figure => figure.id).sort()).toEqual([
       "kangoshi-2024-annual-pm-q19", "kangoshi-2025-annual-pm-q58",
     ]);
