@@ -1,0 +1,32 @@
+{
+  "scope": "Separate source-only GO; no site registration or publication",
+  "id": "kangoshi-2024-annual-am-q103",
+  "sourcePacketSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+  "existingCandidateSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+  "officialQuestionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "officialAnswerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "physicalPage": 42,
+  "sourceImageSha256": "73a2f17f9a9eb87df68f651534cf58413288222e83dc277ad7d59bb2c2469d43",
+  "rawQuestionAndAllChoices": "103\n入院2日、A さんは全身状態が落ち着いてきたため、主治医から離床開始の指\n示があった。\nA さんの離床開始時の観察項目で優先度が高いのはどれか。\n1．血\n圧\n2．見当識障害\n3．下肢の知覚障害\n4．夜間の睡眠状況",
+  "officialAnswerDigits": "1",
+  "rubyRepairs": [
+    {
+      "field": "fullSharedPremiseText",
+      "removedStandaloneRuby": "lacunar infarction",
+      "count": 1
+    },
+    {
+      "field": "fullSharedPremiseText",
+      "removedStandaloneRuby": "hypertension",
+      "count": 1
+    },
+    {
+      "field": "choice1",
+      "lineBreakRepaired": "血\\n圧 -> 血圧"
+    }
+  ],
+  "clinicalSource": {
+    "url": "https://www.heart.org/-/media/Files/Professional/Quality-Improvement/Get-With-the-Guidelines/Get-With-The-Guidelines-Stroke/2019UpdateAHAASAAISGuidelineSlideDeckrevisedADL12919.pdf",
+    "finding": "AHA/ASA guideline slide deck p36-38 stresses BP monitoring and BP management after thrombolytic treatment; no day-2 numerical stopping threshold inferred here."
+  }
+}

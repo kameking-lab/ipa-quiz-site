@@ -1,0 +1,66 @@
+{
+  "status": "PUBLICATION_HOLD",
+  "publication": "none",
+  "historicalProof": "../nurse-am7-followup-20261010/INTEGRATION.json",
+  "baseCommit": "76300bb8",
+  "heldId": "kangoshi-2024-annual-am-q112",
+  "heldQuestionObjectSha256": "8edc8cbb4fec8357e413c1099df38628e7e93b9d8cdfead0175f6cd08eaea74e",
+  "officialAnswerNumber": "35",
+  "questionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+  "answerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+  "model": "claude-sonnet-5-5",
+  "modelProvider": "firstParty",
+  "modelPacketSha256": "1593fc962bbd69c3872d17ebafc11ffac7719f02ebda2b0b01d21563d4e1814f",
+  "modelResultSha256": "57d25948f6bff953d96c3439834053f25f15eb4c8307f612b2d7ec5b3bf77067",
+  "sourceFacts": [
+    {
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-pain-management",
+      "finding": "Postpartum experiences vary; afterpains are uterine contractions during involution and can occur during breastfeeding. No fixed five-day cutoff is established."
+    },
+    {
+      "url": "https://www.mayoclinic.org/healthy-lifestyle/labor-and-delivery/in-depth/postpartum-care/art-20047233",
+      "finding": "Afterpains can occur for a few days, especially during breastfeeding. This does not establish that five days is clinically impossible or categorically inappropriate."
+    }
+  ],
+  "unresolved": "The official key omits choice 4, but reviewed primary text does not independently establish why saying pain lasts until about day 5 is inappropriate. The stored model result has go=true only with this explicit limitation. No categorical five-day pathology claim is made.",
+  "previousOriginals": 451,
+  "previousChoices": 1863,
+  "addedOriginals": 6,
+  "addedChoices": 25,
+  "totalOriginals": 457,
+  "totalChoices": 1888,
+  "numericQuestions": 2,
+  "countsByYearSession": {
+    "2024-am": 117,
+    "2024-pm": 111,
+    "2025-am": 116,
+    "2025-pm": 113
+  },
+  "addedIds": [
+    "kangoshi-2024-annual-am-q101",
+    "kangoshi-2024-annual-am-q103",
+    "kangoshi-2024-annual-am-q106",
+    "kangoshi-2024-annual-am-q109",
+    "kangoshi-2025-annual-am-q109",
+    "kangoshi-2025-annual-am-q92"
+  ],
+  "sourceChecksIds": [
+    "kangoshi-2024-annual-am-q101",
+    "kangoshi-2024-annual-am-q103",
+    "kangoshi-2024-annual-am-q106",
+    "kangoshi-2024-annual-am-q109",
+    "kangoshi-2025-annual-am-q109",
+    "kangoshi-2025-annual-am-q92"
+  ],
+  "heldIdsUnchanged": [
+    "kangoshi-2024-annual-am-q112",
+    "kangoshi-2024-annual-am-q114",
+    "kangoshi-2024-annual-am-q98",
+    "kangoshi-2024-annual-pm-q70",
+    "kangoshi-2025-annual-am-q103",
+    "kangoshi-2025-annual-am-q32",
+    "kangoshi-2025-annual-am-q79",
+    "kangoshi-2025-annual-am-q99",
+    "kangoshi-2025-annual-pm-q77"
+  ]
+}

@@ -9,6 +9,7 @@ import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { ChoiceKey } from "@/lib/questions/types";
 import YearPage from "@/app/[exam]/[yearSeason]/page";
 import proof from "@/docs/evidence/nurse-am49-next-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 
 const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a],[b]) => a<b?-1:a>b?1:0).map(([key,v]) => [key,canonical(v)])) : value;
@@ -25,7 +26,7 @@ describe("frozen saved nursing morning49 originals", () => {
     expect(added.reduce((sum,q)=>sum+Object.keys(q.choices??{}).length,0)).toBe(201);
     expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(KANGOSHI_QUESTIONS.length);
     expect(proof.heldIdsNotRegistered).toHaveLength(11);
-    for(const id of proof.heldIdsNotRegistered) expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(false);
+    for(const id of proof.heldIdsNotRegistered) expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(am7.addedIds.includes(id));
     expect(KANGOSHI_QUESTIONS.some(q=>q.id==="kangoshi-2025-annual-am-q32")).toBe(false);
     expect(KANGOSHI_QUESTIONS.some(q=>q.id==="kangoshi-2025-annual-am-q79")).toBe(false);
   });

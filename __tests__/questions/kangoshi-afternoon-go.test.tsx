@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
 import sourceCandidates from "@/docs/evidence/nurse-afternoon-go-20261010/SOURCE-CANDIDATES.json";
@@ -18,8 +19,8 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
     expect(proof.previous387ObjectHashes).toHaveLength(387);
     for (const old of proof.previous387ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(go9.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(go9.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
     expect(proof.addedIds).toHaveLength(29);
     expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);

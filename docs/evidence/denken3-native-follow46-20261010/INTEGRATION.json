@@ -1,0 +1,1397 @@
+{
+  "state": "LOCAL_INTEGRATION_NOT_PUBLISHED",
+  "base": "df57e8dcdf24ec46c2ea2f82f22f310fcbbf760b",
+  "testOnlyParent": "709f7ba068c38cb03ac0f95778e2539822c6b5e8",
+  "newOriginals": 46,
+  "newPrintedFields": 58,
+  "newSourceImages": 56,
+  "newModelCalls": 0,
+  "bindings": [
+    {
+      "id": "denken3-2026-upper-machine-q09",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q09.json",
+      "reviewedSha256": "0c6795d95b5057301a922b41be57798a1f7a6c2df66beed2f895ecf6beb6e3f0",
+      "qa": {
+        "scope": "machine-q09",
+        "officialAnswer": 3,
+        "sourceImageSha256": "26e4a3e14fcc0faa1a437814727c7684805c9a3690da6a70ed56527e3e6bf18f",
+        "reviewedCandidateSha256": "0c6795d95b5057301a922b41be57798a1f7a6c2df66beed2f895ecf6beb6e3f0",
+        "actualServedReceiptSha256": "511888df362ea987232ba764640c030f284e6858f7ab92e4d08dd0395f767a38",
+        "independentCheck": "Four 100kVA units form two V-V sets: 2*sqrt(3)*100/300 = 1.1547005; option 3 (1.15).",
+        "editorialCorrections": [],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q10",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q10.json",
+      "reviewedSha256": "e39478f1cd846f6555911bae5a5ace9a70617ae162edb80eb7b751d9e0bdb292",
+      "qa": {
+        "scope": "machine-q10",
+        "officialAnswer": 5,
+        "sourceImageSha256": "d0d2918ccd38792a730ad509714609bcf262b95b5f1a227258b81975b10b5d08",
+        "reviewedCandidateSha256": "e39478f1cd846f6555911bae5a5ace9a70617ae162edb80eb7b751d9e0bdb292",
+        "actualServedReceiptSha256": "ee31044f68e3dbbcacdd45f0789d15c5d2baf0789cdd430c8b0c16d08a98c790",
+        "independentCheck": "Official image: bipolar near-constant source current with delayed reversals; only the four-thyristor bridge with large smoothing inductor (diagram 5) fits.",
+        "editorialCorrections": [
+          "Removed unsupported pixel-derived firing-angle estimate; preserved full official circuit/waveform image."
+        ],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q11",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q11.json",
+      "reviewedSha256": "311265e9553ef16b6d4dbd1f4dfa4b91b355e98bc054fa87c8e0e0b7e968ca8b",
+      "qa": {
+        "scope": "machine-q11",
+        "officialAnswer": 4,
+        "sourceImageSha256": "306889109e15b2ce5da0909aa0fa500d869984a9655fa34a2abb5275aaa9f572",
+        "reviewedCandidateSha256": "311265e9553ef16b6d4dbd1f4dfa4b91b355e98bc054fa87c8e0e0b7e968ca8b",
+        "actualServedReceiptSha256": "ccb5bb5d3e4e8b2d8c2b4dbbdf336957fe5b4ba76aacd6e192b842619797dd48",
+        "independentCheck": "Independent arithmetic: 1000kg*9.8m/s2*0.5m/s/0.90 = 5444.44W, nearest 5.5kW option 4.",
+        "editorialCorrections": [],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q12",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q12.json",
+      "reviewedSha256": "f8bb134501f6dbf23b0bb17f2d09df960ce9dd969f6dfc5ec380b95a9b20df7c",
+      "qa": {
+        "scope": "machine-q12",
+        "officialAnswer": 3,
+        "sourceImageSha256": "c8cbfd7534457dc4f4d82271ca126e15e5237b8e771e2398cddc5bd19e3c8cb3",
+        "reviewedCandidateSha256": "f8bb134501f6dbf23b0bb17f2d09df960ce9dd969f6dfc5ec380b95a9b20df7c",
+        "actualServedReceiptSha256": "1a520ea4c0a501aeb5406f724fabfca86d45bc6c2002ec4bf6086a914965c728",
+        "independentCheck": "Official image and key: electric double-layer capacitor has long cycle life versus lithium-ion; false choice 3.",
+        "editorialCorrections": [],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q13",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q13.json",
+      "reviewedSha256": "7f79c44e264f815b605d5dcea7a8e53816844b244deb39f5651e0d9eb88f9591",
+      "qa": {
+        "scope": "machine-q13",
+        "officialAnswer": 4,
+        "sourceImageSha256": "d5eac15af495bebf9d27e0f069a2124d3660a5467c125f50cb8ce999d6287818",
+        "reviewedCandidateSha256": "7f79c44e264f815b605d5dcea7a8e53816844b244deb39f5651e0d9eb88f9591",
+        "actualServedReceiptSha256": "5765f2b4d3dfcad82362e1df09ccd8df4148b0ce5881108d349899b6b6d5ac1f",
+        "independentCheck": "Block: e=R-y, y=e/(jωT2), C=(T1/T2)e+y; C/R=(1+jωT1)/(1+jωT2), option 4.",
+        "editorialCorrections": [],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q14",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q14.json",
+      "reviewedSha256": "c9b6689fc2a6d71e37b2ea25ba51a050fad98d37d1fd6dacd3c483d7b4544fe6",
+      "qa": {
+        "scope": "machine-q14",
+        "officialAnswer": 5,
+        "sourceImageSha256": "774ec4f15f3490d119c5ae88f70e9af8b88a2dc581a03ff3897d13d650e0d01b",
+        "reviewedCandidateSha256": "c9b6689fc2a6d71e37b2ea25ba51a050fad98d37d1fd6dacd3c483d7b4544fe6",
+        "actualServedReceiptSha256": "12cee367b18e9f523547ea52acefe9cb1f703c8012fcc616f5113ac0375075f5",
+        "independentCheck": "Radix arithmetic: 0x3D=61=0b111101, while claimed 0b111011=59; false choice 5.",
+        "editorialCorrections": [],
+        "localStatus": "GO_LOCAL_CANDIDATE"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q15",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q15-local-go.json",
+      "reviewedSha256": "ce1a365e5dcff35a65a39577ebed8f789e7a43f4f637c0a7c737379805bf7c1a",
+      "qa": {
+        "originalQuestionNumber": 15,
+        "officialAnswersByPart": {
+          "a": 3,
+          "b": 3
+        },
+        "alternativeGroup": null,
+        "status": "LOCAL_GO",
+        "firstDraftSha256": "6c8db43d2dc232d66cf0007de0b58ffdf391dd3ddb4e6e840935b2656b6b3879",
+        "actualServedReceiptSha256": "58c6145283055eef366d0efee79d9ee85c539249b7e4d45c299822839d74f35e",
+        "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q15-local-go.json",
+        "reviewedCandidateSha256": "ce1a365e5dcff35a65a39577ebed8f789e7a43f4f637c0a7c737379805bf7c1a",
+        "needsReviewOriginal": "fixed from same draft"
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q16",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q16-local-go.json",
+      "reviewedSha256": "9c3a05040c0274ca6a695dc73e7cc0ad201662e8e7bd20168b1dbf008231cefb",
+      "qa": {
+        "originalQuestionNumber": 16,
+        "officialAnswersByPart": {
+          "a": 2,
+          "b": 2
+        },
+        "alternativeGroup": null,
+        "status": "LOCAL_GO",
+        "firstDraftSha256": "32a4ed961b27ba6b5734ca2880b0d68f624f157d1c3c9f8f6f066fe6ae465be9",
+        "actualServedReceiptSha256": "199d2abc55f68e4ca5c61210df98804acd8f40c08023971ad685df911b4389a6",
+        "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q16-local-go.json",
+        "reviewedCandidateSha256": "9c3a05040c0274ca6a695dc73e7cc0ad201662e8e7bd20168b1dbf008231cefb",
+        "needsReviewOriginal": []
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q17",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q17-local-go-normalized.json",
+      "reviewedSha256": "6ee7c2eb0d91dbbbf070364d0897e90e73d5612d4dab37daadfb767ac8b17080",
+      "qa": {
+        "originalQuestionNumber": 17,
+        "officialAnswersByPart": {
+          "a": 5,
+          "b": 2
+        },
+        "alternativeGroup": "Q17_OR_Q18",
+        "status": "LOCAL_GO",
+        "firstDraftSha256": "c3274e6a71f8bfe0015fa286710d193993c053085806325ea271e84a0df45242",
+        "actualServedReceiptSha256": "6680afc6c9c845910b55e08177caa8b5b02650da5fcc5bf73d365f50feb99eba",
+        "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q17-local-go-normalized.json",
+        "reviewedCandidateSha256": "6ee7c2eb0d91dbbbf070364d0897e90e73d5612d4dab37daadfb767ac8b17080",
+        "needsReviewOriginal": []
+      }
+    },
+    {
+      "id": "denken3-2026-upper-machine-q18",
+      "reviewedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q18-local-go.json",
+      "reviewedSha256": "07f6349e723994fe7af747ec606526189c6c1393672ce858dbd4310fac0b1803",
+      "qa": {
+        "originalQuestionNumber": 18,
+        "officialAnswersByPart": {
+          "a": 5,
+          "b": 4
+        },
+        "alternativeGroup": "Q17_OR_Q18",
+        "status": "LOCAL_GO",
+        "firstDraftSha256": "145130de55c213ff7d9523c02293b2cd2793b5138e3dcf812c396c262ae634d3",
+        "actualServedReceiptSha256": "0f7172476513a6f70d8d46ba6573a7e384024a6c74f4318cc3c0e3661df834a2",
+        "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q18-local-go.json",
+        "reviewedCandidateSha256": "07f6349e723994fe7af747ec606526189c6c1393672ce858dbd4310fac0b1803",
+        "needsReviewOriginal": []
+      }
+    },
+    {
+      "id": "denken3-2025-lower-theory-q01",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q01-01.json",
+      "reviewedSha256": "166e0837abcb298c629c75a30a27ab8765fba3d99d502e562198613b70feab28",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 1,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q01-01.json",
+          "reviewedSha256": "166e0837abcb298c629c75a30a27ab8765fba3d99d502e562198613b70feab28",
+          "legacyLaunchId": "denken3-2025-lower-theory-q01",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q01-fig1.png",
+              "sha256": "8c74efede6a60c61f58f525acf66c26881d5bee48531b9beb02b87b3d88421b0"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q02",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q02-02.json",
+      "reviewedSha256": "7a909c9fbd2b80b7227bcad41e9783e897386548c119c560698138bc46b39089",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 2,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q02-02.json",
+          "reviewedSha256": "7a909c9fbd2b80b7227bcad41e9783e897386548c119c560698138bc46b39089",
+          "legacyLaunchId": "denken3-2025-lower-theory-q02",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q02-fig1.png",
+              "sha256": "f72f2e7b4b8b2eec4ece0d76c676ac5ac174d6d40cae6f75db59ecd75be56bc5"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q03",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q03-03.json",
+      "reviewedSha256": "809a1dfb9ea5173be773d609b773f8f62ad0785cccbeaebc68250404bdd17cee",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 3,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q03-03.json",
+          "reviewedSha256": "809a1dfb9ea5173be773d609b773f8f62ad0785cccbeaebc68250404bdd17cee",
+          "legacyLaunchId": "denken3-2025-lower-theory-q03",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q04",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q04-04.json",
+      "reviewedSha256": "ad16c908bc692bb54dc1945919c6735da36819588bb7e2521975bf3b3ec6791f",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 4,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q04-04.json",
+          "reviewedSha256": "ad16c908bc692bb54dc1945919c6735da36819588bb7e2521975bf3b3ec6791f",
+          "legacyLaunchId": "denken3-2025-lower-theory-q04",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q04-fig1.png",
+              "sha256": "c467b5f4cfaf4cd3125d8dc24b6acd22c1cac2d33e3ffbfb90fdecd44065a7f8"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q05",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q05-05.json",
+      "reviewedSha256": "f5739ac6ccb58b684f89f5787fa2e3ff78dc63ad0524228fff9da26adc77051f",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 5,
+          "part": null,
+          "officialAnswer": 1,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q05-05.json",
+          "reviewedSha256": "f5739ac6ccb58b684f89f5787fa2e3ff78dc63ad0524228fff9da26adc77051f",
+          "legacyLaunchId": "denken3-2025-lower-theory-q05",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q05-fig1.png",
+              "sha256": "bc080915aa27645663005b7e66c566439749dd594c600b2ef7a9998b6e0f45e2"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q06",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q06-06.json",
+      "reviewedSha256": "84b6473544c7117158fb4c11289549673a9b1f01e3abd11198bd496701494dc0",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 6,
+          "part": null,
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q06-06.json",
+          "reviewedSha256": "84b6473544c7117158fb4c11289549673a9b1f01e3abd11198bd496701494dc0",
+          "legacyLaunchId": "denken3-2025-lower-theory-q06",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q06-fig1.png",
+              "sha256": "166c2dc656a9c681638bf67a3dfc3f1adf6707950a1b8c5c2481e8896e91550b"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q07",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q07-07.json",
+      "reviewedSha256": "6ae536faef5a2b4f14983913048180451eb84b1e5a71a42cca4fd9ae62a4c0a2",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 7,
+          "part": null,
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q07-07.json",
+          "reviewedSha256": "6ae536faef5a2b4f14983913048180451eb84b1e5a71a42cca4fd9ae62a4c0a2",
+          "legacyLaunchId": "denken3-2025-lower-theory-q07",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q07-fig1.png",
+              "sha256": "1620b26edd3e9e837c164090040ab3540d892f49f9406dbdb939f68dd259bb77"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q08",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q08-08.json",
+      "reviewedSha256": "744559d281002e4f5c302715a9ed8476800307012efea5e38286b02e0c6222f2",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 8,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q08-08.json",
+          "reviewedSha256": "744559d281002e4f5c302715a9ed8476800307012efea5e38286b02e0c6222f2",
+          "legacyLaunchId": "denken3-2025-lower-theory-q08",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q08-fig1.png",
+              "sha256": "0c84ed31d6e802e6d11f5dba278b687179570b34422f6783b1855367c151bf4c"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q09",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q09-09.json",
+      "reviewedSha256": "1873549ca93201bdd326c040f3088cb2a9d69ad7420309abbc9ad56a2d7a6e74",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 9,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q09-09.json",
+          "reviewedSha256": "1873549ca93201bdd326c040f3088cb2a9d69ad7420309abbc9ad56a2d7a6e74",
+          "legacyLaunchId": "denken3-2025-lower-theory-q09",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q09-fig1.png",
+              "sha256": "cf834ef0dba7034ee9681340ae18f05b8b26eff681b7db47edbb28d1b42186b4"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q10",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q10-10.json",
+      "reviewedSha256": "0093504d2828dd97ec4fd0efe0a4f1fbc9d90f89b77afac2530eefc76151f827",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 10,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q10-10.json",
+          "reviewedSha256": "0093504d2828dd97ec4fd0efe0a4f1fbc9d90f89b77afac2530eefc76151f827",
+          "legacyLaunchId": "denken3-2025-lower-theory-q10",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q10-fig1.png",
+              "sha256": "1e2db1c9c4d9bf9b8f1d57df3c0cee4cffb71c4eaa953630450fb7168228d994"
+            },
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q10-fig2.png",
+              "sha256": "fea715a0fab1589441f8a0e4526dca12b4e0e99de6002c782ec0ecac440c9067"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q11",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q11-11.json",
+      "reviewedSha256": "ed362d2d7cd3575d74ea976008f6fb4e7480e72fbc46475812a1b14d7e904cd1",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 11,
+          "part": null,
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q11-11.json",
+          "reviewedSha256": "ed362d2d7cd3575d74ea976008f6fb4e7480e72fbc46475812a1b14d7e904cd1",
+          "legacyLaunchId": "denken3-2025-lower-theory-q11",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q12",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q12-12.json",
+      "reviewedSha256": "577a7ec72df82404ef88d2af6cc3e90ba39d234d5b9b0b42f6b9a62250c0269a",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 12,
+          "part": null,
+          "officialAnswer": 1,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q12-12.json",
+          "reviewedSha256": "577a7ec72df82404ef88d2af6cc3e90ba39d234d5b9b0b42f6b9a62250c0269a",
+          "legacyLaunchId": "denken3-2025-lower-theory-q12",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q12-fig1.png",
+              "sha256": "a7677ea1d8ad1b892bc429eaac84071ce0c738ce86dd45b13ddf1e1fb22cfcec"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q13",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q13-13.json",
+      "reviewedSha256": "7e3ad6dc4257ee2dc7ceffa42b80d8fc85da8f96743bf42c9c4ed8f64cd64a37",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 13,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q13-13.json",
+          "reviewedSha256": "7e3ad6dc4257ee2dc7ceffa42b80d8fc85da8f96743bf42c9c4ed8f64cd64a37",
+          "legacyLaunchId": "denken3-2025-lower-theory-q13",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q14",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q14-14.json",
+      "reviewedSha256": "888f2a6efc83c28e2153cb58dfd3b0e6b82925732ea9f75e8c5df59a84162c74",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 14,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q14-14.json",
+          "reviewedSha256": "888f2a6efc83c28e2153cb58dfd3b0e6b82925732ea9f75e8c5df59a84162c74",
+          "legacyLaunchId": "denken3-2025-lower-theory-q14",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q14-fig1.png",
+              "sha256": "fada36d722d29a59ae6ee1e4f0b60e61b3a87b122d7340a6436f66761e871f6b"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q15",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q15-15.json",
+      "reviewedSha256": "43a676103ed5b3ca84862cbaebeb2c2f252e1f701e1fca819b37e88c2f7f343f",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 15,
+          "part": "a",
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q15-15.json",
+          "reviewedSha256": "43a676103ed5b3ca84862cbaebeb2c2f252e1f701e1fca819b37e88c2f7f343f",
+          "legacyLaunchId": "denken3-2025-lower-theory-q15-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q15-fig1.png",
+              "sha256": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "theory",
+          "qNumber": 15,
+          "part": "b",
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q15-15.json",
+          "reviewedSha256": "43a676103ed5b3ca84862cbaebeb2c2f252e1f701e1fca819b37e88c2f7f343f",
+          "legacyLaunchId": "denken3-2025-lower-theory-q15-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q15-fig1.png",
+              "sha256": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q16",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q16-16.json",
+      "reviewedSha256": "5a258a561a651ab647d5f9896fdf279d8c7724f82bd0ce27515027fba2c4a1bb",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 16,
+          "part": "a",
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q16-16.json",
+          "reviewedSha256": "5a258a561a651ab647d5f9896fdf279d8c7724f82bd0ce27515027fba2c4a1bb",
+          "legacyLaunchId": "denken3-2025-lower-theory-q16-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q16-fig1.png",
+              "sha256": "2ceaab385108eb9debb739c7a78f0f15bb1bad72e91bef8983a2c94a57171c98"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "theory",
+          "qNumber": 16,
+          "part": "b",
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q16-16.json",
+          "reviewedSha256": "5a258a561a651ab647d5f9896fdf279d8c7724f82bd0ce27515027fba2c4a1bb",
+          "legacyLaunchId": "denken3-2025-lower-theory-q16-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q16-fig1.png",
+              "sha256": "2ceaab385108eb9debb739c7a78f0f15bb1bad72e91bef8983a2c94a57171c98"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q17",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q17-17.json",
+      "reviewedSha256": "8c20e8fe6201965c0895b81039e05ff7c2108247fd72ad5042ee69c7611c4e9c",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 17,
+          "part": "a",
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q17-17.json",
+          "reviewedSha256": "8c20e8fe6201965c0895b81039e05ff7c2108247fd72ad5042ee69c7611c4e9c",
+          "legacyLaunchId": "denken3-2025-lower-theory-q17-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q17-fig1.png",
+              "sha256": "d6971af7f80d96e513c3c79b4723f8db87c728435389e7f3bc4d02555e08dd7e"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "theory",
+          "qNumber": 17,
+          "part": "b",
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q17-17.json",
+          "reviewedSha256": "8c20e8fe6201965c0895b81039e05ff7c2108247fd72ad5042ee69c7611c4e9c",
+          "legacyLaunchId": "denken3-2025-lower-theory-q17-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q17-fig1.png",
+              "sha256": "d6971af7f80d96e513c3c79b4723f8db87c728435389e7f3bc4d02555e08dd7e"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-theory-q18",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q18-18.json",
+      "reviewedSha256": "f3cb794d2ea5f2f14277436d7c8bf3987f8ab4089e0426f44a1892012bf0a031",
+      "qa": [
+        {
+          "subject": "theory",
+          "qNumber": 18,
+          "part": "a",
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q18-18.json",
+          "reviewedSha256": "f3cb794d2ea5f2f14277436d7c8bf3987f8ab4089e0426f44a1892012bf0a031",
+          "legacyLaunchId": "denken3-2025-lower-theory-q18-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q18-fig1.png",
+              "sha256": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982"
+            },
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q18-fig2.png",
+              "sha256": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "theory",
+          "qNumber": 18,
+          "part": "b",
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-theory-q18-18.json",
+          "reviewedSha256": "f3cb794d2ea5f2f14277436d7c8bf3987f8ab4089e0426f44a1892012bf0a031",
+          "legacyLaunchId": "denken3-2025-lower-theory-q18-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q18-fig1.png",
+              "sha256": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982"
+            },
+            {
+              "url": "/images/denken3/20260322/theory/20260322-theory-q18-fig2.png",
+              "sha256": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q01",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q01-01.json",
+      "reviewedSha256": "c4d6a2d92809e2c6789d9677df53b4167fceba3bbed13a869762924cb6301f55",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 1,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q01-01.json",
+          "reviewedSha256": "c4d6a2d92809e2c6789d9677df53b4167fceba3bbed13a869762924cb6301f55",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q01",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q01-fig1.png",
+              "sha256": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q02",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q02-02.json",
+      "reviewedSha256": "80114779e0a35cb54d490ddaf2a0d6b083a0dd61d99dbe7f883736b2b21d56de",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 2,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q02-02.json",
+          "reviewedSha256": "80114779e0a35cb54d490ddaf2a0d6b083a0dd61d99dbe7f883736b2b21d56de",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q02",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q03",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q03-03.json",
+      "reviewedSha256": "3ce51a33a7e61aa87680ed04a360a1a6153efb2aa7037bb5bf6b017983833c8b",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 3,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q03-03.json",
+          "reviewedSha256": "3ce51a33a7e61aa87680ed04a360a1a6153efb2aa7037bb5bf6b017983833c8b",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q03",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q04",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q04-04.json",
+      "reviewedSha256": "6f7aa5b785217b3527a0f9f88e3a5cd030e9979c2fc4cd863e5e54c0bdee2c73",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 4,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q04-04.json",
+          "reviewedSha256": "6f7aa5b785217b3527a0f9f88e3a5cd030e9979c2fc4cd863e5e54c0bdee2c73",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q04",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q05",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q05-05.json",
+      "reviewedSha256": "f9421acaa84f26972e5e33cdabdfc0b609b1c2857a1b934797d3cd06acf1284c",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 5,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q05-05.json",
+          "reviewedSha256": "f9421acaa84f26972e5e33cdabdfc0b609b1c2857a1b934797d3cd06acf1284c",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q05",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q06",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q06-06.json",
+      "reviewedSha256": "d9af51a3184b79b0383303f73cf66c0128a594ebe051b475a2e7914d6701625d",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 6,
+          "part": null,
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q06-06.json",
+          "reviewedSha256": "d9af51a3184b79b0383303f73cf66c0128a594ebe051b475a2e7914d6701625d",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q06",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q07",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q07-07.json",
+      "reviewedSha256": "b3c1548ccdcbaa3e6a38f3238fcd606961e9418db8579ae955a05c9fa9fd5b02",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 7,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q07-07.json",
+          "reviewedSha256": "b3c1548ccdcbaa3e6a38f3238fcd606961e9418db8579ae955a05c9fa9fd5b02",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q07",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q08",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q08-08.json",
+      "reviewedSha256": "e41130d213b5f4b623d812db652786594e02ec9aa69ac119216b600eeb88a7b7",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 8,
+          "part": null,
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q08-08.json",
+          "reviewedSha256": "e41130d213b5f4b623d812db652786594e02ec9aa69ac119216b600eeb88a7b7",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q08",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q09",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q09-09.json",
+      "reviewedSha256": "ad1eca6e8382c76bb5717af24c1d8994f2d2f324c3e2520e44915e6e2d6b0aac",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 9,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q09-09.json",
+          "reviewedSha256": "ad1eca6e8382c76bb5717af24c1d8994f2d2f324c3e2520e44915e6e2d6b0aac",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q09",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q10",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q10-10.json",
+      "reviewedSha256": "e1be868fe289da1f83c45e3762646684a0b660845d61406f0f0f34472265d9ed",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 10,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q10-10.json",
+          "reviewedSha256": "e1be868fe289da1f83c45e3762646684a0b660845d61406f0f0f34472265d9ed",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q10",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q11",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q11-11.json",
+      "reviewedSha256": "ac2a65a5f2e32d354bd88c72f30ec4fed55ec837429f0dd968e7921e406a665f",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 11,
+          "part": null,
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q11-11.json",
+          "reviewedSha256": "ac2a65a5f2e32d354bd88c72f30ec4fed55ec837429f0dd968e7921e406a665f",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q11",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q11-fig1.png",
+              "sha256": "c5a7aa2a708f008da6e11d7f64d168ba957e4b692606477df0d3868a2a361a5a"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q12",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q12-12.json",
+      "reviewedSha256": "e6eb641eccdd3a5899c56ac6212f62c741ea85739bc8cee5e8d557212d93d164",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 12,
+          "part": null,
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q12-12.json",
+          "reviewedSha256": "e6eb641eccdd3a5899c56ac6212f62c741ea85739bc8cee5e8d557212d93d164",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q12",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q13",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q13-13.json",
+      "reviewedSha256": "060ef2fa253e415cd8f447a3ce03d3278e5279fb0baa66bce45af2e07aa08e4d",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 13,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q13-13.json",
+          "reviewedSha256": "060ef2fa253e415cd8f447a3ce03d3278e5279fb0baa66bce45af2e07aa08e4d",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q13",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q13-fig1.png",
+              "sha256": "60c2fc52dd6d26de07d6826b214b45daa6c2ad2785acbe97af0ea616f1964bb3"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q14",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q14-14.json",
+      "reviewedSha256": "6a44c0d96ee94a0ad89f239a7089b3b0a1605290ef7344f8397ecfff2fe55be0",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 14,
+          "part": null,
+          "officialAnswer": 3,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q14-14.json",
+          "reviewedSha256": "6a44c0d96ee94a0ad89f239a7089b3b0a1605290ef7344f8397ecfff2fe55be0",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q14",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q14-fig1.png",
+              "sha256": "86fe4a492344e7978a2b7453410b5aafa53a31582a02afad8ba64f3aabf777cd"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q15",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q15-15.json",
+      "reviewedSha256": "bb89ce948f6cc3a64473355ba389163e54c6d93a935c99acb59a9b5e0c6cd0ac",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 15,
+          "part": "a",
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q15-15.json",
+          "reviewedSha256": "bb89ce948f6cc3a64473355ba389163e54c6d93a935c99acb59a9b5e0c6cd0ac",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q15-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "machinery",
+          "qNumber": 15,
+          "part": "b",
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q15-15.json",
+          "reviewedSha256": "bb89ce948f6cc3a64473355ba389163e54c6d93a935c99acb59a9b5e0c6cd0ac",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q15-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q16",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q16-16.json",
+      "reviewedSha256": "ea6f5a89a858c489da9c712ca44b40877337f74da95717acaf77e340d840e0e5",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 16,
+          "part": "a",
+          "officialAnswer": 5,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q16-16.json",
+          "reviewedSha256": "ea6f5a89a858c489da9c712ca44b40877337f74da95717acaf77e340d840e0e5",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q16-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q16-fig1.png",
+              "sha256": "5187fc7c2ecddd886ba4f5106bbe7d6875f247b35ff6981c364e51cc51956059"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "machinery",
+          "qNumber": 16,
+          "part": "b",
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q16-16.json",
+          "reviewedSha256": "ea6f5a89a858c489da9c712ca44b40877337f74da95717acaf77e340d840e0e5",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q16-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q16-fig1.png",
+              "sha256": "5187fc7c2ecddd886ba4f5106bbe7d6875f247b35ff6981c364e51cc51956059"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q17",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q17-17.json",
+      "reviewedSha256": "62c3d42e5a22b026ad1c174373950ba9083279351c46136e848318a32830115b",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 17,
+          "part": "a",
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q17-17.json",
+          "reviewedSha256": "62c3d42e5a22b026ad1c174373950ba9083279351c46136e848318a32830115b",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q17-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "machinery",
+          "qNumber": 17,
+          "part": "b",
+          "officialAnswer": 4,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q17-17.json",
+          "reviewedSha256": "62c3d42e5a22b026ad1c174373950ba9083279351c46136e848318a32830115b",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q17-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-machine-q18",
+      "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q18-18.json",
+      "reviewedSha256": "a99e1fb684c4e183635cc6bd928ddb756980f711af15bcdb26588b38de47b73c",
+      "qa": [
+        {
+          "subject": "machinery",
+          "qNumber": 18,
+          "part": "a",
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q18-18.json",
+          "reviewedSha256": "a99e1fb684c4e183635cc6bd928ddb756980f711af15bcdb26588b38de47b73c",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q18-a",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q18-fig1.png",
+              "sha256": "2f5d4f3568b91d63786bb502a45da0faa1a29aa3929feb98600e96ad2c59d2e1"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        },
+        {
+          "subject": "machinery",
+          "qNumber": 18,
+          "part": "b",
+          "officialAnswer": 2,
+          "reviewedPath": "C:\\wt\\denken3-native-2026-upper-2025-lower-20261010\\data\\questions\\denken3\\reviewed\\20260322-machinery-q18-18.json",
+          "reviewedSha256": "a99e1fb684c4e183635cc6bd928ddb756980f711af15bcdb26588b38de47b73c",
+          "legacyLaunchId": "denken3-2025-lower-machinery-q18-b",
+          "legacyAnswerMatch": true,
+          "allFiveChoicesAndExplanations": true,
+          "figureAssets": [
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q18-fig1.png",
+              "sha256": "2f5d4f3568b91d63786bb502a45da0faa1a29aa3929feb98600e96ad2c59d2e1"
+            },
+            {
+              "url": "/images/denken3/20260322/machinery/20260322-machinery-q18-fig2.png",
+              "sha256": "b4ab12673ee5fe7a0d9789630c87adf8e83479a549352189cd2a8817fde2f81d"
+            }
+          ],
+          "status": "SAVED_GO_REUSE_NO_NEW_DRAFT"
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "path": "data/questions/denken3/native-2026-upper-machine-follow.json",
+      "sha256": "c81c1c7a42d55d53a1d4c861124df5a5bada22f6fcfabedb57bf87fc7307e936",
+      "packetSha256": "6caba4e531c2f8b9ce7cbf0686f9a19aa7e63b470dc8859889f9e71a84d1eb28"
+    },
+    {
+      "path": "data/questions/denken3/native-2025-lower-theory-follow.json",
+      "sha256": "7ed440dc59d6b9f64deeb575dddaddf0f3ad05df3eba0dfb8ced6abbc877ca95",
+      "packetSha256": "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154"
+    },
+    {
+      "path": "data/questions/denken3/native-2025-lower-machine-follow.json",
+      "sha256": "0d6b50878ae7b5a80cc439135a4a641392cd339bbc8884c2fff82cf5c009f77e",
+      "packetSha256": "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154"
+    }
+  ],
+  "sourceImages": [
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q09-p12.jpg",
+      "sha256": "26e4a3e14fcc0faa1a437814727c7684805c9a3690da6a70ed56527e3e6bf18f"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q10-p13.jpg",
+      "sha256": "d0d2918ccd38792a730ad509714609bcf262b95b5f1a227258b81975b10b5d08"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q11-p14.jpg",
+      "sha256": "306889109e15b2ce5da0909aa0fa500d869984a9655fa34a2abb5275aaa9f572"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q12-p15.jpg",
+      "sha256": "c8cbfd7534457dc4f4d82271ca126e15e5237b8e771e2398cddc5bd19e3c8cb3"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q13-p16.jpg",
+      "sha256": "d5eac15af495bebf9d27e0f069a2124d3660a5467c125f50cb8ce999d6287818"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q14-p17.jpg",
+      "sha256": "774ec4f15f3490d119c5ae88f70e9af8b88a2dc581a03ff3897d13d650e0d01b"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q15-p18.jpg",
+      "sha256": "0c3f47701b858c05cd5943bf406fc3a8424b12662154007288a809544a02410e"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q15-p19.jpg",
+      "sha256": "8657566458d55f09364de53da43f0e6e8e7ec0ee5671e2c72033a0d67f58295e"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q16-p20.jpg",
+      "sha256": "17344bad63764e49d3034d5c7344885f3c5529f9d7de8f37dc413493eaf331c7"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q16-p21.jpg",
+      "sha256": "0a02fc2be0167954686a46ff4c8bd4104c989aa288ec8476978d6bd0dd2ce096"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q17-p22.jpg",
+      "sha256": "700250f3bbec2db842a1e9213673d5571523c804ed0a1d22987bc4b761c92891"
+    },
+    {
+      "url": "/images/denken3/2026-upper-native/machine-q18-p23.jpg",
+      "sha256": "a7affc56f5f627e47f0e0e77bc93be2949d4dd174455a365ac37e796c409bc8e"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q01-p04.png",
+      "sha256": "71af29f33b6d8a0eacabef401363cb3eb9b3a1beb6eef3038cd70071e9e8d63a"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q02-p05.png",
+      "sha256": "402a524edad916b76773f5514176303aefc4d8889d66071ac8e6ae03e998d24a"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q03-p06.png",
+      "sha256": "1438fdf54948f9d2059ca270f03ad22ca84021d3f9294244f6fa6ed9d7de57fc"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q04-p07.png",
+      "sha256": "1aadb34eeefcae4c86be44266ab5725adb76e43811077631886d53bb83a24485"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q05-p08.png",
+      "sha256": "49c728a57ea4026e6274ed59a15f65d80783d9921966dd0cf910102c63867b39"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q06-p09.png",
+      "sha256": "092cf9ee3ad42ea8da3801fabdbfc08a7d26c6637757a40b0dd53bf3c4c13747"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q07-p10.png",
+      "sha256": "9439d9398f2561502a81f1893da217f32c65be8151b2e827d47d7929a7078e35"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q08-p11.png",
+      "sha256": "4ab3530d3c3c359a5b745e1f9b6bfc8acfa907147667f5ab89956f4e0d3600e2"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q09-p12.png",
+      "sha256": "03b86990d644ffa5943cc530e56b1ecb0c82a60e2db653c5211f156e9436f862"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q09-p13.png",
+      "sha256": "ab1bd6daba85b8979bcde3f21178befb196cf1ce6c1114ae9d34bdb7c786ecac"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q10-p14.png",
+      "sha256": "265d0dbdabfa72bec5fa72221b14bd8329db91d2eef1d2c27e000bed8c6703df"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q10-p15.png",
+      "sha256": "f48c519d7fb0f6e8029b4bdf84751498dbb2985f24610ef20e7b054e26f909b7"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q11-p16.png",
+      "sha256": "f5e891d4e2ca3306e36ea0bbfeef1fff1209ad2eb45785cf5aba19fb9fda15a6"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q12-p17.png",
+      "sha256": "5a8896de78b35539efccde17253b46c19106109ad2f85e597b7fa594eae4788e"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q13-p18.png",
+      "sha256": "dbc674abccbc71f188e90545535e13846955f7ad39ae7eaf3109cee64b5de0c2"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q14-p19.png",
+      "sha256": "8c9b996e94978927f49273c81a417c493746a4e223b97f9de11d0a5e2eaf6d80"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q15-p20.png",
+      "sha256": "c427a0a2647ca64f3b09acc8409a50181b0ac8099f9a51e6938f2999eb18b9c4"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q16-p21.png",
+      "sha256": "569a0c9ce59199c4bdc00f45ce2fbb5decf766f921afe5989c84eaea431bdb0a"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q17-p22.png",
+      "sha256": "80bfc312c7f05f1c8f860706237552d2e83b9bcc072a12888eea060d3ff08427"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q17-p23.png",
+      "sha256": "e446e4fbf7f94da7a1ccdf7cf0fb1331263fc730cb650061f8c86ff2126bc9c6"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q18-p24.png",
+      "sha256": "f0248faa43969ff60b60a0df44fe9cea2b7dbc39aacc3a540954b9557909a7b2"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/theory-q18-p25.png",
+      "sha256": "619a0b682ebab7ae038c1f6d6228d2301d059041040d931283bbee800837c5cb"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q01-p04.png",
+      "sha256": "884246d34d90d44d6195fd268503ed99ba93288c87403fca4844370d1e945797"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q02-p05.png",
+      "sha256": "c313f564875072db2f3d859e93d883636029eaa14285da5af98b1a5d9876369b"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q03-p06.png",
+      "sha256": "56b4fd624e6bdd91f04e29c5c63903eacbe5183b381cdbd0a1527cafb4ffae27"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q04-p07.png",
+      "sha256": "08169c166e028cfff1b070a3c500379cfbb104774835db3e0ea30117548a197e"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q05-p08.png",
+      "sha256": "9b060fb3e4569f292e3fdbbdb458505411aca252e0c69b2aba1fe886b1aa123d"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q06-p09.png",
+      "sha256": "1fcc892005c7488a7db61b75889701f958a54e0e9e502d13474880bb17ea1ee7"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q07-p10.png",
+      "sha256": "a98a2df027f9599b4775df365b1839bfda13cd719c09f0d0798d524630e6109d"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q08-p11.png",
+      "sha256": "996642ee3f3fc3b8bf65a6f1ee80c3e1a74d92512f7953987e108f25e508b9d1"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q09-p12.png",
+      "sha256": "72ce32d2d06018903c10572b94c5f3f20a19a29bf8bb74cae164246c56ba2240"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q10-p13.png",
+      "sha256": "2207604bde9f2b1a13049008c97ae6afdafe8fd6c5a6d3cd757c58397e60c441"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q11-p14.png",
+      "sha256": "8d50c1279a9f792d1cfa85d2ca877e638886b5b9a3a87bf02d0668da2eb385c8"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q12-p15.png",
+      "sha256": "7aaaadae5e0c9d3dae535e9c335e45cb6039537710cc15cb7e994302ef02793f"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q13-p16.png",
+      "sha256": "3950c1330b7580d33c94ddab18fdc65a33348c7c5757e0cde4d190cde40fc7dc"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q14-p17.png",
+      "sha256": "c472ba6bc4468c06d1df8935197e3cf488b38ed9828e8130175ecc371e856db4"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q15-p18.png",
+      "sha256": "cd23d5878fbcb880e744ca1c40e60db25739506e4777ed57216661aaaa57f58e"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q15-p19.png",
+      "sha256": "88f5adcc1e009ae7dd6046c4beba6b8cad47b7406a1c83dc2bd53842d431cfa9"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q16-p20.png",
+      "sha256": "e229c32afc1db85c3b5786426b86182c0f45a1e7d5312772975f124e8d26ac67"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q16-p21.png",
+      "sha256": "faa09743a14bf2dc5787079e55955b28f306e236f6c19196381efd2847e11bea"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q17-p22.png",
+      "sha256": "6da8bb78d3399fd121059b5d7f0bd826370fde4f144e43dc99fa534aa712f0cb"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q17-p23.png",
+      "sha256": "4d67ed7ad7f7c186234b803e2a40310cede1f0e18a671e9fbcd5194364a805f3"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q18-p24.png",
+      "sha256": "fbad2e053d66270dc6ac53748effe871fcaebffeef4457b8e6095984de633683"
+    },
+    {
+      "url": "/images/denken3/2025-lower-native/machine-q18-p25.png",
+      "sha256": "496b3fc79f4b7a96f5133ad5ad04b4ca09cf7590f68a377c76b4402d1575a289"
+    }
+  ]
+}

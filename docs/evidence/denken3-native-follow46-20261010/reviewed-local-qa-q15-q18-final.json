@@ -1,0 +1,87 @@
+{
+  "scope": "2026 upper third-class machine Q15-18 only",
+  "printedOriginals": 4,
+  "printedAnswerFields": 8,
+  "effectiveScoredFields": 6,
+  "alternativeRule": "Q17 OR Q18; one original/two fields scored",
+  "originalPacketSha256": "0d6d39a5257231d2186a49e6f5cc2e6c6e228fac54a9459de63172b69e5bbe6b",
+  "correctedPacketSha256": "cc006a8019b82adcc57774174f51bf36f42b3656785f6d2a2f204e5ffd1b0110",
+  "officialCropSha256": "ddf8baf02d5dd17138f9cb2c24420fdd34a3d970743691f9665a8d4141545cd7",
+  "independentTests": {
+    "q15aTorqueNm": 735.105193895723,
+    "q15bEmfV": 400.00000000000006,
+    "q16aLineRmsV": 173.20508075688772,
+    "q16bRippleRatio": 0.14029786907948888,
+    "q17aHeatKj": 173364.0,
+    "q17bDryHours": 3.9798898071625337
+  },
+  "truthTableQ18Combinations": 8,
+  "modelCalls": {
+    "sonnetDrafts": 4,
+    "opusBoundedQ15aReview": 1,
+    "regenerations": 0
+  },
+  "rows": [
+    {
+      "originalQuestionNumber": 15,
+      "officialAnswersByPart": {
+        "a": 3,
+        "b": 3
+      },
+      "alternativeGroup": null,
+      "status": "LOCAL_GO",
+      "firstDraftSha256": "6c8db43d2dc232d66cf0007de0b58ffdf391dd3ddb4e6e840935b2656b6b3879",
+      "actualServedReceiptSha256": "58c6145283055eef366d0efee79d9ee85c539249b7e4d45c299822839d74f35e",
+      "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q15-local-go.json",
+      "reviewedCandidateSha256": "ce1a365e5dcff35a65a39577ebed8f789e7a43f4f637c0a7c737379805bf7c1a",
+      "needsReviewOriginal": "fixed from same draft"
+    },
+    {
+      "originalQuestionNumber": 16,
+      "officialAnswersByPart": {
+        "a": 2,
+        "b": 2
+      },
+      "alternativeGroup": null,
+      "status": "LOCAL_GO",
+      "firstDraftSha256": "32a4ed961b27ba6b5734ca2880b0d68f624f157d1c3c9f8f6f066fe6ae465be9",
+      "actualServedReceiptSha256": "199d2abc55f68e4ca5c61210df98804acd8f40c08023971ad685df911b4389a6",
+      "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q16-local-go.json",
+      "reviewedCandidateSha256": "9c3a05040c0274ca6a695dc73e7cc0ad201662e8e7bd20168b1dbf008231cefb",
+      "needsReviewOriginal": []
+    },
+    {
+      "originalQuestionNumber": 17,
+      "officialAnswersByPart": {
+        "a": 5,
+        "b": 2
+      },
+      "alternativeGroup": "Q17_OR_Q18",
+      "status": "LOCAL_GO",
+      "firstDraftSha256": "c3274e6a71f8bfe0015fa286710d193993c053085806325ea271e84a0df45242",
+      "actualServedReceiptSha256": "6680afc6c9c845910b55e08177caa8b5b02650da5fcc5bf73d365f50feb99eba",
+      "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q17-local-go-normalized.json",
+      "reviewedCandidateSha256": "6ee7c2eb0d91dbbbf070364d0897e90e73d5612d4dab37daadfb767ac8b17080",
+      "needsReviewOriginal": []
+    },
+    {
+      "originalQuestionNumber": 18,
+      "officialAnswersByPart": {
+        "a": 5,
+        "b": 4
+      },
+      "alternativeGroup": "Q17_OR_Q18",
+      "status": "LOCAL_GO",
+      "firstDraftSha256": "145130de55c213ff7d9523c02293b2cd2793b5138e3dcf812c396c262ae634d3",
+      "actualServedReceiptSha256": "0f7172476513a6f70d8d46ba6573a7e384024a6c74f4318cc3c0e3661df834a2",
+      "reviewedCandidatePath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\reviewed\\machine-q18-local-go.json",
+      "reviewedCandidateSha256": "07f6349e723994fe7af747ec606526189c6c1393672ce858dbd4310fac0b1803",
+      "needsReviewOriginal": []
+    }
+  ],
+  "localGoOriginals": 4,
+  "holdOriginals": 0,
+  "publicIntegration": "not performed",
+  "priorReportSha256": "a5430e9467c26ced80e36f533f93d31af7e6427914d795e6d6c851a0807291ac",
+  "q17NormalizationSha256": "6ee7c2eb0d91dbbbf070364d0897e90e73d5612d4dab37daadfb767ac8b17080"
+}

@@ -1,0 +1,93 @@
+{
+  "subject": "machine",
+  "sitting": "2026 upper",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20260830_ch_third_a01.pdf",
+  "sourceAnswerPdfSha256": "c6681b942a9a1c57f9563cc33c67a93882c7430ee91237fbf75f836db9663181",
+  "columnHeader": "<機械>",
+  "columnCropPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\rendered\\official-machine-column-q01-q18.png",
+  "columnCropSha256": "3952c040a6068c8e96738e0e18eb06c62f1f185a2b6c63c4bd2c4061302e397e",
+  "officialKeyVector": {
+    "1": 2,
+    "2": 4,
+    "3": 1,
+    "4": 3,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 4,
+    "9": 3,
+    "10": 5,
+    "11": 4,
+    "12": 3,
+    "13": 4,
+    "14": 5,
+    "15": {
+      "a": 3,
+      "b": 3
+    },
+    "16": {
+      "a": 2,
+      "b": 2
+    },
+    "17": {
+      "a": 5,
+      "b": 2
+    },
+    "18": {
+      "a": 5,
+      "b": 4
+    }
+  },
+  "originalPacketKeyVector": {
+    "1": 2,
+    "2": 4,
+    "3": 1,
+    "4": 3,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 4,
+    "9": 3,
+    "10": 5,
+    "11": 4,
+    "12": 3,
+    "13": 4,
+    "14": 5,
+    "15": {
+      "a": 5,
+      "b": 3
+    },
+    "16": {
+      "a": 2,
+      "b": 2
+    },
+    "17": {
+      "a": 5,
+      "b": 2
+    },
+    "18": {
+      "a": 5,
+      "b": 4
+    }
+  },
+  "originalPacketMismatchCount": 1,
+  "mismatches": {
+    "15": {
+      "packet": {
+        "a": 5,
+        "b": 3
+      },
+      "officialMachineColumn": {
+        "a": 3,
+        "b": 3
+      }
+    }
+  },
+  "scopeOfCorrection": "Q15(a) key 5 -> 3 and dependent Q15(a) draft explanation only",
+  "firstSourcePacketPreserved": true,
+  "firstModelRawPreserved": true,
+  "correctedPacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\denken3-2026-upper-machine\\denken3-machine-2026-upper-q15-q18-source-packet-corrected-q15a.json",
+  "correctedPacketSha256": "cc006a8019b82adcc57774174f51bf36f42b3656785f6d2a2f204e5ffd1b0110",
+  "fullDraftRegenerationCount": 0,
+  "extraModelCallsForVectorAudit": 0
+}

@@ -8,6 +8,9 @@ import nextMachine2026 from "@/data/questions/denken3/native-2026-upper-machine-
 import nextLaw2026 from "@/data/questions/denken3/native-2026-upper-law-next.json";
 import nextLaw2025 from "@/data/questions/denken3/native-2025-lower-law-next.json";
 import nextPower2025 from "@/data/questions/denken3/native-2025-lower-power-next.json";
+import followMachine2026 from "@/data/questions/denken3/native-2026-upper-machine-follow.json";
+import followTheory2025 from "@/data/questions/denken3/native-2025-lower-theory-follow.json";
+import followMachine2025 from "@/data/questions/denken3/native-2025-lower-machine-follow.json";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 
 const nonempty = z.string().trim().min(1);
@@ -45,6 +48,9 @@ const expected = [
   { sitting: "2026-upper", subject: "law", numbers: [11, 12, 13], fields: 6, packet: "3ae9e57ee1e17dae13255bf2dc902232d0025b9616d87093771e3b5fc78d8905" },
   { sitting: "2025-lower", subject: "law", numbers: [10, 11, 13], fields: 5, packet: "115faea0636f27159b30ae94bbcdeb604378eb121246edc6ee7db8bb0b006783" },
   { sitting: "2025-lower", subject: "power", numbers: [2, 3, 4, 5, 6, 7, 8], fields: 7, packet: "41b5a81b7086fa93c2f761c72501752eb046ac500769d04bce02da2f81e401a4" },
+  { sitting: "2026-upper", subject: "machine", numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 14, packet: "6caba4e531c2f8b9ce7cbf0686f9a19aa7e63b470dc8859889f9e71a84d1eb28" },
+  { sitting: "2025-lower", subject: "theory", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
+  { sitting: "2025-lower", subject: "machine", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
 ] as const;
 function parsePart(raw: unknown, rule: (typeof expected)[number]) {
   const item = part.parse(raw);
@@ -64,7 +70,7 @@ function parsePart(raw: unknown, rule: (typeof expected)[number]) {
       ? [q.choiceGroups as Record<string, string>]
       : Object.values(q.choiceGroups) as Record<string, string>[];
     if (groups.length !== q.slots.length && groups.length !== 1) throw new Error(`Denken3 source bank mismatch: ${q.id}`);
-    if (q.slots.length !== (number >= 15 && (rule.subject === "theory" || rule.subject === "power") || number >= 11 && rule.subject === "law" ? 2 : 1)) throw new Error(`Denken3 source field mismatch: ${q.id}`);
+    if (q.slots.length !== (number >= 15 && (rule.subject === "theory" || rule.subject === "power" || rule.subject === "machine") || number >= 11 && rule.subject === "law" ? 2 : 1)) throw new Error(`Denken3 source field mismatch: ${q.id}`);
     for (const [fieldIndex, slot] of q.slots.entries()) {
       const bank = groups[groups.length === 1 ? 0 : fieldIndex];
       if (!bank || Object.keys(bank).length !== 5 || slot.slot !== fieldIndex + 1
@@ -73,17 +79,17 @@ function parsePart(raw: unknown, rule: (typeof expected)[number]) {
         throw new Error(`Denken3 official choice mismatch: ${q.id} (${fieldIndex + 1})`);
       }
     }
-    if (Boolean(q.alternateQuestionRule) !== (rule.subject === "theory" && (number === 17 || number === 18))) {
+    if (Boolean(q.alternateQuestionRule) !== ((rule.subject === "theory" || rule.subject === "machine") && (number === 17 || number === 18))) {
       throw new Error(`Denken3 alternative rule mismatch: ${q.id}`);
     }
   }
   if (item.questions.reduce((sum, q) => sum + q.slots.length, 0) !== rule.fields) throw new Error(`Denken3 source field count mismatch: ${rule.sitting}`);
   return item;
 }
-const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025];
+const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025, followMachine2026, followTheory2025, followMachine2025];
 export const DENKEN3_NATIVE_PARTS = raws.map((raw, index) => parsePart(raw, expected[index]!));
 export const DENKEN3_NATIVE_QUESTIONS = DENKEN3_NATIVE_PARTS.flatMap(item => item.questions);
-if (DENKEN3_NATIVE_QUESTIONS.length !== 66 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 66) throw new Error("Denken3 native original count mismatch");
+if (DENKEN3_NATIVE_QUESTIONS.length !== 112 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 112) throw new Error("Denken3 native original count mismatch");
 const subjectMap: Record<string, string> = { riron: "theory", denryoku: "power", kikai: "machine", houki: "law" };
 const sittingMap: Record<string, string> = { first: "upper", second: "lower" };
 const identity = (year: number, sitting: string, subject: string, number: number, examDate: string) => `${year}:${sitting}:${subject}:${number}:${examDate}`;
@@ -96,7 +102,7 @@ const combined = new Set(old);
 for (const q of DENKEN3_NATIVE_QUESTIONS) combined.add(identity(q.year, q.sitting.split("-")[1]!, q.subject, q.number, q.examDate));
 export const DENKEN3_PUBLISHED_ORIGINAL_COUNT = combined.size;
 export const DENKEN3_NEW_ORIGINAL_COUNT = combined.size - old.size;
-if (combined.size !== 315 || DENKEN3_NEW_ORIGINAL_COUNT !== 51) throw new Error("Denken3 native/legacy overlap changed");
+if (combined.size !== 325 || DENKEN3_NEW_ORIGINAL_COUNT !== 61) throw new Error("Denken3 native/legacy overlap changed");
 export const DENKEN3_NATIVE_SUBJECTS = [...new Set(DENKEN3_NATIVE_PARTS.map(p => `${p.sitting}:${p.subject}`))].map(key => {
   const [sitting, subject] = key.split(":");
   return getDenken3NativePart(sitting!, subject)!;
