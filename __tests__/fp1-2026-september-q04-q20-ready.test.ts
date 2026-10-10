@@ -3,6 +3,7 @@ import ready from "@/data/questions/fp1/2026-september-q04-q20-ready.json";
 import mayLaunch from "@/data/questions/fp1/launch.json";
 import mayAddition from "@/data/questions/fp1/2026-may-addition.json";
 import { FP1_QUESTIONS } from "@/data/questions/fp1";
+import { parseQuestionBlocks } from "@/components/quiz/QuestionBody";
 
 const numbers = [4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20];
 const answers = [3,2,1,4,3,3,2,2,1,1,1,4,3,1,4,2];
@@ -42,5 +43,20 @@ describe("FP1 September verified basic part", () => {
     expect(q.answer).toBe("イ");
     expect(q.choiceExplanations.イ).toContain("2つ");
     expect(q.choiceExplanations.イ).toContain("(c)");
+  });
+
+  it("renders the original journal entries and transaction/rate tables as tables", () => {
+    const q12 = ready.find(q => q.qNumber === 12)!;
+    for (const choice of Object.values(q12.choices)) {
+      const table = parseQuestionBlocks(choice).find(block => block.kind === "table");
+      expect(table?.header).toHaveLength(2);
+      expect(table?.rows).toHaveLength(2);
+    }
+    for (const number of [17,20]) {
+      const q = ready.find(q => q.qNumber === number)!;
+      const table = parseQuestionBlocks(q.question).find(block => block.kind === "table");
+      expect(table?.header).toHaveLength(4);
+      expect(table?.rows).toHaveLength(number === 17 ? 3 : 2);
+    }
   });
 });
