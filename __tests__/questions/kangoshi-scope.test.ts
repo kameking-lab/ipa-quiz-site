@@ -14,26 +14,29 @@ import { EXAM_DESCRIPTIONS, examMetaDescription } from "@/lib/seo/exam-meta";
 const evidence = path.join(process.cwd(), "docs/evidence/nurse10-20261010");
 const evidenceQ6to10 = path.join(process.cwd(), "docs/evidence/nurse-q6-10-20261010");
 const evidenceQ11to25 = path.join(process.cwd(), "docs/evidence/nurse-q11-25-20261010");
+const evidenceQ26to50 = path.join(process.cwd(), "docs/evidence/nurse-q26-50-20261010");
 const readJson = <T,>(file: string, dir = evidence): T => JSON.parse(readFileSync(path.join(dir, file), "utf8")) as T;
 
 type Transcript = { round: number; session: string; qNumber: number; stem: string; choices: Record<string, string>; officialAnswer: string; pdfPage?: number; figure?: { kind: string; file?: string; files?: string[] } }[];
 const ALL_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const YEAR_OF_ROUND: Record<number, number> = { 115: 2025, 114: 2024 };
-const SCOPE = "第115・114回 午前の必修問題50問収録";
+const SCOPE = "第115・114回 午前 問1〜50のうち99問収録";
 const norm = (s: string) => s.normalize("NFKC").replace(/\s+/g, "");
 const transcriptA = readJson<Transcript>("transcriptA.json");
 const transcriptB = readJson<Transcript>("transcriptB.json");
 const transcriptQ6to10 = readJson<Transcript>("transcript-q6-10.json", evidenceQ6to10);
 const transcriptQ11to25 = readJson<Transcript>("transcript-q11-25.json", evidenceQ11to25);
+const transcriptQ26to50 = readJson<Transcript>("transcript-q26-50.json", evidenceQ26to50);
+const holdQ26to50 = readJson<{ round: number; qNumber: number; officialAnswerRow: string; notice: string }[]>("hold-115-am32.json", evidenceQ26to50);
 
-describe("看護師国家試験（第115回・第114回 午前 問1〜25）", () => {
-  it("範囲: 各回の午前 問1〜25を収録し、計50問・202肢（第115回問24・25は5肢）", () => {
+describe("看護師国家試験（第115回・第114回 午前 問1〜50。第115回問32は採点除外のため未収録）", () => {
+  it("範囲: 午前 問1〜50から99問・398肢を収録（第115回問24・25は5肢、第115回問32は未収録）", () => {
     const keys = KANGOSHI_QUESTIONS.map((q) => `${q.year}-${q.session}-${q.qNumber}`).sort();
-    expect(keys).toEqual([2024, 2025].flatMap((y) => Array.from({ length: 25 }, (_, i) => `${y}-am-${i + 1}`)).sort());
-    expect(KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(202);
-    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi")).toHaveLength(50);
-    expect(new Set(KANGOSHI_QUESTIONS.map((q) => q.id)).size).toBe(50);
+    expect(keys).toEqual([2024, 2025].flatMap((y) => Array.from({ length: 50 }, (_, i) => `${y}-am-${i + 1}`)).filter((k) => k !== "2025-am-32").sort());
+    expect(KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(398);
+    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi")).toHaveLength(99);
+    expect(new Set(KANGOSHI_QUESTIONS.map((q) => q.id)).size).toBe(99);
     const fiveChoice = KANGOSHI_QUESTIONS.filter((q) => Object.keys(q.choices ?? {}).length === 5).map((q) => q.id).sort();
     expect(fiveChoice).toEqual(["kangoshi-2025-annual-am-q24", "kangoshi-2025-annual-am-q25"]);
     expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2024, end: 2025 });
@@ -97,6 +100,28 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜25）", ()
     );
   });
 
+  it("転記（問26〜50）: 49問の公開文面・正答・ページ位置・図が証跡と一致し、第115回問32はHOLDのまま未収録", () => {
+    expect(transcriptQ26to50).toHaveLength(49);
+    expect(transcriptQ26to50.reduce((sum, t) => sum + Object.keys(t.choices).length, 0)).toBe(196);
+    for (const t of transcriptQ26to50) {
+      const q = KANGOSHI_QUESTIONS.find((x) => x.year === YEAR_OF_ROUND[t.round] && x.qNumber === t.qNumber)!;
+      expect(q.question).toBe(t.stem);
+      KEYS.forEach((k, i) => expect(q.choices?.[k]).toBe(t.choices[String(i + 1)]));
+      expect(q.answer).toBe(KEYS[Number(t.officialAnswer) - 1]);
+      expect(q.officialAnswerNumber).toBe(t.officialAnswer);
+      expect(q.sourcePdfUrl.endsWith(`#page=${t.pdfPage}`)).toBe(true);
+      const figureFiles = t.figure ? (t.figure.files ?? [t.figure.file!]) : [];
+      const urls = [...(q.imageUrls ?? []), ...Object.values(q.choiceImageUrls ?? {})];
+      expect(urls.map((u) => path.basename(u!)).sort()).toEqual([...figureFiles].sort());
+      for (const u of urls) expect(existsSync(path.join(process.cwd(), "public", u!)), u).toBe(true);
+    }
+    const fig = (round: number, n: number) => transcriptQ26to50.find((t) => t.round === round && t.qNumber === n)!;
+    expect([fig(115, 34), fig(114, 30), fig(114, 39), fig(114, 41)].map((t) => t.officialAnswer)).toEqual(["3", "3", "1", "2"]);
+    expect(holdQ26to50).toEqual([expect.objectContaining({ round: 115, qNumber: 32, officialAnswerRow: "A032: blank" })]);
+    expect(holdQ26to50[0].notice).toMatch(/kangoshi_am32\.pdf$/);
+    expect(KANGOSHI_QUESTIONS.some((q) => q.year === 2025 && q.qNumber === 32)).toBe(false);
+  });
+
   it("解説・出典: 全肢に理由があり、正答肢だけが「正しい」。出典と加工表示を各問に持つ", () => {
     for (const q of KANGOSHI_QUESTIONS) {
       const round = q.year === 2025 ? 115 : 114;
@@ -123,16 +148,17 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜25）", ()
     expect(usesNumberedChoices("kangoshi")).toBe(true);
   });
 
-  it("収録範囲の表示: 午前の必修問題50問であることを明示し、全試験対応をうたわない", () => {
+  it("収録範囲の表示: 午前 問1〜50のうち99問であることと採点除外問題の未収録を明示し、全試験対応をうたわない", () => {
     const entry = getQualificationByExamCode("kangoshi")!;
     expect(entry.status).toBe("live");
     expect(entry.reuseSummary).toContain(SCOPE);
     expect(entry.reuseSummary).not.toMatch(/許諾(を)?取得済み/);
-    const copies = [entry.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 50)];
+    const copies = [entry.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 99)];
     for (const text of copies) {
       expect(text).not.toMatch(/全\s*240\s*問|全問(収録|対応)|全試験対応|全回分/);
     }
     expect(EXAM_DESCRIPTIONS.kangoshi).toContain(SCOPE);
+    expect(EXAM_DESCRIPTIONS.kangoshi).toContain("問32は厚生労働省が採点対象から除外したため収録していません");
   });
 
   it("査読: 独立一次資料査読がPASSで、blockingの未解決指摘はない", () => {
