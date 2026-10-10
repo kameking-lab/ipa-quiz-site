@@ -9,7 +9,10 @@ for (const { name, session, number, blanks = 5 } of [
   test(`denken1 ${name} card opens its ${blanks} selected blanks`, async ({ page }) => {
     await page.goto("/denken1");
     await expect(page.getByRole("heading", { name: "電験一種 一次試験の過去問" })).toBeVisible();
-    await expect(page.getByText("収録範囲：理論A問2・問3・電力A問2・機械A問3・法規A問1のみ。同年度の他の原問、過年度、二次試験は未収録です。", { exact: false })).toBeVisible();
+    await expect(page.getByText("2025・2026年度の理論・電力・機械36原問・204回答欄", { exact: false })).toBeVisible();
+    await expect(page.getByText("掲載する固有の原問は計39件", { exact: false })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "2025・2026年度の原問を年・科目から選ぶ" })).toBeVisible();
+    await expect(page.getByText("両年度の全問と二次試験は未収録", { exact: false })).toBeVisible();
     await page.getByRole("link", { name: new RegExp(`${name}.*令和8年度・${blanks}空欄`) }).click();
     await expect(page).toHaveURL(new RegExp(`/quiz\\?[^#]*exam=denken1[^#]*session=${session}`), { timeout: 15_000 });
     await expect(page.getByText(`問${number}(1)`, { exact: false }).first()).toBeVisible({ timeout: 15_000 });
