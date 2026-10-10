@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "./nurse-am6-publication-proof";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
 import sourceCandidates from "@/docs/evidence/nurse-afternoon-go-20261010/SOURCE-CANDIDATES.json";
@@ -19,8 +18,8 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
     expect(proof.previous387ObjectHashes).toHaveLength(387);
     for (const old of proof.previous387ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(am7.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(am7.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(461);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(461);
     expect(proof.addedIds).toHaveLength(29);
     expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);
@@ -51,11 +50,17 @@ describe("nursing afternoon post-PR662 GO delta", () => {
   });
 
   it("keeps every unresolved and figure-dependent original out of the quiz registry", () => {
+    const laterPm4GoIds = new Set([
+      "kangoshi-2024-annual-pm-q3",
+      "kangoshi-2024-annual-pm-q61",
+      "kangoshi-2025-annual-pm-q78",
+      "kangoshi-2025-annual-pm-q83",
+    ]); // Source and official-key checks are in nurse-pm4-followup.test.ts.
     for (const held of proof.remainingHeldByScope) {
       const year = held.scope.startsWith("114-") ? 2024 : 2025;
       for (const qNumber of held.questionNumbers) {
         const id = `kangoshi-${year}-annual-pm-q${qNumber}`;
-        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58) || laterProof.sourceChecks.some(check => check.id === id) || latestProof.sourceChecks.some(check => check.id === id) || laterThree.sourceChecks.some(check => check.id === id) || laterFour.sourceChecks.some(check => check.id === id) || laterFive.addedIds.includes(id) || go9.addedIds.includes(id)) continue; // Verified follow-up originals, each checked against its source by dedicated tests.
+        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58) || laterProof.sourceChecks.some(check => check.id === id) || latestProof.sourceChecks.some(check => check.id === id) || laterThree.sourceChecks.some(check => check.id === id) || laterFour.sourceChecks.some(check => check.id === id) || laterFive.addedIds.includes(id) || go9.addedIds.includes(id) || laterPm4GoIds.has(id)) continue; // Verified follow-up originals, each checked against its source by dedicated tests.
         expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
       }
     }
