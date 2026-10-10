@@ -1,0 +1,101 @@
+{
+  "scope": "既に確認済みの公開行政資料をrefsへ補完する限定差分。原設問・公式正答・正誤結論は変更しない。追加調査・全肢再査読は実施していない。",
+  "confirmedPublicReferences": [
+    {
+      "question": "2026-1",
+      "claim": "過半数代表者への事務機器・事務スペースの提供",
+      "source": "MHLW_MAJORITY_SUPPORT",
+      "locator": "16頁 第5 過半数代表者 第1・第1項",
+      "url": "https://www.mhlw.go.jp/content/000465759.pdf"
+    },
+    {
+      "question": "2026-3",
+      "claim": "事理明白な項目の控除と実物給与の区別",
+      "source": "MHLW_WAGE_DEDUCTION",
+      "locator": "法第24条関係（イ）・（ロ）",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb1897&dataType=1&pageNo=1"
+    },
+    {
+      "question": "2026-4",
+      "claim": "特定した労働日・労働時間は変更できない",
+      "source": "MHLW_ANNUAL_HOURS",
+      "locator": "第4（1年単位の変形労働時間制）",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb1912&dataType=1&pageNo=1"
+    },
+    {
+      "question": "2026-6",
+      "claim": "時間単位と日単位の変更は認められない",
+      "source": "AICHI_HOURLY_LEAVE",
+      "locator": "3頁 3 時季変更権",
+      "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/library/aichi-roudoukyoku/images/2014121215452.pdf"
+    },
+    {
+      "question": "2026-6",
+      "claim": "継続勤務は実質的な労働関係で判断し定年後の引続き再採用は通算",
+      "source": "MIYAZAKI_CONTINUOUS_SERVICE",
+      "locator": "2頁 Q5・回答",
+      "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/var/rev0/0109/5906/2014925112637.pdf"
+    },
+    {
+      "question": "2025-2",
+      "claim": "算定事由発生日は解雇通告日（36基収2316号の表記を確認、解雇日変更後の追加条件は引用対象外）",
+      "source": "KANAGAWA_NOTICE_PAY",
+      "locator": "1頁 算定事由の発生した日",
+      "url": "https://www.pref.kanagawa.jp/documents/5081/kh9.pdf"
+    },
+    {
+      "question": "2025-3",
+      "claim": "満60歳以上は契約締結時点で判断",
+      "source": "MHLW_FIXED_TERM",
+      "locator": "第1 1（2）イ",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2038&dataType=1&pageNo=1"
+    },
+    {
+      "question": "2025-3",
+      "claim": "経済法令違反による機械・資材没収は解雇予告除外事由に当たらない",
+      "source": "OKAYAMA_DISMISSAL_NOTICE",
+      "locator": "1頁 1（2）ア",
+      "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001180592.pdf"
+    },
+    {
+      "question": "2025-4",
+      "claim": "代理人への支払は無効、本人の使者への支払は可能",
+      "source": "HYOGO_DIRECT_WAGES",
+      "locator": "2 直接払いの原則に対しては（1）（2）",
+      "url": "https://jsite.mhlw.go.jp/hyogo-roudoukyoku/hourei_seido_tetsuzuki/roudoukijun_keiyaku/_79870/chingin.html"
+    },
+    {
+      "question": "2025-4",
+      "claim": "直接払の原則・使者と代理人の区別、過払賃金の調整的相殺",
+      "source": "MHLW_WAGE_Q7",
+      "locator": "3 直接払いの原則・例外 注意点／4 全額払いの原則・例外 過払賃金の精算のための調整的相殺",
+      "url": "https://www.check-roudou.mhlw.go.jp/qa/roudousya/chingin/q7.html"
+    },
+    {
+      "question": "2025-5",
+      "claim": "社員親睦会幹事が自動的に選任された場合の36協定は無効",
+      "source": "KOCHI_MAJORITY_REPRESENTATIVE",
+      "locator": "2頁（H29.12）",
+      "url": "https://jsite.mhlw.go.jp/kochi-roudoukyoku/content/contents/000841537.pdf"
+    },
+    {
+      "question": "2025-6",
+      "claim": "年俸制で確定した賞与を割増賃金の基礎から除外できない",
+      "source": "MHLW_ANNUAL_SALARY",
+      "locator": "年俸制賞与の説明、平成12年3月8日基収第78号",
+      "url": "https://www.check-roudou.mhlw.go.jp/qa/roudousya/chingin/q4.html"
+    }
+  ],
+  "citationHandling": [
+    "36基収2316号は神奈川県公的資料に表記があるため訂正しない。解雇日変更後の扱いは本問の条件に限定。",
+    "発基第17号・基発第150号の未取得精密引用を除去。0529001号は直接取得済み労働局資料に置換。",
+    "福島県教組事件は法廷番号のみ削除し公的QAを補完。",
+    "トーコロ事件の未取得最高裁精密引用は労働局資料と施行規則第6条の2へ置換。",
+    "直接払のQAの根拠範囲と、設問の委任・代理の効力の判定を区別。"
+  ],
+  "frozenTranscriptionSha256": {
+    "transcriptA.json": "8f5bfb3c749ec74791e72e19a54f1e7dac1e7ee7d0eb1ea006bdd98cbfea8508",
+    "transcriptB.json": "f0f469f116ce96da817bb5f82b5f8ae8c4693694c5d4a9acf2464ddaadc36485",
+    "PUBLIC-SOURCE-MANIFEST.json": "2ca6157d67f978797238df171a4c3f17ff603bf0337fc52e022c71391db1d174"
+  }
+}
