@@ -61,8 +61,9 @@ for (const width of [390, 1280]) {
     await expect(coverage.getByRole("heading", { name: "FP3級" })).toBeVisible();
     for (const href of ["/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/civil1", "/denko1", "/denken2", "/shakai", "/seishin", "/tohan"]) await expect(coverage.locator(`a[href="${href}"]`)).toBeVisible();
     await page.goBack();
-    await expect(page.locator("#choose-qualification")).toBeVisible();
-    await page.waitForLoadState("networkidle");
+    await expect(page).toHaveURL(/\/$/);
+    await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeEnabled();
+    await expect(page.getByRole("group", { name: "公開収録数" })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
