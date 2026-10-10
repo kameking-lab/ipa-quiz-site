@@ -1,54 +1,186 @@
 {
   "status": "CANDIDATE_ONLY_NOT_PUBLISHED",
   "baseDraftEvidence": "docs/evidence/sharoushi-next30-20261010/QA.json",
-  "legalReferenceDates": {"2026": "2026-04-10", "2025": "2025-04-11"},
+  "legalReferenceDates": {
+    "2026": "2026-04-10",
+    "2025": "2025-04-11"
+  },
   "sourceVerifiedCandidates": [
-    {
-      "year": 2026,
-      "questionNumber": 9,
-      "officialAnswer": "D",
-      "dispositions": [
-        {"priorIssue": "旧安衛則35条の例外廃止経緯", "status": "not_required_for_explanation", "reason": "解説は廃止経緯を述べず、2026-04-10時点の安衛則35条本文に業種免除がないことを根拠とする。"},
-        {"priorIssue": "雇入時健康診断の常時使用要件", "status": "verified", "sourceKey": "26q9-safety-rules-43"}
-      ],
-      "otherChoiceEvidenceKeys": ["26q9-safety-59", "26q9-safety-rules-35", "26q9-dispatch-45"]
-    },
-    {
-      "year": 2026,
-      "questionNumber": 10,
-      "officialAnswer": "B",
-      "dispositions": [
-        {"priorIssue": "安衛法施行令22条3項の有害物", "status": "verified", "sourceKey": "26q10-safety-decree-22"},
-        {"priorIssue": "採用選考時の健康診断の目的", "status": "verified", "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai/hourei_seido/kosei/kensin.html"},
-        {"priorIssue": "安衛則50条の3の基準日時点効力", "status": "verified", "sourceKey": "26q10-safety-rules-50-3", "revisionId": "347M50002000032_20260401_508M60000100003"},
-        {"priorIssue": "健診費用と受診時間賃金の混同", "status": "summary_and_choice_B_revised", "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/1.html"}
-      ],
-      "otherChoiceEvidenceKeys": ["26q10-safety-rules-13", "26q10-safety-rules-45", "26q10-safety-rules-48", "26q10-safety-rules-50-2"]
-    },
     {
       "year": 2025,
       "questionNumber": 8,
       "officialAnswer": "D",
       "dispositions": [
-        {"priorIssue": "柱書BからCへの公式訂正", "status": "verified", "source": "2025-correction.pdf; SHA256 3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead"},
-        {"priorIssue": "特定元方事業者の業種限定", "status": "verified", "sourceKey": "25q8-safety-15"},
-        {"priorIssue": "安衛法3条3項の旧文言", "status": "verified", "sourceKey": "25q8-safety-3"}
+        {
+          "priorIssue": "柱書BからCへの公式訂正",
+          "status": "verified",
+          "source": "2025-correction.pdf; SHA256 3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead"
+        },
+        {
+          "priorIssue": "特定元方事業者の業種限定",
+          "status": "verified",
+          "sourceKey": "25q8-safety-15"
+        },
+        {
+          "priorIssue": "安衛法3条3項の旧文言",
+          "status": "verified",
+          "sourceKey": "25q8-safety-3"
+        }
       ],
-      "otherChoiceEvidenceKeys": ["25q8-safety-29", "25q8-safety-rules-2", "25q8-safety-rules-11", "25q8-safety-rules-15", "25q8-safety-rules-12-3"],
+      "otherChoiceEvidenceKeys": [
+        "25q8-safety-29",
+        "25q8-safety-rules-2",
+        "25q8-safety-rules-11",
+        "25q8-safety-rules-15",
+        "25q8-safety-rules-12-3"
+      ],
       "administrativeInterpretationUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2043&dataType=1&pageNo=1"
+    },
+    {
+      "year": 2025,
+      "questionNumber": 9,
+      "officialAnswer": "C",
+      "dispositions": [
+        {
+          "priorIssue": "移動式クレーンと通常のクレーンの資格区分",
+          "status": "verified",
+          "sourceKeys": [
+            "25q9-safety-decree-20",
+            "25q9-crane-rules-21",
+            "25q9-crane-rules-22",
+            "25q9-crane-rules-68"
+          ]
+        },
+        {
+          "priorIssue": "特別教育の科目省略",
+          "status": "choice_B_revised",
+          "sourceKeys": [
+            "25q9-safety-rules-36",
+            "25q9-safety-rules-37"
+          ]
+        }
+      ]
     },
     {
       "year": 2025,
       "questionNumber": 10,
       "officialAnswer": "E",
       "dispositions": [
-        {"priorIssue": "安衛則587条の溶鉱炉", "status": "verified", "sourceKey": "25q10-safety-rules-587"},
-        {"priorIssue": "塩素の第二類物質区分・測定義務除外", "status": "verified_and_choice_D_revised", "annexKeys": ["25q10-decree-appdx3", "25q10-chem-rules-appdx1"], "sourceKey": "25q10-chem-rules-36"},
-        {"priorIssue": "粉じん則25条の特定粉じん作業", "status": "verified", "sourceKey": "25q10-dust-rules-25"}
+        {
+          "priorIssue": "安衛則587条の溶鉱炉",
+          "status": "verified",
+          "sourceKey": "25q10-safety-rules-587"
+        },
+        {
+          "priorIssue": "塩素の第二類物質区分・測定義務除外",
+          "status": "verified_and_choice_D_revised",
+          "annexKeys": [
+            "25q10-decree-appdx3",
+            "25q10-chem-rules-appdx1"
+          ],
+          "sourceKey": "25q10-chem-rules-36"
+        },
+        {
+          "priorIssue": "粉じん則25条の特定粉じん作業",
+          "status": "verified",
+          "sourceKey": "25q10-dust-rules-25"
+        }
       ],
-      "otherChoiceEvidenceKeys": ["25q10-dust-rules-26", "25q10-safety-rules-588", "25q10-safety-rules-590", "25q10-safety-rules-607", "25q10-oxygen-rules-3"]
+      "otherChoiceEvidenceKeys": [
+        "25q10-dust-rules-26",
+        "25q10-safety-rules-588",
+        "25q10-safety-rules-590",
+        "25q10-safety-rules-607",
+        "25q10-oxygen-rules-3"
+      ]
+    },
+    {
+      "year": 2026,
+      "questionNumber": 5,
+      "officialAnswer": "C",
+      "dispositions": [
+        {
+          "priorIssue": "通勤・住宅・生活手当の実質判断",
+          "status": "verified",
+          "sourceKeys": [
+            "26q5-labour-37",
+            "26q5-labour-rules-21"
+          ],
+          "mhlwPdf": "mhlw-2026-q5-primary.json"
+        },
+        {
+          "priorIssue": "通常の労働時間1時間あたりの賃金額",
+          "status": "verified_manual_pdf_math",
+          "sourceKey": "26q5-labour-rules-19"
+        }
+      ]
+    },
+    {
+      "year": 2026,
+      "questionNumber": 9,
+      "officialAnswer": "D",
+      "dispositions": [
+        {
+          "priorIssue": "旧安衛則35条の例外廃止経緯",
+          "status": "not_required_for_explanation",
+          "reason": "解説は廃止経緯を述べず、2026-04-10時点の安衛則35条本文に業種免除がないことを根拠とする。"
+        },
+        {
+          "priorIssue": "雇入時健康診断の常時使用要件",
+          "status": "verified",
+          "sourceKey": "26q9-safety-rules-43"
+        }
+      ],
+      "otherChoiceEvidenceKeys": [
+        "26q9-safety-59",
+        "26q9-safety-rules-35",
+        "26q9-dispatch-45"
+      ]
+    },
+    {
+      "year": 2026,
+      "questionNumber": 10,
+      "officialAnswer": "B",
+      "dispositions": [
+        {
+          "priorIssue": "安衛法施行令22条3項の有害物",
+          "status": "verified",
+          "sourceKey": "26q10-safety-decree-22"
+        },
+        {
+          "priorIssue": "採用選考時の健康診断の目的",
+          "status": "verified",
+          "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai/hourei_seido/kosei/kensin.html"
+        },
+        {
+          "priorIssue": "安衛則50条の3の基準日時点効力",
+          "status": "verified",
+          "sourceKey": "26q10-safety-rules-50-3",
+          "revisionId": "347M50002000032_20260401_508M60000100003"
+        },
+        {
+          "priorIssue": "健診費用と受診時間賃金の混同",
+          "status": "summary_and_choice_B_revised",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/1.html"
+        }
+      ],
+      "otherChoiceEvidenceKeys": [
+        "26q10-safety-rules-13",
+        "26q10-safety-rules-45",
+        "26q10-safety-rules-48",
+        "26q10-safety-rules-50-2"
+      ]
     }
   ],
-  "heldRoukiQuestions": ["2026-Q2", "2026-Q5", "2026-Q7", "2025-Q1", "2025-Q7", "2025-Q9"],
-  "heldAnswerDisagreementsOutsideRouki": ["2026-rousai-Q6", "2026-rousai-Q7", "2025-rousai-Q7"]
+  "heldRoukiQuestions": [
+    "2026-Q2",
+    "2026-Q7",
+    "2025-Q1",
+    "2025-Q7"
+  ],
+  "heldAnswerDisagreementsOutsideRouki": [
+    "2026-rousai-Q6",
+    "2026-rousai-Q7",
+    "2025-rousai-Q7"
+  ]
 }
