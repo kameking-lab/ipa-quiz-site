@@ -1,0 +1,74 @@
+{
+  "sourcePacketSha256": "6caba4e531c2f8b9ce7cbf0686f9a19aa7e63b470dc8859889f9e71a84d1eb28",
+  "officialOriginalCount": 6,
+  "officialAnswerFieldCount": 6,
+  "actualServedSonnet55Count": 6,
+  "localGoOriginalCount": 6,
+  "publicationGate": "HOLD_UNTIL_SITE_FIGURES_AND_REQUIRED_CI",
+  "scopeBoundary": "2026 upper machine Q9-14 only; Q1-8 raw unchanged and Q15+ separate.",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/third/qa/",
+  "rows": [
+    {
+      "scope": "machine-q09",
+      "officialAnswer": 3,
+      "sourceImageSha256": "26e4a3e14fcc0faa1a437814727c7684805c9a3690da6a70ed56527e3e6bf18f",
+      "reviewedCandidateSha256": "0c6795d95b5057301a922b41be57798a1f7a6c2df66beed2f895ecf6beb6e3f0",
+      "actualServedReceiptSha256": "511888df362ea987232ba764640c030f284e6858f7ab92e4d08dd0395f767a38",
+      "independentCheck": "Four 100kVA units form two V-V sets: 2*sqrt(3)*100/300 = 1.1547005; option 3 (1.15).",
+      "editorialCorrections": [],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    },
+    {
+      "scope": "machine-q10",
+      "officialAnswer": 5,
+      "sourceImageSha256": "d0d2918ccd38792a730ad509714609bcf262b95b5f1a227258b81975b10b5d08",
+      "reviewedCandidateSha256": "e39478f1cd846f6555911bae5a5ace9a70617ae162edb80eb7b751d9e0bdb292",
+      "actualServedReceiptSha256": "ee31044f68e3dbbcacdd45f0789d15c5d2baf0789cdd430c8b0c16d08a98c790",
+      "independentCheck": "Official image: bipolar near-constant source current with delayed reversals; only the four-thyristor bridge with large smoothing inductor (diagram 5) fits.",
+      "editorialCorrections": [
+        "Removed unsupported pixel-derived firing-angle estimate; preserved full official circuit/waveform image."
+      ],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    },
+    {
+      "scope": "machine-q11",
+      "officialAnswer": 4,
+      "sourceImageSha256": "306889109e15b2ce5da0909aa0fa500d869984a9655fa34a2abb5275aaa9f572",
+      "reviewedCandidateSha256": "311265e9553ef16b6d4dbd1f4dfa4b91b355e98bc054fa87c8e0e0b7e968ca8b",
+      "actualServedReceiptSha256": "ccb5bb5d3e4e8b2d8c2b4dbbdf336957fe5b4ba76aacd6e192b842619797dd48",
+      "independentCheck": "Independent arithmetic: 1000kg*9.8m/s2*0.5m/s/0.90 = 5444.44W, nearest 5.5kW option 4.",
+      "editorialCorrections": [],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    },
+    {
+      "scope": "machine-q12",
+      "officialAnswer": 3,
+      "sourceImageSha256": "c8cbfd7534457dc4f4d82271ca126e15e5237b8e771e2398cddc5bd19e3c8cb3",
+      "reviewedCandidateSha256": "f8bb134501f6dbf23b0bb17f2d09df960ce9dd969f6dfc5ec380b95a9b20df7c",
+      "actualServedReceiptSha256": "1a520ea4c0a501aeb5406f724fabfca86d45bc6c2002ec4bf6086a914965c728",
+      "independentCheck": "Official image and key: electric double-layer capacitor has long cycle life versus lithium-ion; false choice 3.",
+      "editorialCorrections": [],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    },
+    {
+      "scope": "machine-q13",
+      "officialAnswer": 4,
+      "sourceImageSha256": "d5eac15af495bebf9d27e0f069a2124d3660a5467c125f50cb8ce999d6287818",
+      "reviewedCandidateSha256": "7f79c44e264f815b605d5dcea7a8e53816844b244deb39f5651e0d9eb88f9591",
+      "actualServedReceiptSha256": "5765f2b4d3dfcad82362e1df09ccd8df4148b0ce5881108d349899b6b6d5ac1f",
+      "independentCheck": "Block: e=R-y, y=e/(jωT2), C=(T1/T2)e+y; C/R=(1+jωT1)/(1+jωT2), option 4.",
+      "editorialCorrections": [],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    },
+    {
+      "scope": "machine-q14",
+      "officialAnswer": 5,
+      "sourceImageSha256": "774ec4f15f3490d119c5ae88f70e9af8b88a2dc581a03ff3897d13d650e0d01b",
+      "reviewedCandidateSha256": "c9b6689fc2a6d71e37b2ea25ba51a050fad98d37d1fd6dacd3c483d7b4544fe6",
+      "actualServedReceiptSha256": "12cee367b18e9f523547ea52acefe9cb1f703c8012fcc616f5113ac0375075f5",
+      "independentCheck": "Radix arithmetic: 0x3D=61=0b111101, while claimed 0b111011=59; false choice 5.",
+      "editorialCorrections": [],
+      "localStatus": "GO_LOCAL_CANDIDATE"
+    }
+  ]
+}
