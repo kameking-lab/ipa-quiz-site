@@ -12,23 +12,25 @@ import type { ChoiceKey } from "@/lib/questions/types";
 import { EXAM_DESCRIPTIONS, examMetaDescription } from "@/lib/seo/exam-meta";
 
 const evidence = path.join(process.cwd(), "docs/evidence/nurse10-20261010");
-const readJson = <T,>(file: string): T => JSON.parse(readFileSync(path.join(evidence, file), "utf8")) as T;
+const evidenceQ6to10 = path.join(process.cwd(), "docs/evidence/nurse-q6-10-20261010");
+const readJson = <T,>(file: string, dir = evidence): T => JSON.parse(readFileSync(path.join(dir, file), "utf8")) as T;
 
-type Transcript = { round: number; session: string; qNumber: number; stem: string; choices: Record<"1" | "2" | "3" | "4", string>; officialAnswer: string }[];
+type Transcript = { round: number; session: string; qNumber: number; stem: string; choices: Record<"1" | "2" | "3" | "4", string>; officialAnswer: string; pdfPage?: number }[];
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const YEAR_OF_ROUND: Record<number, number> = { 115: 2025, 114: 2024 };
-const SCOPE = "第115・114回 午前必修の一部10問収録";
+const SCOPE = "第115・114回 午前必修の一部20問収録";
 const norm = (s: string) => s.normalize("NFKC").replace(/\s+/g, "");
 const transcriptA = readJson<Transcript>("transcriptA.json");
 const transcriptB = readJson<Transcript>("transcriptB.json");
+const transcriptQ6to10 = readJson<Transcript>("transcript-q6-10.json", evidenceQ6to10);
 
-describe("看護師国家試験（第115回・第114回 午前 問1〜5のみ）", () => {
-  it("範囲: 各回の午前 問1〜5だけを収録し、計10問・40肢", () => {
+describe("看護師国家試験（第115回・第114回 午前 問1〜10のみ）", () => {
+  it("範囲: 各回の午前 問1〜10だけを収録し、計20問・80肢", () => {
     const keys = KANGOSHI_QUESTIONS.map((q) => `${q.year}-${q.session}-${q.qNumber}`).sort();
-    expect(keys).toEqual([2024, 2025].flatMap((y) => [1, 2, 3, 4, 5].map((n) => `${y}-am-${n}`)).sort());
-    expect(KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(40);
-    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi")).toHaveLength(10);
-    expect(new Set(KANGOSHI_QUESTIONS.map((q) => q.id)).size).toBe(10);
+    expect(keys).toEqual([2024, 2025].flatMap((y) => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `${y}-am-${n}`)).sort());
+    expect(KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(80);
+    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi")).toHaveLength(20);
+    expect(new Set(KANGOSHI_QUESTIONS.map((q) => q.id)).size).toBe(20);
     expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2024, end: 2025 });
   });
 
@@ -50,6 +52,20 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜5のみ）
     }
   });
 
+  it("転記（問6〜10）: 公開文面・正答・ページ位置が証跡の転記と一致する", () => {
+    expect(transcriptQ6to10).toHaveLength(10);
+    for (const t of transcriptQ6to10) {
+      expect(t.qNumber).toBeGreaterThanOrEqual(6);
+      const q = KANGOSHI_QUESTIONS.find((x) => x.year === YEAR_OF_ROUND[t.round] && x.qNumber === t.qNumber)!;
+      expect(q.question).toBe(t.stem);
+      KEYS.forEach((k, i) => expect(q.choices?.[k]).toBe(t.choices[String(i + 1) as "1"]));
+      expect(q.answer).toBe(KEYS[Number(t.officialAnswer) - 1]);
+      expect(q.officialAnswerNumber).toBe(t.officialAnswer);
+      expect(q.sourcePdfUrl.endsWith(`#page=${t.pdfPage}`)).toBe(true);
+      expect(q.sourceAttribution).toContain(`問題PDF ${t.pdfPage}ページ`);
+    }
+  });
+
   it("解説・出典: 4肢すべてに理由があり、正答肢だけが「正しい」。出典と加工表示を各問に持つ", () => {
     for (const q of KANGOSHI_QUESTIONS) {
       const round = q.year === 2025 ? 115 : 114;
@@ -63,8 +79,8 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜5のみ）
       expect(q.sourceAttribution).toContain(`午前 問${q.qNumber}`);
       expect(q.sourceAttribution).toContain("加工");
       expect(q.sourceAttribution).toContain("厚生労働省とは関係ありません");
-      expect(q.sourcePdfUrl).toMatch(round === 115 ? /tp260424-05a_01\.pdf$/ : /tp250428-05a_01\.pdf$/);
-      expect(q.sourceAnswerUrl).toMatch(round === 115 ? /tp260424-05seitou\.pdf$/ : /tp250428-05seitou\.pdf$/);
+      expect(q.sourcePdfUrl).toMatch(round === 115 ? /tp260424-05a_01\.pdf(#page=\d+)?$/ : /tp250428-05a_01\.pdf(#page=\d+)?$/);
+      expect(q.sourceAnswerUrl).toMatch(round === 115 ? /tp260424-05seitou\.pdf(#page=1)?$/ : /tp250428-05seitou\.pdf(#page=1)?$/);
       expect(q.license).toBe("MHLW-attributed");
       expect(isPracticeReadyQuestion(q)).toBe(true);
     }
@@ -80,7 +96,7 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜5のみ）
     expect(entry.status).toBe("live");
     expect(entry.reuseSummary).toContain(SCOPE);
     expect(entry.reuseSummary).not.toMatch(/許諾(を)?取得済み/);
-    const copies = [entry.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 10)];
+    const copies = [entry.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", 20)];
     for (const text of copies) {
       expect(text).not.toMatch(/全\s*240\s*問|全問(収録|対応)|全試験対応|全回分/);
     }

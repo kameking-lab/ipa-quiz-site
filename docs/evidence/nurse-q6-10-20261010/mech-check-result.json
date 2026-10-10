@@ -1,0 +1,27 @@
+{
+ "questions": 10,
+ "choices": 40,
+ "answersFromPdf": {
+  "115-6": "4",
+  "115-7": "4",
+  "115-8": "3",
+  "115-9": "1",
+  "115-10": "3",
+  "114-6": "2",
+  "114-7": "1",
+  "114-8": "2",
+  "114-9": "2",
+  "114-10": "3"
+ },
+ "fails": [],
+ "glyphDropNotes": [
+  "(114, 8) choice1: single-digit glyph has no text-layer mapping (page shows '．歳'); value read from page image",
+  "(114, 8) choice2: single-digit glyph has no text-layer mapping (page shows '．歳'); value read from page image",
+  "(114, 8) choice3: single-digit glyph has no text-layer mapping (page shows '．歳'); value read from page image",
+  "(114, 9) choice1: matched only after glyph-drop normalization (visually confirmed on page image)",
+  "(114, 9) choice2: matched only after glyph-drop normalization (visually confirmed on page image)",
+  "(114, 9) choice3: matched only after glyph-drop normalization (visually confirmed on page image)",
+  "(114, 9) choice4: matched only after glyph-drop normalization (visually confirmed on page image)",
+  "(114, 10) stem: matched only after glyph-drop normalization (visually confirmed on page image)"
+ ]
+}
