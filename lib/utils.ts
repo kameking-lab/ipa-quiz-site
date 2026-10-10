@@ -49,6 +49,7 @@ export const EXAM_LABELS: Record<string, string> = {
   sharoushi: "社会保険労務士",
   kangoshi: "看護師",
   yakuzaishi: "薬剤師",
+  "rigaku-ryohoshi": "理学療法士",
   "ahaki-anma": "あん摩マッサージ指圧師",
   "ahaki-hari-kyu": "はり師・きゅう師",
 };
