@@ -36,8 +36,19 @@
       ],
       "otherChoiceEvidenceKeys": ["25q8-safety-29", "25q8-safety-rules-2", "25q8-safety-rules-11", "25q8-safety-rules-15", "25q8-safety-rules-12-3"],
       "administrativeInterpretationUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2043&dataType=1&pageNo=1"
+    },
+    {
+      "year": 2025,
+      "questionNumber": 10,
+      "officialAnswer": "E",
+      "dispositions": [
+        {"priorIssue": "安衛則587条の溶鉱炉", "status": "verified", "sourceKey": "25q10-safety-rules-587"},
+        {"priorIssue": "塩素の第二類物質区分・測定義務除外", "status": "verified_and_choice_D_revised", "annexKeys": ["25q10-decree-appdx3", "25q10-chem-rules-appdx1"], "sourceKey": "25q10-chem-rules-36"},
+        {"priorIssue": "粉じん則25条の特定粉じん作業", "status": "verified", "sourceKey": "25q10-dust-rules-25"}
+      ],
+      "otherChoiceEvidenceKeys": ["25q10-dust-rules-26", "25q10-safety-rules-588", "25q10-safety-rules-590", "25q10-safety-rules-607", "25q10-oxygen-rules-3"]
     }
   ],
-  "heldRoukiQuestions": ["2026-Q2", "2026-Q5", "2026-Q7", "2025-Q1", "2025-Q7", "2025-Q9", "2025-Q10"],
+  "heldRoukiQuestions": ["2026-Q2", "2026-Q5", "2026-Q7", "2025-Q1", "2025-Q7", "2025-Q9"],
   "heldAnswerDisagreementsOutsideRouki": ["2026-rousai-Q6", "2026-rousai-Q7", "2025-rousai-Q7"]
 }
