@@ -724,6 +724,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     }, {
       session: "kenpo", urlSlug: "kenpo", expectedQuestions: 10, label: "択一式・健康保険法（収録中の一部10問）",
       categories: ["健康保険法"],
+    }, {
+      session: "ippan", urlSlug: "ippan", expectedQuestions: 10, label: "択一式・一般常識（収録中の一部10問）",
+      categories: ["労務管理その他の労働及び社会保険に関する一般常識"],
     }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
