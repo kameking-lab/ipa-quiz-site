@@ -24,10 +24,10 @@ describe("frozen next nurse and labor consultant bundle",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
     for(const item of proof.previousNurse281ObjectHashes)expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
     for(const item of proof.previousSharoushi16ObjectHashes)expect(hash(SHAROUSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(expectedNurseTotal + am7.addedOriginals);expect(SHAROUSHI_QUESTIONS).toHaveLength(40);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(expectedNurseTotal + am7.addedOriginals);expect(SHAROUSHI_QUESTIONS).toHaveLength(62);
     expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(expectedChoiceTotal);
-    expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(200);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(expectedNurseTotal + am7.addedOriginals);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(40);
+    expect(SHAROUSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(310);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(expectedNurseTotal + am7.addedOriginals);expect(new Set(SHAROUSHI_QUESTIONS.map(q=>q.id)).size).toBe(62);
     for(const id of proof.excludedLaterGoIds)expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(afternoonGo.addedIds.includes(id));
     expect(new Set(laterIds).size).toBe(laterIds.length);
     expect(laterIds).toHaveLength(laterGos.reduce((n, batch) => n + batch.addedOriginals, 0));

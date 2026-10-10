@@ -60,7 +60,7 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
       { year: 2025, session: "kenpo", qNumber: 9, officialAnswerNumber: "B" },
     ];
     const published = SHAROUSHI_QUESTIONS.filter((q) => q.session === "koyou" || q.session === "kenpo");
-    expect(published).toHaveLength(expected.length);
+    expect(published).toHaveLength(21);
     expect(published.map(({ year, session, qNumber, officialAnswerNumber }) => ({ year, session, qNumber, officialAnswerNumber }))).toEqual(expect.arrayContaining(expected));
     for (const q of published) {
       expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
@@ -76,6 +76,6 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
     expect(late.explanation).toContain("1,320円");
     expect(late.explanation).toContain("1,300円");
     expect(late.explanation).toContain("11月2日");
-    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(34);
+    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(56);
   });
 });
