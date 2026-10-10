@@ -20,7 +20,7 @@ describe("merged labor consultant and nurse routes", () => {
     expect(isValidElement<{poolIds: string[]; exam: string}>(client)).toBe(true);
     if (!isValidElement<{poolIds: string[]; exam: string}>(client)) throw Error("missing quiz client");
     expect(client.props.exam).toBe(exam);
-    const defaultQuestions = exam === "kangoshi" ? questions.filter((q) => q.session === "am") : questions;
+    const defaultQuestions = questions.filter((q) => q.session === (exam === "kangoshi" ? "am" : "gakka"));
     expect(client.props.poolIds.toSorted()).toEqual(defaultQuestions.map((q) => q.id).toSorted());
     for (const session of new Set(questions.map((q) => q.session))) {
       const sessionQuiz = await QuizPage({ searchParams: Promise.resolve({ exam, mode: "random", session }) });
