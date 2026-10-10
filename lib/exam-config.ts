@@ -707,14 +707,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  sharoushi: {
+    code: "sharoushi",
+    nameFull: "社会保険労務士試験",
+    urlSlug: "sharoushi",
+    level: "advanced",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "択一式（労働基準法及び労働安全衛生法・一部10問）",
+      categories: ["労働基準法", "労働安全衛生法"],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   kangoshi: {
     code: "kangoshi",
     nameFull: "看護師国家試験",
     urlSlug: "kangoshi",
     level: "basic",
-    // 収録は第115回・第114回の午前必修 問1〜5のみ（各回5問）。午前全体の問題数ではない。
+    // 収録は第115回・第114回の午前必修 問1〜10のみ（各回10問）。午前全体の問題数ではない。
     sessions: [{
-      session: "am", urlSlug: "am", expectedQuestions: 5, label: "午前（必修問題）",
+      session: "am", urlSlug: "am", expectedQuestions: 10, label: "午前（必修問題）",
       categories: ["必修問題"],
     }],
     seasons: ["annual"],
@@ -724,7 +736,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "kangoshi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
