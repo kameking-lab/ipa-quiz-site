@@ -1,0 +1,18 @@
+{
+  "scope": "FP1 2026 May applied Q61–65, 5 original questions / 14 answer fields",
+  "questionUrl": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_oyo.pdf",
+  "questionSha256": "fd7843fc2082e074bedecb82a9fc11c45f08c0d57de2146ee145c92cd6f2df8d",
+  "answerUrl": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+  "reuseConditionsUrl": "https://www.kinzai.or.jp/ginou/license_terms.html",
+  "lawReferenceDate": "2025-10-01",
+  "reviewedCandidateSha256": "74ec97ba793f6040b476d09be3defb127913bc6dd37363b7cba81145ea376ade",
+  "originals": [61,62,63,64,65],
+  "officialAnswerFields": 14,
+  "workingRequired": {"61":true,"62":false,"63":false,"64":true},
+  "slotNormalizations": ["Q65② official notation 市街化（区域） means blank 市街化, fixed suffix 区域","Q65④ official 1億6,000万円 expressed as numeric slot 16,000 with unit 万円"],
+  "mechanical": {"officialAnswersMatched":14,"arithmetic":"PASS","fullInstructionsAndConditions":"PASS after local transcription repairs","existingQ54to60Changed":0},
+  "independentReview": {"scope":"only unresolved dated primary claims 61-1, 62-1, 64-1; repaired instruction and answer attribution","verdict":"GO","method":"Codex direct inspection of saved primary PDFs and dated e-Gov law text; no new full-model audit"},
+  "modelProvenance": {"initialDraftActualModel":"claude-opus-5-5","focusedReviewActualModel":"claude-sonnet-5-5","transport":"existing firstParty Max public-only runner","savedSonnetHolds":"unchanged; three primary-reader limitations subsequently resolved by direct independent inspection","newExternalApiIntroduced":false},
+  "publicationGates": {"transcription":"approved","explanation":"approved","law":"confirmed"},
+  "permissionNote": "Source links identify origin and conditions; this receipt does not assert a separately acquired permission."
+}
