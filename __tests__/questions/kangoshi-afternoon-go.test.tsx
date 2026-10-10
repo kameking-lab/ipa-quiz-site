@@ -1,0 +1,55 @@
+import { createHash } from "node:crypto";
+import { describe, expect, it } from "vitest";
+import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import proof from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
+import sourceCandidates from "@/docs/evidence/nurse-afternoon-go-20261010/SOURCE-CANDIDATES.json";
+
+const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([key, item]) => [key, canonical(item)])) : value;
+const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(canonical(value))).digest("hex");
+const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
+
+describe("nursing afternoon post-PR662 GO delta", () => {
+  it("retains all 387 originals unchanged and registers only the 29 frozen GO IDs", () => {
+    expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
+    expect(proof.previous387ObjectHashes).toHaveLength(387);
+    for (const old of proof.previous387ObjectHashes) expect(hash(byId.get(old.id)), old.id).toBe(old.sha256);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(416);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(416);
+    expect(proof.addedIds).toHaveLength(29);
+    expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
+    expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);
+  });
+
+  it("preserves original stem, every choice, the official key, shared case and source on each addition", () => {
+    for (const batch of proof.batches) for (const check of batch.sourceChecks) {
+      const question = byId.get(check.id);
+      expect(question, check.id).toBeDefined();
+      expect(hash(question), check.id).toBe(check.objectSha256);
+      expect(question?.session).toBe("pm");
+      expect(question?.year).toBe(check.id.includes("-2024-") ? 2024 : 2025);
+      expect(question?.question.endsWith(check.sourceStem)).toBe(true);
+      expect(Object.values(question?.choices ?? {})).toEqual(check.sourceChoices);
+      expect(question?.officialAnswerNumber).toBe(check.officialAnswerNumbers.join(""));
+      const answers = Array.isArray(question?.answer) ? question.answer : [question?.answer];
+      expect(answers.map(answer => String(Object.keys(question?.choices ?? {}).indexOf(answer as string) + 1))).toEqual(check.officialAnswerNumbers);
+      expect(Object.keys(question?.choiceExplanations ?? {}).sort()).toEqual(Object.keys(question?.choices ?? {}).sort());
+      expect(question?.sourcePdfUrl).toContain("mhlw.go.jp");
+      expect(question?.sourceAnswerUrl).toContain("mhlw.go.jp");
+      expect(question?.hasImage).toBe(false);
+      expect(isPracticeReadyQuestion(question!)).toBe(true);
+    }
+    const multi = byId.get("kangoshi-2024-annual-pm-q95");
+    expect(multi?.answer).toEqual(["エ", "オ"]);
+    expect(multi?.requiredSelections).toBe(2);
+    expect(multi?.officialAnswerNumber).toBe("45");
+  });
+
+  it("keeps every unresolved and figure-dependent original out of the quiz registry", () => {
+    for (const held of proof.remainingHeldByScope) {
+      const year = held.scope.startsWith("114-") ? 2024 : 2025;
+      for (const qNumber of held.questionNumbers) expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
+    }
+    for (const id of proof.sourceConflictWithoutDraft) expect(byId.has(id)).toBe(false);
+  });
+});
