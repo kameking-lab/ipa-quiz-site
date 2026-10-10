@@ -1,23 +1,41 @@
 import { describe, expect, it } from "vitest";
 import { HOKENSHI_QUESTIONS } from "@/data/questions/hokenshi";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { JOSANSHI_QUESTIONS } from "@/data/questions/josanshi";
 import manifest from "@/docs/evidence/medical44-prepublication-20261010/MANIFEST.json";
+import hokenshiRaw from "@/data/questions/hokenshi/medical44-prepublication.json";
+import josanshiRaw from "@/data/questions/josanshi/medical44-prepublication.json";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
-const questions = [...HOKENSHI_QUESTIONS, ...JOSANSHI_QUESTIONS];
+const questions = [...hokenshiRaw, ...josanshiRaw];
+const gateReady = [...HOKENSHI_QUESTIONS, ...JOSANSHI_QUESTIONS];
 const choices = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("medical Q45–55 prepublication candidate", () => {
-  it("preserves the exact two-qualification identity set behind a non-live catalog gate", () => {
-    expect(HOKENSHI_QUESTIONS).toHaveLength(22);
-    expect(JOSANSHI_QUESTIONS).toHaveLength(22);
+  it("preserves the exact two-qualification identity set with an unchanged historical source manifest", () => {
+    expect(hokenshiRaw).toHaveLength(22);
+    expect(josanshiRaw).toHaveLength(22);
     expect(questions).toHaveLength(44);
     expect(new Set(questions.map(question => question.id)).size).toBe(44);
-    expect(isExamPublished("hokenshi")).toBe(false);
-    expect(isExamPublished("josanshi")).toBe(false);
+    expect(isExamPublished("hokenshi")).toBe(true);
+    expect(isExamPublished("josanshi")).toBe(true);
     expect(manifest.publicationGo).toBe(false);
     expect(manifest.sourceCandidateSha256).toBe("e62cd415676bd9f029f879d39dac22ce436cd719b1ca3d83a8e21448e5766a34");
     expect(questions.map(question => question.id).sort()).toEqual(manifest.questions.map(question => question.id).sort());
+  });
+
+  it("stages only the 34 structurally ready originals in the partial live registry", () => {
+    expect(HOKENSHI_QUESTIONS).toHaveLength(16);
+    expect(JOSANSHI_QUESTIONS).toHaveLength(18);
+    expect(gateReady).toHaveLength(34);
+    expect(gateReady.every(question => question.needsReview === false)).toBe(true);
+    expect(gateReady.map(question => question.id).sort()).toEqual(
+      questions.filter(question => !question.needsReview).map(question => question.id).sort(),
+    );
+    expect(isExamPublished("hokenshi")).toBe(true);
+    expect(isExamPublished("josanshi")).toBe(true);
+    expect(QUESTIONS_BY_EXAM.hokenshi?.map(question => question.id)).toEqual(HOKENSHI_QUESTIONS.map(question => question.id));
+    expect(QUESTIONS_BY_EXAM.josanshi?.map(question => question.id)).toEqual(JOSANSHI_QUESTIONS.map(question => question.id));
   });
 
   it("retains every official key, all choices, selection count and source", () => {

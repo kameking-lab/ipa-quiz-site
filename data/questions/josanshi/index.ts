@@ -1,7 +1,9 @@
 import type { Question } from "@/lib/questions/types";
 import candidate from "./medical44-prepublication.json";
 
-/** Fixed source-literal Q45–55 candidate; publication remains catalog-gated. */
-export const JOSANSHI_QUESTIONS: Question[] = (candidate as Question[]).sort(
+/** Export only source-complete questions to the partial live catalog. */
+export const JOSANSHI_QUESTIONS: Question[] = (candidate as Question[]).filter(
+  question => question.needsReview === false,
+).sort(
   (a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber,
 );
