@@ -29,9 +29,18 @@ describe("home directory", () => {
 
   it("links every safety qualification hub", () => {
     const safety = domains.find((d) => d.id === "safety");
-    const hrefs = new Set(safety?.featured.map((i) => i.href));
-    for (const hub of QUALIFICATION_HUBS) expect(hrefs).toContain(qualificationHubPath(hub.slug));
-    expect(hrefs).toContain("/eisei1");
+    const featured = safety?.featured ?? [];
+    const hrefs = featured.map((item) => item.href);
+    for (const hub of QUALIFICATION_HUBS) {
+      expect(hrefs.filter((href) => href === qualificationHubPath(hub.slug))).toHaveLength(1);
+    }
+    expect(hrefs).not.toContain("/eisei1");
+    expect(hrefs).not.toContain("/eisei2");
+    for (const name of ["第一種衛生管理者", "第二種衛生管理者"]) {
+      const entries = featured.filter((item) => item.name === name);
+      expect(entries).toHaveLength(1);
+      expect(entries[0]?.questionCount).toBeGreaterThan(0);
+    }
     for (const chip of safety?.compact ?? []) {
       expect(chip.href).toMatch(/^\/e-learning\/exams\?group=lckohyo&subject=/);
       expect(chip.periodLabel).toMatch(/^[1-9]\d*回分$/);

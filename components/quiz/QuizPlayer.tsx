@@ -476,10 +476,6 @@ export function QuizPlayer({
 
             {revealed && (
               <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-24 space-y-4 outline-none" aria-label="解答結果">
-                <div className="sticky top-24 z-20 flex min-h-14 items-center justify-between gap-3 border border-border bg-background px-3 py-2 shadow-sm sm:hidden">
-                  <p className="text-sm font-semibold">{isCorrect ? "正解です" : `正解は ${answerKey}`}</p>
-                  <Button onClick={goNext} className="min-h-11">{index + 1 >= total ? "結果を見る" : "次の問題へ"}</Button>
-                </div>
                 <ExplanationCard
                   question={question}
                   selected={selectionLabel}
