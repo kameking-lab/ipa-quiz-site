@@ -1,0 +1,30 @@
+{
+  "baseHead": "017fb6f3939ea72fe77ef46ee788040d08ec9438",
+  "q114MergeHead": "4d6937f5c3997a9ed2609777379683f82b3e474f",
+  "candidateOriginals": 463,
+  "candidateChoiceFields": 1914,
+  "yearSessionCounts": {
+    "2024-am": 118,
+    "2024-pm": 113,
+    "2025-am": 117,
+    "2025-pm": 115
+  },
+  "previous2024OriginalsUnchanged": 230,
+  "previous2024CanonicalJsonSha256": "f38c1ecbd29221c09e34deffe112775cf1e8341c2aa6cbc475bc74056d1154b9",
+  "current2025CanonicalJsonSha256": "ad910c517d9ced7a9086bb82465b624e6f35d33d85c310a99cc24b6215b91d44",
+  "base2025CanonicalJsonSha256": "ad910c517d9ced7a9086bb82465b624e6f35d33d85c310a99cc24b6215b91d44",
+  "q99CanonicalJsonSha256": "25dd2e8141518fa34f86f25cc4e514e3c0f168e19ba48500a888e5bbeb953f99",
+  "q114CanonicalJsonSha256": "78696f2abcc9a434cb99e71c938455939c5f5034cfe62d9876eddfc275003acb",
+  "addedIds": [
+    "kangoshi-2024-annual-am-q114"
+  ],
+  "deletedIds": [],
+  "q99Unchanged": true,
+  "old2024ObjectsUnchanged": true,
+  "heldQ112Absent": true,
+  "otherProductDataChanged": false,
+  "tests": "12 targeted nursing files: all 38 tests pass after Q114 historical HOLD adjustment",
+  "typecheck": "tsc --noEmit --incremental false PASS",
+  "lint": "targeted changed code and tests PASS",
+  "publication": "local commit only, no push"
+}
