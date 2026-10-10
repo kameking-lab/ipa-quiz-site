@@ -103,6 +103,7 @@ function toPublic(q: Question) {
     season: q.season,
     qNumber: q.qNumber,
     type: q.type,
+    ...(q.type === "numeric" ? { numericAnswer: q.numericAnswer } : {}),
     category: q.category,
     topicTags: q.topicTags,
     difficulty: q.difficulty,

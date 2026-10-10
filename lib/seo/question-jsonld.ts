@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { formatNumericAnswer } from "@/lib/questions/numeric";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -189,7 +190,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,

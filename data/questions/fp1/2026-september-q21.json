@@ -1,0 +1,48 @@
+[
+  {
+    "id": "fp1-2026-september-gakka-q21",
+    "exam": "fp1",
+    "session": "gakka",
+    "year": 2026,
+    "season": "september",
+    "qNumber": 21,
+    "examDate": "2026-09-13",
+    "type": "multiple-choice",
+    "category": "金融資産運用",
+    "topicTags": [
+      "オプション取引",
+      "ノックアウト条項"
+    ],
+    "difficulty": 3,
+    "question": "オプション取引の一般的な特徴に関する次の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "原資産価格が上昇すると、コール・オプションおよびプット・オプションのオプショ ン料（プレミアム）は、いずれも高くなる。",
+      "イ": "ノックアウト条項が付されたオプションとノックアウト条項が付されていないオプ ションを比較すると、他の条件が同一であれば、通常、ノックアウト条項が付された オプションのほうがオプション料（プレミアム）は低い。",
+      "ウ": "カラーの買いは、キャップの買いとフロアの買いを組み合わせた取引であり、買い 手は売り手にオプション料（プレミアム）を支払うことにより、原資産である金利が あらかじめ設定した上限金利を上回った場合や下限金利を下回った場合に、その差額 を受け取ることができる。",
+      "エ": "オプション取引において、満期日にのみ権利行使が可能なものをアメリカンタイプ といい、権利行使期間中であればいつでも権利行使が可能なものをヨーロピアンタイ プという。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ノックアウト条項付きオプションは、条件を満たすと権利が消滅するため買い手に不利で、他の条件が同じならプレミアムは低くなる。したがって2が適切。",
+    "choiceExplanations": {
+      "ア": "不適切。原資産価格が上昇すると、コールのプレミアムは上がるがプットは下がる。両方が高くなるわけではない。",
+      "イ": "適切。権利消滅リスクがある分、買い手の負担するプレミアムは低くなるのが通常。",
+      "ウ": "不適切。カラーの買いは「キャップの買い＋フロアの売り」の組合せ。フロアも買うとしている点が誤り。買い手はフロア売りのプレミアム受取りで、キャップ購入コストを軽減する。",
+      "エ": "不適切。アメリカンとヨーロピアンの定義が逆。満期日のみ行使できるのがヨーロピアン、期間中いつでも行使できるのがアメリカン。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kinzai.or.jp/uploads/lib/question/202609/fp01_g_kiso.pdf",
+    "sourceAnswerUrl": "https://www2.kinzai.or.jp/data/202609/fp01_g.pdf",
+    "sourceQuestionPage": 14,
+    "sourceAnswerPage": 1,
+    "sourceAttribution": "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年9月）。改行・空白を整形し、選択肢番号1～4をア～エへ変更。",
+    "officialReferenceUrls": [
+      "https://www.kinzai.or.jp/uploads/lib/question/202609/fp01_g_kiso.pdf#page=14",
+      "https://www2.kinzai.or.jp/data/202609/fp01_g.pdf#page=1"
+    ],
+    "license": "KINZAI-reuse-with-attribution",
+    "lawReferenceDate": "2026-04-01",
+    "lastUpdated": "2026-10-10"
+  }
+]

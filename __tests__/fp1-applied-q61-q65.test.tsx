@@ -17,7 +17,7 @@ describe("FP1 May complete original applied scope", () => {
       [["5,440","万円"],["957","万円"],["368","万円"]],
       [["20","万円"],["市街化","区域"],["30","日"],["16,000","万円"],["3","年"],["4","カ月"]],
     ]);
-    expect(generateStaticParams()).toHaveLength(15);
+    expect(generateStaticParams().filter(({ edition }) => edition === "202605")).toHaveLength(15);
     for(const q of questions) expect(q).not.toHaveProperty("choices");
   });
   it("retains full question instructions and answers with optional working", () => {

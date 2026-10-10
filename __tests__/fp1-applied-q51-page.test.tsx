@@ -26,7 +26,7 @@ describe("FP1 applied native reader", () => {
   });
 
   it("exposes questions51,52 and53 and uses its own canonical rather than the MCQ route", async () => {
-    expect(generateStaticParams()).toEqual(Array.from({ length: 15 }, (_, i) => ({ edition: "202605", number: String(51 + i) })));
+    expect(generateStaticParams().filter(({ edition }) => edition === "202605")).toEqual(Array.from({ length: 15 }, (_, i) => ({ edition: "202605", number: String(51 + i) })));
     const metadata = await generateMetadata({ params: Promise.resolve({ edition: "202605", number: "51" }) });
     expect(metadata.alternates?.canonical).toBe("/fp1/applied/202605/51");
     expect(metadata.description).toContain("2025-10-01");

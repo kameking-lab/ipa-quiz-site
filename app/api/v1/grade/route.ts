@@ -57,8 +57,10 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error: "unsupported",
-        message:
-          "現在 Public API では多肢選択問題（multiple-choice）のみ採点可能です。記述・論述問題は将来対応予定です。",
+        message: "Public API v1 は多肢選択問題のみ採点できます。数値記入・記述・論述問題は採点対象外です。",
+        questionType: q.type,
+        supportedQuestionTypes: ["multiple-choice"],
+        ...(q.type === "numeric" ? { numericAnswer: q.numericAnswer } : {}),
       },
       { status: 400, headers: buildRateLimitHeaders(rl) },
     );
