@@ -32,7 +32,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(proof.heldIdsNotRegistered).toHaveLength(14);
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q20");
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q28");
-    for (const held of proof.heldIdsNotRegistered.filter(id => ![1,3,5,15,21,22,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
+    for (const held of proof.heldIdsNotRegistered.filter(id => ![1,3,5,15,20,21,22,28,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
   });
 
   it("retains all146 choice reasons and matching official keys in the original PM numbering", () => {

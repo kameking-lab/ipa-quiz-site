@@ -104,6 +104,7 @@ const QuestionSchema = z.object({
   scoringCriteria: z.string().optional(),
   hasImage: z.boolean(),
   imageUrls: z.array(z.string()).optional(),
+  imageAltTexts: z.array(z.string().trim().min(1)).optional(),
   choiceImageUrls: z.record(z.string(), z.string()).optional(),
   sourcePdfUrl: z.string().url(),
   sourceAnswerUrl: z.string().url().optional(),
