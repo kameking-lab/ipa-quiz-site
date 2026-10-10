@@ -37,7 +37,7 @@ describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => 
     expect(pm.heldDrafts).toHaveLength(4);
     expect(pm.excludedBeforeDraft).toHaveLength(42);
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(482);
+    expect(all).toHaveLength(485);
     for (const record of [...pm.heldDrafts, ...pm.excludedBeforeDraft]) {
       const match = record.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;
       const year = match[2] === "61" || match[2] === "56" ? 2025 : 2024;
