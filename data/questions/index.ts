@@ -54,6 +54,8 @@ import { SHAROUSHI_QUESTIONS } from "./sharoushi";
 import { KANGOSHI_QUESTIONS } from "./kangoshi";
 import { YAKUZAISHI_QUESTIONS } from "./yakuzaishi";
 import { AHAKI_ANMA_QUESTIONS, AHAKI_HARI_KYUU_QUESTIONS } from "./ahaki";
+import { HOKENSHI_QUESTIONS } from "./hokenshi";
+import { JOSANSHI_QUESTIONS } from "./josanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -103,6 +105,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("yakuzaishi") ? { yakuzaishi: YAKUZAISHI_QUESTIONS } : {}),
   ...(isExamPublished("ahaki-anma") ? { "ahaki-anma": AHAKI_ANMA_QUESTIONS } : {}),
   ...(isExamPublished("ahaki-hari-kyu") ? { "ahaki-hari-kyu": AHAKI_HARI_KYUU_QUESTIONS } : {}),
+  ...(isExamPublished("hokenshi") ? { hokenshi: HOKENSHI_QUESTIONS } : {}),
+  ...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
