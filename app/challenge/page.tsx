@@ -1,62 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Calendar } from "lucide-react";
-import { ALL_QUESTIONS } from "@/data/questions";
-import { jstChallengeDate, dateSeed, pickDeterministic, DAILY_CHALLENGE_SIZE } from "@/lib/gamification/daily-challenge";
-import { DailyChallengeClient } from "./DailyChallengeClient";
-import type { Question } from "@/lib/questions/types";
-import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { redirect } from "next/navigation";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
+import type { ExamCode } from "@/lib/questions/types";
+import { getHomeDirectory } from "@/lib/home/home-directory";
+import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
+import "../home-study.css";
 
 export const metadata: Metadata = {
-  title: "デイリーチャレンジ",
-  description: "毎日 5 問の出題に挑戦してXPを獲得しよう。",
+  title: "資格を選んで過去問に挑戦",
+  description: "受験する資格を選んで、その資格の過去問に取り組めます。",
   alternates: { canonical: "/challenge" },
 };
 
-function isQualified(q: Question): boolean {
-  if (q.type !== "multiple-choice") return false;
-  if (q.hasImage) return false;
-  // デイリーチャレンジは1肢選択のUIのみ。「二つとも答えなさい」形式は出題しない。
-  if ((q.requiredSelections ?? 1) > 1) return false;
-  if (!isPracticeReadyQuestion(q)) return false;
-  if (!q.choices?.ア || !q.choices?.イ || !q.choices?.ウ || !q.choices?.エ) return false;
-  if (/次の表|以下の表|下の表|次の図|以下の図|下の図/.test(q.question)) return false;
-  return true;
-}
-
-export default function DailyChallengePage() {
-  const date = jstChallengeDate();
-  const seed = dateSeed(date);
-  const pool = ALL_QUESTIONS.filter(isQualified);
-  const picks = pickDeterministic(pool, DAILY_CHALLENGE_SIZE, seed);
-
-  return (
-    <main className="mx-auto w-full max-w-2xl px-4 py-6">
-      <Link
-        href="/ipa"
-        className="mb-3 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        試験選択へ戻る
-      </Link>
-      <header className="mb-6">
-        <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight">
-          <Calendar className="h-6 w-6 text-violet-500" />
-          デイリーチャレンジ
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {date} の問題 — 全問正解でボーナスXP獲得！
-        </p>
-      </header>
-      {picks.length === DAILY_CHALLENGE_SIZE ? (
-        <DailyChallengeClient questions={picks} date={date} />
-      ) : (
-        <div className="rounded-2xl border border-border bg-card p-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            出題候補が不足しているため、本日のチャレンジを生成できません。
-          </p>
-        </div>
-      )}
-    </main>
-  );
+export default async function DailyChallengePage({ searchParams }: { searchParams: Promise<{ exam?: string }> }) {
+  const { exam } = await searchParams;
+  if (exam && ALL_QUIZ_EXAM_CODES.includes(exam as ExamCode)) redirect(`/quiz?mode=random&exam=${encodeURIComponent(exam)}&limit=5`);
+  const domains = getHomeDirectory();
+  return <main className="study-home mx-auto w-full max-w-2xl px-5 py-8">
+    <Link href="/" className="study-text-link">トップへ戻る</Link>
+    <header className="study-heading mb-8"><h1>受ける資格の、過去問を。</h1><p className="study-caption">資格を選ぶと、その資格の問題だけを解けます。</p></header>
+    <HomeQualificationFinder domains={domains} directoryHref="/#home-directory-title" />
+  </main>;
 }

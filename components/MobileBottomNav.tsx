@@ -84,7 +84,12 @@ function isActive(pathname: string | null, tab: TabItem): boolean {
 export function MobileBottomNav() {
   const pathname = usePathname();
   const safety = pathname?.startsWith("/e-learning");
-  const tabs: TabItem[] = safety ? [
+  const homeTabs: TabItem[] = [
+    { href: "/#choose-qualification", label: "資格を選ぶ", icon: BookOpen, match: ["/"] },
+    { href: "/#home-directory-title", label: "収録資格", icon: ClipboardList, match: [] },
+    { href: "/transparency", label: "出典・運営", icon: FileText, match: ["/transparency"] },
+  ];
+  const tabs: TabItem[] = pathname === "/" ? homeTabs : safety ? [
     { href: "/e-learning/exams", label: "試験一覧", icon: BookOpen, match: ["/e-learning/exams"] },
     { href: "/e-learning/search", label: "検索", icon: Search, match: ["/e-learning/search"] },
     { href: "/e-learning/progress", label: "進捗・復習", icon: LineChart, match: ["/e-learning/progress"] },

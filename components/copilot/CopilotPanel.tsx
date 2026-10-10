@@ -1381,7 +1381,7 @@ export function CopilotMobileSheet({
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute inset-x-0 bottom-0 top-12 flex flex-col rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950">
+          <div className="absolute inset-x-0 bottom-0 top-12 flex min-h-0 flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950">
             <button
               onClick={() => setOpen(false)}
               className="mx-auto mt-2 flex w-16 items-center justify-center rounded-full bg-zinc-300 py-1 dark:bg-zinc-700"
@@ -1395,7 +1395,7 @@ export function CopilotMobileSheet({
               isCorrect={isCorrect}
               initialPrompt={initialPrompt}
               onClose={() => setOpen(false)}
-              className="rounded-t-2xl"
+              className="min-h-0 flex-1 rounded-t-2xl"
             />
           </div>
         </div>

@@ -246,7 +246,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/e-learning/exams",
         allLabel: "安全衛生の試験をすべて見る",
       },
-      [...byDomain("safety"), ...safetyItems()],
+      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...safetyItems()],
       safetyOtherItems(),
     ),
     domain(
