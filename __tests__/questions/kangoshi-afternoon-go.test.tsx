@@ -14,8 +14,8 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
     expect(proof.previous387ObjectHashes).toHaveLength(387);
     for (const old of proof.previous387ObjectHashes) expect(hash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(416);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(416);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(418);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(418);
     expect(proof.addedIds).toHaveLength(29);
     expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);
@@ -48,7 +48,10 @@ describe("nursing afternoon post-PR662 GO delta", () => {
   it("keeps every unresolved and figure-dependent original out of the quiz registry", () => {
     for (const held of proof.remainingHeldByScope) {
       const year = held.scope.startsWith("114-") ? 2024 : 2025;
-      for (const qNumber of held.questionNumbers) expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
+      for (const qNumber of held.questionNumbers) {
+        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58)) continue; // Verified original figures promoted in the next delta.
+        expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
+      }
     }
     for (const id of proof.sourceConflictWithoutDraft) expect(byId.has(id)).toBe(false);
   });
