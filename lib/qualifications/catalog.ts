@@ -477,9 +477,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第115・114回 午前必修の一部10問収録（各回の午前 問1〜5のみ、計10問・40肢）。厚生労働省の公式問題PDF・正答PDFを2名が独立に転記して機械照合し、全肢解説は独立の一次資料査読を経ている。出典と加工（改行・字間・番号書式の調整）を各問に表示する。一般掲載可否の確認はオーナー担当で、許諾取得の記録はない。",
+    reuseSummary: "第115・114回 午前必修の一部20問収録（各回の午前 問1〜10のみ、計20問・80肢）。問1〜5は厚生労働省の公式問題PDF・正答PDFを2名が独立に転記して機械照合し、全肢解説は独立の一次資料査読を経ている。問6〜10は公式正答PDFとの機械照合とページ画像の目視で転記を確認している。出典と加工（改行・字間・番号書式の調整）を各問に表示する。一般掲載可否の確認はオーナー担当で、許諾取得の記録はない。",
     attributionTemplate: "出典：厚生労働省「第○回看護師国家試験」午前 問○（問題・正答）",
-    remainingWork: ["一般掲載可否のオーナー確認", "午前 問6以降・午後・別冊（図）は未収録"],
+    remainingWork: ["一般掲載可否のオーナー確認", "午前 問11以降・午後・別冊（図）は未収録"],
   },
   {
     slug: "boki3",
