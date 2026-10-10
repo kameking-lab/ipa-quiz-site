@@ -21,9 +21,9 @@ const clone=()=>structuredClone(SENTAKU_ORIGINALS);
 describe("社労士選択式 原問契約",()=>{
  it("既公開40原問を保持し、択一62原問と選択16原問を分離して計78原問とする",()=>{
   const mc=getQuestionsByExamStrict("sharoushi");
-  expect(mc).toHaveLength(62);
+  expect(mc).toHaveLength(86);
   expect(mc.some(q=>q.session==="sentaku")).toBe(false);
-  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(78);
+  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(102);
   expect(PUBLISHED_SENTAKU.flatMap(q=>q.blanks)).toHaveLength(80);
   const oldHashes = integration.oldObjectSha256 as Record<string, string>;
   expect(Object.keys(oldHashes)).toHaveLength(40);
@@ -32,7 +32,7 @@ describe("社労士選択式 原問契約",()=>{
     expect(old, id).toBeDefined();
     expect(objectHash(old), id).toBe(sha);
   }
-  expect(mc.filter(q => !Object.hasOwn(oldHashes, q.id))).toHaveLength(22);
+  expect(mc.filter(q => !Object.hasOwn(oldHashes, q.id))).toHaveLength(46);
  });
  it("16原問80空欄の公式キーと20語群を保持する",()=>{
   expect(SENTAKU_ORIGINALS).toHaveLength(16);

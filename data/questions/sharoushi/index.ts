@@ -10,6 +10,8 @@ import kenpo2026 from "./kenpo-2026-annual.json";
 import kounen2025 from "./kounen-2025-annual.json";
 import kounen2026 from "./kounen-2026-annual.json";
 import ippan2025 from "./ippan-2025-annual.json";
+import kokunen2025 from "./kokunen-2025-annual.json";
+import kokunen2026 from "./kokunen-2026-annual.json";
 import ippan2026 from "./ippan-2026-annual.json";
 
 /**
@@ -31,4 +33,6 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(kounen2026 as Question[]),
   ...(ippan2025 as Question[]),
   ...(ippan2026 as Question[]),
+  ...(kokunen2025 as Question[]),
+  ...(kokunen2026 as Question[]),
 ].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
