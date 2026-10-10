@@ -1,14 +1,14 @@
 import Link from "next/link";
-import type { NativeQuestion } from "@/lib/denken2/native";
-import { NATIVE_EDITIONS, nativeSubjectPath } from "@/lib/denken2/native";
+import { NATIVE_EDITIONS } from "@/lib/denken2/native";
+import type { ElectricalNativeQuestion, ElectricalNativeReaderConfig } from "@/lib/electrical/native-types";
 import { NativeAnswer } from "./NativeAnswer";
 
 const subjectName = { theory: "理論", power: "電力", machine: "機械", law: "法規" };
-type ChoiceGroups = NativeQuestion["choiceGroups"];
+type ChoiceGroups = ElectricalNativeQuestion["choiceGroups"];
 const flat = (groups: ChoiceGroups): groups is Record<string, string> =>
   Object.values(groups).every(value => typeof value === "string");
 
-function WordBanks({ question }: { question: NativeQuestion }) {
+function WordBanks({ question }: { question: ElectricalNativeQuestion }) {
   if (flat(question.choiceGroups)) {
     return <section aria-label="解答群" className="mt-8">
       <h2 className="text-lg font-bold">原本の解答群</h2>
@@ -35,19 +35,27 @@ function WordBanks({ question }: { question: NativeQuestion }) {
   </section>;
 }
 
-export function NativeReader({ question }: { question: NativeQuestion }) {
+export function NativeReader({ question, readerConfig }: {
+  question: ElectricalNativeQuestion;
+  readerConfig?: ElectricalNativeReaderConfig;
+}) {
   const edition = NATIVE_EDITIONS.find(item => item.year === question.year);
-  if (!edition) throw new Error("Native edition missing");
+  const config = readerConfig ?? (edition ? {
+    examName: "電験二種", examPath: "/denken2" as const,
+    sourceAnswerUrl: edition.sourceAnswerUrl, sourceIndexUrl: edition.sourceIndexUrl,
+  } : null);
+  if (!config) throw new Error("Native edition missing");
+  const subjectPath = `${config.examPath}/${question.year}-primary/${question.subject}`;
   const name = subjectName[question.subject];
   return <main className="mx-auto w-full min-w-0 max-w-4xl px-4 py-8 sm:py-12">
     <nav className="mb-6 flex flex-wrap gap-2 text-sm">
-      <Link href="/denken2" className="text-primary underline">電験二種</Link>
+      <Link href={config.examPath} className="text-primary underline">{config.examName}</Link>
       <span>/</span>
-      <Link href={nativeSubjectPath(question.year, question.subject)} className="text-primary underline">{question.year}年度 {name}</Link>
+      <Link href={subjectPath} className="text-primary underline">{question.year}年度 {name}</Link>
       <span>/ 問{question.number}</span>
     </nav>
-    <h1 className="text-2xl font-bold sm:text-3xl">電験二種 {question.year}年度 一次試験 {name} 問{question.number}</h1>
-    <p className="mt-3 text-sm text-muted-foreground">試験日 {question.examDate}。{question.year === 2025 && question.subject === "law" ? "法令基準日 2025-04-01。" : ""}1原問・{question.subject === "machine" && question.year === 2026 && question.number === 7 ? "定義5欄＋単位5欄" : "5欄"}。{question.alternateQuestionRule ? "問7と問8は選択問題で、実際の試験ではどちらか一方を解答します。" : ""}</p>
+    <h1 className="text-2xl font-bold sm:text-3xl">{config.examName} {question.year}年度 一次試験 {name} 問{question.number}</h1>
+    <p className="mt-3 text-sm text-muted-foreground">試験日 {question.examDate}。{config.lawReferenceDate ? `法令基準日 ${config.lawReferenceDate}。` : question.year === 2025 && question.subject === "law" ? "法令基準日 2025-04-01。" : ""}1原問・{question.subject === "machine" && question.year === 2026 && question.number === 7 && config.examPath === "/denken2" ? "定義5欄＋単位5欄" : `${question.slots.length}欄`}。{question.alternateQuestionRule ? config.examPath === "/denken2" ? "問7と問8は選択問題で、実際の試験ではどちらか一方を解答します。" : "選択問題の一方だけを本試験で解答します。" : ""}</p>
     <section aria-label="問題本文" className="mt-7 border-t border-border pt-6">
       <h2 className="sr-only">問題本文</h2>
       <p className="whitespace-pre-wrap break-words text-base leading-8 [overflow-wrap:anywhere]">{question.questionText}</p>
@@ -77,11 +85,11 @@ export function NativeReader({ question }: { question: NativeQuestion }) {
     <NativeAnswer question={question} />
     <section aria-label="出典" className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted-foreground">
       <h2 className="font-semibold">出典と加工</h2>
-      <p className="mt-2">出典：一般財団法人 電気技術者試験センター「{question.year}年度 第二種電気主任技術者一次試験 {name}」。原問は5欄単位のまま掲載し、文章の整形と各欄の解説は当サイトが作成しました。図・数式・表は公式問題PDFの画像です。</p>
+      <p className="mt-2">出典：一般財団法人 電気技術者試験センター「{question.year}年度 {config.examName}一次試験 {name}」。原問は{question.slots.length}欄単位のまま掲載し、文章の整形と各欄の解説は当サイトが作成しました。図・数式・表は公式問題PDFの画像です。</p>
       <div className="mt-2 flex flex-wrap gap-4">
         <a href={question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">公式問題PDF</a>
-        <a href={edition.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">公式正答PDF</a>
-        <a href={edition.sourceIndexUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">公式過去問一覧</a>
+        <a href={config.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">公式正答PDF</a>
+        <a href={config.sourceIndexUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">公式過去問一覧</a>
       </div>
     </section>
   </main>;
