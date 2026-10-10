@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import candidates from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-CANDIDATES.json";
 import receipts from "@/docs/evidence/nurse-pm-go9-20261010/SOURCE-RECEIPTS.json";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
@@ -90,10 +90,10 @@ describe("nine separately verified nursing PM originals", () => {
 
   it("shows exact partial coverage and continues to exclude the officially unscored original", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前234問と午後224問");
-    expect(home).toContain("計458原問");
-    expect(home).toContain("全1893肢");
-    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前118問・午後111問");
+    expect(home).toContain("午前233問と午後224問");
+    expect(home).toContain("計457原問");
+    expect(home).toContain("全1888肢");
+    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(113);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(111);

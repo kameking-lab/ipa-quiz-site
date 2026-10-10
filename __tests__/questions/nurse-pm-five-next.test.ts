@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
 import sourcePacket from "@/docs/evidence/nurse-pm-five-next-20261010/SOURCE-PACKET-Q47-RUBY-REPAIRED.json";
@@ -61,10 +61,10 @@ describe("five additional primary-verified nursing PM originals", () => {
 
   it("shows precise partial totals and the official excluded-original caveat", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前234問と午後224問");
-    expect(home).toContain("午後224原問を加え、計458原問");
-    expect(home).toContain("全1893肢");
-    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前118問・午後111問");
+    expect(home).toContain("午前233問と午後224問");
+    expect(home).toContain("午後224原問を加え、計457原問");
+    expect(home).toContain("全1888肢");
+    expect(home).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });

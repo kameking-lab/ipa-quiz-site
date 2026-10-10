@@ -6,7 +6,7 @@ import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-nine-go-20261010/INTEGRATION.json";
 
@@ -69,9 +69,9 @@ describe("nursing PM nine verified follow-up originals", () => {
 
   it("shows matching partial-collection counts and the unchanged exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前234問と午後224問");
-    expect(home).toContain("計458原問");
-    expect(home).toContain("全1893肢");
+    expect(home).toContain("午前233問と午後224問");
+    expect(home).toContain("計457原問");
+    expect(home).toContain("全1888肢");
     expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
   });
 });

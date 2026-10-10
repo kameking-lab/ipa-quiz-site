@@ -9,7 +9,7 @@ import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { ChoiceKey } from "@/lib/questions/types";
 import YearPage from "@/app/[exam]/[yearSeason]/page";
 import proof from "@/docs/evidence/nurse-am49-next-20261010/INTEGRATION.json";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 
 const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a],[b]) => a<b?-1:a>b?1:0).map(([key,v]) => [key,canonical(v)])) : value;

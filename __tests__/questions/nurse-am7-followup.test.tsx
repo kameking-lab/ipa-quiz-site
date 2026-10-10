@@ -8,7 +8,7 @@ import type { Question } from "@/lib/questions/types";
 import { EXAM_DESCRIPTIONS } from "@/lib/seo/exam-meta";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
-import proof from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import proof from "./nurse-am6-publication-proof";
 import source114 from "@/docs/evidence/nurse-am7-followup-20261010/114-am-q91-120-source.json";
 import source115 from "@/docs/evidence/nurse-am7-followup-20261010/115-am-q91-120-source.json";
 import two from "@/docs/evidence/nurse-am7-followup-20261010/AM-FOLLOWUP-TWO-GO-CANDIDATES.json";
@@ -16,36 +16,48 @@ import q101 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q101-GO-CANDIDA
 import q103 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q103-GO-CANDIDATE.json";
 import q106 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q106-GO-CANDIDATE.json";
 import q112 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q112-GO-CANDIDATE.json";
+import hold from "@/docs/evidence/nurse-am112-publication-hold-20261010/DELTA.json";
+import historical from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
 import q109 from "@/docs/evidence/nurse-am7-followup-20261010/AM-Q109-115-GO-CANDIDATE.json";
 
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 const saved = [
   ...two.readyQuestions, ...q101.readyQuestions, ...q103.readyQuestions,
-  ...q106.readyQuestions, ...q112.readyQuestions, ...q109.readyQuestions,
+  ...q106.readyQuestions, ...q109.readyQuestions,
 ] as unknown as Question[];
 const files = [source114, source115];
 const sha = (bytes: string | Buffer) => createHash("sha256").update(bytes).digest("hex");
 
-describe("seven separately verified nursing AM originals", () => {
-  it("retains every old object and registers exactly the seven approved IDs", () => {
+describe("six publication-ready nursing AM originals", () => {
+  it("retains every old object and registers exactly the six eligible IDs", () => {
     expect(proof.baseCommit).toBe("df57e8dcdf24ec46c2ea2f82f22f310fcbbf760b");
     expect(proof.previous451ObjectHashes).toHaveLength(451);
     for (const previous of proof.previous451ObjectHashes) {
       expect(nurseObjectHash(byId.get(previous.id)), previous.id).toBe(previous.sha256);
     }
-    expect(proof.addedIds).toHaveLength(7);
+    expect(proof.addedIds).toHaveLength(6);
     expect(saved.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(KANGOSHI_QUESTIONS).toHaveLength(proof.totalOriginals);
     expect(proof.totalOriginals).toBe(proof.previousOriginals + proof.addedOriginals);
-    expect(proof.totalOriginals).toBe(458);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1893);
+    expect(proof.totalOriginals).toBe(457);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1888);
     expect(proof.totalChoices).toBe(proof.previousChoices + proof.addedChoices);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(458);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(457);
     for (const id of proof.heldIdsUnchanged) expect(byId.has(id), id).toBe(false);
   });
 
+  it("keeps Q112 as a source-checked historical candidate but outside publication", () => {
+    expect(historical.addedIds).toContain(hold.heldId);
+    expect(nurseObjectHash(q112.readyQuestions[0])).toBe(hold.heldQuestionObjectSha256);
+    expect(byId.has(hold.heldId)).toBe(false);
+    expect(proof.heldIdsUnchanged).toContain(hold.heldId);
+    expect(hold.officialAnswerNumber).toBe("35");
+    expect(hold.addedOriginals).toBe(6);
+    expect(hold.addedChoices).toBe(25);
+  });
+
   it("matches each official stem, all choices, key, source page and saved explanation", () => {
-    expect(proof.sourceChecks).toHaveLength(7);
+    expect(proof.sourceChecks).toHaveLength(6);
     for (const item of proof.sourceFiles) {
       const source = readFileSync(`docs/evidence/nurse-am7-followup-20261010/${item.file}`, "utf8");
       expect(sha(source.replace(/\r\n/g, "\n"))).toBe(item.gitBlobSha256);
@@ -83,7 +95,7 @@ describe("seven separately verified nursing AM originals", () => {
     expect(q101.question).toContain("femoral neck fracture");
     expect(q101.question).toContain("膀胱留置カテーテル");
     expect(prior.question).toContain(source114.questions.find(question => question.number === 101)!.fullSharedPremiseText);
-    for (const number of [101, 112]) {
+    for (const number of [101]) {
       const question = byId.get(`kangoshi-2024-annual-am-q${number}`)!;
       expect(Object.keys(question.choices ?? {})).toHaveLength(5);
       expect(question.officialAnswerNumber).toBe("35");
@@ -106,13 +118,13 @@ describe("seven separately verified nursing AM originals", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
     const catalog = QUALIFICATION_CATALOG.find(item => item.examCode === "kangoshi")!;
     for (const text of [home, catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
-      expect(text).toContain("計458原問");
-      expect(text).toContain("全1893肢");
-      expect(text).toContain("第115回は午前116問・午後113問、第114回は午前118問・午後111問");
+      expect(text).toContain("計457原問");
+      expect(text).toContain("全1888肢");
+      expect(text).toContain("第115回は午前116問・午後113問、第114回は午前117問・午後111問");
       expect(text).toContain("午前 問32は厚生労働省が採点対象から除外");
     }
-    expect(home).toContain("午前234問と午後224問");
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(118);
+    expect(home).toContain("午前233問と午後224問");
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(117);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(116);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(111);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(113);

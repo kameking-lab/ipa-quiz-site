@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import delta from "@/docs/evidence/nurse-pm-category-correction-20261010/DELTA.json";
 import before427 from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 import { historicalNurseHash, nurseObjectHash } from "./nurse-pm-category-hash";

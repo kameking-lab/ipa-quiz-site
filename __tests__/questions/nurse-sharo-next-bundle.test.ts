@@ -12,7 +12,7 @@ import threeLater from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATIO
 import fourLater from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
 import fiveNext from "@/docs/evidence/nurse-pm-five-next-20261010/INTEGRATION.json";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 const canonical = (v: unknown): unknown => Array.isArray(v)?v.map(canonical):v&&typeof v === "object"?Object.fromEntries(Object.entries(v).sort(([a],[b])=>a<b?-1:a>b?1:0).map(([k,x])=>[k,canonical(x)])):v;
 const hash=(v:unknown)=>createHash("sha256").update(JSON.stringify(canonical(v))).digest("hex");
 const laterGos = [threeLater, fourLater, fiveNext, go9];

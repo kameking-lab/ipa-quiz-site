@@ -5,7 +5,7 @@ import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-import am7 from "@/docs/evidence/nurse-am7-followup-20261010/INTEGRATION.json";
+import am7 from "./nurse-am6-publication-proof";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-figure-go-20261010/INTEGRATION.json";
 
