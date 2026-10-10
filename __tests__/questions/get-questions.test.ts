@@ -81,7 +81,8 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("rigaku-ryohoshi");
     expect(codes).toContain("sagyo-ryohoshi");
     expect(codes).toContain("shino-kunrenshi");
-    expect(codes.length).toBe(50);
+    expect(codes).toContain("rinsho-kogishi");
+    expect(codes.length).toBe(51);
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし

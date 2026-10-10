@@ -1,0 +1,575 @@
+{
+  "base": "1ffb833a228f04804f1a2e0d4f74a851b156bf1a",
+  "sourceManifestSha256": "c507ee1ad736552ad92bf4771880b497ff11366fc91468c407711b7946740665",
+  "draftOriginals": 47,
+  "readyOriginals": 46,
+  "readyChoices": 230,
+  "heldDrafts": [
+    {
+      "identity": "rinsho-kogishi-38-pm-12",
+      "reasons": [
+        "saved specialist uncertainty",
+        "saved medical rationale conflicts with official combination; specialist primary unresolved"
+      ],
+      "sourcePage": 5,
+      "sourcePageSha256": "f095c979680b990e2160d9f76d4a1e1754dcaac653c6846a9e12b60d671b0de5"
+    }
+  ],
+  "excludedBeforeDraft": [
+    {
+      "identity": "rinsho-kogishi-39-pm-11",
+      "literalCell": "1・2・3・4・5",
+      "reason": "All-accepted/ambiguous official cell kept HOLD; medical truth not inferred from scoring."
+    }
+  ],
+  "sourceFiles": [
+    {
+      "taskId": "rinsho-kogishi-39-pm-q001-006-first-draft-key-pixels",
+      "sourcePacketSha256": "8f53f5ac6126211e2591bc141f6cc1d077b717d06eda75ef5d09667743812c50",
+      "draftSha256": "eb8bbea48c173b97200770713f22fe80fd1e5b982e0cbdca0becdda6a4fafa4b",
+      "receiptSha256": "6806d23df4b3579455fa70cacaaf793295c994f2c2cb83f69db5c11e61d3ef72",
+      "machineQaSha256": "58bc3bf4faf86785805a9ac73a37812cbbfc76f96d0863492527d56e82bec6d5"
+    },
+    {
+      "taskId": "rinsho-kogishi-39-pm-q007-012-first-draft-key-pixels",
+      "sourcePacketSha256": "0f76a0bae440e0cef2925cf625ec4b0c405b8d8798ba43932aed2c78819233a3",
+      "draftSha256": "6350486379af8b2b481eb1c43e933550772c6b36f27938dec0c5219bb8f1fcd4",
+      "receiptSha256": "5da0f6c5e11cbae38e78e9721435fed62163e82c85e7e1daef34938dc78a2f70",
+      "machineQaSha256": "31af5f4d3c15b0180165be2de8dd60ad4158b9854f952a9c6aa4f6d0f6ef51c8"
+    },
+    {
+      "taskId": "rinsho-kogishi-39-pm-q013-018-first-draft-key-pixels",
+      "sourcePacketSha256": "71f73e2cecfda9d42b359ed19edd7ff3c417d33baf2e07b4097361f077fbe9c8",
+      "draftSha256": "642fa7ad6044a89d7df35e1e7594506640e83eb46d9811168035a9646926a57f",
+      "receiptSha256": "ce5a7a736dd44a31dbf4002054d7bb48f3d1083988ad66bc8cb7600d8ad6e8d8",
+      "machineQaSha256": "357678d0cb54fc16bb56fb141eb23cefcdbce5dd586a033276874f9e717317fb"
+    },
+    {
+      "taskId": "rinsho-kogishi-39-pm-q019-024-first-draft-key-pixels",
+      "sourcePacketSha256": "93f32c8b5554a845c3639388fd8bae21c107ec644f8e8fc8dc7a4ceb8bfc796d",
+      "draftSha256": "ea309e50fae861558b68bba5d8b67175a0b4d40405aed3b1616044a4b26e8177",
+      "receiptSha256": "f7d0581a99241bf9ce1cdb164236821d5852983d7434876f959c0452d9253797",
+      "machineQaSha256": "1855a6f0111796af7032890e62afc059797ff7bf09c03d97dd608a304e9cab9f"
+    },
+    {
+      "taskId": "rinsho-kogishi-38-pm-q001-006-first-draft-key-pixels",
+      "sourcePacketSha256": "c84f3bd5940c757d3f5d5e47298b0655d3bc098060625cf4a8fcb8085c431bde",
+      "draftSha256": "d2d6d2cf32a77c8e3b962c1747ddfc03cbea6375bc85633baa99e4b3ebdf6876",
+      "receiptSha256": "a13ada862645b49d06388d436a57c1b2ac4823e126ba1e32a591ff9d9492fecd",
+      "machineQaSha256": "f28d02b4f7106bc0b6dd3396a1736c3aac358c8515fed7fb2f2140d01aa35511"
+    },
+    {
+      "taskId": "rinsho-kogishi-38-pm-q007-012-first-draft-key-pixels",
+      "sourcePacketSha256": "0c051026c1872a3d5a5a5fc5f6ea2df2152aaccede332831ea8bc87839af7b34",
+      "draftSha256": "2091f4924ed429aa44d51d79a3e6d268a628751d6a186b83f0db4568df1a68d6",
+      "receiptSha256": "471c831a59eeb08e32362ef0529425b41b6c2e71fad1b4e87a75c435a7c1f2fa",
+      "machineQaSha256": "de4e02e72271e7c8f8718bdcb1e5faa17d63d7f80305d71c73f6f866658ed3d9"
+    },
+    {
+      "taskId": "rinsho-kogishi-38-pm-q013-018-first-draft-key-pixels",
+      "sourcePacketSha256": "1e95fdee74316b753cb69ddc7bc22073522023bbd5ecb7991fa2a28f8d88bd05",
+      "draftSha256": "c9e8f9d7ec23991bbc8bf286e40a983a7a389f3d99fa1a3f1d25785aaa650cd1",
+      "receiptSha256": "3d0e9a1ed151e210fc5dee38699185f610780e9a6463dfe2653164bd4f155b4e",
+      "machineQaSha256": "9080644e745dd2ed067b351af35533caa38bf5535efe97ceac884ef4ca2476e7"
+    },
+    {
+      "taskId": "rinsho-kogishi-38-pm-q019-024-first-draft-key-pixels",
+      "sourcePacketSha256": "34435e36d195d4fa3fc8f42c3a9ec28e438a5cf8bb3b0ed6439d200fdea801fd",
+      "draftSha256": "4778856336944c85cdf91e1d287e790f911ff32cd7ea1df2a834d302afdd1c7d",
+      "receiptSha256": "22f6e50421e876e51405ffeae70132dbff0f306174d93a36cb9d7f01970268bb",
+      "machineQaSha256": "a244bf42a3742366053d4315bec3f453686357b74d222b0e6ccb3ed5c547acfc"
+    }
+  ],
+  "readyProvenance": [
+    {
+      "identity": "rinsho-kogishi-39-pm-1",
+      "sourcePage": 2,
+      "sourcePageSha256": "7c126fad1d98531c78877fa2bee0e5f685a3f91423f45e35cfe3332e6b9bb84c",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-2",
+      "sourcePage": 2,
+      "sourcePageSha256": "7c126fad1d98531c78877fa2bee0e5f685a3f91423f45e35cfe3332e6b9bb84c",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-3",
+      "sourcePage": 2,
+      "sourcePageSha256": "7c126fad1d98531c78877fa2bee0e5f685a3f91423f45e35cfe3332e6b9bb84c",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-4",
+      "sourcePage": 3,
+      "sourcePageSha256": "9f9d17718effe5c404c5c67046084085b375a96e896aef237f6ab80b2a347dfe",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-5",
+      "sourcePage": 3,
+      "sourcePageSha256": "9f9d17718effe5c404c5c67046084085b375a96e896aef237f6ab80b2a347dfe",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-6",
+      "sourcePage": 3,
+      "sourcePageSha256": "9f9d17718effe5c404c5c67046084085b375a96e896aef237f6ab80b2a347dfe",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-7",
+      "sourcePage": 4,
+      "sourcePageSha256": "b47dc1ab1eab6b92d780fd3c6135996506780a3353f91915514419649c6ab230",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-8",
+      "sourcePage": 4,
+      "sourcePageSha256": "b47dc1ab1eab6b92d780fd3c6135996506780a3353f91915514419649c6ab230",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-9",
+      "sourcePage": 4,
+      "sourcePageSha256": "b47dc1ab1eab6b92d780fd3c6135996506780a3353f91915514419649c6ab230",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-10",
+      "sourcePage": 5,
+      "sourcePageSha256": "a1e6dc5f17217f2fbb007dd78aed61879997688631614b0a5b54a2c9239e7cdc",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-12",
+      "sourcePage": 5,
+      "sourcePageSha256": "a1e6dc5f17217f2fbb007dd78aed61879997688631614b0a5b54a2c9239e7cdc",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-13",
+      "sourcePage": 6,
+      "sourcePageSha256": "74a3cba7a94bcb3b46cd7148e1124db75127692d0d5e36ec8d2f6b9993136671",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-14",
+      "sourcePage": 6,
+      "sourcePageSha256": "74a3cba7a94bcb3b46cd7148e1124db75127692d0d5e36ec8d2f6b9993136671",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-15",
+      "sourcePage": 6,
+      "sourcePageSha256": "74a3cba7a94bcb3b46cd7148e1124db75127692d0d5e36ec8d2f6b9993136671",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "stem",
+          "method": "ruby beside 疣贅"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-16",
+      "sourcePage": 7,
+      "sourcePageSha256": "b8ea8b6408aa0ef9359366c1cd5adaa1b0078450f5528c13483b4177ca5dd65b",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-17",
+      "sourcePage": 7,
+      "sourcePageSha256": "b8ea8b6408aa0ef9359366c1cd5adaa1b0078450f5528c13483b4177ca5dd65b",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-18",
+      "sourcePage": 7,
+      "sourcePageSha256": "b8ea8b6408aa0ef9359366c1cd5adaa1b0078450f5528c13483b4177ca5dd65b",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-19",
+      "sourcePage": 8,
+      "sourcePageSha256": "5b19345ff95f78ea847ba6183360766b95529c6e426f6f1ccaf4a53887662433",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-20",
+      "sourcePage": 8,
+      "sourcePageSha256": "5b19345ff95f78ea847ba6183360766b95529c6e426f6f1ccaf4a53887662433",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-21",
+      "sourcePage": 8,
+      "sourcePageSha256": "5b19345ff95f78ea847ba6183360766b95529c6e426f6f1ccaf4a53887662433",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-22",
+      "sourcePage": 9,
+      "sourcePageSha256": "b30aa68caedcb7b7e267942647c6d1d686464c131d02b4c3a1ef2b38a291bbf2",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-23",
+      "sourcePage": 9,
+      "sourcePageSha256": "b30aa68caedcb7b7e267942647c6d1d686464c131d02b4c3a1ef2b38a291bbf2",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-39-pm-24",
+      "sourcePage": 9,
+      "sourcePageSha256": "b30aa68caedcb7b7e267942647c6d1d686464c131d02b4c3a1ef2b38a291bbf2",
+      "questionPdfSha256": "399bb83e9a2c0e8901174ef591c907442002fbc8a1293ed138e09c2eae826686",
+      "answerPdfSha256": "50f786847e25a248f56ea6a91c6ef8c6da20f747aea0268857d71cb600aee911",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-1",
+      "sourcePage": 2,
+      "sourcePageSha256": "e373cb8cb5d406b807d1f904db65d88727a0e2b62a0afc81594714bee2d46db0",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "choice1",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice2",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice3",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice4",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice5",
+          "method": "ranking arrows OCRed as digit 2"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-2",
+      "sourcePage": 2,
+      "sourcePageSha256": "e373cb8cb5d406b807d1f904db65d88727a0e2b62a0afc81594714bee2d46db0",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-3",
+      "sourcePage": 2,
+      "sourcePageSha256": "e373cb8cb5d406b807d1f904db65d88727a0e2b62a0afc81594714bee2d46db0",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "choice1",
+          "method": "Greek alpha and Na+ superscript"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-4",
+      "sourcePage": 3,
+      "sourcePageSha256": "a49025589ad862ecedad90cf86456624f08c02a43a3eac4e93298075111daf76",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-5",
+      "sourcePage": 3,
+      "sourcePageSha256": "a49025589ad862ecedad90cf86456624f08c02a43a3eac4e93298075111daf76",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-6",
+      "sourcePage": 3,
+      "sourcePageSha256": "a49025589ad862ecedad90cf86456624f08c02a43a3eac4e93298075111daf76",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-7",
+      "sourcePage": 4,
+      "sourcePageSha256": "7e6783f3972bf4ed61f430c76da2e605bee2afc4453da6b55634f9f1914f5848",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "stem",
+          "method": "腱索 OCRed as 伳索"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-8",
+      "sourcePage": 4,
+      "sourcePageSha256": "7e6783f3972bf4ed61f430c76da2e605bee2afc4453da6b55634f9f1914f5848",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-9",
+      "sourcePage": 4,
+      "sourcePageSha256": "7e6783f3972bf4ed61f430c76da2e605bee2afc4453da6b55634f9f1914f5848",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-10",
+      "sourcePage": 5,
+      "sourcePageSha256": "f095c979680b990e2160d9f76d4a1e1754dcaac653c6846a9e12b60d671b0de5",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-11",
+      "sourcePage": 5,
+      "sourcePageSha256": "f095c979680b990e2160d9f76d4a1e1754dcaac653c6846a9e12b60d671b0de5",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-13",
+      "sourcePage": 6,
+      "sourcePageSha256": "1daeb540a98af9b2cdb0e4e2cc311583f3110f6a143f9732b2320c75368921e4",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-14",
+      "sourcePage": 6,
+      "sourcePageSha256": "1daeb540a98af9b2cdb0e4e2cc311583f3110f6a143f9732b2320c75368921e4",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-15",
+      "sourcePage": 6,
+      "sourcePageSha256": "1daeb540a98af9b2cdb0e4e2cc311583f3110f6a143f9732b2320c75368921e4",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-16",
+      "sourcePage": 7,
+      "sourcePageSha256": "de40d8c731c7d0be53b557db99c466a2b696642c3e4a68aa83505838ef1ab57d",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-17",
+      "sourcePage": 7,
+      "sourcePageSha256": "de40d8c731c7d0be53b557db99c466a2b696642c3e4a68aa83505838ef1ab57d",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-18",
+      "sourcePage": 7,
+      "sourcePageSha256": "de40d8c731c7d0be53b557db99c466a2b696642c3e4a68aa83505838ef1ab57d",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "choice2",
+          "method": "疼痛 OCRed as 仏痛"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-19",
+      "sourcePage": 8,
+      "sourcePageSha256": "10c48deb0f7fe42b270752fb7647ba2f32087e0cb44612902ba92223a48bc9e7",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "5",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-20",
+      "sourcePage": 8,
+      "sourcePageSha256": "10c48deb0f7fe42b270752fb7647ba2f32087e0cb44612902ba92223a48bc9e7",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "2",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-21",
+      "sourcePage": 8,
+      "sourcePageSha256": "10c48deb0f7fe42b270752fb7647ba2f32087e0cb44612902ba92223a48bc9e7",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-22",
+      "sourcePage": 9,
+      "sourcePageSha256": "792564f34039b2f44d264479851b7b9c2d1b02894032c40842d146ed48051374",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "1",
+      "reconciledLiteralDifferences": []
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-23",
+      "sourcePage": 9,
+      "sourcePageSha256": "792564f34039b2f44d264479851b7b9c2d1b02894032c40842d146ed48051374",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "3",
+      "reconciledLiteralDifferences": [
+        {
+          "field": "choice1",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice2",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice3",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice4",
+          "method": "ranking arrows OCRed as digit 2"
+        },
+        {
+          "field": "choice5",
+          "method": "ranking arrows OCRed as digit 2"
+        }
+      ]
+    },
+    {
+      "identity": "rinsho-kogishi-38-pm-24",
+      "sourcePage": 9,
+      "sourcePageSha256": "792564f34039b2f44d264479851b7b9c2d1b02894032c40842d146ed48051374",
+      "questionPdfSha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "answerPdfSha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "officialKey": "4",
+      "reconciledLiteralDifferences": []
+    }
+  ],
+  "visualReconciliations": {
+    "rinsho-kogishi-39-pm-15": "ruby beside 疣贅",
+    "rinsho-kogishi-39-pm-16": "paired vitamin/deficiency table ruling",
+    "rinsho-kogishi-38-pm-1": "ranking arrows OCRed as digit 2",
+    "rinsho-kogishi-38-pm-3": "Greek alpha and Na+ superscript",
+    "rinsho-kogishi-38-pm-7": "腱索 OCRed as 伳索",
+    "rinsho-kogishi-38-pm-18": "疼痛 OCRed as 仏痛",
+    "rinsho-kogishi-38-pm-21": "full-width a-e labels",
+    "rinsho-kogishi-38-pm-23": "ranking arrows OCRed as digit 2"
+  },
+  "sourceOnly": true,
+  "newHttpCalls": 0,
+  "newModelCalls": 0,
+  "publication": "partial; latest two full sittings incomplete"
+}
