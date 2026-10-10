@@ -21,11 +21,11 @@ describe("electrical exam metadata matches the published papers", () => {
     const overlap = [...legacyOriginals].filter((id) => nativeOriginals.has(id));
     const union = new Set([...legacyOriginals, ...nativeOriginals]);
     expect(legacyOriginals.size).toBe(5);
-    expect(nativeOriginals.size).toBe(36);
-    expect(nativeSlots).toBe(204);
+    expect(nativeOriginals.size).toBe(37);
+    expect(nativeSlots).toBe(209);
     expect(overlap).toHaveLength(2);
     expect(union.size).toBe(DENKEN1_PUBLISHED_ORIGINAL_COUNT);
-    expect(union.size).toBe(39);
+    expect(union.size).toBe(40);
     expect(new Set(DENKEN1_NATIVE_QUESTIONS.map((q) => q.year))).toEqual(new Set([2025, 2026]));
 
     const description = examMetaDescription("denken1", legacy.length);

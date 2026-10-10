@@ -9,8 +9,8 @@ for (const { name, session, number, blanks = 5 } of [
   test(`denken1 ${name} card opens its ${blanks} selected blanks`, async ({ page }) => {
     await page.goto("/denken1");
     await expect(page.getByRole("heading", { name: "電験一種 一次試験の過去問" })).toBeVisible();
-    await expect(page.getByText("2025・2026年度の理論・電力・機械36原問・204回答欄", { exact: false })).toBeVisible();
-    await expect(page.getByText("掲載する固有の原問は計39件", { exact: false })).toBeVisible();
+    await expect(page.getByText("2025・2026年度の理論・電力・機械37原問・209回答欄", { exact: false })).toBeVisible();
+    await expect(page.getByText("掲載する固有の原問は計40件", { exact: false })).toBeVisible();
     await expect(page.getByRole("heading", { name: "2025・2026年度の原問を年・科目から選ぶ" })).toBeVisible();
     await expect(page.getByText("両年度の全問と二次試験は未収録", { exact: false })).toBeVisible();
     await page.getByRole("link", { name: new RegExp(`${name}.*令和8年度・${blanks}空欄`) }).click();
@@ -52,4 +52,32 @@ test("denken1 theory question 3 shows the two official figures and original opti
     await expect(page.getByText(label, { exact: true }).first()).toBeVisible();
   }
   await expect(page.getByText("理論A問3(1)", { exact: false }).first()).toBeVisible();
+});
+
+test("denken1 native Q1 preserves figures and reveals all five official keys", async ({ page }) => {
+  await page.goto("/denken1/2026-primary/theory");
+  await page.getByRole("link", { name: /問1 / }).click();
+  await expect(page).toHaveURL(/\/denken1\/2026-primary\/theory\/q1$/);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("問1");
+  await expect(page.getByRole("combobox")).toHaveCount(5);
+  await expect(page.getByText("公式正答：", { exact: false })).toHaveCount(0);
+  for (const n of [4, 5]) {
+    const image = page.getByRole("img", { name: `理論 問1の公式問題 PDF p.${n}`, exact: true });
+    await image.scrollIntoViewIfNeeded();
+    await expect(image).toBeVisible();
+    await expect.poll(() => image.evaluate((img) => (img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
+  for (const [index, key] of ["ト", "ワ", "イ", "ヌ", "ル"].entries()) {
+    await page.getByRole("combobox", { name: `空欄${index + 1}`, exact: true }).selectOption(key);
+  }
+  await page.getByRole("button", { name: "答えと解説を見る", exact: true }).click();
+  for (const key of ["ト", "ワ", "イ", "ヌ", "ル"]) {
+    await expect(page.getByText(`公式正答：${key}`, { exact: true })).toBeVisible();
+  }
+  await expect(page.getByText("正解", { exact: true })).toHaveCount(5);
+  await expect(page.locator("details")).toHaveCount(5);
+  for (const detail of await page.locator("details").all()) {
+    await detail.locator("summary").click();
+    await expect(detail.locator("dd")).toHaveCount(15);
+  }
 });
