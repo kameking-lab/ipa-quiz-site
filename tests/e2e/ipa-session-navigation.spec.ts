@@ -39,9 +39,18 @@ test("question detail quiz returns to the same question", async ({ page }) => {
 
 test("ST 2025 spring AM II listing and player expose the same questions", async ({ page }) => {
   await page.goto("/st/2025-spring");
-  const am2 = page.locator('a[href^="/q/st/2025-spring/am2/"]');
+  const am2 = page.locator('a[href^="/quiz?mode=year&exam=st&year=2025&season=spring&session=am2&question="]');
   await expect(am2).toHaveCount(25);
-  await expect(page.locator('a[href="/q/st/2025-spring/am2/q7"]')).toBeVisible();
+  const q7 = page.locator('a[href*="question=st-2025h-am2-q7&"]');
+  await expect(q7).toBeVisible();
+  await q7.click();
+  const selected = new URL(page.url());
+  expect(selected.pathname).toBe("/quiz");
+  expect(selected.searchParams.get("session")).toBe("am2");
+  expect(selected.searchParams.get("question")).toBe("st-2025h-am2-q7");
+  expect(selected.searchParams.get("returnTo")).toBe("/st/2025-spring");
+  await expect(page.getByText("問7", { exact: true })).toBeVisible();
+  await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "25");
 
   await page.goto("/q/st/2025-spring/am2/q4");
   await expect(page.getByAltText("問4の図表1")).toBeVisible();
@@ -57,8 +66,9 @@ test("ST 2025 spring AM II listing and player expose the same questions", async 
 test("ST 2024 keeps AM I and AM II separate and renders audited figures", async ({ page }) => {
   await page.goto("/st/2024-spring");
 
-  await expect(page.locator('a[href^="/q/st/2024-spring/am1/"]')).toHaveCount(30);
-  await expect(page.locator('a[href^="/q/st/2024-spring/am2/"]')).toHaveCount(25);
+  await expect(page.locator('a[href^="/quiz?mode=year&exam=st&year=2024&season=spring&session=am1&question="]')).toHaveCount(30);
+  await expect(page.locator('a[href^="/quiz?mode=year&exam=st&year=2024&season=spring&session=am2&question="]')).toHaveCount(25);
+  await expect(page.locator('a[href*="question=st-2024h-am1-q3&"]')).toBeVisible();
 
   await page.goto("/q/st/2024-spring/am1/q3");
   await expect(page.getByAltText("問3の図表1")).toBeVisible();

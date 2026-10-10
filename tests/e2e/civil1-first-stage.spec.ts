@@ -8,10 +8,18 @@ test.describe("1級土木施工管理 第一次検定", () => {
     const res = await page.goto("/civil1/2026-july");
     expect(res?.status()).toBe(200);
     await expect(page.getByText("100 問", { exact: true })).toBeVisible();
-    await expect(page.locator('a[href^="/q/civil1/2026-july/mondai-a/"]')).toHaveCount(66);
-    await expect(page.locator('a[href^="/q/civil1/2026-july/mondai-b/"]')).toHaveCount(34);
-    await expect(page.locator('a[href="/q/civil1/2026-july/mondai-b/q7"]')).toHaveCount(0);
+    await expect(page.locator('a[href^="/quiz?mode=year&exam=civil1&year=2026&season=july&session=mondai-a&question="]')).toHaveCount(66);
+    await expect(page.locator('a[href^="/quiz?mode=year&exam=civil1&year=2026&season=july&session=mondai-b&question="]')).toHaveCount(34);
+    await expect(page.locator('a[href*="question=civil1-2026-july-mondai-b-q7&"]')).toHaveCount(0);
     await expect(page.getByRole("link", { name: /問題B・施工管理法（応用能力）・必須 21〜35/ })).toBeVisible();
+    await page.locator('a[href*="question=civil1-2026-july-mondai-a-q3&"]').click();
+    const url = new URL(page.url());
+    expect(url.pathname).toBe("/quiz");
+    expect(url.searchParams.get("session")).toBe("mondai-a");
+    expect(url.searchParams.get("question")).toBe("civil1-2026-july-mondai-a-q3");
+    expect(url.searchParams.get("returnTo")).toBe("/civil1/2026-july");
+    await expect(page.getByText("問3", { exact: true })).toBeVisible();
+    await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "66");
   });
 
   test("問題A No.3 は公式図を表示し、誤答すると正解を示す", async ({ page }) => {

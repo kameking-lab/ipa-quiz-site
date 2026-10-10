@@ -164,7 +164,9 @@ export default async function ExamYearSeasonPage({
           q.question.length > 140
             ? `${q.question.slice(0, 140)}…`
             : q.question,
-        href: questionPagePath(q),
+        href: q.type === "multiple-choice"
+          ? `/quiz?${new URLSearchParams({ mode: "year", exam: q.exam, year: String(q.year), season: q.season, session: q.session, question: q.id, order: "1", returnTo: `/${exam}/${yearSeason}` }).toString()}`
+          : questionPagePath(q),
       })),
     }),
   );

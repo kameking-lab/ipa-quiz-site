@@ -724,10 +724,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "看護師国家試験",
     urlSlug: "kangoshi",
     level: "basic",
-    // 収録は第115回・第114回の午前 必修問題 問1〜25（各回25問）。午前全体の問題数ではない。
+    // 収録は第115回・第114回の午前 問1〜50（第115回問32は採点除外のため未収録）。午前全体の問題数ではない。
     sessions: [{
-      session: "am", urlSlug: "am", expectedQuestions: 25, label: "午前（必修問題）",
-      categories: ["必修問題"],
+      session: "am", urlSlug: "am", expectedQuestions: 50, label: "午前",
+      categories: ["必修問題", "一般問題"],
     }],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },

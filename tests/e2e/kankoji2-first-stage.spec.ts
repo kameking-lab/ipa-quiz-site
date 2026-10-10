@@ -9,8 +9,16 @@ test.describe("2級管工事施工管理 第一次検定", () => {
       const res = await page.goto(`/kankoji2/${yearSeason}`);
       expect(res?.status()).toBe(200);
       await expect(page.getByText("52 問", { exact: true })).toBeVisible();
-      await expect(page.locator('a[href^="/q/kankoji2/"]')).toHaveCount(52);
+      await expect(page.locator(`a[href^="/quiz?mode=year&exam=kankoji2&year=${yearSeason.slice(0, 4)}&season=${yearSeason.slice(5)}&session=gakka&question="]`)).toHaveCount(52);
       await expect(page.getByRole("link", { name: /施工管理法（基礎的な能力）・必須・各2肢選択 49〜52/ })).toBeVisible();
+      await page.locator(`a[href*="question=kankoji2-${yearSeason}-gakka-q49&"]`).click();
+      const url = new URL(page.url());
+      expect(url.pathname).toBe("/quiz");
+      expect(url.searchParams.get("question")).toBe(`kankoji2-${yearSeason}-gakka-q49`);
+      expect(url.searchParams.get("returnTo")).toBe(`/kankoji2/${yearSeason}`);
+      await expect(page.getByText("問49", { exact: true })).toBeVisible();
+      await expect(page.getByRole("group", { name: /2つ選ぶ/ }).getByRole("checkbox")).toHaveCount(4);
+      await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "52");
     });
   }
 

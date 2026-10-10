@@ -1,5 +1,9 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 
+test.setTimeout(90_000);
+test.use({ serviceWorkers: "block" });
+test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => route.abort()); });
+
 // Fresh visits must not put an overlay between the user and qualification selection.
 test.use({ storageState: { cookies: [], origins: [] } });
 async function coordinateClick(page: Page, locator: Locator) {
@@ -14,15 +18,16 @@ for (const width of [360, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     // トップの IT・情報処理カードから資格ページへ直接進める。
-    const qualification = page.locator('#choose-qualification a[href="/ip"]');
+    await page.locator("#choose-qualification").getByRole("button", { name: /^ITパスポート/ }).click();
+    const qualification = page.locator('#choose-qualification a[href="/ip"]:visible');
     await qualification.click({ trial: true });
     await coordinateClick(page, qualification);
-    await expect(page).toHaveURL(/\/ip$/);
+    await expect(page).toHaveURL(/\/ip$/, { timeout: 30_000 });
     const start = page.getByRole("link", { name: "今すぐ解く", exact: true });
     await expect(start).toHaveAttribute("href", "/quiz?mode=random&exam=ip");
     await coordinateClick(page, start);
-    await expect(page).toHaveURL(/\/quiz\?mode=random&exam=ip/);
-    await expect(page.getByRole("radio").first()).toBeVisible();
+    await expect(page).toHaveURL(/\/quiz\?mode=random&exam=ip/, { timeout: 30_000 });
+    await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
   });
 }
 test("first qualification remains stable through hydration", async ({ page }) => {

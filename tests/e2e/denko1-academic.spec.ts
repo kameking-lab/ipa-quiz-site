@@ -11,7 +11,15 @@ test.describe("第一種電気工事士 学科", () => {
     await expect(page.locator("a[href='/denko1/2026-first']").first()).toBeVisible();
     const res = await page.goto("/denko1/2026-first");
     expect(res?.status()).toBe(200);
-    await expect(page.locator('a[href^="/q/denko1/2026-first/gakka/q"]')).toHaveCount(50);
+    await expect(page.locator('a[href^="/quiz?mode=year&exam=denko1&year=2026&season=first&session=gakka&question="]')).toHaveCount(50);
+    await page.locator('a[href*="question=denko1-2026-first-gakka-q41&"]').click();
+    const url = new URL(page.url());
+    expect(url.pathname).toBe("/quiz");
+    expect(url.searchParams.get("question")).toBe("denko1-2026-first-gakka-q41");
+    expect(url.searchParams.get("returnTo")).toBe("/denko1/2026-first");
+    await expect(page.getByText("問41", { exact: true })).toBeVisible();
+    await expect(page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio")).toHaveCount(4);
+    await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "50");
   });
 
   test("配線図の問題は公式の単線結線図を表示し、誤答で全肢の解説が出る", async ({ page }) => {

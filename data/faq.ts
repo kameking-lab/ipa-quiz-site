@@ -1,4 +1,3 @@
-import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
 export interface FaqItem {
   question: string;
@@ -35,7 +34,7 @@ export const FAQS: FaqItem[] = [
   {
     category: "service",
     question: "過去問AI はどの試験に対応していますか？",
-    answer: `IPA（情報処理推進機構）が実施する全 13 区分（IT パスポート / 情報セキュリティマネジメント / 基本情報 / 応用情報 / IT ストラテジスト / システムアーキテクト / プロジェクトマネージャ / ネットワーク / データベース / エンベデッド / 情報処理安全確保支援士 / IT サービスマネージャ / システム監査）の過去問を収録済みです。合計 ${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できます。`,
+    answer: `IPA情報処理技術者試験のほか、FP、電気、建設・施工管理、安全衛生、医療・福祉の資格を収録しています。現在解ける問題数や公開回は、トップの「収録資格」と各資格ページで確認できます。公式問題・解答の出典と、学習用の解説を分けて表示しています。`,
   },
   {
     category: "service",
