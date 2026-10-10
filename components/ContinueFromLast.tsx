@@ -6,6 +6,7 @@ import { PlayCircle, ArrowRight } from "lucide-react";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 
 const SESSION_LABEL: Record<string, string> = {
   am: "午前",
@@ -19,6 +20,8 @@ const SESSION_LABEL: Record<string, string> = {
 };
 
 function sessionLabel(session: string): string {
+  const parsed = parsePracticeSession(session);
+  if (parsed) return practiceSessionLabel(parsed);
   return SESSION_LABEL[session] ?? session;
 }
 

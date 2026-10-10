@@ -1,0 +1,54 @@
+[
+  {
+    "id": "sharoushi-2025-annual-koyou-q4",
+    "exam": "sharoushi",
+    "session": "koyou",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "雇用保険法（徴収法を含む）",
+    "officialAnswerNumber": "B",
+    "type": "multiple-choice",
+    "category": "雇用保険法",
+    "topicTags": [
+      "雇用保険法",
+      "労働保険徴収法",
+      "第57回"
+    ],
+    "difficulty": 3,
+    "question": "次の①から⑤の過程を経た者の⑤の離職時における基本手当に係る受給期間の限度として正しいものはどれか。なお、当該者は適用事業所Ｘ及び適用事業所Ｙでその他欠勤・休職がなかったものとする。①20歳0月で適用事業所Ｘに雇用され、初めて一般被保険者となった。②育児休業給付金の支給に係る休業を31歳0月から12月間取得し、更に34歳0月から12月間取得し、その後職場復帰した。③39歳0月で適用事業所Ｘを離職した。④失業等給付を受給せず39歳2月で一般被保険者として適用事業所Ｙに雇用された。⑤適用事業所Ｙの移転により、通勤することが困難になったため45歳8月で離職した。なお、適用事業所Ｙの離職時、その者は雇用保険法第22条第2項が定める就職が困難な者でなく、職業に就くことができる状態にあった。",
+    "choices": {
+      "ア": "1年",
+      "イ": "1年と30日",
+      "ウ": "1年と60日",
+      "エ": "4年",
+      "オ": "4年と30日"
+    },
+    "answer": "イ",
+    "explanation": "正答はB（1年と30日）。Xの一般被保険者期間19年とYの6年6か月は、X離職後1年以内に基本手当の受給資格決定・受給を経ずYで被保険者となったので通算する。ただしXで育児休業給付金の支給に係る休業を2回各12か月取得した合計2年間は、基本手当の算定基礎期間から除く。算定基礎期間は19年＋6年6か月－2年＝23年6か月で20年以上。Yの事業所移転による通勤困難は特定受給資格者に該当し、離職時45歳8か月の所定給付日数は330日。問題文は離職時に就労可能としており、受給期間を延長する事情はない。330日の受給期間は1年と30日。",
+    "choiceExplanations": {
+      "ア": "誤り。育児休業給付金の支給に係る24か月を除いても算定基礎期間は23年6か月で、45歳以上60歳未満・20年以上の特定受給資格者の所定給付日数は330日。受給期間は1年に30日を加える。",
+      "イ": "正しい（公式正答）。X19年＋Y6年6か月－育児休業給付金の支給に係る休業2年＝23年6か月。所定給付日数330日なので受給期間は1年と30日。",
+      "ウ": "誤り。60日が加わるのは所定給付日数が360日の場合で、就職困難者に限られる。本件は就職困難者でなく330日。",
+      "エ": "誤り。4年は1年に最大3年の延長を加えた形。本件では妊娠・出産・育児などの延長申出の事情が離職時に問われておらず、受給期間の延長は適用されない。",
+      "オ": "誤り。4年30日は延長の最大限に30日を加えた形で、本件に該当しない。延長の事由も申出もない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6%E6%8A%9E%E4%B8%80%E5%BC%8F.pdf",
+    "sourceAnswerUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/09/%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AE%E5%90%88%E6%A0%BC%E5%9F%BA%E6%BA%96%E5%8F%8A%E3%81%B3%E6%AD%A3%E7%AD%94%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_R7.pdf",
+    "sourceAttribution": "出典：全国社会保険労務士会連合会 試験センター 第57回（令和7年度）社会保険労務士試験 択一式「雇用保険法（徴収法を含む）」問4（問題・正答）。解説は過去問AIの独自作成で、試験センターとは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.sharosi-siken.or.jp/results/",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=75161000&dataType=0&pageNo=1",
+      "https://www.mhlw.go.jp/file/06-Seisakujouhou-11600000-Shokugyouanteikyoku/koyouhoken-santei.pdf",
+      "https://www.hellowork.mhlw.go.jp/insurance/insurance_range.html",
+      "https://www.mhlw.go.jp/content/11600000/000951119.pdf",
+      "https://www.hellowork.mhlw.go.jp/insurance/insurance_basicbenefit.html"
+    ],
+    "license": "SHAROSI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10",
+    "lawReferenceDate": "2025-04-11"
+  }
+]

@@ -55,6 +55,14 @@ export type Session =
   | "kamoku-a"
   | "kamoku-b"
   | "gakka"
+  /** 社労士択一式の科目別冊子。各科目の公式問番号は1〜10で重複する。 */
+  | "rousai"
+  | "koyou"
+  | "kenpo"
+  | "kounen"
+  | "kokunen"
+  | "ippan"
+  | "sentaku"
   | "riron"
   | "denryoku"
   | "kikai"
@@ -107,8 +115,8 @@ export interface Question {
   subject?: string;
   officialAnswerNumber?: string;
   type: QuestionType;
-  /** 数値記入。answer は単位を除いた正規化済み非負整数文字列。 */
-  numericAnswer?: { format: "integer"; unit: string };
+  /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
+  numericAnswer?: { format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string };
   category: string;
   topicTags: string[];
   difficulty: Difficulty;

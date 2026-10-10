@@ -1,0 +1,1324 @@
+{
+  "scope": "MHLW 114th nursing afternoon Q51-75 local candidate only",
+  "publication": "none",
+  "sourcePacketSha256": "c1263cda96f17476468d5e618f01d692a0608dc38ea738778c6f2fdabacf9194",
+  "draftSha256": "85eb2aa28734d4a9886392dc871104167bcd54763952006b35c8a54a7d13785b",
+  "readyQuestionCount": 15,
+  "heldQuestionCount": 10,
+  "readyChoiceCount": 60,
+  "heldChoiceCount": 40,
+  "reviewStatuses": [
+    {
+      "question": 51,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 52,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "散瞳薬の種類による効果発現時間の差の詳細は未確認。公式正答に沿って記述。"
+      ]
+    },
+    {
+      "question": 53,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 54,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 55,
+      "status": "hold",
+      "reason": [
+        "official figure asset is not yet integrated",
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": {
+        "kind": "original four-group mortality bar chart, A–D across ages 65–84",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p22.png",
+          "sha256": "9fb7c987998f040d160f239caebf047786506f93d69a8b9587316b3acf12338e"
+        },
+        "visualCheck": "Four groups ages 65–69, 70–74, 75–79, 80–84. Bars A white, B slashed, C opposite slashed, D dark; retain official original chart and legend."
+      },
+      "reviewFlags": [
+        "図(棒グラフ)の個々の値や凡例との対応はこちらで確認できていないため、グラフ固有の数値の言及は避けた。図版は原図を必ず添付すること。",
+        "令和3年人口動態統計の具体的数値は未確認。"
+      ]
+    },
+    {
+      "question": 56,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "使用薬剤が抗コリン薬であることを前提とした説明。薬剤の禁忌の詳細(緑内障等)は添付文書での確認が必要。"
+      ]
+    },
+    {
+      "question": 57,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 58,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 59,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 60,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "病気の理解の発達段階と年齢の対応は文献により差があるため、公式正答に基づく記述。"
+      ]
+    },
+    {
+      "question": 61,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "乳児の正常心拍数範囲は文献により差がある。"
+      ]
+    },
+    {
+      "question": 62,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "同意要否の法的詳細(児童虐待防止法・守秘義務の例外)は未確認。"
+      ]
+    },
+    {
+      "question": 63,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "条文番号は未確認のため記載していない。"
+      ]
+    },
+    {
+      "question": 64,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 65,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 66,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 67,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 68,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 69,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 70,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "措置入院者への選任の扱いは法改正で変遷しており、114回(令和7年)時点の制度で要確認。",
+        "担当できる職種の範囲は法令・通知での確認が必要。"
+      ]
+    },
+    {
+      "question": 71,
+      "status": "hold",
+      "reason": [
+        "official figure asset is not yet integrated",
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": {
+        "kind": "original nursing department organization chart with circled 1",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q51-75-renders\\114-pm-physical-p28.png",
+          "sha256": "4b4613927a438be14bd4fd593500550afd485548bff39e43de8a11d84cff9d76"
+        },
+        "visualCheck": "Top box, two subordinate boxes including circled 1 on upper right, then three branches and lower boxes; retain original geometry."
+      },
+      "reviewFlags": [
+        "組織図の細部は確認できていないため、公式正答に基づきスタッフ部門と解釈した。原図を必ず添付すること。"
+      ]
+    },
+    {
+      "question": 72,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 73,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    },
+    {
+      "question": 74,
+      "status": "hold",
+      "reason": [
+        "targeted factual review flag remains open"
+      ],
+      "sourceFigure": null,
+      "reviewFlags": [
+        "DPATの活動対象の細部は運用要領での確認が必要。"
+      ]
+    },
+    {
+      "question": 75,
+      "status": "ready_local_candidate",
+      "reason": [],
+      "sourceFigure": null,
+      "reviewFlags": []
+    }
+  ],
+  "readyQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q51",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 51,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "伝音性難聴について正しいのはどれか。",
+      "choices": {
+        "ア": "加齢で増悪する。",
+        "イ": "鼓膜穿孔は原因となる。",
+        "ウ": "内耳から中枢側の障害で発生する。",
+        "エ": "アミノグリコシド系抗菌薬が原因である。"
+      },
+      "answer": "イ",
+      "explanation": "伝音性難聴は外耳・中耳の音の伝達経路の障害で起こる。鼓膜穿孔や中耳炎、耳垢栓塞などが代表的な原因である。",
+      "choiceExplanations": {
+        "ア": "加齢による難聴は主に内耳の有毛細胞などの変性による感音性難聴で、伝音性難聴の説明としては不適切。",
+        "イ": "正しい。鼓膜穿孔は鼓膜の振動伝達を妨げるため、伝音性難聴の原因となる。",
+        "ウ": "内耳から中枢側の障害で生じるのは感音性難聴(内耳性・後迷路性)であり、伝音性ではない。",
+        "エ": "アミノグリコシド系抗菌薬は内耳毒性により感音性難聴を起こす薬剤で、伝音性難聴の原因ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=21",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問51（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q53",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 53,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "梅毒に\nsyphilis\nついて正しいのはどれか。",
+      "choices": {
+        "ア": "ワクチンによる予防が可能である。",
+        "イ": "パートナーの検査は不要である。",
+        "ウ": "ウイルス感染症である。",
+        "エ": "ばら疹を認める。"
+      },
+      "answer": "エ",
+      "explanation": "梅毒は梅毒トレポネーマによる細菌感染症(性感染症)で、第2期にばら疹がみられる。ワクチンはなく、パートナーも検査・治療が必要である。",
+      "choiceExplanations": {
+        "ア": "梅毒に有効な予防ワクチンはなく、予防はコンドーム使用など感染機会の回避による。",
+        "イ": "感染を広げないためパートナーの検査・治療は必要で、不要とする記述は誤り。",
+        "ウ": "原因はスピロヘータ(梅毒トレポネーマ)という細菌で、ウイルス感染症ではない。",
+        "エ": "正しい。感染後数か月の第2期に、体幹などにばら疹(梅毒性バラ疹)が出現する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=21",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問53（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q54",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 54,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "高齢者の看護におけるストレングスモデルの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "自分で健康行動を判断して決められるよう支援すること",
+        "イ": "高齢者自身が健康的な生活を送るための活動を支援すること",
+        "ウ": "健康課題の解決に向けて自分の能力を活かせるよう支援すること",
+        "エ": "特定の健康課題について効果的に遂行できるという自信を高めるよう支援す\nること"
+      },
+      "answer": "ウ",
+      "explanation": "ストレングスモデルは、本人が持つ能力・意欲・強みに着目し、それを活かして課題解決を支援する考え方である。",
+      "choiceExplanations": {
+        "ア": "自己決定を支える自律の尊重に近い内容で、強みを活かす点を示すストレングスモデルの核心ではない。",
+        "イ": "健康的な生活活動の支援という一般的な説明で、本人の強みに着目する点が示されていない。",
+        "ウ": "適切。本人の能力や強みを活かして健康課題の解決を支える点がストレングスモデルの特徴。",
+        "エ": "特定課題の遂行に対する自信を高める支援は、自己効力感(バンデューラ)の説明である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=22",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問54（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q57",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 57,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "全身麻酔下で肺切除術を受ける高齢者への説明で優先度が高いのはどれか。",
+      "choices": {
+        "ア": "術前にベッド上で排泄の練習をすること",
+        "イ": "術前に手術部看護師の訪問があること",
+        "ウ": "術前に深呼吸や排痰の練習をすること",
+        "エ": "術後に四肢の自動運動をすること"
+      },
+      "answer": "ウ",
+      "explanation": "全身麻酔下の肺切除術では術後肺合併症(無気肺・肺炎)予防が重要で、術前の深呼吸・排痰練習が最も優先される。",
+      "choiceExplanations": {
+        "ア": "ベッド上排泄の練習も有用だが、肺合併症予防ほど優先度は高くない。",
+        "イ": "手術部看護師の訪問は不安軽減に役立つが、合併症予防の説明より優先度は低い。",
+        "ウ": "優先度が高い。術後の痛みで呼吸が浅くなるため、術前から深呼吸や排痰を練習して無気肺・肺炎を予防する。",
+        "エ": "四肢の自動運動は静脈血栓予防に有用だが、肺切除術では呼吸器合併症予防が優先される。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=23",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問57（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q58",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 58,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "要支援1の認定を受けた高齢者が、介護予防通所リハビリテーションの利用を開\n始した。｢普段からトイレに何度も行く｣と頻尿を気にしている。\n施設にいる看護師の援助で適切なのはどれか。",
+      "choices": {
+        "ア": "施設のトイレの場所を一緒に確認する。",
+        "イ": "車椅子でトイレに移送する。",
+        "ウ": "紙オムツの使用を勧める。",
+        "エ": "排泄時に更衣を介助する。"
+      },
+      "answer": "ア",
+      "explanation": "要支援1で介護予防を目的とする利用者には、できる能力を保ち自立を支える。頻尿への不安にはまずトイレの場所を確認し安心して過ごせるようにする。",
+      "choiceExplanations": {
+        "ア": "適切。トイレの場所を一緒に確認することで不安が軽減し、自立した排泄を維持できる。",
+        "イ": "歩行可能と考えられる要支援者を車椅子で移送するのは、自立を妨げ介護予防の目的に反する。",
+        "ウ": "紙オムツの使用は尊厳や自立を損ない、現時点で適切でない。",
+        "エ": "更衣を一律に介助するのは過剰な介助で、本人ができる能力を奪う。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=23",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問58（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q59",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 59,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "標準的な成長・発達をしている4歳の男児に対して採血を行う。看護師が男児に\n採血についてのプレパレーションを実施した。\nその後に伝えることで適切なのはどれか。",
+      "choices": {
+        "ア": "｢痛くないよ｣",
+        "イ": "｢すぐに終わっちゃうよ｣",
+        "ウ": "｢何か聞きたいことはないかな｣",
+        "エ": "｢やらないと病気になっちゃうよ｣"
+      },
+      "answer": "ウ",
+      "explanation": "プレパレーション後の4歳児には、気持ちや疑問を表出できる機会を作り、理解度を確認して処置に向き合う力を支える。",
+      "choiceExplanations": {
+        "ア": "採血は痛みを伴うため「痛くない」は嘘になり、信頼関係を損なう。",
+        "イ": "処置時間の保証は実際と異なる可能性があり、不確かな約束は避けるべき。",
+        "ウ": "適切。疑問や不安を尋ねることで理解を確認し、子どもの参加を促す。",
+        "エ": "脅しにより恐怖心を与える言い方で、子どもの主体的な対処を妨げる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問59（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q64",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 64,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Leopold¹レオポルド¼触診法で分かるのはどれか。",
+      "choices": {
+        "ア": "胎\n向",
+        "イ": "胎児の筋緊張",
+        "ウ": "胎盤付着部位",
+        "エ": "胎児の健康状態"
+      },
+      "answer": "ア",
+      "explanation": "Leopold触診法は腹壁から胎児の位置関係を調べる方法で、胎位・胎向・胎勢や先進部などを把握する。",
+      "choiceExplanations": {
+        "ア": "正しい。Leopold触診法で胎向(胎児背の向き)を把握できる。",
+        "イ": "胎児の筋緊張は超音波(BPS)などで評価するもので、触診法では分からない。",
+        "ウ": "胎盤付着部位は超音波検査で確認するもので、触診法では判断できない。",
+        "エ": "胎児の健康状態はNSTや超音波などで評価する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=25",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問64（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q65",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 65,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "子宮口全開大のときに破水した。\nこの破水はどれか。",
+      "choices": {
+        "ア": "前期破水",
+        "イ": "早期破水",
+        "ウ": "遅滞破水",
+        "エ": "適時破水"
+      },
+      "answer": "エ",
+      "explanation": "破水は時期により分類され、子宮口全開大(またはそれに近い時期)での破水は適時破水である。",
+      "choiceExplanations": {
+        "ア": "前期破水は陣痛開始前の破水であり、本設問と異なる。",
+        "イ": "早期破水は陣痛開始後で子宮口全開大前の破水を指す。",
+        "ウ": "遅滞破水は子宮口全開大後も破水しない状態を指す。",
+        "エ": "正しい。子宮口全開大の時期の破水は適時破水である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=25",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問65（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q66",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 66,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "頭位で出生した直後の児の頭部に腫脹を認めた。腫脹は骨縫合を越え、波動を触\nれず、数日後に消失した。\n出生直後に認められた児頭の腫脹で考えられるのはどれか。",
+      "choices": {
+        "ア": "産\n瘤",
+        "イ": "骨重積",
+        "ウ": "頭血腫",
+        "エ": "帽状腱膜下血腫"
+      },
+      "answer": "ア",
+      "explanation": "骨縫合を越え、波動がなく数日で消失する頭部の腫脹は産瘤の特徴である。",
+      "choiceExplanations": {
+        "ア": "正しい。産瘤は先進部の浮腫で、縫合を越え、数日で自然消失する。",
+        "イ": "骨重積は分娩時に頭蓋骨が重なり合う変形で、腫脹ではない。",
+        "ウ": "頭血腫は骨膜下出血で、縫合を越えず波動を触れ、消退に時間がかかる。",
+        "エ": "帽状腱膜下血腫は縫合を越えるが、重症となりうる出血で数日で消えるものではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=26",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問66（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q67",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 67,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "患者が看護師を愛情深い親のような存在とみなし、看護師に対して肯定的な感情\nを抱くのはどれか。",
+      "choices": {
+        "ア": "投\n影",
+        "イ": "共依存",
+        "ウ": "反動形成",
+        "エ": "陽性転移"
+      },
+      "answer": "エ",
+      "explanation": "過去の重要な人物への感情を看護師に向け、肯定的な感情を抱くことを陽性転移という。",
+      "choiceExplanations": {
+        "ア": "投影は自分の受け入れがたい感情を他者のものとみなす防衛機制である。",
+        "イ": "共依存は相手を世話することで自分の存在価値を保つ関係性のあり方である。",
+        "ウ": "反動形成は抑圧した感情と反対の態度をとる防衛機制である。",
+        "エ": "正しい。看護師を愛情深い親のように感じ、肯定的な感情を向けるのが陽性転移。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=26",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問67（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q68",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 68,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "精神障害のある人のリカバリーで正しいのはどれか。",
+      "choices": {
+        "ア": "症状の回復がゴールである。",
+        "イ": "直線的なプロセスをたどる。",
+        "ウ": "主体的に人生を新たに生き直すことである。",
+        "エ": "ストレス脆弱性に焦点を当てた支援である。"
+      },
+      "answer": "ウ",
+      "explanation": "リカバリーは症状の消失に限らず、病気を抱えつつ希望や役割を持ち、主体的に人生を生き直す過程である。",
+      "choiceExplanations": {
+        "ア": "症状の回復だけをゴールとする従来の臨床的回復の考えで、リカバリーの概念とは異なる。",
+        "イ": "リカバリーは行きつ戻りつする非直線的な過程とされる。",
+        "ウ": "正しい。主体的に人生を新たに生き直すことがリカバリーの本質。",
+        "エ": "ストレス脆弱性は病因モデルであり、強みや希望に焦点を当てるリカバリーとは異なる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=26",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問68（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q69",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 69,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "精神疾患の治療を受けている人との共同創造¹コプロダクション¼で正しいのはど\nれか。",
+      "choices": {
+        "ア": "患者が医療者の指示に従って治療を受ける。",
+        "イ": "患者が医療者から病気や治療について十分な説明を受ける。",
+        "ウ": "治療やケアの計画から提供まで医療者と患者がともに関わる。",
+        "エ": "自ら助けを求めることが難しい人に対して、積極的に働きかけ支援を提供す\nる。"
+      },
+      "answer": "ウ",
+      "explanation": "共同創造(コプロダクション)は、治療・ケアの計画から提供まで医療者と当事者が対等に関わる協働の考え方である。",
+      "choiceExplanations": {
+        "ア": "医療者の指示に従う受動的な関わりで、協働ではない。",
+        "イ": "十分な説明は大切だが、インフォームドコンセントの内容で共同創造とは異なる。",
+        "ウ": "正しい。計画から提供まで医療者と患者がともに関わるのが共同創造。",
+        "エ": "積極的に働きかける支援はアウトリーチの説明である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=27",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問69（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q72",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 72,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "プライマリナーシングの説明で適切なのはどれか。",
+      "choices": {
+        "ア": "業務を短時間で効率よく実施できる。",
+        "イ": "リーダーの調整力が看護チームの目標達成に影響する。",
+        "ウ": "1人の看護師が1人の患者の入院から退院まで一貫して責任をもつ。",
+        "エ": "日替わりで受け持ち看護師が変わるので看護ケアの継続が難しくなる。"
+      },
+      "answer": "ウ",
+      "explanation": "プライマリナーシングは、1人の看護師が受け持ち患者の入院から退院まで一貫して責任をもつ看護提供方式である。",
+      "choiceExplanations": {
+        "ア": "短時間で効率よく業務を行える点は機能別看護の特徴で、プライマリナーシングではない。",
+        "イ": "リーダーの調整力が目標達成を左右するのはチームナーシングの特徴である。",
+        "ウ": "正しい。1人の看護師が入院から退院まで一貫して責任をもつ。",
+        "エ": "日替わりで受け持ちが変わる方式ではなく、継続性が高いのが特徴である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=28",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問72（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q73",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 73,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "医療安全について正しいのはどれか。",
+      "choices": {
+        "ア": "患者から暴力を受けたと報告した医療従事者に暴力発生の責任を問う。",
+        "イ": "与薬前に薬物の間違いに気づけばインシデントレポートは不要である。",
+        "ウ": "医療過誤とは医療事故の発生原因に医療機関、医療従事者の過失がある場合\nをいう。",
+        "エ": "インシデントを起こした医療従事者は気持ちが落ち着いた数日後にレポート\nを提出する。"
+      },
+      "answer": "ウ",
+      "explanation": "医療過誤は、医療事故のうち医療機関・医療従事者の過失が原因であるものをいう。",
+      "choiceExplanations": {
+        "ア": "暴力を受けた被害者に責任を問うのは不適切で、報告しやすい環境と組織的対応が必要。",
+        "イ": "与薬前に気づいた間違いもインシデント(ヒヤリハット)として報告し、再発防止に活かす。",
+        "ウ": "正しい。医療事故の原因に医療機関・医療従事者の過失がある場合が医療過誤。",
+        "エ": "レポートは速やかに提出し、事実を正確に共有して対策につなげる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=29",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問73（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q75",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 75,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "生後1か月の乳児健康診査の際、外国籍の両親から子どもの予防接種について質\n問があった。父親は長期に日本で就労するため、子どもは定期予防接種を受けるこ\nとができる。両親は｢日本語が難しく、予防接種のスケジュールがよく分からない｣\nと看護師に言った。\n看護師の対応で適切なのはどれか。",
+      "choices": {
+        "ア": "母国の大使館への相談を勧める。",
+        "イ": "医療で使う言葉を覚えるように促す。",
+        "ウ": "地区担当の保健師への電話相談を提案する。",
+        "エ": "両親が理解できる言語で書かれたパンフレットを渡す。"
+      },
+      "answer": "エ",
+      "explanation": "言葉の壁がある保護者には、理解できる言語の資料を提供するなど、情報が確実に伝わる支援を行う。",
+      "choiceExplanations": {
+        "ア": "定期予防接種は日本の制度に基づくため、大使館への相談を勧めても解決しない。",
+        "イ": "医療用語を覚えさせる要求は保護者の負担が大きく、支援として適切でない。",
+        "ウ": "日本語が難しい保護者に電話相談を勧めても、言葉の壁で十分な支援にならない可能性がある。",
+        "エ": "適切。理解できる言語のパンフレットで、接種スケジュールを自分で確認できる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=29",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問75（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": false,
+      "lastUpdated": "2026-10-10"
+    }
+  ],
+  "heldDraftQuestions": [
+    {
+      "id": "kangoshi-2024-annual-pm-q52",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 52,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "散瞳薬を用いた眼底検査を受ける成人への説明で適切なのはどれか。",
+      "choices": {
+        "ア": "｢角膜を観察します｣",
+        "イ": "｢検査後に抗菌薬を点眼します｣",
+        "ウ": "｢眼を閉じた状態で検査室に誘導します｣",
+        "エ": "｢点眼後30 分で散瞳薬の効果が現れます｣"
+      },
+      "answer": "エ",
+      "explanation": "散瞳薬点眼後は効果発現まで待つ必要があり、検査後も散瞳が続くため、効果発現時間や検査後の注意を踏まえた説明が求められる。",
+      "choiceExplanations": {
+        "ア": "眼底検査で観察するのは網膜・視神経乳頭などの眼底であり、角膜の観察ではない。",
+        "イ": "眼底検査後に抗菌薬を点眼する定型的な必要はなく、検査後の説明としては不適切。",
+        "ウ": "眼を閉じたままでは危険で、散瞳後はまぶしさや見えにくさがあるため、安全に配慮し目を開けて誘導する。",
+        "エ": "適切。散瞳薬は点眼後おおむね30分前後で効果が現れるため、その時間を待って検査する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=21",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問52（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q55",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 55,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "日本の令和3年（2021年）の人口動態統計に基づく、65 歳以上85 歳未満における\n不慮の事故による死亡状況をグラフに示す。\nD はどれか。",
+      "choices": {
+        "ア": "窒\n息",
+        "イ": "交通事故",
+        "ウ": "溺死及び溺水",
+        "エ": "転倒、転落、墜落"
+      },
+      "answer": "ウ",
+      "explanation": "高齢者の不慮の事故死では、年齢が上がるにつれ窒息や転倒・転落が増え、溺死・溺水は入浴中の事故が多く65〜84歳で上位を占める。D=溺死及び溺水が公式正答。",
+      "choiceExplanations": {
+        "ア": "窒息は高齢になるほど増える傾向があるが、公式正答ではDに該当しない。",
+        "イ": "交通事故は高齢者では上位項目より少ない傾向で、Dには該当しない。",
+        "ウ": "正しい。公式正答として、Dは溺死及び溺水(浴槽内など)に該当する。",
+        "エ": "転倒、転落、墜落は高齢者で多い死因だが、公式正答ではDではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=22",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問55（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q56",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 56,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "Aさん（81歳、男性）は、大腸内視鏡検査を受けることになった。\n検査前にA さんへ看護師が確認する項目で最も優先されるのはどれか。",
+      "choices": {
+        "ア": "義歯の使用",
+        "イ": "白内障の有無",
+        "ウ": "保持できない姿勢",
+        "エ": "前立腺肥大症の有無"
+      },
+      "answer": "エ",
+      "explanation": "大腸内視鏡検査では蠕動抑制のため抗コリン薬を使うことがあり、前立腺肥大症では尿閉を悪化させる恐れがあるため、事前確認の優先度が高い。",
+      "choiceExplanations": {
+        "ア": "義歯の確認は一般的な安全確認だが、大腸内視鏡検査で最優先の項目ではない。",
+        "イ": "白内障は検査や薬剤の禁忌に直結せず、優先度は低い。",
+        "ウ": "保持できない姿勢の確認も有用だが、薬剤による有害事象のリスクに比べ優先度は低い。",
+        "エ": "最優先。抗コリン薬(ブチルスコポラミン等)は前立腺肥大症の尿閉を悪化させる恐れがある。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=23",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問56（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q60",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 60,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "標準的な成長・発達をしている子どもが｢ばい菌が体内に入ることで病気になる｣\nと考えるようになるのは、ピアジェ, J.\nPiaget, J.\nの認知的発達段階のどれか。",
+      "choices": {
+        "ア": "感覚運動期",
+        "イ": "前操作期",
+        "ウ": "具体的操作期",
+        "エ": "形式的操作期"
+      },
+      "answer": "イ",
+      "explanation": "病気の原因をばい菌の侵入と捉える程度の理解は、前操作期(およそ2〜7歳)にみられる直観的・単純な因果理解とされる。",
+      "choiceExplanations": {
+        "ア": "感覚運動期(〜2歳頃)は感覚と運動で外界を理解する段階で、病気の原因を考える段階ではない。",
+        "イ": "正しい。前操作期では象徴的思考が発達し、単純な因果関係として病気の原因を考えるようになる。",
+        "ウ": "具体的操作期(7〜11歳頃)は論理的思考が可能になる段階で、より複雑な理解を示す。",
+        "エ": "形式的操作期(11歳頃〜)は抽象的・仮説的思考の段階であり、本設問の理解水準より高い。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問60（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q61",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 61,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "乳児の心拍測定で正しいのはどれか。",
+      "choices": {
+        "ア": "心拍数110/分は正常である。",
+        "イ": "聴診ではⅠ音とⅡ音で2心拍である。",
+        "ウ": "バスタオルで体幹および四肢を固定して測定する。",
+        "エ": "呼吸周期に関連した心拍リズムの不整は異常である。"
+      },
+      "answer": "ア",
+      "explanation": "乳児の心拍数は成人より多く、おおむね100〜160/分程度が目安で、110/分は正常範囲である。",
+      "choiceExplanations": {
+        "ア": "正しい。乳児の正常心拍数の範囲に含まれ、110/分は正常である。",
+        "イ": "Ⅰ音とⅡ音で1心拍であり、2心拍とする記述は誤り。",
+        "ウ": "バスタオルで固定すると不安や啼泣を招き測定値に影響するため不適切。安静に測る。",
+        "エ": "小児では呼吸性不整脈は生理的で、呼吸周期に関連する不整は異常とは限らない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問61（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q62",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 62,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "保護者による子どもへの虐待に対する外来の看護師の対応で適切なのはどれか。",
+      "choices": {
+        "ア": "子どもの全身の観察では、保護者の同意を得る必要がある。",
+        "イ": "プライバシー保護のため、他職種との情報共有はしない。",
+        "ウ": "子どもや保護者の発言内容や様子を記録に残す。",
+        "エ": "保護者の同席のもと子どもから話を聞く。"
+      },
+      "answer": "ウ",
+      "explanation": "虐待が疑われる場合は、客観的事実を正確に記録し、多職種・関係機関と連携して子どもの安全を最優先する。",
+      "choiceExplanations": {
+        "ア": "子どもの安全確認のための診察・観察に、虐待が疑われる場合に保護者の同意が必須とは限らない。",
+        "イ": "虐待対応では多職種や関係機関との情報共有が不可欠で、共有しないのは不適切。",
+        "ウ": "適切。発言内容や様子を客観的に記録することは、後の対応や証拠として重要。",
+        "エ": "保護者同席では子どもが話しにくいため、別室で聴取するなど配慮が必要。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問62（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q63",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 63,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "事業主は雇用している女性労働者が妊婦健康診査を受けるために必要な時間を確\n保できるようにしなければならないと規定している法律はどれか。",
+      "choices": {
+        "ア": "母体保護法",
+        "イ": "労働基準法",
+        "ウ": "雇用の分野における男女の均等な機会及び待遇の確保等に関する法律¹男女\n雇用機会均等法¼",
+        "エ": "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律\n¹育児・介護休業法¼"
+      },
+      "answer": "ウ",
+      "explanation": "妊婦の健康診査等に必要な時間の確保は、男女雇用機会均等法に定められた事業主の義務である。",
+      "choiceExplanations": {
+        "ア": "母体保護法は人工妊娠中絶・不妊手術等に関する法律で、受診時間確保の規定ではない。",
+        "イ": "労働基準法は産前産後休業等を定めるが、妊婦健診の時間確保を定めるのは別の法律。",
+        "ウ": "正しい。男女雇用機会均等法で、事業主は妊産婦の健康診査等に必要な時間を確保する義務がある。",
+        "エ": "育児・介護休業法は育児休業・介護休業などを定める法律で、妊婦健診の時間確保の規定ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=25",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問63（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q70",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 70,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "退院後生活環境相談員について正しいのはどれか。",
+      "choices": {
+        "ア": "措置入院の患者に対して選任される。",
+        "イ": "入院3か月以上の患者が支援対象である。",
+        "ウ": "患者が居住の場を確保できるように調整する。",
+        "エ": "担当できるのは精神保健福祉士と社会福祉士の2職種である。"
+      },
+      "answer": "ウ",
+      "explanation": "退院後生活環境相談員は、精神科病院で入院患者の退院に向けた相談支援や地域との連絡調整、居住の場の確保などの調整を担う。",
+      "choiceExplanations": {
+        "ア": "主に医療保護入院者に選任される職種で、措置入院を代表とする説明は不適切。",
+        "イ": "対象は入院期間の長さで限られるものではなく、3か月以上と限定する記述は誤り。",
+        "ウ": "正しい。居住の場の確保など、退院後の生活環境の調整が主な役割。",
+        "エ": "精神保健福祉士や社会福祉士の2職種に限られず、看護師など他の有資格者も担当しうる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=27",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問70（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q71",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 71,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "病院の看護部の組織図を示す。\n①の役割について正しいのはどれか。",
+      "choices": {
+        "ア": "他部門に命令をする。",
+        "イ": "組織の意思決定を行う。",
+        "ウ": "各機能を調整する責任をもつ。",
+        "エ": "専門的な知識をもとに他部門に助言を行う。"
+      },
+      "answer": "エ",
+      "explanation": "組織図の①は、ライン部門に対して専門的な助言・支援を行うスタッフ部門に当たる。命令や意思決定の権限はラインが持つ。",
+      "choiceExplanations": {
+        "ア": "他部門への命令は指揮命令系統のライン部門の権限であり、スタッフ部門の役割ではない。",
+        "イ": "組織の意思決定は組織の上位者・ラインの権限であり、スタッフ部門ではない。",
+        "ウ": "各機能の調整責任はライン管理者の役割で、①の役割として不適切。",
+        "エ": "正しい。①は専門的知識によりライン部門へ助言・支援を行うスタッフ部門に当たる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=28",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問71（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q74",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 74,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "災害時のこころのケアで正しいのはどれか。",
+      "choices": {
+        "ア": "こころのケアは発災直後から数週間で終了する。",
+        "イ": "災害派遣精神医療チーム（DPAT）は航空機事故が発生したときにも活動す\nる。",
+        "ウ": "こころのケアチームを組織化する目的は福祉避難所で医療活動を行うためで\nある。",
+        "エ": "サイコロジカルファーストエイド（Psychological First Aid：PFA）は発災\n1か月後に精神科医が行う。"
+      },
+      "answer": "イ",
+      "explanation": "DPATは自然災害だけでなく、航空機・列車事故など集団的な人為災害でも派遣され活動する。",
+      "choiceExplanations": {
+        "ア": "こころのケアは長期にわたり継続が必要で、数週間で終了するわけではない。",
+        "イ": "正しい。DPATは航空機事故などの大規模事故でも活動する。",
+        "ウ": "こころのケアチームの目的は避難所等での精神保健支援であり、福祉避難所での医療活動に限定されない。",
+        "エ": "PFAは精神科医に限らず訓練を受けた支援者が発災直後から行う心理的支援である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=29",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問74（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    }
+  ]
+}

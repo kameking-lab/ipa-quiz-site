@@ -1,0 +1,548 @@
+{
+  "scope": "MHLW 114th nursing exam afternoon original Q76-90",
+  "status": "source-only; 15 originals, 14 five-choice items and one original numeric item, all official keys checked against rendered pages",
+  "questionCount": 15,
+  "officialAnswerKeyCount": 15,
+  "choiceCount": 70,
+  "figureQuestionCount": 1,
+  "pdfTextGlyphRepairs": [
+    {
+      "question": 79,
+      "field": "stem",
+      "sourceAnnotation": "secondary hypertension",
+      "sourcePage": 31
+    },
+    {
+      "question": 81,
+      "field": "stem",
+      "visualReading": "第2〜第4腰髄",
+      "sourcePage": 32
+    },
+    {
+      "question": 82,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 32
+    },
+    {
+      "question": 83,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 32
+    },
+    {
+      "question": 83,
+      "field": "stem,choices4,5",
+      "visualReading": "Aさん（35歳、女性）は1年前、〈LH〉、〈FSH〉",
+      "sourceAnnotation": "uterine corpus cancer",
+      "sourcePage": 32
+    },
+    {
+      "question": 84,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 33
+    },
+    {
+      "question": 84,
+      "field": "stem",
+      "sourceAnnotation": "aortic stenosis",
+      "sourcePage": 33
+    },
+    {
+      "question": 85,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 33
+    },
+    {
+      "question": 85,
+      "field": "choice4",
+      "visualReading": "腹囲〈ウエスト周囲長〉",
+      "sourcePage": 33
+    },
+    {
+      "question": 86,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 33
+    },
+    {
+      "question": 86,
+      "field": "choices1-5",
+      "sourceAnnotation": [
+        "viral hepatitis",
+        "spinocerebellar degeneration",
+        "arteriosclerosis obliterans",
+        "metabolic syndrome",
+        "acquired immunodeficiency syndrome"
+      ],
+      "sourcePage": 33
+    },
+    {
+      "question": 87,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 34
+    },
+    {
+      "question": 88,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 34
+    },
+    {
+      "question": 89,
+      "field": "stem",
+      "visualReading": "2つ選べ",
+      "sourcePage": 34
+    },
+    {
+      "question": 89,
+      "field": "choice1",
+      "visualReading": "末梢から",
+      "sourcePage": 34
+    },
+    {
+      "question": 90,
+      "field": "stem and answer grid",
+      "visualReading": "身長160cm、体重60kgの成人の体格指数〈BMI〉を求めよ。\nただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。",
+      "sourcePage": 35
+    }
+  ],
+  "questionPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\official-pm-pdfs\\tp250428-05c_01.pdf",
+    "sha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb"
+  },
+  "officialAnswerPdf": {
+    "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+    "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\.cache\\nurse-next-source-20261010\\tp250428-05seitou.pdf",
+    "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db"
+  },
+  "questions": [
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 76,
+      "questionPdfPhysicalPage": 30,
+      "questionPdfPrintedPage": 24,
+      "stem": "心房と心室の間を電気的に結合し、心房側の興奮を心室側に伝えるのはどれか。",
+      "choices": [
+        "心筋層",
+        "心内膜",
+        "洞房結節",
+        "His¹ヒス¼束",
+        "Purkinje¹プルキンエ¼線維"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p30.png",
+        "sha256": "ece3dd48457c57fee7ca135481c026c12418f8ed0ca30ffe1304447c4dca6a76"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 77,
+      "questionPdfPhysicalPage": 30,
+      "questionPdfPrintedPage": 24,
+      "stem": "肝臓の機能はどれか。",
+      "choices": [
+        "糖の貯蔵",
+        "胆汁の貯蔵",
+        "体液量の調節",
+        "体液のpH 調節",
+        "ホルモンの分泌"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "1"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p30.png",
+        "sha256": "ece3dd48457c57fee7ca135481c026c12418f8ed0ca30ffe1304447c4dca6a76"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 78,
+      "questionPdfPhysicalPage": 30,
+      "questionPdfPrintedPage": 24,
+      "stem": "術後の回復過程でエネルギー不足の場合にケトン体の供給源となるのはどれか。",
+      "choices": [
+        "乳\n酸",
+        "尿\n酸",
+        "脂肪酸",
+        "蛋白質",
+        "アンモニア"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p30.png",
+        "sha256": "ece3dd48457c57fee7ca135481c026c12418f8ed0ca30ffe1304447c4dca6a76"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 79,
+      "questionPdfPhysicalPage": 31,
+      "questionPdfPrintedPage": 25,
+      "stem": "狭窄による血流低下で二次性高血圧を起こす血管はどれか。",
+      "choices": [
+        "冠動脈",
+        "肝動脈",
+        "頸動脈",
+        "腎動脈",
+        "脳動脈"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "4"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p31.png",
+        "sha256": "5edc8478b688945df88ac92f712e1baf8e706751dbf707c1281f241ee06825bf"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 80,
+      "questionPdfPhysicalPage": 31,
+      "questionPdfPrintedPage": 25,
+      "stem": "日本の人口動態統計の死因別死亡率の年次推移をグラフに示す。\nC の死因はどれか。",
+      "choices": [
+        "肺\n炎\npneumonia",
+        "老\n衰",
+        "心疾患\nheart disease",
+        "脳血管疾患\ncerebrovascular disease",
+        "悪性新生物¹腫瘍¼\nmalignant neoplasm"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p31.png",
+        "sha256": "5edc8478b688945df88ac92f712e1baf8e706751dbf707c1281f241ee06825bf"
+      },
+      "figurePresent": true,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "figure": {
+        "kind": "original death rates by cause in Japan, time-series lines A–E",
+        "sourcePageImage": {
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p31.png",
+          "sha256": "5edc8478b688945df88ac92f712e1baf8e706751dbf707c1281f241ee06825bf"
+        },
+        "visualCheck": "Years 2004–2022 and five trajectories A–E; C rises steeply from about 20 to about 140 per 100,000. Retain original labels and chart before publication."
+      }
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 81,
+      "questionPdfPhysicalPage": 32,
+      "questionPdfPrintedPage": 26,
+      "stem": "第2〜第4腰髄の障害の有無を把握するために確認するのはどれか。",
+      "choices": [
+        "輻輳反射",
+        "腹壁反射",
+        "膝蓋腱反射",
+        "Trousseau¹トルソー¼徴候",
+        "Blumberg¹ブルンベルグ¼徴候"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "answerKind": "select_one",
+      "requiredSelections": 1,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p32.png",
+        "sha256": "449ececf2d69b52a13ded4a6b0198574a70ac0c92d2c7f1a0065cfcc6d50e7f6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 82,
+      "questionPdfPhysicalPage": 32,
+      "questionPdfPrintedPage": 26,
+      "stem": "門脈系の血管はどれか。2つ選べ。",
+      "choices": [
+        "肝静脈",
+        "脾静脈",
+        "食道静脈",
+        "内腸骨静脈",
+        "下腸間膜静脈"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "5"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p32.png",
+        "sha256": "449ececf2d69b52a13ded4a6b0198574a70ac0c92d2c7f1a0065cfcc6d50e7f6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 83,
+      "questionPdfPhysicalPage": 32,
+      "questionPdfPrintedPage": 26,
+      "stem": "Aさん（35歳、女性）は1年前に子宮体癌のために単純子宮全摘出術と両側卵巣\n摘出術を受け、その後、ホルモン補充療法は受けずに健康に過ごしている。\nA さんの血液中で術前よりも濃度が上昇しているホルモンはどれか。2つ選べ。",
+      "choices": [
+        "テストステロン",
+        "プロゲステロン",
+        "エストラジオール",
+        "黄体形成ホルモン〈LH〉",
+        "卵胞刺激ホルモン〈FSH〉"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "4",
+        "5"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p32.png",
+        "sha256": "449ececf2d69b52a13ded4a6b0198574a70ac0c92d2c7f1a0065cfcc6d50e7f6"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 84,
+      "questionPdfPhysicalPage": 33,
+      "questionPdfPrintedPage": 27,
+      "stem": "後天性の大動脈弁狭窄症について正しいのはどれか。2つ選べ。",
+      "choices": [
+        "二尖弁が多い。",
+        "弁尖の石灰化による。",
+        "左室壁は徐々に薄くなる。",
+        "収縮期に心雑音を聴取する。",
+        "心筋の酸素消費量は減少する。"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "4"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p33.png",
+        "sha256": "787831213733db9e72a6604f1d7794ce30fd196a9703347a370126183e827df5"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 85,
+      "questionPdfPhysicalPage": 33,
+      "questionPdfPrintedPage": 27,
+      "stem": "内臓脂肪の蓄積を推定するために用いるのはどれか。2つ選べ。",
+      "choices": [
+        "身\n長",
+        "体\n重",
+        "腹部CT",
+        "腹囲〈ウエスト周囲長〉",
+        "血中トリグリセライド値"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "3",
+        "4"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p33.png",
+        "sha256": "787831213733db9e72a6604f1d7794ce30fd196a9703347a370126183e827df5"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 86,
+      "questionPdfPhysicalPage": 33,
+      "questionPdfPrintedPage": 27,
+      "stem": "介護保険法で定める特定疾病はどれか。2つ選べ。",
+      "choices": [
+        "ウイルス肝炎",
+        "脊髄小脳変性症",
+        "閉塞性動脈硬化症〈ASO〉",
+        "メタボリックシンドローム",
+        "後天性免疫不全症候群〈AIDS〉"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "3"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p33.png",
+        "sha256": "787831213733db9e72a6604f1d7794ce30fd196a9703347a370126183e827df5"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 87,
+      "questionPdfPhysicalPage": 34,
+      "questionPdfPrintedPage": 28,
+      "stem": "介護保険法で地域包括支援センターに配置が義務付けられているのはどれか。2\nつ選べ。",
+      "choices": [
+        "介護福祉士",
+        "社会福祉士",
+        "介護支援専門員",
+        "精神保健福祉士",
+        "主任介護支援専門員"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "5"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p34.png",
+        "sha256": "9eeaf645c3e36c90eb9033bbb5b8412505c4c1e77c58c175286b0e1427082e7c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 88,
+      "questionPdfPhysicalPage": 34,
+      "questionPdfPrintedPage": 28,
+      "stem": "高齢者における感覚器の変化の特徴で正しいのはどれか。2つ選べ。",
+      "choices": [
+        "高音域の聴力が保持される。",
+        "痛覚の感受性が低下する。",
+        "味覚の閾値が低下する。",
+        "暗順応が低下する。",
+        "嗅覚は保持される。"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "4"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p34.png",
+        "sha256": "9eeaf645c3e36c90eb9033bbb5b8412505c4c1e77c58c175286b0e1427082e7c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 89,
+      "questionPdfPhysicalPage": 34,
+      "questionPdfPrintedPage": 28,
+      "stem": "子どもの成長・発達で正しいのはどれか。2つ選べ。",
+      "choices": [
+        "基本的な運動発達は末梢から中枢へ向かう。",
+        "発達の臨界期は身体の各部位によって異なる。",
+        "成長とは身体の機能が質的に変化することである。",
+        "新生児期の成長・発達は環境よりも遺伝の影響が大きい。",
+        "乳幼児期の脳神経系の発達は学童期と比べゆるやかである。"
+      ],
+      "choiceCount": 5,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "4"
+      ],
+      "answerKind": "select_two",
+      "requiredSelections": 2,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p34.png",
+        "sha256": "9eeaf645c3e36c90eb9033bbb5b8412505c4c1e77c58c175286b0e1427082e7c"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page"
+    },
+    {
+      "round": 114,
+      "session": "afternoon",
+      "question": 90,
+      "questionPdfPhysicalPage": 35,
+      "questionPdfPrintedPage": 29,
+      "stem": "身長160cm、体重60kgの成人の体格指数〈BMI〉を求めよ。\nただし、小数点以下の数値が得られた場合には、小数点以下第2位を四捨五入すること。",
+      "choices": [],
+      "choiceCount": 0,
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "3",
+        "4"
+      ],
+      "officialNumericAnswer": "23.4",
+      "answerKind": "numeric",
+      "numericAnswer": {
+        "format": "decimal",
+        "decimalPlaces": 1
+      },
+      "requiredSelections": null,
+      "sourcePageImage": {
+        "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\nurse-q76-100\\pm114-q76-90-renders\\114-pm-physical-p35.png",
+        "sha256": "dd2ce42077c2f43bea7af4213a709d618dc642c2ba4c33ba5cbc2aeeeda0ccbf"
+      },
+      "figurePresent": false,
+      "transcriptionStatus": "visually verified against original PDF page",
+      "visualCheck": "Official numeric answer sheet PM90 digits 2 3 4, matching BMI 60/(1.60^2)=23.4375 rounded to 23.4; never create multiple-choice options."
+    }
+  ]
+}

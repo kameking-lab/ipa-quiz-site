@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
 
 const DEFAULT_EXAM: ExamCode = "ap";
@@ -53,6 +54,7 @@ function isExamCode(s: unknown): s is ExamCode {
 }
 
 function sessionLabel(session: Session): string {
+  if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
   switch (session) {
     case "am":
       return "午前";
