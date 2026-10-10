@@ -6,6 +6,9 @@ import rousai2026 from "./rousai-2026-annual.json";
 import koyou2025 from "./koyou-2025-annual.json";
 import koyou2026 from "./koyou-2026-annual.json";
 import kenpo2025 from "./kenpo-2025-annual.json";
+import kenpo2026 from "./kenpo-2026-annual.json";
+import kounen2025 from "./kounen-2025-annual.json";
+import kounen2026 from "./kounen-2026-annual.json";
 import ippan2025 from "./ippan-2025-annual.json";
 import ippan2026 from "./ippan-2026-annual.json";
 
@@ -23,6 +26,9 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(koyou2025 as Question[]),
   ...(koyou2026 as Question[]),
   ...(kenpo2025 as Question[]),
+  ...(kenpo2026 as Question[]),
+  ...(kounen2025 as Question[]),
+  ...(kounen2026 as Question[]),
   ...(ippan2025 as Question[]),
   ...(ippan2026 as Question[]),
 ].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
