@@ -11,6 +11,7 @@ import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { NATIVE_QUESTIONS } from "@/lib/denken2/native";
 
 export const metadata: Metadata = {
   title: "FP・電気・施工管理・不動産・福祉などの公式公開過去問",
@@ -51,7 +52,7 @@ export default function QualificationsPage() {
           <article key={item.slug} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <div className="mb-3 flex items-center justify-between gap-3">
               <h2 className="text-lg font-bold">{item.shortName}</h2>
-              <Badge variant="outline">{item.slug === "fp2" ? `学科 ${questionCounts.fp2}問・実技 ${fp2PracticalCount}問` : item.slug === "fp3" ? `学科 ${questionCounts.fp3}問・実技 ${fp3PracticalCount}問` : item.slug === "denken2" ? `電力・法規 ${questionCounts.denken2}空欄` : item.slug === "denken1" ? `電力・機械・法規 各5空欄` : `収録 ${questionCounts[item.slug]}問`}</Badge>
+              <Badge variant="outline">{item.slug === "fp2" ? `学科 ${questionCounts.fp2}問・実技 ${fp2PracticalCount}問` : item.slug === "fp3" ? `学科 ${questionCounts.fp3}問・実技 ${fp3PracticalCount}問` : item.slug === "denken2" ? `収録 ${questionCounts.denken2 / 5 + NATIVE_QUESTIONS.length}原問` : item.slug === "denken1" ? `電力・機械・法規 各5空欄` : `収録 ${questionCounts[item.slug]}問`}</Badge>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
             {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の学科240問と2026年5月公表の学科{fp2May2026CoverageLabel()}、実技は2024～2026年の{FP2_PRACTICAL_EDITIONS.length}セット{fp2PracticalCount}問を収録。</p></>}

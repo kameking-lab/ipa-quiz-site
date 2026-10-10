@@ -120,9 +120,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.shiken.or.jp/chief/second/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
     status: "live",
-    reuseSummary: "令和8年度一次試験の電力・法規（各7問・空欄35）を収録。空欄ごとに公式の解答群15肢から選び、全肢の解説を確認できます。",
+    reuseSummary: "2026年度一次試験は理論・電力・機械・法規の30原問・155回答欄、2025年度は理論・機械の16原問・80回答欄を収録。計46原問です。公式問題の図・数式・解答群と、各欄の正答・解説を確認できます。",
     attributionTemplate: "出典：令和○年度第二種電気主任技術者一次試験○○科目○問題問○",
-    remainingWork: ["令和8年度一次試験の理論・機械の追加", "過年度（令和7年度以前）の一次試験の追加"],
+    remainingWork: ["2025年度の電力・法規、2024年度以前の未収録原問の追加", "二次試験の追加"],
   },
   {
     slug: "denko2",
