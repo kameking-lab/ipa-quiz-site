@@ -50,6 +50,19 @@ test("invalid saved coordinates produce no invented progress", async ({ page }) 
   await expect(page.getByRole("link", { name: "続きを開く" })).toHaveCount(0);
 });
 
+test("year list starts the chosen question without revealing its answer", async ({ page }) => {
+  await page.goto("/ip/2011-autumn");
+  await expect(page.getByRole("heading", { name: "午前", exact: true })).toBeVisible();
+  const question = page.locator('a[href*="question=ip-2011a-am-q2&"]');
+  await expect(question).toHaveCount(1);
+  await question.click();
+  await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
+  expect(new URL(page.url()).pathname).toBe("/quiz");
+  expect(new URL(page.url()).searchParams.get("question")).toBe("ip-2011a-am-q2");
+  await expect(page.locator('[aria-label="解答結果"]')).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "各選択肢の解説", exact: true })).toHaveCount(0);
+});
+
 test("challenge direct access requires a qualification", async ({ page }) => {
   await page.goto("/challenge");
   await expect(page.getByRole("searchbox")).toBeVisible();

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +21,11 @@ export interface SessionGroup {
   session: string;
   id?: string;
   items: QuestionListItem[];
+}
+
+function sessionLabel(session: string): string {
+  const parsed = parsePracticeSession(session);
+  return parsed ? practiceSessionLabel(parsed) : session;
 }
 
 type Filter = "all" | "unanswered" | "wrong";
@@ -128,7 +133,7 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
           <div className="grid gap-2 sm:grid-cols-2">
             {visibleSectionGroups.map((group) => (
               <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                {group.session}
+                {sessionLabel(group.session)}
               </a>
             ))}
           </div>
@@ -139,17 +144,17 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
         const filtered = items.filter(shouldShow);
         if (filtered.length === 0) return null;
         return (
-          <section key={session} id={id} aria-label={session} className="mb-8 scroll-mt-6">
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          <section key={session} id={id} aria-label={sessionLabel(session)} className="mb-8 scroll-mt-6">
+            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
-              {session.toUpperCase()}
+              {sessionLabel(session)}
             </h2>
             <ul className="space-y-2">
               {filtered.map((q) => {
                 const status = solved[q.id];
                 return (
                   <li key={q.id}>
-                    <Link
+                    <a
                       href={q.href}
                       className={cn(
                         "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
@@ -205,7 +210,7 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
                         </span>
                       </span>
                       <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </Link>
+                    </a>
                   </li>
                 );
               })}
