@@ -1,0 +1,52 @@
+{
+  "checkedUtc": "2026-10-10T10:21:19.428636+00:00",
+  "scope": "Saved READY6 mechanical integration only",
+  "status": "PASS_LOCAL_READY_FOR_PARENT_CI",
+  "focusedTests": {
+    "files": 7,
+    "uniqueTests": 19,
+    "status": "PASS",
+    "initialBoundaryFailures": 2,
+    "boundaryFixes": [
+      "correct catalog export name in new test",
+      "replace final stale whole-registry101 uniqueness expectation with current-size equality"
+    ],
+    "repairedFilesRetested": 2,
+    "repairedTestsPassed": 6
+  },
+  "typecheck": "PASS",
+  "eslintChangedFiles": "PASS",
+  "dataValidator": {
+    "exam": "sharoushi",
+    "validated": 107,
+    "ok": 107,
+    "fail": 0,
+    "warn": 0
+  },
+  "diffCheck": "PASS",
+  "oldMCObjectHashChanges": 0,
+  "oldNative16FileHashChanges": 0,
+  "newOriginals": 6,
+  "newChoices": 30,
+  "newOfficialKeysMatched": 6,
+  "savedLearningProseCopiedVerbatim": true,
+  "candidateMC": 107,
+  "candidateMCChoices": 535,
+  "nativeOriginals": 16,
+  "candidateTotalOriginals": 123,
+  "totalRequiredOriginals": 156,
+  "kokunenYearCounts": {
+    "2025": 10,
+    "2026": 10
+  },
+  "kokunenTwoYearComplete": true,
+  "originalRegeneration": 0,
+  "existingGOReReviewed": 0,
+  "CodexNewLearningProse": 0,
+  "registeredOldOriginalDeletions": 0,
+  "publicOperations": 0,
+  "remainingChecks": [
+    "Parent mandatory CI/build",
+    "Parent PR merge and anonymous production verification"
+  ]
+}
