@@ -1,3 +1,4 @@
+import primary11 from "@/docs/evidence/nurse-primary11-20261011/INTEGRATION.json";
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import YearPage from "@/app/[exam]/[yearSeason]/page";
@@ -27,6 +28,7 @@ const laterVerifiedIds = new Set([
   ...laterFive.sourceChecks.map(check => check.id),
   ...go9.sourceChecks.map(check => check.id),
   ...pm4.sourceChecks.map(check => check.id),
+  ...primary11.addedIds,
 ]);
 
 describe("saved114th afternoon next57 registration",()=>{

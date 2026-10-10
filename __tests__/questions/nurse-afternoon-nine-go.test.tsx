@@ -1,3 +1,4 @@
+import primary11 from "@/docs/evidence/nurse-primary11-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -18,9 +19,9 @@ describe("nursing PM nine verified follow-up originals", () => {
     expect(proof.baseCommit).toBe("79f7f333d2618ed19c033cf353b8ddc29d7ea2c9");
     expect(proof.previous418ObjectHashes).toHaveLength(418);
     for (const old of proof.previous418ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3);
-    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3 + primary11.preparedAdditionCount);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3 + primary11.preparedAdditionCount);
+    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12 + primary11.preparedChoiceCount);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(proof.sourceChecks).toHaveLength(9);
     expect(proof.figureAssets).toHaveLength(5);
@@ -69,9 +70,9 @@ describe("nursing PM nine verified follow-up originals", () => {
 
   it("shows matching partial-collection counts and the unchanged exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
+    expect(home).toContain("午前235問と午後232問");
+    expect(home).toContain("計467原問");
+    expect(home).toContain("全1931肢");
     expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
   });
 });
