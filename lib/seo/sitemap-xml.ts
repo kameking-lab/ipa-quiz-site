@@ -1,4 +1,5 @@
 import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
+import { NATIVE_QUESTIONS, nativeQuestionPaths, nativeSubjectPath } from "@/lib/denken2/native";
 import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
@@ -330,7 +331,10 @@ export function renderMainSitemapXml(): string {
 
 export function renderExamsSitemapXml(): string {
   // Exam routes already carry per-entry lastModified from getExamHubRoutes().
-  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 }))]);
+  const nativeSubjects = [...new Set(NATIVE_QUESTIONS.map(q => nativeSubjectPath(q.year, q.subject)))];
+  const nativeRoutes = [...nativeSubjects, ...nativeQuestionPaths()]
+    .map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly" as const, priority: 0.6 }));
+  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes]);
 }
 
 export function renderFpPracticalSitemapXml(): string {

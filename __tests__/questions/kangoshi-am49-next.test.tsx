@@ -9,6 +9,7 @@ import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { ChoiceKey } from "@/lib/questions/types";
 import YearPage from "@/app/[exam]/[yearSeason]/page";
 import proof from "@/docs/evidence/nurse-am49-next-20261010/INTEGRATION.json";
+import { historicalNurseHash } from "./nurse-pm-category-hash";
 
 const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a],[b]) => a<b?-1:a>b?1:0).map(([key,v]) => [key,canonical(v)])) : value;
 const sha = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
@@ -18,7 +19,7 @@ const added = KANGOSHI_QUESTIONS.filter(q => proof.addedIds.includes(q.id));
 describe("frozen saved nursing morning49 originals", () => {
   it("adds exactly the verified49 originals and201 choices, retaining every old338 object", () => {
     expect(proof.previous338ObjectHashes).toHaveLength(338);
-    for (const old of proof.previous338ObjectHashes) expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===old.id)),old.id).toBe(old.sha256);
+    for (const old of proof.previous338ObjectHashes) expect(historicalNurseHash(KANGOSHI_QUESTIONS.find(q=>q.id===old.id),old.id),old.id).toBe(old.sha256);
     expect(added).toHaveLength(49);
     expect(added.map(q=>q.id).sort()).toEqual(proof.addedIds.slice().sort());
     expect(added.reduce((sum,q)=>sum+Object.keys(q.choices??{}).length,0)).toBe(201);

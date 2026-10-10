@@ -1,21 +1,21 @@
-import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
+import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";
 import sourceCandidates from "@/docs/evidence/nurse-afternoon-go-20261010/SOURCE-CANDIDATES.json";
+import laterProof from "@/docs/evidence/nurse-afternoon-nine-go-20261010/INTEGRATION.json";
+import latestProof from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 
-const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(canonical) : value && typeof value === "object" ? Object.fromEntries(Object.entries(value).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([key, item]) => [key, canonical(item)])) : value;
-const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(canonical(value))).digest("hex");
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 
 describe("nursing afternoon post-PR662 GO delta", () => {
   it("retains all 387 originals unchanged and registers only the 29 frozen GO IDs", () => {
     expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
     expect(proof.previous387ObjectHashes).toHaveLength(387);
-    for (const old of proof.previous387ObjectHashes) expect(hash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(418);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(418);
+    for (const old of proof.previous387ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(430);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(430);
     expect(proof.addedIds).toHaveLength(29);
     expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);
@@ -25,7 +25,7 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     for (const batch of proof.batches) for (const check of batch.sourceChecks) {
       const question = byId.get(check.id);
       expect(question, check.id).toBeDefined();
-      expect(hash(question), check.id).toBe(check.objectSha256);
+      expect(historicalNurseHash(question, check.id), check.id).toBe(check.objectSha256);
       expect(question?.session).toBe("pm");
       expect(question?.year).toBe(check.id.includes("-2024-") ? 2024 : 2025);
       expect(question?.question.endsWith(check.sourceStem)).toBe(true);
@@ -49,7 +49,8 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     for (const held of proof.remainingHeldByScope) {
       const year = held.scope.startsWith("114-") ? 2024 : 2025;
       for (const qNumber of held.questionNumbers) {
-        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58)) continue; // Verified original figures promoted in the next delta.
+        const id = `kangoshi-${year}-annual-pm-q${qNumber}`;
+        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58) || laterProof.sourceChecks.some(check => check.id === id) || latestProof.sourceChecks.some(check => check.id === id)) continue; // Verified follow-up originals, each checked against its source by dedicated tests.
         expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
       }
     }

@@ -20,6 +20,8 @@ beforeEach(() => {
 describe("QuizPlayer numeric original", () => {
   it("keeps an unfilled original ungraded and blocks a partially numeric input", () => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
+    expect(screen.getByText(/^数値を入力し、Enter/)).toBeInTheDocument();
+    expect(screen.queryByText(/^整数を入力し、Enter/)).toBeNull();
     expect(screen.queryByRole("radiogroup")).toBeNull();
     expect(screen.getByRole("button", { name: "採点する" })).toBeDisabled();
     fireEvent.submit(screen.getByRole("form", { name: "数値記入の解答" }));
