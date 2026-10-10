@@ -2,30 +2,30 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
-import proof from "@/docs/evidence/nurse-pm-three-later-20261010/INTEGRATION.json";
-import candidates from "@/docs/evidence/nurse-pm-three-later-20261010/SOURCE-CANDIDATES.json";
+import proof from "@/docs/evidence/nurse-pm-four-later-20261010/INTEGRATION.json";
+import candidates from "@/docs/evidence/nurse-pm-four-later-20261010/SOURCE-CANDIDATES.json";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
 
 const byId = new Map(KANGOSHI_QUESTIONS.map(question => [question.id, question]));
 
-describe("three later primary-verified nursing PM originals", () => {
-  it("retains every corrected 430 object byte-for-byte and adds exactly three originals", () => {
-    expect(proof.baseCommit).toBe("669b9da832b6980a10303ec76a407766c51f71e5");
-    expect(proof.previous430ObjectHashes).toHaveLength(430);
-    for (const old of proof.previous430ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
+describe("four additional primary-verified nursing PM originals", () => {
+  it("preserves every earlier 433 object and adds only four separately verified originals", () => {
+    expect(proof.baseCommit).toBe("09c9cbded397176332eba2f3dbc175d6d29b9008");
+    expect(proof.previous433ObjectHashes).toHaveLength(433);
+    for (const old of proof.previous433ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
     expect(KANGOSHI_QUESTIONS).toHaveLength(437);
     expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(437);
-    expect(KANGOSHI_QUESTIONS.reduce((total, question) => total + Object.keys(question.choices ?? {}).length, 0)).toBe(1807);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(1807);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id).sort()).toEqual(proof.sourceChecks.map(check => check.id).sort());
   });
 
-  it("retains each official stem, every choice, accepted key and full option explanations", () => {
-    expect(proof.sourceChecks).toHaveLength(3);
+  it("retains the official 114th PM stem, four choices, published answer and all explanations", () => {
+    expect(proof.sourceChecks).toHaveLength(4);
     for (const check of proof.sourceChecks) {
       const question = byId.get(check.id)!;
       expect(nurseObjectHash(question), check.id).toBe(check.objectSha256);
-      expect(question.year).toBe(check.year);
+      expect(question.year).toBe(2024);
       expect(question.session).toBe("pm");
       expect(question.qNumber).toBe(check.qNumber);
       expect(question.question.endsWith(check.sourceStem)).toBe(true);
@@ -45,11 +45,12 @@ describe("three later primary-verified nursing PM originals", () => {
     for (const id of proof.keptUnregistered) expect(byId.has(id), id).toBe(false);
   });
 
-  it("shows the matching partial-collection counts on the exam home", () => {
+  it("shows the new partial collection and the official exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
     expect(home).toContain("午前227問と午後210問");
     expect(home).toContain("計437原問");
     expect(home).toContain("全1807肢");
     expect(home).toContain("第115回は午前114問・午後107問、第114回は午前113問・午後103問");
+    expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });
