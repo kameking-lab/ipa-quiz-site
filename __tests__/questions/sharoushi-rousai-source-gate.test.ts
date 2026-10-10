@@ -8,7 +8,7 @@ import { getSitemapQuestions } from "@/lib/seo/sitemap-pagination";
 describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => {
   it("公式正答Bの2025年問7だけを独立した労災セッションで公開する", () => {
     const rousai = SHAROUSHI_QUESTIONS.filter((q) => q.session === "rousai");
-    expect(rousai.map((q) => `${q.year}-${q.qNumber}`)).toEqual(["2026-2", "2026-3", "2026-4", "2026-5", "2026-8", "2026-10", "2025-3", "2025-4", "2025-5", "2025-6", "2025-7", "2025-10"]);
+    expect(rousai.map((q) => `${q.year}-${q.qNumber}`)).toEqual(["2026-2", "2026-3", "2026-4", "2026-5", "2026-8", "2026-9", "2026-10", "2025-3", "2025-4", "2025-5", "2025-6", "2025-7", "2025-9", "2025-10"]);
     const q = rousai.find((item) => item.year === 2025 && item.qNumber === 7)!;
     expect(q.officialAnswerNumber).toBe("B");
     expect(q.answer).toBe("イ");
@@ -24,10 +24,10 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
     expect(SHAROUSHI_QUESTIONS.filter((item) => item.session === "gakka")).toHaveLength(16);
   });
 
-  it("adds only eleven dated and officially keyed Rousai originals", () => {
+  it("adds only thirteen dated and officially keyed Rousai originals", () => {
     const newKeys: Array<[number, number, string]> = [
-      [2025, 3, "D"], [2025, 4, "E"], [2025, 5, "E"], [2025, 6, "E"], [2025, 10, "E"],
-      [2026, 2, "B"], [2026, 3, "C"], [2026, 4, "D"], [2026, 5, "D"], [2026, 8, "C"], [2026, 10, "C"],
+      [2025, 3, "D"], [2025, 4, "E"], [2025, 5, "E"], [2025, 6, "E"], [2025, 9, "D"], [2025, 10, "E"],
+      [2026, 2, "B"], [2026, 3, "C"], [2026, 4, "D"], [2026, 5, "D"], [2026, 8, "C"], [2026, 9, "B"], [2026, 10, "C"],
     ];
     const choiceLetters = ["ア", "イ", "ウ", "エ", "オ"];
     for (const [year, qNumber, officialAnswerNumber] of newKeys) {
@@ -76,6 +76,6 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
     expect(late.explanation).toContain("1,320円");
     expect(late.explanation).toContain("1,300円");
     expect(late.explanation).toContain("11月2日");
-    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(32);
+    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session !== "ippan")).toHaveLength(34);
   });
 });
