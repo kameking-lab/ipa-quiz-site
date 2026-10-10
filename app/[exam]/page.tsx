@@ -70,6 +70,7 @@ import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-co
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import ahakiCoverage from "@/data/questions/ahaki/held-ids.json";
 
 export const dynamicParams = false;
 const fp2PracticalCount = FP2_PRACTICAL_EDITIONS.reduce(
@@ -344,6 +345,20 @@ export default async function ExamTopPage({
           {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回の全156原問のうち、択一式{questions.length}原問と選択式{PUBLISHED_SENTAKU.length}原問、計{questions.length + PUBLISHED_SENTAKU.length}原問を部分収録しています。選択式は1原問に5空欄あり、空欄を原問数に加算しません。労基安衛は両回で16問、労災保険法・雇用保険法・健康保険法・一般常識は一次根拠を確認できた問題だけを収録しています。択一式は各回7科目70問で、科目ごとに問1〜10があります。このサイトでは科目別に番号を保持し、選択式とは分けて表示します。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。統計問題は各問題文が指定する調査年度の原表に基づきます。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。解説は過去問AIの独自作成です。</p>}
           {code === "sharoushi" && <p className="mt-3 text-sm"><Link href="/sharoushi/sentaku" className="inline-flex min-h-[44px] items-center text-primary underline">選択式の問題一覧（{PUBLISHED_SENTAKU.length}原問・{PUBLISHED_SENTAKU.length * 5}空欄）</Link></p>}
           {code === "kangoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">午前233問と午後228問、計{questions.length}原問を部分収録しています。第115・114回 午前 問1〜90のうち178問収録。午前 問91〜120の確認済み55原問と午後228原問を加え、計461原問を部分収録。第115回は午前116問・午後115問、第114回は午前117問・午後113問です。全1906肢の正誤理由と数値記入2問の計算過程を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。第115回午前 問79と未確認問題・未整備図は未収録です。共通症例は各原問に保持し、図のある問は原本画像を表示します。出典：厚生労働省。問題文は改行・空白・番号整理のみ調整し、解説は過去問AIが独自に作成しています。</p>}
+          {code === "ahaki-anma" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全320原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回155問・第33回131問）。未収録34原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
+          {code === "ahaki-hari-kyu" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全360原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回174問・第33回148問）。午後問161〜170ははり師専用、問171〜180はきゅう師専用で、共通問題とともに一冊の原問として数え、二つの試験へ重複計上していません。未収録38原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
+          {(code === "ahaki-anma" || code === "ahaki-hari-kyu") && (
+            <details className="mt-3 rounded-xl border border-border p-3 text-sm text-muted-foreground">
+              <summary className="cursor-pointer text-foreground">未収録の原問番号</summary>
+              <ul className="mt-2 space-y-1">
+                {ahakiCoverage.sections.filter((section) => section.exam === code).map((section) => (
+                  <li key={`${section.exam}-${section.year}-${section.session}`}>
+                    {section.year}年 {section.session === "am" ? "午前" : "午後"}：問{section.numbers.join("・")}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
         </header>
 
         {code === "soukan" && (
