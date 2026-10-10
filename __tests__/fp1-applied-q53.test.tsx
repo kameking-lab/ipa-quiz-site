@@ -15,7 +15,7 @@ describe("FP1 May applied Q53 official numerical cloze", () => {
     expect(q.references).toHaveLength(4);
     expect(q).not.toHaveProperty("choicesForBlank4");
     expect(generateStaticParams()).toContainEqual({ edition: "202605", number: "53" });
-    expect(generateStaticParams()).not.toContainEqual({ edition: "202605", number: "61" });
+    expect(generateStaticParams()).not.toContainEqual({ edition: "202605", number: "66" });
   });
 
   it("rejects an eighth answer, duplicate label, invented choices and mismatched source page", () => {

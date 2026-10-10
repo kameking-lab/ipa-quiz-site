@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { getFp1ExtensionQuestions, getFp1PublishedExtension } from "@/lib/fp1/published-extension";
 import Page, { generateMetadata } from "@/app/fp1/applied/[edition]/[number]/page";
-const questions = getFp1ExtensionQuestions("202605");
+const questions = getFp1ExtensionQuestions("202605").filter((q) => q.number <= 60);
 describe("FP1 approved Q54–60", () => {
   it("keeps seven original questions and all 35 official fields without choices", () => {
     expect(questions.map((q) => q.number)).toEqual([54,55,56,57,58,59,60]);
