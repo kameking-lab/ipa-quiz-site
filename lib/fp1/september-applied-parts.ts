@@ -1,5 +1,7 @@
 import { parseFp1AppliedExtension, type Fp1AppliedExtension } from "./applied-extension";
 
+const officialSourceKeys = ["sourceQuestionUrl", "sourceAnswerUrl", "sourceIndexUrl", "sourceAnswerIndexUrl", "reuseConditionsUrl"] as const;
+
 /**
  * September's finite source packets are owned independently. Merge their original
  * cases by official case number before applying the existing publication gate.
@@ -13,8 +15,8 @@ export function parseFp1SeptemberAppliedParts(parts: readonly unknown[]): Fp1App
     if (part.edition !== "202609" || part.lawReferenceDate !== "2026-04-01") {
       throw new Error("FP1 September part has an unexpected edition or law date");
     }
-    if (part.sourceQuestionUrl !== parsed[0]!.sourceQuestionUrl || part.sourceAnswerUrl !== parsed[0]!.sourceAnswerUrl) {
-      throw new Error("FP1 September parts disagree on official PDF sources");
+    if (officialSourceKeys.some((key) => part[key] !== parsed[0]![key])) {
+      throw new Error("FP1 September parts disagree on official sources");
     }
   }
   const questions = parsed.flatMap((part) => part.questions).sort((a, b) => a.number - b.number);
@@ -26,7 +28,11 @@ export function parseFp1SeptemberAppliedParts(parts: readonly unknown[]): Fp1App
     const alternatives = parsed.flatMap((part) => part.sharedCases.filter((item) => item.number === number));
     // The Q54-55 part holds the full case 2; the Q56-60 part holds the full
     // case 4 diagram. For all other cases the unique original is selected.
-    const preferredPart = number === 2 ? parsed[0] : number === 4 && parsed.length > 1 ? parsed[1] : undefined;
+    const preferredPart = number === 2
+      ? parsed.find((part) => part.questions.some((question) => question.number === 55))
+      : number === 4
+        ? parsed.find((part) => part.questions.some((question) => question.number === 60))
+        : undefined;
     const preferred = preferredPart?.sharedCases.find((item) => item.number === number);
     const chosen = preferred ?? alternatives[0]!;
     return {
