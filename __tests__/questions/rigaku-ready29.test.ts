@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { RIGAKU_RYOHOUSHI_QUESTIONS } from "@/data/questions/rigaku-ryohoshi";
 import manifest from "@/data/questions/rigaku-ryohoshi/source-manifest.json";
+import previous2026 from "@/data/questions/rigaku-ryohoshi/2026-annual.json";
+import previous2025 from "@/data/questions/rigaku-ryohoshi/2025-annual.json";
+const original29 = [...previous2026, ...previous2025];
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 
@@ -10,13 +13,15 @@ describe("理学療法士の部分収録", () => {
   it("保存した29原問のみを公開母集団へ入れ、保留35原問を混入させない", async () => {
     const loaded = await getQuestionsForExam("rigaku-ryohoshi");
     expect(loaded).toEqual(RIGAKU_RYOHOUSHI_QUESTIONS);
-    expect(loaded).toHaveLength(29);
-    expect(new Set(loaded.map((question) => question.id)).size).toBe(29);
+    expect(loaded).toHaveLength(179);
+    expect(original29).toHaveLength(29);
+    for (const original of original29) expect(loaded.find((q) => q.id === original.id)).toEqual(original);
+    expect(new Set(loaded.map((question) => question.id)).size).toBe(179);
     expect(loaded.map((question) => question.session)).toEqual(expect.arrayContaining(["am", "pm"]));
-    expect(loaded.filter((question) => question.year === 2026 && question.session === "am")).toHaveLength(7);
-    expect(loaded.filter((question) => question.year === 2026 && question.session === "pm")).toHaveLength(6);
-    expect(loaded.filter((question) => question.year === 2025 && question.session === "am")).toHaveLength(12);
-    expect(loaded.filter((question) => question.year === 2025 && question.session === "pm")).toHaveLength(4);
+    expect(original29.filter((question) => question.year === 2026 && question.session === "am")).toHaveLength(7);
+    expect(original29.filter((question) => question.year === 2026 && question.session === "pm")).toHaveLength(6);
+    expect(original29.filter((question) => question.year === 2025 && question.session === "am")).toHaveLength(12);
+    expect(original29.filter((question) => question.year === 2025 && question.session === "pm")).toHaveLength(4);
     expect(manifest.heldIdentities).toHaveLength(35);
     expect(manifest.officialLatestTwoRoundOriginals).toBe(400);
     expect(manifest.latestTwoRoundsComplete).toBe(false);
@@ -26,7 +31,7 @@ describe("理学療法士の部分収録", () => {
   it("全問で公式キー・5肢・全肢理由を持ち、図と代替採点の保留問を除外する", () => {
     const held = new Set(manifest.heldIdentities);
     let twoSelection = 0;
-    for (const question of RIGAKU_RYOHOUSHI_QUESTIONS) {
+    for (const question of original29) {
       const receipt = manifest.sourceReceipts[question.id as keyof typeof manifest.sourceReceipts];
       expect(receipt, question.id).toBeDefined();
       expect(held.has(receipt.identity), question.id).toBe(false);
