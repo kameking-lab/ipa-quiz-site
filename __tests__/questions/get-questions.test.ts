@@ -75,7 +75,9 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("kashikin");
     expect(codes).toContain("sharoushi");
     expect(codes).toContain("kangoshi");
-    expect(codes.length).toBe(42);
+    expect(codes).toContain("ahaki-anma");
+    expect(codes).toContain("ahaki-hari-kyu");
+    expect(codes.length).toBe(44);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });
