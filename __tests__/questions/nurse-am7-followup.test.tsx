@@ -38,13 +38,17 @@ describe("six publication-ready nursing AM originals", () => {
     }
     expect(proof.addedIds).toHaveLength(6);
     expect(saved.map(question => question.id).sort()).toEqual(proof.addedIds);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 1);
     expect(proof.totalOriginals).toBe(proof.previousOriginals + proof.addedOriginals);
     expect(proof.totalOriginals).toBe(457);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 4);
     expect(proof.totalChoices).toBe(proof.previousChoices + proof.addedChoices);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals);
-    for (const id of proof.heldIdsUnchanged) expect(byId.has(id), id).toBe(false);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 1);
+    expect(proof.heldIdsUnchanged).toContain("kangoshi-2025-annual-am-q99");
+    for (const id of proof.heldIdsUnchanged) {
+      if (id === "kangoshi-2025-annual-am-q99") continue;
+      expect(byId.has(id), id).toBe(false);
+    }
   });
 
   it("keeps Q112 as a source-checked historical candidate but outside publication", () => {
@@ -119,15 +123,15 @@ describe("six publication-ready nursing AM originals", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
     const catalog = QUALIFICATION_CATALOG.find(item => item.examCode === "kangoshi")!;
     for (const text of [home, catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
-      expect(text).toContain("計461原問");
-      expect(text).toContain("全1906肢");
+      expect(text).toContain("計462原問");
+      expect(text).toContain("全1910肢");
       expect(text).toContain("午後228原問");
-      expect(text).toContain("第115回は午前116問・午後115問、第114回は午前117問・午後113問");
+      expect(text).toContain("第115回は午前117問・午後115問、第114回は午前117問・午後113問");
       expect(text).toContain("午前 問32は厚生労働省が採点対象から除外");
     }
-    expect(home).toContain("午前233問と午後228問");
+    expect(home).toContain("午前234問と午後228問");
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(117);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(116);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(117);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(113);
     expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(115);
   });

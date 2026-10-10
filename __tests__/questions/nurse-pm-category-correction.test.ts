@@ -12,7 +12,7 @@ describe("114th nursing afternoon official section metadata correction", () => {
     expect(delta.affectedCount).toBe(32);
     expect(delta.changes).toHaveLength(32);
     expect(new Set(delta.changes.map(change => change.id)).size).toBe(32);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(461);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(462);
     for (const change of delta.changes) {
       const question = byId.get(change.id)!;
       expect(question.year, change.id).toBe(2024);

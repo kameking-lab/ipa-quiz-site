@@ -36,8 +36,17 @@ describe("115th nurse AM Q99 primary-source adoption candidate", () => {
     expect(candidate.choiceExplanations?.エ).toContain("30～35");
   });
 
-  it("remains out of the live question registry until the publication gate", () => {
-    expect(KANGOSHI_QUESTIONS.some(q => q.id === candidate.id)).toBe(false);
+  it("is registered once without changing the verified candidate", () => {
+    const live = KANGOSHI_QUESTIONS.filter(q => q.id === candidate.id);
+    expect(live).toHaveLength(1);
+    expect(live[0]).toEqual({
+      ...candidate,
+      explanation: `${candidate.explanation}数値基準の参照：日本透析医学会『透析会誌』50巻11号（2017年）725–729頁。`,
+      officialReferenceUrls: [
+        ...candidate.officialReferenceUrls!,
+        "https://www.jstage.jst.go.jp/article/jsdt/50/11/50_725/_pdf",
+      ],
+    });
     expect(createHash("sha256").update(bytes).digest("hex")).toBe(
       "cb7d3419559256d3499b08f6835f3e8ad1d79f1651d82e4741b56cd3c7e47aba",
     );

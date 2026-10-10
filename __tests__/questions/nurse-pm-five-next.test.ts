@@ -16,9 +16,9 @@ describe("five additional primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("33728f49d5ce70c2265fe570f0155bf69c1bd0d0");
     expect(proof.previous437ObjectHashes).toHaveLength(437);
     for (const old of proof.previous437ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 1);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 1);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 4);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id)).toEqual(proof.addedIds);
     expect(proof.addedIds).toEqual([39, 40, 42, 47, 49].map(qNumber => `kangoshi-2024-annual-pm-q${qNumber}`));
@@ -61,10 +61,10 @@ describe("five additional primary-verified nursing PM originals", () => {
 
   it("shows precise partial totals and the official excluded-original caveat", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前233問と午後228問");
-    expect(home).toContain("午後228原問を加え、計461原問");
-    expect(home).toContain("全1906肢");
-    expect(home).toContain("第115回は午前116問・午後115問、第114回は午前117問・午後113問");
+    expect(home).toContain("午前234問と午後228問");
+    expect(home).toContain("午後228原問を加え、計462原問");
+    expect(home).toContain("全1910肢");
+    expect(home).toContain("第115回は午前117問・午後115問、第114回は午前117問・午後113問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });
