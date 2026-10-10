@@ -757,11 +757,35 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  "ahaki-anma": {
+    code: "ahaki-anma",
+    nameFull: "あん摩マッサージ指圧師国家試験",
+    urlSlug: "ahaki-anma",
+    level: "basic",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 80, label: "午前", categories: ["あん摩マッサージ指圧師"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 80, label: "午後", categories: ["あん摩マッサージ指圧師"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
+  "ahaki-hari-kyu": {
+    code: "ahaki-hari-kyu",
+    nameFull: "はり師・きゅう師国家試験",
+    urlSlug: "ahaki-hari-kyu",
+    level: "basic",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 90, label: "午前", categories: ["はり師・きゅう師 共通"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 90, label: "午後", categories: ["はり師・きゅう師 共通", "はり師 専用", "きゅう師 専用"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
