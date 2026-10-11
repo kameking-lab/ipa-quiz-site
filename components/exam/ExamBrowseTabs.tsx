@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Calendar, ChevronRight, Tags, Trophy } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import type { ExamCode } from "@/lib/questions/types";
+import { isMockExamCode } from "@/lib/mock-exam/config";
 
 export interface YearItem {
   key: string;
@@ -46,7 +47,7 @@ function YearLink({ exam, item: g }: { exam: ExamCode; item: YearItem }) {
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
   const [tab, setTab] = React.useState<string>("year");
-  const partialFirstStage = exam === "zoen2" || exam === "zoen1" || exam === "tsushin2" || exam === "tsushin1";
+  const supportsMockExam = isMockExamCode(exam);
 
   React.useEffect(() => {
     const apply = () => {
@@ -71,7 +72,7 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
         </TabsTrigger>
         <TabsTrigger value="mock" className="flex-1">
           <Trophy className="mr-1 h-3.5 w-3.5 inline" />
-          {partialFirstStage ? "演習" : "模試"}
+          {!supportsMockExam || exam === "sg" ? "演習" : "模試"}
         </TabsTrigger>
       </TabsList>
 
@@ -118,15 +119,15 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
 
       <TabsContent value="mock">
         <ul className="grid gap-2 sm:grid-cols-2">
-          {(partialFirstStage ? MOCK_PRESETS.slice(1) : MOCK_PRESETS).map((m) => (
+          {(supportsMockExam ? MOCK_PRESETS : MOCK_PRESETS.slice(1)).map((m) => (
             <li key={m.label}>
               <Link
                 href={m.href(exam)}
                 className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
               >
                 <span>
-                  <span className="block font-medium text-foreground">{m.label}</span>
-                  <span className="block text-xs text-muted-foreground">{partialFirstStage && m.label === "ランダム短時間演習" ? "収録済みの問題をランダムに解く" : m.desc}</span>
+                  <span className="block font-medium text-foreground">{exam === "sg" && m.label === "本番想定 模試" ? "科目A 演習" : m.label}</span>
+                  <span className="block text-xs text-muted-foreground">{exam === "sg" && m.label === "本番想定 模試" ? "収録済みの科目Aを制限時間付きで演習（科目Bを含みません）" : !supportsMockExam && m.label === "ランダム短時間演習" ? "収録済みの問題をランダムに解く" : m.desc}</span>
                 </span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>

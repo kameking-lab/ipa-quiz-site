@@ -507,7 +507,7 @@ export default async function QuestionPage({
 
       <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
         {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
-        <Link href="/review" className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
+        <Link href={`/review?${new URLSearchParams({ exam: q.exam, returnTo: questionPagePath(q) })}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
       </nav>
       <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 

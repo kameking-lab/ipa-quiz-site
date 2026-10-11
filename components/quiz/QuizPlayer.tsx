@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
@@ -549,6 +551,9 @@ export function QuizPlayer({
                     !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
                   }
                 />
+                <Button asChild variant="outline" className="w-full sm:w-auto">
+                  <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
+                </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
                 {question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />

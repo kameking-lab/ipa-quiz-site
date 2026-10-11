@@ -246,7 +246,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   denken2: (c) =>
     `第二種電気主任技術者一次試験の2026年度から電力・法規14原問・${c}空欄と理論・機械16原問・85回答欄、2025年度から理論・機械16原問・80回答欄を収録。計46原問です。2025年度の電力・法規と二次試験は未収録です。`,
   denko2: (c, y, k) =>
-    `第二種電気工事士学科の2024・2025年度上下期を${c}問・${y}期分・${k}分野収録。全選択肢の正誤理由と公式問題・正答を確認できます。技能試験104課題も試験日別に掲載しています。`,
+    `第二種電気工事士学科の${publishedYearRange("denko2")}の掲載済み問題を${c}問・${y}期分・${k}分野収録。全選択肢の正誤理由と公式問題・正答を確認できます。技能試験104課題も試験日別に掲載しています。`,
   denko1: (c, y, k) =>
     `第一種電気工事士学科の令和7年度下期の学科試験問題と令和8年度上期(CBT)公表出題例を計${c}問・${y}期分・${k}分野収録。高圧受電設備の配線図を含む全選択肢の正誤理由と、公式問題・正答を確認できます。`,
   takken: (c, y, k) =>
@@ -309,6 +309,14 @@ const EXAM_META_DESC_DIVERSE: Record<
   "shinryo-hoshasengishi": (c) => `診療放射線技師国家試験の第77・78回（2025・2026年実施）の午前・午後を${c}問収録。原文・公式正答・全五肢解説・必要図版を照合。第78回午前23は採点除外、午前15は公式図版省略のため未出題です。`,
   "shika-ishi": (c) => `歯科医師国家試験の第119回（2026年）・第118回（2025年）の問題A〜D、採点対象${c}問と全肢解説を収録。公式採点除外24問は演習対象外です。必要な原図、並べ替え・数値記入に対応しています。`,
 };
+
+function publishedYearRange(exam: ExamCode): string {
+  const years = getQuestionsByExamStrict(exam).map((q) => q.year);
+  if (years.length === 0) return "掲載済み";
+  const first = Math.min(...years);
+  const last = Math.max(...years);
+  return first === last ? `${first}年度` : `${first}〜${last}年度`;
+}
 
 export function examMetaDescription(
   exam: ExamCode,

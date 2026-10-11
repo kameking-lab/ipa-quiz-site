@@ -9,7 +9,7 @@ export interface MockExamConfig {
   passThreshold: number;
 }
 
-export const MOCK_EXAM_CONFIGS: Record<string, MockExamConfig> = {
+export const MOCK_EXAM_CONFIGS = {
   ip: { exam: "ip", session: "am", label: "ITパスポート 模試", questions: 100, minutes: 120, passThreshold: 0.6 },
   sg: { exam: "sg", session: "kamoku-a", label: "情報セキュリティマネジメント 科目A 演習", questions: 37, minutes: 120, passThreshold: 0.6 },
   fe: { exam: "fe", session: "kamoku-a", label: "基本情報 科目A 模試", questions: 60, minutes: 90, passThreshold: 0.6 },
@@ -23,8 +23,16 @@ export const MOCK_EXAM_CONFIGS: Record<string, MockExamConfig> = {
   sc: { exam: "sc", session: "am2", label: "情報処理安全確保支援士 午前II 模試", questions: 25, minutes: 40, passThreshold: 0.6 },
   sm: { exam: "sm", session: "am2", label: "ITサービスマネージャ 午前II 模試", questions: 25, minutes: 40, passThreshold: 0.6 },
   au: { exam: "au", session: "am2", label: "システム監査 午前II 模試", questions: 25, minutes: 40, passThreshold: 0.6 },
-};
+} satisfies Partial<Record<ExamCode, MockExamConfig>>;
 
-export function getMockConfig(exam: ExamCode): MockExamConfig {
-  return MOCK_EXAM_CONFIGS[exam] ?? MOCK_EXAM_CONFIGS.ap;
+export type MockExamCode = keyof typeof MOCK_EXAM_CONFIGS;
+
+export function isMockExamCode(exam: string): exam is MockExamCode {
+  return Object.hasOwn(MOCK_EXAM_CONFIGS, exam);
+}
+
+export function getMockConfig(exam: MockExamCode): MockExamConfig;
+export function getMockConfig(exam: string): MockExamConfig | undefined;
+export function getMockConfig(exam: string): MockExamConfig | undefined {
+  return isMockExamCode(exam) ? MOCK_EXAM_CONFIGS[exam] : undefined;
 }
