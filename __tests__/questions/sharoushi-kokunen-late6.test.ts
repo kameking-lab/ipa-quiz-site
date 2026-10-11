@@ -30,10 +30,10 @@ describe("immutable late six national-pension originals", () => {
       expect(sha(JSON.stringify(canonical(byId.get(prior.id)))), prior.id).toBe(prior.sha256);
     }
     const priorIds = new Set(baseline.previousMcObjectHashes.map(question => question.id));
-    expect(SHAROUSHI_QUESTIONS.filter(question => !priorIds.has(question.id)).map(question => question.id).toSorted()).toEqual(expectedIds.toSorted());
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(107);
-    expect(byId.size).toBe(107);
-    expect(SHAROUSHI_QUESTIONS.reduce((count, question) => count + Object.keys(question.choices ?? {}).length, 0)).toBe(535);
+    expect(SHAROUSHI_QUESTIONS.filter(question => question.session === "kokunen" && !priorIds.has(question.id)).map(question => question.id).toSorted()).toEqual(expectedIds.toSorted());
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(117);
+    expect(byId.size).toBe(117);
+    expect(SHAROUSHI_QUESTIONS.reduce((count, question) => count + Object.keys(question.choices ?? {}).length, 0)).toBe(585);
     expect(sha(readFileSync("data/questions/sharoushi/sentaku/originals.json", "utf8").replace(/\r\n/g, "\n"))).toBe(baseline.native16FileSha256);
     expect(PUBLISHED_SENTAKU).toHaveLength(16);
   });
@@ -76,10 +76,10 @@ describe("immutable late six national-pension originals", () => {
 
   it("states the qualification partial total and national-pension completion precisely", () => {
     const catalog = QUALIFICATION_CATALOG.find(row => row.slug === "sharoushi")!;
-    expect(catalog.reuseSummary).toContain("択一式107原問・全535肢");
-    expect(catalog.reuseSummary).toContain("全156原問中123原問");
+    expect(catalog.reuseSummary).toContain("択一式117原問・全585肢");
+    expect(catalog.reuseSummary).toContain("全156原問中133原問");
     expect(catalog.reuseSummary).toContain("国民年金法20原問");
     expect(catalog.reuseSummary).toContain("両年度各10原問が揃っています");
-    expect(catalog.remainingWork).toContain("未収録33原問（択一式のみ）の原典・正答・試験時点資料を確認");
+    expect(catalog.remainingWork).toContain("未収録23原問（択一式のみ）の原典・正答・試験時点資料を確認");
   });
 });

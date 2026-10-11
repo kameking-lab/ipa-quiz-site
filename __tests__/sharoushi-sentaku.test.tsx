@@ -19,11 +19,11 @@ const objectHash = (value: unknown) => createHash("sha256").update(JSON.stringif
 const keys = [[3,16,6,4,7],[8,17,4,16,18],[18,15,8,10,3],[2,17,6,12,9],[3,15,5,14,9],[15,4,10,7,20],[7,1,16,19,11],[19,11,14,7,4],[19,20,10,5,15],[3,2,4,1,3],[4,4,3,4,2],[2,3,4,3,3],[7,18,3,12,14],[15,9,18,11,3],[20,2,11,8,16],[9,16,2,10,14]];
 const clone=()=>structuredClone(SENTAKU_ORIGINALS);
 describe("社労士選択式 原問契約",()=>{
- it("既公開40原問を保持し、択一107原問と選択16原問を分離して計123原問とする",()=>{
+ it("既公開40原問を保持し、択一117原問と選択16原問を分離して計133原問とする",()=>{
   const mc=getQuestionsByExamStrict("sharoushi");
-  expect(mc).toHaveLength(107);
+  expect(mc).toHaveLength(117);
   expect(mc.some(q=>q.session==="sentaku")).toBe(false);
-  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(123);
+  expect(mc.length+PUBLISHED_SENTAKU.length).toBe(133);
   expect(PUBLISHED_SENTAKU.flatMap(q=>q.blanks)).toHaveLength(80);
   const oldHashes = integration.oldObjectSha256 as Record<string, string>;
   expect(Object.keys(oldHashes)).toHaveLength(40);
@@ -32,7 +32,7 @@ describe("社労士選択式 原問契約",()=>{
     expect(old, id).toBeDefined();
     expect(objectHash(old), id).toBe(sha);
   }
-  expect(mc.filter(q => !Object.hasOwn(oldHashes, q.id))).toHaveLength(67);
+  expect(mc.filter(q => !Object.hasOwn(oldHashes, q.id))).toHaveLength(77);
  });
  it("16原問80空欄の公式キーと20語群を保持する",()=>{
   expect(SENTAKU_ORIGINALS).toHaveLength(16);
