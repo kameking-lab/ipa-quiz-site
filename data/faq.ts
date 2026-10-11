@@ -2,6 +2,7 @@
 export interface FaqItem {
   question: string;
   answer: string;
+  sources?: { label: string; href: string }[];
   /** UI でのグルーピング用カテゴリ */
   category:
     | "service"
@@ -15,6 +16,12 @@ export interface FaqItem {
     | "billing"
     | "tech";
 }
+
+const IPA_2026_SOURCES: NonNullable<FaqItem["sources"]> = [
+  { label: "IPA 2026年度一般CBT案内（2026年9月17日更新）", href: "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html" },
+  { label: "IPA 2026年度前期 特別措置試験案内", href: "https://www.ipa.go.jp/shiken/2026/r08zenki_tokubetsusochi.html" },
+  { label: "IPA 2026年度後期 特別措置試験案内", href: "https://www.ipa.go.jp/shiken/2026/r08kouki_tokubetsusochi.html" },
+];
 
 export const FAQ_CATEGORY_LABELS: Record<FaqItem["category"], string> = {
   service: "サービス全般",
@@ -136,13 +143,15 @@ export const FAQS: FaqItem[] = [
     category: "data",
     question: "過去問の出典とライセンスは？",
     answer:
-      "すべての問題は IPA（情報処理推進機構）が公開している過去問題 PDF を出典としています。IPA は過去問の使用について許諾不要・使用料不要と公式に明示しています。当サイトでは引用ルールを厳守し、各問題に公式 PDF へのリンクを掲載しています。詳細は /about ページをご覧ください。",
+      "公開過去問の公表元は資格ごとに異なり、IPA、日本FP協会、厚生労働省、法務省などの公式資料を参照しています。問題・正答・出題の趣旨はそれぞれ役割が異なり、転載条件も資料ごとに異なります。各問題の出典リンクと利用条件を確認してください。サイトの学習用解説は独自編集で、公式見解ではありません。",
+    sources: [{ label: "資格別の出典・利用条件", href: "/license" }],
   },
   {
     category: "data",
     question: "解説が『準備中』と表示される問題があるのはなぜですか？",
     answer:
-      "AI による解説生成が未完了、もしくは検証中の問題です。該当問題でも AI コパイロットに質問することで個別解説を受けられます。順次、公式な解説を整備していきます。",
+      "当サイトの学習用解説が未作成、または確認中の問題です。学習用解説は独自編集で、試験実施団体の公式解説ではありません。公式問題・正答・公表されている出題の趣旨と区別し、各問題の資料リンクと確認状況を参照してください。AIコパイロットの応答も公式見解ではありません。",
+    sources: [{ label: "静的解説の確認方針", href: "/transparency#static-explanations" }],
   },
   {
     category: "data",
@@ -402,7 +411,8 @@ export const FAQS: FaqItem[] = [
     category: "registration",
     question: "IPA 情報処理技術者試験の受験申込はどこから行いますか？",
     answer:
-      "IPA（情報処理推進機構）の公式サイト（www.ipa.go.jp/shiken）からオンラインで申し込みます。各試験の申込期間は通常、試験日の約 2 ヶ月前から始まります。CBT 方式の IT パスポート・情報セキュリティマネジメント・基本情報は通年実施で、試験日を自分で選択できます。",
+      "IPA公式サイトの受験申込み案内から手続きします。IP・SG・FEの一般CBTは通年実施です。2026年度のAP・高度試験・SCの一般CBTは前期・後期の期間制で、申込期間は区分ごとに異なります。前期は2026年10月6日開始、APは11月7日17時まで、ST・SA・NW・SM・SCは10月24日17時まで。後期は2027年1月27日開始、APは2月16日まで、PM・DB・ES・AU・SCは2月27日までです（IPAの2026年9月17日更新案内）。CBTで受験できない方の特別措置筆記は別の申請・審査と日程のため、専用案内を確認してください。",
+    sources: IPA_2026_SOURCES,
   },
   {
     category: "registration",
@@ -414,13 +424,15 @@ export const FAQS: FaqItem[] = [
     category: "registration",
     question: "合格発表はいつですか？",
     answer:
-      "CBT 方式（IP・SG・FE）は試験終了直後に画面でスコアを確認できます。ペーパー方式の試験（AP・高度）は試験日から約 2 ヶ月後にウェブで発表されます。合格証書は合格発表後に IPA から郵送されます。",
+      "試験・実施方式で異なります。IP・SG・FEの一般CBTは試験終了後のスコア確認と正式な合格発表を区別してください。2026年度のAP・高度試験・SCも一般受験はCBTです。科目A群の得点は試験終了後に確認できますが、科目B群は後日の成績照会となり、前期は2027年1月頃、後期は5月頃の予定です。正式な合格発表は前期2027年2月頃、後期6月頃の予定。特別措置筆記も専用案内で発表時期を確認してください。",
+    sources: IPA_2026_SOURCES,
   },
   {
     category: "registration",
     question: "試験会場はどこですか？",
     answer:
-      "CBT 方式（IP・SG・FE）は全国の CBT センター（テストセンター）で実施されます。受験申込時に会場と日時を選択できます。ペーパー方式の AP・高度試験は都道府県の主要都市にある試験会場で実施されます。",
+      "一般CBTは全国のテストセンターで行います。2026年度のAP・高度試験・SCも一般受験はCBTで、区分・科目群の実施期間内の空席から会場と日時を選びます。身体の不自由等によりCBTで受験できない方のAP・高度試験・SCの特別措置試験は筆記方式で、事前の申請・審査が必要です。特別措置筆記では試験地を選択しますが会場は指定できず、試験日の約2週間前を目途に通知されます。最新の会場・配慮希望の手続きは公式案内を確認してください。",
+    sources: IPA_2026_SOURCES,
   },
   {
     category: "registration",

@@ -215,6 +215,27 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf",
         description: "全125問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
+    ] : exam === "rinsho-kensagishi" ? [
+      {
+        label: "厚生労働省 第72回臨床検査技師 午後の公式問題",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+        description: "2026年実施回の午後問題。本サイトの収録は一部で、全問ではありません。",
+      },
+      {
+        label: "厚生労働省 第72回臨床検査技師 公式正答",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        description: "同じ試験回の公式正答表。サイトの学習用解説とは区別してください。",
+      },
+      {
+        label: "厚生労働省 第71回臨床検査技師 午後の公式問題",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+        description: "2025年実施回の午後問題。本サイトの収録は一部で、全問ではありません。",
+      },
+      {
+        label: "厚生労働省 第71回臨床検査技師 公式正答",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+        description: "同じ試験回の公式正答表。サイトの学習用解説とは区別してください。",
+      },
     ] : exam === "tohan" ? [
       {
         label: "関西広域連合 過去問題及び解答",
