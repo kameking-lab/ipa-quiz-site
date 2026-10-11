@@ -126,7 +126,7 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
       {
         label: "全国建設研修センター 公式問題（令和7年度後期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_mondaia.pdf",
-        description: "令和7年度後期の全40問のうち、当サイトでは照合済み27問を収録。",
+        description: "令和7年度後期の全40問を、公式問題・正答と全選択肢の解説で収録。",
       },
       {
         label: "全国建設研修センター 公式正答肢（令和7年度後期）",
