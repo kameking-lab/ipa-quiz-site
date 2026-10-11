@@ -1,0 +1,636 @@
+[
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-1",
+    "field": "choiceExplanations.2",
+    "before": "誤り。MRI は RF パルスを使う高周波利用設備であり、電波法の手続きが必要かどうかは静磁場強度では決まりません。0.4 T 以下の装置でも申請は必要です。",
+    "after": "誤り。MRIはRFパルスを使う高周波利用設備です。電波法上の手続きの要否は設備の条件によるため、静磁場が0.4 T以下という条件だけで不要とはいえません。",
+    "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+    "evidenceUrls": [
+      "https://www.fda.gov/media/92921/download"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-1",
+    "field": "choiceExplanations.3",
+    "before": "誤り。クエンチとは、超電導磁石の超電導状態が壊れ、液体ヘリウムが急に気化する現象です。そのため強制クエンチ（緊急減磁）の装置やヘリウムの排気設備が必要なのは超電導型装置です。永久磁石型装置は磁場を消すことができず、クエンチもありません。",
+    "after": "誤り。クエンチは超電導磁石の超電導状態が失われ、冷却用の液体ヘリウムが急に気化する現象です。永久磁石型装置ではこの現象は起こらず、強制クエンチ用の設備を設けるという記述は不適切です。",
+    "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+    "evidenceUrls": [
+      "https://www.fda.gov/media/92921/download"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-1",
+    "field": "choiceExplanations.5",
+    "before": "誤り。JIS（IEC 60601-2-33 に対応する規格）では、立入制限区域の境界は漏えい磁場 0.5 mT（5 ガウス）の線で定めます。0.2 mT ではありません。",
+    "after": "誤り。0.2 mTという記述は誤りです。境界値は適用する規格の版に従って確認します。IEC 60601-2-33第4版（2022年）では0.9 mTが扱われ、従来の0.5 mTの扱いと区別する必要があります。",
+    "reason": "現行JISの数値を根拠なく断定した箇所を除去。取得したFDA文書に従いIEC版差を明示した局所修正で解決。",
+    "evidenceUrls": [
+      "https://www.fda.gov/media/92921/download"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "explanation",
+    "before": "脳卒中が疑われる急性期の患者は、途中で状態が悪化したり体が動いたりして、検査を続けられなくなることがあります。そのため、治療方針（血栓溶解療法や血栓回収療法をするかどうか）に直結する画像から順に撮ります。\n・まず拡散強調像で、超急性期の脳梗塞を見つけます。\n・次に MRA で、主幹動脈が詰まっているかを評価します。\n・続いて FLAIR 像で、くも膜下出血や陳旧性病変を確認し、拡散強調像との所見の差（DWI-FLAIR ミスマッチ）を見ます。\n・T₂*強調像で、出血や微小出血を確認します。\n・最後に T₂ 強調像、T₁ 強調像で補足的な情報を得ます。\nこの順になっている選択肢4が適切です。公式正答値表の PM2 も「4」です。",
+    "after": "脳卒中が疑われる急性期の患者は、途中で状態が悪化したり体が動いたりして、検査を続けられなくなることがあります。そのため、治療判断に必要な情報を迅速に得ることが重要です。本問の選択肢では、次の順になっている4が適切です。\n・拡散強調像で、急性期の脳梗塞を評価します。\n・MRAで、主幹動脈の閉塞を評価します。\n・FLAIR像で病変を確認し、拡散強調像との所見の差（DWI-FLAIRミスマッチ）を評価します。\n・T₂*強調像で、出血や微小出血を確認します。\n・T₂強調像、T₁強調像で補足的な情報を得ます。\n実際の撮影順は患者の状態や施設のプロトコルによって異なり、出血の迅速な評価も必要です。公式正答値表のPM2は4です。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "choiceExplanations.1",
+    "before": "不適切。最初に MRA を撮ると、最も重要な急性期梗塞の検出（拡散強調像）が遅れます。また、出血を評価する T₂*強調像が最後になっています。",
+    "after": "本問の比較では不適切です。拡散強調像よりMRAが先で、出血を評価するT₂*強調像も最後になっています。選択肢4は梗塞・血管閉塞を早く評価できます。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "choiceExplanations.2",
+    "before": "不適切。超急性期の診断にあまり役立たない T₁ 強調像から始めており、最重要の拡散強調像が最後になっています。途中で検査を中止すると、梗塞を評価できません。",
+    "after": "本問の比較では不適切です。T₁強調像から始めており、急性期梗塞を評価する拡散強調像が最後になっています。途中で検査を中止すると重要な情報が得られません。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "choiceExplanations.3",
+    "before": "不適切。T₁ 強調像・T₂ 強調像を先に撮っているため、拡散強調像と MRA が後回しになり、治療判断が遅れます。",
+    "after": "本問の比較では不適切です。T₁強調像・T₂強調像を先に撮るため、拡散強調像とMRAの情報が後回しになります。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "choiceExplanations.4",
+    "before": "適切。拡散強調像（梗塞の検出）→MRA（血管閉塞）→FLAIR 像→T₂*強調像（出血）→T₂ 強調像→T₁ 強調像と、治療判断に必要な順に並んでいます。",
+    "after": "本問で適切です。拡散強調像（梗塞）とMRA（血管閉塞）を先に評価し、FLAIR像、T₂*強調像、T₂強調像、T₁強調像を続ける順です。全施設共通の固定順序という意味ではありません。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "field": "choiceExplanations.5",
+    "before": "不適切。拡散強調像から始めている点はよいですが、血管閉塞を評価する MRA が最後です。血栓回収療法の適応判断に必要な情報が遅れます。",
+    "after": "本問の比較では不適切です。拡散強調像から始める点は適切ですが、血管閉塞を評価するMRAが最後になり、治療判断に必要な情報が遅れます。",
+    "reason": "各系列の診断目的を指針で確認。公式正答の選択肢比較という説明に限定し、施設共通の固定順序という誤解を除去。",
+    "evidenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/23907247/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-12",
+    "field": "explanation",
+    "before": "アンガー型ガンマカメラは、複数の光電子増倍管の出力を抵抗マトリクスで重み付けして足し合わせ、X・Y位置信号を求めます。エネルギーは、全光電子増倍管の出力を足したZ信号を波高分析器に通して求め、目的のエネルギーの窓に入るイベントだけを選びます。したがって正答は2と4です。",
+    "after": "古典的なアンガー型ガンマカメラは、複数の光電子増倍管の出力を抵抗マトリクスで重み付けして足し合わせ、X・Y位置信号を求めます。エネルギーは、全光電子増倍管の出力を足したZ信号を波高分析器に通して求め、目的のエネルギーの窓に入るイベントだけを選びます。したがって正答は2と4です。デジタル処理などを採用する機器もあるため、ここでは古典的なアンガー型の構成を説明しています。",
+    "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+    "evidenceUrls": [
+      "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+      "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-12",
+    "field": "choiceExplanations.2",
+    "before": "正しい。アンガー型では、抵抗マトリクス方式で光電子増倍管の出力を重み付けして加算し、入射位置を計算します。",
+    "after": "正しい。古典的なアンガー型では、抵抗マトリクス方式で光電子増倍管の出力を重み付けして加算し、入射位置を計算します。",
+    "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+    "evidenceUrls": [
+      "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+      "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-12",
+    "field": "choiceExplanations.3",
+    "before": "誤り。一般的なガンマカメラのNaI(Tl)シンチレータの厚さは3/8インチ（約9.5 mm）程度です。2インチもありません。",
+    "after": "誤り。代表的な装置ではNaI(Tl)結晶厚に3/8インチ（約9.5 mm）や5/8インチなどが使われます。2インチ程度という記述は不適切です。",
+    "reason": "古典的アンガー型と限定し、機器方式差の懸念を解決。厚さは製造元の実例で確認。紙面・全文比較も完了。",
+    "evidenceUrls": [
+      "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+      "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-13",
+    "field": "explanation",
+    "before": "NEMA NU 2-2018 は PET 装置の性能を評価するための規格です。主な評価項目は、空間分解能、散乱フラクション・計数損失・偶発同時計数、感度、計数損失および偶発同時計数補正の精度、画質（減弱・散乱補正の精度を含む）、TOF 分解能、PET/CT の重ね合わせ精度です。「均一性」は旧版の NEMA NU 2-1994 には含まれていましたが、2001 年版以降は独立した項目ではなくなり、2018 年版にも含まれていません。したがって、この規格の項目でないのは 2 の均一性です。",
+    "after": "NEMA NU 2-2018はPET装置の性能を評価するための規格です。評価項目には、空間分解能、散乱フラクション・計数損失・偶発同時計数、感度、計数損失および偶発同時計数補正の精度、画質、TOF分解能（対応装置）、PET/CTの重ね合わせ精度があります。均一性は独立した評価項目に含まれません。したがって、この規格の項目でないのは2の均一性です。",
+    "reason": "出題に不要で裏付けのない旧版改訂経緯を削除。2018版に沿った測定論文と公式正答に説明を限定。",
+    "evidenceUrls": [
+      "https://arxiv.org/pdf/2308.06255"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-20",
+    "field": "choiceExplanations.5",
+    "before": "誤り。薬剤の一部は胆汁を経て腸管に排泄されます。そのため消化管の生理的集積は、時間がたった後期像（24時間後など）でより多くみられます。早期像のほうが頻度が高いわけではありません。",
+    "after": "誤り。薬剤は主に尿路から排泄されますが、少量の肝胆道排泄もあり、遅延像で腸管の生理的集積が問題となることがあります。24時間像で腫瘍と腸管集積を区別しにくい場合は48時間像も用います。早期像の方が生理的集積の頻度が高いという記述は適切ではありません。",
+    "reason": "製造元の規制当局掲載モノグラフで撮影時刻・肝胆道排泄・腸管生理集積鑑別を確認。出現頻度の一律断定を避けた最小修正で完成。別SPC候補URLは404で確認できず、証拠に採用しない。",
+    "evidenceUrls": [
+      "https://pdf.hres.ca/dpd_pm/00062509.PDF"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-27",
+    "field": "explanation",
+    "before": "正しいのは2です。最大線量深は照射野によって変わります。照射野が大きくなると、コリメータなどから出る混入電子や散乱線が増えます。そのため最大線量深は浅い方へ移ります。PDDは逆二乗則の影響でSSDに依存し、k_Qはエネルギーに比例しません。TPR_{20,10}の測定は、円筒形電離箱の幾何学的中心を測定点に合わせて行います。TMRのように深さとともに線量が変わる分布を測る場合は、実効中心（変位補正後の点）を測定点とします。",
+    "after": "正しいのは2です。最大線量深はエネルギーだけでなく照射野によっても変わります。照射野による散乱や混入電子などの影響があるため、全ての照射野で同じ深さになるわけではありません。PDDはSSDに依存し、線質変換係数kQはエネルギーに比例しません。IAEA TRS398（2000年版）では、TPR20,10測定時は円筒形電離箱の幾何学的中心を測定深に合わせます。深部線量分布の測定では電離箱の実効測定点を考慮します。",
+    "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+    "evidenceUrls": [
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-27",
+    "field": "choiceExplanations.2",
+    "before": "正しい。最大線量深はエネルギーだけでなく照射野でも変わります。照射野が大きいと混入電子や散乱線が増えて、浅くなります。",
+    "after": "正しい。最大線量深はエネルギーだけでなく照射野でも変わります。散乱や混入電子などの影響による変化であり、照射野を大きくすれば全ての範囲で一方向に変化する、という単純な関係ではありません。",
+    "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+    "evidenceUrls": [
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-27",
+    "field": "choiceExplanations.4",
+    "before": "誤り。TPR_{20,10}は深さ20 cmと10 cmでの電離量の比です。円筒形電離箱の幾何学的中心を測定深に置いて測ります。",
+    "after": "誤り。IAEA TRS398（2000年版）のTPR20,10の測定では、円筒形電離箱の幾何学的中心を深さ20 cmと10 cmに置いて電離量比を求めます。",
+    "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+    "evidenceUrls": [
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-27",
+    "field": "choiceExplanations.5",
+    "before": "誤り。TMRやPDDのような深部線量分布の測定では、電離箱の変位による影響を補正するため、幾何学的中心ではなく実効中心を測定点とします。",
+    "after": "誤り。円筒形電離箱でTMRやPDDなどの深部線量分布を測る場合は、電離箱の変位の影響を考慮し、実効中心（実効測定点）を測定深に対応させます。",
+    "reason": "IAEA TRS398の明示版・条項で幾何学的中心と実効中心の区別を確認。照射野依存を単調な関係としない修正。",
+    "evidenceUrls": [
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "explanation",
+    "before": "造影CTの後に起きた一過性の血圧低下は、造影剤による副作用の可能性があります。次回の検査で同じ造影剤を避けて別の製品に変えるか、前投薬などの対策を検討するには、どの製品で副作用が起きたかが分かっていなければなりません。そのため、投与した造影剤の製品名を記録し、共有することが重要です。",
+    "after": "造影CT後の一過性の血圧低下は、造影剤による有害反応の可能性があります。次回の検査に備え、使用した造影剤の製品名を記録して共有することが重要です。原因となった製品が分かれば、反応の内容や重症度に応じて別の造影剤や代替検査を検討できます。製品名とともに症状や処置も記録します。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "choiceExplanations.1",
+    "before": "誤り。体重は造影剤の量を決めるのに使いますが、次回の検査時にあらためて測ればよい情報です。今回の副作用を再び起こさないための情報ではありません。",
+    "after": "誤り。体重は造影剤量を決めるための情報ですが、どの造影剤で反応が起きたかは特定できません。本問では製品名の共有が最も直接的です。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "choiceExplanations.2",
+    "before": "誤り。管電圧は撮影条件であり、造影剤の副作用とは関係しません。",
+    "after": "誤り。管電圧は撮影条件です。今回使った造影剤を特定する情報ではなく、次回の薬剤選択には製品名が必要です。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "choiceExplanations.3",
+    "before": "誤り。即時型の造影剤副作用は量に左右されないことが多いとされます。総量を共有しても、次回同じ製品を使えば再発を防ぐことにはつながりにくいと考えられます。",
+    "after": "誤り。総量も診療記録に残す情報ですが、総量だけでは原因となった製品を特定できません。次回の薬剤選択に直接役立つのは製品名です。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "choiceExplanations.4",
+    "before": "正しい。副作用を起こした造影剤の製品名を共有すれば、次回は別の製品を選ぶ、前投薬を検討するなどの対策が取れます。",
+    "after": "正しい。使用した製品名を共有すれば原因薬剤を特定でき、反応の内容と重症度に応じた次回の造影剤選択や検査計画に役立ちます。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "field": "choiceExplanations.5",
+    "before": "誤り。eGFRは腎機能の指標で、造影剤腎症のリスク評価に使います。値は変わるため、次回の検査前にあらためて測るべきものです。今回起きた血圧低下という副作用への備えにはなりません。",
+    "after": "誤り。eGFRは腎機能の評価に使う指標ですが、今回の有害反応の原因となった製品は分かりません。本問では製品名を共有します。",
+    "reason": "ESUR原典で原因製品記録と変更検討を確認。不要な量非依存の一般化と一律前投薬表現を除去。",
+    "evidenceUrls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "explanation",
+    "before": "成人女性のヘモグロビンの基準値は、おおむね11〜12 g/dL台から15 g/dL程度です。8.0 g/dLは明らかに基準値より低く、貧血を示します。ほかの選択肢の値は、いずれも成人女性の基準範囲内です。したがって2が正解です。",
+    "after": "基準範囲は施設によって差があります。佐世保市総合医療センターの公表例では、成人女性のヘモグロビン基準範囲は11.6〜14.8 g/dLです。8.0 g/dLはこれを明らかに下回り、貧血を示します。他の選択肢の値はいずれも公表された基準範囲内にあり、正答は2です。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "choiceExplanations.1",
+    "before": "成人女性の赤血球数の基準値は約380万〜490万/µL程度です。400万/µLは基準範囲内です。",
+    "after": "基準範囲内です。公表例の女性赤血球数は386万〜492万/µLで、400万/µLはこの範囲に入ります。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "choiceExplanations.2",
+    "before": "成人女性のヘモグロビンの基準値は約11.5〜15 g/dL程度です。8.0 g/dLは基準値を下回っており、これが正解です。",
+    "after": "正答です。公表例の女性ヘモグロビンは11.6〜14.8 g/dLで、8.0 g/dLは低値です。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "choiceExplanations.3",
+    "before": "成人女性のヘマトクリットの基準値は約35〜45％程度です。40.0％は基準範囲内です。",
+    "after": "基準範囲内です。公表例の女性ヘマトクリットは35.1〜44.4％で、40.0％はこの範囲に入ります。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "choiceExplanations.4",
+    "before": "白血球数の基準値は約3,300〜8,600/µL程度です。5,000/µLは基準範囲内です。",
+    "after": "基準範囲内です。公表例の白血球数は3,300〜8,600/µLで、5,000/µLはこの範囲に入ります。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "field": "choiceExplanations.5",
+    "before": "血小板数の基準値は約15万〜35万/µL程度です。20万/µLは基準範囲内です。",
+    "after": "基準範囲内です。公表例の血小板数は15.8万〜34.8万/µLで、20万/µLはこの範囲に入ります。",
+    "reason": "一次公表の実施設基準範囲を5項目全て照合。概数を公表例の正確な値に修正。",
+    "evidenceUrls": [
+      "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-13",
+    "field": "explanation",
+    "before": "脳血流SPECTのZスコアは、eZISや3D-SSPなどの統計画像解析で使います。患者画像を解剖学的に標準化し、ボクセルごとに次の式で求めます。Zスコア＝（正常群平均値−患者値）／正常群標準偏差。正常群の平均値と標準偏差を使うため、年齢をそろえた正常データベースが必要です。したがって5が正しい選択肢です。",
+    "after": "脳血流SPECTのZスコアは、患者の画像を正常データベースと比較する統計画像解析で使います。例えばeZISで血流低下を評価する定義は、Zスコア＝（正常群平均値−患者値）／正常群標準偏差です。正常群の平均値と標準偏差を使うため、適切な正常データベースが必要です。したがって5が正しい選択肢です。符号の定義は解析法を確認して扱います。",
+    "reason": "eZIS原著の式に符号定義を限定。有意閾値の一律断定を除去。",
+    "evidenceUrls": [
+      "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-13",
+    "field": "choiceExplanations.2",
+    "before": "誤り。Zスコア1は正常群平均から標準偏差1つ分の偏りにすぎず、正常範囲に含まれます。臨床では一般に2前後以上を有意な低下の目安とします。1以上を有意とはしません。",
+    "after": "誤り。Zスコア1は正常群平均から標準偏差1つ分の偏りを表します。それだけで一律に有意な異常とは評価しません。有意とする閾値は解析の目的や設定によって定めます。",
+    "reason": "eZIS原著の式に符号定義を限定。有意閾値の一律断定を除去。",
+    "evidenceUrls": [
+      "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-14",
+    "field": "choiceExplanations.3",
+    "before": "誤り。体軸方向視野を長くすると、斜め方向の同時計数線を多く受け付けるようになり、感度が上がります。一方で散乱同時計数も増えるため、散乱フラクションは下がりません。",
+    "after": "誤り。体軸方向視野を長くすると斜めの同時計数線を収集しやすくなりますが、散乱フラクションが必ず低下するとはいえません。散乱の割合は装置構成やエネルギーウィンドウ等にも依存します。",
+    "reason": "AFOV単独で散乱フラクションの増減を断定しない条件付き説明に修正し、構成/ウィンドウの影響を原著で確認。",
+    "evidenceUrls": [
+      "https://arxiv.org/pdf/2308.06255"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "field": "explanation",
+    "before": "放射性医薬品を投与した患者が病院から退出（帰宅）してよいかを判断する基準の一つに、患者の体表面から1 mの点で測った1 cm線量当量率があります。この基準は、介護者や公衆が受ける線量を一定の値以下に抑えることを前提に、核種ごとに決められています。177Lu－オキソドトレオチド（神経内分泌腫瘍に対するPRRT）の場合、この値は18 μSv/hとされています。正解は3です。",
+    "after": "放射性医薬品を投与した患者の退出を判断する基準の一つに、患者の体表面から1 mの点で測った1 cm線量当量率があります。厚生労働省の退出通知では、所定の実施条件に従う177Lu－オキソドトレオチド治療後の基準は18 μSv/h以下とされています。本問で該当する値は3の18です。",
+    "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+    "evidenceUrls": [
+      "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "field": "choiceExplanations.1",
+    "before": "誤り。1 μSv/hは、177Luの退出基準として定められた線量当量率ではありません。",
+    "after": "誤り。1 μSv/hは177Lu－オキソドトレオチドのこの退出基準の値ではありません。",
+    "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+    "evidenceUrls": [
+      "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "field": "choiceExplanations.3",
+    "before": "正しい。177Lu－オキソドトレオチド投与後の退出基準は、体表面から1 mの点で18 μSv/hです。",
+    "after": "正しい。177Lu－オキソドトレオチド治療後の基準は、患者の体表面から1 mの点で18 μSv/h以下です。",
+    "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+    "evidenceUrls": [
+      "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "field": "choiceExplanations.4",
+    "before": "誤り。30 μSv/hは、131I（ヨウ素）を投与した患者の退出基準として知られている値です。177Luの値ではありません。",
+    "after": "誤り。30 μSv/hは131Iの線量率による退出基準として示される値です。177Lu－オキソドトレオチドの値ではありません。",
+    "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+    "evidenceUrls": [
+      "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "field": "choiceExplanations.5",
+    "before": "誤り。500という数値は、131Iの外来投与で目安とされる投与量の上限（500 MBq）としてよく知られている値です。1 cm線量当量率［μSv/h］の基準値ではありません。",
+    "after": "誤り。500 MBqは、131Iについて投与量又は体内残留放射能量に基づく退出基準として示される値です。本問の単位μSv/hとは異なり、177Lu－オキソドトレオチドの線量率基準ではありません。",
+    "reason": "厚労省退出通知で18 μSv/h、131Iの30 μSv/h/500 MBqを直接確認。500の意味を投与量又は残留量による退出基準へ修正。",
+    "evidenceUrls": [
+      "https://www.mhlw.go.jp/content/10800000/001063188.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-23",
+    "field": "explanation",
+    "before": "日本の部位別がん死亡数を男女の合計で見ると、肺癌が最も多く、大腸癌と胃癌がその次に続きます。2023年時点でも肺癌が1位です。正解は2です。",
+    "after": "2023年の部位別がん死亡数を男女合計で見ると、肺癌が最も多く、続いて大腸癌、膵臓癌、胃癌、肝臓癌の順です。国立がん研究センター「がんの統計2025」に掲載された2023年死亡統計で確認できます。選択肢では2の肺癌が正答です。",
+    "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+    "evidenceUrls": [
+      "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-23",
+    "field": "choiceExplanations.3",
+    "before": "誤り。肝臓癌は、肝炎ウイルス対策などによって死亡数が減ってきており、1位ではありません。",
+    "after": "誤り。2023年の男女合計のがん死亡数で、肝臓癌は肺癌より少なく、1位ではありません。",
+    "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+    "evidenceUrls": [
+      "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-23",
+    "field": "choiceExplanations.4",
+    "before": "誤り。甲状腺癌は予後が良いものが多く、死亡数は少ない部位です。",
+    "after": "誤り。2023年の甲状腺癌の死亡数は肺癌より少なく、1位ではありません。",
+    "reason": "2023年死亡統計表で確認。誤っていた肺→大腸→胃の順位を肺→大腸→膵臓→胃→肝臓へ修正。",
+    "evidenceUrls": [
+      "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-24",
+    "field": "explanation",
+    "before": "放射線治療用の線量計は、電離箱と電位計の組合せでできています。電位計のユーザー点検では、電位計そのものの電気的な性能を確認します。具体的には、繰返し性、電荷漏れ（リーク）、ゼロ点シフト、ゼロ点ドリフトといった項目です。これに対して温度・圧力依存性は、電離箱の空洞にある空気の密度が変わることで生じる影響です。この影響は温度気圧補正係数（kTP）で補正するものなので、電位計の点検項目には含まれません。正解は5です。",
+    "after": "日本医学物理学会「放射線治療用線量計に用いられる電位計のガイドライン」（2024年改訂）の8.4「ユーザーによる点検」では、繰返し性、ゼロ点ドリフト、ゼロ点シフト、電荷漏れ等を確認します。温度・圧力依存性はこのユーザー点検一覧に含まれず、正答は5です。電離箱の空気密度に対する温度気圧補正kTPと、電位計のユーザー点検対象は区別して考えます。",
+    "reason": "JSMP2024ガイドライン8.4のユーザー点検一覧を確認。温度特性全体の不在を主張せず、一覧上の点検対象を説明。",
+    "evidenceUrls": [
+      "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-24",
+    "field": "choiceExplanations.5",
+    "before": "正しい（含まれない）。温度・圧力依存性は、電離箱の空気密度に関する影響で、kTPによって補正するものです。電位計のユーザー点検項目ではありません。",
+    "after": "正しい（点検項目に含まれない）。温度・圧力依存性はガイドライン8.4のユーザー点検一覧に含まれません。電離箱の空気密度に対するkTP補正とは点検対象を区別します。",
+    "reason": "JSMP2024ガイドライン8.4のユーザー点検一覧を確認。温度特性全体の不在を主張せず、一覧上の点検対象を説明。",
+    "evidenceUrls": [
+      "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-28",
+    "field": "choiceExplanations.1",
+    "before": "誤り（公式正答は4）です。電子線の最大線量深は主にエネルギーで決まります。側方の散乱平衡が成り立つ十分な大きさの照射野では、照射野サイズにほとんど依存しません。照射野が大きくなれば最大線量深が深くなる、という一般的な特徴にはなりません。",
+    "after": "誤り（公式正答は4）です。側方散乱平衡が成り立つ十分な大きさの照射野では、電子線の最大線量深は照射野サイズにほとんど依存しません。一方、小照射野では縮小によって最大線量深が浅くなる場合があります。したがって、照射野を大きくすれば常に最大線量深が深くなるという一般則にはできません。",
+    "reason": "IAEA原典で大照射野/小照射野の違いを確認し、小照射野例外を説明に追加。",
+    "evidenceUrls": [
+      "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-30",
+    "field": "choiceExplanations.3",
+    "before": "誤りです。深さスケーリング係数は、水と固体ファントムの減弱係数の比などで決まります。そのため、ファントム材質や入射光子線のエネルギーに依存しうる量であり、「依存しない」と断定はできません。",
+    "after": "誤りです。光子線用の深さスケーリング係数は材質に加えて線質によっても変化し得ます。線質による差が小さい材質でも、エネルギーに依存しないと一律には断定できません。",
+    "reason": "光子線を実測した国内原著の表4と式9で確認。材質で差は小さくても線質依存ゼロではないという説明に精密化。",
+    "evidenceUrls": [
+      "https://www.jstage.jst.go.jp/article/jastro/19/2/19_2_99/_pdf/-char/en"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "explanation",
+    "before": "正答は4です。医薬品医療機器等法では、毒薬は他の物と区別して、鍵をかけた場所に保管しなければなりません。テクネチウムMIBI注射液調製用キット（ヘキサキス(2-メトキシイソブチルイソニトリル)テクネチウム(99mTc)の調製用キット）は毒薬に指定されているため、鍵をかけて管理する必要があります。",
+    "after": "正答は4です。医薬品医療機器等法第48条第2項は、毒薬の貯蔵又は陳列場所に鍵をかけることを定めています。MIBI注射液調製用キットのカーディオライト第一は、電子添文の規制区分に「毒薬」と記載されています。本問はこの毒薬としての施錠管理を問うものです。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "choiceExplanations.1",
+    "before": "誤りです。DMSA（腎皮質シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+    "after": "誤りです。DMSAキットは腎皮質シンチグラフィに用います。確認したテクネDMSAキット電子添文では規制区分に毒薬の指定がありません。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "choiceExplanations.2",
+    "before": "誤りです。MAA（肺血流シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+    "after": "誤りです。MAAキットは肺血流シンチグラフィに用います。テクネMAAキット電子添文では規制区分に毒薬の指定がありません。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "choiceExplanations.3",
+    "before": "誤りです。原本の表記は MAG3（3は下付き文字）です。MAG3（腎動態シンチグラフィ用）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+    "after": "誤りです。MAG3キットは腎動態シンチグラフィに用います。テクネMAG3キット電子添文では規制区分に毒薬の指定がありません。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "choiceExplanations.4",
+    "before": "正しいです。MIBI（心筋血流シンチグラフィなどに使う）のキットは毒薬に指定されているため、鍵をかけて保管する必要があります。",
+    "after": "正しいです。MIBIキットのカーディオライト第一は毒薬であり、医薬品医療機器等法に従った施錠管理が必要です。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "field": "choiceExplanations.5",
+    "before": "誤りです。PYP（骨シンチグラフィや心筋梗塞のシンチグラフィに使う）のキットは、施錠管理が必要な毒薬には当たらないとされています。",
+    "after": "誤りです。PYPはピロリン酸のキットです。テクネピロリン酸キット電子添文では規制区分に毒薬の指定がありません。",
+    "reason": "5製品のメーカー電子添文の規制区分を閲覧し毒薬区分を確認。DMSAは2022年原文公開ミラーであることを証跡に明示。毒薬の施錠法規と対応。",
+    "evidenceUrls": [
+      "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+      "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+      "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+      "https://laws.e-gov.go.jp/law/335AC0000000145"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "field": "explanation",
+    "before": "正答は3です。診療放射線技師は、医師または歯科医師の指示のもとで、核医学「検査」に関する一連の行為を行えます。具体的には、静脈路の確保、注入装置の接続と操作、投与後の抜針と止血、ガス状放射性医薬品の吸入です。一方、核医学「治療」のための放射性医薬品の投与は、技師の業務には含まれません。",
+    "after": "正答は3です。診療放射線技師は、医師又は歯科医師の具体的な指示のもとで、必要な研修等の条件を満たし、核医学「検査」の静脈路確保、注入装置の接続と操作、投与後の抜針と止血、ガス状放射性医薬品の吸入補助を行えます。一方、核医学「治療」用の放射性医薬品の投与は、これらの検査業務の範囲には含まれません。",
+    "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+    "evidenceUrls": [
+      "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+      "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "field": "choiceExplanations.1",
+    "before": "正しい行為です。ガス状の放射性医薬品を吸入させることは、診療放射線技師が行える業務です。",
+    "after": "正しい行為です。医師等の指示のもとで行うガス状放射性医薬品の吸入補助は、診療放射線技師の核医学検査業務です。",
+    "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+    "evidenceUrls": [
+      "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+      "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "field": "choiceExplanations.2",
+    "before": "正しい行為です。核医学検査のために静脈路を確保することは、法改正（業務範囲の拡大）によって技師が行えるようになりました。",
+    "after": "正しい行為です。具体的な医師等の指示と必要な研修等の条件のもとで、核医学検査のための静脈路確保は技師が行える業務です。",
+    "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+    "evidenceUrls": [
+      "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+      "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "field": "choiceExplanations.4",
+    "before": "正しい行為です。検査用の放射性医薬品を注入するために、注入装置を接続し操作することは、技師が行えます。",
+    "after": "正しい行為です。検査用の放射性医薬品を注入するための装置の接続・操作は、具体的な医師等の指示のもとで技師が行えます。",
+    "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+    "evidenceUrls": [
+      "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+      "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "field": "choiceExplanations.5",
+    "before": "正しい行為です。放射性医薬品の投与が終わった後の抜針と止血も、技師が行える業務に含まれます。",
+    "after": "正しい行為です。検査用の放射性医薬品の投与後に行う抜針・止血も、具体的な医師等の指示のもとで技師が行える業務です。",
+    "reason": "厚労省改正通知と学会業務範囲ガイドラインの核医学節を確認し、具体的指示・必要な研修等の前提を明示。",
+    "evidenceUrls": [
+      "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+      "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-45",
+    "field": "explanation",
+    "before": "細胞周期はG1期→S期→G2期→M期（分裂期）の順に進む。DNAが複製され、染色体（染色分体）が倍になるのはS期（DNA合成期）である。G1期はDNA合成の準備期、G2期は分裂の準備期である。M期は前期・中期・後期・終期に分けられ、複製された染色体を2つの娘細胞に分配する。",
+    "after": "細胞周期はG1期→S期→G2期→M期（分裂期）の順に進みます。DNAが複製され、各染色体に2本の姉妹染色分体が形成されるのはS期（DNA合成期）です。DNA量は倍になりますが、これは染色体数自体が倍になるという意味ではありません。G1期はDNA合成の準備期、G2期は分裂の準備期です。M期には複製後の染色体が娘細胞に分配されます。",
+    "reason": "公式原本のG2表記を目視確認し維持。NHGRIでS期DNA複製を確認し染色体数の倍増という誤記を修正。出題意図の推測は不要。",
+    "evidenceUrls": [
+      "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+      "https://www.genome.gov/genetics-glossary/Chromatid"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-45",
+    "field": "choiceExplanations.5",
+    "before": "正しい。S期（synthesis期）にDNAが複製され、染色体が倍になる。",
+    "after": "正しい。S期（DNA合成期）にDNAが複製され、各染色体に2本の姉妹染色分体が形成されます。DNA量の倍増と染色体数は区別します。",
+    "reason": "公式原本のG2表記を目視確認し維持。NHGRIでS期DNA複製を確認し染色体数の倍増という誤記を修正。出題意図の推測は不要。",
+    "evidenceUrls": [
+      "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+      "https://www.genome.gov/genetics-glossary/Chromatid"
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-48",
+    "field": "explanation",
+    "before": "MRIの細胞外液性造影剤（ガドリニウム造影剤）は主に腎臓から排泄される。腎機能が落ちている患者では、腎性全身性線維症（NSF）を起こす危険がある。そのため検査前にはeGFR（推算糸球体濾過量）で腎機能を確認し、造影剤を使ってよいか判断する。",
+    "after": "MRIの細胞外液性ガドリニウム造影剤は主に腎臓から排泄されます。高度腎障害などでは腎性全身性線維症（NSF）のリスクを考慮するため、緊急検査などやむを得ない場合を除き、投与前にeGFR（推算糸球体濾過量）で腎機能を評価します。腎機能、造影剤の種類、検査の必要性を踏まえて使用を判断します。",
+    "reason": "実際には数値の追加が不要な条件付き旧hold。最新国内第3版でeGFR評価を確認し数値追加なしで完成。",
+    "evidenceUrls": [
+      "https://cdn.jsn.or.jp/data/guideline_nsf_20240520.pdf"
+    ]
+  }
+]
