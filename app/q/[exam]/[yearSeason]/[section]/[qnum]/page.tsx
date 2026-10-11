@@ -44,6 +44,7 @@ import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
+import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
@@ -162,7 +163,7 @@ export default async function QuestionPage({
   if (!isPracticeReadyQuestion(q)) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
-  const answerText =
+  const answerText = q.type === "ordering" ? undefined :
     q.choices
       ? answerKeys.map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ")
       : undefined;
@@ -413,6 +414,12 @@ export default async function QuestionPage({
         </section>
       )}
 
+      {q.type === "descriptive" && q.exam === "chosashi" && (
+        <div className="mt-5">
+          <DescriptiveAnswerCard question={q} defaultOpen />
+        </div>
+      )}
+
       {/* Explanation — label follows the available source layers */}
       <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
         <details open className="group">
@@ -488,19 +495,19 @@ export default async function QuestionPage({
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
-          <AiTransparencyDisclaimer
+          {!(q.exam === "chosashi" && q.type === "descriptive") && <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
             sourceAttribution={q.sourceAttribution}
-          />
+          />}
         </details>
       </section>
 
       <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
         {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
-        <Link href="/review" className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
+        <Link href={`/review?${new URLSearchParams({ exam: q.exam, returnTo: questionPagePath(q) })}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
       </nav>
       <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 

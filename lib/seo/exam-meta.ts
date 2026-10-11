@@ -6,6 +6,8 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  chosashi: "土地家屋調査士試験の令和7・6年度を午前・午後とも収録。択一60問は公式正答と全肢解説、記述6問は公式問題に基づく独自解答例・計算過程・作図例を掲載しています。記述解答例は法務省の公式解答ではありません。",
+  "shika-ishi": "歯科医師国家試験の第119回（2026年実施）・第118回（2025年実施）の問題A〜D、採点対象の原問と全肢解説を収録。公式採点除外24問は演習対象外です。",
   ip: "ITパスポート試験はIT全般の基礎知識を幅広く問う、職種を問わずITを活用するすべての社会人・学生向けの国家試験です。",
   sg: "情報セキュリティマネジメント試験は、企業内の情報セキュリティ対策を推進する人材の能力を認定する国家試験です。",
   fe: "基本情報技術者試験は、ITエンジニアの登竜門として位置づけられる国家試験で、プログラミング基礎とIT全般の知識を問います。",
@@ -30,7 +32,7 @@ export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
   takken: "宅地建物取引士資格試験の2024・2025年度公式過去問を、各選択肢の理由と年度ごとの法令基準日付きで学べます。",
   civil2: "2級土木施工管理技術検定の令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。公式問題・正答、図表、全選択肢の学習用解説を確認できます。",
   kankoji2: "2級管工事施工管理技術検定の令和8年度前期と令和7年度後期の第一次検定を各全52問収録。公式問題・正答、図表、全選択肢の学習用解説を確認できます。「二つとも答えなさい」の問題も2肢を選んで採点します。",
-  zoen2: "2級造園施工管理技術検定の令和8年度前期第一次検定から、公式問題・正答と照合した設問を収録。40問中の公開済み設問を解説付きで学べます。未収録の問題は順次確認します。",
+  zoen2: "2級造園施工管理技術検定の令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録。公式問題・正答、図表、全選択肢の解説を確認できます。No.37〜40は複数の正答を全て選んで採点します。",
   zoen1: "1級造園施工管理技術検定の令和8年度第一次検定の問題A・Bから、公式問題・正答と照合した公開済み設問を解説付きで学べます。実試験では問題A36問・問題B29問が全て必須です。",
   tsushin2: "2級電気通信工事施工管理技術検定の令和8年度前期第一次検定から、公式問題・正答と照合した設問を収録。65問中の公開済み設問を解説付きで学べます。未収録の問題は順次確認します。",
   tsushin1: "1級電気通信工事施工管理技術検定の令和8年度第一次検定の問題A・Bから、公式問題・正答と照合した収録済み設問を解説付きで学べます。実試験は全90問から条件に従って60問を解答します。",
@@ -130,12 +132,13 @@ export function examTopTitle(exam: ExamCode): string {
 }
 
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
-  if (exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
+  if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
   const base = EXAM_DESCRIPTIONS[exam] ?? "";
   return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  chosashi: "土地家屋調査士試験",
   riyoshi: "理容師国家試験",
   ip: "ITパスポート試験",
   sg: "情報セキュリティマネジメント試験",
@@ -191,6 +194,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   "rinsho-kogishi": "臨床工学技士国家試験",
   "rinsho-kensagishi": "臨床検査技師国家試験",
   "shinryo-hoshasengishi": "診療放射線技師国家試験",
+  "shika-ishi": "歯科医師国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -201,6 +205,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  chosashi: (c) => `土地家屋調査士の令和7・6年度、午前・午後の${c}原問を収録。択一は公式正答と全肢解説、記述は公式問題に基づく独自解答例で学べます。記述の公式解答ではありません。`,
   riyoshi: (c) => `理容師国家試験の第53回・第54回筆記から掲載済み${c}問を演習。公式問題・正答、原図と全選択肢の独自解説を確認できます。`,
   ip: (c, y, k) =>
     `職種・年齢を問わずITを活用するすべての社会人・就活生が対象のIT基礎国家試験。CBT通年受験に対応、${c}問・${y}期分・${k}分野を実問題AI解説で体系的に対策。合格率は比較的高く、ビジネス現場のIT活用力を証明できる。`,
@@ -241,7 +246,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   denken2: (c) =>
     `第二種電気主任技術者一次試験の2026年度から電力・法規14原問・${c}空欄と理論・機械16原問・85回答欄、2025年度から理論・機械16原問・80回答欄を収録。計46原問です。2025年度の電力・法規と二次試験は未収録です。`,
   denko2: (c, y, k) =>
-    `第二種電気工事士学科の2024・2025年度上下期を${c}問・${y}期分・${k}分野収録。全選択肢の正誤理由と公式問題・正答を確認できます。技能試験104課題も試験日別に掲載しています。`,
+    `第二種電気工事士学科の${publishedYearRange("denko2")}の掲載済み問題を${c}問・${y}期分・${k}分野収録。全選択肢の正誤理由と公式問題・正答を確認できます。技能試験104課題も試験日別に掲載しています。`,
   denko1: (c, y, k) =>
     `第一種電気工事士学科の令和7年度下期の学科試験問題と令和8年度上期(CBT)公表出題例を計${c}問・${y}期分・${k}分野収録。高圧受電設備の配線図を含む全選択肢の正誤理由と、公式問題・正答を確認できます。`,
   takken: (c, y, k) =>
@@ -251,7 +256,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   kankoji2: (c, y, k) =>
     `2級管工事施工管理技術検定の令和8年度前期と令和7年度後期の第一次検定を${c}問・${y}期分・${k}分野収録。公式問題・正答、図表、全選択肢の理由を確認でき、二つ選ぶ問題も本試験どおり採点します。`,
   zoen2: (c, y, k) =>
-    `2級造園施工管理技術検定の令和8年度前期・令和7年度後期の第一次検定から${c}問を${y}回分・${k}分野で収録。各回の公式40問のうち収録済みの設問を、公式問題・正答と全選択肢の解説で確認できます。未収録の設問は演習に含みません。`,
+    `2級造園施工管理技術検定の令和8年度前期・令和7年度後期の第一次検定から${c}問を${y}回分・${k}分野で収録。各回の公式全40問を、公式問題・正答、図表と全選択肢の解説で確認できます。No.37〜40は正答を全て選びます。`,
   zoen1: (c, y, k) =>
     `1級造園施工管理技術検定の令和8年度第一次検定・問題A/Bから${c}問・${y}期分・${k}分野を収録。公式問題・正答と全選択肢の解説を確認できます。公式の65問中、確認済みの設問を掲載しています。`,
   tsushin2: (c, y, k) =>
@@ -302,7 +307,16 @@ const EXAM_META_DESC_DIVERSE: Record<
   "shino-kunrenshi": (c) => `視能訓練士国家試験の第56・55回午前・午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
   "rinsho-kensagishi": (c) => `臨床検査技師国家試験の第71回（2025年実施）午後から、公式原文・正答・全五肢の解説を確認した${c}原問を部分収録。第72・71回の全問は未完備です。`,
   "shinryo-hoshasengishi": (c) => `診療放射線技師国家試験の第77・78回（2025・2026年実施）の午前・午後を${c}問収録。原文・公式正答・全五肢解説・必要図版を照合。第78回午前23は採点除外、午前15は公式図版省略のため未出題です。`,
+  "shika-ishi": (c) => `歯科医師国家試験の第119回（2026年）・第118回（2025年）の問題A〜D、採点対象${c}問と全肢解説を収録。公式採点除外24問は演習対象外です。必要な原図、並べ替え・数値記入に対応しています。`,
 };
+
+function publishedYearRange(exam: ExamCode): string {
+  const years = getQuestionsByExamStrict(exam).map((q) => q.year);
+  if (years.length === 0) return "掲載済み";
+  const first = Math.min(...years);
+  const last = Math.max(...years);
+  return first === last ? `${first}年度` : `${first}〜${last}年度`;
+}
 
 export function examMetaDescription(
   exam: ExamCode,
@@ -316,7 +330,7 @@ export function examMetaDescription(
   const countFmt = questionCount.toLocaleString("ja-JP");
 
   // 一部収録の資格は「全○期分」と読める汎用文言を使わない。
-  if (exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
+  if (exam === "chosashi" || exam === "shika-ishi" || exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
   }

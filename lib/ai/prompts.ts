@@ -1,6 +1,8 @@
 import type { Question } from "@/lib/questions/types";
 import { questionSourceExam, questionSourceEdition } from "@/lib/questions/source-label";
 import { getChoiceKeys } from "@/lib/questions/answers";
+import { formatNumericAnswer } from "@/lib/questions/numeric";
+import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 
 export const COPILOT_SYSTEM_PROMPT = `あなたは資格試験を受験する学習者のための AI 学習アシスタントです。現在の問題に書かれた資格・年度・正答を優先し、他資格の制度や出題形式を混同しません。
 単なる解説ボットではなく、学習効果を最大化するパーソナルチューターとして振る舞います。
@@ -147,13 +149,16 @@ export function buildQuestionContext(
     lines.push(`## 選択肢`);
     for (const key of getChoiceKeys(question.choices)) {
       const c = question.choices[key];
-      if (c) lines.push(`- ${key}: ${c}`);
+      if (c) lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${c}`);
     }
   }
   lines.push("");
   lines.push(`## 正解`);
   lines.push(
-    Array.isArray(question.answer) ? question.answer.join(", ") : String(question.answer),
+    question.type === "ordering" && Array.isArray(question.answer)
+      ? `正しい順序: ${formatQuestionAnswerForDisplay(question, question.answer)}`
+      : question.type === "numeric" ? formatNumericAnswer(question)
+        : formatQuestionAnswerForDisplay(question, question.answer, ", "),
   );
   lines.push("");
   lines.push(`## サイト掲載の解説（参考・公式見解とは限らない）`);
@@ -166,7 +171,7 @@ export function buildQuestionContext(
       lines.push("");
       lines.push("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
       for (const { key, explanation } of explainedChoices) {
-        lines.push(`- ${key}: ${explanation}`);
+        lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${explanation}`);
       }
     }
   }
@@ -178,7 +183,7 @@ export function buildQuestionContext(
     lines.push("");
     lines.push(`## ユーザーの回答`);
     lines.push(
-      `選択: ${selectedChoice} / ${isCorrect === true ? "正解" : isCorrect === false ? "不正解" : "未採点"}`,
+      `選択: ${formatQuestionAnswerForDisplay(question, selectedChoice)} / ${isCorrect === true ? "正解" : isCorrect === false ? "不正解" : "未採点"}`,
     );
   }
   return lines.join("\n");
