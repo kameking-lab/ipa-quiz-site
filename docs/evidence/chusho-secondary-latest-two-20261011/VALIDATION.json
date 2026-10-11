@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "qualification": "chusho-secondary",
+  "years": [
+    2025,
+    2024
+  ],
+  "cases": 8,
+  "originals": 33,
+  "independentEditorialSolutionBlocks": 54,
+  "sourceImages": 40,
+  "sourceAudit": "FINAL-AUDIT.json",
+  "officialSourceAlignment": "all 8 official question PDFs and 8 purpose PDFs; no official answers invented",
+  "focusedTests": {
+    "files": 3,
+    "passed": 15,
+    "failed": 0,
+    "rerunAfterHomeDirectoryContractFix": true
+  },
+  "initialFullSuite": {
+    "files": 517,
+    "passedTests": 4773,
+    "failedTests": 1,
+    "totalTests": 4774,
+    "soleFailure": "home-directory expected all live external qualifications to have an ExamCode; repaired to include native routes",
+    "repairedFocusedSuitePassed": true,
+    "fullSuiteRerunClaimed": false
+  },
+  "typecheck": "PASS",
+  "changedFilesLint": "PASS",
+  "fullLint": {
+    "errors": 0,
+    "warnings": 1,
+    "existingWarning": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs: unused base"
+  },
+  "productionBuild": {
+    "result": "PASS",
+    "generatedPages": 11513,
+    "finalMaterializedText": true,
+    "temporaryValidationConfig": "cleanDistDir:false only during build; original next.config.ts bytes restored; not committed"
+  },
+  "runtime": {
+    "hub": 200,
+    "caseRoutes": 8,
+    "allRoutes": 42,
+    "draftRestore": true,
+    "keyboardExampleReveal": true,
+    "selfCheck": true,
+    "mobileOverflow": false,
+    "sourceImageDecode": true,
+    "reviewedFinancialExample": true,
+    "pageErrors": []
+  },
+  "visualQa": {
+    "mobilePractice": "reviewed",
+    "mobileHub": "reviewed",
+    "desktopPractice": "reviewed",
+    "layoutIssues": 0
+  },
+  "independentReview": "narrow schema/UX and difficult 2024/2025 financial cases; no whole-corpus second generation",
+  "publication": {
+    "draftPr": "https://github.com/kameking-lab/ipa-quiz-site/pull/734",
+    "productionMergeOrDeploymentByThisTask": false,
+    "sourcePermissionGrantClaimed": false
+  },
+  "observedUtc": "2026-10-11T03:20:22.111717+00:00"
+}
