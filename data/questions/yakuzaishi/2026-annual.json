@@ -8080,5 +8080,197 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の分解反応を異なる温度で行い、その反応速度定数kの対数(ln k)を縦軸に、絶対温度Tの逆数(1/T)を横軸にとってプロットした場合、アレニウスの式に従っているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "アレニウスの式 k = A·exp(-Ea/RT) の両辺の自然対数をとると、ln k = ln A - (Ea/R)(1/T) となります。これは1/Tに対して直線で、傾きは -Ea/R です。Eaは正なので傾きは負になります。つまり、ln k を縦軸、1/T を横軸にとると右下がりの直線になります。原図の選択肢のうち、右下がりの直線にデータ点が乗っているのは1です。",
+    "choiceExplanations": {
+      "ア": "原図では、点が右下がりの直線上に並んでいます。ln k = ln A - (Ea/R)(1/T) の形(傾き負の直線)と一致するため正しいです。公式正答は1です。",
+      "イ": "原図では右上がりの直線です。これは傾きが正で、Eaが負という意味になります。通常の分解反応のアレニウス式とは合いません。",
+      "ウ": "原図では水平な直線です。傾きが0ならEa=0で、温度によってkが変わらないことになります。温度依存性を示すアレニウス式には合いません。",
+      "エ": "原図では右上がりに曲がる曲線です。直線ではないので、1/Tに対して直線になるはずのアレニウスプロットに合いません。",
+      "オ": "原図では右下がりですが、曲線(下に凸)です。直線にならないため、アレニウスの式に従っているとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q003-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問3の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q5",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "採取した1つの均質な検体から同じように調製した多数の試料を1回ずつ分析し、得られた測定値の分布を、真の値を100.0としてヒストグラムに表した。真度及び精度ともに高いのはどれか。1つ選べ。ただし、分析した試料数は同じである。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "真度は、測定値の平均が真の値(100.0)にどれだけ近いかを表します(偏りの小ささ)。精度は、測定値のばらつきの小ささを表します。両方が高いのは、分布の中心が100.0にあり、幅が狭いヒストグラムです。原図では、選択肢4が100付近を中心に最も幅が狭く、これに当たります。選択肢1は幅が狭いものの、中心が100よりやや低い側にあります。選択肢2と3は中心が100付近ですが、ばらつきが大きいです。選択肢5は中心が100より高い側にずれています。",
+    "choiceExplanations": {
+      "ア": "原図では分布が狭く精度は高いですが、ピークが真の値100.0より低い側にずれて見えます。真度が劣るため、両方が高いとはいえません。",
+      "イ": "原図では分布の中心は100付近で真度は良好です。しかし幅が広く、精度は選択肢4より劣ります。",
+      "ウ": "原図では中心は100付近ですが、分布が最も広く、精度が低いです。",
+      "エ": "原図では分布が100付近に集中し、幅も狭いです。真度・精度ともに高いため正しいです。公式正答は4です。",
+      "オ": "原図では分布が100より高い側にずれており、幅も狭くありません。真度・精度ともに高いとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問5（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q005-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問5の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香環を除く二重結合が、E配置であるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "E/Z配置は、二重結合の各炭素について CIP 順位則で高順位の置換基を決め、その2つが反対側にあれば E、同じ側にあれば Z とします。選択肢3では、一方の炭素では Cl（原子番号17）が F（9）より高順位、もう一方の炭素では CH3 が H より高順位です。図では Cl と CH3 が二重結合の反対側にあるので E配置です。",
+    "choiceExplanations": {
+      "ア": "誤り。一方の炭素では CH3 が H より高順位、もう一方の炭素ではエチル基が CH3 より高順位です。図では CH3 とエチル基が同じ側にあるので Z配置です。",
+      "イ": "誤り。二重結合が六員環の中にあり、環内の二重結合の置換基は同じ側に固定されます。環内の二重結合なので E配置にはなりません（Z型）。",
+      "ウ": "正しい。Cl と CH3 が反対側にあるので E配置です。",
+      "エ": "誤り。2つのエステル基（CO2CH3）が二重結合の同じ側にある（マレイン酸ジメチル型の）配置で、Z配置です。",
+      "オ": "誤り。一方の炭素ではヒドロキシフェニル基がフェニル基より高順位、もう一方の炭素ではフェニル基がエチル基より高順位です。図では高順位の2つの基が同じ側にあるので Z配置です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香族性を示さないのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "芳香族性には、環状に共役していること、平面であること、π電子が 4n+2 個（ヒュッケル則）であることが必要です。選択肢3の八員環の化合物はπ電子が8個で 4n+2 を満たさず、環も平面にならないため、芳香族性を示しません。",
+    "choiceExplanations": {
+      "ア": "芳香族性を示す。ピロールは、C=C 2つの4電子とNの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "イ": "芳香族性を示す。チオフェンは、C=C 2つの4電子とSの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "ウ": "芳香族性を示さない。8π電子で 4n+2 則を満たさず、環が平面を保たないため、正解です。",
+      "エ": "芳香族性を示す。ナフタレンは10π電子の縮合環系で、ヒュッケル則を満たします。",
+      "オ": "芳香族性を示す。アズレンは五員環と七員環が縮合した10π電子の非ベンゼン系芳香族化合物です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
   }
 ]

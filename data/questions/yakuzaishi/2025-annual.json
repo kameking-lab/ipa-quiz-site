@@ -6044,5 +6044,281 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q1",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図はダニエル電池（Zn|ZnSO4(aq)¦CuSO4(aq)|Cu）の模式図である。この電池の標準起電力として正しいのはどれか。1つ選べ。\nただし、Zn と Cu の半電池の標準電極電位はそれぞれ −0.763 V と +0.337 V とする。",
+    "choices": {
+      "ア": "+0.213 V",
+      "イ": "+0.426 V",
+      "ウ": "+1.100 V",
+      "エ": "−0.426 V",
+      "オ": "−1.100 V"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "標準起電力は、正極（還元が起こる側、電位が高い側）の標準電極電位から負極（酸化が起こる側、電位が低い側）の標準電極電位を引いて求める。Cu 半電池が +0.337 V で高く正極、Zn 半電池が −0.763 V で低く負極になる。したがって E° = (+0.337) − (−0.763) = +1.100 V。起電力は正の値で表すので、正解は 3。",
+    "choiceExplanations": {
+      "ア": "誤り。+0.213 V は 2 つの電位の和のようにも見えない値で、根拠のある計算では得られない。E° = 0.337 − (−0.763) = 1.100 V である。",
+      "イ": "誤り。+0.426 V は −0.763 と +0.337 の和（−0.426）の符号を変えた値で、電位差ではなく和をとった誤りである。起電力は差で求める。",
+      "ウ": "正しい。E° = 0.337 − (−0.763) = +1.100 V。Cu 側が正極、Zn 側が負極で、ダニエル電池の標準起電力として整合する。",
+      "エ": "誤り。−0.426 V は 2 つの電位の和（−0.763 + 0.337）であり、差ではない。また自発的に作動する電池の標準起電力は正の値になる。",
+      "オ": "誤り。大きさは正しいが符号が逆である。正極 − 負極の順に引けば正の値になる。電池は Zn が酸化され Cu2+ が還元される向きに自発的に進むので、起電力は正である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問1（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q001-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問1の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "難溶性塩である水酸化鉄（Ⅲ）（Fe(OH)3）の純水中での溶解度を S mol/L とすると、その溶解度積（Ksp）を正しく表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "3S³ (mol/L)³",
+      "イ": "4S³ (mol/L)³",
+      "ウ": "9S³ (mol/L)³",
+      "エ": "9S⁴ (mol/L)⁴",
+      "オ": "27S⁴ (mol/L)⁴"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Fe(OH)3 は Fe(OH)3 ⇌ Fe3+ + 3OH− と溶解する。溶解度を S mol/L とすると、[Fe3+] = S、[OH−] = 3S となる。したがって Ksp = [Fe3+][OH−]^3 = S × (3S)^3 = S × 27S^3 = 27S^4 (mol/L)^4。次元は濃度の 4 乗で (mol/L)^4。正解は 5。なお、純水中の水の自己電離による OH− は無視する前提である。",
+    "choiceExplanations": {
+      "ア": "誤り。3S^3 は係数 3 を掛けただけで、OH− 濃度 3S を 3 乗する操作が反映されていない。また単位も (mol/L)^4 になるはずで合わない。",
+      "イ": "誤り。4S^3 (mol/L)^3 は Ca(OH)2 のような AB2 型（Ksp = S × (2S)^2 = 4S^3）の式である。Fe(OH)3 は AB3 型で 4 乗になる。",
+      "ウ": "誤り。9S^3 は (3S)^2 のような扱いで、Fe(OH)3 の OH− の係数 3 を 2 乗にした誤りである。冪は 3 乗で、全体では 4 乗になる。",
+      "エ": "誤り。冪は 4 乗で合っているが、係数が 9 になっており、(3S)^3 = 27S^3 とすべきところを 9 としている。",
+      "オ": "正しい。Ksp = S·(3S)^3 = 27S^4 (mol/L)^4。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化合物のうち、最も酸性度が高いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "フェノール類の酸性度は、脱プロトン化で生じるフェノキシドアニオンの安定性で決まる。ニトロ基は強い電子求引性(-I、-M効果)をもつ。パラ位にあると、負電荷がベンゼン環を通ってニトロ基まで非局在化し、アニオンが大きく安定化する。そのため4-ニトロフェノールが最も酸性度が高い。",
+    "choiceExplanations": {
+      "ア": "シクロヘキサノールは普通のアルコールで、生じるアルコキシドは共鳴安定化されない。フェノール類より酸性度が低い。",
+      "イ": "フェノキシドは環への共鳴で安定化されるが、さらに電子求引基をもつ化合物には及ばない。",
+      "ウ": "アミノ基は電子供与性(+M効果)で、フェノキシドを不安定化する。フェノールより酸性度が低い。",
+      "エ": "塩素は電子求引性(-I効果)で酸性度をやや高めるが、ニトロ基のような共鳴による安定化はない。",
+      "オ": "正しい。ニトロ基の強い電子求引性と共鳴効果によりアニオンが最も安定化され、酸性度が最も高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化学種のうち、ベンジルカチオンが最も安定化されているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ベンジルカチオンの正電荷はベンゼン環のオルト位とパラ位に非局在化する。この位置にあるメトキシ基は、酸素の非共有電子対を共鳴で供与して強く安定化する(+M効果)。メタ位のメトキシ基は共鳴に関与できず、電子求引性の誘起効果(-I効果)が主になる。そのため、オルト位とパラ位の両方にメトキシ基をもつ2,4-ジメトキシ体が最も安定である。",
+    "choiceExplanations": {
+      "ア": "オルト位のメトキシ基1個だけが共鳴で安定化する。オルト位とパラ位の両方にある4より安定化が小さい。",
+      "イ": "メタ位のメトキシ基は共鳴で安定化せず、誘起効果で不安定化に働く。",
+      "ウ": "オルト位は共鳴で安定化するが、もう1個はメタ位で安定化に寄与しない。4には及ばない。",
+      "エ": "正しい。オルト位とパラ位の2個のメトキシ基が共鳴で正電荷を安定化し、最も安定である。",
+      "オ": "オルト位は有効だが、もう1個はCH2+に対してメタ位にあり、共鳴に寄与しない。4より安定化が小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q12",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "核酸に含まれるプリン塩基のヒトにおける最終代謝産物はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ヒトでは、プリン塩基の分解でヒポキサンチンがキサンチンになり、さらに尿酸になる(キサンチンオキシダーゼによる)。ヒトは尿酸をさらに分解するウリカーゼをもたないため、尿酸が最終代謝産物となる。図の5は、2,6,8位に酸素をもつ尿酸の構造である。",
+    "choiceExplanations": {
+      "ア": "ヒポキサンチンは、アデニンの代謝で生じる中間体である。さらにキサンチンを経て酸化される。",
+      "イ": "グアニンは核酸塩基で、代謝されてキサンチンに変わる。最終代謝産物ではない。",
+      "ウ": "アデニンは核酸塩基で、代謝されてヒポキサンチンなどに変わる。最終代謝産物ではない。",
+      "エ": "キサンチンは、尿酸の一段階手前の中間体である。キサンチンオキシダーゼでさらに酸化される。",
+      "オ": "正しい。ヒトのプリン塩基の最終代謝産物は尿酸である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問12（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q012-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問12の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q15",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ウイルスゲノムを中心としてその周囲を取り囲むタンパク質の殻はどれか。1つ選べ。",
+    "choices": {
+      "ア": "エンベロープ",
+      "イ": "カプシド",
+      "ウ": "コア",
+      "エ": "スパイク",
+      "オ": "ビリオン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ウイルスのゲノム（DNAまたはRNA）は、カプソメアというタンパク質サブユニットからなるカプシドに包まれています。カプシドはゲノムを囲むタンパク質の殻です。したがって正解は2です。",
+    "choiceExplanations": {
+      "ア": "エンベロープは一部のウイルスが持つ脂質二重膜の外被です。タンパク質の殻ではなく、カプシドのさらに外側にあります。",
+      "イ": "正しい。カプシドはウイルスゲノムを取り囲むタンパク質の殻です。",
+      "ウ": "コアは一般にゲノムとそれを包む内部構造を指す語です。ゲノムを囲むタンパク質の殻そのものを指す名称としては、カプシドが適切です。",
+      "エ": "スパイクはエンベロープなどの表面から突き出た糖タンパク質で、宿主細胞への吸着や侵入に関わります。ゲノムを囲む殻ではありません。",
+      "オ": "ビリオンは、感染性を持つ完全なウイルス粒子全体を指す語です。タンパク質の殻だけを指すのではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問15（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
   }
 ]

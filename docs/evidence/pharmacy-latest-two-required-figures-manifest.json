@@ -1,0 +1,634 @@
+{
+  "task": "pharmacy-latest-two-required-figures-saved-20261011",
+  "baseCommit": "32b1631824f3ef1a20f7d6840f4e4de4c9ab1813",
+  "ownedIds": [
+    "yakuzaishi-2025-annual-required-q1",
+    "yakuzaishi-2025-annual-required-q3",
+    "yakuzaishi-2025-annual-required-q8",
+    "yakuzaishi-2025-annual-required-q9",
+    "yakuzaishi-2025-annual-required-q12",
+    "yakuzaishi-2025-annual-required-q15",
+    "yakuzaishi-2026-annual-required-q3",
+    "yakuzaishi-2026-annual-required-q5",
+    "yakuzaishi-2026-annual-required-q8",
+    "yakuzaishi-2026-annual-required-q9"
+  ],
+  "acceptedOriginals": 10,
+  "reusedSavedOriginals": 10,
+  "newOriginalsAuthored": 0,
+  "newGenerationRequests": 0,
+  "savedMainExplanationsUnchanged": 10,
+  "savedChoiceExplanationsUnchanged": 50,
+  "originalPixelCrops": 8,
+  "implementationModelRequested": "gpt-6.1-sol",
+  "implementationModelReceipt": null,
+  "questions": [
+    {
+      "id": "yakuzaishi-2025-annual-required-q1",
+      "edition": 110,
+      "number": 1,
+      "officialKey": [
+        "3"
+      ],
+      "sourcePhysicalPage": 2,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-q01-06-author/STRUCTURED-RESULT.json",
+        "sha256": "0dc706b247cb7f3c5ec597b29d8e5c77c92c1bd67247dc98291b28aaa3452737",
+        "receiptSha256": "cb5edbf75dedddc616b6dede79ee22c17742d07c1e7e6dada7f708556079e18a",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/SOURCE-PACKET.json",
+        "sha256": "52dc10a55b0f4c3fa978dfa34b05abee080cda3b72fc835f7740b00c1cefc9ba"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/question-physical-02.png",
+        "sha256": "81adf3db63e202b0ff8fb24e4ea34a5f2b92f965a01bac1cc2abd06f65b0e7bd"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/answers-physical-01.png",
+        "sha256": "2eee3a5d000d84832f68348992aecd5d834683ada9f12602a0ea97419cbd4854"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q001-original.png",
+        "sha256": "7286d591139dbe94121990a3007fcf5c47869a7a52fb9bc2a74c3e8e992ed742",
+        "sourceBox": [
+          280,
+          385,
+          800,
+          770
+        ],
+        "width": 520,
+        "height": 385,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q3",
+      "edition": 110,
+      "number": 3,
+      "officialKey": [
+        "5"
+      ],
+      "sourcePhysicalPage": 3,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-q01-06-author/STRUCTURED-RESULT.json",
+        "sha256": "0dc706b247cb7f3c5ec597b29d8e5c77c92c1bd67247dc98291b28aaa3452737",
+        "receiptSha256": "cb5edbf75dedddc616b6dede79ee22c17742d07c1e7e6dada7f708556079e18a",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/SOURCE-PACKET.json",
+        "sha256": "52dc10a55b0f4c3fa978dfa34b05abee080cda3b72fc835f7740b00c1cefc9ba"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/question-physical-03.png",
+        "sha256": "aa456d13467d475a84dd65bd85101895ffc493d07d3722f2c4ff7457a407a49a"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi110/answers-physical-01.png",
+        "sha256": "2eee3a5d000d84832f68348992aecd5d834683ada9f12602a0ea97419cbd4854"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Project original superscript powers as Unicode; quantities and units unchanged."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q8",
+      "edition": 110,
+      "number": 8,
+      "officialKey": [
+        "5"
+      ],
+      "sourcePhysicalPage": 5,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q07-12-author/STRUCTURED-RESULT.json",
+        "sha256": "05c4cf21977d44d92b8413e739681c663869c7967a3232c9faa68408d13e6b85",
+        "receiptSha256": "b3ec0f753433e42697ad700cef87d1543be1027d64a74952c0da53d297743ddc",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/SOURCE-PACKET.json",
+        "sha256": "f7d0c5f4c0afee9a6669f8af78fa7ead259d4e5f3a45e17a10b1d0585f0a73b8"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/question-physical-05.png",
+        "sha256": "3a72ce1387df44aaaaa776315447efa5794fa7e5bddaa3b9c805e710a184f854"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q008-original.png",
+        "sha256": "b8e976e39957d0ea24074298f09f7aba3c2a367887b5bf339d8e8b8d9049ae6e",
+        "sourceBox": [
+          215,
+          170,
+          715,
+          350
+        ],
+        "width": 500,
+        "height": 180,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Remove saved synthetic figure description; restore the original printed stem.",
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q9",
+      "edition": 110,
+      "number": 9,
+      "officialKey": [
+        "4"
+      ],
+      "sourcePhysicalPage": 5,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q07-12-author/STRUCTURED-RESULT.json",
+        "sha256": "05c4cf21977d44d92b8413e739681c663869c7967a3232c9faa68408d13e6b85",
+        "receiptSha256": "b3ec0f753433e42697ad700cef87d1543be1027d64a74952c0da53d297743ddc",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/SOURCE-PACKET.json",
+        "sha256": "f7d0c5f4c0afee9a6669f8af78fa7ead259d4e5f3a45e17a10b1d0585f0a73b8"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/question-physical-05.png",
+        "sha256": "3a72ce1387df44aaaaa776315447efa5794fa7e5bddaa3b9c805e710a184f854"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q009-original.png",
+        "sha256": "053f8dde14d24d948d63225762de8fd6048729d4d4ac3c615e02f7a20b7172a0",
+        "sourceBox": [
+          90,
+          535,
+          815,
+          715
+        ],
+        "width": 725,
+        "height": 180,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Remove saved synthetic figure description; restore the original printed stem.",
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q12",
+      "edition": 110,
+      "number": 12,
+      "officialKey": [
+        "5"
+      ],
+      "sourcePhysicalPage": 7,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q07-12-author/STRUCTURED-RESULT.json",
+        "sha256": "05c4cf21977d44d92b8413e739681c663869c7967a3232c9faa68408d13e6b85",
+        "receiptSha256": "b3ec0f753433e42697ad700cef87d1543be1027d64a74952c0da53d297743ddc",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/SOURCE-PACKET.json",
+        "sha256": "f7d0c5f4c0afee9a6669f8af78fa7ead259d4e5f3a45e17a10b1d0585f0a73b8"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/question-physical-07.png",
+        "sha256": "c6cf1b7aa14d2f74320c0c4a8f85c3879079c36a70b4e2fe89a72324a17435ce"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q07-12/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q012-original.png",
+        "sha256": "ce486d3a816024bce526b203bb5005ed8f326d85edbd05ee2173226fea42bfc3",
+        "sourceBox": [
+          115,
+          175,
+          760,
+          475
+        ],
+        "width": 645,
+        "height": 300,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Remove saved synthetic figure description; restore the original printed stem.",
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q15",
+      "edition": 110,
+      "number": 15,
+      "officialKey": [
+        "2"
+      ],
+      "sourcePhysicalPage": 8,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q13-18-author/STRUCTURED-RESULT.json",
+        "sha256": "c6ef71dbb6e75053e234170c3ee71f6519ad8dbe8dc100d1640dee721a1886b6",
+        "receiptSha256": "e4f60515e87aed206abcc4e3be851b41c59696b247d1d72b495a5975787f2cb2",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q13-18/SOURCE-PACKET.json",
+        "sha256": "00cb1769e2f95f6c385e4ec6639ffb487b040c15f44f5f4273129aa65aabd6db"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q13-18/question-physical-08.png",
+        "sha256": "e5cd1df2e4f20b5597ec7865d98cf7b2ea94527bda547ca65f98ee4291bc7264"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q13-18/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q3",
+      "edition": 111,
+      "number": 3,
+      "officialKey": [
+        "1"
+      ],
+      "sourcePhysicalPage": 3,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-q01-06-author/STRUCTURED-RESULT.json",
+        "sha256": "9aaec40f8d97019d84d5faab7222ee100fe08f9cbf0933df16fdfab1c8d9c730",
+        "receiptSha256": "9754d1a3ec356e3e30c99718f465917457bb89279cd4140fa416be5a2198185a",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/SOURCE-PACKET.json",
+        "sha256": "da10f3871ed162cfa5473ecddf48597f1f0afb602174e96e76ad942cc75e0a79"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/question-physical-03.png",
+        "sha256": "c9d3905aea052a4893c611db122210050c32d49030fc6c61b6e0fefc22365a0d"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/answers-physical-01.png",
+        "sha256": "6f22b60105a68573857309415d6ae75568b704ea088609b751b8ec1451ce6525"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+        "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-required-q003-original.png",
+        "sha256": "924d993769f833ae378fd000bdea834367121413efbde79db5c044f060c00c5a",
+        "sourceBox": [
+          135,
+          270,
+          940,
+          800
+        ],
+        "width": 805,
+        "height": 530,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q5",
+      "edition": 111,
+      "number": 5,
+      "officialKey": [
+        "4"
+      ],
+      "sourcePhysicalPage": 4,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-q01-06-author/STRUCTURED-RESULT.json",
+        "sha256": "9aaec40f8d97019d84d5faab7222ee100fe08f9cbf0933df16fdfab1c8d9c730",
+        "receiptSha256": "9754d1a3ec356e3e30c99718f465917457bb89279cd4140fa416be5a2198185a",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/SOURCE-PACKET.json",
+        "sha256": "da10f3871ed162cfa5473ecddf48597f1f0afb602174e96e76ad942cc75e0a79"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/question-physical-04.png",
+        "sha256": "aa0af869cc56fb8f30a2c39c9c73085e4d9c6f8d6863d79f265d0c0d1be0bd64"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/answers-physical-01.png",
+        "sha256": "6f22b60105a68573857309415d6ae75568b704ea088609b751b8ec1451ce6525"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+        "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-required-q005-original.png",
+        "sha256": "d72bdbb89c0404f9920a9f172876a5d81b01db0569eadc7a2a81003f6ee1bfb1",
+        "sourceBox": [
+          105,
+          310,
+          945,
+          535
+        ],
+        "width": 840,
+        "height": 225,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q8",
+      "edition": 111,
+      "number": 8,
+      "officialKey": [
+        "3"
+      ],
+      "sourcePhysicalPage": 5,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q07-12-author/STRUCTURED-RESULT.json",
+        "sha256": "c805732cb33f03589c63d706615d0ba72e5e522abc512640233fa3a3fe6cc85c",
+        "receiptSha256": "538fb7a4f5721fc99561d4b914de2a422e5b4a03c0c0b80e810bc5454a335b10",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/SOURCE-PACKET.json",
+        "sha256": "edaf048fefa5b9943abd9475a69c384ee0e6a62ea779652be6cf2757c917d44b"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/question-physical-05.png",
+        "sha256": "a578326e6b0efb2722a760463792cb1e94b8b5dbbf9c0f1356021d5b9c0cd290"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+        "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-required-q008-original.png",
+        "sha256": "d53cfffea0dedad78c6cb24993c89265144389baaa057277d51b30dae675f03a",
+        "sourceBox": [
+          120,
+          175,
+          665,
+          525
+        ],
+        "width": 545,
+        "height": 350,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q9",
+      "edition": 111,
+      "number": 9,
+      "officialKey": [
+        "3"
+      ],
+      "sourcePhysicalPage": 5,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q07-12-author/STRUCTURED-RESULT.json",
+        "sha256": "c805732cb33f03589c63d706615d0ba72e5e522abc512640233fa3a3fe6cc85c",
+        "receiptSha256": "538fb7a4f5721fc99561d4b914de2a422e5b4a03c0c0b80e810bc5454a335b10",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/SOURCE-PACKET.json",
+        "sha256": "edaf048fefa5b9943abd9475a69c384ee0e6a62ea779652be6cf2757c917d44b"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/question-physical-05.png",
+        "sha256": "a578326e6b0efb2722a760463792cb1e94b8b5dbbf9c0f1356021d5b9c0cd290"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q07-12/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+        "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-required-q009-original.png",
+        "sha256": "42229bc3aae8155714e7b58af3ac4d1c2218c4bc4bf59654cec2b7a417406a36",
+        "sourceBox": [
+          145,
+          690,
+          795,
+          815
+        ],
+        "width": 650,
+        "height": 125,
+        "pixelEqualToSourceCrop": true
+      },
+      "allSavedExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    }
+  ],
+  "existingOriginalsModified": 0,
+  "existingOriginalsDeleted": 0,
+  "preservedPharmacyOriginalsBaseline": 325,
+  "publication": false,
+  "independentReview": "pending_root_owned",
+  "mergePublicGo": "pending_root_owned",
+  "primarySourceRefusalsRetained": [
+    "https://goldbook.iupac.org/terms/view/E01882",
+    "https://goldbook.iupac.org/terms/view/A00446",
+    "https://goldbook.iupac.org/terms/view/A00442"
+  ],
+  "primarySourceRefusalDisposition": "403 responses retained without retry or alternative endpoint; accepted explanations are stable basic science and fixed official original/answer evidence, not clinical or current-law claims.",
+  "dataFiles": [
+    {
+      "path": "data/questions/yakuzaishi/2025-annual.json",
+      "oldRowsPreserved": 139,
+      "added": 6,
+      "oldSha256": "da06d9fb620fa23525e85e66791644649d3b661ed3dc62f0911fffdc6862fb2d",
+      "newSha256": "15f41c6d3f5d966c9bb419585941fa07e65bb45b86b82aebae1cc1d0181ac49e"
+    },
+    {
+      "path": "data/questions/yakuzaishi/2026-annual.json",
+      "oldRowsPreserved": 185,
+      "added": 4,
+      "oldSha256": "d4612ad650085de69dd08e4127b42e451f84a7976d5a7057714d679bf230ee14",
+      "newSha256": "b04f83236d8ec17af1bdf52d046f37e3e9fd0291bc0e325bd97100dbf5b21db9"
+    }
+  ],
+  "resultingPharmacyOriginals": 335,
+  "protectedPending685686": 4,
+  "effectiveOriginalsWithPending": 339,
+  "latestTwoRemaining": 351,
+  "latestTwoComplete": false,
+  "validation": {
+    "sourceSchemaAnd325RowPreservation": "PASS",
+    "originalPixelEquality8Assets": "PASS",
+    "focusedVitest": {
+      "files": 6,
+      "tests": 1060,
+      "result": "PASS"
+    },
+    "additionalImmutableFigureRenderingTests": {
+      "files": 1,
+      "tests": 2,
+      "result": "PASS"
+    },
+    "typecheck": "PASS",
+    "focusedLint": "PASS",
+    "diffCheck": "PASS",
+    "fullBuildRun": false,
+    "githubCi": "pending_on_draft_pr"
+  }
+}
