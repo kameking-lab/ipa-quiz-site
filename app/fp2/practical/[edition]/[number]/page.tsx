@@ -35,7 +35,7 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
   const choiceLayout = splitPracticalChoices(q.body, q.modelAnswer);
   const selectedChoice = choiceLayout?.choices.find((choice) => String(choice.number) === q.modelAnswer.trim());
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
+    <main data-study-presence-exam="fp2" className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp2" className="hover:underline">FP2級</Link> / <Link href="/fp2/practical" className="hover:underline">実技</Link> / <Link href={`/fp2/practical/${edition}`} className="hover:underline">{data.label}</Link> / 問{q.number}</nav>
       <header><h1 className="text-2xl font-bold text-foreground sm:text-3xl">{data.label} 実技 問{q.number}</h1><p className="mt-2 text-sm text-muted-foreground">法令基準日 {data.lawReferenceDate}</p></header>
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">

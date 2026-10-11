@@ -149,7 +149,7 @@ export function AfternoonPlayer({ questions }: Props) {
       : "";
 
   return (
-    <div className="space-y-4">
+    <div data-study-presence-exam={active.exam} className="space-y-4">
       <div className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center gap-2 text-zinc-700 dark:text-zinc-200">
           <Clock className="h-4 w-4" aria-hidden="true" />

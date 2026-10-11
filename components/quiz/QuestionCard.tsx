@@ -16,7 +16,7 @@ export function QuestionCard({
   progress?: { current: number; total: number };
 }) {
   return (
-    <div className="space-y-3">
+    <div data-study-presence-exam={question.exam} className="space-y-3">
       <div className="flex flex-wrap items-center gap-2 text-xs">
         <Badge variant="outline">
           {questionSourceExam(question)} {questionSourceEdition(question)}

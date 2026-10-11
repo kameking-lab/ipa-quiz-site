@@ -29,7 +29,7 @@ export default async function Fp1AppliedQuestionPage({ params }: { params: Promi
   const data = getFp1AppliedEdition(edition);
   const question = data?.questions.find((item) => String(item.number) === number);
   if (!data || !question) notFound();
-  return <main className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
+  return <main data-study-presence-exam="fp1" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
     <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp1" className="hover:underline">FP1級</Link> / <Link href="/fp1/applied" className="hover:underline">学科応用編</Link> / <Link href={`/fp1/applied/${edition}`} className="hover:underline">{data.label}</Link> / 問{question.number}</nav>
     <header><h1 className="text-2xl font-bold sm:text-3xl">{data.label} 学科応用編 問{question.number}</h1><p className="mt-2 text-sm font-medium text-muted-foreground">法令基準日 {data.lawReferenceDate}（この日の制度で解答）</p></header>
     <section aria-label="共通設例" className="mt-6 rounded-2xl border border-border bg-card p-5 sm:p-6">

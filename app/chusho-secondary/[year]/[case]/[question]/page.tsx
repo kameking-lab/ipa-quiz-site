@@ -24,7 +24,7 @@ export default async function ChushoQuestionPage({ params }: Props) {
   const { paper: p, question: q } = await resolve(params);
   const previous = p.questions.find(row => row.number === q.number - 1);
   const next = p.questions.find(row => row.number === q.number + 1);
-  return <main className="mx-auto max-w-4xl px-4 pb-20 pt-8">
+  return <main data-study-presence-exam="chusho-secondary" className="mx-auto max-w-4xl px-4 pb-20 pt-8">
     <Link href={chushoCasePath(p.year, p.case)} className="text-sm font-semibold text-primary hover:underline">← {p.year}年度 {p.caseTitle}の原問一覧</Link>
     <h1 className="mt-5 text-2xl font-bold sm:text-3xl">{p.year}年度 {p.caseTitle} 第{q.number}問：{q.topic}</h1>
     <p className="mt-3 rounded-xl border border-border bg-muted/30 p-4 text-sm leading-7">{INDEPENDENT_EXAMPLE_NOTICE}</p>

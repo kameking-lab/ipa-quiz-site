@@ -26,7 +26,7 @@ export default async function Fp3PracticalQuestion({ params }: { params: Promise
   const source = practicalSourceUrls(edition);
   const sourcePdfPage = `${source.question}#page=${q.sourcePage}`;
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
+    <main data-study-presence-exam="fp3" className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp3" className="hover:underline">FP3級</Link> / <Link href="/fp3/practical" className="hover:underline">実技</Link> / <Link href={`/fp3/practical/${edition}`} className="hover:underline">{data.label}</Link> / 問{q.number}</nav>
       <header><h1 className="text-2xl font-bold text-foreground sm:text-3xl">{data.label} 実技 問{q.number}</h1><p className="mt-2 text-sm text-muted-foreground">法令基準日 {data.lawReferenceDate}</p></header>
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">

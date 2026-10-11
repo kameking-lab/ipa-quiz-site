@@ -161,7 +161,7 @@ export function EssayEditor({ question }: Props) {
   }, [canSubmit, isPremium, remaining, question, industry, answers]);
 
   return (
-    <div className="space-y-6">
+    <div data-study-presence-exam={question.exam} className="space-y-6">
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between gap-2">
