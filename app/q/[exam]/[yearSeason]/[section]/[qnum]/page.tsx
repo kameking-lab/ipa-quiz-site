@@ -307,7 +307,7 @@ export default async function QuestionPage({
               {questionSourceExam(q)}
             </Badge>
             <Badge variant="soft">{questionSourceEdition(q)}</Badge>
-            <Badge variant="outline">{sessionLabel(q.session)}</Badge>
+            <Badge variant="outline">{sessionLabel(q.session, q.exam)}</Badge>
             <Badge variant="outline">問 {questionNumberLabel(q)}</Badge>
             {q.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
@@ -318,7 +318,7 @@ export default async function QuestionPage({
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {questionSourceEdition(q)} {questionSourceExam(q)}{" "}
-          {sessionLabel(q.session)} 問{questionNumberLabel(q)}
+          {sessionLabel(q.session, q.exam)} 問{questionNumberLabel(q)}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {topicPageExists ? (
@@ -675,7 +675,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -716,7 +716,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -753,7 +753,7 @@ export default async function QuestionPage({
                       {questionSourceEdition(r)}
                     </Badge>
                     <span>
-                      {questionSourceExam(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceExam(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">

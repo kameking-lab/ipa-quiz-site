@@ -9,6 +9,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if ((exam === "fe" || exam === "sg") && (!year || year >= 2023)) return "kamoku-a";
   if (exam === "civil1" || exam === "zoen1" || exam === "tsushin1") return "mondai-a";
   if (exam === "fp1" || exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "zoen2" || exam === "tsushin2" || exam === "kaigo" || exam === "tohan" || exam === "kanri" || exam === "soukan" || exam === "mankan" || exam === "kashikin" || exam === "sharoushi") return "gakka";
+  if (exam === "kenchiku-setsubishi") return "am1";
   if (exam === "yakuzaishi") return "required";
   if (exam === "denken3") return "riron";
   if (exam === "denken2" || exam === "denken1") return "denryoku";
@@ -22,7 +23,12 @@ export function parsePracticeSession(value?: string): Session | undefined {
   return PRACTICE_SESSIONS.includes(value as Session) ? value as Session : undefined;
 }
 
-export function practiceSessionLabel(session: Session): string {
+export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam === "kenchiku-setsubishi") {
+    if (session === "am1") return "建築一般知識";
+    if (session === "am2") return "建築法規";
+    if (session === "pm") return "建築設備";
+  }
   return ({ am: "午前", am1: "午前I（共通）", am2: "午前II（専門）", "kamoku-a": "科目A", "kamoku-b": "科目B", pm: "午後", pm1: "午後I", pm2: "午後II", gakka: "学科", rousai: "労災", koyou: "雇用保険", kenpo: "健康保険", kounen: "厚生年金", kokunen: "国民年金", ippan: "一般常識", sentaku: "選択式", required: "必須問題", theory: "薬学理論問題", practical: "薬学実践問題", riron: "理論", denryoku: "電力", kikai: "機械", houki: "法規", "mondai-a": "問題A", "mondai-b": "問題B", kyotsu: "共通科目", senmon: "専門科目", "hoiku-genri": "保育原理", "kyoiku-genri": "教育原理", "shakaiteki-yougo": "社会的養護", "kodomo-katei-fukushi": "子ども家庭福祉", "shakai-fukushi": "社会福祉", "hoiku-shinrigaku": "保育の心理学", "kodomo-hoken": "子どもの保健", "kodomo-shokueiyou": "子どもの食と栄養", "hoiku-jisshu-riron": "保育実習理論" })[session];
 }
 

@@ -51,7 +51,7 @@ function buildCanonicalIndex(pool: readonly Question[]): Map<string, Question> {
 
   for (const q of pool) {
     // 午前I（IPA高度試験）と、社会福祉士・精神保健福祉士の共通科目は同一問題冊子。
-    if (q.session !== "am1" && q.session !== "kyotsu") {
+    if ((q.session !== "am1" || q.exam === "kenchiku-setsubishi") && q.session !== "kyotsu") {
       canonicalById.set(q.id, q);
       continue;
     }

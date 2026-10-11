@@ -1,7 +1,7 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
-import type { ChoiceKey, Question } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
@@ -17,7 +17,10 @@ function toJstDateTimeISO(iso: string): string {
 }
 
 /** Human-readable label for an exam session segment. */
-export function sessionLabel(session: string): string {
+export function sessionLabel(session: string, exam?: ExamCode): string {
+  if (exam === "kenchiku-setsubishi" && (session === "am1" || session === "am2" || session === "pm")) {
+    return practiceSessionLabel(session, exam);
+  }
   const parsed = parsePracticeSession(session);
   if (parsed && ["rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
@@ -85,7 +88,13 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "fp1"
+  const questionAuthor = q.exam === "kenchiku-setsubishi"
+    ? {
+        "@type": "Organization",
+        name: "公益財団法人建築技術教育普及センター",
+        url: "https://www.jaeic.or.jp/",
+      }
+    : q.exam === "fp1"
     ? {
         "@type": "Organization",
         name: "一般社団法人金融財政事情研究会",
@@ -174,7 +183,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "fp1"
+  const licenseUrl = q.exam === "kenchiku-setsubishi"
+    ? "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html"
+    : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
