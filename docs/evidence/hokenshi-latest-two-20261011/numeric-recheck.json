@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "method": "direct arithmetic from official question values; no model call",
+  "calculations": [
+    {
+      "id": "hokenshi-2025-annual-pm-q44",
+      "calculation": "expected=200/400000*6000 + 400/400000*6000 + 400/200000*8000 = 25; SMR=32/25*100 = 128",
+      "expectedNumericEntry": "128",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-03seitou.pdf",
+      "officialAnswerNumber": "128"
+    },
+    {
+      "id": "hokenshi-2024-annual-am-q40",
+      "calculation": "400 per 100000 * 0.50 = 200 per 100000",
+      "expectedNumericEntry": "200",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-03a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-03seitou.pdf",
+      "officialAnswerNumber": "200"
+    },
+    {
+      "id": "hokenshi-2024-annual-pm-q52",
+      "calculation": "10 cancer cases / 500 screening positives * 100 = 2.0%; 4501 screening negatives are not the denominator",
+      "expectedNumericEntry": "2.0",
+      "printedOfficialKey": "20",
+      "responseFormat": "two digits separated by a printed decimal point",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-03b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-03seitou.pdf",
+      "officialAnswerNumber": "20"
+    }
+  ]
+}

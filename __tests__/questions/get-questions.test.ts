@@ -86,6 +86,8 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("rinsho-kensagishi");
     expect(codes).toContain("shinryo-hoshasengishi");
     expect(codes).toContain("rinsho-kogishi");
+    expect(codes).toContain("riyoshi");
+    expect(codes).toContain("chusho-kigyo-shindanshi");
     expect(codes).toContain("gas-kou");
     expect(codes).toContain("gas-otsu");
     expect(codes).toContain("gas-hei");
