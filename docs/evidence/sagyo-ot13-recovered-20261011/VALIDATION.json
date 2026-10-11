@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "targetedTests": {
+    "command": "pnpm exec vitest run __tests__/questions/sagyo-ot13-recovered.test.ts __tests__/questions/shino-sagyo-am-ready.test.ts __tests__/questions/shino-sagyo-pm-ready.test.ts __tests__/questions/shino-sagyo-pm01-20-ready.test.ts --maxWorkers=1",
+    "exitCode": 0,
+    "filesPassed": 4,
+    "testsPassed": 27,
+    "newTestsPassed": 18
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "changedFileLint": {
+    "command": "pnpm exec eslint data/qualification-staging/sagyo-ryohoshi/ot13-recovered/questions.ts data/qualification-staging/sagyo-ryohoshi/ot13-recovered/excluded.ts data/qualification-staging/sagyo-ryohoshi/ot13-recovered/index.ts __tests__/questions/sagyo-ot13-recovered.test.ts --max-warnings 0",
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "fullBuildRun": false,
+  "fullBuildReason": "Local candidate-only handoff with no public registry or runtime changes; parent requested queued control of heavy full builds. Integration owner performs release checks.",
+  "sourceChecks": {
+    "uniqueOriginals": 13,
+    "gradableCandidates": 11,
+    "choiceExplanations": 55,
+    "officialExclusions": 2,
+    "multipleSelectionQuestions": 2,
+    "choiceImages": 25,
+    "originalImageHashesMatched": 37,
+    "originalStemAndFiveChoicesMatched": 13
+  },
+  "mainOverlap": 0,
+  "otherHelperOverlap": 0,
+  "openPrFilesChecked": 67,
+  "openPrOtPathOverlap": 0,
+  "publicQuestionIncrement": 0,
+  "finalWordingRerun": {
+    "question": "r60-pm-q7 choice 2",
+    "reason": "Removed unsupported assumption of a required turn; retained case-specific clearance explanation.",
+    "relatedTestsPassed": 18,
+    "testExitCode": 0,
+    "changedFileLintExitCode": 0
+  }
+}
