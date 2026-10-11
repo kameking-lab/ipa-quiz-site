@@ -8,6 +8,7 @@ import {
   type SessionConfig,
 } from "@/lib/exam-config";
 import type { ExamCode } from "@/lib/questions/types";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 // EXAM_CONFIGS は全試験区分の中核設定レジストリで、PDF 出典 URL(urlSlug)・学習プラン
 // の想定問題数(expectedQuestions)・PDF クロール年範囲(yearRange)・分野別スケジュール
@@ -19,8 +20,8 @@ import type { ExamCode } from "@/lib/questions/types";
 //   - expectedQuestions の正値（StudyPlanClient の 1 日目標計算が壊れる）
 //   - sessions / categories / seasons の非空（スケジュールプランナーが分野を取りこぼす）
 //   - yearRange.start <= end（parse-all/fetch-ipa-pdfs のループが静かに空回りする）
-// これらを回帰固定する。ALL_EXAM_CODES は `Object.keys(EXAM_CONFIGS) as ExamCode[]`
-// で導出されるため、キー集合との一致も併せてピンする。
+// 公開一覧は公開ゲート通過済みの設定を列挙し、
+// ALL_EXAM_CODES は別途 IPA の設定だけを列挙する。
 
 const ENTRIES = Object.entries(EXAM_CONFIGS) as Array<[ExamCode, ExamConfig]>;
 
@@ -43,7 +44,11 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
 
   it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
     const keys = ENTRIES.map(([k]) => k);
-    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.sort());
+    const publishedKeys = keys.filter(isExamPublished);
+    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(publishedKeys.sort());
+    expect(keys).toContain("sokuryoshi");
+    expect(ALL_QUIZ_EXAM_CODES).not.toContain("sokuryoshi");
+    expect(ALL_EXAM_CODES).not.toContain("sokuryoshi");
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko2");
