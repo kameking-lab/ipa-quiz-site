@@ -1,0 +1,40 @@
+{
+  "newStops": [
+    {
+      "url": "https://www.nice.org.uk/guidance/ng202/chapter/Recommendations",
+      "status": "403_FORBIDDEN_STOP",
+      "firstAttemptOnly": true,
+      "retryAttempts": 0,
+      "sameContentAlternateRouteAttempts": 0,
+      "evidenceUsed": false
+    },
+    {
+      "url": "https://www.diasys.in/IFU_R910-e-GLUC_HK-5",
+      "reason": "404",
+      "action": "STOP_NO_RETRY"
+    },
+    {
+      "url": "https://www.annclinlabsci.org/content/7/4/298.full.pdf",
+      "reason": "403",
+      "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3609206/",
+      "reason": "reCAPTCHA",
+      "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10730925/",
+      "reason": "reCAPTCHA",
+      "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+    },
+    {
+      "domain": "pathologyoutlines.com",
+      "reason": "robots.txt",
+      "action": "STOP_NO_RETRY"
+    }
+  ],
+  "retryAttempts": 0,
+  "sameContentAlternateRouteAttempts": 0,
+  "allOldStopsRemainInForce": true
+}

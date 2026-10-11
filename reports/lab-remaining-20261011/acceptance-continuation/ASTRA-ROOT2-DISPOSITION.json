@@ -1,0 +1,74 @@
+{
+  "observedUtc": "2026-10-11T10:27:45.265238+00:00",
+  "reviewAgent": "/root/lab_independent_review9",
+  "scope": "ONLY_71PM12_AND_71PM19_FINITE_EVIDENCE_DISPOSITION",
+  "sourceHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "recommendation": "BOTH_READY_FOR_PARTIAL_ADOPTION_PREPARATION",
+  "recommendedOriginals": 2,
+  "mandatoryCorrections": 0,
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "recommendation": "ADOPTION_PREPARATION_RECOMMENDED_WITHOUT_MANUSCRIPT_CHANGE",
+      "finiteEvidenceGapResolved": true,
+      "currentQuestionObjectSha256FromRootReceipt": "8740af119d63e37fced34c0ff05cd16b22e25881ad20495143415ba0e5852b69",
+      "currentObjectHashMatchedUsingStandardJsonSerialization": true,
+      "requiredSelectionsObserved": 1,
+      "officialAnswerNumberObserved": "4/5",
+      "mandatoryPatches": [],
+      "finding": "日本呼吸器学会自筆診断節でAHI>=5かつ症状を確認。現稿はAHI単独診断やPSGのスクリーニング絶対否定をしていない。公式4/5の単肢受理を保持する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "recommendation": "ADOPTION_PREPARATION_RECOMMENDED_WITHOUT_MANUSCRIPT_CHANGE",
+      "finiteEvidenceGapResolved": true,
+      "currentQuestionObjectSha256FromRootReceipt": "babad4e247de8df482e24626be29c056ba0a31cd478f8a2aa92626654a0651f9",
+      "currentObjectHashMatchedUsingStandardJsonSerialization": true,
+      "requiredSelectionsObserved": 1,
+      "officialAnswerNumberObserved": "2/4",
+      "mandatoryPatches": [],
+      "finding": "原図を目視し②25%呼出、③50%、④75%呼出/25%残存、⑤吸気側を確認。日本資料physical4/book30をメモリ描画してVdot25=肺活量25%位を確認。FDA掲載メーカー提出PDFphysical4-5本文でFEF25=25%呼出を確認。MEF記号体系は資料間で統一せず現稿に追加しない。公式が不明確とした具体理由と解説上の定義解釈を現稿どおり分ける。"
+    }
+  ],
+  "newSourceChecks": [
+    {
+      "url": "https://www.jrs.or.jp/citizen/disease/i/i-05.html",
+      "read": "PUBLIC_HTML_DIAGNOSIS_PARAGRAPH",
+      "authority": "Japanese Respiratory Society authored reference"
+    },
+    {
+      "path": "data/raw_pdfs/lab-remaining-20261011/jrs-flow-reference-201004.pdf",
+      "sha256": "79ef95faa8e1064e47539962d2f009fdd739210625f215790c05f2adfced461b",
+      "read": "HASH_CHECKED_AND_PHYSICAL4_RENDERED_IN_MEMORY_VISUALLY_READ",
+      "pageLabel": 30
+    },
+    {
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K083879.pdf",
+      "read": "NATIVE_PDF_TEXT_PHYSICAL4_TO5",
+      "authority": "Manufacturer regulatory submission, not independent FDA clinical recommendation",
+      "screenshotReadClaimed": false
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no4.png",
+      "read": "VISUALLY_CHECKED_ONLY_THIS_QUESTION_FIGURE"
+    }
+  ],
+  "evidenceReceipt": {
+    "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\reports\\lab-remaining-20261011\\acceptance-continuation\\ROOT2-FACT-EVIDENCE.json",
+    "sha256": "2f56f3833dc0cfbdcaed3b0e5aafdf5aff7d869e7c101acd1881ed1e1a06d348"
+  },
+  "newQuestionGeneration": 0,
+  "manuscriptEdits": 0,
+  "whole84ReauditPerformed": false,
+  "blockedSourceRetries": 0,
+  "preservedStops": [
+    "NICE403",
+    "AASM2017 same-content all routes",
+    "all existing CAPTCHA/403/provider STOPs"
+  ],
+  "figureRegeneration": 0,
+  "runtimeChanges": 0,
+  "needsReviewChanges": 0,
+  "publicRelease": 0,
+  "integrationNote": "統合担当が単肢代替正答の採点を保持して採用・公開処理を担当。この判定で公開状態は変更しない。"
+}
