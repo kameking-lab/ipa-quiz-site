@@ -13,6 +13,7 @@ export function PracticeSessionTabs({ sessions, selected }: { sessions: Session[
     {sessions.map((session) => {
       const query = new URLSearchParams(search.toString());
       query.set("session", session);
+      if (session !== selected) query.delete("question");
       return <Link key={session} href={`${pathname}?${query}`} aria-current={selected === session ? "page" : undefined}
         className={`rounded-lg border px-3 py-2 text-sm ${selected === session ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-muted-foreground"}`}>
         {practiceSessionLabel(session)}
