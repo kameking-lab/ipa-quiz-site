@@ -91,11 +91,9 @@ for (const [year, session, number] of [
     await page.getByRole("link", { name: /クイズモードで開く/ }).first().click();
     await expect(page).toHaveURL(new RegExp(`session=${session}`));
     await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", session === "am1" ? "30" : "25");
-    // Annual practice starts at Q1; reach the audited question through the player.
-    for (let current = 1; current < number; current += 1) {
-      await page.getByRole("radio").first().click();
-      await page.getByRole("button", { name: "次の問題へ", exact: true }).click();
-    }
+    const selectedQuestion = new URL(page.url()).searchParams.get("question");
+    expect(selectedQuestion).toBe(question.id);
+    await expect(page.getByText(`問${number}`, { exact: true })).toBeVisible();
     const wrong = Object.keys(question.choices!).find((key) => key !== question.answer)!;
     await page.getByRole("radio", { name: new RegExp(`^選択肢 ${wrong}:`) }).click();
     const explanation = page.getByRole("region", { name: "不正解の解説", exact: true });
