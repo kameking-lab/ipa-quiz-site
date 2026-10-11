@@ -35,3 +35,26 @@ test('new files remain outside the runtime question index', () => {
   assert.equal(evidence.runtimeRegistrationAdded,false);
   assert.equal(evidence.publicGo,0);
 });
+
+test('71PM12 and 19 accept either permitted single answer, never both together', () => {
+  for (const [number, valid] of [[12, ['エ','オ']], [19, ['イ','エ']]]) {
+    const q = questions.find(x => x.id === `rinsho-kensagishi-2025-annual-pm-q${number}`);
+    assert.equal(q.requiredSelections, 1);
+    for (const choice of valid) assert.equal(isCompleteSelectionCorrect(q.answer, [choice], q.requiredSelections), true);
+    assert.equal(isCompleteSelectionCorrect(q.answer, valid, q.requiredSelections), false);
+    assert.equal(isCompleteSelectionCorrect(q.answer, ['ア'], q.requiredSelections), false);
+  }
+});
+test('a relative figure path cannot escape its prepared figure directory', () => {
+  const [q, e] = changed(q => { q.find(x => x.hasImage).imageUrls = ['./figures/../../outside.png']; });
+  assert.throws(() => validateImages(q, e), /UNPROMOTED_IMAGE_PATH/u);
+});
+
+test('all five 72AM98 diagram choices depend on the unchanged official question image', () => {
+  assert.throws(() => validateQuestions(...changed(q => {
+    q.find(x => x.id === 'rinsho-kensagishi-2026-annual-am-q98').imageUrls = [];
+  })), /MISSING_ORIGINAL_SYMBOL/u);
+  assert.throws(() => validateQuestions(...changed(q => {
+    q.find(x => x.id === 'rinsho-kensagishi-2026-annual-am-q98').choices.ア = '推測した記号';
+  })), /MISSING_ORIGINAL_SYMBOL/u);
+});

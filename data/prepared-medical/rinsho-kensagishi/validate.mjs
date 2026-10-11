@@ -11,7 +11,7 @@ const compact = value => value.replace(/\s+/gu, '');
 
 export function parseOriginal(row) {
   const raw = row.rawOfficialQuestionTextBlock.replace(/\n\s*別\s*冊[\s\S]*$/u, '');
-  const markers = [...raw.matchAll(/^\s*([1-5])[．.]\s*/gm)];
+  const markers = [...raw.matchAll(/^[^\S\r\n]*([1-5])[．.][^\S\r\n]*/gm)];
   assert.deepEqual(markers.map(x => x[1]), [...'12345'], `SOURCE_CHOICES ${row.id}`);
   const n = Number(row.id.match(/q(\d+)$/u)[1]);
   let question = raw.slice(0, markers[0].index).replace(new RegExp(`^\\s*${n}\\s+`, 'u'), '').trim();
@@ -45,7 +45,11 @@ export function validateQuestions(questions, evidence) {
       if (official.choices[key] !== '') {
         assert.equal(compact(q.choices[key]), compact(official.choices[key]), `CHOICE_MISMATCH ${q.id} ${key}`);
       } else {
-        assert.ok(q.choiceImageUrls?.[key], `MISSING_ORIGINAL_SYMBOL ${q.id} ${key}`);
+        const originalWholeFigure = q.id === 'rinsho-kensagishi-2026-annual-am-q98'
+          && q.choices[key] === `選択肢${letters.indexOf(key) + 1}の図記号（添付原図）`
+          && (row.preparedImages ?? []).some(im => im.byteIdenticalToWholeOfficialRender
+            && (q.imageUrls ?? []).some(url => resolve(folder, url) === resolve(folder, '../../..', im.preparedPath)));
+        assert.ok(q.choiceImageUrls?.[key] || originalWholeFigure, `MISSING_ORIGINAL_SYMBOL ${q.id} ${key}`);
       }
       assert.ok(q.choiceExplanations[key].trim().length >= 15, `MISSING_REASON ${q.id} ${key}`);
     }
@@ -82,7 +86,7 @@ export function validateImages(questions, evidence) {
     const urls = [...(q.imageUrls ?? []), ...Object.values(q.choiceImageUrls ?? {})];
     if (q.hasImage) assert.ok(urls.length > 0 && (row.preparedImages ?? []).length > 0, `MISSING_FIGURE_MAP ${q.id}`);
     for (const url of urls) {
-      assert.ok(url.startsWith('./figures/'), `UNPROMOTED_IMAGE_PATH ${q.id}`);
+      assert.ok(/^(?:\.\/)?figures\//u.test(url) && !relative(resolve(folder, 'figures'), resolve(folder, url)).startsWith('..'), `UNPROMOTED_IMAGE_PATH ${q.id}`);
       assert.ok(existsSync(resolve(folder, url)), `UNRESOLVED_IMAGE ${q.id}`);
     }
   }
