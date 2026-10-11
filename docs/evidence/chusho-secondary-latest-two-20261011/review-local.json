@@ -1,0 +1,101 @@
+{
+  "reviewer": "independent secondary_local_review",
+  "scope": "2024/2025 case IV question 3 numeric assumptions; narrow native UI contract",
+  "status": "numeric_fixes_verified_static_contract_pass_runtime_not_executed",
+  "primarySources": [
+    "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2024/D2JI2024.pdf",
+    "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2025/D2JI2025.pdf",
+    "https://www.jf-cmca.jp/attach/test/r06/2ji_shushi/r06_2ji_shushi_jirei4.pdf",
+    "https://www.jf-cmca.jp/attach/test/r07/2ji_shushi/r07_2ji_shushi_jirei4.pdf"
+  ],
+  "findings": [
+    {
+      "id": "2024-sunk-cost",
+      "severity": "high",
+      "location": "author-D/2024-D-answers.json questions[2].solutions[2]",
+      "sourcePrintedPages": [
+        7
+      ],
+      "finding": "Market research has already been conducted and the question asks whether to implement the machine after receiving its results. The 30万円 sunk cost is invariant to the current investment choice and must not be subtracted in its incremental decision NPV.",
+      "minimumFix": "Remove -30 from expression and reasoning; change recommendation to adopt. Do not present the existing -8.30万円/reject answer as the sole editorial example.",
+      "resolution": "Verified fixed in CWT 2024-case4.json: sunk cost excluded and adopt"
+    },
+    {
+      "id": "2024-disposal-tax-timing",
+      "severity": "high",
+      "location": "author-D/2024-D-answers.json questions[2].solutions[0..2]",
+      "sourcePrintedPages": [
+        6,
+        7
+      ],
+      "finding": "The problem places every cash flow except the initial purchase and old-machine sale receipts at year-end. Reading sale receipts as the gross 70万円 receipt puts the 33万円 disposal-loss tax benefit at year 1 end. The manuscript instead silently treats the tax benefit as part of the time-zero sale cash flow.",
+      "preferredLiteralReading": {
+        "year1CFManYen": 69,
+        "year2CFManYen": 74,
+        "baseNPVManYen": 51.143954,
+        "expectedNPVManYen": 18.96397232,
+        "roundedExpectedNPVManYen": 18.96,
+        "decision": "adopt"
+      },
+      "alternativeExplicitNetSaleReading": {
+        "year1CFManYen": 36,
+        "year2CFManYen": 74,
+        "baseNPVManYen": 53.882954,
+        "expectedNPVManYen": 21.70297232,
+        "roundedExpectedNPVManYen": 21.7,
+        "decision": "adopt"
+      },
+      "minimumFix": "Prefer the literal year-end tax interpretation consistently across all three parts, or explicitly identify the net-sale tax timing convention and disclose the alternative. Official intent does not publish an exact numeric answer or resolve this timing interpretation.",
+      "resolution": "Verified fixed in CWT: literal year-end tax treatment 69/74, 51.14, 18.96 adopted; alternative net-sale convention explicitly noted"
+    },
+    {
+      "id": "2025-working-capital-timing",
+      "severity": "pass",
+      "sourcePrintedPages": [
+        6,
+        7
+      ],
+      "finding": "All cash flows except equipment initial investment are explicitly year-end; 9,000千円 working capital investment belongs at year 1 end and recovery at year 4 end.",
+      "cashFlowsYen": [
+        -60000000,
+        10620000,
+        19620000,
+        19620000,
+        32820000
+      ],
+      "npvYen": 13868220,
+      "decision": "adopt",
+      "minimumFix": "No numerical change needed."
+    }
+  ],
+  "officialAnswerClaim": false,
+  "uiReview": {
+    "status": "installed CWT static contract pass",
+    "requiredChecks": [
+      "33 originals / 54 solution blocks",
+      "separate question and official-intent provenance",
+      "independent editorial labels",
+      "no official auto-score or score guarantee",
+      "draft persistence",
+      "keyboard reveal",
+      "manual self-check",
+      "no inherited choice-quiz authentication path"
+    ],
+    "observed": [
+      "8 data files / 33 original questions / 54 solution blocks independently counted",
+      "All solution provenance literals independent-editorial-example",
+      "All examples with character limits are within limit",
+      "Strict Zod objects and ID/coverage checks",
+      "Separate official problem and intent links plus hashes",
+      "Official intent explicitly not an answer key",
+      "No auto-scoring or score guarantee; manual checkbox self-check",
+      "LocalStorage draft save/restore and visible failure message",
+      "Native button reveal with aria-expanded/aria-controls",
+      "Dedicated routes; no quiz/auth calls in staged files"
+    ],
+    "recommendation": "Resolved: count labels now use 解答例",
+    "runtimeLimitation": "pnpm exec vitest run for the two dedicated tests could not start: vitest executable not recognized. No browser execution or successful runtime tests are claimed.",
+    "installedVerification": "CWT schema and both components SHA256-identical to reviewed staging. All three installed routes reread; only count terminology changed. 2024 case IV revised figures and explanatory alternative verified."
+  },
+  "publicationApproval": false
+}
