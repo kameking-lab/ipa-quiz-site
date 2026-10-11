@@ -1,3 +1,4 @@
+import { CHUSHO_SECONDARY_ORIGINAL_COUNT } from "@/lib/chusho-secondary/data";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { Metadata } from "next";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 
 const published = QUALIFICATION_CATALOG.filter((item) => item.status === "live");
 const questionCounts: Record<string, number> = Object.fromEntries(
-  published.map((item) => [item.slug, item.examCode ? getQuestionsByExamStrict(item.examCode).length : 0]),
+  published.map((item) => [item.slug, item.slug === "chusho-secondary" ? CHUSHO_SECONDARY_ORIGINAL_COUNT : item.examCode ? getQuestionsByExamStrict(item.examCode).length : 0]),
 );
 const fp2PracticalCount = FP2_PRACTICAL_EDITIONS.reduce(
   (sum, edition) => sum + (getPracticalEdition(edition)?.questions.length ?? 0), 0,
@@ -59,7 +60,7 @@ export default function QualificationsPage() {
             {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の学科240問と2026年5月公表の学科{fp2May2026CoverageLabel()}、実技は2024～2026年の{FP2_PRACTICAL_EDITIONS.length}セット{fp2PracticalCount}問を収録。</p></>}
             {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024～2026年の学科180問・実技60問を収録。各年の公式問題と正答を確認できます。</p>}
             <Button asChild variant="primary" className="w-full">
-              <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
+              <Link href={`/${item.examCode ?? item.slug}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
               <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
