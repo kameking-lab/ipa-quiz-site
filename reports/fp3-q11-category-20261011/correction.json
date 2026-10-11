@@ -1,0 +1,35 @@
+{
+  "scope": "One existing question's category, category topic tag and actual metadata correction date only; no new question or answer/explanation change",
+  "baseCommit": "0b5319133f835283d2b2f5880d35cda7d21b7982",
+  "dependsOnPullRequest": 762,
+  "target": "data/questions/fp3/academic-2026-05.json",
+  "questionId": "fp3-2026-published-gakka-q11",
+  "before": { "category": "リスク管理", "topicTags": ["リスク管理"], "lastUpdated": "2026-09-25" },
+  "after": { "category": "金融資産運用", "topicTags": ["金融資産運用"], "lastUpdated": "2026-10-11" },
+  "reason": "The official question concerns the Bank of Japan's open-market operations. Its monetary-policy theme maps to C 金融資産運用 / マーケット環境の理解 in the official exam scope. This category mapping is an editorial determination; the PDF does not print a category label beside question 11.",
+  "officialQuestionAndAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202605_qa.pdf",
+  "officialQuestionAndAnswerPage": 3,
+  "officialAnswer": "× (existing site choice イ)",
+  "officialScopeUrl": "https://www.jafp.or.jp/exam/subjects_03/",
+  "sourceCheckedAt": "2026-10-11",
+  "existingIngestionPdfSha256": "e1b080788e660987ce9c79a5e0e8bc98eb6fafe4f7793d9f57782b1fbda11164",
+  "protectedPaperHash": {
+    "method": "SHA256(JSON.stringify(academic-2026-05.json array)); remove category, topicTags and lastUpdated only from the exact questionId above",
+    "sha256": "33da85c52bafda706bddae0e8dc3b41ea8da97b6a8374cf0d670df1247abaa6c"
+  },
+  "ownershipCheck": {
+    "observedAt": "2026-10-11T16:13:49.367Z",
+    "main": "08d2b261a6c3616c4da3d85fc2f970d765bebb72",
+    "localWorktreesInspected": 241,
+    "targetFilePendingChangesOrSemanticDifferences": 0,
+    "openPullRequestsInspected": 80,
+    "targetFileOverlappingPullRequests": 0,
+    "knownFp3OwnershipLockFound": false,
+    "note": "Read-only checks of the exact target file, FP3 worktree and local write-lock directories. No existing reservation was removed or reassigned. Unpublished off-machine activity cannot be established from this snapshot. The parent expressly assigned this local correction."
+  },
+  "unchanged": ["all 60 academic question IDs and ordering", "question text", "choices", "official answer", "explanation and option explanations", "source and attribution", "lawReferenceDate", "publication flags", "all other questions", "PR762 head"],
+  "readyAcademicQuestionsBeforeAndAfter": 60,
+  "staticQuestionPath": "/q/fp3/2026-published/gakka/q11",
+  "paperPath": "/fp3/2026-published",
+  "remainingScope": "Neighboring metadata and the paper generator remain outside this one-question assignment. This must not be described as a full-paper classification repair. No production publication is authorized by this report."
+}
