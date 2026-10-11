@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-11T03:08:38.932827+00:00",
+  "reviewer": "sokuryoshi_release_review (independent non-implementer)",
+  "worktree": "C:/wt/sokuryoshi-latest-two-20261011",
+  "baseHead": "45cd2f2bf91ed665c697cde5008f6ecd9cd62508",
+  "decision": "HOLD_FOR_PUBLICATION",
+  "stagingDecision": "PASS_SCOPED_INDEPENDENT_REVIEW_AFTER_FIXES",
+  "publicGo": 0,
+  "productionMergeOrDeploy": false,
+  "rightsReceipt": null,
+  "scope": [
+    "Acceptance ledger, source manifest, raw branch structure and integrated question metadata",
+    "Static/lazy registries, catalog publication gate and related test source",
+    "QuestionModelAnswer renderer and its two call sites; official answer-image page mappings",
+    "All 148 image files: existence, byte hashes, manifest membership; source PDF page-range coverage",
+    "Targeted original-page and primary-reference checks: 2026 AM18, AM20, AM21",
+    "2025 AM21 owner remeasurement receipt, original page and stair-detail visual verification"
+  ],
+  "notPerformed": [
+    "Full semantic rereview of all 66 originals or all 104 PM branches",
+    "Duplicate unit-test, typecheck, lint or build execution",
+    "Browser render acceptance or deployed URL inspection",
+    "Legal permission determination, owner approval, publication or production deployment",
+    "Edits inside C:/wt"
+  ],
+  "snapshotSha256": {
+    "acceptance-ledger.json": "89f0a98ffe24e4742e653ebdf4b2436c4040d0f0dae84793fd8579df5034b507",
+    "official-am-answers.json": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+    "questions.json": "f4f86c55c1a1b4abed7fa373310757ad73447c7c8a2bab0f59a3e1a911bd254e",
+    "source-branches.json": "937e9b51b2f1fcc33dc6d5e09eafcf90f771e0f6e08bd78bed30bb79440f0373",
+    "source-manifest.json": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238"
+  },
+  "verified": {
+    "qualification": "測量士 (not 測量士補)",
+    "examDates": [
+      "2026-05-17",
+      "2025-05-18"
+    ],
+    "officialIndex": "https://www.gsi.go.jp/LAW/SHIKEN/past.html",
+    "originals": 66,
+    "amOriginals": 56,
+    "amChoiceExplanations": 280,
+    "pmMainOriginals": 10,
+    "pmBranches": 104,
+    "pmAnswerFields": 313,
+    "answerFieldCountMethod": "Sum answerFieldCount, falling back to answerSlots or answerSlotCount on each source branch; matches ledger",
+    "allFourPmElectivesPerYearRetained": true,
+    "assets": 156,
+    "missingOrHashMismatchedAssets": 0,
+    "missingQuestionOrAnswerImageReferences": 0,
+    "pmBranchesMissingModelAnswerOrExplanation": 0,
+    "pmAnswerImages": "Every main question has two official answer pages; q1=1,2; q2=3,4; q3=5,6; q4=7,8; q5=9,10, for both years",
+    "inventedNumericalBranchScoringFound": false,
+    "sourceRepresentation": "Original-page images and edited text are distinguished in source records and all AM user-visible attribution now expressly discloses summarizing/paraphrasing.",
+    "publicationGate": "Catalog ready-to-ingest; both static QUESTIONS_BY_EXAM and lazy loader explicitly call isExamPublished; public exam lists and registered lazy codes are gated. No additional direct application imports were found.",
+    "renderer": "QuestionModelAnswer separates modelAnswerImageUrls from question.imageUrls; all current PM records have modelAnswer text, so the early-return condition does not suppress their images. Test source checks answer-only image rendering. Runtime tests were intentionally not repeated.",
+    "2025Am21": "Owner remeasurement completed; needsReview=false and technicalHolds empty. Targeted independent check found no conflict supporting retention of the prior technical HOLD. Publication remains unaccepted.",
+    "assetServing": "NON_PUBLIC_STAGING_REQUIRES_PROMOTION",
+    "publicAssetFiles": 0
+  },
+  "targetedContentChecks": [
+    {
+      "question": "2026-AM18",
+      "result": "PASS_TARGETED_REFERENCE_CHECK",
+      "evidence": "Original page 19 and official preparation standards Article 316(3), (9), (10), Article 320(4). Small inland waters are interpolated from nearby land values; the minus-9999 rule applies to large lakes/sea in Article 317(5). Choice a/b conclusion agrees with the original.",
+      "source": "https://www.gsi.go.jp/common/000258734.pdf",
+      "pdfPages": [
+        97,
+        98
+      ]
+    },
+    {
+      "question": "2026-AM20",
+      "result": "PASS_TARGETED_REFERENCE_CHECK",
+      "evidence": "Original page 21 and Article 448(2)(1)(ロ・ハ), Article 451(5), Article 464(1) agree on 1 second or less, dual frequency, 45 degrees or greater to terrain/object, and elevation values. Official option 3 is consistent.",
+      "source": "https://www.gsi.go.jp/common/000258734.pdf",
+      "pdfPages": [
+        122,
+        124,
+        128
+      ]
+    },
+    {
+      "question": "2026-AM21",
+      "result": "PASS_TARGETED_CHECK",
+      "evidence": "Independently inspected original pages 22-23. On 1768x2500 page image the 1 km scale bar is approximately 421 px. b endpoints approximately (393,685) and (1267,819): 2.10 km and 2.68 degrees for 98.2 m height difference. e endpoints approximately (1382,1150) and (1040,882): horizontal 1.03 km and slope distance 1.04 km for 128.9 m height difference. Both b and e are false as the explanation states.",
+      "measurementLimit": "Manual pixel approximation, endpoints approximately +/-3 px; not a survey-grade measurement. Final text uses approximately 1.03 km horizontal / 1.04 km slope distance, consistent with the independent estimate.",
+      "source": "https://www.gsi.go.jp/common/000278970.pdf"
+    },
+    {
+      "question": "2025-AM21",
+      "result": "PASS_TARGETED_REMEASUREMENT_CHECK",
+      "evidence": "Read drafts/owner4/q21-remeasurement.json and inspected figures/am-2025-q21-page5.png plus am-2025-q21-stairs-detail.png relative to that receipt. Distance/coordinate calculations for a-d are consistent with stated pixel coordinates, original landmarks, scale and elevations. The stair path is visually distinct and crosses more than ten 10 m contour intervals; e is false. Both b and e conflict with the statements, consistent with official answer 4.",
+      "measurementLimit": "Approximate map reading; no exact unlabeled endpoint elevations claimed. This scoped check does not certify every question in the dataset.",
+      "source": "https://www.gsi.go.jp/common/000270173.pdf"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "priority": "P1_BEFORE_ANY_PUBLIC_DEPLOYMENT",
+      "status": "RESOLVED_IN_FINAL_DELTA",
+      "title": "Catalog gate does not gate public image files",
+      "location": "public/images/questions/sokuryoshi/; middleware.ts; .vercelignore",
+      "detail": "148 staged problem/answer images are inside Next public. No corresponding image-path publication check or deployment exclusion was present. Deploying this snapshot can expose original pages directly despite catalog ready-to-ingest and publicGo=0.",
+      "requiredAction": "Keep this worktree undeployed, or exclude/protect staged assets until publication acceptance. A false catalog gate alone is insufficient evidence of zero public assets. No deployment was performed by this reviewer.",
+      "resolution": "All 156 images now exist only under data/questions/sokuryoshi/assets; public/images/questions/sokuryoshi has zero files. Manifest stagedPath and NON_PUBLIC_STAGING_REQUIRES_PROMOTION explicitly separate future URLs from current serving. All staged hashes verified."
+    },
+    {
+      "id": "F2",
+      "priority": "P2_BEFORE_COMPLETE_ORIGINAL_ACCEPTANCE",
+      "status": "RESOLVED_IN_FINAL_DELTA",
+      "title": "Referenced end-of-book function tables are absent from rendered assets",
+      "location": "source-manifest.json assets and question imageUrls",
+      "detail": "The numbered question-page ranges are continuous, but 2026 AM PDF page 30 and 2026 PM question2 PDF page 22 contain function tables and are not rendered/referenced. AM21 and other originals instruct use of the end-of-book function table. Equivalent 2025 excluded tail pages need visual confirmation and inclusion where relevant. Source PDFs remain linked, so primary evidence is available externally, but this is not a self-contained complete original presentation.",
+      "requiredAction": "Add the shared function-table pages to the manifest and the applicable question UI, or provide a clearly labeled direct shared-table reference and qualify the completeness claim. Also distinguish omitted covers/blank pages from relevant appendices.",
+      "resolution": "Eight tail pages added as referenceTables (2025 AM13-14, 2026 AM30-31, 2025 PM18-19, 2026 PM22-23). Applicable question imageUrls include the shared reference pages. Blank final pages may be retained harmlessly alongside function tables."
+    },
+    {
+      "id": "F3",
+      "priority": "P2_BEFORE_PUBLICATION",
+      "status": "RESOLVED_IN_FINAL_DELTA",
+      "title": "User-visible AM processing attribution understates paraphrasing",
+      "location": "questions.json sourceAttribution (for example 2026 AM18 and AM20)",
+      "detail": "Attribution says edited text had whitespace/line breaks normalized, but the actual stems condense and paraphrase original sentences. Source-branches correctly calls it edited text; that distinction is not equally explicit in the displayed attribution.",
+      "requiredAction": "State that study text is summarized/paraphrased, while original wording and figures are preserved in original-page images. Do not describe the edited text as a verbatim transcript.",
+      "resolution": "All 56 AM sourceAttribution fields now say study text includes summarization/paraphrasing and direct readers to original-page images for original wording, conditions and figures."
+    }
+  ],
+  "remainingUncertainties": [
+    "Rights receipt is absent; no permission/acquired-rights claim is accepted.",
+    "Owner/integration lead publication acceptance remains pending. publicGo=0; no production merge/deploy authorized by this report.",
+    "Images intentionally do not render from their future public URLs in a deployed build until controlled asset promotion; renderer structure is reviewed but end-to-end browser acceptance remains outstanding.",
+    "This review does not certify semantic correctness of all 66 originals or all PM branches, nor replace any separately required first-party model receipt.",
+    "Implementation tests were not repeated by the independent reviewer; parent must retain its actual validation results.",
+    "The final snapshot hashes bind this scoped review; later changes require proportionate delta verification."
+  ],
+  "minorNotes": [
+    "2025 AM21 explanation mentions internal q21-remeasurement.json. Prefer removing that inaccessible implementation reference from learner-facing copy before publication."
+  ],
+  "finalDeltaEvidence": {
+    "stagedAssetCount": 156,
+    "assetHashesVerified": true,
+    "referenceTablePages": 8,
+    "testsRepeated": false,
+    "explicitFunctionTableReferencesMissing": [],
+    "calculationQuestionReferenceTablesMissing": [],
+    "referenceTableApplicability": "All calculation questions and explicit table references include the shared tables; non-calculation required PM q1 does not need them."
+  }
+}
