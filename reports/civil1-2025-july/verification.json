@@ -1,0 +1,122 @@
+{
+  "recordedAt": "2026-10-11T02:15:19.417608+00:00",
+  "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
+  "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "sourceCounts": {
+    "required": 202,
+    "public": 100,
+    "preparedNew": 101,
+    "newlyAccepted": 0,
+    "unpublished": 102
+  },
+  "checks": {
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "evidence": "typecheck-final.log and successful exec completion on unchanged reader code"
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 1,
+      "warning": "existing civil2 parse-fenced-results.mjs unused variable"
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=civil1",
+      "exitCode": 0,
+      "ok": 100,
+      "failed": 0,
+      "warnings": 0
+    },
+    "civil1Tests": {
+      "command": "pnpm exec vitest run __tests__/civil1-source-reader.test.ts __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "summary": {
+        "files": "3 passed (3)",
+        "tests": "13 passed (13)"
+      }
+    },
+    "previousFailureRetry": {
+      "exitCode": 0,
+      "summary": {
+        "files": "10 passed (10)",
+        "tests": "78 passed (78)"
+      },
+      "note": "Final reader code plus every failing file from initial full run passed."
+    },
+    "restoredFullTests": {
+      "command": "pnpm exec vitest run --maxWorkers=2 --testTimeout=60000",
+      "exitCode": 1,
+      "status": "failed",
+      "summary": {
+        "files": "1 failed | 515 passed (516)",
+        "tests": "1 竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ"
+      },
+      "finishedTestFilesObserved": 516,
+      "testFailuresObserved": 1,
+      "failureObserved": "Existing api/cost-record-durability.test.ts /api/copilot timed out at 60000ms; no civil1 failure observed."
+    },
+    "singleTimeoutRetry": {
+      "command": "pnpm exec vitest run __tests__/api/cost-record-durability.test.ts --maxWorkers=1 --testTimeout=60000",
+      "exitCode": 1,
+      "status": "failed",
+      "summary": {
+        "files": "1 failed (1)",
+        "tests": "1 ⎯⎯⎯⎯⎯⎯⎯"
+      }
+    },
+    "finalCivil1Tests": {
+      "command": "pnpm exec vitest run __tests__/civil1-source-reader.test.ts __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "summary": {
+        "files": "3 passed (3)",
+        "tests": "13 passed (13)"
+      },
+      "evidence": "Focused run after source-backed explanation corrections and canonical LF checksum regression."
+    },
+    "defaultLocalBuild": {
+      "command": "pnpm build",
+      "exitCode": 1,
+      "cause": "Turbopack rejected a node_modules junction outside its filesystem root."
+    },
+    "previousWebpackBuild": {
+      "command": "pnpm build --webpack",
+      "exitCode": null,
+      "status": "interrupted-unconfirmed",
+      "observed": "Compile and TypeScript succeeded; 11441-page SSG began, then PC connection loss prevented result recovery."
+    },
+    "a29SourceFollowupTests": {
+      "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "filesPassed": 1,
+      "testsPassed": 3,
+      "evidence": "a29-followup-test.log and actual a29-followup-test.exit marker",
+      "scope": "A29 source-backed explanation correction; original questions, choices, answers unchanged",
+      "recordedAt": "2026-10-11T02:15:19.417608+00:00"
+    }
+  },
+  "cloudValidation": {
+    "sessionId": "session_018eA8pp9NiMx6V26TJX7Pgs",
+    "url": "https://claude.ai/code/session_018eA8pp9NiMx6V26TJX7Pgs",
+    "creationConfirmed": true,
+    "resultConfirmed": true,
+    "verificationCommit": "e825ce7982c07545a7014fbf346ea611520e4db1",
+    "report": "cloud-verification.json",
+    "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
+    "buildExitCode": 0,
+    "fullTestFailureReproducedOnParentCommit": true,
+    "notIndependentPublicationAcceptance": true,
+    "cliAttach": "not enabled for this account; stopped without teleport or auth workaround",
+    "resultRetrieval": "Authorized GitHub report commit; the disabled cloud attachment was not retried"
+  },
+  "stoppedOperations": [
+    "Get-CimInstance Win32_Process: access denied; no elevated retry",
+    "Claude CLI attach: feature not enabled for account",
+    "Internet Archive CDX via web tool: inaccessible; no alternate acquisition retry",
+    "Aomori forest standard PDF returned HTTP 403 during A29 followup; stopped without retry or alternate route"
+  ],
+  "publicationAcceptance": false,
+  "independentAcceptance": false,
+  "productionMergeOrDeployment": false
+}
