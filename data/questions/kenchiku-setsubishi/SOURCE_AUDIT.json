@@ -15,9 +15,8 @@
   "choiceExplanationCount": 840,
   "officialAnswerMismatches": 0,
   "officialKeyVerification": "全210セルを公式正答PDFのレンダリングと独立fixtureで照合。",
-  "readyCandidateCount": 208,
+  "readyCandidateCount": 209,
   "heldQuestionIds": [
-    "kenchiku-setsubishi-2025-annual-pm-q36",
     "kenchiku-setsubishi-2026-annual-am2-q18"
   ],
   "sourceConflicts": [
@@ -47,7 +46,18 @@
       "lawRevisionIds": [
         "412CO0000000495_20250401_506CO0000000172",
         "331CO0000000273_20251212_507CO0000000379"
-      ]
+      ],
+      "applicableInterpretation": {
+        "governmentStatement": "https://www.env.go.jp/info/iken/result/h131225a.html",
+        "statementDate": "2002-01-16",
+        "finding": "The ministries assign the100million-yen category to building works other than demolition/new construction/extensions.",
+        "municipalImplementation": "https://www.city.ebetsu.hokkaido.jp/site/kenchikusidousub/101000.html",
+        "municipalUpdatedDate": "2025-02-12",
+        "applicableStatuteVersion": "412CO0000000495_20250401_506CO0000000172",
+        "officialQuestionStill450": true,
+        "officialKeyStill1": true,
+        "disposition": "HOLD"
+      }
     }
   ],
   "privateFigureAssets": 32,
@@ -99,9 +109,7 @@
         "Q54 30 m/min"
       ],
       "confirmedTechnicalCorrection": "Q53 KIPはEPゴム絶縁。メーカー公式仕様と照合。",
-      "referenceHolds": [
-        36
-      ],
+      "referenceHolds": [],
       "primarySourcesVerified": [
         "https://sumitomoelectric.com/jp/products/wire-cable/emlfc/ep_rubber",
         "https://www.hitachi-ies.co.jp/products/trans/mold/sp_t2_m/index.htm",
@@ -110,17 +118,7 @@
     }
   },
   "secondStageStatusFile": "second-stage-status.json",
-  "referenceVerificationHolds": [
-    {
-      "id": "kenchiku-setsubishi-2025-annual-pm-q36",
-      "finding": "JIS C4620高圧電動機への適用根拠は原文未照合。LBS catalog単独でこのJIS主張を裏付けたとしない。",
-      "disposition": "HOLD-needsReview-true",
-      "reviewOwnerThreadId": "01a12863-70a1-72b2-9584-9c22c053b0b7",
-      "standardAtExam": "JIS C 4620:2023",
-      "publicPreviewLimitation": "発行者の7頁公開プレビューと訂正票は、高圧電動機に対する主遮断方式の該当本文を含まない。旧2018版転載を2023版確認と称さない。",
-      "publisherCatalogUrl": "https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS+C+4620%3A2023"
-    }
-  ],
+  "referenceVerificationHolds": [],
   "referenceVersionEvidence": {
     "q50": {
       "source": "https://www2.panasonic.biz/jp/terasu/skill/iroha/book/nonresidential/pdf/part3.pdf#page=4",
@@ -130,6 +128,20 @@
       "current2022NormativeTextVerified": false,
       "statutoryObligationClaimed": false,
       "disposition": "Accept limited source explanation; retain version limitation"
+    },
+    "q36": {
+      "standard": "JIS C 4620:2023",
+      "section": "7.3.11 c)",
+      "physicalPage": 15,
+      "printedPage": 11,
+      "sourceType": "JISC official login-free audio PDF",
+      "sha256": "a7e4495fef7029ce2f2badf1e36c4c708eec26fb542dfa145e55e278e2e264b5",
+      "sourceUrl": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+      "verifiedBy": "electrical helper and candidate owner",
+      "finding": "Current clause explicitly permits a high-voltage motor on CB-type load equipment; official question/key identify PF/S selection as inappropriate for this case.",
+      "limit": "Positive CB permission is not quoted as a universal PF/S prohibition. Audio extraction is not used as figure/layout evidence. Standard PDF is not reposted.",
+      "disposition": "ACCEPT_PRIVATE_CONTENT"
     }
-  }
+  },
+  "acceptanceTable": "ACCEPTANCE.json"
 }

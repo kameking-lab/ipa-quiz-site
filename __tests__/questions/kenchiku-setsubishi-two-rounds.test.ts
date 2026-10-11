@@ -5,11 +5,12 @@ import { describe, expect, it } from "vitest";
 import { KENCHIKU_SETSUBISHI_QUESTIONS as corpus } from "@/data/questions/kenchiku-setsubishi";
 import manifest from "@/data/questions/kenchiku-setsubishi/figures/manifest.json";
 import officialKeys from "./fixtures/kenchiku-setsubishi-official-keys.json";
+import acceptance from "@/data/questions/kenchiku-setsubishi/ACCEPTANCE.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const CHOICES = ["ア", "イ", "ウ", "エ"] as const;
 const HOLD = "kenchiku-setsubishi-2026-annual-am2-q18";
-const REFERENCE_HOLDS = ["kenchiku-setsubishi-2025-annual-pm-q36"];
+const REFERENCE_HOLDS: string[] = [];
 const base = "data/questions/kenchiku-setsubishi";
 
 describe("建築設備士2025・2026第一次の私的候補", () => {
@@ -81,6 +82,25 @@ describe("建築設備士2025・2026第一次の私的候補", () => {
     expect(held.choiceExplanations?.イ).not.toMatch(/別の増築基準/);
     expect(isPracticeReadyQuestion(held)).toBe(false);
     for (const q of corpus) expect(isPracticeReadyQuestion(q), q.id).toBe(![HOLD, ...REFERENCE_HOLDS].includes(q.id));
+  });
+
+  it("accepts209 exact IDs while keeping the one source conflict isolated", () => {
+    expect(acceptance.privateAcceptedCount).toBe(209);
+    expect(acceptance.privateHeldIds).toEqual([HOLD]);
+    expect(acceptance.rows).toHaveLength(210);
+    expect(new Set(acceptance.rows.map(r => r.id)).size).toBe(210);
+    expect(acceptance.publicGo).toBe(false);
+    expect(acceptance.registryConnected).toBe(false);
+    for (const q of corpus) {
+      const row = acceptance.rows.find(r => r.id === q.id)!;
+      expect(row.candidateNeedsReview, q.id).toBe(Boolean(q.needsReview));
+      expect(row.privateCandidateDecision, q.id).toBe(q.id === HOLD ? "HOLD" : "ACCEPT");
+      expect(row.officialAnswerNumber, q.id).toBe(q.officialAnswerNumber);
+    }
+    const q36 = corpus.find(q => q.year === 2025 && q.session === "pm" && q.qNumber === 36)!;
+    expect(q36.needsReview).toBe(false);
+    expect(q36.choiceExplanations?.ア).toContain("7.3.11");
+    expect(q36.choiceExplanations?.ア).not.toContain("一律禁止");
   });
 
   it("preserves source units and the manufacturer-confirmed KIP insulation", () => {
