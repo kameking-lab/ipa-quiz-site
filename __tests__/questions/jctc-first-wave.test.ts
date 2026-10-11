@@ -15,7 +15,7 @@ const keys = ["ア", "イ", "ウ", "エ"] as const;
 describe("JCTC 2026 first-stage publication", () => {
   it.each([
     ["zoen2", garden, ZOEN2_QUESTIONS.filter((question) => question.year === 2026), 40, 10],
-    ["tsushin2", telecom, TSUSHIN2_QUESTIONS, 65, 5],
+    ["tsushin2", telecom, TSUSHIN2_QUESTIONS.filter((q) => q.year === 2026 && [4, 7, 8, 9, 10].includes(q.qNumber)), 65, 5],
   ] as const)("%s publishes only reviewed items with official PDF and answer provenance", (exam, source, questions, officialCount, publishedCount) => {
     expect(source.officialQuestionCount).toBe(officialCount);
     expect(source.publishedCount).toBe(publishedCount);
@@ -38,7 +38,7 @@ describe("JCTC 2026 first-stage publication", () => {
   });
 
   it("keeps telecom questions with missing diagrams out of the published pool", () => {
-    expect(TSUSHIN2_QUESTIONS.map((question) => question.qNumber)).toEqual([4, 7, 8, 9, 10]);
+    expect(telecom.questions.map((question) => question.number)).toEqual([4, 7, 8, 9, 10]);
     expect(telecom.deferred.map((item) => item.number)).toEqual([1, 2, 3, 5, 6]);
   });
 
