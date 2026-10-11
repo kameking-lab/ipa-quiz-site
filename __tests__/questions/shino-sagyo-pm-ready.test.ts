@@ -5,11 +5,15 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import integration from "@/docs/evidence/shino-sagyo-pm-ready-20261010/INTEGRATION.json";
 import laterIntegration from "@/docs/evidence/shino-sagyo-pm57-end-ready-20261010/INTEGRATION.json";
 
+import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
+
+const restoredIds = new Set(ot13.newIds);
+
 const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 159],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 166],
     ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 93],
   ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
     const loaded = (await getQuestionsForExam(exam)).filter(question => question.session === "pm");
@@ -21,7 +25,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
 
     for (const question of loaded) {
       expect(question.needsReview).toBe(false);
-      expect(question.hasImage).toBe(false);
+      expect(question.hasImage).toBe(restoredIds.has(question.id));
       expect(question.sourcePdfUrl).toContain("mhlw.go.jp/");
       expect(question.sourceAnswerUrl).toContain("mhlw.go.jp/");
       expect(choiceKeys.every((key) => Boolean(question.choices?.[key]?.trim()))).toBe(true);
@@ -35,7 +39,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
     }
   });
 
-  it("別冊・図・専門根拠・代替キーの保留問は runtime へ入らない", () => {
+  it("原典回収で解消した午後問だけを復帰し、残る保留を除外する", () => {
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS].filter(question => question.session === "pm");
     const identities = new Set(all.map((question) => {
       const round = question.exam === "sagyo-ryohoshi"
@@ -43,7 +47,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
         : (question.year === 2025 ? 56 : 55);
       return `${question.exam}-${round}-pm-${question.qNumber}`;
     }));
-    expect(all).toHaveLength(252);
+    expect(all).toHaveLength(259);
     expect(integration.draftOriginals).toBe(135);
     expect(integration.heldDrafts).toHaveLength(15);
     expect(integration.excludedBeforeDraft).toHaveLength(9);
@@ -53,7 +57,10 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
     expect(laterIntegration.excludedBeforeDraft).toHaveLength(7);
     expect(laterIntegration.readyProvenance).toHaveLength(98);
     for (const held of [...integration.heldDrafts, ...integration.excludedBeforeDraft, ...laterIntegration.heldDrafts, ...laterIntegration.excludedBeforeDraft]) {
-      expect(identities.has(held.identity)).toBe(false);
+      const match = held.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;
+      const year = match[2] === "61" || match[2] === "56" ? 2025 : 2024;
+      const id = `${match[1]}-${year}-annual-pm-q${match[3]}`;
+      expect(identities.has(held.identity)).toBe(restoredIds.has(id));
     }
   });
 });

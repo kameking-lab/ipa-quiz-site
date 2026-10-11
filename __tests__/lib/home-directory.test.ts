@@ -52,7 +52,7 @@ describe("home directory", () => {
 
   it("shows only live external qualifications", () => {
     const external = domains.filter((d) => !["it", "safety"].includes(d.id)).flatMap((d) => d.featured);
-    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.examCode && q.domain !== "safety").map((q) => `/${q.examCode}`);
+    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.domain !== "safety").map((q) => `/${q.examCode ?? q.slug}`);
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
@@ -61,6 +61,14 @@ describe("home directory", () => {
     expect(dentist?.href).toBe("/shika-ishi");
     expect(dentist?.questionCount).toBe(696);
     expect(dentist?.periodLabel).toBe("2期分");
+  });
+
+  it("links the complete two Riyoshi papers with the published question count", () => {
+    const item = all.find((entry) => entry.key === "riyoshi");
+    expect(item?.href).toBe("/riyoshi");
+    expect(item?.questionCount).toBe(110);
+    expect(item?.periodLabel).toBe("2期分");
+    expect(item?.sub).toContain("全110原問・全肢解説");
   });
 
   it("never advertises an empty qualification and sums domain totals from cards", () => {
@@ -78,7 +86,7 @@ describe("home directory", () => {
   });
 
   it("shows the current partial OT and orthoptist counts in their cards", () => {
-    for (const [code, count] of [["sagyo-ryohoshi", 299], ["shino-kunrenshi", 186]] as const) {
+    for (const [code, count] of [["sagyo-ryohoshi", 310], ["shino-kunrenshi", 186]] as const) {
       const item = all.find((entry) => entry.key === code);
       expect(item?.questionCount).toBe(count);
       expect(item?.sub).toContain(`${count}原問`);

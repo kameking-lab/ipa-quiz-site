@@ -10,7 +10,8 @@ export type QualificationDomain =
   | "legal"
   | "safety"
   | "accounting"
-  | "welfare";
+  | "welfare"
+  | "personal-services";
 
 export type PublicationStatus =
   | "live"
@@ -40,6 +41,12 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  {
+    slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
+    officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
+    reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",
+    attributionTemplate: "出典：日本中小企業診断士協会連合会 2025・2024年度 中小企業診断士第2次試験", remainingWork: ["次年度公開資料の確認"],
+  },
   {
     slug: "fp1",
     examCode: "fp1",
@@ -136,7 +143,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "公式に公表された過去問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：令和○年度○期第二種電気工事士学科試験",
-    remainingWork: ["令和8年度上期学科の問11〜50の追加"],
+    remainingWork: [],
   },
   {
     slug: "denko1",
@@ -454,6 +461,20 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["各回の問題冊子が示す基準日（試験実施日）より後の法改正は別途更新確認"],
   },
   {
+    slug: "chusho-kigyo-shindanshi",
+    examCode: "chusho-kigyo-shindanshi",
+    shortName: "中小企業診断士",
+    fullName: "中小企業診断士 第1次試験",
+    domain: "accounting",
+    administrator: "一般社団法人 日本中小企業診断士協会連合会",
+    officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html",
+    officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html",
+    status: "live",
+    reuseSummary: "2025・2026年度の第1次試験7科目、417原問・454解答単位・2088選択肢を公式問題・正答に照合して準備。問題と正答の出典は試験実施団体、解説は当サイトの独自作成。協会の法的事項は事前承諾のない複製・公開・転載・再利用を禁止し、利用規約は商業目的利用を禁止する。承諾を得た記録はなく、一般掲載可否はオーナー判断待ち。",
+    attributionTemplate: "出典：一般社団法人 日本中小企業診断士協会連合会 令和○年度 中小企業診断士 第1次試験 ○科目 問○（問題・正答）",
+    remainingWork: ["公式法的事項の事前承諾要件と利用規約の商業目的禁止を踏まえたオーナーの一般掲載判断", "図表の原本照合と画像の最終配置確認"],
+  },
+  {
     slug: "sharoushi",
     examCode: "sharoushi",
     shortName: "社会保険労務士",
@@ -477,7 +498,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-08_09.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した299問を部分収録。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
+    reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した310問を部分収録。原本図と全肢解説を確認した11問を追加し、公式採点除外の第60回午後98・第61回午前42は出題対象に含めません。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の原本図・専門根拠・代替正答の局所確認", "最新2回の残る午前・午後問題"],
   },
   {
@@ -516,8 +537,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第112・111回の22問を保存。うち公式原文・正答・全肢解説を照合した16問を部分公開。残る6問は局所独立査読待ちで非掲載。",
-    remainingWork: ["残る保留問の局所独立査読"],
+    reuseSummary: "第112・111回の午前・午後220問のうち、原文・正答・全肢解説を確認した202問を部分収録。第112回午前18問は未収録です。",
+    remainingWork: ["第112回午前の未収録18問の公開に関する既存の停止条件を解消"],
   },
   {
     slug: "josanshi",
@@ -627,7 +648,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第71回（2025年実施）の午後から、原文・公式正答・全五肢の解説を照合した10原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
+    reuseSummary: "第71・72回（2025・2026年実施）の午後から、原文・公式正答・全五肢の解説を照合した35原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
   },
   {
@@ -640,8 +661,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第77回（2025年実施）の午後から、原文・公式正答・全五肢の解説を照合した10原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
-    remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
+    reuseSummary: "第77・78回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢解説・必要図版を照合した398原問を収録。第77回は午前100・午後100問、第78回は午前98・午後100問です。第78回午前23は公式に採点除外、午前15は公式別冊図が省略されているため出題対象に含めていません。解説は独自作成です。",
+    remainingWork: ["第78回午前15の正規図版取得", "採点除外の第78回午前23は公式通知と原文を別保存"],
+  },
+  {
+    slug: "riyoshi", examCode: "riyoshi", shortName: "理容師", fullName: "理容師国家試験", domain: "personal-services",
+    administrator: "公益財団法人理容師美容師試験研修センター",
+    officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
+    officialReuseTermsUrl: "https://www.rbc.or.jp/exam/past_question/",
+    status: "live",
+    reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。原本照合と内容検収を完了し、リリース対象110問を個別IDで指定しています。",
+    attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
+    remainingWork: [],
   },
   {
     slug: "boki3",

@@ -1,0 +1,4664 @@
+[
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q1",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 1,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "MRI 装置の生データと画像信号で正しいのはどれか。",
+    "choices": {
+      "ア": "k-空間には生データの虚数成分だけが収められる。",
+      "イ": "空気の信号は0 、水の信号は1000 近傍に分布する。",
+      "ウ": "生データをフーリエ変換した後の画像信号はk-空間に保管される。",
+      "エ": "画像信号はフーリエ変換後の虚数成分と実数成分の両方を用いて表される。",
+      "オ": "水は生体内で最も存在比が大きいため、画像の中で最も高い信号値となる。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "MRIの生データは実数成分と虚数成分をもつ複素数データとしてk-空間に収められる。これをフーリエ変換すると複素数の画像データが得られ、位相画像や絶対値画像などの表示には実数成分と虚数成分の両方が使われる。したがって正答は4。",
+    "choiceExplanations": {
+      "ア": "誤り。k-空間には虚数成分だけでなく、実数成分と虚数成分の両方(複素数データ)が収められる。",
+      "イ": "誤り。MRIの信号値はCT値のように物質ごとに決まった値をもたない。表示値は撮像条件や再構成のスケーリングで任意に変わる。空気は信号がほぼ0だが、水が1000近傍と決まっているわけではない。",
+      "ウ": "誤り。k-空間に保管されるのはフーリエ変換前の生データである。変換後の画像信号は画像空間のデータである。",
+      "エ": "正しい。フーリエ変換後のデータは複素数で、画像信号は実数成分と虚数成分の両方を用いて表される(絶対値画像は両者から計算する)。",
+      "オ": "誤り。信号強度は存在比だけでなくT1・T2・プロトン密度・撮像法で決まる。水が常に最高信号になるわけではなく、強調法によっては脂肪や造影された組織のほうが高信号になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問1（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q2",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 2,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "1.5 T MRI 装置で最小バンド幅426 Hz、スライス選択傾斜磁場が最大20 mT･m⁻¹ のときの最小スライス厚［mm］はどれか。",
+    "choices": {
+      "ア": "0.2",
+      "イ": "0.5",
+      "ウ": "1.0",
+      "エ": "2.0",
+      "オ": "5.0"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "スライス厚 = バンド幅 ÷ (γ/2π × 傾斜磁場強度) で求める。1H の γ/2π は約42.58 MHz/T、傾斜磁場は20 mT/m なので、傾斜磁場による周波数勾配は42.58×10^6 × 0.02 ≒ 851.6 kHz/m = 約852 Hz/mm となる。最小スライス厚は 426 ÷ 852 ≒ 0.5 mm で、正答は2。",
+    "choiceExplanations": {
+      "ア": "誤り。0.2 mm になるにはバンド幅が約170 Hz 必要で、条件の426 Hzと合わない。",
+      "イ": "正しい。426 Hz ÷ 約852 Hz/mm ≒ 0.5 mm。",
+      "ウ": "誤り。1.0 mm ではバンド幅が約852 Hz 必要で、最小バンド幅426 Hzより大きい。",
+      "エ": "誤り。2.0 mm ではバンド幅が約1700 Hz 必要で、条件と合わない。",
+      "オ": "誤り。5.0 mm ではバンド幅が約4260 Hz 必要で、最小値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問2（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q3",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 3,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "無散瞳眼底写真撮影装置で正しいのはどれか。",
+    "choices": {
+      "ア": "連続撮影ができない。",
+      "イ": "位置合わせ用照明には紫外光を用いる。",
+      "ウ": "カメラ内部固視灯は焦点調整に使用する。",
+      "エ": "対物レンズは被検眼角膜に接することが望ましい。",
+      "オ": "有孔ミラーは光源から眼底に照射される光と眼底から反射されてくる光を分 ける役割を持つ。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "無散瞳眼底カメラは位置合わせに赤外光を使う。有孔ミラーは周辺で照明光を眼内へ導き、中央孔で眼底から戻る光を通すことで照明光路と撮影光路を分離する。正解5。",
+    "choiceExplanations": {
+      "ア": "低いフラッシュ強度で短時間に複数枚を撮影できる機種があり、連続撮影が一律に不可能という断定は誤り。",
+      "イ": "位置合わせには縮瞳を起こしにくい赤外光を使い、紫外光ではない。",
+      "ウ": "内部固視灯は視線方向と撮影する眼底部位の誘導に使い、焦点調整用ではない。",
+      "エ": "対物レンズと角膜の間には作動距離を保ち、非接触で撮影する。",
+      "オ": "有孔ミラーは照明光と眼底からの反射光を分離する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問3（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://topconhealthcare.eu/en_EU/products/trc-nw8"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q4",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 4,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "1.5 T MRI 装置による高速SE法での頭部MR像（別冊No.1）を別に示す。\n設定したTR［ms］、TE［ms］に近い組合せはどれか。",
+    "choices": {
+      "ア": "TR 600 ms、TE 15 ms",
+      "イ": "TR 1,000 ms、TE 100 ms",
+      "ウ": "TR 3,000 ms、TE 15 ms",
+      "エ": "TR 4,000 ms、TE 100 ms",
+      "オ": "TR 10,000 ms、TE 150 ms"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.1では脳脊髄液が抑制され、灰白質が白質より高信号のFLAIR像を示す。FLAIRは長いTRとTEを用いるため、TR 10,000 ms、TE 150 msの組合せが最も適切である。",
+    "choiceExplanations": {
+      "ア": "TR 600、TE 15は短いTR・TEのT1強調条件で、液体抑制を伴うFLAIRの条件に合わない。",
+      "イ": "TR 1,000はFLAIRとして短く、長いTEだけでは図の脳脊髄液抑制を説明できない。",
+      "ウ": "TR 3,000、TE 15は長いTR・短いTEのプロトン密度強調条件に近い。",
+      "エ": "TR 4,000、TE 100は通常のT2強調条件に近く、図の液体抑制を伴うFLAIRにはより長いTRが適切である。",
+      "オ": "TR 10,000、TE 150は長いTR・TEで、別冊のFLAIR像に適した組合せである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問4（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q4.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問4の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q5",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "細胞外液性ガドリニウム造影剤で正しいのはどれか。",
+    "choices": {
+      "ア": "尿中に排泄される。",
+      "イ": "MRCP で必要とされる。",
+      "ウ": "肝細胞に特異的に取り込まれる。",
+      "エ": "環状型は線状型より脳組織に沈着しやすい。",
+      "オ": "アナフィラキシーの頻度は非イオン性水溶性ヨード造影剤より高い。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "細胞外液性ガドリニウム造影剤は血管内に投与後、細胞外液腔に分布し、主に腎臓の糸球体ろ過で尿中に排泄される。肝細胞特異性はなく、MRCPにも不要である。脳への沈着は線状型のほうが環状型より多く、アナフィラキシーの頻度はヨード造影剤より低い。したがって正答は1。",
+    "choiceExplanations": {
+      "ア": "正しい。細胞外液性Gd造影剤は主に糸球体ろ過により尿中へ排泄される。",
+      "イ": "誤り。MRCPは胆汁や膵液などの静止した水を強いT2強調像で描出する検査で、造影剤は必要としない。",
+      "ウ": "誤り。肝細胞に特異的に取り込まれるのは肝細胞特異性造影剤(Gd-EOB-DTPA)で、細胞外液性ではない。",
+      "エ": "誤り。脳組織への沈着は、安定性の低い線状型のほうが環状型(マクロ環状型)より起こりやすい。記述は逆である。",
+      "オ": "誤り。Gd造影剤のアナフィラキシーなど重篤な副作用の頻度は、非イオン性水溶性ヨード造影剤より低いとされる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問5（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q6",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 6,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4,5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "腹部MR 像（別冊No. 2）を別に示す。画像の説明で正しいのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "水抑制画像である。",
+      "イ": "腎動脈が観察できる。",
+      "ウ": "上行結腸が観察できる。",
+      "エ": "造影後に撮影している。",
+      "オ": "膵尾部に低信号域が観察できる。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "別冊No.2は脂肪を抑制した造影後の腹部横断MR像である。血管や実質が増強され、膵尾部に周囲の膵実質より低信号の領域が見える。正解は4と5。",
+    "choiceExplanations": {
+      "ア": "皮下脂肪が低信号で、図は水抑制画像ではない。",
+      "イ": "描出断面は上腹部であり、腎門から走行する腎動脈の観察断面ではない。",
+      "ウ": "上行結腸を確認する断面ではなく、肝・膵・脾などが描出されている。",
+      "エ": "大動脈・肝内血管や実質の信号増強から造影後に撮像していると判断できる。",
+      "オ": "画面右側の脾臓に近い膵尾部に、造影された膵実質より低信号の領域がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問6（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q6.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問6の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q7",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 7,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "胸部MRI のT1 強調像（別冊No. 3）を別に示す。前縦隔腫瘤が接するのはどれか。",
+    "choices": {
+      "ア": "右心房",
+      "イ": "左心室",
+      "ウ": "上大静脈",
+      "エ": "肺動脈幹",
+      "オ": "上行大動脈"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.3は肺動脈幹と上行大動脈が見える胸部横断像である。前縦隔の腫瘤は肺動脈幹の前方に接しているため、正解は4。",
+    "choiceExplanations": {
+      "ア": "右心房はこの断面より尾側にあり、示された腫瘤に接する構造ではない。",
+      "イ": "左心室もより尾側であり、この断面の腫瘤接触部ではない。",
+      "ウ": "上大静脈は患者右側を走行し、図の腫瘤が接する中央左寄りの血管ではない。",
+      "エ": "肺動脈幹は上行大動脈の左側に位置し、その前面に前縦隔腫瘤が接している。",
+      "オ": "上行大動脈は肺動脈幹の右側の円形血管で、図で腫瘤が直接接する血管ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問7（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q7.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問7の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q8",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 8,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "発症1～6時間における脳梗塞病変部について、拡散強調像とT2強調像の信号強度の組合せで正しいのはどれか。",
+    "choices": {
+      "ア": "拡散強調像：高信号／T2強調像：低信号",
+      "イ": "拡散強調像：高信号／T2強調像：等信号",
+      "ウ": "拡散強調像：低信号／T2強調像：高信号",
+      "エ": "拡散強調像：低信号／T2強調像：低信号",
+      "オ": "拡散強調像：低信号／T2強調像：等信号"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "超急性期(発症1~6時間)の脳梗塞では、細胞毒性浮腫により水分子の拡散が制限され、拡散強調像で高信号になる。この時期は血管原性浮腫がまだ目立たず、T2強調像では等信号のことが多い。したがって正答は2。",
+    "choiceExplanations": {
+      "ア": "誤り。拡散強調像は高信号だが、T2強調像が低信号になる機序は超急性期の梗塞にはない。",
+      "イ": "正しい。拡散強調像は高信号、T2強調像は等信号を示す。",
+      "ウ": "誤り。拡散強調像は拡散制限により高信号となる。低信号ではない。T2強調像の高信号は発症から時間が経過した後に目立ってくる所見である。",
+      "エ": "誤り。拡散強調像が低信号となる点が誤り。T2強調像低信号も典型的ではない。",
+      "オ": "誤り。拡散強調像は低信号ではなく高信号になる。T2強調像の等信号という点は合っているが、組合せとしては誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問8（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q9",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 9,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "右肋骨弓下縦走査の超音波像（別冊No. 4）を別に示す。考えられるのはどれか。",
+    "choices": {
+      "ア": "胆　石",
+      "イ": "脾　腫",
+      "ウ": "腹　水",
+      "エ": "脂肪肝",
+      "オ": "水腎症"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.4では肝実質が腎皮質より明るい肝腎コントラストを示す。これは脂肪肝の代表的な超音波所見で、正解は4。",
+    "choiceExplanations": {
+      "ア": "胆石なら胆嚢内の強いエコーと後方の音響陰影を確認する。図の主所見は肝腎コントラストである。",
+      "イ": "右肋骨弓下の図には肝と右腎が描出され、脾臓の腫大を評価する図ではない。",
+      "ウ": "腹水は臓器周囲の無エコー域として見える。図で示される所見は肝実質の高エコーである。",
+      "エ": "肝実質が腎皮質より高エコーで、脂肪沈着による肝腎コントラストを認める。",
+      "オ": "水腎症なら腎盂・腎杯の無エコー性拡張が見える。図の腎にはその所見を認めない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問9（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q9.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問9の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q10",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 10,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "甲状腺結節の超音波像（別冊No. 5）を別に示す。矢印で示すのはどれか。",
+    "choices": {
+      "ア": "ハロー",
+      "イ": "音響陰影",
+      "ウ": "側方陰影",
+      "エ": "多重反射",
+      "オ": "サイドローブ"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.5の矢印は甲状腺結節の後方に続く低エコーの帯を示す。強く減衰・反射する部分の後方で信号が弱くなる音響陰影で、正解は2。",
+    "choiceExplanations": {
+      "ア": "ハローは結節を取り囲む低エコーの縁であり、結節後方へ延びる帯ではない。",
+      "イ": "結節の後方で超音波が減弱し、低エコーの帯が生じているため音響陰影である。",
+      "ウ": "側方陰影は結節の両側縁から後方へ生じる陰影で、図の中央後方の陰影とは異なる。",
+      "エ": "多重反射では深さ方向に反復するエコーが現れる。図は反復エコーではない。",
+      "オ": "サイドローブは主ビーム外の強い反射体による偽像であり、図の後方の帯状欠損とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問10（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q10.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問10の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q11",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 11,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "標識化合物の分解を防ぐ保存法で正しいのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "常温で保存する。",
+      "イ": "窒素ガスを充塡する。",
+      "ウ": "比放射能を高くする。",
+      "エ": "放射能濃度を高くする。",
+      "オ": "ラジカルスカベンジャを添加する。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "標識化合物の分解は、自己放射線分解(放射線によるラジカル生成)と化学的分解(酸化など)で進む。対策は、低温保存、酸素の除去(窒素などの不活性ガス充填)、ラジカルスカベンジャの添加、比放射能・放射能濃度を下げること(希釈)である。",
+    "choiceExplanations": {
+      "ア": "誤り。常温では分解が促進される。低温(冷蔵・冷凍)で保存する。",
+      "イ": "正しい。窒素ガスを充填すると酸素が除かれ、酸化や酸素ラジカルによる分解を抑えられる。",
+      "ウ": "誤り。比放射能が高いと単位質量当たりの放射線吸収が増え、自己放射線分解が進む。",
+      "エ": "誤り。放射能濃度が高いと分子が受けるエネルギー付与が増え、分解が増える。希釈が有効である。",
+      "オ": "正しい。エタノール、ベンジルアルコール、アスコルビン酸などは、放射線分解で生じたラジカルを捕捉して分解を抑える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問11（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q12",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 12,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "生物学的半減期をTb、物理的半減期をTp とすると有効半減期を表すのはどれか。",
+    "choices": {
+      "ア": "Tb ＋Tp",
+      "イ": "Tb －Tp",
+      "ウ": "1/Tb ＋1/Tp",
+      "エ": "（Tb ＋Tp）/2",
+      "オ": "TbTp/（Tb ＋Tp）"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "有効壊変定数は物理的壊変定数と生物学的排泄定数の和 λe=λp+λb である。λ=ln2/T なので 1/Te=1/Tp+1/Tb となり、Te=TbTp/(Tb+Tp) を得る。",
+    "choiceExplanations": {
+      "ア": "誤り。半減期を単純に足しても有効半減期にはならない。Teは必ずTp、Tbの小さい方より短くなる。",
+      "イ": "誤り。差は意味を持たず、負になる場合もある。",
+      "ウ": "誤り。1/Tb+1/Tp は有効半減期の逆数 1/Te であり、半減期そのものではない。",
+      "エ": "誤り。算術平均であり、有効半減期の導出と無関係である。",
+      "オ": "正しい。1/Te=1/Tb+1/Tp を整理した式である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問12（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q13",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 13,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "TEW 法で推定される散乱線成分を表す式はどれか。ただし、メインウインドウ幅をW1、低エネルギー側サブウインドウのカウントとウインドウ幅をClow、W2、高エネルギー側サブウインドウとウインドウ幅をChigh、W3 とする。",
+    "choices": {
+      "ア": "(Clow＋Chigh)×W1/2",
+      "イ": "(Clow＋Chigh)×W1/(W2＋W3)",
+      "ウ": "(Clow/W2＋Chigh/W3)×W1/2",
+      "エ": "(Clow/W2＋Chigh/W3)×W1",
+      "オ": "(W2/Clow＋W3/Chigh)×W1/2"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "TEW(triple energy window)法は、メインウインドウの両側に狭いサブウインドウを置く。各サブウインドウのカウントを幅で割って計数密度とし、その平均を台形近似して、メインウインドウ内の散乱線を (C_low/W2 + C_high/W3) × W1/2 と推定する。",
+    "choiceExplanations": {
+      "ア": "誤り。サブウインドウ幅W2、W3で補正しておらず、計数密度になっていない。",
+      "イ": "誤り。カウントの和を幅の和で割る形で、各ウインドウの密度を個別に扱う台形近似になっていない。",
+      "ウ": "正しい。両サブウインドウの計数密度の平均にW1を掛ける台形近似の式である。",
+      "エ": "誤り。1/2が欠けており、平均ではなく和を使っているため2倍の過大評価になる。",
+      "オ": "誤り。幅/カウントは計数密度の逆数で、次元と意味が合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問13（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q14",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 14,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "LSO シンチレータの特徴で正しいのはどれか。",
+    "choices": {
+      "ア": "BGO に比べ相対発光量が大きい。",
+      "イ": "BGO に比べ発光減衰時間が長い。",
+      "ウ": "NaI（Tl）に比べ密度が低い。",
+      "エ": "NaI（Tl）に比べ相対発光量が大きい。",
+      "オ": "NaI（Tl）に比べエネルギー分解能が高い。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "LSO(Lu2SiO5:Ce)は、密度約7.4 g/cm³、発光減衰時間約40 ns、相対発光量はNaI(Tl)を100として約70~75である。BGOは密度約7.1 g/cm³、減衰時間約300 ns、相対発光量約15~20である。NaI(Tl)は密度約3.7 g/cm³、減衰時間約230 ns、エネルギー分解能は約7~10%である。",
+    "choiceExplanations": {
+      "ア": "正しい。LSOの相対発光量(約75%)はBGO(約15~20%)より大きい。",
+      "イ": "誤り。LSOの減衰時間は約40 nsで、BGO(約300 ns)より短い。",
+      "ウ": "誤り。LSOの密度(約7.4 g/cm³)はNaI(Tl)(約3.7 g/cm³)より高い。",
+      "エ": "誤り。NaI(Tl)を100とするとLSOは約70~75で、NaI(Tl)より小さい。",
+      "オ": "誤り。LSOのエネルギー分解能は約10%前後で、NaI(Tl)より劣る(数値が大きい)。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問14（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q16",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 16,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "PET 装置の性能評価（NEMA NU 2-2018）とその関連項目の組合せで誤っているのはどれか。",
+    "choices": {
+      "ア": "画　質   NEMA IEC 胴体ファントム",
+      "イ": "感　度   アルミニウム管",
+      "ウ": "空間分解能   ²²Na 点線源",
+      "エ": "計数率特性   散乱ファントム",
+      "オ": "散乱フラクション   ¹⁸F 点線源"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "NEMA NU 2-2018の画質はIEC胴体ファントム、感度はアルミニウム管、空間分解能は点線源を用いる。散乱フラクションと計数率特性は散乱ファントム内の線線源で評価するので、点線源とする5が誤り。",
+    "choiceExplanations": {
+      "ア": "球状インサートを持つNEMA IEC胴体ファントムを使う。",
+      "イ": "線線源の周囲にアルミニウム管を重ね、減弱を外挿して感度を求める。",
+      "ウ": "NU 2-2018に沿った性能評価の一次研究では²²Na点線源による空間分解能測定が報告されている。",
+      "エ": "散乱ファントム内の¹⁸F線線源を用いて計数率特性を測定する。",
+      "オ": "散乱フラクションも散乱ファントム内の¹⁸F線線源を用いる。点線源ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問16（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://d-nb.info/1216678499/34"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q17",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 17,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射性医薬品投与時に30 秒以上かけてゆっくり静注する必要があるのはどれか。",
+    "choices": {
+      "ア": "⁹⁹ᵐTc－ECD",
+      "イ": "⁹⁹ᵐTc－MIBI",
+      "ウ": "¹²³I－MIBG",
+      "エ": "¹³¹I－アドステロール",
+      "オ": "²⁰¹TlCl"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "¹³¹I-アドステロールの製品の投与方法は、生理食塩液又は注射用水で2倍以上に希釈し、30秒以上かけてゆっくり静注することを指定している。正解4。",
+    "choiceExplanations": {
+      "ア": "⁹⁹ᵐTc-ECDは脳血流用で、本問の30秒以上という投与方法の対象ではない。",
+      "イ": "⁹⁹ᵐTc-MIBIは心筋等の画像診断用で、本問の対象製剤ではない。",
+      "ウ": "¹²³I-MIBGは交感神経・副腎髄質等の画像診断用で、本問の対象製剤ではない。",
+      "エ": "¹³¹I-アドステロールは30秒以上かけてゆっくり静注する指定があり正しい。",
+      "オ": "²⁰¹TlClは心筋血流等の画像診断用で、本問の対象製剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問17（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://pins.japic.or.jp/pdf/newPINS/00005843.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q18",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 18,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "Na123I による24 時間後の甲状腺摂取率で正常範囲内はどれか。",
+    "choices": {
+      "ア": "0.5％",
+      "イ": "3％",
+      "ウ": "30％",
+      "エ": "60％",
+      "オ": "80％"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "Na¹²³Iの24時間後甲状腺摂取率の正常範囲は概ね10~40%である。バセドウ病などの機能亢進症では高値、亜急性甲状腺炎や無痛性甲状腺炎、ヨード過剰では低値となる。",
+    "choiceExplanations": {
+      "ア": "誤り。0.5%は著明な低値で、破壊性甲状腺炎やヨード過剰、機能廃絶などを示唆する。",
+      "イ": "誤り。3%は正常下限(約10%)を下回る低値である。",
+      "ウ": "正しい。30%は正常範囲(約10~40%)に含まれる。",
+      "エ": "誤り。60%は正常上限を超える高値で、バセドウ病などで見られる。",
+      "オ": "誤り。80%は明らかな高値で、機能亢進症が示唆される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問18（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q19",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 19,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "副腎皮質シンチグラフィで正しいのはどれか。",
+    "choices": {
+      "ア": "投与翌日に撮影する。",
+      "イ": "¹²³I－MIBG が用いられる。",
+      "ウ": "褐色細胞腫の診断で用いられる。",
+      "エ": "デキサメタゾンによって正常副腎への集積が抑制される。",
+      "オ": "原発性アルドステロン症では片側のみに集積を認めることが多い。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "副腎皮質シンチグラフィはコレステロール類似体の¹³¹I-アドステロールを用いる。デキサメタゾンはACTHを抑制して正常副腎皮質への集積を下げる。正解4。",
+    "choiceExplanations": {
+      "ア": "製品の現行撮影方法は投与後7日目以降であり、翌日ではない。",
+      "イ": "¹²³I-MIBGは副腎髄質・交感神経系に用い、副腎皮質には¹³¹I-アドステロールを用いる。",
+      "ウ": "褐色細胞腫は副腎髄質由来で、皮質シンチグラフィの対象とは異なる。",
+      "エ": "ACTH分泌を抑え、正常副腎皮質の集積を抑制するため正しい。",
+      "オ": "原発性アルドステロン症には両側性の副腎病変もあり、疾患名だけから片側の集積が多いと決められない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問19（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://pins.japic.or.jp/pdf/newPINS/00005843.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q20",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 20,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "骨シンチグラフィで集積欠損像となるのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "授乳期乳房",
+      "イ": "尿漏れ部位",
+      "ウ": "ペースメーカ",
+      "エ": "硫酸バリウム",
+      "オ": "放射性医薬品の投与部位の漏れ"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "骨シンチグラフィで集積欠損(コールド)となるのは、放射線を遮蔽・吸収する物体が体表や体内にある場合である。金属(ペースメーカなど)や高密度の造影剤(硫酸バリウム)が該当する。一方、乳腺や尿汚染、投与部位漏れは集積増加(ホット)となる。",
+    "choiceExplanations": {
+      "ア": "誤り。授乳期乳房は、乳腺組織へのMDP等の集積により集積増加として描出される。",
+      "イ": "誤り。尿漏れによる皮膚・衣服の汚染は、放射能がある部位として集積増加(ホット)に見える。",
+      "ウ": "正しい。ペースメーカは金属で、γ線を吸収・遮蔽するため集積欠損となる。",
+      "エ": "正しい。硫酸バリウムはγ線を吸収・減弱するため、その部位が欠損像となる。",
+      "オ": "誤り。投与部位の漏れは局所の放射能残留による強い集積増加(ホットスポット)となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問20（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q21",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 21,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "外部放射線治療で正しいのはどれか。",
+    "choices": {
+      "ア": "局所的な治療ができる。",
+      "イ": "高齢者には適応がない。",
+      "ウ": "良性腫瘍は適応とならない。",
+      "エ": "臓器の機能や形態を温存できない。",
+      "オ": "手術療法と比較して腫瘍制御の確実性が高い。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "外部放射線治療は体外から標的に線量を集中して行う局所療法である。全身状態や腫瘍の性質に応じて適応を判断し、機能や形態を温存できることも利点となる。",
+    "choiceExplanations": {
+      "ア": "標的を設定して照射するため、局所的な治療ができる。",
+      "イ": "年齢だけで適応が否定されるわけではなく、高齢者にも全身状態等に応じて行われる。",
+      "ウ": "良性疾患でもケロイドなど放射線治療が用いられる場合があるため、一律に適応外ではない。",
+      "エ": "臓器を切除せずに治療でき、機能や形態の温存を目指せる。",
+      "オ": "腫瘍制御は病期・部位・組織型等で異なり、手術より常に確実性が高いとはいえない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問21（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q22",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 22,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射線治療効果で誤っているのはどれか。",
+    "choices": {
+      "ア": "温熱療法は放射線増感効果を示す。",
+      "イ": "加速過分割照射は増殖が遅い腫瘍に有効である。",
+      "ウ": "シスプラチン（白金製剤）は放射線増感効果を示す。",
+      "エ": "放射線治療期間の延長は治療成績の悪化につながる。",
+      "オ": "定位放射線照射は通常分割照射に比べ高い局所効果が得られる。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "加速過分割照射は治療期間を短縮し、治療中の腫瘍細胞の再増殖を抑える方法である。増殖が速い腫瘍で意義があり、増殖が遅い腫瘍に有効とする2が誤り。",
+    "choiceExplanations": {
+      "ア": "温熱はDNA損傷修復などを妨げ、放射線の作用を増強するため正しい。",
+      "イ": "加速照射の目的は速い再増殖への対策であり、増殖が遅い腫瘍を対象とする説明は逆である。",
+      "ウ": "シスプラチンはDNAに作用し、放射線増感効果を示す。",
+      "エ": "治療期間が延びると腫瘍の再増殖が進み、局所制御が低下することがある。",
+      "オ": "適切な適応の定位照射では高線量を標的に集中し、高い局所制御効果を得られる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問22（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q24",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 24,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "緩和的放射線治療の適応に最もなりにくいのはどれか。",
+    "choices": {
+      "ア": "胃癌による出血",
+      "イ": "腹水による食欲不振",
+      "ウ": "多発性の転移性脳腫瘍",
+      "エ": "疼痛を有する転移性骨腫瘍",
+      "オ": "転移性骨腫瘍による脊髄圧迫"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "緩和的照射は腫瘍の縮小を通じて出血、痛み、脳症状、脊髄圧迫などを軽減する。腹水自体による食欲不振は局所照射で改善しにくく、選択肢では2が最も適応になりにくい。",
+    "choiceExplanations": {
+      "ア": "腫瘍からの出血に対して止血目的の照射が行われる。",
+      "イ": "腹水貯留は広い腹膜病変や全身状態が関わり、排液や全身的対処が中心で、局所照射の適応になりにくい。",
+      "ウ": "多発性脳転移による症状や進行を抑える目的で脳への照射を検討する。",
+      "エ": "有痛性骨転移の疼痛緩和は放射線治療の代表的な適応である。",
+      "オ": "脊髄圧迫による神経障害の防止・軽減のため、緊急の治療として照射が検討される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問24（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q25",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 25,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "日本国内の炭素線治療施設で稼働している加速器はどれか。",
+    "choices": {
+      "ア": "タンデトロン",
+      "イ": "ベータトロン",
+      "ウ": "サイクロトロン",
+      "エ": "シンクロトロン",
+      "オ": "マイクロトロン"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "日本の炭素線治療では、線形加速器等による入射後にシンクロトロンで炭素イオンを治療に必要な高エネルギーへ加速する。",
+    "choiceExplanations": {
+      "ア": "タンデトロンは静電加速器で、国内炭素線治療の主加速器ではない。",
+      "イ": "ベータトロンは誘導電場で電子を加速する装置である。",
+      "ウ": "サイクロトロンは陽子線治療などで用いられるが、本問の国内炭素線治療施設の答えではない。",
+      "エ": "シンクロトロンで磁場等を粒子のエネルギーに合わせて変化させ、炭素イオンを加速する。",
+      "オ": "マイクロトロンは主に電子加速器であり、炭素イオンの治療用主加速器ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問25（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q26",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 26,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射線治療時の深部線量分布を図に示す。図のa からe の線量分布のうち炭素線の物理線量分布を示すのはどれか。",
+    "choices": {
+      "ア": "a",
+      "イ": "b",
+      "ウ": "c",
+      "エ": "d",
+      "オ": "e"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "炭素線は深部で大きな生物効果を持つため、拡大Braggピーク内で生物学的線量を均一にする際の物理線量は一定でない。図のeは物理線量が低く、深部側へ低下し、飛程後に核破砕による尾を残す炭素線の物理線量分布である。",
+    "choiceExplanations": {
+      "ア": "aは浅部の最大値から深部へ連続的に低下し、炭素線の拡大Braggピークの形ではない。",
+      "イ": "bは標的領域に高い平坦部を作る曲線で、炭素線の生物効果補正前の物理線量eとは異なる。",
+      "ウ": "cも標的領域に平坦部を持ち、炭素線の物理線量にみられる標的内での低下を表していない。",
+      "エ": "dは標的領域で高い平坦部を示す生物学的線量側の曲線で、炭素線の物理線量そのものではない。",
+      "オ": "eは深部で増大する生物効果を考慮した物理線量分布で、標的内で深部側へ低下し、飛程後に核破砕の尾がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問26（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q26.png"
+    ],
+    "imageAltTexts": [
+      "深部線量分布a～e"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q27",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 27,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "直線加速器の幾何学的管理項目で正しいのはどれか。",
+    "choices": {
+      "ア": "MU 値直線性",
+      "イ": "X 線出力係数",
+      "ウ": "物理ウェッジ係数",
+      "エ": "絶対線量の出力不変性",
+      "オ": "光照射野と放射線照射野の一致"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "光照射野と放射線照射野の一致は、位置・形状が合っているかを確認する幾何学的管理である。他の肢は線量や出力の管理項目である。",
+    "choiceExplanations": {
+      "ア": "MU値と出力線量の比例関係を調べる線量管理である。",
+      "イ": "照射野サイズによる出力の変化を評価する線量管理である。",
+      "ウ": "ウェッジを入れたときの線量比を調べる線量管理である。",
+      "エ": "校正した線量出力が一定かを調べる線量管理である。",
+      "オ": "光照射野と実際の放射線照射野の位置・大きさを照合するため幾何学的管理である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問27（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q28",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 28,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "水ファントム中の深さ方向における10 MV X 線の等線量曲線（別冊No. 7Ａ）を別に示す。図（別冊No. 7Ｂ）の等線量曲線はどれか。",
+    "choices": {
+      "ア": "⁶⁰Coγ 線",
+      "イ": "4 MV X 線",
+      "ウ": "15 MeV 電子線",
+      "エ": "250 MeV 炭素線",
+      "オ": "250 MeV 陽子線"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.7Bでは高線量領域が浅部に広がり、一定の深さ以降は線量が急速に低下している。有限の飛程を持つ電子線の特徴で、正解は15 MeV電子線である。",
+    "choiceExplanations": {
+      "ア": "コバルトγ線は深部へ減衰しながら到達し、図のような有限飛程での急減ではない。",
+      "イ": "4 MV X線も光子線であり、深部への線量の尾が続く。",
+      "ウ": "電子線は一定の深さまでは高線量となり、飛程付近で急減するため図Bに合う。",
+      "エ": "炭素線なら入口部より深部のBraggピーク付近に線量を集中する。図Bの浅部の広い高線量域とは異なる。",
+      "オ": "陽子線も深部のBraggピークを利用する。図Bは電子線の浅い有限飛程を表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問28（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q28.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問28の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q29",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 29,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "MLCの構造とビームの通過位置（別冊No.8）を別に示す。\nMLCの透過線量を示す用語の組合せで正しいのはどれか。",
+    "choices": {
+      "ア": "A：inter-leaf transmission／B：leaf end transmission",
+      "イ": "A：inter-leaf transmission／B：intra-leaf transmission",
+      "ウ": "A：intra-leaf transmission／B：leaf end transmission",
+      "エ": "A：intra-leaf transmission／B：inter-leaf transmission",
+      "オ": "A：leaf end transmission／B：intra-leaf transmission"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.8のAはリーフ本体を通り、Bは隣接リーフ間を通る。リーフ内透過はintra-leaf transmission、リーフ間透過はinter-leaf transmissionで、4が正しい。",
+    "choiceExplanations": {
+      "ア": "Aをリーフ間、Bをリーフ先端とするが、図のAは本体、Bは隣接リーフの境界である。",
+      "イ": "AとBのリーフ内・リーフ間の対応が逆である。",
+      "ウ": "Aのintra-leafは合うが、Bはリーフ先端ではなくリーフ間である。",
+      "エ": "Aはリーフ本体内の透過、Bは隣接リーフ間の透過で、両方とも対応が正しい。",
+      "オ": "Aはリーフ先端ではなく本体、Bも本体内ではなくリーフ間である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問29（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q29.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問29の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q30",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 30,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "密封小線源治療の対象となるのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "喉頭癌",
+      "イ": "卵巣癌",
+      "ウ": "子宮頸癌",
+      "エ": "前立腺癌",
+      "オ": "悪性リンパ腫"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "密封小線源治療は線源を腫瘍近傍に配置する治療で、子宮頸癌の腔内照射と前立腺癌の組織内照射が代表的な適応である。正解は3と4。",
+    "choiceExplanations": {
+      "ア": "喉頭癌では外部照射や手術が標準的で、本問の代表的な小線源適応ではない。",
+      "イ": "卵巣癌は手術と薬物療法が中心で、子宮頸癌のような腔内照射の代表的適応ではない。",
+      "ウ": "子宮頸癌では腔内小線源治療が標準的治療の重要な構成要素である。",
+      "エ": "前立腺癌では密封線源の組織内照射が用いられる。",
+      "オ": "悪性リンパ腫は薬物療法や外部照射が中心で、密封小線源の代表的適応ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問30（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q31",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 31,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "人工ニューラルネットワークの学習過程で各層の重みを出力層側からたどって調整する方法はどれか。",
+    "choices": {
+      "ア": "線形判別分析",
+      "イ": "ランダムフォレスト",
+      "ウ": "ロジスティック回帰",
+      "エ": "サポートベクターマシン",
+      "オ": "バックプロパゲーション"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "出力と正解との誤差を出力層から入力側へ伝え、勾配に基づいて各層の重みを更新する方法がバックプロパゲーション（誤差逆伝播法）である。",
+    "choiceExplanations": {
+      "ア": "クラスを分離する線形判別関数を求める方法で、層を逆にたどる重み更新ではない。",
+      "イ": "多数の決定木を組み合わせる学習法である。",
+      "ウ": "確率をロジスティック関数で表す回帰法で、設問のニューラルネットワーク学習法ではない。",
+      "エ": "マージンを用いる分類法で、設問の誤差逆伝播とは異なる。",
+      "オ": "誤差の勾配を出力層側から逆方向に伝えて各層の重みを更新する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問31（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q32",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 32,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "5×5の画素値の分布Aを図に示す。\n縦方向に平行投影でMIP処理を行った後の投影数列で正しいのはどれか。",
+    "choices": {
+      "ア": "0　1　2　2　1",
+      "イ": "3　4　5　3　4",
+      "ウ": "6　8　7　4　6",
+      "エ": "8　7　6　6　5",
+      "オ": "15　20　25　15　20"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "MIPは投影方向上の最大値を採る。縦方向に各列の最大を選ぶと6、8、7、4、6となり、正解は3。",
+    "choiceExplanations": {
+      "ア": "0、1、2、2、1は各列の最小値で、MIPの最大値投影ではない。",
+      "イ": "3、4、5、3、4は各列の平均値で、MIPではない。",
+      "ウ": "各列の最大値は順に6、8、7、4、6であり、この数列が正しい。",
+      "エ": "8、7、6、6、5は各行の最大値に相当し、指定の縦方向投影ではない。",
+      "オ": "15、20、25、15、20は各列の合計値で、最大値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問32（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q32.png"
+    ],
+    "imageAltTexts": [
+      "5×5画素値の分布A"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q33",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 33,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "Web サイトに短時間で大量のアクセスを集中させてサービスを停止させるのはどれか。",
+    "choices": {
+      "ア": "DoS 攻撃",
+      "イ": "標的型攻撃",
+      "ウ": "フィッシング",
+      "エ": "ランサムウェア",
+      "オ": "SQL インジェクション攻撃"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "DoS攻撃は大量の通信や要求などで資源を使い切り、サービスを利用できなくする攻撃である。複数の送信元による場合はDDoSと呼ぶ。",
+    "choiceExplanations": {
+      "ア": "サービスの可用性を損なう攻撃で、設問の短時間の大量アクセスに対応する。",
+      "イ": "特定の組織を狙う攻撃の総称で、大量アクセスによる停止を直接表す名称ではない。",
+      "ウ": "偽サイト等へ誘導して認証情報を盗む行為である。",
+      "エ": "データを暗号化などで使用不能にし、金銭等を要求するマルウェアである。",
+      "オ": "入力にSQLを混入させ、データベースへ不正な操作を行う攻撃である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問33（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q34",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 34,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射線情報システムから撮影装置に対して患者の検査に必要な情報を提供するために用いられるDICOM の機能（サービスクラス）はどれか。",
+    "choices": {
+      "ア": "storage",
+      "イ": "verification",
+      "ウ": "query and retrieve〈Q/R〉",
+      "エ": "modality worklist management〈MWM〉",
+      "オ": "modality performed procedure step〈MPPS〉"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "MWMはRIS等の検査依頼情報を撮影装置が取得するワークリスト機能で、患者情報や検査情報の手入力を減らす。",
+    "choiceExplanations": {
+      "ア": "storageは画像等を保存・送信する機能である。",
+      "イ": "verificationはDICOM通信の接続確認を行う機能である。",
+      "ウ": "Q/Rは保存された画像等の検索・取得の機能である。",
+      "エ": "MWMは患者や検査依頼の情報を撮影装置へ提供する機能である。",
+      "オ": "MPPSは装置で行った検査の実施状況や結果の情報を報告する機能で、検査前のワークリストではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問34（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q35",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 35,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "画像診断用ディスプレイの評価で階調ごとの輝度の実測値と理論値の差によって求められるのはどれか。",
+    "choices": {
+      "ア": "解像度",
+      "イ": "輝度比",
+      "ウ": "最大輝度",
+      "エ": "輝度均一性",
+      "オ": "コントラスト応答"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "各階調の輝度変化をDICOM GSDF等の理論的な応答と比較して求めるのがコントラスト応答である。",
+    "choiceExplanations": {
+      "ア": "解像度は細部や画素を分離して表示する能力で、階調輝度の理論値との差ではない。",
+      "イ": "輝度比は最大輝度と最小輝度の比である。",
+      "ウ": "最大輝度は最も明るい表示での輝度値である。",
+      "エ": "輝度均一性は表示面の位置による輝度のばらつきを評価する。",
+      "オ": "階調間の輝度の変化が理論的なコントラスト応答に合うかを評価する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問35（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q36",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 36,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "医療事故の防止対策で正しいのはどれか。",
+    "choices": {
+      "ア": "ヒヤリハット事例の隠匿",
+      "イ": "注意力を高めるための訓練",
+      "ウ": "インシデント報告に対する処罰",
+      "エ": "過誤を起こしにくい器具の採用",
+      "オ": "性格適性検査に基づく配置転換"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "人の注意力だけに頼らず、誤接続しにくい器具など、過誤が起こりにくい仕組みを導入することが有効な事故防止対策である。",
+    "choiceExplanations": {
+      "ア": "ヒヤリハットを隠すと原因や傾向を共有できず、再発防止につながらない。",
+      "イ": "注意力向上の訓練だけでは、人の疲労や思い込みによるエラーを十分に防げない。",
+      "ウ": "報告を処罰すると報告が減り、原因分析と改善が妨げられる。",
+      "エ": "誤操作・誤接続を起こしにくい器具の採用は、仕組みとして過誤を防ぐ有効な対策である。",
+      "オ": "性格だけで配置を決めてもシステム上の危険要因が残り、根本的対策にならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問36（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q37",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 37,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "ショックの原因と初期治療の組合せで正しいのはどれか。",
+    "choices": {
+      "ア": "敗血症   抗血小板薬",
+      "イ": "緊張性気胸   胸腔穿刺",
+      "ウ": "急性心筋梗塞   副腎皮質ホルモン剤",
+      "エ": "大動脈瘤破裂   抗凝固薬",
+      "オ": "アナフィラキシー   硫酸アトロピン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "緊張性気胸は胸腔内圧の上昇によって静脈還流が減少する閉塞性ショックを起こす。緊急の胸腔減圧が必要で、胸腔穿刺の組合せが正しい。",
+    "choiceExplanations": {
+      "ア": "敗血症性ショックでは感染源対処・抗菌薬・循環管理を行う。抗血小板薬は初期治療の主薬ではない。",
+      "イ": "胸腔内圧を下げる穿刺・ドレナージによって静脈還流の障害を解除する。",
+      "ウ": "急性心筋梗塞では再灌流と循環管理が中心で、副腎皮質ホルモン剤との組合せは適切ではない。",
+      "エ": "大動脈瘤破裂は出血性ショックで、抗凝固薬は出血を悪化させるおそれがある。",
+      "オ": "アナフィラキシーではアドレナリンを用いる。硫酸アトロピンとの組合せは誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問37（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q38",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 38,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4,5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "ヨード造影剤の血管内投与の禁忌で正しいのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "小　児",
+      "イ": "妊　婦",
+      "ウ": "腸閉塞",
+      "エ": "重篤な甲状腺疾患",
+      "オ": "ヨード過敏症の既往歴"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ヨード造影剤の血管内投与では、重篤な甲状腺疾患とヨード又はヨード造影剤に対する過敏症の既往が禁忌とされる。正解は4と5。",
+    "choiceExplanations": {
+      "ア": "小児であること自体は禁忌ではなく、適応と投与量等を慎重に判断する。",
+      "イ": "妊婦では必要性を慎重に判断するが、妊娠だけを血管内投与の一律の禁忌とはしない。",
+      "ウ": "腸閉塞は本問の血管内投与の禁忌に当たらない。消化管造影剤の投与経路と区別する。",
+      "エ": "多量のヨードが甲状腺機能へ影響し、重篤な甲状腺疾患では禁忌となる。",
+      "オ": "既往に過敏症がある場合は重篤な過敏反応の危険があり、禁忌となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問38（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q39",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 39,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "MRI における安全性で正しいのはどれか。",
+    "choices": {
+      "ア": "緊急時の救命処置は検査室内で行う。",
+      "イ": "人体の発熱は主に傾斜磁場によって生じる。",
+      "ウ": "胎児や乳児に対する安全性は確立されている。",
+      "エ": "導電性ワイヤーを内在したカテーテルは、発熱の原因となる。",
+      "オ": "条件つきMRI 対応ペースメーカは、撮影条件を遵守すればすべての施設で 検査が可能である。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "導電性ワイヤーはMRIの高周波電磁場で電流が誘導され、発熱・熱傷の原因となる。条件付き機器は個別の使用条件と実施施設の体制を守る必要がある。",
+    "choiceExplanations": {
+      "ア": "磁性体を含む救命器具の持込みを避け、救命処置は安全な場所へ搬出して行う。",
+      "イ": "人体の発熱に主に関与するのはRF（高周波）であり、傾斜磁場が主因ではない。",
+      "ウ": "胎児や乳児に対する安全性が一律に確立しているとはいえず、適応と条件の慎重な判断が必要である。",
+      "エ": "導電性ワイヤーに誘導される電流によって局所が加熱される危険がある。",
+      "オ": "撮影条件だけでなく、機器確認・監視・施設要件等も必要で、すべての施設で可能とはいえない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問39（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q40",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 40,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "細胞のエネルギー産生に最も深く関わるのはどれか。",
+    "choices": {
+      "ア": "核",
+      "イ": "小胞体",
+      "ウ": "リボソーム",
+      "エ": "ミトコンドリア",
+      "オ": "Golgi〈ゴルジ〉体"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ミトコンドリアは電子伝達系と酸化的リン酸化によるATP産生を担う。細胞のエネルギー産生に最も深く関わるのは4。",
+    "choiceExplanations": {
+      "ア": "核は遺伝情報の保持と転写などを担う。",
+      "イ": "小胞体はタンパク質や脂質の合成、細胞内輸送等に関わる。",
+      "ウ": "リボソームはタンパク質の翻訳を担う。",
+      "エ": "ミトコンドリアでは酸化的リン酸化により多くのATPが産生される。",
+      "オ": "Golgi体はタンパク質等の修飾・仕分け・分泌に関わる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問40（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q41",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 41,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "左右一対あるのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "延　髄",
+      "イ": "視　床",
+      "ウ": "脳　梁",
+      "エ": "被　殻",
+      "オ": "下垂体"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "視床と被殻は左右の脳半球にそれぞれ存在する。延髄、脳梁、下垂体は正中にある構造である。",
+    "choiceExplanations": {
+      "ア": "延髄は脳幹の正中部の一つの構造である。",
+      "イ": "視床は第三脳室の左右にあり、一対である。",
+      "ウ": "脳梁は左右半球をつなぐ正中の交連線維で、一対の構造ではない。",
+      "エ": "被殻は左右の大脳基底核にあるため一対である。",
+      "オ": "下垂体はトルコ鞍内の正中に位置する一つの器官である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問41（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q42",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 42,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "門脈に流入するのはどれか。",
+    "choices": {
+      "ア": "奇静脈",
+      "イ": "腎静脈",
+      "ウ": "肺静脈",
+      "エ": "下大静脈",
+      "オ": "上腸間膜静脈"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "上腸間膜静脈は腸管からの静脈血を集め、脾静脈と合流して門脈を形成する。",
+    "choiceExplanations": {
+      "ア": "奇静脈は上大静脈へ流入する。",
+      "イ": "腎静脈は下大静脈へ流入する。",
+      "ウ": "肺静脈は左心房へ流入する。",
+      "エ": "下大静脈は右心房へ流入し、門脈へは入らない。",
+      "オ": "上腸間膜静脈は門脈系を構成し、門脈へ流入する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問42（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q43",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 43,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "胎盤を通過する抗体はどれか。",
+    "choices": {
+      "ア": "IgA",
+      "イ": "IgD",
+      "ウ": "IgE",
+      "エ": "IgG",
+      "オ": "IgM"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "IgGは胎盤のFc受容体を介して母体から胎児へ移行し、出生後初期の受動免疫を担う。",
+    "choiceExplanations": {
+      "ア": "IgAは主に粘膜分泌液や母乳に存在し、胎盤を通過する主要抗体ではない。",
+      "イ": "IgDは主にB細胞表面の受容体として働く。",
+      "ウ": "IgEはアレルギーや寄生虫防御に関わり、胎盤通過抗体ではない。",
+      "エ": "IgGは胎盤を通過して胎児へ母体の免疫を伝える。",
+      "オ": "IgMは大きな五量体で胎盤を通過しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問43（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q44",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 44,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "我が国の新規人工透析導入の原因で最も多いのはどれか。",
+    "choices": {
+      "ア": "腎結石",
+      "イ": "多発性囊胞腎",
+      "ウ": "糖尿病性腎症",
+      "エ": "ループス腎炎",
+      "オ": "慢性糸球体腎炎"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "出題時期の日本の新規透析導入患者では、糖尿病性腎症が主要な原疾患であり、選択肢の中で最も多い。",
+    "choiceExplanations": {
+      "ア": "腎結石で腎不全に至ることはあるが、新規透析導入の最多原疾患ではない。",
+      "イ": "多発性囊胞腎は遺伝性の腎疾患だが、糖尿病性腎症より導入数は少ない。",
+      "ウ": "糖尿病に伴う慢性的な腎障害が進行して透析に至る例が多く、本問の正解である。",
+      "エ": "ループス腎炎は全身性エリテマトーデスに伴う腎障害で、導入数は糖尿病性腎症より少ない。",
+      "オ": "慢性糸球体腎炎は重要な原因だが、出題時期には糖尿病性腎症がより多い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問44（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://docs.jsdt.or.jp/overview/file/2024/pdf/introduction.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q45",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 45,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "情報機器作業に関連する自覚症状で頻度が低いのはどれか。",
+    "choices": {
+      "ア": "胸　痛",
+      "イ": "腰　痛",
+      "ウ": "頸部痛",
+      "エ": "眼精疲労",
+      "オ": "手関節痛"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "情報機器作業では近見による眼精疲労と、長時間の同じ姿勢や反復操作による筋骨格症状が多い。胸痛はこれらに比べ代表的な自覚症状としての頻度が低い。",
+    "choiceExplanations": {
+      "ア": "胸痛は情報機器作業に直接結びつく典型的な眼・筋骨格症状ではない。",
+      "イ": "長時間の座位や不適切な姿勢で腰痛を生じやすい。",
+      "ウ": "画面を見る姿勢や頸部の緊張で頸部痛を生じやすい。",
+      "エ": "近見の持続や画面の反射等で眼精疲労を生じやすい。",
+      "オ": "キーボードやマウスの反復操作で手関節に負担がかかる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問45（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q46",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 46,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "肩関節の腱板を構成する構造で誤っているのはどれか。",
+    "choices": {
+      "ア": "棘上筋腱",
+      "イ": "棘下筋腱",
+      "ウ": "小円筋腱",
+      "エ": "肩甲下筋腱",
+      "オ": "上腕二頭筋長頭腱"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "腱板を構成するのは棘上筋・棘下筋・小円筋・肩甲下筋の腱である。上腕二頭筋長頭腱は肩の安定に関与するが腱板には含めない。",
+    "choiceExplanations": {
+      "ア": "棘上筋腱は腱板の上部を構成する。",
+      "イ": "棘下筋腱は腱板の後部を構成する。",
+      "ウ": "小円筋腱は腱板の後下部を構成する。",
+      "エ": "肩甲下筋腱は腱板の前部を構成する。",
+      "オ": "上腕二頭筋長頭腱は腱板を構成する四つの筋腱には含まれず、これが誤りの肢である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問46（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q47",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 47,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "細菌性肺炎の患者の血液検査で異常高値となる可能性が高いのはどれか。",
+    "choices": {
+      "ア": "赤血球数",
+      "イ": "血色素量",
+      "ウ": "ヘマトクリット値",
+      "エ": "白血球数",
+      "オ": "血小板数"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "細菌性肺炎では感染に対する炎症反応で、とくに好中球を中心とした白血球数の増加が起こりやすい。",
+    "choiceExplanations": {
+      "ア": "赤血球数の増加は細菌性肺炎の典型的な炎症所見ではない。",
+      "イ": "血色素量は貧血等の指標で、細菌性肺炎による異常高値の代表ではない。",
+      "ウ": "ヘマトクリットは赤血球の容積比で、典型的な感染指標ではない。",
+      "エ": "細菌感染に対して白血球、特に好中球が増えやすいため正解である。",
+      "オ": "血小板が反応性に増える場合はあるが、本問で可能性が高い代表的指標は白血球数である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問47（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q48",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 48,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "若年者と比較して高齢者で発症頻度が低いのはどれか。",
+    "choices": {
+      "ア": "多発性硬化症",
+      "イ": "慢性硬膜下血腫",
+      "ウ": "特発性正常圧水頭症",
+      "エ": "Parkinson〈パーキンソン〉病",
+      "オ": "Alzheimer〈アルツハイマー〉型認知症"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "多発性硬化症は若年成人に発症することが多い脱髄疾患である。他の肢は高齢者に多い疾患であり、正解は1。",
+    "choiceExplanations": {
+      "ア": "多発性硬化症は若年成人に多く、高齢者での初発は相対的に少ない。",
+      "イ": "慢性硬膜下血腫は高齢者の脳萎縮等を背景に生じやすい。",
+      "ウ": "特発性正常圧水頭症は主に高齢者に生じる。",
+      "エ": "Parkinson病の発症は中高年以降に多い。",
+      "オ": "Alzheimer型認知症の頻度は加齢とともに増加する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問48（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q49",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 49,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "食道と同じ上皮組織を持つ臓器はどれか。",
+    "choices": {
+      "ア": "胃",
+      "イ": "十二指腸",
+      "ウ": "回　腸",
+      "エ": "結　腸",
+      "オ": "肛　門"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "食道の上皮は重層扁平上皮であり、肛門の肛門管遠位側にも重層扁平上皮が存在する。胃や腸の粘膜は主に単層円柱上皮である。",
+    "choiceExplanations": {
+      "ア": "胃粘膜の表面は単層円柱上皮である。",
+      "イ": "十二指腸の粘膜は吸収と分泌を担う単層円柱上皮である。",
+      "ウ": "回腸粘膜も主に単層円柱上皮である。",
+      "エ": "結腸粘膜も主に単層円柱上皮である。",
+      "オ": "肛門管では遠位側に重層扁平上皮があり、食道と同じ上皮組織を持つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問49（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q50",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 50,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "壊死に伴う変化はどれか。",
+    "choices": {
+      "ア": "細胞収縮",
+      "イ": "細胞分裂",
+      "ウ": "細胞膜の破裂",
+      "エ": "核クロマチンの凝縮",
+      "オ": "プログラムされた死"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "壊死では細胞が膨化し、膜の完全性が失われて破裂し、内容物が流出して炎症を起こす。細胞収縮や核クロマチン凝縮は主にアポトーシスの特徴である。",
+    "choiceExplanations": {
+      "ア": "細胞収縮はアポトーシスの代表的形態変化で、壊死では膨化が典型的である。",
+      "イ": "細胞分裂は増殖であり、壊死に伴う死の変化ではない。",
+      "ウ": "膜が破れて細胞内容物が流出することは壊死の特徴である。",
+      "エ": "核クロマチンの凝縮はアポトーシスで目立つ特徴である。",
+      "オ": "プログラムされた細胞死はアポトーシスで、壊死とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問50（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q51",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 51,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "播種性血管内凝固〈DIC：disseminated intravascular coagulation〉で認められるのはどれか。",
+    "choices": {
+      "ア": "血小板数増加",
+      "イ": "D-ダイマー増加",
+      "ウ": "フィブリノゲン増加",
+      "エ": "プラスミノゲン増加",
+      "オ": "活性化部分トロンボプラスチン時間短縮"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "DICでは全身で凝固が活性化して血栓を作り、凝固因子や血小板を消費する。できた架橋フィブリンの分解が増えるためD-ダイマーが増加する。",
+    "choiceExplanations": {
+      "ア": "血小板は消費されるため一般に減少する。",
+      "イ": "架橋フィブリンの分解産物であるD-ダイマーが増加する。",
+      "ウ": "フィブリノゲンは凝固で消費され、典型的には低下する。",
+      "エ": "線溶でプラスミノゲンが消費されるため、増加を典型所見としない。",
+      "オ": "凝固因子消費によってAPTTは延長し得るため、短縮を典型所見としない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問51（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q52",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 52,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "慢性放射線皮膚炎が先行病変となるのはどれか。",
+    "choices": {
+      "ア": "悪性黒色腫",
+      "イ": "カポジ肉腫",
+      "ウ": "有棘細胞癌",
+      "エ": "メルケル細胞癌",
+      "オ": "成人T 細胞白血病"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "慢性放射線皮膚炎や慢性潰瘍・瘢痕は有棘細胞癌の発生母地となり得る。正解は3。",
+    "choiceExplanations": {
+      "ア": "悪性黒色腫はメラノサイト由来で、慢性放射線皮膚炎を典型的な先行病変とする答えではない。",
+      "イ": "カポジ肉腫はHHV-8等と関連する血管系の腫瘍である。",
+      "ウ": "慢性放射線皮膚炎に伴う傷害部位から有棘細胞癌が発生することがある。",
+      "エ": "メルケル細胞癌は皮膚の神経内分泌癌で、本問の慢性皮膚傷害からの典型的発癌ではない。",
+      "オ": "成人T細胞白血病はHTLV-1と関連し、慢性放射線皮膚炎から生じる癌ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問52（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q53",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 53,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "内分泌器官はどれか。",
+    "choices": {
+      "ア": "汗　腺",
+      "イ": "乳　腺",
+      "ウ": "涙　腺",
+      "エ": "顎下腺",
+      "オ": "副甲状腺"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "副甲状腺は副甲状腺ホルモンを血中へ分泌し、カルシウム代謝を調節する内分泌器官である。",
+    "choiceExplanations": {
+      "ア": "汗腺は導管を通じて皮膚表面へ汗を出す外分泌腺である。",
+      "イ": "乳腺は導管を通じて乳汁を分泌する外分泌腺である。",
+      "ウ": "涙腺は涙を眼表面へ分泌する外分泌腺である。",
+      "エ": "顎下腺は唾液を口腔内へ出す外分泌腺である。",
+      "オ": "副甲状腺はホルモンを血中へ放出する内分泌腺である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問53（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q54",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 54,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "診療放射線技師が実施できる行為はどれか。",
+    "choices": {
+      "ア": "胸部正面X 線写真にて腫瘤影を認めたので、側面像を追加した。",
+      "イ": "国家試験合格を確認したので、すぐに診療放射線技師業務を開始した。",
+      "ウ": "人員が不足していたため、看護師に照射スイッチを押すように依頼した。",
+      "エ": "放射線治療中に患者が体調不良を訴えたため、一時的に治療を中断した。",
+      "オ": "未告知の癌患者に放射線治療の適応について問いただされたため、告知し た。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "患者が体調不良を訴えたとき、安全のために一時的に照射を中断し、医師に報告して指示を受けることは診療放射線技師が行える。診断、独自の検査追加、無免許業務等とは区別する。",
+    "choiceExplanations": {
+      "ア": "医師等の指示を受けずに自己判断で追加照射・撮影を決めることはできない。",
+      "イ": "国家試験合格だけでなく、免許の登録を受けてから業務を開始する。",
+      "ウ": "人体への放射線照射を看護師に代行させることはできない。",
+      "エ": "安全を確保するために一時中断し、医師へ状況を報告して対応することは可能である。",
+      "オ": "癌の告知と治療適応の説明は医師の判断・説明に委ね、技師が独自に告知しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問54（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "lawReferenceDate": "2026-02-19"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q55",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 55,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2/4/5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "水の放射線分解で正しいのはどれか。",
+    "choices": {
+      "ア": "活性酸素は生じない。",
+      "イ": "電離した水分子は不対電子を持つ。",
+      "ウ": "放射線照射後1 ～2 秒程度の時間を要する。",
+      "エ": "水分子は電子を取り込みマイナスに荷電する。",
+      "オ": "ヒドロキシラジカルと水素ラジカルが結合する。"
+    },
+    "answer": [
+      "イ",
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 1,
+    "explanation": "水の放射線分解は電離・励起に続いてラジカルや水和電子等を生じる。公式通知は複数の正解があるとして2・4・5をそれぞれ正解として採点した。三つ全部を選ぶ設問ではない。",
+    "choiceExplanations": {
+      "ア": "ヒドロキシラジカル等の反応性の高い種を生じるので、活性酸素は生じないという断定は誤り。",
+      "イ": "電子を失ったH₂O⁺は不対電子を持つラジカルカチオンとなる。公式に正解とされた。",
+      "ウ": "初期の電離やその後の化学反応は秒よりはるかに短い時間で進み、1～2秒を要するという説明は不適切。",
+      "エ": "電子を取り込んだ水分子は一時的に負に荷電したH₂O⁻となり得る。公式に正解とされた。",
+      "オ": "ヒドロキシラジカルと水素ラジカルは再結合して水を生じ得る。公式に正解とされた。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問55（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken06/dl/AM55.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q56",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 56,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "ある細胞をシャーレに1,200個ずつ分注し、様々な線量のα線を照射してからしばらく培養したところ、次の表の数のコロニーができた。\nこのデータを使って作成した生存率のグラフで正しいのはどれか。\n縦軸は生存率、横軸は線量［Gy］を示す。",
+    "choices": {
+      "ア": "グラフ1（選択肢の図参照）",
+      "イ": "グラフ2（選択肢の図参照）",
+      "ウ": "グラフ3（選択肢の図参照）",
+      "エ": "グラフ4（選択肢の図参照）",
+      "オ": "グラフ5（選択肢の図参照）"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "無照射時のコロニー形成率は600/1,200＝0.5。補正生存率は0・1・2・3・4 Gyで1、170/600、50/600、14/600、4/600、すなわち1、約0.283、0.0833、0.0233、0.00667。片対数上でほぼ直線的に減少するグラフ5が対応する。",
+    "choiceExplanations": {
+      "ア": "0 Gyの生存率が約0.1で、無照射を1とする補正を満たさない。",
+      "イ": "0 Gyが約0.2で、1 Gyで急落する形も実測比と合わない。",
+      "ウ": "0 Gyは1だが1 Gyで極端に低下した後に増加しており、実測データと異なる。",
+      "エ": "0 Gyは1だが1～2 Gy間の減少が急で、各線量の実測生存率に対応しない。",
+      "オ": "無照射を1として、約0.283、0.0833、0.0233、0.00667へほぼ指数関数的に減少する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問56（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q56.png"
+    ],
+    "imageAltTexts": [
+      "線量別コロニー数の表"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ],
+    "choiceImageUrls": {
+      "ア": "/images/questions/shinryo-hoshasengishi/2026-am-q56-choice1.png",
+      "イ": "/images/questions/shinryo-hoshasengishi/2026-am-q56-choice2.png",
+      "ウ": "/images/questions/shinryo-hoshasengishi/2026-am-q56-choice3.png",
+      "エ": "/images/questions/shinryo-hoshasengishi/2026-am-q56-choice4.png",
+      "オ": "/images/questions/shinryo-hoshasengishi/2026-am-q56-choice5.png"
+    }
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q57",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 57,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "体重60 kg の男性がγ 線の全身急性被ばくをしたときの半致死線量（LD50/60）に相当する吸収エネルギー［J］はどれか。",
+    "choices": {
+      "ア": "60",
+      "イ": "120",
+      "ウ": "180",
+      "エ": "240",
+      "オ": "480"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "本問で用いる全身急性γ線被ばくのLD50/60は約4 Gy。1 Gy＝1 J/kgより、60 kgに対する吸収エネルギーは4×60＝240 Jとなる。",
+    "choiceExplanations": {
+      "ア": "60 Jでは1 Gyで、半致死線量に達しない。",
+      "イ": "120 Jでは2 Gyで、本問の約4 Gyより小さい。",
+      "ウ": "180 Jでは3 Gyで、本問の約4 Gyより小さい。",
+      "エ": "240 J÷60 kg＝4 Gyとなり正しい。",
+      "オ": "480 Jでは8 Gyとなり、本問の約4 Gyの2倍。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問57（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q58",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 58,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射線発がんで正しいのはどれか。",
+    "choices": {
+      "ア": "リスクは男性が女性の2 倍とされる。",
+      "イ": "固形癌の発生は被ばく後7 ～8 年でピークとなる。",
+      "ウ": "リスク評価には日本の原爆被爆者データが用いられている。",
+      "エ": "放射線の影響の判断には相対リスクより絶対リスクが適している。",
+      "オ": "皮膚以外に発生するものは線量効果関係においてしきい値を有する。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "放射線発がんのリスク評価では日本の原爆被爆者の長期追跡データが重要な根拠となる。発がんは確率的影響として扱い、防護上はしきい値なしのモデルを用いる。",
+    "choiceExplanations": {
+      "ア": "リスクは性別・年齢・臓器等で異なり、男性が女性の一律2倍ではない。",
+      "イ": "固形癌は長い潜伏期間を経てリスク増加が続き、7～8年に一律のピークを置く説明は不適切。",
+      "ウ": "原爆被爆者の寿命調査等が発がんリスク推定に用いられている。",
+      "エ": "過剰相対リスクと過剰絶対リスクは目的に応じて用い、絶対リスクが常に適するとはいえない。",
+      "オ": "皮膚か否かでしきい値の有無を分けるものではなく、防護上はしきい値なしとして扱う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問58（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q59",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 59,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "放射線に対する細胞の感受性で正しいのはどれか。",
+    "choices": {
+      "ア": "細胞が大きいほど高い。",
+      "イ": "分化度が高いほど高い。",
+      "ウ": "分裂能が低いほど高い。",
+      "エ": "神経細胞は高感受性である。",
+      "オ": "造血細胞は高感受性である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "一般に分裂が盛んで未分化な細胞ほど放射線感受性が高い。造血細胞は増殖が盛んなため高感受性である。",
+    "choiceExplanations": {
+      "ア": "細胞の大きさは感受性を一律に決める指標ではない。",
+      "イ": "一般に分化度が低いほど感受性が高く、肢は逆。",
+      "ウ": "一般に分裂能が高いほど感受性が高く、肢は逆。",
+      "エ": "成熟神経細胞は分裂が乏しく、比較的低感受性。",
+      "オ": "造血細胞は分裂・増殖が盛んで高感受性。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問59（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q60",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 60,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "エネルギーが0.025 eVの中性子の速度［m/s］に最も近いのはどれか。\nただし、中性子の質量を1.7×10⁻²⁷ kg、1 eV＝1.6×10⁻¹⁹ Jとする。",
+    "choices": {
+      "ア": "1.5×10³",
+      "イ": "2.2×10³",
+      "ウ": "4.7×10⁶",
+      "エ": "5.4×10¹²",
+      "オ": "1.4×10²²"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "E＝mv²/2よりv＝√(2E/m)。E＝0.025×1.6×10⁻¹⁹＝4.0×10⁻²¹ Jなので、v≒2.17×10³ m/s。最も近いのは2。",
+    "choiceExplanations": {
+      "ア": "1.5×10³ m/sは計算値より小さい。",
+      "イ": "2.2×10³ m/sが計算値に最も近い。",
+      "ウ": "速度の二乗が約4.7×10⁶ m²/s²であり、平方根が必要。",
+      "エ": "計算値から大きく外れ、光速も超える。",
+      "オ": "単位換算と平方根を正しく扱った結果ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問60（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q61",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 61,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "同中性子体の関係にある組合せで正しいのはどれか。",
+    "choices": {
+      "ア": "¹²C／¹⁶O",
+      "イ": "¹³C／¹⁴C",
+      "ウ": "¹⁴N／¹⁴C",
+      "エ": "¹⁵N／¹⁶O",
+      "オ": "¹⁶O／¹⁶N"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "同中性子体は原子番号が異なり中性子数A－Zが等しい核種。¹⁵Nは15－7＝8、¹⁶Oは16－8＝8なので4が正しい。",
+    "choiceExplanations": {
+      "ア": "¹²Cは中性子6、¹⁶Oは8で一致しない。",
+      "イ": "¹³Cは7、¹⁴Cは8。同位体の組合せ。",
+      "ウ": "¹⁴Nは7、¹⁴Cは8。質量数が等しい同重体。",
+      "エ": "¹⁵Nと¹⁶Oはともに中性子8で同中性子体。",
+      "オ": "¹⁶Oは8、¹⁶Nは9。質量数が等しい同重体。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問61（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q62",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 62,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "特性X 線で正しいのはどれか。2 つ選べ。",
+    "choices": {
+      "ア": "オージェ電子と競合して放出される。",
+      "イ": "原子番号が高いほど波長が短くなる。",
+      "ウ": "エネルギー分布は連続スペクトルである。",
+      "エ": "中性子と物質との相互作用によって発生する。",
+      "オ": "電子が原子核のクーロン力によって減速する過程で発生する。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "内殻空孔を外殻電子が埋めるとき、特性X線とオージェ電子の放出が競合する。原子番号が高いほど遷移エネルギーが大きく波長が短い。正解1・2。",
+    "choiceExplanations": {
+      "ア": "空孔の緩和では蛍光X線とオージェ電子の放出が競合する。",
+      "イ": "原子番号の増加でエネルギーが高くなり、λ＝hc/Eより波長が短い。",
+      "ウ": "殻間のエネルギー差に対応する線スペクトルである。",
+      "エ": "内殻空孔を埋める電子遷移で発生する。中性子との相互作用を直接の機序とする説明は不適切。",
+      "オ": "原子核の電場で電子が減速して発生するのは制動X線。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問62（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q63",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 63,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "電子と物質との相互作用はどれか。2 つ選べ。",
+    "choices": {
+      "ア": "制動放射",
+      "イ": "光核反応",
+      "ウ": "電子対生成",
+      "エ": "コンプトン散乱",
+      "オ": "Cherenkov〈チェレンコフ〉放射"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "電子は原子核の電場で減速すると制動放射を生じ、媒質中の光の位相速度を超えて進むとCherenkov放射を生じる。正解1・5。",
+    "choiceExplanations": {
+      "ア": "電子の偏向・減速による光子放出で、電子と物質との相互作用。",
+      "イ": "光核反応は光子と原子核との相互作用。",
+      "ウ": "電子対生成は光子から電子と陽電子を生じる過程。",
+      "エ": "コンプトン散乱は入射光子と電子との相互作用。",
+      "オ": "荷電粒子が媒質中の光の位相速度を超えると発光する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問63（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q64",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 64,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "超音波の性質で正しいのはどれか。",
+    "choices": {
+      "ア": "空気中を伝播しやすい。",
+      "イ": "組織中を進むにつれて増幅される。",
+      "ウ": "伝播速度は脂肪組織よりも水中の方が遅い。",
+      "エ": "音響インピーダンスの差が大きい境界面では反射が強くなる。",
+      "オ": "ドプラ効果とは超音波が骨に当たって乱反射する現象である。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "音響インピーダンスは密度と音速の積。両媒質の音響インピーダンス差が大きい境界ほど反射が強い。",
+    "choiceExplanations": {
+      "ア": "空気と生体の境界では強く反射され、空気中での減衰も大きい。",
+      "イ": "組織中で吸収・散乱により減衰し、自動的に増幅されない。",
+      "ウ": "一般に水中の音速は脂肪組織より速い。",
+      "エ": "音響インピーダンス差が大きい境界で反射係数が大きくなる。",
+      "オ": "ドプラ効果は音源・反射体の運動による観測周波数の変化で、骨での乱反射ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問64（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q65",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 65,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "定電流源を用いた電源回路を図に示す。P 点の対地電位［V］はどれか。",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "2",
+      "エ": "3",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "P点電位をVとする。16 V側へ向かう2 Ωの電流は(V－16)/2、接地へ向かう1 ΩはV、定電流源は下向き5 A。節点則V＋(V－16)/2＋5＝0からV＝2 V。",
+    "choiceExplanations": {
+      "ア": "0 Vは節点から出る電流の和が0にならない。",
+      "イ": "1 Vでは電流の和が－1.5 Aとなる。",
+      "ウ": "2＋(2－16)/2＋5＝0を満たし正しい。",
+      "エ": "3 Vでは電流の和が1.5 Aとなる。",
+      "オ": "5 Vでは電流の和が4.5 Aとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問65（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q65.png"
+    ],
+    "imageAltTexts": [
+      "定電流源5 A、抵抗1 Ω・2 Ω、電圧16 Vの回路"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q66",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 66,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "正弦波交流回路の電圧波形e（t）と電流波形i（t）を図に示す。消費電力［W］に最も近いのはどれか。",
+    "choices": {
+      "ア": "0",
+      "イ": "5",
+      "ウ": "10",
+      "エ": "20",
+      "オ": "40"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "図の最大電圧8 V、最大電流5 A、位相差π/3。実効値は最大値の1/√2なので、有効電力＝(8/√2)(5/√2)cos(π/3)＝10 W。",
+    "choiceExplanations": {
+      "ア": "有効電力0は位相差π/2の場合で、図と異なる。",
+      "イ": "実効値と力率を使う計算の半分になってしまう。",
+      "ウ": "最大値の積を2で割り、力率1/2を掛けると10 W。",
+      "エ": "20 Wは実効値の積である皮相電力。",
+      "オ": "40 Wは最大電圧と最大電流の積で、平均有効電力ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問66（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q66.png"
+    ],
+    "imageAltTexts": [
+      "電圧と電流の正弦波波形"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q67",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 67,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "図の回路で、時刻t ＝0 でvi に20 mV の直流電圧を加えたとき、t ＝3 s における出力電圧vo［V］に最も近いのはどれか。ただし、演算増幅器は理想的な特性を有する。",
+    "choices": {
+      "ア": "－5",
+      "イ": "－3",
+      "ウ": "0",
+      "エ": "3",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "図は反転積分回路。RC＝10 kΩ×2 μF＝0.020 s。初期出力0としてvₒ＝－(1/RC)∫vᵢdt＝－0.020×3/0.020＝－3 V。",
+    "choiceExplanations": {
+      "ア": "－5 Vは与えられた時定数に対応しない。",
+      "イ": "－vᵢt/(RC)＝－3 Vとなる。",
+      "ウ": "非零の直流を積分するので3秒後の出力は0ではない。",
+      "エ": "3 Vは反転符号を落とした値。",
+      "オ": "5 Vは符号と大きさがともに誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問67（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q67.png"
+    ],
+    "imageAltTexts": [
+      "10 kΩ・2 μFの反転積分回路"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q68",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 68,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "光子フルエンス当たりの相互作用係数を表しているのはどれか。",
+    "choices": {
+      "ア": "カーマ",
+      "イ": "照射線量",
+      "ウ": "線阻止能",
+      "エ": "線減弱係数",
+      "オ": "線エネルギー付与"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "線減弱係数μは光子が単位距離を進む間に相互作用する確率を表す。光子フルエンスに対する相互作用の起こりやすさの係数である。",
+    "choiceExplanations": {
+      "ア": "カーマは非荷電粒子が荷電粒子へ移した運動エネルギーの単位質量当たりの量。",
+      "イ": "照射線量は光子が空気に生じた電荷の単位質量当たりの量。",
+      "ウ": "線阻止能は荷電粒子の単位飛程当たりの平均エネルギー損失。",
+      "エ": "線減弱係数は光子フルエンスに対する相互作用係数。",
+      "オ": "線エネルギー付与は荷電粒子が単位飛程当たり局所へ付与するエネルギー。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問68（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q69",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 69,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "Bragg-Gray〈ブラッグ・グレイ〉の空洞理論で誤っているのはどれか。",
+    "choices": {
+      "ア": "荷電粒子に適用できる。",
+      "イ": "電子平衡状態で成立する。",
+      "ウ": "空洞内の電子フルエンスは一様である。",
+      "エ": "空洞の大きさは二次電子の最大飛程より小さい。",
+      "オ": "空気と物質の吸収線量の比は質量エネルギー吸収係数の比に等しい。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Bragg-Grayの小空洞理論は空洞が荷電粒子場を乱さないと仮定し、媒質と空洞の線量を質量衝突阻止能比で関係づける。5が誤り。",
+    "choiceExplanations": {
+      "ア": "空洞を横切る二次電子等の荷電粒子を扱う理論。",
+      "イ": "本問では周囲の電子平衡を前提とする。",
+      "ウ": "小空洞内で電子フルエンスが一様とみなせることが前提。",
+      "エ": "空洞は二次電子の飛程に対して十分小さい必要がある。",
+      "オ": "線量比を与えるのは質量衝突阻止能比で、光子の質量エネルギー吸収係数比ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問69（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q70",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 70,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "空洞電離箱線量計を用いて大気条件25.0 ℃、100.0 kPa のもとで照射線量を測定した。温度気圧補正係数に最も近いのはどれか。ただし、空洞電離箱線量計は基準大気条件22.0 ℃、101.3 kPa のもとで校正されたものとする。",
+    "choices": {
+      "ア": "0.95",
+      "イ": "0.98",
+      "ウ": "1.00",
+      "エ": "1.02",
+      "オ": "1.05"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "温度気圧補正kTP＝[(273.15＋25.0)/(273.15＋22.0)]×(101.3/100.0)≒1.0233。最も近い1.02を選ぶ。",
+    "choiceExplanations": {
+      "ア": "高温・低圧で空気密度が低いため、1未満の補正は向きが逆。",
+      "イ": "温度・圧力の比を逆にした値に近く、適切な補正ではない。",
+      "ウ": "基準条件と異なるので1.00ではない。",
+      "エ": "計算値1.0233に最も近い。",
+      "オ": "1.05は計算値より大きく、最も近い値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問70（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q71",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 71,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "照射線量が2.0×10⁻⁴ C/kgのとき、空気カーマ［Gy］に最も近いのはどれか。\nただし、空気のW値を34 eV、電気素量を1.6×10⁻¹⁹ C、1 eV＝1.6×10⁻¹⁹ Jとする。",
+    "choices": {
+      "ア": "1.7×10⁻⁴⁰",
+      "イ": "5.9×10⁻⁶",
+      "ウ": "1.1×10⁻³",
+      "エ": "6.8×10⁻³",
+      "オ": "4.3×10¹⁶"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "空気カーマK＝X(W/e)。34 eV/e＝34 J/Cなので、K＝2.0×10⁻⁴×34＝6.8×10⁻³ Gy。",
+    "choiceExplanations": {
+      "ア": "eVからJへの換算と電気素量はW/eで打ち消し合う。この値は桁が合わない。",
+      "イ": "W/eを掛ける計算と一致しない。",
+      "ウ": "与えられた照射線量とW値から得る値より小さい。",
+      "エ": "2.0×10⁻⁴ C/kg×34 J/C＝6.8×10⁻³ J/kgで正しい。",
+      "オ": "電気素量とeV換算を正しく相殺した値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問71（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q72",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 72,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "GM 計数管の出力電圧と時間の関係を図に示す。図の説明で正しいのはどれか。",
+    "choices": {
+      "ア": "B は分解時間である。",
+      "イ": "A が短いほど数え落としが多くなる。",
+      "ウ": "図からβ 線のエネルギーを取得できる。",
+      "エ": "出力電圧の高さは放射能の強さに比例する。",
+      "オ": "波高弁別レベルを超えたパルスの数を計数する。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "GM計数管の放電後は回復までパルス波高が変化する。計数回路は設定した波高弁別レベルを超えるパルスを数えるので5が正しい。",
+    "choiceExplanations": {
+      "ア": "分解時間は放電後に再び弁別レベルを超えるパルスを得られるまでの最短時間。図のBの長い区間をそのまま分解時間とする説明は不適切。",
+      "イ": "計数できない区間が短いほど次の事象を検出しやすく、数え落としは少なくなる。『短いほど多い』は逆。",
+      "ウ": "GM領域の波高は入射粒子のエネルギーに比例せず、β線エネルギーを得られない。",
+      "エ": "放射能の強さは主に単位時間の計数と関係し、各パルスの波高に比例しない。",
+      "オ": "設定した弁別レベルを超えるパルスを計数する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問72（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q72.png"
+    ],
+    "imageAltTexts": [
+      "GM計数管の出力電圧と時間、波高弁別レベル"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q73",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 73,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "X 線管装置で誤っているのはどれか。",
+    "choices": {
+      "ア": "放射口はX 線を通過させる開口部である。",
+      "イ": "焦点外X 線は実焦点外から放射されるX 線である。",
+      "ウ": "ターゲット角は実焦点面と基準軸とがなす角である。",
+      "エ": "実焦点は加速粒子が当たるターゲットの表面部分である。",
+      "オ": "総ろ過はX 線が透過する部分の取り外しできない物質による線質等価ろ過 である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "取り外せない管壁・窓等によるろ過は固有ろ過。総ろ過は固有ろ過と付加ろ過等を合わせたものなので5が誤り。",
+    "choiceExplanations": {
+      "ア": "放射口は有用X線束を取り出す開口部。",
+      "イ": "焦点外X線は実焦点以外の部分へ電子が当たり発生するX線。",
+      "ウ": "ターゲット角は実焦点面と基準軸のなす角。",
+      "エ": "実焦点は加速粒子が当たるターゲット上の領域。",
+      "オ": "取り外せない物質だけのろ過は固有ろ過で、総ろ過の定義ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問73（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q74",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 74,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "管電圧100 kV、管電流800 mA、撮影時間0.1 s、管電圧リプル百分率12％のインバータ式X 線装置の公称最大電力［kW］はどれか。",
+    "choices": {
+      "ア": "59.2",
+      "イ": "76.0",
+      "ウ": "80.0",
+      "エ": "96.0",
+      "オ": "125.0"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "管電圧リプルが10％以上の公称最大電力は0.95UIを用いる。100 kV×0.800 A×0.95＝76.0 kW。撮影時間0.1 sをさらに掛けない。",
+    "choiceExplanations": {
+      "ア": "本問の電力係数0.95を用いた値ではない。",
+      "イ": "0.95×100×0.800＝76.0 kWで正しい。",
+      "ウ": "UIの積であり、リプル12％の係数を考慮していない。",
+      "エ": "管電圧と電流の積80 kWを超え、式に合わない。",
+      "オ": "本問の公称最大電力の式から得られない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問74（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q75",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 75,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "イメージインテンシファイアで誤っているのはどれか。",
+    "choices": {
+      "ア": "管状の容器に収納されている。",
+      "イ": "入射したX 線は可視光に変換される。",
+      "ウ": "入力窓にはアルミニウムが用いられている。",
+      "エ": "X 線変換部、電子パターン変換部、出力像変換部からなる。",
+      "オ": "出力像変換部では入力時の約100 倍に増幅された可視光に変換される。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "イメージインテンシファイアはX線を光、光を電子に変え、電子加速と像縮小を経て出力蛍光面に明るい像を作る。5の約100倍という記述が誤り。",
+    "choiceExplanations": {
+      "ア": "真空管状の容器に変換・電子光学系を収納する。",
+      "イ": "入力蛍光面でX線を可視光へ変換する。",
+      "ウ": "入力窓には吸収を抑える薄いアルミニウム等を用いる。",
+      "エ": "X線、電子パターン、出力像の各変換部で構成される。",
+      "オ": "輝度増強はフラックス利得と縮小利得の積で、通常数千倍程度となる。約100倍だけの増幅ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問75（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q76",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 76,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "FPD で正しいのはどれか。",
+    "choices": {
+      "ア": "量子検出効率はCR に比べ低い。",
+      "イ": "TFT スイッチングで信号を読み取る。",
+      "ウ": "直接変換方式では輝尽性蛍光体が用いられる。",
+      "エ": "CR 方式に比べ撮影してから画像表示までの時間が長い。",
+      "オ": "間接変換方式は直接変換方式に比べ常時温度管理が必要である。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "FPDは画素ごとに蓄えた電荷をTFTで順次読み出す。直接方式は主にアモルファスセレン、間接方式はシンチレータとフォトダイオードで変換する。",
+    "choiceExplanations": {
+      "ア": "FPDは一般にCRより量子検出効率が高い。",
+      "イ": "画素のTFTスイッチを行・列ごとに制御し、電荷信号を読み取る。",
+      "ウ": "輝尽性蛍光体はCRで用い、直接変換FPDにはアモルファスセレン等を用いる。",
+      "エ": "FPDは読み取り機への搬送が不要で、通常CRより速く画像表示できる。",
+      "オ": "温度への配慮は特にセレンを用いる直接方式で重要であり、間接方式の方が常時温度管理を要するという比較は逆。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問76（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q77",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 77,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "散乱線除去グリッドの特性と計算式の組合せで正しいのはどれか。ただし、h：吸収はくの高さ、D：吸収はくの間隔、d：吸収はくの厚さ、Tp：一次放射線透過率、Ts：散乱放射線透過率、Tt：全放射線透過率とする。",
+    "choices": {
+      "ア": "グリッド比：(D＋d)/h",
+      "イ": "グリッド密度：1/D",
+      "ウ": "イメージ改善係数：Tp²/Tt",
+      "エ": "グリッド露出係数：1/Tp",
+      "オ": "コントラスト改善比：Ts/Tt"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "イメージ改善係数は一次放射線透過率の二乗を全放射線透過率で割ったTp²/Tt。グリッド比h/D、密度1/(D＋d)、露出係数1/Tt、コントラスト改善比Tp/Ttと区別する。",
+    "choiceExplanations": {
+      "ア": "グリッド比は吸収はく高さ/間隔＝h/Dで、(D＋d)/hではない。",
+      "イ": "グリッド密度は1/(D＋d)であり、はく厚dも含む。",
+      "ウ": "イメージ改善係数はTp²/Ttで正しい。",
+      "エ": "グリッド露出係数は1/Ttで、1/Tpではない。",
+      "オ": "コントラスト改善比はTp/Ttで、散乱線透過率Tsを分子にしない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問77（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q78",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 78,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "トモシンセシスで正しいのはどれか。",
+    "choices": {
+      "ア": "振り角は120 度以上である。",
+      "イ": "断層厚は振り角に依存しない。",
+      "ウ": "循環器用X 線撮影装置で用いられる。",
+      "エ": "回転中心と回転中心から離れた画像の空間分解能は同等である。",
+      "オ": "step and shoot 方式では一定の角度ごとにX 線管を止めて撮影する。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "トモシンセシスは限られた角度範囲の投影から断層像を再構成する。step and shootでは一定角度ごとに管球を停止して撮影する。",
+    "choiceExplanations": {
+      "ア": "通常は数十度程度の限られた振り角で、120度以上を要する説明は誤り。",
+      "イ": "断層厚や深さ方向の分解能は振り角に依存する。",
+      "ウ": "循環器用装置での回転撮影によるコーンビームCTとは区別する。",
+      "エ": "位置や幾何学条件の違いで空間分解能は変化し、回転中心と離れた位置で一律に同等とはいえない。",
+      "オ": "各角度でX線管を止めて曝射する方式であり正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問78（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q79",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 79,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "乳房用X 線装置で正しいのはどれか。",
+    "choices": {
+      "ア": "拡大撮影はできない。",
+      "イ": "自動露出機構を備える。",
+      "ウ": "インバータ式低電圧装置である。",
+      "エ": "X 線管長軸は撮影台と平行である。",
+      "オ": "放射窓の材料はタングステンである。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "乳房用X線装置は乳房厚・組織の違いに対応する自動露出機構を備える。低い管電圧を使うが、高電圧発生装置である点は一般撮影装置と同じ。",
+    "choiceExplanations": {
+      "ア": "小焦点と乳房支持台による拡大撮影が可能。",
+      "イ": "検出信号等に基づく自動露出機構を備える。",
+      "ウ": "インバータ方式でもX線発生に高電圧を用いるため、低電圧装置という分類は誤り。",
+      "エ": "X線管長軸は胸壁側から乳頭側へ向かう配置で、撮影台に平行とする記述は誤り。",
+      "オ": "低エネルギーX線を通す放射窓には主にベリリウムを用い、タングステンではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問79（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q80",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 80,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "X 線CT のアーチファクトで誤っているのはどれか。",
+    "choices": {
+      "ア": "メタルアーチファクト",
+      "イ": "リングアーチファクト",
+      "ウ": "ストリークアーチファクト",
+      "エ": "ケミカルシフトアーチファクト",
+      "オ": "ビームハードニングアーチファクト"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ケミカルシフトは水と脂肪の共鳴周波数差に由来するMRIのアーチファクトで、X線CTのものではない。",
+    "choiceExplanations": {
+      "ア": "金属による強い吸収等がCTにメタルアーチファクトを生む。",
+      "イ": "検出器の感度不均一等がCTのリングアーチファクトを生む。",
+      "ウ": "高吸収物体や投影データの不足等でCTのストリークが生じる。",
+      "エ": "共鳴周波数差に由来するMRIの現象であり、本問の誤り。",
+      "オ": "低エネルギー光子の選択的吸収による線質硬化がCTにアーチファクトを生む。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問80（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q81",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 81,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "X 線CT 装置の不変性試験の項目で正しいのはどれか。",
+    "choices": {
+      "ア": "架台チルト",
+      "イ": "散乱線測定",
+      "ウ": "z 軸方向の空間分解能",
+      "エ": "低コントラスト分解能",
+      "オ": "アキシャルスキャンの再構成スライス厚"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "CTの不変性試験では定期的な測定により基準状態からの変動を追う。規定の項目にアキシャルスキャンの再構成スライス厚が含まれる。",
+    "choiceExplanations": {
+      "ア": "架台チルトの機械的な確認は、本問で対象とする規定の不変性試験項目ではない。",
+      "イ": "散乱線測定は防護等の評価であり、このCT画像性能の不変性試験項目ではない。",
+      "ウ": "z軸方向の空間分解能を独立の項目とする記述は、本問の規定項目と異なる。",
+      "エ": "低コントラスト分解能は受入試験等で評価するが、本問の規定の不変性試験項目ではない。",
+      "オ": "アキシャルスキャンの再構成スライス厚を測定して変動を確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問81（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q82",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 82,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "不変性試験で正しいのはどれか。",
+    "choices": {
+      "ア": "契約仕様を満たしているかを確認する。",
+      "イ": "特定の時点における機器の性能を確認する。",
+      "ウ": "機器の構成要素の性能変化の早期発見をする。",
+      "エ": "既存の機器に大幅な改造が行われた後に実施する。",
+      "オ": "製品が必要な品質を満たしているか否かを確認する。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "不変性試験は基準となる機器性能が維持されているか定期的に調べ、構成要素の性能変化を早期に見つける試験である。",
+    "choiceExplanations": {
+      "ア": "契約仕様を満たすかを確認するのは受入試験。",
+      "イ": "特定時点の性能を詳細に確認するのは状態試験。",
+      "ウ": "基準からの性能変化を早期発見する目的で正しい。",
+      "エ": "大幅な改造後の性能・仕様確認は受入試験等で行う。",
+      "オ": "製品の品質適合性全般の確認と、使用中機器の性能維持を追う不変性試験は異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問82（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q83",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 83,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "X 線撮影条件で正しいのはどれか。",
+    "choices": {
+      "ア": "撮影距離が長いほど画像の拡大率が大きくなる。",
+      "イ": "照射野を広くすると画像コントラストが低下する。",
+      "ウ": "管電圧が高いほど被検者に対する透過性は低下する。",
+      "エ": "管電流が大きいほど入射X 線のエネルギーは高くなる。",
+      "オ": "エアギャップ法では検出器に到達する散乱線が増加する。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "照射野が広いほど散乱線が増え、被写体コントラストが低下する。距離・管電圧・管電流・エアギャップの作用を区別する。",
+    "choiceExplanations": {
+      "ア": "他条件が同じなら撮影距離を長くすると拡大率は1に近づき小さくなる。",
+      "イ": "照射野を広くすると散乱線が増えて画像コントラストが低下する。",
+      "ウ": "管電圧が高いほどX線エネルギーが高くなり、透過性は増す。",
+      "エ": "管電流は主にX線量を変え、光子エネルギーを高くしない。",
+      "オ": "エアギャップは散乱線が検出器を外れるようにし、到達散乱線を減らす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問83（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q84",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 84,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "剣状突起よりも尾側に位置するのはどれか。",
+    "choices": {
+      "ア": "胸骨上窩",
+      "イ": "喉頭隆起",
+      "ウ": "乳様突起",
+      "エ": "肩甲骨下縁",
+      "オ": "肋骨弓下縁"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "剣状突起は胸骨の尾側端である。肋骨弓はその両側からさらに尾側へ延びるため、肋骨弓下縁が正しい。",
+    "choiceExplanations": {
+      "ア": "胸骨上窩は胸骨の頭側にあり、剣状突起より頭側。",
+      "イ": "喉頭隆起は頸部にあり、剣状突起より頭側。",
+      "ウ": "乳様突起は側頭骨の突起で、頭部にある。",
+      "エ": "肩甲骨下縁は通常胸椎T7付近にあり、剣状突起より頭側。",
+      "オ": "肋骨弓下縁は剣状突起より尾側へ延びる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問84（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q85",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 85,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "頭部X 線撮影法と観察目的の組合せで正しいのはどれか。",
+    "choices": {
+      "ア": "Caldwell〈コールドウェル〉法   大後頭孔",
+      "イ": "Rhese〈レーゼ〉法   三半規管",
+      "ウ": "Schüller〈シュラー〉法   視神経管",
+      "エ": "Stenvers〈ステンバース〉法   トルコ鞍",
+      "オ": "Waters〈ウォータース〉法   頰　骨"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Waters法では上顎洞、眼窩下部、頰骨等を観察する。各撮影法の主な観察部位との組合せでは5が正しい。",
+    "choiceExplanations": {
+      "ア": "Caldwell法は前頭洞・篩骨洞等の観察。大後頭孔の代表はTowne法。",
+      "イ": "Rhese法は視神経管を観察する。",
+      "ウ": "Schüller法は乳突蜂巣等を観察し、視神経管ではない。",
+      "エ": "Stenvers法は錐体部・内耳等を観察し、トルコ鞍ではない。",
+      "オ": "Waters法は頰骨等を観察でき、組合せが正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問85（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q86",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 86,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "DLP で正しいのはどれか。",
+    "choices": {
+      "ア": "撮影1 回当たりの実効線量である。",
+      "イ": "CT 画像の空間分解能を示す指標である。",
+      "ウ": "スライス厚当たりの平均吸収線量である。",
+      "エ": "全撮影範囲のCTDIvol を積算した値である。",
+      "オ": "CT 画像のコントラスト分解能を示す指標である。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "DLPはCTDIvolを撮影長にわたって積算した線量長積で、単位はmGy・cm。実効線量そのものではない。",
+    "choiceExplanations": {
+      "ア": "実効線量を推定するには部位別の換算等が必要で、DLP自体とは異なる。",
+      "イ": "DLPは線量指標で、空間分解能を表さない。",
+      "ウ": "スライス厚当たりの平均吸収線量という定義ではなく、線量長積である。",
+      "エ": "CTDIvolを全撮影範囲にわたって積算した値で正しい。",
+      "オ": "線量指標であり、コントラスト分解能を表さない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問86（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q87",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 87,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "上部消化管造影検査で正しいのはどれか。",
+    "choices": {
+      "ア": "窒素で胃を膨らませる。",
+      "イ": "二重造影では胃小区を描出する。",
+      "ウ": "硫酸バリウムの使用量は500 mL 程度である。",
+      "エ": "半立位第2 斜位撮影では幽門部を描出できる。",
+      "オ": "Brown〈ブラウン〉法による前処置を実施する。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "二重造影ではバリウムが粘膜に薄く付着し、ガスで胃を展開して胃小区等の細かい粘膜構造を描出する。",
+    "choiceExplanations": {
+      "ア": "発泡剤で主に二酸化炭素を発生させ、窒素ではない。",
+      "イ": "二重造影は粘膜の微細な胃小区を描出する。",
+      "ウ": "二重造影の通常の使用量として500 mLは過大。",
+      "エ": "半立位第2斜位は主に胃上部を展開し、幽門部の描出法という説明は不適切。",
+      "オ": "Brown法の前処置は注腸造影など下部消化管検査で用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問87（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q88",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 88,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "経静脈性尿路造影写真（別冊No. 9）を別に示す。時系列が正しいのはどれか。",
+    "choices": {
+      "ア": "ア → イ → ウ → エ",
+      "イ": "イ → ウ → エ → ア",
+      "ウ": "ウ → イ → ア → エ",
+      "エ": "エ → ア → ウ → イ",
+      "オ": "エ → ウ → イ → ア"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "別冊のエは造影前、ウは尿路への排泄開始、イは腎盂・尿管と膀胱が十分に造影された状態、アは膀胱内造影剤が排出された後の像と判断できる。従ってエ→ウ→イ→ア。",
+    "choiceExplanations": {
+      "ア": "膀胱内造影剤が少ないアを先頭、造影前のエを最後に置くため不適切。",
+      "イ": "十分に膀胱が造影されたイが排泄開始のウより先となり不適切。",
+      "ウ": "造影前のエを途中に置くため不適切。",
+      "エ": "エの後に排尿後相当のアを置き、その後に膀胱充満が進む順序は不適切。",
+      "オ": "造影前、排泄開始、膀胱充満、排尿後の順で画像の造影剤分布に合う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問88（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q88-1.png",
+      "/images/questions/shinryo-hoshasengishi/2026-am-q88-2.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問88の公式別冊図（1/2）",
+      "第78回午前問88の公式別冊図（2/2）"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q89",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 89,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "腹部CT で正しいのはどれか。",
+    "choices": {
+      "ア": "心電同期撮影を行う。",
+      "イ": "造影検査前は水分制限を行う。",
+      "ウ": "位置決めの基準点は胸骨上窩とする。",
+      "エ": "体幹部に両手を下ろした状態で撮影する。",
+      "オ": "ダイナミックCT 検査では非イオン性水溶性ヨード造影剤を使用する。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "腹部ダイナミックCTでは非イオン性水溶性ヨード造影剤を静注し、時相ごとに撮影する。通常は両上肢を挙上して体幹のアーチファクトを減らす。",
+    "choiceExplanations": {
+      "ア": "一般的な腹部CTで心電同期を通常用いるわけではない。",
+      "イ": "造影前に一律の水分制限を行わず、脱水を避ける。食事制限とは区別する。",
+      "ウ": "胸骨上窩は腹部の撮影範囲・位置決めの基準として不適切。",
+      "エ": "両手を体幹横に下ろすと高吸収体によるアーチファクトを生じやすく、可能なら挙上する。",
+      "オ": "ダイナミックCTでは非イオン性水溶性ヨード造影剤を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問89（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q90",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 90,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "胸部正面X 線写真（別冊No. 10）を別に示す。心胸郭比〈CTR〉で正しいのはどれか。",
+    "choices": {
+      "ア": "（A ＋B）/C",
+      "イ": "（B －A）/C",
+      "ウ": "（C －B）/A",
+      "エ": "C/（A ＋B）",
+      "オ": "C/（B －A）"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "CTRは心陰影の最大横径を胸郭内最大横径で割る。図の心陰影幅は正中線から右縁Aと左縁Bの和で、胸郭幅がCなので(A＋B)/C。",
+    "choiceExplanations": {
+      "ア": "心陰影幅A＋Bを胸郭幅Cで割り、正しい。",
+      "イ": "B－Aは左右の幅の差で、心陰影全幅ではない。",
+      "ウ": "C－Bは心陰影幅ではなく、Aで割る根拠もない。",
+      "エ": "CTRの分子・分母を逆にした式。",
+      "オ": "左右幅の差を分母にし、定義に合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問90（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q90.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問90の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q91",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 91,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "腹部の血管造影写真（別冊No. 11）を別に示す。正しい組合せはどれか。",
+    "choices": {
+      "ア": "ア   左胃動脈",
+      "イ": "イ   総肝動脈",
+      "ウ": "ウ   右肝動脈",
+      "エ": "エ   固有肝動脈",
+      "オ": "オ   腹腔動脈"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.11のエは胃十二指腸動脈分岐後に肝へ向かう固有肝動脈。アは脾動脈、イは腹腔動脈、ウは胃十二指腸動脈、オは総肝動脈に対応する。",
+    "choiceExplanations": {
+      "ア": "アは患者左へ蛇行する脾動脈で、左胃動脈ではない。",
+      "イ": "イはカテーテル先端から分岐する腹腔動脈で、総肝動脈ではない。",
+      "ウ": "ウは尾側へ向かう胃十二指腸動脈で、右肝動脈ではない。",
+      "エ": "エは胃十二指腸動脈分岐後に肝へ向かう固有肝動脈で正しい。",
+      "オ": "オは肝側へ横走する総肝動脈で、腹腔動脈ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問91（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q91.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問91の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q92",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 92,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "頭部CT 像（別冊No. 12）を別に示す。正しい組合せはどれか。",
+    "choices": {
+      "ア": "ア   小　脳",
+      "イ": "イ   延　髄",
+      "ウ": "ウ   後頭葉",
+      "エ": "エ   第四脳室",
+      "オ": "オ   四丘体槽"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "別冊No.12のエは橋の背側と小脳の間にある第四脳室。アは側頭葉、イは橋、ウは小脳、オは橋前槽である。",
+    "choiceExplanations": {
+      "ア": "アは側頭葉で、小脳ではない。",
+      "イ": "イは橋であり、延髄はさらに尾側。",
+      "ウ": "ウは後頭蓋窩の小脳で、後頭葉ではない。",
+      "エ": "エは橋と小脳の間に位置する第四脳室で正しい。",
+      "オ": "オは橋前方の槽であり、四丘体槽は中脳背側にある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問92（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q92.png"
+    ],
+    "imageAltTexts": [
+      "第78回午前問92の公式別冊図"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q93",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 93,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "信号検出理論で偽陽性率を表す式はどれか。ただし、TP は真陽性、FP は偽陽性、FN は偽陰性、TN は真陰性を示す。",
+    "choices": {
+      "ア": "FN/(FN＋TP)",
+      "イ": "FP/(FP＋TN)",
+      "ウ": "TN/(FP＋TN)",
+      "エ": "TP/(FN＋TP)",
+      "オ": "TP/(FP＋TP)"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "偽陽性率は実際に陰性の例のうち陽性と判定した割合。実際の陰性はFP＋TNなのでFP/(FP＋TN)を選ぶ。",
+    "choiceExplanations": {
+      "ア": "FN/(FN＋TP)は偽陰性率。",
+      "イ": "FP/(FP＋TN)が偽陽性率で正しい。",
+      "ウ": "TN/(FP＋TN)は真陰性率で、特異度に相当。",
+      "エ": "TP/(FN＋TP)は真陽性率で、感度に相当。",
+      "オ": "TP/(FP＋TP)は陽性的中率。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問93（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "isCalculation": true
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q94",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 94,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "FPD の雑音特性に最も影響するのはどれか。",
+    "choices": {
+      "ア": "構造雑音",
+      "イ": "焦点寸法",
+      "ウ": "検出量子数",
+      "エ": "量子化雑音",
+      "オ": "dexel〈detector element〉寸法"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "X線画像の主要な雑音は検出量子数の統計的ゆらぎである。Poisson統計では標準偏差√N、相対ゆらぎ1/√Nとなり、検出量子数が最も強く影響する。",
+    "choiceExplanations": {
+      "ア": "構造雑音も存在するが、通常の撮影条件で支配的な量子雑音の要因ではない。",
+      "イ": "焦点寸法は主に幾何学的不鮮鋭と空間分解能へ影響する。",
+      "ウ": "検出量子数により量子雑音と信号対雑音比が大きく変わる。",
+      "エ": "量子化雑音は階調変換に由来するが、本問で最も影響する要因ではない。",
+      "オ": "dexel寸法はサンプリングや空間分解能に関係するが、雑音の主要因としては検出量子数を選ぶ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問94（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q95",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 95,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "C-D〈contrast-detail〉曲線を図に示す。曲線のうち低コントラストの識別能が最も高いのはどれか。",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ",
+      "オ": "オ"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "C-D曲線は細部の大きさに対して識別に必要なコントラストを示す。同じ大きさで低いコントラストまで識別できる下側の曲線ほど性能が高く、図ではアが最も優れる。",
+    "choiceExplanations": {
+      "ア": "アは同じ細部径で最も低いコントラストまで識別でき、正しい。",
+      "イ": "イはアより必要コントラストが高く、識別能が劣る。",
+      "ウ": "ウもアより上にあり、同じ細部径でより高いコントラストを必要とする。",
+      "エ": "エはアより高い識別限界を示す。",
+      "オ": "オは最も高いコントラストを必要とし、図の中で識別能が低い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問95（問題・正答・図表）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/shinryo-hoshasengishi/2026-am-q95.png"
+    ],
+    "imageAltTexts": [
+      "C-D曲線ア～オ"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf"
+    ]
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q96",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 96,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "国際放射線防護委員会〈ICRP〉2007 年勧告における現存被ばく状況の公衆被ばくに定められた線量制限で正しいのはどれか。",
+    "choices": {
+      "ア": "線量限度",
+      "イ": "耐容線量",
+      "ウ": "介入レベル",
+      "エ": "参考レベル",
+      "オ": "線量拘束値"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ICRP 2007年勧告では現存被ばく状況の最適化に参考レベルを用いる。線量限度や線量拘束値は計画被ばく状況での概念と区別する。",
+    "choiceExplanations": {
+      "ア": "線量限度は主に計画被ばく状況の職業・公衆被ばくへ適用する。",
+      "イ": "耐容線量は放射線治療で正常組織への線量を考える概念。",
+      "ウ": "介入レベルは従来の介入体系の用語で、本勧告で選ぶのは参考レベル。",
+      "エ": "現存被ばく状況で参考レベルを設定し、最適化を進める。",
+      "オ": "線量拘束値は主に計画被ばく状況の線源関連の最適化に用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問96（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q97",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 97,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "原子力災害時の避難退域時検査として避難者に対して実施する体表面汚染の測定に適したサーベイメータで正しいのはどれか。",
+    "choices": {
+      "ア": "電離箱式",
+      "イ": "半導体式",
+      "ウ": "GM 計数管式",
+      "エ": "比例計数管式",
+      "オ": "ZnS（Ag）シンチレーション式"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "避難退域時の体表面汚染検査では、β線に感度があり広い面を走査できるGM計数管式サーベイメータが用いられる。",
+    "choiceExplanations": {
+      "ア": "電離箱式は主に空間線量率の測定に用い、表面汚染検査の代表ではない。",
+      "イ": "半導体式は個人線量計等で用いられるが、本問の標準的な表面汚染検査機器ではない。",
+      "ウ": "β線等の表面汚染を効率よく検出するGM計数管式が適する。",
+      "エ": "比例計数管もα・β測定に使えるが、避難者の走査に通常用いる本問の機器はGM式。",
+      "オ": "ZnS(Ag)式は主にα線を検出し、本問で想定する汚染走査の代表ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問97（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q98",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 98,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "診療放射線技師法で正しいのはどれか。",
+    "choices": {
+      "ア": "免許証は都道府県知事が交付する。",
+      "イ": "免許の登録事項の変更は30 日以内に訂正を申請する。",
+      "ウ": "免許を取り消された者は免許証を30 日以内に返納する。",
+      "エ": "免許証の再交付後に発見した旧免許証は30 日以内に返納する。",
+      "オ": "死亡したときは10 日以内に診療放射線技師籍の登録削除を申請する。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "免許は厚生労働大臣が交付する。登録事項の変更申請は30日以内、取消し時と旧免許証発見時の返納は10日以内、死亡時の登録削除申請は30日以内である。",
+    "choiceExplanations": {
+      "ア": "免許の交付者は都道府県知事ではなく厚生労働大臣。",
+      "イ": "施行令第1条の4による登録事項の変更の訂正申請は30日以内で正しい。",
+      "ウ": "法第11条による免許取消し時の返納期限は10日以内で、30日ではない。",
+      "エ": "法第8条第3項により、再交付後に旧免許証を発見した場合は10日以内の返納で、30日ではない。",
+      "オ": "施行令第2条による死亡時の登録削除申請は30日以内で、10日ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問98（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=80012000&dataType=0&pageNo=1",
+      "https://www.mhlw.go.jp/web/t_doc?dataId=80013000&dataType=0&pageNo=1"
+    ],
+    "lawReferenceDate": "2026-02-19"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q99",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 99,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "令和3 年から施行された電離放射線障害防止規則において放射線業務従事者の眼の水晶体に受ける等価線量の算定・記録・保存期間で追加されたのはどれか。",
+    "choices": {
+      "ア": "1 月ごと",
+      "イ": "6 月ごと",
+      "ウ": "3 年ごと",
+      "エ": "5 年ごと",
+      "オ": "10 年ごと"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "2021年施行の改正で眼の水晶体の等価線量限度が5年間100 mSvかつ1年間50 mSvとなったことに対応し、所定の5年間の集計・記録が追加された。",
+    "choiceExplanations": {
+      "ア": "1月ごとの集計は本改正で新たに問われる5年間の期間ではない。",
+      "イ": "6月ごとではなく、5年間の集計が追加された。",
+      "ウ": "3年ごとは新しい水晶体の線量限度期間ではない。",
+      "エ": "5年間100 mSvの管理に対応する5年間の集計が追加された。",
+      "オ": "10年ごとの集計ではなく5年ごとである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問99（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"
+    ],
+    "lawReferenceDate": "2026-02-19"
+  },
+  {
+    "id": "shinryo-hoshasengishi-2026-annual-am-q100",
+    "exam": "shinryo-hoshasengishi",
+    "session": "am",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 100,
+    "examDate": "2026-02-19",
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "診療放射線技師",
+      "第78回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "医療法施行規則では管理区域をどの実効線量を超えるおそれのある区域と定めているか。",
+    "choices": {
+      "ア": "250 μSv/ 3 月",
+      "イ": "1 mSv/週",
+      "ウ": "1.3 mSv/ 3 月",
+      "エ": "20 mSv/年",
+      "オ": "50 mSv/年"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "医療法施行規則の管理区域は、外部放射線による実効線量が3月間につき1.3 mSvを超えるおそれのある区域等として定められる。",
+    "choiceExplanations": {
+      "ア": "250 μSv/3月は本問の管理区域の基準値ではない。",
+      "イ": "1 mSv/週は本問の3月間の管理区域基準と異なる。",
+      "ウ": "1.3 mSv/3月が管理区域の線量基準で正しい。",
+      "エ": "20 mSv/年は別の線量管理の数値で、管理区域の境界値ではない。",
+      "オ": "50 mSv/年は職業被ばくの年間限度等の数値で、管理区域の境界値ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第78回診療放射線技師国家試験」午前 問100（問題・正答）。解説は独自作成です。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "lawReferenceDate": "2026-02-19"
+  }
+]
