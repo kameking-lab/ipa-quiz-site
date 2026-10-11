@@ -40,5 +40,21 @@
     "exitCode": 0,
     "passed": 8,
     "failed": 0
+  },
+  "homeRegistryRetest": {
+    "session": 26522,
+    "exitCode": 0,
+    "testsReport": "HOME-REGISTRATION-RETEST.json",
+    "changedScopeLintExitCode": 0
+  },
+  "hostedFullTestsFirstRun": {
+    "runId": "38109375380",
+    "passed": 4793,
+    "failed": 2,
+    "failures": [
+      "Home qualification card missing",
+      "Registered exam count expected53 actual54"
+    ],
+    "repair": "Added dentist home card and updated count regression expectations"
   }
 }

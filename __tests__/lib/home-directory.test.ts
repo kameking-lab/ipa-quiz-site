@@ -56,6 +56,13 @@ describe("home directory", () => {
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
+  it("offers the dentist corpus with its actual published count", () => {
+    const dentist = all.find((item) => item.key === "shika-ishi");
+    expect(dentist?.href).toBe("/shika-ishi");
+    expect(dentist?.questionCount).toBe(696);
+    expect(dentist?.periodLabel).toBe("2期分");
+  });
+
   it("never advertises an empty qualification and sums domain totals from cards", () => {
     for (const item of all) expect(item.questionCount).toBeGreaterThan(0);
     for (const d of domains) {
