@@ -1,0 +1,32 @@
+{
+  "checkedAtUtc": "2026-10-11T06:59:55.906606+00:00",
+  "originals": 160,
+  "choiceReasons": 651,
+  "originalTextAudit": "PASS",
+  "directValidator": "PASS",
+  "hostedTests": 24,
+  "priorAppWideChecks": "typecheck/lint/full 4767 tests/build PASS, source unchanged",
+  "currentLocalNodeTestCli": "spawn EPERM; not retried; Hosted CI requested",
+  "publicEntryPoints": [
+    {
+      "path": "data/questions/index.ts",
+      "containsPreparedImport": false
+    },
+    {
+      "path": "lib/questions/get-questions.ts",
+      "containsPreparedImport": false
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "containsPreparedImport": false
+    }
+  ],
+  "publicationPerformed": false,
+  "permission": "not-confirmed",
+  "historicalLawReview": "pending",
+  "rejectedOperationsNotRetried": [
+    "pnpm media:status",
+    "e-Gov patent-law XML",
+    "JPO two PCT URLs"
+  ]
+}

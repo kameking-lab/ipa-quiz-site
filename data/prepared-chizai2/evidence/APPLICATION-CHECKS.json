@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "worktree": "C:/wt/chizai2-latest-two-20261011",
+  "toolchain": {
+    "initialPathPnpm": "9.15.9",
+    "requiredAndUsedPnpm": "10.33.0",
+    "cachedRuntime": "C:/Users/kanet/AppData/Local/node/corepack/v1/pnpm/10.33.0/bin/pnpm.cjs",
+    "frozenOfflineInstall": {
+      "exitCode": 0,
+      "packages": 867,
+      "downloaded": 0,
+      "lockfileModified": false
+    },
+    "prismaGenerate": {
+      "exitCode": 0,
+      "clientVersion": "6.19.3",
+      "databaseModified": false
+    }
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "verdict": "PASS",
+    "scope": "app-wide tsc --noEmit"
+  },
+  "lint": {
+    "exitCode": 0,
+    "verdict": "PASS_WITH_ONE_EXISTING_WARNING",
+    "errors": 0,
+    "warnings": 1,
+    "warningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs",
+    "warning": "unused base variable"
+  },
+  "initialFullTest": {
+    "exitCode": 1,
+    "passed": 4764,
+    "failed": 3,
+    "total": 4767,
+    "passedFiles": 512,
+    "failedFiles": 3,
+    "durationSeconds": 76.87,
+    "failures": [
+      "__tests__/search/pool-server.test.ts:106 timeout 15000ms",
+      "__tests__/search/search-route.test.ts:54 timeout 15000ms",
+      "__tests__/seo/sitemap-static-indexable.test.ts:120 timeout 30000ms"
+    ]
+  },
+  "isolatedFailureRecheck": {
+    "exitCode": 0,
+    "passed": 29,
+    "failed": 0,
+    "files": 3,
+    "maxWorkers": 1,
+    "timeoutChanged": false,
+    "durationSeconds": 16.97
+  },
+  "fullTestRecheck": {
+    "state": "completed",
+    "exitCode": 0,
+    "verdict": "PASS",
+    "files": 515,
+    "passed": 4767,
+    "failed": 0,
+    "maxWorkers": 4,
+    "timeoutChanged": false,
+    "testsExcluded": 0,
+    "durationSeconds": 146.1
+  },
+  "build": {
+    "state": "completed",
+    "exitCode": 0,
+    "verdict": "PASS",
+    "staticPages": 11471,
+    "compilationSeconds": 34.9,
+    "buildTypecheckSeconds": 30.1,
+    "staticGeneration": "3.1min",
+    "deploymentPerformed": false
+  },
+  "gitOperations": {
+    "previousRecovery": "status retry rejected; not retried in current resumed step",
+    "currentResume": "explicit path commit and draft PR are newly authorized in the user delegation; pending first attempt"
+  },
+  "publicationPerformed": false
+}
