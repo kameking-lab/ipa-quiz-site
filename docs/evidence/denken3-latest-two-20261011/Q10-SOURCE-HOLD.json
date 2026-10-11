@@ -1,0 +1,64 @@
+{
+  "id": "denken3-2026-upper-law-q10",
+  "verdict": "HOLD",
+  "officialAnswer": "2",
+  "required": "Dated applicable JEAC 8011 text defining daily, periodic, detailed, extraordinary inspection and maintenance.",
+  "normalPublicChecks": [
+    {
+      "url": "https://store.denki.or.jp/products/高圧受電設備規程-jeac8011-2025",
+      "result": "Official publisher confirms 2025-11-10 publication and chapter 1-3 maintenance/inspection, no required section body."
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0761/5338/9336/files/JEAC_8011-2025___20260323.pdf?v=1774595141",
+      "result": "Public official one-page errata checked. Entries do not provide the inspection definitions needed for Q10."
+    }
+  ],
+  "purchases": 0,
+  "paidSubscriptions": 0,
+  "restrictedContentBypasses": 0,
+  "sameBlockedMetiUrlsRetried": false,
+  "published": false,
+  "additionalNormalPublicChecks": [
+    {
+      "url": "https://jesc.gr.jp/jesc-assent/private/jesc_e0013_25.html",
+      "result": "JEAC8011-2025 = JESC E0013(2025), 2025-02-18 approval; no inspection category definitions."
+    },
+    {
+      "url": "https://jesc.gr.jp/deliberation/deliberation_r06.html",
+      "result": "127th deliberation overview confirms approval but not applicable section text."
+    },
+    {
+      "url": "https://jesc.gr.jp/public-comment/pdf/r6/2025_2_25-1.pdf",
+      "result": "2025-02-25 official public comment notice. Lines 53-59 offer office viewing and email/post delivery of related material, no inspection category definitions in the public notice."
+    }
+  ],
+  "thirdPartyContactSent": false,
+  "learnerOfficialQuestionUrl": "https://www.shiken.or.jp/chief/upload/20260830_ch_third_q04.pdf#page=16",
+  "learnerOfficialAnswerUrl": "https://www.shiken.or.jp/chief/upload/20260830_ch_third_a01.pdf",
+  "additionalManufacturerCheck": {
+    "url": "https://www.togami-elec.co.jp/document/catalogs/yobi_dengen_shinku_t.pdf",
+    "physicalPage": 4,
+    "edition": "2014",
+    "supportsChoices": [
+      1,
+      2,
+      4
+    ],
+    "unsupportedDirectDefinitions": [
+      3,
+      5
+    ],
+    "sourceReady": false,
+    "wholeQuestionGO": false,
+    "result": "Independent Astra local review confirms the daily/periodic distinction. Item 4 is omitted and maintenance definition is missing. The applicable 2025 body remains unfixed.",
+    "priorStopRetained": "Do not pass incomplete sources as fully ready.",
+    "localCandidateSaved": true,
+    "candidateInThisPublicPullRequest": false
+  },
+  "priorSourceHold": {
+    "path": "reports/claude-capacity-20261010/denken3-2026-upper-law/dated-primary-supplement-20261010/law-q10-SOURCE-HOLD.json",
+    "sha256": "a453021ddf0d6d96fc1c763d5a1df7ad22fe30606ebba83660d016508029b2cf",
+    "sourceReady": false,
+    "wholeQuestionGO": false
+  }
+}

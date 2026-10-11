@@ -15,19 +15,17 @@ import powerFollowProof from "@/docs/evidence/denken3-lower-power-native9-202610
 import lineEndingProof from "@/docs/evidence/next75-line-ending-reconciliation-20261010.json";
 
 describe("Denken3 reviewed native originals", () => {
-  it("keeps legacy units and counts the sixty 2025 lower native overlaps once", () => {
+  it("keeps legacy units and counts the sixty-five 2025 lower native overlaps once", () => {
     expect(DENKEN3_QUESTIONS).toHaveLength(320);
     expect(DENKEN3_NATIVE_PARTS.map(p => `${p.sitting}:${p.subject}:${p.questions.length}:${p.questions.reduce((n, q) => n + q.slots.length, 0)}`))
-      .toEqual(["2026-upper:theory:18:22", "2026-upper:power:8:8", "2026-upper:law:5:5", "2025-lower:law:5:5", "2026-upper:power:9:12", "2026-upper:machine:8:8", "2026-upper:law:3:6", "2025-lower:law:3:5", "2025-lower:power:7:7", "2026-upper:machine:10:14", "2025-lower:theory:18:22", "2025-lower:machine:18:22", "2025-lower:power:9:12"]);
-    expect(DENKEN3_NATIVE_QUESTIONS).toHaveLength(121);
-    expect(DENKEN3_NATIVE_QUESTIONS.reduce((n, q) => n + q.slots.length, 0)).toBe(148);
+      .toEqual(["2026-upper:theory:18:22", "2026-upper:power:8:8", "2026-upper:law:5:5", "2025-lower:law:5:5", "2026-upper:power:9:12", "2026-upper:machine:8:8", "2026-upper:law:3:6", "2025-lower:law:3:5", "2025-lower:power:7:7", "2026-upper:machine:10:14", "2025-lower:theory:18:22", "2025-lower:machine:18:22", "2025-lower:power:9:12", "2025-lower:law:5:6", "2026-upper:law:4:4"]);
+    expect(DENKEN3_NATIVE_QUESTIONS).toHaveLength(130);
+    expect(DENKEN3_NATIVE_QUESTIONS.reduce((n, q) => n + q.slots.length, 0)).toBe(158);
     expect(DENKEN3_NATIVE_SUBJECTS.map(p => `${p.sitting}:${p.subject}:${p.questions.length}`))
-      .toEqual(["2026-upper:theory:18", "2026-upper:power:17", "2026-upper:law:8", "2025-lower:law:8", "2026-upper:machine:18", "2025-lower:power:16", "2025-lower:theory:18", "2025-lower:machine:18"]);
-    expect(DENKEN3_NEW_ORIGINAL_COUNT).toBe(61);
-    expect(DENKEN3_PUBLISHED_ORIGINAL_COUNT).toBe(325);
-    expect(getDenken3NativeQuestion("2026-upper", "law", 4)).toBeUndefined();
-    expect(getDenken3NativeQuestion("2026-upper", "law", 6)).toBeUndefined();
-    expect(getDenken3NativeQuestion("2026-upper", "law", 7)).toBeUndefined();
+      .toEqual(["2026-upper:theory:18", "2026-upper:power:17", "2026-upper:law:12", "2025-lower:law:13", "2026-upper:machine:18", "2025-lower:power:16", "2025-lower:theory:18", "2025-lower:machine:18"]);
+    expect(DENKEN3_NEW_ORIGINAL_COUNT).toBe(65);
+    expect(DENKEN3_PUBLISHED_ORIGINAL_COUNT).toBe(329);
+    expect(getDenken3NativeQuestion("2026-upper", "law", 10)).toBeUndefined();
     expect(getDenken3NativeQuestion("2025-lower", "power", 1)).toBeUndefined();
     for (const [filename, digest] of Object.entries({
       "native-2026-upper-theory.json": "af5caaca4b8c472ab2284b1f3db3699b1f4bc8bb09bd897b80ed0a5be0b8cbd7",
@@ -73,7 +71,7 @@ describe("Denken3 reviewed native originals", () => {
 
   it("matches and decodes all official page images, and indexes only GO routes", async () => {
     const pages = new Map(DENKEN3_NATIVE_QUESTIONS.flatMap(q => q.sourcePages.map(p => [p.url, p] as const)));
-    expect(pages.size).toBe(141);
+    expect(pages.size).toBe(153);
     for (const page of pages.values()) {
       const data = readFileSync(join(process.cwd(), "public", page.url.slice(1)));
       expect(createHash("sha256").update(data).digest("hex")).toBe(page.sha256);
@@ -82,10 +80,11 @@ describe("Denken3 reviewed native originals", () => {
       expect(image.width).toBeGreaterThan(300);
     }
     const routes = denken3NativeQuestionPaths();
-    expect(routes).toHaveLength(121);
+    expect(routes).toHaveLength(130);
     const xml = renderExamsSitemapXml();
     for (const path of routes) expect(xml).toContain(path);
-    for (const number of [4, 6, 7]) expect(xml).not.toContain(`/denken3/2026-upper/law/q${number}`);
+    for (const number of [4, 6, 7, 9]) expect(xml).toContain(`/denken3/2026-upper/law/q${number}</loc>`);
+    expect(xml).not.toContain("/denken3/2026-upper/law/q10</loc>");
     expect(xml).not.toContain("/denken3/2025-lower/power/q1</loc>");
   });
   it("uses the corrected machine Q15 key and keeps each theory/machine alternative unanswered", () => {

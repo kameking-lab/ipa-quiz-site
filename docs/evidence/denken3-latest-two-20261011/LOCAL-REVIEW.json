@@ -1,0 +1,43 @@
+{
+  "scope": "2026-upper law Q4/Q6/Q7/Q9 only, all 20 choices",
+  "requestedReviewerModel": "gpt-6-astra",
+  "reviewAgent": "/root/review_denken3_last4",
+  "contentSha256": "21fb40380ec22aecda421725d4c1cadd61a5982dc8ad3a608b170a5f1d5af362",
+  "verdicts": {
+    "q04": "PASS",
+    "q06": "PASS",
+    "q07": "PASS",
+    "q09": "PASS"
+  },
+  "mandatoryFixes": [],
+  "verified": [
+    "official question and answer hashes",
+    "all 20 choice explanations",
+    "Q9 complete table matrix",
+    "five published image hashes",
+    "2026-04-01 problem baseline",
+    "2025-11-20 reference amendment and effective date"
+  ],
+  "applicabilityLimit": "The fixed PDF alone does not prove there were no subsequent amendments between 2025-11-20 and 2026-04-01. PASS is local content consistency of these four items, official question/answer and the fixed primary text.",
+  "strictOpusReceiptClaimed": false,
+  "remainingHolds": [
+    "denken3-2026-upper-law-q10",
+    "denken3-2025-lower-power-q01"
+  ],
+  "additionalLocalReview": {
+    "scope": "Upper law Q10 only; partial manufacturer primary evidence",
+    "verdict": "Local candidate only; no sourceReady/full publication promotion",
+    "supportsChoices": [
+      1,
+      2,
+      4
+    ],
+    "missingDirectDefinitions": [
+      3,
+      5
+    ],
+    "applicableEditionFixed": false
+  },
+  "contentLfSha256": "21fb40380ec22aecda421725d4c1cadd61a5982dc8ad3a608b170a5f1d5af362",
+  "contentSha256Meaning": "Local Windows snapshot bytes; contentLfSha256 is the portable Git representation"
+}
