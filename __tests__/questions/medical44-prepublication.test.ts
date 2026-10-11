@@ -7,11 +7,14 @@ import { JOSANSHI_QUESTIONS } from "@/data/questions/josanshi";
 import manifest from "@/docs/evidence/medical44-prepublication-20261010/MANIFEST.json";
 import hokenshiRaw from "@/data/questions/hokenshi/medical44-prepublication.json";
 import josanshiRaw from "@/data/questions/josanshi/medical44-prepublication.json";
+import hokenshiLive from "@/data/questions/hokenshi/medical34-live.json";
+import josanshiLive from "@/data/questions/josanshi/medical34-live.json";
+import josanshiAdditions from "@/data/questions/josanshi/latest-two-additions.json";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const questions = [...hokenshiRaw, ...josanshiRaw];
-const gateReady = [...HOKENSHI_QUESTIONS, ...JOSANSHI_QUESTIONS];
+const gateReady = [...hokenshiLive, ...josanshiLive];
 const choices = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("medical Q45–55 prepublication candidate", () => {
@@ -27,9 +30,10 @@ describe("medical Q45–55 prepublication candidate", () => {
     expect(questions.map(question => question.id).sort()).toEqual(manifest.questions.map(question => question.id).sort());
   });
 
-  it("stages only the 34 structurally ready originals in the partial live registry", () => {
+  it("preserves the original 34 ready rows alongside the completed midwife rounds", () => {
     expect(HOKENSHI_QUESTIONS).toHaveLength(16);
-    expect(JOSANSHI_QUESTIONS).toHaveLength(18);
+    expect(josanshiLive).toHaveLength(18);
+    expect(JOSANSHI_QUESTIONS).toHaveLength(219);
     expect(gateReady).toHaveLength(34);
     expect(gateReady.every(question => question.needsReview === false)).toBe(true);
     expect(gateReady.filter(question => question.hasImage)).toHaveLength(0);
@@ -98,8 +102,10 @@ describe("medical Q45–55 prepublication candidate", () => {
     }
   });
 
-  it("keeps held originals out of the runtime import graph and global question pool", () => {
-    const heldIds = new Set(questions.filter(question => question.needsReview).map(question => question.id));
+  it("keeps unresolved historical originals out while restoring independently checked midwife rows", () => {
+    const restoredIds = new Set(josanshiAdditions.filter(question => question.needsReview === false).map(question => question.id));
+    const heldIds = new Set(questions.filter(question => question.needsReview && !restoredIds.has(question.id)).map(question => question.id));
+    expect(josanshiRaw.filter(question => question.needsReview && restoredIds.has(question.id))).toHaveLength(4);
     for (const question of ALL_QUESTIONS) {
       expect(heldIds.has(question.id)).toBe(false);
     }
