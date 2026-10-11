@@ -8464,5 +8464,305 @@
     "imageAltTexts": [
       "第111回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図（選択肢1〜5）"
     ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q115",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 115,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "酵素Ａと酵素Ｂは、骨格筋又は肝臓に含まれる解糖系の酵素で、グルコースからグルコース 6-リン酸を生成する反応を触媒する。グルコース濃度に対する酵素Ａと酵素Ｂの相対酵素活性は、下図のようになる。相対酵素活性は、反応初速度 V0 を最大反応速度 Vmax で除した値である。\n以下の記述のうち、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "酵素Ａは、基質であるグルコースとの親和性が酵素Ｂより低い。",
+      "イ": "グルコース濃度が5 mmol/L から 10 mmol/L に増加すると、酵素Ｂの反応初速度は約2 倍になる。",
+      "ウ": "酵素Ａは、グルコース-6-ホスファターゼである。",
+      "エ": "酵素Ｂが触媒する反応は、グルコース 6-リン酸の濃度が上昇すると抑制される。",
+      "オ": "酵素Ａは、主に骨格筋に含まれる。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図では、酵素Ｂは低いグルコース濃度で急速に飽和し、酵素Ａはシグモイド状でゆっくり上昇します。したがって酵素Ａは見かけのKmが大きく、グルコースとの親和性が低い酵素です。解糖系の最初の反応を触媒する酵素には、ヘキソキナーゼとグルコキナーゼがあります。酵素Ｂは親和性が高いヘキソキナーゼ型で、生成物であるグルコース6-リン酸により阻害されます。酵素Ａは親和性が低いグルコキナーゼ型で、主に肝臓に含まれます。",
+    "choiceExplanations": {
+      "ア": "正しい。酵素Ａは高濃度のグルコースでようやく活性が上がるので、Kmが大きく親和性は酵素Ｂより低いと読み取れます。",
+      "イ": "誤り。図の酵素Ｂは5 mmol/Lですでに約0.95で、10 mmol/Lでもほぼ同じ値です。ほぼ飽和しているので、初速度は2倍になりません。",
+      "ウ": "誤り。酵素Ａはグルコースからグルコース6-リン酸を生成する反応を触媒します。グルコース-6-ホスファターゼは逆方向の加水分解反応を行う酵素なので、該当しません。",
+      "エ": "正しい。酵素Ｂはヘキソキナーゼ型の酵素で、生成物のグルコース6-リン酸によるフィードバック阻害を受けます。",
+      "オ": "誤り。酵素Ａはグルコキナーゼ型で、主に肝臓に含まれます。主に骨格筋に含まれるのは酵素Ｂ型のヘキソキナーゼです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問115（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q115-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問115の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q178",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 178,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある非電解質薬物25 mgを結晶又は非晶質固体分散体として、それぞれ一定温度の水1.0 Lに分散したところ、図に示す薬物濃度−時間曲線が得られた。この薬物の溶解に関する記述として、正しいのはどれか。2つ選べ。ただし、この薬物には結晶多形は存在しないものとする。",
+    "choices": {
+      "ア": "薬物結晶の飽和溶解度は約25 μg/mLである。",
+      "イ": "アでは、薬物はすべて溶解しており、液は澄明である。",
+      "ウ": "イでは、固相の薬物は一部非晶質として存在している。",
+      "エ": "イでは、液相の薬物は過飽和溶解している。",
+      "オ": "ウでは、薬物結晶が約5 mg存在している。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "結晶の曲線が平坦となる約6 μg/mLが結晶の飽和溶解度である。仕込み量25 mg/1.0 L＝25 μg/mLであり、アでは仕込み量すべてが溶解している。この濃度は結晶の飽和溶解度を超える過飽和状態である。イでは濃度が低下しており、過飽和の液相から結晶が析出している。ウでは濃度が約6 μg/mLに収束し、溶解は約6 mg、結晶として残るのは約19 mgとなる。",
+    "choiceExplanations": {
+      "ア": "誤り。薬物結晶の飽和溶解度は結晶曲線の平坦部から約6 μg/mLと読める。約25 μg/mLは仕込み量全量が溶解した濃度であり、これだけでは非晶質の飽和溶解度を確定できない。",
+      "イ": "正しい。アの約25 μg/mLは仕込み量25 mg/1.0 Lと一致し、薬物はすべて溶解している。",
+      "ウ": "誤り。アで仕込み量のすべてが溶解した後、イでは過飽和溶液から結晶が析出して濃度が下がっている。結晶多形がないという条件だけから非晶質の有無を判断するのではなく、全量溶解後の結晶化過程として読む。",
+      "エ": "正しい。イの濃度（約16 μg/mL）は結晶の飽和溶解度（約6 μg/mL）より高く、液相は過飽和状態である。",
+      "オ": "誤り。ウは約6 μg/mLなので溶解量は約6 mg、結晶として存在するのは25−6＝約19 mgである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問178（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q178-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問178の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q180",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 180,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ある界面活性剤水溶液の濃度と表面張力及び難溶性薬物の可溶化量との関係を模式的に示したものである。この図に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "この界面活性剤は、負吸着を示す。",
+      "イ": "Aは可溶化量を、Bは表面張力を示している。",
+      "ウ": "濃度Xでは、界面活性剤は全てミセルとして存在している。",
+      "エ": "濃度Xよりも高い濃度では、溶液表面への界面活性剤の吸着量が一定となる。",
+      "オ": "濃度Yでは、疎水基を外側に、親水基を内側としたミセルが形成される。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "濃度Xは臨界ミセル濃度（CMC）に相当する。Aは濃度Xを超えると増加するので可溶化量、Bは濃度とともに低下しXを超えると一定になるので表面張力である。CMCを超えると表面吸着は飽和して一定となり、追加した界面活性剤はミセルを形成する。",
+    "choiceExplanations": {
+      "ア": "誤り。濃度とともに表面張力が低下しているので、界面活性剤は表面に濃縮する正吸着を示す。",
+      "イ": "正しい。Aは濃度Xを超えて増加するので可溶化量、Bは低下後に一定になるので表面張力を表す。",
+      "ウ": "誤り。濃度XはミセルがCMCで形成され始める濃度で、大部分は単分子として存在する。全てがミセルとなるわけではない。",
+      "エ": "正しい。CMC以上では表面への吸着が飽和して表面張力が一定となり、吸着量も一定となる。",
+      "オ": "誤り。水溶液中のミセルは、親水基を外側（水側）に、疎水基を内側に向けて形成される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問180（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q180-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問180の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q181",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 181,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "懸濁性医薬品に含まれる懸濁粒子の質量基準による積算粒度分布を測定したところ、図1が得られた。\nこの医薬品懸濁液を細長い容器に移し、均一分散した後に静置し、水面から一定の深さにおける懸濁粒子濃度(懸濁液10 mL中の粒子量 mg)を経時的に測定した(図2)。懸濁粒子濃度の経時的変化、すなわち懸濁粒子の沈降挙動を表したグラフとして、最も適当なのはどれか。1つ選べ。\nただし、懸濁粒子は凝集せず、ストークス式(1)に従って沈降するものとする。\nv = h/t = (ρ − ρ0)gd²/(18η) (1)\nv:沈降速度, h:沈降距離, t:沈降時間, ρ:粒子の密度, ρ0:分散媒の密度, g:重力加速度, d:粒子径, η:分散媒の粘度\nまた、懸濁粒子濃度は、最大径の粒子が測定面を通過し終わる沈降時間(TS=1時間)で、初期値12 mg/10 mLから減少し始め、時間の経過とともにグラフ中の黒点を通り、沈降時間TEでゼロになるものとする。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ストークス式より、一定の沈降距離hでは沈降時間tは粒子径dの2乗に反比例します(t ∝ 1/d²)。\n①最大径60 μmの粒子が測定面を通過し終わる時間がTS=1時間です。\n②最小径約15 μmの粒子が通過し終わる時間がTEです。TE = 1 × (60/15)² = 16時間。\n③中央値30 μmの粒子が通過し終わる時間は 1 × (60/30)² = 4時間です。この時点で残っているのは30 μm以下の粒子で、積算分布50%に当たります。したがって濃度は12 × 0.5 = 6 mg/10 mLです。\n以上から、黒点が(4時間, 6 mg/10 mL)でTEが16時間のグラフ5が最も適当です。",
+    "choiceExplanations": {
+      "ア": "TEが約4時間となっており、最小径粒子の沈降時間16時間に合いません。黒点の時間(2時間)も、30 μm粒子の4時間に合いません。",
+      "イ": "TEが約9時間で、計算値の16時間と一致しません。黒点の時間(2時間)も誤りです。",
+      "ウ": "黒点が(4時間, 8 mg/10 mL)で、50%に対応する6 mgになっていません。TEも12時間で、16時間と一致しません。",
+      "エ": "TEは16時間で合っていますが、黒点の濃度が8 mg/10 mLです。30 μm粒子が通過し終わる4時間では、濃度は6 mg/10 mLになるはずです。",
+      "オ": "黒点(4時間, 6 mg/10 mL)とTE=16時間が、いずれも計算結果と一致します。",
+      "カ": "TEは16時間で合っていますが、黒点の時間が8時間です。30 μm粒子が通過し終わるのは4時間です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問181（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-1.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-2.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-3.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図1",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図2",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図3"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q184",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 184,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "固体薬物を水不溶性コーティング剤で被覆することで、薬物放出を制御した徐放性製剤が設計できる。この製剤を水に接触させると、膜を通じて製剤内部に水が浸入し、溶解した薬物は、膜中を拡散しながら外液中に放出される(図)。\nこのときの膜の単位面積あたりの薬物透過速度Jは、(1)の式で表される。\nJ = (1/S)・(dQ/dt) = D・K(Cin − Cout)/h (1)\nここで、Qは放出される薬物量、Sは薬物放出面積、Kは溶液と膜間の分配係数、Dは薬物の膜中拡散定数、Cinは薬物層中の溶解薬物濃度、Coutは放出液中の薬物濃度、hは膜厚である。\n本製剤に関する記述として、正しいのはどれか。2つ選べ。\nただし、放出試験中は、薬物層内には固体薬物が残存しており、CoutはCinと比較して十分低いものとする。",
+    "choices": {
+      "ア": "マトリックス型製剤である。",
+      "イ": "薬物は0次放出される。",
+      "ウ": "Cinは経時的に減少する。",
+      "エ": "薬物放出速度は放出制御膜の厚みに比例する。",
+      "オ": "球形粒子の場合では、Sは粒子半径の2乗に比例する。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "固体薬物が残存する間は薬物層の溶液が飽和に保たれ、Cinは一定です。またCout≪Cinなので、dQ/dt = S・D・K・Cin/h は一定となり、0次放出になります(2)。球の表面積は4πr²なので、Sは半径の2乗に比例します(5)。",
+    "choiceExplanations": {
+      "ア": "薬物層が放出制御膜で被覆されたリザーバー型(膜透過型)製剤です。薬物を基剤中に分散させたマトリックス型ではありません。",
+      "イ": "Cinが一定でCoutが無視できるため、放出速度dQ/dtは時間によらず一定です。0次放出であり正しい記述です。",
+      "ウ": "固体薬物が残存している間は、溶解した薬物が補われてCinは飽和濃度のまま一定です。減少しません。",
+      "エ": "式(1)のとおり、放出速度は膜厚hに反比例します。比例ではありません。",
+      "オ": "球の表面積はS=4πr²であり、Sは粒子半径の2乗に比例します。正しい記述です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=29",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問184（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q184-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問184の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q97",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 97,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "問 96-97　次の記述は、日本薬局方水酸化ナトリウムの定量に関するものである。この水酸化ナトリウム（NaOH：40.00）は不純物として炭酸ナトリウム（Na2CO3：105.99）のみを含むものとし、下線部イ及びエの時点をそれぞれ第一中和点、第二中和点とする。\n本品約 1.5 g を精密に量り、新たに煮沸して冷却した水 40 mL を加えて溶かし、15 ℃ に冷却した後、フェノールフタレイン試液 2 滴を加え、ア0.5 mol/L 硫酸で滴定し、イ液の赤色が消えたときの 0.5 mol/L 硫酸の量をウA（mL）とする。さらにこの液にメチルオレンジ試液 2 滴を加え、再び 0.5 mol/L 硫酸で滴定し、エ液が持続する淡赤色を呈したときの 0.5 mol/L 硫酸の量を B（mL）とする。（A－B）mL から水酸化ナトリウム（NaOH）の量を計算する。\n0.5 mol/L 硫酸 1 mL ＝ [オ] mg NaOH\n\n前問の定量法において、本品 1.5000 g を量り、0.5 mol/L 硫酸（f = 1.000）で滴定したところ、B = 0.25 mL であった。本品中の不純物である炭酸ナトリウムの含量として最も近いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "0.9％",
+      "イ": "1.8％",
+      "ウ": "2.5％",
+      "エ": "3.6％",
+      "オ": "5.0％"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "【計算手順】第一中和点（フェノールフタレイン）までに、NaOH の全量が中和され、Na2CO3 は NaHCO3 になる。第二中和点（メチルオレンジ）までの B mL は、NaHCO3 + H+ → H2CO3 の反応にだけ使われる。したがって B は Na2CO3 の量だけを反映する。\n1) 0.5 mol/L 硫酸 0.25 mL の H+ は 0.5 × 2 × 0.25 = 0.25 mmol。\n2) NaHCO3 は H+ と 1:1 で反応する。よって Na2CO3 は 0.25 mmol。\n3) Na2CO3 の質量は 0.25 mmol × 105.99 mg/mmol ≒ 26.5 mg。\n4) 含量は 26.5 mg ÷ 1500.0 mg × 100 ≒ 1.77％ ≒ 1.8％。\nよって 2 が最も近い。",
+    "choiceExplanations": {
+      "ア": "誤り。0.9％は硫酸1 molから生じるH+を1 molとして、酸の当量を半分に見積もったときの値に近い。硫酸は2価の酸なので、Bの滴定で使うH+は0.25 mmolであり、炭酸ナトリウムは0.25 mmolとなる。",
+      "イ": "正しい。H+ 0.25 mmol = Na2CO3 0.25 mmol = 26.5 mg で、1500 mg に対して約 1.77％、すなわち 1.8％となる。",
+      "ウ": "2.5％は 37.5 mg 前後に相当し、上記の計算値 26.5 mg と合わない。誤り。",
+      "エ": "誤り。3.6％は正しい計算値の約2倍である。B区間で使われるH+ 1 molはHCO3− 1 molに対応するため、炭酸ナトリウムの物質量をさらに2倍にすることはできない。",
+      "オ": "5.0％は約 75 mg に相当し、計算値と大きく異なる。誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問97（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
   }
 ]

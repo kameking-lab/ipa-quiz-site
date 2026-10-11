@@ -6590,5 +6590,202 @@
     "imageAltTexts": [
       "第110回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図"
     ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q93",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 93,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ボルツマン分布は、異なるエネルギー準位E1、E2（E2 > E1）にある分子の数をそれぞれN1、N2としたとき、熱平衡状態における両者の比（R = N2/N1）とエネルギー差（ΔE = E2 − E1）との間にある一定の関係を与える。この関係を表すグラフの概形として正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "ボルツマン分布よりR = N2/N1 = exp(−ΔE/kT)である。ΔE = 0のときR = 1で、ΔEが大きくなるほどRは指数関数的に減少して0に漸近する。これは下に凸の単調減少曲線であり、グラフ3に相当する。",
+    "choiceExplanations": {
+      "ア": "誤り。直線的な減少ではなく指数関数的な減少である。",
+      "イ": "誤り。ΔEが大きいほど高準位の分子数は減るので、Rは増加しない。",
+      "ウ": "正しい。R = exp(−ΔE/kT)に対応し、ΔE = 0でR = 1、ΔEの増加とともに下に凸で減少して0に近づく。",
+      "エ": "誤り。Rは増加せず、S字状の変化もしない。また上限は1である。",
+      "オ": "誤り。上に凸の減少曲線で、右端で急に低下する形は指数関数的な減衰ではない。指数関数は下に凸である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問93（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q093-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問93の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q117",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 117,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "細胞周期は有糸分裂と細胞質分裂が起こる分裂期（M期）と間期に分けられ、間期はさらにG1期、S期、G2期に分けられる。増殖中の細胞集団の細胞に対して、DNA結合性蛍光色素で細胞を標識した。このとき蛍光強度は細胞内DNA量を反映する。個々の細胞の蛍光強度を測定したところ、相対蛍光強度と細胞数の関係は下図のようになった。G2期の細胞はどこに分布するか。1つ選べ。",
+    "choices": {
+      "ア": "領域A",
+      "イ": "領域B",
+      "ウ": "領域C",
+      "エ": "領域Aと領域B",
+      "オ": "領域Aと領域C"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "蛍光強度はDNA量を反映する。強度1のピークがDNA量2C（G1期）で、強度2のピークがDNA量4C（G2期およびM期）である。G1期細胞は領域A、DNA合成中のS期細胞は両者の間の領域B、DNA複製を終えたG2期細胞は領域Cに分布する。よって正解は3。",
+    "choiceExplanations": {
+      "ア": "領域AはDNA量が複製前の細胞（G1期）の位置であり、G2期ではない。",
+      "イ": "領域Bは、DNA量が1から2へ増加する途中にある細胞（S期）の位置である。",
+      "ウ": "正しい。G2期の細胞はDNA複製を終えており、DNA量はG1期の2倍である。この2倍の位置が領域Cである。",
+      "エ": "領域AはG1期、領域BはS期の細胞なので、どちらもG2期ではない。",
+      "オ": "領域Cは正しいが、領域AはG1期であり、G2期ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問117（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q117-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問117の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q118",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 118,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "マクロファージをリポ多糖で刺激して得た培養液を採取し、この培養液中のサイトカインXの濃度をサンドイッチELISA（Enzyme-linked immunosorbent assay）法で定量することにした。各試料をマイクロプレートに採取し反応を行った後、450 nmの吸光度を測定した。サイトカインXの標準物質を用いて標準曲線（検量線）を作成したところ、下図のようになった。この測定に関する記述として適切なのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "この培養液の測定値が吸光度1.5であった場合、培養液を希釈して再測定することが必要である。",
+      "イ": "10倍希釈した培養液の測定値が吸光度0.6である場合、もとの培養液中のサイトカインX濃度は約600 pg/mLである。",
+      "ウ": "培養液に含まれる別のサイトカインYを測定するためには、サイトカインXの測定とすべて同じ抗体を利用できる。",
+      "エ": "サンドイッチELISA法では抗原に対する2種類の抗体が使われるが、それぞれの抗体が認識するエピトープは異なる。",
+      "オ": "この培養液の測定で発色が検出限界以下だった場合、標準曲線（検量線）の測定の場合よりも反応時間を長めにしてもよい。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は1と4。吸光度1.5は検量線の範囲（図では最大でも約0.93、1付近まで）を超えている。このため、定量には試料を希釈して検量線の範囲内で再測定する必要がある。またサンドイッチELISAでは、捕捉抗体と検出抗体が同じ抗原上の異なるエピトープを認識する。同じエピトープなら両抗体が同時に結合できないためである。",
+    "choiceExplanations": {
+      "ア": "適切。吸光度1.5は検量線の範囲を超えており、検量線の外挿は信頼できない。希釈して範囲内に入れて再測定する必要がある。",
+      "イ": "不適切。検量線から吸光度0.6に対応する濃度は約600 pg/mLである。これは10倍希釈後の値なので、もとの培養液の濃度は10倍した約6000 pg/mLとなる。",
+      "ウ": "不適切。抗体は抗原特異的に結合する。サイトカインYの測定には、Yを認識する別の抗体が必要である。",
+      "エ": "適切。サンドイッチELISAでは、捕捉抗体と検出抗体の2種類で抗原を挟む。両者が同時に結合するためには、異なるエピトープを認識する必要がある。",
+      "オ": "不適切。反応時間は、検量線を作る標準物質も含めて、すべての試料で同一の条件にそろえる必要がある。試料だけ反応時間を変えると、検量線から濃度を求められなくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=26",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問118（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q118-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問118の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q171",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 171,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物のアルブミンへの結合定数は10（μmol/L）^-1、結合部位数は2 である。この薬物のアルブミン結合に関する両逆数プロットを点線で表し、また、この薬物のアルブミンへの結合が別の薬物の共存により競合的に阻害された場合を実線で表すとき、正しい図はどれか。1つ選べ。\nただし、図中のr はアルブミン1 分子当たりに結合している薬物の分子数を、[Df] は非結合形薬物濃度を示す。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "両逆数プロットの式は 1/r＝1/n＋(1/(n·K))×(1/[Df]) である。n＝2、K＝10 (μmol/L)^-1 なので、縦軸切片（1/n）＝0.5、傾き＝1/(2×10)＝0.05、横軸切片＝－K＝－10 となる。点線は縦軸の0.5と横軸の－10を通る直線である。競合阻害では、結合部位数 n は変わらないので縦軸切片は0.5のままで、見かけの結合定数 K が小さくなる。そのため傾きは大きくなり、横軸切片は－10より0側（－10より大きい値）へ移る。これを満たすのは図1である。",
+    "choiceExplanations": {
+      "ア": "正しい。縦軸切片が点線と同じ0.5で、実線の傾きが大きく、横軸切片が－10より0に近い。競合阻害の特徴に一致する。",
+      "イ": "縦軸切片が0.5から約2へ上がり、横軸切片は－10のままである。これは見かけの結合部位数が減って結合定数が変わらないパターン（非競合阻害型）であり誤り。",
+      "ウ": "縦軸切片が約2.5に上がっており、傾きは点線とほぼ同じである。競合阻害のパターンではなく誤り。",
+      "エ": "縦軸切片が約2で、n＝2から求められる0.5と一致しない。点線自体が誤りである。",
+      "オ": "点線の縦軸切片が約2で、n＝2から求められる0.5と一致しない。点線自体が誤りである。",
+      "カ": "点線の縦軸切片が約2で、n＝2から求められる0.5と一致しない。実線も平行移動型であり誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問171（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q171-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問171の原図1"
+    ]
   }
 ]
