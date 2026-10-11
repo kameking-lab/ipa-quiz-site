@@ -1,0 +1,177 @@
+{
+  "conclusion": "success",
+  "headSha": "36ed79007f3e3c33330eec38e0f3b6393185edf1",
+  "jobs": [
+    {
+      "completedAt": "2026-10-11T01:33:00Z",
+      "conclusion": "success",
+      "databaseId": 114358211839,
+      "name": "e2e",
+      "startedAt": "2026-10-11T01:20:36Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-11T01:20:38Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-11T01:20:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:20:52Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-11T01:20:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:20:53Z",
+          "conclusion": "success",
+          "name": "Run pnpm/action***setup@v4",
+          "number": 3,
+          "startedAt": "2026-10-11T01:20:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:20:57Z",
+          "conclusion": "success",
+          "name": "Run actions/setup***node@v4",
+          "number": 4,
+          "startedAt": "2026-10-11T01:20:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:21:06Z",
+          "conclusion": "success",
+          "name": "Install dependencies",
+          "number": 5,
+          "startedAt": "2026-10-11T01:20:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:21:37Z",
+          "conclusion": "success",
+          "name": "Lint",
+          "number": 6,
+          "startedAt": "2026-10-11T01:21:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:22:01Z",
+          "conclusion": "success",
+          "name": "Typecheck",
+          "number": 7,
+          "startedAt": "2026-10-11T01:21:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:26:01Z",
+          "conclusion": "success",
+          "name": "Unit tests",
+          "number": 8,
+          "startedAt": "2026-10-11T01:22:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:26:01Z",
+          "conclusion": "success",
+          "name": "Validate safety exam sources and contracted coverage",
+          "number": 9,
+          "startedAt": "2026-10-11T01:26:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:26:01Z",
+          "conclusion": "success",
+          "name": "Validate government***only explanation links",
+          "number": 10,
+          "startedAt": "2026-10-11T01:26:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:29:52Z",
+          "conclusion": "success",
+          "name": "Build",
+          "number": 11,
+          "startedAt": "2026-10-11T01:26:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:29:52Z",
+          "conclusion": "success",
+          "name": "Configure bounded APT downloads",
+          "number": 12,
+          "startedAt": "2026-10-11T01:29:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:30:19Z",
+          "conclusion": "success",
+          "name": "Install Playwright browsers",
+          "number": 13,
+          "startedAt": "2026-10-11T01:29:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:58Z",
+          "conclusion": "success",
+          "name": "Run E2E",
+          "number": 14,
+          "startedAt": "2026-10-11T01:30:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:58Z",
+          "conclusion": "success",
+          "name": "Upload Playwright report",
+          "number": 15,
+          "startedAt": "2026-10-11T01:32:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:58Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup***node@v4",
+          "number": 28,
+          "startedAt": "2026-10-11T01:32:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:58Z",
+          "conclusion": "success",
+          "name": "Post Run pnpm/action***setup@v4",
+          "number": 29,
+          "startedAt": "2026-10-11T01:32:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:59Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 30,
+          "startedAt": "2026-10-11T01:32:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-11T01:32:59Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 31,
+          "startedAt": "2026-10-11T01:32:59Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38101511310/job/114358211839"
+    }
+  ],
+  "url": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38101511310",
+  "unitTestSummary": {
+    "filesPassed": 515,
+    "testsPassed": 4770
+  },
+  "buildSummary": {
+    "staticPagesGenerated": 11515
+  }
+}

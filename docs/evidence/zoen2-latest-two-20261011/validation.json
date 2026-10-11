@@ -1,5 +1,5 @@
 {
-  "status": "ALL_80_IMPLEMENTED_REMAINING_CHECKS_RUNNING",
+  "status": "ALL_80_IMPLEMENTED_AND_CI_VERIFIED",
   "machineOriginalAnswerAudit": {
     "questions": 80,
     "mismatches": 0,
@@ -26,16 +26,48 @@
     "note": "Warnings include existing corpus-wide short texts and legacy patterns."
   },
   "fullTests": {
-    "command": "pnpm exec vitest run --maxWorkers=1",
-    "state": "running"
+    "command": "pnpm test",
+    "environment": "GitHub Actions Ubuntu Node 22",
+    "headSha": "36ed79007f3e3c33330eec38e0f3b6393185edf1",
+    "runUrl": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38101511310",
+    "filesPassed": 515,
+    "testsPassed": 4770,
+    "exitCode": 0
   },
   "lint": {
     "command": "pnpm lint",
-    "state": "running"
+    "exitCode": 0,
+    "errors": 0,
+    "existingWarnings": 1,
+    "warningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs"
   },
   "build": {
-    "command": "pnpm exec next build --webpack",
-    "state": "pending"
+    "command": "pnpm build",
+    "environment": "GitHub Actions Ubuntu Node 22",
+    "headSha": "36ed79007f3e3c33330eec38e0f3b6393185edf1",
+    "runUrl": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38101511310",
+    "staticPagesGenerated": 11515,
+    "exitCode": 0
   },
-  "firstWholeSuiteAttempt": "Interrupted by exec-server transport disconnect. No complete pass claimed. Final single-worker run saved separately."
+  "firstWholeSuiteAttempt": "Interrupted by exec-server transport disconnect. No complete pass claimed. Final single-worker run saved separately.",
+  "originalTranscriptAudit": {
+    "2026Stems": 30,
+    "2026ChoiceTexts": 120,
+    "2025Stems": 13,
+    "2025TextChoiceTokens": 48,
+    "2025OriginalGraphicChoices": 4,
+    "note": "2025 defective text-map and punctuation normalization documented in the separate transcript audit. Slope choices are original diagrams with descriptive UI aids."
+  },
+  "e2e": {
+    "command": "pnpm e2e",
+    "environment": "GitHub Actions",
+    "headSha": "36ed79007f3e3c33330eec38e0f3b6393185edf1",
+    "runUrl": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38101511310",
+    "exitCode": 0
+  },
+  "localDuplicateRuns": {
+    "fullSuite": "Stopped after the complete equivalent pnpm test run was confirmed successful in CI; partial local log is not claimed as a complete pass.",
+    "webpackBuild": "Compiled with an existing OpenTelemetry dependency warning; duplicate attempt stopped after the complete pnpm build run was confirmed successful in CI."
+  },
+  "subsequentSourceChanges": "The follow-up commit restores Q16 original wording (removes extra 下), aligns category labels, adds the final 2025 original audit, and removes obsolete self-imposed rights-HOLD metadata. No answer, explanation, image, old37 record or application logic changed in the follow-up."
 }
