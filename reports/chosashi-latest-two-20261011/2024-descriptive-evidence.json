@@ -1,0 +1,194 @@
+{
+  "status": "公式問題に基づく独自解答例（法務省の公式解答ではありません）",
+  "officialIntentNotAnswer": "https://www.moj.go.jp/content/001429852.pdf",
+  "primaryRules": {
+    "mapCorrection": "不動産登記規則第16条（https://laws.e-gov.go.jp/law/417M60000010018?occasion_date=20241020）",
+    "landArea": "不動産登記規則第100条（https://laws.e-gov.go.jp/law/417M60000010018?occasion_date=20241020）",
+    "floorArea": "不動産登記規則第115条（https://laws.e-gov.go.jp/law/417M60000010018?occasion_date=20241020）",
+    "surveyDiagram": "不動産登記規則第77条・第78条（https://laws.e-gov.go.jp/law/417M60000010018?occasion_date=20241020）",
+    "tax": "登録免許税法別表第一（https://laws.e-gov.go.jp/law/342AC0000000035?occasion_date=20241020）"
+  },
+  "originalAnswerSheets": [
+    "https://www.moj.go.jp/content/001427203.pdf",
+    "https://www.moj.go.jp/content/001427204.pdf",
+    "https://www.moj.go.jp/content/001427205.pdf"
+  ],
+  "amQ11": {
+    "B_unrounded": [
+      210.49980181474442,
+      210.5007748872286
+    ],
+    "B_rounded": [
+      210.5,
+      210.5
+    ],
+    "angleDegrees": 271.1533194044054,
+    "distanceMetres": 23.37733945512192,
+    "A": [
+      207.5,
+      223.5
+    ],
+    "F": [
+      212.5,
+      228.5
+    ],
+    "land2Area": "139.50",
+    "land1AreaUsingRoundedCoordinates": "128.00",
+    "rounding": "座標値の第3位四捨五入後に面積を計算。面積は第3位切捨て。観測生値から直接求積すると127.99㎡となるが設問順に従うと128.00㎡。"
+  },
+  "pmQ21": {
+    "B": [
+      27.39,
+      54.17
+    ],
+    "D": [
+      30.0,
+      60.78
+    ],
+    "P_unrounded": [
+      27.488474713271433,
+      60.817043145821955
+    ],
+    "P_rounded": [
+      27.49,
+      60.82
+    ],
+    "area3_1Exact": "37.5329",
+    "area3_1Recorded": "37.53",
+    "area3_3Exact": "8.34775",
+    "area3_3Recorded": "8.34",
+    "edgeLengths": {
+      "BH": 5.56,
+      "HI": 6.73,
+      "IP": 5.66,
+      "PB": 6.65,
+      "PD": 2.51,
+      "DB": 7.11
+    },
+    "historicAreaFromRoundedCoordinates": "45.86785",
+    "rule": "座標は第3位四捨五入、宅地の登記地積は1/100㎡未満切捨て。"
+  },
+  "pmQ22": {
+    "floor1PolygonEastSouth": [
+      [
+        0,
+        0
+      ],
+      [
+        3.6,
+        0
+      ],
+      [
+        3.6,
+        0.9
+      ],
+      [
+        9.9,
+        0.9
+      ],
+      [
+        9.9,
+        8.1
+      ],
+      [
+        5.4,
+        8.1
+      ],
+      [
+        5.4,
+        6.75
+      ],
+      [
+        3.6,
+        6.75
+      ],
+      [
+        3.6,
+        6.3
+      ],
+      [
+        -0.9,
+        6.3
+      ],
+      [
+        -0.9,
+        3.6
+      ],
+      [
+        0,
+        3.6
+      ]
+    ],
+    "floor2MainPolygonEastSouth": [
+      [
+        0,
+        0
+      ],
+      [
+        3.6,
+        0
+      ],
+      [
+        3.6,
+        0.9
+      ],
+      [
+        6.75,
+        0.9
+      ],
+      [
+        6.75,
+        2.7
+      ],
+      [
+        9.9,
+        2.7
+      ],
+      [
+        9.9,
+        8.1
+      ],
+      [
+        6.3,
+        8.1
+      ],
+      [
+        6.3,
+        6.3
+      ],
+      [
+        0,
+        6.3
+      ]
+    ],
+    "floor2EastPolygonEastSouth": [
+      [
+        11.7,
+        -0.9
+      ],
+      [
+        14.85,
+        -0.9
+      ],
+      [
+        14.85,
+        3.6
+      ],
+      [
+        11.7,
+        3.6
+      ]
+    ],
+    "floor1Exact": "68.040",
+    "floor2MainExact": "57.510",
+    "floor2EastExact": "14.175",
+    "floor2Exact": "71.685",
+    "floor1Recorded": "68.04",
+    "floor2Recorded": "71.68",
+    "rounding": "床面積は柱芯の閉鎖区画から算定して0.01㎡未満切捨て。左翼1階の6.75mには玄関出幅0.45mが含まれ、左翼本体は6.30m。",
+    "reviewCandidates": [
+      "申請書の添付情報の厳密な呼称・共有者記載欄",
+      "建物図面の敷地内位置は図1条件と照合"
+    ]
+  }
+}

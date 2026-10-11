@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function ReviewPage() {
+export default async function ReviewPage({ searchParams }: { searchParams: Promise<{ exam?: string; returnTo?: string }> }) {
+  const sp = await searchParams;
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-10">
       <div className="mb-6">
@@ -16,7 +17,7 @@ export default function ReviewPage() {
           エビングハウスの忘却曲線に基づいて、今日復習すべき問題を自動表示します。
         </p>
       </div>
-      <ReviewClient />
+      <ReviewClient key={sp.exam ?? "all"} examFromQuery={sp.exam} returnTo={sp.returnTo} />
     </main>
   );
 }

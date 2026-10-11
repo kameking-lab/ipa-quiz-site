@@ -34,6 +34,7 @@ export const LS_KEYS = {
   character: "ipa-quiz:character:v1",
   characterEnabled: "ipa-quiz:character-enabled:v1",
   copilotResponseLength: "ipa-quiz:copilot-response-length:v1",
+  reviewSchedule: "ipa-quiz:review:v1",
   reviewSeen: "ipa-quiz:review-seen:v1",
   lastQuestion: "ipa-quiz:last-question:v1",
   mockExam: "ipa-quiz:mock-exam:v1",

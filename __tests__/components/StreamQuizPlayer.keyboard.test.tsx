@@ -32,6 +32,30 @@ const questions: Question[] = [
   },
 ];
 
+it("keeps an unanswered ordering question on screen for Enter, Space and ArrowRight", () => {
+  vi.useFakeTimers();
+  try {
+    const ordering: Question = { ...questions[0]!, id: "ordering-1", type: "ordering", answer: ["ア", "イ", "ウ", "エ"] };
+    render(<StreamQuizPlayer questions={[ordering, { ...questions[0]!, id: "next-question", question: "NEXT_QUESTION" }]} />);
+    const body = screen.getByText(ordering.question);
+    for (const key of ["Enter", " ", "ArrowRight"]) {
+      fireEvent.keyDown(body, { key });
+      fireEvent.keyDown(window, { key });
+    }
+    const slot = screen.getAllByRole("combobox")[0]!;
+    for (const key of ["Enter", " ", "ArrowRight", "ArrowDown"]) {
+      expect(fireEvent.keyDown(slot, { key })).toBe(true);
+    }
+    act(() => vi.advanceTimersByTime(300));
+    expect(screen.getByText(ordering.question)).toBeInTheDocument();
+    expect(screen.queryByText("NEXT_QUESTION")).not.toBeInTheDocument();
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+  } finally {
+    cleanup();
+    vi.useRealTimers();
+  }
+});
+
 beforeEach(() => {
   cleanup();
   window.localStorage.clear();
