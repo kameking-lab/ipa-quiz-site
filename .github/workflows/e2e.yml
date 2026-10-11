@@ -6,8 +6,52 @@ on:
   push:
     branches: [main]
 
+# Supersede runs only within the same PR. Every main push keeps its own run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  e2e:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate E2E workflow gate
+        run: node --test .github/scripts/e2e-workflow.test.mjs
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Validate safety exam sources and contracted coverage
+        run: node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations
+
+      - name: Validate government-only explanation links
+        run: node scripts/validate-government-source-links.mjs --skip-live
+
+  browser:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -29,21 +73,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Typecheck
-        run: pnpm typecheck
-
-      - name: Unit tests
-        run: pnpm test
-
-      - name: Validate safety exam sources and contracted coverage
-        run: node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations
-
-      - name: Validate government-only explanation links
-        run: node scripts/validate-government-source-links.mjs --skip-live
 
       - name: Build
         run: pnpm build
@@ -75,3 +104,27 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
+
+  # Keep the existing required check name and fail closed for every dependency.
+  e2e:
+    name: e2e
+    needs: [quality, browser]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require all checks to pass
+        env:
+          JOB_RESULTS: ${{ toJSON(needs) }}
+        run: |
+          node --input-type=module <<'NODE'
+          const jobs = JSON.parse(process.env.JOB_RESULTS);
+          const entries = Object.entries(jobs);
+          for (const [name, job] of entries) {
+            console.log(`${name}: ${job.result ?? 'missing'}`);
+          }
+          if (entries.length !== 2 || entries.some(([, job]) => job.result !== 'success')) {
+            console.error('Every required job must succeed for this run.');
+            process.exit(1);
+          }
+          NODE

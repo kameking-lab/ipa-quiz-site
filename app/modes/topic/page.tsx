@@ -52,6 +52,7 @@ const VALID_EXAMS: ExamCode[] = [
   "takken",
   "tohan",
   "kanri",
+  "chusho-kigyo-shindanshi",
 ];
 
 function isExamCode(s: unknown): s is ExamCode {

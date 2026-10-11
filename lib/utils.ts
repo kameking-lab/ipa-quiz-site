@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  riyoshi: "理容師",
   ip: "ITパスポート",
   sg: "情報セキュリティマネジメント",
   fe: "基本情報技術者",
@@ -47,6 +48,7 @@ export const EXAM_LABELS: Record<string, string> = {
   mankan: "マンション管理士",
   kashikin: "貸金業務取扱主任者",
   sharoushi: "社会保険労務士",
+  "chusho-kigyo-shindanshi": "中小企業診断士",
   kangoshi: "看護師",
   yakuzaishi: "薬剤師",
   "rigaku-ryohoshi": "理学療法士",
@@ -55,6 +57,8 @@ export const EXAM_LABELS: Record<string, string> = {
   "sagyo-ryohoshi": "作業療法士",
   "shino-kunrenshi": "視能訓練士",
   "rinsho-kogishi": "臨床工学技士",
+  "rinsho-kensagishi": "臨床検査技師",
+  "shinryo-hoshasengishi": "診療放射線技師",
   "ahaki-anma": "あん摩マッサージ指圧師",
   "ahaki-hari-kyu": "はり師・きゅう師",
 };

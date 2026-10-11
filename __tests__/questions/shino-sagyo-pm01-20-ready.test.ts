@@ -3,6 +3,10 @@ import { SAGYO_RYOHOSHI_QUESTIONS } from "@/data/questions/sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
 import pm from "@/docs/evidence/shino-sagyo-pm01-20-ready-20261010/INTEGRATION.json";
 
+import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
+
+const restoredIds = new Set(ot13.newIds);
+
 const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => {
@@ -31,17 +35,18 @@ describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => 
         .toBe(question.officialAnswerNumber);
     }
   });
-  it("今回の保留4稿・未生成42問を公開集合に混ぜない", () => {
+  it("過去の保留・未生成集合から原典回収を完了した問だけを復帰する", () => {
     expect(pm.draftOriginals).toBe(38);
     expect(pm.readyProvenance).toHaveLength(34);
     expect(pm.heldDrafts).toHaveLength(4);
     expect(pm.excludedBeforeDraft).toHaveLength(42);
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(485);
+    expect(all).toHaveLength(496);
     for (const record of [...pm.heldDrafts, ...pm.excludedBeforeDraft]) {
       const match = record.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;
       const year = match[2] === "61" || match[2] === "56" ? 2025 : 2024;
-      expect(all.some(question => question.id === `${match[1]}-${year}-annual-pm-q${match[3]}`)).toBe(false);
+      const id = `${match[1]}-${year}-annual-pm-q${match[3]}`;
+      expect(all.some(question => question.id === id)).toBe(restoredIds.has(id));
     }
   });
 });
