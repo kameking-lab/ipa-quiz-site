@@ -24,7 +24,8 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./ui/sheet";
-import { cn } from "@/lib/utils";
+import { cn, EXAM_LABELS } from "@/lib/utils";
+import { isMockExamCode } from "@/lib/mock-exam/config";
 import { isLearningFocusRoute } from "@/lib/navigation/learning-focus";
 
 interface TabItem {
@@ -89,11 +90,18 @@ export function MobileBottomNav() {
     { href: "/#home-directory-title", label: "収録資格", icon: ClipboardList, match: [] },
     { href: "/transparency", label: "出典・運営", icon: FileText, match: ["/transparency"] },
   ];
+  const pathExam = pathname?.split("/")[1] ?? "";
+  const exam = Object.hasOwn(EXAM_LABELS, pathExam) ? pathExam : null;
+  const qualificationTabs = TABS.filter((tab) => tab.href !== "/mock-exam" || !exam || isMockExamCode(exam)).map((tab) =>
+    tab.href === "/mock-exam" && exam
+      ? { ...tab, href: `/mock-exam?${new URLSearchParams({ exam, returnTo: pathname! })}` }
+      : tab,
+  );
   const tabs: TabItem[] = pathname === "/" ? homeTabs : safety ? [
     { href: "/e-learning/exams", label: "試験一覧", icon: BookOpen, match: ["/e-learning/exams"] },
     { href: "/e-learning/search", label: "検索", icon: Search, match: ["/e-learning/search"] },
     { href: "/e-learning/progress", label: "進捗・復習", icon: LineChart, match: ["/e-learning/progress"] },
-  ] : TABS;
+  ] : qualificationTabs;
   const secondary = safety ? [{ href: "/", label: "IPA・安全を選ぶ", icon: BookOpen }] : SECONDARY_NAV;
   const [menuOpen, setMenuOpen] = React.useState(false);
 

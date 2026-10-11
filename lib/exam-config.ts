@@ -108,6 +108,18 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  chosashi: {
+    code: "chosashi",
+    nameFull: "土地家屋調査士試験",
+    urlSlug: "chosashi",
+    level: "specialist",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 11, label: "午前（択一10・記述1）", categories: ["測量", "測量記述"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 22, label: "午後（択一20・記述2）", categories: ["民法", "不動産登記法", "土地家屋調査士法", "土地記述", "建物記述"] },
+    ],
+    seasons: ["autumn"],
+    yearRange: { start: 2024, end: 2025 },
+  },
   ip: {
     code: "ip",
     nameFull: "ITパスポート試験",
@@ -897,6 +909,20 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
   },
+  "shika-ishi": {
+    code: "shika-ishi",
+    nameFull: "歯科医師国家試験",
+    urlSlug: "shika-ishi",
+    level: "advanced",
+    sessions: [
+      { session: "mondai-a", urlSlug: "mondai-a", expectedQuestions: 90, label: "問題A", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+      { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 90, label: "問題B", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+      { session: "mondai-c", urlSlug: "mondai-c", expectedQuestions: 90, label: "問題C", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+      { session: "mondai-d", urlSlug: "mondai-d", expectedQuestions: 90, label: "問題D", categories: ["基礎歯学", "口腔衛生", "歯科保存学", "歯科補綴学", "口腔外科学", "小児歯科", "歯科矯正学", "歯科放射線", "歯科麻酔", "歯科医療管理"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   "shinryo-hoshasengishi": {
     code: "shinryo-hoshasengishi",
     nameFull: "診療放射線技師国家試験",
@@ -918,7 +944,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

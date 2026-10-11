@@ -1,5 +1,7 @@
 "use client";
-import { formatAcceptedAnswers } from "@/lib/questions/answers";
+import { QuestionBody } from "@/components/quiz/QuestionBody";
+import { QuestionFigures } from "@/components/quiz/QuestionFigures";
+import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -11,8 +13,10 @@ import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
 import type { Question } from "@/lib/questions/types";
+import { quizBackHref } from "@/lib/questions/practice-session";
+import { LS_KEYS } from "@/lib/storage/keys";
 
-const REVIEW_KEY = "ipa-quiz:review:v1";
+const REVIEW_KEY = LS_KEYS.reviewSchedule;
 
 // エビングハウス曲線ベースの復習間隔（日数）
 const INTERVALS = [1, 3, 7, 14, 30, 60, 120];
@@ -38,7 +42,10 @@ export function getTodayStr(now: Date = new Date()): string {
   return jstDateString(now);
 }
 
-export function ReviewClient() {
+export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: string; returnTo?: string }) {
+  const [exam, setExam] = useState(examFromQuery ?? "");
+  const knownExam = !exam || Object.hasOwn(EXAM_LABELS, exam);
+  const backHref = exam && knownExam ? quizBackHref({ exam, returnTo: exam === examFromQuery ? returnTo : undefined }) : "/#choose-qualification";
   const [store, setStore] = useState<ReviewStore>({});
   const [dueQuestions, setDueQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,8 +61,28 @@ export function ReviewClient() {
     nextReviewDate: string | null;
   }>({ seenCount: 0, scheduledCount: 0, nextReviewDate: null });
 
+  const context = (
+    <nav aria-label="復習の資格" className="mb-5 space-y-3">
+      <Link href={backHref} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">{exam && knownExam ? `${examLabel(exam)}に戻る` : "資格を選ぶ"}</Link>
+      <label className="block text-sm font-medium">復習する資格
+        <select aria-label="復習する資格" value={exam} onChange={(event) => setExam(event.target.value)} className="mt-1 block h-11 w-full rounded-xl border border-border bg-background px-3">
+          <option value="">すべての資格</option>
+          {Object.entries(EXAM_LABELS).map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+        </select>
+      </label>
+    </nav>
+  );
+
   // localStorageから復習データを収集し、サーバーAPIで本日の復習問題を取得
   useEffect(() => {
+    if (!knownExam) return;
+    let cancelled = false;
+    setInitialized(false);
+    setLoadError(false);
+    setCurrentIndex(0);
+    setShowAnswer(false);
+    setDone(false);
+    setSessionStats({ correct: 0, incorrect: 0 });
     void (async () => {
       try {
         const raw = localStorage.getItem(REVIEW_KEY);
@@ -84,7 +111,7 @@ export function ReviewClient() {
         const res = await fetch("/api/review/due", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ historyIds, reviewStore, today }),
+          body: JSON.stringify({ historyIds, reviewStore, today, ...(exam ? { exam } : {}) }),
         });
 
         if (!res.ok) throw new Error("review-load-failed");
@@ -95,6 +122,7 @@ export function ReviewClient() {
             scheduledCount: number;
             nextReviewDate: string | null;
           };
+          if (cancelled) return;
           setDueQuestions(data.questions);
           setEmptyMeta({
             seenCount: data.seenCount,
@@ -105,11 +133,13 @@ export function ReviewClient() {
 
         setInitialized(true);
       } catch {
+        if (cancelled) return;
         setLoadError(true);
         setInitialized(true);
       }
     })();
-  }, []);
+    return () => { cancelled = true; };
+  }, [exam, knownExam]);
 
   const saveStore = useCallback((newStore: ReviewStore) => {
     setStore(newStore);
@@ -148,15 +178,17 @@ export function ReviewClient() {
     [currentIndex, dueQuestions, store, saveStore],
   );
 
+  if (!knownExam) return <div>{context}<p role="alert">指定された資格を確認できません。復習する資格を選んでください。</p></div>;
+
   if (!initialized) {
     return (
-      <div className="py-12 text-center text-sm text-zinc-500 dark:text-zinc-400">
+      <div>{context}<div className="py-12 text-center text-sm text-zinc-500 dark:text-zinc-400">
         読み込み中...
-      </div>
+      </div></div>
     );
   }
 
-  if (loadError) return <Card><CardContent className="py-8 text-center"><p role="alert" className="font-semibold">復習問題を読み込めませんでした</p><p className="mt-2 text-sm text-muted-foreground">学習履歴はこの端末に残っています。通信状態を確認して、もう一度お試しください。</p><Button onClick={() => window.location.reload()} className="mt-4">もう一度読み込む</Button></CardContent></Card>;
+  if (loadError) return <div>{context}<Card><CardContent className="py-8 text-center"><p role="alert" className="font-semibold">復習問題を読み込めませんでした</p><p className="mt-2 text-sm text-muted-foreground">学習履歴はこの端末に残っています。通信状態を確認して、もう一度お試しください。</p><Button onClick={() => window.location.reload()} className="mt-4">もう一度読み込む</Button></CardContent></Card></div>;
 
   if (dueQuestions.length === 0) {
     const isFreshUser = emptyMeta.seenCount === 0;
@@ -170,6 +202,7 @@ export function ReviewClient() {
 
     return (
       <div className="space-y-6">
+        {context}
         <Card>
           <CardContent className="py-10 text-center">
             <div className="text-3xl">{isFreshUser ? "📚" : "🎉"}</div>
@@ -217,7 +250,7 @@ export function ReviewClient() {
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Button asChild variant="primary" className="w-full">
-            <Link href={lastExam ? `/${lastExam}` : "/#choose-qualification"}>{lastExam ? `${examLabel(lastExam)}の問題を解く` : isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
+            <Link href={exam ? `/${exam}` : lastExam ? `/${lastExam}` : "/#choose-qualification"}>{exam || lastExam ? `${examLabel(exam || lastExam!)}の問題を解く` : isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
           </Button>
           <Button asChild variant="outline" className="w-full">
             <Link href="/#choose-qualification">別の資格を選ぶ</Link>
@@ -233,6 +266,7 @@ export function ReviewClient() {
 
     return (
       <div className="space-y-6">
+        {context}
         <Card>
           <CardContent className="py-8 text-center">
             <div className="text-3xl font-bold tabular-nums text-sky-600 dark:text-sky-400">
@@ -256,7 +290,7 @@ export function ReviewClient() {
             もう一度
           </Button>
           <Button asChild variant="outline" className="flex-1">
-            <Link href="/#choose-qualification">試験選択に戻る</Link>
+            <Link href={backHref}>{exam ? `${examLabel(exam)}に戻る` : "試験選択に戻る"}</Link>
           </Button>
         </div>
       </div>
@@ -264,12 +298,13 @@ export function ReviewClient() {
   }
 
   const q = dueQuestions[currentIndex]!;
-  const correctAnswer = formatAcceptedAnswers(q.answer);
+  const correctAnswer = formatQuestionAnswerForDisplay(q, q.answer);
   const record = store[q.id];
   const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
 
   return (
     <div className="space-y-4">
+      {context}
       {/* プログレス */}
       <div className="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400">
         <span>{currentIndex + 1} / {dueQuestions.length}</span>
@@ -286,18 +321,19 @@ export function ReviewClient() {
       <Card>
         <CardContent className="p-5">
           <div className="mb-3 flex gap-2">
-            <Badge variant="outline" className="text-xs">{q.exam.toUpperCase()}</Badge>
+            <Badge variant="outline" className="text-xs">{examLabel(q.exam)}</Badge>
             <Badge variant="outline" className="text-xs">{q.category}</Badge>
             {record && (
               <Badge variant="outline" className="text-xs">Lv.{record.level}</Badge>
             )}
           </div>
-          <p className="text-sm leading-relaxed">{q.question}</p>
+          <QuestionBody text={q.question} />
+          <QuestionFigures question={q} />
         </CardContent>
       </Card>
 
       {/* 選択肢 */}
-      {!showAnswer && (
+      {!showAnswer && Object.keys(q.choices ?? {}).length > 0 && (
         <div className="space-y-2">
           {Object.entries(q.choices ?? {}).map(([key, value]) => (
             <button
@@ -310,6 +346,10 @@ export function ReviewClient() {
             </button>
           ))}
         </div>
+      )}
+
+      {!showAnswer && Object.keys(q.choices ?? {}).length === 0 && (
+        <Button onClick={() => setShowAnswer(true)} className="w-full">解答・解説を見る</Button>
       )}
 
       {showAnswer && (

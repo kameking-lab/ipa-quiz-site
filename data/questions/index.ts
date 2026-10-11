@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { CHOSASHI_QUESTIONS } from "./chosashi";
 import { AP_QUESTIONS } from "./ap";
 import { IP_QUESTIONS } from "./ip";
 import { SG_QUESTIONS } from "./sg";
@@ -66,10 +67,12 @@ import { GAS_OTSU_QUESTIONS } from "./gas/otsu";
 import { GAS_HEI_QUESTIONS } from "./gas/hei";
 import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
+import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,
   ip: IP_QUESTIONS,
@@ -130,6 +133,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
   ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
