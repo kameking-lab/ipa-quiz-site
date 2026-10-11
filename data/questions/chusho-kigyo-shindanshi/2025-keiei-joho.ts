@@ -24,7 +24,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
     },
     "answer": "ウ",
-    "explanation": "a誤、b正、c正、d誤。Type-C形状だけでPDや映像出力は保証されない。",
+    "explanation": "a誤、b正、c正、d誤。Type-C形状だけでPDや映像出力は保証されない。\n\n他の選択肢との違い：\nア：aは誤り。USB速度はケーブル・機器など最も遅い対応規格に制限される。",
     "choiceExplanations": {
       "ア": "aは誤り。USB速度はケーブル・機器など最も遅い対応規格に制限される。",
       "イ": "bは正、cも正。aは誤り。",
@@ -62,7 +62,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "エ": "ハイパーバイザは、単一の物理マシン上に1 つ以上の仮想マシンを稼働させる技術である。"
     },
     "answer": "エ",
-    "explanation": "ハイパーバイザが単一物理機上で仮想マシンを稼働させる。",
+    "explanation": "ハイパーバイザが単一物理機上で仮想マシンを稼働させる。\n\n他の選択肢との違い：\nア：ゲストOSを稼働させるのは仮想マシン方式。",
     "choiceExplanations": {
       "ア": "ゲストOSを稼働させるのは仮想マシン方式。",
       "イ": "ホストOS上に仮想化ソフトを置くホスト型仮想マシンの説明。",
@@ -99,7 +99,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "エ": "パッシブタグは、内蔵電源を用いて無線信号を発信できる。"
     },
     "answer": "ア",
-    "explanation": "RFタグには読取専用、一度書込後読取専用、読書可能の型がある。",
+    "explanation": "RFタグには読取専用、一度書込後読取専用、読書可能の型がある。\n\n他の選択肢との違い：\nイ：RFIDは電波を使い、画像処理でタグを読む方式ではない。",
     "choiceExplanations": {
       "ア": "RFタグには読取専用、一度書込後読取専用、読書可能の型がある。",
       "イ": "RFIDは電波を使い、画像処理でタグを読む方式ではない。",
@@ -137,7 +137,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
     },
     "answer": "オ",
-    "explanation": "a誤、b誤、c正、d正。",
+    "explanation": "a誤、b誤、c正、d正。\n\n他の選択肢との違い：\nア：aはRESTを誤解し、cはJSON形式なので正。",
     "choiceExplanations": {
       "ア": "aはRESTを誤解し、cはJSON形式なので正。",
       "イ": "aは誤り。RESTはHTTPメソッドを用いる設計様式。",
@@ -176,7 +176,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：UDPｂ：SNMPｃ：ARP"
     },
     "answer": "エ",
-    "explanation": "UDP、DHCP、IPが各説明に対応する。",
+    "explanation": "UDP、DHCP、IPが各説明に対応する。\n\n他の選択肢との違い：\nア：aは速度優先のUDP、bはDHCP、cはIP。",
     "choiceExplanations": {
       "ア": "aは速度優先のUDP、bはDHCP、cはIP。",
       "イ": "aはUDPで、bはDHCP。",
@@ -215,7 +215,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：誤"
     },
     "answer": "ウ",
-    "explanation": "a誤、b正、c誤、d誤。dの自動実行はスマートコントラクト。",
+    "explanation": "a誤、b正、c誤、d誤。dの自動実行はスマートコントラクト。\n\n他の選択肢との違い：\nア：aは誤り。コンソーシアム型は参加者が制限される。",
     "choiceExplanations": {
       "ア": "aは誤り。コンソーシアム型は参加者が制限される。",
       "イ": "bは正。パブリック型でも合意形成が必要。",
@@ -254,7 +254,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ホワイトボックステストでは、モジュール内の分岐や繰り返しなど、内部ロジックの正しさを検証する。"
     },
     "answer": "オ",
-    "explanation": "内部の分岐や繰返しを検証するのがホワイトボックステスト。",
+    "explanation": "内部の分岐や繰返しを検証するのがホワイトボックステスト。\n\n他の選択肢との違い：\nア：利用者による公開前評価は通常ベータテスト。",
     "choiceExplanations": {
       "ア": "利用者による公開前評価は通常ベータテスト。",
       "イ": "負荷に対する検証は性能・負荷テスト。",
@@ -293,7 +293,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
     },
     "answer": "ウ",
-    "explanation": "a正、b誤、c誤、d正。LPWAは低消費電力・広域通信。",
+    "explanation": "a正、b誤、c誤、d正。LPWAは低消費電力・広域通信。\n\n他の選択肢との違い：\nア：bは誤り。全ワンボードマイコンにLinuxが載るわけではない。",
     "choiceExplanations": {
       "ア": "bは誤り。全ワンボードマイコンにLinuxが載るわけではない。",
       "イ": "cは誤り。サーミスタは温度検出用。",
@@ -332,7 +332,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ｃ、ｂ、ａ"
     },
     "answer": "オ",
-    "explanation": "並列構成が最も高いc、次がb、最後がa。",
+    "explanation": "並列構成が最も高いc、次がb、最後がa。\n\n他の選択肢との違い：\nア：図の直列・並列構成を計算するとaが最下位。",
     "choiceExplanations": {
       "ア": "図の直列・並列構成を計算するとaが最下位。",
       "イ": "bとaの順位が逆。",
@@ -377,7 +377,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "フォールバックとは、故障や障害が発生したときに、待機系システムが処理を継続するように設計することである。"
     },
     "answer": "イ",
-    "explanation": "部品の信頼性を上げて故障を避けるフォールトアボイダンス。",
+    "explanation": "部品の信頼性を上げて故障を避けるフォールトアボイダンス。\n\n他の選択肢との違い：\nア：機能を縮小して継続するのはフォールバック／フェイルソフト。",
     "choiceExplanations": {
       "ア": "機能を縮小して継続するのはフォールバック／フェイルソフト。",
       "イ": "部品の信頼性を上げて故障を避けるフォールトアボイダンス。",
@@ -416,7 +416,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：誤"
     },
     "answer": "イ",
-    "explanation": "各値は原子で第1正規形、単一主キーで第2正規形。推移従属により第3ではない。",
+    "explanation": "各値は原子で第1正規形、単一主キーで第2正規形。推移従属により第3ではない。\n\n他の選択肢との違い：\nア：講座コード→講座名、講師コード→講師という推移従属があるため第3正規形ではない。",
     "choiceExplanations": {
       "ア": "講座コード→講座名、講師コード→講師という推移従属があるため第3正規形ではない。",
       "イ": "各値は原子で第1正規形、単一主キーで第2正規形。推移従属により第3ではない。",
@@ -519,7 +519,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：誤　　ｄ：正"
     },
     "answer": "オ",
-    "explanation": "a誤、b誤、c誤、d正。",
+    "explanation": "a誤、b誤、c誤、d正。\n\n他の選択肢との違い：\nア：成果提示・フィードバックはスプリントレビューであり日次スクラムではない。",
     "choiceExplanations": {
       "ア": "成果提示・フィードバックはスプリントレビューであり日次スクラムではない。",
       "イ": "bは反復型開発の説明でローコードではない。",
@@ -558,7 +558,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "人の認知の隙を突き、熟考を妨げることで、不利な条件を見落とさせるリスクが懸念されている。"
     },
     "answer": "エ",
-    "explanation": "同質集団内で意見が反響し偏りが強まるエコーチェンバー。",
+    "explanation": "同質集団内で意見が反響し偏りが強まるエコーチェンバー。\n\n他の選択肢との違い：\nア：偽映像・音声はディープフェイク。",
     "choiceExplanations": {
       "ア": "偽映像・音声はディープフェイク。",
       "イ": "履歴追跡と広告表示はトラッキング等の問題。",
@@ -597,7 +597,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "Ａ：倫理観　　Ｂ：コンプライアンス　　Ｃ：リスク"
     },
     "answer": "イ",
-    "explanation": "監査人の客観性、コントロールの適切性、リスク対応を評価する。",
+    "explanation": "監査人の客観性、コントロールの適切性、リスク対応を評価する。\n\n他の選択肢との違い：\nア：Cはリスクでありセキュリティに限定されない。",
     "choiceExplanations": {
       "ア": "Cはリスクでありセキュリティに限定されない。",
       "イ": "監査人の客観性、コントロールの適切性、リスク対応を評価する。",
@@ -636,7 +636,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "データマートとは、データウェアハウスに蓄積する構造化されたデータや、IoT 機器やSNS などからの構造化されていないデータを、そのままの形式で格納するデータベースのことである。"
     },
     "answer": "ア",
-    "explanation": "ETLは抽出・変換・格納を行う。",
+    "explanation": "ETLは抽出・変換・格納を行う。\n\n他の選択肢との違い：\nイ：多次元分析はOLAP、OLTPはトランザクション処理。",
     "choiceExplanations": {
       "ア": "ETLは抽出・変換・格納を行う。",
       "イ": "多次元分析はOLAP、OLTPはトランザクション処理。",
@@ -675,7 +675,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "SFA とは、営業支援システムのことであり、営業担当者の行動管理や商談の進捗状況管理などの機能を有する。"
     },
     "answer": "オ",
-    "explanation": "SFAは営業活動や商談進捗を支援するシステム。",
+    "explanation": "SFAは営業活動や商談進捗を支援するシステム。\n\n他の選択肢との違い：\nア：現実を完全に置き換えるのはVR。ARは現実に情報を重ねる。",
     "choiceExplanations": {
       "ア": "現実を完全に置き換えるのはVR。ARは現実に情報を重ねる。",
       "イ": "CTIは電話とコンピュータの統合。",
@@ -714,7 +714,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
     },
     "answer": "エ",
-    "explanation": "a誤、b正、c正、d誤。dの説明はローリングウェーブ計画。",
+    "explanation": "a誤、b正、c正、d誤。dの説明はローリングウェーブ計画。\n\n他の選択肢との違い：\nア：aの説明はプロジェクトスコープ記述書等でWBS辞書とは異なる。",
     "choiceExplanations": {
       "ア": "aの説明はプロジェクトスコープ記述書等でWBS辞書とは異なる。",
       "イ": "cの100%ルールは正しい。",
@@ -753,7 +753,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "ランサムウェアの主要な侵入経路は、VPN 機器、リモートデスクトップ、不審メールやその添付ファイルである。"
     },
     "answer": "オ",
-    "explanation": "VPN機器、リモートデスクトップ、メールが主な侵入経路。",
+    "explanation": "VPN機器、リモートデスクトップ、メールが主な侵入経路。\n\n他の選択肢との違い：\nア：EDRは侵入後の検知・対応に重点がある。",
     "choiceExplanations": {
       "ア": "EDRは侵入後の検知・対応に重点がある。",
       "イ": "EPPは侵入前の防御に重点がある。",
@@ -792,7 +792,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "Ａ：中間者攻撃　　　　　　　　　　　　　Ｂ：モデル反転攻撃　　Ｃ：プロンプト・インジェクション"
     },
     "answer": "ウ",
-    "explanation": "入力摂動は敵対的サンプル、学習データ推定はモデル反転、指示混入はプロンプト・インジェクション。",
+    "explanation": "入力摂動は敵対的サンプル、学習データ推定はモデル反転、指示混入はプロンプト・インジェクション。\n\n他の選択肢との違い：\nア：Bは総当たりではなくモデル反転。",
     "choiceExplanations": {
       "ア": "Bは総当たりではなくモデル反転。",
       "イ": "CはXSSでなくプロンプト・インジェクション。",
@@ -831,7 +831,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "Ａ：企業文化に関する方策　　　　　Ｂ：デジタル人材の育成・確保　　Ｃ：経営者の情報発信"
     },
     "answer": "ウ",
-    "explanation": "AはDX戦略の推進、Bはデジタル人材の育成・確保、Cはステークホルダーとの対話。",
+    "explanation": "AはDX戦略の推進、Bはデジタル人材の育成・確保、Cはステークホルダーとの対話。\n\n他の選択肢との違い：\nイ：Bはデジタル人材の育成・確保。",
     "choiceExplanations": {
       "ア": "Bはデジタル人材の育成・確保、Cはステークホルダーとの対話。",
       "イ": "Bはデジタル人材の育成・確保。",
@@ -870,7 +870,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "変革に向け必要となるスキル、人的リソース、資金は明確になっている。"
     },
     "answer": "ア",
-    "explanation": "企業間データ連携を実現し活用する仕組みは進展レベル3。",
+    "explanation": "企業間データ連携を実現し活用する仕組みは進展レベル3。\n\n他の選択肢との違い：\nイ：戦略策定段階で変化対応の仕組みが構築済みとはいえない。",
     "choiceExplanations": {
       "ア": "企業間データ連携を実現し活用する仕組みは進展レベル3。",
       "イ": "戦略策定段階で変化対応の仕組みが構築済みとはいえない。",
@@ -909,7 +909,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "Ｂ、Ｃ、Ｄ、Ａ"
     },
     "answer": "オ",
-    "explanation": "EACはB=1000、C=1024、D=1152、A=1200万円の順。",
+    "explanation": "EACはB=1000、C=1024、D=1152、A=1200万円の順。\n\n他の選択肢との違い：\nア：AのEACは1080×600/540=1200、Bは1000、Cは1024、Dは1152。",
     "choiceExplanations": {
       "ア": "AのEACは1080×600/540=1200、Bは1000、Cは1024、Dは1152。",
       "イ": "Bは最小だがAは最大。",
@@ -954,7 +954,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "99.8％"
     },
     "answer": "エ",
-    "explanation": "(8520-142)/8520×100=98.333…%で小数第2位四捨五入98.3%。",
+    "explanation": "(8520-142)/8520×100=98.333…%で小数第2位四捨五入98.3%。\n\n他の選択肢との違い：\nア：計画停止240時間を除いた8520時間が分母で、142時間停止時の稼働率は約98.3%。",
     "choiceExplanations": {
       "ア": "計画停止240時間を除いた8520時間が分母で、142時間停止時の稼働率は約98.3%。",
       "イ": "95.6%では停止142時間より多い。",
@@ -993,7 +993,7 @@ export const CHUSHO_2025_F_QUESTIONS: Question[] = [
       "オ": "①：教師なし②：MSE③：RMSE④：MAE"
     },
     "answer": "イ",
-    "explanation": "教師あり学習、MSE、RMSE、MAEが定義に合う。",
+    "explanation": "教師あり学習、MSE、RMSE、MAEが定義に合う。\n\n他の選択肢との違い：\nア：二乗誤差平均はMSEでMAEではない。",
     "choiceExplanations": {
       "ア": "二乗誤差平均はMSEでMAEではない。",
       "イ": "教師あり学習、MSE、RMSE、MAEが定義に合う。",

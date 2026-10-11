@@ -24,7 +24,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "店舗決済において、支払者がQR コードを表示して店舗側の処理端末に読み取らせるのに用いられている。"
     },
     "answer": "ア",
-    "explanation": "NFCは近距離のICカード読取に使う。",
+    "explanation": "NFCは近距離のICカード読取に使う。\n\n他の選択肢との違い：\nイ：広域・低消費電力通信はLPWAの説明。",
     "choiceExplanations": {
       "ア": "NFCは近距離のICカード読取に使う。",
       "イ": "広域・低消費電力通信はLPWAの説明。",
@@ -63,7 +63,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "RAID 10 は、ミラーリングとストライピングを組み合わせた方式で、信頼性の向上と高速化の両方を実現できる。"
     },
     "answer": "オ",
-    "explanation": "RAID 10はミラーリングとストライピングを併用する。",
+    "explanation": "RAID 10はミラーリングとストライピングを併用する。\n\n他の選択肢との違い：\nア：RAID 0はストライピングで冗長性がない。",
     "choiceExplanations": {
       "ア": "RAID 0はストライピングで冗長性がない。",
       "イ": "RAID 1は2台からのミラーリング。",
@@ -102,7 +102,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ｃとｄ"
     },
     "answer": "エ",
-    "explanation": "bの仮想デスクトップとdのストレージ統合はいずれも仮想化技術。",
+    "explanation": "bの仮想デスクトップとdのストレージ統合はいずれも仮想化技術。\n\n他の選択肢との違い：\nア：aのマルチブートは起動OSの選択であり、仮想化技術ではない。bはVDIで該当する。",
     "choiceExplanations": {
       "ア": "aのマルチブートは起動OSの選択であり、仮想化技術ではない。bはVDIで該当する。",
       "イ": "aのマルチブートは仮想化技術ではない。dのストレージ仮想化のみ該当する。",
@@ -147,7 +147,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "日本をJP、米国をUS というように、対象を容易に連想できる略称などを用いて、英数字や記号で表したコードのことである。"
     },
     "answer": "オ",
-    "explanation": "連想しやすい文字を用いるニモニックコード。",
+    "explanation": "連想しやすい文字を用いるニモニックコード。\n\n他の選択肢との違い：\nア：意味を持つ番号帯は区分コードでありニモニックではない。",
     "choiceExplanations": {
       "ア": "意味を持つ番号帯は区分コードでありニモニックではない。",
       "イ": "各桁に意味を割り当てる桁別コード。",
@@ -186,7 +186,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ワイヤーフレームとは、利用者のデバイスや画面サイズなどの環境条件に応じて、事前に用意した複数の固定レイアウトの中から最適なものを切り替えて表示する手法のことである。"
     },
     "answer": "ウ",
-    "explanation": "メディアクエリは表示環境に応じCSSを適用する。",
+    "explanation": "メディアクエリは表示環境に応じCSSを適用する。\n\n他の選択肢との違い：\nア：これはアクセシビリティやユニバーサルデザインの説明。",
     "choiceExplanations": {
       "ア": "これはアクセシビリティやユニバーサルデザインの説明。",
       "イ": "ページネーションは複数ページへの分割と移動。",
@@ -225,7 +225,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "SaaS を利用する場合、サービス利用者はOS 管理者の権限について管理を行う。"
     },
     "answer": "ア",
-    "explanation": "IaaSでは利用者がOSとミドルウェアを管理する。",
+    "explanation": "IaaSでは利用者がOSとミドルウェアを管理する。\n\n他の選択肢との違い：\nイ：PaaSでは基盤の調達・運用を事業者が担う。",
     "choiceExplanations": {
       "ア": "IaaSでは利用者がOSとミドルウェアを管理する。",
       "イ": "PaaSでは基盤の調達・運用を事業者が担う。",
@@ -309,7 +309,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "SQL 文①：ｃ　　SQL 文②：ｆ"
     },
     "answer": "エ",
-    "explanation": "①はSUMを降順、②はCOUNTを昇順で延べ顧客数を示す。",
+    "explanation": "①はSUMを降順、②はCOUNTを昇順で延べ顧客数を示す。\n\n他の選択肢との違い：\nア：①は降順なのでaではなくb、②も重複を数える。",
     "choiceExplanations": {
       "ア": "①は降順なのでaではなくb、②も重複を数える。",
       "イ": "①は降順でb、②は延べ件数でf。",
@@ -356,7 +356,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "UDP とは、データ転送において速度よりも信頼性を重視し、通信相手と接続してから通信を行うコネクション型のプロトコルのことである。"
     },
     "answer": "イ",
-    "explanation": "IMAPはメールをサーバ上で管理・閲覧する。",
+    "explanation": "IMAPはメールをサーバ上で管理・閲覧する。\n\n他の選択肢との違い：\nア：IPからMACを調べるのはARP。",
     "choiceExplanations": {
       "ア": "IPからMACを調べるのはARP。",
       "イ": "IMAPはメールをサーバ上で管理・閲覧する。",
@@ -395,7 +395,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "安全性（Security）とは、システムの稼働が期待される時間に対する実際の稼働時間の割合のことをいう。"
     },
     "answer": "ウ",
-    "explanation": "Serviceabilityは保守や復旧の容易さ。",
+    "explanation": "Serviceabilityは保守や復旧の容易さ。\n\n他の選択肢との違い：\nア：RASISのReliabilityは故障しにくさ。",
     "choiceExplanations": {
       "ア": "RASISのReliabilityは故障しにくさ。",
       "イ": "Availabilityは稼働可能な状態の割合。",
@@ -433,7 +433,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "エ": "ISMS は情報システムが企画・開発されてから、運用・保守を経て、最終的に廃棄されるまでのシステムライフサイクル全体における、IT 投資の財務的評価を行うフレームワークである。"
     },
     "answer": "イ",
-    "explanation": "CMMIレベル4は定量的に管理され、最適化はレベル5。",
+    "explanation": "CMMIレベル4は定量的に管理され、最適化はレベル5。\n\n他の選択肢との違い：\nア：戦略マップは学習と成長から内部プロセス、顧客、財務へつなぐ。",
     "choiceExplanations": {
       "ア": "戦略マップは学習と成長から内部プロセス、顧客、財務へつなぐ。",
       "イ": "CMMIレベル4は定量的に管理され、最適化はレベル5。",
@@ -471,7 +471,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ブロックチェーンとは、現実世界のデータの整合性を維持する台帳を、1 つのサーバで一元的に管理する技術のことである。"
     },
     "answer": "ウ",
-    "explanation": "スマートコントラクトは条件成立時に自動実行されるプログラム。",
+    "explanation": "スマートコントラクトは条件成立時に自動実行されるプログラム。\n\n他の選択肢との違い：\nア：DAOは分散型自律組織。",
     "choiceExplanations": {
       "ア": "DAOは分散型自律組織。",
       "イ": "サイバーフィジカルシステムは現実世界のデータとサイバー空間の分析を連携する。",
@@ -510,7 +510,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ローコード開発とは、必要最小限のソースコードでアプリケーションを開発する手法で、AI 開発でよく利用されるPython はその一例である。"
     },
     "answer": "ア",
-    "explanation": "専門家以外にもAI利用・開発を開く概念。",
+    "explanation": "専門家以外にもAI利用・開発を開く概念。\n\n他の選択肢との違い：\nイ：APIはソフトウェア間の機能・データ連携の窓口。資料検索を伴う生成AIはRAG。",
     "choiceExplanations": {
       "ア": "専門家以外にもAI利用・開発を開く概念。",
       "イ": "APIはソフトウェア間の機能・データ連携の窓口。資料検索を伴う生成AIはRAG。",
@@ -549,7 +549,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ｄとｅ"
     },
     "answer": "イ",
-    "explanation": "aのログ監視とcの権限管理は不正の機会を減らす。",
+    "explanation": "aのログ監視とcの権限管理は不正の機会を減らす。\n\n他の選択肢との違い：\nア：aは機会を減らすがbは動機の緩和。",
     "choiceExplanations": {
       "ア": "aは機会を減らすがbは動機の緩和。",
       "イ": "aのログ監視とcの権限管理は不正の機会を減らす。",
@@ -588,7 +588,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ホワイトボックステストとは、プログラムの内部構造やコードを考慮せず、外部からの入力と出力だけに着目して行うテストのことである。"
     },
     "answer": "イ",
-    "explanation": "回帰テストは変更が既存機能に与えた影響を調べる。",
+    "explanation": "回帰テストは変更が既存機能に与えた影響を調べる。\n\n他の選択肢との違い：\nア：A/Bテストは2案の成果比較。",
     "choiceExplanations": {
       "ア": "A/Bテストは2案の成果比較。",
       "イ": "回帰テストは変更が既存機能に与えた影響を調べる。",
@@ -627,7 +627,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ｂとｄ"
     },
     "answer": "エ",
-    "explanation": "bの動くソフトウェアとcの顧客との協調を重視するのが宣言の内容。",
+    "explanation": "bの動くソフトウェアとcの顧客との協調を重視するのが宣言の内容。\n\n他の選択肢との違い：\nア：aは個人と対話よりプロセス自動化を重視しており宣言と逆。bだけ正しい。",
     "choiceExplanations": {
       "ア": "aは個人と対話よりプロセス自動化を重視しており宣言と逆。bだけ正しい。",
       "イ": "aは個人と対話よりプロセス自動化を重視しており宣言と逆。cだけ正しい。",
@@ -666,7 +666,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
     },
     "answer": "エ",
-    "explanation": "a誤・b正・c正・d誤。クリックによる同意はクリックラップ。",
+    "explanation": "a誤・b正・c正・d誤。クリックによる同意はクリックラップ。\n\n他の選択肢との違い：\nア：aは誤りでシェアウェアにソース公開義務はない。",
     "choiceExplanations": {
       "ア": "aは誤りでシェアウェアにソース公開義務はない。",
       "イ": "aは誤り、dも著作権放棄を意味しない。",
@@ -705,7 +705,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "①：12　　②：Ｂ　　③：120"
     },
     "answer": "エ",
-    "explanation": "Aの年額12、Bの5年総費用が最大、Cと等しいAの契約数は115。",
+    "explanation": "Aの年額12、Bの5年総費用が最大、Cと等しいAの契約数は115。\n\n他の選択肢との違い：\nア：100アカウントの年額は12百万円。",
     "choiceExplanations": {
       "ア": "100アカウントの年額は12百万円。",
       "イ": "年額は12百万円。",
@@ -752,7 +752,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "①：1.04　　②：810　　③：1,080"
     },
     "answer": "イ",
-    "explanation": "AC729÷EV810=0.9、EAC=1200÷0.9=約1333。",
+    "explanation": "AC729÷EV810=0.9、EAC=1200÷0.9=約1333。\n\n他の選択肢との違い：\nア：SPI0.9に必要なEVは900×0.9=810。",
     "choiceExplanations": {
       "ア": "SPI0.9に必要なEVは900×0.9=810。",
       "イ": "AC729÷EV810=0.9、EAC=1200÷0.9=約1333。",
@@ -791,7 +791,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ユーザの課題や行動から顧客価値を定義し、製品・サービスのありかたのデザインを担う。"
     },
     "answer": "エ",
-    "explanation": "経営視点で目的・ビジネスモデルを設計し関係者を牽引する役割。",
+    "explanation": "経営視点で目的・ビジネスモデルを設計し関係者を牽引する役割。\n\n他の選択肢との違い：\nア：プロジェクトマネジメント職の説明。",
     "choiceExplanations": {
       "ア": "プロジェクトマネジメント職の説明。",
       "イ": "情報システムの機能設計に寄った役割。",
@@ -830,7 +830,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "Ａ：RFPＢ：RFQＣ：PoV"
     },
     "answer": "イ",
-    "explanation": "情報収集RFI、提案依頼RFP、概念実証PoCの順。",
+    "explanation": "情報収集RFI、提案依頼RFP、概念実証PoCの順。\n\n他の選択肢との違い：\nア：実現可能性の確認はPoC。",
     "choiceExplanations": {
       "ア": "実現可能性の確認はPoC。",
       "イ": "情報収集RFI、提案依頼RFP、概念実証PoCの順。",
@@ -869,7 +869,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "フィッシングとは、他人のコンピュータのファイルを暗号化することで正常にアクセスできない状態にし、元に戻すために身代金の支払いが要求される攻撃である。"
     },
     "answer": "ア",
-    "explanation": "DDoSは分散した送信元で標的を過負荷にする。",
+    "explanation": "DDoSは分散した送信元で標的を過負荷にする。\n\n他の選択肢との違い：\nイ：記述はバックドアで中間者攻撃ではない。",
     "choiceExplanations": {
       "ア": "DDoSは分散した送信元で標的を過負荷にする。",
       "イ": "記述はバックドアで中間者攻撃ではない。",
@@ -908,7 +908,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "ｃとｄ"
     },
     "answer": "ウ",
-    "explanation": "bのWAFによるWeb通信検査とcのFWのポート制限は適切。",
+    "explanation": "bのWAFによるWeb通信検査とcのFWのポート制限は適切。\n\n他の選択肢との違い：\nア：aはDBを外部に近いDMZに置く点が危険。cのポート制限のみ適切。",
     "choiceExplanations": {
       "ア": "aはDBを外部に近いDMZに置く点が危険。cのポート制限のみ適切。",
       "イ": "aのDBをDMZに置く点とdの社内ファイルサーバ内で検査する点が不適切。",
@@ -947,7 +947,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "オ": "①：モデルＢ　　②：モデルＡ　　③：幾何平均　　④：モデルＢ"
     },
     "answer": "イ",
-    "explanation": "Aの再現率は480/750=0.64、Bは420/500=0.84。F値はAの方が大きい。",
+    "explanation": "Aの再現率は480/750=0.64、Bは420/500=0.84。F値はAの方が大きい。\n\n他の選択肢との違い：\nア：F値は調和平均で幾何平均ではない。",
     "choiceExplanations": {
       "ア": "F値は調和平均で幾何平均ではない。",
       "イ": "Aの再現率は480/750=0.64、Bは420/500=0.84。F値はAの方が大きい。",
@@ -991,7 +991,7 @@ export const CHUSHO_2026_F_QUESTIONS: Question[] = [
       "エ": "入力データ又はプロンプトに含まれるバイアスへの配慮"
     },
     "answer": "エ",
-    "explanation": "利用者は入力データやプロンプトに偏りが含まれないよう配慮する。",
+    "explanation": "利用者は入力データやプロンプトに偏りが含まれないよう配慮する。\n\n他の選択肢との違い：\nア：システム構成・データのバイアスは主に提供者の設計段階で扱う。",
     "choiceExplanations": {
       "ア": "システム構成・データのバイアスは主に提供者の設計段階で扱う。",
       "イ": "モデル・アルゴリズムのバイアスは主に開発者が扱う。",
