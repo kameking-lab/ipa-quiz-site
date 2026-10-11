@@ -31,7 +31,10 @@ describe("保健師 latest two original sittings", () => {
 
   it("preserves each existing live question and official answer, with complete choice reasons", () => {
     for (const q of unchanged) expect(HOKENSHI_QUESTIONS.find(row => row.id === q.id)).toEqual(q);
-    expect(createHash("sha256").update(readFileSync(resolve(process.cwd(), "data/questions/hokenshi/medical34-live.json"))).digest("hex")).toBe(manifest.previousLiveFileSha256);
+    // Git stores this UTF-8 source with LF; Windows checkouts may use CRLF.
+    // Normalize only the platform newline representation, preserving every content byte.
+    const liveSource = readFileSync(resolve(process.cwd(), "data/questions/hokenshi/medical34-live.json"), "utf8");
+    expect(createHash("sha256").update(liveSource.replace(/\r\n/g, "\n"), "utf8").digest("hex")).toBe(manifest.previousLiveFileSha256);
     const kana = ["ア", "イ", "ウ", "エ", "オ"];
     for (const q of HOKENSHI_QUESTIONS) {
       const evidence = manifest.originals.find(row => row.id === q.id)!;
