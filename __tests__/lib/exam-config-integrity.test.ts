@@ -45,6 +45,8 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
   it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
     const keys = ENTRIES.map(([k]) => k);
     expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.filter(isExamPublished).sort());
+    expect(ALL_QUIZ_EXAM_CODES).not.toContain("kenchiku-setsubishi");
+    expect(ALL_EXAM_CODES).not.toContain("kenchiku-setsubishi");
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denko2");

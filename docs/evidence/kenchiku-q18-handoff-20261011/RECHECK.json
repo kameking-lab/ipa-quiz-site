@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "exam": "kenchiku-setsubishi",
+  "pr": 741,
+  "checkedDateUtc": "2026-10-11",
+  "inheritedHead": "41f1459139cc5c88d611e99caa15ef6001bfb81b",
+  "integratedMain": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec",
+  "preservedSourceTree": "a44e339c70b0b7e1b9a9c10d971f82a920623b76",
+  "preservation": {
+    "sourceFiles": 44,
+    "changedSourceFiles": 0,
+    "questions": 210,
+    "choiceExplanations": 840,
+    "privateFigures": 32,
+    "regeneratedQuestions": 0,
+    "privateAccepted": 209,
+    "privateHeld": 1,
+    "publicQuestionIncrease": 0
+  },
+  "remainingHold": {
+    "id": "kenchiku-setsubishi-2026-annual-am2-q18",
+    "decision": "HOLD_SOURCE_INCONSISTENCY",
+    "officialProblem": {
+      "url": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=19",
+      "observedExtensionAreaM2": 450,
+      "observedExistingAreaM2": 500,
+      "observedContractYen": 100000000,
+      "lawReferenceDate": "2026-01-01"
+    },
+    "officialKey": {
+      "url": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+      "observedAnswerNumber": "1"
+    },
+    "correctionCheck": {
+      "url": "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
+      "correctionFoundOnCurrentOfficialIndex": false,
+      "limitation": "No correction located on the reviewed official index and current linked PDFs; this is not an assertion about every possible official notice."
+    },
+    "additionalPrimaryReference": {
+      "url": "https://www.mlit.go.jp/sogoseisaku/region/recycle/d11pdf/recyclehou/qanda/qanda2.pdf",
+      "positions": "Q25-Q26, PDF pages 12-13 (zero-based 11-12)",
+      "summary": "MLIT distinguishes separately contracted building equipment from building construction and evaluates multiple construction categories separately. The question does not specify separate equipment works or a qualifying demolition scope.",
+      "inference": "This reference does not supply a factual basis for applying the repair/remodel contract-price threshold to the stated 450 m2 extension. The existing hold remains."
+    },
+    "governmentOverview": "https://www.env.go.jp/recycle/build/gaiyo.html",
+    "egovHistoricalUrlRecheck": "The web reader could not open the occasion_date URL. No access workaround or new law-text verification is claimed; the inherited source audit and accessible government references are retained.",
+    "resumeCondition": "An official correction or authoritative interpretation that resolves the stated facts against the official answer; do not alter the original area or answer unilaterally."
+  },
+  "integration": {
+    "resolvedFiles": [
+      "__tests__/lib/exam-config-integrity.test.ts",
+      "app/[exam]/page.tsx",
+      "lib/exam-config.ts",
+      "lib/questions/display.ts",
+      "lib/questions/practice-session.ts",
+      "lib/questions/types.ts",
+      "scripts/validate-questions.ts",
+      "lib/seo/question-jsonld.ts"
+    ],
+    "preservedMainRegistrations": [
+      "riyoshi",
+      "chusho-kigyo-shindanshi",
+      "chosashi",
+      "shika-ishi"
+    ],
+    "privateCandidateGate": "permission-required; public loader remains empty; publication permission not claimed",
+    "mergeAndDeploymentOwner": "01a12330-b245-70ed-a108-0998b50830be"
+  },
+  "localValidation": {
+    "focusedVitest": {
+      "files": 7,
+      "passedTests": 60,
+      "main": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec"
+    },
+    "configRetestAfterDuplicateImportRemoval": {
+      "passedTests": 6
+    },
+    "typecheck": "PASS",
+    "eslintResolvedFiles": "PASS",
+    "questionCli": {
+      "validated": 210,
+      "ok": 210,
+      "fail": 0,
+      "warn": 21
+    },
+    "warningMeaning": "20 existing short summary explanations; the held question remains excluded. All 840 choice explanations are retained.",
+    "heavyLocalBuildOrE2eRun": false,
+    "hostedCi": "Run against the updated PR head before integration acceptance.",
+    "initialFocusedVitest": {
+      "files": 7,
+      "passedTests": 62
+    }
+  },
+  "initialMainIntegration": "a13ececaf3062840ba5476ce153623460b2e2981"
+}

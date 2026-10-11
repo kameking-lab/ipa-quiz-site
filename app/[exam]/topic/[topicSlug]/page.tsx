@@ -175,7 +175,7 @@ export default async function ExamTopicPage({
             {[...new Set(pool.filter((q) => q.type === "multiple-choice").map((q) => q.session))].map((session) => (
               <Button key={session} asChild variant="gradient" size="lg">
                 <Link href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/${exam}/topic/${topicSlug}`)}`}>
-                  {practiceSessionLabel(session)}・この分野を解く<ChevronRight className="h-4 w-4" />
+                  {practiceSessionLabel(session, code)}・この分野を解く<ChevronRight className="h-4 w-4" />
                 </Link>
               </Button>
             ))}

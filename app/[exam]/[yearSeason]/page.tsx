@@ -97,7 +97,7 @@ export async function generateMetadata({
   const parsed = parseYearSeason(yearSeason);
   if (!parsed) return { title: "年度が見つかりません", robots: { index: false } };
   const pool = getQuestionsByExamStrict(exam as ExamCode).filter(q => q.year === parsed.year && q.season === parsed.season);
-  const commonOnly = pool.length > 0 && pool.every(q => q.session === "am1");
+  const commonOnly = pool.length > 0 && exam !== "kenchiku-setsubishi" && pool.every(q => q.session === "am1");
   const label = pool[0] ? questionSourceEdition(pool[0]) : formatYearSeason(parsed.year, parsed.season);
   const histLabel = commonOnly ? `${examLabel(exam as ExamCode)}向け 高度試験共通 午前I` : examLabelAt(exam as ExamCode, parsed.year, parsed.season);
   const title = `${label} ${histLabel} 過去問一覧`;
@@ -141,7 +141,7 @@ export default async function ExamYearSeasonPage({
     .sort((a, b) => (a.session === b.session ? a.qNumber - b.qNumber : a.session.localeCompare(b.session)));
   if (pool.length === 0) notFound();
 
-  const commonOnly = pool.every(q => q.session === "am1");
+  const commonOnly = code !== "kenchiku-setsubishi" && pool.every(q => q.session === "am1");
   const label = questionSourceEdition(pool[0]!);
   const histLabel = commonOnly ? `${examLabel(code)}向け 高度試験共通 午前I` : examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
@@ -177,6 +177,13 @@ export default async function ExamYearSeasonPage({
     : code === "tohan" && parsed.season === "kansai"
       ? TOHAN_KANSAI_SECTIONS
       : null;
+  if (code === "kenchiku-setsubishi") {
+    sessionGroups = sessionGroups.map((group) => ({
+      ...group,
+      id: `${code}-${group.session}`,
+      session: practiceSessionLabel(group.session as typeof pool[number]["session"], code),
+    }));
+  }
   if (code === "civil1") {
     sessionGroups = CIVIL1_EXAM_SECTIONS.map((section) => ({
       session: section.label,
@@ -351,7 +358,7 @@ export default async function ExamYearSeasonPage({
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
-            {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"])} {items.length}問</Badge>)}
+            {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"], code)} {items.length}問</Badge>)}
             {commonOnly && <p className="w-full text-muted-foreground">{examLabel(code)}の学習に使える共通の午前I問題です。この一覧には午前IIの問題は含まれません。</p>}
           </div>
         </header>
@@ -361,7 +368,7 @@ export default async function ExamYearSeasonPage({
             {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
               <Button key={session} asChild variant="gradient" size="lg" className="w-full">
                 <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
-                  {practiceSessionLabel(session as typeof pool[number]["session"])}を解く
+                  {practiceSessionLabel(session as typeof pool[number]["session"], code)}を解く
                   <ChevronRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -369,7 +376,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1" || code === "kenchiku-setsubishi"} />
       </div>
     </main>
   );

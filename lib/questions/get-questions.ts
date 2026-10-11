@@ -23,6 +23,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   fp1: async () => (await import("@/data/questions/fp1")).FP1_QUESTIONS,
   fp3: async () => (await import("@/data/questions/fp3")).FP3_QUESTIONS,
   denken3: async () => (await import("@/data/questions/denken3")).DENKEN3_QUESTIONS,
+  // JAEIC permission pending: keep the prepared corpus outside product dependencies.
+  "kenchiku-setsubishi": async () => [],
   denken2: async () => isExamPublished("denken2") ? (await import("@/data/questions/denken2")).DENKEN2_QUESTIONS : [],
   denken1: async () => isExamPublished("denken1") ? (await import("@/data/questions/denken1")).DENKEN1_QUESTIONS : [],
   takken: async () => (await import("@/data/questions/takken")).TAKKEN_QUESTIONS,

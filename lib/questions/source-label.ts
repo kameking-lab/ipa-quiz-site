@@ -4,7 +4,7 @@ import { formatYearSeason } from "@/lib/utils";
 
 /** exam is the learning filter; the shared AM1 paper is not that exam's AM2. */
 export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" | "session">): string {
-  return q.session === "am1" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
+  return q.session === "am1" && q.exam !== "kenchiku-setsubishi" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
 }
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */

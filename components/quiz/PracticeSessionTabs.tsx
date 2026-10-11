@@ -16,7 +16,7 @@ export function PracticeSessionTabs({ sessions, selected }: { sessions: Session[
       if (session !== selected) query.delete("question");
       return <Link key={session} href={`${pathname}?${query}`} aria-current={selected === session ? "page" : undefined}
         className={`rounded-lg border px-3 py-2 text-sm ${selected === session ? "border-primary bg-primary/10 font-semibold text-primary" : "border-border text-muted-foreground"}`}>
-        {practiceSessionLabel(session)}
+        {practiceSessionLabel(session, search.get("exam") === "kenchiku-setsubishi" ? "kenchiku-setsubishi" : undefined)}
       </Link>;
     })}
   </nav>;

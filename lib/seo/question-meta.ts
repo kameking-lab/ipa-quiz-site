@@ -28,7 +28,7 @@ function truncate(s: string, n: number): string {
 
 /** Page <title> for a single question. */
 export function questionTitle(q: Question): string {
-  const core = `${questionSourceEdition(q)} ${questionSourceExam(q)} ${sessionLabel(q.session)} 問${questionNumberLabel(q)}`;
+  const core = `${questionSourceEdition(q)} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)}`;
   const withCategory = `${core} ${q.category} 解説`;
   // Keep the category only while the whole title stays within budget; once it
   // would push the title past TITLE_MAX, drop it and fall back to the core.
@@ -48,7 +48,7 @@ export function questionTitle(q: Question): string {
 export function questionSnippet(q: Question): string {
   const examStr = questionSourceExam(q);
   const ys = questionSourceEdition(q);
-  const ss = sessionLabel(q.session);
+  const ss = sessionLabel(q.session, q.exam);
   const prefix = `【${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}・${q.category}】`;
   const cta = q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
   const budget = DESCRIPTION_MAX - prefix.length - cta.length - 1;

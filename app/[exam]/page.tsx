@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BookOpen, ChevronRight, Clock, Code2, FileText, PenLine, Sparkles, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, buildOrgNode } from "@/lib/seo/structured-data";
@@ -146,7 +147,7 @@ export default async function ExamTopPage({
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
     const sessions = [...new Set(items.map((q) => q.session))];
-    const coverageLabels = sessions.map(practiceSessionLabel);
+    const coverageLabels = sessions.map((session) => practiceSessionLabel(session, code));
     return {
       ...group,
       // The card's badge owns the total question count. Keep this line for the
@@ -268,7 +269,7 @@ export default async function ExamTopPage({
 
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
-  const isHighLevel = hasAm1 && hasAm2;
+  const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
   const summary = code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
@@ -413,6 +414,17 @@ export default async function ExamTopPage({
                   実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
                 </Link>
               </Button>
+            </div>
+          ) : code === "kenchiku-setsubishi" ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <h2 className="mb-3 text-sm font-semibold text-foreground">第一次試験の科目を選ぶ</h2>
+              <div className="grid gap-2 sm:grid-cols-3">
+                {EXAM_CONFIGS[code].sessions.map((item) => (
+                  <Button key={item.session} asChild variant="outline" size="lg" className="font-semibold">
+                    <Link href={`/quiz?mode=random&exam=${exam}&session=${item.session}`}>{item.label}</Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           ) : isHighLevel ? (
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "exam": "kenchiku-setsubishi",
+  "phase": "first-stage",
+  "years": [
+    2025,
+    2026
+  ],
+  "questionCount": 210,
+  "sessionsPerYear": {
+    "am1": 27,
+    "am2": 18,
+    "pm": 60
+  },
+  "choiceExplanationCount": 840,
+  "officialAnswerMismatches": 0,
+  "officialKeyVerification": "全210セルを公式正答PDFのレンダリングと独立fixtureで照合。",
+  "readyCandidateCount": 209,
+  "heldQuestionIds": [
+    "kenchiku-setsubishi-2026-annual-am2-q18"
+  ],
+  "sourceConflicts": [
+    {
+      "id": "kenchiku-setsubishi-2026-annual-am2-q18",
+      "officialAnswer": "1 / ア",
+      "disposition": "HOLD-needsReview-true",
+      "finding": "The official PDF really says extension450m2, existing500m2, contract100million yen. Official key is1 only. Choiceイ cannot be justified by the cited statutory scale rule; the earlier draft claim of a separate extension threshold is unsupported.",
+      "basis": [
+        "Construction Recycling Act Enforcement Order art2(1)(2) explicitly limits extension area to the portion of the work and sets500m2. Existing500m2 cannot be summed with extension450m2 for this threshold.",
+        "Art2(1)(3)100million yen threshold expressly excludes new construction and extensions, so contract value alone does not rescue this450m2 extension.",
+        "Construction Business Act Enforcement Order art2 as of2026-01-01 sets50million yen (80million for building construction). Thusア45million mandatory supervising engineer is false, consistent with official key1, but does not resolveイ.",
+        "The disputed choice concerns Construction Recycling Act, not Waste Disposal Act (which is choiceエ)."
+      ],
+      "requestedChanges": [
+        "Keep original text and official key unchanged; set needsReview=true and clearly record official-answer/statute contradiction.",
+        "Remove the unsupported different extension threshold claim.",
+        "Do not silently recode the answer to a multiple-answer item or change450to500. Resume only with an official correction or a specific authoritative applicable interpretation."
+      ],
+      "sources": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=19",
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+        "https://laws.e-gov.go.jp/api/2/law_data/412CO0000000495?asof=2026-01-01",
+        "https://laws.e-gov.go.jp/api/2/law_data/331CO0000000273?asof=2026-01-01",
+        "https://www.env.go.jp/recycle/build/gaiyo.html"
+      ],
+      "lawRevisionIds": [
+        "412CO0000000495_20250401_506CO0000000172",
+        "331CO0000000273_20251212_507CO0000000379"
+      ],
+      "applicableInterpretation": {
+        "governmentStatement": "https://www.env.go.jp/info/iken/result/h131225a.html",
+        "statementDate": "2002-01-16",
+        "finding": "The ministries assign the100million-yen category to building works other than demolition/new construction/extensions.",
+        "municipalImplementation": "https://www.city.ebetsu.hokkaido.jp/site/kenchikusidousub/101000.html",
+        "municipalUpdatedDate": "2025-02-12",
+        "applicableStatuteVersion": "412CO0000000495_20250401_506CO0000000172",
+        "officialQuestionStill450": true,
+        "officialKeyStill1": true,
+        "disposition": "HOLD"
+      }
+    }
+  ],
+  "privateFigureAssets": 32,
+  "publicFigureAssets": 0,
+  "publicGO": 0,
+  "license": "JAEIC-permission-required",
+  "rightsNote": "公式ページの個人利用以外の無断転載・複製禁止を確認。掲載許諾を取得済みとは主張しない。",
+  "releaseGate": {
+    "catalogStatus": "permission-required",
+    "productQuestionLoader": "returns-empty-array",
+    "eagerQuestionRegistryConnected": false,
+    "privateCorpusReferencedByProductImports": false,
+    "futureImageUrls": "候補JSONの参照URL。対応原本画像は同ディレクトリfiguresに保管し、publicへ配置していない。",
+    "activationRequirement": "権利確認を記録後、承認済み候補と図版のみ配信経路へ接続する。保留問18は公式訂正又は権威ある適用解釈を確認するまで除外。"
+  },
+  "lawReferenceDates": {
+    "2026": "2026-01-01",
+    "2025Default": "2025-01-01",
+    "2025Exception": "冊子表紙の令和4年法律69号・令和6年政令172号・令和6年国交省令68号に関する規定は2025-04-01。",
+    "2025ExceptionQuestionIds": [
+      "kenchiku-setsubishi-2025-annual-am1-q4",
+      "kenchiku-setsubishi-2025-annual-am2-q1",
+      "kenchiku-setsubishi-2025-annual-am2-q6",
+      "kenchiku-setsubishi-2025-annual-am2-q13",
+      "kenchiku-setsubishi-2025-annual-am2-q18"
+    ]
+  },
+  "localReview": {
+    "scope": "登録コードの公開ゲートと出典帰属、2025法規13・15、2026法規18、2025設備8の疑義のみ。",
+    "fullCorpusHighModelSecondReview": false,
+    "equipment2025q8": "送風機静圧=全圧-吐出口動圧の定義に基づく独立説明。実機1.5倍を一般法則とせず、公式出題理由と称していない。",
+    "extraEvidenceExcerptSave": "局所査読で追加抜粋PDF/画像の保存がread-only制約として自動承認拒否。再試行せず既存原本とURLで確認。",
+    "electrical2025": {
+      "scope": "PM35–54の20問80肢・7図版の独立局所確認",
+      "correctedQuestions": [
+        35,
+        37,
+        41,
+        44,
+        45,
+        53,
+        54
+      ],
+      "coreCorrections": 11,
+      "fieldOperations": 19,
+      "answerChanges": 0,
+      "sourceUnitsRestored": [
+        "Q45 0.4 lm/m²",
+        "Q54 30 m/min"
+      ],
+      "confirmedTechnicalCorrection": "Q53 KIPはEPゴム絶縁。メーカー公式仕様と照合。",
+      "referenceHolds": [],
+      "primarySourcesVerified": [
+        "https://sumitomoelectric.com/jp/products/wire-cable/emlfc/ep_rubber",
+        "https://www.hitachi-ies.co.jp/products/trans/mold/sp_t2_m/index.htm",
+        "https://www.city.saitama.lg.jp/001/011/014/004/005/p046993_d/fil/10_01jikahou.pdf"
+      ]
+    }
+  },
+  "secondStageStatusFile": "second-stage-status.json",
+  "referenceVerificationHolds": [],
+  "referenceVersionEvidence": {
+    "q50": {
+      "source": "https://www2.panasonic.biz/jp/terasu/skill/iroha/book/nonresidential/pdf/part3.pdf#page=4",
+      "sourceEdition": "JEAC 8001-2016",
+      "sourcePosition": "勧告",
+      "calculationVerified": "295.8/0.32=924.375; E31=660<924.375<=E39=978",
+      "current2022NormativeTextVerified": false,
+      "statutoryObligationClaimed": false,
+      "disposition": "Accept limited source explanation; retain version limitation"
+    },
+    "q36": {
+      "standard": "JIS C 4620:2023",
+      "section": "7.3.11 c)",
+      "physicalPage": 15,
+      "printedPage": 11,
+      "sourceType": "JISC official login-free audio PDF",
+      "sha256": "a7e4495fef7029ce2f2badf1e36c4c708eec26fb542dfa145e55e278e2e264b5",
+      "sourceUrl": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+      "verifiedBy": "electrical helper and candidate owner",
+      "finding": "Current clause explicitly permits a high-voltage motor on CB-type load equipment; official question/key identify PF/S selection as inappropriate for this case.",
+      "limit": "Positive CB permission is not quoted as a universal PF/S prohibition. Audio extraction is not used as figure/layout evidence. Standard PDF is not reposted.",
+      "disposition": "ACCEPT_PRIVATE_CONTENT"
+    }
+  },
+  "acceptanceTable": "ACCEPTANCE.json"
+}

@@ -6,6 +6,7 @@ import { PlayCircle, ArrowRight } from "lucide-react";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
+import type { ExamCode } from "@/lib/questions/types";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 
 const SESSION_LABEL: Record<string, string> = {
@@ -19,9 +20,9 @@ const SESSION_LABEL: Record<string, string> = {
   "kamoku-b": "科目B",
 };
 
-function sessionLabel(session: string): string {
+function sessionLabel(session: string, exam: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  if (parsed) return practiceSessionLabel(parsed);
+  if (parsed) return practiceSessionLabel(parsed, exam);
   return SESSION_LABEL[session] ?? session;
 }
 
@@ -57,7 +58,7 @@ export function ContinueFromLast() {
     <div className="rounded-2xl border-2 border-emerald-300 bg-emerald-50 p-4 shadow-sm dark:border-emerald-800 dark:bg-emerald-950/30">
       <Link
         href={resumeHref}
-        aria-label={`前回の続きから: ${examLabel(last.exam)} ${formatYearSeason(last.year, last.season)} ${sessionLabel(last.session)} 問${last.qNumber}${last.part ? `(${last.part})` : ""} を再開`}
+        aria-label={`前回の続きから: ${examLabel(last.exam)} ${formatYearSeason(last.year, last.season)} ${sessionLabel(last.session, last.exam)} 問${last.qNumber}${last.part ? `(${last.part})` : ""} を再開`}
         className="group flex items-center gap-3 rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-zinc-950"
       >
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow">
@@ -68,7 +69,7 @@ export function ContinueFromLast() {
             前回の続き 問{last.qNumber}{last.part ? `(${last.part})` : ""} を再開
           </p>
           <p className="mt-0.5 truncate text-xs text-emerald-700 dark:text-emerald-300">
-            {examLabel(last.exam)} {formatYearSeason(last.year, last.season)} {sessionLabel(last.session)}
+            {examLabel(last.exam)} {formatYearSeason(last.year, last.season)} {sessionLabel(last.session, last.exam)}
             <span className="ml-1.5 text-emerald-600/80 dark:text-emerald-400/80">
               · {formatRelative(last.answeredAt)}
             </span>
