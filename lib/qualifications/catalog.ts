@@ -529,8 +529,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第109・108回の22問を保存。うち公式原文・正答・全肢解説を照合した18問を部分公開。残る4問は局所独立査読待ちで非掲載。",
-    remainingWork: ["残る保留問の局所独立査読"],
+    reuseSummary: "第109・108回の午前・午後、計220原問のうち採点対象219問を収録。第109回は午前55問・午後54問、第108回は午前55問・午後55問です。公式原文・正答、共通事例、全選択肢の理由と原本図を確認できます。第109回午後問31は厚生労働省が採点対象から除外したため、公式正答を設定せず演習から除外しています。出典と図の切り出し・回転を明示しています。",
+    attributionTemplate: "出典：厚生労働省「第○回助産師国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
+    remainingWork: ["第109回午後問31（採点除外）の未採点表示は未実装"],
   },
   {
     slug: "rigaku-ryohoshi",
