@@ -1,0 +1,53 @@
+{
+  "state": "CANDIDATE_ORIGINAL_KEY_AND_GATE_CHECK_PASS",
+  "timeUtc": "2026-10-11T07:07:33.811608+00:00",
+  "basePrHead": "2ad7fd2d0126a3e0bec86de600cb4e35d2e9abfa",
+  "latestMainChecked": "a13ececaf3062840ba5476ce153623460b2e2981",
+  "scope": [
+    "denken3-2026-upper-law-q10",
+    "denken3-2025-lower-power-q01"
+  ],
+  "officialKeys": [
+    {
+      "id": "denken3-2026-upper-law-q10",
+      "officialAnswer": "2",
+      "expected": "2",
+      "match": true,
+      "officialKeySourceSha256": "c6681b942a9a1c57f9563cc33c67a93882c7430ee91237fbf75f836db9663181",
+      "physicalPage": 1
+    },
+    {
+      "id": "denken3-2025-lower-power-q01",
+      "officialAnswer": "3",
+      "expected": "3",
+      "match": true,
+      "officialKeySourceSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+      "physicalPage": 1
+    }
+  ],
+  "q10OfficialPageNormalizedTextMatch": true,
+  "sourceOriginalPagesVisuallyChecked": [
+    "2026 upper law physical16 / printed13",
+    "2025 lower power physical4 / printed1"
+  ],
+  "candidateOriginals": 2,
+  "candidateChoiceExplanations": 10,
+  "newOriginalsRegistered": 0,
+  "newFullOriginalsRegistered": 0,
+  "publishedLatestTwoOriginals": 131,
+  "fullLatestTwoOriginals": 130,
+  "requiredLatestTwoOriginals": 132,
+  "remaining": [
+    "denken3-2026-upper-law-q10",
+    "denken3-2025-lower-power-q01"
+  ],
+  "legacyAndNativeSourceModified": false,
+  "candidateFilesImportedByRuntime": false,
+  "heavyLocalBuildOrWholeTestRun": false,
+  "productionMergeDeploy": false,
+  "sha256": {
+    "law-q10-candidate.json": "11abf5a0b766465aa6031286ea69b64a894af0ca8dc52433254ad2dc92be006d",
+    "power-q01-candidate.json": "f1a1d04dc87bcbb6e99018dd9a48f5c4e9eed2152e31b8a3e31584ce12b8a8bd",
+    "SOURCE-FOLLOWUP.json": "90731c78eb837ad631a111e75dc2eb38b5b2a776c0f9d0f2f01f6e6737b58902"
+  }
+}
