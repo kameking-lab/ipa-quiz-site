@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-11T07:36:47.446830+00:00",
+  "scope": "Post-PR754 merge resolution snapshot, staged surveyor data and local static renderer only; no public application, hydration, listing decision or deployment acceptance.",
+  "preMergeHead": "395c5edc82e9b49d7fb539760ea9cc63e4f523ce",
+  "incomingMain": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec",
+  "finalHead": null,
+  "rendererSha256": {
+    "data/questions/sokuryoshi/index.ts": "128fd699126fc111b2bdbf0c41b03a55d1d279623f3771f68b02d33ce503a66b",
+    "components/quiz/QuestionCard.tsx": "17a8557ff6aae706afbf6cb15610fff4b68d352f156992a4da8286dbdff681a1",
+    "components/quiz/QuestionFigures.tsx": "d43c79ba980f26748fe6a7f3595a230f3950cf2747ce35a40c686c11fc6f98ac",
+    "components/quiz/QuestionBody.tsx": "822d1eba12d62e3a820e68fb2ae36cf22743cb339fb1c3a0c0394cf466ea5c0f",
+    "components/quiz/QuestionModelAnswer.tsx": "1d2747061ea8013ef02deeabac044d26941e886e6389f0c4e0da5969ff50805d",
+    "components/quiz/ExplanationCard.tsx": "2a68c5ad4b1071214820f4e64fac1ee87d51d0415c774f5b4cf48cf583c0dffc",
+    "app/globals.css": "414629956078125039eb05fc14d026213788566761d722dd238fd150ab0493b7"
+  },
+  "sharedIntegrationSha256": {
+    "data/questions/index.ts": "e57cb42d5fa7790426f38cc66bbc6b4fbb06969289ed01f9fac32e48f2f5a6f4",
+    "lib/exam-config.ts": "50bc0f288561a5646e7e75e9308466c60d33b1cd5503c2aa45d9be47b7d0633b",
+    "lib/qualifications/catalog.ts": "55e12ac5d797ded6975b564fb4bd9265d97b44ddd8577675a1fc7333af458c46",
+    "lib/questions/get-questions.ts": "5b5372df8a28d571d0165f1aafd076433141597de333532d3c4c4396dabefa98",
+    "lib/questions/types.ts": "6e4af39ac25d819cec15dd4e7290a0abe48c9f281ddd5d84d1507de1d9b88cfe",
+    "lib/questions/display.ts": "e1634dcd0bfc454eaec1f97c3a94cbc7b366c3a506f28a16e4ff40c603507f80",
+    "lib/seo/exam-meta.ts": "2b822fc0dd79d44dc4ac0a828fa61a47f61381ef2ac9d0e6d0ed2862a861a9ab",
+    "lib/utils.ts": "d806af5eeb9f7ea864e36e13753b61ae4797e09297d9d326cf0472e48f3fa77e",
+    "scripts/validate-questions.ts": "651ba50aa063d359d66000aa575c7ff4910b960a47163c2bcf77d50b8ccdb9aa"
+  },
+  "sourceDataSha256": {
+    "questions.json": "868fbc5da86dfd9088b3d2d6deadc27f2672b088269e1360553afc08136273ef",
+    "source-branches.json": "61942cf3fc1071c72b88976faed78b1cb3aa9fdac1446770553a6f51e7b3de47",
+    "source-manifest.json": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238",
+    "official-am-answers.json": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+    "acceptance-ledger.json": "0423b1512885cb234c025d0f65f69f51d5814f2825a090126f03c2419c893b0a"
+  },
+  "rendererEvidence": {
+    "path": "post-main-browser-render-receipt.json",
+    "sha256": "78afff565bef62116cc6865699fa463fe8be0c95140a2e03bcdbb99e3f0944f5",
+    "renderedAt": "2026-10-11T07:31:05.924Z",
+    "originals": 66,
+    "checks": 132,
+    "passed": 132,
+    "failed": 0
+  },
+  "zoomEvidence": {
+    "path": "zoom-link-receipt.json",
+    "sha256": "db189db0a05fefcd66740946f422695abff234f3206e0cf206ed6f40162ec81b",
+    "status": "Prior 4 actual-popup checks retained: unchanged QuestionFigures and underlying assets. Browser checks not rerun for unchanged anchor code."
+  },
+  "validation": {
+    "typecheck": {
+      "exitCode": 0
+    },
+    "focusedVitest": {
+      "files": 3,
+      "passed": 20,
+      "exitCode": 0
+    },
+    "focusedEslint": {
+      "files": 8,
+      "exitCode": 0
+    },
+    "localBuilds": 0
+  },
+  "publicGo": 0,
+  "rightsReceipt": null,
+  "catalogStatus": "ready-to-ingest",
+  "independentReview": {
+    "path": "post-main-delta-review.json",
+    "sha256": "1ae071686c749680d95f9a5671fb8a21cfc5ab55d75edfcf0863250a368fa767",
+    "decision": "PASS_SCOPED_POST_MAIN_DELTA",
+    "reviewedAt": "2026-10-11T07:37:46.417822+00:00"
+  }
+}

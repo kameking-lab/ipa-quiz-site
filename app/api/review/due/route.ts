@@ -3,6 +3,7 @@ import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
 import type { Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { EXAM_LABELS } from "@/lib/utils";
 
 export const runtime = "nodejs";
 
@@ -11,6 +12,7 @@ const ReviewRecordSchema = z.object({
 });
 
 const BodySchema = z.object({
+  exam: z.string().refine((value) => Object.hasOwn(EXAM_LABELS, value)).optional(),
   historyIds: z.array(z.string().min(1).max(120)).max(5000),
   reviewStore: z.record(z.string(), ReviewRecordSchema),
   today: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -32,7 +34,18 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  const { historyIds, reviewStore, today } = parsed;
+  const { today, exam } = parsed;
+  let { historyIds, reviewStore } = parsed;
+  if (exam) {
+    // Resolve actual question metadata: qualification codes and IDs can contain hyphens.
+    const scopedIds = new Set<string>();
+    for (const id of new Set([...historyIds, ...Object.keys(reviewStore)])) {
+      const question = await findQuestionById(id);
+      if (question?.exam === exam) scopedIds.add(id);
+    }
+    historyIds = historyIds.filter((id) => scopedIds.has(id));
+    reviewStore = Object.fromEntries(Object.entries(reviewStore).filter(([id]) => scopedIds.has(id)));
+  }
 
   const dueQuestions: Question[] = [];
   const futureDates: string[] = [];
@@ -48,7 +61,7 @@ export async function POST(req: Request) {
 
     const q = await findQuestionById(id);
     if (!q) continue;
-    if ((q.type !== "multiple-choice" && q.type !== "numeric") || !isPracticeReadyQuestion(q)) continue;
+    if ((q.type !== "multiple-choice" && q.type !== "numeric" && q.type !== "ordering") || !isPracticeReadyQuestion(q)) continue;
 
     dueQuestions.push(q);
   }

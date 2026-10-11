@@ -1,0 +1,27 @@
+{
+  "reviewType": "independent read-only scoped follow-up",
+  "decision": "GO",
+  "reviewedWorkingTreeHead": "410ff37a870852d4ed60953c64fcee113c051fd4",
+  "scopeState": "Three uncommitted files inspected; final follow-up commit not yet supplied.",
+  "files": [
+    "lib/home/home-directory.ts",
+    "__tests__/lib/home-directory.test.ts",
+    "__tests__/questions/get-questions.test.ts"
+  ],
+  "findings": [],
+  "checks": [
+    "The welfare card registers shika-ishi once with the dental examination name and accurate latest-two-exam A-D scope excluding official excluded questions.",
+    "The existing isLiveExam gate applies; otherItem derives /shika-ishi, question count and period count from shared helpers rather than duplicating counts in production code.",
+    "The new test requires /shika-ishi, 696 questions and 2 periods. Existing tests still compare all live catalog routes, unique links, domain totals and initial HTML rendering.",
+    "The registry test adds explicit shika-ishi membership and updates the pre-existing exact count from 53 to 54 without weakening other assertions.",
+    "git status and diff showed only the three requested files; diff totals are 10 additions and 1 deletion. git diff --check exited 0.",
+    "HOME-REGISTRATION-RETEST.json reports success true, 16 passed tests and 0 failed tests across the two changed test files. The reviewer read the report and did not rerun the full suite."
+  ],
+  "unresolvedReviewBlockers": [],
+  "limitations": [
+    "This GO covers the inspected working-tree patch; the parent must associate it with the resulting final commit.",
+    "A complete successful hosted CI rerun remains a release gate. This local follow-up does not claim the prior full-suite failure is already green in hosted CI.",
+    "Medical manuscript and image content were outside this follow-up scope; prior independent review conclusions are unchanged.",
+    "Merge and deployment remain the integration owner's responsibility."
+  ]
+}

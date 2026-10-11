@@ -4,8 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
-import { formatNumericAnswer } from "@/lib/questions/numeric";
-import { choiceDisplayLabel } from "@/lib/questions/display";
+import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
@@ -42,12 +41,10 @@ export function ExplanationCard({
   onAskAI,
   onAnalyzeWrong,
 }: Props) {
-  const selectedChoiceExplanation = selected
+  const selectedChoiceExplanation = selected && question.type !== "ordering"
     ? question.choiceExplanations?.[selected as ChoiceKey]
     : undefined;
-  const answerLabel = question.type === "numeric" ? formatNumericAnswer(question) : Array.isArray(question.answer)
-    ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
-    : choiceDisplayLabel(question.exam, question.answer as ChoiceKey);
+  const answerLabel = formatQuestionAnswerForDisplay(question, question.answer);
 
   return (
     <div
@@ -87,7 +84,7 @@ export function ExplanationCard({
           </span>
           <span className="text-xs text-zinc-700 dark:text-zinc-300">
             正解: {answerLabel}
-            {selected ? ` / あなた: ${question.type === "numeric" ? formatNumericAnswer(question, selected) : choiceDisplayLabel(question.exam, selected as ChoiceKey)}` : ""}
+            {selected ? ` / あなた: ${formatQuestionAnswerForDisplay(question, selected)}` : ""}
           </span>
         </div>
         <div className="flex items-start gap-1.5">
