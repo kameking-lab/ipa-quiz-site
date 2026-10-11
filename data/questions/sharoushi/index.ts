@@ -13,6 +13,7 @@ import ippan2025 from "./ippan-2025-annual.json";
 import kokunen2025 from "./kokunen-2025-annual.json";
 import kokunen2026 from "./kokunen-2026-annual.json";
 import ippan2026 from "./ippan-2026-annual.json";
+import remainingReady3 from "./remaining-ready3-20261010.json";
 
 /**
  * 社会保険労務士試験 第58回（令和8年度）・第57回（令和7年度）
@@ -35,4 +36,5 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(ippan2026 as Question[]),
   ...(kokunen2025 as Question[]),
   ...(kokunen2026 as Question[]),
+  ...(remainingReady3 as Question[]),
 ].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
