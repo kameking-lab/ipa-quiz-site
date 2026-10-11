@@ -335,7 +335,7 @@ export function QuizPlayer({
     );
   }
 
-  if (completed && question?.exam === "chosashi" && stats.answered === 0) {
+  if (completed && question?.exam === "chosashi" && question.type === "descriptive" && stats.answered === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -356,7 +356,7 @@ export function QuizPlayer({
         shareHref={completionShareHref}
         scheduleUrl={tsuginoScheduleUrl(question?.exam)}
         learningUrl={tsuginoLearningUrl(question?.exam)}
-        onReviewLast={question && question.type !== "descriptive" && revealed ? () => {
+        onReviewLast={question && !(question.exam === "chosashi" && question.type === "descriptive") && revealed ? () => {
           setCompleted(false);
           setCopilotQuery("open");
         } : undefined}

@@ -215,7 +215,7 @@ export function buildQuestionJsonLd({
     author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
-    ...(q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
+    ...(q.exam === "chosashi" && q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
   };
 
   const learningResource = {

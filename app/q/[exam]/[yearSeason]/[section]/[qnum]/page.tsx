@@ -495,7 +495,7 @@ export default async function QuestionPage({
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
-          {q.type !== "descriptive" && <AiTransparencyDisclaimer
+          {!(q.exam === "chosashi" && q.type === "descriptive") && <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
