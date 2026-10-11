@@ -62,6 +62,12 @@ def official_answer_rows() -> list[list[int]]:
 
 
 def main() -> None:
+    # This historical pilot builder must never truncate the completed corpus.
+    if DESTINATION.exists():
+        existing = json.loads(DESTINATION.read_text(encoding="utf-8"))
+        count = sum(len(paper["questions"]) for paper in existing["papers"])
+        if count > sum(len(numbers) for numbers in SELECTED.values()):
+            raise ValueError("Refusing to overwrite completed tsushin1 data with the 12-question pilot")
     source = json.loads(OUTPUT.read_text(encoding="utf-8"))
     rows = official_answer_rows()
     answer_lookup = {

@@ -1,0 +1,60 @@
+{
+  "exam": "1級電気通信工事施工管理技術検定 第一次検定",
+  "year": 2025,
+  "checkedAt": "2026-10-11",
+  "sourceCategory": "public_saved_copy_of_exam_body_style_PDF",
+  "sourcePage": "https://dobokujira.com/1denkitsushin-pastproblems/",
+  "officialCurrentListing": "https://www.jctc.jp/mondai/",
+  "officialSourceStatus": "2025年度第一次のA/B/正答は現行公式掲載ページから取得できていない。保存コピーと当時の公式原本のハッシュ一致および転載許諾は未確認。",
+  "files": [
+    {
+      "kind": "question_A",
+      "localPath": "input/tsushin1-2025-a.pdf",
+      "sourceUrl": "https://dobokujira.com/wp-content/uploads/2025/10/R7_1denkitsushin_01_mondaiA.pdf",
+      "bytes": 1705001,
+      "sha256": "67ebd6ce5be84ba42f148f0f7eff2f09d63b516f45ee029b589306d11ca0e53e",
+      "pdfPages": 26,
+      "coverSaysQuestions": 55,
+      "creator": "PScript5.dll Version 5.2.2",
+      "producer": "Acrobat Distiller 15.0 (Windows)",
+      "creationDate": "D:20250827111224+09'00'",
+      "modDate": "D:20250908100807+09'00'"
+    },
+    {
+      "kind": "question_B",
+      "localPath": "input/tsushin1-2025-b.pdf",
+      "sourceUrl": "https://dobokujira.com/wp-content/uploads/2025/10/R7_1denkitsushin_01_mondaiB.pdf",
+      "bytes": 917084,
+      "sha256": "dc5961a5c0e45a69ccc3169d03c929be53a15ad9e989e1a6ec6e50a7c846c5af",
+      "pdfPages": 16,
+      "coverSaysQuestions": 35,
+      "creator": "PScript5.dll Version 5.2.2",
+      "producer": "Acrobat Distiller 15.0 (Windows)",
+      "creationDate": "D:20250827111304+09'00'",
+      "modDate": "D:20250908100858+09'00'"
+    },
+    {
+      "kind": "answer_key",
+      "localPath": "input/tsushin1-2025-answers.pdf",
+      "sourceUrl": "https://dobokujira.com/wp-content/uploads/2025/10/R7_1denkitsushin_01_kaitou.pdf",
+      "bytes": 9225,
+      "sha256": "71089db6658f5485b3dc54fcb51c2884d38432b950d5e6fea9280b3dda937718",
+      "pdfPages": 1,
+      "answerRows": {"A": 55, "B": 35, "total": 90},
+      "producer": "JUST PDF 5",
+      "creationDate": "D:20250905084746+09'00'",
+      "modDate": "D:20250908100832+09'00'"
+    }
+  ],
+  "verification": [
+    "A/B表紙に令和7年度1級電気通信工事施工管理技術検定第一次検定を確認",
+    "A表紙55問、B表紙35問を確認",
+    "正答表をレンダリングしてA55・B35の計90肢を目視照合",
+    "PDF抽出からanswers-extracted.jsonを生成"
+  ],
+  "limitations": [
+    "当時の公式PDF本体の直接取得ではない",
+    "当時の公式PDFとのハッシュ一致は未検証",
+    "保存サイトの転載許諾・再利用条件は未検証"
+  ]
+}
