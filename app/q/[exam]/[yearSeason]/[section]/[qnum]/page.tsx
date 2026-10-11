@@ -44,6 +44,7 @@ import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
+import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
@@ -413,6 +414,12 @@ export default async function QuestionPage({
         </section>
       )}
 
+      {q.type === "descriptive" && q.exam === "chosashi" && (
+        <div className="mt-5">
+          <DescriptiveAnswerCard question={q} defaultOpen />
+        </div>
+      )}
+
       {/* Explanation — label follows the available source layers */}
       <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
         <details open className="group">
@@ -488,13 +495,13 @@ export default async function QuestionPage({
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
-          <AiTransparencyDisclaimer
+          {q.type !== "descriptive" && <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
             sourceAttribution={q.sourceAttribution}
-          />
+          />}
         </details>
       </section>
 

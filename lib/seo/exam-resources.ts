@@ -17,6 +17,11 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  chosashi: {
+    overview: "https://www.moj.go.jp/shikaku_saiyo_index5.html",
+    syllabus: "https://www.moj.go.jp/MINJI/minji05_00768.html",
+    pastQuestions: "https://www.moj.go.jp/shikaku_saiyo_index5.html",
+  },
   ip: {
     overview: `${IPA_BASE}/kubun/ip.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html`,

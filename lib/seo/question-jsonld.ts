@@ -85,7 +85,9 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "fp1"
+  const questionAuthor = q.exam === "chosashi"
+    ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
+    : q.exam === "fp1"
     ? {
         "@type": "Organization",
         name: "一般社団法人金融財政事情研究会",
@@ -174,7 +176,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "fp1"
+  const licenseUrl = q.exam === "chosashi"
+    ? "https://www.moj.go.jp/hisho06_00280.html"
+    : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
@@ -211,7 +215,7 @@ export function buildQuestionJsonLd({
     author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
-    acceptedAnswer,
+    ...(q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
   };
 
   const learningResource = {

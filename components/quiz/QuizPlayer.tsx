@@ -7,6 +7,7 @@ import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
+import { DescriptiveAnswerCard } from "./DescriptiveAnswerCard";
 import { NumericAnswerInput } from "./NumericAnswerInput";
 import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { ChoiceButton } from "./ChoiceButton";
@@ -255,9 +256,9 @@ export function QuizPlayer({
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (!question) return;
+      if (!question || (question.exam === "chosashi" && question.type === "descriptive")) return;
       if (e.target instanceof HTMLElement) {
-        const control = e.target.closest('input, textarea, select, button, a, [contenteditable="true"], [role="dialog"]');
+        const control = e.target.closest('input, textarea, select, button, summary, a, [contenteditable="true"], [role="dialog"]');
         const choiceShortcut = !revealed && e.target.closest('[role="radio"], [role="checkbox"]') && CHOICE_SHORTCUTS.includes(e.key);
         if (control && !choiceShortcut) return;
       }
@@ -334,6 +335,16 @@ export function QuizPlayer({
     );
   }
 
+  if (completed && question?.exam === "chosashi" && stats.answered === 0) {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
+        <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
+        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+      </main>
+    );
+  }
+
   if (completed || (!question && index >= total && total > 0)) {
     return (
       <QuizCompleteScreen
@@ -345,7 +356,7 @@ export function QuizPlayer({
         shareHref={completionShareHref}
         scheduleUrl={tsuginoScheduleUrl(question?.exam)}
         learningUrl={tsuginoLearningUrl(question?.exam)}
-        onReviewLast={question && revealed ? () => {
+        onReviewLast={question && question.type !== "descriptive" && revealed ? () => {
           setCompleted(false);
           setCopilotQuery("open");
         } : undefined}
@@ -367,6 +378,24 @@ export function QuizPlayer({
       <div className="flex flex-1 items-center justify-center p-8">
         <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
       </div>
+    );
+  }
+
+  if (question.type === "descriptive" && question.exam === "chosashi") {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+        <div ref={questionStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
+          <QuestionCard question={question} progress={{ current: index, total }} />
+        </div>
+        <DescriptiveAnswerCard
+          key={question.id}
+          question={question}
+          onReveal={setRevealed}
+          onNext={goNext}
+          nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
+        />
+      </main>
     );
   }
 
