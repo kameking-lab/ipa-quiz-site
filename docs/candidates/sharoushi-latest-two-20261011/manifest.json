@@ -749,7 +749,12 @@
       "savedDraftPath": "sharoushi-ippan20-public/draft.json",
       "savedDraftSha256": "b3a3cb2c9530224e5b636458ac27d3123c32aae8cc8730c9ca2668693a7cf810",
       "recoveredPayload": false,
-      "payloadOmissionReason": "既存の個別外部送信拒否を維持。本文と解説はローカル保存原稿に残し、GitHubへ再送しない。"
+      "payloadOmissionReason": "既存の個別外部送信拒否を維持。本文と解説はローカル保存原稿に残し、GitHubへ再送しない。",
+      "additionalPartialPrimaryEvidence": [
+        "reassignment-20261011/general/NOTICE-RECEIPT.json",
+        "reassignment-20261011/general/NOTICE-1986-RECEIPT.json"
+      ],
+      "partialPrimaryAssessment": "1968 original covers the historical qualification/provider-claim definitions; 1986 original directly covers procedural agency and handling of withdrawal. No full exact-choice gate is cleared; individual external-send STOP and metadata-only payload stay in effect."
     }
   ],
   "newSourceVerifiedOriginals": 26,
@@ -766,5 +771,6 @@
     "sharoushi-2025-annual-rousai-q2",
     "sharoushi-2025-annual-rousai-q8",
     "sharoushi-2026-annual-rousai-q1"
-  ]
+  ],
+  "latestNineGapAudit": "reassignment-20261011/SOURCE-GAP-MATRIX.json"
 }
