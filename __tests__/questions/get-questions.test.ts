@@ -6,6 +6,8 @@ import {
   getQuestionCountsByExam,
 } from "@/lib/questions/get-questions";
 import type { ExamCode } from "@/lib/questions/types";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 /**
  * questions/get-questions.ts は試験ごとに遅延ロードする問題データの入口。
@@ -88,7 +90,11 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("shika-ishi");
     expect(codes).toContain("riyoshi");
     expect(codes).toContain("chusho-kigyo-shindanshi");
-    expect(codes.length).toBe(57);
+    expect(codes).toContain("gas-kou");
+    expect(codes).toContain("gas-otsu");
+    expect(codes).toContain("gas-hei");
+    const configuredPublishedCodes = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
+    expect([...codes].sort()).toEqual(configuredPublishedCodes.sort());
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし

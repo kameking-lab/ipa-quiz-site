@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "status": "USER_AUTHORIZED_DRAFT_PRODUCTION",
+  "rightsStatus": "OWNER_MANAGED_NO_PERMISSION_CLAIM",
+  "preparationAllowed": true,
+  "runtimeRegistration": true,
+  "rightsPermissionEvidence": null,
+  "releaseDecisionOwner": "integration-owner",
+  "integrationOwnerThreadId": "01a12330-b245-70ed-a108-0998b50830be",
+  "productionDeploymentPerformed": false,
+  "candidateCount": 348,
+  "questionPdfDownloads": 6,
+  "answerPdfDownloads": 6,
+  "essayPdfDownloads": 4,
+  "userAuthorizationEvidence": {
+    "date": "2026-10-11",
+    "source": "delegated user instructions and latest parent steering",
+    "scope": "Complete original questions, official answers, full explanations, implementation, verification and draft PR. Production merge/deploy belongs to integration owner."
+  },
+  "legacySourceOnlyEvidence": {
+    "sourceOnlyLedger": {
+      "repository": "note-automation",
+      "path": "reports/qualification-expansion-20261007/approved35/independent/industrial-sources-only/SOURCE-ONLY-LEDGER.json",
+      "sha256": "132d7467208a55e333683a32586211de4f5f20075a8dd50eaa76bf46c13054e0",
+      "approvedRank": 16,
+      "preservedNextStep": "Read actual question/answer PDFs only after cache dedup and provider rights gate; no permission assumed from legacy reports."
+    },
+    "status": "OFFICIAL_INDEX_TERMS_SOURCE_ONLY_HOLD_NO_EXPLANATIONS",
+    "supersededBy": "2026-10-11 latest explicit production instructions; no new provider permission claimed"
+  },
+  "manifestSha256": "59badd5b3df8968fc0aa91f19fdbc2e814f450f26defaa5c4ccf7958d47a954a"
+}

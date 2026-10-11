@@ -165,6 +165,9 @@ describe("sessionLabel", () => {
       "keiei-houmu": true,
       "keiei-joho": true,
       "chusho-seisaku": true,
+      "gas-law": true,
+      "gas-basic": true,
+      "gas-technology": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());
