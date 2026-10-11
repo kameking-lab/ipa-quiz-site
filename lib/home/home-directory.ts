@@ -119,6 +119,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
   { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
@@ -170,7 +171,7 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
     sub: def.sub,
     questionCount: examQuestionCount(def.code) + practical + (def.code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0),
     periodLabel: `${examPeriodCount(def.code)}期分`,
-    extra: def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
+    extra: def.code === "chusho-kigyo-shindanshi" ? "417原問・454設問" : def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
   };
 }
 
@@ -285,8 +286,8 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "money",
-        title: "お金・不動産",
-        lead: "FP技能検定（学科・実技）と宅建。",
+        title: "お金・不動産・経営",
+        lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },

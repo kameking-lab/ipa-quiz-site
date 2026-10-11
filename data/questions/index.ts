@@ -51,6 +51,7 @@ import { HOIKUSHI_QUESTIONS } from "./hoikushi";
 import { MANKAN_QUESTIONS } from "./mankan";
 import { KASHIKIN_QUESTIONS } from "./kashikin";
 import { SHAROUSHI_QUESTIONS } from "./sharoushi";
+import { CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } from "./chusho-kigyo-shindanshi";
 import { KANGOSHI_QUESTIONS } from "./kangoshi";
 import { YAKUZAISHI_QUESTIONS } from "./yakuzaishi";
 import { AHAKI_ANMA_QUESTIONS, AHAKI_HARI_KYUU_QUESTIONS } from "./ahaki";
@@ -107,6 +108,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
   ...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
   ...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
+  ...(isExamPublished("chusho-kigyo-shindanshi") ? { "chusho-kigyo-shindanshi": CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } : {}),
   ...(isExamPublished("kangoshi") ? { kangoshi: KANGOSHI_QUESTIONS } : {}),
   ...(isExamPublished("yakuzaishi") ? { yakuzaishi: YAKUZAISHI_QUESTIONS } : {}),
   ...(isExamPublished("ahaki-anma") ? { "ahaki-anma": AHAKI_ANMA_QUESTIONS } : {}),
