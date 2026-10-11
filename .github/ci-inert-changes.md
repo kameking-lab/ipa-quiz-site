@@ -27,7 +27,8 @@ configuration and possible filesystem/dynamic import/record consumers.
 - lib/exam-library-papers.ts reads only catalog-gated IDs in those data paths.
 - lib/ai/cost-tracker.ts uses logs/api-cost.json, which is outside the allowlist.
 - app/api/email-list/route.ts uses .data/email-list.jsonl (or its configured store);
-  it does not import repository audit records.
+  its fixed email-list.jsonl basename is explicitly excluded from eligible records
+  regardless of its chosen directory.
 - data/questions/denko2/latest.ts translates an evidence figure path to an existing
   public image URL; it does not read docs records. Both source/public assets remain
   full-build changes.
@@ -36,12 +37,14 @@ configuration and possible filesystem/dynamic import/record consumers.
   tools are not invoked by the application build.
 
 The consumer scan deliberately overmatches quoted record/manual-script paths,
-filesystem/child-process modules, dynamic imports, cwd/import.meta and code
-evaluation. A new, removed or changed matching code file or build config disables
+filesystem/child-process modules, dynamic imports, cwd/import.meta, CSS imports
+and code evaluation across tracked code and future runtime roots. Manual/test roots
+are excluded from the scan; runtime imports into those roots are sensitive.
+A new, removed or changed matching code file or build config disables
 the exemption until another dependency audit updates the checked-in blobs.
 The scan is a conservative drift guard for this audited dependency model, not a
 general JavaScript dependency resolver. Reviewers introducing a new build entry,
-loader, runtime root or encoded/dynamic resource mechanism must re-audit scope.
+loader or encoded/dynamic resource mechanism must re-audit scope.
 
 ## Diff boundaries and preview behavior
 

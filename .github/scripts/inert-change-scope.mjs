@@ -6,9 +6,15 @@ import { fileURLToPath } from 'node:url';
 const auditUrl = new URL('./inert-change-audit.json', import.meta.url);
 const codeExtension = /\.(?:[cm]?[jt]s|[jt]sx|css|scss)$/;
 // Overmatch ambiguous consumers: a new/changed reader needs another dependency audit.
-const consumerPattern = String.raw`["'][^"']*(reports|docs|scripts|prepared)[/\\]|["'](node:)?(fs|child_process)(/[^"']*)?["']|import[[:space:]]*[(]|require[[:space:]]*[(]|import[.]meta|process[.]cwd|eval[[:space:]]*[(]|new[[:space:]]+Function|@import|url[[:space:]]*[(]`;
-const sourcePaths = ['app', 'components', 'lib', 'hooks', 'data', 'public', 'prisma',
-  ...['ts', 'tsx', 'mts', 'cts', 'js', 'jsx', 'mjs', 'cjs', 'css', 'scss'].map(ext => `:(top,glob)*.${ext}`)];
+const consumerPattern = String.raw`["'][^"']*(reports|docs|scripts|prepared|tests|__tests__)[/\\]|["'](node:)?(fs|child_process)(/[^"']*)?["']|import[[:space:]]*[(]|require[[:space:]]*[(]|import[.]meta|process[.]cwd|eval[[:space:]]*[(]|new[[:space:]]+Function|@import|url[[:space:]]*[(]`;
+const sourcePaths = [
+  ...['ts', 'tsx', 'mts', 'cts', 'js', 'jsx', 'mjs', 'cjs', 'css', 'scss']
+    .map(ext => `:(top,glob)**/*.${ext}`),
+  // These are manual/test roots, not build entry points. Imports into them are
+  // themselves sensitive consumers above. Newly introduced runtime roots are scanned.
+  ...['.github', 'scripts', 'tests', '__tests__', 'reports', 'docs']
+    .map(root => `:(top,exclude)${root}/**`),
+];
 const configPath = /^(?:(?:package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|\.npmrc|\.pnpmfile\.cjs|\.gitattributes|vercel\.(?:json|ts)|(?:next|postcss|sentry[^/]*)\.config\.[^/]+|tsconfig[^/]*\.json)|prisma\/schema\.prisma)$/;
 
 function git(cwd, args) {
@@ -37,6 +43,8 @@ export function dependencySnapshot(cwd, ref) {
 export function isInertPath(path) {
   return /^(?:reports|docs\/evidence|docs\/candidates)\/.+\.(?:md|json|jsonl|txt|csv)$/.test(path)
     && !path.split('/').some(part => !part || part === '.' || part === '..' || part.startsWith('.'))
+    // EMAIL_LIST_DIR may select a record directory; its basename is fixed.
+    && !/(?:^|\/)email-list\.jsonl$/i.test(path)
     && !/[\0\r\n\\]/.test(path);
 }
 

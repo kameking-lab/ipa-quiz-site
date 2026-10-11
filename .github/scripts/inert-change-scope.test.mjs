@@ -37,7 +37,7 @@ test('ordinary non-code records qualify and lookalikes/code/assets do not', () =
     'docs/candidates/exam/README.md', 'reports/a.csv', 'reports/a.jsonl']) assert.equal(isInertPath(path), true);
   for (const path of ['reports-other/a.json', 'Reports/a.json', 'reports/../app/a.json',
     'reports//a.json', 'reports/.config/a.json', 'reports/a\\b.json', 'reports/a.json\n',
-    'reports/a.png', 'docs/evidence/a.pdf', 'docs/candidates/a.ts', 'reports/a.mjs', 'reports/a.mts']) {
+    'reports/email-list.jsonl', 'docs/evidence/email-list.jsonl', 'reports/a.png', 'docs/evidence/a.pdf', 'docs/candidates/a.ts', 'reports/a.mjs', 'reports/a.mts']) {
     assert.equal(isInertPath(path), false, path);
   }
 });
@@ -47,7 +47,7 @@ test('complete non-code record diff is eligible', t => {
   assert.equal(f.classify(f.commit()).inert, true);
 });
 for (const path of ['app/page.tsx', 'lib/loader.ts', 'data/questions/exam.json', 'data/prepared/a.json',
-  'public/a.png', 'reports/a.png', 'docs/evidence/a.pdf', 'docs/candidates/a.ts',
+  'public/a.png', 'reports/email-list.jsonl', 'docs/evidence/email-list.jsonl', 'reports/a.png', 'docs/evidence/a.pdf', 'docs/candidates/a.ts',
   '__tests__/audit.test.ts', 'docs/guide.md', 'pnpm-lock.yaml', 'next.config.ts', '.github/workflows/e2e.yml']) {
   test(`runtime, prepared, tests or config requires full checks: ${path}`, t => {
     const f = fixture(t); f.write(path); f.write('reports/b.json');
@@ -115,6 +115,7 @@ test('regular deletion qualifies; executable and symlink records do not', t => {
 });
 for (const [path, content] of [
   ['lib/reader.ts', 'import fs from "node:fs"; fs.readFileSync("reports/audit.json");\n'],
+  ['helpers/reader.ts', 'import fs from "node:fs"; fs.readFileSync("reports/audit.json");\n'],
   ['lib/new.ts', 'import record from "../reports/audit.json";\n'],
   ['app/globals.css', '@import "../reports/style.txt";\n'],
   ['data/questions/reader.ts', 'const load = () => import("../reports/audit.json");\n'],
