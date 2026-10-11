@@ -7,26 +7,46 @@ import { SHAROUSHI_QUESTIONS } from "@/data/questions/sharoushi";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
 import { questionPagePath } from "@/lib/seo/question-url";
 
+const exams = ["sharoushi", "kangoshi"] as const;
+const questionsForExam = (exam: (typeof exams)[number]) =>
+  exam === "sharoushi" ? SHAROUSHI_QUESTIONS : KANGOSHI_QUESTIONS;
+const allQuestions = [...SHAROUSHI_QUESTIONS, ...KANGOSHI_QUESTIONS];
+const questionsById = new Map(allQuestions.map((q) => [q.id, q] as const));
+const routeCases = allQuestions.map((q) => [
+  q.id,
+  { exam: q.exam, yearSeason: q.year + "-" + q.season, section: q.session, qnum: "q" + q.qNumber },
+] as const);
+const poolCases = exams.flatMap((exam) => [
+  { label: exam + ":default", exam, session: undefined },
+  ...[...new Set(questionsForExam(exam).map((q) => q.session))].map((session) => ({
+    label: exam + ":" + session,
+    exam,
+    session,
+  })),
+]);
+
 describe("merged labor consultant and nurse routes", () => {
-  it.each(["sharoushi", "kangoshi"] as const)("serves every %s question route and keeps quiz pools in the selected session", async (exam) => {
-    const questions = exam === "sharoushi" ? SHAROUSHI_QUESTIONS : KANGOSHI_QUESTIONS;
-    for (const q of questions) {
-      const params = Promise.resolve({ exam, yearSeason: `${q.year}-${q.season}`, section: q.session, qnum: `q${q.qNumber}` });
-      expect((await generateMetadata({ params })).alternates?.canonical).toContain(questionPagePath(q));
-      expect(isValidElement(await QuestionPage({ params }))).toBe(true);
-    }
-    const quiz = await QuizPage({ searchParams: Promise.resolve({ exam, mode: "random" }) });
-    const client = Children.toArray(quiz.props.children).find((node) => isValidElement<{poolIds?: string[]; exam?: string}>(node) && node.props.poolIds);
-    expect(isValidElement<{poolIds: string[]; exam: string}>(client)).toBe(true);
-    if (!isValidElement<{poolIds: string[]; exam: string}>(client)) throw Error("missing quiz client");
+  it.each(routeCases)("%s serves its question route", async (id, route) => {
+    const q = questionsById.get(id);
+    if (!q) throw new Error("Missing question: " + id);
+    const params = Promise.resolve(route);
+    expect((await generateMetadata({ params })).alternates?.canonical).toContain(questionPagePath(q));
+    expect(isValidElement(await QuestionPage({ params }))).toBe(true);
+  });
+
+  it.each(poolCases)("$label keeps the selected quiz pool", async ({ exam, session }) => {
+    const quiz = await QuizPage({
+      searchParams: Promise.resolve({ exam, mode: "random", ...(session ? { session } : {}) }),
+    });
+    const client = Children.toArray(quiz.props.children).find(
+      (node) => isValidElement<{ poolIds?: string[]; exam?: string }>(node) && node.props.poolIds,
+    );
+    expect(isValidElement<{ poolIds: string[]; exam: string }>(client)).toBe(true);
+    if (!isValidElement<{ poolIds: string[]; exam: string }>(client)) throw Error("missing quiz client");
     expect(client.props.exam).toBe(exam);
-    const defaultQuestions = questions.filter((q) => q.session === (exam === "kangoshi" ? "am" : "gakka"));
-    expect(client.props.poolIds.toSorted()).toEqual(defaultQuestions.map((q) => q.id).toSorted());
-    for (const session of new Set(questions.map((q) => q.session))) {
-      const sessionQuiz = await QuizPage({ searchParams: Promise.resolve({ exam, mode: "random", session }) });
-      const sessionClient = Children.toArray(sessionQuiz.props.children).find((node) => isValidElement<{poolIds?: string[]}>(node) && node.props.poolIds);
-      if (!isValidElement<{poolIds: string[]}>(sessionClient)) throw Error("missing session quiz client");
-      expect(sessionClient.props.poolIds.toSorted()).toEqual(questions.filter((q) => q.session === session).map((q) => q.id).toSorted());
-    }
+    const selectedSession = session ?? (exam === "kangoshi" ? "am" : "gakka");
+    expect(client.props.poolIds.toSorted()).toEqual(
+      questionsForExam(exam).filter((q) => q.session === selectedSession).map((q) => q.id).toSorted(),
+    );
   });
 });

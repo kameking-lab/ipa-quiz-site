@@ -56,6 +56,13 @@ describe("home directory", () => {
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
+  it("offers the dentist corpus with its actual published count", () => {
+    const dentist = all.find((item) => item.key === "shika-ishi");
+    expect(dentist?.href).toBe("/shika-ishi");
+    expect(dentist?.questionCount).toBe(696);
+    expect(dentist?.periodLabel).toBe("2期分");
+  });
+
   it("links the complete two Riyoshi papers with the published question count", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");
@@ -94,4 +101,11 @@ describe("home directory", () => {
     for (const item of all) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
     expect(hrefs.length).toBe(all.length + domains.length);
   });
+});
+
+it("土地家屋調査士の最新2回66原問への入口を表示する", () => {
+  const item = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]).find(entry => entry.key === "chosashi");
+  expect(item?.href).toBe("/chosashi");
+  expect(item?.questionCount).toBe(66);
+  expect(item?.periodLabel).toBe("2期分");
 });

@@ -10,6 +10,8 @@ import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
 import { NumericAnswerInput } from "./NumericAnswerInput";
+import { OrderingAnswerInput } from "./OrderingAnswerInput";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
 import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -87,11 +89,13 @@ export function QuestionAnswerCard({
   requiredSelections = 1,
 }: Props) {
   const numeric = question?.type === "numeric";
-  const multiSelect = !numeric && requiredSelections > 1;
+  const ordering = question?.type === "ordering";
+  const multiSelect = !numeric && !ordering && requiredSelections > 1;
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   // 「二つとも答えなさい」形式で選択中の肢（採点前は何度でも選び直せる）。
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
+  const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
   const [copilotRequest, setCopilotRequest] = React.useState(0);
@@ -100,6 +104,7 @@ export function QuestionAnswerCard({
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
+    setOrderedSelected(undefined);
     setRevealed(false);
     setCopilotRequest(0);
   }, [questionId]);
@@ -134,7 +139,7 @@ export function QuestionAnswerCard({
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (revealed) return;
+      if (revealed || ordering) return;
       if (multiSelect) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
@@ -148,7 +153,7 @@ export function QuestionAnswerCard({
       setRevealed(true);
       recordOutcome(key, isAcceptedAnswer(answerKey, key));
     },
-    [revealed, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
+    [revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
@@ -158,23 +163,31 @@ export function QuestionAnswerCard({
     recordOutcome(value, isNumericAnswerCorrect(question, value));
   }, [question, numeric, revealed, recordOutcome]);
 
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (!question || !ordering || revealed) return;
+    setOrderedSelected(value);
+    setRevealed(true);
+    recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value));
+  }, [question, ordering, revealed, recordOutcome]);
+
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
     if (revealed) return;
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
+    setOrderedSelected(undefined);
     setRevealed(true);
   }, [revealed]);
 
   // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
   React.useEffect(() => {
-    if (revealed) return;
+    if (revealed || ordering) return;
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable) return;
       }
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -190,11 +203,11 @@ export function QuestionAnswerCard({
       window.removeEventListener("keydown", handler);
       setShortcutsReady(false);
     };
-  }, [revealed, keys, onSelect]);
+  }, [revealed, ordering, keys, onSelect]);
 
-  const answered = numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
-  const isCorrect = numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
-  const answerLabel = numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
+  const answered = ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
+  const isCorrect = ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
+  const answerLabel = ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
 
@@ -205,7 +218,9 @@ export function QuestionAnswerCard({
           {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
         </p>
       )}
-      {numeric ? (
+      {ordering ? (
+        <OrderingAnswerInput key={questionId} question={question!} disabled={revealed} onAnswer={onOrderingAnswer} />
+      ) : numeric ? (
         <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} specification={question!.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
       ) : <div
         role={multiSelect ? "group" : "radiogroup"}
@@ -313,7 +328,7 @@ export function QuestionAnswerCard({
           <CopilotDesktopFloating
             key={`desktop-${copilotRequest}`}
             question={question}
-            selectedChoice={answered ? (numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
+            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
             isCorrect={answered ? isCorrect : undefined}
             initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
             defaultOpen
@@ -321,7 +336,7 @@ export function QuestionAnswerCard({
           <CopilotMobileSheet
             key={`mobile-${copilotRequest}`}
             question={question}
-            selectedChoice={answered ? (numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
+            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
             isCorrect={answered ? isCorrect : undefined}
             initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
             defaultOpen

@@ -43,6 +43,7 @@ export function detectAnswerDispute(q: Question): string | null {
  * another choice in passing), so this is report-only — never a CI gate.
  */
 export function detectStatedAnswerMismatch(q: Question): string | null {
+  if (q.type === "ordering") return null;
   const text = q.explanation ?? "";
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   if (!answerKeys.length || answerKeys.some(key => !CHOICE_KEYS.includes(key))) return null;

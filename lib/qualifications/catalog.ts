@@ -42,6 +42,20 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "chosashi",
+    examCode: "chosashi",
+    shortName: "土地家屋調査士",
+    fullName: "土地家屋調査士試験",
+    domain: "legal",
+    administrator: "法務省",
+    officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index5.html",
+    officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
+    status: "live",
+    reuseSummary: "令和7・6年度の午前各11問・午後各22問、計66原問を収録。択一60問は法務省の公式正答と全選択肢の独自解説を掲載。記述6問は公式問題に基づく独自解答例であり、法務省の公式解答ではありません。法務省の利用条件には第三者権利等の例外があります。",
+    attributionTemplate: "出典：法務省 令和○年度土地家屋調査士試験 午前・午後 第○問。解説・記述解答例は過去問AIが独自作成。",
+    remainingWork: ["法令改正の継続確認", "第三者権利等の例外条件は掲載者が確認"],
+  },
+  {
     slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
     officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
     reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",
@@ -197,9 +211,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期10問と令和7年度後期27問を公式問題・正答と照合して収録。各回とも全40問中の一部。",
+    reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録。公式問題・正答、図表、全選択肢の解説に対応。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級造園施工管理技術検定 第一次検定（前期／後期）",
-    remainingWork: ["令和7年度後期の図表を使う問9・16・17・20・22・24・27・28・29・37〜40を確認", "令和7年度後期の未収録13問と令和8年度前期の未収録30問を確認・追加"],
+    remainingWork: ["他年度の追加"],
   },
   {
     slug: "sekou-zoen1",
@@ -623,6 +637,20 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第34・33回の公式問題360原問から359原問を部分収録。第34回180問・第33回179問です。午後問161〜170ははり師専用、171〜180はきゅう師専用であり、共通問題と合わせた冊子の原問数を二試験に重複加算しません。残る1原問は原文の字形または説明を確認中です。解説は過去問AIの独自作成です。",
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回はり師・きゅう師国家試験 午前・午後 問○（問題・正答）",
     remainingWork: ["第34・33回の未掲載1原問の説明を個別確認"],
+  },
+  {
+    slug: "shika-ishi",
+    examCode: "shika-ishi",
+    shortName: "歯科医師",
+    fullName: "歯科医師国家試験",
+    domain: "welfare",
+    administrator: "厚生労働省",
+    officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-02.html",
+    officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
+    status: "live",
+    reuseSummary: "第119回（2026年）・第118回（2025年）のA〜D、計720原問のうち採点対象696問を収録。第119回346問・第118回350問です。公式原文・正答、全肢解説と原本図を確認できます。公式採点除外24問は正答を設定せず演習から除外しています。並べ替え8問と数値記入5問は原問の解答形式で採点します。",
+    attributionTemplate: "出典：厚生労働省『第○回歯科医師国家試験』問題・正答。解説は当サイトの独自作成です。",
+    remainingWork: ["次回公表分の追加", "公式訂正・診療指針改訂の継続確認"],
   },
   {
     slug: "rinsho-kensagishi",

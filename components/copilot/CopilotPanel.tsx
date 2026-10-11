@@ -1109,7 +1109,7 @@ export function CopilotPanel({
       {messages.some((m) => m.role === "assistant") && (
         <div className="px-3 pb-1 text-[11px] leading-snug text-zinc-500 dark:text-zinc-400">
           <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
-          {selectedChoice && question.choices && question.choiceExplanations && (
+          {selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
             <details className="mt-1">
               <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
               <ul className="mt-1 space-y-1 pl-3">

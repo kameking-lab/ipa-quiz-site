@@ -20,6 +20,10 @@ const props = { question, selected: "イ", isCorrect: true, starred: false,
   onToggleStar: vi.fn(), onNext: vi.fn(), onAskAI: vi.fn() };
 
 describe("ExplanationCard learning continuity", () => {
+  it("shows each dental key in a multiple-selection response as its printed label", () => {
+    render(<ExplanationCard {...props} question={{ ...question, exam: "shika-ishi", answer: ["イ", "ウ"] }} selected="イ・ウ" isCorrect={false} />);
+    expect(screen.getByText(/正解: b・c \/ あなた: b・c/)).toBeInTheDocument();
+  });
   it.each([
     ["tohan", "ウ", "結論: 正解は(3)です。"],
     ["denken3", "ウ", "結論: 正解は(3)です。"],
