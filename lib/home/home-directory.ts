@@ -287,7 +287,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
       {
         id: "money",
         title: "お金・不動産・経営",
-        lead: "FP技能検定（学科・実技）、宅建、中小企業診断士。",
+        lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
