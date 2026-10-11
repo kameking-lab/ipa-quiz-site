@@ -2,6 +2,9 @@ import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 import { TSUSHIN1_QUESTIONS } from "@/data/questions/tsushin1";
 import source from "@/data/questions/tsushin1/2025-september.json";
 import answers from "@/docs/evidence/tsushin1-2025/complete/OFFICIAL-ANSWERS.json";
@@ -101,5 +104,20 @@ describe("1級電気通信工事 最新2回全180原問", () => {
       expect(text).not.toContain("段階的");
       expect(text).not.toContain("確認済みの設問を掲載");
     }
+  });
+
+
+  it("renders the two-year hub notice with source limits and the 90-versus-60 distinction", () => {
+    const html = renderToStaticMarkup(createElement(Tsushin1CoverageNote, { questionCount: TSUSHIN1_QUESTIONS.length }));
+    expect(html).toContain("2026・2025年度");
+    expect(html).toContain("各90原問（問題A55・B35）");
+    expect(html).toContain("計180問");
+    expect(html).toContain("55問から33問");
+    expect(html).toContain("35問から27問");
+    expect(html).toContain("各年度の全90原問");
+    expect(html).toContain("公開保存コピー");
+    expect(html).toContain("公式サイトからの直接取得は未確認");
+    expect(html).not.toContain("令和8年度の第一次検定から");
+    expect(html).not.toContain("収録済み設問のみ");
   });
 });
