@@ -11,7 +11,8 @@ export type QualificationDomain =
   | "safety"
   | "accounting"
   | "welfare"
-  | "personal-services";
+  | "personal-services"
+  | "science";
 
 export type PublicationStatus =
   | "live"
@@ -659,6 +660,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。原本照合と内容検収を完了し、リリース対象110問を個別IDで指定しています。",
     attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
     remainingWork: [],
+  },
+  {
+    slug: "kisho",
+    shortName: "気象予報士",
+    fullName: "気象予報士試験",
+    domain: "science",
+    administrator: "一般財団法人気象業務支援センター",
+    officialQuestionsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    officialReuseTermsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
+    status: "permission-required",
+    reuseSummary: "第66回38原問・第65回40原問の原稿を非公開で保存・原本照合済み。学科300肢と実技237回答欄の解説を準備済み。公開数は0原問。公式ページは個人利用以外について試験部への連絡を求めている。",
+    remainingWork: ["問題・正答・図表のWeb掲載許諾を確認", "許諾範囲を確認した後、保存済み原稿を公開登録する"],
   },
   {
     slug: "boki3",
