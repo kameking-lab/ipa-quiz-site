@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T01:59:00.476118+00:00",
+  "recordedAt": "2026-10-11T02:15:19.417608+00:00",
   "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
   "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
   "sourceCounts": {
@@ -85,6 +85,15 @@
       "exitCode": null,
       "status": "interrupted-unconfirmed",
       "observed": "Compile and TypeScript succeeded; 11441-page SSG began, then PC connection loss prevented result recovery."
+    },
+    "a29SourceFollowupTests": {
+      "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "filesPassed": 1,
+      "testsPassed": 3,
+      "evidence": "a29-followup-test.log and actual a29-followup-test.exit marker",
+      "scope": "A29 source-backed explanation correction; original questions, choices, answers unchanged",
+      "recordedAt": "2026-10-11T02:15:19.417608+00:00"
     }
   },
   "cloudValidation": {
@@ -104,7 +113,8 @@
   "stoppedOperations": [
     "Get-CimInstance Win32_Process: access denied; no elevated retry",
     "Claude CLI attach: feature not enabled for account",
-    "Internet Archive CDX via web tool: inaccessible; no alternate acquisition retry"
+    "Internet Archive CDX via web tool: inaccessible; no alternate acquisition retry",
+    "Aomori forest standard PDF returned HTTP 403 during A29 followup; stopped without retry or alternate route"
   ],
   "publicationAcceptance": false,
   "independentAcceptance": false,
