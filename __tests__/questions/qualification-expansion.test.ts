@@ -23,14 +23,14 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_PILOT.length).toBeGreaterThanOrEqual(10);
     expect(FP3_QUESTIONS).toHaveLength(180);
     expect(DENKEN3_QUESTIONS).toHaveLength(320);
-    expect(DENKO2_QUESTIONS).toHaveLength(200);
+    expect(DENKO2_QUESTIONS).toHaveLength(250);
   });
 
   it("publishes complete Denken3 and electrician papers", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("live");
     expect(QUESTIONS_BY_EXAM.denken3).toHaveLength(320);
     expect(getQualificationByExamCode("denko2")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(200);
+    expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(250);
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(240 + FP2_2026_MAY_QUESTIONS.length);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(180);
   });
@@ -83,7 +83,7 @@ describe("official-source qualification pilot data", () => {
     expect(DENKO2_QUESTIONS.every((q) => !hasUnrenderableContent(q))).toBe(true);
   });
 
-  it("keeps the incomplete 2026 electrician pilot outside the 2024–2025 release set", () => {
+  it("preserves the original ten-question 2026 pilot source mappings for reuse", () => {
     expect(DENKO2_2026_PILOT.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
     expect(DENKO2_2026_PILOT.map((q) => q.answer)).toEqual(["ア","イ","ウ","エ","イ","イ","エ","イ","ア","ウ"]);
     expect(Object.keys(DENKO2_2026_PILOT[9]!.choiceImageUrls ?? {})).toEqual(["ア","イ","ウ","エ"]);
