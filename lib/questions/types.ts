@@ -53,11 +53,13 @@ export type ExamCode =
   | "rinsho-kensagishi"
   | "shinryo-hoshasengishi"
   | "rinsho-kogishi"
+  | "shika-ishi"
   | "riyoshi"
-  | "chusho-kigyo-shindanshi";
+  | "chusho-kigyo-shindanshi"
+  | "chosashi";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "gengo-chokakushi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "gengo-chokakushi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi">;
 
 export type Session =
   | "am"
@@ -86,6 +88,8 @@ export type Session =
   | "houki"
   | "mondai-a"
   | "mondai-b"
+  | "mondai-c"
+  | "mondai-d"
   /** 社会福祉士・精神保健福祉士の共通科目（同一の問題冊子）。 */
   | "kyotsu"
   /** 社会福祉士・精神保健福祉士の専門科目。 */
@@ -112,7 +116,7 @@ export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "seco
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
-export type QuestionType = "multiple-choice" | "numeric" | "descriptive" | "essay";
+export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descriptive" | "essay";
 
 /**
  * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
@@ -140,12 +144,16 @@ export interface Question {
   officialAnswerNumber?: string;
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
-  numericAnswer?: { format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string };
+  numericAnswer?: ({ format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string }) & {
+    /** 原問の解答欄に印刷済みの負号。answerと入力値には記入する数値部分を保存する。 */
+    fixedSign?: "negative";
+  };
   category: string;
   topicTags: string[];
   difficulty: Difficulty;
   question: string;
   choices?: Partial<Record<ChoiceKey, string>>;
+  /** ordering では全選択肢の期待順を ChoiceKey[] として保持する。 */
   answer: ChoiceKey | ChoiceKey[] | string;
   /**
    * 1問で選ぶ肢の数。answer の許容肢から、この数を重複なしで選ぶ。
@@ -173,7 +181,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

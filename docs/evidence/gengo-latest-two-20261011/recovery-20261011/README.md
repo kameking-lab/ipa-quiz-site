@@ -13,8 +13,8 @@
 
 関連108 checkoutと限定reportsの保存資料を再点検した。既存MHLW通知7 PDFのSHA・バイト数・PDF署名は一致したが、393 IDには対応しない。検索範囲の詳細は `REPOSITORY-INVENTORY.md` と `REPORT-INVENTORY.md`、機械照合は `RECOVERY-QA.json` を参照。これは確認した保存範囲の結果で、他所の原本の不存在を主張しない。
 
-最新main a13ececaf3062840ba5476ce153623460b2e2981を専用worktreeで通常mergeした。共有登録の競合はmainの最新資格・件数・セッション・検証対象を保持し、既存の言語聴覚士非公開登録だけを加えて解消した。原稿3ファイルと他資格のmain問題は不変。詳細は `MERGE-PRESERVATION.json` を参照。
+main a13ececaf3062840ba5476ce153623460b2e2981への同期後、統合担当の5資格追加main 7b2a4ce744e061bfb4f74f7a7badfa67d460f3ecも専用worktreeで通常mergeした。共有登録の競合はmainの最新資格・件数・セッション・検証対象・記述式改修を保持し、既存の言語聴覚士非公開登録だけを加えて解消した。原稿3ファイルと他資格のmain問題は不変。詳細は `MERGE-PRESERVATION.json` を参照。
 
 次に必要な資料は、第27・28回のAM/PM原問題冊子と必要な別冊図表の正規取得元・取得記録・SHA。資料入手後は393 IDのallowlistだけを処理し、既存5原稿・公式除外・保留原稿を再生成しない。403/CAPTCHA/429/robotsの停止は維持し、再試行・回避は行っていない。本番マージ・デプロイは統合担当が扱う。
 
-検証：対象44テスト（5ファイル）、TypeScript strict、14ファイルLint、候補3問のschema検証（3 OK / 0 FAIL / 0 WARN）が成功。ローカル全量buildは実行していない。新commitのHosted CIはpush後に確認し、以前のheadのCI成功と混同しない。
+検証：最終main同期後の対象46テスト（5ファイル）、TypeScript strict、14ファイルLint、候補3問のschema検証（3 OK / 0 FAIL / 0 WARN）が成功。初回main同期44テストの記録も保持。ローカル全量buildは実行していない。新commitのHosted CIはpush後に確認し、以前のheadのCI成功と混同しない。

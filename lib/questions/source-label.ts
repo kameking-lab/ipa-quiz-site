@@ -27,7 +27,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
   },
 };
 
-export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl">): string {
+export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+  if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
+    return `第${q.year - 1907}回（${q.year}年実施）`;
+  }
   const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2025|2026)\/siken21\/dl\/(27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.season === "annual" && gengoNotice &&
       ((q.year === 2025 && gengoNotice[1] === "2025" && gengoNotice[2] === "27A40") ||
