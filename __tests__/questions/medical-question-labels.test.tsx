@@ -31,7 +31,6 @@ describe("medical question and quiz display names", () => {
 
   it.each([
     ["hokenshi", "保健師"],
-    ["josanshi", "助産師"],
   ] as const)("shows %s partial coverage in the hub body using the live count", async (exam, label) => {
     const count = getQuestionsByExamStrict(exam).length;
     const page = await ExamTopPage({ params: Promise.resolve({ exam }) });
@@ -40,5 +39,17 @@ describe("medical question and quiz display names", () => {
     expect(summary).toContain(`${label}国家試験`);
     expect(summary).toContain(`${count}問を部分収録`);
     expect(summary).toContain("未収録");
+  });
+
+  it("describes both complete scored midwife rounds and the official exclusion", async () => {
+    const questions = getQuestionsByExamStrict("josanshi");
+    expect(questions).toHaveLength(219);
+    const page = await ExamTopPage({ params: Promise.resolve({ exam: "josanshi" }) });
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
+    const summary = doc.querySelector("header > p")?.textContent ?? "";
+    expect(summary).toContain("助産師国家試験");
+    expect(summary).toContain("採点対象219問を収録");
+    expect(summary).toContain("午後問31");
+    expect(summary).toContain("採点対象から除外");
   });
 });

@@ -1,8 +1,9 @@
 import type { Question } from "@/lib/questions/types";
-import candidate from "./medical34-live.json";
+import baseline from "./medical34-live.json";
+import additions from "./latest-two-additions.json";
 
-/** Export only source-complete questions to the partial live catalog. */
-export const JOSANSHI_QUESTIONS: Question[] = (candidate as Question[]).filter(
+/** Official scored questions from rounds 109 and 108; excluded PM31 stays in evidence. */
+export const JOSANSHI_QUESTIONS: Question[] = ([...baseline, ...additions] as Question[]).filter(
   question => question.needsReview === false,
 ).sort(
   (a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber,
