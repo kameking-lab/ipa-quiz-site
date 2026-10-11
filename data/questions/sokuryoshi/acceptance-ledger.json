@@ -1,0 +1,71 @@
+{
+  "qualification": "sokuryoshi",
+  "originals": 66,
+  "amOriginals": 56,
+  "amChoiceExplanations": 280,
+  "pmMainOriginals": 10,
+  "pmBranches": 104,
+  "pmAnswerFields": 313,
+  "assets": 156,
+  "assetBytes": 70738862,
+  "publicGo": 0,
+  "technicalHolds": [],
+  "yearCounts": {
+    "2025": {
+      "am": 28,
+      "pmMain": 5,
+      "pmBranches": 57,
+      "pmAnswerFields": 158
+    },
+    "2026": {
+      "am": 28,
+      "pmMain": 5,
+      "pmBranches": 47,
+      "pmAnswerFields": 155
+    }
+  },
+  "originalRepresentation": "All original problem pages are retained. Edited texts are not claimed as verbatim transcripts.",
+  "independentAcceptance": "PENDING",
+  "productionMergeOrDeploy": false,
+  "independentAcceptanceScope": "PUBLICATION_AND_POST_PROMOTION_APPLICATION_ROUTE",
+  "independentStagingAcceptance": {
+    "status": "PASS_SCOPED_TECHNICAL_AND_LOCAL_RENDERER",
+    "evidence": "reports/sokuryoshi-latest-two/acceptance-refresh/independent-delta-review.json",
+    "localRenderer": {
+      "originals": 66,
+      "viewports": [
+        390,
+        1280
+      ],
+      "passed": 132,
+      "failed": 0,
+      "originalImagePopupChecks": 4
+    },
+    "scope": [
+      "Existing scoped source/answer review plus missing 2026 PM2 seven word-bank and five required-term explanations",
+      "Structure, source and image hashes, original/answer field preservation, raw-branch to display retention",
+      "Local actual presentation components with app CSS; figure/model-image separation, full choice explanations, paragraph fit and native-image links"
+    ],
+    "limits": [
+      "No full semantic rereview of all 66 originals",
+      "No hydrated application route or deployed asset acceptance",
+      "No owner listing decision or rights receipt"
+    ]
+  },
+  "pendingAcceptanceReasons": [
+    {
+      "id": "OWNER_LISTING_DECISION",
+      "owner": "qualification owner and integration lead"
+    },
+    {
+      "id": "CONTROLLED_ASSET_PROMOTION",
+      "owner": "integration lead",
+      "required": "Promote 156 manifest-mapped assets only after publication approval; verify SHA256"
+    },
+    {
+      "id": "POST_PROMOTION_APPLICATION_ACCEPTANCE",
+      "owner": "integration lead",
+      "required": "Confirm application routes, both question/answer figures and original-image popup links after promotion"
+    }
+  ]
+}

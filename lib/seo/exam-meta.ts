@@ -138,6 +138,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  sokuryoshi: "測量士試験",
   chosashi: "土地家屋調査士試験",
   riyoshi: "理容師国家試験",
   ip: "ITパスポート試験",
@@ -205,6 +206,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  sokuryoshi: (c) => `測量士試験の2026・2025年午前・午後の検証用${c}原問。公開受入れは未了です。`,
   chosashi: (c) => `土地家屋調査士の令和7・6年度、午前・午後の${c}原問を収録。択一は公式正答と全肢解説、記述は公式問題に基づく独自解答例で学べます。記述の公式解答ではありません。`,
   riyoshi: (c) => `理容師国家試験の第53回・第54回筆記から掲載済み${c}問を演習。公式問題・正答、原図と全選択肢の独自解説を確認できます。`,
   ip: (c, y, k) =>

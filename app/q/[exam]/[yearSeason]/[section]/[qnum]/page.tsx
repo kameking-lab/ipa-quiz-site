@@ -1,5 +1,6 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
+import { QuestionModelAnswer } from "@/components/quiz/QuestionModelAnswer";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -446,6 +447,7 @@ export default async function QuestionPage({
 
           {showRealExplanation ? (
             <>
+              <QuestionModelAnswer question={q} />
               <ExplanationLayers explanation={q.explanation} />
               {q.choiceExplanations && q.choices && (
                 <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">

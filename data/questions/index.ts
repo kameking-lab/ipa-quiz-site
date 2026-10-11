@@ -66,9 +66,11 @@ import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
 import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 
+import { SOKURYOSHI_QUESTIONS } from "./sokuryoshi";
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("sokuryoshi") ? { sokuryoshi: SOKURYOSHI_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,

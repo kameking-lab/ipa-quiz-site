@@ -913,11 +913,23 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度","運営管理","公衆衛生・環境衛生","感染症","衛生管理技術","人体の構造及び機能","皮膚科学","香粧品化学","文化論及び理容技術理論"] }],
     seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 },
   },
+  sokuryoshi: {
+    code: "sokuryoshi",
+    nameFull: "測量士試験",
+    urlSlug: "sokuryoshi",
+    level: "specialist",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 28, label: "午前（択一式）", categories: ["測量法", "基準点測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 5, label: "午後（記述式）", categories: ["必須", "選択"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "sokuryoshi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
