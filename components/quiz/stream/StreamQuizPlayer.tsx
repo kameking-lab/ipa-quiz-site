@@ -3,6 +3,8 @@ import { questionSourceEdition, questionSourceExam } from "@/lib/questions/sourc
 
 
 import * as React from "react";
+import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
+import { QuestionCard } from "../QuestionCard";
 import { QuestionBody } from "../QuestionBody";
 import { QuestionFigures } from "../QuestionFigures";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
@@ -37,6 +39,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
   const advancingRef = React.useRef(false);
+  const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -50,6 +53,14 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [reviewing]);
 
   const question = questions[index];
+  React.useEffect(() => {
+    if (question?.exam === "chosashi" && question.type === "descriptive") {
+      descriptiveStartRef.current?.focus({ preventScroll: true });
+      descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    } else if (questions[index - 1]?.exam === "chosashi" && questions[index - 1]?.type === "descriptive") {
+      window.scrollTo?.({ top: 0, behavior: "instant" });
+    }
+  }, [index, question, questions]);
   const lastAnswer = answers[answers.length - 1];
   const lastAnsweredQuestion = lastAnswer
     ? questions.find((q) => q.id === lastAnswer.questionId) ?? null
@@ -109,7 +120,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!question || showSummary || reviewing) return;
+      if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
@@ -133,6 +144,16 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   if (!question) return null;
 
+  if (showSummary && question.exam === "chosashi" && answers.length === 0) {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
+        <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+      </main>
+    );
+  }
+
   if (showSummary) {
     const recent = answers.slice(-SUMMARY_AT);
     return (
@@ -150,6 +171,18 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         }}
         canContinue={index + 1 < questions.length}
       />
+    );
+  }
+
+  if (question.exam === "chosashi" && question.type === "descriptive") {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+        <div ref={descriptiveStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
+          <QuestionCard question={question} progress={{ current: index, total: questions.length }} />
+        </div>
+        <DescriptiveAnswerCard key={question.id} question={question} onNext={goNext} />
+      </main>
     );
   }
 

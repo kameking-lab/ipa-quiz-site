@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { CHOSASHI_QUESTIONS } from "./chosashi";
 import { AP_QUESTIONS } from "./ap";
 import { IP_QUESTIONS } from "./ip";
 import { SG_QUESTIONS } from "./sg";
@@ -67,6 +68,7 @@ import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,
   ip: IP_QUESTIONS,

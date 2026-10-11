@@ -95,3 +95,10 @@ describe("home directory", () => {
     expect(hrefs.length).toBe(all.length + domains.length);
   });
 });
+
+it("土地家屋調査士の最新2回66原問への入口を表示する", () => {
+  const item = getHomeDirectory().flatMap(d => [...d.featured, ...d.compact]).find(entry => entry.key === "chosashi");
+  expect(item?.href).toBe("/chosashi");
+  expect(item?.questionCount).toBe(66);
+  expect(item?.periodLabel).toBe("2期分");
+});

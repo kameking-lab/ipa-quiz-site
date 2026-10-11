@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  chosashi: "土地家屋調査士試験の令和7・6年度を午前・午後とも収録。択一60問は公式正答と全肢解説、記述6問は公式問題に基づく独自解答例・計算過程・作図例を掲載しています。記述解答例は法務省の公式解答ではありません。",
   ip: "ITパスポート試験はIT全般の基礎知識を幅広く問う、職種を問わずITを活用するすべての社会人・学生向けの国家試験です。",
   sg: "情報セキュリティマネジメント試験は、企業内の情報セキュリティ対策を推進する人材の能力を認定する国家試験です。",
   fe: "基本情報技術者試験は、ITエンジニアの登竜門として位置づけられる国家試験で、プログラミング基礎とIT全般の知識を問います。",
@@ -136,6 +137,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  chosashi: "土地家屋調査士試験",
   riyoshi: "理容師国家試験",
   ip: "ITパスポート試験",
   sg: "情報セキュリティマネジメント試験",
@@ -201,6 +203,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  chosashi: (c) => `土地家屋調査士の令和7・6年度、午前・午後の${c}原問を収録。択一は公式正答と全肢解説、記述は公式問題に基づく独自解答例で学べます。記述の公式解答ではありません。`,
   riyoshi: (c) => `理容師国家試験の第53回・第54回筆記から掲載済み${c}問を演習。公式問題・正答、原図と全選択肢の独自解説を確認できます。`,
   ip: (c, y, k) =>
     `職種・年齢を問わずITを活用するすべての社会人・就活生が対象のIT基礎国家試験。CBT通年受験に対応、${c}問・${y}期分・${k}分野を実問題AI解説で体系的に対策。合格率は比較的高く、ビジネス現場のIT活用力を証明できる。`,
@@ -316,7 +319,7 @@ export function examMetaDescription(
   const countFmt = questionCount.toLocaleString("ja-JP");
 
   // 一部収録の資格は「全○期分」と読める汎用文言を使わない。
-  if (exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
+  if (exam === "chosashi" || exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
   }

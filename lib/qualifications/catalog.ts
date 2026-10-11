@@ -42,6 +42,20 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "chosashi",
+    examCode: "chosashi",
+    shortName: "土地家屋調査士",
+    fullName: "土地家屋調査士試験",
+    domain: "legal",
+    administrator: "法務省",
+    officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index5.html",
+    officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
+    status: "live",
+    reuseSummary: "令和7・6年度の午前各11問・午後各22問、計66原問を収録。択一60問は法務省の公式正答と全選択肢の独自解説を掲載。記述6問は公式問題に基づく独自解答例であり、法務省の公式解答ではありません。法務省の利用条件には第三者権利等の例外があります。",
+    attributionTemplate: "出典：法務省 令和○年度土地家屋調査士試験 午前・午後 第○問。解説・記述解答例は過去問AIが独自作成。",
+    remainingWork: ["法令改正の継続確認", "第三者権利等の例外条件は掲載者が確認"],
+  },
+  {
     slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
     officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
     reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",

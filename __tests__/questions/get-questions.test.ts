@@ -84,9 +84,10 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("rinsho-kensagishi");
     expect(codes).toContain("shinryo-hoshasengishi");
     expect(codes).toContain("rinsho-kogishi");
+    expect(codes).toContain("chosashi");
     expect(codes).toContain("riyoshi");
     expect(codes).toContain("chusho-kigyo-shindanshi");
-    expect(codes.length).toBe(55);
+    expect(codes.length).toBe(56);
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし
