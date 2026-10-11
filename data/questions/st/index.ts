@@ -12,7 +12,14 @@ import residualConflictNotices from "./residual-source-conflict-notices-20261011
 const RAW_ST_QUESTIONS: Question[] = BY_YEAR_QUESTIONS;
 const explanationRepairs: Record<string, string> = allYearExplanationRepairs;
 const sourceCorrections: Record<string, Partial<Question>> = residualCorrections;
-const sourceConflictNotices: Record<string, Partial<Question>> = residualConflictNotices;
+const sourceConflictNotices: Record<string, Partial<Question>> = Object.fromEntries(
+  Object.entries(residualConflictNotices).map(([id, notice]) => {
+    if (notice.explanationCoverage !== "official-summary") {
+      throw new Error(`invalid ST conflict coverage: ${id}`);
+    }
+    return [id, { ...notice, explanationCoverage: "official-summary" as const }];
+  }),
+);
 
 export const ST_QUESTIONS: Question[] = applyChoiceExplanationOverlay(
   applyChoiceExplanationOverlay(
