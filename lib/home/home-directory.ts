@@ -157,7 +157,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "第71回（2025年実施）午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77回（2025年実施）午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み307原問を部分収録", domain: "welfare" },
-  { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
+  { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み319原問を部分収録", domain: "welfare" },
   { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用359原問を部分収録", domain: "welfare" },
 ];
 

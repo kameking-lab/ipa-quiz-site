@@ -1,0 +1,51 @@
+{
+  "status": "LOCAL_CANDIDATE_FOR_INDEPENDENT_REVIEW",
+  "base": "b98cc8d7b3bef7fc0dcb6204f6f56d111e10dfa8",
+  "adoptedId": "ahaki-anma-2026-annual-pm-q147",
+  "reusedClaudeOriginals": 1,
+  "reusedClaudeOriginalStemChoicesCaseAndKey": true,
+  "reusedExplanatoryPrefix": "公式の正答表では、この問題は選択肢1〜4のいずれも正答として扱われています(公式表記「1,2,3,4」)。ここでは1つ選べば正解となる扱いで、公式のキーをそのまま保持しています。",
+  "targetedExplanationDelta": "Only Q147 clinical distinctions replaced after a new directly readable primary consensus; official key and requiredSelections unchanged.",
+  "newModelRequests": 0,
+  "newImages": 0,
+  "publication": false,
+  "latestTwoComplete": false,
+  "before": {
+    "total": 677,
+    "anma": 318,
+    "hariKyu": 359
+  },
+  "after": {
+    "total": 678,
+    "anma": 319,
+    "hariKyu": 359
+  },
+  "officialTargets": {
+    "anma": 320,
+    "hariKyu": 360
+  },
+  "sourcePacketSha256": "1f68e527792184b2aa234129e2b0617b534ffae0c84adc21bbe78a66d10e37a1",
+  "savedDraftSha256": "9e59515b828d857bc2f8577bdb2cf5d6abc39ce440b69bd7ff7b96d8e1f420fa",
+  "servedReceiptSha256": "4b8e0db3857ada8aaf7bd223674a7331640891a8b963e5351984c9ca5873e667",
+  "officialQuestionPdfSha256": "4b9195a58318a23a6d7479188f9700bb3cfc20c049a72163077135fb85836478",
+  "officialAnswerHtmlSha256": "15d67ce82f84bdb0f4339d1fd7df48d0e7811cc867344b4dd397a5004ed48113",
+  "questionPageImageSha256": "145b6a29de73b24f97581d05a42284562fe6861ccea0a35411f2416104ac98d8",
+  "candidateObjectSha256": "aea80508848c80f6308d3856dc5c2475df279ef9bbcad196c403b86c9cea6faf",
+  "officialAcceptedChoices": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "requiredSelections": 1,
+  "held": [
+    {
+      "id": "ahaki-anma-2025-annual-pm-q124",
+      "reason": "Original official key is 2 (gluteus maximus). Saved draft assumes sacrotuberous ligament, but no directly readable allowed primary definition of this grasping test identifies that ligament. Earlier collection incorrectly restated official key as 3; that claim is rejected."
+    },
+    {
+      "id": "ahaki-hari-kyu-2025-annual-pm-q156",
+      "reason": "Official key 4 (ST37) and shared case confirmed. Direct primary body listing the exact traditional eight-point grouping remains unavailable on permitted primary domains; no third-party answer or inferred point list adopted."
+    }
+  ]
+}
