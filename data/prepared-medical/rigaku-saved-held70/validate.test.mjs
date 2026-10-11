@@ -253,3 +253,58 @@ test("the private bundle is absent from the PT production question registration"
   }
   assert.equal(manifest.imageUrlsReviewBundleRelative, true);
 });
+
+test("the incremental subset preserves the initial six, original fields and all prior clinical HOLDs", () => {
+  const subset = read("adoption-candidates.json");
+  const adoption = read("adoption-receipts.json");
+  const increment = read("qa/incremental-finite-corrections.json");
+  const proof = read("qa/adoption-increment-validation.json");
+  const digest = (value) => hash(Buffer.from(JSON.stringify(canonical(value))));
+  const protectedFields = (q) => Object.fromEntries(Object.entries(q).filter(([key]) =>
+    !["explanation", "choiceExplanations", "officialReferenceUrls"].includes(key)));
+  assert.equal(subset.length, 8);
+  assert.equal(subset.reduce((sum, q) => sum + Object.keys(q.choiceExplanations).length, 0), 40);
+  assert.equal(adoption.initialSixIds.length, 6);
+  assert.equal(adoption.additionalBoundedReviewCandidateIds.length, 2);
+  assert.equal(adoption.otherExplanationRequirementIds.length, 17);
+  assert.equal(adoption.priorScopeDecisionIds.length, 2);
+  assert.equal(adoption.assets.length, 9);
+  assert.equal(subset.filter((q) => q.hasImage).length, 3);
+  assert.equal(increment.length, 10);
+  assert.deepEqual(sorted(new Set(increment.map((p) => p.id))), sorted(proof.changedQuestionIds));
+  assert.equal(digest(reviews.contentHoldRecords), proof.priorContentHoldRecordsDigest);
+  assert.equal(digest(reviews.contentHeldQuestionIds), proof.priorContentHeldIdsDigest);
+  assert.equal(reviews.contentHeldQuestionIds.length, 43);
+  assert.equal(reviews.contentHoldRecords.length, 75);
+  for (const q of questions) assert.equal(digest(protectedFields(q)), proof.protectedQuestionDigests[q.id], q.id);
+  for (const id of adoption.initialSixIds) assert.equal(digest(questionMap.get(id)), proof.initialSixCandidateDigests[id], id);
+  for (const q of subset) {
+    assert.deepEqual(q, questionMap.get(q.id), q.id);
+    assert.equal(q.needsReview, true);
+    const row = adoption.rows.find((r) => r.id === q.id);
+    assert.equal(row.candidateDigest, digest(q));
+    assert.equal(row.publicGo, false);
+  }
+  for (const row of adoption.assets) assert.equal(hash(readFileSync(new URL(row.path, import.meta.url))), row.sha256);
+  const previous = structuredClone(questions);
+  const previousMap = byId(previous);
+  for (const patch of increment) {
+    const q = previousMap.get(patch.id);
+    const key = patch.field.split(".")[1];
+    assert.equal(patch.field === "explanation" ? q.explanation : q.choiceExplanations[key], patch.after);
+    if (patch.field === "explanation") q.explanation = patch.before;
+    else q.choiceExplanations[key] = patch.before;
+    assert.equal(patch.publicGo, false);
+    assert.ok(patch.evidenceUrls.length);
+  }
+  delete previousMap.get("rigaku-ryohoshi-2026-annual-am-q4").officialReferenceUrls;
+  assert.equal(digest(previous), proof.previousCandidatesCanonicalDigest);
+  for (const [name, value] of Object.entries(proof.priorJsonDigests)) {
+    if (["candidates70.json", "manifest.json", "review-summary.json", "applied-finite-corrections.json"].includes(name)) continue;
+    assert.equal(hash(readFileSync(new URL(name, import.meta.url))), value, name);
+  }
+  assert.equal(adoption.expertAcceptance, null);
+  assert.equal(adoption.publicationReview, null);
+  assert.equal(adoption.publicGo, false);
+  assert.equal(adoption.productionImported, false);
+});

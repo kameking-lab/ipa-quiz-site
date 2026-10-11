@@ -9,7 +9,7 @@
 
 最新main `7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec` の登録179問との担当ID重複は0。既存179問も読取りだけで公式キーを照合し、差分0だった（`registered179-readonly-key-audit.json`）。
 
-出典がある説明の有限修正は現在77件。心電図PM20は公式の25mm/秒・R-R間隔を再現可能に測り、A約72/分、B約108/分と検証した。有限修正を適用しても、旧HOLDを解除したことにはならない。
+出典がある説明の有限修正は現在85フィールド（今回の10修正は新規8フィールドと既修正2フィールドへの追加修正）。心電図PM20は公式の25mm/秒・R-R間隔を再現可能に測り、A約72/分、B約108/分と検証した。有限修正を適用しても、旧HOLDを解除したことにはならない。
 
 **全70問を `needsReview=true`、`publicGo=false` に保持する。** 専門的な全肢理由の受入れは未完で、専門受入れ・独立公開査読のreceiptはない。臨床HOLDを本文の定型保留文に置換せず、原稿と検証状況を別に保全した。追加QCの残HOLDは43問・75レコードで、旧HOLDは全て保全している。第61回の追加臨床QCは19/19問で実施済み。根拠未取得の提案3件は未採用のまま `qa/helper-pt61-finite-corrections.json` に残した。高解像度のcaption・心電図・図2確認画像4枚も `qa/helper-pt61-assets/` に保存し、原図とは別にSHAを照合する。本bundleを出題登録やpublic画像配置に使う際は統合担当による別の受入れ作業が必要。
 
@@ -26,6 +26,7 @@
 
 | ファイル | 用途 |
 | --- | --- |
+| `adoption-candidates.json` / `adoption-receipts.json` / `ADOPTION.md` | 既存6＋追加限定候補2の最小レビューセット、40肢と条件 |
 | `candidates70.json` | 70問・350肢の候補。公式キー不変、全問レビュー中 |
 | `saved-baseline70.json` | 旧説明・旧ラベル・旧review理由の不変な比較用コピー |
 | `source-receipts70.json` / `sources/` | 原問・正答・別冊、モデルreceipt、原図SHAと対応 |
@@ -33,7 +34,7 @@
 | `ownership-and-gaps400.json` | 固定main・固定PRhead・400問の不足/所有状態 |
 | `applied-finite-corrections.json` | 旧文→新文、出典、QA担当がある限定差分 |
 | `qa/` / `review-summary.json` | 原図視認、専門一次資料、個別HOLD、追加QCの状況 |
-| `validate.test.mjs` | キー、350肢、図、所有範囲、モデル、公開gateの9項目検査 |
+| `validate.test.mjs` | キー、350肢、図、所有範囲、モデル、公開gateの10項目検査 |
 
 ## 固定時点の400問（現在の本番件数ではない）
 
@@ -57,6 +58,8 @@
 node --test data/prepared-medical/rigaku-saved-held70/validate.test.mjs
 ```
 
-Windows sandboxでrunnerのchild-processが`spawn EPERM`となる場合、同じ9件を `node data/prepared-medical/rigaku-saved-held70/validate.test.mjs` で実行できる。Hosted CIの専用workflowはdependency installやローカルbuildを要さず9項目を検査する。全体lint/typecheck/buildは既存Hosted CIへ委ねた。
+Windows sandboxでrunnerのchild-processが`spawn EPERM`となる場合、同じ10件を `node data/prepared-medical/rigaku-saved-held70/validate.test.mjs` で実行できる。Hosted CIの専用workflowはdependency installやローカルbuildを要さず10項目を検査する。全体lint/typecheck/buildは既存Hosted CIへ委ねた。
 
 未完項目には1995年版ROM原表、Steinbrocker原典、遠城寺式検査の原表、SIASの厳密な採点、術後個別制限などが含まれる。最新版資料や公式正答だけを旧版/臨床理由の検証と数えない。HOLDと出典はquestion/choice単位でQAを参照する。
+
+既存6問の本文不変と3問だけの有限修正・追加候補は [ADOPTION.md](ADOPTION.md) を参照。追加候補は専門受入れ・公開許可ではない。43問75レコードの旧臨床HOLDはそのまま保持し、PM35の診断時点・単一原因頻度は追加QA側に未解消事項として残す。

@@ -1,0 +1,256 @@
+{
+  "baseCommit": "d2880a45aece9952bbeab85e0eeed8fb47d8d23f",
+  "scope": "Three saved questions only; no full 27/70-question medical reaudit",
+  "sources": {
+    "scp": {
+      "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+      "type": "rehabilitation hospital original instrument guide",
+      "scope": "姿勢、非麻痺側上下肢の外転伸展、他動修正への抵抗を座位立位で評価。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+          "status": 200,
+          "sha256": "1de9caa4ca57f8ad4f2b97ada170356868aa9cc6013f524cebb696719358d2b5",
+          "retrievedAt": "2026-10-11T07:22:39.046746+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ]
+    },
+    "slta": {
+      "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+      "type": "検査作成学会の原ガイド",
+      "scope": "失語症評価の目的。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+          "status": 200,
+          "sha256": "c35958b6be88b1865b6f80da08debde8f930adaa099329a5b0c33cc9323428f4",
+          "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ]
+    },
+    "tmt": {
+      "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+      "type": "検査作成学会の原ガイド",
+      "scope": "視覚性・空間性注意、処理速度など。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+          "status": 200,
+          "sha256": "9f633e6c13c00eba4569fe232d44a4c893fe4fc5fdeb1d0171fffedd70b9b336",
+          "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ]
+    },
+    "wais": {
+      "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+      "type": "原出版社発行資料",
+      "scope": "成人の認知能力・知能検査。米国版資料を日本版の全実施手順と数えない。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+          "status": 200,
+          "sha256": "d3aa1b64689ae953d4e555cff3638ddc159c1450f04e16ef2091345542613ee8",
+          "retrievedAt": "2026-10-11T07:34:34.594744+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ],
+      "locator": "physical pages 2–3: adult cognitive ability, FSIQ and indices; no Japanese norms claim"
+    },
+    "wcst": {
+      "url": "https://www.parinc.com/products/WCST",
+      "type": "原出版社発行資料",
+      "scope": "保続、抽象推論、遂行機能・セット変換。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.parinc.com/products/WCST",
+          "status": 200,
+          "sha256": "e94a9d99d45687b3b657889905d913ce710521e53a8c913791d2610d54aa930f",
+          "retrievedAt": "2026-10-11T07:34:35.292350+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ]
+    },
+    "neonatal": {
+      "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+      "type": "NWNODN病院ネットワーク発行の臨床ガイド",
+      "scope": "NICU内の監視下での生理的屈曲・肩前方・四肢内転支持・腹臥位気道確保。家庭睡眠への適用をしない。",
+      "savedSourceReceipts": [
+        {
+          "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+          "status": 200,
+          "sha256": "8ad8608080ce9f0b14c6a10b4a38c9739e7428914c6b23cf4531496460661d83",
+          "retrievedAt": "2026-10-11T07:34:33.630017+00:00",
+          "authUsed": false,
+          "tlsVerification": true
+        }
+      ],
+      "locator": "physical page 11: Prone Step-by-Step Guide; physical page 12: Individualised considerations"
+    },
+    "nci": {
+      "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/pain/pain-hp-pdq",
+      "type": "NCI professional PDQ",
+      "scope": "multifactorial pain, incident pain, psychosocial assessment and severity-based medicines; diagnosis-time claim and numerical single-cause frequency remain unverified",
+      "existingQaSha256": "01772ee6a496cab76a1c57bfd4faa130f65eec93dbb4e27c325eebc9ca32a37e"
+    }
+  },
+  "appliedPatchCount": 10,
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q4",
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "scp",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "イ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "slta",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "ウ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "tmt",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "エ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "wais",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "オ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "wcst",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        }
+      ],
+      "remainingRequirement": "専門受入れ・独立公開査読のreceipt。症例からの優先順位判断。",
+      "adoptionReviewCandidate": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "choiceChecks": [
+        {
+          "choice": "ア",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "イ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "ウ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "エ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "オ",
+          "status": "EXAM_CONTEXT_INFERENCE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "NICU監視下の支持。中間位の数値角度を指定せず、選択肢5への対応は専門受入れ判断を要する。"
+        }
+      ],
+      "remainingRequirement": "専門受入れ・独立公開査読のreceipt。肢5の中間位と原ガイドの配列支持の対応の判断。",
+      "adoptionReviewCandidate": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q35",
+      "choiceChecks": {
+        "ア": {
+          "status": "supported",
+          "currentExplanation": "体動など誘因があり予測できる突出痛もあるため、全て予測不能とはいえない。",
+          "sourceLocation": "Background and Definitions > Breakthrough Pain（画面行182-184）",
+          "evidence": "incident painを体動など特定の行為・要因に関連する突出痛として説明しており、『予測できない』の全称命題に反例がある。"
+        },
+        "イ": {
+          "status": "supported",
+          "currentExplanation": "正答。疼痛評価では心理的苦痛を含め、対応を調整する。",
+          "sourceLocation": "General Information > step 3-4（画面行26-37）；Background and Definitions（画面行42-48）；Pain Assessment（画面行217-230）",
+          "evidence": "心理的苦痛を評価し、心理社会的問題に応じた治療資源への紹介を含めると記載。精神的ケアを管理に含める趣旨を支持。"
+        },
+        "ウ": {
+          "status": "partial",
+          "currentExplanation": "がんそのもの、治療、併存疾患など原因は複合し得る。常に単一とはいえない。",
+          "proposedExplanation": "がん、治療、併存病態などの要因が重なり得る。NCI PDQは痛みがしばしば多因子性だと述べており、選択肢の『多くの場合、単一の原因を指摘できる』という一般化とは整合しない。ただし、単一原因を指摘できる割合をこの資料から数値化することはできない。",
+          "sourceLocation": "General Information > step 2-3（画面行20-26）；Causes of Cancer Pain（画面行52-63）",
+          "evidence": "多因子性と原因の組合せは直接支持。『多くの場合』という頻度判定の定量資料はPDQ本文にない。",
+          "hold": "単一原因を指摘できる割合や『多くの場合』との厳密な比較は、このNCI PDQ一件では確定しない。"
+        },
+        "エ": {
+          "status": "hold",
+          "currentExplanation": "診断時にも疼痛を伴い得る。",
+          "sourceLocation": "Prevalence（画面行49-51）；Causes of Cancer Pain（画面行52-63）",
+          "evidence": "がん患者全体の疼痛と原因の種類は記載されるが、がん診断時点に限った疼痛の有無は本文で明示されない。",
+          "hold": "『診断された時点』という時間条件を直接支持する原典が別途必要。現稿は今回の資料だけで専門受入れ不可。"
+        },
+        "オ": {
+          "status": "supported",
+          "currentExplanation": "軽度疼痛への積極的なオピオイド使用を一般則としない。痛みの強さと個別状況で選択する。",
+          "sourceLocation": "Background and Definitions（画面行46-48）；Pharmacological Therapies > Acetaminophen and NSAIDs（画面行315-319）",
+          "evidence": "PDQは疼痛の重症度に基づく鎮痛薬選択を記載し、軽度疼痛ではアセトアミノフェン・NSAIDsをしばしば開始薬とする。個別の例外を排除せず、軽度なら積極的にオピオイドを使うとの一般則を支持しない。"
+        }
+      },
+      "remainingRequirement": [
+        "肢ウの『多くの場合』を定量的に判定できる一次資料または専門家確認。",
+        "肢エの診断時点の疼痛を直接示す一次資料。",
+        "親担当の公式問題・正答画像照合、および独立した専門受入れ。"
+      ],
+      "adoptionReviewCandidate": false
+    }
+  ],
+  "priorClinicalHoldRecordsUnchanged": true,
+  "oldHoldsCleared": 0,
+  "publicGo": false,
+  "expertAcceptance": null,
+  "publicationReview": null,
+  "newOriginalGeneration": 0
+}
