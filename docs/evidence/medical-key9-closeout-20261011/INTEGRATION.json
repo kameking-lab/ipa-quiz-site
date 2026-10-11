@@ -1,0 +1,432 @@
+{
+  "status": "LOCAL_QA_APPROVED_KEY9_DRAFT_PR_EVIDENCE",
+  "checkedAtUtc": "2026-10-11T04:03:13.519002+00:00",
+  "mainBaseline": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+  "originals": 9,
+  "choiceReasons": 45,
+  "approvalFileSha256": "805a38b524ba620ea76df4c0bc0e77b14ff7add96470c07ea5c8df590864f6d4",
+  "hardLocalQaSha256": "96581b95656465dfa9a4fca0d0e085efe81211cff47d1c3cf727022632a89994",
+  "sourceProofReused": true,
+  "officialSourcesRedownloaded": false,
+  "all45MedicalChoiceReasonsVerbatimPreserved": true,
+  "wholeNineSecondModelClinicalReview": false,
+  "independentHardLocalQuestions": 2,
+  "newNativeIds": [
+    "rigaku-ryohoshi-2025-annual-pm-q31",
+    "rigaku-ryohoshi-2025-annual-pm-q46",
+    "rigaku-ryohoshi-2025-annual-pm-q53",
+    "rigaku-ryohoshi-2026-annual-pm-q57",
+    "rigaku-ryohoshi-2026-annual-pm-q68",
+    "sagyo-ryohoshi-2024-annual-pm-q53",
+    "sagyo-ryohoshi-2025-annual-am-q50",
+    "sagyo-ryohoshi-2025-annual-am-q60",
+    "sagyo-ryohoshi-2025-annual-am-q98"
+  ],
+  "excludedAlreadyInPr743": [
+    "rigaku-ryohoshi-2026-annual-pm-q30",
+    "rigaku-ryohoshi-2026-annual-pm-q75",
+    "sagyo-ryohoshi-2024-annual-pm-q27"
+  ],
+  "productionOriginalsAdded": 0,
+  "publicGo": 0,
+  "permissionOrCopyrightClearanceClaimed": false,
+  "items": [
+    {
+      "identity": "rigaku-ryohoshi-2025-annual-pm-q31",
+      "nativePath": "data/questions/rigaku-ryohoshi/2025-clinical-key9-ready.json",
+      "nativeFileSha256": "67ea6223a6f79c62c89b42b82bd489531fecb22fdb7af8a6a393cb9ce271ab85",
+      "nativeRowCanonicalSha256": "e574a3ed762dac95e0f06842d2ca51447d996af5f3ce8c16ece3de9c589c2905",
+      "textDigestForVitest": "88f855824e4f3898b3da046a65a4c8cf3fe3855d3dbb3e59ee1ea89403c52851",
+      "candidateCanonicalSha256": "e9f57dcbab3aefa3c70a8bddd6c1661859571e78f43a6196c2a59cc864f4b4c9",
+      "sourcePacketSha256": "71fbd074a28355bf03ad33be61e471b03feffac0cc31f819a6622c56a9e8f1aa",
+      "savedRawSha256": "e3e36ef42c3b6b2b66f1b4c2049dc9b4fb7e5be6dabf443e57a36e882ae184ba",
+      "proposalSha256": "e344ffdf2e3f4c48f9c296c4d6bc589fe40dce66d8e5c0fe1db1a6c19f306428",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_PM31.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/35490285/"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2025,
+      "edition": 60,
+      "session": "pm",
+      "number": 31,
+      "acceptedAnswerSets": [
+        [
+          "1"
+        ],
+        [
+          "2"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": true
+    },
+    {
+      "identity": "rigaku-ryohoshi-2025-annual-pm-q46",
+      "nativePath": "data/questions/rigaku-ryohoshi/2025-clinical-key9-ready.json",
+      "nativeFileSha256": "67ea6223a6f79c62c89b42b82bd489531fecb22fdb7af8a6a393cb9ce271ab85",
+      "nativeRowCanonicalSha256": "f45165263f35c20d3b2467886a2bff8e270dbc2f0e2e4ee3b98fe40067a78581",
+      "textDigestForVitest": "5fad0286a826f21e49943cb3d69cff6680c2c0f5cc23d8024b2c7ce796ee1c74",
+      "candidateCanonicalSha256": "71c92e52e6fadb405787b0e56a6006ca92afef673624f73a57f9999418e9da37",
+      "sourcePacketSha256": "856b8e42c7bf067a9e37346c4a03b0a1cdd293fbcf6294700236d35fb48c688e",
+      "savedRawSha256": "d5020009b53a43c0a3f090d78d1ef306b913ae3679970884ec04a4a25435ea76",
+      "proposalSha256": "e344ffdf2e3f4c48f9c296c4d6bc589fe40dce66d8e5c0fe1db1a6c19f306428",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_PM46.pdf"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2025,
+      "edition": 60,
+      "session": "pm",
+      "number": 46,
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": true
+    },
+    {
+      "identity": "rigaku-ryohoshi-2025-annual-pm-q53",
+      "nativePath": "data/questions/rigaku-ryohoshi/2025-clinical-key9-ready.json",
+      "nativeFileSha256": "67ea6223a6f79c62c89b42b82bd489531fecb22fdb7af8a6a393cb9ce271ab85",
+      "nativeRowCanonicalSha256": "9001b6901f86cc580eb017a555161c394e8760d51bc5533a890b8a2206fa4651",
+      "textDigestForVitest": "b588cb72dbd734a8f13651d151daffd613dfe4fc8324de13bec0f0d8275f3aea",
+      "candidateCanonicalSha256": "f607b5204fcedc7e543e155ee7dadaae223a477c036b808881660b074883fd72",
+      "sourcePacketSha256": "813dd9c65b1ee8ef82bbfe3bce794cf1fb8c6d1ed69b198fa8975220ba752ddd",
+      "savedRawSha256": "d5020009b53a43c0a3f090d78d1ef306b913ae3679970884ec04a4a25435ea76",
+      "proposalSha256": "e344ffdf2e3f4c48f9c296c4d6bc589fe40dce66d8e5c0fe1db1a6c19f306428",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/kyoutu_PM53.pdf"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2025,
+      "edition": 60,
+      "session": "pm",
+      "number": 53,
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "rigaku-ryohoshi-2026-annual-pm-q57",
+      "nativePath": "data/questions/rigaku-ryohoshi/2026-clinical-key9-ready.json",
+      "nativeFileSha256": "e1426f2ad5dd3da9657a289ddfe5f2e1a63f36928d31268370a8bde6348aa665",
+      "nativeRowCanonicalSha256": "db9d8e6029912b078ec1869144111b4c2d03335cb355a8e770b8b6a3f4ecc558",
+      "textDigestForVitest": "0461d0f90f22889e89dedc2e60045324b7108bc00d7af2b04aab0a693d939dc6",
+      "candidateCanonicalSha256": "bbe6b7aad9b4bf779a96004dcd57a2812a16a710f9bb274d6763c09c50736ce2",
+      "sourcePacketSha256": "0571367af1c71abdfaadb26c958d1e4113b231033fc29447cc38b3fd8df5214e",
+      "savedRawSha256": "7d06cc6d4c109d2044dacacb25b640d59c6d84e80a84804293557c21a71b97d6",
+      "proposalSha256": "37be2d906faa07c3a1e6c92c13010a004d4bedd495d894e015180d2c0825663c",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/kyoutu_PM57.pdf"
+      ],
+      "canonicalYear": 2026,
+      "officialSourceYear": 2026,
+      "edition": 61,
+      "session": "pm",
+      "number": 57,
+      "acceptedAnswerSets": [
+        [
+          "1"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "rigaku-ryohoshi-2026-annual-pm-q68",
+      "nativePath": "data/questions/rigaku-ryohoshi/2026-clinical-key9-ready.json",
+      "nativeFileSha256": "e1426f2ad5dd3da9657a289ddfe5f2e1a63f36928d31268370a8bde6348aa665",
+      "nativeRowCanonicalSha256": "fbd5a1543833f546d0e2bd343dfe813277ee6e3346c413b0eb3a5b0111ccf947",
+      "textDigestForVitest": "96947219037268133ac57944c2c123c6b6b3c5b09cba6055dc367321706f0190",
+      "candidateCanonicalSha256": "9caf9ffbaadd15890e9f92e2e18bac147e3494e8f10e2ee27481b857d782b513",
+      "sourcePacketSha256": "2d4273bcf817cd592def270fbb0f5340b64226ef28366267ec3de32998e0063b",
+      "savedRawSha256": "7d06cc6d4c109d2044dacacb25b640d59c6d84e80a84804293557c21a71b97d6",
+      "proposalSha256": "37be2d906faa07c3a1e6c92c13010a004d4bedd495d894e015180d2c0825663c",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/kyoutu_PM68.pdf"
+      ],
+      "canonicalYear": 2026,
+      "officialSourceYear": 2026,
+      "edition": 61,
+      "session": "pm",
+      "number": 68,
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "sagyo-ryohoshi-2024-annual-pm-q53",
+      "nativePath": "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json",
+      "nativeFileSha256": "3d178c3af2ad53ff2e3251a4bc763fc5353891ada6a0fb36b247dd00ee7076b7",
+      "nativeRowCanonicalSha256": "5556362d695f08e85ed4c801d94bd936d6efe8a88337524f9f74e0444455d81c",
+      "textDigestForVitest": "b56ea89ebbfed95fdbb349ca963935ae00de89eba8922ab69903ef7226807700",
+      "candidateCanonicalSha256": "9295712955c0e0aba874c550ad9fac389efc6edb3346b0f7864bbf2a80abdbfb",
+      "sourcePacketSha256": "4d96f3e4414dc029cf44d07c03c4d77d0ab15d25972c21ca57025a57c187b191",
+      "savedRawSha256": "0f57c4b03d052d62f262ddb5179302fc158ae1424f8376f2093fd02a87b54d86",
+      "proposalSha256": "8774c991b4de208a45d91732a556758479117e9c4fdd5942fb0c2e4a2bb95398",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/kyoutu_PM53.pdf"
+      ],
+      "canonicalYear": 2024,
+      "officialSourceYear": 2025,
+      "edition": 60,
+      "session": "pm",
+      "number": 53,
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "sagyo-ryohoshi-2025-annual-am-q50",
+      "nativePath": "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json",
+      "nativeFileSha256": "3d178c3af2ad53ff2e3251a4bc763fc5353891ada6a0fb36b247dd00ee7076b7",
+      "nativeRowCanonicalSha256": "d83637b9cef1592e41d32a6a1bb54de41e47732435802bf9ac2ebe8e67df4920",
+      "textDigestForVitest": "79a26f0abbb019c9c0bd5a5b46b9ef08306379ffb8960ea63b6dd03f33c9f0b8",
+      "candidateCanonicalSha256": "69a2297be3ba72dc21311c6c8b688e73805e0a88b800b93bed9ac88403b4ceda",
+      "sourcePacketSha256": "55e82fb13b40b4984b20a02fb2642b9d0049acbd263dfd243ba832e9fbb55f84",
+      "savedRawSha256": "ffa6c99a0fe13e4b60087c3e1fb8be2bec8731727731276d341121b115be152b",
+      "proposalSha256": "8774c991b4de208a45d91732a556758479117e9c4fdd5942fb0c2e4a2bb95398",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/OT_AM50.pdf"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2026,
+      "edition": 61,
+      "session": "am",
+      "number": 50,
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "sagyo-ryohoshi-2025-annual-am-q60",
+      "nativePath": "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json",
+      "nativeFileSha256": "3d178c3af2ad53ff2e3251a4bc763fc5353891ada6a0fb36b247dd00ee7076b7",
+      "nativeRowCanonicalSha256": "9b659c6ab146544054b01b1012de77966a81ff862a69f1264e98634e742b5a3a",
+      "textDigestForVitest": "ae046fdd496963c38cc1af9cff589e1728bf86b90c8ea7f56ebe1732aec4936e",
+      "candidateCanonicalSha256": "3ecb30301c9f5b71802bdf8062318598d64e20a96ccde607841f157c29b0f286",
+      "sourcePacketSha256": "b738cb95d0520f7b01f1e3d11e76e956740d79eb8a3cae8deab6f4ade7e17e19",
+      "savedRawSha256": "52c6c38b84cb4bb34844a3469f410f40fa0d7c0c6b367fea3853e74b5f43a895",
+      "proposalSha256": "8774c991b4de208a45d91732a556758479117e9c4fdd5942fb0c2e4a2bb95398",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/kyoutu_AM60.pdf"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2026,
+      "edition": 61,
+      "session": "am",
+      "number": 60,
+      "acceptedAnswerSets": [
+        [
+          "3"
+        ],
+        [
+          "4"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    },
+    {
+      "identity": "sagyo-ryohoshi-2025-annual-am-q98",
+      "nativePath": "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json",
+      "nativeFileSha256": "3d178c3af2ad53ff2e3251a4bc763fc5353891ada6a0fb36b247dd00ee7076b7",
+      "nativeRowCanonicalSha256": "bd8b52706543a12a22319de1c4456acf04d615458a14f8c2d524349993be34a2",
+      "textDigestForVitest": "57e791d22ebcd9bf9e458abd0cfe5681393b25bada2ba1428d47741601feec9a",
+      "candidateCanonicalSha256": "80918e99ce9b5574b6f4ce39a249d91de4ec7549632fe742d6d1631836abd6f0",
+      "sourcePacketSha256": "c86b54f7ee5acf01798ed356a953bddfbc692bab50b9d3796ec3bec56c189124",
+      "savedRawSha256": "0d74496f2b848b2bf84a147ae960a871652cc26c9c07dc62f079a351301af8c5",
+      "proposalSha256": "8774c991b4de208a45d91732a556758479117e9c4fdd5942fb0c2e4a2bb95398",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/kyoutu_AM98.pdf"
+      ],
+      "canonicalYear": 2025,
+      "officialSourceYear": 2026,
+      "edition": 61,
+      "session": "am",
+      "number": 98,
+      "acceptedAnswerSets": [
+        [
+          "1"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "requiredSelections": 1,
+      "exactStemChoicesGeneralAndFiveReasonsParity": true,
+      "savedSourceAndMedicalReasonsUnchanged": true,
+      "contentVerified": true,
+      "clinicalVerified": true,
+      "verificationScope": "Root local acceptance of scoring polarity, source text preservation, anatomy/assessment consistency and unchanged five medical reasons. Two difficult candidates have independent local check; no full nine-question second-model medical review.",
+      "independentHardLocalCheck": false
+    }
+  ],
+  "dedupBaselinePrHeads": {
+    "747": "491bd7a03cb7e2d1cd1f146f0f8a113181e68d34",
+    "743": "4e56adb2395b1b72fb81faaa9f8feff3275175db",
+    "742": "bd9bc1e423815527dba794d261bd5d073cd89e5b",
+    "711": "d6a23b13182f5e345017bf6131ada07643f4efea"
+  },
+  "integrationNote": "Nine new IDs are disjoint from PR743 (three accepted corrections) and PR711. Reconcile shared runtime/catalog counts when combining those pending PRs. Source-only historical jobs and raw manuscripts were not overwritten.",
+  "latestDedupMainCommit": "4b190a6fb8df715c223b45a7d495a33bdd33a363",
+  "openPrChangedFileInventoryCount": 75,
+  "newNativeOverlapWithLatestMainOrRelevantPrs": 0,
+  "newOverlapWithHeldPr747": 0,
+  "latestDedupFileSha256": "cbf335d83ca35c9cbc4dfbcd174ffa18b5db52334ea2f2ce85cb7a415a1fc49f",
+  "localValidation": {
+    "schemaVersion": 1,
+    "status": "PASS_ON_CAD6CA4_BASE",
+    "worktree": "C:/wt/kakomon-medical-key9-20261011",
+    "baseCommit": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+    "approvedCandidateFileSha256": "805a38b524ba620ea76df4c0bc0e77b14ff7add96470c07ea5c8df590864f6d4",
+    "nativeOriginalsAdded": 9,
+    "readyFiles": {
+      "data/questions/rigaku-ryohoshi/2025-clinical-key9-ready.json": "67ea6223a6f79c62c89b42b82bd489531fecb22fdb7af8a6a393cb9ce271ab85",
+      "data/questions/rigaku-ryohoshi/2026-clinical-key9-ready.json": "e1426f2ad5dd3da9657a289ddfe5f2e1a63f36928d31268370a8bde6348aa665",
+      "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json": "3d178c3af2ad53ff2e3251a4bc763fc5353891ada6a0fb36b247dd00ee7076b7"
+    },
+    "runs": [
+      {
+        "scope": "initial 10 targeted files before OT year-attribution metadata update",
+        "command": ".\\node_modules\\.bin\\vitest.cmd run __tests__/lib/home-directory.test.ts __tests__/questions/medical-am3-ready.test.ts __tests__/questions/medical-question-labels.test.tsx __tests__/questions/rigaku-literal-overlay9.test.ts __tests__/questions/rigaku-ready29.test.ts __tests__/questions/rigaku-remaining141.test.ts __tests__/questions/shino-sagyo-am-ready.test.ts __tests__/questions/shino-sagyo-pm-ready.test.ts __tests__/questions/shino-sagyo-pm01-20-ready.test.ts __tests__/questions/medical-clinical-key9.test.ts --maxWorkers=1 --fileParallelism=false",
+        "files": 10,
+        "passedTests": 40,
+        "passedFiles": 10,
+        "durationMs": 21810,
+        "exitCode": 0,
+        "stdoutPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-VITEST.log",
+        "stderrPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-VITEST.log",
+        "stderrNote": "PowerShell 2>&1 merged stderr with stdout before Tee-Object."
+      },
+      {
+        "scope": "OT attribution-year metadata recheck: new focused test and AM/PM runtime tests",
+        "command": ".\\node_modules\\.bin\\vitest.cmd run __tests__/questions/shino-sagyo-am-ready.test.ts __tests__/questions/shino-sagyo-pm-ready.test.ts __tests__/questions/medical-clinical-key9.test.ts --maxWorkers=1 --fileParallelism=false",
+        "files": 3,
+        "passedTests": 16,
+        "passedFiles": 3,
+        "durationMs": 1910,
+        "exitCode": 0,
+        "stdoutPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-OT-METADATA-RECHECK.log",
+        "stderrPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-OT-METADATA-RECHECK.log",
+        "stderrNote": "PowerShell 2>&1 merged stderr with stdout before Tee-Object."
+      },
+      {
+        "scope": "TypeScript project typecheck after OT year-attribution metadata update",
+        "command": "pnpm exec tsc --noEmit --incremental false",
+        "files": null,
+        "passedTests": null,
+        "passedFiles": null,
+        "durationMs": null,
+        "durationNote": "The command did not print or record elapsed time; no estimate is given.",
+        "exitCode": 0,
+        "stdoutPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-TYPECHECK.log",
+        "stderrPath": "reports/qualification-expansion-20261007/gas-latest-two-20261011/key12-closeout/KEY9-NATIVE-TYPECHECK.log",
+        "outputNote": "Compiler stdout and stderr were empty; the log records command and exit status."
+      }
+    ],
+    "gitDiffCheckExitCode": 0,
+    "wholeBuildRun": false,
+    "gitCommitPushPerformed": false,
+    "latestMainMergePerformed": false
+  },
+  "localValidationFileSha256": "f1751d74e9f796233b8fdda7f1155a91b1ce6110f7bc8cf8acf6c4f8d72112b0"
+}

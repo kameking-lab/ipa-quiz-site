@@ -9,7 +9,7 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 159],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 160],
     ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 93],
   ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
     const loaded = (await getQuestionsForExam(exam)).filter(question => question.session === "pm");
@@ -27,7 +27,12 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
       expect(choiceKeys.every((key) => Boolean(question.choices?.[key]?.trim()))).toBe(true);
       expect(choiceKeys.every((key) => Boolean(question.choiceExplanations?.[key]?.trim()))).toBe(true);
       const answers = Array.isArray(question.answer) ? question.answer : [question.answer];
-      expect(answers).toHaveLength(question.requiredSelections ?? 1);
+      if (question.id === "sagyo-ryohoshi-2024-annual-pm-q53") {
+        expect(question.requiredSelections).toBe(1);
+        expect(answers).toEqual(["イ", "ウ"]);
+      } else {
+        expect(answers).toHaveLength(question.requiredSelections ?? 1);
+      }
       expect(answers.every((answer) => choiceKeys.includes(answer as typeof choiceKeys[number]))).toBe(true);
       expect(question.officialAnswerNumber).toMatch(/^[1-5]{1,2}$/);
       expect(answers.map((answer) => String(choiceKeys.indexOf(answer as typeof choiceKeys[number]) + 1)).join(""))
@@ -43,7 +48,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
         : (question.year === 2025 ? 56 : 55);
       return `${question.exam}-${round}-pm-${question.qNumber}`;
     }));
-    expect(all).toHaveLength(252);
+    expect(all).toHaveLength(253);
     expect(integration.draftOriginals).toBe(135);
     expect(integration.heldDrafts).toHaveLength(15);
     expect(integration.excludedBeforeDraft).toHaveLength(9);
@@ -53,7 +58,7 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
     expect(laterIntegration.excludedBeforeDraft).toHaveLength(7);
     expect(laterIntegration.readyProvenance).toHaveLength(98);
     for (const held of [...integration.heldDrafts, ...integration.excludedBeforeDraft, ...laterIntegration.heldDrafts, ...laterIntegration.excludedBeforeDraft]) {
-      expect(identities.has(held.identity)).toBe(false);
+      expect(identities.has(held.identity)).toBe(held.identity === "sagyo-ryohoshi-60-pm-53");
     }
   });
 });
