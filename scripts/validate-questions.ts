@@ -114,7 +114,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed"]),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "JCTC-attributed", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed"]),
   isCalculation: z.boolean().optional(),
 });
 

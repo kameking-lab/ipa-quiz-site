@@ -1,0 +1,41 @@
+{
+  "status": "ALL_80_IMPLEMENTED_REMAINING_CHECKS_RUNNING",
+  "machineOriginalAnswerAudit": {
+    "questions": 80,
+    "mismatches": 0,
+    "oldRecordsChanged": 0
+  },
+  "newExplanations": 172,
+  "figureAssets": 17,
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "initialTargetedTests": {
+    "files": 2,
+    "testsPassed": 13,
+    "exitCode": 0,
+    "note": "Initial full80 integration; final metadata/supplement subsequently covered by the full-suite run."
+  },
+  "questionSchema": {
+    "command": "pnpm validate:questions",
+    "questions": 20179,
+    "fail": 0,
+    "warn": 14792,
+    "exitCode": 0,
+    "note": "Warnings include existing corpus-wide short texts and legacy patterns."
+  },
+  "fullTests": {
+    "command": "pnpm exec vitest run --maxWorkers=1",
+    "state": "running"
+  },
+  "lint": {
+    "command": "pnpm lint",
+    "state": "running"
+  },
+  "build": {
+    "command": "pnpm exec next build --webpack",
+    "state": "pending"
+  },
+  "firstWholeSuiteAttempt": "Interrupted by exec-server transport disconnect. No complete pass claimed. Final single-worker run saved separately."
+}

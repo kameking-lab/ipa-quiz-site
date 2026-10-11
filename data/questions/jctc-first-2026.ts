@@ -14,6 +14,8 @@ type SourceItem = {
   choiceExplanations: string[];
   officialReferenceUrls?: string[];
   imageUrl?: string;
+  reusePermissionVerified?: boolean;
+  lastUpdated?: string;
 };
 
 export type JctcFirstSource = {
@@ -76,8 +78,8 @@ export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
       sourceAnswerUrl: source.answerUrl,
       sourceAttribution: `出典：一般財団法人全国建設研修センター 令和${source.year - 2018}年度${names[source.exam]} 第一次検定（${source.season === "early" ? "前期" : "後期"}） No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
       officialReferenceUrls: item.officialReferenceUrls ?? [],
-      license: "JCTC-authorized-reuse",
-      lastUpdated: "2026-09-27",
+      license: item.reusePermissionVerified === false ? "JCTC-attributed" : "JCTC-authorized-reuse",
+      lastUpdated: item.lastUpdated ?? "2026-09-27",
     };
   });
 }
