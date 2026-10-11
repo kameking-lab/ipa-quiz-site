@@ -1,0 +1,102 @@
+{
+  "reviewDate": "2026-10-11",
+  "candidateCommit": "fd4575f08ce1d8762269d9cca04ed32cc2fb81b5",
+  "baseCommit": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+  "worktree": "C:/wt/kakomon-shika-ishi-latest-two-20261011",
+  "decision": "GO",
+  "decisionScope": "Independent technical, source-coverage and targeted content review: GO for the draft PR and integration review of this exact candidate. Production merge/deployment remains gated by required hosted build/CI and the main owner's integration procedure.",
+  "openReviewBlockers": [],
+  "productionReleaseReady": false,
+  "remainingReleaseGates": [
+    "Required hosted build and CI must pass on the reviewed candidate or its integrated successor. Local full build was intentionally deferred by the shared-resource control-plane instruction.",
+    "Main/integration owner performs merge, deployment and post-publication verification. This review performs or authorizes none of those operations."
+  ],
+  "candidateVerification": {
+    "headMatchesCandidate": true,
+    "workingTreeClean": true,
+    "baseIsAncestor": true,
+    "gitDiffCheckPassed": true,
+    "payloadSha256": "7727bcd91d5461f36d984fdd03f2c3dc12a31e4b5a54ce73834ef65e04ff6abb"
+  },
+  "closedInitialFindings": [
+    {
+      "id": "R1",
+      "status": "CLOSED",
+      "evidence": "QuizPlayer and StreamQuizPlayer now require revealed in the next-question keyboard branch. Focused regression cases cover unrevealed body Enter/Space/ArrowRight and native select handling."
+    },
+    {
+      "id": "R2",
+      "status": "CLOSED",
+      "evidence": "QuizModeTabs hides the unsupported stream tab for shika-ishi in both layouts. The dentist release does not claim stream support. Existing generic direct /quiz/stream exam fallback is outside the offered dentist flow."
+    },
+    {
+      "id": "R3",
+      "status": "CLOSED",
+      "evidence": "AI context formats numeric correct and selected answers through the numeric display formatter, preserving the fixed negative sign and unit. 119C90 retains stored/input digit portion 2.0 and displayed -2.0 mm."
+    },
+    {
+      "id": "R4",
+      "status": "CLOSED",
+      "evidence": "Final source-assets assigns 118A37 only appendix pages 22/23/24 and 118A45 pages 26/27. Page26's actual No.11 is retained with question45. All corresponding public hashes match."
+    },
+    {
+      "id": "R5",
+      "status": "CLOSED",
+      "evidence": "formatQuestionAnswerForDisplay converts composite internal choice keys individually while retaining separators/order. ExplanationCard and AI question, answer, selection and per-choice reasons use official display labels."
+    }
+  ],
+  "independentMechanicalEvidence": {
+    "file": "final-mechanical-evidence.json",
+    "originalRows": 720,
+    "uniqueScoredRows": 696,
+    "completeRows": 696,
+    "officialExcludedRows": 24,
+    "scoredByYear": { "2025": 350, "2026": 346 },
+    "answerTypes": { "multiple-choice": 683, "ordering": 8, "numeric": 5 },
+    "originalTextAndOfficialCellsComparedToSourceIndex": 720,
+    "sourceTextOrOfficialCellMismatches": 0,
+    "nonNumericChoiceExplanationKeyCoverageComplete": true,
+    "publicAssets": 454,
+    "independentlyHashedPublicAssets": 454,
+    "publicAssetHashMismatches": 0
+  },
+  "sourceAndFigures": {
+    "finalSourceQc": "../FINAL-SOURCE-QC.json",
+    "unresolvedSourceTextFlags": 0,
+    "sourceNotationPolicy": "Original notation remains in the official-PDF image; independently checked Japanese expansions are auxiliary. The final payload tells readers to refer to the attached original notation image.",
+    "blankOmissions": 47,
+    "blankOmissionReview": "Read the export predicate: only non-appendix rendered images whose RGB extrema are all exactly 255/255 are omitted. BLANK-ASSET-OMISSIONS records their provenance. This does not remove source content or reconstruct masking.",
+    "externalFigureQc": "../helper-kisho-figure50/FINAL-FIGURE-QC.json and OWNER-REPAIR-VERIFICATION.json",
+    "externalFigureQcAcceptedScope": "Existing independent visual check of 50 originals, all 50 required figure sets GO; 81 retained assets match original comparison hashes. Those images were not redundantly rereviewed here.",
+    "externalEvidenceVersionNote": "The final payload hash differs from the earlier figure-helper snapshot after the owner added explanatory notation text. This review independently hashed all 454 final public files and confirmed the targeted content fixes in the final payload; it does not misstate the helper's older payload hash as the final hash."
+  },
+  "targetedContentChecks": {
+    "118B22": "GO: all b-e tooth quadrants independently read from original strokes; official ABD unchanged. See 118B22-local-source-check.json.",
+    "118C30": "GO: five notation expansions match original; corrected positive arch-length-discrepancy premise appears in final payload. See C30-C80-local-recheck.json.",
+    "118C80": "GO as an explicitly limited explanation: official E retained, mobility-only extraction rule and guaranteed successor-protection claim removed. Exact fracture level remains unasserted. See C30-C80-local-recheck.json.",
+    "119B5And118C32": "Official accepted combinations are retained; ingestion requires the complete combination set before representing it as permitted-key union plus required selection count.",
+    "119C90": "Official digits 20 map to 2.0 numeric entry with fixedSign negative, preserving the original printed minus and decimal position."
+  },
+  "validation": {
+    "focusedTests": { "report": "../FINAL-FOCUSED-TESTS.json", "passed": 54, "failed": 0, "success": true },
+    "finalCorpusTests": { "report": "../FINAL-CORPUS-TESTS.json", "passed": 4, "failed": 0, "success": true },
+    "schema": { "passedQuestions": 696, "failedQuestions": 0, "warnings": 169, "warningScope": "Short main explanations; per-choice reason fields are present. This is a disclosed editorial limitation, not proof of 169 incorrect answers.", "ownerConfirmedSession": 50437, "exitCode": 0 },
+    "typecheck": { "log": "../FINAL-TYPECHECK.log", "ownerConfirmedSession": 58530, "exitCode": 0 },
+    "scopedLint": { "log": "../FINAL-LINT.log", "ownerConfirmedSession": 95731, "exitCode": 0 },
+    "completionEvidenceNote": "Test JSON was directly read. Root explicitly confirmed terminal completion and exit codes for typecheck, scoped lint and schema; empty lint output was not treated as completion evidence on its own.",
+    "fullBuild": "PENDING required hosted CI; intentionally not run locally by this reviewer"
+  },
+  "publicationScopeAndRights": {
+    "catalogScopeAccurate": true,
+    "catalogSummary": "720 originals, 696 scored published candidates, 24 official exclusions, 8 ordering and 5 numeric; the catalog does not promise 720 graded items.",
+    "candidateCatalogStatus": "live on the draft candidate branch",
+    "rightsDecision": "The owner reports the user is handling rights directly. No claim of a granted license, permission receipt or legal clearance is made by this review or found in the new catalog wording.",
+    "productionActionPerformed": false
+  },
+  "reviewLimits": [
+    "This review does not claim an independent full medical rereview of all 720 originals; the authorized scope is full mechanical coverage plus targeted clinical/source conflicts and runtime UX.",
+    "Schema and nonempty explanations demonstrate coverage, not clinical correctness of every sentence.",
+    "C80's exact fracture level remains uncertain and is correctly disclosed in the explanation.",
+    "Any material change to the reviewed candidate requires review of the changed scope before release."
+  ]
+}

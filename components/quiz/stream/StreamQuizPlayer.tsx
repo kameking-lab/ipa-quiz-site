@@ -3,6 +3,8 @@ import { questionSourceEdition, questionSourceExam } from "@/lib/questions/sourc
 
 
 import * as React from "react";
+import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
+import { QuestionCard } from "../QuestionCard";
 import { QuestionBody } from "../QuestionBody";
 import { QuestionFigures } from "../QuestionFigures";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
@@ -10,6 +12,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
+import { OrderingAnswerInput } from "../OrderingAnswerInput";
 import { createHistoryStore } from "@/lib/storage/history";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
@@ -20,7 +24,7 @@ const SUMMARY_AT = 10;
 
 interface AnswerLog {
   questionId: string;
-  selected: ChoiceKey | null;
+  selected: string | null;
   correct: boolean;
 }
 
@@ -37,6 +41,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
   const advancingRef = React.useRef(false);
+  const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -50,6 +55,14 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [reviewing]);
 
   const question = questions[index];
+  React.useEffect(() => {
+    if (question?.exam === "chosashi" && question.type === "descriptive") {
+      descriptiveStartRef.current?.focus({ preventScroll: true });
+      descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    } else if (questions[index - 1]?.exam === "chosashi" && questions[index - 1]?.type === "descriptive") {
+      window.scrollTo?.({ top: 0, behavior: "instant" });
+    }
+  }, [index, question, questions]);
   const lastAnswer = answers[answers.length - 1];
   const lastAnsweredQuestion = lastAnswer
     ? questions.find((q) => q.id === lastAnswer.questionId) ?? null
@@ -82,7 +95,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed) return;
+      if (!question || revealed || question.type === "ordering") return;
       const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
@@ -107,22 +120,41 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     [question, revealed, history],
   );
 
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (!question || question.type !== "ordering" || revealed) return;
+    const correct = isOrderingAnswerCorrect(question, value);
+    const display = formatOrderingAnswer(question.exam, value);
+    setRevealed(true);
+    setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
+    history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    if (correct) {
+      setCombo((previous) => {
+        const next = previous + 1;
+        if (next >= 3) {
+          setShowFireworks(true);
+          window.setTimeout(() => setShowFireworks(false), 1600);
+        }
+        return next;
+      });
+    } else setCombo(0);
+  }, [question, revealed, history]);
+
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!question || showSummary || reviewing) return;
+      if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA") return;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       }
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed) {
+      if (!revealed && question.type !== "ordering") {
         const i = CHOICE_SHORTCUTS.indexOf(e.key);
         if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
           onSelect(getChoiceKeys(question.choices)[i]);
         }
-      } else if (e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
+      } else if (revealed && e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
         e.preventDefault();
         goNext();
       }
@@ -132,6 +164,16 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [onSelect, goNext, revealed, showSummary, reviewing, question]);
 
   if (!question) return null;
+
+  if (showSummary && question.exam === "chosashi" && answers.length === 0) {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
+        <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+      </main>
+    );
+  }
 
   if (showSummary) {
     const recent = answers.slice(-SUMMARY_AT);
@@ -153,7 +195,19 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = formatAcceptedAnswers(question.answer);
+  if (question.exam === "chosashi" && question.type === "descriptive") {
+    return (
+      <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
+        <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
+        <div ref={descriptiveStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
+          <QuestionCard question={question} progress={{ current: index, total: questions.length }} />
+        </div>
+        <DescriptiveAnswerCard key={question.id} question={question} onNext={goNext} />
+      </main>
+    );
+  }
+
+  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -216,7 +270,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="space-y-2">
-          {question.choices &&
+          {question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
@@ -345,7 +399,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -390,7 +444,7 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 space-y-2">
-          {question.choices &&
+          {question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;

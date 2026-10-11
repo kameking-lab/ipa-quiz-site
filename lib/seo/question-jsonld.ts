@@ -1,5 +1,6 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
+import { formatOrderingAnswer } from "@/lib/questions/ordering";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
@@ -39,6 +40,8 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     houki: "法規",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
+  "mondai-c": "問題C",
+  "mondai-d": "問題D",
     kyotsu: "共通科目",
     senmon: "専門科目",
     "hoiku-genri": "保育原理",
@@ -89,7 +92,7 @@ export function buildQuestionJsonLd({
   title,
   lastUpdatedISO,
 }: QuestionJsonLdInput) {
-  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
+  const answerKeys = q.type === "ordering" ? [q.answer] : Array.isArray(q.answer) ? q.answer : [q.answer];
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
@@ -101,6 +104,8 @@ export function buildQuestionJsonLd({
         name: "公益財団法人建築技術教育普及センター",
         url: "https://www.jaeic.or.jp/",
       }
+    : q.exam === "chosashi"
+    ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
     : q.exam === "fp1"
     ? {
         "@type": "Organization",
@@ -179,7 +184,7 @@ export function buildQuestionJsonLd({
           name: "全国社会保険労務士会連合会 試験センター",
           url: "https://www.sharosi-siken.or.jp/",
         }
-    : q.exam === "kangoshi" || q.exam === "yakuzaishi"
+    : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi"
       ? {
           "@type": "Organization",
           name: "厚生労働省",
@@ -198,11 +203,13 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = q.exam === "kenchiku-setsubishi"
     ? "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html"
+    : q.exam === "chosashi"
+    ? "https://www.moj.go.jp/hisho06_00280.html"
     : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi"
+    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
@@ -217,7 +224,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
@@ -235,7 +242,7 @@ export function buildQuestionJsonLd({
     author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
-    acceptedAnswer,
+    ...(q.exam === "chosashi" && q.type === "descriptive" ? { suggestedAnswer: { ...acceptedAnswers[0], text: q.modelAnswer ?? String(q.answer) } } : { acceptedAnswer }),
   };
 
   const learningResource = {

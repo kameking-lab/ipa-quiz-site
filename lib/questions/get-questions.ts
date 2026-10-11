@@ -4,6 +4,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  chosashi: async () => isExamPublished("chosashi") ? (await import("@/data/questions/chosashi")).CHOSASHI_QUESTIONS : [],
   riyoshi: async () => isExamPublished("riyoshi") ? (await import("@/data/questions/riyoshi")).RIYOSHI_QUESTIONS : [],
   ap: async () => (await import("@/data/questions/ap")).AP_QUESTIONS,
   ip: async () => (await import("@/data/questions/ip")).IP_QUESTIONS,
@@ -61,6 +62,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "rinsho-kogishi": async () => isExamPublished("rinsho-kogishi") ? (await import("@/data/questions/rinsho-kogishi")).RINSHO_KOGISHI_QUESTIONS : [],
   "rinsho-kensagishi": async () => isExamPublished("rinsho-kensagishi") ? (await import("@/data/questions/rinsho-kensagishi")).RINSHO_KENSAGISHI_QUESTIONS : [],
   "shinryo-hoshasengishi": async () => isExamPublished("shinryo-hoshasengishi") ? (await import("@/data/questions/shinryo-hoshasengishi")).SHINRYO_HOSHASENGISHI_QUESTIONS : [],
+  "shika-ishi": async () => isExamPublished("shika-ishi") ? (await import("@/data/questions/shika-ishi")).SHIKA_ISHI_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

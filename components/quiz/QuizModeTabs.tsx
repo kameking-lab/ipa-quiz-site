@@ -61,7 +61,7 @@ const TABS: {
 export function QuizModeTabs({ active, exam = "ap" }: Props) {
   const search = useSearchParams();
   const supportsMockExam = Object.hasOwn(MOCK_EXAM_CONFIGS, exam);
-  const tabs = TABS.filter((tab) => tab.key !== "mock" || supportsMockExam);
+  const tabs = TABS.filter((tab) => (tab.key !== "mock" || supportsMockExam) && (tab.key !== "stream" || exam !== "shika-ishi"));
   function modeHref(base: string, key: string) {
     const url = new URL(base, "https://local.invalid");
     for (const name of ["session", "returnTo"]) {

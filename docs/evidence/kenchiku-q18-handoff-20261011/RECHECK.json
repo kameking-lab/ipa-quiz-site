@@ -4,7 +4,7 @@
   "pr": 741,
   "checkedDateUtc": "2026-10-11",
   "inheritedHead": "41f1459139cc5c88d611e99caa15ef6001bfb81b",
-  "integratedMain": "a13ececaf3062840ba5476ce153623460b2e2981",
+  "integratedMain": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec",
   "preservedSourceTree": "a44e339c70b0b7e1b9a9c10d971f82a920623b76",
   "preservation": {
     "sourceFiles": 44,
@@ -54,20 +54,42 @@
       "lib/questions/display.ts",
       "lib/questions/practice-session.ts",
       "lib/questions/types.ts",
-      "scripts/validate-questions.ts"
+      "scripts/validate-questions.ts",
+      "lib/seo/question-jsonld.ts"
     ],
-    "preservedMainRegistrations": ["riyoshi", "chusho-kigyo-shindanshi"],
+    "preservedMainRegistrations": [
+      "riyoshi",
+      "chusho-kigyo-shindanshi",
+      "chosashi",
+      "shika-ishi"
+    ],
     "privateCandidateGate": "permission-required; public loader remains empty; publication permission not claimed",
     "mergeAndDeploymentOwner": "01a12330-b245-70ed-a108-0998b50830be"
   },
   "localValidation": {
-    "focusedVitest": {"files": 7, "passedTests": 62},
-    "configRetestAfterDuplicateImportRemoval": {"passedTests": 6},
+    "focusedVitest": {
+      "files": 7,
+      "passedTests": 60,
+      "main": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec"
+    },
+    "configRetestAfterDuplicateImportRemoval": {
+      "passedTests": 6
+    },
     "typecheck": "PASS",
     "eslintResolvedFiles": "PASS",
-    "questionCli": {"validated": 210, "ok": 210, "fail": 0, "warn": 21},
+    "questionCli": {
+      "validated": 210,
+      "ok": 210,
+      "fail": 0,
+      "warn": 21
+    },
     "warningMeaning": "20 existing short summary explanations; the held question remains excluded. All 840 choice explanations are retained.",
     "heavyLocalBuildOrE2eRun": false,
-    "hostedCi": "Run against the updated PR head before integration acceptance."
-  }
+    "hostedCi": "Run against the updated PR head before integration acceptance.",
+    "initialFocusedVitest": {
+      "files": 7,
+      "passedTests": 62
+    }
+  },
+  "initialMainIntegration": "a13ececaf3062840ba5476ce153623460b2e2981"
 }
