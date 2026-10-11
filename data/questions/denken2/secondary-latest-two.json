@@ -1,0 +1,1653 @@
+{
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/second/qa/",
+  "questions": [
+    {
+      "id": "denken2-2025-secondary-power-management-q01",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 1,
+      "topic": "水車・発電機の劣化診断",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2025/power-management/p03.jpg",
+          "sha256": "0116e5df70c7b2c1b040326b94323b64350c233b09e15bd42ace03b9cdd46823",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2025/power-management/p04.jpg",
+          "sha256": "a8a8ca0162a612fab8a961925ca97d7d6cd461b5621487202c1186b1ae0556f4",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 1,
+          "url": "/images/denken2/secondary/2025/answer/p01.jpg",
+          "sha256": "eab2d2b2fbdde5ce69b3f2c35bc4145e6c9bc0bf6a467dc61cec79a0b66ce90d",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "運転状況",
+          "explanation": "同じ経過年数でも、運転時間・始動停止・河川条件により劣化は異なる。設備固有の運転履歴を診断に組み込む。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "磁粉",
+          "explanation": "MTは磁粉探傷で、磁化された部材の欠陥による漏れ磁束を磁粉の集まりとして検出する。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "超音波",
+          "explanation": "UTは超音波探傷で、反射波を利用して金属内部の欠陥を調べる。表面を調べるPTとの役割の違いを押さえる。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "非破壊",
+          "explanation": "部材を破壊せず欠陥を調べる検査の総称が非破壊検査で、MT・PT・UTはその方法である。"
+        },
+        {
+          "label": "(5)",
+          "covers": [
+            5
+          ],
+          "answer": "進展性",
+          "explanation": "欠陥の存在だけでなく、時間とともに大きくなるかを確認する。進展性がある場合は観察間隔を短くして修理判断につなげる。"
+        },
+        {
+          "label": "(6)",
+          "covers": [
+            6
+          ],
+          "answer": "ヒートサイクル",
+          "explanation": "始動停止による加熱・冷却の繰返しで、巻線と絶縁物の熱膨張差に起因する機械的な負担が生じる。"
+        },
+        {
+          "label": "(7)",
+          "covers": [
+            7
+          ],
+          "answer": "電気（課電）",
+          "explanation": "サージは電圧ストレスであり、熱的・機械的な劣化とは区別して電気的劣化に対応する。"
+        },
+        {
+          "label": "(8)",
+          "covers": [
+            8
+          ],
+          "answer": "成極指数（P.I）",
+          "explanation": "直流電圧印加後の時間に伴う漏れ電流の変化を絶縁状態の評価に用いる。公式問題の記述と標準解答を対応させ、P.Iの値が高いほど良いという本問の判断を確認する。"
+        },
+        {
+          "label": "(9)",
+          "covers": [
+            9
+          ],
+          "answer": "部分放電（コロナ）",
+          "explanation": "局所的な放電に伴う電荷量を測定する試験で、絶縁全体の破壊に至る前の異常を調べる。"
+        },
+        {
+          "label": "(10)",
+          "covers": [
+            10
+          ],
+          "answer": "隙間（空隙・ボイド）",
+          "explanation": "絶縁内部の空隙は局所的な電界集中と放電の起点になる。吸湿とともに部分放電試験で評価する対象である。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-power-management-q02",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 2,
+      "topic": "抵抗接地系統の一線地絡",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2025/power-management/p05.jpg",
+          "sha256": "e9c680b9dfc29b4610b3b4a06f3f1a7916a0f8888b0f309d8ce99009d54be383",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2025/power-management/p06.jpg",
+          "sha256": "0c83d5d541f7a2c34238faa3ce8a8255bbcd04c7add434ce5d6798d5b5295c07",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 2,
+          "url": "/images/denken2/secondary/2025/answer/p02.jpg",
+          "sha256": "7d215ef9048c1f7e72c8043dbc29c345d4c30e102c3546c99774061c1cb2084f",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "Z0=45+j0.3、Z1=Z2=0.005+j0.22 p.u.",
+          "explanation": "故障点は線路の中間なので線路インピーダンスは半分。正相・逆相は変圧器j0.2に(0.01+j0.04)/2を加える。零相は接地抵抗の3倍45に変圧器j0.2と線路j0.2/2を加える。非接地側には零相電流の帰路がない。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "|Ia|=0.0701 p.u.",
+          "explanation": "故障前電圧はEa=162/154 p.u.。零相・正相・逆相回路が直列となり、I0=Ea/(Z0+Z1+Z2)、Ia=3I0。分母は45.01+j0.74で、絶対値を取る。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "|Ia|=263 A",
+          "explanation": "基準電流は1000×10^6/(√3×154×10^3) A。式から得た0.0701048… p.u.を保持して掛け、262.824… Aを最後に有効数字3桁で263 Aとする。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-power-management-q03",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 3,
+      "topic": "送電端電圧と変電所の短絡容量",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2025/power-management/p07.jpg",
+          "sha256": "d85e3231dd3d43cc09d8d0211cda51ecade9e6b0f3f52b240268d81bacb75e69",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2025/answer/p03.jpg",
+          "sha256": "3c4b1fc5f95dbe4bf19937b0008f7a4f1233fce1315cf207d49acc5f8c7e588c",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2025/answer/p04.jpg",
+          "sha256": "e060bc90ebcf01bf507563198db742488a6f1d188d1958f09d1ee983d9e60836",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "送電端電圧156 kV",
+          "explanation": "100 MV・A、154 kV基準でVr=1、Pr=1、Qr=0.2、XL=0.0016×40=0.064。I=(Pr−jQr)/VrよりVs=Vr+jXLI=1.0128+j0.064。近似電圧降下式を使わず、|Vs|×154=156.28… kVを3桁へ丸める。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "短絡容量1230 MV・A",
+          "explanation": "自己容量基準を100 MV・Aへそろえる。154 kV電源は3%、TrB3は9%、3台並列は1/(1/16+1/16+1/9)=4.2353%。上流枝は3+6.4+4.2353=13.6353%、77 kV電源枝は20%。両枝の並列8.1077%より100×100/8.1077=1233.3… MV・A。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-power-management-q04",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 4,
+      "topic": "高圧配電線の無停電ループ切替",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2025/power-management/p08.jpg",
+          "sha256": "467033988cc2ae2b85a55b949c04113e853202515296d2bbcf106b7a19d8750f",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2025/answer/p05.jpg",
+          "sha256": "0c47aebb593b3dc27229575ac406620dcab47c0ce8b609fa6f58a447ac9c7d40",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "電圧・位相差による横流と過電流保護を確認する",
+          "explanation": "連系点両側の電圧・位相差が大きいと横流が流れる。切替後の配電線電流と変電所の保護リレー動作を検討し、過大電流による遮断を防ぐという因果関係を約100字で述べる。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "太陽光の逆潮流量とその変動を切替計算へ入れる",
+          "explanation": "昼間の需要だけでなく太陽光発電の出力を見込む。実施時刻の逆潮流と変動を予測して切替後の電流・電圧を求め、許容電流と適正電圧の範囲を確認する。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-power-management-q05",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 5,
+      "topic": "電路の絶縁と誘電正接",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 9,
+          "url": "/images/denken2/secondary/2025/power-management/p09.jpg",
+          "sha256": "90d5f7fed2e41db60c38bbfee538974efdb8b8b93980f32db179bdfd59bb0229",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 10,
+          "url": "/images/denken2/secondary/2025/power-management/p10.jpg",
+          "sha256": "4f0f83b94d97d6acc8939ad5f5356aac3f7c5c327e9d62bd9285ec0bf73b475c",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2025/answer/p06.jpg",
+          "sha256": "6fdf67accc335ec1ecbb5f1f55968dc74659d7357be46f0b958162329d456b19",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "気体：空気、液体：絶縁油、固体：がいし",
+          "explanation": "状態分類に合わせて代表例を一つずつ挙げる。SF6、鉱油、架橋ポリエチレンも公式標準解答が示す例であり、三分類を取り違えない。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "A=1.15、B=1.1、C=大地、D=10、E=2",
+          "explanation": "本問の公式標準解答に従って、最大使用電圧の係数、電圧を加える相手、試験時間、直流試験電圧の倍率をそれぞれ対応させる。Dは10分で、Eは試験電圧の2倍である。"
+        },
+        {
+          "label": "(3) a・b",
+          "covers": [
+            3
+          ],
+          "answer": "誘電正接tanδ、フェーザ図は公式標準解答参照",
+          "explanation": "Vを横軸の基準とし、損失電流Irは同相、充電電流ICは90度進み。合成Iは両者のベクトル和で、IとICの間の小さい角がδとなりtanδ=Ir/ICとなる。"
+        },
+        {
+          "label": "(3) c・d",
+          "covers": [
+            3
+          ],
+          "answer": "W=ωCV²tanδ",
+          "explanation": "W=VIr、Ir=ICtanδ、IC=ωCVを順に代入する。ω・C・Vが一定なら損失Wはtanδに比例するので、その変化を管理することで絶縁性能を評価できる。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-power-management-q06",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "power-management",
+      "number": 6,
+      "topic": "デマンドレスポンスと需給計画",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q01.pdf",
+      "sourcePdfSha256": "b35d4eb94e3b7024761c72d9af58108f0e9bfa6160f9e659c0b50bed8a0bdaad",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "power-management",
+          "physicalPage": 11,
+          "url": "/images/denken2/secondary/2025/power-management/p11.jpg",
+          "sha256": "2291eb0295d9cac07c5e4e5ad95cdadb91c019ca17259f6dc1ea5587cec0ebf3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2025/answer/p07.jpg",
+          "sha256": "875bde7ea3733ed7b6e1ef7e35054d3a44623080b33d2e46d5d59e2f6e20ffa7",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)～(3)",
+          "covers": [
+            1,
+            2,
+            3
+          ],
+          "answer": "DR、需要抑制、需要創出",
+          "explanation": "供給に合わせて需要パターンを変えるのがDR。下げDRは需要を減らし、上げDRは需要を増やすので、両者を逆にしない。"
+        },
+        {
+          "label": "(4)～(6)",
+          "covers": [
+            4,
+            5,
+            6
+          ],
+          "answer": "需給ひっ迫、発電設備、生産設備の停止・稼働抑制",
+          "explanation": "需要抑制はひっ迫を緩和し、ピーク用発電設備の投資・維持負担を抑える。生産を抑えるほか、蓄電池から放電して購入電力を減らす方法も公式標準解答の例である。"
+        },
+        {
+          "label": "(7)・(8)",
+          "covers": [
+            7,
+            8
+          ],
+          "answer": "供給過剰、生産設備の稼働増加",
+          "explanation": "再エネ余剰時は需要を増やす。生産を増やす、蓄電池を充電するなど、通常より電力消費を増やす行動で需給を調整する。"
+        },
+        {
+          "label": "(9)・(10)",
+          "covers": [
+            9,
+            10
+          ],
+          "answer": "特定卸供給、1000 kW",
+          "explanation": "分散した供給能力を集約する事業名と、本問の標準解答が示す規模の数値を別々に答える。原文は『1000 kWを超えると見込まれる』であり、以上と読み替えない。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-machine-control-q01",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "machine-control",
+      "number": 1,
+      "topic": "同期電動機のフェーザとV曲線",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q02.pdf",
+      "sourcePdfSha256": "7f881a1fa861b4b7d0fb83799bfe7a06d5a2bb1c713552c2b2b80206f98b2ba2",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2025/machine-control/p03.jpg",
+          "sha256": "8b74270e9e1fb9dd4846a054cfa4c2133b2913c9158df68d7c9e96fb5541f804",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2025/machine-control/p04.jpg",
+          "sha256": "3f24ad371bbeaf28cc60f79a7034e269b9c6eb01d6661e3b0da278ed17d51dd1",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2025/answer/p08.jpg",
+          "sha256": "8714a8342d49d29a67aee030c23acaca0f89b2c8716b10e1549b5906c4dcecbe",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 9,
+          "url": "/images/denken2/secondary/2025/answer/p09.jpg",
+          "sha256": "fb49fb12ca971ec3648036fc153911905894608b6d7cb4334058f4f777a08936",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "(a)V、(b)θ、(c)δ、(d)I、(e)jXsI、(f)E",
+          "explanation": "電動機ではV=E+jXsI。遅れ電流I、電流に90度先行するリアクタンス降下jXsI、端子電圧Vと起電力Eの負荷角δを公式図の矢印に対応させる。力率角は原本の記号θを用いる。"
+        },
+        {
+          "label": "(2)・(3)",
+          "covers": [
+            2,
+            3
+          ],
+          "answer": "E=√{V²+(XsI)²−2VXsI sinθ}、定格では1.61 p.u.",
+          "explanation": "フェーザ図の直交成分VcosθとXsI−Vsinθに三平方の定理を使う。V=I=1、Xs=2、sinθ=0.6よりE=√2.6=1.612…となる。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "XsI=√(E²+V²−2EVcosδ)",
+          "explanation": "V・E・XsIの三角形に余弦定理を使う。負荷角を力率角に置き換えないことが要点である。"
+        },
+        {
+          "label": "(5) a・b",
+          "covers": [
+            5
+          ],
+          "answer": "I=|E−1|/Xs、最小時E=1 p.u.",
+          "explanation": "損失を無視した同期調相機は無負荷でδ=0。端子電圧1 p.u.を代入すれば絶対値のV字形となり、E=1でI=0が最小となる。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-machine-control-q02",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "machine-control",
+      "number": 2,
+      "topic": "誘導電動機の滑り・損失・半負荷出力",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q02.pdf",
+      "sourcePdfSha256": "7f881a1fa861b4b7d0fb83799bfe7a06d5a2bb1c713552c2b2b80206f98b2ba2",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2025/machine-control/p05.jpg",
+          "sha256": "b2b91f0fe76d5ac8beba70a4e1815932f17b0e7af55ffacd943ff4f56ffa73fd",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 10,
+          "url": "/images/denken2/secondary/2025/answer/p10.jpg",
+          "sha256": "76e2b56940ce8c5e8f3e157c1a5d45a3f8218b254114b199f0c77b9322fa8055",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 11,
+          "url": "/images/denken2/secondary/2025/answer/p11.jpg",
+          "sha256": "5f9652d32f1c1d4d006d02011925d0c51600c76bb758807ddbf8ae53d8c8f8ca",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "滑り3.5%、定格トルク181 N・m",
+          "explanation": "同期速度Ns=120f/p=1200 min⁻¹。s=(1200−1158)/1200=0.035、T=22000/(2π×1158/60)=181.42… N・m。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "二次銅損798 W、固定損1550 W",
+          "explanation": "二次銅損はs/(1−s)×出力で797.93… W。総損失は22000(1/0.875−1)=3142.86… W。一次と二次の銅損が等しいという条件から固定損=総損失−2×二次銅損。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "回転速度1180 min⁻¹、出力11200 W",
+          "explanation": "トルクと滑りが比例するため半トルクではs=0.0175、N=1200(1−0.0175)=1179 min⁻¹。丸め前のNと定格トルクの半分を使いP=2πNT/60=11199… Wを求める。出力を単純に11 kWとしない。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-machine-control-q03",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "machine-control",
+      "number": 3,
+      "topic": "全波整流と平滑リアクトル・コンデンサ",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q02.pdf",
+      "sourcePdfSha256": "7f881a1fa861b4b7d0fb83799bfe7a06d5a2bb1c713552c2b2b80206f98b2ba2",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2025/machine-control/p06.jpg",
+          "sha256": "307e30113f807ba70c865b6a4de2584eff825bb76c3067185e98a6696204e276",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2025/machine-control/p07.jpg",
+          "sha256": "01f6aab38c90f4ce32832113014f5c2531bfadaeb6f09316dd900854ceddf75a",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 12,
+          "url": "/images/denken2/secondary/2025/answer/p12.jpg",
+          "sha256": "519f6c6c16866b19661cb4963d92cdce6bf349a6e9462869a7df0de2f35f26bf",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 13,
+          "url": "/images/denken2/secondary/2025/answer/p13.jpg",
+          "sha256": "4cdfa1be03e1dbf96c1fa467cd1b40b1ed74c2eb86c229005bf93c906732e6c3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "D1の電流波形は公式標準解答の図参照",
+          "explanation": "大きなリアクトルで負荷電流Ioが一定となる条件を使う。D1は指定の半周期にIoを流し、残る半周期では0となる。電源の正負で導通するダイオード対が交代する。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "リアクトルの平均電圧0 V",
+          "explanation": "定常周期では一周期後のリアクトル電流が同じ値へ戻る。vL=L di/dtの一周期積分は0なので、リアクトルの平均電圧は0 Vとなる。瞬間電圧が常に0という意味ではない。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "平滑なしの平均負荷電圧90.0 V",
+          "explanation": "実効値100 Vの波高値は100√2 V。全波整流の平均値は2×100√2/π=90.031… Vであり、実効値と平均値を区別する。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "コンデンサ平均電流0 A",
+          "explanation": "定常周期ではコンデンサの電荷が一周期後に戻る。平均電流=(一周期の電荷変化)/周期なので0となり、充放電時の瞬間電流が0という意味ではない。"
+        },
+        {
+          "label": "(5)",
+          "covers": [
+            5
+          ],
+          "answer": "平滑時の負荷電流14.1 A",
+          "explanation": "電圧変動を無視する条件では負荷電圧は波高値100√2 V。抵抗10 Ωで割ると14.142… Aとなる。"
+        },
+        {
+          "label": "(6)",
+          "covers": [
+            6
+          ],
+          "answer": "直流出力は2.47倍",
+          "explanation": "本問が指定する直流出力は平均電圧の二乗を抵抗で割る。平滑なし(90.031…)²/10=810.56… W、平滑あり(100√2)²/10=2000 W、比はπ²/4=2.4674…である。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2025-secondary-machine-control-q04",
+      "year": 2025,
+      "stage": "secondary",
+      "examDate": "2025-11-16",
+      "subject": "machine-control",
+      "number": 4,
+      "topic": "フィードバック制御の定常偏差と応答",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_q02.pdf",
+      "sourcePdfSha256": "7f881a1fa861b4b7d0fb83799bfe7a06d5a2bb1c713552c2b2b80206f98b2ba2",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20251116_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "25e98f20db905f395b096c45abb8dc557b7f4533717d0e289012aa77048841df",
+      "sourcePages": [
+        {
+          "year": 2025,
+          "subject": "machine-control",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2025/machine-control/p08.jpg",
+          "sha256": "ec956b4bcf58f3342ad1651e21716cd63db2337f3a47540cf7b0df3ff7007510",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 14,
+          "url": "/images/denken2/secondary/2025/answer/p14.jpg",
+          "sha256": "8bc5ba27d16b40a075f03ff9ad909189ddbefe8d5b7955e101cc0b9847a9598b",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 15,
+          "url": "/images/denken2/secondary/2025/answer/p15.jpg",
+          "sha256": "0647666a75e6131de53d4eb9c012e01193508c3ebe41d5fcd3cc283a10b6e086",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2025,
+          "subject": "answer",
+          "physicalPage": 16,
+          "url": "/images/denken2/secondary/2025/answer/p16.jpg",
+          "sha256": "d700488615f1e20587c8ef31a3c792cea39941da4c9af6030c92fb0ce7df1d7b",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "Ge(s)=s(s+3)/(s²+5s+4)",
+          "explanation": "一巡伝達関数G0=(2s+4)/{s(s+3)}。負帰還の偏差伝達関数は1/(1+G0)なので分母はs²+5s+4=(s+1)(s+4)となる。"
+        },
+        {
+          "label": "(2)・(3)",
+          "covers": [
+            2,
+            3
+          ],
+          "answer": "ステップ定常偏差0、ランプ定常偏差3b/4",
+          "explanation": "最終値の定理lim sE(s)を使う。ステップR=a/sでは0、ランプR=b/s²では3b/4になる。閉ループ極が−1、−4で安定なので本問でこの定理を使用できる。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "gy(t)=(2/3)e⁻ᵗ+(4/3)e⁻⁴ᵗ",
+          "explanation": "出力伝達関数Gy=(2s+4)/{(s+1)(s+4)}を2/{3(s+1)}+4/{3(s+4)}へ部分分数展開し、各項を逆ラプラス変換する。"
+        },
+        {
+          "label": "(5)",
+          "covers": [
+            5
+          ],
+          "answer": "y(1)=0.749",
+          "explanation": "単位ステップ入力に対し時刻1では∫₀¹gy(τ)dτ。結果は1−(2/3)e⁻¹−(1/3)e⁻⁴であり、指定e⁻¹=0.3679を使うと0.748626…を得る。時刻1で入力が終了するパルスと読み替えない。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q01",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 1,
+      "topic": "汽力発電の復水器と脱気器",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2024/power-management/p03.jpg",
+          "sha256": "9b3ad3dcbc2d9cc70200dd6a0feb6d91c0c8492d19719e774f7225b461b32236",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 1,
+          "url": "/images/denken2/secondary/2024/answer/p01.jpg",
+          "sha256": "20646eaab906fdde35addc78ee25ab8d11d027b1a06270ad7e41c05c9875f7e6",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "蒸気を復水へ戻し熱効率を高める",
+          "explanation": "復水器ではタービン排気蒸気を冷却水と間接接触させ凝縮する。低圧の排気条件を保って熱効率を高め、非凝縮性ガスは真空ポンプで排出する。役割と仕組みを分けて説明する。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "溶存酸素を除去して腐食を防ぐ",
+          "explanation": "脱気器は抽気蒸気を給水に直接接触させ、飽和温度まで加熱して溶存酸素などを分離・放出する。復水器の間接接触と区別する。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q02",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 2,
+      "topic": "油入変圧器の保護と誤動作防止",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2024/power-management/p04.jpg",
+          "sha256": "1402212d16dcffa8a37eb5d957174dce937698095cb1c367f39e75fe3d82ea72",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 1,
+          "url": "/images/denken2/secondary/2024/answer/p01.jpg",
+          "sha256": "20646eaab906fdde35addc78ee25ab8d11d027b1a06270ad7e41c05c9875f7e6",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 2,
+          "url": "/images/denken2/secondary/2024/answer/p02.jpg",
+          "sha256": "4e5ed69d83167cb7592cfb1a9bd8c515e571a3f92e47cdccafc9a399e4834fd3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "励磁突入時の誤動作防止策を二つ",
+          "explanation": "突入電流は内部短絡と区別が必要。第二調波を利用した高調波抑制、投入直後の感度低下、一定時間のトリップ回路ロックが公式標準解答の例で、指定どおり二つを挙げる。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "機械式リレーと動作原理を二つ",
+          "explanation": "衝撃圧力リレーは内部故障に伴う圧力上昇、ブッフホルツリレーは発生ガスや油流変化を検出する。ガス検出リレー・放圧装置も例示される。名称だけでなく検出する現象を対応させる。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "地震による不要停止を抑える対策を二つ",
+          "explanation": "警報用途にする、複数リレーや地震計と組み合わせる、振動で誤動作しにくい構造を選ぶ、自動復帰形放圧装置を採用するなどの中から二つ。故障検出と地震の機械的影響の区別が要点となる。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q03",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 3,
+      "topic": "一線地絡電流と通信線への誘導",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2024/power-management/p05.jpg",
+          "sha256": "1e06b45c1d5c8156a67aca9967e801b70ebf0039b61b9577a330e58e6aff2624",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2024/power-management/p06.jpg",
+          "sha256": "2fde04be3c4b12c3b1dccee6746bd0d9d7190fb44e8c5fd12c7485bba7e1e23e",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 2,
+          "url": "/images/denken2/secondary/2024/answer/p02.jpg",
+          "sha256": "4e5ed69d83167cb7592cfb1a9bd8c515e571a3f92e47cdccafc9a399e4834fd3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "Ia=3I0",
+          "explanation": "対称座標法では三相電流の和が3I0。a相のみ故障電流が流れ、b相・c相の故障電流が0という条件を代入してIa=3I0を得る。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "Vm=j6πfMDI0（大きさ6πfMD|I0|）",
+          "explanation": "通信線への誘導電圧はjω×相互インダクタンスMD×三相電流の和。ω=2πfとIa=3I0を代入する。式のjは位相を表し、許容値との比較には大きさを使う。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "許容地絡電流342 A",
+          "explanation": "Vmの許容430 V、f=50 Hz、D=0.8 km、M=5.0 mH/km、指定π=3.14を用い、Ia≤430/(2×3.14×50×5.0×10⁻³×0.8)=342.356… A。冒頭の有効数字3桁で342 Aとする。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q04",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 4,
+      "topic": "配電ループ電流と短絡電流",
+      "requestedSubparts": [
+        1,
+        2,
+        3
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2024/power-management/p07.jpg",
+          "sha256": "a22069370f531da35270f06a6aaae959518154cc3bd95d1bdce60b8f7dea26a5",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2024/power-management/p08.jpg",
+          "sha256": "931e4e9be542fcf9e1f465e3c450aa240bd6400f79df027a981f9b5096236e4e",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2024/answer/p03.jpg",
+          "sha256": "4a024efef17dc64ff537e15bbb5533a85a8785a64fd9037a6a019289df6a6c82",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2024/answer/p04.jpg",
+          "sha256": "469a4e7856567bdc667fb5cf843d36fcea1dff2669e44284ce4f538b97ffa84a",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "A線400 A、B線400 A",
+          "explanation": "両枝のインピーダンスが等しいので横流=(500−300)/2=100 A。A側から100 Aを減らし、B側に100 Aを加える。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "A線406 A、B線394 A",
+          "explanation": "連系前の電圧差50 Vを相電圧50/√3へ換算し、Il=100−50/{2√3(0.5+j1)}=94.226…+j11.547… A。Aは500−Il、Bは300+Ilとし、それぞれの複素電流の絶対値を3桁へ丸める。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "ループ点の三相短絡電流8340 A",
+          "explanation": "線路0.5 Ωを10 MV・A、6.6 kV基準で11.478…%へ換算する。電源1%と、変圧器7.5%＋線路11.478…%の同じ2枝を並列にした値を加え、合成10.489…%。基準電流を0.10489…で割る。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q05",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 5,
+      "topic": "GISのSF6ガス管理",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 9,
+          "url": "/images/denken2/secondary/2024/power-management/p09.jpg",
+          "sha256": "fd302f598b08248c17680ff9c24a4f772c2c0c8cfd8fb9a930ed77aa6302f5f9",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2024/answer/p05.jpg",
+          "sha256": "7941688d67c6a1a345faf36effea2b00f35025556f5fb4eb1652ed344e1c0992",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "管理項目と目的を三つ",
+          "explanation": "密度低下は絶縁破壊電圧を下げるので密度計で確認する。水分は結露で沿面絶縁を低下させるので露点計で確認する。分解ガスは放電と絶縁物劣化を示すのでガスチェッカで確認する。金属異物は不平等電界を生じるので部分放電・振動・分解ガスを調べる。純度低下も絶縁性能を低下させるので純度計で確認する。この五例から三つを選び、項目・確認方法・理由を対にして説明する。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "大気放出を防ぎ、回収・再利用する",
+          "explanation": "SF6の温室効果を踏まえ、クローズドサイクルを基本とする。使用済みガスは再利用し、再利用できない場合も適切に再精製等の処理を行う。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-power-management-q06",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "power-management",
+      "number": 6,
+      "topic": "電圧調整設備と事故時運転継続",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q01.pdf",
+      "sourcePdfSha256": "c40ff2a55d9249d9b7b763e19c8918260adc7b5e362e373186e6d6346a112a6f",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "power-management",
+          "physicalPage": 10,
+          "url": "/images/denken2/secondary/2024/power-management/p10.jpg",
+          "sha256": "3be24935a4dd365fba0626779e3a8fcc9197ff7ec823f16a711dcf8076f863e3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2024/answer/p06.jpg",
+          "sha256": "a53a9460e042dfdbddf745536af96f3996e87a807ea12d0ee2999224da9b5bc0",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "無効電力による電圧調整の設備・特徴",
+          "explanation": "分路リアクトルは遅れ無効電力を吸収して電圧を下げ、段階調整で比較的安価かつ保守が容易。SVCはサイリスタ点弧角でリアクトルの遅れ電流を連続・高速に制御するが比較的高価。自励式SVC・STATCOMは自己消弧素子の変換器で進みと遅れの双方を連続・高速に調整するが比較的高価。同期調相機は励磁で双方を連続・高速に調整できるが、高価で回転機の保守が必要。指定の四設備について原理と特徴を比較する。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "瞬時電圧低下・周波数変化時に不要解列を防ぐ",
+          "explanation": "系統事故の瞬時電圧低下や周波数変化で分散型電源が一斉に脱落すると、系統の電圧・周波数維持がさらに難しくなる。この連鎖を防ぐため事故時運転継続が必要となる。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-machine-control-q01",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "machine-control",
+      "number": 1,
+      "topic": "同期機の短絡・無負荷特性",
+      "requestedSubparts": [
+        1,
+        2
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q02.pdf",
+      "sourcePdfSha256": "e753df68e0492fff7b0adef043957c8363f00a4f1b8cd5e59886a80c1470fd69",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 3,
+          "url": "/images/denken2/secondary/2024/machine-control/p03.jpg",
+          "sha256": "1ae4f8fe387f0d519869abb3f3ffba3271eb1e481df62517645ca3c6dfdb3fb3",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2024/answer/p07.jpg",
+          "sha256": "e34590c21ad82e3491ddcb2208c12f6eb01a2b0f3375a11afd9cc2287d279fe8",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1) a～c",
+          "covers": [
+            1
+          ],
+          "answer": "A：三相短絡特性、B：無負荷飽和曲線、短絡比は持続短絡電流/定格電流",
+          "explanation": "短絡特性は端子を三相短絡、無負荷飽和曲線は端子開放の状態で、定格速度・界磁電流を変えて測る。短絡比は定格電圧を発生する界磁電流における持続短絡電流を定格電流で割る。"
+        },
+        {
+          "label": "(2) a",
+          "covers": [
+            2
+          ],
+          "answer": "定格容量50.0 kV・A",
+          "explanation": "三相容量√3VIに線間電圧200 V、線電流144.3 Aを代入する。49987… V・AをkV・Aへ換算して3桁で答える。"
+        },
+        {
+          "label": "(2) b・c",
+          "covers": [
+            2
+          ],
+          "answer": "同期インピーダンス0.893 p.u.、0.714 Ω",
+          "explanation": "単位法の同期インピーダンスは短絡比の逆数。図から得た比の逆数0.89286…に、相電圧/定格電流=200/(√3×144.3) Ωを掛けて実単位へ戻す。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-machine-control-q02",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "machine-control",
+      "number": 2,
+      "topic": "変圧器試験と電圧変動率",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q02.pdf",
+      "sourcePdfSha256": "e753df68e0492fff7b0adef043957c8363f00a4f1b8cd5e59886a80c1470fd69",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 4,
+          "url": "/images/denken2/secondary/2024/machine-control/p04.jpg",
+          "sha256": "bdc3a628c68ea7dab25fd244ac0a58b17d1aa124c9101f2516a08590b1073811",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2024/answer/p08.jpg",
+          "sha256": "a453b4029ee6be51eddc010ce497d0584bf258b10c01369650bfb0c6fd902364",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 9,
+          "url": "/images/denken2/secondary/2024/answer/p09.jpg",
+          "sha256": "03ffeec5241d8c502e2ba8ab5ab6628ab7acfd6035f0f4fd75e800ea4c9ad68f",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "g0=0.5×10⁻⁴ S、b0=1.2×10⁻⁴ S、R=16 Ω、X=12 Ω",
+          "explanation": "無負荷試験からg0=P0/V0²=200/2000²、b0=√{(I0/V0)²−g0²}。短絡試験からR=Ps/Is²=400/5²、X=√{(Vs/Is)²−R²}=√(20²−16²)。"
+        },
+        {
+          "label": "(2)",
+          "covers": [
+            2
+          ],
+          "answer": "百分率抵抗降下4%、リアクタンス降下3%",
+          "explanation": "定格一次電流5 A、電圧2000 Vでp=100IR/V、q=100IX/Vを計算する。一次換算値で基準をそろえる。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "定格時の電圧変動率5.0%",
+          "explanation": "遅れ力率0.8ではsinφ=0.6。近似式ε=p cosφ+q sinφ=4×0.8+3×0.6=5.0%。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "半出力時の電圧変動率2.5%",
+          "explanation": "二次電圧一定の条件では半出力で電流も半分。p・qを半分にして同じ力率の式へ代入する。銅損の四分の一とは区別する。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-machine-control-q03",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "machine-control",
+      "number": 3,
+      "topic": "降圧チョッパの電圧・電流波形",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q02.pdf",
+      "sourcePdfSha256": "e753df68e0492fff7b0adef043957c8363f00a4f1b8cd5e59886a80c1470fd69",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 5,
+          "url": "/images/denken2/secondary/2024/machine-control/p05.jpg",
+          "sha256": "ef3c1f06347883bdfe4af6c15a4a156efa15d3fa1bb4eca52622244b61d96e01",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 6,
+          "url": "/images/denken2/secondary/2024/machine-control/p06.jpg",
+          "sha256": "5f278bc0d7fa871be2dbf4b16968e37a86d38993d5a971f15bd883d9936dd39c",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 10,
+          "url": "/images/denken2/secondary/2024/answer/p10.jpg",
+          "sha256": "745467fdd30d38a35b2668d1057277a3fb4df94ba4834d6c951a3cb25b13c346",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 11,
+          "url": "/images/denken2/secondary/2024/answer/p11.jpg",
+          "sha256": "2a6bc43f8da48818cb8fa7cdd421b67500a3c0c5c557ebba65cff8d47a84ceb6",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)",
+          "covers": [
+            1
+          ],
+          "answer": "インダクタ電圧波形は公式解答図参照",
+          "explanation": "QオンでvL=E−Vo、オフでvL=−Vo。各区間50 μs・150 μsの符号と長さを図に対応させる。"
+        },
+        {
+          "label": "(2)・(3)",
+          "covers": [
+            2,
+            3
+          ],
+          "answer": "出力電圧3 V、負荷電流3 A",
+          "explanation": "定常時のインダクタ電圧時間積は0。オン比50/(50+150)=0.25なのでVo=0.25E=3 V。抵抗1 ΩからIo=3 A。"
+        },
+        {
+          "label": "(4)・(5)",
+          "covers": [
+            4,
+            5
+          ],
+          "answer": "平均インダクタ電流3 A、リプルの最大最小差1 A",
+          "explanation": "コンデンサの平均電流が0なのでIL=Io。オン中のΔi=(E−Vo)Ton/L=9×50×10⁻⁶/(450×10⁻⁶)=1 A。リプルを片振幅0.5 Aと混同しない。"
+        },
+        {
+          "label": "(6)・(7)",
+          "covers": [
+            6,
+            7
+          ],
+          "answer": "iLは2.5～3.5 A、ダイオード電流はオフ区間のみ",
+          "explanation": "IL=3 Aを中心とする三角波。オンで増加・オフで減少する。ダイオードはQオフ中にインダクタ電流を引き継ぎ、オン中は0となる。公式解答図の時間軸と照合する。"
+        },
+        {
+          "label": "(8)",
+          "covers": [
+            8
+          ],
+          "answer": "必要インダクタンス4.5 mH",
+          "explanation": "リプル差を0.1 Aに抑えるのでL=(E−Vo)Ton/Δi=9×50×10⁻⁶/0.1=4.5×10⁻³ H。"
+        }
+      ]
+    },
+    {
+      "id": "denken2-2024-secondary-machine-control-q04",
+      "year": 2024,
+      "stage": "secondary",
+      "examDate": "2024-11-10",
+      "subject": "machine-control",
+      "number": 4,
+      "topic": "伝達関数の直列・並列結合",
+      "requestedSubparts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_second_q02.pdf",
+      "sourcePdfSha256": "e753df68e0492fff7b0adef043957c8363f00a4f1b8cd5e59886a80c1470fd69",
+      "answerPdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_second_a01_tk.pdf",
+      "answerPdfSha256": "ec35151ff401889cb4b4c17fce21b85d466923c32595786d9723a6c9bd977906",
+      "sourcePages": [
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 7,
+          "url": "/images/denken2/secondary/2024/machine-control/p07.jpg",
+          "sha256": "beb3d1d90c69192d5d733c03dd5f46024a593bcb175dcc0f8056794510c1699d",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "machine-control",
+          "physicalPage": 8,
+          "url": "/images/denken2/secondary/2024/machine-control/p08.jpg",
+          "sha256": "4c155cc24b7b2b60d15d813c260d70c5da0b83713c681690bad1297eb25c809a",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "answerPages": [
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 12,
+          "url": "/images/denken2/secondary/2024/answer/p12.jpg",
+          "sha256": "62f34c10daf513b5d9265a60a431c910fe3c0c8644b4642c2e86a6d2ed1eb30d",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 13,
+          "url": "/images/denken2/secondary/2024/answer/p13.jpg",
+          "sha256": "58de5f854c409a8938f455b9f06f70c9b03dcc6b928287fee3b4401c718963c3",
+          "width": 1032,
+          "height": 1458
+        },
+        {
+          "year": 2024,
+          "subject": "answer",
+          "physicalPage": 14,
+          "url": "/images/denken2/secondary/2024/answer/p14.jpg",
+          "sha256": "1f070de5370efbc876d5ff0a344cf15f82c3174922822c2f02b4d7752779e16a",
+          "width": 1032,
+          "height": 1458
+        }
+      ],
+      "solutions": [
+        {
+          "label": "(1)・(2)",
+          "covers": [
+            1,
+            2
+          ],
+          "answer": "直列15/(s³+7s²+16s+12)、ステップ定常値1.25",
+          "explanation": "直列では伝達関数を掛ける。G1=3/(s+2)、G2=5/{(s+2)(s+3)}より積を展開し、安定系の単位ステップ定常値はG(0)=15/12。"
+        },
+        {
+          "label": "(3)",
+          "covers": [
+            3
+          ],
+          "answer": "並列インパルス応答8e⁻²ᵗ−5e⁻³ᵗ",
+          "explanation": "並列は和なのでG1+G2=(3s+14)/{(s+2)(s+3)}=8/(s+2)−5/(s+3)。各項を逆ラプラス変換する。"
+        },
+        {
+          "label": "(4)",
+          "covers": [
+            4
+          ],
+          "answer": "入力2e⁻ᵗの応答11e⁻ᵗ−16e⁻²ᵗ+5e⁻³ᵗ",
+          "explanation": "U(s)=2/(s+1)を並列伝達関数に掛け、残差11、−16、5を求める。入力自身ではなく、伝達関数との積を逆変換する。"
+        },
+        {
+          "label": "(5)",
+          "covers": [
+            5
+          ],
+          "answer": "高周波での位相−90°",
+          "explanation": "並列伝達関数は分母2次・分子1次の相対次数1。零点−14/3は左半平面にあり、最小位相系の高周波では1次分の位相遅れ−90°へ近づく。"
+        }
+      ]
+    }
+  ]
+}
