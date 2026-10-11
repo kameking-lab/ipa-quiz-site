@@ -7,7 +7,8 @@ import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel, usesNumberedChoices } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
-import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
+import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
+import { getReleasedRiyoshiQuestions } from "@/lib/riyoshi/publication";
 import crops from "@/docs/evidence/riyoshi-latest-two-20261011/image-crops.json";
 
 const officialKeys = {
@@ -35,12 +36,20 @@ describe("Riyoshi latest two official papers", () => {
       }
     }
   });
-  it("keeps both complete candidate papers out of public pools until release", async () => {
-    expect(isExamPublished("riyoshi")).toBe(false);
-    expect(RIYOSHI_QUESTIONS).toEqual([]);
-    expect(await getQuestionsForExam("riyoshi")).toEqual([]);
-    expect(getRegisteredExamCodes()).not.toContain("riyoshi");
+  it("releases exactly the 110 reviewed originals in both public question readers", async () => {
+    expect(isExamPublished("riyoshi")).toBe(true);
+    expect(RIYOSHI_QUESTIONS).toEqual(RIYOSHI_CANDIDATES);
+    expect(await getQuestionsForExam("riyoshi")).toEqual(RIYOSHI_CANDIDATES);
+    expect(getRegisteredExamCodes()).toContain("riyoshi");
     expect(ALL_EXAM_CODES).not.toContain("riyoshi");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("riyoshi");
+    const first = RIYOSHI_CANDIDATES[0];
+    if (!first) throw new Error("Missing reviewed Riyoshi original");
+    expect(getReleasedRiyoshiQuestions([
+      ...RIYOSHI_CANDIDATES,
+      { ...first, id: "riyoshi-unreviewed-candidate" },
+      { ...first, needsReview: true },
+    ])).toEqual(RIYOSHI_CANDIDATES);
     expect(EXAM_CONFIGS.riyoshi.sessions[0]?.expectedQuestions).toBe(55);
   });
   it("uses official edition and numbered options", () => {

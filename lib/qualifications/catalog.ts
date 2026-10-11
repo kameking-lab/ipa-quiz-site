@@ -634,10 +634,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "公益財団法人理容師美容師試験研修センター",
     officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
     officialReuseTermsUrl: "https://www.rbc.or.jp/exam/past_question/",
-    status: "ready-to-ingest",
-    reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。公開は最終受入れとリリース台帳の承認後です。",
+    status: "live",
+    reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。原本照合と内容検収を完了し、リリース対象110問を個別IDで指定しています。",
     attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
-    remainingWork: ["統合主担当による最終受入れ・掲載可否の記録", "リリース台帳の明示承認"],
+    remainingWork: [],
   },
   {
     slug: "boki3",
