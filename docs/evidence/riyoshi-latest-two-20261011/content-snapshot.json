@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-11T01:21:28.136Z",
+  "required": 110,
+  "stored": 110,
+  "ready": 110,
+  "holds": [],
+  "choiceExplanations": 440,
+  "publicIncrement": 0,
+  "papers": [
+    {
+      "edition": 53,
+      "date": "2026-03-01",
+      "questions": 55
+    },
+    {
+      "edition": 54,
+      "date": "2026-09-06",
+      "questions": 55
+    }
+  ],
+  "files": [
+    {
+      "path": "data/questions/riyoshi/2026-first.json",
+      "sha256": "2fe691b161ca14ab06279cb3f9000eba100d74baf71a3ee87c636c3a043ab794"
+    },
+    {
+      "path": "data/questions/riyoshi/2026-second.json",
+      "sha256": "5ee742c45d256f25ef3babe6199eb11deb933070c0dbdb6884e76fb9c9c43169"
+    }
+  ],
+  "publication": "Integration owner records final acceptance and determines release; this implementation leaves approved:false and status:ready-to-ingest."
+}
