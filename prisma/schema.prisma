@@ -20,6 +20,7 @@ datasource db {
 model StudyPresence {
   id         String   @id
   lastSeenAt DateTime @default(now())
+  exam       String?
 
   @@index([lastSeenAt])
 }

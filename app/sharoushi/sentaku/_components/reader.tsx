@@ -6,7 +6,7 @@ function WordBank({ words }: { words: { id:number; label:string; text:string }[]
 }
 export function SentakuReader({ question:q }: { question:SentakuQuestion }) {
  const paragraphs=sentakuParagraphs(q.rawSourceText).map(part=>part.replace("次の文中のの部分", "次の文中の空欄の部分"));
- return <main className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
+ return <main data-study-presence-exam="sharoushi" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
   <nav className="mb-5 flex flex-wrap gap-2 text-sm"><Link href="/sharoushi" className="underline">社労士</Link><span>/</span><Link href={sentakuPath(q.year)} className="underline">第{q.examRound}回 選択式</Link><span>/ 問{q.questionNumber}</span></nav>
   <h1 className="text-2xl font-bold sm:text-3xl">第{q.examRound}回 選択式 問{q.questionNumber}</h1><p className="mt-3 text-lg">{q.subject}</p>
   <p className="mt-3 text-sm text-muted-foreground">{q.year}年度・法令基準日 {q.lawAsOf} ／ 1原問・5空欄</p>

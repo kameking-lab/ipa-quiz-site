@@ -49,7 +49,7 @@ export function NativeReader({ question, readerConfig }: {
   const editionLabel = config.editionLabel ?? `${question.year}年度 一次試験`;
   const subjectPath = `${config.examPath}/${editionSlug}/${question.subject}`;
   const name = subjectName[question.subject];
-  return <main className="mx-auto w-full min-w-0 max-w-4xl px-4 py-8 sm:py-12">
+  return <main data-study-presence-exam={config.examPath.slice(1)} className="mx-auto w-full min-w-0 max-w-4xl px-4 py-8 sm:py-12">
     <nav className="mb-6 flex flex-wrap gap-2 text-sm">
       <Link href={config.examPath} className="text-primary underline">{config.examName}</Link>
       <span>/</span>

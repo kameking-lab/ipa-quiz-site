@@ -36,7 +36,7 @@ export default async function Denko2SkillProblemPage({ params }: Props) {
   const conditions = problem.conditionsText.split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
   const defectChecks = getSkillDefectChecks(problem);
   return (
-    <main className="mx-auto max-w-4xl px-4 py-6 text-slate-950">
+    <main data-study-presence-exam="denko2" className="mx-auto max-w-4xl px-4 py-6 text-slate-950">
       <nav aria-label="問題ナビゲーション" className="flex flex-wrap items-center justify-between gap-2 text-sm">
         <Link href={`/denko2/skill#date-${problem.date}`} className="font-semibold text-blue-700 hover:underline">← この試験日の一覧</Link>
         <span>No.{problem.number} / 13</span>

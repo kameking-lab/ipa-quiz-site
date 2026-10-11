@@ -557,6 +557,7 @@ export function ExamQuestionPlayer({
           </section>
         ) : current ? (
           <section
+            data-study-presence-exam={hubSlug}
             aria-labelledby="exam-question-heading"
             className="rounded-2xl border border-border bg-card p-4 text-foreground shadow-sm forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-6"
           >

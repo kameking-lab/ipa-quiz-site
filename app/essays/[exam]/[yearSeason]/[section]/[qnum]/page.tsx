@@ -123,7 +123,7 @@ export default async function EssayPm2DetailPage({
 
 
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+    <main data-study-presence-exam={resolved.exam} className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
       <ViewTracker
         event="essay_viewed"
         props={{

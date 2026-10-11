@@ -1,5 +1,6 @@
 import "./home-study.css";
 import type { Metadata } from "next";
+import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
 import { HomeNoteGuides, HomeTrust } from "@/components/home/landing/HomeGuidesAndTrust";
@@ -24,6 +25,7 @@ export default function HomePage() {
     <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
+      <TotalAnswerCounter />
       <HomeDirectory domains={domains} />
       <div className="study-context">
       <HomeScheduleLink />

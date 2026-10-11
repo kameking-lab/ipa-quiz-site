@@ -191,7 +191,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const warn = remaining <= 1800 && !danger;
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
+    <main data-study-presence-exam={q ? config.exam : undefined} className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
       <div className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 sm:-mx-6 sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div>

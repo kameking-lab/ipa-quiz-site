@@ -252,7 +252,7 @@ export default async function QuestionPage({
       {next && (
         <link rel="next" href={`${SITE_BASE_URL}${questionPagePath(next)}`} />
       )}
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
+    <main data-study-presence-exam={q.exam} className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={jsonLd} />
 
       {/* Breadcrumb */}

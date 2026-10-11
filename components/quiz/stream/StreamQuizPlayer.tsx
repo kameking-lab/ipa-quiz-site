@@ -211,6 +211,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   return (
     <div
+      data-study-presence-exam={question.exam}
       className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
