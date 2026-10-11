@@ -5,6 +5,7 @@ import supplement6Json from "./2026-september-supplement6.json";
 import supplement7Json from "./2026-september-supplement7.json";
 import supplement8Json from "./2026-september-supplement8.json";
 import supplement9Json from "./2026-september-supplement9.json";
+import supplement10Json from "./2026-september-supplement10.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -100,6 +101,7 @@ export const ZOEN1_QUESTIONS = [
   ...toQuestions(supplement7Json as Source, "2026-10-11"),
   ...toQuestions(supplement8Json as Source, "2026-10-11"),
   ...toQuestions(supplement9Json as Source, "2026-10-11"),
+  ...toQuestions(supplement10Json as Source, "2026-10-11"),
 ].sort((a, b) => a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
 
 if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
