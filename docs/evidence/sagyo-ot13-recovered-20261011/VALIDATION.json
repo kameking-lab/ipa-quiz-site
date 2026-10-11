@@ -88,6 +88,23 @@
     "fullBuildPlan": "Existing PR E2E workflow runs full lint, typecheck, unit tests, source checks, build and E2E. No duplicate host-wide build is started.",
     "registeredIncrement": 11,
     "registeredTotal": 310,
-    "productionPublicationIncrement": 0
+    "productionPublicationIncrement": 0,
+    "ciHomeCardCorrection": {
+      "initialRunId": 38108960480,
+      "initialUnitFilesPassed": 519,
+      "initialUnitTestsPassed": 4801,
+      "initialUnitTestsFailed": 1,
+      "failure": "The home directory retained a 299-question expectation and visible card description after the OT registry increased to 310.",
+      "fixedFiles": [
+        "lib/home/home-directory.ts",
+        "__tests__/lib/home-directory.test.ts"
+      ],
+      "command": "pnpm exec vitest run __tests__/lib/home-directory.test.ts --maxWorkers=1 --testTimeout=60000",
+      "filesPassed": 1,
+      "testsPassed": 8,
+      "exitCode": 0,
+      "changedFileLintExitCode": 0,
+      "newHeadCi": "PENDING"
+    }
   }
 }
