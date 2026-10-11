@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-10-11T01:37:22.939016+00:00",
+  "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
+  "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "sourceCounts": {
+    "required": 202,
+    "public": 100,
+    "preparedNew": 101,
+    "newlyAccepted": 0,
+    "unpublished": 102
+  },
+  "checks": {
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "evidence": "typecheck-final.log and successful exec completion on unchanged reader code"
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 1,
+      "warning": "existing civil2 parse-fenced-results.mjs unused variable"
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=civil1",
+      "exitCode": 0,
+      "ok": 100,
+      "failed": 0,
+      "warnings": 0
+    },
+    "civil1Tests": {
+      "command": "pnpm exec vitest run __tests__/civil1-source-reader.test.ts __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "summary": {
+        "files": "3 passed (3)",
+        "tests": "13 passed (13)"
+      }
+    },
+    "previousFailureRetry": {
+      "exitCode": 0,
+      "summary": {
+        "files": "10 passed (10)",
+        "tests": "78 passed (78)"
+      },
+      "note": "Final reader code plus every failing file from initial full run passed."
+    },
+    "restoredFullTests": {
+      "command": "pnpm exec vitest run --maxWorkers=2 --testTimeout=60000",
+      "exitCode": null,
+      "status": "running",
+      "summary": null,
+      "finishedTestFilesObserved": 418,
+      "testFailuresObserved": 1,
+      "failureObserved": "Existing api/cost-record-durability.test.ts /api/copilot timed out at 60000ms; no civil1 failure observed."
+    },
+    "defaultLocalBuild": {
+      "command": "pnpm build",
+      "exitCode": 1,
+      "cause": "Turbopack rejected a node_modules junction outside its filesystem root."
+    },
+    "previousWebpackBuild": {
+      "command": "pnpm build --webpack",
+      "exitCode": null,
+      "status": "interrupted-unconfirmed",
+      "observed": "Compile and TypeScript succeeded; 11441-page SSG began, then PC connection loss prevented result recovery."
+    }
+  },
+  "cloudValidation": {
+    "sessionId": "session_018eA8pp9NiMx6V26TJX7Pgs",
+    "url": "https://claude.ai/code/session_018eA8pp9NiMx6V26TJX7Pgs",
+    "creationConfirmed": true,
+    "resultConfirmed": false,
+    "verificationCommit": null,
+    "cliAttach": "not enabled for this account; stopped without teleport or auth workaround",
+    "browserView": "browser creation timed out; official View URL is queued in the calling thread"
+  },
+  "stoppedOperations": [
+    "Get-CimInstance Win32_Process: access denied; no elevated retry",
+    "Claude CLI attach: feature not enabled for account",
+    "Internet Archive CDX via web tool: inaccessible; no alternate acquisition retry"
+  ],
+  "publicationAcceptance": false,
+  "independentAcceptance": false,
+  "productionMergeOrDeployment": false
+}
