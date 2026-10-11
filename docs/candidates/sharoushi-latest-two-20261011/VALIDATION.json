@@ -1,30 +1,30 @@
 {
-  "checkedAt": "2026-10-11T03:05:27.614975+00:00",
-  "sourceVerifiedOriginals": 19,
-  "choiceExplanations": 95,
+  "checkedAt": "2026-10-11T03:38:44.023463+00:00",
+  "sourceVerifiedOriginals": 26,
+  "choiceExplanations": 130,
   "publicBaselineOriginals": 123,
-  "branchOriginals": 142,
+  "branchOriginals": 149,
   "separatePr680Originals": 3,
-  "combinedCandidateOriginals": 145,
+  "combinedCandidateOriginals": 152,
   "requiredOriginals": 156,
-  "remainingOwnedHoldOriginals": 11,
-  "privateHoldOriginals": 9,
+  "remainingOwnedHoldOriginals": 4,
+  "privateHoldOriginals": 2,
   "individualStopMetadataOnlyOriginals": 2,
   "productionPublishedIncrement": 0,
   "productionMergePerformed": false,
   "productionDeploymentPerformed": false,
   "independentContentReviewPending": true,
-  "latestOriginMain": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
+  "latestOriginMain": "cad6ca471f10cde5122ce673197eccce5482dc9f",
   "sourceBranch": "codex/sharoushi-latest-two-completion-20261011",
-  "runtimeJsonSha256Utf8Lf": "2a20b57042b74ae1abe1cc5f636a9db30b97232b4693208d723a1cb98a1dae5e",
+  "runtimeJsonSha256Utf8Lf": "73d13a60d9f19bf369d6765223e63373124743f73cf18677edf19138d0dd317a",
   "checks": {
     "vitest": {
       "status": "PASS",
       "files": 10,
       "tests": 47,
-      "durationSeconds": 93.24,
-      "maxWorkers": 2,
-      "report": "VITEST-FOLLOWUP.json"
+      "maxWorkers": 1,
+      "report": "VITEST-CONTINUATION26.json",
+      "durationSeconds": 28.131
     },
     "typecheck": {
       "status": "PASS",
@@ -33,8 +33,8 @@
     },
     "eslint": {
       "status": "PASS",
-      "changedTypeScriptFiles": 10,
-      "command": "pnpm exec node node_modules/eslint/bin/eslint.js (9 changed files plus sharoushi-later15.test.ts)",
+      "changedTypeScriptFiles": 7,
+      "command": "pnpm exec node node_modules/eslint/bin/eslint.js (7 changed TS files)",
       "exitCode": 0
     },
     "gitDiffCheck": {
@@ -60,11 +60,11 @@
     },
     "heldRuntimeAndSitemapExclusion": {
       "status": "PASS",
-      "originals": 11
+      "originals": 4
     }
   },
-  "continuationIncrementOriginals": 1,
-  "continuationIncrementChoiceExplanations": 5,
+  "continuationIncrementOriginals": 8,
+  "continuationIncrementChoiceExplanations": 40,
   "limitedIndependentReview": {
     "questionId": "sharoushi-2026-annual-gakka-q2",
     "proposition": "ウ",
@@ -73,7 +73,23 @@
     "requiredReplacementApplied": true,
     "blanketPublicationApproval": false
   },
+  "thisCheckpointIncrementOriginals": 7,
+  "thisCheckpointIncrementChoices": 35,
+  "limitedIndependentReviewPackets": [
+    "agent-source-closures/limited-application-review/REVIEW.json",
+    "agent-source-closures/limited-application-review/ADDENDUM-REVIEW.json"
+  ],
+  "strictDirectOriginalGateGaps": [
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
+    "sharoushi-2026-annual-rousai-q1"
+  ],
+  "previous19CandidatesPreserved": true,
+  "preservedStopOriginals": 4,
   "completedIds": [
+    "sharoushi-2025-annual-gakka-q1",
     "sharoushi-2025-annual-gakka-q7",
     "sharoushi-2025-annual-ippan-q4",
     "sharoushi-2025-annual-ippan-q10",
@@ -83,26 +99,25 @@
     "sharoushi-2025-annual-kounen-q9",
     "sharoushi-2025-annual-koyou-q1",
     "sharoushi-2025-annual-koyou-q5",
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
     "sharoushi-2025-annual-koyou-q10",
     "sharoushi-2025-annual-rousai-q1",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
     "sharoushi-2026-annual-gakka-q2",
     "sharoushi-2026-annual-gakka-q7",
     "sharoushi-2026-annual-ippan-q4",
+    "sharoushi-2026-annual-koyou-q1",
     "sharoushi-2026-annual-koyou-q3",
     "sharoushi-2026-annual-koyou-q4",
     "sharoushi-2026-annual-koyou-q10",
+    "sharoushi-2026-annual-rousai-q1",
     "sharoushi-2026-annual-rousai-q6",
     "sharoushi-2026-annual-rousai-q7"
   ],
   "holdIds": [
-    "sharoushi-2025-annual-gakka-q1",
-    "sharoushi-2025-annual-rousai-q2",
-    "sharoushi-2025-annual-rousai-q8",
-    "sharoushi-2026-annual-rousai-q1",
     "sharoushi-2025-annual-koyou-q2",
-    "sharoushi-2025-annual-koyou-q6",
-    "sharoushi-2025-annual-koyou-q7",
-    "sharoushi-2026-annual-koyou-q1",
     "sharoushi-2026-annual-kounen-q4",
     "sharoushi-2025-annual-ippan-q5",
     "sharoushi-2026-annual-ippan-q5"

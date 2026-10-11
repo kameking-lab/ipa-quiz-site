@@ -1,0 +1,109 @@
+{
+  "id": "sharoushi-2025-annual-gakka-q1",
+  "baseline": "2025-04-11",
+  "verifiedAt": "2026-10-11T03:23:38.049586+00:00",
+  "officialAnswerLetter": "D",
+  "savedOriginalAnswerLabel": "エ",
+  "countCorrect": 4,
+  "correctPropositions": [
+    "ア",
+    "イ",
+    "ウ",
+    "オ"
+  ],
+  "incorrectPropositions": [
+    "エ"
+  ],
+  "choices": {
+    "ア": {
+      "correct": true,
+      "supportType": "1988 government circular original reproducing 1948 基発381; plus as-of statute",
+      "sourceLocations": [
+        "originalNotice PDF physical pp.8-9 / printed pp.7-8, 法第5条関係〈意思に反する労働の強制〉",
+        "laborStandardsActAsOf20250411 art.5"
+      ],
+      "finding": "不当な手段で意識ある意思を抑圧して労働を強要すれば、現実の就労は不要。",
+      "temporalLimit": "1988原著は当該解釈を直接掲載。2025当日の行政版を直接取得したとの主張ではなく、2025日付法文と2026年公的再掲に基づく限定継続推論。"
+    },
+    "イ": {
+      "correct": true,
+      "supportType": "1988 government circular original reproducing 1948 基発381; plus as-of statute",
+      "sourceLocations": [
+        "originalNotice PDF physical pp.10-11 / printed pp.9-10, 法第6条関係〈業として利益を得るの意義〉",
+        "laborStandardsActAsOf20250411 art.6"
+      ],
+      "finding": "営利目的の同種行為の反復継続をいい、一回の行為でも反復継続して利益を得る意思があれば足りる。",
+      "temporalLimit": "1988原著は当該解釈を直接掲載。2025当日の行政版を直接取得したとの主張ではなく、2025日付法文と2026年公的再掲に基づく限定継続推論。"
+    },
+    "ウ": {
+      "correct": true,
+      "supportType": "2005 MHLW amendment direct plus as-of statute",
+      "sourceLocations": [
+        "publicDutyAmendment 第7条関係",
+        "laborStandardsActAsOf20250411 art.7"
+      ],
+      "finding": "公の職務に労働審判員と裁判員を追加。必要時間の請求拒否はできないが、支障なければ時刻変更可。"
+    },
+    "エ": {
+      "correct": false,
+      "supportType": "as-of statutes plus 1948 MHLW-hosted labor-union circular",
+      "sourceLocations": [
+        "laborStandardsActAsOf20250411 art.9",
+        "laborUnionActAsOf20250411 art.3",
+        "unionUnemployedNotice 失業者と労働者"
+      ],
+      "finding": "失業者を含むという解釈は労働組合法の労働者であり、労基法9条の定義に移せない。"
+    },
+    "オ": {
+      "correct": true,
+      "supportType": "1988 government circular original, direct individual case",
+      "sourceLocations": [
+        "originalNotice PDF physical p.86 / printed p.85, 法第11条関係〈所得税等の事業主負担〉"
+      ],
+      "finding": "本人を被保険者とする任意生命保険の会社保険料補助は福利厚生費で、労基法11条の賃金とは認められない。",
+      "scopeLimit": "法令上当然負う税・保険料を事業主が肩代わりする場合や会社契約型に一般化しない。"
+    }
+  },
+  "originalQuestionUnchanged": true,
+  "originalOfficialKeyUnchanged": true,
+  "correctedSavedDraftAnswerIsOfficialEnglishKey": true,
+  "originalOfficialQuestionPdfSha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1",
+  "originalOfficialAnswerPdfSha256": "33cbc50ea0af6754cb61a86cc92ecdcdb08b2e2d47126577bbb53dcebc7e7093",
+  "sourcePayloadSha256ReadOnly": "3f29440baeb1e6129115470eabe493dd1d482674404706c838f33d5a2767aa4e",
+  "sources": {
+    "originalNotice": {
+      "url": "https://jaidunion.com/wp-content/uploads/2016/10/19880314-001.pdf",
+      "issued": "1988-03-14",
+      "documentNumber": "基発第150号・婦発第47号",
+      "governmentAuthor": "労働省労働基準局長・労働省婦人局長",
+      "publicArchiveHost": "jaidunion.com",
+      "pdfSha256": "3b5db520812b6f61c621e28058f0a31a14bda651fe212a301fa2d959454ab36b",
+      "receipt": "jaid-19880314-001.pdf.receipt.json"
+    },
+    "laborStandardsActAsOf20250411": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+      "sha256": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf"
+    },
+    "laborUnionActAsOf20250411": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000174?asof=2025-04-11",
+      "sha256": "c823e89398e36a6dcfaecf9d2d2b7e30bf74bc1d88c2468428903268a4683c92"
+    },
+    "publicDutyAmendment": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb3991&dataType=1&pageNo=1",
+      "issued": "2005-09-30",
+      "sha256": "dc94199a33023559f497ed5570f7e3f4a05c9386791be9bef89d7a3755c671e6"
+    },
+    "unionUnemployedNotice": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5126&dataType=1&pageNo=1",
+      "issued": "1948-06-05",
+      "sha256": "4227734516fd7e8969929281895d64da19ec6154443e8101438e52a35a5dbde2"
+    },
+    "officialHistoricalRestatement": {
+      "url": "https://www.pref.osaka.lg.jp/documents/6136/002.pdf",
+      "edition": "2026-03",
+      "sha256": "aa07fef03074c2ea831d18db614a3fcd797e9e0de7c11d8e8d87d8733e4a422e"
+    }
+  },
+  "remainingSourceGaps": [],
+  "riskNote": "ア・イの1948年から2025年までの全改正・行政版本を逐一照合したわけではない。1988年原著、2025年日付法文、2026年公的再掲による限定的継続推論を採用。"
+}

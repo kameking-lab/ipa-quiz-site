@@ -41,12 +41,9 @@
       "format": "takuitu",
       "subject": "gakka",
       "questionNumber": 1,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "ア・イ：昭23.3.2基発381号の該当解釈は公式2026年冊子に明記されるが、1948年当時の法5/6版本文とその後の全改正履歴の原本照合は未取得。2025-04-11基準で解釈の継続性を全履歴で直接確認したとの断定はできない。",
-        "オ：労働者自身を被保険者とする任意加入生命保険の企業による保険料補助について、福利厚生として使用者が負担する補助金が労基法11条の賃金に当たらないとする個別原典又は基準日までの公式再掲が未取得。昭63.3.14基発150号の該当個別例を確認できていない。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
       "sourceSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
@@ -55,10 +52,12 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/rouki-q1-followup/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/rouki-gap2/"
+      "continuationEvidence": "agent-source-closures/rouki-gap2/",
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/rouki-gap3/"
     },
     {
       "id": "sharoushi-2025-annual-gakka-q7",
@@ -171,13 +170,9 @@
       "format": "takuitu",
       "subject": "rousai",
       "questionNumber": 2,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "C",
-      "remainingIssue": [
-        "イ：社宅への延焼防止中の感電死の原通達。昭24.12.15基収4028号は探索用のみ。",
-        "ウ：出張命令による職務関連技能検定の実技負傷に係る原通達。昭34.10.9基発700号は探索用のみ。",
-        "エ：山岳地区の植生盤植付作業後の落雷死の原通達。昭36.3.13基収1844号は探索用のみ。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
       "sourceSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
@@ -186,10 +181,15 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/"
+      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/",
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/limited-application-review/",
+      "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
+      "directIndividualOrCutoffAdministrativeTextVerified": false,
+      "strictDirectOriginalGateCleared": false
     },
     {
       "id": "sharoushi-2025-annual-rousai-q8",
@@ -198,11 +198,9 @@
       "format": "takuitu",
       "subject": "rousai",
       "questionNumber": 8,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "C",
-      "remainingIssue": [
-        "肢Dのみ：一括後の規模変更等があっても当初の一括扱いを継続する一般的取扱いについて、基準日2025-04-11に適用できる原通達または公式手引の該当箇所が未取得。昭40基発901号 記第1の2(3)ホは後発公式通知による引用確認にとどまり、原文未確認。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
       "sourceSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
@@ -212,12 +210,17 @@
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
       "sourceConfirmedChoiceCount": 4,
-      "sourceClosureEvidence": "agent-source-closures/labor/EVIDENCE-DELTA.json",
+      "sourceClosureEvidence": "agent-source-closures/limited-application-review/",
       "additionalPartialSourceClosureEvidence": "agent-source-closures/q8-partial/GUIDE-EVIDENCE.json",
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/rousai-q8-followup/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/q8-gap2/"
+      "continuationEvidence": "agent-source-closures/q8-gap2/",
+      "independentReviewPending": true,
+      "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
+      "directIndividualOr2025GeneralCircularVerified": false,
+      "directIndividualOrCutoffAdministrativeTextVerified": false,
+      "strictDirectOriginalGateCleared": false
     },
     {
       "id": "sharoushi-2026-annual-rousai-q1",
@@ -226,14 +229,9 @@
       "format": "takuitu",
       "subject": "rousai",
       "questionNumber": 1,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "ア：自費・任意参加の慰安旅行中、艀の定員超過による溺死の原通達又は裁判所原判決。",
-        "イ：自宅から用務地へ直接出発する踏切事故の原通達。昭34.7.15基収2980号は探索用のみ。",
-        "ウ：荷覆シート掛け直し時に防寒帽を追って国道上で死亡した助手の原通達又は原判決。",
-        "エ：骨移植片採取後、医師指示の歩行練習中に採骨側下腿骨を骨折した事例の原通達又は原判決。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2026-recovery/draft.json",
       "sourceSha256": "f55ef665fb573d4895a316d4e05942b94388cb8a24fa8ae793f7a5550bc855c3",
@@ -242,10 +240,16 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/"
+      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/",
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/limited-application-review/",
+      "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
+      "directIndividualOr2025GeneralCircularVerified": false,
+      "directIndividualOrCutoffAdministrativeTextVerified": false,
+      "strictDirectOriginalGateCleared": false
     },
     {
       "id": "sharoushi-2026-annual-rousai-q6",
@@ -367,13 +371,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 6,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "A",
-      "remainingIssue": [
-        "ウの手取額と基本手当額おおむね100%の基準・住所等の適用条件を明示する2025-04-11以前の行政版。",
-        "エの法令に反しない労働時間を地域同種業務と比較する基準の2025-04-11以前の行政版。",
-        "オの賃金不払解消後の取扱いを明示する2025-04-11以前の行政版。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -382,10 +382,15 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/employment-gap2/"
+      "continuationEvidence": "agent-source-closures/employment-gap2/",
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/employment-gap3/",
+      "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
+      "directIndividualOrCutoffAdministrativeTextVerified": false,
+      "strictDirectOriginalGateCleared": false
     },
     {
       "id": "sharoushi-2025-annual-koyou-q7",
@@ -394,15 +399,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 7,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "A",
-      "remainingIssue": [
-        "A: 53302(2)ル末尾（physical16/printed379）を含む2025-04-11以前の公式版。",
-        "B: 53254(4)イ、53302(2)ホ（physical11,14/printed374,377）を含む2025-04-11以前の公式版。",
-        "C: 53253(3)ロ、53302(2)リ（physical10,15/printed373,378）を含む2025-04-11以前の公式版。",
-        "D: 53255(5)（physical11/printed374）を含む2025-04-11以前の公式版。",
-        "E: 53251(1)ロ、53301(1)（physical9,12/printed372,375）を含む2025-04-11以前の公式版。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -411,10 +410,15 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/employment-gap2/"
+      "continuationEvidence": "agent-source-closures/employment-gap2/",
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/employment-gap3/",
+      "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
+      "directIndividualOrCutoffAdministrativeTextVerified": false,
+      "strictDirectOriginalGateCleared": false
     },
     {
       "id": "sharoushi-2025-annual-koyou-q10",
@@ -445,11 +449,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 1,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "オ(E)のみ保留。兼業許可のある地方公務員として在籍出向し、出向元の民間雇用関係を継続する場合の資格存続を直接示す2026-04-10以前の行政一次資料。2013年4月版の一般的在籍出向説明だけではこの個別事例を閉じない。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -459,11 +461,12 @@
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
       "sourceConfirmedChoiceCount": 4,
-      "sourceClosureEvidence": "agent-source-closures/employment/question-deltas-additional-hold.json",
-      "allChoicePrimaryVerified": false,
+      "sourceClosureEvidence": "agent-source-closures/employment-gap3/",
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/2026-q1-followup/",
       "sourceConfirmedPropositions": [],
-      "continuationEvidence": "agent-source-closures/employment-gap2/"
+      "continuationEvidence": "agent-source-closures/employment-gap2/",
+      "independentReviewPending": true
     },
     {
       "id": "sharoushi-2026-annual-koyou-q3",
@@ -749,8 +752,19 @@
       "payloadOmissionReason": "既存の個別外部送信拒否を維持。本文と解説はローカル保存原稿に残し、GitHubへ再送しない。"
     }
   ],
-  "newSourceVerifiedOriginals": 19,
-  "newRuntimeCandidateOriginals": 19,
-  "remainingSourceHoldOriginals": 11,
-  "privateCandidateOriginals": 9
+  "newSourceVerifiedOriginals": 26,
+  "newRuntimeCandidateOriginals": 26,
+  "remainingSourceHoldOriginals": 4,
+  "privateCandidateOriginals": 2,
+  "ordinaryManuscriptCandidatesCompleted": 26,
+  "preservedStoppedOriginals": 4,
+  "remainingOrdinaryManuscriptCandidates": 0,
+  "productionIncrement": 0,
+  "strictDirectOriginalGatesRemainFor": [
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
+    "sharoushi-2026-annual-rousai-q1"
+  ]
 }
