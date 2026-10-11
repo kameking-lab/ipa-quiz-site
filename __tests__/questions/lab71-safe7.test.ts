@@ -6,7 +6,8 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 const official: Record<number, string> = { 32: "4", 35: "3", 36: "3", 39: "4", 41: "24", 44: "1", 45: "2" };
 const kana = ["ア", "イ", "ウ", "エ", "オ"];
-const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.year === 2025);
+const priorLab71Ids = new Set([2,4,10,11,13,14,21,24,27,29,32,35,36,39,41,44,45].map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
+const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => priorLab71Ids.has(q.id));
 
 describe("lab71 seven remaining safe saved originals", () => {
   it("adds only the leased seven IDs to the ten prior originals", async () => {

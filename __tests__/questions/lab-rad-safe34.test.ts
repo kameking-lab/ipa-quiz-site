@@ -15,10 +15,11 @@ const suites = [
   { qual: "shinryo-hoshasengishi", edition: 78, year: 2026, date: "2026-02-19", questions: rad78, paper: "tp260424-06b_01.pdf", keys: { 3: "1", 11: "4", 16: "34", 17: "5", 25: "2", 26: "5", 36: "2", 37: "3", 40: "23", 42: "1", 43: "2", 46: "5" } },
 ] as const;
 const kana = ["ア", "イ", "ウ", "エ", "オ"];
+const priorLab35Ids = new Set([...[2,4,10,11,13,14,21,24,27,29,32,35,36,39,41,44,45].map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`), ...lab72.map(q => q.id)]);
 
 describe("remaining safe34 saved lab/radiology originals", () => {
   it("loads exact additive IDs with no prior-original loss or duplicate", async () => {
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(35);
+    expect(RINSHO_KENSAGISHI_QUESTIONS.filter(q => priorLab35Ids.has(q.id))).toHaveLength(35);
     expect(SHINRYO_HOSHASENGISHI_QUESTIONS).toHaveLength(26);
     for (const suite of suites) {
       expect(suite.questions.map(q => q.qNumber)).toEqual(Object.keys(suite.keys).map(Number));
