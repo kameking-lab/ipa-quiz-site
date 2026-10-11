@@ -1,0 +1,74 @@
+{
+  "exam": "tsushin1",
+  "checkedAtUtc": "2026-10-11T02:16:33.879149+00:00",
+  "latestTwoYears": [
+    2026,
+    2025
+  ],
+  "requiredOriginals": 180,
+  "completeOriginals": 180,
+  "addedOriginals": 168,
+  "preservedPublicOriginals": 12,
+  "unresolvedOriginals": [],
+  "mechanicalAudit": "python scripts/audit_tsushin1_latest_two.py: PASS 180/180",
+  "targetedIndependentReviewQuestions": 23,
+  "verifiedPngImages": 26,
+  "checks": {
+    "targeted": {
+      "exitCode": 0,
+      "command": "pnpm exec vitest run __tests__/questions/tsushin1-pilot.test.ts __tests__/questions/tsushin1-latest-two.test.ts --maxWorkers=1"
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    "lint": {
+      "exitCode": 0,
+      "command": "pnpm lint"
+    },
+    "mechanicalAudit": {
+      "exitCode": 0,
+      "command": "python scripts/audit_tsushin1_latest_two.py"
+    },
+    "schema": {
+      "command": "pnpm validate:questions",
+      "exitCode": 0
+    },
+    "build": {
+      "exitCode": 0,
+      "command": "pnpm build --webpack"
+    }
+  },
+  "fullSuite": {
+    "exitCode": 1,
+    "command": "pnpm run test --maxWorkers=2",
+    "timingFailureRetry": {
+      "repositoryTestsUnchanged": true,
+      "exitCode": 1,
+      "retryAfterFullSuiteAndBuildCleanup": true,
+      "command": "pnpm exec vitest run __tests__/questions/get-questions.test.ts __tests__/seo/sitemap-static-indexable.test.ts --maxWorkers=1 --testTimeout=120000"
+    },
+    "finalSitemapRetry": {
+      "retryAfterBuildFinished": true,
+      "repositoryTestUnchanged": true,
+      "exitCode": 0,
+      "command": "pnpm exec vitest run __tests__/seo/sitemap-static-indexable.test.ts --maxWorkers=1 --testTimeout=120000",
+      "explicitNoindexDeadlineMs": 30000
+    },
+    "note": "Completed the full suite with three existing timing-only failures in two files. The question loader subsequently passed all seven tests; after production build finished, the unchanged sitemap file passed all eight tests, including its explicit 30-second noindex deadline. Initial timeout failures remain recorded."
+  },
+  "fullSuiteSummary": [
+    "Test Files  2 failed | 513 passed (515)",
+    "Tests  3 failed | 4763 passed (4766)",
+    "Duration  994.50s (transform 206.45s, setup 47.89s, collect 1143.93s, tests 306.67s, environment 291.09s, prepare 44.95s)"
+  ],
+  "builtLocalSmoke": {
+    "pages": 8,
+    "byteIdenticalPngResponses": 26,
+    "success": true
+  },
+  "schemaWarningsInTargetQualification": 0,
+  "preexistingLintWarnings": 1,
+  "historicalLintEnvironmentExit": 3221225501,
+  "publicationPerformed": false
+}
