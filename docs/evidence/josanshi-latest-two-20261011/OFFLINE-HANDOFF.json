@@ -1,0 +1,162 @@
+{
+  "qualification": "josanshi",
+  "status": "EXECUTOR_OFFLINE_NOT_RELEASE_READY",
+  "createdUtc": "2026-10-11 01:13:08 UTC",
+  "worktree": "C:/wt/kakomon-josanshi-latest-two-20261011",
+  "branch": "codex/josanshi-latest-two-20261011",
+  "localReportDirectory": "C:/Users/kanet/20260522/note-automation/reports/qualification-expansion-20261007/josanshi-latest-two-20261011",
+  "baseMain": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+  "rounds": [
+    109,
+    108
+  ],
+  "originals": 220,
+  "scoredOriginals": 219,
+  "officiallyExcluded": 1,
+  "baselinePublished": 18,
+  "plannedAdditions": 201,
+  "lastConfirmedLocalReady": 213,
+  "localSaved": [
+    "108-am-authored.json",
+    "108-pm-authored.json",
+    "109-am-authored.json",
+    "109-pm-authored.json",
+    "source-packets.json",
+    "SOURCE-MANIFEST.json",
+    "FIGURE-MANIFEST.json",
+    "integrate.py",
+    "edit_repo.py",
+    "josanshi-latest-two.test.tsx"
+  ],
+  "validation": {
+    "typecheck": "PASS after native integration",
+    "schema": "213 validated, fail=0, warn=133 (summary length warnings; all-choice explanations present)",
+    "baselineTests": "2 files / 10 tests passed before additions",
+    "lint": "started; result unavailable after host disconnected",
+    "finalTests": "NOT RUN",
+    "build": "NOT RUN",
+    "finalPayload": "NOT COMMITTED OR PUSHED"
+  },
+  "blocker": "Windows host returned exec-server transport disconnected / 409 environment_offline. Local reads, writes, shell and app messaging cannot resume. This is a connection failure, not unresolved official answers.",
+  "stage1": {
+    "verdict": "CONTENT_REVIEW_GO_EXACT_SCOPE_ONLY",
+    "reviewer": "independent Astra /root/josanshi_independent_review",
+    "authoredHashes": {
+      "108-am-authored.json": "c2f1b368ea9dbf939e75dcd8b5058b3453df48bb79fb3d9837c92d258d405c5d",
+      "109-pm-authored.json": "ff6d14bbc3342352000ee42066d130759e13d51c2f07d4e1cca0eff11090ed7c"
+    },
+    "questionIds": [
+      "josanshi-2024-annual-am-q9",
+      "josanshi-2024-annual-am-q10",
+      "josanshi-2024-annual-am-q14",
+      "josanshi-2024-annual-am-q16",
+      "josanshi-2024-annual-am-q28",
+      "josanshi-2024-annual-am-q47",
+      "josanshi-2024-annual-am-q48",
+      "josanshi-2024-annual-am-q51",
+      "josanshi-2024-annual-am-q52",
+      "josanshi-2025-annual-pm-q2",
+      "josanshi-2025-annual-pm-q12",
+      "josanshi-2025-annual-pm-q26",
+      "josanshi-2025-annual-pm-q34",
+      "josanshi-2025-annual-pm-q53"
+    ],
+    "acceptedCorrections": [
+      "108AM9 figure4 Landau response",
+      "108AM16 figure4 mother side-lying and touching infant",
+      "108AM47 figure3 includes sacral/perineal shading but overly high thoracic spread",
+      "109PM12 distinguish crowning from transient appearance",
+      "109PM53 requiredSelections=2"
+    ],
+    "savedReport": "Initial REVIEW-ASTRA-STAGE1.json exists locally; final GO version save failed while environment offline."
+  },
+  "stage2": {
+    "status": "WORDING AGREED; NOT APPLIED OR HASH-REVIEWED",
+    "session": "108-pm",
+    "questionNumbers": [
+      3,
+      12,
+      24,
+      27,
+      37,
+      47
+    ],
+    "corrections": {
+      "3": {
+        "explanation": "公式正答はウ。鏡で左右の乳房の形・皮膚・乳頭の変化を比較する。自己触診には立位と仰臥位の方法があり、立位そのものを禁止する設問ではない。",
+        "choiceExplanations": {
+          "イ": "基本手順では仰臥位で乳房を広げて触れる方法も用いる。立位の触診も実際には行われるため、この肢を立位の触診が常に誤りという意味で覚えない。公式採点ではウを選ぶ。",
+          "エ": "視診の標準的説明では両腕を下げた姿勢と両腕を上げた姿勢で左右を比較する。片腕の挙上自体が禁忌という意味ではない。"
+        },
+        "urls": [
+          "https://www.osakacity-hp.or.jp/juso/about/departments/surgery/self.html",
+          "https://www.anzu.or.jp/ichinomiyanishi/about/kenkouno_tsubo/nyuugann/nyuugan_09/"
+        ]
+      },
+      "12": {
+        "explanation": "大泉門が先進する屈曲不十分な児頭では前後径周囲面で通過する。十分に屈曲した小泉門先進の小斜径周囲面とは異なる。",
+        "choiceExplanations": {
+          "イ": "大泉門が先進し、小泉門を触れない所見から、屈曲が不十分な児頭の前後径周囲面での通過を考える。"
+        }
+      },
+      "24": {
+        "explanation": "公式正答はオ。新生児真性メレナの代表的な病態として、ビタミンK欠乏による凝固障害と児自身の消化管出血を問う。壊死性腸炎・胃粘膜病変・食物蛋白による消化管疾患も出血を起こし得るため、児の血便の原因がK欠乏だけという意味ではない。"
+      },
+      "27": {
+        "explanation": "公式正答はウ・オ。閉経移行期後期から閉経後早期には中性脂肪とLDLが高くなる傾向が報告される。骨代謝は吸収亢進が形成を上回ることが中心で、形成の一律低下やHDLの一律変化と単純化しない。",
+        "choiceExplanations": {
+          "エ": "HDL値は閉経移行期・閉経後の時期や個人差で変わり、一時的な上昇の報告もある。公式正答はウ・オであり、HDLが全員で必ず低下するという意味ではない。"
+        },
+        "urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/19357323/"
+        ]
+      },
+      "37": {
+        "explanation": "子宮底の浮球感から児頭が上方の骨盤位が示唆され、児背は母体左側、胎児腹側は右側にある。本問では胎児腹側を下にする右側臥位で休む助言が公式正答。右側臥位で必ず頭位になるという意味ではなく、体位療法の有効性を裏付ける試験の根拠は十分でない。",
+        "choiceExplanations": {
+          "ウ": "児背は母体左側、胎児腹側は右側にある。本問では胎児腹側を下にする右側臥位で休む助言を選ぶ。頭位への回転を保証する助言ではない。",
+          "イ": "32週時点では自然回転の可能性があり、生活上の助言を問う本問で直ちに分娩方法の話を優先する選択ではない。帝王切開の可能性の相談自体を禁じる趣旨ではない。"
+        }
+      },
+      "47": {}
+    },
+    "instruction": "Apply only these explanation fields and append references to saved 108-pm-authored.json, preserve original question/choices/official answers. Then set the six needsReview flags false after rereading the corrected exact payload. PM47 latest saved draft already limits IV use to oral administration being difficult and does not say all CPAP infants require it."
+  },
+  "referenceLimits": [
+    {
+      "question": "108AM51",
+      "verifiedUrl": "https://www.city.miyawaka.lg.jp/kiji003445312/index.html",
+      "note": "Municipal primary source confirms 2022 births >=28 weeks, no birth-weight condition, application age1–5. JCQHC complete agreement PDF was not downloaded successfully."
+    },
+    {
+      "question": "108AM51",
+      "verifiedUrl": "https://www.happy-at-home.org/pdf/20210120_3.pdf",
+      "note": "Reposted JCQHC-authored 2022 reform document confirms >=28 weeks and abolition of separate case review; attribution distinguishes repost from original host."
+    },
+    {
+      "question": "108AM52",
+      "url": "https://www.achmc.pref.aichi.jp/assets/clinical/R4/040.pdf",
+      "note": "This is a NEXT neonatal evacuation-triage research/opt-out document, NOT evacuation-drill results and NOT empirical proof of cot-first priority. Correct author-notes description; current explanation remains bounded to exam choice comparison."
+    },
+    {
+      "question": "109AM33",
+      "url": "https://www.who.int/publications/i/item/9789240030787",
+      "note": "Author confirmed WHO edition bibliographic page; PDF itself returned403. Do not claim the full PDF was acquired/read or bypass the refusal. Preserve official examination answer and distinguish population reference limits from fertility diagnosis."
+    }
+  ],
+  "resumeSteps": [
+    "Reconnect existing Windows host; do not recreate authored question sets or discard worktree changes.",
+    "Read latest local OWNER-LOCK and report/current git status before any mutation. Inspect edit_repo.py replace helper: use if new and new in text, so deleting josanshi partial-coverage test row actually runs.",
+    "Apply Stage2 wording and source-limit notes; save full authored snapshots and accurate independent-review report.",
+    "Run integrate.py --final and edit_repo.py from local report. Expect 219 native scored originals, 201 additions, excluded109PM31 evidence only, baseline18 unchanged.",
+    "Inspect final five remaining figure mappings and catalog/SEO/index/exclusion metadata with independent reviewer; do not claim full219 second-model review.",
+    "Fetch this remote branch, preserve its single handoff file, then join local native changes onto it without shared checkout reset/clean/stash/all-add.",
+    "Run typecheck, validate:questions --exam=josanshi, new/historical source tests, repository test suite, lint and build. Keep any actual failures explicit.",
+    "Commit only named qualification/code/test/evidence/image paths, push, create draft PR with actual addition counts, attach PR artifact and hand off to integration owner."
+  ],
+  "publicationGo": false,
+  "merged": false,
+  "deployed": false,
+  "mergeDeploymentOwner": "01a12330-b245-70ed-a108-0998b50830be",
+  "rights": "Attribution and cropping/rotation only. No statement of reuse permission obtained; owner handles publication rights."
+}
