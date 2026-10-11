@@ -1,0 +1,87 @@
+{
+  "scope": "2025年度一級土木施工管理技術検定第一次検定・問題A28の4肢に限る局所的な技術根拠確認",
+  "checkedAt": "2026-10-11",
+  "sourceGate": "HOLD: 2025年試験原本の公式ホスト同一性と独立受入れはこの調査で確認していない",
+  "candidateEdited": false,
+  "questionOrAnswerEdited": false,
+  "holdReleased": false,
+  "sourceNotes": [
+    "国土交通省中部地方整備局公開PDF『第3編 仮設工等 第1章 仮設工』を直接確認した。これは技術根拠であり、2025年試験原本・正答表そのものではない。",
+    "親から示された C:/Users/kanet/AppData/Local/Temp/primary-followup/tokyo-civil-standard-2022.pdf は当環境の指定パスで存在を確認できなかった。既知STOP資料の再取得・アクセス拒否の回避は行っていない。"
+  ],
+  "evidence": [
+    {
+      "choiceNumber": 1,
+      "match": "PARTIAL",
+      "finding": "仮締切・土留めに伴う実排水では、排水量の測定に加え、河川側と掘削側の水位を測定することが標準とされ、排水量の変化を監視する部分を支える。",
+      "source": {
+        "issuer": "国土交通省中部地方整備局",
+        "title": "第3編 仮設工等 第1章 仮設工",
+        "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+        "section": "1-3 排水工、3) 排水量の測定方法",
+        "pdfPage1Based": 102,
+        "printedPage": "3-1-102",
+        "webTextLines": "3169-3179"
+      },
+      "unconfirmed": "排水の濁りの変化と鋼矢板の変形を同時に監視するという肢全体を、この節だけでは直接確認できない。"
+    },
+    {
+      "choiceNumber": 2,
+      "match": "DIRECT",
+      "finding": "高地下水位の砂質地盤でボイリングを検討し、Terzaghi法を一般的な方法として安全率と土留壁の根入れ長で照査する点が一致する。資料は安全率 Fs≧1.2 と記す。",
+      "source": {
+        "issuer": "国土交通省中部地方整備局",
+        "title": "第3編 仮設工等 第1章 仮設工",
+        "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+        "section": "1-2-2 設計一般、(4) 掘削底面の安定、① ボイリング及びパイピングの検討",
+        "pdfPage1Based": [
+          71,
+          72
+        ],
+        "printedPage": [
+          "3-1-71",
+          "3-1-72"
+        ],
+        "webTextLines": "2210-2235"
+      },
+      "unconfirmed": null
+    },
+    {
+      "choiceNumber": 3,
+      "match": "PARTIAL",
+      "finding": "パイピングは土留壁・杭の接触面沿いに局所的ボイリングが進む現象で、浸透路長と水位差を考慮し、掘削底面からの根入れ長 d を用いて照査することは直接確認できる。",
+      "source": {
+        "issuer": "国土交通省中部地方整備局",
+        "title": "第3編 仮設工等 第1章 仮設工",
+        "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+        "section": "1-2-2 設計一般、(4) 掘削底面の安定、① ボイリング及びパイピングの検討",
+        "pdfPage1Based": 73,
+        "printedPage": "3-1-73",
+        "webTextLines": "2269-2280"
+      },
+      "unconfirmed": "砂質・粘性土地盤の両方に同じパイピング検討を要する点、および壁体幅で安全率を満足させる点はこの資料では明示されない。両地盤への一律適用を正しいと断定する解説は、この根拠だけでは保留すべきである。"
+    },
+    {
+      "choiceNumber": 4,
+      "match": "DIRECT_CONTRADICTION_OF_SOIL_TYPE",
+      "finding": "資料は、ヒービングを掘削底面付近に軟らかい粘性土がある場合の現象と定義し、含水比の高い粘性土地盤で安全性検討が必要と記す。主に沖積粘性土地盤を対象とし、安定数 Nb による判定を記す。肢の『砂質地盤の場合』はこの説明と食い違い、『軟らかい粘性土地盤の場合』への訂正が技術的に妥当。",
+      "source": {
+        "issuer": "国土交通省中部地方整備局",
+        "title": "第3編 仮設工等 第1章 仮設工",
+        "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+        "section": "1-2-2 設計一般、(4) 掘削底面の安定、② ヒービングの検討",
+        "pdfPage1Based": [
+          73,
+          74
+        ],
+        "printedPage": [
+          "3-1-73",
+          "3-1-74"
+        ],
+        "webTextLines": "2281-2300"
+      },
+      "qualification": "安定数については、資料は Nb≦3.14 ならヒービングの検討を省略可、Nb が3.14以上なら別式で検討とする。『所要安定数以下になるよう施工』という肢の後半を普遍的な施工基準と読むことは避ける。"
+    }
+  ],
+  "remainingTechnicalIssue": "肢1の濁り・鋼矢板変形の同時監視、肢3の粘性土地盤・壁体幅への適用は今回の一次資料では未確認。問題原稿のHOLDを維持する。"
+}

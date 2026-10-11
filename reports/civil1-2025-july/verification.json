@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T02:15:19.417608+00:00",
+  "recordedAt": "2026-10-11T02:21:28.299382+00:00",
   "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
   "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
   "sourceCounts": {
@@ -93,7 +93,16 @@
       "testsPassed": 3,
       "evidence": "a29-followup-test.log and actual a29-followup-test.exit marker",
       "scope": "A29 source-backed explanation correction; original questions, choices, answers unchanged",
-      "recordedAt": "2026-10-11T02:15:19.417608+00:00"
+      "recordedAt": "2026-10-11T02:20:23.926709+00:00"
+    },
+    "a28A47SourceFollowupTests": {
+      "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "filesPassed": 1,
+      "testsPassed": 3,
+      "recordedAt": "2026-10-11T02:21:28.299382+00:00",
+      "evidence": "a28-a47-followup-test.log plus actual a28-a47-followup-test.exit",
+      "scope": "A28 partial/direct primary matches and A47 explicitly qualified inference; all 101 original question/choice/answer triples unchanged"
     }
   },
   "cloudValidation": {
