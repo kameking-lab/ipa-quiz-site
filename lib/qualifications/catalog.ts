@@ -10,7 +10,8 @@ export type QualificationDomain =
   | "legal"
   | "safety"
   | "accounting"
-  | "welfare";
+  | "welfare"
+  | "personal-services";
 
 export type PublicationStatus =
   | "live"
@@ -627,6 +628,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "第77回（2025年実施）の午後から、原文・公式正答・全五肢の解説を照合した10原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
+  },
+  {
+    slug: "riyoshi", examCode: "riyoshi", shortName: "理容師", fullName: "理容師国家試験", domain: "personal-services",
+    administrator: "公益財団法人理容師美容師試験研修センター",
+    officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
+    officialReuseTermsUrl: "https://www.rbc.or.jp/exam/past_question/",
+    status: "ready-to-ingest",
+    reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。公開は最終受入れとリリース台帳の承認後です。",
+    attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
+    remainingWork: ["統合主担当による最終受入れ・掲載可否の記録", "リリース台帳の明示承認"],
   },
   {
     slug: "boki3",
