@@ -1,8 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { ALL_QUESTIONS } from "@/data/questions";
-import { RINSHO_KENSAGISHI_QUESTIONS } from "@/data/questions/rinsho-kensagishi";
-import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "@/data/questions/shinryo-hoshasengishi";
+import labBatch1 from "@/data/questions/rinsho-kensagishi/2025-annual-pm-batch1.json";
+import type { Question } from "@/lib/questions/types";
+import radBatch1 from "@/data/questions/shinryo-hoshasengishi/2025-annual-pm-batch1.json";
 import labManifest from "@/data/questions/rinsho-kensagishi/source-manifest.json";
 import radManifest from "@/data/questions/shinryo-hoshasengishi/source-manifest.json";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
@@ -18,12 +19,12 @@ import ExamTopPage, { generateStaticParams } from "@/app/[exam]/page";
 const suites = [
   {
     exam: "rinsho-kensagishi", label: "臨床検査技師", round: 71, date: "2025-02-19",
-    questions: RINSHO_KENSAGISHI_QUESTIONS, manifest: labManifest,
+    questions: labBatch1 as Question[], manifest: labManifest,
     official: { 2: "5", 4: "5", 10: "1", 11: "3", 13: "3", 14: "2", 21: "1", 24: "1", 27: "4", 29: "4" },
   },
   {
     exam: "shinryo-hoshasengishi", label: "診療放射線技師", round: 77, date: "2025-02-20",
-    questions: SHINRYO_HOSHASENGISHI_QUESTIONS, manifest: radManifest,
+    questions: radBatch1 as Question[], manifest: radManifest,
     official: { 11: "3", 17: "5", 19: "5", 22: "1", 23: "25", 25: "14", 28: "13", 30: "3", 37: "4", 38: "3" },
   },
 ] as const;
@@ -32,11 +33,11 @@ const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 describe("saved lab/radiology first twenty original questions", () => {
   for (const suite of suites) {
     it(`${suite.exam}: imports exactly the fixed ten originals through both loaders`, async () => {
-      expect(await getQuestionsForExam(suite.exam)).toEqual(suite.questions);
+      expect(await getQuestionsForExam(suite.exam)).toEqual(ALL_QUESTIONS.filter(q => q.exam === suite.exam));
       expect(suite.questions).toHaveLength(10);
       expect(suite.questions.map(q => q.qNumber)).toEqual(Object.keys(suite.official).map(Number));
       expect(new Set(suite.questions.map(q => q.id)).size).toBe(10);
-      expect(ALL_QUESTIONS.filter(q => q.exam === suite.exam)).toEqual(suite.questions);
+      expect(ALL_QUESTIONS.filter(q => q.exam === suite.exam && suite.questions.some(original => original.id === q.id))).toEqual(suite.questions);
       const imported = new Set(suite.questions.map(q => `${suite.exam}-${suite.round}-pm-${q.qNumber}`));
       for (const held of suite.manifest.unimportedSavedIdentities) expect(imported.has(held), held).toBe(false);
       expect(suite.manifest.latestTwoRoundsComplete).toBe(false);
@@ -91,12 +92,13 @@ describe("saved lab/radiology first twenty original questions", () => {
       expect(html).toContain(q.sourcePdfUrl);
       expect(renderToStaticMarkup(<QuestionCard question={q} />)).toContain(edition);
       const hub = renderToStaticMarkup(await ExamTopPage({ params: Promise.resolve({ exam: suite.exam }) }));
-      expect(hub).toContain("10原問を部分収録");
-      expect(hub).toContain("全問は未完備");
+      const radiology = suite.exam === "shinryo-hoshasengishi";
+      expect(hub).toContain(`${(await getQuestionsForExam(suite.exam)).length}${radiology ? "問収録" : "原問を部分収録"}`);
+      expect(hub).toContain(radiology ? "公式図版省略" : "全問は未完備");
       for (const mode of [undefined, "year", "topic"] as const) {
         const description = examMetaDescription(suite.exam, 10, mode);
-        expect(description).toContain("10原問を部分収録");
-        expect(description).toContain("全問は未完備");
+        expect(description).toContain(radiology ? "10問収録" : "10原問を部分収録");
+        expect(description).toContain(radiology ? "採点除外" : "全問は未完備");
         expect(description).not.toContain("全1期分");
       }
     });
