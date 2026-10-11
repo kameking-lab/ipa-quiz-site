@@ -119,6 +119,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "chosashi", name: "土地家屋調査士", sub: "令和7・6年度 午前・午後（択一・記述）", domain: "money" },
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
   { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
