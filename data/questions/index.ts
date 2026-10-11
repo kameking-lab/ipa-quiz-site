@@ -51,6 +51,7 @@ import { HOIKUSHI_QUESTIONS } from "./hoikushi";
 import { MANKAN_QUESTIONS } from "./mankan";
 import { KASHIKIN_QUESTIONS } from "./kashikin";
 import { SHAROUSHI_QUESTIONS } from "./sharoushi";
+import { CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } from "./chusho-kigyo-shindanshi";
 import { KANGOSHI_QUESTIONS } from "./kangoshi";
 import { YAKUZAISHI_QUESTIONS } from "./yakuzaishi";
 import { AHAKI_ANMA_QUESTIONS, AHAKI_HARI_KYUU_QUESTIONS } from "./ahaki";
@@ -60,8 +61,13 @@ import { RIGAKU_RYOHOUSHI_QUESTIONS } from "./rigaku-ryohoshi";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "./sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "./shino-kunrenshi";
 import { RINSHO_KOGISHI_QUESTIONS } from "./rinsho-kogishi";
+import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
+import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
+
+import { RIYOSHI_QUESTIONS } from "./riyoshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,
   ip: IP_QUESTIONS,
   sg: SG_QUESTIONS,
@@ -105,6 +111,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
   ...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
   ...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
+  ...(isExamPublished("chusho-kigyo-shindanshi") ? { "chusho-kigyo-shindanshi": CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } : {}),
   ...(isExamPublished("kangoshi") ? { kangoshi: KANGOSHI_QUESTIONS } : {}),
   ...(isExamPublished("yakuzaishi") ? { yakuzaishi: YAKUZAISHI_QUESTIONS } : {}),
   ...(isExamPublished("ahaki-anma") ? { "ahaki-anma": AHAKI_ANMA_QUESTIONS } : {}),
@@ -115,6 +122,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
   ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

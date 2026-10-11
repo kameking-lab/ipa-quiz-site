@@ -1,3 +1,4 @@
+import { chushoSitemapPaths } from "@/lib/chusho-secondary/data";
 import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
 import { NATIVE_QUESTIONS, nativeQuestionPaths, nativeSubjectPath } from "@/lib/denken2/native";
 import { secondarySitemapPaths } from "@/lib/denken2/secondary";
@@ -337,7 +338,7 @@ export function renderExamsSitemapXml(): string {
   const nativeSubjects = [...new Set(NATIVE_QUESTIONS.map(q => nativeSubjectPath(q.year, q.subject)))];
   const denken1Subjects = [...new Set(DENKEN1_NATIVE_QUESTIONS.map(q => denken1NativeSubjectPath(q.year, q.subject)))];
   const denken3Subjects = [...new Set(DENKEN3_NATIVE_QUESTIONS.map(q => denken3NativeSubjectPath(q.sitting, q.subject)))];
-  const nativeRoutes = [...nativeSubjects, ...nativeQuestionPaths(), ...secondarySitemapPaths(), ...denken1Subjects, ...denken1NativeQuestionPaths(), ...denken3Subjects, ...denken3NativeQuestionPaths()]
+  const nativeRoutes = [...chushoSitemapPaths(), ...nativeSubjects, ...nativeQuestionPaths(), ...secondarySitemapPaths(), ...denken1Subjects, ...denken1NativeQuestionPaths(), ...denken3Subjects, ...denken3NativeQuestionPaths()]
     .map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly" as const, priority: 0.6 }));
   return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes]);
 }
