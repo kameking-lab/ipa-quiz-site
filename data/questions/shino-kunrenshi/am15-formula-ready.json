@@ -1,0 +1,46 @@
+[
+  {
+    "id": "shino-kunrenshi-2025-annual-am-q15",
+    "exam": "shino-kunrenshi",
+    "session": "am",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "subject": "午前",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "視能訓練士",
+      "第56回",
+      "午前"
+    ],
+    "difficulty": 3,
+    "question": "－6.00 Ｄのコンタクトレンズで完全矯正されているとき、眼鏡での完全矯正に\n変更する場合の球面度数［D］はどれか。ただし、頂点間距離は12 mm とする。",
+    "choices": {
+      "ア": "－5.50",
+      "イ": "－6.00",
+      "ウ": "－6.50",
+      "エ": "－7.00",
+      "オ": "－7.50"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "コンタクトレンズは角膜面にあり、眼鏡は角膜から12 mm 前方にある。近視の場合、眼鏡レンズをこの距離だけ前に置くと実効屈折力が弱まるため、眼鏡では度数を強くする必要がある。眼鏡度数 F = Fc/(1+d·Fc) で、Fc=−6.00 D(符号付き)、d=0.012 m(眼鏡を角膜から前方に置く距離)とすると、F=−6.00/(1+0.012×(−6.00))=−6.00/0.928≒−6.47 D となる。これを丸めると −6.50 D。よって正解は3。",
+    "choiceExplanations": {
+      "ア": "−5.50 D は、近視で眼鏡の度数を弱くした場合の値。近視ではコンタクトから眼鏡に替えると度数は強くなるので誤り。この選択肢は遠視に近い方向の補正の考え方である。",
+      "イ": "−6.00 D は頂点間距離を無視した値。12 mm の頂点間距離があるため換算が必要で、同じ度数にはならない。",
+      "ウ": "正しい。−6.00/(1+0.012×(−6.00))≒−6.47 D であり、最も近い −6.50 D となる。",
+      "エ": "−7.00 D は強すぎる。頂点間距離12 mm の換算では約0.5 D の変化にとどまる。",
+      "オ": "−7.50 D は強すぎる。−6.00 D・12 mm の換算では約−6.5 D である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10a_01.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第56回視能訓練士国家試験」午前 第15問。解説は独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  }
+]

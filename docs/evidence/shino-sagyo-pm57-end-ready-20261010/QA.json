@@ -1,0 +1,40 @@
+{
+  "base": "43d937f764e9aacabe310ccaf4f9e05f61a7f18c",
+  "readyNew": {
+    "sagyo-ryohoshi": 82,
+    "shino-kunrenshi": 16
+  },
+  "readyNewChoiceExplanations": 490,
+  "cumulative": {
+    "sagyo-ryohoshi": 142,
+    "shino-kunrenshi": 76,
+    "originals": 218,
+    "choiceExplanations": 1090
+  },
+  "newHoldDrafts": 21,
+  "newHoldBeforeDraft": 7,
+  "oldReadyJsonSha256": {
+    "sagyo-ryohoshi": "3f82e2a961a7b50d083bf418951becc85dfa365e8d1457d5c2e69dfc5433ef45",
+    "shino-kunrenshi": "3d132a00837f2d9bccb357b90d9626020f9dccf0103401ebf9dfa26b8dd6d993"
+  },
+  "newReadyJsonSha256": {
+    "sagyo-ryohoshi": "2e93438db5cd6bc847b7e6d79b7a127637b9a6ffdddf82395c3aca0f3d4f9933",
+    "shino-kunrenshi": "4556fdc237dc4bc9d9d3ea3c5ff0f13e18be25232dfefc3802e2f9afc1e38a4a"
+  },
+  "integrationSha256": "250e1f7562300894fb0fce8ee18f1ef8b110f674f3e3040a21049fbff7621e66",
+  "checks": {
+    "savedOfficialPdfAndOriginalPagePngSha": "PASS",
+    "stemAndChoicesFromSavedPublicOriginal": "PASS",
+    "officialAnswerAndRequiredSelections": "PASS",
+    "fiveChoiceExplanationsPerOriginal": "PASS",
+    "allMaterialOrFigureFlagsExcluded": "PASS",
+    "old120JsonByteIdentical": "PASS",
+    "browserBundleReady218Held0SourceNames0FigureAssetNames0": "PASS",
+    "existingQuestionFileDeletions": 0,
+    "focusedTests": "10/10 PASS",
+    "typecheck": "PASS",
+    "scopedLint": "PASS",
+    "fullValidator": "19499 ok; 0 fail; 14764 warnings"
+  },
+  "publication": "local additive candidate only; no push, PR, merge, or HTTP"
+}
