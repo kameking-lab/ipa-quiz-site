@@ -21,4 +21,6 @@ ZAIJUSEI-attributedは出典を示すラベルです。転載許諾を取得し�
 
 本番マージ・デプロイはこの担当では行いません。統合主担当01a12330-b245-70ed-a108-0998b50830beへdraft PRと差分を渡します。重い全体build・全体テストは共有マシンの順番に従い、関連テスト・型検査・lint・スキーマ検査の結果と、未実行の全体検証を別に記録します。
 
-完成questions.json SHA256: `5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a`
+独立採用照合時のWindows作業ファイルquestions.json SHA256: `5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a`
+
+Gitが保存したLF形式のJSON SHA256: `29d62ae819c7f4929a2567c577feb028c17dbe256e981124a09720e3e2015076`。改行差だけでJSON内容は同一です。環境をまたぐ比較にはportable-digest.jsonの内容SHA256 `5f370a50b0ef1dd35e7bf21da1b13ad164aae965cb39b4a67ac7b4fef091c73f`を使います。
