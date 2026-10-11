@@ -5,6 +5,7 @@ import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
 import { examLabel } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 interface Props {
   exam: ExamCode;
@@ -55,7 +56,7 @@ export function ExamMainTopics({ exam }: Props) {
             主要出題分野
           </h2>
           <p className="text-[11px] text-muted-foreground">
-            シラバスと過去問頻出分野から要点をピックアップ
+            公開問題で扱われる学習分野を整理
           </p>
         </div>
       </div>
@@ -73,7 +74,9 @@ export function ExamMainTopics({ exam }: Props) {
         ))}
       </ul>
       <p className="mt-3 text-[10px] leading-relaxed text-muted-foreground">
-        ※ 主要分野は IPA シラバスと過去問頻出領域を参考に編集した目安。詳細は公式シラバスをご確認ください。
+        {getQualificationByExamCode(exam)
+          ? "主要分野は学習用に編集した目安です。範囲・実施形式・基準日は当該試験実施団体の公式案内を確認してください。"
+          : "主要分野はIPAのシラバス等を参考に編集した目安です。出題頻度の集計ではありません。詳細は公式シラバスを確認してください。"}
       </p>
     </section>
   );
@@ -96,7 +99,7 @@ export function ExamRelatedExams({ exam }: Props) {
             関連する試験区分
           </h2>
           <p className="text-[11px] text-muted-foreground">
-            前後のキャリアパスで繋がる IPA 試験
+            学習内容や資格の位置付けが関連する試験
           </p>
         </div>
       </div>

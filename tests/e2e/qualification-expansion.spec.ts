@@ -139,7 +139,12 @@ test("FP2 negative questions explain why a selected true statement is not the an
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();
   await expect(page.getByText("適切な記述なので、本問の正解ではありません。", { exact: false })).toBeVisible();
   await expect(page.getByText("不適切な記述で、本問の正解です。妻は自身の健康保険", { exact: false })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "解説の公式根拠" }).getByRole("link")).toHaveCount(3);
+  const sources = page.getByRole("navigation", { name: "問題・正答と参照資料" });
+  await expect(sources.getByRole("link")).toHaveCount(3);
+  for (const link of await sources.getByRole("link").all()) {
+    await expect(link).toHaveAttribute("href", /^https:\/\/www\.mhlw\.go\.jp\//);
+  }
+  await expect(page.getByRole("link", { name: /^公式問題PDF/ }).first()).toHaveAttribute("href", "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf");
 });
 
 test("FP2 uses the common quiz player with its law reference date and each-choice explanations", async ({ page }) => {

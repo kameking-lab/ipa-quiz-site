@@ -4,6 +4,7 @@ import { GraduationCap, ArrowRight } from "lucide-react";
 import type { ExamCode } from "@/lib/questions/types";
 import { getCategoryTip } from "@/lib/seo/category-tips";
 import { Badge } from "@/components/ui/badge";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 export function CategoryStudyTip({
   category,
@@ -21,7 +22,9 @@ export function CategoryStudyTip({
    */
   hasTopicPage?: boolean;
 }) {
-  const tip = getCategoryTip(category);
+  // This catalog covers IPA subjects; omit unsupported guidance.
+  const tip = getQualificationByExamCode(exam) ? undefined : getCategoryTip(category);
+  if (!tip) return null;
   const keywords = Array.from(
     new Set([...topicTags.slice(0, 4), ...tip.relatedKeywords]),
   ).slice(0, 8);

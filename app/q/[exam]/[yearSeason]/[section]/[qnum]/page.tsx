@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
@@ -21,6 +22,7 @@ import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/ex
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
+  getSharedSubjectTopics,
   getSameExamOtherYears,
   getSameExamRelatedQuestions,
   getSessionNeighbors,
@@ -482,11 +484,12 @@ export default async function QuestionPage({
           )}
 
           {q.officialReferenceUrls && q.officialReferenceUrls.length > 0 && (
-            <nav aria-label="解説の公式根拠" className="mt-4 text-sm">
-              <h3 className="font-semibold">解説の公式根拠</h3>
+            <nav aria-label="問題・正答と参照資料" className="mt-4 text-sm">
+              <h3 className="font-semibold">問題・正答と参照資料</h3>
+              <p className="mt-1 text-xs text-muted-foreground">問題冊子・正答表・図版と、解説の参照資料は役割が異なります。公式問題と正答の掲載は、独自解説の全説明を公式機関が認めたことを意味しません。</p>
               <ul className="mt-2 list-inside list-disc space-y-2">
                 {q.officialReferenceUrls.map((url, index) => (
-                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">公式資料 {index + 1}（{new URL(url).hostname}）</a></li>
+                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">{questionReferenceLabel(q, url)} {index + 1}（{new URL(url).hostname}）</a></li>
                 ))}
               </ul>
             </nav>
@@ -707,7 +710,7 @@ export default async function QuestionPage({
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {crossExamMode === "topic"
-                ? `トピック「${q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問`
+                ? `トピック「${getSharedSubjectTopics(q, crossExamByTopic).slice(0, 2).join("・")}」を扱う他試験区分の過去問`
                 : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
             </p>
           </div>

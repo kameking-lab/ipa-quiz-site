@@ -43,8 +43,8 @@ export async function generateMetadata({
   if (!topic) {
     return { title: "トピックが見つかりません", robots: { index: false } };
   }
-  const title = `${topic.tag} の過去問・AI解説 | 情報処理技術者試験`;
-  const description = `IPA 情報処理技術者試験の過去問のうち「${topic.tag}」を扱うものを横断的に収録。${topic.count}問の問題と AI 解説を提供します。`;
+  const title = `${topic.tag} の過去問・学習用解説`;
+  const description = `「${topic.tag}」を扱う収録済みの公開過去問と学習用解説。${topic.count}問の資格・年度・公式出典を各問題で確認できます。`;
   const ogParams = new URLSearchParams({
     type: "topic",
     title: `#${topic.tag}`,
@@ -151,7 +151,8 @@ export default async function TopicHubPage({
           #{topic.tag}
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          IPA 情報処理技術者試験の過去問から「{topic.tag}」を扱う問題を試験区分横断で収録しています。
+          収録済みの公開過去問から「{topic.tag}」を扱う問題を掲載しています。
+          資格・実施回・試験実施団体の出典は各問題ページで確認できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="outline">{pool.length} 問</Badge>

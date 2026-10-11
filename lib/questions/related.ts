@@ -96,6 +96,12 @@ export interface CrossExamRelated {
   mode: CrossExamMode;
 }
 
+/** Subject names must actually occur on at least one of the displayed targets. */
+export function getSharedSubjectTopics(current: Question, related: readonly Question[]): string[] {
+  const targetTags = new Set(related.flatMap((q) => q.topicTags.filter(isSubjectTopicTag)));
+  return [...new Set(current.topicTags.filter((tag) => isSubjectTopicTag(tag) && targetTags.has(tag)))];
+}
+
 /**
  * トピックタグを共有する他試験区分の過去問を、共有タグ数の多い順に返す。
  * 単純な filter().slice() は ALL_QUESTIONS 配列順の先頭を採るため、タグを 1 本
@@ -107,7 +113,8 @@ function byTopicTags(
   allQuestions: Question[],
   limit: number,
 ): Question[] {
-  const tagSet = new Set(current.topicTags);
+  const tagSet = new Set(current.topicTags.filter(isSubjectTopicTag));
+  if (tagSet.size === 0) return [];
   return allQuestions
     .filter(
       (x) =>
@@ -181,11 +188,17 @@ export function getCrossExamRelatedQuestions(
   allQuestions: Question[],
   limit: number,
 ): CrossExamRelated {
-  if (current.topicTags.length > 0) {
+  if (current.topicTags.some(isSubjectTopicTag)) {
     return { questions: byTopicTags(current, allQuestions, limit), mode: "topic" };
   }
   return {
     questions: byCategoryGroup(current, allQuestions, limit),
     mode: "category",
   };
+}
+
+/** Edition, session and figure markers do not establish a shared subject. */
+export function isSubjectTopicTag(tag: string): boolean {
+  const value = tag.trim();
+  return value.length > 0 && !/^(?:第\s*\d+\s*回|(?:令和|平成|昭和|20)\d+.*(?:年|年度)|必須(?:問題)?|必修(?:問題)?|一般(?:問題)?|状況設定(?:問題)?|午前[ⅠⅡIＩ]*|午後[ⅠⅡIＩ]*|科目[ABＡＢ]|図(?:版)?\s*\d*|別冊(?:No\.?)?\s*\d*|写真\s*\d*|選択式|択一式|正誤判定|公式公開問題)$/i.test(value);
 }

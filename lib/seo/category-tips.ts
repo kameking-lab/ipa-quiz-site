@@ -192,13 +192,6 @@ const TIPS: Record<string, CategoryTip> = {
   },
 };
 
-const FALLBACK_TIP: CategoryTip = {
-  whatMatters: "本問の分野で問われる代表的な知識・用語の整理。",
-  howToStudy:
-    "正解／誤答の選択肢ごとに「なぜ正しい / なぜ違うのか」を1行ずつ言語化すると定着する。",
-  relatedKeywords: [],
-};
-
-export function getCategoryTip(category: string): CategoryTip {
-  return TIPS[category] ?? FALLBACK_TIP;
+export function getCategoryTip(category: string): CategoryTip | undefined {
+  return TIPS[category];
 }

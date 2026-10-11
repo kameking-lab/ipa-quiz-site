@@ -15,7 +15,7 @@ import {
   groupByYearSeason,
 } from "@/lib/seo/exam-meta";
 import { questionPagePath } from "@/lib/seo/question-url";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -167,6 +167,7 @@ export default async function ExamYearSeasonPage({
         href: (q.type === "multiple-choice" || q.type === "numeric")
           ? `/quiz?${new URLSearchParams({ mode: "year", exam: q.exam, year: String(q.year), season: q.season, session: q.session, question: q.id, order: "1", returnTo: `/${exam}/${yearSeason}` }).toString()}`
           : questionPagePath(q),
+        explanationHref: isPracticeReadyQuestion(q) ? questionPagePath(q) : undefined,
       })),
     }),
   );

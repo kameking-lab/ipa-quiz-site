@@ -8,6 +8,24 @@ beforeEach(() => { route.search = "session=gakka&returnTo=%2Fq%2Ffp3%2F2026-publ
 afterEach(cleanup);
 
 describe("QuizModeTabs qualification context", () => {
+  it("continues FP3 q11 in the same published paper on both layouts", () => {
+    route.search = "exam=fp3&mode=year&year=2026&season=published&session=gakka&question=fp3-2026-published-gakka-q11&returnTo=%2Fq%2Ffp3%2F2026-published%2Fgakka%2Fq11";
+    render(<QuizModeTabs active="year" exam="fp3" />);
+    for (const link of screen.getAllByRole("link", { name: "通常クイズ" })) {
+      const url = new URL(link.getAttribute("href")!, "https://local.invalid");
+      expect(Object.fromEntries(url.searchParams)).toEqual({
+        exam: "fp3", mode: "random", year: "2026", season: "published",
+        session: "gakka", question: "fp3-2026-published-gakka-q11",
+        returnTo: "/q/fp3/2026-published/gakka/q11",
+      });
+    }
+    for (const name of ["復習", "弱点克服"]) {
+      for (const link of screen.getAllByRole("link", { name })) {
+        const url = new URL(link.getAttribute("href")!, "https://local.invalid");
+        expect(url.searchParams.has("question")).toBe(false);
+      }
+    }
+  });
   it("omits the unsupported stream mode for dental exams on both layouts", () => {
     const { container } = render(<QuizModeTabs active="random" exam="shika-ishi" />);
     expect(container.querySelectorAll('a[href^="/quiz/stream"]')).toHaveLength(0);

@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  buildAnalysisPost,
   buildFrequentTopicsPost,
   buildLastMonthPost,
   buildOverviewPost,
@@ -9,8 +8,9 @@ import {
 } from "@/data/blog/generators";
 import { getBlogPostBySlug } from "@/data/blog";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
+import { canonicalBlogSlug } from "@/lib/blog/article-aliases";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
-import type { ExamCode } from "@/lib/questions/types";
+import type { IpaExamCode } from "@/lib/questions/types";
 
 // Characterization tests for the per-exam blog post generators
 // (data/blog/generators.ts). data/blog/index.ts assembles their output and
@@ -21,9 +21,9 @@ import type { ExamCode } from "@/lib/questions/types";
 // exam-scoped relatedSlugs round-trip to a slug a sibling generator for the
 // same exam actually produces. Source is unchanged — these pin current behaviour.
 
-const EXAMS = Object.keys(EXAM_PROFILES) as ExamCode[];
+const EXAMS = Object.keys(EXAM_PROFILES) as IpaExamCode[];
 
-// The five per-exam generators, paired with the slug suffix each emits.
+// Four retained routes; the generic analysis series redirects to worked guides.
 const GENERATORS = [
   { name: "overview", build: buildOverviewPost, suffix: "goukaku-benkyouhou" },
   { name: "lastMonth", build: buildLastMonthPost, suffix: "cyokusen-1kagetsu" },
@@ -33,7 +33,6 @@ const GENERATORS = [
     suffix: "hinnshutsu-ronten-toppu10",
   },
   { name: "practice", build: buildPracticePost, suffix: "yoru-tokurensyu" },
-  { name: "analysis", build: buildAnalysisPost, suffix: "jisseki-mondai-bunseki" },
 ] as const;
 
 describe("blog per-exam generators — shape & consistency", () => {
@@ -122,7 +121,7 @@ describe("blog template generators — flagship 午後論述AI採点(/essay) CTA
 });
 
 describe("blog templates never advertise clock-based freshness", () => {
-  for (const g of [{name:"overview",build:buildOverviewPost},{name:"analysis",build:buildAnalysisPost}]) {
+  for (const g of [{name:"overview",build:buildOverviewPost}]) {
     it(`${g.name} is a study guide without an automatic latest-year claim`, () => {
       const post=g.build("ap",0);
       expect(post.title).not.toMatch(/20\d{2}|最新/);
@@ -158,7 +157,7 @@ describe("blog template generators — every per-exam post carries a FAQ (FAQPag
   // overview/lastMonth/frequentTopics were FAQ-ified earlier; practice & analysis
   // were the last two templates without it. Pin that none silently loses its FAQ
   // across all 13 区分 (a dropped section = lost structured data for 13 pages).
-  for (const g of GENERATORS) {
+  for (const g of GENERATORS.filter(g => g.name !== "frequentTopics")) {
     for (const exam of EXAMS) {
       it(`${g.name}(${exam}) contains the FAQ section`, () => {
         expect(g.build(exam, 0).body).toContain("## よくある質問");
@@ -167,14 +166,14 @@ describe("blog template generators — every per-exam post carries a FAQ (FAQPag
   }
 });
 
-describe("blog template generators — analysis never funnels to flagship /essay", () => {
+describe("worked guides never funnel to flagship /essay", () => {
   // buildAnalysisPost has no 論述 writing section (it's a 出題傾向 analysis), so it
   // funnels to 分野別モード + the /[exam] hub only — never the flagship grader,
   // for any exam (mirrors frequentTopics). Guard against a stray /essay link
   // sneaking into the FAQ or body for the 論文区分.
   for (const exam of EXAMS) {
     it(`analysis(${exam}) does NOT link to /essay`, () => {
-      expect(buildAnalysisPost(exam, 0).body).not.toContain("](/essay)");
+      expect(buildFrequentTopicsPost(exam, 0).body).not.toContain("](/essay)");
     });
   }
 });
@@ -192,7 +191,7 @@ describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 4
         // them must resolve — otherwise the related-posts rail links to a 404.
         expect(examScoped.length).toBeGreaterThan(0);
         for (const s of examScoped) {
-          expect(family.has(s)).toBe(true);
+          expect(family.has(canonicalBlogSlug(s))).toBe(true);
         }
       }
     });

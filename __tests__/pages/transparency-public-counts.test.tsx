@@ -31,7 +31,7 @@ describe("transparency published counts", () => {
     const questions = domains.reduce((sum, domain) => sum + domain.totalQuestions, 0);
     const qualifications = domains.reduce((sum, domain) => sum + domain.qualificationCount, 0);
     // The current public directory includes non-IPA qualifications; a fixed 13
-    // must fail even though the historical March report still mentions 13.
+    // must fail even though the common IPA catalog has thirteen exam codes.
     expect(qualifications).toBeGreaterThan(13);
 
     const home = render(<HomePage />);
@@ -50,14 +50,12 @@ describe("transparency published counts", () => {
     expect(qualificationsCard).toHaveTextContent("ホームと同じ公開範囲");
   });
 
-  it("preserves historical reports and the existing free-access promises", async () => {
+  it("publishes verified current changes without unsupported historic costs or achievements", async () => {
     const page = render(await TransparencyPage());
     const view = within(page.container);
-    for (const month of ["2026-03", "2026-04", "2026-05", "2026-09"]) {
-      expect(view.getByText(`${month} 月次レポート`)).toBeInTheDocument();
-    }
-    expect(view.getByText("全 13 試験区分の問題データ統合")).toBeInTheDocument();
-    expect(view.getByText("解説リファクタを残り 12,094 問に展開")).toBeInTheDocument();
+    expect(view.getByText("2026-10 月次レポート")).toBeInTheDocument();
+    expect(view.queryByText("解説リファクタを残り 12,094 問に展開")).not.toBeInTheDocument();
+    expect(page.container).toHaveTextContent("請求・集計証跡を未確認のため、費用実績は未掲載");
     expect(view.getByText("全機能を無料で公開し続ける。")).toBeInTheDocument();
     expect(view.getByText("全機能無料")).toBeInTheDocument();
     expect(page.container).toHaveTextContent("金銭的負担はお願いしません。AI コパイロットは無料で質問でき、連続利用や大量送信には適正利用制限があります。");

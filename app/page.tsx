@@ -9,8 +9,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 
-const title = "IPA・安全衛生・FPの過去問を無料で学習 — 過去問AI";
-const description = "IPA情報処理技術者試験、安全衛生、FP・電験三種・第二種電気工事士・宅建・2級土木/管工事施工管理の公式公開過去問を無料で学習。公式正答とAIを活用した学習用解説を確認し、1問ずつ演習と復習を進められます。";
+const title = "資格の公開過去問と学習用解説 — 過去問AI";
+const description = "IPA・FP・電気・医療・福祉・不動産・安全衛生等の資格の公開過去問を無料で学習。資格と実施回から問題を選び、公式出典・正答とAI支援で編集した学習用解説を確認して演習・復習を進められます。";
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },

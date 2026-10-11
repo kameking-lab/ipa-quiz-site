@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -65,6 +66,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...Object.entries(BLOG_ARTICLE_ALIASES).map(([alias, canonical]) => ({
+        source: `/blog/${alias}`,
+        destination: `/blog/${canonical}`,
+        statusCode: 301 as const,
+      })),
       // /quiz with no mode query → home (broken entry point)
       {
         source: "/quiz",

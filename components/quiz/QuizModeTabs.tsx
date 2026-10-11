@@ -68,6 +68,14 @@ export function QuizModeTabs({ active, exam = "ap" }: Props) {
       const value = search.get(name);
       if (value && (name !== "session" || key !== "mock")) url.searchParams.set(name, value);
     }
+    // Continue from the displayed problem when changing its presentation mode.
+    // Review/weakness use their own history pool, so an exact problem is not forced there.
+    if (key === "random") {
+      for (const name of ["year", "season", "question"]) {
+        const value = search.get(name);
+        if (value) url.searchParams.set(name, value);
+      }
+    }
     return url.pathname + url.search;
   }
   return (

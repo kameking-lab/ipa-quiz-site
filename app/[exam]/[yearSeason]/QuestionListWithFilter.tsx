@@ -15,6 +15,7 @@ export interface QuestionListItem {
   isPlaceholder: boolean;
   questionPreview: string;
   href: string;
+  explanationHref?: string;
 }
 
 export interface SessionGroup {
@@ -156,6 +157,7 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
                   <li key={q.id}>
                     <a
                       href={q.href}
+                      aria-label={`問${q.qNumber}を解く`}
                       className={cn(
                         "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
                         status
@@ -209,8 +211,13 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
                           {q.questionPreview}
                         </span>
                       </span>
-                      <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                      <span className="mt-2 flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
                     </a>
+                    {q.explanationHref && (
+                      <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
+                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">問{q.qNumber}の解説を見る</a>
+                      </div>
+                    )}
                   </li>
                 );
               })}
