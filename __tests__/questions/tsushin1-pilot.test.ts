@@ -9,12 +9,14 @@ import crops from "@/docs/evidence/tsushin1-2026/complete/CROP-RECEIPTS.json";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
+const yearQuestions = TSUSHIN1_QUESTIONS.filter((q) => q.year === 2026);
+
 describe("1級電気通信工事 令和8年度第一次検定全90原問", () => {
   it("A55問・B35問を年度/冊子/問番号ごとに一意に保持する", () => {
     expect(source.papers.map((paper) => paper.officialQuestionCount)).toEqual([55, 35]);
     expect(source.papers.map((paper) => paper.publishedCount)).toEqual([55, 35]);
-    expect(TSUSHIN1_QUESTIONS).toHaveLength(90);
-    expect(new Set(TSUSHIN1_QUESTIONS.map((q) => q.id)).size).toBe(90);
+    expect(yearQuestions).toHaveLength(90);
+    expect(new Set(yearQuestions.map((q) => q.id)).size).toBe(90);
     for (const paper of source.papers) {
       expect(paper.questions.map((q) => q.number)).toEqual(Array.from({ length: paper.officialQuestionCount }, (_, n) => n + 1));
     }
@@ -24,7 +26,7 @@ describe("1級電気通信工事 令和8年度第一次検定全90原問", () =>
 
   it("全問の公式正答の順序と四肢・全肢解説を保持する", () => {
     const keys = ["ア", "イ", "ウ", "エ"];
-    for (const question of TSUSHIN1_QUESTIONS) {
+    for (const question of yearQuestions) {
       const session = question.session as keyof typeof answers;
       expect(question.answer).toBe(keys[answers[session][question.qNumber - 1]! - 1]);
       expect(question.officialAnswerNumber).toBe(String(answers[session][question.qNumber - 1]));
@@ -41,7 +43,7 @@ describe("1級電気通信工事 令和8年度第一次検定全90原問", () =>
 
   it("図表画像を原本クロップのSHA-256と照合する", () => {
     for (const crop of crops) {
-      const question = TSUSHIN1_QUESTIONS.find((q) => q.session === crop.session && q.qNumber === crop.number);
+      const question = yearQuestions.find((q) => q.session === crop.session && q.qNumber === crop.number);
       expect(question?.hasImage).toBe(true);
       expect(question?.imageUrls).toHaveLength(crop.images.length);
       expect(question?.imageAltTexts).toHaveLength(crop.images.length);
@@ -54,7 +56,7 @@ describe("1級電気通信工事 令和8年度第一次検定全90原問", () =>
   });
 
   it("失われやすい指数・否定式・周波数添字を復元する", () => {
-    const findA = (number: number) => TSUSHIN1_QUESTIONS.find((q) => q.session === "mondai-a" && q.qNumber === number)!;
+    const findA = (number: number) => yearQuestions.find((q) => q.session === "mondai-a" && q.qNumber === number)!;
     expect(findA(1).choices?.エ).toContain("10⁻¹");
     expect(findA(9).choices?.ウ).toContain("B̄");
     expect(findA(19).choices?.ア).toContain("G₁G₂");

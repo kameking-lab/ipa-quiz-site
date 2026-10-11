@@ -1,0 +1,189 @@
+{
+  "reviewType": "targeted-independent-review",
+  "exam": "tsushin1",
+  "year": 2025,
+  "reviewedAtUtc": "2026-10-11T01:37:07.980386+00:00",
+  "scope": [
+    "A1",
+    "A2",
+    "A3",
+    "A9",
+    "A19",
+    "A48",
+    "A49",
+    "A50",
+    "B31",
+    "B35"
+  ],
+  "scopeNote": "対象10問のみ。全量二重査読ではない。キー変更・worktree編集・公開判定なし。",
+  "sourceProvenance": "2025原本はJCTC形式のdobokujira公開保存コピー。直接公式取得・権利許諾の証拠とはしない。",
+  "result": "対象原稿の追加必須修正は現在0件。A50規格本文とB31距離解釈には以下の証拠限界を残す。",
+  "items": [
+    {
+      "question": "A1",
+      "officialAnswer": 1,
+      "status": "pass",
+      "finding": "原図Q=+32μC、r=2m。E=kQ/r²=7.2×10⁴V/m。",
+      "originalImage": "review-images/2025-a-q01-1.png",
+      "originalImageSha256": "2b53d706c420ee7e0a498b1aa3713fb3babe45f4936a566aab369b503835c605"
+    },
+    {
+      "question": "A2",
+      "officialAnswer": 4,
+      "status": "pass",
+      "finding": "同方向10A、間隔1m。F/L=μ₀I₁I₂/(2πr)=2.0×10⁻⁵N/m、引力b。",
+      "originalImage": "review-images/2025-a-q02-1.png",
+      "originalImageSha256": "a747a97d8a58dfea18ba652b59049d2611800abb0cccb4919e7c256713ee995d"
+    },
+    {
+      "question": "A3",
+      "officialAnswer": 3,
+      "status": "pass",
+      "finding": "中央3V正極下、右2V正極上を確認。(16−V)/2=(V+3)/3+(V−2)/2、V=6、I=5A。",
+      "originalImage": "review-images/2025-a-q03-1.png",
+      "originalImageSha256": "9ee9c3a0333f8537df2118a7177075511ec3fdc4bf26f23fb34a47ef4a27f8ac"
+    },
+    {
+      "question": "A9",
+      "officialAnswer": 2,
+      "status": "pass",
+      "finding": "上段Ā+B、下段¬(A+B)、最終NAND。F=A+B。原本の選択肢上線を照合。",
+      "originalImage": "review-images/2025-a-q09-1.png",
+      "originalImageSha256": "97a2981d94a3148774161de4683471d1ae10488a264a8de4cf714465d33464be"
+    },
+    {
+      "question": "A19",
+      "officialAnswer": 4,
+      "status": "pass",
+      "finding": "理想ダイオードの上下制限E₂〜E₁。波形4を、問題クロップに加えてno19-choices-qa.pngで確認。",
+      "originalImage": "review-images/2025-a-q19-1.png",
+      "originalImageSha256": "3cf460d81d938cf4dc27de45bddc1c2aa6568dda8e9f3ea8a37d53e6e72ed45c"
+    },
+    {
+      "question": "A48",
+      "officialAnswer": 4,
+      "status": "pass",
+      "finding": "METI解釈148・149条。原則3m、35%以上なら8m、55%以上なら距離例外。25%/2mは適合、50%/10mは不適合。需要率補正と幹線遮断器定格の説明も整合。",
+      "originalImage": "review-images/2025-a-q48-1.png",
+      "originalImageSha256": "47c8b5d154d6b15e5b78dd5ba01879921ac9594dc00e9c66011315ca3475428b"
+    },
+    {
+      "question": "A49",
+      "officialAnswer": 3,
+      "status": "pass",
+      "finding": "原図14〜18時の最大1000kW÷設備容量2000kW=50%。平均負荷率と混同なし。",
+      "originalImage": "review-images/2025-a-q49-1.png",
+      "originalImageSha256": "2155f56765540e594fcc0d11e60454296abbd12989f7db6e7361fdda7fcfe821"
+    },
+    {
+      "question": "A50",
+      "officialAnswer": 1,
+      "status": "pass_with_evidence_limit",
+      "finding": "公式キー1を維持。改稿後は通常時・蓄電池時ともインバータ給電で出力無瞬断と説明し、蓄電池運転への移行自体を否定していない。メーカー一次資料と整合。ただし問題のJIS条文そのものは未照合のため、肢1の表現を不適当とする厳密な規格上の理由まで独立確証したとはしない。",
+      "originalImage": "review-images/2025-a-q50-1.png",
+      "originalImageSha256": "5819e2ec10945e4e33888963885db71270ea24d1c61fa01b07fa1d61d8a29dd9"
+    },
+    {
+      "question": "B31",
+      "officialAnswer": 4,
+      "status": "pass_with_evidence_limit",
+      "finding": "原本95m・キー4を維持。4対固定曲げ半径は外径4倍以上、外径変形結束不可、全対成端・より戻し最少。JEITAはチャネル最大100m、固定FD〜TO最大90mを区別。端末機器〜ネットワーク機器という原問条件から95mを機器間距離として読む現稿はこの区別と整合。95mを一般的上限又は必ず90+5mと断定しない。選択肢2は①③であり、②を批評していた旧稿の誤りは修正済み。",
+      "originalImage": "review-images/2025-b-q31-1.png",
+      "originalImageSha256": "84ee16f98fbb72bcc8bb18346c5800d71d945faf0a4c97f2a3d12dfd02c21c29"
+    },
+    {
+      "question": "B35",
+      "officialAnswer": 3,
+      "status": "pass",
+      "finding": "安衛則194条15、24、25、27：席/床以外乗車禁止、作業/油圧装置等は月次検査、記録3年、毎日の作業開始前点検。原稿は①④誤り・②③正しいと整合。",
+      "originalImage": "review-images/2025-b-q35-1.png",
+      "originalImageSha256": "47e9f87dc32a510dc3f40f935d331fb57cda4aab628a9530c29224c90848a61b"
+    }
+  ],
+  "resolvedFindings": [
+    {
+      "question": "A50",
+      "issue": "蓄電池運転への移行そのものを否定し得る表現",
+      "resolution": "通常/停電ともインバータ経由、出力無瞬断、運転状態移行自体は否定しないと限定。A50-REVIEW-CLARIFICATION.json参照。"
+    },
+    {
+      "question": "B31",
+      "issue": "選択肢2=①③の説明が含まれない②を批評",
+      "resolution": "①の曲げ半径3倍が不適当、③は本問条件では適当という現稿へ修正済み。"
+    }
+  ],
+  "remainingEvidenceLimits": [
+    {
+      "question": "A50",
+      "limit": "JIS規格本文は未読。メーカー一次資料で給電機構は確認したが、公式キー1の規格上の厳密な文言根拠は独立未確証。"
+    },
+    {
+      "question": "B31",
+      "limit": "95mは問題文の数値と公式キーを維持した条件解釈。JEITAが95mを普遍的上限と規定しているという主張はしない。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "METI",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "localFile": "../../tsushin1-2026/complete/reference/METI-DENGI.pdf",
+      "pdfPages1Based": [
+        147,
+        148,
+        149
+      ],
+      "relevance": "148条幹線と149条分岐条件",
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd"
+    },
+    {
+      "id": "MLIT",
+      "url": "https://www.mlit.go.jp/gobuild/content/001879364.pdf",
+      "localFile": "../../tsushin1-2026/complete/reference/MLIT-DENKI.pdf",
+      "title": "公共建築改修工事標準仕様書（電気設備工事編）令和4年版",
+      "pdfPages1Based": [
+        93,
+        94
+      ],
+      "relevance": "表2.8.1、2.8.2；4対曲げ半径、90m、コード、結束、成端",
+      "sha256": "e0bbf384320c1a21484b9a958b3da9d5e1646462632d7f27d9c80554350ad062"
+    },
+    {
+      "id": "JEITA",
+      "url": "https://home.jeita.or.jp/upload_file/20180618105816_zpmcjq1CM3.pdf",
+      "pdfPages1Based": [
+        14,
+        15,
+        16
+      ],
+      "relevance": "チャネル100mと固定FD〜TO90mの区別。本文抽出確認、Webスクリーンショットは取得不能。"
+    },
+    {
+      "id": "OMRON",
+      "url": "https://socialsolution.omron.com/jp/ja/products_service/ups/choose/kyuden.html",
+      "relevance": "常時インバータ給電及びバックアップ切替時無瞬断"
+    },
+    {
+      "id": "MHLW",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=6",
+      "relevance": "安衛則194条15・24・25・27"
+    }
+  ],
+  "reviewedFiles": {
+    "editorial-a-first.json": {
+      "sha256": "497ccbe55823ff0950e7dd2a47ba1c1dfedd005388c00a2b1f85e3eb18ecfd92",
+      "archivedFile": "editorial/editorial-a-first.json"
+    },
+    "editorial-a-last.json": {
+      "sha256": "1f6fbe05b94a3b37676d052305b9097099c8574fb3a995b80a70d9a8b00a6db1",
+      "archivedFile": "editorial/editorial-a-last.json"
+    },
+    "editorial-b.json": {
+      "sha256": "ab1b861720cecb5f3589b49d5e31643539a6c30b1b9d46b701a8439125aba64e",
+      "archivedFile": "editorial/editorial-b.json"
+    },
+    "OFFICIAL-ANSWERS.json": {
+      "sha256": "ba4fa223259d7a065a38e29a52e71d75ca9d174ea49a63dc5f3924df1b216f3b",
+      "archivedFile": "OFFICIAL-ANSWERS.json"
+    }
+  }
+}

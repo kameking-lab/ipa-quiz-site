@@ -69,7 +69,7 @@ def main():
                 images += 1
             total += 1
     assert total == 90 and preserved == 12 and images == len(crops)
-    report = {'exam':'tsushin1','year':2026,'officialOriginals':90,'completeOriginals':total,'preservedOriginals':preserved,'addedOriginals':total-preserved,'verifiedFigureQuestions':images,'sourceQuestionText':'fresh official extraction plus explicit image-reviewed transcription overrides','answerSourceSha256':source['answerSha256'],'latestTwoComplete':False,'secondYearOfficialOriginalCount':None,'secondYearBlocker':'2025 official questions A/B and answer key unavailable','publicationPerformed':False}
+    report = {'exam':'tsushin1','year':2026,'officialOriginals':90,'completeOriginals':total,'preservedOriginals':preserved,'addedOriginals':total-preserved,'verifiedFigureQuestions':images,'sourceQuestionText':'fresh official extraction plus explicit image-reviewed transcription overrides','answerSourceSha256':source['answerSha256'],'auditScope':'2026 first-stage only; combined coverage is verified by audit_tsushin1_latest_two.py','publicationPerformed':False}
     (EVIDENCE / 'MECHANICAL-AUDIT.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f'PASS {total}/90 source prompts, four choices, official answers and full explanations; {preserved} published originals unchanged; {images} figures verified')
 
