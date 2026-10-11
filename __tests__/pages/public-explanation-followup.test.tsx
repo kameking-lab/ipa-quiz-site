@@ -46,6 +46,10 @@ describe("bounded public explanation follow-up", () => {
   it("uses the published 2026 general CBT application windows and keeps special measures separate", () => {
     const application = faq("IPA 情報処理技術者試験の受験申込はどこから行いますか？");
     for (const text of ["2026年10月6日", "11月7日17時", "10月24日17時", "2027年1月27日", "2月16日", "2月27日", "特別措置筆記"]) expect(application.answer).toContain(text);
+    expect(application.answer).toContain("原則通年");
+    expect(application.answer).toContain("2026年12月28日以降は一時休止予定");
+    expect(application.answer).toContain("再開時期は公式案内で確認");
+    expect(application.sources?.some((source) => source.href === "https://www.ipa.go.jp/shiken/2026/cbt-202605-jisshi.html")).toBe(true);
     expect(application.answer).not.toContain("約 2 ヶ月前");
     const results = faq("合格発表はいつですか？");
     expect(results.answer).toContain("科目B群は後日の成績照会");
