@@ -37,3 +37,7 @@ validate-automotive-drafts.mjsは母数、原問ID重複、公式問番号、公
 validation.jsonには実際の完成数、採点対象数、図表数、原稿ハッシュを記録する。作業途中稿を完成数に含めない。
 
 再検査は `node scripts/automotive/validate-automotive-drafts.mjs data/qualification-staging/automotive/latest-two --require-manuscripts-complete` 。このフラグは原稿610件の整備を確認する。`--require-complete`は分類不整合の1件を検出して終了コード2になる。原稿完成と通常出題可能を混同しない。
+
+最終点検で15問36肢の説明を補強した。qa/explanation-delta-verification.jsonは最初の保存commitとの機械比較を記録し、全610原問の本文・選択肢・公式正答・出典・図参照が不変であることを確認する。
+
+qa/verification.jsonに型検査・ESLint・本番ビルド・テストの実行結果を保存する。全体Vitestの4771件中5件は既存3ファイルの高負荷時の時間切れと後続mock競合で失敗し、ソースやassertionを変更せず単独再実行した18件は全通過した。補強後の自動車4テストと型検査も再通過した。本番ビルドは公開レジストリへ未登録の原稿の文言補強前に通過し、公開runtimeのソースは変更していない。
