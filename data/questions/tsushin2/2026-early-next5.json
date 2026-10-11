@@ -1,0 +1,150 @@
+{
+  "exam": "tsushin2",
+  "year": 2026,
+  "season": "early",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "publishedCount": 5,
+  "questions": [
+    {
+      "number": 11,
+      "pdfPage": 7,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "下図に示す理想的な演算増幅器（オペアンプ）を使った増幅回路に関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "増幅回路の出力電圧 Vₒ は，反転入力端子に負帰還されている。",
+        "この増幅回路は，非反転増幅回路と呼ばれる。",
+        "増幅回路の出力電圧 Vₒ は，入力電圧 Vᵢ と逆位相である。",
+        "増幅回路の増幅率は，入力抵抗 R₁ と帰還抵抗 R₂ によって決まる。"
+      ],
+      "explanation": "図は、入力電圧を抵抗R₁を介して反転入力端子（−）に加え、非反転入力端子（＋）を接地した反転増幅回路です。出力はR₂を介して反転入力端子へ負帰還されています。理想オペアンプの負帰還動作では反転入力端子の電位もほぼ0 Vとなり、入力電流が流れないので Vₒ/Vᵢ＝−R₂/R₁ です。負号は入出力の位相反転を表します。「非反転増幅回路」とする選択肢2が適当ではありません。",
+      "choiceExplanations": [
+        "出力から帰還抵抗R₂を通って反転入力端子へ戻る経路があるので、負帰還という記述は適当です。",
+        "入力が抵抗R₁を介して反転入力端子へ加わる反転増幅回路です。非反転増幅回路という名称が誤りです。",
+        "電圧増幅率は−R₂/R₁です。負号が示すとおり、交流の入出力電圧は逆位相なので適当です。",
+        "理想回路の電圧増幅率は−R₂/R₁で、二つの抵抗の比によって決まるので適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.ti.com/lit/an/sboa092b/sboa092b.pdf"
+      ],
+      "imageUrl": "/images/tsushin2/2026-early/q11-figure.png"
+    },
+    {
+      "number": 14,
+      "pdfPage": 8,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "PON（Passive Optical Network）方式に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。\n「光電話で利用されている PON 方式では，電話事業者から電話加入者宅方向の信号は［ア］を用いて多重化し時間的に重ならないよう伝送する。一方，電話加入者宅から電話事業者方向の信号は［イ］を用いて，IP パケットの送信タイミングとデータ量を制御している。」",
+      "choices": [
+        "ア：TDM／イ：TDMA",
+        "ア：TDMA／イ：TDM",
+        "ア：FDM／イ：FDMA",
+        "ア：FDMA／イ：FDM"
+      ],
+      "explanation": "下り方向では、事業者側の装置が複数の加入者向けの信号を時間軸上に順番に並べる時分割多重（TDM）を使います。上り方向では複数の加入者側装置が同じ伝送路を共有するため、送信時間を割り当てて衝突を防ぐ時分割多元接続（TDMA）を使います。多重化と、複数端末による伝送路へのアクセスとを区別すると、ア＝TDM、イ＝TDMAで、選択肢1が適当です。",
+      "choiceExplanations": [
+        "下りは事業者側で信号を時間的に多重化するTDM、上りは複数加入者の送信時間を割り当てるTDMAとなり、適当です。",
+        "下りの多重化と上りの多元接続の名称が逆です。本問の下りはTDM、上りはTDMAです。",
+        "FDMとFDMAは周波数を分ける方式です。本問では時間的に重ならないよう伝送し送信タイミングを制御するので、時間を分ける方式です。",
+        "FDMAとFDMは周波数を分ける方式であり、下りの多重化と上りの多元接続という役割の対応も逆です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.itu.int/rec/T-REC-G.984.3-201401-I"
+      ]
+    },
+    {
+      "number": 16,
+      "pdfPage": 9,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "光ファイバを用いた伝送システムに関する次の記述のうち，適当なものはどれか。",
+      "choices": [
+        "強度変調の方法には，発光と変調を同時に行う直接検波がある。",
+        "光信号を電気信号に変換する受光素子に，半導体レーザを使用する。",
+        "デジタル伝送では，デジタル信号の「1 」，「0 」を光の有無に対応させた強度変調が用いられる。",
+        "WDM は，波長の異なる光信号を光分波器で合成し1 本の光ファイバで伝送する方式である。"
+      ],
+      "explanation": "光の強さを変える強度変調の基本的な方法では、デジタル信号の1と0を光の有無に対応させて伝送できます。選択肢3が適当です。送信側で光源の発光強度を直接変えるのは直接変調で、受信側で光を検出する直接検波とは異なります。また、受光素子は光を電気信号へ変えるフォトダイオードなどであり、半導体レーザは発光側の素子です。WDMでは送信側の光合波器で異なる波長をまとめ、受信側の光分波器で分けます。",
+      "choiceExplanations": [
+        "発光と変調を同時に行うのは直接変調です。直接検波は受信側の検出方式であり、用語が違います。",
+        "半導体レーザは電気エネルギーを光に変える発光素子です。光を電気信号に変える受光にはフォトダイオードなどを用います。",
+        "1と0を光の有無に対応させるオン・オフの強度変調は、デジタル光伝送に用いられるため適当です。",
+        "波長の異なる信号をまとめる役割は光合波器です。光分波器は多重された信号を波長ごとに分ける役割なので、記述が逆です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.hamamatsu.com/eu/en/news/featured-products_and_technologies/2024/photodiodes-exposed-unlocking-the-characteristics-of-these-crucial-sensors.html",
+        "https://www.cisco.com/c/en/us/products/collateral/optical-networking/ons-15454-series-multiservice-provisioning-platforms/product_data_sheet09186a00801a5572.html",
+        "https://arxiv.org/abs/2004.09895",
+        "https://api.p1.mks.com/medias/sys_master/images/images/h1b/heb/8797049913374/AN22-Modulating-Laser-Diodes.pdf"
+      ]
+    },
+    {
+      "number": 17,
+      "pdfPage": 9,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "携帯電話システムに用いられている技術に関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "ハンドオーバは，1 つの端末が複数の搬送波を同時に利用することで通信を高速化する技術である。",
+        "多元接続は，限られた周波数帯域で同時に複数のチャネルを設定して複数のユーザの同時通話を可能にする技術である。",
+        "デジタル変調方式には，周波数の利用効率を向上させる QPSK，16QAM，64QAM などの多値変調が用いられる。",
+        "エリアをセルと呼ばれる多数の小ゾーンに分割し，各セルに携帯電話と通信を行う基地局を設置している。"
+      ],
+      "explanation": "ハンドオーバは、端末の移動などに応じて通信を引き継ぐセルや基地局を切り替える技術です。一つの端末で複数の搬送波をまとめて使い通信速度を高める技術は、キャリアアグリゲーションです。この二つを取り違えた選択肢1が適当ではありません。多元接続は複数ユーザによる資源の共有、多値変調は一つのシンボルに複数ビットを対応させる技術、セル方式はサービスエリアを小区画に分ける構成です。",
+      "choiceExplanations": [
+        "複数搬送波をまとめて高速化するのはキャリアアグリゲーションです。ハンドオーバは通信先セルなどの切替えであり、記述は適当ではありません。",
+        "多元接続によって限られた無線資源を複数ユーザに割り当て、複数の通信を行えるので適当です。",
+        "QPSK、16QAM、64QAMはそれぞれ1シンボルに2、4、6ビットを対応させます。多値変調で周波数の利用効率を高めるという記述は適当です。",
+        "エリアをセルという小区画に分けて基地局が端末との通信を受け持つセル方式の記述であり、適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.etsi.org/deliver/etsi_ts/136300_136399/136300/16.04.00_60/ts_136300v160400p.pdf",
+        "https://www.ni.com/docs/en-US/bundle/rfmx-lte/page/lte-channels-and-carrier-aggregation.html"
+      ]
+    },
+    {
+      "number": 18,
+      "pdfPage": 10,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "無線 LAN の暗号化方式に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。\n「WPA2 は，暗号化プロトコルに［ア］，暗号化アルゴリズムに［イ］を使用しているため，WPA と比較して暗号化通信時の安全性が高められている。」",
+      "choices": [
+        "ア：WEP／イ：AES",
+        "ア：WEP／イ：RC4",
+        "ア：CCMP／イ：AES",
+        "ア：CCMP／イ：RC4"
+      ],
+      "explanation": "本問のWPA2に対応する組合せは、暗号化プロトコルがCCMP、暗号化アルゴリズムがAESです。CCMPはAESを使ってデータの暗号化と完全性の確認を行う方式なので、選択肢3が適当です。WEPはRC4を用いる旧方式で、従来のWPAで使われたTKIPもRC4を基礎とします。ここではWPAとWPA2の方式を比較しており、現在の無線LAN製品の設定を選ぶ問題ではありません。",
+      "choiceExplanations": [
+        "WEPはAESを用いる方式ではありません。WPA2の本問で求めるプロトコルはCCMPです。",
+        "WEPとRC4の対応自体は旧方式として正しいですが、WPA2で求められるCCMPとAESの組合せではありません。",
+        "CCMPはAESを用いるプロトコルで、WPA2の組合せとして適当です。",
+        "CCMPが用いる暗号化アルゴリズムはAESです。RC4との組合せは適当ではありません。"
+      ],
+      "officialReferenceUrls": [
+        "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-97.pdf",
+        "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/67134-wpa2-config.html"
+      ]
+    }
+  ]
+}
