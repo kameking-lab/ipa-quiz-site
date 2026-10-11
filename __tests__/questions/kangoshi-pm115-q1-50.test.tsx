@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -32,7 +33,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(proof.heldIdsNotRegistered).toHaveLength(14);
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q20");
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q28");
-    for (const held of proof.heldIdsNotRegistered.filter(id => ![1,3,5,15,20,21,22,28,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
+    for (const held of proof.heldIdsNotRegistered.filter(id => !followup.addedIds.includes(id) && ![1,3,5,15,20,21,22,28,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
   });
 
   it("retains all146 choice reasons and matching official keys in the original PM numbering", () => {
@@ -75,8 +76,8 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(total);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am" && q.qNumber <= 90)).toHaveLength(90);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90)).toHaveLength(88);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(115);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(114);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(118);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(117);
     const choiceCount = KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0);
     const catalog = getQualificationByExamCode("kangoshi")!;
     for (const text of [catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? "", examMetaDescription("kangoshi", total)]) {

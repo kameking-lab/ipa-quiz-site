@@ -1,0 +1,292 @@
+{
+  "reviewedAtUtc": "2026-10-11T01:16:08.8537339Z",
+  "reviewer": "nurse_local_evidence_review",
+  "scope": "PM88全5肢および残り7件のHOLD理由の独立局所審査。実装、公開、全量査読は実施していない。",
+  "candidateFileSha256": "56226b32d1a041dce68992a9268c72aaa809033b4ee561028e0b830cb79920df",
+  "savedDraftsFileSha256": "5bb98764cb1d9b7953050dc6fd752bd48171bea32c000cd473bc767a8b5e4ba3",
+  "counts": {
+    "registeredMain": 464,
+    "separatePr683": 3,
+    "target": 480,
+    "reviewedUnregistered": 8,
+    "stopUnchanged": 5,
+    "runtimeAddedByReviewer": 0
+  },
+  "gateLimit": "内容審査結果は未実装修正の受入れ、strict契約のOpus receipt、公開予定commitの審査、公開検証を代替しない。",
+  "accessBoundary": "EFSA DTU PDF、AAPD PDF、PMC全文、Karttunen publisher、fontanelle制限全文、USDA infant PDFへの拒否後の再取得・別経路取得は行っていない。",
+  "checks": {
+    "mediaStatus": "実行したがspawnSync git EPERM。公開面の現在値は確認できていない。",
+    "mediaPlan": "成功",
+    "localReading": "PowerShell Console.OutputEncoding=UTF8で日本語読取成功。",
+    "officialKey": "既存ローカルPDFとp1画像を照合。115回正答PDF p2テキストでB087=34、B088=14を確認。"
+  },
+  "items": [
+    {
+      "id": "kangoshi-2025-annual-pm-q88",
+      "status": "必要修正",
+      "contentVerdict": "PASS",
+      "requiredChange": "全5肢の本文修正は不要。sourceAnswerUrlの#page=1は#page=2へ訂正する。URL不変の運用契約がある場合は同一PDFの#page=2をofficialReferenceUrlsと証跡へ追加してB088行の位置を明示する。",
+      "choiceFindings": {
+        "ア": "PASS。平成22年身体発育調査の物理p21胸囲とp22頭囲の平均値表に対応。1歳直後に平均胸囲が平均頭囲を下回る群もあるため、『傾向』『年齢・性差』『1歳全員ではない』の現行限定は必要かつ適切。",
+        "イ": "PASS。保存済み原研究公開要旨の読取記録にある正期産児464 CT、16か月半数超、20か月88%と整合。現行文は全員の期限にせず、全文を読んだとも主張していない。",
+        "ウ": "PASS。拒否前に読取済みのAAPD chartの上下第二乳臼歯20–30か月に対応。全員の萌出期限とせず一般的目安としている。",
+        "エ": "PASS。PubMed21411136の公開要旨を独立に読取確認。1か月ピーク後2歳へ低下という傾向の引用で、120/100の一律固定値なし。",
+        "オ": "PASS。親agentが拒否前に読取済みのEFSA §6.1/6.2の摂取基準について共有した情報に依拠。§4のwater turnoverの乳児・幼児数値を必要摂取量へ置換していない。現行文は個人への一律処方量も提示していない。"
+      },
+      "waterEvidenceLimit": "EFSAの全文を本審査で再取得してはいない。親agentの拒否前読取報告は§6.1乳児100–190mL/kg/d、§6.2子供2–3歳1300mL/dと体重換算約78mL/kg/d。これらは公開本文へ新しい数値として追加せず、§4 turnoverの160±34/64±21等は根拠として不採用。AI（摂取目安）を個々人の測定済み必要量と同一視しない。",
+      "heartRateSource": "https://pubmed.ncbi.nlm.nih.gov/21411136/",
+      "remainingClinicalConflict": null,
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Bounded exam explanation"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q62",
+      "status": "必要修正",
+      "reason": "同意の一律免除を主張しなくても完成可能。日本小児科学会2022手引きp37は急変時の生命維持・後遺症予防、p64は緊急時と非緊急時を分けた全身診察、p62–63は別席問診、p75は逐語・客観記録を明記。通告時の守秘義務例外と診察同意は別問題。",
+      "recommendedChoiceExplanations": {
+        "ア": "誤り。保護者の同意を得ることだけを一律の前提として、必要な安全確認や緊急対応を止めることは適切ではありません。子どもの状態と緊急性に応じて説明・同意の扱いを判断します。虐待が疑われるという理由だけで、すべての診察や撮影の同意が不要になるわけではありません。",
+        "イ": "誤り。子どもの安全を守るため、院内の虐待対応チームや関係機関と必要な情報を共有します。プライバシーに配慮して情報を管理することと、必要な共有をしないことは異なります。",
+        "ウ": "適切です。子どもや家族の言葉をできるだけそのまま記録し、表情・態度・行動なども客観的に残します。観察した事実と医療者の推測を区別することが重要です。",
+        "エ": "誤り。保護者の前では話しにくかったり、口止めされていたりする場合があります。話せる年齢の子どもには、保護者が同席しない場面を作り、誘導や追及を避けて聞き取ります。"
+      },
+      "source": "https://www.jpeds.or.jp/uploads/files/20220328_g_tebiki_3.pdf",
+      "remainingClinicalConflict": null,
+      "acceptance": "上記の範囲で修正し該当頁を索引化すれば、同意一律免除の追加根拠探しを公開停止条件にする必要はない。写真撮影や性器診察について同意不要へ拡張しない。",
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Bounded exam explanation"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q7",
+      "status": "必要修正",
+      "reason": "原表未取得は、原表を転載・直接検証したと称さず公式問題と正答に範囲を限定する解説の絶対的障害ではない。公式B007=2、選択肢2=4か月を確認。90%の意味と各選択月齢の前後比較に限る。",
+      "recommendedExplanation": "本問の公式正答は4か月です。問われている90%の月齢基準は、その検査の基準集団で90%の乳児が項目を通過する月齢を指し、平均月齢や全員が達成する期限とは異なります。一般的な首すわりの目安や、別の版の検査の値に置き換えて考えないことがポイントです。",
+      "recommendedChoiceExplanations": {
+        "ア": "誤り。1か月は、本問で正答とされる90%通過の月齢基準である4か月より前です。早く達成する乳児がいることと、90%の基準月齢は別です。",
+        "イ": "正しい。本問の公式正答は4か月です。90%という割合を示す基準であり、すべての乳児がこの月齢に達成するという意味ではありません。",
+        "ウ": "誤り。7か月は、本問で問われた4か月の基準より後です。寝返りやお座りなど別項目の月齢から答えを推測しないようにします。",
+        "エ": "誤り。10か月は、本問の90%通過基準である4か月より後です。この基準だけを全員共通の期限や、個人の診断基準に読み替えることはできません。"
+      },
+      "requiredRemoval": "現行アの『1か月で首がすわる乳児は少なく』、ウの他項目月齢の類推、エの全員達成を思わせる記述を削る。『原表を確認済み』と記録しない。",
+      "remainingClinicalConflict": null,
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Bounded exam explanation"
+    },
+    {
+      "id": "kangoshi-2025-annual-pm-q87",
+      "status": "必要修正",
+      "reason": "ASN教材をラット記述だけを理由に全面排除する条件は過剰。p2 Tubulointerstitiumには一般的な加齢組織変化として基底膜の肥厚・分裂が記載され、p3 Tubulesのラット電子顕微鏡所見とは区別できる。ただしヒト一次実験の直接証明と称してはいけない。",
+      "requiredChanges": [
+        "冒頭の『尿細管の基底膜は肥厚して濃縮力などが低下する』は単一の因果機序を強く示すので、『加齢に伴い、膀胱の収縮力低下や腎の組織変化がみられます。公式正答は3・4です。尿濃縮力やGFRは一般に低下する方向ですが、変化には個人差があります。』へ修正。",
+        "肢エは『正しい。ASNの老年腎臓学教材は、加齢に伴う尿細管間質の変化として基底膜の肥厚を挙げています。本問では尿細管基底膜の肥厚が正答です。』と出典を正確に限定可能。",
+        "現行の膀胱平滑筋変化→収縮力低下→残尿という機序は、ASN腎教材が膀胱まで裏付けるようにしない。別の確認済み資料を当てるか、公式正答の膀胱収縮力低下という範囲に説明を絞る。",
+        "GFRは全員一律低下としない。ASN p1は経年低下のない被験者群も明示。",
+        "正答B087=34は公式PDF物理p2。参照位置を訂正または索引で明示。"
+      ],
+      "source": "https://www.asn-online.org/education/distancelearning/curricula/geriatrics/Chapter4.pdf",
+      "remainingClinicalConflict": "学会教材としての限定引用で尿細管基底膜の肢は説明可能。ヒトの直接原著を必須にするなら未取得だが、その自主条件を追加する必要はない。全5肢の改稿版受入れは別途必要。",
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Bounded exam explanation"
+    },
+    {
+      "id": "kangoshi-2024-annual-am-q98",
+      "status": "必要修正",
+      "reason": "当該患者の機種別プロトコルがないと一切解説不能、という条件は強すぎる。原問には機種、排液高さ、基準点自体がなく、それらを解説に追加する必要もない。公式正答3を、問題内の頭痛・意識状態・バイタル・排液所見と他の選択行為の根拠不足の比較として説明できる。",
+      "requiredChanges": [
+        "肢アの『術直後の端座位は不適切』という一般的禁忌のような断定を避け、『本問の頭痛に対する選択として、端座位への変更を優先する根拠は示されていません』など事例限定にする。",
+        "肢イを『入力にない』という制作メモ調から、頭部位置や排液条件の変更を頭痛への対応として選ぶ根拠が示されていないという学習者向け説明へ改める。",
+        "肢ウは疼痛評価と状態変化への注意を伴う鎮痛薬の適応判断として説明し、バイタル安定だけで再出血等を否定したり薬剤・用量を指定したりしない。",
+        "肢エは『頭痛だけでドレーン閉鎖を選ぶ根拠は示されていない』に限定。脳室ドレーンの基準点・高さ・時間を転用しない。"
+      ],
+      "remainingClinicalConflict": "一般的な脳槽ドレーン管理手技や鎮痛薬の投与条件まで説明する場合の一次資料は未確認。事例選択理由の範囲へ改稿すれば、その詳細プロトコルは必要条件ではない。改稿版の受入れは未実施。",
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Bounded exam explanation"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q60",
+      "status": "必要修正（注記付き限定公開可能）",
+      "reason": "Bibace/Walsh原研究p9–10は外から内へ移行する具体的過程を説明するInternalizationを具体的操作期に分類し、細菌侵入の例を含む。一方、設問の単文がその完全な機序理解を意味するかは確定できず、公式正答2を3へ変更する根拠にもならない。",
+      "nextAction": "『ばい菌』という語の有無と因果過程の理解水準を区別した、公式正答2の解釈に直接対応する教育資料・出題解説を照合する。既存の『単純な理解だから前操作期』を原研究が裏付けたと書くのは不可。",
+      "source": "https://files.eric.ed.gov/fulltext/ED145945.pdf",
+      "officialAnswerUnchanged": "2",
+      "conflictRemains": true,
+      "limitedPublicationAlternative": {
+        "explanation": "本問の公式正答は2（前操作期）です。選択肢はピアジェの認知的発達段階を表します。ただし、設問の短い発言と、研究で評価された病気の原因の理解水準をそのまま同一視しないことが必要です。",
+        "choiceExplanations": {
+          "ア": "本問の正答ではありません。感覚運動期では、感覚や身体の動きを通した関わりが認知発達の中心になります。設問は病気の原因について言葉で表される理解を問うています。",
+          "イ": "本問の公式正答です。前操作期では言葉やイメージを用いる思考が発達します。ただし、『ばい菌が体内に入る』という一文だけで、侵入過程や体内の働きまで理解していると判定することはできません。",
+          "ウ": "本問の公式正答ではありません。具体的操作期は、具体的な対象について論理的に考える段階です。Bibace/Walshの研究では、体外から体内へ原因が移る過程を説明するInternalizationをこの段階に対応付けており、本問の採点結果とは区別して読む必要があります。",
+          "エ": "本問の正答ではありません。形式的操作期では、抽象的・仮説的な思考が可能になります。設問の短い発言から、そのような思考が成立しているとまでは判断できません。"
+        },
+        "mandatoryLearningNote": "公式正答は前操作期です。一方、Bibace/Walshの疾病理解研究は、具体的な侵入過程を説明するInternalizationを具体的操作期に分類します。研究の評価内容と本問の単文は同一ではなく、両者の対応をこの資料だけで確定することはできません。公式正答を変更せず、この違いを残して説明しています。",
+        "acceptance": "上記の試験上の採否と概念説明に限り、未解決の対応関係を明示すれば限定公開可能。研究が前操作期への対応を直接立証したという説明は不可。未取得の出題者意図を推定で確定しない。"
+      },
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Exam explanation with explicit unresolved-evidence note"
+    },
+    {
+      "id": "kangoshi-2024-annual-pm-q89",
+      "status": "必要修正（注記付き限定公開可能）",
+      "reason": "新生児の成長・発達全体で遺伝が環境より大きいという比較命題の適用範囲が未解決。単一臓器や個別の遺伝率を全身・全機能に一般化できない。",
+      "requiredChangesRegardlessOfConflict": [
+        "肢アの『中枢から末梢へ（頭から足へ）』は二つの発達方向を同義にしているため、括弧を削る。中枢→末梢と頭尾方向は区別する。",
+        "臨界期と感受性期を無条件の同義語にしない。対象機能ごとの時期の違いという範囲にする。"
+      ],
+      "nextAction": "正答肢4を直接説明する発達学資料で、新生児期・成長/発達・遺伝/環境の比較対象を確定する。公式正答の存在と一般的科学命題の根拠は区別して記録する。",
+      "officialAnswerUnchanged": "2・4",
+      "conflictRemains": true,
+      "limitedPublicationAlternative": {
+        "explanation": "本問の公式正答は2・4です。運動発達の方向、成長と発達の意味、発達に影響する要因を区別する問題です。選択肢4は公式の採点結果を示し、遺伝と環境の影響について全ての発達項目に共通する大小関係まで断定しないようにします。",
+        "choiceExplanations": {
+          "ア": "誤り。基本的な運動発達には中枢から末梢へ向かう方向があります。末梢から中枢へという記述は逆です。頭から足へという方向とは区別して整理します。",
+          "イ": "正しい。発達上の特定の経験や刺激が重要になる時期は、身体の部位や機能によって異なります。全ての発達について一つの同じ時期があるという意味ではありません。",
+          "ウ": "誤り。身体の量的な増大を成長、機能の質的な変化を発達として区別します。この選択肢は発達の説明に当たります。",
+          "エ": "本問では正答に指定されています。ただし、これは新生児のあらゆる身体・認知・行動特性で、常に遺伝の影響が環境を上回ることを証明するものではありません。遺伝と環境の影響は、何の特性をどの集団・条件で評価するかと区別して考える必要があります。",
+          "オ": "誤り。乳幼児期の脳神経系は発達が盛んな時期です。スキャモンの発育曲線の神経型も早期の急速な発育を示すため、学童期よりゆるやかという説明にはなりません。"
+        },
+        "mandatoryLearningNote": "選択肢4については公式正答の記録と、科学的な一般化の範囲を区別しています。新生児の成長・発達全体で遺伝が環境より大きいという比較命題を直接裏付ける資料は、本解説では確認できていません。単一臓器の研究結果から全身へ一般化しません。",
+        "acceptance": "既存の一般的発達項目の確認済み資料を維持し、肢4の未解決範囲をこのように明示すれば、問題全体の公開を止め続ける必要はない。『遺伝優位が確認できた』という受入れ記録にはしない。"
+      },
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Exam explanation with explicit unresolved-evidence note"
+    },
+    {
+      "id": "kangoshi-2025-annual-am-q103",
+      "status": "必要修正（注記付き限定公開可能）",
+      "reason": "公式正答2は確認済み。ただし現行の『途切れ途切れでも話せるから大発作ではない』『SpO2がさらに低下するはず』という除外説明は、申告された臨床表との食い違いを解決せず、単一指標による過小評価を招く。",
+      "requiredChanges": "中発作と大発作の判断表の版、年齢層、症状項目、重複範囲を特定し、本事例の全所見を同じ表へ対応付ける。SpO2=93%単独または発話可能単独の決め打ちを削る。公式正答は変更しない。",
+      "remainingEvidenceLimit": "本局所審査ではJPGL/ERCA表の全文を追加取得していない。現行候補と先行調査記録に対する判定で、表そのものの新規全量査読ではない。",
+      "officialAnswerUnchanged": "2",
+      "conflictRemains": true,
+      "limitedPublicationAlternative": {
+        "explanation": "公式正答は2（中発作）です。本事例には途切れる発話、不眠、著明な喘鳴、呼吸数36/分、心拍数120/分、SpO2 93%という複数の所見があります。試験の公式判定と、臨床の判定表で各所見がどの区分に対応するかは分けて確認します。",
+        "choiceExplanations": {
+          "ア": "本問の正答ではありません。会話や睡眠に支障があり、呼吸状態の異常も示されているため、軽い症状だけの事例として扱うことはできません。",
+          "イ": "本問の公式正答です。ただし、SpO2 93%の一項目だけを理由に中発作と断定する説明はできません。年齢に適合する判定基準と、症状全体の照合が必要です。",
+          "ウ": "本問の公式正答ではありません。ただし、途切れる発話や不眠などは、確認する判定表によって重い発作の項目に対応し得ます。少しでも話せることやSpO2の値だけで、大発作を除外できるという意味ではありません。",
+          "エ": "本問の公式正答ではありません。設問には意識状態の悪化などの追加所見は示されていませんが、その記載がないことだけで臨床の呼吸不全を否定することはできません。必要な評価は症状と経過を合わせて行います。"
+        },
+        "mandatoryLearningNote": "公式正答は中発作ですが、参照する臨床判定表と本事例の全所見との対応は、この解説では解決できていません。判定表の版・年齢区分・重症度項目を確認し、実際の患者の発作を本問の正答やSpO2の一点だけで分類しないでください。",
+        "acceptance": "臨床表との対応が解決済みであるような説明をすべて除き、資料の差を具体的に示す試験資料としての限定形なら可能。臨床的な中発作判定の正当化として公開することは不可。改稿後の最終本文で局所確認する。"
+      },
+      "latestVerdict": "PASS_LOCAL_CONTENT",
+      "latestCandidateFileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+      "latestAcceptanceScope": "Exam explanation with explicit unresolved-evidence note"
+    }
+  ],
+  "stopIdsUnchanged": [
+    "kangoshi-2024-annual-am-q112",
+    "kangoshi-2024-annual-pm-q70",
+    "kangoshi-2025-annual-am-q32",
+    "kangoshi-2025-annual-am-q79",
+    "kangoshi-2025-annual-pm-q77"
+  ],
+  "implementationPerformed": false,
+  "releaseApproved": false,
+  "summary": "Exact eight-question candidate (35 choices) passes local content review. PM60/PM89/AM103 are accepted as bounded exam explanations with explicit unresolved-evidence notes, not resolved clinical/scientific mappings. Five STOP IDs remain unchanged. No runtime or publication action by reviewer.",
+  "revisedFourCandidateReview": {
+    "reviewedAtUtc": "2026-10-11T01:16:37.5893186Z",
+    "path": "C:/wt/kakomon-nurse-latest-two-owner-20261011/docs/evidence/nurse-latest-two-followup-20261011/CANDIDATE-QUESTIONS.json",
+    "fileSha256": "06b43aef90d16e45053c25275f7d67c0994317df02f88d7c24edc9d500332239",
+    "questionCount": 4,
+    "choiceCount": 18,
+    "verdict": "PASS_LOCAL_CONTENT",
+    "ids": [
+      "kangoshi-2024-annual-pm-q62",
+      "kangoshi-2025-annual-pm-q7",
+      "kangoshi-2025-annual-pm-q87",
+      "kangoshi-2025-annual-pm-q88"
+    ],
+    "details": {
+      "pm87": "全5肢を再読。ASN p2/3、独立に今回読取した日本泌尿器科学会とICSの公開本文に対応。単一因果・全員一律を避けている。正答頁2へ修正済み。",
+      "pm88": "全5肢を再読。既審査本文を維持し、正答頁2へ修正済み。",
+      "pm62": "全4肢を再読。緊急性/同意の区別、逐語・客観記録、情報共有、別席問診は学会手引きに適合。",
+      "pm7": "全4肢を再読。公式正答と百分位の意味の範囲に限定。原表読取済みの虚偽なし。"
+    },
+    "newSourceChecks": [
+      {
+        "finding": "排尿症状の原因として膀胱収縮障害、加齢による膀胱老化の記述を直接読取。",
+        "url": "https://www.urol.or.jp/public/symptom/05.html"
+      },
+      {
+        "finding": "公開Symptoms本文に加齢と頻尿/夜間頻尿の増加、排尿筋力低下を直接読取。会員限定表示のある機能へのアクセスは実施せず、取得できた公開本文だけ使用。",
+        "url": "https://www.ics.org/public/factsheets/bladderdysfunctioninagingpopulations"
+      }
+    ],
+    "limitation": "この受入れは4候補18肢の局所内容に限定。未実装・strict受入れ・commit公開ゲートは別。"
+  },
+  "finalEightCandidateReview": {
+    "reviewedAtUtc": "2026-10-11T01:22:12.429290+00:00",
+    "path": "C:\\wt\\kakomon-nurse-latest-two-owner-20261011\\docs\\evidence\\nurse-latest-two-followup-20261011\\CANDIDATE-QUESTIONS.json",
+    "fileSha256": "7a22afb264638ec14622823ef1a3d6ba5695b45ed61d4731eb79651f3c590063",
+    "verdict": "PASS_LOCAL_CONTENT",
+    "questionCount": 8,
+    "choiceCount": 35,
+    "perQuestionSemanticHashesExcludingNeedsReview": [
+      {
+        "id": "kangoshi-2024-annual-am-q98",
+        "sha256": "6af14357189c99bff4eef3d348670cee62dcc4704396cf02cc0325485f3f8ee9"
+      },
+      {
+        "id": "kangoshi-2024-annual-pm-q60",
+        "sha256": "56df54ee24bf70d1361dcbd93892a8b8f4bda9ef61657c86185f11595e9d19b6"
+      },
+      {
+        "id": "kangoshi-2024-annual-pm-q62",
+        "sha256": "b97a3a8dd8d6d4ad9c4350e72f1e8d2b0fd760d5c474f251df75b22c3f5a4417"
+      },
+      {
+        "id": "kangoshi-2024-annual-pm-q89",
+        "sha256": "437c5f924b715e7bb757c0a8a9162e178b16a360d7cf64a7bc51313d63b02368"
+      },
+      {
+        "id": "kangoshi-2025-annual-am-q103",
+        "sha256": "129cc268ba335e058eab4acf24970ab8b89956e0b553486832a1b40f54cf2651"
+      },
+      {
+        "id": "kangoshi-2025-annual-pm-q7",
+        "sha256": "69720b19961a2d3c5896e81767f6935df555c018a7422e97766e5e7d5e6936d4"
+      },
+      {
+        "id": "kangoshi-2025-annual-pm-q87",
+        "sha256": "cb3697ab699d75f183e22009d4b990dae3f6430ef236593dca98d0b8cdb4b220"
+      },
+      {
+        "id": "kangoshi-2025-annual-pm-q88",
+        "sha256": "3b3b0607f3ae1758b82069bd7f0cb74647de8c729cafd3d315fcf50d7540e541"
+      }
+    ],
+    "additionalFourWholeChoiceReview": {
+      "kangoshi-2024-annual-am-q98": "PASS: case-limited analgesia assessment, serial neurological observation, no vital-sign-only exclusion, no universal posture/clamp prohibition, no invented device values. NCS official chapter PDF pp1-2 independently read this review.",
+      "kangoshi-2024-annual-pm-q60": "PASS: all 4 choices exactly match bounded alternative. Official answer 2 and Internalization evidence conflict are explicit; unsupported direct Piaget mapping is not asserted.",
+      "kangoshi-2024-annual-pm-q89": "PASS: all 5 choices exactly match bounded alternative. Official PM89=24 independently confirmed on local official answer PDF physical page2. Central-peripheral and cephalocaudal directions separated. Genetics/environment limitation retained.",
+      "kangoshi-2025-annual-am-q103": "PASS: all 4 choices exactly match bounded alternative. Official answer 2 distinguished from unresolved clinical criteria correspondence; single SpO2 or retained speech is not used to exclude severe exacerbation."
+    },
+    "previousFour": "All 18 choice explanations and general explanations re-read in current 8-question file; earlier local content PASS retained.",
+    "ncsSource": {
+      "url": "https://higherlogicdownload.s3.amazonaws.com/NEUROCRITICALCARE/b8b3b384-bfb9-42af-bb55-45973d5054a4/UploadedImages/COVD-19_Resources/Ed.%20products/Practice_of_NCC_Sedation___Analgesia.pdf",
+      "physicalPages": [
+        1,
+        2
+      ],
+      "finding": "Chapter 16 introduction and Pain section support pain assessment, inadequacy of heart rate/BP alone, and balancing analgesia with neurological examination. The clinical case uses an external ventricular drain; its device management and drug doses were not transferred to this cisternal-drain question."
+    },
+    "scientificallyUnresolvedIds": [
+      "kangoshi-2024-annual-pm-q60",
+      "kangoshi-2024-annual-pm-q89",
+      "kangoshi-2025-annual-am-q103"
+    ],
+    "unresolvedNotMisrepresented": true,
+    "allowedPostReviewChange": "needsReview true to false only; all other fields must retain the stored semantic hashes unless independently re-reviewed.",
+    "coverageMeaning": "full means all listed choices have explanatory text, not that the three acknowledged evidence correspondences are scientifically resolved.",
+    "strictAcceptanceAndRelease": "Existing strict-contract/receipt, integration and publication checks remain with owner. This is the exact candidate content acceptance, not a deployment receipt.",
+    "stopFiveUnchanged": true,
+    "implementationPerformedByReviewer": false
+  }
+}

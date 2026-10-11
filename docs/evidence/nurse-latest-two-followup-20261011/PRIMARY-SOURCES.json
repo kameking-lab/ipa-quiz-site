@@ -1,0 +1,35 @@
+{
+  "growth": {
+    "url": "https://www.mhlw.go.jp/stf/houdou/2r9852000001t3so-att/2r9852000001t7dg.pdf",
+    "kind": "original_national_survey_full_pdf",
+    "section": "平成22年乳幼児身体発育調査 胸囲・頭囲の年齢別/性別平均値表",
+    "localSha256": "935ccd88296ca89c06ef6514cdd383800d3ba8ffed0adf5a6dd8699bdfeab3a5",
+    "limit": "平均値の傾向。個人の1歳時点に一律適用しない。"
+  },
+  "fontanelle": {
+    "url": "https://journals.sagepub.com/doi/10.1177/0009922814538492",
+    "kind": "original_research_public_abstract_only",
+    "section": "Results/Conclusions: 464 CT scans; >50% closed at16months;88%at20months;wide variability",
+    "limit": "全文はRestricted accessのため取得しない。公開要旨内の所見だけ使用。"
+  },
+  "teeth": {
+    "url": "https://www.aapd.org/globalassets/media/policies_guidelines/r_dentalgrowth.pdf",
+    "kind": "professional_society_original_chart_web_pdf",
+    "section": "Dental Growth and Development, primary second molars: eruption20–30months upper/lower",
+    "limit": "web PDFは読取済み。ローカル取得403を記録し再試行/迂回しない。表やPDFを再配布しない。"
+  },
+  "heartRate": {
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21411136/",
+    "doi": "10.1016/S0140-6736(10)62226-X",
+    "kind": "original_systematic_review_public_abstract_only",
+    "section": "Findings:69studies/143346children;peak around1month then declines to2years",
+    "limit": "PMCはCAPTCHAのため取得しない。公開要旨の傾向のみ使用。固定120/100は削除。"
+  },
+  "water": {
+    "url": "https://backend.orbit.dtu.dk/ws/files/6350877/5.Scientific.pdf",
+    "doi": "10.2903/j.efsa.2010.1459",
+    "kind": "original_scientific_opinion_web_pdf",
+    "section": "EFSA2010 §6.1/6.2 infants and children; Table5 bodyweight-normalized reference values",
+    "limit": "web全文はローカル403前に読取済み。ローカル403後は再試行/迂回せず、数値を解説で新規断定しない。water turnoverとrequired intakeを混同しない。"
+  }
+}
