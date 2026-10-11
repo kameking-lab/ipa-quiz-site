@@ -17,3 +17,13 @@ catalogのstatusは `ready-to-ingest` であり、静的・lazy登録と公開�
 公開Go後、統合担当が画像156点をmanifestの対応先 `public/images/questions/sokuryoshi/` へコピーしてSHAを照合し、独立受入れと掲載可否を確認してからcatalogを公開へ変更してください。画像の移動と公開はこのPRの制作担当では実行しません。
 
 `GSI-attributed` は出典表記の分類で、許諾取得の証明ではありません。国土地理院の一般利用条件と第三者権利・測量成果に関する個別条件を区別し、取得していない権利receiptを作りません。掲載可否の対応はオーナー、公開判断と本番merge/deployは統合担当の範囲です。
+
+## 限定受入れの完了範囲と残件
+
+acceptance-ledger.json の independentStagingAcceptance は、既存限定原問照合に加え、2026年午後No.2の残る語群7項目・指定語句5項目、構造・SHA・原問/正答保持とローカル表示を確認した結果です。66原問を390px・1280pxで描画した132検査と、原図/解答図を別タブで元解像度に開く4検査が通過しています。全66問の意味を二重査読したとの主張ではありません。
+
+午後の表示では、保存原稿を変えずに枝見出しと解答ラベルを整形します。2025年午後No.5 B-3の解説数式は、同じ数値と式を4段落にして小画面での横はみ出しを解消しました。測量士の原図と解答図には元画像を開くリンクを付けています。
+
+independentAcceptance: PENDING は公開判断と図版配置後のアプリ画面受入れを表します。現在の候補データとローカル表示の確認範囲を区別し、残理由を pendingAcceptanceReasons に列挙しています。公開承認後の156図版配置、SHA照合、実際のアプリルートと拡大リンク確認は統合担当が行います。catalogは引き続き ready-to-ingest、公開Goは0です。
+
+根拠と検査結果は reports/sokuryoshi-latest-two/acceptance-refresh/ に保存します。

@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "surveyor_acceptance_delta / independent non-implementer",
+  "reviewedAt": "2026-10-11T07:24:27.059335+00:00",
+  "worktree": "C:\\wt\\sokuryoshi-latest-two-20261011",
+  "reviewState": "FINAL_PASS_SCOPED_TECHNICAL_AND_LOCAL_RENDERER",
+  "headVerification": "Reviewed working-tree snapshot after parent-supplied base head 4451afa27877d12876805fe093b652614dc75643. Implementation/metadata changes are not yet committed. Bind these SHA256 values to the later exact commit through the integration lead handoff receipt. No Git commands performed by reviewer.",
+  "scope": "Proportionate delta acceptance of PR735; no full semantic rereview of 66 originals.",
+  "scopedTechnicalAcceptance": {
+    "decision": "PASS_SCOPED_TECHNICAL_AND_LOCAL_RENDERER",
+    "score": null,
+    "reason": "12/12 PM2 explanations and targeted official source agreement; 66/280/104/313/156 structure and hashes; PM5 B-3 math preserved; final exported study presentation checked at 390/1280 (132/132) and original-image links checked by parent in both widths (4/4), with independently inspected receipts and representative screenshots.",
+    "scopeLimit": "Local production-component static SSR and file-backed images only; excludes hydration, real application routes, published asset delivery, full semantic rereview and publication approval."
+  },
+  "publicationAcceptance": {
+    "decision": "HOLD_NOT_ACCEPTED",
+    "publicGo": 0,
+    "rightsReceipt": null,
+    "productionMergeOrDeploy": false,
+    "reasons": [
+      "Owner/integration listing decision and reuse assessment pending; no rights receipt.",
+      "Controlled staged asset promotion pending.",
+      "Post-promotion hydrated application route, public image serving and enlargement behavior acceptance pending."
+    ]
+  },
+  "priorReview": {
+    "path": "reports/sokuryoshi-latest-two/independent-review.json",
+    "sha256": "6052ff7ddd29acc4743bf8d298093ec158f9b7792798da60eb4871a1466beaac",
+    "baseHeadAsRecorded": "45cd2f2bf91ed665c697cde5008f6ecd9cd62508",
+    "stagingDecision": "PASS_SCOPED_INDEPENDENT_REVIEW_AFTER_FIXES",
+    "latestAddendumResult": "PASS_27_OF_27_EXACT_PAIRS",
+    "excludedGap": "PM No.2 additions were explicitly not reviewed in the old addendum.",
+    "snapshotComparison": [
+      {
+        "file": "acceptance-ledger.json",
+        "priorFinalSha256": "89f0a98ffe24e4742e653ebdf4b2436c4040d0f0dae84793fd8579df5034b507",
+        "currentSha256": "89f0a98ffe24e4742e653ebdf4b2436c4040d0f0dae84793fd8579df5034b507",
+        "unchanged": true
+      },
+      {
+        "file": "official-am-answers.json",
+        "priorFinalSha256": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+        "currentSha256": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+        "unchanged": true
+      },
+      {
+        "file": "questions.json",
+        "priorFinalSha256": "eb638ac836d3c88a0c626f9df887851a5f277f581d53790aa3bb80d2e6dcd6eb",
+        "currentSha256": "eb638ac836d3c88a0c626f9df887851a5f277f581d53790aa3bb80d2e6dcd6eb",
+        "unchanged": true
+      },
+      {
+        "file": "source-branches.json",
+        "priorFinalSha256": "a514163cd2752f7a061b44a57c4ecd56c3d3475026219db7528cfe3e0f1fec68",
+        "currentSha256": "a514163cd2752f7a061b44a57c4ecd56c3d3475026219db7528cfe3e0f1fec68",
+        "unchanged": true
+      },
+      {
+        "file": "source-manifest.json",
+        "priorFinalSha256": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238",
+        "currentSha256": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238",
+        "unchanged": true
+      }
+    ]
+  },
+  "snapshotSha256": {
+    "acceptance-ledger.json": "0423b1512885cb234c025d0f65f69f51d5814f2825a090126f03c2419c893b0a",
+    "official-am-answers.json": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+    "questions.json": "868fbc5da86dfd9088b3d2d6deadc27f2672b088269e1360553afc08136273ef",
+    "source-branches.json": "61942cf3fc1071c72b88976faed78b1cb3aa9fdac1446770553a6f51e7b3de47",
+    "source-manifest.json": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238"
+  },
+  "verified": {
+    "originals": 66,
+    "amOriginals": 56,
+    "amChoiceExplanations": 280,
+    "pmMainOriginals": 10,
+    "pmBranches": 104,
+    "pmAnswerFields": 313,
+    "assets": 156,
+    "assetBytes": 70738862,
+    "all156AssetByteHashesMatchManifest": true,
+    "all156AssetsReferenced": true,
+    "missingOrMismatchedQuestionAnswerImageReferences": 0,
+    "branchHeadingsRetainedInQuestionModelAnswerAndExplanation": 104,
+    "sourcePdfPageBoundsValid": true,
+    "savedPdfShaMatchesSourceAcquisitionAndManifest": 13,
+    "publicAssetFiles": 0,
+    "assetServing": "NON_PUBLIC_STAGING_REQUIRES_PROMOTION",
+    "technicalHolds": [],
+    "yearCounts": {
+      "2025": {
+        "am": 28,
+        "pmMain": 5,
+        "pmBranches": 57,
+        "pmAnswerFields": 158
+      },
+      "2026": {
+        "am": 28,
+        "pmMain": 5,
+        "pmBranches": 47,
+        "pmAnswerFields": 155
+      }
+    },
+    "imageReferenceYearMatchesQuestion": true,
+    "pmAnswerImagePdfAndTwoPageMappingMatchAllTenOriginals": true
+  },
+  "pm2026No2Delta": {
+    "decision": "PASS_12_OF_12",
+    "clarification": "12 explanations = A-1 wordBank seven entries plus C-2 requiredTerms five entries; requiredTerms alone has five, not twelve.",
+    "checks": [
+      {
+        "branch": "A-1",
+        "term": "永久標識の設置",
+        "explanation": "新点を選んだ後の測量標の設置工程に属し、空欄キに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "使用機器の点検及び調整",
+        "explanation": "観測を始める前に機器状態を確認する工程で、空欄ケに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "点検測量",
+        "explanation": "観測値の品質を別観測で確認する作業で、空欄コに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "点の記作成",
+        "explanation": "設置した新点の位置・状況を記録する作業で、空欄クに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "土地立入りの手続",
+        "explanation": "選点段階で土地に入るための手続で、空欄オに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "平均計算",
+        "explanation": "観測後に網の調整値を求める計算で、空欄サに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "A-1",
+        "term": "平均図の作成",
+        "explanation": "選点結果から観測網を示す図を作る作業で、空欄カに入る。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "C-2",
+        "term": "改定",
+        "explanation": "電子基準点の測量成果が改定された時点を示す。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "C-2",
+        "term": "GNSS標高測量",
+        "explanation": "3級水準点の標高を求める測量方法を示す。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "C-2",
+        "term": "測量成果",
+        "explanation": "既知点として用いる電子基準点の成果を示す。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "C-2",
+        "term": "電子基準点",
+        "explanation": "衛星測位の既知点となる点を示す。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      },
+      {
+        "branch": "C-2",
+        "term": "標高",
+        "explanation": "改定対象となる高さの成果を示す。",
+        "exactReasonRetainedInLearnerExplanation": true,
+        "officialOriginalAgreement": "PASS_TARGETED_VISUAL_CHECK"
+      }
+    ],
+    "officialChecks": [
+      {
+        "branch": "A-1",
+        "questionPdf": "https://www.gsi.go.jp/common/000278972.pdf",
+        "questionPages": [
+          11
+        ],
+        "answerPdf": "https://www.gsi.go.jp/common/000279272.pdf",
+        "answerPages": [
+          3
+        ],
+        "result": "Seven exact word-bank terms and model answer mapping オ=5, カ=7, キ=1, ク=4, ケ=2, コ=3, サ=6 agree. Explanations align with original table rows and workflow; they are editorial explanations, not official quotations."
+      },
+      {
+        "branch": "C-2",
+        "questionPdf": "https://www.gsi.go.jp/common/000278972.pdf",
+        "questionPages": [
+          18
+        ],
+        "answerPdf": "https://www.gsi.go.jp/common/000279272.pdf",
+        "answerPages": [
+          4
+        ],
+        "result": "All five required terms and the 40–60 character constraint agree. The model answer and explanations retain the causal chain: revised electronic control-point results enable prompt GNSS height surveying using their elevations."
+      }
+    ],
+    "pdfPixelCorrespondence": {
+      "method": "In-memory PyMuPDF render at longest-side 2500 pixels, compare decoded RGB samples with staged PNG; no new assets generated.",
+      "pages": [
+        "2026-pm-question1-page-011.png",
+        "2026-pm-question1-page-018.png",
+        "2026-pm-answer-example-page-003.png",
+        "2026-pm-answer-example-page-004.png"
+      ],
+      "allFourExactRgbMatches": true
+    },
+    "c2ModelAnswerCharacterCount": 51,
+    "c2AllRequiredTermsInModelAnswer": true
+  },
+  "nonPublicGate": {
+    "catalog": "lib/qualifications/catalog.ts: sokuryoshi status ready-to-ingest; isExamPublished requires live for known entries.",
+    "staticRegistry": "data/questions/index.ts: SOKURYOSHI_QUESTIONS insertion is conditional on isExamPublished.",
+    "lazyRegistry": "lib/questions/get-questions.ts: per-exam load returns [] when unpublished; counts and registered codes filtered.",
+    "examList": "lib/exam-config.ts: ALL_QUIZ_EXAM_CODES filtered by isExamPublished.",
+    "directApplicationImportsFound": 0,
+    "checkKind": "Static code and staged-file inspection; not a deployed route assertion."
+  },
+  "rendererEvidence": {
+    "status": "PASS_SCOPED_RECEIPT_AND_REPRESENTATIVE_SCREENSHOTS",
+    "reviewerRanBrowser": false,
+    "receipt": "C:\\wt\\sokuryoshi-latest-two-20261011\\reports\\sokuryoshi-latest-two\\acceptance-refresh\\browser-render-receipt.json",
+    "receiptSha256": "471d152e5f1b92f8f4b8a02689bc33d7f22a1097a753eb67c9725d5bb6d3dca2",
+    "createdAt": "2026-10-11T07:21:33.162Z",
+    "originals": 66,
+    "viewportWidths": [
+      390,
+      1280
+    ],
+    "checks": 132,
+    "passed": 132,
+    "failed": 0,
+    "independentReceiptCrossCheck": "All unique (question ID, width) rows verified against current question image counts, 5 AM choice explanations and 2 PM model-answer images; all decoded, no broken images or overflow.",
+    "mechanism": "Actual production presentation components rendered to temporary local HTML with actual app CSS and SHA-verified file assets; 66 originals at 390px and 1280px. No hydration, application route, asset promotion, publication, rights determination or deployment acceptance.",
+    "representativeScreenshotsReviewed": [
+      {
+        "path": "reports\\qualification-expansion-20261007\\sokuryoshi-latest-two-20261011\\acceptance-refresh\\screenshots\\pm5-b3-formula-390.png",
+        "sha256": "77b4c466977966636ae97b6d9e2918f2a28a3eeebdd08c3910283fa47d435a86"
+      },
+      {
+        "path": "reports\\qualification-expansion-20261007\\sokuryoshi-latest-two-20261011\\acceptance-refresh\\screenshots\\pm5-b3-formula-1280.png",
+        "sha256": "7b91c8a5dbdd6fb0eeb70175f80404e45721b448d42c6729a206d5656a653e5c"
+      },
+      {
+        "path": "reports\\qualification-expansion-20261007\\sokuryoshi-latest-two-20261011\\acceptance-refresh\\screenshots\\pm2-first-answer-image-390.png",
+        "sha256": "808467b7ddd0eb73c23ea26149a5a239587b0a8c3a821ca4f63b3690aec0dc5f"
+      },
+      {
+        "path": "reports\\qualification-expansion-20261007\\sokuryoshi-latest-two-20261011\\acceptance-refresh\\screenshots\\pm2-first-answer-image-1280.png",
+        "sha256": "378a47787b81a68ccc241c89fee2d791742e004d963a7ec9b5048f96828120bd"
+      }
+    ],
+    "visualConclusion": "At both widths branch headings are bold without literal ###, PM2 answer images are separate and show explicit full-image links, and PM5 B-3 formulas wrap without clipping. General PM2 model screenshot additionally confirms Japanese cause/figure/description labels. All known editorial key names, including calculatedM, are mapped; mathematical/choice labels remain intact.",
+    "supersededFailure": "Old 131/132 receipt, old raw-### screenshots and intermediate receipts are superseded by the final 07:21:33Z receipt and refreshed screenshots.",
+    "bindingReceipt": "C:\\wt\\sokuryoshi-latest-two-20261011\\reports\\sokuryoshi-latest-two\\acceptance-refresh\\renderer-binding.json",
+    "bindingReceiptSha256": "f500f82fe9aecf641c8e317279744684719038fa8d4b3b5c78ae2265be8ab58e",
+    "bindingAllHashesIndependentlyMatch": true,
+    "exportedQuestionsUsed": "Parent harness uses actual exported SOKURYOSHI_QUESTIONS, including PM study presentation transformation.",
+    "zoomEvidence": {
+      "receipt": "C:\\wt\\sokuryoshi-latest-two-20261011\\reports\\sokuryoshi-latest-two\\acceptance-refresh\\zoom-link-receipt.json",
+      "sha256": "db189db0a05fefcd66740946f422695abff234f3206e0cf206ed6f40162ec81b",
+      "createdAt": "2026-10-11T07:18:12.358Z",
+      "passed": 4,
+      "reviewerClicked": false,
+      "parentClicked": true,
+      "checks": [
+        {
+          "id": "sokuryoshi-2026-annual-am-q21",
+          "width": 390,
+          "href": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-am-question-page-022.png",
+          "url": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-am-question-page-022.png",
+          "nativeImage": {
+            "width": 1768,
+            "height": 2500
+          },
+          "passed": true
+        },
+        {
+          "id": "sokuryoshi-2026-annual-pm-q2",
+          "width": 390,
+          "href": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-pm-answer-example-page-003.png",
+          "url": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-pm-answer-example-page-003.png",
+          "nativeImage": {
+            "width": 2500,
+            "height": 1768
+          },
+          "passed": true
+        },
+        {
+          "id": "sokuryoshi-2026-annual-am-q21",
+          "width": 1280,
+          "href": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-am-question-page-022.png",
+          "url": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-am-question-page-022.png",
+          "nativeImage": {
+            "width": 1768,
+            "height": 2500
+          },
+          "passed": true
+        },
+        {
+          "id": "sokuryoshi-2026-annual-pm-q2",
+          "width": 1280,
+          "href": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-pm-answer-example-page-003.png",
+          "url": "file:///C:/wt/sokuryoshi-latest-two-20261011/data/questions/sokuryoshi/assets/2026-pm-answer-example-page-003.png",
+          "nativeImage": {
+            "width": 2500,
+            "height": 1768
+          },
+          "passed": true
+        }
+      ],
+      "continuedApplicability": "The final later change adds calculatedM text translation only; QuestionFigures link code remains the identical SHA reviewed for this receipt.",
+      "limit": "file:// assets in temporary local renderer; deployed URL serving and hydration excluded."
+    }
+  },
+  "notPerformed": [
+    "Full semantic rereview of all 66 questions or all 104 PM branches.",
+    "Full asset regeneration.",
+    "Duplicate unit tests, lint, typecheck, or build.",
+    "Browser interaction or production route inspection by this reviewer.",
+    "Legal permission or rights determination.",
+    "Git operations, worktree edits, lock changes, source downloads, retrying denied sources, API/key/payment changes."
+  ],
+  "remainingUncertainties": [
+    "Exact final commit has not yet been created; integration lead must bind this snapshot in the later handoff receipt.",
+    "Publication requires owner/integration listing decision and appropriate reuse assessment; no rights receipt created.",
+    "All 156 staged assets require controlled promotion and SHA verification after publication approval.",
+    "Hydrated actual application routes, public asset delivery and enlargement links require post-promotion acceptance; local static SSR/file receipts do not satisfy that scope.",
+    "This remains a limited delta review, not a semantic certification of every one of the 66 originals."
+  ],
+  "denialPolicy": "Existing denial STOP retained. No remote acquisition or alternate-path access attempted.",
+  "findings": [
+    {
+      "id": "UX1",
+      "status": "RESOLVED_IN_FINAL_LOCAL_DELTA",
+      "severity": "P2",
+      "title": "PM learner text exposes raw Markdown and object keys",
+      "evidence": "Representative PM2 screenshots show ### B-1, cause, figure and description. Data is preserved but this scoped renderer PASS does not certify polished learner-facing presentation.",
+      "resolution": "PM study display translates editorial keys and renders bold branch headings; updated screenshots and final renderer binding verified."
+    },
+    {
+      "id": "UX2",
+      "status": "RESOLVED_IN_FINAL_LOCAL_DELTA",
+      "severity": "P2",
+      "title": "Detailed original-page readability on mobile needs an enlargement check",
+      "evidence": "390px screenshot fits a landscape official answer sheet into about 288px. The diagram is loaded and unclipped, but detailed labels are too small at this default size. Browser zoom/image enlargement interaction was outside static SSR acceptance.",
+      "resolution": "All surveyor images provide a native enlargement link; parent actual popup-click receipt passes AM original and PM answer at 390/1280, opening full native image dimensions. Production delivery remains pending separately."
+    }
+  ],
+  "integrationCodeSnapshotSha256": {
+    "lib/qualifications/catalog.ts": "c9c9b98b91420b1401b3b62ea8f5c0b6071e697c8b6784b571b7eaeee09f6dac",
+    "data/questions/index.ts": "aeec785d46612745cf4fbdab8ae066cb836dcc6f9af0c3f0ef7ab39b590fc788",
+    "lib/questions/get-questions.ts": "e3dc30416bedd108c31a61141be46337bebd184c911d7ea7e019ac51df2d7153",
+    "lib/exam-config.ts": "24fb82a87e01315eedf1836716201abaec59ec9ce4a0f270f904bcfb06e46f17",
+    "components/quiz/QuestionModelAnswer.tsx": "1d2747061ea8013ef02deeabac044d26941e886e6389f0c4e0da5969ff50805d",
+    "components/quiz/QuestionFigures.tsx": "d43c79ba980f26748fe6a7f3595a230f3950cf2747ce35a40c686c11fc6f98ac"
+  },
+  "integrationLeadEvidence": {
+    "head": "4451afa27877d12876805fe093b652614dc75643",
+    "typecheck": "PASS_REPORTED_BY_PARENT",
+    "lint": "PASS_REPORTED_BY_PARENT",
+    "relatedTests": {
+      "passed": 20,
+      "verification": "REPORTED_BY_PARENT_NOT_REPEATED"
+    },
+    "savedFileShaPreservation": {
+      "count": 163,
+      "verification": "REPORTED_BY_PARENT; this reviewer separately checks source-data and asset subset"
+    },
+    "rendererStatus": "FINAL_EXPORTED_RENDERER_132_OF_132_AND_POPUP_4_OF_4_PASS_RECEIPTS_VERIFIED"
+  },
+  "priorMinorNoteResolution": {
+    "internalQ21RemeasurementReference": "NOT_PRESENT_IN_CURRENT_QUESTIONS",
+    "verifiedIndependently": true
+  },
+  "layoutDelta": [
+    {
+      "file": "questions.json",
+      "beforeSha256": "b6d0441f76a792eb56a9b30296edca7e60070de9555c5eaa4d05ec613b27170c",
+      "beforeMatchesPriorReviewedSnapshot": false,
+      "afterSha256": "868fbc5da86dfd9088b3d2d6deadc27f2672b088269e1360553afc08136273ef",
+      "changedFieldCount": 1,
+      "changes": [
+        {
+          "path": "[32].explanation",
+          "before": "クロソイド長L=P²/R=150²/250=90m。一端の偏角τ=L/(2R)=90/500=0.180rad。交角α=60×3.142/180=1.04733radなので、円曲線中心角θ=α−2τ=1.04733−0.360=0.68733rad≒0.687rad。",
+          "after": "クロソイド長は L = P²/R = 150²/250 = 90 m。\n一端の偏角は τ = L/(2R) = 90/500 = 0.180 rad。\n交角は α = 60 × 3.142 / 180 = 1.04733 rad。\n円曲線中心角は θ = α − 2τ = 1.04733 − 0.360 = 0.68733 rad ≒ 0.687 rad。",
+          "allNonWhitespaceCharactersUnchanged": false,
+          "numericTokensUnchanged": true,
+          "displayedExcerptOnly": true,
+          "interpretation": "Formatting plus harmless prose connectors (は added, なので removed); mathematical values, operators and reasoning preserved. Not literally whitespace-only."
+        }
+      ],
+      "beforeMatchesPriorReviewedSnapshotAfterCrlfNormalization": true
+    },
+    {
+      "file": "source-branches.json",
+      "beforeSha256": "f1d4db2cb67491811bf1644a6f34e540018ca155f22bf3cd6daba1730b463e8b",
+      "beforeMatchesPriorReviewedSnapshot": false,
+      "afterSha256": "61942cf3fc1071c72b88976faed78b1cb3aa9fdac1446770553a6f51e7b3de47",
+      "changedFieldCount": 1,
+      "changes": [
+        {
+          "path": ".pm[4].branches[6].explanation",
+          "before": "クロソイド長L=P²/R=150²/250=90m。一端の偏角τ=L/(2R)=90/500=0.180rad。交角α=60×3.142/180=1.04733radなので、円曲線中心角θ=α−2τ=1.04733−0.360=0.68733rad≒0.687rad。",
+          "after": "クロソイド長は L = P²/R = 150²/250 = 90 m。\n一端の偏角は τ = L/(2R) = 90/500 = 0.180 rad。\n交角は α = 60 × 3.142 / 180 = 1.04733 rad。\n円曲線中心角は θ = α − 2τ = 1.04733 − 0.360 = 0.68733 rad ≒ 0.687 rad。",
+          "allNonWhitespaceCharactersUnchanged": false,
+          "numericTokensUnchanged": true,
+          "interpretation": "Formatting plus harmless prose connectors (は added, なので removed); mathematical values, operators and reasoning preserved. Not literally whitespace-only."
+        }
+      ],
+      "beforeMatchesPriorReviewedSnapshotAfterCrlfNormalization": true
+    }
+  ],
+  "initialSnapshotSha256": {
+    "acceptance-ledger.json": "89f0a98ffe24e4742e653ebdf4b2436c4040d0f0dae84793fd8579df5034b507",
+    "official-am-answers.json": "ff04bcc20748e6e25ada50cc4d6ca6b77de055a5d994d7bbddd67c0f81c33198",
+    "questions.json": "eb638ac836d3c88a0c626f9df887851a5f277f581d53790aa3bb80d2e6dcd6eb",
+    "source-branches.json": "a514163cd2752f7a061b44a57c4ecd56c3d3475026219db7528cfe3e0f1fec68",
+    "source-manifest.json": "bdbd1a29dec465fd3ba0522ab1f5f96250b2c1767d2025e2c2981a6a1eee2238"
+  },
+  "baseHeadAsSuppliedByParent": "4451afa27877d12876805fe093b652614dc75643",
+  "finalHead": null,
+  "rendererCodeSnapshotSha256": {
+    "data/questions/sokuryoshi/index.ts": "128fd699126fc111b2bdbf0c41b03a55d1d279623f3771f68b02d33ce503a66b",
+    "components/quiz/QuestionCard.tsx": "17a8557ff6aae706afbf6cb15610fff4b68d352f156992a4da8286dbdff681a1",
+    "components/quiz/QuestionFigures.tsx": "d43c79ba980f26748fe6a7f3595a230f3950cf2747ce35a40c686c11fc6f98ac",
+    "components/quiz/QuestionBody.tsx": "822d1eba12d62e3a820e68fb2ae36cf22743cb339fb1c3a0c0394cf466ea5c0f",
+    "components/quiz/QuestionModelAnswer.tsx": "1d2747061ea8013ef02deeabac044d26941e886e6389f0c4e0da5969ff50805d",
+    "components/quiz/ExplanationCard.tsx": "17a323bcdb5a64d536b82b268d86519f54f7a14cd0a219b5a1d63bc3e6d83403",
+    "app/globals.css": "414629956078125039eb05fc14d026213788566761d722dd238fd150ab0493b7"
+  },
+  "additionalSnapshotSha256": {
+    "data/questions/sokuryoshi/README.md": "ab986e49002e9e9b127d5a0b8742b0d2210aa800b63066f91523bb443732e11d",
+    "__tests__/questions/sokuryoshi-staging.test.tsx": "5b0a212f09b960a792575917b5eb7c2341030c65d90508121354de34b5b3bd9b",
+    "reports/sokuryoshi-latest-two/acceptance-refresh/browser-render-receipt.json": "471d152e5f1b92f8f4b8a02689bc33d7f22a1097a753eb67c9725d5bb6d3dca2",
+    "reports/sokuryoshi-latest-two/acceptance-refresh/renderer-binding.json": "f500f82fe9aecf641c8e317279744684719038fa8d4b3b5c78ae2265be8ab58e",
+    "reports/sokuryoshi-latest-two/acceptance-refresh/zoom-link-receipt.json": "db189db0a05fefcd66740946f422695abff234f3206e0cf206ed6f40162ec81b"
+  },
+  "presentationCodeReview": {
+    "result": "PASS_SCOPED",
+    "sourceMutation": "PM map creates copies and transforms only question/explanation/modelAnswer presentation; saved questions/source-branches retain raw source structure. AM objects pass through.",
+    "headings": "All 104 branches in each of question/modelAnswer/explanation (312 headings) use existing QuestionBody bold support.",
+    "labels": "Known editorial keys are mapped to Japanese only in PM modelAnswer. a-e, B-D and V2-V5 remain as examination symbols. calculatedM -> 計算値（m） covers the two initially missed keys.",
+    "figureLinks": "Only question.exam===sokuryoshi wraps images with native href=url, target=_blank, rel=noopener noreferrer and an accessible label. QuestionModelAnswer preserves exam and passes answer-image URLs, so its links target official model images. Other exams retain plain images.",
+    "tests": "Read updated staging test assertions for separate answer images, matching links, absence of raw ### and selected English editorial keys; execution is parent-reported PASS, not independently repeated."
+  },
+  "metadataReview": {
+    "result": "PASS_SCOPED",
+    "ledgerSha256": "0423b1512885cb234c025d0f65f69f51d5814f2825a090126f03c2419c893b0a",
+    "publicationAcceptance": "PENDING",
+    "independentAcceptanceScope": "PUBLICATION_AND_POST_PROMOTION_APPLICATION_ROUTE",
+    "stagingStatus": "PASS_SCOPED_TECHNICAL_AND_LOCAL_RENDERER",
+    "pendingReasons": [
+      {
+        "id": "OWNER_LISTING_DECISION",
+        "owner": "qualification owner and integration lead"
+      },
+      {
+        "id": "CONTROLLED_ASSET_PROMOTION",
+        "owner": "integration lead",
+        "required": "Promote 156 manifest-mapped assets only after publication approval; verify SHA256"
+      },
+      {
+        "id": "POST_PROMOTION_APPLICATION_ACCEPTANCE",
+        "owner": "integration lead",
+        "required": "Confirm application routes, both question/answer figures and original-image popup links after promotion"
+      }
+    ],
+    "catalogStatus": "ready-to-ingest",
+    "readmeCatalogLedgerScopesConsistent": true,
+    "futureEvidenceCopy": "Ledger references repo acceptance-refresh/independent-delta-review.json. Parent will copy this completed review there after this read-only reviewer finishes."
+  }
+}

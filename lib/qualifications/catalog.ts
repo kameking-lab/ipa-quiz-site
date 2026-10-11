@@ -672,7 +672,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "ready-to-ingest",
     reuseSummary: "2026年5月17日・2025年5月18日の午前各28問と午後各5大問を検証用に保存。公開は未受入れ。国土地理院の一般コンテンツ規約は出典と加工内容の明示を求める。第三者権利や測量成果に関する別条件は個別確認し、許諾取得済みとは記録しない。",
     attributionTemplate: "出典：国土地理院ウェブサイト『令和○年測量士試験』午前・午後No.○（問題・正答又は解答例）。文字起こし・画像切抜き・解説は過去問AIが作成。",
-    remainingWork: ["技術的HOLDの局所確認", "枝問と原図の独立受入れ", "掲載可否のオーナー確認と統合主担当の公開判断"],
+    remainingWork: ["掲載可否のオーナー確認と統合主担当の公開判断", "公開承認後の図版156点のSHA照合付き配置", "配置後の公開ルート・原図拡大表示の受入れ"],
   },
   {
     slug: "boki3",

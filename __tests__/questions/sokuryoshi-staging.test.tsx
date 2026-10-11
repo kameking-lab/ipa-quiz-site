@@ -106,5 +106,9 @@ describe("surveyor latest two complete source candidates", () => {
     expect(imgs.map(img => img.getAttribute("src"))).toEqual(q.modelAnswerImageUrls);
     expect(imgs.every(img => !q.imageUrls!.includes(img.getAttribute("src")!))).toBe(true);
     expect(screen.queryByText(/!\[国土地理院/)).toBeNull();
+    expect(screen.getAllByRole("link", { name: /^原図を拡大表示/ }).map(link => link.getAttribute("href")))
+      .toEqual(q.modelAnswerImageUrls);
+    expect(screen.queryByText(/^###/)).toBeNull();
+    expect(screen.queryByText(/^(?:figure|description|cause|answerFigure)[：:]/)).toBeNull();
   });
 });
