@@ -6,6 +6,7 @@ import { TSUSHIN2_QUESTIONS } from "@/data/questions/tsushin2";
 import source from "@/data/questions/tsushin2/2026-early-first5.json";
 import packet from "@/docs/evidence/tsushin2-first5-20261011.json";
 import answers from "@/reports/zoen2-tsushin2-20260927/official-answers.json";
+import { parseQuestionBlocks } from "@/components/quiz/QuestionBody";
 
 describe("telecom first-stage originals with recovered figures", () => {
   it("adds five distinct originals without changing pilot IDs or claiming a complete sitting", () => {
@@ -49,6 +50,9 @@ describe("telecom first-stage originals with recovered figures", () => {
     expect(Math.hypot(3, 4)).toBe(5);
     const inputPairs = [[0, 0], [0, 1], [1, 0], [1, 1]] as const;
     expect(inputPairs.map(([a, b]) => Number(Boolean((a || !b) && b)))).toEqual([0, 0, 0, 1]);
+    const tables = source.questions.find((q) => q.number === 5)!.choices.map(parseQuestionBlocks);
+    expect(tables.every((blocks) => blocks.length === 1 && blocks[0]!.kind === "table")).toBe(true);
+    expect(tables[3]).toEqual([{ kind: "table", header: ["入力A", "入力B", "出力F"], rows: [["0", "0", "0"], ["0", "1", "0"], ["1", "0", "0"], ["1", "1", "1"]] }]);
     expect(source.questions.find((q) => q.number === 2)?.question).toContain("mm²");
     expect(source.questions.find((q) => q.number === 3)?.question).toContain("I_R＝3");
   });
