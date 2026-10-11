@@ -55,5 +55,42 @@
   },
   "verifiedAt": "2026-10-11T03:20:44.203300+00:00",
   "mainBase": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
-  "overall": "source checkpoint verified; default whole-suite timeout remains documented and passes the isolated 60s recheck; latest-two content completion blocked by missing originals"
+  "overall": "source checkpoint verified; default whole-suite timeout remains documented and passes the isolated 60s recheck; latest-two content completion blocked by missing originals",
+  "localReferenceClosure": {
+    "verifiedAt": "2026-10-11T03:37:31.985045+00:00",
+    "changedQuestions": [
+      "34-am-10",
+      "34-am-8",
+      "34-pm-37"
+    ],
+    "resolvedChoices": 12,
+    "sourceIdentityAndOriginalTextPreserved": true,
+    "perChoiceCitationsComplete": true,
+    "localTest": {
+      "exitCode": 0,
+      "passedTests": 11,
+      "testFiles": 1
+    },
+    "sourceManifest": {
+      "exitCode": 0,
+      "officialRows": 440,
+      "scoredQuestions": 435,
+      "recoveredOriginals": 8,
+      "completeOriginals": 7,
+      "fullChoiceExplanations": 7,
+      "candidates": 1,
+      "publishedIncrement": 0,
+      "missingOriginals": 432
+    },
+    "focusedTestLint": {
+      "exitCode": 0
+    },
+    "gitDiffCheck": {
+      "exitCode": 0
+    },
+    "fullSuiteAndBuildRerun": false,
+    "reason": "Only evidence/draft wording and one focused scoring-hold test changed; previous checkpoint full checks retained with their documented timeout.",
+    "remainingLocalReferenceHolds": [],
+    "remainingPhoto": "35-am-97: official booklet AM No.29"
+  }
 }

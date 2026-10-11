@@ -24,6 +24,20 @@ describe("歯科衛生士35/34の公式原本・採点台帳", () => {
     expect(result).toMatchObject({ officialAnswerRows: 440, officialScoredQuestions: 435, recoveredOriginals: 8, missingOriginals: 432, completeOriginals: 7, fullChoiceExplanationDrafts: 7, sitePublishedIncrement: 0 });
     expect(new Set(result.items.map((item) => item.key)).size).toBe(440);
   });
+  it("preserves scoring holds after the three scholarly checks are resolved", () => {
+    const { answers, drafts, receipts } = fixture();
+    const result = inspectDentalSourceBatch(answers, drafts, receipts);
+    for (const key of ["34-am-8", "34-am-10", "34-pm-37"]) {
+      const draft = drafts.find((row) => `${row.round}-${row.session}-${row.qNumber}` === key);
+      const item = result.items.find((row) => row.key === key);
+      expect(draft?.needsReviewReasons).toEqual([]);
+      expect(draft?.referenceUrls.length).toBeGreaterThan(0);
+      expect(item).toMatchObject({ fullChoiceExplanations: true, candidateForQuestionImport: false });
+      expect(item?.holds).toEqual([key === "34-pm-37" ? "official-all-correct-no-academic-answer" : "official-excluded-no-academic-answer"]);
+    }
+    expect(result.candidateQuestions).toBe(1);
+    expect(result.sitePublishedIncrement).toBe(0);
+  });
   it("rejects both duplicate official keys and missing rows", () => {
     const { answers, drafts, receipts } = fixture();
     expect(() => inspectDentalSourceBatch([...answers.slice(1), answers[1]], drafts, receipts)).toThrow(/Duplicate official question/);

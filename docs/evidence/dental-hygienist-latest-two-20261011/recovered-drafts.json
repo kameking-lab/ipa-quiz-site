@@ -11,12 +11,12 @@
       "d": "HPO₄²⁻"
     },
     "requiredSelections": 1,
-    "explanation": "この問題は公式に採点除外となった。以下は破骨細胞の骨吸収機構を整理する学習用解説であり、公式正答を補うものではない。破骨細胞は骨面に接した波状縁からプロトンを送り出し、吸収窩を酸性化して骨の無機質を溶解する。炭酸脱水酵素で生じる重炭酸イオンは骨面側の酸分泌とは異なる経路で処理される。図の部位と細胞内外の移動を区別する。",
+    "explanation": "この問題は公式に採点除外となった。以下は破骨細胞の骨吸収機構を整理する学習用解説であり、公式正答を補うものではない。図の矢印は骨面に接する波状縁を示す。破骨細胞はこの領域からH⁺を吸収窩へ送り、骨の無機質を酸で溶解する。一方、細胞内のアルカリ負荷はCl⁻とHCO₃⁻の交換などにより調節される。骨からの無機質の放出、吸収窩の酸性化、細胞内pHの維持を区別する。",
     "choiceExplanations": {
       "a": "H⁺は骨面側の波状縁にあるプロトンポンプを介して吸収窩へ運ばれ、無機質の溶解に関わる。ただし本問は採点除外であり、aを公式正答として設定しない。",
       "b": "Ca²⁺は骨の無機質が溶解した際に放出される成分である。波状縁から酸として分泌する物質とは区別する。",
-      "c": "HCO₃⁻はプロトン産生に伴って生じる。細胞の骨面と反対側でCl⁻との交換に関わり、骨吸収窩の酸性化を担うH⁺とは移動の場所・役割が異なる。",
-      "d": "リン酸イオンは骨の無機質由来の成分であり、波状縁のプロトンポンプによる酸分泌とは異なる。"
+      "c": "HCO₃⁻は酸分泌に伴う細胞内のアルカリ負荷の処理に関わり、細胞外のCl⁻との交換によって細胞内pHの維持を助ける。骨吸収窩を酸性化するH⁺とは役割が異なる。",
+      "d": "HPO₄²⁻はリン酸イオンの一形態で、骨のリン酸カルシウムという無機質の文脈に関わる。波状縁から酸性化のために輸送されるH⁺とは区別する。リン酸イオンの膜通過一般を否定する説明ではない。"
     },
     "sourcePdfUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken19/dl/AM8.pdf",
     "sourcePdfSha256": "1e1d4beb92cafb2d42bacdfb7ab3b92126a9560e2597f33cc0145a3cdc7a15eb",
@@ -27,13 +27,11 @@
     "originalPagePath": "originals/34-AM8.png",
     "missingFigureReferences": [],
     "referenceUrls": [
-      "https://pubmed.ncbi.nlm.nih.gov/2549811/",
-      "https://pubmed.ncbi.nlm.nih.gov/8427045/"
+      "https://www.jci.org/articles/view/113863/version/1/pdf/render.pdf",
+      "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0000179"
     ],
     "lawReferenceDate": "2025-03-02",
-    "needsReviewReasons": [
-      "波状縁の各イオン移動の全肢を一次資料で局所照合する"
-    ],
+    "needsReviewReasons": [],
     "originalPageSha256": "4097638d43c1eb0d72df46ae2e2cabc34179833a1f42c2b43fa076bc96b9c33a"
   },
   {
@@ -51,7 +49,7 @@
     "explanation": "この問題は公式に採点除外となった。肉芽組織は創傷治癒で形成される、毛細血管・線維芽細胞・炎症細胞などを含む組織である。図には赤血球を入れた管腔とその周囲の細胞が描かれている。矢印が細胞なのか、管腔を囲む構造なのかを分けて読む。公式に除外された設問へ独自の正答を付けない。",
     "choiceExplanations": {
       "a": "形質細胞は抗体産生に関わる細胞であり、単一の細胞として捉える。赤血球を含む管腔を囲む構造とは区別する。",
-      "b": "毛細血管は内皮細胞が管腔を囲み、赤血球を通す微小血管である。肉芽組織では新生血管が特徴となる。ただし本問の公式正答は公表されず、bを正答扱いにはしない。",
+      "b": "毛細血管は内皮細胞が管腔を囲む微小血管で、肉芽組織では新生血管が特徴となる。図中の赤血球を含む管腔は血管構造を読む手掛かりである。ただし本問は採点除外であり、bを独自の公式正答として登録しない。",
       "c": "リンパ球は炎症や免疫反応に関与する細胞である。血管内皮が囲む管腔全体を指す名称ではない。",
       "d": "線維性結合組織は膠原線維などを含む組織であり、赤血球を含む微小な管腔構造そのものとは異なる。"
     },
@@ -63,11 +61,14 @@
     "hasImage": true,
     "originalPagePath": "originals/34-AM10.png",
     "missingFigureReferences": [],
-    "referenceUrls": [],
-    "lawReferenceDate": "2025-03-02",
-    "needsReviewReasons": [
-      "肉芽組織の各肢解説の一次文献照合は未完了"
+    "referenceUrls": [
+      "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0067559",
+      "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/plasma-cell",
+      "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/lymphocyte",
+      "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/capillary"
     ],
+    "lawReferenceDate": "2025-03-02",
+    "needsReviewReasons": [],
     "originalPageSha256": "f1b52d8edf6b51716e2bf9a05670ba06468a61c648877a57bd61ac164749f646"
   },
   {
@@ -188,8 +189,8 @@
     "requiredSelections": 2,
     "explanation": "公式は選択肢が明確でないことを理由に、受験者全員を正解として取り扱った。これは4つの組合せすべてが学術的に正しいという意味ではなく、任意の2肢を学術的正答として採点する実装にも変換しない。各検査が何を記録・評価するのかを整理し、通常の採点対象から外して保存する。",
     "choiceExplanations": {
-      "a": "ゴシックアーチ描記法は下顎運動の描記を利用して水平的顎間関係を求める方法である。筋電図などで筋活動を直接評価する検査とは区別する。",
-      "b": "チェックバイトは特定の顎位で上下顎の位置関係を採得し、咬合器の調節などに用いる。連続した下顎運動の軌跡を直接記録する検査と同一視しない。",
+      "a": "ゴシックアーチ描記法は下顎運動を描記して水平的顎間関係を求める方法である。筋活動そのものを直接測定する検査とは、記録対象が異なる。",
+      "b": "チェックバイト法は前方・側方などの顎位で上下顎の位置関係を採得し、咬合器上で顆路傾斜などを求める。連続した軌跡を直接描記する方法とは異なるが、下顎運動の指標を間接的に評価する用途がある。「下顎運動検査」との組合せを単純に誤りと断定せず、公式の全員正解扱いを保持する。",
       "c": "パラトグラムは発音時の舌と口蓋の接触状態を記録し、構音機能の評価に用いる。公式の全員正解扱いを、この肢だけの正答指定へ変更しない。",
       "d": "口腔内スキャナーは歯列の形態や上下顎の咬合関係をデジタル記録するために利用される。全員正解扱いを「すべての組合せが正しい」と説明しない。"
     },
@@ -202,12 +203,14 @@
     "originalPagePath": "originals/34-PM37.png",
     "missingFigureReferences": [],
     "referenceUrls": [
-      "https://www.hotetsu.com/s/doc/irai2018_1_02.pdf"
+      "https://www.hotetsu.com/s/doc/irai2018_1_02.pdf",
+      "https://synapse.koreamed.org/DOIx.php?id=10.4047/jkap.2013.51.3.153",
+      "https://www.jstage.jst.go.jp/article/ajps/5/3/5_321/_pdf",
+      "https://www.jstage.jst.go.jp/article/joralbiosci1965/22/4/22_4_550/_article/-char/ja/",
+      "https://www.jstage.jst.go.jp/article/jspd/56/3/56_367/_pdf/-char/en"
     ],
     "lawReferenceDate": "2025-03-02",
-    "needsReviewReasons": [
-      "チェックバイト・パラトグラム・口腔内スキャナーの各肢を一次資料で局所確認する"
-    ],
+    "needsReviewReasons": [],
     "originalPageSha256": "9773d0ac57f5636002b6de056ad0a2c9249645deddda3456dede7cf99fdde50c"
   },
   {

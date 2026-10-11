@@ -1,0 +1,283 @@
+{
+  "checkedAt": "2026-10-11T03:36:10.113997+00:00",
+  "scope": "Only 34AM8, 34AM10 and 34PM37 local scholarly checks; not full-exam completion",
+  "resolvedQuestionCount": 3,
+  "resolvedChoiceCount": 12,
+  "questions": [
+    {
+      "key": "34-am-8",
+      "status": "resolved",
+      "officialScoring": "excluded",
+      "academicAnswerInvented": false,
+      "choiceCoverage": {
+        "a": {
+          "sourceIds": [
+            "osteoclast-ph-1989",
+            "osteoclast-architecture-2007"
+          ],
+          "locators": [
+            "JCI printed p227 (PDF p2), Introduction",
+            "PLOS Introduction and Results, Fig4"
+          ],
+          "verifiedClaim": "Bone-facing ruffled membrane acidifies the resorption compartment through proton transport."
+        },
+        "b": {
+          "sourceIds": [
+            "osteoclast-ph-1989"
+          ],
+          "locators": [
+            "Printed p227 (PDF p2), Introduction"
+          ],
+          "verifiedClaim": "Hydroxyapatite dissolution consumes protons and releases calcium; this distinguishes mineral release from acid secretion."
+        },
+        "c": {
+          "sourceIds": [
+            "osteoclast-ph-1989"
+          ],
+          "locators": [
+            "Printed p227 and pp231–232 (PDF pp2,6–7), Introduction/Discussion"
+          ],
+          "verifiedClaim": "Osteoclast chloride/bicarbonate exchange removes intracellular alkaline equivalents and supports cytoplasmic pH regulation, a role distinct from lacunar proton secretion. The experiment does not itself locate every transporter on the exam diagram."
+        },
+        "d": {
+          "sourceIds": [
+            "osteoclast-ph-1989"
+          ],
+          "locators": [
+            "Printed p227 (PDF p2), Introduction, calcium hydroxyapatite composition"
+          ],
+          "verifiedClaim": "Phosphate belongs to the bone mineral context; it is distinguished from the proton delivered for acidification. No claim is made that phosphate can never cross an osteoclast membrane."
+        }
+      }
+    },
+    {
+      "key": "34-am-10",
+      "status": "resolved",
+      "officialScoring": "excluded",
+      "academicAnswerInvented": false,
+      "diagramInterpretation": "The official AM10 diagram contains erythrocytes in a lumen. This is an observation of the recovered diagram, not a newly assigned official answer.",
+      "choiceCoverage": {
+        "a": {
+          "sourceIds": [
+            "nci-plasma-cell"
+          ],
+          "locators": [
+            "NCI plasma cell, definition paragraph"
+          ],
+          "verifiedClaim": "Plasma cells produce antibodies and are individual immune cells, distinct from a vascular lumen."
+        },
+        "b": {
+          "sourceIds": [
+            "granulation-imaging-2013",
+            "nci-capillary"
+          ],
+          "locators": [
+            "PLOS Introduction, Fig1d, Discussion and Fig3/CD31",
+            "NCI capillary, definition paragraph"
+          ],
+          "verifiedClaim": "Granulation tissue contains new capillaries lined by endothelial cells; capillaries are small blood vessels. The official diagram provides the lumen/erythrocyte observation."
+        },
+        "c": {
+          "sourceIds": [
+            "nci-lymphocyte"
+          ],
+          "locators": [
+            "NCI lymphocyte, definition paragraph"
+          ],
+          "verifiedClaim": "Lymphocytes are immune white blood cells, not the name of a vessel structure."
+        },
+        "d": {
+          "sourceIds": [
+            "granulation-imaging-2013"
+          ],
+          "locators": [
+            "PLOS Discussion, fibroblast and collagen network paragraphs"
+          ],
+          "verifiedClaim": "Fibroblasts deposit collagen in the wound matrix. Fibrous extracellular matrix is distinguished from endothelial blood vessel structures."
+        }
+      }
+    },
+    {
+      "key": "34-pm-37",
+      "status": "resolved",
+      "officialScoring": "all-correct",
+      "academicAnswerInvented": false,
+      "choiceCoverage": {
+        "a": {
+          "sourceIds": [
+            "gothic-arch-2018"
+          ],
+          "locators": [
+            "Ann Jpn Prosthodont Soc10(2018), pp16–18, Introduction/Basic principles"
+          ],
+          "verifiedClaim": "Gothic arch tracing records mandibular movements to establish horizontal jaw relations. This is distinguished by what it records from direct muscle activity assessment."
+        },
+        "b": {
+          "sourceIds": [
+            "checkbite-2013"
+          ],
+          "locators": [
+            "Abstract, Materials and methods; Fig3, Fig4–6; Table3"
+          ],
+          "verifiedClaim": "Checkbite records protrusive/lateral jaw relations and is used to determine condylar inclinations on a semi-adjustable articulator. It can assess mandibular movement parameters indirectly, so the pairing is not declared categorically false."
+        },
+        "c": {
+          "sourceIds": [
+            "palatogram-case-2013",
+            "palatogram-study-1980"
+          ],
+          "locators": [
+            "2013 printed pp321–323 (PDF pp1–3), Abstract/Case/clinical course",
+            "1980 author abstract"
+          ],
+          "verifiedClaim": "Palatograms document tongue-palatal contact during speech and are used to assess articulation."
+        },
+        "d": {
+          "sourceIds": [
+            "scanner-2018"
+          ],
+          "locators": [
+            "Printed p367, Introduction/Abstract; pp368–369, Methods2-2 and3"
+          ],
+          "verifiedClaim": "The study scans upper and lower dentitions, performs bite registration and measures digital tooth morphology to support dentition/occlusion analysis."
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "palatogram-case-2013",
+      "url": "https://www.jstage.jst.go.jp/article/ajps/5/3/5_321/_pdf",
+      "fetchedAt": "2026-10-11T03:27:07.779253+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jstage.jst.go.jp/article/ajps/5/3/5_321/_pdf",
+      "sha256": "1f2cab49b09eb94fee4c91947628a4ec2fa60a22b2ddfc9352da12a05db6af59",
+      "local": "palatogram-case-2013.pdf",
+      "pages": 4,
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "palatogram-study-1980",
+      "url": "https://www.jstage.jst.go.jp/article/joralbiosci1965/22/4/22_4_550/_article/-char/ja/",
+      "fetchedAt": "2026-10-11T03:27:07.779253+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jstage.jst.go.jp/article/joralbiosci1965/22/4/22_4_550/_article/-char/ja/",
+      "sha256": "121cff1917127c49a9f1e9d8250551b4440a18b5113b5657aded8b59619576eb",
+      "local": "palatogram-study-1980.html",
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "checkbite-2013",
+      "url": "https://synapse.koreamed.org/DOIx.php?id=10.4047/jkap.2013.51.3.153",
+      "fetchedAt": "2026-10-11T03:30:55.162761+00:00",
+      "status": 200,
+      "finalUrl": "https://synapse.koreamed.org/articles/1034741",
+      "sha256": "aa1b3d4d0baf0a4d085df881a2db6011c8d651b9befbf596c26f3ef082bc0d2d",
+      "local": "checkbite-2013.html",
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "scanner-2018",
+      "url": "https://www.jstage.jst.go.jp/article/jspd/56/3/56_367/_pdf/-char/en",
+      "fetchedAt": "2026-10-11T03:30:55.163313+00:00",
+      "status": 200,
+      "finalUrl": "https://www.jstage.jst.go.jp/article/jspd/56/3/56_367/_pdf/-char/en",
+      "sha256": "696de23aab3ea222c5cc3bdec30f371eaf91dd8ee2576c9a4ccce2f2bc9c6cf5",
+      "local": "scanner-2018.pdf",
+      "pages": 8,
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "granulation-imaging-2013",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0067559",
+      "fetchedAt": "2026-10-11T03:32:02.899633+00:00",
+      "status": 200,
+      "finalUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0067559",
+      "sha256": "70466c0bb75ba421d0d3914d4c00da104e618dac9dca5f4da1117b89d73be0df",
+      "local": "granulation-imaging-2013.html",
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "osteoclast-architecture-2007",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0000179",
+      "fetchedAt": "2026-10-11T03:32:02.899633+00:00",
+      "status": 200,
+      "finalUrl": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0000179",
+      "sha256": "3c6dbef6f0f706d7c75cba8a260e107f116cccd9c22ba70dc1d541abe2b399db",
+      "local": "osteoclast-architecture-2007.html",
+      "contentVerified": true,
+      "acquisitionMode": "ordinary HTTPS response; source text reviewed locally"
+    },
+    {
+      "name": "osteoclast-ph-1989",
+      "url": "https://www.jci.org/articles/view/113863/version/1/pdf/render.pdf",
+      "finalUrl": "https://dm5migu4zj3pb.cloudfront.net/manuscripts/113000/113863/cache/113863.1-20201218131459-covered-4fa089109ce452e764bbb8648b44a723.pdf",
+      "status": 200,
+      "sha256": "4dba302ef8c549583b7fe3a08c8e02c27e8e220c9a2ab8b403a292c555e196ba",
+      "fetchedAt": "2026-10-11T03:33:25.700330+00:00",
+      "local": "osteoclast-ph-1989.pdf",
+      "pages": 8,
+      "contentVerified": true,
+      "acquisitionMode": "publisher Download PDF form; ordinary HTTPS redirect"
+    },
+    {
+      "name": "nci-plasma-cell",
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/plasma-cell",
+      "checkedAt": "2026-10-11T03:36:10.113997+00:00",
+      "contentVerified": true,
+      "acquisitionMode": "web parsed official definition",
+      "locator": "Definition paragraph under term heading",
+      "verifiedParaphrase": "An antibody-producing immune cell derived from activated B cells.",
+      "fullHtmlBodyVerified": false,
+      "note": "Normal urllib response contained only a JavaScript wrapper. Its SHA is not claimed as evidence of the definition. The definition was read through web parsed content."
+    },
+    {
+      "name": "nci-lymphocyte",
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/lymphocyte",
+      "checkedAt": "2026-10-11T03:36:10.113997+00:00",
+      "contentVerified": true,
+      "acquisitionMode": "web parsed official definition",
+      "locator": "Definition paragraph under term heading",
+      "verifiedParaphrase": "An immune white blood cell; B and T lymphocytes are distinguished.",
+      "fullHtmlBodyVerified": false,
+      "note": "Normal urllib response contained only a JavaScript wrapper. Its SHA is not claimed as evidence of the definition. The definition was read through web parsed content."
+    },
+    {
+      "name": "nci-capillary",
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/capillary",
+      "checkedAt": "2026-10-11T03:36:10.113997+00:00",
+      "contentVerified": true,
+      "acquisitionMode": "web parsed official definition",
+      "locator": "Definition paragraph under term heading",
+      "verifiedParaphrase": "Small blood vessels with thin walls, joining arterioles and venules.",
+      "fullHtmlBodyVerified": false,
+      "note": "Normal urllib response contained only a JavaScript wrapper. Its SHA is not claimed as evidence of the definition. The definition was read through web parsed content."
+    },
+    {
+      "name": "gothic-arch-2018",
+      "url": "https://www.hotetsu.com/s/doc/irai2018_1_02.pdf",
+      "fetchedAt": "2026-10-11T02:56:41.544365+00:00",
+      "status": 200,
+      "finalUrl": "https://www.hotetsu.com/s/doc/irai2018_1_02.pdf",
+      "sha256": "70f361a0081a3206e69c526ab3e36bb8a3f4f03bf8eed7b9b1448e974157f66d",
+      "local": "gothic-arch-2018.pdf",
+      "pages": 7,
+      "contentVerified": true
+    }
+  ],
+  "independentModelReviewClaimed": false,
+  "scoringTreatmentUnchanged": true,
+  "sitePublishedIncrement": 0,
+  "thirdPartyFullTextsIncludedInPr": false,
+  "stoppedRoutesRetried": false,
+  "notes": [
+    "Prior refusal/challenge routes were not retried. Newly encountered PNAS403 and Crossref429 routes were stopped.",
+    "Research PDFs and HTML responses remain in the local report folder. The PR contains citations, locators, acquisition metadata and original paraphrases only.",
+    "Official excluded/all-correct scoring remains an import hold after scholarly review closure."
+  ]
+}
