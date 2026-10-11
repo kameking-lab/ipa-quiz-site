@@ -22,6 +22,7 @@ import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/ex
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
+  getSharedSubjectTopics,
   getSameExamOtherYears,
   getSameExamRelatedQuestions,
   getSessionNeighbors,
@@ -709,7 +710,7 @@ export default async function QuestionPage({
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {crossExamMode === "topic"
-                ? `トピック「${q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問`
+                ? `トピック「${getSharedSubjectTopics(q, crossExamByTopic).slice(0, 2).join("・")}」を扱う他試験区分の過去問`
                 : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
             </p>
           </div>

@@ -66,4 +66,52 @@ test("dental and land-surveyor pages distinguish originals and independent expla
   await page.goto("/q/shika-ishi/2026-annual/mondai-a/q5");
   expect(await page.locator('main img[src*="shika-ishi"]').count()).toBeGreaterThan(0);
   await expect(page.getByRole("link", { name: "静的解説の確認方針" }).first()).toHaveAttribute("href", "/transparency#static-explanations");
+  const related = page.getByRole("region", { name: "他試験区分の関連問題" });
+  await expect(related).not.toContainText("歯科医師・第119回");
+});
+
+for (const source of [
+  { exam: "fp3", path: "/q/fp3/2026-published/gakka/q11" },
+  { exam: "shika-ishi", path: "/q/shika-ishi/2026-annual/mondai-a/q5" },
+  { exam: "chosashi", path: "/q/chosashi/2025-autumn/am/q11" },
+]) {
+  for (const layout of ["desktop", "mobile"] as const) {
+    test(`${source.exam} header keeps the qualification in every learning mode on ${layout}`, async ({ page }, testInfo) => {
+      await page.setViewportSize({ width: layout === "desktop" ? 1280 : 390, height: 844 });
+      for (const [name, mode] of [["通常クイズ", "random"], ["復習モード", "review"], ["弱点克服", "weakness"]]) {
+        await page.goto(source.path);
+        const header = page.locator("header");
+        if (layout === "desktop") await header.getByRole("button", { name: "問題を解く" }).hover();
+        else await header.getByRole("button", { name: "メニューを開く" }).click();
+        const menu = layout === "desktop"
+          ? header.getByRole("list", { name: "問題を解くメニュー" })
+          : page.getByRole("navigation", { name: "モバイルナビゲーション" });
+        const link = menu.getByRole("link", { name, exact: true });
+        const href = await link.getAttribute("href");
+        expect(new URL(href!, "https://local.invalid").searchParams.get("exam")).toBe(source.exam);
+        await expect(header.getByRole("link", { name: "模試", exact: true })).toHaveCount(0);
+        if (layout === "mobile") await expect(menu.getByRole("link", { name: "模試", exact: true })).toHaveCount(0);
+        if (source.exam === "shika-ishi") await expect(menu.getByRole("link", { name: "ストリームモード", exact: true })).toHaveCount(0);
+        if (mode === "random") await page.screenshot({ path: testInfo.outputPath("qualification-header.png"), animations: "disabled" });
+        await link.click();
+        await expect(page).toHaveURL(new RegExp(`exam=${source.exam}(?:&|$)`));
+        await expect(page).toHaveURL(new RegExp(`mode=${mode}(?:&|$)`));
+        expect(new URL(page.url()).searchParams.get("returnTo")).toBe(source.path);
+      }
+    });
+  }
+}
+
+test("unapproved learning, navigation and error routes never initialize Google ads", async ({ page }) => {
+  const adRequests: string[] = [];
+  page.on("request", request => {
+    if (/googlesyndication\.com|doubleclick\.net|fundingchoicesmessages\.google\.com/.test(request.url())) adRequests.push(request.url());
+  });
+  for (const path of ["/", "/fp3", "/q/fp3/2026-published/gakka/q11", "/blog/fe-hinnshutsu-ronten-toppu10", "/quiz?mode=random&exam=fp3&session=gakka", "/missing-qualification-quality-page"]) {
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(path.startsWith("/missing-") ? 404 : 200);
+    await expect(page.locator("ins.adsbygoogle")).toHaveCount(0);
+    await expect(page.locator('script[src*="googlesyndication"], script[src*="fundingchoices"]')).toHaveCount(0);
+  }
+  expect(adRequests).toEqual([]);
 });

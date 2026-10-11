@@ -9,7 +9,8 @@
       "label": "2024年度公開問題 午前 問1",
       "questionPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
       "answerPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
-      "officialQuestionAndAnswerChecked": false
+      "officialQuestionAndAnswerChecked": true,
+      "confirmation": "Official PDF body acquired by normal HTTP fetch; scanned question page and official key visually read on 2026-10-11."
     },
     {
       "id": "ip-2024cbt-am-q3",
@@ -18,7 +19,8 @@
       "label": "2024年度公開問題 午前 問3",
       "questionPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
       "answerPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
-      "officialQuestionAndAnswerChecked": false
+      "officialQuestionAndAnswerChecked": true,
+      "confirmation": "Official PDF body acquired by normal HTTP fetch; scanned question page and official key visually read on 2026-10-11."
     },
     {
       "id": "sg-2025cbt-kamoku-a-q1",
@@ -422,13 +424,28 @@
     },
     {
       "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
-      "status": "blocked_in_execution_environment",
-      "contentChecked": false
+      "status": "pdf_read",
+      "contentChecked": true,
+      "sha256": "8dd5c1f2a3f98228781c1cd18b1d855455091852c1bd681b4b2e932290dc20ee",
+      "pages": 1,
+      "bytes": 81045,
+      "visuallyCheckedPages": [
+        1
+      ],
+      "acquisition": "normal HTTP fetch from the official URL, without authentication or access-control changes"
     },
     {
       "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
-      "status": "blocked_in_execution_environment",
-      "contentChecked": false
+      "status": "pdf_read",
+      "contentChecked": true,
+      "sha256": "e6771ec9506f385c5a07d22e261535ee82ff285c95cbd9ad08c4e8b941892f55",
+      "pages": 52,
+      "bytes": 6419881,
+      "visuallyCheckedPages": [
+        2,
+        3
+      ],
+      "acquisition": "normal HTTP fetch from the official URL, without authentication or access-control changes"
     }
   ]
 }

@@ -3,7 +3,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { ExamMainTopics, ExamRelatedExams } from "@/components/exam/ExamDeepContent";
-import { getCrossExamRelatedQuestions, isSubjectTopicTag } from "@/lib/questions/related";
+import { getCrossExamRelatedQuestions, getSharedSubjectTopics, isSubjectTopicTag } from "@/lib/questions/related";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import { QuestionListWithFilter } from "@/app/[exam]/[yearSeason]/QuestionListWithFilter";
 
@@ -21,6 +21,13 @@ describe("qualification-aware editorial context", () => {
   it("omits uncurated and non-IPA study tips rather than repeating generic advice", () => {
     const { container } = render(<><CategoryStudyTip category="腎機能" exam="kangoshi" topicTags={[]} /><CategoryStudyTip category="未知分野" exam="ap" topicTags={[]} /></>);
     expect(container).toBeEmptyDOMElement();
+  });
+  it("names an actually shared subject even when qualification and edition tags come first", () => {
+    const dental = ALL_QUESTIONS.find(q => q.exam === "shika-ishi" && q.year === 2026 && q.session === "mondai-a" && q.qNumber === 5)!;
+    const target = { ...dental, id: "other-exam-kidney", exam: "hokenshi" as const, topicTags: ["腎臓", "第119回"] };
+    const current = { ...dental, topicTags: ["歯科医師", "第119回", "未共有の主題", "腎臓"] };
+    expect(getSharedSubjectTopics(current, [target])).toEqual(["腎臓"]);
+    expect(getSharedSubjectTopics(current, [{ ...target, topicTags: ["第119回"] }])).toEqual([]);
   });
   it("does not describe land-surveyor study topics or related qualifications as IPA curriculum", () => {
     const { container } = render(<><ExamMainTopics exam="chosashi" /><ExamRelatedExams exam="chosashi" /></>);
