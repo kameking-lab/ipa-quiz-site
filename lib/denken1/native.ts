@@ -1,6 +1,9 @@
 import { z } from "zod";
 import powerChoices2026 from "@/data/questions/denken1/choice-reasons-2026-power.json";
 import powerChoices2025 from "@/data/questions/denken1/choice-reasons-2025-power.json";
+import machineChoices2026 from "@/data/questions/denken1/choice-reasons-2026-machine.json";
+import machineChoices2025 from "@/data/questions/denken1/choice-reasons-2025-machine.json";
+import { withNativeChoiceReasons } from "./native-choice-reasons";
 import { withPowerChoiceReasons } from "./power-choice-reasons";
 import theory2025 from "@/data/questions/denken1/native-2025-theory.json";
 import power2025 from "@/data/questions/denken1/native-2025-power.json";
@@ -96,7 +99,9 @@ function parseNativePart(raw: unknown, rules: Expected) {
 const raws: unknown[] = [power2025, machine2025, machine2026, power2026, theory2025, theory2026];
 export const DENKEN1_NATIVE_PARTS = raws.map((raw, index) => parseNativePart(raw, expected[index]!))
   .map(parsed => parsed.subject === "power"
-    ? withPowerChoiceReasons(parsed, parsed.year === 2026 ? powerChoices2026 : powerChoices2025) : parsed);
+    ? withPowerChoiceReasons(parsed, parsed.year === 2026 ? powerChoices2026 : powerChoices2025) : parsed)
+  .map(parsed => parsed.subject === "machine"
+    ? withNativeChoiceReasons(parsed, parsed.year === 2026 ? machineChoices2026 : machineChoices2025, "machine") : parsed);
 export const DENKEN1_NATIVE_QUESTIONS = DENKEN1_NATIVE_PARTS.flatMap(item => item.questions);
 if (DENKEN1_NATIVE_QUESTIONS.length !== 36 || new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size !== 36) {
   throw new Error("Denken1 native original count mismatch");
