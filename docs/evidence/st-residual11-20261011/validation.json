@@ -5,7 +5,8 @@
       "command": "node node_modules/vitest/vitest.mjs run __tests__/questions/st-all-year-choice-explanations.test.ts __tests__/questions/st-two-year-choice-explanations.test.ts __tests__/questions/st-residual-source-corrections.test.ts --maxWorkers=1",
       "exitCode": 0,
       "testFiles": 3,
-      "passedTests": 18
+      "passedTests": 18,
+      "note": "Repeated after adding official-summary notices: 18/18 pass"
     },
     {
       "command": "node node_modules/eslint/bin/eslint.js data/questions/st/index.ts __tests__/questions/st-all-year-choice-explanations.test.ts __tests__/questions/st-residual-source-corrections.test.ts",
@@ -27,12 +28,13 @@
   "fullBuildRuns": 0,
   "typecheck": "Hosted CI requested after PR creation",
   "productionOperations": 0,
-  "pdfCropsVisuallyInspected": 8,
+  "pdfCropsVisuallyInspected": 11,
   "independentSourceConflictsReview": {
     "reviewer": "gpt-6-astra",
     "execution": "native subagent",
     "reviewerTask": "st_source_conflict_review",
     "result": "three source conflicts remain blocked"
   },
-  "mediaStatusAndPlanExecuted": true
+  "mediaStatusAndPlanExecuted": true,
+  "sourceConflictNotices": 3
 }

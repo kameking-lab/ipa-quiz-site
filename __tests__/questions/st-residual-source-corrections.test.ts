@@ -79,6 +79,12 @@ describe("ST residual source corrections", () => {
     expect(conflicts.map(row => row.id).sort()).toEqual([
       "st-2009a-am2-q23", "st-2011a-am1-q29", "st-2013h-am1-q29",
     ]);
-    for (const row of conflicts) expect(byId.get(row.id)?.choiceExplanations).toBeUndefined();
+    for (const row of conflicts) {
+      const q = byId.get(row.id);
+      expect(q?.choiceExplanations).toBeUndefined();
+      expect(q?.explanationCoverage).toBe("official-summary");
+      expect(q?.explanation).toContain("公式正答");
+      expect(q?.explanation).toContain("保留");
+    }
   });
 });

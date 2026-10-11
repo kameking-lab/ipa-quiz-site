@@ -7,10 +7,12 @@ import allYearChoiceExplanations from "./choice-explanations-all-years.json";
 import allYearExplanationRepairs from "./explanation-repairs-all-years.json";
 import residualCorrections from "./residual-source-corrections-20261011.json";
 import residualChoiceExplanations from "./choice-explanations-residual-20261011.json";
+import residualConflictNotices from "./residual-source-conflict-notices-20261011.json";
 
 const RAW_ST_QUESTIONS: Question[] = BY_YEAR_QUESTIONS;
 const explanationRepairs: Record<string, string> = allYearExplanationRepairs;
 const sourceCorrections: Record<string, Partial<Question>> = residualCorrections;
+const sourceConflictNotices: Record<string, Partial<Question>> = residualConflictNotices;
 
 export const ST_QUESTIONS: Question[] = applyChoiceExplanationOverlay(
   applyChoiceExplanationOverlay(
@@ -19,6 +21,7 @@ export const ST_QUESTIONS: Question[] = applyChoiceExplanationOverlay(
         ...question,
         ...(explanationRepairs[question.id] ? { explanation: explanationRepairs[question.id] } : {}),
         ...sourceCorrections[question.id],
+        ...sourceConflictNotices[question.id],
       })),
       choiceExplanations,
     ),
