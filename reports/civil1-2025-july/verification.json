@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T01:37:22.939016+00:00",
+  "recordedAt": "2026-10-11T01:42:59.306365+00:00",
   "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
   "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
   "sourceCounts": {
@@ -47,12 +47,24 @@
     },
     "restoredFullTests": {
       "command": "pnpm exec vitest run --maxWorkers=2 --testTimeout=60000",
-      "exitCode": null,
-      "status": "running",
-      "summary": null,
-      "finishedTestFilesObserved": 418,
+      "exitCode": 1,
+      "status": "failed",
+      "summary": {
+        "files": "1 failed | 515 passed (516)",
+        "tests": "1 竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ竡ｯ"
+      },
+      "finishedTestFilesObserved": 516,
       "testFailuresObserved": 1,
       "failureObserved": "Existing api/cost-record-durability.test.ts /api/copilot timed out at 60000ms; no civil1 failure observed."
+    },
+    "singleTimeoutRetry": {
+      "command": "pnpm exec vitest run __tests__/api/cost-record-durability.test.ts --maxWorkers=1 --testTimeout=60000",
+      "exitCode": 1,
+      "status": "failed",
+      "summary": {
+        "files": "1 failed (1)",
+        "tests": "1 ⎯⎯⎯⎯⎯⎯⎯"
+      }
     },
     "defaultLocalBuild": {
       "command": "pnpm build",
