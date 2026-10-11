@@ -1,0 +1,337 @@
+[
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-1",
+    "sources": [
+      {
+        "url": "https://www.fda.gov/media/92921/download",
+        "title": "FDA: Testing and Labeling Medical Devices for Safety in the Magnetic Resonance (MR) Environment (2023)",
+        "locator": "physical pp.4,19-20; IEC 60601-2-33 edition 4 (2022) discussion",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "IEC第4版の0.9 mTと旧版の0.5 mTを区別する必要がある。超電導装置のクエンチ排気に言及。",
+        "qualification": "日本の現行JIS本文を取得したとは主張しない。候補では未確認の現行JIS境界値を断定しない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-2",
+    "sources": [
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23907247/",
+        "title": "ASNR/ACR/SNIS: Imaging recommendations for acute stroke and transient ischemic attack patients (2013)",
+        "locator": "author abstract and Figure 1 caption; doi:10.3174/ajnr.A3690",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "DWI、FLAIR、GRE/SWI、MRAの診断目的と施設の資源に応じた迅速な検査選択。",
+        "qualification": "選択肢4は公式正答による。本資料は全施設で固定された撮影順を規定していない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-12",
+    "sources": [
+      {
+        "url": "https://www.aapm.org/pubs/reports/RPT_177.pdf",
+        "title": "AAPM Task Group 177: Acceptance Testing and Annual Physics Survey Recommendations for Gamma Camera, SPECT, and SPECT/CT Systems (2019)",
+        "locator": "section 5, physical pp.14-15; digital signal processing discussion p.31",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "単一結晶アンガー型と多結晶・デジタル機器の構成を区別。旧原稿を古典的アンガー型に限定。"
+      },
+      {
+        "url": "https://www.siemens-healthineers.com/fr-dz/molecular-imaging/spect-and-spect-ct/symbia-evo",
+        "title": "Siemens Healthineers: Symbia Evo",
+        "locator": "Detector technology: crystal thickness 3/8 or 5/8 inch",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "代表的なNaI結晶厚の製造元実例を確認。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-13",
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2308.06255",
+        "title": "Smith et al.: NEMA NU 2-2018 performance evaluation of the GE HealthCare Omni Legend 32 cm PET-CT",
+        "locator": "arXiv:2308.06255 (2023); abstract, introduction, methods 2.2-2.8",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "2018版で評価される空間分解能、散乱、感度、補正精度、画質、PET/CT重ね合わせ等を実測。",
+        "qualification": "1994→2001の改訂経緯は候補から削除。規格全文を読んだとは主張しない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-20",
+    "sources": [
+      {
+        "url": "https://pdf.hres.ca/dpd_pm/00062509.PDF",
+        "title": "Curium Canada: OCTREOSCAN Product Monograph (2021-08-13)",
+        "locator": "sections 1,4.1,4.4,4.6,5,10.3; physical pp.5-9,12,18",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "111Inペンテトレオチド、神経内分泌腫瘍、尿路及び少量の肝胆道排泄、24時間像と腸管集積鑑別のための48時間像。",
+        "qualification": "24時間時点の正確な発現頻度の数値は追加せず、原典にある腸管集積の鑑別を説明。候補正答の2・3は公式正答と一致。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-27",
+    "sources": [
+      {
+        "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/TRS398_scr.pdf",
+        "title": "IAEA Technical Reports Series No.398: Absorbed Dose Determination in External Beam Radiotherapy (2000 edition)",
+        "locator": "section 6.3.2/Table 12 printed p.70; section 6.7.1 printed p.78",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "円筒形電離箱でTPR20,10の線質測定は幾何学的中心、深部線量分布は実効測定点を使用。",
+        "qualification": "この検証は明示したIAEA版の原典。JSMP標準計測法12の条文を閲覧したとの主張はしない。"
+      },
+      {
+        "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf",
+        "title": "IAEA: Radiation Oncology Physics: A Handbook for Teachers and Students (2005)",
+        "locator": "section 6.5.3, printed p.172",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "光子最大線量深はエネルギーと照射野に依存し、全照射野域での単調な変化ではない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-36",
+    "sources": [
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12559128/",
+        "title": "ESUR Contrast Media Safety Committee: Hypersensitivity reactions to contrast media, Part 2: Prevention of recurrent hypersensitivity reactions in adults (2025)",
+        "locator": "Changing the specific contrast medium; Table 2",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "原因製品の特定・記録、反応の重症度に応じた再検査計画と薬剤変更の検討。",
+        "qualification": "副作用が全て投与量非依存との主張、前投薬の一律推奨を候補から除く。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-77-pm-41",
+    "sources": [
+      {
+        "url": "https://www.hospital.sasebo.nagasaki.jp/shinryoka/bumon/kentai-kensa-kijunchi/",
+        "title": "佐世保市総合医療センター: 検体検査基準値",
+        "locator": "血液一般: RBC female 3.86-4.92; Hb female 11.6-14.8; Hct female 35.1-44.4; WBC 3.3-8.6; platelets 158-348",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "本問の5検査値の単位と基準範囲を照合。Hb8.0だけが低値。",
+        "qualification": "施設による基準範囲の差を明記し、この施設の公表例として提示。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-13",
+    "sources": [
+      {
+        "url": "https://karger.com/dee/article/10/2/63/95645/Utility-of-Easy-Z-Score-Imaging-System-Assisted",
+        "title": "Hayashi et al.: Utility of Easy Z-Score Imaging System-Assisted Brain Perfusion SPECT in Differentiating Alzheimer Disease with Amyloid Accumulation (2020)",
+        "locator": "statistical analysis; doi:10.1159/000507654",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "eZIS血流低下のZ=(正常群平均−患者値)/正常群SD、正常DB、画像正規化。",
+        "qualification": "eZISでの定義に限定し、全ソフト共通の符号・一律の有意閾値とはしない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-14",
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2308.06255",
+        "title": "Smith et al.: NEMA NU 2-2018 performance evaluation of Omni Legend 32 cm PET-CT",
+        "locator": "sections 2.5,3 and discussion of comparison systems/energy windows",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "散乱フラクションは散乱と真同時計数の比率で、検出器構成やエネルギーウィンドウを伴って評価する。",
+        "qualification": "体軸視野だけで散乱フラクションの必然的減少又は増加を断定しない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-20",
+    "sources": [
+      {
+        "url": "https://www.mhlw.go.jp/content/10800000/001063188.pdf",
+        "title": "厚生労働省: 放射性医薬品を投与された患者の退出について (2021改正通知添付)",
+        "locator": "printed pp.3-4, tables and 177Lu-oxodotreotide section",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "177Luオキソドトレオチド:体表面1 mで18 μSv/h以下。131Iは500 MBqと30 μSv/hの異なる退出基準。",
+        "qualification": "通知の実施条件に従う退出基準。500 MBqを全ての外来投与の上限と表現しない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-23",
+    "sources": [
+      {
+        "url": "https://ganjoho.jp/public/qa_links/report/statistics/pdf/cancer_statistics_2025_fig_J.pdf",
+        "title": "国立がん研究センター: がんの統計2025 図表編",
+        "locator": "printed p.15 (physical page 5), 2023年 部位別がん死亡数順位",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "2023年男女計の順位は肺、大腸、膵臓、胃、肝臓。選択肢では肺が最多。",
+        "qualification": "掲載年2025と死亡統計の対象年2023を区別。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-24",
+    "sources": [
+      {
+        "url": "https://www.jsmp.org/wp-content/uploads/JSMP_electrometer_guideline_2024.pdf",
+        "title": "日本医学物理学会: 放射線治療用線量計に用いられる電位計のガイドライン (2024年改訂)",
+        "locator": "section 8.4 ユーザーによる点検; printed pp.59-66",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "繰返し性、ゼロ点ドリフト、ゼロ点シフト、電荷漏れを原典のユーザー点検項目で確認。",
+        "qualification": "電子回路に温度特性がないとは説明せず、この点検一覧に温度・圧力依存性が含まれない点を説明。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-28",
+    "sources": [
+      {
+        "url": "https://www-pub.iaea.org/MTCD/Publications/PDF/Pub1196_web.pdf",
+        "title": "IAEA: Radiation Oncology Physics: A Handbook for Teachers and Students (2005)",
+        "locator": "section 8.2.2 printed pp.279-280; section 10.4.2.2 printed p.380",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "低エネルギー電子線の急峻なビルドアップ。小照射野の縮小は最大線量深を浅くするが、十分な照射野ではほぼ一定。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-30",
+    "sources": [
+      {
+        "url": "https://www.jstage.jst.go.jp/article/jastro/19/2/19_2_99/_pdf/-char/en",
+        "title": "荒木不次男: 光子ビームにおける水等価固体ファントムを用いた水吸収線量測定に関する研究 (JASTRO 19:99-107,2007)",
+        "locator": "equation 9 printed p.102; Table 4 and discussion printed p.103",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "高エネルギー光子線について等価深さの換算と材質・線質別のスケーリング係数の小さな差を実測。",
+        "qualification": "電子線の換算規定を光子線の根拠として流用しない。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-38",
+    "sources": [
+      {
+        "url": "https://www.pdradiopharma.com/uploads/mibivial%20_pi.pdf",
+        "title": "PDRファーマ: カーディオライト第一 電子添文 (2026年6月第3版)",
+        "locator": "physical p.1 規制区分",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "MIBIキットは毒薬・処方箋医薬品。"
+      },
+      {
+        "url": "https://www.pdradiopharma.com/uploads/maa_pi.pdf",
+        "title": "PDRファーマ: テクネMAAキット 電子添文",
+        "locator": "physical p.1 規制区分",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "MAAキットの規制区分に毒薬表示はない。"
+      },
+      {
+        "url": "https://www.pdradiopharma.com/uploads/magkit_pi.pdf",
+        "title": "PDRファーマ: テクネMAG3キット 電子添文 (2022年3月第2版)",
+        "locator": "physical p.1 規制区分",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "MAG3キットの規制区分に毒薬表示はない。"
+      },
+      {
+        "url": "https://www.pdradiopharma.com/uploads/pypkit_pi.pdf",
+        "title": "PDRファーマ: テクネピロリン酸キット 電子添文 (2022年3月第2版)",
+        "locator": "physical p.1 規制区分",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "PYPキットの規制区分に毒薬表示はない。"
+      },
+      {
+        "url": "https://cdn.medley.life/uploads/medicines/prescription/pdf/651410_4300401D1027_2_01.pdf",
+        "title": "PDRファーマ: テクネDMSAキット 電子添文 (2022年3月第2版、公開ミラー)",
+        "locator": "physical p.1 規制区分; p.2製造販売元",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "DMSAキットのメーカー原文に毒薬表示はない。",
+        "qualification": "メーカー原文の公開ミラーで閲覧。PMDAから直接取得した、又はこれが最新版だとは主張しない。"
+      },
+      {
+        "url": "https://laws.e-gov.go.jp/law/335AC0000000145",
+        "title": "医薬品医療機器等法",
+        "locator": "第48条第2項",
+        "accessed": "2026-10-11",
+        "accessMethod": "official e-Gov search extract; page text unavailable in web renderer",
+        "confirms": "毒薬の貯蔵又は陳列場所の施錠義務。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-39",
+    "sources": [
+      {
+        "url": "https://iryou-kinmukankyou.mhlw.go.jp/files/Attachment/222/%E8%87%A8%E5%BA%8A%E6%A4%9C%E6%9F%BB%E6%8A%80%E5%B8%AB%E7%AD%89%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E6%B3%95%E5%BE%8B%E6%96%BD%E8%A1%8C%E4%BB%A4%E3%81%AE%E4%B8%80%E9%83%A8%E3%82%92%E6%94%B9%E6%AD%A3%E3%81%99%E3%82%8B%E6%94%BF%E4%BB%A4%E7%AD%89%E3%81%AE%E5%85%AC%E5%B8%83%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%EF%BC%88%E5%8C%BB%E6%94%BF%E7%99%BA%EF%BC%90%EF%BC%97%EF%BC%90%EF%BC%99%E7%AC%AC%EF%BC%97%E5%8F%B7%EF%BC%89.pdf",
+        "title": "厚生労働省 医政発0709第7号 (2021年7月9日)",
+        "locator": "physical p.2, 診療放射線技師法施行規則15条の2の改正内容",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "核医学検査の静脈路確保、注入装置接続操作、抜針止血、具体的な医師又は歯科医師指示を確認。"
+      },
+      {
+        "url": "https://www.radiology.jp/content/files/RadTechTaskShiftShareGL_Ver03-2_20260521.pdf",
+        "title": "日本医学放射線学会: 診療放射線技師へのタスク・シフト/シェア ガイドライン Ver.03-2 (2026年5月21日)",
+        "locator": "printed p.29, 核医学検査",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "検査での吸入補助等と、放射性医薬品による内用療法の静脈路確保・投与禁止を区別。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-45",
+    "sources": [
+      {
+        "url": "https://www.genome.gov/genetics-glossary/Cell-Cycle",
+        "title": "NHGRI: Cell Cycle",
+        "locator": "definition/narration",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "細胞周期G1→S→G2→M、S期のDNA複製。"
+      },
+      {
+        "url": "https://www.genome.gov/genetics-glossary/Chromatid",
+        "title": "NHGRI: Chromatid",
+        "locator": "definition/narration",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "DNA複製後はセントロメアで結ばれた姉妹染色分体となる。",
+        "qualification": "DNA量の倍増と染色体数の倍増を混同しない。選択肢G2前期/中期/後期は公式紙面どおり保持。"
+      }
+    ]
+  },
+  {
+    "identity": "shinryo-hoshasengishi-78-pm-48",
+    "sources": [
+      {
+        "url": "https://cdn.jsn.or.jp/data/guideline_nsf_20240520.pdf",
+        "title": "日本医学放射線学会・日本腎臓学会: 腎障害患者におけるガドリニウム造影剤使用に関するガイドライン 第3版 (2024年5月20日)",
+        "locator": "p.1本文2-3; p.2改訂理由",
+        "accessed": "2026-10-11",
+        "accessMethod": "normal web tool; primary document text read",
+        "confirms": "緊急等やむを得ない場合を除き、使用前にeGFR評価。腎機能・造影剤安定性に応じNSFリスクを検討。",
+        "qualification": "問題に不要な具体的eGFR閾値は追加しない。"
+      }
+    ]
+  }
+]
