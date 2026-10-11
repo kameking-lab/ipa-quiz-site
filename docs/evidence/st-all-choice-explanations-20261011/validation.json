@@ -1,0 +1,57 @@
+{
+  "completedAt": "2026-10-11T01:49:11.630Z",
+  "commands": [
+    {
+      "command": "node node_modules/vitest/vitest.mjs run __tests__/questions/st-all-year-choice-explanations.test.ts __tests__/questions/st-two-year-choice-explanations.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "files": 2,
+      "passedTests": 13
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "scope": "repository"
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js data/questions/st/index.ts __tests__/questions/st-all-year-choice-explanations.test.ts",
+      "exitCode": 0,
+      "scope": "changed ST TypeScript"
+    },
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs scripts/validate-questions.ts --exam=st",
+      "exitCode": 0,
+      "questions": 680,
+      "warnings": "Existing empty topicTags and hasImage without imageUrls; an uncertain narrative warning on held raw question st-2009a-am1-q3 remains. Metadata/raw holds are outside this explanation-only change."
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --numstat -- data/questions/st/by-year data/questions/st/choice-explanations-2024-2025.json docs/evidence/st-choice-explanations-2024-2025",
+      "exitCode": 0,
+      "output": "",
+      "result": "Raw source bytes, latest-two-year overlay and independent receipt files unchanged"
+    }
+  ],
+  "fullBuildRuns": 0,
+  "productionOperations": 0,
+  "coverage": {
+    "allRecordedQuestions": 680,
+    "covered": 669,
+    "newCovered": 559,
+    "latestTwoYearCovered": 110,
+    "missingQuestions": 11,
+    "missingWrongChoices": 33,
+    "ordinaryUnwritten": 0
+  },
+  "officialAnswers": {
+    "papers": 24,
+    "matched": 680,
+    "mismatched": 0
+  },
+  "rawCanonicalAnchorSha256": "467a15e17b5eb444e8b210ce7429030edc0b345cdea41d771c961c1a255fabc7",
+  "requestedModel": "gpt-6.1-sol",
+  "privateRuntimeReceipt": null,
+  "cliLaunches": 0
+}
