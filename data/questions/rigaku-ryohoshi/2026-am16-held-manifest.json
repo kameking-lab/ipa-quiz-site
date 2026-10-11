@@ -1,5 +1,5 @@
 {
-  "status": "REVIEW_REQUIRED_WITH_Q42_Q66_HOLD",
+  "status": "PRIVATE_ACCEPT_13_HOLD_3_NO_PUBLICATION",
   "publicGo": false,
   "siteAdopted": false,
   "questionCount": 16,
@@ -8,29 +8,20 @@
   "heldQuestionNumbers": [
     24,
     42,
-    58,
-    60,
-    61,
-    62,
-    63,
-    64,
-    66,
-    67,
-    68,
-    77,
-    78,
-    79,
-    80,
-    98
+    66
   ],
   "explicitHolds": [
     {
+      "questionNumber": 24,
+      "reason": "Choices1–4 supported; exact equal-distance criterion for lower thigh-half-ring/upper lower-leg-half-ring not directly confirmed in primary text."
+    },
+    {
       "questionNumber": 42,
-      "reason": "原著版の筋力テスト肢位の一次資料照合待ち。HOLD_SOURCE_EVIDENCEを維持。"
+      "reason": "Daniels and Worthingham 10th-edition exact five muscle-testing positions unavailable in legitimate public original preview; official alternative key retained."
     },
     {
       "questionNumber": 66,
-      "reason": "一次研究とリンに関する一般化の齟齬。独立事実確認まで非公開。"
+      "reason": "J-STAGE DOI10.1271/bbb.69.1025 directly measured lower apparent calcium absorption with increasing phosphorus in female rats; human usual-diet study PMID10966895 found no absorption-efficiency relation. General human decrease remains unestablished."
     }
   ],
   "reviewCaveat": {
@@ -46,7 +37,7 @@
     "rigaku-ryohoshi-2026-annual-am-q24": {
       "sourceRowSha256": "7e937cc6b2852a54df59e68948027da08de19e26d2d50d6258166d28b30c2ec8",
       "manuscriptPart": 1,
-      "manuscriptSha256": "e0c20ad4bf9280f29fb9f10a54d1d8e40d7972e2b11dbebbbffd39d37f606ba4",
+      "manuscriptSha256": "f632e60be5ed41837a719e705e233ecf495ecba18c879b4614d1852f301a708d",
       "officialAnswerCellLiterals": [
         "5"
       ],
@@ -66,13 +57,13 @@
         "https://sougu.saitama-pt.or.jp/column/vertical-axis/",
         "https://i-rousaikyoukai.jp/wp-content/uploads/2026/02/19.pdf"
       ],
-      "reviewStatus": "LOCAL_DRAFT_FACT_REVIEW_REQUIRED",
+      "reviewStatus": "HOLD_SOURCE_EVIDENCE",
       "publicGo": false
     },
     "rigaku-ryohoshi-2026-annual-am-q42": {
       "sourceRowSha256": "ab5b2cf5dcb53e79ebabb6625a49e1d8fd19b458212ed94710bc7e54bc7aa667",
       "manuscriptPart": 1,
-      "manuscriptSha256": "e0c20ad4bf9280f29fb9f10a54d1d8e40d7972e2b11dbebbbffd39d37f606ba4",
+      "manuscriptSha256": "f632e60be5ed41837a719e705e233ecf495ecba18c879b4614d1852f301a708d",
       "officialAnswerCellLiterals": [
         "12",
         "13",
@@ -108,7 +99,7 @@
     "rigaku-ryohoshi-2026-annual-am-q58": {
       "sourceRowSha256": "98a754e5ba2c62ac2abfa5b14de322dbacdd1f23a415e27617f6d46b5502f14d",
       "manuscriptPart": 1,
-      "manuscriptSha256": "e0c20ad4bf9280f29fb9f10a54d1d8e40d7972e2b11dbebbbffd39d37f606ba4",
+      "manuscriptSha256": "f632e60be5ed41837a719e705e233ecf495ecba18c879b4614d1852f301a708d",
       "officialAnswerCellLiterals": [
         "5"
       ],
@@ -139,7 +130,7 @@
     "rigaku-ryohoshi-2026-annual-am-q60": {
       "sourceRowSha256": "6b842b90d4bc337e3d0516d95cc8100e36063cc739a1160f98fbf94aca4b745f",
       "manuscriptPart": 1,
-      "manuscriptSha256": "e0c20ad4bf9280f29fb9f10a54d1d8e40d7972e2b11dbebbbffd39d37f606ba4",
+      "manuscriptSha256": "f632e60be5ed41837a719e705e233ecf495ecba18c879b4614d1852f301a708d",
       "officialAnswerCellLiterals": [
         "3",
         "4"
@@ -279,7 +270,7 @@
     "rigaku-ryohoshi-2026-annual-am-q66": {
       "sourceRowSha256": "bd472ceee53d5ed2055a3e43c43feeb03425531fea8f49500df71b6aa91f0a03",
       "manuscriptPart": 3,
-      "manuscriptSha256": "eb59e792ea6a7d0781734876edfa7213d54fb3e250577800fb5f97427a7ecc6b",
+      "manuscriptSha256": "187660cd0ddb2dc44037c19282ca67637e473b54034e884fe7d566a4ae62631a",
       "officialAnswerCellLiterals": [
         "45"
       ],
@@ -301,15 +292,15 @@
         "https://pure.johnshopkins.edu/en/publications/vitamin-d-and-intestinal-calcium-absorption/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC5693714/",
         "https://pubmed.ncbi.nlm.nih.gov/10966895/",
-        "https://www.sciencedirect.com/science/article/pii/S2161831322011796"
+        "https://www.jstage.jst.go.jp/article/bbb/69/5/69_5_1025/_pdf"
       ],
-      "reviewStatus": "LOCAL_DRAFT_FACT_REVIEW_REQUIRED",
+      "reviewStatus": "HOLD_SOURCE_EVIDENCE",
       "publicGo": false
     },
     "rigaku-ryohoshi-2026-annual-am-q67": {
       "sourceRowSha256": "fba7813ccce06f4aa05e3c8f0a67b60a85bdeaa674ae15a4e94196e4baf593cf",
       "manuscriptPart": 3,
-      "manuscriptSha256": "eb59e792ea6a7d0781734876edfa7213d54fb3e250577800fb5f97427a7ecc6b",
+      "manuscriptSha256": "187660cd0ddb2dc44037c19282ca67637e473b54034e884fe7d566a4ae62631a",
       "officialAnswerCellLiterals": [
         "14"
       ],
@@ -339,7 +330,7 @@
     "rigaku-ryohoshi-2026-annual-am-q68": {
       "sourceRowSha256": "91fb06dd904e8de55e0efe659040b3a36077a5b0ab03d770bab4a2e1cfb6da3f",
       "manuscriptPart": 3,
-      "manuscriptSha256": "eb59e792ea6a7d0781734876edfa7213d54fb3e250577800fb5f97427a7ecc6b",
+      "manuscriptSha256": "187660cd0ddb2dc44037c19282ca67637e473b54034e884fe7d566a4ae62631a",
       "officialAnswerCellLiterals": [
         "5"
       ],
@@ -366,7 +357,7 @@
     "rigaku-ryohoshi-2026-annual-am-q77": {
       "sourceRowSha256": "fd39a67041babea55e6ac182d28fbb7781cea96e9e28ceed8eda756ed73252c6",
       "manuscriptPart": 3,
-      "manuscriptSha256": "eb59e792ea6a7d0781734876edfa7213d54fb3e250577800fb5f97427a7ecc6b",
+      "manuscriptSha256": "187660cd0ddb2dc44037c19282ca67637e473b54034e884fe7d566a4ae62631a",
       "officialAnswerCellLiterals": [
         "1"
       ],
@@ -499,9 +490,8 @@
     }
   },
   "independentReview": {
-    "outcome": "14 reviewed candidates; 2 questions remain held",
+    "outcome": "13 private candidates accepted; 3 held; site publication remains closed",
     "reviewedQuestionNumbers": [
-      24,
       58,
       60,
       61,
@@ -520,18 +510,41 @@
       24
     ],
     "heldQuestionNumbers": [
+      24,
       42,
       66
     ],
     "heldReasons": {
-      "42": "Original Daniels 10th-edition position evidence remains unresolved (HOLD_SOURCE_EVIDENCE).",
-      "66": "Phosphorus explanation conflicts with primary research; independent fact resolution remains pending."
+      "24": "Choices1–4 supported; exact equal-distance criterion for lower thigh-half-ring/upper lower-leg-half-ring not directly confirmed in primary text.",
+      "42": "Daniels and Worthingham 10th-edition exact five muscle-testing positions unavailable in legitimate public original preview; official alternative key retained.",
+      "66": "J-STAGE DOI10.1271/bbb.69.1025 directly measured lower apparent calcium absorption with increasing phosphorus in female rats; human usual-diet study PMID10966895 found no absorption-efficiency relation. General human decrease remains unestablished."
     },
     "source": "Qualification owner's independent Astra/Sol review outcome; manuscript statuses remain unchanged.",
-    "candidateNeedsReviewCount": 16,
+    "candidateNeedsReviewCount": 3,
     "publicAdded": 0,
     "registryConnected": false,
     "publicGo": false,
-    "factReviewReceiptSha256": "f52c5d8be3d76cb2c2ea139014849976d43827d24e72ab602efac2e674c427ba"
+    "factReviewReceiptSha256": "a40295228da69ae37a25ca7c5a5f26851cf19d6dfdfbe5588220433dadf9c7af",
+    "privateAcceptedQuestionNumbers": [
+      58,
+      60,
+      61,
+      62,
+      63,
+      64,
+      67,
+      68,
+      77,
+      78,
+      79,
+      80,
+      98
+    ],
+    "privateHeldQuestionNumbers": [
+      24,
+      42,
+      66
+    ],
+    "acceptanceTable": "data/questions/rigaku-ryohoshi/2026-am16-acceptance.json"
   }
 }

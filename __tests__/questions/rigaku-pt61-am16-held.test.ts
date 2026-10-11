@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import acceptance from "@/data/questions/rigaku-ryohoshi/2026-am16-acceptance.json";
 import candidate from "@/data/questions/rigaku-ryohoshi/2026-am16-held-candidate.json";
 import manifest from "@/data/questions/rigaku-ryohoshi/2026-am16-held-manifest.json";
 import { RIGAKU_RYOHOUSHI_QUESTIONS } from "@/data/questions/rigaku-ryohoshi";
@@ -6,6 +7,8 @@ import { isAcceptedAnswer, isCompleteSelectionCorrect } from "@/lib/questions/an
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const expected = [24, 42, 58, 60, 61, 62, 63, 64, 66, 67, 68, 77, 78, 79, 80, 98];
+const accepted = [58, 60, 61, 62, 63, 64, 67, 68, 77, 78, 79, 80, 98];
+const held = [24, 42, 66];
 const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"];
 const rows = candidate as unknown as Question[];
 
@@ -33,20 +36,44 @@ describe("PT第61回午前16問の隔離候補", () => {
   it("keeps every draft and diagram out of the live registry", () => {
     expect(manifest.publicGo).toBe(false);
     expect(manifest.siteAdopted).toBe(false);
-    expect(rows.every((q) => q.needsReview === true)).toBe(true);
+    expect(rows.filter((q) => !q.needsReview).map((q) => q.qNumber)).toEqual(accepted);
+    expect(rows.filter((q) => q.needsReview).map((q) => q.qNumber)).toEqual(held);
+    expect(acceptance.privateAcceptedQuestionNumbers).toEqual(accepted);
+    expect(acceptance.privateHeldQuestionNumbers).toEqual(held);
+    expect(acceptance.privateAcceptedCount).toBe(13);
+    expect(acceptance.privateHeldCount).toBe(3);
+    expect(acceptance.rows.map((record) => record.id)).toEqual(rows.map((q) => q.id));
+    for (const [index, q] of rows.entries()) {
+      const record = acceptance.rows[index]!;
+      expect(record.privateCandidateDecision).toBe(q.needsReview ? "HOLD" : "ACCEPT");
+      expect(record.candidateNeedsReview).toBe(q.needsReview);
+      expect(record.requiredSelections).toBe(q.requiredSelections ?? 1);
+      expect(record.officialAnswerNumber).toBe(q.officialAnswerNumber);
+      expect(record.sitePublicationGate).toBe("CLOSED");
+    }
+    const q24 = acceptance.rows.find((record) => record.questionNumber === 24);
+    expect(q24?.privateCandidateDecision).toBe("HOLD");
+    expect(q24?.independentReviewReceiptStatus).toBe("HOLD");
+    expect(q24?.holdReason).toBeTruthy();
+    expect(acceptance.publicGo).toBe(false);
+    expect(acceptance.siteAdopted).toBe(false);
+    expect(acceptance.registryConnected).toBe(false);
+    expect(acceptance.publicQuestionIncrease).toBe(0);
     const live = new Set(RIGAKU_RYOHOUSHI_QUESTIONS.map((q) => q.id));
     for (const q of rows) expect(live.has(q.id), q.id).toBe(false);
     const figure = rows.find((q) => q.qNumber === 58);
     expect(figure?.hasImage).toBe(true);
     expect(figure?.imageUrls).toBeUndefined();
     expect(rows.filter((q) => q.hasImage)).toHaveLength(1);
-    expect(manifest.explicitHolds.map((hold) => hold.questionNumber)).toEqual([42, 66]);
+    expect(manifest.explicitHolds.map((hold) => hold.questionNumber)).toEqual(held);
     expect(manifest.receipts["rigaku-ryohoshi-2026-annual-am-q42"].reviewStatus).toBe("HOLD_SOURCE_EVIDENCE");
     expect(manifest.reviewCaveat.questionNumber).toBe(24);
-    expect(manifest.independentReview.reviewedQuestionNumbers).toHaveLength(14);
+    expect(manifest.independentReview.reviewedQuestionNumbers).toEqual(accepted);
     expect(manifest.independentReview.reviewedWithEvidenceLimit).toEqual([24]);
-    expect(manifest.independentReview.heldQuestionNumbers).toEqual([42, 66]);
-    expect(manifest.independentReview.candidateNeedsReviewCount).toBe(16);
+    expect(manifest.independentReview.heldQuestionNumbers).toEqual(held);
+    expect(manifest.independentReview.candidateNeedsReviewCount).toBe(3);
+    expect(manifest.independentReview.privateAcceptedQuestionNumbers).toEqual(accepted);
+    expect(manifest.independentReview.privateHeldQuestionNumbers).toEqual(held);
     expect(manifest.independentReview.publicAdded).toBe(0);
     expect(manifest.independentReview.registryConnected).toBe(false);
   });
