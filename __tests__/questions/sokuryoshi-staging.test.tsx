@@ -55,9 +55,9 @@ describe("surveyor latest two complete source candidates", () => {
 
   it("pins source PDFs and all question/answer images to their unambiguous original pages", () => {
     expect(manifest.files).toHaveLength(13);
-    expect(Object.keys(manifest.assets)).toHaveLength(148);
+    expect(Object.keys(manifest.assets)).toHaveLength(156);
     for (const [url, asset] of Object.entries(manifest.assets)) {
-      const bytes = readFileSync(resolve(process.cwd(), "public", url.slice(1)));
+      const bytes = readFileSync(resolve(process.cwd(), asset.stagedPath));
       expect(createHash("sha256").update(bytes).digest("hex"), url).toBe(asset.sha256);
       expect(asset.sourcePdfUrl).toMatch(/^https:\/\/www\.gsi\.go\.jp\/common\/\d+\.pdf$/);
     }
