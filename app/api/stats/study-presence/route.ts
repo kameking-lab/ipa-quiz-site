@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readStudyPresence, recordStudyPresence } from "@/lib/study-presence-store";
+import { readStudyPresence, recordStudyPresence, recordLegacyStudyPresence } from "@/lib/study-presence-store";
 import { canonicalPresenceExam, isPresenceBot, PRESENCE_WINDOW_MS } from "@/lib/study-presence";
 
 export const runtime = "nodejs";
@@ -33,11 +33,19 @@ export async function POST(request: Request) {
   let previousVisitorId: unknown;
   try { ({ visitorId, idleMs, exam, previousVisitorId } = JSON.parse(body)); } catch { return unavailable(400); }
   if (typeof idleMs !== "number" || !Number.isInteger(idleMs) || idleMs < 0 || idleMs >= PRESENCE_WINDOW_MS ||
-      typeof visitorId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitorId) ||
-      typeof exam !== "string" || !canonicalPresenceExam(exam)) return unavailable(400);
+      typeof visitorId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitorId)) return unavailable(400);
+  // Only an absent field is the legacy format; explicit null/unknown values remain invalid.
+  if (exam !== undefined && (typeof exam !== "string" || !canonicalPresenceExam(exam))) return unavailable(400);
   if (previousVisitorId !== undefined && (typeof previousVisitorId !== "string" ||
       !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(previousVisitorId) || previousVisitorId === visitorId)) return unavailable(400);
   if (!measurementEnabled(request)) return unavailable(503);
-  try { return NextResponse.json(await recordStudyPresence(visitorId, idleMs, canonicalPresenceExam(exam)!, previousVisitorId as string | undefined), { headers }); }
+  try {
+    if (exam === undefined) {
+      const count = await recordLegacyStudyPresence(visitorId, idleMs, previousVisitorId as string | undefined);
+      // Old clients consume only count: include active unqualified browsers without guessing their exam.
+      return NextResponse.json({ count }, { headers });
+    }
+    return NextResponse.json(await recordStudyPresence(visitorId, idleMs, canonicalPresenceExam(exam as string)!, previousVisitorId as string | undefined), { headers });
+  }
   catch { return unavailable(503); }
 }

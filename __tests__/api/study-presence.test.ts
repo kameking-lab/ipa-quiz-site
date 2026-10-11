@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-const { record, read } = vi.hoisted(() => ({ record: vi.fn(), read: vi.fn() }));
-vi.mock("@/lib/study-presence-store", () => ({ recordStudyPresence: record, readStudyPresence: read }));
+const { record, read, legacy } = vi.hoisted(() => ({ record: vi.fn(), read: vi.fn(), legacy: vi.fn() }));
+vi.mock("@/lib/study-presence-store", () => ({ recordStudyPresence: record, readStudyPresence: read, recordLegacyStudyPresence: legacy }));
 import { GET, POST } from "@/app/api/stats/study-presence/route";
 const id = "00000000-0000-4000-8000-000000000001";
 const data = { count: 3, exams: [{ exam: "fe", count: 2 }, { exam: "denko2", count: 1 }] };
@@ -8,7 +8,7 @@ const body = { visitorId: id, idleMs: 20_000, exam: "fe" };
 const req = (value: unknown = body, origin = "https://www.kakomon-ai.jp", extra = {}) => new Request("https://www.kakomon-ai.jp/api/stats/study-presence", {
   method: "POST", headers: { Origin: origin, "Content-Type": "application/json", ...extra }, body: JSON.stringify(value),
 });
-beforeEach(() => { vi.stubEnv("DATABASE_URL", "postgresql://test"); vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("VERCEL_ENV", "production"); record.mockReset(); read.mockReset(); });
+beforeEach(() => { vi.stubEnv("DATABASE_URL", "postgresql://test"); vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("VERCEL_ENV", "production"); record.mockReset(); read.mockReset(); legacy.mockReset(); });
 afterEach(() => vi.unstubAllEnvs());
 describe("presence endpoint", () => {
   it("returns only uncached qualification counts from storage", async () => {
@@ -35,8 +35,8 @@ describe("presence endpoint", () => {
   it.each(["Googlebot", "HeadlessChrome", "Playwright", "ipa-quiz-cron-health-check/1.0"])("excludes known automation: %s", async userAgent => {
     expect((await POST(req(body, undefined, { "user-agent": userAgent }))).status).toBe(403); expect(record).not.toHaveBeenCalled();
   });
-  it.each([{ ...body, visitorId: "fake" }, { ...body, idleMs: -1 }, { ...body, idleMs: 120_000 }, { ...body, exam: "unknown" }, { ...body, exam: null }, { visitorId: id, idleMs: 0 }])("rejects invalid/legacy unqualified heartbeats", async value => {
-    expect((await POST(req(value))).status).toBe(400); expect(record).not.toHaveBeenCalled();
+  it.each([{ ...body, visitorId: "fake" }, { ...body, idleMs: -1 }, { ...body, idleMs: 120_000 }, { ...body, exam: "unknown" }, { ...body, exam: null }, { ...body, exam: "" }, { ...body, exam: 1 }, { ...body, exam: {} }])("rejects explicit invalid qualification heartbeats", async value => {
+    expect((await POST(req(value))).status).toBe(400); expect(record).not.toHaveBeenCalled(); expect(legacy).not.toHaveBeenCalled();
   });
   it.each(["preview", "development"])("does not record %s deployments", async env => {
     vi.stubEnv("VERCEL_ENV", env);
@@ -60,4 +60,27 @@ it("passes a rotated previous ID only for atomic cleanup", async () => {
   record.mockResolvedValue(data); await POST(req({ ...body, previousVisitorId }));
   expect(record).toHaveBeenCalledWith(id, 20_000, "fe", previousVisitorId);
   expect((await POST(req({ ...body, previousVisitorId: id }))).status).toBe(400);
+});
+
+it("accepts the old heartbeat format and returns its overall count without assigning an exam", async () => {
+  legacy.mockResolvedValue(4);
+  const response = await POST(req({ visitorId: id, idleMs: 20_000 }));
+  expect(response.status).toBe(200); expect(await response.json()).toEqual({ count: 4 });
+  expect(response.headers.get("cache-control")).toBe("no-store");
+  expect(legacy).toHaveBeenCalledWith(id, 20_000, undefined); expect(record).not.toHaveBeenCalled();
+});
+it("preserves legacy zero while propagating legacy storage failure as unavailable", async () => {
+  legacy.mockResolvedValue(0);
+  expect(await (await POST(req({ visitorId: id, idleMs: 0 }))).json()).toEqual({ count: 0 });
+  legacy.mockRejectedValue(new Error("offline"));
+  const response = await POST(req({ visitorId: id, idleMs: 0 }));
+  expect(response.status).toBe(503); expect(await response.json()).toEqual({ count: null, exams: null });
+});
+it("keeps origin, bot, preview and identifier checks on legacy heartbeats", async () => {
+  const old = { visitorId: id, idleMs: 0 };
+  expect((await POST(req(old, "https://other.example"))).status).toBe(403);
+  expect((await POST(req(old, undefined, { "user-agent": "Googlebot" }))).status).toBe(403);
+  expect((await POST(req({ ...old, visitorId: "bad" }))).status).toBe(400);
+  vi.stubEnv("VERCEL_ENV", "preview"); expect((await POST(req(old))).status).toBe(503);
+  expect(legacy).not.toHaveBeenCalled();
 });

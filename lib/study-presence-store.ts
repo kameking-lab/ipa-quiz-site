@@ -10,6 +10,10 @@ const aggregate = () => prisma.$queryRaw<Array<{ exam: string; count: bigint }>>
   WHERE "exam" IS NOT NULL AND "lastSeenAt" > NOW() - ${PRESENCE_WINDOW_MS} * INTERVAL '1 millisecond'
   GROUP BY "exam" ORDER BY count DESC, "exam" ASC`;
 
+const total = () => prisma.$queryRaw<Array<{ count: bigint }>>`
+  SELECT COUNT(*) AS count FROM "StudyPresence"
+  WHERE "lastSeenAt" > NOW() - ${PRESENCE_WINDOW_MS} * INTERVAL '1 millisecond'`;
+
 function snapshot(rows: Array<{ exam: string; count: bigint }>): StudyPresenceSnapshot {
   // Legacy unqualified rows and qualifications no longer public are not learners of a known exam.
   const exams = rows.filter(row => presenceExamName(row.exam)).map(row => ({ exam: row.exam, count: Number(row.count) }));
@@ -24,13 +28,11 @@ export async function readStudyPresence(): Promise<StudyPresenceSnapshot> {
   return snapshot(rows);
 }
 
-// The existing daily browser hash remains the only key: one browser, one latest active exam.
-export async function recordStudyPresence(visitorId: string, idleMs: number, exam: string, previousVisitorId?: string): Promise<StudyPresenceSnapshot> {
-  const canonical = canonicalPresenceExam(exam);
-  if (!canonical) throw new Error("Unknown study qualification");
+// Both client formats share one hash row; the newest activity determines its qualification.
+function recordOps(visitorId: string, idleMs: number, canonical: string | null, previousVisitorId?: string) {
   const id = createHash("sha256").update(visitorId).digest("hex");
   const previousId = previousVisitorId ? createHash("sha256").update(previousVisitorId).digest("hex") : null;
-  const results = await prisma.$transaction([
+  return [
     // Atomic daily rotation: the old browser row must not remain in the count.
     ...(previousId && previousId !== id ? [prisma.$executeRaw`DELETE FROM "StudyPresence" WHERE "id" = ${previousId}`] : []),
     prisma.$executeRaw`INSERT INTO "StudyPresence" ("id", "lastSeenAt", "exam")
@@ -38,7 +40,23 @@ export async function recordStudyPresence(visitorId: string, idleMs: number, exa
       ON CONFLICT ("id") DO UPDATE
       SET "lastSeenAt" = EXCLUDED."lastSeenAt", "exam" = EXCLUDED."exam"
       WHERE "StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"`,
-    expire(), aggregate(),
-  ]);
+    expire(),
+  ];
+}
+
+// The existing daily browser hash remains the only key: one browser, one latest active exam.
+export async function recordStudyPresence(visitorId: string, idleMs: number, exam: string, previousVisitorId?: string): Promise<StudyPresenceSnapshot> {
+  const canonical = canonicalPresenceExam(exam);
+  if (!canonical) throw new Error("Unknown study qualification");
+  const results = await prisma.$transaction([...recordOps(visitorId, idleMs, canonical, previousVisitorId), aggregate()]);
   return snapshot(results[results.length - 1] as Array<{ exam: string; count: bigint }>);
+}
+
+// Preserve the old overall counter. Unknown activity must never renew an old qualification.
+export async function recordLegacyStudyPresence(visitorId: string, idleMs: number, previousVisitorId?: string): Promise<number> {
+  const results = await prisma.$transaction([...recordOps(visitorId, idleMs, null, previousVisitorId), total()]);
+  const rows = results[results.length - 1] as Array<{ count: bigint }>;
+  const count = Number(rows[0]?.count);
+  if (!Number.isSafeInteger(count) || count < 0) throw new Error("Invalid legacy presence aggregate");
+  return count;
 }

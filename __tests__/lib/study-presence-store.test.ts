@@ -1,7 +1,7 @@
 import { beforeEach, expect, it, vi } from "vitest";
 const db = vi.hoisted(() => ({ $executeRaw: vi.fn(), $queryRaw: vi.fn(), $transaction: vi.fn() }));
 vi.mock("@/lib/db/prisma", () => ({ prisma: db }));
-import { readStudyPresence, recordStudyPresence } from "@/lib/study-presence-store";
+import { readStudyPresence, recordStudyPresence, recordLegacyStudyPresence } from "@/lib/study-presence-store";
 const id = "00000000-0000-4000-8000-000000000001";
 beforeEach(() => { vi.clearAllMocks(); db.$executeRaw.mockResolvedValue(1); db.$queryRaw.mockResolvedValue([]); db.$transaction.mockImplementation(ops => Promise.all(ops)); });
 it("uses one existing hashed browser key for all exams, never a browser/exam composite", async () => {
@@ -41,4 +41,24 @@ it("canonicalises safety library qualification aliases into the existing exam co
   await recordStudyPresence(id, 0, "dai-1-shu-eisei-kanrisha");
   const insert = db.$executeRaw.mock.calls.find(call => call[0].join("").includes("INSERT"));
   expect(insert?.[3]).toBe("eisei1");
+});
+
+it("counts all active browsers for legacy clients without adding unqualified rows to the new snapshot", async () => {
+  db.$queryRaw.mockImplementation(strings => Promise.resolve(strings.join("").includes('GROUP BY "exam"')
+    ? [{ exam: "fe", count: 1n }] : [{ count: 3n }]));
+  expect(await recordLegacyStudyPresence(id, 0)).toBe(3);
+  expect(await readStudyPresence()).toEqual({ count: 1, exams: [{ exam: "fe", count: 1 }] });
+});
+it("shares the same browser key across old/new clients and clears a qualification only for newer unknown activity", async () => {
+  db.$queryRaw.mockImplementation(strings => Promise.resolve(strings.join("").includes('GROUP BY "exam"') ? [] : [{ count: 1n }]));
+  await recordStudyPresence(id, 0, "fe"); await recordLegacyStudyPresence(id, 0); await recordStudyPresence(id, 0, "ap");
+  const inserts = db.$executeRaw.mock.calls.filter(call => call[0].join("").includes("INSERT"));
+  expect(inserts.map(call => call[1])).toEqual([inserts[0][1], inserts[0][1], inserts[0][1]]);
+  expect(inserts.map(call => call[3])).toEqual(["fe", null, "ap"]);
+  expect(inserts[1][0].join("")).toContain('"StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"');
+});
+it("returns legacy measured zero, rejects invalid totals and propagates failed storage", async () => {
+  db.$queryRaw.mockResolvedValue([{ count: 0n }]); expect(await recordLegacyStudyPresence(id, 0)).toBe(0);
+  db.$queryRaw.mockResolvedValue([{ count: 9007199254740992n }]); await expect(recordLegacyStudyPresence(id, 0)).rejects.toThrow("Invalid legacy presence aggregate");
+  db.$transaction.mockRejectedValue(new Error("offline")); await expect(recordLegacyStudyPresence(id, 0)).rejects.toThrow("offline");
 });
