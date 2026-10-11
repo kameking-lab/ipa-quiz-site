@@ -70,6 +70,15 @@ describe("home directory", () => {
     for (const item of all) expect(item.href.startsWith("/")).toBe(true);
   });
 
+  it("shows the current partial OT and orthoptist counts in their cards", () => {
+    for (const [code, count] of [["sagyo-ryohoshi", 299], ["shino-kunrenshi", 186]] as const) {
+      const item = all.find((entry) => entry.key === code);
+      expect(item?.questionCount).toBe(count);
+      expect(item?.sub).toContain(`${count}原問`);
+      expect(item?.sub).toContain("部分収録");
+    }
+  });
+
   it("renders every live qualification link in the initial HTML without disclosure controls", () => {
     const html = renderToStaticMarkup(createElement(HomeDirectory, { domains }));
     expect(html).not.toContain("<details");
