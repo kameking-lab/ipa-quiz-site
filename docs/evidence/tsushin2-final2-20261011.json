@@ -1,0 +1,57 @@
+{
+  "originals": [
+    33,
+    40
+  ],
+  "newTranscriptions": 0,
+  "newExplanations": 2,
+  "choiceReasons": 8,
+  "savedDraftReuseCount": 2,
+  "savedExplanationReuseCount": 0,
+  "modelRequested": "gpt-6.1-sol",
+  "actualModelReceipt": null,
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "sourceDocuments": {
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf": {
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "bytes": 4105248,
+      "effectiveOn": "2025-11-20",
+      "pages": [
+        1,
+        152,
+        153,
+        156,
+        157
+      ]
+    },
+    "https://www.mlit.go.jp/totikensangyo/const/content/001499463.pdf": {
+      "sha256": "9e750ef3c74f5f4cff3b47e10e917502d5f87a3cb69bb0d252dbcd7c391ebfa9",
+      "bytes": 450305,
+      "effectiveOn": "2025-12-12",
+      "pages": [
+        1,
+        14
+      ]
+    }
+  },
+  "pageVisualChecks": {
+    "16": "Visually verified official original page",
+    "19": "Visually verified official original page"
+  },
+  "primaryLocators": {
+    "33": "METI article156 table156-1 PDFpages152-153",
+    "40": "MLIT article18(1)(1)-(4) PDFpage14; effective2025-12-12"
+  },
+  "individualSourceHolds": {
+    "58": "Construction-specific Gantt progress-percentage definition not yet grounded in primary source",
+    "54": "Connection prohibition verified in article161; independent original source for ten-wire and twenty-percent occupancy rules remains pending. Incorrect article161(2)(1)i/ro citations corrected in local held draft."
+  },
+  "oldJSONModified": 0,
+  "oldJSONDeleted": 0,
+  "secondPeriodComplete": false,
+  "primaryVisualChecks": {
+    "METI152-153": "Viewed table156-1 and all four locations/voltage combinations",
+    "MLIT14": "Viewed article18 exact design-document wording"
+  }
+}
