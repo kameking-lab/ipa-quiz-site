@@ -23,3 +23,5 @@
 難問13問だけ独立局所査読を行い、原本画像と解説の対応を確認した。`complete/TARGETED-INDEPENDENT-REVIEW.json` に範囲と結果を記録する。A49は電気設備の技術基準の解釈149条・各表、B31は公共建築改修工事標準仕様書（電気設備工事編）令和4年版2.11.2(イ)を取得済み公式PDFと照合した。参照PDFは `complete/reference/` に保存し、SHA-256と確認ページを査読記録に残す。全90問の独立二重査読や公開承認を意味しない。
 
 過去の12問用 `build_tsushin1_pilot.py` は、完成データを上書きしないガードを設けた。今回の検査結果は `complete/MECHANICAL-AUDIT.json`、公開前の12問観測は `complete/PUBLIC-BASELINE.json` を参照する。
+
+保存原稿・完成JSONの検査ハッシュはUTF-8のCRLFをLFに正規化して照合する。元の作業コピーのバイトハッシュも保持し、Windows/Linuxの改行差を内容変更と混同しない。原本PDF・PNG画像のハッシュは正規化せずバイト単位で照合する。

@@ -9,3 +9,5 @@ PDFの本文を毎回抽出する `scripts/extract_tsushin1_2025.py` はフォ�
 `python scripts/audit_tsushin1_latest_two.py` で2年度の問番号・全問本文・4肢・正答・全肢解説・出典・原本PDF・図版のハッシュを検査する。`complete/2026-PRESERVATION.json` で完成済み2026年度90問のファイルが変わっていないことを確認する。独立レビューは難問の局所確認に限定し、その範囲と結果を `TARGETED-INDEPENDENT-REVIEW.json` に残す。
 
 既存スキーマの `JCTC-authorized-reuse` 識別子を引き継ぐが、それ自体を新たな許諾の証明とはしない。掲載可否は所有者が扱い、本作業では新たな権利・許諾の証拠を作成していない。本番merge・deployは統合主担当の担当である。
+
+保存原稿・完成JSONの検査ハッシュはUTF-8のCRLFをLFに正規化して照合する。元の作業コピーのバイトハッシュも保持し、Windows/Linuxの改行差を内容変更と混同しない。原本PDF・PNG画像のハッシュは正規化せずバイト単位で照合する。

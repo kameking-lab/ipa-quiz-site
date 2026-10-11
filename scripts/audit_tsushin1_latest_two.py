@@ -25,7 +25,7 @@ def main():
     review = read(EVIDENCE / 'complete/TARGETED-INDEPENDENT-REVIEW.json')
     assert len(review['items']) == 10
     for receipt in review['reviewedFiles'].values():
-        assert hashlib.sha256((EVIDENCE/'complete'/receipt['archivedFile']).read_bytes()).hexdigest() == receipt['sha256']
+        assert hashlib.sha256((EVIDENCE/'complete'/receipt['archivedFile']).read_bytes().replace(b'\r\n',b'\n')).hexdigest() == receipt['archivedSha256NormalizedLf']
     for item in review['items']:
         assert item['status'] in ['pass','pass_with_evidence_limit']
         assert hashlib.sha256((EVIDENCE/'complete'/item['originalImage']).read_bytes()).hexdigest() == item['originalImageSha256']
@@ -99,7 +99,7 @@ def main():
             total += 1
     assert total == 90 and images == len(crops)
     preservation = read(EVIDENCE / 'complete/2026-PRESERVATION.json')
-    assert hashlib.sha256((ROOT/preservation['file']).read_bytes()).hexdigest() == preservation['sha256']
+    assert hashlib.sha256((ROOT/preservation['file']).read_bytes().replace(b'\r\n',b'\n')).hexdigest() == preservation['sha256NormalizedLf']
     identities=[]
     for year in [2026,2025]:
         corpus=read(ROOT/f'data/questions/tsushin1/{year}-september.json')

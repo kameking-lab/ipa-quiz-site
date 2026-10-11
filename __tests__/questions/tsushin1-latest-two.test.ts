@@ -23,7 +23,8 @@ describe("1級電気通信工事 最新2回全180原問", () => {
         expect(questions.map((q) => q.qNumber)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
       }
     }
-    expect(createHash("sha256").update(readFileSync(resolve(process.cwd(), preservation.file))).digest("hex")).toBe(preservation.sha256);
+    const preservedText = readFileSync(resolve(process.cwd(), preservation.file), "utf8").replace(/\r\n/g, "\n");
+    expect(createHash("sha256").update(preservedText).digest("hex")).toBe(preservation.sha256NormalizedLf);
   });
 
   it("令和7年度の答表90肢と全4肢説明を原問の順序で保持する", () => {
