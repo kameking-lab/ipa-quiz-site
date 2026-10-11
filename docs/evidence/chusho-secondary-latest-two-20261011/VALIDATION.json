@@ -37,7 +37,8 @@
     "result": "PASS",
     "generatedPages": 11513,
     "finalMaterializedText": true,
-    "temporaryValidationConfig": "cleanDistDir:false only during build; original next.config.ts bytes restored; not committed"
+    "temporaryValidationConfig": "cleanDistDir:false only during build; original next.config.ts bytes restored; not committed",
+    "baseMainAtBuild": "52953d4e66389b492e13f5d9040fffbb581755a1"
   },
   "runtime": {
     "hub": 200,
@@ -63,5 +64,15 @@
     "productionMergeOrDeploymentByThisTask": false,
     "sourcePermissionGrantClaimed": false
   },
-  "observedUtc": "2026-10-11T03:20:22.111717+00:00"
+  "observedUtc": "2026-10-11T03:22:25.353644+00:00",
+  "rebasedMain": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
+  "postRebaseValidation": {
+    "validatedCommit": "8df2b543a2687be51b9e5f7feb0fdcf6af419475",
+    "focusedTests": 15,
+    "failedTests": 0,
+    "maxWorkers": 1,
+    "typecheck": "PASS",
+    "fullBuildRepeated": false,
+    "reason": "The completed build covers the final feature text and assets. Upstream PR712 touches other practice navigation; post-rebase scoped tests and typecheck passed. Hosted latest-head CI remains separate."
+  }
 }
