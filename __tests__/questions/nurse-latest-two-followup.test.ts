@@ -7,11 +7,13 @@ import candidates from "@/docs/evidence/nurse-latest-two-followup-20261011/CANDI
 import saved from "@/docs/evidence/nurse-latest-two-followup-20261011/SAVED-DRAFTS.json";
 import proof from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import review from "@/docs/evidence/nurse-latest-two-followup-20261011/INDEPENDENT-REVIEW.json";
+import lfProof from "@/docs/evidence/nurse-latest-two-followup-20261011/LF-DIGESTS.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
 
 const byId = new Map(KANGOSHI_QUESTIONS.map(q => [q.id, q]));
-const sha = (bytes: Buffer) => createHash("sha256").update(bytes).digest("hex");
+// Git stores LF while Windows checkout uses CRLF. Keep every other source byte pinned.
+const shaLf = (bytes: Buffer) => createHash("sha256").update(bytes.toString("utf8").replace(/\r\n/g, "\n")).digest("hex");
 
 describe("nursing latest two examinations: eight saved-draft follow-ups", () => {
   it("preserves all 464 existing originals and excludes PR683 and every individual STOP", () => {
@@ -19,7 +21,12 @@ describe("nursing latest two examinations: eight saved-draft follow-ups", () => 
     expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(472);
     expect(new Set(KANGOSHI_QUESTIONS.map(q => `${q.year}:${q.session}:${q.qNumber}`)).size).toBe(472);
     for (const row of proof.previous464ObjectHashes) expect(nurseObjectHash(byId.get(row.id)), row.id).toBe(row.sha256);
-    for (const row of proof.originalFileHashes) expect(sha(readFileSync(row.path)), row.path).toBe(row.sha256);
+    expect(lfProof.originalFileHashes).toHaveLength(proof.originalFileHashes.length);
+    for (const row of proof.originalFileHashes) {
+      const pinned = lfProof.originalFileHashes.find(record => record.path === row.path)!;
+      expect(pinned.originalRecordedWindowsSha256).toBe(row.sha256);
+      expect(shaLf(readFileSync(row.path)), row.path).toBe(pinned.lfSha256);
+    }
     for (const id of [...proof.existingPr683Ids, ...proof.stopIdsUnchanged]) expect(byId.has(id), id).toBe(false);
     expect(additions).toHaveLength(8);
     expect(additions.reduce((n,q) => n+Object.keys(q.choices).length,0)).toBe(35);
@@ -29,7 +36,8 @@ describe("nursing latest two examinations: eight saved-draft follow-ups", () => 
   });
 
   it("imports exactly the independently accepted content with only needsReview cleared", () => {
-    expect(sha(readFileSync("docs/evidence/nurse-latest-two-followup-20261011/CANDIDATE-QUESTIONS.json"))).toBe(review.finalEightCandidateReview.fileSha256);
+    expect(lfProof.candidateFile.originalRecordedWindowsSha256).toBe(review.finalEightCandidateReview.fileSha256);
+    expect(shaLf(readFileSync(lfProof.candidateFile.path))).toBe(lfProof.candidateFile.lfSha256);
     expect(review.finalEightCandidateReview.verdict).toBe("PASS_LOCAL_CONTENT");
     expect(additions.map(q => q.id)).toEqual(proof.addedIds);
     for (const candidate of candidates) {

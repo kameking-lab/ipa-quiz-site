@@ -13,3 +13,5 @@ The explanations of 114PM60, 114PM89, and 115AM103 explicitly distinguish offici
 Primary-source locations and access limits are in `PRIMARY-SOURCES.json` and `ADDITIONAL-SOURCE-LOCATORS.json`. Access denials, restricted full texts and CAPTCHA were not bypassed. No third-party source PDF is redistributed and no new publication permission is claimed.
 
 This branch is a draft integration deliverable. It does not merge, deploy or certify the production count. Publication, existing strict receipt requirements, and final release verification belong to the integration owner.
+
+Linux CIのSHA不一致2件は、WindowsのCRLFとGit保存・Linux checkoutのLFの改行差だけでした。LF-DIGESTS.jsonに既存原稿2ファイルと独立受理候補のLF SHAを固定し、元のWindows SHAも保持しています。テストはCRLFをLFへそろえる以外の変換を行いません。既存464問の個別内容SHAと追加8問の独立受理内容SHAの検査は維持し、原稿・正答・解説・査読記録・5問のSTOPは変更していません。対象4テストと変更テストlintが再通過しました。
