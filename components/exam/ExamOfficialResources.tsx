@@ -10,7 +10,28 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   if (!links && !qualification) return null;
 
   if (qualification) {
-    const items = exam === "fp1" ? [
+    const items = exam === "chusho-kigyo-shindanshi" ? [
+      {
+        label: "日本中小企業診断士協会連合会 第1次試験問題",
+        href: qualification.officialQuestionsUrl,
+        description: "2026・2025年度を含む、全7科目の公式問題PDF。",
+      },
+      {
+        label: "2026年度（令和8年度）公式正答",
+        href: "https://www.jf-cmca.jp/contents/010_c_/010_c_r08_shiken/R08_1ji_shiken_kaitou.html",
+        description: "7科目すべての正答・配点表。本サイトの全227設問と照合済み。",
+      },
+      {
+        label: "2025年度（令和7年度）公式正答",
+        href: "https://www.jf-cmca.jp/contents/010_c_/010_c_r07_shiken/R07_1ji_shiken_kaitou.html",
+        description: "訂正後の正答表を採用し、7科目すべての全227設問と照合済み。",
+      },
+      {
+        label: "2025年度 正解・配点の訂正通知",
+        href: "https://www.jf-cmca.jp/attach/test/r07/seikai_teisei_20250902.pdf",
+        description: "運営管理第33問・経営情報システム第12問は全員正解。演習でも全選択肢を正解として扱います。",
+      },
+    ] : exam === "fp1" ? [
       {
         label: "金融財政事情研究会 2026年5月学科・基礎編の公式問題",
         href: "https://www.kinzai.or.jp/fp/news-fp/50260.html",

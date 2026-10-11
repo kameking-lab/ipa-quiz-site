@@ -136,6 +136,13 @@ describe("sessionLabel", () => {
           "kodomo-hoken": true,
           "kodomo-shokueiyou": true,
           "hoiku-jisshu-riron": true,
+      keizai: true,
+      zaimu: true,
+      kigyo: true,
+      unei: true,
+      "keiei-houmu": true,
+      "keiei-joho": true,
+      "chusho-seisaku": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());
