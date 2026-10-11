@@ -24,6 +24,12 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl">): string {
+  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2025|2026)\/siken21\/dl\/(27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  if (q.season === "annual" && gengoNotice &&
+      ((q.year === 2025 && gengoNotice[1] === "2025" && gengoNotice[2] === "27A40") ||
+       (q.year === 2026 && gengoNotice[1] === "2026" && gengoNotice[2]?.startsWith("28A")))) {
+    return `第${q.year === 2025 ? 27 : 28}回（${q.year}年実施）`;
+  }
   const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06|07)b_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07" ? 71 : 77}回（2025年実施）`;

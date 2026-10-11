@@ -1,3 +1,4 @@
+import { isExamPublished } from "@/lib/qualifications/catalog";
 import { describe, expect, it } from "vitest";
 
 import {
@@ -42,7 +43,7 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
   });
 
   it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
-    const keys = ENTRIES.map(([k]) => k);
+    const keys = ENTRIES.map(([k]) => k).filter(isExamPublished);
     expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.sort());
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
     expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
