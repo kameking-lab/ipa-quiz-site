@@ -60,3 +60,12 @@ A29追補: 東京都標準仕様書4.6.5(1)エ（PDF183頁/印刷172頁）を紙
 A29補正後の局所staging検証は1ファイル3テスト成功（実終了コード0）。公開採用・本番変更は0。
 
 A28は国交省中部地方整備局資料で肢2/4の技術論点を直接照合し、肢1/3の未確認範囲を明記。A47は原著5資料の部分一致と推論を区別した局所説明へ補正。2問ともHOLD維持。原問・選択肢・正答番号は不変。
+
+
+## 2026-10-11 bounded technical follow-up (first saved snapshot)
+
+- Recorded all 37 existing technical HOLD decisions (148 choices); 17 locally resolved, 20 still technically held. Helper work continues in disjoint reserved scopes. This is an intermediate snapshot, not completed helper acceptance.
+- Preserved all 101 original stems and official answers; preserved 100 choice sets. Corrected only A25 authored diagram descriptions after visual verification of the unchanged original image, with an explicit receipt.
+- 101 candidates / 404 explained choices / nine original figure crops remain saved. Official-host identity and independent/public acceptance remain false; public count100 / newly accepted0 / unpublished102 remain unchanged.
+- Narrow independent review of A62/B2/B5 is recorded as technically clear only with their stated qualifications. B7 exam-date law investigation is recorded separately and still cannot reconcile choices2/3.
+- Frozen input hashes, allocation scopes and primary evidence are saved alongside the held drafts; runtime data was not changed.

@@ -1,0 +1,268 @@
+{
+  "status": "IN_PROGRESS",
+  "updatedAt": "2026-10-11T04:13:16.898382+00:00",
+  "helperOwner": "01a1286f-b36d-77b0-9d75-57e69f63a082",
+  "sourceIds": [
+    "2025-A48",
+    "2025-A53",
+    "2025-A54"
+  ],
+  "manifestSha256": "788019123f86c73fda165b08ae352d3997dbc13c83b1bdf749d7458a04714983",
+  "inputSha256": "40884121f5d712ad3fd42baeedbc8edb7cc97881537fb55488c1770b5a3a9270",
+  "sourceIdentityVerified": false,
+  "publicAcceptance": false,
+  "independentAcceptance": false,
+  "stopsMustRemain": [
+    "Aomori HTTP403",
+    "Tokyo sewer HTTP503",
+    "Internet Archive CDX inaccessible",
+    "Claude cloud attach disabled"
+  ],
+  "items": [
+    {
+      "key": "2025-A48",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "線路近接工事に関する協議について・申込から工事着手まで",
+              "evidence": "重機・線路近接の事故リスクと事前協議、工事着手前の保安打合せを求める。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節2・3",
+              "evidence": "作業時間、場所、人員、使用機械・資材等を検討した施工計画書を作成し、鉄道事業者と事前協議する。"
+            }
+          ],
+          "remainingGap": "監督員への提出先と工事用重機械の具体的事故防止対策を同一原本で確認できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "よくあるお問合せQ2",
+              "evidence": "線路近接工事で列車見張員を配置する制度があることを示す。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節7",
+              "evidence": "必要な作業では鉄道事業者指定の資格を有する列車見張員を作業前に配置すると定める。"
+            }
+          ],
+          "remainingGap": "見張員の合図可能範囲・離隔条件の原文未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・近接工事と電線防護の説明",
+              "evidence": "電線接触・感電の危険と事前の鉄道事業者との打合せを示す。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF pp.80-81（冊子 pp.73-74）第11章第2節・第3節6",
+              "evidence": "鉄道事業者との事前協議、毎日の保安打合せを要求するが、き電停止の担当者・使用間合等の個別手続は記載しない。"
+            }
+          ],
+          "remainingGap": "停電責任者、使用間合・時間・作業競合等の手続条項は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・重機事故リスクと保安打合せ",
+              "evidence": "列車と作業員・重機の接触リスク、事前の保安調整の必要性を記述。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.82（冊子 p.75）第11章第3節11 列車通過時の一時施工中止",
+              "evidence": "振動・風圧で不安定になるおそれがある工事は、列車接近時から通過するまで「一時施工を中止すること」と明記する。継続施工を認める肢4と逆。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "国交省安全施工指針で誤肢4の一時施工中止は確定。他の肢1は監督員提出、肢2は合図可能範囲と離隔、肢3は停電責任者・使用間合等の鉄道事業者固有条項が未確認。",
+      "questionPolarity": "SELECT_INAPPROPRIATE",
+      "workStatus": "IN_PROGRESS",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 23,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false
+      }
+    },
+    {
+      "key": "2025-A53",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "圧入方式での中断と管の締付けの関係を、2025年以前の発注者施工基準又は工法原著資料で確認できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・粘土質対応薬剤、行110〜112",
+              "evidence": "粘土質地盤では水の注入掘削が可能で、粘着性を抑える対策が必要とするメーカー原資料。オーガ方式に固有の先端抵抗急増までは記していない。"
+            }
+          ],
+          "remainingGap": "オーガ方式に固有の粘性土での先端抵抗急増と注水による軟弱化を、工法原著で直接照合できていない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+              "pageOrSection": "2024年8月版PDF 105〜106ページ目（索引P104〜P105）図5-1-1と工法選定",
+              "evidence": "鋼管さや管のボーリング方式を分類し、工法選定は土質条件と地下水位で判定すると記すが、設問の砂質土・粘性土の正誤は直接示さない。"
+            },
+            {
+              "url": "https://sanwa-spd.co.jp/wp-content/uploads/2022/06/KCCA_N.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）表1・導入",
+              "evidence": "熊本県下水道担当者と施工者による原著論文。小口径推進で先導体の適用は土質、地下水、透水係数等で異なると記す。ただし高耐荷力方式の表であり設問の鋼管さや管ボーリング方式を直接扱わない。"
+            }
+          ],
+          "remainingGap": "開放型ボーリング方式の地下水位以下における砂質土と粘性土の適用条件を直接示す原著・発注者基準が未確認。二次試験解説の「砂質土へ訂正」は採用しない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.geox.jp/press/2086/",
+              "pageOrSection": "2024-06-14、泥水式推進工法の基礎知識「泥水に必要な性質」（行90〜105）",
+              "evidence": "泥水の比重は切羽安定に、粘性は逸泥防止に関係し、地山条件に応じ調整すると自社工法材料を扱う企業が説明。"
+            },
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・目詰材（行91〜105）",
+              "evidence": "メーカー原資料が目詰材を地山粒子間の目詰めによる逸泥防止用と明示。"
+            }
+          ],
+          "remainingGap": "高透水で緩い地盤という設問条件で、送泥水比重・粘性を高くする施工手順全体を一つの2025年以前の工法原著で直接確認できていない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢4の泥水調整・逸泥防止材料と肢2の粘性土への水注入の一般技術は原資料で補強したが、方式固有の肢1・2と、誤肢3の粘性土／砂質土の厳密な訂正が未確認。一次資料で確定できるまでHOLD。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://www.envi-horizon.gr.jp/shiryou/env/env_all.pdf",
+          "result": "Web閲覧はファイル容量上限（16MB超）で本文取得不可。別経路・分割版への回避取得なし。"
+        },
+        {
+          "url": "https://www.atlas-method.com/sekisan_shiryo.pdf",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.sokushin.co.jp/method/%E6%8E%A8%E9%80%B2%E5%B7%A5%E6%B3%95/",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+          "result": "2024年原資料閲覧成功。ただし方式分類と土質・地下水に基づく選定までで、設問4肢の固有注意事項の直接記載なし。"
+        }
+      ],
+      "sourceTimeNote": "ジオックス記事は2024-06-14。大阪府指針は2024-08-01。三和測量設計社掲載PDFは2002年頃の原著。テクニカ合同のWeb本文更新日は未確認のため2025当時の単独決定根拠とはしない。",
+      "workStatus": "IN_PROGRESS",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 25,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false
+      }
+    },
+    {
+      "key": "2025-A54",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_CORRECTION",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+              "pageOrSection": "PDF 10ページ目（索引P9）、第4章4-2および4-3",
+              "evidence": "誤りという判定は一致。採水地点は注入箇所からおおむね10m以内に少なくとも数箇所で、観測井を設け、既存井戸も利用可能。工事終了後も一定期間採水する。原稿説明に『20mの一律義務』だけでなく正しい10mの基準を明記する必要がある。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED_WITH_WORDING_NOTE",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/common/001197595.pdf",
+              "pageOrSection": "PDF 7ページ目（索引P6）、⑥薬液の使用量",
+              "evidence": "500kL以上の大規模注入工事で『プラントのタンクからミキサー迄の間』に流量積算計を設け、薬液材料の日使用量等を管理することを確認。原稿の『原料タンクと調合槽』は出典の厳密な表現ではないため説明は原文に寄せるとよい。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://seiwarw.co.jp/business/foundation/chemical",
+              "pageOrSection": "薬液注入工・二重管ストレーナー工法／二重管ダブルパッカー工法、行40〜85",
+              "evidence": "原施工者は通常の二重管ストレーナーでボーリングマシンを、削孔深度25m以上やロータリーパーカッション削孔が必要な条件でダブルパッカー・パーカッションドリルを挙げる。両者の削孔精度の優劣は明示しない。"
+            }
+          ],
+          "remainingGap": "25m以上でダブルパッカー・パーカッションドリルと二重管ストレーナーを直接比較して前者の削孔精度が高いと示す2025年以前の原資料が未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "調合水の水道水原則・代替水pH5.8～8.6を同時に示す2025年以前の発注者基準又は原技術基準が未取得。地下水監視のpH基準を調合水へ流用しない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢1の約10m・注入後監視、肢2の500kL・流量積算計は確認済み。肢3は原施工者資料で25m以上のダブルパッカー・パーカッション選定まで確認したが、削孔精度の直接比較なし。肢4の調合水pH5.8～8.6の適用原基準も未確認。技術HOLDを保持する。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://seiwarw.co.jp/business/foundation/chemical",
+          "result": "原施工者の工法説明を閲覧成功。深度25m以上でのダブルパッカー選定とパーカッション使用を確認、削孔精度比較なし。"
+        },
+        {
+          "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+          "result": "暫定指針を閲覧成功。pHは地下水監視項目であり調合水のpH基準へ流用不可。"
+        },
+        {
+          "url": "https://www.chemico.co.jp/construction_term_cat/%E8%96%AC%E6%B6%B2%E6%B3%A8%E5%85%A5%E5%B7%A5%E6%B3%95/",
+          "result": "原施工者の工法種別一覧のみ確認。精度比較・調合水基準を記載せず。"
+        }
+      ],
+      "sourceTimeNote": "成和リニューアルワークスのWeb本文更新日は未確認。ページの実績表には2021年工事があるが、掲載内容全体が2025以前である証明とはしない。深度・機械の技術補助に限る。",
+      "workStatus": "IN_PROGRESS",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 25,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-11T04:06:49.776325+00:00",
+  "key": "2025-A25",
+  "status": "ROOT_VISUALLY_VERIFIED_FOR_EXPLICIT_CORRECTION",
+  "correctionKind": "Authored prose description of original diagram choices, not a rewritten original question",
+  "checkpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+  "sourceFigurePath": "reports/civil1-2025-july/source-figures/a25-source-copy.png",
+  "sourceFigureSha256": "76bddb1335a4817e1c2f98250f6297b1e0854451ee4f484046f98ead96c6ef97",
+  "beforeChoiceDescriptions": [
+    "幅800 mmの壁の中ほどに鉛直方向のひび割れが複数生じた図",
+    "幅800 mmの壁の中ほどに水平方向のひび割れが生じた図",
+    "厚さ250 mmの床版の側面に鉛直方向のひび割れが複数生じた図",
+    "厚さ250 mmの梁・床版付近の表面に網目状のひび割れが生じた図"
+  ],
+  "afterChoiceDescriptions": [
+    "厚さ800mmの壁に鉛直方向のひび割れが複数生じた図",
+    "厚さ800mmの壁の中ほどに水平方向のひび割れが生じた図",
+    "床版の両側にある厚さ250mmの壁状部材に鉛直方向のひび割れが複数生じた図",
+    "厚さ250mmの床版の下面に網目状のひび割れが生じた図"
+  ],
+  "questionStemUnchanged": true,
+  "officialAnswerNumber": 2,
+  "officialAnswerUnchanged": true,
+  "originalFigureBytesUnchanged": true,
+  "observations": [
+    "800mmの寸法線は壁の小口厚さを示す。長手方向の幅ではない。",
+    "図3の250mm寸法線は左側壁状部材の厚さを示す。中央床版厚さではない。",
+    "図4は厚さ250mmの床版下面を見上げ、網状のひび割れを示す。"
+  ],
+  "visualReviewers": [
+    "collector root view_image saved original source crop",
+    "materials producer view_image original resolution"
+  ],
+  "technicalReferences": [
+    "https://www.to-gisi.com/magazine/54/doc01.pdf",
+    "https://www.jstage.jst.go.jp/article/jscej1984/1997/557/1997_557_101/_article/-char/ja/"
+  ],
+  "avoidUnsupportedCausalAttribution": true,
+  "officialHostSourceIdentityVerified": false,
+  "independentPublicationAcceptance": false,
+  "publicAcceptance": false
+}

@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-11T04:17:19.343505+00:00",
+  "inputCheckpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+  "snapshot": "technical-followup-snapshot.json",
+  "technicalResolved": 17,
+  "remainingTechnicalHolds": 20,
+  "helperWorkContinues": true,
+  "focusedVitest": {
+    "files": 3,
+    "passed": 14,
+    "failed": 0,
+    "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts __tests__/civil1-source-reader.test.ts"
+  },
+  "changedTestLint": "PASS",
+  "gitDiffCheck": "PASS",
+  "originalStemsAndOfficialAnswersPreserved": 101,
+  "unchangedOriginalChoiceSets": 100,
+  "explicitAuthoredFigureDescriptionCorrection": "2025-A25",
+  "originalFigureChecksumsPreserved": 9,
+  "publicOriginals": 100,
+  "acceptedNewOriginals": 0,
+  "runtimeDataEdited": false,
+  "newCommitCI": "PENDING_AFTER_PUSH",
+  "b7": "HOLD: choices2/3 cannot yet be reconciled with exam-date statutory duty allocation",
+  "official2025SourceIdentity": "UNVERIFIED_FOR_101",
+  "productionMergeOrDeploy": false
+}

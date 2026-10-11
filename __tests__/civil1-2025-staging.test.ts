@@ -70,3 +70,61 @@ describe("civil1 2025 held staging", () => {
     }
   });
 });
+
+// Technical completion remains separate from the official-source/publication gate.
+describe("civil1 bounded technical followup", () => {
+  it("records all 37 decisions while preserving the original stems, answers and figure bytes", () => {
+    const resolution = read<{
+      reviewedTechnicalHoldQuestions: number; reviewedChoices: number;
+      technicalResolvedKeys: string[]; technicalHoldItems: { key: string }[];
+      publicAcceptance: boolean; independentAcceptance: boolean; runtimeImport: boolean;
+    }>("technical-hold-resolution.json");
+    const resolved = new Set(resolution.technicalResolvedKeys);
+    const held = new Set(resolution.technicalHoldItems.map((q) => q.key));
+    expect(resolution.reviewedTechnicalHoldQuestions).toBe(37);
+    expect(resolution.reviewedChoices).toBe(148);
+    expect(resolved.size + held.size).toBe(37);
+    expect([...resolved].every((key) => !held.has(key))).toBe(true);
+    expect(resolution.publicAcceptance).toBe(false);
+    expect(resolution.independentAcceptance).toBe(false);
+    expect(resolution.runtimeImport).toBe(false);
+    const correction = read<{
+      beforeChoiceDescriptions: string[]; afterChoiceDescriptions: string[];
+      sourceFigurePath: string; sourceFigureSha256: string;
+      originalFigureBytesUnchanged: boolean; officialAnswerUnchanged: boolean;
+    }>("a25-transcription-correction-receipt.json");
+    const a25 = candidate.questions.find((q) => q.paper === "A" && q.number === 25);
+    expect(a25?.choices).toEqual(correction.afterChoiceDescriptions);
+    expect(a25?.officialAnswerNumber).toBe(2);
+    expect(correction.originalFigureBytesUnchanged).toBe(true);
+    expect(correction.officialAnswerUnchanged).toBe(true);
+    expect(createHash("sha256").update(readFileSync(join(process.cwd(), correction.sourceFigurePath))).digest("hex")).toBe(correction.sourceFigureSha256);
+    // Restoring only the authored A25 diagram descriptions must recover the original checkpoint.
+    const originalTriples = candidate.questions.map((q) => ({
+      paper: q.paper, number: q.number, question: q.question,
+      choices: q.paper === "A" && q.number === 25 ? correction.beforeChoiceDescriptions : q.choices,
+      officialAnswerNumber: q.officialAnswerNumber,
+    }));
+    expect(createHash("sha256").update(JSON.stringify(originalTriples)).digest("hex")).toBe(
+      "14860181f75d672916813febe8e6d996fed79b097bfa479232549e539c3d2ff0",
+    );
+    for (const key of [...resolved, ...held]) {
+      const q = candidate.questions.find((item) => `2025-${item.paper}${item.number}` === key) as
+        (Candidate & { technicalValidation: { decision: string; evidenceFile: string } }) | undefined;
+      expect(q).toBeDefined();
+      expect(q?.technicalValidation.decision).toBe(resolved.has(key) ? "TECHNICALLY_RESOLVED" : "HOLD");
+      const evidence = read<{
+        items?: { key: string; choiceChecks: { choice: number; sources: unknown[]; remainingGap: unknown }[] }[];
+        questions?: { key: string; choiceChecks: { choice: number; sources: unknown[]; remainingGap: unknown }[] }[];
+        patches?: { key: string; choiceChecks: { choice: number; sources: unknown[]; remainingGap: unknown }[] }[];
+      }>(q!.technicalValidation.evidenceFile);
+      const item = (evidence.items ?? evidence.questions ?? evidence.patches ?? []).find((row) =>
+        `2025-${row.key.replace(/^2025-/, "")}` === key,
+      );
+      expect(item?.choiceChecks.map((c) => c.choice).sort()).toEqual([1, 2, 3, 4]);
+      if (resolved.has(key)) {
+        expect(item?.choiceChecks.every((c) => c.sources.length > 0 && c.remainingGap == null)).toBe(true);
+      }
+    }
+  });
+});

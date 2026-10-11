@@ -1,0 +1,116 @@
+{
+  "savedAt": "2026-10-11T04:15:33.202376+00:00",
+  "files": {
+    "classification.json": "d698def130748838ed2f302c93fade0e5472a33f1d313a9708d209f18f6191ef",
+    "a25-transcription-correction-receipt.json": "dde8479e998481fdb0157f9423947baa538d5065e92c07302429dd9cb83def2a",
+    "scoped-resolved-legal-review.json": "ea3626db532ad71ae1dd1b0854a0674aeac6d7f19109b49f352e3de06cbb6efa",
+    "integrate-differential-patches.py": "61fd810c6fcea348ed2c7cde5d39e1b18017fa1c19a00b860277b03acc5b2441",
+    "materials-earthworks-patch.json": "a7eceb878b134571effdf20bc53da040889c300e66b710e128d91cdf49d43606",
+    "pavement-dams-patch.json": "fd795f8593a173017d3ee8197cf094c3894a9116c8c131faeb1dc6f021b7d4ac",
+    "tunnel-marine-rail-patch.json": "cc0b0b8f2a961fc7581f7ca258d20a9a251bef4798ad296706232c7b82211ee3",
+    "utilities-law-management-patch.json": "65145125c4dd7b1f8a47c970a4c6690bcd8871d2cf18643c50b55cef3f56d3b2",
+    "peer-allocation-manifest.json": "65c08003ba72f3ba0dcd5c846224290c6f36a518765048ad531b44358487e90f",
+    "peer-civil1-12/peer-patch.json": "cf053c3cfbe13f969e814df5fa4d2679ad4b43ff95c1ad08afbfb6c94453a350",
+    "peer-dental-3/allocation-manifest.json": "788019123f86c73fda165b08ae352d3997dbc13c83b1bdf749d7458a04714983",
+    "peer-dental-3/peer-patch.json": "0d4ceb7df021fc234c28332dd417ae8614b61411ef9ef282e26fff7d5defce60",
+    "peer-weather-6/allocation-manifest.json": "81d16676879d72f6d88a1c9021895d08386ef7aed66841d4407a7bc63be9ba2a"
+  },
+  "liveHelperProgressMayContinue": true,
+  "runtimeImport": false,
+  "allocationIndex": {
+    "savedAt": "2026-10-11T04:15:02.752440+00:00",
+    "collector": "01a12864-232c-7720-aa58-0909185760b1",
+    "assignedBy": "01a0f41d-ad39-7670-a8a8-bbddc0dd9004",
+    "entries": [
+      {
+        "manifest": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-allocation-manifest.json",
+        "sha256": "65c08003ba72f3ba0dcd5c846224290c6f36a518765048ad531b44358487e90f",
+        "owner": "01a12863-c02b-74a6-844b-ad96e86f50ad",
+        "sourceIds": [
+          "2025-A32",
+          "2025-A35",
+          "2025-A37",
+          "2025-A38",
+          "2025-A39",
+          "2025-A42",
+          "2025-A43",
+          "2025-A44",
+          "2025-A45",
+          "2025-A46",
+          "2025-A47",
+          "2025-A49"
+        ],
+        "count": 12,
+        "output": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-civil1-12\\peer-patch.json",
+        "status": "ACTIVE"
+      },
+      {
+        "manifest": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-weather-6\\allocation-manifest.json",
+        "sha256": "81d16676879d72f6d88a1c9021895d08386ef7aed66841d4407a7bc63be9ba2a",
+        "owner": "01a12863-236a-77eb-b5e8-7d0911f64087",
+        "sourceIds": [
+          "2025-A17",
+          "2025-A19",
+          "2025-A27",
+          "2025-A28",
+          "2025-A29",
+          "2025-A30"
+        ],
+        "count": 6,
+        "output": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-weather-6\\peer-patch.json",
+        "status": "ACTIVE"
+      },
+      {
+        "manifest": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-dental-3\\allocation-manifest.json",
+        "sha256": "788019123f86c73fda165b08ae352d3997dbc13c83b1bdf749d7458a04714983",
+        "owner": "01a1286f-b36d-77b0-9d75-57e69f63a082",
+        "sourceIds": [
+          "2025-A48",
+          "2025-A53",
+          "2025-A54"
+        ],
+        "count": 3,
+        "output": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-dental-3\\peer-patch.json",
+        "status": "ACTIVE"
+      }
+    ],
+    "reservedHelperKeys": [
+      "2025-A32",
+      "2025-A35",
+      "2025-A37",
+      "2025-A38",
+      "2025-A39",
+      "2025-A42",
+      "2025-A43",
+      "2025-A44",
+      "2025-A45",
+      "2025-A46",
+      "2025-A47",
+      "2025-A49",
+      "2025-A17",
+      "2025-A19",
+      "2025-A27",
+      "2025-A28",
+      "2025-A29",
+      "2025-A30",
+      "2025-A48",
+      "2025-A53",
+      "2025-A54"
+    ],
+    "duplicateReservations": 0,
+    "collectorRetained": [
+      "2025-A25",
+      "2026-B7",
+      "integration, validation, draftPR714"
+    ],
+    "publicationGatesUnchanged": true,
+    "directPeerMessages": {
+      "landHouse12": "SUCCESS",
+      "weather6": "SUCCESS",
+      "dental3": "SUCCESS"
+    },
+    "parentDirectNotification": "previously failed threadnotfound; this conversation/report is handoff"
+  },
+  "technicalResolvedCount": 17,
+  "remainingTechnicalHolds": 20
+}
