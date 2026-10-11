@@ -1,0 +1,66 @@
+{
+  "checkedAtUtc": "2026-10-11T04:25:14.135040+00:00",
+  "status": "LOCAL_VALIDATION_PASS",
+  "candidateCount": 20,
+  "choiceExplanationCount": 100,
+  "multiSelectionCount": 4,
+  "sourceShortageCount": 0,
+  "registrationDelta": 0,
+  "publicGo": 0,
+  "checks": [
+    {
+      "command": "pnpm exec vitest run __tests__/questions/ot61-am-next20-staging.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "testFilesPassed": 1,
+      "testsPassed": 24
+    },
+    {
+      "command": "pnpm exec eslint data/qualification-staging/sagyo-ryohoshi/ot61-am-next20/questions.ts data/qualification-staging/sagyo-ryohoshi/ot61-am-next20/index.ts __tests__/questions/ot61-am-next20-staging.test.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm exec tsx .cache/validate-ot20-candidates.ts --exam=sagyo-ryohoshi",
+      "exitCode": 0,
+      "validated": 20,
+      "ok": 20,
+      "fail": 0,
+      "warn": 0,
+      "inputAdapter": "Exact copy of scripts/validate-questions.ts, replacing only VALIDATION_QUESTIONS with imported OT61_AM_NEXT20_QUESTIONS. All canonical schema and checks unchanged."
+    },
+    {
+      "command": "audit-final.py: current main/open PR/other helper reservations/owner queued and saved drafts",
+      "exitCode": 0,
+      "overlapCount": 0
+    }
+  ],
+  "dependencies": {
+    "freshInstallCommand": "pnpm install --offline --frozen-lockfile --ignore-scripts",
+    "freshInstallResult": "ERR_PNPM_LOCKFILE_CONFIG_MISMATCH: current overrides configuration does not match lockfile",
+    "localValidationMethod": "Ignored worktree-only node_modules junction reuses the existing PR742 dependency tree. No package, lockfile, dependency version or key was changed."
+  },
+  "validationLimits": {
+    "localFullBuildRun": false,
+    "localEntireTestSuiteRun": false,
+    "reason": "Candidate-only batch; scoped local checks completed and standard full PR CI will assess the branch."
+  },
+  "visualSourceReview": {
+    "questionPageCount": 9,
+    "originalQuestions": 20,
+    "officialAnswerCellCount": 20,
+    "requiredRuntimeFigureCount": 0,
+    "result": "pass"
+  },
+  "editorialCorrections": [
+    "AM57 choice4 explains original touch sensation instead of smell; official key5 retained.",
+    "AM62 negative wording identifies non-receptor without negating true receptor facts.",
+    "AM63 avoids asserting universal maximum-HR or fiber-ratio changes.",
+    "AM66 limits phosphorus claim to modest conditional net-calcium absorption effect, verified against NIH ODS; unsupported PubMed reference removed.",
+    "AM69 negative stem and work versus power units preserved."
+  ],
+  "mergePerformed": false,
+  "deployPerformed": false
+}
