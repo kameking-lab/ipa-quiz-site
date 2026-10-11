@@ -56,6 +56,14 @@ describe("home directory", () => {
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
+  it("links the complete two Riyoshi papers with the published question count", () => {
+    const item = all.find((entry) => entry.key === "riyoshi");
+    expect(item?.href).toBe("/riyoshi");
+    expect(item?.questionCount).toBe(110);
+    expect(item?.periodLabel).toBe("2期分");
+    expect(item?.sub).toContain("全110原問・全肢解説");
+  });
+
   it("never advertises an empty qualification and sums domain totals from cards", () => {
     for (const item of all) expect(item.questionCount).toBeGreaterThan(0);
     for (const d of domains) {
