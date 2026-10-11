@@ -135,6 +135,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  riyoshi: "理容師国家試験",
   ip: "ITパスポート試験",
   sg: "情報セキュリティマネジメント試験",
   fe: "基本情報技術者試験",
@@ -198,6 +199,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  riyoshi: (c) => `理容師国家試験の第53回・第54回筆記から掲載済み${c}問を演習。公式問題・正答、原図と全選択肢の独自解説を確認できます。`,
   ip: (c, y, k) =>
     `職種・年齢を問わずITを活用するすべての社会人・就活生が対象のIT基礎国家試験。CBT通年受験に対応、${c}問・${y}期分・${k}分野を実問題AI解説で体系的に対策。合格率は比較的高く、ビジネス現場のIT活用力を証明できる。`,
   sg: (c, y, k) =>
