@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import type { Question } from "@/lib/questions/types";
+import { CHOSASHI_QUESTIONS } from "@/data/questions/chosashi";
 
 const question: Question = {
   id: "chosashi-2025-am-q11", exam: "chosashi", session: "am", year: 2025, season: "autumn", qNumber: 11,
@@ -38,5 +39,14 @@ describe("記述の独自解答例", () => {
     expect(onNext).toHaveBeenCalledOnce();
     expect(storage).not.toHaveBeenCalled();
     storage.mockRestore();
+  });
+
+  it("実際の記述6原稿で独自図面7点を本文内に表示する", () => {
+    for (const actual of CHOSASHI_QUESTIONS.filter(q => q.type === "descriptive")) {
+      const view = render(<DescriptiveAnswerCard question={actual} defaultOpen />);
+      const images = view.container.querySelectorAll('img[src$=".svg"]');
+      expect(images.length, actual.id).toBe(actual.id === "chosashi-2024-pm-q22" ? 2 : 1);
+      view.unmount();
+    }
   });
 });

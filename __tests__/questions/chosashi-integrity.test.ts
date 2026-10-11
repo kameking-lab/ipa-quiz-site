@@ -40,8 +40,8 @@ describe("土地家屋調査士・公式原問の完備", () => {
       if (q.type === "descriptive") {
         expect(q.modelAnswer).toContain("公式問題に基づく独自解答例");
         expect(q.modelAnswer).toContain("法務省の公式解答ではありません");
-        const images = [...(q.modelAnswer ?? "").matchAll(/\/images\/questions\/chosashi\/([^\s)]+\.svg)/g)];
-        expect(images.length, q.id).toBeGreaterThan(0);
+        const images = [...(q.modelAnswer ?? "").matchAll(/!\[[^\]]*\]\(\/images\/questions\/chosashi\/([^\s)]+\.svg)\)/g)];
+        expect(images.length, q.id).toBe(q.id === "chosashi-2024-pm-q22" ? 2 : 1);
         for (const image of images) {
           const path = join(process.cwd(),"public/images/questions/chosashi",image[1]);
           expect(existsSync(path), path).toBe(true);
