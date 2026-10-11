@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question, Session } from "@/lib/questions/types";
 import sourceJson from "./2026-september.json";
 import supplementJson from "./2026-september-supplement5.json";
+import supplement6Json from "./2026-september-supplement6.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -15,6 +16,8 @@ type SourceItem = {
   explanation: string;
   choiceExplanations: string[];
   officialReferenceUrls?: string[];
+  imageUrls?: string[];
+  imageAltTexts?: string[];
 };
 
 type Paper = {
@@ -73,7 +76,8 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
         explanation: item.explanation,
         choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]])),
         explanationCoverage: "full",
-        hasImage: false,
+        hasImage: Boolean(item.imageUrls?.length),
+        ...(item.imageUrls?.length ? { imageUrls: item.imageUrls, imageAltTexts: item.imageAltTexts } : {}),
         sourcePdfUrl: paper.questionUrl,
         sourceAnswerUrl: source.answerUrl,
         sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級造園施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
@@ -89,6 +93,7 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
 export const ZOEN1_QUESTIONS = [
   ...toQuestions(sourceJson as Source),
   ...toQuestions(supplementJson as Source, "2026-10-11"),
+  ...toQuestions(supplement6Json as Source, "2026-10-11"),
 ].sort((a, b) => a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
 
 if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
