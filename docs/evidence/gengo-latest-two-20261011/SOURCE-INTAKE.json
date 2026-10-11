@@ -516,5 +516,28 @@
       "sha256": "a547bd2ebecb688bca340e13936e214294501136ddff9ca8f9505624f2a648ac",
       "pages": 2
     }
-  ]
+  ],
+  "localAcademicReview": {
+    "reviewedAtUtc": "2026-10-11T03:19:19.093803+00:00",
+    "reviewedIds": [
+      "gengo-chokakushi-2026-annual-am-q35",
+      "gengo-chokakushi-2026-annual-am-q69",
+      "gengo-chokakushi-2026-annual-am-q83"
+    ],
+    "independentReviewModel": "gpt-6-astra",
+    "clearedIds": [],
+    "retainedHoldIds": [
+      "gengo-chokakushi-2026-annual-am-q35",
+      "gengo-chokakushi-2026-annual-am-q69",
+      "gengo-chokakushi-2026-annual-am-q83"
+    ],
+    "reason": "Verified factual explanations improved. Official grading rationales or detailed URAWSS task correspondence remain unresolved; all three holds retained.",
+    "evidenceDirectory": "docs/evidence/gengo-latest-two-20261011/local-reviews/",
+    "additionalAccessStops": [
+      "Sage article HTTP 403",
+      "MDPI HTTP 429",
+      "Maruzen robots.txt refusal"
+    ],
+    "newQualificationIntakeStopped": true
+  }
 }
