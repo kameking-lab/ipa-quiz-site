@@ -6,9 +6,9 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { getSitemapQuestions } from "@/lib/seo/sitemap-pagination";
 
 describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => {
-  it("公式正答Bの2025年問7だけを独立した労災セッションで公開する", () => {
+  it("公式正答Bの2025年問7を独立した労災セッションで保持する", () => {
     const rousai = SHAROUSHI_QUESTIONS.filter((q) => q.session === "rousai");
-    expect(rousai.map((q) => `${q.year}-${q.qNumber}`)).toEqual(["2026-2", "2026-3", "2026-4", "2026-5", "2026-8", "2026-9", "2026-10", "2025-3", "2025-4", "2025-5", "2025-6", "2025-7", "2025-9", "2025-10"]);
+    expect(rousai.map((q) => `${q.year}-${q.qNumber}`)).toEqual(["2026-2", "2026-3", "2026-4", "2026-5", "2026-6", "2026-7", "2026-8", "2026-9", "2026-10", "2025-3", "2025-4", "2025-5", "2025-6", "2025-7", "2025-9", "2025-10"]);
     const q = rousai.find((item) => item.year === 2025 && item.qNumber === 7)!;
     expect(q.officialAnswerNumber).toBe("B");
     expect(q.answer).toBe("イ");
@@ -48,7 +48,7 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
       })?.id).toBe(q!.id);
     }
     for (const number of [6, 7]) {
-      expect(SHAROUSHI_QUESTIONS.some((item) => item.year === 2026 && item.session === "rousai" && item.qNumber === number)).toBe(false);
+      expect(SHAROUSHI_QUESTIONS.some((item) => item.year === 2026 && item.session === "rousai" && item.qNumber === number)).toBe(true);
     }
   });
 
@@ -60,7 +60,7 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
       { year: 2025, session: "kenpo", qNumber: 9, officialAnswerNumber: "B" },
     ];
     const published = SHAROUSHI_QUESTIONS.filter((q) => q.session === "koyou" || q.session === "kenpo");
-    expect(published).toHaveLength(27);
+    expect(published).toHaveLength(30);
     expect(published.map(({ year, session, qNumber, officialAnswerNumber }) => ({ year, session, qNumber, officialAnswerNumber }))).toEqual(expect.arrayContaining(expected));
     for (const q of published) {
       expect(Object.keys(q.choices ?? {})).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
