@@ -1,0 +1,76 @@
+{
+  "originals": [
+    36,
+    54,
+    56,
+    57,
+    59,
+    63
+  ],
+  "newTranscriptions": 6,
+  "newExplanations": 6,
+  "choiceReasons": 24,
+  "savedDraftReuseCount": 0,
+  "modelRequested": "gpt-6.1-sol",
+  "actualModelReceipt": null,
+  "primarySources": {
+    "https://www.daikin.co.jp/school/class01/lesson02": {
+      "url": "https://www.daikin.co.jp/school/class01/lesson02",
+      "sha256": "7ac9fc59f9a176ff42e8c14e22fbcc46229d3ef1e721ee004188cad009fe2380",
+      "bytes": 63981,
+      "kind": "HTML"
+    },
+    "https://www.mlit.go.jp/gobuild/content/001888825.pdf": {
+      "url": "https://www.mlit.go.jp/gobuild/content/001888825.pdf",
+      "sha256": "bec6ec625375c4f39fd86b13106e407a274b351f0e021788c085ddf13e46cdf4",
+      "bytes": 1888097,
+      "pages": 310,
+      "edition": "2025-05-12; before exam2025-11-16"
+    },
+    "https://www.qsr.mlit.go.jp/site_files/file/s_top/doboku/r2tebiki(1).pdf": {
+      "url": "https://www.qsr.mlit.go.jp/site_files/file/s_top/doboku/r2tebiki(1).pdf",
+      "sha256": "1fb627e0680ce129db094959f34d52e69c8235b3252ec073569363b213680bf5",
+      "bytes": 6886327,
+      "kind": "PDF",
+      "localFile": "tech-6526ff988044",
+      "ok": true
+    },
+    "https://literature.cdn.keysight.com/litweb/pdf/5952-0292.pdf": {
+      "url": "https://literature.cdn.keysight.com/litweb/pdf/5952-0292.pdf",
+      "sha256": "a4aa6cc6f3cd100f4999c175a2b777b5dc298bd7d4aab9d57f9aebbbf43fd83c",
+      "bytes": 631336,
+      "kind": "HTML",
+      "localFile": "tech-98b65b0f07cc",
+      "ok": true
+    },
+    "https://www.thefoa.org/tech/ref/testing/test/power.html": {
+      "url": "https://www.thefoa.org/tech/ref/testing/test/power.html",
+      "sha256": "e6f460a234b86ad18a2d6fe5dd4660a0fac86919fe44921d18d8a16e1625bd79",
+      "bytes": 46455,
+      "localFile": "instrument-707841c1fb9d",
+      "kind": "HTML",
+      "ok": true
+    }
+  },
+  "primaryLocators": {
+    "36": "Daikin air conditioner operation original lesson02, indoor heat absorption/outdoor heat rejection",
+    "54": "MLIT electrical specification2025-05-12 2.1.5,2.10.4.3,2.10.4.6,2.10.4.7 PDF61,78,79",
+    "56": "QSR construction handbook6.3.2/6.3.3 PDF36-37",
+    "57": "QSR handbook6.3.3 construction sequence/standard work capacity and6.4.8 daily work quantities; PDF37,45",
+    "59": "Keysight Spectrum Analysis Basics original Introduction Frequency domain versus time domain; retrieved HTML not full PDF; FOA measuring optical power",
+    "63": "QSR handbook6.3.1 temporary equipment choice/layout,6.3.3 labor plan distinct from budget,6.4.8 quality management plan PDF36/37/45"
+  },
+  "pageVisualChecks": {
+    "16": "VIEWED official original page and choices",
+    "24": "VIEWED official original page and choices",
+    "25": "VIEWED official original page and choices",
+    "26": "VIEWED official original page and choices",
+    "29": "VIEWED official original page and choices"
+  },
+  "individualSourceHolds": {
+    "2026Q54": "10-wire/20-percent original rule still absent in metal-raceway article161 and MLIT2.8.5; local corrected draft retained"
+  },
+  "oldJSONModified": 0,
+  "oldJSONDeleted": 0,
+  "secondPeriodComplete": false
+}
