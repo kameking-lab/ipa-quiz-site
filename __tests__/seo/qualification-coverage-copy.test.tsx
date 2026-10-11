@@ -69,19 +69,19 @@ describe("管理業務主任者 hub metadata matches the playable two-paper cove
   });
 });
 
-describe("zoen2 hub metadata describes the playable subset of two official papers", () => {
-  it("keeps the two sitting scopes, partial counts and social metadata aligned", async () => {
+describe("zoen2 hub metadata describes both complete official papers", () => {
+  it("keeps the two sitting scopes, complete counts and social metadata aligned", async () => {
     const pool = getQuestionsByExamStrict("zoen2");
-    expect(pool.filter((q) => q.year === 2026 && q.season === "early")).toHaveLength(10);
-    expect(pool.filter((q) => q.year === 2025 && q.season === "late")).toHaveLength(27);
-    expect(pool).toHaveLength(37);
+    expect(pool.filter((q) => q.year === 2026 && q.season === "early")).toHaveLength(40);
+    expect(pool.filter((q) => q.year === 2025 && q.season === "late")).toHaveLength(40);
+    expect(pool).toHaveLength(80);
     expect(new Set(pool.map((q) => q.session))).toEqual(new Set(["gakka"]));
     const metadata = await generateMetadata({ params: Promise.resolve({ exam: "zoen2" }) });
     const description = String(metadata.description);
     expect(description).toContain("令和8年度前期・令和7年度後期の第一次検定");
-    expect(description).toContain("37問を2回分");
-    expect(description).toContain("各回の公式40問のうち収録済みの設問");
-    expect(description).toContain("未収録の設問は演習に含みません");
+    expect(description).toContain("80問を2回分");
+    expect(description).toContain("各回の公式全40問");
+    expect(description).not.toContain("未収録の設問");
     expect(description).not.toContain("令和8年度前期第一次検定から37問");
     expect(metadata.openGraph?.description).toBe(description);
     expect(metadata.twitter?.description).toBe(description);
