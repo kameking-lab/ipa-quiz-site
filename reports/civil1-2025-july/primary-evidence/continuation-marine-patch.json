@@ -1,0 +1,311 @@
+{
+  "status": "COMPLETE",
+  "manifestSha256": "49cc800bc4d1f285df472b5d86668de3cd600b105d5b49449289701b25f8fc6d",
+  "inputSha256": "64f75139b11d1147c379bb71cbe22d08193f6d9df2b6bef42ee9745378f2ae94",
+  "items": [
+    {
+      "key": "2025-A42",
+      "choiceUpdates": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL_CONTRADICTION",
+          "sources": [
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF p15（1始まり）／印刷本文60",
+              "section": "4-4-1-7-6(2)①",
+              "evidence": "捨石根固工は表面に所要質量のものを並べ、内部には質量の小さいものを用いることが多く、同質量の場合もある。肢の『内部に向かって次第に大きな石』はこれと逆。",
+              "sourceType": "government_original_design_guideline",
+              "publicationDate": "2015-04-01（公式索引上の改訂日）",
+              "scopeNote": "捨石の3個並びという個数は本文にない。PDF p16／印刷本文61の2個並びは異形コンクリートブロックの規定であり、捨石に転用しない。2025原問と同一の引用元とは未確認。"
+            },
+            {
+              "url": "https://www.pref.miyagi.jp/documents/11795/287159.pdf",
+              "page": "PDF p10（1始まり）／印刷8-9",
+              "section": "8.3 高潮に対する構造 (2)断面形状",
+              "evidence": "宮城県の根固工・捨石工設計では、捨石の敷設幅2～5m、敷設高1m以上を示し、ブロックの天端2個並び以上・2層以上とは分けて規定する。",
+              "sourceType": "government_original_coastal_design_manual",
+              "publicationDate": null,
+              "scopeNote": "東日本大震災を踏まえた宮城県向け設計章。PDF本文に刊行年月はなく、検索エンジン推定日を版日としない。捨石3個並びは記していない。"
+            }
+          ],
+          "remainingGap": "表層の捨石を3個並び以上とする数値を直接示す試験前の一次資料が未確認。",
+          "proposedExplanation": "表層には波力に耐える所要質量の捨石を配置し、内部にはより小質量の捨石を用いることが多い。『内部ほど大きい』という方向は逆。ただし表層3個並びの数値は別途原規定の照合が必要。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.hrr.mlit.go.jp/gijyutu/kaitei/sek_riv/data/004_kaigan.pdf",
+              "page": "PDF p18（1始まり）／印刷Ⅱ-14",
+              "section": "2-6-5(2)(6)",
+              "evidence": "海底土砂の移動抑制と、沈下・変形を防ぐ適切な根固基礎工の必要性を示す。",
+              "sourceType": "government_original_design_manual",
+              "publicationDate": null,
+              "scopeNote": "本文の参考文献年から版日を確定しない。栗石・捨石の両材を原問条件で直接規定してはいない。"
+            },
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF pp16,24（1始まり）／印刷本文61,69",
+              "section": "4-4-1-7-6(3), 4-4-3-7",
+              "evidence": "根固工を消波工と兼ねる場合に消波工基準を準用し、砂層の洗掘・沈下を防ぐ基礎に捨石等を示す。",
+              "sourceType": "government_original_design_guideline",
+              "publicationDate": "2015-04-01（公式索引上の改訂日）",
+              "scopeNote": "兼用消波工の条件付き。砂地盤の根固基礎一般への無条件拡張はしない。"
+            },
+            {
+              "url": "https://www.pref.miyagi.jp/documents/11795/287159.pdf",
+              "page": "PDF p4（1始まり）／印刷8-3",
+              "section": "8.1 総則・機能と構造",
+              "evidence": "根固工を法先または基礎工前面に設け、波浪による前面の洗掘を防いで基礎を防護するという機能を示す。",
+              "sourceType": "government_original_coastal_design_manual",
+              "publicationDate": null,
+              "scopeNote": "栗石・捨石を砂地盤の根固基礎に使うという材料指定はない。"
+            }
+          ],
+          "remainingGap": "波で洗掘・吸出しを受けやすい法先砂地盤等の根固基礎を栗石・捨石等で施工する必要性を、原問と同じ条件で直接記す規定が未確認。",
+          "proposedExplanation": "法先砂地盤の洗掘・吸出しには根固基礎の沈下・変形防止が重要で、捨石等の基礎例は確認できる。栗石を含む原問の材料指定と適用条件は一次規定の追加確認を要する。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A43",
+      "choiceUpdates": [
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.scopenet.or.jp/main/gakkai/pdf/R5%E5%B9%B4%E5%BA%A6%E5%85%AC%E9%96%8B%E7%94%A8%E6%A0%B9%E6%8B%A0%EF%BC%88%E2%85%A1%E9%A1%9E%EF%BC%89.pdf",
+              "page": "PDF p2（1始まり）／印刷2-4・問09③",
+              "section": "出典欄：『港湾工事施工ハンドブック』（2022年4月）第2編第4章4.4.1 概要",
+              "evidence": "『天端の極端な凹凸を避け、かみ合わせのためブロックを反転して据え付けることもある』という同内容の肢と、その引用元書誌・節を掲載。肢の正誤を表す資料ではない。",
+              "sourceType": "certification_body_original_question_basis",
+              "publicationDate": "2023年度",
+              "scopeNote": "発行者の公開過去問・出典表は照合済み。公式正答と引用元ハンドブック4.4.1本文は未取得。未読本文を引用せず、出典表を正答の証明にしない。"
+            },
+            {
+              "url": "https://www.fudotetra.co.jp/wp-content/uploads/2019/04/tetrapod_fig07.pdf",
+              "page": "PDF p2（1始まり）／印刷1-2",
+              "section": "テトラポッドの特性",
+              "evidence": "ブロックのかみ合わせによって安定した断面を形成できることを示す。",
+              "sourceType": "manufacturer_original_brochure",
+              "publicationDate": "2015-05（印刷表示）",
+              "scopeNote": "天端凹凸と反転据付けは本文にない。製品の説明から一般的施工の真偽を確定しない。"
+            }
+          ],
+          "remainingGap": "同内容の肢と出典節は特定済みだが、別試験の公式正答または正規に読める2022年4月版『港湾工事施工ハンドブック』4.4.1本文が未確認。",
+          "proposedExplanation": "かみ合わせは消波ブロックの安定に関わる。同内容の肢が別試験にあり、参照先は2022年4月版ハンドブック4.4.1と特定できるが、天端凹凸と反転据付けの正誤は本文か公式正答の確認まで保留する。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A44",
+      "choiceUpdates": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.city.kitakyushu.lg.jp/files/001134819.pdf",
+              "page": "PDF p25（1始まり）／印刷本文306",
+              "section": "3-4-3 6(17)(18)",
+              "evidence": "大廻しワイヤの二重回しと浮心付近への固定を定める。",
+              "sourceType": "government_original_specification",
+              "publicationDate": null,
+              "scopeNote": "版日と吃水線以下という高さ条件は未確認。"
+            },
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p191（1始まり）／印刷本文180",
+              "section": "4.7.4(3)エ(チ)(ツ)",
+              "evidence": "回航時の大回しワイヤの二重回しと浮心付近への固定を定め、港内曳航では協議による例外も記す。",
+              "sourceType": "government_original_specification",
+              "publicationDate": "2022-04",
+              "scopeNote": "吃水線以下との明文は確認できない。浮心付近から吃水線以下を推定して全文支持としない。"
+            },
+            {
+              "url": "https://www.jstage.jst.go.jp/article/jinnavi/214/0/214_62/_pdf/-char/en",
+              "page": "PDF p1（1始まり）／印刷62",
+              "section": "1 前書き",
+              "evidence": "浮心は水面下の排水体積の幾何学的中心と説明する。浮心付近を低い高さに選ぶ物理的理由を補う。",
+              "sourceType": "original_naval_engineering_research",
+              "publicationDate": "2020-10",
+              "scopeNote": "船舶の浮心に関する論文。ケーソン曳航ワイヤの吃水線以下という施工規定そのものは示さず、規範の代用にしない。"
+            }
+          ],
+          "remainingGap": "ワイヤ取付け位置を吃水線以下と直接規定する一次資料が未確認。",
+          "proposedExplanation": "大廻しワイヤを二重にし、浮心付近へ固定する港湾施工規定は確認できる。浮心は水面下の排水体積中心であり、低い位置に取付けて曳航時の安定を図る説明は合理的。ただし『吃水線以下』の明文規定は未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://penta-ocean-int.com/wp-content/uploads/2014/11/g38-04.pdf",
+              "page": "PDF p4（1始まり）",
+              "section": "4",
+              "evidence": "ケーソン据付作業における目地緩衝材の設置を報告する。",
+              "sourceType": "contractor_original_construction_report",
+              "publicationDate": null,
+              "scopeNote": "URL中の2014/11は刊行日として採用しない。タイヤ材質や原問の函間波浪条件は示さない。"
+            },
+            {
+              "url": "https://www.nihonsolid.co.jp/12-soring.html",
+              "page": "HTML（頁番号なし）",
+              "section": "タイヤ式仮設防舷材ソリング",
+              "evidence": "大型タイヤを重ねた衝撃緩和材についてケーソン用途を紹介する。",
+              "sourceType": "manufacturer_original_product_document",
+              "publicationDate": null,
+              "scopeNote": "製品用途の説明。波浪下のケーソン相互間据付けでゴムタイヤを使うという原問条件は未証明。"
+            },
+            {
+              "url": "https://www.umeshunkyo.or.jp/marinevoice21/promenade/239/index.html",
+              "page": "HTML（頁番号なし）",
+              "section": "ケーソンの進水工法・ケーソンの曳航から据付まで",
+              "evidence": "ドライドック進水時には他のケーソンとの接触防止に古タイヤ等のフェンダーを設置すると説明。別段落では波浪を受ける据付で既設函を基準に新函を引き込む方法を説明する。",
+              "sourceType": "industry_association_original_construction_explanation",
+              "publicationDate": null,
+              "scopeNote": "タイヤ使用は進水段階、波浪下の既設函への据付けは別段落。両者を同一現場・同一工程の証拠としない。"
+            },
+            {
+              "url": "https://www.toyo-const.co.jp/technology/9546.html",
+              "page": "HTML（頁番号なし）",
+              "section": "ケーソン据付システム 函ナビ 概要",
+              "evidence": "うねりによる据付函の動揺軌跡を表示し、既設函との離隔と基礎マウンドまでの距離を監視する施工技術を説明する。",
+              "sourceType": "contractor_original_construction_technology",
+              "publicationDate": null,
+              "scopeNote": "函相互間への衝突リスクを補強するが、タイヤや他の緩衝材の採用を記さない。掲載年月未確認。"
+            }
+          ],
+          "remainingGap": "うねり等による函相互間の接触防止策としてゴムタイヤ等を置く、という条件を一体で直接記す一次資料が未確認。",
+          "proposedExplanation": "据付時にはうねりによる函の動揺と既設函との離隔を管理する。協会の進水解説には他函との接触を古タイヤ等のフェンダーで防ぐ例がある。したがって函同士の接触に緩衝材を置く説明には実例があるが、波浪中の据付でタイヤを用いた直接事例は未確認。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A45",
+      "choiceUpdates": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.hkd.mlit.go.jp/ky/jg/gijyutu/slo5pa0000012pku-att/slo5pa0000014wzl.pdf",
+              "page": "PDF pp6,7,12（1始まり）／印刷港-5,港-6,港-11",
+              "section": "3-2-5 表4-2-1、3-2-7(1)、3-2-11",
+              "evidence": "港湾ボーリングの目的に標準貫入試験を挙げ、砂質土等の試験を規定する一方、粘性土では原則として標準貫入試験を行わない。土質試験も設計図書に応じて実施する。",
+              "sourceType": "government_original_specification",
+              "publicationDate": null,
+              "scopeNote": "原問の浚渫前調査として粒度分析・比重試験・標準貫入試験の3種を一般的に行うとの一体規定ではない。試験の適用は土質と設計図書に左右される。"
+            }
+          ],
+          "remainingGap": "浚渫前の粒度分析・比重試験・標準貫入試験の一般性と、硬さ・強さ・締まり具合・粒の粗さへの対応を直接示す試験前の一次資料が未確認。",
+          "proposedExplanation": "港湾土質調査ではボーリング・標準貫入試験・土質試験を用いるが、標準貫入試験は粘性土では原則実施せず、設計図書の条件にも従う。肢にある3試験の一般的な組合せと各物性の対応は引き続き一次資料で確認する。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL_WITH_MARINE_EVIDENCE",
+          "sources": [
+            {
+              "url": "https://www.scopenet.or.jp/main/gakkai/pdf/R5%E5%B9%B4%E5%BA%A6%E5%85%AC%E9%96%8B%E7%94%A8%E6%A0%B9%E6%8B%A0%EF%BC%88%E2%85%A0%E9%A1%9E%EF%BC%89.pdf",
+              "page": "PDF p1（1始まり）／問08③",
+              "section": "出典欄：港湾設計・測量・調査等業務共通仕様書（2023年3月）5-1-4",
+              "evidence": "浚渫土厚が有効探査層厚を超える場合、層別の磁気・潜水探査を行う経層探査について同趣旨の肢を掲載する。",
+              "sourceType": "certification_body_original_question_basis",
+              "publicationDate": "2023年度",
+              "scopeNote": "同趣旨の設問と出典表示であり、仕様書5-1-4本文や正答を読んだ証拠ではない。"
+            },
+            {
+              "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/013/336/r2_jikitansakaisetsu.pdf",
+              "page": "PDF pp31-33（1始まり）／印刷本文25-27",
+              "section": "3-3 経層探査",
+              "evidence": "安全確認済みの層を掘削して必要深度まで探査と掘削を繰り返す陸上手順を記す。",
+              "sourceType": "government_original_magnetic_survey_guideline",
+              "publicationDate": "2020-01",
+              "scopeNote": "陸上の要領であり、海底浚渫の直接根拠には転用しない。"
+            },
+            {
+              "url": "https://www.pa.qsr.mlit.go.jp/kanmon/works/",
+              "page": "HTML（頁番号なし）",
+              "section": "整備の流れ ＜2＞磁気探査・＜3＞潜水探査・＜5＞浚渫工事",
+              "evidence": "関門航路事務所は、浚渫前の磁気探査、異常物の潜水確認・除去、除去後の再磁気探査と安全確認を経て浚渫に着手する工程を示す。",
+              "sourceType": "government_operator_original_construction_workflow",
+              "publicationDate": null,
+              "scopeNote": "再探査は異常物除去後かつ浚渫前である。原問の安全深度まで浚渫後に次層を再探査する工程とは異なる。掲載年月未確認のため試験前適用性も未確定。"
+            }
+          ],
+          "remainingGap": "海底での『探査→安全深度まで浚渫→再探査』を明記する2025試験前の港湾仕様本文が未確認。",
+          "proposedExplanation": "港湾施工では浚渫前に磁気探査を行い、異常物の除去後にも再探査して安全確認する実例がある。深い工事を層別に確認する考え方は別試験の出典表と陸上要領に見られる。ただし除去後の再探査と、原問の『安全深度まで浚渫した後の次層探査』は別工程であり、後者の具体順序は保留する。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    }
+  ],
+  "stoppedOperations": [
+    "Aomori forest PDF HTTP403",
+    "Tokyo sewer PDF HTTP503",
+    "Internet Archive CDX inaccessible",
+    "Claude cloud attach disabled",
+    "JRTT R50401 civil specification PDF HTTP403",
+    "A28 JICE sheet-pile design manual proxy refusal"
+  ],
+  "validation": {
+    "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+    "sourcePdfHashMatchesManifest": true,
+    "inputHashMatchesManifest": true,
+    "onlyRequestedChoices": true,
+    "choiceUpdatesCount": 7,
+    "newlyResolvedChoices": 0,
+    "newlyResolvedQuestions": 0,
+    "allFourQuestionsRemainHold": true,
+    "officialHostIdentityVerified": false,
+    "independentAcceptance": false,
+    "publicAcceptance": false,
+    "global101Acceptance": false,
+    "priorAssessmentReused": true,
+    "newPaidApiOrPurchaseOrAuthentication": false,
+    "note": "既存21問・支持済み肢・原問・正答・公開予約は変更していない。media:status は sandbox 内で spawnSync git EPERM のため失敗。",
+    "newPrimarySearchLog": [
+      {
+        "key": "2025-A42",
+        "queries": ["海岸 表層 3個並び 捨石 site:go.jp", "栗石 捨石 根固工 filetype:pdf", "砂地盤 栗石 捨石 根固"],
+        "inspected": [
+          {"url": "https://www.pref.miyagi.jp/documents/11795/287159.pdf", "page": "PDF pp4,10（1始まり）／印刷8-3,8-9", "result": "波浪洗掘防護と捨石敷設幅2～5m・高さ1m以上は確認。3個並び・栗石材料条件なし。"}
+        ],
+        "outcome": "林野庁資料と別の一次資料で機能・寸法設計を補強したが、残る数値と材料条件は未解消。"
+      },
+      {
+        "key": "2025-A43",
+        "queries": [],
+        "inspected": [],
+        "outcome": "先行SCOPE原問・出典表探索を再実行しない。引用元本文・公式正答の欠落を維持。"
+      },
+      {
+        "key": "2025-A44",
+        "queries": ["ケーソン 据付 大廻しワイヤ 吃水線 浮心 PDF", "ケーソン 据付 ゴムタイヤ 緩衝材 波浪 施工 PDF", "ケーソン 古タイヤ 波浪", "ケーソン据付 緩衝材 タイヤ", "浮心 水面下 排水体積"],
+        "inspected": [
+          {"url": "https://www.umeshunkyo.or.jp/marinevoice21/promenade/239/index.html", "page": "HTML・ケーソンの進水工法／曳航から据付まで", "result": "古タイヤ等のフェンダーはドック進水段階。波浪中の既設函への据付は別段落。"},
+          {"url": "https://www.toyo-const.co.jp/technology/9546.html", "page": "HTML・函ナビ概要", "result": "うねり動揺と既設函との離隔監視は確認。タイヤ使用はなし。"},
+          {"url": "https://www.jstage.jst.go.jp/article/jinnavi/214/0/214_62/_pdf/-char/en", "page": "PDF p1（1始まり）／印刷62", "result": "浮心の水面下体積中心という定義。ケーソンのワイヤ高さ規定ではない。"},
+          {"url": "https://www.penta-ocean.co.jp/news/2004/040412.html", "page": "HTML・2004-04-12プレスリリース", "result": "宮崎港の遠隔注排水・ウィンチ据付実績。ワイヤの吃水線条件と函間タイヤ材は記載なし。"}
+        ],
+        "outcome": "函間接触・うねり・古タイヤ保護の各要素は一次資料で補強。吃水線以下の明文と波浪中据付でのタイヤ採用は未解消。"
+      },
+      {
+        "key": "2025-A45",
+        "queries": ["浚渫 経層探査 site:mlit.go.jp", "浚渫 磁気探査 安全深度", "海上磁気探査 浚渫 再度", "浚渫 再探査 経層", "5-1-4 磁気探査 港湾"],
+        "inspected": [
+          {"url": "https://www.pa.qsr.mlit.go.jp/kanmon/works/", "page": "HTML・整備の流れ＜2＞＜3＞＜5＞", "result": "磁気探査→異常物除去→再磁気探査→浚渫。浚渫後の層別再探査ではない。"},
+          {"url": "https://www.pref.niigata.lg.jp/uploaded/attachment/333783.pdf", "page": "PDF p9（1始まり）／印刷目次9", "result": "版日未確認の港湾標準仕様書目次に5-1-4磁気探査はあるが、当該PDFは目次15頁のみで本文64頁は収録されない。"},
+          {"url": "https://www.mlit.go.jp/kowan/content/001989833.pdf", "page": "PDF・2026年版 5-1-4 磁気探査", "result": "特記仕様書指定深度まで探査を規定。2025試験後の版であり、経層の浚渫後再探査は直接確認できない。試験前同一版とは扱わない。"}
+        ],
+        "outcome": "沖縄の陸上手順以外に港湾主体の実工程を確認。ただし再探査の時点が原問と異なり、肢4の安全深度後工程は未解消。肢1の3試験一般性も未解消。"
+      }
+    ]
+  }
+}

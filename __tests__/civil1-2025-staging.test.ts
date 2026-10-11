@@ -9,6 +9,7 @@ const read = <T,>(name: string): T => JSON.parse(readFileSync(join(reportDir, na
 type Candidate = {
   paper: "A" | "B"; number: number; question: string; choices: string[];
   officialAnswerNumber: number; choiceExplanations: string[]; publicAcceptance: boolean;
+  status: "DRAFT" | "HOLD"; sourceCopyVerifiedAgainstOfficialHost: boolean;
 };
 const candidate = read<{ questions: Candidate[] }>("candidate-questions.json");
 const transcription = read<{ answersA: Record<string, number>; answersB: Record<string, number> }>("source-copy-transcription.json");
@@ -127,4 +128,38 @@ describe("civil1 bounded technical followup", () => {
       }
     }
   });
+  it("keeps the prepared and remaining selections disjoint behind the source and acceptance gates", () => {
+    const readiness = read<{
+      technicallyPreparedSourceIds: string[]; technicalHoldSourceIds: string[];
+      missingChoiceCount: number; runtimeImport: boolean; publicAcceptance: boolean;
+      independentPublicationAcceptance: boolean; firstPartyOpusAcceptanceReceipt: unknown;
+    }>("integration-readiness.json");
+    const prepared = new Set(readiness.technicallyPreparedSourceIds);
+    const remaining = new Set(readiness.technicalHoldSourceIds);
+    expect(prepared.size).toBe(85);
+    expect(remaining.size).toBe(16);
+    expect([...prepared].every((key) => !remaining.has(key))).toBe(true);
+    expect(new Set([...prepared, ...remaining])).toEqual(
+      new Set(candidate.questions.map((q) => `2025-${q.paper}${q.number}`)),
+    );
+    for (const q of candidate.questions) {
+      const key = `2025-${q.paper}${q.number}`;
+      expect(q.status).toBe(remaining.has(key) ? "HOLD" : "DRAFT");
+      expect(q.sourceCopyVerifiedAgainstOfficialHost).toBe(false);
+    }
+    expect(readiness.missingChoiceCount).toBe(38);
+    expect(readiness.runtimeImport).toBe(false);
+    expect(readiness.publicAcceptance).toBe(false);
+    expect(readiness.independentPublicationAcceptance).toBe(false);
+    expect(readiness.firstPartyOpusAcceptanceReceipt).toBeNull();
+    const delta = read<{
+      newlySupportedChoices: { key: string; choice: number }[];
+      items: { choiceChecks: { remainingGap: unknown }[] }[];
+    }>("primary-evidence/continuation-20261011-choice-assessment.json");
+    expect(delta.newlySupportedChoices.map((c) => `${c.key}:${c.choice}`).sort()).toEqual([
+      "2025-A19:1", "2025-A32:2",
+    ]);
+    expect(delta.items.reduce((count, item) => count + item.choiceChecks.filter((c) => c.remainingGap != null).length, 0)).toBe(38);
+  });
+
 });
