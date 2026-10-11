@@ -1,6 +1,6 @@
 import type { Question } from "@/lib/questions/types";
 
-/** Integration-ready local candidates; not registered in the public question pool. */
+/** Source-verified originals connected to the OT registry; release is coordinated separately. */
 export const OT13_RECOVERED_QUESTIONS: Question[] = [
   {
     "id": "sagyo-ryohoshi-2024-annual-am-q2",
