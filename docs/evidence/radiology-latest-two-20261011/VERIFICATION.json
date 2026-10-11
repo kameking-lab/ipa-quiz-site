@@ -34,14 +34,18 @@
   },
   "build": {
     "command": "pnpm exec next build --webpack",
-    "status": "running-static-generation",
+    "status": "passed",
     "compile": "passed (4.7 min)",
     "typecheck": "passed (67 s)",
     "staticPageTotal": 11991,
+    "exitCode": 0,
+    "staticPagesGenerated": 11991,
+    "staticGenerationMinutes": 12.1,
     "warnings": [
       "Existing middleware deprecation.",
       "Existing Prisma/OpenTelemetry dynamic dependency warning.",
-      "Existing edge-runtime static generation notice."
+      "Existing edge-runtime static generation notice.",
+      "SSR chart width/height warning."
     ]
   },
   "diffCheck": {
