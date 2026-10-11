@@ -1,0 +1,78 @@
+
+ RUN  v3.2.4 /home/user/ipa-quiz-site
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[provider] model resolved tier=grading model=gemini-2.5-flash pricing=flash
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み
+[scoring] response received {
+  questionId: [32m'ap-2024h-pm-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[essay-grade] response received {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  finishReason: [90mundefined[39m,
+  promptTokens: [90mundefined[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+stderr | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[essay-grade] unavailable: AI応答の解析に失敗 {
+  questionId: [32m'au-2024a-pm2-q1'[39m,
+  provider: [32m'gemini'[39m,
+  model: [32m'gemini-2.5-flash'[39m,
+  rawChars: [33m32[39m,
+  finishReason: [90mundefined[39m,
+  truncated: [33mfalse[39m,
+  outputTokens: [90mundefined[39m,
+  thoughtsTokens: [90mundefined[39m
+}
+
+stderr | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み
+[slack] SLACK_WEBHOOK_URL unset; message not delivered: ⚠️ [過去問AI] /api/essay-grade のAI評価を完了できませんでした（呼出し使用量は記録済み・利用者には評価不能と表示）。
+原因: AI 応答の解析に失敗
+問題: au-2024a-pm2-q1 / モデル: gemini-2.5-flash
+finishReason=不明 outputTokens=不明 thoughtsTokens=不明 応答文字数=32
+※ 同じ事象は 1 時間に 1 回だけ通知します。
+
+stdout | __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/generate-question — レスポンス返却時点で recordAiCost が解決済み
+[provider] model resolved tier=free model=gemini-2.5-flash-lite pricing=flash-lite
+
+ ❯ __tests__/api/cost-record-durability.test.ts (5 tests | 1 failed) 16425ms
+   ✓ コスト計上はレスポンス完了前に永続化を終える > /api/scoring — ストリームが閉じる時点で recordAiCost が解決済み  1218ms
+   ✓ コスト計上はレスポンス完了前に永続化を終える > /api/essay-grade — レスポンス返却時点で recordAiCost が解決済み 140ms
+   ✓ コスト計上はレスポンス完了前に永続化を終える > /api/generate-question — レスポンス返却時点で recordAiCost が解決済み 37ms
+   × コスト計上はレスポンス完了前に永続化を終える > /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み 15010ms
+     → Test timed out in 15000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ ソースレベルの再発防止 > recordAiCost を fire-and-forget（void）で呼ぶルートが存在しない 19ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  __tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み
+Error: Test timed out in 15000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ __tests__/api/cost-record-durability.test.ts:190:3
+    188|   });
+    189| 
+    190|   it("/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
+       |   ^
+    191|     const pending = installPendingRecord();
+    192|     stubStream("解説テキストです。");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  03:19:26
+   Duration  17.64s (transform 13.02s, setup 87ms, collect 76ms, tests 16.42s, environment 542ms, prepare 103ms)
+

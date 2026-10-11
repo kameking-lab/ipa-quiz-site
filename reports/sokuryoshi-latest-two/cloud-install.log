@@ -1,0 +1,34 @@
+Lockfile is up to date, resolution step is skipped
+Packages: +867
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 0, reused 0, downloaded 1, added 0
+Progress: resolved 0, reused 0, downloaded 13, added 0
+Progress: resolved 0, reused 0, downloaded 21, added 4
+Progress: resolved 0, reused 0, downloaded 25, added 4
+Progress: resolved 0, reused 0, downloaded 35, added 8
+Progress: resolved 0, reused 0, downloaded 70, added 22
+Progress: resolved 0, reused 0, downloaded 94, added 32
+Progress: resolved 0, reused 0, downloaded 115, added 38
+Progress: resolved 0, reused 0, downloaded 197, added 79
+Progress: resolved 0, reused 0, downloaded 283, added 116
+Progress: resolved 0, reused 0, downloaded 398, added 223
+Progress: resolved 0, reused 0, downloaded 598, added 518
+Progress: resolved 0, reused 0, downloaded 844, added 864
+Progress: resolved 0, reused 0, downloaded 847, added 867, done
+
+. postinstall$ prisma generate
+. postinstall: Prisma schema loaded from prisma/schema.prisma
+. postinstall: ✔ Generated Prisma Client (v6.19.3) to ./node_modules/@prisma/client in 495ms
+. postinstall: Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+. postinstall: Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+. postinstall: Done
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @prisma/client@6.19.3, @prisma/engines@6.19.3,      │
+│   @sentry/cli@2.58.5, core-js@3.49.0, esbuild@0.27.7, esbuild@0.28.0,        │
+│   prisma@6.19.3, protobufjs@7.6.1, sharp@0.34.5, unrs-resolver@1.11.1.       │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 20.7s using pnpm v10.33.0

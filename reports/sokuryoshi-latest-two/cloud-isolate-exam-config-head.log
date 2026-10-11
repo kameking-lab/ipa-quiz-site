@@ -1,0 +1,49 @@
+
+ RUN  v3.2.4 /home/user/ipa-quiz-site
+
+ ❯ __tests__/lib/exam-config-integrity.test.ts (6 tests | 1 failed) 36ms
+   ✓ EXAM_CONFIGS のデータ整合性 > 各エントリの code フィールドはキーと一致する（コピペ drift 防止） 3ms
+   × EXAM_CONFIGS のデータ整合性 > ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する 11ms
+     → expected [ 'ahaki-anma', …(52) ] to deeply equal [ 'ahaki-anma', …(53) ]
+   ✓ EXAM_CONFIGS のデータ整合性 > nameFull / urlSlug は非空（urlSlug は PDF 出典 URL の構成要素） 3ms
+   ✓ EXAM_CONFIGS のデータ整合性 > seasons / sessions は非空で、各 session の不変条件を満たす 14ms
+   ✓ EXAM_CONFIGS のデータ整合性 > 各 exam の session / urlSlug は重複しない（section ルート衝突防止） 2ms
+   ✓ EXAM_CONFIGS のデータ整合性 > 年範囲 start <= end（regular / legacy / cbt すべて） 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  __tests__/lib/exam-config-integrity.test.ts > EXAM_CONFIGS のデータ整合性 > ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する
+AssertionError: expected [ 'ahaki-anma', …(52) ] to deeply equal [ 'ahaki-anma', …(53) ]
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -41,11 +41,10 @@[39m
+[2m    "shakai",[22m
+[2m    "sharoushi",[22m
+[2m    "shino-kunrenshi",[22m
+[2m    "shinryo-hoshasengishi",[22m
+[2m    "sm",[22m
+[32m-   "sokuryoshi",[39m
+[2m    "soukan",[22m
+[2m    "st",[22m
+[2m    "takken",[22m
+[2m    "tohan",[22m
+[2m    "tsushin1",[22m
+
+ ❯ __tests__/lib/exam-config-integrity.test.ts:46:45
+     44|   it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
+     45|     const keys = ENTRIES.map(([k]) => k);
+     46|     expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.sort());
+       |                                             ^
+     47|     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
+     48|     expect(ALL_QUIZ_EXAM_CODES).toContain("denken3");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  03:19:46
+   Duration  1.21s (transform 178ms, setup 100ms, collect 177ms, tests 36ms, environment 464ms, prepare 86ms)
+
