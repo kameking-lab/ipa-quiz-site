@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-11T07:11:20.133063+00:00",
+  "at": "2026-10-11T07:24:33.495590+00:00",
   "qualification": "sharoushi",
   "targetExams": [
     {
@@ -56,6 +56,18 @@
     {
       "path": "general/MHLW-1986-INDEX-RESULT.json",
       "sha256": "07ed1e3bfc4e5740059e12f11052a02f4a648d3d993fa79482fd382691c05848"
+    },
+    {
+      "path": "general/notice-20070326-kihatsu0326009-choumon0326011.receipt.json",
+      "sha256": "85e63cf9ef7194230b4dba69eaa854768e931b2958eba7cc5ced4e684fcc2c1c"
+    },
+    {
+      "path": "general/notice-20060301-kihatsu0301002-choumon0301001.receipt.json",
+      "sha256": "f07d82e389cf23df7992741fb87c362638828253a2b94843db9cf20ce09501b6"
+    },
+    {
+      "path": "general/NOTICE-2003-INDEX-RESULT.json",
+      "sha256": "a1dceaff8c0200b3526aaa571363c59f110389b9fcada60941b2fd7fdcd89326"
     }
   ],
   "newPresentDayOfficialExplanation": "兵庫労働局 有期事業の一括; undated, therefore not a direct 2025 edition",
@@ -183,7 +195,13 @@
       "remainingIssue": [
         "B: direct official notice or equivalent primary text explicitly covering acceptance and rejection of a conciliation proposal by the special consultant is absent; Act article 2 covers general representation but not this specific step"
       ],
-      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion."
+      "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion.",
+      "additionalPartialPrimaryEvidence": [
+        "general/notice-20070326-kihatsu0326009-choumon0326011.receipt.json",
+        "general/notice-20060301-kihatsu0301002-choumon0301001.receipt.json",
+        "general/NOTICE-2003-INDEX-RESULT.json"
+      ],
+      "partialPrimaryAssessment": "2007 notice directly covers mediation representation, settlement negotiation and agreement conclusion. Exact proposal acceptance/rejection is not explicitly stated. Referenced 2003 notice remains unacquired; no STOP or original-completion gate is cleared."
     },
     {
       "id": "sharoushi-2026-annual-ippan-q5",
@@ -196,13 +214,15 @@
       "publicationReady": false,
       "remainingIssue": [
         "B: direct primary guidance on performing excluded medical-claim work under a private contract is absent",
-        "C: original official interpretation of the extent of procedural agency, including withdrawal and receipt of administrative decisions, is absent"
+        "C: 1986 original administrative notice acquired for procedural agency, withdrawal and receipt; exam-date application and whole-choice verification remain pending under the preserved individual STOP."
       ],
       "note": "Existing stop restrictions remain; no manuscript resend, same-reason exploration/review, or runtime promotion."
     }
   ],
   "newOfficialSourceDocuments": [
     "1968-12-09 庁保発23号 official HTML",
-    "1986-10-01 庁保発40号 official HTML"
+    "1986-10-01 庁保発40号 official HTML",
+    "2007-03-26 基発0326009号・庁文発0326011号 official HTML",
+    "2006-03-01 基発0301002号・庁文発0301001号 official HTML"
   ]
 }
