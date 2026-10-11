@@ -6,7 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
-  "shika-ishi": "歯科医師国家試験の第119回（2026年実施）・第118回（2025年実施）の問題A〜Dを対象に、公式正答と独自の全肢解説を整備中です。",
+  "shika-ishi": "歯科医師国家試験の第119回（2026年実施）・第118回（2025年実施）の問題A〜D、採点対象の原問と全肢解説を収録。公式採点除外24問は演習対象外です。",
   ip: "ITパスポート試験はIT全般の基礎知識を幅広く問う、職種を問わずITを活用するすべての社会人・学生向けの国家試験です。",
   sg: "情報セキュリティマネジメント試験は、企業内の情報セキュリティ対策を推進する人材の能力を認定する国家試験です。",
   fe: "基本情報技術者試験は、ITエンジニアの登竜門として位置づけられる国家試験で、プログラミング基礎とIT全般の知識を問います。",
@@ -131,8 +131,7 @@ export function examTopTitle(exam: ExamCode): string {
 }
 
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
-  if (exam === "shika-ishi") return EXAM_DESCRIPTIONS[exam] ?? "";
-  if (exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
+  if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
   const base = EXAM_DESCRIPTIONS[exam] ?? "";
   return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }

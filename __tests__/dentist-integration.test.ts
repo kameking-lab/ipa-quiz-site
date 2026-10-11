@@ -6,7 +6,7 @@ import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get
 import { getAllQuestions, getQuestionById, getQuestionsByExam } from "@/lib/questions/load";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { getHomeDirectory } from "@/lib/home/home-directory";
-import { examMetaDescription } from "@/lib/seo/exam-meta";
+import { EXAM_DESCRIPTIONS, examMetaDescription, examTopDescription } from "@/lib/seo/exam-meta";
 import { PRACTICE_SESSIONS, practiceSessionLabel } from "@/lib/questions/practice-session";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 
@@ -49,6 +49,12 @@ describe("dentist integration against the published registry", () => {
     expect(card?.questionCount).toBe(count);
     expect(card?.href).toBe("/shika-ishi");
     const description = examMetaDescription("shika-ishi", count);
+    expect(examTopDescription("shika-ishi", count)).toBe(description);
+    expect(examTopDescription("shika-ishi", 1234)).toContain("1,234\u554f");
+    expect(EXAM_DESCRIPTIONS["shika-ishi"]).toContain("\u7b2c119\u56de");
+    expect(EXAM_DESCRIPTIONS["shika-ishi"]).toContain("\u7b2c118\u56de");
+    expect(EXAM_DESCRIPTIONS["shika-ishi"]).toContain("\u63a1\u70b9\u9664\u591624\u554f");
+    expect(EXAM_DESCRIPTIONS["shika-ishi"]).not.toContain("\u6574\u5099\u4e2d");
     expect(description).toContain("696問");
     expect(description).toContain("採点除外24問");
     expect(description).not.toMatch(/整備中|掲載範囲は確認/);
