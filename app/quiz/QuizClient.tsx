@@ -110,6 +110,7 @@ export function QuizClient({
   const [index, setIndex] = React.useState(0);
   const [current, setCurrent] = React.useState<Question | null>(null);
   const [loadError, setLoadError] = React.useState(false);
+  const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
   const cache = React.useRef<Map<string, Question>>(new Map());
   const initializedPool = React.useRef<string | null>(null);
@@ -122,6 +123,13 @@ export function QuizClient({
     if (initializedPool.current === signature) return;
     initializedPool.current = signature;
     const currentId = initialQuestionId ?? url.searchParams.get("question");
+    if (currentId && !poolIds.includes(currentId)) {
+      setInvalidQuestionId(true);
+      setSessionIds([]);
+      setCurrent(null);
+      return;
+    }
+    setInvalidQuestionId(false);
     url.searchParams.delete("question");
     const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
     let ids = deriveSessionPool(poolIds, mode, categoryById, wrongOnly);
@@ -195,6 +203,17 @@ export function QuizClient({
     return (
       <div className="flex flex-1 items-center justify-center p-8">
         <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
+      </div>
+    );
+  }
+
+  if (invalidQuestionId) {
+    return (
+      <div role="alert" className="mx-auto max-w-xl space-y-4 px-4 py-10 text-center">
+        <p className="font-semibold">指定した問題はこの問題一覧にありません。</p>
+        <Link href={backHref} className="inline-flex min-h-11 items-center rounded-xl border border-border px-5 py-2 font-semibold">
+          問題一覧へ戻る
+        </Link>
       </div>
     );
   }
