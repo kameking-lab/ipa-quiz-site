@@ -1,0 +1,84 @@
+{
+  "batchOriginals": [
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "publicBefore": 5,
+  "candidateTotal": 10,
+  "officialTotal": 65,
+  "secondPeriodComplete": false,
+  "savedDraftReuseCount": 5,
+  "savedExplanationReuseCount": 0,
+  "newExplanations": 5,
+  "allChoiceReasons": 20,
+  "modelRequestedByParent": "gpt-6.1-sol",
+  "modelActualReceipt": null,
+  "modelReceiptReason": "This authoring turn exposes no model receipt; no provider API was called.",
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "draftSha256": "312106d9d26af1146e281f3518da5edfacfeb4f7302626e062bcf7bffb04cb63",
+  "pageVisualChecks": {
+    "q1": "p2 long straight conductor, r from axis to A",
+    "q2": "p3 mm², R₁/R₂ restored from visible original",
+    "q3": "p3 RL parallel, dotted phasors/subscripts verified",
+    "q5": "p4 F=(A OR NOT B) AND B; choices 0001 selected",
+    "q6": "p5 blanks/table reconstructed textually"
+  },
+  "actualIndividualStopPreserved": [],
+  "priorVisualReviewsResolved": [
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "generalPermissionResearchPerformed": false,
+  "firstPartyOriginalsChanged": 0,
+  "firstPartyOriginalsDeleted": 0,
+  "sourcesReused": true,
+  "figureCrops": {
+    "1": {
+      "page": 2,
+      "normalizedBox": [
+        0.34,
+        0.24,
+        0.67,
+        0.46
+      ],
+      "sha256": "01f31f817c7103b44196f718196a977fd495ec9f7caa6aed491ca53862b37d38"
+    },
+    "2": {
+      "page": 3,
+      "normalizedBox": [
+        0.39,
+        0.13,
+        0.62,
+        0.255
+      ],
+      "sha256": "3a76159706f2cb580940d1bba6c5b9547c0a0aaff3fe73f499f7bf2f32e2b553"
+    },
+    "3": {
+      "page": 3,
+      "normalizedBox": [
+        0.295,
+        0.55,
+        0.68,
+        0.7
+      ],
+      "sha256": "505f19a920be446bea7de44526f16f205c6f2f244f89aad207aedd6178bafe8c"
+    },
+    "5": {
+      "page": 4,
+      "normalizedBox": [
+        0.27,
+        0.285,
+        0.73,
+        0.395
+      ],
+      "sha256": "90f1a64d92cfc3090160bf776238d6c80701b95fff8ec215fa5329fca5910895"
+    }
+  }
+}
