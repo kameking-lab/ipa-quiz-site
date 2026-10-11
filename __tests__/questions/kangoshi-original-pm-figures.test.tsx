@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -21,7 +22,7 @@ describe("original nursing PM figures", () => {
     expect(proof.addedIds.slice().sort()).toEqual(["kangoshi-2025-annual-pm-q20","kangoshi-2025-annual-pm-q28"]);
     expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(KANGOSHI_QUESTIONS.length);
     expect(KANGOSHI_QUESTIONS.some(q => q.id === "kangoshi-2025-annual-am-q32")).toBe(false);
-    expect(KANGOSHI_QUESTIONS.some(q => q.id === "kangoshi-2025-annual-pm-q7")).toBe(false);
+    expect(KANGOSHI_QUESTIONS.some(q => q.id === "kangoshi-2025-annual-pm-q7")).toBe(followup.addedIds.includes("kangoshi-2025-annual-pm-q7"));
   });
 
   it("renders the original assets with accessible figure content and unchanged official keys", () => {

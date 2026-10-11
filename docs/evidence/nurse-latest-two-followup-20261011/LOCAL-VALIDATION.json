@@ -1,0 +1,59 @@
+{
+  "atUtc": "2026-10-11T02:12:18.515774+00:00",
+  "stage": "LOCAL_CHECKS_COMPLETE",
+  "targetedNursingTests": {
+    "files": 23,
+    "passed": 81,
+    "failed": 0,
+    "command": "pnpm run test [all nurse/kangoshi test files] --maxWorkers=1 --no-file-parallelism",
+    "pass": true
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0,
+    "finalRecheck": true
+  },
+  "officialAnswerKeyRowsMatched": 8,
+  "existingOriginalObjectsRetained": 464,
+  "newQuestions": 8,
+  "newChoices": 35,
+  "duplicatedPr683": 0,
+  "individualStopsReleased": 0,
+  "merge": false,
+  "deploy": false,
+  "lint": {
+    "exitCode": 0,
+    "errors": 0,
+    "inheritedWarnings": 1,
+    "newFileRecheckWarnings": 0
+  },
+  "schema": {
+    "exam": "kangoshi",
+    "ok": 472,
+    "fail": 0,
+    "warn": 34,
+    "newQuestionWarnings": 0,
+    "warningsBelongToUnmodifiedBaseline": true
+  },
+  "explanationConsistency": {
+    "scanned": 20164,
+    "disputes": 0,
+    "advisoryMismatches": 1,
+    "newQuestionsWithStatedLetterMismatch": 0,
+    "exitCode": 0
+  },
+  "defaultBuild": {
+    "command": "pnpm build",
+    "exitCode": 1,
+    "failure": "Turbopack: node_modules symlink points outside filesystem root",
+    "applicationConfigChanged": false
+  },
+  "webpackBuild": {
+    "command": "pnpm run build --webpack",
+    "exitCode": 0,
+    "staticPages": 11479,
+    "configChanged": false,
+    "warnings": "Inherited middleware convention, Prisma/OpenTelemetry, responsive-chart SSR warnings"
+  },
+  "fullRepositoryUnitSuite": "Not run locally; all 23 nursing-related files / 81 tests passed. PR CI runs the full suite."
+}

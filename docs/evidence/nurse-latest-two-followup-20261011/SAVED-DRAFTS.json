@@ -1,0 +1,542 @@
+[
+  {
+    "id": "kangoshi-2024-annual-am-q98",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-am91-120/114-am-q91-120-local-candidate.json",
+    "originalDraftFileSha256": "097e1d8a1a9606dc835bc419cf54cc33d96c07bfd52fcd26aaf66a60a1d247b0",
+    "originalQuestionObjectSha256": "f67d672e8626545ad0f20f7ef7fd556f1de98b0902f107322b41964278d38708",
+    "question": {
+      "id": "kangoshi-2024-annual-am-q98",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 98,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み97〜99 の問いに答えよ。\nA さん（50 歳、女性、会社員）は、職場で激しい頭痛を訴えて倒れ、意識を失って、\n救急搬送された。救命救急センター到着時のバイタルサインは、体温36.7 ℃、呼吸\n数20/分、脈拍88/分、血圧168/88 mmHg、経皮的動脈血酸素飽和度〈SpO2〉98 %\n（room air）であった。閉眼していたので、大声で話しかけると開眼したが、すぐに閉\n眼して眠り込んでしまう。\n\nA さんは、CT 検査の結果、脳動脈瘤の破\ncerebral aneurysm 裂によるくも膜下出血と診断さ\nsubarachnoid hemorrhage\nれ、ク\nリッピング術を受けてICU に入室した。入室時のバイタルサインは、体温36.8 ℃、\n呼吸数22/分、脈拍78/分、血圧126/60 mmHg、フェイスマスクによる酸素投与\n下（5L/分）で経皮的動脈血酸素飽和度〈SpO2〉98 %であった。3時間後、A さんは\n開眼して｢頭が痛い｣と訴えた。バイタルサインに変化はなく、脳槽ドレーンからは\n淡血性の排液がみられている。\nこのときの看護師の判断で正しいのはどれか。",
+      "choices": {
+        "ア": "端座位にする。",
+        "イ": "枕を高くする。",
+        "ウ": "鎮痛薬の適応である。",
+        "エ": "ドレーンをクランプする。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "クリッピング術後に開眼して頭痛を訴え、バイタルに変化がなく、ドレーン排液は淡血性である。頭痛への対処として鎮痛薬の適応と判断する。",
+      "choiceExplanations": {
+        "ア": "端座位は術直後に頭蓋内圧や排液への影響が懸念され不適切。",
+        "イ": "枕を高くする根拠は入力にない。",
+        "ウ": "正答。公式正答は3。バイタルが安定しており、疼痛緩和が必要。",
+        "エ": "ドレーンのクランプは医師の指示なしに行うべきでない。"
+      },
+      "explanationCoverage": "review-needed",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_01.pdf#page=38",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午前 問98（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-am91-120\\114-am-q91-120-source.json",
+      "packetSha256": "8b9960a0d8674827e881cd4364034a3f8bea7956e026f4c1fac75ccb194577e6",
+      "questionPdfSha256": "03733e97bcbc54eb6ea74727daf57aaf8a094d1746879d10b4451efc361a981f",
+      "answerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "choiceCount": 4,
+      "figurePresent": false,
+      "physicalPage": 38,
+      "sourcePageImageSha256": "8c720f05a061064905fe751a8c1d219a3602e2f3c74e23e7183f69d63ad9b5c4",
+      "sharedCasePresent": true
+    }
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q60",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm114-q51-75-local-site-candidate.json",
+    "originalDraftFileSha256": "534b9c4a6f25661f457cfcb82a95c16d9e32caf30875aa1402be9513f0eb9de8",
+    "originalQuestionObjectSha256": "f8b044d428b1830681708d00ac699de222547352c20248448c6e1fb3a69a10e4",
+    "question": {
+      "id": "kangoshi-2024-annual-pm-q60",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 60,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "標準的な成長・発達をしている子どもが｢ばい菌が体内に入ることで病気になる｣\nと考えるようになるのは、ピアジェ, J.\nPiaget, J.\nの認知的発達段階のどれか。",
+      "choices": {
+        "ア": "感覚運動期",
+        "イ": "前操作期",
+        "ウ": "具体的操作期",
+        "エ": "形式的操作期"
+      },
+      "answer": "イ",
+      "explanation": "病気の原因をばい菌の侵入と捉える程度の理解は、前操作期(およそ2〜7歳)にみられる直観的・単純な因果理解とされる。",
+      "choiceExplanations": {
+        "ア": "感覚運動期(〜2歳頃)は感覚と運動で外界を理解する段階で、病気の原因を考える段階ではない。",
+        "イ": "正しい。前操作期では象徴的思考が発達し、単純な因果関係として病気の原因を考えるようになる。",
+        "ウ": "具体的操作期(7〜11歳頃)は論理的思考が可能になる段階で、より複雑な理解を示す。",
+        "エ": "形式的操作期(11歳頃〜)は抽象的・仮説的思考の段階であり、本設問の理解水準より高い。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問60（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-114-PM-Q51-75-SOURCE-PACKET-20261010.json",
+      "packetSha256": "c1263cda96f17476468d5e618f01d692a0608dc38ea738778c6f2fdabacf9194",
+      "questionPdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "answerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "choiceCount": 4,
+      "figurePresent": false,
+      "physicalPage": 24,
+      "sourcePageImageSha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea",
+      "sharedCasePresent": false
+    }
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q62",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm114-q51-75-local-site-candidate.json",
+    "originalDraftFileSha256": "534b9c4a6f25661f457cfcb82a95c16d9e32caf30875aa1402be9513f0eb9de8",
+    "originalQuestionObjectSha256": "ec1cca3f5b1983c670134849cb58d40e50e8674a5c87b966c99c56c327e59ec8",
+    "question": {
+      "id": "kangoshi-2024-annual-pm-q62",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 62,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "保護者による子どもへの虐待に対する外来の看護師の対応で適切なのはどれか。",
+      "choices": {
+        "ア": "子どもの全身の観察では、保護者の同意を得る必要がある。",
+        "イ": "プライバシー保護のため、他職種との情報共有はしない。",
+        "ウ": "子どもや保護者の発言内容や様子を記録に残す。",
+        "エ": "保護者の同席のもと子どもから話を聞く。"
+      },
+      "answer": "ウ",
+      "explanation": "虐待が疑われる場合は、客観的事実を正確に記録し、多職種・関係機関と連携して子どもの安全を最優先する。",
+      "choiceExplanations": {
+        "ア": "子どもの安全確認のための診察・観察に、虐待が疑われる場合に保護者の同意が必須とは限らない。",
+        "イ": "虐待対応では多職種や関係機関との情報共有が不可欠で、共有しないのは不適切。",
+        "ウ": "適切。発言内容や様子を客観的に記録することは、後の対応や証拠として重要。",
+        "エ": "保護者同席では子どもが話しにくいため、別室で聴取するなど配慮が必要。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=24",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問62（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-114-PM-Q51-75-SOURCE-PACKET-20261010.json",
+      "packetSha256": "c1263cda96f17476468d5e618f01d692a0608dc38ea738778c6f2fdabacf9194",
+      "questionPdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "answerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "officialAcceptedAnswerNumbers": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "choiceCount": 4,
+      "figurePresent": false,
+      "physicalPage": 24,
+      "sourcePageImageSha256": "613039846ebc5e82a7ed2896947dbefcc8a91916907ec34d7130cf58314f5fea",
+      "sharedCasePresent": false
+    }
+  },
+  {
+    "id": "kangoshi-2024-annual-pm-q89",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm114-q76-90-local-site-candidate.json",
+    "originalDraftFileSha256": "34d3f6040fb3636ca29bc8958f7fda3acf7ec912b2cc624b9b435b0913765e3e",
+    "originalQuestionObjectSha256": "4ace4e40c5032b7254239a99ebfa0648d63dfd6cd449941fb06e7f429818dec6",
+    "question": {
+      "id": "kangoshi-2024-annual-pm-q89",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2024,
+      "season": "annual",
+      "qNumber": 89,
+      "subject": "午後（一般問題）",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第114回"
+      ],
+      "difficulty": 2,
+      "question": "子どもの成長・発達で正しいのはどれか。2つ選べ。",
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf#page=34",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第114回看護師国家試験』午後 問89（問題・正答）。問題文・選択肢は原典と照合。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "lastUpdated": "2026-10-10",
+      "type": "multiple-choice",
+      "officialAnswerNumber": [
+        "2",
+        "4"
+      ],
+      "choices": {
+        "ア": "基本的な運動発達は末梢から中枢へ向かう。",
+        "イ": "発達の臨界期は身体の各部位によって異なる。",
+        "ウ": "成長とは身体の機能が質的に変化することである。",
+        "エ": "新生児期の成長・発達は環境よりも遺伝の影響が大きい。",
+        "オ": "乳幼児期の脳神経系の発達は学童期と比べゆるやかである。"
+      },
+      "answer": [
+        "イ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "発達の臨界期は部位や機能ごとに異なります。また新生児期は遺伝的要因の影響が大きいとされます。公式の正答はこの2つです。",
+      "choiceExplanations": {
+        "ア": "運動発達は中枢から末梢へ（頭から足へ）進みます。逆の記述は誤りです。",
+        "イ": "臨界期（感受性期）は身体の部位・機能ごとに異なります。正解です。",
+        "ウ": "身体の機能が質的に変化するのは『発達』で、『成長』は量的な増大を指します。",
+        "エ": "新生児期は遺伝的要因の影響が相対的に大きいとされる、公式正答の記述です。正解です。",
+        "オ": "脳神経系はスキャモンの発育曲線で乳幼児期に急速に発達し、学童期より速いです。"
+      },
+      "needsReview": true
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-114-PM-Q76-90-SOURCE-PACKET-20261010.json",
+      "packetSha256": "123d58b2e590dc436239b88f104a3a78fd2cca1c46877b333a95828077b5f183",
+      "questionPdfSha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+      "answerPdfSha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+      "officialAcceptedAnswerNumbers": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "choiceCount": 5,
+      "figurePresent": false,
+      "physicalPage": 34,
+      "sourcePageImageSha256": "9eeaf645c3e36c90eb9033bbb5b8412505c4c1e77c58c175286b0e1427082e7c",
+      "sharedCasePresent": false
+    }
+  },
+  {
+    "id": "kangoshi-2025-annual-am-q103",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-am91-120/115-am-q91-120-local-candidate.json",
+    "originalDraftFileSha256": "28ccb86d5191d67d06e5815fe63a8f101521b390dc544bf5279cbad8f587bdfb",
+    "originalQuestionObjectSha256": "8d7c453202c13da76fdab965492393153280e70e4b0e2164fff03aa343f84eb1",
+    "question": {
+      "id": "kangoshi-2025-annual-am-q103",
+      "exam": "kangoshi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 103,
+      "subject": "午前（状況設定問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "状況設定問題",
+      "topicTags": [
+        "状況設定問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "次の文を読み103～105 の問いに答えよ。\n　A ちゃん（10 歳、女児）は両親と3 人で暮らしている。3 歳の時に\nbronchial asthma\n気管支喘息と診\n断された。6 歳までは喘息発作で年に1 回は入院していたが、8 歳から発作を起こす\nことはなくなり、定期受診が必要なくなった。ダニとハウスダストに感作がある。\n\n本日A ちゃんは、学校から帰ってきた後から咳嗽がみられ、元気がなかった。\n夜「苦しくて眠れない」と訴え、母親とともに救急外来を受診した。口元での喘鳴が\n著明であり、問診すると途切れ途切れに話した。救急外来受診時のバイタルサイン\nは、体温36.6 ℃、呼吸数36/分、心拍数120/分、経皮的動脈血酸素飽和度〈SpO2〉\n93 % であった。\n　A ちゃんの\nbronchial asthma\n気管支喘息の発作強度はどれか。",
+      "choices": {
+        "ア": "小発作",
+        "イ": "中発作",
+        "ウ": "大発作",
+        "エ": "呼吸不全"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "途切れ途切れの会話、呼吸数36/分、心拍数120/分、SpO2 93%、著明な喘鳴といった所見から、公式の判定は中発作である。",
+      "choiceExplanations": {
+        "ア": "小発作は、会話や日常動作にあまり支障がない程度の軽い状態を指す。本事例の所見はそれより重い。",
+        "イ": "発作強度の判定基準に照らし、中発作に該当する。",
+        "ウ": "大発作は、会話が困難で、SpO2もさらに低下する状態を指す。本事例は途切れ途切れでも話せている。",
+        "エ": "呼吸不全に至る徴候（意識低下やチアノーゼなど）は示されていない。"
+      },
+      "explanationCoverage": "review-needed",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=44",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午前 問103（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-am91-120\\115-am-q91-120-source.json",
+      "packetSha256": "40fac0f7b6143b2e9c64e719e5049e37800f568b6c8135ca54c2075022316c36",
+      "questionPdfSha256": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1",
+      "answerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "choiceCount": 4,
+      "figurePresent": false,
+      "physicalPage": 44,
+      "sourcePageImageSha256": "433ba21244d9eaf930c5360b73ebe2392c487e9e40f705ab07c1299c4ecef6c3",
+      "sharedCasePresent": true
+    }
+  },
+  {
+    "id": "kangoshi-2025-annual-pm-q7",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm115-q1-50-local-site-candidate.json",
+    "originalDraftFileSha256": "fb4c044fb50846a5ff2f6808b23ccf26d214022fe992f6087434f9d1dbf8af64",
+    "originalQuestionObjectSha256": "95e507a3bb0b4ae429306caa06ca84e10277ca5dd1a3a6a2191e8557ac1edfef",
+    "question": {
+      "id": "kangoshi-2025-annual-pm-q7",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 7,
+      "subject": "午後（必修問題）",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "必修問題",
+      "topicTags": [
+        "必修問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "日本版デンバー式発達スクリーニング検査で90 % の乳児の首がすわる月齢基準\nはどれか。",
+      "choices": {
+        "ア": "1 か月",
+        "イ": "4 か月",
+        "ウ": "7 か月",
+        "エ": "10 か月"
+      },
+      "answer": "イ",
+      "explanation": "日本版デンバー式発達スクリーニング検査の「首がすわる」は、90%の乳児が達成する月齢が4か月前後とされる。本問の公式正答は4か月。",
+      "choiceExplanations": {
+        "ア": "1か月で首がすわる乳児は少なく、90%の達成基準にはならない。",
+        "イ": "正答。公式正答は4か月で、この頃までに大半の乳児で首がすわるとされる。",
+        "ウ": "7か月は首がすわる基準としては遅く、むしろ寝返りやお座りなど他の項目に近い時期である。",
+        "エ": "10か月では首のすわりは既に達成されている時期であり、90%通過基準としては遅すぎる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=8",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省「第115回看護師国家試験」午後 問7（問題・正答）。問題文・選択肢は原典どおりで、表示のため改行・字間・選択肢番号の書式のみ調整しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-115-PM-Q1-25-SOURCE-PACKET-20261010.json",
+      "packetSha256": "ffa40620276dff433932a5470b4f6acc6c0ab0a39abb2ad0854ee6c573b906e9",
+      "questionPdfSha256": "077b98c37e858176f02e133376ac33bef18682199b5160c556a2464f1531cf48",
+      "answerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+      "officialAcceptedAnswerNumbers": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "choiceCount": 4,
+      "figurePresent": false,
+      "physicalPage": 8,
+      "sourcePageImageSha256": "fff88b9c3d7a5181a3f8ea84c3c60f2a289c35989f191b960335bba5a7562bbe",
+      "sharedCasePresent": false
+    }
+  },
+  {
+    "id": "kangoshi-2025-annual-pm-q87",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm115-q76-90-local-site-candidate.json",
+    "originalDraftFileSha256": "b0064b3078b4b4b1e54bf9c53e1072ebb6e0f99150df7bb4d355024a7308f198",
+    "originalQuestionObjectSha256": "9bb0d93c89f49ca09801924a1ae84ae8758f9bc5e98cc1a117bfb990bc4ee2cb",
+    "question": {
+      "id": "kangoshi-2025-annual-pm-q87",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 87,
+      "subject": "午後（一般問題）",
+      "officialAnswerNumber": "34",
+      "type": "multiple-choice",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "加齢に伴う高齢者の泌尿器系の変化で正しいのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "尿濃縮力の亢進",
+        "イ": "排尿回数の減少",
+        "ウ": "膀胱収縮力の低下",
+        "エ": "尿細管の基底膜の肥厚",
+        "オ": "糸球体濾過量〈GFR〉の増加"
+      },
+      "answer": [
+        "ウ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "加齢により腎機能や膀胱機能は低下する。膀胱の収縮力は低下し、尿細管の基底膜は肥厚して濃縮力などが低下する。",
+      "choiceExplanations": {
+        "ア": "加齢で尿細管機能が低下し、尿濃縮力は低下する。亢進ではないため誤り。",
+        "イ": "夜間尿や頻尿が増え、膀胱容量の低下もあって排尿回数は増える傾向にある。減少ではない。",
+        "ウ": "正しい。加齢で膀胱の平滑筋が変化し、収縮力が低下する。残尿の増加につながる。",
+        "エ": "正しい。加齢に伴う腎の組織変化として、尿細管基底膜の肥厚がみられるとされる。",
+        "オ": "加齢で腎血流量や糸球体数が減少するため、GFRは低下する。増加ではない。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=33",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午後 問87（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-115-PM-Q76-90-SOURCE-PACKET-20261010.json",
+      "packetSha256": "eef6989feda1696a2566e63d5b03486ce9a83ea4f4650956d8e453f14d91d512",
+      "questionPdfSha256": "077b98c37e858176f02e133376ac33bef18682199b5160c556a2464f1531cf48",
+      "answerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+      "officialAcceptedAnswerNumbers": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "choiceCount": 5,
+      "figurePresent": false,
+      "physicalPage": 33,
+      "sourcePageImageSha256": "10945890d65883048681c94e7d7efbfcb85d43355c0a900aacd38589dbe6743f",
+      "sharedCasePresent": false
+    }
+  },
+  {
+    "id": "kangoshi-2025-annual-pm-q88",
+    "originalDraftPath": "reports/claude-capacity-20261010/nurse-q76-100/pm115-q76-90-local-site-candidate.json",
+    "originalDraftFileSha256": "b0064b3078b4b4b1e54bf9c53e1072ebb6e0f99150df7bb4d355024a7308f198",
+    "originalQuestionObjectSha256": "43275acb11ed7c3f03c4779923141ca43f50cf0ef6eb003e19f6fb984d7c8992",
+    "question": {
+      "id": "kangoshi-2025-annual-pm-q88",
+      "exam": "kangoshi",
+      "session": "pm",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 88,
+      "subject": "午後（一般問題）",
+      "officialAnswerNumber": "14",
+      "type": "multiple-choice",
+      "category": "一般問題",
+      "topicTags": [
+        "一般問題",
+        "第115回"
+      ],
+      "difficulty": 2,
+      "question": "幼児期の形態的・生理的特徴について正しいのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "胸囲は頭囲より大きい。",
+        "イ": "大泉門は3 歳ころに閉鎖する。",
+        "ウ": "乳歯は5 歳ころに生えそろう。",
+        "エ": "1 分間の心拍数は乳児期よりも減少する。",
+        "オ": "体重あたりの必要水分量は乳児期よりも多い。"
+      },
+      "answer": [
+        "ア",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "幼児期は、胸囲が頭囲を上回る時期で、心拍数や呼吸数は乳児期より減少する。身体の成長に伴う変化を整理する問題。",
+      "choiceExplanations": {
+        "ア": "正しい。出生時は頭囲が胸囲より大きいが、1歳前後で同程度になり、幼児期には胸囲が頭囲を上回る。",
+        "イ": "大泉門は生後1歳半ころまでに閉鎖するのが一般的で、3歳ではない。",
+        "ウ": "乳歯20本は3歳ころまでに生えそろう。5歳ころではない。",
+        "エ": "正しい。心拍数は乳児期(約120前後)から幼児期(約100前後)へ減少していく。",
+        "オ": "体重あたりの必要水分量は、乳児期の方が多く幼児期に減少していく。幼児期の方が多いという記述は逆である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf#page=34",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "sourceAttribution": "出典：厚生労働省『第115回看護師国家試験』午後 問88（問題・正答）。問題文・選択肢は原本照合。解説は過去問AIが独自に作成し、厚生労働省とは関係ありません。",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html"
+      ],
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-10"
+    },
+    "source": {
+      "packet": "reports\\claude-capacity-20261010\\nurse-q76-100\\NURSE-115-PM-Q76-90-SOURCE-PACKET-20261010.json",
+      "packetSha256": "eef6989feda1696a2566e63d5b03486ce9a83ea4f4650956d8e453f14d91d512",
+      "questionPdfSha256": "077b98c37e858176f02e133376ac33bef18682199b5160c556a2464f1531cf48",
+      "answerPdfSha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+      "officialAcceptedAnswerNumbers": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "choiceCount": 5,
+      "figurePresent": false,
+      "physicalPage": 34,
+      "sourcePageImageSha256": "c9532481663ddc1f99defc09123cf96ac42fc774c898e45c7b425afe716205a1",
+      "sharedCasePresent": false
+    }
+  }
+]

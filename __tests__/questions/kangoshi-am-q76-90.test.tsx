@@ -1,3 +1,4 @@
+import sourceRecheck from "@/docs/evidence/nurse-am79-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -50,7 +51,7 @@ describe("saved nursing AM Q76–90 local registration", () => {
     expect(added.filter(q => q.year === 2024)).toHaveLength(15);
     expect(added.filter(q => q.year === 2025)).toHaveLength(14);
     expect(added.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0)).toBe(138);
-    for (const id of ["kangoshi-2025-annual-am-q32", "kangoshi-2025-annual-am-q79"]) expect(KANGOSHI_QUESTIONS.some(q => q.id === id)).toBe(false);
+    for (const id of ["kangoshi-2025-annual-am-q32", "kangoshi-2025-annual-am-q79"]) expect(KANGOSHI_QUESTIONS.some(q => q.id === id)).toBe(sourceRecheck.resolvedStopIds.includes(id));
   });
 
   it("keeps every choice explanation, source receipt and original answer-selection cardinality", () => {

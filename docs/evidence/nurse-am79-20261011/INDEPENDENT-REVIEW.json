@@ -1,0 +1,136 @@
+{
+  "scope": "115AM79 only, five choices",
+  "reviewer": "nurse_local_evidence_review",
+  "reviewedAtUtc": "2026-10-11T04:18:19.234868+00:00",
+  "reviewedFields": [
+    "id",
+    "question",
+    "choices",
+    "answer",
+    "officialAnswerNumber",
+    "requiredSelections",
+    "explanation",
+    "choiceExplanations",
+    "sourcePdfUrl",
+    "sourceAnswerUrl",
+    "officialReferenceUrls"
+  ],
+  "hashCanonicalization": "SHA256 over UTF-8 json.dumps(snapshot, ensure_ascii=False, sort_keys=True, separators=(',', ':')).",
+  "item": {
+    "id": "kangoshi-2025-annual-am-q79",
+    "label": "115AM79",
+    "verdict": "GO",
+    "meaning": "現候補の限定説明について独立根拠審査を受入れ。登録・STOP解除・公開の実施記録ではない。",
+    "officialQuestionVerified": true,
+    "officialAnswerVerified": true,
+    "officialLiteral": "5",
+    "answer": [
+      "オ"
+    ],
+    "requiredSelections": 1,
+    "reviewedFieldsSnapshot": {
+      "id": "kangoshi-2025-annual-am-q79",
+      "question": "市町村保健センターについて正しいのはどれか。",
+      "choices": {
+        "ア": "市町村に設置義務がある。",
+        "イ": "センター長は原則として医師である。",
+        "ウ": "栄養士、歯科衛生士の配置が必須である。",
+        "エ": "令和6年（2024年）の全国の設置数は468か所である。",
+        "オ": "健康相談、保健指導、健康診査など住民に対するサービスを行う。"
+      },
+      "answer": "オ",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "explanation": "市町村保健センターは地域保健法第18条に基づき、住民への健康相談・保健指導・健康診査などを行う施設である。設置は任意で、保健所とは施設の位置付けが異なる。公式正答は5。",
+      "choiceExplanations": {
+        "ア": "地域保健法第18条は、市町村が設置できると定めている。全国の市町村に一律の設置義務を課す規定ではない。",
+        "イ": "市町村保健センターに関する同法第4章には、施設長を原則医師とする規定はない。日本公衆衛生協会の令和5年度調査でも、施設長のいる回答施設では事務職や保健師が多く、医師に限定されていない。",
+        "ウ": "同法第4章には、栄養士と歯科衛生士の両職種を全国一律に必置とする規定はない。各地域の事業や職員配置と、法律上の一律の配置義務は区別する。",
+        "エ": "公式正答では選ばれていない。厚生労働省の令和6年版厚生労働白書で、2024年4月1日現在の468か所は保健所の総数である。市町村保健センターとは別の施設の数であり、その設置数として混同しない。",
+        "オ": "正しい。健康相談・保健指導・健康診査などの住民へのサービスは、地域保健法第18条第2項が定める市町村保健センターの目的に合う。"
+      },
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=30",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+        "https://laws.e-gov.go.jp/law/322AC0000000101",
+        "https://www.mhlw.go.jp/wp/hakusyo/kousei/23-2/dl/02.pdf#page=31",
+        "https://www.jpha.or.jp/sub/pdf/menu04_2/menu04_2_r05_20.pdf#page=73"
+      ]
+    },
+    "reviewedFieldsSha256": "ee83603683d57c6584a8877a2d2f6d0b08429b1de83678fad6dc415bf48a5d52",
+    "acceptedMinimalDifference": {
+      "requiredTextChanges": {},
+      "statement": "現在の非公開候補の総論・5肢説明・参照をそのまま受入れ可能。2024市町村保健センター総数を復活させない。",
+      "acceptedReviewedFieldsSnapshot": {
+        "id": "kangoshi-2025-annual-am-q79",
+        "question": "市町村保健センターについて正しいのはどれか。",
+        "choices": {
+          "ア": "市町村に設置義務がある。",
+          "イ": "センター長は原則として医師である。",
+          "ウ": "栄養士、歯科衛生士の配置が必須である。",
+          "エ": "令和6年（2024年）の全国の設置数は468か所である。",
+          "オ": "健康相談、保健指導、健康診査など住民に対するサービスを行う。"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "requiredSelections": 1,
+        "explanation": "市町村保健センターは地域保健法第18条に基づき、住民への健康相談・保健指導・健康診査などを行う施設である。設置は任意で、保健所とは施設の位置付けが異なる。公式正答は5。",
+        "choiceExplanations": {
+          "ア": "地域保健法第18条は、市町村が設置できると定めている。全国の市町村に一律の設置義務を課す規定ではない。",
+          "イ": "市町村保健センターに関する同法第4章には、施設長を原則医師とする規定はない。日本公衆衛生協会の令和5年度調査でも、施設長のいる回答施設では事務職や保健師が多く、医師に限定されていない。",
+          "ウ": "同法第4章には、栄養士と歯科衛生士の両職種を全国一律に必置とする規定はない。各地域の事業や職員配置と、法律上の一律の配置義務は区別する。",
+          "エ": "公式正答では選ばれていない。厚生労働省の令和6年版厚生労働白書で、2024年4月1日現在の468か所は保健所の総数である。市町村保健センターとは別の施設の数であり、その設置数として混同しない。",
+          "オ": "正しい。健康相談・保健指導・健康診査などの住民へのサービスは、地域保健法第18条第2項が定める市町村保健センターの目的に合う。"
+        },
+        "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf#page=30",
+        "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf#page=1",
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+          "https://laws.e-gov.go.jp/law/322AC0000000101",
+          "https://www.mhlw.go.jp/wp/hakusyo/kousei/23-2/dl/02.pdf#page=31",
+          "https://www.jpha.or.jp/sub/pdf/menu04_2/menu04_2_r05_20.pdf#page=73"
+        ]
+      },
+      "acceptedReviewedFieldsSha256": "ee83603683d57c6584a8877a2d2f6d0b08429b1de83678fad6dc415bf48a5d52"
+    },
+    "choiceEvidence": {
+      "ア": {
+        "verdict": "SUPPORTED",
+        "source": "regional-health-act-current.xml 第18条第1項",
+        "scope": "設置できるという任意設置の規定を確認。現行法の読取であり、2024年の施設数を示す資料ではない。"
+      },
+      "イ": {
+        "verdict": "SUPPORTED_WITH_STATED_SCOPE",
+        "source": "同法第4章第18–20条、jpha-2023-municipal-centers.pdf physical73",
+        "scope": "当該章に医師原則の規定なし。令和5年度調査で施設長を配置する回答保健センター1,140施設の施設長は事務職62.6%、保健師29.7%、医師4.5%。母集団を全国の2024年全施設と置き換えず、回答施設についての説明に限定できている。"
+      },
+      "ウ": {
+        "verdict": "SUPPORTED_WITH_STATED_SCOPE",
+        "source": "同法第4章第18–20条。調査physical72は補助資料。",
+        "scope": "同法第4章に両職種を一律必置とする規定がないという限定文を確認。調査で常駐職員のいない施設があることは補助的事実であり、調査だけから配置義務の有無を法的に導かない。自治体の条例・個別事業の配置基準まで不存在と一般化していない。"
+      },
+      "エ": {
+        "verdict": "SUPPORTED_BOUNDED_CORRECTION",
+        "source": "mhlw-2024-whitepaper-health.pdf physical31 / 冊子57、保健所数の推移",
+        "scope": "2024列の保健所総数468、表注は各年4月1日現在、冊子は令和6年版と確認。468という数値が当該白書で示す対象は保健所であると説明可能。これだけで市町村保健センター実数を算出したり、二つの母集団が偶然同数となる可能性まで論理的に排除したとは扱わない。公式鍵5による不採択の事実と対象施設の取り違えの説明に限定する現文なら十分。"
+      },
+      "オ": {
+        "verdict": "SUPPORTED",
+        "source": "regional-health-act-current.xml 第18条第2項",
+        "scope": "住民への健康相談・保健指導・健康診査その他地域保健に必要な事業を目的とする施設という規定に直接対応。"
+      }
+    },
+    "essentialMissingEvidence": [],
+    "notRequiredForThisBoundedExplanation": [
+      "2024年市町村保健センター全国実数。これを求めるのは具体的実数を追記する場合に限る。",
+      "2023年回答調査を2024年国勢的総数へ読み替える推計。"
+    ],
+    "integrationConditions": [
+      "原問・全5選択肢・公式正答5・単一選択を保持する。",
+      "採用時に本レビューのacceptedReviewedFieldsSha256と実際の採用差分を照合する。",
+      "現行法/令和5年度回答調査/令和6年4月保健所数という資料の時点と対象を維持する。",
+      "本審査者はSTOP台帳を変更しない。"
+    ]
+  }
+}
