@@ -1,0 +1,85 @@
+{
+  "source": "official/20260524_q01.pdf physical page 13; original photo and layout page 15",
+  "supersedes": "wiring-check/20260524-q31-q50-source-transcription.json diagramObservations.q47 officialOptionConsequence and status, plus initial green-connector description",
+  "q47": {
+    "photoCount": {
+      "イ": {
+        "mediumSleeves": 1,
+        "smallSleeves": 3,
+        "marks": {
+          "中": 1,
+          "○": 3
+        }
+      },
+      "ロ": {
+        "smallSleeves": 4,
+        "marks": {
+          "○": 4
+        }
+      },
+      "ハ": {
+        "smallSleeves": 4,
+        "marks": {
+          "○": 3,
+          "小": 1
+        }
+      },
+      "ニ": {
+        "smallSleeves": 4,
+        "marks": {
+          "○": 2,
+          "小": 2
+        }
+      }
+    },
+    "correction": "写真の小4個は小サイズのスリーブ総数。○4個と別の小刻印1個という読みは誤り。",
+    "connections": [
+      {
+        "function": "ハ3路の渡り線1",
+        "conductors": 2,
+        "mark": "○"
+      },
+      {
+        "function": "ハ3路の渡り線2",
+        "conductors": 2,
+        "mark": "○"
+      },
+      {
+        "function": "下側DL・ハの中性線",
+        "conductors": 2,
+        "mark": "○"
+      },
+      {
+        "function": "下側3路0端子の戻りと上下DL・ハへの分岐",
+        "conductors": 3,
+        "mark": "小"
+      }
+    ],
+    "exclude": "和室リの線は⑰へ接続していない。トはf回路へ進み、⑰でb回路と接続しない。",
+    "result": "独立の結線検算○3・小1は公式ハの写真と一致。未確定の追加接続はない。"
+  },
+  "q49": {
+    "originalImageXref": 357,
+    "connectorPorts": {
+      "red": 2,
+      "orange": 5,
+      "green": 3
+    },
+    "connectionGroups": [
+      5,
+      5,
+      2
+    ],
+    "minimumConnectors": {
+      "5port": 2,
+      "2port": 1
+    },
+    "result": "公式イと一致。画像の黄緑色は3口。"
+  },
+  "manufacturerTable": {
+    "url": "https://www.fujiterminal.co.jp/wp-content/uploads/2022/04/41_%E7%B5%82%E7%AB%AF%E9%87%8D%E3%81%AD%E5%90%88%E3%81%9B%E7%94%A8%E3%82%B9%E3%83%AA%E3%83%BC%E3%83%96_%EF%BC%A5%E5%9E%8B_%E7%B5%84%E5%90%88%E3%81%9B%E4%BE%8B.pdf",
+    "sha256": "85fc9a9cae30bef517a3a0208982a12a0cbe5b5aef0e726d56bbf915be106ab4",
+    "render": "ring-sleeve-manufacturer.png"
+  },
+  "method": "Original-PDF visual inspection plus independent circuit accounting; no all-sitting high-model second-review receipt asserted."
+}
