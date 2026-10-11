@@ -56,6 +56,13 @@ describe("home directory", () => {
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
+  it("offers the dentist corpus with its actual published count", () => {
+    const dentist = all.find((item) => item.key === "shika-ishi");
+    expect(dentist?.href).toBe("/shika-ishi");
+    expect(dentist?.questionCount).toBe(696);
+    expect(dentist?.periodLabel).toBe("2期分");
+  });
+
   it("links the complete two Riyoshi papers with the published question count", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");

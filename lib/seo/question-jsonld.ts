@@ -1,5 +1,6 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
+import { formatOrderingAnswer } from "@/lib/questions/ordering";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
@@ -36,6 +37,8 @@ export function sessionLabel(session: string): string {
     houki: "法規",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
+  "mondai-c": "問題C",
+  "mondai-d": "問題D",
     kyotsu: "共通科目",
     senmon: "専門科目",
     "hoiku-genri": "保育原理",
@@ -86,7 +89,7 @@ export function buildQuestionJsonLd({
   title,
   lastUpdatedISO,
 }: QuestionJsonLdInput) {
-  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
+  const answerKeys = q.type === "ordering" ? [q.answer] : Array.isArray(q.answer) ? q.answer : [q.answer];
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
@@ -210,7 +213,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,

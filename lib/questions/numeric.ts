@@ -23,6 +23,9 @@ export function numericQuestionIssue(question: Question): string | undefined {
   if (!specification || !["integer", "decimal"].includes(specification.format) || typeof specification.unit !== "string" || !specification.unit.trim()) {
     return "numeric requires a supported format and a nonempty unit or quantity label";
   }
+  if (specification.fixedSign !== undefined && specification.fixedSign !== "negative") {
+    return "numeric fixedSign must be a supported printed sign";
+  }
   if (specification.format === "decimal" && specification.precision !== 1) {
     return "decimal numeric requires precision1";
   }
@@ -42,5 +45,6 @@ export function isNumericAnswerCorrect(question: Question, input: string): boole
 }
 
 export function formatNumericAnswer(question: Question, value: string = String(question.answer)): string {
-  return `${value} ${question.numericAnswer?.unit ?? ""}`.trim();
+  const sign = question.numericAnswer?.fixedSign === "negative" ? "−" : "";
+  return `${sign}${value} ${question.numericAnswer?.unit ?? ""}`.trim();
 }

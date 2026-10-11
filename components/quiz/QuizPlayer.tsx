@@ -9,6 +9,8 @@ import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
 import { DescriptiveAnswerCard } from "./DescriptiveAnswerCard";
 import { NumericAnswerInput } from "./NumericAnswerInput";
+import { OrderingAnswerInput } from "./OrderingAnswerInput";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
 import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
@@ -84,6 +86,7 @@ export function QuizPlayer({
   // 「二つとも答えなさい」形式で選択中の肢。規定数そろった時点で採点する。
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
+  const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -132,6 +135,7 @@ export function QuizPlayer({
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
+    setOrderedSelected(undefined);
     setRevealed(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
@@ -228,7 +232,7 @@ export function QuizPlayer({
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed) return;
+      if (!question || revealed || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
       if (required > 1) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
@@ -248,6 +252,12 @@ export function QuizPlayer({
     commitAnswer(value, isNumericAnswerCorrect(question, value));
   }, [question, revealed, commitAnswer]);
 
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (!question || question.type !== "ordering" || revealed) return;
+    setOrderedSelected(value);
+    commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value));
+  }, [question, revealed, commitAnswer]);
+
   const toggleStar = React.useCallback(() => {
     if (!question) return;
     const nowStarred = history.toggleStar(question.id);
@@ -265,14 +275,14 @@ export function QuizPlayer({
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+R reloads, Ctrl/Cmd+1–4
       // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed) {
+      if (!revealed && question.type !== "ordering") {
         const i = CHOICE_SHORTCUTS.indexOf(e.key);
         if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
           onSelect(getChoiceKeys(question.choices)[i]);
           return;
         }
-      } else {
+      } else if (revealed) {
         if (e.key === "Enter" || e.key === " " || e.key === "ArrowRight") {
           e.preventDefault();
           goNext();
@@ -400,15 +410,16 @@ export function QuizPlayer({
   }
 
   const numeric = question.type === "numeric";
-  const answerKey = numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
+  const ordering = question.type === "ordering";
+  const answerKey = ordering ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
     ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
-  const multiSelect = requiredSelections > 1;
-  const isCorrect = numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
+  const multiSelect = !ordering && requiredSelections > 1;
+  const isCorrect = ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
     ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
     : isAcceptedAnswer(question.answer, selected);
-  const selectionLabel = numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
+  const selectionLabel = ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -485,7 +496,9 @@ export function QuizPlayer({
                 {selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
               </p>
             )}
-            {numeric ? (
+            {ordering ? (
+              <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} />
+            ) : numeric ? (
               <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
             ) : <div
               role={multiSelect ? "group" : "radiogroup"}
@@ -537,7 +550,7 @@ export function QuizPlayer({
                   }
                 />
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                <GenerateSimilar baseQuestion={question} />
+                {question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
@@ -545,7 +558,7 @@ export function QuizPlayer({
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
+                : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
