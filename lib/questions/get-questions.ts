@@ -5,6 +5,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   chosashi: async () => isExamPublished("chosashi") ? (await import("@/data/questions/chosashi")).CHOSASHI_QUESTIONS : [],
+  riyoshi: async () => isExamPublished("riyoshi") ? (await import("@/data/questions/riyoshi")).RIYOSHI_QUESTIONS : [],
   ap: async () => (await import("@/data/questions/ap")).AP_QUESTIONS,
   ip: async () => (await import("@/data/questions/ip")).IP_QUESTIONS,
   sg: async () => (await import("@/data/questions/sg")).SG_QUESTIONS,
@@ -46,6 +47,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   mankan: async () => isExamPublished("mankan") ? (await import("@/data/questions/mankan")).MANKAN_QUESTIONS : [],
   kashikin: async () => isExamPublished("kashikin") ? (await import("@/data/questions/kashikin")).KASHIKIN_QUESTIONS : [],
   sharoushi: async () => isExamPublished("sharoushi") ? (await import("@/data/questions/sharoushi")).SHAROUSHI_QUESTIONS : [],
+  "chusho-kigyo-shindanshi": async () => isExamPublished("chusho-kigyo-shindanshi") ? (await import("@/data/questions/chusho-kigyo-shindanshi")).CHUSHO_KIGYO_SHINDANSHI_QUESTIONS : [],
   kangoshi: async () => isExamPublished("kangoshi") ? (await import("@/data/questions/kangoshi")).KANGOSHI_QUESTIONS : [],
   yakuzaishi: async () => isExamPublished("yakuzaishi") ? (await import("@/data/questions/yakuzaishi")).YAKUZAISHI_QUESTIONS : [],
   "ahaki-anma": async () => isExamPublished("ahaki-anma") ? (await import("@/data/questions/ahaki")).AHAKI_ANMA_QUESTIONS : [],
