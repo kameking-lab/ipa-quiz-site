@@ -1,0 +1,15 @@
+{
+  "scopeId": "denken1-2025-secondary-power-management-q04",
+  "reason": "Official source describes one ground wire with two propagation directions; equations and 909 kV remain unchanged.",
+  "changes": [
+    {
+      "before": "A点は、雷道、左右2条の架空地線、鉄塔の4本がつながる点として考える。",
+      "after": "A点には雷道と鉄塔が接続し、1条の架空地線が左右2方向へ延びている。この4方向の電圧・電流の関係を考える。"
+    },
+    {
+      "before": "架空地線が両側に2条あることから来ている",
+      "after": "架空地線1条に雷サージが左右2方向へ伝わることから来ている"
+    }
+  ],
+  "timeUtc": "2026-10-11T02:24:54.350462+00:00"
+}

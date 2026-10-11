@@ -2,6 +2,7 @@ import { chushoSitemapPaths } from "@/lib/chusho-secondary/data";
 import { sentakuSitemapPaths } from "@/lib/sharoushi/sentaku";
 import { NATIVE_QUESTIONS, nativeQuestionPaths, nativeSubjectPath } from "@/lib/denken2/native";
 import { DENKEN1_NATIVE_QUESTIONS, denken1NativeQuestionPaths, denken1NativeSubjectPath } from "@/lib/denken1/native";
+import { secondarySitemapPaths as denken1SecondarySitemapPaths } from "@/lib/denken1/secondary";
 import { DENKEN3_NATIVE_QUESTIONS, denken3NativeQuestionPaths, denken3NativeSubjectPath } from "@/lib/denken3/native";
 import { getFp1ExtensionQuestions } from "@/lib/fp1/published-extension";
 import { publicBlogDates } from "@/lib/blog/editorial";
@@ -339,7 +340,7 @@ export function renderExamsSitemapXml(): string {
   const denken3Subjects = [...new Set(DENKEN3_NATIVE_QUESTIONS.map(q => denken3NativeSubjectPath(q.sitting, q.subject)))];
   const nativeRoutes = [...chushoSitemapPaths(), ...nativeSubjects, ...nativeQuestionPaths(), ...denken1Subjects, ...denken1NativeQuestionPaths(), ...denken3Subjects, ...denken3NativeQuestionPaths()]
     .map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly" as const, priority: 0.6 }));
-  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes]);
+  return renderUrlSet([...getExamHubRoutes(), ...sentakuSitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 })), ...nativeRoutes, ...denken1SecondarySitemapPaths().map(path => ({ url: `${SITE_BASE_URL}${path}`, changeFrequency: "yearly", priority: 0.6 }))]);
 }
 
 export function renderFpPracticalSitemapXml(): string {

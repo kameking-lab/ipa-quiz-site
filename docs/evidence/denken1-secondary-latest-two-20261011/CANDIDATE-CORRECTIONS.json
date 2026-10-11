@@ -1,0 +1,49 @@
+[
+  {
+    "questionId": "denken1-2025-secondary-machine-control-q04",
+    "subpart": 3,
+    "reason": "Official problem requires cancellation of common factors; these special f values are algebraic consequences of the official transfer functions",
+    "sourcePhysicalPages": [
+      7,
+      8
+    ],
+    "answerPhysicalPages": [
+      14,
+      15,
+      16
+    ],
+    "before": {
+      "answer": "T1(s) = (14s + 2f + 6)/(s³ + 6s² + 11s + 6)、T2(s) = 1/(s² + 5s + 6)",
+      "explanation": "(2)のUを(1)のYの式に代入すると、Y = (14s + 2f + 6)/(s³ + s²)·R − (5s + 6)/s²·Y + D/s² になります。Yの項を左辺に移すと係数は (s² + 5s + 6)/s² になるので、両辺にs²/(s² + 5s + 6)を掛けます。Rの項の分母は (s² + 5s + 6)(s + 1) = s³ + 6s² + 11s + 6 です。これでRからYへの伝達関数T1、DからYへの伝達関数T2が求まります。どちらも、指定どおりsの降べきの順に並べ、最高次の係数を1にしています。閉ループの極は−1、−2、−3です。",
+      "flags": [
+        "小問(3)：公式標準解答はT1の分子を14s + 2f + 6という一般の形のまま示している。f = 4、11、18のときは分子が分母の因子(s + 1)、(s + 2)、(s + 3)と共通になり、問題文の「共通因子は消去する」が適用される。しかし公式解答はこの場合に触れていない。一般形の答案で正答とされるかは、公式資料からは確認できない。"
+      ]
+    },
+    "after": {
+      "label": "(3)",
+      "covers": [
+        3
+      ],
+      "answer": "T1(s)＝(14s＋2f＋6)/(s³＋6s²＋11s＋6)、T2(s)＝1/(s²＋5s＋6)。f＝4ではT1(s)＝14/(s²＋5s＋6)、f＝11では14/(s²＋4s＋3)、f＝18では14/(s²＋3s＋2)として共通因子を消去する。",
+      "explanation": "(2)のUを(1)のYの式に代入すると、Y = (14s + 2f + 6)/(s³ + s²)·R − (5s + 6)/s²·Y + D/s² になります。Yの項を左辺に移すと係数は (s² + 5s + 6)/s² になるので、両辺にs²/(s² + 5s + 6)を掛けます。Rの項の分母は (s² + 5s + 6)(s + 1) = s³ + 6s² + 11s + 6 です。これでRからYへの伝達関数T1、DからYへの伝達関数T2が求まります。どちらも、指定どおりsの降べきの順に並べ、最高次の係数を1にしています。閉ループの極は−1、−2、−3です。 分母は(s＋1)(s＋2)(s＋3)に分解できる。問題の指定どおり、f＝4・11・18では分子がそれぞれ14(s＋1)・14(s＋2)・14(s＋3)となるので対応する共通因子を消去する。他のfでは示した一般式を用いる。"
+    },
+    "verification": [
+      {
+        "f": 4,
+        "canceledFactorRoot": -1,
+        "numeratorAtRoot": 0
+      },
+      {
+        "f": 11,
+        "canceledFactorRoot": -2,
+        "numeratorAtRoot": 0
+      },
+      {
+        "f": 18,
+        "canceledFactorRoot": -3,
+        "numeratorAtRoot": 0
+      }
+    ],
+    "candidateSha256": "89ebef0ca50e82203371f3e7acbe21eb338b152c76b184fa0ec2dc5f8e9af7af"
+  }
+]

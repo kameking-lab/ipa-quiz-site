@@ -1,0 +1,39 @@
+[
+  {
+    "id": "denken1-2024-secondary-power-management-q02",
+    "authorFlags": [
+      "標準解答p.3の単線結線図は一例である。送電線・変圧器の左右の配置を変えた図や、変圧器側断路器の有無が異なる図を採点上同等に扱うかは、標準解答に記載がない。",
+      "標準解答の図には母線名（甲・乙）が書かれていない。(3)(4)で使う甲母線・乙母線が上下どちらの母線かは、図からは確定できない。"
+    ],
+    "resolution": "Use only the shown official examples; do not assert grading equivalence of unlisted alternatives or define which unlabeled bus is upper/lower. Reader is explicit self-review with original standard answer."
+  },
+  {
+    "id": "denken1-2024-secondary-power-management-q03",
+    "authorFlags": [
+      "小問(3)前半で求められている「理由」は、標準解答の本文に明記されていない。解説の理由（充電容量∝V²、許容送電電力∝V）は、標準解答の計算式から導いたものである。",
+      "275 kV曲線と66 kV曲線の交点（解説側の計算では約45 km・約78 MW）は、標準解答に数値の記載がない。標準解答の図で交点の位置が整合することだけを確認している。"
+    ],
+    "resolution": "Reason follows directly from official S=sqrt(3)VI and Q=2pi*f*C*V^2*L. Remove the unnecessary unsourced numerical crossing point; independently verify both curve intercepts.",
+    "calculation": [
+      {
+        "voltage_kV": 66,
+        "S_MVA": 80.02074730968212,
+        "Q_Mvar_per_km": 0.4103352,
+        "criticalLength_km": 195.01311929778902
+      },
+      {
+        "voltage_kV": 275,
+        "S_MVA": 333.41978045700887,
+        "Q_Mvar_per_km": 7.123875,
+        "criticalLength_km": 46.80314863146937
+      }
+    ]
+  },
+  {
+    "id": "denken1-2024-secondary-power-management-q05",
+    "authorFlags": [
+      "標準解答の対策は(2)(3)とも2項目を挙げた一例である。出力抑制など、ほかの合理的な対策を採点上どう扱うかは記載がない。"
+    ],
+    "resolution": "Use only the shown official examples; do not assert grading equivalence of unlisted alternatives or define which unlabeled bus is upper/lower. Reader is explicit self-review with original standard answer."
+  }
+]

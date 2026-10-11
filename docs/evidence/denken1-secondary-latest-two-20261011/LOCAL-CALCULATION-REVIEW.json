@@ -1,0 +1,70 @@
+{
+  "scope": "2024 machine-control Q1 and Q3 candidate-only local calculation and paper review",
+  "candidate": "../2024-machine-control-candidate.json",
+  "officialPaperPages": {
+    "q01": {
+      "question": [
+        3
+      ],
+      "answer": [
+        11,
+        12
+      ]
+    },
+    "q03": {
+      "question": [
+        5,
+        6
+      ],
+      "answer": [
+        15,
+        16
+      ]
+    }
+  },
+  "q01": {
+    "verdict": "pass",
+    "calculationChecks": {
+      "thetaA_degrees": 36.869897646,
+      "thetaB_degrees": 18.434948823,
+      "delta_degrees": 26.565051177,
+      "XaIa_pu": 1.0,
+      "XbIb_pu": 0.632455532,
+      "Ia_pu": 0.5,
+      "Ib_pu": 0.421637021,
+      "Eb_pu": 1.341640786,
+      "Qb_pu": 0.133333333
+    },
+    "orientation": "Both currents lag V; thetaA > thetaB. Both internal EMFs lead V by common positive delta; Ea > Eb. jXaIa and jXbIb lead their currents by 90 degrees, from the common V tip to the respective E tip.",
+    "paperComparison": "Official answer p.11 gives an unscaled phasor drawing. The candidate angles and lengths follow from stated P, power factor, reactance and per-unit base, not a measurement of the drawing. Approximate candidate values agree with direct calculation and official numeric steps p.11-12.",
+    "action": "No correction required; retain the distinction between calculated values and unscaled official drawing."
+  },
+  "q03": {
+    "verdict": "must-fix-subpart-1-only",
+    "reason": "Problem p.5 asks (1) for waveforms from Fig.2 without assigning numeric alpha or beta; alpha=pi/3 is supplied only in (2), and alpha=pi/3 with beta=pi/5 only in (3). Answer p.15 labels alpha and beta symbolically and shows switch directions but no numeric phase labels. Candidate (1) imports later conditions into the earlier waveform task.",
+    "confirmedSwitching": "From question p.6 and official answer p.15, vAO goes +100 -> 0 -> -100 -> 0; vBO goes 0 -> -100 -> 0 -> +100 -> 0; vAB=vAO-vBO yields +100,+200,+100,0,-100,-200,-100,0 on the drawn interval order.",
+    "safeReplacementAnswer": "図2のα・βをそのまま用いる。vAOは0≦ωt<π−αで+100 V、π−α≦ωt<πで0、π≦ωt<2π−αで−100 V、2π−α≦ωt<2πで0。vBOは0≦ωt<βで0、β≦ωt<π−α+βで−100 V、π−α+β≦ωt<π+βで0、π+β≦ωt<2π−α+βで+100 V、2π−α+β≦ωt<2πで0。vAB=vAO−vBOであり、図2の区間順序に従い境界0, β, π−α, π−α+β, π, π+β, 2π−α, 2π−α+β, 2πの各区間の値は順に+100,+200,+100,0,−100,−200,−100,0 V。",
+    "safeReplacementExplanation": "A脚の波形は最初に+100 V、π−αで0、πで−100 V、2π−αで0へ切り替わる。B脚はこの波形をπ+βだけ遅らせたもの。各時刻で両脚電圧の差を取る。小問(1)では位相を数値に固定しない。",
+    "candidateNumericExampleCheck": "If alpha=pi/3 and beta=pi/5 are introduced explicitly as a later illustrative case, beta=pi/5, pi−alpha=2pi/3, pi−alpha+beta=13pi/15, pi+beta=6pi/5, 2pi−alpha=5pi/3, 2pi−alpha+beta=28pi/15; candidate numeric boundaries and plateau order are arithmetically correct for that case.",
+    "subpart2Check": {
+      "fundamentalRmsV": 77.969680123,
+      "thirdRmsV": 0,
+      "fifthRmsV": 15.593936025,
+      "appliesTo": [
+        "vAO",
+        "vBO"
+      ],
+      "officialPrinted": "78.0 V, 0, 15.6 V for both"
+    },
+    "subpart3Check": {
+      "fundamentalRmsV": 148.30714471,
+      "thirdRmsV": 0,
+      "fifthRmsV": 0,
+      "officialPrinted": "148 V, 0, 0",
+      "method": "vBO lags vAO by pi+beta=6pi/5; fifth phase difference is 6pi, so fifth components cancel; fundamental difference has magnitude 2*77.96968*sin(2pi/5)."
+    },
+    "action": "Replace only q03 solutions[0].answer and solutions[0].explanation with the symbolic version. The numerical illustration may be retained only if clearly marked as using the later (2)/(3) conditions."
+  },
+  "publicDataEdited": false,
+  "sourcePdfOrRawLogsCopied": false
+}
