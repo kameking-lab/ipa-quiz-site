@@ -1,0 +1,280 @@
+[
+  {
+    "id": "judo-seifukushi-2025-annual-am-q83",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW.json",
+    "reviewFileSha256": "a0f0c23468d7700ca63513d02417bdca2b783d42167ea94ed90ebdae88ed4dcc",
+    "reviewedFieldsSha256": "c52e609004b40f213c8c45bcf64894e9b58312e4fbba401c09147e3ab852005f",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-am-q83",
+      "question": "神経伝導速度が最も遅いのはどれか。",
+      "choices": {
+        "1": "侵害受容器からの求心性線維",
+        "2": "温受容器からの求心性線維",
+        "3": "筋紡錘からの求心性線維",
+        "4": "骨格筋への遠心性線維"
+      },
+      "literalOfficialKey": "2",
+      "acceptedNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は2（温受容器からの求心性線維）です。温覚を伝える線維は主に無髄C線維で、筋紡錘の求心性線維や骨格筋を支配する太い有髄運動線維より遅い群に属します。ただし、侵害受容にもC線維があり、温覚線維が全ての侵害受容線維より遅いと一律に順位付けすることはできません。Hallinらのヒト皮膚の研究要旨でも、温受容器と侵害受容器の双方にC線維が記録されています。公式採点上は2を選びますが、この資料だけで肢1と肢2の全線維の速度差が解決したとは扱いません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答ではありません。侵害受容を伝える線維には有髄Aδ線維と無髄C線維があります。侵害受容線維をすべて速い線維とみなしたり、すべての温覚線維より速いと説明したりすることはできません。",
+        "2": "本問の公式正答です。温覚を伝える線維は主に無髄C線維で、太い有髄線維より伝導が遅い群です。ただし、侵害受容にもC線維があるため、『C線維だから肢1の全線維より遅い』という説明はできません。",
+        "3": "本問の正答ではありません。筋紡錘からのIa群・II群求心性線維は有髄線維で、無髄C線維より速く伝導します。",
+        "4": "本問の正答ではありません。骨格筋の収縮を担うα運動線維は太い有髄線維で、無髄C線維より速く伝導します。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+        "https://pubmed.ncbi.nlm.nih.gov/6804605/"
+      ]
+    },
+    "remainingScientificIssue": "温受容線維と侵害受容線維を全体として一意に順位付けする根拠は未確認。公式正答2を変えず、その限界を解説へ残す。",
+    "acceptanceConditions": [
+      "原問・4選択肢・公式単一正答2・requiredSelections=1を保持する。either-singleや正答1追加へ変更しない。",
+      "上記の総論と全肢説明を採用し、Hallin参照を追加する。原著の全文読取や全線維の速度分布を確認したと記録しない。",
+      "改稿後のreviewedFields SHAを照合してから現行原稿のPASSへ更新する。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-pm-q19",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW.json",
+    "reviewFileSha256": "a0f0c23468d7700ca63513d02417bdca2b783d42167ea94ed90ebdae88ed4dcc",
+    "reviewedFieldsSha256": "fc69ee6b9b8c1c43d425e094a1ba77f0e00142658ab36b8915e50dd639ff4b5f",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-pm-q19",
+      "question": "創傷治癒促進を目的とした治療的電気刺激はどれか。",
+      "choices": {
+        "1": "干渉波電流",
+        "2": "微弱電流刺激",
+        "3": "ロシアンカレント",
+        "4": "高電圧パルス電流"
+      },
+      "literalOfficialKey": "2",
+      "acceptedNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は2（微弱電流刺激）です。ただし、公式採点で2が指定されていることは、高電圧パルス電流に創傷治療の用途がないという意味ではありません。Wound Healing Societyの2023年ガイドライン7b.3には、慢性Stage II〜IV褥瘡で通常治療と併用する電気刺激と、高電圧単相パルス電流（HVMPC）の治癒促進に関する記載があります。この臨床用途と本問の単一正答を区別し、肢4を創傷治療に不適応と断定しません。出題者が2だけを選ぶ理由まで、この資料から確定することはできません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答ではありません。干渉波電流は主に鎮痛や筋刺激などを目的に用いられます。ここでの採点結果だけから、他の用途が一切ないと一般化しないようにします。",
+        "2": "本問の公式正答です。微弱な電流を利用する方法で、本問では創傷治癒促進を目的とする刺激として正答に指定されています。全ての創傷で効果が保証されることや、他の電気刺激法に同じ目的の用途がないことまで意味しません。",
+        "3": "本問の公式正答ではありません。ロシアンカレントは筋収縮を起こして筋力増強などを図るために用いられる中周波の電気刺激です。",
+        "4": "本問の公式正答ではありませんが、高電圧パルス電流には創傷治療への用途があります。WHSの2023年ガイドライン7b.3は、慢性Stage II〜IV褥瘡に通常治療と併用する電気刺激を扱い、高電圧単相パルス電流（HVMPC）の有用性に言及しています。これは全ての創傷・刺激条件での適応や、単独治療での効果を示すものではありません。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11403384/"
+      ]
+    },
+    "remainingScientificIssue": "肢4にも特定条件で創傷治療用途がある。公式単一正答2の出題者による排他的根拠は未取得。微弱電流とHVMPCを同一方式とせず、肢4の有用性を全創傷へ拡張しない。",
+    "acceptanceConditions": [
+      "原問・4選択肢・公式単一正答2・requiredSelections=1を保持する。独自に正答4追加や複数選択へ変更しない。",
+      "上記の総論と全肢説明を採用し、WHS参照を追加する。少なくとも公式正答と肢4の臨床用途の区別は総論に表示する。",
+      "HVMPCの根拠は慢性褥瘡と併用治療の範囲で扱う。創傷全般への一律推奨、具体的電極設定・電圧・治療時間・機種の断定を追加しない。",
+      "『専門家確認待ち』を無期限の公開停止理由にせず、改稿後reviewedFields SHAを照合して局所受入れする。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-am-q118",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW-REMAINING.json",
+    "reviewFileSha256": "ce5b8bc09ac12675d2f9a61ebb6d3b036bcd5e8b7277254d7f06fd4eadb58b48",
+    "reviewedFieldsSha256": "2fa958a3d699de9a6494952f9eb70ef97400c2fd08586f10bcb8b943ee8c2e07",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-am-q118",
+      "question": "女性に多いのはどれか。",
+      "choices": {
+        "1": "胆嚢癌",
+        "2": "胆管癌",
+        "3": "肝細胞癌",
+        "4": "肝内胆管癌"
+      },
+      "literalOfficialKey": "1",
+      "acceptedNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は1（胆嚢癌）です。胆嚢癌は女性に多い傾向があり、大学病院の胆嚢癌を扱う資料でもその傾向が説明されています。胆管癌や肝内胆管癌とは発生部位を区別して理解します。これは女性だけに発生するという意味ではなく、胆嚢・胆道を合算した統計から胆嚢癌単独の性差を推定するものでもありません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答です。胆嚢癌は女性に多い傾向があると説明されています。ここでは特定の統計年や男女比までは断定しません。",
+        "2": "本問の正答ではありません。胆管癌と胆嚢癌は区別します。徳島大学病院の説明では、胆管癌は男性に多い傾向とされています。",
+        "3": "本問の正答ではありません。肝細胞癌は肝細胞から発生する癌で、男性に多い傾向があります。胆嚢癌とは発生部位・由来する細胞が異なります。",
+        "4": "本問の正答ではありません。肝内胆管癌は肝臓内の胆管から発生する癌で、胆管細胞癌とも呼ばれます。胆嚢癌とは別の疾患として扱い、胆嚢癌の性差をそのまま当てはめません。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+        "https://www.tmd.ac.jp/grad/msrg/gallbladder/gallbladder_cancer.html",
+        "https://www.tokudai-ganrenkei.jp/standard/detail.html?did=gallbladder_cancer",
+        "https://medical-b.jp/a01-01-021/book037-13/?hospital=a01-01-021",
+        "https://www.tmd.ac.jp/grad/msrg/liver/cancer02.html"
+      ]
+    },
+    "remainingScientificIssue": "現在の人口ベース・胆嚢単独の罹患男女比や年齢調整率は確認していない。数値を用いない臨床的傾向の解説には不要。",
+    "acceptanceConditions": [
+      "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+      "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+      "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-pm-q6",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW-REMAINING.json",
+    "reviewFileSha256": "ce5b8bc09ac12675d2f9a61ebb6d3b036bcd5e8b7277254d7f06fd4eadb58b48",
+    "reviewedFieldsSha256": "cec645a5adb985b7d661ffc799437bbeebd19386f07d8844cbdd5bca2f60e294",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-pm-q6",
+      "question": "肥満によって発がんリスクが上がるのはどれか。",
+      "choices": {
+        "1": "肺がん",
+        "2": "胃がん",
+        "3": "大腸がん",
+        "4": "食道がん"
+      },
+      "literalOfficialKey": "3",
+      "acceptedNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は3（大腸がん）です。肥満は大腸がんの発症リスク上昇と関連します。ただし、米国国立がん研究所（NCI）は食道腺がんや胃上部のがんも肥満と関連するがんに挙げています。したがって、公式採点では3を選びますが、胃がん・食道がん全般が肥満と無関係だと覚えてはいけません。部位や組織型が指定されていない肢2・4との排他的な区別までは、この資料で確定できません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答ではありません。NCIが肥満との関連について一貫した根拠を示しているがんの一覧に、肺がんは含まれていません。このことだけで、あらゆる条件で関連がないと断定はしません。",
+        "2": "本問の公式正答ではありません。ただし、胃がんを一括して肥満と無関係とはいえません。NCIは胃上部のがんを肥満と関連するがんに挙げており、部位を区別する必要があります。",
+        "3": "本問の公式正答です。肥満と大腸がんの発症リスク上昇との関連はNCIの解説でも示されています。",
+        "4": "本問の公式正答ではありません。ただし、食道腺がんには肥満との関連があります。食道がんを組織型で区別せず、すべて肥満と無関係と説明することはできません。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+        "https://www.cancer.gov/about-cancer/causes-prevention/risk/obesity/obesity-fact-sheet"
+      ]
+    },
+    "remainingScientificIssue": "肢2/4の部位・組織型未指定を踏まえた出題者の排他的根拠は未取得。公式鍵3のまま医学的関連を併記し、独自の複数正答化はしない。",
+    "acceptanceConditions": [
+      "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+      "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+      "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-pm-q38",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW-REMAINING.json",
+    "reviewFileSha256": "ce5b8bc09ac12675d2f9a61ebb6d3b036bcd5e8b7277254d7f06fd4eadb58b48",
+    "reviewedFieldsSha256": "c170b6fa3ce6aec19103348740134b9530d2d1d2c0cfcba6eaec864b75925605",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-pm-q38",
+      "question": "鉄欠乏性貧血に特徴的なのはどれか。",
+      "choices": {
+        "1": "異食症",
+        "2": "振動覚異常",
+        "3": "舌乳頭萎縮",
+        "4": "皮下・粘膜出血"
+      },
+      "literalOfficialKey": "1",
+      "acceptedNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は1（異食症）です。鉄欠乏性貧血では、氷や土などを食べたくなる異食症を伴うことがあります。一方、米国血液学会（ASH）の患者向け説明は、舌の疼痛や平滑化も症状として挙げています。公式正答が1であることを理由に、舌乳頭萎縮が鉄欠乏では起こらないと断定しないようにします。肢1だけを採点対象とする根拠を、症状の有無だけから排他的に説明することはできません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答です。鉄欠乏性貧血に伴い、氷や土などを食べたくなる異食症がみられることがあります。全患者に必ず現れる症状ではありません。",
+        "2": "本問の正答ではありません。振動覚異常は神経障害などの評価を要する所見であり、鉄欠乏性貧血を特徴付ける症状として本問では選びません。",
+        "3": "本問の公式正答ではありませんが、鉄欠乏で舌の変化が起こり得ないという意味ではありません。ASHは舌の疼痛や平滑化を挙げています。舌乳頭萎縮を一律に否定して肢1との差を説明することは避けます。",
+        "4": "本問の正答ではありません。皮下・粘膜出血では血小板や止血機能の異常などを考えます。出血が鉄欠乏の原因になる場合と、鉄欠乏自体を特徴付ける所見とは区別します。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+        "https://www.hematology.org/education/patients/anemia/iron-deficiency"
+      ]
+    },
+    "remainingScientificIssue": "異食症と舌乳頭萎縮の感度・特異度・頻度の比較や出題者の排他的理由は未確認。その比較を捏造せず注記付き試験解説として受入れ可能。",
+    "acceptanceConditions": [
+      "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+      "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+      "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-pm-q108",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW-REMAINING.json",
+    "reviewFileSha256": "ce5b8bc09ac12675d2f9a61ebb6d3b036bcd5e8b7277254d7f06fd4eadb58b48",
+    "reviewedFieldsSha256": "83c2410c8384c9694b337c958f01f5fde826b351ac91d496f08fc6152e9f565a",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-pm-q108",
+      "question": "40歳の女性。初発の両側性顎関節前方脱臼で来所した。整復を行ったが、下顎の片側偏位が残存した。整復前と比較し疼痛は減少し会話が可能となり、口の開閉もわずかに可能となった。考えられるのはどれか。",
+      "choices": {
+        "1": "片側顎関節円板前方転位の残存",
+        "2": "顔面神経麻痺の合併",
+        "3": "整復時下顎頭の骨折",
+        "4": "顎関節内障の続発"
+      },
+      "literalOfficialKey": "1",
+      "acceptedNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は1（片側顎関節円板前方転位の残存）です。残存するのは関節円板の転位であり、下顎頭の前方脱臼の残存と読み替えません。日本顎関節学会の指針では、非復位性の関節円板前方転位は患側下顎頭の前方移動を制限し、開口障害や開口路の患側偏位を生じ得ると説明されています。ただし、顎関節円板障害と顎関節内障は同義とされるため、肢4を円板転位と無関係な病態として排除することはできません。本問では1の「残存」と4の「続発」を区別して公式採点に従い、病態の発症時点まで症例文だけで確定したとは扱いません。",
+      "choiceExplanations": {
+        "1": "本問の公式正答です。片側の円板前方転位が復位せず残ると、その側の下顎頭の前方移動が制限され、開口障害や開口時の患側偏位を説明できます。下顎頭自体の脱臼残存とは区別します。",
+        "2": "本問の正答ではありません。顔面神経麻痺は表情筋の麻痺を主に考える病態です。症例にはその所見が示されておらず、残った開口制限と偏位は公式正答の関節円板の病態で考えます。",
+        "3": "本問の正答ではありません。下顎頭骨折を示す画像や新たな骨折所見は提示されていません。疼痛が減少したことだけで骨折を完全に除外できるという意味ではなく、本問では円板転位の残存が正答とされています。",
+        "4": "本問の公式正答ではありません。ただし、学会指針では顎関節円板障害と顎関節内障は同義であり、円板転位と無関係な疾患ではありません。選択肢の「続発」は1の「残存」と区別し、症例文だけで新たな発症を証明したとは扱いません。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+        "https://kokuhoken.net/jstmj/publication/file/guideline/guideline_treatment_tmj_2020.pdf#page=11",
+        "https://kokuhoken.net/jstmj/publication/file/guideline/guideline_treatment_tmj_2020.pdf#page=12"
+      ]
+    },
+    "remainingScientificIssue": "症例には偏位方向・MRI・発症時点が明示されず、個別患者の確定診断や1と4の病態的排他性は証明されない。公式1を残し、その範囲を説明する。",
+    "acceptanceConditions": [
+      "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+      "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+      "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+    ]
+  },
+  {
+    "id": "judo-seifukushi-2025-annual-pm-q117",
+    "reviewFile": "INDEPENDENT-CONTENT-REVIEW-REMAINING.json",
+    "reviewFileSha256": "ce5b8bc09ac12675d2f9a61ebb6d3b036bcd5e8b7277254d7f06fd4eadb58b48",
+    "reviewedFieldsSha256": "22632cd1b2fd2c60ba9641a2bbaff30206a7f552464f609e87f97a61fdde4243",
+    "reviewedFieldsSnapshot": {
+      "id": "judo-seifukushi-2025-annual-pm-q117",
+      "question": "20歳の男性。ラグビーの試合中、右膝外側からタックルを受けた。直後から右膝内側に強い痛みがあり、プレーを続行できなかった。来所時に撮影した膝内側の長軸超音波画像（別冊No.4）を別に示す。画像所見でみられるのはどれか。",
+      "choices": {
+        "1": "骨皮質の不整像",
+        "2": "内側側副靱帯の肥厚",
+        "3": "関節内遊離体",
+        "4": "半月板の石灰化"
+      },
+      "literalOfficialKey": "2",
+      "acceptedNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "answerMode": "single",
+      "explanation": "本問の公式正答は2（内側側副靱帯の肥厚）です。提示された患側・健側の長軸超音波画像を比較すると、患側の内側側副靱帯が厚く描出されています。膝外側からの外力と内側痛という受傷状況にも整合します。この一枚だけで損傷の重症度や完全断裂の有無まで断定しません。",
+      "choiceExplanations": {
+        "1": "本問の正答ではありません。骨皮質の不整像は骨表面の連続性や形状の乱れに注目する所見ですが、本提示像で問われている中心所見は内側側副靱帯の肥厚です。",
+        "2": "本問の公式正答です。患側と健側の表示を対応させて比較し、患側の内側側副靱帯の厚みが増していることを読み取ります。",
+        "3": "本問の正答ではありません。関節内遊離体を示す独立した構造を中心に読む画像ではなく、健側との比較で靱帯の厚みの違いを捉える設問です。",
+        "4": "本問の正答ではありません。半月板の石灰化を積極的に示す所見ではなく、提示像では内側側副靱帯の肥厚に着目します。"
+      },
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+        "https://www.zaijusei.com/doc/2026_34_gogo_bessatsu.pdf#page=5"
+      ]
+    },
+    "remainingScientificIssue": "この画像一枚から損傷等級や完全断裂の有無、他損傷の除外までは判断しない。専門家確認という抽象的理由による一律停止は不要。",
+    "acceptanceConditions": [
+      "原問・選択肢・公式単一正答・requiredSelections=1を維持する。",
+      "提案の総論・全肢解説・参照を採用し、実装への写像とSHAを照合する。",
+      "旧reviewNotesの確認待ちという内部メモを新しい公開解説の結論にしない。医学的限界は提案した読者向け注記で保持する。"
+    ]
+  }
+]

@@ -31,6 +31,13 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;
   }
+  const judoPaper = /^https:\/\/www\.zaijusei\.com\/doc\/(2026_34|2025_33)_(?:gozen|gogo)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  if (q.season === "annual" && judoPaper?.[1] === "2026_34" && q.year === 2025) {
+    return "第34回（令和7年度・2026年実施）";
+  }
+  if (q.season === "annual" && judoPaper?.[1] === "2025_33" && q.year === 2024) {
+    return "第33回（令和6年度・2025年実施）";
+  }
   const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06[ab]|07b)_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;
