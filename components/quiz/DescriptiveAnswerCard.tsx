@@ -3,6 +3,7 @@
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
+import { questionReferenceLabel } from "@/lib/questions/reference-label";
 
 interface Props {
   question: Question;
@@ -49,7 +50,7 @@ export function DescriptiveAnswerCard({
         </a>
         {(question.officialReferenceUrls ?? []).map((url) => (
           <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
-            {/001452470|001429852/.test(url) ? "公式出題の趣旨（解答ではありません）" : "法令・制度等の一次資料"}
+            {questionReferenceLabel(question, url)}
           </a>
         ))}
       </div>

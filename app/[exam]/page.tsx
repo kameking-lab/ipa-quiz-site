@@ -68,7 +68,6 @@ import {
 import { getBlogPostsByExam } from "@/data/blog";
 import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
-import { ContentEndAd } from "@/components/ads/ContentEndAd";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import ahakiCoverage from "@/data/questions/ahaki/held-ids.json";
 
@@ -805,7 +804,7 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        <ContentEndAd />
+        {/* Qualification hubs have no completed page-specific ad review. */}
       </div>
     </main>
   );

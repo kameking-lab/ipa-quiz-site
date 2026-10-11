@@ -1,8 +1,9 @@
-import type { ExamCode } from "@/lib/questions/types";
+import type { ExamCode, IpaExamCode } from "@/lib/questions/types";
 // Content reference label is fixed. A new calendar year is not an editorial update.
 const CURRENT_YEAR = 2026;
 import { AI_QUOTA_COPY_SHORT } from "@/lib/constants/ai-quota";
 import { EXAM_PROFILES } from "./exam-data";
+import { buildWorkedExamplesPost } from "./worked-examples";
 import type { BlogPost } from "./types";
 
 const PUBLISHED_BASE = new Date("2026-01-01T00:00:00.000Z").getTime();
@@ -325,77 +326,9 @@ ${cbt ? "" : `
 
 /* ========== 3. 頻出論点まとめ（13本） ========== */
 
-export function buildFrequentTopicsPost(exam: ExamCode, idx: number): BlogPost {
-  const p = EXAM_PROFILES[exam];
-  const cbt = cbtSections(exam);
-  const slug = `${exam}-hinnshutsu-ronten-toppu10`;
-  const title = `${p.label} 学習テーマと押さえ方`;
-  const description = `${p.label}の学習テーマを編集上の観点で整理。用語・条件・解答根拠を確認する復習手順を紹介します。出題頻度のランキングではありません。`;
-  const topics = [...new Set([...p.topics, ...p.hardSpots, ...p.exampleSubjects])].slice(0, 10);
-  const body = `# ${p.label} 学習テーマと押さえ方
-
-本記事は、${p.label}の学習を始めるためのテーマ集です。並び順は編集上の整理で、過去5年の出題頻度や合格者の正答率を集計した順位ではありません。このテーマだけで何割得点できるかを示す資料もありません。試験範囲の網羅は[IPAの公式情報](https://www.ipa.go.jp/shiken/)で確認してください。
-
-## テーマを学習計画に使う
-
-${cbt ? cbt.intro : p.targetAudience + "を想定する試験です。実際の科目構成・実施方式は受験する回の試験要項を確認してください。"}
-
-まず教材や公開問題を解き、知っているつもりでも説明できなかった用語を記録します。以下のテーマはその記録を分類するための手掛かりです。すべてを同じ時間で学ぶ必要はありませんが、一覧にない分野を出題されないものとして省くこともできません。
-
-## 学習テーマ
-
-${topics.map((topic, i) => `### ${i + 1}. ${topic}
-
-${topic}を復習するときは、定義を一文で説明し、似た用語との違いを整理します。次に設問のどの条件が解答の根拠になるかを確認してください。
-
-- 教材の説明を読み、重要な前提や適用条件を書き出す
-- 関連する公開問題・収録問題を解き、選択肢の違いを自分の言葉で説明する
-- 間違えた理由を「知識不足」「条件の読み違い」「計算やトレースの誤り」に分ける
-
-関連問題の収録数はテーマによって異なります。問題が少ない場合は、公式資料や手元の教材で補いましょう。`).join("\n\n")}
-
-## 誤答から次の復習を決める
-
-問題数や周回数だけで理解を判断せず、根拠を説明できるかを確かめます。用語を知らなかった場合は定義と具体例を確認し、条件を読み違えた場合は設問中の制約を抜き出します。計算を間違えた場合は、途中式と単位を残して同じ手順を試してください。
-
-解説の答えを覚えている問題では、正解したことと理解したことを区別します。数値や条件が変わるとどうなるかを考え、公式の解答例や教材の説明と照合すると、確認すべき点が見つかります。AIコパイロットは説明を整理する補助に使えますが、出力が公式の解答や頻度集計になるわけではありません。
-
-## よくある質問
-
-**Q. このテーマだけで合格できますか？**
-本記事は出題範囲を網羅したものでも、合格を保証するものでもありません。受験する試験のシラバスを確認し、自分の未学習範囲を補ってください。
-
-**Q. 学習の順番はどう決めますか？**
-現在の誤答と残り時間から決めます。前提知識が不足しているテーマを先に確認し、解説を読んでも分からない問題は関連する基礎に戻りましょう。
-
-**Q. 演習はどこから始められますか？**
-[${p.label}の問題一覧](/${exam})で年度・分野を選んでください。収録問題と公式の試験範囲は同一ではないため、未収録部分は公式公開資料や教材で補います。
-
-## まとめ
-
-- 一覧は編集上の学習テーマで、出題頻度順のランキングではない
-- 解答根拠と誤答理由を記録し、自分の弱点から復習の順番を決める
-- 試験範囲と公式公開資料はIPAで確認する
-
-[${p.label}の問題一覧](/${exam})から、理解を確認する演習を始めましょう。
-`;
-
-  return {
-    slug,
-    title,
-    description,
-    exam,
-    tags: ["頻出論点", "出題傾向", p.shortLabel],
-    publishedAt: publishedAtFor(26 + idx),
-    body,
-    editorialKind: "study-guide",
-    editorialDates: { firstPublishedAt: null, lastEditedAt: "2026-10-08" },
-    sourceUrls: ["https://www.ipa.go.jp/shiken/"],
-    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-jisseki-mondai-bunseki`, "kakomon-dake-goukaku"],
-  };
+export function buildFrequentTopicsPost(exam: IpaExamCode, idx: number): BlogPost {
+  return buildWorkedExamplesPost(exam, publishedAtFor(26 + idx));
 }
-
-/* ========== 4. 過去問の解き方／実戦演習（13本） ========== */
 
 export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
@@ -524,76 +457,6 @@ ${cbt ? cbt.application : "科目Aで身につけた知識を科目Bの問題で
 }
 
 /* ========== 5. 試験別 実戦問題分析（13本） ========== */
-
-export function buildAnalysisPost(exam: ExamCode, idx: number): BlogPost {
-  const p = EXAM_PROFILES[exam];
-  const slug = `${exam}-jisseki-mondai-bunseki`;
-  const title = `${p.label} 復習テーマと学習計画の見直し`;
-  const description = `${p.label}の学習計画を、誤答記録と残り時間から見直す手順。出題数の増減分析や合格者調査ではありません。`;
-  const body = `# ${p.label} 復習テーマと学習計画の見直し
-
-本記事は学習計画を見直すための編集上の提案です。直近2年の出題数の増減や、合格者の学習配分を調査した結果ではありません。出題傾向を判断する場合は、対象年度・問題範囲・数え方が明示された資料を確認してください。
-
-## まず試験範囲と誤答記録を分ける
-
-${p.label}の試験範囲は[IPAの公式情報](https://www.ipa.go.jp/shiken/)で確認します。サイトの収録問題は学習素材であり、すべての出題範囲や実施回を網羅しているとは限りません。自分が解いた問題の誤答記録も、全国の受験者の正答率とは異なります。
-
-学習計画には、受験する回の範囲、使う教材、残りの学習時間を記入してください。次に、説明できない用語・根拠を示せない選択肢・途中で止まった計算を記録します。これにより、広い範囲のどこを復習する必要があるかが分かります。
-
-## 理解を確認したいテーマ
-
-以下は編集上の復習テーマです。出題が増えたことや、次の試験に出ることを示す一覧ではありません。
-
-${toItalicList(p.hardSpots)}
-
-それぞれ、定義・適用条件・具体例を自分の言葉で説明してみましょう。似た概念を取り違える場合は、違いを表に整理します。計算や手順を伴う場合は、入力から結果までを一段ずつ追い、どの条件で結果が変わるかを確認します。
-
-## 基礎を見直す手掛かり
-
-${toItalicList(p.exampleSubjects)}
-
-基礎用語を覚えていても、設問の文脈で使えなければ誤答につながります。問題の条件を抜き出し、使える知識と使えない知識を分けてください。正解した問題でも根拠があいまいなら復習対象に残し、答えの暗記だけで理解したと判断しないようにします。
-
-## 時間配分を自分の記録から決める
-
-万人に共通する最適な割合は本記事では示しません。まず一週間の学習時間を見積もり、誤答を解き直す時間と基礎を確認する時間を用意します。予定どおりに進まなかった場合は、一問にかかった時間や理解できなかった理由を確認し、翌週の計画を調整しましょう。
-
-時間が足りない場合も、根拠のない出題予測だけで範囲を捨てないでください。未学習の分野は一覧に残し、どこまで確認できたかを区別します。残り時間と重要な前提知識の不足から順番を決め、優先度を下げた分野にも確認の機会を設けます。
-
-## AIの説明と出題分析を混同しない
-
-AIコパイロットは用語の比較や解説の整理に使えます。ただし「直近5年で増えた論点」を質問しただけでは、対象問題を数えた統計にはなりません。年度別の出題数を調べる場合は、公開範囲を特定し、同じ分類基準で数えた記録が必要です。出力に出典がある場合も、リンク先が主張を実際に支えているか確認してください。
-
-## よくある質問
-
-**Q. この一覧は最新の出題傾向ですか？**
-出題数の増減を集計したものではありません。編集上のテーマを、自分の誤答整理に使うための一覧です。
-
-**Q. 学習時間は何割ずつ配分すればよいですか？**
-現在の理解と使える時間によって異なります。演習後に根拠を説明できたかを記録し、説明できなかった部分を次の復習に回してください。
-
-**Q. 未学習のテーマを省いてもよいですか？**
-省いた場合の得点や合否は保証できません。公式の出題範囲で位置付けを確認し、未学習として記録したまま計画を調整しましょう。
-
-## 次の演習へ
-
-[${p.label}の問題一覧](/${exam})で、年度や分野から問題を選べます。解いた数だけでなく、根拠まで確認できた範囲を記録し、定期的に計画を見直してください。
-`;
-
-  return {
-    slug,
-    title,
-    description,
-    exam,
-    tags: ["出題傾向", "戦略", p.shortLabel],
-    publishedAt: publishedAtFor(52 + idx),
-    body,
-    editorialKind: "study-guide",
-    editorialDates: { firstPublishedAt: null, lastEditedAt: "2026-10-08" },
-    sourceUrls: ["https://www.ipa.go.jp/shiken/"],
-    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-hinnshutsu-ronten-toppu10`, "ipa-shiken-data-driven-revision"],
-  };
-}
 
 /* ========== 6. 一般 横断記事（10本） ========== */
 

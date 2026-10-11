@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
+import { EDITORIAL_REVIEW_SAMPLES, EDITORIAL_REVIEW_OBSERVED_AT } from "@/data/editorial-review-scope";
 import Link from "next/link";
 import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,7 +22,7 @@ const TRANSPARENCY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
 export const metadata: Metadata = {
   title: "運営の透明性レポート",
   description:
-    "過去問 AI の運営方針・API コスト・意思決定プロセスを月次で公開しています。収益構造・アフィリエイト方針・開発ロードマップなど、教育貢献プロジェクトとして運営のすべてをオープンに。",
+    "過去問 AI の運営方針・教材の確認範囲・取得できたコスト指標を公開しています。収益構造・アフィリエイト方針・開発ロードマップなど、教育貢献プロジェクトとして確認できる範囲と未確認事項を区別して公開。",
   alternates: { canonical: "/transparency" },
   openGraph: {
     title: "運営の透明性レポート | 過去問AI",
@@ -87,11 +89,11 @@ async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
     const usersSeries = data.result?.[0]?.data ?? [];
     const aiSeries = data.result?.[1]?.data ?? [];
     const labels = data.result?.[0]?.labels ?? [];
-    return labels.map((label, i) => ({
+    return labels.flatMap((label, i) => Number.isFinite(usersSeries[i]) && Number.isFinite(aiSeries[i]) ? [{
       month: label,
-      users: usersSeries[i] ?? 0,
-      aiCalls: aiSeries[i] ?? 0,
-    }));
+      users: usersSeries[i]!,
+      aiCalls: aiSeries[i]!,
+    }] : []);
   } catch {
     return [];
   }
@@ -99,53 +101,16 @@ async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
 
 const REPORTS = [
   {
-    month: "2026-09",
+    month: "2026-10",
     highlights: [
-      "AI コパイロットの初回10回の質問ゲートを撤廃",
-      "IP単位の連続利用制限と月間費用上限でAPIを保護",
+      "収録問題の独自解説と公式資料の役割、抜き取り確認の範囲を公開",
+      "任意ログインによる履歴同期とIP制限用データの保存期限を説明",
+      "重複する学習記事を資格別の具体的な過去問解法へ統合",
     ],
-    cost: "AI 利用費は集計後に公開",
-    next: ["適正利用制限の実績を確認し、通常学習への影響を監視"],
-  },
-  {
-    month: "2026-05",
-    highlights: [
-      "AI 解説 disclaimer の視認性向上（ExplanationCard の文字サイズ拡大・枠線追加）",
-      "AI コパイロット応答末尾に責任分界注記を追加",
-      "/about に「AI コンテンツ取扱方針・査読体制」セクションを新設",
-      "/transparency に AI 利用範囲・責任分界セクションを追加（E-E-A-T 強化）",
-    ],
-    cost: "AI 利用費 集計中（月末公開予定）",
+    cost: "請求・集計証跡を未確認のため、費用実績は未掲載",
     next: [
-      "PostHog 連携による /stats の実データ化",
-      "blog 記事の年次自動更新ロジック整備",
-    ],
-  },
-  {
-    month: "2026-04",
-    highlights: [
-      "全機能無料化を完了し、課金システムを完全非表示化",
-      "フィードバック駆動型のレート制限に切り替え（初回 10 回 + フィードバック投稿後ほぼ無制限）",
-      "公開フィードバック・応援・透明性ページを公開",
-    ],
-    cost: "AI 利用費 約 ¥3,800（Gemini Flash-Lite）",
-    next: [
-      "API メトリクス連携で /stats を実データ化",
-      "@vercel/og を導入して問題別 OGP 自動生成",
-      "AI モデレーション（スパム/個人情報チェック）の強化",
-    ],
-  },
-  {
-    month: "2026-03",
-    highlights: [
-      "全 13 試験区分の問題データ統合",
-      "午後 AI 採点機能を全試験区分で公開",
-      "解説リファクタ（3 層構造）を AP 2024 秋分まで完了",
-    ],
-    cost: "AI 利用費 約 ¥2,400",
-    next: [
-      "解説リファクタを残り 12,094 問に展開",
-      "教育貢献プロジェクト体裁への全面ピボット",
+      "未確認の教材・資料の確認範囲と訂正状況を更新",
+      "実施団体ごとの利用条件・必要手続きの確認状況を更新",
     ],
   },
 ];
@@ -209,7 +174,7 @@ export default async function TransparencyPage() {
         <Badge variant="success">教育貢献プロジェクト</Badge>
         <h1 className="mt-2 text-2xl font-bold sm:text-3xl">運営の透明性レポート</h1>
         <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          月次で運営方針・コスト・意思決定を公開しています。
+          運営方針・確認範囲・取得できたコストや利用指標を公開しています。
           利用者から運営が見える状態を保つことが、教育貢献プロジェクトとしての説明責任だと考えています。
         </p>
         <Link
@@ -240,7 +205,7 @@ export default async function TransparencyPage() {
             </li>
             <li>
               <strong>個人情報は必要最小限に。</strong>
-              学習履歴は localStorage、AI 呼び出しは IP の非可逆ハッシュのみ保持します。
+              {HISTORY_PRIVACY_COPY} {AI_RATE_LIMIT_PRIVACY_COPY}
             </li>
           </ul>
         </CardContent>
@@ -289,12 +254,12 @@ export default async function TransparencyPage() {
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 <strong>AI コパイロット（問題解説・質問応答）</strong>：
-                生成 AI がリアルタイムで応答します。自動的な安全審査を通過していますが、
+                生成AIがリアルタイムで応答します。各応答を人が事前査読する方式ではなく、
                 誤りを含む可能性があります。各解説画面にその旨を明示しています。
               </li>
               <li>
                 <strong>業種別合格答案サンプル（essays）</strong>：
-                AI が生成した答案例を運営者が確認・公開しています。
+                AI が生成した答案例を掲載しています。人による全件確認・専門家監修の証跡は提示していません。
                 IPA 公式の合格答案ではなく参考用途に限定し、各ページにその旨を表示しています。
               </li>
               <li>
@@ -314,6 +279,26 @@ export default async function TransparencyPage() {
         </Card>
       </section>
 
+      <section id="static-explanations" className="mt-10 scroll-mt-20">
+        <h2 className="mb-3 text-lg font-semibold">収録問題の静的解説：制作・確認範囲・訂正</h2>
+        <Card>
+          <CardContent className="space-y-4 pt-4 text-sm leading-relaxed">
+            <p>公式問題・図版と公式正答を出典として記録し、AIの支援を用いて学習用の独自解説を制作します。原文・必要図版・正答形式・原問ID・出典の機械検査と、解説の論理・誤答理由の内容確認は別の工程です。自動テストやAIによる照合を、人による全件査読・専門家監修の証拠とは扱いません。</p>
+            <p>運営者は公開・編集・訂正を管理します。確認範囲は実施回・問題ごとに異なり、出典リンク、解説更新日、収録数だけで「全内容の確認済み」を示すものではありません。人による全件確認や専門家監修の証跡は、このページでは提示していません。</p>
+            <p>以下は<time dateTime={EDITORIAL_REVIEW_OBSERVED_AT}>{EDITORIAL_REVIEW_OBSERVED_AT}</time>の独立したAIレビューによる本番の抜き取り観測です。確認していない範囲を併記し、資格全体の認定へ広げません。</p>
+            <ul className="space-y-3">
+              {EDITORIAL_REVIEW_SAMPLES.map(sample => <li key={sample.path} className="rounded-xl border border-border p-3">
+                <Link href={sample.path} className="font-semibold underline">{sample.label}</Link>
+                <p className="mt-1">確認した範囲：{sample.checked}</p>
+                <p className="mt-1 text-xs text-muted-foreground">未確認・限界：{sample.limit}</p>
+              </li>)}
+            </ul>
+            <p>訂正では、問題番号と報告内容を受け取り、対象回の公式問題・図版・最新の正答訂正を照合します。法令・診療指針等は出題時点と改訂後を区別し、影響する解説・回答形式・関連する同型問題を再点検します。確認できない点は未確認として残し、内容に欠陥がある問題は演習対象から外します。訂正した解説には実際の更新日を付けます。</p>
+            <p>誤りは<Link href="/contact?type=error" className="underline">訂正窓口</Link>へ問題URL・番号・相違点を添えて報告できます。確認状況が不明な記事や教材を広告対象へ自動的に追加しません。出典表示と掲載権利の確認も別で、<Link href="/license" className="underline">資格別の利用条件</Link>をご覧ください。</p>
+          </CardContent>
+        </Card>
+      </section>
+
       <section id="metrics" className="mt-10 scroll-mt-20">
         <h2 className="mb-3 text-lg font-semibold">公開メトリクス</h2>
         <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
@@ -323,7 +308,7 @@ export default async function TransparencyPage() {
           <MetricCard label="公開中の問題数" value={total.toLocaleString("ja-JP")} sub="ホーム掲載資格・区分の合計" />
           <MetricCard label="資格・区分" value={qualificationCount.toLocaleString("ja-JP")} sub="ホームと同じ公開範囲" />
           <MetricCard label="利用料" value="¥0" sub="全機能無料" />
-          <MetricCard label="運営スタイル" value="ボランティア有志による運営" sub="教育貢献" />
+          <MetricCard label="運営スタイル" value="kameking-lab（公開運営ハンドル）" sub="教育貢献" />
         </div>
         <Card>
           <CardHeader>

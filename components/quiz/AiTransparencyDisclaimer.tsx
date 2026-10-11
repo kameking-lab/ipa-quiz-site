@@ -71,11 +71,11 @@ export function AiTransparencyDisclaimer({
         </div>
         {sourceAttribution && <p>{sourceAttribution}</p>}
         <p>
-          検証プロセス・誤り報告フローは{" "}
-          <Link href="/transparency" className="font-medium underline">
-            運営透明性レポート
+          制作・確認範囲・誤り報告の手順は{" "}
+          <Link href="/transparency#static-explanations" className="font-medium underline">
+            静的解説の確認方針
           </Link>
-          で公開しています。
+          で説明しています。出典リンクや自動テストだけで、解説全体の正確性が保証されるわけではありません。
         </p>
       </div>
     </details>

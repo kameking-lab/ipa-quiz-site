@@ -21,7 +21,7 @@ import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 export const metadata: Metadata = {
   title: "運営者情報",
   description:
-    "過去問AI（過去問AI）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
+    "過去問AIの公開運営ハンドル・お問い合わせ先・編集責任と免責事項。各試験実施機関とは無関係の学習支援サービスです。",
   alternates: { canonical: "/operator" },
 };
 
@@ -35,7 +35,7 @@ interface InfoRow {
 
 const INFO_ROWS: InfoRow[] = [
   { label: "サービス名", value: "過去問AI" },
-  { label: "運営", value: "ボランティア有志（過去問AI 教育貢献プロジェクト）" },
+  { label: "運営", value: "kameking-lab（公開運営ハンドル）" },
   {
     label: "公式X",
     value: (
@@ -160,8 +160,8 @@ export default function OperatorPage() {
             運営者情報
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            本サービスは<strong>ボランティア有志により運営</strong>される教育貢献プロジェクトとして、
-            全機能無料で公開しています。IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+            本サービスの公開運営ハンドルは<strong>kameking-lab</strong>です。資格の学習支援を目的として、
+            全機能無料で公開しています。IPA・FP・電気・医療・福祉・不動産等の公開過去問を、資格ごとに学べる場として提供しています。
           </p>
         </header>
 
@@ -196,12 +196,10 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              本サービスは<strong>ボランティア有志</strong>により運営される教育貢献プロジェクトです。
-              特定の法人・営利組織には属さず、全機能無料で公開しています。
-              IPA 試験対策を、誰もが平等に学べる場として提供することが目的です。
+              問題の掲載、独自解説・図版の編集、訂正対応は公開運営ハンドル<strong>kameking-lab</strong>が管理します。全機能無料で公開しています。解説はAIの支援を用いて作成しており、実施機関の公式解説や専門家による全件監修を意味しません。
             </p>
             <p>
-              問題データは IPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
+              問題・正答の出典は各問題の公式資料リンクで確認できます。資料の利用条件は各実施機関で異なり、独自解説の確認範囲は透明性ページで公開しています。
               詳細は{" "}
               <Link
                 href="/about"

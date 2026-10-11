@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
+import { getHomeDirectory } from "@/lib/home/home-directory";
 import Link from "next/link";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
@@ -50,12 +52,12 @@ const STATS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
 export const metadata: Metadata = {
   title: "公開統計ダッシュボード",
   description:
-    "過去問 AI の Google 検索表示回数・収録問題数・AI コパイロット利用状況を公開しています。教育貢献プロジェクトとして運営状況の透明性を重視しており、全データをオープンに公開中。",
+    "過去問 AI の Google 検索表示回数・収録問題数・AI コパイロット利用状況を公開しています。教育貢献プロジェクトとして運営状況の透明性を重視しており、取得できた指標と集計範囲を区別して公開。",
   alternates: { canonical: "/stats" },
   openGraph: {
     title: "公開統計ダッシュボード | 過去問AI",
     description:
-      "検索表示回数・収録問題数・AI 利用状況をリアルタイムで公開。教育貢献プロジェクトの運営状況をすべてオープンに。",
+      "検索表示回数・収録問題数・AI 利用状況を取得時点と対象範囲を表示して公開。教育貢献プロジェクトの取得できた運営指標を公開。",
     url: `${SITE_BASE_URL}/stats`,
     type: "website",
     siteName: SITE_NAME,
@@ -66,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "公開統計ダッシュボード | 過去問AI",
     description:
-      "検索表示回数・収録問題数・AI 利用状況をリアルタイムで公開。教育貢献プロジェクトの運営状況をすべてオープンに。",
+      "検索表示回数・収録問題数・AI 利用状況を取得時点と対象範囲を表示して公開。教育貢献プロジェクトの取得できた運営指標を公開。",
     images: [STATS_OG_URL],
   },
 };
@@ -75,6 +77,9 @@ export const revalidate = 1800; // 30 min
 
 export default async function StatsPage() {
   const counts = getContentCounts();
+  const domains = getHomeDirectory();
+  const publishedTotal = domains.reduce((sum, domain) => sum + domain.totalQuestions, 0);
+  const publishedQualifications = domains.reduce((sum, domain) => sum + domain.qualificationCount, 0);
 
   const [totals, trendRaw, topQueriesRaw, featuresRaw, referrersRaw] = await Promise.all([
     fetchGsc30dTotals(),
@@ -148,7 +153,7 @@ export default async function StatsPage() {
           過去問AI の公開統計
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          無料・登録不要で運営している IPA 過去問学習サイト「過去問AI」の利用状況を公開しています。
+          無料・登録不要の資格学習サイト「過去問AI」の利用状況を公開しています。
           数値は Google Search Console と PostHog の実データです。
         </p>
 
@@ -191,16 +196,21 @@ export default async function StatsPage() {
 
       {/* Section 1: Content count */}
       <Section icon={<BarChart3 className="h-3.5 w-3.5" />} title="収録問題数" subtitle="リポジトリ内の問題データから自動集計">
+        <div className="mb-4 grid grid-cols-2 gap-3">
+          <MetricCard label="ホーム掲載の公開問題" value={publishedTotal.toLocaleString("ja-JP")} sub="全公開資格・区分の合計" />
+          <MetricCard label="ホーム掲載の資格・区分" value={publishedQualifications.toLocaleString("ja-JP")} sub="ホームと同じ対象範囲" />
+        </div>
+        <p className="mb-3 text-xs leading-relaxed text-muted-foreground">以下は共通問題レジストリの登録件数です。解説準備中を含み、安全系などの別レジストリや専用の記述教材は含みません。原問・回答欄の単位は資格で異なるため、ホームの公開問題合計とは一致しません。人数や検索インデックス数を表すものではありません。</p>
         <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <MetricCard label="総収録問題" value={counts.total.toLocaleString("ja-JP")} sub="午前 + 午後 + 論文" />
-          <MetricCard label="午前四択" value={counts.morning.toLocaleString("ja-JP")} sub="13 試験区分" />
+          <MetricCard label="共通レジストリ登録件数" value={counts.total.toLocaleString("ja-JP")} sub="問題 + 午後 + 論文" />
+          <MetricCard label="共通の問題データ" value={counts.morning.toLocaleString("ja-JP")} sub="四択・数値・並べ替え・記述等" />
           <MetricCard label="午後記述" value={counts.afternoon.toLocaleString("ja-JP")} sub="AP / DB / NW など" />
           <MetricCard label="論文" value={counts.essay.toLocaleString("ja-JP")} sub="ST / PM / SA / AU / SM" />
         </div>
         <Card>
           <CardHeader>
             <CardTitle className="text-base">試験区分別の収録問題数</CardTitle>
-            <CardDescription>{counts.publishedExams} 区分公開中。バーは収録量を相対比較しています。</CardDescription>
+            <CardDescription>{counts.publishedExams}区分を共通レジストリに登録。バーは登録件数を比較しています。</CardDescription>
           </CardHeader>
           <CardContent>
             <ContentByExamChart rows={examRows} />
@@ -372,15 +382,15 @@ export default async function StatsPage() {
       >
         <Card>
           <CardContent className="space-y-3 p-5 text-sm text-foreground">
-            <PolicyRow label="運営形態" value="個人ボランティア運営（教育貢献プロジェクト）" />
+            <PolicyRow label="運営形態" value="kameking-lab（公開運営ハンドル）" />
             <PolicyRow label="利用料金" value="完全無料（全機能）" />
             <PolicyRow label="会員登録" value="不要" />
-            <PolicyRow label="広告" value="試験区分ページと、記事ごとの出典・内容確認を完了した学習記事の本文末尾に掲載" />
+            <PolicyRow label="広告" value="本文と出典の確認記録がある学習記事の本文末尾だけを対象にします。確認記録のない資格トップ・記事には表示しません。" />
             <PolicyRow
               label="個人情報"
-              value="学習履歴は端末の localStorage のみ。AI 呼び出し時の IP は非可逆ハッシュとして保存。"
+              value={`${HISTORY_PRIVACY_COPY} ${AI_RATE_LIMIT_PRIVACY_COPY}`}
             />
-            <PolicyRow label="出典" value="IPA 情報処理技術者試験の公開過去問（IPA-public ライセンス）" />
+            <PolicyRow label="出典" value="各試験実施団体の公開問題・正答。資料の役割と資格別の利用条件は各問題・コンテンツ利用方針で確認できます。" />
             <div className="pt-2">
               <Link
                 href="/transparency"

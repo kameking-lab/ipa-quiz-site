@@ -15,7 +15,6 @@ import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
-import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { NOTE_PROFILE_URL } from "@/lib/external-links";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
@@ -35,7 +34,7 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = SITE_BASE_URL;
 
-const ROOT_DESCRIPTION = `IPA 13区分とFP2級・FP3級の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。全機能無料。`;
+const ROOT_DESCRIPTION = `IPA・FP・電気・医療・福祉・不動産等の資格の公開過去問と学習用解説。資格・実施回ごとに公式出典を確認し、無料で演習・復習を進められます。`;
 
 export const metadata: Metadata = {
   title: {

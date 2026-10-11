@@ -1,4 +1,5 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
@@ -482,11 +483,12 @@ export default async function QuestionPage({
           )}
 
           {q.officialReferenceUrls && q.officialReferenceUrls.length > 0 && (
-            <nav aria-label="解説の公式根拠" className="mt-4 text-sm">
-              <h3 className="font-semibold">解説の公式根拠</h3>
+            <nav aria-label="問題・正答と参照資料" className="mt-4 text-sm">
+              <h3 className="font-semibold">問題・正答と参照資料</h3>
+              <p className="mt-1 text-xs text-muted-foreground">問題冊子・正答表・図版と、解説の参照資料は役割が異なります。公式問題と正答の掲載は、独自解説の全説明を公式機関が認めたことを意味しません。</p>
               <ul className="mt-2 list-inside list-disc space-y-2">
                 {q.officialReferenceUrls.map((url, index) => (
-                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">公式資料 {index + 1}（{new URL(url).hostname}）</a></li>
+                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">{questionReferenceLabel(q, url)} {index + 1}（{new URL(url).hostname}）</a></li>
                 ))}
               </ul>
             </nav>

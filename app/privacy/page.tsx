@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import Link from "next/link";
 import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import {
@@ -152,7 +153,7 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p>
-              氏名・メールアドレスなど個人を特定できる情報は送信しません。
+              アカウントの氏名・メールアドレスを問題コンテキストに自動付加しません。ただし、ご自身が質問に入力した個人情報は質問内容として送信されるため、入力を避けてください。
               送信データは{" "}
               <a
                 href="https://policies.google.com/privacy"
@@ -166,8 +167,7 @@ export default function PrivacyPage() {
               {" "}に基づき処理されます。
             </p>
             <p>
-              レート制限の管理のため、AI リクエスト時に IP アドレスをサーバー内メモリで一時的に保持します。
-              IP アドレスはログへの記録・永続化は行いません。
+              {AI_RATE_LIMIT_PRIVACY_COPY}
             </p>
           </Section>
 
@@ -199,8 +199,8 @@ export default function PrivacyPage() {
               この説明はアクセス解析に関するものです。
             </p>
             <p>
-              資格試験のトップページと一部の読み物記事では、ページ末尾に <strong>Google AdSense</strong> の広告枠を設けています。
-              Google などの第三者配信事業者は、広告配信・効果測定・不正利用防止のため、Cookie、ウェブビーコン、IPアドレスなどの技術で閲覧情報を取得し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
+              本文と出典の確認記録がある学習記事の末尾を <strong>Google AdSense</strong> の広告対象とします。確認記録のない資格トップ・記事には広告枠を表示しません。
+              広告が配信される場合、Google などの第三者配信事業者は、広告配信・効果測定・不正利用防止のため、Cookie、ウェブビーコン、IPアドレスなどの技術で閲覧情報を取得し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
               Google が広告 Cookie を使用することで、Google とそのパートナーは利用者に適した広告を表示できます。
               利用者は{" "}
               <a

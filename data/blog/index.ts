@@ -1,6 +1,5 @@
 import { EXAM_CODES } from "./exam-data";
 import {
-  buildAnalysisPost,
   buildFrequentTopicsPost,
   buildGeneralPosts,
   buildLastMonthPost,
@@ -9,6 +8,7 @@ import {
 } from "./generators";
 import type { BlogPost, BlogPostSummary } from "./types";
 import { toSummary } from "./types";
+import { BLOG_ARTICLE_ALIASES, canonicalBlogSlug } from "@/lib/blog/article-aliases";
 
 function buildAllPosts(): BlogPost[] {
   const posts: BlogPost[] = [];
@@ -16,9 +16,14 @@ function buildAllPosts(): BlogPost[] {
   EXAM_CODES.forEach((exam, i) => posts.push(buildLastMonthPost(exam, i)));
   EXAM_CODES.forEach((exam, i) => posts.push(buildFrequentTopicsPost(exam, i)));
   EXAM_CODES.forEach((exam, i) => posts.push(buildPracticePost(exam, i)));
-  EXAM_CODES.forEach((exam, i) => posts.push(buildAnalysisPost(exam, i)));
   posts.push(...buildGeneralPosts());
-  return posts;
+  return posts.map(post => ({
+    ...post,
+    relatedSlugs: [...new Set(post.relatedSlugs?.map(canonicalBlogSlug))].filter(slug => slug !== post.slug),
+    body: Object.entries(BLOG_ARTICLE_ALIASES).reduce(
+      (body, [alias, canonical]) => body.replaceAll(`/blog/${alias}`, `/blog/${canonical}`), post.body,
+    ),
+  }));
 }
 
 const ALL_POSTS: BlogPost[] = buildAllPosts();

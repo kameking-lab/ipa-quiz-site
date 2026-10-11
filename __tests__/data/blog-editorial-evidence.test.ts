@@ -1,17 +1,17 @@
 import { describe, expect, it, vi } from "vitest";
 import { createHash } from "node:crypto";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog";
-import { buildOverviewPost, buildLastMonthPost, buildFrequentTopicsPost, buildPracticePost, buildAnalysisPost } from "@/data/blog/generators";
+import { buildOverviewPost, buildLastMonthPost, buildFrequentTopicsPost, buildPracticePost } from "@/data/blog/generators";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import { isBlogAdEligible, publicBlogDates, type ArticleReviewEvidence } from "@/lib/blog/editorial";
-import type { ExamCode } from "@/lib/questions/types";
+import type { IpaExamCode } from "@/lib/questions/types";
 import { renderBlogSitemapXml } from "@/lib/seo/sitemap-xml";
 import { generateMetadata } from "@/app/blog/[slug]/page";
-const builds=[buildOverviewPost,buildLastMonthPost,buildFrequentTopicsPost,buildPracticePost,buildAnalysisPost];
+const builds=[buildOverviewPost,buildLastMonthPost,buildFrequentTopicsPost,buildPracticePost];
 describe("editorial evidence", () => {
-  it("all 65 retain their routes and sources without automatic freshness or measured claims", () => {
-    const posts=(Object.keys(EXAM_PROFILES) as ExamCode[]).flatMap((e,i)=>builds.map(build=>build(e,i)));
-    expect(posts).toHaveLength(65);
+  it("52 retained posts have sources without automatic freshness or measured claims", () => {
+    const posts=(Object.keys(EXAM_PROFILES) as IpaExamCode[]).flatMap((e,i)=>builds.map(build=>build(e,i)));
+    expect(posts).toHaveLength(52);
     for(const p of posts){
       expect(p.editorialKind).toBe("study-guide"); expect(p.sourceUrls?.length).toBeGreaterThan(0);
       expect(p.title).not.toMatch(/年最新|頻出論点トップ|最新分析/);

@@ -26,7 +26,7 @@ describe("記述の独自解答例", () => {
 
   it("公式出題趣旨を正答表として表示しない", () => {
     render(<DescriptiveAnswerCard question={question} />);
-    const link = screen.getByRole("link", { name: "公式出題の趣旨（解答ではありません）" });
+    const link = screen.getByRole("link", { name: "公式出題の趣旨（公式解答ではありません）" });
     expect(link.getAttribute("href")).toBe(question.officialReferenceUrls?.[0]);
     expect(screen.queryByRole("link", { name: /公式正答/ })).toBeNull();
   });

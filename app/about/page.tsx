@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
@@ -10,13 +11,13 @@ import { buildOrgNode, buildWebPageNode } from "@/lib/seo/structured-data";
 
 const PAGE_URL = `${SITE_BASE_URL}/about`;
 const PAGE_DESCRIPTION =
-  "過去問 AI プロジェクトは、IPA 情報処理技術者試験（全 13 区分）の対策を誰もが平等に学べる場として運営する教育貢献プロジェクトです。AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開しています。";
+  "過去問AIは、IPA・FP・電気・医療・福祉・不動産等の公開過去問を資格ごとに学べるサービスです。収録範囲・公式出典・独自解説の確認範囲を表示し、公開している学習機能を無料で提供しています。";
 
 const ABOUT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "home",
   title: "過去問AIについて",
   subtitle: "教育貢献プロジェクト",
-  body: "IPA 全 13 試験区分・AI コパイロット・模試・午後採点を含む全機能を無料公開。",
+  body: "公開している資格別の過去問・復習・AI学習支援を無料で提供。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "過去問 AI プロジェクトについて",
     description:
-      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+      "資格別の公開過去問・独自解説・学習履歴を無料で提供。出典・確認範囲と運営方針を公開しています。",
     url: `${SITE_BASE_URL}/about`,
     type: "website",
     siteName: "過去問AI",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "過去問 AI プロジェクトについて",
     description:
-      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+      "資格別の公開過去問・独自解説・学習履歴を無料で提供。出典・確認範囲と運営方針を公開しています。",
     images: [ABOUT_OG_URL],
   },
 };
@@ -83,11 +84,11 @@ export default function AboutPage() {
 
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          過去問 AI プロジェクトは、IPA（情報処理推進機構）が実施する情報処理技術者試験の対策を、
+          過去問AIは、IPAの情報処理技術者試験に加え、FP・電気・医療・福祉・不動産等の公開過去問を、
           <strong>誰もが平等に学べる場</strong>として公開している教育貢献プロジェクトです。
         </p>
         <p>
-          全 13 試験区分の過去問・全モード・AI コパイロット・午後 AI 採点を含む、
+          収録過去問の演習・学習用解説・AIコパイロット等の、
           すべての学習機能を<strong>無料</strong>で公開しています。受験生の経済状況や所属に
           関わらず、最善の対策ツールを使えるようにすることがプロジェクトの目的です。
         </p>
@@ -96,10 +97,9 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">運営について</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本プロジェクトは特定の法人・営利組織には属さず、
-          <strong>ボランティア有志により運営</strong>されています。
-          サーバー費用や AI 利用料を含む運営コストは、有志による持ち出しと、
-          一部の任意応援（<Link href="/about#support" className="underline">応援する</Link>）で賄っています。
+          本プロジェクトの公開運営ハンドルは<strong>kameking-lab</strong>です。
+          サーバー費用・AI利用料について確認できた情報と未確認事項は、
+          <Link href="/transparency" className="underline">透明性レポート</Link>で区別して表示します。
         </p>
         <p>
           運営の透明性レポート・直近の活動状況は{" "}
@@ -115,7 +115,7 @@ export default function AboutPage() {
           {
             icon: <BookOpen className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />,
             title: "全機能を無料公開",
-            text: "全 13 試験区分・全モードに料金は一切かかりません。学習に必要なものはすべて開放しています。",
+            text: "公開している過去問・復習・AI学習支援に利用料金はかかりません。模試やAI採点の対応範囲は各機能ページで確認できます。",
           },
           {
             icon: <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />,
@@ -182,7 +182,7 @@ export default function AboutPage() {
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
           AI コパイロットは生成 AI を用いて応答を生成しています。生成 AI の性質上、
-          内容に誤りが含まれる可能性があります。重要な判断の根拠とする場合は、IPA の公式資料や
+          内容に誤りが含まれる可能性があります。重要な判断の根拠とする場合は、当該試験実施団体の公式資料や
           信頼できる書籍で確認してください。
         </p>
         <p>
@@ -194,17 +194,21 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">AI コンテンツ取扱方針・査読体制</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本サービスでは、次の 3 種類のコンテンツに生成 AI を活用しています。
+          本サービスでは、コンテンツの種類ごとにAIの利用と確認範囲を区別しています。
         </p>
         <ul className="list-disc space-y-1 pl-5">
           <li>
             <strong>AI コパイロット（問題解説・質問応答）</strong>：
             ユーザーの質問に応じてリアルタイムで AI が応答を生成します。
-            内容は自動審査を通過したうえで提供しますが、誤りが含まれる可能性があります。
+            各応答を公開前に人が査読する方式ではありません。誤りが含まれる可能性があります。
+          </li>
+          <li>
+            <strong>収録問題の静的解説</strong>：AIの支援を用いた独自解説です。原文・図版・公式正答の照合と、解説内容の編集は別の工程です。
+            全件の人による確認・専門家監修を保証していません。保存された確認範囲と訂正手順は<Link href="/transparency#static-explanations" className="underline">透明性ページ</Link>で公開します。
           </li>
           <li>
             <strong>業種別合格答案サンプル（essays）</strong>：
-            AI が生成した論述例を、運営者が確認・公開しています。
+            AI が生成した論述例を掲載しています。人による全件確認・専門家監修の証跡は提示していません。
             IPA 公式の合格答案ではなく、論述構成の参考用です。各ページにその旨を明示しています。
           </li>
           <li>
@@ -244,8 +248,10 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">プライバシー</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          学習履歴・回答履歴は、お使いのブラウザの localStorage にのみ保存され、
-          サーバーには送信されません。端末・ブラウザを変更すると履歴は引き継がれません。
+          {HISTORY_PRIVACY_COPY}
+        </p>
+        <p>
+          {AI_RATE_LIMIT_PRIVACY_COPY}
         </p>
         <p>
           AI コパイロット機能では、質問文と該当問題のコンテキストが AI API に送信されます。
