@@ -1,0 +1,773 @@
+{
+  "reviewedCommit": "19c3a5176c5e00b50ad6e4c75fd3a61f9744d407",
+  "reviewedAt": "2026-10-11T02:22:42.259Z",
+  "verdict": "PASS_WITH_NONBLOCKING_NOTE",
+  "scopeIds": [
+    "denken1-2024-secondary-machine-control-q01",
+    "denken1-2024-secondary-machine-control-q03",
+    "denken1-2025-secondary-machine-control-q04",
+    "denken1-2024-secondary-power-management-q02",
+    "denken1-2024-secondary-power-management-q03",
+    "denken1-2024-secondary-power-management-q05",
+    "denken1-2025-secondary-power-management-q04"
+  ],
+  "blockingFindings": [],
+  "nonblockingNotes": [
+    {
+      "id": "ground-wire-terminology",
+      "scopeId": "denken1-2025-secondary-power-management-q04",
+      "location": "solutions (3), (5) explanation",
+      "observation": "The problem states one overhead ground wire. The explanation uses wording equivalent to two wires on the left/right; its equations correctly model the two propagation directions of that one wire.",
+      "suggestedReplacement": "Use: 1条の架空地線の左右2方向. Keep i0-i0prime=2ig+it, the voltage expression and 909 kV.",
+      "evidencePhysicalPages": {
+        "question": [
+          6
+        ],
+        "answer": [
+          4
+        ]
+      },
+      "severity": "nonblocking"
+    }
+  ],
+  "mechanicalVerification": {
+    "counts": {
+      "originals": 20,
+      "uniqueIds": 20,
+      "upperSubparts": 76,
+      "solutionBlocks": 78,
+      "uniqueJpg": 60,
+      "pdfs": 6
+    },
+    "failures": [],
+    "pdfs": [
+      {
+        "year": 2025,
+        "subject": "power-management",
+        "url": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q01.pdf",
+        "sha256": "aa4b35b1fb8dc45bb19bc1dbec337770e5adf59e205eef39c5c524068611036f",
+        "matches": true
+      },
+      {
+        "year": 2025,
+        "subject": "machine-control",
+        "url": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_q02.pdf",
+        "sha256": "0b030b4563e7551c14d45eb6529b0c01cd652e8511a68091456d72215916bb9b",
+        "matches": true
+      },
+      {
+        "year": 2025,
+        "subject": "answer",
+        "url": "https://www.shiken.or.jp/chief/upload/20251116_ch_first_a01_ks.pdf",
+        "sha256": "fe0032e3645c4880342c1c1c58771f9b223ea9fded36d3e3bab2ceae24aa7bc2",
+        "matches": true
+      },
+      {
+        "year": 2024,
+        "subject": "power-management",
+        "url": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q01.pdf",
+        "sha256": "0594ec8d71791786a969a3937e71a66acb837cbdcce1e491463b1f53e7143e21",
+        "matches": true
+      },
+      {
+        "year": 2024,
+        "subject": "machine-control",
+        "url": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q02.pdf",
+        "sha256": "bde995575f5c55f06ee777b22f5a002c5a74bb8a536eb46225fea7b94be429e1",
+        "matches": true
+      },
+      {
+        "year": 2024,
+        "subject": "answer",
+        "url": "https://www.shiken.or.jp/chief/upload/20241110_ch_first_a01_ks.pdf",
+        "sha256": "57b460f4874840f2cf42f91683860de3a34155f53f07c6722d8d9ed02d6838c1",
+        "matches": true
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p03.jpg",
+        "sha256": "5292bde58d8118a7f597a7b408923c4c89733cfce232d4e5711336f6c5dda467",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p01.jpg",
+        "sha256": "e474da56723c8b0d717062ddad03b6a4582f158e5c0133a9c466e29e096d1925",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p04.jpg",
+        "sha256": "ca2b13f4f0f3702b45cf6a5da5db2c03cc630bc095a72355dac4e5c2bd067399",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p02.jpg",
+        "sha256": "e01fb2f3a391c75d1b76393dd7634ad3b6b522cc62833fbd202733654cfcd89c",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p05.jpg",
+        "sha256": "2618dc7679bf343017ef64f5d7f32d359edbd4c7318ef15cfff50979100053ad",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p03.jpg",
+        "sha256": "c80a2fcd07dad22ea57b3a358e6e0ec10bf98e860ad5b1cedb4f4e01088fc806",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p06.jpg",
+        "sha256": "a0dcaeb13cacb751ac45c0f5e879b09e26acd40e4a13e040eac4cbf8c73f950d",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p04.jpg",
+        "sha256": "24334ca06032d445f2eded324a137647924d360a8e89715fcb39f6e6bbd66cd5",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p07.jpg",
+        "sha256": "f325e3ae8b55e3ec276e02d1f6519365bfaf7aa54dfe7d3980b795316fd5e198",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p05.jpg",
+        "sha256": "5fe2dbfb10d7c7bd15fd25d78ffe110ea7f0c846bc67557570ef2a91f70d19a3",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/power-management/p08.jpg",
+        "sha256": "f9ff7f38ecf670b9608bc35c98b92624a3c7e9abff3f2bc1bb33d7313f8f3f20",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p06.jpg",
+        "sha256": "7c929b173d3b7d0aa07d8a16b26a58f60f538a466337856af57ac1f979c3c4fc",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p03.jpg",
+        "sha256": "c0313141aabe63ecb8ba14423f6890847bde917f2fca4e262a35ca3c97c6b644",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p07.jpg",
+        "sha256": "9dc04e04d5a95281b556f18be2f7e6fc0b5bcfcecc846fd6231c640c13dbc8a0",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p08.jpg",
+        "sha256": "a37723cdf635e5d6b066d24fdf1a2f58dc7e8246ee22389e43c4568c1a82b3b4",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p09.jpg",
+        "sha256": "e297d67cf8af4417024d54c4b457b90b41c4f371467a5f0e6c11cafa34639c63",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p04.jpg",
+        "sha256": "4c3a0ade59d87215f699c3f8b20be3b229ed4eb18dc29b94b4e09858c06cc325",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p10.jpg",
+        "sha256": "678111755d3bc189745778380ff441e8c54620d27b9a8be6f4072adec2043b9f",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p11.jpg",
+        "sha256": "c02b495178bcff10bfdc4bf281377078da5bdbc3aa2423be30a59016ba6b7fbc",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p12.jpg",
+        "sha256": "4a080ea36766d91fa33b2a31a0d27c802b7d781f3a7c2839de791acb2ebb8ed2",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p05.jpg",
+        "sha256": "189f22c35c3cafa542bceeff3187d2dd4619d520d30e42ede49e55b7c2391e07",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p06.jpg",
+        "sha256": "1e48fb996f726e7314e35d94c4c74583fb4c06dbc4e8a77ff9f157beefdf2f8a",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p13.jpg",
+        "sha256": "d1d9d7d3cfd83d121b8eb1b84f1fcbc062f4e2295fc8619c3c6de0da6d1bcaf7",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p07.jpg",
+        "sha256": "910768445a173978dad335927ef0b85f5f575e0810475df432220ff790bbcb53",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/machine-control/p08.jpg",
+        "sha256": "3d253a6ff3607f92e05e692bc9957ac4f8632d37d58a1480876d446e3818baeb",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p14.jpg",
+        "sha256": "0d76132a75d6fa8add476af10b42dfd014946d6d6a7177f19b6b10f7643fdf55",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p15.jpg",
+        "sha256": "cdb3adee9f75691be4d1a1c5a92dbade6d2915673934770e453f3d7db91cd016",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2025/answer/p16.jpg",
+        "sha256": "ddf268ec8663fc36c36658a0bff20517c17585ee9a31432f6f1f095ba675722d",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p03.jpg",
+        "sha256": "899de012cc223066601080a249abf24effa2202edcf0b008bf015c32b44e1741",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p04.jpg",
+        "sha256": "3e523f817535e0d48ca74a65ed19aa2e19337e29857a3aa740bc167e27d65e22",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p01.jpg",
+        "sha256": "df3a50c2027c0a8bdde02a2274be0f6316a38130a9d5c7a5e88d92c9df98bef7",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p02.jpg",
+        "sha256": "3682a2791f6bd3caf0531d44be21212c2b5a7d4bd88db4ae621936a2d68f26cd",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p05.jpg",
+        "sha256": "a40beb7ed38c33e27daacd6f9b94c6c98554eabf6ab15d1c295c320eb3d865f8",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p03.jpg",
+        "sha256": "b56ae7a39c1d99ddbbc026a53780dff64a8f982a542c0ee690c9d8bf97be16b0",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p04.jpg",
+        "sha256": "d9dadafc98a55ac0bab5acab6ee5a78ca0a7c5d108240da478b95bc180f63680",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p06.jpg",
+        "sha256": "c7b454f528b962608b524847565b8797549b024aad95378c57c6dbc7ebf8852a",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p05.jpg",
+        "sha256": "4cc41297a712f4ab287912839e87e9e0e593c617c5a3d587a2bbef08d979bc7f",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p06.jpg",
+        "sha256": "9529b75cf297673fa69e91ac29992654b66da6ca3a6bb4e024487edb1f6617c5",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p07.jpg",
+        "sha256": "b7560acc448e8612badcc31d37a3e2da914881a0475ed659b1ec37c9f8ab43f4",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p07.jpg",
+        "sha256": "da1c8454e4ee2ce1eb447865ba0479a2a6423077de0366af894974efdcd0d969",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p08.jpg",
+        "sha256": "d6fdf86c2e2c10676ac7f4c40efc5d6a6c116a5bef3a59f6e06bb4f05772acbd",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p08.jpg",
+        "sha256": "b7a577886d6ff6a5c621d0dfeadf03ad9e1195132c92fad172a8d71713472b24",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p09.jpg",
+        "sha256": "77084aa2cf025729fbb3a49712508de980d317ab1317ff9bb975ba9233cd71e5",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p09.jpg",
+        "sha256": "f85e2702740259ea883b3a7a9f7cb1d3a0852c8fdceeaf4457ccf5f52934905b",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/power-management/p10.jpg",
+        "sha256": "06b71a93dc884de8ce5b3f72687c17e3377d3c4a798919e5b341c706a9f8d584",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p10.jpg",
+        "sha256": "c69654f1d3ca42a1bf054b5dbb79a5ddc8d0d3edfdd6b2b2dd455b5c45639cba",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p03.jpg",
+        "sha256": "9e3f33b1840b7fcd3027aaa424b00e92c1a1804389cbafc4e52a7040bee3d119",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p11.jpg",
+        "sha256": "aaa6414f26ffa194fb139ca88528ab9bea5c763bb7b2672c534e1785bb3f0789",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p12.jpg",
+        "sha256": "17e5e70aa726d158804199311978eb0b8224f6919d5c7b9c10a03bf95b6f2898",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p04.jpg",
+        "sha256": "b0c64ce5124c39cf39c074fca46f57e14e8eed1bec1320a848c349c244ee5759",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p13.jpg",
+        "sha256": "11ca0342a0360408fddfc4f076be86b7ff08bfabd2c949283c244c34883f435b",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p14.jpg",
+        "sha256": "7592d75f10297e942f56d5a5ea198cc2f407ec34933288153befb97202ef98ce",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p05.jpg",
+        "sha256": "2add724f198d3693d75a577937092215dcb335ee8fa3b6e9548de746864d0224",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p06.jpg",
+        "sha256": "92523a9bcfcf5bf12c367c407dc7964d9575cea231666316247f3b88136b59e6",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p15.jpg",
+        "sha256": "84d912f8de8f631939afb74e15ca72feb1bad9e2ee3d7b22c6f29e6b20284fd1",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p16.jpg",
+        "sha256": "a826be707f14955228240d57a7c4bebf0f7096f30f958c13a13356dc11b2403c",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p07.jpg",
+        "sha256": "bda124160c2da1ef8052b6a143f6958f9878c8d00a61520ccae6d9abd293263b",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/machine-control/p08.jpg",
+        "sha256": "c2383c001b43b326be87b5f8eb83aa607d38d14d7d6a293f99463e8eaa047772",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p17.jpg",
+        "sha256": "e9a0e4eb283fa325a7eea86b0503c84df75c1ff98a5806634ee36337a7363394",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      },
+      {
+        "url": "/images/denken1/secondary/2024/answer/p18.jpg",
+        "sha256": "83237b4387aa4c52764710e29891d402ee6ce29ccaacfac57569d695aceedbeb",
+        "width": 852,
+        "height": 1203,
+        "matches": true
+      }
+    ],
+    "receipts": [
+      {
+        "scope": "2025-power-management",
+        "requestedModel": "claude-opus-5-5",
+        "actualInitModel": "claude-opus-5-5",
+        "modelUsageKeys": [
+          "claude-opus-5-5"
+        ],
+        "apiProvider": "firstParty",
+        "exitCode": 0,
+        "isError": false,
+        "terminalReason": "completed"
+      },
+      {
+        "scope": "2025-machine-control",
+        "requestedModel": "claude-opus-5-5",
+        "actualInitModel": "claude-opus-5-5",
+        "modelUsageKeys": [
+          "claude-opus-5-5"
+        ],
+        "apiProvider": "firstParty",
+        "exitCode": 0,
+        "isError": false,
+        "terminalReason": "completed"
+      },
+      {
+        "scope": "2024-power-management",
+        "requestedModel": "claude-opus-5-5",
+        "actualInitModel": "claude-opus-5-5",
+        "modelUsageKeys": [
+          "claude-opus-5-5"
+        ],
+        "apiProvider": "firstParty",
+        "exitCode": 0,
+        "isError": false,
+        "terminalReason": "completed"
+      },
+      {
+        "scope": "2024-machine-control",
+        "requestedModel": "claude-opus-5-5",
+        "actualInitModel": "claude-opus-5-5",
+        "modelUsageKeys": [
+          "claude-opus-5-5"
+        ],
+        "apiProvider": "firstParty",
+        "exitCode": 0,
+        "isError": false,
+        "terminalReason": "completed"
+      }
+    ],
+    "dataSha256": "62e9ac700fb66aee2584af56110701d4230b3fe1c369fd77502c78b6d484f01e"
+  },
+  "localContentChecks": [
+    {
+      "scope": "2024 machine-control Q1",
+      "physicalPages": {
+        "question": [
+          3
+        ],
+        "answer": [
+          11,
+          12
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "calculation": {
+        "Ia": 0.5,
+        "Ea": 1.788854381999832,
+        "sinDelta": 0.4472135954999579,
+        "deltaDegrees": 26.56505117707799,
+        "thetaADegrees": 36.86989764584401,
+        "Eb": 1.341640786499874,
+        "Ib": 0.421637021355784,
+        "thetaBDegrees": 18.43494882292202,
+        "cosThetaB": 0.9486832980505138,
+        "Qb": 0.13333333333333344,
+        "XaIa": 1,
+        "XbIb": 0.632455532033676
+      },
+      "notes": "Both currents lag V; Ea and Eb lead V by the same positive delta. The current/reactance voltage vectors and approximate lengths agree with the source. Added numerical angles follow the numerical operating conditions in subsequent subparts; the basic subpart (1) drawing remains qualitative."
+    },
+    {
+      "scope": "2024 machine-control Q3",
+      "physicalPages": {
+        "question": [
+          5,
+          6
+        ],
+        "answer": [
+          15,
+          16
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "checks": [
+        "Subpart (1) uses symbolic alpha and beta and the boundary order of the actual Fig. 2.",
+        "vAO plateaus +100,0,-100,0; vBO is delayed by pi+beta.",
+        "vAB plateau sequence +100,+200,+100,0,-100,-200,-100,0 matches the source."
+      ],
+      "calculations": {
+        "legRmsHarmonics1_3_5": [
+          77.96968012336761,
+          1.8376158246698937e-15,
+          15.593936024673525
+        ],
+        "lineFundamentalRms": 148.30714470955496,
+        "lineThirdRms": 0,
+        "lineFifthRms": 0
+      },
+      "notes": "Rounded 78.0/0/15.6 V and 148/0/0 V agree; near-zero floating-point third harmonic is mathematically zero."
+    },
+    {
+      "scope": "2025 machine-control Q4",
+      "physicalPages": {
+        "question": [
+          7,
+          8
+        ],
+        "answer": [
+          14,
+          15,
+          16
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "checks": [
+        "Problem p.7 explicitly requires cancellation of common polynomial factors.",
+        "Denominator (s+1)(s+2)(s+3) gives numerator 14(s+1),14(s+2),14(s+3) at f=4,11,18.",
+        "Reduced denominators are s^2+5s+6, s^2+4s+3, s^2+3s+2 respectively.",
+        "T2=1/(s^2+5s+6); combined unit-step final value (2f+7)/6=1 gives f=-0.5."
+      ],
+      "gainAtOmega1": 0.1414213562373095,
+      "notes": "0.141 uses the question-specified sqrt(2)=1.41. Calling the internal closed-loop poles -1,-2,-3 is compatible with the described realization; reduced transfer functions are explicitly given."
+    },
+    {
+      "scope": "2024 power-management Q3",
+      "physicalPages": {
+        "question": [
+          6
+        ],
+        "answer": [
+          5,
+          6
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "checks": [
+        "S=sqrt(3)VI and Q=2*pi*f*C*V^2*L use the stated line voltage.",
+        "P=sqrt(S^2-Q^2); intercepts and ellipse shape agree with the official p.6 plot.",
+        "No unsupported 45 km intersection value remains."
+      ],
+      "calculations": [
+        {
+          "voltageV": 66000,
+          "S_MVA": 80.02074730968214,
+          "QperKm_Mvar": 0.4103352,
+          "criticalKm": 195.01311929778907
+        },
+        {
+          "voltageV": 275000,
+          "S_MVA": 333.4197804570088,
+          "QperKm_Mvar": 7.123875,
+          "criticalKm": 46.80314863146936
+        }
+      ]
+    },
+    {
+      "scope": "2024 power-management Q2",
+      "physicalPages": {
+        "question": [
+          5
+        ],
+        "answer": [
+          3,
+          4
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "checks": [
+        "Six circuits connect via two bus-select disconnectors and a breaker; one bus tie has disconnector-breaker-disconnector.",
+        "Description matches actual source symbols and transformer-side omission.",
+        "No assignment of upper/lower bus to Ko/Otsu is made.",
+        "Three of the four considerations is explicitly permitted by official standard answer p.3.",
+        "Protection input and selective trip description stays within the source example."
+      ]
+    },
+    {
+      "scope": "2024 power-management Q5",
+      "physicalPages": {
+        "question": [
+          8
+        ],
+        "answer": [
+          9
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass",
+      "checks": [
+        "Voltage rise due to reverse flow and installer/operator countermeasures follow the actual official answer.",
+        "No unsupported guarantee that other answers will receive marks.",
+        "PCS leading power-factor convention is described as reactive-power absorption, consistent with the voltage suppression example."
+      ]
+    },
+    {
+      "scope": "2025 power-management Q4",
+      "physicalPages": {
+        "question": [
+          6
+        ],
+        "answer": [
+          4
+        ]
+      },
+      "viewedActualJpg": true,
+      "verdict": "pass-with-terminology-note",
+      "checks": [
+        "Reflected-current arrow points upward; incident current enters A downward, ground-wire currents leave in both directions and tower current leaves downward.",
+        "e0+e0prime=eg=et and i0-i0prime=2ig+it match the source.",
+        "Eliminating e0prime gives et=2ZgZt*e0/(ZgZt+2Z0Zt+Z0Zg)."
+      ],
+      "calculationKiloVolt": 909.0909090909091
+    }
+  ],
+  "uiReview": {
+    "method": "Static code inspection plus inspection of existing targeted test assertions; no browser runtime or new test run claimed.",
+    "files": [
+      "lib/denken1/secondary.ts",
+      "components/denken1/SecondaryReader.tsx",
+      "app/denken1/secondary/page.tsx",
+      "app/denken1/secondary/[year]/[subject]/[number]/page.tsx",
+      "app/denken1/page.tsx",
+      "lib/seo/sitemap-xml.ts",
+      "lib/storage/keys.ts",
+      "__tests__/denken1-secondary-originals.test.tsx"
+    ],
+    "checks": [
+      "Zod schema enforces 20 distinct originals and per-sitting coverage and canonical source-page bindings.",
+      "Hub separates primary original count and secondary 20; no primary source data changed.",
+      "20 static detail routes plus index are included by the exams sitemap integration.",
+      "Mobile image region has horizontal overflow, keyboard focus and full-image/official-PDF links.",
+      "Draft keys include the immutable original ID and storage uses browser localStorage only.",
+      "Inputs remain disabled until local draft hydration; save failure has an alert.",
+      "Answers start closed, reveal state is bound to ID and route renders reader with key=q.id.",
+      "Question navigation remains within year/subject; no prior draft/answer is exposed on the next question.",
+      "Self-review status is explicit; no AI scoring or new API is introduced."
+    ],
+    "blockingFindings": []
+  },
+  "boundaries": [
+    "Only the seven assigned local content scopes were reviewed; this is not a second full high-model review of all 20 originals.",
+    "All 20 originals received mechanical manifest/hash/coverage checks only outside the named scopes.",
+    "22 source/answer JPEG pages were actually viewed for the named local scopes.",
+    "No private author raw/request files were read or copied; sanitized public author receipts were checked only.",
+    "No full build, full tests, extra heavy process or browser server was started. Targeted test PASS was reported by parent and not independently rerun.",
+    "Parent must retain its separate typecheck/lint/build/release gates; this report does not claim they passed.",
+    "No source/data edits, commit, push, merge or deployment were performed.",
+    "media:plan succeeded; initial media:status failed with spawnSync git EPERM. This operational command failure is not a content finding."
+  ]
+}

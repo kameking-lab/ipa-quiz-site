@@ -8,11 +8,12 @@ for (const { name, session, number, blanks = 5 } of [
 ]) {
   test(`denken1 ${name} card opens its ${blanks} selected blanks`, async ({ page }) => {
     await page.goto("/denken1");
-    await expect(page.getByRole("heading", { name: "電験一種 一次試験の過去問" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "電験一種の過去問" })).toBeVisible();
     await expect(page.getByText("2025・2026年度の理論・電力・機械36原問・204回答欄", { exact: false })).toBeVisible();
     await expect(page.getByText("掲載する固有の原問は計39件", { exact: false })).toBeVisible();
     await expect(page.getByRole("heading", { name: "2025・2026年度の原問を年・科目から選ぶ" })).toBeVisible();
-    await expect(page.getByText("両年度の全問と二次試験は未収録", { exact: false })).toBeVisible();
+    await expect(page.getByText("一次試験の全問は未収録", { exact: false })).toBeVisible();
+    await expect(page.getByRole("link", { name: "二次試験の年度・科目一覧へ" })).toBeVisible();
     await page.getByRole("link", { name: new RegExp(`${name}.*令和8年度・${blanks}空欄`) }).click();
     await expect(page).toHaveURL(new RegExp(`/quiz\\?[^#]*exam=denken1[^#]*session=${session}`), { timeout: 15_000 });
     await expect(page.getByText(`問${number}(1)`, { exact: false }).first()).toBeVisible({ timeout: 15_000 });
@@ -36,7 +37,7 @@ test("denken1 theory question keeps official iroha choice labels", async ({ page
 test("denken1 unsupported subject stays redirected to the exam index", async ({ page }) => {
   await page.goto("/quiz?mode=year&exam=denken1&year=2026&season=primary&session=am&order=1");
   await expect(page).toHaveURL(/\/denken1$/);
-  await expect(page.getByRole("heading", { name: "電験一種 一次試験の過去問" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "電験一種の過去問" })).toBeVisible();
 });
 
 test("denken1 theory question 3 shows the two official figures and original options", async ({ page }) => {
