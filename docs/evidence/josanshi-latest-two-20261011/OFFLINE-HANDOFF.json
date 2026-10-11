@@ -1,6 +1,6 @@
 {
   "qualification": "josanshi",
-  "status": "EXECUTOR_OFFLINE_NOT_RELEASE_READY",
+  "status": "COMPLETED_NATIVE_CONTENT_IN_DRAFT_PR",
   "createdUtc": "2026-10-11 01:13:08 UTC",
   "worktree": "C:/wt/kakomon-josanshi-latest-two-20261011",
   "branch": "codex/josanshi-latest-two-20261011",
@@ -15,7 +15,7 @@
   "officiallyExcluded": 1,
   "baselinePublished": 18,
   "plannedAdditions": 201,
-  "lastConfirmedLocalReady": 213,
+  "lastConfirmedLocalReady": 219,
   "localSaved": [
     "108-am-authored.json",
     "108-pm-authored.json",
@@ -29,15 +29,55 @@
     "josanshi-latest-two.test.tsx"
   ],
   "validation": {
-    "typecheck": "PASS after native integration",
-    "schema": "213 validated, fail=0, warn=133 (summary length warnings; all-choice explanations present)",
-    "baselineTests": "2 files / 10 tests passed before additions",
-    "lint": "started; result unavailable after host disconnected",
-    "finalTests": "NOT RUN",
-    "build": "NOT RUN",
-    "finalPayload": "NOT COMMITTED OR PUSHED"
+    "fullTest": {
+      "command": "pnpm run test --maxWorkers=2 --testTimeout=60000",
+      "exit": 0,
+      "filesPassed": 516,
+      "testsPassed": 4771,
+      "testsSkipped": 0
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exit": 0
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "exit": 0,
+      "existingWarnings": 1,
+      "note": "Existing unused base variable in reports/civil2-2026-completion-20260926/parse-fenced-results.mjs; unchanged by this branch."
+    },
+    "build": {
+      "command": "pnpm run build --webpack",
+      "exit": 0,
+      "note": "Webpack supports the existing external node_modules junction used for this isolated worktree."
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=josanshi",
+      "exit": 0,
+      "accepted": 219,
+      "errors": 0,
+      "warnings": 133,
+      "note": "Short general-summary warnings; complete per-choice explanations are present for all 219 scored rows."
+    },
+    "targetedBeforeMainMerge": {
+      "filesPassed": 5,
+      "testsPassed": 39
+    },
+    "sourceAudit": {
+      "officialKeyMismatches": 0,
+      "selectionCountMismatches": 0,
+      "uniqueOriginalIdentities": 220,
+      "completeChoiceReasonSets": 219
+    },
+    "independentContentReview": {
+      "verdict": "CONTENT_REVIEW_GO_EXACT_SCOPE_ONLY",
+      "questions": 34,
+      "figures": 12,
+      "blockingFindings": [],
+      "reportSha256": "7b360cdf9896c766e2ef98d036f2ae1a946b4ffb00e09bd2ae8054639f4ca79a"
+    }
   },
-  "blocker": "Windows host returned exec-server transport disconnected / 409 environment_offline. Local reads, writes, shell and app messaging cannot resume. This is a connection failure, not unresolved official answers.",
+  "blocker": null,
   "stage1": {
     "verdict": "CONTENT_REVIEW_GO_EXACT_SCOPE_ONLY",
     "reviewer": "independent Astra /root/josanshi_independent_review",
@@ -158,5 +198,26 @@
   "merged": false,
   "deployed": false,
   "mergeDeploymentOwner": "01a12330-b245-70ed-a108-0998b50830be",
-  "rights": "Attribution and cropping/rotation only. No statement of reuse permission obtained; owner handles publication rights."
+  "rights": "Attribution and cropping/rotation only. No statement of reuse permission obtained; owner handles publication rights.",
+  "originalStatus": "EXECUTOR_OFFLINE_NOT_RELEASE_READY",
+  "resolvedUtc": "2026-10-11T01:56:25.605800+00:00",
+  "historicalOfflineValidation": {
+    "typecheck": "PASS after native integration",
+    "schema": "213 validated, fail=0, warn=133 (summary length warnings; all-choice explanations present)",
+    "baselineTests": "2 files / 10 tests passed before additions",
+    "lint": "started; result unavailable after host disconnected",
+    "finalTests": "NOT RUN",
+    "build": "NOT RUN",
+    "finalPayload": "NOT COMMITTED OR PUSHED"
+  },
+  "historicalBlocker": "Windows host returned exec-server transport disconnected / 409 environment_offline. Local reads, writes, shell and app messaging cannot resume. This is a connection failure, not unresolved official answers.",
+  "finalState": {
+    "scoredQuestions": 219,
+    "additions": 201,
+    "remainingContentHolds": 0,
+    "officiallyExcludedWithoutAnswer": 1,
+    "validationFile": "VALIDATION.json",
+    "reviewFile": "REVIEW-ASTRA-FINAL.json",
+    "pr": "https://github.com/kameking-lab/ipa-quiz-site/pull/705"
+  }
 }
