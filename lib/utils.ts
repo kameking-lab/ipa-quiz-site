@@ -50,6 +50,7 @@ export const EXAM_LABELS: Record<string, string> = {
   sharoushi: "社会保険労務士",
   "chusho-kigyo-shindanshi": "中小企業診断士",
   kangoshi: "看護師",
+  biyoshi: "美容師",
   yakuzaishi: "薬剤師",
   "rigaku-ryohoshi": "理学療法士",
   hokenshi: "保健師",

@@ -1,0 +1,945 @@
+{
+  "baseCommit": "6f23f477a343d01828e4294c69bfc82ac03d047c",
+  "inputSha256": "e6266ce8ce2ff2dd2fad1cb4e9f3e75232fce087ce748dfe13f4a815fd383486",
+  "sourceManifestSha256": "4c61f16041e717d150420c2445f2384c3640fe142134f1a6527a6b0fc8928f63",
+  "appliedOriginals": 10,
+  "edits": 37,
+  "articleCitationChecks": 56,
+  "originalStemChoiceAndKeyChanges": 0,
+  "newModelCalls": 0,
+  "httpRequests": 0,
+  "publishedIncrement": 0,
+  "sourceFidelityAcceptanceIsSeparate": true,
+  "remainingKnownHoldOriginals": 23,
+  "changes": [
+    {
+      "identity": "biyoshi-54-q4",
+      "questionId": "biyoshi-2026-second-gakka-q4",
+      "status": "LOCAL_LEGAL_FLAGS_RESOLVED",
+      "publication": false,
+      "sourceResultSha256": "a4c0877084b9ebda914a70ec3af52449a5eb4f2e34da6442089f991abe010a65",
+      "receiptSha256": "bfaf6543dc9ff1a32f805b6e38f0e2ee2b2a458a2785dcfd941e2fbc9aafa3b2",
+      "beforeObjectSha256": "fabca7f83a7e3ef541c890d038292c10d52b1fb1c6b5cc424d9db81c22914d39",
+      "afterObjectSha256": "fddfc21fc95fe1ff8f6a6b012f4133d528877ceed6ec65f23091afaa816a415b",
+      "edits": [
+        {
+          "field": "explanation",
+          "before": "(4)の範囲は、現行の届出様式で確認が必要です。",
+          "after": "(4)については、施行規則第19条第1項第5号が「その他の従業者の氏名」を届出事項として掲げています。一方、美容師の本籍地都道府県名は同項各号のいずれにも掲げられていません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "ae51135e303e2f28fa55a8a32f86afa35b704a2917d14d599ed64d5c83beb48d",
+          "afterFieldSha256": "2e317deecc2dce59aa2e2c4f0d2e0504c80dab68d077fc3584e62bee9bd5beee"
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "公式正答に含まれていないため、該当するものとして扱います。様式の詳細は確認が必要です。",
+          "after": "施行規則第19条第1項第5号に「その他の従業者の氏名」とあり、美容師以外の従業者の氏名も届出事項に該当します。",
+          "singleBefore": true,
+          "beforeFieldSha256": "4a816d98c286c19927a13065bdcfe6ccfba70953c49e0322092767daf0811679",
+          "afterFieldSha256": "9d75dce0ead6f5352e9047d930a2c7606e8b62c227ae39c388fe37707d923e83"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-09-06"
+      ],
+      "needsReviewBefore": true,
+      "needsReviewAfter": false,
+      "scopeOutsideNotes": [
+        "届出書の様式そのものは、設問の判断には不要なため対象外とした。"
+      ]
+    },
+    {
+      "identity": "biyoshi-54-q6",
+      "questionId": "biyoshi-2026-second-gakka-q6",
+      "status": "LOCAL_LEGAL_FLAGS_RESOLVED",
+      "publication": false,
+      "sourceResultSha256": "a4c0877084b9ebda914a70ec3af52449a5eb4f2e34da6442089f991abe010a65",
+      "receiptSha256": "bfaf6543dc9ff1a32f805b6e38f0e2ee2b2a458a2785dcfd941e2fbc9aafa3b2",
+      "beforeObjectSha256": "5a0fca0bb928efbcb034b082de242828581852c445c4d7fc96731e5296305722",
+      "afterObjectSha256": "ab146be396bfbd09ea5815ddb7b6bea5193dd5f9af84e9fe518342cef714e967",
+      "edits": [
+        {
+          "field": "explanation",
+          "before": "美容師試験の施行に関する事項は、国の法令側で定められる事項で、都道府県等の条例の委任事項とは扱われません。",
+          "after": "美容師試験の施行に関する事項は、提示された条例委任規定(美容師法第8条第3号・第13条第4号、施行令第4条第3号)のいずれにも当たりません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "a6bb23566037519f33748e21e70c683ee0a023249111098e98200634f29dbeec",
+          "afterFieldSha256": "7b40d6f5610b375606f84c5156e94d889407c261b04e6ed56cd3d54f706a964d"
+        },
+        {
+          "field": "choiceExplanations.1",
+          "before": "試験の施行は国の法令側の事項です。",
+          "after": "試験の施行は、条例に委任する規定(法第8条第3号、第13条第4号、施行令第4条第3号)の対象に当たりません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "7be24b14e7356fdddaca89265207a1c77b114e3045da0ab1e74d319096eebc9b",
+          "afterFieldSha256": "edcc9fc0ac4e26d147b0ecaff0b76ec90663f8d9941cec0dbe0919b0fb55b451"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-09-06",
+        "https://laws.e-gov.go.jp/api/2/law_data/332CO0000000277?asof=2026-09-06"
+      ],
+      "needsReviewBefore": true,
+      "needsReviewAfter": false,
+      "scopeOutsideNotes": [
+        "試験事務を定める条文(第4条の各条など)は供給資料にありません。そのため、「国の法令側で定められる」という積極的な記述は削除し、条例委任規定に当たらないという記述だけにしました。",
+        "(2)(3)(4)の対応は、施行令第4条第3号(出張美容)、法第8条第3号(美容師の衛生措置)、法第13条第4号(美容所の衛生措置)です。"
+      ]
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "questionId": "biyoshi-2026-first-gakka-q1",
+      "status": "LOCAL_LEGAL_FLAGS_RESOLVED",
+      "publication": false,
+      "sourceResultSha256": "532651c7b754c11dd4f0049aa64ee904838d12cf223260a15c85d64de7b4b7eb",
+      "receiptSha256": "e601c0d6e2effe71a16dcb089ce0f90a177923aba982e68bb745ccb98e5db9af",
+      "beforeObjectSha256": "ba3ce8e5086c0b99bed7a42fafd5c4bec1fb6da3be0a6d0f7292a7316e2ec869",
+      "afterObjectSha256": "44d0282bb80f30993d65352c168c7fba61ac0123d41e0e8e87866365d1155035",
+      "edits": [
+        {
+          "field": "explanation",
+          "before": "所長は原則として医師から任命されます(bは正しい)。",
+          "after": "保健所の所長は、地域保健法施行令第4条第1項により、原則として医師でなければなりません(同条第2項に、医師を充てることが著しく困難な場合の期間限定の例外があります)。したがってbは正しいです。",
+          "singleBefore": true,
+          "beforeFieldSha256": "48a1ddd8defc7533aa6cdef5e08f78480304f10790ce4c58370aeffa836bb1f8",
+          "afterFieldSha256": "369c7be0d69d55379718755132ee81690fe63b00928626f7c099cc5a033b5f55"
+        },
+        {
+          "field": "explanation",
+          "before": "環境衛生に関する事項は地域保健法に基づく保健所の業務です(cは正しい)。",
+          "after": "地域保健法第6条第4号は、住宅、水道、下水道、廃棄物の処理、清掃その他の環境の衛生に関する事項を保健所の企画、調整、指導等の対象としています(cは正しい)。",
+          "singleBefore": true,
+          "beforeFieldSha256": "369c7be0d69d55379718755132ee81690fe63b00928626f7c099cc5a033b5f55",
+          "afterFieldSha256": "d8aa9b49ea100941da77be9aeaf5577f85e8d9e7fa789708e6d863e21a017674"
+        },
+        {
+          "field": "explanation",
+          "before": "介護老人保健施設の許可は介護保険法に基づくもので、地域保健法に基づく保健所の業務としては適切ではありません(dは誤り)。",
+          "after": "介護老人保健施設の開設許可は、介護保険法第94条第1項により都道府県知事が行うものです。地域保健法第6条に列挙された保健所の事項にも含まれないため、dは誤りです。",
+          "singleBefore": true,
+          "beforeFieldSha256": "d8aa9b49ea100941da77be9aeaf5577f85e8d9e7fa789708e6d863e21a017674",
+          "afterFieldSha256": "9b81518d02bb013726e96625929e5c2449c8dbb202e6e51fa3a5832e2e52087f"
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "所長は原則として医師が任命されます。",
+          "after": "所長は、地域保健法施行令第4条第1項により、原則として医師でなければなりません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "ece039846ff13c47762300b450208fd707859fa6abe554e9045cfec185459007",
+          "afterFieldSha256": "320aa4913fa7044f0b05dd426456168f94a91fdcd54b3b13002cfef3284390c1"
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "介護老人保健施設の許可は介護保険法に基づく事務であり、地域保健法に基づく保健所の業務とする記述は適切ではありません。",
+          "after": "介護老人保健施設の開設許可は介護保険法第94条第1項に基づき都道府県知事が行う事務であり、地域保健法第6条の保健所の事項にも含まれないため、dは誤りです。",
+          "singleBefore": true,
+          "beforeFieldSha256": "bffdbbb46ec82436db6dd66094f17a437e38e80f9ca290b06f69aeb7f51166c5",
+          "afterFieldSha256": "6f0175134ad754d02dd807ce7d6f23f07a3c6ba1169a25ddab2c21a1c6dc26a3"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+        "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+        "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123?asof=2026-03-01"
+      ],
+      "needsReviewBefore": true,
+      "needsReviewAfter": false,
+      "scopeOutsideNotes": []
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "questionId": "biyoshi-2026-first-gakka-q3",
+      "status": "LOCAL_LEGAL_FLAGS_RESOLVED",
+      "publication": false,
+      "sourceResultSha256": "532651c7b754c11dd4f0049aa64ee904838d12cf223260a15c85d64de7b4b7eb",
+      "receiptSha256": "e601c0d6e2effe71a16dcb089ce0f90a177923aba982e68bb745ccb98e5db9af",
+      "beforeObjectSha256": "f44c3d0e7a488a26dfb34975bf04621fefbfc2a5baa383eafb6e2a7afa20b113",
+      "afterObjectSha256": "b0f1a6f8bd9223897ba1b41cf5d7bee72d19996d6e27d50e302f35a75f37a79c",
+      "edits": [
+        {
+          "field": "explanation",
+          "before": "管理美容師は、美容師が常時2人以上従事する美容所で、衛生管理を担当させるために置くものです。経営管理のためではありません。",
+          "after": "美容師法第12条の3第1項により、美容師である従業者の数が常時2人以上である美容所の開設者は、美容所を衛生的に管理させるため、管理美容師を置かなければなりません。経営管理のためではありません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "36fd72260434c6cc48a0d22a5d8203050011ee8b007b22a1307f5d4f720500ac",
+          "afterFieldSha256": "bd34804a49b062e77360fff671487c1309a67593a0fbd3e8bc6ba3e220ea82e1"
+        },
+        {
+          "field": "explanation",
+          "before": "置くべき美容所に置かなかった場合は、行政処分として美容所の閉鎖命令を受けることがあります。",
+          "after": "置くべき美容所に置かなかった場合は、美容師法第15条第1項(第12条の3違反)により、都道府県知事から期間を定めて美容所の閉鎖を命じられることがあります。",
+          "singleBefore": true,
+          "beforeFieldSha256": "bd34804a49b062e77360fff671487c1309a67593a0fbd3e8bc6ba3e220ea82e1",
+          "afterFieldSha256": "7fba2abedb26f79592ced87ea7c2d6b43676b1696e78297afc08cfac899b9731"
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "管理美容師の資格認定講習会の修了は、美容師名簿の登録事項には含まれていないと考えられます。ただし、この点は提供資料外の知識です。",
+          "after": "美容師法施行規則第2条が掲げる名簿の登録事項(登録番号、本籍地都道府県名、氏名、試験合格の年月、処分、再免許、書換え交付・再交付、登録消除など)に、管理美容師の講習会修了年月日は含まれていません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "018b3a4f2575da2aace63eecfd151b0c5411a0932099d4a1b8f3302ab3116f97",
+          "afterFieldSha256": "1d26a30e4a40830bd1503fc06e61eec0046abc048d37738da6ac801ddf1734db"
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "管理美容師の設置が必要となるのは、美容師が「常時」2人以上従事する美容所です。",
+          "after": "美容師法第12条の3第1項により、管理美容師の設置が必要となるのは、美容師である従業者の数が「常時」2人以上である美容所です。",
+          "singleBefore": true,
+          "beforeFieldSha256": "261e6c9e701c34938ee8c0e924513ffcd1b519e2dade7c260c051f1702cd21cb",
+          "afterFieldSha256": "2e4bd4985c5db25f60a41ec2fe275d7e074b9dba126653b711aeca17a9c8227d"
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "管理美容師を置かなければならない美容所に置かなかった場合は、行政処分として美容所の閉鎖命令を受けることがあります。",
+          "after": "管理美容師を置かなければならない美容所に置かなかった場合は、美容師法第15条第1項により、都道府県知事から期間を定めて美容所の閉鎖を命じられることがあります。",
+          "singleBefore": true,
+          "beforeFieldSha256": "17c7a93978791f04404956fa3fdc4a2e49ae2047440828b7550c71dcef78ee27",
+          "afterFieldSha256": "d83377a6ce928bf3f6be11390702e446c85bb5ae7e49d786da7bf4fcb2ba3e8f"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+        "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01"
+      ],
+      "needsReviewBefore": true,
+      "needsReviewAfter": false,
+      "scopeOutsideNotes": []
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "questionId": "biyoshi-2026-first-gakka-q4",
+      "status": "LOCAL_LEGAL_FLAGS_RESOLVED",
+      "publication": false,
+      "sourceResultSha256": "b3e73874af9f4924dd9af9693094c51f450b7cc591e62d7b8e274f8fac99c7e2",
+      "receiptSha256": "a0bd7aed78367d5cc767597abb8f4cfaaa9b16afae54b5b2deec15dde2df9505",
+      "beforeObjectSha256": "1f6329e4ca837c7563a3bd3e57442fe6f33450f45e6c5b06d457ac4a6218feb3",
+      "afterObjectSha256": "26fc06b00e9e676ca5d07881da660a2032b569f6b71f068c6219919604d448ca",
+      "edits": [
+        {
+          "field": "explanation",
+          "before": "届出事項の変更の届出を怠った場合は、罰則の対象になり得ます。従業美容師の雇入れや退職に30日以内の届出義務があるとする記述は適切ではありません。管理美容師の本籍地都道府県の変更も、美容所の変更届の対象とは考えにくいです。",
+          "after": "届出事項の変更の届出を怠った場合は、第11条の届出をしない者として30万円以下の罰金の対象となります(法第18条第2号)。変更の届出は、届出事項に変更を生じたとき「すみやかに」行うもので(法第11条第2項)、美容師の雇入れや退職について「30日以内」とする規定は提供条文にありません。管理美容師について届出事項とされているのは氏名及び住所で(施行規則第19条第1項第3号)、本籍地都道府県は含まれません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "877426e54b40beff8b216d91cf3af8b9c2a8ef36cdbf6b7da5d0078418f5e537",
+          "afterFieldSha256": "42d4f4e2de4dec67a09ced8abda6671c8b94442b135df8bd568c0c564dfb01ad"
+        },
+        {
+          "field": "choiceExplanations.2",
+          "before": "誤りです。届出事項の変更の届出を怠った場合には、罰則の対象となり得ます。「罰金刑の対象となることはない」とする断定が誤りです。",
+          "after": "誤りです。届出事項の変更の届出は法第11条第2項に基づくもので、これを怠った場合は第11条の規定による届出をしない者として30万円以下の罰金の対象となります(法第18条第2号)。「罰金刑の対象となることはない」とする断定が誤りです。",
+          "singleBefore": true,
+          "beforeFieldSha256": "7a76a5598e2eb747bec4b22b68d218cfa4cc1a4d515fd32769fe251c1ae8d31c",
+          "afterFieldSha256": "9d9c2178a84324034b6a06da1fc329b474c26e4c16d910f7d77f1fb2355f927b"
+        },
+        {
+          "field": "choiceExplanations.3",
+          "before": "誤りです。美容師の雇入れや退職ごとに30日以内の届出を求める規定は、通常の届出義務としては適切ではありません。",
+          "after": "誤りです。美容師の氏名及び登録番号は届出事項で(施行規則第19条第1項第5号)、その変更は法第11条第2項により「すみやかに」届け出るものです。「30日以内」とする規定は提供条文にありません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "3c9512ca8e356ccbb34b68d6af2472c429156cdaadf3081e9b000814adac30da",
+          "afterFieldSha256": "eed9d253377e2941fa78567617704216cf2025a09e46ecef8b98f9730af88acc"
+        },
+        {
+          "field": "choiceExplanations.4",
+          "before": "誤りです。管理美容師の本籍地都道府県が変わっても、美容所の変更届が必要とされる事項には当たらないと考えられます。名簿の訂正は、美容師個人が行う手続です。",
+          "after": "誤りです。変更の届出の対象は法第11条第1項の届出事項で、施行規則第19条第1項は管理美容師について氏名及び住所を挙げており、本籍地都道府県は含まれません。",
+          "singleBefore": true,
+          "beforeFieldSha256": "03d8d5ffa74627483f66e2b7cb77a03e764d48765b9806d28c776074ecb61d5c",
+          "afterFieldSha256": "1f43af2a740c359a6639235e8f28ac6153feefc0b52cb377e7918301f7472dde"
+        }
+      ],
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+        "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01"
+      ],
+      "needsReviewBefore": true,
+      "needsReviewAfter": false,
+      "scopeOutsideNotes": []
+    }
+  ],
+  "articleChecks": [
+    {
+      "identity": "biyoshi-54-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "五美容師の氏名及び登録番号並びにその他の従業者の氏名",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "次に掲げる事項を記載した届出書を当該美容所所在地の都道府県知事、保健所を設置する市の市長又は特別区の区長に提出することによって行うものとする。",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q4",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "五美容師の氏名及び登録番号並びにその他の従業者の氏名",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q6",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "8",
+      "quote": "三その他都道府県が条例で定める衛生上必要な措置",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q6",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "13",
+      "quote": "四その他都道府県が条例で定める衛生上必要な措置",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q6",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332CO0000000277?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "332CO0000000277_20260424_508CO0000000148",
+      "effective": "2026-04-24",
+      "article": "4",
+      "quote": "都道府県（地域保健法（昭和二十二年法律第百一号）第五条第一項の規定に基づく政令で定める市（以下「保健所を設置する市」という。）又は特別区にあつては、市又は特別区）が条例で定める場合",
+      "sourceSha256": "5340a338288a1fc9e06a16c7994410377d3a53e1b2324037161d0ac188f46339",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-54-q6",
+      "field": "choiceExplanations.1",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "13",
+      "quote": "四その他都道府県が条例で定める衛生上必要な措置",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "323CO0000000077_20240401_506CO0000000116",
+      "effective": "2024-04-01",
+      "article": "4",
+      "quote": "保健所の所長は、医師であつて、次の各号のいずれかに該当する",
+      "sourceSha256": "2657ce13ac630ec6b55b16f1da02f25b60914fa56e076919229e435fc265d6a5",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "323CO0000000077_20240401_506CO0000000116",
+      "effective": "2024-04-01",
+      "article": "4",
+      "quote": "二年以内の期間を限り",
+      "sourceSha256": "2657ce13ac630ec6b55b16f1da02f25b60914fa56e076919229e435fc265d6a5",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000101_20250401_505AC0000000047",
+      "effective": "2025-04-01",
+      "article": "6",
+      "quote": "住宅、水道、下水道、廃棄物の処理、清掃その他の環境の衛生に関する事項",
+      "sourceSha256": "af1675bf0aa9509e64e4adba2661428b7cd0df0628a24fae036a670074fd8aed",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "409AC0000000123_20251212_507AC0000000087",
+      "effective": "2025-12-12",
+      "article": "94",
+      "quote": "介護老人保健施設を開設しようとする者は、厚生労働省令で定めるところにより、都道府県知事の許可を受けなければならない。",
+      "sourceSha256": "c57c0d8e630e71dfb33c2a8dd39e3bc7319c99d6a522e4f5e88aa94733db5e67",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000101_20250401_505AC0000000047",
+      "effective": "2025-04-01",
+      "article": "6",
+      "quote": "保健所は、次に掲げる事項につき、企画、調整、指導及びこれらに必要な事業を行う。",
+      "sourceSha256": "af1675bf0aa9509e64e4adba2661428b7cd0df0628a24fae036a670074fd8aed",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "323CO0000000077_20240401_506CO0000000116",
+      "effective": "2024-04-01",
+      "article": "4",
+      "quote": "保健所の所長は、医師であつて、次の各号のいずれかに該当する",
+      "sourceSha256": "2657ce13ac630ec6b55b16f1da02f25b60914fa56e076919229e435fc265d6a5",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q1",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "409AC0000000123_20251212_507AC0000000087",
+      "effective": "2025-12-12",
+      "article": "94",
+      "quote": "都道府県知事の許可を受けなければならない。",
+      "sourceSha256": "c57c0d8e630e71dfb33c2a8dd39e3bc7319c99d6a522e4f5e88aa94733db5e67",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "12_3",
+      "quote": "美容師である従業者の数が常時二人以上である美容所の開設者は、当該美容所（当該美容所における美容の業務を含む。）を衛生的に管理させるため、美容所ごとに、管理者（以下「管理美容師」という。）を置かなければならない。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "都道府県知事は、美容所の開設者が、第十二条の三若しくは第十三条の規定に違反したとき",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "期間を定めて当該美容所の閉鎖を命ずることができる",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "2",
+      "quote": "美容師名簿（以下「名簿」という。）には、次に掲げる事項を登録する。",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "12_3",
+      "quote": "美容師である従業者の数が常時二人以上である美容所の開設者は",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q3",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "都道府県知事は、美容所の開設者が、第十二条の三若しくは第十三条の規定に違反したとき",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "18",
+      "quote": "次の各号のいずれかに該当する者は、三十万円以下の罰金に処する。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "18",
+      "quote": "二第十一条の規定による届出をせず、又は虚偽の届出をした者",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "美容所の開設者は、前項の規定による届出事項に変更を生じたとき、又はその美容所を廃止したときは、すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "三法第十二条の三第一項に規定する美容所にあっては、管理美容師の氏名及び住所",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "18",
+      "quote": "二第十一条の規定による届出をせず、又は虚偽の届出をした者",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "美容所の開設者は、前項の規定による届出事項に変更を生じたとき、又はその美容所を廃止したときは、すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "五美容師の氏名及び登録番号並びにその他の従業者の氏名",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100007?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100007_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "三法第十二条の三第一項に規定する美容所にあっては、管理美容師の氏名及び住所",
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "biyoshi-53-q4",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/332AC1000000163?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "332AC1000000163_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "美容所の開設者は、前項の規定による届出事項に変更を生じたとき、又はその美容所を廃止したときは、すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-54-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "理容師の氏名及び登録番号並びにその他の従業者の氏名",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-54-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "管理理容師の氏名及び住所",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-54-q4",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-09-06",
+      "asOf": "2026-09-06",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "理容所の開設の届出は、次に掲げる事項を記載した届出書を当該理容所所在地の都道府県知事",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000101_20250401_505AC0000000047",
+      "effective": "2025-04-01",
+      "article": "5",
+      "quote": "保健所は、都道府県、地方自治法（昭和二十二年法律第六十七号）第二百五十二条の十九第一項の指定都市、同法第二百五十二条の二十二第一項の中核市その他の政令で定める市又は特別区が、これを設置する。",
+      "sourceSha256": "af1675bf0aa9509e64e4adba2661428b7cd0df0628a24fae036a670074fd8aed",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/409AC0000000123?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "409AC0000000123_20251212_507AC0000000087",
+      "effective": "2025-12-12",
+      "article": "94",
+      "quote": "介護老人保健施設を開設しようとする者は、厚生労働省令で定めるところにより、都道府県知事の許可を受けなければならない。",
+      "sourceSha256": "c57c0d8e630e71dfb33c2a8dd39e3bc7319c99d6a522e4f5e88aa94733db5e67",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000101_20250401_505AC0000000047",
+      "effective": "2025-04-01",
+      "article": "6",
+      "quote": "保健所は、次に掲げる事項につき、企画、調整、指導及びこれらに必要な事業を行う。",
+      "sourceSha256": "af1675bf0aa9509e64e4adba2661428b7cd0df0628a24fae036a670074fd8aed",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "323CO0000000077_20240401_506CO0000000116",
+      "effective": "2024-04-01",
+      "article": "4",
+      "quote": "保健所の所長は、医師であつて、次の各号のいずれかに該当する",
+      "sourceSha256": "2657ce13ac630ec6b55b16f1da02f25b60914fa56e076919229e435fc265d6a5",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/323CO0000000077?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "323CO0000000077_20240401_506CO0000000116",
+      "effective": "2024-04-01",
+      "article": "4",
+      "quote": "医師をもつて保健所の所長に充てることが著しく困難であると認めるときは、二年以内の期間を限り",
+      "sourceSha256": "2657ce13ac630ec6b55b16f1da02f25b60914fa56e076919229e435fc265d6a5",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q1",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000101?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000101_20250401_505AC0000000047",
+      "effective": "2025-04-01",
+      "article": "6",
+      "quote": "住宅、水道、下水道、廃棄物の処理、清掃その他の環境の衛生に関する事項",
+      "sourceSha256": "af1675bf0aa9509e64e4adba2661428b7cd0df0628a24fae036a670074fd8aed",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q2",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "3",
+      "quote": "理容師は、前条第二号又は第三号の登録事項に変更を生じたときは、三十日以内に、名簿の訂正を申請しなければならない。",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q2",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "2",
+      "quote": "本籍地都道府県名",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q2",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "7",
+      "quote": "法第十条第一項又は第三項の規定により免許の取消処分を受けた者は、速やかに、厚生労働大臣に免許証又は免許証明書を返納しなければならない。",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q2",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "7",
+      "quote": "法第十条第一項又は第三項の規定により免許の取消処分を受けた者は、速やかに、厚生労働大臣に免許証又は免許証明書を返納しなければならない。",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q3",
+      "field": "choiceExplanations.1",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11_4",
+      "quote": "当該理容所（当該理容所における理容の業務を含む。）を衛生的に管理させるため、理容所ごとに、管理者（以下「管理理容師」という。）を置かなければならない。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q3",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "2",
+      "quote": "理容師名簿（以下「名簿」という。）には、次に掲げる事項を登録する。",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q3",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11_4",
+      "quote": "理容師である従業者の数が常時二人以上である理容所の開設者は",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q3",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "14",
+      "quote": "期間を定めて理容所の閉鎖を命ずることができる。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "次の各号のいずれかに該当する者は、三十万円以下の罰金に処する。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "第十一条の規定による届出をせず、又は虚偽の届出をした者",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "理容所の開設者は、前項の規定による届出事項に変更を生じたとき、又はその理容所を廃止したときは、すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "explanation",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "法第十一条の四第一項に規定する理容所にあっては、管理理容師の氏名及び住所",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "choiceExplanations.1",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11_3",
+      "quote": "前項の規定により理容所の開設者の地位を承継した者は、遅滞なく、その事実を証する書面を添えて、その旨を都道府県知事に届け出なければならない。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "choiceExplanations.2",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "15",
+      "quote": "第十一条の規定による届出をせず、又は虚偽の届出をした者",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "理容師の氏名及び登録番号並びにその他の従業者の氏名",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "choiceExplanations.3",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000234?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "322AC0000000234_20250601_504AC0000000068",
+      "effective": "2025-06-01",
+      "article": "11",
+      "quote": "すみやかに都道府県知事に届け出なければならない。",
+      "sourceSha256": "048c0a6ab0650586920dbc849256824a81077d10739ab5a40882be223d9a125a",
+      "sameVersionArticleQuote": true
+    },
+    {
+      "identity": "riyoshi-53-q4",
+      "field": "choiceExplanations.4",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/410M50000100004?asof=2026-03-01",
+      "asOf": "2026-03-01",
+      "lawRevisionId": "410M50000100004_20231213_505M60000100101",
+      "effective": "2023-12-13",
+      "article": "19",
+      "quote": "法第十一条の四第一項に規定する理容所にあっては、管理理容師の氏名及び住所",
+      "sourceSha256": "c17acc8d3b42605a554507d7504ba8886d5cd32a6808e9c7cc5c57a84422d719",
+      "sameVersionArticleQuote": true
+    }
+  ],
+  "retainedSessionHold": "biyoshi-2026-first-gakka-q6",
+  "sessionHoldHandoffCorrection": "Parent corrected the mistaken barber ID; no new hold is imposed on barber round 53 question 6.",
+  "preservation": {
+    "changed": 10,
+    "unchanged": 210,
+    "stemChoiceKeyChanged": 0,
+    "publicGateChanged": 0,
+    "assetChanged": 0
+  },
+  "originalCombinedScope": true,
+  "scopeNote": "Historical combined counts retained; records filtered to assigned biyoshi scope."
+}

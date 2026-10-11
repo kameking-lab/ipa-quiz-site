@@ -1,0 +1,559 @@
+{
+  "newPaidApiRequests": 0,
+  "newModelCalls": 0,
+  "publicationChanged": false,
+  "oldSourceEvidencePreserved": true,
+  "changes": [
+    {
+      "questionId": "biyoshi-2026-first-gakka-q2",
+      "reason": "Correct demonstrably wrong 10-day return deadline; retain existing hold for certificate form evidence. The official pre-exam certificate replacement form resolves the missing prefecture-change evidence.",
+      "beforeObjectSha256": "7f01a189908d87bb5ad1ec80631be8665ab5dbe2bd2f8bcf116ef30d9a88327e",
+      "afterObjectSha256": "331dbcb491812f55fa3243efed544ea6d441d38aed25c3966e9663000d63ed94",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-03-01-biyoshi-rule:3,5,6,7",
+        "RBC-2023-06-form:physical-pages-1,5"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-first-gakka-q5",
+      "reason": "The full saved act supplies article 8, which was missing from the earlier limited reviewer packet.",
+      "beforeObjectSha256": "2db2f7091521d3dd2f1f30a0791cd735eb37c2a4b734e0b69727e03e47b76ba3",
+      "afterObjectSha256": "3302570ddaf1b158e89a113ece764eed126330805108790217d55858e0e240ae",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-03-01-biyoshi-act:8,12,13,14,18"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q1",
+      "reason": "The complete saved rule supplies the missing exemption provision, article 13.",
+      "beforeObjectSha256": "015caaa5b6a390671dc9d7976d2a0dc19af2287225894e75d466c1c17b9ef491",
+      "afterObjectSha256": "c1fbc258213788010c3f5423ae05c8bb383ca62154febeac0b53d6d1726064d2",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-act:3,4,4_2,6,10",
+        "2026-09-06-biyoshi-rule:12,13"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q2",
+      "reason": "Full saved penalties and article 15 distinguish closure order from a fine for the underlying hiring act.",
+      "beforeObjectSha256": "c9e8753c51a785e3aeae16876dd7a9c72f95b71c1c72f9428fd9ec1ef96d3f1c",
+      "afterObjectSha256": "daf6f68ae9e9cf8f5f9b48018f3ec19b27972de4ecf37705442d39722bd0f008",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-act:7,10,15,17_2,17_3,17_4,18,19,20,21",
+        "2026-09-06-biyoshi-rule:7"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q5",
+      "reason": "The complete saved act supplies article 6 and the full penalties missing from the old review packet.",
+      "beforeObjectSha256": "188d0d3d20561adaddb05187034c375781fc9ea2a595d9c9907a2417e1f209f7",
+      "afterObjectSha256": "4db545939dd8111c9aea937474fd01fc92715a78c8cdeecbac6e0d9a35378800",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-act:6,8,10,17_2,17_3,17_4,18,19,20,21"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q22",
+      "reason": "Resolve the flagged unexplained steam/boiling comparison using the exact statutory standard times.",
+      "beforeObjectSha256": "43b5cc9414947f279eef35d985bb160c891e549431afc94a789900a9890e6fd5",
+      "afterObjectSha256": "c48f297fdbcfda602349bc40db3a23abcc5c0335245fb775ff1754381eeb5522",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-rule:25"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q35",
+      "reason": "Remove an editorial heading absent from the official page; source page 16 directly inspected.",
+      "beforeObjectSha256": "a37cf5cd0a2c454dc68a97729ea897ef4fae7f485217c9caa099138927b6a747",
+      "afterObjectSha256": "8fdba97641dcf0ef4891396a1151ac9bbbafebda20f2d9ef4023ce401370144d",
+      "beforeNeedsReview": false,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": false,
+      "sourceArticleRefs": []
+    },
+    {
+      "questionId": "biyoshi-2026-first-gakka-q55",
+      "reason": "Restore three printed ruby readings as parenthetical text; source page 26 directly inspected.",
+      "beforeObjectSha256": "896bf440f74362aae53e5e2d4c145d354afddd025712339d629ddf861c177f68",
+      "afterObjectSha256": "b54d80608bbcef7807d21c099220bd2f20f3a13e91302cfb2d00bd6818c7d341",
+      "beforeNeedsReview": false,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": false,
+      "sourceArticleRefs": []
+    },
+    {
+      "questionId": "biyoshi-2026-first-gakka-q6",
+      "reason": "Correct legal explanations against the saved full act while retaining the existing session STOP without exception.",
+      "beforeObjectSha256": "ed5454977a9ee6ae6051de67d018118d024c9aea7cd4875efb24dd4aa2536465",
+      "afterObjectSha256": "74e0a86857c7e05502c7f8b264a48ac45fe056cc33ce9d311a4f794998b8f5cb",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": true,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-03-01-biyoshi-act:3,6,8,10,18"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q3",
+      "reason": "The operative 2015 MHLW notice was obtained through ordinary public access and resolves the missing double-licence condition.",
+      "beforeObjectSha256": "b05cfbd2898dbc7cff2d69c91c792a826c0d71c7bb71879ccab412521c335297",
+      "afterObjectSha256": "f8f39ec2aa4941252a77b521951f69b3535d42e91a86235435003bb04c506b4d",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-act:11",
+        "2026-09-06-biyoshi-rule:19",
+        "MHLW-2015-12-09:第1の1,第3"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q24",
+      "reason": "Replace circular answer-key reasoning with statutory disinfectant methods and primary manufacturer evidence distinguishing anionic soap from ethanol.",
+      "beforeObjectSha256": "4fd1b6fa81763aaa1624856f026cd53774d6cb2447a19a7bba40b2e420147139",
+      "afterObjectSha256": "885a6338cb361fb8d90433268fdcf1ae28dbfe0566b812e6b6d39c3da50dba6e",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "2026-09-06-biyoshi-rule:25",
+        "Kenei:feature09-(2)",
+        "Wako:usage-precautions"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-first-gakka-q44",
+      "reason": "The saved unmarked official figure crop is integrated and directly visually checked against all four explanations; publication approval is still false.",
+      "beforeObjectSha256": "c5bb70bb3960220c21460f43a02c0a8c81a8165658199b5e64cb3ebf62f6a3f7",
+      "afterObjectSha256": "d576a2dc28f556e853c7b33223be6a23e18e456fe08a6949838bcddd30e63db1",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "IMAGE-CROPS.json:pixel-sha256"
+      ]
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q47",
+      "reason": "The saved unmarked official figure crop is integrated and directly visually checked against all four explanations; publication approval is still false.",
+      "beforeObjectSha256": "c363edeea5dd1290120aa2422995c908f830cce9cbddf9369fa333a955f65f63",
+      "afterObjectSha256": "643ba8eb0562d7ca5ca1a5ee23246df4fcbf8faecaca2b8d7d669bc796656b98",
+      "beforeNeedsReview": true,
+      "afterNeedsReview": false,
+      "originalPayloadUnchanged": true,
+      "sourceArticleRefs": [
+        "IMAGE-CROPS.json:pixel-sha256"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "date": "2026-03-01",
+      "name": "biyoshi-act",
+      "revision": {
+        "law_revision_id": "332AC1000000163_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "美容師法",
+        "law_title_kana": "びようしほう",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2024-07-21T20:12:54+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      },
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "articles": [
+        {
+          "number": "8",
+          "text": "（美容の業を行う場合に講ずべき措置）第八条美容師は、美容の業を行うときは、次に掲げる措置を講じなければならない。一皮ふに接する布片及び皮ふに接する器具を清潔に保つこと。二皮ふに接する布片を客一人ごとに取り替え、皮ふに接する器具を客一人ごとに消毒すること。三その他都道府県が条例で定める衛生上必要な措置"
+        },
+        {
+          "number": "12",
+          "text": "（美容所の使用）第十二条美容所の開設者は、その美容所の構造設備について都道府県知事の検査を受け、その構造設備が第十三条の措置を講ずるに適する旨の確認を受けた後でなければ、当該美容所を使用してはならない。"
+        },
+        {
+          "number": "13",
+          "text": "（美容所について講ずべき措置）第十三条美容所の開設者は、美容所につき、次に掲げる措置を講じなければならない。一常に清潔に保つこと。二消毒設備を設けること。三採光、照明及び換気を充分にすること。四その他都道府県が条例で定める衛生上必要な措置"
+        },
+        {
+          "number": "14",
+          "text": "（立入検査）第十四条都道府県知事は、必要があると認めるときは、当該職員に、美容所に立ち入り、第八条又は前条の規定による措置の実施の状況を検査させることができる。２第四条の十三第二項及び第三項の規定は、前項の規定による立入検査について準用する。"
+        },
+        {
+          "number": "18",
+          "text": "第十八条次の各号のいずれかに該当する者は、三十万円以下の罰金に処する。一第六条の規定に違反した者二第十一条の規定による届出をせず、又は虚偽の届出をした者三第十二条の規定に違反して美容所を使用した者四第十四条第一項の規定による当該職員の検査を拒み、妨げ、又は忌避した者五第十五条の規定による美容所の閉鎖処分に違反した者"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "name": "biyoshi-rule",
+      "revision": {
+        "law_revision_id": "410M50000100007_20231213_505M60000100101",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "美容師法施行規則",
+        "law_title_kana": "びようしほうしこうきそく",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2026-07-24T18:10:40+09:00",
+        "amendment_promulgate_date": "2023-08-03",
+        "amendment_enforcement_date": "2023-12-13",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "505M60000100101",
+        "amendment_law_title": "旅館業法施行規則等の一部を改正する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和五年厚生労働省令第百一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      },
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "articles": [
+        {
+          "number": "2",
+          "text": "（美容師名簿の登録事項）第二条美容師名簿（以下「名簿」という。）には、次に掲げる事項を登録する。一登録番号及び登録年月日二本籍地都道府県名（日本の国籍を有しない者については、その国籍）三氏名、生年月日及び性別四美容師試験合格の年月五業務停止の処分年月日、期間及び理由並びに処分をした者六免許取消しの処分年月日及び理由七再免許のときは、その旨八美容師免許証（以下「免許証」という。）若しくは美容師免許証明書（以下「免許証明書」という。）を書換え交付し、又は再交付した場合には、その旨並びにその理由及び年月日九登録の消除をした場合には、その旨並びにその理由及び年月日"
+        },
+        {
+          "number": "3",
+          "text": "（名簿の訂正）第三条美容師は、前条第二号又は第三号の登録事項に変更を生じたときは、三十日以内に、名簿の訂正を申請しなければならない。２前項の申請をするには、様式第二による申請書に戸籍の謄本若しくは抄本又は住民票の写しを添え、これを厚生労働大臣に提出しなければならない。"
+        },
+        {
+          "number": "5",
+          "text": "（免許証の書換え交付）第五条美容師は、免許証又は免許証明書の記載事項に変更を生じたときは、免許証の書換え交付を申請することができる。２前項の申請をするには、様式第二による申請書に免許証又は免許証明書を添え、これを厚生労働大臣に提出しなければならない。"
+        },
+        {
+          "number": "6",
+          "text": "（免許証の再交付）第六条美容師は、免許証又は免許証明書を破り、汚し、又は失ったときは、免許証の再交付を申請することができる。２前項の申請をするには、様式第四による申請書を厚生労働大臣に提出しなければならない。３第一項の申請をする場合には、手数料として四千百五十円を国に納めなければならない。４免許証又は免許証明書を破り、又は汚した美容師が第一項の申請をする場合には、申請書にその免許証又は免許証明書を添付しなければならない。５美容師は、免許証の再交付を受けた後、失った免許証又は免許証明書を発見したときは、五日以内に、これを厚生労働大臣に返納しなければならない。"
+        },
+        {
+          "number": "7",
+          "text": "（免許証又は免許証明書の返納等）第七条美容師は名簿の登録の消除を申請するときは、免許証又は免許証明書を厚生労働大臣に返納しなければならない。第四条第二項の規定により名簿の登録の消除を申請する者についても、同様とする。２法第十条第一項又は第三項の規定により免許の取消処分を受けた者は、速やかに、厚生労働大臣に免許証又は免許証明書を返納しなければならない。３法第十条第二項の規定により業務の停止処分を受けた者は、速やかに、処分を行った都道府県知事、地域保健法（昭和二十二年法律第百一号）第五条第一項の規定に基づく政令で定める市（以下「保健所を設置する市」という。）の市長又は特別区の区長に免許証又は免許証明書を提出するものとする。"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "name": "biyoshi-act",
+      "revision": {
+        "law_revision_id": "332AC1000000163_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "美容師法",
+        "law_title_kana": "びようしほう",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2024-07-21T20:12:54+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      },
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "articles": [
+        {
+          "number": "3",
+          "text": "（免許）第三条美容師試験に合格した者は、厚生労働大臣の免許を受けて美容師になることができる。２美容師の免許は、次のいずれかに該当する者には、与えないことがある。一心身の障害により美容師の業務を適正に行うことができない者として厚生労働省令で定めるもの二第六条の規定に違反した者三第十条第三項の規定による免許の取消処分を受けた者"
+        },
+        {
+          "number": "4",
+          "text": "（美容師試験）第四条美容師試験は、美容師として必要な知識及び技能について行う。２美容師試験は、厚生労働大臣が行う。３美容師試験は、学校教育法（昭和二十二年法律第二十六号）第九十条に規定する者であつて、都道府県知事の指定した美容師養成施設において厚生労働省令で定める期間以上美容師になるのに必要な知識及び技能を修得したものでなければ受けることができない。４美容師養成施設は、次の各号に掲げる養成課程の全部又は一部を設けるものとする。ただし、通信課程は、昼間課程又は夜間課程を設ける美容師養成施設に限つて、設けることができる。一昼間課程二夜間課程三通信課程５前各項に定めるもののほか、美容師試験、美容師養成施設その他前各項の規定の施行に関して必要な事項は、厚生労働省令で定める。"
+        },
+        {
+          "number": "4_2",
+          "text": "（指定試験機関の指定）第四条の二厚生労働大臣は、その指定する者（以下「指定試験機関」という。）に、美容師試験の実施に関する事務（以下「試験事務」という。）を行わせることができる。２指定試験機関の指定は、試験事務を行おうとする者の申請により行う。"
+        },
+        {
+          "number": "6",
+          "text": "（無免許営業の禁止）第六条美容師でなければ、美容を業としてはならない。"
+        },
+        {
+          "number": "7",
+          "text": "（美容所以外の場所における営業の禁止）第七条美容師は、美容所以外の場所において、美容の業をしてはならない。ただし、政令で定める特別の事情がある場合には、この限りでない。"
+        },
+        {
+          "number": "8",
+          "text": "（美容の業を行う場合に講ずべき措置）第八条美容師は、美容の業を行うときは、次に掲げる措置を講じなければならない。一皮ふに接する布片及び皮ふに接する器具を清潔に保つこと。二皮ふに接する布片を客一人ごとに取り替え、皮ふに接する器具を客一人ごとに消毒すること。三その他都道府県が条例で定める衛生上必要な措置"
+        },
+        {
+          "number": "10",
+          "text": "（免許の取消及び業務の停止）第十条厚生労働大臣は、美容師が第三条第二項第一号に掲げる者に該当するときは、その免許を取り消すことができる。２都道府県知事は、美容師が第七条若しくは第八条の規定に違反したとき、又は美容師が伝染性の疾病にかかり、その就業が公衆衛生上不適当と認めるときは、期間を定めてその業務を停止することができる。３厚生労働大臣は、美容師が前項の規定による業務の停止処分に違反したときは、その免許を取り消すことができる。４第一項又は前項の規定による取消処分を受けた者であつても、その者がその取消しの理由となつた事項に該当しなくなつたとき、その他その後の事情により再び免許を与えるのが適当であると認められるに至つたときは、再免許を与えることができる。"
+        },
+        {
+          "number": "15",
+          "text": "（閉鎖命令）第十五条都道府県知事は、美容所の開設者が、第十二条の三若しくは第十三条の規定に違反したとき、又は美容師でない者若しくは第十条第二項の規定による業務の停止処分を受けている者にその美容所において美容の業を行わせたときは、期間を定めて当該美容所の閉鎖を命ずることができる。２当該美容所において美容の業を行う美容師が第八条の規定に違反したときも、前項と同様とする。ただし、当該美容所の開設者が美容師の当該違反行為を防止するために相当の注意及び監督を尽したときは、この限りでない。"
+        },
+        {
+          "number": "17_2",
+          "text": "（罰則）第十七条の二第四条の八第一項（第五条の五において準用する場合を含む。）の規定に違反した者は、一年以下の拘禁刑又は百万円以下の罰金に処する。"
+        },
+        {
+          "number": "17_3",
+          "text": "第十七条の三第四条の十五第二項（第五条の五において準用する場合を含む。）の規定による試験事務又は登録事務の停止の命令に違反したときは、その違反行為をした指定試験機関又は指定登録機関の役員又は職員は、一年以下の拘禁刑又は百万円以下の罰金に処する。"
+        },
+        {
+          "number": "17_4",
+          "text": "第十七条の四次の各号のいずれかに該当するときは、その違反行為をした指定試験機関又は指定登録機関の役員又は職員は、三十万円以下の罰金に処する。一第四条の十一（第五条の五において準用する場合を含む。）の規定に違反して帳簿を備えず、帳簿に記載せず、若しくは帳簿に虚偽の記載をし、又は帳簿を保存しなかつたとき。二第四条の十三第一項（第五条の五において準用する場合を含む。）の規定による報告を求められて、報告をせず、若しくは虚偽の報告をし、又はこれらの規定による立入り若しくは検査を拒み、妨げ、若しくは忌避したとき。三第四条の十四第一項（第五条の五において準用する場合を含む。）の規定による許可を受けないで、試験事務又は登録事務の全部を廃止したとき。"
+        },
+        {
+          "number": "18",
+          "text": "第十八条次の各号のいずれかに該当する者は、三十万円以下の罰金に処する。一第六条の規定に違反した者二第十一条の規定による届出をせず、又は虚偽の届出をした者三第十二条の規定に違反して美容所を使用した者四第十四条第一項の規定による当該職員の検査を拒み、妨げ、又は忌避した者五第十五条の規定による美容所の閉鎖処分に違反した者"
+        },
+        {
+          "number": "19",
+          "text": "第十九条法人の代表者又は法人若しくは人の代理人、使用人その他の従業者が、その法人又は人の業務に関して前条第二号から第五号までの違反行為をしたときは、行為者を罰するほか、その法人又は人に対しても、各本条の刑を科する。"
+        },
+        {
+          "number": "20",
+          "text": "（読替規定）第二十条地域保健法（昭和二十二年法律第百一号）第五条第一項の規定に基づく政令で定める市又は特別区にあつては、前各条の規定（第四条第三項及び第十二条の三第二項を除く。）中「都道府県知事」とあるのは「市長」又は「区長」と、「都道府県」とあるのは「市」又は「特別区」とする。"
+        },
+        {
+          "number": "21",
+          "text": "（審査請求）第二十一条指定試験機関が行う試験事務に係る処分若しくはその不作為又は指定登録機関が行う登録事務に係る処分若しくはその不作為については、厚生労働大臣に対し、審査請求をすることができる。この場合において、厚生労働大臣は、行政不服審査法（平成二十六年法律第六十八号）第二十五条第二項及び第三項、第四十六条第一項及び第二項、第四十七条並びに第四十九条第三項の規定の適用については、指定試験機関又は指定登録機関の上級行政庁とみなす。"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "name": "biyoshi-rule",
+      "revision": {
+        "law_revision_id": "410M50000100007_20231213_505M60000100101",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "美容師法施行規則",
+        "law_title_kana": "びようしほうしこうきそく",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2026-07-24T18:10:40+09:00",
+        "amendment_promulgate_date": "2023-08-03",
+        "amendment_enforcement_date": "2023-12-13",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "505M60000100101",
+        "amendment_law_title": "旅館業法施行規則等の一部を改正する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和五年厚生労働省令第百一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      },
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "articles": [
+        {
+          "number": "7",
+          "text": "（免許証又は免許証明書の返納等）第七条美容師は名簿の登録の消除を申請するときは、免許証又は免許証明書を厚生労働大臣に返納しなければならない。第四条第二項の規定により名簿の登録の消除を申請する者についても、同様とする。２法第十条第一項又は第三項の規定により免許の取消処分を受けた者は、速やかに、厚生労働大臣に免許証又は免許証明書を返納しなければならない。３法第十条第二項の規定により業務の停止処分を受けた者は、速やかに、処分を行った都道府県知事、地域保健法（昭和二十二年法律第百一号）第五条第一項の規定に基づく政令で定める市（以下「保健所を設置する市」という。）の市長又は特別区の区長に免許証又は免許証明書を提出するものとする。"
+        },
+        {
+          "number": "12",
+          "text": "（試験の課目）第十二条美容師試験を分けて筆記試験及び実技試験とし、その課目は、それぞれ次のとおりとする。筆記試験関係法規・制度衛生管理保健香粧品化学文化論美容技術理論運営管理実技試験美容実技"
+        },
+        {
+          "number": "13",
+          "text": "（試験の免除）第十三条筆記試験又は実技試験に合格した者については、その申請により、筆記試験又は実技試験に合格した美容師試験に引き続いて行われる次回の美容師試験に限り、その合格した試験を免除する。２理容師法第二条の規定により理容師の免許を受けた者については、その申請により、美容技術理論を除く筆記試験を免除する。"
+        },
+        {
+          "number": "25",
+          "text": "（消毒の方法）第二十五条法第八条第二号に規定する消毒は、器具を十分に洗浄した後、次の各号に掲げる区分に応じ、当該各号に定めるいずれかの方法により行わなければならない。一かみそり（専ら頭髪を切断する用途に使用されるものを除く。以下この号において同じ。）及びかみそり以外の器具で血液が付着しているもの又はその疑いのあるものに係る消毒イ沸騰後二分間以上煮沸する方法ロエタノール水溶液（エタノールが七十六・九パーセント以上八十一・四パーセント以下である水溶液をいう。次号ニにおいて同じ。）中に十分間以上浸す方法ハ次亜塩素酸ナトリウムが〇・一パーセント以上である水溶液中に十分間以上浸す方法二前号に規定する器具以外の器具に係る消毒イ二十分間以上一平方センチメートル当たり八十五マイクロワット以上の紫外線を照射する方法ロ沸騰後二分間以上煮沸する方法ハ十分間以上摂氏八十度を超える湿熱に触れさせる方法ニエタノール水溶液中に十分間以上浸し、又はエタノール水溶液を含ませた綿若しくはガーゼで器具の表面をふく方法ホ次亜塩素酸ナトリウムが〇・〇一パーセント以上である水溶液中に十分間以上浸す方法ヘ逆性石ケンが〇・一パーセント以上である水溶液中に十分間以上浸す方法トグルコン酸クロルヘキシジンが〇・〇五パーセント以上である水溶液中に十分間以上浸す方法チ両性界面活性剤が〇・一パーセント以上である水溶液中に十分間以上浸す方法"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-01",
+      "name": "biyoshi-act",
+      "revision": {
+        "law_revision_id": "332AC1000000163_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "美容師法",
+        "law_title_kana": "びようしほう",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2024-07-21T20:12:54+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      },
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "articles": [
+        {
+          "number": "3",
+          "text": "（免許）第三条美容師試験に合格した者は、厚生労働大臣の免許を受けて美容師になることができる。２美容師の免許は、次のいずれかに該当する者には、与えないことがある。一心身の障害により美容師の業務を適正に行うことができない者として厚生労働省令で定めるもの二第六条の規定に違反した者三第十条第三項の規定による免許の取消処分を受けた者"
+        },
+        {
+          "number": "6",
+          "text": "（無免許営業の禁止）第六条美容師でなければ、美容を業としてはならない。"
+        },
+        {
+          "number": "8",
+          "text": "（美容の業を行う場合に講ずべき措置）第八条美容師は、美容の業を行うときは、次に掲げる措置を講じなければならない。一皮ふに接する布片及び皮ふに接する器具を清潔に保つこと。二皮ふに接する布片を客一人ごとに取り替え、皮ふに接する器具を客一人ごとに消毒すること。三その他都道府県が条例で定める衛生上必要な措置"
+        },
+        {
+          "number": "10",
+          "text": "（免許の取消及び業務の停止）第十条厚生労働大臣は、美容師が第三条第二項第一号に掲げる者に該当するときは、その免許を取り消すことができる。２都道府県知事は、美容師が第七条若しくは第八条の規定に違反したとき、又は美容師が伝染性の疾病にかかり、その就業が公衆衛生上不適当と認めるときは、期間を定めてその業務を停止することができる。３厚生労働大臣は、美容師が前項の規定による業務の停止処分に違反したときは、その免許を取り消すことができる。４第一項又は前項の規定による取消処分を受けた者であつても、その者がその取消しの理由となつた事項に該当しなくなつたとき、その他その後の事情により再び免許を与えるのが適当であると認められるに至つたときは、再免許を与えることができる。"
+        },
+        {
+          "number": "18",
+          "text": "第十八条次の各号のいずれかに該当する者は、三十万円以下の罰金に処する。一第六条の規定に違反した者二第十一条の規定による届出をせず、又は虚偽の届出をした者三第十二条の規定に違反して美容所を使用した者四第十四条第一項の規定による当該職員の検査を拒み、妨げ、又は忌避した者五第十五条の規定による美容所の閉鎖処分に違反した者"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "name": "biyoshi-act",
+      "revision": {
+        "law_revision_id": "332AC1000000163_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "美容師法",
+        "law_title_kana": "びようしほう",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2024-07-21T20:12:54+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      },
+      "sourceSha256": "e596648f96edea3d8a2a7c2218ab6d74f47a097927b3d92813918aac8dfe8b75",
+      "articles": [
+        {
+          "number": "11",
+          "text": "（美容所の位置等の届出）第十一条美容所を開設しようとする者は、厚生労働省令の定めるところにより、美容所の位置、構造設備、第十二条の三第一項に規定する管理美容師その他の従業者の氏名その他必要な事項をあらかじめ都道府県知事に届け出なければならない。２美容所の開設者は、前項の規定による届出事項に変更を生じたとき、又はその美容所を廃止したときは、すみやかに都道府県知事に届け出なければならない。"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-06",
+      "name": "biyoshi-rule",
+      "revision": {
+        "law_revision_id": "410M50000100007_20231213_505M60000100101",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "美容師法施行規則",
+        "law_title_kana": "びようしほうしこうきそく",
+        "abbrev": "",
+        "category": "厚生",
+        "updated": "2026-07-24T18:10:40+09:00",
+        "amendment_promulgate_date": "2023-08-03",
+        "amendment_enforcement_date": "2023-12-13",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "505M60000100101",
+        "amendment_law_title": "旅館業法施行規則等の一部を改正する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和五年厚生労働省令第百一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      },
+      "sourceSha256": "fa31891ef6834a4a117a7a1ada8e7893f6896cb8d4c2d43e617513f096bb087b",
+      "articles": [
+        {
+          "number": "19",
+          "text": "（開設の届出）第十九条法第十一条第一項の規定による美容所の開設の届出は、次に掲げる事項を記載した届出書を当該美容所所在地の都道府県知事、保健所を設置する市の市長又は特別区の区長に提出することによって行うものとする。一美容所の名称及び所在地二開設者の氏名及び住所（法人にあっては、その名称、所在地及び代表者の氏名）三法第十二条の三第一項に規定する美容所にあっては、管理美容師の氏名及び住所四美容所の構造及び設備の概要五美容師の氏名及び登録番号並びにその他の従業者の氏名六美容師につき、結核、皮膚疾患その他厚生労働大臣の指定する伝染性疾病がある場合は、その旨七開設予定年月日八開設しようとする美容所と同一の場所で現に理容所（理容師法第一条の二第三項に規定する理容所をいう。次号において同じ。）が開設されている場合は、当該理容所の名称九開設しようとする美容所と同一の場所で理容師法第十一条第一項の届出がされている場合（前号の場合を除き、当該届出を当該美容所の開設の届出と同時に行う場合を含む。）は、当該理容所の開設予定年月日２前項の届出書には、美容師につき、同項第六号に規定する疾病の有無に関する医師の診断書を添付しなければならない。３法第十二条の三第一項に規定する美容所を開設しようとする者が第一項の届出をするに当たっては、前項の書類のほか、当該美容所の管理美容師が同条第二項の規定に該当することを証する書類を添付しなければならない。４外国人が第一項の届出をするに当たっては、第二項の書類のほか、住民票の写し（住民基本台帳法第三十条の四十五に規定する国籍等を記載したものに限る。）を添えるものとする。"
+        }
+      ]
+    }
+  ],
+  "retainedSessionStop": "biyoshi-2026-first-gakka-q6",
+  "retainedEmbeddedAnswerStop": "biyoshi-2026-second-gakka-q50",
+  "currentKnownHolds": [
+    "biyoshi-2026-first-gakka-q6",
+    "biyoshi-2026-second-gakka-q50",
+    "biyoshi-2026-second-gakka-q55"
+  ],
+  "sourceFidelityAcceptanceIsSeparate": true,
+  "additionalPublicSources": [
+    {
+      "url": "https://www.rbc.or.jp/wp-content/uploads/2023/06/02shinsei_Bv1.pdf",
+      "sha256": "24b15141e43d70aacfbf88e57c4cf2ba6d58813451660d17df0481699f86fc0d",
+      "fetchedOn": "2026-10-11",
+      "scope": "Official replacement instructions and form; physical pages 1 and 5 directly viewed."
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2088&dataType=1&pageNo=1",
+      "sha256": "4d223ee226d39bd3560a6f4c33b4ce6bffb1cd1e165e7fd350c588a35f6c212e",
+      "fetchedOn": "2026-10-11",
+      "scope": "Operative notice dated 2015-12-09, effective 2016-04-01.",
+      "acquisition": "Selected public web-tool text excerpt; hash is excerpt bytes, not original HTML response."
+    },
+    {
+      "url": "https://www.kenei-pharm.com/medical/countermeasure/choose/feature09/",
+      "sha256": "3770bd237fad7bfb40436e92aefa1fdd6f01b33abf25e60dd08ba998b439054c",
+      "fetchedOn": "2026-10-11",
+      "scope": "Manufacturer description of benzalkonium chloride in disinfectant ethanol."
+    },
+    {
+      "url": "https://labchem-wako.fujifilm.com/jp/product/detail/W01W0102-0546.html",
+      "sha256": "de270abfce0a5eb2940bfcf3872b0c3a9a7d64772900df382495b81b8f5aa216",
+      "fetchedOn": "2026-10-11",
+      "scope": "Manufacturer precaution on anionic soap precipitation and germicidal-power reduction.",
+      "acquisition": "Selected public web-tool text excerpt; hash is excerpt bytes, not original HTML response."
+    }
+  ]
+}
