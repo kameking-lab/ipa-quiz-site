@@ -126,7 +126,7 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
       if (isNoindex(md?.robots)) bad.push(p);
     }
     expect(bad).toEqual([]);
-  }, 30_000); // Cold page imports take about 20s on the Windows development host.
+  }, 120_000); // Audit every page: cold imports of the full corpus can exceed 60s on Windows.
 
   // canonical が別URLを指すと、そのページは「自分でなく別ページが正規」と宣言し、
   // sitemap に載せていても deindex され crawl 資産が無駄になる（激辛レビュー: /quiz の
