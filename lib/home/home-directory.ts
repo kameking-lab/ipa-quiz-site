@@ -1,3 +1,4 @@
+import { CHUSHO_SECONDARY_ORIGINAL_COUNT, CHUSHO_SECONDARY_SOLUTION_COUNT } from "@/lib/chusho-secondary/data";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
 import "server-only";
 
@@ -119,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
   { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
@@ -148,15 +150,16 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "riyoshi", name: "理容師", sub: "第54・53回の全110原問・全肢解説", domain: "welfare" },
   { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "rigaku-ryohoshi", name: "理学療法士", sub: "第61・60回 午前・午後の確認済み179原問を部分収録", domain: "welfare" },
-  { code: "sagyo-ryohoshi", name: "作業療法士", sub: "第61・60回 午前・午後の確認済み299原問を部分収録", domain: "welfare" },
+  { code: "sagyo-ryohoshi", name: "作業療法士", sub: "第61・60回 午前・午後の確認済み310原問を部分収録", domain: "welfare" },
   { code: "judo-seifukushi", name: "柔道整復師", sub: "第34・33回 午前・午後の原問と全肢解説", domain: "welfare" },
   { code: "rinsho-kogishi", name: "臨床工学技士", sub: "第39・38回の午前・午後から確認済み220問を部分収録", domain: "welfare" },
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み186原問を部分収録", domain: "welfare" },
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "第71回（2025年実施）午後の確認済み原問を部分収録", domain: "welfare" },
-  { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77回（2025年実施）午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77・78回の午前・午後398原問と全肢解説", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み307原問を部分収録", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
   { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用359原問を部分収録", domain: "welfare" },
@@ -171,7 +174,7 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
     sub: def.sub,
     questionCount: examQuestionCount(def.code) + practical + (def.code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0),
     periodLabel: `${examPeriodCount(def.code)}期分`,
-    extra: def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
+    extra: def.code === "chusho-kigyo-shindanshi" ? "417原問・454設問" : def.code === "sharoushi" ? `択一式${examQuestionCount(def.code)}原問・選択式${PUBLISHED_SENTAKU.length}原問` : practical > 0 ? `学科${examQuestionCount(def.code)}問・実技${practical}問` : undefined,
   };
 }
 
@@ -286,12 +289,12 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "money",
-        title: "お金・不動産",
-        lead: "FP技能検定（学科・実技）と宅建。",
+        title: "お金・不動産・経営",
+        lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("money"),
+      [...byDomain("money"), { key: "chusho-secondary", href: "/chusho-secondary", name: "中小企業診断士二次", sub: "2025・2024年度の全8事例と独自解答例", questionCount: CHUSHO_SECONDARY_ORIGINAL_COUNT, periodLabel: "2回分", extra: `${CHUSHO_SECONDARY_SOLUTION_COUNT}解答例・記述練習` }],
     ),
     domain(
       {

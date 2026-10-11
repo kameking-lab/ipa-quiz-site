@@ -382,7 +382,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
     }],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2024, end: 2026 },
   },
   denko1: {
     code: "denko1",
@@ -707,6 +707,23 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  "chusho-kigyo-shindanshi": {
+    code: "chusho-kigyo-shindanshi",
+    nameFull: "中小企業診断士 第1次試験",
+    urlSlug: "chusho-kigyo-shindanshi",
+    level: "advanced",
+    sessions: [
+      { session: "keizai", urlSlug: "keizai", expectedQuestions: 25, label: "経済学・経済政策", categories: ["経済学・経済政策"] },
+      { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 25, label: "財務・会計", categories: ["財務・会計"] },
+      { session: "kigyo", urlSlug: "kigyo", expectedQuestions: 41, label: "企業経営理論", categories: ["企業経営理論"] },
+      { session: "unei", urlSlug: "unei", expectedQuestions: 44, label: "運営管理（オペレーション・マネジメント）", categories: ["運営管理（オペレーション・マネジメント）"] },
+      { session: "keiei-houmu", urlSlug: "keiei-houmu", expectedQuestions: 25, label: "経営法務", categories: ["経営法務"] },
+      { session: "keiei-joho", urlSlug: "keiei-joho", expectedQuestions: 25, label: "経営情報システム", categories: ["経営情報システム"] },
+      { session: "chusho-seisaku", urlSlug: "chusho-seisaku", expectedQuestions: 42, label: "中小企業経営・中小企業政策", categories: ["中小企業経営・中小企業政策"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   sharoushi: {
     code: "sharoushi",
     nameFull: "社会保険労務士試験",
@@ -863,22 +880,30 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "advanced",
     sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2025, end: 2026 },
   },
   "shinryo-hoshasengishi": {
     code: "shinryo-hoshasengishi",
     nameFull: "診療放射線技師国家試験",
     urlSlug: "shinryo-hoshasengishi",
     level: "advanced",
-    sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
+    ],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2025, end: 2026 },
+  },
+  riyoshi: {
+    code: "riyoshi", nameFull: "理容師国家試験", urlSlug: "riyoshi", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度","運営管理","公衆衛生・環境衛生","感染症","衛生管理技術","人体の構造及び機能","皮膚科学","香粧品化学","文化論及び理容技術理論"] }],
+    seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 },
   },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "judo-seifukushi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "judo-seifukushi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
