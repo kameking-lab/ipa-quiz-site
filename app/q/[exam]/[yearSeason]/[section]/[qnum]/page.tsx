@@ -162,7 +162,7 @@ export default async function QuestionPage({
   if (!isPracticeReadyQuestion(q)) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
-  const answerText =
+  const answerText = q.type === "ordering" ? undefined :
     q.choices
       ? answerKeys.map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ")
       : undefined;

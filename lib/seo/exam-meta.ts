@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  "shika-ishi": "歯科医師国家試験の第119回（2026年実施）・第118回（2025年実施）の問題A〜Dを対象に、公式正答と独自の全肢解説を整備中です。",
   ip: "ITパスポート試験はIT全般の基礎知識を幅広く問う、職種を問わずITを活用するすべての社会人・学生向けの国家試験です。",
   sg: "情報セキュリティマネジメント試験は、企業内の情報セキュリティ対策を推進する人材の能力を認定する国家試験です。",
   fe: "基本情報技術者試験は、ITエンジニアの登竜門として位置づけられる国家試験で、プログラミング基礎とIT全般の知識を問います。",
@@ -129,6 +130,7 @@ export function examTopTitle(exam: ExamCode): string {
 }
 
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
+  if (exam === "shika-ishi") return EXAM_DESCRIPTIONS[exam] ?? "";
   if (exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
   const base = EXAM_DESCRIPTIONS[exam] ?? "";
   return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
@@ -188,6 +190,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   "rinsho-kogishi": "臨床工学技士国家試験",
   "rinsho-kensagishi": "臨床検査技師国家試験",
   "shinryo-hoshasengishi": "診療放射線技師国家試験",
+  "shika-ishi": "歯科医師国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -296,6 +299,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   "shino-kunrenshi": (c) => `視能訓練士国家試験の第56・55回午前・午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
   "rinsho-kensagishi": (c) => `臨床検査技師国家試験の第71回（2025年実施）午後から、公式原文・正答・全五肢の解説を確認した${c}原問を部分収録。第72・71回の全問は未完備です。`,
   "shinryo-hoshasengishi": (c) => `診療放射線技師国家試験の第77回（2025年実施）午後から、公式原文・正答・全五肢の解説を確認した${c}原問を部分収録。第78・77回の全問は未完備です。`,
+  "shika-ishi": () => "歯科医師国家試験の第119回（2026年実施）・第118回（2025年実施）の問題A〜Dを対象に、公式正答と独自の全肢解説を整備中です。掲載範囲は確認後に確定します。",
 };
 
 export function examMetaDescription(
@@ -310,7 +314,7 @@ export function examMetaDescription(
   const countFmt = questionCount.toLocaleString("ja-JP");
 
   // 一部収録の資格は「全○期分」と読める汎用文言を使わない。
-  if (exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
+  if (exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi" || exam === "shika-ishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
   }

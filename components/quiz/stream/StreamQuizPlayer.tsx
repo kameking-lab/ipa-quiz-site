@@ -10,6 +10,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
+import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
+import { OrderingAnswerInput } from "../OrderingAnswerInput";
 import { createHistoryStore } from "@/lib/storage/history";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
@@ -20,7 +22,7 @@ const SUMMARY_AT = 10;
 
 interface AnswerLog {
   questionId: string;
-  selected: ChoiceKey | null;
+  selected: string | null;
   correct: boolean;
 }
 
@@ -82,7 +84,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed) return;
+      if (!question || revealed || question.type === "ordering") return;
       const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
@@ -107,22 +109,41 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     [question, revealed, history],
   );
 
+  const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
+    if (!question || question.type !== "ordering" || revealed) return;
+    const correct = isOrderingAnswerCorrect(question, value);
+    const display = formatOrderingAnswer(question.exam, value);
+    setRevealed(true);
+    setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
+    history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    if (correct) {
+      setCombo((previous) => {
+        const next = previous + 1;
+        if (next >= 3) {
+          setShowFireworks(true);
+          window.setTimeout(() => setShowFireworks(false), 1600);
+        }
+        return next;
+      });
+    } else setCombo(0);
+  }, [question, revealed, history]);
+
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!question || showSummary || reviewing) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA") return;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       }
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed) {
+      if (!revealed && question.type !== "ordering") {
         const i = CHOICE_SHORTCUTS.indexOf(e.key);
         if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
           onSelect(getChoiceKeys(question.choices)[i]);
         }
-      } else if (e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
+      } else if (revealed && e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
         e.preventDefault();
         goNext();
       }
@@ -153,7 +174,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -216,7 +237,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="space-y-2">
-          {question.choices &&
+          {question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
@@ -345,7 +366,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -390,7 +411,7 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 space-y-2">
-          {question.choices &&
+          {question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;

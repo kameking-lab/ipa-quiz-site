@@ -62,6 +62,7 @@ import { SHINO_KUNRENSHI_QUESTIONS } from "./shino-kunrenshi";
 import { RINSHO_KOGISHI_QUESTIONS } from "./rinsho-kogishi";
 import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
+import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -119,6 +120,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
   ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

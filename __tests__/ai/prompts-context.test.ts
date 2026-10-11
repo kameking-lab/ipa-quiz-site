@@ -28,6 +28,7 @@ function q(partial: Partial<Question> = {}): Question {
     question: partial.question ?? "問題文です",
     choices: partial.choices,
     answer: partial.answer ?? "ア",
+    numericAnswer: partial.numericAnswer,
     explanation: partial.explanation ?? "これは十分に長い実際の解説文です。",
     choiceExplanations: partial.choiceExplanations,
     lawReferenceDate: partial.lawReferenceDate,
@@ -41,6 +42,20 @@ function q(partial: Partial<Question> = {}): Question {
 }
 
 describe("buildQuestionContext", () => {
+  it("preserves the printed fixed negative sign and unit for numeric answers", () => {
+    const out = buildQuestionContext(q({ type: "numeric", answer: "2.0", numericAnswer: { format: "decimal", precision: 1, unit: "mm", fixedSign: "negative" } }));
+    expect(out).toContain("−2.0 mm");
+  });
+  it("renders dental choice labels per key for multiple and ordered answers", () => {
+    const base = { exam: "shika-ishi" as const, choices: { ア: "first", イ: "second", ウ: "third" } };
+    const multiple = buildQuestionContext(q({ ...base, answer: ["イ", "ウ"] }), "イ・ウ", false);
+    expect(multiple).toContain("- a: first");
+    expect(multiple).toContain("b, c");
+    expect(multiple).toContain("b・c");
+    const ordered = buildQuestionContext(q({ ...base, type: "ordering", answer: ["ウ", "ア", "イ"] }), "ア→イ→ウ", false);
+    expect(ordered).toContain("c→a→b");
+    expect(ordered).toContain("a→b→c");
+  });
   it("見出しセクションを順に含む（現在の問題→問題文→正解→サイト掲載の解説）", () => {
     const out = buildQuestionContext(q());
     expect(out).toContain("# 現在の問題");
@@ -105,8 +120,8 @@ describe("buildQuestionContext", () => {
       lawReferenceDate: "2026-04-01",
     }), "ア", false);
     expect(out).toContain("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
-    expect(out).toContain("- ア: 選任は必要なので、この肢は正しい。");
-    expect(out).toContain("- イ: 専任の義務はないので、この肢は誤り。");
+    expect(out).toContain("- (1): 選任は必要なので、この肢は正しい。");
+    expect(out).toContain("- (2): 専任の義務はないので、この肢は誤り。");
     expect(out).toContain("- 法令・制度の基準日: 2026-04-01");
     expect(COPILOT_SYSTEM_PROMPT).toContain("似た専門用語を省略・混同して意味を変えてはいけません");
   });
