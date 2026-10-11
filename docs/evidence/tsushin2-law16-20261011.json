@@ -1,0 +1,684 @@
+{
+  "originals": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    56,
+    61,
+    62,
+    65
+  ],
+  "newTranscriptions": 16,
+  "newExplanations": 16,
+  "choiceReasons": 64,
+  "savedDraftReuseCount": 0,
+  "savedExplanationReuseCount": 0,
+  "modelRequested": "gpt-6.1-sol",
+  "actualModelReceipt": null,
+  "pageVisualChecks": {
+    "41": 20,
+    "42": 20,
+    "43": 21,
+    "44": 21,
+    "45": 21,
+    "46": 22,
+    "47": 22,
+    "48": 22,
+    "49": 23,
+    "50": 23,
+    "51": 23,
+    "52": 24,
+    "56": 26,
+    "61": 28,
+    "62": 29,
+    "65": 31
+  },
+  "lawAsOf": "2026-06-07",
+  "primarySourceLocators": {
+    "41": {
+      "324AC0000000100": [
+        "3"
+      ]
+    },
+    "42": {
+      "324AC0000000100": [
+        "18",
+        "19_2",
+        "19_3",
+        "22"
+      ]
+    },
+    "43": {
+      "324AC0000000100": [
+        "26_4"
+      ]
+    },
+    "44": {
+      "322AC0000000049": [
+        "32",
+        "34",
+        "39"
+      ]
+    },
+    "45": {
+      "322AC0000000049": [
+        "56",
+        "57",
+        "58",
+        "61"
+      ]
+    },
+    "46": {
+      "347AC0000000057": [
+        "14"
+      ],
+      "347CO0000000318": [
+        "6",
+        "別表第6"
+      ]
+    },
+    "47": {
+      "347AC0000000057": [
+        "15",
+        "16",
+        "30"
+      ],
+      "347M50002000032": [
+        "19"
+      ]
+    },
+    "48": {
+      "327AC1000000180": [
+        "32"
+      ]
+    },
+    "49": {
+      "359AC0000000086": [
+        "8"
+      ]
+    },
+    "50": {
+      "328AC0000000096": [
+        "2",
+        "3",
+        "5"
+      ]
+    },
+    "51": {
+      "325AC0000000131": [
+        "6"
+      ]
+    },
+    "52": {
+      "335AC0000000139": [
+        "2"
+      ],
+      "335CO0000000260": [
+        "1"
+      ]
+    },
+    "56": {
+      "327AC1000000180": [
+        "47_2"
+      ],
+      "335AC0000000105": [
+        "77"
+      ],
+      "347AC0000000057": [
+        "88"
+      ],
+      "343AC0000000098": [
+        "14"
+      ]
+    },
+    "61": {
+      "347M50002000042": [
+        "2",
+        "3",
+        "8",
+        "11"
+      ],
+      "347CO0000000318": [
+        "別表第6"
+      ]
+    },
+    "62": {
+      "328CO0000000131": [
+        "8",
+        "9",
+        "10"
+      ],
+      "346M50001000002": [
+        "7"
+      ]
+    },
+    "65": {
+      "347M50002000034": [
+        "1",
+        "70",
+        "71",
+        "75"
+      ]
+    }
+  },
+  "lawSources": {
+    "324AC0000000100": {
+      "name": "建設業法",
+      "lawId": "324AC0000000100",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000100?asof=2026-06-07",
+      "sha256": "e655159d003d0be531d1a44b1bd6d6907090763c4b5611610580f98c0b085626",
+      "revision": {
+        "law_revision_id": "324AC0000000100_20251212_506AC0000000049",
+        "law_type": "Act",
+        "law_title": "建設業法",
+        "law_title_kana": "けんせつぎょうほう",
+        "abbrev": "",
+        "category": "建築・住宅",
+        "updated": "2025-11-21T08:36:53+09:00",
+        "amendment_promulgate_date": "2024-06-14",
+        "amendment_enforcement_date": "2025-12-12",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "506AC0000000049",
+        "amendment_law_title": "建設業法及び公共工事の入札及び契約の適正化の促進に関する法律の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和六年法律第四十九号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "322AC0000000049": {
+      "name": "労働基準法",
+      "lawId": "322AC0000000049",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-06-07",
+      "sha256": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "revision": {
+        "law_revision_id": "322AC0000000049_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "労働基準法",
+        "law_title_kana": "ろうどうきじゅんほう",
+        "abbrev": "労基法",
+        "category": "労働",
+        "updated": "2024-12-11T12:59:50+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律　抄",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "347AC0000000057": {
+      "name": "労働安全衛生法",
+      "lawId": "347AC0000000057",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-06-07",
+      "sha256": "b765cc56374c110d56a7aa888fb63d0ef3d6c86917446e5590d1463cd0fa140c",
+      "revision": {
+        "law_revision_id": "347AC0000000057_20260401_507AC0000000033",
+        "law_type": "Act",
+        "law_title": "労働安全衛生法",
+        "law_title_kana": "ろうどうあんぜんえいせいほう",
+        "abbrev": "労安衛法,保安四法,安衛法",
+        "category": "労働",
+        "updated": "2025-05-14T11:05:56+09:00",
+        "amendment_promulgate_date": "2025-05-14",
+        "amendment_enforcement_date": "2026-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507AC0000000033",
+        "amendment_law_title": "労働安全衛生法及び作業環境測定法の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年法律第三十三号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "347CO0000000318": {
+      "name": "労働安全衛生法施行令",
+      "lawId": "347CO0000000318",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-06-07",
+      "sha256": "9b0fa81d403a92b65b312970c79d4a3cee01f8bfeba09ebe84e1513c16fe8c27",
+      "revision": {
+        "law_revision_id": "347CO0000000318_20260401_507CO0000000361",
+        "law_type": "CabinetOrder",
+        "law_title": "労働安全衛生法施行令",
+        "law_title_kana": "ろうどうあんぜんえいせいほうしこうれい",
+        "abbrev": "労安衛法施行令,安衛法施行令",
+        "category": "労働",
+        "updated": "2025-11-14T09:57:03+09:00",
+        "amendment_promulgate_date": "2025-10-31",
+        "amendment_enforcement_date": "2026-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507CO0000000361",
+        "amendment_law_title": "労働安全衛生法施行令及び労働安全衛生法関係手数料令の一部を改正する政令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年政令第三百六十一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "347M50002000032": {
+      "name": "労働安全衛生規則",
+      "lawId": "347M50002000032",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-06-07",
+      "sha256": "84b056bc3a119b2a03aebf8d83e5894f4c9f76b46a3dbd586ea29095d2391165",
+      "revision": {
+        "law_revision_id": "347M50002000032_20260401_508M60000100003",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "労働安全衛生規則",
+        "law_title_kana": "ろうどうあんぜんえいせいきそく",
+        "abbrev": "安衛則",
+        "category": "労働",
+        "updated": "2026-05-27T18:53:10+09:00",
+        "amendment_promulgate_date": "2026-01-20",
+        "amendment_enforcement_date": "2026-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "508M60000100003",
+        "amendment_law_title": "労働安全衛生法及び作業環境測定法の一部を改正する法律の一部の施行に伴う関係省令の整備等に関する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和八年厚生労働省令第三号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "327AC1000000180": {
+      "name": "道路法",
+      "lawId": "327AC1000000180",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/327AC1000000180?asof=2026-06-07",
+      "sha256": "1a7e189827e2f69920c1a8792532b9d3bc57e6b1f08c25b7f9f5aed9504d7c33",
+      "revision": {
+        "law_revision_id": "327AC1000000180_20251001_507AC0000000022",
+        "law_type": "Act",
+        "law_title": "道路法",
+        "law_title_kana": "どうろほう",
+        "abbrev": "",
+        "category": "道路",
+        "updated": "2026-04-14T14:40:13+09:00",
+        "amendment_promulgate_date": "2025-04-16",
+        "amendment_enforcement_date": "2025-10-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507AC0000000022",
+        "amendment_law_title": "道路法等の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年法律第二十二号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "359AC0000000086": {
+      "name": "電気通信事業法",
+      "lawId": "359AC0000000086",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/359AC0000000086?asof=2026-06-07",
+      "sha256": "ebbe8c7d46a7ecdd1ce000f8906148d6fce9e81e26663f59c3808c60e5ab32bd",
+      "revision": {
+        "law_revision_id": "359AC0000000086_20260527_507AC0000000046",
+        "law_type": "Act",
+        "law_title": "電気通信事業法",
+        "law_title_kana": "でんきつうしんじぎょうほう",
+        "abbrev": "電通事法",
+        "category": "電気通信",
+        "updated": "2026-05-25T16:36:37+09:00",
+        "amendment_promulgate_date": "2025-05-28",
+        "amendment_enforcement_date": "2026-05-27",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507AC0000000046",
+        "amendment_law_title": "電気通信事業法及び日本電信電話株式会社等に関する法律の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年法律第四十六号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "328AC0000000096": {
+      "name": "有線電気通信法",
+      "lawId": "328AC0000000096",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/328AC0000000096?asof=2026-06-07",
+      "sha256": "2b56c2c8d40f0fc384bbbe61468021b3c940c41781ba414a1b46b289b652bc9e",
+      "revision": {
+        "law_revision_id": "328AC0000000096_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "有線電気通信法",
+        "law_title_kana": "ゆうせんでんきつうしんほう",
+        "abbrev": "",
+        "category": "電気通信",
+        "updated": "2024-07-23T18:27:53+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "325AC0000000131": {
+      "name": "電波法",
+      "lawId": "325AC0000000131",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000131?asof=2026-06-07",
+      "sha256": "676865eb29b37b375ba0aae1582bd33beeb6df0a847e7e0dede8569722c5555b",
+      "revision": {
+        "law_revision_id": "325AC0000000131_20260527_507AC0000000046",
+        "law_type": "Act",
+        "law_title": "電波法",
+        "law_title_kana": "でんぱほう",
+        "abbrev": "",
+        "category": "電気通信",
+        "updated": "2026-05-25T16:55:59+09:00",
+        "amendment_promulgate_date": "2025-05-28",
+        "amendment_enforcement_date": "2026-05-27",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507AC0000000046",
+        "amendment_law_title": "電気通信事業法及び日本電信電話株式会社等に関する法律の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年法律第四十六号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "335AC0000000139": {
+      "name": "電気工事士法",
+      "lawId": "335AC0000000139",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000139?asof=2026-06-07",
+      "sha256": "dd383a12f4df26fb5831a329ee135d51cef7c62a84c6d84d6dc49847b73524fe",
+      "revision": {
+        "law_revision_id": "335AC0000000139_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "電気工事士法",
+        "law_title_kana": "でんきこうじしほう",
+        "abbrev": "",
+        "category": "工業",
+        "updated": "2024-07-21T22:21:14+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "335CO0000000260": {
+      "name": "電気工事士法施行令",
+      "lawId": "335CO0000000260",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/335CO0000000260?asof=2026-06-07",
+      "sha256": "65458c8629d525f6d7c7fd7172fd9be42b57488bbec3376d8c323f09a29d32c3",
+      "revision": {
+        "law_revision_id": "335CO0000000260_20251114_507CO0000000374",
+        "law_type": "CabinetOrder",
+        "law_title": "電気工事士法施行令",
+        "law_title_kana": "でんきこうじしほうしこうれい",
+        "abbrev": "",
+        "category": "工業",
+        "updated": "2025-12-01T09:20:39+09:00",
+        "amendment_promulgate_date": "2025-11-14",
+        "amendment_enforcement_date": "2025-11-14",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507CO0000000374",
+        "amendment_law_title": "電気工事士法施行令の一部を改正する政令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年政令第三百七十四号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "335AC0000000105": {
+      "name": "道路交通法",
+      "lawId": "335AC0000000105",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/335AC0000000105?asof=2026-06-07",
+      "sha256": "9351830664db763981be8b017caff6e38f39a302bd763c7cb635786b31c4f05d",
+      "revision": {
+        "law_revision_id": "335AC0000000105_20260521_505AC0000000063",
+        "law_type": "Act",
+        "law_title": "道路交通法",
+        "law_title_kana": "どうろこうつうほう",
+        "abbrev": "道交法",
+        "category": "警察",
+        "updated": "2025-12-19T18:29:12+09:00",
+        "amendment_promulgate_date": "2023-06-16",
+        "amendment_enforcement_date": "2026-05-21",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "505AC0000000063",
+        "amendment_law_title": "デジタル社会の形成を図るための規制改革を推進するためのデジタル社会形成基本法等の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和五年法律第六十三号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "343AC0000000098": {
+      "name": "騒音規制法",
+      "lawId": "343AC0000000098",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/343AC0000000098?asof=2026-06-07",
+      "sha256": "31362d9ff3d20344f6850c05233bf6c8de940628cc5eead45ade89d84ac58f23",
+      "revision": {
+        "law_revision_id": "343AC0000000098_20250601_504AC0000000068",
+        "law_type": "Act",
+        "law_title": "騒音規制法",
+        "law_title_kana": "そうおんきせいほう",
+        "abbrev": "",
+        "category": "環境保全",
+        "updated": "2024-07-22T15:42:50+09:00",
+        "amendment_promulgate_date": "2022-06-17",
+        "amendment_enforcement_date": "2025-06-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "504AC0000000068",
+        "amendment_law_title": "刑法等の一部を改正する法律の施行に伴う関係法律の整理等に関する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和四年法律第六十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "347M50002000042": {
+      "name": "酸素欠乏症等防止規則",
+      "lawId": "347M50002000042",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-06-07",
+      "sha256": "5f410a3276d942058ca98e6a5c07ef6bcbdbd6ed93e508f96c260215331c556f",
+      "revision": {
+        "law_revision_id": "347M50002000042_20260401_508M60000100003",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "酸素欠乏症等防止規則",
+        "law_title_kana": "さんそけつぼうしょうとうぼうしきそく",
+        "abbrev": "酸欠則",
+        "category": "労働",
+        "updated": "2026-02-02T09:07:53+09:00",
+        "amendment_promulgate_date": "2026-01-20",
+        "amendment_enforcement_date": "2026-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "508M60000100003",
+        "amendment_law_title": "労働安全衛生法及び作業環境測定法の一部を改正する法律の一部の施行に伴う関係省令の整備等に関する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和八年厚生労働省令第三号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "328CO0000000131": {
+      "name": "有線電気通信設備令",
+      "lawId": "328CO0000000131",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/328CO0000000131?asof=2026-06-07",
+      "sha256": "78992371c8840c511a3f512354c808408db03c00e626e122671af350e4a9c9fb",
+      "revision": {
+        "law_revision_id": "328CO0000000131_20011221_413CO0000000421",
+        "law_type": "CabinetOrder",
+        "law_title": "有線電気通信設備令",
+        "law_title_kana": "ゆうせんでんきつうしんせつびれい",
+        "abbrev": "",
+        "category": "電気通信",
+        "updated": "2024-07-23T18:37:53+09:00",
+        "amendment_promulgate_date": "2001-12-21",
+        "amendment_enforcement_date": "2001-12-21",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "413CO0000000421",
+        "amendment_law_title": null,
+        "amendment_law_title_kana": "",
+        "amendment_law_num": "平成十三年政令第四百二十一号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "346M50001000002": {
+      "name": "有線電気通信設備令施行規則",
+      "lawId": "346M50001000002",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/346M50001000002?asof=2026-06-07",
+      "sha256": "f36737a9969489ae3341744a4b463ea9d7684a970789d2c29087f55b82cceb60",
+      "revision": {
+        "law_revision_id": "346M50001000002_20160616_428M60000008067",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "有線電気通信設備令施行規則",
+        "law_title_kana": "ゆうせんでんきつうしんせつびれいしこうきそく",
+        "abbrev": "",
+        "category": "電気通信",
+        "updated": "2024-07-22T07:39:35+09:00",
+        "amendment_promulgate_date": "2016-06-16",
+        "amendment_enforcement_date": "2016-06-16",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "428M60000008067",
+        "amendment_law_title": null,
+        "amendment_law_title_kana": "",
+        "amendment_law_num": "平成二十八年総務省令第六十七号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    },
+    "347M50002000034": {
+      "name": "クレーン等安全規則",
+      "lawId": "347M50002000034",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2026-06-07",
+      "sha256": "03d16ec106bc805a6335bdfbd77bbcc837d75e1e54ae989a3499fde191ea2c54",
+      "revision": {
+        "law_revision_id": "347M50002000034_20260401_508M60000100003",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "クレーン等安全規則",
+        "law_title_kana": "くれーんとうあんぜんきそく",
+        "abbrev": "",
+        "category": "労働",
+        "updated": "2026-02-04T16:22:12+09:00",
+        "amendment_promulgate_date": "2026-01-20",
+        "amendment_enforcement_date": "2026-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "508M60000100003",
+        "amendment_law_title": "労働安全衛生法及び作業環境測定法の一部を改正する法律の一部の施行に伴う関係省令の整備等に関する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和八年厚生労働省令第三号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "CurrentEnforced"
+      }
+    }
+  },
+  "blanksRecovered": [
+    49
+  ],
+  "nativeCombinationChoices": [
+    56,
+    62,
+    65
+  ],
+  "oldJSONModified": 0,
+  "oldJSONDeleted": 0,
+  "individualStopPreserved": [],
+  "latestTwoOriginalTargets": {
+    "2026-early": 65,
+    "2025-late": 65
+  },
+  "secondPeriodComplete": false
+}
