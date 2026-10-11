@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "status": "EVIDENCE_ONLY_NOT_RELEASED",
+  "sourceCommit": "19aeaa027c6a223c4c384ee60985b885f96f9efa",
+  "selection": "Eight lowest-similarity saved OCR diagnostics excluding existing known HOLDs and the prior source12 scope; no full explanation review.",
+  "method": "Direct local official page-image inspection by this Codex agent; saved source bytes rehashed, candidate-to-integrated stem/choices/key checked.",
+  "modelLabelObserved": null,
+  "modelLabelNote": "Exact current served model label is not available; no new external model request.",
+  "counts": {
+    "targetedOriginals": 8,
+    "targetedChoices": 32,
+    "sourceTextReadyOriginals": 6,
+    "unappliedSourceDeltaOriginals": 2,
+    "publishedOriginalsAdded": 0
+  },
+  "normalizationsAccepted": [
+    "layout whitespace",
+    "choice and blank box typography",
+    "table represented as labeled row values",
+    "ruby represented parenthetically where retained"
+  ],
+  "limitations": [
+    "Source-text readiness is not publication approval or a new correctness review of explanations.",
+    "No blanket OCR/full-220 fidelity PASS.",
+    "Known legal/session/figure/explanation HOLDs were excluded and not reassessed.",
+    "Source12 release operation remains blocked pending human authorization after automatic approval review rejection."
+  ],
+  "operations": {
+    "httpRequests": 0,
+    "externalModelRequests": 0,
+    "releaseScriptExecuted": false,
+    "publicationGateChanged": false,
+    "questionDataChanged": false,
+    "push": false
+  },
+  "previousSource12Sha256": "d4386e8d98d3d1c61b523f47a29b7eb55c381d08c9941bd9e8fc28ce4ca27152",
+  "sourceDiagnosticsSha256": "cc8226f1c01ca838b1dc897e46cf55ec8186ef52b9efa006ef30e2e5f24addae",
+  "questions": [
+    {
+      "identity": "biyoshi-53-q52",
+      "integratedId": "biyoshi-2026-first-gakka-q52",
+      "status": "SOURCE_TEXT_READY_NOT_RELEASED",
+      "finding": "All twelve fraction cells verified in the A/B/C table; 1/2,1/3,2/3; 1/3,1/2,2/3; 1/2,2/3,1/3; 2/3,1/3,1/2. OCR misplaced fractions; saved transcription is faithful.",
+      "officialAnswerObserved": "3",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-53-q49-54\\question-physical-25.png",
+      "sourceImageSha256": "72d2615360befaf1fa551f4badf40dc06065b6996afb3b64535d94629a9cdba2",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi53.pdf",
+      "sourcePdfSha256": "02d30000dec665d48397969797bc6c7abde5a24a6e6ac3cb0cd649f1852d5e5f",
+      "sourcePage": 25,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.6217948717948718,
+      "integratedObjectSha256": "0d7bfa9c307ab807e590d5bf6515d7152c8863f204706a24c92af222ad6666bd",
+      "publicationApproved": false
+    },
+    {
+      "identity": "biyoshi-54-q35",
+      "integratedId": "biyoshi-2026-second-gakka-q35",
+      "status": "SOURCE_DELTA_NEEDED_NOT_RELEASED",
+      "finding": "The question contains an added heading 【皮膚科学】 not printed in this question. Stem after that heading, all four pairings and printed ruby are consistent. Proposed removal is evidence only and has not been applied.",
+      "officialAnswerObserved": "2",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-54-q31-36\\question-physical-16.png",
+      "sourceImageSha256": "aeee6499752117dbaedb74ba8a67900f8c392b918c5e33baeec8bc85cee9f3b5",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi54.pdf",
+      "sourcePdfSha256": "e8587934d3a3b8022c1f858ac0b1d7f9d39fc10d4a72e44b55b6990ca9bd217f",
+      "sourcePage": 16,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/09/54bhikki.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.64,
+      "integratedObjectSha256": "a37cf5cd0a2c454dc68a97729ea897ef4fae7f485217c9caa099138927b6a747",
+      "publicationApproved": false
+    },
+    {
+      "identity": "biyoshi-53-q55",
+      "integratedId": "biyoshi-2026-first-gakka-q55",
+      "status": "RUBY_OMISSION_NOT_RELEASED",
+      "finding": "All four base-word pairings match. Printed ruby つむぎ (紬), へこおび (兵児帯), ゆかた (浴衣) is absent from saved choices; retain as an explicit source-fidelity delta, not an incorrect key.",
+      "officialAnswerObserved": "3",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-53-q55\\question-physical-26.png",
+      "sourceImageSha256": "2c11649852b65487ac31cbc5a79ab8676b563c00190937b4facee835572585e0",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi53.pdf",
+      "sourcePdfSha256": "02d30000dec665d48397969797bc6c7abde5a24a6e6ac3cb0cd649f1852d5e5f",
+      "sourcePage": 26,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.6715328467153284,
+      "integratedObjectSha256": "896bf440f74362aae53e5e2d4c145d354afddd025712339d629ddf861c177f68",
+      "publicationApproved": false
+    },
+    {
+      "identity": "biyoshi-54-q54",
+      "integratedId": "biyoshi-2026-second-gakka-q54",
+      "status": "SOURCE_TEXT_READY_NOT_RELEASED",
+      "finding": "All four ornament names and printed ruby かんざし/はこせこ/てがら match saved parenthetical readings.",
+      "officialAnswerObserved": "2",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-54-q49-54\\question-physical-26.png",
+      "sourceImageSha256": "4ca5ff9e16fdf77705d64af593f353674109373298459e30c292296ded72a902",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi54.pdf",
+      "sourcePdfSha256": "e8587934d3a3b8022c1f858ac0b1d7f9d39fc10d4a72e44b55b6990ca9bd217f",
+      "sourcePage": 26,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/09/54bhikki.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.6722689075630253,
+      "integratedObjectSha256": "ead2a8c835315c647e37b6d855e439c3b00d0d2a118f00b030ca6a7e2c754e48",
+      "publicationApproved": false
+    },
+    {
+      "identity": "biyoshi-53-q22",
+      "integratedId": "biyoshi-2026-first-gakka-q22",
+      "status": "SOURCE_TEXT_READY_NOT_RELEASED",
+      "finding": "Complete shared quoted paragraph, A/B/C/D blanks and all sixteen table cells verified independently against the beauty source page.",
+      "officialAnswerObserved": "1",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-53-q19-24\\question-physical-11.png",
+      "sourceImageSha256": "1fd3bd11619a6a2916b8ae05a299b8cdff2ff6297221aba9161cc9a7ecda57fe",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi53.pdf",
+      "sourcePdfSha256": "02d30000dec665d48397969797bc6c7abde5a24a6e6ac3cb0cd649f1852d5e5f",
+      "sourcePage": 11,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.6854460093896714,
+      "integratedObjectSha256": "0d9bb069907af610b507229123ce7acd37e3074bd82ec6b14ff8b090d6896cce",
+      "publicationApproved": false
+    },
+    {
+      "identity": "biyoshi-53-q28",
+      "integratedId": "biyoshi-2026-first-gakka-q28",
+      "status": "SOURCE_TEXT_READY_NOT_RELEASED",
+      "finding": "Directly verified 含まれない and all four terms against the beauty source page; separate original identity is preserved.",
+      "officialAnswerObserved": "1",
+      "stemAndAllFourChoicesCompared": true,
+      "sourceImage": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\biyoshi-53-q25-30\\question-physical-13.png",
+      "sourceImageSha256": "c43c6f3a4042b7d9d9225b2289007cba0bf06261bae644802fe5712cce588aa3",
+      "sourcePdf": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\biyoshi53.pdf",
+      "sourcePdfSha256": "02d30000dec665d48397969797bc6c7abde5a24a6e6ac3cb0cd649f1852d5e5f",
+      "sourcePage": 13,
+      "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/03/53bhikki-1.pdf",
+      "ocrSimilarityDiagnosticOnly": 0.7105263157894737,
+      "integratedObjectSha256": "ac4fba2bd2126c42cb04a76e66d15f20a60988af9da99f7dd13c7ae38b8c0b79",
+      "publicationApproved": false
+    }
+  ],
+  "unappliedDeltas": [
+    {
+      "identity": "biyoshi-54-q35",
+      "field": "question",
+      "before": "【皮膚科学】皮膚疾患と病原体の次の組合せのうち、正しいものはどれか。",
+      "proposedAfter": "皮膚疾患と病原体の次の組合せのうち、正しいものはどれか。",
+      "applied": false
+    },
+    {
+      "identity": "biyoshi-53-q55",
+      "field": "choices",
+      "missingPrintedRuby": {
+        "紬": "つむぎ",
+        "兵児帯": "へこおび",
+        "浴衣": "ゆかた"
+      },
+      "applied": false
+    }
+  ],
+  "unchangedFileSha256": {
+    "data/questions/biyoshi/2026-first.json": "f10225c148a25cab586dd13f1c0ef5a188125a0cf66dd6aacb0e82e76e692ecd",
+    "data/questions/biyoshi/2026-second.json": "ae2589279f808ee8924cba60ed0f6b49b3b8c210fb0d0f4874da658f4e2a99d5",
+    "data/questions/biyoshi/index.ts": "5724e1931dc1b5323b0f5c1695ddb830d752bc90e348c90e5c1cfc11d79e2caf",
+    "data/questions/riyoshi/2026-first.json": "ca8eab124fb634bfbcff6f6dd1fc8da444b058aa95e1235e5923be542b874742",
+    "data/questions/riyoshi/2026-second.json": "a21bca613e102c608f7ed39d3d10c8e436ae3557b1910b83c29e3bd70aa7a26e",
+    "data/questions/riyoshi/index.ts": "c3470f60618709747d03608185c14380cd4d3a07e9b329be98c9badde74ea368",
+    "data/questions/beauty-release.json": "61d493bc3957e14a8fb839e19b6c6caf64980bd44264e9d20f967e496215e88c"
+  },
+  "originalCombinedScope": true,
+  "scopeNote": "Historical combined counts retained; records filtered to assigned biyoshi scope."
+}

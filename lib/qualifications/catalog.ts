@@ -48,6 +48,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本中小企業診断士協会連合会 2025・2024年度 中小企業診断士第2次試験", remainingWork: ["次年度公開資料の確認"],
   },
   {
+    slug: "biyoshi", examCode: "biyoshi", shortName: "美容師", fullName: "美容師国家試験",
+    domain: "personal-services", administrator: "公益財団法人理容師美容師試験研修センター",
+    officialQuestionsUrl: "https://www.rbc.or.jp/", officialReuseTermsUrl: "https://www.rbc.or.jp/",
+    status: "ready-to-ingest",
+    reuseSummary: "第53・54回各55原問と全440肢の保存原稿。出典表示は掲載許諾を意味しません。公開ゲートは閉じています。",
+    remainingWork: ["既存の法令・解説・図版保留の解消", "原典転記の個別受入れ", "統合担当による公開判断と対象IDの固定"],
+  },
+  {
     slug: "fp1",
     examCode: "fp1",
     shortName: "FP1級",

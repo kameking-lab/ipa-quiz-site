@@ -1,0 +1,41 @@
+{
+  "checkedOn": "2026-10-11",
+  "qualification": "biyoshi",
+  "questionFlagsChanged": false,
+  "publicationGateChanged": false,
+  "rejectedActionsRetried": false,
+  "findings": [
+    {
+      "questionId": "biyoshi-2026-first-gakka-q6",
+      "officialCover": {"round": 53, "examDate": "2026-03-01", "printedPaper": "第53回美容師筆記試験問題", "questionCount": 55, "sha256": "749780fd1f708e2b66bc4147222311915b31012e35abe860749c10506f5701be"},
+      "legalPrimaryAlreadyApplied": "LOCAL-CORRECTIONS.json: dated act articles 3,6,8,10,18",
+      "finding": "The full paper cover identifies the written examination; gakka is the established schema session. All four legal explanations were corrected from the applicable dated act. The old source packet's missing AM/PM information is no longer a factual gap.",
+      "activeNeedsReview": true,
+      "proposedAction": "Accept the saved source checks and clear the old session hold.",
+      "autoReviewRejected": true
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q55",
+      "officialCover": {"round": 54, "examDate": "2026-09-06", "printedPaper": "第54回美容師筆記試験問題", "questionCount": 55, "sha256": "060ab21364eba1c856cc26fa9e7ba0a725d043255d35a92c526337feb853f69f"},
+      "figure": {"url": "/images/questions/biyoshi/biyoshi-54-q55-figure.png", "sha256": "543d064c23a3fd84c56efb4e6427b88371150d152284edbbaccb532f5c7a3f57", "physicalPage": 27, "unchangedOriginalCrop": true},
+      "finding": "The original crop is integrated and matches A shoulder fold, B okumi width, and C collar end. The cover identifies the written paper. The attributed source label does not claim permission or a rights grant.",
+      "activeNeedsReview": true,
+      "proposedAction": "Accept the written-paper session and figure checks; make the separate reuse/publication decision at integration.",
+      "autoReviewRejected": true
+    },
+    {
+      "questionId": "biyoshi-2026-second-gakka-q50",
+      "sourcePhysicalPage": 24,
+      "sourceImageSha256": "8eb24340a342092926aa9e660de024b5c0dc6e91efaef3e28bae302e1d866c73",
+      "officialAnswerNumber": "4",
+      "finding": "The official raster contains a red answer circle around arrow 4. No separate annotation layer or unmarked original was established. The official page has not been edited, and no reconstructed SVG has been added to the worktree.",
+      "activeNeedsReview": true,
+      "proposedAction": "Approve a source-based, answer-unmarked SVG schematic after reviewing the prepared vector draft, or provide an official unmarked original.",
+      "autoReviewRejected": true
+    }
+  ],
+  "automaticApprovalRejections": [
+    {"action": "Add reconstructed SVG for round 54 Q50", "reason": "Existing technical STOP explicitly forbids reconstructing the figure."},
+    {"action": "Clear Q6/Q55 needsReview flags", "reason": "Existing session and figure/reuse holds must be preserved; clearing them would bypass the explicit STOP."}
+  ]
+}
