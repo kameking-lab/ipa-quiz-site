@@ -1,0 +1,144 @@
+{
+  "status": "SOURCE_DISCOVERY_COMPLETE_MATERIAL_HOLD",
+  "createdAtUtc": "2026-10-10T10:02:15.586845+00:00",
+  "qualification": "専門調理師・調理技能士(調理技術技能評価試験・学科)。一般の調理師試験や専門調理師認定とは別。",
+  "sourceReadyOriginals": 0,
+  "publicationReady": false,
+  "jobCompleted": true,
+  "actualInitModel": "claude-sonnet-5-5",
+  "actualModelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 8865,
+      "cacheReadInputTokens": 25215,
+      "cacheCreationInputTokens": 17678,
+      "webSearchRequests": 0,
+      "costUSD": 0.1618955,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 625,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 21192,
+      "outputTokens": 4892,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0045652,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2612,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "requestedCliMaxTurns": 12,
+  "actualResultNumTurns": 16,
+  "actualWebToolCalls": 15,
+  "actualFetchedUniqueUrls": [
+    "https://chouri-ggc.or.jp/cgghshiken/past_questions/",
+    "https://chouri-ggc.or.jp/documents/%e4%bb%a4%e5%92%8c8%e5%b9%b4%e5%ba%a6-%e8%a9%a6%e9%a8%93%e5%95%8f%e9%a1%8c%ef%bc%88%e4%b8%ad%e5%9b%bd%e6%96%99%e7%90%86%ef%bc%89-2/",
+    "https://chouri-ggc.or.jp/documents/%e4%bb%a4%e5%92%8c8%e5%b9%b4%e5%ba%a6-%e8%a9%a6%e9%a8%93%e5%95%8f%e9%a1%8c%ef%bc%88%e3%81%99%e3%81%97%e6%96%99%e7%90%86%ef%bc%89/",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_sushi.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_sushi.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_chuugoku.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_chuugoku.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_kyuusyoku.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_kyuusyoku.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_nihon_mondai.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_nihon_gakka_kaitou.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_seiyou_mondai.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_seiyou_gakka_kaitou.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2022/01/R07_men_mondai.pdf",
+    "https://chouri-ggc.or.jp/cms/wp-content/uploads/2022/01/R07_men_gakka_kaitou.pdf"
+  ],
+  "sameUrlRetries": 0,
+  "cliPermissionToolErrors": 0,
+  "failedFetchesAsReported": [
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_sushi.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_sushi.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_chuugoku.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_chuugoku.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_mondai_kyuusyoku.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/08/R08_gakka_kaitou_kyuusyoku.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_nihon_mondai.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_nihon_gakka_kaitou.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_seiyou_mondai.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2026/01/R07_seiyou_gakka_kaitou.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2022/01/R07_men_mondai.pdf",
+      "status": "403"
+    },
+    {
+      "url": "https://chouri-ggc.or.jp/cms/wp-content/uploads/2022/01/R07_men_gakka_kaitou.pdf",
+      "status": "403"
+    }
+  ],
+  "pdfBytesSavedByThisJob": 0,
+  "inputPublicSavedHtmlOnly": true,
+  "http403RetryOrBypass": false,
+  "modelUsageCostMeaning": "CLI list-cost accounting only; not proof of Max billing/overage or amount paid. Existing firstParty used; no API key/provider opted in.",
+  "completePacketMissing": "Question full text, official keys, image page bytes/hashes and scoring-unit counts not fixed; do not count URL discovery as source-ready.",
+  "artifacts": [
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\SOURCE-START-PACKET.json",
+      "sha256": "a86eecdc43248e7a4db31be210d24a971ed85cebb77a254b2810f6f469e095ca"
+    },
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\request.ndjson",
+      "sha256": "18f8bb8c23b815f1b7a703db0050c4752f81a0f9d7552e47bdc1a6e9b4b51216"
+    },
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\raw.stream.jsonl",
+      "sha256": "2e54e1bea1b5ea0064463ff7febf515d3721d12247d4dfada592944df98639a1"
+    },
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\PROCESS-IO.json",
+      "sha256": "b177367426808c4456fade6da365b14d64b938d2fa30cae367df5b46c4ac27cd"
+    },
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\receipt.json",
+      "sha256": "270738c67a4608c93fb250c606bde5e85b1b604fc457dbd4400d0df29d224824"
+    },
+    {
+      "path": "reports\\claude-capacity-20261010\\specialist-cooking-latest-two-source\\source-discovery.json",
+      "sha256": "f84eae49d7a55cefb85fddced27351fdf2ad997e3c4b03810308c07835fb8454"
+    }
+  ],
+  "nextStep": "No repeat of failed URL or guessed key. Automotive scan needs locally saved official PDF and visual extraction; cooking403 remains HOLD. Owner/root must assign a distinct valid next source scope.",
+  "privateRepositoryCodeOrSecretFilesSent": false
+}
