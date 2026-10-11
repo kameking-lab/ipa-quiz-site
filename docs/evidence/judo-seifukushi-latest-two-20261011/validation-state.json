@@ -1,0 +1,69 @@
+{
+  "atUtc": "2026-10-11T03:23:39.914599+00:00",
+  "baseCommit": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
+  "remoteMain": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
+  "questionsFileSha256": "5e15c52c3ac1423aed16f730f95a39cd6516269f11b0e17655d70d97d0b1fc2a",
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "scopedLint": {
+    "changedTypeScriptFiles": 15,
+    "command": "pnpm exec eslint (explicit changed paths)",
+    "exitCode": 0
+  },
+  "focusedTests": {
+    "files": 8,
+    "uniqueTests": 63,
+    "passed": 63,
+    "workers": 1,
+    "initialFailure": "Existing all-qualification lazy-loader test hit its 15000ms timeout.",
+    "retry": "Only the affected loader suite rerun with --maxWorkers 1 --testTimeout 60000: 7/7 pass.",
+    "noTestTimeoutConfigurationChanged": true
+  },
+  "schema": {
+    "command": "pnpm validate:questions --exam=judo-seifukushi --report",
+    "exitCode": 0,
+    "questions": 500,
+    "ok": 500,
+    "fail": 0,
+    "warn": 478,
+    "meanHeuristicScore": 77,
+    "warningContext": "Mostly short general summaries, while all 2000 individual choice explanations are populated. Original short source stems are preserved."
+  },
+  "explanationConsistency": {
+    "questions": 500,
+    "findings": [],
+    "exitCode": 0
+  },
+  "independentLocalReview": {
+    "exceptionalOfficialKeys": 14,
+    "difficultQuestions": 7,
+    "adoptionVerified": true,
+    "notWholeCorpusMedicalReview": true
+  },
+  "fullLocalBuild": {
+    "state": "QUEUED",
+    "reason": "User requested sequential heavy validation; shared resource control requests queueing full builds and full-repo tests."
+  },
+  "fullLocalRepoTests": {
+    "state": "QUEUED",
+    "reason": "Same shared heavy-validation queue."
+  },
+  "fullRepoLint": {
+    "state": "PENDING_HOSTED_CI"
+  },
+  "hostedCi": {
+    "state": "PENDING_DRAFT_PR",
+    "workflow": ".github/workflows/e2e.yml",
+    "requiredChecks": [
+      "pnpm lint",
+      "pnpm typecheck",
+      "pnpm test",
+      "pnpm build",
+      "Playwright E2E"
+    ]
+  },
+  "publicationState": "DRAFT_ONLY_NOT_MERGED_OR_DEPLOYED",
+  "prePrFourCommandsRule": "CLAUDE.md requests all four before PR. The user subsequently requires heavy local validation to wait its turn. Draft CI is used to keep the completed manuscripts reviewable; full verification remains a merge prerequisite."
+}
