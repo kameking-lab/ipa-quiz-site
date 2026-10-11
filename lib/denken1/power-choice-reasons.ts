@@ -10,7 +10,7 @@ const field = z.object({
 }).strict();
 const supplementSchema = z.object({
   schemaVersion: z.literal(1),
-  year: z.literal(2026),
+  year: z.union([z.literal(2025), z.literal(2026)]),
   stage: z.literal("primary"),
   subject: z.literal("power"),
   sourcePacketSha256: hash,
@@ -18,7 +18,7 @@ const supplementSchema = z.object({
   sourceAnswerPdfSha256: hash,
   baseNativePartCanonicalSha256: hash,
   questions: z.array(z.object({
-    id: z.string().regex(/^denken1-2026-primary-power-q0[1-6]$/),
+    id: z.string().regex(/^denken1-202[56]-primary-power-q0[1-6]$/),
     choiceGroups: z.record(text, text),
     fields: z.array(field).min(5),
   }).strict()).length(6),

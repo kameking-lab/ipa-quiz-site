@@ -3,6 +3,8 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import originalData from "@/data/questions/denken1/native-2026-power.json";
 import supplement from "@/data/questions/denken1/choice-reasons-2026-power.json";
+import original2025Data from "@/data/questions/denken1/native-2025-power.json";
+import supplement2025 from "@/data/questions/denken1/choice-reasons-2025-power.json";
 import { NativeAnswer } from "@/components/denken2/NativeAnswer";
 import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT } from "@/lib/denken1/native";
 import { withPowerChoiceReasons } from "@/lib/denken1/power-choice-reasons";
@@ -23,6 +25,53 @@ function canonical(value: unknown): unknown {
 }
 const copySupplement = () => structuredClone(supplement);
 afterEach(cleanup);
+
+describe("Denken1 2025 primary power choice supplement", () => {
+  it("covers the differing 15-, 18- and 17-label banks while preserving all original fields", () => {
+    expect(createHash("sha256").update(JSON.stringify(canonical(original2025Data))).digest("hex"))
+      .toBe(supplement2025.baseNativePartCanonicalSha256);
+    const part = DENKEN1_NATIVE_PARTS.find(value => value.year === 2025 && value.subject === "power")!;
+    expect(part.questions.map(question => [question.slots.length, Object.keys(question.choiceGroups).length]))
+      .toEqual([[5, 15], [5, 15], [5, 15], [5, 15], [8, 18], [7, 17]]);
+    let reasons = 0;
+    for (const question of part.questions) for (const slot of question.slots) {
+      expect(Object.keys(slot.choiceExplanations!)).toEqual(Object.keys(question.choiceGroups));
+      expect(slot.choiceExplanations![slot.officialAnswer]).toMatch(/^この空欄では適切。/);
+      reasons += Object.keys(slot.choiceExplanations!).length;
+    }
+    expect(reasons).toBe(563);
+    const restored = { ...part, questions: part.questions.map(question => ({ ...question,
+      slots: question.slots.map(slot => Object.fromEntries(Object.entries(slot)
+        .filter(([key]) => key !== "choiceExplanations"))),
+    })) };
+    expect(restored).toEqual(original2025Data);
+    expect(() => withPowerChoiceReasons(original, supplement2025)).toThrow();
+  });
+
+  it("keeps the pi-circuit result consistent with the official phase-voltage choice", () => {
+    const question = DENKEN1_NATIVE_PARTS.find(value => value.year === 2025 && value.subject === "power")!.questions[1]!;
+    const zy = -20 * 0.001;
+    const a = 1 + zy / 2;
+    const cImaginary = 0.001 * (1 + zy / 4);
+    expect(a * a + 20 * cImaginary).toBeCloseTo(1, 12);
+    const receivingPhaseVoltage = (275 / Math.sqrt(3)) / a;
+    expect(receivingPhaseVoltage).toBeCloseTo(160.375, 3);
+    const choices = Object.entries(question.choiceGroups).filter(([, text]) => /^\d+$/.test(text))
+      .sort((left, right) => Math.abs(Number(left[1]) - receivingPhaseVoltage) - Math.abs(Number(right[1]) - receivingPhaseVoltage));
+    expect(choices[0]![0]).toBe(question.slots[4]!.officialAnswer);
+    expect(question.slots[4]!.choiceExplanations!["ホ"]).toContain("160.4");
+  });
+
+  it("reveals all 144 reasons for the eight-field valve original", () => {
+    const question = DENKEN1_NATIVE_PARTS.find(value => value.year === 2025 && value.subject === "power")!.questions[4]!;
+    const { container } = render(<NativeAnswer question={question} />);
+    expect(screen.getAllByRole("combobox")).toHaveLength(8);
+    expect(container.querySelectorAll("dd")).toHaveLength(0);
+    fireEvent.click(screen.getByRole("button"));
+    expect(screen.getAllByText("全選択肢の理由（18肢）")).toHaveLength(8);
+    expect(container.querySelectorAll("dd")).toHaveLength(144);
+  });
+});
 
 describe("Denken1 2026 primary power choice supplement", () => {
   it("binds 580 complete reasons to the verified six originals without changing keys or figures", () => {
