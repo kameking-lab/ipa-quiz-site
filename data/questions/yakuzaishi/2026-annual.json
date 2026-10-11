@@ -7522,5 +7522,341 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q2",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 2,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イオン強度Iを求める式として正しいのはどれか。1つ選べ。ただし、cᵢはイオン種iのモル濃度、zᵢはそのイオンの電荷である。",
+    "choices": {
+      "ア": "I = ∑ cᵢ zᵢ",
+      "イ": "I = ∑ cᵢ² zᵢ",
+      "ウ": "I = ∑ cᵢ zᵢ²",
+      "エ": "I = (1/2) ∑ cᵢ² zᵢ",
+      "オ": "I = (1/2) ∑ cᵢ zᵢ²"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "イオン強度は I = (1/2)Σ c_i z_i^2 で定義されます。濃度は1乗、電荷は2乗で、全体に1/2を掛けます。例として、0.1 mol/Lの NaCl では Na+ と Cl- がそれぞれ0.1 mol/L、電荷は±1です。I = 1/2 × (0.1×1 + 0.1×1) = 0.1 となり、モル濃度と一致します。一方、0.1 mol/Lの CaCl2 では Ca2+ が0.1、Cl- が0.2 mol/Lです。I = 1/2 × (0.1×4 + 0.2×1) = 0.3 となります。",
+    "choiceExplanations": {
+      "ア": "電荷を2乗しておらず、1/2もありません。電荷をそのまま足すと、陽イオンと陰イオンが打ち消し合ってしまいます。誤りです。",
+      "イ": "2乗しているのが濃度で、電荷には2乗がありません。2乗する対象が逆なので誤りです。",
+      "ウ": "電荷を2乗する点は正しいですが、係数1/2がありません。そのため値が2倍になり、誤りです。",
+      "エ": "濃度を2乗しており、電荷は2乗していません。係数1/2はあるものの、式の形が誤りです。",
+      "オ": "濃度c_iと電荷の2乗z_i^2の積を総和し、1/2を掛けた式で、イオン強度の定義と一致します。公式正答は5です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問2（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q45",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 45,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イヌリンを点滴静注するとき、定常状態における血漿中イヌリン濃度(C_p)、糸球体ろ過された直後の尿(原尿)に含まれるイヌリンの濃度(C_原尿)及び排泄される尿に含まれるイヌリンの濃度(C_尿)の関係を最も適切に表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "C_p ≒ C_原尿 ≒ C_尿",
+      "イ": "C_p ≒ C_原尿 > C_尿",
+      "ウ": "C_p ≒ C_原尿 < C_尿",
+      "エ": "C_p > C_原尿 > C_尿",
+      "オ": "C_p < C_原尿 < C_尿"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "イヌリンは、糸球体で自由にろ過される。血漿タンパクとは結合せず、尿細管では分泌も再吸収も受けない。したがって、原尿中濃度は血漿中の非結合形濃度とほぼ等しく、C_p ≒ C_原尿となる。一方、原尿は尿細管で水が再吸収されて濃縮されるため、イヌリンの量は変わらず体積だけが減る。そのため、排泄される尿中濃度は原尿より高くなる。以上より、C_p ≒ C_原尿 < C_尿である。",
+    "choiceExplanations": {
+      "ア": "尿細管で水が再吸収されて尿が濃縮されるため、C_尿はC_原尿より高くなる。C_原尿 ≒ C_尿とはならないので誤り。",
+      "イ": "C_尿がC_原尿より低くなるのは、尿細管で水よりイヌリンが多く再吸収される場合である。イヌリンは再吸収されないので誤り。",
+      "ウ": "正しい。C_p ≒ C_原尿 < C_尿である。",
+      "エ": "イヌリンは血漿タンパクと結合せず自由にろ過されるので、C_pとC_原尿はほぼ等しい。C_p > C_原尿とはならず、C_原尿 > C_尿も成り立たないので誤り。",
+      "オ": "糸球体ろ過で水とイヌリンは同じ割合でろ過されるので、C_原尿はC_pより高くならない。C_p < C_原尿とはならないので誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問45（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q72",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 72,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は薬剤師綱領(昭和48年10月制定)の文章である。[　　　]に入る語句として正しいのはどれか。1つ選べ。\n\n「薬剤師は国から付託された資格に基づき、医薬品の製造、調剤、供給において、その固有の任務を遂行することにより、[　　　]に資することを本領とする。」",
+    "choices": {
+      "ア": "薬局数の増加",
+      "イ": "医薬品生産の拡大",
+      "ウ": "医療費の抑制",
+      "エ": "医療水準の向上",
+      "オ": "薬剤師中心の医療の推進"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "薬剤師綱領には、薬剤師が国から付託された資格に基づき、医薬品の製造、調剤、供給においてその固有の任務を遂行することで、医療水準の向上に資することを本領とする、という趣旨の文があります。したがって4が正解です。",
+    "choiceExplanations": {
+      "ア": "薬局数の増加は綱領の目的として述べられていません。",
+      "イ": "医薬品生産の拡大は綱領の目的として述べられていません。",
+      "ウ": "医療費の抑制は綱領の目的として述べられていません。",
+      "エ": "正しい選択肢です。綱領の文言に合致し、医療水準の向上に資することを本領としています。",
+      "オ": "薬剤師中心の医療の推進は綱領の目的として述べられていません。薬剤師の職能は、医療水準の向上という目的のために果たすものです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問72（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q74",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 74,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は医療法の条文である。[   ]に入る語句として正しいのはどれか。1つ選べ。\n\n医療法第1条の4第2項\n「医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の[   ]よう努めなければならない。」",
+    "choices": {
+      "ア": "理解を得る",
+      "イ": "意見に従う",
+      "ウ": "意識を高める",
+      "エ": "負担を少なくする",
+      "オ": "不安を軽減する"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "医療法第1条の4第2項は、医療の担い手が適切な説明を行い、医療を受ける者の理解を得るよう努めることを定めています。インフォームド・コンセントの考え方を表す条文です。したがって1が正解です。",
+    "choiceExplanations": {
+      "ア": "正しい。「医療を受ける者の理解を得るよう努めなければならない」が条文の文言です。",
+      "イ": "「意見に従う」は条文にありません。説明の目的は理解を得ることです。",
+      "ウ": "「意識を高める」は条文にありません。",
+      "エ": "「負担を少なくする」は条文にありません。",
+      "オ": "「不安を軽減する」は条文にありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=31",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問74（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q80",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 80,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療コミュニケーションにおいて求められる「互いに信頼感で結ばれている関係」を示す言葉はどれか。1つ選べ。",
+    "choices": {
+      "ア": "レディネス",
+      "イ": "ラポール",
+      "ウ": "エンパワメント",
+      "エ": "ナラティブ",
+      "オ": "コンプライアンス"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "「互いに信頼感で結ばれている関係」を示す言葉はラポール(rapport)である。患者と医療者の間のラポールを築くことは、円滑な医療コミュニケーションの基盤になる。",
+    "choiceExplanations": {
+      "ア": "レディネスは、学習や行動変容に対する準備状態を指す。信頼関係のことではない。",
+      "イ": "正しい。ラポールは、相互の信頼感で結ばれた関係を意味する。",
+      "ウ": "エンパワメントは、患者が本来持つ力を引き出し、主体的に取り組めるよう支援することを指す。",
+      "エ": "ナラティブは「物語」の意味で、患者自身の語りや背景を重視する考え方に用いる。",
+      "オ": "コンプライアンスは、患者が医療者の指示どおりに服薬するなど、指示の遵守を指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問80（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q81",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 81,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "安全キャビネット内での調製が最も推奨されるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "ファモチジン注射液",
+      "イ": "パクリタキセル注射液",
+      "ウ": "ノルアドレナリン注射液",
+      "エ": "フェンタニルクエン酸塩注射液",
+      "オ": "注射用ドリペネム"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "安全キャビネット内での調製は、調製者の曝露を防ぐ必要がある抗悪性腫瘍薬(ハザーダス・ドラッグ)で最も推奨される。パクリタキセルは抗悪性腫瘍薬なので、これが該当する。",
+    "choiceExplanations": {
+      "ア": "ファモチジンはH2受容体拮抗薬で、曝露対策としての安全キャビネットは通常必要としない。",
+      "イ": "正しい。パクリタキセルは抗悪性腫瘍薬で、調製者の曝露防止のため安全キャビネット内で調製する。",
+      "ウ": "ノルアドレナリンは昇圧薬で、安全キャビネットでの調製は通常必要としない。",
+      "エ": "フェンタニルは麻薬で、保管・管理は厳重にするが、調製時の曝露防止用の安全キャビネットを最も推奨する薬剤ではない。",
+      "オ": "ドリペネムはカルバペネム系抗菌薬である。抗菌薬は感作などに注意するが、安全キャビネットが最も推奨される薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問81（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q82",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 82,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "世界アンチ・ドーピング規程において、禁止されている成分はどれか。1つ選べ。",
+    "choices": {
+      "ア": "カフェイン",
+      "イ": "ストリキニーネ",
+      "ウ": "サリチルアミド",
+      "エ": "デキストロメトルファン臭化水素酸塩水和物",
+      "オ": "グアイフェネシン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ストリキニーネは中枢興奮作用を持つ物質で、世界アンチ・ドーピング規程の禁止表国際基準で興奮薬として禁止されている。他の選択肢は、同規程で禁止されている成分ではない。",
+    "choiceExplanations": {
+      "ア": "2026年のWADA禁止表では、カフェインは監視プログラム対象であり、禁止物質とはされていない。したがって本問の正解ではない。",
+      "イ": "正しい。ストリキニーネは興奮薬として禁止されている。",
+      "ウ": "サリチルアミドは解熱鎮痛成分で、禁止されていない。",
+      "エ": "デキストロメトルファンは鎮咳薬で、禁止されていない。",
+      "オ": "グアイフェネシンは去痰薬で、禁止されていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問82（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q83",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 83,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療安全の観点から、一般病棟や外来処置室での常備を避けることが望ましい薬剤はどれか。1つ選べ。",
+    "choices": {
+      "ア": "リドカイン塩酸塩静脈内注射用 2 %",
+      "イ": "アドレナリン注射液0.1%",
+      "ウ": "d-クロルフェニラミンマレイン酸塩注射液0.5%",
+      "エ": "L-アスパラギン酸カリウム注射液 10 mEq/10 mL",
+      "オ": "アトロピン硫酸塩注射液0.05%"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "高濃度のカリウム製剤は、急速静注や誤投与で致死的な不整脈・心停止を起こしうる。そのため、一般病棟や外来処置室には常備せず、薬剤部での管理や必要時の払い出しにするのが望ましい。L-アスパラギン酸カリウム注射液10 mEq/10 mLは高濃度カリウム製剤にあたる。",
+    "choiceExplanations": {
+      "ア": "リドカイン静注用は、不整脈の緊急時などに使うため救急用に備えることがある。高濃度カリウム製剤のような常備回避の対象ではない。",
+      "イ": "アドレナリン注射液は、アナフィラキシーや心停止などの緊急時に必要で、常備されることが多い。",
+      "ウ": "d-クロルフェニラミン注射液は抗ヒスタミン薬で、急性のアレルギー症状への対応に用いる。常備を避ける薬剤ではない。",
+      "エ": "正しい。高濃度カリウム製剤は誤投与の危険が大きく、病棟や処置室への常備を避けることが望ましい。",
+      "オ": "アトロピン注射液は、徐脈などの緊急時に用いるため救急用に備える。常備を避ける薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問83（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
   }
 ]
