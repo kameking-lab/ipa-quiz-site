@@ -11,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import type { QuizMode } from "@/lib/questions/types";
+import { MOCK_EXAM_CONFIGS } from "@/lib/mock-exam/config";
 
 interface Props {
   /** Active mode. "stream" / "mock" are derived from URL paths, not QuizMode. */
@@ -59,6 +60,8 @@ const TABS: {
 
 export function QuizModeTabs({ active, exam = "ap" }: Props) {
   const search = useSearchParams();
+  const supportsMockExam = Object.hasOwn(MOCK_EXAM_CONFIGS, exam);
+  const tabs = TABS.filter((tab) => tab.key !== "mock" || supportsMockExam);
   function modeHref(base: string, key: string) {
     const url = new URL(base, "https://local.invalid");
     for (const name of ["session", "returnTo"]) {
@@ -73,11 +76,11 @@ export function QuizModeTabs({ active, exam = "ap" }: Props) {
       className="mx-auto w-full max-w-2xl px-4 pt-3 sm:px-6"
     >
       <details className="rounded-xl border border-border bg-muted/30 sm:hidden">
-        <summary className="flex min-h-11 cursor-pointer items-center px-3 text-sm font-semibold">学習モード：{TABS.find((t) => t.key === active)?.label ?? "年度別"}</summary>
-        <div className="grid grid-cols-2 gap-1 p-2 pt-0">{TABS.map((t) => <Link key={t.key} href={modeHref(t.href(exam), t.key)} aria-current={t.key === active ? "page" : undefined} className={t.key === active ? "flex min-h-11 items-center gap-2 rounded-lg bg-background px-3 text-xs font-semibold text-primary" : "flex min-h-11 items-center gap-2 rounded-lg px-3 text-xs font-medium hover:bg-background"}>{t.icon}{t.label}</Link>)}</div>
+        <summary className="flex min-h-11 cursor-pointer items-center px-3 text-sm font-semibold">学習モード：{tabs.find((t) => t.key === active)?.label ?? "年度別"}</summary>
+        <div className="grid grid-cols-2 gap-1 p-2 pt-0">{tabs.map((t) => <Link key={t.key} href={modeHref(t.href(exam), t.key)} aria-current={t.key === active ? "page" : undefined} className={t.key === active ? "flex min-h-11 items-center gap-2 rounded-lg bg-background px-3 text-xs font-semibold text-primary" : "flex min-h-11 items-center gap-2 rounded-lg px-3 text-xs font-medium hover:bg-background"}>{t.icon}{t.label}</Link>)}</div>
       </details>
       <div className="hidden items-center gap-1 rounded-xl border border-border bg-muted/30 p-1 sm:flex">
-        {TABS.map((t) => {
+        {tabs.map((t) => {
           const isActive = t.key === active;
           return (
             <Link
