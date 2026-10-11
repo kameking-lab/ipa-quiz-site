@@ -1,0 +1,90 @@
+{
+  "createdAt": "2026-10-11T02:13:56.162860+00:00",
+  "passed": true,
+  "scope": "Private source-recovery artifacts only; no runtime import or production publishing",
+  "counts": {
+    "questionsReviewed": 2,
+    "internalCases": 10,
+    "primaryDirectOrRuleApplicationConfirmed": 3,
+    "partialRuleConfirmedIndividualCaseHeld": 2,
+    "noIndividualPrimary": 5,
+    "remainingIndividualSourceGaps": 7,
+    "newPublicationReadyOriginals": 0,
+    "newPublishedOriginals": 0
+  },
+  "immutableFieldsMatched": true,
+  "allTenInternalExplanationsPresent": true,
+  "allTenCountChoiceExplanationsPresent": true,
+  "allCountChoiceProofsClosed": false,
+  "officialKeysMatched": true,
+  "independentPdfLiteralChecks": [
+    {
+      "id": "sharoushi-2025-annual-rousai-q2",
+      "scope": "Unique subject block, exact original question; entire internal propositions matched separately and all five count choices matched in the same block",
+      "physicalPages": [
+        12,
+        13
+      ],
+      "questionPartsMatched": {
+        "stem": true,
+        "caseア": true,
+        "caseイ": true,
+        "caseウ": true,
+        "caseエ": true,
+        "caseオ": true
+      },
+      "choicesMatched": {
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "normalization": "NFKC + whitespace; standalone printed page numbers / .indd footer omitted; inherited visually verified 艀 ruby rendered as 艀(はしけ)",
+      "sourcePdfSha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1",
+      "allMatched": true,
+      "answerKey": "C",
+      "answerSourceSha256": "33cbc50ea0af6754cb61a86cc92ecdcdb08b2e2d47126577bbb53dcebc7e7093"
+    },
+    {
+      "id": "sharoushi-2026-annual-rousai-q1",
+      "scope": "Unique subject block, exact original question; entire internal propositions matched separately and all five count choices matched in the same block",
+      "physicalPages": [
+        13
+      ],
+      "questionPartsMatched": {
+        "stem": true,
+        "caseア": true,
+        "caseイ": true,
+        "caseウ": true,
+        "caseエ": true,
+        "caseオ": true
+      },
+      "choicesMatched": {
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "normalization": "NFKC + whitespace; standalone printed page numbers / .indd footer omitted; inherited visually verified 艀 ruby rendered as 艀(はしけ)",
+      "sourcePdfSha256": "e3b8a2c31ec8802cc90710bfc406651e125e596d55aa66035265ab7495f26b42",
+      "allMatched": true,
+      "answerKey": "D",
+      "answerSourceSha256": "a8a3a3ec7cc577949f3b8dab54a46fa5f5f155962e5ca1f0dc6eafbf0ada5091"
+    }
+  ],
+  "primaryHtmlSha256Checks": {
+    "commute-1973": true,
+    "commute-1973-treatment": true,
+    "earthquake-1995": true,
+    "earthquake-2011": true,
+    "commute-2006": true,
+    "skill-exam-original": true,
+    "natural-disaster-operation": true,
+    "mhlw-rousai-guidance": true,
+    "tokyo-commute": true
+  },
+  "accessDeniedNoRetryPreserved": true,
+  "requiredReviewGatePreserved": true
+}

@@ -11,21 +11,21 @@ const released: Record<number, Record<number, string>> = {
   2025: { 8: "D", 9: "C", 10: "E" },
   2026: { 5: "C", 9: "D", 10: "B" },
 };
-const held: Record<number, number[]> = { 2025: [1, 7], 2026: [2, 7] };
+const held: Record<number, number[]> = { 2025: [1], 2026: [2] };
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("社労士 independently reviewed six-question release", () => {
   const gakka = SHAROUSHI_QUESTIONS.filter((q) => q.session === "gakka");
-  it("publishes exactly eight original questions per sitting without the held questions", () => {
+  it("keeps completed originals per sitting without the remaining held questions", () => {
     expect(QUESTIONS_BY_EXAM.sharoushi).toBe(SHAROUSHI_QUESTIONS);
-    expect(getQuestionsByExamStrict("sharoushi").filter((q) => q.session === "gakka")).toHaveLength(16);
+    expect(getQuestionsByExamStrict("sharoushi").filter((q) => q.session === "gakka")).toHaveLength(18);
     expect(SHAROUSHI_QUESTIONS.map((q) => q.id)).toEqual([...new Set(SHAROUSHI_QUESTIONS.map((q) => q.id))]);
     for (const year of [2025, 2026]) {
       const paper = gakka.filter((q) => q.year === year);
-      expect(paper).toHaveLength(8);
+      expect(paper).toHaveLength(year === 2025 ? 9 : 9);
       expect(paper.map((q) => q.qNumber).sort((a, b) => a - b)).toEqual(
-        year === 2025 ? [2, 3, 4, 5, 6, 8, 9, 10] : [1, 3, 4, 5, 6, 8, 9, 10],
+        year === 2025 ? [2, 3, 4, 5, 6, 7, 8, 9, 10] : [1, 3, 4, 5, 6, 7, 8, 9, 10],
       );
       expect(paper.some((q) => held[year]!.includes(q.qNumber))).toBe(false);
       expect(paper.every((q) => q.lawReferenceDate === (year === 2025 ? "2025-04-11" : "2026-04-10"))).toBe(true);

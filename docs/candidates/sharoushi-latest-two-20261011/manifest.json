@@ -44,11 +44,8 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "D",
       "remainingIssue": [
-        "ア：第5条の「労働を強制」の意味（現実の労働を要しない）に関する行政解釈の原文は未確認です。",
-        "イ：第6条の「業として利益を得る」（1回でも反復継続の意思があれば該当）に関する行政解釈の原文は未確認です。",
-        "ウ：第7条の条文本文（ただし書による時刻変更）は今回取得していません。公の職務に労働審判員・裁判員が加えられたことは通達で確認済みです。",
-        "エ：労働基準法第9条はe-Gov API現行版（基準日指定なし）で取得しました。2025-04-11版での再確認を推奨します。労働組合法第3条は基準日版で確認済みです。「失業者を含む」が労働組合法上の解釈であるとする行政解釈・学説の一次資料は未確認です。",
-        "オ：保険料補助金を賃金と認めない行政解釈（通達）の原文は未確認です。"
+        "ア・イ：昭23.3.2基発381号の該当解釈は公式2026年冊子に明記されるが、1948年当時の法5/6版本文とその後の全改正履歴の原本照合は未取得。2025-04-11基準で解釈の継続性を全履歴で直接確認したとの断定はできない。",
+        "オ：労働者自身を被保険者とする任意加入生命保険の企業による保険料補助について、福利厚生として使用者が負担する補助金が労基法11条の賃金に当たらないとする個別原典又は基準日までの公式再掲が未取得。昭63.3.14基発150号の該当個別例を確認できていない。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
@@ -57,7 +54,10 @@
       "savedDraftSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/rouki-q1-followup/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2025-annual-gakka-q7",
@@ -66,15 +66,9 @@
       "format": "takuitu",
       "subject": "gakka",
       "questionNumber": 7,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "A：第106条の条文と、周知方法に関する行政解釈の原文は未取得・未確認です。",
-        "B：最高裁昭和43年8月2日判決（昭和42(オ)740）の判決文を裁判所公式サイトで取得できていません（詳細ページ404）。判旨は検索結果の概要に基づいています。事件名（西日本鉄道事件）も未確認です。",
-        "C：シフト制留意事項のPDF本文の取得に失敗しています（404・バイナリ）。内容は厚生労働省ドメインの検索結果概要に基づいています。同留意事項は令和8年6月19日に改正されていますが、本問は2025年基準日のため令和4年1月7日版に基づきます。",
-        "D：押印廃止に至る省令改正（令和2年12月公布、令和3年4月1日施行）の経緯は検索概要のみで、改正省令の原文は未確認です。基準日版の規則第49条第2項は確認済みです。",
-        "E：遅刻・早退の時間分の減給は制裁にあたらず、超過分は制裁とする行政解釈の原文は未確認です。第91条は2026-04-10基準日版で確認しました。2025-04-11版との文言同一性は未照合です（ただし改正版IDから同一と推定）。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
       "sourceSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
@@ -82,7 +76,10 @@
       "savedDraftSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/labor-followup/"
     },
     {
       "id": "sharoushi-2026-annual-gakka-q2",
@@ -94,34 +91,7 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "C",
       "remainingIssue": [
-        "イ：第16条が不法行為に関する賠償額の予定も禁止の対象とするという行政解釈の原文（通達）は公式一次資料で未確認です。誤りとする判断は、条文と公式正答（C）からの論理的推定です。",
-        "ウ：第17条について、労働者の自由意思による相殺は禁止されないとする行政解釈の原文は未確認です。条文本文はe-Gov API（現行版取得、基準日指定なし）で確認済みです。",
-        "エ：出勤して稼働した後は療養休業が終了したとみる行政解釈（通達）の原文は未確認です。第19条の条文は基準日版で確認済みです。",
-        "オ：細谷服装事件（最二小判昭35.3.11）の判決文を裁判所公式サイトで確認できていません。",
-        "ア：民法第95条の条文は未取得です。労働基準法第15条第2項はe-Gov API現行版（基準日指定なし）で確認しました。基準日版での再確認を推奨します。"
-      ],
-      "publicationReady": false,
-      "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
-      "sourceSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
-      "savedDraftPath": "sharoushi-next30-public/rouki-recovery/draft.json",
-      "savedDraftSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
-      "recoveredPayload": true,
-      "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
-    },
-    {
-      "id": "sharoushi-2026-annual-gakka-q7",
-      "year": 2026,
-      "round": 58,
-      "format": "takuitu",
-      "subject": "gakka",
-      "questionNumber": 7,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
-      "officialAnswer": "E",
-      "remainingIssue": [
-        "ア：全面反対でも他の効力要件を充足すれば効力に影響なし、という昭和24年3月28日基発373号そのものは未確認。法定要件の範囲からの推論として明示可能だが直接通達確認とは区別。",
-        "ウ：法律の定めるところにより介護休業を与える旨だけで記載義務を満たすという部分の直接原文は未確認。平成3年育児休業取扱通知は育児のみで、介護へ類推して確認済み扱いにしない。",
-        "オ：算定事由発生日を「制裁の意思表示が相手方に到達した日」とする昭和30年7月19日基収5875号の原文は未取得。事由発生日との区別は条文だけで確認済みとしない。"
+        "ウ：労働者が自己の意思で相殺すること自体は禁止されず、実質的に使用者強制なら例外にならないとする直接原通達又は基準日前公式再録が未取得。第24条の合意相殺判例、第5条だけを根拠に17条の禁止を解除しない。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
@@ -131,8 +101,37 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/rouki-core-primary/",
+      "sourceConfirmedPropositions": [
+        "ア",
+        "イ",
+        "エ",
+        "オ"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q7",
+      "year": 2026,
+      "round": 58,
+      "format": "takuitu",
+      "subject": "gakka",
+      "questionNumber": 7,
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
+      "officialAnswer": "E",
+      "remainingIssue": [],
+      "publicationReady": false,
+      "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
+      "sourceSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
+      "savedDraftPath": "sharoushi-next30-public/rouki-recovery/draft.json",
+      "savedDraftSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
+      "recoveredPayload": true,
+      "choiceExplanationCount": 5,
+      "literalTranscriptionMatched": true,
       "sourceConfirmedPropositionCount": 2,
-      "sourceClosureEvidence": "agent-source-closures/labor/EVIDENCE-DELTA.json"
+      "sourceClosureEvidence": "agent-source-closures/labor-q7-followup/",
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true
     },
     {
       "id": "sharoushi-2025-annual-rousai-q1",
@@ -141,11 +140,9 @@
       "format": "takuitu",
       "subject": "rousai",
       "questionNumber": 1,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "B",
-      "remainingIssue": [
-        "Contemporaneous MHLW original administrative interpretations for secondment, dispatch, A/B-type employment support, and internship worker status; dated local-public-servant statute applicability for E."
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
       "sourceSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
@@ -153,7 +150,10 @@
       "savedDraftSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/rousai-apply-primary/"
     },
     {
       "id": "sharoushi-2025-annual-rousai-q2",
@@ -165,7 +165,9 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "C",
       "remainingIssue": [
-        "Original MHLW interpretations or judgments for emergency call-out, staff-house fire protection, skill-certification trip, mountain lightning, and strike detour."
+        "イ：社宅への延焼防止中の感電死の原通達。昭24.12.15基収4028号は探索用のみ。",
+        "ウ：出張命令による職務関連技能検定の実技負傷に係る原通達。昭34.10.9基発700号は探索用のみ。",
+        "エ：山岳地区の植生盤植付作業後の落雷死の原通達。昭36.3.13基収1844号は探索用のみ。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
@@ -174,7 +176,10 @@
       "savedDraftSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2025-annual-rousai-q8",
@@ -186,9 +191,7 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "C",
       "remainingIssue": [
-        "A：一括有期事業の継続事業メリット適用を直接説明する基準日前の公式資料は未取得。法12条3項の他要件を満たす必要もある。",
-        "C：初回成立届一度、以後個々の工事ごとに成立届不要とする行政解釈原文は未確認。",
-        "D：一括後に規模が変わっても一括に残る取扱いを示す原文未確認。昭和40年7月31日基発901号は検索識別子のみ、一次原本を取得・確認したとは扱わない。"
+        "肢Dのみ：一括後の規模変更等があっても当初の一括扱いを継続する一般的取扱いについて、基準日2025-04-11に適用できる原通達または公式手引の該当箇所が未取得。昭40基発901号 記第1の2(3)ホは後発公式通知による引用確認にとどまり、原文未確認。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
@@ -198,8 +201,12 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "sourceConfirmedChoiceCount": 2,
-      "sourceClosureEvidence": "agent-source-closures/labor/EVIDENCE-DELTA.json"
+      "sourceConfirmedChoiceCount": 4,
+      "sourceClosureEvidence": "agent-source-closures/labor/EVIDENCE-DELTA.json",
+      "additionalPartialSourceClosureEvidence": "agent-source-closures/q8-partial/GUIDE-EVIDENCE.json",
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/rousai-q8-followup/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2026-annual-rousai-q1",
@@ -211,7 +218,10 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "D",
       "remainingIssue": [
-        "Five original administrative interpretations for a ship-transfer accident on staff trip, travel to assignment, driver-assistant cap retrieval, donor-leg fracture during instructed rehabilitation, and earthquake evacuation."
+        "ア：自費・任意参加の慰安旅行中、艀の定員超過による溺死の原通達又は裁判所原判決。",
+        "イ：自宅から用務地へ直接出発する踏切事故の原通達。昭34.7.15基収2980号は探索用のみ。",
+        "ウ：荷覆シート掛け直し時に防寒帽を追って国道上で死亡した助手の原通達又は原判決。",
+        "エ：骨移植片採取後、医師指示の歩行練習中に採骨側下腿骨を骨折した事例の原通達又は原判決。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2026-recovery/draft.json",
@@ -220,7 +230,10 @@
       "savedDraftSha256": "f55ef665fb573d4895a316d4e05942b94388cb8a24fa8ae793f7a5550bc855c3",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2026-annual-rousai-q6",
@@ -277,11 +290,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 1,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "B",
-      "remainingIssue": [
-        "保存済み部分GOの行政手引は平成25年4月（2013年）版。2025年4月11日時点の適用・任意加入・短時間労働者算入の一次資料を固定できずHOLD。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -289,7 +300,10 @@
       "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/employment-q1-followup/"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q2",
@@ -319,11 +333,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 5,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "A",
-      "remainingIssue": [
-        "B肢の船員55歳定年とE肢の郵送・代理申出を2025年4月11日時点で裏付ける行政手引が未固定。保存済みDATED_PRIMARY_INCOMPLETEのHOLDを確認。条文だけでは全肢の根拠が揃わない。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -331,7 +343,10 @@
       "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/employment-followup/"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q6",
@@ -343,10 +358,9 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "A",
       "remainingIssue": [
-        "ア〜オの根拠となる職業紹介拒否の正当理由の行政手引の項目番号を未確認",
-        "ウ肢の賃金水準と基本手当額の比較基準（100分の100）の具体的数値と適用条件が未確認",
-        "オ肢の賃金不払い解消後の取扱いに関する通達が未確認",
-        "基本手当の給付制限の条文番号（第32条）の確認が未了"
+        "ウの手取額と基本手当額おおむね100%の基準・住所等の適用条件を明示する2025-04-11以前の行政版。",
+        "エの法令に反しない労働時間を地域同種業務と比較する基準の2025-04-11以前の行政版。",
+        "オの賃金不払解消後の取扱いを明示する2025-04-11以前の行政版。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
@@ -355,7 +369,10 @@
       "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/employment-followup/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2025-annual-koyou-q7",
@@ -367,10 +384,11 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "A",
       "remainingIssue": [
-        "解雇の効力を争う場合の基本手当に関する行政手引・通達の番号と内容を一次資料で未確認",
-        "A肢の裁判上の和解（雇用継続・賃金不支払）の返還要否の根拠が未確認",
-        "D肢の二重資格の取扱いと選択の根拠が未確認",
-        "C肢の資格喪失確認処分が取り消されない根拠が未確認"
+        "A: 53302(2)ル末尾（physical16/printed379）を含む2025-04-11以前の公式版。",
+        "B: 53254(4)イ、53302(2)ホ（physical11,14/printed374,377）を含む2025-04-11以前の公式版。",
+        "C: 53253(3)ロ、53302(2)リ（physical10,15/printed373,378）を含む2025-04-11以前の公式版。",
+        "D: 53255(5)（physical11/printed374）を含む2025-04-11以前の公式版。",
+        "E: 53251(1)ロ、53301(1)（physical9,12/printed372,375）を含む2025-04-11以前の公式版。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
@@ -379,7 +397,10 @@
       "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/employment-followup/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2025-annual-koyou-q10",
@@ -388,11 +409,9 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 10,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "保存済みA/Eの部分READYは登録しない。D肢の還付請求権の起算日（納付日の翌日）の一次根拠が未固定。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -400,7 +419,10 @@
       "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/employment-followup/"
     },
     {
       "id": "sharoushi-2026-annual-koyou-q1",
@@ -412,7 +434,7 @@
       "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
       "officialAnswer": "D",
       "remainingIssue": [
-        "E肢の地方公務員への在籍出向時の被保険者資格存続を確認できる2026-04-10以前の版の行政一次資料。現行R8.8は確認用のみに保存。"
+        "オ(E)のみ保留。兼業許可のある地方公務員として在籍出向し、出向元の民間雇用関係を継続する場合の資格存続を直接示す2026-04-10以前の行政一次資料。2013年4月版の一般的在籍出向説明だけではこの個別事例を閉じない。"
       ],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
@@ -423,7 +445,10 @@
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
       "sourceConfirmedChoiceCount": 4,
-      "sourceClosureEvidence": "agent-source-closures/employment/question-deltas-additional-hold.json"
+      "sourceClosureEvidence": "agent-source-closures/employment/question-deltas-additional-hold.json",
+      "allChoicePrimaryVerified": false,
+      "partialSourceEvidence": "agent-source-closures/2026-q1-followup/",
+      "sourceConfirmedPropositions": []
     },
     {
       "id": "sharoushi-2026-annual-koyou-q3",
@@ -498,11 +523,9 @@
       "format": "takuitu",
       "subject": "kenpo",
       "questionNumber": 2,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "B",
-      "remainingIssue": [
-        "オ肢の原典「評価療養の給付」と法文「療養の給付」が異なる。公式訂正を確認できず、原文を改変・補正せずHOLD。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-kenpo20-public/SOURCE-PACKET.json",
       "sourceSha256": "03cbed99e0ad007dc574603b9f806cb3ff758fd30be13b7f18c5213aa91db7f4",
@@ -510,7 +533,10 @@
       "savedDraftSha256": "59ecf962e0c7d9c6437b08d1888e05dad9bbb0c151e7e96bdf7ac0275999a6d3",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/kenpo-followup/"
     },
     {
       "id": "sharoushi-2025-annual-kounen-q6",
@@ -606,13 +632,9 @@
       "format": "takuitu",
       "subject": "ippan",
       "questionNumber": 4,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "D",
-      "remainingIssue": [
-        "A: original Supreme Court judgment on agreed job limitation and transfer authority is absent",
-        "B/C: original labor-contract-law enforcement notice is absent",
-        "D: original judgment on return order after secondment is absent; saved case name/date are memory only"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-ippan20-public/SOURCE-PACKET.json",
       "sourceSha256": "41053f4240de1f4d249393b89776f21d24e7217d8b76e469c1f83f859df9727f",
@@ -620,7 +642,10 @@
       "savedDraftSha256": "b3a3cb2c9530224e5b636458ac27d3123c32aae8cc8730c9ca2668693a7cf810",
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
-      "literalTranscriptionMatched": true
+      "literalTranscriptionMatched": true,
+      "allChoicePrimaryVerified": true,
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/ippan-followup/"
     },
     {
       "id": "sharoushi-2025-annual-ippan-q5",
@@ -709,8 +734,8 @@
       "payloadOmissionReason": "既存の個別外部送信拒否を維持。本文と解説はローカル保存原稿に残し、GitHubへ再送しない。"
     }
   ],
-  "newSourceVerifiedOriginals": 10,
-  "newRuntimeCandidateOriginals": 10,
-  "remainingSourceHoldOriginals": 20,
-  "privateCandidateOriginals": 18
+  "newSourceVerifiedOriginals": 18,
+  "newRuntimeCandidateOriginals": 18,
+  "remainingSourceHoldOriginals": 12,
+  "privateCandidateOriginals": 10
 }

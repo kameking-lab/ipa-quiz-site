@@ -19,13 +19,13 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("Sharoushi saved-original recovery", () => {
   it("adds source-verified originals without changing the baseline 123", () => {
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(117);
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(125);
     for (const file of baseline.publicFiles) {
       expect(hash(readFileSync(file.path, "utf8").replace(/\r\n/g, "\n")), file.path).toBe(file.sha256);
     }
     expect(hash(readFileSync("data/questions/sharoushi/sentaku/originals.json", "utf8").replace(/\r\n/g, "\n"))).toBe(baseline.native16FileSha256);
-    expect(ready.map(q => q.id)).toEqual(["sharoushi-2025-annual-ippan-q10", "sharoushi-2025-annual-kounen-q6", "sharoushi-2025-annual-kounen-q8", "sharoushi-2025-annual-kounen-q9", "sharoushi-2026-annual-ippan-q4", "sharoushi-2026-annual-koyou-q3", "sharoushi-2026-annual-koyou-q4", "sharoushi-2026-annual-koyou-q10", "sharoushi-2026-annual-rousai-q6", "sharoushi-2026-annual-rousai-q7"]);
-    expect(ready.map(q => q.officialAnswerNumber)).toEqual(["D", "D", "E", "C", "D", "B", "B", "C", "C", "A"]);
+    expect(ready.map(q => q.id)).toEqual(["sharoushi-2025-annual-gakka-q7", "sharoushi-2025-annual-ippan-q4", "sharoushi-2025-annual-ippan-q10", "sharoushi-2025-annual-kenpo-q2", "sharoushi-2025-annual-kounen-q6", "sharoushi-2025-annual-kounen-q8", "sharoushi-2025-annual-kounen-q9", "sharoushi-2025-annual-koyou-q1", "sharoushi-2025-annual-koyou-q5", "sharoushi-2025-annual-koyou-q10", "sharoushi-2025-annual-rousai-q1", "sharoushi-2026-annual-gakka-q7", "sharoushi-2026-annual-ippan-q4", "sharoushi-2026-annual-koyou-q3", "sharoushi-2026-annual-koyou-q4", "sharoushi-2026-annual-koyou-q10", "sharoushi-2026-annual-rousai-q6", "sharoushi-2026-annual-rousai-q7"]);
+    expect(ready.map(q => q.officialAnswerNumber)).toEqual(["D", "D", "D", "B", "D", "E", "C", "B", "A", "D", "B", "E", "D", "B", "B", "C", "C", "A"]);
     for (const question of ready as Question[]) {
       const row = manifest.rows.find(row => row.id === question.id);
       expect(row?.status).toBe("READY_FOR_INDEPENDENT_REVIEW");
@@ -34,6 +34,7 @@ describe("Sharoushi saved-original recovery", () => {
       expect(row?.publicationReady).toBe(false);
       expect(row?.independentReviewPending).toBe(true);
       expect(isPracticeReadyQuestion(question)).toBe(true);
+      expect(question.sourceAttribution).not.toContain("未確認");
       expect(Object.keys(question.choiceExplanations ?? {})).toEqual(kana);
       expect(findQuestionByRoute(ALL_QUESTIONS, {exam: "sharoushi", yearSeason: `${question.year}-annual`, section: question.session, qnum: `q${question.qNumber}`})?.id).toBe(question.id);
       expect(getSitemapQuestions().some(q => q.id === question.id)).toBe(true);
@@ -50,8 +51,8 @@ describe("Sharoushi saved-original recovery", () => {
     expect(new Set([...baseline.publicIds, ...baseline.pendingPr.originals, ...owned]).size).toBe(140);
   });
 
-  it("keeps the unresolved 18 and stopped two out of public routes and sitemap", () => {
-    expect(recovered).toHaveLength(18);
+  it("keeps the unresolved 10 and stopped two out of public routes and sitemap", () => {
+    expect(recovered).toHaveLength(10);
     const publicIds = new Set(ALL_QUESTIONS.map(q => q.id));
     const sitemapIds = new Set(getSitemapQuestions().map(q => q.id));
     for (const question of recovered as Question[]) {
