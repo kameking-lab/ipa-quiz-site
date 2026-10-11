@@ -66,13 +66,20 @@ describe("language therapist official-notice intake", () => {
   });
 
   it("keeps locally unresolved explanations and official exclusions out of the practice candidate set", () => {
-    expect(GENGO_CHOKAKUSHI_QUESTIONS.map(q => q.id)).toEqual(manifest.practiceEligibleIds.slice().sort((a, b) => b.localeCompare(a)));
-    expect(GENGO_CHOKAKUSHI_QUESTIONS).toHaveLength(2);
+    expect(GENGO_CHOKAKUSHI_QUESTIONS.map(q => q.id)).toEqual([
+      "gengo-chokakushi-2026-annual-am-q14", "gengo-chokakushi-2026-annual-am-q69", "gengo-chokakushi-2025-annual-am-q40",
+    ]);
+    expect(new Set(GENGO_CHOKAKUSHI_QUESTIONS.map(q => q.id))).toEqual(new Set(manifest.practiceEligibleIds));
+    expect(GENGO_CHOKAKUSHI_QUESTIONS).toHaveLength(3);
     expect(manuscripts.filter(q => q.needsReview).map(q => q.id)).toEqual(manifest.localReviewIds);
-    expect(manifest.localReviewIds).toHaveLength(3);
+    expect(manifest.localReviewIds).toHaveLength(2);
     for (const excluded of [...manifest.excludedIds, ...manifest.localReviewIds]) {
       expect(GENGO_CHOKAKUSHI_QUESTIONS.map(q => q.id)).not.toContain(excluded);
     }
+    const q69 = manuscripts.find(q => q.qNumber === 69)!;
+    expect(q69.needsReview).toBe(false);
+    expect(q69.choiceExplanations?.ア).toContain("標準的な読み課題");
+    expect(q69.officialReferenceUrls).toContain("https://www.mext.go.jp/content/20210916-mxt_kyokasyo01-000024786_008.pdf#page=11");
     const q83 = manuscripts.find(q => q.qNumber === 83)!;
     expect(q83.choiceExplanations?.ア).toContain("喉頭挙上への作用を否定して覚えない");
   });

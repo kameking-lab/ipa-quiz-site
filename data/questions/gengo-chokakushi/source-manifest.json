@@ -15,8 +15,8 @@
   "officialAnswerEntries": 400,
   "officialQuestionTextCaptured": 7,
   "manuscriptsWithAllFiveChoiceExplanations": 5,
-  "practiceEligibleManuscripts": 2,
-  "localReviewPendingManuscripts": 3,
+  "practiceEligibleManuscripts": 3,
+  "localReviewPendingManuscripts": 2,
   "missingOriginals": 393,
   "currentPublicIncrement": 0,
   "publicationGo": false,
@@ -37,12 +37,12 @@
   ],
   "localReviewIds": [
     "gengo-chokakushi-2026-annual-am-q35",
-    "gengo-chokakushi-2026-annual-am-q69",
     "gengo-chokakushi-2026-annual-am-q83"
   ],
   "practiceEligibleIds": [
     "gengo-chokakushi-2025-annual-am-q40",
-    "gengo-chokakushi-2026-annual-am-q14"
+    "gengo-chokakushi-2026-annual-am-q14",
+    "gengo-chokakushi-2026-annual-am-q69"
   ],
   "missingIds": [
     "gengo-chokakushi-2025-annual-am-q1",
@@ -539,5 +539,11 @@
       "Maruzen robots.txt refusal"
     ],
     "newQualificationIntakeStopped": true
+  },
+  "q69AdditionalPrimaryReview": {
+    "sourceUrl": "https://www.mext.go.jp/content/20210916-mxt_kyokasyo01-000024786_008.pdf#page=11",
+    "physicalPage": 11,
+    "decision": "CLEAR_Q69_CONTENT_REVIEW_AFTER_BOUNDED_EXPLANATION_UPDATE",
+    "evidence": "local-reviews/REVIEW69-ADDITIONAL.json"
   }
 }

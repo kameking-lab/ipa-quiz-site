@@ -490,7 +490,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/about.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "terms-review-required",
-    reuseSummary: "第27・28回の公式通知7原問を確認し、除外2問を分離。5原問に全肢解説を保存し、3原問は学術的な局所確認待ち。出題候補2問を保持するが公開は保留。400原問の公式正答は確保し、393原問の本冊・図表は未取得です。",
+    reuseSummary: "第27・28回の公式通知7原問を確認し、除外2問を分離。5原問に全肢解説を保存し、2原問は学術的な局所確認待ち。出題候補3問を保持するが公開は保留。400原問の公式正答は確保し、393原問の本冊・図表は未取得です。",
     remainingWork: ["公式問題本冊の原文・図表と正答の照合", "転載条件・表示出典の確認", "難問の局所確認と統合担当の公開判断"],
   },
   {
