@@ -52,7 +52,7 @@ describe("home directory", () => {
 
   it("shows only live external qualifications", () => {
     const external = domains.filter((d) => !["it", "safety"].includes(d.id)).flatMap((d) => d.featured);
-    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.examCode && q.domain !== "safety").map((q) => `/${q.examCode}`);
+    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.domain !== "safety").map((q) => `/${q.examCode ?? q.slug}`);
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 

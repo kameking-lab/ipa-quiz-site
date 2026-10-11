@@ -1,3 +1,4 @@
+import { CHUSHO_SECONDARY_ORIGINAL_COUNT, CHUSHO_SECONDARY_SOLUTION_COUNT } from "@/lib/chusho-secondary/data";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
 import "server-only";
 
@@ -292,7 +293,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("money"),
+      [...byDomain("money"), { key: "chusho-secondary", href: "/chusho-secondary", name: "中小企業診断士二次", sub: "2025・2024年度の全8事例と独自解答例", questionCount: CHUSHO_SECONDARY_ORIGINAL_COUNT, periodLabel: "2回分", extra: `${CHUSHO_SECONDARY_SOLUTION_COUNT}解答例・記述練習` }],
     ),
     domain(
       {

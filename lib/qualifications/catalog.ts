@@ -42,6 +42,12 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
+    officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
+    reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",
+    attributionTemplate: "出典：日本中小企業診断士協会連合会 2025・2024年度 中小企業診断士第2次試験", remainingWork: ["次年度公開資料の確認"],
+  },
+  {
     slug: "fp1",
     examCode: "fp1",
     shortName: "FP1級",
