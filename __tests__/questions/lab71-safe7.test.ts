@@ -6,13 +6,14 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 const official: Record<number, string> = { 32: "4", 35: "3", 36: "3", 39: "4", 41: "24", 44: "1", 45: "2" };
 const kana = ["ア", "イ", "ウ", "エ", "オ"];
+const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.year === 2025);
 
 describe("lab71 seven remaining safe saved originals", () => {
   it("adds only the leased seven IDs to the ten prior originals", async () => {
     expect(batch2.map(q => q.qNumber)).toEqual([32, 35, 36, 39, 41, 44, 45]);
     expect(batch2.map(q => q.id)).toEqual(Object.keys(official).map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(17);
-    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(17);
+    expect(lab2025).toHaveLength(17);
+    expect(new Set(lab2025.map(q => q.id)).size).toBe(17);
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(receipt.individualHoldReleaseCount).toBe(0);
     expect(receipt.originals).toBe(7);

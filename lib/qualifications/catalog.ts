@@ -612,7 +612,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第71回（2025年実施）の午後から、原文・公式正答・全五肢の解説を照合した17原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
+    reuseSummary: "第71・72回（2025・2026年実施）の午後から、原文・公式正答・全五肢の解説を照合した35原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
   },
   {
@@ -625,7 +625,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第77回（2025年実施）の午後から、原文・公式正答・全五肢の解説を照合した10原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
+    reuseSummary: "第77・78回（2025・2026年実施）の午後から、原文・公式正答・全五肢の解説を照合した26原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
   },
   {

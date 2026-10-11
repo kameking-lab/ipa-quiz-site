@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { ALL_QUESTIONS } from "@/data/questions";
 import labBatch1 from "@/data/questions/rinsho-kensagishi/2025-annual-pm-batch1.json";
 import type { Question } from "@/lib/questions/types";
-import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "@/data/questions/shinryo-hoshasengishi";
+import radBatch1 from "@/data/questions/shinryo-hoshasengishi/2025-annual-pm-batch1.json";
 import labManifest from "@/data/questions/rinsho-kensagishi/source-manifest.json";
 import radManifest from "@/data/questions/shinryo-hoshasengishi/source-manifest.json";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
@@ -24,7 +24,7 @@ const suites = [
   },
   {
     exam: "shinryo-hoshasengishi", label: "診療放射線技師", round: 77, date: "2025-02-20",
-    questions: SHINRYO_HOSHASENGISHI_QUESTIONS, manifest: radManifest,
+    questions: radBatch1 as Question[], manifest: radManifest,
     official: { 11: "3", 17: "5", 19: "5", 22: "1", 23: "25", 25: "14", 28: "13", 30: "3", 37: "4", 38: "3" },
   },
 ] as const;

@@ -851,7 +851,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "advanced",
     sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2025, end: 2026 },
   },
   "shinryo-hoshasengishi": {
     code: "shinryo-hoshasengishi",
@@ -860,7 +860,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "advanced",
     sessions: [{ session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2025, end: 2026 },
   },
 };
 

@@ -11,12 +11,16 @@ export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" 
 const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string, string>>>> = {
   tp250428: {
     "05": "第114回（2025年実施）",
+    "06": "第77回（2025年実施）",
+    "07": "第71回（2025年実施）",
     "08": "第60回（2025年実施）",
     "09": "第60回（2025年実施）",
     "10": "第55回（2025年実施）",
   },
   tp260424: {
     "05": "第115回（2026年実施）",
+    "06": "第78回（2026年実施）",
+    "07": "第72回（2026年実施）",
     "08": "第61回（2026年実施）",
     "09": "第61回（2026年実施）",
     "10": "第56回（2026年実施）",
@@ -29,7 +33,7 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
     return `第${medical2025[1] === "07" ? 71 : 77}回（2025年実施）`;
   }
   if (q.season === "annual") {
-    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:06|07)b|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
     const edition = verifiedPaper
       ? VERIFIED_MEDICAL_EDITIONS[verifiedPaper[1] ?? ""]?.[verifiedPaper[2]?.slice(0, 2) ?? ""]
       : undefined;
