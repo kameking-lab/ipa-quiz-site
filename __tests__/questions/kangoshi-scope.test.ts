@@ -22,7 +22,7 @@ const ALL_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const YEAR_OF_ROUND: Record<number, number> = { 115: 2025, 114: 2024 };
 const PREVIOUS_AM_QUESTIONS = KANGOSHI_QUESTIONS.filter((q) => q.session === "am" && q.qNumber <= 75);
-const SCOPE = "第115・114回 午前 問1〜90のうち178問収録";
+const SCOPE = "第115・114回 午前 問1〜90のうち179問収録";
 const norm = (s: string) => s.normalize("NFKC").replace(/\s+/g, "");
 const transcriptA = readJson<Transcript>("transcriptA.json");
 const transcriptB = readJson<Transcript>("transcriptB.json");
