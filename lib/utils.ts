@@ -56,6 +56,7 @@ export const EXAM_LABELS: Record<string, string> = {
   hokenshi: "保健師",
   josanshi: "助産師",
   "sagyo-ryohoshi": "作業療法士",
+  "gengo-chokakushi": "言語聴覚士",
   "shino-kunrenshi": "視能訓練士",
   "rinsho-kogishi": "臨床工学技士",
   "rinsho-kensagishi": "臨床検査技師",

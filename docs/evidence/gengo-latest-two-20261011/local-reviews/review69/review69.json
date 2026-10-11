@@ -1,0 +1,66 @@
+{
+  "questionId": "gengo-chokakushi-2026-annual-am-q69",
+  "reviewDate": "2026-10-11",
+  "scope": "第28回2026午前問69の公開一次資料による局所照合",
+  "officialAnswerNumber": "1または2",
+  "answer": ["ア", "イ"],
+  "requiredSelections": 1,
+  "proposedNeedsReview": false,
+  "decision": "公式正答形式を維持し、5肢の検査目的・尺度を公開一次資料で照合できたため、この設問の内容レビューは解除可能。ただし下記の限定を解説に残す。",
+  "proposedExplanation": "誤った組合せはアとイで、公式正答は『1または2』。指定どおり1肢だけ選ぶ。URAWSS IIの制作元は主眼を小中学生の読み書き速度の評価と説明しており、『音読の流暢性』との対応は検査の代表的な評価対象を表さない。SCTAWの出版社は抽象語の理解力を調べる検査と明記し、表出性語彙能力ではない。RANは見慣れた刺激を連続して速く命名する課題で、命名に関わる処理の自動化を捉える。WISC-Vには視覚的ワーキングメモリーをみる『絵のスパン』がある。日本版KABC-IIの書き尺度には短文を書く力が含まれ、文レベルの書字と対応する。以上は各検査の公開資料に基づく独自解説であり、厚生労働省による採点理由の説明ではない。",
+  "proposedChoiceExplanations": {
+    "ア": "不適切。URAWSS IIの制作元が掲げる主な評価対象は小中学生の読み書き速度である。『音読の流暢性』を代表的な評価対象とする組合せは合わない。公開制作元資料だけから全課題に音読が一切ないとまでは主張しない。",
+    "イ": "不適切。SCTAWは標準抽象語理解力検査で、出版社が抽象語を用いる言語理解力検査と明示している。語彙の表出を主に測る検査という説明は合わない。",
+    "ウ": "適切。RANは見慣れた文字・数字・色・物などを連続して素早く命名し、その所要時間から関連処理の自動化を捉える。自動化能力を単独・純粋に測るという意味ではない。",
+    "エ": "適切。WISC-Vの絵のスパンは視覚的ワーキングメモリーを測る下位検査で、視覚情報を短時間保持する働きに関わる。短期記憶という表現は概括である。",
+    "オ": "適切。日本版KABC-II制作委員会の公開文書は書き尺度に短文を書く力を含め、文の構成を下位検査として示す。文レベルの書字との対応がある。"
+  },
+  "sources": [
+    {
+      "choice": "ア",
+      "url": "https://atac-lab.com/wp-content/uploads/product/urawss/urawss2.pdf",
+      "sourceType": "URAWSS II制作元の公開製品案内",
+      "supports": "読み書き速度の評価、著者・改訂版の確認",
+      "limit": "黙読か音読かの課題詳細は本文で明示されない"
+    },
+    {
+      "choice": "イ",
+      "url": "https://www.intern.co.jp/?p=576",
+      "sourceType": "SCTAW出版社の公開製品説明",
+      "supports": "抽象語の言語理解力検査"
+    },
+    {
+      "choice": "ウ",
+      "url": "https://learnlab.northwestern.edu/wp-content/uploads/2020/10/Norton-What-educators-need-to-know-about-RAN.pdf",
+      "sourceType": "研究者本人による大学公開論考",
+      "supports": "見慣れた刺激の高速な連続命名と関連処理の自動化"
+    },
+    {
+      "choice": "エ",
+      "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wisc-v/wisc-v-scales.pdf",
+      "sourceType": "WISC-V制作元の公開尺度説明",
+      "supports": "Picture Spanが視覚的ワーキングメモリーを測る"
+    },
+    {
+      "choice": "オ",
+      "url": "https://www.k-abc.jp/wp-content/uploads/2015/02/%E6%97%A5%E6%9C%AC%E7%89%88KABC-%E2%85%A1%E3%81%AE%E5%8F%96%E3%82%8A%E6%89%B1%E3%81%84%E3%81%A8%E6%A4%9C%E6%9F%BB%E7%B5%90%E6%9E%9C%E5%A0%B1%E5%91%8A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9.pdf",
+      "sourceType": "日本版KABC-II制作委員会・学会・出版社の公開文書",
+      "supports": "書き尺度は短文を書く力を含み、文の構成を下位検査に含む"
+    }
+  ],
+  "officialSources": {
+    "question": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/dl/28A69.pdf#page=1",
+    "answer": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/dl/28seitou.pdf#page=1"
+  },
+  "residualUncertainty": [
+    "URAWSS IIの公開制作元資料から個々の読み課題が黙読か音読かまでは確定できない。解説では『音読課題がない』という断定を避ける。",
+    "WISC-Vの一次資料は視覚的ワーキングメモリーを示す。設問の『視覚的短期記憶』とは近い概念として対応づけるが、用語が完全同義とはしない。",
+    "公式正答は番号のみであり、各肢をどう判断したかという厚生労働省の理由は公開されていない。"
+  ],
+  "accessConstraints": [
+    "ST-Toolboxの通常GET 403を既知の停止条件として扱い再取得していない。",
+    "PMC reCAPTCHAを既知の停止条件として扱い再取得していない。",
+    "丸善出版の公開ページはweb取得時にrobots.txt拒否。別ホスト・UA・ミラーで回避していない。"
+  ],
+  "repositoryAction": "WTの対象JSONは読み取りのみ。編集・コミット・全体ビルドなし。"
+}

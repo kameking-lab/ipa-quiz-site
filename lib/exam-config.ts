@@ -803,6 +803,18 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2025 },
   },
+  "gengo-chokakushi": {
+    code: "gengo-chokakushi",
+    nameFull: "言語聴覚士国家試験",
+    urlSlug: "gengo-chokakushi",
+    level: "advanced",
+    sessions: [
+      { session: "am", urlSlug: "am", expectedQuestions: 100, label: "午前", categories: ["午前"] },
+      { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   "shino-kunrenshi": {
     code: "shino-kunrenshi",
     nameFull: "視能訓練士国家試験",
@@ -917,7 +929,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "gengo-chokakushi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
