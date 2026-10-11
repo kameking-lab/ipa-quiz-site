@@ -24,6 +24,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl">): string {
+  const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06|07)b_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
+  if (q.year === 2025 && q.season === "annual" && medical2025) {
+    return `第${medical2025[1] === "07" ? 71 : 77}回（2025年実施）`;
+  }
   if (q.season === "annual") {
     const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
     const edition = verifiedPaper
