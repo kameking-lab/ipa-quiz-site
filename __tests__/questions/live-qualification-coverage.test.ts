@@ -26,10 +26,10 @@ const completePapers = [
 ] as const;
 
 describe("live external qualification two-year publication gate", () => {
-  it("publishes all four electrician academic papers and eight practical days after the release gate", () => {
+  it("publishes all five electrician academic papers and eight practical days after the release gate", () => {
     const status = QUALIFICATION_CATALOG.find((item) => item.examCode === "denko2")?.status;
     expect(status).toBe("live");
-    expect(DENKO2_QUESTIONS).toHaveLength(200);
+    expect(DENKO2_QUESTIONS).toHaveLength(250);
     for (const year of [2024, 2025]) {
       for (const season of ["first", "second"] as const) {
         const paper = DENKO2_QUESTIONS.filter((item) => item.year === year && item.season === season);

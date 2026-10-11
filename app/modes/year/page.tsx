@@ -47,6 +47,7 @@ const VALID_EXAMS: ExamCode[] = [
   "takken",
   "tohan",
   "kanri",
+  "chusho-kigyo-shindanshi",
 ];
 
 function isExamCode(s: unknown): s is ExamCode {
@@ -54,6 +55,7 @@ function isExamCode(s: unknown): s is ExamCode {
 }
 
 function sessionLabel(session: Session): string {
+  if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);
   if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
   switch (session) {
     case "am":
@@ -146,7 +148,7 @@ export default async function YearModePage({
             </span>
           </h1>
           <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            {label}の午前過去問を年度・季節ごとに選んで学習できます。
+            {label}の過去問を年度・科目ごとに選んで学習できます。
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{items.length} 期分</Badge>
