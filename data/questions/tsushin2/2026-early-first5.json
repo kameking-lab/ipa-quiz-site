@@ -1,0 +1,151 @@
+{
+  "exam": "tsushin2",
+  "year": 2026,
+  "season": "early",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "publishedCount": 5,
+  "questions": [
+    {
+      "number": 1,
+      "pdfPage": 2,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "下図に示すように，十分に長い直線導体に電流 I ＝ 6.28［A］を流したとき，直線導体から r ＝ 20［cm］離れた A 点における磁界の強さ H［A/m］の値として，適当なものは次のうちどれか。\nただし，円周率π ＝ 3.14 とする。",
+      "choices": [
+        "5［A/m］",
+        "10［A/m］",
+        "12.5［A/m］",
+        "25［A/m］"
+      ],
+      "explanation": "十分に長い直線導体では、導体を中心とする半径 r の円周上で磁界の強さは一定です。アンペールの法則より 2πrH＝I、したがって H＝I/(2πr) です。20 cm＝0.20 m に直して、H＝6.28/(2×3.14×0.20)＝5 A/m。選択肢1が適当です。磁束密度 B［T］と磁界の強さ H［A/m］を区別します。",
+      "choiceExplanations": [
+        "2πrH＝I に r＝0.20 m、I＝6.28 A を代入すると H＝5 A/m となるため適当です。",
+        "10 A/m は、与えられた距離が半分の r＝0.10 m のときの値です。r＝0.20 m では5 A/mです。",
+        "12.5 A/m を得るには r＝0.08 m が必要です。与えられた20 cmとは一致しません。",
+        "25 A/m は r＝0.04 m のときの値です。半径20 cmを用いるとこの値にはなりません。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/12-5-amperes-law"
+      ],
+      "imageUrl": "/images/tsushin2/2026-early/q01-figure.png"
+    },
+    {
+      "number": 2,
+      "pdfPage": 3,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "下図に示す断面積 S［mm²］，長さ L［m］の銅線の抵抗が R₁［Ω］であるとき，同じ素材でできた断面積 2S［mm²］，長さ 2L［m］の銅線の抵抗 R₂［Ω］の値として，適当なものは次のうちどれか。",
+      "choices": [
+        "0.5R₁［Ω］",
+        "R₁［Ω］",
+        "2R₁［Ω］",
+        "4R₁［Ω］"
+      ],
+      "explanation": "一様な導体の抵抗は R＝ρL/S です。同じ素材では抵抗率 ρ は同じなので、長さが2倍になる効果と断面積が2倍になる効果が相殺されます。R₂/R₁＝(2L/L)×(S/2S)＝1。したがって R₂＝R₁ で、選択肢2が適当です。断面積の単位をmm²に揃えた比で計算すれば、単位換算は不要です。",
+      "choiceExplanations": [
+        "0.5R₁ は、長さを変えず断面積だけ2倍にした場合の値です。本問では長さも2倍です。",
+        "R₂＝ρ(2L)/(2S)＝ρL/S＝R₁ となり、長さと断面積の倍率が相殺されるため適当です。",
+        "2R₁ は、断面積を変えず長さだけ2倍にした場合の値です。断面積も2倍になる効果が抜けています。",
+        "4R₁ は、長さと断面積の倍率を両方掛けた値です。抵抗は断面積に反比例するので、断面積の倍率で割ります。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance"
+      ],
+      "imageUrl": "/images/tsushin2/2026-early/q02-figure.png"
+    },
+    {
+      "number": 3,
+      "pdfPage": 3,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "下図に示す RL 並列回路に交流電源電圧 Ė［V］を加えた場合に，抵抗 R［Ω］に流れる電流 İ_R の大きさ I_R＝3［A］，インダクタンス L［H］に流れる電流 İ_L の大きさ I_L＝4［A］であるとき，回路全体に流れる電流 İ の大きさ I［A］として，適当なものは次のうちどれか。",
+      "choices": [
+        "1［A］",
+        "2.6［A］",
+        "5［A］",
+        "7［A］"
+      ],
+      "explanation": "RL並列回路では、抵抗とインダクタンスに同じ交流電圧が加わります。抵抗電流は電圧と同相で、理想インダクタンスの電流は電圧より90°遅れます。そのため二つの電流の位相差は90°です。電流の大きさを単純に足さず、フェーザを合成して I＝√(I_R²＋I_L²)＝√(3²＋4²)＝5 A と求めます。選択肢3が適当です。",
+      "choiceExplanations": [
+        "1 A は4−3の値で、二つの電流が逆位相のときの差です。本問の位相差は90°なので差では求められません。",
+        "2.6 A は、同相・90°差・逆位相のいずれを正しく合成した結果でもありません。直交する3 Aと4 Aのフェーザの大きさは5 Aです。",
+        "抵抗電流とインダクタンス電流は直交するので、√(3²＋4²)＝5 A が適当です。",
+        "7 A は3＋4の値で、二つの電流が同相の場合の和です。RL並列回路の位相差90°を考慮していません。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/15-2-simple-ac-circuits"
+      ],
+      "imageUrl": "/images/tsushin2/2026-early/q03-figure.png"
+    },
+    {
+      "number": 5,
+      "pdfPage": 4,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        4
+      ],
+      "question": "下図に示す論理回路の真理値表として，適当なものは次のうちどれか。",
+      "choices": [
+        "入力 出力\nＡ Ｂ Ｆ\n0 0 0\n0 1 1\n1 0 0\n1 1 1",
+        "入力 出力\nＡ Ｂ Ｆ\n0 0 1\n0 1 0\n1 0 1\n1 1 0",
+        "入力 出力\nＡ Ｂ Ｆ\n0 0 0\n0 1 1\n1 0 1\n1 1 1",
+        "入力 出力\nＡ Ｂ Ｆ\n0 0 0\n0 1 0\n1 0 0\n1 1 1"
+      ],
+      "explanation": "図の回路ではBをNOTゲートで反転し、AとORを取った後、元のBとANDを取っています。出力は F＝(A OR NOT B) AND B です。B＝0なら最後のANDゲートに0が入るのでF＝0、B＝1ならNOT B＝0なのでF＝Aです。したがって入力(A,B)＝(0,0),(0,1),(1,0),(1,1)に対し出力は0,0,0,1となり、選択肢4が適当です。",
+      "choiceExplanations": [
+        "この表はF＝Bを表しています。入力(0,1)でも1ですが、実際の回路ではORの出力が0となるのでF＝0です。",
+        "この表はF＝NOT Bを表しています。B＝0で1になりますが、実際の回路では最後のANDゲートがB＝0により出力0となります。",
+        "この表はF＝A OR Bを表しています。入力(0,1)と(1,0)で1になりますが、実際の回路ではどちらも0です。",
+        "この表はF＝A AND Bを表しています。B＝0ではF＝0、B＝1ではF＝Aとなる回路の出力と、全4組で一致します。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.ti.com/product/SN74HC04",
+        "https://www.ti.com/product/SN74HC32",
+        "https://www.ti.com/product/SN74HC08"
+      ],
+      "imageUrl": "/images/tsushin2/2026-early/q05-figure.png"
+    },
+    {
+      "number": 6,
+      "pdfPage": 5,
+      "category": "電気通信技術",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "パルス符号変調（PCM）に関する下記の文章中の空欄のア～ウに当てはまる語句の組合せとして，適当なものは次のうちどれか。\n「アナログ信号の信号波形を一定の時間間隔で抜き取り，パルス波形に置き換えることを［ア］といい，この時間間隔の逆数を［ア］周波数という。もとのアナログ信号に含まれる［イ］周波数の［ウ］の［ア］周波数で抜き取ると，もとのアナログ信号を再現できる。」",
+      "choices": [
+        "ア：標本化／イ：最低／ウ：1/2以下",
+        "ア：標本化／イ：最高／ウ：2倍以上",
+        "ア：量子化／イ：最低／ウ：1/2以下",
+        "ア：量子化／イ：最高／ウ：2倍以上"
+      ],
+      "explanation": "信号の値を一定の時間間隔で取り出す処理は標本化（サンプリング）です。振幅を離散的な値に対応させる量子化とは区別します。標本化定理で基準になるのは信号に含まれる最高周波数で、本問ではその2倍以上の標本化周波数を選ぶ組合せです。ア＝標本化、イ＝最高、ウ＝2倍以上となり、選択肢2が適当です。実際の設計では最高周波数の2倍を超える周波数を選び、不要な高周波成分をフィルタで除く余裕も確保します。",
+      "choiceExplanations": [
+        "標本化という名称は正しいですが、基準は最低周波数ではなく最高周波数です。その1/2以下では高周波成分の再現に必要な標本化回数が不足します。",
+        "一定の時間間隔で信号を取り出す処理は標本化で、最高周波数の2倍以上という本問の条件と一致するため適当です。",
+        "量子化は振幅を離散的な値に対応させる処理です。時間方向に取り出す処理の名称が違い、最低周波数の1/2以下という条件も適当ではありません。",
+        "最高周波数の2倍以上という条件は本問に合いますが、一定の時間間隔で取り出す処理は量子化ではなく標本化です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.analog.com/en/resources/glossary/nyquist.html",
+        "https://www.analog.com/media/en/training-seminars/tutorials/MT-002.pdf"
+      ]
+    }
+  ]
+}
