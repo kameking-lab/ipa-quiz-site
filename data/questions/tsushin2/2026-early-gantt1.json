@@ -1,0 +1,42 @@
+{
+  "exam": "tsushin2",
+  "year": 2026,
+  "season": "early",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "publishedCount": 1,
+  "questions": [
+    {
+      "number": 58,
+      "pdfPage": 26,
+      "category": "施工管理",
+      "topic": "工程管理",
+      "question": "工程管理で使われるガントチャートに関する記述として，適当なものは次のうちどれ か。",
+      "choices": [
+        "縦軸に日数をとり，横軸に区間距離をとって，各部分工事の工程を斜線で表した図表であ る。",
+        "縦軸に出来高比率をとり，横軸に工期をとって，工事全体の出来高比率の累計を曲線で表し た図表である。",
+        "部分工事の関係や順序を矢線で表し，各部分工事間の順序や関連性を明確にした図表であ る。",
+        "縦軸に部分工事をとり，横軸に各部分工事の完了時点を 100 ％ とした進捗度を棒状のグラ フで表した図表である。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "explanation": "本問のガントチャートは、縦軸に部分工事、横軸に完了を100％とした進捗度を取り、棒で表示します。選択肢4が適当です。日左連の原問題資料でも作業名と達成度による表をガントチャートとしています。日付を横軸にした工程表だけを思い浮かべず、本問の軸と用途を確認します。",
+      "choiceExplanations": [
+        "工期と区間距離を取り、線で各工事の進行を示すものは斜線式工程表です。サッシ協会の原問題資料でもその軸が示されており、本問のガントチャートとは異なります。",
+        "工事全体の出来高比率を累計した曲線は、出来高累計曲線・工程管理曲線の説明です。部分工事ごとの達成度を棒で示すガントチャートの説明ではありません。",
+        "部分工事の順序や関係を矢線で示すものはネットワーク工程表です。部分工事ごとの進捗度を棒で示す本問のガントチャートとは異なります。",
+        "縦軸を部分工事、横軸を完了100％に対する進捗度とする棒状表示は、本問のガントチャートの説明に一致します。日左連の原問題資料の軸の説明とも一致します。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.nissaren.or.jp/wp-content/uploads/test20090221.pdf",
+        "https://www.jsma.or.jp/Portals/0/images/sikaku/sc/questions202604.pdf",
+        "https://www.hitachi-solutions-east.co.jp/products/synviz_s2/column/c3_vol05/"
+      ]
+    }
+  ]
+}
