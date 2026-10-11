@@ -1,5 +1,6 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { DENKO2_REVIEWED_QUESTIONS } from "./reviewed";
+import { createDenko22026Questions } from "./latest";
 
 const sourcePdfUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf";
 const sourceAnswerUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf";
@@ -173,6 +174,6 @@ export const DENKO2_2026_PILOT: Question[] = [
   }),
 ];
 
-// The 2026 paper has only a partial pilot. Keep it out of the publication
-// registry until the entire sitting has independent original-PDF acceptance.
-export const DENKO2_QUESTIONS: Question[] = DENKO2_REVIEWED_QUESTIONS;
+// Complete source-checked sitting, reusing the original ten-question pilot.
+export const DENKO2_2026_QUESTIONS: Question[] = createDenko22026Questions(DENKO2_2026_PILOT);
+export const DENKO2_QUESTIONS: Question[] = [...DENKO2_REVIEWED_QUESTIONS, ...DENKO2_2026_QUESTIONS];

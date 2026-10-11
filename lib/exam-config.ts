@@ -382,7 +382,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
     }],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2024, end: 2026 },
   },
   denko1: {
     code: "denko1",
