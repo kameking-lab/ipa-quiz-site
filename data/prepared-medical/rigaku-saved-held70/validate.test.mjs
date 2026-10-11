@@ -299,10 +299,12 @@ test("the incremental subset preserves the initial six, original fields and all 
   }
   delete previousMap.get("rigaku-ryohoshi-2026-annual-am-q4").officialReferenceUrls;
   assert.equal(digest(previous), proof.previousCandidatesCanonicalDigest);
-  for (const [name, value] of Object.entries(proof.priorJsonDigests)) {
-    if (["candidates70.json", "manifest.json", "review-summary.json", "applied-finite-corrections.json"].includes(name)) continue;
-    assert.equal(hash(readFileSync(new URL(name, import.meta.url))), value, name);
+  // Git normalizes JSON line endings; retain byte receipts but compare structured content here.
+  for (const [name, value] of Object.entries(proof.priorJsonCanonicalDigests)) {
+    assert.equal(digest(read(name)), value, name);
   }
+  assert.equal(digest(subset), proof.subsetCanonicalDigest);
+  assert.equal(digest(adoption), proof.receiptCanonicalDigest);
   assert.equal(adoption.expertAcceptance, null);
   assert.equal(adoption.publicationReview, null);
   assert.equal(adoption.publicGo, false);

@@ -112,5 +112,17 @@
   "subsetSha256": "aea8e11d86cffaf8c594dd658da2009e4be3646ed2968fa790ce9ed485c3bfd3",
   "receiptSha256": "0e7dcf5fe46c4e7e3832eca6ea310fff8a5637390d91479d8c68c6a13527bd4a",
   "sourceOrOfficialKeyChanges": 0,
-  "previousCandidatesCanonicalDigest": "ba52a5b85278969ec3c6a2b9fbffb622ff16a5da0126552ca641495095c02c63"
+  "previousCandidatesCanonicalDigest": "ba52a5b85278969ec3c6a2b9fbffb622ff16a5da0126552ca641495095c02c63",
+  "priorJsonCanonicalDigests": {
+    "latest-main-overlap.json": "437e1e3c513cab01f4ddca9576251fae6936690f17660181db6f5d3c867ec2f9",
+    "official-key-table400.json": "a139b68a6711356304c4762313d2abd686edabfd8620f134301af8c90855cbab",
+    "ownership-and-gaps400.json": "f864f4ded495399510c82753402ce2e29ccdcfd8f16b97bf8c3042dc97ca86b5",
+    "registered179-readonly-key-audit.json": "2e00a32ac68fb9967f5a4e9f99714cb28eab14f60fda7d1ac6c8190994517e9e",
+    "remaining27-acceptance-evidence.json": "4e6dbd8ca337105fa8a6e25e95e1bcd2dc91179fc977e7b8fbea82499e794ac4",
+    "saved-baseline70.json": "57210d1539cda4c3c9c3aee45634597f90655f1a40d8bc654c4359da9645f365",
+    "source-receipts70.json": "8e7d5f36f7e3559f6cd107a2731b5a6501dd3f216a4ade031d8040a39000e372"
+  },
+  "jsonHashNote": "priorJsonDigests, subsetSha256 and receiptSha256 are original Windows working-copy byte receipts. Git converts CRLF to LF on Linux; cross-platform preservation uses canonical JSON digests. Original PNG/PDF asset hashes still compare exact bytes.",
+  "subsetCanonicalDigest": "6b332ee70b7fc397a97f09e83a6cff1ca7d519fefeca249aedd1e647ec7abea6",
+  "receiptCanonicalDigest": "6eaae272155b8080b00886a99f75bfa4b67b50f68b97e2dfd26b83128280ddfa"
 }
