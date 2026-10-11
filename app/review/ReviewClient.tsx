@@ -1,5 +1,7 @@
 "use client";
-import { formatAcceptedAnswers } from "@/lib/questions/answers";
+import { QuestionBody } from "@/components/quiz/QuestionBody";
+import { QuestionFigures } from "@/components/quiz/QuestionFigures";
+import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -296,7 +298,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   }
 
   const q = dueQuestions[currentIndex]!;
-  const correctAnswer = formatAcceptedAnswers(q.answer);
+  const correctAnswer = formatQuestionAnswerForDisplay(q, q.answer);
   const record = store[q.id];
   const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
 
@@ -325,12 +327,13 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               <Badge variant="outline" className="text-xs">Lv.{record.level}</Badge>
             )}
           </div>
-          <p className="text-sm leading-relaxed">{q.question}</p>
+          <QuestionBody text={q.question} />
+          <QuestionFigures question={q} />
         </CardContent>
       </Card>
 
       {/* 選択肢 */}
-      {!showAnswer && (
+      {!showAnswer && Object.keys(q.choices ?? {}).length > 0 && (
         <div className="space-y-2">
           {Object.entries(q.choices ?? {}).map(([key, value]) => (
             <button
@@ -343,6 +346,10 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             </button>
           ))}
         </div>
+      )}
+
+      {!showAnswer && Object.keys(q.choices ?? {}).length === 0 && (
+        <Button onClick={() => setShowAnswer(true)} className="w-full">解答・解説を見る</Button>
       )}
 
       {showAnswer && (

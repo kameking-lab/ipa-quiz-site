@@ -5,6 +5,8 @@ vi.mock("@/lib/questions/pool-server", () => ({ findQuestionById }));
 import { ReviewClient } from "@/app/review/ReviewClient";
 import { POST } from "@/app/api/review/due/route";
 import { IP_QUESTIONS } from "@/data/questions/ip";
+import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
+import { ZOEN2_QUESTIONS } from "@/data/questions/zoen2";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createHistoryStore } from "@/lib/storage/history";
 import type { Question } from "@/lib/questions/types";
@@ -63,6 +65,57 @@ describe("scoped review preserves mixed qualification history", () => {
     await waitFor(() => expect(screen.getByRole("combobox")).toHaveValue(""));
     expect(createHistoryStore().getAnsweredIds()).toHaveLength(3);
   });
+  it("reveals the signed dental numeric answer, then advances and preserves history through self-assessment", async () => {
+    const numeric = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-c-q90");
+    const following = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-d-q90");
+    if (!numeric || !following) throw new Error("Missing approved dental numeric fixtures");
+    findQuestionById.mockImplementation(async (id: string) => [numeric, following, ...pool].find((q) => q.id === id));
+    const history = createHistoryStore();
+    for (const q of [numeric, following, ap]) {
+      history.record({ id: q.id, selected: "ア", correct: false, at: 1 });
+    }
+    const beforeHistory = localStorage.getItem(LS_KEYS.history);
+    const otherSchedule = { questionId: ap.id, level: 3, correctStreak: 3, nextReviewAt: "2099-01-01" };
+    localStorage.setItem(LS_KEYS.reviewSchedule, JSON.stringify({ [ap.id]: otherSchedule }));
+    const random = vi.spyOn(Math, "random").mockReturnValue(0.999);
+    try {
+      render(<ReviewClient examFromQuery="shika-ishi" />);
+      const reveal = await screen.findByRole("button", { name: "解答・解説を見る" });
+      expect(screen.queryByText(/正解: −2\.0 mm/)).not.toBeInTheDocument();
+      expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toContain(ap.id);
+      fireEvent.click(reveal);
+      expect(screen.getByText(/正解: −2\.0 mm/)).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "✓ 正解した" }));
+      expect(await screen.findByText("2 / 2")).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "解答・解説を見る" }));
+      expect(screen.getByText(/正解: 50 %/)).toBeInTheDocument();
+      fireEvent.click(screen.getByRole("button", { name: "✗ 間違えた" }));
+      expect(await screen.findByRole("button", { name: "もう一度" })).toBeInTheDocument();
+      const schedules = JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!) as Record<string, { level: number; correctStreak: number }>;
+      expect(schedules[ap.id]).toEqual(otherSchedule);
+      expect(schedules[numeric.id]).toMatchObject({ level: 1, correctStreak: 1 });
+      expect(schedules[following.id]).toMatchObject({ level: 0, correctStreak: 0 });
+      expect(localStorage.getItem(LS_KEYS.history)).toBe(beforeHistory);
+    } finally {
+      random.mockRestore();
+    }
+  });
+
+  it("keeps the original Zoen2 figure visible before revealing the answer", async () => {
+    const figure = ZOEN2_QUESTIONS.find((q) => q.id === "zoen2-2025-late-gakka-q9");
+    if (!figure?.imageUrls?.[0]) throw new Error("Missing approved Zoen2 figure fixture");
+    findQuestionById.mockImplementation(async (id: string) => [figure, ...pool].find((q) => q.id === id));
+    createHistoryStore().record({ id: figure.id, selected: "ア", correct: false, at: 1 });
+    render(<ReviewClient examFromQuery="zoen2" />);
+    const image = await screen.findByRole("img");
+    expect(image).toHaveAttribute("src", figure.imageUrls[0]);
+    expect(screen.queryByText(/正解:/)).not.toBeInTheDocument();
+    const choiceButtons = screen.getAllByRole("button");
+    fireEvent.click(choiceButtons[0]!);
+    expect(screen.getByText(/正解:/)).toBeInTheDocument();
+    expect(image).toHaveAttribute("src", figure.imageUrls[0]);
+  });
+
   it("unknown query asks for a choice without sending an unfiltered request", () => {
     render(<ReviewClient examFromQuery="unknown" />);
     expect(screen.getByRole("alert")).toHaveTextContent("資格を確認できません");
