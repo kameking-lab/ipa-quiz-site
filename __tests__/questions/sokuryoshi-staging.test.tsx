@@ -53,6 +53,21 @@ describe("surveyor latest two complete source candidates", () => {
     }
   });
 
+  it("displays every dictionary-form PM word-bank reason and required-term explanation", () => {
+    for (const year of [2025, 2026]) {
+      const q = SOKURYOSHI_QUESTIONS.find(q => q.year === year && q.session === "pm" && q.qNumber === 5)!;
+      const original = raw.pm.find(q => q.year === year && q.number === 5)!;
+      const branch = original.branches.find(b => b.id === "C-1")! as { wordBankExplanations: Record<string, string> };
+      expect(Object.keys(branch.wordBankExplanations)).toHaveLength(year === 2025 ? 14 : 13);
+      for (const [term, reason] of Object.entries(branch.wordBankExplanations)) {
+        expect(q.explanation, `${year} PM5 ${term}`).toContain(`${term}：${reason}`);
+      }
+    }
+    const pm2 = SOKURYOSHI_QUESTIONS.find(q => q.year === 2026 && q.session === "pm" && q.qNumber === 2)!;
+    expect(pm2.explanation).toContain("改定対象となる高さの成果を示す");
+    expect(pm2.explanation).toContain("3級水準点の標高を求める測量方法を示す");
+  });
+
   it("pins source PDFs and all question/answer images to their unambiguous original pages", () => {
     expect(manifest.files).toHaveLength(13);
     expect(Object.keys(manifest.assets)).toHaveLength(156);

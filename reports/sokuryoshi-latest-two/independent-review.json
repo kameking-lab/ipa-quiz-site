@@ -147,5 +147,152 @@
     "explicitFunctionTableReferencesMissing": [],
     "calculationQuestionReferenceTablesMissing": [],
     "referenceTableApplicability": "All calculation questions and explicit table references include the shared tables; non-calculation required PM q1 does not need them."
-  }
+  },
+  "addenda": [
+    {
+      "reviewedAt": "2026-10-11T03:17:52.313892+00:00",
+      "scope": "Only exact retention of source wordBankExplanations dictionary term/reason pairs in the integrated C-1 explanation sections of 2025 and 2026 PM No.5. No full rereview.",
+      "result": "PASS_27_OF_27_EXACT_PAIRS",
+      "checks": [
+        {
+          "questionId": "sokuryoshi-2025-annual-pm-q5",
+          "branch": "C-1",
+          "expectedEntries": 14,
+          "actualEntries": 14,
+          "matchedEntries": 14,
+          "result": "PASS",
+          "entries": [
+            {
+              "term": "境界確認",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "境界杭設置",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "境界点間",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "現況実測平面図",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "座標値",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "建物調査表",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "土地調査表",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "廃点",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "亡失",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "面積",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "用地幅杭点間",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "用地平面図",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "250",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "500",
+              "exactReasonRetained": true
+            }
+          ]
+        },
+        {
+          "questionId": "sokuryoshi-2026-annual-pm-q5",
+          "branch": "C-1",
+          "expectedEntries": 13,
+          "actualEntries": 13,
+          "matchedEntries": 13,
+          "result": "PASS",
+          "entries": [
+            {
+              "term": "遠赤外",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "オクルージョン",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "回折",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "吸収",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "近赤外",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "屈折",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "合成",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "紫外線",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "透過",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "透析",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "反射",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "フォアショートニング",
+              "exactReasonRetained": true
+            },
+            {
+              "term": "緑色",
+              "exactReasonRetained": true
+            }
+          ]
+        }
+      ],
+      "snapshotSha256": {
+        "questions.json": "eb638ac836d3c88a0c626f9df887851a5f277f581d53790aa3bb80d2e6dcd6eb",
+        "source-branches.json": "a514163cd2752f7a061b44a57c4ecd56c3d3475026219db7528cfe3e0f1fec68"
+      },
+      "notReviewed": [
+        "PM No.2 requiredTerms additions (outside requested narrow check)",
+        "New seven-case test execution or pass status",
+        "Other questions, sources, answers, publication gates or image assets"
+      ],
+      "publicationDecision": "Unchanged: publicGo=0; no production merge/deploy authorized."
+    }
+  ]
 }
