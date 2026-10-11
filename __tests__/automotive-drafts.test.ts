@@ -2,7 +2,8 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { getAutomotiveOriginalKey, getAutomotiveWrittenDrafts } from "@/lib/automotive/get-drafts";
+import { getAutomotiveIntegrationReviewManifest, getAutomotiveOriginalKey, getAutomotiveWrittenDrafts } from "@/lib/automotive/get-drafts";
+import { getAutomotiveReviewDisposition } from "@/lib/automotive/review-disposition";
 import { AUTOMOTIVE_DRAFT_BUNDLE } from "@/data/qualification-staging/automotive/latest-two";
 
 describe("latest two JASPA written drafts", () => {
@@ -27,6 +28,30 @@ describe("latest two JASPA written drafts", () => {
     const withdrawn = getAutomotiveWrittenDrafts().find(q => q.id === "jidosha-2025-second-2-gasoline-q13");
     expect(withdrawn?.answer).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(withdrawn?.officialQuestionStatus).toBe("withdrawn-all-accepted");
+  });
+
+  it("hands off all 610 original identities while separating grading candidates, official treatment and technical holds", () => {
+    const rows = getAutomotiveIntegrationReviewManifest();
+    expect(rows).toHaveLength(610);
+    expect(new Set(rows.map(row => row.originalKey)).size).toBe(610);
+    expect(rows.filter(row => row.disposition === "grading-candidate")).toHaveLength(608);
+    expect(rows.filter(row => row.disposition === "official-all-accepted").map(row => row.id)).toEqual(["jidosha-2025-second-2-gasoline-q13"]);
+    expect(rows.filter(row => row.disposition === "technical-hold").map(row => row.id)).toEqual(["jidosha-2026-first-2-gasoline-q31"]);
+    expect(rows.some(row => row.disposition === "needs-review")).toBe(false);
+    expect(getAutomotiveIntegrationReviewManifest({ fiscalYear: 2026 })).toHaveLength(250);
+  });
+
+  it("keeps a recorded source conflict out of grading even if the generic review flag is accidentally cleared", () => {
+    const question = getAutomotiveWrittenDrafts().find(row => row.id === "jidosha-2026-first-2-gasoline-q31");
+    if (!question) throw new Error("Missing preserved conflict original");
+    expect(getAutomotiveReviewDisposition({ ...question, needsReview: false })).toBe("technical-hold");
+    expect(question.answer).toBe("イ");
+    expect(question.officialAnswerNumber).toBe("2");
+    expect(question.needsReview).toBe(true);
+    expect(question.officialQuestionStatus).toBe("normal");
+    const other = getAutomotiveWrittenDrafts({ gradableOnly: true })[0];
+    if (!other) throw new Error("Missing grading candidate");
+    expect(getAutomotiveReviewDisposition({ ...other, needsReview: true })).toBe("needs-review");
   });
 
   it("provides all four explanations and the original figure pages as actual files", () => {

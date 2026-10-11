@@ -1866,10 +1866,10 @@ export const AUTOMOTIVE_DRAFT_BUNDLE: AutomotiveDraftBundle = {
       },
       "answer": "イ",
       "officialAnswerNumber": "2",
-      "explanation": "公式正答表は(2)を不適切としている。一方、NSKの公式分類では円すいころ軸受はラジアル形に含まれ、ラジアル荷重と一方向のアキシアル荷重を受ける。このため、テーパ・ローラ型をラジアル軸受から除外する説明は採用できない。公式が(2)を不適切とする理由は公表正答表に記載されておらず、出題意図を推測して断定せず、公式正答と一般的な軸受分類の相違を記録する。",
+      "explanation": "公式正答は(2)。NSKの公式分類では円すいころ軸受はラジアル形に含まれ、ラジアル荷重と一方向のアキシアル荷重を受ける。また、NSKのマニュアルトランスミッション用製品一覧にはQAT円すいころ軸受がある。したがって、テーパ・ローラ型をラジアル軸受から除外する説明や、トランスミッションには使われないという説明で本問の理由を確定できない。公式が(2)のどの箇所を不適切としたかを示す出題教材の該当版・ページや訂正・理由説明は未確認のため、公式正答を保持して通常採点から除外する。",
       "choiceExplanations": {
         "ア": "適切。M10は呼び径10mm、1.25はピッチ1.25mm。",
-        "イ": "公式上の不適切肢は(2)。ただしNSK公式資料はテーパ・ローラ型（円すいころ軸受）をラジアル形に分類し、ラジアル・アキシアル両方向の荷重を受けると説明する。「テーパ型ではなくシリンドリカル型だけ」とする根拠は確認できないため、選択肢の誤り箇所を創作しない。この問は通常の出題プールから除外し、公式正答と一次メーカー資料を併記する。",
+        "イ": "公式上の不適切肢は(2)。NSKの分類とトランスミッション用製品情報は、円すいころ軸受のラジアル形分類と当該用途を支持する。「テーパ型ではなくシリンドリカル型だけ」とする説明や、教材上の分類差が確定したという説明は採用しない。公式がこの肢を不適切とした理由は未特定であり、一次根拠を確認するまで通常の出題・採点から除外する。",
         "ウ": "適切。つば部が軸方向、半割り軸受部が径方向の荷重を受ける。",
         "エ": "適切。戻り止め構造でナットの緩みを防ぐ。"
       },
@@ -1887,11 +1887,13 @@ export const AUTOMOTIVE_DRAFT_BUNDLE: AutomotiveDraftBundle = {
       "isCalculation": false,
       "needsReview": true,
       "reviewNotes": [
-        "公式正答2の根拠とNSK一次分類との不整合。公式の出題意図・訂正説明は公開正答表にない。一般分類を変更して正答理由を創作しない。"
+        "公式正答2は原本正答表と一致。NSK一次分類およびトランスミッション用途から肢2の誤り箇所を特定できない。出題教材の該当版・頁または公式の訂正・理由説明が不足。教材上の分類差が存在すると断定しない。"
       ],
       "officialReferenceUrls": [
         "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/",
-        "https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/1102.pdf"
+        "https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/1102.pdf",
+        "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/differentiating-rolling-bearings/",
+        "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/"
       ],
       "qualification": "jidousha-seibishi-gakka",
       "session": "gakka",
