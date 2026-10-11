@@ -8,16 +8,16 @@ describe("1級造園 令和8年度第一次検定", () => {
     expect(source.allQuestionsRequired).toBe(true);
     expect(source.papers.map((paper) => paper.officialQuestionCount)).toEqual([36, 29]);
     expect(source.papers.map((paper) => paper.publishedCount)).toEqual([20, 4]);
-    expect(ZOEN1_QUESTIONS).toHaveLength(35);
+    expect(ZOEN1_QUESTIONS).toHaveLength(40);
     expect(defaultPracticeSession("zoen1")).toBe("mondai-a");
-    expect(ZOEN1_QUESTIONS.filter((q) => q.session === "mondai-a")).toHaveLength(23);
-    expect(ZOEN1_QUESTIONS.filter((q) => q.session === "mondai-b")).toHaveLength(12);
+    expect(ZOEN1_QUESTIONS.filter((q) => q.session === "mondai-a")).toHaveLength(25);
+    expect(ZOEN1_QUESTIONS.filter((q) => q.session === "mondai-b")).toHaveLength(15);
   });
 
   it("追加15問は既存9問と重複せず、公式正答の単一選択肢を保つ", () => {
     const added = [6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 22, 30, 34];
     const answers = [3, 2, 4, 1, 2, 4, 2, 4, 4, 3, 1, 1, 3, 3, 3];
-    expect(new Set(ZOEN1_QUESTIONS.map((q) => q.id)).size).toBe(35);
+    expect(new Set(ZOEN1_QUESTIONS.map((q) => q.id)).size).toBe(40);
     for (const [index, number] of added.entries()) {
       const question = ZOEN1_QUESTIONS.find((q) => q.session === "mondai-a" && q.qNumber === number);
       expect(question?.answer).toEqual(["ア", "イ", "ウ", "エ"][answers[index]! - 1]);
