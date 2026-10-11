@@ -13,6 +13,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { QuestionBody } from "./QuestionBody";
+import { QuestionModelAnswer } from "./QuestionModelAnswer";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
@@ -60,6 +61,7 @@ export function ExplanationCard({
           : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
       )}
     >
+      <QuestionModelAnswer question={question} />
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {isCorrect ? (

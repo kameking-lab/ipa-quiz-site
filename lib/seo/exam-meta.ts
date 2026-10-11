@@ -135,6 +135,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  sokuryoshi: "測量士試験",
   ip: "ITパスポート試験",
   sg: "情報セキュリティマネジメント試験",
   fe: "基本情報技術者試験",
@@ -198,6 +199,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  sokuryoshi: (c) => `測量士試験の2026・2025年午前・午後の検証用${c}原問。公開受入れは未了です。`,
   ip: (c, y, k) =>
     `職種・年齢を問わずITを活用するすべての社会人・就活生が対象のIT基礎国家試験。CBT通年受験に対応、${c}問・${y}期分・${k}分野を実問題AI解説で体系的に対策。合格率は比較的高く、ビジネス現場のIT活用力を証明できる。`,
   sg: (c, y, k) =>
