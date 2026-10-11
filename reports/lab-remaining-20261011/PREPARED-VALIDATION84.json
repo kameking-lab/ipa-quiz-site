@@ -1,22 +1,24 @@
 {
-  "observedUtc": "2026-10-11T07:56:43.715949+00:00",
+  "observedUtc": "2026-10-11T07:59:49.331174+00:00",
   "status": "PASS",
   "originals": 84,
   "choiceReasons": 420,
   "officialDiagramReferences": 60,
   "diagramRendersByteIdentical": 60,
-  "testsPassed": 14,
+  "testsPassed": 15,
   "testCommand": "node --experimental-strip-types data/prepared-medical/rinsho-kensagishi/validate.test.mjs",
   "heldReviewAcceptedByAstra": 16,
   "sourcePdfShaChecks": 12,
   "sourceQuestionTextBindings": 84,
   "originalSymbolChoicesBoundToOfficialPng": 5,
   "duplicateQuestionIds": 0,
-  "sourceManifestSha256": "365a13f0e29b3ddc74d21ae02f801f051c0df05960b917a453853c83aa5d2e0f",
+  "sourceManifestSha256": "95368a2bd0c9942ee30bfec91895a3d95e39cd6fcae54f64e8014294f97909bb",
   "originalQuestionRegeneration": 0,
   "oldSavedManuscriptRegeneration": 0,
   "publicGo": 0,
   "runtimeRegistrationAdded": false,
   "providerStopRetries": 0,
-  "localHeavyBuild": false
+  "localHeavyBuild": false,
+  "sourceManifestGitNormalizedSha256": "311a920a93b84ddae45a7f512f56fa95d4cf5b342bbf07c7c59f522c15be80fb",
+  "filePayloadShaPolicy": "Original Windows worktree SHA and Git-normalized UTF-8 LF SHA both recorded; authored Question objects preserved."
 }

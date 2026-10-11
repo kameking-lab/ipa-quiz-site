@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { folder, loadPrepared, validateQuestions, validateImages } from './validate.mjs';
+import { folder, loadPrepared, validateQuestions, validateImages, sha256 } from './validate.mjs';
 import { isCompleteSelectionCorrect } from '../../../lib/questions/answers.ts';
 const { questions, evidence } = loadPrepared();
 const changed = fn => { const q = structuredClone(questions); const e = structuredClone(evidence); fn(q, e); return [q, e]; };
@@ -57,4 +57,14 @@ test('all five 72AM98 diagram choices depend on the unchanged official question 
   assert.throws(() => validateQuestions(...changed(q => {
     q.find(x => x.id === 'rinsho-kensagishi-2026-annual-am-q98').choices.ア = '推測した記号';
   })), /MISSING_ORIGINAL_SYMBOL/u);
+});
+
+test('all prepared question files match their Git-normalized file hashes on Windows and Linux', () => {
+  const prepared = loadPrepared();
+  assert.equal(prepared.files.length, evidence.questionFiles.length);
+  for (const file of evidence.questionFiles) {
+    const target = resolve(folder, '../../..', file.path);
+    const normalized = readFileSync(target, 'utf8').replace(/\r\n/gu, '\n');
+    assert.equal(sha256(Buffer.from(normalized)), file.gitNormalizedSha256, `GIT_FILE_SHA ${file.path}`);
+  }
 });
