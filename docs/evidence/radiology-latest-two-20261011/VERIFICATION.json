@@ -1,0 +1,61 @@
+{
+  "schema": {
+    "command": "pnpm validate:questions --exam=shinryo-hoshasengishi",
+    "exitCode": 0,
+    "ok": 398,
+    "fail": 0,
+    "warnings": 46,
+    "warningsScope": "Warnings concern overview or original-stem length; all 1,990 choice reasons are present."
+  },
+  "focusedTests": {
+    "command": "pnpm exec vitest run [6 files] --maxWorkers=2",
+    "exitCode": 1,
+    "passed": 38,
+    "failed": 2,
+    "failures": "get-questions global corpus tests exceeded default 15000 ms; targeted new radiology tests all passed."
+  },
+  "getQuestionsRerun": {
+    "command": "pnpm exec vitest run __tests__/questions/get-questions.test.ts --maxWorkers=1 --testTimeout=120000",
+    "status": "passed",
+    "exitCode": 0,
+    "passed": 7,
+    "failed": 0,
+    "durationSeconds": 101.8
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0,
+    "status": "passed"
+  },
+  "lint": {
+    "command": "pnpm exec eslint [9 changed TypeScript/TSX files]",
+    "exitCode": 0,
+    "status": "passed"
+  },
+  "build": {
+    "command": "pnpm exec next build --webpack",
+    "status": "running-static-generation",
+    "compile": "passed (4.7 min)",
+    "typecheck": "passed (67 s)",
+    "staticPageTotal": 11991,
+    "warnings": [
+      "Existing middleware deprecation.",
+      "Existing Prisma/OpenTelemetry dynamic dependency warning.",
+      "Existing edge-runtime static generation notice."
+    ]
+  },
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "status": "passed"
+  },
+  "uniquePassingTests": 40,
+  "testScope": "6 test files; 33 focused/source/UI tests passed in initial run, all 7 global-loader tests passed on rerun with extended execution timeout.",
+  "practicePool": {
+    "command": "pnpm exec tsx (isPracticeReadyQuestion on all radiology originals)",
+    "exitCode": 0,
+    "loaded": 398,
+    "practiceReady": 398,
+    "rejected": []
+  }
+}

@@ -625,8 +625,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-06b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第77・78回（2025・2026年実施）の午後から、原文・公式正答・全五肢の解説を照合した26原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
-    remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
+    reuseSummary: "第77・78回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢解説・必要図版を照合した398原問を収録。第77回は午前100・午後100問、第78回は午前98・午後100問です。第78回午前23は公式に採点除外、午前15は公式別冊図が省略されているため出題対象に含めていません。解説は独自作成です。",
+    remainingWork: ["第78回午前15の正規図版取得", "採点除外の第78回午前23は公式通知と原文を別保存"],
   },
   {
     slug: "boki3",

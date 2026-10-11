@@ -92,12 +92,13 @@ describe("saved lab/radiology first twenty original questions", () => {
       expect(html).toContain(q.sourcePdfUrl);
       expect(renderToStaticMarkup(<QuestionCard question={q} />)).toContain(edition);
       const hub = renderToStaticMarkup(await ExamTopPage({ params: Promise.resolve({ exam: suite.exam }) }));
-      expect(hub).toContain(`${(await getQuestionsForExam(suite.exam)).length}原問を部分収録`);
-      expect(hub).toContain("全問は未完備");
+      const radiology = suite.exam === "shinryo-hoshasengishi";
+      expect(hub).toContain(`${(await getQuestionsForExam(suite.exam)).length}${radiology ? "問収録" : "原問を部分収録"}`);
+      expect(hub).toContain(radiology ? "公式図版省略" : "全問は未完備");
       for (const mode of [undefined, "year", "topic"] as const) {
         const description = examMetaDescription(suite.exam, 10, mode);
-        expect(description).toContain("10原問を部分収録");
-        expect(description).toContain("全問は未完備");
+        expect(description).toContain(radiology ? "10問収録" : "10原問を部分収録");
+        expect(description).toContain(radiology ? "採点除外" : "全問は未完備");
         expect(description).not.toContain("全1期分");
       }
     });
