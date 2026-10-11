@@ -1,0 +1,59 @@
+{
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "errors": 0,
+    "unrelatedExistingWarnings": 1
+  },
+  "focusedFinalLint": {
+    "exitCode": 0
+  },
+  "sourceManifest": {
+    "exitCode": 0,
+    "officialRows": 440,
+    "uniqueKeys": 440,
+    "recovered": 8,
+    "completeOriginals": 7,
+    "missingOriginals": 432,
+    "candidates": 1,
+    "publishedIncrement": 0
+  },
+  "fullTest": {
+    "command": "pnpm run test --maxWorkers=2",
+    "exitCode": 1,
+    "testFiles": 518,
+    "passedFiles": 517,
+    "failedFiles": 1,
+    "totalTests": 4783,
+    "passedTests": 4782,
+    "failedTests": 1,
+    "failure": "existing get-questions.test.ts all-exam loader exceeded the default 15000 ms",
+    "durationSeconds": 609.13
+  },
+  "targetedRecheck": {
+    "command": "pnpm exec vitest run __tests__/questions/dental-hygienist-source-batch.test.ts __tests__/questions/get-questions.test.ts --maxWorkers=1 --testTimeout=60000",
+    "exitCode": 0,
+    "testFiles": 2,
+    "passedTests": 17,
+    "newDentalSourceTests": 10,
+    "existingLoaderTests": 7,
+    "loaderAssertionDurationMs": 18959
+  },
+  "build": {
+    "command": "pnpm run build --webpack",
+    "exitCode": 0,
+    "staticPages": 11471,
+    "webpackCompilation": "pass",
+    "buildTypecheck": "pass",
+    "existingWarnings": [
+      "Next middleware convention",
+      "Sentry/Prisma dynamic instrumentation dependency",
+      "chart dimensions during prerender"
+    ]
+  },
+  "verifiedAt": "2026-10-11T03:20:44.203300+00:00",
+  "mainBase": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
+  "overall": "source checkpoint verified; default whole-suite timeout remains documented and passes the isolated 60s recheck; latest-two content completion blocked by missing originals"
+}

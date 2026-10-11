@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-11T03:15:12.816240+00:00",
+  "34-am-14": {
+    "officialAcceptedChoices": [
+      "a",
+      "c"
+    ],
+    "requiredSelections": 1,
+    "primaryChecks": [
+      {
+        "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/300174_2710806U1021_3_09",
+        "locators": [
+          "PDF p3, 18.1",
+          "PDF p3, 18.2"
+        ],
+        "coverage": "Sodium-channel block and enhancement by adrenaline. Current label revised 2026; not treated as the historical 2025 prescribing label."
+      },
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17980687/",
+        "mode": "primary research search abstract excerpt",
+        "coverage": "Adding epinephrine to lidocaine reduces cutaneous blood flow. Full text was not acquired."
+      },
+      {
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17223807/",
+        "mode": "primary research search abstract excerpt",
+        "coverage": "Vasodilator properties of lidocaine. Full text was not acquired."
+      }
+    ],
+    "inference": "The vascular-antagonism perspective is explicitly identified as a pharmacological interpretation, not an official explanation of why both answers were accepted.",
+    "independentModelReviewClaimed": false
+  },
+  "34-pm-82": {
+    "url": "https://www.mhlw.go.jp/content/10900000/001081570.pdf",
+    "printedPages": [
+      57,
+      58,
+      59
+    ],
+    "originalValues": {
+      "age": 50,
+      "bmi": 27,
+      "maleWaistCm": 90,
+      "systolic": 140,
+      "diastolic": 83,
+      "fastingGlucoseMgDl": 105,
+      "triglyceridesMgDl": 130,
+      "smoker": false
+    },
+    "checks": {
+      "waistEligibility": "90 >= 85",
+      "bloodPressureRisk": "140 >= 130",
+      "glucoseRisk": "105 >= 100",
+      "triglycerideRisk": "130 < 150 and 130 < 175",
+      "additionalRisks": 2
+    },
+    "officialScoring": "excluded",
+    "officialAnswerInvented": false
+  },
+  "reviewHolds": [
+    "34-am-8: ionic transport primary coverage",
+    "34-am-10: histology primary coverage",
+    "34-pm-37: three method-choice primary references",
+    "35-am-97: official photograph No.29 and four choice explanations"
+  ]
+}
