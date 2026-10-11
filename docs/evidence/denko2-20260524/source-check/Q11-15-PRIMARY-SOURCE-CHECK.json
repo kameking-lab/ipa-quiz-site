@@ -1,0 +1,116 @@
+{
+  "scope": "2026-05-24 second-class electrician academic Q11-Q15 saved candidate, source verification only",
+  "checkedAtUTC": "2026-10-11T00:44:52Z",
+  "candidate": "reports/qualification-expansion-20261007/approved35/construction/denko2-2026upper-next/runtime/candidate-generation.json",
+  "status": "LIMITED_SUPPORT_WITH_CORRECTIONS_REQUIRED; no publication or independent-review acceptance",
+  "sources": [
+    {
+      "question": 11,
+      "publisher": "Mirai Industry",
+      "url": "https://www.mirai.co.jp/densetu/pdf-catalog_2026/0010561.pdf",
+      "location": "one-page 2026 catalogue, PDF page 1, title and compatible-tube table rows 8-16",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["PVF TS coupling is a fitting for specified VE14-VE82 rigid PVC electrical conduit sizes"],
+      "doesNotSupport": ["Every VE-to-VE installation method or adhesive requirement", "Exact purposes of box connector, end bushing and combination coupling", "Any statutory approval or fit across unequal diameters"]
+    },
+    {
+      "question": 11,
+      "publisher": "Mirai Industry",
+      "url": "https://faq.mirai.co.jp/s/article/VE%E7%AE%A1%E3%82%92TS%E3%82%AB%E3%83%83%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97-%E3%81%AB%E6%8E%A5%E7%B6%9A%E3%81%99%E3%82%8B%E5%B7%AE%E8%BE%BC%E3%81%BF%E6%B7%B1%E3%81%95%E3%81%AE%E7%9B%AE%E5%AE%89%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84",
+      "location": "search-index title and snippet only; opened page yielded no readable body",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Manufacturer names VE tube connection to a straight TS coupling"],
+      "doesNotSupport": ["Any precise insertion depth or installation instruction, because body was not readable"]
+    },
+    {
+      "question": 12,
+      "publisher": "Fuji Electric Wire Industry (fujiewc.co.jp), not Fuji Electric Co.",
+      "url": "https://www.fujiewc.co.jp/wp-content/uploads/2022/04/hb010.pdf",
+      "location": "physical PDF page 12 / printed page 85, cord and cabtyre-cord permissible-current table; 0.75 mm2, 30/0.18 strand, natural-rubber insulation 60 C column = 7 A; ambient 30 C or below",
+      "observedAtUTC": "2026-10-07T21:53:55Z independently in existing Q12-SOURCE-TABLE-SUPPORT-ADDENDUM.json; public PDF was also opened 2026-10-11T00:44:52Z but web text extraction had zero lines",
+      "supports": ["The specified manufacturer table cell is 7 A under its printed assumptions", "At 100 V and unity power factor assumed by the exam, 600 W corresponds to 6 A and 1500 W to 15 A by calculation"],
+      "doesNotSupport": ["Current 2026 METI legal table or article number", "Universal permission for every 0.75 mm2 cord or every heater", "Equipment-internal or attached-cord exception applicability", "Power factor of each named appliance", "Strict candidate acceptance"]
+    },
+    {
+      "question": 13,
+      "publisher": "CCTS, original tool catalogue",
+      "url": "https://www.ccts.co.jp/pdf/17p29.pdf",
+      "location": "PDF page 1, lines 0-12, knockout punch SLP-4 use",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Knockout punch punches holes in distribution/control panels and other steel sheets for electrical and conduit work"],
+      "doesNotSupport": ["Suitability for all metals and thicknesses", "Feather-bit or wire-tensioner uses"]
+    },
+    {
+      "question": 13,
+      "publisher": "Sankei Manufacturing",
+      "url": "https://www.sankei-ss.co.jp/news_product_cancel_2025005.html",
+      "location": "2025-11-06 notice, lines 60-78; PTTL201N Plica knife",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Plica knife is a cutting tool for Plica tube, which the manufacturer's product page identifies as metal flexible conduit"],
+      "doesNotSupport": ["Cutting thin-wall steel rigid conduit with a Plica knife", "Exclusive correct cutting method for thin-wall steel conduit", "Other three Q13 tool explanations"]
+    },
+    {
+      "question": 13,
+      "publisher": "Sankei Manufacturing",
+      "url": "https://www.sankei-ss.co.jp/product_plica_pttl.html",
+      "location": "lines 70-88, 93-98: PTTL201N and standard Plica PZ description",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Manufacturer categorizes Plica knife with Plica tube and describes standard Plica as metal flexible electrical conduit"],
+      "doesNotSupport": ["Specific legal type classification of every Plica variant", "Any permission to use it on thin-wall steel rigid conduit"]
+    },
+    {
+      "question": 14,
+      "publisher": "Mitsubishi Electric, Nagoya Works",
+      "url": "https://www.mitsubishielectric.co.jp/fa/document/technews/inv/mf-p-048/mfp048.pdf",
+      "location": "PDF physical page 1, lines 6-30: N = (120f/p)(1-s); physical page 2 lines 129-138: real speed lower by slip",
+      "documentDate": "1999-08-19",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["At fixed pole count, synchronous speed scales with frequency", "Actual induction-motor speed depends on slip and cannot automatically be asserted to change by exactly 5/6"] ,
+      "doesNotSupport": ["Exact actual speed at 50 Hz for unspecified load and slip", "Current motor-specific starting-current ratio", "Blanket guarantee that every 60 to 50 Hz substitution is operationally permissible"]
+    },
+    {
+      "question": 14,
+      "publisher": "Japan Electric Engineers' Association",
+      "url": "https://www.jeea.or.jp/course/contents/07102/",
+      "location": "heading induction-motor starting current, lines 47-53; starting methods lines 67-75",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["At standstill and rated terminal voltage, general starting current is 5-8 times rated current", "Direct-on-line means direct power-source connection"],
+      "doesNotSupport": ["Candidate's specific generalized 4-8 times range", "Every model's measured transient or exact starting ratio"]
+    },
+    {
+      "question": 14,
+      "publisher": "Japan Electric Engineers' Association",
+      "url": "https://www.jeea.or.jp/course/contents/12129/",
+      "location": "basic principle section lines 48-51 and equivalent circuit section lines 89-100",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Induction rotor runs below synchronous field speed; slip is based on their speed difference"],
+      "doesNotSupport": ["Unconditional exact speed ratio for a changed source frequency"]
+    },
+    {
+      "question": 15,
+      "publisher": "Japan Electric Engineers' Association",
+      "url": "https://www.jeea.or.jp/course/contents/01201/",
+      "location": "power-factor improvement section, lines 71-75",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Motor is a representative inductive load; a leading capacitor is used to improve lagging circuit power factor"],
+      "doesNotSupport": ["Any universal installed capacitance or placement", "Prevention of vibration, frequency drift or speed variation"]
+    },
+    {
+      "question": 15,
+      "publisher": "Japan Electric Engineers' Association",
+      "url": "https://www.jeea.or.jp/course/contents/06201/",
+      "location": "introduction lines 28-32; parallel induction-motor capacitor and self-excitation caution lines 95-98",
+      "observedAtUTC": "2026-10-11T00:44:52Z",
+      "supports": ["Leading capacitor cancels lagging reactive power to improve power factor", "Parallel placement with an induction motor is discussed as effective but requires self-excitation precautions"],
+      "doesNotSupport": ["A universal design mandate to place a fixed capacitor in every motor branch", "Unqualified safety or current statutory capacity requirement"]
+    }
+  ],
+  "remainingGaps": [
+    "Q11 manufacturer source for exact roles and scope of all three distractor fittings, especially terminal protection and VE-to-flexible-tube combination coupling",
+    "Q12 current official legal-table applicability; METI dengikaishaku.pdf had previously returned 403 and was not retried or bypassed",
+    "Q13 primary manufacturer descriptions for feather bit and wire tensioner; pipe-cutter recommendation for thin-wall steel conduit",
+    "Q14 candidate's generalized 4-8 times starting current is unsupported by found association source, which says 5-8 times; speed ratio must be qualified by slip",
+    "Q15 exact capacitor sizing and legal installation scope were not verified and are unnecessary for answer choice"
+  ],
+  "reviewPolicy": "Earlier Opus FAILED_NO_RESEND was not rerun or overwritten. No authentication, API, or key changes. This source packet is not an approval receipt."
+}

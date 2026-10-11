@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "data/chusho-secondary/**"
+      - "lib/chusho-secondary/**"
+      - "components/chusho-secondary/**"
+      - "app/chusho-secondary/**"
+      - "public/images/chusho-secondary/**"
+      - "__tests__/chusho-secondary-latest-two.test.tsx"
+      - "__tests__/components/ChushoSecondaryAnswerPractice.test.tsx"
       - "data/raw_pdfs/denko2/review/**"
       - "docs/evidence/denko2-*/**"
       - "public/images/denko2/**"
@@ -18,6 +25,13 @@ on:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "data/chusho-secondary/**"
+      - "lib/chusho-secondary/**"
+      - "components/chusho-secondary/**"
+      - "app/chusho-secondary/**"
+      - "public/images/chusho-secondary/**"
+      - "__tests__/chusho-secondary-latest-two.test.tsx"
+      - "__tests__/components/ChushoSecondaryAnswerPractice.test.tsx"
       - "data/raw_pdfs/denko2/review/**"
       - "docs/evidence/denko2-*/**"
       - "public/images/denko2/**"
@@ -47,6 +61,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Verify SME secondary source pages and editorial examples
+        run: pnpm exec vitest run __tests__/chusho-secondary-latest-two.test.tsx __tests__/components/ChushoSecondaryAnswerPractice.test.tsx
 
       - name: Run question schema validation
         run: pnpm validate:questions

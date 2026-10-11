@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "references": [
+    {
+      "questionNumbers": [
+        76
+      ],
+      "title": "散乱X線除去用グリッド JIRA資料",
+      "url": "https://www.jira-net.or.jp/vm/lecture/pdf/01_data_c17.pdf",
+      "accessedAt": "2026-10-11",
+      "sourceKind": "industry-association primary technical guide",
+      "webReadSucceeded": true,
+      "pdfPhysicalPage": 2,
+      "supports": "テーパグリッドの吸収はく高さは実中心線から遠ざかるにつれて対称的に減少。平行・集束・クロスの定義も照合。",
+      "scope": "グリッド構造の定義のみ。現行JIS全文の確認を主張しない。"
+    },
+    {
+      "questionNumbers": [
+        96
+      ],
+      "title": "電離放射線障害防止規則のポイント",
+      "url": "https://www.mhlw.go.jp/content/11300000/000753145.pdf",
+      "accessedAt": "2026-10-11",
+      "sourceKind": "MHLW primary public rule explanation",
+      "webReadSucceeded": true,
+      "pdfPhysicalPages": [
+        8,
+        14
+      ],
+      "supports": "通常の実効線量100mSv/5年かつ50mSv/年、女性5mSv/3月、妊娠中腹部表面2mSv/出産まで。線量評価の記録保存義務も確認。",
+      "scope": "Q96の必要条件のみ。eGov API通常アクセスが拒否された後、拒否回避せず別の正規公開一次資料を使用。"
+    },
+    {
+      "questionNumbers": [
+        99
+      ],
+      "title": "日本の診断参考レベル Japan DRLs 2025",
+      "url": "https://j-rime.qst.go.jp/report/JapanDRLs2025_ja.pdf",
+      "accessedAt": "2026-10-11",
+      "sourceKind": "J-RIME primary diagnostic-reference-level report",
+      "webReadSucceeded": true,
+      "supports": "DRLは最適化の目安で線量限度ではない。小児への設定がある。一般的な設定値は75パーセンタイル。",
+      "scope": "Q99の概念説明。患者への個別線量判定や治療処方の指示はしない。"
+    },
+    {
+      "questionNumbers": [
+        99
+      ],
+      "title": "診療用放射線に係る安全管理体制に関するガイドライン（2019年11月）",
+      "url": "https://www.radiology.jp/content/files/20191128_01.pdf",
+      "accessedAt": "2026-10-11",
+      "sourceKind": "Japan Radiological Society primary guideline",
+      "webReadSucceeded": true,
+      "pdfPhysicalPage": 6,
+      "supports": "DRL比較の目的は最適化、線量限度ではなく検査プロトコール見直しの目安。",
+      "scope": "補足確認。RALS等の医療法設備分類はこの文書に記載がなく、Q98の分類根拠として引用しない。"
+    }
+  ],
+  "officialExamQuestionAndAnswerSources": "source-packet.json",
+  "accessDenialBypassed": false,
+  "referenceFullTextOrSHAClaimed": false,
+  "publicationGo": 0
+}
