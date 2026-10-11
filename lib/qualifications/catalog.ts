@@ -516,8 +516,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第112・111回の22問を保存。うち公式原文・正答・全肢解説を照合した16問を部分公開。残る6問は局所独立査読待ちで非掲載。",
-    remainingWork: ["残る保留問の局所独立査読"],
+    reuseSummary: "第112・111回の午前・午後220問のうち、原文・正答・全肢解説を確認した202問を部分収録。第112回午前18問は未収録です。",
+    remainingWork: ["第112回午前の未収録18問の公開に関する既存の停止条件を解消"],
   },
   {
     slug: "josanshi",
