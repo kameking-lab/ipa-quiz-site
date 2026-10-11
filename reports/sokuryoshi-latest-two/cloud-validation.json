@@ -1,0 +1,89 @@
+{
+  "task": "Cloud validation of surveyor (sokuryoshi) latest-two candidate",
+  "generatedAtUtc": "2026-10-11T03:38:04Z",
+  "source": {
+    "branch": "codex/sokuryoshi-latest-two-20261011",
+    "commit": "9489c4c0ff9f8fb2cc5df3f3fcc04d78e45f9e97",
+    "parent": "45cd2f2b",
+    "base": "497a52d5",
+    "sourceBranchModified": false
+  },
+  "resultBranch": "claude/sokuryoshi-latest-two-validation-7a4ce8",
+  "environment": { "node": "v22.22.0", "pnpm": "10.33.0" },
+  "constraints": {
+    "questionsRegenerated": false,
+    "paidApiCalls": 0,
+    "imagesPromotedToPublic": false,
+    "publicationGateChanged": false,
+    "merged": false,
+    "deployed": false,
+    "prCreated": false
+  },
+  "checks": [
+    { "command": "pnpm install --frozen-lockfile", "exit": 0, "log": "cloud-install.log" },
+    { "command": "pnpm typecheck", "exit": 0, "seconds": 59, "log": "cloud-typecheck.log" },
+    { "command": "pnpm validate:questions --exam=sokuryoshi", "exit": 0, "seconds": 9, "counts": { "validated": 66, "ok": 66, "fail": 0, "warn": 0 }, "log": "cloud-validate.log" },
+    {
+      "command": "pnpm test -- __tests__/questions/sokuryoshi-staging.test.tsx",
+      "exit": 1,
+      "seconds": 375,
+      "note": "With `vitest run`, the `--` makes pnpm run the whole suite rather than only the named file, so this run was the first full-suite run (pre-repair). The sokuryoshi staging file passed in it (6/6).",
+      "counts": { "testFiles": { "failed": 2, "passed": 516, "total": 518 }, "tests": { "failed": 2, "passed": 4779, "total": 4781 } },
+      "failures": [
+        "__tests__/api/cost-record-durability.test.ts > /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み (expected 503 to be 200)",
+        "__tests__/lib/exam-config-integrity.test.ts > ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する (sokuryoshi missing from ALL_QUIZ_EXAM_CODES)"
+      ],
+      "log": "cloud-staging-test.log"
+    },
+    { "command": "pnpm lint", "exit": 0, "seconds": 69, "counts": { "errors": 0, "warnings": 1 }, "note": "Single warning is pre-existing in reports/civil2-2026-completion-20260926/parse-fenced-results.mjs (unused 'base'); unrelated to this candidate.", "log": "cloud-lint.log" }
+  ],
+  "isolation": [
+    { "command": "pnpm exec vitest run __tests__/api/cost-record-durability.test.ts", "commit": "9489c4c0", "exit": 1, "counts": { "failed": 1, "passed": 4 }, "log": "cloud-isolate-cost-record-head.log" },
+    { "command": "pnpm exec vitest run __tests__/lib/exam-config-integrity.test.ts", "commit": "9489c4c0", "exit": 1, "counts": { "failed": 1, "passed": 5 }, "log": "cloud-isolate-exam-config-head.log" },
+    {
+      "command": "pnpm exec vitest run __tests__/api/cost-record-durability.test.ts __tests__/lib/exam-config-integrity.test.ts",
+      "commit": "497a52d5 (base, temporary worktree)",
+      "exit": 1,
+      "counts": { "failed": 1, "passed": 10 },
+      "result": "The copilot cost-record test also fails on the base (15009ms, 503). exam-config-integrity passes 6/6 on the base.",
+      "log": "cloud-base-497a52d5-isolate.log"
+    }
+  ],
+  "classification": {
+    "copilotCostRecordDurability": "Pre-existing on base 497a52d5; unrelated to the sokuryoshi diff. The ~15s copilot path matches the known main copilot RAG timeout. Not modified.",
+    "examConfigIntegrity": "Regression introduced by this candidate: the test assumed every EXAM_CONFIGS key is published, but sokuryoshi is added to EXAM_CONFIGS while gated (catalog status ready-to-ingest). This is a test-assumption mismatch, not an implementation bug."
+  },
+  "repair": {
+    "file": "__tests__/lib/exam-config-integrity.test.ts",
+    "change": "Expected set is now EXAM_CONFIGS keys filtered by isExamPublished. The test also asserts that sokuryoshi exists in EXAM_CONFIGS and is absent from ALL_QUIZ_EXAM_CODES.",
+    "questionContentChanged": false,
+    "publicationGateChanged": false,
+    "commit": "f7bdf18cbf2245ac63084f3f182072d49ccca217"
+  },
+  "postRepairChecks": [
+    { "command": "pnpm exec vitest run __tests__/lib/exam-config-integrity.test.ts", "exit": 0, "counts": { "passed": 6, "total": 6 }, "log": "cloud-rerun-exam-config.log" },
+    { "command": "pnpm exec vitest run __tests__/questions/sokuryoshi-staging.test.tsx", "exit": 0, "counts": { "passed": 6, "total": 6 }, "log": "cloud-staging-test-scoped.log" },
+    { "command": "pnpm typecheck", "exit": 0, "log": "cloud-typecheck-after-repair.log" },
+    { "command": "pnpm exec eslint __tests__/lib/exam-config-integrity.test.ts", "exit": 0, "log": "cloud-lint-after-repair.log" },
+    {
+      "command": "pnpm test",
+      "exit": 1,
+      "seconds": 362,
+      "counts": { "testFiles": { "failed": 1, "passed": 517, "total": 518 }, "tests": { "failed": 1, "passed": 4780, "total": 4781 } },
+      "failures": ["__tests__/api/cost-record-durability.test.ts > /api/copilot (pre-existing on base; see isolation)"],
+      "log": "cloud-full-test-after-repair.log"
+    },
+    { "command": "pnpm build", "exit": 0, "seconds": 402, "log": "cloud-build.log", "note": "First build attempt was killed by the session's background time limit (not a build failure). This run is a clean rerun." }
+  ],
+  "gateAndAssets": {
+    "isExamPublished_sokuryoshi": false,
+    "sokuryoshiInAllQuizExamCodes": false,
+    "assetsDir": "data/questions/sokuryoshi/assets",
+    "assetCount": 156,
+    "sokuryoshiFilesUnderPublic": 0,
+    "sokuryoshiPathsInBuildStatic": 0,
+    "rightsReceipt": null,
+    "licenseClassification": "attribution only (no invented rights receipt)"
+  },
+  "verdict": "Candidate validated with one narrow test repair. All required checks pass, except one copilot cost-record test that also fails on the base commit. The production gate stays closed."
+}
