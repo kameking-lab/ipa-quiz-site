@@ -8272,5 +8272,197 @@
     "imageAltTexts": [
       "第111回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
     ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ある結晶多形を有する薬物の粉末X線回折パターンである。非晶質はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "結晶は原子・分子が規則正しく配列するため、特定の回折角2θに鋭いピークが現れる。非晶質は長距離秩序がないため、鋭いピークがなく、ブロードな山(ハロー)だけが現れる。図中で鋭いピークがなくなだらかな山だけを示すのは5であり、5が非晶質である。",
+    "choiceExplanations": {
+      "ア": "鋭く明瞭な回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "イ": "小さいながらも多数の回折ピークが認められ、結晶性を示す。非晶質ではないので誤り。",
+      "ウ": "鋭い回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "エ": "3とよく似た鋭い回折ピークの並びがあり、結晶性を示す。非晶質ではないので誤り。",
+      "オ": "正しい。鋭いピークがなく、ブロードなハローだけが見られ、非晶質のパターンである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q048-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問48の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q173",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 173,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体重 60 kg の患者にアミノグリコシド系抗菌薬ゲンタマイシンを静脈内投与したところ、以下の薬物動態パラメータが得られた。\n（薬物動態パラメータ）\n全身クリアランス（CLtot）75.0 mL/min、糸球体ろ過速度（GFR）62.5 mL/min、尿中未変化体排泄率（fe）0.92、血漿タンパク非結合率（fp）0.90\nその後、急性腎障害を発症したため、CLtot が 40.0 mL/min に、GFR が 27.8 mL/min に、fe が 0.85 に低下した。本患者におけるゲンタマイシンのクリアランスに関する記述として、正しいのはどれか。２つ選べ。ただし、急性腎障害の前後で fp は変化しないものとする。",
+    "choices": {
+      "ア": "腎障害前のゲンタマイシンの糸球体ろ過クリアランスは 62.5 mL/min である。",
+      "イ": "腎障害の有無によらず、ゲンタマイシンの腎排泄には尿細管分泌が関与する。",
+      "ウ": "腎障害の有無によらず、ゲンタマイシンは尿細管から再吸収されやすい。",
+      "エ": "ゲンタマイシンの腎クリアランスは腎障害によって変化しない。",
+      "オ": "ゲンタマイシンの腎外クリアランスは腎障害の前後でほぼ一定である。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "【腎障害前】腎クリアランス CLr = CLtot × fe = 75.0 × 0.92 = 69.0 mL/min。糸球体ろ過クリアランス = fp × GFR = 0.90 × 62.5 = 56.25 mL/min。CLr（69.0）はこれより大きく、尿細管分泌が関与します。腎外クリアランス = 75.0 − 69.0 = 6.0 mL/min。\n【腎障害後】CLr = 40.0 × 0.85 = 34.0 mL/min。糸球体ろ過クリアランス = 0.90 × 27.8 = 25.02 mL/min。CLr のほうが大きく、尿細管分泌が関与します。腎外クリアランス = 40.0 − 34.0 = 6.0 mL/min。\n以上から、2 と 5 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。糸球体ろ過クリアランスは非結合形のみがろ過されるので、fp × GFR = 0.90 × 62.5 = 56.25 mL/min です。62.5 mL/min は GFR そのものです。",
+      "イ": "正しい。障害前は CLr 69.0 > 56.25、障害後は 34.0 > 25.02 で、ろ過クリアランスを上回ります。尿細管分泌の関与が示されます。",
+      "ウ": "誤り。CLr がろ過クリアランスを上回っているので、再吸収が優位とはいえません。再吸収が優位なら CLr はろ過クリアランスより小さくなります。",
+      "エ": "誤り。腎クリアランスは 69.0 mL/min から 34.0 mL/min へ低下しています。",
+      "オ": "正しい。腎外クリアランスは障害前後ともに 6.0 mL/min で一定です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問173（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q174",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 174,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下表は、ある薬物 400 mg を患者に急速静脈内投与し、その4 時間後に定速静脈内投与を開始したときの血漿中薬物濃度を示す。このときの定速静脈内投与速度（mg/h）として最も近い値はどれか。１つ選べ。ただし、本薬物の体内動態は、線形 1-コンパートメントモデルに従い、ln 2 ＝ 0.693 とする。",
+    "choices": {
+      "ア": "15",
+      "イ": "20",
+      "ウ": "25",
+      "エ": "30",
+      "オ": "35"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "1) 急速静脈内投与後の濃度は 2 h で 10.0、4 h で 5.0 μg/mL と、2 時間で半減しています。したがって消失半減期 t1/2 = 2 h です。\n2) 消失速度定数 k = 0.693 / 2 = 0.3465 /h。\n3) 投与直後の濃度 C0 は、2 h の濃度 10.0 を半減期 2 h 分だけ遡って 20 μg/mL です（1 h の 14.2 とも整合します）。\n4) 分布容積 V = 400 mg / 20 μg/mL = 20 L。\n5) クリアランス CL = k × V = 0.3465 × 20 = 6.93 L/h。\n6) 定速投与開始後（6 h、10 h）も濃度は 5.0 μg/mL で一定なので、この 5.0 μg/mL が定常状態濃度です。定常状態では投与速度 = CL × Css なので、R = 6.93 L/h × 5.0 mg/L = 34.65 ≒ 35 mg/h。\n最も近い値は 35 で、答えは 5 です。",
+    "choiceExplanations": {
+      "ア": "誤り。15 mg/h では、CL × Css = 6.93 × 5.0 ≒ 34.65 mg/h を満たしません。",
+      "イ": "誤り。20 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "ウ": "誤り。25 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "エ": "誤り。30 mg/h は 34.65 mg/h より少なく、最も近い値は 35 mg/h です。",
+      "オ": "正しい。R = CL × Css = 6.93 × 5.0 ≒ 34.65 ≒ 35 mg/h です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問174（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q174-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問174の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形 1-コンパートメントモデルに従う薬物において、A群に示すパラメータが2倍に変動したとき、B群のパラメータが2倍になる組合せはどれか。2つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "線形1-コンパートメントモデルでは、AUC＝F・D/CL、定速静注の定常状態濃度＝k0/CL、定常状態の50％到達時間＝消失半減期、反復経口投与の定常状態平均濃度＝F・D/(CL・τ)の関係が成り立つ。これらから、正解は3と5である。",
+    "choiceExplanations": {
+      "ア": "誤り。単回急速静注後のAUCはD/CLで表され、分布容積には依存しない。分布容積が2倍になってもAUCは変わらない（消失半減期が延びる）。",
+      "イ": "誤り。定常状態濃度はk0/CLなので、クリアランスが2倍になると濃度は1/2になる。",
+      "ウ": "正しい。定常状態濃度の50％に達するまでの時間は消失半減期そのものに等しい（1−e^(−kt)＝0.5より t＝ln2/k）。半減期が2倍になれば、この時間も2倍になる。",
+      "エ": "誤り。経口投与後のAUCはF・D/CLで、吸収速度定数には依存しない。ka が2倍になってもAUCは変わらない（最高血中濃度や到達時間が変わる）。",
+      "オ": "正しい。定常状態平均血中濃度はF・D/(CL・τ)で、吸収率Fに比例する。Fが2倍になれば2倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図（選択肢1〜5）"
+    ]
   }
 ]

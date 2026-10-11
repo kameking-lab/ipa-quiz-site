@@ -1,0 +1,637 @@
+{
+  "task": "pharmacy-latest-two-model-saved-20261011",
+  "baseCommit": "bfabb5bb8c7bcf79c1d6a73523ce49037c440bc7",
+  "ownedIds": [
+    "yakuzaishi-2025-annual-required-q46",
+    "yakuzaishi-2025-annual-required-q47",
+    "yakuzaishi-2025-annual-required-q48",
+    "yakuzaishi-2025-annual-required-q51",
+    "yakuzaishi-2025-annual-theory-q94",
+    "yakuzaishi-2025-annual-theory-q175",
+    "yakuzaishi-2026-annual-required-q48",
+    "yakuzaishi-2026-annual-theory-q173",
+    "yakuzaishi-2026-annual-theory-q174",
+    "yakuzaishi-2026-annual-theory-q175"
+  ],
+  "acceptedOriginals": 10,
+  "reusedSavedOriginals": 10,
+  "newOriginalsAuthored": 0,
+  "newGenerationRequests": 0,
+  "savedMainExplanationsUnchanged": 9,
+  "boundedMainExplanationCorrections": 1,
+  "savedChoiceExplanationsUnchanged": 50,
+  "originalPixelCrops": 5,
+  "implementationModelRequested": "gpt-6.1-sol",
+  "implementationModelReceipt": null,
+  "questions": [
+    {
+      "id": "yakuzaishi-2025-annual-required-q46",
+      "edition": 110,
+      "number": 46,
+      "officialKey": [
+        "4"
+      ],
+      "sourcePhysicalPage": 21,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q43-48-author/STRUCTURED-RESULT.json",
+        "sha256": "c9c27a24e3f99ec82e16f8954e86524dfb4b373b1b916244052b0ec5e28a0028",
+        "receiptSha256": "9c5e934edbe6ca4e76a2432263f7384e0fa26586df165f12ea67521cfb1e7bf2",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/SOURCE-PACKET.json",
+        "sha256": "30c15c571160d5d53e9dc756595c72f1dbf57cfcf137a0b92c1fa4499ca90a63"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/question-physical-21.png",
+        "sha256": "f3ecb4a548c93d3151ce6a3d4cc7b063cb6cd6690aae6b4536391e6b6c595a9e"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "savedMainExplanationUnchanged": false,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Bounded scientific correction: qualify the volume-of-distribution statement by fixed ka and ke; V can affect ke when clearance is fixed. All five saved choice explanations already make this condition and remain unchanged."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q47",
+      "edition": 110,
+      "number": 47,
+      "officialKey": [
+        "4"
+      ],
+      "sourcePhysicalPage": 22,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q43-48-author/STRUCTURED-RESULT.json",
+        "sha256": "c9c27a24e3f99ec82e16f8954e86524dfb4b373b1b916244052b0ec5e28a0028",
+        "receiptSha256": "9c5e934edbe6ca4e76a2432263f7384e0fa26586df165f12ea67521cfb1e7bf2",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/SOURCE-PACKET.json",
+        "sha256": "30c15c571160d5d53e9dc756595c72f1dbf57cfcf137a0b92c1fa4499ca90a63"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/question-physical-22.png",
+        "sha256": "f742021c5e43b5f97f6b3ecf94fd2569520dc39efb7380c6a42fd59f54de291c"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q48",
+      "edition": 110,
+      "number": 48,
+      "officialKey": [
+        "4"
+      ],
+      "sourcePhysicalPage": 22,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q43-48-author/STRUCTURED-RESULT.json",
+        "sha256": "c9c27a24e3f99ec82e16f8954e86524dfb4b373b1b916244052b0ec5e28a0028",
+        "receiptSha256": "9c5e934edbe6ca4e76a2432263f7384e0fa26586df165f12ea67521cfb1e7bf2",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/SOURCE-PACKET.json",
+        "sha256": "30c15c571160d5d53e9dc756595c72f1dbf57cfcf137a0b92c1fa4499ca90a63"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/question-physical-22.png",
+        "sha256": "f742021c5e43b5f97f6b3ecf94fd2569520dc39efb7380c6a42fd59f54de291c"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q43-48/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-required-q51",
+      "edition": 110,
+      "number": 51,
+      "officialKey": [
+        "2"
+      ],
+      "sourcePhysicalPage": 23,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-required-q49-54-author/STRUCTURED-RESULT.json",
+        "sha256": "736b74d8dd9626342e7165bc56f7f194331fad8af8448cec7f517966fb5a45e6",
+        "receiptSha256": "a4f326b3a1366c636c03f5e7e3537bbf1554d833382920f0c5ad30e87a84e7a4",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q49-54/SOURCE-PACKET.json",
+        "sha256": "085e76534721476a582dfe1b6952c1dc899674039c3af8b24cdb4d0462e50459"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q49-54/question-physical-23.png",
+        "sha256": "0a116278de8e6e13bf33bf0e5b7b6d4deaa2ff4ccd60cce1ab0d6973389854c2"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-required-q49-54/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455149.pdf",
+        "sha256": "a0e1fe5e30e2e2558e0ac06d64049aaa7989dfc529b08231a869c0637305c43d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/c7754e4818baccd5ff.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-required-q051-model-original.png",
+        "sha256": "456e7b25512433fbc54ddfcda86d9b302d7df5af270f29579267cff08e01c66b",
+        "sourceBox": [
+          280,
+          560,
+          650,
+          910
+        ],
+        "width": 370,
+        "height": 350,
+        "pixelEqualToSourceCrop": true
+      },
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Replace synthetic diagram description with fixed original pixels; repair source physical page 22 to 23 after exact heading and PNG comparison."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q94",
+      "edition": 110,
+      "number": 94,
+      "officialKey": [
+        "1",
+        "2"
+      ],
+      "sourcePhysicalPage": 4,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-theory-q91-96-author/STRUCTURED-RESULT.json",
+        "sha256": "33dd6b6416e7f10f832b0f28ed6947dca7b2447225c51cb404fa44fdeac2cdfe",
+        "receiptSha256": "8c35b8a10216ce3b41f02e8d4ef3f54c0145893e9d2ca9549e5d984f1976d76e",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q91-96/SOURCE-PACKET.json",
+        "sha256": "d2bb04a83ff282456b53e45c0227b035366c2fde1968b59ac6b68a75382d734a"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q91-96/question-physical-04.png",
+        "sha256": "155409245ce2c04d5a5deedeb3c3c591ca9551a57843682b68eb4824ea44f0ff"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q91-96/answers-physical-01.png",
+        "sha256": "19f2b1c4b6e464d365d329f93ba636762e7892330be0ad3e57cebba870486bc8"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455152.pdf",
+        "sha256": "e69b41d7fc0577b8ca1902821ca085694702276f8c46f8ee641c9ae30e869f63",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/4f0ae606fb53ee7ba3.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": null,
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q175",
+      "edition": 110,
+      "number": 175,
+      "officialKey": [
+        "1",
+        "3"
+      ],
+      "sourcePhysicalPage": 20,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-theory-q175-180-author/STRUCTURED-RESULT.json",
+        "sha256": "aaf2db36ae8ced902c7f5b2ae0113b6dfb2605f6d6c60a967855368325aa04b2",
+        "receiptSha256": "f0f4598daefad3ae6ff3c10fbd13dabbf38c7fbc35a2dfe2b1baa26bb6c95b8b",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q175-180/SOURCE-PACKET.json",
+        "sha256": "710474dc4dde09054e3885b5d5cbb56f6d106d84a7c7b77f5fd73b5114464810"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q175-180/question-physical-20.png",
+        "sha256": "fafd2c66ac48028dece9a178d4ee33c05dfd6179b3897d4c41e56ee0c2835b94"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-110-theory-q175-180/answers-physical-02.png",
+        "sha256": "7bb3645b76ad9148dfc8d73192987b91992dc1369cce85ff24061a09b6aca16c"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001455159.pdf",
+        "sha256": "5889a7fc3f25b0f5864f6781776371c0f3fe28b5d809ef439dbb041f4d939b3d",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/74231f0e06997023cc.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+        "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/dfd7d95e55d405a4a7.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-110-theory-q175-model-original.png",
+        "sha256": "00db58d42d7fcfb36bd2670651adf30fd098da400d70a2fd42e1b357d3ab1066",
+        "sourceBox": [
+          230,
+          345,
+          700,
+          505
+        ],
+        "width": 470,
+        "height": 160,
+        "pixelEqualToSourceCrop": true
+      },
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Replace saved linearized table with original table crop; common AUC cell 2.0 preserved."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q48",
+      "edition": 111,
+      "number": 48,
+      "officialKey": [
+        "5"
+      ],
+      "sourcePhysicalPage": 21,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q43-48-author/STRUCTURED-RESULT.json",
+        "sha256": "ac8453eed579708389991fb3d2b2a2a220986957e10402b6db3a6c480936d531",
+        "receiptSha256": "8fdf5f51da4bb7880077eaf03131c4a4b6a456745b876422ec9d8a60ff74e5b4",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/SOURCE-PACKET.json",
+        "sha256": "3ad380dedf4d7d32b4f5f700cfffb90effee3e7592838e9d77f380ed20635236"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/question-physical-21.png",
+        "sha256": "4cea9bf30aed8d5e293e9117468286ef330c744623bd8451172467f1158f0e91"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+        "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-required-q048-model-original.png",
+        "sha256": "567a5e35a50cf593fb051ebce6339fa421ca4cd1110757e483f12d10c108cbec",
+        "sourceBox": [
+          125,
+          195,
+          555,
+          645
+        ],
+        "width": 430,
+        "height": 450,
+        "pixelEqualToSourceCrop": true
+      },
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q173",
+      "edition": 111,
+      "number": 173,
+      "officialKey": [
+        "2",
+        "5"
+      ],
+      "sourcePhysicalPage": 19,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-theory-q169-174-author/STRUCTURED-RESULT.json",
+        "sha256": "743f1d9307c0880762dc1d266f85717302fb19b5beebb12d2b89b9e33d39bc5f",
+        "receiptSha256": "c8b6b20a6eb4ac54729b985f61c075f951fbdb104827ff2ed64ec66d2cb105f4",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/SOURCE-PACKET.json",
+        "sha256": "d6e629d70523f6d733397883f018589266e78bc9cd8cca8cd4a2a1a5377eb2e8"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/question-physical-19.png",
+        "sha256": "40032cfa0ae9f4b435125368fc91150820900e09f4d6dd47728e6566bbd81a46"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/answers-physical-02.png",
+        "sha256": "94684b5a05ae74f9123916f30a78b2d9e1090e5bc45eee22d0f1f6cd5808dd72"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677929.pdf",
+        "sha256": "6d39e98e20aac5ab5467ff45745e7d464db33ea1754c4b6fc095aff0cc54f508",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/9723a9ff497f1d97f6.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": null,
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Remove printed original question-number heading without prose changes."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q174",
+      "edition": 111,
+      "number": 174,
+      "officialKey": [
+        "5"
+      ],
+      "sourcePhysicalPage": 20,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-theory-q169-174-author/STRUCTURED-RESULT.json",
+        "sha256": "743f1d9307c0880762dc1d266f85717302fb19b5beebb12d2b89b9e33d39bc5f",
+        "receiptSha256": "c8b6b20a6eb4ac54729b985f61c075f951fbdb104827ff2ed64ec66d2cb105f4",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/SOURCE-PACKET.json",
+        "sha256": "d6e629d70523f6d733397883f018589266e78bc9cd8cca8cd4a2a1a5377eb2e8"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/question-physical-20.png",
+        "sha256": "b35f1b5a9a38554602ab1eef4c33d9e0f1e0f3c365ae3ad8433d96d8b2a739a4"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q169-174/answers-physical-02.png",
+        "sha256": "94684b5a05ae74f9123916f30a78b2d9e1090e5bc45eee22d0f1f6cd5808dd72"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677929.pdf",
+        "sha256": "6d39e98e20aac5ab5467ff45745e7d464db33ea1754c4b6fc095aff0cc54f508",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/9723a9ff497f1d97f6.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-theory-q174-model-original.png",
+        "sha256": "98258c18e4366bd2f378754736fcc409f7263286dd76f6948f6848bd593dbd5b",
+        "sourceBox": [
+          120,
+          270,
+          810,
+          410
+        ],
+        "width": 690,
+        "height": 140,
+        "pixelEqualToSourceCrop": true
+      },
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Remove printed original question-number heading without prose changes.",
+        "Replace saved linearized table and arrow description with original table crop including the infusion-start arrow."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    },
+    {
+      "id": "yakuzaishi-2026-annual-theory-q175",
+      "edition": 111,
+      "number": 175,
+      "officialKey": [
+        "3",
+        "5"
+      ],
+      "sourcePhysicalPage": 20,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-theory-q175-180-author/STRUCTURED-RESULT.json",
+        "sha256": "88990ce6f061204395879c0451cc3fa334d7e389ccf50a1cb99ed24aaf7daedc",
+        "receiptSha256": "ec862de62c1458fdd948a4842d7e8ba721aedaf5f1210171ee5c893525e7d415",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q175-180/SOURCE-PACKET.json",
+        "sha256": "226767809f8ee4fc7e0aca90aba4b8d32ef73afabd0057e3956ee87343c6ad4a"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q175-180/question-physical-20.png",
+        "sha256": "b35f1b5a9a38554602ab1eef4c33d9e0f1e0f3c365ae3ad8433d96d8b2a739a4"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-theory-q175-180/answers-physical-02.png",
+        "sha256": "94684b5a05ae74f9123916f30a78b2d9e1090e5bc45eee22d0f1f6cd5808dd72"
+      },
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677929.pdf",
+        "sha256": "6d39e98e20aac5ab5467ff45745e7d464db33ea1754c4b6fc095aff0cc54f508",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/9723a9ff497f1d97f6.pdf"
+      },
+      "officialFinalAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+        "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+        "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+      },
+      "crop": {
+        "path": "public/images/questions/yakuzaishi/pharmacy-111-theory-q175-model-original.png",
+        "sha256": "d8e01ffb51e36353cf8911c21a7fdc589b3dee2c738e8257ee67d0255bdf7d65",
+        "sourceBox": [
+          120,
+          775,
+          810,
+          1160
+        ],
+        "width": 690,
+        "height": 385,
+        "pixelEqualToSourceCrop": true
+      },
+      "savedMainExplanationUnchanged": true,
+      "allSavedChoiceExplanationsUnchanged": true,
+      "choiceExplanationCount": 5,
+      "projectionTransforms": [
+        "Use original figure with printed choice numbers 1–5; replace synthetic descriptions with those literal numbers."
+      ],
+      "originalFigureChoiceMappingVisuallyVerified": true
+    }
+  ],
+  "existingOriginalsModified": 0,
+  "existingOriginalsDeleted": 0,
+  "preservedPharmacyOriginalsBaseline": 335,
+  "publication": false,
+  "independentReview": "pending_root_owned",
+  "mergePublicGo": "pending_root_owned",
+  "localCalculations": {
+    "110Q47Hours": 4,
+    "110Q94FractionVmax": 0.6666666666666666,
+    "110Q175MRT": [
+      3,
+      4.5,
+      5
+    ],
+    "110Q175EliminationMeanHours": 2.0202020202020203,
+    "111Q173RenalClearances": [
+      69,
+      34
+    ],
+    "111Q173FiltrationClearances": [
+      56.25,
+      25.02
+    ],
+    "111Q173NonrenalClearances": [
+      6,
+      6
+    ],
+    "111Q174InfusionMgPerHour": 34.65
+  },
+  "calculationScope": "Apply parameters explicitly supplied by the official question; no patient-specific treatment recommendation or claim that typical gentamicin secretion follows these artificial numerical examples.",
+  "dataFiles": [
+    {
+      "path": "data/questions/yakuzaishi/2025-annual.json",
+      "oldRowsPreserved": 145,
+      "added": 6,
+      "oldSha256": "15f41c6d3f5d966c9bb419585941fa07e65bb45b86b82aebae1cc1d0181ac49e",
+      "newSha256": "a29baf145a6aa89814c2d22b925d7591b82d49849afd9007ae10540af51b5dce"
+    },
+    {
+      "path": "data/questions/yakuzaishi/2026-annual.json",
+      "oldRowsPreserved": 189,
+      "added": 4,
+      "oldSha256": "b04f83236d8ec17af1bdf52d046f37e3e9fd0291bc0e325bd97100dbf5b21db9",
+      "newSha256": "e93a7945a3a74ba8edb7a5c6ffb4bc6147c3b4fabce9eeadec71b14f7f554930"
+    }
+  ],
+  "resultingPharmacyOriginals": 345,
+  "protectedPending685686": 4,
+  "effectiveOriginalsWithPending": 349,
+  "latestTwoRemaining": 341,
+  "latestTwoComplete": false,
+  "validation": {
+    "sourceSchemaAnd335RowPreservation": "PASS",
+    "originalPixelEquality5Assets": "PASS",
+    "focusedVitest": {
+      "files": 8,
+      "tests": 1065,
+      "result": "PASS",
+      "durationSeconds": 250.77
+    },
+    "typecheck": "PASS",
+    "focusedLint": "PASS",
+    "diffCheck": "PASS",
+    "fullBuildRun": false,
+    "githubCi": "pending_on_draft_pr"
+  },
+  "primarySupplements": [
+    {
+      "url": "https://bpspubs.onlinelibrary.wiley.com/pb-assets/assets/13652125/Guidelines%20on%20Pharmacokinetics%20and%20Pharmacodynamics-1522915986837.pdf",
+      "publisher": "British Pharmacological Society journal publisher",
+      "publicationDateUnconfirmed": true,
+      "supports": "Definitions of CLint, fe, fu, ka, MAT, MRT and AUC/AUMC; detailed algebra independently checked from stated exam conditions."
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14977165/",
+      "publicationDate": "2003-10",
+      "doi": "10.1023/b:jopa.0000008159.97748.09",
+      "supports": "Primary research abstract describes model-parameter dependence of Cmax and Tmax; abstract only read, no claim to have obtained its full detailed equations."
+    }
+  ]
+}

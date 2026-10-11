@@ -6320,5 +6320,275 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q46",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 46,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従う薬物を経口投与した場合、最高血中濃度到達時間が短縮する要因はどれか。1つ選べ。",
+    "choices": {
+      "ア": "投与量の減少",
+      "イ": "吸収率の上昇",
+      "ウ": "分布容積の増大",
+      "エ": "吸収速度定数の上昇",
+      "オ": "消失速度定数の低下"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "最高血中濃度到達時間は tmax = ln(ka/ke)/(ka−ke) で表され、吸収速度定数 ka と消失速度定数 ke だけで決まります。ka が大きくなると tmax は短くなります。投与量と吸収率は濃度の大きさに関わりますが、tmax の式には直接含まれません。分布容積についても、ka と ke が変わらなければ tmax は変化しません。",
+    "choiceExplanations": {
+      "ア": "投与量が変わっても tmax は変化しません。血中濃度が全体に比例して変わるだけです。",
+      "イ": "吸収率(バイオアベイラビリティ)は濃度の大きさに影響しますが、tmax の式には含まれません。",
+      "ウ": "分布容積は濃度の大きさに関わりますが、ka と ke が変わらなければ tmax は変化しません。",
+      "エ": "正解です。ka が上昇すると tmax は短縮します。",
+      "オ": "ke が低下すると tmax は延長します。短縮する要因ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問46（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q47",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 47,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、消失半減期が2時間である薬物を静脈内定速注入する。投与開始後、薬物の血中濃度が定常状態の血中濃度の75%に到達する時間(h)はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "静脈内定速注入では C(t) = Css(1−e^(−ke·t)) です。\n1) C/Css = 0.75 なので、e^(−ke·t) = 0.25 = (1/2)^2 です。\n2) (1/2)^(t/t1/2) = (1/2)^2 より、t/t1/2 = 2 となります。\n3) t1/2 = 2 時間なので、t = 2 × 2 = 4 時間です。",
+    "choiceExplanations": {
+      "ア": "1時間では 1−(1/2)^(1/2) ≒ 0.29 で、約29%にとどまります。",
+      "イ": "2時間は半減期1回分で、定常状態の50%に達する時間です。",
+      "ウ": "3時間では 1−(1/2)^1.5 ≒ 0.65 で、約65%です。",
+      "エ": "正解です。半減期2回分(2×2時間)で75%に達します。",
+      "オ": "5時間では 1−(1/2)^2.5 ≒ 0.82 で、約82%となり75%を超えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問47（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の肝固有クリアランス(CLint)が肝血流量(Qh)と比較して十分に小さい場合、その薬物の肝クリアランスはどのように近似できるか。1つ選べ。\nただし、fu は血漿タンパク質非結合形分率とする。",
+    "choices": {
+      "ア": "Qh",
+      "イ": "CLint",
+      "ウ": "fu・Qh",
+      "エ": "fu・CLint",
+      "オ": "CLint/fu"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "well-stirred model では CLh = Qh・fu・CLint / (Qh + fu・CLint) です。CLint が Qh より十分に小さければ、分母の Qh + fu・CLint は Qh と近似できます。したがって CLh ≒ Qh・fu・CLint / Qh = fu・CLint となります。",
+    "choiceExplanations": {
+      "ア": "Qh は CLint が Qh より十分に大きい場合の近似(血流律速)です。本問の条件とは逆です。",
+      "イ": "CLint だけでは血漿タンパク結合の影響が含まれていません。fu を掛ける必要があります。",
+      "ウ": "fu・Qh は肝クリアランスの近似として成り立ちません。",
+      "エ": "正解です。CLint が小さいとき CLh ≒ fu・CLint(代謝律速)です。",
+      "オ": "CLint/fu は結合の影響を逆に扱っており、誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q51",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 51,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "構造粘性を有する製剤でみられる、下図のレオグラムを示す現象はどれか。1つ選べ。",
+    "choices": {
+      "ア": "クリープ",
+      "イ": "チキソトロピー",
+      "ウ": "応力緩和",
+      "エ": "ダイラタンシー",
+      "オ": "コアセルベーション"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "図では、せん断応力を上げていく上昇曲線と、下げていく下降曲線が一致せず、ヒステリシスループを描いている。下降曲線は上昇曲線より左側(同じせん断応力でせん断速度が大きい側)にある。これは、せん断で構造が壊れて粘度が下がり、静置すると元に戻る性質で、チキソトロピーの典型的なレオグラムである。したがって正解は2である。",
+    "choiceExplanations": {
+      "ア": "クリープは、一定の応力を加え続けたときに変形が時間とともに増加する現象で、時間-ひずみ曲線で表す。図のヒステリシスループとは異なる。",
+      "イ": "チキソトロピーは、ずり応力で粘度が低下し、静置すると回復する現象である。上昇曲線と下降曲線が一致しないヒステリシスループを示す。これが正解。",
+      "ウ": "応力緩和は、一定のひずみを与えたときに応力が時間とともに減少する現象で、図のレオグラムとは異なる。",
+      "エ": "ダイラタンシーは、せん断速度の増加に伴って粘度が増大する現象で、上昇曲線は上に凸になる。図は下に凸の上昇曲線なので該当しない。",
+      "オ": "コアセルベーションは、親水コロイド溶液から濃厚なコロイド相が分離する現象で、マイクロカプセル調製などに利用される。レオグラムで表す流動現象ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問51（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q051-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問51の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q94",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 94,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "次の酵素反応の反応速度vはミカエリス・メンテンの式に従う。\nE + S ⇄ ES → P\nただし、Eは酵素、Sは基質、ESはEとSの複合体、Pは生成物を表し、ミカエリス定数をKm、最大反応速度をVmaxとする。この反応に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "vは、Pの生成速度（d[P]/dt）で表される。",
+      "イ": "vは、[ES]が一定（d[ES]/dt = 0）となる定常状態を仮定した場合の速度である。",
+      "ウ": "[S]がKmの2倍であるとき、vはVmaxの1/4となる。",
+      "エ": "Kmは反応温度に依存しない。",
+      "オ": "Kmが小さいほどEとSの親和性は低い。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ミカエリス・メンテンの式v = Vmax[S]/(Km + [S])における反応速度vは、生成物Pの生成速度d[P]/dtである。この式は、ESの濃度が一定とみなせる定常状態を仮定して導かれる。したがって1と2が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。vは生成物Pの生成速度d[P]/dtで表される。",
+      "イ": "正しい。d[ES]/dt = 0の定常状態近似から式が導かれる。",
+      "ウ": "誤り。[S] = 2Kmのとき、v = Vmax×2Km/(Km + 2Km) = (2/3)Vmaxである。1/4ではない。",
+      "エ": "誤り。Kmは各素過程の速度定数から決まるので、温度によって変化する。",
+      "オ": "誤り。Kmが小さいほど、少ない基質濃度で速度が上がるので、EとSの親和性は高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問94（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、生物学的半減期が1.4時間である薬物を、3種類の剤形で同用量を経口投与したとき、下表に示す血中濃度時間曲線下面積（AUC）と一次モーメント時間曲線下面積（AUMC）が得られた。この結果に関する記述として、正しいのはどれか。2つ選べ。\nただし、絶対的バイオアベイラビリティはいずれも100％とし、ln 2 = 0.693とする。",
+    "choices": {
+      "ア": "最高血中濃度が最も大きいのは経口液剤である。",
+      "イ": "投与量を増やすと平均滞留時間は長くなる。",
+      "ウ": "経口液剤を経口投与したときの平均吸収時間は約1.0 hである。",
+      "エ": "散剤の平均溶出時間は約0.5 hである。",
+      "オ": "錠剤の平均崩壊時間は約1.5 hである。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "MRT = AUMC/AUC より、経口液剤 3.0 h、散剤 4.5 h、錠剤 5.0 h。1-コンパートメントモデルの消失の平均滞留時間は 1/kel = t1/2/ln2 = 1.4/0.693 ≈ 2.0 h。平均吸収時間 MAT = MRT(経口) − 1/kel なので、経口液剤は 3.0−2.0 = 1.0 h、散剤は 2.5 h、錠剤は 3.0 h。AUCが同じで吸収が最も速い（MATが最小の）経口液剤が最高血中濃度も最大となる。正解は1と3。",
+    "choiceExplanations": {
+      "ア": "正しい。AUCは全剤形で同じ（吸収量が同じ）で、MATは経口液剤（1.0 h）が最小、つまり吸収が最も速いので、最高血中濃度は最大になる。",
+      "イ": "誤り。線形モデルでは平均滞留時間は投与量に依存せず一定であり、投与量を増やしても長くならない。",
+      "ウ": "正しい。MRT 3.0 h から 1/kel ≈ 2.0 h を引くと MAT ≈ 1.0 h となる。",
+      "エ": "誤り。散剤のMATは 4.5−2.0 = 2.5 h。溶出時間は散剤と経口液剤のMATの差で 2.5−1.0 = 1.5 h であり、0.5 hではない。",
+      "オ": "誤り。錠剤のMATは 3.0 h、散剤との差で求めた崩壊時間は 3.0−2.5 = 0.5 hであり、1.5 hではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図"
+    ]
   }
 ]
