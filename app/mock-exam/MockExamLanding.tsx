@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import type { ExamCode } from "@/lib/questions/types";
-import { getMockConfig, MOCK_EXAM_CONFIGS } from "@/lib/mock-exam/config";
+import { getMockConfig, isMockExamCode, MOCK_EXAM_CONFIGS, type MockExamCode } from "@/lib/mock-exam/config";
+import { quizBackHref } from "@/lib/questions/practice-session";
 import { getMockExamHistoryByExam } from "@/lib/mock-exam/storage";
 import {
   clearActiveSession,
@@ -19,39 +19,38 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
-import { examLabel } from "@/lib/utils";
+import { examLabel, EXAM_LABELS } from "@/lib/utils";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
-const AVAILABLE_EXAMS: ExamCode[] = [
-  "ip",
-  "sg",
-  "fe",
-  "ap",
-  "sc",
-  "nw",
-  "db",
-  "es",
-  "st",
-  "sa",
-  "pm",
-  "sm",
-  "au",
-];
+const AVAILABLE_EXAMS = Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[];
 
 const MODE_OPTIONS: { id: SelectionMode; label: string; hint: string }[] = [
   { id: "balanced", label: "分野バランス", hint: "本番の分野構成比を維持" },
   { id: "random", label: "完全ランダム", hint: "プールから無作為抽出" },
 ];
 
-export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
-  const initialExam = (
-    examFromQuery && examFromQuery in MOCK_EXAM_CONFIGS
-      ? (examFromQuery as ExamCode)
-      : "ap"
-  ) as ExamCode;
-  const [exam, setExam] = React.useState<ExamCode>(initialExam);
+export function MockExamLanding({ examFromQuery, returnTo }: { examFromQuery?: string; returnTo?: string }) {
+  if (examFromQuery !== undefined && !isMockExamCode(examFromQuery)) {
+    const knownExam = Object.hasOwn(EXAM_LABELS, examFromQuery);
+    return (
+      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6">
+        <h1 className="text-2xl font-bold">この資格の模試は未対応です</h1>
+        <p className="mt-3 text-sm text-muted-foreground">{knownExam ? `${examLabel(examFromQuery)}の` : "指定された資格の"}本番形式の模試は提供していません。</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
+          <Button asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
+        </div>
+      </main>
+    );
+  }
+  const initialExam = examFromQuery ?? "ap";
+  return <SupportedMockExamLanding key={initialExam} initialExam={initialExam} returnTo={returnTo} />;
+}
+
+function SupportedMockExamLanding({ initialExam, returnTo }: { initialExam: MockExamCode; returnTo?: string }) {
+  const [exam, setExam] = React.useState<MockExamCode>(initialExam);
   const [mode, setMode] = React.useState<SelectionMode>("balanced");
   const [questions, setQuestions] = React.useState<SlimMockQuestion[] | null>(
     null,
@@ -74,7 +73,8 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
   }, [exam]);
 
   React.useEffect(() => {
-    setSavedSession(loadActiveSession());
+    const saved = loadActiveSession();
+    setSavedSession(saved && isMockExamCode(saved.exam) ? saved : null);
   }, [running]);
 
   const config = getMockConfig(exam);
@@ -111,6 +111,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
   };
 
   const resumeMock = (s: MockExamActiveSession) => {
+    if (!isMockExamCode(s.exam)) return;
     setExam(s.exam);
     setQuestions(s.questions);
     setResumeState(s);
@@ -145,7 +146,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
-      <Link href={`/${exam}`} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
+      <Link href={quizBackHref({ exam, returnTo: exam === initialExam ? returnTo : undefined })} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
       <Breadcrumbs
         items={[
           { name: "ホーム", href: "/" },
@@ -169,7 +170,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
             <div className="mb-2 flex items-center gap-2">
               <Badge variant="outline">中断中</Badge>
               <span className="text-xs font-medium">
-                {getMockConfig(savedSession.exam).label}
+                {getMockConfig(savedSession.exam)?.label}
               </span>
             </div>
             <p className="text-xs text-zinc-700 dark:text-zinc-300">
@@ -409,15 +410,15 @@ function ScoreTrend({
 }
 
 interface ExamSelectorProps {
-  exams: ExamCode[];
-  current: ExamCode;
-  defaultExam: ExamCode;
-  onSelect: (e: ExamCode) => void;
+  exams: MockExamCode[];
+  current: MockExamCode;
+  defaultExam: MockExamCode;
+  onSelect: (e: MockExamCode) => void;
 }
 
 function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorProps) {
   const [userPicked, setUserPicked] = React.useState(false);
-  const handle = (e: ExamCode) => {
+  const handle = (e: MockExamCode) => {
     setUserPicked(true);
     onSelect(e);
   };
@@ -435,7 +436,7 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
           <select
             aria-label="模試の試験区分"
             value={current}
-            onChange={(ev) => handle(ev.target.value as ExamCode)}
+            onChange={(ev) => handle(ev.target.value as MockExamCode)}
             className="h-11 w-full appearance-none rounded-xl border border-zinc-300 bg-white pl-3 pr-9 text-sm text-zinc-900 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
           >
             {exams.map((e) => (
