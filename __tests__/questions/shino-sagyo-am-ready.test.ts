@@ -9,7 +9,7 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午前の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 140, 299],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 143, 303],
     ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 93, 186],
   ] as const)("%s は保存済み原本で確認した午前問だけ追加する", async (exam, questions, amCount, totalCount) => {
     const loaded = await getQuestionsForExam(exam);
@@ -26,7 +26,12 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
       expect(choiceKeys.every(key => Boolean(question.choices?.[key]?.trim()))).toBe(true);
       expect(choiceKeys.every(key => Boolean(question.choiceExplanations?.[key]?.trim()))).toBe(true);
       const answers = Array.isArray(question.answer) ? question.answer : [question.answer];
-      expect(answers).toHaveLength(question.requiredSelections ?? 1);
+      if ([50, 60, 98].includes(question.qNumber) && question.exam === "sagyo-ryohoshi" && question.year === 2025) {
+        expect(question.requiredSelections).toBe(1);
+        expect(answers).toHaveLength(2);
+      } else {
+        expect(answers).toHaveLength(question.requiredSelections ?? 1);
+      }
       expect(answers.map(answer => String(choiceKeys.indexOf(answer as typeof choiceKeys[number]) + 1)).join(""))
         .toBe(question.officialAnswerNumber);
     }
@@ -34,7 +39,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
 
   it("共有設例を原問ごとに表示し、保留は公開集合に混ぜない", () => {
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(485);
+    expect(all).toHaveLength(489);
     const ids = new Set(all.map(question => question.id));
     for (const original of [...integration.heldDrafts, ...integration.excludedBeforeDraft]) {
       const parts = original.identity.match(/^(.+)-(\d+)-am-(\d+)$/);

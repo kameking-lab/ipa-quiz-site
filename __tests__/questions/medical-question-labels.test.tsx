@@ -20,7 +20,7 @@ describe("medical question and quiz display names", () => {
   });
 
   it.each([
-    ["sagyo-ryohoshi", 299],
+    ["sagyo-ryohoshi", 303],
     ["shino-kunrenshi", 186],
   ] as const)("describes the registered partial AM and PM coverage for %s", (exam, count) => {
     expect(getQuestionsByExamStrict(exam)).toHaveLength(count);
