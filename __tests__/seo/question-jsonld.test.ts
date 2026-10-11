@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import type { Question, Session } from "@/lib/questions/types";
+import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -85,6 +86,25 @@ describe("buildQuestionJsonLd", () => {
     expect(resource.hasPart.acceptedAnswer.datePublished).toBe("2026-05-23T00:00:00+09:00");
     expect(resource.hasPart.acceptedAnswer.upvoteCount).toBe(0);
   });
+  it("attributes a published dental question to MHLW without an IPA license URL", () => {
+    const dental = SHIKA_ISHI_QUESTIONS[0];
+    if (!dental) throw new Error("Missing published dental question");
+    const resource = buildQuestionJsonLd({
+      question: dental,
+      pageUrlAbs: "https://www.kakomon-ai.jp/q/" + dental.exam + "/" + dental.year + "-" + dental.season + "/" + dental.session + "/q" + dental.qNumber,
+      title: "Dental exam question",
+      lastUpdatedISO: "2026-10-11",
+    })["@graph"][0] as {
+      hasPart: { author: { name: string; url: string } };
+      license?: string;
+    };
+    expect(resource.hasPart.author).toMatchObject({
+      name: "厚生労働省",
+      url: "https://www.mhlw.go.jp/",
+    });
+    expect(resource.license).toBeUndefined();
+    expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
+  });
 });
 
 describe("sessionLabel", () => {
@@ -125,6 +145,8 @@ describe("sessionLabel", () => {
           houki: true,
       "mondai-a": true,
       "mondai-b": true,
+      "mondai-c": true,
+      "mondai-d": true,
           kyotsu: true,
           senmon: true,
           "hoiku-genri": true,
@@ -136,6 +158,13 @@ describe("sessionLabel", () => {
           "kodomo-hoken": true,
           "kodomo-shokueiyou": true,
           "hoiku-jisshu-riron": true,
+      keizai: true,
+      zaimu: true,
+      kigyo: true,
+      unei: true,
+      "keiei-houmu": true,
+      "keiei-joho": true,
+      "chusho-seisaku": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

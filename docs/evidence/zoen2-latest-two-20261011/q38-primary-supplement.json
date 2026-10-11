@@ -1,0 +1,41 @@
+{
+  "questionNumber": 38,
+  "scope": "Question 38 choices 1 and 3 only; supplemental author research, no change to question data or QA verdict",
+  "status": "PRIMARY_TRADE_INSTRUCTION_LOCATED_WITH_APPLICABILITY_NOTE",
+  "sources": [
+    {
+      "url": "https://www.jflc.or.jp/media/niwa_navi/20170327_1338_35_0355.pdf",
+      "title": "第1章 石の技 — 5. 敷石・延段施工",
+      "kind": "publisher-hosted original technical instruction",
+      "physicalPage": 22,
+      "printedPage": 34,
+      "relevantSections": ["切石と自然石による延段 ④石の仮置き", "⑤目地のとり方"],
+      "webTextLines": "957-970"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001231133.pdf",
+      "title": "国土交通省 公園緑地工事共通仕様書",
+      "kind": "government construction specification",
+      "physicalPage": 69,
+      "section": "3-7-14 石材系舗装工 (3)(4)(9)",
+      "webTextLines": "2265-2280"
+    }
+  ],
+  "choice1": {
+    "official2025AnswerIncluded": false,
+    "technicalFinding": "延段の寄石敷きについて、原技術書は角にあたる石と周囲の縁石を先に決め、続いて内側の自然石を決める手順を示す。中央部から周辺部へ順に据えるという選択肢の方向と逆。国交省仕様書も端部の納まりへの特別な配慮を求める。",
+    "carefulWording": "まず周辺の角石・縁の石を決め、内側へ進める手順と反対のため、中央から周辺へ順に据える記述は適当でない。",
+    "applicability": "技術書の例は切石と自然石を混ぜた延段で、2025年問38は全て不整形な自然石。角・縁から内側へ進める配置原理を参照し、材料構成まで同一とは主張しない。技術書は仮置きで順序を述べ、全ての本据えを同順とする義務規定ではない。"
+  },
+  "choice3": {
+    "official2025AnswerIncluded": true,
+    "technicalFinding": "原技術書は八つ巻きを、大きな石の周りを複数の小石が取り囲む目地模様と説明し、景趣を損なうため避ける対象に挙げる。国交省仕様書も石材系舗装の張り模様に修景的配慮を求め、小さい石が多くならない組合せを規定する。",
+    "carefulWording": "大きな石を小石が取り囲む『八つ巻き』を避けると、自然石の目地模様の景趣を保てるため適当。",
+    "applicability": "八つ巻きと四つ目地は別の不適切な模様であり、同一視しない。"
+  },
+  "otherObservations": {
+    "jointWidth": "原技術書の寄石敷き延段の例は目地幅1～1.5cm。ただし国交省仕様書は化粧目地の幅・深さを設計図書に委ねるため、一律の法定寸法とはしない。",
+    "height": "原技術書の例では石の据高を3cm程度とする。2025年問38の選択肢4にある一律10cmを支持する根拠ではない。一般化も避ける。"
+  },
+  "rightsOrReleaseDecision": "none; this supplement does not alter the existing review or release gate"
+}

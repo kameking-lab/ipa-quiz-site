@@ -1,0 +1,34 @@
+[
+  {
+    "qNumber": 15,
+    "question": "¹⁸F-FDG PET/CT で得られたPET 像（別冊No. 6）を別に示す。矢印で示す欠損部の原因で最も考えられるのはどれか。",
+    "choices": {
+      "ア": "部分容積効果",
+      "イ": "体動による散乱補正エラー",
+      "ウ": "呼吸位相の違いによる減弱補正エラー",
+      "エ": "体内の高吸収物質による減弱補正エラー",
+      "オ": "PET とCT の有効視野の違いによるトランケーションアーチファクト"
+    },
+    "rawSourceText": "\n18F-FDG PET/CT で得られたPET 像（別冊No. 6）を別に示す。\n　矢印で示す欠損部の原因で最も考えられるのはどれか。\n 1．部分容積効果\n 2．体動による散乱補正エラー\n 3．呼吸位相の違いによる減弱補正エラー\n 4．体内の高吸収物質による減弱補正エラー\n 5．PET とCT の有効視野の違いによるトランケーションアーチファクト\n　　別　冊　　\nNo. 6\n",
+    "physicalPage": 11,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+    "sourceSha256": "dcf6807d059bc3101546a246dd3cdd936f999b4a030f10f9bfef7ca517cfc9d0",
+    "status": "official-figure-omitted",
+    "officialAnswerNumber": "2",
+    "answer": "イ",
+    "reason": "公式別冊No.6は「省略」とされ、欠損部の矢印と位置を確認できない。原因判定を推測して完成扱いにしない。",
+    "sourceFigureUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf",
+    "sourceFigureSha256": "f2dd1ef130488fcd654250e08e03616ef9c8ddf2b82e2f41e28e5aa9581d4a93",
+    "figurePhysicalPage": 10,
+    "paperQaFile": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\radiology-latest-two-20261011\\am78\\pages\\figures-p10.png",
+    "explanation": "公式正答は2だが、公開された別冊の図が省略されているため、矢印の欠損部に即した根拠説明を再現できない。",
+    "choiceExplanations": {
+      "ア": "部分容積効果は装置の有限の空間分解能により小さな病変の集積が低く見える現象。",
+      "イ": "体動によって散乱補正に用いるデータの対応が崩れ、誤った散乱補正が欠損を生む場合がある。公式正答はこの肢。",
+      "ウ": "PETとCTの呼吸位相不一致は横隔膜付近等で減弱補正エラーを生む。",
+      "エ": "金属等の高吸収物質はCT値や減弱補正へ影響し、偽集積や欠損を生じ得る。",
+      "オ": "PETとCTの有効視野差でCTが体の外側を欠くと減弱補正用データが不足する。"
+    },
+    "candidateReady": false
+  }
+]
