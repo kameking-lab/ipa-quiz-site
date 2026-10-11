@@ -89,10 +89,11 @@ test("denken3 is reachable after content acceptance", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("電験三種の過去問");
 });
 
-test("denko2 publishes four full sittings with wrong-choice explanations and return progress", async ({ page }) => {
+test("denko2 publishes five full sittings with wrong-choice explanations and return progress", async ({ page }) => {
   const response = await page.goto("/denko2");
   expect(response?.status()).toBe(200);
-  for (const sitting of ["2024-first", "2024-second", "2025-first", "2025-second"]) {
+  await page.locator("summary").filter({ hasText: "以前の年度・回も見る" }).click();
+  for (const sitting of ["2024-first", "2024-second", "2025-first", "2025-second", "2026-first"]) {
     await expect(page.locator(`a[href='/denko2/${sitting}']`)).toBeVisible();
   }
   await expect(page.locator("a[href='/denko2/skill']")).toBeVisible();
@@ -113,13 +114,19 @@ test("denko2 publishes four full sittings with wrong-choice explanations and ret
   await expect(page.locator('a[href*="question=denko2-2024-first-gakka-q1&"]')).toBeVisible();
   await page.goBack();
   await expect(page).toHaveURL(/\/denko2$/);
-  await expect(page.getByRole("region", { name: "進捗", exact: true })).toContainText(/1\s*\/\s*200 問/);
+  await expect(page.getByRole("region", { name: "進捗", exact: true })).toContainText(/1\s*\/\s*250 問/);
 });
 
-test("denko2 partial 2026 pilot remains unpublished", async ({ page }) => {
-  await page.goto("/q/denko2/2026-first/gakka/q10");
-  await expect(page.getByRole("heading", { name: "お探しのページが見つかりませんでした" })).toBeVisible({ timeout: 20_000 });
-  await expect(page.getByText("低圧屋内配線の分岐回路の設計で")).toHaveCount(0);
+test("denko2 complete 2026 sitting publishes question 10 and all-choice explanations", async ({ page }) => {
+  const response = await page.goto("/q/denko2/2026-first/gakka/q10");
+  expect(response?.status()).toBe(200);
+  await expect(page.getByText("低圧屋内配線の分岐回路の設計で", { exact: false })).toBeVisible();
+  const choices = page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio");
+  await expect(choices).toHaveCount(4);
+  await choices.nth(2).click(); // Official ハ is mapped to site ウ, the third choice.
+  await expect(page.getByRole("region", { name: "正解の解説" })).toBeVisible();
+  await expect(page.getByRole("region", { name: "選択肢ごとの解説" }).locator("dd")).toHaveCount(4);
+  await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf");
 });
 
 test("FP2 negative questions explain why a selected true statement is not the answer", async ({ page }) => {
