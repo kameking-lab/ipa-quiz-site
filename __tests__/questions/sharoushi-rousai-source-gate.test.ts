@@ -21,7 +21,7 @@ describe("社労士 労災保険法・徴収法の公式根拠ゲート", () => 
       exam: "sharoushi", yearSeason: "2025-annual", section: "rousai", qnum: "q7",
     })?.id).toBe(q.id);
     expect(getSitemapQuestions().some((item) => item.id === q.id)).toBe(true);
-    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session === "gakka")).toHaveLength(18);
+    expect(SHAROUSHI_QUESTIONS.filter((item) => item.session === "gakka")).toHaveLength(19);
   });
 
   it("adds only thirteen dated and officially keyed Rousai originals", () => {

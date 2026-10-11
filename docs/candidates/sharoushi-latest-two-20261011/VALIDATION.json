@@ -1,40 +1,46 @@
 {
-  "checkedAt": "2026-10-11T02:30:22.076532+00:00",
-  "sourceVerifiedOriginals": 18,
-  "choiceExplanations": 90,
+  "checkedAt": "2026-10-11T03:05:27.614975+00:00",
+  "sourceVerifiedOriginals": 19,
+  "choiceExplanations": 95,
   "publicBaselineOriginals": 123,
-  "branchOriginals": 141,
+  "branchOriginals": 142,
   "separatePr680Originals": 3,
-  "combinedCandidateOriginals": 144,
+  "combinedCandidateOriginals": 145,
   "requiredOriginals": 156,
-  "remainingOwnedHoldOriginals": 12,
-  "privateHoldOriginals": 10,
+  "remainingOwnedHoldOriginals": 11,
+  "privateHoldOriginals": 9,
   "individualStopMetadataOnlyOriginals": 2,
   "productionPublishedIncrement": 0,
   "productionMergePerformed": false,
   "productionDeploymentPerformed": false,
   "independentContentReviewPending": true,
-  "latestOriginMain": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "latestOriginMain": "497a52d5135ff3c50e38b8d9c7f3f980a4773692",
   "sourceBranch": "codex/sharoushi-latest-two-completion-20261011",
-  "runtimeJsonSha256Utf8Lf": "1c1d0c9fcadc97d0526da48c68187829146769310785ed1a3349c9cac842ab1d",
+  "runtimeJsonSha256Utf8Lf": "2a20b57042b74ae1abe1cc5f636a9db30b97232b4693208d723a1cb98a1dae5e",
   "checks": {
     "vitest": {
       "status": "PASS",
       "files": 10,
       "tests": 47,
-      "durationSeconds": 37.08,
-      "maxWorkers": 2
+      "durationSeconds": 93.24,
+      "maxWorkers": 2,
+      "report": "VITEST-FOLLOWUP.json"
     },
     "typecheck": {
       "status": "PASS",
-      "command": "pnpm typecheck"
+      "command": "pnpm typecheck",
+      "exitCode": 0
     },
     "eslint": {
       "status": "PASS",
-      "changedTypeScriptFiles": 10
+      "changedTypeScriptFiles": 10,
+      "command": "pnpm exec node node_modules/eslint/bin/eslint.js (9 changed files plus sharoushi-later15.test.ts)",
+      "exitCode": 0
     },
     "gitDiffCheck": {
-      "status": "PASS"
+      "status": "PASS",
+      "command": "git diff --check",
+      "exitCode": 0
     },
     "frozenPublishedOriginals": {
       "status": "PASS"
@@ -54,8 +60,18 @@
     },
     "heldRuntimeAndSitemapExclusion": {
       "status": "PASS",
-      "originals": 12
+      "originals": 11
     }
+  },
+  "continuationIncrementOriginals": 1,
+  "continuationIncrementChoiceExplanations": 5,
+  "limitedIndependentReview": {
+    "questionId": "sharoushi-2026-annual-gakka-q2",
+    "proposition": "ウ",
+    "verdict": "PASS_LIMITED_PRIMARY_LAW_INFERENCE",
+    "directAdministrativeInterpretationVerified": false,
+    "requiredReplacementApplied": true,
+    "blanketPublicationApproval": false
   },
   "completedIds": [
     "sharoushi-2025-annual-gakka-q7",
@@ -69,6 +85,7 @@
     "sharoushi-2025-annual-koyou-q5",
     "sharoushi-2025-annual-koyou-q10",
     "sharoushi-2025-annual-rousai-q1",
+    "sharoushi-2026-annual-gakka-q2",
     "sharoushi-2026-annual-gakka-q7",
     "sharoushi-2026-annual-ippan-q4",
     "sharoushi-2026-annual-koyou-q3",
@@ -79,7 +96,6 @@
   ],
   "holdIds": [
     "sharoushi-2025-annual-gakka-q1",
-    "sharoushi-2026-annual-gakka-q2",
     "sharoushi-2025-annual-rousai-q2",
     "sharoushi-2025-annual-rousai-q8",
     "sharoushi-2026-annual-rousai-q1",

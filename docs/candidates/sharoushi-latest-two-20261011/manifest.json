@@ -57,7 +57,8 @@
       "literalTranscriptionMatched": true,
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/rouki-q1-followup/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/rouki-gap2/"
     },
     {
       "id": "sharoushi-2025-annual-gakka-q7",
@@ -88,11 +89,9 @@
       "format": "takuitu",
       "subject": "gakka",
       "questionNumber": 2,
-      "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "status": "READY_FOR_INDEPENDENT_REVIEW",
       "officialAnswer": "C",
-      "remainingIssue": [
-        "ウ：労働者が自己の意思で相殺すること自体は禁止されず、実質的に使用者強制なら例外にならないとする直接原通達又は基準日前公式再録が未取得。第24条の合意相殺判例、第5条だけを根拠に17条の禁止を解除しない。"
-      ],
+      "remainingIssue": [],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rouki-recovery/draft.json",
       "sourceSha256": "508af72a78027a3791fd31040bcb4f3e698e2f30efc1d116ac8db9891337019e",
@@ -101,14 +100,24 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": false,
+      "allChoicePrimaryVerified": true,
       "partialSourceEvidence": "agent-source-closures/rouki-core-primary/",
       "sourceConfirmedPropositions": [
         "ア",
         "イ",
+        "ウ",
         "エ",
         "オ"
-      ]
+      ],
+      "independentReviewPending": true,
+      "sourceClosureEvidence": "agent-source-closures/gakka2-inference-review/",
+      "localIndependentReview": {
+        "proposition": "ウ",
+        "verdict": "PASS_LIMITED_PRIMARY_LAW_INFERENCE",
+        "directAdministrativeInterpretationVerified": false,
+        "requiredReplacementApplied": true,
+        "blanketPublicationApproval": false
+      }
     },
     {
       "id": "sharoushi-2026-annual-gakka-q7",
@@ -179,7 +188,8 @@
       "literalTranscriptionMatched": true,
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/"
     },
     {
       "id": "sharoushi-2025-annual-rousai-q8",
@@ -206,7 +216,8 @@
       "additionalPartialSourceClosureEvidence": "agent-source-closures/q8-partial/GUIDE-EVIDENCE.json",
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/rousai-q8-followup/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/q8-gap2/"
     },
     {
       "id": "sharoushi-2026-annual-rousai-q1",
@@ -233,7 +244,8 @@
       "literalTranscriptionMatched": true,
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/rousai-cases-primary/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/rousai-cases-gap2/"
     },
     {
       "id": "sharoushi-2026-annual-rousai-q6",
@@ -372,7 +384,8 @@
       "literalTranscriptionMatched": true,
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/employment-gap2/"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q7",
@@ -400,7 +413,8 @@
       "literalTranscriptionMatched": true,
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/employment-gap2/"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q10",
@@ -448,7 +462,8 @@
       "sourceClosureEvidence": "agent-source-closures/employment/question-deltas-additional-hold.json",
       "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/2026-q1-followup/",
-      "sourceConfirmedPropositions": []
+      "sourceConfirmedPropositions": [],
+      "continuationEvidence": "agent-source-closures/employment-gap2/"
     },
     {
       "id": "sharoushi-2026-annual-koyou-q3",
@@ -734,8 +749,8 @@
       "payloadOmissionReason": "既存の個別外部送信拒否を維持。本文と解説はローカル保存原稿に残し、GitHubへ再送しない。"
     }
   ],
-  "newSourceVerifiedOriginals": 18,
-  "newRuntimeCandidateOriginals": 18,
-  "remainingSourceHoldOriginals": 12,
-  "privateCandidateOriginals": 10
+  "newSourceVerifiedOriginals": 19,
+  "newRuntimeCandidateOriginals": 19,
+  "remainingSourceHoldOriginals": 11,
+  "privateCandidateOriginals": 9
 }
