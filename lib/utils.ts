@@ -58,6 +58,8 @@ export const EXAM_LABELS: Record<string, string> = {
   "gas-kou": "ガス主任技術者 甲種",
   "gas-otsu": "ガス主任技術者 乙種",
   "gas-hei": "ガス主任技術者 丙種",
+  "rinsho-kensagishi": "臨床検査技師",
+  "shinryo-hoshasengishi": "診療放射線技師",
   "ahaki-anma": "あん摩マッサージ指圧師",
   "ahaki-hari-kyu": "はり師・きゅう師",
 };

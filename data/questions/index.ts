@@ -63,6 +63,8 @@ import { RINSHO_KOGISHI_QUESTIONS } from "./rinsho-kogishi";
 import { GAS_KOU_QUESTIONS } from "./gas/kou";
 import { GAS_OTSU_QUESTIONS } from "./gas/otsu";
 import { GAS_HEI_QUESTIONS } from "./gas/hei";
+import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
+import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -121,6 +123,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
   ...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
   ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
+  ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (
