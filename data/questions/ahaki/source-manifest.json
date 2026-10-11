@@ -2,12 +2,11 @@
   "status": "LOCAL_CANDIDATE_NOT_RELEASED",
   "sourceMechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
   "officialPaperOriginals": 680,
-  "localCandidateOriginals": 677,
-  "heldOriginals": 3,
+  "localCandidateOriginals": 678,
+  "heldOriginals": 2,
   "heldIds": [
     "33-anma-massage-shiatsushi-124",
-    "33-hari-kyu-156",
-    "34-anma-massage-shiatsushi-147"
+    "33-hari-kyu-156"
   ],
   "files": {
     "ahaki-anma-2025.json": {
@@ -25,6 +24,10 @@
     "ahaki-hari-kyu-2026.json": {
       "count": 180,
       "sha256": "1ccfa55460a3228324e90053064535c1ae44b432de2a8e7b86d7b753f8db7896"
+    },
+    "ahaki-anma-2026-q147.json": {
+      "count": 1,
+      "sha256": "48a9ee0c3dee76166099e2f9c49d90df705c053458725a54b530d40d57119476"
     }
   },
   "sourceReceipts": {
@@ -4774,6 +4777,16 @@
       "localDeltaCandidateSha256": "bbd97e74057b35b2be2db387f001f25b63afe96a21f99eb0d6004f3fd8eb4273",
       "reviewResultSha256": "ca38487201418b3355b47623d2aeebb4440aa685d4123df397634f7493a7e688",
       "primaryEvidenceScope": "Suwen Blood-Qi-Form-Will chapter attribution only"
+    },
+    "ahaki-anma-2026-annual-pm-q147": {
+      "sourcePacketSha256": "1f68e527792184b2aa234129e2b0617b534ffae0c84adc21bbe78a66d10e37a1",
+      "savedDraftSha256": "9e59515b828d857bc2f8577bdb2cf5d6abc39ce440b69bd7ff7b96d8e1f420fa",
+      "examTrack": "anma",
+      "officialQuestionPdfSha256": "4b9195a58318a23a6d7479188f9700bb3cfc20c049a72163077135fb85836478",
+      "officialAnswerHtmlSha256": "15d67ce82f84bdb0f4339d1fd7df48d0e7811cc867344b4dd397a5004ed48113",
+      "questionPageImageSha256": "145b6a29de73b24f97581d05a42284562fe6861ccea0a35411f2416104ac98d8",
+      "localDeltaCandidateSha256": "aea80508848c80f6308d3856dc5c2475df279ef9bbcad196c403b86c9cea6faf",
+      "primaryEvidenceScope": "EWGSOP2 2018 consensus Table 1/2; official any-one-of-four answer retained"
     }
   },
   "publicationCompleteTwoRounds": false,
@@ -4788,6 +4801,12 @@
       "bbd97e74057b35b2be2db387f001f25b63afe96a21f99eb0d6004f3fd8eb4273"
     ],
     "sourceBaseline608MechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
-    "heldOriginalsRemaining": 3
+    "heldOriginalsRemaining": 2
+  },
+  "q147LocalDelta": {
+    "adoptedId": "ahaki-anma-2026-annual-pm-q147",
+    "evidencePath": "docs/evidence/ahaki-q147-20261010/INTEGRATION.json",
+    "heldOriginalsRemaining": 2,
+    "publication": false
   }
 }
