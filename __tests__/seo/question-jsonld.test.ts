@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import type { Question, Session } from "@/lib/questions/types";
 import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
+import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -102,6 +103,28 @@ describe("buildQuestionJsonLd", () => {
       name: "厚生労働省",
       url: "https://www.mhlw.go.jp/",
     });
+    expect(resource.license).toBeUndefined();
+    expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
+  });
+  it("attributes a published judo question to ZAIJUSEI without inventing a license", () => {
+    const judo = JUDO_SEIFUKUSHI_QUESTIONS[0];
+    if (!judo) throw new Error("Missing published judo question");
+    const resource = buildQuestionJsonLd({
+      question: judo,
+      pageUrlAbs: `https://www.kakomon-ai.jp/q/${judo.exam}/${judo.year}-${judo.season}/${judo.session}/q${judo.qNumber}`,
+      title: "Judo exam question",
+      lastUpdatedISO: "2026-10-11",
+    })["@graph"][0] as {
+      hasPart: { author: { name: string; url: string } };
+      creator: { name: string; url: string };
+      license?: string;
+    };
+    const expectedAuthor = {
+      name: "公益財団法人柔道整復研修試験財団",
+      url: "https://www.zaijusei.com/",
+    };
+    expect(resource.hasPart.author).toMatchObject(expectedAuthor);
+    expect(resource.creator).toMatchObject(expectedAuthor);
     expect(resource.license).toBeUndefined();
     expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
   });

@@ -175,6 +175,12 @@ export function buildQuestionJsonLd({
           name: "全国社会保険労務士会連合会 試験センター",
           url: "https://www.sharosi-siken.or.jp/",
         }
+    : q.exam === "judo-seifukushi"
+      ? {
+          "@type": "Organization",
+          name: "公益財団法人柔道整復研修試験財団",
+          url: "https://www.zaijusei.com/",
+        }
     : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi"
       ? {
           "@type": "Organization",
@@ -198,7 +204,7 @@ export function buildQuestionJsonLd({
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi"
+    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
