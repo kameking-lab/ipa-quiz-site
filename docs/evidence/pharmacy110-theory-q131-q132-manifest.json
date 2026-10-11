@@ -1,0 +1,98 @@
+{
+  "task": "pharmacy110-saved-q131-q132-codex",
+  "baseCommit": "b98cc8d7b3bef7fc0dcb6204f6f56d111e10dfa8",
+  "ownedIds": [
+    "yakuzaishi-2025-annual-theory-q131",
+    "yakuzaishi-2025-annual-theory-q132"
+  ],
+  "ownedFiles": [
+    "data/questions/yakuzaishi/2025-theory-q131-q132-local.json",
+    "data/questions/yakuzaishi/index.ts",
+    "docs/evidence/pharmacy110-theory-q131-q132-manifest.json"
+  ],
+  "existingOriginalsBaseline": 307,
+  "existingOriginalsModified": 0,
+  "existingOriginalsDeleted": 0,
+  "otherBatchQ129Q130Modified": false,
+  "author": {
+    "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-theory-q127-132-author/OFFLINE-STRUCTURED-RESULT.json",
+    "sha256": "de49b471d85b83fd2a3926a90d97c832f222beaeed8dfffe50ac5f27b7b778b5",
+    "receipt": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-110-theory-q127-132-author/receipt.json",
+    "requestedModel": "claude-sonnet-5-5",
+    "firstPartyServedModelMatches": true,
+    "originalParseStatus": "HOLD_NOT_JSON",
+    "offlineRecoveryModelRequests": 0
+  },
+  "officialQuestionPdf": {
+    "url": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sha256": "e69b41d7fc0577b8ca1902821ca085694702276f8c46f8ee641c9ae30e869f63"
+  },
+  "officialFinalAnswerPdf": {
+    "url": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sha256": "82f0c30e7e2c8432574359c94448ecd1c97cd28f1a509454557b537efe25fc51"
+  },
+  "sourcePacketSha256": "9a23df495e88e6892056b0c7b2dcc9509a3a0fd527aaa3629fa2b867c85f1be2",
+  "sourcePage": "question-physical-38",
+  "sourcePageImageSha256": "98d4a789a2764deb5a1989e5eb5db33103c360973c42be854bb7f1ce75b3e724",
+  "questions": [
+    {
+      "id": "yakuzaishi-2025-annual-theory-q131",
+      "officialAnswerNumber": "1,3",
+      "answer": [
+        "ア",
+        "ウ"
+      ],
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "needsFigure": false,
+      "sourceHold": false
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q132",
+      "officialAnswerNumber": "1,4",
+      "answer": [
+        "ア",
+        "エ"
+      ],
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "needsFigure": false,
+      "sourceHold": false
+    }
+  ],
+  "targetedCorrections": [
+    {
+      "id": "yakuzaishi-2025-annual-theory-q131",
+      "field": "explanation",
+      "reason": "Distinguish prolonged sodium-channel opening from a generic statement of neural blockage; answer unchanged."
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q132",
+      "field": "choices.エ",
+      "reason": "Saved text had OCR b-, while the official page image shows Greek β-."
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q132",
+      "field": "choiceExplanations.イ",
+      "reason": "Constrain the SOD cofactor explanation to major human forms rather than asserting all SOD forms."
+    },
+    {
+      "id": "yakuzaishi-2025-annual-theory-q132",
+      "field": "explanation",
+      "reason": "Use the corrected β glyph and explicitly connect provitamin A to vitamin A."
+    }
+  ],
+  "primaryFactSupplement": [
+    "https://www.osha.gov/hexavalent-chromium",
+    "https://npic.orst.edu/factsheets/archive/dphentech.html",
+    "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+  ],
+  "nextSavedSeriesCandidate": {
+    "id": "yakuzaishi-2025-annual-theory-q128",
+    "status": "candidate_only_figure_and_asset_qa_required",
+    "needsFigure": true,
+    "sourceHold": false
+  },
+  "publication": false,
+  "permissionDecision": "owner_release_gate_unresolved"
+}
