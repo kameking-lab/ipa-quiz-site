@@ -19,9 +19,13 @@ existing schema attribution label; this change does not invent reuse permission.
 The owner handles publication rights.
 
 At claim time, main `4b190a6fb8df715c223b45a7d495a33bdd33a363` held 299 OT
-questions across the latest two rounds (400 originals in total). These 20 had
-zero overlap with main, open PRs, helper reservations or queued/pending owner
-drafts. The helper reservation is `automotive-ot-next20-20261011`. This change
+questions across the latest two rounds (400 originals in total). The initial
+audit recorded zero overlap with main, open PRs, helper reservations and the
+top-level owner queue/pending drafts. A continuation audit discovered a nested
+`fullpdf-packets/queue.json` omitted from that audit: all 20 IDs also occur in
+its legacy owner jobs. The evidence now discloses that overlap. The integration
+owner must choose one candidate per exact ID and reconcile the old drafts.
+The helper reservation is `automotive-ot-next20-20261011`. This change
 does not register the candidates, change displayed counts, merge or deploy.
 
 ## Integration handoff

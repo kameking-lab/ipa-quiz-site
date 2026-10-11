@@ -1,6 +1,6 @@
 {
   "checkedAtUtc": "2026-10-11T04:25:14.135040+00:00",
-  "status": "LOCAL_VALIDATION_PASS",
+  "status": "LOCAL_CONTENT_VALIDATION_PASS_WITH_LEGACY_OWNER_OVERLAP",
   "candidateCount": 20,
   "choiceExplanationCount": 100,
   "multiSelectionCount": 4,
@@ -34,7 +34,8 @@
     {
       "command": "audit-final.py: current main/open PR/other helper reservations/owner queued and saved drafts",
       "exitCode": 0,
-      "overlapCount": 0
+      "overlapCount": 0,
+      "scopeLimitation": "Initial owner check omitted nested fullpdf owner queue; corrected disclosure records20 overlapping legacy IDs."
     }
   ],
   "dependencies": {
@@ -62,5 +63,10 @@
     "AM69 negative stem and work versus power units preserved."
   ],
   "mergePerformed": false,
-  "deployPerformed": false
+  "deployPerformed": false,
+  "lateDedupDisclosure": {
+    "checkedAtUtc": "2026-10-11T04:33:56.867119+00:00",
+    "legacyOwnerOverlapCount": 20,
+    "reason": "Nested fullpdf-packets owner queue was outside initial dedup scope. Content/source tests still apply; zero owner overlap cannot be asserted."
+  }
 }
