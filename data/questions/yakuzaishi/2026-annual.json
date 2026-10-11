@@ -7858,5 +7858,227 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q91",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 91,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ファンデルワールスの状態方程式（1）は、理想気体の状態方程式を実在気体について補正した式の1つである。理想気体とファンデルワールスの状態方程式に関する記述として正しいのはどれか。２つ選べ。\n（p + an²/V²）（V − nb）= nRT　　（1）\np：圧力、V：体積、n：物質量（mol）、R：気体定数、T：絶対温度",
+    "choices": {
+      "ア": "理想気体では、気体分子間の相互作用の大きさを正の一定の値と仮定している。",
+      "イ": "a は気体分子の衝突頻度を表す。",
+      "ウ": "b は気体分子1 mol がもつ排除体積を表す。",
+      "エ": "p + an²/V² は、気体分子間の相互作用を考慮して補正した圧力である。",
+      "オ": "（V − nb）は、気体分子間の相互作用を考慮して補正した体積である。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ファンデルワールス式は、理想気体の式 pV = nRT に対し、圧力項を分子間引力で、体積項を分子自身の大きさ（排除体積）で補正した式である。したがって、b が1 mol あたりの排除体積であること（3）と、p + an²/V² が分子間相互作用を考慮した補正圧力であること（4）が正しい。",
+    "choiceExplanations": {
+      "ア": "誤り。理想気体は分子間相互作用がなく、分子自身の体積もないと仮定する。相互作用を正の一定値とするという記述は当てはまらない。",
+      "イ": "誤り。a は分子間引力の大きさを表す定数であり、衝突頻度ではない。",
+      "ウ": "正しい。b は分子1 mol がもつ排除体積（分子自身の大きさによって他の分子が入れない体積）を表す。",
+      "エ": "正しい。実在気体では分子間引力のため、測定される圧力 p は理想的な圧力より小さくなる。そのため an²/V² を加えて補正した圧力として扱う。",
+      "オ": "誤り。V − nb は、分子自身の大きさ（排除体積）を除いた、分子が自由に動ける体積への補正である。分子間相互作用を考慮した補正ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問91（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 95,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方赤外吸収スペクトル測定法に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "赤外線の波長領域は、紫外線と可視光線の間にある。",
+      "イ": "赤外線の波数 4000 cm⁻¹ を波長に換算すると、2.5 μm である。",
+      "ウ": "赤外吸収は、振動によって分子の分極率が変化するときに観測される。",
+      "エ": "赤外吸収スペクトルの指紋領域は特性吸収帯より高波数側にある。",
+      "オ": "固体だけではなく、液体や気体の試料でも赤外吸収スペクトルを測定できる。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "波数 4000 cm⁻¹ は波長 1/4000 cm = 2.5×10⁻⁴ cm = 2.5 μm に相当する（2）。また、赤外吸収スペクトルは固体のほか、液体や気体の試料でも測定できる（5）。",
+    "choiceExplanations": {
+      "ア": "誤り。赤外線は可視光線よりも長波長側にあり、紫外線と可視光線の間にはない。",
+      "イ": "正しい。波長 = 1/波数 = 1/(4000 cm⁻¹) = 2.5×10⁻⁴ cm = 2.5 μm である。",
+      "ウ": "誤り。赤外吸収が観測されるのは、振動によって双極子モーメントが変化するときである。分極率が変化する振動はラマン散乱で観測される。",
+      "エ": "誤り。指紋領域（約1500〜400 cm⁻¹）は、特性吸収帯（約4000〜1500 cm⁻¹）より低波数側にある。",
+      "オ": "正しい。固体は臭化カリウム錠剤法などで、液体は液膜法などで、気体はガスセルで測定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問95（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q98",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 98,
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "1 mol の金属イオン M と n mol の配位子 L は次のように反応して錯体 MLn を生成する。最終反応生成物の MLn は L と反応しないものとし、また、K は逐次安定度定数を表すものとすると、この錯体生成反応に関する記述として、正しいのはどれか。2つ選べ。ただし、M、L 及び ML のモル濃度はそれぞれ［M］、［L］及び［ML］と表すものとする。\nM ＋ L ⇄(K1) ML\nML ＋ L ⇄(K2) ML2\n…\nMLn－1 ＋ L ⇄(Kn) MLn",
+    "choices": {
+      "ア": "M と L との間で形成される配位結合は、共有結合の一種である。",
+      "イ": "K1 は、K1 ＝ ［M］［L］／［ML］ によって表される。",
+      "ウ": "全安定度定数 βn は、βn ＝ K1 ＋ K2 ＋ … ＋ Kn によって表される。",
+      "エ": "M はルイス塩基、L はルイス酸である。",
+      "オ": "最終反応生成物の MLn は、L が単座配位子であるより、多座配位子である方が錯体としての安定度が高い。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "配位結合は、一方の原子が結合電子対を両方とも提供する共有結合である。また、多座配位子はキレート効果により錯体を安定化する。したがって 1 と 5 が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。配位結合は、配位子の非共有電子対を金属イオンと共有する結合で、共有結合の一種である。",
+      "イ": "誤り。K1 は生成物を分子、反応物を分母にして K1 ＝［ML］／（［M］［L］）と表す。問題文の式は分子と分母が逆である。",
+      "ウ": "誤り。全安定度定数は各逐次安定度定数の積で、βn ＝ K1 × K2 × … × Kn である。和ではない。",
+      "エ": "誤り。電子対を受け取る金属イオン M がルイス酸、電子対を供与する配位子 L がルイス塩基である。記述は逆になっている。",
+      "オ": "正しい。多座配位子は 1 分子で複数の位置から配位してキレート環を作る。このキレート効果（エントロピー的に有利）により、単座配位子の場合より安定度が高くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問98（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q171",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 171,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "静脈内投与された薬物の血液と脳の間の移行に関する記述として、正しいのはどれか。２つ選べ。ただし、血漿と脳組織間で薬物分布は平衡状態にあるものとする。",
+    "choices": {
+      "ア": "血漿中の非結合形薬物は、主として脳毛細血管内皮細胞の間隙を通過して移行する。",
+      "イ": "同じ分子量の低分子薬物では、脂溶性が高いほど単純拡散による透過性が高い。",
+      "ウ": "単純拡散のみで移行する中枢作用薬では、血漿中非結合形濃度と脳内非結合形濃度はほぼ等しい。",
+      "エ": "P-糖タンパク質の基質となる薬物では、血漿中非結合形濃度は脳内非結合形濃度より低い。",
+      "オ": "脳内へ能動輸送される薬物であっても、脳内非結合形濃度は血漿中非結合形濃度を超えない。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "血液脳関門では内皮細胞同士が密着結合で結ばれており、細胞間隙の通過はほとんど起こりません。脂溶性が高い薬物は細胞膜を単純拡散で透過しやすくなります。単純拡散のみで移行する薬物は、平衡状態では血漿中と脳内の非結合形濃度がほぼ等しくなります。したがって 2 と 3 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。脳毛細血管内皮細胞は密着結合で結ばれているため、細胞間隙経路はほとんどありません。薬物は主に細胞膜を透過するか、トランスポーターで移行します。",
+      "イ": "正しい。分子量が同じなら、脂溶性が高いほど膜透過性が高くなります。",
+      "ウ": "正しい。単純拡散のみなら濃度勾配に従い、平衡状態では非結合形濃度は等しくなります。",
+      "エ": "誤り。P-糖タンパク質は脳から血液側へ薬物を排出します。そのため脳内非結合形濃度が血漿中より低くなります。記述は逆です。",
+      "オ": "誤り。能動的な取り込みトランスポーターが働けば、脳内非結合形濃度が血漿中非結合形濃度を超えることがあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問171（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q176",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 176,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内からの薬物の消失がミカエリス・メンテン式に従うとき、経口投与後の定常状態における平均血中濃度が2 mg/Lとなる投与量と投与回数の組合せとして、最も適切なのはどれか。1つ選べ。ただし、この薬物のミカエリス定数は4 mg/L、最大消失速度は720 mg/day、バイオアベイラビリティは100％とする。",
+    "choices": {
+      "ア": "1回あたりの投与量360 mg / 1日1回",
+      "イ": "1回あたりの投与量300 mg / 1日2回",
+      "ウ": "1回あたりの投与量240 mg / 1日3回",
+      "エ": "1回あたりの投与量120 mg / 1日3回",
+      "オ": "1回あたりの投与量80 mg / 1日3回"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "定常状態では、投与速度R（mg/day）＝消失速度＝Vmax・Css/(Km+Css)。Css＝2 mg/L、Km＝4 mg/L、Vmax＝720 mg/dayを代入すると、R＝720×2/(4+2)＝1440/6＝240 mg/dayとなる（F＝1）。1日総投与量が240 mgとなる組合せを探すと、80 mg×3回＝240 mg/dayの5が該当する。",
+    "choiceExplanations": {
+      "ア": "誤り。360×1＝360 mg/dayで、必要な240 mg/dayを超える。",
+      "イ": "誤り。300×2＝600 mg/dayで、240 mg/dayを大きく超える。",
+      "ウ": "誤り。240×3＝720 mg/dayで、Vmaxに等しく定常状態に達せず濃度が上昇し続ける。",
+      "エ": "誤り。120×3＝360 mg/dayで、240 mg/dayを超える。",
+      "オ": "正しい。80×3＝240 mg/dayで、必要な投与速度と一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問176（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
   }
 ]
