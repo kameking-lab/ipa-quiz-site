@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_LOCAL_QA_AND_NATIVE_PARITY",
+  "checkedAtUtc": "2026-10-11T03:34:08.163877+00:00",
+  "scope": "Parent-assigned PT61 PM30/75 and OT60 PM27 clinical corrections and native additions",
+  "originalsAdded": 3,
+  "choiceExplanationsAdded": 15,
+  "allExistingNativeOriginalsChanged": false,
+  "sourceAndSavedRawChanged": false,
+  "nativeFiles": {
+    "data/questions/rigaku-ryohoshi/2026-clinical-key3-ready.json": "df2a39a6111a28971de681cb5cbfbeefa19dcbac04698ca97c5762bfbf320a4d",
+    "data/questions/sagyo-ryohoshi/2024-clinical-key3-ready.json": "556f802e3f3c4587d09c4bb28ce5b11e94700f3dabd12c5ec45551e4823fe389"
+  },
+  "localReviewSha256": "7d704bcbae3814c6dbeaceb9d256ed0baea8caeb48e61d14b39d545c2ead2214",
+  "mainDedupCommit": "cad6ca471f10cde5122ce673197eccce5482dc9f",
+  "existingPr711TargetDuplicates": 0,
+  "mainNativeTargetDuplicates": 0,
+  "clinicalVerified": true,
+  "contentVerified": true,
+  "publicGo": 0,
+  "productionMergePerformed": false,
+  "productionDeploymentPerformed": false,
+  "permissionClaimed": false,
+  "publicationEligibilityOwnerManaged": true,
+  "historicalYearAlias": "OT60 was administered in 2025; repository canonical year 2024 is deliberately retained and the actual edition/source year is explicit in provenance.",
+  "rows": [
+    {
+      "id": "sagyo-ryohoshi-2024-annual-pm-q27",
+      "edition": 60,
+      "canonicalYear": 2024,
+      "sourceExamYear": 2025,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-09seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/OT_PM27.pdf",
+        "https://www.jaot.or.jp/mtdlp/management_process_sheet/"
+      ],
+      "officialAnswerNumber": "25",
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "requiredSelections": 1,
+      "choiceExplanations": 5,
+      "candidateSha256CanonicalJson": "d9b68b4ddb39718c32a066e800683726d84c5f772e9a28f7f68fe06023c12678",
+      "proposalSha256": "2c43512f9e4481dbbb2a944f2394ec0d775123da5ebf13796959bd3b23908fa6",
+      "oldRawSha256Unchanged": "0f57c4b03d052d62f262ddb5179302fc158ae1424f8376f2093fd02a87b54d86",
+      "clinicalVerified": true,
+      "contentVerified": true,
+      "reviewScope": "Three local corrections only; no full-qualification regeneration or high-model double review."
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q30",
+      "edition": 61,
+      "canonicalYear": 2026,
+      "sourceExamYear": 2026,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/PT_PM30.pdf",
+        "https://www.mhlw.go.jp/topics/2009/05/dl/tp0501-1_01.pdf"
+      ],
+      "officialAnswerNumber": "45",
+      "acceptedAnswerSets": [
+        [
+          "4"
+        ],
+        [
+          "5"
+        ]
+      ],
+      "requiredSelections": 1,
+      "choiceExplanations": 5,
+      "candidateSha256CanonicalJson": "8ef506b931703bca6d34949df85c18cfe27077306aff7a498ec121da9fd842a7",
+      "proposalSha256": "2f74ef13e9d57a58e50e0a043547aad3a3d9f789c66af027dde4d1975dcce78d",
+      "oldRawSha256Unchanged": "d5020009b53a43c0a3f090d78d1ef306b913ae3679970884ec04a4a25435ea76",
+      "clinicalVerified": true,
+      "contentVerified": true,
+      "reviewScope": "Three local corrections only; no full-qualification regeneration or high-model double review."
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q75",
+      "edition": 61,
+      "canonicalYear": 2026,
+      "sourceExamYear": 2026,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "referenceUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/kyoutu_PM75.pdf",
+        "https://www.msdmanuals.com/professional/critical-care-medicine/shock-and-fluid-resuscitation/shock",
+        "https://my.clevelandclinic.org/health/diseases/22175-neurogenic-shock"
+      ],
+      "officialAnswerNumber": "23",
+      "acceptedAnswerSets": [
+        [
+          "2"
+        ],
+        [
+          "3"
+        ]
+      ],
+      "requiredSelections": 1,
+      "choiceExplanations": 5,
+      "candidateSha256CanonicalJson": "2e3eee2923791066f8729c53c0f7153744aeb4b145e53e95cfefc82291a20612",
+      "proposalSha256": "f72ba21dbf4ed51956c8fc4aa27dde8d912b7a0c94a4bc1ec7fb5671e1f3cc52",
+      "oldRawSha256Unchanged": "7d06cc6d4c109d2044dacacb25b640d59c6d84e80a84804293557c21a71b97d6",
+      "clinicalVerified": true,
+      "contentVerified": true,
+      "reviewScope": "Three local corrections only; no full-qualification regeneration or high-model double review."
+    }
+  ]
+}

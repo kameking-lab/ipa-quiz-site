@@ -12,7 +12,7 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 describe("保存済み午前3原問の局所受入れ", () => {
   it("原本ID・午前年度・公式キーと全5肢を保持する", () => {
     expect(rows.map((q) => q.id).sort()).toEqual(evidence.goIds);
-    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(299);
+    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(300);
     expect(SHINO_KUNRENSHI_QUESTIONS).toHaveLength(186);
     for (const q of rows) {
       expect(q.id).toBe(`${q.exam}-${q.year}-annual-am-q${q.qNumber}`);
