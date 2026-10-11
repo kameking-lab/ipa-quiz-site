@@ -9,6 +9,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const CHOICES = ["ア", "イ", "ウ", "エ"] as const;
 const HOLD = "kenchiku-setsubishi-2026-annual-am2-q18";
+const REFERENCE_HOLDS = ["kenchiku-setsubishi-2025-annual-pm-q36"];
 const base = "data/questions/kenchiku-setsubishi";
 
 describe("建築設備士2025・2026第一次の私的候補", () => {
@@ -71,7 +72,7 @@ describe("建築設備士2025・2026第一次の私的候補", () => {
   });
 
   it("keeps the verified official-key conflict visible and excludes it from practice", () => {
-    expect(corpus.filter(q => q.needsReview).map(q => q.id)).toEqual([HOLD]);
+    expect(corpus.filter(q => q.needsReview).map(q => q.id)).toEqual([...REFERENCE_HOLDS, HOLD]);
     const held = corpus.find(q => q.id === HOLD)!;
     expect(held.answer).toBe("ア");
     expect(held.choices?.イ).toMatch(/450/);
@@ -79,7 +80,18 @@ describe("建築設備士2025・2026第一次の私的候補", () => {
     expect(held.choiceExplanations?.イ).toMatch(/不整合|整合しない|矛盾|衝突/);
     expect(held.choiceExplanations?.イ).not.toMatch(/別の増築基準/);
     expect(isPracticeReadyQuestion(held)).toBe(false);
-    for (const q of corpus.filter(q => q.id !== HOLD)) expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+    for (const q of corpus) expect(isPracticeReadyQuestion(q), q.id).toBe(![HOLD, ...REFERENCE_HOLDS].includes(q.id));
+  });
+
+  it("preserves source units and the manufacturer-confirmed KIP insulation", () => {
+    const q45 = corpus.find(q => q.year === 2025 && q.session === "pm" && q.qNumber === 45)!;
+    const q54 = corpus.find(q => q.year === 2025 && q.session === "pm" && q.qNumber === 54)!;
+    const q53 = corpus.find(q => q.year === 2025 && q.session === "pm" && q.qNumber === 53)!;
+    expect(q45.choices?.エ).toContain("0.4 lm/m²");
+    expect(q54.choices?.イ).toContain("30 m/min");
+    expect(q53.choiceExplanations?.ア).toContain("EPゴム");
+    expect(q53.explanation).toContain("EPゴム");
+    expect(q53.officialReferenceUrls).toContain("https://sumitomoelectric.com/jp/products/wire-cable/emlfc/ep_rubber");
   });
 
   it("accounts for every source figure without shipping originals in public assets", () => {

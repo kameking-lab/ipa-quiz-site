@@ -15,8 +15,9 @@
   "choiceExplanationCount": 840,
   "officialAnswerMismatches": 0,
   "officialKeyVerification": "全210セルを公式正答PDFのレンダリングと独立fixtureで照合。",
-  "readyCandidateCount": 209,
+  "readyCandidateCount": 208,
   "heldQuestionIds": [
+    "kenchiku-setsubishi-2025-annual-pm-q36",
     "kenchiku-setsubishi-2026-annual-am2-q18"
   ],
   "sourceConflicts": [
@@ -78,7 +79,57 @@
     "scope": "登録コードの公開ゲートと出典帰属、2025法規13・15、2026法規18、2025設備8の疑義のみ。",
     "fullCorpusHighModelSecondReview": false,
     "equipment2025q8": "送風機静圧=全圧-吐出口動圧の定義に基づく独立説明。実機1.5倍を一般法則とせず、公式出題理由と称していない。",
-    "extraEvidenceExcerptSave": "局所査読で追加抜粋PDF/画像の保存がread-only制約として自動承認拒否。再試行せず既存原本とURLで確認。"
+    "extraEvidenceExcerptSave": "局所査読で追加抜粋PDF/画像の保存がread-only制約として自動承認拒否。再試行せず既存原本とURLで確認。",
+    "electrical2025": {
+      "scope": "PM35–54の20問80肢・7図版の独立局所確認",
+      "correctedQuestions": [
+        35,
+        37,
+        41,
+        44,
+        45,
+        53,
+        54
+      ],
+      "coreCorrections": 11,
+      "fieldOperations": 19,
+      "answerChanges": 0,
+      "sourceUnitsRestored": [
+        "Q45 0.4 lm/m²",
+        "Q54 30 m/min"
+      ],
+      "confirmedTechnicalCorrection": "Q53 KIPはEPゴム絶縁。メーカー公式仕様と照合。",
+      "referenceHolds": [
+        36
+      ],
+      "primarySourcesVerified": [
+        "https://sumitomoelectric.com/jp/products/wire-cable/emlfc/ep_rubber",
+        "https://www.hitachi-ies.co.jp/products/trans/mold/sp_t2_m/index.htm",
+        "https://www.city.saitama.lg.jp/001/011/014/004/005/p046993_d/fil/10_01jikahou.pdf"
+      ]
+    }
   },
-  "secondStageStatusFile": "second-stage-status.json"
+  "secondStageStatusFile": "second-stage-status.json",
+  "referenceVerificationHolds": [
+    {
+      "id": "kenchiku-setsubishi-2025-annual-pm-q36",
+      "finding": "JIS C4620高圧電動機への適用根拠は原文未照合。LBS catalog単独でこのJIS主張を裏付けたとしない。",
+      "disposition": "HOLD-needsReview-true",
+      "reviewOwnerThreadId": "01a12863-70a1-72b2-9584-9c22c053b0b7",
+      "standardAtExam": "JIS C 4620:2023",
+      "publicPreviewLimitation": "発行者の7頁公開プレビューと訂正票は、高圧電動機に対する主遮断方式の該当本文を含まない。旧2018版転載を2023版確認と称さない。",
+      "publisherCatalogUrl": "https://webdesk.jsa.or.jp/books/W11M0090/index/?bunsyo_id=JIS+C+4620%3A2023"
+    }
+  ],
+  "referenceVersionEvidence": {
+    "q50": {
+      "source": "https://www2.panasonic.biz/jp/terasu/skill/iroha/book/nonresidential/pdf/part3.pdf#page=4",
+      "sourceEdition": "JEAC 8001-2016",
+      "sourcePosition": "勧告",
+      "calculationVerified": "295.8/0.32=924.375; E31=660<924.375<=E39=978",
+      "current2022NormativeTextVerified": false,
+      "statutoryObligationClaimed": false,
+      "disposition": "Accept limited source explanation; retain version limitation"
+    }
+  }
 }
