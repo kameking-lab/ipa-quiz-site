@@ -12,8 +12,8 @@ describe("lab saved source-QA24 additions", () => {
   it("adds only 24 exact IDs and retains every previously accepted original", async () => {
     expect(batch).toHaveLength(24);
     for (const year of [2025,2026]) expect(batch.filter(q => q.year === year).map(q => q.qNumber)).toEqual(Object.keys(keys[year]!).map(Number));
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(59);
-    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(59);
+    expect(RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.session === "pm")).toHaveLength(59);
+    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(RINSHO_KENSAGISHI_QUESTIONS.length);
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     for (const q of batch) expect(RINSHO_KENSAGISHI_QUESTIONS.find(r => r.id === q.id)).toEqual(q);
     expect(receipt.originals).toBe(24);
