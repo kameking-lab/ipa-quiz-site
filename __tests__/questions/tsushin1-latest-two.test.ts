@@ -9,6 +9,13 @@ import crops from "@/docs/evidence/tsushin1-2025/complete/CROP-RECEIPTS.json";
 import provenance from "@/docs/evidence/tsushin1-2025/complete/provenance.json";
 import preservation from "@/docs/evidence/tsushin1-2025/complete/2026-PRESERVATION.json";
 
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { getAvailableYears } from "@/lib/questions/load";
+import { EXAM_DESCRIPTIONS, examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
+
 const yearQuestions = TSUSHIN1_QUESTIONS.filter((q) => q.year === 2025);
 
 describe("1級電気通信工事 最新2回全180原問", () => {
@@ -66,6 +73,33 @@ describe("1級電気通信工事 最新2回全180原問", () => {
     }
     for (const q of yearQuestions) {
       if (/下図|図1|図2|図に示|右図|次の図|下表|表に示/.test(q.question)) expect(q.hasImage).toBe(true);
+    }
+  });
+  it("exposes both complete years through public registries and canonical question routes", async () => {
+    expect(await getQuestionsForExam("tsushin1")).toHaveLength(180);
+    expect(getQuestionsByExamStrict("tsushin1")).toHaveLength(180);
+    expect(getAvailableYears("tsushin1")).toEqual([2026, 2025]);
+    expect(EXAM_CONFIGS.tsushin1.yearRange).toEqual({ start: 2025, end: 2026 });
+    expect(EXAM_CONFIGS.tsushin1.sessions.map((s) => [s.session, s.expectedQuestions])).toEqual([["mondai-a", 55], ["mondai-b", 35]]);
+    for (const q of TSUSHIN1_QUESTIONS) {
+      const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
+      expect(findQuestionByRoute(TSUSHIN1_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id).toBe(q.id);
+    }
+  });
+
+  it("describes complete coverage without claiming first-party retrieval of the 2025 saved copies", () => {
+    const catalog = getQualificationByExamCode("tsushin1")!;
+    expect(catalog.remainingWork).toEqual([]);
+    expect(catalog.attributionTemplate).not.toContain("令和8年度");
+    const descriptions = [catalog.reuseSummary, EXAM_DESCRIPTIONS.tsushin1!, examMetaDescription("tsushin1", 180)];
+    for (const text of descriptions) {
+      expect(text).toContain("2026");
+      expect(text).toContain("2025");
+      expect(text).toContain("90原問");
+      expect(text).toContain("公開保存コピー");
+      expect(text).toContain("直接取得は未確認");
+      expect(text).not.toContain("段階的");
+      expect(text).not.toContain("確認済みの設問を掲載");
     }
   });
 });

@@ -496,7 +496,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "mondai-b", urlSlug: "mondai-b", expectedQuestions: 35, label: "第一次検定 問題B", categories: ["施工管理法"] },
     ],
     seasons: ["september"],
-    yearRange: { start: 2026, end: 2026 },
+    yearRange: { start: 2025, end: 2026 },
   },
   kaigo: {
     code: "kaigo",
