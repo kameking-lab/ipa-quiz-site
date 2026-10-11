@@ -7,8 +7,8 @@ import {
   type ExamConfig,
   type SessionConfig,
 } from "@/lib/exam-config";
-import type { ExamCode } from "@/lib/questions/types";
 import { isExamPublished } from "@/lib/qualifications/catalog";
+import type { ExamCode } from "@/lib/questions/types";
 
 // EXAM_CONFIGS は全試験区分の中核設定レジストリで、PDF 出典 URL(urlSlug)・学習プラン
 // の想定問題数(expectedQuestions)・PDF クロール年範囲(yearRange)・分野別スケジュール
