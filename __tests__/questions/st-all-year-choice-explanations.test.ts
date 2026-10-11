@@ -1,6 +1,10 @@
 // @vitest-environment node
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
+import { applyIpaCorrections } from "@/data/questions/corrections";
+import { BY_YEAR_QUESTIONS } from "@/data/questions/st/by-year";
+import residual from "@/data/questions/st/choice-explanations-residual-20261011.json";
+import residualHolds from "@/docs/evidence/st-residual11-20261011/unresolved.json";
 import { ST_QUESTIONS } from "@/data/questions/st";
 import reasons from "@/data/questions/st/choice-explanations-all-years.json";
 import repairs from "@/data/questions/st/explanation-repairs-all-years.json";
@@ -10,8 +14,8 @@ import holds from "@/docs/evidence/st-all-choice-explanations-20261011/unresolve
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("ST all recorded multiple-choice papers", () => {
-  it("preserves all 680 question texts, choices and answers", () => {
-    const anchors = ST_QUESTIONS.map(({ id, type, question, choices, answer }) => ({ id, type, question, choices, answer }));
+  it("preserves the frozen 680-question source and every official answer", () => {
+    const anchors = applyIpaCorrections("st", BY_YEAR_QUESTIONS).map(({ id, type, question, choices, answer }) => ({ id, type, question, choices, answer }));
     expect(ST_QUESTIONS).toHaveLength(680);
     expect(new Set(ST_QUESTIONS.map(q => q.id)).size).toBe(680);
     expect(createHash("sha256").update(JSON.stringify(anchors)).digest("hex"))
@@ -30,13 +34,13 @@ describe("ST all recorded multiple-choice papers", () => {
     }
   });
 
-  it("covers all four distinct choices for 669 questions and holds exactly eleven", () => {
+  it("covers 677 questions and holds exactly three source conflicts", () => {
     const missing = ST_QUESTIONS.filter(q => !q.choiceExplanations).map(q => q.id).sort();
-    expect(missing).toEqual(holds.map(h => h.id).sort());
-    expect(missing).toHaveLength(11);
+    expect(missing).toEqual(residualHolds.map(h => h.id).sort());
+    expect(missing).toHaveLength(3);
     const covered = ST_QUESTIONS.filter(q => q.choiceExplanations);
-    expect(covered).toHaveLength(669);
-    expect(evidence.covered).toBe(669);
+    expect(covered).toHaveLength(677);
+    expect(covered.length).toBe(evidence.covered + Object.keys(residual).length);
     expect(Object.keys(reasons)).toHaveLength(559);
     for (const q of covered) {
       const choiceKeys = Object.keys(q.choices ?? {}).sort() as ChoiceKey[];
@@ -49,7 +53,7 @@ describe("ST all recorded multiple-choice papers", () => {
         expect(values[index].startsWith(key === q.answer ? "正しいです。" : "誤りです。"), `${q.id}/${key}`).toBe(true);
       }
     }
-    expect(covered.reduce((n, q) => n + Object.keys(q.choiceExplanations ?? {}).length, 0)).toBe(2676);
+    expect(covered.reduce((n, q) => n + Object.keys(q.choiceExplanations ?? {}).length, 0)).toBe(2708);
   });
 
   it("applies narrative repairs only to explained canonical ST questions", () => {

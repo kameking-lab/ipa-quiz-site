@@ -1,0 +1,62 @@
+[
+  {
+    "id": "st-2009a-am2-q23",
+    "status": "official-source-rule-conflict",
+    "officialAnswer": "ウ",
+    "sourcePage": 12,
+    "literalRuleAbnormalPoints": [
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "officialCount": 4,
+    "literalCount": 5,
+    "issue": "基準②=p5,p7、③=p8,p9、④の「3点目以降」=p4,p5。原図の11点を左から番号付けし重複を除くと5点。公式は4点。「3点」を3回の下降へ置換してp4を除く解説は一次原典から確定できない。"
+  },
+  {
+    "id": "st-2011a-am1-q29",
+    "status": "official-source-mixed-strategy-ambiguity",
+    "officialAnswer": "エ",
+    "sourcePage": 12,
+    "pureMaximinMinima": [
+      50,
+      100,
+      200
+    ],
+    "mixedMaximinWeights": {
+      "積極的投資": 0.125,
+      "継続的投資": 0,
+      "消極的投資": 0.875
+    },
+    "mixedStatePayoffs": [
+      356.25,
+      237.5,
+      237.5
+    ],
+    "issue": "公式正答エの純粋マクシミンは成立するが、混合を許す解釈ではアも成立し得る。問題の「いずれかに決定」は確率的に一つを選ぶ方式を明示的に排除しない。「景気確率不明で混合計算不可」又は「単一計画なので混合不可」を断定しない。"
+  },
+  {
+    "id": "st-2013h-am1-q29",
+    "status": "official-source-mixed-strategy-ambiguity",
+    "officialAnswer": "エ",
+    "sourcePage": 15,
+    "pureMaximinMinima": [
+      50,
+      100,
+      200
+    ],
+    "mixedMaximinWeights": {
+      "積極的投資": 0.125,
+      "継続的投資": 0,
+      "消極的投資": 0.875
+    },
+    "mixedStatePayoffs": [
+      356.25,
+      237.5,
+      237.5
+    ],
+    "issue": "公式正答エの純粋マクシミンは成立するが、混合を許す解釈ではアも成立し得る。問題の「いずれかに決定」は確率的に一つを選ぶ方式を明示的に排除しない。「景気確率不明で混合計算不可」又は「単一計画なので混合不可」を断定しない。"
+  }
+]
