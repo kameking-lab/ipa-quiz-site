@@ -46,6 +46,28 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
 describe("annual original session completeness", () => {
+  it.each([
+    ["fp3-2026-published-gakka-q11", 10],
+    ["rigaku-ryohoshi-2025-annual-am-q10", 9],
+    ["sagyo-ryohoshi-2024-annual-am-q100", 99],
+  ])("opens and reloads the exact requested question %s", async (questionId, expectedIndex) => {
+    const prefix = questionId.replace(/q\d+$/, "q");
+    const pool = Array.from({ length: Math.max(100, expectedIndex + 1) }, (_, index) => `${prefix}${index + 1}`);
+    window.history.replaceState(null, "", `/quiz?mode=year&exam=test&question=${questionId}`);
+    const first = render(<QuizClient poolIds={pool} initialQuestionId={questionId} mode="year" exam="test" backHref="/test" />);
+    await expectQuestion(questionId, `${expectedIndex + 1}/${pool.length}`);
+    first.unmount();
+    render(<QuizClient poolIds={pool} mode="year" exam="test" backHref="/test" />);
+    await expectQuestion(questionId, `${expectedIndex + 1}/${pool.length}`);
+  });
+
+  it("shows an honest error when the requested ID is outside the selected pool", async () => {
+    window.history.replaceState(null, "", `${baseUrl}&question=fp3-2099-published-gakka-q999`);
+    mountYear(fullPool, "fp3-2099-published-gakka-q999");
+    expect(await screen.findByRole("alert")).toHaveTextContent("指定した問題はこの問題一覧にありません。");
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
   it.each([{ pool: fullPool }, { pool: partialPool }])("opens Q107 at its original ordered position in a complete annual pool", async ({ pool }) => {
     mountYear(pool, fullPool[106]);
     await expectQuestion(fullPool[106], `${pool.indexOf(fullPool[106]) + 1}/${pool.length}`);
