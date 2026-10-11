@@ -1,29 +1,65 @@
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { TSUSHIN1_QUESTIONS } from "@/data/questions/tsushin1";
 import source from "@/data/questions/tsushin1/2026-september.json";
+import answers from "@/docs/evidence/tsushin1-2026/complete/OFFICIAL-ANSWERS.json";
+import crops from "@/docs/evidence/tsushin1-2026/complete/CROP-RECEIPTS.json";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
-describe("1級電気通信工事 令和8年度第一次検定", () => {
-  it("12問の初回収録を公式90問と区別して公開する", () => {
+describe("1級電気通信工事 令和8年度第一次検定全90原問", () => {
+  it("A55問・B35問を年度/冊子/問番号ごとに一意に保持する", () => {
     expect(source.papers.map((paper) => paper.officialQuestionCount)).toEqual([55, 35]);
-    expect(source.papers.map((paper) => paper.publishedCount)).toEqual([8, 4]);
-    expect(TSUSHIN1_QUESTIONS).toHaveLength(12);
-    expect(new Set(TSUSHIN1_QUESTIONS.map((q) => q.id)).size).toBe(12);
+    expect(source.papers.map((paper) => paper.publishedCount)).toEqual([55, 35]);
+    expect(TSUSHIN1_QUESTIONS).toHaveLength(90);
+    expect(new Set(TSUSHIN1_QUESTIONS.map((q) => q.id)).size).toBe(90);
+    for (const paper of source.papers) {
+      expect(paper.questions.map((q) => q.number)).toEqual(Array.from({ length: paper.officialQuestionCount }, (_, n) => n + 1));
+    }
     expect(defaultPracticeSession("tsushin1")).toBe("mondai-a");
     expect(isExamPublished("tsushin1")).toBe(true);
   });
 
-  it("公式正答を数字から4肢の単一選択へ順番どおり変換する", () => {
-    const answers: Record<string, Record<number, string>> = {
-      "mondai-a": { 5: "エ", 8: "ア", 11: "ア", 12: "ウ", 13: "エ", 14: "ウ", 15: "ア", 16: "イ" },
-      "mondai-b": { 1: "ウ", 5: "イ", 6: "ウ", 9: "ア" },
-    };
+  it("全問の公式正答の順序と四肢・全肢解説を保持する", () => {
+    const keys = ["ア", "イ", "ウ", "エ"];
     for (const question of TSUSHIN1_QUESTIONS) {
-      expect(question.answer).toBe(answers[question.session]?.[question.qNumber]);
+      const session = question.session as keyof typeof answers;
+      expect(question.answer).toBe(keys[answers[session][question.qNumber - 1]! - 1]);
+      expect(question.officialAnswerNumber).toBe(String(answers[session][question.qNumber - 1]));
       expect(question.requiredSelections).toBeUndefined();
       expect(Object.values(question.choices ?? {})).toHaveLength(4);
-      expect(Object.keys(question.choiceExplanations ?? {})).toHaveLength(4);
+      expect(new Set(Object.values(question.choices ?? {})).size).toBe(4);
+      expect(Object.keys(question.choiceExplanations ?? {})).toEqual(keys);
+      expect(Object.values(question.choiceExplanations ?? {}).every((value) => value && value.trim().length > 0)).toBe(true);
+      expect(question.explanationCoverage).toBe("full");
+      expect(question.sourcePdfUrl).toMatch(/^https:\/\/www\.jctc\.jp\//);
+      expect(JSON.stringify(question.choices)).not.toContain("※ 問題番号");
     }
+  });
+
+  it("図表画像を原本クロップのSHA-256と照合する", () => {
+    for (const crop of crops) {
+      const question = TSUSHIN1_QUESTIONS.find((q) => q.session === crop.session && q.qNumber === crop.number);
+      expect(question?.hasImage).toBe(true);
+      expect(question?.imageUrls).toHaveLength(crop.images.length);
+      expect(question?.imageAltTexts).toHaveLength(crop.images.length);
+      for (const receipt of crop.images) {
+        const file = resolve(process.cwd(), "public/images/tsushin1/2026", receipt.file);
+        expect(existsSync(file)).toBe(true);
+        expect(createHash("sha256").update(readFileSync(file)).digest("hex")).toBe(receipt.sha256);
+      }
+    }
+  });
+
+  it("失われやすい指数・否定式・周波数添字を復元する", () => {
+    const findA = (number: number) => TSUSHIN1_QUESTIONS.find((q) => q.session === "mondai-a" && q.qNumber === number)!;
+    expect(findA(1).choices?.エ).toContain("10⁻¹");
+    expect(findA(9).choices?.ウ).toContain("B̄");
+    expect(findA(19).choices?.ア).toContain("G₁G₂");
+    expect(findA(29).choices?.イ).toContain("f₂");
+    expect(findA(29).choices?.イ).toContain("f₄");
+    expect(findA(55).choices?.エ).toContain("竪穴区画");
   });
 });

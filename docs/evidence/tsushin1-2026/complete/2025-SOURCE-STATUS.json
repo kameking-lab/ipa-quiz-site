@@ -1,0 +1,57 @@
+{
+  "exam": "1級電気通信工事施工管理技術検定",
+  "year": 2025,
+  "stage": "第一次検定",
+  "checkedAt": "2026-10-11",
+  "status": "blocked_official_sources_not_retrieved",
+  "officialListing": "https://www.jctc.jp/mondai/",
+  "officialListingFinding": "現行の試験問題/正答肢ページに令和7年度1級電気通信工事施工管理技術検定第一次検定の試験問題A・B・正答肢は掲載されていない。掲載されている令和7年度1級分は第二次検定のみ。",
+  "indirectReference": {
+    "url": "https://www.cic-ct.co.jp/sohyo/dentsu/",
+    "finding": "試験実施団体への試験問題A・B・正答肢リンクはあるが、2026年度の公式PDFに更新されている。2025年度の原本の証拠にはならない。"
+  },
+  "candidatesChecked": [
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250908e_mondaia.pdf",
+      "result": "404 (先行確認済み。再試行せず)"
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250907e_mondaia.pdf",
+      "result": "web閲覧手段からアクセス不可。原本の存在は未確認"
+    }
+  ],
+  "requiredOfficialFiles": [
+    {
+      "kind": "question_A",
+      "status": "missing"
+    },
+    {
+      "kind": "question_B",
+      "status": "missing"
+    },
+    {
+      "kind": "answer_key",
+      "status": "missing"
+    }
+  ],
+  "questionCount": {
+    "confirmedFrom2025OfficialSource": null,
+    "indirectContextOnly": "CICの現行ページはA55問・B35問・計90問と説明するが、2025年度の公式原本を確認できていないため2025年度の確定母数として採用しない。"
+  },
+  "missingQuestionRanges": [
+    "A: 全問",
+    "B: 全問"
+  ],
+  "editorialDraft": "not_created_to_avoid_fabrication",
+  "nextAction": "2025年度第一次の公式PDF（A・B・正答肢）の公開リンクまたは原本を入手してから抽出・照合・全肢解説を開始する。",
+  "additionalPublicChecks": [
+    {
+      "url": "https://www.jctc.jp/exam/",
+      "finding": "Public exam entry links to the current question listing and current notices."
+    },
+    {
+      "url": "https://www.jctc.jp/news_category/technical/",
+      "finding": "Visible official notices did not contain 2025 first-stage question PDFs."
+    }
+  ]
+}

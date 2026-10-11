@@ -1,0 +1,224 @@
+{
+  "reviewedAt": "2026-10-11",
+  "scope": "tsushin1 2026一次・指定13問のみの独立局所審査。全90問の二重査読ではない。原稿/実装は変更しない。",
+  "summary": {
+    "originalImagesReviewed": 13,
+    "confirmedAnswerChangesRequired": 0,
+    "blockingFactualErrorsFound": 0,
+    "unresolvedPrimarySourceChecks": [],
+    "publicationApproval": false,
+    "followup": "取得済み公式PDFの該当4ページを抽出・レンダリングし表の結合セルと例外条件まで目視確認。A49/B31の一次根拠不足を解消。"
+  },
+  "items": [
+    {
+      "question": "A1",
+      "status": "pass",
+      "evidence": "原本Q1=+2μC、Q2=+3μC、L=0.3m、k=9×10^9。F=0.054/0.09=0.60N、肢4。各肢指数も一致。",
+      "originalImage": "review-images/2026-a-q01-1.png",
+      "originalImageSha256": "f5c405401d5b827904a3d19b862a07bd6c6eae9838d904714eb5fd1efdb37bdf",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 2
+    },
+    {
+      "question": "A7",
+      "status": "pass",
+      "evidence": "原本運用期間Aは120時間+停止6時間+150時間+停止4時間。MTBF135時間、MTTR5時間、肢1。",
+      "originalImage": "review-images/2026-a-q07-1.png",
+      "originalImageSha256": "b1471763939b0cd90a0094f590ed59ba2cb20399225d519c831228af6dde5b08",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 6
+    },
+    {
+      "question": "A9",
+      "status": "pass",
+      "evidence": "原本二つのORと最後のNANDを確認。否定入力の位置と上線も原稿と一致。¬[(Ā+B)(A+B̄)]=ĀB+AB̄、肢3。",
+      "originalImage": "review-images/2026-a-q09-1.png",
+      "originalImageSha256": "89d9925b175d8a6765aebc481893d3a2f82a8b73d1cd71cea80a7433d78add7d",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 7
+    },
+    {
+      "question": "A10",
+      "status": "pass",
+      "evidence": "原本負荷線切片5mA/10V。VCC=10V、RC=2kΩ、肢2。",
+      "originalImage": "review-images/2026-a-q10-1.png",
+      "originalImageSha256": "f9fe56b1773aaa54e14fea22c6fb26a25fa5d2bd8c5d6de5a6cbb2fae4b669dd",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 8
+    },
+    {
+      "question": "A17",
+      "status": "pass",
+      "evidence": "原本+端子入力、R2帰還/R1接地。非反転1+R2/R1で同位相、肢3が不適当。",
+      "originalImage": "review-images/2026-a-q17-1.png",
+      "originalImageSha256": "61abb104a50802c3f5facda8307465fd557a7c2cc379aebf8bdf7ff2aa01e470",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 11
+    },
+    {
+      "question": "A19",
+      "status": "pass",
+      "evidence": "原本G1/G2直列と負帰還G3を確認。G1G2/(1+G1G2G3)、肢1。",
+      "originalImage": "review-images/2026-a-q19-1.png",
+      "originalImageSha256": "df6df2347c1a62f3eec9d332909907586a61c5ba295959629fde114a174da53c",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 12
+    },
+    {
+      "question": "A22",
+      "status": "pass",
+      "evidence": "原本肢3はGIの屈折率を階段状とする誤記。連続変化との解説に矛盾なし。肢2の構造分散を原稿は『小さい場合にも現れる』と慎重に説明。",
+      "originalImage": "review-images/2026-a-q22-1.png",
+      "originalImageSha256": "ef7914d5e5957e5938a3516a278fb1ecbe66924c0ea3d53cb04f2da56d41fdad",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 14
+    },
+    {
+      "question": "A24",
+      "status": "pass",
+      "evidence": "原本DMカッドと星形カッドの外径比較と原稿の対象が一致。二段撚りDM対一括星形という構造説明に明確な矛盾なし。",
+      "originalImage": "review-images/2026-a-q24-1.png",
+      "originalImageSha256": "71da3656153a66481ed5469dd2779d4e9b7b5c452c6e927c565f14db4142b187",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 14
+    },
+    {
+      "question": "A49",
+      "status": "pass_primary_verified",
+      "evidence": "METI-DENGI.pdfのPDF148-149ページ、第149条1項1号/2項1号、149-1表・149-2表・149-3表を確認。分岐点→遮断器2mは3m以内。コンセント側は7mのため3m以下の細線例外は適用されない。30Aは直径2.6mm、コンセント20A以上30A以下（20A未満のプラグが接続できるものを除く）。よって肢1の2mm/15Aは不適合。20A配線用遮断器は1.6mm/20A以下、15Aは1.6mm/15A以下で肢2・3は整合。肢4の2.6mm/30Aも整合。原問・統合原稿を照合済み。",
+      "originalImage": "review-images/2026-a-q49-1.png",
+      "sourcePages": {
+        "file": "METI-DENGI.pdf",
+        "pdfPagesOneBased": [
+          148,
+          149
+        ]
+      },
+      "originalImageSha256": "4b1675dd6e43a3416cccfd774e051aff1b10b07f571aeb75ba937b729ddd1585",
+      "originalPdf": "../input/tsushin1-2026-a.pdf",
+      "originalPdfSha256": "92367d48419e62b7bcf9d0f52c5f94c36dc98739c950d890f81ec64ead1c36cf",
+      "originalPdfPageOneBased": 24
+    },
+    {
+      "question": "B24",
+      "status": "pass",
+      "evidence": "原本の肢4は『最も短い経路』。通常のネットワーク工程表で最長経路、TF=FF=0の説明は整合。原稿に正答/各肢の取り違えなし。",
+      "originalImage": "review-images/2026-b-q24-1.png",
+      "originalImageSha256": "15f6fd8fbb20e92757693c90f1a15c5d6a062563bd9243f6ac8c27aa18d472cd",
+      "originalPdf": "../input/tsushin1-2026-b.pdf",
+      "originalPdfSha256": "413a26b3b67141778d625cb027a1ff25cab8c343efb9570c13bdd1e7e19a51aa",
+      "originalPdfPageOneBased": 12
+    },
+    {
+      "question": "B26",
+      "status": "pass",
+      "evidence": "原本は特性要因図。肢1パレート、2魚骨、3散布、4管理図の各説明が一致。",
+      "originalImage": "review-images/2026-b-q26-1.png",
+      "originalImageSha256": "e665b9c43d47d0a9a69d45e2f739340451beb4adf7a145f0ae586f248e26d4ed",
+      "originalPdf": "../input/tsushin1-2026-b.pdf",
+      "originalPdfSha256": "413a26b3b67141778d625cb027a1ff25cab8c343efb9570c13bdd1e7e19a51aa",
+      "originalPdfPageOneBased": 13
+    },
+    {
+      "question": "B31",
+      "status": "pass_primary_verified",
+      "evidence": "MLIT-DENKI.pdfは公共建築改修工事標準仕様書（電気設備工事編）令和4年版。PDF96-97ページ（印刷95-96ページ）2.11.2(イ)で、0.5m以下ごとの支持はハンガ、ラッシングロッドは移動防止のため1ピッチ重複巻付けと規定。最終editorial-b.jsonと統合JSONのB31各肢説明が同内容に修正されていることを確認。旧稿の未確保な端部固定補足は解消。正答②③=肢2に変更なし。",
+      "originalImage": "review-images/2026-b-q31-1.png",
+      "sourcePages": {
+        "file": "MLIT-DENKI.pdf",
+        "pdfPagesOneBased": [
+          96,
+          97
+        ],
+        "printedPages": [
+          95,
+          96
+        ],
+        "section": "2.11.2(イ)"
+      },
+      "originalImageSha256": "eae17540d42cfb5ac2305d7ef7ee369ac79a9497a51eab67f760eabf46b5edaa",
+      "originalPdf": "../input/tsushin1-2026-b.pdf",
+      "originalPdfSha256": "413a26b3b67141778d625cb027a1ff25cab8c343efb9570c13bdd1e7e19a51aa",
+      "originalPdfPageOneBased": 15
+    },
+    {
+      "question": "B35",
+      "status": "pass_primary_verified",
+      "evidence": "原本②は『つり上げ荷重7t』。実際の荷重量7tとの混同なし。クレーン則66条の2、68条、70条の5を厚労省本文で照合し①④正しい=肢2を確認。技能講習の範囲は1t以上5t未満。最大張出しは原則と記してあり例外の無視もない。",
+      "originalImage": "review-images/2026-b-q35-1.png",
+      "originalImageSha256": "29e1b2608992d3e732f45f73dfb0f5a647e44b52e96600569bca5c75437fc1b7",
+      "originalPdf": "../input/tsushin1-2026-b.pdf",
+      "originalPdfSha256": "413a26b3b67141778d625cb027a1ff25cab8c343efb9570c13bdd1e7e19a51aa",
+      "originalPdfPageOneBased": 17
+    }
+  ],
+  "requiredCorrections": [],
+  "recommendedImprovements": [
+    {
+      "question": "B35",
+      "recommendation": "厚労省クレーン則66条の2、68条、70条の5の参照を追加できる。技能講習範囲を厳密に示すなら1t以上5t未満。"
+    },
+    {
+      "question": "A49",
+      "recommendation": "任意の明確化として「20A分岐回路」を「20Aの配線用遮断器で保護する分岐回路」とする。原問に配線用遮断器と明記されているため、現稿で誤答を生む必須修正ではない。"
+    }
+  ],
+  "primarySourcesRead": [
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74020000&dataType=0&pageNo=1",
+      "supports": [
+        "B35 66条の2",
+        "B35 68条",
+        "B35 70条の5"
+      ],
+      "status": "本文確認"
+    },
+    {
+      "url": "https://www.denkensha.co.jp/product/product02/",
+      "supports": [
+        "B31 FLR型は螺旋鋼線で吊線へのケーブル支持用"
+      ],
+      "status": "本文確認、間隔/重ね/端末の施工規範までは確認できない"
+    },
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "localFile": "reference/METI-DENGI.pdf",
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "pdfPagesOneBased": [
+        148,
+        149
+      ],
+      "status": "Official PDF downloaded normally; named pages extracted and rendered for review"
+    },
+    {
+      "url": "https://www.mlit.go.jp/gobuild/content/001879364.pdf",
+      "localFile": "reference/MLIT-DENKI.pdf",
+      "sha256": "e0bbf384320c1a21484b9a958b3da9d5e1646462632d7f27d9c80554350ad062",
+      "pdfPagesOneBased": [
+        96,
+        97
+      ],
+      "status": "Official PDF downloaded normally; named pages extracted and rendered for review"
+    }
+  ],
+  "primarySourcesUnavailable": [],
+  "limits": [
+    "既存12問の再生成はしていない。",
+    "2025は未収録のまま。2回分完成とは判断しない。",
+    "権利確認・転載許諾・公開GO・本番mergeは審査対象外。",
+    "全量機械正答照合は親タスク担当。"
+  ],
+  "followupRequiredCorrections": [],
+  "followupNotes": [
+    "MLIT資料の正確な名称は「公共建築改修工事標準仕様書（電気設備工事編）令和4年版」。一般の「公共建築工事標準仕様書」や令和7年版と誤記しないこと。",
+    "指定13問の局所査読結果であり、公開GO・権利許諾・全90問独立二重査読を意味しない。"
+  ]
+}

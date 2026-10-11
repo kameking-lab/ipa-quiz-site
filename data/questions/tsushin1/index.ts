@@ -14,6 +14,9 @@ type Item = {
   explanation: string;
   choiceExplanations: string[];
   officialReferenceUrls?: string[];
+  imageUrls?: string[];
+  imageAltTexts?: string[];
+  lastUpdated?: string;
 };
 
 type Paper = {
@@ -68,17 +71,19 @@ function toQuestions(source: Source): Question[] {
         explanation: item.explanation,
         choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]])),
         explanationCoverage: "full",
-        hasImage: false,
+        hasImage: (item.imageUrls?.length ?? 0) > 0,
+        imageUrls: item.imageUrls,
+        imageAltTexts: item.imageAltTexts,
         sourcePdfUrl: paper.questionUrl,
         sourceAnswerUrl: source.answerUrl,
-        sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級電気通信工事施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
+        sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級電気通信工事施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、添字・指数・分数を文字化。図中の情報は原本画像と併記し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
         officialReferenceUrls: item.officialReferenceUrls ?? [],
         license: "JCTC-authorized-reuse",
-        lastUpdated: "2026-09-27",
+        lastUpdated: item.lastUpdated ?? "2026-09-27",
       };
     });
   });
 }
 
-/** 令和8年度第一次検定。公式の全90問中、確認済みの12問のみ公開。 */
+/** 令和8年度第一次検定。公式のA55問・B35問、全90問の問題・正答・全肢解説を収録。 */
 export const TSUSHIN1_QUESTIONS = toQuestions(sourceJson as Source);
