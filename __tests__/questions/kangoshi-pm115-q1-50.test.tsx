@@ -1,3 +1,4 @@
+import sourceRecheck from "@/docs/evidence/nurse-am79-20261011/INTEGRATION.json";
 import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -33,7 +34,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(proof.heldIdsNotRegistered).toHaveLength(14);
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q20");
     expect(proof.heldIdsNotRegistered).toContain("kangoshi-2025-annual-pm-q28");
-    for (const held of proof.heldIdsNotRegistered.filter(id => !followup.addedIds.includes(id) && ![1,3,5,15,20,21,22,28,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
+    for (const held of proof.heldIdsNotRegistered.filter(id => !(followup.addedIds.includes(id) || sourceRecheck.resolvedStopIds.includes(id)) && ![1,3,5,15,20,21,22,28,31,32,44,45,48].some(n => id === `kangoshi-2025-annual-pm-q${n}`))) expect(KANGOSHI_QUESTIONS.some(q => q.id === held)).toBe(false);
   });
 
   it("retains all146 choice reasons and matching official keys in the original PM numbering", () => {
@@ -56,7 +57,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(filtered.filter(q => proof.addedIds.includes(q.id)).map(q => q.qNumber)).toEqual(readyNumbers);
     expect(filtered.some(q => q.type === "numeric")).toBe(false);
     const am = filterQuestions(KANGOSHI_QUESTIONS, { mode: "year", exam: "kangoshi", year: 2025, season: "annual", session: "am" });
-    expect(am.filter(q => q.qNumber <= 90)).toHaveLength(88);
+    expect(am.filter(q => q.qNumber <= 90)).toHaveLength(89);
     expect(am.some(q => q.id === "kangoshi-2025-annual-am-q90")).toBe(true);
     const html = renderToStaticMarkup(await YearPage({ params: Promise.resolve({ exam: "kangoshi", yearSeason: "2025-annual" }) }));
     const doc = new DOMParser().parseFromString(html, "text/html");
@@ -75,7 +76,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
     expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(total);
     expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(total);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am" && q.qNumber <= 90)).toHaveLength(90);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90)).toHaveLength(88);
+    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90)).toHaveLength(89);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(118);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(117);
     const choiceCount = KANGOSHI_QUESTIONS.reduce((n, q) => n + Object.keys(q.choices ?? {}).length, 0);

@@ -1,3 +1,4 @@
+import sourceRecheck from "@/docs/evidence/nurse-am79-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
@@ -16,10 +17,10 @@ const byId = new Map(KANGOSHI_QUESTIONS.map(q => [q.id, q]));
 const shaLf = (bytes: Buffer) => createHash("sha256").update(bytes.toString("utf8").replace(/\r\n/g, "\n")).digest("hex");
 
 describe("nursing latest two examinations: eight saved-draft follow-ups", () => {
-  it("preserves all 464 existing originals and excludes PR683 and every individual STOP", () => {
-    expect(KANGOSHI_QUESTIONS).toHaveLength(472);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(472);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q => `${q.year}:${q.session}:${q.qNumber}`)).size).toBe(472);
+  it("preserves all 464 existing originals and excludes PR683 and every unresolved individual STOP", () => {
+    expect(KANGOSHI_QUESTIONS).toHaveLength(473);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(473);
+    expect(new Set(KANGOSHI_QUESTIONS.map(q => `${q.year}:${q.session}:${q.qNumber}`)).size).toBe(473);
     for (const row of proof.previous464ObjectHashes) expect(nurseObjectHash(byId.get(row.id)), row.id).toBe(row.sha256);
     expect(lfProof.originalFileHashes).toHaveLength(proof.originalFileHashes.length);
     for (const row of proof.originalFileHashes) {
@@ -27,11 +28,11 @@ describe("nursing latest two examinations: eight saved-draft follow-ups", () => 
       expect(pinned.originalRecordedWindowsSha256).toBe(row.sha256);
       expect(shaLf(readFileSync(row.path)), row.path).toBe(pinned.lfSha256);
     }
-    for (const id of [...proof.existingPr683Ids, ...proof.stopIdsUnchanged]) expect(byId.has(id), id).toBe(false);
+    for (const id of [...proof.existingPr683Ids, ...proof.stopIdsUnchanged.filter(id => !sourceRecheck.resolvedStopIds.includes(id))]) expect(byId.has(id), id).toBe(false);
     expect(additions).toHaveLength(8);
     expect(additions.reduce((n,q) => n+Object.keys(q.choices).length,0)).toBe(35);
-    expect(KANGOSHI_QUESTIONS.reduce((n,q) => n+Object.keys(q.choices ?? {}).length,0)).toBe(1953);
-    for (const [year,session,count] of [[2024,"am",119],[2024,"pm",117],[2025,"am",118],[2025,"pm",118]] as const)
+    expect(KANGOSHI_QUESTIONS.reduce((n,q) => n+Object.keys(q.choices ?? {}).length,0)).toBe(1958);
+    for (const [year,session,count] of [[2024,"am",119],[2024,"pm",117],[2025,"am",119],[2025,"pm",118]] as const)
       expect(KANGOSHI_QUESTIONS.filter(q => q.year===year && q.session===session)).toHaveLength(count);
   });
 

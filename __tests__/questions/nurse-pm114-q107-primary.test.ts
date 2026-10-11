@@ -1,3 +1,4 @@
+import sourceRecheck from "@/docs/evidence/nurse-am79-20261011/INTEGRATION.json";
 import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
@@ -9,15 +10,15 @@ describe("114th nursing PM Q107 primary-source adoption", () => {
   const question = KANGOSHI_QUESTIONS.find(q => q.id === proof.identity);
 
   it("adds only Q107 and preserves all 463 previously registered objects", () => {
-    expect(KANGOSHI_QUESTIONS).toHaveLength(proof.newCount + followup.newPreparedAdditionCount);
-    expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(proof.newCount + followup.newPreparedAdditionCount);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(proof.newCount + (followup.newPreparedAdditionCount + sourceRecheck.addedOriginals));
+    expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(proof.newCount + (followup.newPreparedAdditionCount + sourceRecheck.addedOriginals));
     expect(
       KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0),
-    ).toBe(proof.newChoices + followup.newPreparedChoiceCount);
-    expect(nurseObjectHash(KANGOSHI_QUESTIONS.filter(q => q.id !== proof.identity && !followup.addedIds.includes(q.id)))).toBe(
+    ).toBe(proof.newChoices + (followup.newPreparedChoiceCount + sourceRecheck.addedChoices));
+    expect(nurseObjectHash(KANGOSHI_QUESTIONS.filter(q => q.id !== proof.identity && !followup.addedIds.includes(q.id) && !sourceRecheck.resolvedStopIds.includes(q.id)))).toBe(
       proof.oldCorpusCanonicalSha256,
     );
-    for (const id of proof.individualStopsRetained) {
+    for (const id of proof.individualStopsRetained.filter(id => !sourceRecheck.resolvedStopIds.includes(id))) {
       expect(KANGOSHI_QUESTIONS.some(q => q.id === id), id).toBe(false);
     }
   });

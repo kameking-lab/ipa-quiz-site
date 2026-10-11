@@ -1,3 +1,4 @@
+import sourceRecheck from "@/docs/evidence/nurse-am79-20261011/INTEGRATION.json";
 import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -28,13 +29,13 @@ describe("nine separately verified nursing PM originals", () => {
     expect(proof.addedIds).toEqual(expectedIds);
     expect(candidates.map(question => question.id)).toEqual(expectedIds);
     expect(receipts.map(receipt => receipt.id)).toEqual(expectedIds);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12 + followup.newPreparedChoiceCount);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3 + (followup.newPreparedAdditionCount + sourceRecheck.addedOriginals));
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3 + (followup.newPreparedAdditionCount + sourceRecheck.addedOriginals));
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12 + (followup.newPreparedChoiceCount + sourceRecheck.addedChoices));
     expect(proof.totalOriginals).toBe(451);
     expect(proof.totalChoices).toBe(1863);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
-    for (const id of proof.keptUnregistered) if (!followup.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
+    for (const id of proof.keptUnregistered) if (!(followup.addedIds.includes(id) || sourceRecheck.resolvedStopIds.includes(id))) expect(byId.has(id), id).toBe(false);
   });
 
   it("matches official original text, all choices, accepted keys, section and source per ID", () => {
@@ -91,10 +92,10 @@ describe("nine separately verified nursing PM originals", () => {
 
   it("shows exact partial coverage and continues to exclude the officially unscored original", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前237問と午後235問");
-    expect(home).toContain("計472原問");
-    expect(home).toContain("全1953肢");
-    expect(home).toContain("第115回は午前118問・午後118問、第114回は午前119問・午後117問");
+    expect(home).toContain("午前238問と午後235問");
+    expect(home).toContain("計473原問");
+    expect(home).toContain("全1958肢");
+    expect(home).toContain("第115回は午前119問・午後118問、第114回は午前119問・午後117問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(118);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(117);
