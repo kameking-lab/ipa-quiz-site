@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -6,7 +6,7 @@ import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
 import officialKeys from "@/docs/evidence/judo-seifukushi-latest-two-20261011/official-keys.json";
 import assets from "@/docs/evidence/judo-seifukushi-latest-two-20261011/assets.json";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
-import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
@@ -124,6 +124,25 @@ describe("柔道整復師 第34・33回の全原問", () => {
     expect(wronglyNamedAppendix).toHaveLength(8);
     expect(wronglyNamedAppendix.every(a => a.questionId.includes("-pm-"))).toBe(true);
   });
+
+  it.each(["judo-seifukushi-2025-annual-am-q83", "judo-seifukushi-2025-annual-pm-q19"])(
+    "keeps official answer numbers consistent with explanation prose when shuffling %s",
+    (id) => {
+      const random = vi.spyOn(Math, "random").mockReturnValue(0);
+      try {
+        const original = byId.get(id)!;
+        const shuffled = shuffleChoices(original);
+        expect(shuffled.officialAnswerNumber).toBe("2");
+        expect(choiceDisplayLabel(shuffled.exam, shuffled.answer as ChoiceKey)).toBe(shuffled.officialAnswerNumber);
+        expect(shuffled.choices).toEqual(original.choices);
+        expect(shuffled.choiceExplanations).toEqual(original.choiceExplanations);
+        expect(shuffled.explanation).toBe(original.explanation);
+        expect(shuffled.imageUrls).toEqual(original.imageUrls);
+      } finally {
+        random.mockRestore();
+      }
+    },
+  );
 
   it("登録と遅延ローダが500件を提供する", async () => {
     expect(getRegisteredExamCodes()).toContain("judo-seifukushi");
