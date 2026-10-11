@@ -20,6 +20,10 @@ export function DescriptiveAnswerCard({
   onNext,
   nextLabel = "次の問題へ",
 }: Props) {
+  const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
+    /^公式問題に基づく独自解答例（法務省の公式解答ではありません）\s*/,
+    "",
+  );
   return (
     <section aria-label="記述の独自解答例" className="space-y-4 rounded-2xl border border-border bg-card p-5">
       <p className="text-sm font-semibold">
@@ -31,7 +35,7 @@ export function DescriptiveAnswerCard({
       </p>
       <details open={defaultOpen} onToggle={(event) => onReveal?.(event.currentTarget.open)}>
         <summary className="min-h-11 cursor-pointer py-3 font-semibold">独自解答例と作図例を確認する</summary>
-        <Markdown>{question.modelAnswer ?? String(question.answer)}</Markdown>
+        <Markdown>{modelAnswer}</Markdown>
         {question.scoringCriteria && (
           <div className="mt-5 border-t border-border pt-4">
             <h3 className="font-semibold">自己確認の観点（独自作成）</h3>
