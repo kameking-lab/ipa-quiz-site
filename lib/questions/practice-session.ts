@@ -1,7 +1,7 @@
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "pm", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "required", "theory", "practical"];
+export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "pm", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "required", "theory", "practical"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
@@ -15,6 +15,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "shakai") return "kyotsu";
   if (exam === "seishin") return "senmon";
   if (exam === "hoikushi") return "hoiku-genri";
+  if (exam === "chusho-kigyo-shindanshi") return "keizai";
   return "am";
 }
 
@@ -23,7 +24,7 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session): string {
-  return ({ am: "午前", am1: "午前I（共通）", am2: "午前II（専門）", "kamoku-a": "科目A", "kamoku-b": "科目B", pm: "午後", pm1: "午後I", pm2: "午後II", gakka: "学科", rousai: "労災", koyou: "雇用保険", kenpo: "健康保険", kounen: "厚生年金", kokunen: "国民年金", ippan: "一般常識", sentaku: "選択式", required: "必須問題", theory: "薬学理論問題", practical: "薬学実践問題", riron: "理論", denryoku: "電力", kikai: "機械", houki: "法規", "mondai-a": "問題A", "mondai-b": "問題B", kyotsu: "共通科目", senmon: "専門科目", "hoiku-genri": "保育原理", "kyoiku-genri": "教育原理", "shakaiteki-yougo": "社会的養護", "kodomo-katei-fukushi": "子ども家庭福祉", "shakai-fukushi": "社会福祉", "hoiku-shinrigaku": "保育の心理学", "kodomo-hoken": "子どもの保健", "kodomo-shokueiyou": "子どもの食と栄養", "hoiku-jisshu-riron": "保育実習理論" })[session];
+  return ({ am: "午前", am1: "午前I（共通）", am2: "午前II（専門）", "kamoku-a": "科目A", "kamoku-b": "科目B", pm: "午後", pm1: "午後I", pm2: "午後II", gakka: "学科", rousai: "労災", koyou: "雇用保険", kenpo: "健康保険", kounen: "厚生年金", kokunen: "国民年金", ippan: "一般常識", sentaku: "選択式", required: "必須問題", theory: "薬学理論問題", practical: "薬学実践問題", riron: "理論", denryoku: "電力", kikai: "機械", houki: "法規", "mondai-a": "問題A", "mondai-b": "問題B", kyotsu: "共通科目", senmon: "専門科目", "hoiku-genri": "保育原理", "kyoiku-genri": "教育原理", "shakaiteki-yougo": "社会的養護", "kodomo-katei-fukushi": "子ども家庭福祉", "shakai-fukushi": "社会福祉", "hoiku-shinrigaku": "保育の心理学", "kodomo-hoken": "子どもの保健", "kodomo-shokueiyou": "子どもの食と栄養", "hoiku-jisshu-riron": "保育実習理論", keizai: "経済学・経済政策", zaimu: "財務・会計", kigyo: "企業経営理論", unei: "運営管理（オペレーション・マネジメント）", "keiei-houmu": "経営法務", "keiei-joho": "経営情報システム", "chusho-seisaku": "中小企業経営・中小企業政策" })[session];
 }
 
 export function quizBackHref({ exam, mode, returnTo }: { exam: string; mode?: string; returnTo?: string }): string {
