@@ -1,5 +1,5 @@
 {
-  "checkedAtUtc": "2026-10-11T06:59:55.906606+00:00",
+  "checkedAtUtc": "2026-10-11T07:07:38.105Z",
   "originals": 160,
   "choiceReasons": 651,
   "originalTextAudit": "PASS",
@@ -28,5 +28,26 @@
     "pnpm media:status",
     "e-Gov patent-law XML",
     "JPO two PCT URLs"
-  ]
+  ],
+  "hostedPreparedTests": {
+    "commit": "938cd0474c819fc2f03f9cabf5435a03edc370fb",
+    "url": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38119985497",
+    "passed": 24,
+    "failed": 0,
+    "verdict": "PASS",
+    "finalReviewFixCommitRequiresNewRun": true
+  },
+  "targetedReview": {
+    "originalQuestions": 10,
+    "choiceExplanations": 32,
+    "numericQuestions": 2,
+    "appliedExplanationPatches": 5
+  },
+  "afterTargetedFixes": {
+    "directValidator": "PASS",
+    "originalTextAudit": "PASS",
+    "originalQuestions": 160,
+    "choiceExplanations": 651,
+    "originalQuestionOrOfficialAnswerChanged": false
+  }
 }
