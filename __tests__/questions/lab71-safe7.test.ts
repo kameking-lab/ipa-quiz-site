@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { RINSHO_KENSAGISHI_QUESTIONS } from "@/data/questions/rinsho-kensagishi";
 import batch2 from "@/data/questions/rinsho-kensagishi/2025-annual-pm-batch2.json";
 import receipt from "@/data/questions/rinsho-kensagishi/source-manifest-batch2.json";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 const official: Record<number, string> = { 32: "4", 35: "3", 36: "3", 39: "4", 41: "24", 44: "1", 45: "2" };
@@ -9,11 +10,14 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.year === 2025);
 
 describe("lab71 seven remaining safe saved originals", () => {
-  it("adds only the leased seven IDs to the ten prior originals", async () => {
+  it("preserves the seven saved originals while both runtime loaders retain only accepted IDs", async () => {
     expect(batch2.map(q => q.qNumber)).toEqual([32, 35, 36, 39, 41, 44, 45]);
     expect(batch2.map(q => q.id)).toEqual(Object.keys(official).map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
-    expect(lab2025).toHaveLength(17);
-    expect(new Set(lab2025.map(q => q.id)).size).toBe(17);
+    expect(lab2025).toHaveLength(10);
+    expect(new Set(lab2025.map(q => q.id)).size).toBe(10);
+    const held = new Set(batch2.map(q => q.id));
+    expect(RINSHO_KENSAGISHI_QUESTIONS.some(q => held.has(q.id))).toBe(false);
+    expect(ALL_QUESTIONS.some(q => held.has(q.id))).toBe(false);
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(receipt.individualHoldReleaseCount).toBe(0);
     expect(receipt.originals).toBe(7);
