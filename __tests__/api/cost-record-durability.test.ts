@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import type { Question } from "@/lib/questions/types";
 
 /**
  * コスト計上の永続化（fire-and-forget 禁止）。
@@ -33,6 +34,32 @@ vi.mock("@/lib/ai/cost-guard", async () => {
   };
 });
 
+// Billing durability is independent of the full published question corpus.
+// Keep the real route, prompt assembly and stream; replace only the question lookup.
+const copilotQuestion: Question = {
+  id: "ap-2023h-am-q1",
+  exam: "ap",
+  session: "am",
+  year: 2023,
+  season: "spring",
+  qNumber: 1,
+  type: "multiple-choice",
+  category: "テクノロジ",
+  topicTags: ["アルゴリズム"],
+  difficulty: 3,
+  question: "テスト問題本文。",
+  choices: { ア: "選択肢ア", イ: "選択肢イ", ウ: "選択肢ウ", エ: "選択肢エ" },
+  answer: "ア",
+  explanation: "解説テキスト。",
+  hasImage: false,
+  sourcePdfUrl: "https://example.com/test.pdf",
+  license: "IPA-public",
+};
+vi.mock("@/lib/questions/load", () => ({
+  getQuestionById: (id: string) => id === copilotQuestion.id ? copilotQuestion : undefined,
+  getAllQuestions: () => [copilotQuestion],
+}));
+
 const streamChat = vi.fn();
 vi.mock("@/lib/ai/provider", async () => {
   const actual = await vi.importActual<typeof import("@/lib/ai/provider")>("@/lib/ai/provider");
@@ -60,6 +87,25 @@ function installPendingRecord(): { settled: () => boolean } {
   return { settled: () => settled };
 }
 
+function installBlockedRecord() {
+  let settled = false;
+  let resolveStarted!: () => void;
+  let completeWrite!: () => void;
+  const started = new Promise<void>((resolve) => { resolveStarted = resolve; });
+  recordAiCost.mockImplementation(() => {
+    resolveStarted();
+    return new Promise<void>((resolve) => { completeWrite = resolve; });
+  });
+  return {
+    started,
+    settled: () => settled,
+    release: () => {
+      settled = true;
+      completeWrite();
+    },
+  };
+}
+
 function stubStream(text: string) {
   streamChat.mockImplementation(async function* () {
     yield text;
@@ -77,17 +123,21 @@ async function drain(res: Response): Promise<void> {
 
 beforeEach(() => {
   vi.clearAllMocks();
-  delete process.env.KV_REST_API_URL;
-  delete process.env.KV_REST_API_TOKEN;
-  delete process.env.GEMINI_MODEL_GRADING;
+  // A developer/CI API key must not switch this unit test to a real paid provider.
+  vi.stubEnv("GEMINI_API_KEY", undefined);
+  vi.stubEnv("KV_REST_API_URL", undefined);
+  vi.stubEnv("KV_REST_API_TOKEN", undefined);
+  vi.stubEnv("GEMINI_MODEL_GRADING", undefined);
+  vi.stubEnv("SLACK_WEBHOOK_URL", undefined);
+  vi.stubEnv("SENTRY_DSN", undefined);
   // RAG コーパス構築（14k 件）は数秒かかり、ここで検証したい契約とは無関係。
   // 並列実行時にテストタイムアウトを踏むだけなので切っておく。
-  process.env.COPILOT_RAG_ENABLED = "false";
+  vi.stubEnv("COPILOT_RAG_ENABLED", "false");
   checkMonthlyCostCap.mockResolvedValue({ allowed: true, totalJpy: 0, capJpy: 50_000 });
 });
 
 afterEach(() => {
-  delete process.env.COPILOT_RAG_ENABLED;
+  vi.unstubAllEnvs();
   vi.resetModules();
 });
 
@@ -188,7 +238,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
   });
 
   it("/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
-    const pending = installPendingRecord();
+    const pending = installBlockedRecord();
     stubStream("解説テキストです。");
     const { POST } = await import("@/app/api/copilot/route");
 
@@ -197,36 +247,30 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
         method: "POST",
         headers: { "content-type": "application/json", "x-forwarded-for": "10.9.0.4" },
         body: JSON.stringify({
-          question: {
-            id: "ap-2023h-am-q1",
-            exam: "ap",
-            session: "am",
-            year: 2023,
-            season: "spring",
-            qNumber: 1,
-            type: "multiple-choice",
-            category: "テクノロジ",
-            topicTags: ["アルゴリズム"],
-            difficulty: 3,
-            question: "テスト問題本文。",
-            choices: { ア: "選択肢ア", イ: "選択肢イ", ウ: "選択肢ウ", エ: "選択肢エ" },
-            answer: "ア",
-            explanation: "解説テキスト。",
-            hasImage: false,
-            sourcePdfUrl: "https://example.com/test.pdf",
-            license: "IPA-public",
-          },
+          question: copilotQuestion,
           messages: [{ role: "user", content: "この問題を解説して" }],
         }),
       }),
     );
     expect(res.status).toBe(200);
-    await drain(res);
+    expect(res.headers.get("X-Provider")).toBe("gemini");
+    expect(checkMonthlyCostCap).toHaveBeenCalledTimes(1);
 
-    expect(recordAiCost).toHaveBeenCalledTimes(1);
-    // copilot は逐次ストリームの遅延に救われて本番では偶然載っていたが、
-    // 保証はどこにも無い。短い応答ほど失われやすい。
+    let streamClosed = false;
+    const finished = drain(res).then(() => { streamClosed = true; });
+    try {
+      await pending.started;
+      // Let a premature close reach the reader while the write is still blocked.
+      await new Promise<void>((resolve) => setTimeout(resolve, 0));
+      expect(recordAiCost).toHaveBeenCalledTimes(1);
+      expect(pending.settled()).toBe(false);
+      expect(streamClosed).toBe(false);
+    } finally {
+      pending.release();
+      await finished;
+    }
     expect(pending.settled()).toBe(true);
+    expect(streamClosed).toBe(true);
   });
 });
 
