@@ -129,6 +129,7 @@ export function examTopTitle(exam: ExamCode): string {
 }
 
 export function examTopDescription(exam: ExamCode, questionCount: number): string {
+  if (exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return examMetaDescription(exam, questionCount);
   const base = EXAM_DESCRIPTIONS[exam] ?? "";
   return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
@@ -185,6 +186,8 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   "sagyo-ryohoshi": "作業療法士国家試験",
   "shino-kunrenshi": "視能訓練士国家試験",
   "rinsho-kogishi": "臨床工学技士国家試験",
+  "rinsho-kensagishi": "臨床検査技師国家試験",
+  "shinryo-hoshasengishi": "診療放射線技師国家試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -291,6 +294,8 @@ const EXAM_META_DESC_DIVERSE: Record<
   "sagyo-ryohoshi": (c) => `作業療法士国家試験の第61・60回午前・午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
   "rinsho-kogishi": (c) => `臨床工学技士国家試験の第39・38回の午前・午後から、原本・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問題は未収録です。`,
   "shino-kunrenshi": (c) => `視能訓練士国家試験の第56・55回午前・午後から原文・公式正答・全肢解説を確認した${c}問を部分収録。最新2回の全問は未収録です。`,
+  "rinsho-kensagishi": (c) => `臨床検査技師国家試験の第71回（2025年実施）午後から、公式原文・正答・全五肢の解説を確認した${c}原問を部分収録。第72・71回の全問は未完備です。`,
+  "shinryo-hoshasengishi": (c) => `診療放射線技師国家試験の第77回（2025年実施）午後から、公式原文・正答・全五肢の解説を確認した${c}原問を部分収録。第78・77回の全問は未完備です。`,
 };
 
 export function examMetaDescription(
@@ -305,7 +310,7 @@ export function examMetaDescription(
   const countFmt = questionCount.toLocaleString("ja-JP");
 
   // 一部収録の資格は「全○期分」と読める汎用文言を使わない。
-  if (exam === "sharoushi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
+  if (exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi") return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
   }
