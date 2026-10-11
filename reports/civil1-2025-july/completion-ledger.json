@@ -258,7 +258,7 @@
     "2026-july-a.json": "b55281773b5c14242058bad0f1212e919224875e8ce7314f719c544d2721b814",
     "2026-july-b.json": "3fd763fa27f464d5b4870c03156fb1b4dcb84728208a6ee90b45d10466f979c8"
   },
-  "newDraftCandidateSha256": "9edb4749741928373bda1d75307c1e03515c69b099ac953a69ced1b396f8fca6",
+  "newDraftCandidateSha256": "990da6be6bf58d7f8e4b4a37c01584bad390b828d79a37c10d4e6966b0dd8ea0",
   "sourceTranscriptionSha256": "37c9084ac7d822a9750131d20c190b46b99d7b9b47853fed6c3209a0f3aa95d5",
   "figures": 9,
   "duplicateOriginals": 0,
@@ -267,5 +267,22 @@
   "authorModel": "gpt-6-sol",
   "firstPartyOpusAcceptanceReceipt": null,
   "figurePromotionCompleted": false,
-  "sourceAcquisitionReport": "reports/civil1-2025-july/source-acquisition.json"
+  "sourceAcquisitionReport": "reports/civil1-2025-july/source-acquisition.json",
+  "previousCandidateCheckoutRawSha256": "9edb4749741928373bda1d75307c1e03515c69b099ac953a69ced1b396f8fca6",
+  "newDraftCandidateLfSha256": "e7c4671d5e5c81d3879e851485a0579b56e0763d95437374bb0b05fa641b169b",
+  "sourceTranscriptionLfSha256": "1c39450b7ad17c705429c8dabbbc47cb77e91300202e31465d91538118bf6377",
+  "hashSemantics": {
+    "originalDataSha256": "unchanged Windows checkout raw bytes (CRLF); use originalDataLfSha256 across platforms",
+    "previousCandidateCheckoutRawSha256": "pre-revision Windows checkout raw bytes (CRLF)",
+    "newDraftCandidateSha256": "current writer output raw bytes; canonical LF hash is separately recorded",
+    "sourceTranscriptionSha256": "original Windows checkout raw bytes (CRLF); use sourceTranscriptionLfSha256 across platforms",
+    "canonicalLfHashes": "UTF-8 bytes with CRLF normalized to LF; match committed Git blob content"
+  },
+  "primaryEvidenceReports": [
+    "primary-evidence/a1-a25-primary-evidence.json",
+    "primary-evidence/a26-a50-primary-evidence.json",
+    "primary-evidence/a51-b9-primary-evidence.json",
+    "primary-evidence/b10-b35-primary-evidence.json"
+  ],
+  "primaryEvidenceAcceptance": false
 }

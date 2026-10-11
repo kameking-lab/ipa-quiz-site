@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T01:42:59.306365+00:00",
+  "recordedAt": "2026-10-11T01:59:00.476118+00:00",
   "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
   "latestMainObserved": "52953d4e66389b492e13f5d9040fffbb581755a1",
   "sourceCounts": {
@@ -66,6 +66,15 @@
         "tests": "1 ⎯⎯⎯⎯⎯⎯⎯"
       }
     },
+    "finalCivil1Tests": {
+      "command": "pnpm exec vitest run __tests__/civil1-source-reader.test.ts __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "summary": {
+        "files": "3 passed (3)",
+        "tests": "13 passed (13)"
+      },
+      "evidence": "Focused run after source-backed explanation corrections and canonical LF checksum regression."
+    },
     "defaultLocalBuild": {
       "command": "pnpm build",
       "exitCode": 1,
@@ -82,10 +91,15 @@
     "sessionId": "session_018eA8pp9NiMx6V26TJX7Pgs",
     "url": "https://claude.ai/code/session_018eA8pp9NiMx6V26TJX7Pgs",
     "creationConfirmed": true,
-    "resultConfirmed": false,
-    "verificationCommit": null,
+    "resultConfirmed": true,
+    "verificationCommit": "e825ce7982c07545a7014fbf346ea611520e4db1",
+    "report": "cloud-verification.json",
+    "sourceCommit": "3173dfbd386d06bc928424697f0f233b361e320b",
+    "buildExitCode": 0,
+    "fullTestFailureReproducedOnParentCommit": true,
+    "notIndependentPublicationAcceptance": true,
     "cliAttach": "not enabled for this account; stopped without teleport or auth workaround",
-    "browserView": "browser creation timed out; official View URL is queued in the calling thread"
+    "resultRetrieval": "Authorized GitHub report commit; the disabled cloud attachment was not retried"
   },
   "stoppedOperations": [
     "Get-CimInstance Win32_Process: access denied; no elevated retry",

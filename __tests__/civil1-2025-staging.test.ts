@@ -15,6 +15,7 @@ const transcription = read<{ answersA: Record<string, number>; answersB: Record<
 const ledger = read<{
   requiredOriginals: number; publicOriginals: number; acceptedNewOriginals: number;
   remainingUnpublishedOriginals: number; originalDataLfSha256: Record<string, string>;
+  newDraftCandidateLfSha256: string; sourceTranscriptionLfSha256: string;
 }>("completion-ledger.json");
 
 describe("civil1 2025 held staging", () => {
@@ -52,6 +53,13 @@ describe("civil1 2025 held staging", () => {
   it("pins unchanged public data and all nine saved figure crops by checksum", () => {
     for (const [file, expected] of Object.entries(ledger.originalDataLfSha256)) {
       const normalized = readFileSync(join(process.cwd(), "data/questions/civil1", file), "utf8").replace(/\r\n/g, "\n");
+      expect(createHash("sha256").update(normalized).digest("hex")).toBe(expected);
+    }
+    for (const [file, expected] of [
+      ["candidate-questions.json", ledger.newDraftCandidateLfSha256],
+      ["source-copy-transcription.json", ledger.sourceTranscriptionLfSha256],
+    ] as const) {
+      const normalized = readFileSync(join(reportDir, file), "utf8").replace(/\r\n/g, "\n");
       expect(createHash("sha256").update(normalized).digest("hex")).toBe(expected);
     }
     const figures = read<Record<string, { path: string; sha256: string; officialHostVerified: boolean }>>("figures-ledger.json");

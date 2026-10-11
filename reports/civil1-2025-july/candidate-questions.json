@@ -585,15 +585,22 @@
         "適当。ハンマグラブの掘削がスタンドパイプより先行すると、孔壁の拘束が不足し地盤を緩めたり崩壊させたりする。この区別が選択肢の判定点となる。"
       ],
       "status": "HOLD",
-      "issue": "公式ホスト上の原本・正答の照合は未完了。公開採用不可。 各肢の専門基準について一次技術資料との逐条照合を追加する。 日本基礎建設協会「場所打ちコンクリート杭工法」のオールケーシング工法・リバース工法の各「工法の概要」で施工手順を確認。コンクリート流動性等の細目は未照合。",
+      "issue": "肢2のケーシング先端をコンクリート中に保持する規定を国交省仕様書で局所確認。肢1・3・4の全論点、公式出題原本同一性と独立受入れは未了のためHOLD。",
       "hasFigure": false,
       "figureDescription": "",
       "officialReferenceUrls": [
-        "https://www.kisokyo.or.jp/activity/index/3"
+        "https://www.kisokyo.or.jp/activity/index/3",
+        "https://www.mlit.go.jp/common/001472794.pdf"
       ],
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "technicalIssue": "肢2のケーシング先端をコンクリート中に保持する規定を国交省仕様書で局所確認。肢1・3・4の全論点、公式出題原本同一性と独立受入れは未了のためHOLD。",
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "A",
@@ -896,15 +903,20 @@
         "正しい。砂礫基礎の最終仕上げ層では重機の履帯が密実な地盤を乱しやすい。仕上げ面付近の約0.5 mは人力掘削として良好な支持状態を保つ。"
       ],
       "status": "HOLD",
-      "issue": "公式ホストの問題PDF確認、独立した解答照合、技術基準の個別条項照合は未完了。該当論点の一次技術資料URLは未確認。",
+      "issue": "肢2の『取り除いて処理する』という現解説の断定は一次資料で裏付けられていない。大転石の存置条件と処理方法を確認するまでHOLD。民間解説の2/3という数値は採用していない。公式原本同一性・独立受入れも未了。",
       "hasFigure": false,
       "figureDescription": null,
       "officialReferenceUrls": [],
       "sourceIssue": "実施機関の公式掲載元PDFと公式正答表の照合、独立査読が未完了。",
-      "technicalIssue": "選択肢4肢の技術基準の個別照合と独立査読が未了。",
+      "technicalIssue": "肢2の『取り除いて処理する』という現解説の断定は一次資料で裏付けられていない。大転石の存置条件と処理方法を確認するまでHOLD。民間解説の2/3という数値は採用していない。公式原本同一性・独立受入れも未了。",
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "A",
@@ -1762,21 +1774,30 @@
       "officialAnswerNumber": 1,
       "category": "下水道",
       "topic": "薬液注入工事の施工管理",
-      "explanation": "誤りは1とされるが、監視井戸の距離・本数・監視期間に関する一次基準の照合が必要である。数値の断定を保留する。",
+      "explanation": "誤りは1。暫定指針4-2では、注入箇所からおおむね10m以内に少なくとも数箇所の採水地点を設ける。観測井による採水を基本とし、状況に応じ既存井戸も利用できる。肢3・4の工法比較と調合水基準は別途照合が残るため、公開採用は保留する。",
       "choiceExplanations": [
-        "誤り。注入箇所から20 m以内に複数井戸を必ず設けるという一律の義務付けが問題点である。監視計画は地下水の流向や周辺井戸など現地条件を踏まえて定める。",
-        "正しいとされる。大規模な薬液注入では水ガラス原料の使用量を積算流量で把握し、注入量の管理・記録と照合する。500 kLという条件は基準原文で再確認する。",
+        "誤り。暫定指針4-2の基準は20mではなく、注入箇所からおおむね10m以内に少なくとも数箇所の採水地点を設けることである。観測井を基本とし、状況に応じ既存井戸も利用できる。工事終了後も指針4-3による監視が必要となる。",
+        "正しい。国交省の管理資料は注入量500kL以上を大規模注入工事とし、プラントのタンクとミキサーの間に流量積算計を設ける。これにより、水ガラス等の薬液材料の日使用量等を管理する。量の条件と計測位置を区別して把握する。",
         "正しいとされる。大深度削孔では工法と削孔装置の違いが精度に影響する。選択肢の優劣は施工条件にも関わるため、工法資料で再照合する。",
         "正しい。調合水には水道水を原則として使用し、代替水を使うときは水質を確認する。pH 5.8〜8.6という範囲と扱いは、基準資料で再確認する。"
       ],
       "status": "HOLD",
-      "issue": "薬液注入の距離・量・削孔精度・水質の一次基準を未確認。",
+      "issue": "肢1の10m基準と肢2の500kL・計測位置は公的資料で局所確認。肢3の削孔精度比較、肢4の調合水基準、公式出題原本同一性と独立受入れは未確認。",
       "hasFigure": false,
       "figureDescription": "",
-      "officialReferenceUrls": [],
+      "officialReferenceUrls": [
+        "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+        "https://www.mlit.go.jp/common/001197595.pdf"
+      ],
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "technicalIssue": "肢1の10m基準と肢2の500kL・計測位置は公的資料で局所確認。肢3の削孔精度比較、肢4の調合水基準、公式出題原本同一性と独立受入れは未確認。",
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "A",
@@ -2018,24 +2039,31 @@
       "officialAnswerNumber": 2,
       "category": "河川法",
       "topic": "河川区域内の工事手続",
-      "explanation": "誤りは2。既設の取水施設の機能維持に必要な、取水口付近の堆積土砂の撤去は河川法上の許可対象から除かれる場合がある。他の三つは占用・工作物・土地形状変更を伴う。",
+      "explanation": "取得した正答表は2を正答としている。許可不要の例外には、河川法26条1項の許可を受けて設置された取水・排水施設の機能維持という条件がある。選択肢2はその許可済みの前提を明示していないため、無条件に許可不要とは説明せず、原本と出題解釈の照合まで保留する。",
       "choiceExplanations": [
         "正しい。一時的な資材置き場でも河川区域内の土地を排他的に使用するなら、河川法に基づく土地占用の許可が必要となる。仮設であることだけでは手続が免除されない。",
-        "誤り。既設取水施設の機能維持のため、取水口付近の堆積土砂を撤去する行為は、河川法上の許可を要しない例外として扱われる。一般の土砂採取と区別する。",
+        "誤りとされる。許可不要の土砂排除の例外は、河川法26条1項の許可を受けて設置された取水・排水施設の機能維持に限られる。選択肢は許可済み施設という前提を明示していないため、既設であれば常に許可不要とする説明は避け、原本と解釈の照合を要する。",
         "正しい。河川区域内の上空に電線や通信ケーブルを設けることは、河川区域の空間の占用や工作物設置に当たる。土地に直接触れなくても河川管理者の許可が必要である。",
         "正しい。河川区域の民有地でも、掘削や盛土により土地の形状を変える行為には河川管理上の規制が及ぶ。所有地であることだけを理由に許可を省略できない。"
       ],
       "status": "HOLD",
-      "issue": "河川法施行令15条の4の例外は、法26条1項許可を受けた取水施設に限定される。設問の「設置されている」にその条件が明示されないため、適用範囲を確認する。",
+      "issue": "河川法施行令15条の4の例外要件を公的手引で局所確認した。法26条1項の許可を受けた施設という条件が設問に明示されないため、原本・正答解釈と独立受入れの照合までHOLD。",
       "hasFigure": false,
       "figureDescription": "",
       "officialReferenceUrls": [
         "https://laws.e-gov.go.jp/law/339AC0000000167",
-        "https://laws.e-gov.go.jp/law/340CO0000000014"
+        "https://laws.e-gov.go.jp/law/340CO0000000014",
+        "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240"
       ],
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "technicalIssue": "河川法施行令15条の4の例外要件を公的手引で局所確認した。法26条1項の許可を受けた施設という条件が設問に明示されないため、原本・正答解釈と独立受入れの照合までHOLD。",
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "A",
@@ -2213,19 +2241,27 @@
       "topic": "公共工事標準請負契約約款の条件変更",
       "explanation": "正答は3。約款の確認請求対象は設計図書の不一致、不明確、現場条件との差異などである。設計図書に定めがない施工方法や仮設は原則受注者の裁量事項。",
       "choiceExplanations": [
-        "該当する。図面、仕様書、現場説明書、質問回答書の内容が一致しなければ、どの指示に従うべきか判断できない。受注者は監督員に通知して確認を求める。",
+        "該当する。設計図書の内容が一致しない場合は監督員への通知・確認請求の対象となる。ただし約款第18条は、図書の優先順位が定められている場合を除いている。設問の一般的な場合と、この留保条件を区別する必要がある。",
         "該当する。設計図書の表示が不明確な場合は、受注者の独断で解釈すると手戻りや契約上の争いにつながる。監督員に通知し、設計条件の確認を請求する。",
         "該当しない。契約書と設計図書に特定の定めがない仮設・施工方法は、原則として受注者が責任をもって定める。明示されていないこと自体は条件変更の確認請求事由でない。",
         "該当する。現場の地形、地質、湧水などが設計図書に示された施工条件と違う場合、工程や費用に影響する。受注者は差異を通知し監督員の確認を求める。"
       ],
       "status": "HOLD",
-      "issue": "公共工事標準請負契約約款の一次本文を未確認。",
+      "issue": "徳島県2025年4月公開の約款で第1条3項・第18条を局所確認。肢1の優先順位の例外を補足したが、公式出題原本同一性・出題解釈・独立受入れは未了のためHOLD。",
       "hasFigure": false,
       "figureDescription": "",
-      "officialReferenceUrls": [],
+      "officialReferenceUrls": [
+        "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf"
+      ],
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "technicalIssue": "徳島県2025年4月公開の約款で第1条3項・第18条を局所確認。肢1の優先順位の例外を補足したが、公式出題原本同一性・出題解釈・独立受入れは未了のためHOLD。",
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "B",
@@ -2280,13 +2316,21 @@
         "正しい。UAVは軽量化した機体とGNSS、慣性センサ、制御装置を利用して自律飛行できる。上空からの計測や構造物点検に活用される。"
       ],
       "status": "HOLD",
-      "issue": "国交省のICT施工技術資料を実閲覧できていない。",
+      "issue": "肢2のMCとMGの相違は近畿地方整備局の手引で直接確認。肢1・3・4の全範囲の一次資料照合と独立受入れは未了のためHOLD。",
       "hasFigure": false,
       "figureDescription": "",
-      "officialReferenceUrls": [],
+      "officialReferenceUrls": [
+        "https://www-1.kkr.mlit.go.jp/kingi/kensetsu/inf_support/bcu0ke0000002x3l-att/h3002-03.pdf"
+      ],
       "draftAuthorModel": "gpt-6-sol",
       "sourceCopyVerifiedAgainstOfficialHost": false,
-      "publicAcceptance": false
+      "publicAcceptance": false,
+      "technicalIssue": "肢2のMCとMGの相違は近畿地方整備局の手引で直接確認。肢1・3・4の全範囲の一次資料照合と独立受入れは未了のためHOLD。",
+      "primarySourceRevision": {
+        "acceptance": false,
+        "sourceIdentityVerified": false,
+        "reviewKind": "local technical evidence; held"
+      }
     },
     {
       "paper": "B",
