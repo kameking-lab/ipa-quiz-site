@@ -190,9 +190,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期10問と令和7年度後期27問を公式問題・正答と照合して収録。各回とも全40問中の一部。",
+    reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録。公式問題・正答、図表、全選択肢の解説に対応。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級造園施工管理技術検定 第一次検定（前期／後期）",
-    remainingWork: ["令和7年度後期の図表を使う問9・16・17・20・22・24・27・28・29・37〜40を確認", "令和7年度後期の未収録13問と令和8年度前期の未収録30問を確認・追加"],
+    remainingWork: ["他年度の追加"],
   },
   {
     slug: "sekou-zoen1",

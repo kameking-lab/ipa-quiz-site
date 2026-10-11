@@ -326,7 +326,7 @@ export default async function ExamYearSeasonPage({
           )}
           {code === "zoen2" && (
             <p className="mt-2 text-sm text-muted-foreground">
-              公式の全40問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では40問が全て必須です。
+              公式の全40問を、問題文・正答・図表・全選択肢の解説とともに掲載しています。実試験では40問が全て必須です。No.37〜40は正答を全て選びます。
             </p>
           )}
           {code === "zoen1" && (

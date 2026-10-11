@@ -163,7 +163,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "JCTC-attributed" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;
