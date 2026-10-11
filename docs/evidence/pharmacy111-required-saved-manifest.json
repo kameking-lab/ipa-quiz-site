@@ -1,0 +1,447 @@
+{
+  "task": "pharmacy111-required-saved-codex-20261011",
+  "baseCommit": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+  "edition": 111,
+  "examYear": 2026,
+  "session": "required",
+  "ownedIds": [
+    "yakuzaishi-2026-annual-required-q2",
+    "yakuzaishi-2026-annual-required-q45",
+    "yakuzaishi-2026-annual-required-q72",
+    "yakuzaishi-2026-annual-required-q74",
+    "yakuzaishi-2026-annual-required-q80",
+    "yakuzaishi-2026-annual-required-q81",
+    "yakuzaishi-2026-annual-required-q82",
+    "yakuzaishi-2026-annual-required-q83"
+  ],
+  "candidateOriginals": 9,
+  "acceptedOriginals": 8,
+  "acceptedChoiceExplanations": 40,
+  "reusedSavedOriginals": 8,
+  "newOriginalsAuthored": 0,
+  "reusedSavedChoiceExplanationsUnchanged": 39,
+  "boundedSourceCorrections": 1,
+  "newGenerationRequests": 0,
+  "implementationModelRequested": "gpt-6.1-sol",
+  "implementationModelReceipt": null,
+  "implementationModelEvidence": "Parent explicitly requested gpt-6.1-sol; this session has no independent runtime model receipt.",
+  "officialQuestionPdf": {
+    "url": "https://www.mhlw.go.jp/content/001677927.pdf",
+    "sha256": "01f60870a089fe8a9f9542b08145311b9a6873bb29498b8ebe5141dd4df0f3c1",
+    "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/fee47b410b1bdccb8b.pdf"
+  },
+  "officialFinalAnswerPdf": {
+    "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+    "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223",
+    "localPath": "reports/qualification-expansion-20261007/approved35/medical/sources/two-round-cache/138d1805502e0cee76.pdf"
+  },
+  "sourceVisualComparisonCompleted": true,
+  "questions": [
+    {
+      "id": "yakuzaishi-2026-annual-required-q2",
+      "officialAnswerNumber": "5",
+      "answer": "オ",
+      "sourcePhysicalPage": 2,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-q01-06-author/STRUCTURED-RESULT.json",
+        "sha256": "9aaec40f8d97019d84d5faab7222ee100fe08f9cbf0933df16fdfab1c8d9c730",
+        "receiptSha256": "9754d1a3ec356e3e30c99718f465917457bb89279cd4140fa416be5a2198185a",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/SOURCE-PACKET.json",
+        "sha256": "da10f3871ed162cfa5473ecddf48597f1f0afb602174e96e76ad942cc75e0a79"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/question-physical-02.png",
+        "sha256": "e6508f2cf9906e97104e152870ba32438de50d353c2fcda2cb011eed381447ec"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi111/answers-physical-01.png",
+        "sha256": "6f22b60105a68573857309415d6ae75568b704ea088609b751b8ec1451ce6525"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [
+        "Project formula operator and indices as Unicode ∑, subscript i and superscript 2 after direct PNG comparison; values and algebra are unchanged."
+      ],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://goldbook.iupac.org/terms/view/I03180",
+          "supports": "Concentration-basis ionic strength Ic = (1/2) sum(cB zB squared)."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q45",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "sourcePhysicalPage": 19,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q43-48-author/STRUCTURED-RESULT.json",
+        "sha256": "ac8453eed579708389991fb3d2b2a2a220986957e10402b6db3a6c480936d531",
+        "receiptSha256": "8fdf5f51da4bb7880077eaf03131c4a4b6a456745b876422ec9d8a60ff74e5b4",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/SOURCE-PACKET.json",
+        "sha256": "3ad380dedf4d7d32b4f5f700cfffb90effee3e7592838e9d77f380ed20635236"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/question-physical-19.png",
+        "sha256": "83afed04ef368f942b28ff9f0ebf8dfc1b4c7f83d4678e30b04ffb07aa2491a2"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q43-48/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670242_7225403A2023_1_06",
+          "section": "18.1",
+          "documentDate": "2024-12-02",
+          "supports": "Inulin freely traverses glomerular capillaries and is neither secreted nor reabsorbed by renal tubules; concentration inequality follows from tubular water reabsorption."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q72",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "sourcePhysicalPage": 30,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q67-72-author/STRUCTURED-RESULT.json",
+        "sha256": "79271683e1c270bd35e3b5395a9ef6e8ece28deae5121f8fab0dd94c2762e737",
+        "receiptSha256": "bae985422e39a9645e71b014ea5100444de8845a259fe148c8ac3fcc53f7be9e",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q67-72/SOURCE-PACKET.json",
+        "sha256": "ded7d619320386c483c68eeb430952d266468a52aacfae8c469342662d47864a"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q67-72/question-physical-30.png",
+        "sha256": "8571657ecc4b0d42c1b394b0ad4e9e38e66f2464039c3f0324d36fafc9f1a490"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q67-72/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [
+        "Append the saved verbatim charter quotation required to answer the blank."
+      ],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.nichiyaku.or.jp/files/co/about/kouryo20180226.pdf#page=3",
+          "supports": "The charter dated October 1973 says 医療水準の向上 in the first principle."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q74",
+      "officialAnswerNumber": "1",
+      "answer": "ア",
+      "sourcePhysicalPage": 31,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q73-78-author/STRUCTURED-RESULT.json",
+        "sha256": "b519b01ce60e7e161217f313c276a8cb403b1f7e1b1fd9f5bbf8c4b182d9d16f",
+        "receiptSha256": "b380a0db145d1faf142678e37bdb616affb3b8eda44e36aad183dfe3a6a099e0",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q73-78/SOURCE-PACKET.json",
+        "sha256": "9bd0daeec88ea57a1f1af92fa4b65ffc1830166ccbabfc44c45ea07f340936ec"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q73-78/question-physical-31.png",
+        "sha256": "d79ac9f70a50e9c466008a28bde4be2b9b7918890fedb673c4d88b94cfd4310b"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q73-78/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=80090000&dataType=0&pageNo=1",
+          "section": "第1条の4第2項",
+          "supports": "The statutory duty is to explain appropriately and endeavor to obtain the recipient’s understanding; the amendment history for this provision predates the 2026 exam."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q80",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "sourcePhysicalPage": 33,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q79-84-author/STRUCTURED-RESULT.json",
+        "sha256": "8a98f4997a9b0ae91a93c6be384de5b3d7b773b10b1ba66082b727e22282b1e5",
+        "receiptSha256": "eba7f2be86f9d88e087f4b849d8d0ad16f4134a07f7e2a24bc18344b68adc8a9",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/SOURCE-PACKET.json",
+        "sha256": "f4a09cc91738850eb9a7b5ca9c2bf8613bf28cbf0087cf0fe70448873acc54d1"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/question-physical-33.png",
+        "sha256": "80679dc02a961a3838a611d5e5798fae1689ba4343206105f2d0b29f9e355a3e"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001677927.pdf#page=33",
+          "supports": "Official terminology question and final key 2, no dose, treatment, calculation or current law asserted."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q81",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "sourcePhysicalPage": 34,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q79-84-author/STRUCTURED-RESULT.json",
+        "sha256": "8a98f4997a9b0ae91a93c6be384de5b3d7b773b10b1ba66082b727e22282b1e5",
+        "receiptSha256": "eba7f2be86f9d88e087f4b849d8d0ad16f4134a07f7e2a24bc18344b68adc8a9",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/SOURCE-PACKET.json",
+        "sha256": "f4a09cc91738850eb9a7b5ca9c2bf8613bf28cbf0087cf0fe70448873acc54d1"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/question-physical-34.png",
+        "sha256": "174a57cff64bd8b2c4f0d741f988f8c459c69adb381156bf801b25a03713506c"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [
+        "Remove booklet section heading 【実務】 from the stem; it is not part of the official question."
+      ],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0193&dataType=1&pageNo=1",
+          "documentDate": "2014-05-29",
+          "supports": "Anticancer-drug preparation requires exposure precautions including safety cabinets; source supports the exposure distinction, not a universal exemption for other drugs."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q82",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "sourcePhysicalPage": 34,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q79-84-author/STRUCTURED-RESULT.json",
+        "sha256": "8a98f4997a9b0ae91a93c6be384de5b3d7b773b10b1ba66082b727e22282b1e5",
+        "receiptSha256": "eba7f2be86f9d88e087f4b849d8d0ad16f4134a07f7e2a24bc18344b68adc8a9",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/SOURCE-PACKET.json",
+        "sha256": "f4a09cc91738850eb9a7b5ca9c2bf8613bf28cbf0087cf0fe70448873acc54d1"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/question-physical-34.png",
+        "sha256": "174a57cff64bd8b2c4f0d741f988f8c459c69adb381156bf801b25a03713506c"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [
+        "Remove booklet section heading 【実務】 from the stem; it is not part of the official question."
+      ],
+      "explanationCorrections": [
+        {
+          "field": "choiceExplanations.ア",
+          "reason": "Replace vague past-tense monitoring statement with the verified exam-year 2026 status.",
+          "source": "https://www.wada-ama.org/en/prohibited-list",
+          "saved": "カフェインは以前に監視プログラム対象となったことがあるが、現在は禁止物質ではない。"
+        }
+      ],
+      "primarySupplements": [
+        {
+          "url": "https://www.wada-ama.org/en/prohibited-list",
+          "edition": 2026,
+          "section": "S6",
+          "supports": "Strychnine is listed among in-competition stimulants; caffeine is in the 2026 Monitoring Program and is not prohibited."
+        }
+      ]
+    },
+    {
+      "id": "yakuzaishi-2026-annual-required-q83",
+      "officialAnswerNumber": "4",
+      "answer": "エ",
+      "sourcePhysicalPage": 34,
+      "author": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/author-yakuzaishi-111-required-q79-84-author/STRUCTURED-RESULT.json",
+        "sha256": "8a98f4997a9b0ae91a93c6be384de5b3d7b773b10b1ba66082b727e22282b1e5",
+        "receiptSha256": "eba7f2be86f9d88e087f4b849d8d0ad16f4134a07f7e2a24bc18344b68adc8a9",
+        "requestedModel": "claude-sonnet-5-5",
+        "actualInitModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "newGenerationRequests": 0
+      },
+      "sourcePacket": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/SOURCE-PACKET.json",
+        "sha256": "f4a09cc91738850eb9a7b5ca9c2bf8613bf28cbf0087cf0fe70448873acc54d1"
+      },
+      "questionPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/question-physical-34.png",
+        "sha256": "174a57cff64bd8b2c4f0d741f988f8c459c69adb381156bf801b25a03713506c"
+      },
+      "answerPng": {
+        "path": "reports/claude-capacity-20261010/opus-controller-20261010/readable-sources/yakuzaishi-111-required-q79-84/answers-physical-01.png",
+        "sha256": "45f3b65e15ad6be61a95282f0d6e8809fb626519db24404109f4a79d721a7e83"
+      },
+      "sourceVisualCompared": true,
+      "needsFigure": false,
+      "choiceCount": 5,
+      "choiceExplanationCount": 5,
+      "stemTransforms": [
+        "Remove booklet section heading 【実務】 from the stem; it is not part of the official question."
+      ],
+      "explanationCorrections": [],
+      "primarySupplements": [
+        {
+          "url": "https://www.pmda.go.jp/files/000144382.pdf",
+          "documentDate": "2010-09",
+          "supports": "Concentrated potassium rapid IV administration can cause arrhythmia/cardiac arrest; includes L-aspartate potassium products."
+        },
+        {
+          "url": "https://ismpcanada.ca/bulletin/preventable-tragedies-two-pediatric-deaths-due-to-intravenous-administration-of-concentrated-electrolytes/",
+          "documentDate": "2019-01-16",
+          "supports": "Primary incident investigation recommends pharmacy-only storage and avoiding concentrated electrolyte ward stocks, allowing narrowly safeguarded exceptions."
+        }
+      ]
+    }
+  ],
+  "localQa": {
+    "utf8": true,
+    "officialKey": true,
+    "fiveChoicesAndExplanations": true,
+    "noDuplicateIds": true,
+    "ionStrengthExamples": {
+      "NaCl0_1M": 0.1,
+      "CaCl2_0_1M": 0.3
+    },
+    "q80CalculationFlag": "False positive: glossary question has no calculation."
+  },
+  "existingPharmacyOriginalsBaseline": 307,
+  "existingPharmacyOriginalsModified": 0,
+  "existingPharmacyOriginalsDeleted": 0,
+  "protectedOtherPendingIds": [
+    "yakuzaishi-2025-annual-theory-q129",
+    "yakuzaishi-2025-annual-theory-q130",
+    "yakuzaishi-2025-annual-theory-q131",
+    "yakuzaishi-2025-annual-theory-q132"
+  ],
+  "protectedQ128FigureHoldUnchanged": true,
+  "holds": [
+    {
+      "id": "yakuzaishi-2026-annual-required-q84",
+      "reason": "Correct-answer dapagliflozin 2025 electronic label obtained, but contemporaneous primary contraindication lists for all four distractors remain unverified; omitted from projection.",
+      "foundSource": "https://pins.japic.or.jp/pdf/newPINS/00062726.pdf"
+    }
+  ],
+  "remainingRequiredMissingIds": [
+    "yakuzaishi-2026-annual-required-q3",
+    "yakuzaishi-2026-annual-required-q5",
+    "yakuzaishi-2026-annual-required-q6",
+    "yakuzaishi-2026-annual-required-q7",
+    "yakuzaishi-2026-annual-required-q8",
+    "yakuzaishi-2026-annual-required-q9",
+    "yakuzaishi-2026-annual-required-q10",
+    "yakuzaishi-2026-annual-required-q11",
+    "yakuzaishi-2026-annual-required-q18",
+    "yakuzaishi-2026-annual-required-q41",
+    "yakuzaishi-2026-annual-required-q48",
+    "yakuzaishi-2026-annual-required-q53",
+    "yakuzaishi-2026-annual-required-q54",
+    "yakuzaishi-2026-annual-required-q78",
+    "yakuzaishi-2026-annual-required-q79",
+    "yakuzaishi-2026-annual-required-q84",
+    "yakuzaishi-2026-annual-required-q86"
+  ],
+  "publication": false,
+  "independentReview": "pending_root_owned",
+  "mergePublicGo": "pending_root_owned",
+  "newPaidApi": false,
+  "externalClaudeCalls": 0,
+  "dataFile": "data/questions/yakuzaishi/2026-annual.json",
+  "oldDataFileSha256": "84cb61db5965c9e842cf491a31fc1615371b4dbb455fa7ef015621696802bb9d",
+  "newDataFileSha256": "ae4a28fd127d44ab2756be5082bf5286e945610e4e8ea19149d8223a480a06bd",
+  "existingJsonBytePrefixPreserved": true,
+  "bytePrefixReference": "Git base blob; checkout CRLF is normalized to its original LF representation.",
+  "resultingPharmacyOriginals": 315,
+  "resultingRequiredCoverage": 73,
+  "latestTwoComplete": false,
+  "scope": {
+    "only111RequiredAdded": true,
+    "publishedBaselineRowsPreserved": true,
+    "allOtherDataFilesUnchanged": true
+  }
+}
