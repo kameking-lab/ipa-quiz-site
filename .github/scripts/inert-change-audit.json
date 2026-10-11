@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "auditedCommit": "7b2a4ce744e061bfb4f74f7a7badfa67d460f3ec",
+  "configs": {
+    ".gitattributes": {
+      "mode": "100644",
+      "blob": "7d2af7d7ac2ddca4e752efaac7fb8240ba377f56"
+    },
+    ".npmrc": {
+      "mode": "100644",
+      "blob": "d67f3748837b62bbc681ed92228541ee01d8abea"
+    },
+    "next.config.ts": {
+      "mode": "100644",
+      "blob": "906c914cce99bf30cc2890182e169018dcf52770"
+    },
+    "package.json": {
+      "mode": "100644",
+      "blob": "49acfe12b0397d39b14c1b8821acb6642f0aba56"
+    },
+    "pnpm-lock.yaml": {
+      "mode": "100644",
+      "blob": "8b097f7d3dcb2da26834fe5703533d5ac1476ec6"
+    },
+    "pnpm-workspace.yaml": {
+      "mode": "100644",
+      "blob": "e948afd027a667cc787386db45654b114fde99fa"
+    },
+    "postcss.config.mjs": {
+      "mode": "100644",
+      "blob": "61e36849cf7cfa9f1f71b4a3964a4953e3e243d3"
+    },
+    "prisma/schema.prisma": {
+      "mode": "100644",
+      "blob": "7c3cf72ee5f320736b11a6ba8f32cd5a75f2ef7f"
+    },
+    "sentry.client.config.ts": {
+      "mode": "100644",
+      "blob": "62f4a62665cc40361d680a6776eb248c519426d4"
+    },
+    "sentry.edge.config.ts": {
+      "mode": "100644",
+      "blob": "e2c22ccf033218c63133735c464a2a4739feca63"
+    },
+    "sentry.server.config.ts": {
+      "mode": "100644",
+      "blob": "c12a7f0976952bb386e1e40291c41568f78f398b"
+    },
+    "tsconfig.json": {
+      "mode": "100644",
+      "blob": "425516481652315e25c582a5c317e4198d88d2f8"
+    },
+    "vercel.json": {
+      "mode": "100644",
+      "blob": "5aae1ad6e352c208e3b1a332fcbc6bcdf0c46afe"
+    }
+  },
+  "consumers": {
+    "app/[exam]/page.tsx": {
+      "mode": "100644",
+      "blob": "9ab0eff4ea921871c360e175876df4d3c5010a4c"
+    },
+    "app/api/email-list/route.ts": {
+      "mode": "100644",
+      "blob": "bec6179212e1b7300de5decf7236b3478783dd93"
+    },
+    "app/api/health/route.ts": {
+      "mode": "100644",
+      "blob": "a2569cb0b88a812366d52de3292de9325c9d7319"
+    },
+    "app/api/indexnow/route.ts": {
+      "mode": "100644",
+      "blob": "dc6c53da7ceee7ecf4752d7308cd8a08a31ab5c3"
+    },
+    "app/api/stats/answer-count/route.ts": {
+      "mode": "100644",
+      "blob": "25ddab1c5fc438a850e05db3be25cae2c2ca05ad"
+    },
+    "app/globals.css": {
+      "mode": "100644",
+      "blob": "d313a84846ca0f19bba860db7f047ab6efda37e7"
+    },
+    "app/stats/StatsCharts.tsx": {
+      "mode": "100644",
+      "blob": "43c34deffa38cee1a58b214d668c8e0fc91fc060"
+    },
+    "components/DeferredLayoutWidgets.tsx": {
+      "mode": "100644",
+      "blob": "e96847b12bae413fa99e2463dd20e83a152a5872"
+    },
+    "components/PostHogProvider.tsx": {
+      "mode": "100644",
+      "blob": "b3cb1581e562ca57aee09f7bf563bf7b6a980771"
+    },
+    "components/copilot/CopilotPanel.tsx": {
+      "mode": "100644",
+      "blob": "0002e052a8720f39f0767a23e41e56cad1d76979"
+    },
+    "components/motivation/SessionSummaryGate.tsx": {
+      "mode": "100644",
+      "blob": "c712d24a247f3982777a0dfa361a784eedbff76b"
+    },
+    "components/quiz/QuestionAnswerCard.tsx": {
+      "mode": "100644",
+      "blob": "70245276e3df19a9a8fb8c1baf9095484d23cc9d"
+    },
+    "data/prepared-medical/hokenshi112/reviewed13/render-preview.mjs": {
+      "mode": "100644",
+      "blob": "1aa905b620505aac704dbd04a93f5188cccb59b7"
+    },
+    "data/prepared-medical/hokenshi112/reviewed13/validate.test.mjs": {
+      "mode": "100644",
+      "blob": "05207012d378a6eb4e92b9ac1d9d623be7752bb5"
+    },
+    "data/prepared-medical/hokenshi112/validate.test.mjs": {
+      "mode": "100644",
+      "blob": "45ffe2e24223cf04542a9f0c15209ceea6745ca1"
+    },
+    "data/questions/denko2/latest.ts": {
+      "mode": "100644",
+      "blob": "fa29362ef6b9dcd32b84376880e3a815740f1c97"
+    },
+    "instrumentation.ts": {
+      "mode": "100644",
+      "blob": "e5e6f2a0f88fcd972ef65c78a40495d5b945b1dd"
+    },
+    "lib/ai/cost-tracker.ts": {
+      "mode": "100644",
+      "blob": "7b7d4d931e85235442e35b932b77f664865dbc09"
+    },
+    "lib/ai/provider.ts": {
+      "mode": "100644",
+      "blob": "e1fddcaf195379c89c4c9017ebfb88f460c333e9"
+    },
+    "lib/chusho-secondary/data.ts": {
+      "mode": "100644",
+      "blob": "517cb70998b59efc709f20f189b3aaec8492a487"
+    },
+    "lib/denken1/native.ts": {
+      "mode": "100644",
+      "blob": "df42e0514ee2d2ca13f285738c78222efa57ef63"
+    },
+    "lib/denken2/native.ts": {
+      "mode": "100644",
+      "blob": "3507b4c0386293550df71131e98da730b5c16f82"
+    },
+    "lib/denken2/secondary.ts": {
+      "mode": "100644",
+      "blob": "d754e106ec155b58d3426043963e07c2e4be5655"
+    },
+    "lib/denken3/native.ts": {
+      "mode": "100644",
+      "blob": "9d567a044ad5f6c16926ff96c08d5804fa69b693"
+    },
+    "lib/exam-library-papers.ts": {
+      "mode": "100644",
+      "blob": "e7cac5c2d30e4c73bfc269a045e0e4a5ef8f9aeb"
+    },
+    "lib/fp1/applied-extension.ts": {
+      "mode": "100644",
+      "blob": "1c2735fe9f45b9065a98eb1e5c4906a091f78be1"
+    },
+    "lib/fp1/applied.ts": {
+      "mode": "100644",
+      "blob": "0ac6b9efa6f0abfb234eb2131a39f3a5d414338c"
+    },
+    "lib/questions/get-questions.ts": {
+      "mode": "100644",
+      "blob": "9c35303a0b8b00ce39912ae772434e15c386fad2"
+    },
+    "lib/sharoushi/sentaku.ts": {
+      "mode": "100644",
+      "blob": "2be98095656bab55e67d6ade9a2b7d48d1517ad9"
+    },
+    "next.config.ts": {
+      "mode": "100644",
+      "blob": "906c914cce99bf30cc2890182e169018dcf52770"
+    }
+  }
+}
