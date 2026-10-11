@@ -16,7 +16,7 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
 /** 枝問(a)/(b)は電験三種、空欄番号(1)〜(5)は電験一種・二種が使う。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
   letter: ["denken3"],
-  blank: ["denken2", "denken1"],
+  blank: ["denken2", "denken1", "chusho-kigyo-shindanshi"],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {

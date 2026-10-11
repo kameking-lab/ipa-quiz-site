@@ -8,6 +8,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 
 describe("SME consultant first-stage latest two official papers", () => {
   it("covers every official answer row and original without duplicating subjects or parts", () => {
@@ -23,6 +24,15 @@ describe("SME consultant first-stage latest two official papers", () => {
       expect(answer, expected.id).toEqual(expected.answer);
     }
     for (const year of [2025, 2026]) expect(questions.filter(q => q.year === year)).toHaveLength(227);
+  });
+
+  it("resolves every canonical question URL including all numeric subquestions", () => {
+    for (const q of questions) {
+      const path = questionPagePath(q);
+      const [exam, yearSeason, section, qnum] = path.slice(3).split("/");
+      if (!exam || !yearSeason || !section || !qnum) throw new Error(path);
+      expect(findQuestionByRoute(questions, { exam, yearSeason, section, qnum }), path).toBe(q);
+    }
   });
 
   it("keeps both corrected all-candidate answers as alternative accepted choices", () => {
