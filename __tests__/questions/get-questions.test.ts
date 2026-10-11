@@ -31,13 +31,11 @@ describe("getQuestionsForExam", () => {
   // その場合 getQuestionsForExam(code) が他区分の問題を静かに返し、クイズ母集団が
   // 区分を取り違える実害になる。ap 単体は上で pin 済だが、全登録区分について
   // 「ロードされた全問の exam がキーと一致」を回帰固定する。
-  it("全登録区分でロードされた問題は exam フィールドがキーと一致する", async () => {
-    for (const code of getRegisteredExamCodes()) {
-      const qs = await getQuestionsForExam(code);
-      expect(qs.length, `${code} は非空`).toBeGreaterThan(0);
-      const mismatched = qs.filter((q) => q.exam !== code).map((q) => q.id);
-      expect(mismatched, `${code} ローダが返した他区分の問題`).toEqual([]);
-    }
+  it.each(getRegisteredExamCodes())("全登録区分でロードされた問題は exam フィールドがキーと一致する (%s)", async (code) => {
+    const qs = await getQuestionsForExam(code);
+    expect(qs.length, `${code} は非空`).toBeGreaterThan(0);
+    const mismatched = qs.filter((q) => q.exam !== code).map((q) => q.id);
+    expect(mismatched, `${code} ローダが返した他区分の問題`).toEqual([]);
   });
 });
 
@@ -84,11 +82,12 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("rinsho-kensagishi");
     expect(codes).toContain("shinryo-hoshasengishi");
     expect(codes).toContain("rinsho-kogishi");
+    expect(codes).toContain("judo-seifukushi");
     expect(codes).toContain("chosashi");
     expect(codes).toContain("shika-ishi");
     expect(codes).toContain("riyoshi");
     expect(codes).toContain("chusho-kigyo-shindanshi");
-    expect(codes.length).toBe(57);
+    expect(codes.length).toBe(58);
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし

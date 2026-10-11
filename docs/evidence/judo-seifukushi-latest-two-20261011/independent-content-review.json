@@ -1,0 +1,287 @@
+{
+  "summary": "AM83・PM19は採用証跡のSHA256と統合候補を数字/カナ対応で照合し、提案済みの総論・全肢説明の完全一致を確認したため局所受入れPASS。旧ready原稿への現行評価は履歴として保持。公式採点と学術的限界を区別する注記付き解説の受入れであり、線維速度の一意順位や電気刺激の排他的適応が証明された意味ではない。500問全量・公開操作・別途required receiptの受入れを含まない。",
+  "verdict": "PASS_LOCAL_ADOPTED_CONTENT",
+  "scope": "第34回AM83・PM19の原問/公式鍵と根拠衝突だけの独立局所審査。500問全量、出題者の意図、原著全文の査読は対象外。",
+  "reviewer": "nurse_local_evidence_review",
+  "reviewedFields": [
+    "id",
+    "question",
+    "choices",
+    "literalOfficialKey",
+    "acceptedNumbers",
+    "requiredSelections",
+    "answerMode",
+    "explanation",
+    "choiceExplanations",
+    "officialReferenceUrls"
+  ],
+  "hashCanonicalization": "SHA256 over UTF-8 json.dumps(reviewed fields, ensure_ascii=False, sort_keys=True, separators=(',', ':')).",
+  "retrievalLimits": {
+    "Hallin": "査読者のPubMedアクセスは429。追加試行・同内容の別経路取得なし。親が拒否前に読んだ要旨の保存要約だけを根拠とする。",
+    "WHS": "査読者のPMCアクセスはreCAPTCHA。追加試行・同内容の別経路取得なし。親が拒否前に読んだ7b.3の保存要約だけを根拠とする。",
+    "sourceNotesFile": "VERIFIED-MEDICAL-REFERENCE-NOTES.json",
+    "noFullTextOrHttp200Claim": true
+  },
+  "items": [
+    {
+      "id": "judo-seifukushi-2025-annual-am-q83",
+      "input": "ready/2026_34_gozen.json",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 25,
+      "originalPrintedPage": 21,
+      "officialKeyPhysicalPage": 1,
+      "officialLiteral": "2",
+      "officialRequiredSelections": 1,
+      "specificProblems": [
+        "現行の肢1『選択肢群では温覚のC線維が代表的に遅い』は、肢1にもC線維があるという事実を解決せずに肢2との順位を付けている。",
+        "現行の総論と肢2『伝導速度が最も遅い』は、全ての侵害受容線維との排他的順位を確定したように読める。",
+        "内部reviewNotesだけでなく、読者に表示される説明冒頭でこの限界を説明する必要がある。"
+      ],
+      "acceptedAlternative": {
+        "explanation": "本問の公式正答は2（温受容器からの求心性線維）です。温覚を伝える線維は主に無髄C線維で、筋紡錘の求心性線維や骨格筋を支配する太い有髄運動線維より遅い群に属します。ただし、侵害受容にもC線維があり、温覚線維が全ての侵害受容線維より遅いと一律に順位付けすることはできません。Hallinらのヒト皮膚の研究要旨でも、温受容器と侵害受容器の双方にC線維が記録されています。公式採点上は2を選びますが、この資料だけで肢1と肢2の全線維の速度差が解決したとは扱いません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答ではありません。侵害受容を伝える線維には有髄Aδ線維と無髄C線維があります。侵害受容線維をすべて速い線維とみなしたり、すべての温覚線維より速いと説明したりすることはできません。",
+          "2": "本問の公式正答です。温覚を伝える線維は主に無髄C線維で、太い有髄線維より伝導が遅い群です。ただし、侵害受容にもC線維があるため、『C線維だから肢1の全線維より遅い』という説明はできません。",
+          "3": "本問の正答ではありません。筋紡錘からのIa群・II群求心性線維は有髄線維で、無髄C線維より速く伝導します。",
+          "4": "本問の正答ではありません。骨格筋の収縮を担うα運動線維は太い有髄線維で、無髄C線維より速く伝導します。"
+        },
+        "additionalOfficialReferenceUrls": [
+          "https://pubmed.ncbi.nlm.nih.gov/6804605/"
+        ]
+      },
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "remainingScientificIssue": "温受容線維と侵害受容線維を全体として一意に順位付けする根拠は未確認。公式正答2を変えず、その限界を解説へ残す。",
+      "acceptanceConditions": [
+        "原問・4選択肢・公式単一正答2・requiredSelections=1を保持する。either-singleや正答1追加へ変更しない。",
+        "上記の総論と全肢説明を採用し、Hallin参照を追加する。原著の全文読取や全線維の速度分布を確認したと記録しない。",
+        "改稿後のreviewedFields SHAを照合してから現行原稿のPASSへ更新する。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-am-q83",
+        "question": "神経伝導速度が最も遅いのはどれか。",
+        "choices": {
+          "1": "侵害受容器からの求心性線維",
+          "2": "温受容器からの求心性線維",
+          "3": "筋紡錘からの求心性線維",
+          "4": "骨格筋への遠心性線維"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "温受容器からの求心路は主に無髄C線維で低速である。公式正答は2だが、侵害受容C線維との厳密比較には留保が必要である。",
+        "choiceExplanations": {
+          "1": "侵害受容にはAδ線維とC線維の両方がある。C線維も遅いため、温受容線維との一律の速度差は言えない。",
+          "2": "温受容器からの求心路は主に無髄C線維で低速である。公式正答は2だが、侵害受容C線維との厳密比較には留保が必要である。",
+          "3": "筋紡錘からのIa・II群求心性線維は太い有髄線維で速い。",
+          "4": "骨格筋を支配するα運動線維は太い有髄線維で速い。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+          "https://pubmed.ncbi.nlm.nih.gov/6804605/"
+        ]
+      },
+      "reviewedFieldsSha256": "0477d36eb81dd3577533cf4636739c15c5a8bd6cf0e7e5ea0779f3dd7a62860b",
+      "inputFileSha256": "ad8887e10eebc6bd0969de98fd039e347df2f1e4a35114dbc4c540dcd7785dd9",
+      "proposedReviewedFieldsSha256": "c52e609004b40f213c8c45bcf64894e9b58312e4fbba401c09147e3ab852005f",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-am-q83",
+        "question": "神経伝導速度が最も遅いのはどれか。",
+        "choices": {
+          "1": "侵害受容器からの求心性線維",
+          "2": "温受容器からの求心性線維",
+          "3": "筋紡錘からの求心性線維",
+          "4": "骨格筋への遠心性線維"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は2（温受容器からの求心性線維）です。温覚を伝える線維は主に無髄C線維で、筋紡錘の求心性線維や骨格筋を支配する太い有髄運動線維より遅い群に属します。ただし、侵害受容にもC線維があり、温覚線維が全ての侵害受容線維より遅いと一律に順位付けすることはできません。Hallinらのヒト皮膚の研究要旨でも、温受容器と侵害受容器の双方にC線維が記録されています。公式採点上は2を選びますが、この資料だけで肢1と肢2の全線維の速度差が解決したとは扱いません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答ではありません。侵害受容を伝える線維には有髄Aδ線維と無髄C線維があります。侵害受容線維をすべて速い線維とみなしたり、すべての温覚線維より速いと説明したりすることはできません。",
+          "2": "本問の公式正答です。温覚を伝える線維は主に無髄C線維で、太い有髄線維より伝導が遅い群です。ただし、侵害受容にもC線維があるため、『C線維だから肢1の全線維より遅い』という説明はできません。",
+          "3": "本問の正答ではありません。筋紡錘からのIa群・II群求心性線維は有髄線維で、無髄C線維より速く伝導します。",
+          "4": "本問の正答ではありません。骨格筋の収縮を担うα運動線維は太い有髄線維で、無髄C線維より速く伝導します。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+          "https://pubmed.ncbi.nlm.nih.gov/6804605/"
+        ]
+      },
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:15:00.828900+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5edfe3b73ac387a3aa4807890eb5c22b8df34a19aee89c99feada87428192673",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "2fdaff5788dcec7c51007cd1f2180c17f993069142627e117d07df413581d7b3",
+        "adoptedFieldsSha256": "c52e609004b40f213c8c45bcf64894e9b58312e4fbba401c09147e3ab852005f",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceTreatment": "Candidate prefixes verified sourcePdfUrl/sourceAnswerUrl; review reference subsequence exactly matches accepted snapshot.",
+        "authorReadyUnmodified": true
+      }
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q19",
+      "input": "ready/2026_34_gogo.json",
+      "currentVerdict": "REVISIONS_REQUIRED",
+      "originalQuestionVerdict": "PASS",
+      "officialKeyVerdict": "PASS",
+      "originalPhysicalPage": 9,
+      "originalPrintedPage": 5,
+      "officialKeyPhysicalPage": 2,
+      "officialLiteral": "2",
+      "officialRequiredSelections": 1,
+      "specificProblems": [
+        "現行肢4が用途を認める点は正しいが、『出題意図の精査を要する』だけでは試験上の採否と臨床用途が読者に整理されない。",
+        "現行総論には公式正答と肢4の用途の両立がなく、結論だけを見ると微弱電流のみが創傷治療目的に用いられるように読める。",
+        "細胞修復の効果を一律に立証済みの機序として追加せず、公式問題での分類と特定条件の臨床根拠に限定する。"
+      ],
+      "acceptedAlternative": {
+        "explanation": "本問の公式正答は2（微弱電流刺激）です。ただし、公式採点で2が指定されていることは、高電圧パルス電流に創傷治療の用途がないという意味ではありません。Wound Healing Societyの2023年ガイドライン7b.3には、慢性Stage II〜IV褥瘡で通常治療と併用する電気刺激と、高電圧単相パルス電流（HVMPC）の治癒促進に関する記載があります。この臨床用途と本問の単一正答を区別し、肢4を創傷治療に不適応と断定しません。出題者が2だけを選ぶ理由まで、この資料から確定することはできません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答ではありません。干渉波電流は主に鎮痛や筋刺激などを目的に用いられます。ここでの採点結果だけから、他の用途が一切ないと一般化しないようにします。",
+          "2": "本問の公式正答です。微弱な電流を利用する方法で、本問では創傷治癒促進を目的とする刺激として正答に指定されています。全ての創傷で効果が保証されることや、他の電気刺激法に同じ目的の用途がないことまで意味しません。",
+          "3": "本問の公式正答ではありません。ロシアンカレントは筋収縮を起こして筋力増強などを図るために用いられる中周波の電気刺激です。",
+          "4": "本問の公式正答ではありませんが、高電圧パルス電流には創傷治療への用途があります。WHSの2023年ガイドライン7b.3は、慢性Stage II〜IV褥瘡に通常治療と併用する電気刺激を扱い、高電圧単相パルス電流（HVMPC）の有用性に言及しています。これは全ての創傷・刺激条件での適応や、単独治療での効果を示すものではありません。"
+        },
+        "additionalOfficialReferenceUrls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11403384/"
+        ]
+      },
+      "proposedTextVerdict": "ACCEPTABLE_BOUNDED_EXAM_EXPLANATION",
+      "remainingScientificIssue": "肢4にも特定条件で創傷治療用途がある。公式単一正答2の出題者による排他的根拠は未取得。微弱電流とHVMPCを同一方式とせず、肢4の有用性を全創傷へ拡張しない。",
+      "acceptanceConditions": [
+        "原問・4選択肢・公式単一正答2・requiredSelections=1を保持する。独自に正答4追加や複数選択へ変更しない。",
+        "上記の総論と全肢説明を採用し、WHS参照を追加する。少なくとも公式正答と肢4の臨床用途の区別は総論に表示する。",
+        "HVMPCの根拠は慢性褥瘡と併用治療の範囲で扱う。創傷全般への一律推奨、具体的電極設定・電圧・治療時間・機種の断定を追加しない。",
+        "『専門家確認待ち』を無期限の公開停止理由にせず、改稿後reviewedFields SHAを照合して局所受入れする。"
+      ],
+      "reviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q19",
+        "question": "創傷治癒促進を目的とした治療的電気刺激はどれか。",
+        "choices": {
+          "1": "干渉波電流",
+          "2": "微弱電流刺激",
+          "3": "ロシアンカレント",
+          "4": "高電圧パルス電流"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "微弱電流刺激は細胞修復過程を促す目的で創傷治癒に用いられる。",
+        "choiceExplanations": {
+          "1": "干渉波電流は主に鎮痛や筋刺激を目的とする。",
+          "2": "微弱電流刺激は細胞修復過程を促す目的で創傷治癒に用いられる。",
+          "3": "ロシアンカレントは筋力増強に使う中周波刺激である。",
+          "4": "高電圧パルス電流も創傷治療に使われることがあるため、この肢は出題意図の精査を要する。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11403384/"
+        ]
+      },
+      "reviewedFieldsSha256": "527582fd01542bbec60528690b953abb16fb32a7bda3a9ad6d53869727fd6763",
+      "inputFileSha256": "1ac865ef809407129af9290d8a1b0982707f145178df0370d6fe6071b29b6e13",
+      "proposedReviewedFieldsSha256": "fc69ee6b9b8c1c43d425e094a1ba77f0e00142658ab36b8915e50dd639ff4b5f",
+      "proposedReviewedFieldsSnapshot": {
+        "id": "judo-seifukushi-2025-annual-pm-q19",
+        "question": "創傷治癒促進を目的とした治療的電気刺激はどれか。",
+        "choices": {
+          "1": "干渉波電流",
+          "2": "微弱電流刺激",
+          "3": "ロシアンカレント",
+          "4": "高電圧パルス電流"
+        },
+        "literalOfficialKey": "2",
+        "acceptedNumbers": [
+          2
+        ],
+        "requiredSelections": 1,
+        "answerMode": "single",
+        "explanation": "本問の公式正答は2（微弱電流刺激）です。ただし、公式採点で2が指定されていることは、高電圧パルス電流に創傷治療の用途がないという意味ではありません。Wound Healing Societyの2023年ガイドライン7b.3には、慢性Stage II〜IV褥瘡で通常治療と併用する電気刺激と、高電圧単相パルス電流（HVMPC）の治癒促進に関する記載があります。この臨床用途と本問の単一正答を区別し、肢4を創傷治療に不適応と断定しません。出題者が2だけを選ぶ理由まで、この資料から確定することはできません。",
+        "choiceExplanations": {
+          "1": "本問の公式正答ではありません。干渉波電流は主に鎮痛や筋刺激などを目的に用いられます。ここでの採点結果だけから、他の用途が一切ないと一般化しないようにします。",
+          "2": "本問の公式正答です。微弱な電流を利用する方法で、本問では創傷治癒促進を目的とする刺激として正答に指定されています。全ての創傷で効果が保証されることや、他の電気刺激法に同じ目的の用途がないことまで意味しません。",
+          "3": "本問の公式正答ではありません。ロシアンカレントは筋収縮を起こして筋力増強などを図るために用いられる中周波の電気刺激です。",
+          "4": "本問の公式正答ではありませんが、高電圧パルス電流には創傷治療への用途があります。WHSの2023年ガイドライン7b.3は、慢性Stage II〜IV褥瘡に通常治療と併用する電気刺激を扱い、高電圧単相パルス電流（HVMPC）の有用性に言及しています。これは全ての創傷・刺激条件での適応や、単独治療での効果を示すものではありません。"
+        },
+        "officialReferenceUrls": [
+          "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11403384/"
+        ]
+      },
+      "adoptionVerified": true,
+      "adoptedCandidateVerdict": "PASS_LOCAL_CONTENT",
+      "adoptionEvidence": {
+        "verifiedAtUtc": "2026-10-11T03:15:00.828900+00:00",
+        "candidateFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\data\\questions\\judo-seifukushi\\questions.json",
+        "candidateFileSha256": "5edfe3b73ac387a3aa4807890eb5c22b8df34a19aee89c99feada87428192673",
+        "adoptedSnapshotFile": "C:\\wt\\kakomon-judo-seifukushi-latest-two-20261011\\docs\\evidence\\judo-seifukushi-latest-two-20261011\\adopted-review-snapshots.json",
+        "adoptedSnapshotFileSha256": "2fdaff5788dcec7c51007cd1f2180c17f993069142627e117d07df413581d7b3",
+        "adoptedFieldsSha256": "fc69ee6b9b8c1c43d425e094a1ba77f0e00142658ab36b8915e50dd639ff4b5f",
+        "snapshotExactMatch": true,
+        "numericKanaReconstructionExactMatch": true,
+        "referenceTreatment": "Candidate prefixes verified sourcePdfUrl/sourceAnswerUrl; review reference subsequence exactly matches accepted snapshot.",
+        "authorReadyUnmodified": true
+      }
+    }
+  ],
+  "implementationPerformed": false,
+  "authorDraftsModified": false,
+  "productionOperationPerformed": false,
+  "fullDatasetAccepted": false,
+  "reviewedAtUtc": "2026-10-11T03:03:36.063885+00:00",
+  "originalPdfAndImageChecks": [
+    {
+      "pdf": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_34_gozen.pdf",
+      "pdfSha256": "11af4d6b36e8969fb7fc0d7bca0e3e87339e930ecf1b563594f36357db8af2db",
+      "manifestMatched": true,
+      "physicalPage": 25,
+      "viewedImage": "reports\\judo-seifukushi-latest-two-20261011\\ocr\\2026_34_gozen\\p025.png",
+      "imageSha256": "c5f6f5ef59e19be3996a8c650d737fc1dc02f269894d905a0b61d53812b59ccb",
+      "freshRenderMatched": true
+    },
+    {
+      "pdf": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_34_gogo.pdf",
+      "pdfSha256": "79ded00c7afb2941b9c311979872ac446b3b7e0b12e6a0a85dd8cb7aa2254220",
+      "manifestMatched": true,
+      "physicalPage": 9,
+      "viewedImage": "reports\\judo-seifukushi-latest-two-20261011\\ocr\\2026_34_gogo\\p009.png",
+      "imageSha256": "96cf6cd220d7a6c0ab6f6ba1390da082b0ffc006ca4b08a8bd109a35bf86f371",
+      "freshRenderMatched": true
+    },
+    {
+      "pdf": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou.pdf",
+      "pdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "manifestMatched": true,
+      "physicalPage": 1,
+      "viewedImage": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou-p1.png",
+      "imageSha256": "9e42905be8d73e533e07065267cfaf920741727ebcd7d4c9bf83f86810f7a37d",
+      "freshRenderMatched": true
+    },
+    {
+      "pdf": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou.pdf",
+      "pdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "manifestMatched": true,
+      "physicalPage": 2,
+      "viewedImage": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou-p2.png",
+      "imageSha256": "5688edc5e1fc1b61382cc0c5de732a4cfdfddd1458c9514242c88f381ed1234e",
+      "freshRenderMatched": true
+    }
+  ],
+  "medicalNotesSha256": "0637dfc858bd2bad97e34140e1990effdf6be7184672963af5960d6bf7aec25a",
+  "adoptionVerifiedAtUtc": "2026-10-11T03:15:00.828900+00:00"
+}

@@ -1,0 +1,466 @@
+{
+  "reviewedAtUtc": "2026-10-11T02:55:09.211207+00:00",
+  "reviewer": "nurse_local_evidence_review",
+  "verdict": "PASS_LOCAL_OFFICIAL_KEY_REVIEW",
+  "scope": "Independent original-PDF review of 14 exceptional key rows only: two either-single rows and twelve both rows. No question explanations reviewed; no 500-question content audit.",
+  "inputs": [
+    {
+      "path": "reports\\judo-seifukushi-latest-two-20261011\\FINAL-KEY-ROWS.json",
+      "sha256": "c1c8e6c5bcf08e830f735690155183cafb8d954ad7c16752b994bd24e292a9c8"
+    },
+    {
+      "path": "reports\\judo-seifukushi-latest-two-20261011\\FINAL-KEY-SUMMARY.json",
+      "sha256": "cb269f8adef500fdca7e7d2ef32b044958e4550dc6c9bfffe824f86ac80cba80"
+    },
+    {
+      "path": "reports\\judo-seifukushi-latest-two-20261011\\OFFICIAL-KEY-MANIFEST.json",
+      "sha256": "7e471726053cde00e150f63a1dc6a41c16dd3447a2c0c9b2d8bd56afa0070a5d"
+    }
+  ],
+  "pdfChecks": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou.pdf",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf",
+      "sha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "manifestShaMatched": true,
+      "pages": 2,
+      "retrievedAtUtc": "2026-10-11T02:34:12.633111+00:00",
+      "inspectedRenders": [
+        {
+          "page": 1,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou-p1.png",
+          "sha256": "9e42905be8d73e533e07065267cfaf920741727ebcd7d4c9bf83f86810f7a37d",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        },
+        {
+          "page": 2,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2026_seitou-p2.png",
+          "sha256": "5688edc5e1fc1b61382cc0c5de732a4cfdfddd1458c9514242c88f381ed1234e",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2026_34_67am.pdf",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/34_67am.pdf",
+      "sha256": "9a9d2272fbbb7306d32e22931b2b4919796e123deb5d00f63631ef3f04a3cbf5",
+      "manifestShaMatched": true,
+      "pages": 1,
+      "retrievedAtUtc": "2026-10-11T02:34:12.826281+00:00",
+      "inspectedRenders": [
+        {
+          "page": 1,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2026_34_67am-p1.png",
+          "sha256": "8a110d7e19bb84c311c9f5df109fe77538c47f12422d62c4d98344b8be2b62eb",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2025_seitou.pdf",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf",
+      "sha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "manifestShaMatched": true,
+      "pages": 2,
+      "retrievedAtUtc": "2026-10-11T02:34:12.925558+00:00",
+      "inspectedRenders": [
+        {
+          "page": 1,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2025_seitou-p1.png",
+          "sha256": "a3d803303ee91ef18f902a7bc38726b1dd7a558dcecca8d9a6b5bb8e5951241f",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        },
+        {
+          "page": 2,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2025_seitou-p2.png",
+          "sha256": "8db102147d3b8f258c347b83ee160b2c0db02b1567883f71beeee8479abb1117",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2025_33_39am.pdf",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/33_39am.pdf",
+      "sha256": "525ec7aada23e108e40f5e1a51b189880a463595af166cd0ff09838d98c836b8",
+      "manifestShaMatched": true,
+      "pages": 1,
+      "retrievedAtUtc": "2026-10-11T02:34:13.101458+00:00",
+      "inspectedRenders": [
+        {
+          "page": 1,
+          "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\judo-seifukushi-latest-two-20261011\\official\\2025_33_39am-p1.png",
+          "sha256": "486088a3fb86c4311585f739fc3620b8366bb6ebb2b8d27fc33ca88102675bb9",
+          "matchesFreshPdfRender": true,
+          "visuallyInspected": true
+        }
+      ]
+    }
+  ],
+  "selectedRows": [
+    {
+      "id": "judo-seifukushi-2025-annual-am-q67",
+      "round": 34,
+      "examDate": "2026-03-01",
+      "schemaYear": 2025,
+      "session": "am",
+      "qNumber": 67,
+      "literalOfficialKey": "2又は4",
+      "acceptedNumbers": [
+        2,
+        4
+      ],
+      "requiredSelections": 1,
+      "answerMode": "either-single",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=1",
+      "keyPdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "keyPdfPage": 1,
+      "verdict": "PASS",
+      "independentVisualReading": "2又は4",
+      "selectionSemantics": "One selection; either listed answer accepted",
+      "keyRowSha256": "f17ce21cc0e4803fdde07464866235da08236c25b51f2f43c5198749899d6e91"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-am-q39",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "am",
+      "qNumber": 39,
+      "literalOfficialKey": "3又は4",
+      "acceptedNumbers": [
+        3,
+        4
+      ],
+      "requiredSelections": 1,
+      "answerMode": "either-single",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=1",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 1,
+      "verdict": "PASS",
+      "independentVisualReading": "3又は4",
+      "selectionSemantics": "One selection; either listed answer accepted",
+      "keyRowSha256": "b852fed87d76e554436adb60e246e0b000566128eabffbab3a816db17f9b6271"
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q51",
+      "round": 34,
+      "examDate": "2026-03-01",
+      "schemaYear": 2025,
+      "session": "pm",
+      "qNumber": 51,
+      "literalOfficialKey": "1,3",
+      "acceptedNumbers": [
+        1,
+        3
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "1,3",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "ecdc12564c2f680f8fb4169bd8ae7caa3cc2551ecbfee25a54d9e88320e077c5"
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q53",
+      "round": 34,
+      "examDate": "2026-03-01",
+      "schemaYear": 2025,
+      "session": "pm",
+      "qNumber": 53,
+      "literalOfficialKey": "1,3",
+      "acceptedNumbers": [
+        1,
+        3
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "1,3",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "75c8f5485b164afb843e20cbc457e358d65ae5974b8d420f591d87f16493cc0e"
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q101",
+      "round": 34,
+      "examDate": "2026-03-01",
+      "schemaYear": 2025,
+      "session": "pm",
+      "qNumber": 101,
+      "literalOfficialKey": "3,4",
+      "acceptedNumbers": [
+        3,
+        4
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "3,4",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "8e9307f54ad02873ed0475d4cfdf858a959a2fb58c37248e1e1d22c6c2521628"
+    },
+    {
+      "id": "judo-seifukushi-2025-annual-pm-q121",
+      "round": 34,
+      "examDate": "2026-03-01",
+      "schemaYear": 2025,
+      "session": "pm",
+      "qNumber": 121,
+      "literalOfficialKey": "2,3",
+      "acceptedNumbers": [
+        2,
+        3
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "117a1a68878eb91e40d1b9c6fd11982b4bc5ccd5ced557bcd9fd2861c8b94fbb",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "2,3",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "ce1de779b8d4e223ad03c94e526a16cdaf573c20e9b474b55f42b20623900c54"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-am-q118",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "am",
+      "qNumber": 118,
+      "literalOfficialKey": "1,2",
+      "acceptedNumbers": [
+        1,
+        2
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=1",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 1,
+      "verdict": "PASS",
+      "independentVisualReading": "1,2",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "3900350ddb3ccaa3cb68f7e969310868bd57385eedcb5d817d4a075911307cde"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q12",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 12,
+      "literalOfficialKey": "3,4",
+      "acceptedNumbers": [
+        3,
+        4
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "3,4",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "a017bec89a5abe581524ee3e71ce8a005fdab345e9c6657254483e1f668635f1"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q17",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 17,
+      "literalOfficialKey": "2,4",
+      "acceptedNumbers": [
+        2,
+        4
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "2,4",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "59a1256fb5df620851f515f6b6e5f5feb0ef98e16436de0737ddc168a3943520"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q52",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 52,
+      "literalOfficialKey": "1,2",
+      "acceptedNumbers": [
+        1,
+        2
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "1,2",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "d8a87723e78ae62dfbae8565f9a9fb199f1812e5dc3516d6dadce076e04f8497"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q94",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 94,
+      "literalOfficialKey": "3,4",
+      "acceptedNumbers": [
+        3,
+        4
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "3,4",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "e534333c763b367334418c610510b18402b8826fa724a7c583f79a3a2a0c300a"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q96",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 96,
+      "literalOfficialKey": "1,3",
+      "acceptedNumbers": [
+        1,
+        3
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "1,3",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "969dcf0f52e27f05536c2db6cdaae7c4bbe6f7dde6c8002cfb158ba133bdec37"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q103",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 103,
+      "literalOfficialKey": "1,2",
+      "acceptedNumbers": [
+        1,
+        2
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "1,2",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "3aee4d7d371118089dced7b370b1064a0c47ffefaeb233e3277ec319fd43ef4d"
+    },
+    {
+      "id": "judo-seifukushi-2024-annual-pm-q117",
+      "round": 33,
+      "examDate": "2025-03-02",
+      "schemaYear": 2024,
+      "session": "pm",
+      "qNumber": 117,
+      "literalOfficialKey": "2,4",
+      "acceptedNumbers": [
+        2,
+        4
+      ],
+      "requiredSelections": 2,
+      "answerMode": "both",
+      "officialAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken16/dl/seitou.pdf#page=2",
+      "keyPdfSha256": "5bab6f042cd545e09c1fb483c08ff48425b65740283717517854181bc6257e19",
+      "keyPdfPage": 2,
+      "verdict": "PASS",
+      "independentVisualReading": "2,4",
+      "selectionSemantics": "Both listed answers required",
+      "keyRowSha256": "a0ba4257c837766da3ad38cc502d05f8ddb6920982948a9558795f9f38664772"
+    }
+  ],
+  "scoringNotices": [
+    {
+      "round": 34,
+      "session": "am",
+      "qNumber": 67,
+      "path": "reports\\judo-seifukushi-latest-two-20261011\\official\\2026_34_67am.pdf",
+      "sha256": "9a9d2272fbbb7306d32e22931b2b4919796e123deb5d00f63631ef3f04a3cbf5",
+      "page": 1,
+      "treatmentLiteral": "複数の選択肢を正解として採点する。",
+      "reasonLiteral": "複数の選択肢が正解と考えられるため。",
+      "scoringExcluded": false,
+      "allCandidatesAwardedCredit": false,
+      "bothSelectionsRequired": false,
+      "verdict": "PASS"
+    },
+    {
+      "round": 33,
+      "session": "am",
+      "qNumber": 39,
+      "path": "reports\\judo-seifukushi-latest-two-20261011\\official\\2025_33_39am.pdf",
+      "sha256": "525ec7aada23e108e40f5e1a51b189880a463595af166cd0ff09838d98c836b8",
+      "page": 1,
+      "treatmentLiteral": "複数の選択肢を正解として採点する。",
+      "reasonLiteral": "複数の選択肢が正解と考えられるため。",
+      "scoringExcluded": false,
+      "allCandidatesAwardedCredit": false,
+      "bothSelectionsRequired": false,
+      "verdict": "PASS"
+    }
+  ],
+  "counts": {
+    "fileRowsMechanicallyCounted": 500,
+    "fileUniqueIdsMechanicallyCounted": 500,
+    "visuallyReviewedKeyRows": 14,
+    "eitherSingle": 2,
+    "both": 12,
+    "sourcePdfsHashed": 4,
+    "sourcePagesVisuallyInspected": 6,
+    "mismatches": 0
+  },
+  "literalNormalization": "Official full-width digits and comma glyphs are normalized with Unicode NFKC; layout whitespace removed. The operator 又は is preserved and never converted to comma/both. Normalization changes typography only.",
+  "semanticsBasis": "The two notices accept multiple alternatives and the final key says 又は: requiredSelections=1. The twelve comma-delimited official answer pairs map to both and requiredSelections=2. The full question stems of these twelve rows are outside this key-only review.",
+  "implementationRequirements": [
+    "Keep either-single grading distinct from both; selecting both alternatives is not newly authorized.",
+    "Do not infer scoring exclusion or award credit to every answer from the generic heading about scoring exceptions.",
+    "Do not report this narrow official-key acceptance as clinical/explanation acceptance for all 500 questions."
+  ],
+  "unresolvedWithinScope": [],
+  "clinicalExplanationReviewPerformed": false,
+  "cwtChanged": false,
+  "productionOperationPerformed": false,
+  "writesLimitedToThisReport": true
+}
