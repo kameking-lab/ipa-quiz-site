@@ -9,7 +9,7 @@ for (const { name, session, number, blanks = 5 } of [
   test(`denken1 ${name} card opens its ${blanks} selected blanks`, async ({ page }) => {
     await page.goto("/denken1");
     await expect(page.getByRole("heading", { name: "電験一種の過去問" })).toBeVisible();
-    await expect(page.getByText("2025・2026年度の理論・電力・機械36原問・204回答欄", { exact: false })).toBeVisible();
+    await expect(page.getByText("2025・2026年度の確認済み36原問・204回答欄", { exact: false })).toBeVisible();
     await expect(page.getByText("掲載する固有の原問は計39件", { exact: false })).toBeVisible();
     await expect(page.getByRole("heading", { name: "2025・2026年度の原問を年・科目から選ぶ" })).toBeVisible();
     await expect(page.getByText("一次試験の全問は未収録", { exact: false })).toBeVisible();
