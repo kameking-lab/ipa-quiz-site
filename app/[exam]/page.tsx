@@ -270,7 +270,7 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi"
+  const summary = code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 

@@ -1,0 +1,80 @@
+{
+  "validatedUtc": "2026-10-11T01:56:25.605800+00:00",
+  "qualification": "josanshi",
+  "validatedRuntimeCommit": "fe0a1e6f0734ee55fa734a8424628619da61f4a6",
+  "integratedMain": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "draftPr": "https://github.com/kameking-lab/ipa-quiz-site/pull/705",
+  "counts": {
+    "originals": 220,
+    "scored": 219,
+    "officiallyExcluded": 1,
+    "baselineUnchanged": 18,
+    "additions": 201,
+    "unresolvedContentQuestions": 0,
+    "figureAssets": 12,
+    "figureQuestionReferences": 14
+  },
+  "checks": {
+    "fullTest": {
+      "command": "pnpm run test --maxWorkers=2 --testTimeout=60000",
+      "exit": 0,
+      "filesPassed": 516,
+      "testsPassed": 4771,
+      "testsSkipped": 0
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exit": 0
+    },
+    "lint": {
+      "command": "pnpm lint",
+      "exit": 0,
+      "existingWarnings": 1,
+      "note": "Existing unused base variable in reports/civil2-2026-completion-20260926/parse-fenced-results.mjs; unchanged by this branch."
+    },
+    "build": {
+      "command": "pnpm run build --webpack",
+      "exit": 0,
+      "note": "Webpack supports the existing external node_modules junction used for this isolated worktree."
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=josanshi",
+      "exit": 0,
+      "accepted": 219,
+      "errors": 0,
+      "warnings": 133,
+      "note": "Short general-summary warnings; complete per-choice explanations are present for all 219 scored rows."
+    },
+    "targetedBeforeMainMerge": {
+      "filesPassed": 5,
+      "testsPassed": 39
+    },
+    "sourceAudit": {
+      "officialKeyMismatches": 0,
+      "selectionCountMismatches": 0,
+      "uniqueOriginalIdentities": 220,
+      "completeChoiceReasonSets": 219
+    },
+    "independentContentReview": {
+      "verdict": "CONTENT_REVIEW_GO_EXACT_SCOPE_ONLY",
+      "questions": 34,
+      "figures": 12,
+      "blockingFindings": [],
+      "reportSha256": "7b360cdf9896c766e2ef98d036f2ae1a946b4ffb00e09bd2ae8054639f4ca79a"
+    }
+  },
+  "logSha256": {
+    "validation-build.log": "edba6431d95c179ffcf7a6892b0478c75f70e280b40285f331c59bdc2280fed0",
+    "validation-full-test-launcher-error.log": "19196dffe31ac743d24ca92f43403b08dc143ce4756d138f57d24332acae4270",
+    "validation-full-test.log": "2c2de860655070156940487a722a58f26bfe8f1a800d2f8e3e1c223fe807ad48",
+    "validation-lint.log": "200c3e0221e826fba4d8d9baebdfc5d86e420d756d65c7bfa3c54c4186c842cc",
+    "validation-questions.log": "161d15db79f2228e3e0084173a6e89120701ed76d270528e3d505cdce734c000",
+    "validation-typecheck.log": "810563f3e934786ba877c5653641beaa49398aa942f0e325b9a894ee67e5fd8e"
+  },
+  "productionMergePerformed": false,
+  "deploymentPerformed": false,
+  "integrationOwner": "01a12330-b245-70ed-a108-0998b50830be",
+  "remainingBlockers": [],
+  "separateFutureImprovement": "Unscored PM31 browsing UI; original and official exclusion evidence are already preserved.",
+  "rights": "Attribution and source acquisition are recorded; this is not a permission grant. The owner handles publication rights."
+}
