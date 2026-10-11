@@ -1,0 +1,44 @@
+{
+  "exam": "tsushin2",
+  "year": 2025,
+  "season": "late",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+  "questionSha256": "b657b18d52bfca9c33bf14774319680f03ae0690f4e7e6aa5a6696d8f6e4ba7f",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+  "answerSha256": "98cb318c09fc9f673964ba87032011f0c38cd791bfc05d37de9bcc12904f1201",
+  "publishedCount": 1,
+  "questions": [
+    {
+      "number": 20,
+      "pdfPage": 10,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "マイクロ波通信に関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "デジタル変調には，主に単側波帯振幅変調（SSB）方式を使用している。",
+        "中波，短波と比べ伝送帯域を広く確保できるため，多重通信に適している。",
+        "見通し外の通信を行うために，無給電中継方式を使用する場合がある。",
+        "多重通信の方式には，周波数分割多重方式や時分割多重方式がある。"
+      ],
+      "explanation": "SSBは振幅変調の側波帯の一方を用いる方式です。デジタルマイクロ波通信の代表的な変調はPSKやQAMなどなので、SSBを主なデジタル変調方式とした選択肢1が適当ではありません。多重通信では周波数や時間を分けて信号を載せ、地形条件によっては無給電中継も利用します。",
+      "choiceExplanations": [
+        "SSBは単側波帯振幅変調で、代表的なデジタル変調PSKやQAMとは異なります。主なデジタル変調方式をSSBとした説明は不適当です。",
+        "マイクロ波では中波・短波と比べ広い伝送帯域を確保しやすく、多くの信号を多重化できます。多重通信への適性の説明は適当です。",
+        "反射板などで電波の方向を変える無給電中継は、直接見通せない地点を結ぶ場合に利用されます。場合があるとした記述は適当です。",
+        "周波数帯を分けるFDMと時間を分けるTDMはいずれも多重方式です。異なる分割軸を使う方式の例として適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.ist.aichi-pu.ac.jp/~tan/cmm/2/2.pdf",
+        "https://www.keysight.com/gb/en/assets/7018-09093/application-notes/5965-7160.pdf",
+        "https://www.long-lines.net/places-routes/Thurmont_repeater/EW0569-27.jpg",
+        "https://www.jocm.us/uploadfile/2020/0311/20200311102131212.pdf",
+        "https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-G.701-199303-I!!PDF-E&type=items"
+      ]
+    }
+  ]
+}

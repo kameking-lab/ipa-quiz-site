@@ -35,8 +35,8 @@ const names = {
 
 export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
   if (source.publishedCount !== source.questions.length) throw new Error(`${source.exam} published count mismatch`);
-  if (source.year === 2025 && (source.exam !== "zoen2" || source.season !== "late")) {
-    throw new Error("Only 2025 late zoen2 is supported");
+  if (source.year === 2025 && source.season !== "late") {
+    throw new Error("Only 2025 late is supported");
   }
   if (source.year === 2026 && source.season !== "early") {
     throw new Error("Only 2026 early is supported");
