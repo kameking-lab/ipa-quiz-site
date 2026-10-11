@@ -8,6 +8,11 @@ beforeEach(() => { route.search = "session=gakka&returnTo=%2Fq%2Ffp3%2F2026-publ
 afterEach(cleanup);
 
 describe("QuizModeTabs qualification context", () => {
+  it("omits the unsupported stream mode for dental exams on both layouts", () => {
+    const { container } = render(<QuizModeTabs active="random" exam="shika-ishi" />);
+    expect(container.querySelectorAll('a[href^="/quiz/stream"]')).toHaveLength(0);
+    expect(container.querySelectorAll('a[href^="/quiz?mode=random&exam=shika-ishi"]')).toHaveLength(2);
+  });
   it("keeps the supported qualification and return page in its mock-exam link", () => {
     route.search = "session=am2&returnTo=%2Fap%2F2025-spring";
     render(<QuizModeTabs active="year" exam="ap" />);

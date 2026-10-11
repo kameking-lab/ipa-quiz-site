@@ -2,19 +2,15 @@ import { NextResponse } from "next/server";
 
 import { ALL_QUESTIONS } from "@/data/questions";
 import { filterQuestions, shuffleChoices } from "@/lib/questions/filter";
-import { getMockConfig } from "@/lib/mock-exam/config";
+import { getMockConfig, isMockExamCode } from "@/lib/mock-exam/config";
 import {
   selectMockExamQuestions,
   type SelectionMode,
 } from "@/lib/mock-exam/selection";
-import type { ExamCode, Question } from "@/lib/questions/types";
+import type { Question } from "@/lib/questions/types";
 import type { SlimMockQuestion } from "@/lib/mock-exam/types";
 
 export const runtime = "nodejs";
-
-const VALID_EXAMS: ReadonlySet<ExamCode> = new Set([
-  "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
-]);
 
 const VALID_MODES: ReadonlySet<SelectionMode> = new Set(["random", "balanced"]);
 
@@ -33,10 +29,10 @@ export async function GET(
   ctx: { params: Promise<{ exam: string }> },
 ) {
   const { exam: examParam } = await ctx.params;
-  if (!VALID_EXAMS.has(examParam as ExamCode)) {
+  if (!isMockExamCode(examParam)) {
     return NextResponse.json({ error: "invalid_exam" }, { status: 400 });
   }
-  const exam = examParam as ExamCode;
+  const exam = examParam;
   const config = getMockConfig(exam);
 
   const url = new URL(req.url);

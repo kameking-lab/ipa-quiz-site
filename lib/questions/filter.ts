@@ -1,4 +1,5 @@
 import { numericQuestionIssue } from "./numeric";
+import { orderingQuestionIssue } from "./ordering";
 import { hasUnrenderableContent } from "./content-quality";
 import type { Question, QuizFilter } from "./types";
 import type { HistoryStore } from "@/lib/storage/history";
@@ -16,7 +17,7 @@ export function isPlaceholderExplanation(q: Question): boolean {
  * paper page from promising more questions than the quiz can actually serve.
  */
 export function isPracticeReadyQuestion(q: Question): boolean {
-  return !numericQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
+  return !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(

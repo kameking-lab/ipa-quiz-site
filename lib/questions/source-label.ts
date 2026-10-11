@@ -27,7 +27,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
   },
 };
 
-export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl">): string {
+export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+  if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
+    return `第${q.year - 1907}回（${q.year}年実施）`;
+  }
   const judoPaper = /^https:\/\/www\.zaijusei\.com\/doc\/(2026_34|2025_33)_(?:gozen|gogo)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.season === "annual" && judoPaper?.[1] === "2026_34" && q.year === 2025) {
     return "第34回（令和7年度・2026年実施）";

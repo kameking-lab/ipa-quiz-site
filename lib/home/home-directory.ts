@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "chosashi", name: "土地家屋調査士", sub: "令和7・6年度 午前・午後（択一・記述）", domain: "money" },
   { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
@@ -129,7 +130,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
   { code: "kankoji2", name: "2級管工事施工管理", sub: "第一次検定", domain: "construction" },
-  { code: "zoen2", name: "2級造園施工管理", sub: "第一次検定（前期）", domain: "construction" },
+  { code: "zoen2", name: "2級造園施工管理", sub: "第一次検定（前期・後期）", domain: "construction" },
   { code: "zoen1", name: "1級造園施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
   { code: "tsushin2", name: "2級電気通信工事施工管理", sub: "第一次検定（前期）", domain: "construction" },
   { code: "tsushin1", name: "1級電気通信工事施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
@@ -160,6 +161,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み186原問を部分収録", domain: "welfare" },
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "第71回（2025年実施）午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77・78回の午前・午後398原問と全肢解説", domain: "welfare" },
+  { code: "shika-ishi", name: "歯科医師", sub: "第119・118回の問題A〜D（公式採点除外を除く）", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み307原問を部分収録", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
   { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用359原問を部分収録", domain: "welfare" },
