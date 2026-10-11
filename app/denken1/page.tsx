@@ -5,10 +5,11 @@ import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT, denken1NativeSubjectPath } from "@/lib/denken1/native";
+import { SECONDARY_QUESTIONS } from "@/lib/denken1/secondary";
 
 export const metadata: Metadata = {
-  title: "電験一種 一次試験 過去問｜2025・2026年度の収録範囲",
-  description: "第一種電気主任技術者一次試験の2025・2026年度から確認済みの理論・電力・機械36原問を原問単位で収録。従来の2026年度5原問・25空欄も保持しています。",
+  title: `電験一種 過去問｜一次${DENKEN1_PUBLISHED_ORIGINAL_COUNT}原問・二次${SECONDARY_QUESTIONS.length}原問`,
+  description: `第一種電気主任技術者の一次試験${DENKEN1_PUBLISHED_ORIGINAL_COUNT}原問と、2025・2024年度の二次試験${SECONDARY_QUESTIONS.length}原問を収録。一次の解答群と二次の記述・計算問題を原問単位で練習できます。`,
   alternates: { canonical: "/denken1" },
 };
 
@@ -21,16 +22,18 @@ const SUBJECTS: { session: Session; name: string; original: string; description:
 
 export default function Denken1Page() {
   const total = DENKEN1_QUESTIONS.length;
+  const nativeOriginals = DENKEN1_NATIVE_PARTS.reduce((sum, part) => sum + part.questions.length, 0);
+  const nativeAnswerFields = DENKEN1_NATIVE_PARTS.reduce((sum, part) => sum + part.questions.reduce((count, q) => count + q.slots.length, 0), 0);
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
       <div className="mb-6"><Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link></div>
-      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験一種 一次試験の過去問</h1>
+      <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験一種の過去問</h1>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
         令和8年度（2026/08/30実施）の一次試験から、理論2原問と電力・機械・法規の各1原問を収録しています。
         原問の空欄(1)〜(5)を1問ずつ、公式の解答群(イ)〜(ヨ)の15肢から選ぶ形式で、全{total}空欄に全肢の解説があります。
       </p>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        2025・2026年度の理論・電力・機械36原問・204回答欄を原問単位でも確認できます。従来の5原問と重なる2原問を重複計上せず、掲載する固有の原問は計{DENKEN1_PUBLISHED_ORIGINAL_COUNT}件です。両年度の全問と二次試験は未収録です。
+        2025・2026年度の確認済み{nativeOriginals}原問・{nativeAnswerFields}回答欄を原問単位でも確認できます。従来の5原問と重なる2原問を重複計上せず、掲載する固有の原問は計{DENKEN1_PUBLISHED_ORIGINAL_COUNT}件です。一次試験の全問は未収録です。二次試験は2025・2024年度の全20原問を別に収録しています。
       </p>
       <section aria-labelledby="denken1-subjects" className="mt-8">
         <h2 id="denken1-subjects" className="text-xl font-bold">令和8年度 一次試験の科目を選ぶ</h2>
@@ -69,9 +72,14 @@ export default function Denken1Page() {
           })}
         </div>
       </section>
+      <section aria-labelledby="denken1-secondary" className="mt-10 rounded-2xl border border-border bg-card p-5 sm:p-6">
+        <h2 id="denken1-secondary" className="text-xl font-bold">二次試験の記述式過去問</h2>
+        <p className="mt-2 leading-7 text-muted-foreground">2025・2024年度の電力・管理と機械・制御を、一次試験とは別に全{SECONDARY_QUESTIONS.length}原問収録。公式問題の図や数式を見ながら解答を書き、標準解答と小問ごとの解説で復習できます。</p>
+        <Link href="/denken1/secondary" className="mt-4 inline-flex min-h-11 items-center gap-2 font-bold text-primary underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">二次試験の年度・科目一覧へ <ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+      </section>
       <ExamYearArchiveLinks exam="denken1" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-        問題・正答の出典：一般財団法人 電気技術者試験センター「2025・2026年度第一種電気主任技術者一次試験」。従来の2026年度5原問は空欄ごとの演習に分けて整形し、追加した原問は公式ページ画像とともに原問単位で掲載しています。解説は当サイトが作成しました。
+        問題・正答の出典：一般財団法人 電気技術者試験センター「2025・2026年度第一種電気主任技術者一次試験」「2025・2024年度第一種電気主任技術者二次試験」。従来の2026年度5原問は空欄ごとの演習に分けて整形し、追加した原問は公式ページ画像とともに原問単位で掲載しています。解説は当サイトが作成しました。
       </p>
     </main>
   );

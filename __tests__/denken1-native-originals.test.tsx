@@ -83,7 +83,9 @@ describe("Denken1 source-reviewed native originals", () => {
   it("labels partial coverage honestly on the qualification hub", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<Denken1Page />), "text/html");
     expect(doc.body.textContent).toContain("39件");
-    expect(doc.body.textContent).toContain("両年度の全問と二次試験は未収録");
+    expect(doc.body.textContent).toContain("一次試験の全問は未収録");
+    expect(doc.body.textContent).toContain("二次試験は2025・2024年度の全20原問");
+    expect(doc.querySelector('a[href="/denken1/secondary"]')).not.toBeNull();
     expect(doc.querySelectorAll('a[href^="/denken1/2025-primary/"], a[href^="/denken1/2026-primary/"]')).toHaveLength(6);
   });
 });
