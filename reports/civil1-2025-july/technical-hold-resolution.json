@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-11T04:15:44.352798+00:00",
+  "recordedAt": "2026-10-11T04:30:59.700821+00:00",
   "inputCheckpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
   "originalTriplesSha256Before": "14860181f75d672916813febe8e6d996fed79b097bfa479232549e539c3d2ff0",
   "originalTriplesSha256After": "93325940e97670574a0d4a2fcf5d09bcb25438af75ade1f070182ed57b6ff746",
@@ -24,18 +24,28 @@
     "A49",
     "A48",
     "A53",
-    "A54"
+    "A54",
+    "A17",
+    "A19",
+    "A27",
+    "A28",
+    "A29",
+    "A30"
   ],
   "reviewedTechnicalHoldQuestions": 37,
   "reviewedChoices": 148,
   "technicalResolvedKeys": [
     "2025-A11",
     "2025-A12",
+    "2025-A17",
     "2025-A25",
     "2025-A26",
+    "2025-A27",
+    "2025-A30",
     "2025-A31",
     "2025-A33",
     "2025-A34",
+    "2025-A35",
     "2025-A36",
     "2025-A40",
     "2025-A41",
@@ -49,35 +59,14 @@
   ],
   "technicalHoldItems": [
     {
-      "key": "2025-A17",
-      "technicalRemaining": [
-        "⑶道路橋の支持層選定条項、⑷支持層根入れ・井筒下端拘束の明示資料が不足。⑴と⑵の判定根拠は局所解消。"
-      ],
-      "remainingChoices": [
-        3,
-        4
-      ]
-    },
-    {
       "key": "2025-A19",
       "technicalRemaining": [
-        "一次技術資料の肢別照合を進行中。"
+        "Choice 1: all-casing-specific primary construction guidance expressly connecting concrete-top drop allowance and required flowability remains unverified; dated 2019 MLIT slump guidance and a 2005 surface-casing patent provide scoped support.",
+        "Choice 3: verify the claim that primary bottom treatment removes almost all slime, beyond primary sources that describe natural mud and water replacement.",
+        "Choice 4: direct pre-exam primary statement that hammer-grab excavation ahead of the standpipe loosens or collapses ground remains unverified; a dated 2024 contractor article confirms standpipe-first sequence and collapse protection."
       ],
       "remainingChoices": [
         1,
-        2,
-        3,
-        4
-      ]
-    },
-    {
-      "key": "2025-A27",
-      "technicalRemaining": [
-        "一次技術資料の肢別照合を進行中。"
-      ],
-      "remainingChoices": [
-        1,
-        2,
         3,
         4
       ]
@@ -85,34 +74,22 @@
     {
       "key": "2025-A28",
       "technicalRemaining": [
-        "一次技術資料の肢別照合を進行中。"
+        "肢1：排水の濁り・量の変化及び鋼矢板変形の一体的な監視を直接規定する、2025年以前の一次資料の版・頁・節が不足。",
+        "肢3：粘性土地盤へのパイピング照査の適用及び壁体幅の決定条件を直接示す、2025年以前の二重仮締切設計資料の版・頁・節が不足。"
       ],
       "remainingChoices": [
         1,
-        2,
-        3,
-        4
+        3
       ]
     },
     {
       "key": "2025-A29",
       "technicalRemaining": [
-        "一次技術資料の肢別照合を進行中。"
+        "肢2の埋没割合1/2と存置可否に対応する一次定量基準未確認。東京都仕様書からは監督員協議を導けるだけで、一律除去も自動存置も導けない。",
+        "肢3の急速風化岩盤に対する直前仕上げ又は吹付けの具体的方法を述べる一次施工基準未確認。",
+        "肢4の砂礫基礎0.5m人力掘削を述べる一次施工基準未確認。"
       ],
       "remainingChoices": [
-        1,
-        2,
-        3,
-        4
-      ]
-    },
-    {
-      "key": "2025-A30",
-      "technicalRemaining": [
-        "一次技術資料の肢別照合を進行中。"
-      ],
-      "remainingChoices": [
-        1,
         2,
         3,
         4
@@ -120,34 +97,32 @@
     },
     {
       "key": "2025-A32",
-      "technicalRemaining": "肢3の誤りは直接確認。肢1の過転圧と肢4の保護は原著実験・実工事で部分確認。肢2のシート代替、肢4の仮排水等の直接条項は不足。",
+      "technicalRemaining": [
+        "肢2のシート対策",
+        "肢4の長い施工間隔中の仮排水・車両・降雨への路床保護"
+      ],
       "remainingChoices": [
-        1,
-        2,
-        4
-      ]
-    },
-    {
-      "key": "2025-A35",
-      "technicalRemaining": "肢3は埼玉県道路管理者マニュアルで直接確認。肢1のオーバーレイ前の局部打換え、肢2の早期わだち機序、肢4のコンクリート床版不陸処理の直接根拠が不足。",
-      "remainingChoices": [
-        1,
         2,
         4
       ]
     },
     {
       "key": "2025-A37",
-      "technicalRemaining": "肢2〜4は中国地方整備局の2013年マニュアルで直接確認。肢1の荷下ろし前の照合と不良コンクリート廃棄処分を一括して定める原条項は未確認。",
+      "technicalRemaining": [
+        "肢1の不良生コン廃棄処分の直接条項"
+      ],
       "remainingChoices": [
         1
       ]
     },
     {
       "key": "2025-A38",
-      "technicalRemaining": "肢1の用語区別は確認。肢2ステージ注入の厳密定義、肢3薄い配合から濃い配合への順序、肢4初期濃度決定と改良効果確認の詳細を原基準で未照合。",
+      "technicalRemaining": [
+        "肢2の上位→下位のステージ工法定義",
+        "肢3の薄→濃の配合順序",
+        "肢4の初期濃度決定"
+      ],
       "remainingChoices": [
-        1,
         2,
         3,
         4
@@ -155,7 +130,12 @@
     },
     {
       "key": "2025-A39",
-      "technicalRemaining": "肢1の3～4日、肢4の6mm、肢2の柱状ブロック工法一般標準高、肢3の「一般的に」を直接示す原基準が不足。",
+      "technicalRemaining": [
+        "肢1の3～4日",
+        "肢2の標準リフト高",
+        "肢3の一般性",
+        "肢4の6mm"
+      ],
       "remainingChoices": [
         1,
         2,
@@ -165,55 +145,67 @@
     },
     {
       "key": "2025-A42",
-      "technicalRemaining": "肢1の捨石『表層3個並び以上』『内部へ向かうほど大きな石』の訂正を直接示す一次資料がない。肢2～4も適用条件と構造を個別に確認する必要がある。",
+      "technicalRemaining": [
+        "肢1の表層3個並びの数値",
+        "肢3の原問条件を直接記す栗石・捨石基礎規定"
+      ],
       "remainingChoices": [
         1,
-        2,
-        3,
-        4
+        3
       ]
     },
     {
       "key": "2025-A43",
-      "technicalRemaining": "メーカー原著で肢1・2と肢3の全断面形式を確認。肢3の中詰石形式および肢4の天端・反転据付け条件は一次原文未確認。",
+      "technicalRemaining": [
+        "肢4の正誤を確認できる公式正答又は引用元書籍4.4.1の本文"
+      ],
       "remainingChoices": [
-        2,
-        3,
         4
       ]
     },
     {
       "key": "2025-A44",
-      "technicalRemaining": "肢2の水位差管理と肢4の中断施工例は部分確認。肢1の二重回し・取付位置、肢3の緩衝材使用、肢4の一般的な施工条件は未確認。",
+      "technicalRemaining": [
+        "肢1の吃水線以下の直接規定",
+        "肢3の函間・波浪・タイヤ材という条件の直接根拠"
+      ],
       "remainingChoices": [
         1,
-        2,
-        3,
-        4
+        3
       ]
     },
     {
       "key": "2025-A45",
-      "technicalRemaining": "肢1の土質試験の具体的組合せと肢2の浚渫前・施工中水質調査の原資料照合が未了。肢4の2回という表現は条件付きで解説修正提案。",
+      "technicalRemaining": [
+        "肢1の3試験と一般性・物性対応",
+        "肢4の海底での安全深度浚渫・再探査の直接手順"
+      ],
       "remainingChoices": [
         1,
-        2,
         4
       ]
     },
     {
       "key": "2025-A46",
-      "technicalRemaining": "肢1の骨材25mm、肢3の盛土安定後施工、肢4の鉄道コンクリート路盤へのプライムコート1～2L/m²を鉄道発注元の同時代原資料で直接確認できていない。道路舗装の散布量は転用しない。",
+      "technicalRemaining": [
+        "肢1の25mm",
+        "肢3の残留沈下等と施工開始時期",
+        "肢4の鉄道固有1～2L/m²・吸水防止目的"
+      ],
       "remainingChoices": [
         1,
-        2,
         3,
         4
       ]
     },
     {
       "key": "2025-A47",
-      "technicalRemaining": "スラブ軌道の省力化と施工前の精密調整・てん充層固定は確認できたが、完成後の位置修正が容易でないという明文、他3肢の残る要素をすべて直接支持する原資料は未確認。A47のHOLD解除・正答確定・公開受入れは行わない。",
+      "technicalRemaining": [
+        "肢1の敷設後位置変更難易度",
+        "肢2の夏冬前遊間整正時期",
+        "肢3の丸みと交換",
+        "肢4の取扱い・保守不良と複数原因の競合"
+      ],
       "remainingChoices": [
         1,
         2,
@@ -223,7 +215,7 @@
     },
     {
       "key": "2025-A48",
-      "technicalRemaining": "国交省安全施工指針で誤肢4の一時施工中止は確定。他の肢1は監督員提出、肢2は合図可能範囲と離隔、肢3は停電責任者・使用間合等の鉄道事業者固有条項が未確認。",
+      "technicalRemaining": "肢4の一時施工中止は確認済み。肢1は監督員への計画書提出を2019年鉄道事業者基準で補強したが重機固有の事故防止計画条項、肢2は合図可能範囲と安全な離隔配置の原条項、肢3は停電責任者と使用間合/時間/範囲/競合作業の事前打合せの原条項が未取得。",
       "remainingChoices": [
         1,
         2,
@@ -242,41 +234,40 @@
     },
     {
       "key": "2025-A54",
-      "technicalRemaining": "肢1の約10m・注入後監視、肢2の500kL・流量積算計は確認済み。肢3は原施工者資料で25m以上のダブルパッカー・パーカッション選定まで確認したが、削孔精度の直接比較なし。肢4の調合水pH5.8～8.6の適用原基準も未確認。技術HOLDを保持する。",
+      "technicalRemaining": "肢1・2は確認済み、肢3の直接精度比較・大深度/パーカッション選定は2018年協会原著の選定図で補強して解消。肢4の調合水の水道水原則と代替水pH5.8～8.6の原基準だけ未取得のためHOLDを保持する。",
       "remainingChoices": [
-        3,
         4
       ]
     }
   ],
   "changedExplanationKeys": [
-    "A12",
-    "A25",
-    "A26",
-    "A31",
+    "A27",
+    "A28",
+    "A29",
+    "A30",
     "A32",
-    "A33",
-    "A34",
     "A35",
-    "A36",
     "A37",
     "A38",
     "A39",
-    "A41",
+    "A42",
+    "A43",
     "A44",
     "A45",
     "A46",
-    "A49",
-    "A50",
-    "A52",
-    "A62",
-    "B2",
-    "B5"
+    "A48",
+    "A54"
   ],
   "officialSourceIdentityUnverifiedQuestions": 101,
   "publicAcceptance": false,
   "independentAcceptance": false,
   "runtimeImport": false,
-  "technicalResolvedCount": 17,
-  "remainingTechnicalHolds": 20
+  "helperAssessmentStatuses": {
+    "peer-civil1-12": "COMPLETED_TECHNICAL_ASSESSMENT",
+    "peer-dental-3": "COMPLETE",
+    "peer-weather-6": "COMPLETE"
+  },
+  "remainingTechnicalChoices": 40,
+  "technicalResolvedCount": 21,
+  "remainingTechnicalHolds": 16
 }

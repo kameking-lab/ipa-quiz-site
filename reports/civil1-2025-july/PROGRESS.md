@@ -69,3 +69,11 @@ A28は国交省中部地方整備局資料で肢2/4の技術論点を直接照�
 - 101 candidates / 404 explained choices / nine original figure crops remain saved. Official-host identity and independent/public acceptance remain false; public count100 / newly accepted0 / unpublished102 remain unchanged.
 - Narrow independent review of A62/B2/B5 is recorded as technically clear only with their stated qualifications. B7 exam-date law investigation is recorded separately and still cannot reconcile choices2/3.
 - Frozen input hashes, allocation scopes and primary evidence are saved alongside the held drafts; runtime data was not changed.
+
+
+## 2026-10-11 final helper integration
+
+- All three helper assessments completed in disjoint12/6/3 scopes (21 questions,84 choices); final output SHA256 receipts match. Helpers resolved A35/A49 and A17/A27/A30; the three-question utilities/railway packet remains held with its newly supported individual choices saved.
+- Total technical follow-up:21 of37 prior HOLDs resolved,16 questions/40 choices still lack complete primary support. Candidate status is DRAFT85/HOLD16. Remaining keys: 2025-A19, 2025-A28, 2025-A29, 2025-A32, 2025-A37, 2025-A38, 2025-A39, 2025-A42, 2025-A43, 2025-A44, 2025-A45, 2025-A46, 2025-A47, 2025-A48, 2025-A53, 2025-A54.
+- Final source differences were integrated without whole-manuscript regeneration;14 focused tests pass again. The regression test file was unchanged after its passing lint.
+- Source-host identity101, independent/public acceptance and2026 B7 remain unresolved. Required202/public100/newly accepted0/unpublished102 unchanged. No production merge or deployment.
