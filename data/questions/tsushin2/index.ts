@@ -1,5 +1,12 @@
 import type { Question } from "@/lib/questions/types";
 import { type JctcFirstSource, toJctcFirstQuestions } from "../jctc-first-2026";
 import source from "./2026-early.json";
+import next5 from "./2026-early-next5.json";
 
-export const TSUSHIN2_QUESTIONS: Question[] = toJctcFirstQuestions(source as JctcFirstSource);
+export const TSUSHIN2_QUESTIONS: Question[] = [
+  ...toJctcFirstQuestions(source as JctcFirstSource),
+  ...toJctcFirstQuestions(next5 as JctcFirstSource).map((question) => ({
+    ...question,
+    lastUpdated: "2026-10-11",
+  })),
+].sort((a, b) => a.qNumber - b.qNumber);

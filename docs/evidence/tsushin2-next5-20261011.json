@@ -1,0 +1,93 @@
+{
+  "batchOriginals": [
+    11,
+    14,
+    16,
+    17,
+    18
+  ],
+  "savedDraftReuseCount": 5,
+  "savedExplanationReuseCount": 0,
+  "newExplanations": 5,
+  "allChoiceReasons": 20,
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "draftSha256": "29be713ce385b167d49f89d5030756e4468b402549bc12dd7dfd7a28df6a55a9",
+  "modelRequestedByParent": "gpt-6.1-sol",
+  "modelActualReceipt": null,
+  "modelReceiptReason": "No model receipt is exposed in this authoring turn; no provider API was called.",
+  "pageVisualChecks": {
+    "11": 7,
+    "14": 8,
+    "16": 9,
+    "17": 9,
+    "18": 10
+  },
+  "figureCrops": {
+    "11": {
+      "page": 7,
+      "normalizedBox": [
+        0.2,
+        0.12,
+        0.78,
+        0.275
+      ],
+      "sha256": "36cfc0e2041cb1fcca8c83e80b95f79b65b0770421083c54195431f8d84dfa2c"
+    }
+  },
+  "individualStops": [],
+  "oldJSONModified": 0,
+  "oldJSONDeleted": 0,
+  "latestTwoOriginalTargets": {
+    "2026-early": 65,
+    "2025-late": 65
+  },
+  "secondPeriodComplete": false,
+  "officialDownloads": [
+    {
+      "file": "2025-late-q.pdf",
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sha256": "b657b18d52bfca9c33bf14774319680f03ae0690f4e7e6aa5a6696d8f6e4ba7f",
+      "bytes": 1454028,
+      "pages": 30
+    },
+    {
+      "file": "2025-late-a.pdf",
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "sha256": "98cb318c09fc9f673964ba87032011f0c38cd791bfc05d37de9bcc12904f1201",
+      "bytes": 4549,
+      "pages": 1
+    },
+    {
+      "file": "itu-g9843.pdf",
+      "url": "https://www.itu.int/rec/dologin_pub.asp?id=T-REC-G.984.3-201401-I!!PDF-E&lang=e&type=items",
+      "sha256": "6124e0c8736e6a48bd7d1f9b84dc922e137edf5a76cddaf1131f1bf9d40585e4",
+      "bytes": 2768315,
+      "pages": 170
+    },
+    {
+      "file": "ti-opamp.pdf",
+      "url": "https://www.ti.com/lit/an/sboa092b/sboa092b.pdf",
+      "sha256": "b9eeaf64809256cb2e3ef0e988295c96b7037c677b6b057fdb06761f4c3ab842",
+      "bytes": 2889984,
+      "pages": 94
+    },
+    {
+      "file": "etsi-lte.pdf",
+      "url": "https://www.etsi.org/deliver/etsi_ts/136300_136399/136300/16.04.00_60/ts_136300v160400p.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "nist-80097.pdf",
+      "url": "https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-97.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "technicalEvidence": {
+    "11": "TI sboa092b PDF p18-19: inverting amplifier, negative feedback, gain -R2/R1. Local cached SHA recorded.",
+    "14": "ITU G984.3 (2014), section 5.5 time division architecture and upstream TDMA; local PDF cached.",
+    "16": "Hamamatsu photodiodes convert light to current; Cisco optical mux/demux functional diagrams; Wang et al (2020) optical IM/DD OOK; MKS ILX application note22 PDF p2 direct current modulation with laser emission and receiving photodetector.",
+    "17": "ETSI TS136300 release16 web PDF source: source-to-target eNB handover and QPSK/16QAM/64QAM; NI LTE manual: carrier aggregation. Raw local HTTP403 recorded without bypass; web source was accessible.",
+    "18": "NIST SP800-97 section4.3.2 PDF p47 CCMP/AES and table4-2 p51-52 WEP/TKIP/CCMP; Cisco WPA2 configuration. Raw local HTTP403 recorded without bypass; web source was accessible."
+  }
+}
