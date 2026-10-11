@@ -17,7 +17,7 @@ import { DENKEN1_PUBLISHED_ORIGINAL_COUNT } from "@/lib/denken1/native";
 
 export const metadata: Metadata = {
   title: "FP・電気・施工管理・不動産・福祉などの公式公開過去問",
-  description: "公開中の資格について、年度・科目別に公式問題と正答を確認し、学習用解説を使って演習できます。資格ごとの収録数は一覧で確認できます。",
+  description: "公開中の資格について、年度・科目別に公式資料を参照し、正答や独自解答例と学習用解説を使って演習できます。資格ごとの収録数は一覧で確認できます。",
   alternates: { canonical: "/qualifications" },
 };
 
@@ -64,7 +64,7 @@ export default function QualificationsPage() {
             </Button>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
               <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
-                公式問題・正答<ExternalLink className="h-3 w-3" />
+                {item.slug === "chusho-secondary" ? "公式問題" : "公式問題・正答"}<ExternalLink className="h-3 w-3" />
               </a>
             </div>
           </article>
@@ -73,7 +73,7 @@ export default function QualificationsPage() {
       </details>
 
       <p className="mt-8 rounded-xl border border-border bg-muted/30 p-4 text-xs leading-relaxed text-muted-foreground">
-        解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。各問題画面から公式問題PDFと公式正答を確認できます。
+        解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。各問題画面から出典団体の公式資料を確認できます。中小企業診断士二次の解答例は当サイトの独自作成です。
       </p>
     </main>
   );

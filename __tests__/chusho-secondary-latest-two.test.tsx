@@ -7,6 +7,7 @@ import { CHUSHO_SECONDARY_CASES, CHUSHO_SECONDARY_QUESTIONS, CHUSHO_SECONDARY_OR
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
 import Page from "@/app/chusho-secondary/page";
+import QualificationsPage, { metadata as qualificationsMetadata } from "@/app/qualifications/page";
 
 describe("SME consultant secondary latest-two source and example contract", () => {
   it("covers two complete years with 100-point cases and no repeated original", () => {
@@ -55,6 +56,21 @@ describe("SME consultant secondary latest-two source and example contract", () =
     const html=renderToStaticMarkup(<Page />);
     expect(html).toContain("独自解答例");
     expect(html).toContain("得点を保証するものではありません");
+  });
+  it("distinguishes editorial secondary examples from official answer material in the qualification directory", () => {
+    const html = renderToStaticMarkup(<QualificationsPage />);
+    const document = new DOMParser().parseFromString(html, "text/html");
+    const articles = Array.from(document.querySelectorAll("article"));
+    const secondary = articles.find(article => article.querySelector('a[href="/chusho-secondary"]'));
+    expect(secondary).toBeDefined();
+    const sourceLink = secondary!.querySelector('a[target="_blank"]')!;
+    expect(sourceLink.getAttribute("href")).toMatch(/jf-cmca.jp/);
+    expect(sourceLink.textContent).toContain("\u516c\u5f0f\u554f\u984c");
+    expect(sourceLink.textContent).not.toContain("\u6b63\u7b54");
+    expect(document.body.textContent).toContain("\u4e2d\u5c0f\u4f01\u696d\u8a3a\u65ad\u58eb\u4e8c\u6b21\u306e\u89e3\u7b54\u4f8b\u306f\u5f53\u30b5\u30a4\u30c8\u306e\u72ec\u81ea\u4f5c\u6210");
+    expect(qualificationsMetadata.description).toContain("\u72ec\u81ea\u89e3\u7b54\u4f8b");
+    const multipleChoice = articles.find(article => article.querySelector('a[href="/fp3"]'));
+    expect(multipleChoice!.querySelector('a[target="_blank"]')!.textContent).toContain("\u6b63\u7b54");
   });
   it("retains explicit year-end cash flow and separates sunk cost decisions", () => {
     const q25=getChushoQuestion(2025,"case4",3)!;
