@@ -55,6 +55,9 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "sagyo-ryohoshi": async () => isExamPublished("sagyo-ryohoshi") ? (await import("@/data/questions/sagyo-ryohoshi")).SAGYO_RYOHOSHI_QUESTIONS : [],
   "shino-kunrenshi": async () => isExamPublished("shino-kunrenshi") ? (await import("@/data/questions/shino-kunrenshi")).SHINO_KUNRENSHI_QUESTIONS : [],
   "rinsho-kogishi": async () => isExamPublished("rinsho-kogishi") ? (await import("@/data/questions/rinsho-kogishi")).RINSHO_KOGISHI_QUESTIONS : [],
+  "gas-kou": async () => isExamPublished("gas-kou") ? (await import("@/data/questions/gas/kou")).GAS_KOU_QUESTIONS : [],
+  "gas-otsu": async () => isExamPublished("gas-otsu") ? (await import("@/data/questions/gas/otsu")).GAS_OTSU_QUESTIONS : [],
+  "gas-hei": async () => isExamPublished("gas-hei") ? (await import("@/data/questions/gas/hei")).GAS_HEI_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

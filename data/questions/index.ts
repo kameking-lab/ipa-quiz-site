@@ -60,6 +60,9 @@ import { RIGAKU_RYOHOUSHI_QUESTIONS } from "./rigaku-ryohoshi";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "./sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "./shino-kunrenshi";
 import { RINSHO_KOGISHI_QUESTIONS } from "./rinsho-kogishi";
+import { GAS_KOU_QUESTIONS } from "./gas/kou";
+import { GAS_OTSU_QUESTIONS } from "./gas/otsu";
+import { GAS_HEI_QUESTIONS } from "./gas/hei";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
@@ -115,6 +118,9 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
   ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
+  ...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
+  ...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
+  ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

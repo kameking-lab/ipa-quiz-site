@@ -34,6 +34,9 @@ export function sessionLabel(session: string): string {
     denryoku: "電力",
     kikai: "機械",
     houki: "法規",
+    "gas-law": "法令",
+    "gas-basic": "基礎",
+    "gas-technology": "ガス技術",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
     kyotsu: "共通科目",
@@ -97,6 +100,8 @@ export function buildQuestionJsonLd({
         name: "日本ファイナンシャル・プランナーズ協会",
         url: "https://www.jafp.or.jp/",
       }
+    : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
+      ? { "@type": "Organization", name: "一般財団法人日本ガス機器検査協会", url: "https://www.jia-page.or.jp/" }
     : q.exam === "takken"
       ? {
           "@type": "Organization",
@@ -178,6 +183,8 @@ export function buildQuestionJsonLd({
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
+    : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
+      ? undefined
     : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "kangoshi" || q.exam === "yakuzaishi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"

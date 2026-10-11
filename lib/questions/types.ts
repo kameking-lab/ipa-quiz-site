@@ -49,10 +49,13 @@ export type ExamCode =
   | "rigaku-ryohoshi"
   | "sagyo-ryohoshi"
   | "shino-kunrenshi"
-  | "rinsho-kogishi";
+  | "rinsho-kogishi"
+  | "gas-kou"
+  | "gas-otsu"
+  | "gas-hei";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kogishi">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kogishi" | "gas-kou" | "gas-otsu" | "gas-hei">;
 
 export type Session =
   | "am"
@@ -94,7 +97,10 @@ export type Session =
   | "hoiku-shinrigaku"
   | "kodomo-hoken"
   | "kodomo-shokueiyou"
-  | "hoiku-jisshu-riron";
+  | "hoiku-jisshu-riron"
+  | "gas-law"
+  | "gas-basic"
+  | "gas-technology";
 
 export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "annual" | "july" | "primary" | "kansai";
 
@@ -161,7 +167,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "JIA-attributed";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;
