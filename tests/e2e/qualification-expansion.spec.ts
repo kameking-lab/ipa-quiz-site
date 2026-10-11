@@ -123,9 +123,14 @@ test("denko2 complete 2026 sitting publishes question 10 and all-choice explanat
   await expect(page.getByText("低圧屋内配線の分岐回路の設計で", { exact: false })).toBeVisible();
   const choices = page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio");
   await expect(choices).toHaveCount(4);
+  await expect(page.getByRole("radiogroup", { name: /選択肢/ })).toHaveAttribute("data-shortcuts-ready", "true");
   await choices.nth(2).click(); // Official ハ is mapped to site ウ, the third choice.
-  await expect(page.getByRole("region", { name: "正解の解説" })).toBeVisible();
-  await expect(page.getByRole("region", { name: "選択肢ごとの解説" }).locator("dd")).toHaveCount(4);
+  const answerCard = page.getByRole("region", { name: "選択肢と解答", exact: true });
+  await expect(answerCard.getByText("正解！", { exact: true })).toBeVisible();
+  await expect(answerCard.getByRole("status")).toHaveText("正解です。下に解説があります。");
+  const explanations = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanations.getByRole("heading", { name: "各選択肢の解説" })).toBeVisible();
+  await expect(explanations.locator("dd")).toHaveCount(4);
   await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf");
 });
 
