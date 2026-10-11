@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
@@ -18,8 +19,8 @@ describe("nursing afternoon post-PR662 GO delta", () => {
     expect(proof.baseCommit).toBe("295e4d9eb466a71f813c62e46bd826f2f96ef9a2");
     expect(proof.previous387ObjectHashes).toHaveLength(387);
     for (const old of proof.previous387ObjectHashes) expect(historicalNurseHash(byId.get(old.id), old.id), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(464);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(464);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(followup.registeredAfter);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(followup.registeredAfter);
     expect(proof.addedIds).toHaveLength(29);
     expect(sourceCandidates.map(question => question.id).sort()).toEqual(proof.addedIds);
     expect(sourceCandidates.reduce((count, question) => count + Object.keys(question.choices).length, 0)).toBe(118);
@@ -60,7 +61,7 @@ describe("nursing afternoon post-PR662 GO delta", () => {
       const year = held.scope.startsWith("114-") ? 2024 : 2025;
       for (const qNumber of held.questionNumbers) {
         const id = `kangoshi-${year}-annual-pm-q${qNumber}`;
-        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58) || laterProof.sourceChecks.some(check => check.id === id) || latestProof.sourceChecks.some(check => check.id === id) || laterThree.sourceChecks.some(check => check.id === id) || laterFour.sourceChecks.some(check => check.id === id) || laterFive.addedIds.includes(id) || go9.addedIds.includes(id) || laterPm4GoIds.has(id) || id === "kangoshi-2024-annual-pm-q107") continue; // Verified follow-up originals, each checked against its source by dedicated tests.
+        if ((year === 2024 && qNumber === 19) || (year === 2025 && qNumber === 58) || laterProof.sourceChecks.some(check => check.id === id) || latestProof.sourceChecks.some(check => check.id === id) || laterThree.sourceChecks.some(check => check.id === id) || laterFour.sourceChecks.some(check => check.id === id) || laterFive.addedIds.includes(id) || go9.addedIds.includes(id) || laterPm4GoIds.has(id) || id === "kangoshi-2024-annual-pm-q107" || followup.addedIds.includes(id)) continue; // Verified follow-up originals, each checked against its source by dedicated tests.
         expect(byId.has(`kangoshi-${year}-annual-pm-q${qNumber}`)).toBe(false);
       }
     }

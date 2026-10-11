@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
@@ -15,9 +16,9 @@ describe("four additional primary-verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("09c9cbded397176332eba2f3dbc175d6d29b9008");
     expect(proof.previous433ObjectHashes).toHaveLength(433);
     for (const old of proof.previous433ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12 + followup.newPreparedChoiceCount);
     expect(KANGOSHI_QUESTIONS.filter(question => question.numericAnswer)).toHaveLength(2);
     expect(candidates.map(question => question.id).sort()).toEqual(proof.sourceChecks.map(check => check.id).sort());
   });
@@ -44,15 +45,15 @@ describe("four additional primary-verified nursing PM originals", () => {
       expect(question.sourceAnswerUrl).toContain("mhlw.go.jp");
       expect(isPracticeReadyQuestion(question)).toBe(true);
     }
-    for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
+    for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id) && !followup.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
   });
 
   it("shows the new partial collection and the official exclusion caveat on the exam home", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
-    expect(home).toContain("第115回は午前117問・午後115問、第114回は午前118問・午後114問");
+    expect(home).toContain("午前237問と午後235問");
+    expect(home).toContain("計472原問");
+    expect(home).toContain("全1953肢");
+    expect(home).toContain("第115回は午前118問・午後118問、第114回は午前119問・午後117問");
     expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
   });
 });

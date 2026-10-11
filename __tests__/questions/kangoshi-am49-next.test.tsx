@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -26,7 +27,7 @@ describe("frozen saved nursing morning49 originals", () => {
     expect(added.reduce((sum,q)=>sum+Object.keys(q.choices??{}).length,0)).toBe(201);
     expect(new Set(KANGOSHI_QUESTIONS.map(q=>q.id)).size).toBe(KANGOSHI_QUESTIONS.length);
     expect(proof.heldIdsNotRegistered).toHaveLength(11);
-    for(const id of proof.heldIdsNotRegistered) expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(am7.addedIds.includes(id) || id === "kangoshi-2025-annual-am-q99" || id === "kangoshi-2024-annual-am-q114");
+    for(const id of proof.heldIdsNotRegistered) expect(KANGOSHI_QUESTIONS.some(q=>q.id===id),id).toBe(am7.addedIds.includes(id) || id === "kangoshi-2025-annual-am-q99" || id === "kangoshi-2024-annual-am-q114" || followup.addedIds.includes(id));
     expect(KANGOSHI_QUESTIONS.some(q=>q.id==="kangoshi-2025-annual-am-q32")).toBe(false);
     expect(KANGOSHI_QUESTIONS.some(q=>q.id==="kangoshi-2025-annual-am-q79")).toBe(false);
   });

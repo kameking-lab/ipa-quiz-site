@@ -1,3 +1,4 @@
+import followup from "@/docs/evidence/nurse-latest-two-followup-20261011/INTEGRATION.json";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
@@ -38,15 +39,15 @@ describe("six publication-ready nursing AM originals", () => {
     }
     expect(proof.addedIds).toHaveLength(6);
     expect(saved.map(question => question.id).sort()).toEqual(proof.addedIds);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
     expect(proof.totalOriginals).toBe(proof.previousOriginals + proof.addedOriginals);
     expect(proof.totalOriginals).toBe(457);
-    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12);
+    expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12 + followup.newPreparedChoiceCount);
     expect(proof.totalChoices).toBe(proof.previousChoices + proof.addedChoices);
-    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3);
+    expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3 + followup.newPreparedAdditionCount);
     expect(proof.heldIdsUnchanged).toContain("kangoshi-2025-annual-am-q99");
     for (const id of proof.heldIdsUnchanged) {
-      if (id === "kangoshi-2025-annual-am-q99" || id === "kangoshi-2024-annual-am-q114") continue;
+      if (id === "kangoshi-2025-annual-am-q99" || id === "kangoshi-2024-annual-am-q114" || followup.addedIds.includes(id)) continue;
       expect(byId.has(id), id).toBe(false);
     }
   });
@@ -123,16 +124,16 @@ describe("six publication-ready nursing AM originals", () => {
     const home = readFileSync("app/[exam]/page.tsx", "utf8");
     const catalog = QUALIFICATION_CATALOG.find(item => item.examCode === "kangoshi")!;
     for (const text of [home, catalog.reuseSummary, EXAM_DESCRIPTIONS.kangoshi ?? ""]) {
-      expect(text).toContain("計464原問");
-      expect(text).toContain("全1918肢");
-      expect(text).toContain("午後229原問");
-      expect(text).toContain("第115回は午前117問・午後115問、第114回は午前118問・午後114問");
+      expect(text).toContain("計472原問");
+      expect(text).toContain("全1953肢");
+      expect(text).toContain("午後235原問");
+      expect(text).toContain("第115回は午前118問・午後118問、第114回は午前119問・午後117問");
       expect(text).toContain("午前 問32は厚生労働省が採点対象から除外");
     }
-    expect(home).toContain("午前235問と午後229問");
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(118);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(117);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(114);
-    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(115);
+    expect(home).toContain("午前237問と午後235問");
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "am")).toHaveLength(119);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "am")).toHaveLength(118);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2024 && question.session === "pm")).toHaveLength(117);
+    expect(KANGOSHI_QUESTIONS.filter(question => question.year === 2025 && question.session === "pm")).toHaveLength(118);
   });
 });
