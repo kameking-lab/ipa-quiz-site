@@ -28,6 +28,6 @@ describe("Zoen1 technical supplement six", () => {
     expect(trees.answer).toEqual(["ア", "イ", "エ"]);
     expect(trees.requiredSelections).toBe(3);
     expect(trees.choiceExplanations?.エ).toContain("0.154m");
-    expect(new Set(ZOEN1_QUESTIONS.map((q) => q.id)).size).toBe(35);
+    expect(new Set(ZOEN1_QUESTIONS.map((q) => q.id)).size).toBe(ZOEN1_QUESTIONS.length);
   });
 });
