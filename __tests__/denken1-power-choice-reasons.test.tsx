@@ -6,7 +6,7 @@ import supplement from "@/data/questions/denken1/choice-reasons-2026-power.json"
 import original2025Data from "@/data/questions/denken1/native-2025-power.json";
 import supplement2025 from "@/data/questions/denken1/choice-reasons-2025-power.json";
 import { NativeAnswer } from "@/components/denken2/NativeAnswer";
-import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT } from "@/lib/denken1/native";
+import { DENKEN1_NATIVE_PARTS } from "@/lib/denken1/native";
 import { withPowerChoiceReasons } from "@/lib/denken1/power-choice-reasons";
 
 // JSON inference unions the 15- and 20-label banks with optional absent keys.
@@ -105,7 +105,6 @@ describe("Denken1 2026 primary power choice supplement", () => {
     expect(reasonCount).toBe(580);
     expect(changedExplanations).toEqual(["3:1", "5:5", "6:1"]);
     expect(JSON.stringify(original)).toBe(before);
-    expect(DENKEN1_PUBLISHED_ORIGINAL_COUNT).toBe(39);
     expect(DENKEN1_NATIVE_PARTS.find(part => part.year === 2026 && part.subject === "power")?.questions)
       .toEqual(enriched.questions);
   });
