@@ -1,0 +1,31 @@
+{
+  "atUtc": "2026-10-11T07:10:14.959621+00:00",
+  "previousHead": "8c8c0a250c0d55562e0ba0cecd8bc351dcfc22fb",
+  "mergedMain": "a13ececaf3062840ba5476ce153623460b2e2981",
+  "strategy": "Normal merge; seven conflicts use main with existing gengo registration additions only.",
+  "conflictFiles": [
+    "__tests__/lib/exam-config-integrity.test.ts",
+    "lib/exam-config.ts",
+    "lib/home/home-directory.ts",
+    "lib/questions/display.ts",
+    "lib/questions/source-label.ts",
+    "lib/questions/types.ts",
+    "scripts/validate-questions.ts"
+  ],
+  "existingGengoQuestionFilesUnchanged": [
+    {
+      "path": "data/questions/gengo-chokakushi/index.ts",
+      "normalizedSha256": "70e8268e4667a389b1234a3699584aaf34697a519d68c2b74280d456f0607245"
+    },
+    {
+      "path": "data/questions/gengo-chokakushi/official-notice-ready.json",
+      "normalizedSha256": "0a673b08c8fb8ae85ba41ca74b747defaa35eba20b56af302d7e446da8a643b0"
+    },
+    {
+      "path": "data/questions/gengo-chokakushi/source-manifest.json",
+      "normalizedSha256": "a3dd8397f3b88b610f57f1d3804654d57919ab83475221d09e0b5c1547b4c479"
+    }
+  ],
+  "otherMainQuestionFilesUnchanged": true,
+  "publicationGateChanged": false
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-10-11T07:11:50.477058+00:00",
+  "ownerThreadId": "01a12870-e86a-73bc-baae-8b1b066b9095",
+  "ownership": {
+    "individualLeaseConfirmed": true,
+    "parallel20OwnerConfirmed": true,
+    "leaseSha256BeforeUpdate": "52c7fca3d8a95356d2d9852db08c0e071704ed0c9a446a11f3edfbba087854ba"
+  },
+  "inspectedScope": {
+    "repoRoots": 108,
+    "repoMetadataFiles": 8732,
+    "reportMetadataFiles": 4528,
+    "newOriginalsLocated": 0
+  },
+  "sourceCoverage": [
+    {
+      "edition": 27,
+      "year": 2025,
+      "session": "am",
+      "missing": 97
+    },
+    {
+      "edition": 27,
+      "year": 2025,
+      "session": "pm",
+      "missing": 100
+    },
+    {
+      "edition": 28,
+      "year": 2026,
+      "session": "am",
+      "missing": 96
+    },
+    {
+      "edition": 28,
+      "year": 2026,
+      "session": "pm",
+      "missing": 100
+    }
+  ],
+  "counts": {
+    "expectedOriginals": 400,
+    "capturedOriginals": 7,
+    "explainedManuscripts": 5,
+    "choiceExplanations": 25,
+    "practiceCandidates": 3,
+    "academicHolds": 2,
+    "officialExclusions": 2,
+    "missingOriginals": 393,
+    "newOriginalsRecovered": 0,
+    "newManuscripts": 0,
+    "newChoiceExplanations": 0,
+    "publicIncrement": 0
+  },
+  "partitionDisjointAndComplete": true,
+  "existingManuscriptSha256": "0e676c5322fe5a046a778dbf6daa2bddda68b875bbf1c3da7ac1db567205bdc5",
+  "officialAnswerLedgerSha256": "c7321e233526f18714756199fab534ba164400315a6e9e790d5be41526796ccb",
+  "manifestSha256": "509c53243ec180f560cfce5d4759ee395d02040c454c9f8ec051a2fc9062d9f5",
+  "newMissingLedgerSha256": "d3f948cad569da68a0ebfb2ada8240fb3f83179062409229a2aa76f03039e312",
+  "sevenOfficialPdfsVerified": [
+    {
+      "file": "28A14.pdf",
+      "sha256": "7937359d9a20a35c78476cc739690202123faa20680e7715742fb04046afe775",
+      "bytes": 1260531,
+      "matchesReceipt": true
+    },
+    {
+      "file": "28A35.pdf",
+      "sha256": "102f294833c5baeccb4cbcac96f844730592edcdc03301cdf214f13a66f160dc",
+      "bytes": 1319329,
+      "matchesReceipt": true
+    },
+    {
+      "file": "28A69.pdf",
+      "sha256": "92fce6c453d68f5a54af74ed53e392d31361c28f9dcd87e6836bdaf5eb1f05f2",
+      "bytes": 1225716,
+      "matchesReceipt": true
+    },
+    {
+      "file": "28A83.pdf",
+      "sha256": "241762cbaa6be9471ce864a32a8739fc71b88483d5502cd7fb2c8a1faec1f348",
+      "bytes": 1261216,
+      "matchesReceipt": true
+    },
+    {
+      "file": "27A36.pdf",
+      "sha256": "b62fdd915e5ecd06dd6d7b800b04d3fe28e59f0a4ae7c60c5b3b502309e6f7a9",
+      "bytes": 31594,
+      "matchesReceipt": true
+    },
+    {
+      "file": "27A40.pdf",
+      "sha256": "495bfa0096bafda401b05059a7070cec40fa31782cc6ba66c2c1ad65be77e6c4",
+      "bytes": 34189,
+      "matchesReceipt": true
+    },
+    {
+      "file": "27A48.pdf",
+      "sha256": "25f044108fcbf2592956509c0d4f04e5c80cc07327a1404c627d43f309767a14",
+      "bytes": 39108,
+      "matchesReceipt": true
+    }
+  ],
+  "mergePreservation": {
+    "atUtc": "2026-10-11T07:10:14.959621+00:00",
+    "previousHead": "8c8c0a250c0d55562e0ba0cecd8bc351dcfc22fb",
+    "mergedMain": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "strategy": "Normal merge; seven conflicts use main with existing gengo registration additions only.",
+    "conflictFiles": [
+      "__tests__/lib/exam-config-integrity.test.ts",
+      "lib/exam-config.ts",
+      "lib/home/home-directory.ts",
+      "lib/questions/display.ts",
+      "lib/questions/source-label.ts",
+      "lib/questions/types.ts",
+      "scripts/validate-questions.ts"
+    ],
+    "existingGengoQuestionFilesUnchanged": [
+      {
+        "path": "data/questions/gengo-chokakushi/index.ts",
+        "normalizedSha256": "70e8268e4667a389b1234a3699584aaf34697a519d68c2b74280d456f0607245"
+      },
+      {
+        "path": "data/questions/gengo-chokakushi/official-notice-ready.json",
+        "normalizedSha256": "0a673b08c8fb8ae85ba41ca74b747defaa35eba20b56af302d7e446da8a643b0"
+      },
+      {
+        "path": "data/questions/gengo-chokakushi/source-manifest.json",
+        "normalizedSha256": "a3dd8397f3b88b610f57f1d3804654d57919ab83475221d09e0b5c1547b4c479"
+      }
+    ],
+    "otherMainQuestionFilesUnchanged": true,
+    "publicationGateChanged": false
+  },
+  "publicationGo": false,
+  "fullLatestTwoComplete": false,
+  "networkRetrievalDuringInventory": false,
+  "refusedProviderRetryOrBypass": false,
+  "newPaidApiOrCredentials": false,
+  "localFullBuildExecuted": false,
+  "tests": "44 focused tests passed in five files; strict typecheck, 3-question schema check and scoped lint passed.",
+  "verification": {
+    "checkedAtUtc": "2026-10-11T07:15:05.222488+00:00",
+    "focusedTests": {
+      "passed": 44,
+      "files": 5,
+      "maxWorkers": 1,
+      "exitCode": 0
+    },
+    "typecheck": {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    "schema": {
+      "command": "pnpm validate:questions --exam=gengo-chokakushi",
+      "ok": 3,
+      "fail": 0,
+      "warn": 0,
+      "exitCode": 0
+    },
+    "lint": {
+      "changedAndConflictRelatedFiles": 14,
+      "exitCode": 0
+    },
+    "localFullBuildExecuted": false,
+    "hostedCi": "Awaiting the new post-merge PR head; prior-head success is not reused."
+  }
+}
