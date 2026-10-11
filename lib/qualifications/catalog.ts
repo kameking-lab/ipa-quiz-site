@@ -136,7 +136,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "公式に公表された過去問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：令和○年度○期第二種電気工事士学科試験",
-    remainingWork: ["令和8年度上期学科の問11〜50の追加"],
+    remainingWork: [],
   },
   {
     slug: "denko1",
