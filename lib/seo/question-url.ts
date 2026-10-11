@@ -13,7 +13,7 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
   return /^\d$/.test(part) ? `q${qNumber}-${part}` : `q${qNumber}${part}`;
 }
 
-/** 枝問(a)/(b)は電験三種、空欄番号(1)〜(5)は電験一種・二種が使う。 */
+/** 枝番(a)/(b)は電験三種、数字の枝番は電験一・二種と診断士の設問に使用する。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
   letter: ["denken3"],
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi"],
