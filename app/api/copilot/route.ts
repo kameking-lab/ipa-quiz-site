@@ -211,7 +211,7 @@ export async function POST(req: Request) {
       "X-RAG-Top-Score": rag.ragResult.topScore.toFixed(3),
       "X-RAG-Grounded": rag.hasGrounding ? "1" : "0",
       "X-RAG-Reranker": rag.ragResult.rerankerUsed,
-      ...(rag.citationsHeader ? { "X-RAG-Citations": rag.citationsHeader } : {}),
+      ...(rag.citationsHeader ? { "X-RAG-Citation-Candidates": rag.citationsHeader } : {}),
       ...(rag.relatedHeader ? { "X-Related-Questions": rag.relatedHeader } : {}),
     },
   });

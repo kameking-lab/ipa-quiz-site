@@ -64,6 +64,7 @@ import {
   type RelatedQuestion,
 } from "@/lib/copilot/header-codec";
 import { CitationCards } from "@/components/copilot/CitationCards";
+import { stripCitationFooter } from "@/lib/copilot/citations";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
@@ -79,7 +80,7 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   quickAction?: QuickActionId;
-  /** RAG citation メタ。X-RAG-Citations ヘッダから復号して保持する。 */
+  /** Retrieval candidates; rendered as citations only when the answer references them. */
   citations?: CitationMeta[];
   /** 関連問題サジェスト。X-Related-Questions ヘッダから復号して保持する。 */
   relatedQuestions?: RelatedQuestion[];
@@ -110,13 +111,6 @@ const STREAM_STATUS_LABEL: Record<Exclude<StreamStatus, "idle">, string> = {
   generating: "回答を生成しています…",
   streaming: "回答を生成中…",
 };
-
-/** Markdown 表示時に決定的に付与される出典フッターを除外する。
- * 構造化 citation カードに置き換えて表示するため、二重表示を避ける。 */
-const CITATION_FOOTER_RE = /\n\n---\n\*\*出典\*\*[\s\S]*$/;
-function stripCitationFooter(content: string): string {
-  return content.replace(CITATION_FOOTER_RE, "");
-}
 
 interface Props {
   question: Question;
@@ -402,7 +396,7 @@ export function CopilotPanel({
 
         // 構造化 citation メタと関連問題は HTTP ヘッダで返ってくる。
         // ヘッダは body 読み出し前に確定しているので、最初のメッセージ追加時に同梱しておく。
-        const citationHeaderValue = res.headers.get("X-RAG-Citations");
+        const citationHeaderValue = res.headers.get("X-RAG-Citation-Candidates") ?? res.headers.get("X-RAG-Citations");
         const relatedHeaderValue = res.headers.get("X-Related-Questions");
         const citations = decodeCitationsHeader(citationHeaderValue);
         const relatedQuestions = decodeRelatedHeader(relatedHeaderValue);
@@ -1003,9 +997,7 @@ export function CopilotPanel({
                   </div>
                 ) : (
                   <Markdown>
-                    {m.citations && m.citations.length > 0
-                      ? stripCitationFooter(m.content)
-                      : m.content}
+                    {stripCitationFooter(m.content)}
                   </Markdown>
                 )}
                 {/* Typing cursor: only on the last assistant message while
@@ -1024,9 +1016,7 @@ export function CopilotPanel({
                     （ここで停止しました）
                   </p>
                 )}
-                {m.citations && m.citations.length > 0 && (
-                  <CitationCards citations={m.citations} messageIndex={i} />
-                )}
+                <CitationCards citations={m.citations ?? []} response={m.content} isStreaming={streaming && i === messages.length - 1} messageIndex={i} />
                 {m.relatedQuestions && m.relatedQuestions.length > 0 && (
                   <RelatedQuestionsSection
                     items={m.relatedQuestions}

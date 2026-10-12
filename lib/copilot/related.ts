@@ -45,6 +45,32 @@ export function sharesTopicOrCategory(
   return false;
 }
 
+/** Detailed tags take priority over broad categories such as ストラテジ系. */
+export function sharesSpecificTopic(candidate: TopicFields, currentCategory?: string, currentTopicTags?: string[]): boolean {
+  if (currentTopicTags?.length) {
+    return candidate.topicTags.some(tag => currentTopicTags.includes(tag));
+  }
+  return Boolean(currentCategory && candidate.category === currentCategory);
+}
+
+/** Conservative focus for untagged questions; generic instructions are not a topic. */
+export function questionFocusTerms(questionText: string): string[] {
+  return [...new Set([
+    ...(questionText.match(/[ァ-ヶー]{4,}/g) ?? []),
+    ...(questionText.match(/\b[A-Z][A-Z0-9-]{1,}\b/g) ?? []),
+  ])];
+}
+
+export function matchesQuestionTopic(candidate: TopicFields, currentCategory: string | undefined, currentTopicTags: string[] | undefined, questionText: string | undefined, candidateText: string): boolean {
+  if (currentTopicTags?.length) return sharesSpecificTopic(candidate, currentCategory, currentTopicTags);
+  if (questionText) {
+    return questionFocusTerms(questionText).some(term => /^[A-Z0-9-]+$/.test(term)
+      ? new RegExp(`\\b${term}\\b`, "i").test(candidateText)
+      : candidateText.includes(term));
+  }
+  return sharesSpecificTopic(candidate, currentCategory, currentTopicTags);
+}
+
 /**
  * Score multiplier that lifts same-category / shared-topicTag candidates so
  * BM25 surface-token overlap alone cannot outrank a true subfield match.
@@ -71,6 +97,7 @@ interface FindRelatedInput {
   currentExam?: ExamCode;
   currentCategory?: string;
   currentTopicTags?: string[];
+  currentQuestionText?: string;
   /** RAG citation に既に使われた docId 集合（重複を避ける）。 */
   excludeDocIds: ReadonlySet<string>;
   /** 返却件数。デフォルト 4。 */
@@ -96,20 +123,23 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     currentTopicTags: input.currentTopicTags,
     currentExam: input.currentExam,
   };
-  const query = buildRetrievalQuery(input.userMessage, ctx);
+  const allQuestions = getAllQuestions();
+  const currentQuestionText = input.currentQuestionText ?? allQuestions.find(q => q.id === input.currentQuestionId)?.question;
+  const focusTerms = currentQuestionText ? questionFocusTerms(currentQuestionText) : [];
+  const query = buildRetrievalQuery([input.userMessage, ...focusTerms].join(" "), ctx);
   const index = getCachedIndex(getCorpus);
 
   // citation top-N 用より少し広めに取り、フィルタ後に limit へ落とす。
   const candidates = retrieve(index, query, Math.max(limit * 4, 12));
   if (candidates.length === 0) return [];
 
-  const allQuestions = getAllQuestions();
   const questionMap = new Map(allQuestions.map((q) => [q.id, q]));
 
   // When a question is being viewed, gate to its subfield: prefer candidates
   // that share the category or a topic tag, so a surface-token BM25 hit from a
   // different subfield can't be presented as a 類題 (即修正④).
   const hasContext =
+    Boolean(currentQuestionText) ||
     Boolean(input.currentCategory) ||
     (input.currentTopicTags?.length ?? 0) > 0;
 
@@ -121,6 +151,7 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     if (input.currentQuestionId && qid === input.currentQuestionId) continue;
     const q = questionMap.get(qid);
     if (!q) continue;
+    if (input.currentExam && q.exam !== input.currentExam) continue;
     // 解説が極端に短い問題は学習教材として弱いため、関連サジェストには含めない。
     if (!q.explanation || q.explanation.trim().length < 40) continue;
     // 同一試験区分は弱優先 + 同分野 / 細分野タグ一致を強優先。
@@ -130,10 +161,12 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
       input.currentCategory,
       input.currentTopicTags,
     );
-    const onTopic = sharesTopicOrCategory(
+    const onTopic = matchesQuestionTopic(
       q,
       input.currentCategory,
       input.currentTopicTags,
+      currentQuestionText,
+      `${q.question}\n${q.explanation}`,
     );
     scored.push({
       onTopic,
@@ -155,12 +188,11 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     });
   }
 
-  // With context, drop off-topic candidates entirely — *unless* none are
-  // on-topic (sparse subfield), in which case fall back to the full set so the
-  // section is not silently empty.
+  // A sparse topic is allowed to return no suggestions. Never fill it with
+  // different subjects just to make the section nonempty.
   const onTopicOnly = scored.filter((s) => s.onTopic);
   const pool =
-    hasContext && onTopicOnly.length > 0 ? onTopicOnly : scored;
+    hasContext ? onTopicOnly : scored;
 
   return pool
     .map((s) => s.item)
