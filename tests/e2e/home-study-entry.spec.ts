@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => 
 
 test.setTimeout(90_000);
 for (const width of [390, 1280]) {
-  test(`search selects one qualification before starting at ${width}px`, async ({ page }) => {
+  test(`qualification link reaches its question in two clicks and restores filters at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
     const finder = page.locator("#choose-qualification");
@@ -14,15 +14,26 @@ for (const width of [390, 1280]) {
     if (width < 768) await expect(page.locator('nav[aria-label="モバイルタブ"] a[href="/mock-exam"]:visible')).toHaveCount(0);
     await expect(page.locator(".study-resume-empty")).toBeVisible();
     await finder.getByRole("searchbox").fill("ｆｅ");
-    const row = finder.getByRole("button", { name: /^基本情報技術者/ });
+    await finder.getByRole("button", { name: /^IT・/ }).click();
+    await expect(finder.getByRole("status")).toHaveText("1資格・区分");
+    await expect(finder.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
+    const row = finder.getByRole("link", { name: /^基本情報技術者/ });
+    await expect(row).toHaveAttribute("href", "/fe");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await row.focus();
     await page.keyboard.press("Enter");
-    await expect(row).toHaveAttribute("aria-expanded", "true");
-    await expect(finder.locator('a[href="/fe"]:visible')).toHaveCount(1);
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.screenshot({ path: `reports/home-redesign/selected-${width}.png`, fullPage: true });
-    await finder.locator('a[href="/fe"]:visible').click();
     await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
+    await page.getByRole("region", { name: "今すぐ解く" }).getByRole("link", { name: "今すぐ解く", exact: true }).click();
+    await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
+    expect(new URL(page.url()).searchParams.get("exam")).toBe("fe");
+    await page.goBack();
+    await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
+    await page.goBack();
+    await expect(finder.getByRole("searchbox")).toHaveValue("ｆｅ");
+    await expect(finder.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
+    await expect(finder.getByRole("link", { name: /^基本情報技術者/ })).toHaveAttribute("href", "/fe");
+    await expect(page.getByRole("link", { name: /収録している全資格/ })).toBeVisible();
+    await page.screenshot({ path: `reports/home-redesign/direct-${width}.png`, fullPage: true });
   });
 }
 

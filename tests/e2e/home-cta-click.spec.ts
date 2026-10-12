@@ -18,7 +18,6 @@ for (const width of [360, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     // トップの IT・情報処理カードから資格ページへ直接進める。
-    await page.locator("#choose-qualification").getByRole("button", { name: /^ITパスポート/ }).click();
     const qualification = page.locator('#choose-qualification a[href="/ip"]:visible');
     await qualification.click({ trial: true });
     await coordinateClick(page, qualification);

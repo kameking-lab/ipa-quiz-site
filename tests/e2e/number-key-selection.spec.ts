@@ -26,14 +26,10 @@ test.describe("number-key 1 selects the first displayed choice", () => {
     await page.goto("/challenge");
     await expect(page.getByRole("radiogroup")).toHaveCount(0);
     await page.getByRole("searchbox").fill("AP");
-    const exam = page.getByRole("button", { name: /応用情報技術者/ });
+    const exam = page.getByRole("link", { name: /応用情報技術者/ });
     await expect(exam).toHaveCount(1);
+    await expect(exam).toHaveAttribute("href", "/ap");
     await exam.click();
-    await expect(exam).toHaveAttribute("aria-expanded", "true");
-    const entry = page.locator('a.study-primary[href="/ap"]:visible');
-    await expect(entry).toHaveCount(1);
-    await expect(entry).toBeVisible();
-    await entry.click();
     await expect(page).toHaveURL(/\/ap$/);
   });
 

@@ -5,27 +5,47 @@ import { HomeQualificationFinder } from "@/components/home/landing/HomeQualifica
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 const domains = getHomeDirectory();
-beforeEach(cleanup);
+beforeEach(() => { cleanup(); window.history.replaceState(null, ""); });
 describe("qualification discovery", () => {
   it("searches normalized abbreviations and starts only the selected qualification", () => {
     render(<HomeQualificationFinder domains={domains} />);
     fireEvent.change(screen.getByRole("searchbox", { name: "資格名・略称で検索" }), { target: { value: "ｓｃ" } });
-    const row = screen.getByRole("button", { name: /情報処理安全確保支援士/ });
-    expect(row).toHaveAttribute("aria-expanded", "false");
-    fireEvent.click(row);
-    expect(row).toHaveAttribute("aria-expanded", "true");
-    for (const link of screen.getAllByRole("link", { name: /年度・科目を選んで解く/ })) expect(link).toHaveAttribute("href", "/sc");
+    const row = screen.getByRole("link", { name: /情報処理安全確保支援士/ });
+    expect(row).toHaveAttribute("href", "/sc");
+    expect(row).not.toHaveAttribute("aria-expanded");
+    expect(screen.queryByText("選んだ資格")).not.toBeInTheDocument();
   });
-  it("filters a domain, reports empty searches and resets selection", () => {
+  it("filters a domain, reports empty searches and resets filters", () => {
     render(<HomeQualificationFinder domains={domains} />);
     fireEvent.click(screen.getByRole("button", { name: "電気" }));
     expect(screen.getByRole("button", { name: "電気" })).toHaveAttribute("aria-pressed", "true");
-    expect(screen.getByRole("button", { name: /第二種電気工事士/ })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /第二種電気工事士/ })).toHaveAttribute("href", "/denko2");
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "該当しない資格" } });
     expect(screen.getByText("該当する資格が見つかりませんでした。")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "検索をクリアして選び直す" }));
     expect(screen.getByRole("searchbox")).toHaveValue("");
-    expect(screen.getByRole("button", { name: /^ITパスポート/ })).toHaveAttribute("aria-expanded", "false");
+    expect(screen.getByRole("link", { name: /^ITパスポート/ })).toHaveAttribute("href", "/ip");
+  });
+  it("restores the search and domain from the same history entry without losing router state", () => {
+    window.history.replaceState({ routerMarker: "preserved" }, "");
+    const view = render(<HomeQualificationFinder domains={domains} />);
+    fireEvent.click(screen.getByRole("button", { name: /^IT・/ }));
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "ｓｃ" } });
+    const row = screen.getByRole("link", { name: /情報処理安全確保支援士/ });
+    row.addEventListener("click", (event) => event.preventDefault());
+    fireEvent.click(row);
+    expect(window.history.state.routerMarker).toBe("preserved");
+    view.unmount();
+    render(<HomeQualificationFinder domains={domains} />);
+    expect(screen.getByRole("searchbox")).toHaveValue("ｓｃ");
+    expect(screen.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("link", { name: /情報処理安全確保支援士/ })).toHaveAttribute("href", "/sc");
+  });
+  it("keeps the preview and full-directory entry available before navigation", () => {
+    render(<HomeQualificationFinder domains={domains} preview={<p>既存の問題プレビュー</p>} />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "fe" } });
+    expect(screen.getByText("既存の問題プレビュー")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /収録している全資格/ })).toHaveAttribute("href", "#home-directory-title");
   });
   it("keeps every real qualification href in visible server-rendered genres", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<HomeDirectory domains={domains} />), "text/html");
