@@ -18,7 +18,7 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("remaining safe34 saved lab/radiology originals", () => {
   it("loads exact additive IDs with no prior-original loss or duplicate", async () => {
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(28);
+    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(103);
     expect(SHINRYO_HOSHASENGISHI_QUESTIONS.length).toBeGreaterThanOrEqual(26);
     for (const suite of suites) {
       expect(suite.questions.map(q => q.qNumber)).toEqual(Object.keys(suite.keys).map(Number));

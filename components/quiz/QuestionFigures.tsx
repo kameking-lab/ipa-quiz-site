@@ -8,6 +8,11 @@ export function QuestionFigures({ question }: { question: Question }) {
         {/* Native image preserves source aspect ratio without guessed dimensions. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={url} alt={question.imageAltTexts?.[index] || `問${question.qNumber}の図表${index + 1}`} className="mx-auto h-auto max-w-full" loading="lazy" />
+        <figcaption className="mt-2 text-sm">
+          <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">
+            図表を拡大して表示
+          </a>
+        </figcaption>
       </figure>
     ))}
   </div>;

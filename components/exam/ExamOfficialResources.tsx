@@ -217,6 +217,11 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
       },
     ] : exam === "rinsho-kensagishi" ? [
       {
+        label: "厚生労働省 第72回臨床検査技師 午前の公式問題",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        description: "2026年実施回の午前問題。本サイトの収録は一部で、全問ではありません。",
+      },
+      {
         label: "厚生労働省 第72回臨床検査技師 午後の公式問題",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
         description: "2026年実施回の午後問題。本サイトの収録は一部で、全問ではありません。",
@@ -225,6 +230,11 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         label: "厚生労働省 第72回臨床検査技師 公式正答",
         href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
         description: "同じ試験回の公式正答表。サイトの学習用解説とは区別してください。",
+      },
+      {
+        label: "厚生労働省 第71回臨床検査技師 午前の公式問題",
+        href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+        description: "2025年実施回の午前問題。本サイトの収録は一部で、全問ではありません。",
       },
       {
         label: "厚生労働省 第71回臨床検査技師 午後の公式問題",

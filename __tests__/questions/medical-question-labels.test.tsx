@@ -21,7 +21,7 @@ describe("medical question and quiz display names", () => {
 
   it.each([
     ["sagyo-ryohoshi", 310],
-    ["shino-kunrenshi", 186],
+    ["shino-kunrenshi", 220],
   ] as const)("describes the registered partial AM and PM coverage for %s", (exam, count) => {
     expect(getQuestionsByExamStrict(exam)).toHaveLength(count);
     const summary = getQualificationByExamCode(exam)!.reuseSummary;

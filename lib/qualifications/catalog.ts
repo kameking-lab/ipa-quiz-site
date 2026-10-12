@@ -525,7 +525,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-10.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第56・55回の午前・午後から、原文・正答・全肢解説を確認した186問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
+    reuseSummary: "第56・55回の午前・午後から、原文・正答・全肢解説を確認した220問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の別冊図と専門根拠の局所確認", "最新2回の残る午前・午後問題"],
   },
   {
@@ -606,7 +606,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/content/001677927.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第111回・第110回の公式問題と最終正答に照合済みの307原問を部分収録。単答142問、2肢選択165問で、全選択肢の独自解説を掲載。共通症例文は対応する設問に保持。原本・解説・計算根拠等が未確認の問題は未収録。両回全690問の完成ではありません。",
+    reuseSummary: "第111回・第110回の公式問題と最終正答に照合済みの359原問を部分収録。単答157問、2肢選択202問で、全選択肢の独自解説を掲載。共通症例文は対応する設問に保持。原本・解説・計算根拠等が未確認の問題は未収録。両回全690問の完成ではありません。",
     attributionTemplate: "出典：厚生労働省「第○回薬剤師国家試験」問○（問題・最終正答）",
     remainingWork: ["一般掲載可否のオーナー確認", "未収録問題の出典・図表・共通症例・計算の確認", "後着10問の根拠・解説差分を保持"],
   },
@@ -662,7 +662,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第71・72回（2025・2026年実施）の午後から、原文・公式正答・全五肢の解説を照合した35原問を部分収録。図版・専門根拠・原文照合待ちの問題は未掲載で、最新2回の全問は未完備です。",
+    reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した103原問を部分収録。必要な公式原図も掲載しています。未受入れの保存原問7問と残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
   },
   {
