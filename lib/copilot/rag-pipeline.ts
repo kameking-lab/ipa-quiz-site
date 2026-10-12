@@ -6,7 +6,7 @@ import { ragEnabled, ragMinScore, runRAG } from "@/lib/copilot/rag";
 import { buildCitationFooter, buildRAGContextBlock } from "@/lib/copilot/citations";
 import type { RAGResult } from "@/lib/copilot/types";
 import { buildCitationMetas, encodeCitationsHeader } from "@/lib/copilot/citation-meta";
-import { encodeRelatedHeader, findRelatedQuestions } from "@/lib/copilot/related";
+import { encodeRelatedHeader, findRelatedQuestions, matchesQuestionTopic } from "@/lib/copilot/related";
 import { buildQuestionDoc } from "@/lib/copilot/corpus";
 
 export interface RAGPipelineInput {
@@ -70,6 +70,14 @@ export async function runCopilotRAGPipeline(
     return { ...EMPTY, ragResult };
   }
 
+  // Retrieval candidates are not yet answer citations. Exclude unrelated
+  // qualification/question context before it reaches the model.
+  ragResult = {
+    ...ragResult,
+    passages: ragResult.passages.filter(({doc}) => doc.kind === "glossary" ||
+      (doc.meta.exam === question.exam && matchesQuestionTopic({category: doc.meta.category ?? "", topicTags: doc.meta.topicTags ?? []}, question.category, question.topicTags, question.question, doc.text))),
+  };
+
   // Give the current problem its own citation. Otherwise the model can attach
   // another problem's citation to facts found only in the current explanation.
   if (!question.needsReview && question.explanation.trim()) {
@@ -82,6 +90,8 @@ export async function runCopilotRAGPipeline(
       ],
     };
   }
+
+  if (ragResult.passages.length === 0) return { ...EMPTY, ragResult };
 
   const ragDirective = buildRAGDirective(ragResult.passages.length);
   const ragContextBlock = buildRAGContextBlock(ragResult.passages);
@@ -99,6 +109,7 @@ export async function runCopilotRAGPipeline(
       currentExam: question.exam,
       currentCategory: question.category,
       currentTopicTags: question.topicTags,
+      currentQuestionText: question.question,
       excludeDocIds: excluded,
       limit: 4,
     });

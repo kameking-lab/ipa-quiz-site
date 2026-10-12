@@ -12,9 +12,12 @@ import {
 import { cn } from "@/lib/utils";
 import type { CitationMeta } from "@/lib/copilot/header-codec";
 import { posthogCapture } from "@/lib/posthog";
+import { selectCitedCandidates, CITATION_UNVERIFIED_NOTICE } from "@/lib/copilot/citations";
 
 interface Props {
   citations: CitationMeta[];
+  response: string;
+  isStreaming?: boolean;
   /** AI 応答に対応するメッセージのインデックス（PostHog 追跡用）。 */
   messageIndex?: number;
 }
@@ -24,15 +27,19 @@ interface Props {
  * markdown footer の「[N] [title](url)」より情報密度が高く、
  * 試験区分・年度・カテゴリのバッジ、別タブオープン、根拠スニペットモーダルを提供する。
  */
-export function CitationCards({ citations, messageIndex }: Props) {
+export function CitationCards({ citations: candidates, response, isStreaming, messageIndex }: Props) {
   const [openMeta, setOpenMeta] = React.useState<CitationMeta | null>(null);
+  const citations = selectCitedCandidates(response, candidates);
 
-  if (citations.length === 0) return null;
+  if (citations.length === 0) {
+    if (isStreaming || !response.trim() || response.includes(CITATION_UNVERIFIED_NOTICE.trim())) return null;
+    return <p className="mt-2 text-[11px] text-zinc-500" role="note">出典未確認：この回答には確認できる引用資料が付いていません。重要な内容は公式資料で確認してください。</p>;
+  }
 
   return (
     <div className="mt-2 space-y-1.5">
       <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-        出典 ({citations.length})
+        回答中の引用資料 ({citations.length})
       </p>
       <ul className="space-y-1.5">
         {citations.map((c) => (

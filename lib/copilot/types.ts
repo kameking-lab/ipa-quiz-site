@@ -34,7 +34,7 @@ export interface RerankedCandidate extends RetrievalCandidate {
 
 /** rag.ts の最終出力。route.ts はこれを使ってプロンプトを組み立てる。 */
 export interface RAGResult {
-  /** 採用された出典（top-N）。空配列の場合は citation を出さない。 */
+  /** Model-context candidates (top-N); answer citations are resolved after generation. */
   passages: RerankedCandidate[];
   /** BM25 top-1 score。citation 表示しきい値判定に使う。 */
   topScore: number;
