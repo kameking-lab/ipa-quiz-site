@@ -45,8 +45,37 @@ export function buildCitationFooter(passages: RerankedCandidate[]): string {
  * 「出典なしで答えると検出 → 回答できません にフォールバック」の判定に使う。
  */
 export function responseHasInlineCitation(text: string): boolean {
-  return /\[\s*[1-9][0-9]?\s*\]/.test(text);
+  return inlineCitationOrdinals(text).size > 0;
 }
+
+/** A generated reference list is not evidence that the answer cited its entries. */
+export function stripCitationFooter(content: string): string {
+  return content.replace(/\r?\n+---\r?\n\*\*(?:参照資料(?:（[^）]*）)?|出典)\*\*[\s\S]*$/, "");
+}
+
+export function inlineCitationOrdinals(content: string): Set<number> {
+  const body = stripCitationFooter(content)
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`\n]*`/g, "");
+  return new Set([...body.matchAll(/\[\s*([1-9][0-9]*)\s*\](?!\()/g)].map(match => Number(match[1])));
+}
+
+export function selectCitedCandidates<T extends { ordinal: number }>(content: string, candidates: T[]): T[] {
+  const used = inlineCitationOrdinals(content);
+  return candidates.filter(candidate => used.has(candidate.ordinal));
+}
+
+/** Server-side source list: keep original ordinals, and only answer-used entries. */
+export function citationFooterForResponse(candidateFooter: string, content: string): string {
+  const used = inlineCitationOrdinals(content);
+  const entries = candidateFooter.split(/\r?\n/).filter(line => {
+    const match = /^- \[([1-9][0-9]*)\] /.exec(line);
+    return match && used.has(Number(match[1]));
+  });
+  return entries.length ? `\n---\n**参照資料（引用番号に対応）**\n${entries.join("\n")}` : "";
+}
+
+export const CITATION_UNVERIFIED_NOTICE = "\n\n[出典未確認] この回答には確認できる引用資料が付いていません。重要な内容は公式資料で確認してください。";
 
 export const NO_GROUNDING_FALLBACK = [
   "申し訳ありません。確かな出典を見つけられなかったため、この質問には回答できません。",
