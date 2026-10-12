@@ -12,7 +12,7 @@ for (const width of [390, 1280]) {
 
     const finder = page.locator("#choose-qualification");
     await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();
-    await expect(finder.getByRole("button", { name: /^ITパスポート/ })).toBeInViewport();
+    await expect(finder.getByRole("link", { name: /^ITパスポート/ })).toBeInViewport();
     const filters = finder.locator(".study-filters").getByRole("button", { pressed: false });
     expect(await filters.count()).toBe(6);
 
