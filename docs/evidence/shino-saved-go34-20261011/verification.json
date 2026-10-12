@@ -1,0 +1,38 @@
+{
+  "atUtc": "2026-10-11T10:45:40.872111+00:00",
+  "status": "LOCAL_GO34_PREPARATION_PASS_EXTERNAL_ACTION_UNAUTHORIZED",
+  "mainHead": "08d2b261a6c3616c4da3d85fc2f970d765bebb72",
+  "mainAncestrySynchronizationComplete": true,
+  "officialSourceFieldChecks": 34,
+  "acceptedChoiceReasonHashChecks": 170,
+  "figureReferences": 15,
+  "uniqueFigureHashes": 14,
+  "unchangedExistingOriginals": 186,
+  "candidateRuntimeOriginals": 220,
+  "separate19ManuscriptsIncluded": false,
+  "tests": {
+    "runner": "Vitest3.2.4/jsdom",
+    "files": 6,
+    "tests": 60,
+    "status": "PASS",
+    "scope": "source/key/selection/hash, registration, canonical routes, original figure/alt rendering, display labels and partial counts"
+  },
+  "typecheck": {
+    "command": "pnpm exec tsc --noEmit --incremental false",
+    "status": "PASS"
+  },
+  "lint": {
+    "scope": "9 changed TS/TSX files",
+    "status": "PASS"
+  },
+  "diffCheck": "PASS",
+  "fullBuildOrWholeSuiteRun": false,
+  "publicAdded": 0,
+  "externalPushAuthorized": false,
+  "rightsReceipt": null,
+  "originalFigureDisplay": "Native img elements preserve original aspect ratio, both AM66 figures, original filenames and imageAltTexts; no generated/reconstructed images.",
+  "limits": [
+    "Local checks do not authorize external transmission, main merge or deployment.",
+    "Separate19 manuscripts are outside this candidate."
+  ]
+}

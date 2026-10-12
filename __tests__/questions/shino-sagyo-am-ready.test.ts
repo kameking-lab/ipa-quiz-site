@@ -4,17 +4,20 @@ import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import integration from "@/docs/evidence/shino-sagyo-am-ready-20261010/INTEGRATION.json";
 import newAm from "@/docs/evidence/medical-am3-next-20261010/INTEGRATION.json";
+import savedGo34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
 
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
 
 const restoredIds = new Set(ot13.newIds);
+const savedGoIds = new Set(savedGo34.map(q => q.id));
+const savedFigureIds = new Set(savedGo34.filter(q => q.hasImage).map(q => q.id));
 
 const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午前の部分収録", () => {
   it.each([
     ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 144, 310],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 93, 186],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 115, 220],
   ] as const)("%s は保存済み原本で確認した午前問だけ追加する", async (exam, questions, amCount, totalCount) => {
     const loaded = await getQuestionsForExam(exam);
     expect(loaded).toEqual(questions);
@@ -25,7 +28,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
     expect(new Set(morning.map(question => question.year))).toEqual(new Set([2024, 2025]));
     for (const question of morning) {
       expect(question.needsReview).toBe(false);
-      expect(question.hasImage).toBe(restoredIds.has(question.id));
+      expect(question.hasImage).toBe(restoredIds.has(question.id) || savedFigureIds.has(question.id));
       expect(question.sourceAttribution).toContain("午前");
       expect(choiceKeys.every(key => Boolean(question.choices?.[key]?.trim()))).toBe(true);
       expect(choiceKeys.every(key => Boolean(question.choiceExplanations?.[key]?.trim()))).toBe(true);
@@ -38,7 +41,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
 
   it("共有設例を保持し、原典回収で解消した保留だけを復帰する", () => {
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(496);
+    expect(all).toHaveLength(530);
     const ids = new Set(all.map(question => question.id));
     for (const original of [...integration.heldDrafts, ...integration.excludedBeforeDraft]) {
       const parts = original.identity.match(/^(.+)-(\d+)-am-(\d+)$/);
@@ -46,7 +49,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
       const [, exam, round, number] = parts!;
       const year = round === "61" || round === "56" ? 2025 : 2024;
       const id = `${exam}-${year}-annual-am-q${number}`;
-      expect(ids.has(id)).toBe(newAm.goIds.includes(id) || restoredIds.has(id));
+      expect(ids.has(id)).toBe(newAm.goIds.includes(id) || restoredIds.has(id) || savedGoIds.has(id));
     }
     expect(integration.heldDrafts).toHaveLength(37);
     expect(integration.excludedBeforeDraft).toHaveLength(14);
