@@ -74,18 +74,18 @@ describe("bounded public explanation follow-up", () => {
 
   it("describes both existing clinical-laboratory rounds while retaining partial coverage and their exact sources", () => {
     const questions = RINSHO_KENSAGISHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    expect(questions).toHaveLength(28);
-    expect(questions.filter((question) => question.year === 2026)).toHaveLength(18);
-    expect(questions.filter((question) => question.year === 2025)).toHaveLength(10);
+    expect(questions).toHaveLength(103);
+    expect(questions.filter((question) => question.year === 2026)).toHaveLength(46);
+    expect(questions.filter((question) => question.year === 2025)).toHaveLength(57);
     const description = examMetaDescription("rinsho-kensagishi", questions.length);
     expect(description).toContain("第72回（2026年実施）・第71回（2025年実施）");
-    expect(description).toContain("28原問");
+    expect(description).toContain("103原問");
     expect(description).toContain("部分収録");
     expect(description).toContain("全問は未完備");
     const { container } = render(<ExamOfficialResources exam="rinsho-kensagishi" />);
     const sourceUrls = new Set(questions.flatMap((question) => [question.sourcePdfUrl, question.sourceAnswerUrl]).filter(Boolean));
     const hrefs = [...container.querySelectorAll("a")].map((link) => link.getAttribute("href"));
     expect(new Set(hrefs)).toEqual(sourceUrls);
-    expect(hrefs).toHaveLength(4);
+    expect(hrefs).toHaveLength(6);
   });
 });

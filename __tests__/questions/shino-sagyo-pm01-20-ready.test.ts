@@ -4,8 +4,9 @@ import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
 import pm from "@/docs/evidence/shino-sagyo-pm01-20-ready-20261010/INTEGRATION.json";
 
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
+import go34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
 
-const restoredIds = new Set(ot13.newIds);
+const restoredIds = new Set([...ot13.newIds, ...go34.map(question => question.id)]);
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
@@ -41,7 +42,7 @@ describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => 
     expect(pm.heldDrafts).toHaveLength(4);
     expect(pm.excludedBeforeDraft).toHaveLength(42);
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(496);
+    expect(all).toHaveLength(530);
     for (const record of [...pm.heldDrafts, ...pm.excludedBeforeDraft]) {
       const match = record.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;
       const year = match[2] === "61" || match[2] === "56" ? 2025 : 2024;
