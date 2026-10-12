@@ -6,12 +6,22 @@ import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import { isBlogAdEligible, publicBlogDates, type ArticleReviewEvidence } from "@/lib/blog/editorial";
 import type { IpaExamCode } from "@/lib/questions/types";
 import { renderBlogSitemapXml } from "@/lib/seo/sitemap-xml";
+import { BLOG_ARTICLE_ALIASES } from "@/lib/blog/article-aliases";
 import { generateMetadata } from "@/app/blog/[slug]/page";
 const builds=[buildOverviewPost,buildLastMonthPost,buildFrequentTopicsPost,buildPracticePost];
 describe("editorial evidence", () => {
-  it("52 retained posts have sources without automatic freshness or measured claims", () => {
-    const posts=(Object.keys(EXAM_PROFILES) as IpaExamCode[]).flatMap((e,i)=>builds.map(build=>build(e,i)));
-    expect(posts).toHaveLength(52);
+  it("retained posts have sources and consolidated posts point to a live canonical article", () => {
+    const generated=(Object.keys(EXAM_PROFILES) as IpaExamCode[]).flatMap((e,i)=>builds.map(build=>build(e,i)));
+    const retired=generated.filter(p=>BLOG_ARTICLE_ALIASES[p.slug]);
+    expect(retired.map(p=>p.slug).sort()).toEqual(["db-yoru-tokurensyu", "nw-yoru-tokurensyu"]);
+    for(const p of retired){
+      expect(getBlogPostBySlug(p.slug)).toBeUndefined();
+      const canonical=BLOG_ARTICLE_ALIASES[p.slug];
+      if(!canonical) throw new Error(`Missing canonical for ${p.slug}`);
+      expect(getBlogPostBySlug(canonical)).toBeDefined();
+    }
+    const posts=generated.filter(p=>!BLOG_ARTICLE_ALIASES[p.slug]);
+    expect(posts).toHaveLength(50);
     for(const p of posts){
       expect(p.editorialKind).toBe("study-guide"); expect(p.sourceUrls?.length).toBeGreaterThan(0);
       expect(p.title).not.toMatch(/年最新|頻出論点トップ|最新分析/);

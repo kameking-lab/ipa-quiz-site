@@ -153,6 +153,7 @@ export default function FaqPage() {
                           category={cat}
                           question={f.question}
                           answer={f.answer}
+                          sources={f.sources}
                         />
                       );
                     })}

@@ -153,7 +153,7 @@ export const EXAM_PROFILES = {
     targetAudience: "ネットワーク技術者・インフラエンジニア",
     topics: ["TCP/IP", "ルーティング", "L2/L3 スイッチ", "セキュリティ", "クラウドネットワーク", "DNS"],
     morningStrategy:
-      "午前 II はプロトコル仕様と RFC 出典の用語が中心。直近 3 年の出題は丸暗記で乗り切れる。",
+      "科目A-2（旧午前 II）の過去問では、プロトコル仕様やRFCに関連する用語の意味と、選択肢が成立する条件を確認します。答えの記号だけを覚えず、条件が変わっても根拠を説明できるように復習します。",
     afternoonStrategy:
       "午後 I・午後 II は構成図と要件文を読み解く長文記述。サブネット計算・DNS 設計・冗長化の三点を必ず復習する。",
     hardSpots: ["BGP / OSPF の経路選択", "TLS / IPsec の鍵交換", "SD-WAN / SASE の概念"],

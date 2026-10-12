@@ -28,10 +28,10 @@ describe("worked guides and consolidated URLs", () => {
       expect(example.checkAnswer.length).toBeGreaterThan(30);
     }
   });
-  it("13 old analysis URLs redirect permanently to distinct worked guides and disappear from the sitemap", async () => {
+  it("retired analysis and duplicate practice URLs redirect to worked guides and disappear from the sitemap", async () => {
     const redirects = await config.redirects!();
     const sitemap = renderBlogSitemapXml();
-    expect(Object.keys(BLOG_ARTICLE_ALIASES)).toHaveLength(13);
+    expect(Object.keys(BLOG_ARTICLE_ALIASES)).toHaveLength(15);
     for (const [oldSlug, canonical] of Object.entries(BLOG_ARTICLE_ALIASES)) {
       expect(redirects).toContainEqual({ source: `/blog/${oldSlug}`, destination: `/blog/${canonical}`, statusCode: 301 });
       expect(getBlogPostBySlug(oldSlug)).toBeUndefined();
@@ -41,7 +41,7 @@ describe("worked guides and consolidated URLs", () => {
       expect(post.body).toContain("条件を変えて理解を確かめる");
       expect(isBlogAdEligible(post)).toBe(false);
     }
-    expect(getAllBlogSlugs()).toHaveLength(181);
+    expect(getAllBlogSlugs()).toHaveLength(179);
   });
   it("no article body or related rail retains a superseded analysis URL", () => {
     for (const post of getAllBlogPosts()) {

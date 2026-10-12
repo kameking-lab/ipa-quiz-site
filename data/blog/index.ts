@@ -15,7 +15,9 @@ function buildAllPosts(): BlogPost[] {
   EXAM_CODES.forEach((exam, i) => posts.push(buildOverviewPost(exam, i)));
   EXAM_CODES.forEach((exam, i) => posts.push(buildLastMonthPost(exam, i)));
   EXAM_CODES.forEach((exam, i) => posts.push(buildFrequentTopicsPost(exam, i)));
-  EXAM_CODES.forEach((exam, i) => posts.push(buildPracticePost(exam, i)));
+  EXAM_CODES.forEach((exam, i) => {
+    if (!BLOG_ARTICLE_ALIASES[`${exam}-yoru-tokurensyu`]) posts.push(buildPracticePost(exam, i));
+  });
   posts.push(...buildGeneralPosts());
   return posts.map(post => ({
     ...post,
