@@ -67,6 +67,9 @@ interface Props {
   completionLabel?: string;
   completionShareHref?: string;
   onNext: () => void;
+  onDeferQuestion?: (questionId: string) => void;
+  deferredQuestionCount?: number;
+  onResumeDeferred?: () => void;
 }
 
 
@@ -81,6 +84,9 @@ export function QuizPlayer({
   completionLabel,
   completionShareHref,
   onNext,
+  onDeferQuestion,
+  deferredQuestionCount,
+  onResumeDeferred,
 }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
@@ -90,7 +96,9 @@ export function QuizPlayer({
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const [gaveUp, setGaveUp] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
+  const [deferredCount, setDeferredCount] = React.useState(0);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
@@ -102,11 +110,13 @@ export function QuizPlayer({
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
   const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
+  const [historyRecordingEnabled, setHistoryRecordingEnabled] = React.useState(true);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
+    setHistoryRecordingEnabled(readSettings().recordHistory);
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
     if (!alreadyShown) {
       setShowSwipeHint(true);
@@ -139,6 +149,7 @@ export function QuizPlayer({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
+    setGaveUp(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
   }, [question, history]);
@@ -260,6 +271,22 @@ export function QuizPlayer({
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value));
   }, [question, revealed, commitAnswer]);
 
+  const onGiveUp = React.useCallback(() => {
+    if (!question || revealed) return;
+    setGaveUp(true);
+    commitAnswer("分からない", false);
+  }, [question, revealed, commitAnswer]);
+
+  const onDefer = React.useCallback(() => {
+    if (!question || revealed) return;
+    if (onDeferQuestion) {
+      onDeferQuestion(question.id);
+      return;
+    }
+    setDeferredCount((count) => count + 1);
+    goNext();
+  }, [question, revealed, goNext, onDeferQuestion]);
+
   const toggleStar = React.useCallback(() => {
     if (!question) return;
     const nowStarred = history.toggleStar(question.id);
@@ -361,6 +388,7 @@ export function QuizPlayer({
     return (
       <QuizCompleteScreen
         stats={stats}
+        deferredCount={deferredQuestionCount ?? deferredCount}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -374,12 +402,17 @@ export function QuizPlayer({
         } : undefined}
         onRetry={() => {
           setStats({ answered: 0, correct: 0 });
+          setDeferredCount(0);
           setElapsed(0);
           setSelected(undefined);
           setRevealed(false);
           router.push(backHref);
         }}
         onBack={() => router.push(backHref)}
+        onResumeDeferred={onResumeDeferred ? () => {
+          setCompleted(false);
+          onResumeDeferred();
+        } : undefined}
         backLabel={backLabel}
       />
     );
@@ -418,10 +451,10 @@ export function QuizPlayer({
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
-  const isCorrect = ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
+  const isCorrect = !gaveUp && (ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
     ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
-    : isAcceptedAnswer(question.answer, selected);
-  const selectionLabel = ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
+    : isAcceptedAnswer(question.answer, selected));
+  const selectionLabel = gaveUp ? "分からない" : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -527,6 +560,19 @@ export function QuizPlayer({
                   />
                 ))}
             </div>}
+
+            <p className="text-xs text-zinc-600 dark:text-zinc-400">
+              {historyRecordingEnabled
+                ? "回答履歴はこのブラウザに記録する設定です。ログイン時はクラウド同期の対象です。"
+                : "回答履歴の記録はオフです。復習予定や学習日などの情報は別に保存されます。"}
+            </p>
+
+            {!revealed && (
+              <div className="flex flex-wrap gap-2" aria-label="解答を保留する">
+                <Button type="button" variant="outline" className="h-auto max-w-full whitespace-normal py-2" onClick={onGiveUp}>分からない（解説を見る・誤答として扱う）</Button>
+                <Button type="button" variant="subtle" className="h-auto max-w-full whitespace-normal py-2" onClick={onDefer}>後回し（未回答のまま次へ）</Button>
+              </div>
+            )}
 
             <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
               {revealed
@@ -676,6 +722,7 @@ const QUIZ_ORIGIN =
 
 export function QuizCompleteScreen({
   stats,
+  deferredCount = 0,
   elapsed,
   exam,
   mode,
@@ -687,8 +734,10 @@ export function QuizCompleteScreen({
   scheduleUrl,
   learningUrl,
   onReviewLast,
+  onResumeDeferred,
 }: {
   stats: { answered: number; correct: number };
+  deferredCount?: number;
   elapsed: number;
   exam: string;
   mode: string;
@@ -700,6 +749,7 @@ export function QuizCompleteScreen({
   scheduleUrl?: string;
   learningUrl?: string | null;
   onReviewLast?: () => void;
+  onResumeDeferred?: () => void;
 }) {
   const [copied, setCopied] = React.useState(false);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -744,13 +794,13 @@ export function QuizCompleteScreen({
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-            {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
+            {stats.answered === 0 ? "採点した問題はありません。" : accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
           </p>
         </div>
 
         <div className="mb-6 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
-            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{stats.answered === 0 ? "未採点" : `${accuracy}%`}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
@@ -762,8 +812,9 @@ export function QuizCompleteScreen({
             <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
           </div>
         </div>
+        {deferredCount > 0 && <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-300">後回し: {deferredCount}問（回答履歴には記録せず、未回答のまま残しています）</p>}
 
-        <div className="mb-6">
+        {stats.answered > 0 && <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
             <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X でシェア（結果・新しいタブで開く）" className={btnClass}>
@@ -782,9 +833,14 @@ export function QuizCompleteScreen({
           <span role="status" aria-live="polite" className="sr-only">
             {copied ? "結果 URL をコピーしました" : ""}
           </span>
-        </div>
+        </div>}
 
         <div className="flex flex-col gap-2">
+          {deferredCount > 0 && onResumeDeferred && (
+            <Button variant="primary" onClick={onResumeDeferred} className="w-full">
+              後回しの問題を解く（{deferredCount}問）
+            </Button>
+          )}
           {onReviewLast ? (
             <Button variant="outline" onClick={onReviewLast} className="w-full">
               <Sparkles className="h-4 w-4" aria-hidden="true" />

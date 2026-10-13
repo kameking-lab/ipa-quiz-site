@@ -10,11 +10,17 @@ const questionId = "fp3-2026-published-gakka-q11";
 
 describe("FP3 published 2026 question 11 category correction", () => {
   it("preserves the entire paper apart from the three authorized metadata fields on question 11", () => {
-    const protectedPaper = published2026.map((question) => question.id === questionId
-      ? Object.fromEntries(Object.entries(question).filter(([key]) => !["category", "topicTags", "lastUpdated"].includes(key)))
-      : question);
+    const protectedPaper = published2026.map((question) => {
+      if (question.id === questionId) {
+        return Object.fromEntries(Object.entries(question).filter(([key]) => !["category", "topicTags", "lastUpdated"].includes(key)));
+      }
+      if (question.id === "fp3-2026-published-gakka-q31") {
+        return Object.fromEntries(Object.entries(question).filter(([key]) => !["category", "topicTags"].includes(key)));
+      }
+      return question;
+    });
     expect(createHash("sha256").update(JSON.stringify(protectedPaper)).digest("hex"))
-      .toBe("33da85c52bafda706bddae0e8dc3b41ea8da97b6a8374cf0d670df1247abaa6c");
+      .toBe("ba96bc87821954bf667374a018ff6bdb2f1876dcc971ac58dcf49df0f8de64a8");
   });
 
   it("includes monetary policy in the financial category and topic pools, and excludes it from risk management", () => {

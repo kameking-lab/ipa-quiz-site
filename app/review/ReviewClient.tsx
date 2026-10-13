@@ -2,6 +2,8 @@
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { getSafePdfUrl, ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -301,6 +303,9 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   const correctAnswer = formatQuestionAnswerForDisplay(q, q.answer);
   const record = store[q.id];
   const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
+  const requiresLawDate = ["fp1", "fp2", "fp3", "sharoushi", "takken"].includes(q.exam);
+  const sourceUrl = getSafePdfUrl(q.sourcePdfUrl);
+  const sourceVerified = sourceUrl === q.sourcePdfUrl;
 
   return (
     <div className="space-y-4">
@@ -326,6 +331,18 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             {record && (
               <Badge variant="outline" className="text-xs">Lv.{record.level}</Badge>
             )}
+          </div>
+          <div className="mb-3 space-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+            <p>出題: {questionSourceExam(q)} {questionSourceEdition(q)}・問{q.qNumber}</p>
+            {(q.lawReferenceDate || requiresLawDate) && (
+              <p>法令基準日: {q.lawReferenceDate ? `${q.lawReferenceDate}（この日の制度で解答）` : "未確認（公式資料で適用時点をご確認ください）"}</p>
+            )}
+            <p>
+              出典: {sourceVerified ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-sky-700 underline dark:text-sky-300">
+                {isPdfDocumentUrl(sourceUrl) ? ipaSourceLabel(sourceUrl, "question") : "出典資料を開く"}
+              </a> : "出典資料リンク未確認"}
+              {q.sourceAttribution ? `・${q.sourceAttribution}` : ""}
+            </p>
           </div>
           <QuestionBody text={q.question} />
           <QuestionFigures question={q} />

@@ -450,7 +450,7 @@ export default function SettingsPage() {
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="学習履歴を記録する"
-                description="OFF にすると回答を localStorage に保存しません（プライバシー重視の方向け）"
+                description="OFF にすると選択・正誤の回答履歴を保存しません。復習予定や学習日などは別に保存されます。"
               >
                 <Switch
                   checked={settings.recordHistory}

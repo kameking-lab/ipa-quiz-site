@@ -78,8 +78,8 @@ export async function generateMetadata({
   }
   const seasonLabel = question.season === "spring" ? "春" : "秋";
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
-  const title = `${question.theme} | ${examLabel(resolved.exam)} 独自練習 業種別参考答案 ${question.year}年${seasonLabel}期`;
-  const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 独自練習 問${question.qNumber}「${question.theme}」の業種別参考答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
+  const title = `${question.theme} | ${examLabel(resolved.exam)} 独自練習 業種別参考答案（教材整理用ラベル: ${question.year}年${seasonLabel}期）`;
+  const description = `${examLabel(resolved.exam)} 独自練習 問${question.qNumber}「${question.theme}」の業種別参考答案サンプル。年度は教材整理用ラベルで、実際のIPA過去問・公式解答ではありません。AI 生成の参考例（査読推奨）。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "essay", title: title.slice(0, 80) }).toString()}`;
   return {
     title,
@@ -145,10 +145,10 @@ export default async function EssayPm2DetailPage({
         <div className="mb-2 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1 rounded-full bg-sky-100 px-2.5 py-0.5 text-[11px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
             <Shield className="h-3 w-3" />
-            {examLabel(resolved.exam)} 午後 II 問{question.qNumber}
+            {examLabel(resolved.exam)} 独自練習・午後 II 問{question.qNumber}
           </span>
           <span className="text-xs text-zinc-500">
-            {question.year}年{seasonLabel}期
+            教材整理用ラベル: {question.year}年{seasonLabel}期
           </span>
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">

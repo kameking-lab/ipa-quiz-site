@@ -15,6 +15,21 @@ describe("qualification discovery", () => {
     expect(row).not.toHaveAttribute("aria-expanded");
     expect(screen.queryByText("選んだ資格")).not.toBeInTheDocument();
   });
+  it("finds FP qualifications by their formal name and common planner name", () => {
+    render(<HomeQualificationFinder domains={domains} />);
+    const search = screen.getByRole("searchbox");
+    fireEvent.change(search, { target: { value: "3級ファイナンシャルプランニング技能士" } });
+    expect(screen.getByRole("link", { name: /^FP3級/ })).toHaveAttribute("href", "/fp3");
+    expect(screen.queryByRole("link", { name: /^FP2級/ })).not.toBeInTheDocument();
+
+    fireEvent.change(search, { target: { value: "3級ファイナンシャル・プランニング技能検定" } });
+    expect(screen.getByRole("link", { name: /^FP3級/ })).toHaveAttribute("href", "/fp3");
+
+    fireEvent.change(search, { target: { value: "ファイナンシャルプランナー" } });
+    for (const grade of [1, 2, 3]) {
+      expect(screen.getByRole("link", { name: new RegExp(`^FP${grade}級`) })).toHaveAttribute("href", `/fp${grade}`);
+    }
+  });
   it("filters a domain, reports empty searches and resets filters", () => {
     render(<HomeQualificationFinder domains={domains} />);
     fireEvent.click(screen.getByRole("button", { name: "電気" }));
