@@ -135,11 +135,12 @@ export function QuizPlayer({
     });
   }, [question, mode, total]);
 
+  const sessionFinished = completed || (!question && index >= total && total > 0);
   React.useEffect(() => {
-    if (completed) return;
+    if (sessionFinished) return;
     const id = setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => clearInterval(id);
-  }, [completed]);
+  }, [sessionFinished]);
 
   React.useEffect(() => {
     if (!question) return;
@@ -384,7 +385,7 @@ export function QuizPlayer({
     );
   }
 
-  if (completed || (!question && index >= total && total > 0)) {
+  if (sessionFinished) {
     return (
       <QuizCompleteScreen
         stats={stats}
