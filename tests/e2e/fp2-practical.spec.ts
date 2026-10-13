@@ -39,7 +39,7 @@ test("FP2 2026 practical calendar and all combination reasons remain readable on
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
 });
 
-test("FP2 numeric practical choices are separate cards and the answer includes the choice text", async ({ page }) => {
+test("FP2 numeric practical choices preserve the official number and selected text separately", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fp2/practical/202405/40");
   await expect(page.getByRole("heading", { name: "2024年5月試験 実技 問40" })).toBeVisible();
@@ -47,7 +47,9 @@ test("FP2 numeric practical choices are separate cards and the answer includes t
   await expect(choices).toHaveCount(4);
   await expect(choices.nth(0)).toContainText("17,560円");
   await page.getByText("公式模範解答を見る").click();
-  await expect(page.getByText("3. 43,900円")).toBeVisible();
+  const answer = page.locator("details").filter({ has: page.getByText("日本FP協会の公式模範解答", { exact: true }) });
+  await expect(answer.getByText("3", { exact: true })).toBeVisible();
+  await expect(answer.getByText("選択肢の記述：43,900円", { exact: true })).toBeVisible();
 });
 
 test("FP2 practical solutions show every option reason and preserve shared source tables", async ({ page }) => {
