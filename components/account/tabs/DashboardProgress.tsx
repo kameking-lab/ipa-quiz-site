@@ -81,7 +81,7 @@ export function DashboardProgress() {
   return (
     <div className="space-y-6">
       <p className="text-xs text-zinc-600 dark:text-zinc-400">
-        この進捗は問題データで資格を確認できた回答記録を集計しています。全履歴{data.allHistoryCount}件のうち、分類済み{data.totalAnswered}件です。
+        この進捗は通常演習の保存履歴から、問題データで資格を確認できた回答記録を集計しています。全履歴{data.allHistoryCount}件のうち、分類済み{data.totalAnswered}件です。
         {data.metaComplete
           ? `分類できない記録${data.allHistoryCount - data.totalAnswered}件は下の集計に含みません。`
           : `問題データの取得が未完了です。残り${data.allHistoryCount - data.totalAnswered}件の分類は未確定です。`}

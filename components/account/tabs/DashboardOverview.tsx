@@ -94,7 +94,7 @@ export function DashboardOverview() {
           label="累計回答"
           value={data.totalAnswered.toLocaleString("ja-JP")}
           unit="問"
-          sub="端末に保存された全資格の回答履歴"
+          sub="通常演習でこのブラウザに保存された回答履歴"
           tone="sky"
         />
         <KpiCard

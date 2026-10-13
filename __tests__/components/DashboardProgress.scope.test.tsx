@@ -43,6 +43,7 @@ describe("DashboardProgress record scope", () => {
     render(<DashboardProgress />);
 
     expect(await screen.findByText(/分類できない記録1件/)).toBeInTheDocument();
+    expect(screen.getByText(/通常演習の保存履歴から/)).toBeInTheDocument();
     expect(screen.getByText("分類済み回答数").parentElement).toHaveTextContent("4");
     expect(screen.getByText("分類済みユニーク問題").parentElement).toHaveTextContent("2");
     expect(screen.getByText("分類済み記録の正答率").parentElement).toHaveTextContent("75%");
@@ -59,6 +60,7 @@ describe("DashboardProgress record scope", () => {
     }));
     render(<DashboardOverview />);
     expect(await screen.findByText("記録の正答率")).toBeInTheDocument();
+    expect(screen.getByText("通常演習でこのブラウザに保存された回答履歴")).toBeInTheDocument();
     expect(screen.getByText(/3級FP技能検定 · 3問の記録/)).toBeInTheDocument();
     expect(screen.getByText("67%")).toBeInTheDocument();
   });
