@@ -15,6 +15,19 @@ const CopilotMobileSheet = dynamic(
   { ssr: false },
 );
 
+/** Dismiss the one mounted surface before its responsive CSS can hide a modal. */
+export function useCopilotBreakpointDismiss(surface: "desktop" | "mobile" | null, dismiss: () => void) {
+  React.useEffect(() => {
+    if (!surface || typeof window.matchMedia !== "function") return;
+    const media = window.matchMedia("(min-width: 640px)");
+    const onChange = (event: MediaQueryListEvent) => {
+      if (event.matches !== (surface === "desktop")) dismiss();
+    };
+    media.addEventListener?.("change", onChange);
+    return () => media.removeEventListener?.("change", onChange);
+  }, [surface, dismiss]);
+}
+
 /** One optional follow-up, placed after the complete existing explanation and sources. */
 export function QuestionCopilotFollowup({ question }: { question: Question }) {
   const { answerContext } = useQuestionAnswerContext();
@@ -25,6 +38,7 @@ export function QuestionCopilotFollowup({ question }: { question: Question }) {
     setRequest(null);
     entryRef.current?.focus({ preventScroll: true });
   }, []);
+  useCopilotBreakpointDismiss(request?.surface ?? null, dismiss);
   const open = () => {
     const desktop = typeof window.matchMedia === "function"
       ? window.matchMedia("(min-width: 640px)").matches : window.innerWidth >= 640;

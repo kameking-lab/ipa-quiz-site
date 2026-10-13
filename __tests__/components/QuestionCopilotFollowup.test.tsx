@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import type { Question } from "@/lib/questions/types";
 import { createHistoryStore } from "@/lib/storage/history";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
@@ -38,6 +38,21 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
 describe("one optional question follow-up after existing explanation", () => {
+  it.each([false, true])("dismisses an open panel when crossing its viewport breakpoint (desktop=%s)", async (desktop) => {
+    const listeners = new Set<(event: MediaQueryListEvent) => void>();
+    const media = { matches: desktop, addEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => listeners.add(listener), removeEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => listeners.delete(listener) };
+    vi.stubGlobal("matchMedia", vi.fn(() => media));
+    render(<Lesson />);
+    const entry = screen.getByRole("button", { name: "まだ分からない点を聞く" });
+    fireEvent.click(entry);
+    await screen.findByTestId(`copilot-${desktop ? "desktop" : "mobile"}`);
+    act(() => { for (const listener of listeners) listener({ matches: !desktop } as MediaQueryListEvent); });
+    expect(screen.queryByTestId("copilot-mobile")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("copilot-desktop")).not.toBeInTheDocument();
+    expect(entry).toHaveFocus();
+    expect(listeners.size).toBe(0);
+  });
+
   it("shows the stored wrong-choice reason before the only AI entry and mounts one mobile panel", async () => {
     render(<Lesson />);
     expect(screen.queryByTestId("copilot-mobile")).not.toBeInTheDocument();

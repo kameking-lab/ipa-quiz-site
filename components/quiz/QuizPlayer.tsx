@@ -19,6 +19,7 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
+import { useCopilotBreakpointDismiss } from "./QuestionCopilotFollowup";
 import {
   CopilotMobileSheet,
   CopilotDesktopFloating,
@@ -319,6 +320,7 @@ export function QuizPlayer({
     setCopilotQuery(null);
     copilotTriggerRef.current?.focus({ preventScroll: true });
   }, []);
+  useCopilotBreakpointDismiss(copilotQuery ? copilotSurface : null, dismissCopilot);
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {

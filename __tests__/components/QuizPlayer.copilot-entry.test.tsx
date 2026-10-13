@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import type { Question } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 
@@ -28,6 +28,22 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("practice explanation owns one optional AI entry", () => {
+  it.each([false, true])("dismisses on a viewport breakpoint change and restores the entry (desktop=%s)", (desktop) => {
+    const listeners = new Set<(event: MediaQueryListEvent) => void>();
+    vi.stubGlobal("matchMedia", vi.fn((query: string) => query === "(min-width: 640px)"
+      ? ({ ...mediaResult(desktop), addEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => listeners.add(listener), removeEventListener: (_: string, listener: (event: MediaQueryListEvent) => void) => listeners.delete(listener) })
+      : mediaResult(false)));
+    render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 ア:/ }));
+    const entry = screen.getByRole("button", { name: "まだ分からない点を聞く" });
+    entry.focus(); fireEvent.click(entry);
+    act(() => { for (const listener of listeners) listener({ matches: !desktop } as MediaQueryListEvent); });
+    expect(screen.queryByTestId("copilot-mobile")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("copilot-desktop")).not.toBeInTheDocument();
+    expect(entry).toHaveFocus();
+    expect(listeners.size).toBe(0);
+  });
+
   it("keeps AI closed before an answer, then opens only the mobile panel after existing explanations", () => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
     expect(screen.queryByTestId("copilot-mobile")).not.toBeInTheDocument();
