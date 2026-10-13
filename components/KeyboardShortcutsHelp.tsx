@@ -3,39 +3,49 @@
 import * as React from "react";
 import { Keyboard, X } from "lucide-react";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
-
-const SHORTCUTS = [
-  { keys: ["1", "2", "3", "4"], desc: "選択肢 ア・イ・ウ・エ を選択" },
-  { keys: ["Enter", "Space", "→"], desc: "次の問題へ進む" },
-  { keys: ["R"], desc: "復習マーク（★）を切替" },
-  { keys: ["?"], desc: "このヘルプを表示" },
-];
+import { shortcutHelpRows, shouldIgnoreQuizShortcut } from "@/lib/quiz/shortcuts";
 
 export function KeyboardShortcutsHelp() {
   const [open, setOpen] = React.useState(false);
+  const [mode, setMode] = React.useState<"main" | "stream" | "detail">("main");
+  const [choiceCount, setChoiceCount] = React.useState<number | undefined>();
   const dialogRef = React.useRef<HTMLDivElement | null>(null);
   // The element that had focus before opening, so it can be restored on close.
   const lastFocusedRef = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLElement) {
-        const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+        return;
       }
-      if (e.key === "?") {
+      if (e.key === "?" && open) {
         e.preventDefault();
+        setOpen(false);
+        return;
+      }
+      if (shouldIgnoreQuizShortcut(e)) return;
+      if (e.key === "?") {
+        // The main player owns its inline help; avoid showing two overlays.
+        if (document.querySelector('[data-quiz-shortcuts-mode="main"]')) return;
+        e.preventDefault();
+        const stream = document.querySelector('[data-quiz-shortcuts-mode="stream"]');
+        const detail = document.querySelector('[data-quiz-shortcuts-mode="detail"]');
+        setMode(stream ? "stream" : detail ? "detail" : "main");
+        const detailCount = detail ? Number(detail.getAttribute("data-choice-count")) : 0;
+        setChoiceCount(stream
+          ? stream.querySelectorAll("[data-quiz-choice]").length
+          : detail ? (Number.isSafeInteger(detailCount) && detailCount >= 0 ? detailCount : 0) : undefined);
         setOpen((v) => {
           // Capture the trigger element only when transitioning open.
           if (!v) lastFocusedRef.current = document.activeElement as HTMLElement | null;
           return !v;
         });
       }
-      if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, []);
+  }, [open]);
 
   // On open, push focus into the dialog (it is triggered by a global key, so
   // focus is otherwise left on the page behind). On close, restore focus to
@@ -102,23 +112,16 @@ export function KeyboardShortcutsHelp() {
           </button>
         </div>
         <div className="space-y-2">
-          {SHORTCUTS.map(({ keys, desc }) => (
-            <div key={desc} className="flex items-center justify-between gap-3">
-              <span className="text-sm text-zinc-600 dark:text-zinc-400">{desc}</span>
-              <div className="flex flex-shrink-0 gap-1">
-                {keys.map((k) => (
-                  <kbd
-                    key={k}
-                    className="rounded border border-zinc-300 bg-zinc-100 px-1.5 py-0.5 text-[11px] font-mono font-semibold text-zinc-700 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300"
-                  >
-                    {k}
-                  </kbd>
-                ))}
-              </div>
+          {shortcutHelpRows(mode, choiceCount).map(({ keys, description }) => (
+            <div key={keys} className="flex items-center justify-between gap-3">
+              <span className="text-sm text-zinc-600 dark:text-zinc-400">{description}</span>
+              <kbd className="rounded border border-zinc-300 bg-zinc-100 px-1.5 py-0.5 text-[11px] font-mono font-semibold text-zinc-700 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                {keys}
+              </kbd>
             </div>
           ))}
         </div>
-        <p className="mt-4 text-[11px] text-zinc-400">クイズ画面でのみ有効 / Esc で閉じる</p>
+        <p className="mt-4 text-[11px] text-zinc-400">{mode === "stream" ? "連続演習" : mode === "detail" ? "問題詳細" : "主演習"}で有効 / Esc で閉じる</p>
       </div>
     </div>
   );

@@ -1283,8 +1283,10 @@ export function CopilotMobileSheet({
   isCorrect,
   initialPrompt,
   defaultOpen = false,
-}: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
+  onDismiss,
+}: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean; onDismiss?: () => void }) {
   const [open, setOpen] = React.useState(defaultOpen);
+  const close = React.useCallback(() => { setOpen(false); onDismiss?.(); }, [onDismiss]);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
   const dialogRef = React.useRef<HTMLDivElement | null>(null);
   const prevOpenRef = React.useRef(open);
@@ -1293,11 +1295,11 @@ export function CopilotMobileSheet({
   React.useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [open]);
+  }, [open, close]);
 
   // シートを閉じたらトリガー(FAB)へフォーカスを戻す。シート内の入力を操作した
   // キーボード利用者が、閉じた後に document.body へ取り残されるのを防ぐ。
@@ -1369,12 +1371,12 @@ export function CopilotMobileSheet({
         >
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setOpen(false)}
+            onClick={close}
             aria-hidden="true"
           />
           <div className="absolute inset-x-0 bottom-0 top-12 flex min-h-0 flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950">
             <button
-              onClick={() => setOpen(false)}
+              onClick={close}
               className="mx-auto mt-2 flex w-16 items-center justify-center rounded-full bg-zinc-300 py-1 dark:bg-zinc-700"
               aria-label="閉じる"
             >
@@ -1385,7 +1387,7 @@ export function CopilotMobileSheet({
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
               initialPrompt={initialPrompt}
-              onClose={() => setOpen(false)}
+              onClose={close}
               className="min-h-0 flex-1 rounded-t-2xl"
             />
           </div>
@@ -1408,8 +1410,10 @@ export function CopilotDesktopFloating({
   initialPrompt,
   headerRight,
   defaultOpen = false,
-}: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean }) {
+  onDismiss,
+}: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean; onDismiss?: () => void }) {
   const [open, setOpen] = React.useState(defaultOpen);
+  const close = React.useCallback(() => { setOpen(false); onDismiss?.(); }, [onDismiss]);
   const panelRef = React.useRef<HTMLDivElement | null>(null);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
   const prevOpenRef = React.useRef(open);
@@ -1417,11 +1421,11 @@ export function CopilotDesktopFloating({
   React.useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, close]);
 
   // Restore focus to the trigger when the panel closes. The open effect below
   // pushes focus into the panel; without this, closing (Escape / overlay /
@@ -1501,7 +1505,7 @@ export function CopilotDesktopFloating({
           {/* Semi-transparent overlay so the underlying question stays readable. */}
           <div
             className="absolute inset-0 bg-zinc-900/30 backdrop-blur-[1px]"
-            onClick={() => setOpen(false)}
+            onClick={close}
             aria-hidden="true"
           />
           <div
@@ -1513,7 +1517,7 @@ export function CopilotDesktopFloating({
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
               initialPrompt={initialPrompt}
-              onClose={() => setOpen(false)}
+              onClose={close}
               headerRight={headerRight}
               className="h-full"
             />

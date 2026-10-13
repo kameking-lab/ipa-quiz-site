@@ -122,30 +122,12 @@ export function ExplanationCard({
         </p>
       )}
 
-      {!isCorrect && onAnalyzeWrong && (
-        <button
-          onClick={onAnalyzeWrong}
-          className="mb-3 flex w-full items-center justify-between rounded-xl border border-zinc-300 bg-white px-4 py-3 text-left text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
-        >
-          <span className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4" />
-            なぜ間違えた？ AIに質問する
-          </span>
-          <ArrowRight className="h-4 w-4" />
-        </button>
-      )}
-
-      {!isPlaceholderExplanation(question.explanation) && (
-        <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
-          <p className={cn(
-            "mb-2 font-semibold",
-            isCorrect ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300",
-          )}>
-            {`結論: 正解は${answerLabel}です。`}
-          </p>
-          <QuestionBody text={question.explanation} />
-        </div>
-      )}
+      <p className={cn(
+        "mb-3 text-sm font-semibold",
+        isCorrect ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300",
+      )}>
+        {`結論: 正解は${answerLabel}です。`}
+      </p>
 
       {!isCorrect && selected && selectedChoiceExplanation && (
         <section
@@ -155,6 +137,12 @@ export function ExplanationCard({
           <h3 className="mb-1 font-semibold">あなたが選んだ「{choiceDisplayLabel(question.exam, selected as ChoiceKey)}」が違う理由</h3>
           <p>{selectedChoiceExplanation}</p>
         </section>
+      )}
+
+      {!isPlaceholderExplanation(question.explanation) && (
+        <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
+          <QuestionBody text={question.explanation} />
+        </div>
       )}
 
       {question.choiceExplanations && (
@@ -186,11 +174,11 @@ export function ExplanationCard({
         <Button
           variant="subtle"
           size="lg"
-          onClick={onAskAI}
+          onClick={!isCorrect && onAnalyzeWrong ? onAnalyzeWrong : onAskAI}
           className="sm:flex-1"
         >
           <Sparkles className="h-4 w-4" />
-          この問題をAIに質問
+          まだ分からない点を聞く
         </Button>
       </div>
 

@@ -7,7 +7,8 @@ import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
 import { QuestionCard } from "../QuestionCard";
 import { QuestionBody } from "../QuestionBody";
 import { QuestionFigures } from "../QuestionFigures";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys } from "@/lib/questions/answers";
+import { choiceShortcutIndex, shouldIgnoreQuizShortcut } from "@/lib/quiz/shortcuts";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
@@ -142,19 +143,15 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
-      if (e.target instanceof HTMLElement) {
-        const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
-      }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed && question.type !== "ordering") {
-        const i = CHOICE_SHORTCUTS.indexOf(e.key);
-        if (i >= 0 && i < getChoiceKeys(question.choices).length) {
+      const choiceKeys = getChoiceKeys(question.choices);
+      const choiceIndex = choiceShortcutIndex(e.key, choiceKeys.length);
+      if (shouldIgnoreQuizShortcut(e, !revealed && choiceIndex >= 0)) return;
+      if (!revealed && question.type === "multiple-choice") {
+        if (choiceIndex >= 0) {
           e.preventDefault();
-          onSelect(getChoiceKeys(question.choices)[i]);
+          onSelect(choiceKeys[choiceIndex]);
         }
-      } else if (revealed && e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
+      } else if (revealed && e.key === "Enter") {
         e.preventDefault();
         goNext();
       }
@@ -212,6 +209,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   return (
     <div
       data-study-presence-exam={question.exam}
+      data-quiz-shortcuts-mode="stream"
       className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
@@ -287,6 +285,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               return (
                 <button
                   key={key}
+                  data-quiz-choice=""
                   onClick={() => onSelect(key)}
                   disabled={revealed}
                   className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug backdrop-blur transition-all ${cls}`}

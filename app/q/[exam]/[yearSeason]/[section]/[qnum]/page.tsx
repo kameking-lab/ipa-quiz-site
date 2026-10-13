@@ -10,7 +10,6 @@ import {
   ChevronRight,
   ChevronDown,
   ExternalLink,
-  Sparkles,
   AlertTriangle,
   ArrowRight,
   BookOpenCheck,
@@ -47,6 +46,7 @@ import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { QuestionRevealProvider, QuestionExplanationDetails } from "@/components/quiz/QuestionRevealProvider";
+import { QuestionCopilotFollowup } from "@/components/quiz/QuestionCopilotFollowup";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
@@ -507,11 +507,18 @@ export default async function QuestionPage({
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
             sourceAttribution={q.sourceAttribution}
           />}
+          <QuestionCopilotFollowup question={q} />
         </QuestionExplanationDetails>
       </section>
       </QuestionRevealProvider>
 
       <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
+        <Button asChild variant="outline" className="min-h-11">
+          <Link href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&question=${encodeURIComponent(q.id)}&returnTo=${encodeURIComponent(questionPagePath(q))}`}>
+            クイズモードで開く
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
         {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
         <Link href={`/review?${new URLSearchParams({ exam: q.exam, returnTo: questionPagePath(q) })}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
       </nav>
@@ -545,63 +552,6 @@ export default async function QuestionPage({
       <div className="print:hidden">
         <KamokuBStudyHint exam={q.exam} session={q.session} />
       </div>
-
-      {/* AI Copilot CTA — gradient panel */}
-      <section
-        aria-label="AI コパイロット"
-        className="print:hidden relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/15 blur-2xl"
-        />
-        <div className="relative flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <div className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-2.5 py-0.5 text-[11px] font-semibold text-primary-soft-foreground">
-              <Sparkles className="h-3 w-3" />
-              AI コパイロット
-            </div>
-            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-              この問題を AI と深掘りする
-            </h2>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              用語解説・選択肢分析をその場で対話。クイズモードでは解答→解説がゼロ遷移。
-            </p>
-          </div>
-          <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
-            <Link
-              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&question=${encodeURIComponent(q.id)}&returnTo=${encodeURIComponent(questionPagePath(q))}`}
-            >
-              クイズモードで開く
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-        <div className="relative mt-4 border-t border-primary/15 pt-3">
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            AIに質問できる例
-          </p>
-          <ul aria-label="AIへの質問例" className="flex flex-wrap gap-1.5">
-            {[
-              "この選択肢の違いは？",
-              "用語をやさしく解説して",
-              `${q.category}の前提知識を整理して`,
-              "実例で教えて",
-              "覚え方を教えて",
-            ].map((label) => (
-              <li key={label}>
-                <Link
-                  href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&question=${encodeURIComponent(q.id)}&returnTo=${encodeURIComponent(questionPagePath(q))}#q${q.qNumber}`}
-                  className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-card px-2.5 py-1 text-xs text-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary-soft"
-                >
-                  <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       {/* Bottom share section removed: the question header already exposes */}
       {/* a compact 𝕏 / LINE / Copy cluster (PR #338), so the duplicate */}

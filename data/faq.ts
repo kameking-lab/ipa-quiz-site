@@ -53,7 +53,7 @@ export const FAQS: FaqItem[] = [
     category: "service",
     question: "PC でもスマホでも使えますか？",
     answer:
-      "両方で使えます。モバイル片手操作を最優先に設計しており、PC ではキーボードショートカット（A/I/U/E で選択肢、Enter で次へなど）で高速操作できます。",
+      "両方で使えます。モバイル片手操作を最優先に設計しており、PC の選択式問題では数字キー1〜9・0で先頭10肢を選べます。解答後はEnterで次へ進めます。",
   },
   {
     category: "service",

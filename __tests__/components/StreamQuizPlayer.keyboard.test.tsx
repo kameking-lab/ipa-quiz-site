@@ -99,6 +99,13 @@ describe("StreamQuizPlayer — keyboard does not hijack browser shortcuts", () =
     fireEvent.keyDown(window, { key: "0" });
     expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
   });
+  it("keeps number shortcuts working on focused choice buttons", () => {
+    render(<StreamQuizPlayer questions={questions} />);
+    const choice = screen.getAllByRole("button").find((button) => button.textContent?.includes("選択肢ア"))!;
+    choice.focus();
+    fireEvent.keyDown(choice, { key: "2" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
   it("Ctrl+1 does not select a choice (tab-switch stays intact)", () => {
     render(<StreamQuizPlayer questions={questions} />);
     fireEvent.keyDown(window, { key: "1", ctrlKey: true });

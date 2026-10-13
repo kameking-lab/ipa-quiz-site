@@ -3,10 +3,10 @@
 import { QuestionBody } from "./QuestionBody";
 
 import * as React from "react";
-import dynamic from "next/dynamic";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
+import { choiceShortcutIndex, choiceShortcutLabel, shouldIgnoreQuizShortcut } from "@/lib/quiz/shortcuts";
 
 import { ChoiceButton } from "./ChoiceButton";
 import { NumericAnswerInput } from "./NumericAnswerInput";
@@ -22,16 +22,7 @@ import { readSettings } from "@/lib/storage/settings";
 import { posthogCapture } from "@/lib/posthog";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
-import { useQuestionExplanationReveal } from "./QuestionRevealProvider";
-
-const CopilotDesktopFloating = dynamic(
-  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotDesktopFloating),
-  { ssr: false },
-);
-const CopilotMobileSheet = dynamic(
-  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotMobileSheet),
-  { ssr: false },
-);
+import { useQuestionExplanationReveal, useQuestionAnswerContext } from "./QuestionRevealProvider";
 
 
 interface Props {
@@ -99,8 +90,8 @@ export function QuestionAnswerCard({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const revealExplanation = useQuestionExplanationReveal();
+  const { setAnswerContext } = useQuestionAnswerContext();
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
-  const [copilotRequest, setCopilotRequest] = React.useState(0);
 
   React.useEffect(() => {
     setSelected(undefined);
@@ -108,7 +99,6 @@ export function QuestionAnswerCard({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
-    setCopilotRequest(0);
   }, [questionId]);
 
   React.useEffect(() => {
@@ -124,6 +114,7 @@ export function QuestionAnswerCard({
 
   const recordOutcome = React.useCallback(
     (selection: string, correct: boolean) => {
+      setAnswerContext({ selectedChoice: selection, isCorrect: correct });
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
@@ -140,7 +131,7 @@ export function QuestionAnswerCard({
       // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
       posthogCapture("question_answered", { questionId, exam, correct });
     },
-    [questionId, exam, year, season, session, qNumber, part],
+    [questionId, exam, year, season, session, qNumber, part, setAnswerContext],
   );
 
   const onSelect = React.useCallback(
@@ -184,21 +175,16 @@ export function QuestionAnswerCard({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(true);
-  }, [revealed]);
+    setAnswerContext({});
+  }, [revealed, setAnswerContext]);
 
-  // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
-  // field so the AI copilot input etc. are unaffected.
+  // Choice-position keys share the same contract as the practice players/help.
   React.useEffect(() => {
     if (revealed || ordering) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLElement) {
-        const tag = e.target.tagName;
-        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || e.target.isContentEditable) return;
-      }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const i = CHOICE_SHORTCUTS.indexOf(e.key);
-      if (i >= 0 && i < keys.length) {
+      if (shouldIgnoreQuizShortcut(e, true)) return;
+      const i = choiceShortcutIndex(e.key, keys.length);
+      if (i >= 0) {
         e.preventDefault();
         onSelect(keys[i]);
       }
@@ -216,9 +202,17 @@ export function QuestionAnswerCard({
   const answerLabel = ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
+  const selectedWrongReasons = answered && !isCorrect && !numeric && !ordering
+    ? (multiSelect ? picked : selected ? [selected] : [])
+      .filter((key) => !isAcceptedAnswer(answerKey, key))
+      .flatMap((key) => {
+        const reason = question?.choiceExplanations?.[key];
+        return reason?.trim() ? [{ key, reason }] : [];
+      })
+    : [];
 
   return (
-    <div data-study-presence-exam={exam} className="space-y-4">
+    <div data-study-presence-exam={exam} data-quiz-shortcuts-mode="detail" data-choice-count={numeric || ordering ? 0 : keys.length} className="space-y-4">
       {multiSelect && !revealed && (
         <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
           {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
@@ -231,7 +225,7 @@ export function QuestionAnswerCard({
       ) : <div
         role={multiSelect ? "group" : "radiogroup"}
         data-shortcuts-ready={shortcutsReady}
-        aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
+        aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー${choiceShortcutLabel(keys.length)}・Enter/スペースで選択・解除）` : `選択肢（矢印キーで移動、数字キー${choiceShortcutLabel(keys.length)}・Enter/スペースで選択）`}
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (
@@ -299,6 +293,12 @@ export function QuestionAnswerCard({
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
             ))}
           </div>
+          {selectedWrongReasons.length > 0 && <section aria-label="あなたが選んだ誤答の理由" className="mt-3 space-y-2 text-sm leading-relaxed">
+            {selectedWrongReasons.map(({ key, reason }) => <div key={key}>
+              <h3 className="font-semibold">選んだ「{choiceDisplayLabel(exam, key)}」が違う理由</h3>
+              <QuestionBody text={reason} />
+            </div>)}
+          </section>}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"
@@ -307,16 +307,6 @@ export function QuestionAnswerCard({
               <BookOpenCheck className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
               解説を読む
             </a>
-            {question && (
-              <button
-                type="button"
-                onClick={() => setCopilotRequest((request) => request + 1)}
-                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
-              >
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
-                {answered && !isCorrect ? "誤答をAIに質問" : "この問題をAIに質問"}
-              </button>
-            )}
             {nextHref && (
               <Link
                 href={nextHref}
@@ -328,26 +318,6 @@ export function QuestionAnswerCard({
             )}
           </div>
         </div>
-      )}
-      {question && copilotRequest > 0 && (
-        <>
-          <CopilotDesktopFloating
-            key={`desktop-${copilotRequest}`}
-            question={question}
-            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
-            isCorrect={answered ? isCorrect : undefined}
-            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-            defaultOpen
-          />
-          <CopilotMobileSheet
-            key={`mobile-${copilotRequest}`}
-            question={question}
-            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
-            isCorrect={answered ? isCorrect : undefined}
-            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-            defaultOpen
-          />
-        </>
       )}
     </div>
   );
