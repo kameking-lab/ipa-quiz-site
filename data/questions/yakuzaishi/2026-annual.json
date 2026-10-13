@@ -7522,5 +7522,947 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q2",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 2,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イオン強度Iを求める式として正しいのはどれか。1つ選べ。ただし、cᵢはイオン種iのモル濃度、zᵢはそのイオンの電荷である。",
+    "choices": {
+      "ア": "I = ∑ cᵢ zᵢ",
+      "イ": "I = ∑ cᵢ² zᵢ",
+      "ウ": "I = ∑ cᵢ zᵢ²",
+      "エ": "I = (1/2) ∑ cᵢ² zᵢ",
+      "オ": "I = (1/2) ∑ cᵢ zᵢ²"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "イオン強度は I = (1/2)Σ c_i z_i^2 で定義されます。濃度は1乗、電荷は2乗で、全体に1/2を掛けます。例として、0.1 mol/Lの NaCl では Na+ と Cl- がそれぞれ0.1 mol/L、電荷は±1です。I = 1/2 × (0.1×1 + 0.1×1) = 0.1 となり、モル濃度と一致します。一方、0.1 mol/Lの CaCl2 では Ca2+ が0.1、Cl- が0.2 mol/Lです。I = 1/2 × (0.1×4 + 0.2×1) = 0.3 となります。",
+    "choiceExplanations": {
+      "ア": "電荷を2乗しておらず、1/2もありません。電荷をそのまま足すと、陽イオンと陰イオンが打ち消し合ってしまいます。誤りです。",
+      "イ": "2乗しているのが濃度で、電荷には2乗がありません。2乗する対象が逆なので誤りです。",
+      "ウ": "電荷を2乗する点は正しいですが、係数1/2がありません。そのため値が2倍になり、誤りです。",
+      "エ": "濃度を2乗しており、電荷は2乗していません。係数1/2はあるものの、式の形が誤りです。",
+      "オ": "濃度c_iと電荷の2乗z_i^2の積を総和し、1/2を掛けた式で、イオン強度の定義と一致します。公式正答は5です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問2（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q45",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 45,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イヌリンを点滴静注するとき、定常状態における血漿中イヌリン濃度(C_p)、糸球体ろ過された直後の尿(原尿)に含まれるイヌリンの濃度(C_原尿)及び排泄される尿に含まれるイヌリンの濃度(C_尿)の関係を最も適切に表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "C_p ≒ C_原尿 ≒ C_尿",
+      "イ": "C_p ≒ C_原尿 > C_尿",
+      "ウ": "C_p ≒ C_原尿 < C_尿",
+      "エ": "C_p > C_原尿 > C_尿",
+      "オ": "C_p < C_原尿 < C_尿"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "イヌリンは、糸球体で自由にろ過される。血漿タンパクとは結合せず、尿細管では分泌も再吸収も受けない。したがって、原尿中濃度は血漿中の非結合形濃度とほぼ等しく、C_p ≒ C_原尿となる。一方、原尿は尿細管で水が再吸収されて濃縮されるため、イヌリンの量は変わらず体積だけが減る。そのため、排泄される尿中濃度は原尿より高くなる。以上より、C_p ≒ C_原尿 < C_尿である。",
+    "choiceExplanations": {
+      "ア": "尿細管で水が再吸収されて尿が濃縮されるため、C_尿はC_原尿より高くなる。C_原尿 ≒ C_尿とはならないので誤り。",
+      "イ": "C_尿がC_原尿より低くなるのは、尿細管で水よりイヌリンが多く再吸収される場合である。イヌリンは再吸収されないので誤り。",
+      "ウ": "正しい。C_p ≒ C_原尿 < C_尿である。",
+      "エ": "イヌリンは血漿タンパクと結合せず自由にろ過されるので、C_pとC_原尿はほぼ等しい。C_p > C_原尿とはならず、C_原尿 > C_尿も成り立たないので誤り。",
+      "オ": "糸球体ろ過で水とイヌリンは同じ割合でろ過されるので、C_原尿はC_pより高くならない。C_p < C_原尿とはならないので誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問45（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q72",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 72,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は薬剤師綱領(昭和48年10月制定)の文章である。[　　　]に入る語句として正しいのはどれか。1つ選べ。\n\n「薬剤師は国から付託された資格に基づき、医薬品の製造、調剤、供給において、その固有の任務を遂行することにより、[　　　]に資することを本領とする。」",
+    "choices": {
+      "ア": "薬局数の増加",
+      "イ": "医薬品生産の拡大",
+      "ウ": "医療費の抑制",
+      "エ": "医療水準の向上",
+      "オ": "薬剤師中心の医療の推進"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "薬剤師綱領には、薬剤師が国から付託された資格に基づき、医薬品の製造、調剤、供給においてその固有の任務を遂行することで、医療水準の向上に資することを本領とする、という趣旨の文があります。したがって4が正解です。",
+    "choiceExplanations": {
+      "ア": "薬局数の増加は綱領の目的として述べられていません。",
+      "イ": "医薬品生産の拡大は綱領の目的として述べられていません。",
+      "ウ": "医療費の抑制は綱領の目的として述べられていません。",
+      "エ": "正しい選択肢です。綱領の文言に合致し、医療水準の向上に資することを本領としています。",
+      "オ": "薬剤師中心の医療の推進は綱領の目的として述べられていません。薬剤師の職能は、医療水準の向上という目的のために果たすものです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問72（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q74",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 74,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は医療法の条文である。[   ]に入る語句として正しいのはどれか。1つ選べ。\n\n医療法第1条の4第2項\n「医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の[   ]よう努めなければならない。」",
+    "choices": {
+      "ア": "理解を得る",
+      "イ": "意見に従う",
+      "ウ": "意識を高める",
+      "エ": "負担を少なくする",
+      "オ": "不安を軽減する"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "医療法第1条の4第2項は、医療の担い手が適切な説明を行い、医療を受ける者の理解を得るよう努めることを定めています。インフォームド・コンセントの考え方を表す条文です。したがって1が正解です。",
+    "choiceExplanations": {
+      "ア": "正しい。「医療を受ける者の理解を得るよう努めなければならない」が条文の文言です。",
+      "イ": "「意見に従う」は条文にありません。説明の目的は理解を得ることです。",
+      "ウ": "「意識を高める」は条文にありません。",
+      "エ": "「負担を少なくする」は条文にありません。",
+      "オ": "「不安を軽減する」は条文にありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=31",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問74（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q80",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 80,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療コミュニケーションにおいて求められる「互いに信頼感で結ばれている関係」を示す言葉はどれか。1つ選べ。",
+    "choices": {
+      "ア": "レディネス",
+      "イ": "ラポール",
+      "ウ": "エンパワメント",
+      "エ": "ナラティブ",
+      "オ": "コンプライアンス"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "「互いに信頼感で結ばれている関係」を示す言葉はラポール(rapport)である。患者と医療者の間のラポールを築くことは、円滑な医療コミュニケーションの基盤になる。",
+    "choiceExplanations": {
+      "ア": "レディネスは、学習や行動変容に対する準備状態を指す。信頼関係のことではない。",
+      "イ": "正しい。ラポールは、相互の信頼感で結ばれた関係を意味する。",
+      "ウ": "エンパワメントは、患者が本来持つ力を引き出し、主体的に取り組めるよう支援することを指す。",
+      "エ": "ナラティブは「物語」の意味で、患者自身の語りや背景を重視する考え方に用いる。",
+      "オ": "コンプライアンスは、患者が医療者の指示どおりに服薬するなど、指示の遵守を指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問80（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q81",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 81,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "安全キャビネット内での調製が最も推奨されるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "ファモチジン注射液",
+      "イ": "パクリタキセル注射液",
+      "ウ": "ノルアドレナリン注射液",
+      "エ": "フェンタニルクエン酸塩注射液",
+      "オ": "注射用ドリペネム"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "安全キャビネット内での調製は、調製者の曝露を防ぐ必要がある抗悪性腫瘍薬(ハザーダス・ドラッグ)で最も推奨される。パクリタキセルは抗悪性腫瘍薬なので、これが該当する。",
+    "choiceExplanations": {
+      "ア": "ファモチジンはH2受容体拮抗薬で、曝露対策としての安全キャビネットは通常必要としない。",
+      "イ": "正しい。パクリタキセルは抗悪性腫瘍薬で、調製者の曝露防止のため安全キャビネット内で調製する。",
+      "ウ": "ノルアドレナリンは昇圧薬で、安全キャビネットでの調製は通常必要としない。",
+      "エ": "フェンタニルは麻薬で、保管・管理は厳重にするが、調製時の曝露防止用の安全キャビネットを最も推奨する薬剤ではない。",
+      "オ": "ドリペネムはカルバペネム系抗菌薬である。抗菌薬は感作などに注意するが、安全キャビネットが最も推奨される薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問81（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q82",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 82,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "世界アンチ・ドーピング規程において、禁止されている成分はどれか。1つ選べ。",
+    "choices": {
+      "ア": "カフェイン",
+      "イ": "ストリキニーネ",
+      "ウ": "サリチルアミド",
+      "エ": "デキストロメトルファン臭化水素酸塩水和物",
+      "オ": "グアイフェネシン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ストリキニーネは中枢興奮作用を持つ物質で、世界アンチ・ドーピング規程の禁止表国際基準で興奮薬として禁止されている。他の選択肢は、同規程で禁止されている成分ではない。",
+    "choiceExplanations": {
+      "ア": "2026年のWADA禁止表では、カフェインは監視プログラム対象であり、禁止物質とはされていない。したがって本問の正解ではない。",
+      "イ": "正しい。ストリキニーネは興奮薬として禁止されている。",
+      "ウ": "サリチルアミドは解熱鎮痛成分で、禁止されていない。",
+      "エ": "デキストロメトルファンは鎮咳薬で、禁止されていない。",
+      "オ": "グアイフェネシンは去痰薬で、禁止されていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問82（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q83",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 83,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療安全の観点から、一般病棟や外来処置室での常備を避けることが望ましい薬剤はどれか。1つ選べ。",
+    "choices": {
+      "ア": "リドカイン塩酸塩静脈内注射用 2 %",
+      "イ": "アドレナリン注射液0.1%",
+      "ウ": "d-クロルフェニラミンマレイン酸塩注射液0.5%",
+      "エ": "L-アスパラギン酸カリウム注射液 10 mEq/10 mL",
+      "オ": "アトロピン硫酸塩注射液0.05%"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "高濃度のカリウム製剤は、急速静注や誤投与で致死的な不整脈・心停止を起こしうる。そのため、一般病棟や外来処置室には常備せず、薬剤部での管理や必要時の払い出しにするのが望ましい。L-アスパラギン酸カリウム注射液10 mEq/10 mLは高濃度カリウム製剤にあたる。",
+    "choiceExplanations": {
+      "ア": "リドカイン静注用は、不整脈の緊急時などに使うため救急用に備えることがある。高濃度カリウム製剤のような常備回避の対象ではない。",
+      "イ": "アドレナリン注射液は、アナフィラキシーや心停止などの緊急時に必要で、常備されることが多い。",
+      "ウ": "d-クロルフェニラミン注射液は抗ヒスタミン薬で、急性のアレルギー症状への対応に用いる。常備を避ける薬剤ではない。",
+      "エ": "正しい。高濃度カリウム製剤は誤投与の危険が大きく、病棟や処置室への常備を避けることが望ましい。",
+      "オ": "アトロピン注射液は、徐脈などの緊急時に用いるため救急用に備える。常備を避ける薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問83（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q91",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 91,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ファンデルワールスの状態方程式（1）は、理想気体の状態方程式を実在気体について補正した式の1つである。理想気体とファンデルワールスの状態方程式に関する記述として正しいのはどれか。２つ選べ。\n（p + an²/V²）（V − nb）= nRT　　（1）\np：圧力、V：体積、n：物質量（mol）、R：気体定数、T：絶対温度",
+    "choices": {
+      "ア": "理想気体では、気体分子間の相互作用の大きさを正の一定の値と仮定している。",
+      "イ": "a は気体分子の衝突頻度を表す。",
+      "ウ": "b は気体分子1 mol がもつ排除体積を表す。",
+      "エ": "p + an²/V² は、気体分子間の相互作用を考慮して補正した圧力である。",
+      "オ": "（V − nb）は、気体分子間の相互作用を考慮して補正した体積である。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ファンデルワールス式は、理想気体の式 pV = nRT に対し、圧力項を分子間引力で、体積項を分子自身の大きさ（排除体積）で補正した式である。したがって、b が1 mol あたりの排除体積であること（3）と、p + an²/V² が分子間相互作用を考慮した補正圧力であること（4）が正しい。",
+    "choiceExplanations": {
+      "ア": "誤り。理想気体は分子間相互作用がなく、分子自身の体積もないと仮定する。相互作用を正の一定値とするという記述は当てはまらない。",
+      "イ": "誤り。a は分子間引力の大きさを表す定数であり、衝突頻度ではない。",
+      "ウ": "正しい。b は分子1 mol がもつ排除体積（分子自身の大きさによって他の分子が入れない体積）を表す。",
+      "エ": "正しい。実在気体では分子間引力のため、測定される圧力 p は理想的な圧力より小さくなる。そのため an²/V² を加えて補正した圧力として扱う。",
+      "オ": "誤り。V − nb は、分子自身の大きさ（排除体積）を除いた、分子が自由に動ける体積への補正である。分子間相互作用を考慮した補正ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問91（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 95,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方赤外吸収スペクトル測定法に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "赤外線の波長領域は、紫外線と可視光線の間にある。",
+      "イ": "赤外線の波数 4000 cm⁻¹ を波長に換算すると、2.5 μm である。",
+      "ウ": "赤外吸収は、振動によって分子の分極率が変化するときに観測される。",
+      "エ": "赤外吸収スペクトルの指紋領域は特性吸収帯より高波数側にある。",
+      "オ": "固体だけではなく、液体や気体の試料でも赤外吸収スペクトルを測定できる。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "波数 4000 cm⁻¹ は波長 1/4000 cm = 2.5×10⁻⁴ cm = 2.5 μm に相当する（2）。また、赤外吸収スペクトルは固体のほか、液体や気体の試料でも測定できる（5）。",
+    "choiceExplanations": {
+      "ア": "誤り。赤外線は可視光線よりも長波長側にあり、紫外線と可視光線の間にはない。",
+      "イ": "正しい。波長 = 1/波数 = 1/(4000 cm⁻¹) = 2.5×10⁻⁴ cm = 2.5 μm である。",
+      "ウ": "誤り。赤外吸収が観測されるのは、振動によって双極子モーメントが変化するときである。分極率が変化する振動はラマン散乱で観測される。",
+      "エ": "誤り。指紋領域（約1500〜400 cm⁻¹）は、特性吸収帯（約4000〜1500 cm⁻¹）より低波数側にある。",
+      "オ": "正しい。固体は臭化カリウム錠剤法などで、液体は液膜法などで、気体はガスセルで測定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問95（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q98",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 98,
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "1 mol の金属イオン M と n mol の配位子 L は次のように反応して錯体 MLn を生成する。最終反応生成物の MLn は L と反応しないものとし、また、K は逐次安定度定数を表すものとすると、この錯体生成反応に関する記述として、正しいのはどれか。2つ選べ。ただし、M、L 及び ML のモル濃度はそれぞれ［M］、［L］及び［ML］と表すものとする。\nM ＋ L ⇄(K1) ML\nML ＋ L ⇄(K2) ML2\n…\nMLn－1 ＋ L ⇄(Kn) MLn",
+    "choices": {
+      "ア": "M と L との間で形成される配位結合は、共有結合の一種である。",
+      "イ": "K1 は、K1 ＝ ［M］［L］／［ML］ によって表される。",
+      "ウ": "全安定度定数 βn は、βn ＝ K1 ＋ K2 ＋ … ＋ Kn によって表される。",
+      "エ": "M はルイス塩基、L はルイス酸である。",
+      "オ": "最終反応生成物の MLn は、L が単座配位子であるより、多座配位子である方が錯体としての安定度が高い。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "配位結合は、一方の原子が結合電子対を両方とも提供する共有結合である。また、多座配位子はキレート効果により錯体を安定化する。したがって 1 と 5 が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。配位結合は、配位子の非共有電子対を金属イオンと共有する結合で、共有結合の一種である。",
+      "イ": "誤り。K1 は生成物を分子、反応物を分母にして K1 ＝［ML］／（［M］［L］）と表す。問題文の式は分子と分母が逆である。",
+      "ウ": "誤り。全安定度定数は各逐次安定度定数の積で、βn ＝ K1 × K2 × … × Kn である。和ではない。",
+      "エ": "誤り。電子対を受け取る金属イオン M がルイス酸、電子対を供与する配位子 L がルイス塩基である。記述は逆になっている。",
+      "オ": "正しい。多座配位子は 1 分子で複数の位置から配位してキレート環を作る。このキレート効果（エントロピー的に有利）により、単座配位子の場合より安定度が高くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677928.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問98（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q171",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 171,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "静脈内投与された薬物の血液と脳の間の移行に関する記述として、正しいのはどれか。２つ選べ。ただし、血漿と脳組織間で薬物分布は平衡状態にあるものとする。",
+    "choices": {
+      "ア": "血漿中の非結合形薬物は、主として脳毛細血管内皮細胞の間隙を通過して移行する。",
+      "イ": "同じ分子量の低分子薬物では、脂溶性が高いほど単純拡散による透過性が高い。",
+      "ウ": "単純拡散のみで移行する中枢作用薬では、血漿中非結合形濃度と脳内非結合形濃度はほぼ等しい。",
+      "エ": "P-糖タンパク質の基質となる薬物では、血漿中非結合形濃度は脳内非結合形濃度より低い。",
+      "オ": "脳内へ能動輸送される薬物であっても、脳内非結合形濃度は血漿中非結合形濃度を超えない。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "血液脳関門では内皮細胞同士が密着結合で結ばれており、細胞間隙の通過はほとんど起こりません。脂溶性が高い薬物は細胞膜を単純拡散で透過しやすくなります。単純拡散のみで移行する薬物は、平衡状態では血漿中と脳内の非結合形濃度がほぼ等しくなります。したがって 2 と 3 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。脳毛細血管内皮細胞は密着結合で結ばれているため、細胞間隙経路はほとんどありません。薬物は主に細胞膜を透過するか、トランスポーターで移行します。",
+      "イ": "正しい。分子量が同じなら、脂溶性が高いほど膜透過性が高くなります。",
+      "ウ": "正しい。単純拡散のみなら濃度勾配に従い、平衡状態では非結合形濃度は等しくなります。",
+      "エ": "誤り。P-糖タンパク質は脳から血液側へ薬物を排出します。そのため脳内非結合形濃度が血漿中より低くなります。記述は逆です。",
+      "オ": "誤り。能動的な取り込みトランスポーターが働けば、脳内非結合形濃度が血漿中非結合形濃度を超えることがあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問171（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q176",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 176,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内からの薬物の消失がミカエリス・メンテン式に従うとき、経口投与後の定常状態における平均血中濃度が2 mg/Lとなる投与量と投与回数の組合せとして、最も適切なのはどれか。1つ選べ。ただし、この薬物のミカエリス定数は4 mg/L、最大消失速度は720 mg/day、バイオアベイラビリティは100％とする。",
+    "choices": {
+      "ア": "1回あたりの投与量360 mg / 1日1回",
+      "イ": "1回あたりの投与量300 mg / 1日2回",
+      "ウ": "1回あたりの投与量240 mg / 1日3回",
+      "エ": "1回あたりの投与量120 mg / 1日3回",
+      "オ": "1回あたりの投与量80 mg / 1日3回"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "定常状態では、投与速度R（mg/day）＝消失速度＝Vmax・Css/(Km+Css)。Css＝2 mg/L、Km＝4 mg/L、Vmax＝720 mg/dayを代入すると、R＝720×2/(4+2)＝1440/6＝240 mg/dayとなる（F＝1）。1日総投与量が240 mgとなる組合せを探すと、80 mg×3回＝240 mg/dayの5が該当する。",
+    "choiceExplanations": {
+      "ア": "誤り。360×1＝360 mg/dayで、必要な240 mg/dayを超える。",
+      "イ": "誤り。300×2＝600 mg/dayで、240 mg/dayを大きく超える。",
+      "ウ": "誤り。240×3＝720 mg/dayで、Vmaxに等しく定常状態に達せず濃度が上昇し続ける。",
+      "エ": "誤り。120×3＝360 mg/dayで、240 mg/dayを超える。",
+      "オ": "正しい。80×3＝240 mg/dayで、必要な投与速度と一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問176（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の分解反応を異なる温度で行い、その反応速度定数kの対数(ln k)を縦軸に、絶対温度Tの逆数(1/T)を横軸にとってプロットした場合、アレニウスの式に従っているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "アレニウスの式 k = A·exp(-Ea/RT) の両辺の自然対数をとると、ln k = ln A - (Ea/R)(1/T) となります。これは1/Tに対して直線で、傾きは -Ea/R です。Eaは正なので傾きは負になります。つまり、ln k を縦軸、1/T を横軸にとると右下がりの直線になります。原図の選択肢のうち、右下がりの直線にデータ点が乗っているのは1です。",
+    "choiceExplanations": {
+      "ア": "原図では、点が右下がりの直線上に並んでいます。ln k = ln A - (Ea/R)(1/T) の形(傾き負の直線)と一致するため正しいです。公式正答は1です。",
+      "イ": "原図では右上がりの直線です。これは傾きが正で、Eaが負という意味になります。通常の分解反応のアレニウス式とは合いません。",
+      "ウ": "原図では水平な直線です。傾きが0ならEa=0で、温度によってkが変わらないことになります。温度依存性を示すアレニウス式には合いません。",
+      "エ": "原図では右上がりに曲がる曲線です。直線ではないので、1/Tに対して直線になるはずのアレニウスプロットに合いません。",
+      "オ": "原図では右下がりですが、曲線(下に凸)です。直線にならないため、アレニウスの式に従っているとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q003-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問3の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q5",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "採取した1つの均質な検体から同じように調製した多数の試料を1回ずつ分析し、得られた測定値の分布を、真の値を100.0としてヒストグラムに表した。真度及び精度ともに高いのはどれか。1つ選べ。ただし、分析した試料数は同じである。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "真度は、測定値の平均が真の値(100.0)にどれだけ近いかを表します(偏りの小ささ)。精度は、測定値のばらつきの小ささを表します。両方が高いのは、分布の中心が100.0にあり、幅が狭いヒストグラムです。原図では、選択肢4が100付近を中心に最も幅が狭く、これに当たります。選択肢1は幅が狭いものの、中心が100よりやや低い側にあります。選択肢2と3は中心が100付近ですが、ばらつきが大きいです。選択肢5は中心が100より高い側にずれています。",
+    "choiceExplanations": {
+      "ア": "原図では分布が狭く精度は高いですが、ピークが真の値100.0より低い側にずれて見えます。真度が劣るため、両方が高いとはいえません。",
+      "イ": "原図では分布の中心は100付近で真度は良好です。しかし幅が広く、精度は選択肢4より劣ります。",
+      "ウ": "原図では中心は100付近ですが、分布が最も広く、精度が低いです。",
+      "エ": "原図では分布が100付近に集中し、幅も狭いです。真度・精度ともに高いため正しいです。公式正答は4です。",
+      "オ": "原図では分布が100より高い側にずれており、幅も狭くありません。真度・精度ともに高いとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問5（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q005-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問5の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香環を除く二重結合が、E配置であるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "E/Z配置は、二重結合の各炭素について CIP 順位則で高順位の置換基を決め、その2つが反対側にあれば E、同じ側にあれば Z とします。選択肢3では、一方の炭素では Cl（原子番号17）が F（9）より高順位、もう一方の炭素では CH3 が H より高順位です。図では Cl と CH3 が二重結合の反対側にあるので E配置です。",
+    "choiceExplanations": {
+      "ア": "誤り。一方の炭素では CH3 が H より高順位、もう一方の炭素ではエチル基が CH3 より高順位です。図では CH3 とエチル基が同じ側にあるので Z配置です。",
+      "イ": "誤り。二重結合が六員環の中にあり、環内の二重結合の置換基は同じ側に固定されます。環内の二重結合なので E配置にはなりません（Z型）。",
+      "ウ": "正しい。Cl と CH3 が反対側にあるので E配置です。",
+      "エ": "誤り。2つのエステル基（CO2CH3）が二重結合の同じ側にある（マレイン酸ジメチル型の）配置で、Z配置です。",
+      "オ": "誤り。一方の炭素ではヒドロキシフェニル基がフェニル基より高順位、もう一方の炭素ではフェニル基がエチル基より高順位です。図では高順位の2つの基が同じ側にあるので Z配置です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香族性を示さないのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "芳香族性には、環状に共役していること、平面であること、π電子が 4n+2 個（ヒュッケル則）であることが必要です。選択肢3の八員環の化合物はπ電子が8個で 4n+2 を満たさず、環も平面にならないため、芳香族性を示しません。",
+    "choiceExplanations": {
+      "ア": "芳香族性を示す。ピロールは、C=C 2つの4電子とNの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "イ": "芳香族性を示す。チオフェンは、C=C 2つの4電子とSの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "ウ": "芳香族性を示さない。8π電子で 4n+2 則を満たさず、環が平面を保たないため、正解です。",
+      "エ": "芳香族性を示す。ナフタレンは10π電子の縮合環系で、ヒュッケル則を満たします。",
+      "オ": "芳香族性を示す。アズレンは五員環と七員環が縮合した10π電子の非ベンゼン系芳香族化合物です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ある結晶多形を有する薬物の粉末X線回折パターンである。非晶質はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "結晶は原子・分子が規則正しく配列するため、特定の回折角2θに鋭いピークが現れる。非晶質は長距離秩序がないため、鋭いピークがなく、ブロードな山(ハロー)だけが現れる。図中で鋭いピークがなくなだらかな山だけを示すのは5であり、5が非晶質である。",
+    "choiceExplanations": {
+      "ア": "鋭く明瞭な回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "イ": "小さいながらも多数の回折ピークが認められ、結晶性を示す。非晶質ではないので誤り。",
+      "ウ": "鋭い回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "エ": "3とよく似た鋭い回折ピークの並びがあり、結晶性を示す。非晶質ではないので誤り。",
+      "オ": "正しい。鋭いピークがなく、ブロードなハローだけが見られ、非晶質のパターンである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q048-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問48の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q173",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 173,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体重 60 kg の患者にアミノグリコシド系抗菌薬ゲンタマイシンを静脈内投与したところ、以下の薬物動態パラメータが得られた。\n（薬物動態パラメータ）\n全身クリアランス（CLtot）75.0 mL/min、糸球体ろ過速度（GFR）62.5 mL/min、尿中未変化体排泄率（fe）0.92、血漿タンパク非結合率（fp）0.90\nその後、急性腎障害を発症したため、CLtot が 40.0 mL/min に、GFR が 27.8 mL/min に、fe が 0.85 に低下した。本患者におけるゲンタマイシンのクリアランスに関する記述として、正しいのはどれか。２つ選べ。ただし、急性腎障害の前後で fp は変化しないものとする。",
+    "choices": {
+      "ア": "腎障害前のゲンタマイシンの糸球体ろ過クリアランスは 62.5 mL/min である。",
+      "イ": "腎障害の有無によらず、ゲンタマイシンの腎排泄には尿細管分泌が関与する。",
+      "ウ": "腎障害の有無によらず、ゲンタマイシンは尿細管から再吸収されやすい。",
+      "エ": "ゲンタマイシンの腎クリアランスは腎障害によって変化しない。",
+      "オ": "ゲンタマイシンの腎外クリアランスは腎障害の前後でほぼ一定である。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "【腎障害前】腎クリアランス CLr = CLtot × fe = 75.0 × 0.92 = 69.0 mL/min。糸球体ろ過クリアランス = fp × GFR = 0.90 × 62.5 = 56.25 mL/min。CLr（69.0）はこれより大きく、尿細管分泌が関与します。腎外クリアランス = 75.0 − 69.0 = 6.0 mL/min。\n【腎障害後】CLr = 40.0 × 0.85 = 34.0 mL/min。糸球体ろ過クリアランス = 0.90 × 27.8 = 25.02 mL/min。CLr のほうが大きく、尿細管分泌が関与します。腎外クリアランス = 40.0 − 34.0 = 6.0 mL/min。\n以上から、2 と 5 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。糸球体ろ過クリアランスは非結合形のみがろ過されるので、fp × GFR = 0.90 × 62.5 = 56.25 mL/min です。62.5 mL/min は GFR そのものです。",
+      "イ": "正しい。障害前は CLr 69.0 > 56.25、障害後は 34.0 > 25.02 で、ろ過クリアランスを上回ります。尿細管分泌の関与が示されます。",
+      "ウ": "誤り。CLr がろ過クリアランスを上回っているので、再吸収が優位とはいえません。再吸収が優位なら CLr はろ過クリアランスより小さくなります。",
+      "エ": "誤り。腎クリアランスは 69.0 mL/min から 34.0 mL/min へ低下しています。",
+      "オ": "正しい。腎外クリアランスは障害前後ともに 6.0 mL/min で一定です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問173（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q174",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 174,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下表は、ある薬物 400 mg を患者に急速静脈内投与し、その4 時間後に定速静脈内投与を開始したときの血漿中薬物濃度を示す。このときの定速静脈内投与速度（mg/h）として最も近い値はどれか。１つ選べ。ただし、本薬物の体内動態は、線形 1-コンパートメントモデルに従い、ln 2 ＝ 0.693 とする。",
+    "choices": {
+      "ア": "15",
+      "イ": "20",
+      "ウ": "25",
+      "エ": "30",
+      "オ": "35"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "1) 急速静脈内投与後の濃度は 2 h で 10.0、4 h で 5.0 μg/mL と、2 時間で半減しています。したがって消失半減期 t1/2 = 2 h です。\n2) 消失速度定数 k = 0.693 / 2 = 0.3465 /h。\n3) 投与直後の濃度 C0 は、2 h の濃度 10.0 を半減期 2 h 分だけ遡って 20 μg/mL です（1 h の 14.2 とも整合します）。\n4) 分布容積 V = 400 mg / 20 μg/mL = 20 L。\n5) クリアランス CL = k × V = 0.3465 × 20 = 6.93 L/h。\n6) 定速投与開始後（6 h、10 h）も濃度は 5.0 μg/mL で一定なので、この 5.0 μg/mL が定常状態濃度です。定常状態では投与速度 = CL × Css なので、R = 6.93 L/h × 5.0 mg/L = 34.65 ≒ 35 mg/h。\n最も近い値は 35 で、答えは 5 です。",
+    "choiceExplanations": {
+      "ア": "誤り。15 mg/h では、CL × Css = 6.93 × 5.0 ≒ 34.65 mg/h を満たしません。",
+      "イ": "誤り。20 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "ウ": "誤り。25 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "エ": "誤り。30 mg/h は 34.65 mg/h より少なく、最も近い値は 35 mg/h です。",
+      "オ": "正しい。R = CL × Css = 6.93 × 5.0 ≒ 34.65 ≒ 35 mg/h です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問174（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q174-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問174の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形 1-コンパートメントモデルに従う薬物において、A群に示すパラメータが2倍に変動したとき、B群のパラメータが2倍になる組合せはどれか。2つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "線形1-コンパートメントモデルでは、AUC＝F・D/CL、定速静注の定常状態濃度＝k0/CL、定常状態の50％到達時間＝消失半減期、反復経口投与の定常状態平均濃度＝F・D/(CL・τ)の関係が成り立つ。これらから、正解は3と5である。",
+    "choiceExplanations": {
+      "ア": "誤り。単回急速静注後のAUCはD/CLで表され、分布容積には依存しない。分布容積が2倍になってもAUCは変わらない（消失半減期が延びる）。",
+      "イ": "誤り。定常状態濃度はk0/CLなので、クリアランスが2倍になると濃度は1/2になる。",
+      "ウ": "正しい。定常状態濃度の50％に達するまでの時間は消失半減期そのものに等しい（1−e^(−kt)＝0.5より t＝ln2/k）。半減期が2倍になれば、この時間も2倍になる。",
+      "エ": "誤り。経口投与後のAUCはF・D/CLで、吸収速度定数には依存しない。ka が2倍になってもAUCは変わらない（最高血中濃度や到達時間が変わる）。",
+      "オ": "正しい。定常状態平均血中濃度はF・D/(CL・τ)で、吸収率Fに比例する。Fが2倍になれば2倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図（選択肢1〜5）"
+    ]
   }
 ]
