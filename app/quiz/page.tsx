@@ -137,7 +137,9 @@ export default async function QuizPage({
   // Honor the optional limit query (the home 3問体験 CTA sends limit=3).
   // Cap at 200 so a malformed value cannot make the page hang.
   const limit = sp.limit ? Math.max(1, Math.min(200, Number(sp.limit) || 0)) : 0;
-  const poolIds = limit > 0 ? fullPoolIds.slice(0, limit) : fullPoolIds;
+  // Random settings filter the eligible pool before the existing trial limit.
+  const randomSettingsEnabled = mode === "random" && !isSearchPool;
+  const poolIds = limit > 0 && !randomSettingsEnabled ? fullPoolIds.slice(0, limit) : fullPoolIds;
   const backHref = quizBackHref({ exam, mode, returnTo: sp.returnTo });
 
   let categoryById: Record<string, string> | undefined;
@@ -146,6 +148,12 @@ export default async function QuizPage({
     categoryById = {};
     for (const q of examQuestions) categoryById[q.id] = q.category;
   }
+
+  const calculationIds = randomSettingsEnabled
+    ? (examGroup?.length
+        ? (await Promise.all(examGroup.map((code) => getQuestionsForExam(code)))).flat()
+        : examQuestions).filter((question) => question.isCalculation).map((question) => question.id)
+    : undefined;
 
   return (
     <>
@@ -158,6 +166,9 @@ export default async function QuizPage({
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}
+        calculationIds={calculationIds}
+        randomSettingsEnabled={randomSettingsEnabled}
+        maxQuestions={limit > 0 ? limit : undefined}
         initialQuestionId={sp.question}
         mode={mode}
         backHref={backHref}

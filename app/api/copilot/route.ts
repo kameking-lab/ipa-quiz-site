@@ -135,6 +135,12 @@ export async function POST(req: Request) {
   if (provider.name !== "mock") {
     const cap = await checkMonthlyCostCap();
     if (!cap.allowed) {
+      if (cap.reason === "unavailable") {
+        return NextResponse.json(
+          { error: "cost_guard_unavailable", message: "AI応答を一時停止しています。しばらくしてからお試しください。" },
+          { status: 503, headers: { "X-Error-Type": "cost_guard_unavailable" } },
+        );
+      }
       return NextResponse.json(
         {
           error: "cost_capped",

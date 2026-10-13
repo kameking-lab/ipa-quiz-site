@@ -10,11 +10,20 @@ import { FAQS, FAQ_CATEGORY_LABELS } from "@/data/faq";
 // with no label entry = a blank section heading / aria-label.
 
 describe("FAQS registry — FAQPage structured-data invariants", () => {
-  it("states the current essay beta allowance without implying a paid plan is available", () => {
+  it("states free public learning without reviving a monthly essay quota", () => {
     const billing = FAQS.find((f) => f.question === "利用料金は？ 本当に無料ですか？");
-    expect(billing?.answer).toContain("月3回まで");
-    expect(billing?.answer).toContain("有料プランの課金は現在提供していません");
-    expect(billing?.answer).not.toContain("全機能を無料");
+    expect(billing?.answer).toContain("現在公開中の過去問学習とAI学習機能はすべて無料");
+    expect(billing?.answer).toContain("月ごとの回数枠はありません");
+    expect(billing?.answer).toContain("適正利用制限");
+    expect(billing?.answer).not.toContain("月3回");
+    expect(billing?.answer).not.toContain("AI 論述添削（β版）");
+  });
+
+  it("keeps technical abuse controls separate from a commercial daily question gate", () => {
+    const quota = FAQS.find((f) => f.question === "AI 解説の利用回数に制限はありますか？");
+    expect(quota?.answer).toContain("日ごとの質問枠はありません");
+    expect(quota?.answer).toContain("短時間の連続利用や大量送信");
+    expect(quota?.answer).not.toContain("初回10回");
   });
 
   it("is non-empty and every item has a non-empty question and answer", () => {

@@ -26,8 +26,11 @@ const ALL: AfternoonQuestion[] = [
   ...SM_AFTERNOON_QUESTIONS,
 ];
 
+// 原稿は保持する。公開導線と採点APIが参照するのは、出典を確認した実過去問だけ。
+const PUBLISHED = ALL.filter((question) => question.license === "IPA-public");
+
 export function getAfternoonQuestions(exam: ExamCode): AfternoonQuestion[] {
-  return ALL.filter((q) => q.exam === exam);
+  return PUBLISHED.filter((q) => q.exam === exam);
 }
 
 export function getAfternoonByYearSeason(
@@ -35,7 +38,7 @@ export function getAfternoonByYearSeason(
   year: number,
   season: Season,
 ): AfternoonQuestion[] {
-  return ALL.filter((q) => q.exam === exam && q.year === year && q.season === season).sort(
+  return PUBLISHED.filter((q) => q.exam === exam && q.year === year && q.season === season).sort(
     (a, b) => a.qNumber - b.qNumber,
   );
 }
@@ -43,7 +46,7 @@ export function getAfternoonByYearSeason(
 export function getAfternoonYearSeasons(exam: ExamCode): { year: number; season: Season }[] {
   const seen = new Set<string>();
   const result: { year: number; season: Season }[] = [];
-  for (const q of ALL) {
+  for (const q of PUBLISHED) {
     if (q.exam !== exam) continue;
     const key = `${q.year}-${q.season}`;
     if (seen.has(key)) continue;
@@ -56,5 +59,5 @@ export function getAfternoonYearSeasons(exam: ExamCode): { year: number; season:
 }
 
 export function findAfternoonQuestion(id: string): AfternoonQuestion | undefined {
-  return ALL.find((q) => q.id === id);
+  return PUBLISHED.find((q) => q.id === id);
 }

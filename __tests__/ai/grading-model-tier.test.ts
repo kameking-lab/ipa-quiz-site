@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 import { resolveModel } from "@/lib/ai/provider";
 import { isPricedModel, tierForModel } from "@/lib/ai/cost-tracker";
+import { POST as retiredQuestionGeneration } from "@/app/api/generate-question/route";
 
 // 強み2: 午後記述・論述の AI 採点だけ上位モデルを使う。汎用LLMに勝つため
 // 採点品質を優先し、四択/コパイロット/類題生成は free(flash-lite) のまま。
@@ -100,17 +101,14 @@ describe("採点ルートだけが grading 層を使う（用途別の使い分�
     expect(read("app/api/scoring/route.ts")).toMatch(/resolveModel\("grading"\)/);
   });
 
-  it("copilot は明示された Gemini Flash、generate-question は free を使う", () => {
+  it("copilot retains its fixed model while retired generation returns 410", async () => {
     expect(read("lib/copilot/model.ts")).toMatch(/COPILOT_MODEL = "gemini-3\.8-flash"/);
     for (const route of ["app/api/copilot/route.ts", "app/api/copilot/exam-library/route.ts"]) {
       expect(read(route)).toMatch(/COPILOT_MODEL/);
       expect(read(route)).not.toMatch(/resolveModel\("grading"\)/);
     }
-    expect(read("app/api/generate-question/route.ts")).toMatch(
-      /resolveModel\("free"\)/,
-    );
-    expect(read("app/api/generate-question/route.ts")).not.toMatch(
-      /resolveModel\("grading"\)/,
-    );
+    const retiredSource = read("app/api/generate-question/route.ts");
+    expect(retiredSource).not.toMatch(/resolveModel|tierForModel|recordAiCost/);
+    expect((await retiredQuestionGeneration()).status).toBe(410);
   });
 });

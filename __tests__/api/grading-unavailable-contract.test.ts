@@ -43,3 +43,13 @@ describe("afternoon complete-response boundary", () => {
     expect(res.status).toBe(503);expect(body.status).toBe("unavailable");expect(body).not.toHaveProperty("totalScore");
   });
 });
+vi.mock("@/lib/afternoon/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/afternoon/load")>("@/lib/afternoon/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findAfternoonQuestion: fixtures.findPublishedAfternoonFixture };
+});
+vi.mock("@/lib/essay/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/essay/load")>("@/lib/essay/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findEssayQuestion: fixtures.findPublishedEssayFixture };
+});

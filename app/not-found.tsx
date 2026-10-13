@@ -87,7 +87,7 @@ export default function NotFound() {
               className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
             >
               <FileCheck className="h-3.5 w-3.5" />
-              午後論述のAI採点
+              IPA 午後論述の公式過去問
             </Link>
             <Link
               href="/faq"

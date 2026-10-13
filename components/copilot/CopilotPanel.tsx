@@ -665,7 +665,6 @@ export function CopilotPanel({
     "detailed",
     "example",
     "mnemonic",
-    "similar",
     "socratic",
     "prerequisite",
     "analyze-a",
@@ -679,7 +678,7 @@ export function CopilotPanel({
   const quickActionIds: QuickActionId[] = [];
   const seen = new Set<QuickActionId>();
   for (const id of pinned) {
-    if (!seen.has(id)) {
+    if (id in QUICK_ACTIONS && !seen.has(id)) {
       quickActionIds.push(id);
       seen.add(id);
     }

@@ -38,6 +38,7 @@ export const LS_KEYS = {
   reviewSchedule: "ipa-quiz:review:v1",
   reviewSeen: "ipa-quiz:review-seen:v1",
   lastQuestion: "ipa-quiz:last-question:v1",
+  quizResume: "ipa-quiz:quiz-resume:v1",
   mockExam: "ipa-quiz:mock-exam:v1",
   gold: "ipa-quiz:gold:v1",
   bookmarks: "ipa-quiz:bookmarks:v1",

@@ -18,7 +18,6 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
-import { GenerateSimilar } from "./GenerateSimilar";
 import {
   CopilotMobileSheet,
   CopilotDesktopFloating,
@@ -67,6 +66,7 @@ interface Props {
   completionLabel?: string;
   completionShareHref?: string;
   onNext: () => void;
+  onComplete?: () => void;
   onDeferQuestion?: (questionId: string) => void;
   deferredQuestionCount?: number;
   onResumeDeferred?: () => void;
@@ -84,6 +84,7 @@ export function QuizPlayer({
   completionLabel,
   completionShareHref,
   onNext,
+  onComplete,
   onDeferQuestion,
   deferredQuestionCount,
   onResumeDeferred,
@@ -117,10 +118,14 @@ export function QuizPlayer({
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
     setHistoryRecordingEnabled(readSettings().recordHistory);
-    const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
-    if (!alreadyShown) {
-      setShowSwipeHint(true);
-      localStorage.setItem(LS_KEYS.swipeHintShown, "true");
+    try {
+      const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
+      if (!alreadyShown) {
+        setShowSwipeHint(true);
+        localStorage.setItem(LS_KEYS.swipeHintShown, "true");
+      }
+    } catch {
+      // The optional hint must not block practice when browser storage is full.
     }
   }, []);
 
@@ -144,6 +149,7 @@ export function QuizPlayer({
 
   React.useEffect(() => {
     if (!question) return;
+    setCompleted(false);
      
     setSelected(undefined);
     setPicked([]);
@@ -170,6 +176,7 @@ export function QuizPlayer({
     setCopilotQuery(null);
     if (index + 1 >= total) {
       setCompleted(true);
+      onComplete?.();
       window.scrollTo?.({ top: 0, behavior: "instant" });
       return;
     }
@@ -178,7 +185,7 @@ export function QuizPlayer({
       questionStartRef.current?.focus({ preventScroll: true });
       questionStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
     });
-  }, [index, total, onNext]);
+  }, [index, total, onNext, onComplete]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean) => {
@@ -602,15 +609,14 @@ export function QuizPlayer({
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                {question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
 
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
-                ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
+                ? "Enter / → で次の問題へ / R で苦手復習 / ? でヘルプ"
+                : ordering ? "各位置を選んで採点する / R で苦手復習 / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R で苦手復習 / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R で苦手復習 / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
@@ -702,7 +708,7 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
         <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
           R
         </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">スターをつける / 外す</dd>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">苦手復習に追加 / 外す</dd>
         <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
           Esc
         </dt>

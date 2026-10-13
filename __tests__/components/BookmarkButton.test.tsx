@@ -36,7 +36,7 @@ describe("BookmarkButton", () => {
   it("renders with correct aria-label when not bookmarked", () => {
     const { getByRole } = render(<BookmarkButton question={mockQuestion} />);
     const btn = getByRole("button");
-    expect(btn).toHaveAttribute("aria-label", "ブックマークに追加");
+    expect(btn).toHaveAttribute("aria-label", "資料保存（ブックマークに追加）");
     expect(btn).toHaveAttribute("aria-pressed", "false");
   });
 });

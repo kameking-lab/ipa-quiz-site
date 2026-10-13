@@ -102,7 +102,7 @@ export default function HtmlSitemapPage() {
             { href: "/quiz/stream", label: "ストリーム学習" },
             { href: "/study-plan", label: "AI学習スケジュール" },
             { href: "/challenge", label: "今日の1問" },
-            { href: "/essay", label: "AI 論述添削" },
+            { href: "/essay", label: "IPA 午後論述の公式過去問" },
             { href: "/ranking", label: "ランキング" },
             { href: "/stats", label: "公開ダッシュボード" },
             { href: "/blog", label: "ブログ一覧" },

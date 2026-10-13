@@ -111,7 +111,7 @@ test.describe("bookmark: localStorage round-trip", () => {
     await page.goto("/bookmarks");
     await page.waitForLoadState("networkidle");
 
-    const removeBtn = page.locator("[aria-label='ブックマークから外す']");
+    const removeBtn = page.getByRole("button", { name: "資料保存（ブックマークから外す）" });
     await expect(removeBtn).toBeVisible({ timeout: 15000 });
   });
 });

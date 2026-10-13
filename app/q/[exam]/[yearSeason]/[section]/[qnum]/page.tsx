@@ -562,7 +562,7 @@ export default async function QuestionPage({
               この問題を AI と深掘りする
             </h2>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              用語解説・選択肢分析・類題生成をその場で対話。クイズモードでは解答→解説がゼロ遷移。
+              用語解説・選択肢分析をその場で対話。クイズモードでは解答→解説がゼロ遷移。
             </p>
           </div>
           <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
@@ -584,7 +584,6 @@ export default async function QuestionPage({
               "用語をやさしく解説して",
               `${q.category}の前提知識を整理して`,
               "実例で教えて",
-              "類題を1問つくって",
               "覚え方を教えて",
             ].map((label) => (
               <li key={label}>

@@ -1,27 +1,14 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
-import EssayHomePage from "@/app/essay/page";
-import EssayEditorPage, {
-  generateMetadata as gradingMetadata,
-} from "@/app/essay/[exam]/[questionId]/page";
-import EssaysExamPage from "@/app/essays/[exam]/page";
-import EssaysDetailPage, {
-  generateMetadata as referenceMetadata,
-} from "@/app/essays/[exam]/[yearSeason]/[section]/[qnum]/page";
+import EssayHomePage, { metadata } from "@/app/essay/page";
 import { getAllEssayQuestions } from "@/lib/essay/load";
-import {
-  ESSAY_EXAM_CODES,
-  getEssayQuestionsByExam,
-  questionToUrlParts,
-} from "@/lib/essays/load";
+import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essays/load";
 
-vi.mock("@/components/essay/EssayEditor", () => ({ EssayEditor: () => null }));
-vi.mock("@/components/quiz/InlineBookHint", () => ({ InlineBookHint: () => null }));
-vi.mock("@/components/analytics/ViewTracker", () => ({ ViewTracker: () => null }));
-
-describe("independent essay material attribution", () => {
-  it("is backed by material marked original in both essay catalogs", () => {
+describe("official essay hub", () => {
+  it("preserves original manuscripts but does not present them as official past papers", () => {
     expect(getAllEssayQuestions().length).toBeGreaterThan(0);
     expect(getAllEssayQuestions().every((question) => question.license === "original")).toBe(true);
     const references = ESSAY_EXAM_CODES.flatMap(getEssayQuestionsByExam);
@@ -29,42 +16,21 @@ describe("independent essay material attribution", () => {
     expect(references.every((question) => question.license === "original")).toBe(true);
   });
 
-  it("labels years as catalog labels next to links on the grading index", () => {
+  it("links to IPA's year pages without listing independent question titles", () => {
     const markup = renderToStaticMarkup(<EssayHomePage />);
-    expect(markup).toContain("AI 論述添削 β版・月3回まで無料");
-    expect(markup).toContain("独自練習・教材整理用ラベル");
+    expect(markup).toContain("https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html");
+    expect(markup).toContain("https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html");
+    expect(markup).toContain("https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html");
+    expect(markup).toContain("現在、このページでは論述の自動採点を受け付けていません");
+    for (const question of getAllEssayQuestions()) {
+      expect(markup).not.toContain(question.title);
+    }
+    expect(metadata.alternates).toEqual({ canonical: "/essay" });
   });
 
-  it("labels the grading question itself as original practice", async () => {
-    const question = getAllEssayQuestions()[0]!;
-    const params = { exam: question.exam, questionId: question.id };
-    const markup = renderToStaticMarkup(await EssayEditorPage({
-      params: Promise.resolve(params),
-    }));
-    const metadata = await gradingMetadata({ params: Promise.resolve(params) });
-    expect(markup).toContain("教材整理用ラベル:");
-    expect(markup).toContain("実際の試験で出題された問題ではありません");
-    expect(metadata.title).toContain("教材整理用ラベル:");
-    expect(metadata.description).toContain("実際のIPA過去問ではありません");
-  });
-
-  it("labels the reference answer cards and detail header", async () => {
-    const exam = "sc";
-    const question = getEssayQuestionsByExam(exam)[0]!;
-    const parts = questionToUrlParts(question, exam);
-    const examMarkup = renderToStaticMarkup(await EssaysExamPage({
-      params: Promise.resolve({ exam }),
-    }));
-    const detailParams = parts;
-    const detailMarkup = renderToStaticMarkup(await EssaysDetailPage({
-      params: Promise.resolve(detailParams),
-    }));
-    const metadata = await referenceMetadata({ params: Promise.resolve(detailParams) });
-    expect(examMarkup).toContain("教材整理用ラベル:");
-    expect(examMarkup).toContain("独自練習・午後 II 問");
-    expect(detailMarkup).toContain("教材整理用ラベル:");
-    expect(detailMarkup).toContain("独自練習・午後 II 問");
-    expect(metadata.title).toContain("教材整理用ラベル:");
-    expect(metadata.description).toContain("実際のIPA過去問・公式解答ではありません");
+  it("does not import original manuscript data into the history client bundle", () => {
+    const source = readFileSync(join(process.cwd(), "app/account/essay-history/EssayHistoryView.tsx"), "utf8");
+    expect(source).not.toContain("@/lib/essay/load");
+    expect(source).toContain("entry.questionId");
   });
 });

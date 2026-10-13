@@ -1,6 +1,8 @@
 /// <reference types="vite/client" />
 import { describe, expect, it } from "vitest";
 import type { Metadata } from "next";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { getAllEssayQuestions } from "@/lib/essay/load";
@@ -171,47 +173,23 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
   });
 });
 
-/**
- * 旗艦（午後AI採点）の deep ページ `/essay/<exam>/<id>` は main sitemap に12件
- * 掲載される（sitemap-resolvability が件数と404を担保）。この generateMetadata は
- * **問題が見つからない時だけ** robots:index:false を返す（L43）。掲載されている
- * 実在問題が誤って noindex 化されると旗艦が「掲載済みだが noindex」になり crawl
- * 資産を浪費するため、実 params で robots を評価し index:false でないことを固定する。
- */
-describe("旗艦 essay deep ページ（sitemap掲載の実在問題）は全て indexable", () => {
-  type EssayGenerateMetadata = (arg: {
-    params: Promise<{ exam: string; questionId: string }>;
-  }) => Promise<Metadata>;
-
+/** Original essay deep routes are retired; only the official hub is indexable. */
+describe("retired original essay deep routes", () => {
   const essayPageKey = "../../app/essay/[exam]/[questionId]/page.tsx";
 
-  it("essay deep page モジュールが解決する", () => {
-    expect(essayPageKey in pageModules).toBe(true);
-  });
-
-  it("掲載される全 essay 問題で robots:noindex にならない", async () => {
+  it("retains the raw manuscripts but removes all deep URLs from the sitemap", () => {
     const questions = getAllEssayQuestions();
-    expect(questions.length).toBeGreaterThan(0); // 空振り防止
-    const mod = (await pageModules[essayPageKey]()) as {
-      generateMetadata: EssayGenerateMetadata;
-    };
-    const bad: string[] = [];
-    for (const q of questions) {
-      const md = await mod.generateMetadata({
-        params: Promise.resolve({ exam: q.exam, questionId: q.id }),
-      });
-      if (isNoindex(md.robots)) bad.push(`/essay/${q.exam}/${q.id}`);
-    }
-    expect(bad).toEqual([]);
+    expect(questions).toHaveLength(12);
+    expect(questions.every((question) => question.license === "original")).toBe(true);
+    const paths = locs(renderMainSitemapXml());
+    expect(paths).toContain("/essay");
+    expect(paths.filter((path) => /^\/essay\/[a-z]{2}\//.test(path))).toEqual([]);
   });
 
-  it("存在しない問題IDでは robots:noindex を返す（not-found 分岐の健全性）", async () => {
-    const mod = (await pageModules[essayPageKey]()) as {
-      generateMetadata: EssayGenerateMetadata;
-    };
-    const md = await mod.generateMetadata({
-      params: Promise.resolve({ exam: "pm", questionId: "no-such-essay-id" }),
-    });
-    expect(isNoindex(md.robots)).toBe(true);
+  it("has a route module that redirects deep original URLs to the official hub", () => {
+    expect(essayPageKey in pageModules).toBe(true);
+    const source = readFileSync(join(process.cwd(), "app/essay/[exam]/[questionId]/page.tsx"), "utf8");
+    expect(source).toContain('redirect("/essay")');
+    expect(source).not.toContain("generateMetadata");
   });
 });

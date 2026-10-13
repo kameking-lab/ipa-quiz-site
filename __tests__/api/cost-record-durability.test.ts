@@ -161,7 +161,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     );
     const { POST } = await import("@/app/api/generate-question/route");
 
-    const res = await POST(
+    const res = await (POST as unknown as (request: Request) => Promise<Response>)(
       new Request("http://localhost/api/generate-question", {
         method: "POST",
         headers: { "content-type": "application/json", "x-forwarded-for": "10.9.0.3" },
@@ -180,11 +180,11 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
         }),
       }),
     );
-    expect(res.status).toBe(200);
-    await drain(res);
-
-    expect(recordAiCost).toHaveBeenCalledTimes(1);
-    expect(pending.settled()).toBe(true);
+    expect(res.status).toBe(410);
+    expect((await res.json()).error).toBe("original_question_unavailable");
+    expect(recordAiCost).not.toHaveBeenCalled();
+    expect(streamChat).not.toHaveBeenCalled();
+    expect(pending.settled()).toBe(false);
   });
 
   it("/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
@@ -237,7 +237,6 @@ describe("ソースレベルの再発防止", () => {
     const ROUTES = [
       "app/api/scoring/route.ts",
       "app/api/essay-grade/route.ts",
-      "app/api/generate-question/route.ts",
       "app/api/copilot/route.ts",
     ];
     for (const rel of ROUTES) {
@@ -247,4 +246,14 @@ describe("ソースレベルの再発防止", () => {
       expect(src).not.toMatch(/void\s+recordAiCost\s*\(/);
     }
   });
+});
+vi.mock("@/lib/afternoon/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/afternoon/load")>("@/lib/afternoon/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findAfternoonQuestion: fixtures.findPublishedAfternoonFixture };
+});
+vi.mock("@/lib/essay/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/essay/load")>("@/lib/essay/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findEssayQuestion: fixtures.findPublishedEssayFixture };
 });

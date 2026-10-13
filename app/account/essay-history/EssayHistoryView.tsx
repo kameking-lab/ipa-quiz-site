@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { readEssayHistory, clearEssayHistory } from "@/lib/storage/essay-history";
-import { findEssayQuestion } from "@/lib/essay/load";
 import type { EssayHistoryEntry, EssayRank } from "@/lib/essay/types";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import { examLabel } from "@/lib/utils";
@@ -68,7 +67,7 @@ export function EssayHistoryView() {
             まだ採点履歴がありません。
           </p>
           <Button asChild variant="primary" size="sm" className="mt-4">
-            <Link href="/essay">AI 論述添削を試す</Link>
+            <Link href="/essay">IPA 公式過去問を見る</Link>
           </Button>
         </CardContent>
       </Card>
@@ -77,6 +76,9 @@ export function EssayHistoryView() {
 
   return (
     <div className="space-y-5">
+      <p className="text-sm text-muted-foreground">
+        ここには以前の独自練習問題に対する採点履歴を保存しています。現在の論述学習には IPA 公式過去問をご利用ください。
+      </p>
       {summary && (
         <Card>
           <CardContent className="pt-5">
@@ -103,11 +105,10 @@ export function EssayHistoryView() {
 
       <ul className="space-y-3">
         {entries.map((entry) => {
-          const q = findEssayQuestion(entry.questionId);
           return (
             <li key={entry.id}>
               <Link
-                href={q ? `/essay/${entry.exam}/${entry.questionId}` : "/essay"}
+                href="/essay"
                 className="block"
               >
                 <Card className="transition-colors hover:border-sky-400 dark:hover:border-sky-600">
@@ -121,7 +122,7 @@ export function EssayHistoryView() {
                         {formatDate(entry.gradedAt)}
                       </p>
                       <p className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                        {q?.title ?? entry.questionId}
+                        {entry.questionId}
                       </p>
                       <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                         参考スコア {entry.totalScore}（合否の予測ではありません）

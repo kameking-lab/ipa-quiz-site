@@ -1,9 +1,7 @@
 import { describe, it, expect, beforeAll } from "vitest";
 import { POST } from "@/app/api/scoring/route";
 
-// Ensure mock provider is used (no GEMINI_API_KEY). The mock provider has a
-// dedicated short-circuit in the route that returns deterministic JSON, which
-// makes the happy-path testable without any network calls.
+// The public lookup rejects original questions before reaching any provider.
 beforeAll(() => {
   delete process.env.GEMINI_API_KEY;
   delete process.env.KV_REST_API_URL;
@@ -56,9 +54,9 @@ describe("POST /api/scoring", () => {
 
   it.each(["これはサンプル解答です。", "あ".repeat(80), "ab"])("mock provider does not grade %s", async (text) => {
     const res = await POST(makeReq({questionId: "ap-2024h-pm-q1", answers: [{label: "設問1", text}]}, `10.0.2.${text.length}`));
-    expect(res.status).toBe(503);
+    expect(res.status).toBe(404);
     const body = await res.json();
-    expect(body.status).toBe("unavailable");
+    expect(body.error).toBe("not_found");
     for (const key of ["totalScore", "subResults", "overallComment"]) expect(body).not.toHaveProperty(key);
   });
 

@@ -7,8 +7,6 @@ import type { ExamCode } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { getAfternoonYearSeasons, getAfternoonByYearSeason } from "@/lib/afternoon/load";
 import { Badge } from "@/components/ui/badge";
-import { AfternoonDisclaimer } from "@/components/afternoon/AfternoonDisclaimer";
-import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
   "ap",
@@ -44,8 +42,11 @@ export async function generateMetadata({
     return { title: "午後問題は未対応です", robots: { index: false } };
   }
   const label = examLabel(exam as ExamCode);
-  const title = `【練習用】${label} 午後問題（AI採点ベータ）`;
-  const description = `【練習用オリジナル問題】${label}の午後記述式形式を模した練習問題をAIが採点します。実際の過去問ではありません。AI採点は目安です。`;
+  const hasPublishedQuestions = getAfternoonYearSeasons(exam as ExamCode).length > 0;
+  const title = `${label} 午後の過去問・公式資料`;
+  const description = hasPublishedQuestions
+    ? `${label}の出典を確認した午後過去問を年度別に掲載しています。IPAの公式問題・解答例も確認できます。`
+    : `${label}の午後過去問はIPA公式の問題冊子・解答例で確認できます。現在、当サイト内に出典を確認した午後問題は掲載していません。`;
   return {
     title,
     description,
@@ -106,58 +107,28 @@ export default async function AfternoonIndexPage({
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <Badge variant="soft">
               <FileEdit className="h-3 w-3" />
-              練習用オリジナル問題
+              IPA 公式資料へ
             </Badge>
-            <Badge variant="warn">AI 採点ベータ</Badge>
           </div>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {examLabel(code)} 午後問題
+              {examLabel(code)} 午後の過去問・公式資料
             </span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            午後記述式問題の解答を入力すると、AI が模範解答と比較して採点します。
-            点数・良い点・改善点・IPA 解答例を表示します。
+            IPA が公開する問題冊子・解答例・採点講評を確認できます。
+            当サイト内には出典を確認した問題のみ掲載します。
           </p>
         </header>
 
-        <div className="mb-8">
-          <AfternoonDisclaimer />
-        </div>
-
-        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)から
-            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
-            コンポーネントが ESSAY_EXAM_CODES で self-gate するため非論述区分には出ない。 */}
-        <AfternoonEssayHint exam={code} />
-
-        {code === "fe" && (
-          <div className="mb-8">
-            <Link
-              href="/blog/fe-kamoku-b-taisaku"
-              className="group flex items-start gap-3 rounded-2xl border border-indigo-300/70 bg-indigo-50/60 p-4 transition-all hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md dark:border-indigo-800/60 dark:bg-indigo-950/30 sm:p-5"
-            >
-              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-indigo-700 dark:bg-indigo-900/60 dark:text-indigo-300">
-                <FileEdit className="h-4 w-4" />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-medium text-foreground group-hover:text-primary">
-                  基本情報の午後は科目B（アルゴリズム・擬似言語）が中心
-                </span>
-                <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-                  擬似言語の読み方・トレースの型を体系的に整理してから演習に入ると伸びます。「基本情報
-                  科目B 完全対策」で読み方を最短整理。
-                </span>
-              </span>
-              <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-            </Link>
-          </div>
-        )}
-
         {yearSeasons.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border bg-muted/40 p-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              まだ午後問題が登録されていません。順次追加していきます。
+            <p className="mb-3 text-sm text-muted-foreground">
+              現在、当サイト内に出典を確認した午後問題は掲載していません。
             </p>
+            <a href="https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary underline">
+              IPA 公式の過去問題を見る
+            </a>
           </div>
         ) : (
           <ul className="grid gap-2 sm:grid-cols-2">

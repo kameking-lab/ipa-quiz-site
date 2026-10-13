@@ -37,7 +37,7 @@ const HASH_TO_TAB: Record<string, string> = {
 const MOCK_PRESETS = [
   { label: "本番想定 模試", desc: "実試験と同じ問題数・制限時間で受験", href: (e: string) => `/mock-exam?exam=${e}` },
   { label: "ランダム短時間演習", desc: "スキマ時間で 80 問までランダム", href: (e: string) => `/quiz?mode=random&exam=${e}` },
-  { label: "復習モード", desc: "間違えた問題と☆付き問題を優先出題", href: (e: string) => `/quiz?mode=review&exam=${e}` },
+  { label: "復習モード", desc: "間違えた問題と★苦手復習の問題を出題", href: (e: string) => `/quiz?mode=review&exam=${e}` },
   { label: "未回答モード", desc: "まだ解いていない問題だけ出題", href: (e: string) => `/quiz?mode=unanswered&exam=${e}` },
 ] as const;
 

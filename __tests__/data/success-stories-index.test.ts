@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 import {
   getAllSuccessStories,
@@ -12,7 +14,7 @@ import {
   getSuccessStoryExams,
 } from "@/data/success-stories";
 import { getAllBlogSlugs } from "@/data/blog";
-import { getEssayQuestionsByExam, isEssayExamCode } from "@/lib/essays/load";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 
 // Characterization tests for the success-story registry + persona matcher
 // (consumed by the /success-stories routes). The matcher runs purely on static
@@ -197,17 +199,13 @@ describe("cross-link integrity (no dead CTA on the story page)", () => {
     expect(dead).toEqual([]);
   });
 
-  it("every relatedEssayExam links to an essay route that actually exists", () => {
-    // /essays/[exam] requires isEssayExamCode AND a non-empty essay set —
-    // mirror that exact predicate so a story can't point at an essay-less exam.
-    const dead = ALL.filter(
-      (s) =>
-        s.relatedEssayExam != null &&
-        !(
-          isEssayExamCode(s.relatedEssayExam) &&
-          getEssayQuestionsByExam(s.relatedEssayExam).length > 0
-        ),
-    ).map((s) => `${s.slug} -> /essays/${s.relatedEssayExam}`);
-    expect(dead).toEqual([]);
+  it("related paper links use the official hub rather than withdrawn originals", () => {
+    const related = ALL.filter((s) => s.relatedEssayExam != null);
+    expect(related.length).toBeGreaterThan(0);
+    for (const story of related) expect(EXAM_CONFIGS[story.relatedEssayExam!]).toBeDefined();
+    const source = readFileSync(join(process.cwd(), "app/success-stories/[exam]/[slug]/page.tsx"), "utf8");
+    expect(source).toContain('href="/essay"');
+    expect(source).toContain("の公式過去問");
+    expect(source).not.toContain("/essays/");
   });
 });

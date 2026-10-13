@@ -190,7 +190,7 @@ export default function RootLayout({
                       サービス
                     </h3>
                     <ul className="space-y-0">
-                      <li><Link href="/essay" className="block py-2.5 hover:text-foreground">IPA 午後論述AI採点</Link></li>
+                      <li><Link href="/essay" className="block py-2.5 hover:text-foreground">IPA 午後論述の公式過去問</Link></li>
                       <li><Link href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
                       <li><Link href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
                       <li><Link href="/ranking" className="block py-2.5 hover:text-foreground">IPA ランキング</Link></li>

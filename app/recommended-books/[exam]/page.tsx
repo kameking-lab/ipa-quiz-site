@@ -121,8 +121,7 @@ export default async function RecommendedBooksExamPage({
   const books = RECOMMENDED_BOOKS[code] ?? [];
   const label = examLabel(code);
   const intro = EXAM_INTROS[code];
-  // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
-  // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
+  // 論述区分(ST/SA/PM/SM/AU)では、事例集と併せて IPA 公開の午後II原本を案内する。
   const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
   const isDescriptiveAfternoonExam = DESCRIPTIVE_AFTERNOON_EXAMS.includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
@@ -361,9 +360,9 @@ export default async function RecommendedBooksExamPage({
               href="/essay"
               className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
             >
-              AIに午後論文を添削してもらう
+              IPA 公式の午後論述過去問を確認する
             </Link>
-            と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
+            と、実際の出題形式を確認できます。
           </p>
         )}
         {code === "fe" && (

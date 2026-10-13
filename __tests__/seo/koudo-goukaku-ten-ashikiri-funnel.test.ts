@@ -6,16 +6,7 @@ import {
 } from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
-// 「高度試験は何点で合格」「午後I 足切り」「午後II 採点されない」は高インテントの
-// 検索意図だが、「何点で合格」シリーズは IP / FE / AP しか専用ページが無く、
-// 高度試験の 4 段階（午前I・午前II・午後I・午後II）多段階選抜の合格基準を扱う
-// 専用ページが不在だった。新記事 koudo-goukaku-ten-ashikiri を追加した。
-// この記事が
-// (1) 高度試験/合格基準の記事として登録され、
-// (2) 核心事実（各段階60点・多段階選抜で前段階未達なら先は採点されない・SCは午後統合で3段階）を述べ、
-// (3) 論述区分は旗艦 /essay へ「参考評価」明記で funnel し、記述区分は各ハブへ送客し、
-// (4) 既存の高度試験/免除/AP合格基準記事から inbound を受け orphan 化せず、
-// (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
+// 制度・試験形式の事実確認を維持し、論述導線はIPA公式資料へ案内する。
 
 const SLUG = "koudo-goukaku-ten-ashikiri";
 const INBOUND_PARENTS = [
@@ -48,8 +39,8 @@ describe("高度試験の合格基準記事の事実性と funnel", () => {
   it("論述区分は旗艦 /essay へ funnel しつつ「参考評価」を明記し、記述区分は各ハブへ送客する（誇大回避）", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).toContain("](/essay");
-    expect(body).toContain("参考評価");
-    expect(body).toContain("採点基準は非公開");
+    expect(body).toContain("IPA 公式の午後II過去問・解答例・採点講評");
+    expect(body).not.toContain("[午後論述 AI 採点](/essay)");
     // 記述区分ハブ + 取得土台
     expect(body).toContain("](/nw");
     expect(body).toContain("](/sc");

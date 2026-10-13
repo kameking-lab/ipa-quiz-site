@@ -26,8 +26,9 @@ describe("/faq metadata — advertised FAQ count tracks the registry", () => {
     expect(ogBody).toContain(`${FAQS.length} 問`);
   });
 
-  it("describes the monthly essay beta allowance in search metadata", () => {
-    expect(desc).toContain("月3回");
-    expect(desc).not.toContain("全機能無料");
+  it("describes free public learning without advertising the retired essay quota", () => {
+    expect(desc).toContain("公開中の学習機能は無料で利用回数枠はありません");
+    expect(desc).not.toContain("月3回");
+    expect(desc).not.toContain("AI論述添削β版");
   });
 });

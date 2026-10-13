@@ -58,7 +58,7 @@ export function ExplanationCard({
           : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
       )}
     >
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           {isCorrect ? (
             <CheckCircle2
@@ -92,16 +92,17 @@ export function ExplanationCard({
             aria-pressed={starred}
             aria-keyshortcuts="r"
             className={cn(
-              "rounded-full p-2 transition-colors",
+              "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-2 text-xs font-semibold transition-colors",
               "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
               starred
                 ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
                 : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
             )}
-            aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
-            title="R キーでも切替"
+            aria-label={starred ? "苦手復習から外す（Rキー）" : "苦手復習に追加（Rキー）"}
+            title="復習モードで解き直す（Rキーでも切替）"
           >
             <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
+            苦手復習
           </button>
           <BookmarkButton question={question} />
         </div>
@@ -134,11 +135,7 @@ export function ExplanationCard({
         </button>
       )}
 
-      {isPlaceholderExplanation(question.explanation) ? (
-        <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
-          解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
-        </div>
-      ) : (
+      {!isPlaceholderExplanation(question.explanation) && (
         <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
           <p className={cn(
             "mb-2 font-semibold",
@@ -229,7 +226,7 @@ export function ExplanationCard({
 
       <div className="mt-3 space-y-2 rounded-lg border border-zinc-200/80 bg-zinc-50/60 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-900/30">
         <p className="text-sm text-zinc-500 dark:text-zinc-400">
-          ※ 解説は誤りを含む可能性があります。重要な判断は公式資料でご確認ください。
+          正答は公式資料、解説は学習用の説明です。
         </p>
         <div className="flex flex-wrap gap-1.5">
           <a

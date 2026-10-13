@@ -232,10 +232,10 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
           </Link>
           {story.relatedEssayExam ? (
             <Link
-              href={`/essays/${story.relatedEssayExam}`}
+              href="/essay"
               className="inline-block rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
             >
-              {examLabel(story.relatedEssayExam)} 論文・記述対策
+              {examLabel(story.relatedEssayExam)} の公式過去問
             </Link>
           ) : null}
           {story.relatedBlogSlug ? (

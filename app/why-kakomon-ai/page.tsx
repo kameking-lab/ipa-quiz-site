@@ -82,7 +82,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "料金",
-    kakomonAi: `無料で全機能。${AI_QUOTA_COPY}`,
+    kakomonAi: `公開中の学習機能は無料。${AI_QUOTA_COPY}`,
     doujou: "基本無料（広告表示あり）",
     yobikou: "月数千円〜数万円の有料モデルが中心",
   },
@@ -97,7 +97,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
 const STRENGTH_CARDS = [
   {
     title: "AI コパイロットが常駐",
-    body: "Google Gemini に IPA 公式問題・解答を入力し、引用元つきで回答。誤答理由の可視化・類題生成・用語解説をワンタップで呼び出せる。",
+    body: "Google Gemini が IPA 公式問題・解答を参照し、引用元つきで回答。誤答理由の確認や用語解説を過去問から進められる。",
     href: "/features/copilot",
     label: "コパイロットの仕組み",
   },
@@ -141,7 +141,7 @@ const RESPECT_POINTS = [
 
 const FAQS = [
   {
-    q: "本当に無料で全機能使えますか？",
+    q: "公開中の学習機能は無料で使えますか？",
     a: `はい。教育貢献プロジェクトとして無料で公開しています。${AI_QUOTA_COPY}`,
   },
   {
@@ -154,7 +154,7 @@ const FAQS = [
   },
   {
     q: "将来的に有料化されますか？",
-    a: "無料枠は維持する方針です。プレミアム（月 300 円相当）は AI コパイロットの無制限利用・広告非表示を予定していますが、本実装はフェーズ 4 以降の検討で、現時点では未着手です。",
+    a: "現在公開中の過去問演習とAI学習機能はすべて無料です。回数に応じた課金や月ごとの利用枠はありません。連続利用や大量送信には適正利用制限があります。",
   },
 ];
 

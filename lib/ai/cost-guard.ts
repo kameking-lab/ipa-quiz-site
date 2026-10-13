@@ -12,11 +12,9 @@
 // The monthly bucket key (ai_cost:YYYY-MM, JST) rotates at month start, which is
 // the reset mechanism; a 70-day TTL is set on first write for cleanup hygiene.
 //
-// Degradation: when KV is not configured (local dev / CI), there is no real spend
-// to track (no GEMINI_API_KEY → mock provider), so the cap allows requests and
-// recording is a no-op. When KV is configured but transiently unreachable, the
-// cap allows the request (matching the rate limiter's graceful degradation) — the
-// cap is a backstop, not a transactional gate. The Slack path never fails silently:
+// Real providers stop when KV is unconfigured or unreachable. Mock providers
+// skip this check at their routes, so local development remains usable. The
+// Slack path never fails silently:
 // if SLACK_WEBHOOK_URL is unset when a threshold is crossed, the breach is logged
 // via console.error (no fail-open swallow).
 
@@ -56,9 +54,11 @@ async function kvFetch<T>(path: string, method: "GET" | "POST" = "POST"): Promis
 
 async function kvGetNumber(key: string): Promise<number | null> {
   const data = await kvFetch<{ result: string | null }>(`/get/${encodeURIComponent(key)}`, "GET");
-  if (data?.result == null) return null;
+  if (typeof data !== "object" || data === null || Array.isArray(data) || !("result" in data)) return null;
+  if (data.result === null) return 0;
+  if (typeof data.result !== "string" || data.result.trim() === "") return null;
   const n = Number(data.result);
-  return Number.isFinite(n) ? n : null;
+  return Number.isFinite(n) && n >= 0 ? n : null;
 }
 
 async function kvIncrByFloat(key: string, amount: number): Promise<number | null> {
@@ -108,21 +108,26 @@ export interface CostCapStatus {
   allowed: boolean;
   totalJpy: number;
   capJpy: number;
+  reason?: "cap" | "unavailable";
 }
 
 /**
  * Read the running monthly total and decide whether a new AI request may proceed.
- * Allows when KV is absent/unreachable (see module header on degradation).
+ * A missing monthly bucket is zero; missing KV or a failed read blocks real AI.
  */
 export async function checkMonthlyCostCap(): Promise<CostCapStatus> {
   if (!kvConfig()) {
-    return { allowed: true, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY };
+    return { allowed: false, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY, reason: "unavailable" };
   }
-  const total = (await kvGetNumber(monthlyCostKey())) ?? 0;
+  const total = await kvGetNumber(monthlyCostKey());
+  if (total === null) {
+    return { allowed: false, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY, reason: "unavailable" };
+  }
   return {
     allowed: total < MONTHLY_COST_CAP_JPY,
     totalJpy: total,
     capJpy: MONTHLY_COST_CAP_JPY,
+    reason: total >= MONTHLY_COST_CAP_JPY ? "cap" : undefined,
   };
 }
 
@@ -136,7 +141,8 @@ export interface RecordCostInput {
 /**
  * Record the estimated cost of one completed AI call into the monthly bucket and
  * fire Slack notifications when the ¥40k / ¥50k thresholds are first crossed.
- * Safe to call fire-and-forget; never throws.
+ * Routes must await this write before returning; serverless instances may freeze
+ * after the response. Write failures are reported without throwing to callers.
  */
 export async function recordAiCost(input: RecordCostInput): Promise<void> {
   try {

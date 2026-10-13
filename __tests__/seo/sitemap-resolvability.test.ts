@@ -6,12 +6,7 @@ import { getAllBlogSummaries } from "@/data/blog";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { findQuestionByRoute } from "@/lib/seo/question-url";
 import { findTopicByAnySlug } from "@/lib/seo/topics";
-import {
-  ESSAY_EXAM_CODES,
-  findEssayQuestion,
-  getAllEssayQuestions,
-} from "@/lib/essay/load";
-import type { EssayExamCode } from "@/lib/essay/load";
+import { getAllEssayQuestions } from "@/lib/essay/load";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import {
   renderExamsSitemapXml,
@@ -91,14 +86,8 @@ function isResolvable(path: string): boolean {
   // /blog/{slug}
   const blog = /^\/blog\/(.+)$/.exec(path);
   if (blog) return blogSlugs.has(decodeURIComponent(blog[1]));
-  // /essay/{exam}/{id} — mirrors app/essay/[exam]/[questionId]/page.tsx notFound()
-  const essay = /^\/essay\/([a-z]{2})\/(.+)$/.exec(path);
-  if (essay) {
-    const [, exam, id] = essay;
-    if (!ESSAY_EXAM_CODES.includes(exam as EssayExamCode)) return false;
-    const q = findEssayQuestion(decodeURIComponent(id));
-    return Boolean(q && q.exam === exam);
-  }
+  // Original essay deep URLs now redirect to the official paper guide.
+  if (/^\/essay\/[a-z]{2}\//.test(path)) return false;
   // Anything else (static app routes, /recommended-books*) is out of scope.
   return true;
 }
@@ -139,14 +128,14 @@ describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
     expect(bad).toEqual([]);
   });
 
-  it("main sitemap lists every flagship essay deep page, all resolvable", () => {
+  it("retains raw essay manuscripts but lists only the official guide", () => {
     const essayPaths = locs(renderMainSitemapXml()).filter((p) =>
       /^\/essay\/[a-z]{2}\//.test(p),
     );
-    // non-vacuous: one entry per real essay question (currently 12 across 5 exams)
-    expect(essayPaths.length).toBe(getAllEssayQuestions().length);
-    expect(essayPaths.length).toBeGreaterThan(0);
-    expect(essayPaths.filter((p) => !isResolvable(p))).toEqual([]);
+    expect(getAllEssayQuestions()).toHaveLength(12);
+    expect(getAllEssayQuestions().every((question) => question.license === "original")).toBe(true);
+    expect(essayPaths).toEqual([]);
+    expect(locs(renderMainSitemapXml())).toContain("/essay");
   });
 });
 

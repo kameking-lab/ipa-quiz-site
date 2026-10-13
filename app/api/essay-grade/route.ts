@@ -226,6 +226,12 @@ export async function POST(req: Request) {
       { status: 404 },
     );
   }
+  if (question.license === "original") {
+    return NextResponse.json(
+      { error: "no_longer_available", message: "独自作成の論述問題は公開を終了しました。現在、この問題のAI採点は受け付けていません。" },
+      { status: 410 },
+    );
+  }
 
   const totalLen =
     payload.answers.ア.trim().length +
@@ -242,12 +248,9 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const rl = await checkRateLimit({ ip });
+  const rl = await checkRateLimit({ ip, skipDaily: true });
   if (!rl.ok) {
-    const message =
-      rl.reason === "daily"
-        ? "本日の採点上限に達しました。JST 0:00 にリセットされます。"
-        : "少し速いようです。1分ほど待ってから再度お試しください。";
+    const message = "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
       { status: 429, headers: { "X-Error-Type": "rate_limited" } },
@@ -283,10 +286,12 @@ export async function POST(req: Request) {
   if (!cap.allowed) {
     return NextResponse.json(
       {
-        error: "cost_capped",
-        message: "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+        error: cap.reason === "unavailable" ? "cost_unavailable" : "cost_capped",
+        message: cap.reason === "unavailable"
+          ? "AIサービスは一時的に利用できません。しばらく待ってから再試行してください。"
+          : "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
       },
-      { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+      { status: 503, headers: { "X-Error-Type": cap.reason === "unavailable" ? "cost_unavailable" : "cost_capped" } },
     );
   }
 

@@ -4,10 +4,10 @@ IPA 情報処理技術者試験（IP / SG / FE / AP / ST / SA / PM / NW / DB / E
 全区分の公開過去問を無料で学べる、教育貢献型 AI ネイティブ学習プラットフォームです。
 
 - ゼロ遷移の四択クイズ UI（タップ→即座に色変化＋解説スライドイン）
-- AI コパイロット常駐（用語解説・選択肢分析・類題・誤答分析）
+- AI コパイロット（公開過去問に沿う用語解説・選択肢分析・誤答分析）
 - 全試験区分を 1 アプリに統合
 
-フェーズ 1（MVP）の対象は「応用情報技術者(AP) 午前」。以降、順次拡張予定。
+オーナー決定方針（2026-10-13、未公開の作業ブランチ）では、Webの公開学習機能を全て無料・商業的なユーザー別回数枠なしとする。類題生成と独自作成の午後・論述問題は公開せず、論述AI採点の入口を設けない。短時間・IP・サイト全体の乱用防止、入力上限、認証の実権限、月間API費用の警告・停止は維持する。
 
 ## 技術スタック
 
@@ -48,11 +48,7 @@ pnpm dev
 | `ADMIN_BASIC_PASS` | 管理画面 Basic 認証パスワード | — |
 | `SLACK_WEBHOOK_URL` | cron ジョブ通知用 Webhook | — |
 | `LLM_PROVIDER` | プロバイダ選択 | `gemini` |
-| `GEMINI_MODEL_FREE` | 無料ユーザー向けモデル | `gemini-2.5-flash-lite` |
-| `GEMINI_MODEL_PREMIUM` | プレミアム向けモデル | `gemini-2.5-flash` |
-| `GEMINI_MODEL_GRADING` | 午後記述・論述 AI 採点のモデル | `gemini-2.5-flash` |
-| `FREE_DAILY_LIMIT` | 無料枠の 1 日回数 | `30` |
-| `PREMIUM_MINUTE_LIMIT` | プレミアムの 1 分ソフトリミット | `10` |
+| `GEMINI_MODEL_GRADING` | 公開停止中の午後記述・論述AI採点コードに残るモデル設定 | `gemini-2.5-flash` |
 
 価格・回数・モデル変更は `CLAUDE.md` の「承認必須事項」扱いです。
 
@@ -105,7 +101,7 @@ components/
 lib/
   ai/                 provider.ts + providers/{gemini,claude,openai,mock}.ts
   questions/          types / load / filter
-  storage/            localStorage 履歴・プレミアム・レート制限
+  storage/            localStorage 履歴・設定
   rate-limit/         IP ベースのサーバー側レート制限
 data/
   questions/ap/       AP 問題データ

@@ -10,7 +10,7 @@ import { SITE_BASE_URL, SITE_NAME, SITE_TAGLINE } from "./config";
 export const FEED_PATH = "/feed.xml";
 
 const FEED_TITLE = `${SITE_NAME} ブログ`;
-const FEED_DESCRIPTION = `${SITE_TAGLINE}。IPA 情報処理技術者試験の午後AI採点・基本情報 科目B 対策・勉強法の学習記事。`;
+const FEED_DESCRIPTION = `${SITE_TAGLINE}。IPA 情報処理技術者試験の公式過去問・基本情報 科目B 対策・勉強法の学習記事。`;
 
 function xmlEscape(s: string): string {
   return s

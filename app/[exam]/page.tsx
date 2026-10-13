@@ -622,10 +622,10 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        {/* High-level exam: AI essay / description grading CTA */}
+        {/* IPA が公開する午後問題の原本へ案内する。 */}
         {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
           <section
-            aria-label="AI 午後問題対策"
+            aria-label="午後の公式過去問"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
           >
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
@@ -635,56 +635,17 @@ export default async function ExamTopPage({
                 : "午後 記述対策"}
             </div>
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              AI 論述添削で午後問題対策
+              IPA 公式の午後過去問を確認
             </h2>
-            {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
-                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild variant="primary" size="sm">
-                    {/* 旗艦＝実際の IPA 午後II 過去問を AI 採点する indexable ハブ /essay
-                        (LearningResource/OG/sitemap 済・session34-36)。高オーソリティな
-                        試験ハブ(sitemap priority 0.9)から旗艦へ内部リンク equity を流す。
-                        /[exam]/afternoon は練習用モック(AI採点ベータ・HD-4)のため primary は旗艦に寄せる。 */}
-                    <Link href="/essay">
-                      実際の午後II過去問で AI 添削
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    {/* 練習用オリジナル問題（AI採点ベータ・モック=HD-4）。誇大回避のため
-                        旗艦の実過去問採点とは別物として「練習・ベータ」を明示する。 */}
-                    <Link href={`/${code}/afternoon`}>練習問題で腕試し（ベータ）</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
-                  </Button>
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
-                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Coming Soon
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    順次対応予定 — 通知を受け取るには
-                  </span>
-                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/settings#notifications">通知設定</Link>
-                  </Button>
-                </div>
-              </>
-            )}
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              IPA が公表した問題冊子・解答例・採点講評で、{examLabel(code)} の午後問題を確認できます。
+            </p>
+            <Button asChild variant="primary" size="sm">
+              <Link href={`/${code}/afternoon`}>
+                公式過去問の案内を見る
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
           </section>
         )}
 
