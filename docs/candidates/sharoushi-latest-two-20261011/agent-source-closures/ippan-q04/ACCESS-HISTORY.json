@@ -1,0 +1,39 @@
+{
+  "oldRecordPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-ippan20-public\\Q04-JUDGMENT-SOURCE-READ-20261010.json",
+  "oldRecordSha256": "fca0f23600c516a724674c65825cc987a81f6d2fd4e202b4b06facfeebd66e65",
+  "legacyEntryPreserved": {
+    "question": "sharoushi-2026-ippan-q04",
+    "choice": "E",
+    "publisher": "Supreme Court of Japan",
+    "url": "https://www.courts.go.jp/hanrei/pdf/20061006163257.pdf",
+    "finding": "Legacy court PDF URL mentioned by a secondary page could not be opened; no direct judgment text was fixed.",
+    "sourceType": "court judgment original candidate",
+    "readStatus": "INACCESSIBLE_NO_RETRY"
+  },
+  "legacyHttpReason": "UNKNOWN_UNRECORDED; not represented as 404 or denial",
+  "legacyUrlRetried": false,
+  "oldLimit": "no repeat search of the inaccessible legacy court URL",
+  "newRoute": "current public court GET search -> returned case detail -> its public PDF link",
+  "newPublicOriginalStatus": 200,
+  "authorizationContext": "Parent explicitly allowed ordinary public-original acquisition when old record contains only could not be opened, with no recorded authentication/permission denial or same-original STOP. The old reason stays unknown.",
+  "boundedOldRecordScan": {
+    "root": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-ippan20-public",
+    "terms": [
+      "HTTP 403",
+      "status_code=403",
+      "Forbidden",
+      "権限拒否",
+      "ACCESS_DENIED",
+      "q04 STOP"
+    ],
+    "results": [],
+    "limitation": "No broader conclusion about every external historical tool transcript is claimed."
+  },
+  "stopsPreserved": [
+    "2025 ippan q5:B",
+    "2026 ippan q5:B,C",
+    "2025 koyou q2:dated-manual",
+    "2026 kounen q4:E-period"
+  ],
+  "stopTargetsTouched": []
+}

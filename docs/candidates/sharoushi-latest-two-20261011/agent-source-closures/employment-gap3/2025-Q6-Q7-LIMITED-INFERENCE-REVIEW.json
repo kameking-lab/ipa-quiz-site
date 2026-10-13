@@ -1,0 +1,48 @@
+{
+  "purpose": "Reviewer-facing proposition-level reassessment; no full article regeneration or payload edit",
+  "lawAsOf": "2025-04-11",
+  "datedLaw": {
+    "file": "reports/claude-capacity-20261010/sharoushi-koyou20-public/primary/employment-act-asof20250411.json",
+    "sha256": "57f63a569608600643a907bbe2ad1ab4765dceb9abb66ab68287bf92dc9ec15c",
+    "url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2025-04-11",
+    "revisionId": "349AC0000000116_20250401_506AC0000000047",
+    "relevantArticles": ["4(2)-(3)", "15(1)", "32(1)(1),(3),(5),32(3)"]
+  },
+  "historicalOfficialGuidance": [
+    {"file": "../employment-gap2/mhlw-2013-general-i.pdf", "sha256": "6a5189d0e5bc3ea9ca4b1a1a2d51e57fd7cd39feafe3da776b76b0cb6bac992d", "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/dl/toriatsukai_youryou_i.pdf", "editionMarks": "24.4 on relevant pages; historical, not 2025"},
+    {"file": "../employment-gap2/mhlw-2013-general-k.pdf", "sha256": "82aa27001a0f87aeca11b72c7f91f39eb4e439d4caa2de0d709dc536b083b8c1", "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/dl/toriatsukai_youryou_k.pdf", "editionMarks": "25.4 on relevant pages; historical, not 2025"}
+  ],
+  "questions": [
+    {
+      "canonicalId": "sharoushi-2025-annual-koyou-q6",
+      "officialAnswer": "A (one false statement)",
+      "propositionEvidence": {
+        "ア": {"judgment": "true", "basis": "2025 act 32(1) directly covers unjustified refusal of an employment-office-introduced job; acceptance after hiring notice still falls under refusal in the stated fact pattern.", "level": "DATED_STATUTORY_DIRECT_WITH_APPLICATION"},
+        "イ": {"judgment": "true", "basis": "2025 act 32(1)(1) expressly exempts a job unsuitable in light of claimant capability; no professional skill for the named specialist work fits.", "level": "DATED_STATUTORY_DIRECT_WITH_APPLICATION"},
+        "ウ": {"judgment": "true", "basis": "Historical MHLW 52152(2)ハ(ロ), physical 74–75 / printed 244–245, sets net pay below about 100% of basic benefit as a legitimate refusal, except voluntary move to lower-pay labor market. The question expressly negates moving. 2025 act 32(1)(3),(3) provides the open unfair-low-wage criterion and delegated standard but not the numerical 100% rule.", "level": "HISTORICAL_ADMIN_PLUS_DATED_OPEN_STATUTE_INFERENCE", "reviewPending": true},
+        "エ": {"judgment": "true", "basis": "Historical MHLW 52152(2)ホ(ロ), physical 76 / printed 246, treats non-wage working conditions unreasonably inferior to same work locally as a legitimate refusal even if legal; 2025 act 32(1)(5),(3) supplies the open just-reason/office determination basis. The question says the employment office made that determination.", "level": "HISTORICAL_ADMIN_PLUS_DATED_OPEN_STATUTE_INFERENCE", "reviewPending": true},
+        "オ": {"judgment": "false", "basis": "Historical MHLW 52152(2)ホ(ハ), physical 76 / printed 246, expressly excludes from just reason a temporary wage nonpayment that is cured by referral and reliably paid on time in future; 2025 act 32(1)(5),(3) supplies the open criterion. Two months at half wage satisfies both the observed 2013 threshold (2 months and >1/3 unpaid) and later R8.4 threshold (1 month); the only operative disputed condition in this stem is the expressly stated cured/future-payment exception.", "level": "HISTORICAL_ADMIN_PLUS_DATED_OPEN_STATUTE_INFERENCE", "reviewPending": true, "thresholdCaveat": "Observed edition threshold changed from 2 months to 1 month; do not claim either threshold is proven as of 2025."}
+      },
+      "completionProposal": "All five proposition judgments are supported by 2025 statute plus historical official elaboration, with the decisive オ exception matching the material later wording. This is a limited, reviewable legal-application completion candidate, not a verified 2025 administrative edition.",
+      "readyForDraftPrIfReviewerAcceptsInference": true,
+      "sourceVerifiedAtCutoffForEveryNumericalAdministrativeDetail": false,
+      "reviewPending": true
+    },
+    {
+      "canonicalId": "sharoushi-2025-annual-koyou-q7",
+      "officialAnswer": "A (choice A is false)",
+      "propositionEvidence": {
+        "ア": {"judgment": "false", "basis": "2025 act 4(2)-(3),15(1): a settlement expressly continuing employment for the period leaves no separation, and basic benefit is paid only for certified unemployment days. No wages does not itself create separation. Historical MHLW 53302(2)ル, physical 14–15 / printed 333–334, explicitly refuses relaxation through a wage-free continuation settlement.", "level": "DATED_STATUTORY_APPLICATION_PLUS_HISTORICAL_ADMIN", "reviewPending": true},
+        "イ": {"judgment": "true", "basis": "Historical MHLW 53254(4)イ physical 10 / printed 329 and 53302(2)ホ physical 13 / printed 332 expressly cancel status/benefit and return benefit when provisional-order wages are retroactively paid. 2025 act 4(2)-(3),15(1) is consistent, but does not alone settle all provisional-order administration.", "level": "HISTORICAL_SPECIFIC_ADMIN", "reviewPending": true},
+        "ウ": {"judgment": "true", "basis": "Historical MHLW 53253(3), physical 9 / printed 328, expressly says qualification-loss confirmation need not be cancelled where closure makes reinstatement impossible. 2025 act 4 and 9 alone do not establish this administrative exception.", "level": "HISTORICAL_SPECIFIC_ADMIN_ONLY", "reviewPending": true},
+        "エ": {"judgment": "true", "basis": "Historical MHLW 53255(5), physical 10 / printed 329, expressly allows the worker to choose one insured relationship when earnings at new employer equal or exceed offset original wages. This choice rule cannot be derived from 2025 act 4 alone.", "level": "HISTORICAL_SPECIFIC_ADMIN_ONLY", "reviewPending": true},
+        "オ": {"judgment": "true subject to other requirements", "basis": "Historical MHLW 53201 and 53251(1)イ/ロ, physical 8 / printed 327, and 53301(1)ロ, physical 11 / printed 330, permit conditional benefit while a qualifying unfair-labor-practice dismissal is contested. The question's 'other requirements met' must encompass the worker's qualification confirmation request, required filing/signature, unemployment certification and job search; union petition alone does not replace them. Labor Union Act 7(1),27(1) as of 2025 establishes the unfair-practice/remedy route but not benefit eligibility.", "level": "HISTORICAL_SPECIFIC_ADMIN_WITH_DATED_LABOR_STATUTE", "reviewPending": true}
+      },
+      "completionProposal": "Choice A can be strongly justified by dated employment-act definitions and the historical no-relaxation rule. B–E require case-specific administrative machinery, especially C/D/E. Mark the whole question review pending until an editor accepts historical official treatment with explicitly limited inference or obtains a contemporaneous official source; do not present it as 2025-edition-verified.",
+      "readyForDraftPrIfReviewerAcceptsInference": false,
+      "sourceVerifiedAtCutoffForEveryAdministrativeRule": false,
+      "reviewPending": true
+    }
+  ],
+  "constraints": ["No 2013-to-2025 uninterrupted-version claim", "No later R8.4 retrospective claim", "No assumption union petition alone satisfies worker's benefit-claim steps", "No 2025 q2 investigation", "Shared payload/runtime untouched"]
+}

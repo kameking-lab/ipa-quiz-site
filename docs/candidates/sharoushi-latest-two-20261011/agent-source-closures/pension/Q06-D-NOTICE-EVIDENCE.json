@@ -1,0 +1,52 @@
+{
+  "kind": "dated-mhlw-notice",
+  "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1413&dataType=1&pageNo=1",
+  "title": "障害年金の初診日を明らかにすることができる書類を添えることができない場合の取扱いについて",
+  "sourceDate": "2015-09-28",
+  "noticeNumber": "年管管発0928第6号",
+  "section": "第3 その他の初診日の取扱いについて / 3 健診日の取扱いについて",
+  "savedSource": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\pension-primary\\q06-20150928-mhlw-notice.html",
+  "sha256": "e4c8a8cd18b77991a5d0b2b2aede3506f7474dfdcfc5f6edc0fcb13bb5336207",
+  "excerpt": "3．健診日の取扱いについて\n\n\n\n\n初診日は、原則として初めて治療目的で医療機関を受診した日とし、健康診断を受けた日(健診日)は初診日として取り扱わないこととする。\n\n\n\n\nただし、初めて治療目的で医療機関を受診した日の医証が得られない場合であって、医学的見地からただちに治療が必要と認められる健診結果である場合については、請求者から健診日を初診日とするよう申立てがあれば、健診日を初診日とし、健診日を証明する資料(人間ドックの結果など)を求めた上で、初診日を認めることができることとする。",
+  "comparisonChanges": [
+    {
+      "side": "question",
+      "from": "(以下本肢において「健診日」という。)",
+      "to": "(健診日)",
+      "reason": "原問内の定義表現"
+    },
+    {
+      "side": "question",
+      "from": "(医療機関による初診日の証明)",
+      "to": "",
+      "reason": "通知第1の1で医証を定義している箇所の説明を原問が補足"
+    },
+    {
+      "side": "question",
+      "from": "取り扱わないこととされている。",
+      "to": "取り扱わないこととする。",
+      "reason": "通知の命令形を原問の説明形に変更"
+    },
+    {
+      "side": "question",
+      "from": "医証を得られない",
+      "to": "医証が得られない",
+      "reason": "原問の助詞変更"
+    },
+    {
+      "side": "question",
+      "from": "認めることができるとされている。",
+      "to": "認めることができることとする。",
+      "reason": "通知の命令形を原問の説明形に変更"
+    },
+    {
+      "side": "notice",
+      "from": "(人間ドックの結果など)",
+      "to": "",
+      "reason": "証明資料の例示を原問が省略"
+    }
+  ],
+  "comparisonResult": "EXACT_AFTER_DOCUMENTED_NARRATION_AND_DEFINITION_CHANGES",
+  "asOfFit": "通知日が2025-04-11より前。第3の3と原問Dの差は定義・助詞・説明形・資料例示。原則、例外の全条件、申立て、証明資料、認定可否は一致。原問を書き換えていない。現行の2026年額・制度を遡及適用していない。",
+  "amendmentHistoryCaveat": "法令DBに掲載する当該通知本文を確認。ページに後年改正注記は見当たらないが、別通知全件の履歴調査を行ったという意味ではない。"
+}

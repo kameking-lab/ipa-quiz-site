@@ -1,0 +1,162 @@
+[
+  {
+    "canonicalId": "sharoushi-2026-annual-koyou-q3",
+    "id": "sharoushi-2026-annual-koyou-q3",
+    "savedId": "sharoushi-2026-koyou-q03",
+    "lawAsOf": "2026-04-10",
+    "officialAnswer": "B",
+    "status": "SOURCE_COMPLETE_LOCAL_REVIEW",
+    "correctedSavedDraft": {
+      "id": "sharoushi-2026-koyou-q03",
+      "answer": "B",
+      "explanation": "正答はB。学校入学のための退職は特定理由離職者に該当しない。家庭の事情の急変による退職と新技術への適応困難による退職は、業務取扱要領50305-2ロによる特定理由離職者に当たる。更新が確約された契約の雇止めは、3年以上の雇用を要しない特定受給資格者の類型である。また、事業活動の停止と再開の見込みがない状態は、形式上の廃止や裁判上の倒産手続がなくても特定受給資格者の対象となる。",
+      "choiceExplanations": {
+        "A": "誤り。父母の死亡・疾病・負傷などによる扶養の必要など、家庭の事情の急変で退職を余儀なくされた者は、正当な理由のある自己都合退職として特定理由離職者に該当する。業務取扱要領50305-2ロ(ハ)にこの類型が明記されている。",
+        "B": "正しい。学校入学のための退職は特定理由離職者に該当しない。業務取扱要領50305-2ロ(ハ)の末尾は、学校入学・訓練施設入校・子弟教育等のための退職を当該基準から除いている。",
+        "C": "誤り。新技術の導入により、専門の知識・技能を発揮する機会が失われ、導入機器を取り扱うこととされたもののプログラム作成等への適応が困難で退職した者は、特定理由離職者に該当する。業務取扱要領50305-2ロ(ト)はオフィスコンピュータ等の導入を例示し、設問の各条件を具体的に挙げている。",
+        "D": "誤り。契約締結時に更新することが明示され、労働者が更新を希望したにもかかわらず更新されなかった場合は、施行規則36条7号の2及び業務取扱要領50305ロ(チ)による特定受給資格者の類型であり、3年以上の雇用は要件ではない。更新により3年以上引き続き雇用された者の雇止めは、同条7号及び同要領ロ(ト)の別類型である。",
+        "E": "誤り。事業活動が停止し再開の見込みがない場合は、裁判上の倒産手続や形式上の事業所廃止がなくても特定受給資格者に該当する。施行規則35条3号はこの事業停止を「事業所の廃止」に含め、業務取扱要領50305イ(ハ)bも具体的に定めている。期間の終了が予定された事業の終了による離職は除かれるが、設問の事業には当たらない。"
+      },
+      "reviewFlags": [],
+      "limitedReviewNeeded": []
+    },
+    "evidenceByChoice": {
+      "A": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-act-asof20260410.json:13(3),33(1)",
+          "employment-rule-asof20260410.json:19_2(2)",
+          "manual-claim-chapter4-R8.4:p31/printed98/50305-2ロ(ハ)"
+        ],
+        "reason": "家庭の事情の急変の正当理由自己都合退職に直接該当。"
+      },
+      "B": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "manual-claim-chapter4-R8.4:p31-32/printed98-99/50305-2ロ(ハ)末尾"
+        ],
+        "reason": "学校入学の除外が直接明記される。"
+      },
+      "C": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-rule-asof20260410.json:19_2(2)",
+          "manual-claim-chapter4-R8.4:p36/printed103/50305-2ロ(ト)"
+        ],
+        "reason": "機器導入、専門能力を発揮する機会の喪失、機器の取扱い、プログラム等への適応困難の全条件が原問に揃う。特定理由の区分を明示。"
+      },
+      "D": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-act-asof20260410.json:23(2)(2)",
+          "employment-rule-asof20260410.json:36(7),36(7_2)",
+          "manual-claim-chapter4-R8.4:p26-27/printed93-94/50305ロ(ト)(チ)"
+        ],
+        "reason": "更新明示・希望・雇止めは7号の2。3年以上の継続雇用の別類型7号と混同しない。"
+      },
+      "E": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-rule-asof20260410.json:35(3)",
+          "manual-claim-chapter4-R8.4:p18/printed85/50305イ(ハ)b"
+        ],
+        "reason": "法令上の事業所廃止類型に活動停止・再開見込みなしが含まれる。倒産申立て類型に誤分類しない。"
+      }
+    },
+    "remainingPrimaryGaps": [],
+    "independentFinalReviewRequired": true,
+    "runtimeChanged": false,
+    "publicationGo": false,
+    "originalQuestionSha256": "80ae9d49f8b8d9b301bde252b9931aee860e86d12626d4cc38ec7a3e168353bb",
+    "sourcePacketSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
+    "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
+    "sourceEvidenceFile": "source-evidence-additional.json",
+    "primarySourceReferences": [
+      {
+        "key": "employment-act-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\employment-act-asof20260410.json",
+        "sha256": "a11df64bcbe27e4c871f7b38c57b05ccc2117cb6457be783205c4271e6091703",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2026-04-10",
+        "lawAsOf": "2026-04-10",
+        "revisionId": "349AC0000000116_20251001_506AC0000000026",
+        "enforcementDate": "2025-10-01"
+      },
+      {
+        "key": "employment-rule-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\employment-rule-asof20260410.json",
+        "sha256": "09eb8c67fe866991efa450d8f9b6ff9a8616cf2047c47ca50aaf15fc5e718721",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+        "lawAsOf": "2026-04-10",
+        "revisionId": "350M50002000003_20260408_508M60000100077",
+        "enforcementDate": "2026-04-08"
+      },
+      {
+        "key": "manual-claim-chapter4-R8.4",
+        "kind": "official-manual-page-version",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\mhlw-R8.4-claim-chapter4.pdf",
+        "sha256": "12d2badb1175a54799b05a2f5e1ab3ce4b471ad86d8b9bdf90cdb06083e63cab",
+        "url": "https://www.mhlw.go.jp/content/001689748.pdf",
+        "version": "採用ページの各頁表示はR8.4（2026年4月）",
+        "physicalPages": [
+          18,
+          26,
+          27,
+          30,
+          31,
+          32,
+          36
+        ],
+        "printedPages": [
+          85,
+          93,
+          94,
+          97,
+          98,
+          99,
+          103
+        ],
+        "sections": [
+          "50305イ(ハ)",
+          "50305ロ(ト)",
+          "50305ロ(チ)",
+          "50305-2ロ(ハ)",
+          "50305-2ロ(ト)"
+        ],
+        "downloadReceipt": {
+          "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\mhlw-R8.4-claim-chapter4.pdf",
+          "url": "https://www.mhlw.go.jp/content/001689748.pdf",
+          "status": 200,
+          "sha256": "12d2badb1175a54799b05a2f5e1ab3ce4b471ad86d8b9bdf90cdb06083e63cab",
+          "bytes": 689223,
+          "headers": {
+            "Last-Modified": "Fri, 29 May 2026 02:10:40 GMT",
+            "Content-Type": "application/pdf",
+            "Date": "Sun, 11 Oct 2026 01:35:33 GMT"
+          }
+        },
+        "versionLimitation": "現行一覧全体の掲載版はR8.8以降。採用PDF該当頁自体は全てR8.4。HTTP Last-Modifiedは2026-05-29で、公開日が基準日以前だったと主張しない。基準日法律・施行規則の各分類と併せて内容を照合した。",
+        "visualChecks": [
+          "q3-family-school-31.png",
+          "q3-family-school-32.png",
+          "q3-technology-36.png",
+          "q3-business-stop-18.png",
+          "q3-renewal-27.png"
+        ]
+      }
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+      "https://www.mhlw.go.jp/content/001689748.pdf"
+    ],
+    "localChangedChoices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ]
+  }
+]
