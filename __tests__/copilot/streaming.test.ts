@@ -235,3 +235,19 @@ it("does not mark a provider safety stop as cacheable", async () => {
   expect(onComplete).toHaveBeenCalledExactlyOnceWith(7,
     { finishReason: "SAFETY", truncated: false }, { text: out, complete: false });
 });
+
+
+it.each(["", "   \n "])
+  ("does not cache a STOP response with no substantive model text (%j)", async (body) => {
+    const provider: LLMProvider = {
+      name: "gemini",
+      async *streamChat(params) {
+        if (body) yield body;
+        params.onComplete?.({ finishReason: "STOP", truncated: false });
+      },
+    };
+    const onComplete = vi.fn();
+    const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
+    expect(onComplete).toHaveBeenCalledExactlyOnceWith(body.length,
+      { finishReason: "STOP", truncated: false }, { text: out, complete: false });
+  });

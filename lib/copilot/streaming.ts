@@ -105,7 +105,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         }
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
         emit(usedFooter || CITATION_UNVERIFIED_NOTICE);
-        completed = !usage?.truncated && !upstreamAbort.signal.aborted
+        completed = responseText.trim().length > 0 && !usage?.truncated && !upstreamAbort.signal.aborted
           && (provider.name === "mock" || usage?.finishReason === "STOP");
       } catch (err) {
         const aborted =
