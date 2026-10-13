@@ -98,20 +98,28 @@ describe("単価表 — pro 行の存在", () => {
 });
 
 describe("全 AI ルートが課金層を手書きしていない", () => {
-  const ROUTES = [
-    "app/api/copilot/route.ts",
+  const ACCOUNTING_PATHS = [
+    "lib/copilot/budgeted-response.ts",
     "app/api/essay-grade/route.ts",
     "app/api/scoring/route.ts",
   ];
 
-  it.each(ROUTES)("%s は tier をリテラルで書かず tierForModel(model) を使う", (rel) => {
+  it.each(ACCOUNTING_PATHS)("%s は tier をリテラルで書かず tierForModel(model) を使う", (rel) => {
     const src = readFileSync(join(process.cwd(), rel), "utf-8");
     // recordAiCost を呼ぶ以上、層はモデルから導出されていなければならない。
     expect(src).toContain("recordAiCost");
     expect(src).toContain("tierForModel(model)");
     // tier: "flash-lite" 等のリテラル手書きが復活したら落ちる。
-    expect(src).not.toMatch(/tier:\s*"(pro|flash|flash-lite)"/);
+    expect(src).not.toMatch(/tier:\s*"(pro|flash|flash-lite|flash-3\.8)"/);
   });
+
+  it.each(["app/api/copilot/route.ts", "app/api/copilot/exam-library/route.ts"])(
+    "%s は実行モデルを共通の予約・精算経路へ渡す", (rel) => {
+      const src = readFileSync(join(process.cwd(), rel), "utf-8");
+      expect(src).toMatch(/return createBudgetedCopilotResponse\(\{[\s\S]*?\bmodel(?:,|:\s*COPILOT_MODEL\s*,)/);
+      expect(src).not.toMatch(/tier:\s*"(pro|flash|flash-lite|flash-3\.8)"/);
+    },
+  );
 });
 
 describe("retired original-question generation", () => {

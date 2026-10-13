@@ -116,7 +116,7 @@ describe("createCopilotResponseStream — 正常系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(3, undefined); // "ABC" のみ（フッター除外）
+    expect(onComplete).toHaveBeenCalledWith(3, undefined, { text: "ABC" + CITATION_UNVERIFIED_NOTICE, complete: true }); // "ABC" のみ（フッター除外）
   });
 });
 
@@ -142,7 +142,7 @@ describe("createCopilotResponseStream — エラー系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(0, undefined); // throw 前に何も出ていない
+    expect(onComplete).toHaveBeenCalledWith(0, undefined, { text: expect.any(String), complete: false }); // throw 前に何も出ていない
   });
 });
 
@@ -158,5 +158,80 @@ it("出力上限による切断を表示し、実測使用量を計上側に引�
   const onComplete = vi.fn();
   const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
   expect(out).toContain("[応答の途中終了]");
-  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage);
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage, { text: out, complete: false });
+});
+
+
+describe("createCopilotResponseStream cancellation accounting", () => {
+  function abortableProvider(streamChat: ReturnType<typeof vi.fn>): LLMProvider {
+    return { name: "mock", streamChat };
+  }
+
+  it("calls the provider and completion once when the client aborts before any chunk", async () => {
+    const clientAbort = new AbortController();
+    const streamChat = vi.fn(async function* (params: { signal?: AbortSignal }): AsyncIterable<string> {
+      if (!params.signal?.aborted) {
+        await new Promise<void>((resolve) => params.signal?.addEventListener("abort", () => resolve(), { once: true }));
+      }
+      throw new DOMException("Aborted", "AbortError");
+    });
+    const onComplete = vi.fn();
+    const stream = createCopilotResponseStream(baseInput({
+      provider: abortableProvider(streamChat), clientSignal: clientAbort.signal, onComplete,
+    }));
+    clientAbort.abort();
+    await readAll(stream);
+    expect(streamChat).toHaveBeenCalledTimes(1);
+    expect(onComplete).toHaveBeenCalledExactlyOnceWith(0, undefined, { text: "", complete: false });
+    expect(captureException).not.toHaveBeenCalled();
+  });
+
+  it("calls completion once after timeout with partial output", async () => {
+    const streamChat = vi.fn(async function* (params: { signal?: AbortSignal }): AsyncIterable<string> {
+      yield "A";
+      await new Promise<void>((resolve) => params.signal?.addEventListener("abort", () => resolve(), { once: true }));
+      throw new DOMException("Aborted", "AbortError");
+    });
+    const onComplete = vi.fn();
+    const out = await readAll(createCopilotResponseStream(baseInput({
+      provider: abortableProvider(streamChat), timeoutMs: 20, onComplete,
+    })));
+    expect(out).toContain("[タイムアウト]");
+    expect(streamChat).toHaveBeenCalledTimes(1);
+    expect(onComplete).toHaveBeenCalledExactlyOnceWith(1, undefined, { text: out, complete: false });
+    expect(captureException).not.toHaveBeenCalled();
+  });
+
+  it("calls completion once when the reader cancels after the first chunk", async () => {
+    const streamChat = vi.fn(async function* (params: { signal?: AbortSignal }): AsyncIterable<string> {
+      yield "A";
+      await new Promise<void>((resolve) => params.signal?.addEventListener("abort", () => resolve(), { once: true }));
+      throw new DOMException("Aborted", "AbortError");
+    });
+    const onComplete = vi.fn();
+    const stream = createCopilotResponseStream(baseInput({
+      provider: abortableProvider(streamChat), onComplete,
+    }));
+    const reader = stream.getReader();
+    expect(new TextDecoder().decode((await reader.read()).value)).toBe("A");
+    await reader.cancel();
+    await vi.waitFor(() => expect(onComplete).toHaveBeenCalledTimes(1));
+    expect(streamChat).toHaveBeenCalledTimes(1);
+    expect(onComplete).toHaveBeenCalledWith(1, undefined, { text: "A", complete: false });
+  });
+});
+
+
+it("does not mark a provider safety stop as cacheable", async () => {
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "partial";
+      params.onComplete?.({ finishReason: "SAFETY", truncated: false });
+    },
+  };
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(7,
+    { finishReason: "SAFETY", truncated: false }, { text: out, complete: false });
 });

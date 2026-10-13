@@ -21,6 +21,14 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 const recordAiCost = vi.fn();
 const checkMonthlyCostCap = vi.fn();
+const reserveAiCost = vi.fn();
+const beginCopilotRequest = vi.fn();
+
+vi.mock("@/lib/copilot/request-cache", () => ({
+  beginCopilotRequest: (...args: unknown[]) => beginCopilotRequest(...args),
+  completeCopilotRequest: vi.fn().mockResolvedValue(true),
+  releaseCopilotRequest: vi.fn().mockResolvedValue(true),
+}));
 
 vi.mock("@/lib/ai/cost-guard", async () => {
   const actual = await vi.importActual<typeof import("@/lib/ai/cost-guard")>(
@@ -29,6 +37,7 @@ vi.mock("@/lib/ai/cost-guard", async () => {
   return {
     ...actual,
     checkMonthlyCostCap: (...args: unknown[]) => checkMonthlyCostCap(...args),
+    reserveAiCost: (...args: unknown[]) => reserveAiCost(...args),
     recordAiCost: (...args: unknown[]) => recordAiCost(...args),
   };
 });
@@ -84,6 +93,8 @@ beforeEach(() => {
   // 並列実行時にテストタイムアウトを踏むだけなので切っておく。
   process.env.COPILOT_RAG_ENABLED = "false";
   checkMonthlyCostCap.mockResolvedValue({ allowed: true, totalJpy: 0, capJpy: 50_000 });
+  reserveAiCost.mockResolvedValue({ allowed: true, totalJpy: 0, capJpy: 50_000, reservation: {} });
+  beginCopilotRequest.mockResolvedValue({ kind: "claimed", ticket: {} });
 });
 
 afterEach(() => {
@@ -189,7 +200,10 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
 
   it("/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
-    stubStream("解説テキストです。");
+    streamChat.mockImplementation(async function* (params: { onComplete?: (usage: { promptTokens: number; totalTokens: number; finishReason: string; truncated: boolean }) => void }) {
+      yield "解説テキストです。";
+      params.onComplete?.({ promptTokens: 100, totalTokens: 110, finishReason: "STOP", truncated: false });
+    });
     const { POST } = await import("@/app/api/copilot/route");
 
     const res = await POST(
@@ -224,8 +238,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     await drain(res);
 
     expect(recordAiCost).toHaveBeenCalledTimes(1);
-    // copilot は逐次ストリームの遅延に救われて本番では偶然載っていたが、
-    // 保証はどこにも無い。短い応答ほど失われやすい。
+    // 確定使用量で予約を精算してから close する。
     expect(pending.settled()).toBe(true);
   });
 });
@@ -237,7 +250,7 @@ describe("ソースレベルの再発防止", () => {
     const ROUTES = [
       "app/api/scoring/route.ts",
       "app/api/essay-grade/route.ts",
-      "app/api/copilot/route.ts",
+      "lib/copilot/budgeted-response.ts",
     ];
     for (const rel of ROUTES) {
       const src = readFileSync(join(process.cwd(), rel), "utf-8");

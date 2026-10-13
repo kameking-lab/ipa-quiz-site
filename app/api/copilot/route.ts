@@ -10,10 +10,8 @@ import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questi
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
-import { createCopilotResponseStream } from "@/lib/copilot/streaming";
+import { createBudgetedCopilotResponse } from "@/lib/copilot/budgeted-response";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
-import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
-import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
 
 export const runtime = "nodejs";
@@ -130,28 +128,6 @@ export async function POST(req: Request) {
     );
   }
 
-  // CLAUDE.md §0 hard cap: stop new real AI requests once the monthly spend
-  // reaches ¥50,000 (mock/dev path is free and never blocked).
-  if (provider.name !== "mock") {
-    const cap = await checkMonthlyCostCap();
-    if (!cap.allowed) {
-      if (cap.reason === "unavailable") {
-        return NextResponse.json(
-          { error: "cost_guard_unavailable", message: "AI応答を一時停止しています。しばらくしてからお試しください。" },
-          { status: 503, headers: { "X-Error-Type": "cost_guard_unavailable" } },
-        );
-      }
-      return NextResponse.json(
-        {
-          error: "cost_capped",
-          message:
-            "AI 機能は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
-        },
-        { status: 503, headers: { "X-Error-Type": "cost_capped" } },
-      );
-    }
-  }
-
   const model = COPILOT_MODEL;
 
   // Gemini 3.8 Flash counts hidden thinking tokens within maxOutputTokens.
@@ -164,48 +140,16 @@ export async function POST(req: Request) {
         ? 1200
         : 1800;
 
-  const isRealProvider = provider.name !== "mock";
-  const inputChars = system.length + userMessages.reduce((n, m) => n + m.content.length, 0);
-
-  const stream = createCopilotResponseStream({
+  return createBudgetedCopilotResponse({
+    request: req,
     provider,
     system,
     userMessages,
     model,
     maxTokens,
-    clientSignal: req.signal,
     citationFooter: rag.citationFooter,
     hasGrounding: rag.hasGrounding,
     timeoutMs: STREAM_TIMEOUT_MS,
-    onComplete: isRealProvider
-      ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
-        // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
-        async (outputChars, usage) => {
-          console.info("[copilot] completed", {
-            questionId: payload.question.id, model,
-            finishReason: usage?.finishReason,
-            promptTokens: usage?.promptTokens,
-            outputTokens: usage?.outputTokens,
-            thoughtsTokens: usage?.thoughtsTokens,
-            totalTokens: usage?.totalTokens,
-          });
-          await recordAiCost({
-            tier: tierForModel(model),
-            inputTokens: usage?.promptTokens ?? estimateTokens(inputChars),
-            // Stream interruption may hide usageMetadata, including billable
-            // thinking tokens. Reserve the whole generation budget in that case.
-            outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
-              ? Math.max(0, usage.totalTokens - usage.promptTokens)
-              : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
-                ? usage.outputTokens + usage.thoughtsTokens
-                : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
-            label: "copilot",
-          });
-        }
-      : undefined,
-  });
-
-  return new Response(stream, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "no-store, no-cache, must-revalidate",

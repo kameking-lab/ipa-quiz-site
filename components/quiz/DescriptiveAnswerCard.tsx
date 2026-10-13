@@ -4,6 +4,7 @@ import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
+import { useQuestionExplanationReveal } from "./QuestionRevealProvider";
 
 interface Props {
   question: Question;
@@ -21,6 +22,7 @@ export function DescriptiveAnswerCard({
   onNext,
   nextLabel = "次の問題へ",
 }: Props) {
+  const revealExplanation = useQuestionExplanationReveal();
   const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
     /^公式問題に基づく独自解答例（法務省の公式解答ではありません）\s*/,
     "",
@@ -34,7 +36,10 @@ export function DescriptiveAnswerCard({
         記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。
         この画面では記述答案の自動採点を行いません。
       </p>
-      <details open={defaultOpen} onToggle={(event) => onReveal?.(event.currentTarget.open)}>
+      <details open={defaultOpen} onToggle={(event) => {
+        onReveal?.(event.currentTarget.open);
+        if (event.currentTarget.open) revealExplanation();
+      }}>
         <summary className="min-h-11 cursor-pointer py-3 font-semibold">独自解答例と作図例を確認する</summary>
         <Markdown>{modelAnswer}</Markdown>
         {question.scoringCriteria && (

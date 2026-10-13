@@ -323,9 +323,13 @@ export function CopilotPanel({
 
   const send = React.useCallback(
     async (text: string, quickAction?: QuickActionId) => {
-      if (streaming) return;
+      if (abortRef.current || streaming) return;
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
+
+      // Claim the request synchronously; React state may not flush before another submit.
+      const controller = new AbortController();
+      abortRef.current = controller;
 
       setErrorState(null);
       lastSendArgsRef.current = { text: trimmed, quickAction };
@@ -341,9 +345,6 @@ export function CopilotPanel({
       setStreaming(true);
       setStreamStatus("sending");
       userStoppedRef.current = false;
-
-      const controller = new AbortController();
-      abortRef.current = controller;
 
       try {
         const characterState = readCharacterState();
@@ -509,6 +510,7 @@ export function CopilotPanel({
           });
         }
       } finally {
+        if (abortRef.current === controller) abortRef.current = null;
         setStreaming(false);
         setStreamStatus("idle");
         userStoppedRef.current = false;

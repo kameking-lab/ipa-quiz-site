@@ -22,6 +22,7 @@ import { readSettings } from "@/lib/storage/settings";
 import { posthogCapture } from "@/lib/posthog";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+import { useQuestionExplanationReveal } from "./QuestionRevealProvider";
 
 const CopilotDesktopFloating = dynamic(
   () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotDesktopFloating),
@@ -67,8 +68,8 @@ interface Props {
  *     roving-tabindex + number-key UX as the full QuizPlayer).
  *   - Answering reveals correct/incorrect and records to the *existing* history
  *     store (no new localStorage keys), so a landing-page solve counts exactly
- *     like a /quiz solve. The (already server-rendered, <details open>)
- *     explanation sits directly below.
+ *     like a /quiz solve. The server-rendered explanation sits directly below,
+ *     initially closed for solving and opened by the same answer action.
  *   - A "just reveal" path is preserved for pure readers, and is NOT recorded
  *     so stats stay honest.
  */
@@ -97,6 +98,7 @@ export function QuestionAnswerCard({
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const revealExplanation = useQuestionExplanationReveal();
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
   const [copilotRequest, setCopilotRequest] = React.useState(0);
 
@@ -108,6 +110,10 @@ export function QuestionAnswerCard({
     setRevealed(false);
     setCopilotRequest(0);
   }, [questionId]);
+
+  React.useEffect(() => {
+    if (revealed) revealExplanation();
+  }, [revealed, revealExplanation]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),

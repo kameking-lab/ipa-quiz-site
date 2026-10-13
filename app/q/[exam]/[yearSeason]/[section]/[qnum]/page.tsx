@@ -46,6 +46,7 @@ import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
+import { QuestionRevealProvider, QuestionExplanationDetails } from "@/components/quiz/QuestionRevealProvider";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
@@ -390,6 +391,7 @@ export default async function QuestionPage({
         <QuestionFigures question={q} />
       </section>
 
+      <QuestionRevealProvider key={q.id}>
       {/* Choices + solve-in-place. The choice text ships in the prerendered
           HTML via ChoiceButton (crawlable / readable with JS off); hydration
           adds the grading interaction so a search visitor can answer right here
@@ -418,13 +420,13 @@ export default async function QuestionPage({
 
       {q.type === "descriptive" && q.exam === "chosashi" && (
         <div className="mt-5">
-          <DescriptiveAnswerCard question={q} defaultOpen />
+          <DescriptiveAnswerCard question={q} />
         </div>
       )}
 
       {/* Explanation — label follows the available source layers */}
       <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
-        <details open className="group">
+        <QuestionExplanationDetails>
           <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div className="flex items-center gap-2.5">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
@@ -505,8 +507,9 @@ export default async function QuestionPage({
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
             sourceAttribution={q.sourceAttribution}
           />}
-        </details>
+        </QuestionExplanationDetails>
       </section>
+      </QuestionRevealProvider>
 
       <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
         {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
