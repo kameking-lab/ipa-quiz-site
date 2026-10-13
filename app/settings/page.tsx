@@ -37,6 +37,7 @@ import {
 import { CharacterSelector } from "@/components/character/CharacterSelector";
 import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore } from "@/lib/storage/history";
+import { exportLearningBackup, importLearningBackup, recoverLearningBackup } from "@/lib/storage/learning-backup";
 import { clearLastQuestion } from "@/lib/storage/last-question";
 import { clearQuizResume } from "@/lib/storage/quiz-resume";
 import { resetUserContext } from "@/lib/storage/user-context";
@@ -145,7 +146,12 @@ export default function SettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-     
+    let recovered = false;
+    try { recovered = recoverLearningBackup(localStorage); } catch { /* Storage can be blocked entirely. */ }
+    if (!recovered) {
+      setToast({ type: "err", msg: "前の読込を完了できませんでした。元のデータは保持しています。" });
+      return;
+    }
     setSettings(readSettings());
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();
@@ -187,16 +193,19 @@ export default function SettingsPage() {
   }
 
   function handleExport() {
-    const store = createHistoryStore();
-    const json = store.exportJson();
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `ipa-quiz-history-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    showToast("ok", "履歴をファイルに保存しました");
+    try {
+      const json = exportLearningBackup(localStorage);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `ipa-quiz-history-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("ok", "履歴と復習予定をファイルに保存しました");
+    } catch {
+      showToast("err", "ファイルに保存できませんでした。学習データは変更していません。");
+    }
   }
 
   function handleImport(e: React.ChangeEvent<HTMLInputElement>) {
@@ -206,15 +215,20 @@ export default function SettingsPage() {
     reader.onload = (ev) => {
       const text = ev.target?.result;
       if (typeof text !== "string") return;
-      const store = createHistoryStore();
-      const ok = store.importJson(text);
-      if (ok) {
-        setStats(store.getStats());
-        showToast("ok", "ファイルの履歴に戻しました");
-      } else {
-        showToast("err", "履歴を戻せませんでした。保存した履歴ファイルを選んでください。");
+      try {
+        const result = importLearningBackup(text, localStorage);
+        if (result.ok) {
+          setStats(createHistoryStore().getStats());
+          showToast("ok", result.legacy ? "ファイルの履歴に戻しました。復習予定はそのままです。" : "ファイルの履歴と復習予定に戻しました");
+        } else {
+          if (result.recoveryPending) setSettingsReady(false);
+          showToast("err", result.reason === "invalid" ? "ファイルを読めませんでした。学習データは変更していません。" : "読込を完了できませんでした。元のデータは保持しています。");
+        }
+      } catch {
+        showToast("err", "読込を完了できませんでした。元のデータは保持しています。");
       }
     };
+    reader.onerror = () => showToast("err", "ファイルを読めませんでした。学習データは変更していません。");
     reader.readAsText(file);
     e.target.value = "";
   }
@@ -471,11 +485,11 @@ export default function SettingsPage() {
                 />
               </SettingRow>
               <div className="grid grid-cols-3 divide-x divide-border border-t border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
-                <Stat label="回答数" value={stats.total.toLocaleString("ja-JP")} />
-                <Stat label="問題数" value={stats.uniqueAnswered.toLocaleString("ja-JP")} />
+                <Stat label="回答数" value={settingsReady ? stats.total.toLocaleString("ja-JP") : "--"} />
+                <Stat label="問題数" value={settingsReady ? stats.uniqueAnswered.toLocaleString("ja-JP") : "--"} />
                 <Stat
                   label="正答率"
-                  value={stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"}
+                  value={settingsReady && stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"}
                   highlight
                 />
               </div>
@@ -523,7 +537,7 @@ export default function SettingsPage() {
                   onChange={handleImport}
                 />
               </div>
-              <p className="px-4 pb-4 text-xs text-muted-foreground">履歴の削除では、回答履歴・★苦手復習・続きから情報が消えます。復習予定・学習日・しおり・同期先の履歴は残ります。ファイルから戻すと、回答履歴と★はファイルの内容に置き換わります。</p>
+              <p className="px-4 pb-4 text-xs text-muted-foreground">履歴の削除では、回答履歴・★苦手復習・続きから情報が消えます。復習予定・学習日・しおり・同期先の履歴は残ります。ファイルに保存する内容は回答履歴・★・復習予定です。戻すとファイルの内容に置き換わります。以前の履歴ファイルも読み込め、復習予定はそのまま残ります。</p>
             </div>
           </section>
 
