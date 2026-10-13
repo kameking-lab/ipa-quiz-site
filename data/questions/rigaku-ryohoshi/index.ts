@@ -1,4 +1,6 @@
 import type { Question } from "@/lib/questions/types";
+import savedQa2025 from "./2025-saved-qa20.json";
+import savedQa2026 from "./2026-saved-qa20.json";
 import y2026 from "./2026-annual.json";
 import y2025 from "./2025-annual.json";
 import remaining2026 from "./2026-remaining-ready.json";
@@ -14,4 +16,6 @@ export const RIGAKU_RYOHOUSHI_QUESTIONS: Question[] = [
   ...(remaining2025 as Question[]),
   ...(overlay2026 as Question[]),
   ...(overlay2025 as Question[]),
+  ...(savedQa2025 as Question[]),
+  ...(savedQa2026 as Question[]),
 ].filter(question => question.needsReview === false);
