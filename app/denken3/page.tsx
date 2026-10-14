@@ -4,11 +4,15 @@ import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
-import { DENKEN3_NATIVE_SUBJECTS, DENKEN3_NEW_ORIGINAL_COUNT, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSubjectPath } from "@/lib/denken3/native";
+import { DENKEN3_NATIVE_QUESTIONS, DENKEN3_NATIVE_SUBJECTS, DENKEN3_NEW_ORIGINAL_COUNT, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSubjectPath } from "@/lib/denken3/native";
+
+import { DENKEN3_LATEST_TWO_COVERAGE } from "@/lib/denken3/coverage";
+
+const nativeFields = DENKEN3_NATIVE_QUESTIONS.reduce((sum, q) => sum + q.slots.length, 0);
 
 export const metadata: Metadata = {
   title: "電験三種 過去問｜理論・電力・機械・法規",
-  description: "電験三種の確認済み325原問を収録。2026年度上期の理論・電力・機械・法規と2025年度下期の理論・電力・機械・法規は、原本画像と5肢の解説を原問単位で確認できます。",
+  description: `電験三種の確認済み${DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録。2026年度上期の理論・電力・機械・法規と2025年度下期の理論・電力・機械・法規は、原本画像と5肢の解説を原問単位で確認できます。`,
   alternates: { canonical: "/denken3" },
 };
 
@@ -45,7 +49,7 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </div>
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">電験三種の過去問</h1>
       <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-        2024・2025年度の従来演習320回答単位（264原問）を保持し、確認済みの原問を61題追加しました。現在、固有{DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録しています。従来演習の全肢解説319回答単位と、公式正答・一般解説1回答単位も利用できます。
+        2024・2025年度の従来演習320回答単位（264原問）を保持し、確認済みの原問を{DENKEN3_NEW_ORIGINAL_COUNT}題追加しました。現在、固有{DENKEN3_PUBLISHED_ORIGINAL_COUNT}原問を収録しています。従来演習の全肢解説319回答単位と、公式正答・一般解説1回答単位も利用できます。
       </p>
 
       <section aria-label="年度と期を選ぶ" className="mt-7 rounded-2xl border border-border bg-card p-4 sm:p-5">
@@ -90,7 +94,17 @@ export default async function Denken3Page({ searchParams }: { searchParams: Prom
       </section>
       <section aria-labelledby="denken3-native" className="mt-9">
         <h2 id="denken3-native" className="text-xl font-bold">原本画像付きの原問演習</h2>
-        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済み121原問・148回答欄を原問単位で掲載。旧演習と重なる2025年度下期の理論18原問・機械18原問・電力16原問・法規8原問を除いた純増は{DENKEN3_NEW_ORIGINAL_COUNT}原問です。両期の理論・機械Q17・Q18は、各科目で本試験では一方だけ解答します。未確認の問題と二次試験は掲載していません。</p>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">確認済み{DENKEN3_NATIVE_QUESTIONS.length}原問・{nativeFields}回答欄を原問単位で掲載。旧演習と重なる2025年度下期の理論18原問・機械18原問・電力16原問・法規13原問を除いた純増は{DENKEN3_NEW_ORIGINAL_COUNT}原問です。両期の理論・機械Q17・Q18は、各科目で本試験では一方だけ解答します。未確認の問題と二次試験は掲載していません。</p>
+        <ul className="mt-3 space-y-1 text-sm text-muted-foreground" aria-label="最新2回の収録状況">
+          {DENKEN3_LATEST_TWO_COVERAGE.map(edition => <li key={edition.sitting}>
+            {edition.label}（{edition.examDate.replaceAll("-", "/")}）：{edition.publishedOriginals}/{edition.requiredOriginals}原問を収録、全肢解説は{edition.fullOriginals}原問。
+          </li>)}
+        </ul>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">
+          2026年度上期の法規Q10は、<a className="text-primary underline" href="https://www.shiken.or.jp/chief/upload/20260830_ch_third_q04.pdf#page=16" target="_blank" rel="noopener noreferrer">公式問題の16ページ</a>と
+          <a className="text-primary underline" href="https://www.shiken.or.jp/chief/upload/20260830_ch_third_a01.pdf" target="_blank" rel="noopener noreferrer">公式正答</a>を参照できます。全肢解説は未収録です。
+          2025年度下期の電力Q1は旧演習で公式正答と一般解説を掲載しています。
+        </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">{DENKEN3_NATIVE_SUBJECTS.map(part => {
           const label = part.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期";
           const name = part.subject === "theory" ? "理論" : part.subject === "power" ? "電力" : part.subject === "machine" ? "機械" : "法規";

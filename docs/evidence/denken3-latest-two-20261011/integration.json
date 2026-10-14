@@ -1,0 +1,248 @@
+{
+  "base": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+  "newNativeOriginals": 9,
+  "newNativeFields": 10,
+  "newUniqueOriginals": 4,
+  "newFullChoiceExplanations": 50,
+  "newSourceImages": 12,
+  "oldPublishedFilesLfSha256": {
+    "data/questions/denken3/launch.json": "683c2d57cb82e91d0bb2a8685aac70a7d34cb50fb67c4bb09e9091a3886d4f73",
+    "data/questions/denken3/native-2025-lower-law-next.json": "2cc186e8b86b9202b504c569e94e23e16aa24e6edac2c7de4bff47cb507a940c",
+    "data/questions/denken3/native-2025-lower-law.json": "5664344348f4bd58a59661ccaffd6206f6f6bdcbbfbb58a359bdbcfaa614eef5",
+    "data/questions/denken3/native-2025-lower-machine-follow.json": "4abd97549fc2c68c65f184ff68f9f8cff8cb82e8948b83ac59b0416cbcb59755",
+    "data/questions/denken3/native-2025-lower-power-follow.json": "659da3eba2e4c7250b1a376c18201f4411c94f6ca3d02ae8c53c058657629152",
+    "data/questions/denken3/native-2025-lower-power-next.json": "4cd78efc4f90fa1eba5924483cbb6b5a514f94192cac1e101aa5c7f6b29b6125",
+    "data/questions/denken3/native-2025-lower-theory-follow.json": "756f90cf735d57dce108a758515436b5fac0c05c91afd7a8e25866d16e16c806",
+    "data/questions/denken3/native-2026-upper-law-next.json": "7583062db36cd97e351106f86b425bbe01fb635b818f673f6df5d1e67546784b",
+    "data/questions/denken3/native-2026-upper-law.json": "67f9e41a2ab73ae942be13ba64dedc6fe84d57d5c638e08df4db433887a410d7",
+    "data/questions/denken3/native-2026-upper-machine-follow.json": "6fdc3eb0cca5f615bbf5fba5f4500ab981d861cb3dfa280734af0653d3b11de7",
+    "data/questions/denken3/native-2026-upper-machine-next.json": "da432439cad350e6eeab63b5498f6894e187836989abe2d8b13f383e9a02ed65",
+    "data/questions/denken3/native-2026-upper-power-next.json": "4c7e07cb17cb422a6ddddc9d8af7d98653fa622d71f98337a0e3fc62d91dbb9a",
+    "data/questions/denken3/native-2026-upper-power.json": "95a28beed4e54d49e1987c4657d1c47805be1c887201aae54f2ae4c6f6edc26d",
+    "data/questions/denken3/native-2026-upper-theory.json": "1280e99ed52c47ffa38ced8cd5d533545af609d23a49dda5e02f063f5cd76fb1"
+  },
+  "nativeOriginals": 130,
+  "nativeFields": 158,
+  "nativeImages": 153,
+  "unionOriginals": 329,
+  "latestTwoRequiredOriginals": 132,
+  "latestTwoPublishedOriginals": 131,
+  "latestTwoFullOriginals": 130,
+  "completeSittings": 0,
+  "remainingHolds": [
+    "denken3-2026-upper-law-q10",
+    "denken3-2025-lower-power-q01"
+  ],
+  "modelCalls": 0,
+  "lowerSourcePacketSha256": "42043178c4f61db9e0cc5255fc2c8c80074983323ab52d77cce9db52b968236a",
+  "upperSourcePacketSha256": "c67b5c60141f6a68c66163b864ca7f3cc6596c09a7a58a1d5bc656ec29bbf67c",
+  "lowerBindings": [
+    {
+      "id": "denken3-2025-lower-law-q04",
+      "reuse": "CURRENT_PUBLISHED_FULL_EXACT",
+      "reviewedPath": "data/questions/denken3/reviewed/20260322-law-q04-04.json",
+      "reviewedSha256": "fbd99f7daae42424ec011148d4949efc1611ae81311910b6966c29fa948ee766",
+      "officialAnswers": [
+        "4"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken3/2025-lower-native/law-q04-p08.png",
+          "sha256": "d864041dd32b02bcf878f1bfde0b95ab41cb2c15347b55a4b4190f591f937d2e"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-law-q06",
+      "reuse": "CURRENT_PUBLISHED_FULL_EXACT",
+      "reviewedPath": "data/questions/denken3/reviewed/20260322-law-q06-06.json",
+      "reviewedSha256": "aaa4264b2816a39445f9566377e9322c75b125ecb4e68ee45d4fdb5c671b1443",
+      "officialAnswers": [
+        "2"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken3/2025-lower-native/law-q06-p10.png",
+          "sha256": "ee44c6b22d70a5839e0343840c2f4aabe00ace79e7892823b6e095f24f2ec247"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken3/2025-lower-native/law-q06-p11.png",
+          "sha256": "6f467e2bbe8639c3abe96aad48c4a36756a2c220e587b008df7f270a4348c8f7"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-law-q07",
+      "reuse": "CURRENT_PUBLISHED_FULL_EXACT",
+      "reviewedPath": "data/questions/denken3/reviewed/20260322-law-q07-07.json",
+      "reviewedSha256": "7ea91616613ee4a95fda27c47c1720cc9fc75b2670984299268c01116f1f1fe9",
+      "officialAnswers": [
+        "5"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken3/2025-lower-native/law-q07-p12.png",
+          "sha256": "e4894831fc143859716ccd263d8ef2a42fda6e6f7395f8e305aeb36679253507"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken3/2025-lower-native/law-q07-p13.png",
+          "sha256": "2518c350d21f35938067897aa461ebca4e3a73a17d434703b559c7f35b160ccb"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-law-q09",
+      "reuse": "CURRENT_PUBLISHED_FULL_EXACT",
+      "reviewedPath": "data/questions/denken3/reviewed/20260322-law-q09-09.json",
+      "reviewedSha256": "4b092f1e59c4a1b5fde984ec5cfdd619e7f9e1b3b1960ff0db6bea849e680b45",
+      "officialAnswers": [
+        "2"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 15,
+          "url": "/images/denken3/2025-lower-native/law-q09-p15.png",
+          "sha256": "81e9000ca7b34d8b3fab50ba404f342d5b44a7035a55d23b928bd4b26111cf0d"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2025-lower-law-q12",
+      "reuse": "CURRENT_PUBLISHED_FULL_EXACT",
+      "reviewedPath": "data/questions/denken3/reviewed/20260322-law-q12-12.json",
+      "reviewedSha256": "5ad31d56e68cca8e3b9f6ba4a1d140a39ddbf779058fc00de44792f1f8e73374",
+      "officialAnswers": [
+        "2",
+        "3"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 20,
+          "url": "/images/denken3/2025-lower-native/law-q12-p20.png",
+          "sha256": "b93858c70534f3c4fba76ae72a20107b59d0b97a169da3f991cb22ddfcf88593"
+        }
+      ]
+    }
+  ],
+  "upperBindings": [
+    {
+      "id": "denken3-2026-upper-law-q04",
+      "officialAnswer": "3",
+      "sourceQuestionPhysicalPages": [
+        9
+      ],
+      "savedDraftPath": "denken3-2026-upper-law/drafts/law-q04/candidate.json",
+      "savedDraftSha256": "a3bbb01d947b4264fd1325cf9559fe462e722f2c2169dbeea8eecce063f5d02b",
+      "priorHoldSha256": "124df99bcb33be01efe2c3302f66c444f431bde945142ab6335df6e955ff2e50",
+      "primaryPhysicalPages": [
+        26
+      ],
+      "referenceArticle": "16 / 16-1表・備考※1",
+      "corrections": "Direct rule text replaces unsupported technical generalizations; no historical draft mutated.",
+      "candidateContentSha256": "2d8b7f9c6b09d32fbe5ab8b313a9f537863a2d1d8a8bcd996f636be5a92ced9e",
+      "sourcePages": [
+        {
+          "physicalPage": 9,
+          "url": "/images/denken3/2026-upper-native/law-q04-p09.png",
+          "sha256": "bf5c46a17fe31563df51724292930b617cf89bb431eeaf03c38d6fa43e4891c1"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2026-upper-law-q06",
+      "officialAnswer": "2",
+      "sourceQuestionPhysicalPages": [
+        11
+      ],
+      "savedDraftPath": "denken3-2026-upper-law/drafts/law-q06/candidate.json",
+      "savedDraftSha256": "d3ee6ad83130a2c986f560f0861156e5bc9370e498946ac7aa63cd5b563225a3",
+      "priorHoldSha256": "0a27ed0ae8ebe9bbdd7a91082041558b189b2cf53382962881f5305183b5f40a",
+      "primaryPhysicalPages": [
+        121,
+        122
+      ],
+      "referenceArticle": "120第3・4項",
+      "corrections": "Direct rule text replaces unsupported technical generalizations; no historical draft mutated.",
+      "candidateContentSha256": "ec4890c6355687f43871ca4e01729ea9fc9473f6d19d61a995515752a6f39968",
+      "sourcePages": [
+        {
+          "physicalPage": 11,
+          "url": "/images/denken3/2026-upper-native/law-q06-p11.png",
+          "sha256": "e5d9b5b53710e3d8874e3a6c47077455c245cf558b5320ced849dc1f49df2978"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2026-upper-law-q07",
+      "officialAnswer": "4",
+      "sourceQuestionPhysicalPages": [
+        12
+      ],
+      "savedDraftPath": "denken3-2026-upper-law/drafts/law-q07/candidate.json",
+      "savedDraftSha256": "791c3af3ede82a15a28259884fe83662ceb920765281f567c367dfb453fb443b",
+      "priorHoldSha256": "90b4d9ea663766f37c98b3158c3370a9c53d6c646a0773e45ac3ba3ecf974825",
+      "primaryPhysicalPages": [
+        223,
+        224
+      ],
+      "referenceArticle": "221・222",
+      "corrections": "Direct rule text replaces unsupported technical generalizations; no historical draft mutated.",
+      "candidateContentSha256": "1b416fdea95befb4860d42c11ffe48cdc1b02aa1433399333ed3574a92fc83af",
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken3/2026-upper-native/law-q07-p12.png",
+          "sha256": "3073e3110f83f714da341f72bf06f75002fd1526948c6fe61db4d578c325fd5d"
+        }
+      ]
+    },
+    {
+      "id": "denken3-2026-upper-law-q09",
+      "officialAnswer": "2",
+      "sourceQuestionPhysicalPages": [
+        14,
+        15
+      ],
+      "savedDraftPath": null,
+      "savedDraftSha256": null,
+      "priorHoldSha256": "125f038c2b690b085f4a143ea9546c7481d53f74ec86e9c01808eb5db69910f2",
+      "primaryPhysicalPages": [
+        152,
+        153
+      ],
+      "referenceArticle": "156 / 156-1表",
+      "corrections": "Direct rule text replaces unsupported technical generalizations; no historical draft mutated.",
+      "candidateContentSha256": "1a1229799487443307d0f327c4909f11307b989cc24c8f943185b46aed5b92f1",
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken3/2026-upper-native/law-q09-p14.png",
+          "sha256": "abf52f2e46f2e67c73de9432c314e7ddf02066636da43e1396892c15e1cfda44"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken3/2026-upper-native/law-q09-p15.png",
+          "sha256": "017cc67c2a5b8780a5889ee4c029fdd0e969048e4b69315740a650bcf482a241"
+        }
+      ]
+    }
+  ],
+  "reviewedLfSha256ByPath": {
+    "data/questions/denken3/reviewed/20260322-law-q04-04.json": "b609ca7a19279207027122c095613d239fa3b25ebfd8f473e52bb199cbff32e8",
+    "data/questions/denken3/reviewed/20260322-law-q06-06.json": "a8c5078d79388bbc7226f7bee3bf517230ba1a7513a82cf6494be66e4f4fd842",
+    "data/questions/denken3/reviewed/20260322-law-q07-07.json": "7c34c3335da98e2cdf4c8b02e1add53414ce5419428733857cd5cef63bdc172a",
+    "data/questions/denken3/reviewed/20260322-law-q09-09.json": "91e7cde29ec4d0abc2910f6e3c4ab7e472fc8b9aef2e9c54738b25639dd17212",
+    "data/questions/denken3/reviewed/20260322-law-q12-12.json": "13221376653a8052805e303725c664163ba6c5bb1d601b1d5c7666fa68e339bd"
+  },
+  "reviewedSha256Meaning": "Saved Windows input bytes; reviewedLfSha256ByPath records portable Git content.",
+  "modelCallsMeaning": "No new external authoring API calls. Independent local Codex reviews cover the four implemented upper items and the separate Q10 partial-source investigation.",
+  "independentLocalReviewRuns": 2,
+  "newUniqueFullChoiceExplanations": 20,
+  "reusedFullChoiceExplanations": 30,
+  "newFullChoiceExplanationsMeaning": "50 explanations added to native routes: 20 new unique and 30 unchanged reused explanations"
+}
