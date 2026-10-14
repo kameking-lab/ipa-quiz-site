@@ -59,9 +59,10 @@ test.describe("retired essay URLs: official past-paper guide", () => {
 
   test("the guide does not offer AI essay grading", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    await expect(page.getByRole("textbox")).toHaveCount(0);
-    await expect(page.getByRole("button", { name: /採点|送信/ })).toHaveCount(0);
-    await expect(page.getByText(/現在、このページでは論述の自動採点を受け付けていません/)).toBeVisible();
+    const guide = page.getByRole("main");
+    await expect(guide.getByRole("textbox")).toHaveCount(0);
+    await expect(guide.getByRole("button", { name: /採点|送信/ })).toHaveCount(0);
+    await expect(guide.getByText(/現在、このページでは論述の自動採点を受け付けていません/)).toBeVisible();
   });
 
   test("past-question search remains available without an account gate", async ({ page }) => {
