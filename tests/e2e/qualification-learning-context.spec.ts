@@ -58,9 +58,9 @@ for (const viewport of [{ name: "desktop", width: 1280, height: 900 }, { name: "
       const detail = page.getByRole("link", { name: "公開解説・誤り報告を開く" });
       await expect(detail).toHaveCount(0);
       await page.getByRole("radiogroup").last().getByRole("radio").first().click();
-      await expect(detail).toHaveAttribute("href", "/q/ip/2024-cbt/am/q1");
+      await expect(detail).toHaveAttribute("href", "/q/ip/2024-cbt/am/q1#explanation");
       await detail.click();
-      await expect(page).toHaveURL(/\/q\/ip\/2024-cbt\/am\/q1$/);
+      await expect(page).toHaveURL(/\/q\/ip\/2024-cbt\/am\/q1#explanation$/);
       await expect(page.getByRole("button", { name: "誤りを報告" })).toBeVisible();
     });
   });

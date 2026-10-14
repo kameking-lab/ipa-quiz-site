@@ -33,10 +33,10 @@ for (const paper of [
     const page = await context.newPage();
     const response = await page.goto(paper.path);
     expect(response?.status()).toBe(200);
-    const links = page.locator(`a[href="${paper.first}"]`);
+    const links = page.locator(`a[href="${paper.first}#explanation"]`);
     expect(await links.count()).toBeGreaterThan(0);
     await links.last().click();
-    await expect(page).toHaveURL(paper.first);
+    await expect(page).toHaveURL(`${paper.first}#explanation`);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://www.kakomon-ai.jp${paper.first}`);
     await context.close();
   });
@@ -63,7 +63,7 @@ test("dental and land-surveyor pages distinguish originals and independent expla
   await expect(page.getByRole("link", { name: "公式答案用紙", exact: true }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /公式出題の趣旨/ }).first()).toBeVisible();
   await expect(page.locator("main")).not.toContainText("IPAシラバス");
-  await page.goto("/q/shika-ishi/2026-annual/mondai-a/q5");
+  await page.goto("/q/shika-ishi/2026-annual/mondai-a/q5#explanation");
   expect(await page.locator('main img[src*="shika-ishi"]').count()).toBeGreaterThan(0);
   await expect(page.getByRole("link", { name: "静的解説の確認方針" }).first()).toHaveAttribute("href", "/transparency#static-explanations");
   const related = page.getByRole("region", { name: "他試験区分の関連問題" });

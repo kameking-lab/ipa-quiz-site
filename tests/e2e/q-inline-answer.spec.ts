@@ -77,10 +77,16 @@ test.describe("/q inline answer", () => {
   });
 
   test("an anonymous learner can ask AI about a wrong answer without leaving the question", async ({ page }) => {
+    const response = await page.request.get("/api/questions/next?id=tohan-2025-kansai-gakka-q1");
+    expect(response.status()).toBe(200);
+    const question = await response.json() as { answer: string; choices: Record<string, string> };
+    const wrongIndex = Object.keys(question.choices).findIndex((key) => key !== question.answer);
+    expect(wrongIndex).toBeGreaterThanOrEqual(0);
     await page.goto("/q/tohan/2025-kansai/gakka/q1");
     const urlBefore = page.url();
-    await page.getByRole("radio").first().click();
-    await page.getByRole("button", { name: "誤答をAIに質問" }).click();
+    await page.getByRole("radio").nth(wrongIndex).click();
+    await expect(page.getByRole("region", { name: "選択肢と解答", exact: true }).getByRole("status")).toHaveText(/不正解です/);
+    await page.getByRole("button", { name: "まだ分からない点を聞く", exact: true }).click();
     const dialog = page.getByRole("dialog", { name: "AI コパイロット" }).first();
     await expect(dialog).toBeVisible();
     await expect(dialog.getByRole("textbox", { name: /AIへの質問を入力/ })).toBeVisible();

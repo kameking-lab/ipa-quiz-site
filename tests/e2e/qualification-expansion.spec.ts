@@ -76,7 +76,7 @@ for (const c of cases) {
     await page.goBack();
     await expect(page).toHaveURL(new RegExp(`/${c.exam}$`));
 
-    const reader = await page.goto(c.readerPath);
+    const reader = await page.goto(`${c.readerPath}#explanation`);
     expect(reader?.status()).toBe(200);
     await expect(page.getByRole("group", { name: "AI生成の解説に関する詳細" })).toBeVisible();
     await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", c.answerUrl);
@@ -137,8 +137,10 @@ test("denko2 complete 2026 sitting publishes question 10 and all-choice explanat
 test("FP2 negative questions explain why a selected true statement is not the answer", async ({ page }) => {
   await page.goto("/q/fp2/2026-published/gakka/q2");
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();
-  await expect(page.getByText("適切な記述なので、本問の正解ではありません。", { exact: false })).toBeVisible();
-  await expect(page.getByText("不適切な記述で、本問の正解です。妻は自身の健康保険", { exact: false })).toBeVisible();
+  const explanation = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanation.locator("dd")).toHaveCount(4);
+  await expect(explanation.getByText("適切な記述なので、本問の正解ではありません。", { exact: false })).toBeVisible();
+  await expect(explanation.getByText("不適切な記述で、本問の正解です。妻は自身の健康保険", { exact: false })).toBeVisible();
   const sources = page.getByRole("navigation", { name: "問題・正答と参照資料" });
   await expect(sources.getByRole("link")).toHaveCount(3);
   for (const link of await sources.getByRole("link").all()) {

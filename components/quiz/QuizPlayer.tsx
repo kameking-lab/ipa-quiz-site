@@ -626,7 +626,7 @@ export function QuizPlayer({
                   }
                 />
                 <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
+                  <Link href={`${questionPagePath(question)}#explanation`}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
                 <QuestionCommentBox questionId={question.id} />

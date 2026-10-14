@@ -104,14 +104,24 @@ test.describe("bookmark: localStorage round-trip", () => {
     await expect(h1).toContainText("1件", { timeout: 15000 });
   });
 
-  test("/bookmarks shows remove button for stored bookmarks", async ({ page }) => {
-    await page.addInitScript((value) => {
-      localStorage.setItem("ipa-quiz:bookmarks:v1", value);
-    }, MOCK_BOOKMARK_STORE_VALUE);
+  test("/bookmarks removes the selected bookmark without deleting other records", async ({ page }) => {
+    const remainingEntry = { ...MOCK_BOOKMARK_ENTRY, questionId: "ap-2009h-am-q2", qNumber: 2, questionSnippet: "残す別の保存問題" };
+    const history = JSON.stringify({ entries: [{ id: "ip-2024cbt-am-q1", selected: "ア", correct: false, at: 1 }], starredIds: ["ip-2024cbt-am-q1"] });
+    await page.addInitScript(({ entries, history }) => {
+      localStorage.setItem("ipa-quiz:bookmarks:v1", JSON.stringify({ entries }));
+      localStorage.setItem("ipa-quiz:history:v1", history);
+    }, { entries: { [MOCK_BOOKMARK_ENTRY.questionId]: MOCK_BOOKMARK_ENTRY, [remainingEntry.questionId]: remainingEntry }, history });
     await page.goto("/bookmarks");
     await page.waitForLoadState("networkidle");
 
-    const removeBtn = page.getByRole("button", { name: "資料保存（ブックマークから外す）" });
+    const card = page.locator("div.rounded-2xl").filter({ has: page.getByText(MOCK_BOOKMARK_ENTRY.questionSnippet, { exact: true }) });
+    const removeBtn = card.getByRole("button", { name: "ブックマークから外す", exact: true });
     await expect(removeBtn).toBeVisible({ timeout: 15000 });
+    await removeBtn.click();
+    const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:bookmarks:v1") ?? "{}") as { entries: Record<string, unknown> });
+    expect(saved.entries).not.toHaveProperty(MOCK_BOOKMARK_ENTRY.questionId);
+    expect(saved.entries).toHaveProperty(remainingEntry.questionId);
+    expect(await page.evaluate(() => localStorage.getItem("ipa-quiz:history:v1"))).toBe(history);
+    await expect(page.getByText(remainingEntry.questionSnippet, { exact: true })).toBeVisible();
   });
 });

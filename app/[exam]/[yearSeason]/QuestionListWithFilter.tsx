@@ -215,7 +215,7 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
                     </a>
                     {q.explanationHref && (
                       <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
-                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">問{q.qNumber}の解説を見る</a>
+                        <a href={`${q.explanationHref}#explanation`} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">問{q.qNumber}の解説を見る</a>
                       </div>
                     )}
                   </li>
