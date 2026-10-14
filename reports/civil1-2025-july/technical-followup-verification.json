@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-11T04:32:22.836768+00:00",
+  "inputCheckpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+  "snapshot": "technical-followup-snapshot.json",
+  "technicalResolved": 21,
+  "remainingTechnicalHolds": 16,
+  "helperWorkContinues": false,
+  "focusedVitest": {
+    "files": 3,
+    "passed": 14,
+    "failed": 0,
+    "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts __tests__/civil1-2026-july.test.ts __tests__/civil1-source-reader.test.ts"
+  },
+  "changedTestLint": "PASS, test unchanged since first snapshot",
+  "gitDiffCheck": "PASS",
+  "originalStemsAndOfficialAnswersPreserved": 101,
+  "unchangedOriginalChoiceSets": 100,
+  "explicitAuthoredFigureDescriptionCorrection": "2025-A25",
+  "originalFigureChecksumsPreserved": 9,
+  "publicOriginals": 100,
+  "acceptedNewOriginals": 0,
+  "runtimeDataEdited": false,
+  "newCommitCI": "PENDING_AFTER_FINAL_DIFF_PUSH",
+  "b7": "HOLD: choices2/3 cannot yet be reconciled with exam-date statutory duty allocation",
+  "official2025SourceIdentity": "UNVERIFIED_FOR_101",
+  "productionMergeOrDeploy": false,
+  "remainingTechnicalChoices": 40,
+  "allFinalHelperHashesMatch": true,
+  "finalHelperScopesDisjoint": true,
+  "helperQuestionCount": 21,
+  "helperChoiceCount": 84,
+  "recordType": "PREVIOUS_CHECKPOINT_WITH_BOUNDED_CONTINUATION",
+  "boundedContinuation": {
+    "checkedAt": "2026-10-11T07:13:52.907702+00:00",
+    "inputCheckpoint": "a1f2cd2e2f84e192e95d4cec07e2b272f71467d3",
+    "focusedTestsPassed": 15,
+    "newQualifiedChoices": [
+      "2025-A19:1",
+      "2025-A32:2"
+    ],
+    "wholeQuestionClearances": 0,
+    "technicalResolvedQuestionsPreserved": 21,
+    "remainingTechnicalQuestions": 16,
+    "remainingTechnicalChoiceGaps": 38,
+    "sourceCorePreserved": 101,
+    "preparedForFurtherReview": 85,
+    "officialSourceIdentityVerified": false,
+    "publicAcceptance": false,
+    "runtimeDataChanged": false,
+    "hostedCI": "PENDING_AFTER_CONTINUATION_PUSH",
+    "candidateReferences": "Added only two independently checked choice-source sets; nonmatching exploratory sources remain in held evidence records."
+  }
+}

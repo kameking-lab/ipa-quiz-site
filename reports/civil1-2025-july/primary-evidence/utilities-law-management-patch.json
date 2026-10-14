@@ -1,0 +1,487 @@
+{
+  "scope": "2025 A52,A53,A54,A62,B2,B4,B5 only",
+  "sourceGate": "2025 official source identity and independent acceptance remain separate and unresolved; no publication PASS",
+  "questions": [
+    {
+      "key": "A52",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WRONG_LABEL",
+          "sources": [
+            {
+              "url": "https://www.maff.go.jp/j//nousin/mizu/sutomane/paipurain/attach/pdf/index-8.pdf",
+              "pageOrSection": "第5章PDF 1ページ目（索引P0）表5.1-1／反転・形成の説明",
+              "evidence": "形成は引込み方式を採り、熱硬化材や熱可塑性材を既設管に拡径・密着させる。一方、反転方式は反転させながら挿入する。"
+            },
+            {
+              "url": "https://www.kubota-chemix.co.jp/dcms_media/other/C60_kanrokousei.pdf",
+              "pageOrSection": "PDF 2ページ目（索引P1）工法分類・解説",
+              "evidence": "熱硬化材の引込みと熱可塑性材の引込み・拡径・冷却を形成工法に分類。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED_WRONG_LABEL",
+          "sources": [
+            {
+              "url": "https://www.kubota-chemix.co.jp/dcms_media/other/C60_kanrokousei.pdf",
+              "pageOrSection": "PDF 8ページ目（索引P7）ダンビー工法の施工説明",
+              "evidence": "硬質PVCの帯状部材を既設管内にスパイラル状に巻き立てかん合し、間隙に充填材を注入する製管工法の原開発者資料。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www.kubota-chemix.co.jp/dcms_media/other/C60_kanrokousei.pdf",
+              "pageOrSection": "PDF 2ページ目（索引P1）工法分類・解説",
+              "evidence": "既設管より小径で製作した新管を牽引挿入し、間隙に充填材を注入する方法をさや管工法と明示。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONFIRMED_WRONG_LABEL",
+          "sources": [
+            {
+              "url": "https://www.paltem.jp/method/hl",
+              "pageOrSection": "工法紹介・ホースライニング工法、反転工法",
+              "evidence": "熱硬化性樹脂を含浸した更生材をマンホールから加圧反転挿入し、加圧状態で硬化させると工法協会が説明。"
+            },
+            {
+              "url": "https://www.kubota-chemix.co.jp/dcms_media/other/C60_kanrokousei.pdf",
+              "pageOrSection": "PDF 8ページ目（索引P7）製管工法の施工説明",
+              "evidence": "製管は帯状材の巻立て・かん合と間隙充填であり、肢4の反転挿入とは異なる。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は3。さや管工法は既設管より小径の工場製作管を牽引挿入し、管の間隙に充填材を注入する。肢1は引込み・拡径・硬化又は冷却による形成工法、肢2はPVC帯状材のかん合・間隙充填による製管工法、肢4は樹脂含浸材を加圧反転挿入し硬化する反転工法の説明であり、それぞれ工法名が違う。",
+      "choiceExplanationPatches": {
+        "4": "誤り。樹脂含浸材を加圧反転挿入して加圧状態で硬化させるのは反転工法である。製管工法はPVC等の帯状部材を管内で巻き立て・かん合し、既設管との間隙に充填材を注入する。"
+      },
+      "technicalRemaining": null,
+      "sourceTimeNote": "農林水産省2019年前後の第5章とクボタケミックスの2021年審査証明に言及する原パンフレットを照合。パルテム現行Webの掲載更新日は未特定のため、2025当時の単独根拠にはせず、反転の補助確認に限る。"
+    },
+    {
+      "key": "A53",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "圧入方式での中断と管の締付けの関係を、2025年以前の発注者施工基準又は工法原著資料で確認できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・粘土質対応薬剤、行110〜112",
+              "evidence": "粘土質地盤では水の注入掘削が可能で、粘着性を抑える対策が必要とするメーカー原資料。オーガ方式に固有の先端抵抗急増までは記していない。"
+            }
+          ],
+          "remainingGap": "オーガ方式に固有の粘性土での先端抵抗急増と注水による軟弱化を、工法原著で直接照合できていない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+              "pageOrSection": "2024年8月版PDF 105〜106ページ目（索引P104〜P105）図5-1-1と工法選定",
+              "evidence": "鋼管さや管のボーリング方式を分類し、工法選定は土質条件と地下水位で判定すると記すが、設問の砂質土・粘性土の正誤は直接示さない。"
+            },
+            {
+              "url": "https://sanwa-spd.co.jp/wp-content/uploads/2022/06/KCCA_N.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）表1・導入",
+              "evidence": "熊本県下水道担当者と施工者による原著論文。小口径推進で先導体の適用は土質、地下水、透水係数等で異なると記す。ただし高耐荷力方式の表であり設問の鋼管さや管ボーリング方式を直接扱わない。"
+            }
+          ],
+          "remainingGap": "開放型ボーリング方式の地下水位以下における砂質土と粘性土の適用条件を直接示す原著・発注者基準が未確認。二次試験解説の「砂質土へ訂正」は採用しない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.geox.jp/press/2086/",
+              "pageOrSection": "2024-06-14、泥水式推進工法の基礎知識「泥水に必要な性質」（行90〜105）",
+              "evidence": "泥水の比重は切羽安定に、粘性は逸泥防止に関係し、地山条件に応じ調整すると自社工法材料を扱う企業が説明。"
+            },
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・目詰材（行91〜105）",
+              "evidence": "メーカー原資料が目詰材を地山粒子間の目詰めによる逸泥防止用と明示。"
+            }
+          ],
+          "remainingGap": "高透水で緩い地盤という設問条件で、送泥水比重・粘性を高くする施工手順全体を一つの2025年以前の工法原著で直接確認できていない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢4の泥水調整・逸泥防止材料と肢2の粘性土への水注入の一般技術は原資料で補強したが、方式固有の肢1・2と、誤肢3の粘性土／砂質土の厳密な訂正が未確認。一次資料で確定できるまでHOLD。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://www.envi-horizon.gr.jp/shiryou/env/env_all.pdf",
+          "result": "Web閲覧はファイル容量上限（16MB超）で本文取得不可。別経路・分割版への回避取得なし。"
+        },
+        {
+          "url": "https://www.atlas-method.com/sekisan_shiryo.pdf",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.sokushin.co.jp/method/%E6%8E%A8%E9%80%B2%E5%B7%A5%E6%B3%95/",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+          "result": "2024年原資料閲覧成功。ただし方式分類と土質・地下水に基づく選定までで、設問4肢の固有注意事項の直接記載なし。"
+        }
+      ],
+      "sourceTimeNote": "ジオックス記事は2024-06-14。大阪府指針は2024-08-01。三和測量設計社掲載PDFは2002年頃の原著。テクニカ合同のWeb本文更新日は未確認のため2025当時の単独決定根拠とはしない。"
+    },
+    {
+      "key": "A54",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_CORRECTION",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+              "pageOrSection": "PDF 10ページ目（索引P9）、第4章4-2および4-3",
+              "evidence": "誤りという判定は一致。採水地点は注入箇所からおおむね10m以内に少なくとも数箇所で、観測井を設け、既存井戸も利用可能。工事終了後も一定期間採水する。原稿説明に『20mの一律義務』だけでなく正しい10mの基準を明記する必要がある。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED_WITH_WORDING_NOTE",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/common/001197595.pdf",
+              "pageOrSection": "PDF 7ページ目（索引P6）、⑥薬液の使用量",
+              "evidence": "500kL以上の大規模注入工事で『プラントのタンクからミキサー迄の間』に流量積算計を設け、薬液材料の日使用量等を管理することを確認。原稿の『原料タンクと調合槽』は出典の厳密な表現ではないため説明は原文に寄せるとよい。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://seiwarw.co.jp/business/foundation/chemical",
+              "pageOrSection": "薬液注入工・二重管ストレーナー工法／二重管ダブルパッカー工法、行40〜85",
+              "evidence": "原施工者は通常の二重管ストレーナーでボーリングマシンを、削孔深度25m以上やロータリーパーカッション削孔が必要な条件でダブルパッカー・パーカッションドリルを挙げる。両者の削孔精度の優劣は明示しない。"
+            }
+          ],
+          "remainingGap": "25m以上でダブルパッカー・パーカッションドリルと二重管ストレーナーを直接比較して前者の削孔精度が高いと示す2025年以前の原資料が未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "調合水の水道水原則・代替水pH5.8～8.6を同時に示す2025年以前の発注者基準又は原技術基準が未取得。地下水監視のpH基準を調合水へ流用しない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢1の約10m・注入後監視、肢2の500kL・流量積算計は確認済み。肢3は原施工者資料で25m以上のダブルパッカー・パーカッション選定まで確認したが、削孔精度の直接比較なし。肢4の調合水pH5.8～8.6の適用原基準も未確認。技術HOLDを保持する。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://seiwarw.co.jp/business/foundation/chemical",
+          "result": "原施工者の工法説明を閲覧成功。深度25m以上でのダブルパッカー選定とパーカッション使用を確認、削孔精度比較なし。"
+        },
+        {
+          "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+          "result": "暫定指針を閲覧成功。pHは地下水監視項目であり調合水のpH基準へ流用不可。"
+        },
+        {
+          "url": "https://www.chemico.co.jp/construction_term_cat/%E8%96%AC%E6%B6%B2%E6%B3%A8%E5%85%A5%E5%B7%A5%E6%B3%95/",
+          "result": "原施工者の工法種別一覧のみ確認。精度比較・調合水基準を記載せず。"
+        }
+      ],
+      "sourceTimeNote": "成和リニューアルワークスのWeb本文更新日は未確認。ページの実績表には2021年工事があるが、掲載内容全体が2025以前である証明とはしない。深度・機械の技術補助に限る。"
+    },
+    {
+      "key": "A62",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_SCOPE_NOTE",
+          "sources": [
+            {
+              "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240",
+              "pageOrSection": "PDF 25ページ目（索引P24）第11第三号・第八号、PDF 53ページ目（索引P52）第45第三号",
+              "evidence": "河川区域内の土地占用は法24条の許可対象。河川管理に支障を及ぼす物件の堆積・設置は法29条等の規制対象。工事用仮設物等の一時的占用も許可期間の類型として規定。一時的であることは一般的免除ではない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED_AS_INTENDED_WITH_QUALIFICATION",
+          "sources": [
+            {
+              "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240",
+              "pageOrSection": "PDF 27ページ目（索引P26）、第14第五号・河川法施行令15条の4第2号",
+              "evidence": "施行令15条の4第2号は、法26条1項の許可を受けて設置された取水・排水施設の機能維持のために行う取水口等付近の土砂排除を許可不要と定める。出題の通常の『設置されている取水施設』を適法に設置された施設として読む限り、肢2の『許可が必要』は誤り。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "条文上の条件は原問に明記されない。無許可設置施設も含めて『常に不要』と一般化しない説明修正が必要だが、正答2の通常解釈を妨げる独立の技術HOLDとはしない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240",
+              "pageOrSection": "PDF 25ページ目（索引P24）第11第三号・第五号；PDF 52ページ目（索引P51）第45第二号②ハ；PDF 165ページ目（索引P164）占用施設第7第二号ハ",
+              "evidence": "工作物新築と土地占用は許可対象で、許可対象施設の例に電線・電話線・情報通信ケーブルを明示。上空横断でも河川区域の空間占用・工作物設置として一般的許可手続を要する趣旨と一致。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240",
+              "pageOrSection": "PDF 25ページ目（索引P24）、第11第六号・法27条；PDF 27ページ目（索引P26）、第14第三号",
+              "evidence": "掘削・盛土等の土地形状変更は許可対象。権原に基づく土地使用の例外にも掘削等を除く旨が明示される。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は2。河川区域内の土地占用、工作物設置、掘削・盛土などは原則として許可対象である。一方、河川法26条1項の許可を受けて設置された取水・排水施設の機能維持のため、取水口・排水口付近の堆積土砂等を除去する行為は、河川法施行令15条の4第2号により許可を要しない。設問の既設取水施設を適法に設置された施設と読む場合の結論であり、単に存在する全ての施設に無条件で例外が及ぶわけではない。",
+      "choiceExplanationPatches": {
+        "2": "誤り。法26条1項の許可を受けて設置された取水・排水施設の機能を維持するための、取水口・排水口付近の堆積土砂等の除去は、施行令15条の4第2号で許可不要とされる。設問の既設取水施設を適法な許可済施設として読む結論であり、無許可施設にも一律に当てはめない。"
+      },
+      "technicalRemaining": null
+    },
+    {
+      "key": "B2",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_QUALIFICATION",
+          "sources": [
+            {
+              "url": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf",
+              "pageOrSection": "PDF 3ページ目（索引P2）、第18条1項(1)",
+              "evidence": "設計図書間の不一致は通知・確認請求の対象。ただし約款は優先順位が定められている場合を除く。選択肢・説明はこの留保を省く。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf",
+              "pageOrSection": "PDF 3ページ目（索引P2）、第18条1項(3)",
+              "evidence": "設計図書の表示が明確でないことが列挙され、原稿説明と一致。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）、第1条3項；PDF 3ページ目（索引P2）、第18条1項",
+              "evidence": "特別の定めがない仮設・施工方法は受注者の責任で定める。第18条の列挙にも単なる不明示はなく、現行判定と説明は一致。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf",
+              "pageOrSection": "PDF 3ページ目（索引P2）、第18条1項(4)",
+              "evidence": "工事現場の形状・地質・湧水等が設計図書記載条件と違う場合が列挙され、原稿説明と一致。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は3。徳島県公共工事標準請負契約約款（2025年4月公開）第18条1項では、設計図書間の不一致（優先順位が定められている場合を除く）、表示の不明確、現場条件と設計図書の相違などが監督員への通知・確認請求の対象となる。契約書・設計図書に特別の定めがない仮設や施工方法は第1条3項により受注者の責任で定めるため、単に明示がないことは第18条の確認請求事由ではない。",
+      "choiceExplanationPatches": {},
+      "technicalRemaining": null
+    },
+    {
+      "key": "B4",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www-1.kkr.mlit.go.jp/kingi/kensetsu/inf_support/bcu0ke0000002x3l-att/h3002-03.pdf",
+              "pageOrSection": "PDF 3〜4ページ目（索引P2〜P3）、1.①・1.②",
+              "evidence": "GNSS等の測位と設計データを使うMC/MGの具体例を確認。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/constplan/sosei_constplan_tk_000017.html",
+              "pageOrSection": "『情報化施工』冒頭定義、情報化施工の推進",
+              "evidence": "ICTによる高効率・高精度な施工を通じ建設生産プロセス全体の生産性向上と品質確保を図ると説明。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www-1.kkr.mlit.go.jp/kingi/kensetsu/inf_support/bcu0ke0000002x3l-att/h3002-03.pdf",
+              "pageOrSection": "PDF 3〜4ページ目（索引P2〜P3）、1.①MC・1.②MG",
+              "evidence": "MCは設計・現地盤差分に基づく操作の半自動制御、MGは差分をオペレータに提供するシステム。選択肢2はMGの説明をMCとした誤りで、原稿説明と一致。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www.pref.mie.lg.jp/common/content/000931400.pdf",
+              "pageOrSection": "国土交通省中部地方整備局建設ICT導入普及研究会『i-Construction用語集』2019年、PDF 3ページ目（索引P2）『出来形管理用TS』、PDF 17ページ目（索引P16）『出来形帳票作成ソフトウェア』",
+              "evidence": "出来形計測データの取得と、設計面との差・良否判定・帳票出力までICT機器とソフトウェアを連携して行える。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONFIRMED_WITH_COMPONENT_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.pref.mie.lg.jp/common/content/000931400.pdf",
+              "pageOrSection": "同用語集PDF 6ページ目（索引P5）『IMU』、PDF 8ページ目（索引P7）『UAV』『UAVレーザー』",
+              "evidence": "UAVは自律制御でき、測量へ利用できる。UAVレーザーの構成要素としてGNSS・IMUが明記される。"
+            },
+            {
+              "url": "https://product.acsl.co.jp/useful/post-2295/",
+              "pageOrSection": "国産産業用ドローン開発者ACSL、2023-04-07『フライトコントローラー』『センサーの働き』",
+              "evidence": "制御装置がセンサー情報を処理し機体安定化と自律航行を行い、加速度・角速度センサーを使用すると原開発者が説明。"
+            },
+            {
+              "url": "https://www.ktr.mlit.go.jp/fujikawa/fujikawa00379.html",
+              "pageOrSection": "国土交通省関東地方整備局富士川砂防事務所、2023-10-04",
+              "evidence": "自律飛行UAVによる砂防施設臨時点検の試行結果を公表し、点検用途を確認。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "『プロセッサの技術的進歩』という歴史的因果の個別実証までは上記資料にないが、2025年当時の自律制御・GNSS・慣性センサ・測量点検利用の技術事実は確認済み。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": null
+    },
+    {
+      "key": "B5",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_CONTRACT_NOTE",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf",
+              "pageOrSection": "PDF 15ページ目（索引P14）、1-1施工計画書の記載16項目",
+              "evidence": "施工計画書の一般的記載項目に独立した『労務調達計画』はない。契約等で指定された場合は記載対象となる。"
+            },
+            {
+              "url": "https://www.water.go.jp/honsya/honsya/keiyaku/service/kyoutu/pdf/doboku/H251003-1.pdf",
+              "pageOrSection": "水資源機構『施工計画書作成例』PDF 3ページ目（索引P2）第3節、PDF 5ページ目（索引P4）第4節",
+              "evidence": "施工計画の内部検討では資機材・労務調達及び管理計画を立てる。一方、提出する施工計画書の14記載事項には労務調達計画の独立項目がなく、契約書・設計図書の指定事項は記載すると明記。計画立案と提出書面の一律記載義務を区別できる。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf",
+              "pageOrSection": "PDF 18ページ目（索引P17）、施工方法の作業環境；PDF 24ページ目（索引P23）、(12)環境対策",
+              "evidence": "周辺土地利用・自然環境・近接状況を施工方法に記し、生活環境保全のため騒音、振動、水質汚濁、粉じん、家屋調査等を計画する。"
+            },
+            {
+              "url": "https://www.water.go.jp/honsya/honsya/keiyaku/service/kyoutu/pdf/doboku/H251003-1.pdf",
+              "pageOrSection": "PDF 2ページ目（索引P1）事前調査チェックリスト『公害問題』『相隣関係』、PDF 5ページ目（索引P4）環境保全管理計画",
+              "evidence": "工事前に騒音・振動・粉じん等の周辺への影響を調査し、近隣住宅・学校等の保全策を計画する。設問の実務趣旨と一致。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONFIRMED_FOR_PLANNING_PRINCIPLE",
+          "sources": [
+            {
+              "url": "https://www.water.go.jp/honsya/honsya/keiyaku/service/kyoutu/pdf/doboku/H251003-1.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）第1節、PDF 2ページ目（索引P1）『地質』、PDF 3ページ目（索引P2）第3節",
+              "evidence": "施工計画は地質等の自然条件と設計図書を考慮し、事前調査では既存資料・柱状図、地盤強さ・支持力・地下水等を点検する。現場技術者が地質資料と試験項目・方法を理解して計画へ反映する趣旨を支持。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "原位置試験・室内土質試験の個々の方法までは列記しないが、肢3は具体試験方法の優劣を問わず、現場技術者の理解を求める一般原則である。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CONFIRMED_FOR_PLANNING_SEQUENCE",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf",
+              "pageOrSection": "PDF 22ページ目（索引P21）、(9)安全管理・第三者施設安全管理対策",
+              "evidence": "架空線等上空施設について現地で事前調査を行う旨を確認。"
+            },
+            {
+              "url": "https://www.water.go.jp/honsya/honsya/keiyaku/service/kyoutu/pdf/doboku/H251003-1.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）第1節『施工計画の主作成手順』1)・第2節『事前調査』；PDF 2ページ目（索引P1）現場事前調査チェックリスト",
+              "evidence": "請負契約・契約図書に基づき施工計画を作成する前に現地の諸条件を調査し、発注者情報との相違も確認すると明記。契約後の施工計画作成過程で現地調査を行う設問の流れと一致。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "誤りは1。労務調達計画は施工計画の立案時に検討すべき事項だが、発注者の施工計画書作成要領では独立した一律の記載事項としては挙げられていない。提出する施工計画書には契約書・設計図書又は監督職員の書面による追加指示で指定された事項を記載するため、個別仕様で要求される場合は別である。近隣環境・地質条件の調査と現地事前調査は施工計画立案の基本事項である。",
+      "choiceExplanationPatches": {
+        "1": "誤り。労務の調達や配置は施工計画で検討するが、労務調達計画を提出用の施工計画書に必ず独立して記載するという一般的な義務とは異なる。契約書・設計図書又は監督職員の書面による追加指示で個別指定がある場合はその内容を記載する。"
+      },
+      "technicalRemaining": null
+    }
+  ]
+}

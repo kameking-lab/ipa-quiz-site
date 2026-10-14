@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-11T03:59:03.462636+00:00",
+  "reviewer": {
+    "role": "independent non-implementer",
+    "agent": "/root/sokuryoshi_release_review",
+    "scope": "civil1 2026-07-05 paper B question 7 only"
+  },
+  "decision": "HOLD_EXPLANATION_CHOICES_2_3",
+  "publicationApproval": false,
+  "officialAnswerNumber": 1,
+  "originalQuestionOrAnswerModified": false,
+  "summary": "公式正答1を維持する。肢1・4は原図と31条の請負関係から説明可能。一方、肢2・3を同時に誤りとする一次解釈は今回取得・精読した資料では確認できず、全肢解説の法的整合性について限定HOLDとする。公式正答が誤りであると断定したものではない。",
+  "examDate": "2026-07-05",
+  "scopeCompleted": [
+    "B7原文・全4肢・公式正答1・施工体制図を転記JSONと原ページ画像で確認",
+    "試験日適用版の安衛法29条、31条1項・2項と安衛則655条をローカルe-Gov API取得原文で精読",
+    "厚労省掲載2018ガイドラインの注文者義務と自己所有・管理設備の説明を実取得閲覧",
+    "三柴丈典原著研究のPDF40〜42ページ（冊子238〜240頁）、特に3.2.1.1趣旨・3.2.1.2内容を抽出本文及び関連ページ画像で精読"
+  ],
+  "sources": [
+    {
+      "kind": "source-transcription",
+      "path": "C:/wt/civil1-latest-two-20261011/reports/civil1-2026-july/source-transcription.json",
+      "sha256": "7b998b2022184718e1d5d8ccfe0e543cf5da7fb8aae2a543e10fa061f0f7e664",
+      "record": {
+        "paper": "B",
+        "number": 7,
+        "pdfPage": 5,
+        "officialAnswerNumber": 1
+      }
+    },
+    {
+      "kind": "original-page-image",
+      "path": "C:/Users/kanet/AppData/Local/Temp/civil1-latest-two-20261011/B7-2026-original-page.png",
+      "sha256": "f78607f53778c329d803ef9afc2b18d7f0d557b2fb3efd01c717b55b9c0ca862",
+      "finding": "原図・肢2/3の否定文は転記と一致。OCR誤りの仮定で解消できない。"
+    },
+    {
+      "kind": "official-question",
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaib.pdf",
+      "sha256FromExistingSourceRecord": "6e8ee05d9773b4be548d34ace43ce5043445bcebeadbd3a8e6298e15800f495f"
+    },
+    {
+      "kind": "official-answer",
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_seitou.pdf",
+      "sha256FromExistingSourceRecord": "aebeaf4a0fbb5f758afa9952d128b35a961119ea5dafb44923e1ec78187c6e46",
+      "note": "正答番号1の保持。出題者の理由解説を取得したという意味ではない。"
+    },
+    {
+      "kind": "official-law-api-capture",
+      "path": "C:/Users/kanet/AppData/Local/Temp/civil1-latest-two-20261011/law31-exam-date.json",
+      "lawRevisionId": "347AC0000000057_20260401_507AC0000000033",
+      "sha256": "b765cc56374c110d56a7aa888fb63d0ef3d6c86917446e5590d1463cd0fa140c",
+      "readArticles": [
+        "29",
+        "31"
+      ]
+    },
+    {
+      "kind": "official-law-api-capture",
+      "path": "C:/Users/kanet/AppData/Local/Temp/civil1-latest-two-20261011/osh-regulation-exam-date.json",
+      "lawRevisionId": "347M50002000032_20260701_506M60000100079",
+      "sha256": "e7c667d90ac15d9b4e60d00bfa72a528b1ccab56140cea6afcbdce2305058654",
+      "readArticles": [
+        "655"
+      ]
+    },
+    {
+      "kind": "MHLW-hosted-guideline",
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11300000-Roudoukijunkyokuanzeneiseibu/0000210512.pdf",
+      "date": "2018-01",
+      "location": "印刷7頁・注文者として実施しなければならない事項",
+      "finding": "自己所有又は管理設備等を下請労働者に使用させる注文者の措置義務と、同一設備に複数の義務注文者がいる場合の後次注文者の適用除外を説明。元方の指導・統括義務とは別立て。",
+      "authorityLimit": "厚労省掲載のガイドライン。B7個別事実への行政回答ではない。"
+    },
+    {
+      "kind": "original-author-legal-research",
+      "title": "労働安全衛生法第29条から32条の逐条解説",
+      "author": "三柴丈典（近畿大学法学部教授）",
+      "url": "https://mhlw-grants.niph.go.jp/system/files/report_pdf/202023008A-buntan1-5_2.pdf",
+      "path": "C:/Users/kanet/AppData/Local/Temp/civil1-latest-two-20261011/law31-original-research.pdf",
+      "sha256": "ed102d64b44ac276af5f37522b0453fc19703798d787d0032b49e976d7fc061c",
+      "location": "PDF40〜42ページ（冊子238〜240頁）3.2.1.1・3.2.1.2",
+      "finding": "設備の管理権やリスク情報を持つ注文者の規制として31条を説明。31条2項は同一物について最先次の該当注文者だけに措置義務を課す。29・30・15条の統括管理及び20〜25条の個別事業者義務とは区別する。",
+      "authorityLimit": "原著者の法研究であり、拘束的行政解釈又はB7出題者解説ではない。共有された正常取得PDFを使用。"
+    }
+  ],
+  "legalAnalysis": {
+    "article31_1": "自ら仕事を行う注文者が当該建設物等をその請負人（後次の全請負人を含む）に係る作業従事者に使用させるという条件が必要。元請という地位だけから、下請持込の全設備について当該義務を負うとは今回資料から導けない。",
+    "article31_2": "同一の建設物等について31条1項の義務を負う注文者が数次請負により複数となる場合、後次の注文者には同項を適用しない。この明文を無視してA・C双方に同一の31条措置義務を課す解説は支持できない。",
+    "regulation655": "31条1項の場合の足場について最大積載荷重の設定・表示、所定時の点検・補修等を具体化する規定であり、31条2項の適用除外を消す独立の請負階層横断規定とは読めない。",
+    "separateDuties": "Aの29条上の指導・指示義務や、各雇用事業者の20〜25条上の義務が残ることはあり得る。しかしそれらを、設問の注文者としての積載荷重表示・点検義務と同一視して肢2/3を同時否定する根拠は得られていない。"
+  },
+  "choiceFindings": [
+    {
+      "choice": 1,
+      "finding": "SUPPORTED_WITH_STEM",
+      "reason": "AがBに組み立てさせ使用させる作業足場につき、B・Cと後次のDはAの請負鎖内であり31条1項・655条の説明と整合する。"
+    },
+    {
+      "choice": 2,
+      "finding": "UNRESOLVED_AS_INCORRECT",
+      "reason": "C持込という記述だけでは、Aが移動式足場の管理・使用提供の注文者に当たる事実が確定しない。Cのみが当該設備の該当注文者なら、Aは31条の当該措置義務を負わないという文を否定できない。"
+    },
+    {
+      "choice": 3,
+      "finding": "CONDITIONALLY_INCORRECT",
+      "reason": "Cが自ら仕事を行い、管理する移動式足場をE側へ使用させ、上位に同じ設備の該当注文者がいない場合はCに31条1項・655条義務があり本肢は誤り。ただしAも同じ設備について該当するなら31条2項のC適用除外を検討する必要がある。"
+    },
+    {
+      "choice": 4,
+      "finding": "INCORRECT_FOR_ARTICLE31",
+      "reason": "原図のF・GはAとは別の発注者直下の請負鎖であり、Aのその請負人に含まれない。他の調整義務の有無は本肢の31条上の注文者義務とは区別する。"
+    }
+  ],
+  "conditionalConsistencyCheck": [
+    {
+      "condition": "移動式足場についてCのみが31条1項の使用提供・管理を担う該当注文者",
+      "result": "肢3を誤りと説明できるが、肢2の否定根拠を得られない。"
+    },
+    {
+      "condition": "移動式足場についてAとCがともに31条1項の条件に該当",
+      "result": "31条2項により後次のCが適用除外となるため、肢2を誤りと説明しても肢3の同時否定が困難。"
+    },
+    {
+      "condition": "Aの元方指導義務とCの設備注文者義務を別々に適用",
+      "result": "両社に何らかの安全義務があることは説明し得るが、設問の注文者としての表示・点検等の義務を両者に課す説明には、明確な適用関係の一次解釈が別途必要。"
+    }
+  ],
+  "actualEvidenceGaps": [
+    {
+      "gap": "当該移動式足場の管理・使用提供関係",
+      "needed": "Cが単独で所有管理してEに使用させるのか、Aが調達・設置・管理・使用指示に関与して自ら使用させる注文者となるのかを示す事実又は出題者の明示的前提。C持込だけでは確定しない。"
+    },
+    {
+      "gap": "31条2項の具体的適用",
+      "needed": "同一移動式足場についてAとCの双方を義務主体としながら後次注文者Cの適用除外が生じないとする根拠、又は義務内容・対象時点が別であることの明示。"
+    },
+    {
+      "gap": "注文者義務という設問用語の範囲",
+      "needed": "肢2を29条等の元方義務で否定する意図であれば、31条・655条に基づく表示点検義務との違いを説明する公式出題解釈又は当該事実に対応する行政解釈。"
+    },
+    {
+      "gap": "自ら仕事を行う要件の細部",
+      "needed": "Cが31条1項の自ら仕事を行う注文者に該当する前提。図は請負階層を示すが設備管理の詳細や自ら施工する作業範囲までは示さない。"
+    }
+  ],
+  "requiredNextAction": "公式出題者の解説・訂正情報又は当該施工体制と移動式足場について31条1項/2項及び655条の適用を特定する一次解釈を確認するまで、肢2/3の断定解説を公開PASSにしない。正答1・原文はそのまま保持する。",
+  "limits": [
+    "B7以外の全量再査読・テスト・Git操作は実施していない。",
+    "公式資料が存在しないと断定する網羅的調査ではなく、今回実取得・精読した根拠では解消できないという限定判断。",
+    "2018/2020資料の旧文言と試験日適用法の作業従事者拡張は区別した。拡張改正だけでは注文者間の31条2項適用問題は解消しない。",
+    "403等アクセス拒否の回避は行っていない。原著PDFのWeb抽出容量制限は拒否と扱わず、rootが通常取得した共有PDFを読んだ。",
+    "本レビューで公開・マージ・デプロイ又はHOLD解除は行っていない。"
+  ]
+}

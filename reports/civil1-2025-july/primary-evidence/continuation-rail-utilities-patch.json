@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETE",
+  "manifestSha256": "a5741465f022e2a1d9d6c9eeb4671a8065f50d95835a42785297a38bc45b5d98",
+  "inputSha256": "43e60628eea2a9059779a1ebff90b5019dfb092b1867fc369041bdf641456cc6",
+  "items": [
+    {
+      "key": "2025-A46",
+      "choiceUpdates": [
+        {"choice": 1, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "鉄道コンクリート路盤の粗骨材最大寸法25 mmを示す、2025年検定前の鉄道事業者・施工者原規程の表値が未確認。2020年の類似試験問題は独立施工根拠にしない。", "proposedExplanation": null},
+        {"choice": 3, "verdict": "HOLD_PRIOR_PARTIAL_WITH_ADDITIONAL_CONTEXT", "sources": [{"url": "https://www.jstage.jst.go.jp/article/jcigsjournal/29/0/29_49/_pdf", "page": "PDF p.6（印刷p.54）", "section": "パイルスラブ式盛土の動的応答解析", "evidence": "コンクリート路盤の残留沈下を重要な要素として評価し、高盛土解析モデルの盛土中央で最大約10 mmと報告する。", "sourceType": "ORIGINAL_RESEARCH_RAILWAY_EMBANKMENT", "publicationDate": "2014", "scopeNote": "地震時変位の解析であり、施工直後の沈下収束や施工開始時期には適用できない。"}], "remainingGap": "残留沈下の収束確認または管理値を踏まえてコンクリート路盤施工開始を判断する原条項が必要。", "proposedExplanation": null},
+        {"choice": 4, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "鉄道コンクリート路盤に対するプライムコートの標準散布量1～2 L/m²および粒度調整砕石への水分吸収防止という目的を直接示す原著が未確認。道路舗装の散布量を流用しない。", "proposedExplanation": null}
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A47",
+      "choiceUpdates": [
+        {"choice": 1, "verdict": "HOLD_PRIOR_PARTIAL_WITH_ADDITIONAL_CONTEXT", "sources": [{"url": "https://patents.google.com/patent/JP5430356B2/ja", "page": "HTML description paragraphs around lines 63–81; PDF page not cited", "section": "発明の背景、従来技術", "evidence": "神東塗料の2014年公表原特許は、コンクリート路盤上の軌道スラブをCAモルタルで固定し、位置調整をモルタル充填前に行う構造を説明する。", "sourceType": "ORIGINAL_INVENTOR_PATENT_PUBLICATION_MIRROR", "publicationDate": "2014-02-26", "scopeNote": "固定後の敷設位置変更が『容易でない』との比較命題は直接書かれない。特許原文はGoogle Patents公開ミラーであり公的原ホスト照合も未了。"}], "remainingGap": "設置後のスラブ位置修正の難易度をバラスト軌道等と直接比較する、検定前の鉄道事業者・鉄道総研原著が必要。", "proposedExplanation": null},
+        {"choice": 2, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "継目遊間の整正を夏季・冬季に先立って行う具体的保守時期を規定する鉄道原著が未確認。JRTT軌道示方書2023年版のPDF p.21（印刷p.15）2-6は設定・記録を扱うが季節時期を示さない。", "proposedExplanation": null},
+        {"choice": 3, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "バラストが列車荷重による相互摩擦で丸くなる機序と、その状態で順次交換する管理措置を一緒に示す原著が未確認。施工者の道床劣化・交換紹介は摩耗丸化まで述べない。", "proposedExplanation": null},
+        {"choice": 4, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "レール製造・取扱い・保守・疲労・電食・腐食の各損傷原因と、一般に複数原因が競合することを明示する検定前の鉄道原著が未確認。", "proposedExplanation": null}
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A48",
+      "choiceUpdates": [
+        {"choice": 1, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "重機械使用時、施工前に現場全般の具体的事故防止対策を記した施工計画書を監督員へ提出する設問固有の原条項が未確認。国交省『土木工事安全施工技術指針』PDF p.81（印刷p.74）第11章第3節2は施工計画作成と事前協議まで。", "proposedExplanation": null},
+        {"choice": 2, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "列車見張員を責任者・従事員へ合図できる範囲内かつ安全な離隔位置に配置する具体的原条項が未確認。同国交省指針PDF p.81（印刷p.74）第11章第3節7は資格者の配置だけ。", "proposedExplanation": null},
+        {"choice": 3, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "停電責任者によるき電停止手続と、使用間合・時間・範囲・競合作業の事前打合せを示す鉄道事業者原条項が未確認。2021年類似試験設問は役割名の違いを含むため技術原著にできない。", "proposedExplanation": null}
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A53",
+      "choiceUpdates": [
+        {"choice": 1, "verdict": "HOLD_PRIOR_UNVERIFIED_WITH_ADDITIONAL_CONTEXT", "sources": [{"url": "https://www.kidoh.co.jp/%E6%96%B0%E9%98%B2%E7%88%86%E5%9E%8B%E6%8E%A8%E9%80%B2%E5%B7%A5%E6%B3%95%E6%96%BD%E5%B7%A5%E4%BA%8B%E4%BE%8B/", "page": "HTML 本掘進と曲線管理", "section": "推進力と縁切り", "evidence": "施工者の2021年事例は、土質による推進管の締付けリスクと縁切り時の推進力を報告する。", "sourceType": "ORIGINAL_CONTRACTOR_CASE_REPORT", "publicationDate": "2021-03-17", "scopeNote": "当該事例の方式は設問の圧入方式と同定できず、中断時間と誘導管締付け・一気到達の必要性は立証しない。"}], "remainingGap": "圧入方式の誘導管推進を中断したときの締付け・再推進不能・一気到達を直接述べる工法原著または発注者基準が必要。", "proposedExplanation": null},
+        {"choice": 2, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "オーガ方式の粘性土で先導体ヘッドへの付着による先端抵抗急増と、注水で切羽土を軟弱化する対処を直接結ぶ方式原著が必要。注水の歩掛や粘土付着防止剤の別方式資料は代用しない。", "proposedExplanation": null},
+        {"choice": 3, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "前面開放型ボーリング方式について、地下水位以下の粘性土と砂質土を区別した補助工法適用条件が必要。大阪府2024年8月版PDF pp.105–106（印刷I-5-1～2）は方式分類と別書籍参照のみで条件本文を含まない。", "proposedExplanation": null},
+        {"choice": 4, "verdict": "HOLD_PRIOR_PARTIAL", "sources": [], "remainingGap": "高透水・緩い地盤で泥水圧が切羽に作用しづらい場合に、送泥水の比重・粘性を高め、必要に応じ逸泥防止材を使う一連の条件を示す2025年検定前の方式原著が未確認。", "proposedExplanation": null}
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A54",
+      "choiceUpdates": [
+        {"choice": 4, "verdict": "HOLD_WITH_STRONG_CORROBORATION", "sources": [{"url": "https://www.touhokugiken.com/answer/r1/r1-doboku2Q-zitti-yakutyu.pdf", "page": "PDF p.5（印刷p.4）", "section": "令和元年度2級土木施工管理技術検定・実地試験（薬液注入）、問題5(1)", "evidence": "2019年の薬液注入プラント管理に関する元試験問題は、水道水を原則とし、使えない場合は『水質基準のpHだけでなく』他の条件も確認する旨を明記する。", "sourceType": "ORIGINAL_EXAM_QUESTION_THIRD_PARTY_COPY", "publicationDate": "2019", "scopeNote": "元問題の複製配布サイトで、元試験主催者ホスト未照合。pH範囲の数字はこの試験問題には書かれていない。調合水の原技術仕様書ではない。"}, {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=79aa4934&dataType=0&pageNo=1", "page": "HTML 法令本文の表48項（PDF該当なし）", "section": "水質基準に関する省令（平成15年厚生労働省令第101号）第1条・別表pH値", "evidence": "水道供給水に対するpH基準を5.8以上8.6以下と明示する。", "sourceType": "ORIGINAL_GOVERNMENT_WATER_SUPPLY_REGULATION", "publicationDate": "2003-05-30", "scopeNote": "現行統合本文には2026年施行改正もあるが、pH値は制定時からの基準。これ自体は薬液調合水の適用条件を定めない。地下水監視基準ではなく水道水基準。"}], "remainingGap": "2019年元試験問題と2003年水道水基準を組み合わせると選択肢の方向性は強く補強されるが、原試験の主催者ホスト照合と、非水道水を薬液調合に使う際にpH5.8～8.6を推奨する2025年以前の原技術仕様書をなお要する。水道水の飲用基準を自動的に調合水へ転用しない。", "proposedExplanation": null}
+      ],
+      "questionTechnicallyResolved": false
+    }
+  ],
+  "stoppedOperations": ["Aomori forest PDF HTTP403", "Tokyo sewer PDF HTTP503", "Internet Archive CDX inaccessible", "Claude cloud attach disabled", "JRTT R50401 civil specification PDF HTTP403", "A28 JICE sheet-pile design manual proxy refusal"],
+  "validation": {
+    "targetChoiceCount": 15,
+    "choiceUpdateCount": 15,
+    "newTechnicallyResolvedChoiceCount": 0,
+    "newTechnicallyResolvedQuestionCount": 0,
+    "priorSupportedChoicesUntouched": true,
+    "officialHostIdentityVerified": false,
+    "independentAcceptance": false,
+    "publicAcceptance": false,
+    "originalCoreMutated": false,
+    "researchLog": [
+      {"query": "鉄道 路盤コンクリート 骨材 最大粒径 25 仕様書 / コンクリート路盤 残留沈下 施工", "resultUrl": "https://www.jstage.jst.go.jp/article/jcigsjournal/29/0/29_49/_pdf", "checkedLocation": "2014年研究PDF p.6（印刷p.54）", "finding": "地震時の路盤残留沈下の解析値を示すが、盛土施工後の路盤施工開始時期を規定しない。"},
+      {"query": "スラブ軌道 敷設後 位置 調整 難しい / スラブ軌道 てん充層 撤去", "resultUrl": "https://patents.google.com/patent/JP5430356B2/ja", "checkedLocation": "2014年公表原特許・背景段落", "finding": "スラブを位置調整後CAモルタル固定する構造を確認。固定後の位置修正難度は明文なし。"},
+      {"query": "列車見張員 合図が可能な範囲 / 停電責任者 使用間合 競合作業", "resultUrl": "https://www.mlit.go.jp/tec/content/001464734.pdf", "checkedLocation": "PDF pp.80–82（印刷pp.73–75）第11章第3節", "finding": "施工計画・見張員資格・列車通過時中止を規定。設問1～3の固有文言やき電停止の手続はない。既存根拠を再評価しただけで追加採用なし。"},
+      {"query": "圧入方式 締め付け 推進 / オーガ方式 注水 粘性土 / ボーリング方式 地下水位以下 粘性土 / 泥水方式 逸泥防止材 比重", "resultUrl": "https://www.kidoh.co.jp/%E6%96%B0%E9%98%B2%E7%88%86%E5%9E%8B%E6%8E%A8%E9%80%B2%E5%B7%A5%E6%B3%95%E6%96%BD%E5%B7%A5%E4%BA%8B%E4%BE%8B/", "checkedLocation": "HTML 本掘進と曲線管理", "finding": "締付けの施工者事例だが圧入方式と同定できない。"},
+      {"query": "薬液注入 調合水 水道水 pH / 水道水が使用できないとき 薬液", "resultUrl": "https://www.touhokugiken.com/answer/r1/r1-doboku2Q-zitti-yakutyu.pdf", "checkedLocation": "PDF p.5（印刷p.4）問題5(1)", "finding": "2019年元試験文に水道水原則と代替水のpH等確認を発見。ただし元試験ホスト未照合で数値なし。"},
+      {"query": "水質基準に関する省令 pH値 5.8 8.6", "resultUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=79aa4934&dataType=0&pageNo=1", "checkedLocation": "第1条別表48項", "finding": "水道水のpH5.8～8.6を確認。調合水規定ではない。"}
+    ],
+    "mediaStatus": "pnpm media:status failed because its git subprocess returned EPERM in this sandbox; no media process or repository mutation was attempted."
+  }
+}

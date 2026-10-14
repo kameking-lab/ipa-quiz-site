@@ -1,0 +1,88 @@
+{
+  "reviewKind": "Independent technical review limited to two newly proposed choice clearances",
+  "reviewDate": "2026-10-11",
+  "items": [
+    {
+      "key": "2025-A19",
+      "choice": 1,
+      "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+      "reason": "原肢の誤りは低流動性コンクリートを選ぶ結論にある。2021-01-28のConComオールケーシング事例は、引抜き跡の板厚相当空隙への充填と、流動性低下による鉄筋かご外側の充填不足リスクを直接説明する。表層ケーシングを扱う2005年特許は空隙へ流入する分だけ余盛り天端が降下する容積機構の補助根拠となる。両者を区別した定性的説明で足り、全原肢と同文の単一資料は不要。特許の施工方法・余盛り数値をオールケーシング一般へ転用しない。元の候補解説の『杭頭不良となる』は原著に合わせ『なることがある』とする。現場原因には引抜き遅れ等もあり、低流動性を唯一の原因とはしない。",
+      "suggestedExplanation": "不適当。ケーシング引抜きで生じる空隙にはコンクリートが充填される必要がある。オールケーシングの施工事例では、流動性が低下すると鉄筋かご外側の充填不足を招くことがある。したがって、天端低下を見込むことを理由に低流動性のコンクリートを選ぶのは誤りで、施工に必要な流動性を確保する。空隙への流入による天端低下は表層ケーシングの特許でも説明されるが、低下量やスランプ値を一律には定めない。",
+      "sourcesChecked": [
+        {
+          "url": "https://concom.jp/contents/countermeasure/vol028/",
+          "date": "2021-01-28",
+          "locator": "原因と対処方法、および同様の失敗をしないための事前検討・準備、施工時の留意事項等",
+          "checkMethod": "web.open original publisher article",
+          "directSupport": "揺動式オールケーシングの現場事例。流動性低下による外周充填阻害とケーシング引抜き時の板厚相当空隙を記述。予防の説明でも低流動性による出来形不足の可能性を指摘。",
+          "qualification": "個別事例とその予防解説。原因の推定表現を保持し、普遍的数値や唯一原因へ拡張しない。"
+        },
+        {
+          "url": "https://patents.google.com/patent/JP2005273411A/ja",
+          "date": "2005-10-06",
+          "locator": "Description: 表層ケーシングの施工説明、余盛り部分の形成と引上げ、図4説明",
+          "checkMethod": "web.open inventor disclosure in Google Patents mirror",
+          "directSupport": "ケーシング引上げ跡への余盛りコンクリート流入と天端降下を説明。",
+          "qualification": "表層ケーシングの特許であり、オールケーシング施工標準ではない。採用は容積機構の補助説明に限る。"
+        }
+      ]
+    },
+    {
+      "key": "2025-A32",
+      "choice": 2,
+      "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+      "reason": "林野庁平成24年3月仕様書の第358条7は路床安定処理材の散布・混合時の粉塵対策としてシート設置を直接挙げる。同書第211条2にはセメント安定処理の材料も含まれ、石灰専用の条項と読む根拠はない。長野県の道路舗装資料はセメント系固化材を含む路床安定処理と、人家連担部等での防塵型安定材の検討を直接記述する。この組合せは原肢の『対策が必要な場合』の二つの対策例を支持する。林道仕様を全道路で一律必須の施工仕様と扱わず、長野県資料の2025当時の同一版を認定しないことが条件。シートの設置寸法・万能性や特定材料の全現場適合性は推測していない。",
+      "suggestedExplanation": "適当。セメント・セメント系安定材の散布や混合で粉じん対策が必要な場合は、防じん型安定材の使用やシートの設置などで飛散を抑える。林野庁の路床安定処理工の仕様書はシート設置を挙げ、長野県の道路舗装資料も人家連担部などで防じん型安定材を検討するとしている。対策は現場条件に応じて選ぶ。",
+      "sourcesChecked": [
+        {
+          "url": "https://www.rinya.maff.go.jp/tohoku/apply/publicsale/koukoku_kyoku/pdf/rindoukoujihyoujunsiyousyo.pdf",
+          "date": "2012-03",
+          "locator": "表紙PDF物理1頁、第358条は物理85-86頁・印刷82-83頁、第358条7は物理86頁・印刷83頁、第211条2は物理46頁・印刷43頁",
+          "checkMethod": "web.open original agency PDF text; screenshot requests for cover and physical page 86 returned references without model-visible pixels",
+          "directSupport": "第358条7のシート設置、第211条2のセメント安定処理材。表紙で平成24年3月を確認。",
+          "qualification": "林道工事標準仕様書及び施工管理基準。第358条7単独にセメント系との限定語はない。抽出本文の『粉塵材』を防塵型安定材の直接引用として訂正採用しない。"
+        },
+        {
+          "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/3-2hosou_1.pdf",
+          "date": null,
+          "locator": "PDF物理9頁・印刷3-2-9、5 路床の改良、1 安定処理工法",
+          "checkMethod": "web.open original prefectural PDF text; screenshot request for physical page 9 returned reference without model-visible pixels",
+          "directSupport": "セメント系固化材を含むセメント等による路床安定処理と、商店・人家連担地域での防塵型安定材検討を記述。",
+          "qualification": "本文から正式版年月は確認せず。PDFタイトルの271001修正だけで2025同一版を認定しない。条件付き対策例の技術的裏付けに限定。"
+        }
+      ]
+    }
+  ],
+  "inputHashes": {
+    "algorithm": "SHA256",
+    "foundation/input.json": "eeaadfca3ff1279bae7fb3b22d2d8edb398b3babe3e9d1a9d3776254787cae14",
+    "foundation/patch.json": "87347ac5dea4d790a47c0b7121915756b8e3b739144ea8917c9462fbc2493b01",
+    "concrete/input.json": "248ca1507f7c0961b8b9a49853310916e035d199feb5eb921c1ba257650d7ee3",
+    "concrete/patch.json": "0082a2534991e55859d0534a286be8a5f5851379c569c3bdf808abe3b8f170bd"
+  },
+  "scope": [
+    {"key": "2025-A19", "choice": 1},
+    {"key": "2025-A32", "choice": 2}
+  ],
+  "publicAcceptance": false,
+  "independentPublicationAcceptance": false,
+  "preservedHolds": [
+    "公式原本identity101未了",
+    "global権利確認未了",
+    "公開受入れ未了",
+    "claude-opus-5-5 firstParty receipt未了",
+    "全101問global HOLD"
+  ],
+  "validation": {
+    "other40ChoicesReviewed": false,
+    "all101QuestionsReviewed": false,
+    "questionLevelClearance": false,
+    "manuscriptEdits": 0,
+    "repositoryCodeEdits": 0,
+    "otherPatchEdits": 0,
+    "heavyBuilds": 0,
+    "stoppedRoutesRetried": false,
+    "newPaidApiOrAuthentication": false,
+    "reportOnlyWrite": true
+  }
+}

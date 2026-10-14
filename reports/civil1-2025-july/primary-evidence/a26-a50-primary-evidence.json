@@ -1,0 +1,126 @@
+{
+  "scope": "2025年度一級土木施工管理技術検定・第一次検定の問題A26〜A50について、既存HOLDのうち数値・工法条件に関する局所的な一次資料照合。A40・A44は対象外。",
+  "checkedAt": "2026-10-11",
+  "candidateFile": "candidate-a26-a50.json",
+  "candidateEdited": false,
+  "acceptanceStatus": "HOLD",
+  "limitations": [
+    "2025年度問題の公式ホストにある原本との同一性は未確認。",
+    "独立した全問受入れ査読は未了。このファイルは公開可否または全25問のPASSを意味しない。",
+    "根拠の一部は個別現場の施工例または2026年版仕様書であり、2025年試験時点の一般的な標準値を直接証明しない。"
+  ],
+  "evidence": [
+    {
+      "number": 26,
+      "choiceNumber": 1,
+      "sourceTitle": "河川土工マニュアル 第3章 河川土工の設計",
+      "sourcePublisher": "国土技術研究センター",
+      "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_03.pdf",
+      "pdfPage": 67,
+      "printedPage": 125,
+      "section": "3.4.2 堤防拡築の種類と目的、(1)裏腹付け・(2)嵩上げの後段、PDF表示66/75〜67/75頁",
+      "sourceFinding": "既設堤防が透水性の良い材料の場合に裏腹付けで透水性を下げると浸潤線上昇を助長するおそれがある。堤脚付近の透水性材料は排水に寄与する。表腹付けでは強度が大きい難透水性材料が必要と述べる。",
+      "choiceExplanationAlignment": "既存解説が示す『表側は難透水、裏側は排水を考慮』という方向を支持し、肢の材料配置が逆であることを裏付ける。ただし『既設堤防との透水係数の大小』を一律の数値基準として直接規定した箇所ではない。",
+      "evidenceStrength": "substantial_but_not_exact_comparison",
+      "revisionNeeded": "解説の『原則』は条件付きの材料選定であることが分かる表現に弱める余地がある。"
+    },
+    {
+      "number": 26,
+      "choiceNumber": 2,
+      "sourceTitle": "土木工事共通仕様書 第1編第2章第3節 河川土工・海岸土工・砂防土工",
+      "sourcePublisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun01_syo02_setsu03.html",
+      "pdfPage": null,
+      "printedPage": null,
+      "section": "1-2-3-3 盛土工、6.作業終了時等の排水処理",
+      "sourceFinding": "盛土工の作業終了または中断時には、表面に4％程度の横断勾配を設け、平坦に締固めて排水を良好にする。",
+      "choiceExplanationAlignment": "既存解説の表面排水目的と3〜5％という範囲の中に4％が含まれることを傍証する。3〜5％という範囲そのものをこの資料は記載しない。2026年版であり2025年試験当時の規定を直接示さない。",
+      "evidenceStrength": "partial_current_specification",
+      "revisionNeeded": "3〜5％の厳密な出典と2025年時点の適用文書は引き続き確認が必要。JICE第7章の『段切り水平部分3〜5％』を築堤中の天端横断勾配と取り違えない。"
+    },
+    {
+      "number": 26,
+      "choiceNumber": 3,
+      "sourceTitle": "河川土工マニュアル 第7章 嵩上げ・拡幅",
+      "sourcePublisher": "国土技術研究センター",
+      "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_07.pdf",
+      "pdfPage": 15,
+      "printedPage": 328,
+      "section": "7.1 断面拡大工法、(b)盛土の施工、③既設堤防の段切り、PDF表示15/259頁",
+      "sourceFinding": "新旧堤体の一体化のため段切りを行う。1段の高さは転圧厚の倍数、最小高0.5m。1層のまき出し厚30cmから段切り高さ60cmが多いと記す。",
+      "choiceExplanationAlignment": "既存解説の50〜60cmという目安と新旧堤防の一体化目的を直接支持する。",
+      "evidenceStrength": "direct",
+      "revisionNeeded": null
+    },
+    {
+      "number": 39,
+      "choiceNumber": 2,
+      "sourceTitle": "土木工事共通仕様書 第9編 ダム編 第1章 コンクリートダム",
+      "sourcePublisher": "国土交通省関東地方整備局",
+      "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+      "pdfPage": 10,
+      "printedPage": "9-7",
+      "section": "9-1-4-9 コンクリートの打込み、4.1リフトの高さ・6.打ち上がり速度等・7.打込み厚さ、PDF表示10/29頁",
+      "sourceFinding": "1リフト高は設計図書による。リフト高さ0.75m以上1.0m未満、1.0m以上1.5m未満、1.5m以上2.0m以下で打継ぎ材齢の区分を設ける。1リフトを複数層に分ける場合の締固め後1層厚は40〜50cm。",
+      "choiceExplanationAlignment": "0.3〜0.5mを柱状ブロック工法の『標準リフト高』と断定する肢には疑義を与える。ただし本仕様書はリフト標準高を数値で一律に示さず、工法名もここでは明示しないため、誤りの直接証明には不足する。",
+      "evidenceStrength": "partial",
+      "revisionNeeded": "既存解説の『一般的なリフト高はこれより大きい』には、柱状ブロック工法を名指しした一次資料での再確認が必要。"
+    },
+    {
+      "number": 39,
+      "choiceNumber": 3,
+      "sourceTitle": "札内川ダム The RCD Method",
+      "sourcePublisher": "国土交通省北海道開発局 帯広開発建設部",
+      "url": "https://www.hkd.mlit.go.jp/ob/obihiro_kasen/ctll1r0000004tux.html",
+      "pdfPage": null,
+      "printedPage": null,
+      "section": "2.Transportation and spreading、3.Spreading、5.Compaction",
+      "sourceFinding": "札内川ダムではブルドーザで25cmずつ3層に敷き均して1リフトとし、振動ローラで締め固める。25cm×3層で0.75m相当。",
+      "choiceExplanationAlignment": "既存解説の0.75mを3層とする施工例を直接支持する。個別現場の例であり、全国共通の『一般的』条件を単独で証明するものではない。",
+      "evidenceStrength": "direct_project_example",
+      "revisionNeeded": "総称的な『一般的に』を裏付ける標準資料は別途確認が必要。"
+    },
+    {
+      "number": 39,
+      "choiceNumber": 3,
+      "sourceTitle": "滝沢ダム 動画★滝沢ダム建設機械",
+      "sourcePublisher": "独立行政法人水資源機構",
+      "url": "https://www.water.go.jp/kanto/arakawa/takizawa/doga.html",
+      "pdfPage": null,
+      "printedPage": null,
+      "section": "(3)ブルドーザ（敷均し）、(4)ブルドーザ（転圧）、(6)振動ローラ",
+      "sourceFinding": "滝沢ダムでは27cm×4層を敷均し・転圧後に1.0mとし、振動ローラで転圧したと記す。",
+      "choiceExplanationAlignment": "既存解説の1.0mを4層とする施工例を直接支持する。個別現場の例であり、全国共通の『一般的』条件を単独で証明するものではない。",
+      "evidenceStrength": "direct_project_example",
+      "revisionNeeded": "総称的な『一般的に』を裏付ける標準資料は別途確認が必要。"
+    }
+  ],
+  "unresolved": [
+    {
+      "number": 29,
+      "choiceNumber": 2,
+      "technicalIssue": "既存解説は、地中に半分以上埋まる見込みの大転石を『取り除いて処理する』と断定している。公式正答が肢2を誤りとすることは保持するが、除去を常に要するとする一次資料は確認できていない。",
+      "proposedConservativeRevision": "誤り。『半分以上が地中にある』という条件だけでは大転石の存置を決められない。根入れや基礎との一体性、必要な処理条件を適用基準に照らして判断する。",
+      "revisionStatus": "提案のみ。これも処理条件を示す一次資料を確認してから採否を決める。2/3という閾値を民間解説だけから採用しない。",
+      "verifiedPrimarySourceUrl": null
+    },
+    {
+      "number": 39,
+      "choiceNumber": 1,
+      "technicalIssue": "細骨材の降雨後3〜4日以上という水切り期間を確認できる公的な一次資料を見つけられていない。",
+      "verifiedPrimarySourceUrl": null
+    },
+    {
+      "number": 42,
+      "choiceNumber": 1,
+      "technicalIssue": "捨石の表層3個並び以上および粒径配置の条件を直接示す公的一次資料を確認できていない。",
+      "verifiedPrimarySourceUrl": null
+    },
+    {
+      "number": 46,
+      "choiceNumber": 4,
+      "technicalIssue": "鉄道コンクリート路盤のプライムコート1〜2L/m²という標準散布量を直接示す公的一次資料を確認できていない。",
+      "verifiedPrimarySourceUrl": null
+    }
+  ]
+}

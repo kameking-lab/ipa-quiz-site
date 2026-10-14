@@ -1,0 +1,738 @@
+{
+  "scope": "2025 一級土木第一次 A32-A39 technical HOLD resolution only",
+  "checkedAt": "2026-10-11",
+  "inputFile": "pavement-dams-input.json",
+  "originalQuestionChoicesAnswersChanged": false,
+  "sourceCopyVerifiedAgainstOfficialHost": false,
+  "independentAcceptanceCompleted": false,
+  "publicAcceptance": "NOT_ASSESSED",
+  "sourceAccessNote": "2022東京都仕様書は既存取得写しを照合。Webで正常公開の原資料を確認。Python直接ネットワークは接続拒否のため再試行・回避していない。",
+  "items": [
+    {
+      "key": "A32",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.144 / 冊子 p.133",
+              "section": "4.2.3.1 路床工 イ・ク",
+              "evidence": "土質に適した締固め機械と均一支持力を要求する。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.pwrc.or.jp/thesis_shouroku/thesis_pdf/1702-P026-031_fujita.pdf",
+              "page": "PDF p.6 / 論文 p.31",
+              "section": "6 今後の課題",
+              "evidence": "土木研究所による盛土転圧実験で、条件によって転圧回数増加時に地盤反力係数が低下し、過転圧による表層の乱れ・不均質化の可能性を指摘。路床一般の必然的な強度低下までは実証しない。",
+              "sourceType": "national_research_institute_original_study"
+            }
+          ],
+          "remainingGap": "原著実験は条件依存の地盤反力係数低下を示す。あらゆる盛土路床の過転圧で強度が低下するという一般化は未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/3-2hosou_1.pdf",
+              "page": "PDF p.9 / 冊子 p.3-2-9",
+              "section": "5 路床の改良・1 安定処理工法",
+              "evidence": "商店・人家が連担する地域では、粉塵抑制を目的とする防塵型安定材の使用を検討する。設問のシート設置は記載なし。",
+              "sourceType": "road_manager_original_manual"
+            }
+          ],
+          "remainingGap": "防塵型安定材は道路管理者原資料で確認。シート設置の代替策を直接示す発行者原本は未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.144 / 冊子 p.133",
+              "section": "4.2.3.1 路床工 エ・カ・ク",
+              "evidence": "乱すと支持力が低下する土は路床土を損なわず施工し、不良箇所は良質土で置換える。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.maff.go.jp/j/nousin/attach/pdf/noudou-14.pdf",
+              "page": "PDF p.24 / 冊子 p.397",
+              "section": "第7章 路床及び舗装の設計 (2)置換工法",
+              "evidence": "置換工法の施工では、軟弱路床土を所定深さまで掘削し、掘削面以下の層を乱さないと明記。設問の「十分にかきほぐす」と正面から矛盾する。",
+              "sourceType": "government_original_design_manual"
+            },
+            {
+              "url": "https://www.mext.go.jp/component/a_menu/education/detail/__icsFiles/afieldfile/2017/10/02/1293802_10.pdf",
+              "page": "PDF p.44 / 冊子 p.38",
+              "section": "4.4.3 置換工 (a)",
+              "evidence": "置換の掘削では掘削面以下の層を乱さず施工することを明記した2017年版の標準仕様書。",
+              "sourceType": "government_original_specification"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.144 / 冊子 p.133",
+              "section": "4.2.3.1 路床工 ウ・ク",
+              "evidence": "降雨時の転圧中止と均一支持力の確保を規定。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.hrr.mlit.go.jp/niikoku/work/pdf/technology/22_08.pdf",
+              "page": "PDF p.1",
+              "section": "令和3年度新潟国道事務所 技術研究発表・防塵対策と路床保護対策",
+              "evidence": "路床盛土後に下層路盤を先行施工し、砕石で覆うことにより雨から路床面を保護し、所定以上のCBR・締固め密度を得た実工事報告。長期間の仮排水・工事車両管理の一般基準ではない。",
+              "sourceType": "road_operator_original_case_report"
+            }
+          ],
+          "remainingGap": "降雨からの路床保護は実工事で確認。後続層まで期間がある場合の仮排水・工事用車両の通過による荒れ防止を一体で記す原条項は未確認。"
+        }
+      ],
+      "technicalRemaining": "肢3の誤りは直接確認。肢1の過転圧と肢4の保護は原著実験・実工事で部分確認。肢2のシート代替、肢4の仮排水等の直接条項は不足。",
+      "explanationPatch": "正答は3。置換工法では軟弱な路床土を所定深さまで掘削し、掘削面以下の層を乱さず、置換材料を締め固める。掘削面を十分にかきほぐすという肢3の操作は原基準に反する。"
+    },
+    {
+      "key": "A33",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.145 / 冊子 p.134",
+              "section": "4.2.3.4 上層路盤 ウ",
+              "evidence": "粒度調整路盤材は修正CBR試験で求めた最適含水比付近で締め固める。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.145 / 冊子 p.134",
+              "section": "4.2.3.5 セメント処理混合物 エ",
+              "evidence": "敷均し後直ちに転圧し混合開始後2時間以内に完了する。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.kensetu-bukka.or.jp/wp-content/themes/custom/pdf/teisei/dobokutosyo/710_20200326.pdf",
+              "page": "PDF p.2 / 書籍p.315",
+              "section": "セメント安定処理工法の修正後本文",
+              "evidence": "セメントの硬化が始まる前に締固めを完了する。",
+              "sourceType": "publisher_original_erratum"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.kensetu-bukka.or.jp/wp-content/themes/custom/pdf/teisei/dobokutosyo/710_20200326.pdf",
+              "page": "PDF p.4 / 書籍p.315",
+              "section": "④瀝青安定処理工法・修正後本文",
+              "evidence": "加熱混合した瀝青安定処理路盤材をアスファルトフィニッシャで敷き均す。",
+              "sourceType": "publisher_original_erratum"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.143 / 冊子 p.132",
+              "section": "4.2.2(6)イ 施工継目",
+              "evidence": "セメント端部は垂直に切り取り、石灰端部は前日の施工端部を乱して打ち継ぐ。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": null,
+      "explanationPatch": "正答は2。粒度調整路盤は最適含水比付近で締め固め、加熱アスファルト安定処理路盤はアスファルトフィニッシャで敷き均す。セメント安定処理は硬化開始前に転圧を終え、石灰安定処理の施工端は前日端部を乱して打ち継ぐ。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "誤り。上層の粒度調整路盤材は、修正CBR試験で求めた最適含水比付近で締め固める。液性限界付近を目標とする記述は違う。"
+        },
+        {
+          "choice": 3,
+          "text": "誤り。建設機械施工技術必携の発行元修正情報では、瀝青安定処理路盤材をアスファルトフィニッシャで敷き均す。モータグレーダを一般機械とする記述は逆。"
+        }
+      ]
+    },
+    {
+      "key": "A34",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.147 / 冊子 p.136",
+              "section": "4.2.3.9 アスファルト混合物の運搬 イ",
+              "evidence": "運搬時の温度低下を防ぐためシート類で覆う。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.21 / 冊子p.40",
+              "section": "8-2(2) 保温処置",
+              "evidence": "寒冷期の温度低下は締固め不足を招くため二重シート等で保温する。",
+              "sourceType": "industry_author_original_guide"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.147 / 冊子 p.136",
+              "section": "4.2.3.10 舗設 ア",
+              "evidence": "降雨開始時は敷均しを止め、既敷均し部を速やかに締め固め完了する。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.22 / 冊子p.41",
+              "section": "8-3-1(1) 温度",
+              "evidence": "ポリマー改質混合物は通常のストレート混合物より高い温度で舗設する。",
+              "sourceType": "industry_author_original_guide"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.kensetu-bukka.or.jp/wp-content/themes/custom/pdf/teisei/dobokutosyo/710_20200326.pdf",
+              "page": "PDF p.3 / 書籍p.305",
+              "section": "6.6.4(2)3) 二次転圧・修正後本文",
+              "evidence": "タイヤローラ6～8回、適切な振動ローラ4～6回で規定密度を得るとの一般目安。",
+              "sourceType": "publisher_original_erratum"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": null,
+      "explanationPatch": "正答は1。寒冷期は温度低下が速いため運搬中に保温する。降雨開始後の既敷均し部は待たずに速やかに締め固め、改質混合物は通常より高めの施工温度を用いる。二次転圧の一般目安はタイヤローラ6～8回、振動ローラ4～6回で、肢4の回数関係は逆。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 4,
+          "text": "誤り。建設機械施工技術必携の発行元修正情報では、二次転圧の一般目安はタイヤローラ6～8回、適切な振動ローラ4～6回とする。タイヤローラの方が少ないとする記述は逆。"
+        }
+      ]
+    },
+    {
+      "key": "A35",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.144 / 冊子 p.133",
+              "section": "4.2.2(1)イ",
+              "evidence": "舗装箇所の切取りは破損周辺の健全部まで取り除く。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF p.51-53 / 冊子 p.6-48〜6-50",
+              "section": "6-7-4 維持補修工法の選択／6-7-6 局部打換工法",
+              "evidence": "路床・路盤の欠陥に起因する構造的破損と、破損程度に応じた局部打換えを補修工法として示す。オーバーレイ前に必ず局部打換えする一律条件までは規定しない。",
+              "sourceType": "road_manager_original_manual"
+            }
+          ],
+          "remainingGap": "構造的破損と局部打換工法の関係は確認。オーバーレイ前の局部欠陥補修を直接義務づける原条項は未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.23 / 冊子p.42",
+              "section": "8-3-4 交通開放",
+              "evidence": "舗装表面おおむね50℃以下、内部温度にも注意し必要時は強制冷却。",
+              "sourceType": "industry_author_original_guide"
+            },
+            {
+              "url": "https://www.kensetu-bukka.or.jp/wp-content/themes/custom/pdf/teisei/dobokutosyo/710_20200326.pdf",
+              "page": "PDF p.2 / 書籍p.315",
+              "section": "瀝青安定処理路盤・シックリフト",
+              "evidence": "シックリフトでは内部まで所定密度を得るため高温中に転圧。",
+              "sourceType": "publisher_original_erratum"
+            },
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF p.62 / 冊子 p.6-59",
+              "section": "6-7-12 部分断面打換工法 (4)留意事項 5)",
+              "evidence": "シックリフト工で施工して即日交通開放するときは舗設の冷却等に留意する、と道路管理者マニュアルに明記。早期わだち発生の因果説明までは同箇所にない。",
+              "sourceType": "road_manager_original_manual"
+            }
+          ],
+          "remainingGap": "即日交通開放時の冷却注意は直接確認。早期わだち掘れを生じる機序と頻度の一次研究は未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000801449.pdf",
+              "page": "PDF p.99 / 冊子 p.10-99",
+              "section": "10-14-4-7 2.路上表層再生工 (5)-(8)",
+              "evidence": "路面ヒータで初転圧温度110℃以上を確保し、既設混合物をかきほぐし、新規混合物と混合・敷均し後に初転圧110℃以上で締め固める。気象条件は一般アスファルト舗装工の規定を参照する。",
+              "sourceType": "road_manager_original_specification"
+            },
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF p.57 / 冊子 p.6-54",
+              "section": "6-7-8 路上表層再生工法 (4)留意事項 3)",
+              "evidence": "新規アスファルト混合物の使用量が少ないほど再生表層混合物が気象条件の影響を受けやすく、保温・既設表層の十分な加熱・早期締固めを要することを明記。",
+              "sourceType": "road_manager_original_manual"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.144 / 冊子 p.133",
+              "section": "4.2.2(1)ウ",
+              "evidence": "舗装切取り時は隣接面と基礎を損傷しない施工を要求。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": "コンクリート床版上の切削オーバーレイで床版の不陸調整をどう行うか直接条項未確認。"
+        }
+      ],
+      "technicalRemaining": "肢3は埼玉県道路管理者マニュアルで直接確認。肢1のオーバーレイ前の局部打換え、肢2の早期わだち機序、肢4のコンクリート床版不陸処理の直接根拠が不足。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 4,
+          "text": "誤り。既設舗装を切削するときにコンクリート床版を損傷させる施工は避ける。ただし、床版不陸をどの方法で処理するかは設計・補修基準の直接確認が必要。"
+        }
+      ]
+    },
+    {
+      "key": "A36",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.152 / 冊子 p.141",
+              "section": "4.2.5(3)(4) 排水性舗装",
+              "evidence": "既設舗装を不透水層とする場合、ひび割れ状況を調査し必要な浸透防止処置を講じる。瀝青材はタックコート用PKR-T。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.kensetu-bukka.or.jp/wp-content/themes/custom/pdf/teisei/dobokutosyo/710_20200326.pdf",
+              "page": "PDF p.4 / 書籍p.315",
+              "section": "4) プライムコートまたはタックコート",
+              "evidence": "プライムコートは粒度調整路盤の表面に散布、タックコートは処理路盤と上層の付着に用いる。",
+              "sourceType": "publisher_original_erratum"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.22 / 冊子p.41",
+              "section": "8-3-1(1) 温度",
+              "evidence": "所定締固め度の確保が供用後耐久性に大きく影響する。",
+              "sourceType": "industry_author_original_guide"
+            },
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.153 / 冊子p.142",
+              "section": "4.2.5(5) 施工管理",
+              "evidence": "締固め温度に影響する混合物温度低下対策を要求。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.152 / 冊子p.141",
+              "section": "4.2.5(4)イ 施工方法",
+              "evidence": "通常より温度低下が早く、速やかな敷均し・転圧を規定。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.21 / 冊子p.40",
+              "section": "8-2(2) 保温処置",
+              "evidence": "ポーラス混合物は特に温度低下が速い。",
+              "sourceType": "industry_author_original_guide"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.152 / 冊子p.141",
+              "section": "4.2.5(4)ウ 継目",
+              "evidence": "清掃後加温し敷均し混合物を密着。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.jmaa.jp/pdf/jmaa_pocketguide_jan2015j.pdf",
+              "page": "PDF p.22 / 冊子p.41",
+              "section": "8-3-3 継目",
+              "evidence": "清掃、加温、敷均し、締固めによる相互接着を明記。",
+              "sourceType": "industry_author_original_guide"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": null,
+      "explanationPatch": "正答は1。排水性舗装を既設舗装上で補修する場合、既設層のひび割れを調べ、必要な浸透防止処置を別途講じる。プライムコートは主に粒度調整路盤に散布するもので、既設舗装上のタックコートや防水処置と同一視できない。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "誤り。東京都仕様書は既設舗装を不透水層にする際、ひび割れ調査と必要な浸透防止処置を要求し、排水性舗装の層間瀝青材にはタックコートを挙げる。プライムコートをその防水処置と呼ぶのは不適切。"
+        }
+      ]
+    },
+    {
+      "key": "A37",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.149 / 冊子p.138",
+              "section": "4.2.4.1 製造・運搬",
+              "evidence": "コンクリート製造運搬は第3章のコンクリート工を準用。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": "荷卸前の受入確認と不良コンクリート廃棄までの直接条項未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.151 / 冊子p.140",
+              "section": "4.2.4.5 養生 ア・イ",
+              "evidence": "日光、風雨、乾燥から保護し、表面仕上げ直後から初期養生を行う。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p.21 / 冊子 p.16",
+              "section": "4-1 施工者が留意すべき点・初期養生／後期養生",
+              "evidence": "表面の急激な乾燥を防ぐため初期の塗膜養生を行い、シート養生が可能になったら速やかに後期養生へ移る。設問の「乾燥を速める」と反する。",
+              "sourceType": "road_administrator_original_manual"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.151 / 冊子p.140",
+              "section": "4.2.4.4 目地 キ",
+              "evidence": "所定の深さまで垂直にカッタ切削する。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://corp.w-nexco.co.jp/procurement/guideline/pdfs/32-06.pdf",
+              "page": "PDF内冊子p.227付近",
+              "section": "コンクリート舗装の目地切断時期",
+              "evidence": "損傷しない程度に硬化した直後に試し切断し、角欠けの有無を確認する。2026公開資料のため2025時点の適用は別確認。",
+              "sourceType": "operator_original_guidance_later"
+            },
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p.21 / 冊子 p.16",
+              "section": "4-1 目地の設置・施工時期／切削位置",
+              "evidence": "角欠けを起こさなくなったら目地を直ちに切削し、所定位置に所要幅・深さまで垂直に切り込むと明記。",
+              "sourceType": "road_administrator_original_manual"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p.150 / 冊子p.139",
+              "section": "4.2.4.3 舗設 ウ・エ・オ",
+              "evidence": "迅速で材料分離のない敷均し、締固め後の削り増しを避けフィニッシャで締固める。",
+              "sourceType": "primary"
+            },
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p.20 / 冊子 p.15",
+              "section": "4-1 施工者が留意すべき点・敷き均し",
+              "evidence": "スプレッダで材料を移動し、全体ができるだけ均等な密度になるよう適切な余盛りをして敷き均すと明記。",
+              "sourceType": "road_administrator_original_manual"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": "肢2〜4は中国地方整備局の2013年マニュアルで直接確認。肢1の荷下ろし前の照合と不良コンクリート廃棄処分を一括して定める原条項は未確認。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 2,
+          "text": "誤り。初期養生は表面仕上げ後のコンクリート版を乾燥、日射、風雨などの有害作用から保護する。東京都仕様書は仕上げ終了直後から表面を荒らさず作業できる硬化時点までを初期養生とする。"
+        }
+      ]
+    },
+    {
+      "key": "A38",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p.1 / 本文1頁",
+              "section": "2(1) 目的及び種類",
+              "evidence": "立野コンクリートダムの着岩付近における遮水性改良と弱部補強を説明。",
+              "sourceType": "operator_original_project_report"
+            },
+            {
+              "url": "https://www.nilim.go.jp/lab/fdg/kijyun/2003grouting.pdf",
+              "page": "PDF p.4以降",
+              "section": "グラウチング技術改訂指針概要",
+              "evidence": "ダム基礎の遮水・弱部補強を扱うが、当該PDFは画像中心で本照合では個別型式の該当箇所を未確認。",
+              "sourceType": "original_guideline_summary"
+            },
+            {
+              "url": "https://dambinran.damnet.or.jp/dam-dictionary/",
+              "page": "Web グラウチング項 665-668行",
+              "section": "コンソリデーショングラウチング／ブランケットグラウチング",
+              "evidence": "日本ダム協会はコンソリデーショングラウチングをコンクリートダム基礎岩盤の浅い範囲の強度・変形性改良、ブランケットグラウチングをフィルダム遮水ゾーンと基礎岩盤の連結部の遮水性改良と区別する。",
+              "sourceType": "technical_association_original_glossary"
+            }
+          ],
+          "remainingGap": "用語の取り違えは直接確認。ただし協会の現行Web表示を2025年当時の版と同一とは扱わず、ロックフィルダムでコンソリデーションを一律排除する説明は避ける。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p.2 / 本文2頁",
+              "section": "2(2) 施工手順・図4",
+              "evidence": "削孔、水押し試験、注入を段階で行う工程図。",
+              "sourceType": "operator_original_project_report"
+            }
+          ],
+          "remainingGap": "上位から下位へ交互に進む「ステージ注入法」の定義を直接示す原基準未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p.2 / 本文2頁",
+              "section": "2(3) 改良効果",
+              "evidence": "ルジオン値を透水性指標と説明。",
+              "sourceType": "operator_original_project_report"
+            },
+            {
+              "url": "https://thesis.pwri.go.jp/public_detail/116176",
+              "page": "Web 抄録 21-23行",
+              "section": "グラウチング注入データを用いた閉塞過程の分析（2008年）",
+              "evidence": "土木研究所の原著抄録はルジオン値に応じた配合切替基準と、貧配合・富配合それぞれの施工上の影響を記載する。薄い配合から濃い配合へ進む順序までは記載しない。",
+              "sourceType": "national_research_institute_original_abstract"
+            }
+          ],
+          "remainingGap": "ルジオン値に応じた配合切替は確認。初期配合の具体的決定法と薄い配合から濃い配合へ進める順序は未照合。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p.2 / 本文2頁",
+              "section": "2(2)(3)",
+              "evidence": "水押し試験は注入前の透水性と注入効果を評価すると説明。",
+              "sourceType": "operator_original_project_report"
+            },
+            {
+              "url": "https://thesis.pwri.go.jp/public_detail/115441",
+              "page": "Web 抄録 21-23行",
+              "section": "水押し試験における限界圧力判定（2007年）",
+              "evidence": "土木研究所の原著抄録は注入前の水押し試験によって透水性と限界圧力を評価し、その結果でセメントグラウトの注入仕様を決めると記載する。初期濃度の決定と同一とは明示しない。",
+              "sourceType": "national_research_institute_original_abstract"
+            }
+          ],
+          "remainingGap": "水押し試験から注入仕様を決定する関係は確認。初期濃度の決定及び改良後評価への使い分けは具体基準未照合。"
+        }
+      ],
+      "technicalRemaining": "肢1の用語区別は確認。肢2ステージ注入の厳密定義、肢3薄い配合から濃い配合への順序、肢4初期濃度決定と改良効果確認の詳細を原基準で未照合。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "誤り。日本ダム協会の用語解説では、コンソリデーショングラウチングは主としてコンクリートダムの浅い基礎岩盤の強度・変形性改良、フィルダムの遮水ゾーンと基礎岩盤の連結部ではブランケットグラウチングを区別している。ロックフィルダムへの工法適用を一律否定する趣旨にはしない。"
+        }
+      ]
+    },
+    {
+      "key": "A39",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p.7 / 冊子p.9-4",
+              "section": "9-1-4-5 材料の計量",
+              "evidence": "骨材表面水量の試験を設計図書に従って実施する。3～4日の水切り日数は記載なし。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": "上屋設置と細骨材3～4日以上の水切り日数を併せて示す原資料なし。"
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED_WITH_LIMIT",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p.10 / 冊子p.9-7",
+              "section": "9-1-4-9(4)(6)(7)",
+              "evidence": "1リフト高は設計図書による。打継材齢の区分は0.75～2.0mリフトで、40～50cmは複数層に分けた1層の締固め後厚さ。一般標準値として0.3～0.5mは規定しない。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": "本仕様書だけで全国共通の柱状ブロック工法リフト標準高を数値確定できない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PROJECT_EXAMPLES",
+          "sources": [
+            {
+              "url": "https://www.hkd.mlit.go.jp/ob/obihiro_kasen/ctll1r0000004tux.html",
+              "page": null,
+              "section": "札内川ダム RCD Method 2,3,5",
+              "evidence": "25cm×3層=0.75m相当をブルドーザ敷均し・振動ローラ締固め。",
+              "sourceType": "operator_original_project_example"
+            },
+            {
+              "url": "https://www.water.go.jp/kanto/arakawa/takizawa/doga.html",
+              "page": null,
+              "section": "滝沢ダム 動画・建設機械 (3)(4)(6)",
+              "evidence": "27cm×4層を締固め後1.0mとして振動ローラで転圧。",
+              "sourceType": "operator_original_project_example"
+            }
+          ],
+          "remainingGap": "両例は個別現場であり「一般的に」の全国標準を直接証明しない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p.14 / 冊子p.9-11",
+              "section": "9-1-6-2(3) 表面仕上げ",
+              "evidence": "越流・導流・減勢部は平滑で不陸のない表面に仕上げる。",
+              "sourceType": "primary"
+            }
+          ],
+          "remainingGap": "局部不陸6mm以下の数値は本文にない。"
+        }
+      ],
+      "technicalRemaining": "肢1の3～4日、肢4の6mm、肢2の柱状ブロック工法一般標準高、肢3の「一般的に」を直接示す原基準が不足。",
+      "explanationPatch": "正答は2。関東地方整備局仕様書は1リフト高を設計図書によるとし、0.75～2.0mのリフト区分と、複数層に分ける場合の1層厚40～50cmを別々に扱う。0.3～0.5mを柱状ブロック工法の一律標準リフト高とすることはできない。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "正しいとの公式正答は維持する。ただし細骨材の上屋と3～4日以上の水切り期間をともに定める原基準を未確認であり、この日数を一般標準として断定する解説は保留する。"
+        },
+        {
+          "choice": 2,
+          "text": "誤り。関東地方整備局仕様書では1リフト高は設計図書に従う。0.75～2.0mのリフトに対する打継ぎ区分と、複数層施工時の1層厚40～50cmを区別しており、0.3～0.5mを一般リフト標準とする肢は不適切。"
+        },
+        {
+          "choice": 4,
+          "text": "正しいとの公式正答は維持する。関東地方整備局仕様書では越流部・導流部・減勢部を平滑で不陸のない表面に仕上げるとするが、局部不陸6mm以下の数値は当該仕様書で未確認。"
+        }
+      ]
+    }
+  ],
+  "followupAt": "2026-10-11",
+  "followupNote": "発行者・道路管理者・国立研究機関の公開原資料で局所追跡。現行協会Webは2025年当時版との同一性を未確認。直接ネットワーク拒否経路と画像主体の既存PDFは再取得していない。"
+}
