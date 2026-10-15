@@ -1,0 +1,494 @@
+[
+  {
+    "id": "koku-toku-2026-june-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 13,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "抵抗負荷で消費される電力が15〔W〕のとき、この負荷に流れる電流は5〔A〕であった。このときの負荷の両端の電圧の値として正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "20.0〔V〕",
+      "イ": "15.0〔V〕",
+      "ウ": "10.0〔V〕",
+      "エ": "3.0〔V〕"
+    },
+    "answer": "エ",
+    "explanation": "P=VIをVについて解くと、V=15〔W〕÷5〔A〕=3.0〔V〕となる。",
+    "choiceExplanations": {
+      "ア": "電力の式 P=VI より、V=P/I=15〔W〕/5〔A〕=3.0〔V〕であり、20.0〔V〕ではない。",
+      "イ": "V=15/5=3.0〔V〕であるため、15.0〔V〕ではない。",
+      "ウ": "V=15/5=3.0〔V〕であるため、10.0〔V〕ではない。",
+      "エ": "P=VIをVについて解くと、V=15〔W〕÷5〔A〕=3.0〔V〕となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問13（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 14,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において □ 内に入れるべき字句の正しい組合せを下の番号から選べ。\n\n半導体は、周囲の温度の上昇によって、一般的に内部の抵抗が □A し、流れる電流は □B する。",
+    "choices": {
+      "ア": "A：減少　B：減少",
+      "イ": "A：減少　B：増加",
+      "ウ": "A：増加　B：減少",
+      "エ": "A：増加　B：増加"
+    },
+    "answer": "イ",
+    "explanation": "一般的な半導体は温度上昇により内部抵抗が減少し、同一電圧条件では I=V/R により電流が増加する。",
+    "choiceExplanations": {
+      "ア": "半導体では一般に温度上昇に伴って抵抗が減少するが、同一電圧条件で電流まで減少するという組合せは適切でない。",
+      "イ": "一般的な半導体は温度上昇により内部抵抗が減少し、同一電圧条件では I=V/R により電流が増加する。",
+      "ウ": "金属導体にみられる傾向に近く、問題が問う一般的な半導体の温度特性とは逆である。",
+      "エ": "抵抗が増加するというAが一般的な半導体の温度特性と一致せず、同一電圧なら抵抗増加と電流増加も両立しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問14（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 15,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において □ 内に入れるべき字句の正しい組合せを下の番号から選べ。\n\nスポラジックE層(Es層)は、□A の昼間に多く発生し、□B の電波を反射することがある。",
+    "choices": {
+      "ア": "A：夏季　B：マイクロ波(SHF)帯",
+      "イ": "A：冬季　B：マイクロ波(SHF)帯",
+      "ウ": "A：夏季　B：超短波(VHF)帯",
+      "エ": "A：冬季　B：超短波(VHF)帯"
+    },
+    "answer": "ウ",
+    "explanation": "Es層は夏季の昼間に多く発生し、超短波(VHF)帯の電波を反射することがあるため、この組合せが正しい。",
+    "choiceExplanations": {
+      "ア": "夏季というAは合うが、Es層が反射することがある帯域をSHF帯とするBが適切でない。",
+      "イ": "発生しやすい季節と反射対象の周波数帯の双方が、正答となる組合せと一致しない。",
+      "ウ": "Es層は夏季の昼間に多く発生し、超短波(VHF)帯の電波を反射することがあるため、この組合せが正しい。",
+      "エ": "VHF帯というBは合うが、多く発生する季節を冬季とするAが適切でない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問15（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 16,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの最大探知距離を長くする方法として、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "受信機の感度を良くする。",
+      "イ": "パルス幅を狭くし、パルス繰返し周波数を高くする。",
+      "ウ": "アンテナの設置位置を高くし、アンテナ利得を大きくする。",
+      "エ": "送信電力を大きくする。"
+    },
+    "answer": "イ",
+    "explanation": "パルス幅を狭くすると1パルス当たりの送信エネルギーが小さくなり、パルス繰返し周波数を高くすると曖昧でない最大距離も短くなるため、最大探知距離を長くする方法として誤っている。",
+    "choiceExplanations": {
+      "ア": "より小さい受信信号を検出できるため、最大探知距離を長くする方向に働く正しい方法である。",
+      "イ": "パルス幅を狭くすると1パルス当たりの送信エネルギーが小さくなり、パルス繰返し周波数を高くすると曖昧でない最大距離も短くなるため、最大探知距離を長くする方法として誤っている。",
+      "ウ": "見通し範囲の拡大と送受信利得の向上により、最大探知距離を長くする方向に働く。",
+      "エ": "目標から戻る受信電力を増やせるため、最大探知距離を長くする方向に働く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問16（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 17,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す整流回路の名称とa点に現れる整流電圧の極性との組合せで、正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "名称：全波整流回路　a点の極性：正",
+      "イ": "名称：全波整流回路　a点の極性：負",
+      "ウ": "名称：半波整流回路　a点の極性：正",
+      "エ": "名称：半波整流回路　a点の極性：負"
+    },
+    "answer": "ア",
+    "explanation": "センタタップ付き変圧器の二次巻線と2個のダイオードにより両半周期を利用する全波整流回路であり、図のダイオード方向では共通出力側のa点がb点に対して正になる。",
+    "choiceExplanations": {
+      "ア": "センタタップ付き変圧器の二次巻線と2個のダイオードにより両半周期を利用する全波整流回路であり、図のダイオード方向では共通出力側のa点がb点に対して正になる。",
+      "イ": "回路名称は全波整流回路だが、図のダイオード方向からa点は正極性となるため、負とする極性が誤りである。",
+      "ウ": "a点の正極性は合うが、二次巻線の両半周期を2個のダイオードで利用しているため半波整流回路ではない。",
+      "エ": "回路は全波整流であり、a点も正極性なので、名称と極性の双方が図と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問17（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q17.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問17の公式問題図。〔17〕の変圧器・ダイオード・抵抗・a/b点を含む回路図"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 18,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において □ 内に入れるべき字句の正しい組合せを下の番号から選べ。\n\n1個2〔V〕の蓄電池3個を図のように接続したとき、ab間の電圧を測定するには、最大目盛が □A の直流電圧計の □B につなぐ。",
+    "choices": {
+      "ア": "A：5〔V〕　B：＋端子をa、－端子をb",
+      "イ": "A：5〔V〕　B：＋端子をb、－端子をa",
+      "ウ": "A：10〔V〕　B：＋端子をb、－端子をa",
+      "エ": "A：10〔V〕　B：＋端子をa、－端子をb"
+    },
+    "answer": "エ",
+    "explanation": "各電池の長線側がa方向なので、a側が正、b側が負になる。直列合成電圧は2〔V〕×3=6〔V〕であり、最大目盛10〔V〕の直流電圧計の＋端子をa、－端子をbに接続すれば測定できる。",
+    "choiceExplanations": {
+      "ア": "図の蓄電池3個は直列接続で、合成電圧は2〔V〕×3=6〔V〕となる。a側が正、b側が負なので端子の向きは正しいが、最大目盛5〔V〕では測定範囲を超える。",
+      "イ": "合成電圧は6〔V〕なので最大目盛5〔V〕では不足する。またa側が正、b側が負なので、＋端子をb、－端子をaとする接続も逆である。",
+      "ウ": "最大目盛10〔V〕は合成電圧6〔V〕を測定できるが、a側が正、b側が負である。＋端子をb、－端子をaとする接続は極性が逆なので誤りである。",
+      "エ": "各電池の長線側がa方向なので、a側が正、b側が負になる。直列合成電圧は2〔V〕×3=6〔V〕であり、最大目盛10〔V〕の直流電圧計の＋端子をa、－端子をbに接続すれば測定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問18（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q18.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問18の公式問題図。〔18〕の蓄電池3個の直列接続図及びa/b端子"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図は、振幅が一定の搬送波を単一正弦波で振幅変調したときの変調波の波形である。変調度の値として正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "25〔％〕",
+      "イ": "40〔％〕",
+      "ウ": "60〔％〕",
+      "エ": "75〔％〕"
+    },
+    "answer": "ウ",
+    "explanation": "最大包絡線振幅 Emax＝40/2＝20〔V〕、最小包絡線振幅 Emin＝10/2＝5〔V〕なので、変調度 m＝(Emax−Emin)/(Emax＋Emin)＝(20−5)/(20＋5)＝0.60＝60〔％〕となる。",
+    "choiceExplanations": {
+      "ア": "図の最大包絡線振幅は40〔V〕の半分の20〔V〕、最小包絡線振幅は10〔V〕の半分の5〔V〕である。変調度は (20−5)/(20＋5)×100＝60〔％〕となるため、25〔％〕ではない。",
+      "イ": "変調度は包絡線の最大振幅と最小振幅から求め、(20−5)/(20＋5)×100＝60〔％〕であるため、40〔％〕ではない。",
+      "ウ": "最大包絡線振幅 Emax＝40/2＝20〔V〕、最小包絡線振幅 Emin＝10/2＝5〔V〕なので、変調度 m＝(Emax−Emin)/(Emax＋Emin)＝(20−5)/(20＋5)＝0.60＝60〔％〕となる。",
+      "エ": "20〔V〕と5〔V〕の差15〔V〕だけを最大値20〔V〕で割ると75〔％〕になるが、変調度の分母は Emax＋Emin＝25〔V〕であるため誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問19（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q19.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問19の公式問題図。振幅変調波の包絡線図。最大時の全振幅40〔V〕、最小時の全振幅10〔V〕。"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 20,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "GPS(Global Positioning System) についての記述として、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "GPS では、地上からの高度が約20,000〔km〕の異なる６つの軌道上に衛星が配置されている。",
+      "イ": "各衛星は、一周約12 時間で周回している。",
+      "ウ": "一般に、任意の4 個の衛星からの電波が受信できれば、測位は可能である。",
+      "エ": "測位に使用している周波数は、長波(LF)帯である。"
+    },
+    "answer": "エ",
+    "explanation": "GPSの測位信号は長波（LF）帯ではなく、L帯に属する極超短波（UHF）帯を用いる。したがって誤っているのはこの肢である。",
+    "choiceExplanations": {
+      "ア": "GPS公式資料では衛星高度を約20,200km、配置を六つの軌道面と説明している。設問の「約20,000km」と「6つの軌道」はこの概略構成に対応する。",
+      "イ": "GPS公式資料は各衛星が1日に2周すると説明しており、公転周期を約12時間とする記述は正しい。",
+      "ウ": "一般的なGPS測位では、受信機の三次元位置3成分と時計誤差の計4未知量を、4衛星からの測距情報で求める。衛星の幾何配置など測位に必要な条件が満たされることを前提とした設問の記述である。",
+      "エ": "GPSの測位信号は長波（LF）帯ではなく、L帯に属する極超短波（UHF）帯を用いる。したがって誤っているのはこの肢である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問20（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 21,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において □ 内に入れるべき字句の正しい組合せを下の番号から選べ。\n\n［A］からATC トランスポンダへの質問信号は、航空機の識別用として［B］が、航空機の高度情報用として［C］が用いられている。",
+    "choices": {
+      "ア": "A：MTI　B：モードA　C：モードC",
+      "イ": "A：MTI　B：モードC　C：モードA",
+      "ウ": "A：SSR　B：モードA　C：モードC",
+      "エ": "A：SSR　B：モードC　C：モードA"
+    },
+    "answer": "ウ",
+    "explanation": "SSRからATCトランスポンダへの質問信号では、航空機識別にモードA、高度情報にモードCを用いる組合せであり、公式解答と一致する。",
+    "choiceExplanations": {
+      "ア": "識別用のモードAと高度情報用のモードCの対応は正しいが、質問信号を送る地上側システムをMTIとする部分が誤りである。",
+      "イ": "AをMTIとしていることに加え、識別用と高度情報用のモードが逆である。",
+      "ウ": "SSRからATCトランスポンダへの質問信号では、航空機識別にモードA、高度情報にモードCを用いる組合せであり、公式解答と一致する。",
+      "エ": "質問元をSSRとする部分は正しいが、モードCは高度情報用、モードAは識別用であるため、BとCが逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問21（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q21.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問21の公式問題図。空欄A、B、Cを含む本文及び組合せ表。"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 22,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すATC トランスポンダにおいて、高度情報を送信できる状態に設定するときのファンクション・セレクタの切替つまみの位置はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "「ALT」の位置",
+      "イ": "「STBY」の位置",
+      "ウ": "「ON」の位置",
+      "エ": "「TEST」の位置"
+    },
+    "answer": "ア",
+    "explanation": "ALTは高度情報を含む応答を行える運用位置であり、公式解答に一致する。",
+    "choiceExplanations": {
+      "ア": "ALTは高度情報を含む応答を行える運用位置であり、公式解答に一致する。",
+      "イ": "STBYは待機状態であり、通常の質問信号に対して高度情報を送信する運用位置ではない。",
+      "ウ": "ONではトランスポンダの通常応答は行えるが、高度情報を送信する設定として図が求める位置はALTである。",
+      "エ": "TESTは装置の試験に用いる位置であり、高度情報を運用送信する位置ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問22（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q22.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問22の公式問題図。ATCトランスポンダ前面図。FUNCTIONの位置としてTEST、ALT、ON、STBY、OFFが印字されている。"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 23,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すAM(A3E)用スーパヘテロダイン受信機の構成には誤った部分がある。これを正すにはどうすればよいか。次のうちから選べ。",
+    "choices": {
+      "ア": "(A)と(C)を入れ替える。",
+      "イ": "(B)と(D)を入れ替える。",
+      "ウ": "(C)と(D)を入れ替える。",
+      "エ": "(D)と(E)を入れ替える。"
+    },
+    "answer": "エ",
+    "explanation": "正しい信号経路は、高周波増幅器(A)→混合器(B)→中間周波増幅器(E)→検波器(D)→低周波増幅器(F)→スピーカである。図では検波器(D)と中間周波増幅器(E)が逆なので、両者を入れ替える。",
+    "choiceExplanations": {
+      "ア": "高周波増幅器(A)はアンテナ入力側、局部発振器(C)は混合器に局部発振信号を供給する位置にあり、この二つを入れ替えると正しい構成にならない。",
+      "イ": "混合器(B)は受信信号と局部発振信号から中間周波信号を得る段であり、検波器(D)と入れ替えても、中間周波増幅より前に検波器が置かれる誤りは解消しない。",
+      "ウ": "局部発振器(C)は混合器へ接続される必要があり、検波器(D)との入替えでは正しい周波数変換部を構成できない。",
+      "エ": "正しい信号経路は、高周波増幅器(A)→混合器(B)→中間周波増幅器(E)→検波器(D)→低周波増幅器(F)→スピーカである。図では検波器(D)と中間周波増幅器(E)が逆なので、両者を入れ替える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問23（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/koku-toku/2026-06-kogaku-q23.png"
+    ],
+    "imageAltTexts": [
+      "航空特殊無線技士2026年6月無線工学問23の公式問題図。AM(A3E)用スーパヘテロダイン受信機の構成図。A＝高周波増幅器、B＝周波数混合器、C＝局部発振器、D＝検波器、E＝中間周波増幅器、F＝低周波増幅器。"
+    ]
+  },
+  {
+    "id": "koku-toku-2026-june-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "航空機搭載のVHF無線電話用制御器の機能のうち、制御できないのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "周波数の切替え",
+      "イ": "アンテナの切替え",
+      "ウ": "電源のON",
+      "エ": "電源のOFF"
+    },
+    "answer": "イ",
+    "explanation": "アンテナの切替えは、この設問で対象とするVHF無線電話用制御器の機能ではないため、これが制御できない項目である。",
+    "choiceExplanations": {
+      "ア": "VHF無線電話用制御器は使用周波数の選択・切替えを行うため、制御できる機能である。",
+      "イ": "アンテナの切替えは、この設問で対象とするVHF無線電話用制御器の機能ではないため、これが制御できない項目である。",
+      "ウ": "制御器から無線電話装置の電源をONにできるため、制御できる機能である。",
+      "エ": "制御器から無線電話装置の電源をOFFにできるため、制御できる機能である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：日本無線協会 航空特殊無線技士 2026年6月 無線工学 問24（問題・正答）。解説と図の切出しは過去問AIによる学習用の改変。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  }
+]

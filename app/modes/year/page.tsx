@@ -31,6 +31,9 @@ export async function generateMetadata({
 }
 
 const VALID_EXAMS: ExamCode[] = [
+  "riku-toku-kokunai",
+  "kai-toku3",
+  "koku-toku",
   "ip",
   "sg",
   "fe",
@@ -55,6 +58,7 @@ function isExamCode(s: unknown): s is ExamCode {
 }
 
 function sessionLabel(session: Session): string {
+  if (session === "houki" || session === "kogaku") return practiceSessionLabel(session);
   if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);
   if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
   switch (session) {

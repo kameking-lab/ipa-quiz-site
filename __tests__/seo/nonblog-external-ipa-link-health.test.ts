@@ -116,7 +116,9 @@ const EXPECTED_OFFICIAL_URLS = [
 
 describe("EXAM_OFFICIAL_LINKS point at live IPA pages", () => {
   const urls = new Set<string>();
-  for (const links of Object.values(EXAM_OFFICIAL_LINKS)) {
+  const ipaCodes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"] as const;
+  for (const code of ipaCodes) {
+    const links = EXAM_OFFICIAL_LINKS[code];
     for (const u of [links.overview, links.syllabus, links.pastQuestions]) {
       urls.add(u.split("#")[0]);
     }
@@ -131,6 +133,15 @@ describe("EXAM_OFFICIAL_LINKS point at live IPA pages", () => {
 
   it("matches the curl-verified allowlist exactly (no dead /cbt/ overviews)", () => {
     expect(distinct).toEqual(EXPECTED_OFFICIAL_URLS);
+  });
+
+  it("keeps both radio qualifications on the official Japan Radio Institute source", () => {
+    for (const code of ["riku-toku-kokunai", "kai-toku3"] as const) {
+      const links = EXAM_OFFICIAL_LINKS[code];
+      for (const url of [links.overview, links.syllabus, links.pastQuestions]) {
+        expect(url).toBe("https://www.nichimu.or.jp/kshiken/siken/index.html");
+      }
+    }
   });
 
   // IPA's /shiken/syllabus/index.html carries no per-exam DOM anchors — the page
