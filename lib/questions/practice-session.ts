@@ -11,7 +11,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "fp1" || exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "zoen2" || exam === "tsushin2" || exam === "kaigo" || exam === "tohan" || exam === "kanri" || exam === "soukan" || exam === "mankan" || exam === "kashikin" || exam === "sharoushi") return "gakka";
   if (exam === "riku-tech1") return "kiso";
   if (exam === "yakuzaishi") return "required";
-  if (exam === "riku-toku-kokunai" || exam === "kai-toku3" || exam === "koku-toku" || exam === "land-special1" || exam === "maritime4" || exam === "aviation-comm") return "houki";
+  if (exam === "riku-toku-kokunai" || exam === "kai-toku3" || exam === "koku-toku" || exam === "land-special1" || exam === "maritime4" || exam === "aviation-comm" || exam === "amateur1" || exam === "maritime-special1") return "houki";
   if (exam === "denken3") return "riron";
   if (exam === "denken2" || exam === "denken1") return "denryoku";
   if (exam === "shakai") return "kyotsu";

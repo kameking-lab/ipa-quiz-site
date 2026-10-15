@@ -17,6 +17,8 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  "amateur1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime-special1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "aviation-comm": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "riku-tech1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "maritime4": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },

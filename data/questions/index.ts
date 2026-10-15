@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
 import { AP_QUESTIONS } from "./ap";
 import { IP_QUESTIONS } from "./ip";
@@ -75,8 +76,12 @@ import { LAND_SPECIAL1_QUESTIONS } from "./land-special1";
 import { RIKU_TECH1_QUESTIONS } from "./riku-tech1";
 import { MARITIME4_QUESTIONS } from "./maritime4";
 import { AVIATION_COMM_QUESTIONS } from "./aviation-comm";
+import { AMATEUR1_QUESTIONS } from "./amateur1";
+import { MARITIME_SPECIAL1_QUESTIONS } from "./maritime-special1";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("amateur1") ? { "amateur1": AMATEUR1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("maritime-special1") ? { "maritime-special1": MARITIME_SPECIAL1_QUESTIONS } : {}),
   ...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),
   ...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
   ...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),

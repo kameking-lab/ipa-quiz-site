@@ -120,6 +120,8 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "amateur1", name: "第一級アマチュア無線技士", sub: "2026年5月・8月 119原問・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-special1", name: "第一級海上特殊無線技士", sub: "2026年2月・6月 日本語の無線工学・法規48原問・全肢解説", domain: "electrical" },
   { code: "aviation-comm", name: "航空無線通信士", sub: "2026年2月・8月 日本語の無線工学・法規68原問・全肢解説", domain: "electrical" },
   { code: "riku-tech1", name: "第一級陸上無線技術士", sub: "2026年1月・7月の4科目190原問・全肢解説", domain: "electrical" },
   { code: "maritime4", name: "第四級海上無線通信士", sub: "2026年2月・8月の無線工学・法規76原問・全肢解説", domain: "electrical" },
