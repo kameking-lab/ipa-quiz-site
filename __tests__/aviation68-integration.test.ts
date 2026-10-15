@@ -1,5 +1,5 @@
 import { describe,expect,it } from 'vitest';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { AVIATION_COMM_QUESTIONS as questions } from '@/data/questions/aviation-comm';
@@ -66,9 +66,14 @@ describe('aviation communication68 local registration candidate',()=>{
  });
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
  it('retains all338 old runtime records and raw source/core bytes against8fc',()=>{
+  const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8').replace(/\r\n/g,'\n');
+  const policyImport='import { isOfficialPastOnlyExam } from "@/lib/questions/past-question-policy";\n';
+  expect(player).toContain(policyImport);expect(player).toContain('!native && !isOfficialPastOnlyExam(question.exam) &&');
+  const priorPlayer=player.replace(policyImport,'').replace('!native && !isOfficialPastOnlyExam(question.exam) &&','!native &&');
+  expect(priorPlayer).toBe(execFileSync('git',['show','8fc06466:components/quiz/QuizPlayer.tsx'],{encoding:'utf8'}));
   const git=(...args:string[])=>execFileSync('git',['--no-optional-locks',...args],{encoding:'utf8',maxBuffer:20*1024*1024});
   const paths=git('ls-tree','-r','--name-only','8fc06466','data/questions/riku-tech1','data/questions/maritime4','data/questions/land-special1').trim().split(/\r?\n/).filter(p=>p.endsWith('.json'));
   const old=paths.flatMap(p=>JSON.parse(git('show',`8fc06466:${p}`))).map(normalizeQuestionData);const current=[...RIKU_TECH1_QUESTIONS,...MARITIME4_QUESTIONS,...LAND_SPECIAL1_QUESTIONS];
-  const ordered=(q:typeof current)=>[...q].sort((a,b)=>a.id.localeCompare(b.id));expect(old).toHaveLength(338);expect(ordered(current)).toEqual(ordered(old));expect(git('diff','8fc06466','--','data/questions/riku-tech1','data/questions/maritime4','data/questions/land-special1','lib/questions/native-b.ts','components/quiz/NativeBAnswer.tsx','components/quiz/QuizPlayer.tsx','components/quiz/QuestionAnswerCard.tsx','components/quiz/stream/StreamQuizPlayer.tsx')).toBe('');
+  const ordered=(q:typeof current)=>[...q].sort((a,b)=>a.id.localeCompare(b.id));expect(old).toHaveLength(338);expect(ordered(current)).toEqual(ordered(old));expect(git('diff','8fc06466','--','data/questions/riku-tech1','data/questions/maritime4','data/questions/land-special1','lib/questions/native-b.ts','components/quiz/NativeBAnswer.tsx','components/quiz/QuestionAnswerCard.tsx','components/quiz/stream/StreamQuizPlayer.tsx')).toBe('');
  });
 });

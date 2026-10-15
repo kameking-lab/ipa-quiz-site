@@ -10,7 +10,7 @@ vi.mock("@/lib/ai/cost-tracker", () => ({ tierForModel: vi.fn() }));
 
 import { POST } from "@/app/api/generate-question/route";
 
-const exams = ["riku-tech1", "maritime4", "land-special1", "maritime3", "land-special2", "land-special3", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar"];
+const exams = ["riku-tech1", "maritime4", "land-special1", "maritime3", "land-special2", "land-special3", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "riku-toku-kokunai", "kai-toku3", "koku-toku"];
 function request(exam: string, id = "test-only-original") {
   return new Request("http://localhost/api/generate-question", {
     method: "POST", headers: { "Content-Type": "application/json" },
