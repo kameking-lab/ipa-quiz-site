@@ -181,7 +181,7 @@ export function buildQuestionJsonLd({
           name: "公益財団法人柔道整復研修試験財団",
           url: "https://www.zaijusei.com/",
         }
-    : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi"
+    : q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
       ? {
           "@type": "Organization",
           name: "厚生労働省",
@@ -198,7 +198,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "chosashi"
+  const licenseUrl = q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
+    ? "https://www.mhlw.go.jp/chosakuken/index.html"
+    : q.exam === "chosashi"
     ? "https://www.moj.go.jp/hisho06_00280.html"
     : q.exam === "fp1"
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
