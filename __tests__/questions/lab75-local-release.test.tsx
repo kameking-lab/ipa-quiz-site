@@ -38,21 +38,25 @@ function canonical(value: unknown): string {
 const route = (q: Question) => ({ exam: q.exam, yearSeason: `${q.year}-${q.season}`, section: q.session, qnum: `q${q.qNumber}` });
 
 describe("clinical laboratory first75 local release payload", () => {
-  it("adds exactly75 across static and lazy loaders while preserving the35 stored originals and held7", async () => {
+  it("adds exactly75 across static and lazy loaders while preserving the35 stored originals and six remaining holds", async () => {
     expect(selected).toHaveLength(75);
     expect(EXAM_CONFIGS["rinsho-kensagishi"].sessions.map(session => session.session)).toEqual(["am", "pm"]);
     expect(new Set(selected.map(q => q.id))).toEqual(expectedIds);
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(103);
-    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(103);
+    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(106);
+    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(106);
     expect(getQuestionsByExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(ALL_QUESTIONS.filter(q => q.exam === "rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
-    expect((await getQuestionCountsByExam())["rinsho-kensagishi"]).toBe(103);
+    expect((await getQuestionCountsByExam())["rinsho-kensagishi"]).toBe(106);
     for (const file of baseline.baselineFiles) {
       expect(sha256(readFileSync(path.resolve(file.path), "utf8").replace(/\r\n/g, "\n")), file.path).toBe(file.sha256);
       for (const id of file.ids) expect(expectedIds.has(id)).toBe(false);
     }
-    for (const q of held7) expect(RINSHO_KENSAGISHI_QUESTIONS.some(row => row.id === q.id)).toBe(false);
+    const newlyAccepted = "rinsho-kensagishi-2025-annual-pm-q35";
+    expect(held7.filter(q => RINSHO_KENSAGISHI_QUESTIONS.some(row => row.id === q.id)).map(q => q.id)).toEqual([newlyAccepted]);
+    const stillHeld = held7.filter(q => q.id !== newlyAccepted);
+    expect(stillHeld).toHaveLength(6);
+    for (const q of stillHeld) expect(RINSHO_KENSAGISHI_QUESTIONS.some(row => row.id === q.id)).toBe(false);
     const extra9 = ["2025-annual-pm-q12", "2025-annual-pm-q19", "2026-annual-am-q24", "2026-annual-am-q26", "2026-annual-am-q31", "2026-annual-am-q38", "2026-annual-am-q41", "2026-annual-am-q46", "2026-annual-pm-q55"];
     for (const suffix of extra9) expect(expectedIds.has(`rinsho-kensagishi-${suffix}`)).toBe(false);
     for (const q of selected) expect(q.year === 2026 && q.session === "pm" && q.qNumber >= 60).toBe(false);
@@ -98,11 +102,11 @@ describe("clinical laboratory first75 local release payload", () => {
     }
   });
 
-  it("adds75 usable canonical routes and exposes the exact103 partial count to SEO and hub metadata", async () => {
-    expect(getIndexableQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(103);
-    expect(getSitemapQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(103);
-    expect(getExamQuestionCount("rinsho-kensagishi")).toBe(103);
-    expect(countByExam("rinsho-kensagishi")).toBe(103);
+  it("adds75 usable canonical routes and exposes the exact106 partial count to SEO and hub metadata", async () => {
+    expect(getIndexableQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(106);
+    expect(getSitemapQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(106);
+    expect(getExamQuestionCount("rinsho-kensagishi")).toBe(106);
+    expect(countByExam("rinsho-kensagishi")).toBe(106);
     const params = await generateStaticParams();
     const xml = Array.from({ length: getSitemapChunkCount() }, (_, i) => renderQuestionsSitemapChunkXml(i)).join("");
     for (const q of selected) {
@@ -110,12 +114,12 @@ describe("clinical laboratory first75 local release payload", () => {
       expect(findQuestionByRoute(ALL_QUESTIONS, route(q))).toEqual(q);
       expect(xml).toContain(questionPagePath(q));
     }
-    const description = examMetaDescription("rinsho-kensagishi", 103);
-    expect(description).toContain("103原問を部分収録");
+    const description = examMetaDescription("rinsho-kensagishi", 106);
+    expect(description).toContain("106原問を部分収録");
     expect(description).toContain("午前・午後");
     expect(description).toContain("全問は未完備");
     const hub = renderToStaticMarkup(await ExamTopPage({ params: Promise.resolve({ exam: "rinsho-kensagishi" }) }));
-    expect(hub).toContain("103原問を部分収録");
+    expect(hub).toContain("106原問を部分収録");
   });
 
   it("renders every native Next detail page with its official sources and full five reasons", async () => {

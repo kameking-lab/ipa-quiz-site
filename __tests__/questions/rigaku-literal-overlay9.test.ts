@@ -10,7 +10,7 @@ const rows = [...y2025, ...y2026];
 describe("理学療法士の公式二列表記9問の局所復元", () => {
   it("前回HOLD25のうち指定9IDだけを新規登録し、残16を保留する", () => {
     expect(rows).toHaveLength(9);
-    expect(RIGAKU_RYOHOUSHI_QUESTIONS).toHaveLength(179);
+    expect(RIGAKU_RYOHOUSHI_QUESTIONS).toHaveLength(183);
     const previousHeld = new Set(previous.heldIdentities);
     const resolved = new Set(rows.map((q) => manifest.sourceReceipts[q.id as keyof typeof manifest.sourceReceipts].identity));
     expect(resolved.size).toBe(9);

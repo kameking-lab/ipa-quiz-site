@@ -10,14 +10,21 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.year === 2025);
 
 describe("lab71 seven remaining safe saved originals", () => {
-  it("preserves the seven saved originals while both runtime loaders retain only accepted IDs", async () => {
+  it("preserves seven saved originals while both runtime loaders expose only PM35 and retain six holds", async () => {
     expect(batch2.map(q => q.qNumber)).toEqual([32, 35, 36, 39, 41, 44, 45]);
     expect(batch2.map(q => q.id)).toEqual(Object.keys(official).map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
-    expect(lab2025).toHaveLength(57);
-    expect(new Set(lab2025.map(q => q.id)).size).toBe(57);
-    const held = new Set(batch2.map(q => q.id));
-    expect(RINSHO_KENSAGISHI_QUESTIONS.some(q => held.has(q.id))).toBe(false);
-    expect(ALL_QUESTIONS.some(q => held.has(q.id))).toBe(false);
+    expect(lab2025).toHaveLength(59);
+    expect(new Set(lab2025.map(q => q.id)).size).toBe(59);
+    const saved = new Set(batch2.map(q => q.id));
+    const newlyAccepted = ["rinsho-kensagishi-2025-annual-pm-q35"];
+    expect(RINSHO_KENSAGISHI_QUESTIONS.filter(q => saved.has(q.id)).map(q => q.id)).toEqual(newlyAccepted);
+    expect(ALL_QUESTIONS.filter(q => saved.has(q.id)).map(q => q.id)).toEqual(newlyAccepted);
+    const stillHeld = batch2.filter(q => !newlyAccepted.includes(q.id));
+    expect(stillHeld).toHaveLength(6);
+    for (const q of stillHeld) {
+      expect(RINSHO_KENSAGISHI_QUESTIONS.some(row => row.id === q.id)).toBe(false);
+      expect(ALL_QUESTIONS.some(row => row.id === q.id)).toBe(false);
+    }
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(receipt.individualHoldReleaseCount).toBe(0);
     expect(receipt.originals).toBe(7);
