@@ -1,5 +1,5 @@
+import { integrationOracle, runtimeFingerprint } from './fixtures/native-integration-oracle';
 import { describe,it,expect } from 'vitest';
-import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { AMATEUR1_QUESTIONS as am } from '@/data/questions/amateur1';
@@ -11,7 +11,7 @@ import { getPoolIds,getExplicitPoolIds } from '@/lib/questions/pool-server';
 import { QUESTIONS_BY_EXAM } from '@/data/questions';
 import { getQuestionsForExam,getRegisteredExamCodes } from '@/lib/questions/get-questions';
 import { isPracticeReadyQuestion,shuffleChoices } from '@/lib/questions/filter';
-import { normalizeQuestionData,gradeNativeB } from '@/lib/questions/native-b';
+import { gradeNativeB } from '@/lib/questions/native-b';
 import { questionPagePath,findQuestionByRoute } from '@/lib/seo/question-url';
 import { getQuestionsByExamStrict,groupByYearSeason } from '@/lib/seo/exam-meta';
 import { choiceDisplayLabel,usesNumberedChoices } from '@/lib/questions/display';
@@ -22,12 +22,12 @@ import { GET as nextGET } from '@/app/api/questions/next/route';
 import { GET as searchGET } from '@/app/api/search/questions/route';
 import { POST as duePOST } from '@/app/api/review/due/route';
 const hold='radio21-amateur1-2026-05-kogaku-q19';
-const cases=[{exam:'amateur1',qs:am,stored:120,ready:119,periodCounts:[59,60],commit:'ef6c757f'},{exam:'maritime-special1',qs:sea,stored:48,ready:48,periodCounts:[24,24],commit:'34196216'}] as const;
+const cases=[{exam:'amateur1',qs:am,stored:120,ready:119,periodCounts:[59,60]},{exam:'maritime-special1',qs:sea,stored:48,ready:48,periodCounts:[24,24]}] as const;
 describe('235-ready separated candidate integration',()=>{
  it('keeps236 stored originals,235 ready, one exact protected HOLD and67 registered exam codes',()=>{const all=[...avi,...am,...sea];expect(all).toHaveLength(236);expect(new Set(all.map(q=>q.id)).size).toBe(236);expect(all.filter(isPracticeReadyQuestion)).toHaveLength(235);expect(all.filter(q=>!isPracticeReadyQuestion(q)).map(q=>q.id)).toEqual([hold]);expect(getRegisteredExamCodes()).toHaveLength(73);});
- for(const {exam,qs,stored,ready,periodCounts,commit} of cases){
+ for(const {exam,qs,stored,ready,periodCounts} of cases){
   it(`${exam}: preserves exact normalized final data and every source asset`,async()=>{
-   const bytes=execFileSync('git',['--no-optional-locks','show',`${commit}:data/questions/${exam}/two-sittings.json`],{encoding:'utf8',maxBuffer:20*1024*1024});expect(qs).toEqual(JSON.parse(bytes).map(normalizeQuestionData));expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);
+   expect(runtimeFingerprint(qs)).toBe(integrationOracle.producers[exam].normalizedRuntimeSha256);expect(qs).toHaveLength(stored);expect(await getQuestionsForExam(exam)).toEqual(qs);expect(QUESTIONS_BY_EXAM[exam]).toEqual(qs.filter(isPracticeReadyQuestion));expect(ALL_EXAM_CODES).not.toContain(exam);expect(qs.every(q=>q.exam===exam&&q.year===2026)).toBe(true);
    for(const q of qs){expect(shuffleChoices(q)).toBe(q);expect(usesNumberedChoices(exam)).toBe(true);expect(choiceDisplayLabel(exam,'ア')).toBe('1');for(const url of [...(q.imageUrls??[]),...(q.nativeB?.bankImageUrls??[])])expect(existsSync(path.join(process.cwd(),'public',url.slice(1)))).toBe(true);}
   });
   it(`${exam}: shows only practice-ready totals and free past-paper scope`,()=>{expect(getQuestionsByExamStrict(exam)).toHaveLength(ready);expect(groupByYearSeason(getQuestionsByExamStrict(exam)).map(g=>g.count).sort((a,b)=>a-b)).toEqual(periodCounts);const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(c=>c.key===exam)!;expect(home.questionCount).toBe(ready);expect(home.periodLabel).toBe('2期分');const catalog=getQualificationByExamCode(exam)!;expect(catalog.status).toBe('live');expect(catalog.reuseSummary).toContain('無料');expect(catalog.reuseSummary).toContain('回数制限なく');});

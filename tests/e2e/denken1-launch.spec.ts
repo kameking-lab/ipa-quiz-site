@@ -43,7 +43,7 @@ test("denken1 theory question 3 shows the two official figures and original opti
   await page.goto("/q/denken1/2026-primary/riron/q3-1");
   await expect(page.getByText("発振回路に関する記述", { exact: false }).first()).toBeVisible();
   for (const n of [1, 2]) {
-    const figure = page.getByRole("img", { name: `問3の図表${n}` });
+    const figure = page.getByRole("img", { name: `問3(1)の図表${n}` });
     await figure.scrollIntoViewIfNeeded();
     await expect(figure).toBeVisible();
     await expect.poll(() => figure.evaluate((img) => (img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
