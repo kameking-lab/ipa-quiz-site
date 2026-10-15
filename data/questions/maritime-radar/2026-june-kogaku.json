@@ -1,0 +1,477 @@
+[
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q13",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 13,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電気回路において、電源電圧Eの大きさを2分の1倍（1/2倍）にすると、抵抗Rで消費される電力は、何倍になるか。次のうちから選べ。",
+    "choices": {
+      "ア": "1/8倍",
+      "イ": "1/4倍",
+      "ウ": "1/2倍",
+      "エ": "2倍"
+    },
+    "answer": "イ",
+    "explanation": "P=E²/RにE'=E/2を代入すると、P'/P=(E/2)²/E²=1/4となる。したがって正しい。",
+    "choiceExplanations": {
+      "ア": "抵抗値が一定なら消費電力はP=E²/Rである。電圧をE/2にするとP'=(E/2)²/R=E²/(4R)=P/4となるため、1/8倍ではない。",
+      "イ": "P=E²/RにE'=E/2を代入すると、P'/P=(E/2)²/E²=1/4となる。したがって正しい。",
+      "ウ": "電力は電圧に比例するのではなく、抵抗値一定の場合は電圧の2乗に比例するため、1/2倍ではない。",
+      "エ": "電圧を低下させると消費電力も低下する。計算値はP/4であり、2倍ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問13（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-06-kogaku-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問13の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q14",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 14,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーにマイクロ波が用いられる理由で、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "小さな物標からでも反射がある。",
+      "イ": "尖鋭なビームを得ることが容易である。",
+      "ウ": "豪雨、豪雪でも小さな物標が見分けられる。",
+      "エ": "空電の妨害を受けることが少ない。"
+    },
+    "answer": "ウ",
+    "explanation": "豪雨や豪雪からも強い反射が生じ、雨雪クラッタによって小さな物標の識別が妨げられることがあるため、この記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "マイクロ波は波長が短く、小さな物標からの反射を得やすいため、用いられる理由として正しい。",
+      "イ": "波長が短いため、実用的な寸法のアンテナで狭いビーム幅を得やすく、用いられる理由として正しい。",
+      "ウ": "豪雨や豪雪からも強い反射が生じ、雨雪クラッタによって小さな物標の識別が妨げられることがあるため、この記述が誤りである。",
+      "エ": "マイクロ波帯の船舶用レーダーは、低い周波数帯の通信受信設備に比べて空電の影響を受けにくいため、用いられる理由として正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問14（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q15",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 15,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "マグネトロンの一般的な特徴などで、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "周波数変調がかけやすい。",
+      "イ": "高周波の大出力パルスが得られる。",
+      "ウ": "磁石などの磁界を用いて発振させている。",
+      "エ": "発振効率が良い。"
+    },
+    "answer": "ア",
+    "explanation": "マグネトロンは一般に自励発振器であり、安定かつ制御された周波数変調をかけやすい装置とはいえないため、この記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "マグネトロンは一般に自励発振器であり、安定かつ制御された周波数変調をかけやすい装置とはいえないため、この記述が誤りである。",
+      "イ": "マグネトロンはマイクロ波帯で大きなピーク電力のパルスを発生できるため、正しい特徴である。",
+      "ウ": "マグネトロンは電界と磁界を組み合わせて電子の運動を制御し、高周波発振を行うため正しい。",
+      "エ": "マグネトロンは比較的高い発振効率を得られるため、一般的な特徴として正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問15（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q16",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 16,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において［　］内に入れるべき字句の正しい組合せを下の番号から選べ。\n\nPPI方式のレーダーの映像は、画面の中心付近では［A］に現れるが、外周に向かっていくにしたがって［B］に映るようになる。これは電波の［C］の広がりによるためである。",
+    "choices": {
+      "ア": "A：線状　B：点状　C：ビーム",
+      "イ": "A：線状　B：点状　C：パルス幅",
+      "ウ": "A：点状　B：線状　C：ビーム",
+      "エ": "A：点状　B：線状　C：パルス幅"
+    },
+    "answer": "ウ",
+    "explanation": "同じ角度幅をもつビームの横方向の幅は距離とともに大きくなるので、中心付近では点状でも、外周側では方位方向に伸びた線状の像になる。したがって正しい。",
+    "choiceExplanations": {
+      "ア": "中心付近と外周での像の形が逆である。中心付近では点状、外周側では線状になるため誤り。",
+      "イ": "像の形が逆であるうえ、この現象の原因は距離方向に作用するパルス幅ではなく、方位方向のビームの広がりであるため誤り。",
+      "ウ": "同じ角度幅をもつビームの横方向の幅は距離とともに大きくなるので、中心付近では点状でも、外周側では方位方向に伸びた線状の像になる。したがって正しい。",
+      "エ": "AとBは合うが、パルス幅は主として距離方向の像の長さや距離分解能に関係する。外周側で方位方向に像が広がる原因ではないため誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問16（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q17",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 17,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの最大探知距離を長くするための方法で、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "送信電力を大きくする。",
+      "イ": "受信機の感度を良くする。",
+      "ウ": "アンテナの利得を大きくし、その設置位置を高くする。",
+      "エ": "パルス幅を狭くし、パルス繰返し周波数を高くする。"
+    },
+    "answer": "エ",
+    "explanation": "狭いパルス幅は1パルス当たりのエネルギーを小さくしやすく、高いパルス繰返し周波数は最大無曖昧距離を短くする方向に働くため、最大探知距離を長くする方法として誤りである。",
+    "choiceExplanations": {
+      "ア": "送信電力を大きくすると物標から戻る受信電力も増え、より遠距離の物標を検出しやすくなるため正しい方法である。",
+      "イ": "より弱い反射信号を検出できるようになるため、最大探知距離を長くする方法として正しい。",
+      "ウ": "アンテナ利得の増大は送受信電力上有利であり、設置位置を高くするとレーダー見通し距離も伸びるため正しい。",
+      "エ": "狭いパルス幅は1パルス当たりのエネルギーを小さくしやすく、高いパルス繰返し周波数は最大無曖昧距離を短くする方向に働くため、最大探知距離を長くする方法として誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問17（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q18",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダーの性能において、方位角度が同じで、距離の異なる二つの物標を区別できる相互間の最短距離を表すのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "方位分解能",
+      "イ": "距離分解能",
+      "ウ": "最大探知距離",
+      "エ": "最小探知距離"
+    },
+    "answer": "イ",
+    "explanation": "同じ方位にあり距離だけが異なる二物標を別々に識別できる最短の距離間隔を表すため正しい。",
+    "choiceExplanations": {
+      "ア": "方位分解能は、主として同一距離付近で方位の異なる二つの物標を分離する能力を表すため該当しない。",
+      "イ": "同じ方位にあり距離だけが異なる二物標を別々に識別できる最短の距離間隔を表すため正しい。",
+      "ウ": "最大探知距離は物標を探知できる最大距離を表し、二物標間の分離能力ではない。",
+      "エ": "最小探知距離は自船の近くで物標を探知できない範囲の限界を表し、二物標間の最短距離ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問18（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q19",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 19,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダー用のスロットアレーアンテナの特徴で、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "軽量である。",
+      "イ": "反射器を必要とする。",
+      "ウ": "耐風圧性が良い。",
+      "エ": "水平面内ビーム幅は、スロット数が多いほど鋭くなる。"
+    },
+    "answer": "イ",
+    "explanation": "誤り。スロットから電波を直接放射して指向性を形成するため、パラボラアンテナのような反射器を必要としない。",
+    "choiceExplanations": {
+      "ア": "正しい。スロットアレーアンテナは導波管などに多数のスロットを設けた構造で、一般に軽量化しやすい。",
+      "イ": "誤り。スロットから電波を直接放射して指向性を形成するため、パラボラアンテナのような反射器を必要としない。",
+      "ウ": "正しい。薄く平滑な形状にでき、反射器を用いるアンテナより風圧の影響を抑えやすい。",
+      "エ": "正しい。同じ間隔で配置するスロット数を増やすと実効開口長が大きくなり、水平面内の主ビーム幅は狭くなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問19（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q20",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダー画面上に、図に示すような12 個の輝点列が現れた。これは何か。次のうちから選べ。",
+    "choices": {
+      "ア": "捜索救助用レーダートランスポンダ(SART)からの信号",
+      "イ": "大型船の多重反射による偽像",
+      "ウ": "航海用レーダー反射器からの反射",
+      "エ": "アンテナ回転機構の故障"
+    },
+    "answer": "ア",
+    "explanation": "正しい。SARTの応答は、レーダー画面上でSARTの方向に並ぶ12個の輝点列として表示される。",
+    "choiceExplanations": {
+      "ア": "正しい。SARTの応答は、レーダー画面上でSARTの方向に並ぶ12個の輝点列として表示される。",
+      "イ": "誤り。多重反射による偽像は同一方位上にほぼ等間隔で現れることがあるが、図示された12個の輝点列はSART信号の識別表示である。",
+      "ウ": "誤り。レーダー反射器は反射エコーを強める装置であり、SART特有の12個の輝点列を生成しない。",
+      "エ": "誤り。アンテナ回転機構の故障は正常な全周走査を妨げる原因であり、図のような12個の輝点列を生じさせるものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問20（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-06-kogaku-q20-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問20の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q21",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 21,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "レーダー受信機において、最も影響の大きい雑音はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "空電による雑音",
+      "イ": "電気器具による雑音",
+      "ウ": "受信機の内部雑音",
+      "エ": "電動機による雑音"
+    },
+    "answer": "ウ",
+    "explanation": "正しい。マイクロ波帯のレーダー受信機では、受信回路で発生する熱雑音などの内部雑音が受信感度に最も大きく影響する。",
+    "choiceExplanations": {
+      "ア": "誤り。レーダーが使用するマイクロ波帯では空電雑音の影響は相対的に小さい。",
+      "イ": "誤り。外来雑音の一種だが、レーダー受信機で支配的となる雑音ではない。",
+      "ウ": "正しい。マイクロ波帯のレーダー受信機では、受信回路で発生する熱雑音などの内部雑音が受信感度に最も大きく影響する。",
+      "エ": "誤り。電動機からの妨害雑音は対策対象となり得るが、レーダー受信機で最も影響の大きい雑音ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問21（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q22",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 22,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す、レーダーの表示画面(PPI)に表示されたスイープが回転しない場合、考えられる故障原因はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "アンテナの駆動電動機の故障",
+      "イ": "掃引発振器の不良",
+      "ウ": "掃引増幅器の不良",
+      "エ": "偏向コイルの断線"
+    },
+    "answer": "ア",
+    "explanation": "正しい。PPIのスイープ回転はアンテナの方位回転に同期するため、アンテナ駆動電動機が故障してアンテナが回転しなければ、スイープも特定方位で停止する。",
+    "choiceExplanations": {
+      "ア": "正しい。PPIのスイープ回転はアンテナの方位回転に同期するため、アンテナ駆動電動機が故障してアンテナが回転しなければ、スイープも特定方位で停止する。",
+      "イ": "誤り。掃引発振器の不良はスイープを形成する時間軸信号そのものに影響するが、図では中心から外周へ延びるスイープが表示されている。",
+      "ウ": "誤り。掃引増幅器の不良なら偏向に必要な掃引信号を正常に増幅できず、図のような長さを持つスイープの表示自体が損なわれる。",
+      "エ": "誤り。偏向コイルが断線すると電子ビームを正常に偏向できず、図のような半径方向のスイープを形成できない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問22（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/maritime-radar/radio21-maritime-radar-2026-06-kogaku-q22-original.png"
+    ],
+    "imageAltTexts": [
+      "公式問22の図と選択肢（原典配置）"
+    ]
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q23",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 23,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーの映像で、アンテナのサイドローブによる偽像が現れたとき、どのようにすればよいか。次のうちから選べ。",
+    "choices": {
+      "ア": "パルス幅を切り替える。",
+      "イ": "測定レンジを切り替える。",
+      "ウ": "中心位置をオフセンターとする。",
+      "エ": "受信機の感度を下げる。"
+    },
+    "answer": "エ",
+    "explanation": "正しい。感度を適度に下げると、主ローブより弱いサイドローブ経由の反射信号が表示しきい値を下回り、偽像を抑えられる。",
+    "choiceExplanations": {
+      "ア": "誤り。パルス幅の切替えは主として距離分解能や探知性能に関係し、サイドローブで受信した不要反射を直接抑える操作ではない。",
+      "イ": "誤り。測定レンジの切替えは画面に表示する距離範囲を変更するもので、サイドローブによる偽像の原因を除去しない。",
+      "ウ": "誤り。オフセンター表示は自船位置を画面中心から移して表示範囲を変える機能であり、サイドローブによる偽像を抑制しない。",
+      "エ": "正しい。感度を適度に下げると、主ローブより弱いサイドローブ経由の反射信号が表示しきい値を下回り、偽像を抑えられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問23（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-maritime-radar-2026-06-kogaku-q24",
+    "exam": "maritime-radar",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "june",
+    "qNumber": 24,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "船舶用レーダーで、近距離の波などからの強い反射波により、画面の中心付近が明るすぎて目標の識別が困難なとき、これを防ぐためのものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "AFC",
+      "イ": "FTC",
+      "ウ": "IAGC",
+      "エ": "STC"
+    },
+    "answer": "エ",
+    "explanation": "正しい。STCは送信直後の近距離では受信利得を低くし、時間の経過とともに利得を回復させることで、近距離の波などからの強い反射を抑える。",
+    "choiceExplanations": {
+      "ア": "誤り。AFCは自動周波数制御であり、受信周波数のずれを補正する機能なので、近距離の海面反射を抑えるものではない。",
+      "イ": "誤り。FTCは雨や雪などから続いて返る反射を抑えるための回路であり、設問の近距離海面反射を距離に応じて抑える機能ではない。",
+      "ウ": "誤り。IAGCは干渉性の妨害信号などを抑えるための利得制御であり、中心付近を明るくする近距離海面反射への専用対策ではない。",
+      "エ": "正しい。STCは送信直後の近距離では受信利得を低くし、時間の経過とともに利得を回復させることで、近距離の波などからの強い反射を抑える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/kai-toku-re-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 2026年6月期 無線工学 問24（問題・正答）。解説は過去問AIが独自作成。図は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "needsReview": true
+  }
+]
