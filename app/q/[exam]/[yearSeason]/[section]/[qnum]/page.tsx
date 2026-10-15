@@ -394,9 +394,9 @@ export default async function QuestionPage({
           HTML via ChoiceButton (crawlable / readable with JS off); hydration
           adds the grading interaction so a search visitor can answer right here
           instead of hopping to /quiz (致命傷⑤). */}
-      {(q.type === "numeric" || q.choices) && !hasUnrenderableContent(q) && (
-        <section aria-label={q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
-          <h2 className="sr-only">{q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
+      {(q.type === "native-b" || q.type === "numeric" || q.choices) && !hasUnrenderableContent(q) && (
+        <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
+          <h2 className="sr-only">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
           <QuestionAnswerCard
             question={q}
             questionId={q.id}

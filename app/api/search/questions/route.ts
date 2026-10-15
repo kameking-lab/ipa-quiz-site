@@ -6,6 +6,7 @@ import type { ExamCode, Season, Session, Difficulty } from "@/lib/questions/type
 export const runtime = "nodejs";
 
 const EXAM_CODES = [
+  "land-special1", "riku-tech1", "maritime4",
   "ip",
   "sg",
   "fe",
@@ -22,8 +23,9 @@ const EXAM_CODES = [
   "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ] as const;
 
-const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"] as const;
+const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august"] as const;
 const SESSIONS = [
+  "houki", "kogaku", "kiso", "kogaku-a", "kogaku-b",
   "am",
   "am1",
   "am2",

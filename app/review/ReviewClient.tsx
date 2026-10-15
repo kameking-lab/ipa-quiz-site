@@ -1,4 +1,5 @@
 "use client";
+import { NativeBReview } from "./NativeBReview";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -332,6 +333,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         </CardContent>
       </Card>
 
+      {q.type === "native-b" ? <NativeBReview key={q.id} question={q} onNext={handleAnswer} /> : <>
       {/* 選択肢 */}
       {!showAnswer && Object.keys(q.choices ?? {}).length > 0 && (
         <div className="space-y-2">
@@ -388,6 +390,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
           </div>
         </>
       )}
+      </>}
     </div>
   );
 }
