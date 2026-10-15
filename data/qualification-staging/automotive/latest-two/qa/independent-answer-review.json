@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "status": "review-complete-corrections-applied-to-index",
+  "reviewedWrittenAnswers": 610,
+  "reviewedOralQuestions": 2,
+  "numberDifferences": 15,
+  "allExplanationsReviewed": false,
+  "publicGo": 0,
+  "permissionVerified": false,
+  "independentlyTranscribedTables": {
+    "jaspa-2026-first": {
+      "2-gasoline": "3242133214 3241341432 3431413122 2141342412",
+      "2-diesel": "1113322443 3244422324 1212444421 4431314123",
+      "2-motorcycle": "2413431421 4121442343 3412211433 2423124321",
+      "3-chassis": "1444131344 2344133132 4443114122",
+      "3-gasoline": "2314413244 2123441132 1333223241",
+      "3-diesel": "4311341342 4311224122 3241411322",
+      "body": "3434443211 1211213243 4221143232 3423342243"
+    },
+    "jaspa-2025-second": {
+      "1-small-written": "2434411223 4131214131 2113434322 2123213414 3441322434",
+      "2-gasoline": "2312431442 41*3321234 1212424311 1334143143",
+      "2-diesel": "3123113143 4431422143 2322434121 1222124224",
+      "2-chassis": "2144232133 2312414141 3343412233",
+      "3-chassis": "3213243413 1442424444 2434311211",
+      "3-gasoline": "3243141324 2141231431 2413124234",
+      "3-diesel": "1321212314 1312324312 3242233114",
+      "3-motorcycle": "3423413121 3223424432 1143324424",
+      "electrical": "2314114322 2423133344 2244411231 2123334242",
+      "body": "3441422324 3241242133 3312432142 4313142414"
+    }
+  },
+  "reviewer": "automotive_source_answer_review (GPT-6 Astra)",
+  "oralReview": {
+    "q1Article": 90,
+    "incorrectArticle": 91,
+    "recognitionArticle": 78,
+    "currentArticleVerified": true,
+    "examDateVersionPinned": false,
+    "examDate": "2026-05-10",
+    "officialAnswerNullAppropriate": true,
+    "q1OfficialSource": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000185",
+    "q2Definition": "溶接又はリベット",
+    "q2OfficialSource": "https://www.mlit.go.jp/notice/noticedata/pdf/20210804/jidousha1-1.pdf",
+    "q2PhysicalPage": 2
+  },
+  "corrections": [
+    {
+      "sitting": "jaspa-2026-first",
+      "subjectCode": "2-motorcycle",
+      "qNumber": 32,
+      "fromNumber": "1",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2026-first",
+      "subjectCode": "3-chassis",
+      "qNumber": 22,
+      "fromNumber": "3",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2026-first",
+      "subjectCode": "3-gasoline",
+      "qNumber": 16,
+      "fromNumber": "1",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2026-first",
+      "subjectCode": "3-gasoline",
+      "qNumber": 18,
+      "fromNumber": "4",
+      "toNumber": "1"
+    },
+    {
+      "sitting": "jaspa-2026-first",
+      "subjectCode": "3-diesel",
+      "qNumber": 26,
+      "fromNumber": "4",
+      "toNumber": "1"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "2-gasoline",
+      "qNumber": 31,
+      "fromNumber": "3",
+      "toNumber": "1"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 5,
+      "fromNumber": "1",
+      "toNumber": "2"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 7,
+      "fromNumber": "1",
+      "toNumber": "3"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 13,
+      "fromNumber": "3",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 18,
+      "fromNumber": "3",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 19,
+      "fromNumber": "1",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-chassis",
+      "qNumber": 24,
+      "fromNumber": "3",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "3-gasoline",
+      "qNumber": 23,
+      "fromNumber": "3",
+      "toNumber": "1"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "body",
+      "qNumber": 29,
+      "fromNumber": "2",
+      "toNumber": "4"
+    },
+    {
+      "sitting": "jaspa-2025-second",
+      "subjectCode": "body",
+      "qNumber": 39,
+      "fromNumber": "4",
+      "toNumber": "1"
+    }
+  ]
+}
