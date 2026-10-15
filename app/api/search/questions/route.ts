@@ -6,7 +6,7 @@ import type { ExamCode, Season, Session, Difficulty } from "@/lib/questions/type
 export const runtime = "nodejs";
 
 const EXAM_CODES = [
-  "land-special1", "riku-tech1", "maritime4",
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm",
   "ip",
   "sg",
   "fe",

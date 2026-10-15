@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "aviation-comm": "航空無線通信士",
   "riku-toku-kokunai": "国内電信級陸上特殊無線技士",
   "koku-toku": "航空特殊無線技士",
   "land-special1": "第一級陸上特殊無線技士",

@@ -74,8 +74,10 @@ import { KOKU_TOKU_QUESTIONS } from "./koku-toku";
 import { LAND_SPECIAL1_QUESTIONS } from "./land-special1";
 import { RIKU_TECH1_QUESTIONS } from "./riku-tech1";
 import { MARITIME4_QUESTIONS } from "./maritime4";
+import { AVIATION_COMM_QUESTIONS } from "./aviation-comm";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),
   ...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
   ...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),
   ...(isExamPublished("koku-toku") ? { "koku-toku": KOKU_TOKU_QUESTIONS } : {}),

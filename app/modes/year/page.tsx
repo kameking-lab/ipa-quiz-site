@@ -31,7 +31,7 @@ export async function generateMetadata({
 }
 
 const VALID_EXAMS: ExamCode[] = [
-  "land-special1", "riku-tech1", "maritime4",
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm",
   "riku-toku-kokunai",
   "kai-toku3",
   "koku-toku",
