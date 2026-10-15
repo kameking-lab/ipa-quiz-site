@@ -578,7 +578,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した179原問を部分収録。第61回は午前19問・午後74問、第60回は午前24問・午後62問です。残り221原問は未収録で、両回の完備ではありません。図表、公式正答の代替記載、説明根拠が不足する問は収録していません。",
+    reuseSummary: "第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した183原問を部分収録。第61回は午前22問・午後74問、第60回は午前25問・午後62問です。残り217原問は未収録で、両回の完備ではありません。図表、公式正答の代替記載、説明根拠が不足する問は収録していません。",
     attributionTemplate: "出典：厚生労働省「第○回理学療法士国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
     remainingWork: ["未収録221原問の原文・公式正答・図表・説明根拠の確認", "第61回午後問30・第60回午後問31の公式代替正答の採点形式確認"],
   },
@@ -662,7 +662,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した103原問を部分収録。必要な公式原図も掲載しています。未受入れの保存原問7問と残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
+    reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した106原問を部分収録。必要な公式原図も掲載しています。残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
   },
   {
