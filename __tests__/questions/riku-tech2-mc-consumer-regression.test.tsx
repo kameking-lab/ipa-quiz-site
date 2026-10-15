@@ -4,6 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import raw from "../../data/questions/riku-tech2/two-sittings.json";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { ExplanationCard } from "@/components/quiz/ExplanationCard";
+import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { getChoiceKeys } from "@/lib/questions/answers";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import type { ChoiceKey } from "@/lib/questions/types";
@@ -53,6 +54,16 @@ describe("second-class land engineer ordinary-question consumers", () => {
       for (const text of Object.values(question.choices!)) expect(answerHtml).toContain(escaped(text!));
       const explanationHtml = renderToStaticMarkup(<ExplanationCard question={question} selected={String(question.answer)} isCorrect starred={false} onToggleStar={() => {}} onNext={() => {}} onAskAI={() => {}} />);
       for (const text of Object.values(question.choiceExplanations!)) expect(explanationHtml).toContain(escaped(text!));
+    }
+  });
+
+  it("connects every preserved official answer URL to the standard field and real explanation link", () => {
+    for (const [index, question] of questions.entries()) {
+      const originalUrl = raw[index]!.sourceAnswerPdfUrl;
+      expect(question.sourceAnswerUrl).toBe(originalUrl);
+      expect(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)).toBe(originalUrl);
+      const html = renderToStaticMarkup(<ExplanationCard question={question} selected={String(question.answer)} isCorrect starred={false} onToggleStar={() => {}} onNext={() => {}} onAskAI={() => {}} />);
+      expect(html).toContain(`href="${escaped(originalUrl)}"`);
     }
   });
 
