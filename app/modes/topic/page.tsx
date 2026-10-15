@@ -38,6 +38,7 @@ export async function generateMetadata({
 const VALID_EXAMS: ExamCode[] = [
   "riku-toku-kokunai",
   "kai-toku3",
+  "koku-toku",
   "ip",
   "sg",
   "fe",

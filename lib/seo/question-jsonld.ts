@@ -96,7 +96,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3"
+  const questionAuthor = q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3" || q.exam === "koku-toku"
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
     : q.exam === "chosashi"
     ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }

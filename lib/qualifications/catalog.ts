@@ -51,6 +51,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["現行法令との違いを学習時に確認"],
   },
   {
+    slug: "koku-toku", examCode: "koku-toku",
+    shortName: "航空特殊無線技士", fullName: "航空特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "日本無線協会が公表した2026年2月・6月の筆記試験、各回法規12問・無線工学12問、計48原問と公式正答、全選択肢の独自解説を収録。原図は設問ごとに切り出して表示しています。英語科目は含みません。法令は各試験当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 航空特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    remainingWork: ["現行法令との違いを学習時に確認"],
+  },
+  {
     slug: "kai-toku3", examCode: "kai-toku3",
     shortName: "第三級海上特殊無線技士", fullName: "第三級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
