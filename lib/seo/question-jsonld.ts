@@ -1,3 +1,4 @@
+import { formatNativeBAnswer } from "@/lib/questions/native-b";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { formatOrderingAnswer } from "@/lib/questions/ordering";
@@ -96,7 +97,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3" || q.exam === "koku-toku" || q.exam === "land-special1"
+  const questionAuthor = q.license === "NICHIMU-educational-reuse"
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
     : q.exam === "chosashi"
     ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
@@ -226,7 +227,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,

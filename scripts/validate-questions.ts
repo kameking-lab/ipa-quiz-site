@@ -1,3 +1,4 @@
+import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
  *
@@ -72,7 +73,8 @@ const QuestionSchema = z.object({
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june"]),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
-  type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay"]),
+  type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
+  nativeB: NativeBDataSchema.optional(),
   numericAnswer: z.discriminatedUnion("format", [
     z.object({ format: z.literal("integer"), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
     z.object({ format: z.literal("decimal"), precision: z.literal(1), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
@@ -101,7 +103,7 @@ const QuestionSchema = z.object({
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
-  answer: z.union([z.string().min(1), z.array(z.string().min(1))]),
+  answer: z.union([z.string(), z.array(z.string().min(1))]),
   requiredSelections: z.number().int().min(1).max(4).optional(),
   explanation: z.string().min(1),
   choiceExplanations: z.record(z.string(), z.string()).optional(),
@@ -276,6 +278,15 @@ function validate(questions: Question[]): ValidationResult {
         console.error(`[FAIL] ${q.id}: ${message}`);
         continue;
       }
+    }
+
+    const nativeIssue = nativeBQuestionIssue(q);
+    if (nativeIssue || (q.type !== "native-b" && typeof q.answer === "string" && !q.answer.trim())) {
+      fail++;
+      byExam[examKey].fail++;
+      const message = nativeIssue ?? "Missing answer";
+      issues.push({ id: q.id, level: "error", message });
+      continue;
     }
 
     // Multiple-choice specific checks

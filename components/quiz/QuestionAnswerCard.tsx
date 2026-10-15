@@ -3,6 +3,9 @@
 import { QuestionBody } from "./QuestionBody";
 
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
+import { NativeBAnswerInput, NativeBFeedback } from "./NativeBAnswer";
 import dynamic from "next/dynamic";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import Link from "next/link";
@@ -88,6 +91,8 @@ export function QuestionAnswerCard({
   nextHref,
   requiredSelections = 1,
 }: Props) {
+  const native = question?.type === "native-b";
+  const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const numeric = question?.type === "numeric";
   const ordering = question?.type === "ordering";
   const multiSelect = !numeric && !ordering && requiredSelections > 1;
@@ -101,6 +106,7 @@ export function QuestionAnswerCard({
   const [copilotRequest, setCopilotRequest] = React.useState(0);
 
   React.useEffect(() => {
+    setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
@@ -117,12 +123,12 @@ export function QuestionAnswerCard({
   const roving = useQuizChoiceRoving(keys.length, selectedIndex, revealed, questionId);
 
   const recordOutcome = React.useCallback(
-    (selection: string, correct: boolean) => {
+    (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
         if (readSettings().recordHistory) {
-          createHistoryStore().record({ id: questionId, selected: selection, correct, at: now });
+          createHistoryStore().record({ id: questionId, selected: selection, correct, at: now, ...(nativeBResult ? { nativeBResult } : {}) });
         }
         writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
@@ -136,6 +142,14 @@ export function QuestionAnswerCard({
     },
     [questionId, exam, year, season, session, qNumber, part],
   );
+
+  const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
+    if (!question?.nativeB || !native || revealed) return;
+    const result = gradeNativeB(question.nativeB, selections);
+    setNativeBResult(result);
+    setRevealed(true);
+    recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
+  }, [question, native, revealed, recordOutcome]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -205,9 +219,9 @@ export function QuestionAnswerCard({
     };
   }, [revealed, ordering, keys, onSelect]);
 
-  const answered = ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
-  const isCorrect = ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
-  const answerLabel = ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
+  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
+  const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
+  const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
 
@@ -218,7 +232,9 @@ export function QuestionAnswerCard({
           {selectionInstruction(answerKey, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
         </p>
       )}
-      {ordering ? (
+      {native ? (
+        <NativeBAnswerInput key={questionId} data={question!.nativeB!} displayedImageUrls={question!.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} />
+      ) : ordering ? (
         <OrderingAnswerInput key={questionId} question={question!} disabled={revealed} onAnswer={onOrderingAnswer} />
       ) : numeric ? (
         <NumericAnswerInput key={questionId} unit={question!.numericAnswer!.unit} specification={question!.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
@@ -248,9 +264,11 @@ export function QuestionAnswerCard({
         ))}
       </div>}
 
+      {native && revealed && <NativeBFeedback data={question!.nativeB!} result={nativeBResult} />}
+
       {/* Screen-reader announcement of the outcome. */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
-        {revealed
+        {native ? "" : revealed
           ? !answered
             ? `正解は ${answerLabel} です。下に解説があります。`
             : isCorrect
@@ -301,7 +319,7 @@ export function QuestionAnswerCard({
               <BookOpenCheck className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
               解説を読む
             </a>
-            {question && (
+            {question && !native && (
               <button
                 type="button"
                 onClick={() => setCopilotRequest((request) => request + 1)}

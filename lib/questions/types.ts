@@ -121,7 +121,7 @@ export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "seco
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
-export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descriptive" | "essay";
+export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descriptive" | "essay" | "native-b";
 
 /**
  * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
@@ -149,6 +149,7 @@ export interface Question {
   officialAnswerNumber?: string;
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
+  nativeB?: NativeBData;
   numericAnswer?: ({ format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string }) & {
     /** 原問の解答欄に印刷済みの負号。answerと入力値には記入する数値部分を保存する。 */
     fixedSign?: "negative";
@@ -158,7 +159,7 @@ export interface Question {
   difficulty: Difficulty;
   question: string;
   choices?: Partial<Record<ChoiceKey, string>>;
-  /** ordering では全選択肢の期待順を ChoiceKey[] として保持する。 */
+  /** ordering は期待順。native-b の空文字は旧 transport 互換用で採点には使わない。 */
   answer: ChoiceKey | ChoiceKey[] | string;
   /**
    * 1問で選ぶ肢の数。answer の許容肢から、この数を重複なしで選ぶ。
@@ -214,4 +215,40 @@ export interface QuizFilter {
   inOrder?: boolean;
   randomizeChoices?: boolean;
   excludeRecent?: boolean;
+}
+
+/** One original question, five independently graded slots sharing the printed bank. */
+export interface NativeBCandidate {
+  id: string;
+  label: string;
+  explanation?: string;
+  imageUrl?: string;
+}
+export interface NativeBSlot {
+  label: string;
+  prompt?: string;
+  answer: string;
+  explanation: string;
+  candidateExplanations?: Record<string, string>;
+}
+export interface NativeBData {
+  mode: "binary" | "shared-bank";
+  candidates: NativeBCandidate[];
+  slots: NativeBSlot[];
+  bankImageUrls?: string[];
+  bankImageAltTexts?: string[];
+  officialLabel?: string;
+  officialScoring?: { maxPoints?: number; pointsPerSlot?: number; note?: string };
+}
+export interface NativeBGrade {
+  isCorrect: boolean;
+  correctSlots: number;
+  totalSlots: 5;
+  slotResults: {
+    label: string;
+    selectedCandidateId: string | null;
+    correctCandidateId: string;
+    isCorrect: boolean;
+    status: "correct" | "incorrect" | "unanswered" | "invalid";
+  }[];
 }

@@ -1,3 +1,4 @@
+import { nativeBQuestionIssue } from "./native-b";
 import { numericQuestionIssue } from "./numeric";
 import { orderingQuestionIssue } from "./ordering";
 import { hasUnrenderableContent } from "./content-quality";
@@ -17,7 +18,7 @@ export function isPlaceholderExplanation(q: Question): boolean {
  * paper page from promising more questions than the quiz can actually serve.
  */
 export function isPracticeReadyQuestion(q: Question): boolean {
-  return !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
+  return !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(

@@ -1,3 +1,4 @@
+import { formatNativeBAnswer } from "./native-b";
 import type { ChoiceKey, ExamCode, Question } from "./types";
 import { formatNumericAnswer } from "./numeric";
 
@@ -6,7 +7,8 @@ const DENKEN_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "�
 const IROHA_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", "ヲ", "ワ", "カ", "ヨ"] as const;
 
-export function questionNumberLabel(q: Pick<Question, "qNumber" | "part">): string {
+export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB">): string {
+  if (q.nativeB?.officialLabel) return q.nativeB.officialLabel;
   return `${q.qNumber}${q.part ? `(${q.part})` : ""}`;
 }
 
@@ -41,6 +43,7 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 
 /** Render stored choice keys individually, retaining the answer's order and separators. */
 export function formatQuestionAnswerForDisplay(question: Question, value: string | readonly ChoiceKey[], multiSeparator = "・"): string {
+  if (question.type === "native-b" && question.nativeB) return formatNativeBAnswer(question.nativeB);
   if (question.type === "numeric") return formatNumericAnswer(question, String(value));
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);

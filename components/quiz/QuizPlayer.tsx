@@ -1,6 +1,9 @@
 "use client";
 
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
+import { NativeBAnswerInput } from "./NativeBAnswer";
 import Link from "next/link";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
@@ -89,6 +92,7 @@ export function QuizPlayer({
   const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
+  const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -134,6 +138,7 @@ export function QuizPlayer({
   React.useEffect(() => {
     if (!question) return;
      
+    setNativeBResult(undefined);
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
@@ -169,7 +174,7 @@ export function QuizPlayer({
   }, [index, total, onNext]);
 
   const commitAnswer = React.useCallback(
-    (selection: string, correct: boolean) => {
+    (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
       if (!question) return;
       setRevealed(true);
       requestAnimationFrame(() => {
@@ -183,7 +188,7 @@ export function QuizPlayer({
       });
       const now = Date.now();
       if (readSettings().recordHistory) {
-        history.record({ id: question.id, selected: selection, correct, at: now });
+        history.record({ id: question.id, selected: selection, correct, at: now, ...(nativeBResult ? { nativeBResult } : {}) });
       }
       writeLastQuestion({
         exam: question.exam,
@@ -231,6 +236,13 @@ export function QuizPlayer({
     },
     [question, history, combo, pendingAchievement],
   );
+
+  const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
+    if (!question?.nativeB || question.type !== "native-b" || revealed) return;
+    const result = gradeNativeB(question.nativeB, selections);
+    setNativeBResult(result);
+    commitAnswer(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
+  }, [question, revealed, commitAnswer]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -411,17 +423,18 @@ export function QuizPlayer({
     );
   }
 
+  const native = question.type === "native-b";
   const numeric = question.type === "numeric";
   const ordering = question.type === "ordering";
-  const answerKey = ordering ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
+  const answerKey = native ? formatNativeBAnswer(question.nativeB!) : ordering ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
     ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
-  const isCorrect = ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
+  const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
     ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
     : isAcceptedAnswer(question.answer, selected);
-  const selectionLabel = ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
+  const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -498,7 +511,9 @@ export function QuizPlayer({
                 {selectionInstruction(question.answer, requiredSelections)}（選択中 {picked.length}/{requiredSelections}）
               </p>
             )}
-            {ordering ? (
+            {native ? (
+              <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} />
+            ) : ordering ? (
               <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} />
             ) : numeric ? (
               <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
@@ -540,6 +555,7 @@ export function QuizPlayer({
               <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-24 space-y-4 outline-none" aria-label="解答結果">
                 <ExplanationCard
                   question={question}
+                  nativeBResult={nativeBResult}
                   selected={selectionLabel}
                   isCorrect={isCorrect}
                   starred={starred}
@@ -555,7 +571,7 @@ export function QuizPlayer({
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                {question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
+                {!native && question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
@@ -563,7 +579,7 @@ export function QuizPlayer({
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
+                : native ? "五つの枠を選んで「回答を採点する」で解答 / R でスター / ? でヘルプ" : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
