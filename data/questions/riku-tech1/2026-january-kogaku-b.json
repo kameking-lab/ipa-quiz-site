@@ -1,0 +1,1605 @@
+[
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q01",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－1  次の記述は、電界 𝑬 〔V/m〕と磁界 𝑯 〔A/m〕に関するマクスウェルの方程式について述べたものである。    内に入れる\nべき字句の正しい組合せを下の番号から選べ。ただし、媒質は均質、等方性、線形、非分散性とし、誘電率を 𝜀〔F/m〕、透磁率\nを 𝜇〔H/m〕、導電率を 𝜎〔S/m〕、印加電流を 𝐽0 〔A/m2〕及び時間をt〔s〕とする。 \n(1) 𝑬 と𝑯 に関するマクスウェルの方程式は、次式で表される。 \n A  = 𝐽0 + 𝜎𝑬+ 𝜀𝜕𝑬\n𝜕𝑡 ・・・・・・①  \n B  = −𝜇𝜕𝑯\n𝜕𝑡        ・・・・・・②  \n(2) 式①は、拡張されたアンペアの法則と呼ばれ、この右辺は、第1 項の印加電流、第2 項の導電流及び  C  と呼ばれてい\nる第3 項からなる。 \n(3) 式②は、ファラデーの法則と呼ばれている。 \nA      B     C     \n1 rot 𝑬   rot 𝑯   対流電流 \n2 rot 𝑬   rot 𝑯    変位電流 \n3 div 𝑬    div 𝑯   対流電流 \n4 rot 𝑯    rot 𝑬   対流電流 \n5 rot 𝑯    rot 𝑬   変位電流 \n",
+    "explanation": "正しい。rot H=J0+σE+ε∂E/∂t、rot E=−μ∂H/∂tで、ε∂E/∂tは変位電流密度。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 rot 𝑬   rot 𝑯   対流電流 \n",
+      "イ": "2 rot 𝑬   rot 𝑯    変位電流 \n",
+      "ウ": "3 div 𝑬    div 𝑯   対流電流 \n",
+      "エ": "4 rot 𝑯    rot 𝑬   対流電流 \n",
+      "オ": "5 rot 𝑯    rot 𝑬   変位電流 \n"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。アンペア・マクスウェルの法則はrot Hであり、ファラデーの法則はrot E。対流電流も第3項ではない。",
+      "イ": "誤り。第三項の変位電流は合うが、AとBの回転演算子が電界・磁界で逆である。",
+      "ウ": "誤り。divではなくrotを使い、式①左辺はHの回転、式②左辺はEの回転である。",
+      "エ": "誤り。回転演算子は合うが、ε∂E/∂tは対流電流でなく変位電流である。",
+      "オ": "正しい。rot H=J0+σE+ε∂E/∂t、rot E=−μ∂H/∂tで、ε∂E/∂tは変位電流密度。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q02",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－2  次の記述は、アンテナの特性について述べたものである。    内に入れるべき字句の正しい組合せを下の番号から選べ。 \n(1) 同じ特性を持つアンテナ素子を平行に2 個並べたアンテナの指向性は、アンテナ単体の指向性に  A  を掛けたものに \n等しい。 \n(2) 半波長ダイポールアンテナでは、アンテナ素子が細い方が帯域幅が  B  。 \n(3) 対数周期ダイポールアレーアンテナは、 C  にわたって、ほぼ一定のインピーダンス特性を持つ。 \nA         \n \n  B     C \n1 利得係数 \n  \n \n  広い   広帯域 \n2 利得係数 \n  \n \n  狭い   狭帯域 \n3 利得係数  \n  \n \n  狭い   広帯域 \n4 配列指向係数（アレーファクタ）   狭い   広帯域 \n5 配列指向係数（アレーファクタ）   広い   狭帯域",
+    "explanation": "正しい。素子パターンにアレーファクタを掛け、細い半波長ダイポールは狭帯域、対数周期ダイポールアレーは広帯域でほぼ一定のインピーダンスとなる。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "利得係数／広い／広帯域",
+      "イ": "利得係数／狭い／狭帯域",
+      "ウ": "利得係数／狭い／広帯域",
+      "エ": "配列指向係数／狭い／広帯域",
+      "オ": "配列指向係数／広い／狭帯域"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。Aは素子パターンに掛ける配列指向係数であり、細い半波長ダイポールの帯域は狭い。",
+      "イ": "誤り。Bは狭いで合うが、Aは配列指向係数、対数周期アンテナのCは広帯域である。",
+      "ウ": "誤り。BとCは合うが、複数素子の指向性を表すAは利得係数でなく配列指向係数である。",
+      "エ": "正しい。素子パターンにアレーファクタを掛け、細い半波長ダイポールは狭帯域、対数周期ダイポールアレーは広帯域でほぼ一定のインピーダンスとなる。",
+      "オ": "誤り。Aは合うが、細い素子の帯域は狭く、対数周期アンテナは広帯域である。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q03",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－3  次の記述は、半波長ダイポールアンテナの実効面積を求める過程について述べたものである。    内に入れるべき字句の正\nしい組合せを下の番号から選べ。ただし、波長を 𝜆〔m〕とする。 \n(1) 電界強度が 𝐸〔V/m〕の地点での電力束密度p は、次式で与えられる。 \np =  A 〔W/m2〕 ・・・・・・① \n(2) 電界強度が 𝐸〔V/m〕の地点にある半波長ダイポールアンテナの放射抵\n抗を 𝑅〔Ω〕とすると、最大電力（受信有能電力）Pr は、次式で表され\nる。 \nPr =  B 〔W〕   ・・・・・・② \n(3) 半波長ダイポールアンテナの実効面積Ae は、次式で定義されている。 \nAe = Pr /p 〔m2〕 \nしたがって、式①及び②からAe は、次式で求められる。 \nAe =  C 〔m2〕 \nA     B        C \n1 \n𝐸2\n60π    \n𝜆𝐸2\nπ𝑅        \n60𝜆\n𝑅 \n2 \n𝐸2\n60π    \n1\n4𝑅(\n𝜆\nπ 𝐸)\n2\n  \n15𝜆2\nπ𝑅 \n3 \n𝐸2\n120π    \n𝜆𝐸2\nπ𝑅   \n \n120𝜆\n𝑅 \n4 \n𝐸2\n120π   \n1\n𝑅(\n𝜆\nπ 𝐸)\n2\n   \n120𝜆2\nπ𝑅 \n5 \n𝐸2\n120π   \n1\n4𝑅(\n𝜆\nπ 𝐸)\n2\n  \n30𝜆2\nπ𝑅 \n",
+    "explanation": "正しい。p=E²/(120π)、有能電力Pr=(λE/π)²/(4R)、Ae=Pr/p=30λ²/(πR)。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q03-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A3 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=E²/(60π)、B=λE²/(πR)、C=60λ/R",
+      "イ": "A=E²/(60π)、B=(λE/π)²/(4R)、C=15λ²/(πR)",
+      "ウ": "A=E²/(120π)、B=λE²/(πR)、C=120λ/R",
+      "エ": "A=E²/(120π)、B=(λE/π)²/R、C=120λ²/(πR)",
+      "オ": "A=E²/(120π)、B=(λE/π)²/(4R)、C=30λ²/(πR)"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。自由空間の電力束密度はE²/(120π)でありAが違う。Cも実効面積の長さ次元が足りない。",
+      "イ": "誤り。Bの有能電力は合うが、Aの電力束密度が2倍で、Cも正しい面積の半分。",
+      "ウ": "誤り。Aは合うが、Bの有能電力は開放電圧の二乗を4Rで割るので違う。",
+      "エ": "誤り。Aは合うが、Bに1/4がなく4倍、Cも4倍の値になる。",
+      "オ": "正しい。p=E²/(120π)、有能電力Pr=(λE/π)²/(4R)、Ae=Pr/p=30λ²/(πR)。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q04",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－4  自由空間において、放射電力が等しい微小ダイポールと半波長ダイポールアンテナによって最大放射方向の同じ距離の点に生\nじるそれぞれの電界強度E1 及びE2〔V/m〕の比E1/E2 の値として、最も近いものを下の番号から選べ。ただし、√5 = 2.24 と\nする。 \n1 0.96    2 1.04    3 1.11    4 1.25    5 1.64",
+    "explanation": "正しい。微小ダイポールと半波長ダイポールの最大利得は約1.5と約1.64。同電力・同距離では電界比は利得比の平方根で、√(1.5/1.64)≈0.96。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "0.96",
+      "イ": "1.04",
+      "ウ": "1.11",
+      "エ": "1.25",
+      "オ": "1.64"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。微小ダイポールと半波長ダイポールの最大利得は約1.5と約1.64。同電力・同距離では電界比は利得比の平方根で、√(1.5/1.64)≈0.96。",
+      "イ": "誤り。1.04は半波長側を分子にした逆比に近い。設問のE1は微小ダイポール側である。",
+      "ウ": "誤り。利得比1.5/1.64の平方根は約0.96であり1.11ではない。",
+      "エ": "誤り。同じ放射電力の電界比には利得比の平方根を用いる。1.25にはならない。",
+      "オ": "誤り。1.64は半波長ダイポールの最大利得の線形値で、二つの電界強度の比ではない。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q05",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \nA－5  周波数が60〔MHz〕の電波を素子の太さが等しい二線式折返し半波長ダイポールアンテナで受信したとき、図に示す等価回路\nのようにアンテナに接続された受信機の入力端子ab 間における電圧が6〔mV〕であった。このときの受信点における電界強度\nの値として、最も近いものを下の番号から選べ。ただし、アンテナと受信機の入力回路は整合がとれ、かつ、アンテナ及び給電\n線の損失はないものとする。また、アンテナの最大感度の方向は到来電波の方向と一致しているものとする。 \n1 7.0〔mV/m〕 \n2 5.9〔mV/m〕 \n3 4.7〔mV/m〕 \n4 3.8〔mV/m〕 \n5 3.1〔mV/m〕 \nr :アンテナの入力抵抗〔Ω〕 \nV0:アンテナの誘起電圧〔V〕 \nR:受信機の入力抵抗〔Ω〕 \na \nb \nR \nr \nV0 \n",
+    "explanation": "正しい。E=(2×6 mV)/(2×5/π m)≈3.77 mV/m、最も近い3.8 mV/m。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q05-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "7.0〔mV/m〕",
+      "イ": "5.9〔mV/m〕",
+      "ウ": "4.7〔mV/m〕",
+      "エ": "3.8〔mV/m〕",
+      "オ": "3.1〔mV/m〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。整合時の端子電圧は誘起電圧の半分で、折返し半波長ダイポールの実効長は2λ/π。E≈3.8 mV/m。",
+      "イ": "誤り。60 MHzのλ=5 m、実効長2λ/π≈3.18 m、誘起電圧12 mVより約3.8 mV/m。",
+      "ウ": "誤り。整合回路の端子6 mVを開放誘起電圧12 mVへ戻して計算すると約3.8 mV/m。",
+      "エ": "正しい。E=(2×6 mV)/(2×5/π m)≈3.77 mV/m、最も近い3.8 mV/m。",
+      "オ": "誤り。折返しアンテナの実効長と整合時の電圧半減をともに考えると約3.8 mV/m。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q06",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－6  特性インピーダンスが50〔Ω〕の無損失給電線の受端に接続された負荷への入射波電圧が90〔V〕、反射波電圧が10〔V〕で\nあるとき、電圧波腹から負荷側を見たインピーダンスの大きさとして、最も近いものを下の番号から選べ。 \n1 33〔Ω〕   2 40〔Ω〕   3 50〔Ω〕   4 63〔Ω〕   5 75〔Ω〕",
+    "explanation": "正しい。|Γ|=10/90=1/9、Zmax=50×(1+1/9)/(1−1/9)=62.5 Ωで、最も近い63 Ωを選ぶ。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A6（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "33 Ω",
+      "イ": "40 Ω",
+      "ウ": "50 Ω",
+      "エ": "63 Ω",
+      "オ": "75 Ω"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。電圧波腹でのインピーダンスはZ0(1+|Γ|)/(1−|Γ|)で、|Γ|=10/90。約62.5 Ωであり33 Ωではない。",
+      "イ": "誤り。反射係数10/90を波腹の式に入れると約62.5 Ωとなる。40 Ωは波腹値ではない。",
+      "ウ": "誤り。50 Ωは無反射の場合の特性インピーダンス。反射があるため波腹の値はそれより大きい。",
+      "エ": "正しい。|Γ|=10/90=1/9、Zmax=50×(1+1/9)/(1−1/9)=62.5 Ωで、最も近い63 Ωを選ぶ。",
+      "オ": "誤り。波腹値は62.5 Ωであり75 Ωではない。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q07",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \nA－7  図に示すように、特性インピーダンスZ0 が75〔Ω〕の無損失給電線と入力抵抗R が147〔Ω〕のアンテナを集中定数回路を\n用いて整合させたとき、リアクタンスX の大きさの値として、最も近いものを下の番号から選べ。 \n1 110〔Ω〕 \n2 105〔Ω〕 \n3 100〔Ω〕 \n4  95〔Ω〕 \n5  90〔Ω〕 \n－jX \nR \nZ0  \njX \n－jX \n無\n損\n失\n給\n電\n線 \nア\nン\nテ\nナ \n",
+    "explanation": "正しい。入力インピーダンスは−jX+[jX(R−jX)]/[jX+R−jX]=X²/R。これをZ₀=75Ωに等しくするとX=√(RZ₀)=√(147×75)=105Ω。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A7（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q07-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A7 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "110〔Ω〕",
+      "イ": "105〔Ω〕",
+      "ウ": "100〔Ω〕",
+      "エ": "95〔Ω〕",
+      "オ": "90〔Ω〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。図のT形回路の入力インピーダンスはX²/Rとなる。整合条件X²/R=75よりX=√(147×75)=105Ωであり、110Ωではない。",
+      "イ": "正しい。入力インピーダンスは−jX+[jX(R−jX)]/[jX+R−jX]=X²/R。これをZ₀=75Ωに等しくするとX=√(RZ₀)=√(147×75)=105Ω。",
+      "ウ": "誤り。整合条件はX²=RZ₀=147×75=11025であり、Xは100Ωではなく105Ω。",
+      "エ": "誤り。整合条件からX=√(147×75)=105Ωとなり、95Ωではない。",
+      "オ": "誤り。整合条件からX=√(147×75)=105Ωとなり、90Ωではない。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q08",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "(FB801-2) \n \n     \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n𝑙  \nP  \n𝑅  \n𝑍0   \n𝑍  \n給電線  \n1/4 波長整合回路 \n𝑍x   \nA－8  次の記述は、1/4 波長整合回路の整合条件について述べたものである。    内に入れるべき字句の正しい組合せを下の番号\nから選べ。ただし、波長を λ〔m〕とし、給電線は無損失とする。 \n(1) 図に示すように、特性インピーダンス 𝑍0〔Ω〕の給電線と負荷抵抗 𝑅〔Ω〕とを、長さが 𝑙〔m〕、特性インピーダンスが \n𝑍〔Ω〕の整合用給電線で接続したとき、給電線の接続点 P から負荷側を見たインピーダンス 𝑍x〔Ω〕は、位相定数を \n𝛽〔rad/m〕とすれば、次式で表される。 \n𝑍x  = 𝑍 ×（  A  ）〔Ω〕・・・・・・① \n(2) 1/4 波長整合回路では、 𝑙 = λ /4〔m〕であるから、𝛽𝑙 は、次式となる。 \n𝛽𝑙 =   B 〔rad〕     ・・・・・・② \n(3) 式②を式①へ代入すれば、次式が得られる。 \n𝑍x  =  C 〔Ω〕 \n(4）整合条件を満たすための整合用給電線の特性インピーダンス 𝑍〔Ω〕は、 \n次式で与えられる。 \n𝑍  =  D 〔Ω〕 \nA               B      C          D \n1 \n𝑅cos 𝛽𝑙+𝑗𝑍sin 𝛽𝑙\n𝑍cos 𝛽𝑙+ 𝑗𝑅sin 𝛽𝑙    𝜋/2     𝑍2/𝑅       (𝑍0 + 𝑅)/2 \n2 \n𝑅cos 𝛽𝑙+𝑗𝑍sin 𝛽𝑙\n𝑍cos 𝛽𝑙+ 𝑗𝑅sin 𝛽𝑙      𝜋/2   𝑍2/𝑅       √𝑍0𝑅 \n3 \n𝑅cos 𝛽𝑙+𝑗𝑍sin 𝛽𝑙\n𝑍cos 𝛽𝑙+ 𝑗𝑅sin 𝛽𝑙    𝜋/4     𝑍𝑅/(𝑍+ 𝑅)     (𝑍0 + 𝑅)/2 \n4 \n𝑍cos 𝛽𝑙+𝑗𝑅sin 𝛽𝑙\n𝑅cos 𝛽𝑙+ 𝑗𝑍sin 𝛽𝑙    𝜋/4     𝑍𝑅/(𝑍+ 𝑅)     √𝑍0𝑅 \n5 \n𝑍cos 𝛽𝑙+𝑗𝑅sin 𝛽𝑙\n𝑅cos 𝛽𝑙+ 𝑗𝑍sin 𝛽𝑙    𝜋/2     𝑍2/𝑅          (𝑍0 + 𝑅)/2 \n",
+    "explanation": "正しい。無損失線路のZx=Z(Rcosβl+jZsinβl)/(Zcosβl+jRsinβl)。l=λ/4でβl=π/2となりZx=Z²/R。Zx=Z₀よりZ=√(Z₀R)。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A8（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q08-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A8 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=(Rcosβl+jZsinβl)/(Zcosβl+jRsinβl)、B=π/2、C=Z²/R、D=(Z₀+R)/2",
+      "イ": "A=(Rcosβl+jZsinβl)/(Zcosβl+jRsinβl)、B=π/2、C=Z²/R、D=√(Z₀R)",
+      "ウ": "A=(Rcosβl+jZsinβl)/(Zcosβl+jRsinβl)、B=π/4、C=ZR/(Z+R)、D=(Z₀+R)/2",
+      "エ": "A=(Zcosβl+jRsinβl)/(Rcosβl+jZsinβl)、B=π/4、C=ZR/(Z+R)、D=√(Z₀R)",
+      "オ": "A=(Zcosβl+jRsinβl)/(Rcosβl+jZsinβl)、B=π/2、C=Z²/R、D=(Z₀+R)/2"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。伝送線路式とβl=π/2、Zx=Z²/Rは合うが、整合にはZx=Z₀よりZ=√(Z₀R)。",
+      "イ": "正しい。無損失線路のZx=Z(Rcosβl+jZsinβl)/(Zcosβl+jRsinβl)。l=λ/4でβl=π/2となりZx=Z²/R。Zx=Z₀よりZ=√(Z₀R)。",
+      "ウ": "誤り。λ/4での電気角はπ/2であり、入力インピーダンスもZR/(Z+R)ではない。",
+      "エ": "誤り。最終の√(Z₀R)だけ正しく、線路式・電気角・Zxが合わない。",
+      "オ": "誤り。線路式のR,Zを分子分母で逆にしており、整合Zも平均でなく幾何平均。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q09",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－9  次の記述は、有限な導電率の導体中へ平面波が浸透する深さを表す表皮厚さ(深さ)の一般的な特徴について述べたものである。\nこのうち誤っているものを下の番号から選べ。ただし、平面波はマイクロ波（SHF）帯とし、e は自然対数の底で、e = 2.718 とす\nる。 \n1 導体内の電界、磁界及び電流の振幅が導体表面の振幅の1/e に減少する導体表面からの距離をいう。 \n2 導体の透磁率が小さいほど、厚く(深く)なる。 \n3 導体の導電率が小さいほど、薄く(浅く)なる。 \n4 導体内の減衰定数が小さくなるほど、厚く(深く)なる。 \n5 周波数が高くなるほど、薄く(浅く)なる。 \n",
+    "explanation": "誤り。δは導電率σの平方根に反比例するため、σが小さいほど厚くなる。設問の薄くなるは逆。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A9（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 導体内の電界、磁界及び電流の振幅が導体表面の振幅の1/e に減少する導体表面からの距離をいう。 \n",
+      "イ": "2 導体の透磁率が小さいほど、厚く(深く)なる。 \n",
+      "ウ": "3 導体の導電率が小さいほど、薄く(浅く)なる。 \n",
+      "エ": "4 導体内の減衰定数が小さくなるほど、厚く(深く)なる。 \n",
+      "オ": "5 周波数が高くなるほど、薄く(浅く)なる。 \n"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。表皮厚さδでは場の振幅が表面の1/eまで減衰する。",
+      "イ": "正しい。δ=√(2/(ωμσ))なので透磁率μが小さいほど厚くなる。",
+      "ウ": "誤り。δは導電率σの平方根に反比例するため、σが小さいほど厚くなる。設問の薄くなるは逆。",
+      "エ": "正しい。減衰定数αに対してδ=1/αなのでαが小さいほど深くなる。",
+      "オ": "正しい。δは√(1/f)に比例し、周波数が高いほど薄くなる。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q10",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \nA－10 図に示す三線式折返し半波長ダイポールアンテナを用いて250〔MHz〕の電波を受信したときの実効長の値として、最も近いも\nのを下の番号から選べ。ただし、3 本のアンテナ素子はそれぞれ平行で、かつ、極めて近接して配置されており、その素材や寸\n法は同じものとし、波長をλ〔m〕とする。また、アンテナの損失はないものとする。 \n1  76〔cm〕 \n2  96〔cm〕 \n3 115〔cm〕 \n4 155〔cm〕 \n5 191〔cm〕 \n約λ/2  \n給電線 \nアンテナ素子 \n",
+    "explanation": "正しい。平行近接した同寸法3線式折返しでは素子電流の合成により実効長は3λ/π。λ=c/f=1.2mなので1.146m≈115cm。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A10（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q10-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A10 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "76〔cm〕",
+      "イ": "96〔cm〕",
+      "ウ": "115〔cm〕",
+      "エ": "155〔cm〕",
+      "オ": "191〔cm〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。3線式折返し半波長ダイポールの実効長は3λ/πであり、250MHzのλ=1.2mなら約115cm。",
+      "イ": "誤り。約3×1.2/π=1.146mで、96cmではない。",
+      "ウ": "正しい。平行近接した同寸法3線式折返しでは素子電流の合成により実効長は3λ/π。λ=c/f=1.2mなので1.146m≈115cm。",
+      "エ": "誤り。実効長の式は3λ/πであって155cmにはならない。",
+      "オ": "誤り。λ=1.2mかつ3λ/π≈1.15mなので191cmは過大。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q11",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－11 次の記述は、図に示す対数周期ダイポールアレーアンテナの一般的特徴について述べたものである。このうち誤っているもの\nを下の番号から選べ。 \n1 隣り合う素子の長さの比ln+1/ln と隣り合う素子の頂点O からの距離の比xn+1/xn は等しい。 \n2 主放射の方向は矢印アの方向である。 \n3 素子にはダイポールアンテナが用いられ、隣接するダイポールアンテナごとに逆位相で給電する。 \n4 八木・宇田アンテナに比べて使用可能な周波数範囲が狭い。 \n5 使用可能な周波数範囲は、最も長い素子と最も短い素子によって決まる。 \n \nxn+1   \n素子  \n給電点  \nO \nア \nxn  \nx1 \nln+1 \nln \nイ \nl1 \nアンテナの中心軸  \n",
+    "explanation": "誤り。対数周期ダイポールアレーは広帯域アンテナであり、一般に八木・宇田より広い周波数範囲を利用できる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A11（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q11-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A11 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "隣り合う素子長の比ln+1/lnと頂点Oからの距離の比xn+1/xnは等しい。",
+      "イ": "主放射の方向は矢印アの方向である。",
+      "ウ": "素子にはダイポールアンテナが用いられ、隣接するダイポールアンテナごとに逆位相で給電する。",
+      "エ": "八木・宇田アンテナに比べて使用可能な周波数範囲が狭い。",
+      "オ": "使用可能な周波数範囲は、最も長い素子と最も短い素子によって決まる。"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。対数周期構造では素子寸法と配置間隔に共通の相似比を使う。",
+      "イ": "正しい。図の短い素子側が主放射方向アとなる。",
+      "ウ": "正しい。交差給電により隣接ダイポールの位相を反転させる。",
+      "エ": "誤り。対数周期ダイポールアレーは広帯域アンテナであり、一般に八木・宇田より広い周波数範囲を利用できる。",
+      "オ": "正しい。低域側は最大素子、高域側は最小素子の寸法で範囲が定まる。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q12",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－12 次の記述は、カセグレンアンテナについて述べたものである。    内に入れるべき字句の正しい組合せを下の番号から選\nべ。 \n(1) 副反射鏡の二つの焦点のうち、一方の焦点は、主反射鏡の焦点と一致し、他方の焦点は、 A  の励振点と一致している。\n(2) 一次放射器から放射された  B  は、副反射鏡により反射され、さらに主反射鏡により反射されて、 C  となる。 \n(3) 放射特性の乱れは、オフセットカセグレンアンテナのほうが  D  。 \nA        B  \n   C  \n D \n1 一次放射器   球面波    平面波 \n 小さい \n2 一次放射器   平面波    球面波 \n 大きい \n3 一次放射器   球面波    球面波 \n 大きい \n4 主反射鏡    球面波    平面波 \n 大きい \n5 主反射鏡    平面波    球面波 \n 小さい",
+    "explanation": "正しい。副反射鏡の一方の焦点は一次放射器にあり、その球面波を主反射鏡で平面波にする。オフセット配置は遮蔽を抑え放射特性の乱れが小さい。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A12（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "一次放射器／球面波／平面波／小さい",
+      "イ": "一次放射器／平面波／球面波／大きい",
+      "ウ": "一次放射器／球面波／球面波／大きい",
+      "エ": "主反射鏡／球面波／平面波／大きい",
+      "オ": "主反射鏡／平面波／球面波／小さい"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。副反射鏡の一方の焦点は一次放射器にあり、その球面波を主反射鏡で平面波にする。オフセット配置は遮蔽を抑え放射特性の乱れが小さい。",
+      "イ": "誤り。一次放射器から広がるのは球面波で、主反射鏡の後は平面波になる。オフセットによる乱れも小さい。",
+      "ウ": "誤り。最終的に平面波へ変換し、オフセット配置の乱れは小さい。",
+      "エ": "誤り。副反射鏡のもう一方の焦点は主反射鏡ではなく一次放射器の励振点に一致する。オフセット側の乱れも大きくはない。",
+      "オ": "誤り。一次放射器側の焦点、球面波から平面波への変換がいずれも違う。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q13",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－13 次の記述は、図に示す誘電体レンズの波源O から誘電体上の点P までの距離を求める式の算出について述べたものである。 \n    内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、中心線R'F の延長線上のO からレンズ面上の点F 及\nび点P までの距離を、それぞれl〔m〕及びr〔m〕とし、OF とOP のなす角度をθ〔°〕とする。 \n \n(1) 自由空間の伝搬速度を𝑉o〔m/s〕、誘電体中の伝搬速度を𝑉d〔m/s〕とすれば、O から発射された電波が点R と点R'に到達\nする時間は等しくなければならないので、次式が成り立つ。 \n𝑙\n𝑉o +  A  =\n𝑟\n𝑉o〔s〕・・・① \n(2) 誘電体レンズの屈折率をn とすれば、次式の関係がある。 \nn ＝  B       ・・・② \nしたがって、式②を式①に代入すれば、r は次式となる。 \nr ＝  C  〔m〕 \n \nA       B    C \n1  \n𝑟cos 𝜃+𝑙\n𝑉d\n   \n𝑉d\n𝑉o   \n(𝑛−1)𝑙\n𝑛−cos𝜃 \n2  \n𝑟cos 𝜃+𝑙\n𝑉d\n   \n𝑉o\n𝑉d   \n(𝑛+1)𝑙\n1−𝑛cos𝜃 \n3  \n𝑟cos 𝜃−𝑙\n𝑉d\n   \n𝑉d\n𝑉o   \n(𝑛−1)𝑙\n𝑛−cos𝜃 \n4  \n𝑟cos 𝜃−𝑙\n𝑉d\n   \n𝑉d\n𝑉o   \n(𝑛+1)𝑙\n𝑛cos 𝜃−1 \n5  \n𝑟cos 𝜃−𝑙\n𝑉d\n   \n𝑉o\n𝑉d   \n(𝑛−1)𝑙\n𝑛cos 𝜃−1 \nθ \nr \n誘電体  \nl \nR  \nR'   \nP \nO  \nF \n",
+    "explanation": "正しい。軸方向の誘電体内距離はr cosθ−l。l/Vo+(r cosθ−l)/Vd=r/Vo、n=Vo/Vdよりr(n cosθ−1)=(n−1)l。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A13（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A13 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=(r cosθ+l)/Vd、B=Vd/Vo、C=(n−1)l/(n−cosθ)",
+      "イ": "A=(r cosθ+l)/Vd、B=Vo/Vd、C=(n+1)l/(1−n cosθ)",
+      "ウ": "A=(r cosθ−l)/Vd、B=Vd/Vo、C=(n−1)l/(n−cosθ)",
+      "エ": "A=(r cosθ−l)/Vd、B=Vd/Vo、C=(n+1)l/(n cosθ−1)",
+      "オ": "A=(r cosθ−l)/Vd、B=Vo/Vd、C=(n−1)l/(n cosθ−1)"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。誘電体内の距離はr cosθ−lであり、屈折率n=Vo/Vd。",
+      "イ": "誤り。距離は加算でなく差、最終式も変わる。",
+      "ウ": "誤り。Aは合うが、屈折率はVo/Vdであって逆ではない。",
+      "エ": "誤り。Aと分母は合うが、分子は(n−1)l。屈折率の向きも違う。",
+      "オ": "正しい。軸方向の誘電体内距離はr cosθ−l。l/Vo+(r cosθ−l)/Vd=r/Vo、n=Vo/Vdよりr(n cosθ−1)=(n−1)l。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q14",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \nA－14 周波数14〔GHz〕の電波の自由空間基本伝送損が140〔dB〕となる送受信点間の距離の値として、最も近いものを下の番号か \nら選べ。 \n \n1 17.1〔km〕   2 19.9〔km〕   3 25.7〔km〕   4 31.8〔km〕   5 43.6〔km〕",
+    "explanation": "正しい。L=20log10(4πdf/c)より、d=c·10^(140/20)/(4π·14 GHz)≈17.1 km。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A14（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "17.1 km",
+      "イ": "19.9 km",
+      "ウ": "25.7 km",
+      "エ": "31.8 km",
+      "オ": "43.6 km"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。L=20log10(4πdf/c)より、d=c·10^(140/20)/(4π·14 GHz)≈17.1 km。",
+      "イ": "誤り。14 GHzと140 dBを自由空間損失式に代入した距離は約17.1 kmである。",
+      "ウ": "誤り。損失140 dBの線形振幅比10^7を用いると約17.1 kmで、25.7 kmは長すぎる。",
+      "エ": "誤り。d=c·10^7/(4πf)≈17.1 kmとなり、31.8 kmではない。",
+      "オ": "誤り。周波数を14 GHzとして算出する距離は約17.1 kmで、43.6 kmではない。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q15",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n  \n   \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－15 図に示すように、周波数100〔MHz〕、送信アンテナの半波長ダイポールアンテナに対する相対利得10〔dB〕、水平偏波で放\n射電力1〔kW〕、送信アンテナの高さ100〔m〕、受信アンテナの高さ10〔m〕、送受信点間の距離90〔km〕で、送信点から \n60〔km〕離れた地点に高さ300〔m〕のナイフエッジがあるときの受信点における電界強度の値として、最も近いものを下の番号\nから選べ。ただし、回折係数は0.2 とし、アンテナの損失はないものとする。また、波長をλ〔m〕とすれば、AC 間とCB 間の通\n路利得係数 𝐴1及び 𝐴2 は次式で表されるものとする。なお、θ ＜ 0.5 の場合、sinθ ≒ θ が成り立つものとする。 \n  \n𝐴1 = 2 sin 2πℎ1ℎ0\n𝜆𝑑1\n    𝐴2 = 2 sin 2πℎ2ℎ0\n𝜆𝑑2\n \n1   312〔μV/m〕 \n2   416〔μV/m〕 \n3   565〔μV/m〕 \n4   711〔μV/m〕 \n5 1,132〔μV/m〕 \nd：AB 間の地表距離〔m〕  \nh1、h2：送受信アンテナの高さ〔m〕\nd1：AC 間の地表距離〔m〕  \nd2：CB 間の地表距離〔m〕   \nh0：ナイフエッジの高さ〔m〕  \n回折点  \nC  \nh0  \n送信点  \nA  \nd1 \nd \n受信点  \nB \nh1   \nh2 \nd2 \n",
+    "explanation": "正しい。λ=3m、絶対利得≈1.64×10。自由空間界√(30PG)/d≈7.8mV/m。A₁=2sin(π/3)≈1.73、A₂=2sin(π/15)≈0.416、回折0.2を掛け約1.13mV/m。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A15（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q15-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A15 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "312〔μV/m〕",
+      "イ": "416〔μV/m〕",
+      "ウ": "565〔μV/m〕",
+      "エ": "711〔μV/m〕",
+      "オ": "1,132〔μV/m〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。距離90kmの自由空間界にA₁,A₂と回折係数0.2を掛けると約1.13mV/m。",
+      "イ": "誤り。通路係数はA₁≈1.73、A₂≈0.416で、積を反映すると416μV/mでない。",
+      "ウ": "誤り。受信アンテナ側の通路係数と回折係数を両方用いると約1,132μV/m。",
+      "エ": "誤り。約711μV/mは係数の一部を落とした値で、指定式のA₁A₂×0.2を用いる。",
+      "オ": "正しい。λ=3m、絶対利得≈1.64×10。自由空間界√(30PG)/d≈7.8mV/m。A₁=2sin(π/3)≈1.73、A₂=2sin(π/15)≈0.416、回折0.2を掛け約1.13mV/m。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q16",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－16 次の記述は、対流圏伝搬におけるフェージングについて述べたものである。    内に入れるべき字句の正しい組合せを下の\n番号から選べ。ただし、等価地球半径係数をk とする。 \n(1) シンチレーションフェージングは、 A  の不規則な変動により生じる。 \n(2) 干渉性k 形フェージングは、直接波と  B  の干渉がk の変動に伴い変化するために生じる。 \n(3) 回折性k 形フェージングは、電波通路と大地とのクリアランスが十分でないとき、k の変化に伴い大地による回折損が変\n動することにより生じる。k が  C  なると回折損が大きくなる。 \nA         B        C  \n1 大気の屈折率   散乱波     大きく \n2 大気の屈折率   散乱波     小さく \n3 大気の屈折率   大地反射波   小さく \n4 太陽フレア    大地反射波   大きく \n5 太陽フレア    散乱波     小さく",
+    "explanation": "正しい。屈折率の揺らぎがシンチレーションを生み、直接波と大地反射波が干渉する。kが小さくなると実効地球のふくらみでクリアランスが減り回折損が増す。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A16（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "大気の屈折率／散乱波／大きく",
+      "イ": "大気の屈折率／散乱波／小さく",
+      "ウ": "大気の屈折率／大地反射波／小さく",
+      "エ": "太陽フレア／大地反射波／大きく",
+      "オ": "太陽フレア／散乱波／小さく"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。Aは大気の屈折率で合うが、干渉するのは大地反射波で、kが小さくなるほどクリアランスが減り回折損が増す。",
+      "イ": "誤り。Aとkが小さくなる点は合うが、干渉性k形の相手は散乱波でなく大地反射波である。",
+      "ウ": "正しい。屈折率の揺らぎがシンチレーションを生み、直接波と大地反射波が干渉する。kが小さくなると実効地球のふくらみでクリアランスが減り回折損が増す。",
+      "エ": "誤り。対流圏の屈折率変動であって太陽フレアではなく、回折損が増すのはkが小さくなる側である。",
+      "オ": "誤り。太陽フレアはAの原因ではなく、Bは大地反射波である。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q17",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "A－17 次の記述は、陸上の移動体通信の電波伝搬特性について述べたものである。    内に入れるべき字句の正しい組合せを下の\n番号から選べ。なお、同じ記号の     内には、同じ字句が入るものとする。 \n(1) 基地局から送信された電波は、陸上移動局周辺の建物などによるマルチパス環境下で、反射、回折され、定在波を生じ、 \nこの定在波中を移動局が移動すると、受信波の電界強度にフェージングが発生する。この変動は瞬時変動といわれ、 A  \nに従う。一般に、周波数が高いほど、また移動速度が速いほど変動が速いフェージングとなる。 \n(2) 瞬時変動の数十波長程度の区間での中央値を  B  中央値といい、基地局からほぼ等距離の区間内の  B  中央値は、 \n対数正規分布則に従い変動し、その中央値を  C  中央値という。 C  中央値は、移動局の基地局からの距離をd とおく\nと、一般にXd -α で近似される。ここで、X 及びα は、送信電力、周波数、基地局及び移動局のアンテナ高、建物高等によっ\nて決まる。 \n(3) 一般に、移動局に到来する多数の電波の到来時間に差があるため、帯域内の各周波数の振幅と位相の変動が一様ではなく、\n D  フェージングを生じる。狭帯域伝送の場合には、その影響はほとんどないが、一般に、高速デジタル伝送の場合には、\n伝送信号に波形ひずみを生じることになる。多数の到来波の遅延時間を横軸に、各到来波の受信レベルを縦軸にプロットし\nたものは伝搬遅延プロファイルと呼ばれ、多重波伝搬理論の基本特性の一つである。 \nA      \n  B      C     D \n1 レイリー分布則   長区間   短区間   周波数選択性 \n2 レイリー分布則   長区間   短区間   跳躍性 \n3 レイリー分布則   短区間   長区間   周波数選択性 \n4 指数分布則     短区間   長区間    跳躍性 \n5 指数分布則     長区間   短区間    周波数選択性 \n",
+    "explanation": "正しい。瞬時変動はレイリー、数十波長の短区間中央値の揺らぎは対数正規、距離特性は長区間中央値、遅延波は周波数選択性を生む。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A17（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 レイリー分布則   長区間   短区間   周波数選択性 \n",
+      "イ": "2 レイリー分布則   長区間   短区間   跳躍性 \n",
+      "ウ": "3 レイリー分布則   短区間   長区間   周波数選択性 \n",
+      "エ": "4 指数分布則     短区間   長区間    跳躍性 \n",
+      "オ": "5 指数分布則     長区間   短区間    周波数選択性 \n"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。瞬時変動のレイリー分布は合うが、数十波長程度の区間での中央値は短区間中央値である。基地局からほぼ等距離の区間内における短区間中央値の分布の中央値を長区間中央値という。",
+      "イ": "誤り。Aは合うがB/Cの短区間・長区間が逆で、Dも跳躍性でなく周波数選択性フェージング。",
+      "ウ": "正しい。瞬時変動はレイリー、数十波長の短区間中央値の揺らぎは対数正規、距離特性は長区間中央値、遅延波は周波数選択性を生む。",
+      "エ": "誤り。Aは指数分布ではなくレイリー分布で、Dは跳躍性でなく周波数選択性である。",
+      "オ": "誤り。Aはレイリー分布、B/Cは短区間/長区間、Dは周波数選択性である。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q18",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－18 次の記述は、マイクロ波アンテナの利得の測定法について述べたものである。    内に入れるべき字句の正しい組合せを下\nの番号から選べ。ただし、波長を 𝜆〔m〕とする。 \n(1) 利得がそれぞれG1（真数）及びG2（真数）の二つのアンテナを距\n離 𝑑〔m〕離して偏波面を揃えて対向させ、一方のアンテナから \n電力 𝑃t〔W〕を放射し、他方のアンテナで受信した電力を 𝑃r〔W〕と\nすれば、𝑃r / 𝑃t は、次式で表される。 \n𝑃r / 𝑃t ＝ (  A  )2G1G2 ・・・・・・① \n上式において、一方のアンテナの利得が既知であれば、他方のア\nンテナの利得を求めることができる。 \n(2) 二つのアンテナの利得が同じとき、式①からそれぞれのアンテナ\nの利得は、次式により求められる。 \nG1 ＝ G2 ＝  B  \n(3) アンテナが一つのときは、 C  を利用すれば、この方法を適用\nすることができる。 \n \nA     B     \n  C \n1 \n𝜆\n4π𝑑   \n4π𝑑\n𝜆√\n𝑃r\n𝑃t  反射板 \n2 \n𝜆\n4π𝑑   \n4π𝑑\n𝜆√\n𝑃t\n𝑃r  反射板 \n3 \n𝜆\n2π𝑑   \n2π𝑑\n𝜆√\n𝑃t\n𝑃r  回転板 \n4 \n𝜆\n2π𝑑   \n2π𝑑\n𝜆√\n𝑃r\n𝑃t  反射板 \n5 \n𝜆\n2π𝑑  \nπ𝑑\n𝜆√\n𝑃r\n𝑃t \n 回転板 \n",
+    "explanation": "正しい。Friis式Pr/Pt=(λ/4πd)²G1G2。同利得ならG=(4πd/λ)√(Pr/Pt)。反射板を利用すると1本のアンテナでも往復測定できる。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A18（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 \n𝜆\n4π𝑑   \n4π𝑑\n𝜆√\n𝑃r\n𝑃t  反射板 \n",
+      "イ": "2 \n𝜆\n4π𝑑   \n4π𝑑\n𝜆√\n𝑃t\n𝑃r  反射板 \n",
+      "ウ": "3 \n𝜆\n2π𝑑   \n2π𝑑\n𝜆√\n𝑃t\n𝑃r  回転板 \n",
+      "エ": "4 \n𝜆\n2π𝑑   \n2π𝑑\n𝜆√\n𝑃r\n𝑃t  反射板 \n",
+      "オ": "5 \n𝜆\n2π𝑑  \nπ𝑑\n𝜆√\n𝑃r\n𝑃t \n 回転板 \n"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。Friis式Pr/Pt=(λ/4πd)²G1G2。同利得ならG=(4πd/λ)√(Pr/Pt)。反射板を利用すると1本のアンテナでも往復測定できる。",
+      "イ": "誤り。Aと反射板は合うが、同利得のGに入る電力比はPr/Ptの平方根でありPt/Prではない。",
+      "ウ": "誤り。自由空間伝搬係数の分母は4πdで、2πdではない。Cも回転板でなく反射板。",
+      "エ": "誤り。Cの反射板は合うが、Aはλ/(4πd)、Bは(4πd/λ)√(Pr/Pt)である。選択肢4はAとBの係数がともに違う。",
+      "オ": "誤り。Aはλ/(4πd)、Bは(4πd/λ)√(Pr/Pt)、Cは反射板であり各欄が違う。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q19",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "(FB801-5) \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－19 次の記述は、ハイトパターンの測定について述べたものである。    内に入れるべき字句の正しい組合せを下の番号から選\nべ。ただし、波長を𝜆〔m〕とし、大地は完全導体平面でその反射係数を－1 とする。 \n(1) 超短波(VHF)の電波伝搬において、送信アンテナの地上高、送信周波数、送信電力及び送受信点間距離を一定にして、受信\nアンテナの高さを上下に移動させて電界強度を測定すると、直接波と大地反射波との干渉により、図に示すようなハイトパ\nターンが得られる。電界強度は、図のように周期的に大小を繰り返し、その周期は、周波数が低いほど  A  なる。 \n(2) 直接波と大地反射波との通路差 𝛥𝑙 は、送信及び受信アンテナの高さをそれぞれℎ1〔m〕、ℎ2〔m〕、送受信点間の距離を \n𝑑〔m〕とし、𝑑 ≫ (ℎ1＋ℎ2)とすると、次式で表される。 \n𝛥𝑙 ≒  B 〔m〕 \n(3) ハイトパターンの受信電界強度が極大になる受信アンテナの高さ ℎm2と ℎm1の差 𝛥ℎ は、 C 〔m〕である。 \n \nA     B \n  C \n1 短く  2ℎ1ℎ2\n𝑑\n   \n𝜆𝑑\n2ℎ1\n \n2 短く  4ℎ1ℎ2\n𝑑\n   \n𝜆𝑑\n2πℎ1\n \n3 短く  4ℎ1ℎ2\n𝑑\n   \n𝜆𝑑\n2ℎ1\n \n4 長く  4ℎ1ℎ2\n𝑑\n   \n𝜆𝑑\n2πℎ1\n \n5 長く \n  2ℎ1ℎ2\n𝑑\n   \n𝜆𝑑\n2ℎ1\n \n受\n信\nア\nン\nテ\nナ\nの\n高\nさ\n \n受信電界強度〔dBμV/m〕   \n𝛥ℎ \n ℎm1  \n ℎm2  \n〔m〕 \n",
+    "explanation": "正しい。直接波と反射波の通路差≈2h₁h₂/d。隣接極大の通路差はλだけ増えるのでΔh=λd/(2h₁)。低周波ほどλが長く周期も長い。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A19（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q19-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A19 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=短く、B=2h₁h₂/d、C=λd/(2h₁)",
+      "イ": "A=短く、B=4h₁h₂/d、C=λd/(2πh₁)",
+      "ウ": "A=短く、B=4h₁h₂/d、C=λd/(2h₁)",
+      "エ": "A=長く、B=4h₁h₂/d、C=λd/(2πh₁)",
+      "オ": "A=長く、B=2h₁h₂/d、C=λd/(2h₁)"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。通路差と高さ間隔は合うが、低周波でλが長いほどパターン周期は長くなる。",
+      "イ": "誤り。通路差は近似2h₁h₂/dで、4倍ではない。",
+      "ウ": "誤り。Aは長く、Bは2h₁h₂/d。",
+      "エ": "誤り。周期方向は合うが通路差の係数が2倍違い、Cにも余計なπがある。",
+      "オ": "正しい。直接波と反射波の通路差≈2h₁h₂/d。隣接極大の通路差はλだけ増えるのでΔh=λd/(2h₁)。低周波ほどλが長く周期も長い。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q20",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nA－20 次の記述は、開口面アンテナの測定における放射電磁界の領域について述べたものである。    内に入れるべき字句の正し\nい組合せを下の番号から選べ。なお、同じ記号の     内には、同じ字句が入るものとする。 \n(1) アンテナにごく接近した  A  領域では、静電界や誘導電磁界が優勢であるが、アンテナからの距離が離れるにつれてこ\nれらの電磁界成分よりも放射電磁界成分が大きくなってくる。 \n(2) 放射電磁界成分が優勢な領域を放射界領域といい、放射近傍界領域と放射遠方界領域の二つの領域に分けられる。二つの\n領域のうち放射  B  領域は、放射エネルギーの角度に対する分布がアンテナからの距離によって変化する領域で、この領\n域において、アンテナの  B  の測定が行われる。 \n(3) アンテナの放射特性は、 C  によって定義されているので、 B  の測定で得られたデータを用いて計算により  C \nの特性を間接的に求める。 \n \nA            B      C \n1 リアクティブ近傍界   近傍界   放射遠方界 \n2 リアクティブ近傍界   遠方界   誘導電磁界 \n3 リアクティブ近傍界   近傍界   誘導電磁界 \n4 フレネル        近傍界   放射遠方界 \n5 フレネル        遠方界   誘導電磁界 \n",
+    "explanation": "正しい。直近はリアクティブ近傍界、放射近傍界の測定値を変換して放射遠方界の特性を求める。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B A20（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "1 リアクティブ近傍界   近傍界   放射遠方界 \n",
+      "イ": "2 リアクティブ近傍界   遠方界   誘導電磁界 \n",
+      "ウ": "3 リアクティブ近傍界   近傍界   誘導電磁界 \n",
+      "エ": "4 フレネル        近傍界   放射遠方界 \n",
+      "オ": "5 フレネル        遠方界   誘導電磁界 \n"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。直近はリアクティブ近傍界、放射近傍界の測定値を変換して放射遠方界の特性を求める。",
+      "イ": "誤り。放射遠方界では角度分布が距離で変わらない。間接変換の対象は遠方界であり誘導電磁界ではない。",
+      "ウ": "誤り。Bの近傍界測定は合うが、Cは誘導電磁界でなく放射遠方界の特性である。",
+      "エ": "誤り。最もアンテナに近いAはフレネル領域でなくリアクティブ近傍界である。",
+      "オ": "誤り。A・B・Cがそれぞれリアクティブ近傍界、放射近傍界、放射遠方界でなければならない。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q21",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 21,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "B－1  次の記述は、アンテナの比帯域幅(使用可能な周波数帯域幅を中心周波数で割った値）の一般的な特徴について述べたもので\n\n   ある。このうち正しいものを1、誤っているものを2 として解答せよ。\n\n   ア アンテナの入力インピーダンスが、周波数に対して一定である範囲が広いほど比帯域幅は小さくなる。\n\n   イ 比帯域幅は、パーセントで表示した場合、200〔％〕を超えることはない。\n\n   ウ 半波長ダイポールアンテナでは、細い素子より太い素子の方が比帯域幅は大きい。\n\n   エ スリーブアンテナの比帯域幅は、ディスコーンアンテナの比帯域幅より大きい。\n\n   オ 折返し半波長ダイポールアンテナの比帯域幅は、一般に半波長ダイポールアンテナの比帯域幅より大きい。",
+    "explanation": "誤り。入力インピーダンスが実用範囲に保たれる周波数範囲が広いほど、使用可能帯域と比帯域幅は大きくなる。したがって『小さくなる』は逆。\n\n正しい。正の上下限周波数 fH, fL に対し中心周波数を (fH+fL)/2 とすれば、比帯域幅は 2(fH-fL)/(fH+fL) で、200%未満となる。\n\n正しい。素子を太くすると共振付近のリアクタンス変化が緩やかになり、整合を維持できる帯域が広がる。\n\n誤り。ディスコーンは極めて広い帯域を得られる構造であり、スリーブの方が大きいという比較は逆。\n\n正しい。一般に折返し半波長ダイポールは通常の半波長ダイポールより帯域を広く取りやすい。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B B1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q21-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B1 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "誤り。入力インピーダンスが実用範囲に保たれる周波数範囲が広いほど、使用可能帯域と比帯域幅は大きくなる。したがって『小さくなる』は逆。",
+          "prompt": "アンテナの入力インピーダンスが、周波数に対して一定である範囲が広いほど比帯域幅は小さくなる。",
+          "candidateExplanations": {
+            "2": "採用。誤り。入力インピーダンスが実用範囲に保たれる周波数範囲が広いほど、使用可能帯域と比帯域幅は大きくなる。したがって『小さくなる』は逆。",
+            "1": "不採用。誤り。入力インピーダンスが実用範囲に保たれる周波数範囲が広いほど、使用可能帯域と比帯域幅は大きくなる。したがって『小さくなる』は逆。 この原理に照らすと、この命題を正しいと判定するのは逆。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "正しい。正の上下限周波数 fH, fL に対し中心周波数を (fH+fL)/2 とすれば、比帯域幅は 2(fH-fL)/(fH+fL) で、200%未満となる。",
+          "prompt": "比帯域幅は、パーセントで表示した場合、200〔％〕を超えることはない。",
+          "candidateExplanations": {
+            "1": "採用。正しい。正の上下限周波数 fH, fL に対し中心周波数を (fH+fL)/2 とすれば、比帯域幅は 2(fH-fL)/(fH+fL) で、200%未満となる。",
+            "2": "不採用。正しい。正の上下限周波数 fH, fL に対し中心周波数を (fH+fL)/2 とすれば、比帯域幅は 2(fH-fL)/(fH+fL) で、200%未満となる。 この原理に照らすと、この命題を誤りと判定するのは逆。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "正しい。素子を太くすると共振付近のリアクタンス変化が緩やかになり、整合を維持できる帯域が広がる。",
+          "prompt": "半波長ダイポールアンテナでは、細い素子より太い素子の方が比帯域幅は大きい。",
+          "candidateExplanations": {
+            "1": "採用。正しい。素子を太くすると共振付近のリアクタンス変化が緩やかになり、整合を維持できる帯域が広がる。",
+            "2": "不採用。正しい。素子を太くすると共振付近のリアクタンス変化が緩やかになり、整合を維持できる帯域が広がる。 この原理に照らすと、この命題を誤りと判定するのは逆。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "誤り。ディスコーンは極めて広い帯域を得られる構造であり、スリーブの方が大きいという比較は逆。",
+          "prompt": "スリーブアンテナの比帯域幅は、ディスコーンアンテナの比帯域幅より大きい。",
+          "candidateExplanations": {
+            "2": "採用。誤り。ディスコーンは極めて広い帯域を得られる構造であり、スリーブの方が大きいという比較は逆。",
+            "1": "不採用。誤り。ディスコーンは極めて広い帯域を得られる構造であり、スリーブの方が大きいという比較は逆。 この原理に照らすと、この命題を正しいと判定するのは逆。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "正しい。一般に折返し半波長ダイポールは通常の半波長ダイポールより帯域を広く取りやすい。",
+          "prompt": "折返し半波長ダイポールアンテナの比帯域幅は、一般に半波長ダイポールアンテナの比帯域幅より大きい。",
+          "candidateExplanations": {
+            "1": "採用。正しい。一般に折返し半波長ダイポールは通常の半波長ダイポールより帯域を広く取りやすい。",
+            "2": "不採用。正しい。一般に折返し半波長ダイポールは通常の半波長ダイポールより帯域を広く取りやすい。 この原理に照らすと、この命題を誤りと判定するのは逆。"
+          }
+        }
+      ],
+      "officialLabel": "B1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q22",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 22,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "B－2  次の記述は、TEM 波について述べたものである。このうち正しいものを1、誤っているものを2 として解答せよ。\n\n\n  ア 電磁波の伝搬方向に電界及び磁界成分が存在しない横波である。\n  イ 電磁波の伝搬方向に直角な平面内では、電界と磁界が常に逆相で振動する。\n  ウ 導波管中を伝搬できる。\n  エ 平行二線式給電線を伝搬できる。\n  オ 真空中を伝搬する場合の固有インピーダンスは、約120〔Ω〕である。",
+    "explanation": "正しい。TEMでは進行方向の電界成分 Ez と磁界成分 Hz がともにゼロで、両者は横方向成分だけを持つ。\n\n誤り。無損失の一様媒質を一方向に進むTEM波の電界と磁界は互いに直交し、時間的には同相である。逆相という記述は違う。\n\n誤り。中空の単導体導波管はTEMモードを持たず、伝搬するのはTE/TMモードである。\n\n正しい。平行二線は二つの導体間に電界を形成し、TEMモードを伝搬できる。\n\n誤り。真空の固有インピーダンスは約377 Ω（120π Ω）であり、120 Ωではない。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B B2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q22-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B2 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "正しい"
+        },
+        {
+          "id": "2",
+          "label": "誤り"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "正しい。TEMでは進行方向の電界成分 Ez と磁界成分 Hz がともにゼロで、両者は横方向成分だけを持つ。",
+          "prompt": "電磁波の伝搬方向に電界及び磁界成分が存在しない横波である。",
+          "candidateExplanations": {
+            "1": "採用。正しい。TEMでは進行方向の電界成分 Ez と磁界成分 Hz がともにゼロで、両者は横方向成分だけを持つ。",
+            "2": "不採用。正しい。TEMでは進行方向の電界成分 Ez と磁界成分 Hz がともにゼロで、両者は横方向成分だけを持つ。 この原理に照らすと、この命題を誤りと判定するのは逆。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "誤り。無損失の一様媒質を一方向に進むTEM波の電界と磁界は互いに直交し、時間的には同相である。逆相という記述は違う。",
+          "prompt": "電磁波の伝搬方向に直角な平面内では、電界と磁界が常に逆相で振動する。",
+          "candidateExplanations": {
+            "2": "採用。誤り。無損失の一様媒質を一方向に進むTEM波の電界と磁界は互いに直交し、時間的には同相である。逆相という記述は違う。",
+            "1": "不採用。誤り。無損失の一様媒質を一方向に進むTEM波の電界と磁界は互いに直交し、時間的には同相である。逆相という記述は違う。 この原理に照らすと、この命題を正しいと判定するのは逆。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "誤り。中空の単導体導波管はTEMモードを持たず、伝搬するのはTE/TMモードである。",
+          "prompt": "導波管中を伝搬できる。",
+          "candidateExplanations": {
+            "2": "採用。誤り。中空の単導体導波管はTEMモードを持たず、伝搬するのはTE/TMモードである。",
+            "1": "不採用。誤り。中空の単導体導波管はTEMモードを持たず、伝搬するのはTE/TMモードである。 この原理に照らすと、この命題を正しいと判定するのは逆。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "正しい。平行二線は二つの導体間に電界を形成し、TEMモードを伝搬できる。",
+          "prompt": "平行二線式給電線を伝搬できる。",
+          "candidateExplanations": {
+            "1": "採用。正しい。平行二線は二つの導体間に電界を形成し、TEMモードを伝搬できる。",
+            "2": "不採用。正しい。平行二線は二つの導体間に電界を形成し、TEMモードを伝搬できる。 この原理に照らすと、この命題を誤りと判定するのは逆。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "誤り。真空の固有インピーダンスは約377 Ω（120π Ω）であり、120 Ωではない。",
+          "prompt": "真空中を伝搬する場合の固有インピーダンスは、約120〔Ω〕である。",
+          "candidateExplanations": {
+            "2": "採用。誤り。真空の固有インピーダンスは約377 Ω（120π Ω）であり、120 Ωではない。",
+            "1": "不採用。誤り。真空の固有インピーダンスは約377 Ω（120π Ω）であり、120 Ωではない。 この原理に照らすと、この命題を正しいと判定するのは逆。"
+          }
+        }
+      ],
+      "officialLabel": "B2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q23",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 23,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "図に示すヘリカルアンテナ。ヘリックスのピッチ p は数分の1波長程度。1巻きの長さが1波長に近い場合の電流・主ビーム・偏波、巻数と半値角、全長と帯域を問う。",
+    "explanation": "ア=1: 進行波。軸モードではヘリックス導線上を進行波状の電流が進む。\n\nイ=7: 軸方向。図の矢印も示すように、主ビームはヘリックスの軸方向。\n\nウ=3: 円。回転する電流分布により軸方向の円偏波を放射する。\n\nエ=4: 大きく。巻数を減らすと開口相当長が短くなり、半値角は大きくなる。\n\nオ=10: 広くなる。長さを確保し入力インピーダンスが安定すると帯域が広くなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B B3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q23-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B3 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "進行波",
+          "explanation": "1: 採用（ア）。軸モードではヘリックス導線上を進行波状の電流が進む。"
+        },
+        {
+          "id": "2",
+          "label": "軸と直角の方向",
+          "explanation": "2: 不採用。軸に直角の主放射はノーマルモード寄りで、図の軸モードでは軸方向。"
+        },
+        {
+          "id": "3",
+          "label": "円",
+          "explanation": "3: 採用（ウ）。回転する電流分布により軸方向の円偏波を放射する。"
+        },
+        {
+          "id": "4",
+          "label": "大きく",
+          "explanation": "4: 採用（エ）。巻数を減らすと開口相当長が短くなり、半値角は大きくなる。"
+        },
+        {
+          "id": "5",
+          "label": "狭くなる",
+          "explanation": "5: 不採用。全長を十分長くした場合の記述は帯域が広くなる。"
+        },
+        {
+          "id": "6",
+          "label": "定在波",
+          "explanation": "6: 不採用。ここで主に働くのは定在波ではなく進行波。"
+        },
+        {
+          "id": "7",
+          "label": "軸方向",
+          "explanation": "7: 採用（イ）。図の矢印も示すように、主ビームはヘリックスの軸方向。"
+        },
+        {
+          "id": "8",
+          "label": "直線",
+          "explanation": "8: 不採用。軸モードの偏波は直線ではなく円。"
+        },
+        {
+          "id": "9",
+          "label": "小さく",
+          "explanation": "9: 不採用。巻数を減らすと半値角は小さくならず大きくなる。"
+        },
+        {
+          "id": "10",
+          "label": "広くなる",
+          "explanation": "10: 採用（オ）。長さを確保し入力インピーダンスが安定すると帯域が広くなる。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "ア=1: 進行波。軸モードではヘリックス導線上を進行波状の電流が進む。",
+          "candidateExplanations": {
+            "1": "採用。1: 採用（ア）。軸モードではヘリックス導線上を進行波状の電流が進む。 この空欄は「ヘリックス導線に沿う電流の伝わり方は進行波」を問う。",
+            "2": "不採用。候補2「軸と直角の方向」は軸と直角の放射方向であり、図の軸モードの主ビーム方向と違う。この空欄アで必要なのは「ヘリックス導線に沿う電流の伝わり方は進行波」。",
+            "3": "不採用。候補3「円」は別の空欄ウが問う「軸モードの偏波の形は円偏波」の答え。この空欄アは「ヘリックス導線に沿う電流の伝わり方は進行波」を問うため、対象が違う。",
+            "4": "不採用。候補4「大きく」は別の空欄エが問う「巻数を減らした場合の半値角は大きくなる」の答え。この空欄アは「ヘリックス導線に沿う電流の伝わり方は進行波」を問うため、対象が違う。",
+            "5": "不採用。候補5「狭くなる」は帯域が狭くなるという変化で、全長確保による安定した整合と逆。この空欄アで必要なのは「ヘリックス導線に沿う電流の伝わり方は進行波」。",
+            "6": "不採用。候補6「定在波」は定在波であり、軸モードの導線に沿う進行波と異なる。この空欄アで必要なのは「ヘリックス導線に沿う電流の伝わり方は進行波」。",
+            "7": "不採用。候補7「軸方向」は別の空欄イが問う「主ビームの向きはヘリックスの軸方向」の答え。この空欄アは「ヘリックス導線に沿う電流の伝わり方は進行波」を問うため、対象が違う。",
+            "8": "不採用。候補8「直線」は直線偏波であり、軸モードの円偏波と異なる。この空欄アで必要なのは「ヘリックス導線に沿う電流の伝わり方は進行波」。",
+            "9": "不採用。候補9「小さく」は半値角が小さくなる変化で、巻数を減らした場合と逆。この空欄アで必要なのは「ヘリックス導線に沿う電流の伝わり方は進行波」。",
+            "10": "不採用。候補10「広くなる」は別の空欄オが問う「全長を十分長くした場合の使用帯域は広くなる」の答え。この空欄アは「ヘリックス導線に沿う電流の伝わり方は進行波」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "イ=7: 軸方向。図の矢印も示すように、主ビームはヘリックスの軸方向。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「進行波」は別の空欄アが問う「ヘリックス導線に沿う電流の伝わり方は進行波」の答え。この空欄イは「主ビームの向きはヘリックスの軸方向」を問うため、対象が違う。",
+            "2": "不採用。候補2「軸と直角の方向」は軸と直角の放射方向であり、図の軸モードの主ビーム方向と違う。この空欄イで必要なのは「主ビームの向きはヘリックスの軸方向」。",
+            "3": "不採用。候補3「円」は別の空欄ウが問う「軸モードの偏波の形は円偏波」の答え。この空欄イは「主ビームの向きはヘリックスの軸方向」を問うため、対象が違う。",
+            "4": "不採用。候補4「大きく」は別の空欄エが問う「巻数を減らした場合の半値角は大きくなる」の答え。この空欄イは「主ビームの向きはヘリックスの軸方向」を問うため、対象が違う。",
+            "5": "不採用。候補5「狭くなる」は帯域が狭くなるという変化で、全長確保による安定した整合と逆。この空欄イで必要なのは「主ビームの向きはヘリックスの軸方向」。",
+            "6": "不採用。候補6「定在波」は定在波であり、軸モードの導線に沿う進行波と異なる。この空欄イで必要なのは「主ビームの向きはヘリックスの軸方向」。",
+            "7": "採用。7: 採用（イ）。図の矢印も示すように、主ビームはヘリックスの軸方向。 この空欄は「主ビームの向きはヘリックスの軸方向」を問う。",
+            "8": "不採用。候補8「直線」は直線偏波であり、軸モードの円偏波と異なる。この空欄イで必要なのは「主ビームの向きはヘリックスの軸方向」。",
+            "9": "不採用。候補9「小さく」は半値角が小さくなる変化で、巻数を減らした場合と逆。この空欄イで必要なのは「主ビームの向きはヘリックスの軸方向」。",
+            "10": "不採用。候補10「広くなる」は別の空欄オが問う「全長を十分長くした場合の使用帯域は広くなる」の答え。この空欄イは「主ビームの向きはヘリックスの軸方向」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "ウ=3: 円。回転する電流分布により軸方向の円偏波を放射する。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「進行波」は別の空欄アが問う「ヘリックス導線に沿う電流の伝わり方は進行波」の答え。この空欄ウは「軸モードの偏波の形は円偏波」を問うため、対象が違う。",
+            "2": "不採用。候補2「軸と直角の方向」は軸と直角の放射方向であり、図の軸モードの主ビーム方向と違う。この空欄ウで必要なのは「軸モードの偏波の形は円偏波」。",
+            "3": "採用。3: 採用（ウ）。回転する電流分布により軸方向の円偏波を放射する。 この空欄は「軸モードの偏波の形は円偏波」を問う。",
+            "4": "不採用。候補4「大きく」は別の空欄エが問う「巻数を減らした場合の半値角は大きくなる」の答え。この空欄ウは「軸モードの偏波の形は円偏波」を問うため、対象が違う。",
+            "5": "不採用。候補5「狭くなる」は帯域が狭くなるという変化で、全長確保による安定した整合と逆。この空欄ウで必要なのは「軸モードの偏波の形は円偏波」。",
+            "6": "不採用。候補6「定在波」は定在波であり、軸モードの導線に沿う進行波と異なる。この空欄ウで必要なのは「軸モードの偏波の形は円偏波」。",
+            "7": "不採用。候補7「軸方向」は別の空欄イが問う「主ビームの向きはヘリックスの軸方向」の答え。この空欄ウは「軸モードの偏波の形は円偏波」を問うため、対象が違う。",
+            "8": "不採用。候補8「直線」は直線偏波であり、軸モードの円偏波と異なる。この空欄ウで必要なのは「軸モードの偏波の形は円偏波」。",
+            "9": "不採用。候補9「小さく」は半値角が小さくなる変化で、巻数を減らした場合と逆。この空欄ウで必要なのは「軸モードの偏波の形は円偏波」。",
+            "10": "不採用。候補10「広くなる」は別の空欄オが問う「全長を十分長くした場合の使用帯域は広くなる」の答え。この空欄ウは「軸モードの偏波の形は円偏波」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "エ=4: 大きく。巻数を減らすと開口相当長が短くなり、半値角は大きくなる。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「進行波」は別の空欄アが問う「ヘリックス導線に沿う電流の伝わり方は進行波」の答え。この空欄エは「巻数を減らした場合の半値角は大きくなる」を問うため、対象が違う。",
+            "2": "不採用。候補2「軸と直角の方向」は軸と直角の放射方向であり、図の軸モードの主ビーム方向と違う。この空欄エで必要なのは「巻数を減らした場合の半値角は大きくなる」。",
+            "3": "不採用。候補3「円」は別の空欄ウが問う「軸モードの偏波の形は円偏波」の答え。この空欄エは「巻数を減らした場合の半値角は大きくなる」を問うため、対象が違う。",
+            "4": "採用。4: 採用（エ）。巻数を減らすと開口相当長が短くなり、半値角は大きくなる。 この空欄は「巻数を減らした場合の半値角は大きくなる」を問う。",
+            "5": "不採用。候補5「狭くなる」は帯域が狭くなるという変化で、全長確保による安定した整合と逆。この空欄エで必要なのは「巻数を減らした場合の半値角は大きくなる」。",
+            "6": "不採用。候補6「定在波」は定在波であり、軸モードの導線に沿う進行波と異なる。この空欄エで必要なのは「巻数を減らした場合の半値角は大きくなる」。",
+            "7": "不採用。候補7「軸方向」は別の空欄イが問う「主ビームの向きはヘリックスの軸方向」の答え。この空欄エは「巻数を減らした場合の半値角は大きくなる」を問うため、対象が違う。",
+            "8": "不採用。候補8「直線」は直線偏波であり、軸モードの円偏波と異なる。この空欄エで必要なのは「巻数を減らした場合の半値角は大きくなる」。",
+            "9": "不採用。候補9「小さく」は半値角が小さくなる変化で、巻数を減らした場合と逆。この空欄エで必要なのは「巻数を減らした場合の半値角は大きくなる」。",
+            "10": "不採用。候補10「広くなる」は別の空欄オが問う「全長を十分長くした場合の使用帯域は広くなる」の答え。この空欄エは「巻数を減らした場合の半値角は大きくなる」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "オ=10: 広くなる。長さを確保し入力インピーダンスが安定すると帯域が広くなる。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「進行波」は別の空欄アが問う「ヘリックス導線に沿う電流の伝わり方は進行波」の答え。この空欄オは「全長を十分長くした場合の使用帯域は広くなる」を問うため、対象が違う。",
+            "2": "不採用。候補2「軸と直角の方向」は軸と直角の放射方向であり、図の軸モードの主ビーム方向と違う。この空欄オで必要なのは「全長を十分長くした場合の使用帯域は広くなる」。",
+            "3": "不採用。候補3「円」は別の空欄ウが問う「軸モードの偏波の形は円偏波」の答え。この空欄オは「全長を十分長くした場合の使用帯域は広くなる」を問うため、対象が違う。",
+            "4": "不採用。候補4「大きく」は別の空欄エが問う「巻数を減らした場合の半値角は大きくなる」の答え。この空欄オは「全長を十分長くした場合の使用帯域は広くなる」を問うため、対象が違う。",
+            "5": "不採用。候補5「狭くなる」は帯域が狭くなるという変化で、全長確保による安定した整合と逆。この空欄オで必要なのは「全長を十分長くした場合の使用帯域は広くなる」。",
+            "6": "不採用。候補6「定在波」は定在波であり、軸モードの導線に沿う進行波と異なる。この空欄オで必要なのは「全長を十分長くした場合の使用帯域は広くなる」。",
+            "7": "不採用。候補7「軸方向」は別の空欄イが問う「主ビームの向きはヘリックスの軸方向」の答え。この空欄オは「全長を十分長くした場合の使用帯域は広くなる」を問うため、対象が違う。",
+            "8": "不採用。候補8「直線」は直線偏波であり、軸モードの円偏波と異なる。この空欄オで必要なのは「全長を十分長くした場合の使用帯域は広くなる」。",
+            "9": "不採用。候補9「小さく」は半値角が小さくなる変化で、巻数を減らした場合と逆。この空欄オで必要なのは「全長を十分長くした場合の使用帯域は広くなる」。",
+            "10": "採用。10: 採用（オ）。長さを確保し入力インピーダンスが安定すると帯域が広くなる。 この空欄は「全長を十分長くした場合の使用帯域は広くなる」を問う。"
+          }
+        }
+      ],
+      "officialLabel": "B3",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q23-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B3 の図・数式・番号付き語群（原典配置）"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q24",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 24,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "標準大気中の電波通路、m=n+h/R で表す修正屈折率、M曲線、ラジオダクトを問う。同じ記号の空欄には同じ字句が入る。図1は右上がりの標準M曲線、図2は途中で逆勾配となるダクトのM曲線。",
+    "explanation": "ア=8: 上方に凸に。屈折率が高度とともに低下すると光路は地表側へ曲がり、直線との位置関係は上方に凸。\n\nイ=10: 半径。h/R の R は地球の半径。\n\nウ=2: (m−1)。修正屈折示数は M=(m−1)×10^6 と定義する。\n\nエ=5: 標準形。図1の標準大気の直線的なM曲線は標準形。\n\nオ=7: 逆転。温度などの逆転層で屈折率勾配が変わりダクトが生じる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B B4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q24-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "均一",
+          "explanation": "1: 不採用。ラジオダクトを生むのは温度などの逆転層で、均一層ではない。"
+        },
+        {
+          "id": "2",
+          "label": "(m−1)",
+          "explanation": "2: 採用（ウ）。修正屈折示数は M=(m−1)×10^6 と定義する。"
+        },
+        {
+          "id": "3",
+          "label": "下方に凸に",
+          "explanation": "3: 不採用。標準大気の屈折による通路のわん曲は原紙の表現では上方に凸。"
+        },
+        {
+          "id": "4",
+          "label": "(m＋1)",
+          "explanation": "4: 不採用。m が1に近いことを扱うので差の m−1 を使い、m＋1 ではない。"
+        },
+        {
+          "id": "5",
+          "label": "標準形",
+          "explanation": "5: 採用（エ）。図1の標準大気の直線的なM曲線は標準形。"
+        },
+        {
+          "id": "6",
+          "label": "接地形",
+          "explanation": "6: 不採用。図1は接地形ダクトの曲線ではない。"
+        },
+        {
+          "id": "7",
+          "label": "逆転",
+          "explanation": "7: 採用（オ）。温度などの逆転層で屈折率勾配が変わりダクトが生じる。"
+        },
+        {
+          "id": "8",
+          "label": "上方に凸に",
+          "explanation": "8: 採用（ア）。屈折率が高度とともに低下すると光路は地表側へ曲がり、直線との位置関係は上方に凸。"
+        },
+        {
+          "id": "9",
+          "label": "等価半径",
+          "explanation": "9: 不採用。式の R は等価半径ではなく地球の実際の半径。"
+        },
+        {
+          "id": "10",
+          "label": "半径",
+          "explanation": "10: 採用（イ）。h/R の R は地球の半径。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "8",
+          "explanation": "ア=8: 上方に凸に。屈折率が高度とともに低下すると光路は地表側へ曲がり、直線との位置関係は上方に凸。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「均一」は均一な層であり、ダクトの原因となる温度などの逆転層ではない。この空欄アで必要なのは「標準大気での電波通路は送受信点間の直線に対して上方に凸」。",
+            "2": "不採用。候補2「(m−1)」は別の空欄ウが問う「M は1に近い m から1を引いて10の6乗倍した値」の答え。この空欄アは「標準大気での電波通路は送受信点間の直線に対して上方に凸」を問うため、対象が違う。",
+            "3": "不採用。候補3「下方に凸に」は下方に凸という曲がり方で、標準大気の電波通路の形と逆。この空欄アで必要なのは「標準大気での電波通路は送受信点間の直線に対して上方に凸」。",
+            "4": "不採用。候補4「(m＋1)」はm+1 であり、Mの定義に使う m−1 ではない。この空欄アで必要なのは「標準大気での電波通路は送受信点間の直線に対して上方に凸」。",
+            "5": "不採用。候補5「標準形」は別の空欄エが問う「図1の右上がりの一定勾配の M 曲線は標準形」の答え。この空欄アは「標準大気での電波通路は送受信点間の直線に対して上方に凸」を問うため、対象が違う。",
+            "6": "不採用。候補6「接地形」は接地形であり、図1の標準大気のM曲線の名称ではない。この空欄アで必要なのは「標準大気での電波通路は送受信点間の直線に対して上方に凸」。",
+            "7": "不採用。候補7「逆転」は別の空欄オが問う「ラジオダクトの原因となる温度などの層は逆転層」の答え。この空欄アは「標準大気での電波通路は送受信点間の直線に対して上方に凸」を問うため、対象が違う。",
+            "8": "採用。8: 採用（ア）。屈折率が高度とともに低下すると光路は地表側へ曲がり、直線との位置関係は上方に凸。 この空欄は「標準大気での電波通路は送受信点間の直線に対して上方に凸」を問う。",
+            "9": "不採用。候補9「等価半径」は等価半径であり、m=n+h/R の R に置く地球の実際の半径ではない。この空欄アで必要なのは「標準大気での電波通路は送受信点間の直線に対して上方に凸」。",
+            "10": "不採用。候補10「半径」は別の空欄イが問う「m=n+h/R の R は地球の実際の半径」の答え。この空欄アは「標準大気での電波通路は送受信点間の直線に対して上方に凸」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "10",
+          "explanation": "イ=10: 半径。h/R の R は地球の半径。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「均一」は均一な層であり、ダクトの原因となる温度などの逆転層ではない。この空欄イで必要なのは「m=n+h/R の R は地球の実際の半径」。",
+            "2": "不採用。候補2「(m−1)」は別の空欄ウが問う「M は1に近い m から1を引いて10の6乗倍した値」の答え。この空欄イは「m=n+h/R の R は地球の実際の半径」を問うため、対象が違う。",
+            "3": "不採用。候補3「下方に凸に」は下方に凸という曲がり方で、標準大気の電波通路の形と逆。この空欄イで必要なのは「m=n+h/R の R は地球の実際の半径」。",
+            "4": "不採用。候補4「(m＋1)」はm+1 であり、Mの定義に使う m−1 ではない。この空欄イで必要なのは「m=n+h/R の R は地球の実際の半径」。",
+            "5": "不採用。候補5「標準形」は別の空欄エが問う「図1の右上がりの一定勾配の M 曲線は標準形」の答え。この空欄イは「m=n+h/R の R は地球の実際の半径」を問うため、対象が違う。",
+            "6": "不採用。候補6「接地形」は接地形であり、図1の標準大気のM曲線の名称ではない。この空欄イで必要なのは「m=n+h/R の R は地球の実際の半径」。",
+            "7": "不採用。候補7「逆転」は別の空欄オが問う「ラジオダクトの原因となる温度などの層は逆転層」の答え。この空欄イは「m=n+h/R の R は地球の実際の半径」を問うため、対象が違う。",
+            "8": "不採用。候補8「上方に凸に」は別の空欄アが問う「標準大気での電波通路は送受信点間の直線に対して上方に凸」の答え。この空欄イは「m=n+h/R の R は地球の実際の半径」を問うため、対象が違う。",
+            "9": "不採用。候補9「等価半径」は等価半径であり、m=n+h/R の R に置く地球の実際の半径ではない。この空欄イで必要なのは「m=n+h/R の R は地球の実際の半径」。",
+            "10": "採用。10: 採用（イ）。h/R の R は地球の半径。 この空欄は「m=n+h/R の R は地球の実際の半径」を問う。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "ウ=2: (m−1)。修正屈折示数は M=(m−1)×10^6 と定義する。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「均一」は均一な層であり、ダクトの原因となる温度などの逆転層ではない。この空欄ウで必要なのは「M は1に近い m から1を引いて10の6乗倍した値」。",
+            "2": "採用。2: 採用（ウ）。修正屈折示数は M=(m−1)×10^6 と定義する。 この空欄は「M は1に近い m から1を引いて10の6乗倍した値」を問う。",
+            "3": "不採用。候補3「下方に凸に」は下方に凸という曲がり方で、標準大気の電波通路の形と逆。この空欄ウで必要なのは「M は1に近い m から1を引いて10の6乗倍した値」。",
+            "4": "不採用。候補4「(m＋1)」はm+1 であり、Mの定義に使う m−1 ではない。この空欄ウで必要なのは「M は1に近い m から1を引いて10の6乗倍した値」。",
+            "5": "不採用。候補5「標準形」は別の空欄エが問う「図1の右上がりの一定勾配の M 曲線は標準形」の答え。この空欄ウは「M は1に近い m から1を引いて10の6乗倍した値」を問うため、対象が違う。",
+            "6": "不採用。候補6「接地形」は接地形であり、図1の標準大気のM曲線の名称ではない。この空欄ウで必要なのは「M は1に近い m から1を引いて10の6乗倍した値」。",
+            "7": "不採用。候補7「逆転」は別の空欄オが問う「ラジオダクトの原因となる温度などの層は逆転層」の答え。この空欄ウは「M は1に近い m から1を引いて10の6乗倍した値」を問うため、対象が違う。",
+            "8": "不採用。候補8「上方に凸に」は別の空欄アが問う「標準大気での電波通路は送受信点間の直線に対して上方に凸」の答え。この空欄ウは「M は1に近い m から1を引いて10の6乗倍した値」を問うため、対象が違う。",
+            "9": "不採用。候補9「等価半径」は等価半径であり、m=n+h/R の R に置く地球の実際の半径ではない。この空欄ウで必要なのは「M は1に近い m から1を引いて10の6乗倍した値」。",
+            "10": "不採用。候補10「半径」は別の空欄イが問う「m=n+h/R の R は地球の実際の半径」の答え。この空欄ウは「M は1に近い m から1を引いて10の6乗倍した値」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "5",
+          "explanation": "エ=5: 標準形。図1の標準大気の直線的なM曲線は標準形。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「均一」は均一な層であり、ダクトの原因となる温度などの逆転層ではない。この空欄エで必要なのは「図1の右上がりの一定勾配の M 曲線は標準形」。",
+            "2": "不採用。候補2「(m−1)」は別の空欄ウが問う「M は1に近い m から1を引いて10の6乗倍した値」の答え。この空欄エは「図1の右上がりの一定勾配の M 曲線は標準形」を問うため、対象が違う。",
+            "3": "不採用。候補3「下方に凸に」は下方に凸という曲がり方で、標準大気の電波通路の形と逆。この空欄エで必要なのは「図1の右上がりの一定勾配の M 曲線は標準形」。",
+            "4": "不採用。候補4「(m＋1)」はm+1 であり、Mの定義に使う m−1 ではない。この空欄エで必要なのは「図1の右上がりの一定勾配の M 曲線は標準形」。",
+            "5": "採用。5: 採用（エ）。図1の標準大気の直線的なM曲線は標準形。 この空欄は「図1の右上がりの一定勾配の M 曲線は標準形」を問う。",
+            "6": "不採用。候補6「接地形」は接地形であり、図1の標準大気のM曲線の名称ではない。この空欄エで必要なのは「図1の右上がりの一定勾配の M 曲線は標準形」。",
+            "7": "不採用。候補7「逆転」は別の空欄オが問う「ラジオダクトの原因となる温度などの層は逆転層」の答え。この空欄エは「図1の右上がりの一定勾配の M 曲線は標準形」を問うため、対象が違う。",
+            "8": "不採用。候補8「上方に凸に」は別の空欄アが問う「標準大気での電波通路は送受信点間の直線に対して上方に凸」の答え。この空欄エは「図1の右上がりの一定勾配の M 曲線は標準形」を問うため、対象が違う。",
+            "9": "不採用。候補9「等価半径」は等価半径であり、m=n+h/R の R に置く地球の実際の半径ではない。この空欄エで必要なのは「図1の右上がりの一定勾配の M 曲線は標準形」。",
+            "10": "不採用。候補10「半径」は別の空欄イが問う「m=n+h/R の R は地球の実際の半径」の答え。この空欄エは「図1の右上がりの一定勾配の M 曲線は標準形」を問うため、対象が違う。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "7",
+          "explanation": "オ=7: 逆転。温度などの逆転層で屈折率勾配が変わりダクトが生じる。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「均一」は均一な層であり、ダクトの原因となる温度などの逆転層ではない。この空欄オで必要なのは「ラジオダクトの原因となる温度などの層は逆転層」。",
+            "2": "不採用。候補2「(m−1)」は別の空欄ウが問う「M は1に近い m から1を引いて10の6乗倍した値」の答え。この空欄オは「ラジオダクトの原因となる温度などの層は逆転層」を問うため、対象が違う。",
+            "3": "不採用。候補3「下方に凸に」は下方に凸という曲がり方で、標準大気の電波通路の形と逆。この空欄オで必要なのは「ラジオダクトの原因となる温度などの層は逆転層」。",
+            "4": "不採用。候補4「(m＋1)」はm+1 であり、Mの定義に使う m−1 ではない。この空欄オで必要なのは「ラジオダクトの原因となる温度などの層は逆転層」。",
+            "5": "不採用。候補5「標準形」は別の空欄エが問う「図1の右上がりの一定勾配の M 曲線は標準形」の答え。この空欄オは「ラジオダクトの原因となる温度などの層は逆転層」を問うため、対象が違う。",
+            "6": "不採用。候補6「接地形」は接地形であり、図1の標準大気のM曲線の名称ではない。この空欄オで必要なのは「ラジオダクトの原因となる温度などの層は逆転層」。",
+            "7": "採用。7: 採用（オ）。温度などの逆転層で屈折率勾配が変わりダクトが生じる。 この空欄は「ラジオダクトの原因となる温度などの層は逆転層」を問う。",
+            "8": "不採用。候補8「上方に凸に」は別の空欄アが問う「標準大気での電波通路は送受信点間の直線に対して上方に凸」の答え。この空欄オは「ラジオダクトの原因となる温度などの層は逆転層」を問うため、対象が違う。",
+            "9": "不採用。候補9「等価半径」は等価半径であり、m=n+h/R の R に置く地球の実際の半径ではない。この空欄オで必要なのは「ラジオダクトの原因となる温度などの層は逆転層」。",
+            "10": "不採用。候補10「半径」は別の空欄イが問う「m=n+h/R の R は地球の実際の半径」の答え。この空欄オは「ラジオダクトの原因となる温度などの層は逆転層」を問うため、対象が違う。"
+          }
+        }
+      ],
+      "officialLabel": "B4",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q24-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-engineering-b-q25",
+    "exam": "riku-tech1",
+    "session": "kogaku-b",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 25,
+    "type": "native-b",
+    "category": "無線工学B",
+    "subject": "無線工学B",
+    "topicTags": [
+      "無線工学B"
+    ],
+    "difficulty": 3,
+    "question": "静電遮へい・磁気遮へい・高周波電磁遮へいの原理と材料、網目寸法を問う。",
+    "explanation": "ア=6: 電界。導体に囲まれた電荷のない静電平衡領域では電界が存在しない。\n\nイ=7: 透磁率。高透磁率材に磁束を集中させて内部の静磁界を弱める。\n\nウ=8: 高周波電流。入射波で導体表面に生じる高周波電流が打消し側の場を作る。\n\nエ=4: アルミニウム。アルミニウムは導電性のある電磁遮へい材。\n\nオ=5: 小さく。網目を波長より十分小さくして通過や開口放射を抑える。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kogaku-b-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学B B5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q25-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "磁界",
+          "explanation": "1: 不採用。静電遮へいの対象は電界であり、静磁界を完全に消すという意味ではない。"
+        },
+        {
+          "id": "2",
+          "label": "透過率",
+          "explanation": "2: 不採用。磁束を材料内に通す性質は透過率でなく透磁率。"
+        },
+        {
+          "id": "3",
+          "label": "変位電流",
+          "explanation": "3: 不採用。導電性遮へい材に流れるのは変位電流ではなく高周波電流。"
+        },
+        {
+          "id": "4",
+          "label": "アルミニウム",
+          "explanation": "4: 採用（エ）。アルミニウムは導電性のある電磁遮へい材。"
+        },
+        {
+          "id": "5",
+          "label": "小さく",
+          "explanation": "5: 採用（オ）。網目を波長より十分小さくして通過や開口放射を抑える。"
+        },
+        {
+          "id": "6",
+          "label": "電界",
+          "explanation": "6: 採用（ア）。導体に囲まれた電荷のない静電平衡領域では電界が存在しない。"
+        },
+        {
+          "id": "7",
+          "label": "透磁率",
+          "explanation": "7: 採用（イ）。高透磁率材に磁束を集中させて内部の静磁界を弱める。"
+        },
+        {
+          "id": "8",
+          "label": "高周波電流",
+          "explanation": "8: 採用（ウ）。入射波で導体表面に生じる高周波電流が打消し側の場を作る。"
+        },
+        {
+          "id": "9",
+          "label": "フッ素樹脂",
+          "explanation": "9: 不採用。フッ素樹脂は絶縁体で、ここでの金属遮へい材ではない。"
+        },
+        {
+          "id": "10",
+          "label": "大きく",
+          "explanation": "10: 不採用。網目を波長に比べ大きくすると遮へい性能を損なう。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "ア=6: 電界。導体に囲まれた電荷のない静電平衡領域では電界が存在しない。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「磁界」は磁界であり、静電遮へいの説明で消える電界とは別の場。この空欄アで必要なのは「電荷のない導体囲い内の静電界の量は電界」。",
+            "2": "不採用。候補2「透過率」は透過率であり、磁束を通しやすい性質を表す透磁率ではない。この空欄アで必要なのは「電荷のない導体囲い内の静電界の量は電界」。",
+            "3": "不採用。候補3「変位電流」は変位電流であり、金属表面に誘導される高周波電流とは異なる。この空欄アで必要なのは「電荷のない導体囲い内の静電界の量は電界」。",
+            "4": "不採用。候補4「アルミニウム」は別の空欄エが問う「銅と並ぶ導電性の金属遮へい材はアルミニウム」の答え。この空欄アは「電荷のない導体囲い内の静電界の量は電界」を問うため、対象が違う。",
+            "5": "不採用。候補5「小さく」は別の空欄オが問う「網目の波長に対する必要な寸法は十分小さく」の答え。この空欄アは「電荷のない導体囲い内の静電界の量は電界」を問うため、対象が違う。",
+            "6": "採用。6: 採用（ア）。導体に囲まれた電荷のない静電平衡領域では電界が存在しない。 この空欄は「電荷のない導体囲い内の静電界の量は電界」を問う。",
+            "7": "不採用。候補7「透磁率」は別の空欄イが問う「静磁界を材料側に通す物性値は透磁率」の答え。この空欄アは「電荷のない導体囲い内の静電界の量は電界」を問うため、対象が違う。",
+            "8": "不採用。候補8「高周波電流」は別の空欄ウが問う「高周波の遮へい材に流れる電流は高周波電流」の答え。この空欄アは「電荷のない導体囲い内の静電界の量は電界」を問うため、対象が違う。",
+            "9": "不採用。候補9「フッ素樹脂」はフッ素樹脂という絶縁材料であり、ここで挙げる金属遮へい材ではない。この空欄アで必要なのは「電荷のない導体囲い内の静電界の量は電界」。",
+            "10": "不採用。候補10「大きく」は網目を大きくする選択で、波長に比べ小さく保つ条件と逆。この空欄アで必要なのは「電荷のない導体囲い内の静電界の量は電界」。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "イ=7: 透磁率。高透磁率材に磁束を集中させて内部の静磁界を弱める。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「磁界」は磁界であり、静電遮へいの説明で消える電界とは別の場。この空欄イで必要なのは「静磁界を材料側に通す物性値は透磁率」。",
+            "2": "不採用。候補2「透過率」は透過率であり、磁束を通しやすい性質を表す透磁率ではない。この空欄イで必要なのは「静磁界を材料側に通す物性値は透磁率」。",
+            "3": "不採用。候補3「変位電流」は変位電流であり、金属表面に誘導される高周波電流とは異なる。この空欄イで必要なのは「静磁界を材料側に通す物性値は透磁率」。",
+            "4": "不採用。候補4「アルミニウム」は別の空欄エが問う「銅と並ぶ導電性の金属遮へい材はアルミニウム」の答え。この空欄イは「静磁界を材料側に通す物性値は透磁率」を問うため、対象が違う。",
+            "5": "不採用。候補5「小さく」は別の空欄オが問う「網目の波長に対する必要な寸法は十分小さく」の答え。この空欄イは「静磁界を材料側に通す物性値は透磁率」を問うため、対象が違う。",
+            "6": "不採用。候補6「電界」は別の空欄アが問う「電荷のない導体囲い内の静電界の量は電界」の答え。この空欄イは「静磁界を材料側に通す物性値は透磁率」を問うため、対象が違う。",
+            "7": "採用。7: 採用（イ）。高透磁率材に磁束を集中させて内部の静磁界を弱める。 この空欄は「静磁界を材料側に通す物性値は透磁率」を問う。",
+            "8": "不採用。候補8「高周波電流」は別の空欄ウが問う「高周波の遮へい材に流れる電流は高周波電流」の答え。この空欄イは「静磁界を材料側に通す物性値は透磁率」を問うため、対象が違う。",
+            "9": "不採用。候補9「フッ素樹脂」はフッ素樹脂という絶縁材料であり、ここで挙げる金属遮へい材ではない。この空欄イで必要なのは「静磁界を材料側に通す物性値は透磁率」。",
+            "10": "不採用。候補10「大きく」は網目を大きくする選択で、波長に比べ小さく保つ条件と逆。この空欄イで必要なのは「静磁界を材料側に通す物性値は透磁率」。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "ウ=8: 高周波電流。入射波で導体表面に生じる高周波電流が打消し側の場を作る。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「磁界」は磁界であり、静電遮へいの説明で消える電界とは別の場。この空欄ウで必要なのは「高周波の遮へい材に流れる電流は高周波電流」。",
+            "2": "不採用。候補2「透過率」は透過率であり、磁束を通しやすい性質を表す透磁率ではない。この空欄ウで必要なのは「高周波の遮へい材に流れる電流は高周波電流」。",
+            "3": "不採用。候補3「変位電流」は変位電流であり、金属表面に誘導される高周波電流とは異なる。この空欄ウで必要なのは「高周波の遮へい材に流れる電流は高周波電流」。",
+            "4": "不採用。候補4「アルミニウム」は別の空欄エが問う「銅と並ぶ導電性の金属遮へい材はアルミニウム」の答え。この空欄ウは「高周波の遮へい材に流れる電流は高周波電流」を問うため、対象が違う。",
+            "5": "不採用。候補5「小さく」は別の空欄オが問う「網目の波長に対する必要な寸法は十分小さく」の答え。この空欄ウは「高周波の遮へい材に流れる電流は高周波電流」を問うため、対象が違う。",
+            "6": "不採用。候補6「電界」は別の空欄アが問う「電荷のない導体囲い内の静電界の量は電界」の答え。この空欄ウは「高周波の遮へい材に流れる電流は高周波電流」を問うため、対象が違う。",
+            "7": "不採用。候補7「透磁率」は別の空欄イが問う「静磁界を材料側に通す物性値は透磁率」の答え。この空欄ウは「高周波の遮へい材に流れる電流は高周波電流」を問うため、対象が違う。",
+            "8": "採用。8: 採用（ウ）。入射波で導体表面に生じる高周波電流が打消し側の場を作る。 この空欄は「高周波の遮へい材に流れる電流は高周波電流」を問う。",
+            "9": "不採用。候補9「フッ素樹脂」はフッ素樹脂という絶縁材料であり、ここで挙げる金属遮へい材ではない。この空欄ウで必要なのは「高周波の遮へい材に流れる電流は高周波電流」。",
+            "10": "不採用。候補10「大きく」は網目を大きくする選択で、波長に比べ小さく保つ条件と逆。この空欄ウで必要なのは「高周波の遮へい材に流れる電流は高周波電流」。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "エ=4: アルミニウム。アルミニウムは導電性のある電磁遮へい材。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「磁界」は磁界であり、静電遮へいの説明で消える電界とは別の場。この空欄エで必要なのは「銅と並ぶ導電性の金属遮へい材はアルミニウム」。",
+            "2": "不採用。候補2「透過率」は透過率であり、磁束を通しやすい性質を表す透磁率ではない。この空欄エで必要なのは「銅と並ぶ導電性の金属遮へい材はアルミニウム」。",
+            "3": "不採用。候補3「変位電流」は変位電流であり、金属表面に誘導される高周波電流とは異なる。この空欄エで必要なのは「銅と並ぶ導電性の金属遮へい材はアルミニウム」。",
+            "4": "採用。4: 採用（エ）。アルミニウムは導電性のある電磁遮へい材。 この空欄は「銅と並ぶ導電性の金属遮へい材はアルミニウム」を問う。",
+            "5": "不採用。候補5「小さく」は別の空欄オが問う「網目の波長に対する必要な寸法は十分小さく」の答え。この空欄エは「銅と並ぶ導電性の金属遮へい材はアルミニウム」を問うため、対象が違う。",
+            "6": "不採用。候補6「電界」は別の空欄アが問う「電荷のない導体囲い内の静電界の量は電界」の答え。この空欄エは「銅と並ぶ導電性の金属遮へい材はアルミニウム」を問うため、対象が違う。",
+            "7": "不採用。候補7「透磁率」は別の空欄イが問う「静磁界を材料側に通す物性値は透磁率」の答え。この空欄エは「銅と並ぶ導電性の金属遮へい材はアルミニウム」を問うため、対象が違う。",
+            "8": "不採用。候補8「高周波電流」は別の空欄ウが問う「高周波の遮へい材に流れる電流は高周波電流」の答え。この空欄エは「銅と並ぶ導電性の金属遮へい材はアルミニウム」を問うため、対象が違う。",
+            "9": "不採用。候補9「フッ素樹脂」はフッ素樹脂という絶縁材料であり、ここで挙げる金属遮へい材ではない。この空欄エで必要なのは「銅と並ぶ導電性の金属遮へい材はアルミニウム」。",
+            "10": "不採用。候補10「大きく」は網目を大きくする選択で、波長に比べ小さく保つ条件と逆。この空欄エで必要なのは「銅と並ぶ導電性の金属遮へい材はアルミニウム」。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "オ=5: 小さく。網目を波長より十分小さくして通過や開口放射を抑える。",
+          "candidateExplanations": {
+            "1": "不採用。候補1「磁界」は磁界であり、静電遮へいの説明で消える電界とは別の場。この空欄オで必要なのは「網目の波長に対する必要な寸法は十分小さく」。",
+            "2": "不採用。候補2「透過率」は透過率であり、磁束を通しやすい性質を表す透磁率ではない。この空欄オで必要なのは「網目の波長に対する必要な寸法は十分小さく」。",
+            "3": "不採用。候補3「変位電流」は変位電流であり、金属表面に誘導される高周波電流とは異なる。この空欄オで必要なのは「網目の波長に対する必要な寸法は十分小さく」。",
+            "4": "不採用。候補4「アルミニウム」は別の空欄エが問う「銅と並ぶ導電性の金属遮へい材はアルミニウム」の答え。この空欄オは「網目の波長に対する必要な寸法は十分小さく」を問うため、対象が違う。",
+            "5": "採用。5: 採用（オ）。網目を波長より十分小さくして通過や開口放射を抑える。 この空欄は「網目の波長に対する必要な寸法は十分小さく」を問う。",
+            "6": "不採用。候補6「電界」は別の空欄アが問う「電荷のない導体囲い内の静電界の量は電界」の答え。この空欄オは「網目の波長に対する必要な寸法は十分小さく」を問うため、対象が違う。",
+            "7": "不採用。候補7「透磁率」は別の空欄イが問う「静磁界を材料側に通す物性値は透磁率」の答え。この空欄オは「網目の波長に対する必要な寸法は十分小さく」を問うため、対象が違う。",
+            "8": "不採用。候補8「高周波電流」は別の空欄ウが問う「高周波の遮へい材に流れる電流は高周波電流」の答え。この空欄オは「網目の波長に対する必要な寸法は十分小さく」を問うため、対象が違う。",
+            "9": "不採用。候補9「フッ素樹脂」はフッ素樹脂という絶縁材料であり、ここで挙げる金属遮へい材ではない。この空欄オで必要なのは「網目の波長に対する必要な寸法は十分小さく」。",
+            "10": "不採用。候補10「大きく」は網目を大きくする選択で、波長に比べ小さく保つ条件と逆。この空欄オで必要なのは「網目の波長に対する必要な寸法は十分小さく」。"
+          }
+        }
+      ],
+      "officialLabel": "B5",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-engineering-b-q25-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+      ],
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1
+      }
+    }
+  }
+]
