@@ -81,6 +81,9 @@ import { RIKU_TECH2_QUESTIONS } from "./riku-tech2";
 import { AMATEUR2_QUESTIONS } from "./amateur2";
 import { MARITIME_RADAR_QUESTIONS } from "./maritime-radar";
 import { MARITIME_SPECIAL1_QUESTIONS } from "./maritime-special1";
+import { MARITIME3_QUESTIONS } from "./maritime3";
+import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
+import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
@@ -95,6 +98,9 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("land-special1") ? { "land-special1": LAND_SPECIAL1_QUESTIONS } : {}),
   ...(isExamPublished("riku-tech1") ? { "riku-tech1": RIKU_TECH1_QUESTIONS } : {}),
   ...(isExamPublished("maritime4") ? { "maritime4": MARITIME4_QUESTIONS } : {}),
+  ...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
+  ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
+  ...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,

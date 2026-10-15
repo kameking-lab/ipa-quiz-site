@@ -38,10 +38,10 @@ import type {
 type SearchSort = "relevance" | "year_desc" | "category" | "random";
 
 const EXAM_OPTIONS: ExamCode[] = [
-  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar",
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "land-special2", "land-special3",
   "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ];
-const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august"];
+const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];
 const SORT_OPTIONS: { value: SearchSort; label: string }[] = [
   { value: "relevance", label: "関連度順" },

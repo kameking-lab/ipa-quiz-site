@@ -128,7 +128,7 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|march)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
   const segment = parseQuestionNumberSegment(p.exam, p.qnum);
