@@ -2667,14 +2667,17 @@
     "officialAnswerNumber": "5",
     "explanation": "協調回避情報の交換はモードSのデータリンクによる。モードAにその協調機能があるとするため誤り。",
     "choiceExplanations": {
-      "ア": "相手機から周期送信される識別情報を受けて追跡・質問対象を定める段階で、公式キーでは正しい扱い。周期送信情報の範囲は装置仕様で独立照合を要する。",
+      "ア": "正しい。モードSトランスポンダは約1秒ごとに、自機固有のICAO 24ビット航空機アドレスを含むスキッタを自発送信する。ACAS II（TCAS II）は相手機のスキッタを受信・復号してそのアドレスを取得し、個別質問に用いるので、相手機が周期的に送るアドレス等の情報を受信するという記述に合う。",
       "イ": "ACAS IIは相手機に個別質問を行い、応答から方位・距離・高度情報を監視するので正しい。",
       "ウ": "接近状況を評価し、交通情報を操縦者へ提示する機能なので正しい。",
       "エ": "回避が必要なら垂直方向の回避指示を視覚・音声で提示するので正しい。",
       "オ": "協調回避情報の交換はモードSのデータリンクによる。モードAにその協調機能があるとするため誤り。"
     },
     "explanationCoverage": "full",
-    "needsReview": true
+    "needsReview": false,
+    "officialReferenceUrls": [
+      "https://www.faa.gov/documentLibrary/media/Advisory_Circular/TCAS%20II%20V7.1%20Intro%20booklet.pdf"
+    ]
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q09",
