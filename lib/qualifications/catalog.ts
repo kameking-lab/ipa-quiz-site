@@ -42,6 +42,31 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "riku-tech2", examCode: "riku-tech2", shortName: "第二級陸上無線技術士", fullName: "第二級陸上無線技術士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年1月・7月の公表過去問190原問を保存し、189原問を無料で回数制限なく演習できます。確認中の1月無線工学B B5は演習対象外です。原問の番号・図・語群を保持し、B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第二級陸上無線技術士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "amateur2", examCode: "amateur2", shortName: "第二級アマチュア無線技士", fullName: "第二級アマチュア無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年5月・8月の公表過去問110原問を保存し、109原問を無料で回数制限なく演習できます。確認中の5月工学A17は演習対象外です。B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第二級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "maritime-radar", examCode: "maritime-radar", shortName: "レーダー級海上特殊無線技士", fullName: "レーダー級海上特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年2月・6月の公表過去問48原問を保存し、47原問を無料で回数制限なく演習できます。確認中の6月工学問24は演習対象外です。原問番号・全肢解説と必要図を保持しています。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+
+  {
     slug: "amateur1", examCode: "amateur1", shortName: "第一級アマチュア無線技士", fullName: "第一級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",

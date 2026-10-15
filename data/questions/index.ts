@@ -77,9 +77,15 @@ import { RIKU_TECH1_QUESTIONS } from "./riku-tech1";
 import { MARITIME4_QUESTIONS } from "./maritime4";
 import { AVIATION_COMM_QUESTIONS } from "./aviation-comm";
 import { AMATEUR1_QUESTIONS } from "./amateur1";
+import { RIKU_TECH2_QUESTIONS } from "./riku-tech2";
+import { AMATEUR2_QUESTIONS } from "./amateur2";
+import { MARITIME_RADAR_QUESTIONS } from "./maritime-radar";
 import { MARITIME_SPECIAL1_QUESTIONS } from "./maritime-special1";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("amateur2") ? { "amateur2": AMATEUR2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("maritime-radar") ? { "maritime-radar": MARITIME_RADAR_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("amateur1") ? { "amateur1": AMATEUR1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("maritime-special1") ? { "maritime-special1": MARITIME_SPECIAL1_QUESTIONS } : {}),
   ...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),

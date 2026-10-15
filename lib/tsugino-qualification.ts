@@ -3,6 +3,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const TSUGINO_ORIGIN = "https://tsugino-shikaku.jp";
 
 const QUALIFICATION_IDS: Partial<Record<ExamCode, string>> = {
+  "riku-tech2": "radio-riku-2",
   "aviation-comm": "radio-koku",
   ip: "itpassport",
   sg: "sg",
