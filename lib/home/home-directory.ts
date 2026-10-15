@@ -120,9 +120,12 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "maritime3", name: "第三級海上無線通信士", sub: "2026年3月・9月の無線工学・法規70原問・全肢解説", domain: "electrical" },
+  { code: "land-special2", name: "第二級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
+  { code: "land-special3", name: "第三級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
   { code: "riku-tech2", name: "第二級陸上無線技術士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
   { code: "amateur2", name: "第二級アマチュア無線技士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
-  { code: "maritime-radar", name: "レーダー級海上特殊無線技士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-radar", name: "レーダー級海上特殊無線技士", sub: "2026年2月・6月の法規・無線工学48原問・全肢解説", domain: "electrical" },
   { code: "amateur1", name: "第一級アマチュア無線技士", sub: "2026年5月・8月 119原問・全肢解説（確認中1原問を除く）", domain: "electrical" },
   { code: "maritime-special1", name: "第一級海上特殊無線技士", sub: "2026年2月・6月 日本語の無線工学・法規48原問・全肢解説", domain: "electrical" },
   { code: "aviation-comm", name: "航空無線通信士", sub: "2026年2月・8月 日本語の無線工学・法規68原問・全肢解説", domain: "electrical" },
