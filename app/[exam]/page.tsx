@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
+import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
   () => import("@/components/exam/ExamBrowseTabs").then((m) => m.ExamBrowseTabs),
   {
@@ -338,7 +339,7 @@ export default async function ExamTopPage({
           {code === "zoen2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録しています。各回とも実試験は40問全て必須です。公式問題・正答、図表、全選択肢の解説を確認できます。No.37〜40は複数の正答を全て選ぶ形式です。</p>}
           {code === "zoen1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は問題Aの36問と問題Bの29問が全て必須です。問題BのNo.24〜29は正解番号を全て選びます。ここでは収録済み設問のみを演習できます。</p>}
           {code === "tsushin2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は全65問のうち、設問群ごとの選択・必須条件に従って40問を解答します。現在の収録数は上記のバッジをご確認ください。</p>}
-          {code === "tsushin1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した{questions.length}問を収録しています。実試験では問題Aの55問から33問、問題Bの35問から27問を設問群ごとの条件に従って解答します。ここでは収録済み設問のみを演習できます。</p>}
+          {code === "tsushin1" && <Tsushin1CoverageNote questionCount={questions.length} />}
           {code === "soukan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益社団法人日本技術士会が公表した令和7年度・令和8年度の技術士第二次試験 総合技術監理部門 必須科目Ⅰ－1（択一式、各年度40問・五肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和7年度は2025年4月1日、令和8年度は2026年4月1日）時点です。出典：公益社団法人日本技術士会。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。</p>}
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
           {code === "mankan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益財団法人マンション管理センターが公表した令和6年度・令和7年度のマンション管理士試験（各50問・四肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和6年度は2024年4月1日、令和7年度は2025年4月1日）時点です。令和6年度問40は公式正解の法的根拠に一次資料で到達できず保留しています。出典：公益財団法人マンション管理センター。解説は過去問AIの独自作成で、同センターとは関係ありません。</p>}
