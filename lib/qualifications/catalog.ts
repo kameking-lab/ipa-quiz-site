@@ -51,6 +51,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["現行法令との違いを学習時に確認"],
   },
   {
+    slug: "land-special1", examCode: "land-special1",
+    shortName: "第一級陸上特殊無線技士", fullName: "第一級陸上特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年2月09:30 A版・6月09:30 A版の2実施回を収録。各回の法規12問・無線工学24問、計72原問を公式正答・全肢の独自解説・必要な原図付きで演習できます。同じ2期の13:30 B版72問は未収録です。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士試験 ○年○月09:30 A版 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    remainingWork: ["2026年2月・6月13:30 B版は未収録の別実施回", "現行法令との差を学習時に確認"],
+  },
+  {
     slug: "koku-toku", examCode: "koku-toku",
     shortName: "航空特殊無線技士", fullName: "航空特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",

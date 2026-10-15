@@ -71,11 +71,13 @@ import { RIYOSHI_QUESTIONS } from "./riyoshi";
 import { RIKU_TOKU_KOKUNAI_QUESTIONS } from "./riku-toku-kokunai";
 import { KAI_TOKU3_QUESTIONS } from "./kai-toku3";
 import { KOKU_TOKU_QUESTIONS } from "./koku-toku";
+import { LAND_SPECIAL1_QUESTIONS } from "./land-special1";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
   ...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),
   ...(isExamPublished("koku-toku") ? { "koku-toku": KOKU_TOKU_QUESTIONS } : {}),
+  ...(isExamPublished("land-special1") ? { "land-special1": LAND_SPECIAL1_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,
