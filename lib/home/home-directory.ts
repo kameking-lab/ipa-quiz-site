@@ -120,6 +120,9 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "riku-tech1", name: "第一級陸上無線技術士", sub: "2026年1月・7月の4科目190原問・全肢解説", domain: "electrical" },
+  { code: "maritime4", name: "第四級海上無線通信士", sub: "2026年2月・8月の無線工学・法規76原問・全肢解説", domain: "electrical" },
+  { code: "land-special1", name: "第一級陸上特殊無線技士", sub: "2026年2月・6月09:30 A版72原問（13:30 B版は未収録）", domain: "electrical" },
   { code: "riku-toku-kokunai", name: "国内電信級陸上特殊無線技士", sub: "2026年2月・6月 法規の全24問", domain: "electrical" },
   { code: "koku-toku", name: "航空特殊無線技士", sub: "2026年2月・6月 法規・無線工学の全48問", domain: "electrical" },
   { code: "kai-toku3", name: "第三級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記試験60問", domain: "electrical" },

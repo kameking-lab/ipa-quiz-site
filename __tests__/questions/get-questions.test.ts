@@ -90,7 +90,9 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("riku-toku-kokunai");
     expect(codes).toContain("kai-toku3");
     expect(codes).toContain("land-special1");
-    expect(codes.length).toBe(62);
+    expect(codes).toContain("riku-tech1");
+    expect(codes).toContain("maritime4");
+    expect(codes.length).toBe(64);
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし

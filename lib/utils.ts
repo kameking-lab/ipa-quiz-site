@@ -9,6 +9,8 @@ export const EXAM_LABELS: Record<string, string> = {
   "riku-toku-kokunai": "国内電信級陸上特殊無線技士",
   "koku-toku": "航空特殊無線技士",
   "land-special1": "第一級陸上特殊無線技士",
+  "riku-tech1": "第一級陸上無線技術士",
+  "maritime4": "第四級海上無線通信士",
   "kai-toku3": "第三級海上特殊無線技士",
   chosashi: "土地家屋調査士",
   riyoshi: "理容師",
@@ -91,13 +93,14 @@ export function seasonLabel(season: string): string {
   if (season === "late") return "後期";
   if (season === "annual") return "";
   if (season === "july") return "7月試験";
+  if (season === "august") return "8月試験";
   if (season === "primary") return "一次試験";
   if (season === "kansai") return "関西広域連合";
   return season;
 }
 
 export function formatYearSeason(year: number, season: string): string {
-  if (["may", "september", "january", "february", "june", "october"].includes(season)) return `${year}年${seasonLabel(season)}`;
+  if (["may", "september", "january", "february", "june", "august", "october"].includes(season)) return `${year}年${seasonLabel(season)}`;
   if (season === "published") return `${year}年公表問題`;
   const reiwa = year - 2018;
   const era = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;

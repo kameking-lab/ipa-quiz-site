@@ -17,6 +17,8 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  "riku-tech1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "maritime4": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "riku-toku-kokunai": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "land-special1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "koku-toku": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
