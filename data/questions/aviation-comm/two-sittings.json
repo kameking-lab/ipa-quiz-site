@@ -46,7 +46,8 @@
       "エ": "共振には誘導・容量サセプタンスの大きさが等しい必要があり、理想枝ならXC=XL=5 kΩ。記述は正しい。",
       "オ": "容量電流は電圧よりπ/2進み、誘導電流は電圧よりπ/2遅れる。両枝電流の位相差はπで、π/2との記述が誤り。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q02",
@@ -95,7 +96,8 @@
       "エ": "FETをゲート電流で制御する点が違う。多数キャリアは電子でも、入力インピーダンスは低くない。",
       "オ": "ゲート電流制御、Nチャネル正孔、低入力インピーダンスの三要素がいずれも図のFETの性質と合わない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q03",
@@ -144,7 +146,8 @@
       "エ": "BとCは合うが、電圧比は振幅量なので係数は20。係数10は電力比をdB化する際の形。",
       "オ": "入力／出力比が逆で、振幅比の係数は20であり、dB値の縦続は加算なので三箇所とも違う。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q04",
@@ -193,7 +196,8 @@
       "エ": "理想的なリング変調器は搬送波を抑圧した両側波帯を作る。片側帯を選別するSSB送信機の変調部で使える。",
       "オ": "両側波帯のみというAは合うが、搬送波も送る通常AM(A3E)の完成変調波をこの装置単体では作らない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q05",
@@ -240,7 +244,8 @@
       "ウ": "振幅変調波の包絡はX=C+S、Y=C−S。よってS/C=(X−Y)/(X+Y)となり、両式が一致する。",
       "エ": "S/CというAは合うが、X・Yからの式は(X−Y)/(X+Y)なのでBが逆。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q06",
@@ -289,7 +294,8 @@
       "エ": "周波数逓倍器は周波数を倍化する機能で、FM信号を音声へ戻すAではない。Bの位相変調器も振幅制限器の代わりにならない。",
       "オ": "Bの振幅制限器は合うが、周波数逓倍器はAの復調器でなく、ディエンファシスはCの雑音遮断器でもない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q07",
@@ -338,7 +344,8 @@
       "エ": "QAMは振幅と位相の組合せに情報を載せるので、この記述は方式の要点を述べている。",
       "オ": "QPSKのQはquadratureで4状態を表す。位相が2種類なのはBPSKであり、この肢が誤り。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q08",
@@ -387,7 +394,8 @@
       "エ": "BとCは合うが、ホール効果は磁場中の導体・半導体に生じる横電圧で、移動反射体の周波数偏移ではない。",
       "オ": "ホール効果ではなくドプラ効果であり、近づくと低周波になるとのBも逆。Cも速度測定ではない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q09",
@@ -436,7 +444,8 @@
       "エ": "BとCは合うが、MSASのこの補強信号の主目的を「測位エリア拡大」とするAは誤り。",
       "オ": "測位エリア拡大というA、インマルサットというB、2.5 GHz帯というCが、公式キーの三要素と一致しない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q10",
@@ -485,7 +494,8 @@
       "エ": "充電によって再使用できる電池を二次電池と呼ぶので正しい。",
       "オ": "鉛蓄電池とリチウムイオン蓄電池はいずれも充放電できる二次電池なので正しい。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q11",
@@ -563,7 +573,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q12",
@@ -683,7 +694,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q13",
@@ -803,7 +815,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-kogaku-q14",
@@ -923,7 +936,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q01",
@@ -974,7 +988,8 @@
       "ウ": "誤り。要件の「混信の除去その他」は合うが、無線設備の設置場所は第19条の列挙にない。",
       "エ": "正しい。第19条は識別信号、電波の型式、周波数、空中線電力又は運用許容時間の指定を、混信の除去その他特に必要がある場合に変更できると定める。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q02",
@@ -1022,9 +1037,10 @@
       "ア": "正しい。第3条の航空無線通信士欄は航空機のための無線航行局、外部の調整部分、空中線電力250ワット以下を定める。",
       "イ": "誤り。無線航行局は合うが、第3条は技術操作を外部の調整部分、出力上限を250ワットとする。",
       "ウ": "誤り。第3条の局種は無線標識局ではなく航空機のための無線航行局、上限も500ワットでなく250ワットである。",
-      "エ": "誤り。外部調整と250ワットは合うが、対象は無線標識局ではなく航空機のための無線航行局である。"
+      "エ": "誤り。Cの250ワットは合うが、Aは無線標識局ではなく航空機のための無線航行局、Bも単なる調整部分ではなく外部の調整部分である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q03",
@@ -1074,7 +1090,8 @@
       "ウ": "適合する。第26条第1項は不確実な自局宛呼出しに、反覆と宛先の確実な判明まで応答を禁じる。",
       "エ": "適合する。第154条の3は航空機局が航空局を呼んでも無応答の場合、少なくとも10秒の間隔を置く。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q04",
@@ -1125,7 +1142,8 @@
       "ウ": "適合しない。無線従事者規則第50条の再交付事由は氏名変更、汚損、破損、紛失であり、住所変更を含まない。また設問の「変更日から10日以内」という期限も同条にない。",
       "エ": "適合する。無線従事者規則第51条第1項は免許取消処分の日から10日以内の返納を定める。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q05",
@@ -1175,7 +1193,8 @@
       "ウ": "誤り。航行の準備中を落とし、航空局が運用停止を命じられるとしているが、第2項は妨害除去に必要な措置を求める規定である。",
       "エ": "誤り。第2項は運用停止の命令でなく妨害除去措置の求め、第3項は電波の規正でなく通信の順序若しくは時刻である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q06",
@@ -1225,7 +1244,8 @@
       "ウ": "誤り。完全に動作できる状態の確認は毎日1回以上ではなく、その航空機の飛行前に行う。",
       "エ": "正しい。第9条の3は千時間使用するたびに一回以上、送信出力・変調度と受信感度・選択度の性能維持試験を定める。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q07",
@@ -1275,7 +1295,8 @@
       "ウ": "誤り。調整するのは送信機ではなく受信機であり、混信時に10分経過で呼び出せるわけでもない。",
       "エ": "誤り。第19条の2は送信機でなく受信機を最良感度にし、発射予定周波数のほか必要な周波数でも聴守する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q08",
@@ -1325,7 +1346,8 @@
       "ウ": "該当する。航空地球局が安全運航又は正常運航に関する通信を扱っていない場合は第147条第3号にある。",
       "エ": "該当しない。第147条第2号が参照する聴守電波は121.5 MHzであり、設問の156.8 MHzではない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q09",
@@ -1375,7 +1397,8 @@
       "ウ": "正しい。第156条第1～3項は他の航空局又は航空機局への協力、航空機局への呼出し等、航空機を運行する者への通知を定める。",
       "エ": "誤り。すべての無線局への協力要請ではなく他の航空局又は航空機局であり、Bも呼出し等を定める。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q10",
@@ -1426,7 +1449,8 @@
       "ウ": "誤り。航行に対する重大な危険の予防は同条第3号の安全通信である。",
       "エ": "誤り。重大かつ急迫の危険に陥るおそれやその他緊急の事態は同条第2号の緊急通信である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q11",
@@ -1476,7 +1500,8 @@
       "ウ": "誤り。第169条は最寄り航空局という距離条件を設けず、ただし書も2局以上への宛先指定をいうものではない。",
       "エ": "誤り。宛先を特定しない例外は合うが、原則宛先は最も近い航空局ではなく現に通信中の航空局等である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q12",
@@ -1526,7 +1551,8 @@
       "ウ": "該当する。第176条の2第3号は必要に応じた緊急通信の宰領を定める。",
       "エ": "該当しない。第176条の2は周辺の航空機局一般への通知を列挙していない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q13",
@@ -1576,7 +1602,8 @@
       "ウ": "該当しない。第28条の列挙は周波数の偏差及び幅、高調波の強度等であり、設問が示す周波数の安定度という別の項目はここに列挙されていない。",
       "エ": "該当する。高調波の強度は第28条に列挙され、第72条の対象である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q14",
@@ -1623,7 +1650,8 @@
       "ウ": "誤り。Aは合うが、附属書No.1003は「特別業務」や許容混信レベル超過という表現で定義しない。",
       "エ": "誤り。安全業務は合うが、Aを国際電気通信業務だけに狭め、Cも附属書の反覆的中断・妨害と異なる。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q15",
@@ -1704,7 +1732,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q16",
@@ -1740,14 +1769,14 @@
     ],
     "lawReferenceDate": "2025-10-01",
     "type": "native-b",
-    "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。\n\n第31条の3第1号は118～144MHzの設備とATCトランスポンダを並記し、イに入る。\n\n第31条の3第1号の距離基準は370.4kmで、D=3.8√hが下回るときはDを用いる。ウに入る。\n\n第31条の3第1号のhは航空機の飛行する最高高度で、エに入る。\n\n同号はhをメートルで表した数と定め、オに入る。",
+    "explanation": "A3E電波は第31条の3第1号が118～144MHzの送信設備に指定する電波型式で、アに入る。イには別にATCトランスポンダが入り、候補1はイに入る設備名ではない。\n\n第31条の3第1号は118～144MHzの設備とATCトランスポンダを並記し、イに入る。\n\n第31条の3第1号の距離基準は370.4kmで、D=3.8√hが下回るときはDを用いる。ウに入る。\n\n第31条の3第1号のhは航空機の飛行する最高高度で、エに入る。\n\n同号はhをメートルで表した数と定め、オに入る。",
     "nativeB": {
       "mode": "shared-bank",
       "candidates": [
         {
           "id": "1",
           "label": "1",
-          "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。"
+          "explanation": "A3E電波は第31条の3第1号が118～144MHzの送信設備に指定する電波型式で、アに入る。イには別にATCトランスポンダが入り、候補1はイに入る設備名ではない。"
         },
         {
           "id": "2",
@@ -1799,7 +1828,7 @@
         {
           "label": "ア",
           "answer": "1",
-          "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。"
+          "explanation": "A3E電波は第31条の3第1号が118～144MHzの送信設備に指定する電波型式で、アに入る。イには別にATCトランスポンダが入り、候補1はイに入る設備名ではない。"
         },
         {
           "label": "イ",
@@ -1828,7 +1857,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q17",
@@ -1952,7 +1982,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q18",
@@ -2034,7 +2065,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q19",
@@ -2116,7 +2148,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-02-hoki-q20",
@@ -2240,7 +2273,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q01",
@@ -2289,7 +2323,8 @@
       "エ": "電圧と電流の実効値をV、Iとすると、平均される有効電力はVI cosθ。",
       "オ": "VIだけでは位相差を反映しない。θ=0の場合に限ってcosθ=1となりVIに一致する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q02",
@@ -2338,7 +2373,8 @@
       "エ": "p形の多数キャリアは正孔であるため正しい。",
       "オ": "n形の多数キャリアは自由電子であるため正しい。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q03",
@@ -2387,7 +2423,8 @@
       "エ": "負帰還でAより利得が大きくなるとはいえず、B・Cも逆。",
       "オ": "安定化と雑音低減は合うが、負帰還をかけると電圧増幅度はAより小さくなるのでAが違う。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q04",
@@ -2436,7 +2473,8 @@
       "エ": "Aの位相比較器で位相差を検出し、Bの低域フィルタで誤差の高域成分を除き、CのVCOを制御するPLL構成。",
       "オ": "Aは合うが、位相誤差処理は高域フィルタでなく低域フィルタ、Cも平衡変調器でなくVCO。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q05",
@@ -2485,7 +2523,8 @@
       "エ": "抵抗減衰器では所要片側帯を選別できず、第2局発との周波数変換も位相変調器の役割ではない。",
       "オ": "Bの周波数混合器は合うが、Aの抵抗減衰器は片側帯の選択にならない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q06",
@@ -2534,7 +2573,8 @@
       "エ": "AとBは合うが、スケルチで雑音を遮るのは受信信号が閾値以下のときで「以上」ではない。",
       "オ": "RF増幅器は感度、IFフィルタは近接周波数選択度、スケルチは閾値以下の雑音遮断に対応する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q07",
@@ -2583,7 +2623,8 @@
       "エ": "電力とフェージングは合うが、SSBの占有周波数帯幅はDSBより狭くなるので「広く」が違う。",
       "オ": "電力は合うが、帯域は狭く、選択性フェージングの影響も少ないためB・Cが違う。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q08",
@@ -2632,7 +2673,8 @@
       "エ": "回避が必要なら垂直方向の回避指示を視覚・音声で提示するので正しい。",
       "オ": "協調回避情報の交換はモードSのデータリンクによる。モードAにその協調機能があるとするため誤り。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": true
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q09",
@@ -2681,7 +2723,8 @@
       "エ": "捜索機向け識別信号ではなく衛星向けであり、1.6 GHz帯をELTの衛星送信用周波数とするAも違う。",
       "オ": "識別情報の宛先は合うが、Aの1.6 GHz帯とCの距離が違う。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q10",
@@ -2730,7 +2773,8 @@
       "エ": "平滑回路は通常コンデンサやリアクトルで脈動を低減する。サイリスタを「よく使う」とするのは整流制御素子と平滑素子の混同。",
       "オ": "整流後の脈動を減らして直流に近づけるのが平滑回路なので正しい。「完全な直流に近づける」は理想値へ近づく意味。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q11",
@@ -2850,7 +2894,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q12",
@@ -2970,7 +3015,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q13",
@@ -3002,7 +3048,7 @@
     "license": "NICHIMU-past-question-study-use",
     "lastUpdated": "2026-10-15",
     "type": "native-b",
-    "explanation": "代表的な中空導波管断面は円形と方形であり、アに入る。\n\n図に誘電体充填の指定がない標準的な中空金属導波管の内側は空気で、イに入る。\n\nf≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。\n\n連続した金属壁が電磁場を囲む通常の導波管では、外部へ漏洩しない。エに入る。\n\n基本モード遮断周波数は断面寸法に反比例し、高周波用ほど寸法は大きくではなく小さくなる。",
+    "explanation": "代表的な中空導波管断面は円形と方形であり、アに入る。\n\n図に誘電体充填の指定がない標準的な中空金属導波管の内側は空気で、イに入る。\n\n理想的な中空導波管ではf<fcで軸方向の進行波は伝わらず、減衰場となる。f=fcでは軸方向位相定数β=0となる遮断境界で、通常の導波伝送は成立しない。したがって遮断周波数以下を示す候補8がウに入る。\n\n連続した金属壁が電磁場を囲む通常の導波管では、外部へ漏洩しない。エに入る。\n\n基本モード遮断周波数は断面寸法に反比例し、高周波用ほど寸法は大きくではなく小さくなる。",
     "nativeB": {
       "mode": "shared-bank",
       "candidates": [
@@ -3044,7 +3090,7 @@
         {
           "id": "8",
           "label": "8",
-          "explanation": "f≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。"
+          "explanation": "理想的な中空導波管ではf<fcで軸方向の進行波は伝わらず、減衰場となる。f=fcでは軸方向位相定数β=0となる遮断境界で、通常の導波伝送は成立しない。したがって遮断周波数以下を示す候補8がウに入る。"
         },
         {
           "id": "9",
@@ -3071,7 +3117,7 @@
         {
           "label": "ウ",
           "answer": "8",
-          "explanation": "f≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。"
+          "explanation": "理想的な中空導波管ではf<fcで軸方向の進行波は伝わらず、減衰場となる。f=fcでは軸方向位相定数β=0となる遮断境界で、通常の導波伝送は成立しない。したがって遮断周波数以下を示す候補8がウに入る。"
         },
         {
           "label": "エ",
@@ -3090,7 +3136,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-kogaku-q14",
@@ -3210,7 +3257,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q01",
@@ -3260,7 +3308,8 @@
       "ウ": "誤り。電波の型式・周波数・空中線電力を通信事項と並べて第17条のこの変更対象に追加するのは不適切で、指定変更は第19条の事項である。",
       "エ": "誤り。通信事項に指定事項を混在させ、かつ第17条の事前許可を届出に置き換えている。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q02",
@@ -3311,7 +3360,8 @@
       "ウ": "誤り。第52条の範囲は無線局の種別ではなく、目的又は通信の相手方若しくは通信事項である。Bも誤る。",
       "エ": "誤り。Aを無線局の種別とし、Cを十分なものとする点が第52条・第54条に反する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q03",
@@ -3361,7 +3411,8 @@
       "ウ": "正しい。第59条は法律に別段の定めがある場合を除き、特定の相手方に対する無線通信を傍受して存在・内容を漏らす又は窃用することを禁じる。",
       "エ": "誤り。第59条はあらゆる無線通信に無限定で及ぶのではなく、特定の相手方に対して行われる通信を対象とする。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q04",
@@ -3411,7 +3462,8 @@
       "ウ": "誤り。完全動作の確認は飛行前であり、第9条の3の定期試験は二千時間ではなく千時間ごとである。",
       "エ": "正しい。飛行前の完全動作確認と千時間使用ごと一回以上の送受信性能試験の双方が第9条の2・3に一致する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q05",
@@ -3461,7 +3513,8 @@
       "ウ": "誤り。「誰かこちらを呼びましたか」は第26条第1項の不確実な宛先への即応答を許す語ではない。",
       "エ": "誤り。「各局」での即応答も第26条第1項の応答待機条件を満たさない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q06",
@@ -3506,12 +3559,13 @@
     "officialAnswerNumber": "4",
     "explanation": "正しい。第39条の発射前聴守・試験中の停止要求確認と、別表第4号でVVVに対応する「本日は晴天なり」が一致する。",
     "choiceExplanations": {
-      "ア": "誤り。第39条の聴守周波数と第2項の停止要求確認は合うが、無線電話の「VVV」に相当する語は別表第4号の「本日は晴天なり」である。",
+      "ア": "誤り。Aの発射前の聴守周波数は合うが、Bは「試験電波発射中」ではなく「本日は晴天なり」、Cは混信を与えないことではなく、他の無線局から停止の要求がないかどうかの確認である。",
       "イ": "誤り。発射前は予定周波数に加えてその他必要と認める周波数でも聴守し、無線電話では「本日は晴天なり」を用いる。",
       "ウ": "誤り。「本日は晴天なり」は合うが、発射前聴守はその他必要周波数も含み、試験中は停止要求の有無を確かめる。",
       "エ": "正しい。第39条の発射前聴守・試験中の停止要求確認と、別表第4号でVVVに対応する「本日は晴天なり」が一致する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q07",
@@ -3561,7 +3615,8 @@
       "ウ": "誤り。第148条はすべての航空局・航空機局への一斉通知や中止理由を要求しない。",
       "エ": "誤り。第149条の通知先は原則として責任航空局又は交通情報航空局であり、その区域のすべての責任航空局ではない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q08",
@@ -3612,7 +3667,8 @@
       "ウ": "適合しない。電波法第67条第2項は自局に関係ないと確認するまでの継続受信、所定の場合も少なくとも3分間と定める。「通信終了まで・少なくとも15分間」ではない。",
       "エ": "適合する。運用規則第177条が準用する第93条第2項は、緊急通信が行われないか終了したことを確かめるまで通信再開を禁じる。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q09",
@@ -3657,12 +3713,13 @@
     "officialAnswerNumber": "2",
     "explanation": "正しい。第153条第1号の急迫の危険状態と通常使用する電波、第3号の準備信号がすべて合う。",
     "choiceExplanations": {
-      "ア": "誤り。Aは急迫の危険状態、Cは準備信号だが、第153条第1号のBは通常使用する電波である。",
+      "ア": "誤り。Aの急迫の危険状態は合うが、Bは通常使用する電波、Cは準備信号である。この肢の遭難通信又は緊急通信に使用する電波と通報は、いずれも条文の空欄に合わない。",
       "イ": "正しい。第153条第1号の急迫の危険状態と通常使用する電波、第3号の準備信号がすべて合う。",
       "ウ": "誤り。Bは合うが、Aは航行中一般ではなく急迫の危険状態、Cは通報ではなく準備信号である。",
       "エ": "誤り。第153条第1号は急迫の危険状態と通常使用する電波であり、AとBが合わない。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q10",
@@ -3710,9 +3767,10 @@
       "ア": "正しい。第176条第2・3・5号は順に呼出符号若しくは呼出名称、緊急事態の種類、位置・高度・針路を定める。",
       "イ": "誤り。第176条は事態の発生時刻や出発地・目的地でなく、種類と位置・高度・針路を挙げる。",
       "ウ": "誤り。第176条第2号は免許人名でなく航空機識別又は航空機局の呼出符号若しくは呼出名称である。",
-      "エ": "誤り。免許人名、発生時刻、出発地・目的地のいずれも第176条第2・3・5号の指定事項と一致しない。"
+      "エ": "誤り。Bの種類は合うが、Aは免許人名ではなく航空機の識別又は航空機局の呼出符号若しくは呼出名称、Cは出発地及び目的地ではなく位置、高度及び針路である。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q11",
@@ -3763,7 +3821,8 @@
       "ウ": "該当しない。外国主管庁の検査・結果の指示は第80条の列挙にない。",
       "エ": "該当する。第80条第3号は外国で総務大臣の告示以外の運用制限を受けた場合の報告を定める。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q12",
@@ -3814,7 +3873,8 @@
       "ウ": "誤り。備付け対象は合うが、省略は全部又は一部であり、時計は毎週でなく毎日照合する。",
       "エ": "正しい。第60条の正確な時計・無線業務日誌等と全部又は一部の省略、第3条の毎日1回以上の時刻照合に一致する。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q13",
@@ -3864,7 +3924,8 @@
       "ウ": "該当しない。第40条の航空機局欄は、機器試験・調整のために行った通信の概要を記載事項として列挙していない。",
       "エ": "該当する。第40条が航空機局欄に準用する事項に、機器故障の事実・原因・措置内容がある。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q14",
@@ -3911,7 +3972,8 @@
       "ウ": "禁止に該当する。No.15.1は不要な伝送を禁じる。",
       "エ": "禁止に該当する。No.15.1は過剰な信号の伝送を禁じる。"
     },
-    "explanationCoverage": "full"
+    "explanationCoverage": "full",
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q15",
@@ -3992,7 +4054,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q16",
@@ -4116,7 +4179,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q17",
@@ -4240,7 +4304,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q18",
@@ -4322,7 +4387,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q19",
@@ -4404,7 +4470,8 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   },
   {
     "id": "radio21-aviation-comm-2026-08-hoki-q20",
@@ -4485,6 +4552,7 @@
         "pointsPerSlot": 1,
         "note": "公式正答表：B原問1問5点、小設問各1点。"
       }
-    }
+    },
+    "needsReview": false
   }
 ]
