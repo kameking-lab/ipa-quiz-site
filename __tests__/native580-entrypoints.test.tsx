@@ -10,7 +10,6 @@ import { RIKU_TECH2_QUESTIONS as riku } from '@/data/questions/riku-tech2';
 import { AMATEUR2_QUESTIONS as am2 } from '@/data/questions/amateur2';
 import { MARITIME_RADAR_QUESTIONS as radar } from '@/data/questions/maritime-radar';
 import { AMATEUR1_QUESTIONS as am } from '@/data/questions/amateur1';
-import { MARITIME_SPECIAL1_QUESTIONS as sea } from '@/data/questions/maritime-special1';
 import { isPracticeReadyQuestion } from '@/lib/questions/filter';
 import { questionPagePath } from '@/lib/seo/question-url';
 vi.mock('next/dynamic',()=>({default:()=>()=>null}));

@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import raw from "../../data/questions/riku-tech2/two-sittings.json";
