@@ -120,6 +120,8 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "riku-toku-kokunai", name: "国内電信級陸上特殊無線技士", sub: "2026年2月・6月 法規の全24問", domain: "electrical" },
+  { code: "kai-toku3", name: "第三級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記試験60問", domain: "electrical" },
   { code: "chosashi", name: "土地家屋調査士", sub: "令和7・6年度 午前・午後（択一・記述）", domain: "money" },
   { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },

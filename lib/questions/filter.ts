@@ -82,9 +82,9 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
-  // Judo explanations and source figures refer to the official numbered choices.
-  // Keep that order so those references also match shuffled quiz and API requests.
-  if (q.exam === "judo-seifukushi") return q;
+  // These explanations or answer metadata refer to the official choice numbers.
+  // Preserve their order in shuffled quiz and API requests.
+  if (q.exam === "judo-seifukushi" || q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3") return q;
   if (!q.choices) return q;
   // Labels in authored prose refer to the original choices. Reordering only the
   // answer map would silently contradict the explanation (for example AP 2017秋 問2).

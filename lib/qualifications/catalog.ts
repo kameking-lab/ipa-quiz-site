@@ -42,6 +42,24 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "riku-toku-kokunai", examCode: "riku-toku-kokunai",
+    shortName: "国内電信級陸上特殊無線技士", fullName: "国内電信級陸上特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "日本無線協会が公表した2026年2月・6月の筆記法規各12問、計24原問と公式正答、全選択肢の独自解説を収録。受験学習用の公表過去問であり、現在のCBT例題や独自問題は収録していません。法令は各試験当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 国内電信級陸上特殊無線技士試験 ○年○月 法規 問○（問題・正答）。解説は過去問AIが独自作成。",
+    remainingWork: ["現行法令との違いを学習時に確認"],
+  },
+  {
+    slug: "kai-toku3", examCode: "kai-toku3",
+    shortName: "第三級海上特殊無線技士", fullName: "第三級海上特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "日本無線協会が公表した2023年2月・2022年10月の筆記2回分、各回法規20問・無線工学10問、計60原問と公式正答、全選択肢の独自解説を収録。現在のCBT例題や独自問題は収録していません。法令は各試験当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
+    remainingWork: ["現行法令との違いを学習時に確認"],
+  },
+  {
     slug: "chosashi",
     examCode: "chosashi",
     shortName: "土地家屋調査士",

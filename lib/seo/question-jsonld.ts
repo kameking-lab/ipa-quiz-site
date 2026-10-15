@@ -35,6 +35,7 @@ export function sessionLabel(session: string): string {
     denryoku: "電力",
     kikai: "機械",
     houki: "法規",
+    kogaku: "無線工学",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
@@ -95,7 +96,9 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "chosashi"
+  const questionAuthor = q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3"
+    ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
+    : q.exam === "chosashi"
     ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
     : q.exam === "fp1"
     ? {
@@ -198,7 +201,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
+  const licenseUrl = q.license === "NICHIMU-educational-reuse"
+    ? "https://www.nichimu.or.jp/kshiken/siken/index.html"
+    : q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
     ? "https://www.mhlw.go.jp/chosakuken/index.html"
     : q.exam === "chosashi"
     ? "https://www.moj.go.jp/hisho06_00280.html"

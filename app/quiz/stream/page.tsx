@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
-const VALID_EXAMS = new Set<string>(["ap","ip","sg","fe","sc","nw","db","st","sa","pm","es","sm","au","chosashi"]);
+const VALID_EXAMS = new Set<string>(["riku-toku-kokunai","kai-toku3","ap","ip","sg","fe","sc","nw","db","st","sa","pm","es","sm","au","chosashi"]);
 const STREAM_POOL_SIZE = 60;
 
 interface SearchParams {
