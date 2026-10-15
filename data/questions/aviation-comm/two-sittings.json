@@ -1,0 +1,4490 @@
+[
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 1 次の記述は、図に示す並列共振回路について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "容量電流は電圧よりπ/2進み、誘導電流は電圧よりπ/2遅れる。両枝電流の位相差はπで、π/2との記述が誤り。",
+    "choiceExplanations": {
+      "ア": "並列共振では誘導・容量枝のサセプタンスが打ち消し合うため、入力側に残るのは10 kΩの抵抗枝。記述は正しい。",
+      "イ": "共振時の電源電流は抵抗枝だけの100 V ÷ 10 kΩ = 10 mA。記述は正しい。",
+      "ウ": "インダクタ枝にも100 Vが掛かり、誘導リアクタンス5 kΩから枝電流は20 mA。記述は正しい。",
+      "エ": "共振には誘導・容量サセプタンスの大きさが等しい必要があり、理想枝ならXC=XL=5 kΩ。記述は正しい。",
+      "オ": "容量電流は電圧よりπ/2進み、誘導電流は電圧よりπ/2遅れる。両枝電流の位相差はπで、π/2との記述が誤り。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 2 次の記述は、図(図記号)に示すN チャネル接合形の電界効果トランジスタ(FET)について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "接合形FETは逆バイアスのゲート電圧でドレイン電流を制御する。Nチャネルは電子が多数キャリアで、ゲート電流が小さく入力インピーダンスが高い。",
+    "choiceExplanations": {
+      "ア": "ゲート・ソース電圧で制御する点は合うが、Nチャネルの多数キャリアは電子であり正孔ではない。入力抵抗も低くない。",
+      "イ": "電圧制御と高い入力インピーダンスは合うが、Nチャネルの多数キャリアを正孔とする点が違う。",
+      "ウ": "接合形FETは逆バイアスのゲート電圧でドレイン電流を制御する。Nチャネルは電子が多数キャリアで、ゲート電流が小さく入力インピーダンスが高い。",
+      "エ": "FETをゲート電流で制御する点が違う。多数キャリアは電子でも、入力インピーダンスは低くない。",
+      "オ": "ゲート電流制御、Nチャネル正孔、低入力インピーダンスの三要素がいずれも図のFETの性質と合わない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 3 次の記述は、増幅回路の電圧利得について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "電圧利得は20 log10(Vo/Vi) dB。縦続接続では線形利得が掛け算になり、対数のdB値はG1+G2となる。",
+    "choiceExplanations": {
+      "ア": "電圧利得は20 log10(Vo/Vi) dB。縦続接続では線形利得が掛け算になり、対数のdB値はG1+G2となる。",
+      "イ": "AとBは合うが、G1・G2は既にdB表示であり、縦続時は掛け算でなく加算する。",
+      "ウ": "AとCは合うが、Vi/Voは電圧利得Vo/Viの逆数で、増幅時の符号を反転してしまう。",
+      "エ": "BとCは合うが、電圧比は振幅量なので係数は20。係数10は電力比をdB化する際の形。",
+      "オ": "入力／出力比が逆で、振幅比の係数は20であり、dB値の縦続は加算なので三箇所とも違う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 4 次の記述は、図に示すリング変調器について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "理想的なリング変調器は搬送波を抑圧した両側波帯を作る。片側帯を選別するSSB送信機の変調部で使える。",
+    "choiceExplanations": {
+      "ア": "理想的な平衡リング変調器は搬送波成分を抑えるので、搬送波を含めるAが違う。",
+      "イ": "搬送波を含むAが違い、FM送信機の周波数偏移を作る装置としてこのリング変調器を位置付けるBも違う。",
+      "ウ": "両側波帯だけというAは合うが、その後に片側帯を選ぶSSB送信機向けでありFM向けではない。",
+      "エ": "理想的なリング変調器は搬送波を抑圧した両側波帯を作る。片側帯を選別するSSB送信機の変調部で使える。",
+      "オ": "両側波帯のみというAは合うが、搬送波も送る通常AM(A3E)の完成変調波をこの装置単体では作らない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q05",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 5 次の記述は、図1に示すDSB (A3E)振幅変調波vAM について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "振幅変調波の包絡はX=C+S、Y=C−S。よってS/C=(X−Y)/(X+Y)となり、両式が一致する。",
+    "choiceExplanations": {
+      "ア": "波形の搬送波振幅Cに対する信号波振幅Sの比が変調度なので、AをC/Sとするのが逆。Bだけ合う。",
+      "イ": "AのC/Sが逆で、最大包絡Xと最小包絡Yからは(X−Y)/(X+Y)であり、その逆数でもない。",
+      "ウ": "振幅変調波の包絡はX=C+S、Y=C−S。よってS/C=(X−Y)/(X+Y)となり、両式が一致する。",
+      "エ": "S/CというAは合うが、X・Yからの式は(X−Y)/(X+Y)なのでBが逆。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q06",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 6 次の記述は、FM(F3E)受信機について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "周波数弁別器が周波数偏移を復調し、振幅制限器が不要な振幅変動を抑え、スケルチが無信号・微弱信号時の雑音出力を止める。",
+    "choiceExplanations": {
+      "ア": "Aの周波数弁別器とBの振幅制限器は合うが、ディエンファシスは高域を補正する回路であり、無信号時の音声雑音を遮断するCではない。",
+      "イ": "周波数弁別器が周波数偏移を復調し、振幅制限器が不要な振幅変動を抑え、スケルチが無信号・微弱信号時の雑音出力を止める。",
+      "ウ": "AとCは合うが、位相変調器は変調側の機能であり、受信波の振幅変動を除くBではない。",
+      "エ": "周波数逓倍器は周波数を倍化する機能で、FM信号を音声へ戻すAではない。Bの位相変調器も振幅制限器の代わりにならない。",
+      "オ": "Bの振幅制限器は合うが、周波数逓倍器はAの復調器でなく、ディエンファシスはCの雑音遮断器でもない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q07",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 7 次の記述は、デジタル変調について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-7 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-7（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "QPSKのQはquadratureで4状態を表す。位相が2種類なのはBPSKであり、この肢が誤り。",
+    "choiceExplanations": {
+      "ア": "FSKでは記号に応じて搬送波の離散的な周波数を切り替えるので、記述どおり。",
+      "イ": "ASKでは記号に応じて搬送波の振幅を切り替えるので、記述どおり。",
+      "ウ": "PSKでは記号に応じて搬送波の位相を切り替えるので、記述どおり。",
+      "エ": "QAMは振幅と位相の組合せに情報を載せるので、この記述は方式の要点を述べている。",
+      "オ": "QPSKのQはquadratureで4状態を表す。位相が2種類なのはBPSKであり、この肢が誤り。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q08",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 8 次の記述は、レーダーから発射される電波が物体に当たって反射するときに生じる現象について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-8 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-8（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "移動標的による受信周波数の偏移はドプラ効果。離れる標的の反射波は低周波側にずれ、その偏移から径方向速度を測れる。",
+    "choiceExplanations": {
+      "ア": "AとCはドプラ効果・速度測定で合うが、標的が送信源に近づく場合は反射波の受信周波数は上がるのでBが逆。",
+      "イ": "移動標的による受信周波数の偏移はドプラ効果。離れる標的の反射波は低周波側にずれ、その偏移から径方向速度を測れる。",
+      "ウ": "Aは合うが、近づく標的では周波数は上昇する。ドプラ偏移は速度の情報で、ここでいう材質把握ではない。",
+      "エ": "BとCは合うが、ホール効果は磁場中の導体・半導体に生じる横電圧で、移動反射体の周波数偏移ではない。",
+      "オ": "ホール効果ではなくドプラ効果であり、近づくと低周波になるとのBも逆。Cも速度測定ではない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q09",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A – 9 次の記述は、我が国で運用するSBAS(Satellite-Based Augmentation System)のシステムであるMSAS について述べたもので\nある。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-9 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-9（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "MSASは衛星補強で測位精度などを改善し、この設問時点の配信衛星はみちびき。L1の約1.575 GHzを1.5 GHz帯と表す。",
+    "choiceExplanations": {
+      "ア": "MSASは衛星補強で測位精度などを改善し、この設問時点の配信衛星はみちびき。L1の約1.575 GHzを1.5 GHz帯と表す。",
+      "イ": "AとBは合うが、補強信号のL1周波数は約1.575 GHzであり、2.5 GHz帯ではない。",
+      "ウ": "精度向上というAは合うが、2.5 GHz帯はL1補強信号の周波数ではなく、設問の配信衛星もみちびきである。",
+      "エ": "BとCは合うが、MSASのこの補強信号の主目的を「測位エリア拡大」とするAは誤り。",
+      "オ": "測位エリア拡大というA、インマルサットというB、2.5 GHz帯というCが、公式キーの三要素と一致しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q10",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A -10 次の記述は、電池について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 A-10 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 A-10（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "同じ10 Ahの電池2個を同電圧・同極性で並列にすると容量は原則20 Ah。10 Ahのままとするこの肢が誤り。",
+    "choiceExplanations": {
+      "ア": "異電圧電池を直接並列にすると相互に大きな循環電流が流れ得るため、避けるという記述は正しい。",
+      "イ": "同じ10 Ahの電池2個を同電圧・同極性で並列にすると容量は原則20 Ah。10 Ahのままとするこの肢が誤り。",
+      "ウ": "同電圧の電池を並列接続しても両端の電位差は各電池の端子電圧と同じなので正しい。",
+      "エ": "充電によって再使用できる電池を二次電池と呼ぶので正しい。",
+      "オ": "鉛蓄電池とリチウムイオン蓄電池はいずれも充放電できる二次電池なので正しい。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q11",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 1 次の記述は、航空用レーダーについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 B-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 B-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "適合。Airbusの航空機搭載気象レーダー説明は、航空機前方の対流性気象を乗員が評価する装置とする。WXは地上管制用ではない。\n\n適合。国交省CARATS資料PDF8頁はASDEを空港地表面の航空機・車両の動きを監視し、交通の安全を図る飛行場管制用のレーダーとする。\n\n適合。同資料PDF7頁はORSRを洋上航空路監視レーダーと明記し、洋上空域の航空機監視に対応する。\n\n適合。同資料PDF7頁はARSRを航空路監視レーダーと明記し、航空路管制の誘導・間隔設定に利用するとする。\n\n不適合。同資料PDF8頁はSSRを二次監視レーダーと定義する。出発・進入管制でPSRとSSRを組み合わせるASRは別であり、SSRを一次監視レーダーとは呼べない。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "適合。Airbusの航空機搭載気象レーダー説明は、航空機前方の対流性気象を乗員が評価する装置とする。WXは地上管制用ではない。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "適合。国交省CARATS資料PDF8頁はASDEを空港地表面の航空機・車両の動きを監視し、交通の安全を図る飛行場管制用のレーダーとする。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "適合。同資料PDF7頁はORSRを洋上航空路監視レーダーと明記し、洋上空域の航空機監視に対応する。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "適合。同資料PDF7頁はARSRを航空路監視レーダーと明記し、航空路管制の誘導・間隔設定に利用するとする。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "不適合。同資料PDF8頁はSSRを二次監視レーダーと定義する。出発・進入管制でPSRとSSRを組み合わせるASRは別であり、SSRを一次監視レーダーとは呼べない。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q12",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 2 次の記述は、図に示す構造のアンテナについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 B-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 B-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "原図の円盤disc＋円すいcone、中心給電の形はディスコーンそのもの。アに入る。\n\n円盤面を大地に平行とすると鉛直軸まわりに回転対称となり、イに入る。\n\n円すいの軸を鉛直とし円盤を水平に設置すると、電界の主成分は鉛直となるためウに入る。\n\n回転対称の原図を水平設置した場合、水平面内の方位依存はなく全方向性。エに入る。\n\nディスコーンは広帯域で、メーカーDiamondの仕様もVHF/UHF周波数を含む。オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "アルホードループは輪状の導体を用いるアンテナ。原図の上部円盤と下部円すいの組合せに合わない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "上部円盤を大地に垂直にすると円すいの軸も横倒しとなり、図の軸対称な標準設置とは異なる。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "円すいの軸を鉛直とし円盤を水平に設置すると、電界の主成分は鉛直となるためウに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "原図の円すいと円盤は鉛直軸の回りに回転対称で、水平方向の単一方位だけに指向しない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "ディスコーンは広帯域で、メーカーDiamondの仕様もVHF/UHF周波数を含む。オに入る。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "原図の円盤disc＋円すいcone、中心給電の形はディスコーンそのもの。アに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "円盤面を大地に平行とすると鉛直軸まわりに回転対称となり、イに入る。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "水平偏波なら電界の主方向が水平方向となるが、この鉛直軸に沿うディスコーンは垂直偏波。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "回転対称の原図を水平設置した場合、水平面内の方位依存はなく全方向性。エに入る。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "LFでは波長が非常に長く、図の寸法のディスコーンの実用帯域ではない。Diamond製品もVHF/UHFを含む。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "原図の円盤disc＋円すいcone、中心給電の形はディスコーンそのもの。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "円盤面を大地に平行とすると鉛直軸まわりに回転対称となり、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "円すいの軸を鉛直とし円盤を水平に設置すると、電界の主成分は鉛直となるためウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "回転対称の原図を水平設置した場合、水平面内の方位依存はなく全方向性。エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "ディスコーンは広帯域で、メーカーDiamondの仕様もVHF/UHF周波数を含む。オに入る。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q13",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 3  次の記述は、図に示す原理的な構造の小電力用の同軸給電線について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 B-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 B-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "原図の内外導体は同心で外導体が帰路となる。二線が対称な平衡線でなく不平衡線のためアに入る。\n\n図のAは内外導体間の絶縁層を指しているので誘電体であり、イに入る。\n\n周波数増加で電流の浸透深さが縮む表皮効果により有効導体断面が減り抵抗損が増す。ウに入る。\n\n外導体が電界を囲んで遮蔽するため、開放された平行二線式より外来電波の影響は少ない。エに入る。\n\n製造元Beldenは同軸ケーブルを50Ω系と75Ω系で現に製品分類する。5はオに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "原図の内外導体は同心で外導体が帰路となる。二線が対称な平衡線でなく不平衡線のためアに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "図のAは内外導体間の絶縁層を指しているので誘電体であり、イに入る。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "周波数増加で電流の浸透深さが縮む表皮効果により有効導体断面が減り抵抗損が増す。ウに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "外導体が電界を囲んで遮蔽するため、開放された平行二線式より外来電波の影響は少ない。エに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "製造元Beldenは同軸ケーブルを50Ω系と75Ω系で現に製品分類する。5はオに入る。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "内外導体の対称な二線ではないので、平衡という分類は原図の断面に合わない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "図Aの層は内外導体を隔てる絶縁材料で、磁性体を示す根拠は原図にない。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "ゼーベック効果は温度差による熱起電力で、周波数上昇時の導体抵抗増加を説明しない。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "外導体が遮蔽するので、平行二線式より外来電波の影響が多いとはいえない。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "300Ωは平行二線式の代表的な値。Beldenの同軸製品分類は50Ω・75Ωで、オには合わない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "原図の内外導体は同心で外導体が帰路となる。二線が対称な平衡線でなく不平衡線のためアに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "図のAは内外導体間の絶縁層を指しているので誘電体であり、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "周波数増加で電流の浸透深さが縮む表皮効果により有効導体断面が減り抵抗損が増す。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "外導体が電界を囲んで遮蔽するため、開放された平行二線式より外来電波の影響は少ない。エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "製造元Beldenは同軸ケーブルを50Ω系と75Ω系で現に製品分類する。5はオに入る。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-kogaku-q14",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 4 次の記述は、超短波(VHF)帯及び極超短波(UHF)帯の電波伝搬について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 無線工学 B-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 無線工学 B-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "VHF/UHFはMFより周波数が高く地表への浸透・回折による地表波の損失が大きい。アに入る。\n\n通常の電離層のプラズマ周波数より高いVHF/UHF波は通過し得るのでイに入る。Es層という例外は設問が除く。\n\n山頂の縁が二次波源となる回折により見通し外へ伝搬する場合があり、ウに入る。\n\n見通し内の二経路は直接波と大地反射波である。エに入る。\n\n温度逆転による屈折率勾配が電波を層内に導くラジオダクトを形成し、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "VHF/UHFはMFより周波数が高く地表への浸透・回折による地表波の損失が大きい。アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "通常の電離層ではVHF/UHFは反射されず通過し得る。突き抜けないとはいえない。設問はEs層を明示除外する。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "山頂が両端から見通せると、その稜線で回折した波が見通し外へ達し得るので否定できない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "見通し内の二経路は直接波と大地反射波である。エに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "フェージングは受信強度の変動現象であり、直接波と足し合わされる独立の伝搬波ではない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "VHF/UHFの地表波減衰はMFと比べ著しく小さいとはいえない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "通常の電離層のプラズマ周波数より高いVHF/UHF波は通過し得るのでイに入る。Es層という例外は設問が除く。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "山頂の縁が二次波源となる回折により見通し外へ伝搬する場合があり、ウに入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "通常の電離層を突き抜ける条件では電離層反射波が見通し距離内の主要な二波目ではない。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "温度逆転による屈折率勾配が電波を層内に導くラジオダクトを形成し、オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "VHF/UHFはMFより周波数が高く地表への浸透・回折による地表波の損失が大きい。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "通常の電離層のプラズマ周波数より高いVHF/UHF波は通過し得るのでイに入る。Es層という例外は設問が除く。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "山頂の縁が二次波源となる回折により見通し外へ伝搬する場合があり、ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "見通し内の二経路は直接波と大地反射波である。エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "温度逆転による屈折率勾配が電波を層内に導くラジオダクトを形成し、オに入る。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q01",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－１ 次の記述は、申請による周波数等の変更について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a01.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正しい。第19条は識別信号、電波の型式、周波数、空中線電力又は運用許容時間の指定を、混信の除去その他特に必要がある場合に変更できると定める。",
+    "choiceExplanations": {
+      "ア": "誤り。第19条は指定変更の対象を電波の型式・周波数・空中線電力とするが、要件は「混信の除去その他」であり「電波の規整その他公益上」ではない。",
+      "イ": "誤り。無線設備の設置場所は第19条の指定変更の列挙にない。要件も「電波の規整その他公益上」ではない。",
+      "ウ": "誤り。要件の「混信の除去その他」は合うが、無線設備の設置場所は第19条の列挙にない。",
+      "エ": "正しい。第19条は識別信号、電波の型式、周波数、空中線電力又は運用許容時間の指定を、混信の除去その他特に必要がある場合に変更できると定める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q02",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－２ 次の記述は、航空無線通信士の資格の無線従事者が行うことのできる無線設備の操作（アマチュア無線局の無線設備の操\n作を除く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a02.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/413CO0000000245/20251001_507CO0000000322?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第3条の航空無線通信士欄は航空機のための無線航行局、外部の調整部分、空中線電力250ワット以下を定める。",
+    "choiceExplanations": {
+      "ア": "正しい。第3条の航空無線通信士欄は航空機のための無線航行局、外部の調整部分、空中線電力250ワット以下を定める。",
+      "イ": "誤り。無線航行局は合うが、第3条は技術操作を外部の調整部分、出力上限を250ワットとする。",
+      "ウ": "誤り。第3条の局種は無線標識局ではなく航空機のための無線航行局、上限も500ワットでなく250ワットである。",
+      "エ": "誤り。外部調整と250ワットは合うが、対象は無線標識局ではなく航空機のための無線航行局である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q03",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－３ 航空移動業務の無線電話通信における呼出し及び応答に関する次の記述のうち、無線局運用規則（第１８条、第２０条、\n第２２条、第２３条、第２６条、第１５４条の２及び第１５４条の３）の規定に照らし、これらの規定に定めるところに適\n合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a03.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "適合しない。第20・23条と第154条の2により無線電話では「こちらは」を省略し、航空移動業務の応答で自局呼出符号等は1回である。「各3回」の固定送信ではない。",
+    "choiceExplanations": {
+      "ア": "適合する。第22条は既存通信への混信通知を受けたとき呼出しや機器試験の発射を直ちに中止させる。",
+      "イ": "適合しない。第20・23条と第154条の2により無線電話では「こちらは」を省略し、航空移動業務の応答で自局呼出符号等は1回である。「各3回」の固定送信ではない。",
+      "ウ": "適合する。第26条第1項は不確実な自局宛呼出しに、反覆と宛先の確実な判明まで応答を禁じる。",
+      "エ": "適合する。第154条の3は航空機局が航空局を呼んでも無応答の場合、少なくとも10秒の間隔を置く。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q04",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－４ 無線従事者の免許証に関する次の記述のうち、電波法施行規則（第３８条）及び無線従事者規則（第４７条、第５０条及\nび第５１条）の規定に照らし、これらの規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a04.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/402M50001000018",
+      "https://laws.e-gov.go.jp/law/325M50080000014/20251001_507M60000008096?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適合しない。無線従事者規則第50条の再交付事由は氏名変更、汚損、破損、紛失であり、住所変更を含まない。また設問の「変更日から10日以内」という期限も同条にない。",
+    "choiceExplanations": {
+      "ア": "適合する。無線従事者規則第47条は、免許を与えたとき総務大臣又は総合通信局長が免許証を交付すると定める。",
+      "イ": "適合する。電波法施行規則第38条は業務従事中の免許証携帯を求める。",
+      "ウ": "適合しない。無線従事者規則第50条の再交付事由は氏名変更、汚損、破損、紛失であり、住所変更を含まない。また設問の「変更日から10日以内」という期限も同条にない。",
+      "エ": "適合する。無線従事者規則第51条第1項は免許取消処分の日から10日以内の返納を定める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q05",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－５ 次の記述は、航空機局の運用について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a05.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しい。航行中及び準備中、第2項の妨害除去措置の求め、第3項の通信の順序若しくは時刻の指示にそれぞれ一致する。",
+    "choiceExplanations": {
+      "ア": "誤り。第70条の2第1項は航行中だけでなく航行の準備中も含め、第3項の指示対象は通信の順序若しくは時刻である。",
+      "イ": "正しい。航行中及び準備中、第2項の妨害除去措置の求め、第3項の通信の順序若しくは時刻の指示にそれぞれ一致する。",
+      "ウ": "誤り。航行の準備中を落とし、航空局が運用停止を命じられるとしているが、第2項は妨害除去に必要な措置を求める規定である。",
+      "エ": "誤り。第2項は運用停止の命令でなく妨害除去措置の求め、第3項は電波の規正でなく通信の順序若しくは時刻である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q06",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－６ 義務航空機局の無線設備の機能試験に関する次の記述のうち、無線局運用規則（第９条の２及び第９条の３）の規定に照\nらし、これらの規定に定めるところに適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a06.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正しい。第9条の3は千時間使用するたびに一回以上、送信出力・変調度と受信感度・選択度の性能維持試験を定める。",
+    "choiceExplanations": {
+      "ア": "誤り。第9条の2の飛行前確認は有効通達距離ではなく、無線設備が完全に動作できる状態かどうかである。",
+      "イ": "誤り。第9条の2・3は航空局等との毎日の通信連絡試験を定めない。",
+      "ウ": "誤り。完全に動作できる状態の確認は毎日1回以上ではなく、その航空機の飛行前に行う。",
+      "エ": "正しい。第9条の3は千時間使用するたびに一回以上、送信出力・変調度と受信感度・選択度の性能維持試験を定める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q07",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－７ 次の記述は、航空移動業務の無線電話通信における電波の発射前の措置について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a07.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-7 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-7（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第19条の2第1項は受信機を最良感度に調整し、発射予定周波数その他必要な周波数で聴守する。混信のおそれがあれば第2項により通信終了後まで呼出せない。",
+    "choiceExplanations": {
+      "ア": "正しい。第19条の2第1項は受信機を最良感度に調整し、発射予定周波数その他必要な周波数で聴守する。混信のおそれがあれば第2項により通信終了後まで呼出せない。",
+      "イ": "誤り。発射予定周波数だけではその他必要と認める周波数を落とし、混信時も単なる10分待機では足りない。",
+      "ウ": "誤り。調整するのは送信機ではなく受信機であり、混信時に10分経過で呼び出せるわけでもない。",
+      "エ": "誤り。第19条の2は送信機でなく受信機を最良感度にし、発射予定周波数のほか必要な周波数でも聴守する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q08",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－８ 航空局、航空地球局、義務航空機局及び航空機地球局が聴守を要しない場合に関する次の事項のうち、無線局運用規則 \n（第１４７条）の規定に照らし、この規定に定めるところに該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a08.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-8 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-8（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "該当しない。第147条第2号が参照する聴守電波は121.5 MHzであり、設問の156.8 MHzではない。",
+    "choiceExplanations": {
+      "ア": "該当する。第147条第1号は航空局が現に通信中で聴守できない場合を挙げる。",
+      "イ": "該当する。航空機地球局についての二つの場合はいずれも第147条第4号(1)(2)に一致する。",
+      "ウ": "該当する。航空地球局が安全運航又は正常運航に関する通信を扱っていない場合は第147条第3号にある。",
+      "エ": "該当しない。第147条第2号が参照する聴守電波は121.5 MHzであり、設問の156.8 MHzではない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q09",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－９ 次の記述は、航空移動業務の無線電話通信において連絡設定ができない場合の措置について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a09.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-9 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-9（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正しい。第156条第1～3項は他の航空局又は航空機局への協力、航空機局への呼出し等、航空機を運行する者への通知を定める。",
+    "choiceExplanations": {
+      "ア": "誤り。第156条第1項は協力先を他の航空局又は航空機局に限り、同条第3項の通知先は所有者でなく運行者である。",
+      "イ": "誤り。Aは合うが、協力先の措置は航空機局への呼出し等であり、通知先は所有者でなく運行者である。",
+      "ウ": "正しい。第156条第1～3項は他の航空局又は航空機局への協力、航空機局への呼出し等、航空機を運行する者への通知を定める。",
+      "エ": "誤り。すべての無線局への協力要請ではなく他の航空局又は航空機局であり、Bも呼出し等を定める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q10",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－10 次に掲げる事項のうち、遭難通信を行う場合に該当するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a10.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-10 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-10（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第52条第1号の遭難通信は、船舶又は航空機が重大かつ急迫の危険に陥った場合の通信である。",
+    "choiceExplanations": {
+      "ア": "正しい。第52条第1号の遭難通信は、船舶又は航空機が重大かつ急迫の危険に陥った場合の通信である。",
+      "イ": "誤り。「陥るおそれ」まで含むと同条第2号の緊急通信と混同する。",
+      "ウ": "誤り。航行に対する重大な危険の予防は同条第3号の安全通信である。",
+      "エ": "誤り。重大かつ急迫の危険に陥るおそれやその他緊急の事態は同条第2号の緊急通信である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q11",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－11 次の記述は、航空移動業務における遭難通報のあて先について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a11.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-11 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-11（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しい。第169条は現に通信中の航空局等を宛先とし、必要時は宛先を特定しなくてよいと定める。",
+    "choiceExplanations": {
+      "ア": "誤り。現に通信中の航空局を宛先にできる点は合うが、第169条ただし書は必要時に宛先を特定しないことを認める。",
+      "イ": "正しい。第169条は現に通信中の航空局等を宛先とし、必要時は宛先を特定しなくてよいと定める。",
+      "ウ": "誤り。第169条は最寄り航空局という距離条件を設けず、ただし書も2局以上への宛先指定をいうものではない。",
+      "エ": "誤り。宛先を特定しない例外は合うが、原則宛先は最も近い航空局ではなく現に通信中の航空局等である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q12",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 12,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－12 次に掲げる事項のうち、航空機の緊急の事態に係る緊急通報に対し応答した航空局が執らなければならない措置に該当し\nないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a12.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-12 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-12（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017/20251001_507M60000008094?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "該当しない。第176条の2は周辺の航空機局一般への通知を列挙していない。",
+    "choiceExplanations": {
+      "ア": "該当する。第176条の2第1号は航空交通管制機関への直ちに行う通知を定める。",
+      "イ": "該当する。第176条の2第2号は緊急の事態にある航空機を運行する者への通知を定める。",
+      "ウ": "該当する。第176条の2第3号は必要に応じた緊急通信の宰領を定める。",
+      "エ": "該当しない。第176条の2は周辺の航空機局一般への通知を列挙していない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q13",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 13,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－13 総務大臣が無線局に対して臨時に電波の発射の停止を命ずることができるときに関する次の事項のうち、電波法（第２８\n条及び第７２条）の規定に照らし、これらの規定に定めるところに該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a13.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-13 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-13（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "該当しない。第28条の列挙は周波数の偏差及び幅、高調波の強度等であり、設問が示す周波数の安定度という別の項目はここに列挙されていない。",
+    "choiceExplanations": {
+      "ア": "該当する。第28条は電波の周波数の幅を電波の質に含め、第72条は不適合時の臨時発射停止を定める。",
+      "イ": "該当する。周波数の偏差は第28条に列挙され、第72条の対象である。",
+      "ウ": "該当しない。第28条の列挙は周波数の偏差及び幅、高調波の強度等であり、設問が示す周波数の安定度という別の項目はここに列挙されていない。",
+      "エ": "該当する。高調波の強度は第28条に列挙され、第72条の対象である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q14",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 14,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－14 次の記述は、有害な混信について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-a14.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 A-14 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 A-14（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。憲章第45条No.197は他構成国等の無線業務又は通信への有害な混信防止を求め、附属書No.1003は無線航行その他の安全業務と反覆的中断・妨害を定義に含める。",
+    "choiceExplanations": {
+      "ア": "正しい。憲章第45条No.197は他構成国等の無線業務又は通信への有害な混信防止を求め、附属書No.1003は無線航行その他の安全業務と反覆的中断・妨害を定義に含める。",
+      "イ": "誤り。第45条の対象は国際電気通信業務だけに限定されず、附属書は「特別業務」でなく安全業務を明示する。",
+      "ウ": "誤り。Aは合うが、附属書No.1003は「特別業務」や許容混信レベル超過という表現で定義しない。",
+      "エ": "誤り。安全業務は合うが、Aを国際電気通信業務だけに狭め、Cも附属書の反覆的中断・妨害と異なる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q15",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－１ 無線従事者が電波法若しくは電波法に基づく命令又はこれらに基づく処分に違反したときに総務大臣から受けることが\nある処分に関する次の事項のうち、電波法（第７９条）の規定に照らし、この規定に定めるところに該当するものを１、該\n当しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b01.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "type": "native-b",
+    "explanation": "第79条の無線従事者に対する処分は免許取消し又は3箇月以内の業務停止であり、その従事局の空中線電力制限はここに含まれない。\n\n第79条第1項は違反時の無線従事者免許の取消しを定める。\n\n第79条は無線従事者個人の免許取消し・業務停止を定め、無線局自体の運用停止はここでの処分ではない。\n\n第79条は無線従事者個人への処分を定め、従事局の周波数制限を列挙しない。\n\n第79条第1項は3箇月以内の業務従事停止を定める。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "第79条の無線従事者に対する処分は免許取消し又は3箇月以内の業務停止であり、その従事局の空中線電力制限はここに含まれない。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "第79条第1項は違反時の無線従事者免許の取消しを定める。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "第79条は無線従事者個人の免許取消し・業務停止を定め、無線局自体の運用停止はここでの処分ではない。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "第79条は無線従事者個人への処分を定め、従事局の周波数制限を列挙しない。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "第79条第1項は3箇月以内の業務従事停止を定める。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q16",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－２ 次の記述は、義務航空機局の送信設備の有効通達距離について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b02.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000014/20251001_507M60000008096?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "native-b",
+    "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。\n\n第31条の3第1号は118～144MHzの設備とATCトランスポンダを並記し、イに入る。\n\n第31条の3第1号の距離基準は370.4kmで、D=3.8√hが下回るときはDを用いる。ウに入る。\n\n第31条の3第1号のhは航空機の飛行する最高高度で、エに入る。\n\n同号はhをメートルで表した数と定め、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "J3E電波は第31条の3第1号に並記される送信設備ではない。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "機上DMEは同条第2号で別の距離基準を持ち、第1号のイではない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "第31条の3第1号は118～144MHzの設備とATCトランスポンダを並記し、イに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "314.8kmは同条第2号の機上DME・タカンの基準であり、第1号のウではない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "第31条の3第1号の距離基準は370.4kmで、D=3.8√hが下回るときはDを用いる。ウに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "最大巡航速度は同条第3号の気象レーダー表の区分であり、第1号の高度hではない。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "第31条の3第1号のhは航空機の飛行する最高高度で、エに入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "同号はhをメートルで表した数と定め、オに入る。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "キロメートルはDの単位であり、hは第31条の3第1号でメートルと定める。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "A3E電波は第31条の3第1号の118～144MHz側に既に含まれ、イに入るもう一方の設備ではない。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "第31条の3第1号は118～144MHzの設備とATCトランスポンダを並記し、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "第31条の3第1号の距離基準は370.4kmで、D=3.8√hが下回るときはDを用いる。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "第31条の3第1号のhは航空機の飛行する最高高度で、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "同号はhをメートルで表した数と定め、オに入る。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q17",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－３ 次の記述は、無線局の開設について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b03.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "native-b",
+    "explanation": "第4条本文の原則は総務大臣の免許を受けること。アに入る。\n\n第4条第1号は発射電波が著しく微弱な無線局を列挙し、イに入る。\n\n第4条第2号・第3号は適合表示無線設備のみの使用を要件とし、ウに入る。\n\n第4条第3号は空中線電力1ワット以下と規定し、エに入る。\n\n第4条第4号は第27条の21第1項の登録を受けて開設する無線局を挙げ、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "第4条本文は開設前の届出ではなく総務大臣の免許を原則とするため、アには入らない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "第4条本文の原則は総務大臣の免許を受けること。アに入る。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "第4条第1号は発射電波が著しく微弱な無線局を列挙し、イに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "第4条第1号の基準は単なる小規模ではなく、発射電波が著しく微弱なこと。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "第4条第2号・第3号は適合表示無線設備のみの使用を要件とし、ウに入る。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "型式検定に合格した機器という文言ではなく、第4条第2号・第3号は適合表示無線設備を指定する。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "第4条第3号は空中線電力1ワット以下と規定し、エに入る。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "第4条第3号の上限は0.1ワットではなく1ワット。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "災害時の臨時開設ではなく、第4条第4号は登録を受けて開設する局を挙げる。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "第4条第4号は第27条の21第1項の登録を受けて開設する無線局を挙げ、オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "第4条本文の原則は総務大臣の免許を受けること。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "第4条第1号は発射電波が著しく微弱な無線局を列挙し、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "5",
+          "explanation": "第4条第2号・第3号は適合表示無線設備のみの使用を要件とし、ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "第4条第3号は空中線電力1ワット以下と規定し、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "第4条第4号は第27条の21第1項の登録を受けて開設する無線局を挙げ、オに入る。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q18",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－４ 無線通信（注）の秘密の保護に関する次の記述のうち、電波法（第５９条及び第１０９条）の規定に照らし、これらの規 \n定に定めるところに適合するものを１、適合しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b04.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "native-b",
+    "explanation": "不適合。第59条は暗語や特定周波数に限定せず、特定の相手方に対する無線通信を対象とする。\n\n適合。第109条第1項の無線局取扱中の秘密漏示・窃用は1年以下の拘禁刑又は50万円以下の罰金。\n\n適合。第59条は法律の別段の定めを除き、特定の相手方への無線通信の傍受による存在・内容の漏示又は窃用を禁じる。\n\n適合。第109条第2項は業務で知り得た前項の秘密の漏示・窃用を2年以下の拘禁刑又は100万円以下の罰金とする。\n\n不適合。第59条の禁止対象は特定の相手方に対して行われる無線通信であり、いかなる無線通信も、とはしていない。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "不適合。第59条は暗語や特定周波数に限定せず、特定の相手方に対する無線通信を対象とする。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "適合。第109条第1項の無線局取扱中の秘密漏示・窃用は1年以下の拘禁刑又は50万円以下の罰金。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "適合。第59条は法律の別段の定めを除き、特定の相手方への無線通信の傍受による存在・内容の漏示又は窃用を禁じる。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "適合。第109条第2項は業務で知り得た前項の秘密の漏示・窃用を2年以下の拘禁刑又は100万円以下の罰金とする。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "不適合。第59条の禁止対象は特定の相手方に対して行われる無線通信であり、いかなる無線通信も、とはしていない。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q19",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 5,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－５ 航空機局の無線業務日誌に関する次の記述のうち、電波法施行規則（第４０条）の規定に照らし、この規定に定めるとこ\nろに適合するものを１、適合しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b05.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000014/20251001_507M60000008096?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "native-b",
+    "explanation": "適合。第40条第2項第3号(1)及び第4号(1)は航空機局にも第70条の4による聴守周波数の記載を求める。\n\n不適合。第40条第4項は使用を終えた日から2年間の保存を定め、次回定期検査の日までではない。\n\n適合。第40条第3項第1号は航空機局の時刻を原則として協定世界時とし、国際航空に従事しない局だけに条件付きの中央標準時例外を置く。\n\n不適合。第40条第1項第1号(5)が記載を求めるのは電波の規正の指示と措置内容であり、検査結果に関する指示一般ではない。\n\n適合。第40条第2項第4号(3)は船舶局の第2号(8)を航空機局に準用し、レーダーの維持・特異現象を記載する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "適合。第40条第2項第3号(1)及び第4号(1)は航空機局にも第70条の4による聴守周波数の記載を求める。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "不適合。第40条第4項は使用を終えた日から2年間の保存を定め、次回定期検査の日までではない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "適合。第40条第3項第1号は航空機局の時刻を原則として協定世界時とし、国際航空に従事しない局だけに条件付きの中央標準時例外を置く。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "不適合。第40条第1項第1号(5)が記載を求めるのは電波の規正の指示と措置内容であり、検査結果に関する指示一般ではない。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "適合。第40条第2項第4号(3)は船舶局の第2号(8)を航空機局に準用し、レーダーの維持・特異現象を記載する。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-02-hoki-q20",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 6,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-02期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－６ 次の記述は、航空局等の遭難通信の取扱いについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-02-hoki-b06.png"
+    ],
+    "imageAltTexts": [
+      "2026-02 航空無線通信士 法規 B-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-02期 法規 B-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20251001_507AC0000000027?occasion_date=20251001"
+    ],
+    "lawReferenceDate": "2025-10-01",
+    "type": "native-b",
+    "explanation": "第70条の6第2項で航空局等に準用される第66条第1項は、他の一切の無線通信に優先すると定め、アに入る。\n\n第66条第1項が救助のため最も便宜な位置にある無線局を指定し、イに入る。\n\n第66条第1項の最善の措置の対象は救助の通信であり、ウに入る。\n\n第66条第2項は遭難通信を妨害するおそれのある電波の発射を止めるとし、エに入る。\n\n第105条は遭難通信の取扱いをしない又は遅延させた無線通信業務従事者を対象とし、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "第70条の6第2項で航空局等に準用される第66条第1項は、他の一切の無線通信に優先すると定め、アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "第66条第1項には通信中である場合を除くという留保はない。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "第66条第1項の通報先は通信可能な全局ではなく、救助に最も便宜な位置にある無線局。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "第66条第1項が救助のため最も便宜な位置にある無線局を指定し、イに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "第66条第1項は遭難通信の宰領ではなく救助の通信に関する最善の措置を求める。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "第66条第1項の最善の措置の対象は救助の通信であり、ウに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "第66条第2項が止めるのは全電波ではなく遭難通信を妨害するおそれのある発射。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "第66条第2項は遭難通信を妨害するおそれのある電波の発射を止めるとし、エに入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "第105条の主体は無線従事者という資格名ではなく、無線通信の業務に従事する者。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "第105条は遭難通信の取扱いをしない又は遅延させた無線通信業務従事者を対象とし、オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "第70条の6第2項で航空局等に準用される第66条第1項は、他の一切の無線通信に優先すると定め、アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "第66条第1項が救助のため最も便宜な位置にある無線局を指定し、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "第66条第1項の最善の措置の対象は救助の通信であり、ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "8",
+          "explanation": "第66条第2項は遭難通信を妨害するおそれのある電波の発射を止めるとし、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "第105条は遭難通信の取扱いをしない又は遅延させた無線通信業務従事者を対象とし、オに入る。"
+        }
+      ],
+      "officialLabel": "B-6",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 1 図に示す交流回路の有効電力(消費電力)P〔W〕を表す式として、正しいものを下の番号から選べ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "電圧と電流の実効値をV、Iとすると、平均される有効電力はVI cosθ。",
+    "choiceExplanations": {
+      "ア": "sin²θは電流と電圧の同相成分を表さない。有効電力は実効値の積に力率cosθを掛ける。",
+      "イ": "cos²θは余分な二乗で、平均電力の力率はcosθ。",
+      "ウ": "sinθは直交成分側に対応し、有効電力に掛けるのはcosθ。",
+      "エ": "電圧と電流の実効値をV、Iとすると、平均される有効電力はVI cosθ。",
+      "オ": "VIだけでは位相差を反映しない。θ=0の場合に限ってcosθ=1となりVIに一致する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 2  次の記述は、半導体について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "常温付近の半導体では一般に温度上昇でキャリアが増え、抵抗は下がる方向に働く。大きくなるとの断定が誤り。",
+    "choiceExplanations": {
+      "ア": "Siへ5価のAsをドープすると電子を供与しやすく、電子が多数キャリアとなるn形なので正しい。",
+      "イ": "Siへ3価のInをドープすると正孔を作り、p形となるので正しい。",
+      "ウ": "常温付近の半導体では一般に温度上昇でキャリアが増え、抵抗は下がる方向に働く。大きくなるとの断定が誤り。",
+      "エ": "p形の多数キャリアは正孔であるため正しい。",
+      "オ": "n形の多数キャリアは自由電子であるため正しい。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 3 次の記述は、図に示すように増幅度 (Vo /ViA )がA の増幅器と帰還率  (Vf/Vo)がβ の帰還回路を用いた原理的な構成の負帰\n還増幅器について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "図の負帰還ではViA=Vi−βVo、Vo=A ViAなので閉ループ利得はA/(1+Aβ)<A。Aβ≫1なら約1/βとなり安定、ひずみや内部雑音も抑えられる。",
+    "choiceExplanations": {
+      "ア": "図の負帰還ではViA=Vi−βVo、Vo=A ViAなので閉ループ利得はA/(1+Aβ)<A。Aβ≫1なら約1/βとなり安定、ひずみや内部雑音も抑えられる。",
+      "イ": "利得低下と雑音減少は合うが、強い負帰還下で利得は主にβに規定されるため「不安定になる」が違う。",
+      "ウ": "利得低下は合うが、Bの不安定化とCのひずみ・雑音増加はいずれも原理的な負帰還の効果と逆。",
+      "エ": "負帰還でAより利得が大きくなるとはいえず、B・Cも逆。",
+      "オ": "安定化と雑音低減は合うが、負帰還をかけると電圧増幅度はAより小さくなるのでAが違う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 4 図はPLL による直接FM(F3E)方式の変調器の原理的な構成例を示したものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "Aの位相比較器で位相差を検出し、Bの低域フィルタで誤差の高域成分を除き、CのVCOを制御するPLL構成。",
+    "choiceExplanations": {
+      "ア": "図のAは帰還FM出力と水晶基準を比較する位相比較器で、周波数逓倍器ではない。B・Cは機能が合う。",
+      "イ": "Aの周波数逓倍器、Bの高域フィルタ、Cの平衡変調器はいずれもPLLの位相誤差処理・発振器の位置と合わない。",
+      "ウ": "位相比較器と低域フィルタは合うが、制御電圧で周波数を変えるCは平衡変調器ではない。",
+      "エ": "Aの位相比較器で位相差を検出し、Bの低域フィルタで誤差の高域成分を除き、CのVCOを制御するPLL構成。",
+      "オ": "Aは合うが、位相誤差処理は高域フィルタでなく低域フィルタ、Cも平衡変調器でなくVCO。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q05",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 5 図は、SSB(J3E)送信機の構成例を示したものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "平衡変調器の後、Aの帯域フィルタで片側帯を選び、Bの周波数混合器で第2局発と混合して送信周波数へ上げる。",
+    "choiceExplanations": {
+      "ア": "Aに必要なのは両側波帯から片側を選ぶ帯域フィルタで、高域フィルタだけでは所要帯域を選べない。Bも位相変調器ではない。",
+      "イ": "Aの帯域フィルタは合うが、第2局部発振器を受けて周波数変換するBは位相比較器ではない。",
+      "ウ": "平衡変調器の後、Aの帯域フィルタで片側帯を選び、Bの周波数混合器で第2局発と混合して送信周波数へ上げる。",
+      "エ": "抵抗減衰器では所要片側帯を選別できず、第2局発との周波数変換も位相変調器の役割ではない。",
+      "オ": "Bの周波数混合器は合うが、Aの抵抗減衰器は片側帯の選択にならない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q06",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 6  次の記述は、図に示す構成の航空局用のAM(A3E)スーパヘテロダイン受信機について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "RF増幅器は感度、IFフィルタは近接周波数選択度、スケルチは閾値以下の雑音遮断に対応する。",
+    "choiceExplanations": {
+      "ア": "RF増幅器が良くするのは感度で、電源効率ではない。IF段のフィルタは近接周波数を分離し、スケルチは閾値以下で働く。",
+      "イ": "BとCは合うが、RF増幅器によるS/N改善を電源効率の向上と呼ぶAが違う。",
+      "ウ": "感度と閾値以下のスケルチは合うが、IF選択度は近接チャネルの混信を抑えるのでBの「同一」が違う。",
+      "エ": "AとBは合うが、スケルチで雑音を遮るのは受信信号が閾値以下のときで「以上」ではない。",
+      "オ": "RF増幅器は感度、IFフィルタは近接周波数選択度、スケルチは閾値以下の雑音遮断に対応する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q07",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 7  次の記述は、DSB(A3E)通信方式と比べたときのSSB(J3E)通信方式の一般的な特徴について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-7 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-7（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "SSBは空中線電力が小さく、片側帯だけなので帯域が狭く、両側帯の異なる減衰による選択性フェージングの影響が少ない。",
+    "choiceExplanations": {
+      "ア": "SSBは搬送波と片側の側波帯を抑え、同品質を得る空中線電力はDSBより小さくできる。肢1の「大きい」が違う。",
+      "イ": "SSBの必要電力を「大きい」、占有帯域を「広く」とするのでAとBが逆。選択性フェージングも「多い」ではない。",
+      "ウ": "SSBは空中線電力が小さく、片側帯だけなので帯域が狭く、両側帯の異なる減衰による選択性フェージングの影響が少ない。",
+      "エ": "電力とフェージングは合うが、SSBの占有周波数帯幅はDSBより狭くなるので「広く」が違う。",
+      "オ": "電力は合うが、帯域は狭く、選択性フェージングの影響も少ないためB・Cが違う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q08",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 8  次の記述は、ACAS(航空機衝突防止装置)Ⅱを搭載した2 機の航空機が接近したときの、ACASⅡの動作について述べたもので\nある。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-8 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-8（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "協調回避情報の交換はモードSのデータリンクによる。モードAにその協調機能があるとするため誤り。",
+    "choiceExplanations": {
+      "ア": "相手機から周期送信される識別情報を受けて追跡・質問対象を定める段階で、公式キーでは正しい扱い。周期送信情報の範囲は装置仕様で独立照合を要する。",
+      "イ": "ACAS IIは相手機に個別質問を行い、応答から方位・距離・高度情報を監視するので正しい。",
+      "ウ": "接近状況を評価し、交通情報を操縦者へ提示する機能なので正しい。",
+      "エ": "回避が必要なら垂直方向の回避指示を視覚・音声で提示するので正しい。",
+      "オ": "協調回避情報の交換はモードSのデータリンクによる。モードAにその協調機能があるとするため誤り。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q09",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A - 9  次の記述は、コスパス・サーサットシステムで使用する航空機用救命無線機（ELT：Emergency Locator Transmitter）につ\nいて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-9 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-9（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ELTは406 MHz帯で衛星に識別情報を送り、捜索機はホーミング信号からELTの方位を求める。",
+    "choiceExplanations": {
+      "ア": "406 MHz帯は衛星向けとして合うが、航空機識別情報は衛星向けデジタル信号に載り、捜索機向けホーミングで距離を知るわけでもない。",
+      "イ": "A・Bは合うが、ホーミング信号から捜索機が得るのは方位であって距離ではない。",
+      "ウ": "ELTは406 MHz帯で衛星に識別情報を送り、捜索機はホーミング信号からELTの方位を求める。",
+      "エ": "捜索機向け識別信号ではなく衛星向けであり、1.6 GHz帯をELTの衛星送信用周波数とするAも違う。",
+      "オ": "識別情報の宛先は合うが、Aの1.6 GHz帯とCの距離が違う。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q10",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "A -10  次の記述は、図に示す原理的な直流電源装置の構成例について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 A-10 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 A-10（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "平滑回路は通常コンデンサやリアクトルで脈動を低減する。サイリスタを「よく使う」とするのは整流制御素子と平滑素子の混同。",
+    "choiceExplanations": {
+      "ア": "変圧器が交流電圧を必要な大きさへ変換するという説明は、図の段階に合う。",
+      "イ": "半波整流と全波整流は整流回路の方式なので正しい。",
+      "ウ": "ダイオードは電流を一方向へ通す整流素子として一般的なので正しい。",
+      "エ": "平滑回路は通常コンデンサやリアクトルで脈動を低減する。サイリスタを「よく使う」とするのは整流制御素子と平滑素子の混同。",
+      "オ": "整流後の脈動を減らして直流に近づけるのが平滑回路なので正しい。「完全な直流に近づける」は理想値へ近づく意味。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q11",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 1  次の記述は、インマルサット航空衛星通信システムについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 B-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 B-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "ETSI TR 101 374-1 PDF73頁はインマルサットがGEO衛星システムを運用すると明記する。アに入る。\n\n静止軌道高度は約35,800kmで、選択肢の概数36,000kmがイに入る。ETSI PDF73頁のGEO記述とNOAAの高度値を結ぶ。\n\nETSI同資料PDF75頁はInmarsat M4のVoiceとデータサービスを並記する。ウに入る。\n\nETSI PDF25頁は端末とのL帯、PDF75頁は1,525～1,559MHzの下りを記す。航空機側は1.6GHzと1.5GHz帯で、エは1.5GHz。\n\nETSI PDF24～25頁はインマルサットのゲートウェイ・衛星間C帯を6GHz上り/4GHz下りとする。オは6GHz。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "ETSI TR 101 374-1 PDF73頁はインマルサットがGEO衛星システムを運用すると明記する。アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "静止軌道高度は約35,800kmで、選択肢の概数36,000kmがイに入る。ETSI PDF73頁のGEO記述とNOAAの高度値を結ぶ。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "ETSI同資料PDF75頁はInmarsat M4のVoiceとデータサービスを並記する。ウに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "3GHzは航空機側リンクのL帯1.5/1.6GHzではなく、エに入らない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "ETSI PDF24～25頁はインマルサットのゲートウェイ・衛星間C帯を6GHz上り/4GHz下りとする。オは6GHz。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "インマルサットの同資料はGEO衛星とし、周回衛星をアへ入れない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "20,000kmはGEO高度約35,800kmと一致しない。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "ETSI PDF75頁にVoiceに加えてデータ・パケット等があるので電話のみではない。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "ETSI PDF25頁は端末とのL帯、PDF75頁は1,525～1,559MHzの下りを記す。航空機側は1.6GHzと1.5GHz帯で、エは1.5GHz。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "2.2GHzはETSIが示すゲートウェイ側6/4GHz帯にも航空機側L帯にも該当しない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "ETSI TR 101 374-1 PDF73頁はインマルサットがGEO衛星システムを運用すると明記する。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "静止軌道高度は約35,800kmで、選択肢の概数36,000kmがイに入る。ETSI PDF73頁のGEO記述とNOAAの高度値を結ぶ。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "ETSI同資料PDF75頁はInmarsat M4のVoiceとデータサービスを並記する。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "ETSI PDF25頁は端末とのL帯、PDF75頁は1,525～1,559MHzの下りを記す。航空機側は1.6GHzと1.5GHz帯で、エは1.5GHz。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "ETSI PDF24～25頁はインマルサットのゲートウェイ・衛星間C帯を6GHz上り/4GHz下りとする。オは6GHz。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q12",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 2  次の記述は、図に示す原理的な構造の円形パラボラアンテナについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 B-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 B-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "焦点からの波を軸と平行に反射する形状は回転放物面で、原図の反射器に一致する。アに入る。\n\n原図の一次放射器は放物面の焦点にあり、そこからの球面波が反射後ほぼ軸平行になる。イに入る。\n\n波長が短いSHFでは有限の開口Dを波長比で大きくできるので、パラボラアンテナに多用される。ウに入る。\n\n放物面の反射特性で焦点からの放射はほぼ軸方向に平行な波面となる。エに入る。\n\nG≈η(πD/λ)^2よりD/λを大きくすれば利得は大きくなる。オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "回転楕円面の二焦点反射は平行化の条件と異なる。原図は軸平行反射を作る回転放物面。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "原図の一次放射器は放物面の焦点にあり、そこからの球面波が反射後ほぼ軸平行になる。イに入る。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "HFの長波長では実用的な開口Dを波長より十分大きくしにくく、原問のパラボラの典型帯域ではない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "焦点からの球面波は反射後にほぼ平面波へ揃うため、反射後を球面波とはしない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "開口利得は概ねη(πD/λ)^2に比例するため、D/λが大きいほど小さくはならない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "焦点からの波を軸と平行に反射する形状は回転放物面で、原図の反射器に一致する。アに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "頂点に放射器を置いても焦点からの光路等長が成立しない。原図も焦点付近を指す。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "波長が短いSHFでは有限の開口Dを波長比で大きくできるので、パラボラアンテナに多用される。ウに入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "放物面の反射特性で焦点からの放射はほぼ軸方向に平行な波面となる。エに入る。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "G≈η(πD/λ)^2よりD/λを大きくすれば利得は大きくなる。オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "焦点からの波を軸と平行に反射する形状は回転放物面で、原図の反射器に一致する。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "原図の一次放射器は放物面の焦点にあり、そこからの球面波が反射後ほぼ軸平行になる。イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "波長が短いSHFでは有限の開口Dを波長比で大きくできるので、パラボラアンテナに多用される。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "放物面の反射特性で焦点からの放射はほぼ軸方向に平行な波面となる。エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "G≈η(πD/λ)^2よりD/λを大きくすれば利得は大きくなる。オに入る。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q13",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 3  次の記述は、主にマイクロ波(SHF)帯の伝送線路として用いられる導波管について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 B-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 B-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "代表的な中空導波管断面は円形と方形であり、アに入る。\n\n図に誘電体充填の指定がない標準的な中空金属導波管の内側は空気で、イに入る。\n\nf≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。\n\n連続した金属壁が電磁場を囲む通常の導波管では、外部へ漏洩しない。エに入る。\n\n基本モード遮断周波数は断面寸法に反比例し、高周波用ほど寸法は大きくではなく小さくなる。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "代表的な中空導波管断面は円形と方形であり、アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "図に誘電体充填の指定がない標準的な中空金属導波管の内側は空気で、イに入る。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "遮断周波数以上は伝搬定数が実数となり得るため、一律に伝送されないとはいえない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "正常な閉じた金属壁では内側の電磁場を閉じ込めるので、一般に外へ漏洩するとはしない。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "基本モード遮断周波数は断面寸法に反比例し、高周波用ほど寸法は大きくではなく小さくなる。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "星形を通常の中空導波管の二大断面分類とはしない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "通常の中空導波管は磁性体の充填を前提とせず、内部は空気である。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "f≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "連続した金属壁が電磁場を囲む通常の導波管では、外部へ漏洩しない。エに入る。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "同じ基本モードならfc∝1/aなので、より高い周波数用は断面寸法を小さくする。オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "代表的な中空導波管断面は円形と方形であり、アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "図に誘電体充填の指定がない標準的な中空金属導波管の内側は空気で、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "f≤fcでは軸方向伝搬定数が実数にならず、遮断周波数以下の信号は伝送できない。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "連続した金属壁が電磁場を囲む通常の導波管では、外部へ漏洩しない。エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "基本モード遮断周波数は断面寸法に反比例し、高周波用ほど寸法は大きくではなく小さくなる。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-kogaku-q14",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "B - 4  次の記述は、マイクロ波(SHF)帯の電波の一般的な特徴について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 無線工学 B-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 無線工学 B-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "native-b",
+    "explanation": "λ=c/fより、VHFより周波数の高いSHFの波長は短い。アに入る。\n\n短波長では回折が小さく、SHFの直進性はVHFより強い。イに入る。\n\nSHF固定回線は通常、見通し内の直接波による伝搬を主体とする。ウに入る。\n\n自由空間基本伝送損失L=(4πdf/c)^2。距離d一定なら高いfほど損失が大きく、エに入る。\n\n概ね10GHz以上では波長が雨滴の寸法に近づき散乱・吸収が増え、降雨の影響を受けやすい。オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "λ=c/fより、VHFより周波数の高いSHFの波長は短い。アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "波長が短いほど障害物を回り込む回折は弱く、直進性が弱いとはしない。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "SHF固定回線は通常、見通し内の直接波による伝搬を主体とする。ウに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "自由空間基本伝送損失L=(4πdf/c)^2。距離d一定なら高いfほど損失が大きく、エに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "概ね10GHz以上では雨滴による散乱・吸収が増すため受けにくいとはいえない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "λ=c/fより、SHFの波長はVHFより長くならない。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "短波長では回折が小さく、SHFの直進性はVHFより強い。イに入る。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "F層反射は主にHFの長距離伝搬で、SHF固定回線の主体ではない。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "同距離のL=(4πdf/c)^2は周波数fとともに増すため、損失が小さいとはいえない。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "概ね10GHz以上では波長が雨滴の寸法に近づき散乱・吸収が増え、降雨の影響を受けやすい。オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "λ=c/fより、VHFより周波数の高いSHFの波長は短い。アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "短波長では回折が小さく、SHFの直進性はVHFより強い。イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "SHF固定回線は通常、見通し内の直接波による伝搬を主体とする。ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "自由空間基本伝送損失L=(4πdf/c)^2。距離d一定なら高いfほど損失が大きく、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "概ね10GHz以上では波長が雨滴の寸法に近づき散乱・吸収が増え、降雨の影響を受けやすい。オに入る。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q01",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－１ 次の記述は、航空移動業務の無線局の免許後の変更について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a01.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第17条第1項は通信事項等または設備設置場所の変更、設備変更工事をしようとするとき事前に総務大臣の許可を要すると定める。",
+    "choiceExplanations": {
+      "ア": "正しい。第17条第1項は通信事項等または設備設置場所の変更、設備変更工事をしようとするとき事前に総務大臣の許可を要すると定める。",
+      "イ": "誤り。第17条第1項は当該変更について届出ではなく事前の総務大臣の許可を求める。",
+      "ウ": "誤り。電波の型式・周波数・空中線電力を通信事項と並べて第17条のこの変更対象に追加するのは不適切で、指定変更は第19条の事項である。",
+      "エ": "誤り。通信事項に指定事項を混在させ、かつ第17条の事前許可を届出に置き換えている。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q02",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－２ 次の記述は、航空移動業務の無線局における免許記録に記録されている事項の遵守について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a02.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "lawReferenceDate": "2026-05-27",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しい。第52条の目的・相手方・通信事項、第53条の設置場所、第54条の必要最小の空中線電力に一致する。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは第52条どおりだが、第53条は「無線設備の設置場所」、第54条は「必要最小のもの」である。",
+      "イ": "正しい。第52条の目的・相手方・通信事項、第53条の設置場所、第54条の必要最小の空中線電力に一致する。",
+      "ウ": "誤り。第52条の範囲は無線局の種別ではなく、目的又は通信の相手方若しくは通信事項である。Bも誤る。",
+      "エ": "誤り。Aを無線局の種別とし、Cを十分なものとする点が第52条・第54条に反する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q03",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－３ 無線通信（注）の秘密の保護に関する次の記述のうち、電波法（第５９条及び第１０９条）の規定に照らし、これらの規定\nに定めるところに適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a03.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正しい。第59条は法律に別段の定めがある場合を除き、特定の相手方に対する無線通信を傍受して存在・内容を漏らす又は窃用することを禁じる。",
+    "choiceExplanations": {
+      "ア": "誤り。第59条は総務省令指定周波数の全通信ではなく、特定の相手方に対する無線通信を対象とする。",
+      "イ": "誤り。業務従事者が業務上知った秘密を漏らした場合、第109条第2項は2年以下の拘禁刑又は100万円以下の罰金を定める。",
+      "ウ": "正しい。第59条は法律に別段の定めがある場合を除き、特定の相手方に対する無線通信を傍受して存在・内容を漏らす又は窃用することを禁じる。",
+      "エ": "誤り。第59条はあらゆる無線通信に無限定で及ぶのではなく、特定の相手方に対して行われる通信を対象とする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q04",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－４ 次の記述は、義務航空機局の無線設備の機能試験について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a04.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正しい。飛行前の完全動作確認と千時間使用ごと一回以上の送受信性能試験の双方が第9条の2・3に一致する。",
+    "choiceExplanations": {
+      "ア": "誤り。飛行前の時点は合うが、確認対象は有効通達距離ではなく完全に動作できる状態で、定期試験も千時間ごとである。",
+      "イ": "誤り。第9条の2は毎日1回以上や有効通達距離ではなく、飛行前の完全動作確認である。",
+      "ウ": "誤り。完全動作の確認は飛行前であり、第9条の3の定期試験は二千時間ではなく千時間ごとである。",
+      "エ": "正しい。飛行前の完全動作確認と千時間使用ごと一回以上の送受信性能試験の双方が第9条の2・3に一致する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q05",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－５ 無線局が無線電話通信において、自局に対する呼出しであることが確実でない呼出しを受信したときに執るべき措置に関\nする次の記述のうち、無線局運用規則（第１４条、第１８条及び第２６条）の規定に照らし、これらの規定に定めるところ\nに適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a05.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第26条第1項は自局宛と確実でない呼出しには、反覆され、かつ自局宛と確実に判明するまで応答してはならないと定める。",
+    "choiceExplanations": {
+      "ア": "正しい。第26条第1項は自局宛と確実でない呼出しには、反覆され、かつ自局宛と確実に判明するまで応答してはならないと定める。",
+      "イ": "誤り。宛先が不確実な段階で直ちに応答する方法は第26条第1項に反する。",
+      "ウ": "誤り。「誰かこちらを呼びましたか」は第26条第1項の不確実な宛先への即応答を許す語ではない。",
+      "エ": "誤り。「各局」での即応答も第26条第1項の応答待機条件を満たさない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q06",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－６ 次の記述は、航空移動業務における無線電話による試験電波の発射について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a06.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正しい。第39条の発射前聴守・試験中の停止要求確認と、別表第4号でVVVに対応する「本日は晴天なり」が一致する。",
+    "choiceExplanations": {
+      "ア": "誤り。第39条の聴守周波数と第2項の停止要求確認は合うが、無線電話の「VVV」に相当する語は別表第4号の「本日は晴天なり」である。",
+      "イ": "誤り。発射前は予定周波数に加えてその他必要と認める周波数でも聴守し、無線電話では「本日は晴天なり」を用いる。",
+      "ウ": "誤り。「本日は晴天なり」は合うが、発射前聴守はその他必要周波数も含み、試験中は停止要求の有無を確かめる。",
+      "エ": "正しい。第39条の発射前聴守・試験中の停止要求確認と、別表第4号でVVVに対応する「本日は晴天なり」が一致する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q07",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－７ 義務航空機局がその運用を中止しようとするときの措置に関する次の記述のうち、無線局運用規則（第１４８条及び第 \n１４９条）の規定に照らし、この規定に定めるところに適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a07.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-7 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-7（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しい。第149条第1項の責任航空局又は交通情報航空局へ、中止の旨と再開予定時刻を通知するのが第148条第1項の原則である。",
+    "choiceExplanations": {
+      "ア": "誤り。第148条第1項が通知先とするのは第149条第1項の航空局であり、通信可能なすべての航空局ではない。",
+      "イ": "正しい。第149条第1項の責任航空局又は交通情報航空局へ、中止の旨と再開予定時刻を通知するのが第148条第1項の原則である。",
+      "ウ": "誤り。第148条はすべての航空局・航空機局への一斉通知や中止理由を要求しない。",
+      "エ": "誤り。第149条の通知先は原則として責任航空局又は交通情報航空局であり、その区域のすべての責任航空局ではない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q08",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－８ 航空局等（注）における緊急通信の取扱いに関する次の記述のうち、電波法（第６７条及び第７０条の６）及び無線局運用\n規則（第９３条及び第１７７条）の規定に照らし、これらの規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a08.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-8 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-8（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527",
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適合しない。電波法第67条第2項は自局に関係ないと確認するまでの継続受信、所定の場合も少なくとも3分間と定める。「通信終了まで・少なくとも15分間」ではない。",
+    "choiceExplanations": {
+      "ア": "適合する。電波法第70条の6第2項が準用する第67条第1項は、遭難通信に次ぐ順位で緊急通信を扱わせる。",
+      "イ": "適合する。運用規則第177条が準用する第93条第4項は、自局に関係ある緊急通報を責任者に直ちに通報する等の措置を求める。",
+      "ウ": "適合しない。電波法第67条第2項は自局に関係ないと確認するまでの継続受信、所定の場合も少なくとも3分間と定める。「通信終了まで・少なくとも15分間」ではない。",
+      "エ": "適合する。運用規則第177条が準用する第93条第2項は、緊急通信が行われないか終了したことを確かめるまで通信再開を禁じる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q09",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－９ 次の記述は、１２１.５ＭＨｚの電波の使用制限について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a09.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-9 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-9（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しい。第153条第1号の急迫の危険状態と通常使用する電波、第3号の準備信号がすべて合う。",
+    "choiceExplanations": {
+      "ア": "誤り。Aは急迫の危険状態、Cは準備信号だが、第153条第1号のBは通常使用する電波である。",
+      "イ": "正しい。第153条第1号の急迫の危険状態と通常使用する電波、第3号の準備信号がすべて合う。",
+      "ウ": "誤り。Bは合うが、Aは航行中一般ではなく急迫の危険状態、Cは通報ではなく準備信号である。",
+      "エ": "誤り。第153条第1号は急迫の危険状態と通常使用する電波であり、AとBが合わない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q10",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－10 次の記述は、航空移動業務の無線局における緊急通報の送信事項について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a10.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-10 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-10（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しい。第176条第2・3・5号は順に呼出符号若しくは呼出名称、緊急事態の種類、位置・高度・針路を定める。",
+    "choiceExplanations": {
+      "ア": "正しい。第176条第2・3・5号は順に呼出符号若しくは呼出名称、緊急事態の種類、位置・高度・針路を定める。",
+      "イ": "誤り。第176条は事態の発生時刻や出発地・目的地でなく、種類と位置・高度・針路を挙げる。",
+      "ウ": "誤り。第176条第2号は免許人名でなく航空機識別又は航空機局の呼出符号若しくは呼出名称である。",
+      "エ": "誤り。免許人名、発生時刻、出発地・目的地のいずれも第176条第2・3・5号の指定事項と一致しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q11",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－11 次に掲げる事項のうち、航空移動業務の無線局の免許人が総務省令で定める手続により総務大臣に報告しなければならな\nい場合に該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a11.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-11 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-11（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "lawReferenceDate": "2026-05-27",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "該当しない。外国主管庁の検査・結果の指示は第80条の列挙にない。",
+    "choiceExplanations": {
+      "ア": "該当する。第80条第1号は遭難・緊急・安全・非常通信を行った場合の報告を定める。",
+      "イ": "該当する。第80条第2号は違反運用をした無線局を認めた場合の報告を定める。",
+      "ウ": "該当しない。外国主管庁の検査・結果の指示は第80条の列挙にない。",
+      "エ": "該当する。第80条第3号は外国で総務大臣の告示以外の運用制限を受けた場合の報告を定める。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q12",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 12,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－12 次の記述は、無線局に備え付ける書類等について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a12.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-12 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-12（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527",
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "正しい。第60条の正確な時計・無線業務日誌等と全部又は一部の省略、第3条の毎日1回以上の時刻照合に一致する。",
+    "choiceExplanations": {
+      "ア": "誤り。第60条の備付けは正確な時計だけでなく無線業務日誌等を含み、省略も全部だけとは限らない。",
+      "イ": "誤り。全部又は一部の省略は合うが、第60条は無線業務日誌等も備付け対象とし、第3条は毎日照合を求める。",
+      "ウ": "誤り。備付け対象は合うが、省略は全部又は一部であり、時計は毎週でなく毎日照合する。",
+      "エ": "正しい。第60条の正確な時計・無線業務日誌等と全部又は一部の省略、第3条の毎日1回以上の時刻照合に一致する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q13",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 13,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－13 次に掲げる事項のうち、航空機局の無線業務日誌に記載しなければならないものに該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a13.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-13 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-13（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000014?occasion_date=20260730"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "該当しない。第40条の航空機局欄は、機器試験・調整のために行った通信の概要を記載事項として列挙していない。",
+    "choiceExplanations": {
+      "ア": "該当する。第40条の航空機局の欄は、航空局欄が掲げる法第70条の4に基づく聴守周波数を準用する。",
+      "イ": "該当する。第40条の航空機局欄が準用するレーダー維持の概要と特異現象の詳細である。",
+      "ウ": "該当しない。第40条の航空機局欄は、機器試験・調整のために行った通信の概要を記載事項として列挙していない。",
+      "エ": "該当する。第40条が航空機局欄に準用する事項に、機器故障の事実・原因・措置内容がある。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q14",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 14,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "A問題"
+    ],
+    "difficulty": 3,
+    "question": "Ａ－14 次に掲げる伝送のうち、国際電気通信連合憲章に規定する無線通信規則（第１５条）の規定により、すべての無線局に禁\n止されている伝送に該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-a14.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 A-14 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 A-14（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "禁止に該当しない。無線通信規則2024 Article 15 No.15.1は不要な伝送、過剰な信号、虚偽・誤認信号等を禁じるが、単に長時間という理由だけでは列挙しない。",
+    "choiceExplanations": {
+      "ア": "禁止に該当しない。無線通信規則2024 Article 15 No.15.1は不要な伝送、過剰な信号、虚偽・誤認信号等を禁じるが、単に長時間という理由だけでは列挙しない。",
+      "イ": "禁止に該当する。No.15.1は虚偽又は誤認させる信号の伝送を禁じる。",
+      "ウ": "禁止に該当する。No.15.1は不要な伝送を禁じる。",
+      "エ": "禁止に該当する。No.15.1は過剰な信号の伝送を禁じる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q15",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－１ 電波法に規定する定義に関する次の記述のうち、電波法（第２条）の規定に照らし、この規定に定めるところに該当する\nものを１、該当しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b01.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-1 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-1（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "type": "native-b",
+    "explanation": "第2条第2号の無線電信は符号一般の送受信設備であり、モールス符号に限定されない。\n\n第2条第3号は電波を利用し音声その他の音響を送受信する通信設備を無線電話とする。\n\n第2条第4号は無線電信、無線電話等、電波を送受信する電気的設備を無線設備とする。\n\n第2条第1号は300万メガヘルツ以下と定める。300万ギガヘルツでは単位が異なる。\n\n第2条第5号は無線設備と操作を行う者の総体を無線局とし、受信のみを目的とするものを除く。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "第2条第2号の無線電信は符号一般の送受信設備であり、モールス符号に限定されない。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "第2条第3号は電波を利用し音声その他の音響を送受信する通信設備を無線電話とする。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "第2条第4号は無線電信、無線電話等、電波を送受信する電気的設備を無線設備とする。"
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "第2条第1号は300万メガヘルツ以下と定める。300万ギガヘルツでは単位が異なる。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "第2条第5号は無線設備と操作を行う者の総体を無線局とし、受信のみを目的とするものを除く。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q16",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－２ 次の記述は、電波の質及び受信設備の条件について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b02.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-2 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-2（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131?occasion_date=20260723"
+    ],
+    "lawReferenceDate": "2026-07-23",
+    "type": "native-b",
+    "explanation": "第28条の「周波数の偏差及び幅、高調波の強度等」がアの原文に一致する。\n\n無線設備規則第6条は発射電波の占有周波数帯幅の許容値を定め、イに入る。\n\n無線設備規則第7条のスプリアス発射又は不要発射がウに入る。\n\n第29条は他の無線設備の機能に支障を与える副次発射を制限し、エに入る。\n\n無線設備規則第24条第1項は疑似空中線回路の電力4ナノワット以下を定め、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "第28条は周波数の偏差及び幅を挙げるが、「安定度」を加えたこの文言ではない。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "第28条の「周波数の偏差及び幅、高調波の強度等」がアの原文に一致する。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "無線設備規則第6条は発射電波の占有周波数帯幅の許容値を定め、イに入る。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "必要周波数帯幅は無線設備規則第6条の許容値の名称ではなく、占有周波数帯幅が該当する。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "寄生発射及び帯域外発射だけでは第7条が定めるスプリアス発射又は不要発射の原文と一致しない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "無線設備規則第7条のスプリアス発射又は不要発射がウに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "第29条は他の無線設備の機能に支障を与える副次発射を制限し、エに入る。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "第29条は支障を受ける設備を電気通信業務用に限定していない。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "無線設備規則第24条第1項の一般限度は40ナノワットではない。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "無線設備規則第24条第1項は疑似空中線回路の電力4ナノワット以下を定め、オに入る。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "第28条の「周波数の偏差及び幅、高調波の強度等」がアの原文に一致する。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "無線設備規則第6条は発射電波の占有周波数帯幅の許容値を定め、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "無線設備規則第7条のスプリアス発射又は不要発射がウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "第29条は他の無線設備の機能に支障を与える副次発射を制限し、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "無線設備規則第24条第1項は疑似空中線回路の電力4ナノワット以下を定め、オに入る。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q17",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－３ 次の記述は、航空移動業務の無線局の無線設備の操作について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b03.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-3 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-3（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131?occasion_date=20260723"
+    ],
+    "lawReferenceDate": "2026-07-23",
+    "type": "native-b",
+    "explanation": "第39条第1項の主任無線従事者は無線設備の操作の監督を行う者であり、アに入る。\n\n第39条第1項ただし書は航空機が航行中であるため無線従事者を補充できない場合を挙げ、イに入る。\n\n第39条第7項は講習を総務省令で定める期間ごとに受けさせるとしており、ウに入る。\n\n第39条第7項が指定するのは総務大臣の行う講習であり、エに入る。\n\n第34条の3第2号・第3号はともに3箇月を基準とし、オに入る。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "第39条第1項の主任無線従事者は無線設備の操作の監督を行う者であり、アに入る。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "主任の役割は操作自体ではなく操作の監督。第39条第1項・第7項の共通語は操作の監督である。"
+        },
+        {
+          "id": "3",
+          "label": "3",
+          "explanation": "運航計画の変更は第39条第1項ただし書の無線従事者補充不能の理由ではない。"
+        },
+        {
+          "id": "4",
+          "label": "4",
+          "explanation": "第39条第1項ただし書は航空機が航行中であるため無線従事者を補充できない場合を挙げ、イに入る。"
+        },
+        {
+          "id": "5",
+          "label": "5",
+          "explanation": "このただし書に総務省令で定める地域との限定はない。"
+        },
+        {
+          "id": "6",
+          "label": "6",
+          "explanation": "第39条第7項は講習を総務省令で定める期間ごとに受けさせるとしており、ウに入る。"
+        },
+        {
+          "id": "7",
+          "label": "7",
+          "explanation": "第39条第7項が指定するのは総務大臣の行う講習であり、エに入る。"
+        },
+        {
+          "id": "8",
+          "label": "8",
+          "explanation": "同項は訓練という語ではなく講習と規定する。"
+        },
+        {
+          "id": "9",
+          "label": "9",
+          "explanation": "第34条の3第2号・第3号はともに3箇月を基準とし、オに入る。"
+        },
+        {
+          "id": "10",
+          "label": "10",
+          "explanation": "第34条の3の停止処分後と直近5年の従事期間は6箇月ではなく3箇月。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "第39条第1項の主任無線従事者は無線設備の操作の監督を行う者であり、アに入る。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "第39条第1項ただし書は航空機が航行中であるため無線従事者を補充できない場合を挙げ、イに入る。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "第39条第7項は講習を総務省令で定める期間ごとに受けさせるとしており、ウに入る。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "第39条第7項が指定するのは総務大臣の行う講習であり、エに入る。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "第34条の3第2号・第3号はともに3箇月を基準とし、オに入る。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q18",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－４ 次に掲げる通信の通報のうち、無線局運用規則（第１５０条及び別表第１２号）の規定に照らし、航空機の安全運航に関\nする通信の通報に該当するものを１、航空機の正常運航に関する通信の通報に該当するものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b04.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-4 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-4（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "lawReferenceDate": "2026-07-23",
+    "type": "native-b",
+    "explanation": "安全運航。第150条第3項の別表第12号第一号(一)が航空機の移動及び航空交通管制を列挙する。\n\n正常運航。別表第12号第二号(一)が航空機の運航計画の変更を列挙する。飛行計画変更通報である第一号(一)ロ(5)と混同しない。\n\n正常運航。別表第12号第二号(四)が予定外の着陸に関する通報を列挙する。\n\n安全運航。別表第12号第一号(二)は運行者が発する航行中の航空機に関する急を要する通報を列挙する。\n\n安全運航。別表第12号第一号(三)は航行中又は出発直前の航空機に関する急を要する気象情報を列挙する。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "安全運航。第150条第3項の別表第12号第一号(一)が航空機の移動及び航空交通管制を列挙する。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "正常運航。別表第12号第二号(一)が航空機の運航計画の変更を列挙する。飛行計画変更通報である第一号(一)ロ(5)と混同しない。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "正常運航。別表第12号第二号(四)が予定外の着陸に関する通報を列挙する。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "安全運航。別表第12号第一号(二)は運行者が発する航行中の航空機に関する急を要する通報を列挙する。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "安全運航。別表第12号第一号(三)は航行中又は出発直前の航空機に関する急を要する気象情報を列挙する。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q19",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 5,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－５ 次の記述のうち、無線局運用規則（第１７１条の３）の規定に照らし、遭難通報等を受信した航空局の執るべき措置に適\n合するものを１、適合しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b05.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-5 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-5（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325M50080000017?occasion_date=20260723"
+    ],
+    "lawReferenceDate": "2026-07-23",
+    "type": "native-b",
+    "explanation": "不適合。第171条の3第2項は他局宛て遭難通報で応答が認められないとき遅滞なく応答と定め、しばらく遅らせるとはしない。\n\n適合。第171条の3第1項は自局宛て遭難通報には直ちに応答と定める。\n\n不適合。第171条の3第5項の標識・救命無線機等の通報先は航空交通管制の機関であり、海上保安庁その他の救助機関まで列挙しない。\n\n適合。第171条の3第4項は遭難通報に応答した航空局から航空交通管制の機関への直ちの通報を定める。\n\n適合。第171条の3第3項は宛先不特定の遭難通報へ遅滞なく応答、ただし他局が既に応答した場合は除外と定める。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "不適合。第171条の3第2項は他局宛て遭難通報で応答が認められないとき遅滞なく応答と定め、しばらく遅らせるとはしない。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "適合。第171条の3第1項は自局宛て遭難通報には直ちに応答と定める。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "不適合。第171条の3第5項の標識・救命無線機等の通報先は航空交通管制の機関であり、海上保安庁その他の救助機関まで列挙しない。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "適合。第171条の3第4項は遭難通報に応答した航空局から航空交通管制の機関への直ちの通報を定める。"
+        },
+        {
+          "label": "オ",
+          "answer": "1",
+          "explanation": "適合。第171条の3第3項は宛先不特定の遭難通報へ遅滞なく応答、ただし他局が既に応答した場合は除外と定める。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2026-08-hoki-q20",
+    "exam": "aviation-comm",
+    "session": "houki",
+    "year": 2026,
+    "season": "august",
+    "qNumber": 6,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "航空無線通信士",
+      "2026-08期",
+      "B問題"
+    ],
+    "difficulty": 3,
+    "question": "Ｂ－６ 次に掲げる事項のうち、電波法（第７３条）の規定に照らし、総務大臣がその職員を無線局に派遣し、その無線設備等（注）\nを検査させることができるときに該当するものを１、該当しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2026/2026-08-hoki-b06.png"
+    ],
+    "imageAltTexts": [
+      "2026-08 航空無線通信士 法規 B-6 原問題（本文・数式・図・選択肢・語群）"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 2026-08期 法規 B-6（問題・正答）。原問題画像は公式PDFの当該原問を過去問AIが切り出したものです。字形・数式・図・語群は原画素で保持しています。解説は既存の独自解説です。",
+    "license": "NICHIMU-past-question-study-use",
+    "lastUpdated": "2026-10-15",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/325AC0000000131/20260527_507AC0000000046?occasion_date=20260527"
+    ],
+    "type": "native-b",
+    "explanation": "該当する。電波法第73条第5項は船舶又は航空機が外国へ出港しようとするときを臨時検査の要件に挙げる。\n\n該当する。第73条第5項は第72条第2項による電波の質が適合するに至った旨の申出を受けたときを挙げる。\n\n該当しない。航空機運行者変更による免許人地位の承継だけを、第73条第5項は臨時検査要件に列挙していない。\n\n該当する。第73条第5項は第71条の5による無線設備の修理等の命令をしたときを挙げる。\n\n該当しない。電波利用料の督促後の未納は第73条第5項の臨時検査要件として列挙されていない。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "該当する。電波法第73条第5項は船舶又は航空機が外国へ出港しようとするときを臨時検査の要件に挙げる。"
+        },
+        {
+          "label": "イ",
+          "answer": "1",
+          "explanation": "該当する。第73条第5項は第72条第2項による電波の質が適合するに至った旨の申出を受けたときを挙げる。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "該当しない。航空機運行者変更による免許人地位の承継だけを、第73条第5項は臨時検査要件に列挙していない。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "該当する。第73条第5項は第71条の5による無線設備の修理等の命令をしたときを挙げる。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "該当しない。電波利用料の督促後の未納は第73条第5項の臨時検査要件として列挙されていない。"
+        }
+      ],
+      "officialLabel": "B-6",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：B原問1問5点、小設問各1点。"
+      }
+    }
+  }
+]
