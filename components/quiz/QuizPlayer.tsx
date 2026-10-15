@@ -22,6 +22,7 @@ import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
+import { isOfficialPastOnlyExam } from "@/lib/questions/past-question-policy";
 import {
   CopilotMobileSheet,
   CopilotDesktopFloating,
@@ -571,7 +572,7 @@ export function QuizPlayer({
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                {!native && question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
+                {!native && !isOfficialPastOnlyExam(question.exam) && question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
