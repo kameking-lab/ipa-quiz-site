@@ -8,6 +8,7 @@ vi.mock("@/lib/monitoring/sentry", () => ({ captureException: vi.fn() }));
 vi.mock("@/lib/ai/cost-guard", () => ({ checkMonthlyCostCap: vi.fn(), recordAiCost: vi.fn(), estimateTokens: vi.fn() }));
 vi.mock("@/lib/ai/cost-tracker", () => ({ tierForModel: vi.fn() }));
 
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { POST } from "@/app/api/generate-question/route";
 
 const exams = ["riku-tech1", "maritime4", "land-special1", "maritime3", "land-special2", "land-special3", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "riku-toku-kokunai", "kai-toku3", "koku-toku"];
@@ -35,6 +36,15 @@ describe("official past-only qualification generation boundary", () => {
   it("retains the original qualification policy when the request exam is relabeled", async () => {
     const res = await POST(request("ap", "radio21-amateur1-2026-05-kogaku-q01"));
     expect(res.status).toBe(400);
+    expect((await res.json()).error).toBe("past_questions_only");
+    expect(calls.provider).not.toHaveBeenCalled();
+    expect(calls.rate).not.toHaveBeenCalled();
+  });
+
+  for (const code of ["riku-toku-kokunai", "kai-toku3", "koku-toku"] as const) it(code + " keeps its actual published ID policy when relabeled", async () => {
+    const question = QUESTIONS_BY_EXAM[code]?.[0];
+    expect(question).toBeDefined();
+    const res = await POST(request("ap", question!.id));
     expect((await res.json()).error).toBe("past_questions_only");
     expect(calls.provider).not.toHaveBeenCalled();
     expect(calls.rate).not.toHaveBeenCalled();

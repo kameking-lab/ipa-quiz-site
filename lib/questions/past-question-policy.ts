@@ -19,7 +19,7 @@ const originalIdAliases: Partial<Record<ExamCode, string>> = {
 };
 const originalIdPrefixes = OFFICIAL_PAST_ONLY_EXAMS.map(
   (exam) => `radio21-${originalIdAliases[exam] ?? exam}-`,
-);
+).concat(["riku-toku-kokunai-", "kai-toku3-", "koku-toku-"]);
 
 export function isOfficialPastOnlyExam(exam: unknown): boolean {
   return typeof exam === "string" && pastOnlyExams.has(exam);
