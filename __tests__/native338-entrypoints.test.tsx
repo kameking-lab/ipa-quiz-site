@@ -12,7 +12,7 @@ import StreamQuizPage from "@/app/quiz/stream/page";
 import QuestionPage from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
 import { RIKU_TECH1_QUESTIONS } from "@/data/questions/riku-tech1";
 import { MARITIME4_QUESTIONS } from "@/data/questions/maritime4";
-import { questionPagePath } from "@/lib/seo/question-url";
+import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 
 vi.mock("next/dynamic", () => ({ default: () => () => null }));
 vi.mock("next/navigation", () => ({ useSearchParams: () => new URLSearchParams(), usePathname: () => "/quiz/stream", useRouter: () => ({ push: vi.fn(), replace: vi.fn() }), notFound: () => { throw new Error("NOT_FOUND"); } }));
@@ -46,6 +46,22 @@ describe("native338 actual entry points", () => {
       const data = await response.json();
       expect(data.total).toBe(total);
       expect(data.hits.every((q: { exam: string }) => q.exam === exam)).toBe(true);
+    }
+  });
+
+  it("round-trips all76 search hits through the real A/B canonical routes", async () => {
+    const hits = [];
+    for (const offset of [0,60]) {
+      const response = await searchGet(new Request(`http://localhost/api/search/questions?exam=maritime4&limit=60&offset=${offset}`));
+      expect(response.status).toBe(200);
+      const body = await response.json();
+      hits.push(...body.hits);
+    }
+    expect(hits).toHaveLength(76);
+    for (const hit of hits) {
+      expect(["a","b"]).toContain(hit.part);
+      const [, , exam,yearSeason,section,qnum] = questionPagePath(hit).split("/");
+      expect(findQuestionByRoute(MARITIME4_QUESTIONS,{ exam:exam!,yearSeason:yearSeason!,section:section!,qnum:qnum! })?.id).toBe(hit.id);
     }
   });
 

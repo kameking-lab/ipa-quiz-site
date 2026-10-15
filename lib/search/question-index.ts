@@ -3,6 +3,7 @@ import "server-only";
 import type {
   ExamCode,
   Question,
+  QuestionPart,
   Season,
   Session,
   Difficulty,
@@ -38,6 +39,7 @@ export interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: QuestionPart;
   category: string;
   topicTags: string[];
   difficulty: Difficulty;
@@ -192,6 +194,7 @@ export async function searchQuestions(query: SearchQuery): Promise<SearchRespons
     season: q.season,
     session: q.session,
     qNumber: q.qNumber,
+    ...(q.part ? { part: q.part } : {}),
     category: q.category,
     topicTags: q.topicTags,
     difficulty: q.difficulty,

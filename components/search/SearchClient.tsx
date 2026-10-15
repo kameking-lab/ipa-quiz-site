@@ -29,6 +29,7 @@ import {
 } from "@/lib/questions/explicit-pool";
 import type {
   ExamCode,
+  QuestionPart,
   Season,
   Session,
   Difficulty,
@@ -59,6 +60,7 @@ interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: QuestionPart;
   category: string;
   topicTags: string[];
   difficulty: Difficulty;
@@ -1036,13 +1038,7 @@ function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
 }
 
 function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
-  const href = questionPagePath({
-    exam: hit.exam,
-    year: hit.year,
-    season: hit.season,
-    session: hit.session,
-    qNumber: hit.qNumber,
-  });
+  const href = questionPagePath(hit);
   return (
     <Link
       href={href}
