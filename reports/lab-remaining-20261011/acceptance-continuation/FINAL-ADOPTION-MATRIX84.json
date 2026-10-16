@@ -1,0 +1,2266 @@
+{
+  "observedUtc": "2026-10-11T10:35:42.513695+00:00",
+  "ownerThreadId": "01a129c1-647a-75d3-9a04-ab5cc7e980b3",
+  "basisHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "scopeOriginals": 84,
+  "scopeChoiceReasons": 420,
+  "recommendedAdoptionPreparationOriginals": 84,
+  "concreteHeldOriginals": 0,
+  "definition": "Independent disposition of reused saved evidence plus finite medical-source qualifications; not a claim that all84 received a new all-choice independent medical audit. Runtime, image publication and release belong to integration owner.",
+  "newWhole84ClinicalAudit": false,
+  "newQuestionOrFigureGeneration": 0,
+  "all400CompletionRequiredForPartialAdoption": false,
+  "actualPublicRelease": 0,
+  "files": [
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "originals": 10,
+      "worktreeSha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271",
+      "gitNormalizedSha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "originals": 7,
+      "worktreeSha256": "bd3093065825d6028d7a010e0ed4b659e3af3771fa4c2e7972b88f48ab72c9fb",
+      "gitNormalizedSha256": "56e8bf860e2c243915186c1bb73d8cce802ea9c8f076704d3d09ac09e113eaf4"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "originals": 9,
+      "worktreeSha256": "546950c63c23270a6f5f35b2f49647e4ddaf7adfcad4892713199fca49b73387",
+      "gitNormalizedSha256": "7b811e7c3eed0e40e97c0ebabbd7c8818682384cb9209870a138ec94f258bde4"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "originals": 23,
+      "worktreeSha256": "0a27f9b38a3b29a740c9a01ef72cbb9af22e80e3e3404338ace4f9d97de0a227",
+      "gitNormalizedSha256": "491fa3387442531079746f09f395a14e3efc13d9bfd4f6d9a74508564a870054"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "originals": 10,
+      "worktreeSha256": "02f746a19938aacefed9decbf2f1f517283c3e7f526575c1f68e3565ada40ca1",
+      "gitNormalizedSha256": "37d36175d5dd29eb0ea534bf19b108c9f6705ca856131d6368ad0aa2a47f525f"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "originals": 25,
+      "worktreeSha256": "d458ece190e4bf61df18166211aef4800b0d8897f5aea37e84c4b61ec874e84f",
+      "gitNormalizedSha256": "a23201f16f66d3b9ab1a71ef838856615fc25ddb1445300322a0678cdc4a4a18"
+    }
+  ],
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q17",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "10850499326b46e271afc0dc7389e328cf56b2439038f395e1370f1d2b5930f5",
+      "immutableCoreSha256": "68a16eb0e100ad6ee4fb9d3c0ec0c0330f47d5bb09f1f4a121b39d19ed475682",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no2.png",
+          "sha256": "294c96a8d0bc06bff13d8192a521da6db3e8ed2e232dcbf04bae45da7cff90c1"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q18",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "b642b41b83b50bdabbe99282eb39a437ac776f18f52778fc1ff43a4f54e9b02d",
+      "immutableCoreSha256": "664fdf9c2c90bbfc72629e3df5c535f9d103541c088502dc8d7c8d14b13106da",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no3.png",
+          "sha256": "a327a23d3ae99dae7143328769ee3d24884bdf81dda274f872618f3deda6e94a"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q23",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "2e66b70c70da097e1f09dba927f66ae1136d3a9d240d4f7e789e4eb173c8e867",
+      "immutableCoreSha256": "d70b5b44ca72c8dc6d9f56db68881d8be227c58e8389aa7e24c0aa71c8d7f41d",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no4.png",
+          "sha256": "6acc12a25956806893786d0cb6d598e336891fc2bafda7d8d86d270abd873582"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q24",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "a34194c67f213984c4707fee64aa265f0f0c1745f40cb86934791220b68080be",
+      "immutableCoreSha256": "0a7df2acc077ffffdbdd3faea00e66c0c516148c4725637fc64310438efb37da",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no5.png",
+          "sha256": "a43a93f335de9ed9b0e4ee387c5197da5d6101b65bbef0ec3818708f455b4d71"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q25",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "f152f3c9f39ebba4304ed1d2ca6232e3e2be7682de1067c3d70b273c8ff98f1c",
+      "immutableCoreSha256": "06fc4a5ae2a0d7314aad2a9cd3b1f5a272af0ac43476dbd4ef7f75d6e2c9e7ce",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q26",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "b575eb1f9544181776ab2edda544dd143528d153726086b9b9f44da6b237396e",
+      "immutableCoreSha256": "c85e7647dd4e820067180cbed4449b5625745c817624f0dd52af03536047a503",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q27",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "a625133ad6042a6aa5d0a781f17b857eeb77c84e0147e9d90bd1cc45507d23c3",
+      "immutableCoreSha256": "3a5489ad776e922bbba8b5db6a93df3d7857830331e6e8d9349a9a81ca168fd9",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no6.png",
+          "sha256": "051337565f81a1bbcd4ad72411afb15212f38fbfd6fadfdd0508647b88b5c163"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q28",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "105c4725ae2bb69dc5987995cce3662071c1a631f11d096a500ccf4451890b5f",
+      "immutableCoreSha256": "8e568d9edade4d899ea64af9fa432d9ed10944d67eb1f40acc6cabf3d0a8afe2",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no7.png",
+          "sha256": "91fbf522f6ea512903284e69d02013ce27ea98c058675607a195b518b94d7729"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q29",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "415fe24c346376f2ff5dbf6ee00883b6d9df0027899ba981874a6059d982c769",
+      "immutableCoreSha256": "66cb50146048bdf8d763fb421b647766e12693c1a2ea34d70a9a04fef42cd770",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q30",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "2b9c51f2fac6b129ea7669396470c4eb5bef706d34a06133f87e2f7f0d256154",
+      "immutableCoreSha256": "f1c316c4998f2aaafa10a3d564f6633240bbc6b5b90a07d9f11aa44b985a99cb",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q35",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "4c49bb3053ceb40e16de358fb442b19f4ffa0354683cf270d1b3a782d140e0c1",
+      "immutableCoreSha256": "8322b12bb7a2e7708790c69f12dd6d3deb66e81f7a93e45cc8762b9d0dc8b643",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q39",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "efef4d359ca8248cefb53747a7ef6dd76ea6f19d38e6da9d47a3d493a8f367d5",
+      "immutableCoreSha256": "b9a9253bb3c3c3a4a759efdacfbf95f27a5f939838b8e44f35ccc1832a717bb9",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q4",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "68f371b7dea4c991f197855c4223823913da140bb629c7a056371c0d1d0baf17",
+      "immutableCoreSha256": "6fe730c48a319b7917caba3226fe860a569f43b2cd9d5e628ba1df116e07c7a1",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1/4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Each official accepted answer is an alternative SINGLE selection; do not require selecting all alternatives"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q43",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "bc9717df91dc27afbbbd3d18ff02db296dcd64a07a744c2c0ed5c6886ed74b12",
+      "immutableCoreSha256": "b28007f8f65c18047b7700a885c82e7fae323be3970097c67c7a13252570a97b",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q44",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "questionObjectSha256": "b9b05fb1a959d642caae1cd4ba269d4f41e19c8bb2838381eb19761d4a32c97e",
+      "immutableCoreSha256": "7c10528381639ef95324ace0368e2853746189913fd7cf5e467bf188703dfcb9",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "45",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q47",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "d5fabe386707c769e08c60941519b16b822aa8c8c87851afc7caedf12cb74b22",
+      "immutableCoreSha256": "77299197ba0e6003176486018bf182e8f8b02c6e34c1724926972423a8e6d8f7",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no8.png",
+          "sha256": "b12236a02caa483326e01a95240033ccf688a60a240540ac6238eca304092054"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q50",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "05494f03dbc8fd104e370a39248f5d9327223de141b1857d8edf154e9405a879",
+      "immutableCoreSha256": "e3d29632ad1ccf1439a3d75fc37bdbdebf5a1e8cdacf9dcaaf4afde5f4bddced",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no9.png",
+          "sha256": "5aea8d2d8cf447f74907fa926f0870404a3c4eefb284c75bfa59a016531a0771"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q51",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "3cb15769394b7cb9be4e68039612796b20f59076be225fa10f906c501e205346",
+      "immutableCoreSha256": "6c41e90aea336c429b2f75cdfbb6e565a9185ed8137061ed316b1380c86e1397",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no10.png",
+          "sha256": "3a336aa2a7360f5a9c730f2efc2e8cf668c4cb4e4b49e4c98bd89e36aa37b831"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q52",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "fc6f5c471e3975326e7b35dbabb1c6cc544b9911a1a652aa97d0acf1e598a79b",
+      "immutableCoreSha256": "c5dcca186e8383fe9e068aadb09f1b6cdd677fe68cb373cabbf0e356d506e01e",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no11.png",
+          "sha256": "99faea8ef5cc107990fad67d01cd4b863dce4cd88bcc4ef3229916d2cabcb500"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q58",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "28ae41fee987b9614fed03c6aeaace9c9caa3e852ec45c1f3b8511d83ce54e5b",
+      "immutableCoreSha256": "ff90eed06c5b0da888a88ea51ea376b5f6cd1c5c5390f7d9f53b6571c33359c0",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no12.png",
+          "sha256": "535ad1f9f91fa999a2f3bb69e2037a4e815e38b0049b9cae1e056c64f734e868"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q63",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "2ed125dd19b3b199de5aa2a5c3bb50a66e5f262b228e11712e2c6be5975984b8",
+      "immutableCoreSha256": "074214779488cd7710bbec78d29b26cf52539ce99e105f700b9011c2ee63842f",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "45",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no13.png",
+          "sha256": "a4a478b30bff2c84d6f827944b0eb0258a98fcb7fbfd8e6b6e9e62f8fa9d8810"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q67",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "cb6cdea74b8d882e6742fd565e36f241b9504e542eef6436fb35d4e57db9a02d",
+      "immutableCoreSha256": "2fd7dca3515578d22c8c93464f6c7ab4d4cc11096f6168e55938b8b59696a64e",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no14.png",
+          "sha256": "d8e33046c5a1761448c8955c42b05cbdcde1d8b294c7cb7475570f152fc71ff3"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q74",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "3964e686431c95a8d134d2544ceede2c62394b9d42331df7b2c3ae91f9ba8756",
+      "immutableCoreSha256": "89b5ca054e4e3d181543fc5cfd739f9e60f0c2f0ff92b5fd992e98288f1acddb",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no15.png",
+          "sha256": "ee55dc586159bb072c90d6a20b046c22666be9547e5d5e71db836301fe4589b1"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q85",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "1efdbe79b232dab5cccaf12f473b78d09ba9f01fb7d3fea5b4b1ba9f28214e91",
+      "immutableCoreSha256": "9c3dc299daea906cb6d097cb5a9880b68fb63bf44785fd29cdfa2a44959c9527",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no16.png",
+          "sha256": "5d1fa019b3aca471deb4b64daefb7fb1ae453e2848bfaba0e148eb6fc29e0ca6"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q9",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "questionObjectSha256": "d2734837c3aecf16144f25ec820d69380831613ee7044b4ec9b8c0ee374c1e79",
+      "immutableCoreSha256": "a61caf71ded67f99748fcdc9bf7379f91e8806b1be1dc8c72c77edc33a76adce",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no1.png",
+          "sha256": "3c0e3b2f083bd9842a6d2987a5b4d43ba4555224d99a757a4728f4494101ba77"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q95",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "questionObjectSha256": "19fad62231366dc655c1f86aaf1eeccaf7ab160f38d971c77cbf392e0fabbbe6",
+      "immutableCoreSha256": "b34deb27267769e095989e9eb570dde8a1f3065f3d4a8225cfdfb8fe46154a79",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "EXISTING_INDEPENDENT_REVIEW_REUSED",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-q95-original.png",
+          "sha256": "aae297578b849afbc78c25d1117faf15c7b17f955e57091d53835813c8aad2ac"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "f7263ff748b1aea637821619f7e99270981807b8ac268b936d35b001373608cb",
+      "immutableCoreSha256": "030b432fa772d9ab669786f85f511f514fce2b8008c65a2c67f2158a6d790c69",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "尿円柱全5種類の化学組成まで一次研究で独立確定した記録ではない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no1.png",
+          "sha256": "f9af3d8a421d330e8d8bdfa3c99985d385022380fbacdf9a01985077b585f001"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "8740af119d63e37fced34c0ff05cd16b22e25881ad20495143415ba0e5852b69",
+      "immutableCoreSha256": "16c3ab48bd5d57fe7b7ae01700db66db81d3fceda875a7d89942dcb6af2c0028",
+      "independentDispositionReceipt": "ASTRA-ROOT2-DISPOSITION.json",
+      "method": "FINITE_ROOT2_SOURCE_DISPOSITION",
+      "retainedEvidenceLimit": "日本呼吸器学会自筆診断節でAHI>=5かつ症状を確認。現稿はAHI単独診断やPSGのスクリーニング絶対否定をしていない。公式4/5の単肢受理を保持する。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4/5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Each official accepted answer is an alternative SINGLE selection; do not require selecting all alternatives"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "9f6e1814fdba618f5687f49c2cb31836fbd4715dcf4c43640bbdb0a2752df23a",
+      "immutableCoreSha256": "9ef1468a9e58212e58daa6272562c9fc0a74530634d3a41814475ecdd11a2b21",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "図示値を全患者の正常値範囲へ一般化しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no2.png",
+          "sha256": "72881e01bf342625b79b6e896f333065d4cba6b194725e205185a5c4675a3bfd"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "8079ecd7e6db60a6fd88937651465bd5fbfb6164ebb31ba096d948b277c0a691",
+      "immutableCoreSha256": "16e00a43b4a05f20fe0a1030bce10ae48132f9cc50edc8c31a634247dfe6d791",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "定義照合は署名付き臨床参考資料。全肢を原著又は学会一次基準で再確認済みとはしない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no3.png",
+          "sha256": "290d67a97a36224785b29644e516e07ba221d0ed96e73249197149569a843652"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "babad4e247de8df482e24626be29c056ba0a31cd478f8a2aa92626654a0651f9",
+      "immutableCoreSha256": "dc4e2f7d9c38db38189ba10737aecb0dd80bdd3179a2ccc776b159666bb59ec6",
+      "independentDispositionReceipt": "ASTRA-ROOT2-DISPOSITION.json",
+      "method": "FINITE_ROOT2_SOURCE_DISPOSITION",
+      "retainedEvidenceLimit": "原図を目視し②25%呼出、③50%、④75%呼出/25%残存、⑤吸気側を確認。日本資料physical4/book30をメモリ描画してVdot25=肺活量25%位を確認。FDA掲載メーカー提出PDFphysical4-5本文でFEF25=25%呼出を確認。MEF記号体系は資料間で統一せず現稿に追加しない。公式が不明確とした具体理由と解説上の定義解釈を現稿どおり分ける。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2/4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no4.png",
+          "sha256": "b34a6081271c312645926d2a2cb576a283aeb6363f399b25c109fdb4ed080c02"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets",
+        "Each official accepted answer is an alternative SINGLE selection; do not require selecting all alternatives"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "8d1d5966b869f3192e302092b7046258054cd8fd9f7fa5a26b6396788ec81ed7",
+      "immutableCoreSha256": "2c51439c4942c13756caec6f65710a78667bddc96d627a6c57fc3df738d2dd05",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "単一図に刺激距離・数値基準・他神経記録・臨床経過がなく、CIDP確定診断へ一般化しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no5.png",
+          "sha256": "a976d1b738bef1cd158f643862bd58cf1008595a62c1a2e0cdfb0b87f319df64"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "8f2bd4e8cb7750132fb2b221d23eeaaa093864695d0a7e37261111430c8b8f7e",
+      "immutableCoreSha256": "a31449a63df3741e865783bf7c8474dbe913a9a1f6705949966d2e76b649dfc3",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "三相波・棘徐波複合の全形式定義を原著で照合済みとはしない。患者情報不足のため症候群確定診断へ一般化しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no6.png",
+          "sha256": "554ec078e05f6ea1a03e9de60bb3b0fecf033ba3c21d7a27edd7cd5251986d90"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q26",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "6f9b99518815e002eafb9704e50244da2bc8cd1fa571a41d7ddf6f268cbfe4f3",
+      "immutableCoreSha256": "c8b14126fd8702221e537f1b734fadf3c1d86a3d11b217911b7dc9e7986ee30c",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no7.png",
+          "sha256": "a78689e7a9aebafabd6c297add79f5f248514889059e787fae105714104d89cf"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q46",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "562c04d7f05b6c0011c348c8e1aa6c8d85dc9571619c6ed7a7ee5231d47d19cd",
+      "immutableCoreSha256": "b8cfe7b79c0c2778e598c81550f3d2b49412e995a69d6582813c665fc1517313",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no8.png",
+          "sha256": "180f8b49ce7fee763d251376ea7a52a4dff2a19d02fe7e3ca550d647f4c954df"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q47",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "f70ff5e56b95283fa6c6d17b1f5f73e72cc537dd20b1665936307a659bf49d3e",
+      "immutableCoreSha256": "d549d81eb2217bddaf75fb6c72ad3eb42a4176b61e058109346c726fb4b29267",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no9.png",
+          "sha256": "040aa17fc1bae241d7f76c0d540264ddacce11e8f4d21951642bfe387812771f"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q49",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "e95bc375e0d4b3571ea2b77b364dba65e4073f681dc8564e6b1c6c5e061125ff",
+      "immutableCoreSha256": "e09d1074853e5f8e5d6db53c7f0add7da338d3a19c41f19244756c482dbbaad5",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no10.png",
+          "sha256": "67eca4fa5acf8dd21d304d78e5cae9f3acb529379f90e7f45e71320eba862916"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q55",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "cec843af70b5a965b9ac385e3ad92488adf666c95f03ac6ee80805de91d6a316",
+      "immutableCoreSha256": "8302557ff4ce6d04a94a76d19ff9b3b73df4682a719d325d64caf2bd17b499e4",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no11.png",
+          "sha256": "41b429ec1edd47bf6fd6427e86c12d7cac1c116db2362bc966e2d018e6ef75a7"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q61",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "6d3f4d2c4a074c7a51cc9e68c3e1c4b78f7c35d513fbd68a551f24d176180cb7",
+      "immutableCoreSha256": "c8ae048e5c1d3a889dc66d16a84555d4a4ce4bd9a0c72c85d1e39c68baafeeca",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q61.png",
+          "sha256": "52051a6c687dff21ddad73edb88d9a3cd5263e9db133078b9270be6b3842a599"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q63",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "de4d5ed921d002e719b18f7a2d15e789bb52f1b993cb8b64dc17da5564b6d479",
+      "immutableCoreSha256": "bf1f2dac727e805c4486d5b00f39022fd296f6d05e275ae117fafa84a5d99a2d",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no12.png",
+          "sha256": "6b6a9ee0f8716e2739eef93da7eaff23ebba471bbd455e9232caed7717f76814"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q64",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "b401c760b22443e677cd684a76d83b2d227b559c9e2d5bc8a512d56736bcc1a4",
+      "immutableCoreSha256": "768286cbd208c382a29211761cd1106921e94e7f802f1c9f939c922587faafdf",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no13.png",
+          "sha256": "815297d437a4ff1d89c3aacb0740d15dcc439be8340979e1a9ca70627ca91712"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q65",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "32d62fb7fa4632f1bc54dd857992510e88737d2569bfa8f6ed6f5bbf3e997b42",
+      "immutableCoreSha256": "75fe794aae292a6dd16f84918163e51160b75045cce683735771161bc20ae235",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no14.png",
+          "sha256": "be904dc162ccbb57a6474415ff36c470a77b89c74f0124494942db5ca344a885"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q69",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "a787c0c2e21f71f52d2b4b7e1db1b6ade138cdf378ed901d68ea5ad8bd89117d",
+      "immutableCoreSha256": "cbaf614e50d29ee414febf9a678aa0baa11d3b41c7489629138a2c921ac520c0",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no15.png",
+          "sha256": "0cd32ce2a77f3cf61364f0ed726f8651238b340d4cf37c5ef7564f246c248aa6"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "c5993065374047168f318c8fb8e220a8763eb09fab13b02a829b760b2e4952d4",
+      "immutableCoreSha256": "4b5796d91d8152038ba1e81dfe117e285ef694b4a57cc3e6f2fb5cbc644ca8fa",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "SCOPED_MEDICAL_FACT_DISPOSITION",
+      "retainedEvidenceLimit": "C1qの直接加熱実験とC1複合体の経路資料を区別する。現稿はC1r/C1s全成分又は全選択肢の同条件比較を検証済みとは主張せず、他成分が絶対に熱失活しないとも断定しない。残件は根拠適用範囲である。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q82",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "07c7b8d3675de6f13158afb8eadad7364a7a269517a1ec1445d670800f78b662",
+      "immutableCoreSha256": "0709d2180408d106c328f26011c82fbc143e009c1d46fb3f1183fb0bef1a6a43",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q82.png",
+          "sha256": "cc50d5b291e167e53d5bdca1fb670d5ef465b7fc6b74a15c2b593c245803f445"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "e784f3ef644a2bd1c7b929cae0a587653b901e0fdb17092959dba5ce1b7d2de0",
+      "immutableCoreSha256": "1cf78f15623c2220e6ecd28e90b03b1420098d63c90aa5ca119713b0a2bb7791",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "SCOPED_MEDICAL_FACT_DISPOSITION",
+      "retainedEvidenceLimit": "現稿はDi(a+)頻度を遺伝子頻度からHardy-Weinberg仮定で算出した推計と明記。台湾人Xg小標本を日本人又は全人口に外挿せず、weak Dも典型分類に限定。実測表未目視や全亜型未照合は現稿の具体的誤りではない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q86",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "bd3908c47525570a7dbb8c4a0b6cca350f22b6e29ac7236d4ff96d5955995fe7",
+      "immutableCoreSha256": "4cfa168f815e2cb6f65ccd6b34e412a8c8d6b9ca19438a895922fb0903c6cb65",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no16.png",
+          "sha256": "e9c04be3904ce92acee861e555bfbeab57446561f4c2dae59b609f7ea1900793"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q90",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "de8dbbb51eaf2f4853c79b4583f0029deb746fd277aee5d2cf2bc03ec32122f4",
+      "immutableCoreSha256": "c215a21b4167ea67bb26ebeeb81c6f6b1af9a19294d1693df0062a06885af837",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no17.png",
+          "sha256": "f74c08cb343262a003140584f02175f2cecad23a1f12b6515764b41e84b4451f"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q98",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "questionObjectSha256": "5d48a2d74e570d9a8e2a4c8e9bc8b77206b47e4ffed70f2d00550087da878a2b",
+      "immutableCoreSha256": "f59cae47d04e0cf53b9dc3dd37446e60fc9a06bd2eb63d03f7c2a16072f721c7",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q98.png",
+          "sha256": "2ffe47333af5f2c35b820c4b794e2d9088b31b0e24ed2d2e8936cc33a70a7891"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q17",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "33e5b575f6faf2da36e04eb0f6be5449ea8f60030f9df9c44bc80bd6c9920274",
+      "immutableCoreSha256": "0bf6bb6b12fee50244eef6f64dc3425aeb71c7493c6d604c59ca86d21c0a2765",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no3.png",
+          "sha256": "fa2b6697e2c9c9c1f7d64abcc3439d490f7a3f6d2a6fc8d6d658126e8688cc1a"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q21",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "e52c34958ba702e654a58b59a971ff763b79a947e79ff0436942910d5902fe84",
+      "immutableCoreSha256": "5a7e13d3562708616e829e762926d2985d4e40a082ed4f0ba0e2b1bf7aef6b21",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no4.png",
+          "sha256": "bc3ca9efb1fc587da9a321764f69944c0f0bd0ec66e9dce37ef17c60279d9b91"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q22",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "addc9696140aa895c2ffef613cd35c807d8535025616cd8f25a4e4bcb47f9764",
+      "immutableCoreSha256": "513fcf5fd1706cb3d1614ce12cebd9dd2b2682d3e754b2bea2950162680c0a91",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "28634e93216dc2fa0f6b199f845cd12e0df0bb219f41afea0a7ded3435255e8d",
+      "immutableCoreSha256": "4a5c3e6e1575088ed0e8b7ef6d063a2d94b668183e1edc098389e43a793a894e",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "FeNO通常手順の直接一次資料不足は残るが、鼻クリップが全条件で禁忌という主張は現稿にない。本問の必須検査から外す範囲の説明に対する具体的反証・医学欠陥は記録されていない。nNO資料を通常FeNOの全手順の証明に代用しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "35",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q25",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "4ac19a21eee77f02b20358cefbf99e8c386eb18e51ecd7e09ac41017294ba2ee",
+      "immutableCoreSha256": "261255558ca996856da0a06cf55c0f8bcb1f458eca21a03ffafc337c78291cae",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "12",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no5.png",
+          "sha256": "67f57a5a89bb5ef6dc511e112b0f5f27664e5bac8b423f8957b75ad824fff06c"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "cea7b1a7b23fe3fe586974a3fe5f5801785d30248dfa1e24a6604336cbdfd09b",
+      "immutableCoreSha256": "d935546a77303fdb20083e3b4fff37eca1415d3db3b052912fc790df782e4187",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "P31発生部位の未取得は追加説明の限界。現稿は部位を断定せず、最初のN20との識別に限定するため採用障害にしない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q27",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "94a36d9b55376b717d0b3cb1e1b3bd4c46d6067a6a12ba0d9a87f91566fe2d6b",
+      "immutableCoreSha256": "5763ea0362109632f2e5c9f69eeb33bc9eb8d26a1fec8745c28fe4128ac23601",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no6.png",
+          "sha256": "e2bca67eb058b45007748fc389217e78751bccd0e5725fae025bcf372ce3b985"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q28",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "a42b0e38bc078fc0586d497f07c68aa424c3926daac3f9a3aaa23558b8a46ad2",
+      "immutableCoreSha256": "4a7f25698d672a8325c7e6d9c7cbf8f64b564307412bf446dfe0fdadd92d5362",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "35",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no7.png",
+          "sha256": "7fffa51c8eeedd2733c93fe4223b09ae5e8837beedd1874e486dae29d8c7a56a"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q3",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "eda56c09bc3c0232979cc2c93d662e1668c615698149794d4e2af8ef517cc956",
+      "immutableCoreSha256": "af91d515d352b73ad12d47e9c0590ea6613a5a1ea2e75c11828fc1ab90b81d66",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no1.png",
+          "sha256": "157bacf0ad4a7814d967c68db195010719430afabaf1be9241db1981720fc95d"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q30",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "1bccf5ae75d45236f3ccf37fec636a22e21e28257d368ed5d8a9cc6f31a2e5b3",
+      "immutableCoreSha256": "72f8f96d3296f75dcf074c4a6607aa9b9fb8229c2c71cb611f2137314680d7cb",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "df2071155808e98bee8b10c5384a4f262d2cc96effbee91da87079ee0dcda432",
+      "immutableCoreSha256": "403384f91062d9778324a550eb308ff46f26c2f22351f407877a96178950fe33",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "全JSCC試薬処方未取得は網羅的な処方表を作る際の限界。現稿と修正案は反応原理・CK試薬のG6PDに限る。IFCC/DGKC製品処方をJSCC全処方と同一視しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q32",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "3eb79e47e1327ac896d669a8e77f8cda34d0f4856164658d6b6aeab6af32e79c",
+      "immutableCoreSha256": "749da00c1272fd4818f43f9b721931b1c171ae45a325e855150acbf66fea779a",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "528032e2d9fc713d83759f551241e0efb04c145214d5384ef3f6690273755446",
+      "immutableCoreSha256": "2aaa03d2737451eaa4ebd765d7b98d07e8e92ede1c6fa5500be758937ecb2fb4",
+      "independentDispositionReceipt": "ASTRA-ADOPTION-DISPOSITION.json",
+      "method": "SCOPED_MEDICAL_FACT_DISPOSITION",
+      "retainedEvidenceLimit": "公式採点AI/CIと原著ApoE2/E3活性化を区別し、血漿酵素源でも類似結果がある旨を明記。Eが一切活性化しないとの誤断定はない。発行者のE除外理由は不明のまま保持し推測で補わない。全速度論・生体内寄与定量の未読は現稿で主張していない範囲。注記付きで採用準備可能。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "13",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "d6ea54c9a6c5726b8ba57c2e11a3c61f8ad911d6362d02c2ff61e7988a9ef6e2",
+      "immutableCoreSha256": "23fecd52af875f51483641e706bbb3982c1c8211b301cd5216b6d439b0f492a2",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "アスコルビン酸は検討濃度に限定。全測定系・全濃度無干渉へ一般化しない。両アノマーの背景記述とGOD/PODの実験系を区別。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "ff428cfe3b80257fbbed1b83c3c18f287baf1db84bb1397f1bebab113531684d",
+      "immutableCoreSha256": "d188222bc9741acba174e7893cb924392fdeb048988372f4be42d974474dcfa6",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "新規未停止の原著本文で分子形比較を確認。旧案の教材内作業メタ文を不採用とし、補強正本の限定表現で置換する。腎不全で上昇し得る記述は原著抄録で支持。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q42",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "d428380faceb7888b17106b03acfd32143ce569ec0af6dda3ef3f68d18a148be",
+      "immutableCoreSha256": "e8a8e164055a5124566d6b9cd640b8ec78d9c7aad78492c5fe81d0372bb8551d",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q45",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "2aa82f448f3597ec40e606b737453fbcddc31fdeb4e450b3be8b91d55793850c",
+      "immutableCoreSha256": "4d833985206bc567eba1043cc60a21c18edb88c9c89b898a54ee77aece0780cc",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "4c914ebb719f4e817f6dbc1939578e84e47b477e298f88731d599b5f21630110",
+      "immutableCoreSha256": "2c0514d6e9244590481461c3053e6d03f382c14548e651ddca317908bc27630a",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "滑走式の製品例は全称分類の根拠ではない。厳密2～10°の一般的技術レンジは未確証だが、公式選択肢の採点と角度の役割だけに限定すれば、その未確証の一般化を原稿が主張しなくなる。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "34",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q49",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "5cecdd5650e143b1ad4ed560c1dfce4d3094d842b2970a508b4ccb6da8c095d6",
+      "immutableCoreSha256": "8596afa406251c1c4ea7c959b7a44b96d81f296097aa51c7fe938e107d5dbcf9",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no8.png",
+          "sha256": "7f8ddcafc48d12b6447dd715f34cb04bc39b4e1c1db70b81ef2594e91c1b0561"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q54",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "b7890b3e147fcfc45482e755d239c72295b3b3c4618da6102563d9084e145dff",
+      "immutableCoreSha256": "bde94dea680da4096487cd5be235d2a9930a604116b1a9cdb2a0a3669242905d",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no9.png",
+          "sha256": "cf9834d3bafbc956c639e4646efaffc7ca50b3a1bae06126fd28e6d14ba444bf"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q58",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "82fd7bbfe86121be13650ba447df7cb185839b2f1df98218f3e96448e753e7a7",
+      "immutableCoreSha256": "5ffff15a07ba4e6a8a38874494fb5730bd87127d5b3c916c8baaf896cf2d0f57",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no10.png",
+          "sha256": "354428011f91025af1ee2ee0956dc280752a0a3b6e1e5f034ca33494e7cf7bc9"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q6",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "16ef1051bb5dab9d9d55eb4308b7fc2cea7262efd705be735d4944235e3e4885",
+      "immutableCoreSha256": "1f719fe208a38e5c9d4eb6f7c38435f412c7a6c49f90dee39cc395421d88c250",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no2.png",
+          "sha256": "bdcf94e36656b723a4e0911c1b36e8a2246c6c73a36ce49efc6cc30b8b683c42"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q62",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "9512d35e161caa8e073f6060567d328632e231591cbff1dfb9ea6165482f0ae7",
+      "immutableCoreSha256": "ccff54a9283a8ed740ca798eb9f3d6f3657b785dc7866ccca249cca61e5e2b63",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no11.png",
+          "sha256": "5fede0a1dbe3645be848b0fe22ffb5fac139c95e69b07bc3ce0f5ff9d1fa53ab"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q63",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "54b289dcc183e10eccfb7938b4e48f19f66bf6d62d53158e5046d71f970ac5f2",
+      "immutableCoreSha256": "56b61a8494d8236bfa5c9368f14be5029fc61c462a4175cc6430807efc5a2f3e",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no12.png",
+          "sha256": "16375c394eefb3bdcfff68fd285a8fed67d9e70d88d0be0a0f39f4f4ecd6f8b4"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q66",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "9a23e81880c31f569513cdafefb17f86b249f6abe1251e508645937e0cd5d1d9",
+      "immutableCoreSha256": "2cc86e96167af4acd874ca7f80a2a59e4a0dd2bd6d409d894d31f2669a3a1af4",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "1",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no13.png",
+          "sha256": "58dc80ff357f929be263dc6e8592114cfbb02f3727ab2f424857753c4423f084"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q69",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "57fde48e36e5ee23aa207bbacd1724867500cce2ef6a440c4eb2ad9bb71a1139",
+      "immutableCoreSha256": "36f70da4486a1aad09571272682653fa1614e2be92086d970817dcc37b58b0e1",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "WHO2021形態の公開索引抜粋確認に限定。全文PDF未取得を全文確認済みとはしない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no14.png",
+          "sha256": "b8fb2a872b4c8451b099da57df826a45cc153110779e368bc7b200c59f04cd56"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q78",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "ad400b7e30dfda429592da2234094f55c1bc15a8fb5ae1850c119acc8cf25235",
+      "immutableCoreSha256": "854fe19451b1c50773ad2b480701a50b1f804e19a74bd5815f7450c7fa2b7789",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no15.png",
+          "sha256": "711aec6127772b9417ffad30a87ad73731e0012dd6bced136c48eab1ff8d2269"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q84",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "2b3c969f3d24c1dabe04600df86707722c4e20011e7d2fb592a1cdb69ceb99d5",
+      "immutableCoreSha256": "884eeb8be8e0d0064bef7c0ffabedfaa86239a0a7c3ee696bbd179dcc3c6adf1",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no16.png",
+          "sha256": "1e17d8d8d9334dfaa553e58610380ab2083005df6aa94fa3909b2861c9264cfa"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q86",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "94091e42d41c3179e4581fb4858913787dd228e25de3b80660cb8588085dbec8",
+      "immutableCoreSha256": "491668c8ec91ecf2dc9448a78d315bae04d2ab459316625e79d088c2086e8f7b",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no17.png",
+          "sha256": "c6c987f5e11fbb3973400a7da20416452cc17580d9809c63d186e03dbcfdb9d0"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q98",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "questionObjectSha256": "47f57d622d6da6e005a6c9490d411eec1a1abd57a136d781626bdfbe8d8b646d",
+      "immutableCoreSha256": "991ab081ab03744db9302b97e005e6ec8cc97ff6fb44449b239ce04487b75732",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": "公式全5記号PNG保持・メーカー名称定義表の確認を再利用。外部Philips PNG取得成功や第3記号の未確認規格番号を主張しない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "5",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-q98-original-options.png",
+          "sha256": "18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets",
+        "Keep all five original option symbols in the complete official PNG; no inferred symbol re-transcription"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q21",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "3f745733fedfc5f473460dc454f9648d209207713c52e1b493b025a84d80f0b7",
+      "immutableCoreSha256": "acef3a6aa4735fe971a67a81f94cf6a98a3091eedc4c9f44cca65ab2ff7d4b7d",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "25",
+      "requiredSelections": 2,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no5.png",
+          "sha256": "f35dedf49f37667072fe949f62957dadd5d992f1bf143a5d45ae597764f5996a"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q49",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "efcb6e7bedb7486eda4779b1630ab9f401186807eba051c305fbedd7fe30b6d4",
+      "immutableCoreSha256": "b325beaded8e18385d11a5e16fddda9d34e493e6ce478db5992ed07069b8d2b2",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "3",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no9.png",
+          "sha256": "54105fd44cee225414f8bffc3b951d6d4fa9ddd396335430f0acfc1c11d297cc"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q51",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "dc6fc41b107164bac237db43b1f88cb77d5dfad17773b4909d623ae23b17da0e",
+      "immutableCoreSha256": "14646d72493ca4f0cd69068581eab88607f823ae4a6ee96a95d25d2859b3f3c3",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no10.png",
+          "sha256": "84f9e34c3e6f7c7035250e6c2fd990863b500a2711d9ee13a5f7517bd163c988"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q52",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "2a0b909d8159255151295b7ec8478ce985f58323cf491b588ba91ba22540e754",
+      "immutableCoreSha256": "356583f2786abbbc6e763d0dc47ba209a3aa2b2df82210a11542ab73dee440e6",
+      "independentDispositionReceipt": "ASTRA-RECEIPT-DISPOSITION56.json",
+      "method": "SAVED_RECEIPT_DISPOSITION_WITHOUT_ALL_CHOICE_MEDICAL_REREVIEW",
+      "retainedEvidenceLimit": null,
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "4",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no11.png",
+          "sha256": "de2643d55926e7e0042c70369d3ddb8ad556c967846f158ac9c519b8688bb9e8"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "questionObjectSha256": "58c344591ca0106f738673769271a861259f7d12a0566a7921de5b3a4118f139",
+      "immutableCoreSha256": "d7f3d214e77b788824d6ec601b1c82a146a2ae98e9397782542b926e972e814e",
+      "independentDispositionReceipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "retainedEvidenceLimit": "PASで栄養型が赤く強調される原著の組織所見と保存済試験図の判断を区別。原著症例画像を試験図そのものとは扱わない。",
+      "adoptionPreparationRecommended": true,
+      "concreteMedicalBlocker": null,
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "officialAnswerNumber": "2",
+      "requiredSelections": 1,
+      "allFiveReasonsSaved": true,
+      "preparedOriginalImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no12.png",
+          "sha256": "0ce5e5edc2f9552c4f8b60ff06609ade241b1a36e55aba493336dbd11567e7b6"
+        }
+      ],
+      "integrationRequirements": [
+        "Runtime/index promotion and needsReview decision by integration owner",
+        "Serve unchanged official images and map prepared relative paths to runtime public assets"
+      ],
+      "currentNeedsReview": true,
+      "currentRuntimeRegistered": false,
+      "actualPublicGo": 0
+    }
+  ]
+}

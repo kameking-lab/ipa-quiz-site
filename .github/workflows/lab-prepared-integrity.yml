@@ -1,0 +1,21 @@
+name: Clinical laboratory held draft integrity
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/prepared-medical/rinsho-kensagishi/**'
+      - 'reports/lab-remaining-20261011/**'
+      - '.github/workflows/lab-prepared-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  clinical-laboratory-draft-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check source identity, official answer handling, diagrams and public holds
+        run: node --experimental-strip-types --test data/prepared-medical/rinsho-kensagishi/validate.test.mjs

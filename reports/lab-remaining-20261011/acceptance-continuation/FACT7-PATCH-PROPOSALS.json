@@ -1,0 +1,168 @@
+{
+  "scope": "提案のみ。原稿を変更していない。exact 7 IDs以外に適用しない。",
+  "targetFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+  "applyPolicy": "field単位でexpectedBefore完全一致時のみafterへ置換。原問・choices・answer・officialAnswerNumber・requiredSelections・sourcePdfUrl・sourceAnswerUrl・imageUrlsを変更しない。既存sourceIdsを改変しない。",
+  "proposals": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "patches": [
+        {
+          "field": "choiceExplanations.イ",
+          "expectedBefore": "ピークフローメータでは短い努力呼気の最大流量を測定します。本問の標準的操作では、ノーズクリップを必要とする検査には選びません。",
+          "after": "ピークフローメータは最大努力呼気時のピーク流量を測ります。『臨床呼吸機能検査 第7版』のPEF測定手順にもノーズクリップは不要と明記されています。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/shingi/2010/04/dl/s0420-6m_0003.pdf"
+          ],
+          "readScope": "PDF物理p7／本文p33のPEF測定手順(2)。"
+        },
+        {
+          "field": "choiceExplanations.オ",
+          "expectedBefore": "オシロメトリーでは口を介して呼吸系の抵抗などを測定します。鼻からの漏れを防ぐノーズクリップが必要です。",
+          "after": "オシロメトリーでは安静呼吸中に口から加えた振動で呼吸系抵抗を測ります。ERS技術基準は口周囲の漏れ確認とノーズクリップ使用を必須としています。",
+          "evidenceUrls": [
+            "https://pure.rug.nl/ws/portalfiles/portal/121014172/1900753.full.pdf"
+          ],
+          "readScope": "PDF物理p10の漏れ・鼻クリップ記述。"
+        }
+      ],
+      "hold": "FeNOのクリップ不使用を通常FeNO原手順で直接照合できていない。現行のエは標準操作に限定しており維持。DLCOはCleveland Clinic病院実施手順で補強できるがウの記述は変更不要。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "patches": [
+        {
+          "field": "explanation",
+          "expectedBefore": "正解はN20です。正中神経の手関節部刺激による短潜時体性感覚誘発電位では、反対側大脳皮質の最初の主要反応がN20です。末梢・頸髄で記録されるN9やN13と区別します。",
+          "after": "正解はN20です。手関節で正中神経を刺激すると、N9は腕神経叢、N13は頸髄で記録され、P14などの皮質前成分を経て、対側の大脳皮質でN20が現れます。波形名の数字だけでなく、記録部位と発生源で区別します。",
+          "evidenceUrls": [
+            "https://media.journals.elsevier.com/content/files/clinph-chapter-2-4-14083346.pdf"
+          ],
+          "readScope": "PDF物理p5-8の正中神経SEP記録法・発生源・表3。"
+        },
+        {
+          "field": "choiceExplanations.オ",
+          "expectedBefore": "P37は下肢の体性感覚誘発電位で用いられる代表的な皮質成分です。手関節部の正中神経刺激での最初の皮質反応とは異なります。",
+          "after": "P37は後脛骨神経刺激による下肢SEPの皮質陽性波で、P39とも呼ばれます。手関節での正中神経刺激の最初の皮質成分ではありません。",
+          "evidenceUrls": [
+            "https://media.journals.elsevier.com/content/files/clinph-chapter-2-4-14083346.pdf"
+          ],
+          "readScope": "PDF物理p9、P39/P37/P40波の説明。"
+        }
+      ],
+      "hold": "P31の部位は本資料で直接確認できず、現行エの『最初でない』説明以上に特定しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "patches": [
+        {
+          "field": "choiceExplanations.ウ",
+          "expectedBefore": "CK反応に続けてヘキソキナーゼとグルコース-6-リン酸脱水素酵素を働かせ、NADPH生成を測定します。脱水素酵素を試薬に含む選択肢です。",
+          "after": "CKがクレアチンリン酸とADPからATPを作り、ヘキソキナーゼがATPを使ってグルコースをG6Pにします。続くG6PD反応でNADPHが生じます。CK測定用試薬にG6PDを含む実例が確認できます。",
+          "evidenceUrls": [
+            "https://www.diasys-diagnostics.com/misc/download/?_=1634811437&cHash=3ad1d896d2d5d8840b81080a65ea5cf1&tx_vierwddiasysproducts_download%5Bfile%5D=downloads%2FIFU+respons920%2FIFU+respons920+English%2FIFU_R920-e-CK-2.pdf&tx_vierwddiasysproducts_download%5Bmsds%5D="
+          ],
+          "readScope": "CK-NAC FSメーカー添付文書PDF物理p1、反応式とR1/R2構成。",
+          "scopeLimit": "これはIFCC/DGKC準拠製品。JSCCの厳密処方が同じとは主張しない。"
+        }
+      ],
+      "hold": "ALP/LD/γ-GTのJSCC試薬全成分を未照合。既存ア・エ・オの概説を詳細処方へ拡張しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "patches": [
+        {
+          "field": "choiceExplanations.ウ",
+          "expectedBefore": "アスコルビン酸の還元作用は過酸化水素を用いる呈色法などで問題となります。本法の正しい特徴として本肢を選ぶことはできません。",
+          "after": "アスコルビン酸は過酸化水素を使う呈色法などを妨害し得ます。一方、HK/G6PD法では比較試験の検討濃度で干渉が認められず、本肢は本法の特徴として選びません。",
+          "evidenceUrls": [
+            "https://d-nb.info/1206182881/34"
+          ],
+          "readScope": "原著PDF物理p3のGlucose干渉結果、p4図1、p5表3。",
+          "scopeLimit": "全濃度・全測定系の無干渉を保証しない。"
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "expectedBefore": "ヘキソキナーゼはグルコースの両アノマーに作用するため、本法にムタロターゼを必須の補助酵素として加える必要はありません。",
+          "after": "ヘキソキナーゼはα型・β型のグルコースをリン酸化できます。ムタロターゼを必須とする記述は誤りです。ムタロターゼで異性化を速める説明は主にグルコースオキシダーゼ法との比較で出てきます。",
+          "evidenceUrls": [
+            "https://jofem.org/index.php/jofem/article/view/555/284284366",
+            "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan02_242.pdf"
+          ],
+          "readScope": "2019原著Introductionのアノマー説明とGOD/POD実験条件、JSCC原勧告冒頭反応式。",
+          "scopeLimit": "2019原著のmutarotase添加実験自体はHK/G6PDではない。"
+        }
+      ],
+      "hold": null
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "patches": [
+        {
+          "field": "choiceExplanations.エ",
+          "expectedBefore": "唾液腺型は糖鎖などの分子特性の違いにより、膵型より高分子量側として扱われます。本問では正しい記述です。",
+          "after": "唾液腺型が膵型より高分子量という比較は、本問の正しい肢です。糖鎖の違いをその原因とまで断定する説明は、ここでは加えません。",
+          "evidenceUrls": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf"
+          ],
+          "readScope": "公式正答表 A041=3。",
+          "scopeLimit": "分子量比較の独立した一次資料は未取得。公開前に保留対象。"
+        },
+        {
+          "field": "choiceExplanations.オ",
+          "expectedBefore": "アミラーゼは腎での排泄の影響を受けます。腎不全では血清アミラーゼが上昇しうるため、上昇を直ちに膵炎だけに結び付けません。",
+          "after": "腎機能が低下すると血清アミラーゼが上昇し得ます。原著でも腎不全患者の高値が示されており、血清高値だけで膵炎と決めません。",
+          "evidenceUrls": [
+            "https://pubmed.ncbi.nlm.nih.gov/1699413/",
+            "https://pubmed.ncbi.nlm.nih.gov/2444541/"
+          ],
+          "readScope": "腎機能低下と血清AMYの関係について原著抄録の結果部分。",
+          "scopeLimit": "腎排泄の定量機構は未確認。"
+        }
+      ],
+      "hold": "分子量肢エはなお独立一次資料で未証。公式正答を変更しないまま公開保留。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "patches": [
+        {
+          "field": "choiceExplanations.オ",
+          "expectedBefore": "クロスローラーベアリング方式は滑走式のミクロトームに用いられる機構です。回転式と断定する記述は誤っています。",
+          "after": "クロスローラーベアリングを採用した滑走式ミクロトームの製品例があります。したがって、ベアリング方式だけから回転式と分類することはできません。",
+          "evidenceUrls": [
+            "https://www.epredia.com/products/histology-instruments/microtomy/hm450"
+          ],
+          "readScope": "Epredia HM450 Sliding Microtome製品概要とcross roller bearingの記述。",
+          "scopeLimit": "cross roller搭載機がすべて滑走式という一般化はしない。"
+        }
+      ],
+      "hold": "選択肢エの『ミノー型逃げ角2～10°』は公式正答で維持するが、Leica別機種の0/5/10°目盛から厳密範囲を一般化できない。追加一次資料まで公開保留。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "patches": [
+        {
+          "field": "explanation",
+          "expectedBefore": "正解はPAS反応です。原図ではアメーバの栄養型が赤紫色に強調され、PAS陽性の色調を示します。H-Eの一般的な色調や、銀染色での黒色の染まり方と区別します。",
+          "after": "正解はPAS反応です。原図ではアメーバ栄養型の細胞質が赤紫色に強調されています。大腸・直腸組織の原著症例でも、PASで栄養型が赤く染まることが確認されています。H-Eや銀染色の色調と比較します。",
+          "evidenceUrls": [
+            "https://pdfs.semanticscholar.org/1aa8/4b15436b81fc368e57cd182fe646e9732cd8.pdf"
+          ],
+          "readScope": "原著症例報告PDF物理p3の記述と表1、p4の考察。",
+          "scopeLimit": "原図自体は厚労省別冊No.12の既存保存PNGを参照。CDC DPDx頁をPASの根拠に使わない。"
+        }
+      ],
+      "hold": null
+    }
+  ],
+  "noChangeFields": [
+    "question",
+    "choices",
+    "answer",
+    "officialAnswerNumber",
+    "requiredSelections",
+    "sourcePdfUrl",
+    "sourceAnswerUrl",
+    "imageUrls"
+  ],
+  "publicationDecision": "提案適用だけでpublicGoを立てない。AM41分子量・AM46厳密角度・AM24通常FeNOの原資料保留はroot独立レビューへ。"
+}

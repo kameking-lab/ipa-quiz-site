@@ -1,0 +1,798 @@
+{
+  "sourceHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "candidateOriginals": 16,
+  "candidateChoiceReasons": 80,
+  "questionIds": [
+    "rinsho-kensagishi-2025-annual-am-q25",
+    "rinsho-kensagishi-2025-annual-am-q26",
+    "rinsho-kensagishi-2025-annual-am-q29",
+    "rinsho-kensagishi-2025-annual-am-q30",
+    "rinsho-kensagishi-2025-annual-am-q35",
+    "rinsho-kensagishi-2025-annual-am-q39",
+    "rinsho-kensagishi-2025-annual-am-q4",
+    "rinsho-kensagishi-2025-annual-am-q43",
+    "rinsho-kensagishi-2025-annual-am-q44",
+    "rinsho-kensagishi-2025-annual-am-q52",
+    "rinsho-kensagishi-2025-annual-am-q58",
+    "rinsho-kensagishi-2025-annual-am-q63",
+    "rinsho-kensagishi-2025-annual-am-q67",
+    "rinsho-kensagishi-2025-annual-am-q74",
+    "rinsho-kensagishi-2025-annual-am-q85",
+    "rinsho-kensagishi-2025-annual-am-q95"
+  ],
+  "readyDefinition": "Existing source/answer/five-choice/figure verification plus unchanged independent-held-draft review; narrow adoption/publication-preparation confirmation still required, runtime promotion by integrator.",
+  "actualPublicGo": 0,
+  "questions": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q52",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 52,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "子宮頸部細胞診のPapanicoloau 染色標本の弱拡大写真（別冊No. 11Ａ）と強拡大\n写真（別冊No. 11Ｂ）を別に示す。\n　適切な判定はどれか。",
+      "choices": {
+        "ア": "NILM〈陰性〉",
+        "イ": "LSIL〈軽度扁平上皮内病変〉",
+        "ウ": "HSIL〈高度扁平上皮内病変〉",
+        "エ": "SCC〈扁平上皮癌〉",
+        "オ": "Adenocarcinoma〈腺癌〉"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "正解はSCC〈扁平上皮癌〉です。原図には核の大小不同や核形不整を示す異型細胞と、オレンジ色に染まる角化を伴う異型細胞が見られます。単なる陰性や軽度病変ではなく、本問では扁平上皮癌の判定が適切です。細胞診の判定と、組織での浸潤の確認は区別します。",
+      "choiceExplanations": {
+        "ア": "NILMは上皮内病変や悪性所見がない判定です。原図の明らかな異型細胞を陰性として扱うことはできません。",
+        "イ": "LSILではHPV感染に関連する軽度の核異型やコイロサイトーシスなどが中心です。原図の強い核異型と異型角化細胞を軽度病変にとどめる判定は適切ではありません。",
+        "ウ": "HSILは高度の扁平上皮内病変です。本問の原図と公式判定では、より強い異型を伴う扁平上皮癌のカテゴリーを選びます。細胞像だけから浸潤深度を測定するわけではありません。",
+        "エ": "正しい選択肢です。強い核異型と角化を伴う異型扁平上皮細胞が見られ、本問はSCCと判定します。",
+        "オ": "腺癌では腺系細胞の集塊や核の配列、細胞質などから腺分化を評価します。原図の異型角化細胞を含む扁平上皮系の所見とは異なります。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no11.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問52の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問52（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q58",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 58,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "1",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "病理解剖時に摘出された臓器のホルマリン固定後の肉眼写真（別冊No. 12）を別に\n示す。\n　臓器はどれか。",
+      "choices": {
+        "ア": "肺",
+        "イ": "肝　臓",
+        "ウ": "腎　臓",
+        "エ": "膵　臓",
+        "オ": "脾　臓"
+      },
+      "answer": "ア",
+      "requiredSelections": 1,
+      "explanation": "正解は肺です。原図は胸膜に覆われ、葉を分ける裂をもつ臓器です。黒色の炭粉沈着も見られ、肺の肉眼的特徴に合います。固定後の色だけで判断せず、全体の形状と裂を確認します。",
+      "choiceExplanations": {
+        "ア": "正しい選択肢です。胸膜に覆われた肺葉と、それらを分ける裂が確認できます。表面に見られる黒色の炭粉沈着も肺に合う所見です。",
+        "イ": "肝臓は肝葉をもつ大きな実質臓器ですが、原図の胸膜に覆われた肺葉と葉間裂の形態とは異なります。",
+        "ウ": "腎臓は豆状の輪郭と腎門をもつ臓器です。原図の肺葉状の形態を腎臓とすることはできません。",
+        "エ": "膵臓は細長く分葉状の実質をもつ臓器です。原図の大きな肺葉と葉間裂を示す形態とは異なります。",
+        "オ": "脾臓は卵円形の輪郭や脾門などが特徴です。原図で見られる肺葉と裂の組合せには合いません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no12.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問58の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問58（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q63",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 63,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "45",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "血液細胞数測定の模式図（別冊No. 13）を別に示す。\n　この測定で正しいのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "交流電流を用いる。",
+        "イ": "破砕赤血球と血小板を区別できる。",
+        "ウ": "パルス電圧は細胞の重量に比例する。",
+        "エ": "溶血処理した後に白血球を計測する。",
+        "オ": "細孔を通過するときの電気抵抗の変化を測定する。"
+      },
+      "answer": [
+        "エ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "正解は4と5です。図は電気抵抗法の原理で、電解質溶液中の細胞が細孔を通るときの抵抗変化をパルスとして数えます。パルスの大きさは細胞容積に対応します。白血球を測定する際には赤血球を溶血処理して除きます。",
+      "choiceExplanations": {
+        "ア": "基本的な電気抵抗法では直流を用います。交流による高周波の情報を加える方法と、本図の基本原理は区別します。",
+        "イ": "細胞容積を基に分類するため、容積が重なる破砕赤血球と血小板を常に区別できるとはいえません。破砕赤血球は血小板計数の干渉要因になります。",
+        "ウ": "パルスの大きさは細胞の容積に対応します。細胞の重量に比例するとする記述は測定原理の取り違えです。",
+        "エ": "正しい選択肢です。赤血球のほうが圧倒的に多いため、白血球計数では溶血処理で赤血球を除いて測定します。",
+        "オ": "正しい選択肢です。細胞が細孔を通過すると電解質溶液を置き換え、電気抵抗が一時的に変化します。そのパルスを用いて計数します。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no13.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問63の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問63（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q67",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 67,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "血小板数をBrecher-Cronkite 法にて目視した。用いた計算板（Burker-Turk）の\n区画（別冊No. 14）を別に示す。100 倍に希釈した血液を用いた図中オレンジ色枠内\nの任意の5 つの中区画のカウントは（14,16,13,12,15）であった。\n　血液1 μL 中の血小板数で正しいのはどれか。",
+      "choices": {
+        "ア": "3,500",
+        "イ": "7,000",
+        "ウ": "70,000",
+        "エ": "350,000",
+        "オ": "700,000"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "正解は350,000/μLです。5つの中区画の計数合計は70個です。各中区画は0.2mm×0.2mm、計算板の深さは0.1mmなので、5区画の体積は0.02μLです。70÷0.02×100＝350,000/μLと、計数体積と100倍希釈を両方補正します。",
+      "choiceExplanations": {
+        "ア": "3,500/μLは70÷0.02の値で、100倍希釈の補正を省いた値です。原血液の濃度にはなりません。",
+        "イ": "7,000/μLは計数70個に希釈100倍だけを掛けた値です。0.02μLを1μLへ換算する補正が必要です。",
+        "ウ": "70,000/μLは正解の5分の1です。5中区画を数えた実際の計数体積は0.02μLであり、0.1μLとして計算すると過小になります。",
+        "エ": "正しい選択肢です。合計70個を計数体積0.02μLで割り、希釈倍率100を掛けると350,000/μLです。",
+        "オ": "700,000/μLは正解の2倍です。図で数えた5中区画の体積を0.01μLと取り違えず、0.02μLで計算します。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no14.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問67の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問67（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q74",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 74,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "血液培養にて検出された菌のGram 染色所見（別冊No. 15Ａ）とヒツジ血液寒天培\n地の集落（別冊No. 15Ｂ）を別に示す。本菌はCAMP テストおよび馬尿酸塩加水分\n解試験が陽性であった。\n　考えられるのはどれか。",
+      "choices": {
+        "ア": "Bacillus cereus",
+        "イ": "Clostridium perfringens",
+        "ウ": "Enterococcus faecalis",
+        "エ": "Listeria monocytogenes",
+        "オ": "Streptococcus agalactiae"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "正解はListeria monocytogenesです。原図Aは短いGram陽性桿菌、原図Bは小さな集落と溶血を示します。CAMPテストと馬尿酸塩加水分解陽性の条件を合わせて選びます。同じ検査が陽性となるB群連鎖球菌とは、桿菌か球菌かで区別します。",
+      "choiceExplanations": {
+        "ア": "Bacillus cereusは芽胞を形成する比較的大きなGram陽性桿菌です。本図の短い桿菌と提示された同定条件の組合せから選ぶ菌ではありません。",
+        "イ": "Clostridium perfringensは嫌気性のGram陽性桿菌で、特徴的な溶血などを示します。本問の短い桿菌とCAMP陽性を組み合わせた同定とは異なります。",
+        "ウ": "Enterococcus faecalisはGram陽性球菌です。図Aの桿菌の形態に合いません。",
+        "エ": "正しい選択肢です。短いGram陽性桿菌であり、図の小集落・溶血像と、提示されたCAMPテスト陽性などの条件に合います。",
+        "オ": "Streptococcus agalactiaeもCAMPテストや馬尿酸塩加水分解が陽性ですが、Gram陽性球菌です。図Aの桿菌を確認することが鑑別の要点です。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no15.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問74の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問74（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q85",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 85,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "4",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "ABO 血液型検査の結果（別冊No. 16）に示す。\n　血液型はどれか。",
+      "choices": {
+        "ア": "A 型RhD 陰性",
+        "イ": "A 型RhD 陽性",
+        "ウ": "B 型RhD 陰性",
+        "エ": "B 型RhD 陽性",
+        "オ": "ABO・RhD 判定保留"
+      },
+      "answer": "エ",
+      "requiredSelections": 1,
+      "explanation": "正解はB型RhD陽性です。抗A陰性・抗B陽性のオモテ検査と、A1赤血球陽性・B赤血球陰性のウラ検査がB型として一致します。抗D陽性、Rhコントロール陰性なのでRhD陽性と判定します。凝集塊と均一な浮遊像を区別して読みます。",
+      "choiceExplanations": {
+        "ア": "A型なら抗Aとの凝集とウラ検査のB赤血球との凝集が基本です。本図はB型の組合せで、抗Dにも凝集が見られます。",
+        "イ": "RhD陽性の部分は合いますが、ABOはA型ではなくB型です。抗BとA1赤血球の凝集を確認します。",
+        "ウ": "ABOのB型は合いますが、抗D試薬で凝集しているためRhD陰性とは判定しません。Rhコントロールは陰性です。",
+        "エ": "正しい選択肢です。オモテ・ウラがB型で一致し、抗D陽性かつRhコントロール陰性なのでB型RhD陽性です。",
+        "オ": "オモテ・ウラ検査は一致し、Rhコントロールも陰性です。本図の条件でABO・RhDの両方を判定保留とする根拠はありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-no16.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問85の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問85（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q95",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 95,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "図の回路で12 Ω の抵抗に流れる電流I［A］はどれか。",
+      "choices": {
+        "ア": "0.1",
+        "イ": "0.2",
+        "ウ": "0.4",
+        "エ": "0.6",
+        "オ": "0.8"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "正解は0.2Aです。電源の両端には、中央上側4Ωの枝と、12Ω＋中央下側4Ω＝16Ωの枝が並列につながります。合成抵抗は4×16/(4＋16)＝3.2Ω、全電流1Aなので電源電圧は3.2Vです。12Ωに流れる電流は16Ωの枝の電流で、3.2÷16＝0.2Aです。",
+      "choiceExplanations": {
+        "ア": "0.1Aでは16Ωの枝に必要な電圧が1.6Vとなり、4Ωの並列枝との全電流は0.5Aです。図の全電流1Aに合いません。",
+        "イ": "正しい選択肢です。16Ωの枝に流れる電流は、電流分配でも1×4/(4＋16)＝0.2Aと求められます。",
+        "ウ": "0.4Aでは16Ωの枝の電圧が6.4Vとなり、4Ωの枝と合わせた全電流は2Aです。図の条件の2倍になります。",
+        "エ": "0.6Aでは16Ωの枝の電圧が9.6Vとなり、全電流は3Aです。全電流1Aの条件には合いません。",
+        "オ": "0.8Aは中央上側4Ωの枝に流れる電流です。12Ωを含む16Ωの枝の電流0.2Aと取り違えないようにします。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "imageUrls": [
+        "./figures/71-am-q95-original.png"
+      ],
+      "imageAltTexts": [
+        "第71回午前問95の公式原図。判読用の原画像。"
+      ],
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問95（問題・正答・図版）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q4",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 4,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "1/4",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "虫卵で小蓋がないのはどれか。",
+      "choices": {
+        "ア": "回　虫",
+        "イ": "肝　蛭",
+        "ウ": "肝吸虫",
+        "エ": "日本住血吸虫",
+        "オ": "日本海裂頭条虫"
+      },
+      "answer": [
+        "ア",
+        "エ"
+      ],
+      "requiredSelections": 1,
+      "explanation": "公式の採点上の扱いでは、1の回虫と4の日本住血吸虫のどちらか1肢を選ぶと正解です。両者の虫卵には小蓋がありません。原問は1肢選択のまま保存し、2つ選ぶ問題には変更しません。",
+      "choiceExplanations": {
+        "ア": "回虫卵には小蓋がありません。受精卵では卵殻の外側に蛋白膜を認めるのが典型で、この肢は公式に正答として認められています。",
+        "イ": "肝蛭卵は小蓋をもつ吸虫卵です。小蓋がないものを問う条件に合いません。",
+        "ウ": "肝吸虫卵には小蓋があります。回虫卵や住血吸虫卵と区別します。",
+        "エ": "日本住血吸虫卵には小蓋がありません。小さな側方突起をもつことがあり、この肢も公式に正答として認められています。",
+        "オ": "日本海裂頭条虫卵は小蓋をもちます。条虫卵でも本種を、一般的な無蓋の線虫卵と混同しません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問4（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q25",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 25,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "体表からの超音波検査で使用する探触子の周波数が最も低いのはどれか。",
+      "choices": {
+        "ア": "肝　臓",
+        "イ": "心　臓",
+        "ウ": "膵　臓",
+        "エ": "乳　腺",
+        "オ": "頸動脈"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "正解は心臓です。体表からの成人心エコーでは深部への到達と肋間からの観察のため低周波のセクタ探触子を用います。乳腺や頸動脈は表在臓器で高周波を使うのが基本です。周波数は患者の体格や観察目的で調整します。",
+      "choiceExplanations": {
+        "ア": "肝臓は腹部用のコンベックス探触子で観察します。深部到達性も必要ですが、本問の通常の探触子選択では心臓が最も低周波側です。",
+        "イ": "正しい選択肢です。体表からの心エコーでは肋間の狭い窓から深部を観察する低周波のセクタ探触子を用います。",
+        "ウ": "膵臓も腹部深部の臓器で、通常は腹部用コンベックス探触子を用います。本問の最も低い周波数としては心臓を選びます。",
+        "エ": "乳腺は表在に位置し、細かい構造をみる高周波のリニア探触子が適します。低周波の心臓用探触子とは使い分けます。",
+        "オ": "頸動脈は比較的浅い血管なので、高周波のリニア探触子で壁や内腔を観察します。最も低い周波数には該当しません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問25（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q26",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 26,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "5",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "心エコーで連続波ドプラ法を使用するのはどれか。",
+      "choices": {
+        "ア": "e′",
+        "イ": "E/A",
+        "ウ": "左室駆出率",
+        "エ": "肺体血流比",
+        "オ": "右室収縮期圧"
+      },
+      "answer": "オ",
+      "requiredSelections": 1,
+      "explanation": "正解は右室収縮期圧です。三尖弁逆流の最高流速を連続波ドプラ法で測定し、簡易ベルヌーイ式の圧較差4v²に推定右房圧を加えて右室収縮期圧を求めます。e′やE/A、肺体血流比に必要な流速積分は測定位置を選べるパルスドプラ法などを用います。",
+      "choiceExplanations": {
+        "ア": "e′は僧帽弁輪の拡張早期の運動速度で、通常はパルス組織ドプラ法で測定します。血流の高流速を測る連続波ドプラ法の代表的用途ではありません。",
+        "イ": "E/Aは僧帽弁流入血流の拡張早期波と心房収縮波の比です。通常は僧帽弁先端にサンプルボリュームを置いたパルスドプラ法で測定します。",
+        "ウ": "左室駆出率は拡張末期容積と収縮末期容積などから求める指標です。主に断層像の容積計測を用い、連続波ドプラ法で直接測定する指標ではありません。",
+        "エ": "肺体血流比Qp/Qsは流出路の断面積と血流速度時間積分などから求めます。流出路の測定位置を指定するパルスドプラ法が基本です。",
+        "オ": "正しい選択肢です。三尖弁逆流の高流速を連続波ドプラ法で測り、右室と右房の圧較差から右室収縮期圧を推定します。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問26（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q29",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 29,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "無機質の動態で誤っているのはどれか。",
+      "choices": {
+        "ア": "腎不全により高マグネシウム血症をきたす。",
+        "イ": "副甲状腺機能低下症により高無機リン血症をきたす。",
+        "ウ": "代謝性アルカローシスにより高カリウム血症をきたす。",
+        "エ": "異所性PTH 産生腫瘍により高カルシウム血症をきたす。",
+        "オ": "原発性アルドステロン症により高ナトリウム血症をきたす。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "誤っているのは3です。代謝性アルカローシスでは一般に低カリウム血症を伴いやすく、高カリウム血症を典型的な変化とする記述は逆です。他の肢は腎排泄や副甲状腺ホルモン、アルドステロンの作用によって説明できます。",
+      "choiceExplanations": {
+        "ア": "腎不全ではマグネシウムの排泄が低下するため、高マグネシウム血症をきたし得ます。摂取量や腎機能の程度にも影響されるので、全例で上昇するとの意味ではありません。",
+        "イ": "副甲状腺ホルモンには腎でのリン再吸収を抑える作用があります。その作用が低下する副甲状腺機能低下症ではリン排泄が減り、高無機リン血症をきたします。",
+        "ウ": "誤っている選択肢です。代謝性アルカローシスではカリウムの細胞内移動や腎からの喪失などにより、低カリウム血症を伴いやすくなります。",
+        "エ": "異所性に産生されたPTHが生物活性をもつ場合は、骨や腎への作用によって高カルシウム血症をきたし得ます。腫瘍によるPTH産生とPTHrP産生は区別します。",
+        "オ": "原発性アルドステロン症では腎でのナトリウム再吸収が促進され、高ナトリウム血症をきたすことがあります。ただし血清ナトリウムは正常範囲のことも多く、必ず上昇するわけではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問29（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q30",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 30,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "5",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "蛋白で誤っているのはどれか。",
+      "choices": {
+        "ア": "セルロプラスミンは銅を運搬する。",
+        "イ": "フェリチンは肝臓に多く分布している。",
+        "ウ": "トランスサイレチンはビタミンA の代謝に関与する。",
+        "エ": "レチノール結合蛋白の血中半減期は約12 時間である。",
+        "オ": "トランスフェリンは1 分子に約3,000 個の鉄原子を含有する。"
+      },
+      "answer": "オ",
+      "requiredSelections": 1,
+      "explanation": "誤っているのは5です。トランスフェリンは鉄を運搬する蛋白で、1分子が結合できる鉄は2個です。多数の鉄を内部に貯蔵するフェリチンと役割・結合量を区別します。",
+      "choiceExplanations": {
+        "ア": "セルロプラスミンは銅を結合する血漿蛋白です。血中の銅の運搬と、鉄の酸化に関わる作用をもち、この記述は正しい内容です。",
+        "イ": "フェリチンは鉄の貯蔵蛋白で、肝臓などに多く分布します。鉄を血中で運ぶトランスフェリンとは役割が異なります。",
+        "ウ": "トランスサイレチンはレチノール結合蛋白と複合体を形成し、ビタミンAの輸送・代謝に関与します。甲状腺ホルモンを運ぶ作用もあります。",
+        "エ": "レチノール結合蛋白の血中半減期は約12時間と短く、この記述は正しい内容です。アルブミンなど長い半減期の蛋白と区別します。",
+        "オ": "誤っている選択肢です。トランスフェリンは1分子に2個の鉄イオンを結合します。約3,000個という多数の鉄の貯蔵を、トランスフェリンの機能とするのは誤りです。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問30（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q35",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 35,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "血清クレアチニンが低下するのはどれか。",
+      "choices": {
+        "ア": "脱　水",
+        "イ": "妊　娠",
+        "ウ": "腎不全",
+        "エ": "先端巨大症",
+        "オ": "うっ血性心不全"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "正解は妊娠です。正常な妊娠では腎血流量と糸球体濾過量が増えるため、血清クレアチニンは非妊娠時より低値になりやすくなります。腎機能低下や脱水では、一般に逆方向の変化が問題になります。",
+      "choiceExplanations": {
+        "ア": "脱水では腎血流の低下や血液濃縮により、クレアチニンが上昇し得ます。血清濃度が生理的に低下する代表的な状況ではありません。",
+        "イ": "正しい選択肢です。妊娠に伴う糸球体濾過量の増加により、正常妊娠の血清クレアチニンは一般に非妊娠時より低下します。",
+        "ウ": "腎不全ではクレアチニンの排泄が低下し、血清濃度は通常上昇します。妊娠時の生理的な低値とは異なります。",
+        "エ": "先端巨大症ではGH・IGF-1による糸球体過剰濾過と、筋肉量などクレアチニン産生側の変化の両方が影響します。血清値を一律に高値・低値と断定できません。本問の公式正答は、正常な生理的変化として低下する妊娠です。",
+        "オ": "うっ血性心不全では腎灌流の低下や腎うっ血により腎機能が悪化し、クレアチニンが上昇し得ます。必ず低下する病態ではありません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問35（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q39",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 39,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "3",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "血清アルブミンで正しいのはどれか。",
+      "choices": {
+        "ア": "劇症肝炎で上昇する。",
+        "イ": "半減期は約7 日である。",
+        "ウ": "座位よりも臥位での採血で低い。",
+        "エ": "総カルシウム濃度と負の相関がある。",
+        "オ": "健常人では1 日1 g 程度が尿中に排出される。"
+      },
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "explanation": "正解は3です。臥位から座位へ変わると血管外への水分移動により血漿量が減り、アルブミンなどが濃縮されます。そのため同じ人では、通常、座位より臥位での採血のほうがアルブミン濃度は低くなります。",
+      "choiceExplanations": {
+        "ア": "劇症肝炎では肝の蛋白合成能の低下によりアルブミン低下が問題になります。上昇を典型的な変化とする記述は誤りです。",
+        "イ": "アルブミンの血中半減期はおよそ20日です。約7日という記述は短すぎます。",
+        "ウ": "正しい選択肢です。座位では臥位に比べ血漿が濃縮されるため、アルブミンの測定濃度は一般に高くなります。",
+        "エ": "総カルシウムにはアルブミンと結合した分画が含まれます。一般にアルブミンが低下すると総カルシウムも低下するため、負の相関とするのは誤りです。",
+        "オ": "健常人のアルブミン尿は少量で、一般的な判定では1日30mg未満です。1g程度の尿中排出を健常値とする記述は大きすぎます。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問39（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q43",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 43,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "2",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "経口ブドウ糖負荷試験で正しいのはどれか。",
+      "choices": {
+        "ア": "検体は血清を用いる。",
+        "イ": "妊娠糖尿病の診断に用いられる。",
+        "ウ": "試験2 時間前まで飲食が可能である。",
+        "エ": "糖尿病と診断された患者に実施する。",
+        "オ": "病型診断に負荷後1 時間値が用いられる。"
+      },
+      "answer": "イ",
+      "requiredSelections": 1,
+      "explanation": "正解は妊娠糖尿病の診断です。75g経口ブドウ糖負荷試験では空腹時と負荷後の静脈血漿の血糖値を測ります。一般の正常型・境界型・糖尿病型の分類と、妊娠糖尿病の診断基準は区別して学びます。",
+      "choiceExplanations": {
+        "ア": "糖尿病の診断基準に用いる血糖値は静脈血漿で測定します。検体を血清とする記述はこの診断条件に合いません。",
+        "イ": "正しい選択肢です。妊娠糖尿病の診断に75g経口ブドウ糖負荷試験を用います。妊婦のスクリーニング検査と確定のための負荷試験は区別します。",
+        "ウ": "試験は十分な絶食の後に空腹時の採血から始めます。2時間前まで飲食可能とする条件では空腹時の評価になりません。",
+        "エ": "すでに糖尿病の診断が確定している人に、診断目的でブドウ糖負荷を通常追加するものではありません。疑い例などで耐糖能を評価する検査です。",
+        "オ": "一般の正常型・境界型・糖尿病型は空腹時値と負荷後2時間値を基本に分類します。妊娠糖尿病の判定で1時間値を使うことと、一般の分類を混同しません。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問43（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q44",
+      "exam": "rinsho-kensagishi",
+      "session": "am",
+      "year": 2025,
+      "season": "annual",
+      "qNumber": 44,
+      "examDate": "2025-02-19",
+      "subject": "午前",
+      "officialAnswerNumber": "45",
+      "type": "multiple-choice",
+      "category": "午前",
+      "topicTags": [
+        "臨床検査技師",
+        "第71回",
+        "午前"
+      ],
+      "difficulty": 3,
+      "question": "短期の栄養指標として用いられる血漿蛋白はどれか。2 つ選べ。",
+      "choices": {
+        "ア": "アルブミン",
+        "イ": "ハプトグロビン",
+        "ウ": "セルロプラスミン",
+        "エ": "トランスフェリン",
+        "オ": "レチノール結合蛋白"
+      },
+      "answer": [
+        "エ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "explanation": "正解は4のトランスフェリンと5のレチノール結合蛋白です。アルブミンより半減期が短い蛋白は、比較的短期の変化を反映します。ただし炎症、肝機能、鉄やビタミンAの状態にも左右され、蛋白濃度だけで栄養状態を断定しません。",
+      "choiceExplanations": {
+        "ア": "アルブミンの半減期は約20日と長いため、本問の短期の変化をみる指標としては選びません。炎症や肝・腎の病態の影響も受けます。",
+        "イ": "ハプトグロビンは遊離ヘモグロビンを結合し、溶血や急性期反応の評価に関係します。本問の短期栄養指標の組合せではありません。",
+        "ウ": "セルロプラスミンは銅を結合する蛋白で、急性期反応などの影響も受けます。本問で選ぶ短期栄養指標はトランスフェリンとレチノール結合蛋白です。",
+        "エ": "正しい選択肢です。トランスフェリンはアルブミンより半減期が短く、比較的短期の栄養変化を見る指標として扱われます。鉄代謝や炎症にも影響されます。",
+        "オ": "正しい選択肢です。レチノール結合蛋白の半減期は約12時間と短く、短期の変化を反映します。ビタミンAや腎機能の影響も考慮します。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAttribution": "出典：厚生労働省「第71回臨床検査技師国家試験」午前 問44（問題・正答）。解説は独自作成です。",
+      "license": "MHLW-attributed",
+      "needsReview": true,
+      "lastUpdated": "2026-10-11"
+    }
+  ]
+}
