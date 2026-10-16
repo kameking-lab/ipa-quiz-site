@@ -102,6 +102,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
   },
   {
+    slug: "maritime1", examCode: "maritime1",
+    shortName: "第一級海上無線通信士", fullName: "第一級海上無線通信士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年3月・9月の日本語筆記4科目190問を無料・回数制限なしで演習できます。公式問題画像と全肢解説を掲載し、B40問は各5枠を個別採点します。英語・通信術は未収録です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第一級海上無線通信士試験 科目別過去問。解説は過去問AIが作成・校閲。",
+    remainingWork: ["英語・通信術は未収録"],
+  },
+  {
     slug: "general1", examCode: "general1",
     shortName: "第一級総合無線通信士", fullName: "第一級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",

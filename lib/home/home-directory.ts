@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },
   { code: "maritime2", name: "第二級海上無線通信士", sub: "2026年3月・9月 基礎・工学A・工学B・法規190原問、B40原問は各5枠", domain: "electrical" },
   { code: "general1", name: "第一級総合無線通信士", sub: "2026年3月・9月 日本語筆記280原問を保存、270原問を無料・回数制限なしで演習（地理10原問は保留）", domain: "electrical" },
   { code: "general2", name: "第二級総合無線通信士", sub: "2026年3月・9月 日本語筆記の5科目280原問、無料・回数制限なし", domain: "electrical" },
