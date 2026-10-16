@@ -24,7 +24,7 @@ const pools={maritime3:MARITIME3_QUESTIONS,'land-special2':LAND_SPECIAL2_QUESTIO
 const all=Object.values(pools).flat();
 describe('separate next166 local candidate integration',()=>{
  it('connects exactly166 original accepted questions through all current loaders and strict practice pools',async()=>{
-  expect(all).toHaveLength(166);expect(new Set(all.map(q=>q.id)).size).toBe(166);expect(getRegisteredExamCodes()).toHaveLength(75);
+  expect(all).toHaveLength(166);expect(new Set(all.map(q=>q.id)).size).toBe(166);expect(getRegisteredExamCodes()).toHaveLength(76);
   for(const [exam,qs] of Object.entries(pools)){
    const code=exam as keyof typeof pools;expect(await getQuestionsForExam(code)).toEqual(qs);expect(QUESTIONS_BY_EXAM[code]).toEqual(qs);expect(getQuestionsByExamStrict(code)).toEqual(qs);expect(ALL_QUESTIONS.filter(q=>q.exam===code)).toEqual(qs);expect(qs.every(isPracticeReadyQuestion)).toBe(true);expect(ALL_EXAM_CODES).not.toContain(code);expect(getQualificationByExamCode(code)?.status).toBe('live');expect(defaultPracticeSession(code)).toBe('houki');
   }
