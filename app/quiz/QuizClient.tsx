@@ -108,6 +108,7 @@ export function QuizClient({
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
+  const [deferredIds, setDeferredIds] = React.useState<string[]>([]);
   const [current, setCurrent] = React.useState<Question | null>(null);
   const [loadError, setLoadError] = React.useState(false);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
@@ -152,6 +153,7 @@ export function QuizClient({
     }
     const startIndex = currentId ? Math.max(0, ids.indexOf(currentId)) : 0;
     setSessionIds(ids);
+    setDeferredIds([]);
     setIndex(startIndex);
     setLoadError(false);
     cache.current.clear();
@@ -196,8 +198,25 @@ export function QuizClient({
   }, [sessionIds, index, mode, retryCount]);
 
   const handleNext = React.useCallback(() => {
+    // Keep the previous question from accepting another action while the next loads.
+    setCurrent(null);
     setIndex((i) => i + 1);
   }, []);
+
+  const handleDefer = React.useCallback((questionId: string) => {
+    if (!sessionIds?.includes(questionId) || !poolIds.includes(questionId)) return;
+    setDeferredIds((ids) => ids.includes(questionId) ? ids : [...ids, questionId]);
+    setCurrent(null);
+    setIndex((i) => i + 1);
+  }, [sessionIds, poolIds]);
+
+  const resumeDeferred = React.useCallback(() => {
+    if (deferredIds.length === 0) return;
+    setSessionIds(deferredIds);
+    setDeferredIds([]);
+    setCurrent(null);
+    setIndex(0);
+  }, [deferredIds]);
 
   if (!sessionIds) {
     return (
@@ -240,6 +259,9 @@ export function QuizClient({
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
       onNext={handleNext}
+      onDeferQuestion={handleDefer}
+      deferredQuestionCount={deferredIds.length}
+      onResumeDeferred={resumeDeferred}
     />
   );
 }

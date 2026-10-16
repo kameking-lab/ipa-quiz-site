@@ -25,12 +25,12 @@ const FAQ_OG = (() => {
 
 export const metadata: Metadata = {
   title: "よくある質問（FAQ）— 過去問AIの使い方・AI解説の精度",
-  description: `過去問AIの対象試験・AIコパイロットの精度・受験申込手続・各試験区分の概要・学習方法など${FAQ_COUNT}問のよくある質問にまとめてお答えします。教育貢献プロジェクトとして全機能無料で公開しています。`,
+  description: `過去問AIの対象試験・AIコパイロットの精度・受験申込手続・各試験区分の概要・学習方法など${FAQ_COUNT}問のよくある質問。現在課金はなく、AI論述添削β版の無料枠は月3回です。`,
   alternates: { canonical: "/faq" },
   openGraph: {
     title: "よくある質問（FAQ） | 過去問AI",
     description:
-      "過去問AI の利用方法・AI解説・過去問の出典などのよくある質問と回答。教育貢献プロジェクトとして全機能無料。",
+      "過去問AI の利用方法・AI解説・過去問の出典などのよくある質問と回答。現在課金はなく、AI論述添削β版の無料枠は月3回。",
     url: "/faq",
     type: "website",
     siteName: SITE_NAME,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "よくある質問（FAQ） | 過去問AI",
     description:
-      "過去問AI の利用方法・AI解説・過去問の出典などのよくある質問と回答。教育貢献プロジェクトとして全機能無料。",
+      "過去問AI の利用方法・AI解説・過去問の出典などのよくある質問と回答。現在課金はなく、AI論述添削β版の無料枠は月3回。",
     images: [FAQ_OG],
   },
 };
@@ -119,7 +119,7 @@ export default function FaqPage() {
             </span>
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            過去問AI の使い方・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします（教育貢献プロジェクト・全機能無料）。
+            過去問AI の使い方・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします。現在課金はなく、AI 論述添削（β版）は月3回まで無料で利用できます。
           </p>
         </header>
 

@@ -11,7 +11,7 @@ import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essay/load";
 import { examLabel } from "@/lib/utils";
 
 const ESSAY_DESCRIPTION =
-  "ST/SA/PM/SM/AU の午後II論述問題を AI が学習用の4観点で添削。設問ア・イ・ウを業種別にフィードバック。";
+  "ST/SA/PM/SM/AU の独自の午後II論述練習問題を AI が学習用の4観点で添削。年度は教材整理用ラベルで、実際のIPA過去問ではありません。";
 
 const ESSAY_OG_TITLE = "AI 論述添削（午後II）";
 const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -34,7 +34,7 @@ const ESSAY_FAQ: { question: string; answer: string }[] = [
   {
     question: "AI の採点はどのくらい正確ですか？",
     answer:
-      "AIによる参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
+      "AIによる参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、掲載問題・解答骨子・評価観点は当サイト独自の教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
   },
   {
     question: "ほかの過去問サイトと何が違うのですか？",
@@ -159,14 +159,14 @@ export default function EssayHomePage() {
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
           <strong>本機能は AIによる参考評価です。</strong>
-          掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠としてはご利用にならず、
+          掲載問題・解答骨子・評価観点は当サイト独自の教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠としてはご利用にならず、
           学習の参考としてご活用ください。
         </p>
       </div>
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
           <Badge variant="success">
-            <Sparkles className="h-3 w-3" /> Premium / β中は月3回まで無料
+            <Sparkles className="h-3 w-3" /> AI 論述添削 β版・月3回まで無料
           </Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
@@ -177,7 +177,7 @@ export default function EssayHomePage() {
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-          編集者が作成した独自の練習問題で、論述の構成と具体性を学べます。
+          当サイト独自の練習問題で、論述の構成と具体性を学べます。
           年度は教材を整理するためのラベルです。
         </p>
         <div className="mt-5 flex justify-center gap-3">
@@ -209,7 +209,7 @@ export default function EssayHomePage() {
                         href={`/essay/${exam}/${q.id}`}
                         className="text-zinc-700 hover:text-sky-700 hover:underline dark:text-zinc-300 dark:hover:text-sky-400"
                       >
-                        {q.year}{q.season === "spring" ? "春" : "秋"} 問{q.qNumber} ──{" "}
+                        独自練習・教材整理用ラベル {q.year}{q.season === "spring" ? "春" : "秋"}・問{q.qNumber} ──{" "}
                         {q.title}
                       </Link>
                     </li>

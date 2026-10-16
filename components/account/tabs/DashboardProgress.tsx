@@ -20,11 +20,13 @@ import {
   radarSlots,
   type CategoryStat,
   type ExamPassProbability,
-  type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
+import { fetchQuestionMeta } from "@/lib/dashboard/question-meta";
 
 interface ProgressData {
+  allHistoryCount: number;
+  metaComplete: boolean;
   totalAnswered: number;
   correctCount: number;
   uniqueAnswered: number;
@@ -44,22 +46,6 @@ function loadHistoryEntries(): HistoryEntry[] {
   }
 }
 
-async function fetchQuestionMeta(ids: string[]): Promise<QuestionMeta[]> {
-  if (ids.length === 0) return [];
-  try {
-    const res = await fetch("/api/questions/meta", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids }),
-    });
-    if (!res.ok) return [];
-    const json = (await res.json()) as { meta: QuestionMeta[] };
-    return json.meta;
-  } catch {
-    return [];
-  }
-}
-
 export function DashboardProgress() {
   const [data, setData] = React.useState<ProgressData | null>(null);
 
@@ -67,13 +53,17 @@ export function DashboardProgress() {
     const entries = loadHistoryEntries();
     const uniqueIds = [...new Set(entries.map((e) => e.id))];
 
-    void fetchQuestionMeta(uniqueIds).then((meta) => {
-      const categoryStats = computeCategoryStats(entries, meta);
-      const examProbs = computeExamProbabilities(entries, meta);
+    void fetchQuestionMeta(uniqueIds).then(({ meta, complete }) => {
+      const classifiedIds = new Set(meta.map((question) => question.id));
+      const classifiedEntries = entries.filter((entry) => classifiedIds.has(entry.id));
+      const categoryStats = computeCategoryStats(classifiedEntries, meta);
+      const examProbs = computeExamProbabilities(classifiedEntries, meta);
       setData({
-        totalAnswered: entries.length,
-        correctCount: entries.filter((e) => e.correct).length,
-        uniqueAnswered: uniqueIds.length,
+        allHistoryCount: entries.length,
+        metaComplete: complete,
+        totalAnswered: classifiedEntries.length,
+        correctCount: classifiedEntries.filter((entry) => entry.correct).length,
+        uniqueAnswered: classifiedIds.size,
         categoryStats,
         examProbs,
       });
@@ -85,11 +75,17 @@ export function DashboardProgress() {
   }
 
   const overallAccuracy = data.totalAnswered > 0
-    ? Math.round((data.correctCount / data.totalAnswered) * 100)
-    : 0;
+    ? `${Math.round((data.correctCount / data.totalAnswered) * 100)}%`
+    : "—";
 
   return (
     <div className="space-y-6">
+      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+        この進捗は通常演習の保存履歴から、問題データで資格を確認できた回答記録を集計しています。全履歴{data.allHistoryCount}件のうち、分類済み{data.totalAnswered}件です。
+        {data.metaComplete
+          ? `分類できない記録${data.allHistoryCount - data.totalAnswered}件は下の集計に含みません。`
+          : `問題データの取得が未完了です。残り${data.allHistoryCount - data.totalAnswered}件の分類は未確定です。`}
+      </p>
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-4 lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-950">
           <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
@@ -142,21 +138,25 @@ export function DashboardProgress() {
           </div>
           {data.categoryStats.length === 0 && (
             <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
-              まだ学習履歴がありません。問題を解くと表示されます。
+              {data.allHistoryCount === 0
+                ? "まだ学習履歴がありません。問題を解くと表示されます。"
+                : data.metaComplete
+                  ? "分類できる回答記録がありません。"
+                  : "問題データの取得が完了しませんでした。再読み込みしてください。"}
             </p>
           )}
         </div>
 
         <div className="space-y-3">
-          <SummaryCard label="累計回答" value={data.totalAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="ユニーク問題" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="通算正答率" value={`${overallAccuracy}%`} accent />
+          <SummaryCard label="分類済み回答数" value={data.totalAnswered.toLocaleString("ja-JP")} unit="問" />
+          <SummaryCard label="分類済みユニーク問題" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
+          <SummaryCard label="分類済み記録の正答率" value={overallAccuracy} accent />
         </div>
       </section>
 
       <section className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
         <h2 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-          試験別 記録の正答率（13区分）
+          資格別 記録の正答率（IPA13区分と回答記録のある資格）
         </h2>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {[...data.examProbs]

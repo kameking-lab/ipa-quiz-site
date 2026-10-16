@@ -63,6 +63,12 @@ describe("home directory", () => {
     expect(dentist?.periodLabel).toBe("2期分");
   });
 
+  it("counts FP3 academic and practical questions together in the directory", () => {
+    const fp3 = all.find((item) => item.key === "fp3");
+    expect(fp3?.questionCount).toBe(240);
+    expect(fp3?.extra).toBe("学科180問・実技60問");
+  });
+
   it("links the complete two Riyoshi papers with the published question count", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");

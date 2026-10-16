@@ -188,7 +188,7 @@ export function EssayResultView({ result, question }: Props) {
                         <span className="min-w-0">
                           <span className="block truncate font-medium">{q.title}</span>
                           <span className="mt-0.5 block text-xs text-zinc-500 dark:text-zinc-400">
-                            {formatYearSeason(q.year, q.season)} の論述を AI 採点で練習
+                            独自練習問題（教材整理用ラベル: {formatYearSeason(q.year, q.season)}）を AI 採点で練習
                           </span>
                         </span>
                         <ArrowRight className="h-4 w-4 flex-shrink-0" />

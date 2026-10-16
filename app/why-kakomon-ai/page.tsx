@@ -76,7 +76,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "学習履歴",
-    kakomonAi: "localStorage 自動保存 + ログインでクラウド同期",
+    kakomonAi: "設定ONで回答履歴をブラウザに保存。ログイン時はクラウド同期の対象",
     doujou: "ブラウザ単位での履歴保存に対応",
     yobikou: "受講者管理画面で記録（サービス依存）",
   },
