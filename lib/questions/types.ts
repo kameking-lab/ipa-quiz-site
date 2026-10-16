@@ -70,6 +70,7 @@ export type ExamCode =
   | "riku-tech2"
   | "amateur2"
   | "maritime-radar"
+  | "general1"
   | "general2"
   | "general3"
   | "maritime3" | "maritime2"
@@ -77,7 +78,7 @@ export type ExamCode =
   | "land-special3";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "general3" | "general2" | "land-special2" | "land-special3">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "general3" | "general2" | "general1" | "land-special2" | "land-special3">;
 
 export type Session =
   | "am"

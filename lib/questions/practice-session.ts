@@ -9,7 +9,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if ((exam === "fe" || exam === "sg") && (!year || year >= 2023)) return "kamoku-a";
   if (exam === "civil1" || exam === "zoen1" || exam === "tsushin1" || exam === "shika-ishi") return "mondai-a";
   if (exam === "fp1" || exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "zoen2" || exam === "tsushin2" || exam === "kaigo" || exam === "tohan" || exam === "kanri" || exam === "soukan" || exam === "mankan" || exam === "kashikin" || exam === "sharoushi") return "gakka";
-  if (exam === "maritime2" || exam === "general3" || exam === "general2") return "kiso";
+  if (exam === "maritime2" || exam === "general3" || exam === "general2" || exam === "general1") return "kiso";
   if (exam === "riku-tech1") return "kiso";
   if (exam === "yakuzaishi") return "required";
   if (exam === "riku-toku-kokunai" || exam === "kai-toku2" || exam === "kai-toku3" || exam === "koku-toku" || exam === "land-special1" || exam === "maritime4" || exam === "aviation-comm" || exam === "amateur1" || exam === "maritime-special1" || exam === "riku-tech2" || exam === "amateur2" || exam === "maritime-radar" || exam === "maritime3" || exam === "land-special2" || exam === "land-special3") return "houki";

@@ -2,7 +2,7 @@ import type { ExamCode } from "./types";
 
 /** 日本無線協会の現17資格では、公表済みの過去問だけを演習に使う。 */
 const OFFICIAL_PAST_ONLY_EXAMS = [
-  "riku-tech1", "maritime4", "land-special1", "maritime3", "maritime2", "general3", "general2",
+  "riku-tech1", "maritime4", "land-special1", "maritime3", "maritime2", "general3", "general2", "general1",
   "land-special2", "land-special3", "aviation-comm", "amateur1",
   "maritime-special1", "riku-tech2", "amateur2", "maritime-radar",
   "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku",

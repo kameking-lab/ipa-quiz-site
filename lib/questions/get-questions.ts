@@ -11,6 +11,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "maritime-special1": async () => isExamPublished("maritime-special1") ? (await import("@/data/questions/maritime-special1")).MARITIME_SPECIAL1_QUESTIONS : [],
   "aviation-comm": async () => isExamPublished("aviation-comm") ? (await import("@/data/questions/aviation-comm")).AVIATION_COMM_QUESTIONS : [],
   "maritime2": async () => isExamPublished("maritime2") ? (await import("@/data/questions/maritime2")).MARITIME2_ALL_QUESTIONS : [],
+  "general1": async () => isExamPublished("general1") ? (await import("@/data/questions/general1")).GENERAL1_QUESTIONS : [],
   "general2": async () => isExamPublished("general2") ? (await import("@/data/questions/general2")).GENERAL2_QUESTIONS : [],
   "general3": async () => isExamPublished("general3") ? (await import("@/data/questions/general3")).GENERAL3_QUESTIONS : [],
   "maritime3": async () => isExamPublished("maritime3") ? (await import("@/data/questions/maritime3")).MARITIME3_QUESTIONS : [],

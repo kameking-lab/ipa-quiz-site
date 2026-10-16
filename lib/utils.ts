@@ -18,6 +18,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "riku-tech1": "第一級陸上無線技術士",
   "maritime4": "第四級海上無線通信士",
   "maritime2": "第二級海上無線通信士",
+  "general1": "第一級総合無線通信士",
   "general2": "第二級総合無線通信士",
   "general3": "第三級総合無線通信士",
   "maritime3": "第三級海上無線通信士",

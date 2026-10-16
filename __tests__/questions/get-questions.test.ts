@@ -93,7 +93,7 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("riku-tech1");
     expect(codes).toContain("maritime4");
     expect(codes).toContain("aviation-comm");
-    expect(codes.length).toBe(77);
+    expect(codes.length).toBe(78);
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");
     // 重複なし

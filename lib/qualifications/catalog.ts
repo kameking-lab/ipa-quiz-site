@@ -102,6 +102,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
   },
   {
+    slug: "general1", examCode: "general1",
+    shortName: "第一級総合無線通信士", fullName: "第一級総合無線通信士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年3月・9月の公表済み日本語筆記2回を収録。各回の無線工学の基礎・無線工学A・無線工学B・法規各25問、地理40問、計280原問を保存し、このうち270原問を無料で回数制限なく演習できます。A問題160原問・B問題40原問は原問番号と原問題画像を保持し、B問題は各5枠を個別採点します。地理80原問のうち70原問は選択式で演習でき、10原問は解説確認中のため保留です。英語の筆記・通信術（実技）は未収録です。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第一級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学A・無線工学B・法規・地理 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
+    remainingWork: ["英語の筆記・通信術（実技）は未収録", "現行法令との差を学習時に確認"],
+  },
+  {
     slug: "general2", examCode: "general2",
     shortName: "第二級総合無線通信士", fullName: "第二級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
