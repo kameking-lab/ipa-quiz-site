@@ -102,6 +102,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
   },
   {
+    slug: "general3", examCode: "general3",
+    shortName: "第三級総合無線通信士", fullName: "第三級総合無線通信士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年3月・9月の公表済み日本語筆記2回、各回の無線工学の基礎25問・無線工学25問・法規20問、計140原問を収録。公式正答と独自解説・原問題画像で無料、回数制限なく演習できます。B問題38原問は各5枠を個別に採点します。英語の筆記と通信術は未収録です。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第三級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学・法規 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
+    remainingWork: ["英語の筆記・通信術は未収録", "現行法令との差を学習時に確認"],
+  },
+  {
     slug: "maritime3", examCode: "maritime3",
     shortName: "第三級海上無線通信士", fullName: "第三級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",

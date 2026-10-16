@@ -15,7 +15,7 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
 
 /** 枝番(a)/(b)は電験三種、数字の枝番は電験一・二種と診断士の設問に使用する。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
-  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2"],
+  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "general3"],
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi"],
 };
 

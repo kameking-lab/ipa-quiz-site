@@ -24,6 +24,7 @@ export const EXAM_OFFICIAL_LINKS = {
   "maritime-special1": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "aviation-comm": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "maritime2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
+  "general3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "maritime3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "land-special2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "land-special3": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
