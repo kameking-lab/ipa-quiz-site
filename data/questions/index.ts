@@ -83,6 +83,7 @@ import { AMATEUR2_QUESTIONS } from "./amateur2";
 import { MARITIME_RADAR_QUESTIONS } from "./maritime-radar";
 import { MARITIME_SPECIAL1_QUESTIONS } from "./maritime-special1";
 import { MARITIME2_QUESTIONS } from "./maritime2";
+import { GENERAL2_QUESTIONS } from "./general2";
 import { GENERAL3_QUESTIONS } from "./general3";
 import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
@@ -103,6 +104,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("riku-tech1") ? { "riku-tech1": RIKU_TECH1_QUESTIONS } : {}),
   ...(isExamPublished("maritime4") ? { "maritime4": MARITIME4_QUESTIONS } : {}),
   ...(isExamPublished("maritime2") ? { "maritime2": MARITIME2_QUESTIONS } : {}),
+  ...(isExamPublished("general2") ? { "general2": GENERAL2_QUESTIONS } : {}),
   ...(isExamPublished("general3") ? { "general3": GENERAL3_QUESTIONS } : {}),
   ...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
   ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
