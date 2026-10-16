@@ -299,10 +299,11 @@ export function SearchClient() {
     (patch: Partial<ActiveQuery>) => {
       const next: ActiveQuery = { ...query, ...patch };
       const sp = toParams(next);
+      if (recentOnly) sp.set("recent", "1");
       const qs = sp.toString();
       router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
     },
-    [query, router],
+    [query, recentOnly, router],
   );
 
   // Debounce text input → URL update
@@ -524,7 +525,6 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
             enterKeyHint="search"
-            aria-autocomplete="list"
           />
           {inputText && (
             <button
@@ -659,9 +659,9 @@ function HistoryList({
           </button>
           <button
             type="button"
-            aria-label="削除"
+            aria-label={`${item.label}を削除`}
             onClick={() => onDelete(item.id)}
-            className="shrink-0 rounded p-1 text-muted-foreground opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100"
+            className="grid min-h-11 min-w-11 shrink-0 place-items-center rounded text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <Trash2 className="h-3 w-3" aria-hidden="true" />
           </button>
