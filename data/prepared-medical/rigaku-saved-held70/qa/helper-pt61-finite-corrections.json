@@ -1,0 +1,205 @@
+{
+  "counts": {
+    "VERIFIED_FINITE_CORRECTION": 7,
+    "PROPOSED_PENDING_DIRECT_SOURCE": 3,
+    "VERIFIED_VISUAL_FINITE_CORRECTION": 1,
+    "VERIFIED_ARITHMETIC_FINITE_CORRECTION": 2
+  },
+  "requiresOwnerIntegration": true,
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q2",
+      "shortId": "am2",
+      "field": "choiceExplanations.4",
+      "before": "誤り。長母指屈筋の段階1では、母指基節骨の底側で腱を触知します。図の検者は足部の果部周囲を触知しているので、母趾の検査ではありません。",
+      "proposed": "誤り。長母指屈筋は手の母指を屈曲させる筋であり、図の足関節・足部を対象とした検査には該当しません。",
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "sourceIds": [
+        "flexorPollicis"
+      ],
+      "verification": "原文「長母指屈筋」と出版社の前腕・手部/母指IP屈曲を照合済み。Daniels段階1の全手技を検証したとは数えない。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q5",
+      "shortId": "am5",
+      "field": "explanation",
+      "before": "プッシャー症候群では、自分の身体が垂直であると感じる主観的垂直軸が麻痺側へ偏位している。そのため、非麻痺側で押して麻痺側に傾く。治療では、視覚情報（垂直な目印、鏡など）を利用して垂直軸を再学習させる。同時に、非麻痺側へのリーチ動作などで正中位を越える重心移動を促し、押す動作を減らす。この方針に合致するのは「リーチ動作を用いた非麻痺側への重心移動」である。",
+      "proposed": "プッシャー症候群では主観的な身体の垂直認知が障害され、非麻痺側の上下肢で押して麻痺側へ傾きます。視覚的な垂直の手がかりを用いた姿勢修正が治療方針になります。",
+      "verification": "原提案者論文abstractは実際に病変側へ傾斜した身体を垂直と知覚すると説明する。麻痺側偏位の旧断定を採用しない。",
+      "sourceIds": [
+        "pusher"
+      ],
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q5",
+      "shortId": "am5",
+      "field": "choiceExplanations.4",
+      "before": "誤り。手すりを引いたり押したりすると、非麻痺側上肢での押す動作が強まり、麻痺側への傾きが助長される。",
+      "proposed": "誤り。本例では非麻痺側の右上肢で支持面を押すことが麻痺側への傾斜につながっています。押す動作を伴う手すりでの立ち上がり練習より、非麻痺側への重心移動を促す練習が設問の目的に適します。",
+      "verification": "症例文の押す動作に限定。引く動作すべての危険性へ一般化しない。",
+      "sourceIds": [
+        "scp"
+      ],
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q7",
+      "shortId": "am7",
+      "field": "explanation",
+      "before": "別冊No. 1の心電図モニター波形（25 mm/sec、1 mV=10 mm）では、幅の狭いQRS波が一定のR-R間隔で規則正しく並んでいる。どのQRS波の前にもP波が1つずつあり、PR間隔も一定で、P波とQRS波は1対1で対応している。調律は洞調律で、R-R間隔は長め（心拍数はおおむね60/分以下）であるため、洞性徐脈と判断する。β遮断薬には陰性変時作用があり、内服中に洞性徐脈となることは臨床的にも理解しやすい。",
+      "proposed": "R-R間隔は5大マス（1秒）を超え、心拍数は60/分未満",
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "sourceIds": [
+        "ecg",
+        "officialFigure"
+      ],
+      "verification": "25mm/sec原表示、5大マスより明瞭に長いR-Rを詳細PNGで再視認。MSD式60/RR秒と照合。具体値を断定しない。",
+      "operation": "replace-substring",
+      "matchText": "R-R間隔は長め（心拍数はおおむね60/分以下）",
+      "matchCount": 1,
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q10",
+      "shortId": "am10",
+      "field": "choiceExplanations.2",
+      "before": "骨髄炎は発熱、炎症反応(CRP、白血球)の上昇を伴うことが多いです。本例は発熱がなく炎症反応も正常で、全身状態も良好なので合いません。画像が似ることはありますが、血液所見が否定的です。",
+      "proposed": "誤り。骨髄炎との鑑別では症状、検査、画像を合わせて評価します。本例の年齢・経過・原画像からは、公式正答の骨肉腫を検討する設問です。炎症反応が正常であることだけで骨髄炎を除外することはできません。",
+      "status": "PROPOSED_PENDING_DIRECT_SOURCE",
+      "sourceIds": [],
+      "verification": "正常炎症反応での骨髄炎除外不能を直接支持する専門一次資料が未取得のため採用保留。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "shortId": "am11",
+      "field": "choiceExplanations.1",
+      "before": "頭部の伸展は、反り返りや肩甲帯の後退を助長します。正中位か軽い屈曲位で保持するのが適切なので不適切です。",
+      "proposed": "不適切。頭頸部の過伸展を避け、腹臥位では気道を確保する頭部回旋と支持を整えます。頭を完全な正中位に保つことを一律に指示するのではなく、児の状態と呼吸を監視しながら調整します。",
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "sourceIds": [
+        "neonatal"
+      ],
+      "verification": "NWNODN physical page11は腹臥位で気道確保のため完全正中は不可、90度の過回旋も避けると明示。元理由の一律正中位を限定。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "shortId": "pm3",
+      "field": "choiceExplanations.2",
+      "before": "誤り。重度の感覚障害がある場合、浴槽にはまず健側の下肢を入れてお湯の温度を確かめ、そのあとに麻痺側を入れます（入るときは健側から、出るときは麻痺側から）。感覚が鈍い麻痺側の右下肢を先に入れると、熱さに気づけず熱傷を起こすおそれがあります。図はこの原則に合わない入り方として示されていると考えられます。",
+      "proposed": "入浴では、湯に入る前の温度確認と安全な移乗方法を確認します。重度感覚障害のある本例では、健側の足を湯に入れて温度を確認することを一般的な指導として断定しません。図2の患健側と移乗の手順が確定していないため、図に即した誤答理由は追加照合が必要です。",
+      "status": "PROPOSED_PENDING_DIRECT_SOURCE",
+      "sourceIds": [],
+      "verification": "具体的な温度確認・移乗の専門原資料未取得。安全側の限定案でありverifiedとして採用しない。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+      "shortId": "pm5",
+      "field": "choiceExplanations.2",
+      "before": "誤り。図2は上肢を吊り下げて支え、肩や肘の筋力が低下した人の食事動作などを補助する上肢懸垂型の支持具です。この症例は肩・肘の筋力が保たれており、問題は手関節・手指の伸展障害なので適応になりません。",
+      "proposed": "図2はテーブルに固定された関節付きの支柱で前腕を支え",
+      "status": "VERIFIED_VISUAL_FINITE_CORRECTION",
+      "sourceIds": [
+        "officialFigure"
+      ],
+      "verification": "原PDF2倍図2を視認。関節支柱と前腕支持が描かれ、懸垂紐はない。形態表現の1か所だけを修正する。残る名称・適応の未検証箇所はexactHoldsに保持し、全文をHOLD定型文へ置換しない。",
+      "operation": "replace-substring",
+      "matchText": "図2は上肢を吊り下げて支え",
+      "matchCount": 1,
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "shortId": "pm7",
+      "field": "choiceExplanations.1",
+      "before": "誤り。現在のTHAでは、多くの場合、術後早期から疼痛に応じた荷重（全荷重を含む）で歩行練習を始めます。術後3週間も免荷を続けると、筋力低下や廃用を招きます。",
+      "proposed": "誤り。人工股関節置換術後は、術者と理学療法士が指示した荷重範囲で早期の立位・歩行練習を進めます。全例を一律に3週間免荷とするものではありません。ただし、この画像だけで本例に全荷重が許可されたと断定することもできません。",
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "sourceIds": [
+        "thaExercise"
+      ],
+      "verification": "AAOS Early Activityは術者/PTが手術側への荷重量を指示すると明記。個別許可をHOLDのまま保つ限定修正。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+      "shortId": "pm12",
+      "field": "explanation",
+      "before": "図は、四つ這い位から座位に戻れる乳児で、生後 9〜10 か月頃の発達段階と考えられる。この時期には、側方パラシュート反応(生後 6 か月頃から出現し、生涯残る)が観察される。足底把握反射は生後 9〜12 か月頃まで残るため、この時期にも観察される。自動歩行と非対称性緊張性頸反射は、すでに消失している。背屈反応はまだ出現していない。",
+      "proposed": "図は四つ這い位から座位に戻れる発達段階を示します。公式正答は足底把握反射と側方パラシュート反応です。図だけから月齢を9〜10か月と固定せず、各反射の出現・消失時期は発達診察の原資料で追加照合する必要があります。",
+      "status": "PROPOSED_PENDING_DIRECT_SOURCE",
+      "sourceIds": [],
+      "verification": "未取得月齢の断定を減らす案。2反応のこの発達段階での同時観察を独立検証したとは数えない。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+      "shortId": "pm15",
+      "field": "choiceExplanations.5",
+      "before": "誤り。長母趾伸筋は母趾の伸展と足の背屈に作用する。内反尖足の主因ではない。なお、選択肢の「長母指」は原文の表記どおりである。",
+      "proposed": "誤り。長母指伸筋は手の母指を伸展させる筋です。設問は下肢痙縮への投与筋を尋ねているため、手の筋である長母指伸筋は該当しません。原問の「長母指」を「長母趾」へ置き換えて説明しません。",
+      "status": "VERIFIED_FINITE_CORRECTION",
+      "sourceIds": [
+        "extensorPollicis"
+      ],
+      "verification": "出版社原教材で前腕/手の母指伸展を直接確認。公式選択肢の母指表記を保持。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "shortId": "pm26",
+      "field": "choiceExplanations.2",
+      "before": "誤り。0.42は、この表の数値からは導かれません。",
+      "proposed": "誤り。陽性尤度比は、感度0.30を偽陽性率0.40で割った0.75です。0.42は、この陽性尤度比の計算結果ではありません。",
+      "status": "VERIFIED_ARITHMETIC_FINITE_CORRECTION",
+      "sourceIds": [
+        "tableArithmetic"
+      ],
+      "verification": "原表の比率からLR+を有理数で計算。どの計算でも得られないとの一般化を除去。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "shortId": "pm26",
+      "field": "choiceExplanations.3",
+      "before": "誤り。0.50は、この表の数値からは導かれません。",
+      "proposed": "誤り。陽性尤度比は0.30÷0.40＝0.75で、0.50ではありません。",
+      "status": "VERIFIED_ARITHMETIC_FINITE_CORRECTION",
+      "sourceIds": [
+        "tableArithmetic"
+      ],
+      "verification": "0.50を表から一切導けないとの旧断定を、問われたLR+の計算に限定。",
+      "operation": "replace-field-with-guarded-before",
+      "oldDraftModified": false,
+      "oldOwnerHoldsCleared": false
+    }
+  ]
+}
