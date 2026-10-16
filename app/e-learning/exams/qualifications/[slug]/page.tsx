@@ -207,7 +207,7 @@ export default async function QualificationHubPage({ params }: QualificationHubP
         </div>
       </section>
 
-      <ExamSourceNotes groupIds={[hub.group]} className="mt-10" />
+      <ExamSourceNotes groupIds={[hub.group]} noteLinks={papers.flatMap(({ entry }) => entry.noteLinks ?? [])} className="mt-10" />
 
       <section aria-labelledby="related-qualifications-heading" className="mt-10">
         <h2 id="related-qualifications-heading" className="text-lg font-bold">
