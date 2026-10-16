@@ -167,6 +167,8 @@ describe("sessionLabel", () => {
           kikai: true,
           houki: true,
           kogaku: true,
+      hoki: true,
+      tiri: true,
       kiso: true,
       "kogaku-a": true,
       "kogaku-b": true,
