@@ -93,6 +93,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "maritime2", examCode: "maritime2",
+    shortName: "第二級海上無線通信士", fullName: "第二級海上無線通信士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "2026年3月・9月の無線工学の基礎・無線工学A・無線工学B各25問と法規各20問、計190原問を収録。公式正答・全肢の独自解説・原問題画像で無料、回数制限なく演習できます。B問題40原問は各5枠を個別に採点します。英語の筆記・会話と通信術は含みません。法令は各実施回当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上無線通信士試験 ○年○月 ○科目 A/B問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
+    remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
+  },
+  {
     slug: "maritime3", examCode: "maritime3",
     shortName: "第三級海上無線通信士", fullName: "第三級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -163,6 +172,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
     reuseSummary: "日本無線協会が公表した2026年2月・6月の筆記試験、各回法規12問・無線工学12問、計48原問と公式正答、全選択肢の独自解説を収録。原図は設問ごとに切り出して表示しています。英語科目は含みません。法令は各試験当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 航空特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    remainingWork: ["現行法令との違いを学習時に確認"],
+  },
+  {
+    slug: "kai-toku2", examCode: "kai-toku2",
+    shortName: "第二級海上特殊無線技士", fullName: "第二級海上特殊無線技士試験",
+    domain: "electrical", administrator: "公益財団法人日本無線協会",
+    officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
+    reuseSummary: "日本無線協会が公表した2022年10月・2023年2月の旧筆記2回分、各回法規12問・無線工学12問の48原問を保存し、確認済み48原問を演習に収録。公式正答・全選択肢の独自解説・原図付きの過去問を無料で回数制限なく学習できます。現在のCBT例題、英語、独自問題は演習に含みません。法令は各試験当時の内容です。",
+    attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
   },
   {
