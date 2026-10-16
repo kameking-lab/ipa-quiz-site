@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-11T07:29:44Z",
+  "purpose": "Targeted patent/design amendment and commencement check by topicTags only; not a full historical-law or answer audit.",
+  "source": {
+    "path": "C:\\wt\\chizai2-latest-two-20261011\\data\\prepared-chizai2\\questions.ts",
+    "sha256FromReferenceVerification": "33ff9d13b1555636f8314a186794509bc67f9ef45e7535aeb2765f3270bd15d8",
+    "questionCount": 160,
+    "selectionMethod": "Parsed the JSON array literal and matched article numbers in topicTags; no question, option, or explanation text sent outside the workspace.",
+    "matchedUniqueQuestionCount": 14,
+    "matchedCountByRound": { "53": 8, "54": 6 }
+  },
+  "cutoffs": { "53": "2025-09-01", "54": "2026-01-01" },
+  "sourceRegister": [
+    { "id": "D2019", "kind": "enacted_amending_act", "url": "https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/housei/19820190517003.htm", "evidence": "2019 Act No. 3 amended Design Act arts. 2, 10, 21; supplementary art. 2 applies the listed changes to applications filed from commencement, earlier applications under prior law." },
+    { "id": "D2020", "kind": "wipo_independently_published_consolidation", "url": "https://www.wipo.int/wipolex/en/legislation/details/19897", "versionDate": "2020-04-01", "evidence": "WIPO metadata expressly identifies Apr. 1, 2020 as a commencement date for the 2019 amendments and displays arts. 2, 10 and 21." },
+    { "id": "D2023", "kind": "enacted_amending_act", "url": "https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/housei/21120230614051.htm", "evidence": "2023 Act No. 51 amends Design Act art. 4(3); supplementary commencement delegated to cabinet order." },
+    { "id": "D2024", "kind": "wipo_independently_published_consolidation", "url": "https://www.wipo.int/wipolex/en/legislation/details/22611", "versionDate": "2024-01-01", "evidence": "WIPO metadata says the 2023 amendments in this consolidated version entered into force Jan. 1, 2024; Japanese text displays arts. 2, 4, 10 and 21." },
+    { "id": "P2015", "kind": "enacted_amending_act", "url": "https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/housei/18920150710055.htm", "evidence": "2015 Act No. 55 amended Patent Act art. 35(3), with commencement delegated to cabinet order." },
+    { "id": "P2016", "kind": "wipo_independent_legislation_notice", "url": "https://www.wipo.int/en/web/wipolex/w/news/2016/article_0002", "evidence": "WIPO reports Act No. 55 of 2015 came into force Apr. 1, 2016 and includes reform of employee inventions." },
+    { "id": "P2021", "kind": "enacted_amending_act", "url": "https://www.shugiin.go.jp/internet/itdb_housei.nsf/html/housei/20420210521042.htm", "evidence": "2021 Act No. 42 revises fee delegation in art. 107, the surcharge exception in art. 112(2), and restoration in art. 112-2(1); supplementary art. 1 allocates different cabinet-order commencement buckets; supplementary art. 2(7)-(8) preserves old rules for pre-commencement expiries/lapses." },
+    { "id": "P2022", "kind": "wipo_independently_published_consolidation", "url": "https://www.wipo.int/wipolex/en/legislation/details/21416", "versionDate": "2022-04-01", "evidence": "WIPO metadata states that amendments from 2021 Act No. 42 included in this consolidation entered into force Apr. 1, 2022. This does not establish that every provision of Act No. 42 commenced then." },
+    { "id": "P2024", "kind": "wipo_independently_published_consolidation", "url": "https://www.wipo.int/wipolex/en/legislation/details/22613", "versionDate": "2024-04-01", "evidence": "Japanese text displays Patent Act arts. 35, 108, 112, 112-2 and 195; this is a snapshot before both examination cutoffs, not an as-of-cutoff complete amendment chronology." }
+  ],
+  "provisions": [
+    {
+      "key": "D4", "act": "Design Act", "article": "4(3)", "knownEffectiveDate": "2024-01-01", "cutoffFinding": "amendment_precedes_both_cutoffs", "confirmed": "The 2023 amendment permits the prescribed certificate concerning the earliest of several rights-holder disclosures of the same or similar design. The 2024 WIPO Japanese consolidation includes this wording.", "applicabilityLimit": "Do not apply the relaxed proof requirement automatically to an application filed before commencement. Exact application/first-disclosure dates and the relevant transitional provision must be checked for any fact pattern.", "sources": ["D2023", "D2024"]
+    },
+    {
+      "key": "D2", "act": "Design Act", "article": "2(1)", "knownEffectiveDate": "2020-04-01", "cutoffFinding": "amendment_precedes_both_cutoffs", "confirmed": "The 2019 reform expanded the design subject matter to building and graphic-image designs in addition to articles; WIPO's 2020 and 2024 consolidations display the amended definition.", "applicabilityLimit": "2019 Act No. 3 supplementary art. 2 applies the amended article to applications filed on or after commencement; older filings remain governed by former provisions.", "sources": ["D2019", "D2020", "D2024"]
+    },
+    {
+      "key": "D10", "act": "Design Act", "article": "10", "knownEffectiveDate": "2020-04-01 for the main related-design reform", "cutoffFinding": "main_reform_precedes_both_cutoffs", "confirmed": "2019 Act No. 3 revised the related-design framework; WIPO's 2020 and 2024 consolidations contain the amended article. A separate limited cross-reference change in art. 10(1) has a later commencement bucket in the 2019 supplementary provisions.", "applicabilityLimit": "The main 2020 reform has a filing-date transition. Do not assign a single 2020 date to every fragment of art. 10, particularly the later cross-reference change; priority and filing dates must be checked.", "sources": ["D2019", "D2020", "D2024"]
+    },
+    {
+      "key": "D21", "act": "Design Act", "article": "21", "knownEffectiveDate": "2020-04-01", "cutoffFinding": "amendment_precedes_both_cutoffs_but_no_direct_topicTag_match", "confirmed": "The 2019 reform sets expiration at 25 years from the application date, with a related-design rule tied to the fundamental-design application. WIPO's 2020 and 2024 consolidations contain this wording.", "applicabilityLimit": "2019 Act No. 3 supplementary art. 2 preserves the former term rule for applications filed before commencement. No question was selected by an express art. 21 topicTag; implicit mentions were not searched.", "sources": ["D2019", "D2020", "D2024"]
+    },
+    {
+      "key": "P35", "act": "Patent Act", "article": "35(3)", "knownEffectiveDate": "2016-04-01", "cutoffFinding": "amendment_precedes_both_cutoffs", "confirmed": "Under the 2015 amendment, a right to obtain a patent for an employee invention can vest in the employer from occurrence when an advance contract, employment rule, or other stipulation so provides. WIPO reports commencement Apr. 1, 2016; the 2024 Japanese consolidation displays the article.", "applicabilityLimit": "Employment status, scope of duties, advance stipulation, and invention date remain fact-dependent. Do not assume all employee inventions originally belong to employers or apply the post-2016 rule to a pre-commencement invention without transition review.", "sources": ["P2015", "P2016", "P2024"]
+    },
+    {
+      "key": "P108", "act": "Patent Act", "article": "108", "knownEffectiveDate": null, "cutoffFinding": "2024_consolidated_text_precedes_both_cutoffs", "confirmed": "Art. 108 governs initial and subsequent patent-fee payment deadlines. The 2024 WIPO Japanese consolidation contains the text.", "applicabilityLimit": "Art. 108 does not itself set fee amounts. Payment facts, extensions, and applicable older rules were not reviewed; no isolated amendment to art. 108 has been certified for either cutoff.", "sources": ["P2024"]
+    },
+    {
+      "key": "P112", "act": "Patent Act", "article": "112(2), 112-2(1)", "knownEffectiveDate": null, "cutoffFinding": "amended_text_present_in_2024_consolidation_before_both_cutoffs", "confirmed": "Art. 112 governs six-month late payment and surcharge exceptions. Art. 112-2 separately governs restoration after late payment where failure was not intentional. 2021 Act No. 42 revised both and assigned them to different cabinet-order commencement buckets, with transitional rules keyed to expiry/lapse dates.", "applicabilityLimit": "The exact commencement dates for the art. 112(2) change and the art. 112-2(1) relaxation were not verified from an accessible commencement order. An Apr. 1, 2023 date for art. 112-2 appears in non-primary material but is not promoted to verified here. A 2024 text proves presence before both cutoffs, not its application to older lapses.", "sources": ["P2021", "P2024"]
+    },
+    {
+      "key": "P195", "act": "Patent Act", "article": "195", "knownEffectiveDate": null, "cutoffFinding": "2024_consolidated_text_precedes_both_cutoffs", "confirmed": "Art. 195 establishes categories and delegation for procedural fees. The 2024 WIPO Japanese consolidation contains the provision. The 2021 amendment's 2022 fee reform principally revised annual-fee art. 107 and the relevant implementing fee order, not art. 108 alone.", "applicabilityLimit": "Actual fee numbers, cabinet-order schedule, payment date, reductions, and full amendments between the WIPO 2024 snapshot and either cutoff were not verified. No 2022 numeric fee may be inferred from art. 195 alone.", "sources": ["P2021", "P2022", "P2024"]
+    }
+  ],
+  "questions": [
+    { "id": "chizai2-2026-03-08-practical-q16", "round": 53, "matched": ["D4"], "confirmed": ["D4 amendment in force by cutoff"], "outstanding": ["application and disclosure dates; transition"] },
+    { "id": "chizai2-2026-07-12-practical-q16", "round": 54, "matched": ["D2", "D10"], "confirmed": ["D2 and main D10 reform in force by cutoff"], "outstanding": ["filing and priority dates; later D10(1) cross-reference fragment"] },
+    { "id": "chizai2-2026-07-12-gakka-q23", "round": 54, "matched": ["D10"], "confirmed": ["main D10 reform in force by cutoff"], "outstanding": ["filing and priority dates; later D10(1) cross-reference fragment"] },
+    { "id": "chizai2-2026-07-12-gakka-q4", "round": 54, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date and advance stipulation"] },
+    { "id": "chizai2-2026-07-12-practical-q18", "round": 54, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date, advance stipulation; other tagged arts. 33 and 73 outside this check"] },
+    { "id": "chizai2-2026-07-12-practical-q25", "round": 54, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date and advance stipulation"] },
+    { "id": "chizai2-2026-03-08-gakka-q11", "round": 53, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date, advance stipulation; other tagged arts. 29 and 33 outside this check"] },
+    { "id": "chizai2-2026-03-08-gakka-q32", "round": 53, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date, advance stipulation; utility-model provision outside this check"] },
+    { "id": "chizai2-2026-03-08-practical-q1", "round": 53, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date and advance stipulation"] },
+    { "id": "chizai2-2026-03-08-practical-q2", "round": 53, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date and advance stipulation"] },
+    { "id": "chizai2-2026-03-08-practical-q31", "round": 53, "matched": ["P35"], "confirmed": ["P35(3) amendment in force by cutoff"], "outstanding": ["invention date and advance stipulation"] },
+    { "id": "chizai2-2026-07-12-gakka-q27", "round": 54, "matched": ["P108"], "confirmed": ["P108 deadline text present in pre-cutoff 2024 consolidation"], "outstanding": ["actual payment facts and any older transition; other tagged arts. 18 and 110 outside this check"] },
+    { "id": "chizai2-2026-03-08-gakka-q34", "round": 53, "matched": ["P108", "P112"], "confirmed": ["P108 and revised P112/P112-2 text present in pre-cutoff 2024 consolidation"], "outstanding": ["exact commencement orders for P112(2)/P112-2(1), lapse/payment dates and transitions"] },
+    { "id": "chizai2-2026-03-08-practical-q34", "round": 53, "matched": ["P195"], "confirmed": ["P195 text present in pre-cutoff 2024 consolidation"], "outstanding": ["effective fee order and amounts at relevant payment date; post-2024 amendments"] }
+  ],
+  "unmatchedTarget": ["D21"],
+  "limitations": [
+    "No complete versions fixed exactly on 2025-09-01 or 2026-01-01 were obtained. WIPO 2024 Japanese consolidations precede the cutoffs, and WIPO 2026 updates occur after them; intervening amendment completeness remains unverified.",
+    "The 2019 Design Act and 2021 Patent Act amending laws contain material filing-date or lapse-date transitions. Text at an examination cutoff does not settle an older fact pattern.",
+    "P112/P112-2 precise cabinet-order commencement dates and 2022 numeric fee schedules remain unverified from accessible primary text.",
+    "No rights to reproduce examination materials were checked; this issue remains separate and unverified.",
+    "This is not a re-audit of all 160 questions, 651 choices, substantive answers, or explanations."
+  ],
+  "blockedResourcesNoRetry": [
+    { "url": "https://laws.e-gov.go.jp/api/1/lawdata/334AC0000000121", "reason": "prior connection refusal" },
+    { "url": "https://www.jpo.go.jp/system/laws/rule/hokaisei/index.html", "reason": "prior 403 reported by parent" },
+    { "url": "https://www.jpo.go.jp/system/laws/rule/seireikaisei/sangyozaisan/231129_fuseikyosho-boshi.html", "reason": "initial 403; stopped" },
+    { "url": "https://www.jpo.go.jp/e/system/laws/rule/other/design/ishou-reigai-tetsuduki.html", "reason": "initial 403; stopped" },
+    { "url": "https://www.jpo.go.jp/e/system/laws/rule/guideline/design/case-examples/graphic-image/2019.html", "reason": "initial 403; stopped" },
+    { "url": "https://www.jpo.go.jp/e/system/process/tesuryo/revision.html", "reason": "initial 403; stopped" },
+    { "url": "https://www.japaneselawtranslation.go.jp/en/laws/view/4637/tb", "reason": "initial 403; stopped" }
+  ],
+  "verdict": "targeted_delta_partially_verified; full_historical_cutoff_and_per-question_applicability_not_certified"
+}
