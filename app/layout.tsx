@@ -238,7 +238,7 @@ export default function RootLayout({
                           account="ipa_quiz_ai"
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="note を読む（新しいタブで開く）"
+                          aria-label="note 資格の記事一覧（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
                           note
@@ -246,7 +246,7 @@ export default function RootLayout({
                       </li>
                       <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
                       <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
-                      <li><a href="https://note.com/sikaku_rakutoru?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">学習手順・資格を楽に取る</a></li>
+
                       <li><a href="https://www.instagram.com/kakomon_ipa_jp/" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">Instagramで毎日1問</a></li>
                       <li><Link href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
                       <li><Link href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>

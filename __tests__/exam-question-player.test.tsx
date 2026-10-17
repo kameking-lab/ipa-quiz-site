@@ -79,7 +79,7 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.queryByText(/健康管理を答案にする手順/)).not.toBeInTheDocument();
   });
 
-  it("shows the verified free noteLink after answering, with a 無料 badge and the exact URL", () => {
+  it("shows the verified free noteLink after answering, with a 無料 badge and the qualification-filtered catalog", () => {
     render(
       <ExamQuestionPlayer
         examId={EXAM_ID}
@@ -93,7 +93,7 @@ describe("ExamQuestionPlayer", () => {
     answer(3);
     expect(screen.getByText("無料")).toBeInTheDocument();
     const link = screen.getByRole("link", { name: /健康管理を答案にする手順/ });
-    expect(link).toHaveAttribute("href", "https://note.com/anzen_ai_jp/n/n8ffef6a2eb2d");
+    expect(link).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=rodo-eisei-consultant");
   });
 
   it("renders no noteLinks section when the prop is omitted (existing exams unaffected)", () => {
@@ -137,7 +137,7 @@ describe("ExamQuestionPlayer", () => {
     answer(3);
     expect(screen.getByText("無料")).toBeInTheDocument();
     const link = screen.getByRole("link", { name: /記述式2問を設問の型から組む/ });
-    expect(link).toHaveAttribute("href", "https://note.com/anzen_ai_jp/n/n6143ee15b9d5");
+    expect(link).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=rodo-eisei-consultant");
   });
 
   it("shows selectable question text and answer controls without a whole-question screenshot", () => {

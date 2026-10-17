@@ -1,5 +1,7 @@
 "use client";
 
+import { noteCatalogDestination } from "@/lib/note-catalog";
+import type { ExamCode } from "@/lib/questions/types";
 import type { AnchorHTMLAttributes, MouseEvent } from "react";
 import { trackEvent } from "@/lib/analytics/events";
 import { posthogCapture } from "@/lib/posthog";
@@ -48,11 +50,13 @@ export type NoteLinkSource =
 
 interface TrackedNoteLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
+  exam?: ExamCode;
   source: NoteLinkSource;
   account: NoteAccount;
 }
 export function TrackedNoteLink({
   href,
+  exam,
   source,
   account,
   onClick,
@@ -64,5 +68,5 @@ export function TrackedNoteLink({
     onClick?.(event);
   }
 
-  return <a {...props} href={href} onClick={handleClick} />;
+  return <a {...props} href={noteCatalogDestination(href, source, exam)} onClick={handleClick} />;
 }
