@@ -115,7 +115,7 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
             </section>
 
             <p className="text-right text-xs text-zinc-400 dark:text-zinc-500">
-              試験制度・公式過去問の確認:{" "}
+              この独自練習問題の出典ではありません。試験制度・実際の公式過去問の確認:{" "}
               <a
                 href={pdfUrl}
                 target="_blank"

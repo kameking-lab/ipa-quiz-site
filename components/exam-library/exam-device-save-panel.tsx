@@ -30,7 +30,7 @@ export function ExamDeviceSavePanel({ enabled, status, onToggle }: ExamDeviceSav
         この端末に保存する
       </label>
       <p id="exam-save-help" className="mt-1 text-xs leading-5 text-slate-700 dark:text-slate-200">
-        同じタブ内の移動では回答を保持します。タブを閉じた後も残したい場合はオンにしてください。オフにすると長期保存したデータを削除します。サーバーへは送信しません。
+        回答・メモは同じタブ内の移動や再読み込みで保持します。タブを閉じた後も残すにはオンにしてください。オフにすると長期保存したデータだけを削除し、このタブの記録は残ります。この保存機能は回答・メモをサーバーへ送信しません。
       </p>
       <p role="status" aria-live="polite" className="mt-2 text-xs font-bold leading-5">
         {status}

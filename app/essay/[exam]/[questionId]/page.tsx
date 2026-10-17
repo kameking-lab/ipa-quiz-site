@@ -41,12 +41,12 @@ export async function generateMetadata({
   const { questionId } = await params;
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
-  const title = `${examLabel(q.exam)} 独自練習 ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
-  const description = `${q.title} — AI が学習用の4観点で論述を評価します。`;
+  const title = `${examLabel(q.exam)} 独自論述練習 問${q.qNumber}（教材整理用ラベル: ${formatYearSeason(q.year, q.season)}） | AI 論述添削`;
+  const description = `${q.title} — 当サイト独自の練習問題です。年度は教材整理用ラベルで、実際のIPA過去問ではありません。AI が学習用の4観点で論述を評価します。`;
   const canonical = `/essay/${q.exam}/${q.id}`;
   const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "essay",
-    title: `${examLabel(q.exam)} 午後II 問${q.qNumber}`,
+    title: `${examLabel(q.exam)} 独自論述練習 問${q.qNumber}`,
     body: q.title,
   }).toString()}`;
   return {
@@ -90,10 +90,10 @@ export default async function EssayEditorPage({
       {
         "@type": "LearningResource",
         "@id": `${url}#learning-resource`,
-        name: `${label} 独自論述練習 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
+        name: `${label} 独自論述練習 問${question.qNumber}（教材整理用ラベル: ${formatYearSeason(question.year, question.season)}） ── ${question.title}`,
         url,
         inLanguage: "ja",
-        description: `${question.title} — AI が学習用の4観点で論述を評価します（参考評価）。`,
+        description: `${question.title} — 当サイト独自の練習問題で、年度は教材整理用ラベルです。公式過去問ではありません。AI が学習用の4観点で論述を評価します（参考評価）。`,
         learningResourceType: "AI 採点・添削",
         educationalLevel: "Professional",
         educationalUse: "Self-assessment",
@@ -135,8 +135,8 @@ export default async function EssayEditorPage({
 
       <header className="mb-6">
         <p className="mb-2 text-xs font-medium tracking-wide text-sky-600 dark:text-sky-400">
-          {examLabel(question.exam)} 独自論述練習 ──{" "}
-          {formatYearSeason(question.year, question.season)} 問{question.qNumber}
+          {examLabel(question.exam)} 独自論述練習 問{question.qNumber} ──{" "}
+          教材整理用ラベル: {formatYearSeason(question.year, question.season)}
         </p>
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
           {question.title}
@@ -149,9 +149,9 @@ export default async function EssayEditorPage({
       >
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
-          <strong>編集者作成の練習用オリジナル問題です。</strong>
+          <strong>当サイト独自の練習問題です。</strong>
           実際の試験で出題された問題ではありません。年度・季節は教材整理用のラベルです。
-          解答骨子・評価観点も編集者作成で、AI 添削は学習用の参考評価です。
+          解答骨子・評価観点も当サイト独自の教材で、AI 添削は学習用の参考評価です。
           IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
           学習の参考としてご活用ください。
         </p>
@@ -183,7 +183,7 @@ export default async function EssayEditorPage({
       <InlineBookHint exam={question.exam} category="論文" />
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        試験制度・公式過去問の確認:{" "}
+        この独自練習問題の出典ではありません。試験制度・実際の公式過去問の確認:{" "}
         <a
           href="https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html"
           target="_blank"

@@ -10,6 +10,13 @@ import { FAQS, FAQ_CATEGORY_LABELS } from "@/data/faq";
 // with no label entry = a blank section heading / aria-label.
 
 describe("FAQS registry — FAQPage structured-data invariants", () => {
+  it("states the current essay beta allowance without implying a paid plan is available", () => {
+    const billing = FAQS.find((f) => f.question === "利用料金は？ 本当に無料ですか？");
+    expect(billing?.answer).toContain("月3回まで");
+    expect(billing?.answer).toContain("有料プランの課金は現在提供していません");
+    expect(billing?.answer).not.toContain("全機能を無料");
+  });
+
   it("is non-empty and every item has a non-empty question and answer", () => {
     expect(FAQS.length).toBeGreaterThan(0);
     for (const f of FAQS) {

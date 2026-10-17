@@ -5,12 +5,7 @@ import { notFound } from "next/navigation";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition, practicalSourceUrls } from "@/lib/fp2/practical";
 import { splitPracticalChoices } from "@/lib/fp2/practical-choices";
-
-function readableIntro(text: string): string {
-  const firstBreak = text.indexOf("\n\n");
-  if (firstBreak < 0) return text;
-  return text.slice(0, firstBreak).replace(/\s*\n\s*/g, "") + text.slice(firstBreak);
-}
+import { formatPracticalProse } from "@/lib/fp/practical-display";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -40,11 +35,11 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
       <header><h1 className="text-2xl font-bold text-foreground sm:text-3xl">{data.label} 実技 問{q.number}</h1><p className="mt-2 text-sm text-muted-foreground">法令基準日 {data.lawReferenceDate}</p></header>
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-lg font-semibold">問題</h2>
-        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{readableIntro(choiceLayout?.questionText ?? q.body)}</p>
+        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{formatPracticalProse(choiceLayout?.questionText ?? q.body)}</p>
         {q.sharedContext ? <details open className="mt-5 rounded-xl border border-border bg-background p-4">
           <summary className="cursor-pointer font-semibold">この問題で使う共通設例</summary>
           <p className="mt-3 text-xs text-muted-foreground">同じ大問の前ページにある家族・資産などの条件です。原典PDF {q.sharedContext.sourcePages.join("・")}ページ。</p>
-          <p className="mt-3 whitespace-pre-wrap text-sm leading-7">{q.sharedContext.text}</p>
+          <p className="mt-3 whitespace-pre-wrap text-sm leading-7">{formatPracticalProse(q.sharedContext.text)}</p>
           {q.sharedContext.panels.length > 0 ? <div className="mt-4 space-y-3">
             {q.sharedContext.panels.map((panel) => <Image key={panel.url} src={panel.url} alt={`${data.label} 実技 問${q.number} の共通設例の図表（原典PDF ${panel.pdfPage}ページ）`} width={panel.width} height={panel.height} unoptimized className="h-auto w-full rounded border border-border" />)}
           </div> : null}
@@ -66,10 +61,12 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
       </section> : null}
       <details className="mt-5 rounded-2xl border border-primary/30 bg-card p-5 sm:p-6">
         <summary className="cursor-pointer text-lg font-bold text-primary">公式模範解答を見る</summary>
-        <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{selectedChoice ? `${selectedChoice.number}. ${selectedChoice.text}` : q.modelAnswer}</p>
+        <p className="mt-4 text-sm font-semibold text-muted-foreground">日本FP協会の公式模範解答</p>
+        <p className="mt-2 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{q.modelAnswer}</p>
+        {selectedChoice && <p className="mt-2 leading-relaxed text-foreground">選択肢の記述：{selectedChoice.text}</p>}
         <p className="mt-3 text-xs text-muted-foreground">表記・単位・複数空欄の組合せは公式模範解答に合わせています。配点は協会非公表です。</p>
         {q.solution && !q.solution.needsReview ? <section aria-label="解法と各肢の理由" className="mt-5 border-t border-border pt-5">
-          <h3 className="font-semibold">解き方・判断の根拠</h3>
+          <h3 className="font-semibold">当サイト独自の解説・判断の根拠</h3>
           <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-foreground">{q.solution.explanation}</p>
           {Object.keys(q.solution.choiceExplanations).length > 0 ? <div className="mt-5 space-y-3">
             <h4 className="font-semibold">各選択肢の理由</h4>

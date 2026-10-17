@@ -79,6 +79,10 @@ const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
   (sum, edition) => sum + (getFp3PracticalEdition(edition)?.questions.length ?? 0), 0,
 );
 
+function fp3CoverageDescription(academicCount: number): string {
+  return `3級FP技能検定の公式公表問題を学科${academicCount}問・実技${fp3PracticalCount}問、計${academicCount + fp3PracticalCount}問収録。学科は年度別・分野別、実技は公表回別に問題と模範解答を確認できます。解説は当サイトの独自作成です。`;
+}
+
 interface RouteParams {
   exam: string;
 }
@@ -106,13 +110,15 @@ export async function generateMetadata({
   const title = examTopTitle(code);
   const description = code === "sharoushi"
     ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
-    : examMetaDescription(code, count);
+    : code === "fp3"
+      ? fp3CoverageDescription(count)
+      : examMetaDescription(code, count);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
     subtitle: `${examLabel(code)} 過去問一覧`,
     body: description,
-    count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0)),
+    count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : code === "fp3" ? fp3PracticalCount : 0)),
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
@@ -141,7 +147,10 @@ export default async function ExamTopPage({
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
   const code = exam as ExamCode;
   const questions = getQuestionsByExamStrict(code);
-  const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0);
+  const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : code === "fp3" ? fp3PracticalCount : 0);
+  const collectionDescription = code === "fp3"
+    ? fp3CoverageDescription(questions.length)
+    : examTopDescription(code, publishedOriginalCount);
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
     const sessions = [...new Set(items.map((q) => q.session))];
@@ -172,7 +181,7 @@ export default async function ExamTopPage({
     "@type": "Course",
     "@id": `${absUrl}#course`,
     name: `${examFullName(code)} 過去問学習コース`,
-    description: examTopDescription(code, publishedOriginalCount),
+    description: collectionDescription,
     url: absUrl,
     inLanguage: "ja",
     courseCode: code.toUpperCase(),
@@ -227,7 +236,7 @@ export default async function ExamTopPage({
         "@type": "CollectionPage",
         "@id": `${absUrl}#collection`,
         name: examTopTitle(code),
-        description: examTopDescription(code, publishedOriginalCount),
+        description: collectionDescription,
         url: absUrl,
         inLanguage: "ja",
         about: { "@id": credentialId },
@@ -316,9 +325,10 @@ export default async function ExamTopPage({
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
-            <Badge variant="outline">{years.length} 期分</Badge>
-            <Badge variant="outline">{categories.length} 分野</Badge>
+            <Badge variant="outline">{code === "fp3" ? "学科 " : ""}{years.length} 期分</Badge>
+            <Badge variant="outline">{code === "fp3" ? "学科 " : ""}{categories.length} 分野</Badge>
           </div>
+          {code === "fp3" && <p className="mt-2 text-sm text-muted-foreground">学科 {questions.length} 問・実技 {fp3PracticalCount} 問（合計 {publishedOriginalCount} 問）。学科演習と実技の問題一覧は下の入口から選べます。</p>}
           {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の1級学科試験を収録。2026年5月は基礎全50問と応用全15原問62回答欄、2026年9月は基礎全50問と応用全15原問57回答欄を掲載しています。</p>}
           {code === "fp1" && <p className="mt-3 text-sm">
             <Link href="/fp1/applied/202605" className="inline-flex min-h-[44px] items-center text-primary underline">2026年5月 学科応用編の問題一覧を見る（問51〜65・15原問・62回答欄）</Link>
@@ -466,7 +476,10 @@ export default async function ExamTopPage({
 
         {/* Progress */}
         <section aria-label="進捗" className="mb-8">
-          <ExamProgressBar exam={code} totalQuestions={questions.length} />
+          <div>
+            {code === "fp3" && <p className="mb-2 text-sm text-muted-foreground">学科の学習進捗（実技は含みません）</p>}
+            <ExamProgressBar exam={code} totalQuestions={questions.length} />
+          </div>
         </section>
 
         {/* Stats: pass rate / study hours / topic trend */}

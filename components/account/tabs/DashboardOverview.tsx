@@ -10,9 +10,9 @@ import {
   computeExamProbabilities,
   estimateStudyMinutes,
   type ExamPassProbability,
-  type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
+import { fetchQuestionMeta } from "@/lib/dashboard/question-meta";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 
@@ -22,6 +22,7 @@ interface OverviewData {
   streak: number;
   longestStreak: number;
   examTopProb: ExamPassProbability | undefined;
+  metaComplete: boolean;
 }
 
 function loadHistoryEntries(): HistoryEntry[] {
@@ -36,22 +37,6 @@ function loadHistoryEntries(): HistoryEntry[] {
   }
 }
 
-async function fetchQuestionMeta(ids: string[]): Promise<QuestionMeta[]> {
-  if (ids.length === 0) return [];
-  try {
-    const res = await fetch("/api/questions/meta", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ids }),
-    });
-    if (!res.ok) return [];
-    const json = (await res.json()) as { meta: QuestionMeta[] };
-    return json.meta;
-  } catch {
-    return [];
-  }
-}
-
 export function DashboardOverview() {
   const [data, setData] = React.useState<OverviewData | null>(null);
 
@@ -60,7 +45,7 @@ export function DashboardOverview() {
     const streak = readStreak();
     const uniqueIds = [...new Set(entries.map((e) => e.id))];
 
-    void fetchQuestionMeta(uniqueIds).then((meta) => {
+    void fetchQuestionMeta(uniqueIds).then(({ meta, complete }) => {
       const examProbs = computeExamProbabilities(entries, meta);
       const sortedProbs = [...examProbs].sort((a, b) =>
         b.answered - a.answered || b.accuracy - a.accuracy);
@@ -71,6 +56,7 @@ export function DashboardOverview() {
         streak: streak.currentStreak,
         longestStreak: streak.longestStreak,
         examTopProb,
+        metaComplete: complete,
       });
     });
   }, []);
@@ -96,12 +82,19 @@ export function DashboardOverview() {
         </Link>
       </div>
 
+      {!data.metaComplete && (
+        <p className="text-xs text-amber-700 dark:text-amber-300">
+          問題データの取得が未完了です。資格別の記録は取得できた範囲だけを表示しています。
+        </p>
+      )}
+
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           icon={<BookOpen className="h-4 w-4" />}
-          label="総問題数"
+          label="累計回答"
           value={data.totalAnswered.toLocaleString("ja-JP")}
           unit="問"
+          sub="通常演習でこのブラウザに保存された回答履歴"
           tone="sky"
         />
         <KpiCard
@@ -123,7 +116,11 @@ export function DashboardOverview() {
           value={data.examTopProb ? `${Math.round(data.examTopProb.accuracy * 100)}%` : "—"}
           sub={data.examTopProb
             ? `${examLabel(data.examTopProb.exam)} · ${data.examTopProb.answered}問の記録`
-            : "まだ回答記録がありません"}
+            : data.totalAnswered === 0
+              ? "まだ回答記録がありません"
+              : data.metaComplete
+                ? "資格を判別できる回答記録がありません"
+                : "問題データの取得が完了しませんでした"}
           tone="emerald"
         />
       </section>

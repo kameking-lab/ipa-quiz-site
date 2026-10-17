@@ -86,7 +86,7 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
   const backHref = examLibraryHref(entry.group, entry.subject);
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6">
+    <main className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6">
       <ExamStructuredData title={title} description={examDescription(entry, questions.length, scoredCount)} url={url} />
 
       <nav aria-label="パンくず補助" className="mb-3">
@@ -158,6 +158,6 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
       />
 
       <ExamSourceNotes entry={entry} className="mt-10" />
-    </div>
+    </main>
   );
 }

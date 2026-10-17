@@ -116,11 +116,11 @@ export default async function EssayExamPage({
               <CardHeader className="pb-2">
                 <div className="mb-1 flex items-center gap-2">
                   <Badge variant="soft" className="text-xs">
-                    {q.year}
+                    教材整理用ラベル: {q.year}
                     {q.season === "spring" ? "春" : "秋"}期
                   </Badge>
                   <Badge variant="outline" className="text-xs">
-                    午後 II 問{q.qNumber}
+                    独自練習・午後 II 問{q.qNumber}
                   </Badge>
                 </div>
                 <CardTitle className="text-base leading-snug">{q.theme}</CardTitle>

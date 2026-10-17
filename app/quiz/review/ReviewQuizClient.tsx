@@ -46,6 +46,7 @@ export function ReviewQuizClient() {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [hadCards, setHadCards] = React.useState(false);
   const [index, setIndex] = React.useState(0);
+  const [deferredIds, setDeferredIds] = React.useState<string[]>([]);
   const [current, setCurrent] = React.useState<Question | null>(null);
   const cache = React.useRef<Map<string, Question>>(new Map());
 
@@ -53,6 +54,7 @@ export function ReviewQuizClient() {
     const built = buildReviewPool();
      
     setSessionIds(built.ids);
+    setDeferredIds([]);
     setHadCards(built.hadCards);
     setIndex(0);
     cache.current.clear();
@@ -84,8 +86,24 @@ export function ReviewQuizClient() {
   }, [sessionIds, index]);
 
   const handleNext = React.useCallback(() => {
+    setCurrent(null);
     setIndex((i) => i + 1);
   }, []);
+
+  const handleDefer = React.useCallback((questionId: string) => {
+    if (!sessionIds?.includes(questionId)) return;
+    setDeferredIds((ids) => ids.includes(questionId) ? ids : [...ids, questionId]);
+    setCurrent(null);
+    setIndex((i) => i + 1);
+  }, [sessionIds]);
+
+  const resumeDeferred = React.useCallback(() => {
+    if (deferredIds.length === 0) return;
+    setSessionIds(deferredIds);
+    setDeferredIds([]);
+    setCurrent(null);
+    setIndex(0);
+  }, [deferredIds]);
 
   if (!sessionIds) {
     return (
@@ -132,6 +150,9 @@ export function ReviewQuizClient() {
       backHref="/review"
       exam={current?.exam ?? "ap"}
       onNext={handleNext}
+      onDeferQuestion={handleDefer}
+      deferredQuestionCount={deferredIds.length}
+      onResumeDeferred={resumeDeferred}
     />
   );
 }

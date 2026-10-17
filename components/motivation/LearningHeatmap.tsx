@@ -40,6 +40,9 @@ function formatTooltip(date: string, count: number): string {
 export function LearningHeatmap({ days = 365, compact = false, showStats = true }: Props) {
   const [byDate, setByDate] = React.useState<Record<string, number> | null>(null);
   const [hovered, setHovered] = React.useState<{ date: string; count: number } | null>(null);
+  const [selected, setSelected] = React.useState<{ date: string; count: number } | null>(null);
+  const [activeDate, setActiveDate] = React.useState<string | null>(null);
+  const dayButtons = React.useRef(new Map<string, HTMLButtonElement>());
 
   React.useEffect(() => {
     const store = createHistoryStore();
@@ -56,6 +59,24 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
 
   const dates = React.useMemo(() => generateDayRange(days), [days]);
 
+  function moveFocus(date: string, key: string) {
+    const current = dates.indexOf(date);
+    const offset: Record<string, number> = {
+      ArrowLeft: -7,
+      ArrowRight: 7,
+      ArrowUp: -1,
+      ArrowDown: 1,
+    };
+    const next = key === "Home" ? 0
+      : key === "End" ? dates.length - 1
+        : current + (offset[key] ?? 0);
+    const target = dates[Math.max(0, Math.min(dates.length - 1, next))];
+    if (target) {
+      setActiveDate(target);
+      dayButtons.current.get(target)?.focus();
+    }
+  }
+
   if (!byDate) {
     return (
       <Card>
@@ -68,6 +89,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
 
   const studyDays = totalStudyDays(byDate);
   const answered = totalAnswered(byDate);
+  const displayedDay = hovered ?? selected;
 
   // 53 weeks max (371 days padded so first column starts on Sunday-ish row)
   const cells = dates.map((date) => ({
@@ -111,7 +133,8 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
           )}
         </div>
 
-        <div className="overflow-x-auto pb-1" role="group" aria-label="過去365日の学習ヒートマップ">
+        <div className="overflow-x-auto pb-1" role="group" aria-label={`過去${days}日の学習ヒートマップ`}>
+          <p className="sr-only">Tabで日付に移動し、上下矢印で前後の日、左右矢印で前後の週、HomeとEndで期間の最初と最後に移動します。Enterで選んだ日の学習数を表示します。</p>
           <div className="inline-flex gap-[3px]">
             {weeks.map((week, wi) => (
               <div key={wi} className="flex flex-col gap-[3px]">
@@ -130,11 +153,23 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
                     <button
                       key={di}
                       type="button"
+                      ref={(node) => {
+                        if (node) dayButtons.current.set(cell.date, node);
+                        else dayButtons.current.delete(cell.date);
+                      }}
+                      tabIndex={cell.date === (activeDate ?? dates[dates.length - 1]) ? 0 : -1}
                       title={formatTooltip(cell.date, cell.count)}
                       onMouseEnter={() => setHovered(cell)}
                       onMouseLeave={() => setHovered(null)}
-                      onFocus={() => setHovered(cell)}
+                      onFocus={() => { setActiveDate(cell.date); setHovered(cell); }}
                       onBlur={() => setHovered(null)}
+                      onKeyDown={(event) => {
+                        if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"].includes(event.key)) {
+                          event.preventDefault();
+                          moveFocus(cell.date, event.key);
+                        }
+                      }}
+                      onClick={() => setSelected(cell)}
                       className={cn(CELL_BASE, LEVEL_COLOR[lvl], "ring-0 hover:ring-2 hover:ring-emerald-400")}
                       aria-label={formatTooltip(cell.date, cell.count)}
                     />
@@ -146,9 +181,9 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
         </div>
 
         <div className="mt-2 flex items-center justify-between text-[10px] text-zinc-500 dark:text-zinc-400">
-          <span className="truncate">
-            {hovered
-              ? formatTooltip(hovered.date, hovered.count)
+          <span className="truncate" role="status" aria-live="polite">
+            {displayedDay
+              ? formatTooltip(displayedDay.date, displayedDay.count)
               : compact
                 ? "今日の学習で草が育ちます"
                 : "ホバーで日別の問題数を確認"}

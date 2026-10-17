@@ -21,7 +21,7 @@ describe("observed learning records, not derived pass probabilities",()=>{
   expect(screen.queryByText(/予測合格率|計測中|合格圏/)).toBeNull();expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
  });
  it("progress displays actual ratios even below ten samples, sorting by answer count",async()=>{
-  const before=seed();render(<DashboardProgress/>);await screen.findByText("試験別 記録の正答率（13区分）");
+  const before=seed();render(<DashboardProgress/>);await screen.findByText("資格別 記録の正答率（IPA13区分と回答記録のある資格）");
   const rows=screen.getAllByRole("link");expect(rows[0]).toHaveAttribute("href","/quiz?mode=random&exam=ap");
   expect(within(rows[0]).getByText("50%")).toBeInTheDocument();expect(rows[0]).toHaveTextContent("10問 解答済");
   expect(rows[1]).toHaveTextContent("100%");expect(rows[1]).toHaveTextContent("2問 解答済");
@@ -31,7 +31,7 @@ describe("observed learning records, not derived pass probabilities",()=>{
   render(<DashboardOverview/>);await screen.findByText("記録の正答率");expect(screen.getByText("まだ回答記録がありません")).toBeInTheDocument();expect(screen.getByText("—")).toBeInTheDocument();
  });
  it("unanswered exam rows use a dash",async()=>{
-  render(<DashboardProgress/>);await screen.findByText("試験別 記録の正答率（13区分）");
+  render(<DashboardProgress/>);await screen.findByText("資格別 記録の正答率（IPA13区分と回答記録のある資格）");
   for(const row of screen.getAllByRole("link")){expect(row).toHaveTextContent("0問 解答済");expect(within(row).getByText("—")).toBeInTheDocument();}
  });
 });

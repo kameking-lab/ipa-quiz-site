@@ -114,6 +114,23 @@ describe("topWeakCategories / topStrongCategories", () => {
 });
 
 describe("computeExamProbabilities", () => {
+  it("adds recorded non-IPA exams without inventing unanswered non-IPA rows", () => {
+    const questions: QuestionMeta[] = [
+      { id: "ap-one", category: "IT", exam: "ap" },
+      { id: "fp3-one", category: "FP", exam: "fp3" },
+    ];
+    const rows = computeExamProbabilities(
+      [entry("ap-one", false), entry("fp3-one", true), entry("fp3-one", true)],
+      questions,
+    );
+    expect(rows).toHaveLength(14);
+    expect(rows.find((row) => row.exam === "fp3")).toMatchObject({
+      answered: 2,
+      accuracy: 1,
+    });
+    expect(rows.some((row) => row.exam === "fp2")).toBe(false);
+  });
+
   it("returns a row for all 13 exam codes", () => {
     const rows = computeExamProbabilities([], QS);
     expect(rows).toHaveLength(13);

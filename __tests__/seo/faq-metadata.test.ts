@@ -25,4 +25,9 @@ describe("/faq metadata — advertised FAQ count tracks the registry", () => {
     const ogBody = decodeURIComponent(ogImage).replace(/\+/g, " ");
     expect(ogBody).toContain(`${FAQS.length} 問`);
   });
+
+  it("describes the monthly essay beta allowance in search metadata", () => {
+    expect(desc).toContain("月3回");
+    expect(desc).not.toContain("全機能無料");
+  });
 });

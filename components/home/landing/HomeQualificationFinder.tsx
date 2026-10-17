@@ -6,7 +6,7 @@ import { ArrowRight, Search, X } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
 
 function normalize(value: string): string {
-  return value.normalize("NFKC").toLowerCase().replace(/\s/g, "");
+  return value.normalize("NFKC").toLowerCase().replace(/[\s・]/g, "");
 }
 
 export function HomeQualificationFinder({ domains, directoryHref = "#home-directory-title", preview, showHeading = false }: { domains: readonly HomeDirectoryDomain[]; directoryHref?: string; preview?: ReactNode; showHeading?: boolean }) {
@@ -28,7 +28,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
     [...domain.featured, ...domain.compact].map((item) => ({ ...item, domainId: domain.id, domainTitle: domain.title }))), [domains]);
   const term = normalize(query);
   const matching = items.filter((item) => (!domainId || item.domainId === domainId) &&
-    (!term || normalize([item.name, item.abbr, item.sub, item.domainTitle].join(" ")).includes(term)));
+    (!term || normalize([item.name, item.abbr, item.sub, item.domainTitle, ...(item.searchTerms ?? [])].join(" ")).includes(term)));
   const browsing = !term && !domainId;
   const visible = browsing ? items.filter((item) => ["ip", "fe", "denko2", "fp3"].includes(item.key)) : matching;
 

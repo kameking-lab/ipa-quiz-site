@@ -96,9 +96,14 @@ export function computeExamProbabilities(
     acc.set(q.exam, cur);
   }
 
-  const exams: ExamCode[] = [
+  const ipaExams: ExamCode[] = [
     "ip", "sg", "fe", "ap",
     "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
+  ];
+  const ipaSet = new Set<ExamCode>(ipaExams);
+  const exams = [
+    ...ipaExams,
+    ...[...acc.keys()].filter((exam) => !ipaSet.has(exam)),
   ];
   return exams.map((exam) => {
     const v = acc.get(exam) ?? { answered: 0, correct: 0 };
