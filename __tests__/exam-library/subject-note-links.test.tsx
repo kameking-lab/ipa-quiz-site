@@ -83,7 +83,8 @@ describe("ExamNoteLinks が実際に描画される", () => {
     );
     expect(screen.getByRole("heading", { name: "有機溶剤の解説記事" })).toBeTruthy();
     const anchor = screen.getByRole("link", { name: /有機溶剤の始め方/ });
-    expect(anchor.getAttribute("href")).toBe("https://note.com/anzen_ai_jp/n/n611c052c28e4");
+    expect(anchor.getAttribute("href")).toBe("https://tsugino-shikaku.jp/articles");
+    expect(screen.getByRole("link", { name: /ワークブック/ })).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=rodo-eisei-consultant");
     expect(anchor.getAttribute("target")).toBe("_blank");
     expect(anchor.getAttribute("rel")).toContain("noopener");
     expect(container.querySelectorAll("a").length).toBe(2);

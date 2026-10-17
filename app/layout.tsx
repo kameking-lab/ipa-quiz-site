@@ -238,7 +238,7 @@ export default function RootLayout({
                           account="ipa_quiz_ai"
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="資格の記事一覧（新しいタブで開く）"
+                          aria-label="note 資格の記事一覧（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
                           note
