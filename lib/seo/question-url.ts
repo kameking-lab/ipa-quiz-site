@@ -15,7 +15,7 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
 
 /** 枝番(a)/(b)は電験三種、数字の枝番は電験一・二種と診断士の設問に使用する。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
-  letter: ["denken3"],
+  letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2"],
   blank: ["denken2", "denken1", "chusho-kigyo-shindanshi"],
 };
 
@@ -40,7 +40,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   qNumber: number;
   part?: QuestionPart;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;

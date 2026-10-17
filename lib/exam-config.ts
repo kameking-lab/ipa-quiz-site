@@ -925,6 +925,116 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [{ session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] }],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
   },
+  "maritime2": {
+    code: "maritime2", nameFull: "第二級海上無線通信士試験", urlSlug: "maritime2", level: "specialist",
+    sessions: [
+      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+  },
+  "maritime3": {
+    code: "maritime3", nameFull: "第三級海上無線通信士試験", urlSlug: "maritime3", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 15, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+  },
+  "land-special2": {
+    code: "land-special2", nameFull: "第二級陸上特殊無線技士試験", urlSlug: "land-special2", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+    ],
+    seasons: ["october", "february"], yearRange: { start: 2021, end: 2022 },
+  },
+  "land-special3": {
+    code: "land-special3", nameFull: "第三級陸上特殊無線技士試験", urlSlug: "land-special3", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+    ],
+    seasons: ["october", "february"], yearRange: { start: 2021, end: 2022 },
+  },
+  "riku-tech1": {
+    code: "riku-tech1", nameFull: "第一級陸上無線技術士試験", urlSlug: "riku-tech1", level: "specialist",
+    sessions: [
+      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+  },
+  "riku-tech2": {
+    code: "riku-tech2", nameFull: "第二級陸上無線技術士試験", urlSlug: "riku-tech2", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+      { session: "kiso", urlSlug: "kiso", expectedQuestions: 25, label: "無線工学の基礎", categories: ["無線工学の基礎"] },
+      { session: "kogaku-a", urlSlug: "kogaku-a", expectedQuestions: 25, label: "無線工学A", categories: ["無線工学A"] },
+      { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
+    ],
+    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+  },
+  "amateur2": {
+    code: "amateur2", nameFull: "第二級アマチュア無線技士試験", urlSlug: "amateur2", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 25, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["may", "august"], yearRange: { start: 2026, end: 2026 },
+  },
+  "maritime-radar": {
+    code: "maritime-radar", nameFull: "レーダー級海上特殊無線技士試験", urlSlug: "maritime-radar", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+    ],
+    seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
+  },
+  "amateur1": {
+    code: "amateur1", nameFull: "第一級アマチュア無線技士試験", urlSlug: "amateur1", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 30, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["may", "august"], yearRange: { start: 2026, end: 2026 },
+  },
+  "maritime-special1": {
+    code: "maritime-special1", nameFull: "第一級海上特殊無線技士試験", urlSlug: "maritime-special1", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
+  },
+  "aviation-comm": {
+    code: "aviation-comm", nameFull: "航空無線通信士試験", urlSlug: "aviation-comm", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 14, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
+  },
+  "maritime4": {
+    code: "maritime4", nameFull: "第四級海上無線通信士試験", urlSlug: "maritime4", level: "specialist",
+    sessions: [
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 18, label: "無線工学", categories: ["無線工学"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
+  },
+  "land-special1": {
+    code: "land-special1", nameFull: "第一級陸上特殊無線技士試験", urlSlug: "land-special1", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規（09:30 A版）", categories: ["無線通信の法規"] },
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 24, label: "無線工学（09:30 A版）", categories: ["無線工学"] },
+    ],
+    seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
+  },
   "koku-toku": {
     code: "koku-toku", nameFull: "航空特殊無線技士試験", urlSlug: "koku-toku", level: "specialist",
     sessions: [
@@ -932,6 +1042,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
     seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
+  },
+  "kai-toku2": {
+    code: "kai-toku2", nameFull: "第二級海上特殊無線技士試験", urlSlug: "kai-toku2", level: "specialist",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["法規"] },
+      { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
+    ],
+    seasons: ["february", "october"], yearRange: { start: 2022, end: 2023 },
   },
   "kai-toku3": {
     code: "kai-toku3", nameFull: "第三級海上特殊無線技士試験", urlSlug: "kai-toku3", level: "specialist",
@@ -950,7 +1068,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku3", "koku-toku"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "land-special2", "land-special3"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

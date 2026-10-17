@@ -1,0 +1,95 @@
+{
+  "exam": "land-special2",
+  "export": "LAND_SPECIAL2_QUESTIONS",
+  "module": "@/data/questions/land-special2",
+  "displayName": "第二級陸上特殊無線技士",
+  "periods": [
+    "2021-10",
+    "2022-02"
+  ],
+  "scope": "公表された2021年10月・2022年2月の歴史筆記2回、各回法規12問・無線工学12問、全対象科目48原問。現在のCBT例題は含まない。",
+  "periodCounts": {
+    "2021-10": 24,
+    "2022-02": 24
+  },
+  "papers": [
+    {
+      "file": "2021-october-houki.json",
+      "year": 2021,
+      "season": "october",
+      "session": "houki",
+      "subject": "法規",
+      "originals": 12,
+      "expectedQuestions": 12,
+      "qNumberRange": [
+        1,
+        12
+      ],
+      "part": null
+    },
+    {
+      "file": "2021-october-kogaku.json",
+      "year": 2021,
+      "season": "october",
+      "session": "kogaku",
+      "subject": "無線工学",
+      "originals": 12,
+      "expectedQuestions": 12,
+      "qNumberRange": [
+        13,
+        24
+      ],
+      "part": null
+    },
+    {
+      "file": "2022-february-houki.json",
+      "year": 2022,
+      "season": "february",
+      "session": "houki",
+      "subject": "法規",
+      "originals": 12,
+      "expectedQuestions": 12,
+      "qNumberRange": [
+        1,
+        12
+      ],
+      "part": null
+    },
+    {
+      "file": "2022-february-kogaku.json",
+      "year": 2022,
+      "season": "february",
+      "session": "kogaku",
+      "subject": "無線工学",
+      "originals": 12,
+      "expectedQuestions": 12,
+      "qNumberRange": [
+        13,
+        24
+      ],
+      "part": null
+    }
+  ],
+  "newSchemaEnum": {
+    "exam": [
+      "land-special2"
+    ]
+  },
+  "sessionsAlreadyPresent": [
+    "houki",
+    "kogaku"
+  ],
+  "seasonsAlreadyPresent": [
+    "october",
+    "february"
+  ],
+  "numberedChoiceDisplayRequired": true,
+  "preserveChoiceOrderRequired": true,
+  "questionAuthor": "公益財団法人日本無線協会",
+  "license": "NICHIMU-educational-reuse",
+  "normalizer": "Standard existing MC Question[] cast; no qualification mapper or shared code added",
+  "lawVersion": "各歴史実施回当時の法令。受入済みas-of根拠を維持。",
+  "registryAndCatalogChanged": false,
+  "separateNextBatchNotPartOf338": true,
+  "publicGo": false
+}

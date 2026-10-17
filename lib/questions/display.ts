@@ -1,3 +1,4 @@
+import { formatNativeBAnswer } from "./native-b";
 import type { ChoiceKey, ExamCode, Question } from "./types";
 import { formatNumericAnswer } from "./numeric";
 
@@ -6,12 +7,13 @@ const DENKEN_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "�
 const IROHA_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", "ヲ", "ワ", "カ", "ヨ"] as const;
 
-export function questionNumberLabel(q: Pick<Question, "qNumber" | "part">): string {
+export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB">): string {
+  if (q.nativeB?.officialLabel) return q.nativeB.officialLabel;
   return `${q.qNumber}${q.part ? `(${q.part})` : ""}`;
 }
 
 /** 公式問題が選択肢を算用数字 1〜5 で示す試験。表示も原本の番号に合わせる。 */
-const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["riku-toku-kokunai", "kai-toku3", "koku-toku", "chosashi", "kaigo", "shakai", "seishin", "kanri", "mankan", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "shika-ishi", "judo-seifukushi"];
+const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "land-special2", "land-special3", "chosashi", "kaigo", "shakai", "seishin", "kanri", "mankan", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "shika-ishi", "judo-seifukushi"];
 
 /** 公式問題が選択肢をＡ〜Ｅで示す試験。内部キー ア〜オ と順番で対応させる。 */
 const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
@@ -41,6 +43,7 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 
 /** Render stored choice keys individually, retaining the answer's order and separators. */
 export function formatQuestionAnswerForDisplay(question: Question, value: string | readonly ChoiceKey[], multiSeparator = "・"): string {
+  if (question.type === "native-b" && question.nativeB) return formatNativeBAnswer(question.nativeB);
   if (question.type === "numeric") return formatNumericAnswer(question, String(value));
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);

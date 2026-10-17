@@ -1,0 +1,240 @@
+{
+  "candidateOnly": true,
+  "base": "8fc0646606da456b8d49d107964f200237636d3b",
+  "previous235FixedCommit": "539921ba8e8b39da363ab054bcae6c5b6f5c6153",
+  "dataStage": "8aa1745e6af4c5a1b37a4b508715666dc826296d",
+  "qualifications": [
+    {
+      "exam": "aviation-comm",
+      "productCommit": "47904199d3f05ce16a2dad28747dc58a9afe20e3",
+      "counts": {
+        "storedOriginals": 68,
+        "expectedActualReady": 68,
+        "A": 48,
+        "nativeB": 20,
+        "nativeSlots": 100,
+        "gradingCells": 148,
+        "actualPracticeReady": 68,
+        "readyNativeB": 20,
+        "readyMC": 48,
+        "acceptedReadyGradingCells": 148
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-02",
+          "stored": 34,
+          "ready": 34
+        },
+        {
+          "period": "2026-08",
+          "stored": 34,
+          "ready": 34
+        }
+      ],
+      "protectedIds": [],
+      "requiredProductCherryPicks": [
+        "0435b8e95088a26a8c290f0f4ba7549443b3c3e2",
+        "bb3c503c9c8caa5a2f3319dd7e5b47b18b51d5e7",
+        "47904199d3f05ce16a2dad28747dc58a9afe20e3"
+      ]
+    },
+    {
+      "exam": "amateur1",
+      "productCommit": "ef6c757feef3e1454119c42b5b721a1cc35c8a3d",
+      "counts": {
+        "storedOriginals": 120,
+        "expectedActualReady": 119,
+        "A": 98,
+        "nativeB": 22,
+        "nativeSlots": 110,
+        "gradingCells": 208,
+        "actualPracticeReady": 119,
+        "readyNativeB": 22,
+        "readyMC": 97,
+        "acceptedReadyGradingCells": 207
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-05",
+          "stored": 60,
+          "ready": 59
+        },
+        {
+          "period": "2026-08",
+          "stored": 60,
+          "ready": 60
+        }
+      ],
+      "protectedIds": [
+        "radio21-amateur1-2026-05-kogaku-q19"
+      ],
+      "requiredProductCherryPicks": [
+        "64111bd31a65578fc65b42cf7c47ab7fa2c3e15a",
+        "ef6c757feef3e1454119c42b5b721a1cc35c8a3d"
+      ]
+    },
+    {
+      "exam": "maritime-special1",
+      "productCommit": "34196216168dc36cf2fe287b4559bd51edabc450",
+      "counts": {
+        "storedOriginals": 48,
+        "expectedActualReady": 48,
+        "A": 48,
+        "nativeB": 0,
+        "nativeSlots": 0,
+        "gradingCells": 48,
+        "actualPracticeReady": 48,
+        "readyNativeB": 0,
+        "readyMC": 48,
+        "acceptedReadyGradingCells": 48
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-02",
+          "stored": 24,
+          "ready": 24
+        },
+        {
+          "period": "2026-06",
+          "stored": 24,
+          "ready": 24
+        }
+      ],
+      "protectedIds": [],
+      "requiredProductCherryPicks": [
+        "36592210f639cb01e698eb9b023a2bd30e834767",
+        "34196216168dc36cf2fe287b4559bd51edabc450"
+      ]
+    },
+    {
+      "exam": "riku-tech2",
+      "productCommit": "3fdb9c5e90387111097f93c3894d465293bfd17d",
+      "counts": {
+        "storedOriginals": 190,
+        "expectedActualReady": 189,
+        "A": 150,
+        "nativeB": 40,
+        "nativeSlots": 200,
+        "gradingCells": 350,
+        "actualPracticeReady": 189,
+        "readyNativeB": 39,
+        "readyMC": 150,
+        "acceptedReadyGradingCells": 345
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-01",
+          "stored": 95,
+          "ready": 94
+        },
+        {
+          "period": "2026-07",
+          "stored": 95,
+          "ready": 95
+        }
+      ],
+      "protectedIds": [
+        "radio21-riku-tech2-2026-01-kogaku-b-q25"
+      ],
+      "requiredProductCherryPicks": [
+        "3fdb9c5e90387111097f93c3894d465293bfd17d"
+      ]
+    },
+    {
+      "exam": "amateur2",
+      "productCommit": "1a5b7c4bd9b57d79ee6c248813bd6a79b65927e9",
+      "counts": {
+        "storedOriginals": 110,
+        "expectedActualReady": 109,
+        "A": 88,
+        "nativeB": 22,
+        "nativeSlots": 110,
+        "gradingCells": 198,
+        "actualPracticeReady": 109,
+        "readyNativeB": 22,
+        "readyMC": 87,
+        "acceptedReadyGradingCells": 197
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-05",
+          "stored": 55,
+          "ready": 54
+        },
+        {
+          "period": "2026-08",
+          "stored": 55,
+          "ready": 55
+        }
+      ],
+      "protectedIds": [
+        "radio21-amateur2-2026-05-kogaku-q17"
+      ],
+      "requiredProductCherryPicks": [
+        "1a5b7c4bd9b57d79ee6c248813bd6a79b65927e9"
+      ]
+    },
+    {
+      "exam": "maritime-radar",
+      "productCommit": "c59ae272d9264c269ba8dded345975024654f33e",
+      "counts": {
+        "storedOriginals": 48,
+        "expectedActualReady": 47,
+        "A": 48,
+        "nativeB": 0,
+        "nativeSlots": 0,
+        "gradingCells": 48,
+        "actualPracticeReady": 47,
+        "readyNativeB": 0,
+        "readyMC": 47,
+        "acceptedReadyGradingCells": 47
+      },
+      "twoSittingBreakdown": [
+        {
+          "period": "2026-02",
+          "stored": 24,
+          "ready": 24
+        },
+        {
+          "period": "2026-06",
+          "stored": 24,
+          "ready": 23
+        }
+      ],
+      "protectedIds": [
+        "radio21-maritime-radar-2026-06-kogaku-q24"
+      ],
+      "requiredProductCherryPicks": [
+        "c59ae272d9264c269ba8dded345975024654f33e"
+      ]
+    }
+  ],
+  "storedOriginals": 584,
+  "practiceReadyOriginals": 580,
+  "protectedOriginals": 4,
+  "protectedIds": [
+    "radio21-amateur1-2026-05-kogaku-q19",
+    "radio21-riku-tech2-2026-01-kogaku-b-q25",
+    "radio21-amateur2-2026-05-kogaku-q17",
+    "radio21-maritime-radar-2026-06-kogaku-q24"
+  ],
+  "storedGradingCells": 1000,
+  "readyGradingCells": 992,
+  "stored": {
+    "multipleChoice": 480,
+    "nativeBOriginals": 104,
+    "nativeSlots": 520
+  },
+  "ready": {
+    "multipleChoice": 477,
+    "nativeBOriginals": 103,
+    "nativeSlots": 515
+  },
+  "free": true,
+  "unlimited": true,
+  "publishedPastQuestionsOnly": true,
+  "englishOrOralOrPracticalAdded": false,
+  "existing338ApprovalExpanded": false,
+  "native166Included": false,
+  "publicGo": false
+}

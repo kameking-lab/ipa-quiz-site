@@ -120,8 +120,22 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "maritime2", name: "第二級海上無線通信士", sub: "2026年3月・9月 基礎・工学A・工学B・法規190原問、B40原問は各5枠", domain: "electrical" },
+  { code: "maritime3", name: "第三級海上無線通信士", sub: "2026年3月・9月の無線工学・法規70原問・全肢解説", domain: "electrical" },
+  { code: "land-special2", name: "第二級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
+  { code: "land-special3", name: "第三級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
+  { code: "riku-tech2", name: "第二級陸上無線技術士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "amateur2", name: "第二級アマチュア無線技士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-radar", name: "レーダー級海上特殊無線技士", sub: "2026年2月・6月の法規・無線工学48原問・全肢解説", domain: "electrical" },
+  { code: "amateur1", name: "第一級アマチュア無線技士", sub: "2026年5月・8月 119原問・全肢解説（確認中1原問を除く）", domain: "electrical" },
+  { code: "maritime-special1", name: "第一級海上特殊無線技士", sub: "2026年2月・6月 日本語の無線工学・法規48原問・全肢解説", domain: "electrical" },
+  { code: "aviation-comm", name: "航空無線通信士", sub: "2026年2月・8月 日本語の無線工学・法規68原問・全肢解説", domain: "electrical" },
+  { code: "riku-tech1", name: "第一級陸上無線技術士", sub: "2026年1月・7月の4科目190原問・全肢解説", domain: "electrical" },
+  { code: "maritime4", name: "第四級海上無線通信士", sub: "2026年2月・8月の無線工学・法規76原問・全肢解説", domain: "electrical" },
+  { code: "land-special1", name: "第一級陸上特殊無線技士", sub: "2026年2月・6月09:30 A版72原問（13:30 B版は未収録）", domain: "electrical" },
   { code: "riku-toku-kokunai", name: "国内電信級陸上特殊無線技士", sub: "2026年2月・6月 法規の全24問", domain: "electrical" },
   { code: "koku-toku", name: "航空特殊無線技士", sub: "2026年2月・6月 法規・無線工学の全48問", domain: "electrical" },
+  { code: "kai-toku2", name: "第二級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記 確認済み48問", domain: "electrical" },
   { code: "kai-toku3", name: "第三級海上特殊無線技士", sub: "2022年10月・2023年2月の旧筆記試験60問", domain: "electrical" },
   { code: "chosashi", name: "土地家屋調査士", sub: "令和7・6年度 午前・午後（択一・記述）", domain: "money" },
   { code: "chusho-kigyo-shindanshi", name: "中小企業診断士", sub: "第1次試験・2026／2025年度 全7科目", domain: "money" },

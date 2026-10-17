@@ -1,0 +1,117 @@
+{
+  "base": "8fc0646606da456b8d49d107964f200237636d3b",
+  "branch": "codex/native166-next-20261015",
+  "scope": "Separate next166 local candidate only: maritime3 seventy, historical land-special2 forty-eight and land-special3 forty-eight",
+  "sourceDataCommits": [
+    "2d7215c7b0d094b1c5f71130ca5d5452ceb4d28f",
+    "3b54032d3de9a182ef9f7b83e1f1345f6d326505",
+    "b22172b1cd627d1666fc8663015508d605b1e992"
+  ],
+  "files": [
+    {
+      "path": "__tests__/native166-integration.test.ts",
+      "sha256": "8cce9d604cd6d5d968ad2434bca4c747175881366bd7abbd2bf0d770a0199583"
+    },
+    {
+      "path": "__tests__/native338-integration.test.ts",
+      "sha256": "d34f762ab2b2ccd9a9c06df5ccde8fd036fbc3481d83ef22b5a7a366a28ea0e9"
+    },
+    {
+      "path": "__tests__/questions/get-questions.test.ts",
+      "sha256": "28e815ee1e3895330203c6b6446236368c612ffadadd0cfc8d3a039fbecbf224"
+    },
+    {
+      "path": "app/[exam]/[yearSeason]/page.tsx",
+      "sha256": "38a2479a82acba93c4ef78992b2adc27ffaebb0ce2773c622811163e9c8c2ce7"
+    },
+    {
+      "path": "app/api/search/questions/route.ts",
+      "sha256": "4366072878e11ba4f2208082ea24440427a49adb6cff71f8c86dc7abc42bee36"
+    },
+    {
+      "path": "app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx",
+      "sha256": "2d4b989e08f7dcc41544116e72abf4eca6262d4ba3a224aa9fc6aa6f6dc96450"
+    },
+    {
+      "path": "components/search/SearchClient.tsx",
+      "sha256": "17132cea55b0013b9c374f92c71bd80078ea2e5bf02b4f5b61e58b600ffcf1a5"
+    },
+    {
+      "path": "data/questions/index.ts",
+      "sha256": "ffabde4ffbab6157e74172ff941a6a024957f612e274357e49eef1ad9268caa0"
+    },
+    {
+      "path": "docs/evidence/native166-next-integration/CONNECTION-PATHS.json",
+      "sha256": "ed7c16843d65cbb2e342a835ba4f965135eacc4426c0b2880e488631f2052de3"
+    },
+    {
+      "path": "docs/evidence/native166-next-integration/IMMUTABLE-INPUT-SUMMARY.json",
+      "sha256": "c737cfcd82a76e07c70515005ca4301402a287c997f671164252cb79d9261d00"
+    },
+    {
+      "path": "docs/evidence/native166-next-integration/INPUT-ACCEPTANCES.json",
+      "sha256": "eaefe36596dcad4dd8dc2f5d755ed6da59c98c237a5acf1920264caf599ae72a"
+    },
+    {
+      "path": "docs/evidence/native166-next-integration/VALIDATION.json",
+      "sha256": "9bb589efc99d507f9773874009e1b56ce061ec53c5e493b08da9d5742eec00b5"
+    },
+    {
+      "path": "lib/exam-config.ts",
+      "sha256": "83b7ea174bc57f98b49e2d13d7b144e47a89484f772fb406ebb36ecc94a568b7"
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "sha256": "711aa731a83acc8cb77747206efae3c71bd8d3afb0c4fe8be87a921e4b7f5d32"
+    },
+    {
+      "path": "lib/questions/display.ts",
+      "sha256": "bbd7f66b77404f09f4490f3073851ca1d0834ade23f28f0737dd76c495bf134a"
+    },
+    {
+      "path": "lib/questions/filter.ts",
+      "sha256": "84cd0c0ef2a80d0fe613e6ea3d6a00888cafa7f3ad5ba1691dccbc1126c27273"
+    },
+    {
+      "path": "lib/questions/get-questions.ts",
+      "sha256": "39525d311327e59398f5ea9ead1e6feeb3e04676eb540e7f843f723552e4138f"
+    },
+    {
+      "path": "lib/questions/practice-session.ts",
+      "sha256": "3873ee4ee60d1f5047d7847cd7b82b6736c3d08a3cd4461a478d0f610de0ec07"
+    },
+    {
+      "path": "lib/questions/types.ts",
+      "sha256": "365c6cf0e6e3149fb051cea4f3d82192642d14309aa112af6d0156bd0908ad4d"
+    },
+    {
+      "path": "lib/seo/exam-meta.ts",
+      "sha256": "b7f4feca53c75fa662f551ced70b6531ac70940dbe4af6a28204d45d660f908c"
+    },
+    {
+      "path": "lib/seo/exam-resources.ts",
+      "sha256": "d8e1126cc2fff6866ae1e443e48b8f0e5e8390cf3a189f62dd0353ad394170ef"
+    },
+    {
+      "path": "lib/seo/question-jsonld.ts",
+      "sha256": "2838d3ece8d7c87fa19935f3f2ace3a6ced68ddfc140f5b98df5a04b4aa96fa6"
+    },
+    {
+      "path": "lib/seo/question-url.ts",
+      "sha256": "4f26b14564462ebaa32098c8a0225a249e43a1565d2a7b3baf98ca1580b81419"
+    },
+    {
+      "path": "lib/utils.ts",
+      "sha256": "68a6b5c1cfa597218dbcf2e5f0397feee15f4ecefe63b0cd74578630e6387fa9"
+    },
+    {
+      "path": "scripts/validate-questions.ts",
+      "sha256": "b3134733011d92b3aa270c5e1e8b31a1ce23f68e8a6ceab875536d2ac62f2951"
+    }
+  ],
+  "originalDataFilesChanged": 0,
+  "fullBuildRuns": 0,
+  "publicationApproval": false,
+  "historicalPublicationRightsDecision": false,
+  "legacyApiV1Changed": false
+}

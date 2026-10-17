@@ -31,6 +31,7 @@ export async function generateMetadata({
 }
 
 const VALID_EXAMS: ExamCode[] = [
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "land-special2", "land-special3", "kai-toku2",
   "riku-toku-kokunai",
   "kai-toku3",
   "koku-toku",
@@ -58,7 +59,7 @@ function isExamCode(s: unknown): s is ExamCode {
 }
 
 function sessionLabel(session: Session): string {
-  if (session === "houki" || session === "kogaku") return practiceSessionLabel(session);
+  if (session === "houki" || session === "kogaku" || session === "kiso" || session === "kogaku-a" || session === "kogaku-b") return practiceSessionLabel(session);
   if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);
   if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
   switch (session) {
@@ -182,7 +183,7 @@ export default async function YearModePage({
                       {label} {sessionLabel(item.session)}
                     </div>
                     <div className="mt-1 text-lg font-bold text-primary">
-                      {formatYearSeason(item.year, item.season)}
+                      {exam === "riku-tech1" && item.season === "july" ? `${item.year}年7月試験` : formatYearSeason(item.year, item.season)}
                     </div>
                     <div className="mt-1 text-xs text-muted-foreground">
                       収録 {item.count} 問

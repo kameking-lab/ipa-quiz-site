@@ -4,8 +4,22 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "riku-tech2": async () => isExamPublished("riku-tech2") ? (await import("@/data/questions/riku-tech2")).RIKU_TECH2_QUESTIONS : [],
+  "amateur2": async () => isExamPublished("amateur2") ? (await import("@/data/questions/amateur2")).AMATEUR2_QUESTIONS : [],
+  "maritime-radar": async () => isExamPublished("maritime-radar") ? (await import("@/data/questions/maritime-radar")).MARITIME_RADAR_QUESTIONS : [],
+  "amateur1": async () => isExamPublished("amateur1") ? (await import("@/data/questions/amateur1")).AMATEUR1_QUESTIONS : [],
+  "maritime-special1": async () => isExamPublished("maritime-special1") ? (await import("@/data/questions/maritime-special1")).MARITIME_SPECIAL1_QUESTIONS : [],
+  "aviation-comm": async () => isExamPublished("aviation-comm") ? (await import("@/data/questions/aviation-comm")).AVIATION_COMM_QUESTIONS : [],
+  "maritime2": async () => isExamPublished("maritime2") ? (await import("@/data/questions/maritime2")).MARITIME2_ALL_QUESTIONS : [],
+  "maritime3": async () => isExamPublished("maritime3") ? (await import("@/data/questions/maritime3")).MARITIME3_QUESTIONS : [],
+  "land-special2": async () => isExamPublished("land-special2") ? (await import("@/data/questions/land-special2")).LAND_SPECIAL2_QUESTIONS : [],
+  "land-special3": async () => isExamPublished("land-special3") ? (await import("@/data/questions/land-special3")).LAND_SPECIAL3_QUESTIONS : [],
+  "riku-tech1": async () => isExamPublished("riku-tech1") ? (await import("@/data/questions/riku-tech1")).RIKU_TECH1_QUESTIONS : [],
+  "maritime4": async () => isExamPublished("maritime4") ? (await import("@/data/questions/maritime4")).MARITIME4_QUESTIONS : [],
   "riku-toku-kokunai": async () => isExamPublished("riku-toku-kokunai") ? (await import("@/data/questions/riku-toku-kokunai")).RIKU_TOKU_KOKUNAI_QUESTIONS : [],
   "koku-toku": async () => isExamPublished("koku-toku") ? (await import("@/data/questions/koku-toku")).KOKU_TOKU_QUESTIONS : [],
+  "land-special1": async () => isExamPublished("land-special1") ? (await import("@/data/questions/land-special1")).LAND_SPECIAL1_QUESTIONS : [],
+  "kai-toku2": async () => isExamPublished("kai-toku2") ? (await import("@/data/questions/kai-toku2")).KAI_TOKU2_ALL_QUESTIONS : [],
   "kai-toku3": async () => isExamPublished("kai-toku3") ? (await import("@/data/questions/kai-toku3")).KAI_TOKU3_QUESTIONS : [],
   chosashi: async () => isExamPublished("chosashi") ? (await import("@/data/questions/chosashi")).CHOSASHI_QUESTIONS : [],
   riyoshi: async () => isExamPublished("riyoshi") ? (await import("@/data/questions/riyoshi")).RIYOSHI_QUESTIONS : [],
