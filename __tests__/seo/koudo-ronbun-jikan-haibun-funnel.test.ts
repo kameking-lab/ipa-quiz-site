@@ -7,16 +7,7 @@ import {
 } from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
-// 論述区分（ST/SA/PM/SM/AU）の午後II論文は「120分で手書き3,000字前後を書き切る」試験で、
-// コーパスは繰り返し「最大の壁」と述べるのに、その 120 分をどう配分するかを正面から扱う
-// 専用記事が不在だった（gogo-jikan-haibun は ap/nw/db の記述式のみ・論文区分は対象外）。
-// 旗艦=午後AI採点は論文5区分で実データがあるため、本記事は旗艦 /essay へ参考評価で funnel する。
-// これが
-// (1) cross-区分の general 記事（単一 exam を持たない）として登録され、
-// (2) SSOT の字数・時間（120分・設問ア600〜800字/イ1,600字前後/ウ600〜800字・合計3,000字前後）と一致し、
-// (3) 旗艦 /essay へ参考評価を明記して funnel し、
-// (4) 親記事 koudo-ronjutsu-kakikata-kotsu から inbound を受け orphan 化せず、
-// (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
+// 制度・試験形式の事実確認を維持し、論述導線はIPA公式資料へ案内する。
 
 const SLUG = "koudo-ronbun-jikan-haibun";
 const PARENT = "koudo-ronjutsu-kakikata-kotsu";
@@ -48,11 +39,11 @@ describe("論文(午後II)時間配分記事の事実性と旗艦 funnel", () =>
     expect(body).toContain("選択10分・骨子20分・執筆80分・見直し10分");
   });
 
-  it("旗艦 /essay へ参考評価を明記して funnel している", () => {
+  it("IPA公式資料 /essay へを明記して funnel している", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).toContain("](/essay)");
     // 誇大回避: 採点は参考評価（IPA 採点基準は非公開）であることを明記
-    expect(body).toContain("参考評価");
+    expect(body).toContain("IPA 公式の午後II過去問・解答例・採点講評");
     expect(body).toContain("非公開");
     // 採点制度（評価ランク）記事へも導線
     expect(body).toContain("/blog/koudo-ronbun-hyouka-rank");

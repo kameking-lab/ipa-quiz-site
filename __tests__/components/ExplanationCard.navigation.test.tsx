@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { ExplanationCard } from "@/components/quiz/ExplanationCard";
 import type { Question } from "@/lib/questions/types";
 
@@ -54,5 +54,28 @@ describe("ExplanationCard learning continuity", () => {
     expect(selectedReason).toHaveTextContent("選択した誤答に固有の理由");
     expect(selectedReason.compareDocumentPosition(screen.getByRole("region", { name: "不正解の解説" }).querySelector('[aria-label="選択肢ごとの解説"]')!))
       .toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  it("puts the answer and selected wrong-choice reason before the full explanation, with one AI entry", () => {
+    const onAnalyzeWrong = vi.fn();
+    const onAskAI = vi.fn();
+    render(<ExplanationCard {...props} selected="ア" isCorrect={false} onAnalyzeWrong={onAnalyzeWrong} onAskAI={onAskAI} />);
+    const conclusion = screen.getByText("結論: 正解はイです。");
+    const selectedReason = screen.getByRole("region", { name: "あなたが選んだ誤答の理由" });
+    const fullExplanation = screen.getByText(question.explanation);
+    const aiButton = screen.getByRole("button", { name: "まだ分からない点を聞く" });
+    const elements = [conclusion, selectedReason, fullExplanation, aiButton];
+    for (let index = 0; index < elements.length - 1; index += 1) {
+      expect(elements[index]?.compareDocumentPosition(elements[index + 1]!)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+    }
+    expect(screen.getAllByRole("button", { name: "まだ分からない点を聞く" })).toHaveLength(1);
+    fireEvent.click(aiButton);
+    expect(onAnalyzeWrong).toHaveBeenCalledOnce();
+    expect(onAskAI).not.toHaveBeenCalled();
+  });
+  it("keeps the shared AI question action when no wrong-answer handler is supplied", () => {
+    const onAskAI = vi.fn();
+    render(<ExplanationCard {...props} selected="ア" isCorrect={false} onAskAI={onAskAI} />);
+    fireEvent.click(screen.getByRole("button", { name: "まだ分からない点を聞く" }));
+    expect(onAskAI).toHaveBeenCalledOnce();
   });
 });

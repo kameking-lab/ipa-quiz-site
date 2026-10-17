@@ -25,7 +25,6 @@ import {
 import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
-import { getAllEssayQuestions } from "@/lib/essay/load";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import { FP1_APPLIED_EDITIONS, fp1AppliedQuestionPath, getFp1AppliedEdition } from "@/lib/fp1/applied";
@@ -254,19 +253,6 @@ function getTopicHubRoutes(): UrlEntry[] {
 // orphaned /sitemap/essays.xml and /sitemap/success-stories.xml routes are
 // deleted too (phase 11 / E-2).
 
-// 旗艦＝午後II論述 AI 採点の個別問題ページ /essay/{exam}/{id}。これらは
-// app/essay/[exam]/[questionId]/page.tsx で robots 無指定＝indexable・自己 canonical・
-// SSR で問題本文を出力し、/essay ハブ（STATIC_ROUTES）からリンクされる実コンテンツ。
-// /essays（複数形・noindex の架空サンプル）とは別物。indexable なのに sitemap 未掲載
-// だった矛盾を解消し、旗艦の deep ページのクロール発見性を確保する。
-function getEssayRoutes(): UrlEntry[] {
-  return getAllEssayQuestions().map((q) => ({
-    url: `${SITE_BASE_URL}/essay/${q.exam}/${q.id}`,
-    changeFrequency: "yearly",
-    priority: 0.6,
-  }));
-}
-
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -329,7 +315,6 @@ export function renderMainSitemapXml(): string {
   const now = new Date().toISOString();
   return renderUrlSet([
     ...STATIC_ROUTES.map((r) => ({ lastModified: now, ...r })),
-    ...getEssayRoutes().map((r) => ({ lastModified: now, ...r })),
   ]);
 }
 

@@ -56,7 +56,7 @@ const SECONDARY_NAV: { href: string; label: string; icon: React.ComponentType<{ 
   { href: "/success-stories", label: "学習例（架空）", icon: Trophy },
   { href: "/why-kakomon-ai", label: "過去問AIを選ぶ理由", icon: HelpCircle },
   { href: "/features", label: "機能特集", icon: Sparkles },
-  { href: "/essays", label: "論述例", icon: FileText },
+  { href: "/essay", label: "午後の公式過去問", icon: FileText },
   { href: "/recommended-books", label: "推薦書籍", icon: BookOpen },
   { href: "/settings", label: "設定", icon: Settings },
 ];

@@ -244,7 +244,7 @@ export default async function KeywordPage({
           このトピックの過去問でアウトプットしましょう
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          AI コパイロットに『このトピックの典型問題を 1 問つくって』と頼むと、その場で類題演習ができます。
+          関連する過去問を解き、分からない用語や選択肢は AI コパイロットに質問できます。
         </p>
         <Button asChild variant="primary" size="md" className="mt-3">
           <Link href={`/${page.exams[0]}`}>

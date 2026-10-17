@@ -18,6 +18,13 @@ test("FP2 academic question keeps text choices, figure crop and per-choice expla
   await page.goto("/q/fp2/2024-may/gakka/q53");
   await expect(page.getByText(/親族関係図/).first()).toBeVisible();
   await expect(page.getByRole("img", { name: /問53|図表/ }).first()).toBeVisible();
-  await expect(page.getByText(/妻Cは配偶者なので常に相続人/)).toBeVisible();
-  await expect(page.getByText(/代襲相続人/).first()).toBeVisible();
+  const explanation = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanation.locator("details").first()).not.toHaveAttribute("open");
+  const choices = page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio");
+  await expect(choices).toHaveCount(4);
+  await choices.first().click();
+  await expect(explanation.locator("details").first()).toHaveAttribute("open", "");
+  await expect(explanation.locator("dd")).toHaveCount(4);
+  await expect(explanation.getByText(/妻Cは配偶者なので常に相続人/)).toBeVisible();
+  await expect(explanation.getByText(/代襲相続人/).first()).toBeVisible();
 });

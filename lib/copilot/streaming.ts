@@ -25,7 +25,7 @@ export interface CopilotStreamInput {
    * frozen the moment the response completes — anything still in flight at
    * close() is silently dropped.
    */
-  onComplete?: (outputChars: number, usage?: StreamCompletion) => void | Promise<void>;
+  onComplete?: (outputChars: number, usage?: StreamCompletion, result?: { text: string; complete: boolean }) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -64,6 +64,9 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
   let producedAnyChunk = false;
   let producedChars = 0;
   let responseText = "";
+  let streamedText = "";
+  let completed = false;
+  let cancelled = false;
   let usage: StreamCompletion | undefined;
 
   return new ReadableStream<Uint8Array>({
@@ -78,6 +81,10 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           // controller may already be closed if the client disconnected mid-flight
         }
       };
+      const emit = (text: string) => {
+        controller.enqueue(encoder.encode(text));
+        streamedText += text;
+      };
       try {
         for await (const chunk of provider.streamChat({
           system,
@@ -91,13 +98,15 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           producedAnyChunk = true;
           producedChars += chunk.length;
           responseText += chunk;
-          controller.enqueue(encoder.encode(chunk));
+          emit(chunk);
         }
         if (usage?.truncated) {
-          controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
+          emit("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。");
         }
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
-        controller.enqueue(encoder.encode(usedFooter || CITATION_UNVERIFIED_NOTICE));
+        emit(usedFooter || CITATION_UNVERIFIED_NOTICE);
+        completed = responseText.trim().length > 0 && !usage?.truncated && !upstreamAbort.signal.aborted
+          && (provider.name === "mock" || usage?.finishReason === "STOP");
       } catch (err) {
         const aborted =
           (err as { name?: string } | null)?.name === "AbortError" ||
@@ -123,7 +132,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           : "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。";
 
         try {
-          controller.enqueue(encoder.encode(fallback));
+          emit(fallback);
         } catch {
           // controller may already be closed if the client disconnected mid-error
         }
@@ -136,7 +145,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          await onComplete?.(producedChars, usage);
+          await onComplete?.(producedChars, usage, { text: streamedText, complete: completed && !cancelled && !upstreamAbort.signal.aborted });
         } catch {
           // ignore
         }
@@ -144,6 +153,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
       }
     },
     cancel() {
+      cancelled = true;
       upstreamAbort.abort();
       clearTimeout(timeoutHandle);
     },

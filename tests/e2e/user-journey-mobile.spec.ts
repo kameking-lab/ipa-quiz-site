@@ -23,10 +23,12 @@ test.describe("user journey: mobile viewport (375x667)", () => {
     expect(await hasNoHorizontalOverflow(page)).toBe(true);
   });
 
-  test("essay page /essays/sc/2025-spring/pm2/q1 industry selector visible on mobile", async ({ page }) => {
+  test("retired essay page opens the official past-paper guide on mobile", async ({ page }) => {
     await page.goto("/essays/sc/2025-spring/pm2/q1");
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(group).toBeVisible();
+    await expect(page).toHaveURL(/\/essay$/);
+    await expect(page.getByRole("heading", { name: "午後II 論述の公式過去問", exact: true })).toBeVisible();
+    await expect(page.getByRole("group", { name: "業種選択" })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "IPA の過去問題一覧", exact: true })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html");
     expect(await hasNoHorizontalOverflow(page)).toBe(true);
   });
 

@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { questionPagePath } from "@/lib/seo/question-url";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
+import { choiceShortcutIndex, choiceShortcutLabel, shortcutHelpRows, shouldIgnoreQuizShortcut } from "@/lib/quiz/shortcuts";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
@@ -18,7 +19,7 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
-import { GenerateSimilar } from "./GenerateSimilar";
+import { useCopilotBreakpointDismiss } from "./QuestionCopilotFollowup";
 import {
   CopilotMobileSheet,
   CopilotDesktopFloating,
@@ -67,6 +68,10 @@ interface Props {
   completionLabel?: string;
   completionShareHref?: string;
   onNext: () => void;
+  onComplete?: () => void;
+  onDeferQuestion?: (questionId: string) => void;
+  deferredQuestionCount?: number;
+  onResumeDeferred?: () => void;
 }
 
 
@@ -81,6 +86,10 @@ export function QuizPlayer({
   completionLabel,
   completionShareHref,
   onNext,
+  onComplete,
+  onDeferQuestion,
+  deferredQuestionCount,
+  onResumeDeferred,
 }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
@@ -90,10 +99,15 @@ export function QuizPlayer({
   const [numericSelected, setNumericSelected] = React.useState<string | undefined>(undefined);
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const [gaveUp, setGaveUp] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
+  const [deferredCount, setDeferredCount] = React.useState(0);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
+  const [copilotSurface, setCopilotSurface] = React.useState<"desktop" | "mobile" | null>(null);
+  const copilotTriggerRef = React.useRef<HTMLElement | null>(null);
+  const explainedWrongQuestionRef = React.useRef<string | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
   const [showSwipeHint, setShowSwipeHint] = React.useState(false);
@@ -102,15 +116,21 @@ export function QuizPlayer({
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
   const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
+  const [historyRecordingEnabled, setHistoryRecordingEnabled] = React.useState(true);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
-    const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
-    if (!alreadyShown) {
-      setShowSwipeHint(true);
-      localStorage.setItem(LS_KEYS.swipeHintShown, "true");
+    setHistoryRecordingEnabled(readSettings().recordHistory);
+    try {
+      const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
+      if (!alreadyShown) {
+        setShowSwipeHint(true);
+        localStorage.setItem(LS_KEYS.swipeHintShown, "true");
+      }
+    } catch {
+      // The optional hint must not block practice when browser storage is full.
     }
   }, []);
 
@@ -125,20 +145,23 @@ export function QuizPlayer({
     });
   }, [question, mode, total]);
 
+  const sessionFinished = completed || (!question && index >= total && total > 0);
   React.useEffect(() => {
-    if (completed) return;
+    if (sessionFinished) return;
     const id = setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => clearInterval(id);
-  }, [completed]);
+  }, [sessionFinished]);
 
   React.useEffect(() => {
     if (!question) return;
+    setCompleted(false);
      
     setSelected(undefined);
     setPicked([]);
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
+    setGaveUp(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
   }, [question, history]);
@@ -158,6 +181,7 @@ export function QuizPlayer({
     setCopilotQuery(null);
     if (index + 1 >= total) {
       setCompleted(true);
+      onComplete?.();
       window.scrollTo?.({ top: 0, behavior: "instant" });
       return;
     }
@@ -166,7 +190,7 @@ export function QuizPlayer({
       questionStartRef.current?.focus({ preventScroll: true });
       questionStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
     });
-  }, [index, total, onNext]);
+  }, [index, total, onNext, onComplete]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean) => {
@@ -260,28 +284,59 @@ export function QuizPlayer({
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value));
   }, [question, revealed, commitAnswer]);
 
+  const onGiveUp = React.useCallback(() => {
+    if (!question || revealed) return;
+    setGaveUp(true);
+    commitAnswer("分からない", false);
+  }, [question, revealed, commitAnswer]);
+
+  const onDefer = React.useCallback(() => {
+    if (!question || revealed) return;
+    if (onDeferQuestion) {
+      onDeferQuestion(question.id);
+      return;
+    }
+    setDeferredCount((count) => count + 1);
+    goNext();
+  }, [question, revealed, goNext, onDeferQuestion]);
+
   const toggleStar = React.useCallback(() => {
     if (!question) return;
     const nowStarred = history.toggleStar(question.id);
     setStarred(nowStarred);
   }, [question, history]);
 
+  const openCopilot = React.useCallback((query: "why-wrong" | "open") => {
+    if (!question) return;
+    copilotTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const desktop = typeof window.matchMedia === "function"
+      ? window.matchMedia("(min-width: 640px)").matches : window.innerWidth >= 640;
+    setCopilotSurface(desktop ? "desktop" : "mobile");
+    const firstWrongRequest = query === "why-wrong" && explainedWrongQuestionRef.current !== question.id;
+    if (firstWrongRequest) explainedWrongQuestionRef.current = question.id;
+    setCopilotQuery(firstWrongRequest ? "why-wrong" : "open");
+  }, [question]);
+  const dismissCopilot = React.useCallback(() => {
+    setCopilotQuery(null);
+    copilotTriggerRef.current?.focus({ preventScroll: true });
+  }, []);
+  useCopilotBreakpointDismiss(copilotQuery ? copilotSurface : null, dismissCopilot);
+
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (!question || (question.exam === "chosashi" && question.type === "descriptive")) return;
-      if (e.target instanceof HTMLElement) {
-        const control = e.target.closest('input, textarea, select, button, summary, a, [contenteditable="true"], [role="dialog"]');
-        const choiceShortcut = !revealed && e.target.closest('[role="radio"], [role="checkbox"]') && CHOICE_SHORTCUTS.includes(e.key);
-        if (control && !choiceShortcut) return;
+      if (e.key === "Escape" && showKeyboardHelp) {
+        e.preventDefault();
+        setShowKeyboardHelp(false);
+        return;
       }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+R reloads, Ctrl/Cmd+1–4
-      // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (!revealed && question.type !== "ordering") {
-        const i = CHOICE_SHORTCUTS.indexOf(e.key);
-        if (i >= 0 && i < getChoiceKeys(question.choices).length) {
+      const choiceKeys = getChoiceKeys(question.choices);
+      const choiceIndex = choiceShortcutIndex(e.key, choiceKeys.length);
+      if (shouldIgnoreQuizShortcut(e, !revealed && choiceIndex >= 0)) return;
+      if (!revealed && question.type === "multiple-choice") {
+        if (choiceIndex >= 0) {
           e.preventDefault();
-          onSelect(getChoiceKeys(question.choices)[i]);
+          onSelect(choiceKeys[choiceIndex]);
           return;
         }
       } else if (revealed) {
@@ -357,10 +412,11 @@ export function QuizPlayer({
     );
   }
 
-  if (completed || (!question && index >= total && total > 0)) {
+  if (sessionFinished) {
     return (
       <QuizCompleteScreen
         stats={stats}
+        deferredCount={deferredQuestionCount ?? deferredCount}
         elapsed={elapsed}
         exam={exam}
         mode={mode}
@@ -370,16 +426,21 @@ export function QuizPlayer({
         learningUrl={tsuginoLearningUrl(question?.exam)}
         onReviewLast={question && !(question.exam === "chosashi" && question.type === "descriptive") && revealed ? () => {
           setCompleted(false);
-          setCopilotQuery("open");
+          openCopilot("open");
         } : undefined}
         onRetry={() => {
           setStats({ answered: 0, correct: 0 });
+          setDeferredCount(0);
           setElapsed(0);
           setSelected(undefined);
           setRevealed(false);
           router.push(backHref);
         }}
         onBack={() => router.push(backHref)}
+        onResumeDeferred={onResumeDeferred ? () => {
+          setCompleted(false);
+          onResumeDeferred();
+        } : undefined}
         backLabel={backLabel}
       />
     );
@@ -418,13 +479,13 @@ export function QuizPlayer({
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
-  const isCorrect = ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
+  const isCorrect = !gaveUp && (ordering ? isOrderingAnswerCorrect(question, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question, numericSelected ?? "") : multiSelect
     ? isCompleteSelectionCorrect(question.answer, picked, requiredSelections)
-    : isAcceptedAnswer(question.answer, selected);
-  const selectionLabel = ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
+    : isAcceptedAnswer(question.answer, selected));
+  const selectionLabel = gaveUp ? "分からない" : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
+    <div data-quiz-shortcuts-mode="main" className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
       <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
@@ -504,7 +565,7 @@ export function QuizPlayer({
               <NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} />
             ) : <div
               role={multiSelect ? "group" : "radiogroup"}
-              aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
+              aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー${choiceShortcutLabel(choiceCount)}で選択・解除）` : `選択肢（矢印キーで移動、数字キー${choiceShortcutLabel(choiceCount)}で選択）`}
               className="space-y-2"
             >
               {question.choices &&
@@ -528,6 +589,19 @@ export function QuizPlayer({
                 ))}
             </div>}
 
+            <p className="text-xs text-zinc-600 dark:text-zinc-400">
+              {historyRecordingEnabled
+                ? "回答履歴はこのブラウザに記録する設定です。ログイン時はクラウド同期の対象です。"
+                : "回答履歴の記録はオフです。復習予定や学習日などの情報は別に保存されます。"}
+            </p>
+
+            {!revealed && (
+              <div className="flex flex-wrap gap-2" aria-label="解答を保留する">
+                <Button type="button" variant="outline" className="h-auto max-w-full whitespace-normal py-2" onClick={onGiveUp}>分からない（解説を見る・誤答として扱う）</Button>
+                <Button type="button" variant="subtle" className="h-auto max-w-full whitespace-normal py-2" onClick={onDefer}>後回し（未回答のまま次へ）</Button>
+              </div>
+            )}
+
             <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
               {revealed
                 ? isCorrect
@@ -546,24 +620,23 @@ export function QuizPlayer({
                   onToggleStar={toggleStar}
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
-                  onAskAI={() => setCopilotQuery("open")}
+                  onAskAI={() => openCopilot("open")}
                   onAnalyzeWrong={
-                    !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
+                    !isCorrect ? () => openCopilot("why-wrong") : undefined
                   }
                 />
                 <Button asChild variant="outline" className="w-full sm:w-auto">
-                  <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
+                  <Link href={`${questionPagePath(question)}#explanation`}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                {question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
 
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 sm:[@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
-                ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : ordering ? "各位置を選んで採点する / R でスター / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R でスター / ? でヘルプ" : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
+                ? "Enter / → で次の問題へ / R で苦手復習 / ? でヘルプ"
+                : ordering ? "各位置を選んで採点する / R で苦手復習 / ? でヘルプ" : numeric ? "数値を入力し、Enter または「採点する」で解答 / R で苦手復習 / ? でヘルプ" : `キーボード: ${choiceShortcutLabel(choiceCount)} で選択 / R で苦手復習 / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
@@ -571,7 +644,7 @@ export function QuizPlayer({
               </div>
             )}
             {showKeyboardHelp && (
-              <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
+              <KeyboardShortcutHelp choiceCount={question.type === "multiple-choice" ? choiceCount : 0} onClose={() => setShowKeyboardHelp(false)} />
             )}
           </div>
 
@@ -579,12 +652,13 @@ export function QuizPlayer({
 
       </div>
 
-      <CopilotDesktopFloating
+      {copilotQuery !== null && copilotSurface === "desktop" && <CopilotDesktopFloating
         question={question}
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
         defaultOpen={copilotQuery !== null}
+        onDismiss={dismissCopilot}
         headerRight={
           copilotQuery === "why-wrong" ? (
             <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] text-red-700 dark:bg-red-900 dark:text-red-200">
@@ -593,16 +667,17 @@ export function QuizPlayer({
           ) : null
         }
         key={`desktop-${question.id}-${copilotQuery ?? ""}`}
-      />
+      />}
 
-      <CopilotMobileSheet
+      {copilotQuery !== null && copilotSurface === "mobile" && <CopilotMobileSheet
         question={question}
         selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
         defaultOpen={copilotQuery !== null}
+        onDismiss={dismissCopilot}
         key={`mobile-${question.id}-${copilotQuery ?? ""}`}
-      />
+      />}
 
 
       <FireworksBurst
@@ -622,7 +697,7 @@ export function QuizPlayer({
   );
 }
 
-function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
+function KeyboardShortcutHelp({ choiceCount, onClose }: { choiceCount: number; onClose: () => void }) {
   return (
     <div
       role="dialog"
@@ -644,26 +719,12 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
         </button>
       </div>
       <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-xs">
-        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          1 / 2 / 3 / 4
-        </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">選択肢を選ぶ</dd>
-        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          Enter / →
-        </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">次の問題へ（解答後）</dd>
-        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          R
-        </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">スターをつける / 外す</dd>
-        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          Esc
-        </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">ダイアログを閉じる</dd>
-        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          ?
-        </dt>
-        <dd className="self-center text-zinc-600 dark:text-zinc-400">このヘルプを表示 / 非表示</dd>
+        {shortcutHelpRows("main", choiceCount).map(({ keys, description }) => (
+          <React.Fragment key={keys}>
+            <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">{keys}</dt>
+            <dd className="self-center text-zinc-600 dark:text-zinc-400">{description}</dd>
+          </React.Fragment>
+        ))}
       </dl>
     </div>
   );
@@ -676,6 +737,7 @@ const QUIZ_ORIGIN =
 
 export function QuizCompleteScreen({
   stats,
+  deferredCount = 0,
   elapsed,
   exam,
   mode,
@@ -687,8 +749,10 @@ export function QuizCompleteScreen({
   scheduleUrl,
   learningUrl,
   onReviewLast,
+  onResumeDeferred,
 }: {
   stats: { answered: number; correct: number };
+  deferredCount?: number;
   elapsed: number;
   exam: string;
   mode: string;
@@ -700,6 +764,7 @@ export function QuizCompleteScreen({
   scheduleUrl?: string;
   learningUrl?: string | null;
   onReviewLast?: () => void;
+  onResumeDeferred?: () => void;
 }) {
   const [copied, setCopied] = React.useState(false);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -744,13 +809,13 @@ export function QuizCompleteScreen({
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-            {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
+            {stats.answered === 0 ? "採点した問題はありません。" : accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
           </p>
         </div>
 
         <div className="mb-6 grid grid-cols-3 gap-3 text-center">
           <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
-            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{stats.answered === 0 ? "未採点" : `${accuracy}%`}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
@@ -762,8 +827,9 @@ export function QuizCompleteScreen({
             <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
           </div>
         </div>
+        {deferredCount > 0 && <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-300">後回し: {deferredCount}問（回答履歴には記録せず、未回答のまま残しています）</p>}
 
-        <div className="mb-6">
+        {stats.answered > 0 && <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
             <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X でシェア（結果・新しいタブで開く）" className={btnClass}>
@@ -782,9 +848,14 @@ export function QuizCompleteScreen({
           <span role="status" aria-live="polite" className="sr-only">
             {copied ? "結果 URL をコピーしました" : ""}
           </span>
-        </div>
+        </div>}
 
         <div className="flex flex-col gap-2">
+          {deferredCount > 0 && onResumeDeferred && (
+            <Button variant="primary" onClick={onResumeDeferred} className="w-full">
+              後回しの問題を解く（{deferredCount}問）
+            </Button>
+          )}
           {onReviewLast ? (
             <Button variant="outline" onClick={onReviewLast} className="w-full">
               <Sparkles className="h-4 w-4" aria-hidden="true" />

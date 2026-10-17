@@ -170,3 +170,13 @@ describe("/api/essay-grade — thinking budget と打ち切り開示", () => {
     expect(seen.cost[0].outputTokens).toBe(1491);
   });
 });
+vi.mock("@/lib/afternoon/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/afternoon/load")>("@/lib/afternoon/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findAfternoonQuestion: fixtures.findPublishedAfternoonFixture };
+});
+vi.mock("@/lib/essay/load", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/essay/load")>("@/lib/essay/load");
+  const fixtures = await import("./grade-lookup-fixtures");
+  return { ...actual, findEssayQuestion: fixtures.findPublishedEssayFixture };
+});

@@ -50,6 +50,35 @@ describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
     fireEvent.keyDown(window, { key: "0" });
     expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
   });
+  it("supports a fifth choice with 5 and shows the matching help label", () => {
+    render(<QuizPlayer question={{ ...question, answer: "オ", choices: { ...question.choices!, オ: "五" } }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "?" });
+    expect(document.querySelector('[role="dialog"]')?.textContent).toContain("1〜5");
+    fireEvent.keyDown(window, { key: "5" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
+
+  it("uses zero for the tenth of eleven choices and describes the ten-key limit", () => {
+    render(<QuizPlayer question={{ ...question, answer: "コ", choices: { ...question.choices!, オ: "五", カ: "六", キ: "七", ク: "八", ケ: "九", コ: "十", サ: "十一" } }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "?" });
+    expect(document.querySelector('[role="dialog"]')?.textContent).toContain("先頭10肢");
+    fireEvent.keyDown(window, { key: "0" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
+
+  it("supports required multi-selection with number shortcuts", () => {
+    render(<QuizPlayer question={{ ...question, answer: ["ア", "イ"], requiredSelections: 2 }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "1" });
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+    fireEvent.keyDown(window, { key: "2" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
+
+  it("does not turn a numeric entry into a choice when pressing a number", () => {
+    render(<QuizPlayer question={{ ...question, type: "numeric", answer: "42", numericAnswer: { format: "integer", unit: "個" } }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "1" });
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+  });
   it("Ctrl+R does not toggle the star (reload stays intact)", () => {
     render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={() => {}} />);
     // A single Ctrl+R must leave the star untouched (without the guard it would
@@ -79,9 +108,9 @@ describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
 
 it("does not advance after a revealed answer when a focused action receives Enter", () => {
   const onNext = vi.fn();
-  const { getAllByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
+  const { getByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
   fireEvent.keyDown(window, { key: "1" });
-  const action = getAllByRole("button").find((button) => button.textContent?.includes("AIに聞く"))!;
+  const action = getByRole("button", { name: "まだ分からない点を聞く" });
   action.focus();
   fireEvent.keyDown(action, { key: "Enter" });
   expect(onNext).not.toHaveBeenCalled();
@@ -92,4 +121,13 @@ it("preserves number shortcuts while an answer choice is focused", () => {
   choice.focus();
   fireEvent.keyDown(choice, { key: "2" });
   expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+});
+
+it("closes its own help with Escape while the help's close button is focused", () => {
+  const { getByRole, queryByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={() => {}} />);
+  fireEvent.keyDown(window, { key: "?" });
+  const close = getByRole("button", { name: "ショートカット一覧を閉じる" });
+  close.focus();
+  fireEvent.keyDown(close, { key: "Escape" });
+  expect(queryByRole("dialog", { name: "キーボードショートカット一覧" })).toBeNull();
 });

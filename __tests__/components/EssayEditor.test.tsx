@@ -83,13 +83,11 @@ describe("EssayEditor evaluation side effects", () => {
     {status: "unavailable", message: "内容未評価"},
     {gradingMode: "simplified", rank: "A", passProbability: 70, subResults: []},
     {status: "graded", gradingMode: "ai", questionId: "other", subResults: []},
-  ])("HTTP200 ungraded response preserves draft and usage/history", async body => {
+  ])("HTTP200 ungraded response preserves draft and history", async body => {
     const question = makeQuestion();
     const history = await import("@/lib/storage/essay-history");
-    const usage = await import("@/lib/storage/essay-rate-limit");
     const clear = vi.spyOn(history, "clearEssayDraft");
     const append = vi.spyOn(history, "appendEssayHistory");
-    const increment = vi.spyOn(usage, "incrementEssayUsage");
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify(body))));
     render(<EssayEditor question={question} />);
     const input = screen.getByLabelText("設問アの論述");
@@ -98,15 +96,16 @@ describe("EssayEditor evaluation side effects", () => {
     fireEvent.click(screen.getByRole("button", {name:"AI に採点してもらう"}));
     await waitFor(() => expect(screen.getByText(/内容の評価を確認できませんでした/)).toBeInTheDocument());
     expect(input).toHaveValue(answer);
-    expect(clear).not.toHaveBeenCalled(); expect(append).not.toHaveBeenCalled(); expect(increment).not.toHaveBeenCalled();
+    expect(clear).not.toHaveBeenCalled(); expect(append).not.toHaveBeenCalled();
     vi.restoreAllMocks(); vi.unstubAllGlobals();
   });
 });
 
-it("genuine AI evaluation alone consumes local usage and appends history", async () => {
+it("genuine AI evaluation appends history", async () => {
   const q=makeQuestion();
-  const history=await import("@/lib/storage/essay-history"); const usage=await import("@/lib/storage/essay-rate-limit");
-  const clear=vi.spyOn(history,"clearEssayDraft"); const append=vi.spyOn(history,"appendEssayHistory"); const increment=vi.spyOn(usage,"incrementEssayUsage");
+  window.localStorage.setItem("ipa-quiz:essay-grading-usage:v1", JSON.stringify({ yearMonth: "2026-10", count: 3 }));
+  const history=await import("@/lib/storage/essay-history");
+  const clear=vi.spyOn(history,"clearEssayDraft"); const append=vi.spyOn(history,"appendEssayHistory");
   const body={status:"graded",gradingMode:"ai",questionId:q.id,industry:"it",rank:"B",passProbability:50,
     subResults:["ア","イ","ウ"].map(key=>({key,score:60,axes:{relevance:60,logic:60,concreteness:60,industryFit:60},goodPoints:[],improvements:[],missingElements:[],charCount:300})),overallAdvice:"学習用の内容評価",unnecessaryElements:[],gradedAt:"2026-10-08"};
   vi.stubGlobal("fetch",vi.fn().mockResolvedValue(new Response(JSON.stringify(body))));
@@ -115,7 +114,7 @@ it("genuine AI evaluation alone consumes local usage and appends history", async
   fireEvent.change(screen.getByLabelText("設問アの論述"),{target:{value:"答案".repeat(100)}});
   fireEvent.click(screen.getByRole("button",{name:"AI に採点してもらう"}));
   await waitFor(()=>expect(append).toHaveBeenCalledOnce());
-  expect(increment).toHaveBeenCalledOnce();expect(clear).toHaveBeenCalledOnce();
+  expect(clear).toHaveBeenCalledOnce();
   expect(screen.getByText("学習用の内容評価")).toBeInTheDocument();
   vi.restoreAllMocks();vi.unstubAllGlobals();
 });

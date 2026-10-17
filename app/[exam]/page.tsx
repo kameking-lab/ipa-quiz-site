@@ -79,6 +79,10 @@ const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
   (sum, edition) => sum + (getFp3PracticalEdition(edition)?.questions.length ?? 0), 0,
 );
 
+function fp3CoverageDescription(academicCount: number): string {
+  return `3級FP技能検定の公式公表問題を学科${academicCount}問・実技${fp3PracticalCount}問、計${academicCount + fp3PracticalCount}問収録。学科は年度別・分野別、実技は公表回別に問題と模範解答を確認できます。解説は当サイトの独自作成です。`;
+}
+
 interface RouteParams {
   exam: string;
 }
@@ -106,13 +110,15 @@ export async function generateMetadata({
   const title = examTopTitle(code);
   const description = code === "sharoushi"
     ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
-    : examMetaDescription(code, count);
+    : code === "fp3"
+      ? fp3CoverageDescription(count)
+      : examMetaDescription(code, count);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
     subtitle: `${examLabel(code)} 過去問一覧`,
     body: description,
-    count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0)),
+    count: String(count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : code === "fp3" ? fp3PracticalCount : 0)),
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
@@ -141,7 +147,10 @@ export default async function ExamTopPage({
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
   const code = exam as ExamCode;
   const questions = getQuestionsByExamStrict(code);
-  const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0);
+  const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : code === "fp3" ? fp3PracticalCount : 0);
+  const collectionDescription = code === "fp3"
+    ? fp3CoverageDescription(questions.length)
+    : examTopDescription(code, publishedOriginalCount);
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
     const sessions = [...new Set(items.map((q) => q.session))];
@@ -172,7 +181,7 @@ export default async function ExamTopPage({
     "@type": "Course",
     "@id": `${absUrl}#course`,
     name: `${examFullName(code)} 過去問学習コース`,
-    description: examTopDescription(code, publishedOriginalCount),
+    description: collectionDescription,
     url: absUrl,
     inLanguage: "ja",
     courseCode: code.toUpperCase(),
@@ -227,7 +236,7 @@ export default async function ExamTopPage({
         "@type": "CollectionPage",
         "@id": `${absUrl}#collection`,
         name: examTopTitle(code),
-        description: examTopDescription(code, publishedOriginalCount),
+        description: collectionDescription,
         url: absUrl,
         inLanguage: "ja",
         about: { "@id": credentialId },
@@ -316,9 +325,10 @@ export default async function ExamTopPage({
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
-            <Badge variant="outline">{years.length} 期分</Badge>
-            <Badge variant="outline">{categories.length} 分野</Badge>
+            <Badge variant="outline">{code === "fp3" ? "学科 " : ""}{years.length} 期分</Badge>
+            <Badge variant="outline">{code === "fp3" ? "学科 " : ""}{categories.length} 分野</Badge>
           </div>
+          {code === "fp3" && <p className="mt-2 text-sm text-muted-foreground">学科 {questions.length} 問・実技 {fp3PracticalCount} 問（合計 {publishedOriginalCount} 問）。学科演習と実技の問題一覧は下の入口から選べます。</p>}
           {code === "fp1" && <p className="mt-3 text-sm text-muted-foreground">金融財政事情研究会の1級学科試験を収録。2026年5月は基礎全50問と応用全15原問62回答欄、2026年9月は基礎全50問と応用全15原問57回答欄を掲載しています。</p>}
           {code === "fp1" && <p className="mt-3 text-sm">
             <Link href="/fp1/applied/202605" className="inline-flex min-h-[44px] items-center text-primary underline">2026年5月 学科応用編の問題一覧を見る（問51〜65・15原問・62回答欄）</Link>
@@ -466,7 +476,10 @@ export default async function ExamTopPage({
 
         {/* Progress */}
         <section aria-label="進捗" className="mb-8">
-          <ExamProgressBar exam={code} totalQuestions={questions.length} />
+          <div>
+            {code === "fp3" && <p className="mb-2 text-sm text-muted-foreground">学科の学習進捗（実技は含みません）</p>}
+            <ExamProgressBar exam={code} totalQuestions={questions.length} />
+          </div>
         </section>
 
         {/* Stats: pass rate / study hours / topic trend */}
@@ -609,10 +622,10 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        {/* High-level exam: AI essay / description grading CTA */}
+        {/* IPA が公開する午後問題の原本へ案内する。 */}
         {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
           <section
-            aria-label="AI 午後問題対策"
+            aria-label="午後の公式過去問"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
           >
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
@@ -622,56 +635,17 @@ export default async function ExamTopPage({
                 : "午後 記述対策"}
             </div>
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              AI 論述添削で午後問題対策
+              IPA 公式の午後過去問を確認
             </h2>
-            {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
-                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Button asChild variant="primary" size="sm">
-                    {/* 旗艦＝実際の IPA 午後II 過去問を AI 採点する indexable ハブ /essay
-                        (LearningResource/OG/sitemap 済・session34-36)。高オーソリティな
-                        試験ハブ(sitemap priority 0.9)から旗艦へ内部リンク equity を流す。
-                        /[exam]/afternoon は練習用モック(AI採点ベータ・HD-4)のため primary は旗艦に寄せる。 */}
-                    <Link href="/essay">
-                      実際の午後II過去問で AI 添削
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    {/* 練習用オリジナル問題（AI採点ベータ・モック=HD-4）。誇大回避のため
-                        旗艦の実過去問採点とは別物として「練習・ベータ」を明示する。 */}
-                    <Link href={`/${code}/afternoon`}>練習問題で腕試し（ベータ）</Link>
-                  </Button>
-                  <Button asChild variant="outline" size="sm">
-                    {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
-                  </Button>
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
-                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
-                    <Sparkles className="h-3.5 w-3.5" />
-                    Coming Soon
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    順次対応予定 — 通知を受け取るには
-                  </span>
-                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/settings#notifications">通知設定</Link>
-                  </Button>
-                </div>
-              </>
-            )}
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              IPA が公表した問題冊子・解答例・採点講評で、{examLabel(code)} の午後問題を確認できます。
+            </p>
+            <Button asChild variant="primary" size="sm">
+              <Link href={`/${code}/afternoon`}>
+                公式過去問の案内を見る
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
           </section>
         )}
 

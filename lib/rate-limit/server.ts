@@ -159,6 +159,8 @@ export interface RateLimitResult {
 
 export interface RateLimitOpts {
   ip: string;
+  /** AI route only: keep the minute burst limit without the legacy daily quota. */
+  skipDaily?: boolean;
   /** Set to true if the user has submitted feedback — grants near-unlimited daily quota. */
   feedbackSubmitted?: boolean;
   /**
@@ -171,16 +173,16 @@ export interface RateLimitOpts {
 
 /**
  * Server-side rate limit check.
- * - First 10 requests/day per IP are free for everyone.
- * - Once the user submits feedback, /api/contact issues a signed cookie and the
- *   daily limit jumps to 9999. 判定はサーバ署名の検証のみ（自己申告は不可）。
+ * - Web AI callers pass skipDaily and use the minute burst guard only.
+ * - Other callers retain the existing technical daily/IP guard. Signed feedback
+ *   tokens can relax that guard; self-reported feedback is not trusted.
  * - Minute burst limit applies to all.
  * - When KV_REST_API_URL/KV_REST_API_TOKEN are set, state is persisted in Upstash KV
  *   so the limit holds across serverless instances. Falls back to per-instance in-memory
  *   when KV is absent or unreachable.
  */
 export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResult> {
-  const { ip, feedbackSubmitted, feedbackTokenId } = opts;
+  const { ip, feedbackSubmitted, feedbackTokenId, skipDaily = false } = opts;
   const dailyLimit = feedbackSubmitted ? POST_FEEDBACK_DAILY_LIMIT : FREE_INITIAL_LIMIT;
   const now = Date.now();
   const minResetAt = now + WINDOW_MS_MINUTE;
@@ -191,11 +193,11 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
   // 解除が効いているときだけトークン単位でも数える（未解除なら 10 回枠の
   // 時点で頭打ちなので、数えても意味がない＝KV 往復を増やさない）。
   const tokenKey =
-    feedbackSubmitted && feedbackTokenId ? `rl:day:tok:${feedbackTokenId}` : null;
+    !skipDaily && feedbackSubmitted && feedbackTokenId ? `rl:day:tok:${feedbackTokenId}` : null;
 
   const [minCount, dayCount, tokenCount] = await Promise.all([
     peek(minKey, minuteBuckets),
-    peek(dayKey, dayBuckets),
+    skipDaily ? Promise.resolve(0) : peek(dayKey, dayBuckets),
     tokenKey ? peek(tokenKey, tokenBuckets) : Promise.resolve(0),
   ]);
 
@@ -209,7 +211,7 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
     };
   }
 
-  if (dayCount >= dailyLimit) {
+  if (!skipDaily && dayCount >= dailyLimit) {
     return {
       ok: false,
       remaining: 0,
@@ -233,7 +235,7 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
 
   await Promise.all([
     consume(minKey, minuteBuckets, WINDOW_MS_MINUTE, minResetAt),
-    consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
+    skipDaily ? Promise.resolve() : consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
     tokenKey
       ? consume(tokenKey, tokenBuckets, WINDOW_MS_DAY, dayResetAt)
       : Promise.resolve(),
@@ -241,9 +243,9 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
 
   return {
     ok: true,
-    remaining: dailyLimit - dayCount - 1,
-    limit: dailyLimit,
-    resetAt: dayResetAt,
+    remaining: skipDaily ? BETA_MINUTE_LIMIT - minCount - 1 : dailyLimit - dayCount - 1,
+    limit: skipDaily ? BETA_MINUTE_LIMIT : dailyLimit,
+    resetAt: skipDaily ? minResetAt : dayResetAt,
   };
 }
 

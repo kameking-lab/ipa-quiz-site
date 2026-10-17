@@ -17,12 +17,6 @@ import {
   clearEssayDraft,
   appendEssayHistory,
 } from "@/lib/storage/essay-history";
-import {
-  essayUsageRemaining,
-  incrementEssayUsage,
-  FREE_ESSAY_LIMIT_PER_MONTH,
-} from "@/lib/storage/essay-rate-limit";
-import { LS_KEYS } from "@/lib/storage/keys";
 import { isGradedEssay } from "@/lib/ai/grading-contract";
 import { EssayResultView } from "./EssayResultView";
 
@@ -54,23 +48,14 @@ export function EssayEditor({ question }: Props) {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<EssayGradingResult | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isPremium, setIsPremium] = useState(false);
-  const [remaining, setRemaining] = useState<number>(FREE_ESSAY_LIMIT_PER_MONTH);
 
-  // Hydrate draft + premium status from localStorage after mount (SSR-safe pattern).
+  // Hydrate the saved draft after mount.
   useEffect(() => {
     const draft = readEssayDraft(question.id);
     if (draft) {
       setIndustry((draft.industry as Industry) ?? "it");
       setAnswers({ ア: draft.ア ?? "", イ: draft.イ ?? "", ウ: draft.ウ ?? "" });
       setSavedAt(draft.updatedAt);
-    }
-    try {
-      const premium = window.localStorage.getItem(LS_KEYS.premium) === "1";
-      setIsPremium(premium);
-      setRemaining(premium ? Infinity : essayUsageRemaining(false));
-    } catch {
-      // ignore
     }
   }, [question.id]);
 
@@ -97,12 +82,6 @@ export function EssayEditor({ question }: Props) {
 
   const handleSubmit = useCallback(async () => {
     if (!canSubmit) return;
-    if (!isPremium && remaining <= 0) {
-      setError(
-        "今月の AI 添削上限（月3回）に達しました。翌月に利用枠が更新されます。",
-      );
-      return;
-    }
     setSubmitting(true);
     setError(null);
     setResult(null);
@@ -118,15 +97,11 @@ export function EssayEditor({ question }: Props) {
       }
       const data: unknown = await res.json();
       if (!isGradedEssay(data) || data.questionId !== question.id || data.industry !== industry) {
-        throw new Error("内容の評価を確認できませんでした。答案・利用回数・履歴は変更していません。");
+        throw new Error("内容の評価を確認できませんでした。答案と履歴は変更していません。");
       }
       setResult(data);
 
-      // Persist usage + history
-      if (!isPremium) {
-        const u = incrementEssayUsage();
-        setRemaining(Math.max(0, FREE_ESSAY_LIMIT_PER_MONTH - u.count));
-      }
+      // Persist the completed result in history.
       const totalScore = Math.round(
         data.subResults.reduce((acc, r) => acc + r.score, 0) /
           Math.max(data.subResults.length, 1),
@@ -158,7 +133,7 @@ export function EssayEditor({ question }: Props) {
     } finally {
       setSubmitting(false);
     }
-  }, [canSubmit, isPremium, remaining, question, industry, answers]);
+  }, [canSubmit, question, industry, answers]);
 
   return (
     <div data-study-presence-exam={question.exam} className="space-y-6">
@@ -206,15 +181,6 @@ export function EssayEditor({ question }: Props) {
               <Save className="h-3 w-3" />
               {savedAt ? `自動保存済 ${formatTime(savedAt)}` : "未保存"}
             </span>
-            <span>
-              {isPremium ? (
-                <Badge variant="success">無料で利用できます</Badge>
-              ) : (
-                <Badge variant={remaining > 0 ? "outline" : "danger"}>
-                  今月残り {remaining} / {FREE_ESSAY_LIMIT_PER_MONTH} 回
-                </Badge>
-              )}
-            </span>
           </div>
 
           {error && (
@@ -228,7 +194,7 @@ export function EssayEditor({ question }: Props) {
             type="button"
             variant="primary"
             size="lg"
-            disabled={!canSubmit || (!isPremium && remaining <= 0)}
+            disabled={!canSubmit}
             onClick={handleSubmit}
             className="w-full"
           >

@@ -6,18 +6,7 @@ import {
 } from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
-// 「応用情報 午後 解答例 / IPA 採点講評 / 午後 自己採点」は高インテント・競合薄
-// （道場はAP午後を採点しない）。既存の午後記事は「書き方／部分点／時間配分」を扱うが、
-// IPA公式の解答例・採点講評を「どこで入手し、どう自己採点に使うか」という access/discovery
-// インテントの専用ページが不在だった。新記事 gogo-kaitourei-jiko-saiten を追加した。
-// この記事が
-// (1) 午後対策/自己採点/解答例の記事として登録され、
-// (2) 核心（IPAが問題・配点割合・解答例・採点講評を無料公開・解答例は一例・部分点内訳は非公開）
-//     を述べ、公式入手先 ipa.go.jp へリンクし、
-// (3) 記述式区分（AP/NW/DB/SC/ES）はハブ＋AIコパイロットへ、論文区分（ST/SA/PM/SM/AU）は
-//     旗艦 /essay（参考評価）へ scope を分けて funnel し（誇大回避＝採点基準非公開を明記）、
-// (4) 既存 gogo-kijutsu-buhanten から inbound を受け orphan 化せず、
-// (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
+// 制度・試験形式の事実確認を維持し、論述導線はIPA公式資料へ案内する。
 
 const SLUG = "gogo-kaitourei-jiko-saiten";
 
@@ -54,12 +43,12 @@ describe("午後 解答例・自己採点記事の事実性と funnel", () => {
     }
   });
 
-  it("論文区分は旗艦 /essay（参考評価）へ送客し、採点基準が非公開である旨を明記する（誇大回避）", () => {
+  it("論文区分はIPA公式資料 /essayへ送客し、採点基準が非公開である旨を明記する（誇大回避）", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     // 論文区分の自己採点は旗艦 /essay（AI採点）へ
     expect(body).toContain("](/essay");
     // 参考評価＝断定しない／採点基準は IPA 非公開
-    expect(body).toContain("参考");
+    expect(body).toContain("IPA 公式の午後II過去問・解答例・採点講評");
     // 論文区分ハブも案内
     for (const hub of ["](/st", "](/sa", "](/pm", "](/sm", "](/au"]) {
       expect(body, `${hub} へのリンクが無い`).toContain(hub);

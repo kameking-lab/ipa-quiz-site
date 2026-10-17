@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
+  COPILOT_SYSTEM_PROMPT,
   QUICK_ACTIONS,
   INITIAL_QUESTION_EXAMPLES,
   type QuickActionId,
@@ -59,6 +60,11 @@ describe("QUICK_ACTIONS データ不変条件", () => {
 });
 
 describe("INITIAL_QUESTION_EXAMPLES データ不変条件", () => {
+  it("新しい試験問題の生成を案内しない", () => {
+    expect(COPILOT_SYSTEM_PROMPT).toContain("試験問題や類題を新しく作成しません");
+    expect(Object.keys(QUICK_ACTIONS)).not.toContain("similar");
+    expect(INITIAL_QUESTION_EXAMPLES.map((example) => `${example.label} ${example.prompt}`).join(" ")).not.toContain("類題");
+  });
   it("各サンプルは非空の label と prompt を持つ", () => {
     for (const ex of INITIAL_QUESTION_EXAMPLES) {
       expect(ex.label.trim().length).toBeGreaterThan(0);

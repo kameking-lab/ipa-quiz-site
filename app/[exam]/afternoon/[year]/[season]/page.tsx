@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, FileEdit } from "lucide-react";
+import { FileEdit } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -11,7 +11,6 @@ import {
   getAfternoonYearSeasons,
 } from "@/lib/afternoon/load";
 import { AfternoonPlayer } from "@/components/afternoon/AfternoonPlayer";
-import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { Badge } from "@/components/ui/badge";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
@@ -60,10 +59,13 @@ export async function generateMetadata({
     return { title: "午後問題が見つかりません", robots: { index: false } };
   }
   const yearNum = Number(year);
+  if (getAfternoonByYearSeason(exam as ExamCode, yearNum, season).length === 0) {
+    return { title: "午後問題が見つかりません", robots: { index: false } };
+  }
   const label = formatYearSeason(yearNum, season);
   const histLabel = examLabelAt(exam as ExamCode, yearNum, season);
-  const title = `【練習用】${label} ${histLabel} 午後問題（AI採点ベータ）`;
-  const description = `【練習用オリジナル問題】${label}実施の${histLabel}午後試験を模した記述式問題をAIが採点します。実際の出題ではありません。`;
+  const title = `${label} ${histLabel} 午後過去問`;
+  const description = `IPAが公表した${label}実施の${histLabel}午後問題を掲載しています。出典は各問題の公式資料で確認できます。`;
   return {
     title,
     description,
@@ -139,9 +141,8 @@ export default async function AfternoonPlayerPage({
           <div className="mb-3 flex flex-wrap items-center gap-2">
             <Badge variant="soft">
               <FileEdit className="h-3 w-3" />
-              練習用オリジナル問題
+              出典確認済みの過去問
             </Badge>
-            <Badge variant="warn">AI 採点ベータ</Badge>
           </div>
           <h1 className="text-balance text-xl font-bold tracking-tight text-foreground sm:text-2xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
@@ -151,28 +152,9 @@ export default async function AfternoonPlayerPage({
           </h1>
         </header>
 
-        <div
-          role="note"
-          className="mb-6 flex gap-3 rounded-2xl border border-warning/40 bg-warning/5 p-4 text-sm leading-relaxed text-foreground/90 dark:border-warning/30 dark:bg-warning/10"
-        >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-warning/20 text-warning dark:bg-warning/15">
-            <AlertTriangle className="h-4 w-4" />
-          </span>
-          <div className="space-y-1">
-            <p className="font-semibold text-foreground">練習用オリジナル問題です</p>
-            <p>
-              本ページの設問・題材・模範解答は、IPA 試験本番の出題傾向を模して作成した
-              <strong className="font-semibold">練習用オリジナル問題</strong>であり、
-              実際の試験で出題された問題ではありません。AI 採点機能の動作確認用としてご活用ください。
-              本番形式の学習には、実際の IPA 過去問（午前問題）をご利用ください。
-            </p>
-          </div>
-        </div>
-
-        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)の警告に続けて
-            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
-            AfternoonEssayHint が ESSAY_EXAM_CODES で self-gate＝非論述区分には出ない。 */}
-        <AfternoonEssayHint exam={code} />
+        <p className="mb-6 text-sm text-muted-foreground">
+          問題の出典と解答例は、各問題に記載した IPA 公式資料で確認できます。
+        </p>
 
         <AfternoonPlayer questions={questions} />
       </div>

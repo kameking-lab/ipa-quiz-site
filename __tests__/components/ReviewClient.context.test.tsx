@@ -44,7 +44,7 @@ describe("scoped review preserves mixed qualification history", () => {
     expect(screen.getByRole("combobox", { name: "復習する資格" })).toHaveValue("ip");
     expect(screen.getByRole("link", { name: "ITパスポートに戻る" })).toHaveAttribute("href", returnTo);
     fireEvent.click(screen.getByRole("button", { name: /ア / }));
-    fireEvent.click(screen.getByRole("button", { name: "✓ 正解した" }));
+    fireEvent.click(screen.getByRole("button", { name: "次へ" }));
     await screen.findByRole("button", { name: "もう一度" });
     fireEvent.click(screen.getByRole("button", { name: "もう一度" }));
     await screen.findByText(ip.question);
@@ -65,7 +65,7 @@ describe("scoped review preserves mixed qualification history", () => {
     await waitFor(() => expect(screen.getByRole("combobox")).toHaveValue(""));
     expect(createHistoryStore().getAnsweredIds()).toHaveLength(3);
   });
-  it("reveals the signed dental numeric answer, then advances and preserves history through self-assessment", async () => {
+  it("reveals signed dental numeric answers without inventing a grade or changing history", async () => {
     const numeric = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-c-q90");
     const following = SHIKA_ISHI_QUESTIONS.find((q) => q.id === "shika-ishi-2026-annual-mondai-d-q90");
     if (!numeric || !following) throw new Error("Missing approved dental numeric fixtures");
@@ -85,16 +85,16 @@ describe("scoped review preserves mixed qualification history", () => {
       expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toContain(ap.id);
       fireEvent.click(reveal);
       expect(screen.getByText(/正解: −2\.0 mm/)).toBeInTheDocument();
-      fireEvent.click(screen.getByRole("button", { name: "✓ 正解した" }));
+      fireEvent.click(screen.getByRole("button", { name: "次へ" }));
       expect(await screen.findByText("2 / 2")).toBeInTheDocument();
       fireEvent.click(screen.getByRole("button", { name: "解答・解説を見る" }));
       expect(screen.getByText(/正解: 50 %/)).toBeInTheDocument();
-      fireEvent.click(screen.getByRole("button", { name: "✗ 間違えた" }));
+      fireEvent.click(screen.getByRole("button", { name: "次へ" }));
       expect(await screen.findByRole("button", { name: "もう一度" })).toBeInTheDocument();
       const schedules = JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!) as Record<string, { level: number; correctStreak: number }>;
       expect(schedules[ap.id]).toEqual(otherSchedule);
-      expect(schedules[numeric.id]).toMatchObject({ level: 1, correctStreak: 1 });
-      expect(schedules[following.id]).toMatchObject({ level: 0, correctStreak: 0 });
+      expect(schedules[numeric.id]).toBeUndefined();
+      expect(schedules[following.id]).toBeUndefined();
       expect(localStorage.getItem(LS_KEYS.history)).toBe(beforeHistory);
     } finally {
       random.mockRestore();

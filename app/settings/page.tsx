@@ -37,7 +37,9 @@ import {
 import { CharacterSelector } from "@/components/character/CharacterSelector";
 import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore } from "@/lib/storage/history";
+import { exportLearningBackup, importLearningBackup, recoverLearningBackup } from "@/lib/storage/learning-backup";
 import { clearLastQuestion } from "@/lib/storage/last-question";
+import { clearQuizResume } from "@/lib/storage/quiz-resume";
 import { resetUserContext } from "@/lib/storage/user-context";
 import {
   readMotivationSettings,
@@ -58,12 +60,12 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 const SECTIONS = [
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
   { id: "character", label: "AIキャラ", icon: <Sparkles className="h-3.5 w-3.5" /> },
-  { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
+  { id: "quiz-options", label: "問題の出し方", icon: <Sliders className="h-3.5 w-3.5" /> },
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
   { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
-  { id: "history", label: "学習履歴管理", icon: <TrendingUp className="h-3.5 w-3.5" /> },
-  { id: "cloud-sync", label: "クラウド同期", icon: <Cloud className="h-3.5 w-3.5" /> },
-  { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
+  { id: "history", label: "学習の記録", icon: <TrendingUp className="h-3.5 w-3.5" /> },
+  { id: "cloud-sync", label: "別の端末に引き継ぐ", icon: <Cloud className="h-3.5 w-3.5" /> },
+  { id: "api-keys", label: "開発者向け", icon: <KeyRound className="h-3.5 w-3.5" /> },
 ] as const;
 
 function SectionTitle({
@@ -103,15 +105,16 @@ function SettingRow({
   // so without this the control has no accessible name (WCAG 4.1.2). Associate
   // the visible label with the control via aria-labelledby (name stays in sync).
   const labelId = useId();
+  const descriptionId = `${labelId}-description`;
   return (
     <div className="flex items-center justify-between gap-4 px-5 py-4">
       <div className="min-w-0 flex-1">
         <p id={labelId} className="text-sm font-medium text-foreground">{label}</p>
-        {description && <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
+        {description && <p id={descriptionId} className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
       </div>
       <div className="shrink-0">
-        {isValidElement<{ "aria-labelledby"?: string }>(children)
-          ? cloneElement(children, { "aria-labelledby": labelId })
+        {isValidElement<{ "aria-labelledby"?: string; "aria-describedby"?: string }>(children)
+          ? cloneElement(children, { "aria-labelledby": labelId, "aria-describedby": description ? descriptionId : undefined })
           : children}
       </div>
     </div>
@@ -139,10 +142,16 @@ export default function SettingsPage() {
   const [characterId, setCharacterId] = useState<CharacterId>(DEFAULT_CHARACTER_ID);
   const [characterEnabled, setCharacterEnabledState] = useState(true);
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
+  const [settingsReady, setSettingsReady] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-     
+    let recovered = false;
+    try { recovered = recoverLearningBackup(localStorage); } catch { /* Storage can be blocked entirely. */ }
+    if (!recovered) {
+      setToast({ type: "err", msg: "前の読込を完了できませんでした。元のデータは保持しています。" });
+      return;
+    }
     setSettings(readSettings());
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();
@@ -150,6 +159,7 @@ export default function SettingsPage() {
     const cs = readCharacterState();
     setCharacterId(cs.id);
     setCharacterEnabledState(cs.enabled);
+    setSettingsReady(true);
   }, []);
 
   function updateMotivation<K extends keyof MotivationSettings>(
@@ -183,16 +193,19 @@ export default function SettingsPage() {
   }
 
   function handleExport() {
-    const store = createHistoryStore();
-    const json = store.exportJson();
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `ipa-quiz-history-${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    showToast("ok", "履歴をエクスポートしました");
+    try {
+      const json = exportLearningBackup(localStorage);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `ipa-quiz-history-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("ok", "履歴と復習予定をファイルに保存しました");
+    } catch {
+      showToast("err", "ファイルに保存できませんでした。学習データは変更していません。");
+    }
   }
 
   function handleImport(e: React.ChangeEvent<HTMLInputElement>) {
@@ -202,24 +215,30 @@ export default function SettingsPage() {
     reader.onload = (ev) => {
       const text = ev.target?.result;
       if (typeof text !== "string") return;
-      const store = createHistoryStore();
-      const ok = store.importJson(text);
-      if (ok) {
-        setStats(store.getStats());
-        showToast("ok", "履歴をインポートしました");
-      } else {
-        showToast("err", "インポートに失敗しました（ファイル形式エラー）");
+      try {
+        const result = importLearningBackup(text, localStorage);
+        if (result.ok) {
+          setStats(createHistoryStore().getStats());
+          showToast("ok", result.legacy ? "ファイルの履歴に戻しました。復習予定はそのままです。" : "ファイルの履歴と復習予定に戻しました");
+        } else {
+          if (result.recoveryPending) setSettingsReady(false);
+          showToast("err", result.reason === "invalid" ? "ファイルを読めませんでした。学習データは変更していません。" : "読込を完了できませんでした。元のデータは保持しています。");
+        }
+      } catch {
+        showToast("err", "読込を完了できませんでした。元のデータは保持しています。");
       }
     };
+    reader.onerror = () => showToast("err", "ファイルを読めませんでした。学習データは変更していません。");
     reader.readAsText(file);
     e.target.value = "";
   }
 
   function handleReset() {
-    if (!window.confirm("学習履歴をすべて削除しますか？この操作は取り消せません。")) return;
+    if (!window.confirm("このブラウザの回答履歴・★苦手復習・続きから情報を削除しますか？復習予定・学習日・しおり・同期先の履歴は残ります。削除は取り消せません。")) return;
     const store = createHistoryStore();
     store.reset();
     clearLastQuestion();
+    clearQuizResume();
     setStats({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
     showToast("ok", "履歴を削除しました");
   }
@@ -227,14 +246,15 @@ export default function SettingsPage() {
   function handlePersonalContextReset() {
     if (
       !window.confirm(
-        "個人設定（訪問回数・続きから情報・おすすめ問題のシード）をリセットしますか？学習履歴は残ります。",
+        "訪問の記録と続きから情報を初期化しますか？回答履歴・★苦手復習・しおりは残ります。",
       )
     ) {
       return;
     }
     resetUserContext();
     clearLastQuestion();
-    showToast("ok", "個人設定をリセットしました");
+    clearQuizResume();
+    showToast("ok", "訪問の記録と続きから情報を初期化しました");
   }
 
   return (
@@ -258,10 +278,10 @@ export default function SettingsPage() {
             設定
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            設定とプリファレンス
+            設定
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            7 つのセクションで全機能を一元管理できます。
+            問題の出し方や、学習の記録を変更できます。
           </p>
         </header>
 
@@ -327,16 +347,17 @@ export default function SettingsPage() {
             <SectionTitle
               id="character"
               icon={<Sparkles className="h-5 w-5" />}
-              description="AI コパイロットの口調・キャラクター"
+              description="AIへの質問に答える口調を選べます"
             >
               AI キャラクター
             </SectionTitle>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="AI キャラクターを有効化"
-                description="OFF にすると従来のニュートラルな口調で応答します"
+                description="OFF にすると標準の口調で応答します"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={characterEnabled}
                   onCheckedChange={handleCharacterEnabledChange}
                 />
@@ -356,34 +377,37 @@ export default function SettingsPage() {
             <SectionTitle
               id="quiz-options"
               icon={<Sliders className="h-5 w-5" />}
-              description="出題ロジックと演出のカスタマイズ"
+              description="新しく始める通常クイズの設定です。年度別・復習・検索からの演習は対象外です。"
             >
-              クイズオプション
+              問題の出し方
             </SectionTitle>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
-                label="選択肢をランダム化"
+                label="選択肢を並べ替える"
                 description="ア〜エの順番を毎回入れ替えます"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={settings.randomizeChoices}
                   onCheckedChange={(v) => updateSetting("randomizeChoices", v)}
                 />
               </SettingRow>
               <SettingRow
-                label="直近 2 回を除外"
-                description="直近 2 回で正解した問題を出題から外します"
+                label="最近解いた問題を除く"
+                description="新しい通常クイズでは、直近40回の回答に含まれる問題を出題しません"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={settings.excludeRecent}
                   onCheckedChange={(v) => updateSetting("excludeRecent", v)}
                 />
               </SettingRow>
               <SettingRow
                 label="計算問題のみ"
-                description="isCalculation フラグが付いた問題だけ出題"
+                description="計算問題として登録された問題だけ出題します"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={settings.calculationOnly}
                   onCheckedChange={(v) => updateSetting("calculationOnly", v)}
                 />
@@ -393,15 +417,17 @@ export default function SettingsPage() {
                 description="3 連続以上で「ピロロロ」が鳴ります"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={motivation.soundEnabled}
                   onCheckedChange={(v) => updateMotivation("soundEnabled", v)}
                 />
               </SettingRow>
               <SettingRow
                 label="アニメーションを抑える"
-                description="花火やパーティクルを無効化（軽量モード）"
+                description="花火などの動く演出を表示しません"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={motivation.reduceMotion}
                   onCheckedChange={(v) => updateMotivation("reduceMotion", v)}
                 />
@@ -445,59 +471,63 @@ export default function SettingsPage() {
               icon={<TrendingUp className="h-5 w-5" />}
               description="ブラウザに保存された履歴の管理"
             >
-              学習履歴管理
+              学習の記録
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="学習履歴を記録する"
-                description="OFF にすると回答を localStorage に保存しません（プライバシー重視の方向け）"
+                description="OFF にすると新しい回答履歴を保存しません。これまでの履歴は残り、復習予定・学習日・★・しおり・続きから情報は別に保存されます。"
               >
                 <Switch
+                  disabled={!settingsReady}
                   checked={settings.recordHistory}
                   onCheckedChange={(v) => updateSetting("recordHistory", v)}
                 />
               </SettingRow>
               <div className="grid grid-cols-3 divide-x divide-border border-t border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
-                <Stat label="回答数" value={stats.total.toLocaleString("ja-JP")} />
-                <Stat label="問題数" value={stats.uniqueAnswered.toLocaleString("ja-JP")} />
+                <Stat label="回答数" value={settingsReady ? stats.total.toLocaleString("ja-JP") : "--"} />
+                <Stat label="問題数" value={settingsReady ? stats.uniqueAnswered.toLocaleString("ja-JP") : "--"} />
                 <Stat
                   label="正答率"
-                  value={stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"}
+                  value={settingsReady && stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"}
                   highlight
                 />
               </div>
               <div className="grid gap-2 p-4 sm:grid-cols-3">
-                <Button variant="outline" size="sm" className="gap-2" onClick={handleExport}>
+                <Button variant="outline" size="sm" className="gap-2" onClick={handleExport} disabled={!settingsReady}>
                   <Download className="h-4 w-4" />
-                  エクスポート
+                  ファイルに保存
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   className="gap-2"
                   onClick={() => fileInputRef.current?.click()}
+                  disabled={!settingsReady}
                 >
                   <Upload className="h-4 w-4" />
-                  インポート
+                  ファイルから戻す
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
                   className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
                   onClick={handleReset}
+                  disabled={!settingsReady}
                 >
                   <RotateCcw className="h-4 w-4" />
-                  リセット
+                  回答履歴を削除
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="gap-2"
                   onClick={handlePersonalContextReset}
-                  title="訪問回数 / 続きから情報 / おすすめ問題のシードを初期化"
+                  disabled={!settingsReady}
+                  title="訪問の記録と続きから情報だけを初期化"
                 >
                   <RotateCcw className="h-4 w-4" />
-                  個人設定をリセット
+                  訪問・続きからを初期化
                 </Button>
                 <input
                   ref={fileInputRef}
@@ -507,6 +537,7 @@ export default function SettingsPage() {
                   onChange={handleImport}
                 />
               </div>
+              <p className="px-4 pb-4 text-xs text-muted-foreground">履歴の削除では、回答履歴・★苦手復習・続きから情報が消えます。復習予定・学習日・しおり・同期先の履歴は残ります。ファイルに保存する内容は回答履歴・★・復習予定です。戻すとファイルの内容に置き換わります。以前の履歴ファイルも読み込め、復習予定はそのまま残ります。</p>
             </div>
           </section>
 
@@ -517,7 +548,7 @@ export default function SettingsPage() {
               icon={<Cloud className="h-5 w-5" />}
               description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意・サインインが必要）"
             >
-              クラウド同期
+              別の端末に引き継ぐ
             </SectionTitle>
             <CloudSyncPanel />
           </section>
@@ -527,9 +558,9 @@ export default function SettingsPage() {
             <SectionTitle
               id="api-keys"
               icon={<KeyRound className="h-5 w-5" />}
-              description="過去問AI Public API（β）のキーを発行・管理"
+              description="APIキー：外部のアプリから過去問AIを使うための専用の鍵"
             >
-              API キー管理
+              開発者向け（APIキー）
             </SectionTitle>
             <Link
               href="/settings/api-keys"

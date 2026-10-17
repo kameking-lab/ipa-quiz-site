@@ -7,7 +7,7 @@ import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { tierForModel } from "@/lib/ai/cost-tracker";
-import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import { captureException } from "@/lib/monitoring/sentry";
@@ -181,20 +181,9 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const feedbackToken = readFeedbackTokenInfo(req);
-  const feedbackSubmitted = feedbackToken.valid;
-  const rl = await checkRateLimit({
-    ip,
-    feedbackSubmitted,
-    feedbackTokenId: feedbackToken.id,
-  });
+  const rl = await checkRateLimit({ ip, skipDaily: true });
   if (!rl.ok) {
-    const message =
-      rl.reason === "daily"
-        ? feedbackSubmitted
-          ? "本日の採点上限に達しました。JST 0:00 にリセットされます。"
-          : "AI 採点の初回無料枠（10 回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
-        : "少し速いようです。1分ほど待ってから再度お試しください。";
+    const message = "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
       { status: 429, headers: { "X-Error-Type": "rate_limited" } },
@@ -233,10 +222,12 @@ export async function POST(req: Request) {
   if (!cap.allowed) {
     return NextResponse.json(
       {
-        error: "cost_capped",
-        message: "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+        error: cap.reason === "unavailable" ? "cost_unavailable" : "cost_capped",
+        message: cap.reason === "unavailable"
+          ? "AIサービスは一時的に利用できません。しばらく待ってから再試行してください。"
+          : "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
       },
-      { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+      { status: 503, headers: { "X-Error-Type": cap.reason === "unavailable" ? "cost_unavailable" : "cost_capped" } },
     );
   }
 

@@ -40,7 +40,7 @@ test("denken1 unsupported subject stays redirected to the exam index", async ({ 
 });
 
 test("denken1 theory question 3 shows the two official figures and original options", async ({ page }) => {
-  await page.goto("/q/denken1/2026-primary/riron/q3-1");
+  await page.goto("/q/denken1/2026-primary/riron/q3-1#explanation");
   await expect(page.getByText("発振回路に関する記述", { exact: false }).first()).toBeVisible();
   for (const n of [1, 2]) {
     const figure = page.getByRole("img", { name: `問3の図表${n}` });

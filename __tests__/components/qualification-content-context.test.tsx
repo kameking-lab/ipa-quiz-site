@@ -46,7 +46,7 @@ describe("qualification-aware editorial context", () => {
   });
   it("exposes separate ordinary links to solve and read an explanation before hydration", () => {
     render(<QuestionListWithFilter groups={[{ session: "gakka", items: [{ id: "fp3-q11", qNumber: 11, category: "金融資産運用", isCalculation: false, isPlaceholder: false, questionPreview: "売りオペと買いオペ", href: "/quiz?exam=fp3&question=fp3-q11", explanationHref: "/q/fp3/2026-published/gakka/q11" }] }]} />);
-    expect(screen.getByRole("link", { name: "問11の解説を見る" })).toHaveAttribute("href", "/q/fp3/2026-published/gakka/q11");
+    expect(screen.getByRole("link", { name: "問11の解説を見る" })).toHaveAttribute("href", "/q/fp3/2026-published/gakka/q11#explanation");
     expect(screen.getByRole("link", { name: "問11を解く" })).toHaveAttribute("href", "/quiz?exam=fp3&question=fp3-q11");
   });
 });

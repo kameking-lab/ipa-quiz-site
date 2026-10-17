@@ -15,7 +15,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AfternoonDisclaimer } from "./AfternoonDisclaimer";
 import { AfternoonResultView } from "./AfternoonResultView";
-import { syncFeedbackUnlockFromResponse } from "@/lib/storage/rate-limit-client";
 
 interface Props {
   questions: AfternoonQuestion[];
@@ -82,7 +81,6 @@ export function AfternoonPlayer({ questions }: Props) {
       });
 
       // 旧方式(自己申告ヘッダ)で解除済みのユーザーを、サーバの実際の枠に合わせる。
-      syncFeedbackUnlockFromResponse(res);
 
       if (!res.ok) {
         const text = await res.text();

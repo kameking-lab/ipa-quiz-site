@@ -108,6 +108,7 @@ export default function BookmarksPage() {
           { name: "ブックマーク", href: "/bookmarks" },
         ]}
       />
+      <p className="mb-3 text-sm text-muted-foreground">資料を保存するしおりです。★苦手復習への追加とは別です。</p>
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="flex items-center gap-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">

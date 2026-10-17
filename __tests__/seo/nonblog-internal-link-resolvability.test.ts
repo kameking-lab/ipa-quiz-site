@@ -97,7 +97,7 @@ describe("非blogクロール面の内部レジストリ ハードリンクは�
     expect(has("blog", "koudo-ronjutsu-kakikata-kotsu")).toBe(true);
     expect(has("blog", "fe-kamoku-b-taisaku")).toBe(true);
     expect(has("features", "essay-grading")).toBe(true);
-    expect(has("keywords", "sc-incident-response")).toBe(true);
+    expect(has("keywords", "ai-copilot-how-to-use")).toBe(true);
     expect(refs.length).toBeGreaterThan(10);
   });
 

@@ -13,6 +13,9 @@ import {
   questionToUrlParts,
 } from "@/lib/essays/load";
 import type { SCpm2Question } from "@/lib/essays/types";
+import { SA_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sa";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 // 論述（午後II/論文）コンテンツのアクセサ純関数の特性化テスト。
 // 期待値はライブデータ（getSCpm2Questions）から導出し、ハードコードを避ける。
@@ -217,10 +220,13 @@ describe("essays index→detail URL round-trip (no dead internal links)", () => 
   // インデックスから 404 への死リンク（かつ "0問" カード）が生まれる。
   // 現状は 6 区分すべてに答案があり latent だが、将来データ未整備の区分が
   // 追加された際に死リンクを出す前にここで気付けるよう固定する。
-  it("every ESSAY_EXAM_CODES entry has at least one question (index links never 404)", () => {
-    const empty = ESSAY_EXAM_CODES.filter(
-      (exam) => getEssayQuestionsByExam(exam).length === 0,
-    );
-    expect(empty).toEqual([]);
+  it("retains original source drafts while public original index routes redirect", () => {
+    expect(SA_AFTERNOON_QUESTIONS.some((question) => question.license === "original")).toBe(true);
+    for (const exam of ["st", "sa", "pm", "sm", "au"] as const) {
+      expect(getEssayQuestionsByExam(exam)).toEqual([]);
+    }
+    const source = readFileSync(join(process.cwd(), "app/essays/[exam]/page.tsx"), "utf8");
+    expect(source).toContain('redirect("/essay")');
+    expect(source).not.toContain("getEssayQuestionsByExam");
   });
 });

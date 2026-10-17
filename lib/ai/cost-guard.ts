@@ -4,19 +4,18 @@
 //  この上限はユーザーの承認なしに変更してはならない。"
 //
 // This module is the live-path enforcement of that mandate. Every real (non-mock)
-// AI request checks the running monthly total in Upstash KV before calling the
-// provider and records its estimated cost after. At ¥40,000 it warns Slack, at
-// ¥50,000 it stops new requests and sends an emergency Slack notification.
+// Published Copilot calls atomically precharge a conservative token budget before
+// dispatch. Confirmed usage refunds only the unused part. Failed or uncertain KV
+// writes retain the reservation rather than allowing unaccounted provider calls.
+// ¥40,000 / ¥50,000 are existing estimated-ledger thresholds, not invoice limits.
 //
 // Persistence: Upstash KV via the REST API (same backend as lib/rate-limit/server).
 // The monthly bucket key (ai_cost:YYYY-MM, JST) rotates at month start, which is
 // the reset mechanism; a 70-day TTL is set on first write for cleanup hygiene.
 //
-// Degradation: when KV is not configured (local dev / CI), there is no real spend
-// to track (no GEMINI_API_KEY → mock provider), so the cap allows requests and
-// recording is a no-op. When KV is configured but transiently unreachable, the
-// cap allows the request (matching the rate limiter's graceful degradation) — the
-// cap is a backstop, not a transactional gate. The Slack path never fails silently:
+// Real providers stop when KV is unconfigured or unreachable. Mock providers
+// skip this check at their routes, so local development remains usable. The
+// Slack path never fails silently:
 // if SLACK_WEBHOOK_URL is unset when a threshold is crossed, the breach is logged
 // via console.error (no fail-open swallow).
 
@@ -56,16 +55,19 @@ async function kvFetch<T>(path: string, method: "GET" | "POST" = "POST"): Promis
 
 async function kvGetNumber(key: string): Promise<number | null> {
   const data = await kvFetch<{ result: string | null }>(`/get/${encodeURIComponent(key)}`, "GET");
-  if (data?.result == null) return null;
+  if (typeof data !== "object" || data === null || Array.isArray(data) || !("result" in data)) return null;
+  if (data.result === null) return 0;
+  if (typeof data.result !== "string" || data.result.trim() === "") return null;
   const n = Number(data.result);
-  return Number.isFinite(n) ? n : null;
+  return Number.isFinite(n) && n >= 0 ? n : null;
 }
 
 async function kvIncrByFloat(key: string, amount: number): Promise<number | null> {
   const data = await kvFetch<{ result: string | number }>(
     `/incrbyfloat/${encodeURIComponent(key)}/${amount}`,
   );
-  if (data == null) return null;
+  if (typeof data !== "object" || data === null || Array.isArray(data) || !("result" in data)) return null;
+  if ((typeof data.result !== "string" && typeof data.result !== "number") || String(data.result).trim() === "") return null;
   const n = Number(data.result);
   return Number.isFinite(n) ? n : null;
 }
@@ -108,21 +110,30 @@ export interface CostCapStatus {
   allowed: boolean;
   totalJpy: number;
   capJpy: number;
+  reason?: "cap" | "unavailable";
 }
 
 /**
  * Read the running monthly total and decide whether a new AI request may proceed.
- * Allows when KV is absent/unreachable (see module header on degradation).
+ * A missing monthly bucket is zero; missing KV or a failed read blocks real AI.
  */
 export async function checkMonthlyCostCap(): Promise<CostCapStatus> {
+  return readCostCap(monthlyCostKey());
+}
+
+async function readCostCap(key: string): Promise<CostCapStatus> {
   if (!kvConfig()) {
-    return { allowed: true, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY };
+    return { allowed: false, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY, reason: "unavailable" };
   }
-  const total = (await kvGetNumber(monthlyCostKey())) ?? 0;
+  const total = await kvGetNumber(key);
+  if (total === null) {
+    return { allowed: false, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY, reason: "unavailable" };
+  }
   return {
     allowed: total < MONTHLY_COST_CAP_JPY,
     totalJpy: total,
     capJpy: MONTHLY_COST_CAP_JPY,
+    reason: total >= MONTHLY_COST_CAP_JPY ? "cap" : undefined,
   };
 }
 
@@ -131,22 +142,119 @@ export interface RecordCostInput {
   inputTokens: number;
   outputTokens: number;
   label: string;
+  /** A published request has already charged this ceiling before dispatch. */
+  reservation?: AiCostReservation;
+}
+
+export interface AiCostReservation {
+  readonly key: string;
+  readonly reservedJpy: number;
+  readonly tier: ModelTier;
+}
+
+export type CostReservationStatus =
+  | { allowed: true; totalJpy: number; capJpy: number; reservation: AiCostReservation }
+  | { allowed: false; totalJpy: number; capJpy: number; reason: "cap" | "unavailable" };
+
+const admittedReservations = new WeakSet<AiCostReservation>();
+const settledReservations = new WeakSet<AiCostReservation>();
+
+/** Text-only prompt allowance; bytes plus framing deliberately over-reserve. */
+export function estimatePromptTokenBudget(
+  system: string,
+  messages: readonly { content: string }[],
+): number {
+  const encoder = new TextEncoder();
+  return encoder.encode(system).length + messages.reduce(
+    (total, message) => total + encoder.encode(message.content).length + 64,
+    1024,
+  );
+}
+
+function validTokenCount(value: number): boolean {
+  return Number.isSafeInteger(value) && value >= 0;
+}
+
+/**
+ * INCRBYFLOAT is the admission point. A preceding read validates ledger health,
+ * but only the returned atomic increment decides whether this call can start.
+ * Denied calls roll back their own increment; unknown writes never start AI.
+ */
+export async function reserveAiCost(input: Omit<RecordCostInput, "reservation">): Promise<CostReservationStatus> {
+  const key = monthlyCostKey();
+  const unavailable: CostReservationStatus = {
+    allowed: false, totalJpy: 0, capJpy: MONTHLY_COST_CAP_JPY, reason: "unavailable",
+  };
+  if (!validTokenCount(input.inputTokens) || !validTokenCount(input.outputTokens)) return unavailable;
+  const estimate = costJpy(input.tier, input.inputTokens, input.outputTokens);
+  // Round upward to a micro-yen so floating-point rounding never under-reserves.
+  const reservedJpy = Math.ceil(estimate * 1_000_000) / 1_000_000;
+  if (!Number.isFinite(reservedJpy) || reservedJpy <= 0) return unavailable;
+  const health = await readCostCap(key);
+  if (!health.allowed) return { ...health, allowed: false, reason: health.reason ?? "unavailable" };
+  const total = await kvIncrByFloat(key, reservedJpy);
+  if (total === null || total < reservedJpy) {
+    console.error("[cost-guard] reservation write unconfirmed; provider dispatch blocked");
+    return unavailable;
+  }
+  if (total > MONTHLY_COST_CAP_JPY) {
+    // One compensating write only. A lost response must not cause a second refund.
+    const rolledBack = await kvIncrByFloat(key, -reservedJpy);
+    if (rolledBack === null) console.error("[cost-guard] denied reservation rollback unconfirmed; funds remain held");
+    return {
+      allowed: false, totalJpy: rolledBack ?? total, capJpy: MONTHLY_COST_CAP_JPY, reason: "cap",
+    };
+  }
+  const reservation: AiCostReservation = Object.freeze({ key, reservedJpy, tier: input.tier });
+  admittedReservations.add(reservation);
+  if (total - reservedJpy < 0.0001) await kvExpire(key, BUCKET_TTL_SEC);
+  await maybeNotifyThresholds(key, total);
+  return { allowed: true, totalJpy: total, capJpy: MONTHLY_COST_CAP_JPY, reservation };
+}
+
+async function settleReservation(input: RecordCostInput, reservation: AiCostReservation): Promise<void> {
+  if (!admittedReservations.has(reservation) || settledReservations.has(reservation)) return;
+  // Claim synchronously before awaiting KV: duplicate callbacks cannot refund twice.
+  settledReservations.add(reservation);
+  if (!validTokenCount(input.inputTokens) || !validTokenCount(input.outputTokens)) {
+    console.error("[cost-guard] usage invalid; reservation retained");
+    return;
+  }
+  const actualJpy = costJpy(reservation.tier, input.inputTokens, input.outputTokens);
+  if (!Number.isFinite(actualJpy) || actualJpy < 0) return;
+  const adjustment = actualJpy - reservation.reservedJpy;
+  if (adjustment === 0) return;
+  if (adjustment > 0) console.error("[cost-guard] confirmed usage exceeded reservation; ledger must stop subsequent calls");
+  const total = await kvIncrByFloat(reservation.key, adjustment);
+  if (total === null) {
+    console.error("[cost-guard] settlement unconfirmed; no retry or additional refund");
+    return;
+  }
+  await maybeNotifyThresholds(reservation.key, total);
 }
 
 /**
  * Record the estimated cost of one completed AI call into the monthly bucket and
  * fire Slack notifications when the ¥40k / ¥50k thresholds are first crossed.
- * Safe to call fire-and-forget; never throws.
+ * Routes must await this write before returning; serverless instances may freeze
+ * after the response. Write failures are reported without throwing to callers.
  */
 export async function recordAiCost(input: RecordCostInput): Promise<void> {
   try {
+    if (input.reservation) {
+      await settleReservation(input, input.reservation);
+      return;
+    }
     if (!kvConfig()) return; // dev/CI: no real spend to persist
     const jpy = costJpy(input.tier, input.inputTokens, input.outputTokens);
     if (jpy <= 0) return;
 
     const key = monthlyCostKey();
     const total = await kvIncrByFloat(key, jpy);
-    if (total === null) return;
+    if (total === null) {
+      console.error("[cost-guard] legacy accounting write unconfirmed");
+      return;
+    }
 
     // First write into a fresh bucket → set the cleanup TTL.
     if (total - jpy < 0.0001) {

@@ -12,8 +12,7 @@ import type {
   EssaySubResult,
 } from "@/lib/essay/types";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
-import { getEssayQuestionsByExam } from "@/lib/essay/load";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { examLabel } from "@/lib/utils";
 
 // 強み4: 採点→弱点→次の練習の伴走。汎用LLMは単発採点で終わるが、過去問AIは
 // 採点結果の弱点（最も低い評価軸）を言語化し、同区分の他の論述問題へ誘導して
@@ -155,10 +154,6 @@ export function EssayResultView({ result, question }: Props) {
 
       {(() => {
         const weak = weakestAxis(result);
-        const nextEssays = getEssayQuestionsByExam(question.exam)
-          .filter((q) => q.id !== question.id)
-          .slice(0, 3);
-        if (!weak && nextEssays.length === 0) return null;
         return (
           <Card>
             <CardHeader>
@@ -174,34 +169,14 @@ export function EssayResultView({ result, question }: Props) {
                   <span className="font-semibold text-sky-700 dark:text-sky-300">
                     「{weak.label}」
                   </span>{" "}
-                  でした。この観点を意識して、同じ {examLabel(question.exam)} の他の論述で繰り返し練習しましょう。
+                  でした。この観点を意識して、{examLabel(question.exam)} の公式過去問で練習しましょう。
                 </p>
               )}
-              {nextEssays.length > 0 && (
-                <ul className="space-y-2">
-                  {nextEssays.map((q) => (
-                    <li key={q.id}>
-                      <Link
-                        href={`/essay/${q.exam}/${q.id}`}
-                        className="flex items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-700 transition-colors hover:border-sky-300 hover:text-sky-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200 dark:hover:border-sky-700 dark:hover:text-sky-300"
-                      >
-                        <span className="min-w-0">
-                          <span className="block truncate font-medium">{q.title}</span>
-                          <span className="mt-0.5 block text-xs text-zinc-500 dark:text-zinc-400">
-                            {formatYearSeason(q.year, q.season)} の論述を AI 採点で練習
-                          </span>
-                        </span>
-                        <ArrowRight className="h-4 w-4 flex-shrink-0" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
               <Link
-                href={`/essay/${question.exam}`}
+                href="/essay"
                 className="inline-flex items-center gap-1 text-xs font-medium text-sky-700 hover:underline dark:text-sky-300"
               >
-                {examLabel(question.exam)} の論述問題をすべて見る
+                IPA 公式の午後II過去問を見る
                 <ArrowRight className="h-3 w-3" />
               </Link>
             </CardContent>

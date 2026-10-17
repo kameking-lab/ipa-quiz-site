@@ -41,7 +41,7 @@ describe("QuizPlayer completion", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "最後の問題をAIに質問" }));
     expect(screen.getByRole("region", { name: "正解の解説" })).toBeTruthy();
-    expect(screen.getByRole("button", { name: "この問題をAIに質問" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "まだ分からない点を聞く" })).toBeTruthy();
   });
 
   it("links caregiver exam results to the matching schedule and learning hub", () => {

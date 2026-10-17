@@ -82,31 +82,41 @@ test.describe("copilot API: basic contract", () => {
 });
 
 test.describe("copilot UI: question page integration", () => {
+  test.use({ serviceWorkers: "block" });
+  test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => route.abort()); });
   test("question page returns 200", async ({ request }) => {
     const res = await request.get(QUESTION);
     expect(res.status()).toBe(200);
   });
 
-  test("question page renders AI copilot section", async ({ page }) => {
+  test("question page keeps existing explanation before one optional AI entry", async ({ page }) => {
     await page.goto(QUESTION);
-    // The AI copilot panel should appear on the page
-    const copilot = page.locator("[aria-label='AI コパイロット']");
-    await expect(copilot).toBeVisible();
+    await expect(page.getByRole("dialog", { name: "AI コパイロット" })).toHaveCount(0);
+    await page.getByRole("button", { name: "採点せずに答えだけ見る", exact: true }).click();
+    await expect(page.locator("#explanation > details")).toHaveAttribute("open", "");
+    await expect(page.getByRole("button", { name: "まだ分からない点を聞く", exact: true })).toBeVisible();
   });
 
-  test("copilot section shows quick action examples", async ({ page }) => {
+  test("question page has one follow-up instead of repeated AI promotional links", async ({ page }) => {
     await page.goto(QUESTION);
-    const quickActions = page.locator("[aria-label='AIへの質問例']");
-    await expect(quickActions).toBeVisible();
+    await page.getByRole("button", { name: "採点せずに答えだけ見る", exact: true }).click();
+    await expect(page.getByRole("button", { name: "まだ分からない点を聞く", exact: true })).toHaveCount(1);
+    await expect(page.locator("[aria-label='AIへの質問例']")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "クイズモードで開く", exact: true })).toBeVisible();
   });
 
-  test("copilot panel is keyboard-accessible (focusable child elements)", async ({ page }) => {
+  test("the follow-up opens by keyboard and returns focus after closing", async ({ page }) => {
     await page.goto(QUESTION);
-    const copilot = page.locator("[aria-label='AI コパイロット']");
+    await page.getByRole("button", { name: "採点せずに答えだけ見る", exact: true }).click();
+    const entry = page.getByRole("button", { name: "まだ分からない点を聞く", exact: true });
+    await entry.focus();
+    await page.keyboard.press("Enter");
+    const copilot = page.getByRole("dialog", { name: "AI コパイロット", exact: true });
     await expect(copilot).toBeVisible();
-    // Panel should contain at least one interactive element
-    const buttons = copilot.locator("button, input, textarea, a");
-    await expect(buttons.first()).toBeVisible();
+    await expect(copilot.getByRole("textbox").first()).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(copilot).toHaveCount(0);
+    await expect(entry).toBeFocused();
   });
 });
 

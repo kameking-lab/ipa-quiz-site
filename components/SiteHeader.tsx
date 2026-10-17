@@ -79,10 +79,10 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     ...(exam === "shika-ishi" ? [] : [{ href: learningHref("stream"), label: "ストリームモード" }]),
     { href: learningHref("review"), label: "復習モード" },
     { href: learningHref("weakness"), label: "弱点克服" },
-    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 午後論述AI採点" }] : []),
+    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 午後論述の公式過去問" }] : []),
   ] : [
     { href: "/#choose-qualification", label: "資格を選んで問題を解く" },
-    { href: "/essay", label: "IPA 午後論述AI採点" },
+    { href: "/essay", label: "IPA 午後論述の公式過去問" },
   ];
   const showMockExam = !exam || isMockExamCode(exam);
   const mockHref = exam
@@ -403,14 +403,14 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                 </SheetClose>
                 <SheetClose asChild>
                   <Link
-                    href="/essays"
+                    href="/essay"
                     className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
                     <FileText
                       className="h-4 w-4 text-muted-foreground"
                       aria-hidden="true"
                     />
-                    論述例
+                    論述の公式過去問
                   </Link>
                 </SheetClose>
 

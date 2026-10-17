@@ -98,13 +98,43 @@ describe("cost-guard monthly cap", () => {
     expect(status.allowed).toBe(false);
   });
 
-  it("allows (degrades open) when KV is not configured", async () => {
+  it("blocks real AI when KV is not configured", async () => {
     vi.stubEnv("KV_REST_API_URL", "");
     vi.stubEnv("KV_REST_API_TOKEN", "");
     installKvMock();
     const { checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
     const status = await checkMonthlyCostCap();
-    expect(status.allowed).toBe(true);
+    expect(status).toMatchObject({ allowed: false, reason: "unavailable" });
+  });
+
+  it("treats a missing monthly KV bucket as zero spend", async () => {
+    installKvMock();
+    const { checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
+    expect(await checkMonthlyCostCap()).toMatchObject({ allowed: true, totalJpy: 0 });
+  });
+
+  it("blocks real AI when the KV balance cannot be read", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response("unavailable", { status: 503 })));
+    const { checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
+    expect(await checkMonthlyCostCap()).toMatchObject({ allowed: false, reason: "unavailable" });
+  });
+
+  it("blocks real AI when the KV balance is invalid", async () => {
+    const { monthlyCostKey, checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
+    installKvMock({ [monthlyCostKey()]: "invalid" });
+    expect(await checkMonthlyCostCap()).toMatchObject({ allowed: false, reason: "unavailable" });
+  });
+
+  it("blocks real AI when the KV balance is blank", async () => {
+    const { monthlyCostKey, checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
+    installKvMock({ [monthlyCostKey()]: "" });
+    expect(await checkMonthlyCostCap()).toMatchObject({ allowed: false, reason: "unavailable" });
+  });
+
+  it.each([42, "bad", true, []])("blocks malformed KV JSON %j without throwing", async (payload) => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(JSON.stringify(payload), { status: 200 })));
+    const { checkMonthlyCostCap } = await import("@/lib/ai/cost-guard");
+    await expect(checkMonthlyCostCap()).resolves.toMatchObject({ allowed: false, reason: "unavailable" });
   });
 
   it("sends a Slack warning the first time ¥40,000 is crossed, once only", async () => {

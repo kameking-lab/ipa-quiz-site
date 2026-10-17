@@ -49,20 +49,21 @@ export function BookmarkButton({ question, className }: BookmarkButtonProps) {
         onClick={handleToggle}
         aria-pressed={bookmarked}
         className={cn(
-          "rounded-full p-2 transition-colors",
+          "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-2 text-xs font-semibold transition-colors",
           "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300",
           bookmarked
             ? "bg-blue-200 text-blue-900 dark:bg-blue-900/60 dark:text-blue-200"
             : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
         )}
-        aria-label={bookmarked ? "ブックマークから外す" : "ブックマークに追加"}
-        title="ブックマーク"
+        aria-label={bookmarked ? "資料保存（ブックマークから外す）" : "資料保存（ブックマークに追加）"}
+        title="しおりとして保存。復習モードには追加されません。"
       >
         <Bookmark
           aria-hidden="true"
           className="h-4 w-4"
           fill={bookmarked ? "currentColor" : "none"}
         />
+        資料保存
       </button>
 
       {bookmarked && showTags && (

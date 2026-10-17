@@ -15,7 +15,7 @@ import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition }
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
-import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
+import { examFullName, getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
 /**
  * トップページの「分野から選ぶ」ディレクトリ。
@@ -34,6 +34,8 @@ export interface HomeDirectoryItem {
   name: string;
   /** 略称バッジ（IPA区分など） */
   abbr?: string;
+  /** 検索専用の正式名・通称。カードには表示しない。 */
+  searchTerms?: readonly string[];
   /** 補足の1行 */
   sub?: string;
   questionCount: number;
@@ -97,6 +99,7 @@ function ipaItem(def: IpaCardDef): HomeDirectoryItem {
     href: `/${def.code}`,
     name: def.name,
     abbr: def.abbr,
+    searchTerms: [examFullName(def.code)],
     sub: def.sub,
     questionCount: examQuestionCount(def.code),
     periodLabel: `${examPeriodCount(def.code)}期分`,
@@ -172,10 +175,16 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
   const practical = def.code === "fp2" ? fp2PracticalCount() : def.code === "fp3" ? fp3PracticalCount() : 0;
+  const fullName = QUALIFICATION_CATALOG.find((item) => item.examCode === def.code)?.fullName;
+  const fpGrade = /^fp([123])$/.exec(def.code)?.[1];
   return {
     key: def.code,
     href: `/${def.code}`,
     name: def.name,
+    searchTerms: [
+      fullName ?? examFullName(def.code),
+      ...(fpGrade ? [`${fpGrade}級ファイナンシャルプランニング技能士`, `${fpGrade}級ファイナンシャルプランナー`, "ファイナンシャルプランナー"] : []),
+    ],
     sub: def.sub,
     questionCount: examQuestionCount(def.code) + practical + (def.code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0),
     periodLabel: `${examPeriodCount(def.code)}期分`,

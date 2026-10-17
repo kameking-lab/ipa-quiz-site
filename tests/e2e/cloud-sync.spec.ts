@@ -8,9 +8,9 @@ import { test, expect } from "@playwright/test";
 // exercised manually (see logs/data-portability-2026-05-23.md).
 
 test.describe("cloud sync: opt-in, non-intrusive", () => {
-  test("/settings renders the クラウド同期 section", async ({ page }) => {
+  test("/settings renders the cross-device handoff section", async ({ page }) => {
     await page.goto("/settings");
-    await expect(page.getByRole("heading", { name: "クラウド同期" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "別の端末に引き継ぐ", exact: true })).toBeVisible();
   });
 
   test("signed-out user sees a sign-in CTA, not a destructive action", async ({ page }) => {

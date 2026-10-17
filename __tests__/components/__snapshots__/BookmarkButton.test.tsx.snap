@@ -6,10 +6,10 @@ exports[`BookmarkButton > renders as un-bookmarked by default 1`] = `
     class="flex flex-col gap-1.5"
   >
     <button
-      aria-label="ブックマークに追加"
+      aria-label="資料保存（ブックマークに追加）"
       aria-pressed="false"
-      class="rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300 bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
-      title="ブックマーク"
+      class="inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-blue-300 bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+      title="しおりとして保存。復習モードには追加されません。"
       type="button"
     >
       <svg
@@ -29,6 +29,7 @@ exports[`BookmarkButton > renders as un-bookmarked by default 1`] = `
           d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"
         />
       </svg>
+      資料保存
     </button>
   </div>
 </div>

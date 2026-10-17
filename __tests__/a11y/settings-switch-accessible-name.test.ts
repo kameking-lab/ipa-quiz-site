@@ -23,7 +23,7 @@ describe("/settings Switch — SettingRow 経由のアクセシブルネーム�
   it("SettingRow が子要素(Switch)へ aria-labelledby={labelId} を cloneElement で注入する", () => {
     // 配線の要：この cloneElement が外れると settings ページの全 Switch が無名になる。
     expect(source).toMatch(
-      /cloneElement\(\s*children\s*,\s*\{\s*"aria-labelledby":\s*labelId\s*\}\s*\)/,
+      /cloneElement\(\s*children\s*,\s*\{\s*"aria-labelledby":\s*labelId\s*,\s*"aria-describedby":\s*description\s*\?\s*descriptionId\s*:\s*undefined\s*\}\s*\)/,
     );
   });
 

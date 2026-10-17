@@ -18,7 +18,7 @@ describe("answer to the same public explanation and feedback page", () => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={() => {}} />);
     expect(screen.queryByRole("link", { name: "公開解説・誤り報告を開く" })).not.toBeInTheDocument();
     fireEvent.keyDown(window, { key: "1" });
-    expect(screen.getByRole("link", { name: "公開解説・誤り報告を開く" })).toHaveAttribute("href", questionPagePath(question));
+    expect(screen.getByRole("link", { name: "公開解説・誤り報告を開く" })).toHaveAttribute("href", `${questionPagePath(question)}#explanation`);
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
     expect(createHistoryStore().getAllEntries()[0]?.id).toBe(question.id);
   });

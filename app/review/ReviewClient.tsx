@@ -1,9 +1,11 @@
 "use client";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
-import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { getSafePdfUrl, ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,7 +14,8 @@ import { readLastQuestion } from "@/lib/storage/last-question";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
-import type { Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { getChoiceKeys, isAcceptedAnswer, isCompleteSelectionCorrect, requiredSelectionCount, selectionInstruction } from "@/lib/questions/answers";
 import { quizBackHref } from "@/lib/questions/practice-session";
 import { LS_KEYS } from "@/lib/storage/keys";
 
@@ -50,6 +53,9 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   const [dueQuestions, setDueQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [selectedKeys, setSelectedKeys] = useState<ChoiceKey[]>([]);
+  const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean | null>(null);
+  const recordedQuestionRef = useRef<string | null>(null);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
   const [done, setDone] = useState(false);
   const [initialized, setInitialized] = useState(false);
@@ -81,6 +87,9 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
     setLoadError(false);
     setCurrentIndex(0);
     setShowAnswer(false);
+    setSelectedKeys([]);
+    setAnswerIsCorrect(null);
+    recordedQuestionRef.current = null;
     setDone(false);
     setSessionStats({ correct: 0, incorrect: 0 });
     void (async () => {
@@ -148,35 +157,38 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
     } catch { /* ignore */ }
   }, []);
 
-  const handleAnswer = useCallback(
-    (isCorrect: boolean) => {
-      const q = dueQuestions[currentIndex];
-      if (!q) return;
-
-      const current = store[q.id] ?? { questionId: q.id, level: 0, nextReviewAt: getTodayStr(), correctStreak: 0 };
+  const recordOutcome = useCallback(
+    (question: Question, isCorrect: boolean) => {
+      if (recordedQuestionRef.current === question.id) return;
+      recordedQuestionRef.current = question.id;
+      const current = store[question.id] ?? { questionId: question.id, level: 0, nextReviewAt: getTodayStr(), correctStreak: 0 };
       const newLevel = isCorrect ? Math.min(current.level + 1, INTERVALS.length - 1) : 0;
       const newRecord: ReviewRecord = {
-        questionId: q.id,
+        questionId: question.id,
         level: newLevel,
         nextReviewAt: getNextReviewDate(newLevel),
         correctStreak: isCorrect ? current.correctStreak + 1 : 0,
       };
-
-      saveStore({ ...store, [q.id]: newRecord });
+      saveStore({ ...store, [question.id]: newRecord });
       setSessionStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
         incorrect: prev.incorrect + (isCorrect ? 0 : 1),
       }));
-
-      if (currentIndex + 1 >= dueQuestions.length) {
-        setDone(true);
-      } else {
-        setCurrentIndex((i) => i + 1);
-        setShowAnswer(false);
-      }
     },
-    [currentIndex, dueQuestions, store, saveStore],
+    [store, saveStore],
   );
+
+  const advance = useCallback(() => {
+    if (currentIndex + 1 >= dueQuestions.length) {
+      setDone(true);
+      return;
+    }
+    setCurrentIndex((index) => index + 1);
+    setShowAnswer(false);
+    setSelectedKeys([]);
+    setAnswerIsCorrect(null);
+    recordedQuestionRef.current = null;
+  }, [currentIndex, dueQuestions.length]);
 
   if (!knownExam) return <div>{context}<p role="alert">指定された資格を確認できません。復習する資格を選んでください。</p></div>;
 
@@ -269,22 +281,18 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         {context}
         <Card>
           <CardContent className="py-8 text-center">
-            <div className="text-3xl font-bold tabular-nums text-sky-600 dark:text-sky-400">
-              {score}%
-            </div>
-            <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-              {sessionStats.correct} / {total} 問正解
-            </div>
-            <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
-              次回の復習スケジュールが更新されました
-            </p>
+            {total > 0 ? <>
+              <div className="text-3xl font-bold tabular-nums text-sky-600 dark:text-sky-400">{score}%</div>
+              <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{sessionStats.correct} / {total} 問正解</div>
+              <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">次回の復習スケジュールが更新されました</p>
+            </> : <p className="text-sm text-zinc-600 dark:text-zinc-400">解答・解説の確認を終えました。採点はしていません。</p>}
           </CardContent>
         </Card>
 
         <div className="flex gap-3">
           <Button
             variant="primary"
-            onClick={() => { setCurrentIndex(0); setShowAnswer(false); setDone(false); setSessionStats({ correct: 0, incorrect: 0 }); }}
+            onClick={() => { setCurrentIndex(0); setShowAnswer(false); setSelectedKeys([]); setAnswerIsCorrect(null); recordedQuestionRef.current = null; setDone(false); setSessionStats({ correct: 0, incorrect: 0 }); }}
             className="flex-1"
           >
             もう一度
@@ -300,7 +308,30 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   const q = dueQuestions[currentIndex]!;
   const correctAnswer = formatQuestionAnswerForDisplay(q, q.answer);
   const record = store[q.id];
-  const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
+  const requiresLawDate = ["fp1", "fp2", "fp3", "sharoushi", "takken"].includes(q.exam);
+  const sourceUrl = getSafePdfUrl(q.sourcePdfUrl);
+  const sourceVerified = sourceUrl === q.sourcePdfUrl;
+  const choiceKeys = getChoiceKeys(q.choices);
+  const requiredSelections = requiredSelectionCount(q);
+  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
+  const scorableChoices = q.type === "multiple-choice" && choiceKeys.length > 0
+    && answerKeys.length >= requiredSelections
+    && new Set(answerKeys).size === answerKeys.length
+    && answerKeys.every((key) => choiceKeys.includes(key as ChoiceKey));
+  const selectChoice = (key: ChoiceKey) => {
+    if (showAnswer || !scorableChoices) return;
+    const next = requiredSelections > 1
+      ? selectedKeys.includes(key) ? selectedKeys.filter((picked) => picked !== key) : [...selectedKeys, key]
+      : [key];
+    setSelectedKeys(next);
+    if (next.length !== requiredSelections) return;
+    const correct = requiredSelections > 1
+      ? isCompleteSelectionCorrect(q.answer, next, requiredSelections)
+      : isAcceptedAnswer(q.answer, key);
+    setAnswerIsCorrect(correct);
+    setShowAnswer(true);
+    recordOutcome(q, correct);
+  };
 
   return (
     <div className="space-y-4">
@@ -327,28 +358,42 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               <Badge variant="outline" className="text-xs">Lv.{record.level}</Badge>
             )}
           </div>
+          <div className="mb-3 space-y-1 text-xs text-zinc-600 dark:text-zinc-300">
+            <p>出題: {questionSourceExam(q)} {questionSourceEdition(q)}・問{q.qNumber}</p>
+            {(q.lawReferenceDate || requiresLawDate) && (
+              <p>法令基準日: {q.lawReferenceDate ? `${q.lawReferenceDate}（この日の制度で解答）` : "未確認（公式資料で適用時点をご確認ください）"}</p>
+            )}
+            <p>
+              出典: {sourceVerified ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-sky-700 underline dark:text-sky-300">
+                {isPdfDocumentUrl(sourceUrl) ? ipaSourceLabel(sourceUrl, "question") : "出典資料を開く"}
+              </a> : "出典資料リンク未確認"}
+              {q.sourceAttribution ? `・${q.sourceAttribution}` : ""}
+            </p>
+          </div>
           <QuestionBody text={q.question} />
           <QuestionFigures question={q} />
         </CardContent>
       </Card>
 
       {/* 選択肢 */}
-      {!showAnswer && Object.keys(q.choices ?? {}).length > 0 && (
+      {!showAnswer && scorableChoices && (
         <div className="space-y-2">
-          {Object.entries(q.choices ?? {}).map(([key, value]) => (
+          {requiredSelections > 1 && <p className="text-sm text-muted-foreground">{selectionInstruction(q.answer, requiredSelections)}（選択中 {selectedKeys.length}/{requiredSelections}）</p>}
+          {choiceKeys.map((key) => (
             <button
               key={key}
-              onClick={() => setShowAnswer(true)}
+              onClick={() => selectChoice(key)}
+              aria-pressed={selectedKeys.includes(key)}
               className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-left text-sm hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-700 dark:hover:border-sky-600 dark:hover:bg-sky-950/30"
             >
-              <span className="font-medium">{key}</span>
-              <span className="ml-2">{value}</span>
+              <span className="font-medium">{choiceDisplayLabel(q.exam, key)}</span>
+              <span className="ml-2">{q.choices?.[key]}</span>
             </button>
           ))}
         </div>
       )}
 
-      {!showAnswer && Object.keys(q.choices ?? {}).length === 0 && (
+      {!showAnswer && !scorableChoices && (
         <Button onClick={() => setShowAnswer(true)} className="w-full">解答・解説を見る</Button>
       )}
 
@@ -362,30 +407,20 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               <p className="text-sm leading-relaxed text-emerald-700 dark:text-emerald-400">
                 {q.explanation}
               </p>
-              {nextInterval && (
+              {answerIsCorrect !== null && record && (
                 <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-500">
-                  正解すると次回は {nextInterval} 日後
+                  次の復習予定: {record.nextReviewAt}
                 </p>
               )}
             </CardContent>
           </Card>
 
-          <div className="grid grid-cols-2 gap-3">
-            <Button
-              variant="outline"
-              onClick={() => handleAnswer(false)}
-              className="border-rose-300 text-rose-700 hover:bg-rose-50 dark:border-rose-700 dark:text-rose-400 dark:hover:bg-rose-950/30"
-            >
-              ✗ 間違えた
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => handleAnswer(true)}
-              className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-950/30"
-            >
-              ✓ 正解した
-            </Button>
-          </div>
+          {answerIsCorrect !== null && (
+            <p role="status" className="text-sm font-semibold">
+              {answerIsCorrect ? "正解" : "不正解"}：あなたの回答 {formatQuestionAnswerForDisplay(q, selectedKeys)}
+            </p>
+          )}
+          <Button variant="outline" onClick={advance} className="w-full">次へ</Button>
         </>
       )}
     </div>

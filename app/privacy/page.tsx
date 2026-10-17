@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
+import { AI_RATE_LIMIT_PRIVACY_COPY, AI_RESPONSE_CACHE_PRIVACY_COPY } from "@/lib/privacy/disclosure";
 import Link from "next/link";
 import { AMAZON_ASSOCIATE_DISCLOSURE } from "@/data/recommended-books";
 import {
@@ -169,6 +169,7 @@ export default function PrivacyPage() {
             <p>
               {AI_RATE_LIMIT_PRIVACY_COPY}
             </p>
+            <p>{AI_RESPONSE_CACHE_PRIVACY_COPY}</p>
           </Section>
 
           <Section

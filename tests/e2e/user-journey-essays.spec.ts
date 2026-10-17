@@ -1,108 +1,77 @@
 import { test, expect } from "@playwright/test";
 
-// sc is the only exam with essay data; 2025-spring/pm2/q1 has all 8 industries
 const ESSAY_EXAM = "/essays/sc";
 const ESSAY_QUESTION = "/essays/sc/2025-spring/pm2/q1";
-
-// EssayIndustryTabs renders the industry selector as a role="group"
-// (aria-label "業種選択") of aria-pressed toggle buttons labelled by industry
-// name, in this order. The matching answer is a <section hidden> with a
-// "<industry>の参考答案例" heading. (Was a role=tablist/aria-selected/tabpanel
-// pattern before the a11y fix in 6e4fb97 — these specs assert the new pattern.)
-const INDUSTRY_LABELS = [
-  "IT・情報サービス業",
-  "製造業",
-  "金融業",
-  "流通・小売業",
-  "通信業",
-  "建設業",
-  "医療・ヘルスケア",
-  "公共・自治体",
-];
+const OFFICIAL_INDEX = "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html";
+const OFFICIAL_YEARS = [
+  ["2025年度", "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html"],
+  ["2024年度", "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html"],
+  ["2023年度", "https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html"],
+] as const;
 
 test.describe("user journey: essays HTTP status", () => {
-  test("essays exam index /essays/sc returns 200", async ({ request }) => {
+  test("essays exam index redirects to the official guide", async ({ request }) => {
     const res = await request.get(ESSAY_EXAM);
     expect(res.status()).toBe(200);
+    expect(new URL(res.url()).pathname).toBe("/essay");
   });
 
-  test("essay question page /essays/sc/2025-spring/pm2/q1 returns 200", async ({ request }) => {
+  test("retired essay question redirects to the official guide", async ({ request }) => {
     const res = await request.get(ESSAY_QUESTION);
     expect(res.status()).toBe(200);
+    expect(new URL(res.url()).pathname).toBe("/essay");
   });
 
-  test("nonexistent essay /essays/sc/2025-spring/pm2/q99 returns 404", async ({ request }) => {
+  test("retired unknown question URL redirects to the official guide", async ({ request }) => {
     const res = await request.get("/essays/sc/2025-spring/pm2/q99");
-    // App may render a "not found" UI with 200, or return a proper 404.
-    expect([200, 404]).toContain(res.status());
+    expect(res.status()).toBe(200);
+    expect(new URL(res.url()).pathname).toBe("/essay");
   });
 
-  test("nonexistent year /essays/sc/1999-spring/pm2/q1 returns 404", async ({ request }) => {
+  test("retired unknown year URL redirects to the official guide", async ({ request }) => {
     const res = await request.get("/essays/sc/1999-spring/pm2/q1");
-    // App may render a "not found" UI with 200, or return a proper 404.
-    expect([200, 404]).toContain(res.status());
+    expect(res.status()).toBe(200);
+    expect(new URL(res.url()).pathname).toBe("/essay");
   });
 });
 
-test.describe("user journey: essays industry selector UI", () => {
-  test("essay question page has the industry selector group", async ({ page }) => {
+test.describe("retired essay URLs: official past-paper guide", () => {
+  test("the retired question opens the official guide", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(group).toBeVisible();
+    await expect(page).toHaveURL(/\/essay$/);
+    await expect(page.getByRole("heading", { name: "午後II 論述の公式過去問", exact: true })).toBeVisible();
   });
 
-  test("essay question page has all 8 industry buttons", async ({ page }) => {
+  test("the guide keeps all official annual source links", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(group.getByRole("button")).toHaveCount(8);
-    for (const label of INDUSTRY_LABELS) {
-      await expect(
-        group.getByRole("button", { name: label, exact: true }),
-      ).toBeVisible();
+    for (const [year, href] of OFFICIAL_YEARS) {
+      await expect(page.getByRole("link", { name: `${year}の公式過去問`, exact: true })).toHaveAttribute("href", href);
     }
+    await expect(page.getByRole("link", { name: "IPA の過去問題一覧", exact: true })).toHaveAttribute("href", OFFICIAL_INDEX);
   });
 
-  test("first industry button (IT) is pressed by default", async ({ page }) => {
+  test("retired industry buttons and generated sample answers remain unpublished", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(
-      group.getByRole("button", { name: "IT・情報サービス業", exact: true }),
-    ).toHaveAttribute("aria-pressed", "true");
-    await expect(
-      group.getByRole("button", { name: "製造業", exact: true }),
-    ).toHaveAttribute("aria-pressed", "false");
+    await expect(page.getByRole("group", { name: "業種選択" })).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: /の参考答案例/ })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "製造業", exact: true })).toHaveCount(0);
   });
 
-  test("clicking 製造業 presses it and unpresses IT", async ({ page }) => {
+  test("the guide does not offer AI essay grading", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    const mfg = group.getByRole("button", { name: "製造業", exact: true });
-    const it = group.getByRole("button", {
-      name: "IT・情報サービス業",
-      exact: true,
-    });
-    await mfg.click();
-    await expect(mfg).toHaveAttribute("aria-pressed", "true");
-    await expect(it).toHaveAttribute("aria-pressed", "false");
+    const guide = page.getByRole("main");
+    await expect(guide.getByRole("textbox")).toHaveCount(0);
+    await expect(guide.getByRole("button", { name: /採点|送信/ })).toHaveCount(0);
+    await expect(guide.getByText(/現在、このページでは論述の自動採点を受け付けていません/)).toBeVisible();
   });
 
-  test("switching industry changes the visible answer panel", async ({ page }) => {
+  test("past-question search remains available without an account gate", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    const itHeading = page.getByRole("heading", {
-      name: "IT・情報サービス業の参考答案例",
-      exact: true,
-    });
-    const mfgHeading = page.getByRole("heading", {
-      name: "製造業の参考答案例",
-      exact: true,
-    });
-    // IT answer is shown initially; the manufacturing answer is hidden.
-    await expect(itHeading).toBeVisible();
-    await expect(mfgHeading).toBeHidden();
-    // Switch to manufacturing → its answer panel becomes visible, IT hides.
-    await group.getByRole("button", { name: "製造業", exact: true }).click();
-    await expect(mfgHeading).toBeVisible();
-    await expect(itHeading).toBeHidden();
+    const search = page.getByRole("link", { name: "問題検索へ", exact: true });
+    await expect(search).toBeVisible();
+    await expect(search).toHaveAttribute("href", "/search");
+    await search.click();
+    await expect(page).toHaveURL(/\/search$/);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 });

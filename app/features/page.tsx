@@ -7,9 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
-const FEATURES_TITLE = "機能特集 — AIコパイロット・午後採点・模試モード";
+const FEATURES_TITLE = "機能特集 — AIコパイロット・模試モード・学習計画";
 const FEATURES_DESCRIPTION =
-  "AI コパイロットによる選択肢別解説、業種別の論述合格答案サンプル、AI 午後採点（β）、本番形式の模試モード、学習計画自動生成など、IPA 過去問学習を一段引き上げる過去問AI 独自機能をまとめた特集ページ。各機能の使い方と狙いをページ別に詳しく紹介します。";
+  "AI コパイロットによる選択肢別解説、公開済み過去問の比較、本番形式の模試モード、学習計画など、過去問AI の機能をまとめた特集ページ。各機能の使い方をページ別に紹介します。";
 
 // Page-specific OG card. The /api/og route reserves a "feature" type style for
 // this page; without an explicit images entry the openGraph override would drop
@@ -17,7 +17,7 @@ const FEATURES_DESCRIPTION =
 const FEATURES_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "feature",
   title: "機能特集",
-  body: "AIコパイロット・午後採点・模試・学習計画など独自機能を一望。",
+  body: "AIコパイロット・模試・学習計画などの機能を一望。",
 }).toString()}`;
 
 export const metadata: Metadata = {
