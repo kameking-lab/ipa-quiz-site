@@ -4,7 +4,7 @@ import type { Question } from "./types";
  * alone is not a rendered figure. Transcribed Markdown tables remain usable. */
 export function hasUnrenderableContent(q: Question): boolean {
   const hasFigures = (q.imageUrls ?? []).some((url) => url.trim().length > 0);
-  if (hasFigures) return false;
+  if (hasFigures || (q.type === "native-b" && q.nativeB?.bankImageUrls?.some((url) => url.trim()))) return false;
   if (q.choiceImageUrls && q.choices && Object.keys(q.choices).every((key) => Boolean(q.choiceImageUrls?.[key as keyof typeof q.choiceImageUrls]))) return false;
   // A choice may contain a visual symbol while the stem itself is fully readable
   // as text. Partial choice figures are sufficient in that case.

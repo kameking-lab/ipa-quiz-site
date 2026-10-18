@@ -1,3 +1,4 @@
+import type { NativeBGrade } from "@/lib/questions/types";
 import { LS_KEYS } from "./keys";
 
 export interface HistoryEntry {
@@ -5,6 +6,7 @@ export interface HistoryEntry {
   selected: string;
   correct: boolean;
   at: number;
+  nativeBResult?: NativeBGrade;
 }
 
 export interface HistoryData {

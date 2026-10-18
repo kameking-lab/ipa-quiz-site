@@ -21,6 +21,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
+import { auditQuestionAnswer } from "./audit-question-answer";
 import { AP_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/ap";
 import { ALL_ESSAY_QUESTIONS } from "@/data/questions/essay";
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
@@ -116,7 +117,6 @@ const REQUIRED_MORNING_FIELDS: (keyof Question)[] = [
   "type",
   "category",
   "question",
-  "answer",
   "explanation",
   "sourcePdfUrl",
   "license",
@@ -138,6 +138,10 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
     if (v === undefined || v === null || (typeof v === "string" && v.trim() === "")) {
       add(q, "morning", downgrade("critical"), "missing-field", `必須フィールド欠落: ${String(k)}`);
     }
+  }
+
+  for (const issue of auditQuestionAnswer(q)) {
+    add(q, "morning", downgrade("critical"), issue.category, issue.message);
   }
 
   // (b) ID 重複
@@ -186,7 +190,7 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
         );
       }
     }
-  } else {
+  } else if (q.type !== "native-b") {
     // descriptive/essay は modelAnswer が望ましい
     if (!q.modelAnswer || q.modelAnswer.trim() === "") {
       add(q, "morning", "opportunity", "missing-model-answer", `${q.type} に modelAnswer なし`);

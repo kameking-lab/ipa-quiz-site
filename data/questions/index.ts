@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
 import { AP_QUESTIONS } from "./ap";
 import { IP_QUESTIONS } from "./ip";
@@ -69,13 +70,49 @@ import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 import { RIKU_TOKU_KOKUNAI_QUESTIONS } from "./riku-toku-kokunai";
+import { KAI_TOKU2_QUESTIONS } from "./kai-toku2";
 import { KAI_TOKU3_QUESTIONS } from "./kai-toku3";
 import { KOKU_TOKU_QUESTIONS } from "./koku-toku";
+import { LAND_SPECIAL1_QUESTIONS } from "./land-special1";
+import { RIKU_TECH1_QUESTIONS } from "./riku-tech1";
+import { MARITIME4_QUESTIONS } from "./maritime4";
+import { AVIATION_COMM_QUESTIONS } from "./aviation-comm";
+import { AMATEUR1_QUESTIONS } from "./amateur1";
+import { RIKU_TECH2_QUESTIONS } from "./riku-tech2";
+import { AMATEUR2_QUESTIONS } from "./amateur2";
+import { MARITIME_RADAR_QUESTIONS } from "./maritime-radar";
+import { MARITIME_SPECIAL1_QUESTIONS } from "./maritime-special1";
+import { MARITIME1_QUESTIONS } from "./maritime1";
+import { MARITIME2_QUESTIONS } from "./maritime2";
+import { GENERAL1_QUESTIONS } from "./general1";
+import { GENERAL2_QUESTIONS } from "./general2";
+import { GENERAL3_QUESTIONS } from "./general3";
+import { MARITIME3_QUESTIONS } from "./maritime3";
+import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
+import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("amateur2") ? { "amateur2": AMATEUR2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("maritime-radar") ? { "maritime-radar": MARITIME_RADAR_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("amateur1") ? { "amateur1": AMATEUR1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("maritime-special1") ? { "maritime-special1": MARITIME_SPECIAL1_QUESTIONS } : {}),
+  ...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),
   ...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
+  ...(isExamPublished("kai-toku2") ? { "kai-toku2": KAI_TOKU2_QUESTIONS } : {}),
   ...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),
   ...(isExamPublished("koku-toku") ? { "koku-toku": KOKU_TOKU_QUESTIONS } : {}),
+  ...(isExamPublished("land-special1") ? { "land-special1": LAND_SPECIAL1_QUESTIONS } : {}),
+  ...(isExamPublished("riku-tech1") ? { "riku-tech1": RIKU_TECH1_QUESTIONS } : {}),
+  ...(isExamPublished("maritime4") ? { "maritime4": MARITIME4_QUESTIONS } : {}),
+  ...(isExamPublished("maritime1") ? { "maritime1": MARITIME1_QUESTIONS } : {}),
+  ...(isExamPublished("maritime2") ? { "maritime2": MARITIME2_QUESTIONS } : {}),
+  ...(isExamPublished("general1") ? { "general1": GENERAL1_QUESTIONS } : {}),
+  ...(isExamPublished("general2") ? { "general2": GENERAL2_QUESTIONS } : {}),
+  ...(isExamPublished("general3") ? { "general3": GENERAL3_QUESTIONS } : {}),
+  ...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
+  ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
+  ...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
   ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
   ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
   ap: AP_QUESTIONS,

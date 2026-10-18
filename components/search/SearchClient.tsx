@@ -29,6 +29,7 @@ import {
 } from "@/lib/questions/explicit-pool";
 import type {
   ExamCode,
+  QuestionPart,
   Season,
   Session,
   Difficulty,
@@ -37,9 +38,10 @@ import type {
 type SearchSort = "relevance" | "year_desc" | "category" | "random";
 
 const EXAM_OPTIONS: ExamCode[] = [
+  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
   "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
 ];
-const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"];
+const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];
 const SORT_OPTIONS: { value: SearchSort; label: string }[] = [
   { value: "relevance", label: "関連度順" },
@@ -58,6 +60,7 @@ interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: QuestionPart;
   category: string;
   topicTags: string[];
   difficulty: Difficulty;
@@ -296,10 +299,11 @@ export function SearchClient() {
     (patch: Partial<ActiveQuery>) => {
       const next: ActiveQuery = { ...query, ...patch };
       const sp = toParams(next);
+      if (recentOnly) sp.set("recent", "1");
       const qs = sp.toString();
       router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
     },
-    [query, router],
+    [query, recentOnly, router],
   );
 
   // Debounce text input → URL update
@@ -521,7 +525,6 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
             enterKeyHint="search"
-            aria-autocomplete="list"
           />
           {inputText && (
             <button
@@ -656,9 +659,9 @@ function HistoryList({
           </button>
           <button
             type="button"
-            aria-label="削除"
+            aria-label={`${item.label}を削除`}
             onClick={() => onDelete(item.id)}
-            className="shrink-0 rounded p-1 text-muted-foreground opacity-0 transition-opacity hover:bg-muted group-hover:opacity-100"
+            className="grid min-h-11 min-w-11 shrink-0 place-items-center rounded text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <Trash2 className="h-3 w-3" aria-hidden="true" />
           </button>
@@ -1035,13 +1038,7 @@ function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
 }
 
 function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
-  const href = questionPagePath({
-    exam: hit.exam,
-    year: hit.year,
-    season: hit.season,
-    session: hit.session,
-    qNumber: hit.qNumber,
-  });
+  const href = questionPagePath(hit);
   return (
     <Link
       href={href}

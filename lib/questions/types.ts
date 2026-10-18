@@ -58,11 +58,27 @@ export type ExamCode =
   | "chosashi"
   | "judo-seifukushi"
   | "riku-toku-kokunai"
+  | "kai-toku2"
   | "kai-toku3"
-  | "koku-toku";
+  | "koku-toku"
+  | "land-special1"
+  | "riku-tech1"
+  | "maritime4"
+  | "aviation-comm"
+  | "amateur1"
+  | "maritime-special1"
+  | "riku-tech2"
+  | "amateur2"
+  | "maritime-radar"
+  | "general1"
+  | "general2"
+  | "general3"
+  | "maritime3" | "maritime2" | "maritime1"
+  | "land-special2"
+  | "land-special3";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku3" | "koku-toku">;
+export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "maritime1" | "general3" | "general2" | "general1" | "land-special2" | "land-special3">;
 
 export type Session =
   | "am"
@@ -89,7 +105,12 @@ export type Session =
   | "denryoku"
   | "kikai"
   | "houki"
+  | "hoki"
   | "kogaku"
+  | "kiso"
+  | "kogaku-a"
+  | "kogaku-b"
+  | "tiri"
   | "mondai-a"
   | "mondai-b"
   | "mondai-c"
@@ -116,11 +137,11 @@ export type Session =
   | "keiei-joho"
   | "chusho-seisaku";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "annual" | "july" | "primary" | "kansai" | "february" | "june";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "annual" | "july" | "primary" | "kansai" | "february" | "june" | "august" | "march";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
-export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descriptive" | "essay";
+export type QuestionType = "multiple-choice" | "ordering" | "numeric" | "descriptive" | "essay" | "native-b";
 
 /**
  * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
@@ -148,6 +169,7 @@ export interface Question {
   officialAnswerNumber?: string;
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
+  nativeB?: NativeBData;
   numericAnswer?: ({ format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string }) & {
     /** 原問の解答欄に印刷済みの負号。answerと入力値には記入する数値部分を保存する。 */
     fixedSign?: "negative";
@@ -157,7 +179,7 @@ export interface Question {
   difficulty: Difficulty;
   question: string;
   choices?: Partial<Record<ChoiceKey, string>>;
-  /** ordering では全選択肢の期待順を ChoiceKey[] として保持する。 */
+  /** ordering は期待順。native-b の空文字は旧 transport 互換用で採点には使わない。 */
   answer: ChoiceKey | ChoiceKey[] | string;
   /**
    * 1問で選ぶ肢の数。answer の許容肢から、この数を重複なしで選ぶ。
@@ -185,7 +207,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;
@@ -213,4 +235,40 @@ export interface QuizFilter {
   inOrder?: boolean;
   randomizeChoices?: boolean;
   excludeRecent?: boolean;
+}
+
+/** One original question, five independently graded slots sharing the printed bank. */
+export interface NativeBCandidate {
+  id: string;
+  label: string;
+  explanation?: string;
+  imageUrl?: string;
+}
+export interface NativeBSlot {
+  label: string;
+  prompt?: string;
+  answer: string;
+  explanation: string;
+  candidateExplanations?: Record<string, string>;
+}
+export interface NativeBData {
+  mode: "binary" | "shared-bank";
+  candidates: NativeBCandidate[];
+  slots: NativeBSlot[];
+  bankImageUrls?: string[];
+  bankImageAltTexts?: string[];
+  officialLabel?: string;
+  officialScoring?: { maxPoints?: number; pointsPerSlot?: number; note?: string };
+}
+export interface NativeBGrade {
+  isCorrect: boolean;
+  correctSlots: number;
+  totalSlots: 5;
+  slotResults: {
+    label: string;
+    selectedCandidateId: string | null;
+    correctCandidateId: string;
+    isCorrect: boolean;
+    status: "correct" | "incorrect" | "unanswered" | "invalid";
+  }[];
 }
