@@ -79,9 +79,9 @@ export function HomeAuxSection() {
               <RotateCcw className="h-4 w-4" aria-hidden="true" />
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">続きから</p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">ランダム演習</p>
               <p className="truncate text-zinc-800 dark:text-zinc-200">
-                {resume.examLabel} を再開
+                {resume.examLabel} の問題を解く
               </p>
             </div>
           </Link>

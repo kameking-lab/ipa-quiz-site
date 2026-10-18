@@ -141,6 +141,13 @@ export default async function ExamTopPage({
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
   const code = exam as ExamCode;
   const questions = getQuestionsByExamStrict(code);
+  const rigakuCoverage = code === "rigaku-ryohoshi" ? {
+    sixtyFirstAm: questions.filter((question) => question.year === 2026 && question.session === "am").length,
+    sixtyFirstPm: questions.filter((question) => question.year === 2026 && question.session === "pm").length,
+    sixtiethAm: questions.filter((question) => question.year === 2025 && question.session === "am").length,
+    sixtiethPm: questions.filter((question) => question.year === 2025 && question.session === "pm").length,
+    remaining: 400 - questions.length,
+  } : null;
   const publishedOriginalCount = questions.length + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0);
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
@@ -346,7 +353,7 @@ export default async function ExamTopPage({
           {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回の全156原問のうち、択一式{questions.length}原問と選択式{PUBLISHED_SENTAKU.length}原問、計{questions.length + PUBLISHED_SENTAKU.length}原問を部分収録しています。選択式は1原問に5空欄あり、空欄を原問数に加算しません。労基安衛は両回で16問、労災保険法・雇用保険法・健康保険法・一般常識は一次根拠を確認できた問題だけを収録しています。択一式は各回7科目70問で、科目ごとに問1〜10があります。このサイトでは科目別に番号を保持し、選択式とは分けて表示します。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。統計問題は各問題文が指定する調査年度の原表に基づきます。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。解説は過去問AIの独自作成です。</p>}
           {code === "sharoushi" && <p className="mt-3 text-sm"><Link href="/sharoushi/sentaku" className="inline-flex min-h-[44px] items-center text-primary underline">選択式の問題一覧（{PUBLISHED_SENTAKU.length}原問・{PUBLISHED_SENTAKU.length * 5}空欄）</Link></p>}
           {code === "kangoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">午前235問と午後229問、計{questions.length}原問を部分収録しています。第115・114回 午前 問1〜90のうち178問収録。午前 問91〜120の確認済み57原問と午後229原問を加え、計464原問を部分収録。第115回は午前117問・午後115問、第114回は午前118問・午後114問です。全1918肢の正誤理由と数値記入2問の計算過程を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。第115回午前 問79と未確認問題・未整備図は未収録です。共通症例は各原問に保持し、図のある問は原本画像を表示します。出典：厚生労働省。問題文は改行・空白・番号整理のみ調整し、解説は過去問AIが独自に作成しています。</p>}
-          {code === "rigaku-ryohoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した{questions.length}原問を部分収録しています。第61回は午前19問・午後74問、第60回は午前24問・午後62問です。未収録221原問には図表、公式正答の代替記載、説明根拠の確認待ちがあり、両回の完備ではありません。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
+          {rigakuCoverage && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した{questions.length}原問を部分収録しています。第61回は午前{rigakuCoverage.sixtyFirstAm}問・午後{rigakuCoverage.sixtyFirstPm}問、第60回は午前{rigakuCoverage.sixtiethAm}問・午後{rigakuCoverage.sixtiethPm}問です。未収録{rigakuCoverage.remaining}原問には図表、公式正答の代替記載、説明根拠の確認待ちがあり、両回の完備ではありません。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "sagyo-ryohoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。図・専門根拠・代替正答を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "shino-kunrenshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第56・55回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。別冊図・専門根拠を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "judo-seifukushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の午前128問・午後122問、各250原問のうち、原本・最終正答・全四肢の解説を確認した{questions.length}問を収録しています。必修は各回の午前問1〜50、一般は午前問51〜128と午後全問です。二つ選ぶ問題は両肢を選択し、第34回午前問67・第33回午前問39は公式に認められたいずれか一肢を選ぶ形式です。出典：公益財団法人柔道整復研修試験財団（問題）、厚生労働省（最終正答）。解説は過去問AIの独自作成です。</p>}
