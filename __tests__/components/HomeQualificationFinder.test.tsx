@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, cleanup } from "@testing-library/react";
+import { createEvent, fireEvent, render, screen, cleanup } from "@testing-library/react";
 import { beforeEach, describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
@@ -46,6 +46,37 @@ describe("qualification discovery", () => {
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "fe" } });
     expect(screen.getByText("既存の問題プレビュー")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /収録している全資格/ })).toHaveAttribute("href", "#home-directory-title");
+  });
+  it("opens and focuses the qualification coverage on the same page", () => {
+    render(<>
+      <HomeQualificationFinder domains={domains.filter((domain) => domain.id !== "it")} directoryHref="#qualification-coverage" />
+      <details id="qualification-coverage"><summary>資格ごとの収録範囲・公式資料を見る</summary><p>収録資格</p></details>
+    </>);
+    const link = screen.getByRole("link", { name: /収録している全資格/ });
+    const coverage = document.getElementById("qualification-coverage") as HTMLDetailsElement;
+    const summary = screen.getByText("資格ごとの収録範囲・公式資料を見る");
+    expect(link).toHaveAttribute("href", "#qualification-coverage");
+    expect(coverage.open).toBe(false);
+    fireEvent.click(link);
+    expect(coverage.open).toBe(true);
+    expect(summary).toHaveFocus();
+  });
+  it.each([
+    { ctrlKey: true },
+    { metaKey: true },
+    { shiftKey: true },
+    { altKey: true },
+    { button: 1 },
+  ])("leaves modified clicks to the browser: %j", (options) => {
+    render(<>
+      <HomeQualificationFinder domains={domains} directoryHref="#qualification-coverage" />
+      <details id="qualification-coverage"><summary>収録範囲</summary></details>
+    </>);
+    const link = screen.getByRole("link", { name: /収録している全資格/ });
+    const click = createEvent.click(link, options);
+    fireEvent(link, click);
+    expect((document.getElementById("qualification-coverage") as HTMLDetailsElement).open).toBe(false);
+    expect(click.defaultPrevented).toBe(false);
   });
   it("keeps every real qualification href in visible server-rendered genres", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<HomeDirectory domains={domains} />), "text/html");
