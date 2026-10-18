@@ -27,7 +27,7 @@ const exam='aviation-comm';
 describe('aviation communication68 local registration candidate',()=>{
  it('registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
-  expect(getRegisteredExamCodes()).toHaveLength(78);expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
+  expect(getRegisteredExamCodes()).toHaveLength(79);expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
   expect(await getQuestionsForExam(exam)).toEqual(questions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(questions);expect(getQuestionsByExamStrict(exam)).toEqual(questions);expect(questions.every(isPracticeReadyQuestion)).toBe(true);
   const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(68);expect(home.periodLabel).toBe('2期分');expect(home.href).toBe('/aviation-comm');
  });
