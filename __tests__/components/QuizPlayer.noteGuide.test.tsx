@@ -42,15 +42,15 @@ beforeEach(() => {
 describe("QuizPlayer — after-answer note guide placement", () => {
   it("does not show the AU note-guide link before an answer is revealed", () => {
     render(<QuizPlayer question={auQuestion} index={0} total={10} mode="random" onNext={() => {}} />);
-    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /この資格の記事を探す/ })).not.toBeInTheDocument();
   });
 
   it("shows the AU note-guide link after answering, without changing the recorded outcome", () => {
     render(<QuizPlayer question={auQuestion} index={0} total={10} mode="random" onNext={() => {}} />);
     fireEvent.keyDown(window, { key: "2" }); // selects イ, the correct choice
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /この資格の記事を探す/ })).toHaveAttribute(
       "href",
-      "https://note.com/sikaku_rakutoru/n/n573e38ac5dea",
+      "https://tsugino-shikaku.jp/articles?qualification=au",
     );
     const entries = createHistoryStore().getAllEntries();
     expect(entries).toHaveLength(1);
@@ -67,18 +67,16 @@ describe("QuizPlayer — after-answer note guide placement", () => {
         onNext={() => {}}
       />,
     );
-    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /この資格の記事を探す/ })).not.toBeInTheDocument();
     fireEvent.keyDown(window, { key: "2" });
-    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /この資格の記事を探す/ })).toHaveAttribute(
       "href",
-      "https://note.com/ipa_quiz_ai/n/n550db5ff2054",
+      "https://tsugino-shikaku.jp/articles?qualification=ap",
     );
   });
 
-  // 13区分すべてに無料ガイドを結線したので「ガイドが無い試験区分」を実在の
-  // ExamCode で表せなくなった。ガイドが失効・削除されたときに空カードを出さない
-  // 分岐そのものは残っているので、getNoteGuide を差し替えて検証を続ける。
-  it("renders no guide block at all when the exam has no registered guide", async () => {
+  // 記事一覧は資格の対応から開ける。旧個別ガイドの有無に依存しない。
+  it("keeps qualification catalog access when the old individual guide is unavailable", async () => {
     vi.resetModules();
     vi.doMock("@/lib/note-guides", async () => {
       const actual = await vi.importActual<typeof import("@/lib/note-guides")>("@/lib/note-guides");
@@ -91,7 +89,7 @@ describe("QuizPlayer — after-answer note guide placement", () => {
     const entries = createHistoryStore().getAllEntries();
     expect(entries).toHaveLength(1);
     expect(entries[0]?.correct).toBe(true);
-    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /この資格の記事を探す/ })).toHaveAttribute("href", "https://tsugino-shikaku.jp/articles?qualification=au");
     expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
     vi.doUnmock("@/lib/note-guides");
     vi.resetModules();

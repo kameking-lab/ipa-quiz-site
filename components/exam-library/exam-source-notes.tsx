@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { NOTE_CATALOG_URL, noteCatalogDestination } from "@/lib/note-catalog";
 import relatedGuides from "@/data/exam-library/related-guides.json";
 import { EXAM_GROUPS, examSourcePdfUrl, type ExamCatalogEntry, type ExamGroupId } from "@/lib/exam-library-model";
 
@@ -7,11 +8,22 @@ interface ExamSourceNotesProps {
   entry?: ExamCatalogEntry;
   /** 資格ハブでは、その資格が属する公表区分だけを表示する */
   groupIds?: readonly ExamGroupId[];
+  noteLinks?: readonly { url: string }[];
   className?: string;
 }
 
 /** 出典・日付の意味・法令時点・採点方針の簡潔な注記 */
-export function ExamSourceNotes({ entry, groupIds, className = "" }: ExamSourceNotesProps) {
+export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: ExamSourceNotesProps) {
+  const qualifications = new Set((entry?.noteLinks ?? noteLinks ?? []).flatMap(link => {
+    const destination = new URL(noteCatalogDestination(link.url, "exam_library"));
+    const qualification = destination.searchParams.get("qualification");
+    return destination.origin === new URL(NOTE_CATALOG_URL).origin && qualification ? [qualification] : [];
+  }));
+  function guideDestination(href: string): string {
+    const destination = new URL(noteCatalogDestination(href, "exam_library"));
+    if (destination.origin === new URL(NOTE_CATALOG_URL).origin && qualifications.size === 1) destination.searchParams.set("qualification", [...qualifications][0]!);
+    return destination.href;
+  }
   const selectedGroupIds = entry ? [entry.group] : groupIds;
   const groups = selectedGroupIds
     ? EXAM_GROUPS.filter((group) => selectedGroupIds.includes(group.id))
@@ -50,7 +62,7 @@ export function ExamSourceNotes({ entry, groupIds, className = "" }: ExamSourceN
         <h3 className="font-bold">学び方の無料記事</h3>
         <p className="mt-1 text-sm leading-6">試験の選び方や、間違えた問題の振り返り方をnoteで紹介しています。</p>
         {relatedGuides.filter((guide) => !selectedGroupIds || guide.groups.some((group) => selectedGroupIds.includes(group as ExamGroupId))).map((guide) => (
-          <a key={guide.url} href={guide.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-bold underline underline-offset-4">
+          <a key={guide.url} href={guideDestination(guide.url)} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-bold underline underline-offset-4">
             {guide.title}<span className="sr-only">（note・新しいタブで開きます）</span><ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
           </a>
         ))}
