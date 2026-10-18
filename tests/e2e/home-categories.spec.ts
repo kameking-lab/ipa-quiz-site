@@ -4,6 +4,26 @@ test.setTimeout(120_000);
 test.use({ serviceWorkers: "block" });
 test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => route.abort()); });
 
+for (const width of [400, 1280]) {
+  test(`qualification coverage opens below the sticky header at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto("/qualifications");
+    const coverage = page.locator("#qualification-coverage");
+    const summary = coverage.locator("summary");
+    await expect(coverage).not.toHaveAttribute("open", "");
+    await page.locator("#choose-qualification").getByRole("link", { name: "収録している全資格・区分を見る" }).click();
+    await expect(page).toHaveURL(/\/qualifications$/);
+    await expect(coverage).toHaveAttribute("open", "");
+    await expect(summary).toBeFocused();
+    await expect(summary).toBeInViewport();
+    await expect.poll(async () => {
+      const headerBottom = await page.locator("header.sticky").first().evaluate((header) => header.getBoundingClientRect().bottom);
+      const summaryTop = await summary.evaluate((element) => element.getBoundingClientRect().top);
+      return summaryTop - headerBottom;
+    }).toBeGreaterThanOrEqual(8);
+  });
+}
+
 for (const width of [390, 1280]) {
   test(`home lets learners jump straight to a qualification at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });

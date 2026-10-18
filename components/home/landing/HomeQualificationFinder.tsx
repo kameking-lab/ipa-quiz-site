@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type MouseEvent, type ReactNode } from "react";
 
 import { ArrowRight, Search, X } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
@@ -23,6 +23,17 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
   }, [domains]);
   function rememberFilters() {
     window.history.replaceState({ ...window.history.state, homeQualificationFinder: { query, domainId } }, "");
+  }
+  function openDirectory(event: MouseEvent<HTMLAnchorElement>) {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (!directoryHref.startsWith("#")) return;
+    const target = document.getElementById(directoryHref.slice(1));
+    if (!(target instanceof HTMLDetailsElement)) return;
+    event.preventDefault();
+    target.open = true;
+    const summary = target.querySelector("summary");
+    summary?.focus();
+    summary?.scrollIntoView?.({ block: "start" });
   }
   const items = useMemo(() => domains.flatMap((domain) =>
     [...domain.featured, ...domain.compact].map((item) => ({ ...item, domainId: domain.id, domainTitle: domain.title }))), [domains]);
@@ -54,7 +65,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
           <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
         </a></li>)}
       </ul> : <div className="study-empty"><p>該当する資格が見つかりませんでした。</p><button type="button" onClick={() => { setQuery(""); setDomainId(null); }} className="min-h-11 underline underline-offset-4">検索をクリアして選び直す</button></div>}
-      <a href={directoryHref} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
+      <a href={directoryHref} onClick={openDirectory} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
       </div>
       <aside className="study-aside">{preview}</aside>
     </section>

@@ -46,9 +46,9 @@ export default function QualificationsPage() {
         </p>
       </header>
 
-      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="/#home-directory-title" />
+      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="#qualification-coverage" />
       <details id="qualification-coverage" className="group mt-6 rounded-2xl border border-border bg-card p-4">
-        <summary className="min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
+        <summary className="scroll-mt-20 min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
         {published.map((item) => (
           <article key={item.slug} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
