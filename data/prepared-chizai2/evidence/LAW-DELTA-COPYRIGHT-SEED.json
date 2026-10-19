@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-11T07:35:11.744Z",
+  "scope": "copyright/seed amendment-delta check; not whole-corpus substantive or full historical-law audit",
+  "input": {
+    "path": "C:/wt/chizai2-latest-two-20261011/data/prepared-chizai2/questions.ts",
+    "sha256": "420599c16994b054621e243c2f396a0a1bf397d46b7c2c63e251402103ba3802",
+    "totalOriginalQuestions": 160
+  },
+  "cutoffs": {
+    "53": "2025-09-01",
+    "54": "2026-01-01"
+  },
+  "sources": {
+    "S2020act": {
+      "url": "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-21.pdf",
+      "locator": "2020改正法本文、PDF20頁附則1条、2号は2022-04-01。",
+      "finding": "21条改正を附則1条2号に含める。基本施行は2021-04-01、21条改正は2022-04-01。"
+    },
+    "S2020overview": {
+      "url": "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-22.pdf",
+      "locator": "農水省改正概要1頁（基本2021-04-01、項目2の自家増殖等は2022-04-01）",
+      "finding": "栽培地域・輸出先条件と自家増殖の許諾化を区別。"
+    },
+    "S2020diff": {
+      "url": "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf",
+      "locator": "2020新旧対照表、21条の旧2/3項削除、旧4項を新2項へ移す箇所。",
+      "finding": "農業者の一般的自家増殖例外が削除され、適法譲渡後の消尽条項は存続。"
+    },
+    "S2026diff": {
+      "url": "https://www.maff.go.jp/j/shokusan/syubyouhou/attach/pdf/index-28.pdf",
+      "locator": "2026新旧対照表PDF7頁：19条2項、21条1項2号・2項。",
+      "finding": "2026改正直前の期間は25/30年。21条1項2号の特許方法例外に先願条件はない。",
+      "limit": "2026改正直前の旧欄だけで2025-09-01版全体を証明したとは扱わない。2020改正資料と併用。"
+    },
+    "S2026qa": {
+      "url": "https://www.maff.go.jp/j/shokusan/syubyouhou/r8kaisei_qa.html",
+      "locator": "農水省Q&A施行期日欄",
+      "finding": "期間延長・権利範囲明確化は2026-07-24、その他は原則2026-12-01。両試験基準日後。"
+    },
+    "C2020page": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/r02_hokaisei/",
+      "locator": "令和2年法律48号、施行期日欄",
+      "finding": "写り込み範囲拡大は2020-10-01、違法ダウンロード範囲拡大等は2021-01-01。"
+    },
+    "C2020diff": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/r02_hokaisei/pdf/92359601_05.pdf",
+      "locator": "PDF2-3頁30条の2、17-19頁30条、20-21頁102条。",
+      "finding": "30条の2は軽微性・正当範囲・権利者利益の条件を保持し利用範囲を拡大。30条1項3号は侵害送信と知りながらの録音録画、4号は別の複製。102条で30条1項は4号を除き隣接権へ準用。"
+    },
+    "C2018page": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/kantaiheiyo_hokaisei/",
+      "locator": "改正概要(1)/(4)/(6)",
+      "finding": "2018-12-30施行。実演・レコードは50年から70年。配信音源の二次使用料対象追加。"
+    },
+    "C2018diff": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/kantaiheiyo_hokaisei/pdf/r1408266_03.pdf",
+      "locator": "PDF3-4頁、95条・101条2項1/2号。",
+      "finding": "実演とレコードの70年及び配信音源を含む二次使用を条文で照合。放送・有線放送3/4号はこの改正で変更されない。",
+      "limit": "略記の3/4号の全文を本資料で読んだとは扱わない。"
+    },
+    "C2018qa": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/kantaiheiyo_chosakuken/1411890.html",
+      "locator": "問3/4/10/11",
+      "finding": "期間が既に満了した著作物の保護を復活させない。"
+    },
+    "C2012page": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/h24_hokaisei/",
+      "locator": "施行期日欄と30条の3の解説",
+      "finding": "平成24年43号。検討過程利用等の基本施行は2013-01-01。違法録音録画刑罰化の2012-10-01と区別。"
+    },
+    "C2012act": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/h24_hokaisei/pdf/24_houkaisei_horitsu_joubun_ver2.pdf",
+      "locator": "新設30条の3と附則1条",
+      "finding": "許諾を得て又は裁定を受けて利用しようとする検討過程の必要範囲。"
+    },
+    "C2023act": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/r05_hokaisei/pdf/93912401_02.pdf",
+      "locator": "PDF46-49頁、附則1条・3条・4条",
+      "finding": "附則1条3号の2025施行対象は指定機関の準備行為3/4条。拘禁刑への改称を定める条項ではない。"
+    },
+    "C2023order": {
+      "url": "https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/r05_hokaisei/pdf/94223201_01.pdf",
+      "locator": "令和7年政令195号1頁",
+      "finding": "令和5年33号の本体施行2026-04-01、附則1条3号の準備行為は2025-06-01。前者は両基準日後。",
+      "limit": "この政令を著作権119条の拘禁刑改称の証拠として使用しない。"
+    }
+  },
+  "events": [
+    {
+      "key": "SEED2020-REGION",
+      "articles": [
+        "種苗法21条の2・21条の3・21条の4"
+      ],
+      "effectiveDate": "2021-04-01",
+      "sources": [
+        "S2020act",
+        "S2020overview"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "SEED2020-PROPAGATION",
+      "articles": [
+        "種苗法21条"
+      ],
+      "effectiveDate": "2022-04-01",
+      "sources": [
+        "S2020act",
+        "S2020overview",
+        "S2020diff"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "SEED2026-TERM-SCOPE",
+      "articles": [
+        "種苗法19条2項",
+        "21条1項2号・2項"
+      ],
+      "effectiveDate": "2026-07-24",
+      "sources": [
+        "S2026diff",
+        "S2026qa"
+      ],
+      "cutoffDisposition": "基準日後の改正を除外"
+    },
+    {
+      "key": "COPY2020-INCIDENTAL",
+      "articles": [
+        "著作権法30条の2"
+      ],
+      "effectiveDate": "2020-10-01",
+      "sources": [
+        "C2020page",
+        "C2020diff"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "COPY2020-PRIVATE",
+      "articles": [
+        "著作権法30条1項2・3・4号",
+        "102条1項"
+      ],
+      "effectiveDate": "2021-01-01",
+      "sources": [
+        "C2020page",
+        "C2020diff"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "COPY2018-TERM",
+      "articles": [
+        "著作権法51条",
+        "101条2項1・2号"
+      ],
+      "effectiveDate": "2018-12-30",
+      "sources": [
+        "C2018page",
+        "C2018diff",
+        "C2018qa"
+      ],
+      "cutoffDisposition": "施行済み、消滅権利の復活なし"
+    },
+    {
+      "key": "COPY2018-SECONDARY",
+      "articles": [
+        "著作権法95条・97条"
+      ],
+      "effectiveDate": "2018-12-30",
+      "sources": [
+        "C2018page",
+        "C2018diff"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "COPY2012-CONSIDERATION",
+      "articles": [
+        "著作権法30条の3"
+      ],
+      "effectiveDate": "2013-01-01",
+      "sources": [
+        "C2012page",
+        "C2012act"
+      ],
+      "cutoffDisposition": "施行済み"
+    },
+    {
+      "key": "COPY2025-PENALTY",
+      "articles": [
+        "著作権法119条",
+        "刑法38条"
+      ],
+      "effectiveDate": null,
+      "sources": [],
+      "cutoffDisposition": "原問には拘禁刑とある。正確な改称条文・施行期日原文未確認"
+    },
+    {
+      "key": "COPY2026-ADJUDICATION",
+      "articles": [
+        "著作権法67条の3等"
+      ],
+      "effectiveDate": "2026-04-01",
+      "sources": [
+        "C2023act",
+        "C2023order"
+      ],
+      "cutoffDisposition": "基準日後。160問に直接の対象条文なし"
+    }
+  ],
+  "questions": [
+    {
+      "id": "chizai2-2026-07-12-gakka-q9",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "SEED2020-REGION",
+        "SEED2020-PROPAGATION",
+        "SEED2026-TERM-SCOPE"
+      ],
+      "articles": [
+        "種苗法21条の2・21条の3・21条の4",
+        "種苗法21条",
+        "種苗法19条2項",
+        "21条1項2号・2項"
+      ],
+      "finding": "アの25/30年、イの地域条件、エの自家増殖許諾の現説明を維持。期間延長を遡及適用しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q2",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "SEED2020-REGION",
+        "SEED2020-PROPAGATION"
+      ],
+      "articles": [
+        "種苗法21条の2・21条の3・21条の4",
+        "種苗法21条"
+      ],
+      "finding": "指定地域外の生産と自家増殖にも権利が及び得る説明を維持。2020改正前の農業者一般例外を採用しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q29",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "SEED2026-TERM-SCOPE"
+      ],
+      "articles": [
+        "種苗法19条2項",
+        "21条1項2号・2項"
+      ],
+      "finding": "永年性植物30年の説明を維持。2026-07-24施行の40年を2026-01-01へ遡らせない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "SEED2020-PROPAGATION",
+        "SEED2026-TERM-SCOPE"
+      ],
+      "articles": [
+        "種苗法21条",
+        "種苗法19条2項",
+        "21条1項2号・2項"
+      ],
+      "finding": "期間30年及び21条1項2号の生産方法特許例外に先願条件がない点を再確認。適法譲渡後消尽も2020改正で存続。2026追加の貸渡し等を混入しない。",
+      "missingEvidence": [
+        "2026新旧対照旧欄と2020資料間の全改正列挙は未実施（当該差分で結論変更は認められない）"
+      ],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-partly-confirmed"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q39",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2020-INCIDENTAL"
+      ],
+      "articles": [
+        "著作権法30条の2"
+      ],
+      "finding": "軽微な写り込みの必要条件を維持。2020改正後の正当範囲による利用を確認。肖像・パブリシティは別の論点で本確認の対象外。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q31",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2020-INCIDENTAL"
+      ],
+      "articles": [
+        "著作権法30条の2"
+      ],
+      "finding": "軽微な写り込みの必要条件を維持。2020改正後の正当範囲による利用を確認。肖像・パブリシティは別の論点で本確認の対象外。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q3",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2020-PRIVATE"
+      ],
+      "articles": [
+        "著作権法30条1項2・3・4号",
+        "102条1項"
+      ],
+      "finding": "30条の私的複製例外は、侵害配信等の除外と知情要件を伴う。正規配信の個人的録音録画は新違法ダウンロード規定で一律違法にはならない。公開送信・引用・非営利演奏の他条項をこの差分から変更しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-gakka-q28",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2020-PRIVATE"
+      ],
+      "articles": [
+        "著作権法30条1項2・3・4号",
+        "102条1項"
+      ],
+      "finding": "30条の私的複製例外は、侵害配信等の除外と知情要件を伴う。正規配信の個人的録音録画は新違法ダウンロード規定で一律違法にはならない。公開送信・引用・非営利演奏の他条項をこの差分から変更しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q11",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2020-PRIVATE"
+      ],
+      "articles": [
+        "著作権法30条1項2・3・4号",
+        "102条1項"
+      ],
+      "finding": "30条の私的複製例外は、侵害配信等の除外と知情要件を伴う。正規配信の個人的録音録画は新違法ダウンロード規定で一律違法にはならない。公開送信・引用・非営利演奏の他条項をこの差分から変更しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q12",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2020-PRIVATE"
+      ],
+      "articles": [
+        "著作権法30条1項2・3・4号",
+        "102条1項"
+      ],
+      "finding": "30条の私的複製例外は、侵害配信等の除外と知情要件を伴う。正規配信の個人的録音録画は新違法ダウンロード規定で一律違法にはならない。公開送信・引用・非営利演奏の他条項をこの差分から変更しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q22",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2018-TERM"
+      ],
+      "articles": [
+        "著作権法51条",
+        "101条2項1・2号"
+      ],
+      "finding": "実演・レコードの70年への改正は基準日前。放送・有線放送の期間は本改正の変更対象外。原説明の70/50区別を維持。",
+      "missingEvidence": [
+        "101条2項3/4号の50年全文は本対照表では略記（当該2018改正の差分確認は済み）"
+      ],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-partly-confirmed"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q10",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2018-TERM"
+      ],
+      "articles": [
+        "著作権法51条",
+        "101条2項1・2号"
+      ],
+      "finding": "既に消滅したバッハの曲の著作権を2018期間延長で復活させない。実演の権利は別に判断するという原説明を維持。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-gakka-q7",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2018-SECONDARY"
+      ],
+      "articles": [
+        "著作権法95条・97条"
+      ],
+      "finding": "実演家・レコード製作者の二次使用料の説明を維持。2018年の配信音源対象追加を原稿の権利者分類と混同しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q35",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2018-SECONDARY"
+      ],
+      "articles": [
+        "著作権法95条・97条"
+      ],
+      "finding": "実演家・レコード製作者の二次使用料の説明を維持。2018年の配信音源対象追加を原稿の権利者分類と混同しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q40",
+      "lawReferenceDate": "2025-09-01",
+      "deltaKeys": [
+        "COPY2012-CONSIDERATION"
+      ],
+      "articles": [
+        "著作権法30条の3"
+      ],
+      "finding": "30条の3の検討過程の必要範囲を確認。導入施行日は2013-01-01。完成動画の一般公開へ拡張しない。",
+      "missingEvidence": [],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-confirmed-for-listed-events"
+    },
+    {
+      "id": "chizai2-2026-07-12-gakka-q33",
+      "lawReferenceDate": "2026-01-01",
+      "deltaKeys": [
+        "COPY2025-PENALTY"
+      ],
+      "articles": [
+        "著作権法119条",
+        "刑法38条"
+      ],
+      "finding": "公式原問の拘禁刑表記と、過失による刑事責任を否定する現説明を保存。令和7年政令195号は準備行為の施行期日なので拘禁刑改称の証拠に使わない。",
+      "missingEvidence": [
+        "119条の懲役→拘禁刑の整備法該当条文・施行期日政令原文"
+      ],
+      "explanationChangeRequired": false,
+      "answerPreserved": true,
+      "originalFieldsPreserved": true,
+      "status": "targeted-delta-partly-confirmed"
+    }
+  ],
+  "excludedFutureEvents": [
+    {
+      "key": "COPY2026-ADJUDICATION",
+      "directQuestionCount": 0
+    }
+  ],
+  "accessControls": {
+    "noExternalQuestionContentTransmission": true,
+    "noPreviouslyDeniedResourcesRetried": true,
+    "newFailedResources": [
+      {
+        "url": "https://www.moj.go.jp/",
+        "result": "Internal Error, no repeat"
+      }
+    ]
+  },
+  "limitations": [
+    "保存済み原稿を再生成していない。基準日時点の全条項・全改正鎖まで照合完了とは扱わない。",
+    "掲載許諾・原問本文の外部送信承認は別件のまま保持。"
+  ],
+  "mutations": {
+    "corpus": false,
+    "onlyReport": true
+  }
+}
