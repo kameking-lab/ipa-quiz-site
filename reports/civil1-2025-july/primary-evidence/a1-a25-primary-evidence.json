@@ -1,0 +1,59 @@
+{
+  "scope": "2025年度1級土木施工管理技術検定・第一次検定 問題A11/A12/A17/A19/A25のHOLD技術論点のみ",
+  "checkedAt": "2026-10-11",
+  "authorReviewStatus": "HOLD",
+  "acceptance": "公式2025問題原本との同一性及び独立受入れは未了。本文・選択肢・正答番号の採用判定ではない。",
+  "method": "公開された公的機関の一次資料を直接閲覧し、記載の射程を肢別に照合。出題PDFのミラー、業界団体、民間解説はこの一次根拠判定に算入しない。国交省の令和8年3月版土木工事共通仕様書は2025年出題より後の資料であり、2025年時点の規定が同一だったとの断定には用いない。",
+  "questions": [
+    {
+      "number": 11,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "異種細骨材の吸水率を個別に測定し質量比で加重平均することの規格適否を、公的機関公開のJIS本文又は同等の一次仕様で確認できなかった。現原稿の『不適当』の根拠は未確定。", "revisionNeeded": "JIS A 5308附属書JA等の該当条項を原文確認して説明を再判定する。"},
+        {"choice": 2, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun02_syo02_setsu03.html", "section": "2-2-3-1 第7・8項（HTMLのためPDFページなし）", "evidence": "海砂の塩分滞留防止と塩分許容限度を規定。"}], "assessment": "塩分管理の必要性は一致。ただし、異種細骨材を混合した状態で測定するという肢固有の方法までは示さない。", "revisionNeeded": "混合時の塩化物量測定単位をJIS原文で確認する。"},
+        {"choice": 3, "match": "partial", "source": [{"url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000063093", "page": "PDF p.7（0起算6）、103.コンクリート用砕砂4.6", "evidence": "砕砂の粒形判定実積率54%以上を規定。"}], "assessment": "粒形判定実積率で砕砂品質を評価する点は一致。角ばり・偏平粒子の少なさを選ぶ趣旨まではこの数値規定だけからは断定できない。", "revisionNeeded": "現説明の形状・ワーカビリティーの因果は別一次資料で補強する。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "多孔質粒子、吸水率、凍結融解抵抗性の因果を公的機関の該当一次資料で局所確認できなかった。", "revisionNeeded": "公的試験報告・基準で因果を確認する。"}
+      ]
+    },
+    {
+      "number": 12,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "partial", "source": [{"url": "https://www.jice.or.jp/cms/kokudo/pdf/review/assistances/results/2024/09_PPT.pdf", "page": "PDF p.7（0起算6）、再生粗骨材Hの目標品質表", "evidence": "高知工科大学の研究発表表に『再生粗骨材H 2.5g/cm3以上・吸水率3.0%以下』と明記。JICE公開の国土政策研究助成成果だがJIS発行元の規格本文ではない。"}], "assessment": "3.0%以下の数値とは一致。JIS A 5021の正式条項との同一性は別途確認が必要。", "revisionNeeded": "JIS A 5021現行版の品質表を正式に照合する。"},
+        {"choice": 2, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun02_syo02_setsu03.html", "section": "2-2-3-2 細骨材粒度・表2-2-1注1（HTMLのためPDFページなし）", "evidence": "スラグ細骨材を単独使用又は他の細骨材と混合使用する場合を明記。"}], "assessment": "混合使用可能という範囲は一致。山砂との特定組合せ及び粒度調整の目的は明記されていない。", "revisionNeeded": "山砂との混合の具体例と目的を一次資料で確認する。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "硫酸ナトリウム溶液を用いた繰返し試験が骨材の安定性を判定するというJIS A 1122本文を公的サイトで閲覧できなかった。", "revisionNeeded": "JIS A 1122正式規格本文又は公的試験手順を照合する。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "砂の粘土塊含有量の上限を示す公的機関の一次表を取得できず、『2.0%以上を用いる』が誤りという数値根拠を確定できない。", "revisionNeeded": "JIS A 5308附属書JA等の粘土塊含有量の表を照合し、正しい限度値を明記する。"}
+      ]
+    },
+    {
+      "number": 17,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [{"url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun03_syo02_setsu04.html", "section": "3-2-4-8 ニューマチックケーソン基礎工（HTMLのためPDFページなし）", "evidence": "ニューマチックケーソンの施工手順を規定するが、永久荷重を底面のみで支持するという設計条件を規定しない。"}], "assessment": "肢固有の荷重支持説明を裏付けない。", "revisionNeeded": "ケーソン基礎の荷重支持機構を設計基準の原文で確認する。"},
+        {"choice": 2, "match": "partial", "source": [{"url": "https://thesis.pwri.go.jp/files/doken_shiryou_4303_00.pdf", "page": "PDF p.19（0起算18）、2.5節の載荷試験概要と杭先端極限支持力度", "evidence": "土木研究所資料4303は摩擦杭3例を扱い、その先端支持力度を評価。摩擦杭でも先端抵抗がゼロとは限らない。"}], "assessment": "摩擦杭でも先端抵抗が存在し得るため、単に『先端抵抗はない』とする説明は不適切。現原稿はその点を慎重に書いているが、肢の『周面摩擦力と底面支持力で所要支持力を得るよう支持層を確保』全体の誤りをこの資料だけでは証明しない。", "revisionNeeded": "道路橋示方書等の摩擦杭の定義・沈下照査・支持層要否を正式に照合する。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "直接基礎の支持層に関する粘性土・砂質土それぞれの強度・厚さ条件を一次設計資料で確認できなかった。", "revisionNeeded": "設計基準の支持層判定節を確認する。"},
+        {"choice": 4, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun03_syo02_setsu04.html", "section": "3-2-4-9 鋼管矢板基礎工 第7項（HTMLのためPDFページなし）", "evidence": "設計深度への到達及びその深度での支持力不足を管理対象として規定。"}], "assessment": "支持層側の所定深度・支持力を確保する趣旨とは整合。ただし鋼管矢板を必ず支持層へ根入れするという一般命題はこの仕様だけでは証明できない。", "revisionNeeded": "道路橋基礎の設計・施工基準で根入れ条件を確認する。"}
+      ]
+    },
+    {
+      "number": 19,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "contradicted", "source": [{"url": "https://www.mlit.go.jp/common/001472794.pdf", "page": "PDF p.28（0起算27）、4.5.5(3)(ク)とp.27（0起算26）、表4.5.1及び4.5.4(2)(オ)", "evidence": "場所打ち杭のコンクリートはトレミー工法で連続打設し、スランプは特記なければ18cmと定める。"}], "assessment": "肢の『分離防止のため流動性の低いコンクリートを使用』という説明とは整合しない。国交省仕様は適切な流動性の管理を要求し、低流動性が原則とはしていない。", "revisionNeeded": "現原稿の結論は維持できる可能性が高いが、低流動性による充填不良という因果は同資料に明記されないため説明の表現を精査する。"},
+        {"choice": 2, "match": "supported", "source": [{"url": "https://www.mlit.go.jp/common/001472794.pdf", "page": "PDF p.28（0起算27）、4.5.5(3)(ク)(d)", "evidence": "オールケーシング工法でケーシングチューブの先端をコンクリート中に2m以上入るよう保持すると明記。"}], "assessment": "肢の『所定の深さ以上差し込む』と一致。現原稿の土砂・水の巻込み防止という説明は、同項冒頭の施工目的とも整合。", "revisionNeeded": null},
+        {"choice": 3, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/common/001472794.pdf", "page": "PDF p.27-28（0起算26-27）、4.5.5(2)(ア)(d)及び(3)(カ)", "evidence": "リバース工法の泥水・スライム対策を確認し、孔底スライムを処理してから鉄筋かごを設置すると規定。"}], "assessment": "スライム処理が必要な点は一致。ただし『一次スライム処理の処理量はほとんど少ない』という肢の相対的評価を裏付けず、現原稿の『一次処理で除去』という表現とも完全には一致しない。", "revisionNeeded": "リバース工法の一次・二次スライム処理区分を公的施工要領で確認する。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "スタンドパイプ内のハンマグラブ揺動が地盤を緩め、孔壁崩壊につながるという肢固有の因果を公的機関資料で確認できなかった。", "revisionNeeded": "リバース工法のスタンドパイプ内初期掘削・ハンマグラブ使用可否・注意点を一次施工要領で確認する。"}
+      ]
+    },
+    {
+      "number": 25,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "壁の縦方向ひび割れ図を乾燥収縮等と区別する公的原図・原因対照表を確認できなかった。", "revisionNeeded": "公的機関のひび割れ形態図と原出題図を突合する。"},
+        {"choice": 2, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun01_syo03_setsu06.html", "section": "1-3-6-6 沈下ひび割れに対する処置（HTMLのためPDFページなし）", "evidence": "国交省仕様は壁・柱コンクリートの沈下を前提に、沈下がほぼ終了してからスラブ・梁を打設すること、発生時にはタンピング・再振動を行うことを規定。"}], "assessment": "打込み後の沈下が初期ひび割れにつながる機構とは整合。ただし幅800mmの壁中央の水平線状ひび割れと鉄筋拘束・ブリーディングを直接対応付ける図ではない。", "revisionNeeded": "公的なひび割れ原因対照図又は実験報告で、図2の形状と鉄筋拘束・ブリーディングの対応を確認する。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "厚さ250mm床版側面の縦方向ひび割れの原因を特定する公的形態図を確認できなかった。", "revisionNeeded": "図3と公的形態図を突合する。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "厚さ250mm床版付近の網目状ひび割れを塑性収縮等に分類する公的形態図を確認できなかった。", "revisionNeeded": "図4と公的形態図を突合する。"}
+      ]
+    }
+  ]
+}

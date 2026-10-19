@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-11T02:09:56.811869+00:00",
+  "scope": "civil1/2025/july/A29 choice2 only",
+  "status": "HOLD",
+  "publicAcceptance": false,
+  "examOriginalIdentityVerified": false,
+  "source": {
+    "publisher": "東京都財務局",
+    "title": "東京都土木工事標準仕様書",
+    "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+    "sha256": "a6cc44bffaf36240994518aba62eb64ab381a27cca90567d66eea17638ddd100",
+    "pdfPage": 183,
+    "printedPage": 172,
+    "section": "4.6.5 砂防コンクリートダム工 (1) 掘削工 エ",
+    "pageImageViewed": true,
+    "finding": "基礎面の大転石等の処理について監督員との協議を要求する。"
+  },
+  "correction": "未裏付けの一律除去断定を削除し、直接確認した協議事項を説明した。",
+  "notConfirmed": [
+    "存置できる埋没割合の定量基準",
+    "肢1・3・4の全範囲",
+    "公式2025問題原本と正答の同一性",
+    "独立受入れ"
+  ],
+  "notAdopted": "民間解説だけで2/3という数値を採用していない。",
+  "acquisition": [
+    {
+      "url": "https://www.pref.aomori.lg.jp/soshiki/nourin/rinsei/files/kyotusiyosyohonbun300401.pdf",
+      "status": "STOP",
+      "error": "HTTP Error 403: Forbidden",
+      "alternateRouteAttempted": false
+    },
+    {
+      "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+      "sha256": "a6cc44bffaf36240994518aba62eb64ab381a27cca90567d66eea17638ddd100",
+      "pages": 289
+    }
+  ],
+  "originalQuestionsChoicesAndAnswersChanged": false
+}

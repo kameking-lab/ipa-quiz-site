@@ -1,0 +1,116 @@
+{
+  "scope": "2025年度1級土木施工管理技術検定第一次検定・問題B13/B17/B18/B20/B21/B24/B25/B26/B27の一次資料補強のみ",
+  "checkedAt": "2026-10-11",
+  "status": "HOLD",
+  "publicAcceptance": false,
+  "sourceIdentityVerified": false,
+  "method": "公開された公的機関の原資料を直接閲覧し、肢の主張と照合した。各PDFページは表紙を含む1始まり。partialは一部の要素のみ一致し、肢全体の真偽の裏付けにはならない。unverifiedには根拠資料を充当しない。既存questions JSONは変更していない。",
+  "questions": [
+    {
+      "number": 13,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "転倒方式で転倒用の引張りを複数回の荷重で徐々に行う、という具体的な施工手順を公的一次資料で確認できなかった。", "revisionNeeded": "転倒方式の公的原手引きで、荷重の掛け方と転倒範囲・退避の手順を照合する。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "カッターの単独ブロックへの取付禁止と切断面近傍の飛散防止シートを、同時に裏付ける箇所を確認できなかった。", "revisionNeeded": "公的なコンクリートカッター施工要領の該当図・文を照合する。"},
+        {"choice": 3, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/sogoseisaku/kensetsusekou/kankyou/mic/safe_manual/03_09_kouzoubututorikowasikou.pdf", "publisher": "国土交通省", "title": "構造物取り壊し工", "page": "PDF 4ページ（本文120ページ、3.解体工）", "evidence": "『倒壊範囲の予測、作業員・重機は安全作業位置へ設置する』。飛散防護についても同ページに記載。"}], "assessment": "倒壊範囲を予測して人員・重機を安全位置に置く要素は一致。圧砕機・大型ブレーカに固有の飛散予測までの明示的な記載としては読めない。", "revisionNeeded": "肢の主要安全措置は支持されるが、原稿の『飛散範囲の事前予測』の出典を別途確認する。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "ウォータージェット施工時の隣接設備への防護カバーと周囲の防音シートについて、一次資料の該当箇所を確認できなかった。", "revisionNeeded": "公的なウォータージェット施工安全・騒音対策資料を照合する。"}
+      ],
+      "overallIssue": "③の主要部分のみ一次資料で確認。公式2025問題原本の同一性と独立受入れが未完了であり、肢全体は確定しない。"
+    },
+    {
+      "number": 17,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "partial", "source": [{"url": "https://www.pref.okinawa.lg.jp/shin-ishigaki/kankyou/akatuti.html", "publisher": "沖縄県新石垣空港課", "title": "赤土等流出防止対策", "page": "HTML『新石垣空港事業実施区域における主な赤土等流出防止対策』『2.発生濁水を浸透池や調整池で地下浸透させる』", "evidence": "発生源対策、浸透池・調整池、機械処理を計画し、濁水の流出を防止している。"}], "assessment": "処理施設の計画・設置という方向性は一致。ただし工事前設置の必須性と『経済的で効果的』という評価は直接示されていない。", "revisionNeeded": "着工前設置時期と施設選定の規定を公的施工要領で確認する。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "排出先水域の水質基準を調べて処理施設を選定するという肢全体を、適用法令と公的施工資料の双方で直接確認できなかった。", "revisionNeeded": "排水先・適用条例を特定した公的一次資料の条項を照合する。"},
+        {"choice": 3, "match": "partial", "source": [{"url": "https://www.pref.okinawa.lg.jp/shin-ishigaki/kankyou/akatuti.html", "publisher": "沖縄県新石垣空港課", "title": "赤土等流出防止対策", "page": "HTML『1.濁水の発生を抑える』", "evidence": "シート被覆工、土壌団粒化剤と種子吹付、芝による法面緑化工を、裸地からの濁水発生抑制策として具体的に掲げる。"}], "assessment": "シート・植生という予防策は一致する。肢にある植生土のう、吹付けコンクリート、必要時期の断定までは確認していない。", "revisionNeeded": "未確認の対策種類と施工時期を原資料で個別に照合する。"},
+        {"choice": 4, "match": "supports-correction", "source": [{"url": "https://www.pref.okinawa.lg.jp/shin-ishigaki/kankyou/akatuti.html", "publisher": "沖縄県新石垣空港課", "title": "赤土等流出防止対策", "page": "HTML『3.工事を工夫し、土砂の流出を抑えます』", "evidence": "『工事における裸地面積を小さくし、赤土の流出を抑えます』と明記し、年度別施工区域と施工後緑化を記す。"}], "assessment": "肢の『裸地面積をできるだけ大きく』という部分と明確に反対。既存原稿の『裸地面積を抑える』という訂正方向と一致する。", "revisionNeeded": "この部分に修正不要。ただし本資料は赤土流出対策の事例であり、全工事への一般化は別途検証。"}
+      ],
+      "overallIssue": "④の誤りは公的事業資料と直接照合できたが、①～③の全構成要素は未検証。"
+    },
+    {
+      "number": 18,
+      "status": "HOLD",
+      "candidateSourceOnly": [{"url": "https://thesis.pwri.go.jp/files/doken_shiryou_2009_00.pdf", "publisher": "土木研究所", "title": "近接基礎設計施工要領（案）", "issue": "156ページの画像中心の原資料で、肢に対応する本文と原資料ページを特定できなかった。出典候補としてのみ記録し、根拠には計上しない。"}],
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "エア・水ジェットによるオープンケーソン周辺地盤のゆるみの程度を原資料で確認できない。", "revisionNeeded": "該当施工例と周辺沈下の観測記録を確認。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "シールド推進振動と上部住宅の相関を原資料で確認できない。", "revisionNeeded": "シールド施工時の振動伝播に関する公的調査を確認。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "遮水壁・薬液注入などによる近接地盤変位抑制の原資料箇所を特定できない。", "revisionNeeded": "原文の工法・適用条件を確認。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "場所打ち杭の打設順序と既設構造物への影響を原資料ページ単位で確認できない。", "revisionNeeded": "既設構造物側からの施工順序に関する公的要領の該当図・文を確認。"}
+      ],
+      "overallIssue": "一次資料の候補はあるが本文箇所を閲覧検証できず、全肢保留。"
+    },
+    {
+      "number": 20,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "圧砕機の油圧ショベル装着と鉄筋コンクリート解体への適用を示す公的一次資料の本文箇所を確認できなかった。", "revisionNeeded": "公的な解体機械の仕様・安全資料を確認。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "静的破砕工法でのテーパー状ウェッジ挿入・膨張過程を直接裏付ける公的一次資料を確認できなかった。", "revisionNeeded": "ウェッジ型破砕工法の公的技術資料を確認。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "ダイヤモンドチップ付き円形ブレードと切断用途を直接示す公的一次資料を確認できなかった。", "revisionNeeded": "コンクリートカッターの公的機械仕様を確認。"},
+        {"choice": 4, "match": "partial", "source": [{"url": "https://www.mlit.go.jp/sogoseisaku/kensetsusekou/kankyou/mic/safe_manual/03_09_kouzoubututorikowasikou.pdf", "publisher": "国土交通省", "title": "構造物取り壊し工", "page": "PDF 6ページ（本文122ページ、ワイヤソーによる取壊し）", "evidence": "ワイヤソーの切断作業を独立した施工工程として記載。"}], "assessment": "ワイヤソーによる切断の存在だけは確認できる。肢の核心である潤滑油の塗布と水による冷却・潤滑の対比はこの資料で確認できない。", "revisionNeeded": "冷却・潤滑媒体を明示する公的技術資料で再照合する。"}
+      ],
+      "overallIssue": "④の油と水の真偽を裏付ける一次資料が得られず、正答根拠として採用不可。"
+    },
+    {
+      "number": 21,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "市販品・他工事転用・機器不足・削減を同じ公的計画要領で確認できなかった。", "revisionNeeded": "資材標準化、転用、施工機械の扱いを原資料で照合。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "規格統一と作業員・機器の組合せを公的一次資料で確認できなかった。", "revisionNeeded": "施工計画の原資料で各空欄を照合。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "選択肢の四空欄を公的一次資料の原文と突き合わせられなかった。", "revisionNeeded": "施工計画の原資料で各空欄を照合。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "既存原稿の四空欄の組合せを公的一次資料から独立に確認できなかった。", "revisionNeeded": "市販品・他工事転用・作業員・機器・削減の各語が対応する原要領を確認。"}
+      ],
+      "overallIssue": "組合せ問題の四空欄を一つずつ裏付ける一次資料がないため全肢保留。"
+    },
+    {
+      "number": 24,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "記述ア・イのみの組合せを公的な原価管理要領で検証できない。", "revisionNeeded": "ア～エそれぞれの管理目的・PDCA・重点管理の原文照合。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "記述イ・エの真偽を公的原資料で検証できない。", "revisionNeeded": "ア～エそれぞれの原文照合。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "既存原稿のア・イ・ウの正判定とエの誤判定を公的原資料から独立に確認できない。", "revisionNeeded": "原価管理の原要領で特に『実行予算より高める』の是非を確認。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "記述ア・ウ・エの真偽を公的原資料で検証できない。", "revisionNeeded": "ア～エそれぞれの原文照合。"}
+      ],
+      "overallIssue": "原価管理の設問は四記述を個別検証する必要があり、一次資料不足。"
+    },
+    {
+      "number": 25,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "ア～エのうち適当な記述が1つだけである可能性を公的原資料で棄却できない。", "revisionNeeded": "アロー、イベント、PERT・CPM、ダミーの定義を原文照合。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "適当な記述が2つだけである可能性を公的原資料で棄却できない。", "revisionNeeded": "四記述を公的施工計画教材で個別照合。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "適当な記述が3つだけである可能性を公的原資料で棄却できない。", "revisionNeeded": "四記述を公的施工計画教材で個別照合。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "既存原稿の『ア～エすべて適当』を公的原資料の該当箇所から独立に確認できなかった。", "revisionNeeded": "PERTとCPMの用途差、ダミーの所要時間を原資料で確認。"}
+      ],
+      "overallIssue": "ネットワーク工程表の定義・手順について公的原資料の本文を確認できず全肢保留。"
+    },
+    {
+      "number": 26,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "unverified", "source": [], "assessment": "工程・原価・品質の四空欄を公的一次資料で照合できない。", "revisionNeeded": "三要素間の関係を示す公的原図・原文を確認。"},
+        {"choice": 2, "match": "unverified", "source": [], "assessment": "既存原稿の『逆に高く・高く・悪くなる・バランスよく』を公的一次資料で独立に確認できない。", "revisionNeeded": "工程短縮時の原価推移、品質との関係、三要素の調整を個別に確認。"},
+        {"choice": 3, "match": "unverified", "source": [], "assessment": "四空欄の組合せを公的一次資料で照合できない。", "revisionNeeded": "三要素間の関係を示す公的原図・原文を確認。"},
+        {"choice": 4, "match": "unverified", "source": [], "assessment": "四空欄の組合せを公的一次資料で照合できない。", "revisionNeeded": "三要素間の関係を示す公的原図・原文を確認。"}
+      ],
+      "overallIssue": "同趣旨の試験解説など二次資料は根拠に含めず、全肢保留。"
+    },
+    {
+      "number": 27,
+      "status": "HOLD",
+      "choices": [
+        {"choice": 1, "match": "partial", "source": [{"url": "https://www.city.unzen.nagasaki.jp/kiji0033037/3_3037_19_up_cm1rm67i.pdf", "publisher": "長崎県雲仙市", "title": "工事提出書類等（完成図書）作成要領:土木工事編", "page": "PDF 5ページ（本文3ページ、『工程管理資料』）", "evidence": "計画・実施工程曲線の対比と上限・下限管理限界曲線を示す。"}], "assessment": "管理限界曲線を使う枠組みのみ一致。ア・イだけを選ぶ是非や上限・下限を越えた場合の具体的な判断は本資料で確認できない。", "revisionNeeded": "ア～エの限界線別対応を公的工程管理要領で照合。"},
+        {"choice": 2, "match": "partial", "source": [{"url": "https://www.city.unzen.nagasaki.jp/kiji0033037/3_3037_19_up_cm1rm67i.pdf", "publisher": "長崎県雲仙市", "title": "工事提出書類等（完成図書）作成要領:土木工事編", "page": "PDF 5ページ（本文3ページ、『工程管理資料』）", "evidence": "計画・実施工程曲線の対比と上限・下限管理限界曲線を示す。"}], "assessment": "曲線の存在は一致。イ・ウの真偽を判断する運用基準は示されない。", "revisionNeeded": "ア～エの限界線別対応を公的工程管理要領で照合。"},
+        {"choice": 3, "match": "partial", "source": [{"url": "https://www.city.unzen.nagasaki.jp/kiji0033037/3_3037_19_up_cm1rm67i.pdf", "publisher": "長崎県雲仙市", "title": "工事提出書類等（完成図書）作成要領:土木工事編", "page": "PDF 5ページ（本文3ページ、『工程管理資料』）", "evidence": "計画・実施工程曲線の対比と上限・下限管理限界曲線を示す。"}], "assessment": "曲線の存在は一致。ア・ウ・エの組合せの妥当性は立証されない。", "revisionNeeded": "ア～エの限界線別対応を公的工程管理要領で照合。"},
+        {"choice": 4, "match": "partial", "source": [{"url": "https://www.city.unzen.nagasaki.jp/kiji0033037/3_3037_19_up_cm1rm67i.pdf", "publisher": "長崎県雲仙市", "title": "工事提出書類等（完成図書）作成要領:土木工事編", "page": "PDF 5ページ（本文3ページ、『工程管理資料』）", "evidence": "計画・実施工程曲線の対比と上限・下限管理限界曲線を示す。"}], "assessment": "既存原稿の四記述すべて正という結論までは検証できない。曲線に関する共通概念のみ支持。", "revisionNeeded": "上限超過・下限割れ・上限接近・許容範囲内の四判断を直接規定する公的原資料を確認。"}
+      ],
+      "overallIssue": "一次資料は管理曲線の定義に限られ、ア～エの意思決定を確認できない。正答組合せは保留。"
+    }
+  ],
+  "sourceAccessNotes": [
+    "土木研究所の近接基礎設計施工要領（案）は公開PDFを開けたが画像主体で該当ページを特定できず、B18の根拠に使っていない。",
+    "国土技術政策総合研究所の濁水調査PDFは取得エラーで本文閲覧できず、別経路で回避せず根拠に使っていない。",
+    "熊本県の土木工事施工管理の手引きPDFはWeb閲覧でサイズ制限エラーとなり、本文閲覧・根拠化していない。",
+    "民間の受験解説・施工会社資料は公的一次資料ではないため根拠に使っていない。"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "scope": "2025年度一級土木施工管理技術検定・第一次検定 A39肢1、A42肢1、A46肢4の局所一次資料確認",
+  "checkedAt": "2026-10-11",
+  "candidateFileEdited": false,
+  "publicAcceptance": "NOT_ASSESSED",
+  "overallStatus": "HOLD",
+  "items": [
+    {
+      "number": 39,
+      "choiceNumber": 1,
+      "targetClaim": "ダムコンクリート用の細骨材について、雨水を避ける上屋を設け、3〜4日以上の水切り時間を確保する。",
+      "finding": "公的機関が公開した原資料で、上屋と3〜4日以上の水切り期間の両条件を直接示す箇所は確認できなかった。民間の試験解説や現場記事には異なる期間の記述があるため、期間の数値をこれらから確定しない。",
+      "verifiedPrimarySources": [],
+      "sourceIssue": "ダムの骨材貯蔵に関する公的な施工基準本文の該当箇所を未取得。",
+      "technicalIssue": "3〜4日以上の水切りを一般的標準として書けるか未確認。",
+      "candidateExplanationAlignment": "未判定。既存説明の数値を支持する一次資料なし。",
+      "revisionNeeded": "一次資料が得られるまで現行説明の当該数値をHOLD。",
+      "status": "HOLD"
+    },
+    {
+      "number": 42,
+      "choiceNumber": 1,
+      "targetClaim": "捨石根固工は表層に所要質量の石を3個並び以上とし、内部へ向かって石を大きくする。",
+      "finding": "宮城県の根固工・捨石工設計資料は、捨石の敷設幅2〜5m・敷設高1m以上、ブロックの天端2個並び以上・2層以上を示す。ただし、捨石の表層3個並び、内部の石の大小関係は記載していない。『2個並び』はブロックについての別条件であり、肢の3個並びの根拠に転用できない。",
+      "verifiedPrimarySources": [
+        {
+          "title": "宮城県 海岸堤防・根固工等に関する設計資料 第8章 根固工・捨石工",
+          "publisher": "宮城県",
+          "url": "https://www.pref.miyagi.jp/documents/11795/287159.pdf",
+          "pdfPage": 10,
+          "printedPage": "8-9",
+          "section": "8.3 構造設計、(2)断面形状（敷設幅・敷設高）",
+          "relevance": "関連する設計条件のみ。問題の表層3個並び・石の大小の直接根拠ではない。"
+        }
+      ],
+      "sourceIssue": "表層3個並びと中詰石の粒径差を定めた公的原資料は未確認。",
+      "technicalIssue": "正答対象の『内部ほど大きな石』が誤りであることを原資料から直接裏付けるには不足。",
+      "candidateExplanationAlignment": "宮城県資料は根固工の目的と断面設計の背景には合うが、肢1の訂正内容そのものは照合できない。",
+      "revisionNeeded": "『内部ほど小さな石』および『3個並び以上』を明記した公的な基準または発注者施工資料が必要。",
+      "status": "HOLD"
+    },
+    {
+      "number": 46,
+      "choiceNumber": 4,
+      "targetClaim": "鉄道コンクリート路盤のコンクリート打設前に、粒度調整砕石への吸水を防ぐプライムコートを1〜2L/m²散布する。",
+      "finding": "鉄道事業の公的実施機関・公的研究機関の公開資料で、当該施工目的と1〜2L/m²を一緒に示す箇所は確認できなかった。一般道路舗装のプライムコート説明は鉄道コンクリート路盤にそのまま適用できない。",
+      "verifiedPrimarySources": [],
+      "sourceIssue": "鉄道コンクリート路盤の施工仕様書の該当箇所を未取得。",
+      "technicalIssue": "散布量1〜2L/m²をこの用途の標準量として直接立証できない。",
+      "candidateExplanationAlignment": "未判定。既存説明の数値を支持する鉄道の一次資料なし。",
+      "revisionNeeded": "JRTT等の発注仕様書、鉄道総研の原資料、または鉄道事業者の施工標準を確認するまでHOLD。",
+      "status": "HOLD"
+    }
+  ],
+  "stopHandling": "アクセス制限・認証・有料購読を回避する取得操作は行っていない。"
+}
