@@ -1,0 +1,589 @@
+{
+  "scopeOriginals": 84,
+  "recommendedIdsFile": "reports/lab-remaining-20261011/acceptance-continuation/READY-IDS.json",
+  "matrix": "reports/lab-remaining-20261011/acceptance-continuation/FINAL-ADOPTION-MATRIX84.json",
+  "sourceManifest": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+  "questionFiles": [
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "originals": 10,
+      "worktreeSha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271",
+      "gitNormalizedSha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "originals": 7,
+      "worktreeSha256": "bd3093065825d6028d7a010e0ed4b659e3af3771fa4c2e7972b88f48ab72c9fb",
+      "gitNormalizedSha256": "56e8bf860e2c243915186c1bb73d8cce802ea9c8f076704d3d09ac09e113eaf4"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "originals": 9,
+      "worktreeSha256": "546950c63c23270a6f5f35b2f49647e4ddaf7adfcad4892713199fca49b73387",
+      "gitNormalizedSha256": "7b811e7c3eed0e40e97c0ebabbd7c8818682384cb9209870a138ec94f258bde4"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "originals": 23,
+      "worktreeSha256": "0a27f9b38a3b29a740c9a01ef72cbb9af22e80e3e3404338ace4f9d97de0a227",
+      "gitNormalizedSha256": "491fa3387442531079746f09f395a14e3efc13d9bfd4f6d9a74508564a870054"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "originals": 10,
+      "worktreeSha256": "02f746a19938aacefed9decbf2f1f517283c3e7f526575c1f68e3565ada40ca1",
+      "gitNormalizedSha256": "37d36175d5dd29eb0ea534bf19b108c9f6705ca856131d6368ad0aa2a47f525f"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "originals": 25,
+      "worktreeSha256": "d458ece190e4bf61df18166211aef4800b0d8897f5aea37e84c4b61ec874e84f",
+      "gitNormalizedSha256": "a23201f16f66d3b9ab1a71ef838856615fc25ddb1445300322a0678cdc4a4a18"
+    }
+  ],
+  "officialImageBindings": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q17",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no2.png",
+          "sha256": "294c96a8d0bc06bff13d8192a521da6db3e8ed2e232dcbf04bae45da7cff90c1"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q18",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no3.png",
+          "sha256": "a327a23d3ae99dae7143328769ee3d24884bdf81dda274f872618f3deda6e94a"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q23",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no4.png",
+          "sha256": "6acc12a25956806893786d0cb6d598e336891fc2bafda7d8d86d270abd873582"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q24",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no5.png",
+          "sha256": "a43a93f335de9ed9b0e4ee387c5197da5d6101b65bbef0ec3818708f455b4d71"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q27",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no6.png",
+          "sha256": "051337565f81a1bbcd4ad72411afb15212f38fbfd6fadfdd0508647b88b5c163"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q28",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no7.png",
+          "sha256": "91fbf522f6ea512903284e69d02013ce27ea98c058675607a195b518b94d7729"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q47",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no8.png",
+          "sha256": "b12236a02caa483326e01a95240033ccf688a60a240540ac6238eca304092054"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q50",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no9.png",
+          "sha256": "5aea8d2d8cf447f74907fa926f0870404a3c4eefb284c75bfa59a016531a0771"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q51",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no10.png",
+          "sha256": "3a336aa2a7360f5a9c730f2efc2e8cf668c4cb4e4b49e4c98bd89e36aa37b831"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q52",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no11.png",
+          "sha256": "99faea8ef5cc107990fad67d01cd4b863dce4cd88bcc4ef3229916d2cabcb500"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q58",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no12.png",
+          "sha256": "535ad1f9f91fa999a2f3bb69e2037a4e815e38b0049b9cae1e056c64f734e868"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q63",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no13.png",
+          "sha256": "a4a478b30bff2c84d6f827944b0eb0258a98fcb7fbfd8e6b6e9e62f8fa9d8810"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q67",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no14.png",
+          "sha256": "d8e33046c5a1761448c8955c42b05cbdcde1d8b294c7cb7475570f152fc71ff3"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q74",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no15.png",
+          "sha256": "ee55dc586159bb072c90d6a20b046c22666be9547e5d5e71db836301fe4589b1"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q85",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no16.png",
+          "sha256": "5d1fa019b3aca471deb4b64daefb7fb1ae453e2848bfaba0e148eb6fc29e0ca6"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q9",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no1.png",
+          "sha256": "3c0e3b2f083bd9842a6d2987a5b4d43ba4555224d99a757a4728f4494101ba77"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q95",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-q95-original.png",
+          "sha256": "aae297578b849afbc78c25d1117faf15c7b17f955e57091d53835813c8aad2ac"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no1.png",
+          "sha256": "f9af3d8a421d330e8d8bdfa3c99985d385022380fbacdf9a01985077b585f001"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no2.png",
+          "sha256": "72881e01bf342625b79b6e896f333065d4cba6b194725e205185a5c4675a3bfd"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no3.png",
+          "sha256": "290d67a97a36224785b29644e516e07ba221d0ed96e73249197149569a843652"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no4.png",
+          "sha256": "b34a6081271c312645926d2a2cb576a283aeb6363f399b25c109fdb4ed080c02"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no5.png",
+          "sha256": "a976d1b738bef1cd158f643862bd58cf1008595a62c1a2e0cdfb0b87f319df64"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no6.png",
+          "sha256": "554ec078e05f6ea1a03e9de60bb3b0fecf033ba3c21d7a27edd7cd5251986d90"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q26",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no7.png",
+          "sha256": "a78689e7a9aebafabd6c297add79f5f248514889059e787fae105714104d89cf"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q46",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no8.png",
+          "sha256": "180f8b49ce7fee763d251376ea7a52a4dff2a19d02fe7e3ca550d647f4c954df"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q47",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no9.png",
+          "sha256": "040aa17fc1bae241d7f76c0d540264ddacce11e8f4d21951642bfe387812771f"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q49",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no10.png",
+          "sha256": "67eca4fa5acf8dd21d304d78e5cae9f3acb529379f90e7f45e71320eba862916"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q55",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no11.png",
+          "sha256": "41b429ec1edd47bf6fd6427e86c12d7cac1c116db2362bc966e2d018e6ef75a7"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q61",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q61.png",
+          "sha256": "52051a6c687dff21ddad73edb88d9a3cd5263e9db133078b9270be6b3842a599"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q63",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no12.png",
+          "sha256": "6b6a9ee0f8716e2739eef93da7eaff23ebba471bbd455e9232caed7717f76814"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q64",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no13.png",
+          "sha256": "815297d437a4ff1d89c3aacb0740d15dcc439be8340979e1a9ca70627ca91712"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q65",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no14.png",
+          "sha256": "be904dc162ccbb57a6474415ff36c470a77b89c74f0124494942db5ca344a885"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q69",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no15.png",
+          "sha256": "0cd32ce2a77f3cf61364f0ed726f8651238b340d4cf37c5ef7564f246c248aa6"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q82",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q82.png",
+          "sha256": "cc50d5b291e167e53d5bdca1fb670d5ef465b7fc6b74a15c2b593c245803f445"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q86",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no16.png",
+          "sha256": "e9c04be3904ce92acee861e555bfbeab57446561f4c2dae59b609f7ea1900793"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q90",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no17.png",
+          "sha256": "f74c08cb343262a003140584f02175f2cecad23a1f12b6515764b41e84b4451f"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q98",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q98.png",
+          "sha256": "2ffe47333af5f2c35b820c4b794e2d9088b31b0e24ed2d2e8936cc33a70a7891"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q17",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no3.png",
+          "sha256": "fa2b6697e2c9c9c1f7d64abcc3439d490f7a3f6d2a6fc8d6d658126e8688cc1a"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q21",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no4.png",
+          "sha256": "bc3ca9efb1fc587da9a321764f69944c0f0bd0ec66e9dce37ef17c60279d9b91"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q25",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no5.png",
+          "sha256": "67f57a5a89bb5ef6dc511e112b0f5f27664e5bac8b423f8957b75ad824fff06c"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q27",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no6.png",
+          "sha256": "e2bca67eb058b45007748fc389217e78751bccd0e5725fae025bcf372ce3b985"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q28",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no7.png",
+          "sha256": "7fffa51c8eeedd2733c93fe4223b09ae5e8837beedd1874e486dae29d8c7a56a"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q3",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no1.png",
+          "sha256": "157bacf0ad4a7814d967c68db195010719430afabaf1be9241db1981720fc95d"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q49",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no8.png",
+          "sha256": "7f8ddcafc48d12b6447dd715f34cb04bc39b4e1c1db70b81ef2594e91c1b0561"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q54",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no9.png",
+          "sha256": "cf9834d3bafbc956c639e4646efaffc7ca50b3a1bae06126fd28e6d14ba444bf"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q58",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no10.png",
+          "sha256": "354428011f91025af1ee2ee0956dc280752a0a3b6e1e5f034ca33494e7cf7bc9"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q6",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no2.png",
+          "sha256": "bdcf94e36656b723a4e0911c1b36e8a2246c6c73a36ce49efc6cc30b8b683c42"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q62",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no11.png",
+          "sha256": "5fede0a1dbe3645be848b0fe22ffb5fac139c95e69b07bc3ce0f5ff9d1fa53ab"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q63",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no12.png",
+          "sha256": "16375c394eefb3bdcfff68fd285a8fed67d9e70d88d0be0a0f39f4f4ecd6f8b4"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q66",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no13.png",
+          "sha256": "58dc80ff357f929be263dc6e8592114cfbb02f3727ab2f424857753c4423f084"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q69",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no14.png",
+          "sha256": "b8fb2a872b4c8451b099da57df826a45cc153110779e368bc7b200c59f04cd56"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q78",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no15.png",
+          "sha256": "711aec6127772b9417ffad30a87ad73731e0012dd6bced136c48eab1ff8d2269"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q84",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no16.png",
+          "sha256": "1e17d8d8d9334dfaa553e58610380ab2083005df6aa94fa3909b2861c9264cfa"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q86",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no17.png",
+          "sha256": "c6c987f5e11fbb3973400a7da20416452cc17580d9809c63d186e03dbcfdb9d0"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q98",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-q98-original-options.png",
+          "sha256": "18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q21",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no5.png",
+          "sha256": "f35dedf49f37667072fe949f62957dadd5d992f1bf143a5d45ae597764f5996a"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q49",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no9.png",
+          "sha256": "54105fd44cee225414f8bffc3b951d6d4fa9ddd396335430f0acfc1c11d297cc"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q51",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no10.png",
+          "sha256": "84f9e34c3e6f7c7035250e6c2fd990863b500a2711d9ee13a5f7517bd163c988"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q52",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no11.png",
+          "sha256": "de2643d55926e7e0042c70369d3ddb8ad556c967846f158ac9c519b8688bb9e8"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "images": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no12.png",
+          "sha256": "0ce5e5edc2f9552c4f8b60ff06609ade241b1a36e55aba493336dbd11567e7b6"
+        }
+      ]
+    }
+  ],
+  "partialAdoptionBefore400Allowed": true,
+  "publicGo": 0,
+  "runtimeRegistrationPerformed": false
+}

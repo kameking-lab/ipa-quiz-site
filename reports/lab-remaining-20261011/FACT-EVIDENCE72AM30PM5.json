@@ -1,0 +1,649 @@
+{
+  "owner": "/root/lab_author72am30pm5",
+  "observedUtc": "2026-10-11T07:37:15.124955+00:00",
+  "exactScope": [
+    "rinsho-kensagishi-2026-annual-am-q3",
+    "rinsho-kensagishi-2026-annual-am-q6",
+    "rinsho-kensagishi-2026-annual-am-q17",
+    "rinsho-kensagishi-2026-annual-am-q21",
+    "rinsho-kensagishi-2026-annual-am-q22",
+    "rinsho-kensagishi-2026-annual-am-q24",
+    "rinsho-kensagishi-2026-annual-am-q25",
+    "rinsho-kensagishi-2026-annual-am-q26",
+    "rinsho-kensagishi-2026-annual-am-q27",
+    "rinsho-kensagishi-2026-annual-am-q28",
+    "rinsho-kensagishi-2026-annual-am-q30",
+    "rinsho-kensagishi-2026-annual-am-q31",
+    "rinsho-kensagishi-2026-annual-am-q32",
+    "rinsho-kensagishi-2026-annual-am-q33",
+    "rinsho-kensagishi-2026-annual-am-q38",
+    "rinsho-kensagishi-2026-annual-am-q41",
+    "rinsho-kensagishi-2026-annual-am-q42",
+    "rinsho-kensagishi-2026-annual-am-q45",
+    "rinsho-kensagishi-2026-annual-am-q46",
+    "rinsho-kensagishi-2026-annual-am-q49",
+    "rinsho-kensagishi-2026-annual-pm-q21",
+    "rinsho-kensagishi-2026-annual-pm-q49",
+    "rinsho-kensagishi-2026-annual-pm-q51",
+    "rinsho-kensagishi-2026-annual-pm-q52",
+    "rinsho-kensagishi-2026-annual-pm-q55"
+  ],
+  "scopeCount": 25,
+  "generationMethod": "INDEPENDENT_CODEX_AUTHORING",
+  "factVerificationCoverage": "PRIMARY_FACT_CHECKS_PARTIAL_WITH_EXPLICIT_LIMITS",
+  "officialSourceEvidencePath": "data/prepared-medical/rinsho-kensagishi/source-evidence-unreserved35.json",
+  "sources": [
+    {
+      "sourceId": "JSCC-GLU-1991",
+      "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan02_242.pdf",
+      "publisher": "日本臨床化学会",
+      "title": "血清グルコース測定の勧告法（1991）",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q38"
+      ],
+      "readScope": "公開された原勧告1ページの本文と反応式をPDF保存・画像表示で確認",
+      "verifiedClaims": [
+        "HK/G6PD反応でNADP＋からNADPHを生じ、その340nm吸光度増加を測定する。"
+      ],
+      "scopeLimit": "この公開1ページに含まれない詳細操作条件を確認済みとは扱わない。",
+      "observedDate": "2026-10-11",
+      "localPdf": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\glucose.pdf",
+      "localPdfSha256": "1a645174d65a8a5e75ea9383797b954a92ff111863c9ae6227e3b3a2fd0ccd87",
+      "renderedFirstPage": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\glucose.png",
+      "renderedFirstPageSha256": "72f367f52ee20d285e13eac457770d1279645927bb5d5ff0eed6d8cc13668a6d",
+      "renderedFirstPageVisuallyInspected": true
+    },
+    {
+      "sourceId": "JSCC-CK-1989",
+      "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan01_55.pdf",
+      "publisher": "日本臨床化学会",
+      "title": "ヒト血清中酵素活性測定の勧告法：クレアチンキナーゼ（1989）",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q31"
+      ],
+      "readScope": "公開された原勧告冒頭1ページをPDF保存・画像表示で確認",
+      "verifiedClaims": [
+        "CK勧告法は指示反応の補助酵素量を吟味する連成反応法であり、NADP/NADPHの用語が定義される。"
+      ],
+      "scopeLimit": "この1ページだけではCK→HK→G6PDの全反応式を直接確認できない。詳細連成反応は独立審査で確認。",
+      "observedDate": "2026-10-11",
+      "localPdf": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\ck.pdf",
+      "localPdfSha256": "8ac3c5ffffd9d524d9db64d6f37582b0ec8328681956cb5c6cd722e5c0908047",
+      "renderedFirstPage": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\ck.png",
+      "renderedFirstPageSha256": "ba4726235c11fc8cdf114ced44eaf6d07a998464ac9ce2cf1db1faaae522bf92",
+      "renderedFirstPageVisuallyInspected": true
+    },
+    {
+      "sourceId": "JSCC-AMY-2005",
+      "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan01_204.pdf",
+      "publisher": "日本臨床化学会",
+      "title": "ヒト血清中酵素活性測定の勧告法：α-アミラーゼ（2005）",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q31",
+        "rinsho-kensagishi-2026-annual-am-q41"
+      ],
+      "readScope": "公開された原勧告冒頭1ページをPDF保存・画像表示で確認",
+      "verifiedClaims": [
+        "α-アミラーゼは1,4-α-D-glucan hydrolaseで、勧告法の指示反応にはα-グルコシダーゼが用いられる。"
+      ],
+      "scopeLimit": "唾液腺型と膵型の分子量や腎不全によるクリアランスはこの原勧告ページの確認範囲外。",
+      "observedDate": "2026-10-11",
+      "localPdf": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\amylase.pdf",
+      "localPdfSha256": "3a94518901f68879648303c01eb3b254d79714bf1d362eda43bc4530bc925e12",
+      "renderedFirstPage": "C:\\Users\\kanet\\AppData\\Local\\Temp\\lab72-primary-facts\\amylase.png",
+      "renderedFirstPageSha256": "b6a02f5e10f4dfdcf163aa01c11931e81d8142bfcd2082fd1feeb2c46d80c886",
+      "renderedFirstPageVisuallyInspected": true
+    },
+    {
+      "sourceId": "UNIPROT-P04746",
+      "url": "https://rest.uniprot.org/uniprotkb/P04746.txt",
+      "publisher": "UniProt Consortium",
+      "title": "Reviewed human pancreatic alpha-amylase entry",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q41"
+      ],
+      "readScope": "Function/catalytic activity/cofactorのテキストを閲覧",
+      "verifiedClaims": [
+        "α-1,4結合の加水分解とCl−による活性化が記載される。"
+      ],
+      "scopeLimit": "膵型エントリー単独で唾液腺型との分子量比較を確認したとは扱わない。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "UNIPROT-P02647",
+      "url": "https://rest.uniprot.org/uniprotkb/P02647.txt",
+      "publisher": "UniProt Consortium",
+      "title": "Reviewed human apolipoprotein A-I entry",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q33"
+      ],
+      "readScope": "Function欄のLCAT cofactor記載を閲覧",
+      "verifiedClaims": [
+        "アポAⅠのLCAT補因子としての作用。"
+      ],
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "SOUTAR-1978-APOCI",
+      "url": "https://vivo.weill.cornell.edu/display/pubid746357",
+      "publisher": "Weill Cornell Medicine research record",
+      "title": "LCAT activation and lipid binding by synthetic fragments of apolipoprotein C-I",
+      "pmid": "746357",
+      "doi": "10.1080/00365517809104900",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q33"
+      ],
+      "readScope": "原著の大学研究記録に収録された著者抄録を閲覧。全文は未取得。",
+      "verifiedClaims": [
+        "合成アポCⅠ断片の活性を全長アポCⅠと比較した原著で、アポCⅠによるLCAT活性化を支持する。"
+      ],
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "CHEN-ALBERS-1985-APOE",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/4041470/",
+      "publisher": "PubMed original study abstract",
+      "title": "Activation of LCAT by apolipoproteins E-2, E-3, and A-IV isolated from human plasma",
+      "pmid": "4041470",
+      "doi": "10.1016/0005-2760(85)90131-6",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q33"
+      ],
+      "readScope": "原著抄録を閲覧。全文は未取得。",
+      "verifiedClaims": [
+        "精製酵素と定義された脂質粒子の実験ではアポE2/E3にもLCAT活性化を認める。"
+      ],
+      "scopeLimit": "in vitroの報告を通常生体内での主要活性化因子と同一視しない。公式正答13は変更しない。",
+      "factQaHold": "LCAT_APOE_ACTIVATION_PRIMARY_SOURCE_CONFLICT",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "AAEM-1999-CONSENSUS",
+      "url": "https://www.aanem.org/docs/default-source/documents/guidelineconsensuscriteria.pdf?sfvrsn=38d3c2fe_1",
+      "publisher": "American Association of Electrodiagnostic Medicine",
+      "title": "Consensus criteria: partial conduction block and temporal dispersion",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-pm-q21"
+      ],
+      "readScope": "公式PDFの時間的分散・位相相殺・伝導ブロックに関する記述を閲覧",
+      "verifiedClaims": [
+        "正常神経でも生理的時間的分散があり、位相相殺を生じる。感覚神経では通常の振幅比較だけで伝導ブロックを確実に判定しない。"
+      ],
+      "scopeLimit": "基準文書の主たる定量的閾値は運動神経のCMAPに関するもの。SNAPへ閾値を流用しない。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "KINCAID-1988-MODEL",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/3398879/",
+      "publisher": "PubMed original study abstract",
+      "title": "A model of the differing change in motor and sensory action potentials over distance",
+      "pmid": "3398879",
+      "doi": "10.1002/mus.880110407",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-pm-q21"
+      ],
+      "readScope": "原著抄録の伝導距離・時間的分散・位相相殺に関する説明を閲覧",
+      "verifiedClaims": [
+        "伝導距離の増大に伴う時間的分散・位相相殺が複合電位の振幅に影響する。"
+      ],
+      "scopeLimit": "全文のモデル条件・数値は未検証。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "PMDA-DIAGNOGREEN",
+      "url": "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/430574_7224400A1034_1_11",
+      "publisher": "PMDA／第一三共電子添文",
+      "title": "ジアグノグリーン注射用25mg",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q42"
+      ],
+      "readScope": "薬剤調製・食物の影響・排泄・測定法・光化学的安定化・遮光保存の節を閲覧",
+      "verifiedClaims": [
+        "肝機能検査では静注する。肝に取り込まれ胆汁排泄される。停滞率は15分後の採血で測定する。食事は肝血流や血清混濁に影響する。溶解液は保存せず用時調製し、外箱開封後は遮光する。"
+      ],
+      "scopeLimit": "電子添文に「早朝空腹時」の語の直接記載は確認していない。早朝空腹時という試験正答は公式採点表を根拠とし、食事影響の説明は添文で確認。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "JSP-GENOME-2018",
+      "url": "https://pathology.or.jp/genome_med/pdf/textbook.pdf",
+      "publisher": "日本病理学会",
+      "title": "ゲノム診療用病理組織検体取扱い規程",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q45"
+      ],
+      "readScope": "PDF物理p11-12（本文p5-6）の固定プロセス規定を閲覧",
+      "verifiedClaims": [
+        "10%中性緩衝ホルマリンを推奨し、固定不足・過固定と核酸品質への影響に配慮する。"
+      ],
+      "scopeLimit": "他の選択肢にある固定剤の浸透速度や化学性状をこの規程だけで確認したとは扱わない。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "LEICA-SPECIMEN-PREPARATION",
+      "url": "https://www.leicabiosystems.com/knowledge-pathway/an-introduction-to-specimen-preparation/",
+      "publisher": "Leica Biosystems",
+      "title": "An Introduction to Specimen Preparation",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q45",
+        "rinsho-kensagishi-2026-annual-am-q46"
+      ],
+      "readScope": "著者による標本作製・固定・凍結切片／ミクロトーム説明を閲覧",
+      "verifiedClaims": [
+        "緩衝ホルムアルデヒドの利用と、凍結組織をクリオスタットで切る標本作製工程。"
+      ],
+      "scopeLimit": "ミノー型の逃げ角2～10°やクロスローラーベアリング機構の分類はこの資料では未確認。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "NIH-CYSTINURIA",
+      "url": "https://medlineplus.gov/genetics/condition/cystinuria/",
+      "publisher": "NIH MedlinePlus Genetics",
+      "title": "Cystinuria",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q6"
+      ],
+      "readScope": "Causes欄のSLC3A1/SLC7A9と腎の再吸収機構を閲覧",
+      "verifiedClaims": [
+        "腎でのシスチンを含むアミノ酸再吸収障害により尿中シスチンが増え、結晶を形成する。"
+      ],
+      "scopeLimit": "六角板状の原図は公式別冊No.2の実画像で確認。MedlinePlus本文に形状記載を確認したとは扱わない。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "OSCILLOMETRY-PRIMARY-PROTOCOL",
+      "url": "https://cdn.clinicaltrials.gov/large-docs/95/NCT05085795/Prot_000.pdf",
+      "publisher": "ClinicalTrials.gov deposited original trial protocol",
+      "title": "Protocol NCT05085795",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q24"
+      ],
+      "readScope": "公開検索結果でノーズクリップを用いる測定手順を確認",
+      "verifiedClaims": [
+        "オシロメトリ測定手順にノーズクリップを用いる実施例が記載される。"
+      ],
+      "scopeLimit": "プロトコール全体は未検証。DLCO標準の全文は403で停止したため確認済み扱いにしない。",
+      "observedDate": "2026-10-11"
+    },
+    {
+      "sourceId": "CDC-AMEBIASIS-CONTEXT",
+      "url": "https://www.cdc.gov/dpdx/amebiasis/index.html",
+      "publisher": "CDC DPDx",
+      "title": "Amebiasis",
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-pm-q55"
+      ],
+      "readScope": "組織内栄養型とHE組織像の説明を閲覧",
+      "verifiedClaims": [
+        "アメーバ栄養型は大腸生検組織で観察され、HEでも確認できる。"
+      ],
+      "scopeLimit": "このページにPASの記述は見つからない。PAS正答・赤紫色の公式原図読影をCDCが直接支持するとは記録しない。",
+      "observedDate": "2026-10-11"
+    }
+  ],
+  "questionCoverage": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q3",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q6",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [
+        "NIH-CYSTINURIA"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q17",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q21",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q22",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "OSCILLOMETRY-PRIMARY-PROTOCOL"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "DLCOノーズクリップ・FeNO・ピークフローの選択肢別測定条件。ERS全文403のため回避せず独立審査。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q25",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "SEP各頂点と電極・発生部位の専門確認。N20という正答は公式値で一致。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q27",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q28",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q30",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "JSCC-CK-1989",
+        "JSCC-AMY-2005"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "CK指示反応の全連成反応と、他測定法の試薬構成。JSCC冒頭1ページ確認と混同しない。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q32",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "UNIPROT-P02647",
+        "SOUTAR-1978-APOCI",
+        "CHEN-ALBERS-1985-APOE"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "公式13とApoE原著の関係を専門家／独立審査で評価する。"
+      ],
+      "publicationHold": "LCAT_APOE_ACTIVATION_PRIMARY_SOURCE_CONFLICT"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "JSCC-GLU-1991"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "両アノマーへの作用、ムタロターゼ、アスコルビン酸の各肢説明。JSCC原反応は確認済み。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "JSCC-AMY-2005",
+        "UNIPROT-P04746"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "唾液腺型・膵型の分子量比較と腎排泄の肢。α1,4切断とCl活性化は一次資料確認済み。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q42",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "PMDA-DIAGNOGREEN"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q45",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "JSP-GENOME-2018",
+        "LEICA-SPECIMEN-PREPARATION"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": false,
+      "primaryFactSourceIds": [
+        "LEICA-SPECIMEN-PREPARATION"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "ミノー型逃げ角2～10°、クロスローラー方式の分類。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q49",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q21",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [
+        "AAEM-1999-CONSENSUS",
+        "KINCAID-1988-MODEL"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q49",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q51",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q52",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "officialSourceTextAndKeyVerified": true,
+      "sourceFigureVisuallyInspected": true,
+      "primaryFactSourceIds": [
+        "CDC-AMEBIASIS-CONTEXT"
+      ],
+      "authoringStatus": "FULL_FIVE_CHOICE_DRAFT_SAVED",
+      "independentMedicalReview": "PENDING",
+      "additionalFocusedChecks": [
+        "PASでの栄養型染色性と他特殊染色の個別説明。CDC本文をPAS根拠としない。"
+      ],
+      "publicationHold": "INDEPENDENT_REVIEW_PENDING"
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "assignedIdsExactMatch": 25,
+    "uniqueQuestionIds": 25,
+    "officialStemsAndChoicesExactMatch": 25,
+    "officialAnswerPdfCellsDirectlyMatched": 25,
+    "fiveNonemptyIndividualReasons": 25,
+    "totalIndividualReasons": 125,
+    "requiredSelectionsMatched": 25,
+    "originalTextShaMatched": 25,
+    "uniqueOfficialPdfByteHashesMatched": 5,
+    "uniqueOriginalQuestionPngByteHashesMatched": 36,
+    "uniqueOfficialFigureByteHashesMatched": 13,
+    "relativeFigureUrlsResolve": 13,
+    "needsReviewTrue": 25,
+    "handoffExcludedIdsAuthored": 0,
+    "providerStoppedRangeAuthored": 0,
+    "mainRuntimeRegistrationPerformed": false,
+    "publicGo": 0,
+    "buildOrHostedCiStartedByChild": false
+  },
+  "specificFactQaHolds": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "officialAnswer": "13",
+      "reason": "ApoE2/E3の条件依存LCAT活性化原著がある。無条件の活性化能否定は不可。公式正答を維持し公開保留。",
+      "resolutionOwner": "ROOT_INDEPENDENT_REVIEW"
+    }
+  ],
+  "accessStops": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/gene/341",
+      "reason": "reCAPTCHA/browser check",
+      "action": "STOPPED_NO_RETRY_NO_BYPASS"
+    },
+    {
+      "url": "https://publications.ersnet.org/content/erj/49/1/1600016.full.pdf",
+      "reason": "403 Forbidden",
+      "action": "STOPPED_NO_RETRY_NO_ALTERNATE_FETCH"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6409397/",
+      "reason": "PARENT_INHERITED_CAPTCHA",
+      "action": "NEVER_REQUESTED_IN_CHILD"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3313556/",
+      "reason": "Search result contained browser check",
+      "action": "NO_OPEN_NO_FULLTEXT_FETCH"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/6411128/",
+      "reason": "Search result contained browser check",
+      "action": "NO_OPEN_NO_FULLTEXT_FETCH"
+    },
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11160363/",
+      "reason": "Search result contained browser check",
+      "action": "NO_OPEN_NO_FULLTEXT_FETCH"
+    }
+  ],
+  "unavailableSourcesNotClaimedAsEvidence": [
+    "UniProt P02654/P04180/P04745 tool access errors; no retrieved body"
+  ],
+  "publicGo": 0,
+  "runtimeRegistration": false,
+  "independentReview": "PENDING",
+  "providerStoppedRangeAuthored": 0,
+  "oldSavedManuscriptsRegenerated": 0
+}
