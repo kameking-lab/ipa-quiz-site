@@ -1,0 +1,466 @@
+{
+  "oldHoldsMutated": false,
+  "publicGo": 0,
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q1",
+      "shortId": "am1",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3"
+          ],
+          "type": "edition-specific-source",
+          "reason": "1995版そのもの未取得。2022学会基準による補強を1995版直接検証と数えない。"
+        },
+        {
+          "choiceNumbers": [
+            "4",
+            "5"
+          ],
+          "type": "clinical-rationale-source",
+          "reason": "靱帯機能およびThomasテストの直接根拠が未取得。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q2",
+      "shortId": "am2",
+      "oldExactHoldsPreserved": [
+        "選択肢3：触知部位の内外側を線画のみで完全に確定できない。短腓骨筋との対応は専門家照合待ち。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "3"
+          ],
+          "type": "figure-side",
+          "reason": "元の内外側触知図の保留を解除しない。"
+        },
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "named-technique-source",
+          "reason": "Daniels段階1の各筋の手技原本は未取得。一般触知資料と混同しない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q3",
+      "shortId": "am3",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "alignment-direction-direct-source",
+          "reason": "取得AAOS章で一般作用は補強。設問の全5異常設定と立脚後期の膝折れ方向を直接対応する一次資料は未取得。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q4",
+      "shortId": "am4",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [],
+      "holdResolutionProposals": [
+        {
+          "scope": "このhelperの初回メモにあった選択肢2〜5の検査目的資料不足",
+          "status": "DIRECT_SOURCE_ACQUIRED",
+          "sourceIds": [
+            "slta",
+            "tmt",
+            "wais",
+            "wcst"
+          ],
+          "oldOwnerHoldsCleared": false
+        }
+      ],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q5",
+      "shortId": "am5",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "treatment-specific-claims",
+          "reason": "病態と視覚垂直方針は補強済み。各運動の効果・必然的悪化・リーチの具体的手順を直接支持する資料未取得。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q7",
+      "shortId": "am7",
+      "oldExactHoldsPreserved": [
+        "解説中の心拍数の具体値：別冊の方眼から厳密に測定できず、洞性徐脈は公式正答と波形の定性的所見による。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1"
+          ],
+          "type": "definition-source",
+          "reason": "PVCのP波なし・幅広いQRSという全定義を直接支持する専門資料未取得。"
+        },
+        {
+          "choiceNumbers": [
+            "4"
+          ],
+          "type": "numeric-heart-rate",
+          "reason": "単一の正確な心拍数はなお未確定。60/分未満の閾値と区別。β遮断薬の陰性変時作用の薬剤原資料未取得。"
+        }
+      ],
+      "holdResolutionProposals": [
+        {
+          "scope": "徐脈閾値",
+          "status": "THRESHOLD_ONLY_CORROBORATED",
+          "oldOwnerHoldsCleared": false,
+          "evidence": "assets/am7-ecg-detail.png; RRは5大マス超。具体値HOLDは維持。"
+        }
+      ],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q10",
+      "shortId": "am10",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "4",
+            "5"
+          ],
+          "type": "differential-rationale-source",
+          "reason": "骨挫傷/骨髄炎/軟骨肉腫/疲労骨折の除外理由をそれぞれ直接支える専門原資料未取得。"
+        },
+        {
+          "choiceNumbers": [
+            "3"
+          ],
+          "type": "laboratory-imaging-specificity",
+          "reason": "ALP上昇の特異性と別冊病変の厳密な形態診断は未検証。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "shortId": "am11",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q12",
+      "shortId": "am12",
+      "oldExactHoldsPreserved": [
+        "選択肢2：打腱器の接触部位が原図の画素から確定できない。",
+        "選択肢5：白矢印・黒矢印の操作方向と反応指を原図から確定できない。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "2"
+          ],
+          "type": "contact-point",
+          "reason": "打腱器の接触部位・指を独立に確定していない。"
+        },
+        {
+          "choiceNumbers": [
+            "5"
+          ],
+          "type": "figure-and-reflex-source",
+          "reason": "操作/反応の方向と対象指が確定困難。Wartenberg反射の直接手技資料未取得。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q1",
+      "shortId": "pm1",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "edition-specific-source",
+          "reason": "指定1995版そのもの未取得。特に座位指定と肩甲骨前方突出の注意規定は2022表で置換しない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "shortId": "pm3",
+      "oldExactHoldsPreserved": [
+        "選択肢1：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+        "選択肢2：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+        "選択肢4：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+        "選択肢5：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "4",
+            "5"
+          ],
+          "type": "side-and-movement-correspondence",
+          "reason": "図の左右と動作順を原因断定できない旧4肢HOLDを維持。"
+        },
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "hemiplegic-ADL-direct-source",
+          "reason": "片麻痺・重度感覚障害・肩亜脱臼という症例条件での独立ADL指導資料未取得。入浴温度確認を足で行う旧記述、階段の杖順は特に未検証。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q4",
+      "shortId": "pm4",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "muscle-length-test-direct-source",
+          "reason": "原図は確認済みだがEly/Thomasの短縮判定手技および各筋の付着を含む全除外説明は未取得。機能的触知資料で全理由verifiedにしない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+      "shortId": "pm5",
+      "oldExactHoldsPreserved": [
+        "選択肢1〜5：図は確認したが、原図に装具名称の記載はない。保存稿の固有装具名は独立照合待ち。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "orthosis-identity-and-indication",
+          "reason": "名称のない5原図それぞれを独立な装具原資料に照合未了。形状視認だけで名称/機構/臨床適応verifiedにしない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "shortId": "pm7",
+      "oldExactHoldsPreserved": [
+        "選択肢1：X線像だけでは固定方法と荷重許可時期を確定できない。術式・術者指示に依存。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1"
+          ],
+          "type": "individual-weight-bearing",
+          "reason": "旧HOLD：術式・固定方法・術者の個別荷重指示を原X線だけで確定できない。"
+        },
+        {
+          "choiceNumbers": [
+            "2"
+          ],
+          "type": "pneumonia-risk-direct-source",
+          "reason": "旧理由の肺炎リスクの直接裏付け未取得。早期離床・血栓予防は補強済み。"
+        },
+        {
+          "choiceNumbers": [
+            "4",
+            "5"
+          ],
+          "type": "posterior-approach-protocol",
+          "reason": "後方進入法に固有の禁止肢位・角度・期間の直接原資料未取得。403取得先は回避しない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+      "shortId": "pm10",
+      "oldExactHoldsPreserved": [
+        "別冊No.2の頂椎高位の厳密な同定は目視のみでは保留。装具選択の独立査読待ち。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3"
+          ],
+          "type": "orthosis-comparison-source",
+          "reason": "各装具の適応と矯正原理の直接装具原資料未取得。"
+        },
+        {
+          "choiceNumbers": [
+            "4",
+            "5"
+          ],
+          "type": "apical-level-and-boston-threshold",
+          "reason": "旧HOLD維持：頂椎厳密同定とBoston/Milwaukeeの固有適応基準未取得。メーカー403を回避しない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+      "shortId": "pm12",
+      "oldExactHoldsPreserved": [
+        "姿勢反射の出現・消失月齢には資料差がある。選択肢3・4の月齢根拠は専門家照合待ち。"
+      ],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "developmental-age-specific-source",
+          "reason": "固定9〜10か月推定、原始反射消失月齢、側方パラシュート固有月齢、背屈反応定義が未検証。原著候補PMC3384944はCAPTCHA表示で停止。一般反射資料を月齢検証と数えない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+      "shortId": "pm15",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "type": "patient-specific-spasticity-attribution",
+          "reason": "設問上の最適筋と実臨床の個別投与を区別。画像のみで各筋痙縮の寄与・注射効果/禁忌を確定しない。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "shortId": "pm26",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+      "shortId": "pm34",
+      "oldExactHoldsPreserved": [],
+      "additionalExactHolds": [
+        {
+          "choiceNumbers": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "type": "other-disease-indication-source",
+          "reason": "各別疾患の装具適応・除外理由の直接原資料未取得。Down等の患者属性だけによる一律禁忌とはしない。"
+        },
+        {
+          "choiceNumbers": [
+            "5"
+          ],
+          "type": "japanese-device-name-source",
+          "reason": "Pavlik形態とDDH適応は独立補強。リーメンビューゲルという国内呼称との同義資料は未取得。"
+        }
+      ],
+      "holdResolutionProposals": [],
+      "needsReview": true,
+      "publicGo": 0
+    }
+  ]
+}
