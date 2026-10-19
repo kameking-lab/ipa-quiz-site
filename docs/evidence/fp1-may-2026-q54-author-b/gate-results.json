@@ -1,0 +1,77 @@
+[
+ {
+  "gate": "question-count",
+  "result": "PASS",
+  "detail": "[54, 55, 56, 57, 58, 59, 60]"
+ },
+ {
+  "gate": "blank-count-per-question",
+  "result": "PASS",
+  "detail": "{54: 6, 55: 2, 56: 5, 57: 8, 58: 1, 59: 6, 60: 7}"
+ },
+ {
+  "gate": "blank-total-35",
+  "result": "PASS",
+  "detail": "35"
+ },
+ {
+  "gate": "no-invented-choices",
+  "result": "PASS",
+  "detail": "all originals are fill-in/computation"
+ },
+ {
+  "gate": "blank-occurrences-in-text",
+  "result": "PASS",
+  "detail": "Q54①:1/1 Q54②:1/1 Q54③:1/1 Q54④:1/1 Q54⑤:1/1 Q54⑥:2/2 Q55①:1/1 Q55②:1/1 Q56①:1/1 Q56②:1/1 Q56③:1/1 Q56④:1/1 Q56⑤:2/2 Q57①:1/1 Q57②:1/1 Q57③:1/1 Q57④:1/1 Q57⑤:1/1 Q57⑥:1/1 Q57⑦:1/1 Q57⑧:1/1 Q59①:1/1 Q59②:1/1 Q59③:1/1 Q59④:1/1 Q59⑤:2/2 Q59⑥:1/1 Q60①:1/1 Q60②:1/1 Q60③:1/1 Q60④:1/1 Q60⑤:1/1 Q60⑥:4/4 Q60⑦:1/1"
+ },
+ {
+  "gate": "answer-blank-alignment",
+  "result": "PASS",
+  "detail": "answers=35 blanks=35"
+ },
+ {
+  "gate": "answer-unit-alignment",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "gate": "independent-recompute-Q54-58",
+  "result": "PASS",
+  "detail": "20 numeric blanks match"
+ },
+ {
+  "gate": "explanation-per-blank",
+  "result": "PASS",
+  "detail": "explanations=35"
+ },
+ {
+  "gate": "explanation-answer-consistency",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "gate": "explanation-claims-resolve",
+  "result": "PASS",
+  "detail": "31 refs resolve"
+ },
+ {
+  "gate": "claims-verified-by-main-session",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "gate": "question-pdf-sha256",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "gate": "answer-pdf-sha256",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "gate": "official-values-present-in-answer-pdf-text",
+  "result": "PASS",
+  "detail": "all 35 found"
+ }
+]

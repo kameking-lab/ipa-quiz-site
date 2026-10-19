@@ -1,0 +1,57 @@
+{
+  "schema": "fp1-source-retrieval-receipt/v1",
+  "retrievedAt": "2026-10-09T23:02:16Z",
+  "method": "anonymous HTTPS GET via curl; User-Agent: generic desktop Chrome string; Referer: https://www.kinzai.or.jp/fp/news-fp/49181.html; no cookies, no authentication",
+  "files": [
+    {
+      "role": "questions (応用編)",
+      "url": "https://www.kinzai.or.jp/uploads/lib/question/202605/fp01_g_oyo.pdf",
+      "sha256": "fd7843fc2082e074bedecb82a9fc11c45f08c0d57de2146ee145c92cd6f2df8d",
+      "expectedSha256Match": true,
+      "contentLength": 740603,
+      "lastModifiedHeader": "Mon, 25 May 2026 00:36:27 GMT",
+      "pages": 25,
+      "pageMapUsed": [
+        { "physical": 7, "printed": "－6－", "content": "第２問 共通設例（財務データ表・予想収益率表）" },
+        { "physical": 8, "printed": "－7－", "content": "問54・問55" },
+        { "physical": 9, "printed": "－8－", "content": "問56" },
+        { "physical": 11, "printed": "－10－", "content": "第３問 共通設例（資料1～5(3)）" },
+        { "physical": 12, "printed": "－11－", "content": "設例5(4)・問57（略式別表四）" },
+        { "physical": 13, "printed": "－12－", "content": "問58（税率表）" },
+        { "physical": 14, "printed": "－13－", "content": "問59" },
+        { "physical": 15, "printed": "－14－", "content": "第４問 共通設例（甲土地の図・注記）" },
+        { "physical": 16, "printed": "－15－", "content": "問60" }
+      ],
+      "imageCheck": "physical pages 7,8,9,11,12,13,15,16 rendered with pdftoppm at 110dpi and visually compared against text extraction (tables, ＊＊＊, □□□, figure). Page 14 (text only) checked by text extraction."
+    },
+    {
+      "role": "official model answers (模範解答)",
+      "url": "https://www.kinzai.or.jp/uploads/lib/answer/202605/fp01_g.pdf",
+      "sha256": "4859c487f5c55957b75658d727351c5221f3d6d995e710d2560a8a7e0a217460",
+      "expectedSha256Match": true,
+      "pages": 6,
+      "pageMapUsed": [
+        { "physical": 3, "content": "第２問 問54～56" },
+        { "physical": 4, "content": "第３問 問57～59" },
+        { "physical": 5, "content": "第４問 問60（同ページに問61・62あり、範囲外）" }
+      ],
+      "imageCheck": "physical pages 3,4,5 rendered at 110dpi and visually checked"
+    }
+  ],
+  "reuseConditions": {
+    "url": "https://www.kinzai.or.jp/ginou/license_terms.html",
+    "retrievedAt": "2026-10-09T23:10Z",
+    "htmlSha256": "d4d43767940914cb432ad4edc1bababfd6c431dbf9bba54f18d1b2d19d13d81c",
+    "relevantText": [
+      "ファイナンシャル・プランニング技能検定 1．著作権 … 1級学科試験 … の問題の著作権は当会が有しています。",
+      "2．試験問題の利用 … ご利用いただくにあたって、当会への申請等は必要ありません。",
+      "(1) 試験問題を利用する場合は出典を明記してください。【掲載例】一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定 2 級実技試験（個人資産相談業務）〇年〇月",
+      "(2) 試験問題を修正・加工等して利用する場合は、修正・加工等を行ったことを明記してください。【掲載例】… 〇年〇月を一部改変",
+      "(3) 当会は利用者が試験問題を用いて行う一切の行為について何ら責任を負うものではありません。"
+    ],
+    "requiredAttributionForThisPacket": "一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定 1級学科試験 2026年5月を一部改変",
+    "handling": "表の構造化・改行除去・図の文章化を行っているため『一部改変』表記が必要。transcription.json.formattingNotice に加工内容を記録。提携・推奨関係は主張しない。"
+  },
+  "pdfsCommitted": false,
+  "pdfsCommittedReason": "原典PDFはリポジトリに含めない。URLとSHA256で再取得・照合可能。"
+}
