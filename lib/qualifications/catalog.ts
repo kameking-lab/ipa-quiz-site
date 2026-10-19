@@ -280,9 +280,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度の第一次検定の問題A・Bから、公式問題・正答と照合した設問を段階的に収録。",
-    attributionTemplate: "出典：全国建設研修センター 令和8年度1級電気通信工事施工管理技術検定 第一次検定 試験問題A／B",
-    remainingWork: ["同年度の未収録問題・図表の確認と追加", "他年度の追加"],
+    reuseSummary: "2026・2025年度の第一次検定を各90原問（問題A55・B35）、全肢解説付きで収録。2025年度は公開保存コピーから取得し、公式サイトからの直接取得は未確認。",
+    attributionTemplate: "出典：全国建設研修センター 令和○年度1級電気通信工事施工管理技術検定 第一次検定 試験問題A／B",
+    remainingWork: [],
   },
   {
     slug: "kaigo",
