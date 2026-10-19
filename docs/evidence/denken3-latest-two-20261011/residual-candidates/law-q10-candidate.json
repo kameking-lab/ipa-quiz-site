@@ -1,0 +1,46 @@
+{
+  "id": "denken3-2026-upper-law-q10",
+  "officialAnswer": "2",
+  "questionSourceUrl": "https://www.shiken.or.jp/chief/upload/20260830_ch_third_q04.pdf#page=16",
+  "officialPageText": "■ T1－H 016\n \n問10 高圧受電設備の保守，点検に関する記述として，不適切なものは次のうちど\nれか。(高圧受電設備規程による。) \n(1) 日常巡視は，日常随時構内を巡視して，運転中の電気設備を目視等により異\n常の有無を確認するものである。 \n(2) 定期点検は，短期間(1 週間から1 ヶ月)の周期で，主として運転中の電気設\n備を目視により点検を行うものである。 \n(3) 精密点検は，長期間(2 年から5 年程度)の周期で，電気設備を必要に応じて\n分解するなど，点検，測定及び試験を行うものである。 \n(4) 臨時点検は，電気事故その他異常が発生したとき，又は異常が発生するおそ\nれがあると判断したときに点検，測定及び試験を行うものである。 \n(5) 保守は，各種点検において異常があった場合や修理・改修の必要を認めた場\n合等には内容に応じた措置を講じるものである。 \n \n \n- 13 -\n",
+  "sourceReady": false,
+  "wholeQuestionGO": false,
+  "publicationStatus": "candidate-excluded-from-production",
+  "explanation": "不適切な記述は(2)。短い間隔で運転中の設備を調べる日常点検と、定期点検の名称を取り違えている。各点検を目的・実施時期・点検の深さで区別する。",
+  "choiceExplanations": {
+    "1": "適切。日々の巡視では、設備を運転したまま外観などを観察して異常の兆候を探す。分解して内部を詳しく調べる点検とは役割が異なる。",
+    "2": "不適切。1週間から1か月の短い周期で、主として運転中の設備を目視点検する説明は日常点検に対応する。日常点検と定期点検の名称を取り違えている。点検周期の別体系にある月次・年次の区分は、この設問の規程本文の代わりに用いない。",
+    "3": "適切。精密点検は、設問に示された2年から5年程度の長い周期で、必要に応じて設備を分解して内部も詳しく調べる点検である。外観の確認だけで終えず、測定や試験も含める。",
+    "4": "適切。事故や異常が起きたときだけでなく、そのおそれがあると判断した場合も臨時点検の対象となる。予定した周期を待たず、状況に応じて点検・測定・試験を行う。",
+    "5": "適切。保守は、点検で見つけた異常や修理・改修の必要性に対して、内容に合う措置を実行することである。異常の有無を調べて終わる点検と、その結果に対応する保守を区別する。"
+  },
+  "evidenceByChoice": {
+    "1": "Official 2026 question/key; additional manufacturer quotation of 2014 JEAC section 1320.",
+    "2": "Official key 2; additional manufacturer quotation of daily/periodic inspection categories, physical page 4.",
+    "3": "Official 2026 question/key only; manufacturer explicitly omits the precise-inspection paragraph.",
+    "4": "Official 2026 question/key; manufacturer quotation of extraordinary inspection.",
+    "5": "Official 2026 question/key only; applicable JEAC maintenance definition body missing."
+  },
+  "additionalPrimaryUrl": "https://www.togami-elec.co.jp/document/catalogs/yobi_dengen_shinku_t.pdf",
+  "additionalPrimaryEdition": "2014; not an acquired 2025 edition",
+  "reviewerVerdict": "Candidate saved for review; direct applicable JEAC body is still missing, so sourceReady/full publication is not approved.",
+  "remaining": [
+    "Applicable JEAC edition and dated body",
+    "Direct precise-inspection definition",
+    "Direct maintenance definition"
+  ],
+  "question": "高圧受電設備の保守，点検に関する記述として，不適切なものは次のうちどれか。(高圧受電設備規程による。)",
+  "choices": {
+    "1": "日常巡視は，日常随時構内を巡視して，運転中の電気設備を目視等により異常の有無を確認するものである。",
+    "2": "定期点検は，短期間(1週間から1ヶ月)の周期で，主として運転中の電気設備を目視により点検を行うものである。",
+    "3": "精密点検は，長期間(2年から5年程度)の周期で，電気設備を必要に応じて分解するなど，点検，測定及び試験を行うものである。",
+    "4": "臨時点検は，電気事故その他異常が発生したとき，又は異常が発生するおそれがあると判断したときに点検，測定及び試験を行うものである。",
+    "5": "保守は，各種点検において異常があった場合や修理・改修の必要を認めた場合等には内容に応じた措置を講じるものである。"
+  },
+  "sourcePaperSha256": "bf719af6d3663ede7df107b86c8a68c63fdffdde7d7381c1ab3a76479cbb3776",
+  "sourcePhysicalPage": 16,
+  "previousCandidateSha256": "382494c940b2ee7a181f4203d795035334faadb03c6557559b2fbacb3e26444c",
+  "runtimeImported": false,
+  "publicFullIncrease": 0,
+  "localCorrection": "Removed unsupported monthly/annual periodic-inspection classification from choice 2; official stem, five choices and answer 2 preserved."
+}
