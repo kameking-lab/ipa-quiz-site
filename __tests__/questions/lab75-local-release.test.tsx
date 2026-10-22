@@ -21,7 +21,7 @@ import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { getIndexableQuestions, getSitemapQuestions, getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
 import { renderQuestionsSitemapChunkXml } from "@/lib/seo/sitemap-xml";
-import QuestionPage, { generateStaticParams } from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
+import QuestionPage, { dynamicParams, generateMetadata, generateStaticParams } from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
 import ExamTopPage from "@/app/[exam]/page";
 
 const selected = release as Question[];
@@ -107,10 +107,16 @@ describe("clinical laboratory first75 local release payload", () => {
     expect(getSitemapQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(106);
     expect(getExamQuestionCount("rinsho-kensagishi")).toBe(106);
     expect(countByExam("rinsho-kensagishi")).toBe(106);
+    expect(dynamicParams).toBe(true);
     const params = await generateStaticParams();
     const xml = Array.from({ length: getSitemapChunkCount() }, (_, i) => renderQuestionsSitemapChunkXml(i)).join("");
     for (const q of selected) {
-      expect(params).toContainEqual(route(q));
+      // Pre-rendering is bounded; accepted older URLs still resolve on demand.
+      if (q.year >= 2026) expect(params, q.id).toContainEqual(route(q));
+      else expect(params, q.id).not.toContainEqual(route(q));
+      const metadata = await generateMetadata({ params: Promise.resolve(route(q)) });
+      expect(metadata.robots, q.id).toEqual({ index: true, follow: true });
+      expect(metadata.alternates?.canonical, q.id).toBe(questionPagePath(q));
       expect(findQuestionByRoute(ALL_QUESTIONS, route(q))).toEqual(q);
       expect(xml).toContain(questionPagePath(q));
     }
