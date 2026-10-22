@@ -1,0 +1,307 @@
+{
+  "status": "GAS_ORIGINALS_COMPLETE_LATEST_MAIN_SYNC_REVIEWED",
+  "previousPrHead": "deca372ebaf934fd476f9994634ef33f98071cfa",
+  "mainCommit": "a13ececaf3062840ba5476ce153623460b2e2981",
+  "unpublishedReasonsBeforeWork": [
+    "Draft PR700 not integrated into production main",
+    "Eight shared registration files conflicted with newer main"
+  ],
+  "technicalMergeConflictsResolved": true,
+  "resolvedFiles": 8,
+  "resolvedBlocks": 12,
+  "remainingOriginals": 0,
+  "markSheetOriginals": 348,
+  "choiceReasons": 1740,
+  "figures": 11,
+  "essaySourceOriginals": 16,
+  "essayGradeOccurrences": 24,
+  "officialEssayAnswersPublished": false,
+  "sourceAndOriginalPreservation": {
+    "status": "PASS_SAVED_GAS_MANUSCRIPTS_AND_FIGURES_UNCHANGED",
+    "files": [
+      {
+        "path": "app/[exam]/essay/page.tsx",
+        "sha256": "8d36cc91aeac9474ac882bf05b0aa28cb920aea7f5561b36845ff98ce0172ff3",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/.gitattributes",
+        "sha256": "f451ca1719db5674a3a05f410cfeb1178ae63576605d30b4d8a4b23833a9da05",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/README.md",
+        "sha256": "a2a2416364ef4ca55bbf10d8b64634886a42a07c320476d503e6b3a33c3e3060",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/audit.mjs",
+        "sha256": "508bd9cc5dbee55d8d5666eeace33d281cf589b08aa0abb68f459f376bffe7af",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/candidate-issues.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/candidates.json",
+        "sha256": "6b21d8801109ddbf1653c02ed4c31645489c269a56ec7acae5cad30bb42d3b6b",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/gate.json",
+        "sha256": "5ac031bd96ffdb08df993d249cd4567144523d6d7bbfe3a37bb54b01e9486534",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/manifest.json",
+        "sha256": "59badd5b3df8968fc0aa91f19fdbc2e814f450f26defaa5c4ccf7958d47a954a",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/official-answers.json",
+        "sha256": "090006e51f5f3cd457069896883a9d98673b1181a51c094518f514a25c9d62b1",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/official-sources.json",
+        "sha256": "d3f8a5a9de142d31bf3be8df30ee090776d95fc6cddb95f7edbdb29a008c11c6",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/validate.mjs",
+        "sha256": "ba17c0f1ac76d2344b7564f26efe8ffae59ef4101a99d070d6a71fd0bd88dbb4",
+        "unchanged": true
+      },
+      {
+        "path": "data/prepared-industrial/gas/validate.test.mjs",
+        "sha256": "fb03d83cdd93f74e090c07e1fc343fca8140d49e1bc77167fc8175060cfa00c3",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/essays.json",
+        "sha256": "22df00e81640d8eebb3f2d2a4e16e6cc100a4ba98c0299149cf6ce51e3481701",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/essays.ts",
+        "sha256": "e07921845ffd0cb167f3223cbaf23145bfb1b46d4645f0ec7e3c8632182550c3",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/hei/index.ts",
+        "sha256": "32e2464f89bef87d6d0b38fe153c958313c196d17f3ad8859d7f1f3fe7b9accc",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/hei/ready.json",
+        "sha256": "b71b45702abef7972220cc41ac782922c04a6e569a1922539ec76f8ab5c67b41",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/kou/index.ts",
+        "sha256": "cf67a175d9bbf4fbf9d32e436506b44b8db7ae8a34167b6cb01829e4f5f6f7a8",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/kou/ready.json",
+        "sha256": "474c2a1833c241098d827bea5118d0c3a326545fc92569c0e185d98089d3c0bd",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/otsu/index.ts",
+        "sha256": "3133bc2f5d5c370faef8c9c0fe52e9a4f5f7cce7952dd0fcba67aeb4bf3c978b",
+        "unchanged": true
+      },
+      {
+        "path": "data/questions/gas/otsu/ready.json",
+        "sha256": "bfbd152a65ff6a2dbbabba7140f462a2db81ee4c62695c256ccf5c1fbc4299b4",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/kou/kou-2025-tech-q10-fig1.png",
+        "sha256": "a7117c113efde973ec8a6a63ae2abf3f16447ab2f6ff215e4911000a408eff48",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/kou/kou-2025-tech-q10-fig2.png",
+        "sha256": "5cc34c9108c220c0b32e0d45997d4db027c59a48d53d1a279eccf4b97bbc722a",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/kou/kou-2026-tech-q10-fig1.png",
+        "sha256": "a1175c49cd3cff7ece4a4412d819ea48628b056b040e56f90d6ba3da0b52e2d7",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/kou/kou-2026-tech-q10-fig2.png",
+        "sha256": "e8245f4344908990c7cf36b690868697236822f3aebf4b026de12d1583ceb00a",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/kou/kou-2026-tech-q20-diagram.png",
+        "sha256": "fadfccad745ba339a85cafabccec33d51f203b2e9bec96d0f1928030ff237945",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2025-basic-q15.png",
+        "sha256": "4027ffec319e71731230448406f74b6e11d369190afd501af71fa3268afc38fe",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2025-technology-q5.png",
+        "sha256": "a59acbcfc09092d8c14c0213d8545fba41ba3efbf4f82be137ed7615943a55e1",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2026-basic-q14.png",
+        "sha256": "8eee4245135129e561c4cd46708ae29399f598341768b4e0a026f3810d05ca61",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2026-basic-q2.png",
+        "sha256": "a42b3887701aab099cacf98bbf1a9925fc2a7a055373fbaae9e53851bb14a5bc",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2026-technology-q10.png",
+        "sha256": "b39f7df0c292313b3fd3ed19f429d24ef0997835f92e832b4d4cf6432c448dee",
+        "unchanged": true
+      },
+      {
+        "path": "public/questions/gas/otsu/gas-otsu-2026-technology-q20.png",
+        "sha256": "76badd6a3f685805292bde82302b39811cab70564ba0963721f1c1fcf9be2fc5",
+        "unchanged": true
+      }
+    ],
+    "oldHead": "deca372ebaf934fd476f9994634ef33f98071cfa",
+    "targetMain": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "originals": 348,
+    "choiceReasons": 1740,
+    "figures": 11,
+    "essaySourceOriginals": 16,
+    "essayGradeOccurrences": 24
+  },
+  "conflictResolution": {
+    "status": "PASS_EIGHT_REGISTRATION_FILES_RESOLVED",
+    "baseMainCommit": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "explicitResolutionPaths": [
+      "__tests__/questions/get-questions.test.ts",
+      "__tests__/seo/question-jsonld.test.ts",
+      "lib/exam-config.ts",
+      "lib/questions/display.ts",
+      "lib/questions/practice-session.ts",
+      "lib/questions/types.ts",
+      "lib/seo/question-jsonld.ts",
+      "scripts/validate-questions.ts"
+    ],
+    "conflictBlocks": 12,
+    "decision": "Preserve new main riyoshi/chusho registrations, source labels and validation; add existing gas registrations and sessions; retain dynamic published-loader coverage assertion.",
+    "originalMedicalManuscriptsEdited": false,
+    "gasManuscriptsEdited": false,
+    "files": [
+      {
+        "path": "__tests__/questions/get-questions.test.ts",
+        "resolvedConflictBlocks": 1,
+        "sha256": "2e9ac14b61369983bb6602dbe542ae382fb73cbb75e0b32dd64dc835ac442043"
+      },
+      {
+        "path": "__tests__/seo/question-jsonld.test.ts",
+        "resolvedConflictBlocks": 1,
+        "sha256": "ad74780d7bae4f32fe7a9a9cf456e94ddc846746b44206d55e0ef4d9795fa6a3"
+      },
+      {
+        "path": "lib/exam-config.ts",
+        "resolvedConflictBlocks": 1,
+        "sha256": "f77423c70ce327f6e3fe45c486d9e9589918e9d88ec1d25f801c859dff5d7d0e"
+      },
+      {
+        "path": "lib/questions/display.ts",
+        "resolvedConflictBlocks": 1,
+        "sha256": "a7d405fa7967ca5dd08a1f39b299ec3ee3062bd9e338113abd9b0840bd7954f5"
+      },
+      {
+        "path": "lib/questions/practice-session.ts",
+        "resolvedConflictBlocks": 2,
+        "sha256": "9b4c7882b75c938a7657f4a0c4bcfb45c38ede78df93a2da501fb1bd73ae6ae3"
+      },
+      {
+        "path": "lib/questions/types.ts",
+        "resolvedConflictBlocks": 3,
+        "sha256": "f193f267b452551ce40c6f8c5d459a7426551ae48f029a1a737355bb7ca93d18"
+      },
+      {
+        "path": "lib/seo/question-jsonld.ts",
+        "resolvedConflictBlocks": 1,
+        "sha256": "2b6a0ced444174e5d78fc21505caa5d7beb15d887f0fa3f4a9e9f611c5347ec1"
+      },
+      {
+        "path": "scripts/validate-questions.ts",
+        "resolvedConflictBlocks": 2,
+        "sha256": "0d481a6db827b26668766b41cb1dc6b9cd5d8ab70d161b24db3e4959a7c8a8aa"
+      }
+    ],
+    "ownPrDiffCheck": "PASS_AGAINST_PINNED_MAIN",
+    "inheritedMainWhitespaceIssuesUnchanged": [
+      "docs/evidence/chusho-secondary-latest-two-20261011/FINAL-FOCUSED-TEST.log:13: new blank line at EOF.",
+      "docs/evidence/chusho-secondary-latest-two-20261011/FINAL-TYPECHECK.log:4: new blank line at EOF."
+    ]
+  },
+  "localValidation": {
+    "status": "PASS_GAS_MAIN_SYNC_LOCAL_VALIDATION",
+    "checkedAtUtc": "2026-10-11T07:05:00.259432+00:00",
+    "mainCommit": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "nodeTests": {
+      "passed": 16,
+      "exitCode": 0,
+      "durationMs": 93.7607,
+      "logSha256": "2953eb426eca2b0c2a479a0002f6de7e3a723124e132eb3682bff252a37a7367"
+    },
+    "vitest": {
+      "passed": 58,
+      "files": 5,
+      "exitCode": 0,
+      "durationSeconds": 24.43,
+      "maxWorkers": 1,
+      "logSha256": "1ce38ea5d4f01623d52a9fbdfb1941c7b086d8f394db0b4b74d510deadb9bd2b"
+    },
+    "scopedLint": {
+      "files": 8,
+      "exitCode": 0,
+      "logSha256": "b8e700a81363bf0f4694023d43d6abc4363aa4cc43864b27bddde35d8e4caf2d"
+    },
+    "localWholeBuildRun": false,
+    "localWholeTypecheckRun": false,
+    "hostedFullTypecheckAndBuildRequiredOnNewHead": true,
+    "originalMedicalManuscriptsEdited": false,
+    "sourceOriginalsRegenerated": false
+  },
+  "independentReviewSha256": "7f53e7e4a9e6ba3e824ac8f1ec2c2b897cf8a685a127ce3e182750a5ebc36510",
+  "independentReviewScope": "Registration/source-label/practice/essay routes and merge preservation only; original348 questions were not re-generated or fully re-reviewed by a second high model.",
+  "dedup": {
+    "status": "PASS_GAS_MAIN_AND_ALL_OPEN_PR_DEDUP",
+    "checkedAtUtc": "2026-10-11T07:03:16.308610+00:00",
+    "pinnedMainCommit": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "latestRemoteMainCommit": "a13ececaf3062840ba5476ce153623460b2e2981",
+    "mainGasOriginals": 0,
+    "mainGasPaths": [],
+    "openPrCount": 81,
+    "allChangedFilePagesInspected": true,
+    "otherGasPrMatches": [],
+    "dedupUnit": "grade/year/subject/question number",
+    "ownPrHeadBeforePush": "deca372ebaf934fd476f9994634ef33f98071cfa",
+    "noCompetingGasAuthoringPr": true
+  },
+  "publicGo": 0,
+  "productionMergePerformed": false,
+  "productionDeploymentPerformed": false,
+  "providerPermissionClaimed": false,
+  "integrationOwnerThreadId": "01a12330-b245-70ed-a108-0998b50830be",
+  "existingRefusalPreserved": {
+    "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/gikokuji.pdf",
+    "httpStatus": 403,
+    "bypassed": false,
+    "withheldOriginals": 0
+  }
+}

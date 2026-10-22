@@ -1,0 +1,60 @@
+{
+  "focused": {
+    "files": 10,
+    "testsPassed": 160,
+    "testsFailed": 0,
+    "exitCode": 0,
+    "resultSha256": "f21ee1b6de2065a048f6757a9659ccb6d808ccaa6ad6639c58b1612bb12154ec"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "noEmit": true,
+    "incremental": false
+  },
+  "counts": {
+    "storedOriginals": 584,
+    "practiceReady": 580,
+    "protected": 4,
+    "storedGradingCells": 1000,
+    "readyGradingCells": 992
+  },
+  "protectedIds": [
+    "radio21-amateur1-2026-05-kogaku-q19",
+    "radio21-riku-tech2-2026-01-kogaku-b-q25",
+    "radio21-amateur2-2026-05-kogaku-q17",
+    "radio21-maritime-radar-2026-06-kogaku-q24"
+  ],
+  "holdGuards": {
+    "rawSourceRetained": true,
+    "centralRegistrationOnlyReady": true,
+    "loadAllAndGetByIdExcluded": true,
+    "searchExcluded": true,
+    "indexableSitemapAndStaticDetailParamsExcluded": true,
+    "detailNotFoundAndNoindex": true,
+    "yearTopicStreamSubjectPoolsExcluded": true,
+    "explicitPoolAndDueReviewExcluded": true,
+    "fileBackedNextApi": {
+      "status": 409,
+      "cacheControl": "no-store",
+      "originalQuestionFieldsAbsent": true
+    }
+  },
+  "coverage": [
+    "All six source products unchanged against independently accepted commits",
+    "New3 real hub/year/topic/stream/annual/detail pages,8 subject combinations",
+    "New3 eager/lazy/strict/home/search/next/due contracts",
+    "Four protected original IDs and central/lazy raw distinction",
+    "103 practice-ready native originals /515slots perfect/partial/empty/repeated-candidate behavior",
+    "Existing235 and original338 runtime/core regression"
+  ],
+  "allProductBlobs": 439,
+  "pngAssets": 423,
+  "sourceMeaningReviewOrRegeneration": false,
+  "commonFiveSlotUiChanged": false,
+  "wholeBuilds": 0,
+  "dependenciesInstalled": 0,
+  "externalApisOrModels": 0,
+  "publications": 0,
+  "apiV1LegacyContractExpanded": false,
+  "newRightsHoldsInferred": false
+}

@@ -19,8 +19,14 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(region).toHaveAttribute("aria-live", "off");
     expect(await region.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
   }
-  await show(page, { count: 0, exams: [] });
-  await expect(page.getByText("学習中の資格はまだありません。")).toBeVisible();
+  for (const width of [1280, 390, 320]) {
+    await page.setViewportSize({ width, height: 800 });
+    await show(page, { count: 0, exams: [] });
+    const region = page.getByRole("region", { name: "今学んでいる仲間" });
+    await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
+    await expect(region.getByRole("link")).toHaveCount(4);
+    expect(await region.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+  }
   await page.evaluate(() => window.dispatchEvent(new CustomEvent("study-presence-count", { detail: null })));
   await expect(page.getByRole("region", { name: "今学んでいる仲間" })).toHaveCount(0);
 });

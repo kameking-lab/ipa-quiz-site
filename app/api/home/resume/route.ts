@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
   practice.set("question", q.id);
   return NextResponse.json({
     exam, name: EXAM_CONFIGS[exam].nameFull, href: `/quiz?${practice}`, sourceHref: questionPagePath(q),
-    caption: `${formatYearSeason(q.year, q.season)} ${practiceSessionLabel(q.session) ?? ""} · 問${q.qNumber}${q.part ? ` (${q.part})` : ""}`,
+    caption: `${formatYearSeason(q.year, q.season)} ${practiceSessionLabel(q.session, exam) ?? ""} · 問${q.qNumber}${q.part ? ` (${q.part})` : ""}`,
     total: paper.length, validIds: questions.map((other) => other.id),
     reviewHref: `/quiz?mode=review&scope=exam&reviewKind=wrong&exam=${exam}`, yearHref: `/${exam}`,
   }, { headers: { "Cache-Control": "private, no-store" } });

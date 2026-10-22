@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isOfficialPastOnlyRequest } from "@/lib/questions/past-question-policy";
 import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
@@ -45,7 +46,14 @@ const SYSTEM_PROMPT = `あなたはIPA情報処理技術者試験の作問専門
 export async function POST(req: Request) {
   let payload: z.infer<typeof BodySchema>;
   try {
-    payload = BodySchema.parse(await req.json());
+    const input = await req.json();
+    if (isOfficialPastOnlyRequest(input?.baseQuestion?.exam, input?.baseQuestion?.id)) {
+      return NextResponse.json(
+        { error: "past_questions_only", message: "この資格では公表済みの過去問のみを提供しています。" },
+        { status: 400, headers: { "Cache-Control": "no-store" } },
+      );
+    }
+    payload = BodySchema.parse(input);
   } catch {
     return NextResponse.json(
       { error: "invalid_request", message: "リクエスト形式が正しくありません。" },

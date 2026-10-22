@@ -6,6 +6,7 @@ import type { Question } from "@/lib/questions/types";
 import { questionNumberLabel } from "@/lib/questions/display";
 import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { QuestionBody } from "./QuestionBody";
+import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { TTSButton } from "./TTSButton";
 
 export function QuestionCard({
@@ -45,6 +46,7 @@ export function QuestionCard({
             法令基準日: {question.lawReferenceDate}（この日の制度で解答）
           </p>
         )}
+        <QuestionSourcePresentation question={question} phase="before" />
         <QuestionBody text={question.question} />
         <QuestionFigures question={question} />
         {hasUnrenderableContent(question) && (

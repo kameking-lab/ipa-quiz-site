@@ -4,7 +4,9 @@ import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
 import { parseStudyPresence, presenceExamName, PRESENCE_EVENT, type StudyPresenceSnapshot } from "@/lib/study-presence";
 
-export function TotalAnswerCounter() {
+export interface StudySuggestion { name: string; href: string }
+
+export function TotalAnswerCounter({ suggestions = [] }: { suggestions?: readonly StudySuggestion[] }) {
   const [snapshot, setSnapshot] = useState<StudyPresenceSnapshot | null>(null);
   useEffect(() => {
     const update = (event: Event) => setSnapshot(parseStudyPresence((event as CustomEvent<unknown>).detail));
@@ -24,7 +26,16 @@ export function TotalAnswerCounter() {
               </li>
             ))}
           </ul>
-        ) : <p>学習中の資格はまだありません。</p>}
+        ) : (
+          <div>
+            <p>学習中の資格はまだありません。</p>
+            <p>公開中の問題から学習を始めてみませんか。</p>
+            {suggestions.length > 0 && <ul className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
+              {suggestions.map(item => <li key={item.href} className="min-w-0 break-words"><a href={item.href} className="underline underline-offset-2">{item.name}の問題を見る</a></li>)}
+            </ul>}
+            <a href="#home-directory-title" className="mt-1 inline-block underline underline-offset-2">資格から問題を探す</a>
+          </div>
+        )}
         <p className="mt-1 font-medium">一緒に頑張りましょう！</p>
         <p className="mt-1 text-[10px] opacity-75" title="直近2分に操作した、表示中の問題の資格を集計します。同じブラウザは最後に活動した資格で1人。離脱後も最大2分残ります。">直近2分の学習状況・同じブラウザは1人</p>
       </div>

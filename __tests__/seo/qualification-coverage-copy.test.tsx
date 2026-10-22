@@ -11,23 +11,24 @@ import { generateMetadata } from "@/app/[exam]/page";
 const playable = KANRI_QUESTIONS.filter(isPracticeReadyQuestion);
 
 describe("learner-facing qualification coverage", () => {
-  it("does not advertise table questions excluded from the current exercise", () => {
+  it("includes both restored table questions in the current exercise count", () => {
     const excluded = KANRI_QUESTIONS.filter((question) => !isPracticeReadyQuestion(question));
-    expect(excluded.map((question) => question.qNumber)).toEqual([10, 29]);
-    expect(playable).toHaveLength(98);
+    expect(excluded).toEqual([]);
+    expect(playable).toHaveLength(100);
+    expect(playable.filter((question) => question.year === 2024 && [10, 29].includes(question.qNumber))).toHaveLength(2);
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<QualificationsPage />), "text/html");
     const card = Array.from(doc.querySelectorAll("article")).find((article) => article.querySelector("h2")?.textContent === "管理業務主任者");
-    expect(card?.textContent).toContain("収録 98問");
-    expect(card?.textContent).not.toContain("収録 100問");
+    expect(card?.textContent).toContain("収録 100問");
+    expect(card?.textContent).not.toContain("収録 98問");
     expect(card?.textContent).not.toContain("16問");
     expect(card?.querySelector('a[href="/kanri"]')).not.toBeNull();
   });
 
-  it("identifies both official papers, their legal dates and the omitted question numbers", () => {
+  it("identifies both complete official papers and their legal dates", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<KanriCoverageNote questions={playable} />), "text/html");
-    expect(doc.body.textContent).toContain("計98問");
-    expect(doc.body.textContent).toContain("令和6年度：48問／公式50問。法令基準日：2024年4月1日。");
-    expect(doc.body.textContent).toContain("この演習に含まれない問題：問10・29。");
+    expect(doc.body.textContent).toContain("計100問");
+    expect(doc.body.textContent).toContain("令和6年度：50問／公式50問。法令基準日：2024年4月1日。");
+    expect(doc.body.textContent).not.toContain("この演習に含まれない問題");
     expect(doc.body.textContent).toContain("令和7年度：50問／公式50問。法令基準日：2025年4月1日。");
     expect(Array.from(doc.querySelectorAll("a")).map((link) => link.href)).toEqual([
       "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r06.pdf",
@@ -39,7 +40,7 @@ describe("learner-facing qualification coverage", () => {
   it("updates the annual count and omitted numbers when the playable pool changes", () => {
     const reduced = playable.filter((question) => !(question.year === 2025 && question.qNumber === 1));
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<KanriCoverageNote questions={reduced} />), "text/html");
-    expect(doc.body.textContent).toContain("計97問");
+    expect(doc.body.textContent).toContain("計99問");
     expect(doc.body.textContent).toContain("令和7年度：49問／公式50問。法令基準日：2025年4月1日。この演習に含まれない問題：問1。");
   });
 
@@ -52,9 +53,9 @@ describe("learner-facing qualification coverage", () => {
 describe("管理業務主任者 hub metadata matches the playable two-paper coverage", () => {
   it("advertises both official years and the strict published count across social metadata", async () => {
     const pool = getQuestionsByExamStrict("kanri");
-    expect(pool.filter((q) => q.year === 2024)).toHaveLength(48);
+    expect(pool.filter((q) => q.year === 2024)).toHaveLength(50);
     expect(pool.filter((q) => q.year === 2025)).toHaveLength(50);
-    expect(pool).toHaveLength(98);
+    expect(pool).toHaveLength(100);
     const metadata = await generateMetadata({ params: Promise.resolve({ exam: "kanri" }) });
     const description = String(metadata.description);
     expect(description).toContain("2024・2025年度公式問題");

@@ -1,0 +1,1710 @@
+[
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q01",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA – 1 次の記述は、電界の強さがE 〔V/m〕の均一な電界中の電子D の運動について述べたものである。      内に入れるべき字句の正し \nい組合せを下の番号から選べ。ただし、図に示すようにD は、電界の方向との角度θ がπ/6 〔rad〕、初速度がV0 〔m/s〕で原点O か \nら電界中に放出されるものとし、D はこの電界からのみ力を受けるものとする。また、D の電荷の大きさ及び質量をe 〔C〕及びm 〔kg〕と \nし、D がO から放出されてからの時間をt 〔s〕とする。 \n \n（1） D は、x 方向には力を受けないので、x 方向の速さは、Vx =  V0\n 2 〔m/s〕の等速度である。 \n（2） D は、y 方向には減速する力を受けるので、y 方向の速さは、  Vy = \n 3 V0 \n2 \n  -    A    t  〔m/s〕に従って変化する。 \n（3） Vy = 0〔m/s〕のときy が最大となり、その値ym は、ym =   B   〔m〕である。 \n \n（4） また、そのときのx をxm とすると、その値xm は、xm =   C   〔m〕である。 \n \n  A       B       C \n1 meE \n 3mV02 \n 4eE   \n mV02 \n 4eE   \n2 meE  \n 3mV02 \n 8eE   \n3 mV02 \n 4eE \n  \n3   eE  \n m    \n 3mV02 \n 8eE     \n3 mV02 \n 4eE \n  \n4   eE  \n m   \n 3mV02 \n 8eE      mV02 \n 4eE   \n5   eE  \n m   \n 3mV02 \n 4eE      mV02 \n 4eE   \n \n   \nx ：E と直角方向の距離〔m〕 \ny ：E と同一方向の距離〔m〕 \nθ ：E とV0 との角度〔rad〕 \nx〔m〕\ny〔m〕 \nO\nD\nθ\nym \nE  \nxm \nVy=0〔m/s〕\nV0\n",
+    "explanation": "正しい。初速のy成分は√3V₀/2、減速度eE/m。停止時間は√3mV₀/(2eE)、最大高さは3mV₀²/(8eE)、x=V₀t/2より√3mV₀²/(4eE)。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q01-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A1 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=meE、B=3mV₀²/(4eE)、C=mV₀²/(4eE)",
+      "イ": "A=meE、B=3mV₀²/(8eE)、C=√3mV₀²/(4eE)",
+      "ウ": "A=eE/m、B=3mV₀²/(8eE)、C=√3mV₀²/(4eE)",
+      "エ": "A=eE/m、B=3mV₀²/(8eE)、C=mV₀²/(4eE)",
+      "オ": "A=eE/m、B=3mV₀²/(4eE)、C=mV₀²/(4eE)"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。電子の加速度の大きさは力eEを質量mで割ったeE/mであり、meEではない。",
+      "イ": "誤り。BとCは正しいが、AはeE/mである。",
+      "ウ": "正しい。初速のy成分は√3V₀/2、減速度eE/m。停止時間は√3mV₀/(2eE)、最大高さは3mV₀²/(8eE)、x=V₀t/2より√3mV₀²/(4eE)。",
+      "エ": "誤り。AとBは正しいが、x成分V₀/2に停止時間√3mV₀/(2eE)を掛けるためCには√3が要る。",
+      "オ": "誤り。Aは正しいが、Bは3mV₀²/(8eE)、Cは√3mV₀²/(4eE)。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q02",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A - 2 図1 に示す平均磁路長l が50〔mm〕の環状鉄心A の中に生じる磁束と、図2 に示すようにA に0.5〔mm〕の空隙lg を設けた環状鉄 \n心B の中に生じる磁束が共にφ〔Wb〕で等しいとき、図2 のコイルに流す電流IB を表す近似式として、正しいものを下の番号から選\nべ。ただし、A に巻くコイルに流れる電流をIA〔A〕とし、コイルの巻数N は図1 及び図2 で等しく、鉄心の比透磁率μr を1,000 とする。\nまた、磁気飽和及び漏れ磁束はないものとする。 \n \n1 IB ≒ 5IA   〔A〕 \n2 IB ≒ 11IA 〔A〕 \n3 IB ≒ 21IA 〔A〕 \n4 IB ≒ 31IA 〔A〕 \n5 IB ≒ 41IA 〔A〕 \n \n \n",
+    "explanation": "正しい。同じ磁束では磁束密度が等しい。Aの起磁力は H鉄心 l、Bでは H鉄心 l+H空隙 lg ≒ H鉄心(l+μr lg) となる。両コイルの巻数Nは同じなので IB/IA ≒ (l+μr lg)/l = 1+1,000×0.5/50 = 11。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "IB ≒ 5IA",
+      "イ": "IB ≒ 11IA",
+      "ウ": "IB ≒ 21IA",
+      "エ": "IB ≒ 31IA",
+      "オ": "IB ≒ 41IA"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。必要な起磁力の比は 1+μr lg/l = 1+1,000×0.5/50 = 11 であり、5倍では空隙に必要な起磁力が不足する。",
+      "イ": "正しい。同じ磁束では磁束密度が等しい。Aの起磁力は H鉄心 l、Bでは H鉄心 l+H空隙 lg ≒ H鉄心(l+μr lg) となる。両コイルの巻数Nは同じなので IB/IA ≒ (l+μr lg)/l = 1+1,000×0.5/50 = 11。",
+      "ウ": "誤り。空隙の追加分は μr lg/l = 10 倍の IA に相当し、元の鉄心分1倍を足して11倍となる。21倍では空隙分を過大に数える。",
+      "エ": "誤り。磁束と巻数をそろえた起磁力比は 1+1,000×0.5/50 = 11 であり、31ではない。",
+      "オ": "誤り。空隙長0.5 mmと平均磁路長50 mmの比は0.01であり、比透磁率1,000を掛けた追加起磁力は10倍にとどまる。合計は11倍で、41倍ではない。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q03",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "(FK801-1) \n \n \nA - 3 図に示すような、静電容量C1、C2、C3及びC0〔F〕の回路において、C1、C2及びC3に加わる電圧が定常状態で等しくなるときの条件式と \nして、正しいものを下の番号から選べ。 \n \n1 3C1+5C0＝C2+C0＝C3/2 \n2 3C1+3C0＝C2+2C0＝C3 \n3 C1+3C0＝2C2+5C0＝C3/2 \n4 C1+3C0＝C2+2C0＝C3 \n5 C1+3C0＝2C2+2C0＝C3 \n \n \n直流電源 \nC0 \nC1\nC0\nC2\nC3\n",
+    "explanation": "正しい。各C₁,C₂,C₃の電圧をvとすると、右のC₀は上からC₂の下まで2vを受ける。上節点からの電荷は(C₁+C₀)v+C₀(2v)=(C₁+3C₀)v。中間節点では(C₂+2C₀)v、下段ではC₃vとなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q03-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A3 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "3C₁+5C₀=C₂+C₀=C₃/2",
+      "イ": "3C₁+3C₀=C₂+2C₀=C₃",
+      "ウ": "C₁+3C₀=2C₂+5C₀=C₃/2",
+      "エ": "C₁+3C₀=C₂+2C₀=C₃",
+      "オ": "C₁+3C₀=2C₂+2C₀=C₃"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。上下の各節点の電荷保存からC₁+3C₀=C₂+2C₀=C₃となり、C₁やC₃の係数が異なる。",
+      "イ": "誤り。C₁の係数は1であり、3C₁にならない。",
+      "ウ": "誤り。C₂の係数は1、C₃の係数も1であり、右辺の比が異なる。",
+      "エ": "正しい。各C₁,C₂,C₃の電圧をvとすると、右のC₀は上からC₂の下まで2vを受ける。上節点からの電荷は(C₁+C₀)v+C₀(2v)=(C₁+3C₀)v。中間節点では(C₂+2C₀)v、下段ではC₃vとなる。",
+      "オ": "誤り。中間節点の係数はC₂+2C₀であり、2C₂+2C₀ではない。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q04",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A - 4 次の記述は、図に示すような円筒に、同一方向に巻かれた二つのコイルX 及びY の合成インダクタンス及びXY 間の相互インダクタ \nンスの原理について述べたものである。    \n 内に入れるべき字句の正しい組合せを下の番号から選べ。 \n \n(1) 端子b と端子ｃを接続したとき、二つのコイルは   A   接続となる。このとき、端子aｄ間の合成インダクタンスLaｄは、XY 間の相互イ\nンダクタンスをM〔H〕とすると、次式で表される。 \n    Laｄ =   B   〔H〕 \n(2) 端子b と端子d を接続したときの端子ac 間の合成インダクタンスをLaｃとすると、Lad とLac からM は次式で表される。 \n    M =    C   \n  4  \n 〔H〕 \n \n \n \n  A      B           C \n1 差動     L1 + L2 + 4M \n  Lad - Lac \n2 差動     L1 - L2 + 4M  \n  Lad + Lac \n3 差動     L1 + L2 - 2M \n  Lad - Lac \n4 和動     L1 + L2 + 2M \n  Lad + Lac \n5 和動     L1 + L2 + 2M \n  Lad - Lac \n \nL1 ：X の自己インダクタンス〔H〕 \nL2 ：Y の自己インダクタンス〔H〕 \nL1 \nL2 \nM \nａ      ｂ ｃ     ｄ\nX \nY\n",
+    "explanation": "正しい。同一方向の巻線をb-cで直列にすると和動でLad=L₁+L₂+2M。b-dでは差動でLac=L₁+L₂−2M。差を取ればM=(Lad−Lac)/4。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q04-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A4 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=差動、B=L₁+L₂+4M、C=Lad−Lac",
+      "イ": "A=差動、B=L₁−L₂+4M、C=Lad+Lac",
+      "ウ": "A=差動、B=L₁+L₂−2M、C=Lad−Lac",
+      "エ": "A=和動、B=L₁+L₂+2M、C=Lad+Lac",
+      "オ": "A=和動、B=L₁+L₂+2M、C=Lad−Lac"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。b-c接続は同一巻方向の和動で、相互項は+2Mであり+4Mではない。",
+      "イ": "誤り。差動ではなく和動で、自己インダクタンスL₂を引くこともしない。",
+      "ウ": "誤り。L₁+L₂−2Mは差動側Lacの式で、b-c接続のLadではない。",
+      "エ": "誤り。A,Bは正しいが、Lad=L₁+L₂+2M、Lac=L₁+L₂−2Mより4M=Lad−Lac。",
+      "オ": "正しい。同一方向の巻線をb-cで直列にすると和動でLad=L₁+L₂+2M。b-dでは差動でLac=L₁+L₂−2M。差を取ればM=(Lad−Lac)/4。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q05",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA – 5 次の記述は、図1 に示すブリッジ回路によって、抵抗RX を求める過程について述べたものである。      内に入れるべき字句の正 \nしい組合せを下の番号から選べ。ただし、回路は平衡しているものとする。 \n \n（1） 抵抗R1、R2 及びR3 の部分を、△-Y 変換した回路を \n図2 とすると、図2 の抵抗Ra 及びRb は、それぞれ \n Rａ =   A  \n 〔Ω〕 、 Rｂ =   B  \n 〔Ω〕となる。 \n（2） 図2 の回路が平衡しているのでRX は、 \nRX =   C  \n 〔Ω〕となる。 \n  A     B      C \n1 30     30      27 \n2 30     30      18 \n3 20    \n30      18 \n4 20     20      18 \n5 20 \n20      27 \n  \n \n \nV  ： 直流電圧 \nG ： 検流計 \nR1 = R2 = R3 = 90〔Ω〕 \nR4 = 45〔Ω〕 \nR5 = 15〔Ω〕 \nR6 = 45〔Ω〕 \nG\n図１                      図2 \nR5\nV〔V〕  \nR5\nR1 \nR2 \nR3 \nR4 \nR6 \nRX  \nG\nRｃ \nV〔V〕  \nRa \nRｂ \nRX  \nR4\nR6\n",
+    "explanation": "正しい。同値90Ωの△の各Y抵抗は90×90/(90+90+90)=30Ω。検流計電流0より(45+30)/45=(15+30)/Rx、Rx=27Ω。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q05-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=30、B=30、C=27〔Ω〕",
+      "イ": "A=30、B=30、C=18〔Ω〕",
+      "ウ": "A=20、B=30、C=18〔Ω〕",
+      "エ": "A=20、B=20、C=18〔Ω〕",
+      "オ": "A=20、B=20、C=27〔Ω〕"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。同値90Ωの△の各Y抵抗は90×90/(90+90+90)=30Ω。検流計電流0より(45+30)/45=(15+30)/Rx、Rx=27Ω。",
+      "イ": "誤り。Y変換値は合うが、平衡比(75/45)=(45/Rx)からRxは18Ωでなく27Ω。",
+      "ウ": "誤り。等しい90Ωの△から作るYのRa,Rbはともに30Ω。",
+      "エ": "誤り。Ra,Rbは30Ωであり、Rxも27Ωとなる。",
+      "オ": "誤り。Rx=27Ωは合うが、Y変換値は20Ωでなく30Ω。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q06",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "(FK801-2) \n \n \nA – 6 図に示すように、交流電圧 V̇=100〔V〕に誘導性負荷Ż1〔Ω〕及び容量性負荷Ż2〔Ω〕を接続したとき、回路全体の皮相電力及び力率 \nの値の組合せとして、正しいものを下の番号から選べ。ただし、Ż1 及びŻ2 の有効電力及び力率は表の値とする。 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n負荷\n負荷の性質\n有効電力\n力率\nŻ1 \n誘導性 \n400〔W〕 \n0.8 \nŻ2 \n容量性 \n600〔W〕 \n0.6 \n \n皮相電力　力率\n1 皮相電力 1,000√5〔VA〕、力率 1/√2\n2 皮相電力 1,000√3〔VA〕、力率 2/√5\n3 皮相電力 1,000√3〔VA〕、力率 1/√2\n4 皮相電力 500√5〔VA〕、力率 2/√5\n5 皮相電力 500√5〔VA〕、力率 1/√2\nŻ1\nV̇\nŻ2\n",
+    "explanation": "正しい。誘導性負荷のQ=400×0.6/0.8=300 var、容量性負荷のQ=−600×0.8/0.6=−800 var。S=√(1,000²+500²)=500√5 VA、力率=P/S=2/√5。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A6（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q06-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A6 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "皮相電力 1,000√5〔VA〕、力率 1/√2",
+      "イ": "皮相電力 1,000√3〔VA〕、力率 2/√5",
+      "ウ": "皮相電力 1,000√3〔VA〕、力率 1/√2",
+      "エ": "皮相電力 500√5〔VA〕、力率 2/√5",
+      "オ": "皮相電力 500√5〔VA〕、力率 1/√2"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。合成有効電力は1,000 Wだが、無効電力は300−800=−500 varであり、皮相電力は500√5 VA。",
+      "イ": "誤り。力率2/√5は正しいが、皮相電力を1,000√3 VAとはしない。P=1,000 W、Q=−500 varから計算する。",
+      "ウ": "誤り。P=1,000 W、Q=−500 varなので皮相電力も力率もこの組ではない。",
+      "エ": "正しい。誘導性負荷のQ=400×0.6/0.8=300 var、容量性負荷のQ=−600×0.8/0.6=−800 var。S=√(1,000²+500²)=500√5 VA、力率=P/S=2/√5。",
+      "オ": "誤り。皮相電力500√5 VAは正しいが、力率は1,000/(500√5)=2/√5である。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q07",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A – 7 次の記述は、図に示す直列共振回路について述べたものである。このうち、誤っているものを下の番号から選べ。ただし、共振角周波 \n数をω0〔rad/s〕及び共振電流をI0〔A〕とする。また、回路の電流 I ̇の大きさが、I0/√2〔A〕となる二つの角周波数をそれぞれω1 及び \nω2〔rad/s〕(ω1 < ω2)とし、回路の尖鋭度をQ とする。 \n \n1 回路の電流 I ̇ の位相は、ω1 で V ̇より遅れ、ω2 で V ̇より進む。 \n2 ω0 のとき、端子ac 間の電圧V ̇LCの大きさは、0〔V〕である。 \n3 ω0 のとき、端子ab 間の電圧V ̇Lの大きさは、Q×|V ̇|〔V〕である。 \n4 Q は、Q = √(L/C)/R で表される。 \n5 Q は、Q = ω0 / (ω2 - ω1) で表される。 \n \nR ：抵抗〔Ω〕 \nL ：自己インダクタンス〔H〕 \nC ：静電容量〔F〕 \nV ̇ ：交流電源電圧〔V〕 \nR \nV̇ L\nL \nC \nİ\nc\na \nb \nV̇ LC\n \nV̇\n",
+    "explanation": "誤り。ω1<ω0では容量性で電流が進み、ω2>ω0では誘導性で電流が遅れる。記述は逆。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A7（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q07-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A7 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "回路の電流 İ の位相は、ω1 で V̇ より遅れ、ω2 で V̇ より進む。",
+      "イ": "ω0 のとき、端子ac 間の電圧 V̇LC の大きさは、0〔V〕である。",
+      "ウ": "ω0 のとき、端子ab 間の電圧 V̇L の大きさは、Q×|V̇|〔V〕である。",
+      "エ": "Q は、Q = √(L/C)/R で表される。",
+      "オ": "Q は、Q = ω0 / (ω2 - ω1) で表される。"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。ω1<ω0では容量性で電流が進み、ω2>ω0では誘導性で電流が遅れる。記述は逆。",
+      "イ": "正しい。共振時はXL=XCで、LとCの電圧が相殺されるため端子ac間は0 V。",
+      "ウ": "正しい。共振時はI0=|V̇|/Rであり、|V̇L|=I0ω0L=Q|V̇|。",
+      "エ": "正しい。Q=ω0L/R、ω0=1/√(LC)を代入すると√(L/C)/R。",
+      "オ": "正しい。直列共振の半値角周波数幅はω2−ω1=R/LなのでQ=ω0/(ω2−ω1)。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q08",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 8 図1 に示すインピーダンスŻ1及びŻ2の積が周波数と無関係になり、抵抗をR〔Ω〕としたときにŻ1Ż2 = R2 の関係が成り立つとき、それら \nの回路は互いにR〔Ω〕に対する逆回路であるという。いま、図2 に示す回路のR = 600〔Ω〕に対する逆回路が図3 に示す回路であると \nき、自己インダクタンスL1、静電容量C1 及びC2 の値の組合せとして、正しいものを下の番号から選べ。 \n \n \nL1                     C1           C2                      \n1 0.6 〔mH〕       0.01 〔μF〕    0.005 〔μF〕     \n2 0.6 〔mH〕       0.06 〔μF〕    0.005 〔μF〕    \n3 3.6 〔mH〕       0.01 〔μF〕    0.015 〔μF〕   \n4 3.6 〔mH〕       0.01 〔μF〕    0.005 〔μF〕 \n5 3.6 〔mH〕       0.06 〔μF〕    0.015 〔μF〕      \n \n \n \nLA、LB：自己インダクタンス \nC0：静電容量 \n図1 \nŻ1 \nŻ2 \nŻ1Ż2=R2\n図3 \nL1 \nC1  \nC2  \nLA =3.6〔mH〕  C0 =0.01〔μF〕\nLB =5.4〔mH〕   \n図2  \n",
+    "explanation": "正しい。R²=600²。図2のLAとC₀の直列枝は、逆回路ではC₁=LA/R²=0.01μFとL₁=R²C₀=3.6mHの並列回路になる。この枝と並列のLBは、図3で直列のC₂=LB/R²=0.015μFとなる。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A8（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q08-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A8 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "L₁=0.6〔mH〕、C₁=0.01〔μF〕、C₂=0.005〔μF〕",
+      "イ": "L₁=0.6〔mH〕、C₁=0.06〔μF〕、C₂=0.005〔μF〕",
+      "ウ": "L₁=3.6〔mH〕、C₁=0.01〔μF〕、C₂=0.015〔μF〕",
+      "エ": "L₁=3.6〔mH〕、C₁=0.01〔μF〕、C₂=0.005〔μF〕",
+      "オ": "L₁=3.6〔mH〕、C₁=0.06〔μF〕、C₂=0.015〔μF〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。C₁=LA/R²=0.01μFは合うが、L₁=R²C₀=3.6mH、C₂=LB/R²=0.015μF。",
+      "イ": "誤り。LA/R²=0.01μFであり、0.06μFではない。L₁,C₂も逆回路の値と違う。",
+      "ウ": "正しい。R²=600²。図2のLAとC₀の直列枝は、逆回路ではC₁=LA/R²=0.01μFとL₁=R²C₀=3.6mHの並列回路になる。この枝と並列のLBは、図3で直列のC₂=LB/R²=0.015μFとなる。",
+      "エ": "誤り。L₁,C₁は合うが、LB/R²=5.4mH/360000Ω²=0.015μF。",
+      "オ": "誤り。L₁,C₂は合うが、C₁=3.6mH/360000Ω²=0.01μF。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q09",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A - 9 次の記述は、ダイオード又はトランジスタから発生する雑音について述べたものである。    \n 内に入れるべき字句の正しい組合せを \n下の番号から選べ。 \n \n（1） 周波数特性の高域で観測され、エミッタ電流がベース電流とコレクタ電流に分配される比率のゆらぎによって生じる雑音は、  A   \n  である。 \n（2） 周波数特性の中域で観測され、電界を加えて電流を流すとき、キャリアの数やドリフト速度のゆらぎによって生じる雑音は、   B   \n  である。 \n（3） 周波数特性の低域で観測され、周波数f に反比例する特性があることから1/f 雑音ともいわれる雑音は、   C   である。 \n \n \n    A           \nB \n        C \n1 分配雑音     \nフリッカ雑音       ホワイト雑音 \n2 分配雑音     \n散弾雑音 \n  フリッカ雑音 \n3 散弾雑音     \nフリッカ雑音 \n  熱雑音 \n4 フリッカ雑音 \n分配雑音 \n  ホワイト雑音 \n5 フリッカ雑音    \n散弾雑音 \n  熱雑音  \n \n \n",
+    "explanation": "正しい。Aはエミッタ電流の分配比のゆらぎによる分配雑音、Bはキャリア数等の統計的ゆらぎによる散弾雑音、Cは低域で1/f特性をもつフリッカ雑音に対応する。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A9（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "A 分配雑音／B フリッカ雑音／C ホワイト雑音",
+      "イ": "A 分配雑音／B 散弾雑音／C フリッカ雑音",
+      "ウ": "A 散弾雑音／B フリッカ雑音／C 熱雑音",
+      "エ": "A フリッカ雑音／B 分配雑音／C ホワイト雑音",
+      "オ": "A フリッカ雑音／B 散弾雑音／C 熱雑音"
+    },
+    "choiceExplanations": {
+      "ア": "Aは分配雑音で合うが、Bのキャリア数・速度の不規則なゆらぎは散弾雑音であり、フリッカ雑音ではない。Cの1/f特性はフリッカ雑音であり、広帯域にほぼ平坦なホワイト雑音ではない。",
+      "イ": "正しい。Aはエミッタ電流の分配比のゆらぎによる分配雑音、Bはキャリア数等の統計的ゆらぎによる散弾雑音、Cは低域で1/f特性をもつフリッカ雑音に対応する。",
+      "ウ": "誤り。Aは分配比のゆらぎなので分配雑音であり、散弾雑音ではない。Bは中域の散弾雑音、Cは1/f雑音のフリッカ雑音である。",
+      "エ": "誤り。Aの分配比のゆらぎが分配雑音、Bの統計的なキャリアのゆらぎが散弾雑音、Cの1/f特性がフリッカ雑音で、いずれの対応も違う。",
+      "オ": "Bの散弾雑音だけは合う。Aは分配雑音であり、Cの低周波1/f特性はフリッカ雑音であって熱雑音ではない。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q10",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "(FK801-3) \n \n \nA - 10 図1 に示すダイオードD と抵抗R を用いた回路に流れる電流ID 及びD の両端の電圧VD の値の組合せとして、最も近いものを \n下の番号から選べ。ただし、ダイオードD の順方向特性は、図2 に示す折れ線で近似するものとする。 \n \n  ID                  VD \n1 0.4 〔A〕 \n      0.9 〔V〕 \n2 0.4 〔A〕 \n      0.7 〔V〕 \n3 0.3 〔A〕 \n      0.6 〔V〕 \n4 0.2 〔A〕 \n      0.9 〔V〕 \n5 0.2 〔A〕 \n      0.7 〔V〕 \n \n  \n \n \n \n \n \nVD：順方向電圧\nI D：順方向電流\nR = 7〔Ω〕 \n図1 \nD \nID \nV = 2.1〔V〕\nVD \nV ：直流電圧 \n図2 \n→ VD〔V〕 \n→ ID〔A〕 \n0 \n0.1 \n0.2 \n0.2   0.4   0.6   0.8   1.0  1.2 \n0.3 \n0.4 \n0.5 \n0.6 \n",
+    "explanation": "正しい。負荷線VD=2.1−7IDと図2のダイオード特性の交点はID=0.2 A、VD=0.7 V。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A10（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q10-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A10 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "ID 0.4〔A〕、VD 0.9〔V〕",
+      "イ": "ID 0.4〔A〕、VD 0.7〔V〕",
+      "ウ": "ID 0.3〔A〕、VD 0.6〔V〕",
+      "エ": "ID 0.2〔A〕、VD 0.9〔V〕",
+      "オ": "ID 0.2〔A〕、VD 0.7〔V〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。抵抗での降下は7×0.4=2.8 Vとなり、VDと合わせて電源2.1 Vを超える。",
+      "イ": "誤り。0.4 Aでは抵抗だけで2.8 Vを要する。",
+      "ウ": "誤り。7×0.3+0.6=2.7 Vで電源2.1 Vと整合しない。",
+      "エ": "誤り。7×0.2+0.9=2.3 Vであり、図2の折れ線との交点でもない。",
+      "オ": "正しい。負荷線VD=2.1−7IDと図2のダイオード特性の交点はID=0.2 A、VD=0.7 V。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q11",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A - 11 図に示すトランジスタ（Tｒ）の自己バイアス回路において、コレクタ電流IC を2〔mA〕にするためのベース電流IB と抵抗RＢの値の組合 \nせとして、最も近いものを下の番号から選べ。ただし、Tｒのエミッタ接地直流電流増幅率hFE を200、回路のベース-エミッタ間電圧 \nVBE を0.6 〔V〕とする。 \n \n      IB                     RＢ \n1 0.01 〔mA〕    140 〔kΩ〕 \n2 0.01 〔mA〕    270 〔kΩ〕 \n3 0.01 〔mA〕    540 〔kΩ〕 \n4 0.02 〔mA〕    270 〔kΩ〕 \n5 0.02 〔mA〕    540 〔kΩ〕 \n \n \n \nB\nV = 10〔V〕\nIC  \nVBE \nRＢ\nRＣ= 2〔kΩ〕\nTｒ\nRC：抵抗 \nV ：直流電源電圧\nC\nE \nIB \nC :コレクタ \nB :ベース \nE ：エミッタ \n",
+    "explanation": "正しい。IB=2mA/200=0.01mA、コレクタ電位6V、RB=(6−0.6)V/0.01mA=540kΩ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A11（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q11-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A11 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "IB 0.01〔mA〕、RB 140〔kΩ〕",
+      "イ": "IB 0.01〔mA〕、RB 270〔kΩ〕",
+      "ウ": "IB 0.01〔mA〕、RB 540〔kΩ〕",
+      "エ": "IB 0.02〔mA〕、RB 270〔kΩ〕",
+      "オ": "IB 0.02〔mA〕、RB 540〔kΩ〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。IB=IC/hFE=0.01 mAは正しいが、コレクタ節点は10−2mA×2kΩ=6 VなのでRB=(6−0.6)/0.01mA=540kΩ。",
+      "イ": "誤り。ベース電流は正しいが、自己バイアス抵抗の両端は5.4 Vであり270 kΩではない。",
+      "ウ": "正しい。IB=2mA/200=0.01mA、コレクタ電位6V、RB=(6−0.6)V/0.01mA=540kΩ。",
+      "エ": "誤り。IBを0.02mAとするとhFE=200でIC=4mAとなり指定2mAと合わない。",
+      "オ": "誤り。RB値だけは正しいが、IB=0.02mAでは指定コレクタ電流にならない。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q12",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \n \n \n \nA - 12 次の記述は、マイクロ波やミリ波帯の回路に用いられる電子管及び半導体素子について述べたものである。      内に入れるべき字 \n句の正しい組合せを下の番号から選べ。 \n \n(1) インパットダイオードは、PN 接合の   A   とキャリアの走行時間効果により発振する。 \n(2) トンネルダイオードは、PN 接合に順方向電圧を加えたときの   B    特性を利用し発振する。 \n(3) 進行波管は、界磁コイル内に置かれた回路（ら旋遅延回路）の作用を利用し、   C   の増幅が可能である。 \n    \n   A \nB \nC \n1 \nなだれ現象 \nバイアス抵抗 \n狭帯域 \n2 \nなだれ現象 \n負性抵抗 \n広帯域 \n3 \nなだれ現象 \n可変容量 \n広帯域 \n4 \n降伏現象 \nバイアス抵抗 \n広帯域 \n5 \n降伏現象 \n負性抵抗 \n狭帯域",
+    "explanation": "正しい。インパットはなだれ現象と走行時間効果、トンネルダイオードは負性抵抗、ら旋遅延回路を使う進行波管は広帯域増幅に対応する。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A12（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "なだれ現象／バイアス抵抗／狭帯域",
+      "イ": "なだれ現象／負性抵抗／広帯域",
+      "ウ": "なだれ現象／可変容量／広帯域",
+      "エ": "降伏現象／バイアス抵抗／広帯域",
+      "オ": "降伏現象／負性抵抗／狭帯域"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。Aのなだれ現象は合うが、トンネルダイオードは負性抵抗を利用し、進行波管は広帯域増幅が可能。",
+      "イ": "正しい。インパットはなだれ現象と走行時間効果、トンネルダイオードは負性抵抗、ら旋遅延回路を使う進行波管は広帯域増幅に対応する。",
+      "ウ": "誤り。トンネルダイオードの発振に使うのは順方向特性の負性抵抗領域で、可変容量ではない。",
+      "エ": "誤り。Bはバイアス抵抗でなく負性抵抗である。インパットダイオードは降伏現象の一種であるなだれ現象を利用する。",
+      "オ": "誤り。Bの負性抵抗は合うが、Cは狭帯域でなく広帯域である。インパットダイオードのなだれ現象は降伏現象の一種である。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q13",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "(FK801-4) \n \n \nA - 13 次の記述は、図1に示す電界効果トランジスタ(FET)を用いたドレイン接地増幅回路の出力インピーダンス(端子cd から見たインピー \nダンス)Zo〔Ω〕を求める過程について述べたものである。      内に入れるべき字句の正しい組合せを下の番号から選べ。ただし、FET \nの等価回路を図2とし、また、Zo は抵抗RS〔Ω〕を含むものとする。 \n \n(1) 図１を等価回路を用いて書くと、図3になる。出力インピーダンス Zo 〔Ω〕 は、図3の出力端子 cd を短絡したとき cd に流れる電流 \n を Iso 〔Ａ〕 とし、出力端子 cd を開放したときに現れる電圧をVoo 〔Ｖ〕 とすると、次式で表される。 \n \nZo=  Voo \n I so \n 〔Ω〕 ･･････････････････････････ ①  \n(2) Isoは、次式で表される。 \nIso=   A   〔Ａ〕 ･･･････････････････････ ② \n(3) Vooは、次式で表される。 \nVoo=   B   ×V i 〔Ｖ〕 \n ････････････････ ③ \n(4) したがって、Zoは式①、②、③より、次式で表される。 \nZo=   C   〔Ω〕 \n \n \n A         B            C \n1 gmVi   \n     gmRS \n 1+gmRS \n    \n  \n RS \n 1+gmRS  \n2 gmVi  \n    \n gm\n 1+gmRS \n    \n  \n RS \n 1+gmRS  \n3 gmVi \n      \n gmRS \n 1-gmRS  \n  \n 1 \n 1+gm RS \n4 (1+gm)Vi \n      \n gmRS \n 1+gmRS  \n  \n RS \n 1+gmRS \n   \n5 (1+gm)Vi     \n gm \n 1+gmRS  \n  \n 1 \n 1+gm RS\n \n \n \nD：ドレイン \nG：ゲート  \nS：ソース \nVi：入力電圧〔V〕 \nVo：出力電圧〔V〕  \nVGS：GS 間電圧〔V〕  \ngm：相互コンダクタンス〔S〕 \n \n図2                     図3  \n図1 \nFET \nG\nD \nS \nVi \nRS\nVo\na \nｂ \nｃ \nｄ \n     \n: 理想電流源 \nVGS \nFET \ngmVGS\nG\nS\nD\nS\nVi \ngmVGS\nG\nD\nS\nVo\nRS\nVGS\na \nｂ\nｃ\nｄ\n",
+    "explanation": "正しい。短絡出力電流Iso=gmVi、開放出力電圧Voo=gmViRS/(1+gmRS)なのでZo=Voo/Iso=RS/(1+gmRS)。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A13（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q13-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A13 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=gmVi、B=gmRS/(1+gmRS)、C=RS/(1+gmRS)",
+      "イ": "A=gmVi、B=gm/(1+gmRS)、C=RS/(1+gmRS)",
+      "ウ": "A=gmVi、B=gmRS/(1−gmRS)、C=1/(1+gmRS)",
+      "エ": "A=(1+gm)Vi、B=gmRS/(1+gmRS)、C=RS/(1+gmRS)",
+      "オ": "A=(1+gm)Vi、B=gm/(1+gmRS)、C=1/(1+gmRS)"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。短絡出力電流Iso=gmVi、開放出力電圧Voo=gmViRS/(1+gmRS)なのでZo=Voo/Iso=RS/(1+gmRS)。",
+      "イ": "誤り。Bは無次元の電圧比でありgm/(1+gmRS)は単位Sを持つ。正しくはgmRS/(1+gmRS)。",
+      "ウ": "誤り。ソース帰還では分母は1+gmRSであり1−ではない。Cも抵抗単位にならない。",
+      "エ": "誤り。Aの短絡電流はgmViであり(1+gm)Viは単位上も電流にならない。",
+      "オ": "誤り。Aの短絡電流はgmViであり、(1+gm)Viは単位上も不適切。Bの分子にはRSが必要でgmRS/(1+gmRS)、Cの分子にもRSが必要でRS/(1+gmRS)となる。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q14",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 14 図に示す理想的な演算増幅器（AOP）を用いたブリッジ形CR発振回路の発振周波数 fo を表す式及び発振状態のときの電圧帰還\n率β (V̇f / V̇o )の値の組合せとして、正しいものを下の番号から選べ。 \n \n1 f₀=1/(πCR)〔Hz〕、β=1/3\n2 f₀=1/(√2 πCR)〔Hz〕、β=1/3\n3 f₀=1/(2π√(CR))〔Hz〕、β=1/2\n4 f₀=1/(2πCR)〔Hz〕、β=1/3\n5 f₀=1/(2πCR)〔Hz〕、β=1/2\n \nR、R1、R2 : 抵抗〔Ω〕 \nC   : 静電容量〔F〕 \nV̇o : 出力電圧〔V〕 \nV̇f : 帰還電圧〔V〕 \nR2\nV̇f\nR\nR\nC\nC\nV̇o \nR1\n+ \n-\nAOP\n",
+    "explanation": "正しい。直列CRと並列CRの位相が一致するω₀=1/CRでf₀=ω₀/(2π)。その周波数で正帰還分圧比β=1/3。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A14（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q14-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A14 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "f₀=1/(πCR)〔Hz〕、β=1/3",
+      "イ": "f₀=1/(√2 πCR)〔Hz〕、β=1/3",
+      "ウ": "f₀=1/(2π√(CR))〔Hz〕、β=1/2",
+      "エ": "f₀=1/(2πCR)〔Hz〕、β=1/3",
+      "オ": "f₀=1/(2πCR)〔Hz〕、β=1/2"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。帰還率1/3は合うが、同値R,Cのウィーンブリッジの周波数は1/(2πCR)。",
+      "イ": "誤り。帰還率は正しいが、発振周波数に√2の係数は付かない。",
+      "ウ": "誤り。CRの平方根は時間の次元にならず、帰還率も1/2ではない。",
+      "エ": "正しい。直列CRと並列CRの位相が一致するω₀=1/CRでf₀=ω₀/(2π)。その周波数で正帰還分圧比β=1/3。",
+      "オ": "誤り。f₀は正しいが、平衡点の帰還率は1/3であって1/2ではない。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q15",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 15 図に示す整流回路において、静電容量C1 の電圧VC1 及びC2 の電圧VC2 の最も近い値の組合せとして、正しいものを下の番号から \n選べ。ただし、電源電圧V は、実効値100〔V〕の正弦波交流電圧とし、ダイオードD1、D2 は理想的な特性を持つものとする。 \n \nVC1 \n   VC2 \n1 100 〔V〕   141 〔V〕 \n2 100 〔V〕   200 〔V〕 \n3 100 〔V〕   282 〔V〕 \n4 141 〔V〕   200 〔V〕 \n5 141 〔V〕   282 〔V〕 \n \n \nD1 \nD2 \nC1  \nV  \nVC1\nC1 、C2：静電容量〔F〕  \nC2\nVC2 \n",
+    "explanation": "正しい。入力波高値は100√2≈141 VでC1がこの値に充電され、C2は理想倍電圧で約282 V。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A15（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q15-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A15 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "VC1 100〔V〕、VC2 141〔V〕",
+      "イ": "VC1 100〔V〕、VC2 200〔V〕",
+      "ウ": "VC1 100〔V〕、VC2 282〔V〕",
+      "エ": "VC1 141〔V〕、VC2 200〔V〕",
+      "オ": "VC1 141〔V〕、VC2 282〔V〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。理想ダイオードではC1は実効値でなく波高値100√2≈141 Vまで充電される。",
+      "イ": "誤り。両コンデンサの理想的な充電電圧は実効値100 Vを基準にしない。",
+      "ウ": "誤り。VC2は波高値の2倍に近いが、VC1は100 Vではなく約141 V。",
+      "エ": "誤り。VC1は正しいが、倍電圧整流のVC2は2×100√2≈282 V。",
+      "オ": "正しい。入力波高値は100√2≈141 VでC1がこの値に充電され、C2は理想倍電圧で約282 V。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q16",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 16 図1 に示すj k フリップフロップ(FF)のFF1、FF2、及びFF3 を用いた回路の入力A 及びC に、図2 に示す「1」、「0」のデジタル信号 \nをそれぞれ入力したとき、時間t = t1〔s〕におけるデジタル出力X1、X2 及びX3 の、正しい組み合わせを下の番号から選べ。ただし、 \nFF はエッジトリガ形でck 入力の立ち下がりで動作する。また、時間t = 0〔s〕ではすべてのFF はリセットされているものとする。 \n \n \n \n \n \n \n \n \n \nX1   X2   X3 \n1 「1」  「1」  「0」 \n2 「1」  「0」  「1」 \n3 「1」  「0」  「0」 \n4 「0」  「1」  「1」 \n5 「0」  「0」  「1」 \n \n \n「1」\n「1」\nC\nA\nj  Q\nj  Q \nj  Q\nk  Q□\nk  Q□\nk  Q□\n図2 \nt〔s〕  \nt〔s〕  \n0\n「0」\nt1  \nt1  \n「0」\n0 \n図1  \nj、k：入力 \nQ、Q□：出力 \nck：クロック入力\nck\nX1           X2         \n X3  \nA \nC \nFF1 \nck\nck\nFF2 \nFF3  \n",
+    "explanation": "正しい。Cの立下りごとにFF1がA、FF2が直前のX₁、FF3が直前のX₂を取り込む。初期000からA=1の期間に110を経て、A=0に戻った後のt₁には001。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A16（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q16-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A16 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "X₁=「1」、X₂=「1」、X₃=「0」",
+      "イ": "X₁=「1」、X₂=「0」、X₃=「1」",
+      "ウ": "X₁=「1」、X₂=「0」、X₃=「0」",
+      "エ": "X₁=「0」、X₂=「1」、X₃=「1」",
+      "オ": "X₁=「0」、X₂=「0」、X₃=「1」"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。t₁までにAは0へ戻り、FF1とFF2の出力はともに0になる。",
+      "イ": "誤り。FF3の出力1は合うが、FF1は入力Aの0を取り込む。",
+      "ウ": "誤り。t₁のFF1は0であり、FF3は先行段の1を取り込んでいる。",
+      "エ": "誤り。FF2はt₁までにFF1の0を取り込んで0となる。",
+      "オ": "正しい。Cの立下りごとにFF1がA、FF2が直前のX₁、FF3が直前のX₂を取り込む。初期000からA=1の期間に110を経て、A=0に戻った後のt₁には001。"
+    },
+    "officialAnswerNumber": "5",
+    "answer": "オ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q17",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "A - 17 次の記述は、指示電気計器の一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。 \n \n1 誘導形計器は、移動磁界などによって生じる誘導電流を利用し、交流専用の指示計器として用いられる。 \n2 電流力計形計器は、電力計としてよく用いられる。 \n3 熱電対形計器は、波形にかかわらず最大値を指示する。 \n4 静電形計器は、直流及び交流の高電圧の測定に用いられる。 \n5 整流形計器は、整流した電流を永久磁石可動コイル形計器を用いて測定する。 \n",
+    "explanation": "誤り。被測定電流の発熱を熱電対の熱起電力に変えて読む方式なので、発熱に対応する実効値を測る。瞬時の最大値を直接指示する方式ではない。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A17（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "choices": {
+      "ア": "誘導形計器は、移動磁界などによって生じる誘導電流を利用し、交流専用の指示計器として用いられる。",
+      "イ": "電流力計形計器は、電力計としてよく用いられる。",
+      "ウ": "熱電対形計器は、波形にかかわらず最大値を指示する。",
+      "エ": "静電形計器は、直流及び交流の高電圧の測定に用いられる。",
+      "オ": "整流形計器は、整流した電流を永久磁石可動コイル形計器を用いて測定する。"
+    },
+    "choiceExplanations": {
+      "ア": "正しい記述。交流による変化磁束で導体に誘導電流を生じさせて駆動力を得るため、直流だけではこの方式の駆動力を得られない。",
+      "イ": "正しい記述。固定コイルと可動コイルの電流に応じたトルクを利用し、電流コイルと電圧コイルの組合せで電力を指示できる。",
+      "ウ": "誤り。被測定電流の発熱を熱電対の熱起電力に変えて読む方式なので、発熱に対応する実効値を測る。瞬時の最大値を直接指示する方式ではない。",
+      "エ": "正しい記述。電極間の静電力は電圧の極性を反転しても働くため直流・交流のいずれにも利用でき、高電圧計として使われる。",
+      "オ": "正しい記述。交流を整流器で一方向の電流にしてから、直流に応答する永久磁石可動コイル形の指示機構へ流す。"
+    },
+    "officialAnswerNumber": "3",
+    "answer": "ウ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q18",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 18 図に示す回路の抵抗R=500〔Ω〕で消費される電力P を直流電流計A の指示値I〔A〕と直流電圧計V の指示値V〔V〕の積 \nIV〔W〕として求めたい。このときの誤差率を5〔％〕以下にするとき、直流電圧計V の内部抵抗RV〔Ω〕の最小の値として、正しい \nものを下の番号から選べ。ただし、誤差はRV〔Ω〕によってのみ生じるものとする。 \n \n1   4 〔kΩ〕 \n2   6 〔kΩ〕 \n3   8 〔kΩ〕 \n4  10 〔kΩ〕 \n5  12 〔kΩ〕 \n \n電源 \nR =500〔Ω〕 \nA\nRV\nV\nI\nV\n",
+    "explanation": "正しい。電流計は抵抗電流と電圧計電流の和を示すため、IV/P−1=R/RV。500/RV≤0.05からRV≥10kΩ。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A18（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q18-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A18 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "4〔kΩ〕",
+      "イ": "6〔kΩ〕",
+      "ウ": "8〔kΩ〕",
+      "エ": "10〔kΩ〕",
+      "オ": "12〔kΩ〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。誤差率R/RV=500/4,000=12.5%で5%超。",
+      "イ": "誤り。500/6,000≈8.33%で5%超。",
+      "ウ": "誤り。500/8,000=6.25%で5%超。",
+      "エ": "正しい。電流計は抵抗電流と電圧計電流の和を示すため、IV/P−1=R/RV。500/RV≤0.05からRV≥10kΩ。",
+      "オ": "12kΩなら約4.17%で条件は満たすが、求める最小値は10kΩ。"
+    },
+    "officialAnswerNumber": "4",
+    "answer": "エ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q19",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": " \nA - 19 図に示す回路において、標準信号発生器SG の周波数f を300〔kHz〕にしたとき可変静電容量CV が426〔pF〕で回路が共振し、f を \n600〔kHz〕にしたときCV が102〔pF〕で回路が共振した。このとき自己インダクタンスがL〔H〕のコイルの分布容量C0 の値として、最も近\nいものを下の番号から選べ。 \n \n1  3 〔pF〕 \n2  6 〔pF〕 \n3  9 〔pF〕 \n4 12 〔pF〕 \n5 15 〔pF〕 \n \nR：抵抗〔Ω〕 \nSG\nL  \nR \nCV\nC0  \n f \n",
+    "explanation": "正しい。426+C0=4(102+C0)を解くとC0=6pF。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A19（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q19-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A19 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "3〔pF〕",
+      "イ": "6〔pF〕",
+      "ウ": "9〔pF〕",
+      "エ": "12〔pF〕",
+      "オ": "15〔pF〕"
+    },
+    "choiceExplanations": {
+      "ア": "誤り。周波数を2倍にすると全容量は1/4となる関係に3pFは合わない。",
+      "イ": "正しい。426+C0=4(102+C0)を解くとC0=6pF。",
+      "ウ": "誤り。426+9≠4(102+9)で共振周波数比と整合しない。",
+      "エ": "誤り。426+12≠4(102+12)。",
+      "オ": "誤り。426+15≠4(102+15)。"
+    },
+    "officialAnswerNumber": "2",
+    "answer": "イ"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q20",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "(FK801-6) \n \n \nA - 20 次の記述は、図に示す原理的な二重積分形A-D 変換回路の動作について述べたものである。       内に入れるべき字句の正し \nい組合せを下の番号から選べ。ただし、積分回路は、演算増幅器(AOP)、抵抗R 〔Ω〕、静電容量C 〔F〕を用いて、理想的に動作するも \nのとし、初期状態で出力電圧Vo は、0 〔V〕とする。なお、同じ記号の        内には、同じ字句が入るものとする。 \n \n（1） 制御回路により、スイッチSW をa 側に切り替えて未知の入力電圧（直流電圧）Vx 〔V〕を、クロックパルスの数がNo になるまでの間、積\n分回路の入力に加える。このとき、クロックパルスの周波数をfc 〔Hz〕とすると、パルス数がNo になった時の出力電圧Vox 〔V〕は、次式で\n表される。 \nVox = -（  Vx \n CR ）×(   A  \n ) 〔V〕 ・・・・・・・・・・・・・・・・・・・・・・ ① \n（2） パルス数がNoになると、SW はb 側に切り替えられ、積分回路の入力にはVxとは逆極性の規定の直流電圧Vs〔V〕が入力される。この\nため、Vo は、Vox 〔V〕から0 〔V〕に向かって増加を始める。 \n（3） 比較回路でVo と0 〔V〕を比較し、SW がb 側に切り替えられてから Vo = 0 〔V〕となるまでの間のパルス数をカウンタで計数する。 \nこのときのパルス数をNx とすると次式が成り立つ。 \n-（ Vx \n CR ）×(   A   ) +（  Vs \n CR ）×(   B   ) = 0 〔V〕 ・・・・・・・ ② \n（4） 式②より、次式が得られる。 \nVx  = (   C   )× Vs 〔V〕   \n \n   ・・・・・・・・・・・・・・・・・・・・・・・・・・③ \nしたがって、式③よりNo とVs は既知数であるから、Nx からVx を求めることができる。 \n \n      A        B          C \n1  No \n fc \n         \n Nx \n fc         Nx \n No  \n2  No \n fc \n         \n Nx \n fc         No \n Nx  \n3  No \n fc \n         Nx fc        Nx \n No  \n4 No fc         \n Nx \n fc         No \n Nx  \n5 No fc        Nx fc        Nx \n No  \n \n \n \n \n \n+\nfc\n比較回路 \n積分回路\n0〔V〕\nVo\nスイッチ(SW)\n  回路 \na\nSW\nb\nC\nR\nVs\n-\nAOP\n制御回路 \nクロックパルス \n発生回路 \n出力 \n（デジタル信号）\n    カウンタ \nVx\n入力電圧 \n（直流電圧）\n＋\n−\n",
+    "explanation": "正しい。積分時間はクロック数を周波数で割るのでt₀=N₀/fc、tx=Nx/fc。Vx t₀=Vs txからVx=(Nx/N₀)Vs。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 A20（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q20-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 A20 の図・数式・番号付き語群（原典配置）"
+    ],
+    "choices": {
+      "ア": "A=N₀/fc、B=Nx/fc、C=Nx/N₀",
+      "イ": "A=N₀/fc、B=Nx/fc、C=N₀/Nx",
+      "ウ": "A=N₀/fc、B=Nx fc、C=Nx/N₀",
+      "エ": "A=N₀ fc、B=Nx/fc、C=N₀/Nx",
+      "オ": "A=N₀ fc、B=Nx fc、C=Nx/N₀"
+    },
+    "choiceExplanations": {
+      "ア": "正しい。積分時間はクロック数を周波数で割るのでt₀=N₀/fc、tx=Nx/fc。Vx t₀=Vs txからVx=(Nx/N₀)Vs。",
+      "イ": "誤り。時間A,Bは正しいが、Vx/VsはNx/N₀であって逆数ではない。",
+      "ウ": "誤り。B=Nx fcは秒ではなく単位が合わず、Nx/fcが正しい。",
+      "エ": "誤り。A=N₀ fcは時間にならず、Cの比も逆。",
+      "オ": "誤り。A,Bはともに周波数で割る必要があり、fcを掛けない。"
+    },
+    "officialAnswerNumber": "1",
+    "answer": "ア"
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q21",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 21,
+    "type": "native-b",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "一辺lの1巻正方形導線が、一様磁束密度Bの磁極間を速度vで通過する。誘導起電力、進入時の電流方向、時間波形を問う。",
+    "explanation": "6 ΔΦ/Δt。ファラデーの法則より起電力の大きさは磁束変化率の絶対値。\n\n2 Bl。進入中は一辺lが磁界を横切るので単位速度当たりの起電力はBl、e=Blv。\n\n8 b→c→d→a。進入時にはN極からS極へ向かう鎖交磁束が増える。レンツの法則により、それを妨げるS極側からN極側への誘導磁界を作る向きに電流が流れ、図の点aからb→c→d→aとなる。\n\n9 0。導線全体が一様磁界内にある間は鎖交磁束が一定で起電力は零。\n\n10 I。進入中に一定の正起電力、全没中は零、退出中に同じ大きさで逆極性の一定起電力。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 B1（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q21-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B1 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "ΔΦΔt",
+          "explanation": "変化率ではなく積なので次元がVにならない。"
+        },
+        {
+          "id": "2",
+          "label": "Bl",
+          "explanation": "磁界を横切る有効辺長lと磁束密度Bの積で、イの速度vに掛ける係数。"
+        },
+        {
+          "id": "3",
+          "label": "d→c→b→a",
+          "explanation": "進入時の誘導磁界が増加磁束を強める回り方になり、ウには不適。"
+        },
+        {
+          "id": "4",
+          "label": "B/l",
+          "explanation": "起電力の速度係数は辺長に比例するので逆数にはならない。"
+        },
+        {
+          "id": "5",
+          "label": "II",
+          "explanation": "一様Bと一定vなら進入・退出中の起電力は一定で三角波ではない。"
+        },
+        {
+          "id": "6",
+          "label": "ΔΦ/Δt",
+          "explanation": "磁束変化率で、アの起電力の大きさに一致。"
+        },
+        {
+          "id": "7",
+          "label": "2Bl",
+          "explanation": "進入時に一様磁界を横切る有効辺は1本であり2倍しない。"
+        },
+        {
+          "id": "8",
+          "label": "b→c→d→a",
+          "explanation": "進入時の増加磁束を打ち消す向きでウに一致。"
+        },
+        {
+          "id": "9",
+          "label": "0（零）",
+          "explanation": "導線全体が一様磁界内では鎖交磁束が変わらずエに一致。"
+        },
+        {
+          "id": "10",
+          "label": "I",
+          "explanation": "進入・退出時の矩形パルスが逆極性となる波形でオに一致。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "6 ΔΦ/Δt。ファラデーの法則より起電力の大きさは磁束変化率の絶対値。",
+          "candidateExplanations": {
+            "1": "不採用。磁束変化から起電力の大きさを表す式の候補だが、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。ΔΦΔtでは変化率ではなく積なので次元がVにならない。",
+            "2": "不採用。BlはBl系係数を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "3": "不採用。d→c→b→aは電流方向を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "4": "不採用。B/lはBl系係数を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "5": "不採用。IIは時間波形を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "6": "採用。磁束変化から起電力の大きさを表す式はΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "7": "不採用。2BlはBl系係数を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "8": "不採用。b→c→d→aは電流方向を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "9": "不採用。0（零）は零を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。",
+            "10": "不採用。Iは時間波形を表す候補。アが問うのは磁束変化から起電力の大きさを表す式で、正しくはΔΦ/Δt。根拠: 磁束変化率でなければVの次元にならない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "2 Bl。進入中は一辺lが磁界を横切るので単位速度当たりの起電力はBl、e=Blv。",
+          "candidateExplanations": {
+            "1": "不採用。ΔΦΔtは磁束と時間の式を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "2": "採用。進入時のeで速度vに掛ける係数はBl。根拠: 横切る有効辺長lに比例する。",
+            "3": "不採用。d→c→b→aは電流方向を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "4": "不採用。進入時のeで速度vに掛ける係数の候補だが、正しくはBl。根拠: 横切る有効辺長lに比例する。B/lでは起電力の速度係数は辺長に比例するので逆数にはならない。",
+            "5": "不採用。IIは時間波形を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "6": "不採用。ΔΦ/Δtは磁束と時間の式を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "7": "不採用。進入時のeで速度vに掛ける係数の候補だが、正しくはBl。根拠: 横切る有効辺長lに比例する。2Blでは進入時に一様磁界を横切る有効辺は1本であり2倍しない。",
+            "8": "不採用。b→c→d→aは電流方向を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "9": "不採用。0（零）は零を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。",
+            "10": "不採用。Iは時間波形を表す候補。イが問うのは進入時のeで速度vに掛ける係数で、正しくはBl。根拠: 横切る有効辺長lに比例する。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "8 b→c→d→a。進入時にはN極からS極へ向かう鎖交磁束が増える。レンツの法則により、それを妨げるS極側からN極側への誘導磁界を作る向きに電流が流れ、図の点aからb→c→d→aとなる。",
+          "candidateExplanations": {
+            "1": "不採用。ΔΦΔtは磁束と時間の式を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "2": "不採用。BlはBl系係数を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "3": "不採用。aから見た進入時の誘導電流方向の候補だが、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。d→c→b→aでは進入時の誘導磁界が増加磁束を強める回り方になり、ウには不適。",
+            "4": "不採用。B/lはBl系係数を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "5": "不採用。IIは時間波形を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "6": "不採用。ΔΦ/Δtは磁束と時間の式を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "7": "不採用。2BlはBl系係数を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "8": "採用。aから見た進入時の誘導電流方向はb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "9": "不採用。0（零）は零を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。",
+            "10": "不採用。Iは時間波形を表す候補。ウが問うのはaから見た進入時の誘導電流方向で、正しくはb→c→d→a。根拠: 増加磁束を打ち消すレンツの法則に従う。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "9 0。導線全体が一様磁界内にある間は鎖交磁束が一定で起電力は零。",
+          "candidateExplanations": {
+            "1": "不採用。ΔΦΔtは磁束と時間の式を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "2": "不採用。BlはBl系係数を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "3": "不採用。d→c→b→aは電流方向を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "4": "不採用。B/lはBl系係数を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "5": "不採用。IIは時間波形を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "6": "不採用。ΔΦ/Δtは磁束と時間の式を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "7": "不採用。2BlはBl系係数を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "8": "不採用。b→c→d→aは電流方向を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。",
+            "9": "採用。全体が一様磁界内にある間の起電力は0。根拠: 磁束変化が止まる。",
+            "10": "不採用。Iは時間波形を表す候補。エが問うのは全体が一様磁界内にある間の起電力で、正しくは0。根拠: 磁束変化が止まる。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "10 I。進入中に一定の正起電力、全没中は零、退出中に同じ大きさで逆極性の一定起電力。",
+          "candidateExplanations": {
+            "1": "不採用。ΔΦΔtは磁束と時間の式を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "2": "不採用。BlはBl系係数を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "3": "不採用。d→c→b→aは電流方向を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "4": "不採用。B/lはBl系係数を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "5": "不採用。進入・全没・退出を通じた時間波形の候補だが、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。IIでは一様Bと一定vなら進入・退出中の起電力は一定で三角波ではない。",
+            "6": "不採用。ΔΦ/Δtは磁束と時間の式を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "7": "不採用。2BlはBl系係数を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "8": "不採用。b→c→d→aは電流方向を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "9": "不採用。0（零）は零を表す候補。オが問うのは進入・全没・退出を通じた時間波形で、正しくはI。根拠: 進入と退出で一定大きさ・逆極性になる。",
+            "10": "採用。進入・全没・退出を通じた時間波形はI。根拠: 進入と退出で一定大きさ・逆極性になる。"
+          }
+        }
+      ],
+      "officialLabel": "B1",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q21-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B1 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q22",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 22,
+    "type": "native-b",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "直列リアクタンスj60Ωと並列抵抗30Ωからなる二端子対回路。V1=AV2+Bi2、i1=CV2+Di2の四端子定数を問う。",
+    "explanation": "1 四端子定数。A・B・C・Dは提示された二端子対の伝送関係を表す。\n\n2 1+j2。i1=i2+V2/30、V1=V2+j60i1よりV2係数は1+j60/30。\n\n8 j60Ω。同じ式のi2係数は直列インピーダンスj60Ω。\n\n9 1/30S。並列抵抗の電流V2/30がi1に加わる。\n\n5 1。i1=i2+V2/30におけるi2係数。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 B2（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q22-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B2 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "四端子定数",
+          "explanation": "二端子対伝送関係のA・B・C・Dの総称。"
+        },
+        {
+          "id": "2",
+          "label": "1+j2",
+          "explanation": "A=1+ZY=1+j60/30。"
+        },
+        {
+          "id": "3",
+          "label": "j30Ω",
+          "explanation": "直列リアクタンスは60ΩでありBには不適。"
+        },
+        {
+          "id": "4",
+          "label": "1/20S",
+          "explanation": "並列抵抗は30ΩでありCには不適。"
+        },
+        {
+          "id": "5",
+          "label": "1",
+          "explanation": "D=1。"
+        },
+        {
+          "id": "6",
+          "label": "減衰定数",
+          "explanation": "A・B・C・Dの総称ではない。"
+        },
+        {
+          "id": "7",
+          "label": "2+j1",
+          "explanation": "ZY=j2は実部に足さない。"
+        },
+        {
+          "id": "8",
+          "label": "j60Ω",
+          "explanation": "B=直列インピーダンス。"
+        },
+        {
+          "id": "9",
+          "label": "1/30S",
+          "explanation": "C=並列コンダクタンス。"
+        },
+        {
+          "id": "10",
+          "label": "3",
+          "explanation": "Dはi2の係数1。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "1 四端子定数。A・B・C・Dは提示された二端子対の伝送関係を表す。",
+          "candidateExplanations": {
+            "1": "採用。A・B・C・Dの総称は四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "2": "不採用。1+j2はAの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "3": "不採用。j30ΩはBの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "4": "不採用。1/20SはCの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "5": "不採用。1はDの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "6": "不採用。A・B・C・Dの総称の候補だが、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。減衰定数ではA・B・C・Dの総称ではない。",
+            "7": "不採用。2+j1はAの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "8": "不採用。j60ΩはBの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "9": "不採用。1/30SはCの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。",
+            "10": "不採用。3はDの値を表す候補。アが問うのはA・B・C・Dの総称で、正しくは四端子定数。根拠: V1=AV2+Bi2、i1=CV2+Di2の係数である。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "2 1+j2。i1=i2+V2/30、V1=V2+j60i1よりV2係数は1+j60/30。",
+          "candidateExplanations": {
+            "1": "不採用。四端子定数は係数の総称を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "2": "採用。V1式のV2係数Aは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "3": "不採用。j30ΩはBの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "4": "不採用。1/20SはCの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "5": "不採用。1はDの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "6": "不採用。減衰定数は係数の総称を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "7": "不採用。V1式のV2係数Aの候補だが、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。2+j1ではZY=j2は実部に足さない。",
+            "8": "不採用。j60ΩはBの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "9": "不採用。1/30SはCの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。",
+            "10": "不採用。3はDの値を表す候補。イが問うのはV1式のV2係数Aで、正しくは1+j2。根拠: V1=(1+j60/30)V2+j60i2。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "8 j60Ω。同じ式のi2係数は直列インピーダンスj60Ω。",
+          "candidateExplanations": {
+            "1": "不採用。四端子定数は係数の総称を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "2": "不採用。1+j2はAの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "3": "不採用。V1式のi2係数Bの候補だが、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。j30Ωでは直列リアクタンスは60ΩでありBには不適。",
+            "4": "不採用。1/20SはCの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "5": "不採用。1はDの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "6": "不採用。減衰定数は係数の総称を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "7": "不採用。2+j1はAの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "8": "採用。V1式のi2係数Bはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "9": "不採用。1/30SはCの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。",
+            "10": "不採用。3はDの値を表す候補。ウが問うのはV1式のi2係数Bで、正しくはj60Ω。根拠: 直列リアクタンスはj60Ω。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "9 1/30S。並列抵抗の電流V2/30がi1に加わる。",
+          "candidateExplanations": {
+            "1": "不採用。四端子定数は係数の総称を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "2": "不採用。1+j2はAの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "3": "不採用。j30ΩはBの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "4": "不採用。i1式のV2係数Cの候補だが、正しくは1/30S。根拠: i1=i2+V2/30。1/20Sでは並列抵抗は30ΩでありCには不適。",
+            "5": "不採用。1はDの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "6": "不採用。減衰定数は係数の総称を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "7": "不採用。2+j1はAの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "8": "不採用。j60ΩはBの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。",
+            "9": "採用。i1式のV2係数Cは1/30S。根拠: i1=i2+V2/30。",
+            "10": "不採用。3はDの値を表す候補。エが問うのはi1式のV2係数Cで、正しくは1/30S。根拠: i1=i2+V2/30。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "5 1。i1=i2+V2/30におけるi2係数。",
+          "candidateExplanations": {
+            "1": "不採用。四端子定数は係数の総称を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "2": "不採用。1+j2はAの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "3": "不採用。j30ΩはBの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "4": "不採用。1/20SはCの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "5": "採用。i1式のi2係数Dは1。根拠: i1=i2+V2/30。",
+            "6": "不採用。減衰定数は係数の総称を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "7": "不採用。2+j1はAの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "8": "不採用。j60ΩはBの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "9": "不採用。1/30SはCの値を表す候補。オが問うのはi1式のi2係数Dで、正しくは1。根拠: i1=i2+V2/30。",
+            "10": "不採用。i1式のi2係数Dの候補だが、正しくは1。根拠: i1=i2+V2/30。3ではDはi2の係数1。"
+          }
+        }
+      ],
+      "officialLabel": "B2",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q22-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B2 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q23",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 23,
+    "type": "native-b",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "Pゲート逆阻止3端子サイリスタに関する5文を、正しい=1・誤り=2で判定する。",
+    "explanation": "1 正しい。通常のサイリスタはラッチするON状態と阻止するOFF状態を持つ。\n\n保持電流以上の導通状態はゲートを外しても維持されるので正しい。\n\n2 誤り。PゲートはカソードK側の内側P層に接続するが、図1のGはA側のN層に描かれている。\n\n4層自体は正しいが、GがN層に接続しておりPゲートの図ではない。\n\n1 正しい。ゲートトリガでアノード電流の通路を導通状態へ制御するスイッチング素子。\n\nゲート電流は点弧を制御し、主電流をONにするので正しい。\n\n2 誤り。通常の逆阻止3端子サイリスタはゲートを遮断してもラッチし続け、主電流を保持電流以下に落とす必要がある。\n\nラッチしている主電流はゲート遮断だけでは止まらない。\n\n2 誤り。図2のゲート接続はアノード側を示し、Pゲート（カソード側P層）の記号と一致しない。\n\n図2のゲート位置はアノード側でありPゲート表記として誤り。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 B3（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q23-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B3 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "1 正しい。通常のサイリスタはラッチするON状態と阻止するOFF状態を持つ。\n\n保持電流以上の導通状態はゲートを外しても維持されるので正しい。",
+          "prompt": "ONとOFFの二つの安定状態",
+          "candidateExplanations": {
+            "1": "正しいを選択。保持電流以上の導通状態はゲートを外しても維持されるので正しい。",
+            "2": "誤りを選択すると実際の構造・動作を否定する。保持電流以上の導通状態はゲートを外しても維持されるので正しい。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "2 誤り。PゲートはカソードK側の内側P層に接続するが、図1のGはA側のN層に描かれている。\n\n4層自体は正しいが、GがN層に接続しておりPゲートの図ではない。",
+          "prompt": "図1のP-N-P-NとG接続が基本構造",
+          "candidateExplanations": {
+            "1": "正しいを選択すると図又は保持動作と矛盾。4層自体は正しいが、GがN層に接続しておりPゲートの図ではない。",
+            "2": "誤りを選択。4層自体は正しいが、GがN層に接続しておりPゲートの図ではない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "1 正しい。ゲートトリガでアノード電流の通路を導通状態へ制御するスイッチング素子。\n\nゲート電流は点弧を制御し、主電流をONにするので正しい。",
+          "prompt": "ゲート電流でアノード電流を制御するスイッチング素子",
+          "candidateExplanations": {
+            "1": "正しいを選択。ゲート電流は点弧を制御し、主電流をONにするので正しい。",
+            "2": "誤りを選択すると実際の構造・動作を否定する。ゲート電流は点弧を制御し、主電流をONにするので正しい。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "2",
+          "explanation": "2 誤り。通常の逆阻止3端子サイリスタはゲートを遮断してもラッチし続け、主電流を保持電流以下に落とす必要がある。\n\nラッチしている主電流はゲート遮断だけでは止まらない。",
+          "prompt": "ゲート電流遮断でONからOFF",
+          "candidateExplanations": {
+            "1": "正しいを選択すると図又は保持動作と矛盾。ラッチしている主電流はゲート遮断だけでは止まらない。",
+            "2": "誤りを選択。ラッチしている主電流はゲート遮断だけでは止まらない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "2 誤り。図2のゲート接続はアノード側を示し、Pゲート（カソード側P層）の記号と一致しない。\n\n図2のゲート位置はアノード側でありPゲート表記として誤り。",
+          "prompt": "図2がPゲート逆阻止3端子サイリスタ記号",
+          "candidateExplanations": {
+            "1": "正しいを選択すると図又は保持動作と矛盾。図2のゲート位置はアノード側でありPゲート表記として誤り。",
+            "2": "誤りを選択。図2のゲート位置はアノード側でありPゲート表記として誤り。"
+          }
+        }
+      ],
+      "officialLabel": "B3"
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q24",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 24,
+    "type": "native-b",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "理想A級トランジスタの変圧器結合電力増幅器。巻数比a=N1/N2、直流電源V、負荷RLで交流負荷・動作点・最大出力・効率を問う。",
+    "explanation": "1 a²RL。理想変圧器で二次側負荷を一次側へ換算すると巻数比の二乗倍。\n\n7 V。一次巻線の直流電圧降下を無視するので静止時VCEは電源電圧。\n\n3 V/(a²RL)。最大無歪A級振幅では交流負荷線の静止電流はV/RLA。\n\n4 V²/(2a²RL)。出力電圧の実効値V/√2から最大交流電力はV²/(2RLA)。\n\n5 1/2。PDC=V・V/RLA=V²/RLA、最大Pomはその半分。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 B4（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q24-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "a²RL",
+          "explanation": "一次側換算負荷RLA。"
+        },
+        {
+          "id": "2",
+          "label": "2V",
+          "explanation": "動作点VCEはVで、2Vは振幅の上限ではない。"
+        },
+        {
+          "id": "3",
+          "label": "V/(a²RL)",
+          "explanation": "静止コレクタ電流IC。"
+        },
+        {
+          "id": "4",
+          "label": "V²/(2a²RL)",
+          "explanation": "理想A級の最大交流出力。"
+        },
+        {
+          "id": "5",
+          "label": "1/2",
+          "explanation": "理想変圧器結合A級の最大電源効率。"
+        },
+        {
+          "id": "6",
+          "label": "aRL",
+          "explanation": "抵抗の一次側換算は巻数比の二乗。"
+        },
+        {
+          "id": "7",
+          "label": "V",
+          "explanation": "一次巻線に直流電圧降下がなく静止VCE=V。"
+        },
+        {
+          "id": "8",
+          "label": "V/(aRL)",
+          "explanation": "電流計算にはa²RLを用いる。"
+        },
+        {
+          "id": "9",
+          "label": "2V²/(a²RL)",
+          "explanation": "平均交流電力は電圧の最大振幅の二乗を2RLAで割り、V²/(2a²RL)となる。"
+        },
+        {
+          "id": "10",
+          "label": "1/4",
+          "explanation": "変圧器結合の理想A級は最大1/2で、1/4ではない。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "1 a²RL。理想変圧器で二次側負荷を一次側へ換算すると巻数比の二乗倍。",
+          "candidateExplanations": {
+            "1": "採用。一次換算交流負荷RLAはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "2": "不採用。2Vは静止電圧を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "3": "不採用。V/(a²RL)は静止電流を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "4": "不採用。V²/(2a²RL)は交流出力を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "5": "不採用。1/2は効率を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "6": "不採用。一次換算交流負荷RLAの候補だが、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。aRLでは抵抗の一次側換算は巻数比の二乗。",
+            "7": "不採用。Vは静止電圧を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "8": "不採用。V/(aRL)は静止電流を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "9": "不採用。2V²/(a²RL)は交流出力を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。",
+            "10": "不採用。1/4は効率を表す候補。アが問うのは一次換算交流負荷RLAで、正しくはa²RL。根拠: 巻数比の二乗で負荷を一次側へ換算。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "7 V。一次巻線の直流電圧降下を無視するので静止時VCEは電源電圧。",
+          "candidateExplanations": {
+            "1": "不採用。a²RLは交流負荷を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "2": "不採用。静止VCEの候補だが、正しくはV。根拠: 一次巻線は直流電圧降下なし。2Vでは動作点VCEはVで、2Vは振幅の上限ではない。",
+            "3": "不採用。V/(a²RL)は静止電流を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "4": "不採用。V²/(2a²RL)は交流出力を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "5": "不採用。1/2は効率を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "6": "不採用。aRLは交流負荷を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "7": "採用。静止VCEはV。根拠: 一次巻線は直流電圧降下なし。",
+            "8": "不採用。V/(aRL)は静止電流を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "9": "不採用。2V²/(a²RL)は交流出力を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。",
+            "10": "不採用。1/4は効率を表す候補。イが問うのは静止VCEで、正しくはV。根拠: 一次巻線は直流電圧降下なし。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "3 V/(a²RL)。最大無歪A級振幅では交流負荷線の静止電流はV/RLA。",
+          "candidateExplanations": {
+            "1": "不採用。a²RLは交流負荷を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "2": "不採用。2Vは静止電圧を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "3": "採用。最大無歪出力の静止ICはV/(a²RL)。根拠: IC=V/RLA。",
+            "4": "不採用。V²/(2a²RL)は交流出力を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "5": "不採用。1/2は効率を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "6": "不採用。aRLは交流負荷を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "7": "不採用。Vは静止電圧を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "8": "不採用。最大無歪出力の静止ICの候補だが、正しくはV/(a²RL)。根拠: IC=V/RLA。V/(aRL)では電流計算にはa²RLを用いる。",
+            "9": "不採用。2V²/(a²RL)は交流出力を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。",
+            "10": "不採用。1/4は効率を表す候補。ウが問うのは最大無歪出力の静止ICで、正しくはV/(a²RL)。根拠: IC=V/RLA。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "4 V²/(2a²RL)。出力電圧の実効値V/√2から最大交流電力はV²/(2RLA)。",
+          "candidateExplanations": {
+            "1": "不採用。a²RLは交流負荷を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "2": "不採用。2Vは静止電圧を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "3": "不採用。V/(a²RL)は静止電流を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "4": "採用。最大交流出力PomはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "5": "不採用。1/2は効率を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "6": "不採用。aRLは交流負荷を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "7": "不採用。Vは静止電圧を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "8": "不採用。V/(aRL)は静止電流を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。",
+            "9": "不採用。最大交流出力Pomの候補だが、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。2V²/(a²RL)では平均交流電力は電圧の最大振幅の二乗を2RLAで割り、V²/(2a²RL)となる。",
+            "10": "不採用。1/4は効率を表す候補。エが問うのは最大交流出力Pomで、正しくはV²/(2a²RL)。根拠: 正弦波の実効電圧はV/√2。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "5 1/2。PDC=V・V/RLA=V²/RLA、最大Pomはその半分。",
+          "candidateExplanations": {
+            "1": "不採用。a²RLは交流負荷を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "2": "不採用。2Vは静止電圧を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "3": "不採用。V/(a²RL)は静止電流を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "4": "不採用。V²/(2a²RL)は交流出力を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "5": "採用。最大時の効率ηは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "6": "不採用。aRLは交流負荷を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "7": "不採用。Vは静止電圧を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "8": "不採用。V/(aRL)は静止電流を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "9": "不採用。2V²/(a²RL)は交流出力を表す候補。オが問うのは最大時の効率ηで、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。",
+            "10": "不採用。最大時の効率ηの候補だが、正しくは1/2。根拠: Pom/PDC=[V²/(2RLA)]/[V²/RLA]。1/4では変圧器結合の理想A級は最大1/2で、1/4ではない。"
+          }
+        }
+      ],
+      "officialLabel": "B4",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q24-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B4 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  },
+  {
+    "id": "radio21-riku-tech1-2026-01-basic-q25",
+    "exam": "riku-tech1",
+    "session": "kiso",
+    "year": 2026,
+    "season": "january",
+    "qNumber": 25,
+    "type": "native-b",
+    "category": "無線工学の基礎",
+    "subject": "無線工学の基礎",
+    "topicTags": [
+      "無線工学の基礎"
+    ],
+    "difficulty": 3,
+    "question": "内部抵抗90Ω・最大0.5mAの電流計Aと分流器R1、倍率器R2/R3を用いた5mA・3V・30V計器。各抵抗と入力抵抗を問う。",
+    "explanation": "6 10Ω。5mA時、計器0.5mA・分流器4.5mAで電圧は45mV、R1=45mV/4.5mA。\n\n2 9Ω。5mA端子の入力抵抗は90Ωと10Ωの並列で9Ω。\n\n3 591Ω。3V端子では全電流5mAで必要全抵抗600Ω、R2=600−9。\n\n9 5.4kΩ。30V端子で必要全抵抗6kΩ、R3=6000−(591+9)=5400Ω。\n\n5 6kΩ。30V/5mA=6000Ω。",
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-gi-1-kiso-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 2026年1月 無線工学の基礎 B5（問題・正答）。解説は過去問AIが独自作成。図・数式語群は原典から切り出し。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q25-original.png"
+    ],
+    "imageAltTexts": [
+      "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+    ],
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "225",
+          "explanation": "R1は45mV/4.5mA=10Ωであり不適。"
+        },
+        {
+          "id": "2",
+          "label": "9",
+          "explanation": "R1と90Ωの並列合成抵抗。"
+        },
+        {
+          "id": "3",
+          "label": "591",
+          "explanation": "3Vレンジ直列R2=600−9Ω。"
+        },
+        {
+          "id": "4",
+          "label": "380",
+          "explanation": "R1にもR2にもR3にも計算上一致しない。"
+        },
+        {
+          "id": "5",
+          "label": "6",
+          "explanation": "30Vレンジ入力抵抗6kΩ。"
+        },
+        {
+          "id": "6",
+          "label": "10",
+          "explanation": "分流器R1=10Ω。"
+        },
+        {
+          "id": "7",
+          "label": "4.5",
+          "explanation": "4.5mAは分流器電流で、設問の抵抗値ではない。"
+        },
+        {
+          "id": "8",
+          "label": "820",
+          "explanation": "3VレンジR2=591Ωであり不適。"
+        },
+        {
+          "id": "9",
+          "label": "5.4",
+          "explanation": "30Vレンジ追加R3=5.4kΩ。"
+        },
+        {
+          "id": "10",
+          "label": "18",
+          "explanation": "30Vレンジ全抵抗は6kΩであり不適。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "6 10Ω。5mA時、計器0.5mA・分流器4.5mAで電圧は45mV、R1=45mV/4.5mA。",
+          "candidateExplanations": {
+            "1": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補1の225は一致しない。",
+            "2": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補2の9は一致しない。",
+            "3": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補3の591は一致しない。",
+            "4": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補4の380は一致しない。",
+            "5": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補5の6は一致しない。",
+            "6": "採用。分流器R1のΩ値は10。根拠: 45mV/4.5mA=10Ω。",
+            "7": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補7の4.5は一致しない。",
+            "8": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補8の820は一致しない。",
+            "9": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補9の5.4は一致しない。",
+            "10": "不採用。分流器R1のΩ値の正しい値は10（設問の単位）。根拠: 45mV/4.5mA=10Ω。候補10の18は一致しない。"
+          }
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "2 9Ω。5mA端子の入力抵抗は90Ωと10Ωの並列で9Ω。",
+          "candidateExplanations": {
+            "1": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補1の225は一致しない。",
+            "2": "採用。5mA端子の内部抵抗Ω値は9。根拠: 90Ωと10Ωの並列は9Ω。",
+            "3": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補3の591は一致しない。",
+            "4": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補4の380は一致しない。",
+            "5": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補5の6は一致しない。",
+            "6": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補6の10は一致しない。",
+            "7": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補7の4.5は一致しない。",
+            "8": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補8の820は一致しない。",
+            "9": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補9の5.4は一致しない。",
+            "10": "不採用。5mA端子の内部抵抗Ω値の正しい値は9（設問の単位）。根拠: 90Ωと10Ωの並列は9Ω。候補10の18は一致しない。"
+          }
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "3 591Ω。3V端子では全電流5mAで必要全抵抗600Ω、R2=600−9。",
+          "candidateExplanations": {
+            "1": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補1の225は一致しない。",
+            "2": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補2の9は一致しない。",
+            "3": "採用。3V用直列抵抗R2のΩ値は591。根拠: 3V/5mA−9Ω=591Ω。",
+            "4": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補4の380は一致しない。",
+            "5": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補5の6は一致しない。",
+            "6": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補6の10は一致しない。",
+            "7": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補7の4.5は一致しない。",
+            "8": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補8の820は一致しない。",
+            "9": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補9の5.4は一致しない。",
+            "10": "不採用。3V用直列抵抗R2のΩ値の正しい値は591（設問の単位）。根拠: 3V/5mA−9Ω=591Ω。候補10の18は一致しない。"
+          }
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "9 5.4kΩ。30V端子で必要全抵抗6kΩ、R3=6000−(591+9)=5400Ω。",
+          "candidateExplanations": {
+            "1": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補1の225は一致しない。",
+            "2": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補2の9は一致しない。",
+            "3": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補3の591は一致しない。",
+            "4": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補4の380は一致しない。",
+            "5": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補5の6は一致しない。",
+            "6": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補6の10は一致しない。",
+            "7": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補7の4.5は一致しない。",
+            "8": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補8の820は一致しない。",
+            "9": "採用。30V用追加抵抗R3のkΩ値は5.4。根拠: 30V/5mA−(591+9)Ω=5400Ω。",
+            "10": "不採用。30V用追加抵抗R3のkΩ値の正しい値は5.4（設問の単位）。根拠: 30V/5mA−(591+9)Ω=5400Ω。候補10の18は一致しない。"
+          }
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "5 6kΩ。30V/5mA=6000Ω。",
+          "candidateExplanations": {
+            "1": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補1の225は一致しない。",
+            "2": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補2の9は一致しない。",
+            "3": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補3の591は一致しない。",
+            "4": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補4の380は一致しない。",
+            "5": "採用。30V端子の内部抵抗kΩ値は6。根拠: 30V/5mA=6000Ω。",
+            "6": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補6の10は一致しない。",
+            "7": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補7の4.5は一致しない。",
+            "8": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補8の820は一致しない。",
+            "9": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補9の5.4は一致しない。",
+            "10": "不採用。30V端子の内部抵抗kΩ値の正しい値は6（設問の単位）。根拠: 30V/5mA=6000Ω。候補10の18は一致しない。"
+          }
+        }
+      ],
+      "officialLabel": "B5",
+      "bankImageUrls": [
+        "/images/questions/riku-tech1/radio21-riku-tech1-2026-01-basic-q25-original.png"
+      ],
+      "bankImageAltTexts": [
+        "公式原問 B5 の図・数式・番号付き語群（原典配置）"
+      ]
+    }
+  }
+]

@@ -29,6 +29,7 @@ import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
+import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
   () => import("@/components/exam/ExamBrowseTabs").then((m) => m.ExamBrowseTabs),
   {
@@ -152,7 +153,7 @@ export default async function ExamTopPage({
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
     const sessions = [...new Set(items.map((q) => q.session))];
-    const coverageLabels = sessions.map(practiceSessionLabel);
+    const coverageLabels = sessions.map((session) => practiceSessionLabel(session, code));
     return {
       ...group,
       // The card's badge owns the total question count. Keep this line for the
@@ -345,7 +346,7 @@ export default async function ExamTopPage({
           {code === "zoen2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全40問、計80問収録しています。各回とも実試験は40問全て必須です。公式問題・正答、図表、全選択肢の解説を確認できます。No.37〜40は複数の正答を全て選ぶ形式です。</p>}
           {code === "zoen1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は問題Aの36問と問題Bの29問が全て必須です。問題BのNo.24〜29は正解番号を全て選びます。ここでは収録済み設問のみを演習できます。</p>}
           {code === "tsushin2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は全65問のうち、設問群ごとの選択・必須条件に従って40問を解答します。現在の収録数は上記のバッジをご確認ください。</p>}
-          {code === "tsushin1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した{questions.length}問を収録しています。実試験では問題Aの55問から33問、問題Bの35問から27問を設問群ごとの条件に従って解答します。ここでは収録済み設問のみを演習できます。</p>}
+          {code === "tsushin1" && <Tsushin1CoverageNote questionCount={questions.length} />}
           {code === "soukan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益社団法人日本技術士会が公表した令和7年度・令和8年度の技術士第二次試験 総合技術監理部門 必須科目Ⅰ－1（択一式、各年度40問・五肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和7年度は2025年4月1日、令和8年度は2026年4月1日）時点です。出典：公益社団法人日本技術士会。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。</p>}
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
           {code === "mankan" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">公益財団法人マンション管理センターが公表した令和6年度・令和7年度のマンション管理士試験（各50問・四肢択一）から{questions.length}問を収録。法令・制度は各年度の問題冊子が示す基準日（令和6年度は2024年4月1日、令和7年度は2025年4月1日）時点です。令和6年度問40は公式正解の法的根拠に一次資料で到達できず保留しています。出典：公益財団法人マンション管理センター。解説は過去問AIの独自作成で、同センターとは関係ありません。</p>}
@@ -358,6 +359,7 @@ export default async function ExamTopPage({
           {code === "shino-kunrenshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第56・55回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。別冊図・専門根拠を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "judo-seifukushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の午前128問・午後122問、各250原問のうち、原本・最終正答・全四肢の解説を確認した{questions.length}問を収録しています。必修は各回の午前問1〜50、一般は午前問51〜128と午後全問です。二つ選ぶ問題は両肢を選択し、第34回午前問67・第33回午前問39は公式に認められたいずれか一肢を選ぶ形式です。出典：公益財団法人柔道整復研修試験財団（問題）、厚生労働省（最終正答）。解説は過去問AIの独自作成です。</p>}
 {code === "rinsho-kogishi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第39・38回の午前・午後、全360問のうち原本・正答・全肢解説を確認した{questions.length}問を部分収録しています。図・専門根拠・原文の確認が残る問題は掲載していません。出典：公益財団法人医療機器センター。解説は過去問AIの独自作成です。</p>}
+          {(code === "gas-kou" || code === "gas-otsu" || code === "gas-hei") && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">令和8・7年度の法令・基礎・ガス技術を科目別に収録しています。各年度の原問は法令16問、基礎15問、ガス技術27問です。実試験では法令16問に加え、基礎から10問、ガス技術から20問を選んで解答します。演習では全問を自由に解けます。出典：一般財団法人日本ガス機器検査協会。解説は過去問AIの独自作成です。 <Link href={`/${code}/essay`} className="font-medium underline">論述原問8題と独自解答例を読む</Link></p>}
           {code === "ahaki-anma" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全320原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回159問・第33回159問）。未収録2原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
           {code === "ahaki-hari-kyu" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全360原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回180問・第33回179問）。午後問161〜170ははり師専用、問171〜180はきゅう師専用で、共通問題とともに一冊の原問として数え、二つの試験へ重複計上していません。未収録1原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
           {(code === "ahaki-anma" || code === "ahaki-hari-kyu") && (

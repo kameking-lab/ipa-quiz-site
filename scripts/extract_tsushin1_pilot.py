@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
+import fitz
 import json
 import re
 from pathlib import Path
@@ -26,7 +28,13 @@ def normalize(text: str) -> str:
 
 def extract(session: str, numbers: list[int]) -> dict:
     suffix = "a" if session == "mondai-a" else "b"
-    raw = (EVIDENCE / f"tsushin1-2026-{suffix}-extract.txt").read_text(encoding="utf-8")
+    spec = importlib.util.spec_from_file_location("jctc_rubyless", ROOT / "scripts/extract-jctc-rubyless.py")
+    if not spec or not spec.loader:
+        raise ImportError("Cannot load JCTC PDF extractor")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    document = fitz.open(EVIDENCE / "input" / f"tsushin1-2026-{suffix}.pdf")
+    raw = "\n\n".join(f"--- PDF page {index + 1} ---\n{module.extract_page(page)}" for index, page in enumerate(document))
     matches = list(re.finditer(r"【No\.\s*(\d+)】", raw))
     records = {}
     for index, match in enumerate(matches):

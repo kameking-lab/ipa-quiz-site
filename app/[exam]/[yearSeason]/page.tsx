@@ -80,7 +80,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|round1|round2|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -189,7 +189,7 @@ export default async function ExamYearSeasonPage({
     sessionGroups = sessionGroups.map((group) => ({
       ...group,
       id: `${code}-${group.session}`,
-      session: practiceSessionLabel(group.session as typeof pool[number]["session"]),
+      session: practiceSessionLabel(group.session as typeof pool[number]["session"], code),
     }));
   } else if (civil2Sections) {
     const allItems = sessionGroups.flatMap((group) => group.items);
@@ -205,7 +205,7 @@ export default async function ExamYearSeasonPage({
   if (subjectSections) {
     const sections: SessionGroup[] = [];
     for (const group of sessionGroups) {
-      const sessionName = code === "kaigo" ? "" : `${practiceSessionLabel(group.session as typeof pool[number]["session"])}・`;
+      const sessionName = code === "kaigo" ? "" : `${practiceSessionLabel(group.session as typeof pool[number]["session"], code)}・`;
       const items = [...group.items].sort((a, b) => a.qNumber - b.qNumber);
       for (const item of items) {
         const current = sections.at(-1);
@@ -352,7 +352,7 @@ export default async function ExamYearSeasonPage({
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
-            {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"])} {items.length}問</Badge>)}
+            {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"], code)} {items.length}問</Badge>)}
             {commonOnly && <p className="w-full text-muted-foreground">{examLabel(code)}の学習に使える共通の午前I問題です。この一覧には午前IIの問題は含まれません。</p>}
           </div>
         </header>
@@ -362,7 +362,7 @@ export default async function ExamYearSeasonPage({
             {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
               <Button key={session} asChild variant="gradient" size="lg" className="w-full">
                 <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
-                  {practiceSessionLabel(session as typeof pool[number]["session"])}を解く
+                  {practiceSessionLabel(session as typeof pool[number]["session"], code)}を解く
                   <ChevronRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -370,7 +370,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
+        <QuestionListWithFilter groups={sessionGroups} exam={code} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
       </div>
     </main>
   );
