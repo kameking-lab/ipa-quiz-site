@@ -9,6 +9,9 @@ async function show(page: Page, data: unknown) {
 }
 test("qualification presence is compact on desktop and mobile and distinguishes zero/failure", async ({ page }) => {
   await page.goto("/");
+  const guidance = page.getByRole("region", { name: "学習のご案内" });
+  await expect(guidance.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
+  await expect(guidance.getByText(/学習中の資格はまだありません|直近2分/)).toHaveCount(0);
   const data = { count: 4, exams: [{ exam: "fe", count: 3 }, { exam: "denko2", count: 1 }] };
   for (const width of [1280, 390, 320]) {
     await page.setViewportSize({ width, height: 800 });
@@ -28,7 +31,10 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     expect(await region.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
   }
   await page.evaluate(() => window.dispatchEvent(new CustomEvent("study-presence-count", { detail: null })));
-  await expect(page.getByRole("region", { name: "今学んでいる仲間" })).toHaveCount(0);
+  await expect(guidance).toBeVisible();
+  await expect(guidance.getByRole("link")).toHaveCount(4);
+  await expect(guidance.getByText(/人が.*を学んでいます|学習中の資格はまだありません|直近2分/)).toHaveCount(0);
+  expect(await guidance.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
 });
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");

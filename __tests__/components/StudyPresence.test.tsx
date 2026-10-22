@@ -43,28 +43,35 @@ it("uses the current question in mixed-exam sessions and stops recording on depa
 });
 it("stops heartbeats after two minutes without activity; activity resumes", async () => {
   render(view()); await act(() => vi.advanceTimersByTimeAsync(120_001));
-  expect(fetchMock).toHaveBeenCalledTimes(4); expect(screen.queryByRole("region")).toBeNull();
+  expect(fetchMock).toHaveBeenCalledTimes(4);
+  expect(screen.getByRole("region", { name: "学習のご案内" })).toBeVisible();
+  expect(screen.queryByText(/人が.*を学んでいます|学習中の資格はまだありません|直近2分/)).toBeNull();
   await act(async () => window.dispatchEvent(new Event("pointerdown")));
   expect(fetchMock).toHaveBeenCalledTimes(5);
 });
 it("does not count background tabs or WebDriver tests", async () => {
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "hidden" });
   const first = render(view()); await act(() => vi.advanceTimersByTimeAsync(60_000)); expect(fetchMock).not.toHaveBeenCalled();
+  expect(screen.getByRole("link", { name: "資格から問題を探す" })).toBeVisible();
   first.unmount(); Object.defineProperty(navigator, "webdriver", { configurable: true, value: true });
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "visible" });
   render(view()); await act(() => vi.advanceTimersByTimeAsync(60_000)); expect(fetchMock).not.toHaveBeenCalled();
+  expect(screen.getByRole("region", { name: "学習のご案内" })).toBeVisible();
 });
 it("clears stale data on network failure and recovers", async () => {
   render(view()); await act(() => vi.advanceTimersByTimeAsync(1));
   fetchMock.mockRejectedValue(new Error("offline")); await act(() => vi.advanceTimersByTimeAsync(30_000));
-  expect(screen.queryByRole("region")).toBeNull();
+  expect(screen.getByRole("region", { name: "学習のご案内" })).toBeVisible();
+  expect(screen.queryByText(/人が.*を学んでいます|学習中の資格はまだありません|直近2分/)).toBeNull();
   fetchMock.mockResolvedValue({ ok: true, json: async () => data }); await act(() => vi.advanceTimersByTimeAsync(30_000));
   expect(screen.getAllByRole("listitem")).toHaveLength(2);
 });
 it("consumes error bodies and never displays their counts", async () => {
   const json = vi.fn().mockResolvedValue(data); fetchMock.mockResolvedValue({ ok: false, json });
   render(view()); await act(() => vi.advanceTimersByTimeAsync(1));
-  expect(json).toHaveBeenCalledOnce(); expect(screen.queryByRole("region")).toBeNull();
+  expect(json).toHaveBeenCalledOnce();
+  expect(screen.getByRole("link", { name: "資格から問題を探す" })).toBeVisible();
+  expect(screen.queryByText(/人が.*を学んでいます|学習中の資格はまだありません|直近2分/)).toBeNull();
 });
 it("shows a natural empty state only for measured zero", async () => {
   fetchMock.mockResolvedValue({ ok: true, json: async () => ({ count: 0, exams: [] }) });
