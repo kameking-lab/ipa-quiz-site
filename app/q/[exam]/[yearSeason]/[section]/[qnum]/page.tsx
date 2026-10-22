@@ -65,7 +65,7 @@ import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
 import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
-// SSG only the most recent years to keep build time tractable; let older
+// Pre-render 2026 and later to limit the initial static-generation set; let older
 // years render on-demand with ISR caching. dynamicParams=true is what lets
 // the route resolve unlisted params instead of returning 404 at the router
 // layer — the page handler then validates the params and falls back to
@@ -75,7 +75,7 @@ import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical
 export const dynamicParams = true;
 export const revalidate = 86400;
 
-const SSG_MIN_YEAR = 2024;
+const SSG_MIN_YEAR = 2026;
 
 export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
   return ALL_QUESTIONS.filter((q) => q.year >= SSG_MIN_YEAR && isPracticeReadyQuestion(q)).map((q) => ({
