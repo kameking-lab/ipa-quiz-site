@@ -1,7 +1,9 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import QuestionPage, { generateMetadata, generateStaticParams } from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
+import QuestionPage, { dynamicParams, generateMetadata, generateStaticParams } from "@/app/q/[exam]/[yearSeason]/[section]/[qnum]/page";
 import ExamTopPage from "@/app/[exam]/page";
+import { ALL_QUESTIONS } from "@/data/questions";
+import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { OT13_RECOVERED_QUESTIONS, OT13_OFFICIAL_EXCLUSIONS } from "@/data/qualification-staging/sagyo-ryohoshi/ot13-recovered";
 
 function route(question: { year: number; session: string; qNumber: number }) {
@@ -14,12 +16,16 @@ function imageSource(image: HTMLImageElement) {
 }
 
 describe("registered OT source-backed routes and figures", () => {
-  it("exposes exactly the 11 recovered routes and keeps official exclusions out of static generation", async () => {
+  it("resolves all 11 recovered routes on demand and keeps official exclusions unavailable", async () => {
+    expect(dynamicParams).toBe(true);
     const paths = await generateStaticParams();
     for (const question of OT13_RECOVERED_QUESTIONS) {
-      expect(paths).toContainEqual(route(question));
+      if (question.year >= 2026) expect(paths, question.id).toContainEqual(route(question));
+      else expect(paths, question.id).not.toContainEqual(route(question));
+      expect(findQuestionByRoute(ALL_QUESTIONS, route(question)), question.id).toEqual(question);
       const metadata = await generateMetadata({ params: Promise.resolve(route(question)) });
       expect(metadata.robots).toEqual({ index: true, follow: true });
+      expect(metadata.alternates?.canonical, question.id).toBe(questionPagePath(question));
     }
     for (const question of OT13_OFFICIAL_EXCLUSIONS) {
       expect(paths).not.toContainEqual(route(question));
