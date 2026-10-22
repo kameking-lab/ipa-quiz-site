@@ -1,0 +1,1018 @@
+[
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q01",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 1,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、対地静止衛星を用いた衛星通信の特徴について述べたものである。[A]、[B]、[C]内に入れるべき字句の正しい組合せを下の番号から選べ。(1) 静止衛星から地表に到来する電波は極めて微弱であるため、静止衛星による衛星通信は、[A]のころに、地球局の受信アンテナビームの見通し線上から到来する[B]の影響を受けることがある。(2) 10〔GHz〕以上の電波を使用する衛星通信は、[C]による信号の減衰を受けやすい。",
+    "choices": {
+      "ア": "A：春分と秋分、B：太陽雑音、C：降雨",
+      "イ": "A：春分と秋分、B：太陽雑音、C：電離層シンチレーション",
+      "ウ": "A：春分と秋分、B：空電雑音、C：電離層シンチレーション",
+      "エ": "A：夏至と冬至、B：太陽雑音、C：降雨",
+      "オ": "A：夏至と冬至、B：空電雑音、C：大地反射波"
+    },
+    "answer": "ア",
+    "explanation": "正しい。春分・秋分ごろには太陽が静止衛星方向と重なることがあり、太陽雑音が受信へ影響する。また、10〔GHz〕以上では降雨減衰の影響が顕著になりやすい。",
+    "choiceExplanations": {
+      "ア": "正しい。春分・秋分ごろには太陽が静止衛星方向と重なることがあり、太陽雑音が受信へ影響する。また、10〔GHz〕以上では降雨減衰の影響が顕著になりやすい。",
+      "イ": "誤り。AとBは適切だが、10〔GHz〕以上で特に問題となるCは降雨である。",
+      "ウ": "誤り。春分・秋分ごろに衛星方向から到来する雑音は太陽雑音であり、Cも降雨である。",
+      "エ": "誤り。BとCは適切だが、太陽雑音の影響が生じやすい時期は夏至・冬至ではなく春分・秋分ごろである。",
+      "オ": "誤り。A、B、Cの全てが該当する衛星通信の特徴と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問1（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q02",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 2,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、直接拡散(DS)を用いた符号分割多重(CDM)伝送方式の一般的な特徴について述べたものである。[A]、[B]、[C]内に入れるべき字句の正しい組合せを下の番号から選べ。(1) CDM伝送方式は、送信側で用いた擬似雑音符号と同じ符号でしか復調できないため[A]が高い。(2) 拡散後の信号(チャネル)の周波数帯域幅は、拡散前の信号の周波数帯域幅よりはるかに[B]。(3) この伝送方式は、受信時に混入した狭帯域の妨害波は受信側で拡散されるので、狭帯域の妨害波に[C]。",
+    "choices": {
+      "ア": "A：秘匿性、B：広い、C：強い",
+      "イ": "A：秘匿性、B：狭い、C：弱い",
+      "ウ": "A：冗長性、B：広い、C：強い",
+      "エ": "A：冗長性、B：広い、C：弱い",
+      "オ": "A：冗長性、B：狭い、C：強い"
+    },
+    "answer": "ア",
+    "explanation": "正しい。同一の擬似雑音符号を用いなければ復調しにくいため秘匿性が高く、直接拡散後の帯域は広くなる。逆拡散時に狭帯域妨害波が広帯域化されるため、狭帯域妨害に強い。",
+    "choiceExplanations": {
+      "ア": "正しい。同一の擬似雑音符号を用いなければ復調しにくいため秘匿性が高く、直接拡散後の帯域は広くなる。逆拡散時に狭帯域妨害波が広帯域化されるため、狭帯域妨害に強い。",
+      "イ": "誤り。Aは適切だが、拡散後の帯域は広くなり、狭帯域妨害には強くなる。",
+      "ウ": "誤り。BとCは適切だが、同じ擬似雑音符号でなければ復調できないという文脈のAは秘匿性である。",
+      "エ": "誤り。Aは秘匿性、Cは強いが正しい。",
+      "オ": "誤り。Cだけは適切だが、Aは秘匿性、Bは広いである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問2（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q03",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 3,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示す回路において、6〔Ω〕の抵抗の両端の電圧の値として、最も近いものを下の番号から選べ。",
+    "choices": {
+      "ア": "9.6〔V〕",
+      "イ": "12.0〔V〕",
+      "ウ": "14.4〔V〕",
+      "エ": "16.8〔V〕",
+      "オ": "19.2〔V〕"
+    },
+    "answer": "ウ",
+    "explanation": "正しい。(V－20)/3＋(V－24)/18＋V/6＝0。両辺を18倍すると6V－120＋V－24＋3V＝0、したがって10V＝144、V＝14.4〔V〕である。",
+    "choiceExplanations": {
+      "ア": "誤り。6〔Ω〕抵抗の上端電位をV〔V〕とすると、キルヒホッフの電流則より(V－20)/3＋(V－24)/18＋V/6＝0であり、V＝14.4〔V〕となる。",
+      "イ": "誤り。三つの並列枝について節点方程式を解くと12.0〔V〕ではなく14.4〔V〕である。",
+      "ウ": "正しい。(V－20)/3＋(V－24)/18＋V/6＝0。両辺を18倍すると6V－120＋V－24＋3V＝0、したがって10V＝144、V＝14.4〔V〕である。",
+      "エ": "誤り。節点方程式から得られる6〔Ω〕抵抗の両端電圧は14.4〔V〕である。",
+      "オ": "誤り。20〔V〕または24〔V〕の電源電圧を単純に抵抗比へ適用した値ではなく、両電源を含む全枝の電流を同時に満たす14.4〔V〕が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問3（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q03.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：問題〔3〕の三枝並列回路図。左枝は3Ωと20V電源、中央枝は18Ωと24V電源、右枝は6Ω抵抗。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q04",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 4,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、図に示す直列共振回路について述べたものである。[A]、[B]、[C]内に入れるべき字句の正しい組合せを下の番号から選べ。この回路のインピーダンスŻ〔Ω〕は、角周波数をω〔rad/s〕とすれば、Ż＝R＋j(ωL－1/(ωC))で表される。この式において、ωを変化させた場合、[A]のとき回路のリアクタンス分は零(0)となる。このときの回路電流İ〔A〕の大きさは[B]、インピーダンスŻ〔Ω〕の大きさは[C]となる。",
+    "choices": {
+      "ア": "A：ωL＝ωC、B：最小、C：最大",
+      "イ": "A：ωL＝ωC、B：最大、C：最小",
+      "ウ": "A：ωL＝1/(ωC)、B：最小、C：最大",
+      "エ": "A：ωL＝1/(ωC)、B：最小、C：最小",
+      "オ": "A：ωL＝1/(ωC)、B：最大、C：最小"
+    },
+    "answer": "オ",
+    "explanation": "正しい。ωL－1/(ωC)＝0でリアクタンスが相殺され、|Ż|＝Rが最小となる。一定電圧では|İ|＝V/|Ż|であるため電流は最大となる。",
+    "choiceExplanations": {
+      "ア": "誤り。共振条件はωL＝1/(ωC)であり、共振時には電流が最大、インピーダンスが最小となる。",
+      "イ": "誤り。BとCは共振時の関係として正しいが、Aの容量性リアクタンスはωCではなく1/(ωC)である。",
+      "ウ": "誤り。Aは正しいが、直列共振時はリアクタンスが相殺されて|Ż|＝Rと最小になり、電流は最大になる。",
+      "エ": "誤り。AとCは適切だが、電流は最小ではなく最大になる。",
+      "オ": "正しい。ωL－1/(ωC)＝0でリアクタンスが相殺され、|Ż|＝Rが最小となる。一定電圧では|İ|＝V/|Ż|であるため電流は最大となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問4（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q04.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：問題〔4〕の交流電源、L、C、Rからなる直列共振回路および電流iの方向。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q05",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すようにパルスの幅が10〔μs〕のとき、パルスの繰返し周期T及び衝撃係数(デューティファクタ)Dの値の組合せとして、正しいものを下の番号から選べ。ただし、パルスの繰返し周波数は20〔kHz〕とする。",
+    "choices": {
+      "ア": "T：25〔μs〕、D：0.4",
+      "イ": "T：25〔μs〕、D：0.2",
+      "ウ": "T：50〔μs〕、D：0.4",
+      "エ": "T：50〔μs〕、D：0.2"
+    },
+    "answer": "エ",
+    "explanation": "正しい。T＝1/(20〔kHz〕)＝50〔μs〕、D＝10〔μs〕/50〔μs〕＝0.2である。",
+    "choiceExplanations": {
+      "ア": "誤り。T＝1/f＝1/(20×10³)＝50〔μs〕であり、25〔μs〕ではない。",
+      "イ": "誤り。D＝10/50＝0.2は適切だが、周期は50〔μs〕である。",
+      "ウ": "誤り。周期は正しいが、D＝パルス幅/周期＝10〔μs〕/50〔μs〕＝0.2である。",
+      "エ": "正しい。T＝1/(20〔kHz〕)＝50〔μs〕、D＝10〔μs〕/50〔μs〕＝0.2である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問5（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q05.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：問題〔5〕の幅10μsの周期パルス列と繰返し周期Tを示す図。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q06",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 6,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、同軸ケーブルと方形導波管の一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "同軸ケーブルの基本モードは、TEMモードである。",
+      "イ": "同軸ケーブルは、低い周波数の使用制限はないが、高い周波数には制限がある。",
+      "ウ": "同軸ケーブルは、使用周波数が高くなると導体損と誘電損がともに減少する。",
+      "エ": "方形導波管の管内波長は、自由空間の波長よりも長い。",
+      "オ": "方形導波管は、遮断周波数以下の周波数の電磁波は伝送できない。"
+    },
+    "answer": "ウ",
+    "explanation": "誤っているため正答。一般に周波数が高くなると表皮効果などによる導体損が増し、誘電損も増加するため、「ともに減少する」は反対である。",
+    "choiceExplanations": {
+      "ア": "正しい記述。同軸ケーブルの基本伝送モードは、電界・磁界がともに進行方向成分を持たないTEMモードである。",
+      "イ": "正しい記述。同軸線路のTEM基本モードには遮断周波数がない一方、高周波側では損失増加や高次モードの発生などによる実用上の制限がある。",
+      "ウ": "誤っているため正答。一般に周波数が高くなると表皮効果などによる導体損が増し、誘電損も増加するため、「ともに減少する」は反対である。",
+      "エ": "正しい記述。遮断周波数より高い伝搬域では、管内波長λg＝λ/√(1－(fc/f)²)となるためλg＞λである。",
+      "オ": "正しい記述。対象モードは遮断周波数以下では伝搬定数が減衰性となり、進行波として伝送されない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問6（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q07",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 7,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の図は、フィルタの周波数対減衰量の特性の概略を示したものである。このうち帯域フィルタ(BPF)の特性の概略図として、正しいものを下の番号から選べ。",
+    "choices": {
+      "ア": "低周波側及び高周波側が通過域Tで、fC1とfC2の間が減衰域Gとなる特性図",
+      "イ": "fCより低周波側が通過域Tで、高周波側が減衰域Gとなる特性図",
+      "ウ": "fCより低周波側が減衰域Gで、高周波側が通過域Tとなる特性図",
+      "エ": "低周波側及び高周波側が減衰域Gで、fC1とfC2の間が通過域Tとなる特性図"
+    },
+    "answer": "エ",
+    "explanation": "BPFは所定の帯域だけを通過させ、その上下の周波数を減衰させるため、この特性が該当する。",
+    "choiceExplanations": {
+      "ア": "中央の周波数帯域を阻止し、その両側を通過させる帯域除去フィルタの特性であり、BPFではない。",
+      "イ": "低周波を通過させて高周波を減衰させる低域フィルタの特性であり、BPFではない。",
+      "ウ": "高周波を通過させて低周波を減衰させる高域フィルタの特性であり、BPFではない。",
+      "エ": "BPFは所定の帯域だけを通過させ、その上下の周波数を減衰させるため、この特性が該当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問7（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q07.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：選択肢1～4の周波数f対減衰量αの特性図。fC、fC1、fC2、減衰域G及び通過域Tの表示を含む。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q08",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 8,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、図に示すデジタル通信の伝送系の原理的な構成例について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 標本化とは、一定の時間間隔で入力のアナログ信号の振幅を取り出すことをいい、標本化周波数が入力のアナログ信号の最高周波数の A の周波数より高いとき、標本化して得たパルス列から元のアナログ信号を復元できる。\n(2) 振幅を所定の幅ごとの領域に区切ってそれぞれの領域を1個の代表値で表し、標本化によって取り出したアナログ信号の振幅を、その代表値で近似することを量子化といい、量子化のステップの数が B ほど、量子化雑音は小さくなる。\n(3) 復号した出力からアナログ信号を復調するために用いる補間フィルタには、C が用いられる。",
+    "choices": {
+      "ア": "A：1 / 2　B：多い　C：高域フィルタ（HPF）",
+      "イ": "A：1 / 2　B：少ない　C：低域フィルタ（LPF）",
+      "ウ": "A：2倍　B：多い　C：低域フィルタ（LPF）",
+      "エ": "A：2倍　B：少ない　C：高域フィルタ（HPF）"
+    },
+    "answer": "ウ",
+    "explanation": "標本化定理の条件、量子化ステップ数と雑音の関係及び補間フィルタの種類がすべて一致する。",
+    "choiceExplanations": {
+      "ア": "量子化ステップ数が多い点は正しいが、標本化周波数の条件と補間フィルタの種類が誤っている。",
+      "イ": "補間にLPFを用いる点は正しいが、標本化周波数の条件は2倍であり、量子化ステップ数は多いほど雑音が小さい。",
+      "ウ": "標本化定理の条件、量子化ステップ数と雑音の関係及び補間フィルタの種類がすべて一致する。",
+      "エ": "標本化周波数の条件だけは正しいが、量子化ステップ数と補間フィルタが誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問8（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q08.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：入力（アナログ信号）→標本化→量子化→符号化→伝送路→復号→補間フィルタ→出力（アナログ信号）の構成図。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q09",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 9,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "受信機の雑音指数(F)は、受信機の内部で発生した雑音を入力端に換算した等価雑音温度Te〔K〕と周囲温度To〔K〕が与えられたとき、F＝1＋Te / Toで表すことができる。Teが290〔K〕、周囲温度が17〔℃〕のときのFをデシベルで表した値として、最も近いものを下の番号から選べ。ただし、log₁₀2＝0.3とする。",
+    "choices": {
+      "ア": "3〔dB〕",
+      "イ": "4〔dB〕",
+      "ウ": "5〔dB〕",
+      "エ": "6〔dB〕",
+      "オ": "9〔dB〕"
+    },
+    "answer": "ア",
+    "explanation": "To＝273＋17＝290〔K〕、F＝1＋290/290＝2、したがって10log₁₀2＝10×0.3＝3〔dB〕となる。",
+    "choiceExplanations": {
+      "ア": "To＝273＋17＝290〔K〕、F＝1＋290/290＝2、したがって10log₁₀2＝10×0.3＝3〔dB〕となる。",
+      "イ": "計算値3〔dB〕より1〔dB〕大きく、与式からは得られない。",
+      "ウ": "線形雑音指数F＝2をデシベル換算した値ではない。",
+      "エ": "20log₁₀2を用いると6〔dB〕になるが、電力比である雑音指数には10log₁₀Fを用いる。",
+      "オ": "F＝2のデシベル換算値3〔dB〕と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問9（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q10",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 10,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、一般的なデジタル変調方式における量子化等について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 直線量子化では、どの信号レベルに対しても同じステップ幅で量子化される。このとき、量子化雑音電力Nは、信号電力Sの大小に関係なく一定である。したがって、入力信号電力が A ときは、信号に対して量子化雑音が相対的に大きくなる。\n(2) 信号の大きさにかかわらずS / Nをできるだけ一定にするため、送信側において B を用い、受信側において C を用いる方法がある。",
+    "choices": {
+      "ア": "A：小さい　B：伸張器　C：識別器",
+      "イ": "A：小さい　B：圧縮器　C：伸張器",
+      "ウ": "A：大きい　B：圧縮器　C：識別器",
+      "エ": "A：大きい　B：乗算器　C：圧縮器",
+      "オ": "A：大きい　B：乗算器　C：伸張器"
+    },
+    "answer": "イ",
+    "explanation": "信号電力が小さいほど一定の量子化雑音が相対的に大きくなり、圧伸方式では送信側で圧縮し受信側で伸張する。",
+    "choiceExplanations": {
+      "ア": "Aは正しいが、送信側では圧縮器、受信側では伸張器を用いるため、B及びCが誤っている。",
+      "イ": "信号電力が小さいほど一定の量子化雑音が相対的に大きくなり、圧伸方式では送信側で圧縮し受信側で伸張する。",
+      "ウ": "信号電力が大きい場合は相対的な量子化雑音が小さく、受信側には伸張器を用いる。",
+      "エ": "Aが逆であり、圧伸方式の送受信側の装置にも一致しない。",
+      "オ": "受信側の伸張器だけは一致するが、A及び送信側装置が誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問10（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q11",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 11,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図は、PLLによる直接FM(F3E)方式の変調器の原理的な構成例を示したものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。",
+    "choices": {
+      "ア": "A：位相比較器(PC)　B：緩衝増幅器",
+      "イ": "A：位相比較器(PC)　B：電圧制御発振器(VCO)",
+      "ウ": "A：位相比較器(PC)　B：周波数弁別器",
+      "エ": "A：周波数逓倍器　B：緩衝増幅器",
+      "オ": "A：周波数逓倍器　B：電圧制御発振器(VCO)"
+    },
+    "answer": "イ",
+    "explanation": "水晶発振器の基準信号と帰還信号をAで位相比較し、LPF出力と音声信号によってBの発振周波数を制御する構成に一致する。",
+    "choiceExplanations": {
+      "ア": "AはPLLの位相比較器に一致するが、音声信号で発振周波数を変化させるBは電圧制御発振器である。",
+      "イ": "水晶発振器の基準信号と帰還信号をAで位相比較し、LPF出力と音声信号によってBの発振周波数を制御する構成に一致する。",
+      "ウ": "Aは正しいが、BはFM波を発生し帰還信号も供給するVCOであり、周波数弁別器ではない。",
+      "エ": "Aには基準信号と帰還信号が入力されるため位相比較器が必要であり、BもVCOでなければならない。",
+      "オ": "Bは一致するが、PLLの誤差信号を生成するAは周波数逓倍器ではなく位相比較器である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問11（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q11.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：水晶発振器→A→低域フィルタ(LPF)→制御点→B→FM出力のPLL構成図。FM出力からAへの帰還経路及び低周波増幅器から制御点への音声入力経路を含む。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q12",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 12,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、地球局を構成する装置について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 一般的に衛星通信における伝送距離は、地上マイクロ波方式に比べて極めて長くなるため、地球局装置には、アンテナ利得の増大、送信出力の増大、受信雑音温度の A などが必要であり、受信装置の低雑音増幅器にはHEMT(High Electron Mobility Transistor)などが用いられている。\n(2) 衛星通信用アンテナとして用いられるカセグレンアンテナの特徴は、一般的なパラボラアンテナと異なり、一次放射器が B 側にあるので、C の長さが短くてすむため損失が少なく、かつ、側面、背面への漏れ電波が少ない。",
+    "choices": {
+      "ア": "A：増大　B：主反射鏡　C：給電用導波管",
+      "イ": "A：増大　B：副反射鏡　C：給電用導波管",
+      "ウ": "A：増大　B：副反射鏡　C：副反射鏡の支持柱",
+      "エ": "A：低減　B：主反射鏡　C：給電用導波管",
+      "オ": "A：低減　B：副反射鏡　C：副反射鏡の支持柱"
+    },
+    "answer": "エ",
+    "explanation": "長距離通信では受信雑音温度を低減し、主反射鏡側に一次放射器を置くことで給電用導波管を短くできる。",
+    "choiceExplanations": {
+      "ア": "カセグレンアンテナの配置と給電用導波管は対応するが、受信性能向上には雑音温度を増大させず低減する。",
+      "イ": "雑音温度は低減が必要であり、一次放射器の位置も副反射鏡側ではない。",
+      "ウ": "雑音温度、一次放射器の位置及び短縮対象のいずれも記述に適合しない。",
+      "エ": "長距離通信では受信雑音温度を低減し、主反射鏡側に一次放射器を置くことで給電用導波管を短くできる。",
+      "オ": "Aは正しいが、一次放射器の位置と短縮される部材が誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問12（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q13",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 13,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の図は、同期検波によるQPSK復調器の原理的な構成例を示したものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。なお、同じ記号の□内には、同じ字句が入るものとする。",
+    "choices": {
+      "ア": "A：π / 4移相器　B：スケルチ回路",
+      "イ": "A：π / 4移相器　B：識別器",
+      "ウ": "A：π / 2移相器　B：スケルチ回路",
+      "エ": "A：π / 2移相器　B：識別器",
+      "オ": "A：π移相器　B：スケルチ回路"
+    },
+    "answer": "エ",
+    "explanation": "再生搬送波をπ/2移相して直交基準波を作り、各乗算器及びLPFの後で識別器によりI軸・Q軸の復調出力を判定する。",
+    "choiceExplanations": {
+      "ア": "QPSKの直交搬送波を得るにはπ/2の位相差が必要であり、LPF後には識別器を置く。",
+      "イ": "Bは一致するが、I軸とQ軸の基準搬送波を直交させるAはπ/2移相器である。",
+      "ウ": "Aは直交搬送波の生成に適するが、復調データを判定するBはスケルチ回路ではなく識別器である。",
+      "エ": "再生搬送波をπ/2移相して直交基準波を作り、各乗算器及びLPFの後で識別器によりI軸・Q軸の復調出力を判定する。",
+      "オ": "π移相では互いに逆相となって直交成分を分離できず、Bの回路も識別器ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問13（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q13.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：QPSK波を二つの乗算器へ分岐し、搬送波再生回路の出力を一方へ直接、他方へAを介して供給する同期検波回路。各乗算器の後段にLPF及びBがあり、同相軸(I軸)・直交軸(Q軸)復調出力を得る。"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q14",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 14,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、衛星通信に用いられるSCPC方式について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) SCPC方式は、A 多元接続方式の一つであり、送出する B チャネルに対して一つの搬送波を割り当て、一つのトランスポンダの帯域内に複数の異なる周波数の搬送波を等間隔に並べる方式である。\n(2) 時分割多元接続(TDMA)方式に比べ、構成が簡単であり、通信容量が C 地球局で用いられている。",
+    "choices": {
+      "ア": "A：符号分割　B：一つの　C：小さい",
+      "イ": "A：符号分割　B：二つの　C：大きい",
+      "ウ": "A：周波数分割　B：一つの　C：小さい",
+      "エ": "A：周波数分割　B：二つの　C：小さい",
+      "オ": "A：周波数分割　B：二つの　C：大きい"
+    },
+    "answer": "ウ",
+    "explanation": "SCPCは周波数分割多元接続の一つで、一つのチャネルに一つの搬送波を割り当て、比較的小容量の地球局に適する。",
+    "choiceExplanations": {
+      "ア": "一つのチャネルに一つの搬送波を割り当てる点と小容量局向けである点は合うが、異なる搬送周波数を並べる方式は周波数分割多元接続である。",
+      "イ": "SCPCは符号分割ではなく、一つのチャネルごとに一搬送波を割り当て、小容量の地球局で用いられる。",
+      "ウ": "SCPCは周波数分割多元接続の一つで、一つのチャネルに一つの搬送波を割り当て、比較的小容量の地球局に適する。",
+      "エ": "A及びCは合うが、SCPCでは二つではなく一つのチャネルに一つの搬送波を割り当てる。",
+      "オ": "周波数分割である点だけは合うが、B及びCがSCPCの説明と一致しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問14（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q15",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 15,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、一般的なパルスレーダーの距離分解能について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 距離分解能は、パルス幅が狭いほど A なる。\n(2) 同一方向で距離の差がパルス幅の B に相当する距離より短い二つの物標は分離して確認できない。\n(3) 距離測定レンジは、できるだけ C レンジを用いた方が距離分解能が良くなる。",
+    "choices": {
+      "ア": "A：良く　B：1 / 2　C：短い",
+      "イ": "A：良く　B：1 / 2　C：長い",
+      "ウ": "A：良く　B：2倍　C：短い",
+      "エ": "A：悪く　B：1 / 2　C：短い",
+      "オ": "A：悪く　B：2倍　C：長い"
+    },
+    "answer": "ア",
+    "explanation": "距離分解能はΔR＝cτ/2で表され、パルス幅τが狭いほど良くなる。また、表示上は可能な範囲で短いレンジを用いると物標間隔を判別しやすい。",
+    "choiceExplanations": {
+      "ア": "距離分解能はΔR＝cτ/2で表され、パルス幅τが狭いほど良くなる。また、表示上は可能な範囲で短いレンジを用いると物標間隔を判別しやすい。",
+      "イ": "A及びBは正しいが、距離分解能を良くするために選ぶ表示レンジは長いレンジではなく短いレンジである。",
+      "ウ": "A及びCは正しいが、往復伝搬のため距離差はパルス幅に相当する伝搬距離の1/2であり、2倍ではない。",
+      "エ": "B及びCは正しいが、パルス幅を狭くすると距離分解能は悪化せず改善する。",
+      "オ": "パルス幅と分解能の関係、往復伝搬による係数及び適切な表示レンジのすべてが誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問15（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q16",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 16,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、一般的なパルスレーダーの動作原理等について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "最小探知距離を短くするには、送信パルス幅を狭くする。",
+      "イ": "水平面内のビーム幅が広いほど、方位分解能は良くなる。",
+      "ウ": "図1は、レーダーアンテナの水平面内指向性を表したものであるが、放射電力密度（電力束密度）が最大放射方向の1/2に減る二つの方向のはさむ角θ1をビーム幅という。",
+      "エ": "図2に示す物標の観測において、レーダーアンテナのビーム幅をθ1、観測点からみた物標をはさむ角をθ2とすると、レーダー画面上での物標の表示幅は、ほぼθ1＋θ2に相当する幅に拡大される。"
+    },
+    "answer": "イ",
+    "explanation": "誤り。近接する二つの方位を分離するには水平面内のビーム幅が狭いほどよく、ビーム幅が広いほど方位分解能は悪化する。",
+    "choiceExplanations": {
+      "ア": "正しい。送信中は受信が困難であり、最小探知距離は概ね送信パルス幅に比例するため、パルス幅を狭くすると短くなる。",
+      "イ": "誤り。近接する二つの方位を分離するには水平面内のビーム幅が狭いほどよく、ビーム幅が広いほど方位分解能は悪化する。",
+      "ウ": "正しい。図1のθ1は、電力が最大値の1/2となる二方向間の角度、すなわち半値幅を表す。",
+      "エ": "正しい。有限のビーム幅に物標自身の角度幅が加わるため、画面上の方位方向の表示幅は概ねθ1＋θ2となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問16（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q16.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：レーダーアンテナの水平面内指向性とビーム幅θ1／物標の角度幅θ2、ビーム幅θ1及びアンテナの回転方向"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q17",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 17,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、パラボラアンテナについて述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 一次放射器から放射された電波は、回転放物面反射鏡で反射され［A］の電波となる。\n(2) 一次放射器には、通常、［B］などが用いられる。また、反射鏡は、風の抵抗を下げるため金網や［C］などで作られることがある。",
+    "choices": {
+      "ア": "A：球面波、B：ホーンレフレクタアンテナ、C：誘電体",
+      "イ": "A：球面波、B：電磁ホーン、C：金属格子",
+      "ウ": "A：平面波、B：ホーンレフレクタアンテナ、C：金属格子",
+      "エ": "A：平面波、B：ホーンレフレクタアンテナ、C：誘電体",
+      "オ": "A：平面波、B：電磁ホーン、C：金属格子"
+    },
+    "answer": "オ",
+    "explanation": "正しい。焦点に置かれた電磁ホーンからの波は放物面で反射され平面波となり、反射鏡には風圧を軽減できる金網や金属格子が用いられる。",
+    "choiceExplanations": {
+      "ア": "不適切。反射鏡から放射される波は平面波であり、一次放射器及び反射鏡材料の組合せも適切でない。",
+      "イ": "不適切。電磁ホーンと金属格子は適切だが、回転放物面反射鏡で反射された波は球面波ではなく平面波となる。",
+      "ウ": "不適切。平面波と金属格子は適切だが、通常の一次放射器として入るのは電磁ホーンである。",
+      "エ": "不適切。平面波は適切だが、一次放射器及び風圧軽減用の反射鏡材料が適切でない。",
+      "オ": "正しい。焦点に置かれた電磁ホーンからの波は放物面で反射され平面波となり、反射鏡には風圧を軽減できる金網や金属格子が用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問17（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q18",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すブラウンアンテナを周波数250〔MHz〕で使用するときの地線の長さlの値として、最も近いものを下の番号から選べ。",
+    "choices": {
+      "ア": "10〔cm〕",
+      "イ": "30〔cm〕",
+      "ウ": "60〔cm〕",
+      "エ": "90〔cm〕"
+    },
+    "answer": "イ",
+    "explanation": "正しい。λ＝c/f＝3.0×10^8÷250×10^6＝1.2〔m〕、したがってl＝λ/4＝0.30〔m〕＝30〔cm〕である。",
+    "choiceExplanations": {
+      "ア": "不適切。波長はλ＝c/f＝3.0×10^8÷250×10^6＝1.2〔m〕であり、地線長λ/4＝0.30〔m〕＝30〔cm〕より短い。",
+      "イ": "正しい。λ＝c/f＝3.0×10^8÷250×10^6＝1.2〔m〕、したがってl＝λ/4＝0.30〔m〕＝30〔cm〕である。",
+      "ウ": "不適切。60〔cm〕はλ/2に相当し、図のブラウンアンテナの地線長λ/4ではない。",
+      "エ": "不適切。90〔cm〕は3λ/4に相当し、求めるλ/4の地線長ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問18（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q18.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：放射素子、地線、同軸ケーブル及び地線長l"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q19",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 19,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、整合について述べたものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。\n(1) 給電線の特性インピーダンスとアンテナの給電点インピーダンスが異なると、給電線とアンテナの接続点から［A］が生じ、伝送効率が低下する。これを防ぐため、接続点にインピーダンス整合回路を挿入して整合をとる。\n(2) 同軸給電線のような不平衡回路とダイポールアンテナのような平衡回路を直接接続すると、平衡回路に［B］が流れ、送信や受信に悪影響を生じる。これを防ぐため、二つの回路の間に［C］を挿入して整合をとる。",
+    "choices": {
+      "ア": "A：進行波、B：平衡電流、C：スタブ",
+      "イ": "A：進行波、B：不平衡電流、C：バラン",
+      "ウ": "A：反射波、B：平衡電流、C：バラン",
+      "エ": "A：反射波、B：不平衡電流、C：スタブ",
+      "オ": "A：反射波、B：不平衡電流、C：バラン"
+    },
+    "answer": "オ",
+    "explanation": "正しい。インピーダンス不整合は反射波を生じ、不平衡線路と平衡アンテナの直結は不平衡電流を生じるため、バランを挿入する。",
+    "choiceExplanations": {
+      "ア": "不適切。インピーダンス不整合で生じるのは反射波であり、平衡・不平衡変換にはバランを用いる。",
+      "イ": "不適切。BとCは適切だが、インピーダンス不整合により接続点から生じるのは進行波ではなく反射波である。",
+      "ウ": "不適切。AとCは適切だが、直接接続によって問題となるのは不平衡電流である。",
+      "エ": "不適切。AとBは適切だが、平衡回路と不平衡回路の間に挿入するのはスタブではなくバランである。",
+      "オ": "正しい。インピーダンス不整合は反射波を生じ、不平衡線路と平衡アンテナの直結は不平衡電流を生じるため、バランを挿入する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問19（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q20",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 20,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図に示すマイクロ波回線において、A局から送信機出力電力0.5〔W〕で送信したときのB局の受信機入力電力の値として、最も近いものを下の番号から選べ。ただし、自由空間基本伝送損失を135〔dB〕、送信及び受信アンテナの絶対利得をそれぞれ40〔dB〕、送信及び受信帯域フィルタ（BPF）の損失をそれぞれ1〔dB〕、送信及び受信給電線の長さをそれぞれ15〔m〕とし、給電線損失を0.2〔dB/m〕とする。また、log₁₀2＝0.3とする。",
+    "choices": {
+      "ア": "－27〔dBm〕",
+      "イ": "－30〔dBm〕",
+      "ウ": "－33〔dBm〕",
+      "エ": "－36〔dBm〕",
+      "オ": "－39〔dBm〕"
+    },
+    "answer": "エ",
+    "explanation": "正しい。送信電力は10log₁₀(500〔mW〕)＝10(log₁₀5＋2)＝27〔dBm〕。各給電線損失は15×0.2＝3〔dB〕であり、受信機入力は27－1－3＋40－135＋40－3－1＝－36〔dBm〕となる。",
+    "choiceExplanations": {
+      "ア": "不適切。回線計算値は－36〔dBm〕であり、－27〔dBm〕ではない。",
+      "イ": "不適切。回線計算値は－36〔dBm〕であり、－30〔dBm〕ではない。",
+      "ウ": "不適切。回線計算値は－36〔dBm〕であり、－33〔dBm〕ではない。",
+      "エ": "正しい。送信電力は10log₁₀(500〔mW〕)＝10(log₁₀5＋2)＝27〔dBm〕。各給電線損失は15×0.2＝3〔dB〕であり、受信機入力は27－1－3＋40－135＋40－3－1＝－36〔dBm〕となる。",
+      "オ": "不適切。回線計算値は－36〔dBm〕であり、－39〔dBm〕ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問20（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q20.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：A局の送信機、送信BPF、給電線、送信アンテナ、受信アンテナ、給電線、受信BPF及びB局の受信機"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q21",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 21,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、等価地球半径について述べたものである。このうち正しいものを下の番号から選べ。ただし、大気は標準大気とする。",
+    "choices": {
+      "ア": "地球の中心から静止衛星までの距離を半径とした球を仮想したとき、この球の半径を等価地球半径という。",
+      "イ": "電波は電離層のＥ層の電子密度の不均一による電離層散乱によって遠方まで伝搬し、実際の地球半径に散乱域までの地上高を加えたものを等価地球半径という。",
+      "ウ": "大気の屈折率は、地上からの高さとともに減少し、大気中を伝搬する電波は弧を描いて伝搬する。この電波の通路を直線で表すため、仮想した地球の半径を等価地球半径という。",
+      "エ": "等価地球半径は、真の地球半径を3/4倍したものである。"
+    },
+    "answer": "ウ",
+    "explanation": "正しい。高度とともに屈折率が減少する標準大気中では電波が地表側へ緩やかに曲がるため、その通路を直線化して扱う仮想地球の半径が等価地球半径である。",
+    "choiceExplanations": {
+      "ア": "誤り。等価地球半径は静止衛星までの距離を表すものではなく、大気屈折で曲がる電波通路を直線として扱うための仮想的な地球半径である。",
+      "イ": "誤り。これは電離層散乱に関する説明であり、対流圏の屈折を幾何学的に扱う等価地球半径の定義ではない。",
+      "ウ": "正しい。高度とともに屈折率が減少する標準大気中では電波が地表側へ緩やかに曲がるため、その通路を直線化して扱う仮想地球の半径が等価地球半径である。",
+      "エ": "誤り。標準大気では等価地球半径係数は一般に4/3であり、等価地球半径は真の地球半径の3/4倍ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問21（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q22",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 22,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "図は、無停電電源装置の基本的な構成例を示したものである。□内に入れるべき字句の正しい組合せを下の番号から選べ。",
+    "choices": {
+      "ア": "A：発電機、B：インバータ、C：直流",
+      "イ": "A：整流器、B：インバータ、C：直流",
+      "ウ": "A：整流器、B：インバータ、C：交流",
+      "エ": "A：インバータ、B：整流器、C：直流",
+      "オ": "A：インバータ、B：整流器、C：交流"
+    },
+    "answer": "ウ",
+    "explanation": "正しい。交流入力を整流器で直流に変換して蓄電池に接続し、インバータで交流に戻して交流出力を得る。",
+    "choiceExplanations": {
+      "ア": "不適切。交流入力を蓄電池に接続できる直流へ変換するAは発電機ではなく整流器であり、出力も交流である。",
+      "イ": "不適切。AとBは適切だが、インバータ後の出力は直流ではなく交流である。",
+      "ウ": "正しい。交流入力を整流器で直流に変換して蓄電池に接続し、インバータで交流に戻して交流出力を得る。",
+      "エ": "不適切。交流入力側には整流器、出力側にはインバータを配置するため、AとBが逆であり、出力も交流である。",
+      "オ": "不適切。Cは適切だが、交流入力側のAは整流器、交流出力側のBはインバータである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問22（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q22.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：交流入力、A、蓄電池との接続点、B及びC出力"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q23",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "オシロスコープを用いて正弦波交流電圧vを観測したとき、図に示す波形が得られた。このとき、vの実効値V及び周波数fの値の組合せとして、最も近いものを下の番号から選べ。ただし、オシロスコープの設定は表に示すものとする。",
+    "choices": {
+      "ア": "V：8.8〔V〕、f：25〔kHz〕",
+      "イ": "V：8.8〔V〕、f：50〔kHz〕",
+      "ウ": "V：12.5〔V〕、f：25〔kHz〕",
+      "エ": "V：12.5〔V〕、f：50〔kHz〕"
+    },
+    "answer": "イ",
+    "explanation": "正しい。波高値は約2.5div×5〔V/div〕＝12.5〔V〕なので、実効値は12.5/√2≒8.8〔V〕。周期は4div×5〔μs/div〕＝20〔μs〕で、f＝1/T＝50〔kHz〕となる。",
+    "choiceExplanations": {
+      "ア": "不適切。実効値は約8.8〔V〕だが、1周期は4div×5〔μs/div〕＝20〔μs〕なので周波数は50〔kHz〕である。",
+      "イ": "正しい。波高値は約2.5div×5〔V/div〕＝12.5〔V〕なので、実効値は12.5/√2≒8.8〔V〕。周期は4div×5〔μs/div〕＝20〔μs〕で、f＝1/T＝50〔kHz〕となる。",
+      "ウ": "不適切。12.5〔V〕は波高値であって実効値ではなく、周波数も50〔kHz〕である。",
+      "エ": "不適切。周波数50〔kHz〕は適切だが、12.5〔V〕は波高値であり、正弦波の実効値は約8.8〔V〕である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問23（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15",
+    "imageUrls": [
+      "/images/questions/land-special1/2026-02-kogaku-q23.png"
+    ],
+    "imageAltTexts": [
+      "日本無線協会公式問題の原図：0〔V〕線を中心とする正弦波。波高値は約2.5div、周期は約4div／垂直軸5〔V/div〕、水平軸5〔μs/div〕"
+    ]
+  },
+  {
+    "id": "radio21-land-special1-2026-02-kogaku-q24",
+    "exam": "land-special1",
+    "session": "kogaku",
+    "year": 2026,
+    "season": "february",
+    "qNumber": 24,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "無線工学"
+    ],
+    "difficulty": 2,
+    "question": "次の記述は、デジタルマルチメータの一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。",
+    "choices": {
+      "ア": "増幅器、A-D変換器、クロック信号発生器、カウンタなどで構成され、A-D変換器の方式には、積分形などがある。",
+      "イ": "電圧測定において、アナログ方式のテスタ（回路計）に比べて入力インピーダンスが低く、被測定物に接続したときの被測定量の変動が大きい。",
+      "ウ": "被測定量は、通常、直流電圧に変換して測定される。",
+      "エ": "測定結果はデジタル表示され、読取り誤差がない。"
+    },
+    "answer": "イ",
+    "explanation": "誤り。一般にデジタルマルチメータはアナログ方式のテスタより入力インピーダンスが高く、被測定回路に与える負荷と被測定量の変動が小さい。",
+    "choiceExplanations": {
+      "ア": "正しい。デジタルマルチメータは入力信号処理部、A-D変換部、計時・計数部などから構成され、積分形A-D変換方式も用いられる。",
+      "イ": "誤り。一般にデジタルマルチメータはアナログ方式のテスタより入力インピーダンスが高く、被測定回路に与える負荷と被測定量の変動が小さい。",
+      "ウ": "正しい。抵抗、電流、交流電圧などの被測定量は、内部でA-D変換に適した直流電圧へ変換して測定される。",
+      "エ": "正しい。数値を直接表示するため、アナログ指針で生じる目盛の補間や視差による読取り誤差がない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/riku-toku-1-kogaku-a-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士 2026年2月 09:30 A版 JZ82A 無線工学 問24（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-10-15"
+  }
+]

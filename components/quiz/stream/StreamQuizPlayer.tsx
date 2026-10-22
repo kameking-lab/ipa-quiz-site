@@ -3,6 +3,9 @@ import { questionSourceEdition, questionSourceExam } from "@/lib/questions/sourc
 
 
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
+import { NativeBAnswerInput, NativeBFeedback } from "../NativeBAnswer";
 import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
 import { QuestionCard } from "../QuestionCard";
 import { QuestionBody } from "../QuestionBody";
@@ -26,6 +29,7 @@ interface AnswerLog {
   questionId: string;
   selected: string | null;
   correct: boolean;
+  nativeBResult?: NativeBGrade;
 }
 
 export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: Question[]; backHref?: string }) {
@@ -34,6 +38,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [index, setIndex] = React.useState(0);
   const [answers, setAnswers] = React.useState<AnswerLog[]>([]);
   const [selected, setSelected] = React.useState<ChoiceKey | null>(null);
+  const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
   const [combo, setCombo] = React.useState(0);
   const [showFireworks, setShowFireworks] = React.useState(false);
@@ -74,6 +79,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     advancingRef.current = true;
     setTransitioning("out");
     window.setTimeout(() => {
+      setNativeBResult(undefined);
       setSelected(null);
       setRevealed(false);
       setTransitioning("none");
@@ -92,6 +98,18 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       });
     }, 280);
   }, [questions.length]);
+
+  const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
+    if (!question?.nativeB || question.type !== "native-b" || revealed) return;
+    const result = gradeNativeB(question.nativeB, selections);
+    const selection = serializeNativeBSelections(question.nativeB, selections);
+    setNativeBResult(result);
+    setRevealed(true);
+    setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
+    history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    if (result.isCorrect) setCombo((previous) => previous + 1);
+    else setCombo(0);
+  }, [question, revealed, history]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -207,7 +225,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -271,7 +289,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="space-y-2">
-          {question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
+          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
@@ -318,6 +336,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
         {revealed && (
           <div className="animate-in slide-in-from-bottom-4 mt-4 rounded-2xl bg-white/5 p-4 text-sm ring-1 ring-white/10 backdrop-blur">
+            {question.type === "native-b" && <NativeBFeedback data={question.nativeB!} result={nativeBResult} />}
             <div className="mb-1 flex items-center justify-between text-xs">
               <span className="font-semibold text-emerald-300">
                 正解: {answerKey}
@@ -400,7 +419,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -445,7 +464,7 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 space-y-2">
-          {question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
+          {question.type === "native-b" ? <NativeBFeedback data={question.nativeB!} result={answer.nativeBResult} /> : question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;
@@ -474,7 +493,7 @@ function ReviewOverlay({
           <div className="mb-2 flex items-center justify-between text-xs">
             <span className="font-semibold text-emerald-300">正解: {answerKey}</span>
             <span className={answer.correct ? "text-emerald-300" : "text-red-300"}>
-              あなたの回答: {answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
+              あなたの回答: {question.type === "native-b" ? `正答枠数 ${answer.nativeBResult?.correctSlots ?? 0}/5` : answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
             </span>
           </div>
           <div className="whitespace-pre-wrap leading-relaxed text-zinc-200">

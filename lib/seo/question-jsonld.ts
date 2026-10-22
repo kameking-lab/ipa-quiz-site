@@ -1,8 +1,9 @@
+import { formatNativeBAnswer } from "@/lib/questions/native-b";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { formatOrderingAnswer } from "@/lib/questions/ordering";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
-import type { ChoiceKey, Question } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
@@ -18,9 +19,10 @@ function toJstDateTimeISO(iso: string): string {
 }
 
 /** Human-readable label for an exam session segment. */
-export function sessionLabel(session: string): string {
+export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  if (parsed && ["rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical"].includes(parsed)) return practiceSessionLabel(parsed);
+  if (parsed && (exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
     am: "午前",
     am1: "午前I",
@@ -36,6 +38,9 @@ export function sessionLabel(session: string): string {
     kikai: "機械",
     houki: "法規",
     kogaku: "無線工学",
+    "gas-law": "法令",
+    "gas-basic": "基礎",
+    "gas-technology": "ガス技術",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
@@ -96,7 +101,11 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "riku-toku-kokunai" || q.exam === "kai-toku3" || q.exam === "koku-toku"
+  const questionAuthor = q.exam === "kanteishi"
+    ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
+    : q.exam === "kaikeishi"
+    ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
+    : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
     : q.exam === "chosashi"
     ? { "@type": "GovernmentOrganization", name: "法務省", url: "https://www.moj.go.jp/" }
@@ -112,6 +121,8 @@ export function buildQuestionJsonLd({
         name: "日本ファイナンシャル・プランナーズ協会",
         url: "https://www.jafp.or.jp/",
       }
+    : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
+      ? { "@type": "Organization", name: "一般財団法人日本ガス機器検査協会", url: "https://www.jia-page.or.jp/" }
     : q.exam === "takken"
       ? {
           "@type": "Organization",
@@ -201,7 +212,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.license === "NICHIMU-educational-reuse"
+  const licenseUrl = (q.exam === "kanteishi" || q.exam === "kaikeishi")
+    ? q.sourcePresentation?.licenseUrl
+    : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"
     : q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
     ? "https://www.mhlw.go.jp/chosakuken/index.html"
@@ -211,6 +224,8 @@ export function buildQuestionJsonLd({
     ? "https://www.kinzai.or.jp/ginou/license_terms.html"
     : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
+    : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
+      ? undefined
     : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
@@ -226,7 +241,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
@@ -282,7 +297,7 @@ export function buildQuestionJsonLd({
     },
     // RETIO, JCTC and 関西広域連合 entries carry no license URL here.
     ...(licenseUrl ? { license: licenseUrl } : {}),
-    creator: questionAuthor,
+    creator: q.exam === "kanteishi" || q.exam === "kaikeishi" ? siteAuthor : questionAuthor,
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and
     // unlike a bare stub), the publisher carries name/url inline so Google
     // resolves it within this page. The /q surface does not embed the full

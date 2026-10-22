@@ -1,7 +1,11 @@
 "use client";
+
+import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
 
 import * as React from "react";
+import type { NativeBGrade } from "@/lib/questions/types";
+import { NativeBFeedback } from "./NativeBAnswer";
 import Link from "next/link";
 import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
@@ -13,6 +17,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { QuestionBody } from "./QuestionBody";
+import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
@@ -20,6 +25,7 @@ function isPlaceholderExplanation(explanation: string): boolean {
 
 interface Props {
   question: Question;
+  nativeBResult?: NativeBGrade;
   selected: string | undefined;
   isCorrect: boolean;
   starred: boolean;
@@ -32,6 +38,7 @@ interface Props {
 
 export function ExplanationCard({
   question,
+  nativeBResult,
   selected,
   isCorrect,
   starred,
@@ -41,8 +48,19 @@ export function ExplanationCard({
   onAskAI,
   onAnalyzeWrong,
 }: Props) {
+  if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
+    <NativeBFeedback data={question.nativeB} result={nativeBResult} />
+    <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
+    <QuestionSourcePresentation question={question} phase="after" />
+    <div className="flex gap-3">
+      <Button onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
+      <Button variant="subtle" onClick={onToggleStar} aria-pressed={starred}>{starred ? "復習から外す" : "あとで復習"}</Button>
+    </div>
+    <p className="text-sm"><a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式問題</a> / <a href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式正答</a></p>
+    {question.sourceAttribution && <p className="text-xs">{question.sourceAttribution}</p>}
+  </div>;
   const selectedChoiceExplanation = selected && question.type !== "ordering"
-    ? question.choiceExplanations?.[selected as ChoiceKey]
+    ? displayQuestionExplanation(question.exam, question.choiceExplanations?.[selected as ChoiceKey])
     : undefined;
   const answerLabel = formatQuestionAnswerForDisplay(question, question.answer);
 
@@ -146,9 +164,11 @@ export function ExplanationCard({
           )}>
             {`結論: 正解は${answerLabel}です。`}
           </p>
-          <QuestionBody text={question.explanation} />
+          <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
         </div>
       )}
+
+      <QuestionSourcePresentation question={question} phase="after" />
 
       {!isCorrect && selected && selectedChoiceExplanation && (
         <section
@@ -178,7 +198,7 @@ export function ExplanationCard({
                 )}
               >
                 <dt className="font-bold text-zinc-900 dark:text-zinc-100">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
-                <dd className="text-zinc-700 dark:text-zinc-300">{explanation}</dd>
+                <dd className="text-zinc-700 dark:text-zinc-300">{displayQuestionExplanation(question.exam, explanation)}</dd>
               </div>
             ))}
           </dl>

@@ -143,6 +143,7 @@ describe("sessionLabel", () => {
 
   it("maps every Session union member to a real label", () => {
     const SESSION_PRESENCE: Record<Session, true> = {
+      gyosei: true, kanri: true, kansa: true,
       am: true,
       am1: true,
       am2: true,
@@ -167,6 +168,11 @@ describe("sessionLabel", () => {
           kikai: true,
           houki: true,
           kogaku: true,
+      hoki: true,
+      tiri: true,
+      kiso: true,
+      "kogaku-a": true,
+      "kogaku-b": true,
       "mondai-a": true,
       "mondai-b": true,
       "mondai-c": true,
@@ -189,6 +195,9 @@ describe("sessionLabel", () => {
       "keiei-houmu": true,
       "keiei-joho": true,
       "chusho-seisaku": true,
+      "gas-law": true,
+      "gas-basic": true,
+      "gas-technology": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

@@ -1,3 +1,4 @@
+import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
@@ -53,6 +54,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers, ExplanationStructureLabel } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
+import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
@@ -128,7 +130,7 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|round1|round2|early|may|september|january|october|late|annual|july|primary|kansai|march)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
   const segment = parseQuestionNumberSegment(p.exam, p.qnum);
@@ -310,7 +312,7 @@ export default async function QuestionPage({
               {questionSourceExam(q)}
             </Badge>
             <Badge variant="soft">{questionSourceEdition(q)}</Badge>
-            <Badge variant="outline">{sessionLabel(q.session)}</Badge>
+            <Badge variant="outline">{sessionLabel(q.session, q.exam)}</Badge>
             <Badge variant="outline">問 {questionNumberLabel(q)}</Badge>
             {q.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
@@ -321,7 +323,7 @@ export default async function QuestionPage({
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {questionSourceEdition(q)} {questionSourceExam(q)}{" "}
-          {sessionLabel(q.session)} 問{questionNumberLabel(q)}
+          {sessionLabel(q.session, q.exam)} 問{questionNumberLabel(q)}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {topicPageExists ? (
@@ -386,6 +388,7 @@ export default async function QuestionPage({
             法令基準日: {q.lawReferenceDate}（この日の制度で解答）
           </p>
         )}
+        <QuestionSourcePresentation question={q} phase="before" />
         <QuestionBody text={q.question} />
         <QuestionFigures question={q} />
       </section>
@@ -394,9 +397,9 @@ export default async function QuestionPage({
           HTML via ChoiceButton (crawlable / readable with JS off); hydration
           adds the grading interaction so a search visitor can answer right here
           instead of hopping to /quiz (致命傷⑤). */}
-      {(q.type === "numeric" || q.choices) && !hasUnrenderableContent(q) && (
-        <section aria-label={q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
-          <h2 className="sr-only">{q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
+      {(q.type === "native-b" || q.type === "numeric" || q.choices) && !hasUnrenderableContent(q) && (
+        <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
+          <h2 className="sr-only">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
           <QuestionAnswerCard
             question={q}
             questionId={q.id}
@@ -435,7 +438,7 @@ export default async function QuestionPage({
                   解説
                 </h2>
                 {showRealExplanation && (
-                  <ExplanationStructureLabel explanation={q.explanation} />
+                  <ExplanationStructureLabel explanation={displayQuestionExplanation(q.exam, q.explanation)} />
                 )}
               </div>
             </div>
@@ -448,7 +451,7 @@ export default async function QuestionPage({
 
           {showRealExplanation ? (
             <>
-              <ExplanationLayers explanation={q.explanation} />
+              <ExplanationLayers explanation={displayQuestionExplanation(q.exam, q.explanation)} />
               {q.choiceExplanations && q.choices && (
                 <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
                   <h3 className="mb-3 text-sm font-bold text-foreground">各選択肢の解説</h3>
@@ -459,7 +462,7 @@ export default async function QuestionPage({
                         <dd>
                           <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
                           <p className="mt-1 text-muted-foreground">
-                            {q.choiceExplanations?.[key as ChoiceKey]}
+                            {displayQuestionExplanation(q.exam, q.choiceExplanations?.[key as ChoiceKey])}
                           </p>
                         </dd>
                       </div>
@@ -476,6 +479,8 @@ export default async function QuestionPage({
               </span>
             </div>
           )}
+
+          <QuestionSourcePresentation question={q} phase="after" />
 
           {showRealExplanation && (
             <div className="mt-4">
@@ -685,7 +690,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -726,7 +731,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -763,7 +768,7 @@ export default async function QuestionPage({
                       {questionSourceEdition(r)}
                     </Badge>
                     <span>
-                      {questionSourceExam(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
+                      {questionSourceExam(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">

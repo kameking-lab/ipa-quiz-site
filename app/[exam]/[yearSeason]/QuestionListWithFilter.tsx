@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Badge } from "@/components/ui/badge";
@@ -24,9 +25,9 @@ export interface SessionGroup {
   items: QuestionListItem[];
 }
 
-function sessionLabel(session: string): string {
+function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  return parsed ? practiceSessionLabel(parsed) : session;
+  return parsed ? practiceSessionLabel(parsed, exam) : session;
 }
 
 type Filter = "all" | "unanswered" | "wrong";
@@ -55,7 +56,7 @@ function readSolvedMap(): SolvedMap {
   }
 }
 
-export function QuestionListWithFilter({ groups, showSectionNavigation = false }: { groups: SessionGroup[]; showSectionNavigation?: boolean }) {
+export function QuestionListWithFilter({ groups, exam, showSectionNavigation = false }: { groups: SessionGroup[]; exam?: ExamCode; showSectionNavigation?: boolean }) {
   const [solved, setSolved] = React.useState<SolvedMap>({});
   const [hydrated, setHydrated] = React.useState(false);
   const [filter, setFilter] = React.useState<Filter>("all");
@@ -134,7 +135,7 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
           <div className="grid gap-2 sm:grid-cols-2">
             {visibleSectionGroups.map((group) => (
               <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                {sessionLabel(group.session)}
+                {sessionLabel(group.session, exam)}
               </a>
             ))}
           </div>
@@ -145,10 +146,10 @@ export function QuestionListWithFilter({ groups, showSectionNavigation = false }
         const filtered = items.filter(shouldShow);
         if (filtered.length === 0) return null;
         return (
-          <section key={session} id={id} aria-label={sessionLabel(session)} className="mb-8 scroll-mt-6">
+          <section key={session} id={id} aria-label={sessionLabel(session, exam)} className="mb-8 scroll-mt-6">
             <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
-              {sessionLabel(session)}
+              {sessionLabel(session, exam)}
             </h2>
             <ul className="space-y-2">
               {filtered.map((q) => {
