@@ -1,0 +1,1391 @@
+{
+  "canonicalId": "sharoushi-2025-annual-kenpo-q2",
+  "lawAsOf": "2025-04-11",
+  "createdAtUtc": "2026-10-11T02:20:32.466151+00:00",
+  "sourceRevisions": {
+    "law": {
+      "law_info": {
+        "law_type": "Act",
+        "law_id": "211AC0000000070",
+        "law_num": "大正十一年法律第七十号",
+        "law_num_era": "Taisho",
+        "law_num_year": 11,
+        "law_num_type": "Act",
+        "law_num_num": "070",
+        "promulgation_date": "1922-04-22"
+      },
+      "revision_info": {
+        "law_revision_id": "211AC0000000070_20241202_505AC0000000048",
+        "law_type": "Act",
+        "law_title": "健康保険法",
+        "law_title_kana": "けんこうほけんほう",
+        "abbrev": "健保法",
+        "category": "社会保険",
+        "updated": "2024-07-23T03:53:10+09:00",
+        "amendment_promulgate_date": "2023-06-09",
+        "amendment_enforcement_date": "2024-12-02",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "505AC0000000048",
+        "amendment_law_title": "行政手続における特定の個人を識別するための番号の利用等に関する法律等の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和五年法律第四十八号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "rule": {
+      "law_info": {
+        "law_type": "MinisterialOrdinance",
+        "law_id": "215M10000008036",
+        "law_num": "大正十五年内務省令第三十六号",
+        "law_num_era": "Taisho",
+        "law_num_year": 15,
+        "law_num_type": "MinisterialOrdinance",
+        "law_num_num": "036",
+        "promulgation_date": "1926-07-01"
+      },
+      "revision_info": {
+        "law_revision_id": "215M10000008036_20250401_507M60000100036",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "健康保険法施行規則",
+        "law_title_kana": "けんこうほけんほうしこうきそく",
+        "abbrev": "健保法施行規則",
+        "category": "社会保険",
+        "updated": "2025-05-07T14:21:06+09:00",
+        "amendment_promulgate_date": "2025-03-31",
+        "amendment_enforcement_date": "2025-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "507M60000100036",
+        "amendment_law_title": "健康保険法施行規則等の一部を改正する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和七年厚生労働省令第三十六号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    }
+  },
+  "versionNote": "asof=2025-04-11応答の施行版を使用。e-Govのupdatedはデータ更新時刻であり、法令施行日とは区別した。現行最新版を2025基準に代用していない。",
+  "reusedRuleSnapshot": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-kenpo20-public\\targeted-q03-q04-20261010\\regulation-20250401.json",
+    "sha256": "869c0226c741a1ced92d8e1b9c8032472e098a9010793e30ffa42818b3e75605",
+    "matchesNewAsOfResponse": true
+  },
+  "reusedLawSnapshot": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-kenpo20-public\\q09-primary\\kenpo-law-20241202.json",
+    "sha256": "9508d826adb72c79efecdf479c1271c33cda6b09c3886b43bc4e13367bcaec09",
+    "matchesNewAsOfResponse": true
+  },
+  "priorLocalPrimaryHold": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-kenpo20-public\\targeted-q02-20261010\\PRIMARY-HOLD.json",
+    "sha256": "5a15cd0c15ae43003fec5b07a77752e756a56959d8ef6d66b2430c376788d647",
+    "status": "HOLD_NEW_SOURCE_LAW_WORDING_DISCREPANCY",
+    "reusedExistingFlagsResolved": {
+      "ア": {
+        "finding": "有効期限到達は返納事由であり、誤りは14日。任意継続は5日以内、特例退職も準用。",
+        "refs": [
+          "健康保険法施行規則52(2)(5),52(3),170"
+        ]
+      },
+      "ウ": {
+        "finding": "保険給付に関する198(1)の権限事務は健保組合に係る場合を除き協会に行わせる。",
+        "refs": [
+          "健康保険法204の7(1),204の8"
+        ]
+      },
+      "エ": {
+        "finding": "特定適用事業所初該当の5日以内と名称所在地・年月日・法人番号は規則一致。",
+        "refs": [
+          "健康保険法施行規則23の2(1)"
+        ]
+      }
+    },
+    "boundaryNotSilentlyRemoved": {
+      "sourceWording": "オの原本は評価療養の給付の対象とすべきものであるか否か",
+      "lawWording": "健康保険法63(2)(4)は前項の給付の対象とすべきものであるか否か。前項は療養の給付。",
+      "visualOriginalConfirmed": true,
+      "savedOfficialKeyStillB": true,
+      "savedCorrectionPdfScope": "労基安衛Q8のみ、健康保険Q2の訂正なし",
+      "action": "公式原本・キーを保持。オを法定定義どおりの正しい文と断定する保存稿の説明を採用せず、この1問だけHOLDして次問へ。原問の恣意的修正は行わない。"
+    },
+    "resolution": "オを正しいと断定せず、原典とキーを保持。提示組合せのBがオの真偽によらず唯一成立することを追加検証し、独立査読用候補を作成。旧HOLDファイルは未変更。"
+  },
+  "statementProofs": [
+    {
+      "statementLabel": "ア",
+      "result": "INCORRECT",
+      "references": [
+        "施行規則52条2項5号・3項・170条",
+        "法附則3条6項"
+      ],
+      "reason": "有効期限到達という返納事由は正しい。14日が誤りで5日以内。旧稿の返納事由も誤りとの説明を訂正。"
+    },
+    {
+      "statementLabel": "イ",
+      "result": "CORRECT",
+      "references": [
+        "法附則7条1項"
+      ],
+      "reason": "第2号被保険者である被扶養者を有する特定被保険者について規約により合算額にできる。"
+    },
+    {
+      "statementLabel": "ウ",
+      "result": "INCORRECT",
+      "references": [
+        "法198条1項",
+        "法204条1項柱書・19号",
+        "法204条の7第1項"
+      ],
+      "reason": "健康保険組合に係る場合を除く保険給付に関する検査等は協会に行わせる。厚生労働大臣の自己行使は可能。"
+    },
+    {
+      "statementLabel": "エ",
+      "result": "CORRECT",
+      "references": [
+        "施行規則23条の2"
+      ],
+      "reason": "初該当から5日以内、名称所在地・年月日・法人番号という3記載事項。法人の場合は本店又は主たる事業所の事業主。"
+    },
+    {
+      "statementLabel": "オ",
+      "result": "STATUTORY_WORDING_DIFFERENCE_DOCUMENTED",
+      "references": [
+        "法63条1項・2項3号・4号",
+        "法86条1項"
+      ],
+      "reason": "評価療養と患者申出療養は別定義。法文の前項の給付は療養の給付を指す。原典に実在する表記を変更せず、オが正しいとは断定しない。",
+      "unconfirmed": "公式が誤植と認定したか、出題時にオをどう扱ったか。Bという解答を決めるためには不要。"
+    }
+  ],
+  "statutoryExcerpts": [
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "SupplProvision",
+      "articleNum": "3",
+      "paragraphNum": "6",
+      "itemNums": null,
+      "text": "６特例退職被保険者は、この法律の規定（第三十八条第二号、第四号及び第五号を除く。）の適用については、任意継続被保険者とみなす。この場合において、同条第一号中「任意継続被保険者となった日から起算して二年を経過したとき」とあるのは「改正法第十三条の規定による改正前の国民健康保険法第八条の二第一項に規定する退職被保険者であるべき者に該当しなくなったとき」と、同条第三号中「保険者」とあるのは「附則第三条第一項に規定する特定健康保険組合」と、同条第七号中「保険者に」とあるのは「附則第三条第一項に規定する特定健康保険組合に」とする。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "6"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": [
+              "６"
+            ]
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "特例退職被保険者は、この法律の規定（第三十八条第二号、第四号及び第五号を除く。）の適用については、任意継続被保険者とみなす。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "この場合において、同条第一号中「任意継続被保険者となった日から起算して二年を経過したとき」とあるのは「改正法第十三条の規定による改正前の国民健康保険法第八条の二第一項に規定する退職被保険者であるべき者に該当しなくなったとき」と、同条第三号中「保険者」とあるのは「附則第三条第一項に規定する特定健康保険組合」と、同条第七号中「保険者に」とあるのは「附則第三条第一項に規定する特定健康保険組合に」とする。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "SupplProvision",
+      "articleNum": "7",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "健康保険組合は、第百五十六条第一項第二号及び第百五十七条第二項の規定にかかわらず、規約で定めるところにより、介護保険第二号被保険者である被保険者以外の被保険者（介護保険第二号被保険者である被扶養者があるものに限る。以下この条及び次条において「特定被保険者」という。）に関する保険料額を一般保険料額と介護保険料額との合算額とすることができる。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "健康保険組合は、第百五十六条第一項第二号及び第百五十七条第二項の規定にかかわらず、規約で定めるところにより、介護保険第二号被保険者である被保険者以外の被保険者（介護保険第二号被保険者である被扶養者があるものに限る。以下この条及び次条において「特定被保険者」という。）に関する保険料額を一般保険料額と介護保険料額との合算額とすることができる。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "198",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "厚生労働大臣は、被保険者の資格、標準報酬、保険料又は保険給付に関して必要があると認めるときは、事業主に対し、文書その他の物件の提出若しくは提示を命じ、又は当該職員をして事業所に立ち入って関係者に質問し、若しくは帳簿書類その他の物件を検査させることができる。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "厚生労働大臣は、被保険者の資格、標準報酬、保険料又は保険給付に関して必要があると認めるときは、事業主に対し、文書その他の物件の提出若しくは提示を命じ、又は当該職員をして事業所に立ち入って関係者に質問し、若しくは帳簿書類その他の物件を検査させることができる。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "204",
+      "paragraphNum": "1",
+      "itemNums": [
+        "19"
+      ],
+      "text": "次に掲げる厚生労働大臣の権限に係る事務（第百八十一条の三第一項の規定により協会が行うこととされたもの、前条第一項の規定により市町村長が行うこととされたもの及び第二百四条の七第一項に規定するものを除く。）は、日本年金機構（以下「機構」という。）に行わせるものとする。ただし、第十八号から第二十号までに掲げる権限は、厚生労働大臣が自ら行うことを妨げない。十九第百九十八条第一項の規定による命令並びに質問及び検査（健康保険組合に係る場合を除く。）",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Function": "main",
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "次に掲げる厚生労働大臣の権限に係る事務（第百八十一条の三第一項の規定により協会が行うこととされたもの、前条第一項の規定により市町村長が行うこととされたもの及び第二百四条の七第一項に規定するものを除く。）は、日本年金機構（以下「機構」という。）に行わせるものとする。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Function": "proviso",
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "ただし、第十八号から第二十号までに掲げる権限は、厚生労働大臣が自ら行うことを妨げない。"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "19"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "十九"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "第百九十八条第一項の規定による命令並びに質問及び検査（健康保険組合に係る場合を除く。）"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "204_7",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "第百九十八条第一項の規定による厚生労働大臣の命令並びに質問及び検査の権限（健康保険組合に係る場合を除き、保険給付に関するものに限る。）に係る事務は、協会に行わせるものとする。ただし、当該権限は、厚生労働大臣が自ら行うことを妨げない。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Function": "main",
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "第百九十八条第一項の規定による厚生労働大臣の命令並びに質問及び検査の権限（健康保険組合に係る場合を除き、保険給付に関するものに限る。）に係る事務は、協会に行わせるものとする。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Function": "proviso",
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "ただし、当該権限は、厚生労働大臣が自ら行うことを妨げない。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "63",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "被保険者の疾病又は負傷に関しては、次に掲げる療養の給付を行う。一診察二薬剤又は治療材料の支給三処置、手術その他の治療四居宅における療養上の管理及びその療養に伴う世話その他の看護五病院又は診療所への入院及びその療養に伴う世話その他の看護",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "被保険者の疾病又は負傷に関しては、次に掲げる療養の給付を行う。"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "1"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "一"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "診察"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "2"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "二"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "薬剤又は治療材料の支給"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "三"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "処置、手術その他の治療"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "四"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "居宅における療養上の管理及びその療養に伴う世話その他の看護"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "5"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "五"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "病院又は診療所への入院及びその療養に伴う世話その他の看護"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "63",
+      "paragraphNum": "2",
+      "itemNums": [
+        "3",
+        "4"
+      ],
+      "text": "２次に掲げる療養に係る給付は、前項の給付に含まれないものとする。三厚生労働大臣が定める高度の医療技術を用いた療養その他の療養であって、前項の給付の対象とすべきものであるか否かについて、適正な医療の効率的な提供を図る観点から評価を行うことが必要な療養（次号の患者申出療養を除く。）として厚生労働大臣が定めるもの（以下「評価療養」という。）四高度の医療技術を用いた療養であって、当該療養を受けようとする者の申出に基づき、前項の給付の対象とすべきものであるか否かについて、適正な医療の効率的な提供を図る観点から評価を行うことが必要な療養として厚生労働大臣が定めるもの（以下「患者申出療養」という。）",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "2"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": [
+              "２"
+            ]
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "次に掲げる療養に係る給付は、前項の給付に含まれないものとする。"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "三"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "厚生労働大臣が定める高度の医療技術を用いた療養その他の療養であって、前項の給付の対象とすべきものであるか否かについて、適正な医療の効率的な提供を図る観点から評価を行うことが必要な療養（次号の患者申出療養を除く。）として厚生労働大臣が定めるもの（以下「評価療養」という。）"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "四"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "高度の医療技術を用いた療養であって、当該療養を受けようとする者の申出に基づき、前項の給付の対象とすべきものであるか否かについて、適正な医療の効率的な提供を図る観点から評価を行うことが必要な療養として厚生労働大臣が定めるもの（以下「患者申出療養」という。）"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-law-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "86",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "被保険者が、厚生労働省令で定めるところにより、保険医療機関等のうち自己の選定するものから、電子資格確認等により、被保険者であることの確認を受け、評価療養、患者申出療養又は選定療養を受けたときは、その療養に要した費用について、保険外併用療養費を支給する。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "被保険者が、厚生労働省令で定めるところにより、保険医療機関等のうち自己の選定するものから、電子資格確認等により、被保険者であることの確認を受け、評価療養、患者申出療養又は選定療養を受けたときは、その療養に要した費用について、保険外併用療養費を支給する。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-rule-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "52",
+      "paragraphNum": "2",
+      "itemNums": null,
+      "text": "２前項の被保険者が次の各号のいずれかに該当したときは、事業主は、遅滞なく、高齢受給者証を回収して、これを保険者に返納しなければならない。この場合（被保険者が任意継続被保険者である場合を除く。）において、協会の管掌する健康保険の被保険者が第一号から第三号までのいずれかに該当したときは、厚生労働大臣を経由して行うものとする。一被保険者の資格を喪失したとき。二保険者に変更があったとき。三法第百十条第二項第一号ハ又はニの規定の適用を受ける被扶養者に異動があったとき。四高齢受給者証に記載されている一部負担金の割合が変更されるとき。五高齢受給者証の有効期限に至ったとき。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "2"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": [
+              "２"
+            ]
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "前項の被保険者が次の各号のいずれかに該当したときは、事業主は、遅滞なく、高齢受給者証を回収して、これを保険者に返納しなければならない。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "この場合（被保険者が任意継続被保険者である場合を除く。）において、協会の管掌する健康保険の被保険者が第一号から第三号までのいずれかに該当したときは、厚生労働大臣を経由して行うものとする。"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "1"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "一"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "被保険者の資格を喪失したとき。"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "2"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "二"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "保険者に変更があったとき。"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "三"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "法第百十条第二項第一号ハ又はニの規定の適用を受ける被扶養者に異動があったとき。"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "4"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "四"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "高齢受給者証に記載されている一部負担金の割合が変更されるとき。"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "5"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "五"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "高齢受給者証の有効期限に至ったとき。"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-rule-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "52",
+      "paragraphNum": "3",
+      "itemNums": null,
+      "text": "３前項の場合において、被保険者が任意継続被保険者であるときは、当該被保険者は、五日以内に、これを保険者に返納しなければならない。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "3"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": [
+              "３"
+            ]
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "前項の場合において、被保険者が任意継続被保険者であるときは、当該被保険者は、五日以内に、これを保険者に返納しなければならない。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-rule-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "23_2",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "初めて公的年金制度の財政基盤及び最低保障機能の強化等のための国民年金法等の一部を改正する法律（平成二十四年法律第六十二号。以下「年金機能強化法」という。）附則第四十六条第十二項に規定する特定適用事業所（第二号及び第百五十九条の十一第一項第四号において「特定適用事業所」という。）となった適用事業所の事業主（事業主が法人であるときは、本店又は主たる事業所の事業主）は、当該事実があった日から五日以内に、次に掲げる事項を記載した届書を厚生労働大臣又は健康保険組合に提出しなければならない。この場合において、厚生労働大臣に提出する事業所が同時に年金機能強化法附則第十七条第十二項の規定により初めて同項に規定する特定適用事業所となったときは、当該届書にその旨を付記しなければならない。一事業所（事業主が法人であるときは、本店又は主たる事業所）の名称及び所在地二特定適用事業所となった年月日三事業主が法人であるときは、法人番号",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "初めて公的年金制度の財政基盤及び最低保障機能の強化等のための国民年金法等の一部を改正する法律（平成二十四年法律第六十二号。以下「年金機能強化法」という。）附則第四十六条第十二項に規定する特定適用事業所（第二号及び第百五十九条の十一第一項第四号において「特定適用事業所」という。）となった適用事業所の事業主（事業主が法人であるときは、本店又は主たる事業所の事業主）は、当該事実があった日から五日以内に、次に掲げる事項を記載した届書を厚生労働大臣又は健康保険組合に提出しなければならない。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "この場合において、厚生労働大臣に提出する事業所が同時に年金機能強化法附則第十七条第十二項の規定により初めて同項に規定する特定適用事業所となったときは、当該届書にその旨を付記しなければならない。"
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "1"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "一"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "事業所（事業主が法人であるときは、本店又は主たる事業所）の名称及び所在地"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "2"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "二"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "特定適用事業所となった年月日"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "Item",
+            "attr": {
+              "Num": "3"
+            },
+            "children": [
+              {
+                "tag": "ItemTitle",
+                "attr": {},
+                "children": [
+                  "三"
+                ]
+              },
+              {
+                "tag": "ItemSentence",
+                "attr": {},
+                "children": [
+                  {
+                    "tag": "Sentence",
+                    "attr": {
+                      "Num": "1",
+                      "WritingMode": "vertical"
+                    },
+                    "children": [
+                      "事業主が法人であるときは、法人番号"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sourceFile": "health-rule-asof-20250411.json",
+      "provision": "MainProvision",
+      "articleNum": "170",
+      "paragraphNum": "1",
+      "itemNums": null,
+      "text": "第三十二条、第三十八条から第四十一条まで、第四十二条の二から第四十五条まで、第四十七条から第五十二条まで、第八十四条の二第一項及び第五項（これらの規定を第八十七条の二において準用する場合を含む。）並びに第百三十八条第三項の任意継続被保険者に関する規定は、特例退職被保険者について準用する。この場合において、同項中「法第三十七条第二項ただし書又は第三十八条第三号の規定に該当する者」とあるのは、「法附則第三条第六項の規定により任意継続被保険者とみなされた特例退職被保険者のうち法第三十八条第三号の規定に該当する者」と読み替えるものとする。",
+      "node": {
+        "tag": "Paragraph",
+        "attr": {
+          "Num": "1"
+        },
+        "children": [
+          {
+            "tag": "ParagraphNum",
+            "attr": {},
+            "children": []
+          },
+          {
+            "tag": "ParagraphSentence",
+            "attr": {},
+            "children": [
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "1",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "第三十二条、第三十八条から第四十一条まで、第四十二条の二から第四十五条まで、第四十七条から第五十二条まで、第八十四条の二第一項及び第五項（これらの規定を第八十七条の二において準用する場合を含む。）並びに第百三十八条第三項の任意継続被保険者に関する規定は、特例退職被保険者について準用する。"
+                ]
+              },
+              {
+                "tag": "Sentence",
+                "attr": {
+                  "Num": "2",
+                  "WritingMode": "vertical"
+                },
+                "children": [
+                  "この場合において、同項中「法第三十七条第二項ただし書又は第三十八条第三号の規定に該当する者」とあるのは、「法附則第三条第六項の規定により任意継続被保険者とみなされた特例退職被保険者のうち法第三十八条第三号の規定に該当する者」と読み替えるものとする。"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "officialOptionPairs": {
+    "A": [
+      "ア",
+      "イ"
+    ],
+    "B": [
+      "ア",
+      "ウ"
+    ],
+    "C": [
+      "イ",
+      "エ"
+    ],
+    "D": [
+      "ウ",
+      "エ"
+    ],
+    "E": [
+      "エ",
+      "オ"
+    ]
+  },
+  "combinationProof": [
+    {
+      "assumedOTruth": false,
+      "validBothIncorrectOptions": [
+        "B"
+      ]
+    },
+    {
+      "assumedOTruth": true,
+      "validBothIncorrectOptions": [
+        "B"
+      ]
+    }
+  ],
+  "answerReasoning": "イ・エが正しいためA・C・D・Eは不成立。ア・ウはいずれも誤りでBが成立。オの独立した真偽をBの成立要件にしない。原問は誤り記述が厳密に2つだけとは述べていない。",
+  "visualVerification": {
+    "question": {
+      "physicalPages": [
+        39,
+        40
+      ],
+      "printedPages": [
+        37,
+        38
+      ],
+      "images": [
+        "official-question-page-39.png",
+        "official-question-page-40.png"
+      ],
+      "observation": "p40オの実物は評価療養の給付。OCR・転記の誤字ではない。"
+    },
+    "answer": {
+      "physicalPage": 1,
+      "image": "official-answer-page-01.png",
+      "observation": "健康保険法の択一式問2はB。"
+    },
+    "correction": {
+      "physicalPage": 1,
+      "image": "current-correction-1.png",
+      "observation": "再取得した2025正誤票は労基安衛問8のみで健保問2の訂正を含まない。"
+    }
+  },
+  "officialCorrectionCheck": {
+    "retrievedKnown2025ErrataStatus": 200,
+    "knownErrataCoversKenpoQ2": false,
+    "knownErrataText": "試験問題正誤票（択一式試験） \n \n \n試験科目   労働基準法及び労働安全衛生法 \n \n訂正箇所   〔問８〕 \n \n訂正の頁   ７頁 下から１２行目 \n \n正誤内容 \n \n〔誤〕「なお、Ｂにおける「電子情報処理組織」とは、 ・・・」\n \n \n↓ \n \n〔正〕「なお、Ｃにおける「電子情報処理組織」とは、 ・・・」\n \n ",
+    "currentOfficialPagesChecked": [
+      "https://www.sharosi-siken.or.jp/",
+      "https://www.sharosi-siken.or.jp/news/",
+      "https://www.sharosi-siken.or.jp/?s=%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4",
+      "https://www.sharosi-siken.or.jp/?s=%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A"
+    ],
+    "searchObservations": {
+      "令和７年": "検索結果なし",
+      "問題誤り": "合格発表ページのみ。現行内容は2026年度。"
+    },
+    "coverageLimit": "確認できた公式公開ページ・公開検索結果及び既知2025正誤票で健保問2訂正を確認できないという限定結果。過去の全告知の不存在や公式誤植認定を主張しない。"
+  },
+  "accessHistory": {
+    "priorManifestReason": "原典の評価療養の給付と法文の療養の給付の違い、公式訂正未確認というHOLD。",
+    "explicitStopOr403AuthDenialForThisQuestionFound": false,
+    "failedLookup": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/415M60000100036?asof=2025-04-11",
+      "status": 404,
+      "reason": "施行規則の法令IDを誤って仮定した。旧URLは再試行せず、保存済み公式法令IDと公開検索で正しい215M10000008036を確認。"
+    },
+    "newObtainedSourcesAreOfficial200": true,
+    "otherStopTargetsTouched": [],
+    "note": "資料不足の正規取得であり、アクセス拒否又はSTOPを解除したものではない。"
+  },
+  "retainedUncertainty": {
+    "officialIntentForOriginalOTermUnconfirmed": true,
+    "whyDoesNotPreventUniqueOfficialAnswer": "オが正しいか誤りかのどちらを仮定しても有効組合せはBのみ。",
+    "publicationHandling": "原文・公式キー保持と注記付き候補を独立査読・統合判断へ渡す。無注記のオ正しい断定には戻さない。"
+  },
+  "sourceReceipts": [
+    {
+      "file": "health-law-asof-20250411.json",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/211AC0000000070?asof=2025-04-11",
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/211AC0000000070?asof=2025-04-11",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 1265043,
+      "sha256": "9508d826adb72c79efecdf479c1271c33cda6b09c3886b43bc4e13367bcaec09",
+      "retrievedAt": "2026-10-11T02:11:00.441063+00:00"
+    },
+    {
+      "file": "health-rule-asof-20250411.json",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/215M10000008036?asof=2025-04-11",
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/215M10000008036?asof=2025-04-11",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 1382451,
+      "sha256": "869c0226c741a1ced92d8e1b9c8032472e098a9010793e30ffa42818b3e75605",
+      "retrievedAt": "2026-10-11T02:15:47.338094+00:00"
+    },
+    {
+      "file": "official-2025-correction-current.pdf",
+      "url": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%AD%A3%E8%AA%A4%E7%A5%A8%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E8%A9%A6%E9%A8%93%EF%BC%89_2025.pdf",
+      "finalUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E6%AD%A3%E8%AA%A4%E7%A5%A8%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E8%A9%A6%E9%A8%93%EF%BC%89_2025.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 86566,
+      "sha256": "3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead",
+      "retrievedAt": "2026-10-11T02:09:48.518930+00:00"
+    },
+    {
+      "file": "official-homepage.html",
+      "url": "https://www.sharosi-siken.or.jp/",
+      "finalUrl": "https://www.sharosi-siken.or.jp/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 67487,
+      "sha256": "a4bcd8d026cc97cbd19e8c0560cbe31fbaf0647457f8cfab74223bb0619bd337",
+      "retrievedAt": "2026-10-11T02:09:20.396524+00:00"
+    },
+    {
+      "file": "official-news-index.html",
+      "url": "https://www.sharosi-siken.or.jp/news/",
+      "finalUrl": "https://www.sharosi-siken.or.jp/news/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 58744,
+      "sha256": "7dcc9635d822cc01c181b11dc0ba4276ea69d1b3ddf1bda534a9ddaa24f9c859",
+      "retrievedAt": "2026-10-11T02:09:22.136253+00:00"
+    },
+    {
+      "file": "official-search-r7.html",
+      "url": "https://www.sharosi-siken.or.jp/?s=%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4",
+      "finalUrl": "https://www.sharosi-siken.or.jp/?s=%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 52361,
+      "sha256": "b98a170556e3bd8d04700248815d90ea21822d334d836e558299448d1c99d3e4",
+      "retrievedAt": "2026-10-11T02:10:06.137730+00:00"
+    },
+    {
+      "file": "official-search-error.html",
+      "url": "https://www.sharosi-siken.or.jp/?s=%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A",
+      "finalUrl": "https://www.sharosi-siken.or.jp/?s=%E5%95%8F%E9%A1%8C%E8%AA%A4%E3%82%8A",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "bytes": 53427,
+      "sha256": "c68e3a69ec68da8c050f9c280c32110079ec886545c16ecbdca86c04c1eef587",
+      "retrievedAt": "2026-10-11T02:10:04.590697+00:00"
+    },
+    {
+      "file": "rule-search.json",
+      "url": "https://laws.e-gov.go.jp/api/2/laws?law_title=%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%BA%E6%B3%95%E6%96%BD%E8%A1%8C%E8%A6%8F%E5%89%87",
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/laws?law_title=%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%99%BA%E6%B3%95%E6%96%BD%E8%A1%8C%E8%A6%8F%E5%89%87",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 10156,
+      "sha256": "d5e6a1cc039c2fda1251838dff062487688b43da27026742129f714e56f2313a",
+      "retrievedAt": "2026-10-11T02:15:16.376274+00:00"
+    },
+    {
+      "kind": "reusedOfficialOriginals",
+      "receiptFile": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\download-receipts.json",
+      "receiptFileSha256": "30a65d52ba7564e4ef4cb9e78f4ecf9b60ef1eda483a2c61ca631546ec66464b",
+      "files": [
+        {
+          "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-questions.pdf",
+          "sha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1"
+        },
+        {
+          "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-answers.pdf",
+          "sha256": "33cbc50ea0af6754cb61a86cc92ecdcdb08b2e2d47126577bbb53dcebc7e7093"
+        },
+        {
+          "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-correction.pdf",
+          "sha256": "3cc558d0e777bf0a8e5347555079b087f6675f265633052aa97df0a50bb2fead"
+        }
+      ]
+    }
+  ],
+  "remainingSourceGaps": [],
+  "externalModelRequests": 0,
+  "runtimeEdited": false,
+  "lockEdited": false,
+  "publishedAdded": 0
+}

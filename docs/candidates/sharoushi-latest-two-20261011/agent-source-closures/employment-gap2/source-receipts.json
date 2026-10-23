@@ -1,0 +1,46 @@
+{
+  "retrievedAtUtcApprox": "2026-10-11T02:50:00Z",
+  "method": "public HTTPS GET under approved escalation",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/dl/toriatsukai_youryou_i.pdf",
+      "file": "mhlw-2013-general-i.pdf",
+      "httpStatus": 200,
+      "bytes": 4006792,
+      "lastModified": "Sat, 02 Jun 2018 10:17:39 GMT",
+      "sha256": "6a5189d0e5bc3ea9ca4b1a1a2d51e57fd7cd39feafe3da776b76b0cb6bac992d",
+      "relevantPhysicalPages": [74, 75, 76],
+      "relevantPrintedPages": [244, 245, 246],
+      "pageEditionMark": "(24.4)"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/dl/toriatsukai_youryou_k.pdf",
+      "file": "mhlw-2013-general-k.pdf",
+      "httpStatus": 200,
+      "bytes": 645916,
+      "lastModified": "Sat, 02 Jun 2018 10:17:40 GMT",
+      "sha256": "82aa27001a0f87aeca11b72c7f91f39eb4e439d4caa2de0d709dc536b083b8c1",
+      "relevantPhysicalPages": [8, 9, 10, 11, 12, 13, 14, 15],
+      "relevantPrintedPages": [327, 328, 329, 330, 331, 332, 333, 334],
+      "pageEditionMark": "(25.4)"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000261?asof=2026-04-10",
+      "file": "local-public-service-act-asof20260410.json",
+      "httpStatus": 200,
+      "bytes": 481154,
+      "sha256": "a57f2a96afac149fd7fc5296195f7133649f59761b592d7a121365f3d0331565",
+      "revisionId": "325AC0000000261_20250601_504AC0000000068",
+      "verifiedArticle": "38(1)"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000174?asof=2025-04-11",
+      "file": "labor-union-act-asof20250411.json",
+      "httpStatus": 200,
+      "bytes": 247109,
+      "sha256": "c823e89398e36a6dcfaecf9d2d2b7e30bf74bc1d88c2468428903268a4683c92",
+      "revisionId": "324AC0000000174_20230614_505AC0000000053",
+      "verifiedArticles": ["7(1)", "27(1)"]
+    }
+  ]
+}

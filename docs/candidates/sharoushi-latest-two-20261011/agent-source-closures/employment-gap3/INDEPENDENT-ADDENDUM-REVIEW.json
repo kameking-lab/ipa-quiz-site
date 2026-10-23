@@ -1,0 +1,144 @@
+{
+  "reviewedAt": "2026-10-11T03:28:31.522345+00:00",
+  "scope": "追加依頼の不足11命題のみ。原問全量再制作なし。",
+  "items": [
+    {
+      "question": "2025rousai2",
+      "item": "イ",
+      "decision": "ACCEPT_AFTER_CORRECTION",
+      "conclusion": "業務災害非該当という限定評価は妥当",
+      "correction": "2009通達2(2)は一定事実の下で業務と推定する規定であって、要件欠如から当然に業務外とする必要十分条件ではない。逆命題だけで結論を出さない。",
+      "usableReason": "休日の自己の住居を守る行為と読め、使用者命令や業務としての共同作業等のつながりが設問に示されていないことを主たる理由にする。2009通達の推定を働かせる事実も示されていない、との補強に限る。社宅という所有形態だけで業務性を否定しない。",
+      "directOriginalVerified": false
+    },
+    {
+      "question": "2025rousai2",
+      "item": "ウ",
+      "decision": "ACCEPT_LIMITED_APPLICATION",
+      "conclusion": "業務災害該当",
+      "usableReason": "使用者の出張命令、職務関連の検定、実技そのものに起因する負傷という明記事実を結び、業務遂行性・起因性を肯定する独自適用として成立する。自主受検や職務無関連の受検へ拡張しない。大阪局の無日付解説は一般原則の補強であり、1959制度通達を災害認定原典にしない。",
+      "directOriginalVerified": false
+    },
+    {
+      "question": "2025rousai2",
+      "item": "エ",
+      "decision": "ACCEPT_LIMITED_APPLICATION",
+      "conclusion": "業務災害該当",
+      "usableReason": "1995通知記1は天災地変一般の危険環境論を明示しており、地震固有の結論をそのまま落雷にコピーするのとは異なる。雷頻度が高い山岳作業、他に適切な退避場所がないこと、作業を中断した避難中という明記事実に危険環境と業務付随避難を適用できる。現実一般の安全避難方法を本問から助言・断定しない。",
+      "directOriginalVerified": false
+    },
+    {
+      "question": "2025koyou6",
+      "item": "ウ",
+      "decision": "ACCEPT_LIMITED_TEMPORAL_INFERENCE",
+      "conclusion": "正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_i physical74-75 / 52152(2)ハ(ロ)",
+        "new_i physical80-81 / 同項"
+      ],
+      "usableReason": "おおむね100%基準と転居例外は旧版・後日版双方で確認。転居なし、離職直後の設問に適用する。法32条1項3号及び3項は枠組みを示すが数値は定めないため、法だけから100%を導いたと書かない。「おおむね」を厳格な一律境界に置換しない。"
+    },
+    {
+      "question": "2025koyou6",
+      "item": "エ",
+      "decision": "ACCEPT_LIMITED_TEMPORAL_INFERENCE",
+      "conclusion": "正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_i physical76 / 52152(2)ホ(ロ)",
+        "new_i physical82 / 同項"
+      ],
+      "usableReason": "賃金以外の条件が地域同種業務に比べ不当で、安定所が判定するという行政基準が双方一致し、法32条1項5号・3項と整合する。違法でないことだけで正当理由を否定しない。"
+    },
+    {
+      "question": "2025koyou6",
+      "item": "オ",
+      "decision": "ACCEPT_AFTER_CORRECTION",
+      "conclusion": "誤り",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_i physical76 / 52152(2)ホ(ハ)",
+        "new_i physical82 / 同項"
+      ],
+      "usableReason": "旧2か月以上・後日1か月以上という差は実在する。しかし設問の2か月・半額不払は両者を満たし、どちらの版にも一時的で今後適時支払が確実な場合を除外する規定がある。この設問の結論は当該除外による。",
+      "correction": "2025閾値を1か月/2か月のいずれかで検証済みとしない。解消したという過去事実だけでは足りず、将来の適時支払が確実という設問条件を残す。"
+    },
+    {
+      "question": "2025koyou7",
+      "item": "ア",
+      "decision": "ACCEPT_LIMITED_APPLICATION",
+      "conclusion": "誤り",
+      "lawAloneSufficient": "離職・失業要件を満たさない点は強く支える。返還処分の具体的取扱いには行政資料を併用する。",
+      "sourcePositions": [
+        "2025法4条2・3項/15条1項",
+        "old_k physical14-15 / 53302(2)ル",
+        "new_k physical15-16 / 同項"
+      ],
+      "usableReason": "雇用関係継続の和解があるのに、賃金不払のみを理由に基本手当の受給要件を緩和できない。旧版・後日版もこの和解の取扱いを同趣旨で説明している。単なる賃金未払一般と混同しない。"
+    },
+    {
+      "question": "2025koyou7",
+      "item": "イ",
+      "decision": "ACCEPT_ONLY_AS_TEMPORAL_ADMINISTRATIVE_INFERENCE",
+      "conclusion": "正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_k physical10,13 / 53254(4)イ・53302(2)ホ",
+        "new_k physical11,14 / 同項"
+      ],
+      "usableReason": "仮処分命令だけでなく実際の遡及賃金支払があった設問。旧版と後日版の両方が確認処分・支給処分取消及び返還を明記。これは行政取扱いの時間的継続の推論であり、暫定命令の効果全部を法4/15だけから導いたものではない。返還対象は支払対象期間に対応する給付として説明する。"
+    },
+    {
+      "question": "2025koyou7",
+      "item": "ウ",
+      "decision": "ACCEPT_ONLY_AS_TEMPORAL_ADMINISTRATIVE_INFERENCE",
+      "conclusion": "正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_k physical9,14 / 53253(3)・53302(2)リ",
+        "new_k physical10,15 / 同項"
+      ],
+      "usableReason": "事業廃止による原状回復不可能の状態が続く限り取消不要という具体的行政取扱いが旧版・後日版で一致。法4/9から必要的に導く説明は不可。この状態が継続する限り、という限定を残す。"
+    },
+    {
+      "question": "2025koyou7",
+      "item": "エ",
+      "decision": "ACCEPT_ONLY_AS_TEMPORAL_ADMINISTRATIVE_INFERENCE",
+      "conclusion": "正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_k physical10 / 53255(5)",
+        "new_k physical11 / 同項"
+      ],
+      "usableReason": "就職中収入を控除して元使用者賃金が支払われ、収入がその賃金以上となる期間について選択を認める行政規定が双方に明文である。設問は一般被保険者の資格であり、この限定的規則の説明はできる。全ての二重雇用で自由に選べる、法4条がこの選択を直接与える、とはしない。"
+    },
+    {
+      "question": "2025koyou7",
+      "item": "オ",
+      "decision": "ACCEPT_AFTER_CORRECTION_AS_TEMPORAL_ADMINISTRATIVE_INFERENCE",
+      "conclusion": "他の条件を満たす限り正しい",
+      "lawAloneSufficient": false,
+      "sourcePositions": [
+        "old_k physical8,11 / 53201・53251・53301(1)ロ",
+        "new_k physical9,12 / 同項"
+      ],
+      "usableReason": "労組法7条違反を理由とする解雇の法的争いについて、資格喪失確認と条件付給付の制度が旧版・後日版にある。組合申立てだけで自動給付されるという説明にしない。「他の要件」には適切な資格確認手続、失業認定、給付手続等を含む。",
+      "corrections": [
+        "本人確認請求が唯一の開始経路であるとの草案表現を修正。53251は事業主の離職証明書付き資格喪失届又は本人確認請求を規定している。必要な本人の意思表示等まで不要としない。",
+        "旧版は署名押印又は自筆署名、後日版は氏名記載。2025の具体的署名・押印形式は未確認なので断定を削除。",
+        "救済命令の確定前でも、命令等に基づく遡及賃金の実支払などで条件付取扱いが終わり得る。確定まで無条件継続としない。",
+        "労組法の申立権・救済制度だけから雇用保険給付の要件を導かない。"
+      ]
+    }
+  ],
+  "method": "原問と保存済み公的一次資料本文を独立確認。雇用は2013のみでは行政細則の2025適用を確定しない。追加取得せず、既保存の後日公式版の対応箇所も読み、旧版と後日版の一致を補助に、基準日法との整合を審査した。",
+  "historicalInferenceDisclosure": "雇用の詳細規則について2025版一般手引を直接取得したとは記載しない。2013から2025までの改訂履歴の連続性も未検証。後日版は2025へ遡及適用する法源ではなく、旧版で確認できる規則が後日にも掲載されることの裏付け。",
+  "strictGateDecision": "2025同時点原文の直接確認を必須とするゲートは未充足。特に雇用7B/C/D/Eを法単独の適用推論として閉鎖する案は不合格であり、両時点の行政明文に基づく限定的年時推論と明示する場合のみ受入可。",
+  "additionalSourceRequiredIf": "原典直接確認必須・年時推論不可の運用を維持する場合は雇用6C/D/E及び7B/C/D/E等について2025同時点手引又は改正履歴を要する。今回の範囲内では上記の限定的説明のための新規取得は要求しない。",
+  "evidencePositions": "ADDENDUM-EVIDENCE.json",
+  "publicationApproval": false,
+  "sharedPayloadModified": false,
+  "externalModelOrPaidApiUsed": false,
+  "stopSourcesRefetched": false
+}
