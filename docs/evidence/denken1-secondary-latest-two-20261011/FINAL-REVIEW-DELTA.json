@@ -1,0 +1,47 @@
+{
+  "reviewedAt": "2026-10-11T02:25:53.710Z",
+  "baseReviewedCommit": "19c3a5176c5e00b50ad6e4c75fd3a61f9744d407",
+  "targetDataPath": "data/questions/denken1/secondary-latest-two.json",
+  "targetDataSha256": "9602291f8ac4b42315347ee477a7bd8c90e4065682155e7446b99f5cdc7df7f5",
+  "scopeId": "denken1-2025-secondary-power-management-q04",
+  "scope": "Only subparts (3) and (5) explanatory wording changes since the prior independent review.",
+  "verdict": "PASS_FINDING_RESOLVED",
+  "resolvedFindingIds": [
+    "ground-wire-terminology"
+  ],
+  "blockingFindings": [],
+  "remainingNonblockingFindings": [],
+  "changedJsonPaths": [
+    "/questions/3/solutions/2/explanation",
+    "/questions/3/solutions/4/explanation"
+  ],
+  "checks": {
+    "targetHashMatches": true,
+    "exactlyTwoExplanationsChanged": true,
+    "answerFieldsAndEquationsUnchanged": true,
+    "formulaAnd909kVUnchanged": true,
+    "wordingMatchesOneGroundWireWithTwoPropagationDirections": true
+  },
+  "evidence": {
+    "diff": "Direct git diff from baseReviewedCommit for targetDataPath displayed exactly two explanation-line changes, inspected by reviewer.",
+    "questionPhysicalPages": [
+      6
+    ],
+    "answerPhysicalPages": [
+      4
+    ],
+    "basis": "Official source page images were directly viewed in the original independent review; the current delta changes only the terminology to one overhead ground wire extending left and right."
+  },
+  "originalReview": {
+    "path": "FINAL-INDEPENDENT-REVIEW.json",
+    "sha256Before": "9f7028d9d60b7678f00ef88089a403dd02046ba4b8b5725a9f1bccfce35f8bc5",
+    "sha256After": "9f7028d9d60b7678f00ef88089a403dd02046ba4b8b5725a9f1bccfce35f8bc5",
+    "modified": false
+  },
+  "boundaries": [
+    "No full content rereview, browser execution, E2E execution, or new test PASS is claimed.",
+    "New E2E tests and launch-expectation changes are outside this wording-only delta review and remain CI scope.",
+    "No private raw/request author logs were accessed.",
+    "No worktree source edits, commits, pushes, merges or deployments performed."
+  ]
+}

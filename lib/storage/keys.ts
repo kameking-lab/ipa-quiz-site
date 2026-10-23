@@ -46,6 +46,7 @@ export const LS_KEYS = {
   dailyGoal: "ipa-quiz:daily-goal:v1",
   customTags: "ipa-quiz:custom-tags:v1",
   syncMeta: "ipa-quiz:sync-meta:v1",
+  denken1WrittenPrefix: "ipa-quiz:denken1-written:v1:",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

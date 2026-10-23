@@ -1,0 +1,41 @@
+{
+  "status": "LOCAL_CHECKS_PASS_DRAFT_PR_READY",
+  "originals": 20,
+  "upperSubparts": 76,
+  "solutions": 78,
+  "officialPages": 60,
+  "contentHoldsAfterLocalCorrections": 0,
+  "initialBaseCommit": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "targetTests": {
+    "status": "PASS",
+    "files": 2,
+    "tests": 11,
+    "timing": "Before the final terminology-only Q4 explanation correction; no structural change followed."
+  },
+  "typecheck": {
+    "status": "PASS",
+    "exitCode": 0,
+    "includesNewE2eSpecs": true
+  },
+  "changedLint": {
+    "status": "PASS",
+    "exitCode": 0,
+    "includesNewE2eSpecs": true
+  },
+  "fullLocalBuildAndFullTest": "NOT_STARTED_MAIN_RESOURCE_LIMIT",
+  "independentFinalReview": {
+    "status": "PASS",
+    "blockingFindings": 0,
+    "contentScopeOriginals": 7,
+    "physicallyViewedSourcePages": 22,
+    "all20MechanicalCoverageAndHashChecks": true,
+    "terminologyNoteResolvedByDelta": true
+  },
+  "privateAuthorRuntimePublished": false,
+  "productionMergeDeployPerformed": false,
+  "timeUtc": "2026-10-11T02:26:39.811092+00:00",
+  "dataSha256": "9602291f8ac4b42315347ee477a7bd8c90e4065682155e7446b99f5cdc7df7f5",
+  "githubFullBuildUnitAndE2e": "PENDING_PR_CI",
+  "newBrowserRegressionCases": 2,
+  "browserRuntimeExecutedLocally": false
+}
