@@ -8,7 +8,7 @@ import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT, denken1NativeSu
 
 export const metadata: Metadata = {
   title: "電験一種 一次試験 過去問｜2025・2026年度の収録範囲",
-  description: "第一種電気主任技術者一次試験の2025・2026年度から確認済みの理論・電力・機械36原問を原問単位で収録。従来の2026年度5原問・25空欄も保持しています。",
+  description: "第一種電気主任技術者一次試験の2025・2026年度から確認済みの理論・電力・機械37原問を原問単位で収録。従来の2026年度5原問・25空欄も保持しています。",
   alternates: { canonical: "/denken1" },
 };
 
@@ -30,7 +30,7 @@ export default function Denken1Page() {
         原問の空欄(1)〜(5)を1問ずつ、公式の解答群(イ)〜(ヨ)の15肢から選ぶ形式で、全{total}空欄に全肢の解説があります。
       </p>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        2025・2026年度の理論・電力・機械36原問・204回答欄を原問単位でも確認できます。従来の5原問と重なる2原問を重複計上せず、掲載する固有の原問は計{DENKEN1_PUBLISHED_ORIGINAL_COUNT}件です。両年度の全問と二次試験は未収録です。
+        2025・2026年度の理論・電力・機械37原問・209回答欄を原問単位でも確認できます。従来の5原問と重なる2原問を重複計上せず、掲載する固有の原問は計{DENKEN1_PUBLISHED_ORIGINAL_COUNT}件です。両年度の全問と二次試験は未収録です。
       </p>
       <section aria-labelledby="denken1-subjects" className="mt-8">
         <h2 id="denken1-subjects" className="text-xl font-bold">令和8年度 一次試験の科目を選ぶ</h2>

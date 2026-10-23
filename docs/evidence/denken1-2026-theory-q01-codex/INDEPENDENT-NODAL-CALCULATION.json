@@ -1,0 +1,276 @@
+{
+  "method": "Exact Fraction nodal solves using all 12 resistor edges, not the official answer labels",
+  "sourceRiseConvention": "(Vu - Vv + E)/R for a source that raises potential along u to v",
+  "cases": [
+    {
+      "R1": "2",
+      "R2": "3",
+      "R3": "5",
+      "lambda": "1",
+      "E": "24",
+      "unknownLeftResistors": [
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "originalI2": "24/19",
+      "reciprocalI0": "24/19",
+      "reciprocalI1": "24/19",
+      "reciprocalI2": "48/19",
+      "leftSourceChecks": [
+        {
+          "branch": [
+            "a",
+            "h"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "g"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "g",
+            "f"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "e"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        }
+      ],
+      "kirchhoffResidual": "0"
+    },
+    {
+      "R1": "5",
+      "R2": "2",
+      "R3": "7",
+      "lambda": "3",
+      "E": "15",
+      "unknownLeftResistors": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "originalI2": "15/52",
+      "reciprocalI0": "15/52",
+      "reciprocalI1": "15/52",
+      "reciprocalI2": "15/13",
+      "leftSourceChecks": [
+        {
+          "branch": [
+            "a",
+            "h"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "g"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "g",
+            "f"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "e"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        }
+      ],
+      "kirchhoffResidual": "0"
+    },
+    {
+      "R1": "3",
+      "R2": "7",
+      "R3": "2",
+      "lambda": "1/2",
+      "E": "36",
+      "unknownLeftResistors": [
+        31,
+        29,
+        23,
+        19,
+        17,
+        13
+      ],
+      "originalI2": "72/47",
+      "reciprocalI0": "72/47",
+      "reciprocalI1": "72/47",
+      "reciprocalI2": "108/47",
+      "leftSourceChecks": [
+        {
+          "branch": [
+            "a",
+            "h"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "g"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "g",
+            "f"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "e"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        }
+      ],
+      "kirchhoffResidual": "0"
+    },
+    {
+      "R1": "3/2",
+      "R2": "5/3",
+      "R3": "7/4",
+      "lambda": "2/3",
+      "E": "11/2",
+      "unknownLeftResistors": [
+        1,
+        4,
+        2,
+        8,
+        3,
+        9
+      ],
+      "originalI2": "99/139",
+      "reciprocalI0": "99/139",
+      "reciprocalI1": "99/139",
+      "reciprocalI2": "165/139",
+      "leftSourceChecks": [
+        {
+          "branch": [
+            "a",
+            "h"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "g"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "g",
+            "f"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "e"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "h",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        },
+        {
+          "branch": [
+            "f",
+            "i"
+          ],
+          "finalBcCurrent": "0"
+        }
+      ],
+      "kirchhoffResidual": "0"
+    }
+  ],
+  "ordinarySourceCircuitSolves": 8,
+  "leftSourceCircuitSolves": 24,
+  "totalIndependentSolves": 32,
+  "officialKeyWasNotInput": true,
+  "allPass": true,
+  "symbolicDerivation": [
+    "S = R1 + R3",
+    "I2' = (lambda + 1) I1'",
+    "I0' = I1'",
+    "I2 = E / [lambda S + 2 R2 (lambda + 1)]",
+    "lambda = 1: I2 = E / (R1 + 4 R2 + R3)",
+    "Every original left branch has zero transfer current, hence I2'' = 0"
+  ],
+  "limits": "Finite exact solves corroborate the written algebra; they are not an independent publication verdict."
+}

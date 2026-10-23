@@ -3,6 +3,7 @@ import theory2025 from "@/data/questions/denken1/native-2025-theory.json";
 import power2025 from "@/data/questions/denken1/native-2025-power.json";
 import machine2025 from "@/data/questions/denken1/native-2025-machine.json";
 import theory2026 from "@/data/questions/denken1/native-2026-theory.json";
+import theory2026Q1 from "@/data/questions/denken1/native-2026-theory-q01.json";
 import power2026 from "@/data/questions/denken1/native-2026-power.json";
 import machine2026 from "@/data/questions/denken1/native-2026-machine.json";
 import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
@@ -59,6 +60,7 @@ const expected: Expected[] = [
   { year: 2026, subject: "power", numbers: [1, 2, 3, 4, 5, 6], fields: 34, packetSha: "a2284768d0379b61679cd79379f3918688067b55e9aa48ac3f43dd73963c9550" },
   { year: 2025, subject: "theory", numbers: [1, 2, 3, 4, 5, 6, 7], fields: 36, packetSha: "e7e07189690c73f4e79069c99ee846e1c66a42700b5b9547b12120ef00e715c9" },
   { year: 2026, subject: "theory", numbers: [5, 6, 7], fields: 18, packetSha: "e7e07189690c73f4e79069c99ee846e1c66a42700b5b9547b12120ef00e715c9" },
+  { year: 2026, subject: "theory", numbers: [1], fields: 5, packetSha: "45c3be53f6d62d3a9a60dcd8f2fbfd6cf617e62735ac2760f6615b8388cb69b9" },
 ];
 const normalize = (value: string) => value.replace(/[()（）]/g, "").normalize("NFKC");
 function parseNativePart(raw: unknown, rules: Expected) {
@@ -90,10 +92,29 @@ function parseNativePart(raw: unknown, rules: Expected) {
   return parsed;
 }
 
-const raws: unknown[] = [power2025, machine2025, machine2026, power2026, theory2025, theory2026];
-export const DENKEN1_NATIVE_PARTS = raws.map((raw, index) => parseNativePart(raw, expected[index]!));
+const raws: unknown[] = [power2025, machine2025, machine2026, power2026, theory2025, theory2026, theory2026Q1];
+const parsedParts = raws.map((raw, index) => parseNativePart(raw, expected[index]!));
+// 保存ファイルの個別根拠を検証した後、同じ年度・科目の追加原稿を原問順にまとめる。
+interface NativeSubjectPart extends Omit<z.infer<typeof part>, "sourcePacketSha256"> {
+  sourcePacketSha256s: string[];
+}
+export const DENKEN1_NATIVE_PARTS = parsedParts.reduce<NativeSubjectPart[]>((parts, addition) => {
+  const index = parts.findIndex(p => p.year === addition.year && p.subject === addition.subject);
+  const { sourcePacketSha256, ...fields } = addition;
+  if (index < 0) return [...parts, { ...fields, sourcePacketSha256s: [sourcePacketSha256] }];
+  const previous = parts[index]!;
+  if (previous.sourceIndexUrl !== addition.sourceIndexUrl || previous.sourceAnswerUrl !== addition.sourceAnswerUrl
+    || previous.sourceAnswerPdfSha256 !== addition.sourceAnswerPdfSha256 || previous.examDate !== addition.examDate) {
+    throw new Error("Denken1 additional part source mismatch");
+  }
+  const questions = [...previous.questions, ...addition.questions].sort((a, b) => a.number - b.number);
+  if (new Set(questions.map(q => q.id)).size !== questions.length) throw new Error("Denken1 additional original overlaps");
+  return parts.map((p, i) => i === index ? {
+    ...previous, questions, sourcePacketSha256s: [...previous.sourcePacketSha256s, sourcePacketSha256],
+  } : p);
+}, []);
 export const DENKEN1_NATIVE_QUESTIONS = DENKEN1_NATIVE_PARTS.flatMap(item => item.questions);
-if (DENKEN1_NATIVE_QUESTIONS.length !== 36 || new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size !== 36) {
+if (DENKEN1_NATIVE_QUESTIONS.length !== 37 || new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size !== 37) {
   throw new Error("Denken1 native original count mismatch");
 }
 const legacySessionSubject: Record<string, Denken1NativeSubject> = {
@@ -102,7 +123,7 @@ const legacySessionSubject: Record<string, Denken1NativeSubject> = {
 const publishedOriginals = new Set(DENKEN1_QUESTIONS.map(q => `${q.year}:${legacySessionSubject[q.session]}:${q.qNumber}`));
 for (const q of DENKEN1_NATIVE_QUESTIONS) publishedOriginals.add(`${q.year}:${q.subject}:${q.number}`);
 export const DENKEN1_PUBLISHED_ORIGINAL_COUNT = publishedOriginals.size;
-if (DENKEN1_PUBLISHED_ORIGINAL_COUNT !== 39) throw new Error("Denken1 legacy/native original overlap changed");
+if (DENKEN1_PUBLISHED_ORIGINAL_COUNT !== 40) throw new Error("Denken1 legacy/native original overlap changed");
 export const denken1NativeSubjectPath = (year: number, subject: Denken1NativeSubject) => `/denken1/${year}-primary/${subject}`;
 export const denken1NativeQuestionPath = (year: number, subject: Denken1NativeSubject, number: number) => `${denken1NativeSubjectPath(year, subject)}/q${number}`;
 export const denken1NativeQuestionPaths = () => DENKEN1_NATIVE_QUESTIONS.map(q => denken1NativeQuestionPath(q.year, q.subject, q.number));
