@@ -1,0 +1,96 @@
+{
+  "reviewer": "automotive_q31_conflict_review (GPT-6 Astra)",
+  "reviewScope": "one original and four choices only; not acceptance of all 608 other originals",
+  "status": "TECHNICAL_HOLD_CONFIRMED",
+  "reviewedAtUtc": "2026-10-11T07:03:24.867536+00:00",
+  "sourceId": "jidosha-2026-first-2-gasoline-q31",
+  "originalAndOfficialAnswerMatched": true,
+  "officialAnswerNumber": "2",
+  "technicalResolved": false,
+  "holdMustRemain": true,
+  "needsReviewMustRemain": true,
+  "officialQuestionStatusMustRemain": "normal",
+  "findings": [
+    {
+      "source": "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/differentiating-rolling-bearings/",
+      "locator": "負荷を受ける荷重の方向による分類",
+      "conclusion": "アキシアル荷重も受けることだけではラジアル分類を除外できない。"
+    },
+    {
+      "source": "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/",
+      "locator": "概要第2段落",
+      "conclusion": "ラジアル荷重と一方向アキシアル荷重を受ける。"
+    },
+    {
+      "source": "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/",
+      "locator": "製品一覧 / QAT円すいころ軸受",
+      "conclusion": "トランスミッション用途を否定する説明を支持しない。"
+    }
+  ],
+  "requiredWordingCorrection": "一般分類との相違が確定したと誤読させず、公式が肢2を不適切とした理由を一次資料から特定できないと説明する。",
+  "remainingEvidence": [
+    "JASPA出題教材の正式版・該当頁または出題側の訂正/理由説明"
+  ],
+  "partition": [
+    "608 ordinary grading candidates",
+    "1 officially all accepted",
+    "1 technical hold"
+  ],
+  "partitionApprovedForIntegrationReview": true,
+  "wholeBundleIndependentlyAccepted": false,
+  "publicGo": 0,
+  "permissionVerified": false,
+  "strictReceiptSubstituted": false,
+  "newOfficialPdfAcquisitions": 0,
+  "allSourceEdits": 0,
+  "htmlPrimaryReceipts": [
+    {
+      "name": "official-current-index",
+      "url": "https://www.jaspa.or.jp/mechanic/past/2026/1st.html",
+      "httpStatus": 200,
+      "finalUrl": "https://www.jaspa.or.jp/mechanic/past/2026/1st.html",
+      "bytes": 197832,
+      "sha256": "a0523b4adefee3341427e54590ccdff22530f641a88cb23b7c051a2ef5418db9",
+      "retrievedAtUtc": "2026-10-11T07:00:58.270227+00:00",
+      "textSha256": "d722241ee972d6ff35b46303cd4c5706a526e49f9c22a67a95449ec1b87e87dc",
+      "targetSectionFound": true,
+      "targetHasCorrectionText": false,
+      "targetPdfLinks": [
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3c.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3g.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3d.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+        "/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+      ]
+    },
+    {
+      "name": "nsk-manual-transmissions",
+      "url": "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/",
+      "bytes": 264264,
+      "sha256": "f75bbb0b99a5775aaf0fe9a85382013bab21bc9d6ab21f751839d8b00b361058",
+      "retrievedAtUtc": "2026-10-11T07:00:58.422821+00:00",
+      "textSha256": "7a6ab6d1e5afbfc986ce0c146649b024a65c4cb979deefc1cf3c15ca827acf76"
+    },
+    {
+      "name": "nsk-bearing-classification",
+      "url": "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/differentiating-rolling-bearings/",
+      "httpStatus": 200,
+      "finalUrl": "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/differentiating-rolling-bearings/",
+      "bytes": 294562,
+      "sha256": "fb1449e4a98bd5391f8694f53764399e708dac52bdb476212e9adcee17ca9ccc",
+      "retrievedAtUtc": "2026-10-11T07:00:59.129507+00:00",
+      "textSha256": "77b96323122bc522b4cba6e1b1aecd23e12bc3275ac5809f0e107d0a8948b074"
+    }
+  ],
+  "sourceIndexCorrectionCheck": "Current official HTML index hash matches saved index; no correction notice in the actual oldContents section. This does not verify the current PDF bytes or establish absence of correction elsewhere.",
+  "priorOfficialPdfWebRequests": {
+    "attempts": 2,
+    "result": "Internal Error; no source body obtained",
+    "notRetriedAfterExistingRetrievalStopFound": true
+  }
+}
