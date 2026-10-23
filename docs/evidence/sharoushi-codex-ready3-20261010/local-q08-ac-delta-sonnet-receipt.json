@@ -1,0 +1,36 @@
+{
+  "scope": "sharoushi-2026-koyou-q08-A-C-only",
+  "startedUtc": "2026-10-10T06:59:50.570091+00:00",
+  "endedUtc": "2026-10-10T07:00:24.707288+00:00",
+  "processId": 46252,
+  "requestedModel": "claude-sonnet-5-5",
+  "sourcePacketSha256": "29a01961384827b5876e28e10f5ec0e053a552da9a6e0fb5c7c9b0cc69af6fed",
+  "requestSha256": "a5f464327bfe8482024d4c380fc01921dbd9ff682365c31fc6c21aeef56e254b",
+  "rawSha256": "619eaa771a808762b6dd180170a2c48d827ea87bdb775d2b3440d07875359647",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exitCode": 0,
+  "automaticRetry": false,
+  "actualServedModels": [
+    "claude-sonnet-5-5"
+  ],
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3602,
+      "cacheReadInputTokens": 142387,
+      "cacheCreationInputTokens": 8109,
+      "webSearchRequests": 0,
+      "costUSD": 0.0826987,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2135,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "isError": false,
+  "servedExactModel": true,
+  "candidateSha256": "4c9dc9465d5f0e46ffc44d5da9cce8cdf68b285041dfbc80098577d23ca3ad6f",
+  "status": "DELTA_SAVED_QA_PENDING"
+}
