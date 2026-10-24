@@ -1,0 +1,30 @@
+{
+  "key": "35-am-97",
+  "status": "official-photo-missing",
+  "requiredOfficialMaterial": "第35回歯科衛生士国家試験（2026-03-01）別冊午前No.29：印象用器材の写真。①〜④の全写真・番号対応を保持したページ。",
+  "originalStemRecovered": true,
+  "officialAnswerRecovered": true,
+  "officialAcceptedChoices": [
+    "a",
+    "c"
+  ],
+  "requiredSelections": 1,
+  "officialScoring": "alternative",
+  "scoringPdfContainsActualPhotograph": false,
+  "missingWork": [
+    "公式別冊ページの正規取得・出典URLとSHA256保存",
+    "①〜④の各器材名と用途を原写真に基づいて同定",
+    "研究用模型の印象採得という設問条件に合わせた4肢解説の作成",
+    "原写真と番号対応の視覚確認、出典・図表検査と既存schema検証"
+  ],
+  "allowedProgressBeforePhoto": "保存済み本文・公式正答・別冊番号・保留理由を保持する",
+  "prohibitedSubstitution": [
+    "器材名・番号対応を想像しない",
+    "生成画像・類似写真を公式別冊の代わりにしない",
+    "採点変更PDFの掲載位置表示を実物写真と数えない"
+  ],
+  "remainingUnrecoveredOriginals": 432,
+  "remainingIdentityManifest": "import-manifest.json",
+  "sitePublishedIncrement": 0,
+  "requestedFromIntegrationOwner": true
+}
