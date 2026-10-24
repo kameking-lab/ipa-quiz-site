@@ -1,9 +1,38 @@
+import { CopilotProviderError, classifyCopilotHttpFailure } from "./errors";
 import type { LLMProvider, StreamChatParams, StreamCompletion } from "@/lib/ai/provider";
 
-const MODEL = "gemini-3.8-flash";
+import { COPILOT_MODEL as MODEL } from "./model";
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:streamGenerateContent?alt=sse`;
+const MAX_ERROR_BODY_BYTES = 16_384;
+const ERROR_METADATA_TIMEOUT_MS = 1_000;
+
+/** Parse at most 16 KiB / 1 second, retaining only allowlisted diagnostics. */
+async function readErrorMetadata(response: Response): Promise<unknown> {
+  const reader = response.body?.getReader();
+  if (!reader) return undefined;
+  const decoder = new TextDecoder();
+  let bytes = 0;
+  let text = "";
+  const timeout = setTimeout(() => { void reader.cancel().catch(() => {}); }, ERROR_METADATA_TIMEOUT_MS);
+  try {
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > MAX_ERROR_BODY_BYTES) {
+        // A broken source must not delay the HTTP-status fallback on cancellation.
+        void reader.cancel().catch(() => {});
+        return undefined;
+      }
+      text += decoder.decode(value, { stream: true });
+    }
+    return JSON.parse(text + decoder.decode()) as unknown;
+  } catch { return undefined; }
+  finally { clearTimeout(timeout); reader.releaseLock(); }
+}
 
 type GeminiEvent = {
+  error?: { code?: unknown; status?: unknown; details?: unknown };
   candidates?: Array<{
     content?: { parts?: Array<{ text?: string; thought?: boolean }> };
     finishReason?: string;
@@ -41,7 +70,11 @@ export function createCopilotGeminiProvider(apiKey: string): LLMProvider {
         signal: params.signal,
       });
       // Never include a provider error body: it may echo request content.
-      if (!response.ok || !response.body) throw new Error(`Gemini stream HTTP ${response.status}`);
+      if (!response.ok) {
+        const body = await readErrorMetadata(response);
+        throw new CopilotProviderError(classifyCopilotHttpFailure(response.status, body, response.headers.get("retry-after")));
+      }
+      if (!response.body) throw new CopilotProviderError({ code: "no_text" });
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
@@ -52,7 +85,39 @@ export function createCopilotGeminiProvider(apiKey: string): LLMProvider {
         const payload = event.split(/\r?\n/).filter((line) => line.startsWith("data:"))
           .map((line) => line.slice(5).trimStart()).join("\n");
         if (!payload || payload === "[DONE]") return undefined;
-        return JSON.parse(payload) as GeminiEvent;
+        try {
+          const parsed: unknown = JSON.parse(payload);
+          if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error();
+          const event = parsed as GeminiEvent;
+          if (event.error !== undefined) {
+            const error = event.error;
+            const statusMap: Record<string, number> = { UNAUTHENTICATED: 401, PERMISSION_DENIED: 403, INVALID_ARGUMENT: 400, NOT_FOUND: 404, RESOURCE_EXHAUSTED: 429, QUOTA_EXCEEDED: 429, RATE_LIMIT_EXCEEDED: 429, UNAVAILABLE: 503, DEADLINE_EXCEEDED: 504, INTERNAL: 500 };
+            const httpCode = typeof error?.code === "number" && [400, 401, 402, 403, 404, 429, 500, 503, 504].includes(error.code) ? error.code : typeof error?.status === "string" && Object.hasOwn(statusMap, error.status) ? statusMap[error.status] : 0;
+            const info = classifyCopilotHttpFailure(httpCode, { error });
+            // An embedded event is not an HTTP rejection: preserve conservative accounting.
+            delete info.httpStatus;
+            throw new CopilotProviderError(info);
+          }
+          if (event.usageMetadata !== undefined) {
+            if (!event.usageMetadata || typeof event.usageMetadata !== "object" || Array.isArray(event.usageMetadata)) throw new Error();
+            for (const key of ["promptTokenCount", "candidatesTokenCount", "thoughtsTokenCount", "totalTokenCount"] as const) {
+              const count = event.usageMetadata[key];
+              if (count !== undefined && (typeof count !== "number" || !Number.isSafeInteger(count) || count < 0)) throw new Error();
+            }
+          }
+          if (event.candidates !== undefined && !Array.isArray(event.candidates)) throw new Error();
+          for (const candidate of event.candidates ?? []) {
+            if (!candidate || typeof candidate !== "object") throw new Error();
+            if (candidate.content?.parts !== undefined && !Array.isArray(candidate.content.parts)) throw new Error();
+            for (const part of candidate.content?.parts ?? []) {
+              if (!part || typeof part !== "object" || (part.text !== undefined && typeof part.text !== "string")) throw new Error();
+            }
+          }
+          return parsed as GeminiEvent;
+        } catch (error) {
+          if (error instanceof CopilotProviderError) throw error;
+          throw new CopilotProviderError({ code: "malformed_stream" });
+        }
       };
       try {
         for (;;) {
@@ -102,7 +167,10 @@ export function createCopilotGeminiProvider(apiKey: string): LLMProvider {
           }
         }
         params.onComplete?.(completion ?? { truncated: false });
-        if (!yielded) throw new Error("Gemini returned no visible text");
+        if (!yielded) throw new CopilotProviderError({ code: "no_text" });
+        if (completion?.finishReason !== "STOP" && completion?.finishReason !== "MAX_TOKENS") {
+          throw new CopilotProviderError({ code: "truncated" });
+        }
       } finally {
         reader.releaseLock();
       }

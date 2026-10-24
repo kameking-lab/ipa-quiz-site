@@ -75,6 +75,7 @@ import { examLabel, formatYearSeason } from "@/lib/utils";
 import { readCharacterState } from "@/lib/storage/character";
 import { posthogCapture } from "@/lib/posthog";
 import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
+import { classifyCopilotHttpFailure, copilotFailureMessage, parseCopilotFailure, type CopilotFailure } from "@/lib/copilot/errors";
 
 interface Message {
   role: "user" | "assistant";
@@ -86,6 +87,8 @@ interface Message {
   relatedQuestions?: RelatedQuestion[];
   /** ユーザが「停止」ボタンで途中停止したアシスタント応答であるかを示すフラグ。 */
   stoppedByUser?: boolean;
+  pending?: boolean;
+  failed?: boolean;
 }
 
 /**
@@ -120,6 +123,7 @@ interface Props {
   onClose?: () => void;
   headerRight?: React.ReactNode;
   className?: string;
+  active?: boolean;
 }
 
 const WRONG_ONLY: QuickActionId = "why-wrong";
@@ -199,20 +203,29 @@ export function CopilotPanel({
   onClose,
   headerRight,
   className,
+  active = true,
 }: Props) {
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [input, setInput] = React.useState(initialPrompt ?? "");
   const [streaming, setStreaming] = React.useState(false);
   const [streamStatus, setStreamStatus] = React.useState<StreamStatus>("idle");
-  const [errorState, setErrorState] = React.useState<{
-    type: "server_error" | "network_error" | "timeout";
-    retryFn: () => void;
-  } | null>(null);
+  const [errorState, setErrorState] = React.useState<(CopilotFailure & { submittedText: string }) | null>(null);
+  const [unreadOutput, setUnreadOutput] = React.useState(false);
   const [copiedIdx, setCopiedIdx] = React.useState<number | null>(null);
   const [copiedAll, setCopiedAll] = React.useState(false);
   const [quickActionsExpanded, setQuickActionsExpanded] = React.useState(false);
+  const [quickActionsOpen, setQuickActionsOpen] = React.useState(true);
   const [actionsOpen, setActionsOpen] = React.useState(false);
   const actionsRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (typeof window.matchMedia !== "function") return;
+    const media = window.matchMedia("(max-height: 600px)");
+    const update = () => setQuickActionsOpen(!media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
 
   React.useEffect(() => {
     if (!actionsOpen) return;
@@ -241,6 +254,10 @@ export function CopilotPanel({
 
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+  const requestTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const completedMessagesRef = React.useRef<Message[]>([]);
+  const followOutputRef = React.useRef(true);
+  const inputRef = React.useRef<HTMLTextAreaElement>(null);
   // Distinguishes a user-initiated stop (Stop button) from a system-side abort
   // (question-change, unmount). Only user stops should annotate the partial
   // message with a "(停止しました)" marker; system aborts should be silent.
@@ -250,7 +267,7 @@ export function CopilotPanel({
   const sendRef = React.useRef<(text: string, quickAction?: QuickActionId) => void>(() => {});
   const toastTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const { sessionId, createdAt } = useChatSession(question, messages);
+  const { sessionId, createdAt } = useChatSession(question, messages.filter((m) => !m.pending && !m.failed && !m.stoppedByUser));
 
   const showToast = React.useCallback((msg: string) => {
     if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
@@ -261,18 +278,33 @@ export function CopilotPanel({
   // Reset conversation when question changes; refresh profile snapshot
   React.useEffect(() => {
 
+    const previous = abortRef.current;
+    abortRef.current = null;
+    previous?.abort();
+    if (requestTimerRef.current) clearTimeout(requestTimerRef.current);
+    completedMessagesRef.current = [];
+    followOutputRef.current = true;
+    setUnreadOutput(false);
+    setErrorState(null);
+    lastSendArgsRef.current = null;
+    setStreaming(false);
     setMessages([]);
     setInput(initialPrompt ?? "");
     // Question-change abort is system-driven, not user-driven, so leave the
     // userStoppedRef flag false to avoid annotating the discarded message.
     userStoppedRef.current = false;
-    abortRef.current?.abort();
     setStreamStatus("idle");
     setCopiedIdx(null);
     setCopiedAll(false);
     setShareOpen(false);
     setToast(null);
     setProfile(buildLearnerProfileFromHistory());
+    return () => {
+      const active = abortRef.current;
+      abortRef.current = null;
+      active?.abort();
+      if (requestTimerRef.current) clearTimeout(requestTimerRef.current);
+    };
   }, [question.id, initialPrompt]);
 
   // Detect Web Speech API availability once
@@ -312,7 +344,11 @@ export function CopilotPanel({
   }, []);
 
   React.useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    if (followOutputRef.current) {
+      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "auto" });
+    } else if (streaming) {
+      setUnreadOutput(true);
+    }
   }, [messages, streaming]);
 
   React.useEffect(() => {
@@ -323,39 +359,71 @@ export function CopilotPanel({
 
   const send = React.useCallback(
     async (text: string, quickAction?: QuickActionId) => {
-      if (streaming) return;
+      // Ref is set synchronously: two clicks in the same render cannot send twice.
+      if (abortRef.current) return;
       const trimmed = text.trim();
-      if (!trimmed && !quickAction) return;
-
-      setErrorState(null);
-      lastSendArgsRef.current = { text: trimmed, quickAction };
+      if ((!trimmed && !quickAction) || trimmed.length > 4000) return;
+      if (errorState && !errorState.retryable && trimmed === errorState.submittedText) return;
 
       const userMsg: Message = {
         role: "user",
         content: trimmed || QUICK_ACTIONS[quickAction!].label,
         quickAction,
       };
-      const nextMessages = [...messages, userMsg];
-      setMessages(nextMessages);
-      setInput("");
+      // Failed/stopped turns never become model context. A retry replaces that turn.
+      const base = completedMessagesRef.current;
+      const nextMessages = [...base, userMsg];
+      lastSendArgsRef.current = { text: userMsg.content, quickAction };
+      setErrorState(null);
+      setMessages([...base, { ...userMsg, pending: true }]);
+      setInput((draft) => draft.trim() === userMsg.content ? "" : draft);
       setStreaming(true);
       setStreamStatus("sending");
+      setUnreadOutput(false);
+      followOutputRef.current = true;
       userStoppedRef.current = false;
 
       const controller = new AbortController();
       abortRef.current = controller;
+      const isCurrent = () => abortRef.current === controller;
+      let acc = "";
+      let citations: CitationMeta[] = [];
+      let relatedQuestions: RelatedQuestion[] = [];
+      let clientTimedOut = false;
+      const timer = setTimeout(() => {
+        clientTimedOut = true;
+        controller.abort();
+      }, 45_000);
+      requestTimerRef.current = timer;
+      const showResponse = (content: string, pending: boolean, failed = false, stoppedByUser = false) => {
+        if (!isCurrent()) return;
+        setMessages([
+          ...base,
+          { ...userMsg, pending, failed: failed || stoppedByUser },
+          ...(content || pending || stoppedByUser ? [{
+            role: "assistant" as const,
+            content,
+            pending,
+            failed,
+            stoppedByUser,
+            citations: failed || stoppedByUser ? undefined : citations,
+            relatedQuestions: failed || stoppedByUser ? undefined : relatedQuestions,
+          }] : []),
+        ]);
+      };
+      const fail = (failure: CopilotFailure) => {
+        if (!isCurrent()) return;
+        setErrorState({ ...failure, submittedText: userMsg.content });
+        // Preserve anything the learner typed while the response was loading.
+        setInput((draft) => draft || userMsg.content);
+        showResponse(parseCopilotFailure(acc).text, false, true);
+      };
 
       try {
         const characterState = readCharacterState();
-        posthogCapture("ai_query_sent", {
-          questionId: question?.id,
-          exam: question?.exam,
-          quickAction: quickAction ?? null,
-        });
+        posthogCapture("ai_query_sent", { questionId: question.id, exam: question.exam, quickAction: quickAction ?? null });
         const res = await fetch("/api/copilot", {
           method: "POST",
-          // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
-          // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
           headers: { "content-type": "application/json" },
           signal: controller.signal,
           body: JSON.stringify({
@@ -368,161 +436,83 @@ export function CopilotPanel({
             character: characterState.id,
             characterEnabled: characterState.enabled,
             responseLength,
-            messages: nextMessages.slice(-20).map((m) => ({ role: m.role, content: m.content })),
+            // Keep complete pairs plus the current question, within API bounds.
+            messages: [...base.slice(-18), userMsg].map((m) => ({
+              role: m.role,
+              content: m.content.length > 4000 ? m.content.slice(0, 3978) + "\n（以前の回答の続きは省略）" : m.content,
+            })),
           }),
         });
-
-        if (res.status === 429) {
-          const body = (await res.json()) as { message?: string; reason?: string };
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: body.message ?? "レート制限に達しました。" },
-          ]);
-          setStreaming(false);
-          setStreamStatus("idle");
+        if (!isCurrent()) return;
+        if (!res.ok) {
+          const body: unknown = await res.json().catch(() => undefined);
+          fail(classifyCopilotHttpFailure(res.status, body, res.headers.get("Retry-After")));
           return;
         }
-
-        if (!res.ok || !res.body) {
-          const args = lastSendArgsRef.current;
-          setErrorState({
-            type: "server_error",
-            retryFn: () => args && sendRef.current(args.text, args.quickAction),
-          });
-          setStreaming(false);
-          setStreamStatus("idle");
+        if (!res.body) {
+          fail({ code: "no_text", retryable: false });
           return;
         }
-
-        // 構造化 citation メタと関連問題は HTTP ヘッダで返ってくる。
-        // ヘッダは body 読み出し前に確定しているので、最初のメッセージ追加時に同梱しておく。
-        const citationHeaderValue = res.headers.get("X-RAG-Citation-Candidates") ?? res.headers.get("X-RAG-Citations");
-        const relatedHeaderValue = res.headers.get("X-Related-Questions");
-        const citations = decodeCitationsHeader(citationHeaderValue);
-        const relatedQuestions = decodeRelatedHeader(relatedHeaderValue);
-
-        // Response headers landed: transition to "searching" so the user sees
-        // a more specific status while we wait for the provider's first token.
-        // Citation headers being present is a strong signal that RAG ran;
-        // otherwise we fall back to "generating" since the model is warming up.
-        setStreamStatus(
-          citations.length > 0 || relatedQuestions.length > 0
-            ? "searching"
-            : "generating",
-        );
-
+        citations = decodeCitationsHeader(res.headers.get("X-RAG-Citation-Candidates") ?? res.headers.get("X-RAG-Citations"));
+        relatedQuestions = decodeRelatedHeader(res.headers.get("X-Related-Questions"));
+        setStreamStatus("generating");
+        showResponse("", true);
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
-        let acc = "";
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: "",
-            citations: citations.length > 0 ? citations : undefined,
-            relatedQuestions:
-              relatedQuestions.length > 0 ? relatedQuestions : undefined,
-          },
-        ]);
-
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-          const chunk = decoder.decode(value, { stream: true });
-          acc += chunk;
-          // First non-empty chunk flips us into "streaming" so the cursor
-          // takes over from the skeleton placeholder. React bails out if the
-          // value is unchanged, so this is safe to call on every chunk.
-          if (acc.length > 0) setStreamStatus("streaming");
-          setMessages((prev) => {
-            const copy = [...prev];
-            const previous = copy[copy.length - 1];
-            copy[copy.length - 1] = {
-              role: "assistant",
-              content: acc,
-              citations: previous.citations,
-              relatedQuestions: previous.relatedQuestions,
-            };
-            return copy;
-          });
+        try {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (!isCurrent()) { await reader.cancel(); return; }
+            acc += decoder.decode(value, { stream: !done });
+            if (done) break;
+            const parsed = parseCopilotFailure(acc);
+            if (parsed.text) setStreamStatus("streaming");
+            showResponse(parsed.text, true, Boolean(parsed.error));
+          }
+        } finally {
+          reader.releaseLock();
         }
-
-        // Server emits an in-stream sentinel like "[タイムアウト]" or "[エラー]"
-        // at the tail when the upstream provider fails or times out. Convert
-        // that into a typed error banner so the user gets retry affordance.
-        const isTimeout = acc.includes("[タイムアウト]");
-        const isServerError = acc.includes("[エラー] AI応答の取得に失敗");
-        if (isTimeout || isServerError) {
-          const args = lastSendArgsRef.current;
-          setErrorState({
-            type: isTimeout ? "timeout" : "server_error",
-            retryFn: () => args && sendRef.current(args.text, args.quickAction),
-          });
+        if (!isCurrent()) return;
+        const parsed = parseCopilotFailure(acc);
+        if (parsed.error) {
+          fail(parsed.error);
+        } else if (!parsed.text.trim()) {
+          fail({ code: "no_text", retryable: false });
+        } else {
+          const answer: Message = { role: "assistant", content: parsed.text, citations, relatedQuestions };
+          completedMessagesRef.current = [...nextMessages, answer];
+          setMessages(completedMessagesRef.current);
         }
-
         posthogCapture("copilot_response_received", {
-          questionId: question?.id,
-          exam: question?.exam,
-          response_length: acc.length,
-          had_timeout: isTimeout,
-          had_server_error: isServerError,
+          questionId: question.id, exam: question.exam,
+          response_length: parsed.text.length,
+          had_timeout: parsed.error?.code === "timeout",
+          had_server_error: Boolean(parsed.error),
         });
       } catch (err) {
-        if ((err as Error).name === "AbortError") {
-          // User-initiated stop: keep whatever was already streamed and mark
-          // the last assistant message so the UI can render a "(停止しました)"
-          // hint instead of dropping the partial response. If the assistant
-          // bubble was not yet pushed (aborted before headers landed) we fall
-          // back to the explicit cancellation message.
+        if (!isCurrent()) return;
+        if (controller.signal.aborted || (err as Error).name === "AbortError") {
           if (userStoppedRef.current) {
-            setMessages((prev) => {
-              const last = prev[prev.length - 1];
-              if (last && last.role === "assistant") {
-                const copy = [...prev];
-                copy[copy.length - 1] = { ...last, stoppedByUser: true };
-                return copy;
-              }
-              return [
-                ...prev,
-                {
-                  role: "assistant",
-                  content: "(停止しました)",
-                  stoppedByUser: true,
-                },
-              ];
-            });
-            posthogCapture("copilot_response_stopped", {
-              questionId: question?.id,
-              exam: question?.exam,
-            });
-          } else {
-            setMessages((prev) => [
-              ...prev,
-              { role: "assistant", content: "(キャンセルされました)" },
-            ]);
+            showResponse(parseCopilotFailure(acc).text, false, false, true);
+            setInput((draft) => draft || userMsg.content);
+          } else if (clientTimedOut) {
+            fail({ code: "timeout", retryable: true });
           }
         } else {
-          const args = lastSendArgsRef.current;
-          setErrorState({
-            type: "network_error",
-            retryFn: () => args && sendRef.current(args.text, args.quickAction),
-          });
+          fail({ code: "temporary", retryable: true });
         }
       } finally {
-        setStreaming(false);
-        setStreamStatus("idle");
-        userStoppedRef.current = false;
+        clearTimeout(timer);
+        // A stale request cannot settle or append to the next question's chat.
+        if (isCurrent()) {
+          abortRef.current = null;
+          setStreaming(false);
+          setStreamStatus("idle");
+          userStoppedRef.current = false;
+        }
       }
     },
-    [
-      streaming,
-      messages,
-      question,
-      selectedChoice,
-      isCorrect,
-      profile,
-      responseLength,
-    ],
+    [question, selectedChoice, isCorrect, profile, responseLength, errorState],
   );
 
   // Keep a ref to `send` so retryFn closures can call the latest version
@@ -534,10 +524,35 @@ export function CopilotPanel({
   }, [send]);
 
   const handleStop = React.useCallback(() => {
-    if (!streaming) return;
-    userStoppedRef.current = true;
-    abortRef.current?.abort();
-  }, [streaming]);
+    const controller = abortRef.current;
+    if (!controller) return;
+    abortRef.current = null;
+    controller.abort();
+    if (requestTimerRef.current) clearTimeout(requestTimerRef.current);
+    setStreaming(false);
+    setStreamStatus("idle");
+    setInput((draft) => draft || lastSendArgsRef.current?.text || "");
+    setMessages((previous) => previous.map((message) => message.pending
+      ? { ...message, pending: false, failed: true, stoppedByUser: message.role === "assistant", citations: undefined, relatedQuestions: undefined }
+      : message));
+  }, []);
+
+  // A closed panel retains this question's conversation, but performs no work.
+  React.useEffect(() => {
+    if (active) return;
+    handleStop();
+    setShareOpen(false);
+    setActionsOpen(false);
+    const recognition = recognitionRef.current;
+    if (recognition) {
+      recognition.onresult = null;
+      recognition.onend = null;
+      recognition.onerror = null;
+      try { recognition.stop(); } catch { /* already stopped */ }
+      recognitionRef.current = null;
+      setVoiceState("idle");
+    }
+  }, [active, handleStop]);
 
   const toggleVoice = React.useCallback(() => {
     if (voiceState === "unsupported") return;
@@ -708,7 +723,7 @@ export function CopilotPanel({
     : "";
 
   return (
-    <div className={cn("flex h-full w-full flex-col bg-white dark:bg-zinc-950", className)}>
+    <div className={cn("flex h-full min-h-0 w-full flex-col bg-white dark:bg-zinc-950", className)}>
       {/* Header */}
       <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
@@ -817,13 +832,22 @@ export function CopilotPanel({
         </div>
       </div>
 
+      <p className="shrink-0 px-3 pt-2 text-xs text-zinc-500" aria-live="polite">
+        問{question.qNumber} · {selectedChoice
+          ? `選択: ${selectedChoice.split("・").map((key) => {
+            const choice = getChoiceKeys(question.choices).find((candidate) => candidate === key);
+            return choice ? choiceDisplayLabel(question.exam, choice) : key;
+          }).join("・")}（${isCorrect === true ? "正解" : isCorrect === false ? "不正解" : "未採点"}）`
+          : "未解答 · 答えを伏せてヒントから"}
+      </p>
       {/* Quick actions */}
-      <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
-        <div className="mb-2 flex items-center justify-between">
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">クイックアクション</span>
-          <span className="text-[10px] text-zinc-400 dark:text-zinc-500">連続利用には制限があります</span>
-        </div>
-        <>
+      <div className="shrink-0 border-b border-zinc-200 px-3 pb-2 dark:border-zinc-800">
+        <button type="button" onClick={() => setQuickActionsOpen((value) => !value)}
+          aria-expanded={quickActionsOpen} aria-controls="copilot-actions-content"
+          className="flex min-h-11 w-full items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
+          <span>クイックアクション</span><ChevronDown className={cn("h-4 w-4", quickActionsOpen && "rotate-180")} aria-hidden="true" />
+        </button>
+        {quickActionsOpen && <div id="copilot-actions-content" className="max-h-40 overflow-y-auto overscroll-contain">
             <div
               id="copilot-quickactions-list"
               className="flex flex-wrap gap-1.5"
@@ -908,16 +932,21 @@ export function CopilotPanel({
                   : `+他 ${hiddenQuickActionCount} 個を見る`}
               </button>
             )}
-        </>
+        </div>}
       </div>
 
       {/* Messages */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-3"
+        className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-3"
         role="log"
         aria-live="polite"
         aria-label="AI コパイロットの応答"
+        onScroll={(event) => {
+          const el = event.currentTarget;
+          followOutputRef.current = el.scrollHeight - el.scrollTop - el.clientHeight < 48;
+          if (followOutputRef.current) setUnreadOutput(false);
+        }}
       >
         {messages.length === 0 && (
           <div className="space-y-2.5">
@@ -938,6 +967,7 @@ export function CopilotPanel({
                       type="button"
                       onClick={() => {
                         setInput(ex.prompt);
+                        inputRef.current?.focus({ preventScroll: true });
                         posthogCapture("copilot_question_example_clicked", {
                           label: ex.label,
                           questionId: question?.id,
@@ -982,7 +1012,7 @@ export function CopilotPanel({
             )}
             {m.role === "assistant" ? (
               <>
-                {m.content.length === 0 ? (
+                {m.content.length === 0 && m.pending ? (
                   // First-chunk skeleton: three pulsing lines simulate the
                   // shape of a typical 200-400字 answer so the layout doesn't
                   // pop when the first token arrives.
@@ -1016,8 +1046,8 @@ export function CopilotPanel({
                     （ここで停止しました）
                   </p>
                 )}
-                <CitationCards citations={m.citations ?? []} response={m.content} isStreaming={streaming && i === messages.length - 1} messageIndex={i} />
-                {m.relatedQuestions && m.relatedQuestions.length > 0 && (
+                {!m.failed && !m.stoppedByUser && <CitationCards citations={m.citations ?? []} response={m.content} isStreaming={streaming && i === messages.length - 1} messageIndex={i} />}
+                {!m.failed && !m.stoppedByUser && m.relatedQuestions && m.relatedQuestions.length > 0 && (
                   <RelatedQuestionsSection
                     items={m.relatedQuestions}
                     messageIndex={i}
@@ -1056,35 +1086,42 @@ export function CopilotPanel({
         )}
       </div>
 
+      {unreadOutput && (
+        <button type="button" className="mx-3 min-h-11 shrink-0 rounded-lg text-sm font-medium text-sky-700"
+          onClick={() => {
+            followOutputRef.current = true;
+            setUnreadOutput(false);
+            scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "auto" });
+          }}>
+          新しい回答へ移動 ↓
+        </button>
+      )}
+
       {/* Error banner — role="alert" forces immediate SR announcement */}
       {errorState && (
         <div
           role="alert"
           className={cn(
             "mx-3 mb-2 flex items-start gap-2 rounded-xl border px-3 py-2.5 text-xs",
-            errorState.type === "network_error"
+            errorState.code === "temporary"
               ? "border-zinc-200 bg-zinc-50 text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
               : "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200",
           )}
         >
-          {errorState.type === "network_error" ? (
+          {errorState.code === "temporary" ? (
             <WifiOff className="mt-0.5 h-3.5 w-3.5 shrink-0" />
           ) : (
             <RefreshCw className="mt-0.5 h-3.5 w-3.5 shrink-0" />
           )}
           <div className="flex-1">
             <span>
-              {errorState.type === "timeout"
-                ? "AIの応答が遅延しました。再試行で改善することがあります。"
-                : errorState.type === "server_error"
-                  ? "AIが一時的に応答できません。"
-                  : "接続を確認してください。"}
+              {copilotFailureMessage(errorState)}
             </span>
-            {errorState.type !== "network_error" && (
+            {errorState.retryable && (
               <button
                 onClick={() => {
-                  setErrorState(null);
-                  errorState.retryFn();
+                  const args = lastSendArgsRef.current;
+                  if (args) sendRef.current(args.text, args.quickAction);
                 }}
                 className="ml-2 font-semibold underline hover:no-underline"
               >
@@ -1094,11 +1131,16 @@ export function CopilotPanel({
           </div>
         </div>
       )}
+      {errorState && onClose && (
+        <button type="button" onClick={onClose} className="mx-3 mb-2 min-h-11 shrink-0 rounded-lg border border-zinc-300 text-sm font-medium">
+          問題・掲載解説に戻る
+        </button>
+      )}
 
       {/* AI disclaimer */}
       {messages.some((m) => m.role === "assistant") && (
         <div className="px-3 pb-1 text-[11px] leading-snug text-zinc-500 dark:text-zinc-400">
-          <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
+          <p>※ AI回答・掲載解説は誤りを含みます。資格の公式資料でも確認してください。</p>
           {selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
             <details className="mt-1">
               <summary className="cursor-pointer font-medium underline underline-offset-2">サイト掲載の選択肢別解説と照合</summary>
@@ -1128,13 +1170,16 @@ export function CopilotPanel({
           e.preventDefault();
           send(input);
         }}
-        className="flex items-end gap-2 border-t border-zinc-200 p-3 dark:border-zinc-800"
+        className="flex shrink-0 items-end gap-2 border-t border-zinc-200 p-3 dark:border-zinc-800"
       >
         <textarea
+          ref={inputRef}
           value={input}
+          maxLength={4000}
+          aria-describedby="copilot-input-hint"
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
+            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing && e.nativeEvent.keyCode !== 229) {
               e.preventDefault();
               if (!streaming) send(input);
             }
@@ -1146,7 +1191,7 @@ export function CopilotPanel({
               ? "話してください…"
               : "AIに質問… (Enter 送信 / Shift+Enter 改行)"
           }
-          className="min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
+          className="min-h-[44px] min-w-0 flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
         />
         {voiceState !== "unsupported" && (
           <Button
@@ -1188,7 +1233,12 @@ export function CopilotPanel({
             type="button"
             variant="primary"
             size="icon"
-            onClick={handleStop}
+            onClick={(event) => {
+              // React can reuse this DOM node as the submit button immediately.
+              // Cancel activation before stopping so that click cannot submit a draft.
+              event.preventDefault();
+              handleStop();
+            }}
             aria-label="生成を停止"
             title="生成を停止"
             className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
@@ -1200,13 +1250,16 @@ export function CopilotPanel({
             type="submit"
             variant="primary"
             size="icon"
-            disabled={!input.trim()}
+            disabled={!input.trim() || input.length > 4000 || Boolean(errorState && !errorState.retryable && input.trim() === errorState.submittedText)}
             aria-label="送信"
           >
             <Send className="h-4 w-4" />
           </Button>
         )}
       </form>
+      <p id="copilot-input-hint" className="shrink-0 px-3 pb-2 text-[11px] text-zinc-500">
+        {input.length} / 4000文字 · Enterで送信、Shift+Enterで改行
+      </p>
 
       {/* Share modal */}
       <Dialog open={shareOpen} onOpenChange={setShareOpen}>
@@ -1284,6 +1337,8 @@ export function CopilotMobileSheet({
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
+  const [openedOnce, setOpenedOnce] = React.useState(defaultOpen);
+  React.useEffect(() => { if (open) setOpenedOnce(true); }, [open]);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
   const dialogRef = React.useRef<HTMLDivElement | null>(null);
   const prevOpenRef = React.useRef(open);
@@ -1357,12 +1412,13 @@ export function CopilotMobileSheet({
           AIに聞く
         </button>
       )}
-      {open && (
+      {(open || openedOnce) && (
         <div
           ref={dialogRef}
-          className="fixed inset-0 z-50 sm:hidden"
-          role="dialog"
-          aria-modal="true"
+          className={open ? "fixed inset-0 z-50 sm:hidden" : "hidden"}
+          role={open ? "dialog" : undefined}
+          aria-modal={open ? true : undefined}
+          aria-hidden={!open}
           aria-label="AI コパイロット"
           onKeyDown={onDialogKeyDown}
         >
@@ -1371,15 +1427,16 @@ export function CopilotMobileSheet({
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute inset-x-0 bottom-0 top-12 flex min-h-0 flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950">
+          <div className="absolute inset-x-0 bottom-0 top-12 flex min-h-0 flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950 [@media(max-height:600px)]:top-2">
             <button
               onClick={() => setOpen(false)}
-              className="mx-auto mt-2 flex w-16 items-center justify-center rounded-full bg-zinc-300 py-1 dark:bg-zinc-700"
+              className="mx-auto mt-2 flex w-16 items-center justify-center rounded-full bg-zinc-300 py-1 dark:bg-zinc-700 [@media(max-height:600px)]:hidden"
               aria-label="閉じる"
             >
               <ChevronDown className="h-3 w-3 text-zinc-600 dark:text-zinc-300" />
             </button>
             <CopilotPanel
+              active={open}
               question={question}
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
@@ -1409,6 +1466,8 @@ export function CopilotDesktopFloating({
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
+  const [openedOnce, setOpenedOnce] = React.useState(defaultOpen);
+  React.useEffect(() => { if (open) setOpenedOnce(true); }, [open]);
   const panelRef = React.useRef<HTMLDivElement | null>(null);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
   const prevOpenRef = React.useRef(open);
@@ -1489,11 +1548,12 @@ export function CopilotDesktopFloating({
           AIに聞く
         </button>
       )}
-      {open && (
+      {(open || openedOnce) && (
         <div
-          className="fixed inset-0 z-50 hidden sm:block"
-          role="dialog"
-          aria-modal="true"
+          className={open ? "fixed inset-0 z-50 hidden sm:block" : "hidden"}
+          role={open ? "dialog" : undefined}
+          aria-modal={open ? true : undefined}
+          aria-hidden={!open}
           aria-label="AI コパイロット"
           onKeyDown={onDialogKeyDown}
         >
@@ -1508,6 +1568,7 @@ export function CopilotDesktopFloating({
             className="absolute inset-y-0 right-0 flex w-[min(420px,90vw)] flex-col bg-white shadow-2xl dark:bg-zinc-950"
           >
             <CopilotPanel
+              active={open}
               question={question}
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}

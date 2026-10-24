@@ -11,8 +11,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 const captureException = vi.fn();
 vi.mock("@/lib/monitoring/sentry", () => ({
   captureException: (...args: unknown[]) => {
-    captureException(...args);
-    return Promise.resolve();
+    return captureException(...args) ?? Promise.resolve();
   },
 }));
 
@@ -116,7 +115,7 @@ describe("createCopilotResponseStream — 正常系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(3, undefined); // "ABC" のみ（フッター除外）
+    expect(onComplete).toHaveBeenCalledWith(3, undefined, "success"); // "ABC" のみ（フッター除外）
   });
 });
 
@@ -142,7 +141,7 @@ describe("createCopilotResponseStream — エラー系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(0, undefined); // throw 前に何も出ていない
+    expect(onComplete).toHaveBeenCalledWith(0, undefined, "failed"); // throw 前に何も出ていない
   });
 });
 
@@ -158,5 +157,121 @@ it("出力上限による切断を表示し、実測使用量を計上側に引�
   const onComplete = vi.fn();
   const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
   expect(out).toContain("[応答の途中終了]");
-  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage);
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage, "truncated");
+});
+
+it.each([401, 403])("marks HTTP %i rejection and skips the accounting completion callback", async (httpStatus) => {
+  const { CopilotProviderError, parseCopilotFailure } = await import("@/lib/copilot/errors");
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider: throwingProvider(new CopilotProviderError({ code: "provider_config", httpStatus, providerCode: "UNAUTHENTICATED" })), onComplete })));
+  expect(parseCopilotFailure(out).error?.code).toBe("provider_config");
+  expect(onComplete).not.toHaveBeenCalled();
+  expect(captureException.mock.calls[0]?.[0]).toMatchObject({ info: { code: "provider_config", httpStatus } });
+});
+it("sanitizes unknown exception contents before monitoring and preserves accounting", async () => {
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider: throwingProvider(new Error("private-prompt-key")), onComplete })));
+  expect(out).not.toContain("private-prompt-key");
+  expect(String(captureException.mock.calls[0]?.[0])).not.toContain("private-prompt-key");
+  expect(onComplete).toHaveBeenCalledOnce();
+});
+
+it("keeps conservative accounting when provider 5xx may follow generation work", async () => {
+  const { CopilotProviderError } = await import("@/lib/copilot/errors");
+  const onComplete = vi.fn();
+  await readAll(createCopilotResponseStream(baseInput({
+    provider: throwingProvider(new CopilotProviderError({ code: "temporary", httpStatus: 503 })),
+    onComplete,
+  })));
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(0, undefined, "failed");
+});
+
+it("sends the failure marker immediately and closes after bounded monitoring wait", async () => {
+  const { parseCopilotFailure } = await import("@/lib/copilot/errors");
+  vi.useFakeTimers();
+  try {
+    captureException.mockImplementationOnce(() => new Promise<void>(() => {}));
+    const onComplete = vi.fn();
+    const reader = createCopilotResponseStream(baseInput({ provider: throwingProvider(new Error("private-provider-error")), onComplete })).getReader();
+    const first = await reader.read();
+    const text = new TextDecoder().decode(first.value);
+    expect(parseCopilotFailure(text).error?.code).toBe("general");
+    expect(text).not.toContain("private-provider-error");
+    expect(first.done).toBe(false);
+    let closed = false;
+    const end = reader.read().then((value) => { closed = value.done; return value; });
+    await vi.advanceTimersByTimeAsync(1999);
+    expect(closed).toBe(false);
+    expect(onComplete).not.toHaveBeenCalled();
+    await vi.advanceTimersByTimeAsync(1);
+    expect((await end).done).toBe(true);
+    expect(onComplete).toHaveBeenCalledExactlyOnceWith(0, undefined, "failed");
+    expect(String(captureException.mock.calls[0]?.[0])).not.toContain("private-provider-error");
+    reader.releaseLock();
+  } finally { vi.useRealTimers(); }
+});
+
+it("does not treat received usage or STOP as success if the stream later fails", async () => {
+  const usage = { finishReason: "STOP", promptTokens: 10, outputTokens: 3, truncated: false };
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "partial";
+      params.onComplete?.(usage);
+      throw new Error("synthetic failure after metadata");
+    },
+  };
+  const onComplete = vi.fn();
+  await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(7, usage, "failed");
+});
+
+it.each(["timeout", "cancelled"] as const)("reports %s independently from cost accounting", async (outcome) => {
+  vi.useFakeTimers();
+  try {
+    const client = new AbortController();
+    const provider: LLMProvider = {
+      name: "gemini",
+      async *streamChat(params) {
+        yield "partial";
+        await new Promise<void>((_resolve, reject) => {
+          params.signal?.addEventListener("abort", () => reject(new DOMException("fixture", "AbortError")), { once: true });
+        });
+      },
+    };
+    const onComplete = vi.fn();
+    const response = readAll(createCopilotResponseStream(baseInput({ provider, onComplete, clientSignal: client.signal, timeoutMs: 100 })));
+    await vi.advanceTimersByTimeAsync(1);
+    if (outcome === "cancelled") client.abort();
+    else await vi.advanceTimersByTimeAsync(100);
+    const text = await response;
+    expect(onComplete).toHaveBeenCalledExactlyOnceWith(7, undefined, outcome);
+    expect(text.includes('"code":"timeout"')).toBe(outcome === "timeout");
+  } finally { vi.useRealTimers(); }
+});
+
+it("keeps a known auth rejection when metadata reading encounters the upstream deadline", async () => {
+  const { CopilotProviderError, parseCopilotFailure } = await import("@/lib/copilot/errors");
+  vi.useFakeTimers();
+  try {
+    const provider: LLMProvider = {
+      name: "gemini",
+      async *streamChat(params): AsyncIterable<string> {
+        await new Promise<void>((resolve) => params.signal?.addEventListener("abort", () => resolve(), { once: true }));
+        throw new CopilotProviderError({ code: "provider_config", httpStatus: 401 });
+      },
+    };
+    const onComplete = vi.fn();
+    const result = readAll(createCopilotResponseStream(baseInput({ provider, onComplete, timeoutMs: 100 })));
+    await vi.advanceTimersByTimeAsync(100);
+    expect(parseCopilotFailure(await result).error?.code).toBe("provider_config");
+    expect(onComplete).not.toHaveBeenCalled();
+  } finally { vi.useRealTimers(); }
+});
+
+it("reports a typed incomplete stream as truncated, matching the user-facing diagnostic", async () => {
+  const { CopilotProviderError } = await import("@/lib/copilot/errors");
+  const onComplete = vi.fn();
+  await readAll(createCopilotResponseStream(baseInput({ provider: throwingProvider(new CopilotProviderError({ code: "truncated" })), onComplete })));
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(0, undefined, "truncated");
 });

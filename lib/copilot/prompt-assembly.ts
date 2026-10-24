@@ -70,6 +70,10 @@ export function assembleCopilotPrompt(input: PromptAssemblyInput): PromptAssembl
 
   const system = [
     COPILOT_SYSTEM_PROMPT,
+    ...(selectedChoice === undefined ? [
+      "## 未解答の学習支援",
+      "学習者はまだ回答していません。正解や選択肢の正誤を明示的に求められるまでは、答えの記号・正解を特定できる説明を先に示さず、用語・考え方・着眼点のヒントから支援してください。",
+    ] : []),
     ...(characterPrompt ? [characterPrompt] : []),
     ...(responseLengthDirective ? [responseLengthDirective] : []),
     ...(ragDirective ? [ragDirective] : []),

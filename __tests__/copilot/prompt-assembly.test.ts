@@ -55,6 +55,12 @@ function baseInput(over: Partial<PromptAssemblyInput> = {}): PromptAssemblyInput
 }
 
 describe("assembleCopilotPrompt - minimal", () => {
+  it("未解答だけヒントを優先し、回答後は選択した答えを文脈へ渡す", () => {
+    expect(assembleCopilotPrompt(baseInput()).system).toContain("## 未解答の学習支援");
+    const answered = assembleCopilotPrompt(baseInput({ selectedChoice: "イ", isCorrect: false }));
+    expect(answered.system).not.toContain("## 未解答の学習支援");
+    expect(answered.system).toContain("選択: イ / 不正解");
+  });
   it("system は COPILOT_SYSTEM_PROMPT で始まり、常に問題コンテキストを含む", () => {
     const out = assembleCopilotPrompt(baseInput());
     expect(out.system.startsWith(COPILOT_SYSTEM_PROMPT)).toBe(true);

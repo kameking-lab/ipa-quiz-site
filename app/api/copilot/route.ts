@@ -174,9 +174,9 @@ export async function POST(req: Request) {
     onComplete: isRealProvider
       ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
         // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
-        async (outputChars, usage) => {
-          console.info("[copilot] completed", {
-            questionId: payload.question.id, model,
+        async (outputChars, usage, outcome) => {
+          console.info("[copilot] stream_settled", {
+            questionId: payload.question.id, model, outcome, outputChars,
             finishReason: usage?.finishReason,
             promptTokens: usage?.promptTokens,
             outputTokens: usage?.outputTokens,
