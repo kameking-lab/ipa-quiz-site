@@ -1,107 +1,148 @@
 import { act, cleanup, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
 import { renderToString } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { StudyPresence } from "@/components/StudyPresence";
-import { PRESENCE_EVENT } from "@/lib/study-presence";
+import { PRESENCE_EVENT, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { measuredPresence, PRESENCE_STATE_EVENT } from "@/lib/study-presence-contract";
 
-const zero = { count: 0, exams: [] };
+const zero: StudyPresenceSnapshot = { count: 0, exams: [] };
+const positive = { count: 2, exams: [{ exam: "fe", count: 2 }] };
 const suggestions = [{ name: "基本情報技術者", href: "/exams/fe" }];
-function emit(detail: unknown) {
-  act(() => { window.dispatchEvent(new CustomEvent(PRESENCE_EVENT, { detail })); });
+const fallbackLabel = "資格紹介 実際の学習人数ではありません";
+function emit(detail: unknown, name = PRESENCE_STATE_EVENT) {
+  act(() => { window.dispatchEvent(new CustomEvent(name, { detail })); });
 }
-function expectUnknownGuidance() {
+function measured(value = zero) {
+  return { mode: "measured", snapshot: measuredPresence(value, Date.now()), previous: null };
+}
+function expectGuidance() {
   expect(screen.getByRole("region", { name: "学習のご案内" })).toBeVisible();
+  expect(screen.getByText(fallbackLabel)).toBeVisible();
   expect(screen.getByRole("link", { name: "資格から問題を探す" })).toHaveAttribute("href", "#home-directory-title");
   expect(screen.getByRole("link", { name: "基本情報技術者の問題を見る" })).toHaveAttribute("href", "/exams/fe");
-  expect(screen.queryByText("学習中の資格はまだありません。")).toBeNull();
-  expect(screen.queryByText(/人が.*を学んでいます|直近2分/)).toBeNull();
-  expect(screen.queryByTitle(/直近2分/)).toBeNull();
+  expect(screen.queryByText(/人が.*を学習しました|学習人数は0人|直近2分/)).toBeNull();
 }
 afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("public qualification guidance", () => {
-  it("renders neutral guidance on the server and keeps the initial region on unknown updates", () => {
+  it("renders labeled guidance on the server and rejects legacy or unverified counts", () => {
     const html = renderToString(<TotalAnswerCounter suggestions={suggestions} />);
-    expect(html).toContain("資格から問題を探す");
-    expect(html).not.toMatch(/学習中の資格はまだありません|直近2分/);
+    expect(html).toContain(fallbackLabel);
+    expect(html).not.toMatch(/学習人数は0人|直近2分/);
     render(<TotalAnswerCounter suggestions={suggestions} />);
     const region = screen.getByRole("region");
-    expectUnknownGuidance();
-    for (const detail of [null, { count: null, exams: null }, { count: 2, exams: [] }]) {
-      emit(detail);
-      expectUnknownGuidance();
-      expect(screen.getByRole("region")).toBe(region);
+    expect(region).toHaveAttribute("data-study-presence-viewer");
+    for (const detail of [null, { mode: "measured", snapshot: positive }, { mode: "demo", snapshot: positive }]) {
+      emit(detail); expectGuidance(); expect(screen.getByRole("region")).toBe(region);
     }
-    expect(screen.queryByText(/最近|追加しました/)).toBeNull();
+    emit(positive, PRESENCE_EVENT); expectGuidance();
   });
-  it("distinguishes measured zero, positive counts and a return to unknown", () => {
+  it("distinguishes fresh zero and positive measurements, stale history and expiration", async () => {
+    vi.useFakeTimers();
     render(<TotalAnswerCounter suggestions={suggestions} />);
     const region = screen.getByRole("region");
-    emit(zero);
-    expect(screen.getByText("学習中の資格はまだありません。")).toBeVisible();
-    expect(screen.getByText(/直近2分の学習状況/)).toBeVisible();
+    emit(measured());
+    expect(screen.getByText("直近5分の学習人数は0人です。")).toBeVisible();
     expect(screen.getAllByRole("link")).toHaveLength(2);
-    emit({ count: 2, exams: [{ exam: "fe", count: 2 }] });
-    expect(screen.getByRole("listitem")).toHaveTextContent("今2人が基本情報技術者を学んでいます。");
+    emit(measured(positive));
+    expect(screen.getByRole("listitem")).toHaveTextContent("直近5分に2人が基本情報技術者を学習しました。");
     expect(screen.queryByRole("link")).toBeNull();
-    expect(screen.queryByText("学習中の資格はまだありません。")).toBeNull();
-    emit(null);
-    expectUnknownGuidance();
+    emit({ mode: "stale", snapshot: null, previous: measured(positive).snapshot, reason: "unavailable" });
+    expectGuidance();
+    expect(screen.getByText("学習状況の更新を待っています。")).toBeVisible();
+    emit(measured(positive));
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
+    expectGuidance();
     expect(screen.getByRole("region")).toBe(region);
   });
-  it("offers the public directory even when no suggestions are provided", () => {
+  it("offers the directory without suggestions", () => {
     render(<TotalAnswerCounter />);
-    for (const detail of [null, zero, { count: null, exams: null }]) {
+    for (const detail of [null, measured(), { mode: "promotion", snapshot: null }]) {
       emit(detail);
       expect(screen.getAllByRole("link")).toHaveLength(1);
       expect(screen.getByRole("link")).toHaveTextContent("資格から問題を探す");
     }
   });
-  it("retains guidance across API failure, recovery, backgrounding, inactivity and timeout", async () => {
+  it("paginates real aggregates without adding seats or retaining stale people", () => {
+    render(<TotalAnswerCounter suggestions={suggestions} />);
+    emit(measured({ count: 25, exams: [{ exam: "fe", count: 14 }, { exam: "ip", count: 11 }] }));
+    expect(screen.getAllByRole("button", { name: /チワワ/ })).toHaveLength(12);
+    act(() => screen.getByRole("button", { name: "次の部屋" }).click());
+    expect(screen.getAllByRole("button", { name: /基本情報技術者のチワワ/ })).toHaveLength(2);
+    expect(screen.getAllByRole("button", { name: /ITパスポートのチワワ/ })).toHaveLength(10);
+    act(() => screen.getByRole("button", { name: "次の部屋" }).click());
+    expect(screen.getAllByRole("button", { name: /チワワ/ })).toHaveLength(1);
+    expect(screen.getByRole("button", { name: "次の部屋" })).toBeDisabled();
+    emit({ mode: "stale", previous: measured(positive).snapshot, reason: "unavailable" });
+    expectGuidance();
+    expect(screen.queryByRole("navigation", { name: "自習室の部屋を選ぶ" })).toBeNull();
+    expect(screen.queryByText(/全25人|この部屋.*人/)).toBeNull();
+    emit(measured());
+    expect(screen.queryByRole("button", { name: /チワワ/ })).toBeNull();
+    expect(screen.getByText("直近5分の学習人数は0人です。")).toBeVisible();
+  });
+  it("offers real qualification selection and a reversible motion control in promotion", () => {
+    render(<TotalAnswerCounter suggestions={suggestions} />);
+    expectGuidance();
+    const seat = screen.getAllByRole("button", { name: /基本情報技術者のチワワ（資格紹介）/ })[0];
+    act(() => seat.click());
+    expect(seat).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("link", { name: "基本情報技術者へ" })).toHaveAttribute("href", "/exams/fe");
+    act(() => screen.getByRole("button", { name: "動きを止める" }).click());
+    expect(screen.getByRole("button", { name: "動きを再開" })).toHaveAttribute("aria-pressed", "true");
+    act(() => screen.getByRole("button", { name: "動きを再開" }).click());
+    expect(screen.getByRole("button", { name: "動きを止める" })).toHaveAttribute("aria-pressed", "false");
+    expect(screen.queryByRole("spinbutton")).toBeNull();
+    expect(screen.queryByRole("button", { name: /人数デモ|取得失敗|反映/ })).toBeNull();
+  });
+  it("integrates real client events across failure, recovery, backgrounding, idle and timeout", async () => {
     vi.useFakeTimers();
     vi.spyOn(navigator, "userAgent", "get").mockReturnValue("Mozilla/5.0");
-    Object.defineProperty(navigator, "webdriver", { configurable: true, value: false });
     let visible = "visible";
     vi.spyOn(document, "visibilityState", "get").mockImplementation(() => visible as DocumentVisibilityState);
-    const fetcher = vi.fn().mockResolvedValue({ ok: true, json: async () => zero });
+    const response = (value = zero) => ({ ok: true, status: 200, headers: new Headers(), json: async () => measuredPresence(value, Date.now()) });
+    const fetcher = vi.fn().mockImplementation(async () => response());
     vi.stubGlobal("fetch", fetcher);
     render(<><StudyPresence /><TotalAnswerCounter suggestions={suggestions} /></>);
-    expectUnknownGuidance();
+    expectGuidance();
     await act(async () => { await vi.advanceTimersByTimeAsync(1); });
-    expect(screen.getByText("学習中の資格はまだありません。")).toBeVisible();
-    fetcher.mockResolvedValue({ ok: false, status: 503, json: async () => ({ count: null, exams: null }) });
-    await act(async () => { await vi.advanceTimersByTimeAsync(30_000); });
-    expectUnknownGuidance();
-    fetcher.mockResolvedValue({ ok: true, json: async () => zero });
-    await act(async () => { await vi.advanceTimersByTimeAsync(30_000); });
-    expect(screen.getByText("学習中の資格はまだありません。")).toBeVisible();
+    expect(screen.getByText("直近5分の学習人数は0人です。")).toBeVisible();
+    fetcher.mockResolvedValue({ ok: false, status: 503, headers: new Headers(), json: async () => ({ count: null, exams: null }) });
+    act(() => window.dispatchEvent(new Event("pointerdown")));
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
+    expectGuidance();
+    fetcher.mockImplementation(async () => response(positive));
+    act(() => window.dispatchEvent(new Event("pointerdown")));
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
+    expect(screen.getByRole("listitem")).toHaveTextContent("直近5分に2人が基本情報技術者を学習しました。");
     visible = "hidden";
     act(() => document.dispatchEvent(new Event("visibilitychange")));
-    expectUnknownGuidance();
+    expectGuidance();
     const hiddenCalls = fetcher.mock.calls.length;
-    await act(async () => { await vi.advanceTimersByTimeAsync(30_000); });
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
     expect(fetcher).toHaveBeenCalledTimes(hiddenCalls);
     visible = "visible";
     act(() => document.dispatchEvent(new Event("visibilitychange")));
-    await act(async () => { await vi.advanceTimersByTimeAsync(30_000); });
-    expect(screen.getByText("学習中の資格はまだありません。")).toBeVisible();
+    await act(async () => { await vi.advanceTimersByTimeAsync(1); });
+    expect(screen.getByRole("listitem")).toHaveTextContent("直近5分に2人が基本情報技術者を学習しました。");
     await act(async () => { await vi.advanceTimersByTimeAsync(120_000); });
-    expectUnknownGuidance();
+    expectGuidance();
     const idleCalls = fetcher.mock.calls.length;
-    await act(async () => { await vi.advanceTimersByTimeAsync(30_000); });
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
     expect(fetcher).toHaveBeenCalledTimes(idleCalls);
     fetcher.mockImplementation((_url: string, init: RequestInit) => new Promise((_resolve, reject) => {
       init.signal?.addEventListener("abort", () => reject(new Error("timeout")));
     }));
-    emit(zero);
     act(() => window.dispatchEvent(new Event("pointerdown")));
-    await act(async () => { await vi.advanceTimersByTimeAsync(8_000); });
+    await act(async () => { await vi.advanceTimersByTimeAsync(8_001); });
     expect(fetcher.mock.calls.at(-1)?.[1].signal.aborted).toBe(true);
-    expectUnknownGuidance();
-    fetcher.mockResolvedValue({ ok: true, json: async () => ({ count: 2, exams: [{ exam: "fe", count: 2 }] }) });
-    await act(async () => { await vi.advanceTimersByTimeAsync(60_000); });
-    expect(screen.getByRole("listitem")).toHaveTextContent("今2人が基本情報技術者を学んでいます。");
+    expectGuidance();
+    fetcher.mockImplementation(async () => response(positive));
+    act(() => window.dispatchEvent(new Event("pointerdown")));
+    await act(async () => { await vi.advanceTimersByTimeAsync(90_000); });
+    expect(screen.getByRole("listitem")).toHaveTextContent("直近5分に2人が基本情報技術者を学習しました。");
     expect(fetcher.mock.calls.every(([, init]) => init.method === "GET")).toBe(true);
   });
 });

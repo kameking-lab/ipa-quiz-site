@@ -1,33 +1,34 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 const { record, read, legacy } = vi.hoisted(() => ({ record: vi.fn(), read: vi.fn(), legacy: vi.fn() }));
 vi.mock("@/lib/study-presence-store", () => ({ recordStudyPresence: record, readStudyPresence: read, recordLegacyStudyPresence: legacy }));
-import { GET, POST } from "@/app/api/stats/study-presence/route";
+let GET: typeof import("@/app/api/stats/study-presence/route").GET;
+let POST: typeof import("@/app/api/stats/study-presence/route").POST;
 const id = "00000000-0000-4000-8000-000000000001";
 const data = { count: 3, exams: [{ exam: "fe", count: 2 }, { exam: "denko2", count: 1 }] };
 const body = { visitorId: id, idleMs: 20_000, exam: "fe" };
 const req = (value: unknown = body, origin = "https://www.kakomon-ai.jp", extra = {}) => new Request("https://www.kakomon-ai.jp/api/stats/study-presence", {
   method: "POST", headers: { Origin: origin, "Content-Type": "application/json", ...extra }, body: JSON.stringify(value),
 });
-beforeEach(() => { vi.stubEnv("DATABASE_URL", "postgresql://test"); vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("VERCEL_ENV", "production"); record.mockReset(); read.mockReset(); legacy.mockReset(); });
-afterEach(() => vi.unstubAllEnvs());
+beforeEach(async () => { vi.resetModules(); vi.useFakeTimers(); vi.setSystemTime(new Date("2026-10-23T10:00:00Z")); ({ GET, POST } = await import("@/app/api/stats/study-presence/route")); vi.stubEnv("DATABASE_URL", "postgresql://test"); vi.stubEnv("NODE_ENV", "production"); vi.stubEnv("VERCEL_ENV", "production"); record.mockReset(); read.mockReset(); legacy.mockReset(); });
+afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 describe("presence endpoint", () => {
   it("returns only uncached qualification counts from storage", async () => {
     record.mockResolvedValue(data);
     const response = await POST(req());
-    expect(await response.json()).toEqual(data);
+    expect(await response.json()).toMatchObject({ ...data, status: "measured", measuredAt: "2026-10-23T10:00:00.000Z", validUntil: "2026-10-23T10:01:30.000Z", windowSeconds: 300 });
     expect(record).toHaveBeenCalledWith(id, 20_000, "fe", undefined);
     expect(response.headers.get("cache-control")).toBe("no-store");
   });
   it("reads a home snapshot without recording the visitor", async () => {
     read.mockResolvedValue(data);
     const response = await GET(new Request("https://www.kakomon-ai.jp/api/stats/study-presence"));
-    expect(await response.json()).toEqual(data); expect(record).not.toHaveBeenCalled();
+    expect(await response.json()).toMatchObject({ ...data, status: "measured", measuredAt: "2026-10-23T10:00:00.000Z", validUntil: "2026-10-23T10:01:30.000Z", windowSeconds: 300 }); expect(record).not.toHaveBeenCalled();
   });
   it("keeps a measured zero distinct from unavailable data", async () => {
     read.mockResolvedValue({ count: 0, exams: [] });
-    expect(await (await GET(new Request("https://www.kakomon-ai.jp/api/stats/study-presence"))).json()).toEqual({ count: 0, exams: [] });
-    read.mockRejectedValue(new Error("offline"));
-    expect(await (await GET(new Request("https://www.kakomon-ai.jp/api/stats/study-presence"))).json()).toEqual({ count: null, exams: null });
+    expect(await (await GET(new Request("https://www.kakomon-ai.jp/api/stats/study-presence"))).json()).toMatchObject({ count: 0, exams: [], status: "measured" });
+    vi.advanceTimersByTime(90_000); read.mockRejectedValue(new Error("offline"));
+    expect(await (await GET(new Request("https://www.kakomon-ai.jp/api/stats/study-presence"))).json()).toMatchObject({ count: null, exams: null, status: "unavailable" });
   });
   it("rejects cross-origin requests", async () => {
     expect((await POST(req(undefined, "https://other.example"))).status).toBe(403); expect(record).not.toHaveBeenCalled();
@@ -51,7 +52,7 @@ describe("presence endpoint", () => {
   it("does not invent a zero on storage or migration failure", async () => {
     record.mockRejectedValue(new Error("missing exam column"));
     const response = await POST(req()); expect(response.status).toBe(503);
-    expect(await response.json()).toEqual({ count: null, exams: null });
+    expect(await response.json()).toMatchObject({ count: null, exams: null, status: "unavailable" });
   });
 });
 
@@ -74,7 +75,7 @@ it("preserves legacy zero while propagating legacy storage failure as unavailabl
   expect(await (await POST(req({ visitorId: id, idleMs: 0 }))).json()).toEqual({ count: 0 });
   legacy.mockRejectedValue(new Error("offline"));
   const response = await POST(req({ visitorId: id, idleMs: 0 }));
-  expect(response.status).toBe(503); expect(await response.json()).toEqual({ count: null, exams: null });
+  expect(response.status).toBe(503); expect(await response.json()).toMatchObject({ count: null, exams: null, status: "unavailable" });
 });
 it("keeps origin, bot, preview and identifier checks on legacy heartbeats", async () => {
   const old = { visitorId: id, idleMs: 0 };
@@ -83,4 +84,13 @@ it("keeps origin, bot, preview and identifier checks on legacy heartbeats", asyn
   expect((await POST(req({ ...old, visitorId: "bad" }))).status).toBe(400);
   vi.stubEnv("VERCEL_ENV", "preview"); expect((await POST(req(old))).status).toBe(503);
   expect(legacy).not.toHaveBeenCalled();
+});
+
+it("returns Retry-After and blocks both reads and writes during the same circuit cooldown", async () => {
+  read.mockRejectedValue(new Error("offline"));
+  const request = new Request("https://www.kakomon-ai.jp/api/stats/study-presence");
+  expect((await GET(request)).headers.get("retry-after")).toBe("90");
+  expect((await POST(req())).status).toBe(503);
+  expect((await GET(request)).status).toBe(503);
+  expect(read).toHaveBeenCalledOnce(); expect(record).not.toHaveBeenCalled();
 });

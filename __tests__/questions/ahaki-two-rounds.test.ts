@@ -12,20 +12,20 @@ const all = [...AHAKI_ANMA_QUESTIONS, ...AHAKI_HARI_KYUU_QUESTIONS];
 const keys = ["ア", "イ", "ウ", "エ"];
 
 describe("Ahaki official booklet partial publication", () => {
-  it("registers only the 677 saved, source-matched originals from the two rounds", async () => {
-    expect(all).toHaveLength(677);
-    expect(new Set(all.map((q) => q.id)).size).toBe(677);
-    expect(source.localCandidateOriginals).toBe(677);
+  it("registers only the 678 saved, source-matched originals from the two rounds", async () => {
+    expect(all).toHaveLength(678);
+    expect(new Set(all.map((q) => q.id)).size).toBe(678);
+    expect(source.localCandidateOriginals).toBe(678);
     expect(source.officialPaperOriginals).toBe(680);
-    expect(source.heldOriginals).toBe(3);
-    expect(source.heldIds).toHaveLength(3);
-    expect(coverage.sections.reduce((total, section) => total + section.numbers.length, 0)).toBe(3);
+    expect(source.heldOriginals).toBe(2);
+    expect(source.heldIds).toHaveLength(2);
+    expect(coverage.sections.reduce((total, section) => total + section.numbers.length, 0)).toBe(2);
     expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2025)).toHaveLength(159);
     expect(all.filter((q) => q.exam === "ahaki-anma" && q.year === 2026)).toHaveLength(159);
-    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2025)).toHaveLength(179);
+    expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2025)).toHaveLength(180);
     expect(all.filter((q) => q.exam === "ahaki-hari-kyu" && q.year === 2026)).toHaveLength(180);
     expect(await getQuestionsForExam("ahaki-anma")).toHaveLength(318);
-    expect(await getQuestionsForExam("ahaki-hari-kyu")).toHaveLength(359);
+    expect(await getQuestionsForExam("ahaki-hari-kyu")).toHaveLength(360);
     expect(getAvailableExams()).toContain("ahaki-anma");
     expect(getAvailableExams()).toContain("ahaki-hari-kyu");
     expect(isExamPublished("ahaki-anma")).toBe(true);
@@ -61,7 +61,7 @@ describe("Ahaki official booklet partial publication", () => {
     expect(AHAKI_HARI_KYUU_QUESTIONS.filter((q) => q.qNumber >= 171 && q.qNumber <= 180)).toHaveLength(20);
     const ids = new Set(all.map((q) => q.id));
     const heldRouteIds = coverage.sections.flatMap((section) => section.numbers.map((number) => `${section.exam}-${section.year}-annual-${section.session}-q${number}`));
-    expect(new Set(heldRouteIds).size).toBe(3);
+    expect(new Set(heldRouteIds).size).toBe(2);
     for (const identity of source.heldIds) {
       const parts = /^(33|34)-(anma-massage-shiatsushi|hari-kyu)-(\d+)$/.exec(identity);
       expect(parts, identity).not.toBeNull();

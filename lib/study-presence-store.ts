@@ -5,6 +5,15 @@ import { canonicalPresenceExam, parseStudyPresence, PRESENCE_WINDOW_MS, presence
 
 const expire = () => prisma.$executeRaw`DELETE FROM "StudyPresence"
   WHERE "lastSeenAt" <= NOW() - ${PRESENCE_WINDOW_MS} * INTERVAL '1 millisecond'`;
+const CLEANUP_INTERVAL_MS = 15 * 60_000;
+let nextCleanupAt = 0;
+function cleanupOnWrite() {
+  if (Date.now() < nextCleanupAt) return [];
+  // Reserve before awaiting: concurrent writes in this instance cannot all clean up.
+  // Expiry is always enforced by SELECT, even when cleanup fails or is delayed.
+  nextCleanupAt = Date.now() + CLEANUP_INTERVAL_MS;
+  return [expire()];
+}
 const aggregate = () => prisma.$queryRaw<Array<{ exam: string; count: bigint }>>`
   SELECT "exam", COUNT(*) AS count FROM "StudyPresence"
   WHERE "exam" IS NOT NULL AND "lastSeenAt" > NOW() - ${PRESENCE_WINDOW_MS} * INTERVAL '1 millisecond'
@@ -24,8 +33,7 @@ function snapshot(rows: Array<{ exam: string; count: bigint }>): StudyPresenceSn
 
 // Home/selection pages only read; they never create a learner or extend a study window.
 export async function readStudyPresence(): Promise<StudyPresenceSnapshot> {
-  const [, rows] = await prisma.$transaction([expire(), aggregate()]);
-  return snapshot(rows);
+  return snapshot(await aggregate());
 }
 
 // Both client formats share one hash row; the newest activity determines its qualification.
@@ -40,7 +48,7 @@ function recordOps(visitorId: string, idleMs: number, canonical: string | null, 
       ON CONFLICT ("id") DO UPDATE
       SET "lastSeenAt" = EXCLUDED."lastSeenAt", "exam" = EXCLUDED."exam"
       WHERE "StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"`,
-    expire(),
+    ...cleanupOnWrite(),
   ];
 }
 

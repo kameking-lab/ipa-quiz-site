@@ -190,7 +190,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shika-ishi", name: "歯科医師", sub: "第119・118回の問題A〜D（公式採点除外を除く）", domain: "welfare" },
   { code: "yakuzaishi", name: "薬剤師", sub: "第111・110回の確認済み359原問を部分収録", domain: "welfare" },
   { code: "ahaki-anma", name: "あん摩マッサージ指圧師", sub: "第34・33回の確認済み318原問を部分収録", domain: "welfare" },
-  { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用359原問を部分収録", domain: "welfare" },
+  { code: "ahaki-hari-kyu", name: "はり師・きゅう師", sub: "第34・33回の共通・専用360原問", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {

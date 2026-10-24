@@ -60,8 +60,9 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
       </div>
       <p role="status" aria-live="polite" className="study-results-label">{browsing ? "よく選ばれる資格" : `${matching.length}資格・区分`}</p>
       {visible.length > 0 ? <ul className="study-results">
-        {visible.map((item) => <li key={item.key}><a href={item.href} className="study-qualification" onClick={rememberFilters}>
+        {visible.map((item) => <li key={item.key}><a href={item.href} className={`study-qualification study-card-${item.domainId}`} onClick={rememberFilters}>
           <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問 · {item.periodLabel}</span></span>
+          <span aria-hidden="true" className={`study-mascot study-card-mascot study-pose-${({ it: 0, safety: 1, electrical: 5, construction: 7, money: 11, welfare: 6 } as const)[item.domainId]}`} />
           <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
         </a></li>)}
       </ul> : <div className="study-empty"><p>該当する資格が見つかりませんでした。</p><button type="button" onClick={() => { setQuery(""); setDomainId(null); }} className="min-h-11 underline underline-offset-4">検索をクリアして選び直す</button></div>}
