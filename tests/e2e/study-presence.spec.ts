@@ -3,7 +3,7 @@ import type { PresenceViewState } from "../../lib/study-presence-contract";
 import type { StudyPresenceSnapshot } from "../../lib/study-presence";
 
 // Explicit synthetic UI fixtures: no heartbeat or production learner is recorded.
-const fallbackLabel = "資格紹介 実際の学習人数ではありません";
+const fallbackLabel = "資格紹介";
 type MeasuredState = Extract<PresenceViewState, { mode: "measured" }>;
 test.use({ serviceWorkers: "block" });
 test.beforeEach(async ({ page }) => {
@@ -25,7 +25,7 @@ async function show(page: Page, state: PresenceViewState) {
   await expect.poll(async () => {
     await page.evaluate(value => window.dispatchEvent(new CustomEvent("study-presence-state", { detail: value })), state);
     return viewer.getAttribute("aria-label");
-  }).toBe(state.mode === "measured" ? "今学んでいる仲間" : "学習のご案内");
+  }).toBe(state.mode === "measured" ? "直近5分の学習状況" : "学習のご案内");
 }
 async function expectBounded(page: Page) {
   const viewer = page.locator("[data-study-presence-viewer]");
@@ -33,16 +33,15 @@ async function expectBounded(page: Page) {
   expect(await viewer.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 }
-async function expectGuidance(page: Page, stale: boolean) {
+async function expectGuidance(page: Page) {
   const guidance = page.getByRole("region", { name: "学習のご案内" });
-  await expect(guidance.locator(".study-room-state")).toBeVisible();
-  await expect(guidance.locator(".study-room-state")).toContainText(fallbackLabel);
-  await expect(guidance.getByRole("link", { name: "資格から問題を探す", exact: true })).toHaveAttribute("href", "#home-directory-title");
+  await expect(guidance.getByText(fallbackLabel, { exact: true })).toBeVisible();
+  await expect(guidance.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveAttribute("href", "#choose-qualification");
   const suggestions = guidance.locator(".study-room-guidance li a");
   await expect(suggestions).toHaveCount(6);
   for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
   await expect(guidance.getByRole("link")).toHaveCount(7);
-  await expect(guidance.getByText("学習状況の更新を待っています。", { exact: true })).toHaveCount(stale ? 1 : 0);
+  await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);
   await expect(guidance.getByText(/人が.*を学習しました|学習人数は0人|直近2分|全\d+人|この部屋.*人/)).toHaveCount(0);
@@ -52,20 +51,20 @@ async function expectGuidance(page: Page, stale: boolean) {
 test("qualification presence is compact on desktop and mobile and distinguishes zero/failure", async ({ page }) => {
   await page.clock.install();
   await page.goto("/");
-  await expectGuidance(page, false);
+  await expectGuidance(page);
   const data = { count: 4, exams: [{ exam: "fe", count: 3 }, { exam: "denko2", count: 1 }] };
   for (const width of [1280, 390, 320]) {
     await page.setViewportSize({ width, height: 800 });
     const fresh = await measured(page, data);
     await show(page, fresh);
-    const region = page.getByRole("region", { name: "今学んでいる仲間" });
+    const region = page.getByRole("region", { name: "直近5分の学習状況" });
     await expect(region.getByRole("list", { name: "資格別の学習人数" }).getByRole("listitem")).toHaveText([
       "直近5分に3人が基本情報技術者を学習しました。", "直近5分に1人が第二種電気工事士を学習しました。",
     ]);
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
     await expect(region.getByRole("button", { name: /チワワ（集計人数のイメージ）/ })).toHaveCount(4);
-    await expect(region.getByText("直近5分の学習状況・同じブラウザは1人", { exact: true })).toBeVisible();
+    await expect(region.getByText("同じブラウザは1人として集計", { exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByText(/直近2分/)).toHaveCount(0);
     await expectBounded(page);
@@ -80,9 +79,9 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expectBounded(page);
 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
-    await expectGuidance(page, true);
+    await expectGuidance(page);
     await show(page, { mode: "promotion", snapshot: null, previous: null, reason: "unavailable" });
-    await expectGuidance(page, false);
+    await expectGuidance(page);
   }
 
   // Replaying cached data retains its original deadline rather than refreshing it.
@@ -92,13 +91,13 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
   await show(page, cached);
   await expect(page.locator("[data-study-presence-viewer] time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
   await page.clock.fastForward(45_001);
-  await expectGuidance(page, true);
+  await expectGuidance(page);
 });
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");
   const codes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "denko2", "denken3"];
   await show(page, await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) }));
-  const region = page.getByRole("region", { name: "今学んでいる仲間" });
+  const region = page.getByRole("region", { name: "直近5分の学習状況" });
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
   await expect(region.locator(".study-room-total")).toHaveText("15人");
@@ -132,11 +131,9 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   await expect(seat).toHaveAttribute("aria-pressed", "true");
   await page.keyboard.press("Enter");
   await expect(seat).toHaveAttribute("aria-pressed", "false");
-  await region.getByRole("button", { name: "動きを止める" }).click();
-  await expect(region.getByRole("button", { name: "動きを再開" })).toHaveAttribute("aria-pressed", "true");
-  expect(await region.locator(".study-room-scene .study-mascot").evaluateAll(elements => elements.every(el => getComputedStyle(el).animationName === "none"))).toBe(true);
-  await region.getByRole("button", { name: "動きを再開" }).click();
-  await expect(region.getByRole("button", { name: "動きを止める" })).toHaveAttribute("aria-pressed", "false");
+  await expect(region.getByRole("button", { name: /動き/ })).toHaveCount(0);
+  await expect(region.getByText("静止表示", { exact: true })).toHaveCount(0);
+  await expect(region.locator(".study-room-scene")).toHaveAttribute("data-motion-visible", "true");
   await page.emulateMedia({ reducedMotion: "reduce" });
   expect(await region.locator(".study-room-scene .study-mascot").evaluateAll(elements => elements.every(el => getComputedStyle(el).animationName === "none"))).toBe(true);
   await expectBounded(page);

@@ -1,3 +1,4 @@
+import { mergeStAccepted399 } from "./accepted399-20261024";
 import { applyIpaCorrections } from "../corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 import type { Question } from "@/lib/questions/types";
@@ -6,7 +7,7 @@ import choiceExplanations from "./choice-explanations-2024-2025.json";
 
 const RAW_ST_QUESTIONS: Question[] = BY_YEAR_QUESTIONS;
 
-export const ST_QUESTIONS: Question[] = applyChoiceExplanationOverlay(
+export const ST_QUESTIONS: Question[] = mergeStAccepted399(applyChoiceExplanationOverlay(
   applyIpaCorrections("st", RAW_ST_QUESTIONS),
   choiceExplanations,
-);
+));

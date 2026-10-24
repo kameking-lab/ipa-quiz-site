@@ -5,7 +5,7 @@ import { HomeQualificationFinder } from "@/components/home/landing/HomeQualifica
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 const domains = getHomeDirectory();
-beforeEach(() => { cleanup(); window.history.replaceState(null, ""); });
+beforeEach(() => { cleanup(); window.history.replaceState(null, "", "/"); });
 describe("qualification discovery", () => {
   it("searches normalized abbreviations and starts only the selected qualification", () => {
     render(<HomeQualificationFinder domains={domains} />);
@@ -24,7 +24,19 @@ describe("qualification discovery", () => {
     expect(screen.getByText("該当する資格が見つかりませんでした。")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "検索をクリアして選び直す" }));
     expect(screen.getByRole("searchbox")).toHaveValue("");
+    expect(screen.getByRole("searchbox")).toHaveFocus();
     expect(screen.getByRole("link", { name: /^ITパスポート/ })).toHaveAttribute("href", "/ip");
+  });
+  it("returns focus to search when its clear control disappears", () => {
+    render(<HomeQualificationFinder domains={domains} />);
+    const search = screen.getByRole("searchbox");
+    fireEvent.change(search, { target: { value: "FP" } });
+    const clear = screen.getByRole("button", { name: "検索をクリア" });
+    clear.focus();
+    fireEvent.click(clear);
+    expect(search).toHaveValue("");
+    expect(search).toHaveFocus();
+    expect(search).toHaveAttribute("aria-controls", "qualification-results");
   });
   it("restores the search and domain from the same history entry without losing router state", () => {
     window.history.replaceState({ routerMarker: "preserved" }, "");
@@ -40,6 +52,46 @@ describe("qualification discovery", () => {
     expect(screen.getByRole("searchbox")).toHaveValue("ｓｃ");
     expect(screen.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByRole("link", { name: /情報処理安全確保支援士/ })).toHaveAttribute("href", "/sc");
+  });
+  it.each(["pageshow", "popstate"])("restores filters when %s arrives after mount", (eventName) => {
+    render(<HomeQualificationFinder domains={domains} />);
+    window.history.replaceState({ routerMarker: "kept", homeQualificationFinder: { query: "ＦＰ3", domainId: "money" } }, "");
+    fireEvent(window, new Event(eventName));
+    expect(screen.getByRole("searchbox")).toHaveValue("ＦＰ3");
+    expect(screen.getByRole("button", { name: "お金・不動産・経営" })).toHaveAttribute("aria-pressed", "true");
+    expect(window.history.state.routerMarker).toBe("kept");
+  });
+  it("restores home filters from the URL even before custom history state is available", () => {
+    window.history.replaceState({ routerMarker: "kept" }, "", "/?source=kept#choose-qualification");
+    const view = render(<HomeQualificationFinder domains={domains} />);
+    fireEvent.click(screen.getByRole("button", { name: "お金・不動産・経営" }));
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "ＦＰ3" } });
+    const card = screen.getByRole("link", { name: /^FP3級/ });
+    card.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(card);
+    const url = new URL(window.location.href);
+    expect(url.searchParams.get("q")).toBe("ＦＰ3");
+    expect(url.searchParams.get("domain")).toBe("money");
+    expect(url.searchParams.get("source")).toBe("kept");
+    expect(url.hash).toBe("#choose-qualification");
+    expect(window.history.state.routerMarker).toBe("kept");
+    view.unmount();
+    window.history.replaceState(null, "");
+    render(<HomeQualificationFinder domains={domains} />);
+    expect(screen.getByRole("searchbox")).toHaveValue("ＦＰ3");
+    expect(screen.getByRole("button", { name: "お金・不動産・経営" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: "検索をクリア" }));
+    expect(new URL(window.location.href).searchParams.has("q")).toBe(false);
+  });
+  it("does not add home search parameters to another page using the finder", () => {
+    window.history.replaceState(null, "", "/qualifications");
+    render(<HomeQualificationFinder domains={domains} />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "FP3" } });
+    const card = screen.getByRole("link", { name: /^FP3級/ });
+    card.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(card);
+    expect(window.location.pathname).toBe("/qualifications");
+    expect(window.location.search).toBe("");
   });
   it("keeps the preview and full-directory entry available before navigation", () => {
     render(<HomeQualificationFinder domains={domains} preview={<p>既存の問題プレビュー</p>} />);
