@@ -370,6 +370,20 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
+        {code === "st" && parsed.year === 2009 && parsed.season === "autumn" && (
+          <aside aria-label="午前Ⅱ 問23の別教材" className="mb-8 rounded-2xl border border-border bg-card px-4 py-3 text-sm">
+            <Link
+              href="/st/past-papers/notes/st-2009a-am2-q23"
+              className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4"
+            >
+              午前Ⅱ 問23：注記付き・非採点教材
+            </Link>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              通常の採点問題とは別に、留保を確認しながら学べます。
+            </p>
+          </aside>
+        )}
+
         <QuestionListWithFilter groups={sessionGroups} exam={code} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
       </div>
     </main>

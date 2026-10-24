@@ -13,7 +13,7 @@ export function HomeHero({ domains }: { domains: readonly HomeDirectoryDomain[] 
     <div className="study-welcome">
       <div className="study-welcome-copy">
         <p className="study-eyebrow">チワワと、こつこつ。資格の学びを。</p>
-        <h1>今日の一問が、<br />明日の自信になる。</h1>
+        <h1>過去問の勉強を、<br />ここひとつで。</h1>
         <p className="study-welcome-description">目標はそれぞれ。学ぶ時間は、ちょっと楽しく。<br />あなたの資格の勉強に、小さな相棒を。</p>
         <div className="study-welcome-actions">
           <a href="#choose-qualification" className="study-primary">学ぶ資格を選ぶ<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
@@ -24,7 +24,6 @@ export function HomeHero({ domains }: { domains: readonly HomeDirectoryDomain[] 
       <div className="study-welcome-art">
         <Image src="/images/home/hero-reading-nook.webp" width={1402} height={1122} sizes="(max-width: 767px) 100vw, 55vw" alt="紺のはちまきと緑の保護帽のチワワが、木もれびの図書室で一緒に学ぶイラスト" priority unoptimized />
         <div className="study-paper-note">今日も、あなたのペースで。<span>ONE LITTLE STEP AT A TIME.</span></div>
-        <p className="study-art-caption">学習風景のイメージ</p>
       </div>
     </div>
     <HomeResume domains={domains} />
