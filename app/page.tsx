@@ -20,13 +20,15 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const domains = getHomeDirectory();
+  const roomItems = domains.flatMap(domain => domain.featured.slice(0, 1));
+  const roomKeys = new Set(roomItems.map(item => item.key));
+  roomItems.push(...domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => !roomKeys.has(item.key)));
 
   return (
     <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
-      <TotalAnswerCounter suggestions={domains.flatMap(domain => domain.featured)
-        .filter(item => item.questionCount > 0).slice(0, 3)
+      <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
         .map(({ name, href }) => ({ name, href }))} />
       <HomeDirectory domains={domains} />
       <div className="study-context">

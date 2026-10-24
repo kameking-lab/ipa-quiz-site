@@ -5,10 +5,16 @@ test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => 
 
 test.setTimeout(90_000);
 for (const width of [390, 1280]) {
-  test(`qualification link reaches its question in two clicks and restores filters at ${width}px`, async ({ page }) => {
+  test(`hero reaches the finder, then qualification reaches its question in two actions and restores filters at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
     const finder = page.locator("#choose-qualification");
+    const choose = page.getByRole("link", { name: "学ぶ資格を選ぶ", exact: true });
+    await expect(choose).toBeInViewport();
+    await expect(choose).toHaveAttribute("href", "#choose-qualification");
+    await choose.focus();
+    await page.keyboard.press("Enter");
+    await expect(page).toHaveURL(/\/#choose-qualification$/);
     await expect(finder.getByRole("searchbox")).toBeInViewport();
     await expect(page.locator('main a[href="/challenge"]')).toHaveCount(0);
     if (width < 768) await expect(page.locator('nav[aria-label="モバイルタブ"] a[href="/mock-exam"]:visible')).toHaveCount(0);

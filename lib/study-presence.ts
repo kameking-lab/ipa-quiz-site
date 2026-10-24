@@ -2,10 +2,12 @@ import { QUALIFICATION_HUBS } from "@/lib/exam-qualification-hubs";
 import { EXAM_LABELS } from "@/lib/utils";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
-export const PRESENCE_WINDOW_MS = 120_000;
-export const PRESENCE_POLL_MS = 30_000;
+export const PRESENCE_WINDOW_MS = 300_000;
+export const PRESENCE_IDLE_MS = 120_000;
+export const PRESENCE_POLL_MS = 90_000;
 export const PRESENCE_EVENT = "study-presence-count";
 export const PRESENCE_EXAM_ATTRIBUTE = "data-study-presence-exam";
+export const PRESENCE_VIEWER_ATTRIBUTE = "data-study-presence-viewer";
 
 // Reuse public Japanese names; never display an unrecognised code as a name.
 const aliases: Record<string, string> = { "dai-1-shu-eisei-kanrisha": "eisei1", "dai-2-shu-eisei-kanrisha": "eisei2" };
@@ -45,7 +47,7 @@ export function parseStudyPresence(value: unknown): StudyPresenceSnapshot | null
 }
 
 export function isActiveStudyTab(visible: boolean, lastActivity: number, now: number) {
-  return visible && now - lastActivity < PRESENCE_WINDOW_MS;
+  return visible && now - lastActivity < PRESENCE_IDLE_MS;
 }
 
 export function isPresenceBot(userAgent: string): boolean {

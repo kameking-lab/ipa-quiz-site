@@ -2,11 +2,10 @@
   "status": "LOCAL_CANDIDATE_NOT_RELEASED",
   "sourceMechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
   "officialPaperOriginals": 680,
-  "localCandidateOriginals": 677,
-  "heldOriginals": 3,
+  "localCandidateOriginals": 678,
+  "heldOriginals": 2,
   "heldIds": [
     "33-anma-massage-shiatsushi-124",
-    "33-hari-kyu-156",
     "34-anma-massage-shiatsushi-147"
   ],
   "files": {
@@ -19,8 +18,8 @@
       "sha256": "89d29f171b1084d91e30da6db4110d1641029bd45ab6fb072c4a6b37fa93422f"
     },
     "ahaki-hari-kyu-2025.json": {
-      "count": 179,
-      "sha256": "3a2ea953385395fce87358aff6a0740291710a6b955fc34e9f5d5ca981e8e23d"
+      "count": 180,
+      "sha256": "1204019dad168020767584d6d969532c988d010e1b24973eb9739d6416110fcb"
     },
     "ahaki-hari-kyu-2026.json": {
       "count": 180,
@@ -4774,6 +4773,13 @@
       "localDeltaCandidateSha256": "bbd97e74057b35b2be2db387f001f25b63afe96a21f99eb0d6004f3fd8eb4273",
       "reviewResultSha256": "ca38487201418b3355b47623d2aeebb4440aa685d4123df397634f7493a7e688",
       "primaryEvidenceScope": "Suwen Blood-Qi-Form-Will chapter attribution only"
+    },
+    "ahaki-hari-kyu-2025-annual-pm-q156": {
+      "sourcePacketSha256": "914058a449ac3da3449682c627d0ee605c87a4b9541dc16e7bc832544766fcb5",
+      "savedDraftSha256": "ac7ac3778e614797d6c094ff182d24256fe8c26ccc5254b2f4fb44468f845fe3",
+      "examTrack": "common",
+      "officialQuestionPdfSha256": "a1beb8986d6c5cca6cd1ab2c19863f1087a039f68eb024df049e9b017179e9eb",
+      "officialAnswerHtmlSha256": "78c3a63e9efe838c144d4deed0edf3dd27a31c323ed54dacfeb038055ac9bdfd"
     }
   },
   "publicationCompleteTwoRounds": false,
@@ -4789,5 +4795,10 @@
     ],
     "sourceBaseline608MechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
     "heldOriginalsRemaining": 3
+  },
+  "q156LocalIntegration": {
+    "evidence": "docs/evidence/hari-kyu-q156-20261023/INTEGRATION.json",
+    "candidateOnly": true,
+    "published": false
   }
 }

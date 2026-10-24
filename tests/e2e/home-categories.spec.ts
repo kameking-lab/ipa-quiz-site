@@ -29,6 +29,7 @@ for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await page.getByRole("link", { name: "学ぶ資格を選ぶ", exact: true }).click();
 
     const finder = page.locator("#choose-qualification");
     await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();

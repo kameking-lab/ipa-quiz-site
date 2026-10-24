@@ -1,11 +1,19 @@
 import { NextResponse } from "next/server";
 import { readStudyPresence, recordStudyPresence, recordLegacyStudyPresence } from "@/lib/study-presence-store";
-import { canonicalPresenceExam, isPresenceBot, PRESENCE_WINDOW_MS } from "@/lib/study-presence";
+import { canonicalPresenceExam, isPresenceBot, PRESENCE_IDLE_MS, PRESENCE_POLL_MS } from "@/lib/study-presence";
+import { unavailablePresence } from "@/lib/study-presence-contract";
+import { createPresenceService } from "@/lib/study-presence-service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 const headers = { "Cache-Control": "no-store" };
-const unavailable = (status: number) => NextResponse.json({ count: null, exams: null }, { status, headers });
+const service = createPresenceService({ read: readStudyPresence, record: recordStudyPresence, legacy: recordLegacyStudyPresence });
+const unavailable = (status: number) => NextResponse.json(unavailablePresence("disabled", PRESENCE_POLL_MS), { status, headers });
+function respond(result: Awaited<ReturnType<typeof service.read>> | { count: number }) {
+  if ("status" in result && result.status === "unavailable") return NextResponse.json(result,
+    { status: 503, headers: { ...headers, "Retry-After": String(result.retryAfterSeconds) } });
+  return NextResponse.json(result, { headers });
+}
 
 function measurementEnabled(request: Request) {
   const hostname = new URL(request.url).hostname;
@@ -16,8 +24,7 @@ function measurementEnabled(request: Request) {
 
 export async function GET(request: Request) {
   if (!measurementEnabled(request)) return unavailable(503);
-  try { return NextResponse.json(await readStudyPresence(), { headers }); }
-  catch { return unavailable(503); }
+  return respond(await service.read());
 }
 
 export async function POST(request: Request) {
@@ -32,20 +39,16 @@ export async function POST(request: Request) {
   let exam: unknown;
   let previousVisitorId: unknown;
   try { ({ visitorId, idleMs, exam, previousVisitorId } = JSON.parse(body)); } catch { return unavailable(400); }
-  if (typeof idleMs !== "number" || !Number.isInteger(idleMs) || idleMs < 0 || idleMs >= PRESENCE_WINDOW_MS ||
+  if (typeof idleMs !== "number" || !Number.isInteger(idleMs) || idleMs < 0 || idleMs >= PRESENCE_IDLE_MS ||
       typeof visitorId !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(visitorId)) return unavailable(400);
   // Only an absent field is the legacy format; explicit null/unknown values remain invalid.
   if (exam !== undefined && (typeof exam !== "string" || !canonicalPresenceExam(exam))) return unavailable(400);
   if (previousVisitorId !== undefined && (typeof previousVisitorId !== "string" ||
       !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(previousVisitorId) || previousVisitorId === visitorId)) return unavailable(400);
   if (!measurementEnabled(request)) return unavailable(503);
-  try {
-    if (exam === undefined) {
-      const count = await recordLegacyStudyPresence(visitorId, idleMs, previousVisitorId as string | undefined);
-      // Old clients consume only count: include active unqualified browsers without guessing their exam.
-      return NextResponse.json({ count }, { headers });
-    }
-    return NextResponse.json(await recordStudyPresence(visitorId, idleMs, canonicalPresenceExam(exam as string)!, previousVisitorId as string | undefined), { headers });
+  if (exam === undefined) {
+    // Old clients consume only count: include active unqualified browsers without guessing their exam.
+    return respond(await service.legacy(visitorId, idleMs, previousVisitorId as string | undefined));
   }
-  catch { return unavailable(503); }
+  return respond(await service.record(visitorId, idleMs, canonicalPresenceExam(exam as string)!, previousVisitorId as string | undefined));
 }

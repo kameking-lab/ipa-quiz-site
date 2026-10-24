@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, parseStudyPresence, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE, PRESENCE_POLL_MS, PRESENCE_IDLE_MS } from "@/lib/study-presence";
+import { PRESENCE_STATE_EVENT, presenceFallback, presenceViewState, presenceRetryDelay, presenceRetryAfterMs, type MeasuredPresence, type PresenceViewState } from "@/lib/study-presence-contract";
 
 interface BrowserIdentifier { id: string; previousVisitorId?: string; stored: string }
 function visitorId(canRotate: boolean): BrowserIdentifier | null {
@@ -27,69 +28,117 @@ export function StudyPresence() {
     let disposed = false;
     let busy = false;
     let lastActivity = Date.now();
-    let lastAttempt = 0;
+    let nextAttempt = 0;
+    let failures = 0;
+    let previous: MeasuredPresence | null = null;
     let controller: AbortController | undefined;
-    const emit = (snapshot: StudyPresenceSnapshot | null) => window.dispatchEvent(new CustomEvent(PRESENCE_EVENT, { detail: snapshot }));
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let idleTimer: ReturnType<typeof setTimeout> | undefined;
+    let expiryTimer: ReturnType<typeof setTimeout> | undefined;
+    const emit = (state: PresenceViewState) => {
+      clearTimeout(expiryTimer);
+      window.dispatchEvent(new CustomEvent(PRESENCE_STATE_EVENT, { detail: state }));
+      // Legacy consumers label a two-minute window. Keep that event neutral;
+      // the homepage consumes the explicit five-minute contract above.
+      window.dispatchEvent(new CustomEvent(PRESENCE_EVENT, { detail: null }));
+      if (state.mode === "measured") expiryTimer = setTimeout(() => {
+        if (!disposed) emit(presenceFallback(previous, "expired"));
+      }, Math.max(0, Date.parse(state.snapshot.validUntil) - Date.now()));
+    };
     const currentExam = () => {
       const code = document.querySelector(`[${PRESENCE_EXAM_ATTRIBUTE}]`)?.getAttribute(PRESENCE_EXAM_ATTRIBUTE);
       return code ? canonicalPresenceExam(code) : null;
     };
+    const hasViewer = () => Boolean(document.querySelector(`[${PRESENCE_VIEWER_ATTRIBUTE}]`));
+    const active = () => isActiveStudyTab(document.visibilityState === "visible", lastActivity, Date.now());
+    const needed = () => Boolean(currentExam() || hasViewer());
     let exam = currentExam();
+    let viewer = hasViewer();
+    function schedule() {
+      clearTimeout(timer);
+      if (!disposed && active() && needed() && !busy) {
+        timer = setTimeout(() => void tick(), Math.min(2_147_483_647, Math.max(0, nextAttempt - Date.now())));
+      }
+    }
+    function armIdle() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        clearTimeout(timer); controller?.abort();
+        if (!disposed) emit(presenceFallback(previous, "inactive"));
+      }, PRESENCE_IDLE_MS);
+    }
     async function tick() {
       if (disposed) return;
-      if (!isActiveStudyTab(document.visibilityState === "visible", lastActivity, Date.now())) {
-        emit(null); return;
+      if (!active() || !needed()) {
+        emit(presenceFallback(previous, document.visibilityState === "visible" ? "inactive" : "hidden")); return;
       }
-      if (busy || Date.now() - lastAttempt < PRESENCE_POLL_MS) return;
-      busy = true; lastAttempt = Date.now();
+      if (busy) return;
+      if (Date.now() < nextAttempt) { schedule(); return; }
+      busy = true; nextAttempt = Date.now() + PRESENCE_POLL_MS;
       controller = new AbortController();
+      const signal = controller.signal;
       const timeout = setTimeout(() => controller?.abort(), 8_000);
+      let retryAfter = 0;
       try {
         const send = async () => {
           // A lock wait may span navigation/backgrounding; snapshot only at send time.
-          if (disposed || controller?.signal.aborted || !isActiveStudyTab(document.visibilityState === "visible", lastActivity, Date.now())) return null;
+          if (disposed || signal.aborted || !active() || !needed()) return null;
           const activeExam = currentExam();
           const activityAt = lastActivity;
           const identifier = activeExam ? visitorId(Boolean(navigator.locks)) : null;
           const body = identifier ? JSON.stringify({ visitorId: identifier.id, previousVisitorId: identifier.previousVisitorId,
-            idleMs: Math.min(Date.now() - activityAt, PRESENCE_WINDOW_MS - 1), exam: activeExam }) : undefined;
+            idleMs: Math.min(Date.now() - activityAt, PRESENCE_IDLE_MS - 1), exam: activeExam }) : undefined;
           const response = await fetch("/api/stats/study-presence", {
             method: body ? "POST" : "GET", headers: body ? { "Content-Type": "application/json" } : undefined,
-            body, cache: "no-store", signal: controller?.signal,
+            body, cache: "no-store", signal,
           });
+          retryAfter = presenceRetryAfterMs(response.headers.get("Retry-After"));
           const payload: unknown = await response.json();
-          const snapshot = response.ok ? parseStudyPresence(payload) : null;
-          if (snapshot && identifier?.previousVisitorId && localStorage.getItem(LS_KEYS.studyPresenceVisitor) === identifier.stored) {
+          const state = presenceViewState(payload, response.status === 200 && response.ok, previous);
+          if (state.mode === "measured" && identifier?.previousVisitorId && localStorage.getItem(LS_KEYS.studyPresenceVisitor) === identifier.stored) {
             localStorage.setItem(LS_KEYS.studyPresenceVisitor, identifier.stored.split("|").slice(0, 2).join("|"));
           }
-          return snapshot;
+          return state;
         };
         // Hold the same browser lock through acknowledgement, including daily rotation.
-        const snapshot = navigator.locks && exam
-          ? await navigator.locks.request(LS_KEYS.studyPresenceVisitor, { signal: controller.signal }, send) : await send();
-        if (!disposed && isActiveStudyTab(document.visibilityState === "visible", lastActivity, Date.now())) emit(snapshot);
-      } catch { if (!disposed) emit(null); }
-      finally { clearTimeout(timeout); busy = false; }
+        const state = navigator.locks && exam
+          ? await navigator.locks.request(LS_KEYS.studyPresenceVisitor, { signal }, send) : await send();
+        if (!disposed && !signal.aborted && active() && needed() && state) {
+          if (state.mode === "measured") { previous = state.snapshot; failures = 0; }
+          else {
+            if (state.mode === "stale") previous = state.previous;
+            nextAttempt = Date.now() + Math.max(presenceRetryDelay(++failures), retryAfter);
+          }
+          emit(state);
+        }
+      } catch {
+        if (!disposed && active() && needed()) {
+          nextAttempt = Date.now() + Math.max(presenceRetryDelay(++failures), retryAfter);
+          emit(presenceFallback(previous, "unavailable"));
+        }
+      } finally { clearTimeout(timeout); busy = false; schedule(); }
     }
-    const activity = () => { lastActivity = Date.now(); void tick(); };
+    const activity = () => { lastActivity = Date.now(); armIdle(); schedule(); };
     const visibility = () => {
-      if (document.visibilityState === "visible") activity(); else emit(null);
+      if (document.visibilityState === "visible") activity();
+      else { clearTimeout(timer); clearTimeout(idleTimer); controller?.abort(); emit(presenceFallback(previous, "hidden")); }
     };
     // React question changes do not always change the URL (search/mixed pools).
     const observer = new MutationObserver(() => {
       const next = currentExam();
-      if (exam === next) return;
-      exam = next;
+      const nextViewer = hasViewer();
+      if (exam === next && viewer === nextViewer) return;
+      exam = next; viewer = nextViewer;
+      if (!needed()) { clearTimeout(timer); controller?.abort(); emit(presenceFallback(previous, "inactive")); return; }
       if (document.visibilityState === "visible") activity();
     });
-    observer.observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: [PRESENCE_EXAM_ATTRIBUTE] });
+    observer.observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: [PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE] });
     const events = ["pointerdown", "keydown", "scroll"] as const;
     events.forEach(event => window.addEventListener(event, activity, { passive: true }));
     document.addEventListener("visibilitychange", visibility);
-    const timer = setInterval(() => void tick(), PRESENCE_POLL_MS);
-    const initial = setTimeout(() => void tick(), 0);
+    emit(presenceFallback(null, "initial")); armIdle(); schedule();
     return () => {
-      disposed = true; controller?.abort(); observer.disconnect(); clearTimeout(initial); clearInterval(timer);
+      disposed = true; controller?.abort(); observer.disconnect(); clearTimeout(timer); clearTimeout(idleTimer); clearTimeout(expiryTimer);
       events.forEach(event => window.removeEventListener(event, activity));
       document.removeEventListener("visibilitychange", visibility);
     };
