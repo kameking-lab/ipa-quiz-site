@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "release/robots-collection-20261026": false
+    }
+  },
   "crons": [
     {
       "path": "/api/cron/health-check",
