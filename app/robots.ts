@@ -27,6 +27,10 @@ export default function robots(): MetadataRoute.Robots {
           // so crawlers can actually read their noindex directives.
         ],
       },
+      {
+        userAgent: ["Amazonbot", "GPTBot", "ClaudeBot"],
+        disallow: "/",
+      },
     ],
     // Point only at the sitemap index. The index references every category
     // sitemap (main, exams, topics, blog, books, questions/*) so crawlers
