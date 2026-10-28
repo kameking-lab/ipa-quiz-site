@@ -15,7 +15,7 @@ import { EmailSignInForm } from "./EmailSignInForm";
 
 export const metadata: Metadata = {
   title: "ログイン",
-  description: "過去問AI にログインして学習履歴をクラウド同期。α公開中・全機能無料。",
+  description: "過去問AI にログインして学習履歴をクラウド同期。無料の学習機能と月額プラン。",
   robots: { index: false, follow: false },
 };
 
@@ -87,7 +87,7 @@ export default async function SignInPage({
         {/* Hero */}
         <div className="mb-8 text-center">
           <Badge variant="success" className="mb-4">
-            α公開中・全機能無料
+            無料の学習機能と月額プラン
           </Badge>
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
@@ -164,7 +164,7 @@ export default async function SignInPage({
           />
           <BenefitPill
             icon={<Sparkles className="h-3.5 w-3.5" />}
-            label="β 期間中は全機能無料"
+            label="無料枠と月額プランをご用意"
           />
           <BenefitPill
             icon={<ShieldCheck className="h-3.5 w-3.5" />}

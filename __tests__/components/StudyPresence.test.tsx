@@ -1,8 +1,9 @@
+// @vitest-environment jsdom
 import { act, cleanup, render } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { StudyPresence } from "@/components/StudyPresence";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { PRESENCE_EVENT } from "@/lib/study-presence";
+import { PRESENCE_EVENT, PRESENCE_REFRESH_MS } from "@/lib/study-presence";
 import { measuredPresence, PRESENCE_STATE_EVENT, type PresenceViewState } from "@/lib/study-presence-contract";
 const fetchMock = vi.fn();
 const data = { count: 3, exams: [{ exam: "denko2", count: 1 }, { exam: "fe", count: 2 }] };
@@ -45,13 +46,13 @@ it("only polls an explicit viewer or a visible problem, never unrelated global p
   mounted.rerender(view(null, true)); await advance(1);
   expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: "GET", body: undefined });
   expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)).toBeNull();
-  await activeFor(90_000); expect(fetchMock).toHaveBeenCalledTimes(2);
+  await activeFor(PRESENCE_REFRESH_MS); expect(fetchMock).toHaveBeenCalledTimes(2);
 });
-it("sends the displayed qualification every 90 seconds and reuses the daily browser ID", async () => {
+it("sends the displayed qualification hourly and reuses the daily browser ID", async () => {
   const mounted = render(view()); await advance(1);
   const first = JSON.parse(fetchMock.mock.calls[0][1].body);
   expect(Object.keys(first).sort()).toEqual(["exam", "idleMs", "visitorId"]); expect(first.exam).toBe("fe");
-  await activeFor(89_998); expect(fetchMock).toHaveBeenCalledOnce();
+  await activeFor(PRESENCE_REFRESH_MS - 2); expect(fetchMock).toHaveBeenCalledOnce();
   mounted.rerender(view("ap")); await advance(1);
   const second = JSON.parse(fetchMock.mock.calls[1][1].body);
   expect(second.exam).toBe("ap"); expect(second.visitorId).toBe(first.visitorId);
@@ -59,9 +60,10 @@ it("sends the displayed qualification every 90 seconds and reuses the daily brow
 });
 it("stops exactly at two minutes idle independently of the five-minute observation window", async () => {
   render(view()); await advance(120_000);
-  expect(fetchMock).toHaveBeenCalledTimes(2); expect(states.at(-1)).toMatchObject({ mode: "stale", snapshot: null, reason: "inactive" });
-  await advance(600_000); expect(fetchMock).toHaveBeenCalledTimes(2);
-  await activity(); expect(fetchMock).toHaveBeenCalledTimes(3);
+  expect(fetchMock).toHaveBeenCalledOnce(); expect(states.at(-1)).toMatchObject({ mode: "stale", snapshot: null, reason: "inactive" });
+  await advance(600_000); expect(fetchMock).toHaveBeenCalledOnce();
+  await activity(); expect(fetchMock).toHaveBeenCalledOnce();
+  await activeFor(PRESENCE_REFRESH_MS - 720_001); expect(fetchMock).toHaveBeenCalledTimes(2);
 });
 it("does not count background tabs or WebDriver tests", async () => {
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "hidden" });
@@ -70,38 +72,39 @@ it("does not count background tabs or WebDriver tests", async () => {
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "visible" });
   render(view()); await advance(600_000); expect(fetchMock).not.toHaveBeenCalled();
 });
-it("backs off network failures 90 to 180 to 300 to 900 seconds despite activity", async () => {
+it("keeps an hourly minimum between network failures despite activity", async () => {
   const attempts: number[] = []; const start = Date.now();
   fetchMock.mockImplementation(async () => { attempts.push(Date.now() - start); throw new Error("offline"); });
-  render(view()); await activeFor(1_470_000);
-  expect(attempts).toEqual([0, 90_000, 270_000, 570_000, 1_470_000]);
+  render(view()); await activeFor(3 * PRESENCE_REFRESH_MS);
+  expect(attempts).toEqual([0, PRESENCE_REFRESH_MS, 2 * PRESENCE_REFRESH_MS, 3 * PRESENCE_REFRESH_MS]);
   expect(states.at(-1)).toMatchObject({ mode: "promotion", snapshot: null, reason: "unavailable" });
 });
 it("honors Retry-After through hidden-tab stop and visible recovery", async () => {
-  fetchMock.mockResolvedValueOnce(response(null, 503, "600")); render(view()); await advance(1);
+  fetchMock.mockResolvedValueOnce(response(null, 503, "7200")); render(view()); await advance(1);
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "hidden" });
   await act(async () => { document.dispatchEvent(new Event("visibilitychange")); }); await advance(300_000);
   expect(fetchMock).toHaveBeenCalledOnce();
   Object.defineProperty(document, "visibilityState", { configurable: true, value: "visible" });
   await act(async () => { document.dispatchEvent(new Event("visibilitychange")); });
-  await activeFor(299_998); expect(fetchMock).toHaveBeenCalledOnce();
+  await activeFor(2 * PRESENCE_REFRESH_MS - 300_002); expect(fetchMock).toHaveBeenCalledOnce();
   await activeFor(1); expect(fetchMock).toHaveBeenCalledTimes(2);
   expect(states.at(-1)).toMatchObject({ mode: "measured" });
-  await activeFor(90_000); expect(fetchMock).toHaveBeenCalledTimes(3);
+  await activeFor(PRESENCE_REFRESH_MS); expect(fetchMock).toHaveBeenCalledTimes(3);
 });
 it("moves expired measurements into history during a hanging request, then backs off timeout", async () => {
   render(view()); await advance(1);
   fetchMock.mockImplementation((_url, options) => new Promise((_resolve, reject) => {
     options.signal.addEventListener("abort", () => reject(new DOMException("Aborted", "AbortError")));
   }));
-  await activeFor(90_000); expect(states.at(-1)).toMatchObject({ mode: "stale", snapshot: null });
+  await activeFor(PRESENCE_REFRESH_MS); expect(states.at(-1)).toMatchObject({ mode: "stale", snapshot: null });
   await activeFor(8_000); expect(states.at(-1)).toMatchObject({ mode: "stale", reason: "unavailable" });
-  const calls = fetchMock.mock.calls.length; await activeFor(89_000); expect(fetchMock).toHaveBeenCalledTimes(calls);
+  const calls = fetchMock.mock.calls.length; await activeFor(PRESENCE_REFRESH_MS - 2); expect(fetchMock).toHaveBeenCalledTimes(calls);
+  await activeFor(1); expect(fetchMock).toHaveBeenCalledTimes(calls + 1);
 });
 it("keeps error-body counts and old timestamp-free responses out of measured mode", async () => {
   fetchMock.mockResolvedValue(response(data, 200)); render(view()); await advance(1);
   expect(states.at(-1)?.mode).toBe("promotion");
-  fetchMock.mockResolvedValue(response(measuredPresence(data, Date.now()), 503)); await activeFor(90_000);
+  fetchMock.mockResolvedValue(response(measuredPresence(data, Date.now()), 503)); await activeFor(PRESENCE_REFRESH_MS);
   expect(states.at(-1)?.mode).toBe("promotion");
 });
 it("preserves legitimate measured zero", async () => {
@@ -114,7 +117,7 @@ it("retains daily ID rotation retry state until a genuine measurement acknowledg
   localStorage.setItem(LS_KEYS.studyPresenceVisitor, "2000-01-01|" + old);
   fetchMock.mockRejectedValueOnce(new Error("offline")); render(view()); await advance(1);
   expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)?.split("|")[2]).toBe(old);
-  await activeFor(90_000);
+  await activeFor(PRESENCE_REFRESH_MS);
   expect(JSON.parse(fetchMock.mock.calls[1][1].body).previousVisitorId).toBe(old);
   expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)?.split("|")).toHaveLength(2);
 });

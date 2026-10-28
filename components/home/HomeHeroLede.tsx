@@ -36,17 +36,17 @@ export function HomeHeroLede({ totalQuestions }: { totalQuestions: number }) {
         className="mb-3 flex flex-wrap gap-x-3 gap-y-1.5 text-xs sm:text-sm"
       >
         <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-          <span aria-hidden="true">✓</span>全機能無料
+          <span aria-hidden="true">✓</span>無料枠と月額プラン
         </li>
         <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-          <span aria-hidden="true">✓</span>会員登録不要
+          <span aria-hidden="true">✓</span>閲覧は会員登録不要
         </li>
         <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
           <span aria-hidden="true">✓</span>13区分 {totalQuestions.toLocaleString("ja-JP")}問
         </li>
       </ul>
       <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        IPA試験対策の過去問をAI解説付きで完全無料公開。ボランティア有志による教育貢献プロジェクトです。
+        IPA試験対策の個別問題・原紙・保存済み履歴の閲覧と復習は無料です。ログイン後の連続演習には1日10問の無料枠と月額980円（税込・毎月自動更新）のプランがあります。
       </p>
     </>
   );

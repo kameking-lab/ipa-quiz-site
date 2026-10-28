@@ -65,13 +65,40 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(assets.size).toBe(68);
  });
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
- it('retains all338 old runtime records and raw source/core bytes against8fc',()=>{
+ it('preserves pre-reward player behavior outside the exact approved reward extension',()=>{
   const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8').replace(/\r\n/g,'\n');
   const policyImport='import { isOfficialPastOnlyExam } from "@/lib/questions/past-question-policy";\n';
   expect(player).toContain(policyImport);expect(player).toContain('!native && !isOfficialPastOnlyExam(question.exam) &&');
-  const priorPlayer=player.replace(policyImport,'').replace('!native && !isOfficialPastOnlyExam(question.exam) &&','!native &&');
+  let projected=player;
+  const approvedRewardDelta: [string,string][] = [
+  [
+    "import { StudyRewardCorner } from \"@/components/home/StudyRewardCorner\";\n",
+    ""
+  ],
+  [
+    "import { recordStudyReward } from \"@/lib/study-reward\";\n",
+    ""
+  ],
+  [
+    "      if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {\n        recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });\n      }\n",
+    ""
+  ],
+  [
+    "            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />\n",
+    ""
+  ],
+  [
+    "className=\"scroll-mt-80 space-y-4 outline-none\" aria-label=\"解答結果\"",
+    "className=\"scroll-mt-24 space-y-4 outline-none\" aria-label=\"解答結果\""
+  ]
+];
+  for(const [from,to] of approvedRewardDelta){expect(projected.split(from)).toHaveLength(2);projected=projected.replace(from,to);}
+  const priorPlayer=projected.replace(policyImport,'').replace('!native && !isOfficialPastOnlyExam(question.exam) &&','!native &&');
   const oracle=integrationOracle.aviation338;
   expect(normalizedTextSha256(priorPlayer)).toBe(oracle.priorPlayerSha256);
+ });
+ it('retains all338 old runtime records and raw source/core bytes independently of player extensions',()=>{
+  const oracle=integrationOracle.aviation338;
   const current=[...RIKU_TECH1_QUESTIONS,...MARITIME4_QUESTIONS,...LAND_SPECIAL1_QUESTIONS];
   const ordered=[...current].sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
   expect(current).toHaveLength(oracle.originalCount);

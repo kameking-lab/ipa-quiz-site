@@ -83,7 +83,7 @@ const INFO_ROWS: InfoRow[] = [
   },
   {
     label: "プロジェクト形態",
-    value: "教育貢献プロジェクト（全機能無料）",
+    value: "教育貢献プロジェクト（一部有料プランあり）",
   },
   {
     label: "お問い合わせ",
@@ -161,7 +161,7 @@ export default function OperatorPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             本サービスの公開運営ハンドルは<strong>kameking-lab</strong>です。資格の学習支援を目的として、
-            全機能無料で公開しています。IPA・FP・電気・医療・福祉・不動産等の公開過去問を、資格ごとに学べる場として提供しています。
+            無料で利用できる学習機能と月額プランを提供します。IPA・FP・電気・医療・福祉・不動産等の公開過去問を、資格ごとに学べる場として提供しています。
           </p>
         </header>
 
@@ -196,7 +196,7 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              問題の掲載、独自解説・図版の編集、訂正対応は公開運営ハンドル<strong>kameking-lab</strong>が管理します。全機能無料で公開しています。解説はAIの支援を用いて作成しており、実施機関の公式解説や専門家による全件監修を意味しません。
+              問題の掲載、独自解説・図版の編集、訂正対応は公開運営ハンドル<strong>kameking-lab</strong>が管理します。無料の学習機能と月額プランがあります。解説はAIの支援を用いて作成しており、実施機関の公式解説や専門家による全件監修を意味しません。
             </p>
             <p>
               問題・正答の出典は各問題の公式資料リンクで確認できます。資料の利用条件は各実施機関で異なり、独自解説の確認範囲は透明性ページで公開しています。
@@ -263,23 +263,9 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              本サービスは教育貢献プロジェクトとして<strong>全機能を無料で公開</strong>しており、
-              利用者との間に物品・役務の有償取引・通信販売・有償会員登録等は一切発生しません。
-              このため、特定商取引法第 11 条（通信販売についての広告）が要請する事項の表示義務には該当しません。
+              月額プランの販売者情報、支払方法、提供期間、解約・返金条件は <Link href="/billing" className="font-medium text-primary underline-offset-4 hover:underline">月額プランの案内</Link> をご確認ください。販売の受付状況にかかわらず、既存契約の条件をご確認いただけます。
             </p>
-            <p>
-              将来的に有償サービスを提供する場合は、本ページに特定商取引法に基づく表記を追加し、
-              事前に <Link href="/updates" className="font-medium text-primary underline-offset-4 hover:underline">更新履歴</Link> および
-              {" "}<Link href="/transparency" className="font-medium text-primary underline-offset-4 hover:underline">透明性レポート</Link> で告知します。
-              現時点で運営に関するお問い合わせは{" "}
-              <Link
-                href="/contact"
-                className="font-medium text-primary underline-offset-4 hover:underline"
-              >
-                お問い合わせフォーム
-              </Link>
-              {" "}よりお寄せください。
-            </p>
+            <p>運営に関するお問い合わせは <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">お問い合わせフォーム</Link> よりお寄せください。</p>
           </div>
         </section>
 

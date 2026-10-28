@@ -1,0 +1,12 @@
+import {createHmac} from 'node:crypto';import {beforeEach,afterEach,it,expect,vi} from 'vitest';
+import {monthlyStripeFixture} from './monthly-stripe-fixture';
+const wiring=vi.hoisted(()=>({runtime:null as unknown}));
+vi.mock('@/lib/billing/subscription/runtime',()=>({monthlyRuntime:()=>wiring.runtime}));
+vi.mock('@/lib/billing/runtime',()=>({json:(value:unknown)=>Response.json(value),billingFailure:(error:{status?:number;code?:string})=>Response.json({error:error.code??'unavailable'},{status:error.status??503})}));
+import {POST as webhook} from '@/app/api/billing/webhook/route';
+const secret='whsec_public_fixture_only';
+const request=(event:unknown)=>{const body=JSON.stringify(event),time=Math.floor(Date.now()/1000),signature=createHmac('sha256',secret).update(`${time}.${body}`).digest('hex');return new Request('http://localhost:3338/api/billing/webhook',{method:'POST',body,headers:{'stripe-signature':`t=${time},v1=${signature}`}});};
+beforeEach(()=>{for(const [key,value] of Object.entries({BILLING_PRODUCT:'subscription',BILLING_WEBHOOK_MODE:'stripe-test',BILLING_SOURCE_INSTANCE:'monthly-fixture',BILLING_ORIGIN:'http://localhost:3338',BILLING_STRIPE_TEST_WEBHOOK_SECRET:secret}))vi.stubEnv(key,value);});
+afterEach(()=>vi.unstubAllEnvs());
+it('signed genuine-shaped invoice event accepts missing defaults only with complete independent invoice proof, replay is duplicate',async()=>{const f=await monthlyStripeFixture();delete (f.sub as Record<string,unknown>).default_tax_rates;wiring.runtime=f;expect((await webhook(request(f.event()))).status).toBe(200);const before=JSON.stringify([...f.store.accounts]);expect((await webhook(request(f.event()))).status).toBe(200);expect(JSON.stringify([...f.store.accounts])).toBe(before);expect((await f.service.status('alice')).entitled).toBe(true);});
+it.each(['missing','taxed'])('signed event with missing defaults and %s invoice tax returns503 and commits no financial/event state',async kind=>{const f=await monthlyStripeFixture();delete (f.sub as Record<string,unknown>).default_tax_rates;if(kind==='missing')delete (f.invoice as Record<string,unknown>).default_tax_rates;else (f.invoice as Record<string,unknown>).total_taxes=[{amount:0}];wiring.runtime=f;const before=JSON.stringify([...f.store.accounts]);expect((await webhook(request(f.event()))).status).toBe(503);expect(JSON.stringify([...f.store.accounts])).toBe(before);expect((await f.service.status('alice')).entitled).toBe(false);});

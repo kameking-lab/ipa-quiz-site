@@ -24,13 +24,13 @@ import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
-const HOME_TITLE = "IPA過去問×AI、無料で全機能";
+const HOME_TITLE = "IPA過去問×AI、無料枠と月額プラン";
 const HOME_SOCIAL_TITLE = `${HOME_TITLE} | 過去問AI`;
 // Snippet-optimised: front-load the value prop + count and drop the 13-code list
 // （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
 // pushed Google toward synthesising a worse snippet from the page body. Kept
 // under the ~150 full-width-char budget. (empirical review 致命傷⑦)
-const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の過去問を AI 解説付きで完全無料公開。ITパスポート・基本情報・応用情報から高度試験まで ${APPROX_QUESTION_COUNT_LABEL}問超を収録し、年度別・分野別・模試・苦手復習の6モードと学習履歴で効率学習。登録不要、スマホ片手で。`;
+const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の個別問題や学習用解説を無料公開し、連続演習には無料枠と月額プランを提供。ITパスポート・基本情報・応用情報から高度試験まで ${APPROX_QUESTION_COUNT_LABEL}問超を収録し、年度別・分野別・模試・苦手復習の6モードと学習履歴で効率学習。登録不要、スマホ片手で。`;
 
 export const metadata: Metadata = {
   title: HOME_TITLE,

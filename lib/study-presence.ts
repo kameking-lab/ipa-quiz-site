@@ -5,6 +5,8 @@ import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 export const PRESENCE_WINDOW_MS = 300_000;
 export const PRESENCE_IDLE_MS = 120_000;
 export const PRESENCE_POLL_MS = 90_000;
+/** Browser acquisition cadence; measurement validity/window remain separate. */
+export const PRESENCE_REFRESH_MS = 60 * 60_000;
 export const PRESENCE_EVENT = "study-presence-count";
 export const PRESENCE_EXAM_ATTRIBUTE = "data-study-presence-exam";
 export const PRESENCE_VIEWER_ATTRIBUTE = "data-study-presence-viewer";

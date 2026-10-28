@@ -192,12 +192,12 @@ export default async function TransparencyPage() {
         <CardContent>
           <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
             <li>
-              <strong>全機能を無料で公開し続ける。</strong>
+              <strong>無料の学習機能と月額プランを提供する。</strong>
               受験生の経済状況に関わらず、最善の対策ツールを使えるようにします。
             </li>
             <li>
-              <strong>運営コストはシェア・フィードバックで支える。</strong>
-              金銭的負担はお願いしません。AI コパイロットは無料で質問でき、連続利用や大量送信には適正利用制限があります。
+              <strong>シェア・フィードバックと月額プランで運営を支える。</strong>
+              個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。AI コパイロットは月額対象外で、連続利用や大量送信には適正利用制限があります。
             </li>
             <li>
               <strong>意思決定を公開する。</strong>
@@ -307,7 +307,7 @@ export default async function TransparencyPage() {
         <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <MetricCard label="公開中の問題数" value={total.toLocaleString("ja-JP")} sub="ホーム掲載資格・区分の合計" />
           <MetricCard label="資格・区分" value={qualificationCount.toLocaleString("ja-JP")} sub="ホームと同じ公開範囲" />
-          <MetricCard label="利用料" value="¥0" sub="全機能無料" />
+          <MetricCard label="利用料" value="無料枠 / 月額980円" sub="月額は税込・毎月自動更新。詳細は /billing" />
           <MetricCard label="運営スタイル" value="kameking-lab（公開運営ハンドル）" sub="教育貢献" />
         </div>
         <Card>

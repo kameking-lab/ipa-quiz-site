@@ -26,6 +26,8 @@ import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
 import Image from "next/image";
 import answerFiguresJson from "@/data/exam-library/answer-figures.json";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
+import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
+import { recordStudyReward } from "@/lib/study-reward";
 import { readExamTabProgress, writeExamTabProgress } from "@/lib/exam-library-session";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
 import { buttonVariants } from "@/components/ui/button";
@@ -261,6 +263,8 @@ export function ExamQuestionPlayer({
   const selectChoice = useCallback(
     (choice: number) => {
       if (!current || submitted || choice < 1 || choice > current.choiceCount) return;
+      const entry = findExamEntry(examId);
+      recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
       commit({
         ...answers,
@@ -277,6 +281,11 @@ export function ExamQuestionPlayer({
     if (current.choiceCount > 0 && draftChoice === null) {
       firstChoiceRef.current?.focus();
       return;
+    }
+    // Opening a model answer is not an answered question. Reward choices only.
+    if (current.choiceCount > 0) {
+      const entry = findExamEntry(examId);
+      recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
     }
     commit(
       {
@@ -659,6 +668,7 @@ export function ExamQuestionPlayer({
               </div>
             )}
 
+            <StudyRewardCorner scope={`library:${examId}`} questionId={current.id} answered={submitted} />
             {submitted ? (
               <div
                 data-answer-state={status}
@@ -673,7 +683,7 @@ export function ExamQuestionPlayer({
                 <h3
                   ref={feedbackRef}
                   tabIndex={-1}
-                  className="flex items-center gap-2 text-lg font-semibold outline-none focus-visible:ring-4 focus-visible:ring-current"
+                  className="flex scroll-mt-64 items-center gap-2 text-lg font-semibold outline-none focus-visible:ring-4 focus-visible:ring-current"
                 >
                   {status === "correct" ? (
                     <CheckCircle2 className="h-6 w-6 shrink-0" aria-hidden="true" />

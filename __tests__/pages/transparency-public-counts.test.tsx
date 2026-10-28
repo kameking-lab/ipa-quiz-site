@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, within } from "@testing-library/react";
 import HomePage from "@/app/page";
@@ -56,8 +57,8 @@ describe("transparency published counts", () => {
     expect(view.getByText("2026-10 月次レポート")).toBeInTheDocument();
     expect(view.queryByText("解説リファクタを残り 12,094 問に展開")).not.toBeInTheDocument();
     expect(page.container).toHaveTextContent("請求・集計証跡を未確認のため、費用実績は未掲載");
-    expect(view.getByText("全機能を無料で公開し続ける。")).toBeInTheDocument();
-    expect(view.getByText("全機能無料")).toBeInTheDocument();
-    expect(page.container).toHaveTextContent("金銭的負担はお願いしません。AI コパイロットは無料で質問でき、連続利用や大量送信には適正利用制限があります。");
+    expect(view.getByText("無料の学習機能と月額プランを提供する。")).toBeInTheDocument();
+    expect(view.getByText("無料枠 / 月額980円")).toBeInTheDocument();
+    expect(page.container).toHaveTextContent("個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。AI コパイロットは月額対象外で、連続利用や大量送信には適正利用制限があります。");
   });
 });
