@@ -29,7 +29,6 @@ if (hasEnv("AUTH_GOOGLE_ID", "AUTH_GOOGLE_SECRET")) {
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
-      allowDangerousEmailAccountLinking: true,
     }),
   );
 }

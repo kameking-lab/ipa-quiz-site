@@ -1,4 +1,6 @@
 export const LS_KEYS = {
+  studyReward: "ipa-quiz:study-reward:v1",
+  studyRewardPreferences: "ipa-quiz:study-reward-preferences:v1",
   studyPresenceVisitor: "study-presence-visitor",
   examLibraryPrefix: "ipa-quiz:exam-library:v1:",
   examLibrarySessionPrefix: "ipa-quiz:exam-library-session:v1:",

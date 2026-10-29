@@ -75,7 +75,14 @@ function deriveSessionPool(
   return mode === "year" ? ids : ids.slice(0, MAX_POOL);
 }
 
-async function fetchQuestion(id: string, shuffle: boolean): Promise<Question> {
+async function fetchQuestion(id: string, shuffle: boolean, start: boolean): Promise<Question> {
+  if (start) {
+    const res = await fetch("/api/billing/question", { method: "POST", cache: "no-store",
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, shuffle }) });
+    const payload = await res.json();
+    if (!res.ok) throw new Error(typeof payload.error === "string" ? payload.error : "billing_unavailable");
+    return payload.question as Question;
+  }
   const qs = new URLSearchParams({ id });
   if (shuffle) qs.set("shuffle", "1");
   const res = await fetch(`/api/questions/next?${qs.toString()}`);
@@ -94,6 +101,7 @@ export function QuizClient({
   categoryById,
   wrongOnly = false,
   initialQuestionId,
+  billingGateEnabled = false,
 }: {
   poolIds: string[];
   mode: QuizMode;
@@ -105,11 +113,13 @@ export function QuizClient({
   categoryById?: Record<string, string>;
   wrongOnly?: boolean;
   initialQuestionId?: string;
+  billingGateEnabled?: boolean;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
   const [current, setCurrent] = React.useState<Question | null>(null);
   const [loadError, setLoadError] = React.useState(false);
+  const [accessError, setAccessError] = React.useState<string | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
   const cache = React.useRef<Map<string, Question>>(new Map());
@@ -171,20 +181,23 @@ export function QuizClient({
     const shuffle = mode === "random";
 
     const loadInto = async (id: string, setActive: boolean) => {
-      if (cache.current.has(id)) {
+      // Gate off keeps the existing GET/cache path independent of the billing API.
+      // Gate on rechecks active questions, since prefetched content is not entitlement.
+      const requiresGrant = billingGateEnabled && mode !== "review";
+      if ((!setActive || !requiresGrant) && cache.current.has(id)) {
         if (setActive && !cancelled) setCurrent(cache.current.get(id)!);
         return;
       }
       try {
-        const q = await fetchQuestion(id, shuffle);
+        const q = await fetchQuestion(id, shuffle, setActive && requiresGrant);
         cache.current.set(id, q);
-        if (setActive && !cancelled) { setCurrent(q); setLoadError(false); }
-      } catch {
-        if (setActive && !cancelled) setLoadError(true);
+        if (setActive && !cancelled) { setCurrent(q); setLoadError(false); setAccessError(null); }
+      } catch (error) {
+        if (setActive && !cancelled) { setLoadError(true); setAccessError(error instanceof Error ? error.message : null); }
       }
     };
 
-    setCurrent(cache.current.get(currentId) ?? null);
+    setCurrent(null);
     setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
@@ -193,7 +206,7 @@ export function QuizClient({
     return () => {
       cancelled = true;
     };
-  }, [sessionIds, index, mode, retryCount]);
+  }, [sessionIds, index, mode, retryCount, billingGateEnabled]);
 
   const handleNext = React.useCallback(() => {
     setIndex((i) => i + 1);
@@ -220,7 +233,10 @@ export function QuizClient({
 
   if (loadError) {
     return <div role="alert" className="mx-auto max-w-xl space-y-4 px-4 py-10 text-center">
-      <p className="font-semibold">問題を読み込めませんでした。</p>
+      <p className="font-semibold">{accessError === "daily_limit" ? "本日の無料連続演習枠を使い切りました。翌日0時（日本時間）に再開できます。" : accessError === "sign_in_required" ? "続けるにはログインしてください。" : "問題を読み込めませんでした。"}</p>
+      <p>保存済みの学習履歴はそのまま残っています。</p>
+      {accessError === "sign_in_required" && <Link className="block underline" href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof window !== "undefined" ? window.location.pathname + window.location.search : "/billing")}`}>この問題から再開するためにログイン</Link>}
+      {(accessError === "daily_limit" || accessError === "sign_in_required") && <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>}
       <div className="flex flex-wrap justify-center gap-3">
         <button type="button" onClick={() => setRetryCount((count) => count + 1)} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button>
         <Link href={backHref} className="inline-flex min-h-11 items-center rounded-xl border border-border px-5 py-2 font-semibold">科目選択へ戻る</Link>

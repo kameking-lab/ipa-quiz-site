@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { measuredRoom } from "@/lib/home/study-room";
+import { StudyRewardCorner } from "./StudyRewardCorner";
 
 interface Suggestion { name: string; href: string }
 interface Seat { name: string; href?: string; index: number }
@@ -60,8 +61,8 @@ export function StudyRoom({ snapshot, suggestions }: {
       <div className="study-room-card">
         <div className="study-room-toolbar"><div><h3>木もれびの自習室</h3><p>{measured ? `部屋 ${measured.room + 1} / ${measured.roomCount.toLocaleString("ja-JP")}` : "資格紹介"}</p></div>
         </div>
-        {snapshot && snapshot.count > 0 && <div className="study-room-state">チワワ1匹で1人分を表示</div>}
-        <div ref={sceneRef} data-motion-visible={motionVisible} className="study-room-scene" role="group" aria-label={snapshot ? "集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
+        {snapshot && snapshot.count > 0 && <div className="study-room-state">前回取得時点の集計: チワワ1匹で1人分を表示</div>}
+        <div ref={sceneRef} data-motion-visible={motionVisible} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
           {seats.map(seat => <button key={selectionKey(seat)} type="button" className={`study-room-seat study-seat-${seat.index}`} aria-label={`${seat.name}のチワワ${snapshot ? "（集計人数のイメージ）" : "（資格紹介）"}`} aria-controls="study-room-selection" aria-pressed={selected === selectionKey(seat)} onClick={() => setSelected(value => value === selectionKey(seat) ? null : selectionKey(seat))}>
             <span className={`study-mascot study-pose-${[0, 2, 3, 4, 1, 6, 5, 9, 7, 10, 8, 11][seat.index]}`} aria-hidden="true" />
@@ -80,19 +81,21 @@ export function StudyRoom({ snapshot, suggestions }: {
         </nav>}
       </div>
       <aside className="study-room-sidebar">
+        <p className="study-room-disclosure">学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。</p>
         {snapshot && <div className="study-room-summary">
-          <p className="study-kicker">直近5分の学習状況</p>
+          <p className="study-kicker">前回取得時点の直近5分の学習状況</p>
           <p className="study-room-total"><strong>{snapshot.count.toLocaleString("ja-JP")}</strong><span>人</span></p>
-          <p className="study-room-measurement">確認 <time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" })}</time></p>
+          <p className="study-room-measurement">更新 <time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> JST</p>
+          <p>前回取得時点の直近5分の学習者 {snapshot.count.toLocaleString("ja-JP")}人</p>
           {snapshot?.exams.length ? <ul className="study-room-counts" aria-label="資格別の学習人数" tabIndex={0}>
-            {snapshot.exams.map(row => <li key={row.exam}>直近5分に<strong>{row.count.toLocaleString("ja-JP")}</strong>人が{presenceExamName(row.exam)}を学習しました。</li>)}
+            {snapshot.exams.map(row => <li key={row.exam}>前回取得時点の直近5分に<strong>{row.count.toLocaleString("ja-JP")}</strong>人が{presenceExamName(row.exam)}を学習しました。</li>)}
           </ul> : <div className="study-room-guidance">
-            <p>直近5分の学習人数は0人です。</p>
+            <p>前回取得時点の直近5分の学習人数は0人です。</p>
             <p>公開中の問題から学習を始めてみませんか。</p>
             {introductions.length > 0 && <ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}の問題を見る<ArrowRight aria-hidden="true" /></a></li>)}</ul>}
             <a href="#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></a>
           </div>}
-          <p className="study-room-disclosure" title="直近5分に操作した、表示中の問題の資格を集計します。同じブラウザは最後に活動した資格で1人。更新は90秒間隔で、操作が2分途切れると送信を止めます。">同じブラウザは1人として集計</p>
+          <p className="study-room-disclosure" title="前回取得時点の直近5分に操作した、表示中の問題の資格を集計しています。同じブラウザは最後に活動した資格で1人。取得は1時間ごとで、操作が2分途切れると送信を止めます。">同じブラウザは1人として集計</p>
         </div>}
         <div id="study-room-selection" className={`study-room-focus${snapshot && !focus ? " study-room-focus-empty" : ""}`} aria-live="polite" aria-atomic="true">
           <p className="study-kicker">SMALL STEPS, TOGETHER.</p>
@@ -101,6 +104,8 @@ export function StudyRoom({ snapshot, suggestions }: {
           {!snapshot && !focus && <div className="study-room-guidance"><ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul><a href="#choose-qualification" className="study-text-link">ほかの資格を探す<ArrowRight aria-hidden="true" /></a></div>}
           {focus && <button type="button" className="study-text-link" onClick={clearSelection}>選択を戻す</button>}
         </div>
+        <StudyRewardCorner showIdle />
+        <p className="study-room-disclosure">ごほうびはこのタブで最後に回答した一問に対する表示です。集計人数・正誤・ポイントには影響しません。</p>
       </aside>
     </div>
   </>;

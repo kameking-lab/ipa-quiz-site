@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
+import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
+import { recordStudyReward } from "@/lib/study-reward";
 import { QuestionCard } from "./QuestionCard";
 import { DescriptiveAnswerCard } from "./DescriptiveAnswerCard";
 import { NumericAnswerInput } from "./NumericAnswerInput";
@@ -188,6 +190,9 @@ export function QuizPlayer({
         correct,
       });
       const now = Date.now();
+      if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {
+        recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });
+      }
       if (readSettings().recordHistory) {
         history.record({ id: question.id, selected: selection, correct, at: now, ...(nativeBResult ? { nativeBResult } : {}) });
       }
@@ -552,8 +557,9 @@ export function QuizPlayer({
                 : ""}
             </div>
 
+            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
             {revealed && (
-              <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-24 space-y-4 outline-none" aria-label="解答結果">
+              <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-80 space-y-4 outline-none" aria-label="解答結果">
                 <ExplanationCard
                   question={question}
                   nativeBResult={nativeBResult}

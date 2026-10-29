@@ -11,13 +11,13 @@ import { buildOrgNode, buildWebPageNode } from "@/lib/seo/structured-data";
 
 const PAGE_URL = `${SITE_BASE_URL}/about`;
 const PAGE_DESCRIPTION =
-  "過去問AIは、IPA・FP・電気・医療・福祉・不動産等の公開過去問を資格ごとに学べるサービスです。収録範囲・公式出典・独自解説の確認範囲を表示し、公開している学習機能を無料で提供しています。";
+  "過去問AIは、IPA・FP・電気・医療・福祉・不動産等の公開過去問を資格ごとに学べるサービスです。収録範囲・公式出典・独自解説の確認範囲を表示し、無料の学習機能と月額プランを提供しています。";
 
 const ABOUT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "home",
   title: "過去問AIについて",
   subtitle: "教育貢献プロジェクト",
-  body: "公開している資格別の過去問・復習・AI学習支援を無料で提供。",
+  body: "資格別の過去問・復習と、無料枠・月額プランを提供。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "過去問 AI プロジェクトについて",
     description:
-      "資格別の公開過去問・独自解説・学習履歴を無料で提供。出典・確認範囲と運営方針を公開しています。",
+      "資格別の公開過去問・独自解説・学習履歴、無料枠と月額プランを提供。出典・確認範囲と運営方針を公開しています。",
     url: `${SITE_BASE_URL}/about`,
     type: "website",
     siteName: "過去問AI",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "過去問 AI プロジェクトについて",
     description:
-      "資格別の公開過去問・独自解説・学習履歴を無料で提供。出典・確認範囲と運営方針を公開しています。",
+      "資格別の公開過去問・独自解説・学習履歴、無料枠と月額プランを提供。出典・確認範囲と運営方針を公開しています。",
     images: [ABOUT_OG_URL],
   },
 };
@@ -88,9 +88,8 @@ export default function AboutPage() {
           <strong>誰もが平等に学べる場</strong>として公開している教育貢献プロジェクトです。
         </p>
         <p>
-          収録過去問の演習・学習用解説・AIコパイロット等の、
-          すべての学習機能を<strong>無料</strong>で公開しています。受験生の経済状況や所属に
-          関わらず、最善の対策ツールを使えるようにすることがプロジェクトの目的です。
+          個別問題・原紙・保存済み履歴の閲覧と復習は<strong>無料</strong>です。
+          連続演習には無料枠と月額プランがあり、学習機会を広げながら運営を継続することを目指しています。
         </p>
       </section>
 
@@ -114,8 +113,8 @@ export default function AboutPage() {
         {[
           {
             icon: <BookOpen className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />,
-            title: "全機能を無料公開",
-            text: "公開している過去問・復習・AI学習支援に利用料金はかかりません。模試やAI採点の対応範囲は各機能ページで確認できます。",
+            title: "無料の学習機能と月額プラン",
+            text: "個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習の無料枠と月額プラン、AI機能の対応範囲は各案内で確認できます。",
           },
           {
             icon: <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />,
@@ -232,16 +231,16 @@ export default function AboutPage() {
         <p>
           IPA Quiz は IPA 情報処理技術者試験の学習機会を広げることを目的とした
           <strong>教育貢献プロジェクト</strong>として運営されています。
-          現在、料金プランは設定しておらず、すべての機能を完全無料でご利用いただけます。
+          個別問題・原紙・保存済み履歴の閲覧と復習は無料です。ログイン後の連続演習は1日10問まで無料で、日本時間0時に更新されます。
         </p>
         <p>
           AI コパイロットの利用回数には公平利用のための日次上限を設けていますが、
-          試験区分・問題数・モード・履歴・出題機能など、学習に必要な機能はすべて無料で開放しています。
-          α 期間からのご利用者の方は、今後も継続して無料でお使いいただけます。
+          対象の連続演習を回数制限なく使う月額プランは税込980円で毎月自動更新され、期間末解約を予約できます。
+          AI応答や音声の利用権は月額プランに含みません。既存の保存済み履歴を課金のために削除することはありません。
         </p>
         <p className="text-xs text-zinc-500 dark:text-zinc-400">
-          将来的に運営コストを賄うための仕組みを検討する可能性はありますが、
-          既存ユーザーの学習体験を損なう変更は行いません。
+          販売状況、対象範囲、日割返金なし・重複誤請求や当社障害時の個別返金、事業者情報の開示請求は
+          <Link href="/billing" className="underline">月額プランの案内</Link>をご確認ください。法令上の権利は制限しません。
         </p>
       </section>
 
@@ -286,7 +285,7 @@ export default function AboutPage() {
         過去問 AI を応援する
       </h2>
       <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        全機能を無料で公開しているため、金銭的なご支援はお願いしていません。
+        月額プランとは別の寄付や金銭的なご支援はお願いしていません。
         かわりに、もっと届けたい人へつないでくださると、運営の励みになります。
       </p>
       <section className="mb-8 space-y-3">
@@ -304,7 +303,7 @@ export default function AboutPage() {
             </p>
             <ShareButtons
               url={`${SITE_BASE_URL}/`}
-              text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を応援しています。"
+              text="無料の学習機能と月額プランを提供する教育貢献プロジェクト「過去問 AI」を応援しています。"
               hashtags={["過去問AI", "IPA試験", "応用情報"]}
             />
           </CardContent>
@@ -339,7 +338,7 @@ export default function AboutPage() {
             <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
               <li>所属する勉強会・社内チャットで紹介する</li>
               <li>note・ブログ・YouTube などで取り上げる</li>
-              <li>学校・専門学校・社内研修の補助教材として活用する（無料）</li>
+              <li>学校・専門学校・社内研修の補助教材として活用する（無料範囲・月額条件は各案内を確認）</li>
             </ul>
           </CardContent>
         </Card>
@@ -353,7 +352,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              学校・専門学校・社内研修などでご活用いただく場合も、料金は一切かかりません。
+              学校・専門学校・社内研修でのご利用にも、各機能の無料範囲と月額プランの条件が適用されます。
               活用事例の共有や、運用上のご相談がありましたら{" "}
               <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
                 お問い合わせフォーム

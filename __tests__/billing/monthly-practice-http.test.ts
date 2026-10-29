@@ -1,0 +1,20 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { monthlyFixture } from "./monthly-fixture";
+const wiring=vi.hoisted(()=>({runtime:null as unknown,user:"alice" as string|null}));
+vi.mock("@/lib/auth",()=>({auth:async()=>wiring.user?{user:{id:wiring.user}}:null}));
+vi.mock("@/lib/db/prisma",()=>({prisma:{}}));
+vi.mock("@/lib/billing/subscription/runtime",()=>({monthlyRuntime:()=>wiring.runtime}));
+vi.mock("@/lib/questions/pool-server",()=>({findQuestionById:async(id:string)=>({id})}));
+vi.mock("@/lib/questions/filter",()=>({isPracticeReadyQuestion:()=>true,shuffleChoices:(q:unknown)=>q}));
+import { POST } from "@/app/api/billing/question/route";
+import { practiceGateEnabled } from "@/lib/billing/practice-access";
+const post=(id="q-practice")=>POST(new Request("http://localhost:3338/api/billing/question",{method:"POST",headers:{origin:"http://localhost:3338"},body:JSON.stringify({id})}));
+beforeEach(()=>{wiring.user="alice";for(const [k,v] of Object.entries({BILLING_PRODUCT:"subscription",BILLING_MODE:"stripe-test",BILLING_WEBHOOK_MODE:"stripe-test",BILLING_SUBSCRIPTION_ENABLED:"true",BILLING_SOURCE_INSTANCE:"monthly-fixture",BILLING_STRIPE_TEST_PRICE_ID:"price_monthly",BILLING_SUBSCRIPTION_PORTAL_CONFIGURATION_ID:"bpc_fixture",BILLING_ORIGIN:"http://localhost:3338",BILLING_STARTS_AT:"2026-01-02T00:00:00Z",BILLING_NOTICE_AT:"2026-01-01T00:00:00Z",BILLING_LEGAL_REVIEWED:"true",BILLING_SELLER_NAME:"Fixture",BILLING_SELLER_ADDRESS:"Fixture",BILLING_SELLER_PHONE:"000",BILLING_SUPPORT_EMAIL:"fake@example.invalid",BILLING_REFUND_TERMS:"Fixture only"}))vi.stubEnv(k,v);});
+afterEach(()=>vi.unstubAllEnvs());
+describe("practice gate -> normal Auth identity -> real monthly service (offline memory)",()=>{
+ it("monthly enabled charges one trial question, then preserves paid access without trial consumption",async()=>{const f=await monthlyFixture();wiring.runtime=f;expect(practiceGateEnabled()).toBe(true);const first=await post();expect(first.status).toBe(200);expect((await first.json()).access).toMatchObject({kind:"trial",remaining:9});await f.send();const paid=await post("q-paid");expect((await paid.json()).access.kind).toBe("pass");expect((await f.service.status("alice")).entitled).toBe(true);});
+ it("another signed-in identity cannot use Alice's paid entitlement",async()=>{const f=await monthlyFixture();wiring.runtime=f;await f.send();wiring.user="bob";const r=await post();expect((await r.json()).access.kind).toBe("trial");expect((await f.service.status("alice")).entitled).toBe(true);});
+ it("anonymous cannot grant or mutate an existing paid account",async()=>{const f=await monthlyFixture();wiring.runtime=f;await f.send();const before=JSON.stringify(f.account());wiring.user=null;expect((await post()).status).toBe(401);expect(JSON.stringify(f.account())).toBe(before);});
+ it("webhook-only mode leaves practice free and retains saved paid rights",async()=>{const f=await monthlyFixture();wiring.runtime=f;await f.send();const before=JSON.stringify(f.account());vi.stubEnv("BILLING_MODE","off");expect(practiceGateEnabled()).toBe(false);const r=await post();expect((await r.json()).access.kind).toBe("free");expect(JSON.stringify(f.account())).toBe(before);expect((await f.service.status("alice")).entitled).toBe(true);});
+ it("unconfigured selected monthly fails closed without account mutation",async()=>{const f=await monthlyFixture();wiring.runtime=f;const before=JSON.stringify(f.account());vi.stubEnv("BILLING_SOURCE_INSTANCE","");expect(()=>practiceGateEnabled()).toThrow();expect((await post()).status).toBe(503);expect(JSON.stringify(f.account())).toBe(before);});
+});

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE, PRESENCE_POLL_MS, PRESENCE_IDLE_MS } from "@/lib/study-presence";
+import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE, PRESENCE_REFRESH_MS, PRESENCE_IDLE_MS } from "@/lib/study-presence";
 import { PRESENCE_STATE_EVENT, presenceFallback, presenceViewState, presenceRetryDelay, presenceRetryAfterMs, type MeasuredPresence, type PresenceViewState } from "@/lib/study-presence-contract";
 
 interface BrowserIdentifier { id: string; previousVisitorId?: string; stored: string }
@@ -74,7 +74,7 @@ export function StudyPresence() {
       }
       if (busy) return;
       if (Date.now() < nextAttempt) { schedule(); return; }
-      busy = true; nextAttempt = Date.now() + PRESENCE_POLL_MS;
+      busy = true; nextAttempt = Date.now() + PRESENCE_REFRESH_MS;
       controller = new AbortController();
       const signal = controller.signal;
       const timeout = setTimeout(() => controller?.abort(), 8_000);
@@ -107,13 +107,13 @@ export function StudyPresence() {
           if (state.mode === "measured") { previous = state.snapshot; failures = 0; }
           else {
             if (state.mode === "stale") previous = state.previous;
-            nextAttempt = Date.now() + Math.max(presenceRetryDelay(++failures), retryAfter);
+            nextAttempt = Date.now() + Math.max(PRESENCE_REFRESH_MS, presenceRetryDelay(++failures), retryAfter);
           }
           emit(state);
         }
       } catch {
         if (!disposed && active() && needed()) {
-          nextAttempt = Date.now() + Math.max(presenceRetryDelay(++failures), retryAfter);
+          nextAttempt = Date.now() + Math.max(PRESENCE_REFRESH_MS, presenceRetryDelay(++failures), retryAfter);
           emit(presenceFallback(previous, "unavailable"));
         }
       } finally { clearTimeout(timeout); busy = false; schedule(); }

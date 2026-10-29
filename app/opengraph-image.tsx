@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "過去問AI — IPA 試験対策を、誰もが平等に。全機能無料";
+export const alt = "過去問AI — IPA 試験対策を、誰もが平等に。無料枠と月額プラン";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -51,7 +51,7 @@ export default function OgImage() {
               fontWeight: 700,
             }}
           >
-            教育貢献プロジェクト・全機能無料
+            教育貢献プロジェクト・無料枠と月額プラン
           </div>
         </div>
         <div
@@ -77,7 +77,7 @@ export default function OgImage() {
             lineHeight: 1.5,
           }}
         >
-          全 13 試験区分 × AI コパイロット × 全機能無料
+          全 13 試験区分 × AI コパイロット × 無料枠と月額プラン
         </div>
         <div
           style={{

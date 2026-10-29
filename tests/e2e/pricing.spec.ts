@@ -9,11 +9,16 @@ test.describe("/pricing は恒久削除（410 Gone）", () => {
     expect(res.status()).toBe(410);
   });
 
-  test("/about の料金についてセクションが教育貢献ピボットを伝えている", async ({ page }) => {
+  test("/about の料金案内が無料範囲と月額プランを伝えている", async ({ page }) => {
     await page.goto("/about");
-    const html = await page.content();
-    expect(html).toContain("教育貢献プロジェクト");
-    expect(html).toContain("料金プラン");
+    const heading = page.getByRole("heading", { name: "料金について", exact: true });
+    await expect(heading).toBeVisible();
+    const section = heading.locator("+ section");
+    await expect(section.getByText("教育貢献プロジェクト", { exact: true })).toBeVisible();
+    await expect(section.getByText(/個別問題・原紙・保存済み履歴の閲覧と復習は無料です。/)).toBeVisible();
+    await expect(section.getByText(/ログイン後の連続演習は1日10問まで無料で、日本時間0時に\s*更新されます。/)).toBeVisible();
+    await expect(section.getByText(/月額プランは税込980円で毎月自動更新され/)).toBeVisible();
+    await expect(section.getByRole("link", { name: "月額プランの案内" })).toHaveAttribute("href", "/billing");
   });
 
   test("Sitemap returns 200", async ({ request }) => {

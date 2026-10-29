@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年9月11日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -118,6 +118,10 @@ export default function PrivacyPage() {
             <p>
               任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
               提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。
+              外部アカウントの認証識別子と、プロバイダから返却された場合には認証処理に必要な
+              アクセストークン・IDトークン・更新トークン・有効期限等も保存します。
+              これらは認証、アカウント表示、学習履歴との紐付けのために利用し、
+              サービスの運用基盤であるVercelおよびNeonに処理・保管を委託します。
               ログイン後は学習履歴・回答履歴を当社サーバーに同期し、複数端末間で共有できます
               （詳細は{" "}
               <Link
@@ -129,7 +133,7 @@ export default function PrivacyPage() {
               {" "}より管理可能）。
             </p>
             <p>
-              本サービスは教育貢献プロジェクトとして全機能を無料で提供しており、決済情報を取得・処理する機能はありません。
+              月額プランの決済にはStripeを利用します。アプリからStripeへ顧客・申込の識別子と同意確認情報等を送信し、決済画面で入力されたメールアドレス等はStripeが処理します。当社は申込・契約・請求・返金の識別子、金額、支払状態、利用対象期間、通知処理記録を保存して利用権を管理します。カード番号やセキュリティコードはStripeの決済画面で入力し、当社アプリは受け取りません。
               公開通知メールリストへの登録時は、入力されたメールアドレスを当社サーバーに保存します。
             </p>
           </Section>

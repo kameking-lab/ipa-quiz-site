@@ -153,7 +153,7 @@ export default async function StatsPage() {
           過去問AI の公開統計
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          無料・登録不要の資格学習サイト「過去問AI」の利用状況を公開しています。
+          無料の学習機能と月額プランを提供する資格学習サイト「過去問AI」の利用状況を公開しています。
           数値は Google Search Console と PostHog の実データです。
         </p>
 
@@ -383,7 +383,7 @@ export default async function StatsPage() {
         <Card>
           <CardContent className="space-y-3 p-5 text-sm text-foreground">
             <PolicyRow label="運営形態" value="kameking-lab（公開運営ハンドル）" />
-            <PolicyRow label="利用料金" value="完全無料（全機能）" />
+            <PolicyRow label="利用料金" value="無料枠 / 月額980円（税込・自動更新）" />
             <PolicyRow label="会員登録" value="不要" />
             <PolicyRow label="広告" value="本文と出典の確認記録がある学習記事の本文末尾だけを対象にします。確認記録のない資格トップ・記事には表示しません。" />
             <PolicyRow

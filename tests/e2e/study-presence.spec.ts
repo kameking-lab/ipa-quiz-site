@@ -19,13 +19,13 @@ async function measured(page: Page, value: StudyPresenceSnapshot): Promise<Measu
   return { mode: "measured", previous: null, snapshot: { ...value, status: "measured", total: value.count,
     measuredAt: new Date(now).toISOString(), validUntil: new Date(now + 90_000).toISOString(), windowSeconds: 300 } };
 }
-async function show(page: Page, state: PresenceViewState) {
+async function show(page: Page, state: PresenceViewState, expectedLabel = state.mode === "promotion" ? "学習のご案内" : "前回取得時点の学習状況") {
   const viewer = page.locator("[data-study-presence-viewer]");
   await expect(viewer).toHaveCount(1);
   await expect.poll(async () => {
     await page.evaluate(value => window.dispatchEvent(new CustomEvent("study-presence-state", { detail: value })), state);
     return viewer.getAttribute("aria-label");
-  }).toBe(state.mode === "measured" ? "直近5分の学習状況" : "学習のご案内");
+  }).toBe(expectedLabel);
 }
 async function expectBounded(page: Page) {
   const viewer = page.locator("[data-study-presence-viewer]");
@@ -57,12 +57,13 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await page.setViewportSize({ width, height: 800 });
     const fresh = await measured(page, data);
     await show(page, fresh);
-    const region = page.getByRole("region", { name: "直近5分の学習状況" });
+    const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
     await expect(region.getByRole("list", { name: "資格別の学習人数" }).getByRole("listitem")).toHaveText([
-      "直近5分に3人が基本情報技術者を学習しました。", "直近5分に1人が第二種電気工事士を学習しました。",
+      "前回取得時点の直近5分に3人が基本情報技術者を学習しました。", "前回取得時点の直近5分に1人が第二種電気工事士を学習しました。",
     ]);
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
+    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
     await expect(region.getByRole("button", { name: /チワワ（集計人数のイメージ）/ })).toHaveCount(4);
     await expect(region.getByText("同じブラウザは1人として集計", { exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
@@ -70,34 +71,50 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expectBounded(page);
 
     await show(page, await measured(page, { count: 0, exams: [] }));
-    await expect(region.getByText("直近5分の学習人数は0人です。", { exact: true })).toBeVisible();
+    await expect(region.getByText("前回取得時点の直近5分の学習人数は0人です。", { exact: true })).toBeVisible();
     await expect(region.locator(".study-room-total")).toHaveText("0人");
-    await expect(region.getByRole("button", { name: /チワワ/ })).toHaveCount(0);
+    const emptyRoom = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
+    await expect(emptyRoom).toBeVisible();
+    await expect(emptyRoom.getByRole("button")).toHaveCount(0);
+    await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
+    await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
     await expect(region.getByRole("link")).toHaveCount(7);
     await expectBounded(page);
 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
-    await expectGuidance(page);
+    await expect(region.locator(".study-room-total")).toHaveText("4人");
+    await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
+    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
+    await expectBounded(page);
     await show(page, { mode: "promotion", snapshot: null, previous: null, reason: "unavailable" });
     await expectGuidance(page);
   }
 
-  // Replaying cached data retains its original deadline rather than refreshing it.
+  // Replaying a cached sample does not refresh its timestamp; it remains historical after expiry.
   const cached = await measured(page, data);
   await show(page, cached);
   await page.clock.fastForward(45_000);
   await show(page, cached);
   await expect(page.locator("[data-study-presence-viewer] time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
   await page.clock.fastForward(45_001);
+  const historical = page.getByRole("region", { name: "前回取得時点の学習状況" });
+  await expect(historical.locator(".study-room-total")).toHaveText("4人");
+  await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
+  await expect(historical.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
+  await show(page, { mode: "stale", snapshot: null, previous: cached.snapshot, reason: "expired" });
+  await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
+  await expect(historical.locator(".study-room-total")).toHaveText("4人");
+  const invalidPrevious = { ...cached.snapshot, validUntil: new Date(Date.parse(cached.snapshot.measuredAt) + 3_600_000).toISOString() };
+  await show(page, { mode: "stale", snapshot: null, previous: invalidPrevious, reason: "unavailable" }, "学習のご案内");
   await expectGuidance(page);
 });
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");
   const codes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "denko2", "denken3"];
   await show(page, await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) }));
-  const region = page.getByRole("region", { name: "直近5分の学習状況" });
+  const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
   await expect(region.locator(".study-room-total")).toHaveText("15人");

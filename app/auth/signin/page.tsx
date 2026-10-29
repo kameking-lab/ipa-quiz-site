@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { authConfig } from "@/lib/auth/config";
+import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import { redirect } from "next/navigation";
 import {
   AlertCircle,
@@ -15,7 +16,7 @@ import { EmailSignInForm } from "./EmailSignInForm";
 
 export const metadata: Metadata = {
   title: "ログイン",
-  description: "過去問AI にログインして学習履歴をクラウド同期。α公開中・全機能無料。",
+  description: "過去問AI にログインして学習履歴をクラウド同期。無料の学習機能と月額プラン。",
   robots: { index: false, follow: false },
 };
 
@@ -87,7 +88,7 @@ export default async function SignInPage({
         {/* Hero */}
         <div className="mb-8 text-center">
           <Badge variant="success" className="mb-4">
-            α公開中・全機能無料
+            無料の学習機能と月額プラン
           </Badge>
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
@@ -96,8 +97,8 @@ export default async function SignInPage({
             {" "}にログイン
           </h1>
           <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            未ログインでも全機能を利用できます。
-            学習履歴をクラウド同期したい方のみログインしてください。
+            ログインして無料1日{MONTHLY_PUBLIC_OFFER.freeDaily}問の学習と履歴のクラウド同期を利用できます。
+            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。
           </p>
         </div>
 
@@ -137,14 +138,12 @@ export default async function SignInPage({
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">
               <p className="mb-1">
-                ログイン機能は{" "}
                 <strong className="font-semibold text-foreground">
-                  2026年5月公開予定
-                </strong>{" "}
-                です。
+                  ログインの準備中です
+                </strong>
               </p>
               <p className="text-xs">
-                現在は未ログインでも全機能を無制限にご利用いただけます。
+                現在、月額プランの購入は開始していません。
               </p>
               <Link
                 href="/about"
@@ -164,11 +163,11 @@ export default async function SignInPage({
           />
           <BenefitPill
             icon={<Sparkles className="h-3.5 w-3.5" />}
-            label="β 期間中は全機能無料"
+            label="無料枠と月額プランをご用意"
           />
           <BenefitPill
             icon={<ShieldCheck className="h-3.5 w-3.5" />}
-            label="メアドのみ・解除自由"
+            label="アカウントで学習を管理"
           />
         </div>
 

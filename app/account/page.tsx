@@ -123,7 +123,7 @@ export default async function AccountPage() {
               教育貢献プロジェクト
             </div>
             <p className="mt-1.5 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-              全機能を無料でご利用いただけます。AI コパイロットの利用方法や、応援のお願いについては{" "}
+              無料の学習機能と連続演習の月額プランをご利用いただけます。AI コパイロットの利用方法や、応援のお願いについては{" "}
               <Link href="/about" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
                 プロジェクトについて
               </Link>

@@ -8,6 +8,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 import { redirect } from "next/navigation";
+import { practiceGateEnabled } from "@/lib/billing/practice-access";
 
 // /quiz is the interactive quiz player (app shell), not an SEO landing.
 // next.config.ts 308-redirects bare /quiz to "/" (no `mode` query), so the
@@ -157,6 +158,7 @@ export default async function QuizPage({
       {!isSearchPool && exam !== "denken3" && exam !== "denken2" && exam !== "denken1" && <QuizModeTabs active={mode} exam={exam} />}
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
+        billingGateEnabled={practiceGateEnabled()}
         poolIds={poolIds}
         initialQuestionId={sp.question}
         mode={mode}
