@@ -73,7 +73,11 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await show(page, await measured(page, { count: 0, exams: [] }));
     await expect(region.getByText("前回取得時点の直近5分の学習人数は0人です。", { exact: true })).toBeVisible();
     await expect(region.locator(".study-room-total")).toHaveText("0人");
-    await expect(region.getByRole("button", { name: /チワワ/ })).toHaveCount(0);
+    const emptyRoom = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
+    await expect(emptyRoom).toBeVisible();
+    await expect(emptyRoom.getByRole("button")).toHaveCount(0);
+    await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
+    await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
     await expect(region.getByRole("link")).toHaveCount(7);
