@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月28日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -118,6 +118,10 @@ export default function PrivacyPage() {
             <p>
               任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
               提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。
+              外部アカウントの認証識別子と、プロバイダから返却された場合には認証処理に必要な
+              アクセストークン・IDトークン・更新トークン・有効期限等も保存します。
+              これらは認証、アカウント表示、学習履歴との紐付けのために利用し、
+              サービスの運用基盤であるVercelおよびNeonに処理・保管を委託します。
               ログイン後は学習履歴・回答履歴を当社サーバーに同期し、複数端末間で共有できます
               （詳細は{" "}
               <Link
