@@ -9,6 +9,8 @@ import { orderByPriority } from "@/lib/learning/spaced-repetition";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
+import type { PracticeAccess } from "@/lib/billing/practice-contract";
 
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -75,19 +77,22 @@ function deriveSessionPool(
   return mode === "year" ? ids : ids.slice(0, MAX_POOL);
 }
 
-async function fetchQuestion(id: string, shuffle: boolean, start: boolean): Promise<Question> {
+async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signal: AbortSignal): Promise<{ question: Question; access: PracticeAccess | null }> {
   if (start) {
-    const res = await fetch("/api/billing/question", { method: "POST", cache: "no-store",
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, shuffle }) });
-    const payload = await res.json();
-    if (!res.ok) throw new Error(typeof payload.error === "string" ? payload.error : "billing_unavailable");
-    return payload.question as Question;
+    return fetchPracticeQuestion(id, shuffle, signal);
   }
   const qs = new URLSearchParams({ id });
   if (shuffle) qs.set("shuffle", "1");
-  const res = await fetch(`/api/questions/next?${qs.toString()}`);
+  const res = await fetch(`/api/questions/next?${qs.toString()}`, { signal });
   if (!res.ok) throw new Error(`fetch question failed: ${res.status}`);
-  return (await res.json()) as Question;
+  return { question: (await res.json()) as Question, access: null };
+}
+
+function resetLabel(access: PracticeAccess | null) {
+  if (!access) return null;
+  return new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo", month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23",
+  }).format(new Date(access.resetAt)) + "（日本時間）";
 }
 
 export function QuizClient({
@@ -120,6 +125,7 @@ export function QuizClient({
   const [current, setCurrent] = React.useState<Question | null>(null);
   const [loadError, setLoadError] = React.useState(false);
   const [accessError, setAccessError] = React.useState<string | null>(null);
+  const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
   const cache = React.useRef<Map<string, Question>>(new Map());
@@ -178,6 +184,7 @@ export function QuizClient({
     window.history.replaceState(null, "", url);
 
     let cancelled = false;
+    const controller = new AbortController();
     const shuffle = mode === "random";
 
     const loadInto = async (id: string, setActive: boolean) => {
@@ -189,15 +196,21 @@ export function QuizClient({
         return;
       }
       try {
-        const q = await fetchQuestion(id, shuffle, setActive && requiresGrant);
-        cache.current.set(id, q);
-        if (setActive && !cancelled) { setCurrent(q); setLoadError(false); setAccessError(null); }
+        const result = await fetchQuestion(id, shuffle, setActive && requiresGrant, controller.signal);
+        if (cancelled) return;
+        cache.current.set(id, result.question);
+        if (setActive) { setCurrent(result.question); setAccess(result.access); setLoadError(false); setAccessError(null); }
       } catch (error) {
-        if (setActive && !cancelled) { setLoadError(true); setAccessError(error instanceof Error ? error.message : null); }
+        if (setActive && !cancelled) {
+          setLoadError(true);
+          setAccess(error instanceof PracticeRequestError ? error.access : null);
+          setAccessError(error instanceof Error ? error.message : null);
+        }
       }
     };
 
     setCurrent(null);
+    setAccess(null);
     setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
@@ -205,6 +218,7 @@ export function QuizClient({
 
     return () => {
       cancelled = true;
+      controller.abort();
     };
   }, [sessionIds, index, mode, retryCount, billingGateEnabled]);
 
@@ -232,20 +246,43 @@ export function QuizClient({
   }
 
   if (loadError) {
+    const reset = resetLabel(access);
+    const loginHref = `/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+    const message = accessError === "daily_limit"
+      ? `本日の無料連続演習枠を使い切りました。${reset ? `${reset}に再開できます。` : "次の無料枠更新後に再開できます。"}`
+      : accessError === "sign_in_required"
+        ? "この端末の本日の演習枠はアカウントへの引継ぎが開始されています。続きは同じアカウントでログインして再試行してください。"
+        : accessError === "guest_cookie_required"
+          ? "このブラウザーでCookieを保存できませんでした。Cookieの設定をご確認ください。公開問題や無料復習もご利用いただけます。"
+          : accessError === "guest_rate_limited"
+            ? `短時間の操作が続いています。${access?.retryAfter != null ? `${access.retryAfter}秒ほど待ってから` : "少し待ってから"}もう一度お試しください。`
+            : "問題を読み込めませんでした。少し待ってからもう一度お試しください。";
     return <div role="alert" className="mx-auto max-w-xl space-y-4 px-4 py-10 text-center">
-      <p className="font-semibold">{accessError === "daily_limit" ? "本日の無料連続演習枠を使い切りました。翌日0時（日本時間）に再開できます。" : accessError === "sign_in_required" ? "続けるにはログインしてください。" : "問題を読み込めませんでした。"}</p>
-      <p>保存済みの学習履歴はそのまま残っています。</p>
-      {accessError === "sign_in_required" && <Link className="block underline" href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof window !== "undefined" ? window.location.pathname + window.location.search : "/billing")}`}>この問題から再開するためにログイン</Link>}
-      {(accessError === "daily_limit" || accessError === "sign_in_required") && <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>}
+      <p className="font-semibold">{message}</p>
+      <p>この端末に保存した学習記録は削除されません。履歴の同期などは無料ログインで利用できます。</p>
+      {accessError === "daily_limit" ? <p>ログインだけで本日の無料枠が追加されることはありません。</p> : null}
+      <nav aria-label="無料で続ける・保存と利用条件" className="flex flex-wrap justify-center gap-3">
+        <Link href="/review" className="underline">保存済みの履歴・無料復習</Link>
+        <Link className="underline" href={loginHref}>この問題から再開するためにログイン</Link>
+        <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>
+      </nav>
       <div className="flex flex-wrap justify-center gap-3">
-        <button type="button" onClick={() => setRetryCount((count) => count + 1)} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button>
+        {accessError !== "daily_limit" ? <button type="button" onClick={() => setRetryCount((count) => count + 1)} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button> : null}
         <Link href={backHref} className="inline-flex min-h-11 items-center rounded-xl border border-border px-5 py-2 font-semibold">科目選択へ戻る</Link>
       </div>
     </div>;
   }
 
   return (
-    <QuizPlayer
+    <>
+      {access?.kind === "guest" ? (
+        <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
+          <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>
+          <p>学習履歴は設定に応じてこの端末に保存されます。<Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`} className="underline">履歴の同期などは無料ログイン</Link>で利用できます。</p>
+          <p>この演習枠はAIへの質問回数とは別です。</p>
+        </aside>
+      ) : null}
+      <QuizPlayer
       question={current}
       index={index}
       total={sessionIds.length}
@@ -256,6 +293,7 @@ export function QuizClient({
       completionLabel={completionLabel}
       completionShareHref={completionShareHref}
       onNext={handleNext}
-    />
+      />
+    </>
   );
 }

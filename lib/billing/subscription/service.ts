@@ -212,16 +212,20 @@ export class MonthlyService {
           expiresAt: paid && sub && paid.subscriptionId === sub.id ? new Date(paid.periodEnd * 1000).toISOString() : null, amount: signup.amount } : null };
     }, true);
   }
-  async grant(userId: string, questionId: string) {
-    return this.tx(userId, async a => {
+  async grant(userId: string, questionId: string, snapshots: ReadonlyArray<{ day: string; ids: string[] }> = [], allowNew = true, requestDay?: string) {
+    const result = await this.tx(userId, async a => {
       const now = this.clock();
       if (access(a, now.getTime() / 1000)) return { kind: "pass" as const, remaining: null };
-      const day = jstDay(now), grants = a.grants[day] ?? [];
-      if (!grants.includes(questionId)) {
-        if (grants.length >= this.config.freeDaily) throw new BillingError("daily_limit", 429);
-        a.grants[day] = [...grants, questionId];
-      }
-      return { kind: "trial" as const, remaining: this.config.freeDaily - a.grants[day].length };
+      for (const snapshot of snapshots) a.grants[snapshot.day] = [...new Set([...(a.grants[snapshot.day] ?? []), ...snapshot.ids])];
+      const day = requestDay ?? jstDay(now), grants = a.grants[day] ?? [];
+      if (grants.includes(questionId)) return { kind: "trial" as const, remaining: allowNew ? Math.max(0, this.config.freeDaily - grants.length) : null };
+      if (!allowNew) return { kind: "unavailable" as const, remaining: null };
+      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, remaining: 0 };
+      a.grants[day] = [...grants, questionId];
+      return { kind: "trial" as const, remaining: Math.max(0, this.config.freeDaily - a.grants[day].length) };
     });
+    if (result.kind === "limit") throw new BillingError("daily_limit", 429);
+    if (result.kind === "unavailable") throw new BillingError("billing_unavailable", 503);
+    return result;
   }
 }

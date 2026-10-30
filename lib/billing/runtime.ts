@@ -8,10 +8,14 @@ import { BillingService } from "./service";
 import { StripeCheckoutProvider } from "./stripe";
 import { monthlyConfig, monthlySelected } from "./subscription/config";
 
+export async function optionalBillingIdentity() {
+  const session = await auth(); // An auth exception is a dependency failure, not an anonymous session.
+  return session?.user?.id ?? null;
+}
 export async function billingIdentity() {
-  const session = await auth();
-  if (!session?.user?.id) throw new BillingError("sign_in_required", 401);
-  return session.user.id; // Never use email, JWT plan, localStorage or a request-supplied buyer ID.
+  const id = await optionalBillingIdentity();
+  if (!id) throw new BillingError("sign_in_required", 401);
+  return id; // Never trust a request-supplied buyer ID.
 }
 export function billingRuntime() {
   const config = billingConfig();

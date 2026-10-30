@@ -25,7 +25,7 @@ function request(entries: unknown[] = []) {
   return new Request("https://app.example.invalid/api/account/history-sync", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ entries }),
+    body: JSON.stringify({ entries, expectedUserId: "unit-user" }),
   });
 }
 

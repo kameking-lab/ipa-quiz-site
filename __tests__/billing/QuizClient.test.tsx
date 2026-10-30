@@ -7,6 +7,7 @@ vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => ({ getAllEnt
 vi.mock("next/link", () => ({ default: ({ children, ...props }: React.ComponentProps<"a">) => <a {...props}>{children}</a> }));
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { billingConfig, gateReady } from "@/lib/billing/config";
+const access = { kind: "trial", remaining: 9, freeDaily: 10, resetAt: "2026-10-30T15:00:00.000Z", retryAfter: null };
 beforeEach(() => { window.history.replaceState({}, "", "/quiz?mode=year"); window.sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe("QuizClient authorization boundary", () => {
@@ -31,7 +32,7 @@ describe("QuizClient authorization boundary", () => {
     const fetcher = vi.fn(async (url: string, opts?: RequestInit) => {
       if (!opts?.method) return Response.json({ id: "q2" });
       const { id } = JSON.parse(opts.body as string);
-      return id === "q2" ? Response.json({ error: "daily_limit" }, { status: 429 }) : Response.json({ question: { id }, access: { kind: "trial" } });
+      return id === "q2" ? Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 }) : Response.json({ question: { id }, access });
     });
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
@@ -45,7 +46,7 @@ describe("QuizClient authorization boundary", () => {
     window.history.replaceState({}, "", "/quiz?mode=year&question=q2");
     vi.stubGlobal("fetch", vi.fn(async (_url: string, opts?: RequestInit) => opts?.method ? Response.json({ error: "sign_in_required" }, { status: 401 }) : Response.json({ id: "q3" })));
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2", "q3"]} mode="year" backHref="/" initialQuestionId="q2" />);
-    await screen.findByText("続けるにはログインしてください。");
+    await screen.findByText("この端末の本日の演習枠はアカウントへの引継ぎが開始されています。続きは同じアカウントでログインして再試行してください。");
     const login = screen.getByText("この問題から再開するためにログイン");
     expect(decodeURIComponent(login.getAttribute("href")!)).toContain("question=q2");
     await act(async () => fireEvent.click(screen.getByText("再読み込み")));

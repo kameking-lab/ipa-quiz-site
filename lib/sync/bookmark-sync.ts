@@ -3,6 +3,7 @@
 import { getAllBookmarks, mergeServerBookmarks } from "@/lib/storage/bookmarks";
 import { postSync, type SyncStatus } from "./client";
 import type { BookmarkSyncEntry } from "./types";
+import { ownsSyncContext, type SyncContext } from "./ownership";
 
 /**
  * Push local bookmarks to the server (opt-in, signed-in users only) and merge
@@ -10,7 +11,7 @@ import type { BookmarkSyncEntry } from "./types";
  * of truth for signed-out users — this is a no-op (unauthenticated/unavailable)
  * for them.
  */
-export async function syncBookmarks(): Promise<SyncStatus> {
+export async function syncBookmarks(context: SyncContext): Promise<SyncStatus> {
   const local = getAllBookmarks();
   const entries: BookmarkSyncEntry[] = local.map((b) => ({
     questionId: b.questionId,
@@ -31,9 +32,11 @@ export async function syncBookmarks(): Promise<SyncStatus> {
   const { status, entries: server } = await postSync<BookmarkSyncEntry>(
     "/api/account/bookmark-sync",
     entries,
+    context,
   );
 
   if (status.state === "ok") {
+    if (!ownsSyncContext(context)) return { state: "deferred", reason: "account_changed" };
     mergeServerBookmarks(server);
   }
   return status;
