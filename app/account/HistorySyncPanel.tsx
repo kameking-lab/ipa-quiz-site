@@ -3,50 +3,17 @@
 import { useState } from "react";
 import { CloudUpload, Download, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LS_KEYS } from "@/lib/storage/keys";
+import { syncHistory } from "@/lib/sync/history-sync";
+import { useSyncIdentity } from "@/lib/sync/use-sync-identity";
+import { SyncOwnershipNotice } from "@/components/sync/SyncOwnershipNotice";
 
 interface SyncResult {
   merged: number;
   total: number;
 }
 
-interface ClientEntry {
-  id: string;
-  selected?: string;
-  correct: boolean;
-  at: number;
-}
-
-function readLocalHistory(): ClientEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(LS_KEYS.history);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as { entries?: ClientEntry[] };
-    return Array.isArray(parsed.entries) ? parsed.entries : [];
-  } catch {
-    return [];
-  }
-}
-
-function writeLocalHistory(entries: ClientEntry[]): void {
-  if (typeof window === "undefined") return;
-  try {
-    const raw = window.localStorage.getItem(LS_KEYS.history);
-    const parsed = raw ? (JSON.parse(raw) as { starredIds?: string[] }) : {};
-    window.localStorage.setItem(
-      LS_KEYS.history,
-      JSON.stringify({
-        entries,
-        starredIds: Array.isArray(parsed.starredIds) ? parsed.starredIds : [],
-      }),
-    );
-  } catch {
-    // ignore quota errors
-  }
-}
-
 export function HistorySyncPanel() {
+  const identity = useSyncIdentity();
   const [loading, setLoading] = useState<"sync" | "export" | null>(null);
   const [result, setResult] = useState<SyncResult | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -56,28 +23,23 @@ export function HistorySyncPanel() {
     setResult(null);
     setLoading("sync");
     try {
-      const local = readLocalHistory();
-      const res = await fetch("/api/account/history-sync", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ entries: local }),
+      if (!identity.account) return;
+      const status = await syncHistory({
+        expectedUserId: identity.account.id,
+        confirmUnowned: identity.confirmedFor === identity.account.id,
       });
-      if (!res.ok) {
-        const txt = await res.text();
-        setError(`同期失敗 (${res.status}): ${txt}`);
-        return;
+      if (status.state === "ok") {
+        setResult({ merged: status.merged, total: status.total });
+      } else {
+        setError(status.state === "deferred"
+          ? "保存先の確認が必要なため、履歴の同期を保留しました。端末の記録は残っています。"
+          : "履歴の同期に失敗しました。端末の記録は残っています。再試行できます。");
       }
-      const data = (await res.json()) as {
-        entries: ClientEntry[];
-        merged: number;
-        total: number;
-      };
-      writeLocalHistory(data.entries);
-      setResult({ merged: data.merged, total: data.total });
     } catch (e) {
       setError(e instanceof Error ? e.message : "unknown_error");
     } finally {
       setLoading(null);
+      identity.refresh();
     }
   }
 
@@ -108,12 +70,19 @@ export function HistorySyncPanel() {
 
   return (
     <div className="flex flex-col gap-3">
+      {identity.account && <SyncOwnershipNotice
+        account={identity.account}
+        ownership={identity.ownership}
+        confirmed={identity.confirmedFor === identity.account.id}
+        onConfirm={(confirmed) => identity.setConfirmedFor(confirmed ? identity.account!.id : null)}
+      />}
       <div className="grid gap-2 sm:grid-cols-2">
         <Button
           variant="primary"
           size="lg"
           onClick={handleSync}
-          disabled={loading !== null}
+          disabled={loading !== null || identity.checking || !identity.account || identity.ownership === "different" ||
+            (identity.ownership === "unknown" && identity.confirmedFor !== identity.account.id)}
           className="w-full"
         >
           {loading === "sync" ? (
@@ -162,7 +131,7 @@ export function HistorySyncPanel() {
         </div>
       )}
       <p className="text-xs leading-relaxed text-muted-foreground">
-        localStorage と クラウド DB の履歴を双方向マージ。どの端末からも続きから学習できます。
+        学習履歴をクラウドと同期できます。選択した回答などの端末内情報は保持します。ペットと報酬はこの端末内の保存です。
       </p>
     </div>
   );

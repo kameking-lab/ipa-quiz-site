@@ -46,7 +46,7 @@ export function HomeHeroLede({ totalQuestions }: { totalQuestions: number }) {
         </li>
       </ul>
       <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        IPA試験対策の個別問題・原紙・保存済み履歴の閲覧と復習は無料です。ログイン後の連続演習には1日10問の無料枠と月額980円（税込・毎月自動更新）のプランがあります。
+        IPA試験対策の個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、履歴の同期などは無料ログインで利用できます。回数制限なく進める月額980円（税込・毎月自動更新）のプランもあります。
       </p>
     </>
   );

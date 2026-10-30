@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Cloud, CloudUpload, CheckCircle2, AlertCircle, Loader2, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { syncAll, readSyncMeta, type SyncAllResult } from "@/lib/sync";
-
-type AuthState = "checking" | "in" | "out";
+import { useSyncIdentity } from "@/lib/sync/use-sync-identity";
+import { SyncOwnershipNotice } from "@/components/sync/SyncOwnershipNotice";
 
 const DATA_LABELS: Record<string, string> = {
   history: "学習履歴",
@@ -27,30 +27,31 @@ function formatRelative(ts: number): string {
 }
 
 export function CloudSyncPanel() {
-  const [auth, setAuth] = React.useState<AuthState>("checking");
+  const identity = useSyncIdentity();
+  const auth = identity.checking ? "checking" : identity.account ? "in" : "out";
   const [busy, setBusy] = React.useState(false);
   const [result, setResult] = React.useState<SyncAllResult | null>(null);
   const [lastSyncedAt, setLastSyncedAt] = React.useState(0);
 
   React.useEffect(() => {
-    setLastSyncedAt(readSyncMeta().lastSyncedAt);
-    // NextAuth exposes the current session at /api/auth/session.
-    fetch("/api/auth/session")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((s) => setAuth(s && s.user ? "in" : "out"))
-      .catch(() => setAuth("out"));
-  }, []);
+    setLastSyncedAt(readSyncMeta(identity.account?.id).lastSyncedAt);
+    setResult(null);
+  }, [identity.account?.id]);
 
   async function handleSync() {
     setBusy(true);
     setResult(null);
     try {
-      const r = await syncAll();
+      if (!identity.account) return;
+      const r = await syncAll({
+        expectedUserId: identity.account.id,
+        confirmUnowned: identity.confirmedFor === identity.account.id,
+      });
       setResult(r);
-      if (r.overall === "unauthenticated") setAuth("out");
-      setLastSyncedAt(readSyncMeta().lastSyncedAt);
+      setLastSyncedAt(readSyncMeta(identity.account.id).lastSyncedAt);
     } finally {
       setBusy(false);
+      identity.refresh();
     }
   }
 
@@ -78,7 +79,7 @@ export function CloudSyncPanel() {
         <p className="text-xs">
           同期は<strong className="text-foreground">任意</strong>です。
           <strong className="text-foreground">同期しない選択も完全に有効</strong>で、
-          サインインしなくてもこれまで通り全機能をご利用いただけます。
+          サインインしなくても無料演習と端末内の記録を利用できます。
         </p>
 
         <ul className="flex flex-wrap gap-1.5">
@@ -102,6 +103,13 @@ export function CloudSyncPanel() {
           })}
         </ul>
 
+        {identity.account && <SyncOwnershipNotice
+          account={identity.account}
+          ownership={identity.ownership}
+          confirmed={identity.confirmedFor === identity.account.id}
+          onConfirm={(confirmed) => identity.setConfirmedFor(confirmed ? identity.account!.id : null)}
+        />}
+
         {auth === "out" ? (
           <div className="flex flex-col gap-2">
             <p className="text-xs">
@@ -121,7 +129,8 @@ export function CloudSyncPanel() {
               size="sm"
               className="gap-2"
               onClick={handleSync}
-              disabled={busy || auth === "checking"}
+              disabled={busy || auth === "checking" || identity.ownership === "different" ||
+                (identity.ownership === "unknown" && identity.confirmedFor !== identity.account?.id)}
             >
               {busy ? (
                 <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
@@ -151,6 +160,13 @@ export function CloudSyncPanel() {
           <p className="inline-flex items-center gap-1 text-xs text-destructive">
             <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
             同期に失敗しました。時間をおいて再度お試しください。
+          </p>
+        )}
+        {result && (result.overall === "partial" || result.overall === "deferred") && (
+          <p role="status" className="text-xs text-amber-700 dark:text-amber-400">
+            {result.overall === "partial"
+              ? "一部の同期に失敗しました。端末の記録は残っています。再試行できます。"
+              : "保存先の変更または未確認のため、同期を保留しました。端末の記録は残っています。"}
           </p>
         )}
       </div>

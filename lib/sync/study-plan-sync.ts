@@ -7,12 +7,13 @@ import {
 import type { StudyPlan, ProgressMap } from "@/lib/study-plan/types";
 import { postSync, type SyncStatus } from "./client";
 import type { StudyPlanSyncEntry } from "./types";
+import { ownsSyncContext, type SyncContext } from "./ownership";
 
 /**
  * Sync study plans (plan object + progress) to the server and merge the
  * authoritative set back. No-op for signed-out users.
  */
-export async function syncStudyPlans(): Promise<SyncStatus> {
+export async function syncStudyPlans(context: SyncContext): Promise<SyncStatus> {
   const local = getPlanSyncEntries();
   const entries: StudyPlanSyncEntry[] = local.map((p) => ({
     id: p.id,
@@ -25,9 +26,11 @@ export async function syncStudyPlans(): Promise<SyncStatus> {
   const { status, entries: server } = await postSync<StudyPlanSyncEntry>(
     "/api/account/study-plan-sync",
     entries,
+    context,
   );
 
   if (status.state === "ok") {
+    if (!ownsSyncContext(context)) return { state: "deferred", reason: "account_changed" };
     mergeServerPlans(
       server
         .filter((s) => s.payload && typeof s.payload === "object")

@@ -134,19 +134,27 @@ export class BillingService {
     });
   }
 
-  /** Explicit question starts only. GET / prefetch never calls this method. */
-  async grant(userId: string, questionId: string) {
-    return this.store.transaction(userId, this.mode(), async tx => {
+  /** Merge immutable guest snapshots and commit them before returning a limit result. */
+  async grant(userId: string, questionId: string, snapshots: ReadonlyArray<{ day: string; ids: string[] }> = [], allowNew = true, requestDay?: string) {
+    const result = await this.store.transaction(userId, this.mode(), async tx => {
       const user = await tx.user();
       if (!user) throw new BillingError("sign_in_required", 401);
       const now = this.clock();
       if (this.grace(user.createdAt) || (await tx.purchases()).some(p => active(p, now))) return { kind: "pass" as const, remaining: null };
-      const day = jstDay(now);
+      for (const snapshot of snapshots) {
+        const existing = new Set(await tx.grants(snapshot.day));
+        for (const id of snapshot.ids) if (!existing.has(id)) { await tx.grant(snapshot.day, id); existing.add(id); }
+      }
+      const day = requestDay ?? jstDay(now);
       const grants = await tx.grants(day);
-      if (grants.includes(questionId)) return { kind: "trial" as const, remaining: Math.max(0, this.config.freeDaily - grants.length) };
-      if (grants.length >= this.config.freeDaily) throw new BillingError("daily_limit", 429);
+      if (grants.includes(questionId)) return { kind: "trial" as const, remaining: allowNew ? Math.max(0, this.config.freeDaily - grants.length) : null };
+      if (!allowNew) return { kind: "unavailable" as const, remaining: null };
+      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, remaining: 0 };
       await tx.grant(day, questionId);
       return { kind: "trial" as const, remaining: this.config.freeDaily - grants.length - 1 };
     });
+    if (result.kind === "limit") throw new BillingError("daily_limit", 429);
+    if (result.kind === "unavailable") throw new BillingError("billing_unavailable", 503);
+    return result;
   }
 }

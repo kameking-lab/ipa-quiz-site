@@ -97,7 +97,7 @@ export default async function SignInPage({
             {" "}にログイン
           </h1>
           <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            ログインして無料1日{MONTHLY_PUBLIC_OFFER.freeDaily}問の学習と履歴のクラウド同期を利用できます。
+            無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
             月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。
           </p>
         </div>

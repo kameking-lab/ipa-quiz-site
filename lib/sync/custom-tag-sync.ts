@@ -7,13 +7,14 @@ import {
 } from "@/lib/storage/custom-tags";
 import { postSync, type SyncStatus } from "./client";
 import type { CustomTagSyncEntry } from "./types";
+import { ownsSyncContext, type SyncContext } from "./ownership";
 
 /**
  * Sync the tag catalog. The catalog is seeded from the distinct tag names used
  * across bookmarks (so it stays consistent with the inline tags) and merged
  * with the server's authoritative catalog. No-op for signed-out users.
  */
-export async function syncCustomTags(): Promise<SyncStatus> {
+export async function syncCustomTags(context: SyncContext): Promise<SyncStatus> {
   const names = [...new Set(getAllBookmarks().flatMap((b) => b.tags))];
   const catalog = ensureCatalogForNames(names);
   const entries: CustomTagSyncEntry[] = catalog.map((t) => ({
@@ -26,9 +27,11 @@ export async function syncCustomTags(): Promise<SyncStatus> {
   const { status, entries: server } = await postSync<CustomTagSyncEntry>(
     "/api/account/custom-tag-sync",
     entries,
+    context,
   );
 
   if (status.state === "ok") {
+    if (!ownsSyncContext(context)) return { state: "deferred", reason: "account_changed" };
     mergeServerCustomTags(
       server.map((s) => ({
         name: s.name,

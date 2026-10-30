@@ -2,10 +2,11 @@ import { beforeEach, describe, it, expect, vi } from "vitest";
 const mocks = vi.hoisted(() => ({ id: "alice" as string | null, enabled: false, grant: vi.fn(), find: vi.fn(), status: vi.fn(), checkout: vi.fn() }));
 vi.mock("@/lib/questions/pool-server", () => ({ findQuestionById: mocks.find }));
 vi.mock("@/lib/questions/filter", () => ({ isPracticeReadyQuestion: (q: { needsReview?: boolean }) => !q.needsReview, shuffleChoices: (q: unknown) => q }));
-vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({}), gateReady: () => mocks.enabled }));
+vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({ mode: "mock", freeDaily: 10 }), gateReady: () => mocks.enabled }));
 vi.mock("@/lib/billing/runtime", async () => {
   const { BillingError } = await import("@/lib/billing/domain");
   return { billingRuntime: () => ({ service: { grant: mocks.grant, status: mocks.status, checkout: mocks.checkout }, provider: {} }),
+    optionalBillingIdentity: async () => mocks.id,
     billingIdentity: async () => { if (!mocks.id) throw new BillingError("sign_in_required", 401); return mocks.id; },
     sameOrigin: (r: Request) => { if (r.headers.get("origin") !== "http://localhost:3328") throw new BillingError("invalid_origin", 403); },
     json: (value: unknown, status = 200) => Response.json(value, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie" } }),
@@ -28,16 +29,18 @@ describe("route integration", () => {
     expect(res.status).toBe(200); expect(mocks.grant).not.toHaveBeenCalled();
     expect((await res.json()).question.id).toBe("existing");
   });
-  it("allows exactly the fixed anonymous sample; other questions need auth", async () => {
+  it("allows the fixed anonymous sample; other questions bootstrap a guest cookie", async () => {
     mocks.enabled = true; mocks.id = null;
     expect((await POST(request({ id: BILLING_SAMPLE_ID }))).status).toBe(200);
-    expect((await POST(request({ id: "another" }))).status).toBe(401);
+    vi.stubEnv("AUTH_SECRET", "test-only-secret");
+    expect((await POST(request({ id: "another" }))).status).toBe(428);
+    vi.unstubAllEnvs();
     expect(mocks.grant).not.toHaveBeenCalled();
   });
   it("uses authenticated ID only, rejects client paid/clock/owner, never shares cache", async () => {
     mocks.enabled = true;
     for (const extra of [{ paid: true }, { userId: "bob" }, { now: "2099" }]) expect((await POST(request({ id: "existing", ...extra }))).status).not.toBe(200);
-    const res = await POST(request({ id: "exact-deep-link" })); expect(mocks.grant).toHaveBeenCalledWith("alice", "exact-deep-link");
+    const res = await POST(request({ id: "exact-deep-link" })); expect(mocks.grant).toHaveBeenCalledWith("alice", "exact-deep-link", [], true, expect.any(String));
     expect(res.headers.get("cache-control")).toBe("private, no-store"); expect(res.headers.get("vary")).toBe("Cookie");
   });
   it("missing/under-review questions consume nothing; cross-origin cannot consume quota", async () => {

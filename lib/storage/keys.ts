@@ -48,6 +48,10 @@ export const LS_KEYS = {
   dailyGoal: "ipa-quiz:daily-goal:v1",
   customTags: "ipa-quiz:custom-tags:v1",
   syncMeta: "ipa-quiz:sync-meta:v1",
+  syncMetaUserPrefix: "ipa-quiz:sync-meta-user:v1:",
+  syncLocalOwner: "ipa-quiz:sync-local-owner:v1",
+  syncSessionSuccessPrefix: "ipa-quiz:sync-session-success:v1:",
+  syncSessionInFlightPrefix: "ipa-quiz:sync-session-inflight:v1:",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];
