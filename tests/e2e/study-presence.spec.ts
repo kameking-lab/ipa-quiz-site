@@ -64,7 +64,15 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
     await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
-    await expect(region.getByRole("button", { name: /チワワ（集計人数のイメージ）/ })).toHaveCount(4);
+    const seats = region.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
+    await expect(seats).toHaveCount(4);
+    for (const [index, name] of ["基本情報技術者", "基本情報技術者", "基本情報技術者", "第二種電気工事士"].entries()) {
+      await expect(seats.nth(index)).toHaveAccessibleName(`${index + 1} ${name}`);
+      await expect(seats.nth(index)).toHaveAttribute("aria-controls", "study-room-selection");
+    }
+    const scene = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
+    await expect(scene.getByRole("button")).toHaveCount(0);
+    await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(4);
     await expect(region.getByText("同じブラウザは1人として集計", { exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByText(/直近2分/)).toHaveCount(0);
@@ -77,6 +85,7 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(emptyRoom).toBeVisible();
     await expect(emptyRoom.getByRole("button")).toHaveCount(0);
     await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
+    await expect(region.getByRole("group", { name: "自習室の席を選ぶ", exact: true })).toHaveCount(0);
     await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
     await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
@@ -113,10 +122,32 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");
   const codes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "denko2", "denken3"];
+  // parseStudyPresence orders by count descending, then canonical code in English locale.
+  // All fixture counts are one: this explicit oracle must not depend on the unsorted input order.
+  const expectedOrder = [
+    { exam: "ap", name: "応用情報技術者" },
+    { exam: "au", name: "システム監査技術者" },
+    { exam: "db", name: "データベーススペシャリスト" },
+    { exam: "denken3", name: "電験三種" },
+    { exam: "denko2", name: "第二種電気工事士" },
+    { exam: "es", name: "エンベデッドシステムスペシャリスト" },
+    { exam: "fe", name: "基本情報技術者" },
+    { exam: "ip", name: "ITパスポート" },
+    { exam: "nw", name: "ネットワークスペシャリスト" },
+    { exam: "pm", name: "プロジェクトマネージャ" },
+    { exam: "sa", name: "システムアーキテクト" },
+    { exam: "sc", name: "情報処理安全確保支援士" },
+    { exam: "sg", name: "情報セキュリティマネジメント" },
+    { exam: "sm", name: "ITサービスマネージャ" },
+    { exam: "st", name: "ITストラテジスト" },
+  ];
+  expect(expectedOrder.map(row => row.exam).sort()).toEqual([...codes].sort());
   await show(page, await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) }));
   const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
+  await expect(list.getByRole("listitem")).toHaveText(expectedOrder.map(row =>
+    `前回取得時点の直近5分に1人が${row.name}を学習しました。`));
   await expect(region.locator(".study-room-total")).toHaveText("15人");
   expect((await list.boundingBox())?.height).toBeLessThanOrEqual(220);
   await expect(list).toHaveAttribute("tabindex", "0");
@@ -129,28 +160,54 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   await page.keyboard.press("Home");
   await expect.poll(() => list.evaluate(el => el.scrollTop)).toBe(0);
 
-  const seats = region.getByRole("button", { name: /チワワ（集計人数のイメージ）/ });
-  const rooms = region.getByRole("navigation", { name: "自習室の部屋を選ぶ" });
-  await expect(seats).toHaveCount(12);
-  await expect(rooms.getByRole("button", { name: "前の部屋" })).toBeDisabled();
-  await rooms.getByRole("button", { name: "次の部屋" }).focus();
-  await page.keyboard.press("Enter");
-  await expect(rooms.getByText("部屋 2 / 2", { exact: true })).toBeVisible();
-  await expect(seats).toHaveCount(3);
-  await expect(rooms.getByRole("button", { name: "次の部屋" })).toBeDisabled();
-  await rooms.getByRole("button", { name: "前の部屋" }).focus();
-  await page.keyboard.press("Enter");
-  await expect(seats).toHaveCount(12);
+  // The accepted room expands in place. Numbered controls are separate from the decorative scene.
+  const scene = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
+  const seats = region.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
+  const expectSeatOrder = async () => {
+    await expect(seats).toHaveCount(12);
+    for (const [index, row] of expectedOrder.slice(0, 12).entries()) {
+      await expect(seats.nth(index)).toHaveAccessibleName(`${index + 1} ${row.name}`);
+      await expect(seats.nth(index)).toHaveAttribute("aria-controls", "study-room-selection");
+    }
+  };
+  await expectSeatOrder();
+  await expect(scene.getByRole("button")).toHaveCount(0);
+  await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(12);
+  await expect(scene).toHaveAttribute("data-stage", "2");
+  await expect(region.getByText("イラスト 12体・ほか 3人", { exact: true })).toBeVisible();
+  await expect(region.getByText("全15人の集計を一部イラストで表示", { exact: true })).toBeVisible();
+  await expect(region.getByRole("navigation", { name: "自習室の部屋を選ぶ" })).toHaveCount(0);
+  await expect(region.getByRole("button", { name: "次の部屋", exact: true })).toHaveCount(0);
+  const scroll = region.getByLabel("広がる自習室。横にスクロールできます", { exact: true });
+  expect(await scroll.evaluate(el => el.scrollWidth > el.clientWidth)).toBe(true);
+  await scroll.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect.poll(() => scroll.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
 
   const seat = seats.first();
   await seat.focus();
   await page.keyboard.press("Enter");
   await expect(seat).toHaveAttribute("aria-pressed", "true");
-  await page.keyboard.press("Enter");
+  const selectedQualification = region.locator("#study-room-selection").getByRole("heading", { name: expectedOrder[0].name, exact: true });
+  await expect(selectedQualification).toBeVisible();
+  const refreshed = await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) });
+  await show(page, { mode: "stale", snapshot: null, previous: refreshed.snapshot, reason: "unavailable" });
+  await expectSeatOrder();
+  await expect(selectedQualification).toBeVisible();
+  await expect(seat).toHaveAttribute("aria-pressed", "true");
+  await expect(seat).toBeFocused();
+  await page.keyboard.press("Escape");
   await expect(seat).toHaveAttribute("aria-pressed", "false");
-  await expect(region.getByRole("button", { name: /動き/ })).toHaveCount(0);
+  await page.keyboard.press("Enter");
+  await expect(seat).toHaveAttribute("aria-pressed", "true");
+  await region.getByRole("button", { name: "選択を戻す", exact: true }).click();
+  await expect(seat).toBeFocused();
+  await expect(seat).toHaveAttribute("aria-pressed", "false");
+  // Independent reward controls may exist; the room scene itself has no motion toggle.
+  await expect(scene.getByRole("button", { name: /動き/ })).toHaveCount(0);
   await expect(region.getByText("静止表示", { exact: true })).toHaveCount(0);
-  await expect(region.locator(".study-room-scene")).toHaveAttribute("data-motion-visible", "true");
+  await scene.scrollIntoViewIfNeeded();
+  await expect(scene).toHaveAttribute("data-motion-visible", "true");
   await page.emulateMedia({ reducedMotion: "reduce" });
   expect(await region.locator(".study-room-scene .study-mascot").evaluateAll(elements => elements.every(el => getComputedStyle(el).animationName === "none"))).toBe(true);
   await expectBounded(page);

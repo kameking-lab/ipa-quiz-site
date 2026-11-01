@@ -46,6 +46,7 @@ import {
 } from "@/lib/motivation/combo";
 import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
 import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
+import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
 
 type Theme = "light" | "dark" | "system";
 
@@ -56,6 +57,7 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 ];
 
 const SECTIONS = [
+  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
   { id: "character", label: "AIキャラ", icon: <Sparkles className="h-3.5 w-3.5" /> },
   { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
@@ -261,7 +263,7 @@ export default function SettingsPage() {
             設定とプリファレンス
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            7 つのセクションで全機能を一元管理できます。
+            {SECTIONS.length} つのセクションで全機能を一元管理できます。
           </p>
         </header>
 
@@ -283,6 +285,14 @@ export default function SettingsPage() {
         </nav>
 
         <div className="space-y-6">
+          <section aria-labelledby="home-screen">
+            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
+              ホーム画面に追加
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <MobileInstallControl />
+            </div>
+          </section>
           {/* Appearance */}
           <section>
             <SectionTitle

@@ -1,20 +1,16 @@
 import type { StudyPresenceSnapshot } from "@/lib/study-presence";
 
-export const STUDY_ROOM_CAPACITY = 12;
-
-/** Only the visible room is materialized, even for a large measured aggregate. */
-export function measuredRoom(snapshot: StudyPresenceSnapshot, requestedRoom: number) {
-  const roomCount = Math.max(1, Math.ceil(snapshot.count / STUDY_ROOM_CAPACITY));
-  const room = Math.max(0, Math.min(roomCount - 1, Math.floor(requestedRoom) || 0));
-  const start = room * STUDY_ROOM_CAPACITY;
-  const occupancy = Math.min(STUDY_ROOM_CAPACITY, snapshot.count - start);
+/** Maximum illustrations, not a room capacity. */
+export const STUDY_ROOM_VISIBLE_LIMIT = 12;
+export function roomStage(count: number) {
+  return count >= 49 ? 4 : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
+}
+export function measuredRoom(snapshot: StudyPresenceSnapshot) {
   const seats: { exam: string; index: number }[] = [];
-  for (let index = 0; index < occupancy; index++) {
-    let offset = start + index;
-    for (const row of snapshot.exams) {
-      if (offset < row.count) { seats.push({ exam: row.exam, index }); break; }
-      offset -= row.count;
-    }
+  for (const row of snapshot.exams) {
+    const remaining = Math.min(row.count, STUDY_ROOM_VISIBLE_LIMIT - seats.length);
+    for (let i = 0; i < remaining; i++) seats.push({ exam: row.exam, index: seats.length });
+    if (seats.length === STUDY_ROOM_VISIBLE_LIMIT) break;
   }
-  return { room, roomCount, occupancy, seats };
+  return { seats, hidden: snapshot.count - seats.length, stage: roomStage(snapshot.count) };
 }

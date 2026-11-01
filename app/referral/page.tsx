@@ -1,109 +1,40 @@
+import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled } from "@/components/ai/ai-access-copy";
+import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Gift, Star, Users } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { ReferralClient } from "./ReferralClient";
 
-export const metadata: Metadata = {
-  title: "友達紹介プログラム",
-  description:
-    "IPA Quiz の友達紹介プログラム。紹介コードをシェアして友達を招待。紹介者・被紹介者ともに7日間 Premium 無料特典。",
-  alternates: { canonical: "/referral" },
-};
+export function generateMetadata(): Metadata {
+  return {title:"友達紹介についてのご案内", description:"紹介リンク作成はプレビューです。紹介特典の付与状況を確認するものではありません。個別案内の確認先とAIの利用条件をご案内します。", alternates:{canonical:"/referral"}};
+}
 
 export default function ReferralPage() {
+  const activeAiPolicy = aiAccessClaimsEnabled();
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-12 pt-8 sm:px-6">
-      {/* Hero */}
-      <section className="mb-8 text-center">
-        <div className="mb-3 flex justify-center">
-          <Badge variant="success">友達紹介</Badge>
-        </div>
-        <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          友達紹介プログラム
-        </h1>
-        <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          紹介コードをシェアして友達を招待しましょう。
-          <br />
-          紹介者・被紹介者ともに <strong className="text-zinc-900 dark:text-zinc-50">Premium 7日間無料</strong> の特典があります。
-        </p>
+    <main className="mx-auto w-full max-w-3xl flex-1 space-y-6 px-4 pb-12 pt-8 sm:px-6">
+      <h1 className="text-3xl font-bold">友達紹介についてのご案内</h1>
+      <section aria-label="紹介特典の確認" className="space-y-3 text-sm leading-relaxed">
+        <p>このページの紹介リンク作成・共有だけでは、Premium特典の付与や有効化は行われません。</p>
+        <p>すでに紹介特典を個別にご案内している場合は、その案内内容について<Link href="/contact" className="underline">お問い合わせください</Link>。</p>
       </section>
-
-      {/* Benefits */}
-      <div className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border border-sky-200 bg-sky-50/40 p-4 dark:border-sky-900/40 dark:bg-sky-950/20">
-          <div className="mb-2 flex items-center gap-2">
-            <Gift className="h-5 w-5 text-sky-600 dark:text-sky-400" />
-            <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">紹介した人（あなた）</span>
-          </div>
-          <ul className="space-y-1 text-xs text-zinc-600 dark:text-zinc-400">
-            <li className="before:mr-1.5 before:content-['✓']">Premium 7日間無料（1紹介につき）</li>
-            <li className="before:mr-1.5 before:content-['✓']">AI コパイロット無制限</li>
-            <li className="before:mr-1.5 before:content-['✓']">Gemini Flash 高精度モード</li>
-          </ul>
-        </div>
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50/40 p-4 dark:border-emerald-900/40 dark:bg-emerald-950/20">
-          <div className="mb-2 flex items-center gap-2">
-            <Star className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-            <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">招待された人（友達）</span>
-          </div>
-          <ul className="space-y-1 text-xs text-zinc-600 dark:text-zinc-400">
-            <li className="before:mr-1.5 before:content-['✓']">Premium 7日間無料（登録時）</li>
-            <li className="before:mr-1.5 before:content-['✓']">AI コパイロット無制限</li>
-            <li className="before:mr-1.5 before:content-['✓']">学習履歴クラウド同期（β）</li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Referral widget */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <Users className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-            あなたの紹介リンク
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
+      <section aria-label="連続演習の月額プランとAIの利用条件" className="space-y-3 text-sm leading-relaxed">
+        <p>対象の連続演習の月額プランの案内額は税込{MONTHLY_PUBLIC_OFFER.priceYen.toLocaleString("ja-JP")}円です。販売状況・対象範囲・契約条件は<Link href={PRICE_PAGE_LINK.href} className="underline">{PRICE_PAGE_LINK.label}</Link>でご確認ください。</p>
+        {activeAiPolicy ? <>
+          <p>無料AIの新規生成にはログインが必要です。{AI_ACCESS_DESCRIPTION}</p>
+          <p>{AI_ATTEMPT_DESCRIPTION}</p>
+        </> : <p>AI コパイロットは無料で試用できます。その他のAI機能は各画面の利用条件をご確認ください。AI応答の利用条件は連続演習の月額プランとは別に管理しています。</p>}
+        <p>{BROWSER_AUDIO_DESCRIPTION}</p>
+      </section>
+      <details className="rounded-xl border p-4">
+        <summary className="cursor-pointer font-semibold">紹介リンクの作成・コピー（プレビュー）</summary>
+        <div aria-label="紹介リンクのプレビュー説明" className="mt-3 space-y-3">
+          <p className="text-sm">人数はこの端末に保存されたプレビュー値で、実際の登録人数や特典の付与状況を確認する表示ではありません。「近日実装」等の表示は受付日・提供開始日や特典を保証するものではありません。</p>
           <ReferralClient />
-        </CardContent>
-      </Card>
-
-      {/* How it works */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle className="text-base">紹介の仕組み</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ol className="space-y-3">
-            {[
-              "上の紹介リンクをコピーして友達に送る",
-              "友達がリンクから IPA Quiz に登録する",
-              "あなたと友達、両方に Premium 7日間が付与される（近日実装）",
-              "紹介を続けるほど Premium 期間が延長される",
-            ].map((step, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
-                  {i + 1}
-                </span>
-                {step}
-              </li>
-            ))}
-          </ol>
-          <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
-            ※ 特典付与は正式リリース後（2026年5月予定）に実装されます。現在は紹介リンクの発行のみ可能です。
-          </p>
-        </CardContent>
-      </Card>
-
-      <div className="text-center">
-        <Link
-          href="/"
-          className="text-sm text-sky-600 underline-offset-2 hover:underline dark:text-sky-400"
-        >
-          ← ホームに戻る
-        </Link>
-      </div>
+        </div>
+      </details>
+      <Link href="/about" className="text-sm underline">サービスについて</Link>
     </main>
   );
+
 }

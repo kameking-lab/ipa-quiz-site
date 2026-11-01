@@ -32,13 +32,12 @@ describe("記述問題の操作", () => {
     expect(onNext).not.toHaveBeenCalled();
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   });
-  it("次問ボタンが作動し、問題先頭にフォーカスを戻す", () => {
-    vi.stubGlobal("requestAnimationFrame", (callback: FrameRequestCallback) => { callback(0); return 1; });
+  it("次問ボタンが親の遷移処理へ委譲し、記述の正誤を記録しない", () => {
     const onNext = vi.fn();
     render(<QuizPlayer question={question} index={0} total={2} mode="random" onNext={onNext} />);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     expect(onNext).toHaveBeenCalledOnce();
-    expect(document.activeElement?.getAttribute("tabindex")).toBe("-1");
+    // Focus through loading and arrival is owned and verified by QuizClient.test.tsx.
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   });
 });

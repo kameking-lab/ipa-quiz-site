@@ -6,6 +6,14 @@ import { cn } from "@/lib/utils";
 
 const RATE_KEY = "ipa-quiz:tts-rate:v1";
 
+interface ActiveReading {
+  utterance: SpeechSynthesisUtterance;
+  release: () => void;
+}
+// Ownership among this module's buttons only. Explicit play still replaces the
+// browser speech queue; unrelated lifecycle cleanup must not cancel that queue.
+let activeReading: ActiveReading | null = null;
+
 interface Props {
   text: string;
   lang?: string;
@@ -23,7 +31,8 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
   const [speaking, setSpeaking] = React.useState(false);
   const [rate, setRate] = React.useState(1.0);
   const [showRate, setShowRate] = React.useState(false);
-  const utteranceRef = React.useRef<SpeechSynthesisUtterance | null>(null);
+  const [error, setError] = React.useState<string | null>(null);
+  const readingRef = React.useRef<ActiveReading | null>(null);
 
   React.useEffect(() => {
     setSupported(isTTSAvailable());
@@ -38,50 +47,75 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
     }
   }, []);
 
-  React.useEffect(() => {
-    return () => {
-      if (typeof window !== "undefined" && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
-    };
+  // Invalidate handlers before cancel: browsers may deliver cancellation events later.
+  const cancelCurrent = React.useCallback(() => {
+    const reading = readingRef.current;
+    if (!reading) return;
+    const ownsSpeech = activeReading === reading;
+    if (ownsSpeech) activeReading = null;
+    reading.release();
+    if (ownsSpeech) window.speechSynthesis?.cancel();
   }, []);
+
+  React.useEffect(() => {
+    setSpeaking(false);
+    setError(null);
+    try { cancelCurrent(); } catch { /* A failed stop must not strand the control. */ }
+    return () => { try { cancelCurrent(); } catch { /* Browser teardown. */ } };
+  }, [text, lang, cancelCurrent]);
+
+  const startReading = React.useCallback((speed: number) => {
+    setError(null);
+    setSpeaking(false);
+    let reading: ActiveReading | null = null;
+    try {
+      const previous = activeReading;
+      activeReading = null;
+      previous?.release();
+      readingRef.current?.release();
+      window.speechSynthesis.cancel();
+      const u = new window.SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      u.rate = speed;
+      const current: ActiveReading = { utterance: u, release: () => {
+        if (readingRef.current !== current) return;
+        readingRef.current = null;
+        setSpeaking(false);
+      } };
+      reading = current;
+      const finish = (failed: boolean) => {
+        if (readingRef.current !== current) return;
+        if (activeReading === current) activeReading = null;
+        current.release();
+        if (failed) setError("読み上げに失敗しました。もう一度お試しください。");
+      };
+      u.onend = () => finish(false);
+      u.onerror = (event) => finish(event.error !== "interrupted" && event.error !== "canceled");
+      readingRef.current = current;
+      activeReading = current;
+      setSpeaking(true);
+      window.speechSynthesis.speak(u);
+    } catch {
+      if (reading && activeReading === reading) activeReading = null;
+      reading?.release();
+      setSpeaking(false);
+      setError("読み上げに失敗しました。もう一度お試しください。");
+    }
+  }, [text, lang]);
 
   const handleClick = React.useCallback(() => {
     if (!isTTSAvailable()) return;
-    const synth = window.speechSynthesis;
     if (speaking) {
-      synth.cancel();
+      try { cancelCurrent(); setError(null); }
+      catch { setError("読み上げを停止できませんでした。もう一度お試しください。"); }
       setSpeaking(false);
-      return;
-    }
-    synth.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang;
-    u.rate = rate;
-    u.onend = () => setSpeaking(false);
-    u.onerror = () => setSpeaking(false);
-    utteranceRef.current = u;
-    setSpeaking(true);
-    synth.speak(u);
-  }, [text, lang, rate, speaking]);
+    } else startReading(rate);
+  }, [speaking, rate, cancelCurrent, startReading]);
 
   const updateRate = (r: number) => {
     setRate(r);
-    try {
-      window.localStorage.setItem(RATE_KEY, String(r));
-    } catch {
-      // ignore
-    }
-    if (speaking && isTTSAvailable()) {
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = lang;
-      u.rate = r;
-      u.onend = () => setSpeaking(false);
-      u.onerror = () => setSpeaking(false);
-      utteranceRef.current = u;
-      window.speechSynthesis.speak(u);
-    }
+    try { window.localStorage.setItem(RATE_KEY, String(r)); } catch { /* Optional preference. */ }
+    if (speaking && isTTSAvailable()) startReading(r);
   };
 
   if (supported === null) {
@@ -132,6 +166,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
       >
         ×{rate.toFixed(2)}
       </button>
+      {error && <span role="status" className="text-xs text-red-700 dark:text-red-300">{error}</span>}
       {showRate && (
         <div className="absolute z-30 mt-8 flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
           <span className="text-[10px] text-zinc-500">速度</span>

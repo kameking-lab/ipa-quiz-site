@@ -1,3 +1,5 @@
+import { questionPagePath } from "@/lib/seo/question-url";
+import { recordedContentDate } from "@/lib/questions/last-updated";
 import { formatNativeBAnswer } from "@/lib/questions/native-b";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
@@ -67,6 +69,18 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   return map[session] ?? session.toUpperCase();
 }
 
+export interface QuestionBreadcrumbItem { name: string; href: string }
+
+/** One requested-context trail for visible navigation and BreadcrumbList. */
+export function questionBreadcrumbItems(q: Question, requestedUrl = `${SITE_BASE_URL}${questionPagePath(q)}`): QuestionBreadcrumbItem[] {
+  return [
+    { name: "ホーム", href: "/" },
+    { name: questionSourceExam(q), href: `/${q.exam}` },
+    { name: questionSourceEdition(q), href: `/${q.exam}/${q.year}-${q.season}` },
+    { name: `問${questionNumberLabel(q)}`, href: requestedUrl },
+  ];
+}
+
 export interface QuestionJsonLdInput {
   question: Question;
   /** Absolute canonical URL of the question page. */
@@ -74,7 +88,10 @@ export interface QuestionJsonLdInput {
   /** Page <title>, reused for the LearningResource name. */
   title: string;
   /** ISO timestamp of the last data update, used for dateModified. */
-  lastUpdatedISO: string;
+  lastUpdatedISO?: string;
+  /** Requested breadcrumb context may differ from the canonical resource. */
+  requestedPageUrlAbs?: string;
+  breadcrumbItems?: QuestionBreadcrumbItem[];
 }
 
 /**
@@ -94,10 +111,10 @@ export function buildQuestionJsonLd({
   pageUrlAbs,
   title,
   lastUpdatedISO,
+  requestedPageUrlAbs = pageUrlAbs,
+  breadcrumbItems = questionBreadcrumbItems(q, requestedPageUrlAbs),
 }: QuestionJsonLdInput) {
   const answerKeys = q.type === "ordering" ? [q.answer] : Array.isArray(q.answer) ? q.answer : [q.answer];
-  const examPath = `/${q.exam}`;
-  const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
@@ -236,7 +253,8 @@ export function buildQuestionJsonLd({
     name: SITE_NAME,
     url: SITE_BASE_URL,
   };
-  const lastUpdatedDateTimeISO = toJstDateTimeISO(lastUpdatedISO);
+  const recordedDate = recordedContentDate(lastUpdatedISO);
+  const lastUpdatedDateTimeISO = recordedDate ? toJstDateTimeISO(recordedDate) : undefined;
 
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
@@ -245,7 +263,6 @@ export function buildQuestionJsonLd({
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
-    datePublished: lastUpdatedDateTimeISO,
     upvoteCount: 0,
   }));
   const acceptedAnswer = acceptedAnswers.length === 1 ? acceptedAnswers[0] : acceptedAnswers;
@@ -267,7 +284,7 @@ export function buildQuestionJsonLd({
     "@id": `${pageUrlAbs}#learning-resource`,
     name: title,
     url: pageUrlAbs,
-    dateModified: lastUpdatedDateTimeISO,
+    ...(lastUpdatedDateTimeISO ? { dateModified: lastUpdatedDateTimeISO } : {}),
     inLanguage: "ja",
     learningResourceType: "Practice problem",
     educationalLevel: "Professional",
@@ -317,27 +334,12 @@ export function buildQuestionJsonLd({
       learningResource,
       {
         "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: questionSourceExam(q),
-            item: `${SITE_BASE_URL}${examPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: questionSourceEdition(q),
-            item: `${SITE_BASE_URL}${yearSeasonPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: `問${questionNumberLabel(q)}`,
-            item: pageUrlAbs,
-          },
-        ],
+        itemListElement: breadcrumbItems.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: item.href.startsWith("/") ? `${SITE_BASE_URL}${item.href}` : item.href,
+        })),
       },
     ],
   };

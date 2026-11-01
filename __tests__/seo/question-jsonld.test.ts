@@ -62,30 +62,61 @@ describe("buildQuestionJsonLd", () => {
   });
 
   it("keeps dates, authorship and publisher metadata on the resource", () => {
-    const resource = build()["@graph"][0] as {
-      dateModified: string;
-      publisher: { "@id": string; name?: string; url?: string };
-      hasPart: {
-        author: { name: string };
-        datePublished?: string;
-        dateCreated?: string;
-        acceptedAnswer: {
-          author: { name: string };
-          datePublished: string;
-          upvoteCount: number;
-        };
-      };
-    };
+    const resource = build()["@graph"][0];
+    if (!("hasPart" in resource) || !("publisher" in resource)) throw new Error("Missing learning resource metadata");
+    if (!("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
+    const answer = resource.hasPart.acceptedAnswer;
+    if (!answer || Array.isArray(answer)) throw new Error("Expected one published accepted answer");
     expect(resource.dateModified).toBe("2026-05-23T00:00:00+09:00");
     expect(resource.publisher["@id"]).toMatch(/#organization$/);
     expect(resource.publisher.name).toBe("過去問AI");
     expect(resource.publisher.url).toMatch(/^https?:\/\//);
     expect(resource.hasPart.author.name).toBe("情報処理推進機構 (IPA)");
-    expect(resource.hasPart.datePublished).toBeUndefined();
-    expect(resource.hasPart.dateCreated).toBeUndefined();
-    expect(resource.hasPart.acceptedAnswer.author.name).toBe("過去問AI");
-    expect(resource.hasPart.acceptedAnswer.datePublished).toBe("2026-05-23T00:00:00+09:00");
-    expect(resource.hasPart.acceptedAnswer.upvoteCount).toBe(0);
+    expect(resource.creator).toMatchObject({ name: "情報処理推進機構 (IPA)" });
+    expect(resource.hasPart).not.toHaveProperty("datePublished");
+    expect(resource.hasPart).not.toHaveProperty("dateCreated");
+    expect(answer.author.name).toBe("過去問AI");
+    expect(answer).not.toHaveProperty("datePublished");
+    expect(answer.upvoteCount).toBe(0);
+  });
+
+  it("omits unknown or invalid recorded dates instead of inventing publication dates", () => {
+    for (const lastUpdatedISO of [undefined, "", "2026-02-30"]) {
+      const graph = buildQuestionJsonLd({
+        question: baseQuestion,
+        pageUrlAbs: "https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1",
+        title: "テストタイトル",
+        lastUpdatedISO,
+      })["@graph"];
+      const resource = graph[0];
+      if (!("hasPart" in resource)) throw new Error("Missing question");
+      expect(resource).not.toHaveProperty("dateModified");
+      expect(resource.hasPart).not.toHaveProperty("datePublished");
+      expect(resource.hasPart).toHaveProperty("acceptedAnswer");
+      expect(resource.hasPart).not.toHaveProperty("acceptedAnswer.datePublished");
+    }
+  });
+
+  it("keeps the public canonical resource distinct from requested breadcrumb context", () => {
+    const canonical = "https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1";
+    const requested = "https://www.kakomon-ai.jp/q/ap/2025-spring/am/q1";
+    const graph = buildQuestionJsonLd({
+      question: baseQuestion,
+      pageUrlAbs: canonical,
+      requestedPageUrlAbs: requested,
+      title: "テストタイトル",
+    })["@graph"];
+    const resource = graph[0];
+    if (!("hasPart" in resource)) throw new Error("Missing question");
+    expect(resource["@id"]).toBe(`${canonical}#learning-resource`);
+    expect(resource.url).toBe(canonical);
+    expect(resource.isAccessibleForFree).toBe(true);
+    expect(resource.hasPart.url).toBe(canonical);
+    expect(resource.hasPart).toMatchObject({ acceptedAnswer: { url: `${canonical}#explanation` } });
+    const breadcrumbs = graph[1];
+    if (!("itemListElement" in breadcrumbs)) throw new Error("Missing breadcrumbs");
+    expect(breadcrumbs.itemListElement.at(-1)?.item).toBe(requested);
+    expect(resource).not.toHaveProperty("dateModified");
   });
   it("attributes a published dental question to MHLW without an IPA license URL", () => {
     const dental = SHIKA_ISHI_QUESTIONS[0];

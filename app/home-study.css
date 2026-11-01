@@ -99,7 +99,13 @@ body:has(.study-home) { background:#f7f3e9; }
 .study-room-toolbar p { font-size:10px; color:var(--study-muted); margin-top:3px; letter-spacing:.08em; }
 .study-room-state { padding:10px 17px; border-top:1px solid var(--study-line); background:#ecf0e3; color:#49603e; font-size:11px; line-height:1.8; }
 .dark .study-room-state { color:#d4e4c8; background:#344331; }
-.study-room-scene { aspect-ratio:1586/992; position:relative; isolation:isolate; background:#c7a471 url("/images/home/study-room-background.webp") center/100% 100%; }
+.study-room-scroll { overflow-x:auto; container-type:inline-size; }
+.study-room-scroll:focus-visible { outline:3px solid #355b38; outline-offset:2px; }
+.study-room-scene { height:62.22cqw; position:relative; isolation:isolate; background:#c7a471 url("/images/home/study-room-expanded.webp") left top/140cqw 62.22cqw no-repeat; }
+.study-room-scene[data-stage="1"] { width:110%; }
+.study-room-scene[data-stage="2"] { width:120%; }
+.study-room-scene[data-stage="3"] { width:130%; }
+.study-room-scene[data-stage="4"] { width:140%; }
 .study-room-light { position:absolute; top:12px; left:12px; background:#fffbeded; color:#705b3a; font-size:9px; padding:5px 8px; border:1px solid #fff8; border-radius:5px; }
 .study-room-seat { position:absolute; aspect-ratio:1; border:0; padding:0; background:none; transform:translate(-50%,-50%); }
 .study-room-seat .study-mascot { filter:drop-shadow(1px 5px 3px #5f351525); transform-origin:50% 85%; animation:study-room-breathe 3.6s ease-in-out infinite; }
@@ -110,9 +116,9 @@ body:has(.study-home) { background:#f7f3e9; }
 .study-room-seat:is(:hover,:focus-visible,[aria-pressed="true"]) .study-seat-tag { opacity:1; }
 .study-room-seat:is(.study-seat-4,.study-seat-7,.study-seat-8) .study-seat-tag { left:auto; right:0; transform:translateY(5px); }
 .study-room-seat:is(.study-seat-3,.study-seat-9,.study-seat-10) .study-seat-tag { left:0; transform:translateY(5px); }
-.study-seat-0 { left:36%; top:55%; width:21%; z-index:3; }.study-seat-1 { left:62%; top:80%; width:24%; z-index:7; }.study-seat-2 { left:60%; top:35%; width:17%; z-index:1; }.study-seat-3 { left:14%; top:80%; width:24%; z-index:7; }
-.study-seat-4 { left:82%; top:55%; width:21%; z-index:3; }.study-seat-5 { left:40%; top:35%; width:17%; z-index:1; }.study-seat-6 { left:59%; top:55%; width:21%; z-index:4; }.study-seat-7 { left:86%; top:80%; width:24%; z-index:8; }
-.study-seat-8 { left:80%; top:35%; width:17%; z-index:1; }.study-seat-9 { left:14%; top:55%; width:21%; z-index:3; }.study-seat-10 { left:20%; top:35%; width:17%; z-index:1; }.study-seat-11 { left:38%; top:80%; width:24%; z-index:8; }
+.study-seat-0 { left:36%; top:65%; width:21cqw; z-index:3; }.study-seat-1 { left:62%; top:78%; width:24cqw; z-index:7; }.study-seat-2 { left:60%; top:55%; width:17cqw; z-index:1; }.study-seat-3 { left:14%; top:78%; width:24cqw; z-index:7; }
+.study-seat-4 { left:82%; top:65%; width:21cqw; z-index:3; }.study-seat-5 { left:40%; top:55%; width:17cqw; z-index:1; }.study-seat-6 { left:59%; top:65%; width:21cqw; z-index:4; }.study-seat-7 { left:86%; top:78%; width:24cqw; z-index:8; }
+.study-seat-8 { left:80%; top:55%; width:17cqw; z-index:1; }.study-seat-9 { left:14%; top:65%; width:21cqw; z-index:3; }.study-seat-10 { left:20%; top:55%; width:17cqw; z-index:1; }.study-seat-11 { left:38%; top:78%; width:24cqw; z-index:8; }
 @keyframes study-room-breathe { 0%,100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(-3px) rotate(.75deg); } }
 .study-room-empty { position:absolute; inset:28% 15% 20%; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:8px; border-radius:12px; background:#fffdf1ed; color:#59604a; text-align:center; padding:16px; box-shadow:0 10px 30px #4e301420; }
 .study-room-empty p { font-family:"Yu Mincho",serif; font-size:22px; }.study-room-empty span { font-size:12px; }
@@ -147,3 +153,7 @@ body:has(.study-home) { background:#f7f3e9; }
   .study-card-mascot { width:90px; height:90px; }
 }
 @media(prefers-reduced-motion:reduce) { .study-home *,.study-home *::before,.study-home *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }.study-qualification:hover { transform:none; } }
+
+/* Keep the reward readable in the narrow room sidebar. */
+.study-room-sidebar .reward-body { flex-direction:column; align-items:stretch; }
+.study-room-sidebar .reward-scene { flex-basis:auto; width:180px; max-width:100%; align-self:center; }

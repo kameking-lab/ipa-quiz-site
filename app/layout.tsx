@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
 import { OnboardingTour } from "@/components/onboarding/OnboardingTour";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -125,6 +128,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
+          <MobileInstallProvider>
           <StudyPresence />
           {/* Skip link first in the DOM so a single Tab reaches it before any
               header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
@@ -194,6 +198,7 @@ export default function RootLayout({
                       <li><Link href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
                       <li><Link href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
                       <li><Link href="/ranking" className="block py-2.5 hover:text-foreground">IPA ランキング</Link></li>
+                      <li><Link href={PRICE_PAGE_LINK.href} className="block py-2.5 hover:text-foreground">{PRICE_PAGE_LINK.label}</Link></li>
                       <li><Link href="/faq" className="block py-2.5 hover:text-foreground">FAQ</Link></li>
                       <li><Link href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
                       <li><Link href="/glossary" className="block py-2.5 hover:text-foreground">用語集</Link></li>
@@ -280,33 +285,12 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                {/* IPA attribution (required) */}
-                <div className="mt-6 border-t border-border pt-4 text-center text-[11px] text-muted-foreground sm:text-left">
-                  出典: IPA 情報処理技術者試験（
-                  <a
-                    href="https://www.ipa.go.jp/shiken/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline decoration-border hover:text-foreground"
-                  >
-                    ipa.go.jp
-                  </a>
-                  ） /{" "}
-                  <Link
-                    href="/license"
-                    className="underline decoration-border hover:text-foreground"
-                  >
-                    著作権・出典
-                  </Link>
-                  <span className="ml-3 text-zinc-500 dark:text-zinc-500">
-                    その他資格の出典は「著作権・出典」に記載しています。本サービスは各試験実施団体とは独立した非公式の学習支援サービスです。
-                  </span>
-                  <p className="mt-2">安全衛生の試験問題の出典: <a href="https://www.exam.or.jp/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">公益財団法人安全衛生技術試験協会</a>。各演習ページから公表PDFを確認できます。</p>
-                </div>
+                <SourceRelationshipFooter />
               </div>
             </footer>
           </div>
           <MobileBottomNav />
+          </MobileInstallProvider>
         </ThemeProvider>
       </body>
     </html>

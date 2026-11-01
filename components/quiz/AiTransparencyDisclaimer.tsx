@@ -3,8 +3,8 @@ import { Sparkles, ExternalLink, Info } from "lucide-react";
 import { ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
 
 interface Props {
-  lastUpdatedISO: string;
-  lastUpdatedJa: string;
+  lastUpdatedISO?: string;
+  lastUpdatedJa?: string;
   sourcePdfUrl: string;
   answerPdfUrl: string;
   sourceAttribution?: string;
@@ -43,12 +43,12 @@ export function AiTransparencyDisclaimer({
           事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性があるため、
           重要な判断は必ずリンク先の公式資料でご確認ください。
         </p>
-        <p>
+        {lastUpdatedISO && lastUpdatedJa && <p>
           最終更新:{" "}
           <time dateTime={lastUpdatedISO} className="font-medium text-foreground">
             {lastUpdatedJa}
           </time>
-        </p>
+        </p>}
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           <a
             href={sourcePdfUrl}

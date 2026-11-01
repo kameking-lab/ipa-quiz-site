@@ -74,6 +74,9 @@ import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { readCharacterState } from "@/lib/storage/character";
 import { posthogCapture } from "@/lib/posthog";
+import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
+import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
+import { copilotRestriction, type CopilotRestriction } from "./restriction-copy";
 import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
 
 interface Message {
@@ -120,6 +123,8 @@ interface Props {
   onClose?: () => void;
   headerRight?: React.ReactNode;
   className?: string;
+  inline?: boolean;
+  focusRequest?: { sequence: number; prompt?: string };
 }
 
 const WRONG_ONLY: QuickActionId = "why-wrong";
@@ -199,9 +204,15 @@ export function CopilotPanel({
   onClose,
   headerRight,
   className,
+  inline = false,
+  focusRequest,
 }: Props) {
+  const {message: aiAccessMessage, begin: beginAiAccess, response: captureAiResponse, uncertain: markAiUncertain} = useAiAccessNotice(question.id);
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [input, setInput] = React.useState(initialPrompt ?? "");
+  const [online, setOnline] = React.useState(true);
+  const [restriction, setRestriction] = React.useState<CopilotRestriction | null>(null);
+  const inputRef = React.useRef<HTMLTextAreaElement>(null);
   const [streaming, setStreaming] = React.useState(false);
   const [streamStatus, setStreamStatus] = React.useState<StreamStatus>("idle");
   const [errorState, setErrorState] = React.useState<{
@@ -258,6 +269,23 @@ export function CopilotPanel({
     toastTimerRef.current = setTimeout(() => setToast(null), 2200);
   }, []);
 
+  React.useEffect(() => {
+    const update = () => setOnline(navigator.onLine !== false);
+    update();
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => {
+      window.removeEventListener("online", update);
+      window.removeEventListener("offline", update);
+    };
+  }, []);
+
+  React.useEffect(() => () => {
+    const pending = abortRef.current;
+    abortRef.current = null;
+    pending?.abort();
+  }, []);
+
   // Reset conversation when question changes; refresh profile snapshot
   React.useEffect(() => {
 
@@ -266,7 +294,12 @@ export function CopilotPanel({
     // Question-change abort is system-driven, not user-driven, so leave the
     // userStoppedRef flag false to avoid annotating the discarded message.
     userStoppedRef.current = false;
-    abortRef.current?.abort();
+    const pending = abortRef.current;
+    abortRef.current = null;
+    pending?.abort();
+    setStreaming(false);
+    setErrorState(null);
+    setRestriction(null);
     setStreamStatus("idle");
     setCopiedIdx(null);
     setCopiedAll(false);
@@ -274,6 +307,16 @@ export function CopilotPanel({
     setToast(null);
     setProfile(buildLearnerProfileFromHistory());
   }, [question.id, initialPrompt]);
+
+  const requestSequence = focusRequest?.sequence;
+  const requestedPrompt = focusRequest?.prompt;
+  React.useEffect(() => {
+    if (!requestSequence) return;
+    // A follow-up is a focus request, never a new chat or an automatic send.
+    if (requestedPrompt) setInput((draft) => draft.trim() ? draft : requestedPrompt);
+    inputRef.current?.focus({ preventScroll: true });
+    inputRef.current?.scrollIntoView({ block: "nearest" });
+  }, [requestSequence, requestedPrompt]);
 
   // Detect Web Speech API availability once
   React.useEffect(() => {
@@ -323,11 +366,16 @@ export function CopilotPanel({
 
   const send = React.useCallback(
     async (text: string, quickAction?: QuickActionId) => {
-      if (streaming) return;
+      if (streaming || abortRef.current) return;
+      if (typeof navigator !== "undefined" && navigator.onLine === false) {
+        setOnline(false);
+        return;
+      }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
 
       setErrorState(null);
+      setRestriction(null);
       lastSendArgsRef.current = { text: trimmed, quickAction };
 
       const userMsg: Message = {
@@ -337,14 +385,21 @@ export function CopilotPanel({
       };
       const nextMessages = [...messages, userMsg];
       setMessages(nextMessages);
-      setInput("");
+      // A Retry can send captured text while the editor holds a newer draft.
+      if (!quickAction) setInput((draft) => draft.trim() === trimmed ? "" : draft);
       setStreaming(true);
       setStreamStatus("sending");
       userStoppedRef.current = false;
 
       const controller = new AbortController();
       abortRef.current = controller;
+      const currentRequest = () => abortRef.current === controller;
+      const restoreDraft = () => {
+        if (!quickAction) setInput((draft) => draft || text);
+      };
 
+      beginAiAccess();
+      let responseReceived = false;
       try {
         const characterState = readCharacterState();
         posthogCapture("ai_query_sent", {
@@ -372,8 +427,31 @@ export function CopilotPanel({
           }),
         });
 
+        if (!currentRequest()) return;
+        responseReceived = true;
+        captureAiResponse(res);
+        const responseBody = !res.ok ? await res.clone().json().catch(() => null) : null;
+        if (!currentRequest()) return;
+        if (!res.ok) {
+          setRestriction(copilotRestriction(res, responseBody));
+          restoreDraft();
+        }
+        if (res.status === 400 && responseBody?.error === "original_question_explanation_only" && typeof responseBody.message === "string") {
+          setMessages((prev) => [...prev, { role: "assistant", content: responseBody.message }]);
+          return;
+        }
+        if (!res.ok && res.status !== 429) {
+          const denial = aiPolicyDenialMessage(res.status, responseBody);
+          if (denial) {
+            setMessages((prev) => [...prev, { role: "assistant", content: denial }]);
+            setStreaming(false);
+            setStreamStatus("idle");
+            return;
+          }
+        }
+
         if (res.status === 429) {
-          const body = (await res.json()) as { message?: string; reason?: string };
+          const body = (responseBody ?? {}) as { message?: string; reason?: string };
           setMessages((prev) => [
             ...prev,
             { role: "assistant", content: body.message ?? "レート制限に達しました。" },
@@ -384,6 +462,7 @@ export function CopilotPanel({
         }
 
         if (!res.ok || !res.body) {
+          restoreDraft();
           const args = lastSendArgsRef.current;
           setErrorState({
             type: "server_error",
@@ -427,6 +506,7 @@ export function CopilotPanel({
 
         while (true) {
           const { value, done } = await reader.read();
+          if (!currentRequest()) return;
           if (done) break;
           const chunk = decoder.decode(value, { stream: true });
           acc += chunk;
@@ -453,6 +533,7 @@ export function CopilotPanel({
         const isTimeout = acc.includes("[タイムアウト]");
         const isServerError = acc.includes("[エラー] AI応答の取得に失敗");
         if (isTimeout || isServerError) {
+          restoreDraft();
           const args = lastSendArgsRef.current;
           setErrorState({
             type: isTimeout ? "timeout" : "server_error",
@@ -468,6 +549,8 @@ export function CopilotPanel({
           had_server_error: isServerError,
         });
       } catch (err) {
+        if (!currentRequest()) return;
+        if (!responseReceived) markAiUncertain();
         if ((err as Error).name === "AbortError") {
           // User-initiated stop: keep whatever was already streamed and mark
           // the last assistant message so the UI can render a "(停止しました)"
@@ -502,6 +585,7 @@ export function CopilotPanel({
             ]);
           }
         } else {
+          restoreDraft();
           const args = lastSendArgsRef.current;
           setErrorState({
             type: "network_error",
@@ -509,9 +593,12 @@ export function CopilotPanel({
           });
         }
       } finally {
-        setStreaming(false);
-        setStreamStatus("idle");
-        userStoppedRef.current = false;
+        if (currentRequest()) {
+          abortRef.current = null;
+          setStreaming(false);
+          setStreamStatus("idle");
+          userStoppedRef.current = false;
+        }
       }
     },
     [
@@ -522,6 +609,7 @@ export function CopilotPanel({
       isCorrect,
       profile,
       responseLength,
+      beginAiAccess, captureAiResponse, markAiUncertain,
     ],
   );
 
@@ -665,7 +753,6 @@ export function CopilotPanel({
     "detailed",
     "example",
     "mnemonic",
-    "similar",
     "socratic",
     "prerequisite",
     "analyze-a",
@@ -679,6 +766,8 @@ export function CopilotPanel({
   const quickActionIds: QuickActionId[] = [];
   const seen = new Set<QuickActionId>();
   for (const id of pinned) {
+    // Do not surface retired generation actions or unrecognized stored pins.
+    if (!Object.hasOwn(QUICK_ACTIONS, id)) continue;
     if (!seen.has(id)) {
       quickActionIds.push(id);
       seen.add(id);
@@ -707,13 +796,119 @@ export function CopilotPanel({
     ? `https://twitter.com/intent/tweet?text=${encodeURIComponent("AIと一緒に解いたIPA過去問")}&hashtags=${encodeURIComponent(examHashtags(question.exam))}&url=${encodeURIComponent(shareUrl)}`
     : "";
 
+  const inputForm = (
+    <>
+      {!online && (
+        <p role="status" className="px-3 py-2 text-sm text-amber-800 dark:text-amber-200">
+          オフラインのためAIに接続できません。入力はこの画面に残ります。通信が戻ってから、ご自身で送信してください。自動では再送しません。
+        </p>
+      )}
+      {restriction && (
+        <aside aria-label="AIの利用制限" className="space-y-1 px-3 py-2 text-sm text-amber-800 dark:text-amber-200">
+          <p role="status">{restriction.reason} {restriction.resume}</p>
+          <p>待っている間も、表示中の問題・選択肢・掲載解説で無料の復習を続けられます。</p>
+          {restriction.sharedNetwork && <p>学校・職場などの共有回線では、ほかの利用者の送信が影響する場合があります。身に覚えのない制限が続く場合はお問い合わせください。</p>}
+          <a href="/contact" target="_blank" rel="noopener noreferrer" className="inline-block min-h-11 py-2 underline">制限について問い合わせる（新しいタブ）</a>
+        </aside>
+      )}
+      <AiAccessNotice message={aiAccessMessage} />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          send(input);
+        }}
+        className="flex items-end gap-2 border-t border-zinc-200 p-3 dark:border-zinc-800"
+      >
+        <textarea
+          ref={inputRef}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.nativeEvent.isComposing || e.keyCode === 229) return;
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              if (!streaming) send(input);
+            }
+          }}
+          rows={2}
+          aria-label="AIへの質問を入力（Enter で送信、Shift+Enter で改行）"
+          placeholder={
+            voiceState === "listening"
+              ? "話してください…"
+              : "AIに質問… (Enter 送信 / Shift+Enter 改行)"
+          }
+          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
+        />
+        {voiceState !== "unsupported" && (
+          <Button
+            type="button"
+            variant={voiceState === "listening" ? "primary" : "ghost"}
+            size="icon"
+            onClick={toggleVoice}
+            disabled={streaming || voiceState === "denied"}
+            aria-label={
+              voiceState === "listening"
+                ? "音声入力を停止"
+                : voiceState === "denied"
+                  ? "マイクが拒否されました"
+                  : "音声入力を開始"
+            }
+            title={
+              voiceState === "denied"
+                ? "ブラウザのマイク権限を許可してください"
+                : voiceState === "listening"
+                  ? "停止"
+                  : "音声で質問"
+            }
+            className={cn(
+              voiceState === "listening" && "animate-pulse",
+              voiceState === "denied" && "opacity-50",
+            )}
+          >
+            {voiceState === "denied" ? (
+              <MicOff className="h-4 w-4" />
+            ) : (
+              <Mic className="h-4 w-4" />
+            )}
+          </Button>
+        )}
+        {streaming ? (
+          // While streaming, the primary action swaps to "Stop". The user can
+          // cancel a long answer without losing what's been streamed so far.
+          <Button
+            type="button"
+            variant="primary"
+            size="icon"
+            onClick={handleStop}
+            aria-label="生成を停止"
+            title="生成を停止"
+            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
+          >
+            <Square className="h-4 w-4 fill-current" />
+          </Button>
+        ) : (
+          <Button
+            type="submit"
+            variant="primary"
+            size="icon"
+            disabled={!input.trim() || !online}
+            aria-label="送信"
+          >
+            <Send className="h-4 w-4" />
+          </Button>
+        )}
+      </form>
+
+    </>
+  );
+
   return (
-    <div className={cn("flex h-full w-full flex-col bg-white dark:bg-zinc-950", className)}>
+    <div className={cn("flex min-w-0 w-full flex-col bg-white dark:bg-zinc-950", !inline && "h-full", className)}>
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-          <span className="text-sm font-semibold">AI コパイロット</span>
+          <span className="text-sm font-semibold">{inline ? "この問題をAIに質問" : "AI コパイロット"}</span>
           <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300" title="短時間の連続利用などには適正利用制限があります">
             無料で質問
           </span>
@@ -817,6 +1012,8 @@ export function CopilotPanel({
         </div>
       </div>
 
+      {inline && inputForm}
+
       {/* Quick actions */}
       <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
         <div className="mb-2 flex items-center justify-between">
@@ -845,7 +1042,7 @@ export function CopilotPanel({
                     <button
                       type="button"
                       onClick={() => send("", id)}
-                      disabled={streaming}
+                      disabled={streaming || !online}
                       className={cn(
                         "px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
                         id === WRONG_ONLY
@@ -914,7 +1111,7 @@ export function CopilotPanel({
       {/* Messages */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-3"
+        className={cn("min-w-0 overflow-y-auto break-words p-3", inline ? "max-h-[24rem]" : "flex-1")}
         role="log"
         aria-live="polite"
         aria-label="AI コパイロットの応答"
@@ -922,7 +1119,7 @@ export function CopilotPanel({
         {messages.length === 0 && (
           <div className="space-y-2.5">
             <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
-              問題文は既にAIに共有されています。分からないところを聞いたり、上のボタンでサッと深掘りできます。
+              送信時に、この問題の文脈をAIへ渡します。分からないところを聞いたり、上のボタンでサッと深掘りできます。
             </div>
             <div className="rounded-xl border border-sky-200 bg-sky-50/50 p-3 dark:border-sky-900/50 dark:bg-sky-950/20">
               <p className="mb-2 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
@@ -1028,7 +1225,7 @@ export function CopilotPanel({
               <div className="text-sm leading-relaxed">
                 {m.quickAction && (
                   <span className="mr-1 rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-900 dark:text-sky-200">
-                    {QUICK_ACTIONS[m.quickAction].label}
+                    {QUICK_ACTIONS[m.quickAction]?.label ?? "旧操作（非採用）"}
                   </span>
                 )}
                 {m.content}
@@ -1097,7 +1294,7 @@ export function CopilotPanel({
 
       {/* AI disclaimer */}
       {messages.some((m) => m.role === "assistant") && (
-        <div className="px-3 pb-1 text-[11px] leading-snug text-zinc-500 dark:text-zinc-400">
+        <div className="mx-3 mb-2 rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-sm leading-7 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200">
           <p>※ AI の回答とサイト掲載の解説は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。</p>
           {selectedChoice && question.type !== "ordering" && question.choices && question.choiceExplanations && (
             <details className="mt-1">
@@ -1122,91 +1319,7 @@ export function CopilotPanel({
         </div>
       )}
 
-      {/* Input form */}
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          send(input);
-        }}
-        className="flex items-end gap-2 border-t border-zinc-200 p-3 dark:border-zinc-800"
-      >
-        <textarea
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey) {
-              e.preventDefault();
-              if (!streaming) send(input);
-            }
-          }}
-          rows={2}
-          aria-label="AIへの質問を入力（Enter で送信、Shift+Enter で改行）"
-          placeholder={
-            voiceState === "listening"
-              ? "話してください…"
-              : "AIに質問… (Enter 送信 / Shift+Enter 改行)"
-          }
-          className="min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
-        />
-        {voiceState !== "unsupported" && (
-          <Button
-            type="button"
-            variant={voiceState === "listening" ? "primary" : "ghost"}
-            size="icon"
-            onClick={toggleVoice}
-            disabled={streaming || voiceState === "denied"}
-            aria-label={
-              voiceState === "listening"
-                ? "音声入力を停止"
-                : voiceState === "denied"
-                  ? "マイクが拒否されました"
-                  : "音声入力を開始"
-            }
-            title={
-              voiceState === "denied"
-                ? "ブラウザのマイク権限を許可してください"
-                : voiceState === "listening"
-                  ? "停止"
-                  : "音声で質問"
-            }
-            className={cn(
-              voiceState === "listening" && "animate-pulse",
-              voiceState === "denied" && "opacity-50",
-            )}
-          >
-            {voiceState === "denied" ? (
-              <MicOff className="h-4 w-4" />
-            ) : (
-              <Mic className="h-4 w-4" />
-            )}
-          </Button>
-        )}
-        {streaming ? (
-          // While streaming, the primary action swaps to "Stop". The user can
-          // cancel a long answer without losing what's been streamed so far.
-          <Button
-            type="button"
-            variant="primary"
-            size="icon"
-            onClick={handleStop}
-            aria-label="生成を停止"
-            title="生成を停止"
-            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
-          >
-            <Square className="h-4 w-4 fill-current" />
-          </Button>
-        ) : (
-          <Button
-            type="submit"
-            variant="primary"
-            size="icon"
-            disabled={!input.trim()}
-            aria-label="送信"
-          >
-            <Send className="h-4 w-4" />
-          </Button>
-        )}
-      </form>
+      {!inline && inputForm}
 
       {/* Share modal */}
       <Dialog open={shareOpen} onOpenChange={setShareOpen}>
@@ -1273,6 +1386,24 @@ export function CopilotPanel({
         )}
       </div>
     </div>
+  );
+}
+
+/** One persistent editor for both wide and narrow question screens. */
+export function CopilotInline(props: Omit<Props, "onClose" | "inline" | "initialPrompt">) {
+  React.useEffect(() => {
+    setCopilotPanelOpen(true);
+    return () => setCopilotPanelOpen(false);
+  }, []);
+  return (
+    <section
+      aria-label="この問題についてAIに質問"
+      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800"
+      onTouchStart={(event) => event.stopPropagation()}
+      onTouchEnd={(event) => event.stopPropagation()}
+    >
+      <CopilotPanel {...props} key={props.question.id} inline />
+    </section>
   );
 }
 

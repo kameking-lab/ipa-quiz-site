@@ -13,6 +13,8 @@ export interface RAGPipelineInput {
   question: Question;
   messages: { role: "user" | "assistant"; content: string }[];
   quickAction?: QuickActionId;
+  /** Only opt in when the same prompt includes the complete buildQuestionContext(question). */
+  questionContextIncluded?: boolean;
 }
 
 export interface RAGPipelineOutput {
@@ -35,6 +37,10 @@ const EMPTY: RAGPipelineOutput = {
   hasGrounding: false,
 };
 
+const CURRENT_QUESTION_REFERENCE =
+  "この引用番号は、上の「現在の問題」にある公開問題の問題文・選択肢・正答・サイト掲載解説を指します。" +
+  "ユーザーの回答や学習者プロフィールは出典に含みません。掲載解説は公式見解とは限りません。";
+
 /**
  * Run the full RAG pipeline: retrieval → grounding decision → citation header + related-question header.
  * Any failure is captured and the call returns the empty fallback so the copilot keeps working without grounding.
@@ -42,7 +48,7 @@ const EMPTY: RAGPipelineOutput = {
 export async function runCopilotRAGPipeline(
   input: RAGPipelineInput,
 ): Promise<RAGPipelineOutput> {
-  const { question, messages, quickAction } = input;
+  const { question, messages, quickAction, questionContextIncluded = false } = input;
 
   if (!ragEnabled()) return EMPTY;
 
@@ -80,8 +86,10 @@ export async function runCopilotRAGPipeline(
 
   // Give the current problem its own citation. Otherwise the model can attach
   // another problem's citation to facts found only in the current explanation.
+  let questionContextDoc: ReturnType<typeof buildQuestionDoc> | undefined;
   if (!question.needsReview && question.explanation.trim()) {
     const currentDoc = buildQuestionDoc(question);
+    questionContextDoc = currentDoc;
     ragResult = {
       ...ragResult,
       passages: [
@@ -94,7 +102,21 @@ export async function runCopilotRAGPipeline(
   if (ragResult.passages.length === 0) return { ...EMPTY, ragResult };
 
   const ragDirective = buildRAGDirective(ragResult.passages.length);
-  const ragContextBlock = buildRAGContextBlock(ragResult.passages);
+  // Reuse the full question context only for the document created above.
+  // Keep original documents intact for citation metadata, snippets and links.
+  const promptPassages = questionContextIncluded && questionContextDoc
+    ? ragResult.passages.map((passage) => {
+      if (passage.doc !== questionContextDoc || passage.doc.text.length <= CURRENT_QUESTION_REFERENCE.length) return passage;
+      return {
+        ...passage,
+        doc: {
+          ...passage.doc,
+          text: CURRENT_QUESTION_REFERENCE,
+        },
+      };
+    })
+    : ragResult.passages;
+  const ragContextBlock = buildRAGContextBlock(promptPassages);
   const citationFooter = buildCitationFooter(ragResult.passages);
 
   const citationMetas = buildCitationMetas(ragResult.passages);

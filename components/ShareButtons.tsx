@@ -38,6 +38,11 @@ function buildFacebookUrl(url: string): string {
  */
 export function ShareButtons({ url, text, hashtags, compact }: Props) {
   const [copied, setCopied] = React.useState(false);
+  // SSR and the first client render must have the same tree.
+  const [canNativeShare, setCanNativeShare] = React.useState(false);
+  React.useEffect(() => {
+    setCanNativeShare(typeof navigator !== "undefined" && typeof navigator.share === "function");
+  }, []);
 
   const copy = async () => {
     try {
@@ -164,7 +169,7 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
           </>
         )}
       </button>
-      {typeof navigator !== "undefined" && typeof navigator.share === "function" && (
+      {canNativeShare && (
         <button
           type="button"
           onClick={nativeShare}

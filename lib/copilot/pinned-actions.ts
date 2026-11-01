@@ -23,7 +23,7 @@ function read(): QuickActionId[] {
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter((v): v is QuickActionId => typeof v === "string");
+    return parsed.filter((v): v is QuickActionId => typeof v === "string" && v !== "similar");
   } catch {
     return [];
   }

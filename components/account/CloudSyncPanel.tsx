@@ -103,7 +103,7 @@ export function CloudSyncPanel() {
           })}
         </ul>
 
-        {identity.account && <SyncOwnershipNotice
+        {!identity.checking && identity.account && <SyncOwnershipNotice
           account={identity.account}
           ownership={identity.ownership}
           confirmed={identity.confirmedFor === identity.account.id}

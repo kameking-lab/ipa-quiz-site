@@ -175,7 +175,6 @@ describe("UI と文言", () => {
     for (const rel of [
       "app/api/scoring/route.ts",
       "app/api/essay-grade/route.ts",
-      "app/api/generate-question/route.ts",
     ]) {
       const src = read(rel);
       // コメント行を除いた上で、文字列リテラル中に env 名が無いことを見る。

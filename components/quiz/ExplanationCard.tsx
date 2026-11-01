@@ -18,6 +18,7 @@ import { BookmarkButton } from "@/components/BookmarkButton";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { QuestionBody } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
+import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
@@ -157,7 +158,7 @@ export function ExplanationCard({
           解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
         </div>
       ) : (
-        <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
+        <div className="selectable-content mb-4 min-w-0 text-sm leading-7 text-zinc-800 [overflow-wrap:anywhere] dark:text-zinc-100">
           <p className={cn(
             "mb-2 font-semibold",
             isCorrect ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300",
@@ -168,6 +169,7 @@ export function ExplanationCard({
         </div>
       )}
 
+      <RikuTech2CylinderGuide questionId={question.id} revealed />
       <QuestionSourcePresentation question={question} phase="after" />
 
       {!isCorrect && selected && selectedChoiceExplanation && (
@@ -248,7 +250,7 @@ export function ExplanationCard({
       )}
 
       <div className="mt-3 space-y-2 rounded-lg border border-zinc-200/80 bg-zinc-50/60 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-900/30">
-        <p className="text-sm text-zinc-500 dark:text-zinc-400">
+        <p className="text-sm leading-7 text-zinc-700 dark:text-zinc-200">
           ※ 解説は誤りを含む可能性があります。重要な判断は公式資料でご確認ください。
         </p>
         <div className="flex flex-wrap gap-1.5">

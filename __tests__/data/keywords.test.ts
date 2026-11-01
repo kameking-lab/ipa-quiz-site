@@ -105,22 +105,25 @@ describe("KEYWORD_PAGES — 旗艦 /essay 送客ゲート(誇大回避)", () => 
   });
 });
 
-// 土台＝基本情報 科目B 完全対策ピラーへの送客ゲート。app/keywords/[keyword]/page.tsx は
-// strategicCta==="kamoku-b" のとき KamokuBStudyHint(/blog/fe-kamoku-b-taisaku)を描画する。
-// 科目B擬似言語テーマ(FE)以外へ漏らさない（off-topic回避）。
-describe("KEYWORD_PAGES — 土台 科目B ピラー送客ゲート", () => {
-  it("strategicCta:'kamoku-b' の記事は FE のみ（科目B＝擬似言語の実データ区分）", () => {
-    const flagged = KEYWORD_PAGES.filter((p) => p.strategicCta === "kamoku-b");
-    expect(flagged.length).toBeGreaterThan(0); // non-vacuous
-    for (const page of flagged) {
-      expect(page.exams).toContain("fe");
+// Release-only hold: C033/C034 are not registered until source-bound content is accepted.
+// The held FE article must not be replaced by an unrelated strategic CTA.
+describe("KEYWORD_PAGES — release exclusion and strategic CTA boundary", () => {
+  it("withholds both article slugs from lookup, static registry and all related rails", () => {
+    const withheld = ["fe-kamoku-b-pseudo-language", "cache-jikkou-access"];
+    expect(KEYWORD_PAGES.length).toBeGreaterThan(0);
+    for (const slug of withheld) {
+      expect(getKeywordPageBySlug(slug)).toBeUndefined();
+      expect(KEYWORD_PAGES.map((page) => page.slug)).not.toContain(slug);
+      expect(getRelatedKeywordPages(slug, 5)).toEqual([]);
+      for (const page of KEYWORD_PAGES) {
+        expect(getRelatedKeywordPages(page.slug, 5).map((item) => item.slug)).not.toContain(slug);
+      }
     }
   });
 
-  it("擬似言語テーマの fe-kamoku-b-pseudo-language が土台ピラーへ送客する", () => {
-    expect(
-      getKeywordPageBySlug("fe-kamoku-b-pseudo-language")?.strategicCta,
-    ).toBe("kamoku-b");
+  it("does not invent a replacement kamoku-b CTA while its source article is withheld", () => {
+    const flagged = KEYWORD_PAGES.filter((page) => page.strategicCta === "kamoku-b");
+    expect(flagged).toEqual([]);
   });
 });
 

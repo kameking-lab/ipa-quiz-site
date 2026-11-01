@@ -1,4 +1,5 @@
 "use client";
+import { readQuizReturn, safeQuizReturn, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { useState } from "react";
 export function CheckoutButton({ terms, amount, enabled, testMode = true, recurring = false }: { terms: string; amount: number; enabled: boolean; testMode?: boolean; recurring?: boolean }) {
   const [accepted, setAccepted] = useState(false);
@@ -14,6 +15,11 @@ export function CheckoutButton({ terms, amount, enabled, testMode = true, recurr
         const messages: Record<string, string> = { sign_in_required: "購入にはログインが必要です。", subscription_exists: "契約または支払確認待ちの申込があります。契約管理からご確認ください。", pass_already_active: "パスは有効です。追加購入は不要です。", transition_no_purchase_needed: "移行優遇中です。今の購入は不要です。", terms_changed: "条件が更新されました。この画面を再読込して確認してください。" };
         throw new Error(messages[value.error] ?? "決済を開始できませんでした。再試行しても同じ未完了の注文を使用します。解決しない場合はサポートへご連絡ください。");
       }
+      // Bind only a confirmed checkout response to the UI return context. No provider/API contract changes.
+      try {
+        const href = safeQuizReturn(new URL(window.location.href).searchParams.get("returnTo")) ?? readQuizReturn(window.sessionStorage);
+        if (href && typeof value.orderId === "string") saveQuizReturn(window.sessionStorage, href, Date.now(), value.orderId);
+      } catch { /* The billing page already explains unavailable local return storage. */ }
       window.location.assign(value.url);
     } catch (e) { setError(e instanceof Error ? e.message : "決済を開始できませんでした。"); setBusy(false); }
   }

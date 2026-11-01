@@ -2,6 +2,7 @@
  * 公表試験問題カタログ（サーバー側で参照する正本）。
  * データは web/src/data/exam-library/official-catalog.json。検証を通った回だけ扱う。
  */
+import { SURVEY_ASSISTANT_CATALOG } from "@/lib/exam-library/survey-assistant-catalog";
 import catalogJson from "@/data/exam-library/official-catalog.json";
 import {
   EXAM_GROUPS,
@@ -13,7 +14,7 @@ import {
 
 export { EXAM_LIBRARY_PATH };
 
-export const EXAM_CATALOG: readonly ExamCatalogEntry[] = parseExamCatalog(catalogJson);
+export const EXAM_CATALOG: readonly ExamCatalogEntry[] = [...parseExamCatalog(catalogJson), ...SURVEY_ASSISTANT_CATALOG];
 
 const catalogById = new Map(EXAM_CATALOG.map((entry) => [entry.id, entry]));
 

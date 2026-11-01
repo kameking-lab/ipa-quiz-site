@@ -70,7 +70,7 @@ export function HistorySyncPanel() {
 
   return (
     <div className="flex flex-col gap-3">
-      {identity.account && <SyncOwnershipNotice
+      {!identity.checking && identity.account && <SyncOwnershipNotice
         account={identity.account}
         ownership={identity.ownership}
         confirmed={identity.confirmedFor === identity.account.id}

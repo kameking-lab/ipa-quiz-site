@@ -76,14 +76,48 @@ test.describe("/q inline answer", () => {
     await expect(page.getByText(/正解|不正解/).first()).toBeVisible();
   });
 
-  test("an anonymous learner can ask AI about a wrong answer without leaving the question", async ({ page }) => {
+  test("an anonymous learner can prepare and manually send an inline AI question about a wrong answer without navigation", async ({ page }) => {
+    const sent: Array<{
+      question?: { id?: string }; selectedChoice?: string; isCorrect?: boolean;
+      messages?: Array<{ role: string; content: string }>;
+    }> = [];
+    // Test the browser request contract only: never contact a provider or consume AI quota.
+    await page.route("**/api/copilot", async (route) => {
+      sent.push(route.request().postDataJSON());
+      await route.fulfill({ status: 401, contentType: "application/json", body: JSON.stringify({ error: "sign_in_required" }) });
+    });
     await page.goto("/q/tohan/2025-kansai/gakka/q1");
     const urlBefore = page.url();
+    const inline = page.getByRole("region", { name: "この問題についてAIに質問", exact: true });
+    await expect(inline).toHaveCount(1);
+    await expect(inline).toBeVisible();
+    const input = inline.getByRole("textbox", { name: /AIへの質問を入力/ });
+    await expect(input).toBeVisible();
+    await expect(input).toHaveValue("");
+
     await page.getByRole("radio").first().click();
-    await page.getByRole("button", { name: "誤答をAIに質問" }).click();
-    const dialog = page.getByRole("dialog", { name: "AI コパイロット" }).first();
-    await expect(dialog).toBeVisible();
-    await expect(dialog.getByRole("textbox", { name: /AIへの質問を入力/ })).toBeVisible();
+    const wrongAnswerAction = page.getByRole("button", { name: "誤答をAIに質問", exact: true });
+    await wrongAnswerAction.click();
+    await expect(page.getByRole("dialog", { name: "AI コパイロット" })).toHaveCount(0);
+    const wrongPrompt = "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。";
+    await expect(input).toHaveValue(wrongPrompt);
+    await expect(input).toBeFocused();
     expect(page.url()).toBe(urlBefore);
+    expect(sent).toHaveLength(0);
+
+    const draft = `${wrongPrompt} 選んだ選択肢と正解の違いを確認したいです。`;
+    await input.fill(draft);
+    await wrongAnswerAction.click();
+    await expect(input).toHaveValue(draft); // A repeat focus request must not overwrite the learner's draft.
+    await expect(input).toBeFocused();
+    await expect(inline).toHaveCount(1);
+    expect(sent).toHaveLength(0); // Answering/focusing/editing are not automatic sends.
+    await inline.getByRole("button", { name: "送信", exact: true }).click();
+    await expect.poll(() => sent.length).toBe(1);
+    expect(sent[0]).toMatchObject({ question: { id: "tohan-2025-kansai-gakka-q1" }, selectedChoice: "ア", isCorrect: false });
+    expect(sent[0].messages?.at(-1)).toEqual({ role: "user", content: draft });
+    await expect(input).toHaveValue(draft); // The intercepted login denial must retain editable input.
+    expect(page.url()).toBe(urlBefore);
+    expect(sent).toHaveLength(1);
   });
 });

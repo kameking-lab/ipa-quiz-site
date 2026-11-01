@@ -538,3 +538,64 @@ button,
     display: block !important;
   }
 }
+
+/* Study pet: finite drawn feeding poses and durable device progress. */
+.study-pet-compact { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1rem; padding: .7rem 1rem; }
+.study-pet-compact > div { flex: 1 1 150px; min-width: 0; }
+.study-pet-compact h3 { font-size: .85rem; margin: 0; }
+.study-pet-compact p { font-size: .75rem; line-height: 1.5; margin: .15rem 0 0; }
+.study-pet-compact .study-pet-compact-save { font-size: .66rem; color: var(--muted-foreground); }
+.study-pet-compact > button, .study-pet-collapse { min-height: 44px; padding: .4rem .75rem; border: 1px solid var(--border); border-radius: .75rem; background: var(--background); font-size: .75rem; }
+.study-pet-compact > [role="alert"] { flex-basis: 100%; }
+.study-pet-collapse { margin-bottom: .5rem; }
+.study-pet-scene { position: relative; display: grid; place-items: center; flex: 0 0 164px; width: 164px; height: 174px; isolation: isolate; }
+.study-pet-ground { position: absolute; width: 126px; height: 18px; border-radius: 50%; bottom: 13px; background: color-mix(in srgb, var(--primary) 10%, transparent); }
+.study-pet-dog { position: relative; width: 160px; height: 160px; object-fit: contain; transform-origin: 52% 78%; }
+.study-pet-accessory { position: absolute; z-index: 1; left: 65px; bottom: 38px; display: grid; place-items: center; width: 25px; height: 22px; border-radius: 4px 4px 13px 13px; background: #477e79; color: #d3e8da; font-size: 10px; box-shadow: 0 1px 3px #23453530; }
+.study-pet-bowl { position: absolute; left: 20px; bottom: 9px; padding: 0 8px 3px; color: #9d704c; background: #a3beb0; border-radius: 5px 5px 18px 18px; font-size: 10px; letter-spacing: 1px; }
+.study-pet-growth, .study-pet-hint { font-size: .73rem; line-height: 1.7; color: var(--muted-foreground); }
+.study-pet-actions { flex-wrap: wrap; gap: .45rem; margin: .65rem 0; }
+.study-pet-actions button { min-height: 44px; height: auto; white-space: normal; overflow-wrap: anywhere; }
+.study-pet-save { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--border); font-size: .7rem; line-height: 1.7; color: var(--muted-foreground); overflow-wrap: anywhere; }
+.study-pet-save p:first-child { font-weight: 600; }
+.study-pet-save details { margin-top: .4rem; }
+.study-pet-save summary { cursor: pointer; }
+.study-pet-save button { margin-top: .35rem; padding: .35rem .6rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--background); color: var(--foreground); }
+/* Atlas reactions advance through drawn poses; no perpetual movement. */
+.study-pet-artwork { position: relative; display: block; width: 160px; height: 160px; transform-origin: 50% 88%; }
+.study-pet-artwork[data-stage="little"] { transform: scale(.82); }
+.study-pet-artwork[data-stage="friend"] { transform: scale(.91); }
+.study-pet-wearable { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.study-pet-motion { display: block; width: 160px; height: 160px; transform-origin: 50% 88%; transition: transform 280ms ease-out; }
+.study-pet-motion[data-movement="near"] { transform: translateX(7px); }
+.study-pet-motion[data-movement="lean"] { transform: translateX(5px) rotate(-4deg); }
+.study-pet-motion[data-movement="lift"] { transform: translateY(-5px); }
+.study-pet[data-stage="friend"] .study-pet-ground { background: #c8ddd1; box-shadow: 0 0 0 4px #e9f1e9; }
+.study-pet[data-stage="companion"] .study-pet-ground { background: #daca9f; box-shadow: 0 0 0 5px #f4edda; }
+.study-pet-wardrobe { border: 0; padding: 0; margin: .75rem 0; min-width: 0; }
+.study-pet-wardrobe legend { font-size: .78rem; font-weight: 600; }
+.study-pet-wardrobe button[aria-pressed="true"] { background: #e0eee4; border-color: #476e53; box-shadow: inset 0 0 0 1px #476e53; color: #24412c; }
+.study-pet-next { font-size: .78rem; line-height: 1.7; margin: .6rem 0; }
+.study-pet-next a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 480px) { .study-pet-artwork, .study-pet-motion { width: 144px; height: 144px; } }
+.study-pet-dog[data-art="atlas"] { overflow: hidden; }
+@media (max-width: 480px) { .study-pet .reward-body { flex-direction: column; gap: .6rem; align-items: stretch; } .study-pet-scene { align-self: center; flex-basis: auto; width: 144px; height: 150px; } .study-pet-dog { width: 144px; height: 144px; } }
+@media (prefers-reduced-motion: reduce) { .study-pet *, .study-pet *::before, .study-pet *::after { animation: none !important; transition: none !important; } }
+
+/* N06: append after the existing reward/pet declarations. Main-owned integration hunk. */
+.study-reward .reward-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+}
+.study-reward .reward-top > div { min-width: 0; overflow-wrap: anywhere; }
+.study-reward .reward-top > button { white-space: nowrap; }
+.study-reward .reward-body { flex-wrap: wrap; align-items: start; }
+.study-reward .reward-copy { flex: 1 1 260px; overflow-wrap: anywhere; }
+.study-reward .reward-scene, .study-reward .study-pet-scene { margin-inline: auto; }
+.study-pet .study-pet-save { margin: .25rem 18px 16px; padding-top: .75rem; }
+.study-pet .study-pet-save summary { min-height: 44px; padding-block: .65rem; }
+.study-pet .study-pet-save summary:focus-visible { outline: 3px solid #3a7668; outline-offset: 3px; }
+@media (max-width: 480px) {
+  .study-pet .reward-copy { flex-basis: auto; }
+}

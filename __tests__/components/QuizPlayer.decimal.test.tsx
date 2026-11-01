@@ -38,7 +38,7 @@ describe("QuizPlayer original decimal", () => {
   it("grades full-width decimal once on Enter, keeps its position, and resumes without exposing the previous answer", () => {
     const onNext=vi.fn();
     const player=render(<QuizPlayer question={question} index={0} total={2} mode="year" backHref="/kangoshi/2024-annual" backLabel="年度に戻る" onNext={onNext} />);
-    const input=screen.getByRole("textbox");
+    const input=screen.getByRole("textbox", { name: "解答（BMI）" });
     fireEvent.change(input,{target:{value:"　２３．４　"}});
     fireEvent.keyDown(input,{key:"Enter"});
     expect(onNext).not.toHaveBeenCalled();
@@ -53,14 +53,14 @@ describe("QuizPlayer original decimal", () => {
     expect(push).toHaveBeenCalledWith("/kangoshi/2024-annual");
     player.unmount();
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={onNext} />);
-    expect(screen.getByRole("textbox")).toHaveValue("");
+    expect(screen.getByRole("textbox", { name: "解答（BMI）" })).toHaveValue("");
     expect(screen.queryByRole("region",{name:"正解の解説"})).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
   it("records a valid incorrect decimal and proceeds only via the next action", () => {
     const onNext=vi.fn();render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={onNext} />);
-    fireEvent.change(screen.getByRole("textbox"),{target:{value:"23.3"}});
-    fireEvent.keyDown(screen.getByRole("textbox"),{key:"Enter"});
+    fireEvent.change(screen.getByRole("textbox", { name: "解答（BMI）" }),{target:{value:"23.3"}});
+    fireEvent.keyDown(screen.getByRole("textbox", { name: "解答（BMI）" }),{key:"Enter"});
     expect(screen.getByRole("region",{name:"不正解の解説"})).toHaveTextContent("あなた: 23.3 BMI");
     expect(createHistoryStore().getWrongIds()).toEqual([question.id]);
     expect(onNext).not.toHaveBeenCalled();

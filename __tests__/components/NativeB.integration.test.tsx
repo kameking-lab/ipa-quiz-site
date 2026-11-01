@@ -77,19 +77,21 @@ it("does not repeat a bank crop already rendered as the original figure", () => 
 
 // New qualification consumers retain official past-question-only learning.
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
-vi.mock("@/components/quiz/GenerateSimilar", () => ({ GenerateSimilar: () => <button data-testid="generated-variant-test-only">generated-variant-test-only</button> }));
 for (const code of ["riku-tech1", "maritime4", "land-special1", "maritime3", "land-special2", "land-special3", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "riku-toku-kokunai", "kai-toku3", "koku-toku"] as const) {
   it(`${code}: answers a real MC original without offering generated questions`, () => {
     const question = (QUESTIONS_BY_EXAM[code] ?? []).find((q) => q.type === "multiple-choice")!;
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
     fireEvent.click(screen.getAllByRole("radio")[0]!);
     expect(screen.getByLabelText("解答結果")).toBeInTheDocument();
-    expect(screen.queryByTestId("generated-variant-test-only")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /類題|類似問題/ })).not.toBeInTheDocument();
   });
 }
-it("preserves the existing generated-question entry for non-radio learning", () => {
+it("keeps original answer/history but offers no retired generated-question entry for non-radio learning", () => {
   const question = (QUESTIONS_BY_EXAM.ap ?? []).find((q) => q.type === "multiple-choice")!;
   render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
   fireEvent.click(screen.getAllByRole("radio")[0]!);
-  expect(screen.getByTestId("generated-variant-test-only")).toBeInTheDocument();
+  expect(screen.getByLabelText("解答結果")).toBeInTheDocument();
+  expect(createHistoryStore().getAllEntries()).toHaveLength(1);
+  expect(createHistoryStore().getAllEntries()[0]?.id).toBe(question.id);
+  expect(screen.queryByRole("button", { name: /類題|類似問題/ })).not.toBeInTheDocument();
 });

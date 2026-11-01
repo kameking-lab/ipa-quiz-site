@@ -111,7 +111,7 @@ export default function LicensePage() {
         <div>
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">AI 生成解説・オリジナルコンテンツ</h2>
           <p className="mb-2">
-            AI コパイロットが生成する解説・補足説明・類題は、本サービスが独自に生成するものです。
+            AI コパイロットが生成する解説・補足説明は、本サービスが独自に生成するものです。
             教育目的での個人利用（学習・研究・引用）は歓迎します。
           </p>
           <p>

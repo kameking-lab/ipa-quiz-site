@@ -109,7 +109,6 @@ describe("全 AI ルートが課金層を手書きしていない", () => {
   const ROUTES = [
     "app/api/copilot/route.ts",
     "app/api/essay-grade/route.ts",
-    "app/api/generate-question/route.ts",
     "app/api/scoring/route.ts",
   ];
 

@@ -6,6 +6,8 @@
  *   保存値を採点結果として信用しない。
  * - キーはサイト共通の LS_KEYS で管理する。
  */
+import { isExamReferenceOnly, isSurveyAssistantReferenceId, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
+import { loadSurveyAssistantGradingPaper as loadSurveyAssistantPaper } from "@/lib/exam-library/survey-assistant-grading-index";
 import { LS_KEYS } from "@/lib/storage/keys";
 import {
   gradeExamAnswer,
@@ -70,7 +72,7 @@ export function parseExamProgress(
   if (!isRecord(value) || value.version !== 1 || value.examId !== examId) return null;
   if (!isRecord(value.answers)) return null;
 
-  const byId = new Map(questions.map((question) => [question.id, question]));
+  const byId = new Map(questions.filter(question => !isExamReferenceOnly(question)).map((question) => [question.id, question]));
   const answers: ExamSessionAnswers = {};
   for (const [questionId, stored] of Object.entries(value.answers)) {
     const question = byId.get(questionId);
@@ -103,6 +105,7 @@ export function createExamProgress(
 ): ExamProgress {
   const compact: ExamSessionAnswers = {};
   for (const [questionId, answer] of Object.entries(answers)) {
+    if (isSurveyAssistantReferenceId(questionId)) continue;
     const memo = clampMemo(answer.memo);
     if (answer.choice === null && memo === "" && !answer.submitted) continue;
     compact[questionId] = { choice: answer.choice, memo, submitted: answer.submitted };
@@ -111,7 +114,7 @@ export function createExamProgress(
     version: 1,
     examId,
     answers: compact,
-    lastQuestionId,
+    lastQuestionId: lastQuestionId && isSurveyAssistantReferenceId(lastQuestionId) ? null : lastQuestionId,
     updatedAt: now.toISOString(),
   };
 }
@@ -132,9 +135,17 @@ function notifyChange(): void {
 }
 
 /** 保存に成功したら true。容量超過・プライベートモード等は false（例外を投げない）。 */
+export function sanitizeExamProgressForStorage(progress: ExamProgress): ExamProgress {
+  const answers = excludeSurveyAssistantReferenceAnswers(progress.answers);
+  const questions = loadSurveyAssistantPaper(progress.examId);
+  const lastQuestionId = progress.lastQuestionId && isSurveyAssistantReferenceId(progress.lastQuestionId) ? null : progress.lastQuestionId;
+  return { ...progress, answers, lastQuestionId,
+    ...(progress.summary && questions ? { summary: { ...summarizeExamProgress(questions, answers), examTitle: progress.summary.examTitle } } : {}) };
+}
+
 export function saveExamProgress(storage: Storage, progress: ExamProgress): boolean {
   try {
-    storage.setItem(examProgressKey(progress.examId), JSON.stringify(progress));
+    storage.setItem(examProgressKey(progress.examId), JSON.stringify(sanitizeExamProgressForStorage(progress)));
     notifyChange();
     return true;
   } catch {
@@ -177,7 +188,7 @@ export function answerResult(
   question: ExamQuestion,
   answer: ExamSessionAnswer | undefined,
 ): ExamAnswerResult | "unanswered" {
-  if (!answer?.submitted) return "unanswered";
+  if (isExamReferenceOnly(question) || !answer?.submitted) return "unanswered";
   return gradeExamAnswer(question, answer.choice);
 }
 
@@ -197,7 +208,7 @@ export function summarizeExamProgress(
   answers: ExamSessionAnswers,
 ): ExamProgressSummary {
   const summary: ExamProgressSummary = {
-    total: questions.length,
+    total: questions.filter(question => !isExamReferenceOnly(question)).length,
     answered: 0,
     correct: 0,
     incorrect: 0,
@@ -205,6 +216,7 @@ export function summarizeExamProgress(
     scorable: 0,
   };
   for (const question of questions) {
+    if (isExamReferenceOnly(question)) continue;
     if (isScorableQuestion(question)) summary.scorable += 1;
     const result = answerResult(question, answers[question.id]);
     if (result === "unanswered") continue;

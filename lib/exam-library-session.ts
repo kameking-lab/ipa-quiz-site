@@ -1,6 +1,7 @@
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { ExamQuestion } from "@/lib/exam-library-model";
-import { EXAM_PROGRESS_CHANGE_EVENT, parseExamProgress, summarizeExamProgress, type ExamProgress, type ExamProgressSummary } from "@/lib/exam-library-progress";
+import { loadSurveyAssistantGradingPaper as loadSurveyAssistantPaper } from "@/lib/exam-library/survey-assistant-grading-index";
+import { EXAM_PROGRESS_CHANGE_EVENT, sanitizeExamProgressForStorage, parseExamProgress, summarizeExamProgress, type ExamProgress, type ExamProgressSummary } from "@/lib/exam-library-progress";
 
 export interface ExamTabSummary extends ExamProgressSummary {
   examId: string;
@@ -25,6 +26,7 @@ export function readExamTabProgress(examId: string, questions: readonly ExamQues
 
 /** Keeps navigation/reload progress in this tab; never opts into localStorage. */
 export function writeExamTabProgress(progress: ExamProgress, questions: readonly ExamQuestion[], examTitle: string): void {
+  progress = sanitizeExamProgressForStorage(progress);
   const summary: ExamTabSummary = { ...summarizeExamProgress(questions, progress.answers), examId: progress.examId, examTitle, lastQuestionId: progress.lastQuestionId, updatedAt: progress.updatedAt };
   try {
     tabStorage()?.setItem(`${LS_KEYS.examLibrarySessionPrefix}${progress.examId}`, JSON.stringify({ progress, summary }));
@@ -48,7 +50,13 @@ export function listExamTabSummaries(): ExamTabSummary[] {
         if (!summary || typeof summary.examId !== "string" || !/^[a-z0-9-]+$/i.test(summary.examId) || typeof summary.examTitle !== "string" || typeof summary.updatedAt !== "string") continue;
         if (![summary.answered, summary.total, summary.correct, summary.incorrect, summary.unscored, summary.scorable].every((count) => typeof count === "number" && Number.isSafeInteger(count) && count >= 0)) continue;
         if (summary.lastQuestionId !== null && typeof summary.lastQuestionId !== "string") continue;
-        summaries.push(summary as ExamTabSummary);
+        const survey = loadSurveyAssistantPaper(summary.examId);
+        if (survey) {
+          if (!("progress" in value)) continue;
+          const parsed = parseExamProgress(JSON.stringify(value.progress), summary.examId, survey);
+          if (!parsed) continue;
+          summaries.push({ ...summary as ExamTabSummary, ...summarizeExamProgress(survey, parsed.answers), lastQuestionId: parsed.lastQuestionId });
+        } else summaries.push(summary as ExamTabSummary);
       } catch { /* Ignore individual corrupt entries. */ }
     }
   } catch { return []; }
@@ -64,7 +72,10 @@ export function listExamLearningSummaries(): ExamTabSummary[] {
       const key = storage.key(index);
       if (!key?.startsWith(LS_KEYS.examLibraryPrefix)) continue;
       try {
-        const progress = JSON.parse(storage.getItem(key) ?? "null") as ExamProgress | null;
+        const raw = JSON.parse(storage.getItem(key) ?? "null") as ExamProgress | null;
+        const survey = raw && typeof raw.examId === "string" ? loadSurveyAssistantPaper(raw.examId) : null;
+        const parsed = raw && survey ? parseExamProgress(JSON.stringify(raw), raw.examId, survey) : null;
+        const progress = raw && survey ? (parsed ? { ...parsed, summary: { ...summarizeExamProgress(survey, parsed.answers), examTitle: raw.summary?.examTitle ?? "測量士補" } } : null) : raw;
         if (!progress?.summary || typeof progress.examId !== "string" || summaries.has(progress.examId)) continue;
         if (![progress.summary.answered, progress.summary.total, progress.summary.correct, progress.summary.incorrect, progress.summary.unscored].every((count) => Number.isSafeInteger(count) && count >= 0)) continue;
         if (typeof progress.summary.examTitle !== "string" || typeof progress.updatedAt !== "string") continue;

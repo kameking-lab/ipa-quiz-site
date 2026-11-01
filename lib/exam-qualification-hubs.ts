@@ -26,6 +26,7 @@ export interface QualificationHub {
  * 同名科目（例: 労働衛生一般）だけで判定しない。
  */
 export const QUALIFICATION_HUBS: readonly QualificationHub[] = [
+  { slug: "survey-assistant", name: "測量士補", group: "survey-assistant", description: "測量士補の原本と学習用解説。2026年No.12は参照専用です。", scope: { kind: "group" } },
   {
     slug: "dai-1-shu-eisei-kanrisha",
     name: "第一種衛生管理者",

@@ -18,6 +18,8 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
+import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
+import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { posthogCapture } from "@/lib/posthog";
@@ -114,6 +116,7 @@ function choiceText(choice: number | null | undefined): string {
 }
 
 function authorityBadge(question: ExamQuestion): string {
+  if (isExamReferenceOnly(question)) return "参照専用・採点対象外";
   if (isScorableQuestion(question)) return "公式正答で採点";
   if (question.answerAuthority === "descriptive") return "記述・自己確認";
   return "採点なし（公式正答未登録）";
@@ -144,6 +147,7 @@ export function ExamQuestionPlayer({
   questions,
   noteLinks,
 }: ExamQuestionPlayerProps) {
+  const practiceQuestions = useMemo(() => questions.filter(question => !isExamReferenceOnly(question)), [questions]);
   const allIds = useMemo(() => questions.map((question) => question.id), [questions]);
   const byId = useMemo(
     () => new Map(questions.map((question) => [question.id, question])),
@@ -191,11 +195,12 @@ export function ExamQuestionPlayer({
   const currentId = roundIds[index];
   const current = currentId ? byId.get(currentId) : undefined;
   const currentAnswer = currentId ? answers[currentId] : undefined;
-  const submitted = Boolean(currentAnswer?.submitted);
+  const referenceOnly = Boolean(current && isExamReferenceOnly(current));
+  const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
   const summary = useMemo(() => summarizeExamProgress(questions, answers), [answers, questions]);
   const wrongIds = useMemo(() => wrongQuestionIds(questions, answers), [answers, questions]);
-  const firstUnansweredIndex = allIds.findIndex((id) => !answers[id]?.submitted);
+  const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
 
   useEffect(() => {
     if (tabRestoredRef.current) return;
@@ -215,6 +220,7 @@ export function ExamQuestionPlayer({
   /** 状態更新と（オン時のみ）端末保存を同時に行う */
   const commit = useCallback(
     (next: ExamSessionAnswers, lastQuestionId: string | null) => {
+      next = excludeSurveyAssistantReferenceAnswers(next);
       setAnswers(next);
       writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle);
       if (!saveEnabled) return;
@@ -262,7 +268,7 @@ export function ExamQuestionPlayer({
 
   const selectChoice = useCallback(
     (choice: number) => {
-      if (!current || submitted || choice < 1 || choice > current.choiceCount) return;
+      if (!current || isExamReferenceOnly(current) || submitted || choice < 1 || choice > current.choiceCount) return;
       const entry = findExamEntry(examId);
       recordStudyReward({ scope: `library:${examId}`, questionId: current.id, exam: entry ? `library:${entry.subject}` : "unknown", label: entry?.subject ?? "学習のひと休み" });
       setDraftChoice(choice);
@@ -277,7 +283,7 @@ export function ExamQuestionPlayer({
   );
 
   const submitAnswer = useCallback(() => {
-    if (!current || submitted) return;
+    if (!current || isExamReferenceOnly(current) || submitted) return;
     if (current.choiceCount > 0 && draftChoice === null) {
       firstChoiceRef.current?.focus();
       return;
@@ -303,7 +309,7 @@ export function ExamQuestionPlayer({
   }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted]);
 
   const retryCurrent = useCallback(() => {
-    if (!current) return;
+    if (!current || isExamReferenceOnly(current)) return;
     commit(resetAnswers(answers, [current.id]), current.id);
     setDraftChoice(null);
     if (current.choiceCount > 0) focusLater(firstChoiceRef);
@@ -311,7 +317,7 @@ export function ExamQuestionPlayer({
   }, [answers, commit, current]);
 
   const updateMemo = (value: string) => {
-    if (!current) return;
+    if (!current || isExamReferenceOnly(current)) return;
     commit(
       {
         ...answers,
@@ -356,7 +362,7 @@ export function ExamQuestionPlayer({
   const restoreSaved = () => {
     if (!saved) return;
     const lastIndex = saved.lastQuestionId ? allIds.indexOf(saved.lastQuestionId) : -1;
-    const unanswered = allIds.findIndex((id) => !saved.answers[id]?.submitted);
+    const unanswered = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !saved.answers[id]?.submitted);
     const startIndex = lastIndex >= 0 ? lastIndex : Math.max(unanswered, 0);
     setAnswers(saved.answers);
     writeExamTabProgress(saved, questions, examTitle);
@@ -405,6 +411,13 @@ export function ExamQuestionPlayer({
         return;
       }
       if (isEditableTarget(event.target)) return;
+      if (isExamReferenceOnly(current)) {
+        const tag = event.target instanceof HTMLElement ? event.target.tagName.toLowerCase() : "";
+        if ((event.key === "Enter" || event.key === "ArrowRight") && tag !== "button" && tag !== "a" && tag !== "summary") {
+          event.preventDefault(); moveNext();
+        }
+        return;
+      }
       if (/^[1-9]$/u.test(event.key) && !submitted) {
         const choice = Number(event.key);
         if (choice > current.choiceCount) return;
@@ -527,7 +540,7 @@ export function ExamQuestionPlayer({
 
             <h3 className="mt-7 text-lg font-semibold">回答の見直し</h3>
             <ol className="mt-3 divide-y divide-slate-200 rounded-2xl border-2 border-slate-300 dark:divide-slate-700 dark:border-slate-600 forced-colors:border-[CanvasText]">
-              {questions.map((question) => {
+              {practiceQuestions.map((question) => {
                 const answer = answers[question.id];
                 const itemStatus = answerResult(question, answer);
                 return (
@@ -566,7 +579,7 @@ export function ExamQuestionPlayer({
           </section>
         ) : current ? (
           <section
-            data-study-presence-exam={hubSlug}
+            data-study-presence-exam={referenceOnly ? undefined : hubSlug}
             aria-labelledby="exam-question-heading"
             className="rounded-2xl border border-border bg-card p-4 text-foreground shadow-sm forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-6"
           >
@@ -604,7 +617,13 @@ export function ExamQuestionPlayer({
               <ExamQuestionFigure question={current} prompt={parsedChoices?.prompt} />
             </div>
 
-            {current.choiceCount > 0 ? (
+            {referenceOnly ? (
+              <div className="mt-5">
+                <SurveyAssistantReferencePanel notice={current.referenceNotice ?? "参照専用です。採点・履歴・復習には算入しません。"} explanation={current.explanation ?? ""} reasons={current.referenceReasons ?? []} officialKey={current.officialKey} />
+                <a href={officialPdfPageUrl(current.originalPdf ?? pdfUrl, sourcePage)} target="_blank" rel="noopener noreferrer" className={linkClass}>原本問題PDFを確認</a>
+                {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFの記録を確認</a> : null}
+              </div>
+            ) : current.choiceCount > 0 ? (
               <fieldset className="mt-5" aria-describedby="exam-answer-help">
                 <legend className="text-base font-semibold">選択肢を選んで解答</legend>
                 <p id="exam-answer-help" className="mt-1 text-sm leading-6 text-muted-foreground">
@@ -668,7 +687,7 @@ export function ExamQuestionPlayer({
               </div>
             )}
 
-            <StudyRewardCorner scope={`library:${examId}`} questionId={current.id} answered={submitted} />
+            {!referenceOnly ? <StudyRewardCorner scope={`library:${examId}`} questionId={current.id} answered={submitted} /> : null}
             {submitted ? (
               <div
                 data-answer-state={status}
@@ -745,6 +764,7 @@ export function ExamQuestionPlayer({
                     </div>
                   ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">
+                    {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFを確認</a> : null}
                     {answerPage ? (
                       <a href={officialPdfPageUrl(pdfUrl, answerPage)} target="_blank" rel="noopener noreferrer" className={linkClass}>
                         公式の正答・正答例を確認（PDF {answerPage}ページ）
@@ -753,7 +773,7 @@ export function ExamQuestionPlayer({
                       </a>
                     ) : null}
                     <a
-                      href={officialPdfPageUrl(pdfUrl, sourcePage)}
+                      href={officialPdfPageUrl(current.originalPdf ?? pdfUrl, sourcePage)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={linkClass}
@@ -838,7 +858,7 @@ export function ExamQuestionPlayer({
                 前へ
               </button>
               <button type="button" onClick={moveNext} className={`${submitted ? primaryButton : secondaryButton} flex-1`}>
-                {index >= roundIds.length - 1 ? "結果を見る" : submitted ? "次の問題へ" : "スキップして次へ"}
+                {index >= roundIds.length - 1 ? "結果を見る" : referenceOnly || submitted ? "次の問題へ" : "スキップして次へ"}
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
@@ -876,14 +896,14 @@ export function ExamQuestionPlayer({
                     type="button"
                     onClick={() => goTo(position)}
                     aria-current={active ? "step" : undefined}
-                    aria-label={`問${question.number}（${STATUS_LABEL[cellStatus]}）`}
+                    aria-label={`問${question.number}（${isExamReferenceOnly(question) ? "参照専用" : STATUS_LABEL[cellStatus]}）`}
                     className={`flex min-h-11 w-full flex-col items-center justify-center rounded-lg border-2 text-sm font-semibold leading-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 forced-colors:border-[ButtonText] ${STATUS_CELL_CLASS[cellStatus]} ${
                       active ? "ring-4 ring-sky-500 forced-colors:ring-[Highlight]" : ""
                     }`}
                   >
                     {question.number}
                     <span className="text-[10px]" aria-hidden="true">
-                      {STATUS_MARK[cellStatus]}
+                      {isExamReferenceOnly(question) ? "参照" : STATUS_MARK[cellStatus]}
                     </span>
                   </button>
                 </li>

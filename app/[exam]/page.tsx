@@ -276,7 +276,9 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = hasAm1 && hasAm2;
-  const summary = code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
+  const summary = code === "sc"
+    ? "掲載済みの午前I・午前II過去問を、年度・分野を選んで学べます。AI支援で作成した学習用解説と公式出典を確認できます。"
+    : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
@@ -412,7 +414,36 @@ export default async function ExamTopPage({
 
         {/* Big CTA */}
         <section aria-label="今すぐ解く" className="mb-8">
-          {code === "fp2" || code === "fp3" ? (
+          {code === "sc" ? (
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm sm:p-5">
+              <h2 className="text-sm font-semibold text-foreground">年度・分野を選んで始める</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                個別問題の閲覧は無料です。年度別で実施回を開き、午前I・午前IIの各問の「解説を見る」から問題・正答・解説を確認できます。
+              </p>
+              <nav aria-label="SCの問題を選ぶ" className="mt-3 grid gap-2 sm:grid-cols-2">
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a href="#years">年度から問題を選ぶ</a>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="w-full">
+                  <a href="#topics">分野から問題を選ぶ</a>
+                </Button>
+              </nav>
+              <div className="mt-4 border-t border-border pt-4">
+                <h3 className="text-sm font-semibold text-foreground">ランダムに続けて解く</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  連続演習はログインなしでも1日10問まで無料です。午前IIは専門問題、午前Iは共通問題です。
+                </p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+                    <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>午前IIを連続演習</Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="w-full">
+                    <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前Iを連続演習</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          ) : code === "fp2" || code === "fp3" ? (
             <div className="grid gap-3 sm:grid-cols-2">
               <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
                 <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>

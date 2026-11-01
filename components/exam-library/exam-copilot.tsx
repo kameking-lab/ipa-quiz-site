@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
 import { Sparkles } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
@@ -20,6 +21,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     const entry = findExamEntry(examId);
     return entry ? (qualificationHubForEntry(entry)?.slug ?? null) : null;
   }, [examId]);
+  const {message: aiAccessMessage, begin: beginAiAccess, response: captureAiResponse, uncertain: markAiUncertain} = useAiAccessNotice(examId+":"+questionId);
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -37,6 +39,8 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     setError("");
     setBusy(true);
     posthogCapture("exam_library_ai_query", { examId, hubSlug: hubSlug ?? undefined });
+    beginAiAccess();
+    let responseReceived = false;
     const controller = new AbortController();
     abortRef.current = controller;
     try {
@@ -46,8 +50,13 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
         body: JSON.stringify({ examId, questionId, selectedChoice, messages: history }),
         signal: controller.signal,
       });
+      responseReceived = true;
+      captureAiResponse(response);
       if (!response.ok) {
-        const body = await response.json().catch(() => null) as { message?: string } | null;
+        const body = await response.json().catch(() => null) as { error?: string; message?: string } | null;
+        if (response.status === 400 && body?.error === "original_question_explanation_only") {
+          setDraft((current) => current || draft);
+        }
         throw new Error(body?.message ?? "AIの回答を取得できませんでした。時間をおいてお試しください。");
       }
       if (!response.body) throw new Error("AIの回答を取得できませんでした。時間をおいてお試しください。");
@@ -63,6 +72,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
       answer += decoder.decode();
       setMessages([...history, { role: "assistant", content: answer }]);
     } catch (cause) {
+      if (!responseReceived) markAiUncertain();
       if (!controller.signal.aborted) {
         setMessages(history);
         setError(cause instanceof Error ? cause.message : "AIの回答を取得できませんでした。");
@@ -92,6 +102,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
               ))}
             </ol>
           ) : null}
+          <AiAccessNotice message={aiAccessMessage} />
           <form onSubmit={(event) => { event.preventDefault(); void ask(); }} className="mt-3">
             <label htmlFor={`exam-copilot-${questionId}`} className="block text-sm font-semibold">どこが分からないですか？</label>
             <textarea

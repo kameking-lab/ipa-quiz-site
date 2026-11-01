@@ -122,6 +122,11 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       </span>
       <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
         <QuestionBody text={text} />
+        {(state === "selected" || state === "revealed-correct" || state === "wrong") && (
+          <span aria-hidden="true" className="mt-2 block text-sm font-semibold">
+            {state === "selected" ? "選択中" : state === "wrong" ? "選択した答え（不正解）" : selected ? "正解（選択した答え）" : "正解"}
+          </span>
+        )}
         {imageUrl && (
           // Exact circuit diagrams are cropped from the published paper.
           // eslint-disable-next-line @next/next/no-img-element

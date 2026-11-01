@@ -1,6 +1,8 @@
 "use client";
 
 import { QuestionBody } from "./QuestionBody";
+import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 
 import * as React from "react";
 import type { NativeBGrade } from "@/lib/questions/types";
@@ -26,12 +28,8 @@ import { posthogCapture } from "@/lib/posthog";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 
-const CopilotDesktopFloating = dynamic(
-  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotDesktopFloating),
-  { ssr: false },
-);
-const CopilotMobileSheet = dynamic(
-  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotMobileSheet),
+const CopilotInline = dynamic(
+  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotInline),
   { ssr: false },
 );
 
@@ -75,7 +73,14 @@ interface Props {
  *   - A "just reveal" path is preserved for pure readers, and is NOT recorded
  *     so stats stay honest.
  */
-export function QuestionAnswerCard({
+export function QuestionAnswerCard(props: Props) {
+  if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
+    return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
+  }
+  return <ScoredQuestionAnswerCard {...props} />;
+}
+
+function ScoredQuestionAnswerCard({
   question,
   questionId,
   choices,
@@ -103,7 +108,7 @@ export function QuestionAnswerCard({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
-  const [copilotRequest, setCopilotRequest] = React.useState(0);
+  const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
 
   React.useEffect(() => {
     setNativeBResult(undefined);
@@ -112,7 +117,7 @@ export function QuestionAnswerCard({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
-    setCopilotRequest(0);
+    setCopilotRequest(null);
   }, [questionId]);
 
   const keys = React.useMemo(
@@ -124,6 +129,7 @@ export function QuestionAnswerCard({
 
   const recordOutcome = React.useCallback(
     (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id)) return;
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
@@ -140,20 +146,20 @@ export function QuestionAnswerCard({
       // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
       posthogCapture("question_answered", { questionId, exam, correct });
     },
-    [questionId, exam, year, season, session, qNumber, part],
+    [questionId, question, exam, year, season, session, qNumber, part],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || !native || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || !question?.nativeB || !native || revealed) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
     setRevealed(true);
     recordOutcome(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
-  }, [question, native, revealed, recordOutcome]);
+  }, [questionId, question, native, revealed, recordOutcome]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (revealed || ordering) return;
+      if (isReferenceOnlyQuestionId(questionId) || isReferenceOnlyQuestionId(question?.id) || revealed || ordering) return;
       if (multiSelect) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
@@ -167,22 +173,22 @@ export function QuestionAnswerCard({
       setRevealed(true);
       recordOutcome(key, isAcceptedAnswer(answerKey, key));
     },
-    [revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
+    [questionId, question, revealed, ordering, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (!question || !numeric || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !numeric || revealed) return;
     setNumericSelected(value);
     setRevealed(true);
     recordOutcome(value, isNumericAnswerCorrect(question, value));
-  }, [question, numeric, revealed, recordOutcome]);
+  }, [questionId, question, numeric, revealed, recordOutcome]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (!question || !ordering || revealed) return;
+    if (isReferenceOnlyQuestionId(questionId) || !question || isReferenceOnlyQuestionId(question.id) || !ordering || revealed) return;
     setOrderedSelected(value);
     setRevealed(true);
     recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value));
-  }, [question, ordering, revealed, recordOutcome]);
+  }, [questionId, question, ordering, revealed, recordOutcome]);
 
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
@@ -322,7 +328,7 @@ export function QuestionAnswerCard({
             {question && !native && (
               <button
                 type="button"
-                onClick={() => setCopilotRequest((request) => request + 1)}
+                onClick={() => setCopilotRequest((value) => ({ questionId, sequence: (value?.sequence ?? 0) + 1, prompt: answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined }))}
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
               >
                 <Sparkles className="h-4 w-4" aria-hidden="true" />
@@ -341,25 +347,14 @@ export function QuestionAnswerCard({
           </div>
         </div>
       )}
-      {question && copilotRequest > 0 && (
-        <>
-          <CopilotDesktopFloating
-            key={`desktop-${copilotRequest}`}
-            question={question}
-            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
-            isCorrect={answered ? isCorrect : undefined}
-            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-            defaultOpen
-          />
-          <CopilotMobileSheet
-            key={`mobile-${copilotRequest}`}
-            question={question}
-            selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
-            isCorrect={answered ? isCorrect : undefined}
-            initialPrompt={answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-            defaultOpen
-          />
-        </>
+      {revealed && <RikuTech2CylinderGuide questionId={questionId} revealed={revealed} />}
+      {question && !native && (
+        <CopilotInline
+          question={question}
+          selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
+          isCorrect={answered ? isCorrect : undefined}
+          focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
+        />
       )}
     </div>
   );

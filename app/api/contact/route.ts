@@ -1,3 +1,4 @@
+import { QuestionReportContextSchema, questionReportContextLines } from "@/lib/feedback/question-report-context";
 import { NextResponse, after } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
@@ -31,8 +32,11 @@ const QuestionCommentSchema = z.object({
 const QuestionRatingSchema = z.object({
   kind: z.literal("question-rating"),
   questionId: z.string().min(1).max(120),
+  context: QuestionReportContextSchema.optional(),
   rating: z.enum(["helpful", "unclear", "report"]),
   comment: z.string().max(800).optional().default(""),
+}).superRefine((value, issue) => {
+  if (value.context && value.context.question.id !== value.questionId) issue.addIssue({ code: "custom", path: ["context", "question", "id"], message: "question context mismatch" });
 });
 
 const ContactSchema = z.object({
@@ -124,8 +128,19 @@ export async function POST(req: Request) {
     maskHits = result.hits;
   } else if (payload.kind === "question-rating") {
     const result = maskPII(payload.comment ?? "");
-    maskedPayload = { ...payload, comment: result.masked };
-    maskHits = result.hits;
+    maskHits = { ...result.hits };
+    const maskMetadata = (value: string): string => {
+      const field = maskPII(value);
+      for (const [kind,count] of Object.entries(field.hits)) maskHits[kind] = (maskHits[kind] ?? 0) + count;
+      return field.masked;
+    };
+    // All new free-text metadata shares the existing PII boundary before any
+    // log, mail or notification. Keep the client-reported source object intact.
+    const context = payload.context ? { ...payload.context, question: { ...payload.context.question,
+      exam: maskMetadata(payload.context.question.exam), season: maskMetadata(payload.context.question.season),
+      session: maskMetadata(payload.context.question.session), displayNumber: maskMetadata(payload.context.question.displayNumber),
+    } } : undefined;
+    maskedPayload = { ...payload, ...(context ? {context} : {}), comment: result.masked };
   }
   const safeBody = JSON.stringify(maskedPayload);
 
@@ -215,7 +230,7 @@ function buildSlackText(payload: z.infer<typeof BodySchema>, ipHash: string): st
     case "question-comment":
       return `${head}\n問題: ${payload.questionId}\n${payload.comment}`;
     case "question-rating":
-      return `${head}\n問題: ${payload.questionId} / 評価: ${payload.rating}\n${payload.comment || "(コメントなし)"}`;
+      return `${head}\n問題: ${payload.questionId} / 評価: ${payload.rating}\n${payload.context ? "添付情報（利用者報告・正規版の保証ではありません）\n" + questionReportContextLines(payload.context,payload.questionId).map(line => line.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")).join("\n") + "\n" : ""}${payload.comment || "(コメントなし)"}`;
     case "contact":
       return `${head}\n種別: ${payload.category}\nお名前: ${payload.name || "(未記入)"} / メール: ${payload.email || "(未記入)"}\n${payload.body}`;
   }

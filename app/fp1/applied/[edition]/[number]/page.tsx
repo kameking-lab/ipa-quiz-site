@@ -32,6 +32,7 @@ export default async function Fp1AppliedQuestionPage({ params }: { params: Promi
   return <main data-study-presence-exam="fp1" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
     <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp1" className="hover:underline">FP1級</Link> / <Link href="/fp1/applied" className="hover:underline">学科応用編</Link> / <Link href={`/fp1/applied/${edition}`} className="hover:underline">{data.label}</Link> / 問{question.number}</nav>
     <header><h1 className="text-2xl font-bold sm:text-3xl">{data.label} 学科応用編 問{question.number}</h1><p className="mt-2 text-sm font-medium text-muted-foreground">法令基準日 {data.lawReferenceDate}（この日の制度で解答）</p></header>
+    <p className="mt-3 text-sm leading-6 text-muted-foreground">このページは問題・模範解答・解説を参照するためのものです。解答入力・採点には対応しておらず、閲覧によって解答履歴は追加されません。</p>
     <section aria-label="共通設例" className="mt-6 rounded-2xl border border-border bg-card p-5 sm:p-6">
       <h2 className="text-lg font-semibold">共通設例</h2>
       <p className="mt-3 text-sm leading-7">{question.sharedCase.instruction}</p>

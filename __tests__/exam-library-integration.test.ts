@@ -43,9 +43,17 @@ describe("official exam library integration", () => {
       .filter((question) => question.answerAuthority === "official")
       .map((question) => [question.id, question.correctChoice, question.choiceCount])
       .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
-    expect(answerSnapshot).toHaveLength(2154);
-    expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
+    const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
+    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-"));
+    expect(answerSnapshot).toHaveLength(2209);
+    // Preserve the previous 2,154 official keys independently of the new reviewed packet.
+    expect(existingSnapshot).toHaveLength(2154);
+    expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
       .toBe("19ccb2b8b929d92f89d11f9ee3e5707123e92a2ed478dc9d761ddad8b8c8736d");
+    // Bound to the existing packet's 55 officialKey values; 2026 No.12 stays unscored.
+    expect(surveySnapshot).toHaveLength(55);
+    expect(createHash("sha256").update(JSON.stringify(surveySnapshot)).digest("hex"))
+      .toBe("3b870b77a24283772ff21d8dbbdd5f9b32451e77afd43122082649315fd672d4");
   });
 
   it("attaches authored learning explanations and preserves original question numbering", () => {

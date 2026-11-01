@@ -55,21 +55,21 @@ describe("QuizPlayer numeric original", () => {
 
   it("shows the official answer for a wrong integer, then resets input and feedback at the next original", () => {
     const player = render(<QuizPlayer question={question} index={0} total={2} mode="year" backHref="/kangoshi/2025-annual" backLabel="年度に戻る" onNext={vi.fn()} />);
-    fireEvent.change(screen.getByRole("textbox"), { target: { value: "41" } });
+    fireEvent.change(screen.getByRole("textbox", { name: "解答（滴/分）" }), { target: { value: "41" } });
     fireEvent.click(screen.getByRole("button", { name: "採点する" }));
     expect(screen.getByRole("region", { name: "不正解の解説" })).toHaveTextContent("あなた: 41 滴/分");
     expect(createHistoryStore().getWrongIds()).toEqual([question.id]);
     fireEvent.click(screen.getByRole("button", { name: "年度に戻る" }));
     expect(push).toHaveBeenCalledWith("/kangoshi/2025-annual");
     player.rerender(<QuizPlayer question={{ ...question, id: "fixture-next", qNumber: 91 }} index={1} total={2} mode="year" onNext={vi.fn()} />);
-    expect(screen.getByRole("textbox")).toHaveValue("");
+    expect(screen.getByRole("textbox", { name: "解答（滴/分）" })).toHaveValue("");
     expect(screen.queryByRole("region", { name: "不正解の解説" })).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
 
   it("uses the completion screen after grading the final numeric original and permits rereading it", () => {
     render(<QuizPlayer question={question} index={0} total={1} mode="year" onNext={vi.fn()} />);
-    fireEvent.change(screen.getByRole("textbox"), { target: { value: "42" } });
+    fireEvent.change(screen.getByRole("textbox", { name: "解答（滴/分）" }), { target: { value: "42" } });
     fireEvent.click(screen.getByRole("button", { name: "採点する" }));
     fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
     expect(screen.getByRole("heading", { name: "クイズ完了！" })).toBeTruthy();
@@ -80,7 +80,7 @@ describe("QuizPlayer numeric original", () => {
 
   it("does not grade during IME composition", () => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={vi.fn()} />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getByRole("textbox", { name: "解答（滴/分）" });
     fireEvent.change(input, { target: { value: "４２" } });
     fireEvent.keyDown(input, { key: "Enter", isComposing: true, keyCode: 229 });
     expect(createHistoryStore().getAllEntries()).toEqual([]);
