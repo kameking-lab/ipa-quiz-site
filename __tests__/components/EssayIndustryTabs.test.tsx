@@ -75,15 +75,15 @@ it("keeps all eight industry choices and changes only the selected visible panel
   const { container } = render(<EssayIndustryTabs industries={industries} pdfUrl="https://example.invalid/archive" />);
   const group = screen.getByRole("group", { name: "業種選択" });
   expect(group.querySelectorAll("button")).toHaveLength(8);
-  expect(screen.getByRole("button", { name: pairs[0][1], exact: true }).getAttribute("aria-pressed")).toBe("true");
+  expect(screen.getByRole("button", { name: (accessibleName: string) => accessibleName === pairs[0][1] }).getAttribute("aria-pressed")).toBe("true");
   for (const [id, label] of pairs) {
-    const button = screen.getByRole("button", { name: label, exact: true });
+    const button = screen.getByRole("button", { name: (accessibleName: string) => accessibleName === label });
     fireEvent.click(button);
     expect(button.getAttribute("aria-pressed")).toBe("true");
     expect(group.querySelectorAll('button[aria-pressed="true"]')).toHaveLength(1);
     const visible = container.querySelectorAll(":scope > section:not([hidden])");
     expect(visible).toHaveLength(1);
     expect(visible[0]?.textContent).toContain(`${id} fixture intro`);
-    expect(screen.getByRole("heading", { name: `${label}の参考答案例`, exact: true })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: (accessibleName: string) => accessibleName === `${label}の参考答案例` })).toBeTruthy();
   }
 });
