@@ -122,10 +122,32 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");
   const codes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "denko2", "denken3"];
+  // parseStudyPresence orders by count descending, then canonical code in English locale.
+  // All fixture counts are one: this explicit oracle must not depend on the unsorted input order.
+  const expectedOrder = [
+    { exam: "ap", name: "応用情報技術者" },
+    { exam: "au", name: "システム監査技術者" },
+    { exam: "db", name: "データベーススペシャリスト" },
+    { exam: "denken3", name: "電験三種" },
+    { exam: "denko2", name: "第二種電気工事士" },
+    { exam: "es", name: "エンベデッドシステムスペシャリスト" },
+    { exam: "fe", name: "基本情報技術者" },
+    { exam: "ip", name: "ITパスポート" },
+    { exam: "nw", name: "ネットワークスペシャリスト" },
+    { exam: "pm", name: "プロジェクトマネージャ" },
+    { exam: "sa", name: "システムアーキテクト" },
+    { exam: "sc", name: "情報処理安全確保支援士" },
+    { exam: "sg", name: "情報セキュリティマネジメント" },
+    { exam: "sm", name: "ITサービスマネージャ" },
+    { exam: "st", name: "ITストラテジスト" },
+  ];
+  expect(expectedOrder.map(row => row.exam).sort()).toEqual([...codes].sort());
   await show(page, await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) }));
   const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
+  await expect(list.getByRole("listitem")).toHaveText(expectedOrder.map(row =>
+    `前回取得時点の直近5分に1人が${row.name}を学習しました。`));
   await expect(region.locator(".study-room-total")).toHaveText("15人");
   expect((await list.boundingBox())?.height).toBeLessThanOrEqual(220);
   await expect(list).toHaveAttribute("tabindex", "0");
@@ -141,9 +163,14 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   // The accepted room expands in place. Numbered controls are separate from the decorative scene.
   const scene = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
   const seats = region.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
-  await expect(seats).toHaveCount(12);
-  await expect(seats.first()).toHaveAccessibleName("1 ITパスポート");
-  await expect(seats.last()).toHaveAccessibleName("12 ITサービスマネージャ");
+  const expectSeatOrder = async () => {
+    await expect(seats).toHaveCount(12);
+    for (const [index, row] of expectedOrder.slice(0, 12).entries()) {
+      await expect(seats.nth(index)).toHaveAccessibleName(`${index + 1} ${row.name}`);
+      await expect(seats.nth(index)).toHaveAttribute("aria-controls", "study-room-selection");
+    }
+  };
+  await expectSeatOrder();
   await expect(scene.getByRole("button")).toHaveCount(0);
   await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(12);
   await expect(scene).toHaveAttribute("data-stage", "2");
@@ -161,8 +188,12 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   await seat.focus();
   await page.keyboard.press("Enter");
   await expect(seat).toHaveAttribute("aria-pressed", "true");
+  const selectedQualification = region.locator("#study-room-selection").getByRole("heading", { name: expectedOrder[0].name, exact: true });
+  await expect(selectedQualification).toBeVisible();
   const refreshed = await measured(page, { count: codes.length, exams: codes.map(exam => ({ exam, count: 1 })) });
   await show(page, { mode: "stale", snapshot: null, previous: refreshed.snapshot, reason: "unavailable" });
+  await expectSeatOrder();
+  await expect(selectedQualification).toBeVisible();
   await expect(seat).toHaveAttribute("aria-pressed", "true");
   await expect(seat).toBeFocused();
   await page.keyboard.press("Escape");
