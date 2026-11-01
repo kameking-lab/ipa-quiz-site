@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "業種別参考答案サンプル",
   description:
-    "IPA 高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）独自の論述練習問題の業種別参考答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
+    "IPA 高度情報処理技術者試験独自の論述練習問題の業種別参考答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
   alternates: { canonical: "/essays" },
   // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
   robots: { index: false, follow: false },
@@ -23,7 +23,7 @@ export default function EssaysIndexPage() {
     exam,
     label: examLabel(exam),
     count: getEssayQuestionsByExam(exam).length,
-  }));
+  })).filter(({ count }) => count > 0);
 
 
   return (
@@ -54,7 +54,7 @@ export default function EssaysIndexPage() {
           </h1>
         </div>
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          IPA 高度情報処理技術者試験（SC / ST / SA / PM / SM / AU）独自の論述練習問題の
+          IPA 高度情報処理技術者試験独自の論述練習問題の
           業種別参考答案です。製造・金融・公共など自分の業務経験に近い業種を選んで、
           論述の骨格づくりにお役立てください。
         </p>
@@ -64,6 +64,13 @@ export default function EssaysIndexPage() {
           body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
         />
       </section>
+
+      {examStats.length === 0 && (
+        <p role="status" className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
+          現在掲載できる答案サンプルはありません。
+          <Link href="/" className="ml-2 underline">ホームから学習内容を選ぶ</Link>
+        </p>
+      )}
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {examStats.map(({ exam, label, count }) => (

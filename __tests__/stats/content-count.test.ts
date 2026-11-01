@@ -23,7 +23,8 @@ describe("getContentCounts — top-level conservation", () => {
     expect(counts.essay).toBe(ALL_ESSAY_QUESTIONS.length);
     // afternoon has no top-level export; cross-check it against the per-exam
     // breakdown sum below instead.
-    expect(counts.afternoon).toBeGreaterThan(0);
+    expect(counts.afternoon).toBe(0);
+    for (const row of counts.byExam) expect(row.afternoon).toBe(0);
   });
 
   it("total is exactly morning + afternoon + essay", () => {

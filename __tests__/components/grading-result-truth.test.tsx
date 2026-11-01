@@ -1,9 +1,10 @@
+// Archived editorial fixture coverage only; public availability is tested separately.
 import { describe,it,expect,beforeEach,vi } from "vitest";
 import { render,screen,cleanup } from "@testing-library/react";
 import { EssayResultView } from "@/components/essay/EssayResultView";
 import { AfternoonResultView } from "@/components/afternoon/AfternoonResultView";
 import { findEssayQuestion } from "@/lib/essay/load";
-import { findAfternoonQuestion } from "@/lib/afternoon/load";
+import { findAfternoonQuestion } from "@/__tests__/fixtures/archived-afternoon-load";
 import type { EssayGradingResult } from "@/lib/essay/types";
 import { EssayHistoryView } from "@/app/account/essay-history/EssayHistoryView";
 const history = vi.hoisted(() => ({clear:vi.fn(),entries:[{id:"history1",questionId:"au-2024a-pm2-q1",exam:"au",industry:"it",rank:"A",totalScore:80,passProbability:99,gradedAt:"2026-10-08"}]}));

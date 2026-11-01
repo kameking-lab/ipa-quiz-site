@@ -1,5 +1,8 @@
-import { describe, expect, it } from "vitest";
-import { getAfternoonQuestions, findAfternoonQuestion } from "@/lib/afternoon/load";
+// TEST ONLY: plural essay adapter must see the retained archived fixtures.
+vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
+// Archived editorial fixture coverage only; public availability is tested separately.
+import { describe, expect, it, vi } from "vitest";
+import { getAfternoonQuestions, findAfternoonQuestion } from "@/__tests__/fixtures/archived-afternoon-load";
 import { getAllEssayQuestions } from "@/lib/essay/load";
 import { getSCpm2Questions, getEssayQuestionsByExam, ESSAY_EXAM_CODES } from "@/lib/essays/load";
 

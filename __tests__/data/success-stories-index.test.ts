@@ -1,4 +1,8 @@
-import { describe, expect, it } from "vitest";
+import * as storyRegistry from "@/data/success-stories";
+import * as essaySupply from "@/lib/essays/load";
+import { renderToStaticMarkup } from "react-dom/server";
+import SuccessStoryArticlePage from "@/app/success-stories/[exam]/[slug]/page";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   getAllSuccessStories,
@@ -197,17 +201,35 @@ describe("cross-link integrity (no dead CTA on the story page)", () => {
     expect(dead).toEqual([]);
   });
 
-  it("every relatedEssayExam links to an essay route that actually exists", () => {
-    // /essays/[exam] requires isEssayExamCode AND a non-empty essay set —
-    // mirror that exact predicate so a story can't point at an essay-less exam.
-    const dead = ALL.filter(
-      (s) =>
-        s.relatedEssayExam != null &&
-        !(
-          isEssayExamCode(s.relatedEssayExam) &&
-          getEssayQuestionsByExam(s.relatedEssayExam).length > 0
-        ),
-    ).map((s) => `${s.slug} -> /essays/${s.relatedEssayExam}`);
-    expect(dead).toEqual([]);
+  it("rendered related essay links require public supply and preserve qualification recovery", async () => {
+    const stories = ALL.filter(story => story.relatedEssayExam != null);
+    expect(stories.length).toBeGreaterThan(0);
+    for (const story of stories) {
+      const container = document.createElement("div");
+      container.innerHTML = renderToStaticMarkup(await SuccessStoryArticlePage({ params: Promise.resolve({ exam: story.exam, slug: story.slug }) }));
+      const hrefs = Array.from(container.querySelectorAll<HTMLAnchorElement>("a[href]")).map(link => link.getAttribute("href"));
+      const target = story.relatedEssayExam!;
+      if (isEssayExamCode(target) && getEssayQuestionsByExam(target).length > 0) {
+        expect(hrefs, story.slug).toContain(`/essays/${target}`);
+      } else {
+        expect(hrefs, story.slug).not.toContain(`/essays/${target}`);
+        expect(hrefs, story.slug).toContain(`/${story.exam}`);
+      }
+    }
   });
+});
+
+it.each(["sc", "st", "not-a-public-exam"])("story guard handles explicit %s target without dead links", async target => {
+  const template = ALL[0]!;
+  const getStory = vi.spyOn(storyRegistry, "getSuccessStoryBySlug").mockReturnValue({ ...template, relatedEssayExam: target as typeof template.relatedEssayExam });
+  const supply = vi.spyOn(essaySupply, "getEssayQuestionsByExam");
+  try {
+    const container = document.createElement("div");
+    container.innerHTML = renderToStaticMarkup(await SuccessStoryArticlePage({ params: Promise.resolve({ exam: template.exam, slug: template.slug }) }));
+    const hrefs = Array.from(container.querySelectorAll<HTMLAnchorElement>("a[href]")).map(link => link.getAttribute("href"));
+    expect(hrefs).toContain(`/${template.exam}`);
+    if (target === "sc") expect(hrefs).toContain("/essays/sc");
+    else expect(hrefs).not.toContain(`/essays/${target}`);
+    if (target === "not-a-public-exam") expect(supply).not.toHaveBeenCalledWith(target);
+  } finally { getStory.mockRestore(); supply.mockRestore(); }
 });

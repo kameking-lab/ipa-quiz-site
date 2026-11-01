@@ -1,3 +1,5 @@
+// TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
+vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, vi, beforeEach } from "vitest";
 const stubs = vi.hoisted(() => ({stream: vi.fn(), cost: vi.fn(), notify: vi.fn()}));
 vi.mock("@/lib/ai/provider", async () => ({...await vi.importActual("@/lib/ai/provider"), getProvider: async () => ({name: "gemini", streamChat: stubs.stream})}));
