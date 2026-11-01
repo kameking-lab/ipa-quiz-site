@@ -17,11 +17,20 @@ it.each([
   const scene = screen.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室" });
   expect(scene).toHaveAttribute("data-stage", String(stage));
   const visible = Math.min(count, 12);
-  const seats = within(scene).queryAllByRole("button");
+  // Illustrations stay decorative; the accepted seat controls are outside the scene.
+  expect(within(scene).queryAllByRole("button")).toHaveLength(0);
+  const illustrations = scene.querySelectorAll(".study-room-seat");
+  expect(illustrations).toHaveLength(visible);
+  for (const illustration of illustrations) expect(illustration).toHaveAttribute("aria-hidden", "true");
+  const seatList = screen.queryByRole("group", { name: "自習室の席を選ぶ" });
+  const seats = seatList ? within(seatList).getAllByRole("button") : [];
   expect(seats).toHaveLength(visible);
-  for (const seat of seats) {
-    expect(seat).toHaveAccessibleName(`${presenceExamName("fe")}のチワワ（集計人数のイメージ）`);
-  }
+  if (visible === 0) expect(seatList).not.toBeInTheDocument();
+  seats.forEach((seat, index) => {
+    expect(seat).toHaveAccessibleName(`${index + 1} ${presenceExamName("fe")}`);
+    expect(seat).toHaveAttribute("aria-controls", "study-room-selection");
+    expect(seat).toHaveAttribute("aria-pressed", "false");
+  });
   const foot = container.querySelector(".study-room-foot")!;
   expect(foot).toHaveTextContent(`イラスト ${visible}体`);
   expect(foot).toHaveTextContent(`全${count}人の集計を一部イラストで表示`);

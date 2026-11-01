@@ -41,9 +41,9 @@ describe("createMockProvider / pickReply ルーティング", () => {
     expect(await reply("私の誤答を分析して")).toContain("なぜ間違えたか（モック応答）");
   });
 
-  it("「類題」「similar」→ similar 応答", async () => {
-    expect(await reply("類題を出して")).toContain("類題（モック応答）");
-    expect(await reply("give me a similar question")).toContain("類題（モック応答）");
+  it("「類題」「similar」→ retired-generation refusal 応答", async () => {
+    expect(await reply("類題を出して")).toContain("原問の復習（モック応答）");
+    expect(await reply("give me a similar question")).toContain("原問の復習（モック応答）");
   });
 
   it("「用語」「解説」「term」→ term 応答", async () => {
@@ -73,12 +73,12 @@ describe("createMockProvider / pickReply ルーティング", () => {
     expect(await reply("なぜこの用語で間違えたの")).toContain("なぜ間違えたか（モック応答）");
   });
 
-  it("優先順位: similar は term より先（「類題」+「解説」混在 → similar）", async () => {
-    expect(await reply("類題の解説をください")).toContain("類題（モック応答）");
+  it("優先順位: similar は term より先（「類題」+「解説」混在 → retired-generation refusal）", async () => {
+    expect(await reply("類題の解説をください")).toContain("原問の復習（モック応答）");
   });
 
   it("大文字小文字を無視（toLowerCase 経由）", async () => {
-    expect(await reply("SIMILAR")).toContain("類題（モック応答）");
+    expect(await reply("SIMILAR")).toContain("原問の復習（モック応答）");
     expect(await reply("TERM")).toContain("用語解説（モック応答）");
   });
 });
@@ -127,4 +127,13 @@ describe("createMockProvider / abort", () => {
     const chunks = await collect(um("用語を説明して"));
     expect(chunks.length).toBeGreaterThan(0);
   });
+});
+
+it("retired generation requests never supply a new question or answer", async () => {
+  const provider = createMockProvider();
+  let text = "";
+  for await (const chunk of provider.streamChat({ system: "", messages: [{ role: "user", content: "similar" }] })) text += chunk;
+  expect(text).toContain("独自の類題は作成しません");
+  expect(text).toContain("新しい設問や正解を提供しません");
+  expect(text).not.toContain("類題（モック応答）");
 });

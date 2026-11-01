@@ -18,7 +18,8 @@ describe("adopted monthly billing page (server render; Auth/storage mocked)", ()
     expect(html).toContain("月額980円（税込）");
     expect(html).toContain("毎月自動更新");
     expect(html).toContain("期間末解約");
-    for (const text of ["解約まで毎月自動更新", "支払確認後", "確認済みの利用期間を超えて利用権は延長されません", 'href="/billing/terms"', "日割返金はありません", "現行の月額プランはAI応答の利用料金を含みません", "読み上げボタンのある問題", "無料・有料どちらでも追加料金なし", "音声や再生できる環境は端末によって異なります", "月額プランの詳細条件・利用規約", "新しいタブで開きます", 'target="_blank"', 'rel="noopener noreferrer"']) expect(html).toContain(text);
+    for (const text of ["解約まで毎月自動更新", "支払確認後", "確認済みの利用期間を超えて利用権は延長されません", 'href="/billing/terms"', "日割返金はありません", "無料AIは1日3回です", "有料会員は通常利用で回数無制限です", "日本時間の毎日0時更新", "短時間の大量送信やサービス全体の費用上限", "無料AIは生成を開始する試行ごとに1回を消費します", "開始後の失敗・中断・ユーザーによる停止・不正な出力でも回数は戻りません", "読み上げボタンのある問題", "無料・有料どちらでも追加料金なし", "音声や再生できる環境は端末によって異なります", "月額プランの詳細条件・利用規約", "新しいタブで開きます", 'target="_blank"', 'rel="noopener noreferrer"']) expect(html).toContain(text);
+    expect(html).not.toContain("現行の月額プランはAI応答の利用料金を含みません");
     expect(html).not.toContain("実際の請求はありません");
     expect(html).not.toContain("1回払い・自動更新なし");
   });

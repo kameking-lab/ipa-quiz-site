@@ -39,6 +39,8 @@ describe("QuizClient authorization boundary", () => {
     await screen.findByText("q1"); expect(fetcher.mock.calls.some(([u, opts]) => u.includes("/api/questions/next?") && !opts?.method)).toBe(true);
     fireEvent.click(screen.getByText("next"));
     await screen.findByText(/本日の無料連続演習枠/); expect(screen.queryByText("q2")).toBeNull();
+    expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
+    expect(HTMLElement.prototype.scrollIntoView).toHaveBeenCalledWith({ block: "start", behavior: "instant" });
     expect(fetcher.mock.calls.some(([u, opts]) => u === "/api/billing/question" && JSON.parse(opts!.body as string).id === "q2")).toBe(true);
   });
   it("retains exact deep link through login, retry and refresh; history storage is untouched", async () => {
@@ -52,5 +54,35 @@ describe("QuizClient authorization boundary", () => {
     await act(async () => fireEvent.click(screen.getByText("再読み込み")));
     await waitFor(() => expect(window.location.search).toContain("question=q2"));
     expect(window.localStorage.getItem("ipa-quiz:history:v1")).toBe("preserved");
+  });
+  it("keeps focus at the stable host through delayed next loading and arrival, and ignores duplicate navigation", async () => {
+    let finish: ((response: Response) => void) | undefined;
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (!options?.method) return Response.json({ id: new URL(url, window.location.origin).searchParams.get("id") });
+      const { id } = JSON.parse(options.body as string);
+      if (id === "q2") return new Promise<Response>((resolve) => { finish = resolve; });
+      return Response.json({ question: { id }, access });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    render(<QuizClient billingGateEnabled poolIds={["q1", "q2", "q3"]} mode="year" backHref="/" />);
+    await screen.findByText("q1");
+    const next = screen.getByRole("button", { name: "next" });
+    act(() => { fireEvent.click(next); fireEvent.click(next); });
+    await screen.findByText("loading");
+    const host = screen.getByLabelText("2問目 / 3問");
+    expect(host).toHaveFocus();
+    expect(host).toHaveClass("min-h-[100dvh]", "scroll-mt-24");
+    expect(HTMLElement.prototype.scrollIntoView).toHaveBeenCalledWith({ block: "start", behavior: "instant" });
+    expect(new URL(window.location.href).searchParams.get("question")).toBe("q2");
+    expect(screen.queryByText("q3")).toBeNull();
+    expect(fetcher.mock.calls.filter(([, options]) => options?.method && JSON.parse(options.body as string).id === "q2")).toHaveLength(1);
+    expect(finish).toBeDefined();
+    await act(async () => { finish!(Response.json({ question: { id: "q2" }, access })); });
+    await screen.findByText("q2");
+    expect(screen.getByLabelText("2問目 / 3問")).toBe(host);
+    expect(host).toHaveFocus();
+    fireEvent.click(screen.getByRole("button", { name: "next" }));
+    await screen.findByText("q3");
+    expect(screen.getByLabelText("3問目 / 3問")).toHaveFocus();
   });
 });

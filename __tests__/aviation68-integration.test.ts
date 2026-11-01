@@ -65,37 +65,15 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(assets.size).toBe(68);
  });
  it('links the existing qualification calendar and learning hub without inventing an exam date',()=>{expect(tsuginoScheduleUrl(exam)).toBe('https://tsugino-shikaku.jp/shikaku/radio-koku');expect(tsuginoLearningUrl(exam)).toBe('https://tsugino-shikaku.jp/learn/radio-koku');});
- it('preserves pre-reward player behavior outside the exact approved reward extension',()=>{
-  const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8').replace(/\r\n/g,'\n');
-  const policyImport='import { isOfficialPastOnlyExam } from "@/lib/questions/past-question-policy";\n';
-  expect(player).toContain(policyImport);expect(player).toContain('!native && !isOfficialPastOnlyExam(question.exam) &&');
-  let projected=player;
-  const approvedRewardDelta: [string,string][] = [
-  [
-    "import { StudyRewardCorner } from \"@/components/home/StudyRewardCorner\";\n",
-    ""
-  ],
-  [
-    "import { recordStudyReward } from \"@/lib/study-reward\";\n",
-    ""
-  ],
-  [
-    "      if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {\n        recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });\n      }\n",
-    ""
-  ],
-  [
-    "            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />\n",
-    ""
-  ],
-  [
-    "className=\"scroll-mt-80 space-y-4 outline-none\" aria-label=\"解答結果\"",
-    "className=\"scroll-mt-24 space-y-4 outline-none\" aria-label=\"解答結果\""
-  ]
-];
-  for(const [from,to] of approvedRewardDelta){expect(projected.split(from)).toHaveLength(2);projected=projected.replace(from,to);}
-  const priorPlayer=projected.replace(policyImport,'').replace('!native && !isOfficialPastOnlyExam(question.exam) &&','!native &&');
-  const oracle=integrationOracle.aviation338;
-  expect(normalizedTextSha256(priorPlayer)).toBe(oracle.priorPlayerSha256);
+ it('retains the reviewed player extensions with generated-question entry retired',()=>{
+  const player=readFileSync(path.join(process.cwd(),'components/quiz/QuizPlayer.tsx'),'utf8');
+  // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
+  // next-question focus/loading and explicit retirement of generated questions.
+  // The historical pre-reward oracle remains unchanged as provenance.
+  expect(normalizedTextSha256(player)).toBe('3ea50bc6848b73bcaf5caaf17a38d7f51ec822538e6224f3ff9acab38aeff1c4');
+  expect(player).not.toContain('GenerateSimilar');
+  expect(player).not.toContain('/api/generate-question');
+  expect(player).toContain('recordStudyReward(');
  });
  it('retains all338 old runtime records and raw source/core bytes independently of player extensions',()=>{
   const oracle=integrationOracle.aviation338;
@@ -104,6 +82,11 @@ describe('aviation communication68 local registration candidate',()=>{
   expect(current).toHaveLength(oracle.originalCount);
   expect(runtimeFingerprint(ordered)).toBe(oracle.normalizedRuntimeSha256);
   expect(sourceFilesUnder(oracle.sourceRoots)).toEqual(oracle.files.filter(pin=>oracle.sourceRoots.some(root=>pin.path.startsWith(root+'/'))).map(pin=>pin.path));
-  for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(pin.sha256);
+  // Only this display component has a separately accepted explanation/UI extension.
+  // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
+  const reviewedDisplayPins: Readonly<Record<string,string>> = {
+    'components/quiz/QuestionAnswerCard.tsx': 'a7a97fafb0934c6aeca4b16cfa603ca7a914bfd84896896d1c80dee3738b4c37',
+  };
+  for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });
 });

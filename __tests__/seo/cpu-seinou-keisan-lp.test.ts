@@ -13,7 +13,7 @@ import {
 // 親記事「頻出7パターン」list 外のため HD-16 path(c) の framing-neutral 経路で配線:
 // blog 非接触＋LP→blog 逆リンク＋`/keywords` 索引＋sitemap＋`getRelatedKeywordPages` レール。
 // 本 LP は honest なトピック（コンピュータ構成/性能設計/基礎理論）で gaming せず、共有「性能設計」
-// で キャッシュ／待ち行列 LP とクラスタ化する。「崩れたら落ちる」核はレール経由の被リンク（orphan 化しない）。
+// で 待ち行列 LP とクラスタ化する。「崩れたら落ちる」核はレール経由の被リンク（orphan 化しない）。
 describe("CPU 性能の計算 keyword LP (cpu-seinou-keisan)", () => {
   it("LP が存在し AP/FE 区分と CPU 性能計算の核を本文に持つ", () => {
     const page = getKeywordPageBySlug("cpu-seinou-keisan");
@@ -33,16 +33,17 @@ describe("CPU 性能の計算 keyword LP (cpu-seinou-keisan)", () => {
   });
 
   it("計算 LP クラスタのレール（他の特集記事）から相互に被リンクされ orphan 化しない", () => {
-    // 「性能設計」トピックを共有する キャッシュ LP のレールに本 LP が surface する
+    // 「性能設計」トピックを共有する 待ち行列 LP のレールに本 LP が surface する
     // ＝レール経由の被リンクが入る（共有 ap/fe ×10 ＋ 共有トピック「性能設計」で score 21）。
-    const fromCache = getRelatedKeywordPages("cache-jikkou-access", 5).map(
+    const fromMachi = getRelatedKeywordPages("machi-gyoretsu-keisan", 5).map(
       (p) => p.slug,
     );
-    expect(fromCache).toContain("cpu-seinou-keisan");
+    expect(fromMachi).toContain("cpu-seinou-keisan");
     // 逆向きも: 本 LP のレールに兄弟計算 LP が並ぶ（相互クラスタ＝dead-end でない）。
     const fromSelf = getRelatedKeywordPages("cpu-seinou-keisan", 5).map(
       (p) => p.slug,
     );
-    expect(fromSelf).toContain("cache-jikkou-access");
+    expect(fromSelf).toContain("machi-gyoretsu-keisan");
+    expect(fromSelf).not.toContain("cache-jikkou-access");
   });
 });
