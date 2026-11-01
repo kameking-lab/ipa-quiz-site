@@ -1,4 +1,6 @@
-import { describe, expect, it } from "vitest";
+// TEST ONLY: retained original corpus quality, not public availability.
+vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
+import { describe, expect, it, vi } from "vitest";
 import { auditEssayLengths, auditVariant, hasCharacterSetup } from "../../scripts/audit-essays";
 import { SA_2024_SPRING_Q1_INDUSTRIES } from "@/data/questions/afternoon/sa/2024-spring-industries";
 

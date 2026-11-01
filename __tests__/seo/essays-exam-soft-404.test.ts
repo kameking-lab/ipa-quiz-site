@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import * as essaysExamPage from "@/app/essays/[exam]/page";
-import { ESSAY_EXAM_CODES } from "@/lib/essays/load";
+import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essays/load";
 
 /**
  * /essays/[exam] は generateStaticParams で論述全区分を列挙する有限集合ページ。
@@ -17,10 +17,15 @@ describe("/essays/[exam] soft-404 guard (dynamicParams=false)", () => {
     expect(essaysExamPage.dynamicParams).toBe(false);
   });
 
-  it("generateStaticParams covers every essay exam code (no valid page turns 404)", async () => {
+  it("generateStaticParams covers exactly publicly supplied essay codes", async () => {
     const params = await essaysExamPage.generateStaticParams();
     const generated = new Set(params.map((p) => p.exam));
-    expect(generated).toEqual(new Set(ESSAY_EXAM_CODES));
+    expect(generated).toEqual(new Set(ESSAY_EXAM_CODES.filter(exam => getEssayQuestionsByExam(exam).length > 0)));
     expect(generated.size).toBeGreaterThan(0);
   });
+});
+
+it.each(["st", "sa", "pm", "sm", "au"] as const)("retired %s collection metadata cannot advertise indexed supply", async exam => {
+  expect(getEssayQuestionsByExam(exam)).toEqual([]);
+  expect(await essaysExamPage.generateMetadata({ params: Promise.resolve({ exam }) })).toMatchObject({ robots: { index: false } });
 });

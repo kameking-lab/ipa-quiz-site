@@ -12,6 +12,7 @@ import {
 } from "@/data/success-stories";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
+import { getEssayQuestionsByExam, isEssayExamCode } from "@/lib/essays/load";
 
 const VALID_EXAMS = new Set(Object.keys(EXAM_LABELS));
 
@@ -230,7 +231,9 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
           >
             ランダム出題で開始
           </Link>
-          {story.relatedEssayExam ? (
+          {story.relatedEssayExam &&
+          isEssayExamCode(story.relatedEssayExam) &&
+          getEssayQuestionsByExam(story.relatedEssayExam).length > 0 ? (
             <Link
               href={`/essays/${story.relatedEssayExam}`}
               className="inline-block rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"

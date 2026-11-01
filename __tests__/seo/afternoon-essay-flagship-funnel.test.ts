@@ -24,18 +24,13 @@ describe("/[exam]/afternoon funnels 論文 exams to the flagship /essay", () => 
   });
 });
 
-// 練習プレイヤー本体 /[exam]/afternoon/[year]/[season] も同じ旗艦 funnel を持つ
-// （直接 landing したユーザーも旗艦へ誘導・index ページと対称）。
-describe("/[exam]/afternoon/[year]/[season] funnels 論文 exams to /essay", () => {
-  const source = readFileSync(
-    join(process.cwd(), "app/[exam]/afternoon/[year]/[season]/page.tsx"),
-    "utf8",
-  );
-
-  it("imports and renders AfternoonEssayHint with the current exam code", () => {
-    expect(source).toContain(
-      'import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint"',
-    );
-    expect(source).toContain("<AfternoonEssayHint exam={code} />");
+// Retired sitting routes are unavailable; recovery remains on the supported index above.
+describe("retired afternoon sitting boundary", () => {
+  const source = readFileSync(join(process.cwd(), "app/[exam]/afternoon/[year]/[season]/page.tsx"), "utf8");
+  it("uses notFound rather than exposing an archived player or grading entry", () => {
+    expect(source).toContain("notFound();");
+    expect(source).not.toContain("<AfternoonPlayer");
+    expect(source).not.toContain("components/afternoon/AfternoonPlayer");
+    expect(source).not.toContain("<AfternoonEssayHint");
   });
 });

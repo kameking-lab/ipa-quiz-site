@@ -1,5 +1,11 @@
-import { describe, it, expect, beforeAll } from "vitest";
+import { describe, it, expect, beforeAll, afterEach, vi } from "vitest";
 import { POST } from "@/app/api/scoring/route";
+
+const boundary = vi.hoisted(() => ({ provider: vi.fn(), prepare: vi.fn(), consume: vi.fn(), cost: vi.fn(), cap: vi.fn() }));
+vi.mock("@/lib/ai/provider", () => ({ getProvider: boundary.provider, resolveModel: vi.fn(), gradingThinkingBudget: vi.fn() }));
+vi.mock("@/lib/ai/cost-guard", () => ({ recordAiCost: boundary.cost, checkMonthlyCostCap: boundary.cap, estimateTokens: vi.fn() }));
+vi.mock("@/lib/ai/usage-server", () => ({ prepareAiUsage: boundary.prepare, consumeAiUsage: boundary.consume, withAiUsageResponse: (run: (track: () => void) => unknown) => run(() => {}) }));
+afterEach(() => { for (const spy of Object.values(boundary)) expect(spy).not.toHaveBeenCalled(); });
 
 // Ensure mock provider is used (no GEMINI_API_KEY). The mock provider has a
 // dedicated short-circuit in the route that returns deterministic JSON, which
@@ -54,11 +60,11 @@ describe("POST /api/scoring", () => {
     expect((await res.json()).error).toBe("not_found");
   });
 
-  it.each(["これはサンプル解答です。", "あ".repeat(80), "ab"])("mock provider does not grade %s", async (text) => {
+  it.each(["これはサンプル解答です。", "あ".repeat(80), "ab"])("retired original returns 404 without grading or consuming usage: %s", async (text) => {
     const res = await POST(makeReq({questionId: "ap-2024h-pm-q1", answers: [{label: "設問1", text}]}, `10.0.2.${text.length}`));
-    expect(res.status).toBe(503);
+    expect(res.status).toBe(404);
     const body = await res.json();
-    expect(body.status).toBe("unavailable");
+    expect(body.error).toBe("not_found");
     for (const key of ["totalScore", "subResults", "overallComment"]) expect(body).not.toHaveProperty(key);
   });
 

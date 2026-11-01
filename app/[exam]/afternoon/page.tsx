@@ -4,10 +4,7 @@ import { notFound } from "next/navigation";
 import { ChevronRight, FileEdit } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
-import { getAfternoonYearSeasons, getAfternoonByYearSeason } from "@/lib/afternoon/load";
-import { Badge } from "@/components/ui/badge";
-import { AfternoonDisclaimer } from "@/components/afternoon/AfternoonDisclaimer";
+import { examLabel } from "@/lib/utils";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
@@ -44,11 +41,12 @@ export async function generateMetadata({
     return { title: "午後問題は未対応です", robots: { index: false } };
   }
   const label = examLabel(exam as ExamCode);
-  const title = `【練習用】${label} 午後問題（AI採点ベータ）`;
-  const description = `【練習用オリジナル問題】${label}の午後記述式形式を模した練習問題をAIが採点します。実際の過去問ではありません。AI採点は目安です。`;
+  const title = `${label} 午後問題`;
+  const description = "このページで公開できる午後の過去問は現在ありません。資格ページから利用できる学習内容をご確認ください。";
   return {
     title,
     description,
+    robots: { index: false },
     alternates: { canonical: `/${exam}/afternoon` },
   };
 }
@@ -62,7 +60,6 @@ export default async function AfternoonIndexPage({
   if (!SUPPORTED_AFTERNOON_EXAMS.includes(exam as ExamCode)) notFound();
 
   const code = exam as ExamCode;
-  const yearSeasons = getAfternoonYearSeasons(code);
 
   return (
     <main className="relative flex-1">
@@ -103,31 +100,16 @@ export default async function AfternoonIndexPage({
         </nav>
 
         <header className="mb-6 animate-fade-in">
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <Badge variant="soft">
-              <FileEdit className="h-3 w-3" />
-              練習用オリジナル問題
-            </Badge>
-            <Badge variant="warn">AI 採点ベータ</Badge>
-          </div>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               {examLabel(code)} 午後問題
             </span>
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            午後記述式問題の解答を入力すると、AI が模範解答と比較して採点します。
-            点数・良い点・改善点・IPA 解答例を表示します。
+            このページで公開できる午後の過去問は現在ありません。
           </p>
         </header>
 
-        <div className="mb-8">
-          <AfternoonDisclaimer />
-        </div>
-
-        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)から
-            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
-            コンポーネントが ESSAY_EXAM_CODES で self-gate するため非論述区分には出ない。 */}
         <AfternoonEssayHint exam={code} />
 
         {code === "fe" && (
@@ -153,37 +135,14 @@ export default async function AfternoonIndexPage({
           </div>
         )}
 
-        {yearSeasons.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-border bg-muted/40 p-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              まだ午後問題が登録されていません。順次追加していきます。
-            </p>
-          </div>
-        ) : (
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {yearSeasons.map((ys) => {
-              const list = getAfternoonByYearSeason(code, ys.year, ys.season);
-              return (
-                <li key={`${ys.year}-${ys.season}`}>
-                  <Link
-                    href={`/${exam}/afternoon/${ys.year}/${ys.season}`}
-                    className="group flex items-center justify-between rounded-2xl border border-border bg-card p-4 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                  >
-                    <span className="font-semibold text-foreground">
-                      {formatYearSeason(ys.year, ys.season)}
-                    </span>
-                    <span className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
-                        {list.length} 大問
-                      </span>
-                      <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        <section className="rounded-2xl border border-border bg-card p-6" aria-label="午後問題の公開状況">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            資格ページから、現在利用できる学習内容をご確認ください。
+          </p>
+          <Link href={`/${exam}`} className="mt-4 inline-flex min-h-11 items-center rounded-xl border border-border px-4 py-2 text-sm font-semibold hover:underline">
+            {examLabel(code)}の資格ページへ
+          </Link>
+        </section>
       </div>
     </main>
   );
