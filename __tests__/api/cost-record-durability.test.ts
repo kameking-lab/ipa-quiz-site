@@ -149,44 +149,6 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
     expect(pending.settled()).toBe(true);
   });
 
-  it("/api/generate-question — レスポンス返却時点で recordAiCost が解決済み", async () => {
-    const pending = installPendingRecord();
-    stubStream(
-      JSON.stringify({
-        question: "類題本文",
-        choices: { ア: "a", イ: "b", ウ: "c", エ: "d" },
-        answer: "ア",
-        explanation: "解説",
-      }),
-    );
-    const { POST } = await import("@/app/api/generate-question/route");
-
-    const res = await POST(
-      new Request("http://localhost/api/generate-question", {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-forwarded-for": "10.9.0.3" },
-        body: JSON.stringify({
-          baseQuestion: {
-            id: "ap-2023h-am-q1",
-            exam: "ap",
-            category: "テクノロジ",
-            topicTags: ["アルゴリズム"],
-            question: "テスト問題本文。",
-            choices: { ア: "選択肢ア", イ: "選択肢イ", ウ: "選択肢ウ", エ: "選択肢エ" },
-            answer: "ア",
-            explanation: "解説テキスト。",
-          },
-          difficultyShift: "same",
-        }),
-      }),
-    );
-    expect(res.status).toBe(200);
-    await drain(res);
-
-    expect(recordAiCost).toHaveBeenCalledTimes(1);
-    expect(pending.settled()).toBe(true);
-  });
-
   it("/api/copilot — ストリームが閉じる時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
     stubStream("解説テキストです。");
@@ -237,7 +199,6 @@ describe("ソースレベルの再発防止", () => {
     const ROUTES = [
       "app/api/scoring/route.ts",
       "app/api/essay-grade/route.ts",
-      "app/api/generate-question/route.ts",
       "app/api/copilot/route.ts",
     ];
     for (const rel of ROUTES) {

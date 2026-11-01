@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Link from "next/link";
 import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTION, aiAccessClaimsEnabled, aiResponseNotice, hasAiQuotaContinuation } from "./ai-access-copy";
 
 /** Last response evidence is displayed as such; it never establishes current membership or gates a request. */
@@ -26,9 +27,9 @@ export function AiAccessNotice({message}: {message?:string|null}) {
     </details>
     {message ? <p role="status" aria-live="polite">{message}</p> : null}
     {hasAiQuotaContinuation(message) ? <nav aria-label="無料AI枠の上限後の選択肢" className="flex flex-wrap gap-x-4 gap-y-2">
-      <a className="underline underline-offset-2" href="/search">無料の問題検索へ</a>
-      <a className="underline underline-offset-2" href="/review">保存済み履歴の復習へ</a>
-      <a className="underline underline-offset-2" href="/billing">有料プランの条件・受付状況を確認</a>
+      <Link className="underline underline-offset-2" href="/search">無料の問題検索へ</Link>
+      <Link className="underline underline-offset-2" href="/review">保存済み履歴の復習へ</Link>
+      <Link className="underline underline-offset-2" href="/billing">有料プランの条件・受付状況を確認</Link>
     </nav> : null}
   </aside>;
 }
