@@ -1,3 +1,6 @@
+// TEST ONLY: preserve archived original prompt/answer quality, never public supply.
+vi.mock("@/data/essays/sc", async () => await import("@/__tests__/fixtures/archived-sc-essay"));
+vi.mock("@/data/questions/essay", async () => await import("@/__tests__/fixtures/archived-singular-essay"));
 // TEST ONLY: plural essay adapter must see the retained archived fixtures.
 vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 // Archived editorial fixture coverage only; public availability is tested separately.

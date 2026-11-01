@@ -61,3 +61,29 @@ describe("EssayIndustryTabs — 業種セレクタ A11y", () => {
     expect(screen.getByText("製造業序論サンプル。")).toBeTruthy();
   });
 });
+
+// Former public E2E interaction contract, retained with explicitly synthetic
+// component data after the original SC prompts were withdrawn from publication.
+it("keeps all eight industry choices and changes only the selected visible panel", () => {
+  const pairs = [
+    ["it", "IT・情報サービス業"], ["manufacturing", "製造業"],
+    ["finance", "金融業"], ["retail", "流通・小売業"],
+    ["telecom", "通信業"], ["construction", "建設業"],
+    ["healthcare", "医療・ヘルスケア"], ["public", "公共・自治体"],
+  ] as const;
+  const industries: SCEssayAnswer[] = pairs.map(([industryId, industryName]) => ({ industryId, industryName, intro: `${industryId} fixture intro`, body: "fixture body", conclusion: "fixture conclusion" }));
+  const { container } = render(<EssayIndustryTabs industries={industries} pdfUrl="https://example.invalid/archive" />);
+  const group = screen.getByRole("group", { name: "業種選択" });
+  expect(group.querySelectorAll("button")).toHaveLength(8);
+  expect(screen.getByRole("button", { name: pairs[0][1], exact: true }).getAttribute("aria-pressed")).toBe("true");
+  for (const [id, label] of pairs) {
+    const button = screen.getByRole("button", { name: label, exact: true });
+    fireEvent.click(button);
+    expect(button.getAttribute("aria-pressed")).toBe("true");
+    expect(group.querySelectorAll('button[aria-pressed="true"]')).toHaveLength(1);
+    const visible = container.querySelectorAll(":scope > section:not([hidden])");
+    expect(visible).toHaveLength(1);
+    expect(visible[0]?.textContent).toContain(`${id} fixture intro`);
+    expect(screen.getByRole("heading", { name: `${label}の参考答案例`, exact: true })).toBeTruthy();
+  }
+});

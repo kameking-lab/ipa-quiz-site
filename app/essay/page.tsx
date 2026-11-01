@@ -10,10 +10,13 @@ import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-
 import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essay/load";
 import { examLabel } from "@/lib/utils";
 
-const ESSAY_DESCRIPTION =
+const HAS_PUBLISHED_ESSAYS = ESSAY_EXAM_CODES.some((exam) => getEssayQuestionsByExam(exam).length > 0);
+const ESSAY_DESCRIPTION = !HAS_PUBLISHED_ESSAYS
+  ? "現在、掲載できる論述問題はありません。既存の採点履歴は引き続き確認できます。"
+  :
   "ST/SA/PM/SM/AU の午後II論述問題を AI が学習用の4観点で添削。設問ア・イ・ウを業種別にフィードバック。";
 
-const ESSAY_OG_TITLE = "AI 論述添削（午後II）";
+const ESSAY_OG_TITLE = HAS_PUBLISHED_ESSAYS ? "AI 論述添削（午後II）" : "論述問題の掲載状況";
 const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "essay",
   title: ESSAY_OG_TITLE,
@@ -76,7 +79,8 @@ const ESSAY_GUIDE_POSTS: { slug: string; label: string }[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "AI 論述添削 (午後II)",
+  title: HAS_PUBLISHED_ESSAYS ? "AI 論述添削 (午後II)" : "論述問題の掲載状況",
+  ...(!HAS_PUBLISHED_ESSAYS ? { robots: { index: false, follow: false } } : {}),
   description: ESSAY_DESCRIPTION,
   alternates: { canonical: "/essay" },
   openGraph: {
@@ -97,6 +101,18 @@ export const metadata: Metadata = {
 };
 
 export default function EssayHomePage() {
+  if (!HAS_PUBLISHED_ESSAYS) {
+    return (
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+        <h1 className="mb-4 text-2xl font-bold">論述問題の掲載状況</h1>
+        <p role="status">現在、掲載できる論述問題はありません。</p>
+        <nav aria-label="学習と履歴" className="mt-4 flex flex-wrap gap-4">
+          <Link href="/" className="underline">ホームから学習内容を選ぶ</Link>
+          <Link href="/account/essay-history" className="underline">これまでの採点履歴を見る</Link>
+        </nav>
+      </main>
+    );
+  }
   const url = `${SITE_BASE_URL}/essay`;
   const examNames = ESSAY_EXAM_CODES.map((exam) => examLabel(exam)).join("・");
   const jsonLd = {

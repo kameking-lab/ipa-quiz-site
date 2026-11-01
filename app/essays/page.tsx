@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "業種別参考答案サンプル",
   description:
-    "IPA 高度情報処理技術者試験独自の論述練習問題の業種別参考答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
+    "業種別参考答案サンプルの掲載状況。現在掲載できる問題と答案はありません。",
   alternates: { canonical: "/essays" },
   // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
   robots: { index: false, follow: false },
@@ -25,6 +25,16 @@ export default function EssaysIndexPage() {
     count: getEssayQuestionsByExam(exam).length,
   })).filter(({ count }) => count > 0);
 
+
+  if (examStats.length === 0) {
+    return (
+      <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+        <h1 className="mb-4 text-2xl font-bold">業種別参考答案サンプル</h1>
+        <p role="status">現在掲載できる答案サンプルはありません。</p>
+        <Link href="/" className="mt-4 inline-block underline">ホームから学習内容を選ぶ</Link>
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">

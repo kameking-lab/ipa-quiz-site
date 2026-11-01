@@ -1,3 +1,5 @@
+// TEST ONLY: original fixture preserves quality contracts; public zero/404 tested separately.
+vi.mock("@/data/essays/sc", async () => await import("@/__tests__/fixtures/archived-sc-essay"));
 // TEST ONLY: retained original corpus quality, not public availability.
 vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, expect, it, vi } from "vitest";

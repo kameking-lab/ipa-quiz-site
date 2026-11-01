@@ -1,108 +1,29 @@
 import { test, expect } from "@playwright/test";
 
-// sc is the only exam with essay data; 2025-spring/pm2/q1 has all 8 industries
-const ESSAY_EXAM = "/essays/sc";
-const ESSAY_QUESTION = "/essays/sc/2025-spring/pm2/q1";
-
-// EssayIndustryTabs renders the industry selector as a role="group"
-// (aria-label "業種選択") of aria-pressed toggle buttons labelled by industry
-// name, in this order. The matching answer is a <section hidden> with a
-// "<industry>の参考答案例" heading. (Was a role=tablist/aria-selected/tabpanel
-// pattern before the a11y fix in 6e4fb97 — these specs assert the new pattern.)
-const INDUSTRY_LABELS = [
-  "IT・情報サービス業",
-  "製造業",
-  "金融業",
-  "流通・小売業",
-  "通信業",
-  "建設業",
-  "医療・ヘルスケア",
-  "公共・自治体",
-];
-
-test.describe("user journey: essays HTTP status", () => {
-  test("essays exam index /essays/sc returns 200", async ({ request }) => {
-    const res = await request.get(ESSAY_EXAM);
-    expect(res.status()).toBe(200);
-  });
-
-  test("essay question page /essays/sc/2025-spring/pm2/q1 returns 200", async ({ request }) => {
-    const res = await request.get(ESSAY_QUESTION);
-    expect(res.status()).toBe(200);
-  });
-
-  test("nonexistent essay /essays/sc/2025-spring/pm2/q99 returns 404", async ({ request }) => {
-    const res = await request.get("/essays/sc/2025-spring/pm2/q99");
-    // App may render a "not found" UI with 200, or return a proper 404.
-    expect([200, 404]).toContain(res.status());
-  });
-
-  test("nonexistent year /essays/sc/1999-spring/pm2/q1 returns 404", async ({ request }) => {
-    const res = await request.get("/essays/sc/1999-spring/pm2/q1");
-    // App may render a "not found" UI with 200, or return a proper 404.
-    expect([200, 404]).toContain(res.status());
-  });
-});
-
-test.describe("user journey: essays industry selector UI", () => {
-  test("essay question page has the industry selector group", async ({ page }) => {
-    await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(group).toBeVisible();
-  });
-
-  test("essay question page has all 8 industry buttons", async ({ page }) => {
-    await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(group.getByRole("button")).toHaveCount(8);
-    for (const label of INDUSTRY_LABELS) {
-      await expect(
-        group.getByRole("button", { name: label, exact: true }),
-      ).toBeVisible();
-    }
-  });
-
-  test("first industry button (IT) is pressed by default", async ({ page }) => {
-    await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    await expect(
-      group.getByRole("button", { name: "IT・情報サービス業", exact: true }),
-    ).toHaveAttribute("aria-pressed", "true");
-    await expect(
-      group.getByRole("button", { name: "製造業", exact: true }),
-    ).toHaveAttribute("aria-pressed", "false");
-  });
-
-  test("clicking 製造業 presses it and unpresses IT", async ({ page }) => {
-    await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    const mfg = group.getByRole("button", { name: "製造業", exact: true });
-    const it = group.getByRole("button", {
-      name: "IT・情報サービス業",
-      exact: true,
+// Legacy selector interaction coverage remains in the component fixture suite;
+// these public URLs must now expose no original question or answer material.
+test.describe("retired original essay HTTP boundary", () => {
+  for (const url of ["/essays/sc", ...[2023, 2024, 2025].map(year => `/essays/sc/${year}-spring/pm2/q1`), "/essays/sc/2025-spring/pm2/q99", "/essays/sc/1999-spring/pm2/q1", "/essay/st/st-2024a-pm2-q1", "/essay/pm/pm-2024a-pm2-q1"]) {
+    test(`${url} returns exact 404`, async ({ request }) => {
+      expect((await request.get(url)).status()).toBe(404);
     });
-    await mfg.click();
-    await expect(mfg).toHaveAttribute("aria-pressed", "true");
-    await expect(it).toHaveAttribute("aria-pressed", "false");
-  });
-
-  test("switching industry changes the visible answer panel", async ({ page }) => {
-    await page.goto(ESSAY_QUESTION);
-    const group = page.getByRole("group", { name: "業種選択" });
-    const itHeading = page.getByRole("heading", {
-      name: "IT・情報サービス業の参考答案例",
-      exact: true,
+  }
+  for (const [url, text] of [["/essay", "現在、掲載できる論述問題はありません。"], ["/essays", "現在掲載できる答案サンプルはありません。"]]) {
+    test(`${url} explains empty supply and retains home navigation`, async ({ page }) => {
+      const res = await page.goto(url);
+      expect(res?.status()).toBe(200);
+      await expect(page.getByRole("status")).toHaveText(text);
+      await expect(page.locator('a[href^="/essay/"], a[href^="/essays/"]')).toHaveCount(0);
+      await expect(page.getByRole("group", { name: "業種選択" })).toHaveCount(0);
+      const home = page.getByRole("link", { name: "ホームから学習内容を選ぶ" });
+      await home.focus();
+      await expect(home).toBeFocused();
+      await page.keyboard.press("Enter");
+      await expect(page).toHaveURL(/\/$/);
     });
-    const mfgHeading = page.getByRole("heading", {
-      name: "製造業の参考答案例",
-      exact: true,
-    });
-    // IT answer is shown initially; the manufacturing answer is hidden.
-    await expect(itHeading).toBeVisible();
-    await expect(mfgHeading).toBeHidden();
-    // Switch to manufacturing → its answer panel becomes visible, IT hides.
-    await group.getByRole("button", { name: "製造業", exact: true }).click();
-    await expect(mfgHeading).toBeVisible();
-    await expect(itHeading).toBeHidden();
+  }
+  test("existing essay history remains reachable without writing an answer", async ({ page }) => {
+    await page.goto("/essay");
+    await expect(page.getByRole("link", { name: "これまでの採点履歴を見る" })).toHaveAttribute("href", "/account/essay-history");
   });
 });
