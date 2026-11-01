@@ -189,20 +189,15 @@ describe("旗艦 essay deep ページ（sitemap掲載の実在問題）は全て
     expect(essayPageKey in pageModules).toBe(true);
   });
 
-  it("掲載される全 essay 問題で robots:noindex にならない", async () => {
-    const questions = getAllEssayQuestions();
-    expect(questions.length).toBeGreaterThan(0); // 空振り防止
-    const mod = (await pageModules[essayPageKey]()) as {
-      generateMetadata: EssayGenerateMetadata;
-    };
-    const bad: string[] = [];
-    for (const q of questions) {
-      const md = await mod.generateMetadata({
-        params: Promise.resolve({ exam: q.exam, questionId: q.id }),
-      });
-      if (isNoindex(md.robots)) bad.push(`/essay/${q.exam}/${q.id}`);
+  it("retired essay supply is empty and all twelve old detail metadata are noindex", async () => {
+    expect(getAllEssayQuestions()).toEqual([]);
+    const mod = (await pageModules[essayPageKey]()) as { generateMetadata: EssayGenerateMetadata };
+    const retiredIds = ["st-2024a-pm2-q1", "st-2024a-pm2-q2", "st-2023a-pm2-q1", "sa-2024a-pm2-q1", "sa-2024a-pm2-q2", "pm-2024a-pm2-q1", "pm-2024a-pm2-q2", "pm-2023a-pm2-q1", "sm-2024a-pm2-q1", "sm-2024a-pm2-q2", "au-2024a-pm2-q1", "au-2024a-pm2-q2"];
+    expect(retiredIds).toHaveLength(12);
+    for (const questionId of retiredIds) {
+      const md = await mod.generateMetadata({ params: Promise.resolve({ exam: questionId.slice(0, 2), questionId }) });
+      expect(isNoindex(md.robots), questionId).toBe(true);
     }
-    expect(bad).toEqual([]);
   });
 
   it("存在しない問題IDでは robots:noindex を返す（not-found 分岐の健全性）", async () => {

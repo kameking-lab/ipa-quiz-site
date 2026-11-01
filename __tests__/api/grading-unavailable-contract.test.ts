@@ -1,3 +1,5 @@
+// TEST ONLY: archived original prompts retain grading/provider/record contracts, not public supply.
+vi.mock("@/data/questions/essay", async () => await import("@/__tests__/fixtures/archived-singular-essay"));
 // TEST ONLY corpus injection: retain generic grading/provider/cost contracts, not public availability.
 vi.mock("@/lib/afternoon/load", async () => await import("@/__tests__/fixtures/archived-afternoon-load"));
 import { describe, it, expect, vi, beforeEach } from "vitest";

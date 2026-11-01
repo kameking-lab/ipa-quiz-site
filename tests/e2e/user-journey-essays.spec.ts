@@ -31,7 +31,7 @@ test.describe("retired original essay HTTP boundary", () => {
     test(`${url} explains empty supply and retains home navigation`, async ({ page }) => {
       const res = await page.goto(url);
       expect(res?.status()).toBe(200);
-      await expect(page.getByRole("status")).toHaveText(text);
+      await expect(page.getByRole("main").getByRole("status").filter({ hasText: text })).toHaveText(text);
       await expect(page.locator('a[href^="/essay/"], a[href^="/essays/"]')).toHaveCount(0);
       await expect(page.getByRole("group", { name: "業種選択" })).toHaveCount(0);
       const home = page.getByRole("link", { name: "ホームから学習内容を選ぶ" });

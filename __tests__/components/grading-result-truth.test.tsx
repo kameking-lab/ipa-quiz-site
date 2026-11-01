@@ -1,3 +1,5 @@
+// TEST ONLY: archived original prompts retain grading/provider/record contracts, not public supply.
+vi.mock("@/data/questions/essay", async () => await import("@/__tests__/fixtures/archived-singular-essay"));
 // Archived editorial fixture coverage only; public availability is tested separately.
 import { describe,it,expect,beforeEach,vi } from "vitest";
 import { render,screen,cleanup } from "@testing-library/react";

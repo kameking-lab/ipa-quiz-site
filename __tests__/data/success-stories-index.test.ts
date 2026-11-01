@@ -222,7 +222,10 @@ describe("cross-link integrity (no dead CTA on the story page)", () => {
 it.each(["sc", "st", "not-a-public-exam"])("story guard handles explicit %s target without dead links", async target => {
   const template = ALL[0]!;
   const getStory = vi.spyOn(storyRegistry, "getSuccessStoryBySlug").mockReturnValue({ ...template, relatedEssayExam: target as typeof template.relatedEssayExam });
-  const supply = vi.spyOn(essaySupply, "getEssayQuestionsByExam");
+  // Explicit nonempty test fixture keeps the positive guard branch covered;
+  // the preceding test uses real empty public supply.
+  const archived = await import("@/__tests__/fixtures/archived-sc-essay");
+  const supply = vi.spyOn(essaySupply, "getEssayQuestionsByExam").mockImplementation(exam => exam === "sc" ? archived.SC_PM2_QUESTIONS : []);
   try {
     const container = document.createElement("div");
     container.innerHTML = renderToStaticMarkup(await SuccessStoryArticlePage({ params: Promise.resolve({ exam: template.exam, slug: template.slug }) }));
