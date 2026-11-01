@@ -79,10 +79,12 @@ describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
 
 it("does not advance after a revealed answer when a focused action receives Enter", () => {
   const onNext = vi.fn();
-  const { getAllByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
+  const { getByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
   fireEvent.keyDown(window, { key: "1" });
-  const action = getAllByRole("button").find((button) => button.textContent?.includes("AIに聞く"))!;
+  const action = getByRole("button", { name: "この問題をAIに質問" });
+  expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   action.focus();
+  expect(action).toHaveFocus();
   fireEvent.keyDown(action, { key: "Enter" });
   expect(onNext).not.toHaveBeenCalled();
 });

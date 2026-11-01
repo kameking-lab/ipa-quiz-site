@@ -127,7 +127,12 @@ test("denko2 complete 2026 sitting publishes question 10 and all-choice explanat
   await choices.nth(2).click(); // Official ハ is mapped to site ウ, the third choice.
   const answerCard = page.getByRole("region", { name: "選択肢と解答", exact: true });
   await expect(answerCard.getByText("正解！", { exact: true })).toBeVisible();
-  await expect(answerCard.getByRole("status")).toHaveText("正解です。下に解説があります。");
+  // The outcome is the answer root's direct live status; nested AI toasts are independent.
+  const outcome = answerCard.locator('[data-study-presence-exam="denko2"] > [role="status"]');
+  await expect(outcome).toHaveCount(1);
+  await expect(outcome).toHaveAttribute("aria-live", "polite");
+  await expect(outcome).toHaveAttribute("aria-atomic", "true");
+  await expect(outcome).toHaveText("正解です。下に解説があります。");
   const explanations = page.getByRole("region", { name: "解説", exact: true });
   await expect(explanations.getByRole("heading", { name: "各選択肢の解説" })).toBeVisible();
   await expect(explanations.locator("dd")).toHaveCount(4);

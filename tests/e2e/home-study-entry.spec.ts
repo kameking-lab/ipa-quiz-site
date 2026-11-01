@@ -9,7 +9,7 @@ for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
     const finder = page.locator("#choose-qualification");
-    const choose = page.getByRole("link", { name: "学ぶ資格を選ぶ", exact: true });
+    const choose = page.getByRole("link", { name: "資格を選んで始める", exact: true });
     await expect(choose).toBeInViewport();
     await expect(choose).toHaveAttribute("href", "#choose-qualification");
     await choose.focus();
@@ -91,7 +91,11 @@ test("challenge direct access requires a qualification", async ({ page }) => {
 
 test("answer actions keep focus and next question survives reload on a short phone", async ({ page }) => {
   await page.setViewportSize({ width: 400, height: 606 });
-  await page.route("**/api/copilot**", (route) => route.fulfill({ status: 200, body: "", contentType: "text/plain" }));
+  let aiSubmissions = 0;
+  await page.route("**/api/copilot**", (route) => {
+    if (route.request().method() === "POST") aiSubmissions++;
+    return route.fulfill({ status: 200, body: "", contentType: "text/plain" });
+  });
   await page.goto("/quiz?mode=year&exam=ip&year=2011&season=autumn&session=am&order=1");
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
   const original = new URL(page.url()).searchParams.get("question");
@@ -104,13 +108,26 @@ test("answer actions keep focus and next question survives reload on a short pho
   await ask.focus();
   await page.keyboard.press("Enter");
   expect(new URL(page.url()).searchParams.get("question")).toBe(original);
-  const input = page.getByRole("dialog", { name: "AI コパイロット", exact: true }).getByRole("textbox").first();
+  // The accepted question UI keeps one editor inline; the action requests focus, not a modal or a send.
+  const inline = page.getByRole("region", { name: "この問題についてAIに質問", exact: true });
+  await expect(inline).toHaveCount(1);
+  await expect(page.getByRole("dialog", { name: "AI コパイロット", exact: true })).toHaveCount(0);
+  const input = inline.getByRole("textbox", { name: "AIへの質問を入力（Enter で送信、Shift+Enter で改行）", exact: true });
   await expect(input).toBeVisible();
+  await expect(input).toBeFocused();
+  await expect(input).toBeInViewport();
+  expect(aiSubmissions).toBe(0);
   const inputBox = await input.boundingBox();
   expect(inputBox!.y + inputBox!.height).toBeLessThanOrEqual(606);
   await page.screenshot({ path: "reports/home-redesign/quiz-ai-400x606.png" });
   await page.keyboard.press("Escape");
-  await page.getByRole("button", { name: "次の問題へ", exact: true }).first().click();
+  await expect(inline).toBeVisible();
+  expect(new URL(page.url()).searchParams.get("question")).toBe(original);
+  expect(aiSubmissions).toBe(0);
+  const nextAction = page.getByRole("button", { name: "次の問題へ", exact: true }).first();
+  await nextAction.focus();
+  await expect(nextAction).toBeFocused();
+  await page.keyboard.press("Enter");
   await expect.poll(() => new URL(page.url()).searchParams.get("question")).not.toBe(original);
   const next = new URL(page.url()).searchParams.get("question");
   await expect(page.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "2");
