@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
+import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
 import { getProvider } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { checkIpRateLimit } from "@/lib/rate-limit";
+import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
 import type { Question } from "@/lib/questions/types";
 import { getQuestionById } from "@/lib/questions/load";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
@@ -15,6 +16,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
+import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -50,6 +52,10 @@ const BodySchema = z.object({
 });
 
 export async function POST(req: Request) {
+  return withAiUsageResponse(track => handlePost(req, track));
+}
+
+async function handlePost(req: Request, track: (context: AiUsageContext) => void) {
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
@@ -77,19 +83,31 @@ export async function POST(req: Request) {
     ? undefined
     : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question));
 
-  const ipRl = await checkIpRateLimit(req, "copilot", {
+  // Reject explicit creation requests before normal-use admission or provider work.
+  if (requestsNewQuestion(payload.messages, payload.quickAction)) {
+    return NextResponse.json(
+      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
+      { status: 400, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+
+  const usage = await prepareAiUsage("copilot");
+  track(usage);
+  if (usage.response) return usage.response;
+
+  const ipRl = await checkAiNormalUse(req, "copilot", usage, {
     requireKv: Boolean(process.env.GEMINI_API_KEY),
   });
   if (!ipRl.ok) {
     if (ipRl.reason === "unavailable") {
       return NextResponse.json(
         { error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" },
-        { status: 503, headers: { "X-Error-Type": "server_error", "Retry-After": "60" } },
+        { status: 503, headers: { ...usage.headers, "X-Error-Type": "server_error", "Retry-After": "60" } },
       );
     }
     return NextResponse.json(
-      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt },
-      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
+      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, scope: ipRl.scope, resetAt: ipRl.resetAt },
+      { status: 429, headers: { ...usage.headers, "X-Error-Type": "rate_limited" } },
     );
   }
 
@@ -99,6 +117,8 @@ export async function POST(req: Request) {
     question,
     messages: payload.messages,
     quickAction,
+    // The assembler below includes this same question's complete context before RAG.
+    questionContextIncluded: true,
   });
 
   const { system, userMessages } = assembleCopilotPrompt({
@@ -133,15 +153,17 @@ export async function POST(req: Request) {
   // CLAUDE.md §0 hard cap: stop new real AI requests once the monthly spend
   // reaches ¥50,000 (mock/dev path is free and never blocked).
   if (provider.name !== "mock") {
-    const cap = await checkMonthlyCostCap();
+    const cap = await checkMonthlyCostCap(provider.name);
     if (!cap.allowed) {
+    if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json(
         {
-          error: "cost_capped",
-          message:
-            "AI 機能は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+          error: cap.reason ?? "cost_capped",
+          message: cap.reason === "budget_unavailable"
+          ? "AI費用の状態を確認できないため、生成を一時停止しています。少し待ってから再試行してください。"
+          : "サービス全体の今月のAI費用上限に達したため、生成を停止しています。翌月初に再開します。",
         },
-        { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+        { status: 503, headers: { "X-Error-Type": cap.reason ?? "cost_capped" } },
       );
     }
   }
@@ -160,6 +182,9 @@ export async function POST(req: Request) {
 
   const isRealProvider = provider.name !== "mock";
   const inputChars = system.length + userMessages.reduce((n, m) => n + m.content.length, 0);
+
+  const usageDenial = await consumeAiUsage(usage, provider.name);
+  if (usageDenial) return usageDenial;
 
   const stream = createCopilotResponseStream({
     provider,
@@ -201,6 +226,7 @@ export async function POST(req: Request) {
 
   return new Response(stream, {
     headers: {
+      ...usage.headers,
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "no-store, no-cache, must-revalidate",
       "X-Provider": provider.name,

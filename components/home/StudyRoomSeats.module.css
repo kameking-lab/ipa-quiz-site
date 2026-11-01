@@ -1,0 +1,11 @@
+.illustration { pointer-events: none; }
+.illustration[data-selected="true"] { z-index: 20; }
+.illustration[data-selected="true"] :global(.study-mascot) { filter: drop-shadow(0 0 3px #fff3a2); }
+.number, .listNumber { display: inline-grid; place-items: center; border-radius: 50%; background: #fffdf1; color: #3c5039; font-weight: 700; }
+.number { display: none; position: absolute; top: 4%; right: 4%; width: 24px; height: 24px; font-size: 12px; box-shadow: 0 1px 4px #5f421966; }
+.illustration[data-selected="true"] .number { display: inline-grid; }
+.list { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 17px; border-top: 1px solid var(--study-line); }
+.button { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; max-width: 100%; padding: 6px 10px; border: 1px solid #a8b69f; border-radius: 8px; background: #fffdf7; color: #314d32; text-align: left; overflow-wrap: anywhere; }
+.button[aria-pressed="true"] { background: #e3ecd9; border-color: #355b38; }
+.button:focus-visible { outline: 3px solid #355b38; outline-offset: 2px; }
+.listNumber { flex: none; width: 24px; height: 24px; border: 1px solid #a8b69f; font-size: 12px; }

@@ -11,17 +11,25 @@ export function useSyncIdentity() {
   const [revision, refresh] = React.useReducer((value: number) => value + 1, 0);
   React.useEffect(() => {
     let cancelled = false;
+    let generation = 0;
     async function check() {
+      const request = ++generation;
+      setChecking(true);
+      setConfirmedFor(null);
       try {
         const current = await readSyncAccount();
-        if (cancelled) return;
+        if (cancelled || request !== generation) return;
         setAccount(current);
         setOwnership(current ? readOwnership(current.id) : "unknown");
         setConfirmedFor(null);
       } catch {
-        if (!cancelled) setAccount(null);
+        if (!cancelled && request === generation) {
+          setAccount(null);
+          setOwnership("unknown");
+          setConfirmedFor(null);
+        }
       } finally {
-        if (!cancelled) setChecking(false);
+        if (!cancelled && request === generation) setChecking(false);
       }
     }
     void check();

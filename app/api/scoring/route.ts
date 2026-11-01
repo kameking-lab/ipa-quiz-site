@@ -8,7 +8,8 @@ import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
-import { checkIpRateLimit } from "@/lib/rate-limit";
+import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
+import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import { captureException } from "@/lib/monitoring/sentry";
 import type {
@@ -162,6 +163,10 @@ function safeParseScoring(
 }
 
 export async function POST(req: Request) {
+  return withAiUsageResponse(track => handlePost(req, track));
+}
+
+async function handlePost(req: Request, track: (context: AiUsageContext) => void) {
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
@@ -180,15 +185,18 @@ export async function POST(req: Request) {
     );
   }
 
+  const usage = await prepareAiUsage("scoring");
+  track(usage);
+  if (usage.response) return usage.response;
   const ip = getClientIp(req);
   const feedbackToken = readFeedbackTokenInfo(req);
   const feedbackSubmitted = feedbackToken.valid;
-  const rl = await checkRateLimit({
+  const rl = usage.legacy ? await checkRateLimit({
     ip,
     feedbackSubmitted,
     feedbackTokenId: feedbackToken.id,
-  });
-  if (!rl.ok) {
+  }) : null;
+  if (rl && !rl.ok) {
     const message =
       rl.reason === "daily"
         ? feedbackSubmitted
@@ -201,11 +209,11 @@ export async function POST(req: Request) {
     );
   }
 
-  const ipRl = await checkIpRateLimit(req, "scoring");
+  const ipRl = await checkAiNormalUse(req, "scoring", usage);
   if (!ipRl.ok) {
     return NextResponse.json(
-      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt },
-      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
+      { error: ipRl.reason === "unavailable" ? "rate_limit_unavailable" : "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, scope: ipRl.scope, resetAt: ipRl.resetAt },
+      { status: ipRl.reason === "unavailable" ? 503 : 429, headers: { ...usage.headers, "X-Error-Type": "rate_limited" } },
     );
   }
 
@@ -229,14 +237,17 @@ export async function POST(req: Request) {
 
   // CLAUDE.md §0 hard cap: stop new real AI requests at ¥50,000/month.
   // （mock は上の分岐で返済み＝ここに来るのは実課金リクエストのみ）
-  const cap = await checkMonthlyCostCap();
+  const cap = await checkMonthlyCostCap(provider.name);
   if (!cap.allowed) {
+    if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
     return NextResponse.json(
       {
-        error: "cost_capped",
-        message: "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+        error: cap.reason ?? "cost_capped",
+        message: cap.reason === "budget_unavailable"
+          ? "AI費用の状態を確認できないため、生成を一時停止しています。少し待ってから再試行してください。"
+          : "サービス全体の今月のAI費用上限に達したため、生成を停止しています。翌月初に再開します。",
       },
-      { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+      { status: 503, headers: { "X-Error-Type": cap.reason ?? "cost_capped" } },
     );
   }
 
@@ -249,6 +260,9 @@ export async function POST(req: Request) {
       let buf = "";
       // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
       const completed: { value?: StreamCompletion } = {};
+      const usageDenial = await consumeAiUsage(usage, provider.name);
+      if (usageDenial) return usageDenial;
+      const admissionHeaders = usage.headers;
       try {
         for await (const chunk of provider.streamChat({
           system: SCORING_SYSTEM_PROMPT,
@@ -291,7 +305,7 @@ export async function POST(req: Request) {
           extra: { questionId: question.id, provider: provider.name, model },
         });
         return NextResponse.json(gradingUnavailable("provider_error"), {
-          status: 503, headers: { "X-Grading-Mode": "unavailable" },
+          status: 503, headers: { ...admissionHeaders, "X-Grading-Mode": "unavailable" },
         });
       }
 
@@ -336,15 +350,18 @@ export async function POST(req: Request) {
           }),
         });
         return NextResponse.json(gradingUnavailable(usage?.truncated ? "truncated_response" : "invalid_response"), {
-          status: 503, headers: { "X-Grading-Mode": "unavailable" },
+          status: 503, headers: { ...admissionHeaders, "X-Grading-Mode": "unavailable" },
         });
       }
   return NextResponse.json({ ...parsed, status: "graded" }, {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "X-RateLimit-Limit": String(rl.limit),
-      "X-RateLimit-Remaining": String(rl.remaining),
-      "X-RateLimit-Reset": String(rl.resetAt),
+      ...(rl ? {
+        "X-RateLimit-Limit": String(rl.limit),
+        "X-RateLimit-Remaining": String(rl.remaining),
+        "X-RateLimit-Reset": String(rl.resetAt),
+      } : {}),
+      ...usage.headers,
       "X-Provider": provider.name,
     },
   });

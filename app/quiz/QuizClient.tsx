@@ -7,7 +7,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { startSession } from "@/lib/motivation/session";
 import { orderByPriority } from "@/lib/learning/spaced-repetition";
 import { aggregateByCategory } from "@/lib/learning/analytics";
-import { Loader2 } from "lucide-react";
+import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeTransition";
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
@@ -89,7 +89,7 @@ async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signa
 }
 
 function resetLabel(access: PracticeAccess | null) {
-  if (!access) return null;
+  if (!access || !Number.isFinite(new Date(access.resetAt).getTime())) return null;
   return new Intl.DateTimeFormat("ja-JP", {
     timeZone: "Asia/Tokyo", month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23",
   }).format(new Date(access.resetAt)) + "（日本時間）";
@@ -128,6 +128,15 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
+  const transitionHost = React.useRef<HTMLDivElement>(null);
+  const navigating = React.useRef(false);
+  // Layout timing prevents a paint at the old footer after the question collapses.
+  React.useLayoutEffect(() => {
+    if (!navigating.current) return;
+    transitionHost.current?.focus({ preventScroll: true });
+    transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
+    if (current || loadError) navigating.current = false;
+  }, [index, current, loadError]);
   const cache = React.useRef<Map<string, Question>>(new Map());
   const initializedPool = React.useRef<string | null>(null);
 
@@ -223,14 +232,18 @@ export function QuizClient({
   }, [sessionIds, index, mode, retryCount, billingGateEnabled]);
 
   const handleNext = React.useCallback(() => {
+    if (navigating.current) return;
+    navigating.current = true;
+    transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
+    setCurrent(null);
+    setAccess(null);
+    setLoadError(false);
     setIndex((i) => i + 1);
   }, []);
 
   if (!sessionIds) {
     return (
-      <div className="flex flex-1 items-center justify-center p-8">
-        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
-      </div>
+      <PracticeLoading />
     );
   }
 
@@ -248,6 +261,11 @@ export function QuizClient({
   if (loadError) {
     const reset = resetLabel(access);
     const loginHref = `/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+    if (accessError === "daily_limit") {
+      return <div ref={transitionHost} tabIndex={-1} aria-label="本日の無料演習の終了" className="min-h-[100dvh] scroll-mt-24 outline-none">
+        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} />
+      </div>;
+    }
     const message = accessError === "daily_limit"
       ? `本日の無料連続演習枠を使い切りました。${reset ? `${reset}に再開できます。` : "次の無料枠更新後に再開できます。"}`
       : accessError === "sign_in_required"
@@ -257,7 +275,7 @@ export function QuizClient({
           : accessError === "guest_rate_limited"
             ? `短時間の操作が続いています。${access?.retryAfter != null ? `${access.retryAfter}秒ほど待ってから` : "少し待ってから"}もう一度お試しください。`
             : "問題を読み込めませんでした。少し待ってからもう一度お試しください。";
-    return <div role="alert" className="mx-auto max-w-xl space-y-4 px-4 py-10 text-center">
+    return <div ref={transitionHost} tabIndex={-1} role="alert" className="mx-auto min-h-[100dvh] max-w-xl scroll-mt-24 space-y-4 px-4 py-10 text-center outline-none">
       <p className="font-semibold">{message}</p>
       <p>この端末に保存した学習記録は削除されません。履歴の同期などは無料ログインで利用できます。</p>
       {accessError === "daily_limit" ? <p>ログインだけで本日の無料枠が追加されることはありません。</p> : null}
@@ -274,7 +292,7 @@ export function QuizClient({
   }
 
   return (
-    <>
+    <div ref={transitionHost} tabIndex={-1} aria-label={`${index + 1}問目 / ${sessionIds.length}問`} className="min-h-[100dvh] scroll-mt-24 outline-none">
       {access?.kind === "guest" ? (
         <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
           <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>
@@ -294,6 +312,6 @@ export function QuizClient({
       completionShareHref={completionShareHref}
       onNext={handleNext}
       />
-    </>
+    </div>
   );
 }

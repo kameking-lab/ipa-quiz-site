@@ -25,6 +25,7 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
     return destination.href;
   }
   const selectedGroupIds = entry ? [entry.group] : groupIds;
+  const surveyOnly = selectedGroupIds?.length === 1 && selectedGroupIds[0] === "survey-assistant";
   const groups = selectedGroupIds
     ? EXAM_GROUPS.filter((group) => selectedGroupIds.includes(group.id))
     : EXAM_GROUPS;
@@ -38,9 +39,9 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6">
         <li>
-          問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。
+          {surveyOnly ? "問題は国土地理院が公表した測量士補試験の原本PDFに基づきます。当サイトは国土地理院とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "survey-assistant") ? "問題は公益財団法人安全衛生技術試験協会および国土地理院の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。各演習ページから原本を確認できます。" : "問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。"}
         </li>
-        {entry?.sourceMode === "official-archive-copy" ? (
+        {surveyOnly ? <li>原本PDFと図表は取得した原本の保存コピーです。原本の数値・式・公式解答は変更していません。2026年No.12は参照専用で、採点・成績・解答履歴・復習には含めません。</li> : entry?.sourceMode === "official-archive-copy" ? (
           <li>この回の旧公式PDFは公開を終了しているため、旧公式索引と照合した公開保存コピー（osh-lab.com）へリンクします。</li>
         ) : null}
         {groups.map((group) => (

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput } from "./NativeBAnswer";
@@ -10,9 +11,12 @@ import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKey
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+import { PracticeLoading } from "./PracticeTransition";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
+import { submitPetLearning } from "@/components/pet/submitPetLearning";
+import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import { QuestionCard } from "./QuestionCard";
 import { DescriptiveAnswerCard } from "./DescriptiveAnswerCard";
 import { NumericAnswerInput } from "./NumericAnswerInput";
@@ -23,12 +27,7 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
-import { GenerateSimilar } from "./GenerateSimilar";
-import { isOfficialPastOnlyExam } from "@/lib/questions/past-question-policy";
-import {
-  CopilotMobileSheet,
-  CopilotDesktopFloating,
-} from "@/components/copilot/CopilotPanel";
+import { CopilotInline } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
@@ -37,7 +36,7 @@ import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Loader2, Timer, Share2, Check, Copy, Sparkles } from "lucide-react";
+import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
@@ -76,7 +75,14 @@ interface Props {
 }
 
 
-export function QuizPlayer({
+export function QuizPlayer(props: Props) {
+  if (isReferenceOnlyQuestionId(props.question?.id)) {
+    return <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>;
+  }
+  return <ScoredQuizPlayer {...props} />;
+}
+
+function ScoredQuizPlayer({
   question,
   index,
   total,
@@ -100,6 +106,7 @@ export function QuizPlayer({
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
+  const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
@@ -123,7 +130,7 @@ export function QuizPlayer({
 
   // 最初の問題がロードされた瞬間に quiz_started を一度だけ送信
   React.useEffect(() => {
-    if (quizStartedFiredRef.current || !question) return;
+    if (quizStartedFiredRef.current || !question || isReferenceOnlyQuestionId(question.id)) return;
     quizStartedFiredRef.current = true;
     posthogCapture("quiz_started", {
       exam: question.exam,
@@ -139,7 +146,7 @@ export function QuizPlayer({
   }, [completed]);
 
   React.useEffect(() => {
-    if (!question) return;
+    if (!question || isReferenceOnlyQuestionId(question.id)) return;
      
     setNativeBResult(undefined);
     setSelected(undefined);
@@ -170,15 +177,13 @@ export function QuizPlayer({
       return;
     }
     onNext();
-    requestAnimationFrame(() => {
-      questionStartRef.current?.focus({ preventScroll: true });
-      questionStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
-    });
   }, [index, total, onNext]);
 
   const commitAnswer = React.useCallback(
-    (selection: string, correct: boolean, nativeBResult?: NativeBGrade) => {
-      if (!question) return;
+    (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
+      if (!question || isReferenceOnlyQuestionId(question.id)) return;
+      // Explicit input only: grade, owner and timestamps are never reward authority.
+      submitPetLearning({ source: "question", questionId: question.id, answer: petAnswer }, { source: "question", question });
       setRevealed(true);
       requestAnimationFrame(() => {
         answerResultRef.current?.focus({ preventScroll: true });
@@ -244,50 +249,53 @@ export function QuizPlayer({
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
-    if (!question?.nativeB || question.type !== "native-b" || revealed) return;
+    if (!question?.nativeB || isReferenceOnlyQuestionId(question.id) || question.type !== "native-b" || revealed) return;
     const result = gradeNativeB(question.nativeB, selections);
     setNativeBResult(result);
-    commitAnswer(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, result);
+    const selectedSlots = Object.fromEntries(Object.entries(selections).filter((entry): entry is [string, string] => typeof entry[1] === "string"));
+    commitAnswer(serializeNativeBSelections(question.nativeB, selections), result.isCorrect, { kind: "native-b", selections: selectedSlots }, result);
   }, [question, revealed, commitAnswer]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed || question.type === "ordering") return;
+      if (!question || isReferenceOnlyQuestionId(question.id) || revealed || question.type === "ordering") return;
       const required = requiredSelectionCount(question);
       if (required > 1) {
         const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
         setPicked(next);
-        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required));
+        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next, required), { kind: "multiple-choice", selected: [...next] });
         return;
       }
       setSelected(key);
-      commitAnswer(key, isAcceptedAnswer(question.answer, key));
+      commitAnswer(key, isAcceptedAnswer(question.answer, key), { kind: "multiple-choice", selected: [key] });
     },
     [question, revealed, picked, commitAnswer],
   );
 
   const onNumericAnswer = React.useCallback((value: string) => {
-    if (!question || question.type !== "numeric" || revealed) return;
+    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "numeric" || revealed) return;
     setNumericSelected(value);
-    commitAnswer(value, isNumericAnswerCorrect(question, value));
+    commitAnswer(value, isNumericAnswerCorrect(question, value), { kind: "numeric", value });
   }, [question, revealed, commitAnswer]);
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
-    if (!question || question.type !== "ordering" || revealed) return;
+    if (!question || isReferenceOnlyQuestionId(question.id) || question.type !== "ordering" || revealed) return;
     setOrderedSelected(value);
-    commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value));
+    commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [question, revealed, commitAnswer]);
 
   const toggleStar = React.useCallback(() => {
-    if (!question) return;
+    if (!question || isReferenceOnlyQuestionId(question.id)) return;
     const nowStarred = history.toggleStar(question.id);
     setStarred(nowStarred);
   }, [question, history]);
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (!question || (question.exam === "chosashi" && question.type === "descriptive")) return;
+      if (!question || isReferenceOnlyQuestionId(question.id) || (question.exam === "chosashi" && question.type === "descriptive")) return;
+      if (e.isComposing || e.keyCode === 229) return;
       if (e.target instanceof HTMLElement) {
+        if (e.target.isContentEditable || e.target.closest('[contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="combobox"]')) return;
         const control = e.target.closest('input, textarea, select, button, summary, a, [contenteditable="true"], [role="dialog"]');
         const choiceShortcut = !revealed && e.target.closest('[role="radio"], [role="checkbox"]') && CHOICE_SHORTCUTS.includes(e.key);
         if (control && !choiceShortcut) return;
@@ -303,7 +311,8 @@ export function QuizPlayer({
           return;
         }
       } else if (revealed) {
-        if (e.key === "Enter" || e.key === " " || e.key === "ArrowRight") {
+        if ((e.target === document.body || e.target === document || e.target === window) &&
+          (e.key === "Enter" || e.key === " " || e.key === "ArrowRight")) {
           e.preventDefault();
           goNext();
           return;
@@ -389,6 +398,7 @@ export function QuizPlayer({
         onReviewLast={question && !(question.exam === "chosashi" && question.type === "descriptive") && revealed ? () => {
           setCompleted(false);
           setCopilotQuery("open");
+            setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 }));
         } : undefined}
         onRetry={() => {
           setStats({ answered: 0, correct: 0 });
@@ -405,9 +415,7 @@ export function QuizPlayer({
 
   if (!question) {
     return (
-      <div className="flex flex-1 items-center justify-center p-8">
-        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
-      </div>
+      <PracticeLoading index={index} total={total} />
     );
   }
 
@@ -558,6 +566,13 @@ export function QuizPlayer({
             </div>
 
             <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
+            <CopilotInline
+              question={question}
+              selectedChoice={selectionLabel}
+              isCorrect={revealed ? isCorrect : undefined}
+              focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
+            />
+
             {revealed && (
               <div ref={answerResultRef} tabIndex={-1} className="scroll-mt-80 space-y-4 outline-none" aria-label="解答結果">
                 <ExplanationCard
@@ -569,16 +584,15 @@ export function QuizPlayer({
                   onToggleStar={toggleStar}
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
-                  onAskAI={() => setCopilotQuery("open")}
+                  onAskAI={() => { setCopilotQuery("open"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 })); }}
                   onAnalyzeWrong={
-                    !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
+                    !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined
                   }
                 />
                 <Button asChild variant="outline" className="w-full sm:w-auto">
                   <Link href={questionPagePath(question)}>公開解説・誤り報告を開く</Link>
                 </Button>
                 <ExamNoteGuide exam={question.exam as ExamCode} />
-                {!native && !isOfficialPastOnlyExam(question.exam) && question.type !== "ordering" && question.type !== "numeric" && <GenerateSimilar baseQuestion={question} />}
                 <QuestionCommentBox questionId={question.id} />
               </div>
             )}
@@ -601,32 +615,6 @@ export function QuizPlayer({
         </main>
 
       </div>
-
-      <CopilotDesktopFloating
-        question={question}
-        selectedChoice={selectionLabel}
-        isCorrect={revealed ? isCorrect : undefined}
-        initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-        defaultOpen={copilotQuery !== null}
-        headerRight={
-          copilotQuery === "why-wrong" ? (
-            <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] text-red-700 dark:bg-red-900 dark:text-red-200">
-              誤答分析待機
-            </span>
-          ) : null
-        }
-        key={`desktop-${question.id}-${copilotQuery ?? ""}`}
-      />
-
-      <CopilotMobileSheet
-        question={question}
-        selectedChoice={selectionLabel}
-        isCorrect={revealed ? isCorrect : undefined}
-        initialPrompt={copilotQuery === "why-wrong" ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined}
-        defaultOpen={copilotQuery !== null}
-        key={`mobile-${question.id}-${copilotQuery ?? ""}`}
-      />
-
 
       <FireworksBurst
         active={burst !== null}

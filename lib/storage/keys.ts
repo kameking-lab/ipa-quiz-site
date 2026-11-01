@@ -1,4 +1,7 @@
 export const LS_KEYS = {
+  petCommandReviewOutbox: "ipa-quiz:pet-command-review-outbox:v1",
+  petCommandOutbox: "ipa-quiz:pet-command-outbox:v1",
+  petLearning: "ipa-quiz:pet-learning:v1",
   studyReward: "ipa-quiz:study-reward:v1",
   studyRewardPreferences: "ipa-quiz:study-reward-preferences:v1",
   studyPresenceVisitor: "study-presence-visitor",

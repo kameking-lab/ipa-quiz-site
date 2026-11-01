@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
+import { QuizResumeLinks } from "./QuizResumeLinks";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 interface Status { billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order }: { order: string }) {
@@ -21,6 +22,6 @@ export function PurchaseStatus({ order }: { order: string }) {
     {status?.billingModel === "subscription" ? <><p>月額の自動更新契約です。購入画面から戻る操作と契約の解約は別です。</p>
       {status.subscription?.cancelAtPeriodEnd && <p>期間末の解約を予約しています。次回の自動更新は停止します。</p>}
       {status.canManage && <ManageSubscriptionButton />}</> : <p>{status ? "自動更新はありません。" : "契約状況を確認しています。"}購入画面から戻っただけでは権限は追加されません。</p>}
-    <Link className="block underline" href="/billing">条件・サポートに戻る</Link><Link className="block underline" href="/modes/year">学習に戻る</Link>
+    <Link className="block underline" href="/billing">条件・サポートに戻る</Link><QuizResumeLinks order={order} showLogin />
   </div>;
 }

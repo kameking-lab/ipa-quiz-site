@@ -1,4 +1,5 @@
 import "server-only";
+import { loadSurveyAssistantPaper } from "@/lib/exam-library/survey-assistant-candidate";
 /**
  * 1回分の問題JSONをサーバー側で読み込む。
  * 全回の問題をクライアントへ同梱しないため、ページ単位で fs から読む。
@@ -30,6 +31,8 @@ function paperFile(id: string): string | null {
 
 /** カタログ外ID・未取込・不正JSONは null。検証済み問題が0件の場合も null。 */
 export function loadExamPaper(id: string): readonly ExamQuestion[] | null {
+  const survey = loadSurveyAssistantPaper(id);
+  if (survey) return survey;
   if (paperCache.has(id)) return paperCache.get(id) ?? null;
   const file = paperFile(id);
   let questions: readonly ExamQuestion[] | null = null;
@@ -65,6 +68,7 @@ export function loadExamPaper(id: string): readonly ExamQuestion[] | null {
 }
 
 export function hasExamPaper(id: string): boolean {
+  if (loadSurveyAssistantPaper(id)) return true;
   const file = paperFile(id);
   return file !== null && existsSync(file);
 }

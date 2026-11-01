@@ -7,6 +7,7 @@ export function AppliedExtensionPage({ data, question }: { data: Fp1AppliedExten
   return <main data-study-presence-exam="fp1" className="mx-auto w-full min-w-0 max-w-3xl break-words px-4 py-8 sm:py-12">
     <nav className="mb-5 text-sm"><Link href="/fp1">FP1級</Link> / <Link href={`/fp1/applied/${data.edition}`}>{editionLabel} 学科応用編</Link> / 問{question.number}</nav>
     <h1 className="text-2xl font-bold">{editionLabel} 学科応用編 問{question.number}</h1>
+    <p className="mt-3 text-sm leading-6 text-muted-foreground">このページは問題・模範解答・解説を参照するためのものです。解答入力・採点には対応しておらず、閲覧によって解答履歴は追加されません。</p>
     <p className="my-4 text-sm">法令基準日 {data.lawReferenceDate}。{data.edition === "202605" ? "財務指標は本問の定義と設例に従います。問60の住所等変更登記は原問が明示する2026年4月1日施行の制度で解答します。" : "設例と公式問題の条件に従って解答します。"}</p>
     <AppliedExtensionSharedCase sharedCase={sharedCase} pdfUrl={data.sourceQuestionUrl} />
     <section aria-label="問題文" className="mt-5 rounded-2xl border border-border bg-card p-5"><h2 className="font-semibold">問{question.number} {question.title}</h2><AppliedExtensionQuestionBody question={question} pdfUrl={data.sourceQuestionUrl} /></section>

@@ -21,20 +21,10 @@ _※ GEMINI_API_KEY が未設定のため、モックレスポンスを返して
 次回は問題文の条件を読み上げるように追って確認してみてください。
 
 _※ モックレスポンス。API キー設定後に実データで応答します。_`,
-  similar: `### 類題（モック応答）
+  retiredGeneration: `### 原問の復習（モック応答）
 
-**問題**: 本問と同じ分野で、論点を少しずらした設定の問題を1問生成します。
-
-- ア) 選択肢1
-- イ) 選択肢2
-- ウ) 選択肢3
-- エ) 選択肢4
-
-正解: イ
-
-**解説**: 本問で学んだ判定基準をそのまま適用すれば、イが適切と判断できます。
-
-_※ モックレスポンス。_`,
+独自の類題は作成しません。表示中の原問の条件・選択肢と掲載解説を確認してください。
+このモックは新しい設問や正解を提供しません。`,
   default: `### AIコパイロット（モック応答）
 
 ご質問を受け付けました。本来ならここで Gemini が詳細な解説を返しますが、現在は GEMINI_API_KEY が未設定のためモックレスポンスを表示しています。
@@ -54,7 +44,7 @@ function pickReply(messages: { content: string }[]): string {
     return SAMPLE_RESPONSES.whyWrong;
   }
   if (last.includes("類題") || last.includes("similar")) {
-    return SAMPLE_RESPONSES.similar;
+    return SAMPLE_RESPONSES.retiredGeneration;
   }
   if (last.includes("用語") || last.includes("解説") || last.includes("term")) {
     return SAMPLE_RESPONSES.term;

@@ -3,6 +3,8 @@ import { SafetySiteHeader } from "@/components/SafetySiteHeader";
 
 import * as React from "react";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
+import { useMobileMenu } from "@/components/useMobileMenu";
 import { usePathname, useSearchParams } from "next/navigation";
 import {
   Menu,
@@ -48,7 +50,7 @@ function SearchAwareSiteHeader() {
 function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | null }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useMobileMenu(pathname);
   const [dropOpen, setDropOpen] = React.useState(false);
 
   const segments = pathname?.split("/") ?? [];
@@ -131,6 +133,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
             className="hidden items-center gap-0.5 md:flex"
             aria-label="グローバルナビゲーション"
           >
+            <Link href={PRICE_PAGE_LINK.href} className="rounded-md px-3 py-1.5 text-sm font-medium hover:bg-muted" aria-current={pathname === PRICE_PAGE_LINK.href ? "page" : undefined}>{PRICE_PAGE_LINK.label}</Link>
             {/* 問題を解く dropdown */}
             <div
               className="relative"
@@ -259,25 +262,26 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
-                className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+                className="inline-flex min-h-11 items-center justify-center gap-1 rounded-md px-2 text-muted-foreground transition hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
                 aria-label="メニューを開く"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-5 w-5" aria-hidden="true" /><span className="text-sm font-medium">メニュー</span>
               </button>
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="flex w-[80vw] max-w-sm flex-col gap-6"
+              className="flex h-dvh w-[min(90vw,24rem)] flex-col gap-4 overflow-hidden pb-[max(1.5rem,env(safe-area-inset-bottom))] [&>button]:flex [&>button]:min-h-11 [&>button]:min-w-11 [&>button]:items-center [&>button]:justify-center [&>button]:gap-1 [&>button]:px-2 [&>button>span]:not-sr-only"
             >
-              <SheetHeader>
+              <SheetHeader className="shrink-0 pr-20">
                 <SheetTitle className="flex items-center gap-2">
                   <SiteLogo />
                 </SheetTitle>
               </SheetHeader>
               <nav
-                className="flex flex-col gap-1 overflow-y-auto"
+                className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain"
                 aria-label="モバイルナビゲーション"
               >
+                  <SheetClose asChild><Link href={PRICE_PAGE_LINK.href} className="rounded-lg px-3 py-3 text-sm font-medium hover:bg-muted">{PRICE_PAGE_LINK.label}</Link></SheetClose>
                 <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   問題演習
                 </p>
@@ -444,7 +448,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                   <ThemeToggle />
                 </div>
               </nav>
-              <div className="mt-auto">
+              <div className="mt-auto shrink-0">
                 <StreakBadge className="w-full justify-center" />
               </div>
             </SheetContent>

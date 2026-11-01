@@ -6,7 +6,7 @@
  * それ以外は「採点しない」を返し、推測した正答で判定しない（fail-closed）。
  */
 
-export const EXAM_GROUP_IDS = ["lckohyo", "emkohyo", "cskohyo"] as const;
+export const EXAM_GROUP_IDS = ["lckohyo", "emkohyo", "cskohyo", "survey-assistant"] as const;
 export type ExamGroupId = (typeof EXAM_GROUP_IDS)[number];
 
 export type ExamDateKind = "publication" | "exam";
@@ -81,6 +81,12 @@ export interface ExamChoiceExplanation {
 }
 
 export interface ExamQuestion {
+  referenceOnly?: boolean;
+  referenceNotice?: string;
+  officialKey?: number;
+  originalPdf?: string;
+  answerPdf?: string;
+  referenceReasons?: readonly { number: number; reason: string }[];
   id: string;
   number: number;
   /** 取り込み時の原文。解説照合と検索用に改変せず保持。 */
@@ -105,6 +111,7 @@ export interface ExamGroupInfo {
 }
 
 export const EXAM_GROUPS: readonly ExamGroupInfo[] = [
+  { id: "survey-assistant", title: "測量士補試験", shortTitle: "測量士補", description: "原本と学習用解説。2026年No.12は参照専用。", dateNote: "日付は試験実施日です。" },
   {
     id: "lckohyo",
     title: "免許試験の公表問題",
@@ -328,6 +335,7 @@ export function parseExamPaper(value: unknown, examId: string): ExamQuestion[] {
 
 export function isScorableQuestion(question: ExamQuestion): boolean {
   return (
+    !question.referenceOnly && question.id !== "private-gsi-survey-assistant-20261021-2026-q12" &&
     question.answerAuthority === "official" &&
     question.correctChoice !== null &&
     question.correctChoice >= 1 &&
