@@ -1,13 +1,12 @@
-import type { DetailedHTMLProps, HTMLAttributes } from "react";
+import { createElement } from "react";
 
-declare module "react" {
-  namespace JSX {
-    interface IntrinsicElements {
-      math: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
-      mfrac: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
-      mn: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
-    }
-  }
+function Fraction({ numerator, denominator }: { numerator: string; denominator: string }) {
+  return createElement("math", { "aria-hidden": true },
+    createElement("mfrac", null,
+      createElement("mn", null, numerator),
+      createElement("mn", null, denominator),
+    ),
+  );
 }
 
 const ORIGINAL = "/images/denken3/2026-upper-native/theory-q05-p08.jpg";
@@ -62,8 +61,8 @@ export function CircuitEquivalentGuide() {
     <ol className="mt-3 list-decimal space-y-2 pl-5">
       <li>同じ向き・同じ起電力の電池を並列にすると、起電力は 9 V のまま。内部抵抗は r ÷ 4 = 0.025 Ω。</li>
       <li>全抵抗は 0.025 + 0.5 = 0.525 Ω。</li>
-      <li>電流は I = 9 ÷ 0.525 = <math aria-hidden="true"><mfrac><mn>120</mn><mn>7</mn></mfrac></math>（120 ÷ 7）A。</li>
-      <li>負荷の電力は P = I²R = <math aria-hidden="true"><mfrac><mn>7200</mn><mn>49</mn></mfrac></math>（7200 ÷ 49）W ≈ 146.94 W。最も近い値は (5) 147 W。</li>
+      <li>電流は I = 9 ÷ 0.525 = <Fraction numerator="120" denominator="7" />（120 ÷ 7）A。</li>
+      <li>負荷の電力は P = I²R = <Fraction numerator="7200" denominator="49" />（7200 ÷ 49）W ≈ 146.94 W。最も近い値は (5) 147 W。</li>
     </ol>
     <p className="mt-4">内部抵抗を0 Ωと仮定した場合でも、負荷電力は最大 9² ÷ 0.5 = 162 W です。</p>
     <div className="mt-2 overflow-x-auto">
