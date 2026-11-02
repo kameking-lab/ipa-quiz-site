@@ -1,0 +1,88 @@
+{
+  "officialSupplementPdf": "C:\\Users\\kanet\\AppData\\Local\\Temp\\rigaku-60-source-20261010\\sources\\tp250428-08b_02.pdf",
+  "officialSupplementPdfSha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468",
+  "physicalPage": 9,
+  "zeroBasedPageIndex": 8,
+  "render": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\figure-qa-2025\\pm20-official-physical9-rotated-288dpi.png",
+  "renderSha256": "8aae571a9d812c93b7eda214da3b125bed89b522cfd504ac535bd67c19ab36ca",
+  "renderMethod": "PyMuPDF page.get_pixmap(matrix=fitz.Matrix(4,4).prerotate(90),alpha=False); original source PNG unchanged",
+  "renderPixels": [
+    3481,
+    2506
+  ],
+  "originalLegend": "A and B each explicitly 25 mm/sec, 1 mV=10 mm, V5",
+  "gridMajorLineXPixel": [
+    1082,
+    1158,
+    1233,
+    1308,
+    1384,
+    1459,
+    1535,
+    1610,
+    1685
+  ],
+  "gridMajorSpacingPixelApprox": 75.5,
+  "gridSmallSpacingPixelApprox": 15.1,
+  "coordinateSystem": "x in derived PNG pixels from left edge; peaks visually identified at R apex, grid at major dark vertical lines",
+  "A": {
+    "rPeakXPixel": [
+      1107,
+      1422,
+      1735,
+      2051,
+      2363,
+      2673
+    ],
+    "rrPixel": [
+      315,
+      313,
+      316,
+      312,
+      310
+    ],
+    "medianRrPixel": 313,
+    "medianLargeSquares": 4.145695364238411,
+    "medianSmallSquares": 20.728476821192054,
+    "heartRatePerMin": 72.36421725239616
+  },
+  "B": {
+    "rPeakXPixel": [
+      1083,
+      1294,
+      1506,
+      1717,
+      1924,
+      2132,
+      2339,
+      2548,
+      2757
+    ],
+    "rrPixel": [
+      211,
+      212,
+      211,
+      207,
+      208,
+      207,
+      209,
+      209
+    ],
+    "medianRrPixel": 209.0,
+    "medianLargeSquares": 2.7682119205298013,
+    "medianSmallSquares": 13.841059602649008,
+    "heartRatePerMin": 108.37320574162679
+  },
+  "formula": "At 25 mm/s, one 5-mm large square=0.2 s; heart rate=300/(R-R large squares)=1500/(R-R small squares).",
+  "boundaryComparison": {
+    "AClaimLessThan60": false,
+    "BClaimAtLeast120": false
+  },
+  "independentClinicalTeachingSource": {
+    "url": "https://cvphysiology.com/arrhythmias/a020",
+    "author": "Richard E. Klabunde, PhD; medical school physiology professor",
+    "evidence": "At 25 mm/s, large square 0.2 s, small square 0.04 s, rate 300/R-R large squares or 1500/R-R small squares."
+  },
+  "officialAnswer": "4",
+  "measurementUncertainty": "Peak localization and line spacing have a few-pixel visual uncertainty; intervals remain well away from 5 large squares (60/min) and 2.5 large squares (120/min)."
+}

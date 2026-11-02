@@ -1,0 +1,66 @@
+{
+  "id": "rigaku-ryohoshi-2026-annual-pm-q35",
+  "scope": "既存保存稿PM35の有限な専門QA。元候補の設問・五肢・正答を確認し、NCI PDQの既存URL一件だけを根拠として使用。旧稿・旧QA・公式キーは未編集。",
+  "sourceCandidate": "C:/wt/kakomon-pt-unowned-20261011/data/prepared-medical/rigaku-saved-held70/candidates70.json",
+  "sourceUrl": "https://www.cancer.gov/about-cancer/treatment/side-effects/pain/pain-hp-pdq",
+  "officialAnswerNumberInCandidate": "2",
+  "answerInCandidate": "イ",
+  "publicGo": false,
+  "professionalAcceptance": "pending",
+  "proposedChanges": [
+    {
+      "field": "choiceExplanations.ウ",
+      "before": "がんそのもの、治療、併存疾患など原因は複合し得る。常に単一とはいえない。",
+      "after": "がん、治療、併存病態などの要因が重なり得る。NCI PDQは痛みがしばしば多因子性だと述べており、選択肢の『多くの場合、単一の原因を指摘できる』という一般化とは整合しない。ただし、単一原因を指摘できる割合をこの資料から数値化することはできない。",
+      "reason": "元の『多くの場合』に対して現稿は『常に』を否定しており、量化が一致しない。NCIの『しばしば多因子性』の範囲に限定した。",
+      "sourceLocation": "General Information About Cancer Pain > effective pain management, step 2-3（画面行20-26）；Causes of Cancer Pain（画面行52-63）",
+      "evidence": "NCIは痛みの原因をがん・治療・他の原因・組合せに分け、しばしば多因子性と記載する。単一原因の頻度は明示しない。"
+    }
+  ],
+  "choiceReview": {
+    "ア": {
+      "status": "supported",
+      "currentExplanation": "体動など誘因があり予測できる突出痛もあるため、全て予測不能とはいえない。",
+      "sourceLocation": "Background and Definitions > Breakthrough Pain（画面行182-184）",
+      "evidence": "incident painを体動など特定の行為・要因に関連する突出痛として説明しており、『予測できない』の全称命題に反例がある。"
+    },
+    "イ": {
+      "status": "supported",
+      "currentExplanation": "正答。疼痛評価では心理的苦痛を含め、対応を調整する。",
+      "sourceLocation": "General Information > step 3-4（画面行26-37）；Background and Definitions（画面行42-48）；Pain Assessment（画面行217-230）",
+      "evidence": "心理的苦痛を評価し、心理社会的問題に応じた治療資源への紹介を含めると記載。精神的ケアを管理に含める趣旨を支持。"
+    },
+    "ウ": {
+      "status": "partial",
+      "currentExplanation": "がんそのもの、治療、併存疾患など原因は複合し得る。常に単一とはいえない。",
+      "proposedExplanation": "がん、治療、併存病態などの要因が重なり得る。NCI PDQは痛みがしばしば多因子性だと述べており、選択肢の『多くの場合、単一の原因を指摘できる』という一般化とは整合しない。ただし、単一原因を指摘できる割合をこの資料から数値化することはできない。",
+      "sourceLocation": "General Information > step 2-3（画面行20-26）；Causes of Cancer Pain（画面行52-63）",
+      "evidence": "多因子性と原因の組合せは直接支持。『多くの場合』という頻度判定の定量資料はPDQ本文にない。",
+      "hold": "単一原因を指摘できる割合や『多くの場合』との厳密な比較は、このNCI PDQ一件では確定しない。"
+    },
+    "エ": {
+      "status": "hold",
+      "currentExplanation": "診断時にも疼痛を伴い得る。",
+      "sourceLocation": "Prevalence（画面行49-51）；Causes of Cancer Pain（画面行52-63）",
+      "evidence": "がん患者全体の疼痛と原因の種類は記載されるが、がん診断時点に限った疼痛の有無は本文で明示されない。",
+      "hold": "『診断された時点』という時間条件を直接支持する原典が別途必要。現稿は今回の資料だけで専門受入れ不可。"
+    },
+    "オ": {
+      "status": "supported",
+      "currentExplanation": "軽度疼痛への積極的なオピオイド使用を一般則としない。痛みの強さと個別状況で選択する。",
+      "sourceLocation": "Background and Definitions（画面行46-48）；Pharmacological Therapies > Acetaminophen and NSAIDs（画面行315-319）",
+      "evidence": "PDQは疼痛の重症度に基づく鎮痛薬選択を記載し、軽度疼痛ではアセトアミノフェン・NSAIDsをしばしば開始薬とする。個別の例外を排除せず、軽度なら積極的にオピオイドを使うとの一般則を支持しない。"
+    }
+  },
+  "overallExplanationReview": {
+    "status": "partial",
+    "issue": "現稿の『病期を問わない痛み』はNCIのがん患者全体の有病率からの拡張であり、診断時点の疼痛を直接確認していない。",
+    "suggestedFiniteEdit": "NCIの専門家向けPDQは、疼痛の多因子性、心理的苦痛の評価、活動に関連した突出痛、重症度に応じた薬剤選択を記載する。診断時点の疼痛については別原典で確認を要する。",
+    "application": "提案のみ。新規全稿・旧稿への書込みなし。"
+  },
+  "remainingRequirements": [
+    "肢ウの『多くの場合』を定量的に判定できる一次資料または専門家確認。",
+    "肢エの診断時点の疼痛を直接示す一次資料。",
+    "親担当の公式問題・正答画像照合、および独立した専門受入れ。"
+  ]
+}

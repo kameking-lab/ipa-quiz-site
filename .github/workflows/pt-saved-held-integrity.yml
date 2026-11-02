@@ -1,0 +1,23 @@
+name: PT saved manuscript integrity
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/prepared-medical/rigaku-saved-held70/**'
+      - '.github/workflows/pt-saved-held-integrity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-gate-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify official keys, full choice reasons, original figures and private gates
+        run: node --test data/prepared-medical/rigaku-saved-held70/validate.test.mjs
