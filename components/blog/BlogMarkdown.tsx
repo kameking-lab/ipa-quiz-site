@@ -6,13 +6,16 @@ import { cn } from "@/lib/utils";
 import type { Element, RootContent } from "hast";
 
 // Match only the existing site-authored article notice; quotations retain their style.
-const articleNotice = "本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず IPA 公式ページ で確認してください。";
+const articleNotices = new Set([
+  "本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず IPA 公式ページ で確認してください。",
+  "本記事は 過去問AI が独自にまとめた学習ガイドです。免除の正式な条件・申請手続き・最新情報は必ず IPA 公式ページ で確認してください。",
+]);
 function nodeText(node: RootContent): string {
   if (node.type === "text") return node.value;
   return "children" in node ? node.children.map(nodeText).join("") : "";
 }
 function isArticleNotice(node?: Element): boolean {
-  return !!node && node.children.map(nodeText).join("").trim() === articleNotice;
+  return !!node && articleNotices.has(node.children.map(nodeText).join("").trim());
 }
 
 export function BlogMarkdown({

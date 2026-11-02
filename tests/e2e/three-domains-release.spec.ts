@@ -56,10 +56,12 @@ test("registered difficulty stays qualified and the existing inline draft is ret
 });
 
 test("only the recognized article notice is upright on the existing article route", async ({ page }) => {
-  await page.goto("/blog/ipa-gozen1-menjo-jouken");
-  const notice = page.locator('blockquote[data-article-notice="true"]');
-  await expect(notice).toHaveCount(1);
-  await expect(notice).toContainText("学習ガイド");
-  await expect(notice).toHaveCSS("font-style", "normal");
-  await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", /https:\/\/www\.ipa\.go\.jp\//);
+  for (const route of ["/blog/ipa-gozen1-menjo-jouken", "/blog/fe-goukaku-benkyouhou"]) {
+    await page.goto(route);
+    const notice = page.locator('blockquote[data-article-notice="true"]');
+    await expect(notice).toHaveCount(1);
+    await expect(notice).toContainText("学習ガイド");
+    await expect(notice).toHaveCSS("font-style", "normal");
+    await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", /https:\/\/www\.ipa\.go\.jp\//);
+  }
 });
