@@ -139,13 +139,15 @@ describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
     expect(bad).toEqual([]);
   });
 
-  it("main sitemap lists every flagship essay deep page, all resolvable", () => {
+  it("main sitemap excludes retired essay hub and all old deep pages", () => {
     const essayPaths = locs(renderMainSitemapXml()).filter((p) =>
       /^\/essay\/[a-z]{2}\//.test(p),
     );
-    // non-vacuous: one entry per real essay question (currently 12 across 5 exams)
+    // Real empty public supply must produce no retired routes.
     expect(essayPaths.length).toBe(getAllEssayQuestions().length);
-    expect(essayPaths.length).toBeGreaterThan(0);
+    expect(getAllEssayQuestions()).toEqual([]);
+    expect(essayPaths).toEqual([]);
+    expect(locs(renderMainSitemapXml())).not.toContain("/essay");
     expect(essayPaths.filter((p) => !isResolvable(p))).toEqual([]);
   });
 });

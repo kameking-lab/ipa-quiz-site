@@ -1,6 +1,8 @@
+// TEST ONLY: original fixture preserves quality contracts; public zero/404 tested separately.
+vi.mock("@/data/essays/sc", async () => await import("@/__tests__/fixtures/archived-sc-essay"));
 import { renderToStaticMarkup } from "react-dom/server";
 import EssaysIndexPage from "@/app/essays/page";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import {
   ESSAY_EXAM_CODES,
   isEssayExamCode,
@@ -219,7 +221,7 @@ describe("essays index→detail URL round-trip (no dead internal links)", () => 
   // インデックスから 404 への死リンク（かつ "0問" カード）が生まれる。
   // 現状は 6 区分すべてに答案があり latent だが、将来データ未整備の区分が
   // 追加された際に死リンクを出す前にここで気付けるよう固定する。
-  it("the rendered index links exactly to nonempty public essay collections", () => {
+  it("with explicit archived fixture, index links exactly to supplied collections", () => {
     const container = document.createElement("div");
     container.innerHTML = renderToStaticMarkup(EssaysIndexPage());
     const links = Array.from(container.querySelectorAll<HTMLAnchorElement>('a[href^="/essays/"]')).map(link => link.getAttribute("href"));

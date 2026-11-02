@@ -9,6 +9,7 @@ function anchorHrefs(html: string): string[] {
 test("retired afternoon supply is empty over HTTP and its scoring target returns 404", async ({ request, baseURL }) => {
   expect(process.env.E2E_BASE_URL, "Use the candidate-built CI webServer, never a remote/old deployment").toBeUndefined();
   expect(baseURL).toBe("http://127.0.0.1:3000");
+  expect(process.env.CI, "POST is restricted to the CI-owned webServer").toBe("true");
 
   const index = await request.get("/ap/afternoon");
   expect(index.status()).toBe(200);
@@ -24,8 +25,8 @@ test("retired afternoon supply is empty over HTTP and its scoring target returns
   const essays = await request.get("/essays");
   expect(essays.status()).toBe(200);
   const essayLinks = anchorHrefs(await essays.text()).filter(href => href.startsWith("/essays/"));
-  expect(essayLinks).toEqual(["/essays/sc"]); // Retained SC supply remains reachable.
-  for (const exam of ["st", "sa", "pm", "sm", "au"]) {
+  expect(essayLinks).toEqual([]); // The separately retired SC originals are no longer supplied.
+  for (const exam of ["sc", "st", "sa", "pm", "sm", "au"]) {
     expect(essayLinks).not.toContain(`/essays/${exam}`);
     const unavailableCollection = await request.get(`/essays/${exam}`);
     expect(unavailableCollection.status(), exam).toBe(404);
@@ -38,6 +39,7 @@ test("retired afternoon supply is empty over HTTP and its scoring target returns
     byExam: { afternoon: number }[];
   };
   expect(counts.afternoon).toBe(0);
+  expect(counts.essay).toBe(0);
   expect(Array.isArray(counts.byExam)).toBe(true);
   expect(counts.byExam.length).toBeGreaterThan(0);
   for (const row of counts.byExam) expect(row.afternoon).toBe(0);

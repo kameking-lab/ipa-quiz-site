@@ -21,11 +21,11 @@ describe("/essays/[exam] soft-404 guard (dynamicParams=false)", () => {
     const params = await essaysExamPage.generateStaticParams();
     const generated = new Set(params.map((p) => p.exam));
     expect(generated).toEqual(new Set(ESSAY_EXAM_CODES.filter(exam => getEssayQuestionsByExam(exam).length > 0)));
-    expect(generated.size).toBeGreaterThan(0);
+    expect(generated.size).toBe(0); // All original essay prompts are retired.
   });
 });
 
-it.each(["st", "sa", "pm", "sm", "au"] as const)("retired %s collection metadata cannot advertise indexed supply", async exam => {
+it.each(["sc", "st", "sa", "pm", "sm", "au"] as const)("retired %s collection metadata cannot advertise indexed supply", async exam => {
   expect(getEssayQuestionsByExam(exam)).toEqual([]);
   expect(await essaysExamPage.generateMetadata({ params: Promise.resolve({ exam }) })).toMatchObject({ robots: { index: false } });
 });

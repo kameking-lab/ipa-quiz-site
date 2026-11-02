@@ -1,4 +1,6 @@
-import { describe, it, expect } from "vitest";
+// TEST ONLY: original fixture preserves quality contracts; public zero/404 tested separately.
+vi.mock("@/data/questions/essay", async () => await import("@/__tests__/fixtures/archived-singular-essay"));
+import { describe, it, expect, vi } from "vitest";
 import {
   ESSAY_EXAM_CODES,
   getEssayQuestionsByExam,
