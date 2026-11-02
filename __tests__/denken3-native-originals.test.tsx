@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
+import { expectClosedNativeExplanations } from "./helpers/native-disclosure";
 import { NativeReader } from "@/components/denken2/NativeReader";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import {
@@ -65,7 +66,7 @@ describe("Denken3 reviewed native originals", () => {
     }} />), "text/html");
     expect(doc.querySelectorAll("select")).toHaveLength(2);
     expect(doc.body.textContent).toContain("選択問題の一方だけを本試験で解答します");
-    expect(doc.body.textContent).not.toContain("正答：");
+    expectClosedNativeExplanations(doc, q.slots.length);
     const machine = getDenken3NativeQuestion("2026-upper", "machine", 8)!;
     expect(machine.sourcePages[0]?.sha256).toMatch(/^[a-f0-9]{64}$/);
     expect(Object.keys(machine.slots[0]!.choiceExplanations)).toHaveLength(5);
@@ -105,7 +106,7 @@ describe("Denken3 reviewed native originals", () => {
         expect(doc.querySelectorAll("select")).toHaveLength(2);
         expect([...doc.querySelectorAll("select")].every(select => select.value === "")).toBe(true);
         expect(doc.body.textContent).toContain("選択問題の一方だけを本試験で解答します");
-        expect(doc.body.textContent).not.toContain("公式正答：");
+        expectClosedNativeExplanations(doc, q.slots.length);
       }
     }
   });
@@ -135,7 +136,7 @@ describe("Denken3 reviewed native originals", () => {
       }} />), "text/html");
       expect(doc.querySelectorAll("select")).toHaveLength(saved.length);
       expect([...doc.querySelectorAll("select")].every(select => select.value === "")).toBe(true);
-      expect(doc.body.textContent).not.toContain("公式正答：");
+      expectClosedNativeExplanations(doc, q.slots.length);
       expect(doc.body.textContent).not.toContain("選択問題の一方だけを本試験で解答します");
       expect(doc.querySelector(`img[src="${q.sourcePages[0]!.url}"]`)).not.toBeNull();
     }

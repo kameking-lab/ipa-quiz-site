@@ -28,10 +28,14 @@ test("Q05 explanation keeps the optional learning aid behind the reveal control"
   await page.goto("/denken3/2026-upper/theory/q5");
   const details = page.locator("[data-native-explanation]").first();
   await expect(details).not.toHaveAttribute("open");
+  const officialAnswer = details.locator("p").filter({ hasText: /^公式正答：/ }).first();
+  await expect(officialAnswer).toHaveCount(1);
+  await expect(officialAnswer).not.toBeVisible();
   const guide = page.getByRole("region", { name: "等価回路の学習補助" });
   await expect(guide).toHaveCount(0);
   await page.getByRole("button", { name: "答えと解説を見る", exact: true }).click();
   await expect(details).toHaveAttribute("open", "");
+  await expect(officialAnswer).toBeVisible();
   await expect(guide).toBeVisible();
   await expect(guide).toContainText("サイト作成の補助図で、原図ではありません");
   await expect(guide).toContainText("要点");
