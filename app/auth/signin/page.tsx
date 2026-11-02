@@ -67,6 +67,7 @@ export default async function SignInPage({
   if (session?.user) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
+  const forPurchase = callbackUrl === "/billing" || callbackUrl.startsWith("/billing?");
 
   const providerIds = new Set(
     authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)),
@@ -88,17 +89,17 @@ export default async function SignInPage({
         {/* Hero */}
         <div className="mb-8 text-center">
           <Badge variant="success" className="mb-4">
-            無料の学習機能と月額プラン
+            {forPurchase ? "あと2ステップ：ログイン → 決済" : "無料の学習機能と月額プラン"}
           </Badge>
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            {forPurchase ? "ログインして購入へ" : <><span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               過去問AI
             </span>
-            {" "}にログイン
+            {" "}にログイン</>}
           </h1>
           <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
-            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。
+            {forPurchase ? "ログイン後、月額プランの決済へ進めます。ログインだけで課金は始まりません。" : <>無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
+            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。</>}
           </p>
         </div>
 
@@ -156,7 +157,7 @@ export default async function SignInPage({
         </div>
 
         {/* Benefit pills */}
-        <div className="mt-6 grid grid-cols-1 gap-2 text-xs sm:grid-cols-3">
+        {!forPurchase && <div className="mt-6 grid grid-cols-1 gap-2 text-xs sm:grid-cols-3">
           <BenefitPill
             icon={<Cloud className="h-3.5 w-3.5" />}
             label="履歴クラウド同期"
@@ -169,7 +170,9 @@ export default async function SignInPage({
             icon={<ShieldCheck className="h-3.5 w-3.5" />}
             label="アカウントで学習を管理"
           />
-        </div>
+        </div>}
+
+        {forPurchase && <p className="mt-4 text-center text-sm"><Link className="underline" href={callbackUrl}>購入画面に戻る</Link></p>}
 
         {/* Legal */}
         <p className="mt-6 text-center text-[11px] leading-relaxed text-muted-foreground">

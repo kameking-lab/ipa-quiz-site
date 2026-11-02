@@ -5,31 +5,42 @@ import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
 import { CheckoutButton } from "@/app/billing/CheckoutButton";
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe("monthly purchase copy and status", () => {
-  it("explicitly asks for consent to monthly renewal and period-end cancellation", () => {
-    render(<CheckoutButton recurring amount={980} terms={"a".repeat(64)} enabled={false} />);
-    expect(screen.getByText("対象の演習、税込月額、毎月の自動更新、期間末解約、返金条件を確認しました。")).toBeTruthy();
-    expect(screen.getByRole("button").textContent).toContain("月額980円");
+  it("keeps explicit consent and price next to the disabled purchase action", () => {
+    const fetchMock = vi.fn(); vi.stubGlobal("fetch", fetchMock);
+    render(<CheckoutButton recurring amount={980} terms={"a".repeat(64)} enabled={false} testMode={false} />);
+    expect(screen.getByText("対象の演習と料金・毎月更新・解約・返金条件に同意して進みます。")).toBeTruthy();
+    expect(screen.getByText("次の画面で月額980円（税込）の支払いを確定します。確定前に戻れます。")).toBeTruthy();
+    const button = screen.getByRole("button", { name: "同意して決済へ進む" }) as HTMLButtonElement;
+    expect(button.disabled).toBe(true);
+    expect(button.getAttribute("aria-describedby")).toBe("purchase-consent checkout-next");
+    fireEvent.click(button); expect(fetchMock).not.toHaveBeenCalled();
   });
-  it("does not start checkout on consent changes and disables the button when consent is removed", () => {
-    const fetchMock = vi.fn();
+  it("requires the explicit consent action and suppresses duplicate submission before response", async () => {
+    let settle: ((response: Response) => void) | undefined;
+    const fetchMock = vi.fn(() => new Promise<Response>(resolve => { settle = resolve; }));
     vi.stubGlobal("fetch", fetchMock);
     render(<CheckoutButton recurring amount={980} terms={"a".repeat(64)} enabled testMode={false} />);
-    const checkbox = screen.getByRole("checkbox");
-    const button = screen.getByRole("button") as HTMLButtonElement;
-    expect(button.disabled).toBe(true);
-    fireEvent.click(checkbox);
-    expect(button.disabled).toBe(false);
     expect(fetchMock).not.toHaveBeenCalled();
-    fireEvent.click(checkbox);
+    expect(screen.queryByRole("checkbox")).toBeNull();
+    const button = screen.getByRole("button", { name: "同意して決済へ進む" }) as HTMLButtonElement;
+    fireEvent.click(button); fireEvent.click(button);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledWith("/api/billing/checkout", expect.objectContaining({ method: "POST", body: JSON.stringify({ terms: "a".repeat(64) }) }));
     expect(button.disabled).toBe(true);
-    expect(fetchMock).not.toHaveBeenCalled();
+    settle!(Response.json({ error: "fixture_declined" }, { status: 503 }));
+    await waitFor(() => expect(button.disabled).toBe(false));
+    expect(screen.getByRole("alert")).toBeTruthy();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
   it("shows period-end cancellation and management without claiming no auto-renewal", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ billingModel: "subscription", entitled: true, canManage: true,
       subscription: { status: "active", cancelAtPeriodEnd: true, periodEnd: "2026-02-28T00:00:00Z" },
       purchase: { id: "fixture", status: "paid", expiresAt: "2026-02-28T00:00:00Z" } })));
     render(<PurchaseStatus order="fixture" />);
-    await waitFor(() => expect(screen.getByText("期間末の解約を予約しています。次回の自動更新は停止します。")).toBeTruthy());
-    expect(screen.queryByText(/自動更新はありません/)).toBeNull(); expect(screen.getByRole("button", { name: "契約管理・解約・支払方法の変更" })).toBeTruthy();
+    await waitFor(() => expect(screen.getByText("期間末の解約予約済みです。次回の自動更新は停止します。")).toBeTruthy());
+    fireEvent.click(screen.getByText("注文・契約の詳細"));
+    expect(screen.queryByText(/自動更新はありません/)).toBeNull();
+    expect(screen.getByRole("button", { name: "契約管理・解約・支払方法の変更" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "購入が完了しました" })).toBeTruthy();
   });
 });

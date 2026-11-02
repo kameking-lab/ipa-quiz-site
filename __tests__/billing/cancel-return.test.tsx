@@ -34,9 +34,14 @@ describe("cancel return page, real status route/service with memory and identity
       await wiring.service!.receive(snapshot!);
     }
     const before = structuredClone({ purchases: f.store.purchases, events: f.store.events, finances: f.store.finances });
-    render(await CancelPage({ searchParams: Promise.resolve({ order: f.purchase.id }) }));
-    await waitFor(() => expect(screen.getByRole("status").textContent).toContain(state === "paid" ? "支払いを確認しました" : "支払確認待ち"));
-    fireEvent.click(screen.getByRole("button"));
+    const view = render(await CancelPage({ searchParams: Promise.resolve({ order: f.purchase.id }) }));
+    await waitFor(() => expect(screen.getByRole("status").textContent).toContain(state === "paid" ? "プランをご利用いただけます" : "再購入は不要です"));
+    if (state === "paid") {
+      view.unmount();
+      render(await CancelPage({ searchParams: Promise.resolve({ order: f.purchase.id }) }));
+    } else {
+      fireEvent.click(screen.getByRole("button", { name: "購入状況を再確認" }));
+    }
     await waitFor(() => expect(vi.mocked(fetch)).toHaveBeenCalledTimes(2));
     expect(await wiring.service!.status("alice", f.purchase.id)).toMatchObject({ entitled: state === "paid", purchase: { status: state } });
     expect({ purchases: f.store.purchases, events: f.store.events, finances: f.store.finances }).toEqual(before);

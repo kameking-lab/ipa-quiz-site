@@ -1,12 +1,13 @@
 "use client";
 import { readQuizReturn, safeQuizReturn, saveQuizReturn } from "@/lib/billing/quiz-return";
-import { useState } from "react";
+import { useRef, useState } from "react";
 export function CheckoutButton({ terms, amount, enabled, testMode = true, recurring = false }: { terms: string; amount: number; enabled: boolean; testMode?: boolean; recurring?: boolean }) {
-  const [accepted, setAccepted] = useState(false);
   const [busy, setBusy] = useState(false);
+  const submitting = useRef(false);
   const [error, setError] = useState("");
   async function checkout() {
-    if (busy || !accepted || !enabled) return;
+    if (submitting.current || !enabled) return;
+    submitting.current = true;
     setBusy(true); setError("");
     try {
       const res = await fetch("/api/billing/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ terms }) });
@@ -21,14 +22,14 @@ export function CheckoutButton({ terms, amount, enabled, testMode = true, recurr
         if (href && typeof value.orderId === "string") saveQuizReturn(window.sessionStorage, href, Date.now(), value.orderId);
       } catch { /* The billing page already explains unavailable local return storage. */ }
       window.location.assign(value.url);
-    } catch (e) { setError(e instanceof Error ? e.message : "決済を開始できませんでした。"); setBusy(false); }
+    } catch (e) { setError(e instanceof Error ? e.message : "決済を開始できませんでした。"); submitting.current = false; setBusy(false); }
   }
-  return <div className="space-y-4 rounded-xl border p-5">
-    <label className="flex items-start gap-3"><input type="checkbox" checked={accepted} disabled={!enabled || busy} onChange={e => setAccepted(e.target.checked)} />
-      <span>{recurring ? "対象の演習、税込月額、毎月の自動更新、期間末解約、返金条件を確認しました。" : "対象の演習、税込総額、提供期間、非自動更新、返金条件を確認しました。"}</span></label>
-    <button type="button" className="min-h-11 rounded-lg bg-primary px-5 py-3 font-bold text-primary-foreground disabled:opacity-50" disabled={!enabled || !accepted || busy} onClick={checkout}>
-      {busy ? "確認中…" : `${testMode ? "テスト決済" : "有料購入の決済"}へ進む — ${recurring ? "月額" : ""}${amount.toLocaleString("ja-JP")}円（税込）の${recurring ? "自動更新契約" : "有料購入"}を確認`}</button>
-    <p className="text-sm">{testMode && "これはテストです。実際の請求はありません。"}次の決済画面で支払方法・期限を確認し、確定前に取り消して戻れます。</p>
-    {error && <p role="alert">{error}</p>}
+  return <div className="space-y-3">
+    <p id="purchase-consent" className="text-sm">{recurring ? "対象の演習と料金・毎月更新・解約・返金条件に同意して進みます。" : "対象の演習と料金・提供期間・非自動更新・返金条件に同意して進みます。"}</p>
+    <button type="button" aria-describedby="purchase-consent checkout-next" className="min-h-12 w-full rounded-xl bg-primary px-5 py-3 font-bold text-primary-foreground disabled:opacity-50" disabled={!enabled || busy} onClick={checkout}>
+      {busy ? "決済画面を開いています…" : testMode ? "同意してテスト決済へ" : "同意して決済へ進む"}
+    </button>
+    <p id="checkout-next" className="text-xs text-muted-foreground">{testMode && "実際の請求はありません。"}次の画面で{recurring ? "月額" : ""}{amount.toLocaleString("ja-JP")}円（税込）の支払いを確定します。確定前に戻れます。</p>
+    {error && <p role="alert" className="text-sm">{error}</p>}
   </div>;
 }

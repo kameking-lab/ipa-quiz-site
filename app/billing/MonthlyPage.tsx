@@ -22,16 +22,28 @@ export default async function MonthlyPage() {
   const seller = monthlySellerDisclosure();
   const aiReady = aiAccessClaimsEnabled();
   return <>
-    <h1 className="text-3xl font-bold">連続演習 月額プラン</h1>
-    <section aria-labelledby="monthly-price" className="space-y-3 rounded-2xl border border-border bg-card p-5 sm:p-6">
-      <h2 id="monthly-price" className="text-2xl font-bold">月額{price.toLocaleString("ja-JP")}円<span className="text-base">（税込）</span></h2>
-      <p><strong>解約まで毎月自動更新</strong>。契約管理から次回更新を停止できます。</p>
-      <p>期間末解約では支払済みの期間末まで利用できます。日割返金はありません。</p>
-      <p className="text-sm">自分で契約を申し込むまで課金は始まりません。</p>
+    <header className="space-y-2">
+      <p className="text-sm text-muted-foreground">プラン確認 → 決済 → 学習を再開</p>
+      <h1 className="text-2xl font-bold">月額プランのお申し込み</h1>
+    </header>
+    <section aria-labelledby="monthly-price" className="space-y-4 rounded-2xl border border-border bg-card p-5 sm:p-6">
+      <div><h2 id="monthly-price" className="text-3xl font-bold">月額{price.toLocaleString("ja-JP")}円<span className="text-base font-normal">（税込）</span></h2>
+        <p className="mt-2">対象の連続演習を回数制限なく。</p></div>
+      <ul className="space-y-1 text-sm">
+        <li><strong>毎月自動更新</strong>。契約管理から次回更新を停止できます。</li>
+        <li>解約後も支払済みの期間末まで利用可能。日割返金はありません。</li>
+      </ul>
+      <p className="text-sm"><a className="underline underline-offset-2" href={seller.requestPath}>販売者情報をメールで請求</a>し、申込前に返信をご確認ください。</p>
+      <p className="text-sm"><Link className="underline underline-offset-2" href="/billing/terms" target="_blank" rel="noopener noreferrer">支払・解約・返金の詳細条件（新しいタブ）</Link></p>
+      {hasContract ? <div className="space-y-3"><p role="status">契約または支払確認待ちのお申し込みがあります。追加購入は不要です。</p>{canManage && <ManageSubscriptionButton />}</div>
+        : !config?.enabled ? <p role="status">現在、新規申込を受け付けていません。既存契約は自動解約されません。</p>
+        : signedIn ? <CheckoutButton recurring terms={monthlyTerms(config)} amount={price} enabled testMode={config.mode === "stripe-test"} />
+        : <><QuizResumeLinks loginOnly /><p className="text-xs text-muted-foreground">ログイン後、この画面で決済へ進めます。ログインだけで課金は始まりません。</p></>}
+      {!hasContract && canManage && <ManageSubscriptionButton />}
     </section>
-    {config?.mode === "stripe-test" && <p>テスト環境です。ここでの操作による実際の請求はありません。</p>}
-    {!config?.enabled && <p role="status">現在、新規申込を受け付けていません。既存契約は自動解約されません。契約条件・お問い合わせは以下をご確認ください。</p>}
-    <p>収録済み範囲の年度別・通常の連続演習を回数制限なく進める利用権です。解説の収録範囲は問題によって異なります。</p>
+    <details className="rounded-xl border border-border p-4">
+      <summary className="cursor-pointer py-1 font-semibold">無料と月額の違い・対象機能</summary>
+      <div className="mt-4 space-y-4">
     <section aria-labelledby="plan-comparison" className="space-y-4">
       <h2 id="plan-comparison" className="text-xl font-bold">無料と月額の違い</h2>
       <div className="grid items-stretch gap-4 sm:grid-cols-2">
@@ -56,8 +68,13 @@ export default async function MonthlyPage() {
       </div>
       <p aria-label="AIの利用条件" className="text-sm">{!aiReady && <>AIの新しい利用条件は提供準備中です。以下は確定した方針で、提供開始の案内ではありません。 </>}{AI_ACCESS_DESCRIPTION} {AI_ATTEMPT_DESCRIPTION}</p>
     </section>
-    <p>読み上げボタンのある問題では、対応する端末・ブラウザーの読み上げを無料・有料どちらでも追加料金なしで利用できます。音声や再生できる環境は端末によって異なります。</p>
-    <p>個別問題・原紙・保存済み履歴の閲覧と復習は無料です。履歴は解約後も削除しません。</p>
+
+        <p className="text-sm">解説の収録範囲は問題によって異なります。対応端末・ブラウザーの読み上げは無料で、音声や再生環境は端末によって異なります。</p>
+      </div>
+    </details>
+    <details className="rounded-xl border border-border p-4">
+      <summary className="cursor-pointer py-1 font-semibold">支払・解約・返金・販売者情報</summary>
+      <div className="mt-4 space-y-4 text-sm">
     <dl className="space-y-3 rounded-xl border p-5">
       <div><dt className="font-bold">無料の演習枠</dt><dd>ログインなしでも1日{free}問、日本時間0時に更新します。同じ日に同じ問題を再開しても追加消費しません。履歴の同期などは無料ログインで利用できます。ログインだけで本日の無料枠は追加されません。</dd></div>
       <div><dt className="font-bold">支払・提供</dt><dd>初回と毎月の更新日に決済画面で示す方法で請求します。支払確認後、確認済みの請求対象期間をご利用いただけます。</dd></div>
@@ -69,10 +86,9 @@ export default async function MonthlyPage() {
     <p>既存会員向けの90日優遇は設けません。自分で契約を申し込むまで課金は始まりません。</p>
     <section><h2>販売者情報の開示・お問い合わせ</h2><p>事業者の氏名・住所・電話番号は、ご請求に応じて本人がメールで手動開示します。申込前にメールを送り、返信を受けて内容を確認してから申込をご検討ください。</p>
       <p><a href={seller.requestPath}>事業者情報の開示をメールで請求する</a>（{seller.email}）</p><p>返信は24時間が目安です。返信が届かない場合は再度ご連絡ください。メールを送信しただけでは開示は完了しません。</p><Link href="/contact">一般のお問い合わせ</Link></section>
-    {canManage && <ManageSubscriptionButton />}
-    {hasContract ? <p role="status">契約または支払確認待ちの申込があります。追加契約はせず、契約管理をご確認ください。</p>
-      : <CheckoutButton recurring terms={config ? monthlyTerms(config) : ""} amount={price} enabled={!!config?.enabled && signedIn} testMode={config?.mode === "stripe-test"} />}
-    <QuizResumeLinks showLogin />
-    <nav><Link href="/review">履歴・復習</Link></nav>
+
+      </div>
+    </details>
+    <QuizResumeLinks />
   </>;
 }
