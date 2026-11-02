@@ -4,7 +4,6 @@ import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
-import { expectClosedNativeExplanations } from "./helpers/native-disclosure";
 import Denken1Page from "@/app/denken1/page";
 import { NativeReader } from "@/components/denken2/NativeReader";
 import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
@@ -43,7 +42,7 @@ describe("Denken1 source-reviewed native originals", () => {
       examName: "電験一種", examPath: "/denken1", sourceAnswerUrl: part.sourceAnswerUrl, sourceIndexUrl: part.sourceIndexUrl,
     }} />), "text/html");
     expect(doc.querySelectorAll("select")).toHaveLength(6);
-    expectClosedNativeExplanations(doc, theory.slots.length);
+    expect(doc.body.textContent).not.toContain("公式正答：");
     expect(doc.querySelectorAll('img[src^="/images/denken1/"]')).toHaveLength(2);
     expect(doc.querySelectorAll("button")).toHaveLength(1);
   });
@@ -59,7 +58,7 @@ describe("Denken1 source-reviewed native originals", () => {
     expect([...doc.querySelectorAll("select")].map(select => select.getAttribute("aria-label")))
       .toEqual(question.slots.map(field => `空欄${field.slot}`));
     expect(doc.querySelectorAll('select[aria-label$="・定義"], select[aria-label$="・単位"]')).toHaveLength(0);
-    expectClosedNativeExplanations(doc, question.slots.length);
+    expect(doc.body.textContent).not.toContain("公式正答：");
   });
 
   it("has byte-identical, decodable official images and an exact native sitemap", async () => {

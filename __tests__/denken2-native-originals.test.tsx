@@ -4,7 +4,6 @@ import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import sharp from "sharp";
 import { describe, expect, it } from "vitest";
-import { expectClosedNativeExplanations } from "./helpers/native-disclosure";
 import { NativeReader } from "@/components/denken2/NativeReader";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
 import {
@@ -38,7 +37,7 @@ describe("Denken2 native original boundary", () => {
     expect(doc.querySelectorAll('select')).toHaveLength(10);
     expect(doc.querySelectorAll('select[aria-label$="・定義"]')).toHaveLength(5);
     expect(doc.querySelectorAll('select[aria-label$="・単位"]')).toHaveLength(5);
-    expectClosedNativeExplanations(doc, q.slots.length);
+    expect(doc.body.textContent).not.toContain("公式正答：");
     expect(doc.querySelectorAll('[aria-label="公式問題原本画像"] img').length).toBeGreaterThan(0);
   });
 

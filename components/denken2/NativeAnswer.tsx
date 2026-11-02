@@ -26,7 +26,6 @@ function SelectChoice({ label, bank, value, onChange }: {
 export function NativeAnswer({ question }: { question: ElectricalNativeQuestion }) {
   const [selected, setSelected] = useState<Record<string, string>>({});
   const [revealed, setRevealed] = useState(false);
-  const [revealRevision, setRevealRevision] = useState(0);
   const isMultipleChoice = question.id.startsWith("denken3-");
   const groups = question.choiceGroups;
   const paired = question.slots.some(field => typeof field.officialDefinition === "string");
@@ -58,21 +57,19 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
               bank={unitBank} value={selected[`${field.slot}-b`] ?? ""}
               onChange={value => choose(`${field.slot}-b`, value)} /> : null}
           </div>
-          <details key={`${question.id}:${JSON.stringify(selected)}:${revealed}:${revealRevision}`} open={revealed}
-            data-native-explanation className="mt-4 min-w-0 border-t border-border pt-4 text-sm leading-7 [overflow-wrap:anywhere]">
-            <summary className="min-h-11 cursor-pointer py-2 font-semibold">答えと解説を読む（答えを含みます）</summary>
+          {revealed ? <div data-native-explanation className="mt-4 min-w-0 border-t border-border pt-4 text-sm leading-7 [overflow-wrap:anywhere]">
             {typeof field.officialDefinition === "string"
               ? <p className="font-bold text-primary">公式正答：定義 {field.officialDefinition} ／ 単位 {field.officialUnit}</p>
               : <p className="font-bold text-primary">公式正答：{field.officialAnswer}</p>}
-            {revealed && <p className="mt-1">{(() => {
+            <p className="mt-1">{(() => {
               const first = selected[`${field.slot}-a`];
               const second = selected[`${field.slot}-b`];
               if (!first) return "未回答";
               if (typeof field.officialDefinition === "string" && typeof field.officialUnit === "string") return normalized(first) === normalized(field.officialDefinition)
                 && !!second && normalized(second) === normalized(field.officialUnit) ? "正解" : "選択を確認";
               return normalized(first) === normalized(field.officialAnswer) ? "正解" : "選択を確認";
-            })()}</p>}
-            {revealed && question.id === "denken3-2026-upper-theory-q05" && field.slot === 1 ? <CircuitEquivalentGuide /> : null}
+            })()}</p>
+            {question.id === "denken3-2026-upper-theory-q05" && field.slot === 1 ? <CircuitEquivalentGuide /> : null}
             <p className="mt-3 whitespace-pre-wrap">{field.explanation}</p>
             <p className="mt-4 whitespace-pre-wrap border-t border-border pt-3">{field.derivation}</p>
             {field.choiceExplanations ? <details className="mt-4 rounded-lg border border-border p-3">
@@ -80,11 +77,11 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
               <dl className="mt-3 space-y-3">{Object.entries(field.choiceExplanations).map(([label, reason]) =>
                 <div key={label}><dt className="font-bold">{label} {flat ? groups[label] : ""}</dt><dd>{reason}</dd></div>)}</dl>
             </details> : null}
-          </details>
+          </div> : null}
         </div>;
       })}
     </div>
-    <button type="button" onClick={() => { setRevealed(true); setRevealRevision(value => value + 1); }}
+    <button type="button" onClick={() => setRevealed(true)}
       className="mt-6 min-h-11 rounded-lg bg-primary px-5 py-2 font-semibold text-primary-foreground">
       答えと解説を見る
     </button>
