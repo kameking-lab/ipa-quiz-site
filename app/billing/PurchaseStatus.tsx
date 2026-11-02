@@ -1,27 +1,70 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { QuizResumeLinks } from "./QuizResumeLinks";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 interface Status { billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
-export function PurchaseStatus({ order }: { order: string }) {
+export function PurchaseStatus({ order, canceled = false }: { order: string; canceled?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
   const [error, setError] = useState("");
+  const [needsLogin, setNeedsLogin] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const request = useRef(0);
+  const active = useRef(false);
   const check = useCallback(async () => {
+    if (!order || active.current) return null;
+    active.current = true;
+    const id = ++request.current;
+    setBusy(true);
     try {
       const res = await fetch(`/api/billing/status?order=${encodeURIComponent(order)}`, { cache: "no-store" });
-      if (!res.ok) throw new Error("購入状況を確認できません。購入した本人でログインし、再確認してください。");
-      setStatus(await res.json()); setError("");
-    } catch (e) { setStatus(null); setError(e instanceof Error ? e.message : "確認できませんでした。"); }
+      if (id !== request.current) return null;
+      setNeedsLogin(res.status === 401);
+      if (!res.ok) throw new Error(res.status === 401 ? "購入したアカウントでログインしてください。" : "購入状況を確認できません。再購入せず、もう一度確認してください。");
+      const next: Status = await res.json();
+      if (id !== request.current) return null;
+      setStatus(next); setError("");
+      return next;
+    } catch (e) {
+      if (id === request.current) { setStatus(null); setError(e instanceof Error ? e.message : "購入状況を確認できません。"); }
+      return null;
+    } finally {
+      if (id === request.current) { active.current = false; setBusy(false); }
+    }
   }, [order]);
-  useEffect(() => { void check(); }, [check]);
-  const labels: Record<string, string> = { pending: "支払確認待ちです。再購入せず、しばらくして再確認してください。", paid: "支払いを確認しました。", failed: "支払いは成立していません。", suspended: "返金手続を確認中のためパスを一時停止しています。", refunded: "返金により、このパスは停止しています。", expired: "期間が満了しました。無料の試用と履歴は引き続き利用できます。" };
-  return <div className="space-y-4"><p role="status">{status?.purchase ? labels[status.purchase.status] : error || "サーバーで購入状況を確認しています…"}</p>
-    {status?.purchase?.expiresAt && <p>この注文の有効期限: {new Date(status.purchase.expiresAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}（日本時間）</p>}
-    <p>注文番号: {order}</p><button className="min-h-11 rounded-lg border px-4" onClick={check}>状況を再確認</button>
-    {status?.billingModel === "subscription" ? <><p>月額の自動更新契約です。購入画面から戻る操作と契約の解約は別です。</p>
-      {status.subscription?.cancelAtPeriodEnd && <p>期間末の解約を予約しています。次回の自動更新は停止します。</p>}
-      {status.canManage && <ManageSubscriptionButton />}</> : <p>{status ? "自動更新はありません。" : "契約状況を確認しています。"}購入画面から戻っただけでは権限は追加されません。</p>}
-    <Link className="block underline" href="/billing">条件・サポートに戻る</Link><QuizResumeLinks order={order} showLogin />
+  useEffect(() => {
+    let disposed = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let attempts = 0;
+    setStatus(null); setError(""); setNeedsLogin(false);
+    const run = async () => {
+      const next = await check();
+      // Bounded confirmation; never resubmits a purchase.
+      if (!disposed && !canceled && next?.purchase?.status === "pending" && attempts++ < 4) timer = setTimeout(run, 2500);
+    };
+    void run();
+    return () => { disposed = true; clearTimeout(timer); request.current++; active.current = false; };
+  }, [check, canceled]);
+  const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
+  const pending = status?.purchase?.status === "pending";
+  const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
+  const title = complete ? "購入が完了しました" : canceled ? "決済画面から戻りました" : pending ? "支払いを確認しています" : "購入状況の確認";
+  return <div className="space-y-5">
+    <h1 className="text-2xl font-bold">{title}</h1>
+    <p role="status" aria-live="polite">{!order ? "注文番号を確認できません。料金ページから契約管理をご確認ください。" : error || (complete ? "プランをご利用いただけます。学習を続けましょう。" : pending ? "確認が反映されるまで少しお待ちください。再購入は不要です。" : status?.purchase ? labels[status.purchase.status] ?? "この注文の利用状況を確認できません。再購入せずお問い合わせください。" : status ? "この注文の購入情報を確認できません。" : "購入状況を確認しています…")}</p>
+    {complete && <QuizResumeLinks order={order} primary />}
+    {!complete && order && !needsLogin && <button type="button" disabled={busy} className="min-h-11 rounded-lg border px-4 disabled:opacity-50" onClick={() => void check()}>{busy ? "確認中…" : "購入状況を再確認"}</button>}
+    {!complete && <QuizResumeLinks order={order} showLogin={needsLogin} />}
+    {canceled && <p className="text-sm">画面から戻るだけで新しい請求や解約は行いません。別のタブで支払済みの場合は、上の購入状況をご確認ください。</p>}
+    {order && <details className="rounded-xl border border-border p-4">
+      <summary className="cursor-pointer font-semibold">注文・契約の詳細</summary>
+      <div className="mt-3 space-y-3 text-sm">
+        <p className="break-all">注文番号: {order}</p>
+        {status?.purchase?.expiresAt && <p>この注文の有効期限: {new Date(status.purchase.expiresAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}（日本時間）</p>}
+        {status?.billingModel === "subscription" ? <><p>毎月自動更新です。次回更新の停止は契約管理から行えます。</p>{status.subscription?.cancelAtPeriodEnd && <p>期間末の解約予約済みです。次回の自動更新は停止します。</p>}{status.canManage && <ManageSubscriptionButton />}</> : status && <p>自動更新はありません。</p>}
+      </div>
+    </details>}
+    <Link className="inline-flex min-h-11 items-center underline" href={PRICE_PAGE_LINK.href}>{PRICE_PAGE_LINK.label}・お問い合わせ</Link>
   </div>;
 }
