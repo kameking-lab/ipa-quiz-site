@@ -9,7 +9,7 @@ function normalize(value: string): string {
   return value.normalize("NFKC").toLowerCase().replace(/\s/g, "");
 }
 
-export function HomeQualificationFinder({ domains, directoryHref = "#home-directory-title", preview, showHeading = false }: { domains: readonly HomeDirectoryDomain[]; directoryHref?: string; preview?: ReactNode; showHeading?: boolean }) {
+export function HomeQualificationFinder({ domains, directoryHref = "#home-directory-title", preview, auxiliaryLink, showHeading = false }: { domains: readonly HomeDirectoryDomain[]; directoryHref?: string; preview?: ReactNode; auxiliaryLink?: ReactNode; showHeading?: boolean }) {
   const [query, setQuery] = useState("");
   const [domainId, setDomainId] = useState<HomeDomainId | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -71,7 +71,10 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
     <section id="choose-qualification" tabIndex={-1} aria-labelledby="qualification-search-title" className="study-finder scroll-mt-24">
       <div className="study-finder-main">
       {showHeading && <header className="study-heading"><h1>解く過去問は、<br />受ける資格から。</h1></header>}
+      <div className="study-finder-heading">
       <h2 id="qualification-search-title" className={showHeading ? "sr-only" : "study-section-label"}>受験する資格を選ぶ</h2>
+      {auxiliaryLink ? <div className="study-finder-auxiliary">{auxiliaryLink}</div> : null}
+      </div>
       <label htmlFor="qualification-search" className="sr-only">資格名・略称で検索</label>
       <div className="study-search">
         <Search aria-hidden="true" className="h-5 w-5 shrink-0" />

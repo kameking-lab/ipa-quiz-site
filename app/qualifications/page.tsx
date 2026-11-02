@@ -1,3 +1,4 @@
+import styles from "./finder.module.css";
 import { CHUSHO_SECONDARY_ORIGINAL_COUNT } from "@/lib/chusho-secondary/data";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -46,7 +47,19 @@ export default function QualificationsPage() {
         </p>
       </header>
 
-      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="#qualification-coverage" />
+      <div className={styles.finder}>
+      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="#qualification-coverage" auxiliaryLink={<Link href="/ipa" className="inline-flex min-h-11 items-center underline underline-offset-4">IT・情報処理の資格一覧はこちら</Link>} />
+      </div>
+      {published.some((item) => item.slug === "sharoushi") ? <nav aria-label="社会保険労務士の分野別入口" className="mt-4 grid gap-3 sm:grid-cols-2">
+        <section aria-labelledby="sharoushi-law-title" className="min-w-0 rounded-xl border border-border p-3">
+          <h2 id="sharoushi-law-title" className="text-sm font-semibold">法律から探す方へ</h2>
+          <ul><li><Link href="/sharoushi" className="inline-flex min-h-11 items-center text-sm underline [overflow-wrap:anywhere]">社会保険労務士試験</Link></li></ul>
+        </section>
+        <section aria-labelledby="sharoushi-labor-title" className="min-w-0 rounded-xl border border-border p-3">
+          <h2 id="sharoushi-labor-title" className="text-sm font-semibold">労務・社会保険から探す方へ</h2>
+          <ul><li><Link href="/sharoushi" className="inline-flex min-h-11 items-center text-sm underline [overflow-wrap:anywhere]">社会保険労務士試験</Link></li></ul>
+        </section>
+      </nav> : null}
       <details id="qualification-coverage" className="group mt-6 rounded-2xl border border-border bg-card p-4">
         <summary className="scroll-mt-20 min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">

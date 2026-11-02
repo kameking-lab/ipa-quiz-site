@@ -1,0 +1,36 @@
+/* This shared finder also renders without the home route's stylesheet.
+   Scope the catalog layout so client navigation cannot change its appearance. */
+.finder { min-width: 0; }
+.finder :global(.study-finder) { display: block; }
+.finder :global(.study-finder) :global(.study-finder-main) { min-width: 0; }
+.finder :global(.study-finder) :global(.study-finder-heading) { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin-bottom: 8px; }
+.finder :global(.study-finder) :global(.study-section-label) { margin: 0; font-family: inherit; font-size: 18px; font-weight: 600; }
+.finder :global(.study-finder) :global(.study-finder-auxiliary) { min-width: 0; font-size: 14px; }
+.finder :global(.study-finder) :global(.study-finder-auxiliary) a { overflow-wrap: anywhere; }
+.finder :global(.study-finder) :global(.study-search) { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); padding: 0 12px; }
+.finder :global(.study-finder) :global(.study-search) input { width: 100%; min-width: 0; height: 48px; border: 0; background: transparent; color: var(--foreground); font-size: 16px; outline: none; }
+.finder :global(.study-finder) :global(.study-search) input::placeholder { color: var(--muted-foreground); font-size: 14px; }
+.finder :global(.study-finder) :global(.study-search):focus-within { outline: 2px solid var(--ring); outline-offset: 2px; }
+.finder :global(.study-finder) :global(.study-search) button { display: grid; place-items: center; min-width: 44px; min-height: 44px; }
+.finder :global(.study-finder) :global(.study-filters) { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0; }
+.finder :global(.study-finder) :global(.study-filters) button { min-height: 44px; min-width: 44px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; color: var(--foreground); font-size: 14px; }
+.finder :global(.study-finder) :global(.study-filters) button[aria-pressed="true"] { background: var(--muted); border-color: var(--foreground); color: var(--foreground); }
+.finder :global(.study-finder) :global(.study-results-label) { margin: 12px 0 8px; color: var(--muted-foreground); font-size: 14px; }
+.finder :global(.study-finder) :global(.study-results) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.finder :global(.study-finder) :global(.study-qualification) { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 88px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); overflow-wrap: anywhere; height: 100%; position: relative; isolation: auto; overflow: visible; transition: none; }
+.finder :global(.study-finder) :global(.study-qualification) > span:first-child { width: auto; align-self: auto; }
+.finder :global(.study-finder) :global(.study-qualification-name) { display: block; font-size: 16px; font-weight: 600; }
+.finder :global(.study-finder) :global(.study-qualification-meta) { display: block; margin-top: 4px; color: var(--muted-foreground); font-size: 12px; }
+.finder :global(.study-finder) :global(.study-card-mascot), .finder :global(.study-finder) :global(.study-aside) { display: none; }
+.finder :global(.study-finder) :global(.study-text-link) { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; font-size: 14px; color: var(--foreground); text-decoration: underline; text-underline-offset: 4px; }
+.finder :global(.study-finder) :global(.study-text-link) svg { flex-shrink: 0; }
+.finder :global(.study-finder) :global(.study-empty) { padding: 16px 0; font-size: 14px; line-height: 1.75; }
+.finder :is(a, button):focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+@media (max-width: 639px) {
+  .finder :global(.study-finder) :global(.study-finder-auxiliary) { flex-basis: 100%; }
+  .finder :global(.study-finder) :global(.study-results) { grid-template-columns: minmax(0, 1fr); }
+}
+
+.finder :global(.study-finder) :global(.study-qualification):hover { transform: none; box-shadow: none; }
+.finder :global(.study-finder) :global(.study-results) > li { min-width: 0; }
+.finder :global(.study-finder) :global(.study-qualification) > svg { flex-shrink: 0; }

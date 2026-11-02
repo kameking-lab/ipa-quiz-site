@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CircuitEquivalentGuide } from "./Q05CircuitGuide";
 import type { ElectricalNativeQuestion } from "@/lib/electrical/native-types";
 
 type Bank = Record<string, string>;
@@ -56,7 +57,7 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
               bank={unitBank} value={selected[`${field.slot}-b`] ?? ""}
               onChange={value => choose(`${field.slot}-b`, value)} /> : null}
           </div>
-          {revealed ? <div className="mt-4 border-t border-border pt-4 text-sm leading-7">
+          {revealed ? <div data-native-explanation className="mt-4 min-w-0 border-t border-border pt-4 text-sm leading-7 [overflow-wrap:anywhere]">
             {typeof field.officialDefinition === "string"
               ? <p className="font-bold text-primary">公式正答：定義 {field.officialDefinition} ／ 単位 {field.officialUnit}</p>
               : <p className="font-bold text-primary">公式正答：{field.officialAnswer}</p>}
@@ -68,8 +69,9 @@ export function NativeAnswer({ question }: { question: ElectricalNativeQuestion 
                 && !!second && normalized(second) === normalized(field.officialUnit) ? "正解" : "選択を確認";
               return normalized(first) === normalized(field.officialAnswer) ? "正解" : "選択を確認";
             })()}</p>
-            <p className="mt-2">{field.explanation}</p>
-            <p className="mt-2 whitespace-pre-wrap">{field.derivation}</p>
+            {question.id === "denken3-2026-upper-theory-q05" && field.slot === 1 ? <CircuitEquivalentGuide /> : null}
+            <p className="mt-3 whitespace-pre-wrap">{field.explanation}</p>
+            <p className="mt-4 whitespace-pre-wrap border-t border-border pt-3">{field.derivation}</p>
             {field.choiceExplanations ? <details className="mt-4 rounded-lg border border-border p-3">
               <summary className="cursor-pointer font-semibold">全選択肢の理由（{Object.keys(field.choiceExplanations).length}肢）</summary>
               <dl className="mt-3 space-y-3">{Object.entries(field.choiceExplanations).map(([label, reason]) =>
