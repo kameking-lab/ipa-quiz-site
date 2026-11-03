@@ -177,7 +177,7 @@ export function ExplanationCard({
           aria-label="あなたが選んだ誤答の理由"
           className="mb-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm leading-relaxed text-red-950 dark:border-red-800 dark:bg-red-950/40 dark:text-red-100"
         >
-          <h3 className="mb-1 font-semibold">あなたが選んだ「{choiceDisplayLabel(question.exam, selected as ChoiceKey)}」が違う理由</h3>
+          <h3 className="mb-1 font-semibold">あなたが選んだ「{choiceDisplayLabel(question.exam, selected as ChoiceKey, question)}」が違う理由</h3>
           <p>{selectedChoiceExplanation}</p>
         </section>
       )}
@@ -199,7 +199,7 @@ export function ExplanationCard({
                     : undefined,
                 )}
               >
-                <dt className="font-bold text-zinc-900 dark:text-zinc-100">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
+                <dt className="font-bold text-zinc-900 dark:text-zinc-100">{choiceDisplayLabel(question.exam, key as ChoiceKey, question)}</dt>
                 <dd className="text-zinc-700 dark:text-zinc-300">{displayQuestionExplanation(question.exam, explanation)}</dd>
               </div>
             ))}

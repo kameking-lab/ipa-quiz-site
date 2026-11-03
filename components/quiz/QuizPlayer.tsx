@@ -441,7 +441,7 @@ function ScoredQuizPlayer({
   const numeric = question.type === "numeric";
   const ordering = question.type === "ordering";
   const answerKey = native ? formatNativeBAnswer(question.nativeB!) : ordering ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
-    ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
+    ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey, question)).join("・")
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;
@@ -541,7 +541,7 @@ function ScoredQuizPlayer({
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
-                    displayLabel={choiceDisplayLabel(question.exam, key)}
+                    displayLabel={choiceDisplayLabel(question.exam, key, question)}
                     text={question.choices![key]!}
                     imageUrl={question.choiceImageUrls?.[key]}
                     imageAlt={choiceImageAlt(question.exam, key)}

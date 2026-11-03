@@ -67,7 +67,7 @@ export function QuestionSourcePresentation({
               <dl className="mt-2 space-y-2">
                 {Object.entries(original.choices).map(([key, value]) => (
                   <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                    <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
+                    <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey, question)}</dt>
                     <dd><QuestionBody text={value} /></dd>
                   </div>
                 ))}

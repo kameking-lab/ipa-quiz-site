@@ -28,7 +28,7 @@ export function OrderingAnswerInput({ question, disabled, onAnswer }: {
           setSelected((previous) => previous.map((key, slot) => slot === index ? value : key === value && value !== "" ? "" : key));
         }}>
           <option value="">選択してください</option>
-          {keys.map((key) => <option key={key} value={key}>{choiceDisplayLabel(question.exam, key)}: {question.choices?.[key]}</option>)}
+          {keys.map((key) => <option key={key} value={key}>{choiceDisplayLabel(question.exam, key, question)}: {question.choices?.[key]}</option>)}
         </select>
       </label>)}
     </div>

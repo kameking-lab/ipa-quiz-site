@@ -235,7 +235,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   if (!current) return null;
 
   const choices = current.choices ?? {};
-  const answerKey = (Array.isArray(current.answer) ? current.answer : [current.answer]).map((key) => choiceDisplayLabel(current.exam, key as ChoiceKey)).join("・");
+  const answerKey = (Array.isArray(current.answer) ? current.answer : [current.answer]).map((key) => choiceDisplayLabel(current.exam, key as ChoiceKey, current)).join("・");
 
   return (
     <div className="space-y-4">
@@ -264,6 +264,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
           <Sparkles className="h-3 w-3" />
           {current.exam.toUpperCase()} · {current.year}{current.season === "spring" ? "春" : current.season === "autumn" ? "秋" : ""}
         </div>
+        {current.questionNotice && <p role="note" className="mb-2 text-sm">{current.questionNotice}</p>}
         <p className="text-sm leading-relaxed sm:text-base">{current.question}</p>
       </div>
 
@@ -280,7 +281,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
             <ChoiceButton
               key={k}
               choiceKey={k}
-              displayLabel={choiceDisplayLabel(current.exam, k)}
+              displayLabel={choiceDisplayLabel(current.exam, k, current)}
               text={text}
               revealed={revealed}
               selected={selected === k}

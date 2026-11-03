@@ -156,7 +156,7 @@ export function buildQuestionContext(
     lines.push(`## 選択肢`);
     for (const key of getChoiceKeys(question.choices)) {
       const c = question.choices[key];
-      if (c) lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${c}`);
+      if (c) lines.push(`- ${choiceDisplayLabel(question.exam, key, question)}: ${c}`);
     }
   }
   lines.push("");
@@ -178,7 +178,7 @@ export function buildQuestionContext(
       lines.push("");
       lines.push("## サイト掲載の選択肢別解説（参考・公式見解とは限らない）");
       for (const { key, explanation } of explainedChoices) {
-        lines.push(`- ${choiceDisplayLabel(question.exam, key)}: ${explanation}`);
+        lines.push(`- ${choiceDisplayLabel(question.exam, key, question)}: ${explanation}`);
       }
     }
   }

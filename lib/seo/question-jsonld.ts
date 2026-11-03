@@ -26,6 +26,9 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    "tsukan-law": "通関業法",
+    "customs-law": "関税法等",
+    "tsukan-practical": "通関実務",
     am: "午前",
     am1: "午前I",
     am2: "午前II",
@@ -188,6 +191,8 @@ export function buildQuestionJsonLd({
           name: "公益財団法人マンション管理センター",
           url: "https://www.mankan.org/",
         }
+    : q.exam === "tsukanshi"
+      ? { "@type": "Organization", name: "財務省・税関", url: "https://www.customs.go.jp/" }
     : q.exam === "kashikin"
       ? {
           "@type": "Organization",
@@ -243,6 +248,8 @@ export function buildQuestionJsonLd({
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "gas-kou" || q.exam === "gas-otsu" || q.exam === "gas-hei"
       ? undefined
+    : q.exam === "tsukanshi"
+      ? "https://www.customs.go.jp/kiyaku.htm"
     : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan" || q.exam === "kanri" || q.exam === "soukan" || q.exam === "hoikushi" || q.exam === "mankan" || q.exam === "kashikin" || q.exam === "sharoushi" || q.exam === "chusho-kigyo-shindanshi" || q.exam === "kangoshi" || q.exam === "yakuzaishi" || q.exam === "shika-ishi" || q.exam === "judo-seifukushi"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
@@ -259,7 +266,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey, q)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,

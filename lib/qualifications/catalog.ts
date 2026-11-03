@@ -42,6 +42,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
+    domain: "legal", administrator: "財務省・税関",
+    officialQuestionsUrl: "https://www.customs.go.jp/tsukanshi/",
+    officialReuseTermsUrl: "https://www.customs.go.jp/kiyaku.htm",
+    status: "ready-to-ingest",
+    reuseSummary: "公式問題・正答がそろう直近回は第59回（2025年）と第58回（2024年）。現在は第59回の65原問・105解答単位をステージングに収録。第60回は公式正答未公表のため未収録。出典を明記し、解説は出題時点に基づき独自作成。",
+    attributionTemplate: "出典：税関 第○回通関士試験 ○科目 第○問。解説は過去問AIの独自作成。",
+    remainingWork: ["第58回の転記・正答照合・独自解説", "公開前の品質確認と掲載判断", "第60回の公式正答公表後の更新", "申告書作成式は専用の表・別冊参照形式を要するため対象外"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",

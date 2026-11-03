@@ -53,6 +53,7 @@ import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
 import { HOIKUSHI_QUESTIONS } from "./hoikushi";
 import { MANKAN_QUESTIONS } from "./mankan";
+import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 import { KASHIKIN_QUESTIONS } from "./kashikin";
 import { SHAROUSHI_QUESTIONS } from "./sharoushi";
 import { CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } from "./chusho-kigyo-shindanshi";
@@ -163,6 +164,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
   ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),
   ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
+  ...(isExamPublished("tsukanshi") ? { tsukanshi: TSUKANSHI_QUESTIONS } : {}),
   ...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
   ...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
   ...(isExamPublished("chusho-kigyo-shindanshi") ? { "chusho-kigyo-shindanshi": CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } : {}),

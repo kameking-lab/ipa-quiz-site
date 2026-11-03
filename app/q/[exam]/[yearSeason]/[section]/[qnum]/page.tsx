@@ -462,7 +462,7 @@ export default async function QuestionPage({
                   <dl className="space-y-3 text-sm leading-relaxed">
                     {Object.entries(q.choices).map(([key, choice]) => (
                       <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                        <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
+                        <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey, q)}</dt>
                         <dd>
                           <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
                           <p className="mt-1 text-muted-foreground">

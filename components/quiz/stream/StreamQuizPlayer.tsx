@@ -9,6 +9,7 @@ import { NativeBAnswerInput, NativeBFeedback } from "../NativeBAnswer";
 import { DescriptiveAnswerCard } from "../DescriptiveAnswerCard";
 import { QuestionCard } from "../QuestionCard";
 import { QuestionBody } from "../QuestionBody";
+import { QuestionSourcePresentation } from "../QuestionSourcePresentation";
 import { QuestionFigures } from "../QuestionFigures";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import Link from "next/link";
@@ -284,6 +285,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="mb-4 shrink-0 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
+          <QuestionSourcePresentation question={question} phase="before" />
           <QuestionBody text={question.question} />
           <QuestionFigures question={question} />
         </div>
@@ -320,7 +322,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
                             : "bg-white/10"
                     }`}
                   >
-                    {choiceDisplayLabel(question.exam, key)}
+                    {choiceDisplayLabel(question.exam, key, question)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {revealed && isCorrect && (
@@ -459,6 +461,7 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed text-zinc-100 ring-1 ring-white/10">
+          <QuestionSourcePresentation question={question} phase="before" />
           <QuestionBody text={question.question} />
           <QuestionFigures question={question} />
         </div>
@@ -477,7 +480,7 @@ function ReviewOverlay({
                   className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug ${cls}`}
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
-                    {choiceDisplayLabel(question.exam, key)}
+                    {choiceDisplayLabel(question.exam, key, question)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-300" />}

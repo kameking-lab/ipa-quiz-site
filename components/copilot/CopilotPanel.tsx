@@ -1305,7 +1305,7 @@ export function CopilotPanel({
                     (Array.isArray(question.answer) ? question.answer : [question.answer]).includes(key))
                   .map((key) => question.choiceExplanations?.[key] && (
                     <li key={key}>
-                      {choiceDisplayLabel(question.exam, key)}: {question.choiceExplanations[key]}
+                      {choiceDisplayLabel(question.exam, key, question)}: {question.choiceExplanations[key]}
                     </li>
                   ))}
               </ul>

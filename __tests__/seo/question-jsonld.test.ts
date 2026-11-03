@@ -174,6 +174,7 @@ describe("sessionLabel", () => {
 
   it("maps every Session union member to a real label", () => {
     const SESSION_PRESENCE: Record<Session, true> = {
+      "tsukan-law": true, "customs-law": true, "tsukan-practical": true,
       gyosei: true, kanri: true, kansa: true,
       am: true,
       am1: true,

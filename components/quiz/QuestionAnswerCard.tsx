@@ -228,7 +228,7 @@ function ScoredQuestionAnswerCard({
   const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? picked.length === requiredSelections : selected !== undefined;
   const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
-    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
+    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey, question)).join("・")
     : formatAcceptedAnswers(answerKey);
 
   return (
@@ -254,7 +254,7 @@ function ScoredQuestionAnswerCard({
           <ChoiceButton
             key={key}
             choiceKey={key}
-            displayLabel={choiceDisplayLabel(exam, key)}
+            displayLabel={choiceDisplayLabel(exam, key, question)}
             text={choices![key]!}
             imageUrl={choiceImageUrls?.[key]}
             imageAlt={choiceImageAlt(exam, key)}

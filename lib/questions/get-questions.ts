@@ -68,6 +68,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   soukan: async () => isExamPublished("soukan") ? (await import("@/data/questions/soukan")).SOUKAN_QUESTIONS : [],
   hoikushi: async () => isExamPublished("hoikushi") ? (await import("@/data/questions/hoikushi")).HOIKUSHI_QUESTIONS : [],
   mankan: async () => isExamPublished("mankan") ? (await import("@/data/questions/mankan")).MANKAN_QUESTIONS : [],
+  tsukanshi: async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : [],
   kashikin: async () => isExamPublished("kashikin") ? (await import("@/data/questions/kashikin")).KASHIKIN_QUESTIONS : [],
   sharoushi: async () => isExamPublished("sharoushi") ? (await import("@/data/questions/sharoushi")).SHAROUSHI_QUESTIONS : [],
   "chusho-kigyo-shindanshi": async () => isExamPublished("chusho-kigyo-shindanshi") ? (await import("@/data/questions/chusho-kigyo-shindanshi")).CHUSHO_KIGYO_SHINDANSHI_QUESTIONS : [],
