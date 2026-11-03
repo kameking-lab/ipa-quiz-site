@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-11-03T17:05:23.569Z",
+  "gitHead": "692f670060d2130969849616d12de63237525bf3",
+  "command": [
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "__tests__/mobile/essay-history-content.test.tsx",
+    "__tests__/components/grading-result-truth.test.tsx",
+    "--maxWorkers=1"
+  ],
+  "environmentKeys": [
+    "APPDATA",
+    "COMSPEC",
+    "LOCALAPPDATA",
+    "NEXT_TELEMETRY_DISABLED",
+    "NODE_OPTIONS",
+    "NUMBER_OF_PROCESSORS",
+    "PATH",
+    "PATHEXT",
+    "PROCESSOR_ARCHITECTURE",
+    "SYSTEMROOT",
+    "TEMP",
+    "TMP",
+    "USERPROFILE",
+    "WINDIR"
+  ],
+  "strictContentGate": false
+}

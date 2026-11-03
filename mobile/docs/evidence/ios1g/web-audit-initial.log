@@ -1,0 +1,8 @@
+C:\Users\kanet\20260522\ipa-quiz-ios1\mobile\scripts\audit-web-content.ts:35
+  try{auditProtectedArtifact(text,fingerprints(source),path.endsWith(".html"),paper);}catch(error){throw new Error(`${relative(root,path)}: ${error instanceof Error?error.message:"audit failed"}`);}
+                                                                                                         ^
+
+Error: .next\server\app\fp2\practical\202405\1.html: Protected source fingerprint found
+    at <anonymous> (C:\Users\kanet\20260522\ipa-quiz-ios1\mobile\scripts\audit-web-content.ts:35:106)
+
+Node.js v24.13.1

@@ -1,0 +1,8 @@
+C:\Users\kanet\20260522\ipa-quiz-ios1\mobile\scripts\audit-web-content.ts:48
+for(const path of chunks){const text=await readFile(path,"utf8");if(pattern.test(text))throw new Error(`Protected corpus in client chunk: ${relative(root,path)}`);if(containsGradingIndex(text,indexIds,SURVEY_ASSISTANT_REFERENCE_ID))throw new Error(`Bundled survey grading index: ${relative(root,path)}`);digest.update(relative(root,path).replace(/\\/g,"/")).update(text);}
+                                                                                             ^
+
+Error: Protected corpus in client chunk: .next\static\chunks\app\account\essay-history\page-0fc8f22d058c9947.js
+    at <anonymous> (C:\Users\kanet\20260522\ipa-quiz-ios1\mobile\scripts\audit-web-content.ts:48:94)
+
+Node.js v24.13.1

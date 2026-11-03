@@ -1,0 +1,126 @@
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/kanet/20260522/ipa-quiz-ios1[39m
+
+ [31m❯[39m __tests__/mobile/catalog-parity.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 60173[2mms[22m[39m
+   [32m✓[39m independently includes every released skill and inseparable annotated note[32m 14[2mms[22m[39m
+[31m   [31m×[31m includes exactly every web-published practice question, library paper and alternative reader[39m[33m 60158[2mms[22m[39m
+[31m     → Test timed out in 60000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+ [32m✓[39m __tests__/billing/QuizClient.player.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 8764[2mms[22m[39m
+   [33m[2m✓[22m[39m QuizClient with the real player and local learning stores[2m > [22manswers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh [33m 5781[2mms[22m[39m
+   [33m[2m✓[22m[39m submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload [33m 2839[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/authorized-paper.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 3631[2mms[22m[39m
+   [33m[2m✓[22m[39m retains whole-paper answers and wrong review after reload: paid=false, save=true [33m 391[2mms[22m[39m
+   [33m[2m✓[22m[39m retains whole-paper answers and wrong review after reload: paid=true, save=false [33m 579[2mms[22m[39m
+   [33m[2m✓[22m[39m retains whole-paper answers and wrong review after reload: paid=true, save=true [33m 596[2mms[22m[39m
+   [33m[2m✓[22m[39m restores an opted-in save on a fresh tab without losing either answer [33m 411[2mms[22m[39m
+   [33m[2m✓[22m[39m keeps the free eleventh body and key behind the server denial [33m 685[2mms[22m[39m
+   [33m[2m✓[22m[39m keeps descriptive memos for both questions across navigation and reload [33m 417[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/paper-history-restore.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 1415[2mms[22m[39m
+   [33m[2m✓[22m[39m keeps dashboard summaries graded when historical bodies are absent [33m 463[2mms[22m[39m
+ [32m✓[39m __tests__/exam-question-player.test.tsx [2m([22m[2m19 tests[22m[2m)[22m[33m 663[2mms[22m[39m
+ [32m✓[39m __tests__/billing/FeedbackUnlock.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 330[2mms[22m[39m
+ [32m✓[39m __tests__/billing/guest-client.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 328[2mms[22m[39m
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits ap actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"ap","ready":2354,"allChoiceReasons":0,"sessions":["am"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"bySession":[{"session":"am","ready":2354,"allChoiceReasons":0}],"example":null}
+
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits st actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"st","ready":817,"allChoiceReasons":459,"sessions":["am1","am2"],"years":[2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2021,2022,2023,2024,2025],"bySession":[{"session":"am1","ready":418,"allChoiceReasons":60},{"session":"am2","ready":399,"allChoiceReasons":399}],"example":"st-2009a-am2-q1"}
+
+[90mstdout[2m | __tests__/billing/coverage.test.ts[2m > [22m[2mexisting real content (not generated)[2m > [22m[2maudits fp2 actual annual pools and per-choice coverage
+[22m[39m{"base":"0a79ccec11f30e0e8cbcea3e7bc660649101fdce","exam":"fp2","ready":300,"allChoiceReasons":300,"sessions":["gakka"],"years":[2024,2025,2026],"bySession":[{"session":"gakka","ready":300,"allChoiceReasons":300}],"example":"fp2-2026-published-gakka-q1"}
+
+ [32m✓[39m __tests__/billing/coverage.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 301[2mms[22m[39m
+ [32m✓[39m __tests__/billing/routes.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 327[2mms[22m[39m
+   [33m[2m✓[22m[39m route integration[2m > [22mmissing/under-review questions consume nothing; cross-origin cannot consume quota [33m 307[2mms[22m[39m
+ [32m✓[39m __tests__/billing/QuizClient.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/qualification-actions.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 251[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-unknown-tax.test.ts [2m([22m[2m37 tests[22m[2m)[22m[32m 139[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-no-tax.test.ts [2m([22m[2m56 tests[22m[2m)[22m[32m 173[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 151[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-unallocated-refund.test.ts [2m([22m[2m20 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-stripe.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-cancel-at.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 116[2mms[22m[39m
+ [32m✓[39m __tests__/billing/cancel-return.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 95[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-candidate.test.ts [2m([22m[2m39 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-ui.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 100[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/subscription-management.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-http.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/native-gate.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-http.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-recovery-http.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 47[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/cached-image.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m __tests__/billing/webhook-state-integration.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/native-quota.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-unknown-tax-http.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m __tests__/billing/stripe.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m __tests__/billing/stripe-finance.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m __tests__/billing/guest-practice.test.ts [2m([22m[2m28 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m __tests__/billing/guest-claim-recovery.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-practice-http.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-service.test.ts [2m([22m[2m26 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/billing/finance.test.ts [2m([22m[2m15 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/auth.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-unlock.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-question.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m __tests__/billing/guest-route.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/routes.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m __tests__/billing/service.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m __tests__/billing/preview-origin.test.ts [2m([22m[2m62 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m __tests__/billing/reconciliation.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m __tests__/billing/preview-config.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-export.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m __tests__/billing/health-isolation.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m __tests__/billing/webhook.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/entitlement.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/strict-service.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/billing/live-config.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/revenuecat.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/account-delete.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/portable-storage.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-copy.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m __tests__/billing/gate-off.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m __tests__/exam-library-progress.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-finance.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-store.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-browser.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-config.test.ts [2m([22m[2m9 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m __tests__/billing/finance-store.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/billing/finance-snapshot.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/apple-delete.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/billing/signature.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/content-ssr.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/ai-consent.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/resume-page.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/asset-inventory.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 53085[2mms[22m[39m
+   [33m[2m✓[22m[39m covers image references independently read from every paper renderer input and answer registry [33m 4539[2mms[22m[39m
+   [33m[2m✓[22m[39m covers each non-paper renderer's own image and required-PDF input fields [33m 48533[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-tax-shape.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 61[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-offer-display.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m __tests__/billing/billing-page.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/paper-results.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-practice-gate.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-disclosure-config.test.ts [2m([22m[2m18 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [2m[90m↓[39m[22m __tests__/billing/feedback-postgres.test.ts [2m([22m[2m8 tests[22m[2m | [22m[33m8 skipped[39m[2m)[22m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m __tests__/mobile/catalog-parity.test.ts[2m > [22mincludes exactly every web-published practice question, library paper and alternative reader
+[31m[1mError[22m: Test timed out in 60000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m __tests__/mobile/catalog-parity.test.ts:[2m18:1[22m[39m
+    [90m 16| [39m  for(const row of notes??[]){expect(row).toMatchObject({kind:"annotat…
+    [90m 17| [39m})[33m;[39m
+    [90m 18| [39mit("includes exactly every web-published practice question, library pa…
+    [90m   | [39m[31m^[39m
+    [90m 19| [39m  expect(new Set(generated.exams.map(e=>e.code))).toEqual(new Set(cata…
+    [90m 20| [39m  [35mfor[39m([35mconst[39m code [35mof[39m [34mgetRegisteredExamCodes[39m()){
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m74 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (76)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m752 passed[39m[22m[2m | [22m[33m8 skipped[39m[90m (761)[39m
+[2m   Start at [22m 01:29:56
+[2m   Duration [22m 249.36s[2m (transform 52.32s, setup 8.83s, collect 48.18s, tests 131.69s, environment 42.27s, prepare 5.46s)[22m
+
