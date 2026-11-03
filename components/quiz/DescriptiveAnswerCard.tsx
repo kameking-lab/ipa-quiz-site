@@ -21,6 +21,7 @@ export function DescriptiveAnswerCard({
   onNext,
   nextLabel = "次の問題へ",
 }: Props) {
+  const khk = question.exam === "khk-reito-1";
   const modelAnswer = (question.modelAnswer ?? String(question.answer)).replace(
     /^公式問題に基づく独自解答例（法務省の公式解答ではありません）\s*/,
     "",
@@ -28,10 +29,12 @@ export function DescriptiveAnswerCard({
   return (
     <section aria-label="記述の独自解答例" className="space-y-4 rounded-2xl border border-border bg-card p-5">
       <p className="text-sm font-semibold">
-        公式問題に基づく独自解答例（法務省の公式解答ではありません）
+        {khk ? "公式解答例と照合した独自解説" : "公式問題に基づく独自解答例（法務省の公式解答ではありません）"}
       </p>
       <p className="text-sm text-muted-foreground">
-        記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。
+        {khk
+          ? "記述・作図は答案用紙に解き、公式解答例と独自解説の計算過程・用語・図と照らして確認してください。"
+          : "記述・作図は答案用紙に解き、解答例の計算過程・申請内容・図面と照らして確認してください。"}
         この画面では記述答案の自動採点を行いません。
       </p>
       <details open={defaultOpen} onToggle={(event) => onReveal?.(event.currentTarget.open)}>
@@ -46,8 +49,13 @@ export function DescriptiveAnswerCard({
       </details>
       <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <a href={question.sourcePdfUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
-          法務省の公式問題PDF
+          {khk ? "高圧ガス保安協会の公式問題PDF" : "法務省の公式問題PDF"}
         </a>
+        {khk && question.sourceAnswerUrl && (
+          <a href={question.sourceAnswerUrl} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
+            高圧ガス保安協会の公式解答例PDF
+          </a>
+        )}
         {(question.officialReferenceUrls ?? []).map((url) => (
           <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 underline">
             {questionReferenceLabel(question, url)}

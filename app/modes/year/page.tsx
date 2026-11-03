@@ -59,6 +59,7 @@ function isExamCode(s: unknown): s is ExamCode {
 }
 
 function sessionLabel(session: Session, exam: ExamCode): string {
+  if (exam.startsWith("khk-reito-")) return practiceSessionLabel(session, exam);
   if (exam === "kanteishi" || exam === "kaikeishi") return practiceSessionLabel(session, exam);
   if (session === "houki" || session === "hoki" || session === "kogaku" || session === "kiso" || session === "kogaku-a" || session === "kogaku-b") return practiceSessionLabel(session);
   if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);

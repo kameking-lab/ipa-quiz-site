@@ -4,6 +4,7 @@ vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
+import khkData from "@/data/questions/khk-reito-1/latest-two.json";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -17,10 +18,16 @@ const question: Question = {
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
+describe.each([question, (khkData as Question[]).find(q => q.type === "descriptive")!])("$exam の記述演習", (question) => {
 describe("記述問題の操作", () => {
   it("解答例の開閉時にEnter/Spaceが次問へ進んだり成績を記録したりしない", () => {
     const onNext = vi.fn();
     const { container } = render(<QuizPlayer question={question} index={0} total={2} mode="random" onNext={onNext} />);
+    if (question.exam === "khk-reito-1") {
+      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式問題PDF" }).getAttribute("href")).toBe(question.sourcePdfUrl);
+      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式解答例PDF" }).getAttribute("href")).toBe(question.sourceAnswerUrl);
+      expect(screen.queryByText(/法務省/)).toBeNull();
+    }
     const details = container.querySelector("details")!;
     details.open = true;
     fireEvent(details, new Event("toggle"));
@@ -46,7 +53,7 @@ it("ストリームでも独自解答例を表示し、次へ進んでも記述�
   vi.useFakeTimers();
   try {
     const { container } = render(<StreamQuizPlayer questions={[question, { ...question, id: "next-descriptive", question: "次の記述問題" }]} />);
-    expect(screen.getByText(/法務省の公式解答ではありません/)).toBeTruthy();
+    expect(screen.getByText(question.exam === "chosashi" ? /法務省の公式解答ではありません/ : "公式解答例と照合した独自解説")).toBeTruthy();
     const summary = container.querySelector("summary")!;
     summary.focus();
     fireEvent.keyDown(summary, { key: "Enter" });
@@ -75,4 +82,6 @@ it("ストリームの記述だけを完了しても択一の0/1成績へ変換�
     expect(screen.queryByText("Stream Summary")).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   } finally { cleanup(); vi.useRealTimers(); }
+});
+
 });

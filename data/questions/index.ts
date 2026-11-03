@@ -96,7 +96,16 @@ import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
+import { KHK_REITO_1_QUESTIONS } from "./khk-reito-1";
+
+import { KHK_REITO_2_QUESTIONS } from "./khk-reito-2";
+
+import { KHK_REITO_3_QUESTIONS } from "./khk-reito-3";
+
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("khk-reito-3") ? { "khk-reito-3": KHK_REITO_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("khk-reito-2") ? { "khk-reito-2": KHK_REITO_2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("khk-reito-1") ? { "khk-reito-1": KHK_REITO_1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
