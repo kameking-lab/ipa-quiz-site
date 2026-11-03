@@ -6,6 +6,7 @@
 1. 依頼文の TASK と、下の「作業内容」を合わせて /tmp/task.txt に書き、次を実行する:
    `codex exec -m gpt-6.1-sol -c model_reasoning_effort=high -c sandbox_workspace_write.network_access=true --skip-git-repo-check -s workspace-write -C "$PWD" -o /tmp/last.md - < /tmp/task.txt`
    （サンドボックス付きの workspace-write を使う。danger-full-access は使わない。サンドボックスで動かない操作があれば、迂回せず報告する）
+   **.git の書き込み**: サンドボックスでは .git が読み取り専用になることがある。これは想定どおりで、止める理由ではない。Codex にはコミットも一時Gitの作成もさせず、作業ツリーのファイル編集だけをさせる（task.txt にそう書く）。コミットと push は監督役がシェルから行う。作業ツリー自体に書けない（ファイル編集が読み取り専用エラーになる）場合だけ、報告して終了する。
    長時間かかる。最後まで待つ。作業が残って止まったら、終わるか明確に詰まるまで同じ task で再実行する。
 2. Codex を1回実行するたびに、今の claude/ ブランチを push する。main には push しない。PR を作らない。デプロイも Vercel も実行しない。
 3. 最後に /tmp/last.md の内容と `git log --oneline -5` を返信する。
