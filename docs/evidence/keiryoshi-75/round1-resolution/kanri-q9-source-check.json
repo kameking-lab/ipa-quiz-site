@@ -1,0 +1,19 @@
+{
+  "sourcePdf": "data/raw_pdfs/keiryoshi/r06-75/6_R06kanri.pdf",
+  "sourceSha256": "14f484b7514aaf1804cc3b13fab0e230fa620c5920db6d81b6bc7368aa80f178",
+  "pdfPageOneBased": 10,
+  "printedPage": 9,
+  "renderScale": 10,
+  "clipPoints": [
+    112,
+    225,
+    216,
+    258
+  ],
+  "renderTool": "PyMuPDF",
+  "image": "kanri-q9-numerator.png",
+  "imageSha256": "452d60dc44b17429595cfc758f43320401e2cc786efa954721acdc665cd0c9cb",
+  "observation": "分子はΣ(xᵢ−x̄)(yᵢ−ȳ)。iの上の点と字形をxᵢと比較して確認。yₙには見えない。",
+  "resolution": "公式ローカル原本に従いyᵢを保持。原本にないyₙや誤植注記は追加しない。",
+  "remoteComparison": "METIの同URLへの再取得はHTTP403。ローカル原本は既存MANIFESTのSHA256と一致。"
+}
