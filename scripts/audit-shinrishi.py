@@ -1,4 +1,4 @@
-"""第8・9回の公式PDFと候補JSONを照合。Python標準ライブラリとpdftotextが必要。
+"""第8・9回の公式PDFと候補JSONを照合。Python標準ライブラリとPoppler pdftotextが必要。
 python scripts/audit-shinrishi.py --source-dir /tmp/shinrishi
 python scripts/audit-shinrishi.py --round 8 --source-dir /tmp/shinrishi8
 PDF未取得時は公式URLから取得する。生成問題・解説の生成は行わない。
@@ -27,6 +27,8 @@ def main():
     parser.add_argument("--source-dir", type=Path, required=True)
     parser.add_argument("--round", type=int, choices=(8, 9), default=9)
     parser.add_argument("--session", choices=("am", "all"), default="all")
+    parser.add_argument("--check", action="store_true", help="監査JSONを書き換えず照合する")
+    parser.add_argument("--pdftotext", default="pdftotext", help="Poppler pdftotextの実行ファイル")
     args = parser.parse_args()
     base = BASE if args.round == 9 else BASE.replace("/222/", "/132/")
     year = 2026 if args.round == 9 else 2025
@@ -39,7 +41,7 @@ def main():
         path = args.source_dir / filename
         if not path.exists():
             urllib.request.urlretrieve(base + filename, path)
-        texts[session] = subprocess.check_output(["pdftotext", "-layout", str(path), "-"], stderr=subprocess.DEVNULL).decode()
+        texts[session] = subprocess.check_output([args.pdftotext, "-enc", "UTF-8", "-layout", str(path), "-"], stderr=subprocess.DEVNULL).decode("utf-8")
         sources[session] = {"url": base + filename, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
     # 正答表は問題番号の行と対応する正答行を独立に読み取る。
     lines = texts["answers"].splitlines()
@@ -53,7 +55,7 @@ def main():
         for number, value in zip(numbers, values):
             answers[int(number)] = [int(v) for v in value.split(",")]
     assert sorted(answers) == list(range(1, 155))
-    questions = json.loads((ROOT / f"data/questions/shinrishi/{year}-annual.json").read_text())
+    questions = json.loads((ROOT / f"data/questions/shinrishi/{year}-annual.json").read_text(encoding="utf-8"))
     evidence = []
     for session in (("am",) if args.session == "am" else ("am", "pm")):
         pages = {}
@@ -78,10 +80,13 @@ def main():
             assert q.get("requiredSelections", 1) == len(answers[number])
             assert q["sourcePdfUrl"] == base + files[session] + "#page=" + str(pages[number])
             evidence.append({"number": number, "session": session, "pdfPage": pages[number], "officialAnswer": answers[number], "textSha256": hashlib.sha256(canonical("".join(parts)).encode()).hexdigest()})
-    assert len(questions) == len(evidence)
+    selected = [q for q in questions if args.session == "all" or q["session"] == args.session]
+    assert len(selected) == len(evidence)
     result = {"round": args.round, "examDate": "2026-03-01" if args.round == 9 else "2025-03-02", "sources": sources, "questions": evidence, "checked": len(evidence)}
-    destination = ROOT / f"reports/shinrishi-{args.round}-source-audit.json"
-    destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+    suffix = "" if args.session == "all" else f"-{args.session}"
+    destination = ROOT / f"reports/shinrishi-{args.round}{suffix}-source-audit.json"
+    if not args.check:
+        destination.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"公式PDF照合: {len(evidence)}問の本文・選択肢・正答・選択数・ページが一致")
 
 
