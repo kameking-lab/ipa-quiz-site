@@ -414,7 +414,7 @@
       "オ": "誤差の平均平方は誤差平方和をその自由度で割った値である。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 管理 問10（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -423,7 +423,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "3",
     "examDate": "2025-12-14",
-    "subject": "管理"
+    "subject": "管理",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanri-q10.png"
+    ],
+    "imageAltTexts": [
+      "第76回 管理 問10 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-management",
@@ -498,7 +504,7 @@
       "オ": "イは測定結果の性質であるトレーサビリティ、ウは連鎖であり、2語が逆である。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 管理 問12（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -507,7 +513,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "1",
     "examDate": "2025-12-14",
-    "subject": "管理"
+    "subject": "管理",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanri-q12.png"
+    ],
+    "imageAltTexts": [
+      "第76回 管理 問12 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-management",
@@ -540,7 +552,7 @@
       "オ": "ア・イは校正の二段階、エは検証の定義で正しい。調整と校正は別の操作なのでウは誤り。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 管理 問13（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -549,7 +561,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "5",
     "examDate": "2025-12-14",
-    "subject": "管理"
+    "subject": "管理",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanri-q13.png"
+    ],
+    "imageAltTexts": [
+      "第76回 管理 問13 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-management",
@@ -620,7 +638,7 @@
       "ア": "SN比は信号に対する誤差の比を評価し、校正後の測定誤差の推定に用いられる。",
       "イ": "実使用で起きる環境変動等を誤差因子に含めることが望ましい。",
       "ウ": "誤差因子やその変動範囲が違えば誤差分散が変わり、同じ機器でもSN比は変わる。",
-      "エ": "測定のSN比は信号の二乗に対する誤差との比から、信号量の二乗の逆数に相当する単位を持つ。",
+      "エ": "読みy＝βMに対し、測定のSN比はη＝β²/σ²（σ²は読みの誤差分散）と表せる。単位は(読み/信号量)²/読み²＝1/信号量²となるので、Mᵢの二乗の逆数と同じ単位である。",
       "オ": "同じ比較条件ではSN比が大きいほど誤差が小さいと評価できる。"
     },
     "explanationCoverage": "full",
@@ -779,7 +797,7 @@
       "第76回"
     ],
     "difficulty": 3,
-    "question": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + Nc = 0000 となる Nc を考えればよい。しかし単にNc を考えたとしても上記を満たす正の Nc は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + Nc = 10000 となる Nc を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、Nc は 1010 に 1 を足したものになる。つまり、Nc =(ア)である。この Nc のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
+    "question": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + N_c = 0000 となる N_c を考えればよい。しかし単にN_c を考えたとしても上記を満たす正の N_c は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + N_c = 10000 となる N_c を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、N_c は 1010 に 1 を足したものになる。つまり、N_c =(ア)である。この N_c のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
     "choices": {
       "ア": "1011/0111/0010",
       "イ": "1110/0111/1001",
@@ -798,7 +816,7 @@
       "オ": "イは十進数7なので1000ではなく0111である。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 管理 問19（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -807,7 +825,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "1",
     "examDate": "2025-12-14",
-    "subject": "管理"
+    "subject": "管理",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanri-q19.png"
+    ],
+    "imageAltTexts": [
+      "第76回 管理 問19 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-management",
@@ -888,7 +912,7 @@
       "オ": "図は散布図だが、直線関係なので一次関数を回帰分析で求める。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 管理 問21（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -897,7 +921,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "2",
     "examDate": "2025-12-14",
-    "subject": "管理"
+    "subject": "管理",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanri-q21.png"
+    ],
+    "imageAltTexts": [
+      "第76回 管理 問21 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-management",

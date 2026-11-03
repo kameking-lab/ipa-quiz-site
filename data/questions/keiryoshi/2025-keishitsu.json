@@ -147,16 +147,16 @@
     },
     "answer": "ア",
     "requiredSelections": 1,
-    "explanation": "差動変圧器は直接変位を検出する。流量計や圧力計も、浮子や弾性体の変位を検出する構成があるので全て〇である。",
+    "explanation": "三つとも長さの変位を検出する計量器の構成要素として用いられる。差動変圧器は変位による出力電圧の変化を利用する。空気マイクロメータでは、測定面とノズルの隙間の変化を空気の流量又は背圧の変化に変換し、流量計又は圧力計で読み取る。したがって〇・〇・〇の1が正しい。",
     "choiceExplanations": {
-      "ア": "差動変圧器は直接変位を検出する。流量計や圧力計も、浮子や弾性体の変位を検出する構成があるので全て〇である。",
-      "イ": "圧力計でも弾性体の変位を検出する方式があり、×は合わない。",
-      "ウ": "流量計でも浮子位置等の変位を検出する方式があり、×は合わない。",
-      "エ": "差動変圧器は代表的な変位検出器なので×は合わない。",
-      "オ": "流量計と圧力計にも変位検出を用いる方式がある。"
+      "ア": "差動変圧器は変位を電圧変化に、空気マイクロメータは寸法変化を流量又は背圧の変化に変換する。流量計・圧力計も長さ測定の構成要素に使えるので、三つとも〇である。",
+      "イ": "圧力計を×とする点が誤り。背圧式の空気マイクロメータでは、測定面とノズルの隙間の変化を背圧の変化に変換し、圧力計で長さの変位を読み取れる。",
+      "ウ": "流量計を×とする点が誤り。流量式の空気マイクロメータでは、測定面とノズルの隙間の変化を空気流量の変化に変換し、流量計で長さの変位を読み取れる。",
+      "エ": "差動変圧器を×とする点が誤り。測定対象の変位を鉄心の移動として伝え、二次巻線の差動出力電圧から変位を検出できる。",
+      "オ": "流量計・圧力計をともに×とする点が誤り。空気マイクロメータでは、寸法変化を空気流量又は背圧の変化に変換するため、いずれも長さ測定の構成要素として使える。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問4（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -165,7 +165,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "1",
     "examDate": "2025-12-14",
-    "subject": "計質"
+    "subject": "計質",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q4.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問4 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-mass",
@@ -246,7 +252,7 @@
       "オ": "J kg⁻¹は吸収線量の組立単位表示としては正しいが、Jは基本単位ではない。基本単位だけならm² s⁻²となる。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問6（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -255,7 +261,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "5",
     "examDate": "2025-12-14",
-    "subject": "計質"
+    "subject": "計質",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q6.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問6 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-mass",
@@ -678,7 +690,7 @@
       "オ": "49.90 tは重力比による補正量約0.05 tの2倍を引いた値に近い。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問16（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -687,7 +699,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "4",
     "examDate": "2025-12-14",
-    "subject": "計質"
+    "subject": "計質",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q16.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問16 の公式日本地図（A市9.804 m/s²、B市9.794 m/s²）"
+    ]
   },
   {
     "session": "measurement-mass",
@@ -754,13 +772,13 @@
     },
     "answer": "ア",
     "requiredSelections": 1,
-    "explanation": "同型同極性のロードセルは励起E±と出力M±をそれぞれ同極性どうしで並列接続する。",
+    "explanation": "図1は、増幅器のE＋・E−・M＋・M−を、それぞれ二つのロードセルの同名・同極性端子に接続する。両セルに同じ励起電圧を加え、出力を並列にまとめる標準的な和算箱の接続なので、正答は1である。同型セルの出力抵抗が等しいとき並列出力電圧は両出力の平均となり、校正により総荷重を表示する。",
     "choiceExplanations": {
-      "ア": "同型同極性のロードセルは励起E±と出力M±をそれぞれ同極性どうしで並列接続する。",
-      "イ": "片側の励起極性を逆にしているので正しく加算できない。",
-      "ウ": "片側の出力極性が逆で加算されない。",
-      "エ": "励起・出力が片側とも逆の接続であり、規定された同極性の並列接続ではない。",
-      "オ": "励起端子と出力端子のつなぎ方が並列接続になっていない。"
+      "ア": "図1は励起側も出力側も並列接続である。二つのE＋を増幅器E＋へ、E−をE−へ、M＋をM＋へ、M−をM−へ接続し、同じ励起電圧で生じる両セルの出力をまとめる。",
+      "イ": "図2は出力側が並列、励起側が直列である。ロードセル1のE−とロードセル2のE＋がつながり、増幅器の励起電圧が二つのセルに分圧される。各セルへ同じ規定の励起電圧を加える図1の接続と異なる。",
+      "ウ": "図3は励起側が並列、出力側が直列である。ロードセル1のM−とロードセル2のM＋がつながり、残るM＋とM−を増幅器に接続している。同極性の出力端子同士を並列にまとめる図1とは異なる。",
+      "エ": "図4は励起側・出力側とも直列である。セル1のE−とセル2のE＋、セル1のM−とセル2のM＋が接続される。励起電圧を分圧し出力を直列に取り出す構成であり、図1の両側並列接続ではない。",
+      "オ": "図5はロードセル2の励起端子と出力端子を取り違えている。増幅器E±はセル1のE±とセル2のM±へ、増幅器M±はセル1のM±とセル2のE±へつながるため、同名端子を並列に接続する和算箱の配線にならない。"
     },
     "explanationCoverage": "full",
     "hasImage": true,
@@ -944,7 +962,7 @@
       "オ": "休み装置の操作による刃と刃受けの位置変化が計量に与える影響を調べる。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問22（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -954,7 +972,13 @@
     "officialAnswerNumber": "3",
     "examDate": "2025-12-14",
     "lawReferenceDate": "2025-12-14",
-    "subject": "計質"
+    "subject": "計質",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q22.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問22 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-mass",
@@ -981,7 +1005,7 @@
     "explanation": "各てこのモーメントからW/P＝(b₁/a₁)(b₂/a₂)(b₃/a₃)となる。",
     "choiceExplanations": {
       "ア": "てこ比は平均ではなく積となる。",
-      "イ": "第2・第3の作用点距離はそれぞれa₂、a₃であり、差ではない。",
+      "イ": "図で第2・第3のてこの支点から力点までの距離はb₂、b₃であり、b₂−a₂、b₃−a₃ではない。作用点から力点までの距離を力の腕に使っているため誤り。",
       "ウ": "個々の腕の長さを単純に足した比ではない。",
       "エ": "3本のてこは順に力を伝達するため各比を掛け合わせる。",
       "オ": "各てこのモーメントからW/P＝(b₁/a₁)(b₂/a₂)(b₃/a₃)となる。"

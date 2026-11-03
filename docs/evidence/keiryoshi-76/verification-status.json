@@ -1,20 +1,20 @@
 {
   "checkedAt": "2026-11-03",
-  "reviewRound": 3,
-  "sourceAudit": "passed",
+  "reviewRound": 4,
+  "sourceAudit": "failed: original fixed image count 36; actual 73; scope exception approval pending",
   "sourceAuditCommand": "python3 scripts/verify-keiryoshi-source.py",
-  "sourceAuditExitCode": 0,
-  "sourceAuditResult": "source-audit-result.json",
-  "validateQuestions": "passed: exit 0; 26744 questions; fail=0; warn=16956",
+  "sourceAuditExitCode": 1,
+  "sourceAuditResult": "round4-source-check.json",
+  "validateQuestions": "passed: exit 0; 26744 questions; fail=0; warn=16955",
   "typecheck": "passed: exit 0; NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
-  "relatedTests": "passed: exit 0; 111 files, 597 tests",
+  "relatedTests": "passed: exit 0; 111 files, 597 tests; --maxWorkers=2 retry after initial process exit143",
   "fullTextAudit": {
     "questions": 200,
     "choices": 1000,
     "fields": 1200,
     "unparsedFields": 0,
-    "changedQuestions": 6,
-    "changedFields": 7,
+    "changedQuestions": 7,
+    "changedFields": 8,
     "rawDifferentFieldsAfter": 506,
     "allResidualDifferencesDocumented": true,
     "scan": "full-text-audit.json",
@@ -24,27 +24,27 @@
     "limitation": "Residual differences include intentional display conversions and PDF extraction artifacts; raw text equality and automatic semantic proof are not claimed."
   },
   "figurePixelAudit": {
-    "images": 36,
-    "recreated": 36,
-    "containedWithMargin": 36,
-    "allPixelsEqual": 36,
+    "images": 73,
+    "recreated": 37,
+    "containedWithMargin": 73,
+    "allPixelsEqual": 73,
     "originalKnownMissing": 5,
     "originalCoordinatesUnknown": 3,
     "result": "figure-pixel-audit.json"
   },
   "typographyAudit": {
-    "scope": "200 questions and 1000 choices",
+    "scope": "200 questions, 1000 choices and all explanations; 77 candidate questions, 936 glyph-position candidates",
     "scan": "typography-scan.json",
     "review": "typography-review.json",
-    "correctedQuestions": 10,
-    "note": "Prior official geometry scan retained; current data snapshots and hashes refreshed. Round 3 additionally restores Mᵢ in 管理15."
+    "correctedQuestions": 11,
+    "note": "Round 4: 管理19 9 occurrences Nc -> N_c; full positions preserved in official PNG; round4-script-audit.json"
   },
   "transcriptionHashes": "refreshed and verified for all 200 questions",
-  "checks": "round3-checks.json",
-  "report": "round3-full-audit.md",
+  "checks": "round4-checks.json",
+  "report": "round4-full-audit.md",
   "gitDiffCheck": "passed",
   "gitAdd": "not run",
   "commitsCreated": 0,
   "pushesPerformed": 0,
-  "independentReview": "round 3 findings supplied by user; no new independent reviewer invoked"
+  "independentReview": "round 4 findings supplied by user; all 200 questions / 1000 explanations re-reviewed by authoring agent; no subagent or new independent external reviewer invoked"
 }

@@ -1,4 +1,4 @@
-"""Audit all 36 independently defined official figure regions, then optionally recrop.
+"""Audit all registered independently defined official figure regions, then optionally recrop.
 Requires Pillow + numpy; Poppler pdftoppm/pdfinfo. Run from repo root.
 python3 docs/evidence/keiryoshi-76/figure-pixel-audit.py --recrop
 python3 docs/evidence/keiryoshi-76/figure-pixel-audit.py
@@ -58,5 +58,5 @@ for f,path in zip(fs,paths):
  assert contained and equal and sha(dest)==f['imageSha256'],f['image']
  results.append(dict(image=f['image'],pdfPage=f['pdfPage'],officialSearchPixels=roi,officialInkBoundingBox=bbox,requiredBoundingBoxWithMargin=padded,inkPixels=int(mask.sum()),missingInkPixels=0,boundingBoxWithMarginContained=contained,pixelEqual=equal,imageSha256=sha(dest),previous=f.get('previousCropAudit')))
 if '--recrop' in sys.argv:(E/'figure-crops.json').write_text(json.dumps(fs,ensure_ascii=False,indent=2)+'\n')
-result=dict(method='pdftoppm MediaBox scale-to 2000; independently delimited full-page figure+label region; RGB<245 ink bbox +12 px margin; containment and every RGB pixel equality against official render',limits='Figure search regions are explicitly defined from full official pages; geometric verification depends on those regions, recorded for review. No OCR or semantic claim.',summary=dict(images=36,pixelEqual=sum(r['pixelEqual'] for r in results),contained=sum(r['boundingBoxWithMarginContained'] for r in results),originalKnownMissing=sum(bool(r['previous'].get('missingOfficialInkPixels')) for r in results),originalCoordinatesUnknown=sum('originalContainment' in r['previous'] for r in results)),figures=results)
+result=dict(method='pdftoppm MediaBox scale-to 2000; independently delimited full-page figure+label region; RGB<245 ink bbox +12 px margin; containment and every RGB pixel equality against official render',limits='Figure search regions are explicitly defined from full official pages; geometric verification depends on those regions, recorded for review. No OCR or semantic claim.',summary=dict(images=len(fs),pixelEqual=sum(r['pixelEqual'] for r in results),contained=sum(r['boundingBoxWithMarginContained'] for r in results),originalKnownMissing=sum(bool((r['previous'] or {}).get('missingOfficialInkPixels')) for r in results),originalCoordinatesUnknown=sum('originalContainment' in (r['previous'] or {}) for r in results)),figures=results)
 (E/'figure-pixel-audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result['summary']))

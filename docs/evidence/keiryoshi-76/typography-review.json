@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-11-03",
-  "scope": "公式8科目200問の本文・全5肢を機械走査し、強調・添字等の候補を点検。既存解説は修正記号に関係する範囲を更新。",
-  "sourceScanSha256": "25c9113b5b720a7d27a2670b816ac7136b0cdc1e8f2106d8f447ce231b9132d6",
+  "scope": "公式200問を再走査。全問の文字位置・サイズ・基線差と本文・全肢・解説の平文候補はround4-script-audit.json。管理問19の9か所を添字記法N_cへ復元。",
+  "sourceScanSha256": "77e1f2a5594910cfd1dcdcab746fb55e1db726adae3bca26fc28f8d76177cc59",
   "correctedQuestions": [
     "環物10",
     "環物11",
@@ -12,7 +12,8 @@
     "管理14",
     "管理24",
     "計質19",
-    "管理15"
+    "管理15",
+    "管理19"
   ],
   "actualUnderlinedTextQuestions": [
     "環物12",
@@ -1205,8 +1206,8 @@
       "subject": "管理",
       "qNumber": 19,
       "pdfPage": 20,
-      "result": "reviewed-candidates",
-      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+      "result": "corrected",
+      "note": "PDF20ページのNの右下のcを全9か所で確認。Unicodeに下付きcがないためN_cの明示的添字記法で保持し、公式の下付き配置はkanri-q19.pngにも保持。"
     },
     {
       "subject": "管理",

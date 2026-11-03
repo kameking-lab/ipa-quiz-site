@@ -2,9 +2,9 @@
   "method": "pdftoppm MediaBox scale-to 2000; independently delimited full-page figure+label region; RGB<245 ink bbox +12 px margin; containment and every RGB pixel equality against official render",
   "limits": "Figure search regions are explicitly defined from full official pages; geometric verification depends on those regions, recorded for review. No OCR or semantic claim.",
   "summary": {
-    "images": 36,
-    "pixelEqual": 36,
-    "contained": 36,
+    "images": 73,
+    "pixelEqual": 73,
+    "contained": 73,
     "originalKnownMissing": 5,
     "originalCoordinatesUnknown": 3
   },
@@ -1538,6 +1538,1042 @@
         "coordinateSpace": "checkpoint coordinates not recorded",
         "originalContainment": "unknown: original crop coordinates absent; recropped from official PDF"
       }
+    },
+    {
+      "image": "/images/questions/keiryoshi/ichiki-q5.png",
+      "pdfPage": 6,
+      "officialSearchPixels": [
+        219,
+        480,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        266,
+        504,
+        577,
+        1010
+      ],
+      "requiredBoundingBoxWithMargin": [
+        254,
+        492,
+        589,
+        1022
+      ],
+      "inkPixels": 4494,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "a6e1201612de3ff152b8846bec0b3f4570245dc73e8a50965ba5e228a279eac4",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/ichiki-q18.png",
+      "pdfPage": 19,
+      "officialSearchPixels": [
+        219,
+        372,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        402,
+        597,
+        885
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        390,
+        609,
+        897
+      ],
+      "inkPixels": 3148,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "9db9f8beb8d0d32ba63567f2081779ec08e6771a307f328f87a5acd664eca6ce",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/ichiki-q22.png",
+      "pdfPage": 23,
+      "officialSearchPixels": [
+        219,
+        645,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        658,
+        775,
+        1188
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        646,
+        787,
+        1200
+      ],
+      "inkPixels": 10864,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "835dee31968fa8db2eb805c2674b1114b4df32442497cf0f00cf9e14ba7f027b",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanbutsu-q1.png",
+      "pdfPage": 2,
+      "officialSearchPixels": [
+        219,
+        648,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        264,
+        697,
+        945,
+        1166
+      ],
+      "requiredBoundingBoxWithMargin": [
+        252,
+        685,
+        957,
+        1178
+      ],
+      "inkPixels": 20393,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "0ed4a8d0e77cc64eaa61568228aaf647b2ed2c0245371cca5009f79e7d3eb3a9",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanbutsu-q3.png",
+      "pdfPage": 4,
+      "officialSearchPixels": [
+        219,
+        747,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        265,
+        796,
+        1132,
+        1267
+      ],
+      "requiredBoundingBoxWithMargin": [
+        253,
+        784,
+        1144,
+        1279
+      ],
+      "inkPixels": 14914,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "5bf984c7bd45adc7a33b4116626673cc76728e1ac230209cd7c26d613fff8157",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q1.png",
+      "pdfPage": 2,
+      "officialSearchPixels": [
+        219,
+        230,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        234,
+        253,
+        1229,
+        1021
+      ],
+      "requiredBoundingBoxWithMargin": [
+        222,
+        241,
+        1241,
+        1033
+      ],
+      "inkPixels": 38043,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "6b1cd4507471bc5a8349b82d02ca705715039475912c16dfdddf202e790bc1a4",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q6.png",
+      "pdfPage": 7,
+      "officialSearchPixels": [
+        219,
+        594,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        649,
+        528,
+        915
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        637,
+        540,
+        927
+      ],
+      "inkPixels": 4334,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "ff77aaca48ff08de8e98b8b1000f4df1152a0219820f9b5b78d22236e58c4041",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q8.png",
+      "pdfPage": 9,
+      "officialSearchPixels": [
+        219,
+        646,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        695,
+        909,
+        968
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        683,
+        921,
+        980
+      ],
+      "inkPixels": 9602,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "c1e57e4ca1d74a1bdf65b4388f8d92274718923bcf37f2eedf584c23f24f1f1a",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q13.png",
+      "pdfPage": 14,
+      "officialSearchPixels": [
+        219,
+        597,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        646,
+        808,
+        918
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        634,
+        820,
+        930
+      ],
+      "inkPixels": 11907,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "45f0a41c25df447f4546a06ab624c34b028dd45db640865cc57e3de9d3904615",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q16.png",
+      "pdfPage": 17,
+      "officialSearchPixels": [
+        219,
+        646,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        695,
+        528,
+        967
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        683,
+        540,
+        979
+      ],
+      "inkPixels": 4602,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "3be47750af36c1d6143359a7c283b4e6c218b69fbe05c359071a3e54228872de",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q19.png",
+      "pdfPage": 20,
+      "officialSearchPixels": [
+        219,
+        793,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        842,
+        673,
+        1115
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        830,
+        685,
+        1127
+      ],
+      "inkPixels": 4933,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "a77d608afd35155ce04581e96e706f94d36b68569574dff10b5eee176ad2cccd",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanno-q21.png",
+      "pdfPage": 22,
+      "officialSearchPixels": [
+        219,
+        647,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        696,
+        729,
+        969
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        684,
+        741,
+        981
+      ],
+      "inkPixels": 9576,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "a3388e6547d53d031a669e8015ba22b61dee8b12522341d8c636e87c91f08bba",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q1.png",
+      "pdfPage": 2,
+      "officialSearchPixels": [
+        219,
+        502,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        551,
+        821,
+        824
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        539,
+        833,
+        836
+      ],
+      "inkPixels": 11908,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "0fde62a5f109e7fba28da3811f01d2c7aeff73e4c9f4ae628d63f2fb2904ffe3",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q4.png",
+      "pdfPage": 5,
+      "officialSearchPixels": [
+        219,
+        792,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        840,
+        882,
+        1113
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        828,
+        894,
+        1125
+      ],
+      "inkPixels": 16070,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "c9ffff731dbc34c36932a3f529584a5d5df63c409da7ccaf27f40939bd38396f",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q7.png",
+      "pdfPage": 8,
+      "officialSearchPixels": [
+        219,
+        603,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        652,
+        830,
+        925
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        640,
+        842,
+        937
+      ],
+      "inkPixels": 16305,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "9b566079f06514265d7d12b70466e8785520b7fcaab15e47a643ba4d25bbd942",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q8.png",
+      "pdfPage": 9,
+      "officialSearchPixels": [
+        219,
+        606,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        261,
+        655,
+        1227,
+        1076
+      ],
+      "requiredBoundingBoxWithMargin": [
+        249,
+        643,
+        1239,
+        1088
+      ],
+      "inkPixels": 27582,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "03c432f1f3e6dfdf95e6f73a2d69031b3e42808b5a00afc27650688eb493b971",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q13.png",
+      "pdfPage": 14,
+      "officialSearchPixels": [
+        219,
+        853,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        902,
+        1174,
+        1175
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        890,
+        1186,
+        1187
+      ],
+      "inkPixels": 25032,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "f88eb55836dd63630b64ffb456f04fcdfd8d4687c78f5e8cdd34c2d4d1f9fa1f",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q16.png",
+      "pdfPage": 17,
+      "officialSearchPixels": [
+        219,
+        800,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        265,
+        847,
+        1177,
+        1522
+      ],
+      "requiredBoundingBoxWithMargin": [
+        253,
+        835,
+        1189,
+        1534
+      ],
+      "inkPixels": 29246,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "f9359ea8076efa6bd9d154a9a24ea0285235478e76d161b7f6f6e3b3b28c0a65",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q17.png",
+      "pdfPage": 18,
+      "officialSearchPixels": [
+        219,
+        493,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        261,
+        496,
+        1173,
+        924
+      ],
+      "requiredBoundingBoxWithMargin": [
+        249,
+        484,
+        1185,
+        936
+      ],
+      "inkPixels": 22287,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "a39a07ed24e296216a91c010b322b5720515c5a16aad54eede7b3f819e6d4f96",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q18.png",
+      "pdfPage": 19,
+      "officialSearchPixels": [
+        219,
+        548,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        271,
+        597,
+        685,
+        870
+      ],
+      "requiredBoundingBoxWithMargin": [
+        259,
+        585,
+        697,
+        882
+      ],
+      "inkPixels": 12578,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "54178cf63e359ab56cb21214686c101f94c609e360e79924bdb6c9365e94556a",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q23.png",
+      "pdfPage": 24,
+      "officialSearchPixels": [
+        219,
+        546,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        595,
+        855,
+        867
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        583,
+        867,
+        879
+      ],
+      "inkPixels": 13353,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "20c1d6557743222743175c476c3cec7177ed58ebd4669915ea8abb20754a6c13",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q24.png",
+      "pdfPage": 25,
+      "officialSearchPixels": [
+        219,
+        553,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        263,
+        602,
+        863,
+        875
+      ],
+      "requiredBoundingBoxWithMargin": [
+        251,
+        590,
+        875,
+        887
+      ],
+      "inkPixels": 16823,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "1929dd703743301e4c3279a3c4d8e7ec935cb3852d44e7296c5131d7fc1139eb",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanri-q10.png",
+      "pdfPage": 11,
+      "officialSearchPixels": [
+        219,
+        230,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        234,
+        255,
+        1229,
+        1236
+      ],
+      "requiredBoundingBoxWithMargin": [
+        222,
+        243,
+        1241,
+        1248
+      ],
+      "inkPixels": 40729,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "2ff5a03ce10a11252bed2e9fc58fb38b79298d037447756e8ea7fda6c192fec2",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanri-q12.png",
+      "pdfPage": 13,
+      "officialSearchPixels": [
+        219,
+        894,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        264,
+        943,
+        1221,
+        1414
+      ],
+      "requiredBoundingBoxWithMargin": [
+        252,
+        931,
+        1233,
+        1426
+      ],
+      "inkPixels": 16814,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "2eb6508e2eb02383a68c67ea3f5dfe1dfca56cae761122b40591d29a93ca81b7",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanri-q13.png",
+      "pdfPage": 14,
+      "officialSearchPixels": [
+        219,
+        905,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        271,
+        954,
+        712,
+        1418
+      ],
+      "requiredBoundingBoxWithMargin": [
+        259,
+        942,
+        724,
+        1430
+      ],
+      "inkPixels": 6060,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "7d848a5028c3fbacca6bc7609ac0156ed231b0dbddb73a4c80f91cc1a4e13ef4",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanri-q19.png",
+      "pdfPage": 20,
+      "officialSearchPixels": [
+        219,
+        230,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        234,
+        254,
+        1228,
+        1658
+      ],
+      "requiredBoundingBoxWithMargin": [
+        222,
+        242,
+        1240,
+        1670
+      ],
+      "inkPixels": 91775,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "597e801288308b9b81c17372a4801fa9a011a5fa199008a70053d5f84f2bb1df",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanri-q21.png",
+      "pdfPage": 22,
+      "officialSearchPixels": [
+        219,
+        843,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        271,
+        892,
+        900,
+        1363
+      ],
+      "requiredBoundingBoxWithMargin": [
+        259,
+        880,
+        912,
+        1375
+      ],
+      "inkPixels": 12733,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "e583e4178f6c3f7a93253d0b83252ebc7fc825bbe665af3274e98bcb57a21b96",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanka-q16.png",
+      "pdfPage": 17,
+      "officialSearchPixels": [
+        219,
+        677,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        257,
+        704,
+        841,
+        1197
+      ],
+      "requiredBoundingBoxWithMargin": [
+        245,
+        692,
+        853,
+        1209
+      ],
+      "inkPixels": 11825,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "bc230d23c34ead9b914785452d7d368f2c0952db5628f97b4cc74c9d19a01bfd",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanka-q20.png",
+      "pdfPage": 21,
+      "officialSearchPixels": [
+        219,
+        386,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        231,
+        392,
+        1223,
+        1054
+      ],
+      "requiredBoundingBoxWithMargin": [
+        219,
+        380,
+        1235,
+        1066
+      ],
+      "inkPixels": 47190,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "a101ebb4a7405606f6a84025297d923596e924214042cd33c9cb885de1c75c14",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanka-q23.png",
+      "pdfPage": 24,
+      "officialSearchPixels": [
+        219,
+        625,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        259,
+        649,
+        555,
+        1144
+      ],
+      "requiredBoundingBoxWithMargin": [
+        247,
+        637,
+        567,
+        1156
+      ],
+      "inkPixels": 4726,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "1f9596ad522142875f38e5b4a388e408988500b72e2b13d135b300764d5b8e5d",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanon-q7.png",
+      "pdfPage": 8,
+      "officialSearchPixels": [
+        219,
+        230,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        233,
+        254,
+        1206,
+        1118
+      ],
+      "requiredBoundingBoxWithMargin": [
+        221,
+        242,
+        1218,
+        1130
+      ],
+      "inkPixels": 24714,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "33fb4f0218d2f97a40f534110d94ef966f1cf83cb115161df0ccd4f1c30b8a5a",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/kanon-q25.png",
+      "pdfPage": 26,
+      "officialSearchPixels": [
+        300,
+        430,
+        1720,
+        1232
+      ],
+      "officialInkBoundingBox": [
+        1130,
+        460,
+        1669,
+        677
+      ],
+      "requiredBoundingBoxWithMargin": [
+        1118,
+        448,
+        1681,
+        689
+      ],
+      "inkPixels": 10675,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "f79b9b1e685905a56e41e2d622b01c1bc5edf956264534e2b8ba5aa068ac323b",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/keishitsu-q4.png",
+      "pdfPage": 5,
+      "officialSearchPixels": [
+        219,
+        354,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        264,
+        403,
+        758,
+        675
+      ],
+      "requiredBoundingBoxWithMargin": [
+        252,
+        391,
+        770,
+        687
+      ],
+      "inkPixels": 4840,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "68d8858485f9da24c447e1e3f4103d7d34bdf60a2192144b101e319d9152b2e7",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/keishitsu-q6.png",
+      "pdfPage": 7,
+      "officialSearchPixels": [
+        219,
+        372,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        266,
+        400,
+        732,
+        828
+      ],
+      "requiredBoundingBoxWithMargin": [
+        254,
+        388,
+        744,
+        840
+      ],
+      "inkPixels": 6646,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "1c5cbcf516ce87dec2792c569c53cbe2ec337b46e3b15f52e1e17a46e95f4054",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/keishitsu-q16.png",
+      "pdfPage": 17,
+      "officialSearchPixels": [
+        409,
+        540,
+        1082,
+        1130
+      ],
+      "officialInkBoundingBox": [
+        429,
+        561,
+        1063,
+        1107
+      ],
+      "requiredBoundingBoxWithMargin": [
+        417,
+        549,
+        1075,
+        1119
+      ],
+      "inkPixels": 8189,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "61ba9cbe6a2360ddb3dbdcb7e17480c8fd14dae054ab71bc696ab287fd0ffd8a",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/houki-q3.png",
+      "pdfPage": 4,
+      "officialSearchPixels": [
+        219,
+        398,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        271,
+        446,
+        738,
+        719
+      ],
+      "requiredBoundingBoxWithMargin": [
+        259,
+        434,
+        750,
+        731
+      ],
+      "inkPixels": 7395,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "ceb450bc8c3c3e6f84f53e36dd2d45a23d1869299c5c57e7e6137942f2d8ae8d",
+      "previous": null
+    },
+    {
+      "image": "/images/questions/keiryoshi/keishitsu-q22.png",
+      "pdfPage": 23,
+      "officialSearchPixels": [
+        219,
+        353,
+        1257,
+        1700
+      ],
+      "officialInkBoundingBox": [
+        266,
+        402,
+        1229,
+        873
+      ],
+      "requiredBoundingBoxWithMargin": [
+        254,
+        390,
+        1241,
+        885
+      ],
+      "inkPixels": 27360,
+      "missingInkPixels": 0,
+      "boundingBoxWithMarginContained": true,
+      "pixelEqual": true,
+      "imageSha256": "b1a41878f7abef9b569d9b8afeaf1d23743aef2460c74c4667b3e288e81a44d7",
+      "previous": null
     }
   ]
 }

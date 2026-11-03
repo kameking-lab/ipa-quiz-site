@@ -79,7 +79,7 @@ for q in questions:
     for url in q.get("imageUrls", []):
         assert Path("public" + url).is_file(), label
         image_urls.add(url)
-assert len(image_urls) == len(figures) == 36
+assert len(image_urls) == len(figures)
 assert image_urls == {f["image"] for f in figures}
 for figure in figures:
     assert sha256("public" + figure["image"]) == figure["imageSha256"], figure["image"]

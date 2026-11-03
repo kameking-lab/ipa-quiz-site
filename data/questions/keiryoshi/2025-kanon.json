@@ -285,10 +285,10 @@
       "イ": "各帯域の寄与の和より小さすぎる。",
       "ウ": "補正後の最大帯域だけでも約79 dBである。",
       "エ": "各帯域にA補正約−16.1、−8.6、−3.2、0、＋1.2、＋1.0 dBを加えてエネルギー合成すると約82.1 dB。",
-      "オ": "A補正を行わない又は単純に平均する値とは異なる。"
+      "オ": "各帯域にA特性補正を加え、二乗音圧を合成すると約82.1 dBとなるため、87 dBは最も近い選択肢ではない。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問7（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -297,7 +297,13 @@
     "lastUpdated": "2026-11-03",
     "officialAnswerNumber": "4",
     "examDate": "2025-12-14",
-    "subject": "環音"
+    "subject": "環音",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q7.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問7 の公式表（列見出しと全行）"
+    ]
   },
   {
     "session": "measurement-sound",
@@ -408,7 +414,7 @@
     "explanation": "p＝20 μPa×10⁴＝0.2 Pa、感度＝0.002/0.2＝0.01 V/Pa。20 log₁₀0.01＝−40 dB。",
     "choiceExplanations": {
       "ア": "音圧80 dBを基準音圧20 μPaから変換する必要がある。",
-      "イ": "2 mVを基準1 Vと比べるだけでは感度にならない。",
+      "イ": "−34 dBは約0.020 V/Paの感度に対応するが、設問の音圧0.2 Paと出力0.002 Vから得られる感度は0.010 V/Paである。",
       "ウ": "p＝20 μPa×10⁴＝0.2 Pa、感度＝0.002/0.2＝0.01 V/Pa。20 log₁₀0.01＝−40 dB。",
       "エ": "音圧のレベルをそのまま電圧レベルから引くことはできない。",
       "オ": "感度は0.01 V/Paなので−40 dBである。"
@@ -667,7 +673,7 @@
     "requiredSelections": 1,
     "explanation": "加法定理で包絡振幅は2A cos(π(f₂−f₁)t)。大きさの繰返し周期は1/(f₂−f₁)となる。",
     "choiceExplanations": {
-      "ア": "うなりの速さは周波数の差で決まり、和ではない。",
+      "ア": "振動数の和は合成波の速い振動に関係する。合成波は2A cos[π(f₂−f₁)t] cos[π(f₁＋f₂)t]で、うなりの振幅の大きさは包絡線の絶対値、最大値は2Aである。和が大きさを決めるという説明は誤り。",
       "イ": "合成波にも元のf₁、f₂の成分が含まれる。",
       "ウ": "最大振幅はAではなく2Aである。",
       "エ": "(f₁＋f₂)/2は速い振動の周波数で、うなり周波数ではない。",
@@ -751,7 +757,7 @@
     "requiredSelections": 1,
     "explanation": "減衰を強めるとオーバーシュートを抑えられる。",
     "choiceExplanations": {
-      "ア": "減衰が大きいほど減衰固有振動数は低下する。",
+      "ア": "非減衰固有振動数は質量とばね定数で決まり、減衰を増やしても高くならない。減衰振動が生じる範囲では、減衰固有振動数は減衰が増すほど低くなる。",
       "イ": "小減衰ほど共振ピークは大きくなる。",
       "ウ": "減衰を強めるとオーバーシュートを抑えられる。",
       "エ": "固有振動数が高いほど応答の時間尺度は短くなる。",
@@ -922,7 +928,7 @@
       "ア": "AのBでのエネルギーは合計の0.9、Cは0.1。Dまでの距離減衰を別々に計算する。",
       "イ": "表面波ではエネルギーは距離に反比例。B→DでAの寄与は1/4、Cは1/2になり、合計比0.9/4＋0.1/2＝0.275。80＋10 log₁₀0.275≒74.4 dB。",
       "ウ": "距離比による減衰を考慮すると約74.4 dBである。",
-      "エ": "Dは両音源から遠ざかるためBと同じ80 dBではない。",
+      "エ": "Dは両振動源からBより遠く、表面波の距離減衰によって合成振動加速度レベルは約74.4 dBに下がるため、80 dBではない。",
       "オ": "Dは両振動源から遠いため増加しない。"
     },
     "explanationCoverage": "full",
@@ -1059,7 +1065,7 @@
       "オ": "質量は700 g以上ではなく以下で、周波数範囲も異なる。"
     },
     "explanationCoverage": "full",
-    "hasImage": false,
+    "hasImage": true,
     "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
     "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
     "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問25（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
@@ -1069,6 +1075,12 @@
     "officialAnswerNumber": "1",
     "examDate": "2025-12-14",
     "lawReferenceDate": "2025-12-14",
-    "subject": "環音"
+    "subject": "環音",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q25.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問25 の公式表（列見出しと全行）"
+    ]
   }
 ]

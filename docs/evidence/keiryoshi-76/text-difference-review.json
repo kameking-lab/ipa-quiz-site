@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-11-03",
-  "auditSha256": "47d1e6a1f4a6c051a1ffb6c749bfc0da48f60aca474e604ca0651fad147d2530",
+  "auditSha256": "44feb0800ee8a7173464efbee7689035b33f040bd458c93c718fc5ff9628acff",
   "baselineSha256": "d9cff605a3110eacfcee7c1de30f7b7589f88550032147aa9afcdca8222e7277",
   "scope": "200 questions + 1000 choices; every field has a source region and is compared, including empty text for structural drawings",
   "limits": "Raw normalized text equality is not claimed. All residual differences are explicit; PDF mapping/reading-order artifacts and intentional display conversions are retained as annotated differences. This is not an automatic semantic proof of formulas or explanations.",
@@ -8,8 +8,8 @@
     "fieldsCompared": 1200,
     "beforeDifferentFields": 506,
     "afterDifferentFields": 506,
-    "changedFields": 7,
-    "changedQuestions": 6,
+    "changedFields": 8,
+    "changedQuestions": 7,
     "unparsedFields": 0
   },
   "corrections": [
@@ -47,6 +47,13 @@
       "field": "エ",
       "before": "測定の SN 比は、信号因子の値 Mi の二乗の逆数と同じ単位を持っている。",
       "after": "測定の SN 比は、信号因子の値 Mᵢ の二乗の逆数と同じ単位を持っている。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 19,
+      "field": "question",
+      "before": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + Nc = 0000 となる Nc を考えればよい。しかし単にNc を考えたとしても上記を満たす正の Nc は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + Nc = 10000 となる Nc を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、Nc は 1010 に 1 を足したものになる。つまり、Nc =(ア)である。この Nc のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
+      "after": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + N_c = 0000 となる N_c を考えればよい。しかし単にN_c を考えたとしても上記を満たす正の N_c は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + N_c = 10000 となる N_c を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、N_c は 1010 に 1 を足したものになる。つまり、N_c =(ア)である。この N_c のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)"
     },
     {
       "subject": "計質",
@@ -106,6 +113,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -151,6 +159,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -196,6 +205,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -241,6 +251,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -286,6 +297,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -317,6 +329,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -348,6 +361,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -379,6 +393,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -410,6 +425,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -441,6 +457,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -486,6 +503,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -531,6 +549,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -576,6 +595,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -621,6 +641,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -666,6 +687,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -697,7 +719,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。"
+        "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -743,6 +766,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -789,6 +813,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -835,6 +860,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -881,6 +907,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -941,6 +968,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の末尾脚注（検定証印等・型式承認の定義）を本文末へ移動。全語句を保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -986,6 +1014,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1031,6 +1060,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1076,6 +1106,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1121,6 +1152,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1166,6 +1198,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1225,6 +1258,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1284,6 +1318,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1343,6 +1378,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1388,6 +1424,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1447,6 +1484,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1520,7 +1558,8 @@
       ],
       "disposition": "corrected",
       "notes": [
-        "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。"
+        "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -1566,6 +1605,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1612,6 +1652,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1658,6 +1699,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1704,6 +1746,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1764,6 +1807,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の3列の表は「／」で列を区切る。脚注を本文末へ移動。今回、原文にない「濃度計は、」を削除。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q17.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1795,6 +1839,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1826,6 +1871,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1857,6 +1903,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1888,6 +1935,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1919,6 +1967,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -1964,6 +2013,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2009,6 +2059,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2054,6 +2105,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2099,6 +2151,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2144,6 +2197,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2189,6 +2243,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q24.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2234,6 +2289,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q24.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2279,6 +2335,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q24.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2324,6 +2381,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q24.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2369,6 +2427,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/houki-q24.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -2776,6 +2835,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -2849,6 +2909,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -2923,6 +2984,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -2969,6 +3031,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -3029,6 +3092,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -3103,6 +3167,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q5.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -6472,6 +6537,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -6504,6 +6570,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -6537,6 +6604,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -6570,6 +6638,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -6603,6 +6672,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -6636,6 +6706,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の「波長」「速さ」の2列を選択肢の「／」の前後で示す。⻑はPDFの字形対応で、表示文字は長。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q18.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -7227,6 +7298,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -7356,6 +7428,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -7486,6 +7559,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -7588,6 +7662,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -7704,6 +7779,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -7778,6 +7854,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/ichiki-q22.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -8406,6 +8483,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8451,6 +8529,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8496,6 +8575,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8541,6 +8621,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8586,6 +8667,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8617,6 +8699,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q3.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8648,6 +8731,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q3.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8679,6 +8763,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q3.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8710,6 +8795,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q3.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -8741,6 +8827,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanbutsu-q3.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -14892,6 +14979,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -14923,6 +15011,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -14954,6 +15043,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -14985,6 +15075,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15016,6 +15107,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15047,6 +15139,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15340,7 +15433,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。"
+        "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -15386,6 +15480,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15432,6 +15527,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15478,6 +15574,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15538,6 +15635,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -15585,6 +15683,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "製法と確認法の2列の表を選択肢内「／」で区切る。pdftotextは列の最初の行を横に読んでから各継続行を読むため語順差が出る。行・列を公式どおり保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q20.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15720,7 +15819,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -15765,6 +15864,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15810,6 +15910,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15855,6 +15956,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15900,6 +16002,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -15945,6 +16048,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanka-q23.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -16242,7 +16346,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。"
+        "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -16302,6 +16407,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16363,6 +16469,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16424,6 +16531,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16485,6 +16593,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16546,6 +16655,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "PDF冒頭の「以下の表は、」の抽出順が逆転。可視の通常の読み順に復元。4列の表はMarkdown、選択肢の3列は「／」で区切る。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q1.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16769,6 +16879,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の下線を太字または【】に置換し、設問内にも加工注記を付す。対象範囲はtypography-review.json参照。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -16815,6 +16926,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -16860,6 +16972,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -16905,6 +17018,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -16950,6 +17064,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -16995,6 +17110,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17040,6 +17156,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17085,6 +17202,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17130,6 +17248,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17175,6 +17294,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17220,6 +17340,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q8.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17462,6 +17583,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17507,6 +17629,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17552,6 +17675,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17597,6 +17721,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17642,6 +17767,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17757,6 +17883,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の下線を太字または【】に置換し、設問内にも加工注記を付す。対象範囲はtypography-review.json参照。"
       ]
     },
@@ -17802,6 +17929,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17847,6 +17975,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17892,6 +18021,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17937,6 +18067,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -17982,6 +18113,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18086,6 +18218,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18131,6 +18264,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18176,6 +18310,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18221,6 +18356,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18266,6 +18402,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18342,7 +18479,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -18387,6 +18524,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18432,6 +18570,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18477,6 +18616,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18522,6 +18662,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -18567,6 +18708,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanno-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -19158,7 +19300,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q7.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -20469,6 +20611,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q25.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -20528,6 +20671,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q25.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -20587,6 +20731,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q25.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -20646,6 +20791,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q25.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -20705,6 +20851,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanon-q25.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -22737,6 +22884,7 @@
       "disposition": "corrected",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -22797,6 +22945,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -22843,6 +22992,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -22889,6 +23039,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -22949,6 +23100,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -23009,6 +23161,7 @@
       "disposition": "documented-representation-or-extraction",
       "notes": [
         "公式の4列の分散分析表をMarkdownに転記。今回、表題「表 一元配置の分散分析表」を復元。a・nの条件は可視の行順、添字と分数は線形記法。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q10.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -23054,7 +23207,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q12.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23099,7 +23252,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q12.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23144,7 +23297,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q12.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23189,7 +23342,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q12.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23234,7 +23387,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q12.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23293,7 +23446,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23352,7 +23505,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23411,7 +23564,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23470,7 +23623,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -23529,7 +23682,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q13.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -25238,7 +25391,7 @@
       "pdfPage": 20,
       "source": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよ\n く用いられる。以下は「2 の補数」に関する記述である。空欄（ア）～（ウ）に入\n る数値の組合せとして正しいものを、下の中から一つ選べ。\n\n\n   「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き\n 算を足し算に置き換えるためのものである。\n   例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =\n 0000 となるのは自明であるが、これを足し算で行うためには、0101 + 𝑁𝑁c = 0000 と\n なる 𝑁𝑁c を考えればよい。しかし単に𝑁𝑁c を考えたとしても上記を満たす正の 𝑁𝑁c は\n 求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、\n 0101 + 𝑁𝑁c = 10000 となる 𝑁𝑁c を考える。\n   このとき、0101 に 1010（0101 の 0 と 1 を入れ替えたもの）を足すと 1111 となる\n ので、𝑁𝑁c は 1010 に 1 を足したものになる。つまり、𝑁𝑁c =（ア）である。この 𝑁𝑁c の\n ことを 0101 の 2 の補数という。\n   すなわち、対象の二進数をビット反転（0 と 1 を入れ替えること）し、それに 1 を\n 足せば 2 の補数が求められる。\n   次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は\n 4 ビットの二進数で表すと、\n              （イ）− 0101 となる。0101 の 2 の補数は上記より（ア）\n    （イ）+（ア）を求めると、\n である。           （イ）+（ア）= 10010 となり、桁あふれした部\n 分を無視すると答えは、\n           （ウ）となる。（ウ）を十進数で表すと 2 であり、引き算が\n 行えていることがわかる。\n\n\n       （ア）      （イ）        （ウ）\n",
       "before": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + Nc = 0000 となる Nc を考えればよい。しかし単にNc を考えたとしても上記を満たす正の Nc は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + Nc = 10000 となる Nc を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、Nc は 1010 に 1 を足したものになる。つまり、Nc =(ア)である。この Nc のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
-      "after": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + Nc = 0000 となる Nc を考えればよい。しかし単にNc を考えたとしても上記を満たす正の Nc は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + Nc = 10000 となる Nc を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、Nc は 1010 に 1 を足したものになる。つまり、Nc =(ア)である。この Nc のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
+      "after": "コンピュータ内で二進数の演算を行うために「2 の補数」と呼ばれるものがよく用いられる。以下は「2 の補数」に関する記述である。空欄(ア)~(ウ)に入る数値の組合せとして正しいものを、下の中から一つ選べ。「2 の補数」は二進数の演算を簡略化するために用いるもので、具体的には引き算を足し算に置き換えるためのものである。例えば 4 ビットの二進数で考えると、十進数の 5 は 0101 となる。0101 − 0101 =0000 となるのは自明であるが、これを足し算で行うためには、0101 + N_c = 0000 となる N_c を考えればよい。しかし単にN_c を考えたとしても上記を満たす正の N_c は求まらないため、桁あふれしたものを無視すると 0000 になる二進数、つまり、0101 + N_c = 10000 となる N_c を考える。このとき、0101 に 1010(0101 の 0 と 1 を入れ替えたもの)を足すと 1111 となるので、N_c は 1010 に 1 を足したものになる。つまり、N_c =(ア)である。この N_c のことを 0101 の 2 の補数という。すなわち、対象の二進数をビット反転(0 と 1 を入れ替えること)し、それに 1 を足せば 2 の補数が求められる。次に、十進数での計算 7 − 5 を二進数の 2 の補数を用いて行う。十進数の 7 − 5 は4 ビットの二進数で表すと、(イ)− 0101 となる。0101 の 2 の補数は上記より(ア)である。(イ)+(ア)を求めると、(イ)+(ア)= 10010 となり、桁あふれした部分を無視すると答えは、(ウ)となる。(ウ)を十進数で表すと 2 であり、引き算が行えていることがわかる。(ア) (イ) (ウ)",
       "beforeDifferences": [
         {
           "operation": "replace",
@@ -25322,84 +25475,85 @@
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 231,
           "dataOffset": 231
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 242,
-          "dataOffset": 241
+          "dataOffset": 242
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 258,
-          "dataOffset": 256
+          "dataOffset": 258
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 277,
-          "dataOffset": 274
+          "dataOffset": 277
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 323,
-          "dataOffset": 319
+          "dataOffset": 323
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 335,
-          "dataOffset": 330
+          "dataOffset": 335
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 389,
-          "dataOffset": 383
+          "dataOffset": 389
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 413,
-          "dataOffset": 406
+          "dataOffset": 413
         },
         {
           "operation": "replace",
           "source": "𝑁𝑁",
-          "data": "N",
+          "data": "N_",
           "sourceOffset": 426,
-          "dataOffset": 418
+          "dataOffset": 426
         },
         {
           "operation": "insert",
           "source": "",
           "data": "である。",
           "sourceOffset": 576,
-          "dataOffset": 567
+          "dataOffset": 576
         },
         {
           "operation": "delete",
           "source": "である。",
           "data": "",
           "sourceOffset": 589,
-          "dataOffset": 584
+          "dataOffset": 593
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。",
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -25445,7 +25599,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。"
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -25490,7 +25645,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。"
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -25535,7 +25691,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。"
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -25580,7 +25737,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。"
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -25625,7 +25783,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。"
+        "「である。」が表の先頭のNより前に抽出される。本文の通常の読み順に戻し、3列の表を「／」で区切る。本文9か所のNの右下のcはN_cの添字記法で保持し、公式の上下位置は追加画像にも保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q19.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -26352,7 +26511,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -26397,7 +26556,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -26442,7 +26601,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -26487,7 +26646,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -26532,7 +26691,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "空白・全半角・約物以外の抽出差（数式の上下配置・数字の読み順・表の列区切り等）を下記差分のとおり記録。可視の原文に合わせた表示表現を保持。"
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/kanri-q21.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
@@ -27072,6 +27231,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -27117,6 +27277,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -27162,6 +27323,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -27207,6 +27369,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -27252,6 +27415,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q4.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。"
       ]
     },
@@ -27371,6 +27535,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -27445,6 +27610,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -27533,6 +27699,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -27621,6 +27788,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -27695,6 +27863,7 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q6.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。",
         "公式の表の列間空白を「／」に置換。これは数式内の除算の追加ではない。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
@@ -27828,7 +27997,8 @@
       ],
       "disposition": "documented-representation-or-extraction",
       "notes": [
-        "本文末に並べたA市・B市の重力加速度が上付き数字との位置関係で二度抽出される。可視の本文は1回ずつ転記。"
+        "A市・B市の重力加速度は本文と日本地図内ラベルの両方に印刷されている。抽出重複ではない。本文は本文として保持し、地図とその全ラベルは追加登録したkeishitsu-q16.pngに保持。",
+        "図のラベル・数値・キャプションは画像 /images/questions/keiryoshi/keishitsu-q16.png に保持。本文に重ねて転記していない。画像包含はfigure-pixel-audit.jsonで全画素照合。"
       ]
     },
     {
