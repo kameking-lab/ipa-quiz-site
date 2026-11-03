@@ -1,4 +1,6 @@
 import { Purchases, PACKAGE_TYPE, PURCHASES_ERROR_CODE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
+import { Capacitor } from "@capacitor/core";
+import { Preferences } from "@capacitor/preferences";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 export function purchaseError(error:unknown) {
   const code=error&&typeof error==="object"&&"code"in error?String(error.code):"";
@@ -7,11 +9,16 @@ export function purchaseError(error:unknown) {
   const rejected=cancelled || [PURCHASES_ERROR_CODE.PURCHASE_NOT_ALLOWED_ERROR,PURCHASES_ERROR_CODE.PURCHASE_INVALID_ERROR,PURCHASES_ERROR_CODE.PRODUCT_NOT_AVAILABLE_FOR_PURCHASE_ERROR].some(value=>value===code);
   return {cancelled,pending,rejected};
 }
+export async function nativePublicSdkKey(fallback: string): Promise<string> {
+  return (Capacitor.isNativePlatform() ? (await Preferences.get({ key: "kakomon:rc-ios-public-key" })).value : null) || fallback;
+}
 export class Membership {
   constructor(private sdk: Pick<typeof Purchases, "isConfigured" | "isAnonymous" | "configure" | "logIn" | "logOut" | "getOfferings" | "purchasePackage" | "restorePurchases"> = Purchases) {}
   async connect(c: MobileConfiguration, access: MobileEntitlement) {
-    if (!access.userId || !access.appUserId || !c.sdkKey || !c.productId) throw new Error("ログインとApp Store設定の確認が必要です。");
-    if (!(await this.sdk.isConfigured()).isConfigured) await this.sdk.configure({ apiKey: c.sdkKey, appUserID: access.appUserId });
+    // The online Next.js purchase UI reads the key saved by the bundled shell.
+    const sdkKey = await nativePublicSdkKey(c.sdkKey);
+    if (!access.userId || !access.appUserId || !sdkKey || !c.productId) throw new Error("ログインとApp Store設定の確認が必要です。");
+    if (!(await this.sdk.isConfigured()).isConfigured) await this.sdk.configure({ apiKey: sdkKey, appUserID: access.appUserId });
     else await this.sdk.logIn({ appUserID: access.appUserId });
   }
   async offer(c: MobileConfiguration, access: MobileEntitlement): Promise<PurchasesPackage> {

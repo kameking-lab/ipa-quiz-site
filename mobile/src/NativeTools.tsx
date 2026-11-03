@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, purchaseError } from "./purchases";
+import { Membership, purchaseError, nativePublicSdkKey } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -39,6 +39,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" });
     if (!response.ok) { setAccess(null); setOffer(null); await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
+    result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (studyReady.current && result.entitlement.userId !== user.current) {
       abort.current?.abort(); await downloads.invalidate(); await membership.disconnect(); studyReady.current=false;
     }

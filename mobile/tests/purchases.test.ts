@@ -1,7 +1,10 @@
-import { beforeEach, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { Capacitor } from "@capacitor/core";
+import { Preferences } from "@capacitor/preferences";
 import { Membership,purchaseError } from "../src/purchases";
 import { PACKAGE_TYPE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
+vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
 const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""};
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
@@ -50,4 +53,13 @@ it("does not log out an already anonymous SDK identity when switching from guest
   sdk.isConfigured.mockResolvedValue({isConfigured:true});sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
   const m=new Membership(sdk);await m.disconnect();expect(sdk.logOut).not.toHaveBeenCalled();
   await m.offer(c,a);expect(sdk.logIn).toHaveBeenCalledWith({appUserID:a.appUserId});
+});
+
+afterEach(()=>vi.restoreAllMocks());
+it("uses the public SDK key saved by the bundled shell in the online native purchase UI",async()=>{
+  vi.spyOn(Capacitor,"isNativePlatform").mockReturnValue(true);
+  const stored=vi.mocked(Preferences.get).mockResolvedValue({value:"mock-bundled-public-sdk-key"});
+  await new Membership(sdk).connect({...c,sdkKey:""},a);
+  expect(stored).toHaveBeenCalledWith({key:"kakomon:rc-ios-public-key"});
+  expect(sdk.configure).toHaveBeenCalledWith({apiKey:"mock-bundled-public-sdk-key",appUserID:a.appUserId});
 });

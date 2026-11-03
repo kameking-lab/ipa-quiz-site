@@ -99,6 +99,6 @@ npm run build
 
 通常ビルドの最後に `scripts/measure-bundle.mjs` がファイル容量/gzip容量を `docs/bundle-size.json` へ記録し、E2Eハーネスが残っていれば失敗する。IPAとApp Store表示の容量はmacOS/App Storeで別に測定する。購入キャンセル・承認待ちの再起動保持・価格変更・復元対象なしのE2Eも、SDKアダプターへ注入したモックで検証する。
 
-`codemagic.yaml` は共通依存を導入してからmacOSでunsigned archiveを作る設定。今回、Codemagic実行・署名・アップロード・トリガー設定はしていない。WindowsではiOS生成・Xcodeビルドは未実施。App Store商品登録、RevenueCat・Apple設定、実機での購入／復元／Cookie復帰／通知、App Privacy、アーカイブの実容量と審査は公開前の確認事項。
+`codemagic.yaml` の `kakomon-ios-testflight` は共通依存を導入し、macOSで署名済みIPAを生成してTestFlightへ送る設定。App Store審査への提出は無効。自動トリガーはなく、Codemagic画面で手動実行する。環境変数グループ `kakomon_ios` の `MOBILE_RC_IOS_PUBLIC_KEY` をVite経由で同梱し、RevenueCat初期化に使う（サーバー用秘密値は渡さない）。署名資材はCodemagicのCode signing identitiesで事前にfetch/作成・登録する。ビルド番号取得後、`ios:prepare` が未生成時のcap add ios（CocoaPods指定）、cap sync ios、既存ios-assetsの組み込みを実行する。ネイティブへの変更は再現用スクリプト・素材で管理し、`mobile/ios/` は引き続きgit管理外。このCM1作業ではCodemagic実行・署名・アップロードはしていない。WindowsではiOS生成・Xcodeビルドは未実施。App Store商品登録、RevenueCat・Apple設定、実機での購入／復元／Cookie復帰／通知、App Privacy、アーカイブの実容量と審査は公開前の確認事項。
 
 公式資料: [RevenueCat Capacitor SDK](https://www.revenuecat.com/docs/getting-started/installation/capacitor)、[Webhook](https://www.revenuecat.com/docs/integrations/webhooks)、[Apple審査](https://developer.apple.com/app-store/review/guidelines/)、[Appleの容量上限](https://developer.apple.com/help/app-store-connect/reference/app-uploads/maximum-build-file-sizes/)。

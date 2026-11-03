@@ -1,11 +1,20 @@
 workflows:
-  ios1-unsigned:
-    name: Kakomon AI v1 - unsigned archive
+  kakomon-ios-testflight:
+    name: Kakomon AI - TestFlight
     instance_type: mac_mini_m2
     max_build_duration: 60
+    integrations:
+      app_store_connect: App Store Key
     environment:
+      groups:
+        - kakomon_ios
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: jp.kakomon-ai.app
+      vars:
+        APP_STORE_APPLE_ID: "6830358918"
       node: "22"
-      xcode: "26.0"
+      xcode: latest
       cocoapods: default
     scripts:
       - name: Install shared web and isolated app dependencies
@@ -20,25 +29,50 @@ workflows:
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
+          # Never print the key. Only the public iOS SDK key is bundled.
+          if [[ -z "${MOBILE_RC_IOS_PUBLIC_KEY:-}" || "$MOBILE_RC_IOS_PUBLIC_KEY" != appl_* ]]; then
+            echo "Set MOBILE_RC_IOS_PUBLIC_KEY to the RevenueCat public iOS SDK key in kakomon_ios." >&2
+            exit 1
+          fi
           npm run typecheck
           npm test
           npm run build
+      - name: Select next TestFlight build number
+        script: |
+          set -euo pipefail
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID")
+          # An empty successful result means no builds yet. API failures stop here.
+          LATEST_BUILD_NUMBER=${LATEST_BUILD_NUMBER:-0}
+          if [[ ! "$LATEST_BUILD_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "Expected an integer TestFlight build number." >&2
+            exit 1
+          fi
+          echo "BUILD_NUMBER=$((10#$LATEST_BUILD_NUMBER + 1))" >> "$CM_ENV"
       - name: Generate native project, plugins, privacy manifest and icon
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
           npm run ios:prepare
           plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
-      - name: Archive without signing
+      - name: Apply App Store provisioning profiles
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
-          xcodebuild -workspace ios/App/App.xcworkspace -scheme App \
-            -configuration Release -destination 'generic/platform=iOS' \
-            -archivePath "$CM_BUILD_DIR/mobile/build/KakomonAI.xcarchive" \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= \
-            archive
+          xcode-project use-profiles
+      - name: Build signed IPA
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          xcode-project build-ipa \
+            --workspace ios/App/App.xcworkspace \
+            --scheme App \
+            --config Release
     artifacts:
-      - mobile/build/*.xcarchive
-      - mobile/dist/**
-    # Intentionally no triggers, signing, ASC integration, publishing or upload.
+      - mobile/build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false

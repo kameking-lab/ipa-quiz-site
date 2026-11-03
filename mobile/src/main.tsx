@@ -19,6 +19,7 @@ import { refreshDeviceRights } from "./refresh-rights";
 import { installLocalApi } from "./local-api";
 import { App as NativeApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
+import { Preferences } from "@capacitor/preferences";
 import { Share } from "@capacitor/share";
 import catalog from "./generated/catalog.json";
 import { QualificationCardActions } from "./QualificationActions";
@@ -116,5 +117,15 @@ function App() {
     </main>}
   </>;
 }
-installLocalApi();
-createRoot(document.getElementById("root")!).render(<App/>);
+async function start() {
+  // Preferences is shared with the online WebView, whose Next.js code has no Vite env.
+  const publicSdkKey = import.meta.env.MOBILE_RC_IOS_PUBLIC_KEY;
+  if (Capacitor.isNativePlatform() && publicSdkKey) {
+    await Preferences.set({ key: "kakomon:rc-ios-public-key", value: publicSdkKey });
+  }
+  installLocalApi();
+  createRoot(document.getElementById("root")!).render(<App/>);
+}
+void start().catch(() => {
+  document.getElementById("root")!.textContent = "アプリの設定を保存できませんでした。再起動してください。";
+});

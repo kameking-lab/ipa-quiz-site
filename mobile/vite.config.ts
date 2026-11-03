@@ -12,7 +12,8 @@ export default defineConfig(({mode})=>({
     "next/dynamic":at("./src/shims/dynamic.tsx"),"next/image":at("./src/shims/image.tsx"),
     "@":at("../"),
   } },
-  define: { "process.env": "{}" },
+  // Expose only the public iOS SDK key, never the server environment.
+  define: { "process.env": "{}", "import.meta.env.MOBILE_RC_IOS_PUBLIC_KEY": JSON.stringify(process.env.MOBILE_RC_IOS_PUBLIC_KEY ?? "") },
   css: { postcss: { plugins: [] } },
   build: { target: "es2022", rolldownOptions:{ ...(mode==="e2e"?{input:{app:at("./index.html"),harness:at("./tests/e2e/harness.html")}}:{}),onwarn(warning,defaultHandler){ if(warning.code!=="MODULE_LEVEL_DIRECTIVE" && warning.code!=="INEFFECTIVE_DYNAMIC_IMPORT")defaultHandler(warning); } } },
   test: { include: ["tests/**/*.test.ts"], environment: "node" },
