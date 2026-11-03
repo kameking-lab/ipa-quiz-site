@@ -29,9 +29,9 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
-  it("収録済み36原問485公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
-    expect(questions).toHaveLength(481);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(481);
+  it("収録済み42原問566公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
+    expect(questions).toHaveLength(562);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(562);
     for (const q of questions) {
       const packet = Number(q.sourcePdfUrl!.match(/r0[78]_(\d)\.pdf/)![1]);
       const original = tables.find((t) => t.year === q.year && t.packet === packet)!
@@ -63,6 +63,7 @@ describe("エネルギー管理士の未公開収録", () => {
 
   it("原問ごとの全解答欄を過不足なく保持し、順序不問ペアを重複なく採点する", () => {
     const manifest = [
+      [2025, 7, 12], [2025, 1, 1], [2026, 1, 1], [2026, 3, 10], [2026, 7, 11], [2026, 7, 12],
       [2025, 6, 7], [2025, 6, 10], [2026, 6, 7], [2026, 6, 9], [2026, 6, 10],
       [2025, 7, 13], [2026, 7, 13],
       [2025, 4, 16], [2025, 4, 18], [2026, 4, 15], [2026, 4, 16], [2026, 4, 18],
@@ -81,7 +82,7 @@ describe("エネルギー管理士の未公開収録", () => {
       expect(new Set(labels).size).toBe(labels.length);
       slotCount += labels.length;
     }
-    expect(slotCount).toBe(485);
+    expect(slotCount).toBe(566);
     const pairs = questions.filter((q) => q.requiredSelections === 2);
     expect(pairs).toHaveLength(4);
     for (const q of pairs) {
@@ -224,11 +225,49 @@ describe("エネルギー管理士の未公開収録", () => {
     const copper = questions.filter((q) => q.year === 2025 && q.qNumber === 10 && ["14", "15"].includes(q.officialAnswerNumber!));
     expect(copper).toHaveLength(2);
     for (const q of copper) expect(q.originalContent!.sharedPassages!.map((p) => p.text).join(" ")).toContain("23.3 A");
-    const standards = questions.filter((q) => q.year === 2026 && q.qNumber === 10 && Number(q.officialAnswerNumber) <= 4);
+    const standards = questions.filter((q) => q.year === 2026 && q.qNumber === 10 && q.sourcePdfUrl?.includes("_6.pdf#") && Number(q.officialAnswerNumber) <= 4);
     expect(standards).toHaveLength(4);
     for (const q of standards) {
       expect(q.questionNotice).toContain("出題時点");
       expect(q.explanation).toContain("出題時点の法令・JIS");
+    }
+  });
+
+  it("法規の基準日と、燃焼・電動力計算の前提及び図を保持する", () => {
+    for (const year of [2025, 2026]) {
+      const law = questions.filter((q) => q.year === year && q.session === "kyotsu" && q.qNumber === 1);
+      expect(law).toHaveLength(12);
+      for (const q of law) {
+        expect(q.lawReferenceDate).toBe(`${year}-04-01`);
+        expect(q.originalContent!.sharedPassages![0].text).toContain(`令和${year - 2018}年4月1日`);
+        expect(q.questionNotice).toContain("出題時点");
+        for (const explanation of Object.values(q.choiceExplanations!)) expect(explanation).toContain("出題時点の法令");
+      }
+      const staffing = law.find((q) => q.officialAnswerNumber === "12")!;
+      expect(staffing.question).toContain(year === 2025 ? "22000" : "19000");
+      expect(staffing.question).toContain("| 本社 |");
+    }
+    const combustion = questions.filter((q) => q.year === 2026 && q.category === "燃焼計算");
+    expect(combustion).toHaveLength(14);
+    for (const q of combustion) {
+      const premise = q.originalContent!.sharedPassages!.map((p) => p.text).join(" ");
+      expect(premise).toContain("9.4％");
+      expect(premise).toContain("25℃");
+      expect(premise).toContain("1.41");
+      if (Number(q.officialAnswerNumber) >= 12) expect(q.question).toContain("5 m³ₙ");
+    }
+    const power = questions.filter((q) => q.sourcePdfUrl?.includes("_7.pdf#") && [11, 12].includes(q.qNumber!));
+    expect(power).toHaveLength(43);
+    for (const q of power) {
+      const slot = Number(q.officialAnswerNumber);
+      const expectedImage = q.year === 2025 ? [1, 2, 5, 6, 9, 12, 15].includes(slot)
+        : q.qNumber === 11 || [10, 11].includes(slot);
+      expect(q.hasImage).toBe(expectedImage);
+      const premise = q.originalContent!.sharedPassages!.map((p) => p.text).join(" ");
+      if (q.year === 2025 && slot <= 6) expect(premise).toContain("Mᴡ");
+      if (q.year === 2025 && [3, 4, 5, 6].includes(slot)) expect(premise + q.question).toContain("1550 kg");
+      if (q.year === 2026 && q.qNumber === 11 && slot >= 8) expect(premise).toContain("12·g×10⁻³");
+      if (q.year === 2026 && q.qNumber === 12 && slot >= 10) expect(premise).toContain("r＝0.5＋0.5q²");
     }
   });
 
@@ -244,6 +283,6 @@ describe("エネルギー管理士の未公開収録", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
     expect(entry.status).toBe("ready-to-ingest");
     expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("26原問357解答欄");
+    expect(entry.remainingWork.join(" ")).toContain("20原問276解答欄");
   });
 });
