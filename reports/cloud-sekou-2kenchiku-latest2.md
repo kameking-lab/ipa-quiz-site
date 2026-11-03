@@ -102,4 +102,4 @@
 
 本文100問の収録は `1e5e75b2`（`feat: 2-kyu building construction level 1 exam, 100 questions staged (unpublished)`）にコミット済み。作業開始時の `claude/blissful-rubin-pks6ce` はクリーンであり，旧記録の「最終変更は未コミット・作業ツリーに残存」はこの本文収録コミットには該当しない。WIP `b21175f6` も履歴に保持されている。
 
-今回のレビュー修正4ファイルは検証完了後に `git add`・`git commit` を試みたが，`fatal: Unable to create '/home/user/ipa-quiz-site/.git/index.lock': Read-only file system` により `git add` の時点で停止した。したがって今回の修正のみ未ステージ・未コミットで作業ツリーに残っている。本文収録済みの `1e5e75b2` は変更していない。サンドボックスの迂回やGitディレクトリの移設・権限変更は行っていない。監督役は書込み可能な権限でこの4ファイルをコミットし，独立再レビューとpush・公開判定を行う必要がある。
+レビュー修正4ファイルは `09303867` にコミット済み。独立再レビュー(gpt-6-astra, read-only)は PASS。pushは監督役が実施済み。公開判定はオーナーに委ねる(未公開ステージングのまま)。
