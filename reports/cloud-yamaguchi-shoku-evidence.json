@@ -1,0 +1,911 @@
+{
+  "checkedAt": "2026-11-03 UTC",
+  "baseCommit": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "scope": "origin claude/* qual/* codex/*; data/questions, data/exam-library, data/qualification-staging path names",
+  "pattern": "yamaguchi|shoku|chori|seika|fugu (case insensitive)",
+  "branchCount": 375,
+  "distinctDataTreeCount": 249,
+  "dataTrees": {
+    "38573af9095dfe1a8e1d21a8df69d57f285e372c": [
+      "refs/heads/claude/a11y-phase4",
+      "refs/heads/claude/cleanup-phase2",
+      "refs/heads/claude/compassionate-grothendieck-146e61",
+      "refs/heads/claude/infallible-margulis-76c074",
+      "refs/heads/claude/pedantic-taussig-88fb06",
+      "refs/heads/claude/perf-phase3",
+      "refs/heads/claude/phase-2-seo",
+      "refs/heads/claude/phase-3-content",
+      "refs/heads/claude/phase-4-ogp",
+      "refs/heads/claude/phase-5-perf",
+      "refs/heads/claude/phase-6-internal-links",
+      "refs/heads/claude/seo-phase5",
+      "refs/heads/claude/serene-edison-422bb5"
+    ],
+    "921a3e2bcda577790d90cd8e2dadc2c9ccc5631a": [
+      "refs/heads/claude/admin-exam-usage-20260929",
+      "refs/heads/claude/gijutsushi-soukan-20260929"
+    ],
+    "bcf625d21be817b79173e294d8e162e39ba1c7d4": [
+      "refs/heads/claude/admiring-cray-hyi7fo"
+    ],
+    "2eacdc15f5b3deea483c8e7c5a7207b2c43c988d": [
+      "refs/heads/claude/admiring-hypatia-9lnj7i",
+      "refs/heads/claude/affectionate-noether-yzpt54",
+      "refs/heads/claude/awesome-bohr-5b3jqe",
+      "refs/heads/claude/awesome-mayer-10yje5",
+      "refs/heads/claude/blissful-rubin-pks6ce",
+      "refs/heads/claude/blissful-shannon-bnu1ru",
+      "refs/heads/claude/charming-davinci-vg04td",
+      "refs/heads/claude/charming-tesla-bo9gst",
+      "refs/heads/claude/ecstatic-ride-tfc4jt",
+      "refs/heads/claude/epic-volta-l9vm4r",
+      "refs/heads/claude/focused-keller-uvphpx",
+      "refs/heads/claude/funny-clarke-msl10r",
+      "refs/heads/claude/gracious-hawking-c4ic14",
+      "refs/heads/claude/gracious-turing-71vh89",
+      "refs/heads/claude/intelligent-mccarthy-uv0az3",
+      "refs/heads/claude/loving-galileo-852qa2",
+      "refs/heads/claude/magical-newton-a0t56z",
+      "refs/heads/claude/relaxed-albattani-z4jl1c",
+      "refs/heads/claude/sleepy-feynman-lcl8m3",
+      "refs/heads/claude/vigilant-mayer-jahvey",
+      "refs/heads/claude/zealous-goldberg-2sjth3",
+      "refs/heads/codex/biru-kan-latest2",
+      "refs/heads/codex/chintai-latest2",
+      "refs/heads/codex/cloud-sekou-1kenchiku-latest2",
+      "refs/heads/codex/kyusui-latest2-audit-20261103"
+    ],
+    "3040381c4501191ed2646dce8d32f7bedadcb6d2": [
+      "refs/heads/claude/adoring-galileo-yaitzr",
+      "refs/heads/claude/gracious-ramanujan-ppyw80"
+    ],
+    "b1d17db55ad9dfad22b5970199cad0a59a0466fb": [
+      "refs/heads/claude/blissful-benz-6252b6",
+      "refs/heads/claude/distracted-poincare-d58167",
+      "refs/heads/claude/eager-dhawan-3809e2",
+      "refs/heads/claude/phase-b-monitoring",
+      "refs/heads/claude/phase-c-growth",
+      "refs/heads/claude/phase-d-ux",
+      "refs/heads/claude/wonderful-bhabha-6448b1",
+      "refs/heads/claude/wonderful-ramanujan-73f8e2"
+    ],
+    "40fb8afbc010c8456d2676a7bfbcf4ddcfdd3307": [
+      "refs/heads/claude/blissful-goodall-mtf6n8"
+    ],
+    "fb4d443a4536c4e37cfb710612eb307ee9dafc60": [
+      "refs/heads/claude/busy-hugle-56c7a3"
+    ],
+    "017fb059a7d6e43d3686f75b7672138c67bf2a02": [
+      "refs/heads/claude/charming-mendel-rg5218"
+    ],
+    "a5bf8a3a3dd2010676102513a0d3b6af31e89d94": [
+      "refs/heads/claude/clever-hopper-eb04e0",
+      "refs/heads/claude/clever-wright-aabdbb",
+      "refs/heads/claude/epic-wing-11f7ec",
+      "refs/heads/claude/optimistic-gauss-61a352",
+      "refs/heads/claude/thirsty-liskov-94c6c4"
+    ],
+    "4713184186571bb93730b68c18a8741877e46258": [
+      "refs/heads/claude/compassionate-brahmagupta-wkiu7v",
+      "refs/heads/claude/gallant-dirac-w8hzag"
+    ],
+    "03fe22787e5174f32617c2597b6bdd446818141a": [
+      "refs/heads/claude/cool-babbage-qliart"
+    ],
+    "6e4ff479c72df99ace57947e906aa9ea36ce017c": [
+      "refs/heads/claude/cool-cerf-po85e5"
+    ],
+    "ffe4a578b0dfafcfbd9e5b1ca439b9db7b78a815": [
+      "refs/heads/claude/denki3-two-year-continuation-nm3yuk",
+      "refs/heads/codex/fp2-2026-may-q11-60"
+    ],
+    "84aefb52bce37bf0f1b1e8294c7d56af2c48b78b": [
+      "refs/heads/claude/determined-hermann-df623b"
+    ],
+    "3dc29272ff870e5ad1615194fc82778eddb3bea6": [
+      "refs/heads/claude/fix-canonical-vercel-fallback",
+      "refs/heads/claude/phase4-content"
+    ],
+    "a92136f9c9ff63a42a37ee377482fa215264974a": [
+      "refs/heads/claude/flamboyant-shaw-2c875c",
+      "refs/heads/claude/intelligent-morse-dba859",
+      "refs/heads/claude/nice-bhaskara-0ea874",
+      "refs/heads/claude/phase1-critical-fixes",
+      "refs/heads/claude/phase2-seo",
+      "refs/heads/claude/phase3-ux",
+      "refs/heads/claude/practical-elbakyan-e617a4",
+      "refs/heads/claude/recursing-haibt-0b46ac",
+      "refs/heads/claude/sweet-mestorf-756856"
+    ],
+    "b4f8b8693d3d1b8cfd801f146b0a06a41a8b28d8": [
+      "refs/heads/claude/fp1-may-2026-q54-60-n2iz4u",
+      "refs/heads/claude/fp1-may-2026-q54-transcription-3jdeq3",
+      "refs/heads/claude/fp1-may-q54-author-b-20261010",
+      "refs/heads/claude/fp1-may-q54-source-a-20261010",
+      "refs/heads/claude/nurse10-20261010",
+      "refs/heads/claude/sharoushi10-20261010",
+      "refs/heads/codex/kakomon-quality-wave1-20261008"
+    ],
+    "04b87f95c842587663b5cbb128d34fec0baa06b4": [
+      "refs/heads/claude/fp2-2026-may-q11-60-1373zh"
+    ],
+    "3d38e42bc5d6bbc7826099d0a686143c89ce4afa": [
+      "refs/heads/claude/fp2-2026-may-q11-60-1trham"
+    ],
+    "ca3e46ac3a77ff9d690acdc39cd759e9e3a34da9": [
+      "refs/heads/claude/funny-brown-u6g4se"
+    ],
+    "6f581e9c696ae8a2878aac9e5e80072c52152780": [
+      "refs/heads/claude/funny-hugle-c3d009"
+    ],
+    "d022531815868aa565710450b89d81366d40021b": [
+      "refs/heads/claude/great-jackson-af0b14"
+    ],
+    "a4a5b58a2b328575f91f172db1c478f29ee85b7a": [
+      "refs/heads/claude/happy-goodall-cx5z2g",
+      "refs/heads/claude/vibrant-meitner-q7weg8"
+    ],
+    "5f135c2c7229727d39b3183247d3add312ffd9d4": [
+      "refs/heads/claude/hoikushi-2rounds-20260929-c"
+    ],
+    "7c375ab1ed93d2b2a34e780a5f2b19dce812baff": [
+      "refs/heads/claude/kashikin-2rounds-20260929",
+      "refs/heads/codex/adsense-coverage-20261003",
+      "refs/heads/codex/explanation-layer-label-20261003",
+      "refs/heads/codex/kanri-license-links-20261003",
+      "refs/heads/codex/kanri-relevant-guides-20261003",
+      "refs/heads/codex/nw-free-index-link-20261003",
+      "refs/heads/codex/ux-redesign-20261003"
+    ],
+    "17ff38a97c1c91395c873056e6e902468490070c": [
+      "refs/heads/claude/kind-hopper-p6vjlw"
+    ],
+    "b2d0048c76d8ff351928982364eca06a46c8fa03": [
+      "refs/heads/claude/lck-choice-explanations-provisional-3au733"
+    ],
+    "e002f558bd2dca51d3185c776e420f2c04a251fa": [
+      "refs/heads/claude/lckohyo-choice-explanations-eoicwj"
+    ],
+    "e4f1e14c4eb0ea08ad3150f116621a70e82b7e3d": [
+      "refs/heads/claude/loving-goodall-df47l4"
+    ],
+    "28fef4672d6abf72aab625e9ab17e287dae5dd18": [
+      "refs/heads/claude/loving-heisenberg-dft90n"
+    ],
+    "833bbc024006ff895614213a5e951df9c86a2f19": [
+      "refs/heads/claude/mankan-2rounds-20260929-c"
+    ],
+    "e6fee1948c73a2ef647f77b8e6869de2decedb59": [
+      "refs/heads/claude/nice-chebyshev-d44087"
+    ],
+    "a4712f487c2442bb077ff4f4437829e78e3e9183": [
+      "refs/heads/claude/nurse-morning-questions-y1dm62"
+    ],
+    "edf9d1b549144b517788b962cd85e0361d50e3d7": [
+      "refs/heads/claude/nurse-q11-25-20261010"
+    ],
+    "28d62bbbe94a5a8544435455c8c17d381f67d920": [
+      "refs/heads/claude/nurse-q26-50-20261010"
+    ],
+    "e595797a03b6871539aca78928d40f531030353f": [
+      "refs/heads/claude/optimistic-ardinghelli-d7dee6"
+    ],
+    "0c926db19e0b0b3c58bd5a065f0b89f73f9bbbb6": [
+      "refs/heads/claude/pensive-lovelace-ICdzm"
+    ],
+    "c72c7ec4089c3e50e683646bf75c8e12ec96d206": [
+      "refs/heads/claude/seishin-27-20260929"
+    ],
+    "9c3c6842591f03d55dc6efcce2549a8dc04e9e38": [
+      "refs/heads/claude/sharoushi-labor-exam-10-7l2hqf"
+    ],
+    "161d728270a401752789ee4664a33749e4e85cfc": [
+      "refs/heads/claude/sharoushi-next30-20261010"
+    ],
+    "c78dad486bcb18e4ce6e198b7178f0378c05c632": [
+      "refs/heads/claude/sharp-clarke-083srb"
+    ],
+    "0c575183b351df0a0953408489a95a9aa3c35aad": [
+      "refs/heads/claude/sokuryoshi-latest-two-validation-7a4ce8"
+    ],
+    "84f95cdb9b8068d033b36cc83925c6a60d35c0fa": [
+      "refs/heads/claude/sweet-hypatia-qynafk"
+    ],
+    "9f48770f84a8525b5aaa8e3f615c1f2e97b827e1": [
+      "refs/heads/claude/sweet-rubin-1fakor"
+    ],
+    "16a6c7e4b75e16ad199d47624ec7fc66a878d45f": [
+      "refs/heads/claude/validate-civil1-staging-lz8zt5",
+      "refs/heads/codex/civil1-latest-two-20261011"
+    ],
+    "96808c7380957a93b5fefae2b8e6adae372543c5": [
+      "refs/heads/claude/wizardly-euclid-58dde6"
+    ],
+    "5f11b4771cd826abcc5e0a91ac9d030295a83710": [
+      "refs/heads/claude/wonderful-bohr-smi3f9"
+    ],
+    "a5dd5e95a02f1a33da82c4ffa55349aeff93eebf": [
+      "refs/heads/codex/about-ai-disclosure-20261011"
+    ],
+    "5235e0a07c9af1e9ccf71faf63cc621e8ff12453": [
+      "refs/heads/codex/add-denken1-pilot-20260927"
+    ],
+    "80a9030e0632900092bd03fc5a1caf5e8339babd": [
+      "refs/heads/codex/add-fp1-2026-may-fifth",
+      "refs/heads/codex/add-note-crosslinks-20260927"
+    ],
+    "b39420ac2a0e2a11405f776e9dcfa553d8ead3cb": [
+      "refs/heads/codex/add-fp1-2026-may-fourth"
+    ],
+    "2d1da84943c2b9bc24f46daf5d696b75ae7bec97": [
+      "refs/heads/codex/add-fp1-2026-may-second"
+    ],
+    "a81a3ccc8f00d26ae48daa1caf15ccb0381e643b": [
+      "refs/heads/codex/add-fp1-2026-may-third"
+    ],
+    "f455f8dda188b13e0e3c9db589128b3b2638807c": [
+      "refs/heads/codex/add-fp1-pilot-20260927",
+      "refs/heads/codex/fix-fp1-release-url"
+    ],
+    "0c75b01766c7fced6baa2cea21ea149134d0e7a5": [
+      "refs/heads/codex/add-ip-score-report-note",
+      "refs/heads/codex/add-zoen2-2025-fifth"
+    ],
+    "4e8966021d054203d5a627df7b0b42ca309aeb6e": [
+      "refs/heads/codex/add-tsushin1-pilot-20260927"
+    ],
+    "ab58652a821c967686f7efa4a85bca49c7b6b84c": [
+      "refs/heads/codex/add-zoen1-20260927",
+      "refs/heads/codex/fix-explanation-answer-label-20260927"
+    ],
+    "e13867eb3eb04811bc5bdfbeb078fd964acf984d": [
+      "refs/heads/codex/add-zoen2-2025-fourth"
+    ],
+    "d3157de50f192abe7bd60f8fed2c2b67365fd24e": [
+      "refs/heads/codex/add-zoen2-2025-next"
+    ],
+    "0eee8fdfc20a539db6eda1979628f856cd0b31cc": [
+      "refs/heads/codex/add-zoen2-2025-pilot"
+    ],
+    "d17ab95f7e7ec31cd2c8768ea09e58fa51a4b96e": [
+      "refs/heads/codex/add-zoen2-2025-sixth"
+    ],
+    "f07853ec0971e58a3af3c99bee6a22f81cfa416b": [
+      "refs/heads/codex/add-zoen2-2025-third"
+    ],
+    "ebf73db37fed7590082721c488de051056d92102": [
+      "refs/heads/codex/add-zoen2-tsushin2-20260927",
+      "refs/heads/codex/note-guides-20260927"
+    ],
+    "d243cce1b2ceb5b3a337a2fc434ebb4009c1aa63": [
+      "refs/heads/codex/adsense-csp-hotfix-20260919",
+      "refs/heads/codex/qualification-revenue-eco-20260913"
+    ],
+    "dfca21bfde57415c3cd2f7a656b87f87c874b647": [
+      "refs/heads/codex/adsense-ssr-exam-pages-20260927",
+      "refs/heads/codex/gemini-3-8-question-chat-20260927"
+    ],
+    "9cd2de1f6b3875723e912be135fabb94919c547a": [
+      "refs/heads/codex/ahaki-last3-codex-20261010"
+    ],
+    "a0c0878cc25283e9c8df938ceade3963db432029": [
+      "refs/heads/codex/approved35-fp1-may-gap-20261007",
+      "refs/heads/codex/approved35-seo-denken-years-20261007"
+    ],
+    "904e84775ae723b8a596de213c7c2c22367fd9e9": [
+      "refs/heads/codex/approved35-seo-ipa-20261007",
+      "refs/heads/codex/ipa-amazon-restore-20261004",
+      "refs/heads/codex/transparency-counts-20261005"
+    ],
+    "b3fc17ed135e73bc44e1d38096ec031d40cc108f": [
+      "refs/heads/codex/automotive-latest-two-20261011"
+    ],
+    "c54562989e95feb71a419c5ed3e5b79d8bf04ff8": [
+      "refs/heads/codex/biyoshi-latest-two-saved-20261011"
+    ],
+    "6e170cbae451eddb40fa251d01320c8b1a8d414e": [
+      "refs/heads/codex/blog-2026-cbt-exam-day-20260928",
+      "refs/heads/codex/copilot-gemini38-20260928"
+    ],
+    "bda11c3f36a7e813f124f0e68f3f18b3ab6c100a": [
+      "refs/heads/codex/blog-2026-cbt-results-20260928",
+      "refs/heads/codex/denken3-seo-count-20260928",
+      "refs/heads/codex/quiz-completion-tsugino-ai-20260928"
+    ],
+    "0a88d1ca7d171c4da36a167cd8babc9cd4e26c6f": [
+      "refs/heads/codex/blog-2026-cbt-schedule-20260928"
+    ],
+    "29a338f16571b50713d0a21b1c971a75369b0b9c": [
+      "refs/heads/codex/blog-exam-format-20260928"
+    ],
+    "de56723e998bbf8871289c29be652860ca87e8fb": [
+      "refs/heads/codex/boiler-model-answers"
+    ],
+    "7a746c925222c81820fb7ccc07ae06552e7876e7": [
+      "refs/heads/codex/chizai2-latest-two-20261011"
+    ],
+    "8a63a6067f814f332abb2f1d6b0e2731e48cfaf7": [
+      "refs/heads/codex/chosashi-latest-two-20261011"
+    ],
+    "65947b13561db658e2f5bcccf9772f10ba34d84a": [
+      "refs/heads/codex/chusho-latest-two-complete-20261011"
+    ],
+    "0d82baa4bff892c2bf1efbd8ba7da4aee5edb908": [
+      "refs/heads/codex/chusho-latest-two-source-inventory-20261011",
+      "refs/heads/codex/medical-ce-union-pr679-20261010",
+      "refs/heads/codex/specialist-cooking-source-handoff-20261011"
+    ],
+    "3c69a6d5e854a06b50fcca8dd016d9a1ce037ba8": [
+      "refs/heads/codex/chusho-secondary-latest-two-20261011"
+    ],
+    "9608cfdd92400d01949d2ab5801acd66fc58ffdd": [
+      "refs/heads/codex/ci-inert-changes-20261011",
+      "refs/heads/codex/qualified-batch-a13-20261011"
+    ],
+    "6936e84ae86d289094ded45b9e286dd42d887ec4": [
+      "refs/heads/codex/civil2-2025-source-20260926"
+    ],
+    "31c9b97012b1a3e05c2c07187a8ab61c54dfe440": [
+      "refs/heads/codex/civil2-2026-first-wave-20260925"
+    ],
+    "f8793a7167e979b4295eea2c87b0d5a432e7d802": [
+      "refs/heads/codex/civil2-production-receipt-20260926"
+    ],
+    "aeff1a250568db2c501296fc6c6c2d524735f7ae": [
+      "refs/heads/codex/complete-safety-explanations"
+    ],
+    "40a82f01bd96dbd57354f00c4e37543231bc5c52": [
+      "refs/heads/codex/copilot-route-timeout-20261011",
+      "refs/heads/codex/dental-hygienist-latest-two-20261011",
+      "refs/heads/codex/lab-rad-saved-batch1-20261011",
+      "refs/heads/codex/ux-qualification-context-20261011"
+    ],
+    "f3410190b19864cd56dbe9034e272593b4d122ee": [
+      "refs/heads/codex/denken1-primary-machine-all-choices-20261011"
+    ],
+    "4822da9742a675db3a14140288f1cb5eeea23d2a": [
+      "refs/heads/codex/denken1-primary-power-all-choices-20261011"
+    ],
+    "3f01b5561c1c75d7ec7deaf5a228a4f9eff2afc0": [
+      "refs/heads/codex/denken1-saved-primary-20261011"
+    ],
+    "fcd6eea5029ea3cd4fb41bedcbc331963c57f1e8": [
+      "refs/heads/codex/denken1-secondary-latest-two-20261011"
+    ],
+    "ffaca42e52e1590e8882bc73e97777bc1488445b": [
+      "refs/heads/codex/denken2-secondary-latest-two-20261011"
+    ],
+    "966ecacfc945a5f79b0c83d1ed57b312f6ca8249": [
+      "refs/heads/codex/denken2-two-session-sources-20260928",
+      "refs/heads/codex/denken3-power-q1-20260928",
+      "refs/heads/codex/denko1-2025-lower-hold",
+      "refs/heads/codex/quiz-chat-redirect-20260928"
+    ],
+    "3c8e4267b515f986da8292da90dc04a258b59e94": [
+      "refs/heads/codex/denken3-2025-academic-sol"
+    ],
+    "f8ba23244d1d9482546cedc3990ea819cb068e50": [
+      "refs/heads/codex/denken3-latest-two-complete-20261011"
+    ],
+    "a77207c8a6214812efdd9aec064c1812bf883ac7": [
+      "refs/heads/codex/denken3-law-q4-20260928"
+    ],
+    "5d540320cc31fec0366f89464390c37694359d42": [
+      "refs/heads/codex/denken3-native-20261010",
+      "refs/heads/codex/kakomon-all-qualifications-20261010"
+    ],
+    "ade20ae0acf01b25f464f6db842646c441f3371a": [
+      "refs/heads/codex/denken3-two-years"
+    ],
+    "8c454c4e793a3acd6d719ee276548a7111985d59": [
+      "refs/heads/codex/denko2-2024-lower"
+    ],
+    "5c20141d7beafdfc50b75294cfbd0b1bcbba0a72": [
+      "refs/heads/codex/denko2-2024-lower-q41-50"
+    ],
+    "d335401e349f062d22aa07d4413e2b81878c3040": [
+      "refs/heads/codex/denko2-2024-oct-q31-40"
+    ],
+    "b2b1f28043acad25a932cefa00e88a29f3384091": [
+      "refs/heads/codex/denko2-2024-upper-strict"
+    ],
+    "65a93d036298b48dd6a953e99c4a450f850a7bee": [
+      "refs/heads/codex/denko2-2025-may-portable-fix"
+    ],
+    "1b00df27ec0a60b9b1c00670c66ef6bfe010b20e": [
+      "refs/heads/codex/denko2-2025-may-visual-review"
+    ],
+    "d7602b1780092a3f19037ead0567ef0518ff46ad": [
+      "refs/heads/codex/denko2-full-years"
+    ],
+    "64c24b4c8a7bca0ed120de1700cd0c81074473a5": [
+      "refs/heads/codex/denko2-latest2-20261011"
+    ],
+    "397a2cf74a2ea61f657b32632f9a84d8923d3254": [
+      "refs/heads/codex/diagnose-preview-output-main-20261016",
+      "refs/heads/codex/radio84-release-20261015"
+    ],
+    "4ddaa853d52a755a5bec221cd95065fac69f97c2": [
+      "refs/heads/codex/e2e-parallel-checks-20261011",
+      "refs/heads/codex/kisho-latest-two-20261011",
+      "refs/heads/codex/qualified-batch-main4b-20261011",
+      "refs/heads/codex/ux-exam-context-20261011"
+    ],
+    "cca2ec41fc5348fb6cef0e561e54806c16c1e17c": [
+      "refs/heads/codex/eisei1-batch02-20260927"
+    ],
+    "1fc084f9768c8e482963857179b75b48d6f7e1aa": [
+      "refs/heads/codex/eisei1-batch03-20260927"
+    ],
+    "d1d55cdc251171abab8a7488f71130318e6e7efa": [
+      "refs/heads/codex/eisei1-batch04-20260927"
+    ],
+    "1bc23deecab9f2a9da07e2c703c7ae231ad8027e": [
+      "refs/heads/codex/eisei1-batch05-20260927"
+    ],
+    "60eedd2e3fcb4bf7c6a5127ccd1a41b395b39067": [
+      "refs/heads/codex/eisei1-edition-label-20260927",
+      "refs/heads/codex/exam-expansion-20260927",
+      "refs/heads/codex/gemini-chat-generic-qualification-copy",
+      "refs/heads/codex/tsugino-schedule-link-20260927"
+    ],
+    "7c39ae261ec5ce90ba2ff642a2b3b54e34847596": [
+      "refs/heads/codex/eisei1-free-note-20260927",
+      "refs/heads/codex/kanri-2024-20260927"
+    ],
+    "2ce14750f61dfa7b648aaf7d9deeac2c7018fc8f": [
+      "refs/heads/codex/eisei2-two-publications-20260928"
+    ],
+    "69d8384ede7e0685dbc9e67a3030cd60f063523e": [
+      "refs/heads/codex/emkohyo-2025-choice-explanations"
+    ],
+    "985b0702fe6160128d0ccaf04c2e764f057a0365": [
+      "refs/heads/codex/exam-library-ai-followup-20260928",
+      "refs/heads/codex/kaigo-tsugino-links-20260928",
+      "refs/heads/codex/kaigo-year-copy-20260928",
+      "refs/heads/codex/kaigo37-second-year-20260928",
+      "refs/heads/codex/shakai37-primary-audit-20260928",
+      "refs/heads/codex/shakai37-second-round-20260928",
+      "refs/heads/codex/tohan-2024-kansai-second-session"
+    ],
+    "1f2c350472cb34ac3348382c382ccf4a502ea3b2": [
+      "refs/heads/codex/fe-b-q2-explanation-20261012",
+      "refs/heads/codex/home-direct-qualification-20261012"
+    ],
+    "47bc99d92eaccce0ede08e56b675f2b56c204378": [
+      "refs/heads/codex/fp-electric-coverage-audit-20260926",
+      "refs/heads/codex/takken-2024-discovery-20260926"
+    ],
+    "de6c47dd583d853f5c67c8d90c155927a84ed6b5": [
+      "refs/heads/codex/fp-sitemap-20260925",
+      "refs/heads/codex/fp2-practical-2026"
+    ],
+    "ed16700faf5b0688e31d49528472feac5d6c13a5": [
+      "refs/heads/codex/fp1-applied-q52-20261008"
+    ],
+    "77b15a33d66391099dfd3fb9e8be33773f40b943": [
+      "refs/heads/codex/fp1-applied-q53-20261008"
+    ],
+    "ae006386a533d35fc55a1f5275791c2a0e73d604": [
+      "refs/heads/codex/fp1-may-complete-20261010"
+    ],
+    "f67f800e7d8154de1991d76ac22472a67240ed0e": [
+      "refs/heads/codex/fp1-meta-completion-20261008",
+      "refs/heads/codex/kanri-seo-description-20261008",
+      "refs/heads/codex/medical-hokenshi112-reviewed13-20261007",
+      "refs/heads/codex/zoen2-seo-coverage-20261008"
+    ],
+    "85c5ef53f3578dc224ecaa2f99ad77d4057add98": [
+      "refs/heads/codex/fp1-reader-generalize-20261010"
+    ],
+    "5f4cf44a30f015e150fb3cbba436a01e351030b0": [
+      "refs/heads/codex/fp2-academic-2024-2025-20260923"
+    ],
+    "738e7530d202d95d0ca3dffb8945a882c16fdfd1": [
+      "refs/heads/codex/fp2-practical-explanations-20260923"
+    ],
+    "248ee0e2ca8d6a1d230485ba00fa7dd1dc67ef09": [
+      "refs/heads/codex/fp2-two-year-complete-20260923"
+    ],
+    "e6a3f5429fac2ea245dadedd0fa0c3d5650491ae": [
+      "refs/heads/codex/fp3-2026-q11-category-20261011"
+    ],
+    "88f31ebdf55924892136d65232777390221668b6": [
+      "refs/heads/codex/gas-latest2-20261011"
+    ],
+    "92ba7bd9f8966f68a6f2f7ee17a6b34850ca631a": [
+      "refs/heads/codex/gas-medical-key3-20261011"
+    ],
+    "6604650f6a2c4a48441e044d942719e4c03ba0ee": [
+      "refs/heads/codex/gengo-chokakushi-latest-two-20261011"
+    ],
+    "717323435c8f3c0aa8597ee00d7acc0dbc1bca67": [
+      "refs/heads/codex/hokenshi-latest-two-20261011"
+    ],
+    "d79bc3fc08d3514a0b74c565291d3b7dcc367328": [
+      "refs/heads/codex/home-presence-guidance-20261022",
+      "refs/heads/codex/publication-validation-20261021",
+      "refs/heads/codex/ssg-2026-publication-20261022"
+    ],
+    "29a79be28cecfb515723ddad43c832cc36075642": [
+      "refs/heads/codex/home-two-categories",
+      "refs/heads/codex/safety-exam-note-link-20260911",
+      "refs/heads/codex/safety-ipa-ux",
+      "refs/heads/codex/unified-learning-complete"
+    ],
+    "dbc943855cfcfa98ae3bc364d21b8bba44710b63": [
+      "refs/heads/codex/ip-plan-rag-citations-20261012"
+    ],
+    "3a906622dfb3dff68205a8a4a910de502a94d82b": [
+      "refs/heads/codex/ipa-choice-explanations-advanced-2024-2025"
+    ],
+    "31d492b566a33b0b52853eabbc529b3294fba6cc": [
+      "refs/heads/codex/ipa-choice-explanations-core-2024-2025"
+    ],
+    "77cd017223c524fc8205ec40ba3b8acff2f0a24e": [
+      "refs/heads/codex/ipa-session-parity-20260919"
+    ],
+    "cff01af3e9baeef650e3f91f1656da8ee8619366": [
+      "refs/heads/codex/ipa-two-year-audit-sol-20260924"
+    ],
+    "77397070a5fe8a16ad83ee525d0addf3618c3a5a": [
+      "refs/heads/codex/josanshi-latest-two-20261011"
+    ],
+    "ff161a6510d24024b6a3f869830cf9f9f92f5c11": [
+      "refs/heads/codex/judo-seifukushi-latest-two-20261011",
+      "refs/heads/codex/presence-by-exam-20261011"
+    ],
+    "a57cafb26f9aa81a36154e04226db77ef33a4861": [
+      "refs/heads/codex/kakomon-a14-20261013"
+    ],
+    "6464a08cd42a840e903cf667f10ab6715982cbb8": [
+      "refs/heads/codex/kakomon-adsense-quality-20261011"
+    ],
+    "5dea6d29b0481ceef5b89bd3d4ca4e4d3a568654": [
+      "refs/heads/codex/kakomon-home-design-20261010"
+    ],
+    "7ceee2ea84b156bdc5d9f6e6d223697f8206f4e0": [
+      "refs/heads/codex/kakomon-ux-seo-20260920",
+      "refs/heads/codex/safety-consultant-merge-ready-20260919"
+    ],
+    "e7148103ae6371f7acc4d43fffe96e6582c7ef28": [
+      "refs/heads/codex/kakomon-ux-st-sa-final-local-20261014"
+    ],
+    "222d6cd61b5b6f787e5895d29ac9b2f6e6c6ae13": [
+      "refs/heads/codex/kanri-2025-complete-20260927"
+    ],
+    "d75b5b98070c4003e59118f0fd567da73cb72ec7": [
+      "refs/heads/codex/kanri-2025-q16-17-20260927"
+    ],
+    "ca04dd4be37609ffc4b90b7f1c7bfb460aa4ec1c": [
+      "refs/heads/codex/kanri-2025-q18-28"
+    ],
+    "817b3da8e5b2640614fb7d3f4db1ec24355e27cd": [
+      "refs/heads/codex/kanri-2025-q19"
+    ],
+    "493dd5affdc317109365b526a0cece20af752853": [
+      "refs/heads/codex/kanri-2025-q26"
+    ],
+    "0d42fc4b079d5ed04976ae9cbb6dfe0b13a5734b": [
+      "refs/heads/codex/kanri-2025-q32-36"
+    ],
+    "33d640605e130d2f4a610209d5cd4f750af472ec": [
+      "refs/heads/codex/kanri-2025-q37-42"
+    ],
+    "af4e0d010b157e40153ef2afeddc5085a174c6f5": [
+      "refs/heads/codex/kanri-2025-q38",
+      "refs/heads/codex/privacy-adsense-placement-20260927"
+    ],
+    "eafd53b62ffa6cc22ad94e4f944db64daf9c7b6b": [
+      "refs/heads/codex/kanri-2025-q43-45"
+    ],
+    "ee9b5a70c112086d88521cf7b23ec9341cd0953f": [
+      "refs/heads/codex/kanri-2025-q46"
+    ],
+    "ba84a367e397caf3de48bb06c487a14d4d8d11d3": [
+      "refs/heads/codex/kanri-2025-repair-guideline-20260927"
+    ],
+    "8b748a73824f417f01f4368e4a9c525294471ff5": [
+      "refs/heads/codex/kanri-2025-reserve-rights-assembly-20260927"
+    ],
+    "4e282f8d4747b4e8aceb1b0a428b22b7c5b1a8ce": [
+      "refs/heads/codex/kanri-2025-standard-rules-20260927"
+    ],
+    "d685e96a169b105aad26d45515b1bd4e6bce0ec3": [
+      "refs/heads/codex/kanri-2025-tax-accounting-fire-20260927"
+    ],
+    "bd510e9e4bde96e9cf86a1137b15de3947cc67f6": [
+      "refs/heads/codex/kanri-eiyoshi-20261010"
+    ],
+    "190f8d10dd5f71124b6da61aca454bca4573d369": [
+      "refs/heads/codex/kenchiku-setsubishi-latest-two-20261011"
+    ],
+    "7851a14c200a0630e704ee2a301610f29209179b": [
+      "refs/heads/codex/lab-71-72-owner-20261011"
+    ],
+    "7fbca9d5ad85828c150a26c41d4c9e253d8ed9d3": [
+      "refs/heads/codex/lab-rad-cli-safe34-20261011"
+    ],
+    "fe3e2a91763df6ac1de8fa0ccf629b5194532078": [
+      "refs/heads/codex/lab-remaining-owner-20261011"
+    ],
+    "18e0e1f48f45560ad46f3a5ae9cbac6a722d4ac8": [
+      "refs/heads/codex/lab-saved-am24-20261011"
+    ],
+    "838c7e2c5dfb196911876916abae2363a4687637": [
+      "refs/heads/codex/lab-saved-cli-safe7-20261011"
+    ],
+    "dcbebd3c31d18fb160d2ecb201a28c58246f31b5": [
+      "refs/heads/codex/lckohyo-2025-choice-explanations-20260923"
+    ],
+    "ee8d5ec38a0c925abb9622ed4ad495121a40342f": [
+      "refs/heads/codex/live-study-presence"
+    ],
+    "95a2d099b28bbe097967f8b5dc6453e563812f5c": [
+      "refs/heads/codex/medical-hokenshi112-pilot-20261007"
+    ],
+    "363efe1364a1a9280ade0163f7c541f19788b632": [
+      "refs/heads/codex/medical-key9-closeout-20261011"
+    ],
+    "a630a6a3981597abe62f6827ae8636a885a04347": [
+      "refs/heads/codex/medical-next-union-20261010"
+    ],
+    "9a8f1b12384d20102594f875a3c0bdb74a6558d2": [
+      "refs/heads/codex/medical161-publication-20261012"
+    ],
+    "3b9193087054f0001357863e203dabe0fdd9dd74": [
+      "refs/heads/codex/medical34-post675-20261010"
+    ],
+    "d933e3e0a7cee7b2f33402d8745d2d984c39622f": [
+      "refs/heads/codex/next-fp1-nurse-20261010"
+    ],
+    "35ebb83a1ec4b0d1d0ba0386d965736bf599c5c3": [
+      "refs/heads/codex/next59-integration-20261010"
+    ],
+    "772ab860c6563bbf239bc35b372979564f26606a": [
+      "refs/heads/codex/note-catalog-kakomon-20261016",
+      "refs/heads/codex/site-ux-kakomon-20261018"
+    ],
+    "ed5146c31854f2dede1d363719cecbc1fbc4b6bf": [
+      "refs/heads/codex/nurse-latest-two-owner-20261011"
+    ],
+    "61d568f7b955a7ec0295ef0fa5dcb7af5c6a2e32": [
+      "refs/heads/codex/nurse-next-batch-decimal-20261010"
+    ],
+    "772f2eceef506a76ce399f2c2c9ea8f78933fe9d": [
+      "refs/heads/codex/nurse-primary11-20261011"
+    ],
+    "00640a635bc3dc20206656a7f9a6c5176d14091e": [
+      "refs/heads/codex/ot13-source-explanations-20261011"
+    ],
+    "217ef429244bd9f837beea4f9e569b0483e607af": [
+      "refs/heads/codex/ot61-am-next20-20261011"
+    ],
+    "d1ecd56a10560743879601e7e9c52cb0d0f83e7e": [
+      "refs/heads/codex/ot61-pm-public15-20261011"
+    ],
+    "38bef277e58a156680ad31d20bd00fd909c87b83": [
+      "refs/heads/codex/pharma-ahaki608-followup-20261010"
+    ],
+    "d2901bc88574a6448ef1123a493330b91d1106a5": [
+      "refs/heads/codex/pharmacy-latest-two-graph-saved-20261011"
+    ],
+    "43f3d47ea5e694ca935d58babba00f27a58635fd": [
+      "refs/heads/codex/pharmacy-latest-two-model-saved-20261011"
+    ],
+    "a79f490d87a03a7b5d4d283427e9acededc308f9": [
+      "refs/heads/codex/pharmacy-latest-two-required-figures-20261011"
+    ],
+    "fca7e50b03d99b020adabcea3ed06dcefaaf2020": [
+      "refs/heads/codex/pharmacy-latest-two-science-saved-20261011"
+    ],
+    "1dd60f9a17e41657933620446ac76760b0f8dc22": [
+      "refs/heads/codex/pharmacy-selection-20261010"
+    ],
+    "f87b91facb21047f0be4b20d6d093852507f26ee": [
+      "refs/heads/codex/pharmacy110-q129-q130-20261011"
+    ],
+    "28eed4db1cafb8108860d805d1609d8f8d2cc238": [
+      "refs/heads/codex/pharmacy110-q131-q132-20261011"
+    ],
+    "4c7353554d684254437c07ccaeab478f0f009da9": [
+      "refs/heads/codex/pharmacy111-required-saved-20261011"
+    ],
+    "02e74e973d16f4eacd6dead098f8f754e11ed46e": [
+      "refs/heads/codex/pharmacy306-release-20261010"
+    ],
+    "a07722018afe9b292a96966f4c49ab3aa2b5208f": [
+      "refs/heads/codex/pt-saved-qa20-20261011"
+    ],
+    "91027882c6d53232c5d1ce32c61493c7fb4ee851": [
+      "refs/heads/codex/pt-unowned-20261011"
+    ],
+    "6502372634b5f28cbfa9c2f49f54aef83540a362": [
+      "refs/heads/codex/pt61-am16-kenchiku-20261011"
+    ],
+    "99b720978e78e3876048b7f49f2939a41a3162c3": [
+      "refs/heads/codex/public7-text-only-20261015"
+    ],
+    "8d2e367358d584720531e289575d0d93c94ce2b9": [
+      "refs/heads/codex/qualification-catalog-audit-20260927"
+    ],
+    "62514e6ba5cb429248ca6aabe83467212066ec7b": [
+      "refs/heads/codex/qualification-expansion-20260923"
+    ],
+    "08addfe8684fe4e4ece84497f98faffedfb37da8": [
+      "refs/heads/codex/qualification-followup-native-20261010"
+    ],
+    "1501843e2d888c0029f05e8131852ae16b5ba60e": [
+      "refs/heads/codex/qualification-followup-public-20261010"
+    ],
+    "900ff8f2d66d42be2dbf4977ec08bb82b04c8fa9": [
+      "refs/heads/codex/qualification-next-native-20261010"
+    ],
+    "8067e15820ba35ad7c12c8f73fa06b97f02e6fc1": [
+      "refs/heads/codex/qualification-next75-follow-20261010"
+    ],
+    "42713682d9eefc0ccf40dc8cac5db096f2a30e9f": [
+      "refs/heads/codex/qualification-quality-audit-20260912"
+    ],
+    "db4ec9b618a88c8a04fe78dcfcb619e776ced2dc": [
+      "refs/heads/codex/qualification-remaining-batch-20261015"
+    ],
+    "66df481f8aa646d5c1a36d2bce4c836586aec173": [
+      "refs/heads/codex/radiology-latest-two-20261011"
+    ],
+    "dff58fcfedd17710022651717367f26c0c4aea70": [
+      "refs/heads/codex/remove-sc-contamination"
+    ],
+    "c6497974f8b66addd145e6fee90ac3d1db52e5f5": [
+      "refs/heads/codex/revenue-completion-20260913"
+    ],
+    "c496aee449bd0f8aaef3fbb0ee3c1095bae79b6a": [
+      "refs/heads/codex/reviewed12-union-20261011"
+    ],
+    "c04e795e483858df448c8a1a7924fe3dc21b300e": [
+      "refs/heads/codex/riyoshi-latest-two-20261011"
+    ],
+    "813f05a1a95d40ccc43a20060c9686e38d570c86": [
+      "refs/heads/codex/safety-consultant-final-20260919"
+    ],
+    "0697b1beb2d441987125105f3a1f841bb1802ff3": [
+      "refs/heads/codex/safety-exams-20260911"
+    ],
+    "562c37e885ab4ad9274019ab82881905f7e6cd87": [
+      "refs/heads/codex/seo-existing-question-routing-20261008"
+    ],
+    "0f6dd85ed9fd56829d4f3445b3622f50eeab03eb": [
+      "refs/heads/codex/sharoushi-kokunen-late6-20261010"
+    ],
+    "8dfb6b2ceb2b5028ef946e2a02fcfa5f81d11148": [
+      "refs/heads/codex/sharoushi-later15-20261010"
+    ],
+    "0bb310c256864a721b9d7c03cdec5cfa28498721": [
+      "refs/heads/codex/sharoushi-latest-two-completion-20261011"
+    ],
+    "01756227305d8b9fae67310c904934afdf884bf1": [
+      "refs/heads/codex/sharoushi-post668-ready24-20261010"
+    ],
+    "d3ed9539b5a9bf229cc496ea3dc1f22318179181": [
+      "refs/heads/codex/sharoushi-remaining33-codex-20261010"
+    ],
+    "b05c0558014be4c239bace43af24636d435a03cc": [
+      "refs/heads/codex/shika-ishi-latest-two-20261011"
+    ],
+    "dcb2425617f0b76681a57fb9df7cf0fbf3388405": [
+      "refs/heads/codex/sokuryoshi-latest-two-20261011"
+    ],
+    "3051430a9c90652cddb1f745f8d5706e00053f2b": [
+      "refs/heads/codex/st-all-choice-reasons-20261011"
+    ],
+    "9e8f4cdcbec3ea2893132500899c2b4603bc56e3": [
+      "refs/heads/codex/st-residual11-20261011"
+    ],
+    "b7fbf140b71deef9c9e1d4b33bc6cefd7119767c": [
+      "refs/heads/codex/st-sa-note-entry-20261004"
+    ],
+    "4d96268585ac14e78a0b584e476595463be9de29": [
+      "refs/heads/codex/st-two-year-choice-explanations-20260924"
+    ],
+    "c78b68e6b7ecc02bfac3cf77ebbcbeed713ed20e": [
+      "refs/heads/codex/takken-2025-official-20260925"
+    ],
+    "139f7dc6d9ad8b104630f933f55fc76c33deee38": [
+      "refs/heads/codex/tsushin1-latest-two-20261011"
+    ],
+    "a9d2893c9d8b71bc3192ce204165c7533178a4cc": [
+      "refs/heads/codex/tsushin2-2025-construction6-primary-20261011"
+    ],
+    "ab36a0f43584800547530fbbd5bbfce81d7f842c": [
+      "refs/heads/codex/tsushin2-2025-law14-primary-20261011"
+    ],
+    "0df08092894c32f31785545aca4750d6ede54c91": [
+      "refs/heads/codex/tsushin2-2025-practical7-primary-20261011"
+    ],
+    "3498defadee2bf89e19e1940948875ee427ad722": [
+      "refs/heads/codex/tsushin2-2025-tech12-primary-20261011"
+    ],
+    "833acbf8f39ecad9cf6599f0672f290ad4e88f73": [
+      "refs/heads/codex/tsushin2-2025-tech19-primary-20261011"
+    ],
+    "de6a7e7a5c6c9ca76eccb705d092c8123f146d3d": [
+      "refs/heads/codex/tsushin2-2026-law16-primary-20261011"
+    ],
+    "b2eef57c8f80a7ddc86b6f82263db51280eb0e6d": [
+      "refs/heads/codex/tsushin2-construction10-primary-20261011"
+    ],
+    "66d83779f2228652ecfa98be6934a59043b039e4": [
+      "refs/heads/codex/tsushin2-final8-primary-20261011"
+    ],
+    "f43ce58143a647525796ee4c4bd206007a4605ed": [
+      "refs/heads/codex/tsushin2-first5-primary-20261011"
+    ],
+    "98f6eb77ab168e33a0265b9533ec2c43d0f01ea2": [
+      "refs/heads/codex/tsushin2-last2-primary-20261011"
+    ],
+    "03121cc548b8d971a5629b3282f5aae0d0c7ce2d": [
+      "refs/heads/codex/tsushin2-next5-primary-20261011"
+    ],
+    "6a208b846137745d41ea1bbe641608bd84a81365": [
+      "refs/heads/codex/tsushin2-systems10-primary-20261011"
+    ],
+    "e587ade6c52f864887e946adfa6c3679f8a420f6": [
+      "refs/heads/codex/tsushin2-tech10-primary-20261011"
+    ],
+    "ab6fd826bb0ff14f0d0753f338feddaf4a458044": [
+      "refs/heads/codex/unpublished-five-20260927"
+    ],
+    "b8962bf8b40a28a09ff3de702f98d3267300a5fa": [
+      "refs/heads/codex/zoen1-extra15-20260927"
+    ],
+    "8ebb10c8b7128dfe8784ed7ef317a65955228f11": [
+      "refs/heads/codex/zoen1-owner-batch10-20261011"
+    ],
+    "76f3c750bd9ed73054a4e9dcb0b08516ff33ec7a": [
+      "refs/heads/codex/zoen1-owner-batch7-20261011"
+    ],
+    "be0590c3a0226c570fd62a38b6483979f2b93983": [
+      "refs/heads/codex/zoen1-owner-batch8-20261011"
+    ],
+    "00c6411d207284bca47a34ab940052e16e20102b": [
+      "refs/heads/codex/zoen1-owner-batch9-20261011"
+    ],
+    "04f28a551dbbc16a415bda785312373117e5c447": [
+      "refs/heads/codex/zoen1-owner-next-20261011"
+    ],
+    "c7e0e5c71ca84d113836b81a05dcc13ff099b0d1": [
+      "refs/heads/codex/zoen1-primary-batch5-20261011"
+    ],
+    "5bc6f99abfc15a99fdfc40f29b267d004f85985f": [
+      "refs/heads/codex/zoen2-latest-two-complete-20261011"
+    ]
+  },
+  "pathMatches": [],
+  "limits": "Path-name check does not prove absence under arbitrary aliases. Remote catalog blob content scan was not completed.",
+  "pdfRetrieval": {
+    "method": "Python urllib.request.urlopen over normal HTTPS with existing environment settings",
+    "result": "All six URLs failed during CONNECT: Tunnel connection failed: 403 Forbidden",
+    "urls": [
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247840.pdf",
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221379.pdf",
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/247841.pdf",
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/221380.pdf",
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/245007.pdf",
+      "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/213285.pdf"
+    ]
+  },
+  "validation": {
+    "install": "passed pnpm 10.33.0",
+    "questions": "Validated 26444 questions. ok=26444 fail=0 warn=16808",
+    "typecheck": "passed, NODE_OPTIONS=--max-old-space-size=8192",
+    "relatedTests": "3 files / 107 tests passed",
+    "fullSuite": "interrupted exit 130; observed 1 failure among 4 tests in dentist-latest-two.test.ts"
+  },
+  "review": {
+    "requestedCli": "gpt-6-astra, medium; failed app-server initialization with read-only filesystem twice",
+    "alternative": "independent Codex subagent, gpt-6-astra medium",
+    "initialFinding": "Department name should be 環境生活部 生活衛生課; corrected",
+    "qualificationAddition": "incomplete, zero questions",
+    "finalVerdict": "PASS for consistency and accuracy of the two audit report files after correction; no additional findings. Qualification addition remains incomplete."
+  }
+}
