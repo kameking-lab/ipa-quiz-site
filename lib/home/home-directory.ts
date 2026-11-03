@@ -184,6 +184,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "gas-kou", name: "ガス主任技術者 甲種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "gas-otsu", name: "ガス主任技術者 乙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "gas-hei", name: "ガス主任技術者 丙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
+  { code: "gengo-chokakushi", name: "言語聴覚士", sub: "第28・27回の公式公表問題を準備中", domain: "welfare" },
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み220原問を部分収録", domain: "welfare" },
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "\u7b2c72\u30fb71\u56de\uff082026\u30fb2025\u5e74\u5b9f\u65bd\uff09\u5348\u524d\u30fb\u5348\u5f8c\u306e\u78ba\u8a8d\u6e08\u307f\u539f\u554f\u3092\u90e8\u5206\u53ce\u9332", domain: "welfare" },
   { code: "shinryo-hoshasengishi", name: "診療放射線技師", sub: "第77・78回の午前・午後398原問と全肢解説", domain: "welfare" },

@@ -73,6 +73,7 @@ import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
 import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
 
+import { GENGO_CHOKAKUSHI_QUESTIONS } from "./gengo-chokakushi";
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 import { RIKU_TOKU_KOKUNAI_QUESTIONS } from "./riku-toku-kokunai";
 import { KAI_TOKU2_QUESTIONS } from "./kai-toku2";
@@ -174,6 +175,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
   ...(isExamPublished("rigaku-ryohoshi") ? { "rigaku-ryohoshi": RIGAKU_RYOHOUSHI_QUESTIONS } : {}),
   ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
+  ...(isExamPublished("gengo-chokakushi") ? { "gengo-chokakushi": GENGO_CHOKAKUSHI_QUESTIONS } : {}),
   ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
   ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),

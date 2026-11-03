@@ -721,6 +721,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["未収録問題の原本図・専門根拠・代替正答の局所確認", "最新2回の残る午前・午後問題"],
   },
   {
+    slug: "gengo-chokakushi", examCode: "gengo-chokakushi",
+    shortName: "言語聴覚士", fullName: "言語聴覚士国家試験", domain: "welfare",
+    administrator: "厚生労働省・公益財団法人 医療研修推進財団",
+    officialQuestionsUrl: "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/about.html",
+    officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
+    status: "ready-to-ingest",
+    reuseSummary: "未公開。第28・27回の公式公表された5問をステージングに収録し、採点除外2問は別保存。全400問は未収録。",
+    remainingWork: ["公式の全問題冊子の所在確認（393問未収録）", "全肢解説の専門根拠確認", "公開判断"],
+  },
+  {
     slug: "shino-kunrenshi",
     examCode: "shino-kunrenshi",
     shortName: "視能訓練士",

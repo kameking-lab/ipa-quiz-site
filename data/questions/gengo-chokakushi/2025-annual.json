@@ -1,0 +1,48 @@
+[
+  {
+    "id": "gengo-chokakushi-2025-annual-am-q40",
+    "exam": "gengo-chokakushi",
+    "session": "am",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 40,
+    "subject": "午前",
+    "officialAnswerNumber": "3または4",
+    "type": "multiple-choice",
+    "category": "午前",
+    "topicTags": [
+      "言語聴覚士",
+      "第27回"
+    ],
+    "difficulty": 3,
+    "question": "誤っているのはどれか。",
+    "choices": {
+      "ア": "純音や周期音は線スペクトルを示す。",
+      "イ": "雑音や周期を持たない音は連続スペクトルを示す。",
+      "ウ": "パルス音や白色雑音のスペクトルは−3 dB/octの傾斜を持つ。",
+      "エ": "のこぎり波やピンク雑音のスペクトルは−6 dB/octの傾斜を持つ。",
+      "オ": "三角波や有声音源のスペクトルは−12 dB/octの傾斜を持つ。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 1,
+    "explanation": "白色雑音は周波数によらず一定のパワースペクトル密度を持ち、ピンク雑音は周波数が倍になると約3 dB低下します。したがって3と4は、それぞれ雑音に付した傾斜の記述が適切ではありません。公式にも3または4を選べば正解とされており、両方を同時に選ぶ必要はありません。",
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken21/dl/27A40.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken21/dl/27seitou.pdf",
+    "sourceAttribution": "出典：厚生労働省「第27回言語聴覚士国家試験」午前 第40問。本文・選択肢をテキスト化。解説は独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": true,
+    "lastUpdated": "2026-11-03",
+    "choiceExplanations": {
+      "ア": "周期的な音では周波数成分が離散的に現れます。この記述は公式の正答には含まれません。",
+      "イ": "非周期的な雑音では連続的なスペクトルが現れます。この記述は公式の正答には含まれません。",
+      "ウ": "誤りとして正答です。白色雑音のパワースペクトル密度は平坦で、−3 dB/octとする記述は適切ではありません。",
+      "エ": "誤りとして正答です。ピンク雑音のパワースペクトル密度の傾斜は約−3 dB/octで、−6 dB/octではありません。",
+      "オ": "公式の正答には含まれません。三角波の高調波振幅は周波数の二乗に反比例し、約−12 dB/octの減衰を示します。"
+    }
+  }
+]
