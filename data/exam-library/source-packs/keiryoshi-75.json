@@ -1,7 +1,7 @@
 {
   "id": "keiryoshi-75",
   "publicationStatus": "staging",
-  "ingestionStatus": "pending-transcription",
+  "ingestionStatus": "partial-transcription",
   "round": 75,
   "year": 2024,
   "examDate": "2024-12-15",
@@ -99,5 +99,10 @@
       "pdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/8_R06keishitsu.pdf",
       "sha256": "efabe812f4b50b0802106218d1232fffef8dd630924a6c4c78e8c685643f05b4"
     }
-  ]
+  ],
+  "unregisteredDraftSourceQuestionCount": 25,
+  "unregisteredDraftFiles": [
+    "data/questions/keiryoshi/2024-ichiki.json"
+  ],
+  "draftNotes": "一基25問の転記・全肢解説・7図表を作成。残り175問未転記。第75回はローダー未登録。needsReview=trueを保持。"
 }

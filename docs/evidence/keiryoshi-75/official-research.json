@@ -9,9 +9,24 @@
   "subjectMapping": {
     "url": "https://www.meti.go.jp/information/license/data/c241216aj.html",
     "status": "confirmed-in-official-search-result",
-    "keiryoshi": ["一基", "計質", "法規", "管理"],
-    "keiryoshi-nodo": ["環化", "環濃", "法規", "管理"],
-    "keiryoshi-soon": ["環物", "環音", "法規", "管理"]
+    "keiryoshi": [
+      "一基",
+      "計質",
+      "法規",
+      "管理"
+    ],
+    "keiryoshi-nodo": [
+      "環化",
+      "環濃",
+      "法規",
+      "管理"
+    ],
+    "keiryoshi-soon": [
+      "環物",
+      "環音",
+      "法規",
+      "管理"
+    ]
   },
   "corrections": {
     "status": "no-correction-notice-found-in-searched-official-results; absence-not-proven",
@@ -26,8 +41,14 @@
       "https://www.meti.go.jp/information/license/c_main_backno.html"
     ],
     "directOpenResults": [
-      {"url": "https://www.meti.go.jp/information/license/data/c241216aj.html", "httpStatus": 403},
-      {"url": "https://www.meti.go.jp/information/license/data/c250218aj.html", "httpStatus": 403}
+      {
+        "url": "https://www.meti.go.jp/information/license/data/c241216aj.html",
+        "httpStatus": 403
+      },
+      {
+        "url": "https://www.meti.go.jp/information/license/data/c250218aj.html",
+        "httpStatus": 403
+      }
     ],
     "localAnswerPdf": "75seikaibangou.pdf",
     "localAnswerPdfSpecialCases": "No all-correct footnote or special-case marker in the supplied answer PDF. All 200 cells are single numbers 1–5.",
@@ -38,5 +59,19 @@
     "ownerDecision": "権利確認済み。転載条件の文言を中断理由にしない。",
     "url": "https://www.meti.go.jp/main/rules.html",
     "recordedCondition": "編集・加工した場合は出典に加えて編集・加工した旨を記載する（既存第76回報告から引継ぎ。今回ページ本文の再取得は行っていない）。"
+  },
+  "continuedCheck": {
+    "checkedOn": "2026-11-03",
+    "method": "Official METI search results; direct opens of c241216aj.html and supplied answer URL returned 403.",
+    "queries": [
+      "site.meti.go.jp 第75回 計量士 正答 訂正 令和6年",
+      "site.meti.go.jp \"c241216aj\""
+    ],
+    "sources": [
+      "https://www.meti.go.jp/information/license/data/c241216aj.html",
+      "https://www.meti.go.jp/information/license/c_main_backno.html",
+      "https://www.meti.go.jp/information/license/data/c250218aj.html"
+    ],
+    "result": "公式検索結果で資格と科目対応を再確認。正答訂正の告知は見つからないが、不存在は未確認。入力MANIFESTの正答URL・SHA256を維持。"
   }
 }

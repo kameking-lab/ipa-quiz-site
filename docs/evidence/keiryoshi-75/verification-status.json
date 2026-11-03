@@ -1,34 +1,67 @@
 {
   "taskStatus": "incomplete",
+  "round75TargetSourceQuestions": 200,
+  "round75DraftSourceQuestions": 25,
+  "round75RemainingSourceQuestions": 175,
   "ingested75Questions": 0,
-  "pnpm validate:questions": {
-    "exitCode": 0,
-    "questions": 26744,
-    "fail": 0,
-    "warn": 16955,
-    "log": "validate.log",
-    "scope": "Existing registered candidates; no 2024 keiryoshi questions have been added."
+  "registered75QualificationQuestionCounts": {
+    "keiryoshi": 0,
+    "keiryoshi-nodo": 0,
+    "keiryoshi-soon": 0
   },
-  "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck": {
-    "exitCode": 0,
-    "log": "typecheck.log"
+  "unregisteredDraftQualificationQuestionCounts": {
+    "keiryoshi": 25,
+    "keiryoshi-nodo": 0,
+    "keiryoshi-soon": 0
   },
-  "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo": {
-    "exitCode": 0,
-    "filesPassed": 111,
-    "testsPassed": 597,
-    "log": "vitest.log",
-    "scope": "Existing 第76回 staging and SEO tests; not a 第75回 content review."
+  "ocrCandidates": 200,
+  "visualTranscriptionReviews": 25,
+  "choiceExplanationsWritten": 125,
+  "figureCropsPixelVerified": 7,
+  "independentCalculationAndConditionChecks": 21,
+  "checks": {
+    "validate": {
+      "command": [
+        "pnpm",
+        "validate:questions"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 4.44,
+      "log": "validate.log"
+    },
+    "typecheck": {
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 25.12,
+      "log": "typecheck.log"
+    },
+    "vitest": {
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "__tests__/keiryoshi-staging.test.ts",
+        "__tests__/seo"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 92.18,
+      "log": "vitest.log"
+    },
+    "source-verifier": {
+      "command": [
+        "python3",
+        "scripts/verify-keiryoshi-source.py"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 0.19,
+      "log": "source-verifier.log"
+    }
   },
-  "python3 scripts/verify-keiryoshi-source.py": {
-    "exitCode": 1,
-    "round76": "passed: 200原問、1000肢解説、300資格別ID、73画像",
-    "round75": "9原本ハッシュ・200正答一致。0科目/0原問で未完了を検出。",
-    "log": "source-verifier.log"
-  },
-  "git diff --check": {
-    "exitCode": 0
-  },
+  "validationScope": "pnpm validate:questionsは既存登録済み候補のみ。第75回ドラフトは未登録。Python監査は一基25問を含む。Vitestは第76回の既存試験と第75回の未登録維持を検査する。",
+  "round76UnchangedFiles": 164,
   "publication": "staging remains unpublished",
   "commit": false,
   "push": false,
@@ -36,5 +69,7 @@
   "pr": false,
   "deploy": false,
   "independentReviewRequested": false,
-  "round76UnchangedFiles": 92
+  "git diff --check": {
+    "exitCode": 0
+  }
 }

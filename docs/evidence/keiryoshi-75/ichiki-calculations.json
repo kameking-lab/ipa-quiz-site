@@ -1,0 +1,170 @@
+[
+  {
+    "subject": "一基",
+    "qNumber": 1,
+    "officialAnswer": "3",
+    "result": "[True, True, False, True, True]",
+    "check": "各十分条件に対する代表値と、肢3への反例x=1/2。端点を含む不等号は別途原画像で照合。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 2,
+    "officialAnswer": "5",
+    "result": "[9]",
+    "check": "指定の丸め対数に依存せず、有理数の厳密比較で小数第七位条件を検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 3,
+    "officialAnswer": "1",
+    "result": "True",
+    "check": "正の回転角を複素指数で掛けて120度の点を検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 4,
+    "officialAnswer": "1",
+    "result": "-0.02",
+    "check": "自然対数を直接数値計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 5,
+    "officialAnswer": "5",
+    "result": "[3, 1, 1, 4, 2]",
+    "check": "法線と点Pから得た平面の左辺を全5肢で計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 6,
+    "officialAnswer": "2",
+    "result": "[(0, 2), (0, 0), (-1, -1), (-1, 1), (0, -2)]",
+    "check": "kの係数と定数項の両方を全5肢で計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 7,
+    "officialAnswer": "2",
+    "result": "1/2",
+    "check": "x≠1で因数分解して約分後、連続な関数の極限を評価。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 8,
+    "officialAnswer": "5",
+    "result": "True",
+    "check": "数値積分2000区間で解析積分値を検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 9,
+    "officialAnswer": "3",
+    "result": "True",
+    "check": "x=√3,y=−√3でA²=Iの実現性とx+y=0を検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 11,
+    "officialAnswer": "3",
+    "result": "7/2",
+    "check": "サイコロの期待値を有理数で全6事象から計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 12,
+    "officialAnswer": "4",
+    "result": "16/31",
+    "check": "ベイズの公式から第一工場という条件付き事象を厳密計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 13,
+    "officialAnswer": "2",
+    "result": "1/3",
+    "check": "床の支点から作用点3L/4、重心L/2でモーメントを独立に立式。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 14,
+    "officialAnswer": "3",
+    "status": "passed",
+    "result": "BL²ω/2",
+    "check": "半径rの速度ωrに対する微小起電力Bωr drを0からLまで積分。次元[B]L²/t=V、外端側が高電位。"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 15,
+    "officialAnswer": "5",
+    "result": "(0.3333333333333333, 0.6666666666666666, 0.0)",
+    "check": "中央導線を同一節点としてKCLで独立に計算。C₁側V/3、C₂側2V/3。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 16,
+    "officialAnswer": "2",
+    "result": "[True, True, True]",
+    "check": "倍率の複数値でレンズの式を検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 17,
+    "officialAnswer": "5",
+    "status": "passed",
+    "result": "λL/d",
+    "check": "二つのスリットからの距離√(L²+(y±d/2)²)の一次展開差dy/Lを明縞条件mλに等置。"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 18,
+    "officialAnswer": "4",
+    "result": "6.5",
+    "check": "半減期2年と指定log₂10による6.64年から最寄りを選定。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 19,
+    "officialAnswer": "4",
+    "result": "1100000.0",
+    "check": "光子エネルギーから仕事関数をJへ換算して減算。速度1052469.6…m/s。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 20,
+    "officialAnswer": "1",
+    "result": "6000",
+    "check": "密度6000kg/m³、質量12kgの固体を水中で量る場合m′=10kgとなる例で比の向きを検算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 24,
+    "officialAnswer": "2",
+    "result": "36/5",
+    "check": "密度・面積・速度・秒時換算を有理数で厳密計算。",
+    "status": "passed"
+  },
+  {
+    "subject": "一基",
+    "qNumber": 25,
+    "officialAnswer": "4",
+    "result": "1/4",
+    "check": "左右荷重/面積の差を密度で除算。重力加速度は相殺。左が高いことを符号で確認。",
+    "status": "passed"
+  }
+]

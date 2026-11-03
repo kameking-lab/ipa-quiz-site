@@ -1,0 +1,22 @@
+{
+  "status": "completed-ocr-only",
+  "questionPages": 200,
+  "visualTranscriptionReviewed": 25,
+  "remainingVisualTranscription": 175,
+  "candidateCropPixelContainment": 200,
+  "candidateCropPixelThreshold": "grayscale < 240",
+  "scope": "Question-region conservative safety crops in /tmp; not approved figure cuts. Their containment checks depend on the recorded question-region band, not the whole page. All object inventories are retained separately. No automatic OCR result is imported as a question.",
+  "modelUrl": "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/main/jpn.traineddata",
+  "modelSha256": "36bdf9ac823f5911e624c30d0553e890b8abc7c31a65b3ef14da943658c40b79",
+  "ocr": "tesserocr 2.12.0; local CPU; jpn; PSM 3; OMP_THREAD_LIMIT=1; workers=4",
+  "raster": "PyMuPDF Matrix(2.5,2.5), page.rect/CropBox, RGB",
+  "scripts": [
+    "render-ocr.py",
+    "recalculate-ichiki.py"
+  ],
+  "limits": [
+    "OCRの誤字・欠落、数式と選択肢番号の読順崩れを含む。",
+    "175問の本文・全肢、強調・斜体、計算・解説は未審査。",
+    "全200問の画像/ベクタ検出から図としての全件分類は未完了。"
+  ]
+}

@@ -4,6 +4,9 @@ import { describe, expect, it } from "vitest";
 import { KEIRYOSHI_CANDIDATES, KEIRYOSHI_SOURCE_QUESTIONS, KEIRYOSHI_SUBJECTS, getKeiryoshiCandidates } from "@/data/questions/keiryoshi";
 import official from "@/docs/evidence/keiryoshi-76/official-answers.json";
 import sourcePack from "@/data/exam-library/source-packs/keiryoshi-76.json";
+import draft75 from "@/data/questions/keiryoshi/2024-ichiki.json";
+import official75 from "@/docs/evidence/keiryoshi-75/official-answers.json";
+import sourcePack75 from "@/data/exam-library/source-packs/keiryoshi-75.json";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { isAcceptedAnswer, isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -98,5 +101,29 @@ describe("第76回計量士・未公開ステージング", () => {
       expect(JSON.stringify(graph)).toContain("経済産業省");
       expect(JSON.stringify(graph)).toContain("https://www.meti.go.jp/main/rules.html");
     }
+  });
+});
+
+describe("第75回計量士・未登録の途中ドラフト", () => {
+  it("途中データを既存の第76回候補や一般出題経路へ混ぜない", () => {
+    expect(sourcePack75.publicationStatus).toBe("staging");
+    expect(sourcePack75.ingestedSourceQuestionCount).toBe(0);
+    expect(draft75).toHaveLength(25);
+    for (const q of draft75) {
+      const id = `keiryoshi-${q.year}-${q.season}-${q.session}-q${q.qNumber}`;
+      expect(KEIRYOSHI_CANDIDATES.some(candidate => candidate.id === id)).toBe(false);
+      expect(getQuestionById(id)).toBeUndefined();
+      expect(q.needsReview).toBe(true);
+      expect(q.year).toBe(2024);
+      expect(q.examDate).toBe("2024-12-15");
+      expect(questionSourceEdition({ year: q.year, season: "annual", sourcePdfUrl: q.sourcePdfUrl })).toBe("第75回（令和6年12月実施）");
+      expect(q.officialAnswerNumber).toBe((official75.answers.一基 as Record<string, string>)[q.qNumber]);
+      expect(q.answer).toBe(keys[Number(q.officialAnswerNumber) - 1]);
+      expect(q.sourceAnswerUrl).toBe(official75.url);
+      expect(Object.keys(q.choices)).toEqual([...keys]);
+      expect(Object.keys(q.choiceExplanations)).toEqual([...keys]);
+      for (const url of q.imageUrls ?? []) expect(existsSync(path.join(process.cwd(), "public", url))).toBe(true);
+    }
+    expect(new Set(KEIRYOSHI_SOURCE_QUESTIONS.map(q => q.year))).toEqual(new Set([2025]));
   });
 });

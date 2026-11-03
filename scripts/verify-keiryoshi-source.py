@@ -58,15 +58,14 @@ def verify_round(round_number, year, raw_directory, exam_date, law_label):
         assert answers["法規"]["21"] == "2"
         assert answers["環濃"]["3"] == "全員正解"
 
-    if len(source_files) != 8 or len(questions) != 200:
-        raise SystemExit(
-            f"第{round_number}回: 原本9本・正答200件は一致。"
-            f"問題データは{len(source_files)}科目/{len(questions)}原問で未完了（8科目/200原問が必要）。"
-        )
-    figures = read_json(evidence / "figure-crops.json")
-    assert Counter(q["subject"] for q in questions) == Counter({s: 25 for s in subjects})
+    complete = len(source_files) == 8 and len(questions) == 200
+    figures = read_json(evidence / "figure-crops.json") if questions else []
+    counts = Counter(q["subject"] for q in questions)
+    assert set(counts).issubset(subjects) and all(n <= 25 for n in counts.values())
+    if complete:
+        assert counts == Counter({s: 25 for s in subjects})
     source_ids = [(q["subject"], q["qNumber"]) for q in questions]
-    assert len(set(source_ids)) == 200
+    assert len(set(source_ids)) == len(questions)
     papers = {p["subject"]: p for p in pack["papers"]}
     assert set(papers) == set(subjects)
     for item in manifest:
@@ -110,11 +109,15 @@ def verify_round(round_number, year, raw_directory, exam_date, law_label):
     for q in questions:
         for exam in papers[q["subject"]]["examCodes"]:
             assignments[exam].append(f'{exam}-{q["year"]}-{q["season"]}-{q["session"]}-q{q["qNumber"]}')
-    assert all(len(ids) == len(set(ids)) == 100 for ids in assignments.values())
-    assert len(set(ident for ids in assignments.values() for ident in ids)) == 300
+    assert all(len(ids) == len(set(ids)) <= 100 for ids in assignments.values())
+    assert len(set(ident for ids in assignments.values() for ident in ids)) == sum(map(len, assignments.values()))
+    if complete:
+        assert all(len(ids) == 100 for ids in assignments.values())
+        assert sum(map(len, assignments.values())) == 300
 
     result = {
         "round": round_number,
+        "complete": complete,
         "pdfHashesVerified": len(manifest),
         "officialAnswersVerified": len(questions),
         "sourceQuestions": len(questions),
@@ -124,6 +127,13 @@ def verify_round(round_number, year, raw_directory, exam_date, law_label):
         "scope": "source-data audit only; pnpm validation/typecheck/tests are separate",
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
+
+    if not complete:
+        raise SystemExit(
+            f"第{round_number}回: 原本9本・正答表200件と既存ドラフトの構造監査は一致。"
+            f"問題データは{len(source_files)}科目/{len(questions)}原問で未完了（8科目/200原問が必要）。"
+            "資格別件数は展開可能件数であり、ローダー登録件数ではない。"
+        )
 
     return {ident for ids in assignments.values() for ident in ids}
 
