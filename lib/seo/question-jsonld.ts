@@ -43,6 +43,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "gas-law": "法令",
     "gas-basic": "基礎",
     "gas-technology": "ガス技術",
+    keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
