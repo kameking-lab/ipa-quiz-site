@@ -95,6 +95,7 @@ export async function generateMetadata({
 }: {
   params: Promise<QuestionRouteParams>;
 }): Promise<Metadata> {
+  if(strictContentGateEnabled())return {title:"問題・教材の演習",description:"ログインしてウェブ・アプリ共通の無料1日10問、または有料会員の演習を利用できます。",robots:{index:false,follow:true}};
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
   if (!q) {

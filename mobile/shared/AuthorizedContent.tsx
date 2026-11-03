@@ -6,7 +6,7 @@ import type { Question } from "@/lib/questions/types";
 import type { Material } from "./material-types";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 const MaterialReader=lazy(()=>import("../src/MaterialReader"));
-export function AuthorizedContent({items,paper,material=false,initialId}:{items:{id:string;title:string}[];paper?:string;material?:boolean;initialId?:string}) {
+export function AuthorizedContent({items,paper,material=false,initialId,pdfUrl="",indexUrl=""}:{items:{id:string;title:string}[];paper?:string;material?:boolean;initialId?:string;pdfUrl?:string;indexUrl?:string}) {
   const [id,setId]=useState(items.some(i=>i.id===initialId)?initialId!:items[0]?.id??"");
   const [value,setValue]=useState<{id:string;data:unknown}|null>(null),[error,setError]=useState(""),[attempt,setAttempt]=useState(0);
   useEffect(()=>{
@@ -20,7 +20,7 @@ export function AuthorizedContent({items,paper,material=false,initialId}:{items:
   const current=value?.id===id?value.data:null;
   return <main className="mx-auto max-w-4xl space-y-5 p-5"><h1>問題・教材の演習</h1><p>ウェブとアプリで共通の1日10問です。ログインして利用してください。有料会員は無制限です。</p>
     {items.length>1&&<label>問題を選択<select value={id} onChange={e=>setId(e.target.value)}>{items.map(i=><option key={i.id} value={i.id}>{i.title}</option>)}</select></label>}
-    {error?<section role="alert"><p>{error==="daily_limit"?"本日の無料10問を使い切りました。日本時間0時に更新されます。":error==="sign_in_required"?"無料枠を端末間で共有するためログインが必要です。":error}</p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof location==="undefined"?"/quiz?mode=random":location.pathname+location.search)}`}>ログイン・本人確認</a><p><a href="/billing">有料会員・購入復元</a></p><button onClick={()=>setAttempt(n=>n+1)}>再確認</button></section>:!current?<p role="status">利用枠を確認しています…</p>:material?<Suspense fallback={<p>教材を準備しています…</p>}><MaterialReader key={id} material={current as Material}/></Suspense>:paper?<ExamQuestionPlayer key={id} examId={paper} examTitle={items[index].title} pdfUrl="" indexUrl="" questions={[current as ExamQuestion]}/>:<QuizPlayer key={id} question={current as Question} index={0} total={1} mode="year" exam={(current as Question).exam} backHref="/" onNext={next}/>}
+    {error?<section role="alert"><p>{error==="daily_limit"?"本日の無料10問を使い切りました。日本時間0時に更新されます。":error==="sign_in_required"?"無料枠を端末間で共有するためログインが必要です。":error}</p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(typeof location==="undefined"?"/quiz?mode=random":location.pathname+location.search)}`}>ログイン・本人確認</a><p><a href="/billing">有料会員・購入復元</a></p><button onClick={()=>setAttempt(n=>n+1)}>再確認</button></section>:!current?<p role="status">利用枠を確認しています…</p>:material?<Suspense fallback={<p>教材を準備しています…</p>}><MaterialReader key={id} material={current as Material}/></Suspense>:paper?<ExamQuestionPlayer key={id} examId={paper} examTitle={items[index].title} pdfUrl={pdfUrl} indexUrl={indexUrl} questions={[current as ExamQuestion]}/>:<QuizPlayer key={id} question={current as Question} index={0} total={1} mode="year" exam={(current as Question).exam} backHref="/" onNext={next}/>}
     {items.length>1&&<nav className="flex gap-4"><button disabled={index<=0} onClick={()=>setId(items[index-1].id)}>前の問題</button><button disabled={index+1>=items.length} onClick={next}>次の問題</button></nav>}
   </main>;
 }

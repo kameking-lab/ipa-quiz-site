@@ -145,7 +145,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
             finally {setDownloading(false);abort.current=null;}
             setSaved(await downloads.list()); setNotice(`${e.name}を保存しました。`);
           })}>{access.entitled ? "保存・更新" : "有料特典を見る"}</button>
-          {saved[e.code] && <button disabled={busy} onClick={()=>void run(async()=>{ await downloads.remove(e.code); setSaved(await downloads.list()); })}>削除</button>}</div>)}
+          {saved[e.code] && <button disabled={busy} onClick={()=>void run(async()=>{ await downloads.removeQualification(e.code); setSaved(await downloads.list()); })}>削除</button>}</div>)}
         {downloading && <button onClick={()=>abort.current?.abort()}>ダウンロード中止</button>}
       </>}
       <p><Link href="/account/delete">アカウント・学習データを削除</Link></p>

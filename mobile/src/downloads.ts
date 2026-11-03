@@ -77,6 +77,11 @@ export class Downloads {
     if (entry) await removeAssets(entry.assets ?? {});
     if (entry) await Filesystem.deleteFile({ directory: Directory.Data, path: entry.path }).catch(()=>{});
   }); }
+  async removeQualification(code:string) {
+    const index=await this.list(),qualification=index[code]?.entry.qualification;
+    const codes=qualification?Object.keys(index).filter(c=>index[c].entry.qualification===qualification):[code];
+    for(const part of codes)await this.remove(part);
+  }
   download(code: string, request: (path: string) => Promise<Response>, progress: (count: number,total: number)=>void, signal: AbortSignal) {
     return this.serialize(async () => {
       const rights = await this.authorize();

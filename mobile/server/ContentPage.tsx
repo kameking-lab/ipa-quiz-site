@@ -5,6 +5,8 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { findQuestionByRoute } from "@/lib/seo/question-url";
 import type { ExamCode } from "@/lib/questions/types";
 import { loadExamPaper } from "@/lib/exam-library-papers";
+import { findExamEntry } from "@/lib/exam-library-catalog";
+import { examSourcePdfUrl } from "@/lib/exam-library-model";
 import { AuthorizedContent } from "../shared/AuthorizedContent";
 /** Only IDs/titles cross RSC. No child containing ungranted content is created. */
 export async function ContentPage({path,initialId}:{path:string;initialId?:string}) {
@@ -17,7 +19,8 @@ export async function ContentPage({path,initialId}:{path:string;initialId?:strin
   if(/^\/e-learning\/exams\/[^/]+$/.test(path)) {
     const paper=path.split("/").pop()!,qs=loadExamPaper(paper);
     if(!qs?.length)notFound();
-    return <AuthorizedContent initialId={initialId} paper={paper} items={qs.map(q=>({id:q.id,title:`問${q.number}`}))}/>;
+    const entry=findExamEntry(paper);
+    return <AuthorizedContent initialId={initialId} paper={paper} pdfUrl={entry?examSourcePdfUrl(entry):""} indexUrl={entry?.indexUrl} items={qs.map(q=>({id:q.id,title:`問${q.number}`}))}/>;
   }
   const materials=materialGroups().flatMap(g=>g.items).filter(m=>m.href===path || m.href.startsWith(path+"/"));
   if(!materials.length)notFound();

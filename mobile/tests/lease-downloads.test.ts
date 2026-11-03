@@ -35,6 +35,13 @@ it("publishes only a complete hash-verified qualification and reads it after res
   expect(await new Downloads(publicKey).load("ip")).toEqual(questions);
   expect((await d.list()).ip.entry.count).toBe(2);
 });
+it("removes every saved format for one qualification",async()=>{
+  const {d,request,entry,questions}=await fixture();entry.qualification="ip";
+  await d.download("ip",request,()=>{},new AbortController().signal);
+  const materialEntry={...entry,code:"material.ip",material:true};
+  await d.download("material.ip",async()=>Response.json({entry:materialEntry,questions,nextOffset:null,entitlement:rights()}),()=>{},new AbortController().signal);
+  expect(Object.keys(await d.list())).toHaveLength(2);await d.removeQualification("ip");expect(await d.list()).toEqual({});expect(memory.files.size).toBe(0);
+});
 it("a free user cannot even request a download",async()=>{
   const d=new Downloads(publicKey),request=vi.fn();await expect(d.download("ip",request,()=>{},new AbortController().signal)).rejects.toThrow("有料");expect(request).not.toHaveBeenCalled();
 });
