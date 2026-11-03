@@ -1,0 +1,1093 @@
+[
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "「JIS Z 8103 計測用語」では実量器は、「一つ以上のある与えられた種類の量について，それぞれが付与された量の値をもち，その使用期間中は，常に再現又は供給する装置。」と定義されている。実量器として用いられないものはどれか、次の中から一つ選べ。",
+    "choices": {
+      "ア": "ダイヤルゲージ",
+      "イ": "ブロックゲージ",
+      "ウ": "角度ゲージ",
+      "エ": "体積用ます",
+      "オ": "重錘形圧力天びん"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "ダイヤルゲージは変位を検出して指示する測定器であり、所定の量を再現・供給する実量器ではない。",
+    "choiceExplanations": {
+      "ア": "ダイヤルゲージは変位を検出して指示する測定器であり、所定の量を再現・供給する実量器ではない。",
+      "イ": "ブロックゲージは所定の長さを現示する実量器である。",
+      "ウ": "角度ゲージは所定の角度を現示する実量器である。",
+      "エ": "体積用ますは所定の体積を供給・再現する実量器である。",
+      "オ": "重錘とピストンの面積等によって圧力を現示する実量器として用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問1（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ある計量器の校正を行ったときの校正の不確かさを評価する。成分 A～E の不確かさが以下のとき、合成標準不確かさとして最も近い値を一つ選べ。ただし、各不確かさに相関関係はなく、各不確かさに対する感度係数は 1 とし、自由度を無限大とする。成分 A の不確かさ：1.1成分 B の不確かさ：1.6成分 C の不確かさ：5.7成分 D の不確かさ：10成分 E の不確かさ：21",
+    "choices": {
+      "ア": "7.9",
+      "イ": "24",
+      "ウ": "39",
+      "エ": "48",
+      "オ": "580"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "√(1.1²＋1.6²＋5.7²＋10²＋21²)＝√577.26≒24.0である。",
+    "choiceExplanations": {
+      "ア": "各成分を独立に合成すると約24となり、7.9ではない。",
+      "イ": "√(1.1²＋1.6²＋5.7²＋10²＋21²)＝√577.26≒24.0である。",
+      "ウ": "39は成分の単純和39.4に近いが、独立成分は二乗和の平方根で合成する。",
+      "エ": "48は合成標準不確かさの約2倍であり、この設問の答えではない。",
+      "オ": "580は二乗和に近い。標準不確かさを得るには平方根を取る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問2（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次の測定対象量の組合せの中から、互いに微分と積分の関係にはない組合せを一つ選べ。",
+    "choices": {
+      "ア": "加速度と速度",
+      "イ": "振動数と周期",
+      "ウ": "熱流束と熱量",
+      "エ": "誘導起電力と磁束",
+      "オ": "電流と電荷"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "振動数と周期はf＝1/Tという逆数の関係であり、微分・積分の関係ではない。",
+    "choiceExplanations": {
+      "ア": "加速度は速度の時間微分であり、速度変化は加速度の積分で求められる。",
+      "イ": "振動数と周期はf＝1/Tという逆数の関係であり、微分・積分の関係ではない。",
+      "ウ": "熱流束を面積と時間について積分すると移動した熱量に対応する。",
+      "エ": "誘導起電力は磁束の時間変化率に比例し、ファラデーの法則で結ばれる。",
+      "オ": "電流は電荷の時間微分であり、電流の時間積分は電荷となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問3（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次に示す装置が、長さの変位を検出する計量器の構成要素に用いられるものを〇、用いられないものを×とした場合、正しい組合せを次の中から一つ選べ。差動変圧器 流量計 圧力計",
+    "choices": {
+      "ア": "〇／〇／〇",
+      "イ": "〇／〇／×",
+      "ウ": "〇／×／〇",
+      "エ": "×／〇／〇",
+      "オ": "〇／×／×"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "差動変圧器は直接変位を検出する。流量計や圧力計も、浮子や弾性体の変位を検出する構成があるので全て〇である。",
+    "choiceExplanations": {
+      "ア": "差動変圧器は直接変位を検出する。流量計や圧力計も、浮子や弾性体の変位を検出する構成があるので全て〇である。",
+      "イ": "圧力計でも弾性体の変位を検出する方式があり、×は合わない。",
+      "ウ": "流量計でも浮子位置等の変位を検出する方式があり、×は合わない。",
+      "エ": "差動変圧器は代表的な変位検出器なので×は合わない。",
+      "オ": "流量計と圧力計にも変位検出を用いる方式がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問4（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図はアナログ式ノギスの目盛部分の拡大図である。図中の下矢印（↓）の位置で上下の本尺目盛とバーニヤ目盛が一致しているとき、目盛の読みとして正しい値を次の中から一つ選べ。",
+    "choices": {
+      "ア": "10.65 mm",
+      "イ": "12.65 mm",
+      "ウ": "30.65 mm",
+      "エ": "38.00 mm",
+      "オ": "38.65 mm"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "本尺12 mmに副尺13×0.05＝0.65 mmを加え、12.65 mmとなる。",
+    "choiceExplanations": {
+      "ア": "本尺の零点を10 mmとして読むのは誤り。",
+      "イ": "本尺12 mmに副尺13×0.05＝0.65 mmを加え、12.65 mmとなる。",
+      "ウ": "一致目盛の位置を本尺の読取値としてはいけない。",
+      "エ": "38 mmは一致した目盛の本尺位置で、零点位置ではない。",
+      "オ": "本尺の零点は12 mmを超えた位置である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問5（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q5.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問5 の公式図"
+    ],
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "次のSI単位をSI基本単位で表現した場合、表現が誤っている組合せを一つ選べ。",
+    "choices": {
+      "ア": "周波数／Hz／s⁻¹",
+      "イ": "力／N／kg m s⁻²",
+      "ウ": "圧力／Pa／kg m⁻¹ s⁻²",
+      "エ": "仕事率／W／kg m² s⁻³",
+      "オ": "吸収線量／Gy／J kg⁻¹"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "J kg⁻¹は吸収線量の組立単位表示としては正しいが、Jは基本単位ではない。基本単位だけならm² s⁻²となる。",
+    "choiceExplanations": {
+      "ア": "周波数の基本単位表示はs⁻¹である。",
+      "イ": "力はkg m s⁻²で表される。",
+      "ウ": "圧力は力を面積で割ったkg m⁻¹ s⁻²である。",
+      "エ": "仕事率はエネルギーを時間で割ったkg m² s⁻³である。",
+      "オ": "J kg⁻¹は吸収線量の組立単位表示としては正しいが、Jは基本単位ではない。基本単位だけならm² s⁻²となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問6（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図のような二つの U 字管の液柱型圧力計 A と B がある。A には水、B には水銀が入っており、大気圧下でゼロを示していた。この圧力計の各々に異なる圧力を加えたところ液柱差が 1 cm となった。このとき、B の圧力計の示す圧力は A の圧力計の示す圧力の何倍となるか、次の中から一つ選べ。ただし、U 字管の内径は A が 2 cm、B が 1 cm、水の密度は 1 kg/m³、水銀の密度は 13 kg/m³、重力加速度は 9.8 m/s² であり、各液柱型圧力計の器差はゼロとする。",
+    "choices": {
+      "ア": "2",
+      "イ": "6.5",
+      "ウ": "9.8",
+      "エ": "13",
+      "オ": "26"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "p＝ρghよりB/A＝13/1＝13。管径は同じ液面差に対する圧力に影響しない。",
+    "choiceExplanations": {
+      "ア": "同じ液面差では圧力比は液密度の比となり、管の内径比ではない。",
+      "イ": "管径が異なっても同じ液面差なら13倍である。",
+      "ウ": "重力加速度は圧力比で相殺される。",
+      "エ": "p＝ρghよりB/A＝13/1＝13。管径は同じ液面差に対する圧力に影響しない。",
+      "オ": "液面差は両者とも1 cmであり、2倍を掛ける必要はない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問7（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q7.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問7 の公式図"
+    ],
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "1990 年国際温度目盛（ITS-90）はさまざまな定義定点、補間計器を用いて定められている。次の温度計の中から ITS-90 の温度目盛を補間する計器ではないものを一つ選べ。",
+    "choices": {
+      "ア": "ヘリウム 3 融解圧温度計",
+      "イ": "蒸気圧温度計",
+      "ウ": "放射温度計",
+      "エ": "白金抵抗温度計",
+      "オ": "定積気体温度計"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "ヘリウム3融解圧温度計はITS-90の補間計器ではない。低温の別の温度目盛と区別する。",
+    "choiceExplanations": {
+      "ア": "ヘリウム3融解圧温度計はITS-90の補間計器ではない。低温の別の温度目盛と区別する。",
+      "イ": "低温領域ではヘリウムの蒸気圧を利用して温度を定める。",
+      "ウ": "高温領域ではプランクの放射則に基づく放射温度計を用いる。",
+      "エ": "ITS-90の広い温度域で標準白金抵抗温度計を補間計器に用いる。",
+      "オ": "低温域の一部ではヘリウム定積気体温度計を補間計器に用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問8（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "抵抗温度計は、電気抵抗の温度変化を利用する温度計である。抵抗温度計に関する次の説明の中から誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "サーミスタ測温体には、温度の上昇とともに電気抵抗値が減少するもの、ある温度を境に抵抗値が急増するもの、ある温度を境に抵抗値が急激に減少するものの三つに分類される。",
+      "イ": "ロジウム鉄抵抗温度計は、標準温度計として 25 K 以下の極低温まで利用できる。",
+      "ウ": "抵抗温度計の電気抵抗測定において、4 線式結線（四端子抵抗測定）では、導線抵抗の影響を受ける。高い測定精度を得るためには、2 線式結線（二端子抵抗測定）での電気抵抗測定が望ましい。",
+      "エ": "抵抗温度計を用いた温度測定では、測定電流による自己発熱の影響があるため、必要な測定精度に合わせて測定電流を小さくし自己発熱を抑える必要がある。",
+      "オ": "白金抵抗温度計の電気抵抗は、温度が低下するとともに減少する。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "逆である。四端子測定は電流線と電圧検出線を分け、導線抵抗の影響を抑える。",
+    "choiceExplanations": {
+      "ア": "負の温度係数、正の温度係数、急減する特性等のサーミスタの分類を述べている。",
+      "イ": "ロジウム鉄抵抗温度計は極低温の標準温度計に用いられる。",
+      "ウ": "逆である。四端子測定は電流線と電圧検出線を分け、導線抵抗の影響を抑える。",
+      "エ": "測定電流によるジュール熱を抑えるため、必要な範囲で電流を小さくする。",
+      "オ": "白金の抵抗は通常の使用範囲では温度の低下とともに減少する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問9（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "一次遅れ特性を持つ計量器に振幅 2、角周波数 10 rad/s の正弦波入力を与えた。数分後、計量器の出力は同じ角周波数の正弦波であったが、振幅が 1.41 となっていた。この計量器の時定数はおよそ何秒か。次の中から最も近いものを一つ選べ。",
+    "choices": {
+      "ア": "0.01 s",
+      "イ": "0.1 s",
+      "ウ": "1s",
+      "エ": "10 s",
+      "オ": "100 s"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "振幅比は1/√(1＋ω²τ²)。1.41/2≒1/√2なのでωτ≒1、τ≒0.1 sとなる。",
+    "choiceExplanations": {
+      "ア": "時定数0.01 sでは振幅比は約0.995で、観測された約0.705より大きい。",
+      "イ": "振幅比は1/√(1＋ω²τ²)。1.41/2≒1/√2なのでωτ≒1、τ≒0.1 sとなる。",
+      "ウ": "1 sではωτ＝10で、出力振幅は約0.199となり小さすぎる。",
+      "エ": "10 sでは出力振幅は約0.020となり観測値と合わない。",
+      "オ": "100 sでは出力振幅は約0.002となり観測値と合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問10（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "「JIS Z 8804 液体の密度及び比重の測定方法」で、液体の密度または比重を測定する方法や計量器として規定されていないものを、次の中から一つ選べ。",
+    "choices": {
+      "ア": "浮ひょう",
+      "イ": "比重瓶",
+      "ウ": "振動式密度計",
+      "エ": "ピトー管",
+      "オ": "液中ひょう量法"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ピトー管は動圧等から流速を測る器具であり、この密度・比重測定法の列挙には含まれない。",
+    "choiceExplanations": {
+      "ア": "浮ひょうは浮力を利用して密度・比重を測る。",
+      "イ": "比重瓶は既知体積の液体の質量から密度を求める。",
+      "ウ": "振動式密度計は液体を含む振動系の周期等から密度を求める。",
+      "エ": "ピトー管は動圧等から流速を測る器具であり、この密度・比重測定法の列挙には含まれない。",
+      "オ": "液中での浮力による見掛けの質量変化から密度を求められる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問11（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計測に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "合致法はブロックゲージの光波干渉による校正に使われる。",
+      "イ": "零位法は電位差計による電位測定で使われる。",
+      "ウ": "放射温度計はプランクの法則を利用している。",
+      "エ": "定電流形熱線風速計では負帰還が使われる。",
+      "オ": "マイクロメータはアッベの原理を満たしている。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "負帰還を用いて温度を一定に保つのは定温度形である。定電流形とする点が誤り。",
+    "choiceExplanations": {
+      "ア": "複数波長の端数等の合致を用いる方法はブロックゲージの干渉校正に利用される。",
+      "イ": "電位差計は未知電圧と基準電圧を釣り合わせる零位法を用いる。",
+      "ウ": "放射温度計は温度と分光放射輝度を関係付けるプランクの法則を利用する。",
+      "エ": "負帰還を用いて温度を一定に保つのは定温度形である。定電流形とする点が誤り。",
+      "オ": "通常の外側マイクロメータは基準軸と測定軸を一直線に配置し、アッベの原理を満たす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問12（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ある流量計は常温の気体および液体の両方に適用でき、圧力損失が小さく、可動部がないという特徴を有している。この流量計はどれか、次の中から一つ選べ。",
+    "choices": {
+      "ア": "コリオリ式流量計",
+      "イ": "電磁流量計",
+      "ウ": "タービン流量計",
+      "エ": "超音波流量計",
+      "オ": "オリフィス流量計"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "超音波式は気体と液体に用いられ、可動部がなく、流路に障害物が少ないため圧力損失も小さい。",
+    "choiceExplanations": {
+      "ア": "コリオリ式には測定管を振動させる構成があり、この条件の最も適切な選択は超音波式である。",
+      "イ": "電磁式は導電性の液体が対象であり、一般の気体にも適用するという条件に合わない。",
+      "ウ": "タービン式には回転する可動部がある。",
+      "エ": "超音波式は気体と液体に用いられ、可動部がなく、流路に障害物が少ないため圧力損失も小さい。",
+      "オ": "オリフィス式は絞りによる圧力損失が大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問13（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "1.00 Ωの抵抗器の両端に 1.00 V の直流電圧をかけた。抵抗値および直流電圧の標準不確かさをそれぞれ 0.10 mΩおよび 0.10 mV とすると、抵抗器を流れる直流電流の標準不確かさはいくらか。次の中から、最も近い値を一つ選べ。ただし、抵抗値と直流電圧の間に相関関係はないものとする。",
+    "choices": {
+      "ア": "0.01 mA",
+      "イ": "0.10 mA",
+      "ウ": "0.14 mA",
+      "エ": "0.20 mA",
+      "オ": "1.00 A"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "I＝V/R＝1 A、相対標準不確かさは√[(10⁻⁴)²＋(10⁻⁴)²]なので約0.14 mAとなる。",
+    "choiceExplanations": {
+      "ア": "0.01 mAは各入力の相対標準不確かさ0.0001から求めた値より小さすぎる。",
+      "イ": "0.10 mAは1成分だけの寄与に相当し、もう一方の成分も合成する必要がある。",
+      "ウ": "I＝V/R＝1 A、相対標準不確かさは√[(10⁻⁴)²＋(10⁻⁴)²]なので約0.14 mAとなる。",
+      "エ": "0.20 mAは単純和であり、独立成分の二乗和平方根による合成ではない。",
+      "オ": "1.00 Aは電流の値そのものであり、不確かさではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問14（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "オシロスコープを用いて正弦波信号の測定を行ったところ、図のような波形が観測された。この波形の周波数と振幅（ピークピーク値）の組合せとして正しいものを一つ選べ。ただし、オシロスコープの水平軸および垂直軸のスケールは、単位グリッドあたりそれぞれ 10 ms、1 V とする。",
+    "choices": {
+      "ア": "15 Hz、4.0 V",
+      "イ": "15 Hz、8.0 V",
+      "ウ": "30 Hz、4.0 V",
+      "エ": "30 Hz、8.0 V",
+      "オ": "33 Hz、4.0 V"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "約3.33グリッドの周期は33.3 msなので30 Hz、縦8グリッドのピーク間電圧は8.0 V。",
+    "choiceExplanations": {
+      "ア": "周期の読みが2倍、ピーク間電圧は半分となっている。",
+      "イ": "ピーク間電圧は合うが周期の読みが合わない。",
+      "ウ": "周波数は合うがピーク間電圧は8 Vである。",
+      "エ": "約3.33グリッドの周期は33.3 msなので30 Hz、縦8グリッドのピーク間電圧は8.0 V。",
+      "オ": "周期を3グリッドと読むより3.33グリッドと読むのが図に合う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問15（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q15.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問15 の公式図"
+    ],
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ひょう量 50 t、目量 10 kg のトラックスケールを A 市から B 市へ移設する。A市で 50 t の分銅を負荷した時の表示は「50.00 t」であった。B 市において感度調整前に 50 t の分銅を負荷した時の表示として最も近いものはどれか。次の中から一つ選べ。ただし、A 市の重力加速度は 9.804 m/s²、B 市の重力加速度は 9.794 m/s² である。",
+    "choices": {
+      "ア": "50.10 t",
+      "イ": "50.05 t",
+      "ウ": "50.00 t",
+      "エ": "49.95 t",
+      "オ": "49.90 t"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "50.00×9.794/9.804＝49.949… tなので、目量10 kgでは49.95 tに最も近い。",
+    "choiceExplanations": {
+      "ア": "移設先では重力加速度が小さいので表示は増えず、減る。",
+      "イ": "重力加速度低下のため表示は50.05 tではなく約49.95 tとなる。",
+      "ウ": "感度調整前は重力加速度の変化が表示に反映され、50.00 tのままとはならない。",
+      "エ": "50.00×9.794/9.804＝49.949… tなので、目量10 kgでは49.95 tに最も近い。",
+      "オ": "49.90 tは重力比による補正量約0.05 tの2倍を引いた値に近い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問16（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法に規定する特定計量器である、精度等級 3 級、ひょう量 6 kg、目量 1 gの非自動はかりの検定を行う。使用が認められない分銅を全て挙げているものはどれか。次の 1〜5 の中から一つ選べ。ア 基準器検査成績書のついた特級基準分銅イ 2 級実用基準分銅ウ OIML 証明書のついた F2 級分銅エ JCSS 校正証明書のついた F2 級分銅オ 検定証印付きの分銅",
+    "choices": {
+      "ア": "ア",
+      "イ": "ア、イ",
+      "ウ": "ウ、エ、オ",
+      "エ": "エ、オ",
+      "オ": "オ"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n使用が認められないものはウ・エ・オ。設問のOIML証明書、JCSS校正証明書又は検定証印だけでは、この検定に用いる分銅の要件を満たさない。基準器としての資格や実用基準分銅の扱いと、校正・製品認証とは区別する。",
+    "choiceExplanations": {
+      "ア": "アの特級基準分銅は基準器検査成績書を伴い使用できるため、使用不可とするのは誤り。",
+      "イ": "アの特級基準分銅とイの2級実用基準分銅はいずれも使用が認められる。この二つを使用不可とするのは誤り。",
+      "ウ": "ウ・エ・オが使用不可の組合せである。OIML証明書、JCSS校正証明書、検定証印をそれぞれ備えるという設問の条件だけでは、検定に用いる分銅の要件を満たさない。",
+      "エ": "エ・オだけでなく、OIML証明書のついたF2級分銅であるウも使用不可であり、列挙が不足している。",
+      "オ": "検定証印だけでは検定用分銅の要件を満たさないが、使用不可なのはオだけでなくウ・エも含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問17（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ロードセル式台はかりにおいて、複数のロードセルを内蔵する場合、一般に和算箱と呼ばれる回路を使用し、出力をまとめる構成にする。ロードセル1とロードセル2の出力を和算箱でまとめて増幅器に接続する際、和算箱内部の端子間接続はどれか、正しいものを一つ選べ。\n\nただし、ロードセルや増幅器の電圧印加用端子をE、出力測定用端子をMとし、それぞれの極性を＋と−で示している。また、ロードセル1とロードセル2は同型であり、出力の極性は同一であるものとする。",
+    "choices": {
+      "ア": "図1の端子間接続",
+      "イ": "図2の端子間接続",
+      "ウ": "図3の端子間接続",
+      "エ": "図4の端子間接続",
+      "オ": "図5の端子間接続"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "同型同極性のロードセルは励起E±と出力M±をそれぞれ同極性どうしで並列接続する。",
+    "choiceExplanations": {
+      "ア": "同型同極性のロードセルは励起E±と出力M±をそれぞれ同極性どうしで並列接続する。",
+      "イ": "片側の励起極性を逆にしているので正しく加算できない。",
+      "ウ": "片側の出力極性が逆で加算されない。",
+      "エ": "励起・出力が片側とも逆の接続であり、規定された同極性の並列接続ではない。",
+      "オ": "励起端子と出力端子のつなぎ方が並列接続になっていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問18（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q18.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問18 の公式図"
+    ],
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか、次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mₜは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρₜは校正された分銅の密度である。",
+    "choices": {
+      "ア": "Mₛ＝Mₜ{1−ρₐ(1/ρₜ−1/ρₛ)}",
+      "イ": "Mₛ＝Mₜ{1−ρₐ(1/ρₛ−1/ρₜ)}",
+      "ウ": "Mₛ＝Mₜ{1＋ρₐ(1/ρₜ＋1/ρₛ)}",
+      "エ": "Mₛ＝Mₜ{ρₐ(1/ρₜ−1/ρₛ)−1}",
+      "オ": "Mₛ＝Mₜ{ρₐ(1/ρₛ−1/ρₜ)−1}"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "Ms(1−ρa/ρs)＝Mt(1−ρa/ρt)。一次の浮力補正でMs≒Mt{1−ρa(1/ρt−1/ρs)}となる。",
+    "choiceExplanations": {
+      "ア": "Ms(1−ρa/ρs)＝Mt(1−ρa/ρt)。一次の浮力補正でMs≒Mt{1−ρa(1/ρt−1/ρs)}となる。",
+      "イ": "浮力補正の密度差の符号が逆である。",
+      "ウ": "密度の逆数の和ではなく差を使う。",
+      "エ": "密度が等しい場合に負の質量となるため不適切。",
+      "オ": "密度が等しい場合に負の質量となるため不適切。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問19（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法に規定する特定計量器である、精度等級3級、ひょう量3 kg、目量1 gの非自動はかりの使用公差はどれか。次の中から正しいものを一つ選べ。",
+    "choices": {
+      "ア": "図1：0.5 kg、1 kgを境に±1 g、±2 g、±3 g",
+      "イ": "図2：0.5 kg、1.5 kgを境に±1 g、±2 g、±3 g",
+      "ウ": "図3：0.5 kg、2 kgを境に±1 g、±2 g、±3 g",
+      "エ": "図4：1 kg、1.5 kgを境に±1 g、±2 g、±3 g",
+      "オ": "図5：1 kg、2 kgを境に±1 g、±2 g、±3 g"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n3級・e＝1 gの使用公差は、500eまで±1e、500e超2000eまで±2e、2000e超は±3e。境界0.5 kg、2 kgの図3である。",
+    "choiceExplanations": {
+      "ア": "第2境界が1 kgとなっており、正しい2 kgと異なる。",
+      "イ": "第2境界が1.5 kgとなっている。",
+      "ウ": "3級・e＝1 gの使用公差は、500eまで±1e、500e超2000eまで±2e、2000e超は±3e。境界0.5 kg、2 kgの図3である。",
+      "エ": "最初の境界が1 kgであり誤り。",
+      "オ": "最初の境界が1 kgであり誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問20（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q20.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問20 の公式図"
+    ],
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "試験分銅Bを参照分銅Aと測定手順ABAにより等量比較し、三つの天びん表示値I_A1、I_B1およびI_A2を得て、両者の質量差Δを計算する。分銅1個の測定値Iₓの標準偏差がσₓのとき、質量差測定の標準偏差の期待値として正しいものを一つ選べ。\n\nただし、質量差計算の一般式はΔ＝I_B1−I_A1/2−I_A2/2と展開し、σₓ＝σ_Ai＝σ_Biと仮定する。",
+    "choices": {
+      "ア": "σₓ",
+      "イ": "√(4/3)σₓ",
+      "ウ": "√(3/2)σₓ",
+      "エ": "√3σₓ",
+      "オ": "3σₓ"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "Δ＝I_B1−I_A1/2−I_A2/2より分散は(1＋1/4＋1/4)σₓ²。標準偏差は√(3/2)σₓ。",
+    "choiceExplanations": {
+      "ア": "1回の測定と異なり、3個の表示値のばらつきが合成される。",
+      "イ": "各表示の係数の二乗を加えると4/3ではなく3/2となる。",
+      "ウ": "Δ＝I_B1−I_A1/2−I_A2/2より分散は(1＋1/4＋1/4)σₓ²。標準偏差は√(3/2)σₓ。",
+      "エ": "全係数を1として合成すると過大となる。",
+      "オ": "標準偏差の単純和ではなく分散を合成する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問21（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法の基準器検査規則で規定する基準台手動はかりの性能検査において、検査項目とその検査方法を示した次の組合せの中から誤っているものを一つ選べ。（検査項目） （検査方法と評価方法）",
+    "choices": {
+      "ア": "繰返し性 同一質量で 5 回計量したときの器差変化",
+      "イ": "さおしぼり 目盛さおと平行および直角方向に水平の力を加えたときの器差",
+      "ウ": "零点の変化 使用時の環境温度変化による計量値の変化",
+      "エ": "台しぼり 載せ台に水平方向の力を加えたときの器差",
+      "オ": "休み装置 動作によって刃と刃受けの位置関係が変化したときの器差"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n零点の変化の検査を環境温度変化による計量値変化とする組合せは誤りである。零点の変化と温度影響は区別する。",
+    "choiceExplanations": {
+      "ア": "繰返し性は同じ質量を繰り返し計量して器差の変化を調べる。",
+      "イ": "さおに水平の力を加えたときの器差を調べる検査である。",
+      "ウ": "零点の変化の検査を環境温度変化による計量値変化とする組合せは誤りである。零点の変化と温度影響は区別する。",
+      "エ": "載せ台に水平方向の力を加えた影響を調べるのが台しぼりである。",
+      "オ": "休み装置の操作による刃と刃受けの位置変化が計量に与える影響を調べる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問22（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "図は、三つのてこの直列連結である。このときのてこ比として、正しいのはどれか。次の中から一つ選べ。\n\nただし、図に使用している記号は以下のとおりとする。A₁、A₂、A₃：作用点、a₁、a₂、a₃：支点から作用点までの距離、B₁、B₂、B₃：力点、b₁、b₂、b₃：支点から力点までの距離、F₁、F₂、F₃：支点、W、P：荷重。",
+    "choices": {
+      "ア": "(1/3){b₁/a₁＋(b₂−a₂)/a₂＋(b₃−a₃)/a₃}",
+      "イ": "(b₁/a₁)×((b₂−a₂)/a₂)×((b₃−a₃)/a₃)",
+      "ウ": "{b₁＋(b₂−a₂)＋(b₃−a₃)}/(a₁＋a₂＋a₃)",
+      "エ": "(b₁＋b₂＋b₃)/(a₁＋a₂＋a₃)",
+      "オ": "(b₁/a₁)×(b₂/a₂)×(b₃/a₃)"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "各てこのモーメントからW/P＝(b₁/a₁)(b₂/a₂)(b₃/a₃)となる。",
+    "choiceExplanations": {
+      "ア": "てこ比は平均ではなく積となる。",
+      "イ": "第2・第3の作用点距離はそれぞれa₂、a₃であり、差ではない。",
+      "ウ": "個々の腕の長さを単純に足した比ではない。",
+      "エ": "3本のてこは順に力を伝達するため各比を掛け合わせる。",
+      "オ": "各てこのモーメントからW/P＝(b₁/a₁)(b₂/a₂)(b₃/a₃)となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問23（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/keishitsu-q23.png"
+    ],
+    "imageAltTexts": [
+      "第76回 計質 問23 の公式図"
+    ],
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法に規定する特定計量器である、温度換算装置を有していない自動車等給油メーターの器差検定を比較法で行った。このとき、使用最小流量の器差は、－0.4 %であった。大流量の検定流量時では、自動車等給油メーターの表示値は 20.20 L、器差が －0.10 L の液体メーター用基準タンクの読み値は 20.10 L であった。自動車等給油メーターの器差検定の結果に関する次の記述の中から、正しいものを一つ選べ。",
+    "choices": {
+      "ア": "検定公差 ±0.3 % を超過しているため、不合格",
+      "イ": "検定公差 ±0.5 % を超過しているため、不合格",
+      "ウ": "検定公差 ±0.5 % を満たしているため、合格",
+      "エ": "検定公差 ±1.0 % を超過しているため、不合格",
+      "オ": "検定公差 ±1.0 % を満たしているため、合格"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n基準タンクの読みから器差を引いた真の量は20.20 L。給油メーターの器差は0 %で、最小流量の−0.4 %とともに±0.5 %を満たし合格する。",
+    "choiceExplanations": {
+      "ア": "この計量器の検定公差を±0.3 %とする前提が合わない。",
+      "イ": "真の受入量は20.10−(−0.10)＝20.20 Lなので、大流量時の器差は0 %。最小流量の−0.4 %も±0.5 %内である。",
+      "ウ": "基準タンクの読みから器差を引いた真の量は20.20 L。給油メーターの器差は0 %で、最小流量の−0.4 %とともに±0.5 %を満たし合格する。",
+      "エ": "器差が±1.0 %を超えるという計算にはならず、この設問の検定公差の設定も合わない。",
+      "オ": "合格の判定自体は合うが、適用する検定公差は±1.0 %ではなく±0.5 %である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問24（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "計質"
+  },
+  {
+    "session": "measurement-mass",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "計質",
+    "topicTags": [
+      "計質",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法施行規則に引用される「JIS B 7607:2024 自動捕捉式はかり」に規定されている自動捕捉式はかりの修理に関する次の記述の中から、簡易修理に含まれないものを一つ選べ。",
+    "choices": {
+      "ア": "表示装置、印字装置の交換",
+      "イ": "質量検出にかかる部分の交換",
+      "ウ": "搬送装置の交換",
+      "エ": "構造支持体の交換",
+      "オ": "駆動モータ、モータドライバの交換"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n質量検出部分の交換は計量性能の中核に及ぶため簡易修理には含まれない。",
+    "choiceExplanations": {
+      "ア": "表示・印字装置の交換は規定の簡易修理の範囲に含まれる。",
+      "イ": "質量検出部分の交換は計量性能の中核に及ぶため簡易修理には含まれない。",
+      "ウ": "搬送装置の交換は規定の簡易修理に含まれる。",
+      "エ": "構造支持体の交換は規定の簡易修理に含まれる。",
+      "オ": "駆動モータ・ドライバの交換は規定の簡易修理に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 計質 問25（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "計質"
+  }
+]

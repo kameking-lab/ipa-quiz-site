@@ -28,6 +28,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+  if (q.year === 2025 && q.season === "annual" &&
+      /^https:\/\/www\.meti\.go\.jp\/policy\/economy\/hyojun\/techno_infra\/00_download\/[1-8]_R07(?:kanka|kanbutsu|kannou|kanon|houki|kanri|ichiki|keishitsu)\.pdf$/.test(q.sourcePdfUrl)) {
+    return "第76回（令和7年12月実施）";
+  }
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

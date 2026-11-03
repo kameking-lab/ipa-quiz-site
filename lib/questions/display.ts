@@ -45,6 +45,15 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 export function formatQuestionAnswerForDisplay(question: Question, value: string | readonly ChoiceKey[], multiSeparator = "・"): string {
   if (question.type === "native-b" && question.nativeB) return formatNativeBAnswer(question.nativeB);
   if (question.type === "numeric") return formatNumericAnswer(question, String(value));
+  // 正答配列は独立した許容肢。全肢許容の訂正を「5肢すべて選ぶ」と表示しない。
+  const choices = Object.keys(question.choices ?? {}) as ChoiceKey[];
+  const accepted = question.answer;
+  if (question.type === "multiple-choice" && (question.requiredSelections ?? 1) === 1 &&
+      Array.isArray(value) && Array.isArray(accepted) && choices.length > 1 &&
+      value.length === choices.length && accepted.length === choices.length &&
+      choices.every(key => value.includes(key) && accepted.includes(key))) {
+    return "全員正解";
+  }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);
   return text.split(/([・→,]\s*)/).map((part) => {

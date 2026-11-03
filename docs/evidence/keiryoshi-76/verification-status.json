@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-03",
+  "sourceAudit": "passed",
+  "pnpmInstall": "blocked: Corepack mkdir /root/.cache/node/corepack/v1 ENOENT",
+  "validateQuestions": "blocked before startup: same Corepack error",
+  "typecheck": "blocked before startup: same Corepack error; NODE_OPTIONS=--max-old-space-size=8192",
+  "relatedTests": "blocked before startup: same Corepack error",
+  "gitAdd": "failed: .git/index.lock read-only file system",
+  "commitsCreated": 0,
+  "independentReview": "not invoked; assigned to supervisor"
+}

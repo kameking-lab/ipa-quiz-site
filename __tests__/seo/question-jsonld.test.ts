@@ -229,6 +229,13 @@ describe("sessionLabel", () => {
       "gas-law": true,
       "gas-basic": true,
       "gas-technology": true,
+      "measurement-basic": true,
+      "measurement-mass": true,
+      "measurement-chemistry": true,
+      "measurement-concentration": true,
+      "measurement-physics": true,
+      "measurement-sound": true,
+      "measurement-management": true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

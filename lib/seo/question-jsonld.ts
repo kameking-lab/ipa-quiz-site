@@ -43,6 +43,13 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "gas-law": "法令",
     "gas-basic": "基礎",
     "gas-technology": "ガス技術",
+    "measurement-basic": "計量に関する基礎知識",
+    "measurement-mass": "計量器概論及び質量の計量",
+    "measurement-chemistry": "環境計量に関する基礎知識（化学）",
+    "measurement-concentration": "化学分析概論及び濃度の計量",
+    "measurement-physics": "環境計量に関する基礎知識（物理）",
+    "measurement-sound": "音響・振動概論並びに音圧レベル及び振動加速度レベルの計量",
+    "measurement-management": "計量管理概論",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
   "mondai-c": "問題C",
@@ -122,6 +129,8 @@ export function buildQuestionJsonLd({
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "国土交通省", url: "https://www.mlit.go.jp/" }
     : q.exam === "kaikeishi"
     ? { "@type": "GovernmentOrganization", name: q.sourcePresentation?.originalAuthor ?? "公認会計士・監査審査会", url: "https://www.fsa.go.jp/cpaaob/" }
+    : q.license === "METI-attributed"
+    ? { "@type": "GovernmentOrganization", name: "経済産業省", url: "https://www.meti.go.jp/" }
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? { "@type": "Organization", name: "公益財団法人日本無線協会", url: "https://www.nichimu.or.jp/" }
     : q.exam === "chosashi"
@@ -231,6 +240,8 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "kanteishi" || q.exam === "kaikeishi")
     ? q.sourcePresentation?.licenseUrl
+    : q.license === "METI-attributed"
+    ? "https://www.meti.go.jp/main/rules.html"
     : (q.license === "NICHIMU-educational-reuse" || q.license === "NICHIMU-past-question-study-use")
     ? "https://www.nichimu.or.jp/kshiken/siken/index.html"
     : q.exam === "rigaku-ryohoshi" || q.exam === "rinsho-kensagishi"
