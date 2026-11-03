@@ -1,0 +1,2698 @@
+{
+  "status": "LOCAL_CONTENT_AND_UI_ACCEPTED_UNPUBLISHED_CLEANUP_BLOCKED",
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "branch": "qual/qdentsu2-20261103",
+  "scope": "第一次検定2025後期65問＋2026前期65問。第二次検定は対象外",
+  "expectedPerRound": 65,
+  "materials": 130,
+  "additional": 125,
+  "scored": 129,
+  "referenceOnly": 1,
+  "choiceExplanations": 520,
+  "sources": [
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "expectedSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+      "sha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+      "hashMatch": true
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "expectedSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+      "sha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+      "hashMatch": true
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "expectedSha256": "b657b18d52bfca9c33bf14774319680f03ae0690f4e7e6aa5a6696d8f6e4ba7f",
+      "sha256": "b657b18d52bfca9c33bf14774319680f03ae0690f4e7e6aa5a6696d8f6e4ba7f",
+      "hashMatch": true
+    },
+    {
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "expectedSha256": "98cb318c09fc9f673964ba87032011f0c38cd791bfc05d37de9bcc12904f1201",
+      "sha256": "98cb318c09fc9f673964ba87032011f0c38cd791bfc05d37de9bcc12904f1201",
+      "hashMatch": true
+    }
+  ],
+  "files": [
+    {
+      "path": "data/questions/tsushin2/2026-early.json",
+      "sha256": "f0b536f1b2e2a50ac9c7110cdafde19b921be2868636bd5d2ac3fff58e32ad1c",
+      "inheritedSha256": "707b95ce06f5da0fddf2c0f1ba432f429df9e1b5aaceafe1081d06ca48f86fb6",
+      "unchanged": false,
+      "normalizedLfSha256": "2d576afa687c8fa92a42b8560caaba24d75cafd4b8c64954b68acedebfd0ab0d"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-construction6.json",
+      "sha256": "69a9098dd93db3ba02bae96be0d1bad09d551502b5f1b628fc25d9a766a4b3ee",
+      "inheritedSha256": "69a9098dd93db3ba02bae96be0d1bad09d551502b5f1b628fc25d9a766a4b3ee",
+      "unchanged": true,
+      "normalizedLfSha256": "69a9098dd93db3ba02bae96be0d1bad09d551502b5f1b628fc25d9a766a4b3ee"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-final7.json",
+      "sha256": "f7abcc8eb56557ac2d6de46e35f92fee1c8ccf6752769477a0adb535b6361299",
+      "inheritedSha256": "f7abcc8eb56557ac2d6de46e35f92fee1c8ccf6752769477a0adb535b6361299",
+      "unchanged": true,
+      "normalizedLfSha256": "f7abcc8eb56557ac2d6de46e35f92fee1c8ccf6752769477a0adb535b6361299"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-last1.json",
+      "sha256": "09a1db8a6044e3ccffbf2ac944936e4eaccc973f10d02b3eaf502698a525d1d9",
+      "inheritedSha256": "09a1db8a6044e3ccffbf2ac944936e4eaccc973f10d02b3eaf502698a525d1d9",
+      "unchanged": true,
+      "normalizedLfSha256": "09a1db8a6044e3ccffbf2ac944936e4eaccc973f10d02b3eaf502698a525d1d9"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-law14.json",
+      "sha256": "0a51eb6ca626cb8ca301f91b44e180724f447bafb512c7b128978e1b49687ea0",
+      "inheritedSha256": "0a51eb6ca626cb8ca301f91b44e180724f447bafb512c7b128978e1b49687ea0",
+      "unchanged": true,
+      "normalizedLfSha256": "0a51eb6ca626cb8ca301f91b44e180724f447bafb512c7b128978e1b49687ea0"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-practical7.json",
+      "sha256": "3a987383b8b963c4ce9601afff00317e850bdfba8ce7d8c1b9b80649c8d02114",
+      "inheritedSha256": "3a987383b8b963c4ce9601afff00317e850bdfba8ce7d8c1b9b80649c8d02114",
+      "unchanged": true,
+      "normalizedLfSha256": "3a987383b8b963c4ce9601afff00317e850bdfba8ce7d8c1b9b80649c8d02114"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-q21-caveated.json",
+      "sha256": "34e30c9f5ae94ef9cd7e2133d5abca0ef1cbedb96953f12ba59b5f08e160661b",
+      "inheritedSha256": "34e30c9f5ae94ef9cd7e2133d5abca0ef1cbedb96953f12ba59b5f08e160661b",
+      "unchanged": true,
+      "normalizedLfSha256": "ff4ac8eb1581fa3bdb042a23d862691c1883d7c41bb5be68a798de3f70e70bfe"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-tech12.json",
+      "sha256": "9b76fa8b755638ae4998fb9d9e2dd7d3675f2cd3db16803e9eec45235b51ae09",
+      "inheritedSha256": "9b76fa8b755638ae4998fb9d9e2dd7d3675f2cd3db16803e9eec45235b51ae09",
+      "unchanged": true,
+      "normalizedLfSha256": "9b76fa8b755638ae4998fb9d9e2dd7d3675f2cd3db16803e9eec45235b51ae09"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2025-late-tech17.json",
+      "sha256": "911e77d03c82b92df40ef0e42c6c2b7883da843bc1a2a8c9e15a218464cf42d5",
+      "inheritedSha256": "911e77d03c82b92df40ef0e42c6c2b7883da843bc1a2a8c9e15a218464cf42d5",
+      "unchanged": true,
+      "normalizedLfSha256": "911e77d03c82b92df40ef0e42c6c2b7883da843bc1a2a8c9e15a218464cf42d5"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-construction10.json",
+      "sha256": "1ded7c59e323c46a784ffa787397c47e516770ebd8d4d22f68d246f2c3ec6928",
+      "inheritedSha256": "1ded7c59e323c46a784ffa787397c47e516770ebd8d4d22f68d246f2c3ec6928",
+      "unchanged": true,
+      "normalizedLfSha256": "1ded7c59e323c46a784ffa787397c47e516770ebd8d4d22f68d246f2c3ec6928"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-final2.json",
+      "sha256": "c06560f37d07e76c1ea2183c8d415c8b124dd90831d1f0170652822a0297e1c1",
+      "inheritedSha256": "c06560f37d07e76c1ea2183c8d415c8b124dd90831d1f0170652822a0297e1c1",
+      "unchanged": true,
+      "normalizedLfSha256": "c06560f37d07e76c1ea2183c8d415c8b124dd90831d1f0170652822a0297e1c1"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-first5.json",
+      "sha256": "b5e3a051de969fee0fdcb8a699c2d1a89660dab6ff27d5fda0371aa72f7e8b38",
+      "inheritedSha256": "b5e3a051de969fee0fdcb8a699c2d1a89660dab6ff27d5fda0371aa72f7e8b38",
+      "unchanged": true,
+      "normalizedLfSha256": "b5e3a051de969fee0fdcb8a699c2d1a89660dab6ff27d5fda0371aa72f7e8b38"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-gantt1.json",
+      "sha256": "5d530ddf237f3f3135b52828be0c87e151523013d721339a4710c568fcddbeea",
+      "inheritedSha256": "5d530ddf237f3f3135b52828be0c87e151523013d721339a4710c568fcddbeea",
+      "unchanged": true,
+      "normalizedLfSha256": "5d530ddf237f3f3135b52828be0c87e151523013d721339a4710c568fcddbeea"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-last1.json",
+      "sha256": "32b291f9335b270585ca237197635794dae0d45b3261bc4996efe5ae3ce2303f",
+      "inheritedSha256": "32b291f9335b270585ca237197635794dae0d45b3261bc4996efe5ae3ce2303f",
+      "unchanged": true,
+      "normalizedLfSha256": "32b291f9335b270585ca237197635794dae0d45b3261bc4996efe5ae3ce2303f"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-law16.json",
+      "sha256": "4d6af2bb9d53f4656fc962904e2ee804adde72d05a395af21f8a4d28471d6562",
+      "inheritedSha256": "4d6af2bb9d53f4656fc962904e2ee804adde72d05a395af21f8a4d28471d6562",
+      "unchanged": true,
+      "normalizedLfSha256": "4d6af2bb9d53f4656fc962904e2ee804adde72d05a395af21f8a4d28471d6562"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-next5.json",
+      "sha256": "25aa9b4189710b14ac4ff186e9e604df2c17690e0ed4dc6f5237b0d60e42298e",
+      "inheritedSha256": "25aa9b4189710b14ac4ff186e9e604df2c17690e0ed4dc6f5237b0d60e42298e",
+      "unchanged": true,
+      "normalizedLfSha256": "25aa9b4189710b14ac4ff186e9e604df2c17690e0ed4dc6f5237b0d60e42298e"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-systems10.json",
+      "sha256": "4b0a6e61f241d2e5b4a578bc7151d25f6ffeab2b406e7a276dcd76c0f3a44d8c",
+      "inheritedSha256": "4b0a6e61f241d2e5b4a578bc7151d25f6ffeab2b406e7a276dcd76c0f3a44d8c",
+      "unchanged": true,
+      "normalizedLfSha256": "4b0a6e61f241d2e5b4a578bc7151d25f6ffeab2b406e7a276dcd76c0f3a44d8c"
+    },
+    {
+      "path": "data/questions/tsushin2/sources/2026-early-tech10.json",
+      "sha256": "66b686aea89f357ada8cc41f5a33e059d3330cabd2ccff55d75da4fccc78f142",
+      "inheritedSha256": "66b686aea89f357ada8cc41f5a33e059d3330cabd2ccff55d75da4fccc78f142",
+      "unchanged": true,
+      "normalizedLfSha256": "66b686aea89f357ada8cc41f5a33e059d3330cabd2ccff55d75da4fccc78f142"
+    }
+  ],
+  "images": [
+    {
+      "id": "tsushin2-2025-late-gakka-q35",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q35.png",
+      "sha256": "5d7b98f76c6018b699a8ed5ac74fd0e5e6746667b402e3fea9faefddee50df12"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q60",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q60.png",
+      "sha256": "d1c40b4bdda9e9599ddf56caa0e8c46a913e9e811b936868cf3a845e7558e123"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q1",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q1.png",
+      "sha256": "ecf1efc1c2b8d4c0639d9a9ec7d8e80b6b8135cbf20edbfd9f963c670e5c2fbc"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q2",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q2.png",
+      "sha256": "41dffa6fcc09db66718ace8d6f785ea63cfb0c83ac3a93499a12578675eefb9b"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q3",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q3.png",
+      "sha256": "2eef8ada27d22098f4cebda4126711c7d793a5cd0f1495517acd28eb5aa6acf2"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q5",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q5.png",
+      "sha256": "f07394394a6370bd2d5fac8b02d2ea5862f25e0b49de23b097bdae67651e455d"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q6",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q6.png",
+      "sha256": "073550a51c66afdba7a7866fa75aabff5a963deee176aa332b219fd20325469d"
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q8",
+      "url": "/images/questions/tsushin2/2025-late-gakka-q8.png",
+      "sha256": "d8402e6bb2f9e182844845ea0da951f4efd2488407dfc83ae50321a767e8ba74"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q60",
+      "url": "/images/questions/tsushin2/2026-early-gakka-q60.png",
+      "sha256": "33c2c6bd1b4222622f6ce7d71caa37ac44e43543b9d53d2b14e763e4ed356d7b"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q1",
+      "url": "/images/tsushin2/2026-early/q01-figure.png",
+      "sha256": "01f31f817c7103b44196f718196a977fd495ec9f7caa6aed491ca53862b37d38"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q2",
+      "url": "/images/tsushin2/2026-early/q02-figure.png",
+      "sha256": "3a76159706f2cb580940d1bba6c5b9547c0a0aaff3fe73f499f7bf2f32e2b553"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q3",
+      "url": "/images/tsushin2/2026-early/q03-figure.png",
+      "sha256": "505f19a920be446bea7de44526f16f205c6f2f244f89aad207aedd6178bafe8c"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q5",
+      "url": "/images/tsushin2/2026-early/q05-figure.png",
+      "sha256": "90f1a64d92cfc3090160bf776238d6c80701b95fff8ec215fa5329fca5910895"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q11",
+      "url": "/images/tsushin2/2026-early/q11-figure.png",
+      "sha256": "36cfc0e2041cb1fcca8c83e80b95f79b65b0770421083c54195431f8d84dfa2c"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q13",
+      "url": "/images/questions/tsushin2/2026-early-gakka-q13.png",
+      "sha256": "37d873369235d75c8764ce4b164c0a06a024ade7d21b6c82832967b7470c3b91"
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q36",
+      "url": "/images/questions/tsushin2/2026-early-gakka-q36.png",
+      "sha256": "f17538e43440cd0d24f00704f028a4a33f2bba6fb0a15f9e4320bc1067567f01"
+    }
+  ],
+  "serialization": "UTF-8 JSON, sort_keys=True, ensure_ascii=False, separators=(comma,colon); original keys question,choices; content uses raw source question item",
+  "questions": [
+    {
+      "id": "tsushin2-2025-late-gakka-q1",
+      "round": "2025-late",
+      "number": 1,
+      "pdfPage": 2,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "212a45eac5bb598770c2cd9c4ae0665fbbbc44c74b87281198e9a8623f8989c1",
+      "contentSha256": "1ca0be630bb8ea4f8b3d9e9174f2a604101271c25d292a6a4a737c12282551aa",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q1.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.1。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q10",
+      "round": "2025-late",
+      "number": 10,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "4a1800ebf61a9f815b3e43d1774b8c48d32126da699e81251258b19811a7a846",
+      "contentSha256": "6bfeca8ff08ddb17f70bdf94a4a248247e3e0d07b3f3644947dcfa5571aef952",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.10。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q11",
+      "round": "2025-late",
+      "number": 11,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "f22c056822eabeaac8826cdc9327a7cdd8691529d0cb3cd1441798b15bcf903f",
+      "contentSha256": "d5363fd60a2359240bf12a63a5cb229cc4dbd61cb9954d1052d6557ed9c4a2a9",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.11。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q12",
+      "round": "2025-late",
+      "number": 12,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "4ac3935607305ae910741f26f209ec05bef339729a6068d7757d72a440316d85",
+      "contentSha256": "f302f29382b6400e0757cf75dafb4e316a823d85748d2795c6285d2c8eb678be",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.12。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q13",
+      "round": "2025-late",
+      "number": 13,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "fe34fa724a1b389fe955674a7d13d388abd05c7f74add8d9571c569767040233",
+      "contentSha256": "1ee0c8aa1e8dc984162ddbd53c2bf2b87dd9bd4eac92bb713cbd60c01b7bb690",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.13。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q14",
+      "round": "2025-late",
+      "number": 14,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "049c3f0d5d52b9e150d3a0c3e06504a8845efce8cc1d493d57481af130a5ec4b",
+      "contentSha256": "d1291f5f9097a4a6be3d51faa844a37ebb19d690242655bffd51a46c66370d44",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.14。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q15",
+      "round": "2025-late",
+      "number": 15,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "76082935c7726df5f4515ff08ade29b5991570643ca2b0bde29a5996452592cc",
+      "contentSha256": "cdefad8e496f272d638a59966a6c06752a7ed379aa565ae5882157586bef3e3f",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.15。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q16",
+      "round": "2025-late",
+      "number": 16,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "854ead67f88f934c82f789a7be7e367bc201a49313915d0bf1e8640c08398a6a",
+      "contentSha256": "51bd18dc8e00679dcdb7d216058217b6008de40242ad85c7d8ecc902a5487b87",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.16。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q17",
+      "round": "2025-late",
+      "number": 17,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "239352e6baaecd14c097a2ab1227c50ec5087792c4f3ebb69afbd9baca32a7ea",
+      "contentSha256": "6dc0e3ef11d852f59c8129e8077cd1856184057e3466f226c8024868e54bb125",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.17。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q18",
+      "round": "2025-late",
+      "number": 18,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "9da4620e8b0e3db28844908ef6b045b99dbb5b9b9542998f722711e4b1295535",
+      "contentSha256": "074b4d35ae3d19209c5f89b0ed6ae45689766c1e726fabdb68a11e8992412c20",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.18。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q19",
+      "round": "2025-late",
+      "number": 19,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "4aadb8e77953a025604dc13b9df15fd34524dcb4403196ffbead5f44fb5dd39c",
+      "contentSha256": "bf7a24d92661467468bdc9b059940c2b9ee2c96a4e71a91cac22d52e991c8a6b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.19。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q2",
+      "round": "2025-late",
+      "number": 2,
+      "pdfPage": 2,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "d61c806660b7fb50b5d8ccb715e13148044b5b1dcec0ecbad47781b0e3305a11",
+      "contentSha256": "31bc36e236bc190c7e1405d4fddbc119deb615f123c93b9fb5a444eabe2ce53e",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q2.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.2。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q20",
+      "round": "2025-late",
+      "number": 20,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "5ea8127b3adffd2aaeef15aef5728a8d968afb1a7b8107a8dfc4e827f2b5ea3c",
+      "contentSha256": "17a3d94ec2f4bcd34588195167e121e1efe42d63eb46aebb1456ba8a7a09b2a3",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.20。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q21",
+      "round": "2025-late",
+      "number": 21,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "7973fd9627222eff6e47f03d04186c94f8e7dd0929668b3b91d954ef4c38edbb",
+      "contentSha256": "4ca55c4aceb26fea748445a332d67f906ca40dc5784700b2be9f7cccd031bc61",
+      "assessment": "reference-only",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.21。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q22",
+      "round": "2025-late",
+      "number": 22,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "0c5e920469eafda510104e4d6257d22b9b2bb5dcdec28bc73de20a845bf914f6",
+      "contentSha256": "90c953663b763d76af2a0d11c916ae82f28973e745c24c4bad71374d196fbc8e",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.22。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q23",
+      "round": "2025-late",
+      "number": 23,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "e091c2bd91904e762b2c38af74408c090ea72c269387f1e505e135a2b0a3b7cb",
+      "contentSha256": "59dd456176601466c1e080e80d706e17dc915199858885700f6af73144d7103e",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.23。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q24",
+      "round": "2025-late",
+      "number": 24,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "219503af19f91bb8812f1839dfff36a07bd83e47082194a38e934304a660539e",
+      "contentSha256": "0eb9477e6ec6a71015048c29af243d09b305d4da1ecfb38edc64b44b0240845e",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.24。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q25",
+      "round": "2025-late",
+      "number": 25,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "93c90fd0fc46428ecd98ae1652125cf44b318c8d3439c474965a562be0f9da25",
+      "contentSha256": "dbf827537d2a436552a804afd4ad22ca554d96a9b8a88b2308d0a72d4cdbf63d",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.25。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q26",
+      "round": "2025-late",
+      "number": 26,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "7a44196b89f95437ec1d6cfe6b987e2be02b881dd77a63344305c9b56dcf04c7",
+      "contentSha256": "8ce7b85b202d5b44ee1c3ceb297d599732816aa14fb8679f95d707ec9034edae",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.26。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q27",
+      "round": "2025-late",
+      "number": 27,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "1deacc2d10062a00508dcb7d8a4e5428a544c169e887267ce214cbb478889974",
+      "contentSha256": "a246b10df30c2a8718528ea8cd275fde1e539e9421e14e1966568bb45c616f43",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.27。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q28",
+      "round": "2025-late",
+      "number": 28,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "015746c897112f3e6c1fb04d1290de4a9dfcd5f4dd50bb7bb094b07fce6e4086",
+      "contentSha256": "fc90e436bb551e06b6409488cdc038dc06f3eb353a54e679b6e21a1d3abdc32b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.28。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q29",
+      "round": "2025-late",
+      "number": 29,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "70a0557f8eebdb84319d9fb584d1b4393cc5bd49236c472e846096cade4a589d",
+      "contentSha256": "de86f3f6161606024cb676c6c60e4302e7d80cd094bb75225e5ed0df5685cc14",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.29。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q3",
+      "round": "2025-late",
+      "number": 3,
+      "pdfPage": 3,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "c8cb25020cfb47d7a234dc7b7965fd048ec351ad4d847fb9e0104d4215d69f9c",
+      "contentSha256": "7d6feaa01b5a2020569df0ea92824136dada4ef51221d40fadbb0d1ea815ad7d",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q3.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.3。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q30",
+      "round": "2025-late",
+      "number": 30,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "3c5da80037068e75be606fb65dcfcf92ba38411c2540428d27ce945bd1bb763a",
+      "contentSha256": "7d2d6e56e481d75a67cab5d32dc0ce7a4ff15057e02a424f2cc6f9b195cf3a3b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.30。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q31",
+      "round": "2025-late",
+      "number": 31,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "7e2f64ccc734f1a8a3c8cd30aa443fbf0d5a2aad4c55d5ad0aad6c238bad0892",
+      "contentSha256": "e5aa22625f8058e9d022ea501e7592532f66d6b5441815ebbdc68e7d3f14ad31",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.31。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q32",
+      "round": "2025-late",
+      "number": 32,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "0251405cce97d428f749ac960b784518061f41752e05ec24519974ecf9e549f0",
+      "contentSha256": "52ec94d958958d0fc68e2f4aa668867309ef91f9a68d7855b048aaadc3c4c714",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.32。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q33",
+      "round": "2025-late",
+      "number": 33,
+      "pdfPage": 15,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "bf61dc91c6ac82fe7a40093537105be390b6108eed208db15db7cc52d1ad33bc",
+      "contentSha256": "83ff045309d6efa63d37de16e9e9502f918994fdb8298ce236ec08eadc1fea61",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.33。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q34",
+      "round": "2025-late",
+      "number": 34,
+      "pdfPage": 15,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "99bda2319cb5693d86e7b19c4b426b6cda52a400f38808be90d0cbc0c615cf66",
+      "contentSha256": "9b881f520e1b8041feefdc0f0d8a7a6721c9e3818980e8fb913553e4f30b61e4",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.34。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q35",
+      "round": "2025-late",
+      "number": 35,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "2d0630138b8262383ff967ebe39b5fa559e9155c56a093fa6578dcfed10996c8",
+      "contentSha256": "3ce2136ea4070dab2b365eb415a6f270bde43b652793eb5ebe386acde280192c",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q35.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.35。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q36",
+      "round": "2025-late",
+      "number": 36,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "8b497bdd7f170add20afa10c33783ef2709e32b705059997835976319b49e283",
+      "contentSha256": "c33bcfbb32f11f4ffb0cdb9e2a20d1826fa7f8c58c4fb8b41e21de08f9297e67",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.36。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q37",
+      "round": "2025-late",
+      "number": 37,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "6b1c13bec71146eca4d052a994a5ef7a035e653c7a26b7714852595b805cf807",
+      "contentSha256": "144c0d6bd5b2f32681fac3609624fc01c963126ef9eeca2d45d5ae53d425f59a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.37。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q38",
+      "round": "2025-late",
+      "number": 38,
+      "pdfPage": 17,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "33b5f75944637e14e21d1ac8bcfa2e28ed6240f285cbaa9921b70a768f34d0b8",
+      "contentSha256": "292e88196efb0cf560433a8e6eb3d16dfd1dfe93c5b8f0e964e02f3e640d356b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.38。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q39",
+      "round": "2025-late",
+      "number": 39,
+      "pdfPage": 17,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "d6f22ad12730f12f7a5a9bc2baa971852217e2637e8804a537d92e6e822953f9",
+      "contentSha256": "c39b04eb3af0d7db6d8b887049f0ab270f87796a65d060398c6d10fba1bf83b9",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.39。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q4",
+      "round": "2025-late",
+      "number": 4,
+      "pdfPage": 3,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "dd6a2592ed45655c3b8014f2b9facb9bc9cd8b55bba85c937dd542aeaa25cf07",
+      "contentSha256": "ed8444236d4341728cb10153b085e6a10b33bdde77adf9991c994865da6c17b2",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.4。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q40",
+      "round": "2025-late",
+      "number": 40,
+      "pdfPage": 18,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "be49613d12215153a20235d12d9a70dafc64d22c64c8021571dd445004d24a3a",
+      "contentSha256": "87b9341073c55ce6b82c9308df3c2c549bcc4052c83822529414f297f355a4b8",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.40。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q41",
+      "round": "2025-late",
+      "number": 41,
+      "pdfPage": 19,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "abee3a4c3fd39e45e4b3b463c2df2855e583f8ec442a82d1f7c6e648ade15a4a",
+      "contentSha256": "5cae9a930d63a09fc9589360c682dabdb03156b670b28bbfa0c27ecf75ae9a2c",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.41。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q42",
+      "round": "2025-late",
+      "number": 42,
+      "pdfPage": 19,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "f508e86a5ec9c44412c7387e46c1bc2c0b45365595f090a32685b92ef57d9609",
+      "contentSha256": "2c60e4ddf917588c1faf4c572231765ab453a5740268b4537aebd6f72e5c9bd7",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.42。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q43",
+      "round": "2025-late",
+      "number": 43,
+      "pdfPage": 20,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "0ade9da842fbf9b972863884bee11bd9eb63b6e3a059c342978ed0b8906f5be5",
+      "contentSha256": "36732d84d7d38ee8b3e01e146341e98f914d692c50f993b16d616c99213aa8e3",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.43。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q44",
+      "round": "2025-late",
+      "number": 44,
+      "pdfPage": 20,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "84487bff61c00e7e5073d6ef9d469566dd912ba07ff17954b9e12b097c010d20",
+      "contentSha256": "e7747f4792b48fa2ca42c0cd73dd98796d3442605baabb9e95fd7bb65afc8c7a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.44。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q45",
+      "round": "2025-late",
+      "number": 45,
+      "pdfPage": 20,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "a60e8cc6348c502acfb4003c693a991d5639339e82ab9ea72d19c6dee09f9352",
+      "contentSha256": "b97159e47e8052036820d0295cd125f1115d73b17a14c0d034d7de2ee8a602c7",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.45。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q46",
+      "round": "2025-late",
+      "number": 46,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "e370f9932a025db7a497ea990d7926f44346ee45c9bec291ad719530bfb3a29d",
+      "contentSha256": "1d99e25e85ff312af06ac01db475303c722a5fed377c50f47206276a38e4c514",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.46。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q47",
+      "round": "2025-late",
+      "number": 47,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "d4934385dd1678cd824bde8f19c28024d4aa084ef1af0db4f5b1dcf44c110adc",
+      "contentSha256": "a40cb9425a721bf1a72229a348da2b364a3cc124512cd4ffe8150a6ccd453849",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.47。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q48",
+      "round": "2025-late",
+      "number": 48,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "1e34f13f70ede6b167c1bb673777fb1770dcb1d16a8daa0f925c9200315619ca",
+      "contentSha256": "2ae2935fec4fec6b5f22e9530526644de9cf514b9b4cb88cc472ddc8dbcbeeed",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.48。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q49",
+      "round": "2025-late",
+      "number": 49,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "5a76352fbc7c136c2cb3934c0eb6881e2f448b5cd7eaa4fd47f2b1cf51a3f163",
+      "contentSha256": "cdf7e32d700700ea95568fc1102917b72ecad5e7552aef0dffe89832589f9bcb",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.49。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q5",
+      "round": "2025-late",
+      "number": 5,
+      "pdfPage": 4,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "2cccb07ff5eabb655b4360007d8105bd8139d71f9b4b6cc3364209c071abd656",
+      "contentSha256": "9928945cd7e50d2edf33cf34b29736f4607bde66fb9a051a8b8fe21ef54721ae",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q5.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.5。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q50",
+      "round": "2025-late",
+      "number": 50,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "0e680cd63fd0b2f5ec6d07f41b7deb943675236082e601c3acdfff38b2fd5fdf",
+      "contentSha256": "cb1541d67d2b64a45566e6c4f82320efba0522d446c66b6aee4653de8cd1f973",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.50。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q51",
+      "round": "2025-late",
+      "number": 51,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "ab744072818c88fc2d3062387ee6e1e64a9f34d25826a06bb91e6058182fcde6",
+      "contentSha256": "d9f9ede2798b534b067b0ad6e1a754ce35344ca9eb3bd4ecb9e8ced7182c1256",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.51。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q52",
+      "round": "2025-late",
+      "number": 52,
+      "pdfPage": 23,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "711b42a38e7474972908c5ad6a40dd7deba05180b79a39b183c457a04be70bcf",
+      "contentSha256": "d9684c41ab27d386465a034a0c7b3344bc825be25794972e60c3ddc9539061b2",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.52。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q53",
+      "round": "2025-late",
+      "number": 53,
+      "pdfPage": 24,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "f0ab42a35cc95ea223fff6f6421f2f3a85691963af1dea7edb1d416468124a24",
+      "contentSha256": "a9a85d738dbd15af9c2fbfba64b52d9fb812c1d91721c2eafce41f13157baf99",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.53。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q54",
+      "round": "2025-late",
+      "number": 54,
+      "pdfPage": 24,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "4eed2594ea8995a1a6a9bae3106062c6c922694a61c0f7f236436f779f7a5404",
+      "contentSha256": "ba3d225a9cf6ffc15ce3ab7274333563dc73c29d6d16acb152f712843d3c64ae",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.54。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q55",
+      "round": "2025-late",
+      "number": 55,
+      "pdfPage": 24,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "627c13b0908b7e7e6963c7216a3a622c7a77a42b1e1c7d595977d3210cc2e515",
+      "contentSha256": "8c9ba85571dacc5b126e877953251d47b3a86108f61fb6f3e5eb52f074cf4de0",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.55。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q56",
+      "round": "2025-late",
+      "number": 56,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "9e2236334e8a5ade392b726063626af91a122bbe51cbea9b96adf1028d234ae7",
+      "contentSha256": "2ce85bc2d53f27bcad634a49ec96f1253c7c68e4926cae2fbcb3f8c83536eb94",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.56。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q57",
+      "round": "2025-late",
+      "number": 57,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "fa4a6f843b0fe3585a8782fdf7c9c34807aaa3eddeaf646689029f5491449336",
+      "contentSha256": "578713709195c9c363773516c26f4fa21cc3ebd6e421389eb4bf51431c9f38fb",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.57。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q58",
+      "round": "2025-late",
+      "number": 58,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "8f934603a3f77f9352e09b25c5580efb68ea911b3a2ef19dce17c34f9bc2f7b8",
+      "contentSha256": "f140b910ef9453542698c9704d0459c0dee18ec8e78a063da3c8e96e7ed99ddf",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.58。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q59",
+      "round": "2025-late",
+      "number": 59,
+      "pdfPage": 26,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "d32d58368d4c790c46d87852b4958d6b97d232e3f5939867b89918de1b0885a3",
+      "contentSha256": "c66b9bd87c3f453f40e640c42e88f8cb82f3d2016d511e342b04e9acda8e6257",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.59。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q6",
+      "round": "2025-late",
+      "number": 6,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "e8485dab4518c9508795613633dc89fa0fe25971c3248cc021bab1e0b2a474ce",
+      "contentSha256": "1c096bb286665443d83a215f1cbf4d5ec7ecee94ff0e569a1cb45008fbc8ff3c",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q6.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.6。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q60",
+      "round": "2025-late",
+      "number": 60,
+      "pdfPage": 26,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "77b0336b2d99486a75f9233a0fe95dbb12cb70cf922ca43e157a6be827f6bb5b",
+      "contentSha256": "9cc874337e53b6c4a67d0d2106a0f1117d1cf786ba94adc4ef6b14f613336dbc",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q60.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.60。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q61",
+      "round": "2025-late",
+      "number": 61,
+      "pdfPage": 27,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "4260f801ed847c5d0a6f27e26e827c91c964924961d27f5b298eff62193027e5",
+      "contentSha256": "3a2ec9517466782997481962ea16e4b674c537042f33cd668735d6d941113e9b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.61。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q62",
+      "round": "2025-late",
+      "number": 62,
+      "pdfPage": 28,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "ef3343df7096f7a6355a7284a93130df8f5fb6852f8ee7f41dd74e9ff1d22d5b",
+      "contentSha256": "ce1ff9a7aeed3b35efb74f63524e3991f9497025160ddda6f20809aa4df6593b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.62。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q63",
+      "round": "2025-late",
+      "number": 63,
+      "pdfPage": 29,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "40662fcb5a3f57150d3a8d0a6b97926443f3dba2196498607fc66c1c4b24d8f7",
+      "contentSha256": "fd3b4d0d090548f6a5c72542f9752996cd1e60cd0a469dd0bd812e580c140284",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.63。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q64",
+      "round": "2025-late",
+      "number": 64,
+      "pdfPage": 29,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "89934f2303929fa1395115f894762a15a0220b45d26046834c6c9711a4a0a528",
+      "contentSha256": "79161789b526b1228115b38dcddc09bb06834fbc1865600356024569e7607006",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.64。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q65",
+      "round": "2025-late",
+      "number": 65,
+      "pdfPage": 30,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "d1f7a1d8857c8754ade2227d7ec26692a42f800092a8181512c207876e6126d5",
+      "contentSha256": "4b98d4aaf015ecc39abadc27907d09c750d1e4d89d557cf3010ae86eb52cd743",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.65。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q7",
+      "round": "2025-late",
+      "number": 7,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "c01995eb7bd2df1ef6617c573615d209e952caa43eb23abdbad4a15811d06acb",
+      "contentSha256": "ec5ef36c82723825169cecdccbd336042397a45eea1bbce024d8529b74cf626b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.7。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q8",
+      "round": "2025-late",
+      "number": 8,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "2a8c6ba8a9049e69e3e59dd53511f69000b761fc982df7c3eebb4dc9b6de9ebe",
+      "contentSha256": "bde7b7fe4c38f417fd8525496f05e6ec2d1f0d75258feb193bcf514647cd71e7",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q8.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.8。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2025-late-gakka-q9",
+      "round": "2025-late",
+      "number": 9,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+      "originalAndChoicesSha256": "8616e508903688a6af1c392e5e78195b96ae591684adcef51215f7786eaaf9d3",
+      "contentSha256": "d07bf7ebf2a7acfb4b595b9e2400aa5afae6e80b85929400c4b27d784d9f1bb6",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和7年度2級電気通信工事施工管理技術検定 第一次検定（後期） No.9。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q1",
+      "round": "2026-early",
+      "number": 1,
+      "pdfPage": 2,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "48cff0521afc8154bf93af0966eb6a2fd7826b3cbb05e67a72590e425384b7c9",
+      "contentSha256": "b219a54652cb193270598964d500b8bdaa8e86a1cafbd95092f943c226cb24eb",
+      "assessment": "scored",
+      "imageUrl": "/images/tsushin2/2026-early/q01-figure.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.1。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q10",
+      "round": "2026-early",
+      "number": 10,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "be3565d672b5c4100ec9f7455a39d70109412f3ef341e29982cf14c8143756f8",
+      "contentSha256": "8841bae33f7441ad20c97c9fb351d6a891cfa0f741a23d3f2f3ae8e7775c5455",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.10。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q11",
+      "round": "2026-early",
+      "number": 11,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "5c5bb31605471d5f4098b90479e59e4c248d7238616ee16266d01b25f04dd36c",
+      "contentSha256": "59b1f03ad9f758722584c1ca53d19c1cd1a045c4447b2343cf8fd5cf7be1cb33",
+      "assessment": "scored",
+      "imageUrl": "/images/tsushin2/2026-early/q11-figure.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.11。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q12",
+      "round": "2026-early",
+      "number": 12,
+      "pdfPage": 7,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "cbca7f75f684805f6bb233e5f1bbadc220caa0408731653f4332e66d0883765d",
+      "contentSha256": "406851f370705f5bca3bde7eeba4e3837cdc7dc84269e4216e5350b9f129bf60",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.12。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q13",
+      "round": "2026-early",
+      "number": 13,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "0463090955776240adf0ab80603af3abe4152adf6fdb26d3c990060e3b6bf38f",
+      "contentSha256": "caca12b676f1e6f45658a9ee8e0eba932177aef4d2ff71044b03b6ca056f6b37",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2026-early-gakka-q13.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.13。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q14",
+      "round": "2026-early",
+      "number": 14,
+      "pdfPage": 8,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "996df324c38340a4cb9330010168ac276de13496d335eab5f39ed790dde01e50",
+      "contentSha256": "9dd9c8b06e620a8388cb680671967faa2f8be6b59cbc8f77892c90375e9d269a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.14。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q15",
+      "round": "2026-early",
+      "number": 15,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "5efee037985889dbcd78b3fcc1d2af003a5d45df24a48e86b65eb4cb6f1e02eb",
+      "contentSha256": "babdc7651b8065cd206996240c220a390e3bcbe5a5ea4d0038cf7738a69a437a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.15。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q16",
+      "round": "2026-early",
+      "number": 16,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "8f7768755990c5d48fb2ae32bcba3fec2951f372c89686d591867016df9b5cfb",
+      "contentSha256": "3780cae2d625431185f03bfcffc04d3c1e5530167b14a574c7b15f381efd2ca4",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.16。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q17",
+      "round": "2026-early",
+      "number": 17,
+      "pdfPage": 9,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "8a8c9ebe9ff713bdb70e23a65e7287254d84b4f03b4ea7bd15c37c0fe9cd65cc",
+      "contentSha256": "6961afd1c71cf7ab3c2affdbd531d41c81993fee795a76fc850209fbbec1cd55",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.17。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q18",
+      "round": "2026-early",
+      "number": 18,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "d2b584f98aefb5ba3c8be278e1319e28402d573666bd3f74106582b2325df979",
+      "contentSha256": "ee81221424648b77fbff88aedc33520a8995c0c47c30816232c0d48f48ec816e",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.18。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q19",
+      "round": "2026-early",
+      "number": 19,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "c962b290a4384306b21db32e344e2e57440cef9533ff35b97423e7a950319578",
+      "contentSha256": "f4d929ea9dece54577a1c0dd8f3c31bf89c469b2a6f36067a5ddde1878f79509",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.19。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q2",
+      "round": "2026-early",
+      "number": 2,
+      "pdfPage": 3,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "d4556456f578b3acaebfe79e3a373851082c6a8187b5cb3e5fe70a20519dd9b0",
+      "contentSha256": "677bf4a0c8272e1c0885f74c2681d77ce9e80e13808f4288ecdc625fd665d530",
+      "assessment": "scored",
+      "imageUrl": "/images/tsushin2/2026-early/q02-figure.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.2。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q20",
+      "round": "2026-early",
+      "number": 20,
+      "pdfPage": 10,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "914468b78d25b27a18cfa82d158acc5103daf3ca2adfa231aa272edb8244406b",
+      "contentSha256": "cedfc82c728119ccfd15f9c0c540b88a3be4d1f2320896e81bf9ed80afc151dd",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.20。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q21",
+      "round": "2026-early",
+      "number": 21,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "2e03406e062a0471642e92b60b3ceb2aa70272261809fe4114fd1450ae4bacf6",
+      "contentSha256": "8b713fb4e47b5c414334a944292430617ac80c250f4d80835f57a6e21f8be39a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.21。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q22",
+      "round": "2026-early",
+      "number": 22,
+      "pdfPage": 11,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "aaeefc0d5b748a5fb197802a090b6b8a8be9276b68059ec17a02d75c622860fb",
+      "contentSha256": "e6b81fe6e36f80af1c509b49587ec1e6a79fcdd75efc21a0529ac1d9eaca2e51",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.22。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q23",
+      "round": "2026-early",
+      "number": 23,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "2407bb6acfcfc9609a78f821925b77f914a88957504040b170c05ab558405b91",
+      "contentSha256": "efc4a4efdf89304bc62ce56b379b42874e159a8455038ad4e872ad05c5073dc5",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.23。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q24",
+      "round": "2026-early",
+      "number": 24,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "1612d4366675f15956dc718045f54b2585fbf8fa60b3953656ce3ecb95f9ff6b",
+      "contentSha256": "766836acae8d0e6aae0e841a489b6a73ae4f76a1abbe4f08a1cf1e654b6b8b55",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.24。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q25",
+      "round": "2026-early",
+      "number": 25,
+      "pdfPage": 12,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "af2133f5ae3aa25634fe522e092899e86de4a6f8240665af41a84c04ff53560a",
+      "contentSha256": "1288fb1af610faed80a141935aec3f42cf319baf7810b14dbe67089010014676",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.25。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q26",
+      "round": "2026-early",
+      "number": 26,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "9abfabb86e88fecc37461a2b697fbaa61a237c9d2749a26a58112e0f81dd1ba3",
+      "contentSha256": "0d79bb1f45361a62e502984c05e456fa00e694f9c2ee45f7e912a4fdeea7a56b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.26。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q27",
+      "round": "2026-early",
+      "number": 27,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "3af50d771bf20251528f1aa246c2a07bf9d42f17a8bbb6c6f4350cec2405a8eb",
+      "contentSha256": "7b6e1c8fbba69238d435b0ca90739a74c30edfc3ad235661b8dfd7659466473d",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.27。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q28",
+      "round": "2026-early",
+      "number": 28,
+      "pdfPage": 13,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "d924355ee4848d62ac28a1081f9f8d0b938590cc75afb48fb1b8c09f949f8234",
+      "contentSha256": "601dd07b90310ccda00f014f301c4d9c6b534412b79950758912d208a37c8a23",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.28。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q29",
+      "round": "2026-early",
+      "number": 29,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "a88a35a77c94b0080ba06994b1cd3b4c6f36bb30e47b7097c59f91964f5b939f",
+      "contentSha256": "efac193ada74b15e5ee4338664cfb8441d0eced3bc3dee0ffbb481c2c4e36741",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.29。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q3",
+      "round": "2026-early",
+      "number": 3,
+      "pdfPage": 3,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "4fc7a784fabdfc5843b30b618f669989f096efea756fb740b571d704e55b041c",
+      "contentSha256": "6d6651b4669b43ea6e1c0ba12af0c21f0e3952cd84f1c331f99b309cde28f8f0",
+      "assessment": "scored",
+      "imageUrl": "/images/tsushin2/2026-early/q03-figure.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.3。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q30",
+      "round": "2026-early",
+      "number": 30,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "2a5752c0c59e78eeba4e66b9134ecb92989bbf60c2b380bb0c5703e51c59bc3d",
+      "contentSha256": "4c27cbdbf1548adb9417d0e5fe4c534897885d291fdbf335c5f76bea154bbd9b",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.30。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q31",
+      "round": "2026-early",
+      "number": 31,
+      "pdfPage": 14,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "7a4657c5558494216a1f99d04b9bc23590a2629ad325b5adb97369e25a1b0577",
+      "contentSha256": "3cc6602e8b95f4008eec087494026ad3decf9b3cc7d870eb320a9218804e799f",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.31。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q32",
+      "round": "2026-early",
+      "number": 32,
+      "pdfPage": 15,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "65ae2cf140b89861e5cf4d1635a072262f36547301451e6c037361b08510db91",
+      "contentSha256": "1bf1f2cd44c56b1ebe08973368b59188f5c9936f80e1422e2fb79e82f9913247",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.32。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q33",
+      "round": "2026-early",
+      "number": 33,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "073d08e372db04ba7ef11d5a8cdbff12308ca7ee6bf3f3165a9110bd7845ca99",
+      "contentSha256": "333c2f1ff727f0dee4e74170b9e50ff25815a11d00259cb98d1c1c44a21673e1",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.33。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q34",
+      "round": "2026-early",
+      "number": 34,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "ff2eeaf6ab8ce31b9fc841aaebdddbf31ff623e4ab72df9c66fe2e06ecb91d9d",
+      "contentSha256": "ad69c2e192a0f4d4f1212e2b336fa1408d7f2720ba87e8f82f793ab3654109f4",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.34。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q35",
+      "round": "2026-early",
+      "number": 35,
+      "pdfPage": 16,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "86411ce3f3c310759e717431f1eca96e4456eb3e0035a5dcdafcac5f6571971b",
+      "contentSha256": "a695424100b3571a97b51e0b4b861d4d6c6a97877f0a06f4ddabce29bd24d475",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.35。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q36",
+      "round": "2026-early",
+      "number": 36,
+      "pdfPage": 17,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "9b0c3654ba08aff82fbfebd0a4860bb805916e94ff63a66c8b7cd8d765598a06",
+      "contentSha256": "6c2d27fecf2718e66e2452a82048957ff31d2102db5e8995b64cbf1fcf8895f3",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2026-early-gakka-q36.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.36。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q37",
+      "round": "2026-early",
+      "number": 37,
+      "pdfPage": 17,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "d7c6fe354f19506eac531dc1019a935e8aeaa4981c032463ab62e548a0593f24",
+      "contentSha256": "14a5f10f21799e02f8c863acc00e1386c0ba61a95bde10fab0ed41250f1bd2d8",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.37。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q38",
+      "round": "2026-early",
+      "number": 38,
+      "pdfPage": 18,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "b39ea1c4b32d2baf0c47c420f35586c830a90577bc46f0518b9fc68621981c0b",
+      "contentSha256": "07fcaf85b6f64079da815bd6fc903a9cdc23dfd60162124c2e53f6327e22b3ef",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.38。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q39",
+      "round": "2026-early",
+      "number": 39,
+      "pdfPage": 18,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "5fa89f3ee8f238af5864c6e3d7000639b04dd034f29422c57465bdce835a588b",
+      "contentSha256": "322b53a4aa8b0adc4a1df7abb5530517d281ffdfab4f64c1d4ac4af7f11faf5a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.39。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q4",
+      "round": "2026-early",
+      "number": 4,
+      "pdfPage": 4,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "f0db3e39f5822b2f032be925e5ac7fee274b522cd1e07c27702eb5ccc17b13e6",
+      "contentSha256": "ce92788cbae04b1a2d8753777756cdcfe625187af65432e1180ee6c32a60ad37",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.4。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q40",
+      "round": "2026-early",
+      "number": 40,
+      "pdfPage": 19,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "f5f70513d13480c9b3c4381a38a8f6569033ba459b30cf1a038d7b11d69f82cb",
+      "contentSha256": "3e19ccc3e0f33daa9d6b10719a7c81c9706ca4a37c2674ff32cf603a8e1be977",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.40。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q41",
+      "round": "2026-early",
+      "number": 41,
+      "pdfPage": 20,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "767a912fa3c2d5a01c080c647db60cbca7ab3b5fe4cdaeb2a5ecc4930af47736",
+      "contentSha256": "5d2cca08b73a8469af10929a3493c99eb63edae7221e00d9b11776b7757dfcf0",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.41。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q42",
+      "round": "2026-early",
+      "number": 42,
+      "pdfPage": 20,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "de9d0c0632da7f0ed4655ee2bfac4b7c7d45134888ae59d05e2c54630c7f40cc",
+      "contentSha256": "440febf35cfc3e60903bb8d5a6d9deac470ae8ca562fef0957a98a7c5b28ff10",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.42。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q43",
+      "round": "2026-early",
+      "number": 43,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "a0b561277dfb0b75675b3b570c8c5b429928250331acad7a96a99aee9ba2fc9e",
+      "contentSha256": "c3f217bcbbf242412efc3b345106a2422e70a4e2d7fcc1de9ca086753b1e08d4",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.43。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q44",
+      "round": "2026-early",
+      "number": 44,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "34be08956e0282272b12e3817a3831cf0ca14f129018055b5eea77e56d6065c8",
+      "contentSha256": "c466d13f50cac4323e89ec39d8479943e795724896a86f949a379a5d699d742c",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.44。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q45",
+      "round": "2026-early",
+      "number": 45,
+      "pdfPage": 21,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "e94fd0d2c149c9b22240d31186719b670fcf89ec49e315fc28f99f3a8b46978a",
+      "contentSha256": "271d9a16b5b5fe72d950bfbb2f8cb89a7d8dcd66bf8eaeb2444dd3b1c5d97e41",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.45。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q46",
+      "round": "2026-early",
+      "number": 46,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "4ae2622273eace0782a770b460411fc2bbbac85a201a8a369bc7a8f61ecee704",
+      "contentSha256": "c955e00c09a2c85673f84a4f1aa9762c0d50fdbfa2a6d987a91d193d92cede66",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.46。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q47",
+      "round": "2026-early",
+      "number": 47,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "f13a78a81c6cffcf647c00468345ac72acdab0177b496ffbaf21ffdc3feed403",
+      "contentSha256": "f0a8e411aba3da94053e274366c83fab1f9736501f4446735bd59c9336f069a2",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.47。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q48",
+      "round": "2026-early",
+      "number": 48,
+      "pdfPage": 22,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "33d70b5f38dd13ea4900467f1b7b0311f37febace04ccea4a5b5a9d3e73ef7f7",
+      "contentSha256": "d3daff2338d25145c9f844fdd4df5bdd7ceae942341a2352a3b1039ced3e9533",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.48。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q49",
+      "round": "2026-early",
+      "number": 49,
+      "pdfPage": 23,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "0fcda4b39aea868048a46ab1d09fae01117ddad81e030ebfdfea9db4617cefb9",
+      "contentSha256": "901818de7a7f1dce3d11db8f3e97a40ab010b4f895430a1cec32c4660e9adeb8",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.49。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q5",
+      "round": "2026-early",
+      "number": 5,
+      "pdfPage": 4,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "7d03b3ca80e95eb92e8e0b8330b536867b00cf1aea9837bf12bb9a263301d088",
+      "contentSha256": "c83bc96b3a22bd6d8ab5ead9385f48b38cb0afc083ce95e2b151996d1082ce3f",
+      "assessment": "scored",
+      "imageUrl": "/images/tsushin2/2026-early/q05-figure.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.5。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q50",
+      "round": "2026-early",
+      "number": 50,
+      "pdfPage": 23,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "e9d8ac4905f51e21d0dcccd10980523743d2faaaff5fe527a2bce07f035985ab",
+      "contentSha256": "ea3e814379fa27ff2f8186f51ceb3157c753df9f75bdd51ad0a84fbf0139e9bd",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.50。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q51",
+      "round": "2026-early",
+      "number": 51,
+      "pdfPage": 23,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "449c2d4f98775e0bfe5957cdd98d3e860a3b45f40a84a2a6258e47346e10256d",
+      "contentSha256": "e50319b77a084c82cfbb16e336237a4d73bb7c786d02b0e17dff528db3178ca1",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.51。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q52",
+      "round": "2026-early",
+      "number": 52,
+      "pdfPage": 24,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "2f17d1dfa186cef61e4ae931bf1cb925ed0cc454214fa7be5b7f7643bf509a50",
+      "contentSha256": "93b88e1a432d698b519b7a5a7f682112a7435fb6fcabd31a5b6119872ea767fd",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.52。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q53",
+      "round": "2026-early",
+      "number": 53,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "7a68dc5d5626c8ba4008f3eace0b714082bcdba54e9e66957a5fe3dafe4588f9",
+      "contentSha256": "e7a5b3b745b7053342cc34ad5af84ad24c589732865b5f0ad3b0d23af932e301",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.53。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q54",
+      "round": "2026-early",
+      "number": 54,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "fe295532864584655ea8961e0c472b74ca71333e1f423c81ef844adf367d0b44",
+      "contentSha256": "ff615183f8f03ba9a0e16415fce2a2ec4585be1d0620ffa4a9d1f4e230f0ddfc",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.54。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q55",
+      "round": "2026-early",
+      "number": 55,
+      "pdfPage": 25,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "828c45a08e58edadcce2eba0fe75f8ab5f2d10f2aed1700b63749f7f2b8a2d52",
+      "contentSha256": "7fb260b83b9401c92c914e2ed5af13bbcdfd11f38ff15fcd1715de2fc10d683c",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.55。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q56",
+      "round": "2026-early",
+      "number": 56,
+      "pdfPage": 26,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "3dc39f46f694b39f14d08561a2b824b1c53391324b7ee74f6b6b7aae970eab06",
+      "contentSha256": "67f64ec9a22a17ca76366a65c44e81a06745f48abaaeed027f0c3912e0cc0217",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.56。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q57",
+      "round": "2026-early",
+      "number": 57,
+      "pdfPage": 26,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "656b29e9ebdbcc05bd5f954df2f3934f6f6d73c2ed3a2a046e3689a8dacccde0",
+      "contentSha256": "c32c559553dc58b2c479ec98b8a1fa6ca4941b3bbbe125dae8afa2931b150db0",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.57。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q58",
+      "round": "2026-early",
+      "number": 58,
+      "pdfPage": 26,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "9046245c76376bb1b49066c9cdd5cd74ee79e4ae9ee3df538d577451df9ffa84",
+      "contentSha256": "878806e3a3cba329d8ebe9b96d9290e71d3f07c9d444a80a74bb31f5745a48a0",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.58。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q59",
+      "round": "2026-early",
+      "number": 59,
+      "pdfPage": 27,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "8208f08905d1e7dbe3fd59d5c66d7f64e361c392bcc6df0e8862e142f07d40de",
+      "contentSha256": "46dd61bede6ec288a1ccdd07ab4d178520229445e069632bdc869b7765bea71d",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.59。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q6",
+      "round": "2026-early",
+      "number": 6,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "da4c3de69ba4ca65b707aa8b29de3060a6b45e9b33a2729403d3419bd4c02bff",
+      "contentSha256": "b15ff04e5f523caaa944726e5e2662fc03633c7046dd147069c44d36be07feb2",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.6。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q60",
+      "round": "2026-early",
+      "number": 60,
+      "pdfPage": 27,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "d70220c397f178db8798ae469872e32ac9736781ca0bfadb622ec7b6a1748c41",
+      "contentSha256": "dcb81c284e674aba5883db3d06af2b0fdf28e8bbf2be6d98f938dd8fbc199413",
+      "assessment": "scored",
+      "imageUrl": "/images/questions/tsushin2/2026-early-gakka-q60.png",
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.60。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q61",
+      "round": "2026-early",
+      "number": 61,
+      "pdfPage": 28,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "63faf7d3d1878b4561eba2bcacaa26e91291355353f81c4c04ffa890e8cb4e93",
+      "contentSha256": "a618c73ea8d7c9f23703d839e0ae3470a9be3a9346f2c534896f59bbef5ec8d7",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.61。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q62",
+      "round": "2026-early",
+      "number": 62,
+      "pdfPage": 29,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "8ff1f0da7cef80386bee02032c7395a9d2f871635c52b38a94942a8dd3bbfff2",
+      "contentSha256": "714fe361515d3881a146cee31cee48f7336a4cc5a99fcabf5d207ae9139410fc",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.62。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q63",
+      "round": "2026-early",
+      "number": 63,
+      "pdfPage": 30,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "5ad26620fd887190b086bd925432dccfa6f266d356371e63da0f5c9be4eebd41",
+      "contentSha256": "18fe77a0e687de575afbbfc544ba5bcdfc69e6b25ca95d2c3dcb575e07359dd3",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.63。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q64",
+      "round": "2026-early",
+      "number": 64,
+      "pdfPage": 30,
+      "officialAnswerNumbers": [
+        2
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "f54a28b867a806d474e54cd428c8897372fc60601ad51fd99f82084c22795a26",
+      "contentSha256": "3ce294b5baf6adeaeff8dc0ceabed3aea7f3ed4403dfb2486f14ed3c14da71dd",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.64。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q65",
+      "round": "2026-early",
+      "number": 65,
+      "pdfPage": 31,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "ccd1790daa7a52d19a7a2488da56b1682bc63cd879ceda7c3b79643db672ba1e",
+      "contentSha256": "61ffccf0e7934f485de98b6ef3c2363adb8ec59bce9f94793d3da76893d98cf9",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.65。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q7",
+      "round": "2026-early",
+      "number": 7,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        1
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "51c2a0ee67eb4796aec88c200a42321b2817824e3d1f6e5a35f5c0aafd62edab",
+      "contentSha256": "37dfb9633577a47259b1a6b4389e8464851bf5afdb3ffa946795ed51965e9ce6",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.7。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q8",
+      "round": "2026-early",
+      "number": 8,
+      "pdfPage": 5,
+      "officialAnswerNumbers": [
+        3
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "684ebd188327a1b72221f8f9e807514fbb3b7ac767fb3a0659f4d9bc6c1b4d1e",
+      "contentSha256": "08ce964aed5f691c61f5accd7f565ed98b1e9ee5a39e9c01b900b49d352f664a",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.8。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    },
+    {
+      "id": "tsushin2-2026-early-gakka-q9",
+      "round": "2026-early",
+      "number": 9,
+      "pdfPage": 6,
+      "officialAnswerNumbers": [
+        4
+      ],
+      "sourcePdfUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+      "sourceAnswerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+      "originalAndChoicesSha256": "87b4797b88ea3ab7e96fdd9e502e70288f46dee80eed911a0217f04a37c68a85",
+      "contentSha256": "c3a0522b658a323b42c90a1e1afa9c39c4bb15202f0db270c2b4a7b55dc64227",
+      "assessment": "scored",
+      "imageUrl": null,
+      "contentReview": "inherited fixed acceptance; R2 compiler explanation corrected separately",
+      "sourceAttribution": "出典：一般財団法人全国建設研修センター 令和8年度2級電気通信工事施工管理技術検定 第一次検定（前期） No.9。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。",
+      "lawReferenceDate": null
+    }
+  ],
+  "reuse": {
+    "preparationReceiptSha256": "bad62194ae5915e2e192f243ad4712a75531a59116fcdaa921ea0fc1589c01cf",
+    "fixedReceipt": "C:/Users/kanet/Documents/Codex/2026-10-31/qual10-telecom2-private-finish/outputs/final-private-closure-20261101/FINAL-RECEIPT.json",
+    "rights": "本人取得済みという指示を適用。独立許諾認定ではない。",
+    "sourceReview": "18 source hashes verified before copying; official keys independently parsed from PDFs; original and choices unchanged; existing content acceptance reused"
+  },
+  "exceptions": [
+    "2025-late Q21 official4 preserved, reference-only due to IPv6 /64 wording exceptions.",
+    "Actual exam selects 40 answers from 65; material count is 65 per sitting.",
+    "2026 late scheduled 2026-11-15, not yet held."
+  ],
+  "hashNotes": "sha256 records observed file bytes; normalizedLfSha256 binds text across Git core.autocrlf checkouts. Original/choices and question content use canonical JSON.",
+  "checks": {
+    "schema": {
+      "questions": 130,
+      "ok": 130,
+      "fail": 0,
+      "warn": 0
+    },
+    "twoRoundCoverage": "PASS 65+65",
+    "officialKeys": "PASS 130/130 independently parsed from official PDFs",
+    "relatedTests": "PASS 7 files / 63 tests",
+    "typecheck": "PASS standalone tsc --noEmit and final next build typecheck",
+    "build": "PASS next build exit 0; 12535 static-generation tasks",
+    "browser": "PASS two normal answer/explanation/next/reload/revisit flows, reference boundary, 16 decoded figures",
+    "eslint": "0 errors; 1 pre-existing unused examPath warning in question page",
+    "gitDiffCheck": "PASS"
+  },
+  "browserEvidence": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qdentsu2-evidence\\browser\\BROWSER-ACCEPTANCE.json",
+    "sha256": "f76f8cf9d8c6d64a5a72fab9d67f7dd0c8aa19a3bacbfcfae6cfdfc9f9cad74e",
+    "contexts": "new non-persistent contexts, only local origin requests allowed; no real credentials/DB/Redis supplied to server",
+    "imageVisualCheck": "16 inherited figures viewed as 4 contact sheets; 2 normal study screenshots and Q21 reference screenshot visually inspected"
+  },
+  "reviewResolutions": {
+    "R1": "125 additional questions integrated; final commit bound externally in COMMIT-BINDING.json",
+    "R2": "Q9 choice2 compiler translation wording corrected against official physical page6 and Oracle JVM specification 2.1; original and official key unchanged",
+    "R3": "new isolated browser acceptance, 63 related tests, reference-only pool/API/history/SRS boundary and all16 image loads verified"
+  },
+  "cleanup": {
+    "server": "owned local server and wrapper stopped",
+    "nextDirectory": "C:/Users/kanet/20260522/ipa-qdentsu2-20261103/.next",
+    "deleted": false,
+    "blockedAction": "Remove-Item -LiteralPath <exact worktree>/.next -Recurse -Force",
+    "reason": "Automatic approval review rejected operation: blocked by policy. Exact path was checked before attempting. No alternate deletion method used."
+  },
+  "sourceReviewClarification": "Same fixed content acceptance and prior independent review reused. No claim of a newly repeated full 130-question / 520-reason independent review. Q9 delta checked against primary source; whole qualification and production not accepted by this receipt.",
+  "validationLogs": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qdentsu2-evidence\\build-final.log",
+      "sha256": "666725fa4d3883a31920a8cd133c402b8728e08606d9dc054a708c8a4b5d4300"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qdentsu2-evidence\\typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qdentsu2-evidence\\tests-final.log",
+      "sha256": "1861a49bf5e92907c930e5db54eb48b854477048108dd950bcc619e7f9ca70e7"
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\qdentsu2-evidence\\browser.log",
+      "sha256": "da4b2aba68db2756f87aa602fc82a1ef24223582ab94e2fb8a9c0a285fc5e789"
+    }
+  ],
+  "codeFiles": [
+    {
+      "path": "data/questions/tsushin2/index.ts",
+      "sha256": "5eb8f7d4824483a0d216c7211253ef9ce54d192d7af99d16e4ad937ee5558d2d",
+      "normalizedLfSha256": "5eb8f7d4824483a0d216c7211253ef9ce54d192d7af99d16e4ad937ee5558d2d"
+    },
+    {
+      "path": "data/questions/tsushin2/jctc-first.ts",
+      "sha256": "2be771aadf39063e74d348a13700e7fdacbeb1d2e1445f449e51745c21454048",
+      "normalizedLfSha256": "2be771aadf39063e74d348a13700e7fdacbeb1d2e1445f449e51745c21454048"
+    },
+    {
+      "path": "data/questions/tsushin2/saved-source-reader.ts",
+      "sha256": "ce8e3ff327361466f8b351a48c5da930dfbc338a10e06cfa291dffd43f5e18b1",
+      "normalizedLfSha256": "04fd830d62f58f8fb176abf1282b2e5bc42637023bc605547584c3acf1590b83"
+    },
+    {
+      "path": "lib/questions/filter.ts",
+      "sha256": "af4d74ebe456e09891d4f2037f7bef2909ee54bb0748ffdce5b61c0976ea9aba",
+      "normalizedLfSha256": "af4d74ebe456e09891d4f2037f7bef2909ee54bb0748ffdce5b61c0976ea9aba"
+    },
+    {
+      "path": "components/quiz/QuestionAnswerCard.tsx",
+      "sha256": "74e21f437d5c35c94c7a16d1577cdbcf9fdd108f6ed11cddc73498793e38512c",
+      "normalizedLfSha256": "ca4999bb42002f8525a6ce0f59229266ed9e98bf455d786dec5f1c0cbc234b69"
+    },
+    {
+      "path": "app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx",
+      "sha256": "1f108aeda480a602ec7bc965b68ac8e83df91c46d5733810a56693c375b1ec68",
+      "normalizedLfSha256": "251fe8a861f8e89867729af47395f4074eab85d2086f1d519dc7eff7c704d4b0"
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "sha256": "35acc622aa4567a2573f5ea4118149f0bf384aebf013ee8bcbb2dfa2d78e44f9",
+      "normalizedLfSha256": "35acc622aa4567a2573f5ea4118149f0bf384aebf013ee8bcbb2dfa2d78e44f9"
+    },
+    {
+      "path": "scripts/verify-tsushin2-browser.mjs",
+      "sha256": "f8af4d74c7a84f6dcee96d5bc595edc1ed9962fc44b2fe6f218cf7bfc1ce3f6f",
+      "normalizedLfSha256": "f8af4d74c7a84f6dcee96d5bc595edc1ed9962fc44b2fe6f218cf7bfc1ce3f6f"
+    }
+  ]
+}

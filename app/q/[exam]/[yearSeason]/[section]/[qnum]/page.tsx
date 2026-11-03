@@ -1,3 +1,4 @@
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
@@ -166,7 +167,7 @@ export default async function QuestionPage({
   }
   // Keep detail pages, paper listings and the interactive player on the same
   // quality boundary. A listed question must also be readable and playable.
-  if (!isPracticeReadyQuestion(q)) notFound();
+  if (!isPracticeReadyQuestion(q) && !(isReferenceOnlyQuestionId(q.id) && !q.needsReview && !hasUnrenderableContent(q))) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const answerText = q.type === "ordering" ? undefined :
