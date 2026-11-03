@@ -170,13 +170,13 @@
     2026,
     2025
   ],
-  "stagedQuestions": 393,
-  "stagedChoiceExplanations": 3530,
+  "stagedQuestions": 413,
+  "stagedChoiceExplanations": 5920,
   "officialPrimaryQuestions": 414,
-  "remainingPrimaryQuestions": 21,
+  "remainingPrimaryQuestions": 1,
   "counting": "第一種は各年132原問（法令30・実務6・物理32・化学32・生物32）。第二種は各年75原問（法令30・実務12・物理11・化学11・生物11）。多肢択一式の空欄は原問と別に数えない。",
   "unavailableRounds": [],
-  "omissionReason": "40分上限内で原本照合・全肢解説・独立レビューを完了できた原問のみ収録。残原問は公式の公開欠落ではない。",
+  "omissionReason": "未収録20原問はLQ8Dで収録済み。残りは令和8年度第二種化学問9の根拠未確定による保留1原問のみ。公式の公開欠落ではない。",
   "stagedCoverage": [
     {
       "year": 2026,
@@ -212,7 +212,9 @@
         27,
         28,
         29,
-        30
+        30,
+        31,
+        32
       ]
     },
     {
@@ -267,7 +269,9 @@
         27,
         28,
         29,
-        30
+        30,
+        31,
+        32
       ]
     },
     {
@@ -431,7 +435,9 @@
         27,
         28,
         29,
-        30
+        30,
+        31,
+        32
       ]
     },
     {
@@ -546,7 +552,9 @@
         27,
         28,
         29,
-        30
+        30,
+        31,
+        32
       ]
     },
     {
@@ -695,6 +703,32 @@
         28,
         29,
         30
+      ]
+    },
+    {
+      "year": 2025,
+      "grade": 1,
+      "subject": "実務",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "year": 2026,
+      "grade": 1,
+      "subject": "実務",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
       ]
     }
   ],
@@ -1115,25 +1149,25 @@
       2
     ]
   },
-  "transcription": "原本レンダリングで本文・全肢を目視照合。OCRは補助のみ。指数・核種・ギリシャ文字を原本から復元。組合せの空白を整理、表の列名を各肢に付記。令和8年度第一種物理学問19・令和7年度第二種実務問6の原図のみprivateなfigures/に保存。 LQ8B追加分の原図をfigures/へ保存。一部の長文は条件を保持して整理し、各sourceAttributionに明記。",
-  "errata": "令和8年度第一種生物学の問2・問10C正誤票は既存データに反映済み。残る第一種実務（令和8・7年度）および令和7年度第一種化学問31の正誤票は未収録部分に該当。問31-I-F全員正解の公式指定は未収録であり、次回必ず反映する。",
-  "independentReview": "PASS for the current unpublished partial checkpoint: physics80, chemistry19 plus held1, biology20, practical20 after corrections. Executed with C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only. Evidence: reports/lq8-independent-review-40.md, -60.md (initial finding), -final.md (physics80 PASS), -chemistry.md, -biology.md, -practical.md (initial finding), -practical-fixed.md (139 integration PASS). Additional 2026 grade1 chemistry7 PASS: reports/lq8-independent-review-first-chemistry.md. Current total146 is reviewed. LQ8B additional biology2026 30 PASS: reports/lq8b-review-biology2026.md. LQ8B biology2025 30 plus 2026 label corrections PASS after fixes: reports/lq8b-review-biology2025.md (initial findings), reports/lq8b-review-biology-fixed.md (PASS). LQ8B chemistry2026 additional23 PASS after sulfur-gauge correction: reports/lq8b-review-chemistry2026.md (initial finding), reports/lq8b-review-chemistry2026-fixed.md (PASS). LQ8B chemistry2025 30 PASS after isotope/alt-text fixes: reports/lq8b-review-chemistry2025.md (initial findings), reports/lq8b-review-chemistry2025-fixed.md (PASS). LQ8B 2026 second-grade law30 PASS after workroom,transport and deputy-deadline fixes: reports/lq8b-review-law2026-2.md (initial findings), reports/lq8b-review-law2026-2-fixed.md (PASS). LQ8B 2025 second-grade law30 PASS: reports/lq8b-review-law2025-2.md (findings), reports/lq8b-review-law2025-2-fixed.md (PASS). LQ8B 2026 first-grade law30 PASS after transport contamination-limit correction: reports/lq8b-review-law2026-1.md (finding), reports/lq8b-review-law2026-1-fixed.md (PASS). LQ8B 2025 first-grade law30 and379 integration PASS after original-choice,quoted-condition,isotope-label,crop,monitoring-requirement and injury-condition fixes: reports/lq8b-review-law2025-1.md (full review), reports/lq8b-review-law2025-1-fixed.md (PASS), reports/lq8b-review-integration-379.md (findings), reports/lq8b-review-integration-379-fixed.md (PASS). Held chemistry q9 re-adjudicated KEEP HOLD: reports/lq8b-review-held-q9.md; this is not a completion PASS for that question. Second full30/150 law2025-1 review source quotations were corrected against original: reports/lq8b-review-law2025-1-final.md (findings including2 mistaken quotations), reports/lq8b-review-law2025-1-final-fixed.md (corrected quotations), reports/lq8b-review-law2025-1-final-corrected.md (PASS). LQ8C393-question unpublished checkpoint PASS after corrections. All14 additions,200 blanks,1635 new choice explanations were reviewed against originals. Data/assets and200 official keys verified: reports/lq8c-review-checkpoint-fixed.md; firstbio32 correction PASS: reports/lq8c-review-firstbio32-fixed.md; final documentation correction PASS: reports/lq8c-review-final-corrected.md. Earlier findings retained in reports/lq8c-review-*.md. Held q9 KEEP HOLD, not a completed question.",
+  "transcription": "原本レンダリングで本文・全肢を目視照合。OCRは補助のみ。指数・核種・ギリシャ文字を原本から復元。組合せの空白を整理、表の列名を各肢に付記。令和8年度第一種物理学問19・令和7年度第二種実務問6の原図のみprivateなfigures/に保存。 LQ8B追加分の原図をfigures/へ保存。一部の長文は条件を保持して整理し、各sourceAttributionに明記。 LQ8D追加20原問の本文・全肢・数式・表・必要図を原本画像で照合。複数空欄は同じ原問に保持。濃度を表す［A］［B］は全角括弧で解答空欄と区別。新規原図6点をprivate figuresへ保存（表を含む原ページ画像も使用）。",
+  "errata": "令和8年度第一種生物学問2・問10Cは既存反映済み。LQ8Dでは令和8年度第一種実務問1-IIの面状試料の平行・同距離条件、問5-IIのバックグラウンドを含む計数率、令和7年度第一種実務問2-Dの解答群肢2〜7の「に」削除、同年度第一種化学問31式(5)の初期放射能Aₐ⁰への訂正を反映。化学問31-I-Fは公式指定どおりallAnswersAccepted=trueかつofficialAnswerNumber=null。",
+  "independentReview": "PASS for the current unpublished partial checkpoint: physics80, chemistry19 plus held1, biology20, practical20 after corrections. Executed with C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only. Evidence: reports/lq8-independent-review-40.md, -60.md (initial finding), -final.md (physics80 PASS), -chemistry.md, -biology.md, -practical.md (initial finding), -practical-fixed.md (139 integration PASS). Additional 2026 grade1 chemistry7 PASS: reports/lq8-independent-review-first-chemistry.md. Current total146 is reviewed. LQ8B additional biology2026 30 PASS: reports/lq8b-review-biology2026.md. LQ8B biology2025 30 plus 2026 label corrections PASS after fixes: reports/lq8b-review-biology2025.md (initial findings), reports/lq8b-review-biology-fixed.md (PASS). LQ8B chemistry2026 additional23 PASS after sulfur-gauge correction: reports/lq8b-review-chemistry2026.md (initial finding), reports/lq8b-review-chemistry2026-fixed.md (PASS). LQ8B chemistry2025 30 PASS after isotope/alt-text fixes: reports/lq8b-review-chemistry2025.md (initial findings), reports/lq8b-review-chemistry2025-fixed.md (PASS). LQ8B 2026 second-grade law30 PASS after workroom,transport and deputy-deadline fixes: reports/lq8b-review-law2026-2.md (initial findings), reports/lq8b-review-law2026-2-fixed.md (PASS). LQ8B 2025 second-grade law30 PASS: reports/lq8b-review-law2025-2.md (findings), reports/lq8b-review-law2025-2-fixed.md (PASS). LQ8B 2026 first-grade law30 PASS after transport contamination-limit correction: reports/lq8b-review-law2026-1.md (finding), reports/lq8b-review-law2026-1-fixed.md (PASS). LQ8B 2025 first-grade law30 and379 integration PASS after original-choice,quoted-condition,isotope-label,crop,monitoring-requirement and injury-condition fixes: reports/lq8b-review-law2025-1.md (full review), reports/lq8b-review-law2025-1-fixed.md (PASS), reports/lq8b-review-integration-379.md (findings), reports/lq8b-review-integration-379-fixed.md (PASS). Held chemistry q9 re-adjudicated KEEP HOLD: reports/lq8b-review-held-q9.md; this is not a completion PASS for that question. Second full30/150 law2025-1 review source quotations were corrected against original: reports/lq8b-review-law2025-1-final.md (findings including2 mistaken quotations), reports/lq8b-review-law2025-1-final-fixed.md (corrected quotations), reports/lq8b-review-law2025-1-final-corrected.md (PASS). LQ8C393-question unpublished checkpoint PASS after corrections. All14 additions,200 blanks,1635 new choice explanations were reviewed against originals. Data/assets and200 official keys verified: reports/lq8c-review-checkpoint-fixed.md; firstbio32 correction PASS: reports/lq8c-review-firstbio32-fixed.md; final documentation correction PASS: reports/lq8c-review-final-corrected.md. Earlier findings retained in reports/lq8c-review-*.md. Held q9 KEEP HOLD, not a completed question. LQ8D: all20 additions,238 blanks,2390 new choice explanations content PASS after answer-revealing alt and 伝導定数 transcription fixes. Evidence reports/lq8d-review-physics-fixed.md, reports/lq8d-review-chemistry-fixed.md, reports/lq8d-review-practical2026.md, reports/lq8d-review-practical2025.md. Initial findings retained. Held q9 rechecked KEEP HOLD: reports/lq8d-review-held.md. Final integration record: reports/lq8d-review-final.md. Final LQ8D content/integration PASS in reports/lq8d-review-final.md; sole remaining P3 missing report resolved PASS in reports/lq8d-review-final-fixed.md. Not a414-completion or held-release PASS.",
   "heldPrimaryQuestions": 1,
   "heldQuestionIds": [
     "hoshasen-2-2026-kagaku-q9"
   ],
   "heldEvidence": "held-2026-2-kagaku-q9.json",
   "validation": {
-    "questions": "PASS; native393 schema validated; global26444 ok26444 fail0 warn16808",
+    "questions": "PASS; native413 schema validated; global26444 ok26444 fail0 warn16808",
     "typecheck": "PASS; pnpm typecheck exit0",
-    "relatedTests": "PASS; 2 files1072 tests including6 hoshasen staging checks",
+    "relatedTests": "PASS; 2 files1074 tests including8 hoshasen staging checks",
     "commands": [
       "pnpm validate:questions",
       "pnpm typecheck",
       "corepack pnpm exec vitest run __tests__/questions/hoshasen-staging.test.ts __tests__/questions/qualification-expansion.test.ts"
     ],
-    "scope": "393-question LQ8C checkpoint. Full-suite pass is not claimed. Existing global warnings remain.",
-    "logs": "data/raw_pdfs/hoshasen/lq8c-*-final.log (git ignored)"
+    "scope": "413-question LQ8D unpublished checkpoint; all first-grade source questions in both years present, one second-grade chemistry source question remains held. Full-suite pass is not claimed. Existing global warnings remain.",
+    "logs": "data/raw_pdfs/hoshasen/lq8d-*-final.log (git ignored)"
   },
   "ocrDrafts": {
     "path": "data/raw_pdfs/hoshasen/ocr-unverified/",
@@ -1370,7 +1404,323 @@
       "ウ": 2,
       "エ": 7,
       "オ": 8
+    },
+    "hoshasen-1-2026-butsuri-q31": {
+      "A": 5,
+      "B": 7,
+      "C": 4,
+      "D": 8,
+      "ア": 6,
+      "イ": 12,
+      "ウ": 3,
+      "E": 2,
+      "F": 6,
+      "エ": 10,
+      "G": 6,
+      "H": 13,
+      "I": 1,
+      "オ": 2,
+      "カ": 6
+    },
+    "hoshasen-1-2026-butsuri-q32": {
+      "A": 2,
+      "B": 7,
+      "C": 11,
+      "D": 1,
+      "E": 13,
+      "ア": 4,
+      "イ": 3,
+      "ウ": 10,
+      "エ": 4,
+      "オ": 6,
+      "カ": 8,
+      "キ": 4,
+      "F": 3,
+      "G": 8,
+      "H": 12
+    },
+    "hoshasen-1-2025-butsuri-q31": {
+      "A": 3,
+      "B": 8,
+      "ア": 14,
+      "イ": 13,
+      "C": 4,
+      "D": 9,
+      "E": 2,
+      "F": 9,
+      "G": 2,
+      "H": 9,
+      "I": 8,
+      "ウ": 7,
+      "エ": 7,
+      "オ": 13,
+      "カ": 6
+    },
+    "hoshasen-1-2025-butsuri-q32": {
+      "A": 14,
+      "B": 3,
+      "C": 5,
+      "D": 9,
+      "ア": 6,
+      "E": 4,
+      "F": 11,
+      "G": 10,
+      "H": 5,
+      "I": 10,
+      "イ": 8,
+      "ウ": 14,
+      "エ": 6,
+      "オ": 2,
+      "カ": 11
+    },
+    "hoshasen-1-2026-kagaku-q31": {
+      "A": 2,
+      "B": 1,
+      "C": 7,
+      "D": 3,
+      "E": 4,
+      "F": 6,
+      "G": 5,
+      "H": 3,
+      "I": 4,
+      "J": 3,
+      "K": 1,
+      "L": 3,
+      "M": 4,
+      "N": 4
+    },
+    "hoshasen-1-2026-kagaku-q32": {
+      "ア": 3,
+      "イ": 6,
+      "ウ": 4,
+      "エ": 1,
+      "オ": 1,
+      "カ": 4,
+      "キ": 11,
+      "ク": 3,
+      "ケ": 11,
+      "コ": 9,
+      "サ": 5,
+      "シ": 9,
+      "ス": 2,
+      "セ": 2,
+      "ソ": 3
+    },
+    "hoshasen-1-2025-kagaku-q31": {
+      "A": 1,
+      "B": 10,
+      "C": 7,
+      "D": 3,
+      "E": 8,
+      "F": null,
+      "G": 7,
+      "H": 8,
+      "I": 11,
+      "J": 10,
+      "ア": 5,
+      "イ": 4,
+      "ウ": 5,
+      "K": 8,
+      "エ": 4
+    },
+    "hoshasen-1-2025-kagaku-q32": {
+      "A": 4,
+      "B": 3,
+      "C": 4,
+      "D": 7,
+      "E": 2,
+      "F": 3,
+      "G": 9,
+      "H": 14,
+      "I": 4,
+      "J": 9,
+      "K": 1,
+      "L": 8,
+      "M": 5,
+      "N": 10
+    },
+    "hoshasen-1-2026-jitsumu-q1": {
+      "A": 5,
+      "ア": 8,
+      "B": 2,
+      "イ": 3,
+      "C": 1,
+      "D": 4,
+      "E": 8,
+      "F": 6,
+      "ウ": 3,
+      "G": 3
+    },
+    "hoshasen-1-2026-jitsumu-q2": {
+      "A": 4,
+      "B": 9,
+      "C": 5,
+      "D": 3,
+      "E": 6,
+      "F": 3,
+      "G": 6,
+      "H": 10,
+      "I": 1,
+      "J": 8
+    },
+    "hoshasen-1-2026-jitsumu-q3": {
+      "A": 2,
+      "B": 1,
+      "C": 1,
+      "D": 3,
+      "E": 3,
+      "F": 1,
+      "G": 1,
+      "H": 3,
+      "ア": 6,
+      "I": 6
+    },
+    "hoshasen-1-2026-jitsumu-q4": {
+      "A": 3,
+      "B": 4,
+      "C": 1,
+      "D": 4,
+      "E": 2,
+      "F": 4,
+      "G": 3,
+      "H": 2,
+      "I": 2,
+      "J": 10
+    },
+    "hoshasen-1-2026-jitsumu-q5": {
+      "A": 3,
+      "B": 6,
+      "C": 7,
+      "D": 1,
+      "E": 2,
+      "F": 8,
+      "G": 3,
+      "H": 9,
+      "I": 1,
+      "J": 5
+    },
+    "hoshasen-1-2026-jitsumu-q6": {
+      "A": 6,
+      "B": 3,
+      "C": 14,
+      "D": 2,
+      "E": 6,
+      "F": 13,
+      "ア": 7,
+      "イ": 3,
+      "G": 4,
+      "H": 3
+    },
+    "hoshasen-1-2025-jitsumu-q1": {
+      "A": 3,
+      "B": 5,
+      "ア": 10,
+      "イ": 4,
+      "ウ": 7,
+      "エ": 6,
+      "C": 1,
+      "オ": 2,
+      "カ": 6,
+      "D": 7
+    },
+    "hoshasen-1-2025-jitsumu-q2": {
+      "A": 2,
+      "ア": 3,
+      "B": 1,
+      "イ": 13,
+      "ウ": 7,
+      "エ": 3,
+      "オ": 2,
+      "C": 5,
+      "D": 5,
+      "E": 5
+    },
+    "hoshasen-1-2025-jitsumu-q3": {
+      "A": 4,
+      "B": 5,
+      "C": 8,
+      "D": 3,
+      "E": 3,
+      "F": 5,
+      "G": 2,
+      "H": 9,
+      "I": 5,
+      "ア": 4
+    },
+    "hoshasen-1-2025-jitsumu-q4": {
+      "A": 2,
+      "B": 6,
+      "C": 9,
+      "D": 14,
+      "E": 5,
+      "F": 5,
+      "G": 5,
+      "H": 9,
+      "I": 1,
+      "J": 8
+    },
+    "hoshasen-1-2025-jitsumu-q5": {
+      "A": 3,
+      "B": 8,
+      "C": 7,
+      "D": 1,
+      "ア": 9,
+      "イ": 5,
+      "ウ": 4,
+      "エ": 2,
+      "E": 3,
+      "F": 3
+    },
+    "hoshasen-1-2025-jitsumu-q6": {
+      "ア": 2,
+      "イ": 5,
+      "A": 2,
+      "B": 10,
+      "ウ": 6,
+      "エ": 4,
+      "C": 4,
+      "D": 11,
+      "E": 1,
+      "F": 7
     }
   },
-  "multiPartBlanks": 200
+  "multiPartBlanks": 438,
+  "lq8d": {
+    "addedPrimaryQuestions": 20,
+    "addedBlanks": 238,
+    "addedChoiceExplanations": 2390,
+    "allAnswersAccepted": [
+      {
+        "id": "hoshasen-1-2025-kagaku-q31",
+        "blankId": "F"
+      }
+    ],
+    "reviewStatus": "PASS for20 additions/238 blanks/2390 new choice explanations and413-question integration. Content: reports/lq8d-review-physics-fixed.md, chemistry-fixed.md, practical2025.md, practical2026.md. Integration: reports/lq8d-review-final.md; report-documentation P3 resolved PASS: reports/lq8d-review-final-fixed.md. Held KEEP HOLD: reports/lq8d-review-held.md.",
+    "validationStatus": "PASS: native413, global26444 ok26444 fail0 warn16808; typecheck exit0; related2files1074tests exit0."
+  },
+  "heldRecheck": {
+    "checkedAt": "2026-11-04",
+    "decision": "KEEP HOLD",
+    "officialPdfs": [
+      {
+        "url": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+        "status": 200,
+        "bytes": 121981,
+        "sha256": "df127cb5b5836b0b1717d01114ed50a15f2908e0d29ad5c9324957f0970c659a",
+        "matchesAcquiredOriginal": true
+      },
+      {
+        "url": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+        "status": 200,
+        "bytes": 15759788,
+        "sha256": "679e36d69c5117b73c292bf94dcb465ed6b7928ef4614160c55a2f060be9ba47",
+        "matchesAcquiredOriginal": true
+      }
+    ],
+    "primaryReferenceUrls": [
+      "https://nsec.jaea.go.jp/fme/group5/group5_thema10.htm",
+      "https://bukko.bk.tsukuba.ac.jp/~positron/positron/positron_lifetime.html"
+    ],
+    "reason": "公式問題・正答は通常HTTPS GET 200で再取得し既存SHA-256と一致。公式正答5に変更なし。JAEA・筑波大学の一次説明は²²Naの陽電子消滅寿命測定で消滅γ線検出を使用することを支持し、肢1を誤りと断定する新根拠は得られない。"
+  }
 }
