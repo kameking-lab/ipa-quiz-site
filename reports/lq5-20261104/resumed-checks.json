@@ -7,5 +7,33 @@
   "relatedTestsPassed": 128,
   "reviewFixTests": 42,
   "reviewFixTestsPassed": 42,
-  "note": "Search-route 16 tests (5 new LQ5 pool assertions); review-fix set overlaps baseline 26 tests; unique total 144."
+  "note": "Search-route 16 tests (5 new LQ5 pool assertions); review-fix set overlaps baseline 26 tests; unique total 144.",
+  "logs": [
+    {
+      "path": "validate-resumed.log",
+      "sha256": "74702fd1aece798b4bf78ddcba18f8cd122bebcf9b9368ddb1fb4a69d2328924",
+      "localIgnored": true
+    },
+    {
+      "path": "typecheck-final.log",
+      "sha256": "0e0bff5803b23dd4d73af9c1d4e37511cd5ff4c71615de8f011b9cf40986dbbb",
+      "localIgnored": true
+    },
+    {
+      "path": "tests-resumed.log",
+      "sha256": "c68fa89a93cb09fbe595f36e2ff25dc6d3c478faf686b47939044a38b19c8041",
+      "localIgnored": true
+    },
+    {
+      "path": "review-fix-tests.log",
+      "sha256": "c9fe08ab6dba2533307a8c198ee15ea7d19acf00faf44d98c50afc2f63dc23b5",
+      "localIgnored": true
+    }
+  ],
+  "sourceBindingScriptExitCode": 0,
+  "sourceBindingScope": {
+    "beautyObjects": 106,
+    "hazardOriginals": 30,
+    "telecomOfficialKeys": 130
+  }
 }

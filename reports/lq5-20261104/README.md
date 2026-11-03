@@ -24,3 +24,15 @@
 - `tests-final.log`：関連13ファイル128テスト合格。通常採点・全肢理由・履歴・復習・出典表示・設定・ホームの回帰検証。
 
 ローカル公式PDF/画像/ブラウザ証跡は `local-sources/` に保持しGitには含めない。公式原紙全件の新規文字起こしを行ったという主張はせず、同一hashと同一内容の既存受入を継承する。push・PR作成/更新・デプロイ・本番書込みは実施しない。
+
+## 継続検証・独立レビュー補修
+
+指定の `C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra` による初回独立レビューは `astra-review-1.md`。美容師のランダム選択肢並べ替えが公式番号を記す既存解説と食い違う点、対象5資格の検索API/UI接続不足を指摘され、`3a8ad07da` で補修した。美容師は全106問の公式順を保持する。対象本文・選択肢・正答・解説の改稿はない。
+
+- `resumed-checks.json`：全体validate 26,705問 fail=0、typecheck成功、関連128テストと補修関連42テスト成功（重複を除く144テスト）。元ログはローカル保持、hashを記録。原稿/原紙結合スクリプトも再実行し成功。
+- `development-browser-observation.json`：開発用webpack chunkの途中切断でエラー1件を記録。8フローが動いても、この実行をクリーンな合格には採用しない。
+- `production-verification.json`：本番コンパイル・TypeScript検査・12,688ページ生成の完走と、その成果物によるlocalhost起動。PowerShell wrapperは警告のNativeCommandErrorを含みexit=1。Next自身のnative exitは別途記録していないため、native exit=0を主張しない。
+- `browser-acceptance.json`：本番成果物で8代表フロー（美容師2図、乙1/2/6の各2問）、全肢理由、採点、履歴再読込、API、検索5資格、検索UI、美容師保留4問の404がPASS。ブラウザ例外0。モバイル幅390も検証。外部通信・Service Workerを遮断したオンライン学習検証であり、オフライン動作の受入ではない。
+- `telecom-browser-acceptance.json`：同じ本番成果物で2開催の通常回答・履歴再読込/再訪、全16図のdecode、参照専用問21の回答操作なし・履歴なし・通常API409がPASS。
+
+最終の独立再レビュー結果は別票へ固定する。今回のローカル候補受入を本番公開済みとは扱わない。
