@@ -1,0 +1,801 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-11",
+  "reviewer": "chizai2_targeted_review",
+  "status": "completed-targeted-review-with-historical-limitations",
+  "scope": {
+    "input": "C:/wt/chizai2-latest-two-20261011/data/prepared-chizai2/questions.ts",
+    "totalOriginalQuestions": 160,
+    "reviewedQuestionCount": 10,
+    "reviewedChoiceExplanationCount": 32,
+    "numericQuestionCount": 2,
+    "unreviewedQuestionCount": 150,
+    "ids": [
+      "chizai2-2026-07-12-gakka-q34",
+      "chizai2-2026-03-08-practical-q18",
+      "chizai2-2026-03-08-gakka-q32",
+      "chizai2-2026-03-08-gakka-q30",
+      "chizai2-2026-07-12-practical-q13",
+      "chizai2-2026-03-08-practical-q21",
+      "chizai2-2026-07-12-practical-q34",
+      "chizai2-2026-03-08-practical-q34",
+      "chizai2-2026-07-12-gakka-q12",
+      "chizai2-2026-03-08-gakka-q31"
+    ]
+  },
+  "publication": {
+    "published": false,
+    "license": "IP-EDU-permission-pending",
+    "permissionObtained": false,
+    "retainNeedsReview": true,
+    "retainLegalReviewStatus": "pending-historical-law-verification"
+  },
+  "summary": {
+    "findings": 5,
+    "questionsWithProposedChanges": 4,
+    "officialAnswerChanges": 0,
+    "questionTextChanges": 0,
+    "typeChanges": 0,
+    "confirmedNumericAnswers": [
+      "202612",
+      "208000"
+    ],
+    "note": "10原問に限定した独立査読。保存済み160原問全量の二重査読、完全な歴史法令監査又は出版許諾確認ではない。"
+  },
+  "findings": [
+    {
+      "id": "chizai2-2026-07-12-gakka-q34",
+      "choiceKey": "エ",
+      "fieldPath": "choiceExplanations.エ",
+      "kind": "clarification",
+      "currentExplanation": "特許庁長官への意見照会は所定の要件・手続による。求めがあれば常に税関長が照会しなければならないという無条件の義務ではない。",
+      "replacement": "適法な求めがあれば税関長は原則として特許庁長官の意見を求めるが、関税法69条の17第2項ただし書による例外がある。侵害・非侵害の認定が確実な場合などには照会を行わないため、例外なく照会義務を負うとする記述は不適切。",
+      "reason": "現説明は方向として正しいが、単なる手続上の条件だけでなく原則義務と法定例外の構造を示すと誤読を防げる。",
+      "primarySourceUrls": [
+        "https://www.customs.go.jp/kaisei/zeikantsutatsu/kihon/TU-S47k0100-s06-07~08.pdf",
+        "https://www.customs.go.jp/mizugiwa/chiteki/pages/c_003.htm"
+      ],
+      "sourceKeys": [
+        "customsCircular",
+        "customsPublic"
+      ],
+      "lawReferenceDate": "2026-01-01",
+      "baselineApplicability": [
+        {
+          "sourceKey": "customsCircular",
+          "evidence": "取得した現行基本通達の基準日版を取得していない。2026-01-01版との完全照合は未実施。"
+        },
+        {
+          "sourceKey": "customsPublic",
+          "evidence": "現行公開説明。基準日の版確定なし。"
+        }
+      ],
+      "confidence": {
+        "substantive": "high",
+        "historical": "not-fully-verified"
+      },
+      "answerChange": false,
+      "requiresHistoricalVerificationBeforePublication": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "choiceKey": "イ",
+      "fieldPath": "choiceExplanations.イ",
+      "kind": "unsupported-condition-removal",
+      "currentExplanation": "先願の生産方法特許との利用関係等では育成者権の効力が及ばない場合がある。特許に基づく生産を一律に侵害とする断定は誤り。",
+      "replacement": "登録品種の育成方法について特許権を有する者等が、その特許に係る方法で当該登録品種の種苗を生産する行為には、種苗法21条1項2号により育成者権の効力が及ばない。したがって、設問のY社による生産を育成者権侵害とする記述は不適切。",
+      "reason": "先願の生産方法特許という条件は本問に示されず、確認できた法文抽出にもない。育成方法特許に係る種苗生産の適用除外を説明する。全文歴史条文未取得なのでその点は残す。",
+      "primarySourceUrls": [
+        "https://laws.e-gov.go.jp/law/410AC0000000083?occasion_date=20180510",
+        "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf",
+        "https://www.shugiin.go.jp/internet/itdb_shitsumona.nsf/html/shitsumon/b122008.htm"
+      ],
+      "sourceKeys": [
+        "seedLaw",
+        "seedAmendment",
+        "seedOldAnswer"
+      ],
+      "lawReferenceDate": "2025-09-01",
+      "baselineApplicability": [
+        {
+          "sourceKey": "seedLaw",
+          "evidence": "全文は取得できていない。occasion_date指定や検索スニペットを2025-09-01の歴史条文取得と扱わない。"
+        },
+        {
+          "sourceKey": "seedAmendment",
+          "evidence": "1項2号全文が略のため、その全文・先願要件不存在の単独証明には用いない。"
+        },
+        {
+          "sourceKey": "seedOldAnswer",
+          "evidence": "旧法の制度趣旨の補助確認に限る。2025年条文の証明とはしない。"
+        }
+      ],
+      "confidence": {
+        "substantive": "high",
+        "historical": "not-fully-verified"
+      },
+      "answerChange": false,
+      "requiresHistoricalVerificationBeforePublication": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "choiceKey": "$question",
+      "fieldPath": "explanation",
+      "kind": "consistency-fix",
+      "currentExplanation": "育成者権は新品種育成その他の試験・研究のための利用等には及ばない。ウが適切。譲渡後の消尽や先願の生産方法特許との利用関係にも例外がある。",
+      "replacement": "育成者権は新品種の育成その他の試験又は研究のための品種の利用には及ばないため、ウが適切。適法な譲渡後の再譲渡には原則として消尽が働き、登録品種の育成方法の特許権者等による当該方法での種苗生産にも効力の制限がある。",
+      "reason": "選択肢イの修正に合わせ、総説に残る先願という不要な条件を取り除く。",
+      "primarySourceUrls": [
+        "https://laws.e-gov.go.jp/law/410AC0000000083?occasion_date=20180510",
+        "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf"
+      ],
+      "sourceKeys": [
+        "seedLaw",
+        "seedAmendment"
+      ],
+      "lawReferenceDate": "2025-09-01",
+      "baselineApplicability": [
+        {
+          "sourceKey": "seedLaw",
+          "evidence": "全文は取得できていない。occasion_date指定や検索スニペットを2025-09-01の歴史条文取得と扱わない。"
+        },
+        {
+          "sourceKey": "seedAmendment",
+          "evidence": "1項2号全文が略のため、その全文・先願要件不存在の単独証明には用いない。"
+        }
+      ],
+      "confidence": {
+        "substantive": "high",
+        "historical": "not-fully-verified"
+      },
+      "answerChange": false,
+      "requiresHistoricalVerificationBeforePublication": true
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q13",
+      "choiceKey": "ウ",
+      "fieldPath": "choiceExplanations.ウ",
+      "kind": "clarification",
+      "currentExplanation": "同日出願の調整や他の登録要件が必要で、単なる承諾だけで登録が保証されない。",
+      "replacement": "同日出願にもコンセント制度は適用され得るが、承諾に加え、双方の商標の使用により商品・役務の出所について混同を生ずるおそれがないことが必要である。したがって、Y社の承諾さえあれば登録できるとはいえない。",
+      "reason": "現説明の他の登録要件という一般論に、2024年施行の制度が要求する無混同の条件を明示する。8条2項ただし書の全文は未取得のため公開前に条文照合を残す。",
+      "primarySourceUrls": [
+        "https://chizai-portal.inpit.go.jp/madoguchi/shiga/files/docs/hiroba_3.pdf",
+        "https://www.jpo.go.jp/system/trademark/gaiyo/consent/index.html"
+      ],
+      "sourceKeys": [
+        "consent",
+        "consentSameDay"
+      ],
+      "lawReferenceDate": "2026-01-01",
+      "baselineApplicability": [
+        {
+          "sourceKey": "consent",
+          "evidence": "商標法4条4項の公式説明。同日出願の8条2項ただし書そのものの全文確認はこの資料だけではできない。"
+        },
+        {
+          "sourceKey": "consentSameDay",
+          "evidence": "ページ全文は取得失敗。条文番号の基準日照合は未完了。"
+        }
+      ],
+      "confidence": {
+        "substantive": "high",
+        "historical": "partially-supported-by-2024-effective-date"
+      },
+      "answerChange": false,
+      "requiresHistoricalVerificationBeforePublication": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q21",
+      "choiceKey": "イ",
+      "fieldPath": "choiceExplanations.イ",
+      "kind": "terminology-correction",
+      "currentExplanation": "AI作成の文案でも当事者の合意等の成立要件を満たせば契約は成立し得る。内容の正確性や登記による権利移転は別途確認する。",
+      "replacement": "AI作成の文案でも当事者の合意等の成立要件を満たせば契約は成立し得る。内容の正確性や登録による権利移転は別途確認する。",
+      "reason": "特許権・商標権の移転については登記ではなく登録が正しい用語。契約成立と権利移転の効力を区別する現在の構成は維持する。",
+      "primarySourceUrls": [
+        "https://www8.cao.go.jp/kisei-kaikaku/kisei/imprint/document/200619document01.pdf",
+        "https://laws.e-gov.go.jp/law/334AC0000000121"
+      ],
+      "sourceKeys": [
+        "contract",
+        "patentLaw"
+      ],
+      "lawReferenceDate": "2025-09-01",
+      "baselineApplicability": [
+        {
+          "sourceKey": "contract",
+          "evidence": "基準日前に公表された資料。特許権・商標権の移転登録規定そのものの資料ではない。"
+        },
+        {
+          "sourceKey": "patentLaw",
+          "evidence": "条番号の参照先。取得済み歴史条文の根拠とは扱わない。"
+        }
+      ],
+      "confidence": {
+        "substantive": "high",
+        "historical": "registration-provision-full-text-not-verified"
+      },
+      "answerChange": false,
+      "requiresHistoricalVerificationBeforePublication": true
+    }
+  ],
+  "reviews": [
+    {
+      "id": "chizai2-2026-07-12-gakka-q34",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2026-01-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260712_2Q_g.pdf",
+      "sourcePdfSha256": "05ddcb9c67435b59bca50a451a0462acbd74156440cf7eaa50d5b07a4d3931e6",
+      "sourceTextSha256": "cb5df3f636b045e59fa8ca4d4ac6e3f2c580bb00bf40d35022c73ae7d1db5476",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "customsCircular",
+        "customsPublic"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "育成者権を侵害する物品は,輸入してはならない貨物の対象とはならない。",
+          "currentExplanation": "育成者権を侵害する物品も輸入禁止貨物の対象に含まれる。",
+          "assessment": "育成者権侵害品も対象。否定する肢は誤り。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "他人の商品の形態を模倣した商品は,輸入してはならない貨物の対象とはならない。",
+          "currentExplanation": "不正競争防止法の形態模倣に該当する貨物も水際取締りの対象となり得る。",
+          "assessment": "形態模倣に該当する貨物も対象となり得る。全模倣品を無条件に対象とまではしていない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "税関長は,輸入されようとする貨物が,知的財産侵害物品に該当すると認定した場合,裁判\n  所の判決によらず,その貨物を没収して廃棄することができる。",
+          "currentExplanation": "税関での認定手続を経て、税関長が貨物を没収・廃棄できる。民事裁判の判決を待つ制度ではない。",
+          "assessment": "税関の認定を前提に没収・廃棄できるという説明は整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "特許権者は,認定手続がとられたときは,税関長に対し,特許庁長官の意見を聴くことを求\n  めることができる。この求めがあった場合,税関長は,政令で定めるところにより特許庁長\n  官に対し意見を求めなければならない。",
+          "currentExplanation": "特許庁長官への意見照会は所定の要件・手続による。求めがあれば常に税関長が照会しなければならないという無条件の義務ではない。",
+          "assessment": "原則的照会義務のただし書例外を具体化する修正提案。",
+          "finding": true,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "proposed-explanation-patch",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_j.pdf",
+      "sourcePdfSha256": "19d966320bb04416fc163bec1dab5da8f7e4602299c5f0fcec1535a24c2c53ff",
+      "sourceTextSha256": "ea72d6c5a278933d7219ec724f0e6a69148c576639554a8c9b3e92dff572e1fd",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "seedLaw",
+        "seedAmendment",
+        "seedPamphlet",
+        "seedLatest"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "わが社から品種Aの種苗を購入した者が,その種苗を無断で第三者に譲渡する行為は,わが\n  社の育成者権を侵害する。",
+          "currentExplanation": "適法に譲渡された種苗の再譲渡には、原則として権利の消尽が働く。購入者の再譲渡を一律に侵害とできない。",
+          "assessment": "適法譲渡後の消尽を原則とする説明は設問の単純再譲渡と整合。増殖等の例外を否定していない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "品種Aの育成方法に係る特許権を有するY社が,その特許発明に基づいて品種Aを生産する\n  行為は,わが社の育成者権を侵害する。",
+          "currentExplanation": "先願の生産方法特許との利用関係等では育成者権の効力が及ばない場合がある。特許に基づく生産を一律に侵害とする断定は誤り。",
+          "assessment": "先願要件を追加する現説明を修正提案。",
+          "finding": true,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "品種Aを試験又は研究のために利用する行為に対しては,育成者権を行使できない。",
+          "currentExplanation": "試験・研究のための利用には育成者権の効力の制限がある。",
+          "assessment": "試験研究例外と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "品種Aは,永年性植物であるので,育成者権の存続期間は,品種登録の日から20年間であ\n  る。",
+          "currentExplanation": "永年性植物の存続期間は登録から30年であり、20年ではない。",
+          "assessment": "基準日では30年を維持。2026-07-24以降の40年告知を遡及適用しない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "proposed-explanation-patch",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q32",
+      "type": "multiple-choice",
+      "answer": "エ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_g.pdf",
+      "sourcePdfSha256": "ce9e79bfe94f03706bf866bfb3b0dceff8cb2b46e428dcc4697db4e3f431c3c8",
+      "sourceTextSha256": "79235013e26a4cd95e9017d3c71fd2233ad69c4c4ace462fd5ea037796d50bc3",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "employee",
+        "patentLaw"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "企業は,従業者のした職務発明について,発明完成と同時に特許を受ける権利を取得するこ\n  とを,契約や勤務規則等において予め定めることができる。",
+          "currentExplanation": "職務発明について、契約・勤務規則等で使用者に特許を受ける権利を原始帰属させる定めができる。",
+          "assessment": "勤務規則等による事前の原始帰属の定めと整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "同一企業内で異動前の職務に属する発明を異動後の部署で完成させた場合は職務発明となる\n  が,企業在籍時の職務に属する発明を退職後に完成させた場合は退職前の企業の職務発明と\n  はならない。",
+          "currentExplanation": "同一企業内の異動では過去の職務も考慮する。一方、退職後に新たに完成した発明まで元企業の従業者としての職務発明と当然には扱わない。",
+          "assessment": "完成時の従業者性と同一使用者内の過去の職務を区別する説明。退職後完成と在職中完成を混同していない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "実用新案法においては,特許法上の職務発明に係る規定が準用されており,実用新案登録出\n  願に係る考案に対しても,同規定が適用される。",
+          "currentExplanation": "実用新案の職務考案にも特許法の職務発明の規定が準用される。",
+          "assessment": "実用新案法11条による職務考案への準用と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "2人の者が共同で発明をしたときに,一方の者の発明が職務発明となり他方の者の発明がい\n  わゆる自由発明となる場合はない。",
+          "currentExplanation": "職務発明かどうかは各人の業務・職務等で判断される。共同発明者全員が同じ分類になるとは限らない。",
+          "assessment": "共同発明者ごとに使用者・職務との関係を判断する説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q30",
+      "type": "multiple-choice",
+      "answer": "イ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_g.pdf",
+      "sourcePdfSha256": "ce9e79bfe94f03706bf866bfb3b0dceff8cb2b46e428dcc4697db4e3f431c3c8",
+      "sourceTextSha256": "79235013e26a4cd95e9017d3c71fd2233ad69c4c4ace462fd5ea037796d50bc3",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "moral"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "著作者人格権は,他人に譲ることや著作者が亡くなったときに相続をすることはできないが,\n  放棄をすることはできる。",
+          "currentExplanation": "一身専属の人格権は譲渡・相続できない。権利を行使しない特約と、権利そのものを自由に放棄できるとの断定は異なる。",
+          "assessment": "不行使特約と権利放棄を区別する慎重な表現を維持。59条が放棄禁止を明文規定するとの断定は加えない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "法人等の職務著作に該当する著作物は,その法人等が著作者人格権を有する。",
+          "currentExplanation": "法人等の職務著作が成立すれば、その法人等が著作者人格権を有する。",
+          "assessment": "職務著作の法人著作者に人格権が帰属する説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "共同著作物の著作者人格権は,著作者全員の合意がなくても行使することができる。",
+          "currentExplanation": "共同著作物の人格権の行使には著作者全員の合意が必要。合意の拒絶にも制約がある。",
+          "assessment": "全員合意と不合理な拒否の制約を併記しており整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "映画の著作物の著作者人格権は,映画製作者に対し当該映画の著作物の製作に参加すること\n  を約束している者に帰属する。",
+          "currentExplanation": "映画の人格権は全体的形成に創作的に寄与した著作者等に帰属する。製作参加を約束した者全員に当然帰属するわけではない。",
+          "assessment": "映画の著作者と映画製作者への財産権帰属を区別しており整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q13",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2026-01-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260712_2Q_j.pdf",
+      "sourcePdfSha256": "8027085283a725c3694d7191db3b6f7572e0e31365a9f4578493beb275057be5",
+      "sourceTextSha256": "2b3553d590a79d80ce0cd9ca456d3179a3817e2d588e3fc3400946789672986f",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "consent",
+        "consentSameDay"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "特許庁長官からY社と協議するように命令されることがある。",
+          "currentExplanation": "同日出願の場合、特許庁長官が期間を指定して協議を命ずることがある。",
+          "assessment": "同日出願の協議命令と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "わが社とY社のどちらが商標登録を受けられるか,くじで決めることがある。",
+          "currentExplanation": "協議が成立しない場合等には、公正な方法によるくじで一方を決めることがある。",
+          "assessment": "協議不調等のくじと整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "Y社から承諾さえ得れば,わが社は商標登録出願Mについて商標登録を受けることができる。",
+          "currentExplanation": "同日出願の調整や他の登録要件が必要で、単なる承諾だけで登録が保証されない。",
+          "assessment": "承諾に加えて無混同条件を明示する修正提案。",
+          "finding": true,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "出願公開後であってもY社が商標登録出願Nを取り下げれば,商標登録出願Mについて,商\n  標登録を受けることができる。",
+          "currentExplanation": "他方の出願が取り下げられれば、この同日競合の問題が解消され得る。公開済みだから取り下げが無意味にはならない。",
+          "assessment": "取下げにより競合が解消され得るとの限定表現は適切。他の登録要件を無条件に免除していない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "proposed-explanation-patch",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q21",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_j.pdf",
+      "sourcePdfSha256": "19d966320bb04416fc163bec1dab5da8f7e4602299c5f0fcec1535a24c2c53ff",
+      "sourceTextSha256": "ea72d6c5a278933d7219ec724f0e6a69148c576639554a8c9b3e92dff572e1fd",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "contract",
+        "patentLaw"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "譲渡契約の調印者は,できれば代表取締役が望ましいが,知的財産に関する契約の締結につ\n  いて権限を有する執行役員でも問題はない。",
+          "currentExplanation": "適切な契約締結権限がある者は署名でき、代表取締役本人に限られない。",
+          "assessment": "契約締結権限のある執行役員という設問の前提と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "特許や商標の譲渡に関する交渉の場合,生成AIを使用した無償のアプリケーションが作成\n  した契約書をそのまま使用した場合であっても,交渉する双方の署名押印があり,意思表示\n  が合致しているのであれば,契約の効力は発生する。",
+          "currentExplanation": "AI作成の文案でも当事者の合意等の成立要件を満たせば契約は成立し得る。内容の正確性や登記による権利移転は別途確認する。",
+          "assessment": "AIであるだけで無効にならない説明を維持し、登記を登録へ修正。",
+          "finding": true,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "契約の法的な証拠としての価値という観点からは,直筆でサインしている署名と,ゴム印で\n  氏名を印したような記名とでは,証拠としての価値はほとんど変わらない。",
+          "currentExplanation": "自筆署名と単なる記名は証拠上同じではない。押印・本人性等の条件も確認する。",
+          "assessment": "本人署名又は押印による真正成立の推定と単なる記名を区別。内容の信用性や他の証拠の有無を一律に決める趣旨ではない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "契約は内容が確定できる必要があり,譲渡の対象となる特許や商標が全く特定されていない\n  場合,有効な契約とは認められない。",
+          "currentExplanation": "譲渡対象を確定できないなら合意内容が定まらない。対象の特許・商標等を特定する必要がある。",
+          "assessment": "対象が全く特定不能という設問と整合。登録番号の記載だけを絶対要件にしていない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "proposed-explanation-patch",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q34",
+      "type": "numeric",
+      "answer": "202612",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2026-01-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260712_2Q_j.pdf",
+      "sourcePdfSha256": "8027085283a725c3694d7191db3b6f7572e0e31365a9f4578493beb275057be5",
+      "sourceTextSha256": "2b3553d590a79d80ce0cd9ca456d3179a3817e2d588e3fc3400946789672986f",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "patentLaw"
+      ],
+      "choices": [
+        {
+          "choiceKey": null,
+          "currentExplanation": "国内優先権を伴うQの公開は、原則として先の出願Pの日から1年6か月後。2025年6月5日＋1年6か月＝2026年12月なので、指定された西暦年4桁＋月2桁の形式で202612と記入する。後のQの日から計算しない。",
+          "assessment": "2025-06-05に18か月を加えると2026-12-05。回答単位は年月6桁なので202612。先の出願日起算という法解釈の歴史条文全文確認は別途残る。",
+          "calculationVerified": true
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q34",
+      "type": "numeric",
+      "answer": "208000",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_j.pdf",
+      "sourcePdfSha256": "19d966320bb04416fc163bec1dab5da8f7e4602299c5f0fcec1535a24c2c53ff",
+      "sourceTextSha256": "ea72d6c5a278933d7219ec724f0e6a69148c576639554a8c9b3e92dff572e1fd",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [],
+      "choices": [
+        {
+          "choiceKey": null,
+          "currentExplanation": "請求項数は独立請求項と従属請求項を合わせた14で計算する。出願手数料14,000円に、審査請求料の基本額138,000円と14項分の加算56,000円を足すので、合計208,000円となる。独立請求項4項だけを数える計算ではない。設問には減免の適用条件が示されていない。",
+          "assessment": "設問の表に従い14000 + 138000 + 4000 * (4 + 10) = 208000。全14項を数える。空のchoicesと数値型を維持。",
+          "calculationVerified": true
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-07-12-gakka-q12",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2026-01-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260712_2Q_g.pdf",
+      "sourcePdfSha256": "05ddcb9c67435b59bca50a451a0462acbd74156440cf7eaa50d5b07a4d3931e6",
+      "sourceTextSha256": "cb5df3f636b045e59fa8ca4d4ac6e3f2c580bb00bf40d35022c73ae7d1db5476",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "patentLaw"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "国内優先権の主張を伴う特許出願は,先の出願の日から1年4カ月以内にしなければならな\n  い。",
+          "currentExplanation": "通常の国内優先権の主張を伴う後の出願は先の出願から1年以内。1年4か月は主張書面等の手続期限と混同しない。",
+          "assessment": "原則1年以内とする説明は整合。1年4か月の手続期限と出願期限を混同していない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "国内優先権の主張を伴う特許出願に係る特許権の存続期間は,先の出願の日から20年を\n  もって終了する。",
+          "currentExplanation": "特許権の通常の存続期間は後の出願の出願日から20年。優先日から20年ではない。",
+          "assessment": "20年の起算を後の出願日とする説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "国内優先権の主張を伴う特許出願は,先の出願の日から1年6カ月を経過したときに出願公\n  開される。",
+          "currentExplanation": "国内優先権を主張する場合、先の出願日を基準に原則1年6か月で公開される。",
+          "assessment": "公開の起算を先の出願日とし、原則18か月とする説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "国内優先権の主張を伴う特許出願についての出願審査の請求は,後の出願と同時にする必要\n  がある。",
+          "currentExplanation": "審査請求は後の出願と同時に限られず、原則としてその出願日から3年以内に行える。",
+          "assessment": "後の出願の日から原則3年以内の審査請求と整合。同時請求必須ではない。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q31",
+      "type": "multiple-choice",
+      "answer": "ウ",
+      "officialAnswerPreserved": true,
+      "lawReferenceDate": "2025-09-01",
+      "sourcePdfUrl": "https://www.kentei-info-ip-edu.org/library/pdf/260308_2Q_g.pdf",
+      "sourcePdfSha256": "ce9e79bfe94f03706bf866bfb3b0dceff8cb2b46e428dcc4697db4e3f431c3c8",
+      "sourceTextSha256": "79235013e26a4cd95e9017d3c71fd2233ad69c4c4ace462fd5ea037796d50bc3",
+      "sourceComparison": "指定4PDFのローカル抽出textの対象設問・共通事例・選択肢・公式正答を確認。採用済み原問は変更しない。",
+      "sourceKeys": [
+        "designLaw"
+      ],
+      "choices": [
+        {
+          "choiceKey": "ア",
+          "sourceChoice": "意匠登録出願後3年以内に出願審査請求をする必要がある。",
+          "currentExplanation": "意匠には特許と同じ審査請求制度はなく、出願について審査される。",
+          "assessment": "意匠に審査請求制度なしという説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "イ",
+          "sourceChoice": "図面の補正が要旨の変更に該当するとして審査官によってその補正が却下された場合の決定\n  に対する不服申立ては,拒絶査定不服審判の請求とともにしなければならない。",
+          "currentExplanation": "意匠の補正却下決定に対しては独立の不服審判の制度がある。拒絶査定不服審判との同時請求が必須ではない。",
+          "assessment": "補正却下決定に対する独立の不服審判の説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "ウ",
+          "sourceChoice": "意匠登録出願に対する審査官からの拒絶理由の通知に対しては,意見書若しくは手続補正書,\n  又はその双方を提出することができる。",
+          "currentExplanation": "指定期間内に反論の意見書や適法な補正書を提出でき、双方の提出も可能。",
+          "assessment": "意見書、補正書、双方のいずれも可能という説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        },
+        {
+          "choiceKey": "エ",
+          "sourceChoice": "秘密意匠の請求は,意匠登録出願後には行うことができない。",
+          "currentExplanation": "秘密意匠の請求は出願時だけでなく、所定の最初の登録料納付時にも行える。",
+          "assessment": "最初の登録料納付時にも秘密意匠請求が可能との説明と整合。",
+          "finding": false,
+          "verificationLimit": "source設問との整合を確認した限定査読。基準日条文全文による独立照合完了を意味しない。"
+        }
+      ],
+      "disposition": "no-change-proposed",
+      "historicalLawStatus": "pending-historical-law-verification"
+    }
+  ],
+  "sources": {
+    "customsCircular": {
+      "url": "https://www.customs.go.jp/kaisei/zeikantsutatsu/kihon/TU-S47k0100-s06-07~08.pdf",
+      "access": "full-text",
+      "locator": "69の17-5(7)、PDF83-84頁",
+      "supports": "69条の17第2項ただし書に基づく意見照会を行わない場合。侵害確実、許諾等による非侵害確実、自発的処理等。",
+      "historicalLimit": "取得した現行基本通達の基準日版を取得していない。2026-01-01版との完全照合は未実施。"
+    },
+    "customsPublic": {
+      "url": "https://www.customs.go.jp/mizugiwa/chiteki/pages/c_003.htm",
+      "access": "full-text",
+      "supports": "特許庁長官への意見照会制度・求めの期間・技術的範囲等。",
+      "historicalLimit": "現行公開説明。基準日の版確定なし。"
+    },
+    "seedLaw": {
+      "url": "https://laws.e-gov.go.jp/law/410AC0000000083?occasion_date=20180510",
+      "access": "search-snippet-only",
+      "supports": "種苗法21条の登録品種育成方法の特許権者等による種苗生産の適用除外。検索抽出文には先願要件なし。",
+      "historicalLimit": "全文は取得できていない。occasion_date指定や検索スニペットを2025-09-01の歴史条文取得と扱わない。"
+    },
+    "seedAmendment": {
+      "url": "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf",
+      "access": "full-text",
+      "locator": "種苗法改正案新旧対照条文、21条",
+      "supports": "2020年改正資料では21条1項は略、旧4項の消尽条項を2項に移す。",
+      "historicalLimit": "1項2号全文が略のため、その全文・先願要件不存在の単独証明には用いない。"
+    },
+    "seedPamphlet": {
+      "url": "https://www.maff.go.jp/j/shokusan/hinshu/ikuseisyaken_hogo/attach/pdf/ikuseisyaken_hogo-28.pdf",
+      "access": "full-text",
+      "locator": "令和4年4月パンフレット、PDF3頁",
+      "supports": "一般25年、果樹等の永年性植物30年。",
+      "historicalLimit": "基準日前の公式資料。基準日までの全改正履歴の独立全照合ではない。"
+    },
+    "seedLatest": {
+      "url": "https://www.maff.go.jp/j/shokusan/hinshu/index.html",
+      "access": "full-text",
+      "supports": "2026-07-24から存続期間25年→35年、永年性植物30年→40年の告知。",
+      "historicalLimit": "基準日後の変更。設問の30年を40年に更新しない根拠として限定利用。"
+    },
+    "seedOldAnswer": {
+      "url": "https://www.shugiin.go.jp/internet/itdb_shitsumona.nsf/html/shitsumon/b122008.htm",
+      "access": "full-text",
+      "locator": "平成4年1月28日答弁、三について",
+      "supports": "旧種苗法の育成方法特許権者・実施権者と品種登録者の調整制度。",
+      "historicalLimit": "旧法の制度趣旨の補助確認に限る。2025年条文の証明とはしない。"
+    },
+    "consent": {
+      "url": "https://chizai-portal.inpit.go.jp/madoguchi/shiga/files/docs/hiroba_3.pdf",
+      "access": "full-text",
+      "supports": "2024-04-01施行、承諾に加えて需要者に誤認混同を生じるおそれがないことが必要。",
+      "historicalLimit": "商標法4条4項の公式説明。同日出願の8条2項ただし書そのものの全文確認はこの資料だけではできない。"
+    },
+    "consentSameDay": {
+      "url": "https://www.jpo.go.jp/system/trademark/gaiyo/consent/index.html",
+      "access": "search-snippet-only; direct-open-failed",
+      "supports": "特許庁公式検索結果では同日出願への適用と8条に言及。",
+      "historicalLimit": "ページ全文は取得失敗。条文番号の基準日照合は未完了。"
+    },
+    "contract": {
+      "url": "https://www8.cao.go.jp/kisei-kaikaku/kisei/imprint/document/200619document01.pdf",
+      "access": "full-text",
+      "locator": "2020-06-19 押印についてのQ&A、Q1-Q3",
+      "supports": "意思の合致による契約成立、本人の署名又は押印と民訴228条4項の真正成立の推定、成立の真正と内容の信用性の区別。",
+      "historicalLimit": "基準日前に公表された資料。特許権・商標権の移転登録規定そのものの資料ではない。"
+    },
+    "moral": {
+      "url": "https://www.bunka.go.jp/chosakuken/keiyaku_manual/1_1_3.html",
+      "access": "full-text",
+      "supports": "人格権の譲渡不可、行使しない特約との区別。",
+      "historicalLimit": "放棄一般の明文禁止を示す資料ではない。基準日版を確定していない。"
+    },
+    "employee": {
+      "url": "https://www.inpit.go.jp/content/100779572.pdf",
+      "access": "search-snippet-only",
+      "supports": "平成28年職務発明改正・原始帰属。",
+      "historicalLimit": "全文及び基準日までの全改正履歴の確認は未実施。"
+    },
+    "patentLaw": {
+      "url": "https://laws.e-gov.go.jp/law/334AC0000000121",
+      "access": "historical-full-text-not-obtained",
+      "supports": "対象条項35、41、48条の3、64、67、98。",
+      "historicalLimit": "条番号の参照先。取得済み歴史条文の根拠とは扱わない。"
+    },
+    "designLaw": {
+      "url": "https://laws.e-gov.go.jp/law/334AC0000000125",
+      "access": "historical-full-text-not-obtained",
+      "supports": "対象条項14、17条の2、47。",
+      "historicalLimit": "条番号の参照先。取得済み歴史条文の根拠とは扱わない。"
+    }
+  },
+  "accessLimitations": {
+    "inheritedDoNotRetry": [
+      "https://laws.e-gov.go.jp/api/1/lawdata/334AC0000000121",
+      "https://www.jpo.go.jp/system/patent/pct/tetuzuki/pct_tetuduki_qa.html",
+      "https://www.jpo.go.jp/system/patent/pct/tetuzuki/unofficial_comment.html"
+    ],
+    "deniedAndStopped": [
+      "https://www.japaneselawtranslation.go.jp/ja/laws/view/4036",
+      "https://www.jpo.go.jp/news/kokusai/developing/training/textbook/document/index/Outline_of_Japanese_Patent_Law_j.pdf",
+      "https://www.meti.go.jp/press/2025/04/20250407001/20250407001.html"
+    ],
+    "failedAndNotRetried": [
+      "https://www.jpo.go.jp/system/trademark/gaiyo/consent/index.html",
+      "https://www.jpo.go.jp/resources/shingikai/sangyo-kouzou/shousai/shohyo_wg/document/32-shiryou/04.pdf",
+      "https://www.jpo.go.jp/system/laws/rule/guideline/patent/tukujitu_kijun/ht/05_0200.html"
+    ],
+    "emptyBody": [
+      "https://laws.e-gov.go.jp/law/410AC0000000083"
+    ],
+    "note": "拒否URLの再試行やアクセス制限の迂回は行わず、別の通常公開公式資料と取得済み本文・検索抽出を区別した。"
+  },
+  "remainingBlockers": [
+    "基準日2025-09-01及び2026-01-01の全対象条文の完全な版照合は未完了。",
+    "公式過去問の公開利用許諾は未確認。公開フラグ及び要レビュー状態を解除しない。"
+  ],
+  "mutations": {
+    "appCodeEdited": false,
+    "questionFileEdited": false,
+    "gitOperations": false,
+    "newPaidApis": false,
+    "secretsAccessed": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "checkedAtUtc": "2026-10-11T07:07:38.105Z",
+  "originals": 160,
+  "choiceReasons": 651,
+  "originalTextAudit": "PASS",
+  "directValidator": "PASS",
+  "hostedTests": 24,
+  "priorAppWideChecks": "typecheck/lint/full 4767 tests/build PASS, source unchanged",
+  "currentLocalNodeTestCli": "spawn EPERM; not retried; Hosted CI requested",
+  "publicEntryPoints": [
+    {
+      "path": "data/questions/index.ts",
+      "containsPreparedImport": false
+    },
+    {
+      "path": "lib/questions/get-questions.ts",
+      "containsPreparedImport": false
+    },
+    {
+      "path": "lib/qualifications/catalog.ts",
+      "containsPreparedImport": false
+    }
+  ],
+  "publicationPerformed": false,
+  "permission": "not-confirmed",
+  "historicalLawReview": "pending",
+  "rejectedOperationsNotRetried": [
+    "pnpm media:status",
+    "e-Gov patent-law XML",
+    "JPO two PCT URLs"
+  ],
+  "hostedPreparedTests": {
+    "commit": "938cd0474c819fc2f03f9cabf5435a03edc370fb",
+    "url": "https://github.com/kameking-lab/ipa-quiz-site/actions/runs/38119985497",
+    "passed": 24,
+    "failed": 0,
+    "verdict": "PASS",
+    "finalReviewFixCommitRequiresNewRun": true
+  },
+  "targetedReview": {
+    "originalQuestions": 10,
+    "choiceExplanations": 32,
+    "numericQuestions": 2,
+    "appliedExplanationPatches": 5
+  },
+  "afterTargetedFixes": {
+    "directValidator": "PASS",
+    "originalTextAudit": "PASS",
+    "originalQuestions": 160,
+    "choiceExplanations": 651,
+    "originalQuestionOrOfficialAnswerChanged": false
+  }
+}

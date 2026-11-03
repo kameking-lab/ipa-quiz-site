@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "appliedAtUtc": "2026-10-11T07:07:30.362Z",
+  "reviewFileSha256": "700cbc201172bf123f2bb569be4ec9508383b7aaeac248b08d5ac42176074846",
+  "beforeQuestionFileSha256": "33ff9d13b1555636f8314a186794509bc67f9ef45e7535aeb2765f3270bd15d8",
+  "afterQuestionFileSha256": "420599c16994b054621e243c2f396a0a1bf397d46b7c2c63e251402103ba3802",
+  "reviewedQuestionCount": 10,
+  "reviewedChoiceExplanationCount": 32,
+  "numericQuestionsVerified": 2,
+  "explanationPatches": 5,
+  "changedOriginalCount": 4,
+  "originalQuestionCount": 160,
+  "choiceExplanationCount": 651,
+  "onlyListedExplanationFieldsChanged": true,
+  "originalQuestionTextChanged": false,
+  "officialAnswerChanged": false,
+  "typeChanged": false,
+  "publishedIncrement": 0,
+  "wholeCorpusIndependentReviewPerformed": false,
+  "historicalLawReview": "pending",
+  "permission": "not-confirmed",
+  "patches": [
+    {
+      "id": "chizai2-2026-07-12-gakka-q34",
+      "fieldPath": "choiceExplanations.エ",
+      "before": "特許庁長官への意見照会は所定の要件・手続による。求めがあれば常に税関長が照会しなければならないという無条件の義務ではない。",
+      "after": "適法な求めがあれば税関長は原則として特許庁長官の意見を求めるが、関税法69条の17第2項ただし書による例外がある。侵害・非侵害の認定が確実な場合などには照会を行わないため、例外なく照会義務を負うとする記述は不適切。",
+      "reason": "現説明は方向として正しいが、単なる手続上の条件だけでなく原則義務と法定例外の構造を示すと誤読を防げる。",
+      "primarySourceUrls": [
+        "https://www.customs.go.jp/kaisei/zeikantsutatsu/kihon/TU-S47k0100-s06-07~08.pdf",
+        "https://www.customs.go.jp/mizugiwa/chiteki/pages/c_003.htm"
+      ],
+      "historicalVerificationStillRequired": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "fieldPath": "choiceExplanations.イ",
+      "before": "先願の生産方法特許との利用関係等では育成者権の効力が及ばない場合がある。特許に基づく生産を一律に侵害とする断定は誤り。",
+      "after": "登録品種の育成方法について特許権を有する者等が、その特許に係る方法で当該登録品種の種苗を生産する行為には、種苗法21条1項2号により育成者権の効力が及ばない。したがって、設問のY社による生産を育成者権侵害とする記述は不適切。",
+      "reason": "先願の生産方法特許という条件は本問に示されず、確認できた法文抽出にもない。育成方法特許に係る種苗生産の適用除外を説明する。全文歴史条文未取得なのでその点は残す。",
+      "primarySourceUrls": [
+        "https://laws.e-gov.go.jp/law/410AC0000000083?occasion_date=20180510",
+        "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf",
+        "https://www.shugiin.go.jp/internet/itdb_shitsumona.nsf/html/shitsumon/b122008.htm"
+      ],
+      "historicalVerificationStillRequired": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q18",
+      "fieldPath": "explanation",
+      "before": "育成者権は新品種育成その他の試験・研究のための利用等には及ばない。ウが適切。譲渡後の消尽や先願の生産方法特許との利用関係にも例外がある。",
+      "after": "育成者権は新品種の育成その他の試験又は研究のための品種の利用には及ばないため、ウが適切。適法な譲渡後の再譲渡には原則として消尽が働き、登録品種の育成方法の特許権者等による当該方法での種苗生産にも効力の制限がある。",
+      "reason": "選択肢イの修正に合わせ、総説に残る先願という不要な条件を取り除く。",
+      "primarySourceUrls": [
+        "https://laws.e-gov.go.jp/law/410AC0000000083?occasion_date=20180510",
+        "https://www.maff.go.jp/j/shokusan/attach/pdf/shubyoho-20.pdf"
+      ],
+      "historicalVerificationStillRequired": true
+    },
+    {
+      "id": "chizai2-2026-07-12-practical-q13",
+      "fieldPath": "choiceExplanations.ウ",
+      "before": "同日出願の調整や他の登録要件が必要で、単なる承諾だけで登録が保証されない。",
+      "after": "同日出願にもコンセント制度は適用され得るが、承諾に加え、双方の商標の使用により商品・役務の出所について混同を生ずるおそれがないことが必要である。したがって、Y社の承諾さえあれば登録できるとはいえない。",
+      "reason": "現説明の他の登録要件という一般論に、2024年施行の制度が要求する無混同の条件を明示する。8条2項ただし書の全文は未取得のため公開前に条文照合を残す。",
+      "primarySourceUrls": [
+        "https://chizai-portal.inpit.go.jp/madoguchi/shiga/files/docs/hiroba_3.pdf",
+        "https://www.jpo.go.jp/system/trademark/gaiyo/consent/index.html"
+      ],
+      "historicalVerificationStillRequired": true
+    },
+    {
+      "id": "chizai2-2026-03-08-practical-q21",
+      "fieldPath": "choiceExplanations.イ",
+      "before": "AI作成の文案でも当事者の合意等の成立要件を満たせば契約は成立し得る。内容の正確性や登記による権利移転は別途確認する。",
+      "after": "AI作成の文案でも当事者の合意等の成立要件を満たせば契約は成立し得る。内容の正確性や登録による権利移転は別途確認する。",
+      "reason": "特許権・商標権の移転については登記ではなく登録が正しい用語。契約成立と権利移転の効力を区別する現在の構成は維持する。",
+      "primarySourceUrls": [
+        "https://www8.cao.go.jp/kisei-kaikaku/kisei/imprint/document/200619document01.pdf",
+        "https://laws.e-gov.go.jp/law/334AC0000000121"
+      ],
+      "historicalVerificationStillRequired": true
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-11T07:37:05.934Z",
+  "status": "completed-narrow-supplement-with-explicit-evidence-gaps",
+  "scope": {
+    "originalQuestionCount": 3,
+    "originalQuestionIds": [
+      "chizai2-2026-07-12-practical-q28",
+      "chizai2-2026-03-08-gakka-q19",
+      "chizai2-2026-03-08-gakka-q28"
+    ],
+    "deltaOnly": true,
+    "noFullReview": true,
+    "noQuestionTextSentExternally": true,
+    "noCodeManuscriptOrGitEdits": true,
+    "externalQueryContent": "法令名・条番号・施行年月日・一般的な法令制度名および公式URLのみ。原問・肢・解説の送信なし。",
+    "additionalPenaltyScan": "160原問のローカルJSONを懲役・禁錮・拘禁・刑事罰・罰金等で検索。全量の内容再査読はしていない。"
+  },
+  "input": {
+    "path": "C:/wt/chizai2-latest-two-20261011/data/prepared-chizai2/questions.ts",
+    "sha256": "420599c16994b054621e243c2f396a0a1bf397d46b7c2c63e251402103ba3802"
+  },
+  "publicationGate": {
+    "license": "IP-EDU-permission-pending",
+    "needsReview": true,
+    "legalReviewStatus": "pending-historical-law-verification",
+    "unchanged": true
+  },
+  "sources": {
+    "trademark2024": {
+      "url": "https://www.wipo.int/wipolex/en/legislation/details/22500",
+      "type": "WIPO公式公開の日本法文・2024-04-01改正版",
+      "readArticles": [
+        "19",
+        "20(2)-(4)",
+        "21(1)",
+        "36",
+        "38(1)-(6)",
+        "41(1)-(5)",
+        "41の2(1)-(8)",
+        "41の3(1)",
+        "43(1)",
+        "令和3年法律42号附則1条5号・5条2項",
+        "令和4年法律68号附則",
+        "令和5年法律51号附則"
+      ],
+      "verified": "指定各条の改正後文言が2024-04-01版に存在。両基準日前の版であることを確認。",
+      "limitation": "2024-04-01から2025-09-01/2026-01-01までの全改正の不存在は未証明。78条の本文は懲役のままで、2025年改正後の刑名の証拠には用いない。"
+    },
+    "amendment2023Act51": {
+      "url": "https://www.wipo.int/wipolex/en/legislation/details/22619",
+      "type": "WIPO改正法書誌",
+      "verified": "令和5年法律51号・2023-06-14公布、2024-04-01施行という書誌情報。本文PDF取得失敗済みのため再取得しない。",
+      "limitation": "国内施行期日政令および38条に関する逐条の施行・経過措置突合は未完了。"
+    },
+    "restorationGuidanceFailed": {
+      "url": "https://www.jpo.go.jp/e/system/laws/rule/other/remedial-measures.html",
+      "access": "Internal Error; stopped; not retried",
+      "usedAsEvidence": false
+    }
+  },
+  "amendmentVerification": [
+    {
+      "topic": "2023年の回復要件緩和",
+      "articles": [
+        "商標法21条1項",
+        "41条の3第1項",
+        "令和3年法律42号附則5条2・3項"
+      ],
+      "preCutoffExistence": {
+        "status": "verified-in-official-2024-consolidation",
+        "detail": "故意の期間徒過を除外する規定を確認。附則は第五号施行日以後に消滅したとみなされる商標権へ適用し、それ以前は従前の例とする。"
+      },
+      "exactEffectiveDate": {
+        "candidate": "2023-04-01",
+        "status": "not-independently-verified-by-primary-effective-date-instrument-in-this-task",
+        "detail": "2024版に既に存在することと2023-04-01という正確な施行日の証明は別。JPO取得エラー後は停止。"
+      },
+      "conclusionImpact": "対象2問に旧「正当な理由」要件の記載はなく結論を変更しない。41条2項の当初登録料延長に21条の回復要件を混ぜない。"
+    },
+    {
+      "topic": "2024年の損害額算定",
+      "articles": [
+        "商標法38条1項1・2号",
+        "38条4項",
+        "38条5項",
+        "38条6項"
+      ],
+      "preCutoffExistence": {
+        "status": "verified-in-official-2024-consolidation",
+        "detail": "数量×単位利益のほか、能力超過・販売できない数量について許諾可能性を条件に使用料相当額を加算する合計方式。使用料相当額を超える賠償を妨げない規定は6項。"
+      },
+      "exactEffectiveDate": {
+        "candidate": "2024-04-01",
+        "status": "verified-as-WIPO-version-and-amendment-metadata; domestic-commencement-order-not-independently-checked",
+        "detail": "別担当が国内政令資料を確認中のため同URLを重複取得していない。"
+      },
+      "conclusionImpact": "53学科28のアを正しいとする結論、ウを誤りとする結論を維持。改正後構造の補足が可能。"
+    },
+    {
+      "topic": "2025年の拘禁刑",
+      "articles": [
+        "商標法78条",
+        "78条の2",
+        "令和4年法律68号",
+        "刑法"
+      ],
+      "preCutoffExistence": {
+        "status": "amendment-supplement-reference-only; post-amendment-article-not-verified",
+        "detail": "WIPO2024版附則に令和4年法律68号と刑法等一部改正法施行日への連動を確認できるが、本文78条は旧刑名。"
+      },
+      "exactEffectiveDate": {
+        "candidate": "2025-06-01",
+        "status": "not-independently-verified-by-primary-effective-date-instrument-in-this-task",
+        "detail": "一次施行日資料を取得できず、当日施行済みと本報告だけで確定させない。"
+      },
+      "conclusionImpact": "53学科28の本文・解説は具体的刑名を記載せず刑事罰の有無を問うため、刑名変更による文言修正は不要。刑事罰不存在という肢を誤りとする結論は維持。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "chizai2-2026-07-12-practical-q28",
+      "cutoff": "2026-01-01",
+      "officialAnswer": "イ",
+      "answerChange": false,
+      "conclusion": "イの誤りを維持。初回納付の期間延長が直接の理由。2023回復要件の変更はこの結論に影響しない。",
+      "currentBasis": "商標法19条・20条・41条の2・43条等",
+      "applicableArticles": [
+        "19条1・2項",
+        "20条2・3項",
+        "21条1項（回復に言及する場合）",
+        "40条",
+        "41条1・2項",
+        "41条の2第1・2項",
+        "43条1項"
+      ],
+      "choiceDeltaChecks": {
+        "ア": "分割納付制度自体は確認。今回の改正による結論変化なし。",
+        "イ": "41条2項は請求により30日以内の延長を認め、前期分割納付にも41条の2第2項がある。21条回復とは別制度。",
+        "ウ": "19条2項の更新を確認。回数制限を追加する今回差分なし。",
+        "エ": "20条3項の通常期限後更新で説明できる。21条の回復を一括した現文は誤りではないが制度を分けると明確。"
+      },
+      "proposedEdits": [
+        {
+          "field": "basis",
+          "choiceKey": null,
+          "oldText": "商標法19条・20条・41条の2・43条等",
+          "newText": "商標法19条・20条・21条・40条・41条・41条の2・43条等",
+          "reason": "正答を直接説明する41条1・2項が現basisにない。回復に言及するなら21条も補う。",
+          "kind": "basis-completion",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        },
+        {
+          "field": "choiceExplanations.イ",
+          "choiceKey": "イ",
+          "oldText": "所定の期間延長等が認められる場合があり、30日という通常期限だけで一律に登録不能とはいえない。",
+          "newText": "設定登録料の通常の納付期限は登録査定等の謄本送達から30日以内だが、請求により30日以内の期間延長が認められる。前期分割登録料にも延長制度があるため、一律に登録不能とはいえない。",
+          "reason": "41条1・2項、41条の2第1・2項を明示。",
+          "kind": "optional-clarification",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "choiceKey": "エ",
+          "oldText": "通常の更新申請期間後も所定期間内の更新・回復等が可能な場合がある。無期限に可能という意味ではない。",
+          "newText": "通常の更新申請期間を過ぎても、商標法20条3項の省令で定める期間内なら更新申請ができる。さらに、消滅したとみなされた権利の回復には21条の別の要件がある。",
+          "reason": "通常期限後更新と権利回復を区別。省令の6か月を未検証のまま追加しない。",
+          "kind": "optional-clarification",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        }
+      ],
+      "requiredExplanationCorrection": false
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q19",
+      "cutoff": "2025-09-01",
+      "officialAnswer": "エ",
+      "answerChange": false,
+      "conclusion": "エの誤りを維持。非使用の論点は2023回復要件に左右されない。",
+      "currentBasis": "商標法19条・20条・43条等",
+      "applicableArticles": [
+        "19条2項",
+        "20条2・3項",
+        "21条1項（回復まで説明する場合）",
+        "43条1項"
+      ],
+      "choiceDeltaChecks": {
+        "ア": "20条2項の満了前6か月から満了までを確認。変更不要。",
+        "イ": "20条3項および43条1項で現在の説明を支持。21条回復の旧「正当な理由」は現解説にない。",
+        "ウ": "今回の改正で申請主体に関する結論が変わる材料なし。",
+        "エ": "回復基準改正と非使用取消しは別論点。結論変更不要。"
+      },
+      "proposedEdits": [
+        {
+          "field": "choiceExplanations.イ",
+          "choiceKey": "イ",
+          "oldText": "通常期間後も所定の期間内には割増登録料を伴う更新手続等が可能な場合がある。",
+          "newText": "通常期間後も、商標法20条3項の省令で定める期間内には更新申請ができ、原則として登録料に加えて同額の割増登録料を納付する。消滅したとみなされた後の権利回復は21条の別の制度である。",
+          "reason": "20条3項、43条1項及び21条を区別。「原則」とするのは43条1項ただし書の免除を落とさないため。",
+          "kind": "optional-clarification",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        }
+      ],
+      "requiredExplanationCorrection": false
+    },
+    {
+      "id": "chizai2-2026-03-08-gakka-q28",
+      "cutoff": "2025-09-01",
+      "officialAnswer": "ア",
+      "answerChange": false,
+      "conclusion": "アの正しさを維持。2024年の損害算定拡張を補足できる。イは具体的刑名を記載しないため拘禁刑への文言置換は不要。",
+      "currentBasis": "商標法36条・38条・78条等",
+      "applicableArticles": [
+        "36条1項",
+        "38条1項1・2号",
+        "38条3・4・6項",
+        "78条・78条の2（基準日版は要確認）"
+      ],
+      "choiceDeltaChecks": {
+        "ア": "法定調整を前提に数量×単位利益算定が可能という説明は維持。ただし全損害額が常にこの積だけで完結するとの説明は避ける。",
+        "イ": "商標侵害の刑事罰の存在を説明する現文は維持。2024本文の懲役を基準日説明へ追加しない。",
+        "ウ": "改正後38条6項が3項等を超える損害賠償を妨げないと明示するので、現解説は維持。",
+        "エ": "36条1項の一般差止請求に事前警告の条件はなく、今回差分による結論変化なし。"
+      },
+      "proposedEdits": [
+        {
+          "field": "choiceExplanations.ア",
+          "choiceKey": "ア",
+          "oldText": "販売可能数量等の法定条件のもとで、侵害品の数量×権利者の単位利益による算定が可能。",
+          "newText": "商標法38条1項1号では、使用能力や販売できない事情に応じて調整した数量に権利者の単位利益を乗じて損害を算定できる。同項2号の条件を満たす数量については使用料相当額も合算する。",
+          "reason": "2024版38条1項の各号合計方式を明示し、積だけが常に全額となるとの誤読を防ぐ。",
+          "kind": "optional-clarification",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        },
+        {
+          "field": "choiceExplanations.ウ",
+          "choiceKey": "ウ",
+          "oldText": "使用料相当額は常に賠償額の上限ではない。より大きい損害を他の規定等で請求できる。",
+          "newText": "商標法38条6項は、同条3項の使用料相当額を超える損害賠償の請求を妨げないと定める。したがって使用料相当額は賠償額の上限ではない。",
+          "reason": "改正後の直接根拠38条6項を明示。",
+          "kind": "optional-clarification",
+          "sourceUrls": [
+            "https://www.wipo.int/wipolex/en/legislation/details/22500"
+          ],
+          "confidence": "high-for-described-statutory-rule; cutoff-chain-not-completely-verified",
+          "applied": false
+        }
+      ],
+      "requiredExplanationCorrection": false
+    }
+  ],
+  "additionalCandidates": [
+    {
+      "id": "chizai2-2026-07-12-gakka-q33",
+      "cutoff": "2026-01-01",
+      "basis": "著作権法26条の2・112条・113条・119条等",
+      "status": "flagged-outside-three-question-review",
+      "finding": "本文に拘禁刑という現行刑名を使用済み。故意・過失と刑事責任が論点であり、刑名だけの置換は不要。著作権法119条の2025年改正後条文と施行期日・刑法38条1項は別担当で確認対象。",
+      "answerChangeProposed": false,
+      "explanationEditProposed": false
+    }
+  ],
+  "limitations": [
+    "本報告は指定3問の狭い改正差分確認。基準日法令の全面認証ではない。",
+    "商標20条3項の通常期限後更新は省令委任であり、具体的6か月の省令条項・基準日版は今回未確認。41条の2第5項の後期分割料追納6か月を20条3項の証拠として代用しない。",
+    "2023回復及び2025拘禁刑の正確な施行期日一次資料は未取得。改正前後の全経過措置まで完了とはしない。",
+    "既存の拒否・取得不能URLを再取得せず、別言語版等による迂回もしない。新たなJPO取得エラーURLも停止。"
+  ],
+  "preservedReports": [
+    "TARGETED-INDEPENDENT-REVIEW.json",
+    "LAW-DELTA-TRADEMARK-UCPA-CUSTOMS.json"
+  ],
+  "penaltyScanMatches": [
+    "chizai2-2026-07-12-gakka-q33",
+    "chizai2-2026-03-08-gakka-q28"
+  ]
+}

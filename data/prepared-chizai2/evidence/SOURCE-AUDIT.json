@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "auditedAtUtc": "2026-10-11T02:57:13.284Z",
+  "purpose": "saved-source audit and resumption index only",
+  "verdict": "PASS",
+  "pdfCount": 4,
+  "originalQuestionCount": 160,
+  "files": [
+    {
+      "file": "260712_2Q_g.pdf",
+      "round": 54,
+      "examDate": "2026-07-12",
+      "section": "gakka",
+      "pdfSha256": "05ddcb9c67435b59bca50a451a0462acbd74156440cf7eaa50d5b07a4d3931e6",
+      "bytes": 372998,
+      "pagesInPriorReceipt": 16,
+      "questionHeadingsVerified": 40,
+      "officialAnswersVerified": 40,
+      "formatCounts": {
+        "choice": 40
+      },
+      "lawAsOf": "2026-01-01",
+      "sourceTextSha256": "cb5df3f636b045e59fa8ca4d4ac6e3f2c580bb00bf40d35022c73ae7d1db5476"
+    },
+    {
+      "file": "260712_2Q_j.pdf",
+      "round": 54,
+      "examDate": "2026-07-12",
+      "section": "practical",
+      "pdfSha256": "8027085283a725c3694d7191db3b6f7572e0e31365a9f4578493beb275057be5",
+      "bytes": 412700,
+      "pagesInPriorReceipt": 22,
+      "questionHeadingsVerified": 40,
+      "officialAnswersVerified": 40,
+      "formatCounts": {
+        "true-false": 6,
+        "choice": 33,
+        "year-month-six-digits": 1
+      },
+      "lawAsOf": "2026-01-01",
+      "sourceTextSha256": "2b3553d590a79d80ce0cd9ca456d3179a3817e2d588e3fc3400946789672986f"
+    },
+    {
+      "file": "260308_2Q_g.pdf",
+      "round": 53,
+      "examDate": "2026-03-08",
+      "section": "gakka",
+      "pdfSha256": "ce9e79bfe94f03706bf866bfb3b0dceff8cb2b46e428dcc4697db4e3f431c3c8",
+      "bytes": 408939,
+      "pagesInPriorReceipt": 16,
+      "questionHeadingsVerified": 40,
+      "officialAnswersVerified": 40,
+      "formatCounts": {
+        "choice": 40
+      },
+      "lawAsOf": "2025-09-01",
+      "sourceTextSha256": "79235013e26a4cd95e9017d3c71fd2233ad69c4c4ace462fd5ea037796d50bc3"
+    },
+    {
+      "file": "260308_2Q_j.pdf",
+      "round": 53,
+      "examDate": "2026-03-08",
+      "section": "practical",
+      "pdfSha256": "19d966320bb04416fc163bec1dab5da8f7e4602299c5f0fcec1535a24c2c53ff",
+      "bytes": 457850,
+      "pagesInPriorReceipt": 22,
+      "questionHeadingsVerified": 40,
+      "officialAnswersVerified": 40,
+      "formatCounts": {
+        "true-false": 6,
+        "choice": 33,
+        "integer-yen": 1
+      },
+      "lawAsOf": "2025-09-01",
+      "sourceTextSha256": "ea72d6c5a278933d7219ec724f0e6a69148c576639554a8c9b3e92dff572e1fd"
+    }
+  ],
+  "publicationPermission": {
+    "state": "not-confirmed",
+    "publicationPerformed": false,
+    "termsSourceUrl": "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/",
+    "termsSourceSha256": "5d0016a1ca45a4ce8e0e9cc1bbf9c5e06da891de3e4c08720ea6db69f77231ec",
+    "recordedTerms": "Unauthorized republication prohibited; contact administrator for commercial use."
+  },
+  "completion": {
+    "sourceAudit": "passed",
+    "explanations": "not-verified",
+    "implementation": "not-verified",
+    "applicationTests": "not-run",
+    "draftPrUrl": null
+  },
+  "processCheck": {
+    "state": "blocked",
+    "action": "Get-CimInstance Win32_Process",
+    "error": "Access denied",
+    "newGenerationStarted": false
+  },
+  "gitOperations": {
+    "state": "blocked",
+    "action": "pnpm media:status",
+    "error": "spawnSync git EPERM",
+    "retried": false
+  },
+  "selfTests": {
+    "passed": 17,
+    "failed": 0
+  }
+}

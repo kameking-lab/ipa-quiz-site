@@ -1,0 +1,29 @@
+name: Chizai2 Prepared Corpus
+
+on:
+  pull_request:
+    paths:
+      - "data/prepared-chizai2/**"
+      - ".github/workflows/chizai2-prepared.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/prepared-chizai2/**"
+      - ".github/workflows/chizai2-prepared.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  prepared-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate source preservation, all answers and publication gate
+        run: node data/prepared-chizai2/validate.mjs
+      - name: Test original formats and invalid corpus mutations
+        run: node --test data/prepared-chizai2/validate.test.mjs

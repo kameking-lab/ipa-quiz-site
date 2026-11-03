@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-11T07:39:11.956Z",
+  "inputHead": "33d4b25bcbbace311d7b540da4cf3b3d8e0f6f14",
+  "inputQuestionsSha256": "420599c16994b054621e243c2f396a0a1bf397d46b7c2c63e251402103ba3802",
+  "rounds": {
+    "53": {
+      "date": "2026-03-08",
+      "lawReferenceDate": "2025-09-01"
+    },
+    "54": {
+      "date": "2026-07-12",
+      "lawReferenceDate": "2026-01-01"
+    }
+  },
+  "originalsScreened": 160,
+  "selectedQuestionCount": 46,
+  "notSelectedCount": 114,
+  "selectedByRound": {
+    "53": 25,
+    "54": 21
+  },
+  "selection": "All 160 local records screened by law/article topicTags plus targeted local choice terminology. Matches to the documented reforms were checked. This is not an exhaustive enumeration of every historical amendment of every cited article.",
+  "reports": [
+    {
+      "file": "LAW-DELTA-PATENT-DESIGN.json",
+      "questionRecords": 14,
+      "sha256": "9806b4a815caf5f21e1a42a040406f6cb6932ace78ac730bc622378d4d205358"
+    },
+    {
+      "file": "LAW-DELTA-PATENT-DESIGN-SUPPLEMENT.json",
+      "questionRecords": 4,
+      "sha256": "0c5376832beff24a631566432cc68889375949cd3bb164100baea1c919b8ef82"
+    },
+    {
+      "file": "LAW-DELTA-TRADEMARK-UCPA-CUSTOMS.json",
+      "questionRecords": 11,
+      "sha256": "e52eae5aa9f9699eec55bdb0fd9ff4b538cf4cf6f00047683db9f92f8b01d3ea"
+    },
+    {
+      "file": "LAW-DELTA-TRADEMARK-SUPPLEMENT.json",
+      "questionRecords": 3,
+      "sha256": "b7d20647fd236f5c4f3519e57eca117f3955e42de0dc19cff143bbe17ba24d2b"
+    },
+    {
+      "file": "LAW-DELTA-COPYRIGHT-SEED.json",
+      "questionRecords": 16,
+      "sha256": "d62283c45bed2b90b88fc97fba8c3b7a9e77ace8f6e7b3a39d45e21384c2dae0"
+    }
+  ],
+  "confirmedDateQuestionCount": 39,
+  "listedMissingEvidenceQuestionCount": 22,
+  "correctedQuestions": 1,
+  "changedFields": 2,
+  "originalOrAnswerChanges": 0,
+  "regeneratedQuestions": 0,
+  "fullCorpusSecondReview": false,
+  "publication": {
+    "permission": "not-confirmed",
+    "historicalLawReview": "pending",
+    "publicRegistration": false,
+    "publishedIncrement": 0,
+    "externalQuestionContentTransmissionApproved": false
+  },
+  "remainingProvisionGaps": [
+    {
+      "questionIds": [
+        "chizai2-2026-03-08-gakka-q34"
+      ],
+      "clauses": [
+        "特許法112条2項・112条の2の各施行期日政令"
+      ],
+      "answerImpact": "補足確認では本問の誤肢イは108条1項で判定可能。回復基準の施行日不足とは分離。"
+    },
+    {
+      "questionIds": [
+        "chizai2-2026-07-12-practical-q28",
+        "chizai2-2026-03-08-gakka-q19"
+      ],
+      "clauses": [
+        "商標法21条の回復緩和の正確な政令施行日"
+      ],
+      "answerImpact": "通常の期限延長・更新と回復の施行日照合を区別。詳細は補足報告。"
+    },
+    {
+      "questionIds": [
+        "chizai2-2026-07-12-gakka-q33",
+        "chizai2-2026-03-08-gakka-q28"
+      ],
+      "clauses": [
+        "著作権119条・商標78条の拘禁刑改称の整備法と施行期日原文"
+      ],
+      "answerImpact": "刑罰用語の原文は維持。故意/過失又は損害推定等の比較論点の結論を未確定の改称日で変更しない。"
+    },
+    {
+      "questionIds": [
+        "chizai2-2026-07-12-gakka-q34",
+        "chizai2-2026-07-12-practical-q27",
+        "chizai2-2026-03-08-practical-q20"
+      ],
+      "clauses": [
+        "関税法69条の11・12・13・17全項の各基準日完全版、2022個別施行政令原文"
+      ],
+      "answerImpact": "2022新旧対照と税関公式沿革で今回の指定差分は確認。全条項の基準日版を得たとは扱わない。"
+    }
+  ],
+  "limits": [
+    "WIPOの2024統合版は基準日前の版として利用し、2025-09-01/2026-01-01そのものの版と偽っていない。",
+    "全改正鎖・全条文の完全照合は本差分作業の完了とは別の受入条件。",
+    "原問の転載許諾は未確認。Web照会は法令名・条番号・施行日だけであり、原問・肢・解説の外部LLM送信は行っていない。",
+    "各未確認事項はQUESTION-MATRIXの問ID別missingEvidenceと原報告に保存。拒否URLの再試行・別経路のアクセス回避はしていない。"
+  ],
+  "additionalEvents": [
+    {
+      "key": "TM2024-DAMAGES",
+      "articles": [
+        "商標法38条1項1・2号、6項"
+      ],
+      "effectiveDate": "2024-04-01",
+      "source": "LAW-DELTA-TRADEMARK-SUPPLEMENT.json",
+      "limit": "WIPO版日・改正書誌で照合。国内施行期日政令未取得。"
+    },
+    {
+      "key": "TM2023-RESTORATION",
+      "articles": [
+        "商標法21条・41条の3"
+      ],
+      "effectiveDate": null,
+      "source": "LAW-DELTA-TRADEMARK-SUPPLEMENT.json",
+      "limit": "故意基準が2024統合版に存在。正確な施行期日原文不足。"
+    },
+    {
+      "key": "TM2025-PENALTY",
+      "articles": [
+        "商標法78条・78条の2"
+      ],
+      "effectiveDate": null,
+      "source": "LAW-DELTA-TRADEMARK-SUPPLEMENT.json",
+      "limit": "基準日版刑名と施行期日原文不足。原稿は具体刑名を記載しない。"
+    }
+  ]
+}
