@@ -76,3 +76,22 @@ it("resumes the requested middle ID without fetching the first question",async()
   const {fetcher}=mockGrants(false);mount(questions[5].id);await screen.findByText("許可本文6");
   await waitFor(()=>expect(fetcher).toHaveBeenCalledTimes(1));expect(JSON.parse(String(fetcher.mock.calls[0][1]?.body)).id).toBe(questions[5].id);
 });
+it("does not persist opted-out answers into a fresh tab",async()=>{
+  mockGrants(false);const first=mount();await screen.findByText("許可本文1");
+  fireEvent.click(screen.getByRole("radio",{name:/^選択肢 1:/}));first.unmount();sessionStorage.clear();mount(undefined,"summary");
+  await screen.findByRole("heading",{name:"結果と見直し"});expect(screen.getByText("0／11問")).toBeVisible();
+  expect(screen.queryByRole("button",{name:"間違えた1問を解き直す"})).not.toBeInTheDocument();
+});
+it("keeps descriptive memos for both questions across navigation and reload",async()=>{
+  const rows=questions.slice(0,2).map(q=>({...q,choiceCount:0,correctChoice:null,answerAuthority:"descriptive" as const}));
+  const index=rows.map(({id,number,choiceCount,answerAuthority})=>({id,number,choiceCount,answerAuthority,scorable:false}));
+  vi.stubGlobal("fetch",vi.fn(async(_url:unknown,init?:RequestInit)=>Response.json({question:rows.find(q=>q.id===JSON.parse(String(init?.body)).id)})));
+  const show=()=>render(<AuthorizedContent paper={paper} paperIndex={index} items={index.map(q=>({id:q.id,title:`問${q.number}`}))}/>);
+  const first=show();await screen.findByText("許可本文1");
+  fireEvent.change(screen.getByRole("textbox"),{target:{value:"問1の大事なメモ"}});fireEvent.click(screen.getByRole("button",{name:"模範解答を見る"}));
+  fireEvent.click(screen.getByRole("button",{name:"次の問題へ"}));await screen.findByText("許可本文2");
+  fireEvent.change(screen.getByRole("textbox"),{target:{value:"問2のメモ"}});fireEvent.click(screen.getByRole("button",{name:"模範解答を見る"}));
+  fireEvent.click(screen.getByRole("button",{name:"前へ"}));expect(screen.getByRole("textbox")).toHaveValue("問1の大事なメモ");
+  first.unmount();show();await screen.findByText("許可本文1");expect(screen.getByRole("textbox")).toHaveValue("問1の大事なメモ");
+  fireEvent.click(screen.getByRole("button",{name:"次の問題へ"}));await screen.findByText("許可本文2");expect(screen.getByRole("textbox")).toHaveValue("問2のメモ");
+});

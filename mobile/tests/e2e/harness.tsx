@@ -11,8 +11,17 @@ import type {CatalogEntry,MobileEntitlement} from "../../shared/contracts";
 import {QualificationActions} from "../../src/QualificationActions";
 import {confirmedSchedules,qualificationTargets} from "../../shared/qualification-schedules";
 import {addQualificationEvent,openQualificationUrl} from "../../src/qualification-platform";
+import {Filesystem,Directory} from "@capacitor/filesystem";
+import type {PaperQuestionIndex} from "../../shared/paper-index";
+import DeleteAccountPage from "../../../app/account/delete/page";
 import "../../src/native.css";
 type StoreScenario="cancelled"|"pending"|"changed-price"|"no-restorable-purchase";
+declare global {interface Window {paperTest:{show:(index:PaperQuestionIndex[],initialId?:string,initialView?:"question"|"summary")=>void;purgeCache:()=>Promise<void>;showDeletion:()=>void}}}
+window.paperTest={
+  show:(index,initialId,initialView)=>createRoot(document.getElementById("root")!).render(<AuthorizedContent paper="lckohyo-TEST01" paperIndex={index} initialId={initialId} initialView={initialView} items={index.map(q=>({id:q.id,title:`問${q.number}`}))}/>),
+  purgeCache:async()=>{await Filesystem.rmdir({directory:Directory.Cache,path:"images",recursive:true}).catch(()=>{});localStorage.removeItem("CapacitorStorage.kakomon:image-cache:v1");},
+  showDeletion:()=>createRoot(document.getElementById("root")!).render(<DeleteAccountPage/>),
+};
 declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;aiConsent:()=>boolean;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
 const calls={purchases:0,restores:0};
 let storeScenario:StoreScenario="no-restorable-purchase",offerings=0;

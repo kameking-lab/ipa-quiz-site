@@ -6,6 +6,7 @@ import {createHash,sign} from "node:crypto";
 import type {Question} from "../../../lib/questions/types";
 import type {Material} from "../../shared/material-types";
 import type {CatalogEntry,MobileEntitlement,MobileConfiguration} from "../../shared/contracts";
+import type {ExamQuestion} from "../../../lib/exam-library-model";
 const ORIGIN="https://www.kakomon-ai.jp";
 const qs=JSON.parse(readFileSync(new URL("../../.cache/e2e-questions.json",import.meta.url),"utf8")) as Question[];
 const entry:CatalogEntry={code:"ip",name:"ITパスポート",count:qs.length,years:[],sessions:[],categories:[],bytes:Buffer.byteLength(JSON.stringify(qs)),revision:createHash("sha256").update(JSON.stringify(qs)).digest("hex")};
@@ -155,4 +156,94 @@ test("account deletion requires explicit confirmation and recent login",async({p
   await expect(page.getByRole("button",{name:"アカウントとデータを完全に削除"})).toBeDisabled();
   await page.getByRole("textbox").fill("DELETE");await page.getByRole("button",{name:"アカウントとデータを完全に削除"}).click();
   await expect(page.getByRole("button",{name:"再ログインして本人確認"})).toBeVisible();expect(calls).toBe(1);
+});
+
+// Expected images come directly from the display registry, independently of saveAssets.
+const answerRegistry=JSON.parse(readFileSync(new URL("../../../data/exam-library/answer-figures.json",import.meta.url),"utf8")) as Record<string,{src:string;alt:string}[]>;
+const figureFixtures=JSON.parse(readFileSync(new URL("../../.cache/e2e-answer-figures.json",import.meta.url),"utf8")) as {entry:CatalogEntry;question:ExamQuestion}[];
+for(const fixture of figureFixtures) test(`unviewed answer figures survive Cache purge, cold restart and offline enlargement: ${fixture.question.id}`,async({page,context})=>{
+  await routeLocal(context);let airplane=false;
+  await context.route("**/exam-library/**",async route=>{
+    if(airplane){await route.abort("internetdisconnected");return;}
+    const path=fileURLToPath(new URL(`../../../public${new URL(route.request().url()).pathname}`,import.meta.url));
+    await route.fulfill({path});
+  });
+  const rows=[fixture.question],metadata={...fixture.entry,count:1,revision:createHash("sha256").update(JSON.stringify(rows)).digest("hex")};
+  await seed(page,rows,metadata);expect(await page.locator("figure").count()).toBe(0);
+  await page.evaluate(()=>window.paperTest.purgeCache());
+  const cdp=await context.newCDPSession(page);await cdp.send("Network.clearBrowserCache");await cdp.detach();
+  await page.close();airplane=true;await context.setOffline(true);
+  const restarted=await context.newPage();await restarted.goto(ORIGIN+"/index.html");
+  await restarted.locator(".native-exam").filter({hasText:fixture.entry.name}).getByRole("button",{name:"保存問題で学習"}).click();
+  await restarted.getByRole("button",{name:"模範解答を見る",exact:true}).click();
+  for(const expected of answerRegistry[fixture.question.id]) {
+    const button=restarted.getByRole("button",{name:`${expected.alt}を拡大`,exact:true});
+    const img=button.getByRole("img",{name:expected.alt,exact:true});
+    await expect(img).toBeVisible();await expect(img).toHaveAttribute("src",/^data:image\//);
+    expect(await img.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
+    await button.click();const dialog=restarted.getByRole("dialog",{name:`${expected.alt}の拡大図`,exact:true});
+    await expect(dialog).toBeVisible();const expanded=dialog.getByRole("img");
+    await expect(expanded).toHaveAttribute("src",await img.getAttribute("src") as string);
+    expect(await expanded.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
+    await dialog.getByRole("button",{name:"拡大図を閉じる"}).click();
+  }
+});
+
+const paperRows:ExamQuestion[]=Array.from({length:11},(_,i)=>({id:`lckohyo-TEST01-q${i+1}`,number:i+1,text:`許可本文${i+1}`,images:[],choiceCount:3,correctChoice:2,answerAuthority:"official"}));
+const paperIndex=paperRows.map(({id,number,choiceCount,answerAuthority})=>({id,number,choiceCount,answerAuthority,scorable:true}));
+for(const paid of [false,true])for(const save of [false,true])test(`whole-paper progress and wrong review after reload: paid=${paid}, save=${save}`,async({page,context})=>{
+  await routeLocal(context);const granted=new Set<string>();
+  await context.route("**/api/billing/question",async route=>{
+    const {id}=route.request().postDataJSON() as {id:string};
+    if(!paid&&!granted.has(id)&&granted.size>=10){await route.fulfill({status:429,json:{error:"daily_limit"}});return;}
+    granted.add(id);await route.fulfill({json:{question:paperRows.find(q=>q.id===id)}});
+  });
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.paperTest);
+  await page.evaluate(index=>window.paperTest.show(index),paperIndex);
+  await expect(page.getByText("許可本文1",{exact:true})).toBeVisible();expect([...granted]).toEqual([paperRows[0].id]);
+  if(save)await page.getByRole("checkbox",{name:"この端末に保存する"}).check();
+  await page.getByRole("radio",{name:/^選択肢 1:/}).click();await page.getByRole("button",{name:"次の問題へ",exact:true}).click();
+  await expect(page.getByText("許可本文2",{exact:true})).toBeVisible();await page.getByRole("radio",{name:/^選択肢 2:/}).click();
+  await page.getByRole("button",{name:"前へ",exact:true}).click();await expect(page.getByRole("radio",{name:/^選択肢 1:/})).toHaveAttribute("aria-checked","true");
+  await page.reload();await page.waitForFunction(()=>!!window.paperTest);await page.evaluate(index=>window.paperTest.show(index),paperIndex);
+  await expect(page.getByRole("radio",{name:/^選択肢 1:/})).toHaveAttribute("aria-checked","true");
+  await page.getByRole("button",{name:"結果を見る",exact:true}).click();await expect(page.getByText("2／11問",{exact:true})).toBeVisible();
+  await expect(page.locator("dt").filter({hasText:/^正解$/}).locator("..")).toContainText("1問");
+  await expect(page.locator("dt").filter({hasText:/^不正解$/}).locator("..")).toContainText("1問");
+  await page.getByRole("button",{name:"間違えた1問を解き直す",exact:true}).click();await expect(page.getByText("解き直し 1問目／1問",{exact:true})).toBeVisible();
+  expect([...granted]).toEqual(paperRows.slice(0,2).map(q=>q.id));
+});
+test("middle-paper resume requests only the specified question",async({page,context})=>{
+  await routeLocal(context);const ids:string[]=[];
+  await context.route("**/api/billing/question",async route=>{const {id}=route.request().postDataJSON();ids.push(id);await route.fulfill({json:{question:paperRows.find(q=>q.id===id)}});});
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.paperTest);
+  await page.evaluate(index=>window.paperTest.show(index,"lckohyo-TEST01-q6"),paperIndex);
+  await expect(page.getByText("許可本文6",{exact:true})).toBeVisible();expect(ids).toEqual([paperRows[5].id]);
+});
+test("deletion page opens existing web management without checkout and remains usable on portal failure",async({page,context})=>{
+  await routeLocal(context);let portal=0;
+  await context.route("**/api/billing/portal",async route=>{portal++;await route.fulfill({status:503,json:{error:"unavailable"}});});
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.paperTest);await page.evaluate(()=>window.paperTest.showDeletion());
+  await page.getByRole("button",{name:"ウェブ契約の管理・解約",exact:true}).click();await expect(page.getByRole("alert")).toBeVisible();expect(portal).toBe(1);
+  await page.getByRole("textbox").fill("DELETE");await expect(page.getByRole("button",{name:"アカウントとデータを完全に削除"})).toBeEnabled();
+});
+for(const paid of [false,true])for(const save of [false,true])test(`cold restart respects progress save opt-in: paid=${paid}, save=${save}`,async({page,context})=>{
+  await routeLocal(context);const ids=new Set<string>();
+  await context.route("**/api/billing/question",async route=>{
+    const {id}=route.request().postDataJSON();
+    if(!paid&&!ids.has(id)&&ids.size>=10){await route.fulfill({status:429,json:{error:"daily_limit"}});return;}
+    ids.add(id);await route.fulfill({json:{question:paperRows.find(q=>q.id===id)}});
+  });
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.paperTest);await page.evaluate(index=>window.paperTest.show(index),paperIndex);
+  await expect(page.getByText("許可本文1",{exact:true})).toBeVisible();
+  if(save)await page.getByRole("checkbox",{name:"この端末に保存する"}).check();
+  await page.getByRole("radio",{name:/^選択肢 1:/}).click();await page.getByRole("button",{name:"次の問題へ",exact:true}).click();
+  await expect(page.getByText("許可本文2",{exact:true})).toBeVisible();await page.getByRole("radio",{name:/^選択肢 2:/}).click();
+  await page.getByRole("button",{name:"前へ",exact:true}).click();await expect(page.getByText("許可本文1",{exact:true})).toBeVisible();
+  await page.close();const restarted=await context.newPage();await restarted.goto(ORIGIN+"/tests/e2e/harness.html");await restarted.waitForFunction(()=>!!window.paperTest);
+  await restarted.evaluate(index=>window.paperTest.show(index,undefined,"summary"),paperIndex);
+  await expect(restarted.getByText(`${save?2:0}／11問`,{exact:true})).toBeVisible();
+  if(save){await restarted.getByRole("button",{name:"間違えた1問を解き直す",exact:true}).click();await expect(restarted.getByText("解き直し 1問目／1問",{exact:true})).toBeVisible();}
+  else await expect(restarted.getByRole("button",{name:"間違えた1問を解き直す",exact:true})).toHaveCount(0);
+  expect([...ids]).toEqual(paperRows.slice(0,2).map(q=>q.id));
 });

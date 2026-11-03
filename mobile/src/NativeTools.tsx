@@ -18,6 +18,7 @@ import { NativePageQualificationActions } from "./QualificationActions";
 import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
+import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
@@ -93,7 +94,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const original = window.fetch;
     window.fetch = async (input, init) => {
       const url = new URL(input instanceof Request ? input.url : String(input), location.href);
-      if (url.origin === SITE_ORIGIN && /^\/api\/billing\/(checkout|mock)$/.test(url.pathname)) { setOpen(true); return Response.json({ error: "use_app_store" }, { status: 403 }); }
+      if (blocksNativeWebPurchase(url)) { setOpen(true); return Response.json({ error: "use_app_store" }, { status: 403 }); }
       return original(input, init);
     };
     const click = (e: MouseEvent)=>{

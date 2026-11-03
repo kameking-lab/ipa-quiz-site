@@ -1,12 +1,13 @@
 import {beforeEach,expect,it,vi} from "vitest";
 import {webcrypto} from "node:crypto";
 const m=vi.hoisted(()=>({files:new Map<string,string>(),get:vi.fn(),fail:false}));
-vi.mock("@capacitor/core",()=>({CapacitorHttp:{get:m.get}}));
+vi.mock("@capacitor/core",()=>({Capacitor:{isNativePlatform:()=>false},CapacitorHttp:{get:m.get}}));
 vi.mock("@capacitor/filesystem",()=>({Directory:{Data:"DATA"},Filesystem:{
   writeFile:async({path,data}:{path:string;data:string})=>{if(m.fail)throw Error("disk full");m.files.set(path,data);},
   readFile:async({path}:{path:string})=>({data:m.files.get(path)}),deleteFile:async({path}:{path:string})=>{m.files.delete(path);}
 }}));
-import {requiredImages,saveAssets,checkAssets,removeAssets} from "../src/offline-assets";
+import {requiredImages,saveAssets,checkAssets,removeAssets,localAssetSrc} from "../src/offline-assets";
+import registry from "../../data/exam-library/answer-figures.json";
 beforeEach(()=>{vi.stubGlobal("crypto",webcrypto);m.files.clear();m.fail=false;m.get.mockReset().mockResolvedValue({status:200,data:"aW1hZ2U="});});
 it("enumerates unseen nested and Markdown diagrams and saves them durably as one verified pack",async()=>{
   const content=[{question:"![図](/images/unseen.png)",answers:{figure:"/images/answer.svg"}}];
@@ -32,4 +33,21 @@ it("keeps official reference PDFs inseparable from non-scoring ST notes",async()
   expect(requiredImages({sourcePdfUrl:note.sourcePdfUrl})).toHaveLength(0);
   const assets=await saveAssets(note,"offline-assets/note",new AbortController().signal);await checkAssets(note,assets);expect(m.files.size).toBe(2);
   expect(()=>requiredImages(["https://evil.test/image.png"])).toThrow("外部画像");
+});
+it("independently verifies all seven renderer-registry figures after a durable-only restart",async()=>{
+  const content=Object.keys(registry).map(id=>({id}));
+  const expected=Object.values(registry).flat().map(f=>new URL(f.src,"https://www.kakomon-ai.jp").href).sort();
+  expect(expected).toHaveLength(7);
+  const saved=await saveAssets(content,"offline-assets/registry",new AbortController().signal);
+  expect(Object.keys(saved).sort()).toEqual(expected);
+  const restarted=JSON.parse(JSON.stringify(saved));m.get.mockRejectedValue(Error("airplane mode"));
+  await checkAssets(content,restarted);
+  for(const url of expected) {
+    const asset=restarted[url];expect(asset.bytes).toBe(5);expect(asset.sha256).toMatch(/^[a-f0-9]{64}$/);
+    expect(await localAssetSrc(asset)).toMatch(/^data:image\//);
+    const original=m.files.get(asset.path)!;m.files.set(asset.path,"Y29ycnVwdA==");
+    await expect(checkAssets(content,restarted)).rejects.toThrow("壊れ");m.files.set(asset.path,original);
+    const incomplete={...restarted};delete incomplete[url];await expect(checkAssets(content,incomplete)).rejects.toThrow("不足");
+  }
+  expect(m.get).toHaveBeenCalledTimes(7);
 });

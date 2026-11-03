@@ -153,6 +153,7 @@ export function ExamQuestionPlayer({
   // The paper's complete ID set owns progress; granted bodies are a separate cache.
   const [granted, setGranted] = useState<Record<string, ExamQuestion>>({});
   const grantedRef = useRef(granted);
+  const contentGeneration = useRef(0);
   const [contentError, setContentError] = useState("");
   const [contentAttempt, setContentAttempt] = useState(0);
   const questions = useMemo(() => questionIndex
@@ -216,20 +217,22 @@ export function ExamQuestionPlayer({
   const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
 
   // Results revalidate only previously answered questions, through the same grant API.
-  const neededIds = resolveQuestion ? (view === "summary"
-    ? Object.keys(answers).filter(id=>answers[id].submitted)
-    : currentId ? [currentId] : []) : [];
+  const neededIds = resolveQuestion ? [...new Set([
+    ...(view === "question" && currentId ? [currentId] : []),
+    ...Object.keys(answers).filter(id=>answers[id].submitted),
+  ])] : [];
   const neededKey = neededIds.join("|");
   const contentPending = neededIds.some(id=>!granted[id]);
   useEffect(() => {
     if (!resolveQuestion || !neededKey) return;
     const controller = new AbortController();
+    const generation = contentGeneration.current;
     setContentError("");
     void Promise.all(neededKey.split("|").map(async id => {
       if (grantedRef.current[id]) return;
       const question = await resolveQuestion(id, controller.signal);
       if (question.id !== id) throw new Error("問題の一致を確認できません。");
-      if (controller.signal.aborted) return;
+      if (controller.signal.aborted || generation !== contentGeneration.current) return;
       grantedRef.current = {...grantedRef.current, [id]:question};
       setGranted(grantedRef.current);
     })).catch(error => {if (!controller.signal.aborted) setContentError(error instanceof Error ? error.message : "利用枠を確認できません。");});
@@ -237,7 +240,7 @@ export function ExamQuestionPlayer({
   }, [neededKey, resolveQuestion, contentAttempt]);
   useEffect(() => {
     if (!resolveQuestion) return;
-    const clear = () => {grantedRef.current={};setGranted({});setContentAttempt(n=>n+1);};
+    const clear = () => {contentGeneration.current++;grantedRef.current={};setGranted({});setContentAttempt(n=>n+1);};
     window.addEventListener("mobile:entitlement-changed", clear);
     window.addEventListener("mobile:account-deleted", clear);
     return () => {window.removeEventListener("mobile:entitlement-changed", clear);window.removeEventListener("mobile:account-deleted", clear);};
@@ -480,8 +483,8 @@ export function ExamQuestionPlayer({
 
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
-    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
-    {contentError && <button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button>}
+    {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? "無料枠を端末間で共有するためログインが必要です。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
+    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <a href="/billing">有料会員・購入復元</a></p></>}
     <nav className="flex flex-wrap gap-4"><button type="button" disabled={index<=0} onClick={()=>goTo(index-1)}>前の問題</button><button type="button" disabled={index>=roundIds.length-1} onClick={()=>goTo(index+1)}>次の問題</button><button type="button" onClick={showSummary}>結果を見る</button></nav>
   </section>;
   if (questions.length === 0) return null;

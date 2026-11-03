@@ -5,7 +5,12 @@ vi.mock("@/mobile/shared/contracts",()=>({nativeClient:()=>true}));
 vi.mock("@/mobile/src/open-subscription-management",()=>({openSubscriptionManagement:opened}));
 import DeleteAccountPage from "@/app/account/delete/page";
 import {ManageSubscriptionButton} from "@/app/billing/ManageSubscriptionButton";
+import {blocksNativeWebPurchase} from "@/mobile/shared/native-billing-policy";
 afterEach(()=>{cleanup();vi.unstubAllGlobals();vi.clearAllMocks();});
+it("allows existing management while blocking web checkout in the native interceptor",()=>{
+  for(const path of ["checkout","mock"])expect(blocksNativeWebPurchase(new URL(`https://www.kakomon-ai.jp/api/billing/${path}`))).toBe(true);
+  expect(blocksNativeWebPurchase(new URL("https://www.kakomon-ai.jp/api/billing/portal"))).toBe(false);
+});
 it("opens an existing authenticated web contract directly instead of native billing replacement",async()=>{
   const request=vi.fn(async()=>Response.json({url:"https://billing.stripe.com/p/session_mock"}));vi.stubGlobal("fetch",request);
   render(<ManageSubscriptionButton label="ウェブ契約の管理・解約"/>);
