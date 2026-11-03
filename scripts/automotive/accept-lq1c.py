@@ -70,9 +70,13 @@ for argument in sys.argv[1:]:
         if id in release:
             assert canonical(release[id]) == canonical(q), ('conflicting accepted candidate', id)
         release[id] = copy.deepcopy(q)
+        previous_receipt = receipts.get(id, {})
         receipts[id] = {'id': id, 'candidateSha256': canonical(q),
                         'evidencePath': target.relative_to(ROOT).as_posix(),
                         'evidenceSha256': sha, 'originalEvidencePath': str(evidence)}
+        # Preserve attached sources when replaying the identical accepted candidate.
+        if previous_receipt.get('candidateSha256') == canonical(q) and 'supportingEvidence' in previous_receipt:
+            receipts[id]['supportingEvidence'] = previous_receipt['supportingEvidence']
 
 ordered = [release[q['id']] for q in originals if q['id'] in release]
 ledger.update({'releaseOriginals': len(ordered), 'newIndependentAcceptedOriginals': len(ordered)-385,
