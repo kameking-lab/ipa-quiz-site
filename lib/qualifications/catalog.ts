@@ -570,6 +570,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["令和8年度は公式の「正答(例)」のみで確定正答の公表待ち", "他の年度（令和元〜6年度）の追加", "東京都・神奈川県など他ブロックは個別に確認"],
   },
   {
+    slug: "chintai",
+    shortName: "賃貸不動産経営管理士",
+    fullName: "賃貸不動産経営管理士試験（国土交通大臣登録試験）",
+    domain: "real-estate",
+    administrator: "一般社団法人賃貸不動産経営管理士協議会",
+    officialQuestionsUrl: "https://www.chintaikanrishi.jp/exam/past",
+    officialReuseTermsUrl: "https://www.chintaikanrishi.jp/exam/past",
+    status: "permission-required",
+    reuseSummary: "令和7年度（第13回）・令和6年度（第12回）の問題・正答は公式公開済み。Webサイト・アプリ等への試験問題の使用には著作物使用許諾申請書の提出が必要と明記されているため、許諾取得を確認できるまで問題本文は収録しない。",
+    remainingWork: ["著作物使用許諾申請の手続きとWeb問題集への利用許諾を確認・取得", "許諾後に対象回の原文・公式正答・全選択肢解説・必要図版を照合"],
+  },
+  {
     slug: "kanri",
     examCode: "kanri",
     shortName: "管理業務主任者",
