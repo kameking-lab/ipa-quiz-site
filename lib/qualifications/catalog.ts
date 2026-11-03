@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kokunai-ryoko", shortName: "国内旅行業務取扱管理者", fullName: "国内旅行業務取扱管理者試験",
+    domain: "personal-services", administrator: "一般社団法人全国旅行業協会（ANTA）",
+    officialQuestionsUrl: "https://www.anta.or.jp/exam/shiken/annai.html",
+    officialReuseTermsUrl: "https://www.anta.or.jp/",
+    status: "terms-review-required",
+    reuseSummary: "公式検索結果はCBTの出題例を案内。公式サイト・PDFはメンテナンスに転送され、直近2回の資料・全問公開・転載条件を確定できないため本文は収録しない。",
+    remainingWork: ["メンテナンス終了後に直近2回を公式一覧・原本で確定", "実出題全問の公開と転載条件を確認できない限り本文を収録しない"],
+  },
+  {
     slug: "tsuyaku-annai", shortName: "全国通訳案内士（筆記）", fullName: "全国通訳案内士試験（筆記）",
     domain: "personal-services", administrator: "日本政府観光局（JNTO）",
     officialQuestionsUrl: "https://www.jnto.go.jp/projects/visitor-support/interpreter-guide-exams/past-exam-archives/",
