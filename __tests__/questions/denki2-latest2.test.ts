@@ -49,6 +49,37 @@ describe("sekou-2denki latest two official papers, staged", () => {
     }
   });
 
+  it("distinguishes the 20 A and 15 A 250 V outlet figures in R7 late No.19", () => {
+    const q = DENKI2_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 19)!;
+    expect(q.answer).toBe("イ");
+    expect(q.choiceExplanations?.イ).toContain("250 V・20 A");
+    expect(q.choiceExplanations?.イ).toContain("単相200 V回路に使用できる");
+    expect(q.choices?.エ).toContain("左右が横スリット");
+    expect(q.choiceExplanations?.エ).toContain("250 V・15 A");
+    expect(q.choiceExplanations?.エ).toContain("20 A用ではない");
+    expect(q.explanation).toContain(q.choiceExplanations!.イ!);
+  });
+
+  it("explains why earth-fault current is least related in R7 late No.22", () => {
+    const q = DENKI2_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 22)!;
+    expect(q.answer).toBe("ウ");
+    expect(q.choices?.ウ).toBe("地絡電流");
+    expect(q.choiceExplanations?.ウ).toContain("中性点非接地");
+    expect(q.choiceExplanations?.ウ).toContain("最も関係のないもの");
+    expect(q.choiceExplanations?.エ).toContain("遮断器か限流ヒューズか");
+    expect(q.choiceExplanations?.エ).toContain("太さを選定する");
+    expect(q.explanation).toContain(q.choiceExplanations!.ウ!);
+  });
+
+  it("preserves the reciprocal temperature unit and the answer insertion slot", () => {
+    const rows = DENKI2_QUESTIONS.filter(q => q.year === 2025);
+    expect(rows.find(q => q.qNumber === 1)!.question).toContain("0.004 ℃⁻¹");
+    const blank = rows.find(q => q.qNumber === 54)!;
+    expect(blank.question).toMatch(/10 kW 以上\s*〔空欄〕未満/);
+    const key = Array.isArray(blank.answer) ? blank.answer[0] : blank.answer;
+    expect(key ? blank.choices?.[key as keyof NonNullable<typeof blank.choices>] : undefined).toBe("50 kW");
+  });
+
   it("registers the owner-approved qualification while keeping every public registry gated", async () => {
     expect(getQualificationByExamCode("denki2")).toMatchObject({slug: "sekou-2denki", status: "ready-to-ingest"});
     expect(isExamPublished("denki2")).toBe(false);

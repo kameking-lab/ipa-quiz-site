@@ -26,5 +26,15 @@ for edition,y in [('2026-early','08'),('2025-late','07')]:
   if 'imageUrl' in q:assert (ROOT/'public'/q['imageUrl'].lstrip('/')).is_file()
  result.append({'edition':edition,'questionCount':len(d['questions']),'answerPdfPage':len(doc),'answerByNumber':answers,'matchingAnswers':62,'choiceExplanationCount':sum(len(q['choiceExplanations']) for q in d['questions']),'figureCount':sum('imageUrl' in q for q in d['questions'])})
 assert sum(r['questionCount'] for r in result)==124
+# No.3's 30 Ω label must have whitespace at its right, rather than hit the crop edge.
+# The rejected 490 px crop has nonwhite pixels in this margin; the complete crop is 520 px.
+figure=next(f for f in json.loads((ROOT/'reports/sekou-2denki/figures.json').read_text()) if f['edition']=='2026-early' and f['number']==3)
+doc=fitz.open('/tmp/srcpdf/sekou-2denki/r08_2dgz_mondai.pdf')
+rendered=doc[figure['pdfPage']-1].get_pixmap(matrix=fitz.Matrix(2,2),clip=fitz.Rect(figure['rect']))
+stored=fitz.Pixmap(str(ROOT/'public'/figure['imageUrl'].lstrip('/')))
+assert (stored.width,stored.height,stored.samples)==(rendered.width,rendered.height,rendered.samples)
+pixels=stored.samples
+assert all(pixels[(y*stored.width+x)*stored.n+c]==255 for y in range(stored.height) for x in range(stored.width-8,stored.width) for c in range(stored.n)), 'No.3: 30 Ω label touches right crop edge'
 (ROOT/'reports/sekou-2denki/source-check.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print('PASS: 124/124 official answers, 504 choice explanations, 21 figures, source URLs and PDF SHA256')
+print('PASS: R8 early No.3 reproduces the PDF crop with a clear right margin')
