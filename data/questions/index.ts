@@ -48,6 +48,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
+import { DIVER_QUESTIONS } from "./diver";
 import { EISEI1_QUESTIONS } from "./eisei1";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
@@ -158,6 +159,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
+  ...(isExamPublished("diver") ? { "diver": DIVER_QUESTIONS } : {}),
   ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
   ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
   ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),

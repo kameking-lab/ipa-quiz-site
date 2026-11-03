@@ -1,3 +1,4 @@
+import { isExamPublished } from "@/lib/qualifications/catalog";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
@@ -30,13 +31,14 @@ import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
+import { DIVER_QUESTIONS } from "@/data/questions/diver";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...DIVER_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
@@ -67,10 +69,10 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"]),
+  exam: z.enum(["diver", "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"]),
   session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
+  season: z.enum(["published-april", "published-october", "spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
   type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
@@ -327,7 +329,8 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        const officialSummary = q.exam === "denken3" && q.explanationCoverage === "official-summary";
+        // Staged summary explanations cannot enter public pools through the catalog gate.
+        const officialSummary = q.explanationCoverage === "official-summary" && (q.exam === "denken3" || !isExamPublished(q.exam));
         if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;

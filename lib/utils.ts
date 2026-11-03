@@ -65,6 +65,7 @@ export const EXAM_LABELS: Record<string, string> = {
   seishin: "精神保健福祉士",
   tohan: "登録販売者",
   kanri: "管理業務主任者",
+  "diver": "潜水士",
   eisei1: "第一種衛生管理者",
   eisei2: "第二種衛生管理者",
   soukan: "技術士 総合技術監理部門",
@@ -97,6 +98,8 @@ export function examLabel(exam: string): string {
 }
 
 export function seasonLabel(season: string): string {
+  if (season === "published-april") return "4月公表問題";
+  if (season === "published-october") return "10月公表問題";
   if (season === "round1") return "第I回";
   if (season === "round2") return "第II回";
   if (season === "spring") return "春期";
@@ -123,6 +126,7 @@ export function seasonLabel(season: string): string {
 }
 
 export function formatYearSeason(year: number, season: string): string {
+  if (season === "published-april" || season === "published-october") return `${year}年${seasonLabel(season)}`;
   if (["may", "september", "january", "february", "june", "august", "march", "october"].includes(season)) return `${year}年${seasonLabel(season)}`;
   if (season === "published") return `${year}年公表問題`;
   if (season === "round1" || season === "round2") return `令和${year - 2018}年試験 ${seasonLabel(season)}`;

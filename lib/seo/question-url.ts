@@ -40,7 +40,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   qNumber: number;
   part?: QuestionPart;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march|round1|round2)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(published-april|published-october|spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march|round1|round2)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;
