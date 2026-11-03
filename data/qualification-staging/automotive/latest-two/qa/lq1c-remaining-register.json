@@ -1,0 +1,75 @@
+{
+  "remainingContentOriginals": 2,
+  "referenceIds": [
+    "jidosha-2025-second-2-gasoline-q13"
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "candidateSha256": "1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
+      "verdict": "HOLD",
+      "awaitingReviewOfCurrentCandidate": false,
+      "latestReview": {
+        "id": "jidosha-2026-first-2-gasoline-q31",
+        "candidateSha256": "1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
+        "verdict": "HOLD",
+        "sourcePagesChecked": [
+          12
+        ],
+        "answerChecked": true,
+        "allFourExplanationsChecked": true,
+        "findings": [
+          {
+            "field": "technicalConflict",
+            "issue": "????(2)?????????????????????????????????????????????????????????????????????????????????????OCR?????????2???????NSK?????????????????????MT?QAT???????????????????????????????3??????????????????????????????",
+            "replacement": null,
+            "source": "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/ ; https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/ ; https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/bearings/1103_parta.pdf ???PDF??????????????????????????????; ??? 2026-first-2-gasoline p[12]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          }
+        ],
+        "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+        "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      },
+      "readableFindings": [
+        {
+          "field": "technicalConflict",
+          "issue": "Visual reading confirms that option 2 says tapered roller type, alongside ball and needle roller types, under radial bearings used in transmissions. This is not an OCR substitution. Official answer 2 conflicts with NSK radial/axial load capability and manual-transmission QAT applications. The other three options are sound. Retain technical HOLD; do not invent a cylindrical-only classification. The NSK large classification PDF was not fetched; its classification was available only in the search index.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png; https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/; https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/; https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/bearings/1103_parta.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "readableReviewPath": "data/qualification-staging/automotive/latest-two/qa/lq1c-review-repaired-readable.json"
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+      "verdict": "HOLD",
+      "awaitingReviewOfCurrentCandidate": false,
+      "latestReview": {
+        "id": "jidosha-2026-first-body-q37",
+        "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+        "verdict": "HOLD",
+        "sourcePagesChecked": [
+          12
+        ],
+        "answerChecked": true,
+        "allFourExplanationsChecked": true,
+        "findings": [
+          {
+            "field": "choiceExplanations.ウ",
+            "issue": "Choice (3) still restates rejection by the official key, followed by sound but generic tool-selection advice. Neither inspected examination identifies which member or material/stage assignment makes the straight/orbital/DA combination inappropriate for the stated polyester-putty category. Thus the learner cannot derive the intended correction independently of memorizing the key.",
+            "replacement": "Retain official answer (2) and the practical caveat. Pending evidence, state explicitly: The official key rejects this combination, but the exact textbook mismatch has not yet been established. To complete the explanation, obtain the applicable JASPA textbook edition/page, official worked rationale, or a positive comparator establishing the relevant correct grouping; identify the specific misplaced tool or category and give the supported replacement. Do not infer that any listed machine is universally incapable of sanding polyester putty.",
+            "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+          },
+          {
+            "field": "choiceExplanations.エ",
+            "issue": "The positive rotary-plus-disc mapping for paint/rust does not establish an exclusive use or show why rotary/disc/DA is the wrong body-filler grouping. Flatness and finish quality are relevant considerations, but the present explanation does not connect them to a source-supported mismatch in this option. The 2020 comparator repeats this rejected combination and therefore provides no positive filler-group correction.",
+            "replacement": "Retain the supported paint/rust mapping and the statement that DA body-filler sanding is not universally prohibited. Explicitly label the body-filler grouping rationale as unresolved until an applicable textbook passage, official worked explanation or positive comparator identifies the intended correction. Then state the particular tool/category mismatch and supported correct grouping or stage-specific distinction. Do not treat a tool being appropriate for paint removal as proof that it is excluded from filler work.",
+            "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+          }
+        ],
+        "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/3341d4ab34ef-lq1c-review-revision5.json",
+        "evidenceSha256": "3341d4ab34efa109c8e155982c22cb6485f178653ea5309005c7652737926add"
+      }
+    }
+  ]
+}

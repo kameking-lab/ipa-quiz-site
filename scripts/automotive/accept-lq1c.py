@@ -82,6 +82,20 @@ progress = {'scopeOriginals': 85, 'newGradableOriginals': len(set(release) & set
             'referenceIds': [r['id'] for r in decisions.values() if r['verdict'] == 'REFERENCE'],
             'remainingIds': [id for id in candidates if id not in release and decisions.get(id, {}).get('verdict') != 'REFERENCE'],
             'rows': [decisions[id] for id in candidates if id in decisions]}
-for path, value in [(OUT/'reviewed.json', ordered), (ledger_path, ledger), (previous, progress)]:
+readable = {r['id']: (r, p) for p in QA.glob('lq1c-review-*-readable.json') for r in read(p)['rows']}
+remaining_rows = []
+for id in progress['remainingIds']:
+    decision = decisions.get(id, {})
+    current = decision.get('candidateSha256') == bindings[id]
+    row = {'id': id, 'candidateSha256': bindings[id],
+           'verdict': decision.get('verdict', 'NOT_REVIEWED') if current else 'NOT_REVIEWED',
+           'awaitingReviewOfCurrentCandidate': not current, 'latestReview': decision}
+    if id in readable and readable[id][0]['candidateSha256'] == decision.get('candidateSha256'):
+        row['readableFindings'] = readable[id][0]['findings']
+        row['readableReviewPath'] = readable[id][1].relative_to(ROOT).as_posix()
+    remaining_rows.append(row)
+remaining = {'remainingContentOriginals': len(remaining_rows), 'referenceIds': progress['referenceIds'], 'rows': remaining_rows}
+for path, value in [(OUT/'reviewed.json', ordered), (ledger_path, ledger), (previous, progress),
+                    (QA/'lq1c-remaining-register.json', remaining)]:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 print(json.dumps({k:v for k,v in progress.items() if k != 'rows'}, ensure_ascii=False))

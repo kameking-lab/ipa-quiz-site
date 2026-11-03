@@ -7,6 +7,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data/qualification-staging/automotive/latest-two'
 QA = DATA / 'qa'
+if (QA / 'lq1c-candidates.json').exists():
+    raise RuntimeError('Initial preparation only: existing LQ1C candidates must not be overwritten.')
 
 def read(path):
     return json.loads(path.read_text(encoding='utf-8'))

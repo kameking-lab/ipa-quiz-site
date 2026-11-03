@@ -5,6 +5,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 meta = json.loads((ROOT/'data/questions/automotive/qualifications.json').read_text(encoding='utf-8'))
+ledger = json.loads((ROOT/'data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json').read_text(encoding='utf-8'))
+originals = json.loads((ROOT/'data/qualification-staging/automotive/latest-two/latest-two.json').read_text(encoding='utf-8'))['writtenOriginals']
+unreleased = set(ledger['notYetReleasedIds'])
 p = ROOT/'lib/qualifications/catalog.ts'
 catalog = p.read_text(encoding='utf-8')
 pseo = ROOT/'lib/seo/exam-meta.ts'
@@ -15,14 +18,18 @@ for m in meta:
     assert match, m['exam']
     block = match[0]
     block = re.sub(r'保存\d+原問中\d+問', f"保存{m['stored']}原問中{m['reviewed']}問", block)
-    remaining = [f"未収録{m['stored']-m['reviewed']}原問の内容照合"] if m['stored'] != m['reviewed'] else []
+    pending = [q for q in originals if q['subject'] == m['subject'] and q['id'] in unreleased]
+    reference_count = sum(q['officialQuestionStatus'] == 'withdrawn-all-accepted' for q in pending)
+    content_count = len(pending) - reference_count
+    remaining = ([f"未収録{content_count}原問の内容照合"] if content_count else [])
+    if reference_count:
+        remaining.append(f"公式全員正解{reference_count}原問は通常採点対象外")
     block = re.sub(r'remainingWork: \[[^\n]*\]', 'remainingWork: '+json.dumps(remaining,ensure_ascii=False), block)
     catalog = catalog[:match.start()] + block + catalog[match.end():]
     seo = re.sub(r'("'+re.escape(m['exam'])+r'": ")\d+原問中\d+問',
                  lambda match: match[1]+f"{m['stored']}原問中{m['reviewed']}問", seo)
 p.write_text(catalog, encoding='utf-8', newline='\n')
 pseo.write_text(seo, encoding='utf-8', newline='\n')
-ledger = json.loads((ROOT/'data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json').read_text(encoding='utf-8'))
 count = ledger['releaseOriginals']
 p = ROOT/'data/questions/automotive/README.md'
 s = p.read_text(encoding='utf-8')

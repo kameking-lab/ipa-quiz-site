@@ -57,6 +57,8 @@ patches = {
 }
 
 backup = QA / 'lq1c-candidates-initial.json'
+if backup.exists():
+    raise RuntimeError('Revision 1 already frozen; do not overwrite later reviewed candidates.')
 if not backup.exists():
     backup.write_bytes(packet_path.read_bytes())
 delta = []

@@ -1,45 +1,18 @@
 {
   "scopeOriginals": 85,
-  "newGradableOriginals": 55,
+  "newGradableOriginals": 82,
   "referenceIds": [
     "jidosha-2025-second-2-gasoline-q13"
   ],
   "remainingIds": [
-    "jidosha-2026-first-2-gasoline-q29",
     "jidosha-2026-first-2-gasoline-q31",
-    "jidosha-2026-first-2-diesel-q01",
-    "jidosha-2026-first-2-diesel-q12",
-    "jidosha-2026-first-2-diesel-q15",
-    "jidosha-2026-first-2-diesel-q27",
-    "jidosha-2026-first-2-diesel-q38",
-    "jidosha-2026-first-3-chassis-q09",
-    "jidosha-2026-first-3-gasoline-q05",
-    "jidosha-2026-first-3-diesel-q11",
-    "jidosha-2026-first-3-diesel-q15",
-    "jidosha-2026-first-body-q08",
-    "jidosha-2026-first-body-q10",
-    "jidosha-2026-first-body-q22",
-    "jidosha-2026-first-body-q24",
-    "jidosha-2026-first-body-q37",
-    "jidosha-2025-second-1-small-written-q09",
-    "jidosha-2025-second-1-small-written-q17",
-    "jidosha-2025-second-1-small-written-q19",
-    "jidosha-2025-second-1-small-written-q22",
-    "jidosha-2025-second-1-small-written-q37",
-    "jidosha-2025-second-1-small-written-q48",
-    "jidosha-2025-second-2-gasoline-q01",
-    "jidosha-2025-second-2-gasoline-q15",
-    "jidosha-2025-second-2-gasoline-q23",
-    "jidosha-2025-second-3-gasoline-q01",
-    "jidosha-2025-second-3-gasoline-q15",
-    "jidosha-2025-second-3-diesel-q25",
-    "jidosha-2025-second-body-q24"
+    "jidosha-2026-first-body-q37"
   ],
   "rows": [
     {
       "id": "jidosha-2026-first-2-gasoline-q29",
-      "candidateSha256": "6fdda1fd3977c91df3a67899f5e2b92cd96462dc45c51d5b493bfcb410e2a4f4",
-      "verdict": "FAIL",
+      "candidateSha256": "a8229f52af91e49756a767a261e9b0590a710b2392a9d071c8cbc0069eae6e5d",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         11
       ],
@@ -47,14 +20,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "???????????????Nissan 2004 Altima????????????D4????????????????????2014?JASPA q18???1??????????PDF???????????????????????????????????????3????2????",
-          "replacement": "???????????????????????????????????????????Nissan 2004 Altima????????????????????????????????????????????????????????????????",
-          "source": "Nissan 2004 Altima service manual AT, OVERALL SYSTEM Clutch and brake components????AT-26 D4??????????????? https://device.report/m/5a5467649e35bb91a1ee5a65b7479076778c5684a307d5a46238fadda19705b7.pdf; tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p11.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "choiceExplanations.エ; validation",
+          "issue": "All four explanations checked: rollers versus sprags, hydraulically compressed alternating clutch plates, band/servo construction versus multidisc brake parts, and front-sun-gear locking through the reverse-clutch drum in this mechanism. The Nissan 2004 Altima manufacturer manual component table expressly supports front-sun-gear locking. The unsupported 2014 JASPA citation has been removed. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p11.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 21 Q29=2; https://boredmder.com/FSMs/Nissan/Altima/2004/AT.pdf printed AT-19 component table, primary manufacturer text available in search index; candidate reference https://device.report/m/5a5467649e35bb91a1ee5a65b7479076778c5684a307d5a46238fadda19705b7.pdf"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2026-first-2-gasoline-q31",
@@ -78,27 +51,23 @@
     },
     {
       "id": "jidosha-2026-first-2-diesel-q01",
-      "candidateSha256": "a601f94cc6fc2296bfaab74ae3e7c0042d20fc45a51d5329cc895fcf7d61db37",
-      "verdict": "FAIL",
+      "candidateSha256": "0417d71509489e2c693a3c351975b3a4d86fff5bb217b464220ac4407729a661",
+      "verdict": "PASS",
       "sourcePagesChecked": [
-        2,
-        6
+        2
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation,choiceExplanations.?",
-          "issue": "????????????????????DENSO?????????q11?A???????????????CO/SOF/NOx??3??????",
-          "replacement": {
-            "explanation": "?????(1)????????????????CO????????????SOF?????????????????NOx???????????????????????????????????????????????????????????????",
-            "choiceExplanations.?": "????????DENSO?5???????????????????????????????????????????????????????????????????????????????????HC????????????"
-          },
-          "source": "DENSO Technical Review Vol.11 No.1 Fig.10 ??p26: https://www.denso.com/jp/ja/-/media/global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf?hash=008474745B2CDB43CA664F7F5AA3DD0C&la=ja-jp&rev=262a27a599fc4bcdae2b3b97ffc1e413; ??? 2026-first-2-diesel p[2]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 22 Q1=1 agrees. Excess-air CO, organic fuel/oil-derived SOF and thermal NOx distinctions are correct. The revised pre-injection explanation removes the unsupported PM assertion, retains shortened ignition delay and reduced combustion noise, and qualifies the pre/pilot terminology to this examination. It does not deny condition-dependent HC effects. No replacement needed.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q1=1"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
     },
     {
       "id": "jidosha-2026-first-2-diesel-q08",
@@ -122,8 +91,8 @@
     },
     {
       "id": "jidosha-2026-first-2-diesel-q12",
-      "candidateSha256": "90094fca0624a8f60c5f94e242c7211bbf2a627180baeba3b41513ff6237c22b",
-      "verdict": "FAIL",
+      "candidateSha256": "a0e674ebe0bf923cdfb3600cdcd8ddec443e509e766e87ccf360a2948354b6c8",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         6
       ],
@@ -131,22 +100,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation,choiceExplanations.?",
-          "issue": "?????????????????????????Garrett???????????????????????????2?????????????????????????????3?????",
-          "replacement": {
-            "explanation": "?????(2)???????????????????????????????????????????????????????????????????????????????????????????????????????????????",
-            "choiceExplanations.?": "????????????????????????????????????????????????????????????????????????????????????????????????????"
-          },
-          "source": "https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbocharger-bearing-systems/; tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanations distinguish radial journal support from axial thrust restraint and expressly acknowledge coexistence. They no longer insert only into the original option or deny all thrust bearings. This is supportable for the conventional bearing arrangement addressed here, not a claim that every turbo uses journal bearings. Intercooler density increase, wastegate bypass and low-flow variable-nozzle control in the other three explanations agree.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbocharger-bearing-systems/ (journal, thrust and ball-bearing distinctions)"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
     },
     {
       "id": "jidosha-2026-first-2-diesel-q15",
-      "candidateSha256": "30b7ddc1d645162d5734b8b5631731dd41af394b0765354339b57be792947ba5",
-      "verdict": "FAIL",
+      "candidateSha256": "3591670d2d313ccc7558d50da83841ff175da86fa2fad6d381e816718c63a840",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         7
       ],
@@ -154,22 +120,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation,choiceExplanations.?",
-          "issue": "???????????????????Navistar?????????????????????????4????2???????????????????",
-          "replacement": {
-            "explanation": "?????(4)??????????????????????????????????????????????????????????????????????????",
-            "choiceExplanations.?": "?????????????????????????????????????????????????????????????????????????????????????????????????????"
-          },
-          "source": "https://www.international.com/-/media/project/tratongroup/international/international/vehicles/resources/tem-body-builder/engine-media/epa-21-international-a26/a26_engine_cold_start_assist_pdf.pdf?rev=e23fedbd33b64aa2a7912dc5b7205919 ; https://www.ngkntk.com/products/glow-plugs; tmp/lq1b-sources/jaspa-2026-first-2-diesel-p07.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The added qualification makes the general explanation specific to the examination system. Visual inspection of JASPA 2025-first 3-diesel Q15(2), p5, explicitly confirms coolant-temperature-controlled preheat time; its official answer is 2. JASPA 2019-first 2-diesel Q15(1), p8, additionally describes ECU control using starting coolant temperature and an intake-passage heater. The revised caveat correctly allows other designs to use intake temperature. The other three explanations agree with the textbook vehicle-size tendency, increasing resistance/current regulation, and series metal-glow-plug coil construction. Coolant temperature does not mean the coolant must be cold as a separate input category.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p07.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_3d.pdf p5 Q15(2); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_kai.pdf p1 column 33 Q15=2; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2019/20191006_2d.pdf p8 Q15(1); https://www.ngkntk.com/products/glow-plugs; https://www.international.com/-/media/project/tratongroup/international/international/vehicles/resources/tem-body-builder/engine-media/epa-21-international-a26/a26_engine_cold_start_assist_pdf.pdf?rev=e23fedbd33b64aa2a7912dc5b7205919"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
     },
     {
       "id": "jidosha-2026-first-2-diesel-q27",
-      "candidateSha256": "0a7d2b7de6b260c6cce93d34292a693213423a0b4a03e2ce6093a951772b3864",
-      "verdict": "HOLD",
+      "candidateSha256": "62a37c47adc9d6b6436331caf6cd3cbbfcedc38ab08fda719b8ca1f76b066208",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         12
       ],
@@ -177,19 +140,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "??????????????????DENSO???????????????????????????????????A?????????????????????????4??3???????????????????????????",
-          "replacement": "??????????????????????????????????????????????????????????????A????????????????????????????????????????????",
-          "source": "https://www.denso-am.eu/products/ac-engine-cooling/expansion-valves ; https://www.densoautoparts.com/troubleshooting-charts-clutch-expansion/; tmp/lq1b-sources/jaspa-2026-first-2-diesel-p12.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "question, answer, explanation, choiceExplanations",
+          "issue": "Original question, all four choices and explanations visually checked. Target official column 22 Q27=4 agrees with answer エ. Temperature raises sensing-chamber pressure; throttling produces a low-pressure liquid/vapor mist; outlet sensing regulates supply with load. The identical 2019 box-type diagram explicitly labels A as gas-phase refrigerant, directly supporting choiceExplanations.ウ without relying on an answer key to infer the charge. Its key gives Q27=1 for the reversed temperature/pressure statement. The revision appropriately excludes universal no-liquid-at-any-condition claims. No repair required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p12.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q27=4; qa/lq1c-supporting-sources/lq1c-20190324-2d-p13.png; qa/lq1c-supporting-sources/lq1c-20190324-key-p01.png column 22 Q27=1; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2018/20190324_2d.pdf#page=13"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/d3ba7035fe40-lq1c-review-revision4.json",
+      "evidenceSha256": "d3ba7035fe40d056443573a15608d9312035b2292fdfbd0935c16f0bd86301ee"
     },
     {
       "id": "jidosha-2026-first-2-diesel-q38",
-      "candidateSha256": "08696430979215967ed1fbc990f3805870956922f14157be08fdfbaa50366faa",
-      "verdict": "HOLD",
+      "candidateSha256": "fc531ae6e4ed43d1a364c49fb773e184ed4055fe3068af2a968008f4e3c77ed7",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         15
       ],
@@ -197,17 +160,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation,choiceExplanations.?,legalApplicability",
-          "issue": "??1??????????3?????2008-07-07?102?3?1?????550mm???????????100mm???????????2020-05-29?180?3??450mm????????????????????????2026??????????????????",
-          "replacement": {
-            "explanation": "?????(1)????550mm?????????????102???????????????????????????????450mm?????????????????????????????????????",
-            "choiceExplanations.?": "????550mm???????????????????550mm???????????????????"
-          },
-          "source": "https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf p2 3(1) ; https://www.mlit.go.jp/jidosha/content/S180.pdf p2 3(1); tmp/lq1b-sources/jaspa-2026-first-2-diesel-p15.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Historical Article 102 paragraph 3 independently confirms unloaded 550 mm, secure mounting, symmetry and the 100 mm lateral relation. The later Article 180 specifies 450/500 mm with conditional 550 mm alternatives. All four explanations agree when read under the stated historical scope. The revision appropriately avoids claiming universal present-day applicability and requires class/build-date applicability checks for actual vehicles. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p15.png; https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf p2 paragraph 3; https://www.mlit.go.jp/jidosha/content/S180.pdf pp2-3 paragraph 3; target key p1 column 22 Q38=1"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2026-first-2-motorcycle-q12",
@@ -271,8 +231,8 @@
     },
     {
       "id": "jidosha-2026-first-3-chassis-q09",
-      "candidateSha256": "6adb0552730f0c64b9eef2d70ab71fe55e44cb041760cdaaed5d500a710339f1",
-      "verdict": "HOLD",
+      "candidateSha256": "041ec92b79f8f00aa4411d01d48b204e72faf3c5652ffe032ef2c7a352cdde51",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         4
       ],
@@ -280,14 +240,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "??4?????3??????Ford??????????????????????????????????????????????????????????????",
-          "replacement": "?????(4)?????????????????????????????????????????????????(2)???????????????????????????????????????????",
-          "source": "https://www.fordservicecontent.com/Ford_Content/catalog/owner_guides/10f12og3e.pdf; tmp/lq1b-sources/jaspa-2026-first-3-chassis-p04.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 31 Q9=4 agrees. Relief limits pressure, the control valve directs cylinder flow, and vane pumps are standard here. Independently downloaded and visually inspected 2016-03-20 3-chassis Q10: option 4 explicitly specifies idling for reservoir-level inspection. Its incorrect-statement key is 1, supporting option 4. The candidate appropriately limits this scheme to the exam and preserves manufacturer engine-off procedures rather than imposing a universal idling rule.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-chassis-p04.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 31 Q9=4; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_3c.pdf physical p4 Q10(4); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_ka.pdf physical p1 column 31 Q10=1; tmp/lq1c-r3-20160320-3c-p4.png; tmp/lq1c-r3-20160320-key-p1.png"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
     },
     {
       "id": "jidosha-2026-first-3-gasoline-q04",
@@ -311,8 +271,8 @@
     },
     {
       "id": "jidosha-2026-first-3-gasoline-q05",
-      "candidateSha256": "4969f507065c427a2ab753973738ae3db2452a1afe40472f88404d3b5525b544",
-      "verdict": "FAIL",
+      "candidateSha256": "03501ff22d7f423f2e3c0d292aa90d5f14ba660f9ee570db9e813f93c9b564c8",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         2
       ],
@@ -320,19 +280,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "60????????????????????????????????????????????????????????????????????????????4??3??????",
-          "replacement": "????60??????????????????????????????????????????????????????????????60?????????????????????????????????",
-          "source": "https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf; tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The replacement explicitly separates the exam treatment from an exact universal minimum at 60 percent, and identifies formulation and concentration-definition dependence. BASF G48 specifies volume concentration and reports below -50 C at 60 vol percent, without establishing an exact universal minimum. Cap pressure/vacuum regulation, shroud airflow guidance and coolant oxidation/additive deterioration explanations are consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
     },
     {
       "id": "jidosha-2026-first-3-diesel-q11",
-      "candidateSha256": "5085c9931db8d1076be607c3c1e362d39448fc7b1facc641785f7b920a52be3d",
-      "verdict": "HOLD",
+      "candidateSha256": "b85f6b2a04e30e60f13703d1bc5bae6f0d495d31f44760877bec3ea61fc6bcbc",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         4
       ],
@@ -340,21 +300,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?,choiceExplanations.?",
-          "issue": "??4??????????????????????????????????????82?88???????5?7???????????????????BASF?60vol%????below -50???????????-60?????????????????",
-          "replacement": {
-            "choiceExplanations.?": "???????????????82?88??????????5?7???????????????????????????????????????????????????????"
-          },
-          "source": "https://fuji-seiko.co.jp/product1/ ??????????????????????????; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2; tmp/lq1b-sources/jaspa-2026-first-3-diesel-p04.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Official answer 4 and all four reasons checked. Jiggle-valve air venting and the distinction between pressure-valve opening-pressure testing and vacuum-valve operation checking are sound. The numerical coolant and thermostat statements are explicitly attributed to the exam assumptions rather than universal specifications. BASF G48 specifies volume concentration and a below -50 C result at 60 percent; this alone does not prove a -60 C freezing boundary. The revised wording does not make that inference. The 82-88 C and 5-7 C values remain representative exam values, not independently established universal calibrations.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p04.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2; https://fuji-seiko.co.jp/product1/; target key p1 column 33 Q11=4"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2026-first-3-diesel-q15",
-      "candidateSha256": "2246a6b5718074da4475f12454d4e6e8e4d8a52ed24e8b6d83ba0c8c9bfeb294",
-      "verdict": "FAIL",
+      "candidateSha256": "f0b6ccb04046383ff434b5e914b97838a06697651ff31559443f29d193d96812",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         5
       ],
@@ -362,14 +320,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "???250?350??????????????????ENEOS??SDS???????240???????2????????????????????",
-          "replacement": "????250?350??????????????????????????????????????????????????????ENEOS??SDS????????240??????????????SDS??????",
-          "source": "https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf section 9 p7; tmp/lq1b-sources/jaspa-2026-first-3-diesel-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanation clearly treats 250-350 C as the examination description rather than a guaranteed range for all diesel fuel, and accurately states the ENEOS SDS example of approximately 240 C autoignition. It does not confuse autoignition with flash point. Cold-weather grades 3/special 3, viscosity/ignition quality and the elementary pour-point explanation remain consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p05.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf section 9 p7, revised 2024-02-01"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
     },
     {
       "id": "jidosha-2026-first-body-q02",
@@ -425,8 +383,8 @@
     },
     {
       "id": "jidosha-2026-first-body-q08",
-      "candidateSha256": "a900c0ef2e2c450df9781dbcd4455c31500838e017240db7592441d752e4c302",
-      "verdict": "HOLD",
+      "candidateSha256": "7bad2cf743a27b89da88b1ac6d0f73de1359aa3f9361f4c81753628b355b5514",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         3
       ],
@@ -434,14 +392,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation; choiceExplanations",
-          "issue": "The official count is two, but it does not identify the two true statements. The asserted (?)(?) pair and dismissal of rib reinforcement were not independently substantiated.",
-          "replacement": "Retain official answer (2), but withhold acceptance of the (?)(?) assertion until a JASPA body-structure textbook edition/page establishes each of (?)?(?); then replace every choice explanation with that verified pair.",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=3"
+          "field": "validation",
+          "issue": "Visually checked 2020 body Q8 and key column 43: all four statements are correct, answer 4. This independently establishes rib reinforcement, separate toe board for split panels, integrated toe board for one-piece panels and FF cross-member application. In the 2026 wording only statements (i) and (iv) remain correct, giving 2. All four count explanations now consistently identify this pair.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p03.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; qa/lq1c-supporting-sources/lq1c-20201004-body-p04.png Q8; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png column 43 Q8=4"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2026-first-body-q09",
@@ -458,23 +416,16 @@
     },
     {
       "id": "jidosha-2026-first-body-q10",
-      "candidateSha256": "8a772e9f3f46e49c480ed2d2929474b87cc1bbe6807cea5789055bca76a8f17c",
-      "verdict": "FAIL",
+      "candidateSha256": "b0d4d73b4e33da50019771cf22f192d511666349195290129347b92e800e0eec",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         4
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "explanation; choiceExplanations.?",
-          "issue": "The explanation omits the actual beading-versus-hemming error and instead rejects full-perimeter adhesive without evidence.",
-          "replacement": "?????????????????????????????????????????????????????????????????????????????????",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=4; https://www.jstage.jst.go.jp/article/qjjws1943/70/2/70_2_248/_pdf/-char/en (section 2.2)"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2026-first-body-q12",
@@ -582,23 +533,16 @@
     },
     {
       "id": "jidosha-2026-first-body-q22",
-      "candidateSha256": "750de718c95092c419c901098515119edee0eece12bc795e73d941821d5861de",
-      "verdict": "FAIL",
+      "candidateSha256": "0dac0d2e27ca59e6fdb882db0f19bac445b6aca3da1b19014c21e7bd58465bc2",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         7
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "explanation; choiceExplanations.?",
-          "issue": "The explanation only says the method is wrong and does not state the correct channel reinforcement placement.",
-          "replacement": "??????????????????????????????????????????????????????????????????????????????????????????????",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_bo.pdf#page=8 (Q21(2)); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2026-first-body-q23",
@@ -615,23 +559,16 @@
     },
     {
       "id": "jidosha-2026-first-body-q24",
-      "candidateSha256": "8b5316091ef13dde9fc5b49317b4cacd95b5d602e37f56e267cf25ac545f34b1",
-      "verdict": "FAIL",
+      "candidateSha256": "1a5ea647f84218d5147c4abc23dc3d89f39d5b4b451eedab5143485e9516ed28",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         8
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "choiceExplanations.?; choiceExplanations.?",
-          "issue": "The rejected flame descriptions are not corrected precisely. The 1:1 mixture is rejected together with the erroneous temperature, although neutral oxyacetylene flame uses approximately equal supplied gases.",
-          "replacement": "(2) ????????????????????????(3) ?????????3,200??????2,800???????1?1????????????????",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8; https://www.jarac.or.jp/images/qualification/h26-reibai-houkoku.pdf (neutral/reducing flame comparison)"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2026-first-body-q25",
@@ -726,7 +663,7 @@
     },
     {
       "id": "jidosha-2026-first-body-q37",
-      "candidateSha256": "6a75abc94c11ac3b9a596f67ca21728381a2b32fb0eea4c7603969a28b8b09d3",
+      "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
       "verdict": "HOLD",
       "sourcePagesChecked": [
         12
@@ -735,34 +672,33 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?; choiceExplanations.?; choiceExplanations.?",
-          "issue": "All three distractor explanations only reject the listed sets without identifying which machine is misplaced or the correct set. General commercial tool capability cannot establish this textbook-specific table.",
-          "replacement": "Keep official answer (2). Obtain the JASPA body-painting textbook usage table and state the exact approved machine set for old-paint/rust removal, polyester putty and body filler, identifying the erroneous tool in each distractor before release.",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=12"
+          "field": "choiceExplanations.ウ",
+          "issue": "Choice (3) still restates rejection by the official key, followed by sound but generic tool-selection advice. Neither inspected examination identifies which member or material/stage assignment makes the straight/orbital/DA combination inappropriate for the stated polyester-putty category. Thus the learner cannot derive the intended correction independently of memorizing the key.",
+          "replacement": "Retain official answer (2) and the practical caveat. Pending evidence, state explicitly: The official key rejects this combination, but the exact textbook mismatch has not yet been established. To complete the explanation, obtain the applicable JASPA textbook edition/page, official worked rationale, or a positive comparator establishing the relevant correct grouping; identify the specific misplaced tool or category and give the supported replacement. Do not infer that any listed machine is universally incapable of sanding polyester putty.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "issue": "The positive rotary-plus-disc mapping for paint/rust does not establish an exclusive use or show why rotary/disc/DA is the wrong body-filler grouping. Flatness and finish quality are relevant considerations, but the present explanation does not connect them to a source-supported mismatch in this option. The 2020 comparator repeats this rejected combination and therefore provides no positive filler-group correction.",
+          "replacement": "Retain the supported paint/rust mapping and the statement that DA body-filler sanding is not universally prohibited. Explicitly label the body-filler grouping rationale as unresolved until an applicable textbook passage, official worked explanation or positive comparator identifies the intended correction. Then state the particular tool/category mismatch and supported correct grouping or stage-specific distinction. Do not treat a tool being appropriate for paint removal as proof that it is excluded from filler work.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/3341d4ab34ef-lq1c-review-revision5.json",
+      "evidenceSha256": "3341d4ab34efa109c8e155982c22cb6485f178653ea5309005c7652737926add"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q09",
-      "candidateSha256": "24092f10e88b6d2a1dd1e5861a51371c484e5eae9e8dfb670c9157b7802ebacf",
-      "verdict": "FAIL",
+      "candidateSha256": "8718f84bbee377b0687999271306eec0785ad3fca5c479b2b30ed1112dcfe7a7",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         7
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "explanation; choiceExplanations.?; choiceExplanations.?",
-          "issue": "Continuous acquisition is described vaguely as scrolling, conflating ROLL with the separate SCRL display-position control. The 50 Hz assertion is not evaluated.",
-          "replacement": "(2)?ROLL???????????RUN???????????SCRL?????????????????????(3)?50Hz????????????????????AUTO??????????????",
-          "source": "https://download.tek.com/manual/TekScope-Application-User-Manual-EN-US-077-1699-00_077169900.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=7"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q11",
@@ -779,8 +715,8 @@
     },
     {
       "id": "jidosha-2025-second-1-small-written-q17",
-      "candidateSha256": "1c6216a5dbd9dfb12fc72ee6e3b187fba58475103fd8216ac2dc772600f330d1",
-      "verdict": "HOLD",
+      "candidateSha256": "f9bf674f5374c0d52c92bdc5777da5e80627788bc76b27b5b5b8ac615a93921a",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         12
       ],
@@ -788,39 +724,32 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation; choiceExplanations.?",
-          "issue": "The wrong 100 mA threshold is acknowledged but the correct specified tester current is not supplied; generic avoidance does not resolve this factual statement.",
-          "replacement": "Keep official combination ?????. Verify the applicable JASPA/manufacturer SRS test procedure and replace 100mA with its specified maximum (10mA is a lead, not established here); distinguish permitted harness checks from prohibited squib resistance measurement.",
-          "source": "Original Q17 and manufacturer-specific SRS service procedure required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=12"
+          "field": "validation",
+          "issue": "The manufacturer manual independently specifies at most 10 mA in the lowest resistance range and prohibits inflator continuity testing. All four combination explanations correctly implement false/false/true. Torsion-bar load limitation permits belt payout after locking-base arrest; acceleration sensing converts the crash input to an electrical signal. This is a specified circuit-test condition, not authorization to measure a squib.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p12.png; https://kiroku.bufsiz.jp/kiroku/syuurisyo2/SUZUKI/SUZUKI2/EVERY-DA62Vairbag.pdf physical p37, printed SRS airbag 4E-11; tmp/lq1c-r2-srs-37.png; target key p1 column 12 Q17=4"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q19",
-      "candidateSha256": "6a9b2f422b2b6269f598e781918445ee2d36109acc3c2d577dc79ecd3fc79424",
-      "verdict": "FAIL",
+      "candidateSha256": "8850cbf214853b45a6dbd7a4bf9755e70b28d0476fa3e5e4fe4b8de9bbfdccf0",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         13
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "choices.?",
-          "issue": "The original wind-noise table says ???; the candidate drops the dakuten and transcribes ???.",
-          "replacement": "???(1)??????????????????????????????????????????(3)??????",
-          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p13.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k.pdf#page=13"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q22",
-      "candidateSha256": "b96b4bc6b76b6bcfe2a996b16cc8b7075eee6198289600a919a4eace32cc4f7a",
-      "verdict": "HOLD",
+      "candidateSha256": "90d8ebbadf6d83149936a989b9d71e6744c325b052027c872860e129ab8d6d53",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         15
       ],
@@ -828,19 +757,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?; choiceExplanations.?",
-          "issue": "The model-specific fail-safe gears and overdrive prohibition are rejected without stating the actual gear mapping or control.",
-          "replacement": "Retain official answer (1); obtain the applicable four-speed AT fail-safe table, state D/2/1 gears for simultaneous A/B failure and the permitted gears after line-pressure-solenoid failure, then rewrite (3)/(4) explanations from that table.",
-          "source": "Original Q22; applicable JASPA AT fail-safe table required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=15"
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 12 Q22=1 agrees. Electrical substitution of range 1 and the actual manual-valve range 2 explain the 2_1 result. Idle/full contacts provide three substitute throttle states; constant maximum pressure is not the throttle-sensor fallback described here. The 2020 Q17(4), with official answer 4, explicitly establishes D/2 fixed in third and range 1 fixed in second. The 2023 Q21 key 2 gives false/false/true: line-pressure-solenoid OFF still allows first through fourth, with increased shift/select shock. These are mechanism-specific conclusions, not universal AT fallback rules.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p15.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q22=1; qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4; qa/lq1c-supporting-sources/lq1c-20230326-1k-p15.png Q21; qa/lq1c-supporting-sources/lq1c-20230326-key-p01.png column 12 Q21=2"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q37",
-      "candidateSha256": "439fd4414b3845b7cc4bb79e44b9ca14d2bf76b9845bc38a49163316dfe1db98",
-      "verdict": "HOLD",
+      "candidateSha256": "074f118467af7f7189f080506813432a8ea1bb77b0504b38051ed21fd817a086",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         26
       ],
@@ -848,14 +777,20 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation; choiceExplanations",
-          "issue": "The distractors are ranked by generic plausibility rather than verified fault behavior of this specified AT. No source establishes that a B-solenoid open or oil-temperature short cannot produce this symptom.",
-          "replacement": "Retain official answer (3). Cite the applicable warm-engine AT diagnostic/fail-safe chart and explain the specific symptom and substitute control for each of the four faults; avoid unsupported claims that other faults are less representative.",
-          "source": "Original Q37; applicable AT diagnostic chart required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=26"
+          "field": "choiceExplanations.イ",
+          "issue": "The sole remaining revision4 failure is resolved. The numerical fallback example now explicitly requires abnormalities of BOTH A and B while driving: D and 2 fixed in third gear, range 1 fixed in second gear. This matches primary 2020 Q17(4). It expressly states that this example alone does not establish B-only fallback gears and does not universally deny secondary shock. No repair required.",
+          "replacement": null,
+          "source": "qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17(4), visually rechecked; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4, checked in revision4; qa/lq1c-review-revision4.json remaining failure and targeted repair"
+        },
+        {
+          "field": "question, answer, explanation, all four choiceExplanations",
+          "issue": "The changed explanation remains consistent with the original B-only option and official answer (3), label ウ. The unchanged explanations distinguish lockup control, throttle-load substitution and pressure/shift control, and the hot-side oil-temperature-short signal without asserting universally maximum pressure or absence of secondary shock. All previously checked fields are cryptographically unchanged. No remaining failure found.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p26.png Q37; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q37=3; qa/lq1c-review-revision4.json; qa/lq1c-revision4-delta.json; qa/lq1c-revision6-delta.json"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/f06a4055aa92-lq1c-review-revision6.json",
+      "evidenceSha256": "f06a4055aa9240135c516f4935043a4d74e92946a65f23239ff2ae7442057049"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q44",
@@ -885,23 +820,16 @@
     },
     {
       "id": "jidosha-2025-second-1-small-written-q48",
-      "candidateSha256": "1e26667f89946a67e003bf8bae3761c2b35ff41a5c0887f1dded54b5522dd3e3",
-      "verdict": "FAIL",
+      "candidateSha256": "2599a25d7acb774b97d95f87a52c9eaad167b3155083e5638134f4c7aa03c3dc",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         31
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "choiceExplanations.?",
-          "issue": "Incorrectly rejects 150m and driving-beam illumination; both are explicitly required by Article 210(1)(iii). The wrong word is daytime.",
-          "replacement": "?????????????????????150m?????????????????????????????????????????????????????",
-          "source": "https://www.mlit.go.jp/jidosha/content/S210.pdf (?210??1????); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=31"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2025-second-1-small-written-q50",
@@ -918,8 +846,8 @@
     },
     {
       "id": "jidosha-2025-second-2-gasoline-q01",
-      "candidateSha256": "22f63fc3af160a2d52e540cbf3a094f572aa56cba3094d80e57c90f8e34fa26c",
-      "verdict": "HOLD",
+      "candidateSha256": "e80bfc9762cb8ffae0e7ba578b40149efb973fe54e589fdabc86edd45194887f",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         2
       ],
@@ -927,14 +855,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "??2?????????????????????????MAHLE????????????????????????????????????????????????????????????????????????????????",
-          "replacement": "??????????????????????????????????????????????????????????????????????????????????????????????????????????",
-          "source": "https://www.mahle-aftermarket.com/na/en/support/questions-and-comments/ ; https://www.mahle-aftermarket.com/media/homepage/facelift/media-center/product-catalogs/mahle_bearings_catalog_2025_screen.pdf; tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+          "field": "validation",
+          "issue": "All four reasons checked: conformability, seizure resistance rather than fatigue resistance, the explicitly exam-scoped tin-content claim, and embeddability. The revision does not infer composite-shell expansion from pure-element coefficients and directs actual clearance selection to material/construction/service-specific manufacturer specifications. The exact assumed alloy and layer structure remain unidentified; acceptance is for this accurate caveat, not a newly verified universal tin-content law. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p02.png; https://www.mahle-aftermarket.com/na/en/support/questions-and-comments/ bearing oil-clearance discussion; target key p1 column 21 Q1=2"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2025-second-2-gasoline-q13",
@@ -959,7 +887,7 @@
     {
       "id": "jidosha-2025-second-2-gasoline-q15",
       "candidateSha256": "419955d58b9ec376ec0b7cdec6a0b4273f07c93843123c3a0ceec046bd022631",
-      "verdict": "HOLD",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         5
       ],
@@ -967,19 +895,19 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "explanation,choiceExplanations.?",
-          "issue": "?????3?MAP/Hall/O2??3?????????????????????????????????????????????AKM?????????????????????????????????PDF????????24????????p137????????????????????????????????????????????????HOLD?",
-          "replacement": "?????(3)??????????????????????????????????????????????????????????????????????????????????????????????????????????????",
-          "source": "https://www.akm.com/jp/ja/products/hall-sensor/tutorial/faq/ ; https://www.analog.com/jp/resources/reference-designs/circuits-from-the-lab/cn0368.html ; https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf ?????p137???; tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 21 Q15=3 agrees. MAP voltage rises with pressure, Hall sensing detects throttle position, and zirconia output is high rich/low lean in the stated comparison. Visually inspected publisher printed p137 at physical p11 of the 24-page sample: paragraph 4 and the diagram explicitly show the tooth-facing magnetic-flux component and resistance at their minima. This supports both corrected quantities. The earlier absent-page objection is withdrawn; physical page 137 was the wrong locator. Candidate hash is unchanged and no textual repair is required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 21 Q15=3; https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf physical p11, printed p137; tmp/lq1c-2gmk-2025.pdf; tmp/lq1c-2gmk-p11.png"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
     },
     {
       "id": "jidosha-2025-second-2-gasoline-q23",
-      "candidateSha256": "82669d96d582487bba9d1b387f88447a38da8f4153f4ee186655dcd3a6aa5818",
-      "verdict": "FAIL",
+      "candidateSha256": "e451c867f331757dfa054e9fd536fb237cc6aad71ac153b43272bb5700f5c2a5",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         7
       ],
@@ -987,14 +915,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "?????????????????????????????????????????????????????????2???????1??????????????????????????????????????1???????????Hall??????????????",
-          "replacement": "????(2)?(1)?????????????????????????????????????????????????????????????????????????????????????????????????",
-          "source": "US20020129667A1 Torque sensor for vehicle paragraphs 0038?0039: https://patents.justia.com/patent/20020129667 ????????????????13/14??????15???????????cache miss?; https://www.jtekt.co.jp/products/bearing/p/field/automotive-aftermarket/steering/; tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p07.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+          "field": "validation",
+          "issue": "All four reasons checked: sleeve-type flux variation, ring-type relative displacement/inductance, column versus pinion assistance, and input magnet/output yoke in the described Hall arrangement. Toyota training p5-18 explicitly locates rings 1/2 on the input shaft and ring 3 on the output shaft and explains inductance variation. The revision no longer incorrectly relocates sleeve-type shaft protrusions. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p07.png; https://www.mri-auto-diagnostics.com/wp-content/uploads/2020/11/Power-Steering-2004-2009-Prius.pdf physical p4, printed 5-18 Fig.5.21, fetched and text inspected; target key p1 column 21 Q23=1"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     },
     {
       "id": "jidosha-2025-second-3-chassis-q07",
@@ -1018,23 +946,16 @@
     },
     {
       "id": "jidosha-2025-second-3-gasoline-q01",
-      "candidateSha256": "8b53918556d8141146be13455cf158ba189b0bc97ac27fd61be7e82bda5561fa",
-      "verdict": "FAIL",
+      "candidateSha256": "fde559057a95c4257f291cbd2974d27e048ed7554c2ee77809bce8d443df2c50",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         2
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "choiceExplanations.?",
-          "issue": "The phrase ??? minus base-circle radius is ambiguous: lobe height commonly denotes the full measured cam height, in which case subtracting a radius is incorrect.",
-          "replacement": "????????????????????????????????????????????????????????????????????",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=2; geometric definition of cam lift"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2025-second-3-gasoline-q03",
@@ -1116,8 +1037,8 @@
     },
     {
       "id": "jidosha-2025-second-3-gasoline-q15",
-      "candidateSha256": "adbe3b77b0974d9af80f9cfcbe9303a0f442384cae4da07d82ae95fde0b217de",
-      "verdict": "HOLD",
+      "candidateSha256": "30f6a974d9273b0431635e530020e25a0e6c1c33cf2d4147ce20a87698061109",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         5
       ],
@@ -1125,14 +1046,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "The explanation is circular and does not distinguish expansion-chamber silencing from throttling of pressure pulsations. Widening a passage can be part of a real silencer, so a blanket rejection is not an adequate technical rationale.",
-          "replacement": "Retain official answer (2). Verify the JASPA muffler-principle passage and explicitly distinguish expansion/pressure reduction from restriction used to smooth pulsations. State exactly why ?? in (4) is the intended error; do not assert that passage expansion never attenuates sound.",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=5; https://patents.google.com/patent/JP2001214730A/ja paragraphs 0022-0023"
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 32 Q15=2 agrees. Absorptive material removes acoustic energy; simply increasing pressure is not the stated silencing mechanism. The 2023 Q13 incorrect-statement question has official answer 3, confirming both option 1 restriction to suppress pressure fluctuations and option 4 expansion with pressure reduction. The revised explanation correctly distinguishes these exam descriptions and explicitly avoids denying the silencing contribution of an expanded chamber.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 32 Q15=2; tmp/lq1c-20230326-3g-p04.png Q13(1),(4); tmp/lq1c-20230326-key-p01.png column 32 Q13=3"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
     },
     {
       "id": "jidosha-2025-second-3-gasoline-q19",
@@ -1331,23 +1252,16 @@
     },
     {
       "id": "jidosha-2025-second-3-diesel-q25",
-      "candidateSha256": "bfcc2cae21bc46c76e53a0ee4d7da444d83659e3a997d9477bd680c4e4e4280b",
-      "verdict": "FAIL",
+      "candidateSha256": "ad06999607829718a82f034c7ec67d8dc2e0ecb3139a64a30262c314fd9223da",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         7
       ],
       "answerChecked": true,
       "allFourExplanationsChecked": true,
-      "findings": [
-        {
-          "field": "choiceExplanations.?",
-          "issue": "The explanation suggests that the stated 2?3 repetitions may be wrong and does not identify the aggregation error: maximum across repeated readings versus their average.",
-          "replacement": "????1???????2?3????????????????????????????????????????????????????????????????????????????????",
-          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=7; https://www.esco-net.com/wcs/escort/ItemFile/EA5/EA514/EA514BE/EA514BE_MNL_JPN_PDF_OUT%2801%29.pdf (steps 5?6; corroborating compression-test measurement principle, gasoline instrument)"
-        }
-      ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
-      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
     },
     {
       "id": "jidosha-2025-second-3-diesel-q26",
@@ -1404,8 +1318,8 @@
     },
     {
       "id": "jidosha-2025-second-body-q24",
-      "candidateSha256": "03e99323f34c06fe4e692e6bff22b36b734c2c35ae59198b15e83513c13c4365",
-      "verdict": "FAIL",
+      "candidateSha256": "d5249fe81224eddec0816d8caedc7b5b001104270dc24876aee651ded4c82512",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         8
       ],
@@ -1413,14 +1327,14 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "choiceExplanations.?",
-          "issue": "?????????????????????????????????????????????????????????????????????2??3??????",
-          "replacement": "?????(2)????(1)????????????????????????????????????????????????????????????????????????????????????309??????????????????????????????????????????????????????????????????",
-          "source": "https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C ; https://www.tokoc.com/jp/wc.htm; ??? 2025-second-body p[8]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+          "field": "validation",
+          "issue": "All four reasons checked. The revised first explanation accurately reports the official treatment without claiming that compatible filler requires identical composition or inventing an ordinary-sheet-metal assumption. The 309-series dissimilar-joint example is directly supported. Dedicated cast-iron repair consumables also exist. Primary-input capacity, unloaded voltage before arcing, and flux-coated covered electrodes are correct. Acceptance covers the explicit distinction between exam scoring and practical exceptions; it does not certify the broad original option 1 as universally false.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-body-p08.png; https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C; https://lincolnelectric.co.jp/products/Consumable (TECH-ROD 55 cast-iron welding/repair); target key p2 column 43 Q24=2"
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
     }
   ]
 }
