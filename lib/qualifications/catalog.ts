@@ -938,6 +938,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["掲載可否のオーナー判断", "法令・医療情報の改訂に伴う継続確認"],
   },
   {
+    slug: "kenchikushi2",
+    shortName: "二級建築士（学科）",
+    fullName: "二級建築士試験（学科の試験）",
+    domain: "construction",
+    administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/2k/2k-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/2k/2k-mondai.html",
+    status: "permission-required",
+    reuseSummary: "令和8年・令和7年の学科問題・正答を公式一覧で確認。個人利用以外の無断転載・複製が禁止されており、本文は未収録。",
+    remainingWork: ["問題本文の利用条件を解決", "公式PDFとの全問照合・独自解説作成", "公開前ステージングでの検証"],
+  },
+  {
     slug: "boki3",
     shortName: "日商簿記3級",
     fullName: "日商簿記検定3級",
