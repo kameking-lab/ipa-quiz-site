@@ -275,7 +275,7 @@ export default async function ExamTopPage({
 
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
-  const isHighLevel = hasAm1 && hasAm2;
+  const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
   const summary = code === "sc"
     ? "掲載済みの午前I・午前II過去問を、年度・分野を選んで学べます。AI支援で作成した学習用解説と公式出典を確認できます。"
     : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
@@ -453,6 +453,19 @@ export default async function ExamTopPage({
                   実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
                 </Link>
               </Button>
+            </div>
+          ) : code === "kenchiku-setsubishi" ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
+              <div className="grid gap-2 sm:grid-cols-3">
+                {(["am1", "am2", "pm"] as const).map(session => (
+                  <Button key={session} asChild variant="outline" size="lg">
+                    <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
+                      {practiceSessionLabel(session, code)}
+                    </Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           ) : isHighLevel ? (
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">

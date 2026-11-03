@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kenchiku-setsubishi", examCode: "kenchiku-setsubishi", shortName: "建築設備士", fullName: "建築設備士試験（第一次試験）",
+    domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
+    officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
+    officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html", status: "live",
+    reuseSummary: "令和7・8年の第一次試験から209問を全肢解説・原図付きで演習できます。令和8年建築法規問18は公式正答と法令適用の疑義が未解消のため公開対象外です。法令は各回の基準日時点の内容です。第二次試験は未収録です。掲載の権利確認はオーナー取得済みとして扱います。",
+    attributionTemplate: "出典：公益財団法人建築技術教育普及センター 建築設備士第一次試験（年度・科目・問番号）。解説は当サイト独自作成。",
+    remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
