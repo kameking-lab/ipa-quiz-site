@@ -47,9 +47,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index3.html",
     officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
     status: "ready-to-ingest",
-    reuseSummary: "オーナーにより権利確認済み。令和8・7年度の午前・午後の択一139問を未公開で保持。令和7年度午後第33問は公式に全員正解のため通常採点から除外。解説は公式正答の組合せを説明する要約段階。",
+    reuseSummary: "オーナーにより権利確認済み。令和8・7年度の午前・午後の択一139問を未公開で保持。令和7年度午後第33問は公式に全員正解のため通常採点から除外。全選択肢の独自解説に差し替え、129問は全肢の法的理由を収録。根拠未確認の10問は理由つき保留。",
     attributionTemplate: "出典：法務省 令和○年度司法書士試験 午前・午後 第○問。解説は過去問AIが独自作成。",
-    remainingWork: ["各記述の法的理由を含む解説の充実・レビュー", "公式PDFと問題文・図表の公開前最終照合", "指定の別Codexによる独立レビューと再レビュー合格（現環境は起動不可）"],
+    remainingWork: ["保留10問の判例・登記先例等の確認と解説レビュー", "令和7年度の公式法令基準日の確認（問題PDFは403で取得不能）", "公式PDFと問題文・図表の公開前最終照合", "独立レビューのFAIL指摘への修正内容の再レビュー合格", "指定の質問検証・型検査・関連テストの完了"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",

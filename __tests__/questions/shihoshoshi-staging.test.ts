@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { SHIHOSHOSHI_QUESTIONS } from "@/data/questions/shihoshoshi";
 import excluded from "@/data/questions/shihoshoshi/excluded.json";
+import holds from "@/data/questions/shihoshoshi/editorial/holds.json";
 import { ALL_QUIZ_EXAM_CODES, ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -45,10 +46,16 @@ describe("司法書士公式2回分の未公開登録", () => {
     for (const q of SHIHOSHOSHI_QUESTIONS) {
       expect(q.question.length, q.id).toBeGreaterThan(300);
       expect(Object.keys(q.choices!)).toHaveLength(5);
-      expect(q.lawReferenceDate).toBe(`${q.year}-04-01`);
+      if (q.year === 2026) {
+        expect(q.lawReferenceDate).toBe("2026-04-01");
+        expect(q.explanation).toContain("出題時点の法令（2026年4月1日現在）");
+      } else {
+        expect(q.lawReferenceDate).toBeUndefined();
+        expect(q.explanation).toContain("2025年度の公式基準日は未確認");
+        expect(q.explanation).toContain("解説の暫定検討日は2025年4月1日");
+      }
       expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
       expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
-      expect(q.needsReview).toBe(true);
       expect(q.question).not.toMatch(/AQ\s*[―－]/);
     }
     const q = SHIHOSHOSHI_QUESTIONS.find(q => q.year === 2026 && q.session === "pm" && q.qNumber === 20)!;
@@ -57,5 +64,39 @@ describe("司法書士公式2回分の未公開登録", () => {
     expect(q.imageUrls).toHaveLength(1);
     const blank = SHIHOSHOSHI_QUESTIONS.find(q => q.year === 2026 && q.session === "am" && q.qNumber === 3)!;
     expect(blank.choices?.イ).toBe("ア 総議員\nエ 天皇");
+  });
+
+  it("distinguishes complete legal explanations from explicitly unresolved statements", () => {
+    const pending = holds as Record<string, Record<string, string>>;
+    expect(Object.keys(pending)).toHaveLength(10);
+    expect(Object.values(pending).flatMap(Object.keys)).toHaveLength(17);
+    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.explanationCoverage === "full")).toHaveLength(129);
+    expect(SHIHOSHOSHI_QUESTIONS.filter(q => q.needsReview)).toHaveLength(10);
+    for (const q of SHIHOSHOSHI_QUESTIONS) {
+      const unresolved = pending[q.id];
+      expect(q.explanationCoverage, q.id).toBe(unresolved ? undefined : "full");
+      expect(q.needsReview, q.id).toBe(unresolved ? true : undefined);
+      expect(q.lastUpdated).toBe("2026-11-03");
+      expect(q.officialReferenceUrls?.length, q.id).toBeGreaterThan(0);
+      for (const reason of Object.values(unresolved ?? {})) {
+        expect(q.explanation, q.id).toContain(reason);
+        expect(reason).toMatch(/^保留。.+/);
+      }
+      expect(q.explanation, q.id).not.toMatch(/正答の組合せと一致|公式正答の組合せは/);
+      expect(Object.keys(q.choiceExplanations!)).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
+      const reasons = Object.values(q.choiceExplanations!);
+      expect(new Set(reasons).size, q.id).toBe(5);
+      for (const reason of reasons) {
+        expect(reason.length, q.id).toBeGreaterThan(20);
+        expect(reason, q.id).not.toMatch(/正答の組合せと一致|一致しません/);
+        if (!unresolved) expect(reason, q.id).not.toContain("保留。");
+      }
+    }
+    const civil = SHIHOSHOSHI_QUESTIONS.find(q => q.id === "shihoshoshi-2025-am-q8")!;
+    expect(civil.explanation).toContain("民法939条");
+    expect(civil.explanation).toContain("相続放棄");
+    const boundary = SHIHOSHOSHI_QUESTIONS.find(q => q.id === "shihoshoshi-2026-am-q9")!;
+    expect(boundary.explanation).toContain("民法224条ただし書");
+    expect(boundary.explanation).toContain("測量費");
   });
 });
