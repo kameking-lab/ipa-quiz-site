@@ -42,6 +42,14 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "rodo-anzen-consultant", shortName: "労働安全コンサルタント", fullName: "労働安全コンサルタント試験",
+    domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
+    officialQuestionsUrl: "https://www.exam.or.jp/cskohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/h_link/",
+    status: "terms-review-required",
+    reuseSummary: "2025年10月21日・2024年10月22日の筆記問題を確認。口述問題は公表一覧に掲載されず、記述式正答も非公表。全問公開を必須とする今回の追加では本文を収録しない。",
+    remainingWork: ["全問公開条件を満たす公表資料の確認。監査: reports/cloud-rodo-consul-latest2.md"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
