@@ -42,6 +42,18 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "iji-shuzen", examCode: "iji-shuzen",
+    shortName: "マンション維持修繕技術者", fullName: "マンション維持修繕技術者試験",
+    domain: "real-estate", administrator: "一般社団法人マンション管理業協会",
+    officialQuestionsUrl: "https://www.kanrikyo.or.jp/iji/siken.html",
+    officialReuseTermsUrl: "https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf",
+    status: "ready-to-ingest",
+    reuseSummary: "権利確認済み。第25回（2025年度）・第24回（2024年度）の各択一45問・記述2問、計94原問を未公開で収録。公式正答・全選択肢の独自解説・記述式の公式正解例を保持。法令は各年度4月1日時点。",
+    attributionTemplate: "出典：一般社団法人マンション管理業協会 マンション維持修繕技術者試験 問題・正答。解説は過去問AIの独自作成。",
+    remainingWork: ["オーナーによる公開切替（本作業ではステージングを維持）"],
+  },
+
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
