@@ -393,6 +393,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
   },
   {
+    slug: "sekou-2denki", examCode: "denki2",
+    shortName: "2級電気工事施工管理", fullName: "2級電気工事施工管理技術検定（第一次検定）",
+    domain: "construction", administrator: "一般財団法人建設業振興基金",
+    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー権利確認済み。令和8年度前期・令和7年度後期の全124問、公式正答、全選択肢の独自解説と必要な図21件を未公開ステージングとして収録。法令・規程は出題時点に基づく。",
+    attributionTemplate: "出典：一般財団法人建設業振興基金 2級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
+    remainingWork: ["監督役による独立レビュー", "依存パッケージ導入後のpnpm検証", "公開判定"],
+  },
+  {
     slug: "sekou-kankoji2",
     examCode: "kankoji2",
     shortName: "2級管工事施工管理",

@@ -17,6 +17,7 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  denki2: { overview: "https://www.fcip-shiken.jp/den2/index.html", syllabus: "https://www.fcip-shiken.jp/den2/index.html", pastQuestions: "https://www.fcip-shiken.jp/about/index.html" },
   "riku-tech2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "amateur2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "maritime-radar": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
