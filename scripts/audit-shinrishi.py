@@ -1,5 +1,6 @@
 """第8・9回の公式PDFと候補JSONを照合。Python標準ライブラリとpdftotextが必要。
 python scripts/audit-shinrishi.py --source-dir /tmp/shinrishi
+python scripts/audit-shinrishi.py --round 8 --source-dir /tmp/shinrishi8
 PDF未取得時は公式URLから取得する。生成問題・解説の生成は行わない。
 """
 import argparse
@@ -16,8 +17,9 @@ FILES = {"answers": "03_gokaku_happyo_09.pdf", "am": "04_gokaku_happyo_09.pdf", 
 
 
 def canonical(text):
-    # 組版上の空白・制御文字、問27のベクター区切り線だけを除く。
-    return re.sub(r"[\s\x08─]", "", text)
+    # 組版上の空白・制御文字と第9回問27の区切り線を除く。
+    # 第8回問84の指数は、原本表示に合わせた上付き文字を同値として比較する。
+    return re.sub(r"[\s\x08─]", "", text.replace("²", "2"))
 
 
 def main():

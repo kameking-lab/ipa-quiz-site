@@ -12,8 +12,11 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 
 describe("公認心理師第8・9回の公式原問と公開前ステージング", () => {
-  it("154問を公式通し番号・午前午後・4/5肢のまま保存する", () => {
+  it("2回分308問を公式通し番号・午前午後・4/5肢のまま保存する", () => {
+    expect(SHINRISHI_CANDIDATES).toHaveLength(308);
     for (const audit of [audit9, audit8]) {
+      expect(audit.checked).toBe(154);
+      expect(audit.questions.map(q => q.number)).toEqual(Array.from({ length: 154 }, (_, i) => i + 1));
       expect(SHINRISHI_CANDIDATES.filter(q => q.year === (audit.round === 9 ? 2026 : 2025)).map(q => q.qNumber)).toEqual(audit.questions.map(q => q.number));
     }
     expect(new Set(SHINRISHI_CANDIDATES.map(q => q.id)).size).toBe(audit9.checked + audit8.checked);

@@ -9,7 +9,7 @@
 | 回 | 実施日 | 公式掲載ページ | 今回追加 |
 | --- | --- | --- | --- |
 | 第9回 | 2026-03-01 | https://www.jccpp.or.jp/shiken/shikenjoho/dai9.html | 午前77問＋午後77問＝154問 |
-| 第8回 | 2025-03-02 | https://www.jccpp.or.jp/shiken/shikenjoho/dai8.html | 午前77問（午後77問は作業中） |
+| 第8回 | 2025-03-02 | https://www.jccpp.or.jp/shiken/shikenjoho/dai8.html | 午前77問＋午後77問＝154問 |
 
 第10回は公式サイト上で試験概要・申込みを案内している段階で、合格発表一覧の最新公表問題は第9回であった。
 
@@ -46,7 +46,7 @@
 ## 除外と残作業
 
 - 第9回：除外0問。全154問をステージングに保存した。公開演習への掲載は154問とも保留。
-- 第8回：午前の問1〜77をステージングに保存。午後の問78〜154は作業中。
+- 第8回：除外0問。午前77問・午後77問の全154問をステージングに保存。第9回と合わせて308問が未公開。原問取り込みの残作業はない。
 - 公開判断：転載条件・必要な手続の確認、および既存の公開品質要件に合わせた全肢解説の追加が残る。台帳をliveに変更していない。
 
 ## 検証
@@ -59,10 +59,22 @@
 - `pnpm build` とデプロイは実施していない。
 - `pnpm exec vitest run __tests__/questions/shinrishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/unit/exam-source-label.test.ts __tests__/questions/qualification-expansion.test.ts`：4ファイル・1,077テスト成功。保存範囲、原問の4/5肢、公式正答、複数選択の採点、回次表示、公開台帳、同期・非同期プールからの除外を検証した。
 
-## 第8回の追加（午前完了）
+## 第8回の追加（午前・午後完了）
 
-`data/questions/shinrishi/2025-annual.json` に午前77問を追加した。本文・選択肢は公式PDFの文字層から取得し、組版用の空白を整理したテキストで保存。問題ページ（PDF 5〜52ページ）の表示も確認し、画像を必要とする図表はなかった。全問に独自の一般解説（`official-summary`）、実施日、問題ページURL、公式正答表URLを付けた。午前の4肢問題は問50〜54・74、2肢選択は問55〜58・75〜77。正答表の特例はない。
+`data/questions/shinrishi/2025-annual.json` に午前77問・午後77問の全154問を追加した。本文・選択肢は公式PDFの文字層から取得し、組版用の空白を整理したテキストで保存。問題ページ（PDF 5〜52ページ）の表示も確認し、画像を必要とする図表はなかった。全問に独自の一般解説（`official-summary`）、実施日、問題ページURL、公式正答表URLを付けた。4肢問題は問50〜54・74・127〜131、2肢選択は問55〜58・75〜77・132〜135・151〜154（計15問）。単一正答139問、2肢選択15問で、正答表に全員正解・採点除外等の特例はない。
 
-監査を `--round 8 --session am` に対応させ、77問の本文・全選択肢・公式正答・選択数・出典ページの一致を確認。証跡は `reports/shinrishi-8-source-audit.json` に保存した。第9回の監査方式と公開制御を維持し、第8回も公開プールから除外した。
+監査を `--round 8` に対応させ、154問の本文・全選択肢・公式正答・選択数・出典ページの一致を確認（午前の区切りでは `--session am` で77問を照合）。証跡は `reports/shinrishi-8-source-audit.json` に保存した。第9回の監査方式と公開制御を維持し、第8回も公開プールから除外した。
 
 午前追加時の検証：`pnpm validate:questions` は26,675問成功・エラー0・既存警告16,832件（第8回の追加警告0件）。typecheck・関連4ファイルのテストも成功。build・デプロイ・PR作成は実施しない。
+
+午後も問題ページ（PDF 5〜52ページ）の表示を確認し、必要な図表の欠落はなかった。問84の統計表記はPDF 8ページの原本表示を拡大確認し、抽出時の小数点前後の空白を整理し、指数を `x²` としてテキストで保持した。監査では上付き2と抽出された2を同値として扱う。独自解説は全154問が50文字以上であり、第8回追加による長さ警告は0件。第8回の実施回表示も明示的に追加した。
+
+午後追加後の最終検証：
+
+- `pnpm validate:questions`：26,752問成功、エラー0、既存警告16,832件。
+- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：成功。
+- `pnpm exec vitest run __tests__/questions/shinrishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/unit/exam-source-label.test.ts __tests__/questions/qualification-expansion.test.ts`：4ファイル・1,077テスト成功。2回分308問の件数と番号、肢数、監査正答、複数選択の採点、実施回表示、未公開状態を確認。
+- `python scripts/audit-shinrishi.py --round 8 --source-dir /tmp/shinrishi8`：154問一致。第9回も従来と同じ154問の一致を再確認。
+- `git -c core.whitespace=cr-at-eol diff --check`：成功。
+
+午前完了・午後完了の2区切りでコミットし、push先は現在の `claude/sweet-hypatia-qynafk` のみに限定。mainへのpush・PR作成・build・デプロイは実施していない。資格台帳は `terms-review-required` のままで、公開用エクスポート・一覧・同期/非同期プールへの非公開制御を維持している。
