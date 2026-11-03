@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { existsSync } from "node:fs";
 import { CRANE_DERRICK_QUESTIONS as questions } from "@/data/questions/crane-derrick";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -9,8 +11,20 @@ describe("crane-derrick official latest two publications", () => {
   it("keeps both complete papers staged", async () => {
     expect(questions).toHaveLength(80);
     expect(isExamPublished("crane-derrick")).toBe(false);
+    expect(ALL_QUIZ_EXAM_CODES).not.toContain("crane-derrick");
     expect(QUESTIONS_BY_EXAM["crane-derrick"]).toBeUndefined();
     expect(await getQuestionsForExam("crane-derrick")).toEqual([]);
+  });
+  it("matches the official PDF answer marks independently", () => {
+    const keys = {"october": [4, 1, 3, 3, 1, 5, 3, 1, 2, 3, 2, 5, 2, 1, 3, 3, 2, 2, 1, 5, 1, 2, 4, 2, 5, 2, 1, 5, 5, 1, 3, 1, 1, 3, 2, 1, 2, 3, 3, 4], "first": [5, 1, 4, 4, 3, 2, 3, 5, 4, 3, 4, 3, 5, 2, 3, 1, 3, 5, 5, 5, 4, 4, 3, 5, 3, 4, 4, 5, 5, 1, 2, 4, 5, 4, 5, 4, 1, 3, 1, 1]};
+    for (const season of ["october", "first"] as const) expect(questions.filter(q => q.season === season).map(q => Number(q.officialAnswerNumber))).toEqual(keys[season]);
+  });
+  it("retains gravitational acceleration in the official pulley formulae", () => {
+    const q = questions.find(q => q.season === "first" && q.qNumber === 40)!;
+    expect(Object.values(q.choices!)).toEqual([
+      "F=(W/5)g（滑車の配置は図参照）", "F=(W/2)g（滑車の配置は図参照）",
+      "F=(W/4)g（滑車の配置は図参照）", "F=(W/2)g（滑車の配置は図参照）", "F=Wg（滑車の配置は図参照）",
+    ]);
   });
   it("retains numbering, official answer keys, text and figure assets", () => {
     for (const season of ["october", "first"]) {
@@ -18,6 +32,7 @@ describe("crane-derrick official latest two publications", () => {
       expect(paper.map(q => q.qNumber)).toEqual(Array.from({length:40}, (_,i)=>i+1));
       for (const q of paper) {
         expect(Object.keys(q.choices!)).toHaveLength(5);
+        expect(choiceDisplayLabel(q.exam, q.answer as "ア")).toBe(q.officialAnswerNumber);
         expect(q.answer).toBe("アイウエオ"[Number(q.officialAnswerNumber)-1]);
         expect(q.question.length).toBeGreaterThan(10);
         expect(q.sourcePdfUrl).toMatch(/^https:\/\/www.exam.or.jp\//);
