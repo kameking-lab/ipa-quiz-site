@@ -8,10 +8,10 @@ const beauty=[...JSON.parse(readFileSync("data/questions/biyoshi/2026-first.json
 const hazard=[1,2,6].flatMap(i=>JSON.parse(readFileSync(`data/questions/kikenbutsu-otsu${i}/published-202606.json`,"utf8")));
 const qs=[beauty.find(q=>q.qNumber===44),beauty.find(q=>q.season==="second"&&q.qNumber===47),...hazard.filter(q=>q.qNumber===26||q.qNumber===30)];
 const browser=await chromium.launch({headless:true,...(process.argv[2]?{executablePath:resolve(process.argv[2])}:{})});
-const result={status:"FAIL",browserVersion:browser.version(),story:"accepted registry -> ordinary question page -> answer -> all choice reasons -> browser history retained after reload; holds remain unavailable",flows:[],holds:[],images:[],search:[],errors:[]};
+const result={status:"FAIL",runtime:process.argv[3]??"unspecified",browserVersion:browser.version(),serviceWorkers:"blocked (online acceptance)",externalRequests:"blocked",story:"accepted registry -> ordinary question page -> answer -> all choice reasons -> browser history retained after reload; holds remain unavailable",flows:[],holds:[],images:[],search:[],errors:[]};
 try{
   for(const q of qs){
-    const context=await browser.newContext({viewport:{width:q.qNumber===30?390:1280,height:900},serviceWorkers:"block",extraHTTPHeaders:{"Accept-Encoding":"identity"}});
+    const context=await browser.newContext({viewport:{width:q.qNumber===30?390:1280,height:900},serviceWorkers:"block"});
     // Restrict interception to external requests; localhost responses stream directly.
     await context.route(url=>url.origin!==origin,r=>r.abort());
     const page=await context.newPage();
@@ -50,7 +50,7 @@ try{
     console.log("PASS",q.id);
     await context.close();
   }
-  const context=await browser.newContext({serviceWorkers:"block",extraHTTPHeaders:{"Accept-Encoding":"identity"}});const page=await context.newPage();
+  const context=await browser.newContext({serviceWorkers:"block"});const page=await context.newPage();
   await context.route(url=>url.origin!==origin,r=>r.abort());
   for(const [exam,total] of [["biyoshi",106],["tsushin2",129],["kikenbutsu-otsu1",10],["kikenbutsu-otsu2",10],["kikenbutsu-otsu6",10]]){
     const response=await page.request.get(`${origin}/api/search/questions?exam=${exam}`);
@@ -58,6 +58,9 @@ try{
     expect((await response.json()).total).toBe(total);
     result.search.push({exam,status:200,total});
   }
+  await page.goto(`${origin}/search?exam=biyoshi`,{waitUntil:"domcontentloaded",timeout:120000});
+  await expect(page.getByRole("region",{name:"絞り込み"}).getByRole("button",{name:/美容師/})).toBeVisible({timeout:120000});
+  result.searchUI={exam:"biyoshi",filterVisible:true};
   for(const q of JSON.parse(readFileSync("reports/lq5-20261104/holds.json","utf8")).filter(q=>q.id.startsWith("biyoshi"))){
     const m=/biyoshi-(\d+)-(first|second)-gakka-q(\d+)/.exec(q.id);
     expect((await page.goto(`${origin}/q/biyoshi/${m[1]}-${m[2]}/gakka/q${m[3]}`,{timeout:120000})).status()).toBe(404);
