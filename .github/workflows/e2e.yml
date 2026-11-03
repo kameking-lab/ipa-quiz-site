@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Validate E2E workflow gate
-        run: node --test .github/scripts/e2e-workflow.test.mjs
+        run: node --test .github/scripts/e2e-workflow.test.mjs .github/scripts/inert-change-scope.test.mjs
 
       - name: Lint
         run: pnpm lint
@@ -63,6 +63,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The synthetic merge contains the PR base and head as its parents.
+          fetch-depth: 2
 
       - uses: pnpm/action-setup@v4
 
@@ -71,13 +74,26 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      - name: Validate browser applicability regressions
+        run: node --test .github/scripts/inert-change-scope.test.mjs
+
+      - name: Prove browser applicability for this complete PR diff
+        id: scope
+        env:
+          SCOPE_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          SCOPE_HEAD_SHA: ${{ github.sha }}
+        run: node .github/scripts/inert-change-scope.mjs github
+
       - name: Install dependencies
+        if: steps.scope.outputs.inert != 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        if: steps.scope.outputs.inert != 'true'
         run: pnpm build
 
       - name: Configure bounded APT downloads
+        if: steps.scope.outputs.inert != 'true'
         run: |
           set -euo pipefail
           # Match the current runner-images acquire bounds, after older image overrides.
@@ -92,13 +108,15 @@ jobs:
           cat /etc/apt/apt-mirrors.txt
 
       - name: Install Playwright browsers
+        if: steps.scope.outputs.inert != 'true'
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run E2E
+        if: steps.scope.outputs.inert != 'true'
         run: pnpm e2e
 
       - name: Upload Playwright report
-        if: always()
+        if: always() && steps.scope.outputs.inert != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
