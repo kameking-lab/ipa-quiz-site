@@ -19,6 +19,7 @@ import { FP1_QUESTIONS } from "./fp1";
 import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { DENKO1_QUESTIONS } from "./denko1";
+import { SEKOU_KENCHIKU2_QUESTIONS } from "./sekou-kenchiku2";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { ZOEN2_QUESTIONS } from "./zoen2";
@@ -97,6 +98,7 @@ import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("sekou-kenchiku2") ? { "sekou-kenchiku2": SEKOU_KENCHIKU2_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),

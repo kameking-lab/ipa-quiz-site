@@ -506,6 +506,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
   {
     slug: "sekou-kenchiku2",
+    examCode: "sekou-kenchiku2",
     shortName: "2級建築施工管理（第一次検定）",
     fullName: "2級建築施工管理技術検定（第一次検定）",
     domain: "construction",
@@ -513,8 +514,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
     status: "ready-to-ingest",
-    reuseSummary: "オーナー権利確認済み（2026-11-04決定）。前回の権利理由による100問の除外を撤回。公式一覧で令和8年度前期・令和7年度後期の問題・正答肢を再確認。PDFの通常取得がHTTP 403となり、本文・図版の収録と全問検収は未完了。監査記録：reports/cloud-sekou-2kenchiku-latest2.md。",
-    remainingWork: ["公式PDFの問題本文・選択肢・必要図を取得して未公開ステージングへ収録（各50問・計100問）", "全問の公式正答・全肢解説・出典URL・出題時点法令を照合", "指定の独立レビューを完了し、公開前ステージングで検収"],
+    reuseSummary: "オーナー権利確認済み。令和8年度前期・令和7年度後期の各50問，計100問を公式PDFから未公開ステージングに収録。公式正答・全410肢の独自解説・必要図5点・出典を付与。監査：reports/cloud-sekou-2kenchiku-latest2.md。",
+    attributionTemplate: "出典：一般財団法人建設業振興基金 2級建築施工管理技術検定（第一次検定）令和○年度（前期／後期）No.○。解説は本サイト作成。",
+    remainingWork: ["監督役による独立レビューと指摘対応後に公開判定（現在は未公開ステージング）"],
   },
   {
     slug: "sekou-kenchiku1",
