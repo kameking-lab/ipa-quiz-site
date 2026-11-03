@@ -12,7 +12,7 @@ import pymupdf
 from PIL import Image, ImageChops
 
 EVIDENCE = Path('docs/evidence/keiryoshi-75')
-figures = json.loads((EVIDENCE / 'figure-crops.json').read_text())
+figures = [f for f in json.loads((EVIDENCE / 'figure-crops.json').read_text()) if f['subject'] == '一基']
 results = []
 for figure in figures:
     pdf = Path('data/raw_pdfs/keiryoshi/r06-75') / Path(figure['sourcePdfUrl']).name

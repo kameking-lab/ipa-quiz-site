@@ -15,17 +15,16 @@
 }
 {
   "round": 75,
-  "complete": false,
+  "complete": true,
   "pdfHashesVerified": 9,
-  "officialAnswersVerified": 25,
-  "sourceQuestions": 25,
-  "choiceExplanations": 125,
+  "officialAnswersVerified": 200,
+  "sourceQuestions": 200,
+  "choiceExplanations": 1000,
   "qualificationQuestionCounts": {
-    "keiryoshi": 25,
-    "keiryoshi-nodo": 0,
-    "keiryoshi-soon": 0
+    "keiryoshi": 100,
+    "keiryoshi-nodo": 100,
+    "keiryoshi-soon": 100
   },
-  "figuresVerified": 7,
+  "figuresVerified": 55,
   "scope": "source-data audit only; pnpm validation/typecheck/tests are separate"
 }
-第75回: 原本9本・正答表200件と既存ドラフトの構造監査は一致。問題データは1科目/25原問で未完了（8科目/200原問が必要）。資格別件数は展開可能件数であり、ローダー登録件数ではない。

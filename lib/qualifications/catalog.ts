@@ -51,12 +51,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
     "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
     "status": "ready-to-ingest",
-    "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
     "remainingWork": [
-      "指定のpnpm検証を実行できる環境で再検証",
-      "監督役による独立レビューと公開判断"
+      "第75回の監督役による独立レビューと公開判断"
     ],
-    "attributionTemplate": "出典：経済産業省 第76回計量士国家試験 問題・訂正版正答。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
   },
   {
     "slug": "keiryoshi-nodo",
@@ -68,12 +67,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
     "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
     "status": "ready-to-ingest",
-    "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
     "remainingWork": [
-      "指定のpnpm検証を実行できる環境で再検証",
-      "監督役による独立レビューと公開判断"
+      "第75回の監督役による独立レビューと公開判断"
     ],
-    "attributionTemplate": "出典：経済産業省 第76回計量士国家試験 問題・訂正版正答。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
   },
   {
     "slug": "keiryoshi-soon",
@@ -85,12 +83,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html",
     "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html",
     "status": "ready-to-ingest",
-    "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。",
+    "reuseSummary": "オーナー権利確認済み。第76回・第75回（2025・2024年）の公式問題・正答に基づき各資格200問を未公開ステージングに収録。第76回の公式訂正を反映。解説は独自作成。",
     "remainingWork": [
-      "指定のpnpm検証を実行できる環境で再検証",
-      "監督役による独立レビューと公開判断"
+      "第75回の監督役による独立レビューと公開判断"
     ],
-    "attributionTemplate": "出典：経済産業省 第76回計量士国家試験 問題・訂正版正答。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
+    "attributionTemplate": "出典：経済産業省 第76回・第75回計量士国家試験 問題・正答（第76回は訂正版）。テキスト化・図の切り出しは過去問AI、解説は独自作成。"
   },
 
   {

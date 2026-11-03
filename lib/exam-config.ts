@@ -155,7 +155,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       "annual"
     ],
     "yearRange": {
-      "start": 2025,
+      "start": 2024,
       "end": 2025
     }
   },
@@ -206,7 +206,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       "annual"
     ],
     "yearRange": {
-      "start": 2025,
+      "start": 2024,
       "end": 2025
     }
   },
@@ -257,7 +257,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       "annual"
     ],
     "yearRange": {
-      "start": 2025,
+      "start": 2024,
       "end": 2025
     }
   },

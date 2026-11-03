@@ -73,5 +73,12 @@
       "https://www.meti.go.jp/information/license/data/c250218aj.html"
     ],
     "result": "公式検索結果で資格と科目対応を再確認。正答訂正の告知は見つからないが、不存在は未確認。入力MANIFESTの正答URL・SHA256を維持。"
+  },
+  "completionRecheck": {
+    "checkedOn": "2026-11-03",
+    "query": "site.meti.go.jp 第75回 計量士 正解 訂正 全員正解",
+    "found": "公式正答表、2024-12-16正答案内、2025-02-18結果案内。検索に出た2024-01-24訂正告知は第74回であり第75回には適用しない。第75回の訂正告知は見つからなかった。",
+    "directAnswerNoticeOpen": "HTTP403が継続。不存在まで確認したとはしない。",
+    "answerUsed": "入力MANIFESTの75seikaibangou.pdf。URL・SHA256を維持し、200正答は単一番号1～5。"
   }
 }

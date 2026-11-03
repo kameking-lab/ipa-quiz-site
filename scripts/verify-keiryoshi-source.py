@@ -4,6 +4,7 @@ This is a source-data audit, separate from the required pnpm checks.
 Run from the repository root: python scripts/verify-keiryoshi-source.py
 """
 import hashlib
+import difflib
 import json
 import re
 import subprocess
@@ -17,6 +18,90 @@ def read_json(path):
 
 def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def verify_round75_evidence(evidence, questions, papers, raw_directory, figures):
+    """Bind the full visual/diff review and figure audit to the current records.
+
+    Pixel re-rendering is performed separately by verify-figures.py (PyMuPDF /
+    Pillow). Here only stdlib and pdftotext are required, as in the round-76 audit.
+    Neither author review flags nor these structural checks are independent review.
+    """
+    inventory = {(r['subject'], r['qNumber']): r
+                 for r in read_json(evidence / 'source-inventory.json')}
+    reviews = {}
+    classifications = {}
+    for file in sorted(Path('data/questions/keiryoshi').glob('2024-*.json')):
+        slug = file.stem.removeprefix('2024-')
+        rows = read_json(evidence / f'{slug}-transcription-review.json')
+        classes = read_json(evidence / f'{slug}-figure-classification.json')
+        assert len(rows) == len(classes) == 25, slug
+        for row in rows:
+            key = (row['subject'], row['qNumber'])
+            assert key not in reviews
+            reviews[key] = (slug, row)
+        for row in classes:
+            key = (row['subject'], row['qNumber'])
+            assert key not in classifications
+            classifications[key] = row
+    expected_keys = {(q['subject'], q['qNumber']) for q in questions}
+    assert len(expected_keys) == 200
+    assert set(reviews) == set(classifications) == set(inventory) == expected_keys
+    figure_keys = {(f['subject'], f['qNumber']) for f in figures}
+    assert len(figure_keys) == len(figures) == 55
+    for q in questions:
+        key = (q['subject'], q['qNumber'])
+        slug, review = reviews[key]
+        inv, classification = inventory[key], classifications[key]
+        assert review['sourceSha256'] == inv['sourceSha256'] == papers[q['subject']]['sha256'], key
+        canonical = json.dumps(q, ensure_ascii=False, sort_keys=True, separators=(',', ':'))
+        assert hashlib.sha256(canonical.encode()).hexdigest() == review['questionRecordSha256'], key
+        pdf = raw_directory / Path(q['sourcePdfUrl']).name
+        page = q['qNumber'] + 1
+        assert review['pdfPage'] == inv['pdfPage'] == page, key
+        raw = subprocess.check_output(['pdftotext', '-layout', '-f', str(page),
+                                      '-l', str(page), str(pdf), '-'],
+                                     text=True, stderr=subprocess.DEVNULL)
+        assert raw == review['rawPdftotext'], key
+        # The inventory splits whole-PDF output at form-feed page separators.
+        assert raw.removesuffix('\f') == inv['rawPdftotext'], key
+        transcription = q['question'] + '\n' + '\n'.join(
+            f'{i} {value}' for i, value in enumerate(q['choices'].values(), 1))
+        assert review['transcription'] == transcription, key
+        diff = list(difflib.unified_diff(raw.splitlines(), transcription.splitlines(),
+                    fromfile='pdftotext-layout', tofile=f'2024-{slug}-q{q["qNumber"]}', lineterm=''))
+        assert review['machineDiff'] == diff, key
+        assert review['visualTranscriptionReviewed'] and review['choiceCount'] == 5, key
+        assert review['diffDisposition'] and '斜体' in review['notationNotes'], key
+        assert review['publicationStatus'] == 'staging' and not review['independentReview'], key
+        assert q['needsReview'] is True, key
+        assert classification['vectorPathCount'] == len(inv['vectorPaths']), key
+        image_count = classification.get('imageObjectCount', len(classification.get('imageObjects', [])))
+        assert image_count == len(inv['imageObjects']), key
+        assert classification.get('visualClassificationReviewed', classification.get('visualQuestionRegionReviewed')), key
+        required = classification.get('hasFigureOrTable', classification.get('figureRequired'))
+        assert required == q['hasImage'] == (key in figure_keys), key
+    audit = read_json(evidence / 'figure-pixel-audit.json')
+    assert {f['image'] for f in audit['figures']} == {f['image'] for f in figures}
+    hashes = {f['image']: f['imageSha256'] for f in figures}
+    for row in audit['figures']:
+        assert row['imageSha256'] == hashes[row['image']]
+        assert row['missingInkPixels'] == 0 and row['sourceCropPixelEqual']
+        assert row['requiredMarginPixels'] >= 12 and row['searchRegionEdgeWhitespace']
+    calculations = (read_json(evidence / 'ichiki-calculations.json') +
+                    read_json(evidence / 'calculations.json'))
+    calculation_keys = {(r['subject'], r['qNumber']) for r in calculations}
+    assert len(calculation_keys) == len(calculations) == 81
+    for row in calculations:
+        assert row['status'] == 'passed'
+        assert row['officialAnswer'] == next(q['officialAnswerNumber'] for q in questions
+            if q['subject'] == row['subject'] and q['qNumber'] == row['qNumber'])
+    assert all((q['subject'], q['qNumber']) in calculation_keys
+               for q in questions if q.get('isCalculation'))
+    for law in read_json(evidence / 'historical-law-sources.json'):
+        assert sha256(law['file']) == law['sha256']
+        assert law['url'].endswith('?asof=2024-12-15')
+        assert law['revision']['amendment_enforcement_date'] <= '2024-12-15'
 
 
 def verify_round(round_number, year, raw_directory, exam_date, law_label):
@@ -114,6 +199,12 @@ def verify_round(round_number, year, raw_directory, exam_date, law_label):
     if complete:
         assert all(len(ids) == 100 for ids in assignments.values())
         assert sum(map(len, assignments.values())) == 300
+        actual_counts = {exam: len(ids) for exam, ids in assignments.items()}
+        assert actual_counts == pack['qualificationQuestionCounts']
+        if round_number == 75:
+            assert pack['ingestedSourceQuestionCount'] == len(questions)
+            assert actual_counts == pack['ingestedQualificationQuestionCounts']
+            verify_round75_evidence(evidence, questions, papers, raw_directory, figures)
 
     result = {
         "round": round_number,

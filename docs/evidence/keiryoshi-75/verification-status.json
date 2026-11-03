@@ -1,24 +1,30 @@
 {
-  "taskStatus": "incomplete",
+  "taskStatus": "completed-unpublished-staging",
   "round75TargetSourceQuestions": 200,
-  "round75DraftSourceQuestions": 25,
-  "round75RemainingSourceQuestions": 175,
-  "ingested75Questions": 0,
+  "round75SourceQuestions": 200,
+  "round75RemainingSourceQuestions": 0,
+  "ingested75Questions": 200,
   "registered75QualificationQuestionCounts": {
-    "keiryoshi": 0,
-    "keiryoshi-nodo": 0,
-    "keiryoshi-soon": 0
+    "keiryoshi": 100,
+    "keiryoshi-nodo": 100,
+    "keiryoshi-soon": 100
   },
-  "unregisteredDraftQualificationQuestionCounts": {
-    "keiryoshi": 25,
-    "keiryoshi-nodo": 0,
-    "keiryoshi-soon": 0
+  "latestTwoQualificationQuestionCounts": {
+    "keiryoshi": 200,
+    "keiryoshi-nodo": 200,
+    "keiryoshi-soon": 200
   },
+  "latestTwoSourceQuestions": 400,
+  "latestTwoCandidateIds": 600,
   "ocrCandidates": 200,
-  "visualTranscriptionReviews": 25,
-  "choiceExplanationsWritten": 125,
-  "figureCropsPixelVerified": 7,
-  "independentCalculationAndConditionChecks": 21,
+  "visualTranscriptionReviews": 200,
+  "machineDiffsReviewed": 200,
+  "choiceExplanationsWritten": 1000,
+  "figureClassificationReviewed": 200,
+  "figureCropsPixelVerified": 55,
+  "independentCalculationAndConditionChecks": 81,
+  "calculationFlaggedQuestions": 79,
+  "historicalLawSources": 11,
   "checks": {
     "validate": {
       "command": [
@@ -26,7 +32,7 @@
         "validate:questions"
       ],
       "exitCode": 0,
-      "elapsedSeconds": 4.44,
+      "elapsedSeconds": 6.6,
       "log": "validate.log"
     },
     "typecheck": {
@@ -35,8 +41,9 @@
         "typecheck"
       ],
       "exitCode": 0,
-      "elapsedSeconds": 25.12,
-      "log": "typecheck.log"
+      "elapsedSeconds": 33.86,
+      "log": "typecheck.log",
+      "NODE_OPTIONS": "--max-old-space-size=8192"
     },
     "vitest": {
       "command": [
@@ -47,7 +54,7 @@
         "__tests__/seo"
       ],
       "exitCode": 0,
-      "elapsedSeconds": 92.18,
+      "elapsedSeconds": 99.36,
       "log": "vitest.log"
     },
     "source-verifier": {
@@ -55,21 +62,25 @@
         "python3",
         "scripts/verify-keiryoshi-source.py"
       ],
-      "exitCode": 1,
-      "elapsedSeconds": 0.19,
+      "exitCode": 0,
+      "elapsedSeconds": 3.07,
       "log": "source-verifier.log"
     }
   },
-  "validationScope": "pnpm validate:questionsは既存登録済み候補のみ。第75回ドラフトは未登録。Python監査は一基25問を含む。Vitestは第76回の既存試験と第75回の未登録維持を検査する。",
-  "round76UnchangedFiles": 164,
+  "validationScope": "第75回200原問・300候補を含む両回400原問・600候補。画像画素監査・再計算は別途成功。テキストの意味・忠実性の著者目視照合は200問別台帳。",
+  "round76UnchangedFiles": 163,
+  "sharedIndexChange": "第75回の8科目import・原問配列追加。第76回原問は変更なし。",
   "publication": "staging remains unpublished",
+  "independentReviewRequested": false,
+  "independentReviewPassed": false,
+  "correctionNoticeStatus": "公式検索では第75回訂正未発見。案内ページHTTP403のため不存在は確認できず。",
   "commit": false,
   "push": false,
   "build": false,
   "pr": false,
   "deploy": false,
-  "independentReviewRequested": false,
   "git diff --check": {
     "exitCode": 0
-  }
+  },
+  "commitConstraint": ".gitは環境設定で読み取り専用。権限変更・別経路による回避はしていない。"
 }

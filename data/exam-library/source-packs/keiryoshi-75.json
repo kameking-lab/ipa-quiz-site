@@ -1,7 +1,7 @@
 {
   "id": "keiryoshi-75",
   "publicationStatus": "staging",
-  "ingestionStatus": "partial-transcription",
+  "ingestionStatus": "transcribed-staging",
   "round": 75,
   "year": 2024,
   "examDate": "2024-12-15",
@@ -11,16 +11,16 @@
   "answerSha256": "97468fb7ee0c25d3a24f829eb8fc3d867e330c97c9bc5dafaa1444d2e13132e4",
   "subjectMappingSourceUrl": "https://www.meti.go.jp/information/license/data/c241216aj.html",
   "sourceQuestionCount": 200,
-  "ingestedSourceQuestionCount": 0,
+  "ingestedSourceQuestionCount": 200,
   "qualificationQuestionCounts": {
     "keiryoshi": 100,
     "keiryoshi-nodo": 100,
     "keiryoshi-soon": 100
   },
   "ingestedQualificationQuestionCounts": {
-    "keiryoshi": 0,
-    "keiryoshi-nodo": 0,
-    "keiryoshi-soon": 0
+    "keiryoshi": 100,
+    "keiryoshi-nodo": 100,
+    "keiryoshi-soon": 100
   },
   "papers": [
     {
@@ -100,9 +100,6 @@
       "sha256": "efabe812f4b50b0802106218d1232fffef8dd630924a6c4c78e8c685643f05b4"
     }
   ],
-  "unregisteredDraftSourceQuestionCount": 25,
-  "unregisteredDraftFiles": [
-    "data/questions/keiryoshi/2024-ichiki.json"
-  ],
-  "draftNotes": "一基25問の転記・全肢解説・7図表を作成。残り175問未転記。第75回はローダー未登録。needsReview=trueを保持。"
+  "draftNotes": "全8科目200原問・全1000肢解説・55図表。未公開候補300件へ展開。needsReview=trueを保持。独立レビューは依頼していない。",
+  "independentReviewStatus": "not-requested"
 }

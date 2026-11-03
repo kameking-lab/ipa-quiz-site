@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 import { KEIRYOSHI_CANDIDATES, KEIRYOSHI_SOURCE_QUESTIONS, KEIRYOSHI_SUBJECTS, getKeiryoshiCandidates } from "@/data/questions/keiryoshi";
 import official from "@/docs/evidence/keiryoshi-76/official-answers.json";
 import sourcePack from "@/data/exam-library/source-packs/keiryoshi-76.json";
-import draft75 from "@/data/questions/keiryoshi/2024-ichiki.json";
 import official75 from "@/docs/evidence/keiryoshi-75/official-answers.json";
 import sourcePack75 from "@/data/exam-library/source-packs/keiryoshi-75.json";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -19,16 +18,19 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 const exams = ["keiryoshi", "keiryoshi-nodo", "keiryoshi-soon"] as const;
+const source76 = KEIRYOSHI_SOURCE_QUESTIONS.filter(q => q.year === 2025);
+const candidates76 = KEIRYOSHI_CANDIDATES.filter(q => q.year === 2025);
+const source75 = KEIRYOSHI_SOURCE_QUESTIONS.filter(q => q.year === 2024);
 
 describe("第76回計量士・未公開ステージング", () => {
   it("200原問を公式の科目対応で各資格100問に割り当て、共通科目の訂正を共有する", () => {
-    expect(KEIRYOSHI_SOURCE_QUESTIONS).toHaveLength(200);
-    expect(KEIRYOSHI_CANDIDATES).toHaveLength(300);
-    expect(new Set(KEIRYOSHI_CANDIDATES.map(q => q.id)).size).toBe(300);
-    expect(new Set(KEIRYOSHI_CANDIDATES.map(questionPagePath)).size).toBe(300);
+    expect(source76).toHaveLength(200);
+    expect(candidates76).toHaveLength(300);
+    expect(new Set(candidates76.map(q => q.id)).size).toBe(300);
+    expect(new Set(candidates76.map(questionPagePath)).size).toBe(300);
     expect(sourcePack.publicationStatus).toBe("staging");
     for (const exam of exams) {
-      const questions = getKeiryoshiCandidates(exam);
+      const questions = getKeiryoshiCandidates(exam).filter(q => q.year === 2025);
       expect(questions).toHaveLength(100);
       expect(new Set(questions.map(q => q.subject))).toEqual(new Set(KEIRYOSHI_SUBJECTS[exam]));
       for (const session of EXAM_CONFIGS[exam].sessions) {
@@ -42,7 +44,7 @@ describe("第76回計量士・未公開ステージング", () => {
 
   it("全原問の正答を訂正版PDF由来の別台帳と照合し、全5肢の本文・解説と出典を持つ", () => {
     const answers: Record<string, Record<string, string>> = official.answers;
-    for (const q of KEIRYOSHI_SOURCE_QUESTIONS) {
+    for (const q of source76) {
       expect(q.officialAnswerNumber, `${q.subject} ${q.qNumber}`).toBe(answers[q.subject!]?.[q.qNumber]);
       expect(q.answer).toEqual(q.officialAnswerNumber === "全員正解" ? [...keys] : keys[Number(q.officialAnswerNumber) - 1]);
       expect(Object.keys(q.choices ?? {})).toEqual([...keys]);
@@ -94,7 +96,7 @@ describe("第76回計量士・未公開ステージング", () => {
 
   it("公式の番号・回次・経済産業省の著者/利用条件を表示する", () => {
     for (const exam of exams) {
-      const q = getKeiryoshiCandidates(exam)[0]!;
+      const q = getKeiryoshiCandidates(exam).find(q => q.year === 2025)!;
       expect(keys.map(key => choiceDisplayLabel(exam, key))).toEqual(["1", "2", "3", "4", "5"]);
       expect(questionSourceEdition(q)).toBe("第76回（令和7年12月実施）");
       const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://example.org${questionPagePath(q)}`, title: exam, lastUpdatedISO: "2026-11-03" });
@@ -104,26 +106,62 @@ describe("第76回計量士・未公開ステージング", () => {
   });
 });
 
-describe("第75回計量士・未登録の途中ドラフト", () => {
-  it("途中データを既存の第76回候補や一般出題経路へ混ぜない", () => {
+describe("第75回計量士・未公開ステージング", () => {
+  it("全200原問・1000肢解説を公式正答・2024年の出典と対応させる", () => {
     expect(sourcePack75.publicationStatus).toBe("staging");
-    expect(sourcePack75.ingestedSourceQuestionCount).toBe(0);
-    expect(draft75).toHaveLength(25);
-    for (const q of draft75) {
-      const id = `keiryoshi-${q.year}-${q.season}-${q.session}-q${q.qNumber}`;
-      expect(KEIRYOSHI_CANDIDATES.some(candidate => candidate.id === id)).toBe(false);
-      expect(getQuestionById(id)).toBeUndefined();
+    expect(sourcePack75.ingestedSourceQuestionCount).toBe(200);
+    expect(source75).toHaveLength(200);
+    const answers: Record<string, Record<string, string>> = official75.answers;
+    for (const q of source75) {
       expect(q.needsReview).toBe(true);
-      expect(q.year).toBe(2024);
       expect(q.examDate).toBe("2024-12-15");
-      expect(questionSourceEdition({ year: q.year, season: "annual", sourcePdfUrl: q.sourcePdfUrl })).toBe("第75回（令和6年12月実施）");
-      expect(q.officialAnswerNumber).toBe((official75.answers.一基 as Record<string, string>)[q.qNumber]);
+      expect(questionSourceEdition(q)).toBe("第75回（令和6年12月実施）");
+      expect(q.officialAnswerNumber).toBe(answers[q.subject!]?.[q.qNumber]);
       expect(q.answer).toBe(keys[Number(q.officialAnswerNumber) - 1]);
       expect(q.sourceAnswerUrl).toBe(official75.url);
-      expect(Object.keys(q.choices)).toEqual([...keys]);
-      expect(Object.keys(q.choiceExplanations)).toEqual([...keys]);
+      expect(q.sourcePdfUrl).toBe(sourcePack75.papers.find(p => p.subject === q.subject)?.pdfUrl);
+      expect(Object.keys(q.choices ?? {})).toEqual([...keys]);
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual([...keys]);
+      for (const key of keys) {
+        expect(q.choices?.[key]?.trim().length).toBeGreaterThan(0);
+        expect(q.choiceExplanations?.[key]?.trim().length).toBeGreaterThan(5);
+      }
+      expect(q.question.length).toBeGreaterThan(10);
+      expect(JSON.stringify(q)).not.toContain("�");
+      expect(q.hasImage).toBe(Boolean(q.imageUrls?.length));
       for (const url of q.imageUrls ?? []) expect(existsSync(path.join(process.cwd(), "public", url))).toBe(true);
+      if (q.lawReferenceDate || q.subject === "法規") {
+        expect(q.lawReferenceDate).toBe("2024-12-15");
+        expect(q.explanation).toContain("令和6年12月（出題時点）の法令");
+      }
     }
-    expect(new Set(KEIRYOSHI_SOURCE_QUESTIONS.map(q => q.year))).toEqual(new Set([2025]));
+  });
+
+  it("各資格は各回100問で、法規と管理の原問を共有し、全600候補のIDとURLが衝突しない", () => {
+    expect(KEIRYOSHI_SOURCE_QUESTIONS).toHaveLength(400);
+    expect(KEIRYOSHI_CANDIDATES).toHaveLength(600);
+    expect(new Set(KEIRYOSHI_CANDIDATES.map(q => q.id)).size).toBe(600);
+    expect(new Set(KEIRYOSHI_CANDIDATES.map(questionPagePath)).size).toBe(600);
+    expect(new Set(KEIRYOSHI_SOURCE_QUESTIONS.map(q => q.year))).toEqual(new Set([2025, 2024]));
+    for (const exam of exams) {
+      const candidates = getKeiryoshiCandidates(exam);
+      expect(candidates).toHaveLength(200);
+      expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: 2024, end: 2025 });
+      for (const year of [2024, 2025]) {
+        const questions = candidates.filter(q => q.year === year);
+        expect(questions).toHaveLength(100);
+        expect(new Set(questions.map(q => q.subject))).toEqual(new Set(KEIRYOSHI_SUBJECTS[exam]));
+        for (const session of EXAM_CONFIGS[exam].sessions) {
+          expect(questions.filter(q => q.session === session.session).map(q => q.qNumber)).toEqual(
+            Array.from({ length: session.expectedQuestions }, (_, i) => i + 1),
+          );
+        }
+      }
+      for (const q of candidates.filter(q => q.year === 2024 && ["法規", "管理"].includes(q.subject!))) {
+        const source = source75.find(s => s.subject === q.subject && s.qNumber === q.qNumber)!;
+        expect(q.choices).toBe(source.choices);
+        expect(q.choiceExplanations).toBe(source.choiceExplanations);
+      }
+    }
   });
 });

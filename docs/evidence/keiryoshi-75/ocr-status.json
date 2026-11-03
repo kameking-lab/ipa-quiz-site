@@ -1,8 +1,8 @@
 {
   "status": "completed-ocr-only",
   "questionPages": 200,
-  "visualTranscriptionReviewed": 25,
-  "remainingVisualTranscription": 175,
+  "visualTranscriptionReviewed": 200,
+  "remainingVisualTranscription": 0,
   "candidateCropPixelContainment": 200,
   "candidateCropPixelThreshold": "grayscale < 240",
   "scope": "Question-region conservative safety crops in /tmp; not approved figure cuts. Their containment checks depend on the recorded question-region band, not the whole page. All object inventories are retained separately. No automatic OCR result is imported as a question.",
@@ -12,11 +12,17 @@
   "raster": "PyMuPDF Matrix(2.5,2.5), page.rect/CropBox, RGB",
   "scripts": [
     "render-ocr.py",
-    "recalculate-ichiki.py"
+    "review-transcription.py",
+    "verify-figures.py",
+    "recalculate-ichiki.py",
+    "recalculate-all.py"
   ],
   "limits": [
-    "OCRの誤字・欠落、数式と選択肢番号の読順崩れを含む。",
-    "175問の本文・全肢、強調・斜体、計算・解説は未審査。",
-    "全200問の画像/ベクタ検出から図としての全件分類は未完了。"
-  ]
+    "OCR候補自体には誤字・欠落、数式と選択肢番号の読順崩れが残る。確定転記は原画像と照合した2024-*.json。",
+    "OCR候補の切出し検査と、原図55点の全RGB画素検査は別の記録。",
+    "斜体は平文では未再現。第75回の独立レビューは未依頼。"
+  ],
+  "figureClassificationReviewed": 200,
+  "figureCropsPixelVerified": 55,
+  "visualReviewEvidence": "*-transcription-review.json / *-figure-classification.json / figure-pixel-audit.json"
 }
