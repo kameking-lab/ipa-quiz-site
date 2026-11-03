@@ -54,4 +54,17 @@ describe("LQ3B complete-paper continuation", () => {
     expect(screen.getByRole("heading", {name:"正解"})).toBeInTheDocument();
     for (const reason of q.choiceExplanation!.choices) expect(screen.getByText(reason.reason)).toBeInTheDocument();
   });
+
+  it("preserves Python indentation and the official code image while retaining the ADAS clarification", () => {
+    const examId = "pe-first-information-2024";
+    const questions = loadPeFirstPaper(examId)!;
+    const q = questions[5];
+    const view = render(<ExamQuestionPlayer examId={examId} examTitle="技術士第一次・情報工学" pdfUrl={q.originalPdf!} indexUrl="https://www.engineer.or.jp/c_categories/index02021.html" questions={questions} initialQuestionId={q.id} />);
+    const prompt = view.container.querySelector("p.whitespace-pre-wrap")!;
+    expect(prompt.textContent).toContain("\n    if bit & mask == 0:\n        print(0, end='')");
+    expect(prompt).not.toHaveClass("whitespace-pre-line");
+    expect(screen.getByAltText(q.presentation!.figures[0].alt)).toHaveAttribute("src", "/exam-library/pe-first-information-2024/page-03.png");
+    expect(questions[10].choiceExplanation!.choices[1].reason).toContain("レベル0");
+    expect(questions[10].correctChoice).toBe(1);
+  });
 });

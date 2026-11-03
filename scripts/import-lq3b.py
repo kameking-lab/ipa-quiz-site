@@ -96,7 +96,7 @@ def build(year, department, refresh=False):
             choiceExplanation=dict(sourceHash=sourcehash, correctChoice=keys[number], summary=q['summary'],
                 choices=[dict(number=i+1, verdict='correct' if i+1==keys[number] else 'incorrect', reason=r) for i,r in enumerate(reasons)],
                 sources=[dict(title='日本技術士会 公式問題', url=questionurl+f'#page={page}'),
-                         dict(title='日本技術士会 公式正答', url=answerurl)])))
+                         dict(title='日本技術士会 公式正答', url=answerurl)] + q.get('sources', []))))
     output = OUT / f'{paperid}.json'
     manifestpath = REPORT / 'adoption-manifest.json'
     manifest = read(manifestpath) if manifestpath.exists() else []

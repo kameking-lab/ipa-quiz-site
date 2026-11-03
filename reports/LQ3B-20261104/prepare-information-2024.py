@@ -60,6 +60,9 @@ questions[30]=dict(text='RFC 4291で定義されるIPv6（Internet Protocol vers
 questions[31]=dict(text='次のうち，10.0.144.0/20のサブネット内の端末に割り振ることができるIPアドレスで最大アドレスとして，最も適切なものはどれか。',choices=['10.0.0.254','10.0.144.254','10.0.159.254','10.0.255.254','10.255.255.254'])
 questions[34]['text']='1台のファイアウォールで，外部セグメント，DMZ，内部ネットワークの3つのセグメントに分割されたネットワークにおいて，個人情報を扱うDBサーバと一般公開するWebサーバで構成されるシステムによってユーザ向けのサービスをインターネットで公開する。このとき，インターネットからの不正アクセスからDBサーバのデータを保護するためのサーバの設置方法に関する次の記述のうち，最も適切なものはどれか。\nなお，このファイアウォールは，外部セグメントとDMZとの間，及びDMZと内部ネットワークとの間の通信では特定のプロトコルだけを許可し，外部セグメントと内部ネットワークとの間の通信は許可しないものとする。'
 questions[35]['choices'][4]=questions[35]['choices'][4].replace('Webブラウザ','Webブラウザ')
+questions[32]['sources']=[dict(title='NIST SP800-63B-4 第2公開草案（2024年8月・設問当時）',url='https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63B-4.2pd.pdf')]
+questions[6]['hasFigure']=True
+questions[11]['sources']=[dict(title='NHTSA 運転自動化レベル（2022年・Level 0の一時的支援）',url='https://www.nhtsa.gov/sites/nhtsa.gov/files/2022-03/Levels_of_Automation_Static_022822-v4-tag.pdf')]
 assert set(questions)==set(range(1,36)),set(range(1,36))-set(questions)
 reasons=json.loads((ROOT/'information-2024-reasons.json').read_text(encoding='utf8'))
 for q in reasons:q.update(questions[q['number']])

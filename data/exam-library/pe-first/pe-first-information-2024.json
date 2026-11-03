@@ -483,7 +483,14 @@
           "text": "01010101"
         }
       ],
-      "figures": []
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2024/page-03.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 情報工学部門 専門科目 Ⅲ－6の公式原問（PDF 3ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
     },
     "choiceExplanation": {
       "sourceHash": "c62eb9b920e715970f59503e3617b7ee8c5e99bf1f192fd5fc6e2c020bbe0b51",
@@ -892,7 +899,7 @@
     "answerAuthority": "official",
     "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_7.pdf",
     "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=18",
-    "explanation": "正答①。自動運転を、あらゆる場面のルールを事前に網羅するだけで自ら良い答えを導くものとする説明は適切でない。",
+    "explanation": "公式正答は①。全ての場面のルールを事前に網羅するだけで自動運転が成立するという説明は不適切。なお②は公式採点では正答対象外だが、広義のADASにはレベル0の警報・一時的支援も含まれるため、『搭載されない』を一般的な定義として覚えないこと。",
     "presentation": {
       "sourceHash": "d7154a72fab4072fec618d95d87dd855275dd8f7d1e64a2db4c5d25c72b79b0c",
       "prompt": "自動運転に関する次の記述のうち，最も不適切なものはどれか。",
@@ -923,17 +930,17 @@
     "choiceExplanation": {
       "sourceHash": "d7154a72fab4072fec618d95d87dd855275dd8f7d1e64a2db4c5d25c72b79b0c",
       "correctChoice": 1,
-      "summary": "正答①。自動運転を、あらゆる場面のルールを事前に網羅するだけで自ら良い答えを導くものとする説明は適切でない。",
+      "summary": "公式正答は①。全ての場面のルールを事前に網羅するだけで自動運転が成立するという説明は不適切。なお②は公式採点では正答対象外だが、広義のADASにはレベル0の警報・一時的支援も含まれるため、『搭載されない』を一般的な定義として覚えないこと。",
       "choices": [
         {
           "number": 1,
           "verdict": "correct",
-          "reason": "①が不適切。全状況のルールを事前に網羅することは現実的でなく、認知・予測・計画・制御等の仕組みが必要である。"
+          "reason": "①が公式正答。全状況のルールを事前に網羅することは現実的でなく、認知・予測・計画・制御等の仕組みが必要である。"
         },
         {
           "number": 2,
           "verdict": "incorrect",
-          "reason": "②は設問上適切。全ての動的運転タスクを運転者が実行するという分類条件と、運転支援機能によるタスク分担を区別する。"
+          "reason": "②は公式採点では正答対象外。ただし広義のADASにはレベル0の警報や緊急制動等も含まれ、運転者が運転を担う車にも搭載される。『搭載されない』という断定を一般的定義として用いず、持続的な操舵・加減速支援と一時的な安全支援を区別する。"
         },
         {
           "number": 3,
@@ -959,6 +966,10 @@
         {
           "title": "日本技術士会 公式正答",
           "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=18"
+        },
+        {
+          "title": "NHTSA 運転自動化レベル（2022年・Level 0の一時的支援）",
+          "url": "https://www.nhtsa.gov/sites/nhtsa.gov/files/2022-03/Levels_of_Automation_Static_022822-v4-tag.pdf"
         }
       ]
     }
@@ -2835,6 +2846,10 @@
         {
           "title": "日本技術士会 公式正答",
           "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=18"
+        },
+        {
+          "title": "NIST SP800-63B-4 第2公開草案（2024年8月・設問当時）",
+          "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63B-4.2pd.pdf"
         }
       ]
     }
