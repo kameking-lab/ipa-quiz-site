@@ -163,8 +163,47 @@
       "reviewedFileSha256": "7484f50a47d419e6c3693bb4f7157e622a3887e39de8daa88af2035150c256ed",
       "semanticSha256": "e1d2ad0bc7a951a47faab96b4448b011d97ebd9436fa0718b586dfd692b851c7",
       "sha256": "3e4062a7ce8725ab0bb8a2f45afa1a1c7b808a28dfbf94cbf1e2e5ecf867771b"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-engineer-first/2025-aptitude-010-015.json",
+      "originals": 6,
+      "questionIds": [
+        "gijutsushi1-kikai-2025-aptitude-II-10",
+        "gijutsushi1-kikai-2025-aptitude-II-11",
+        "gijutsushi1-kikai-2025-aptitude-II-12",
+        "gijutsushi1-kikai-2025-aptitude-II-13",
+        "gijutsushi1-kikai-2025-aptitude-II-14",
+        "gijutsushi1-kikai-2025-aptitude-II-15"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review17.md",
+      "reportSha256": "d9418d7838b5d80f67811f17c3a6e36215e42c7a5388332bf925c4d21b088d4f",
+      "reviewedSnapshot": "reports/lq4c-20261104/reviewed-manuscripts/lq4c-engineer-first--2025-aptitude-010-015.json",
+      "reviewedFileSha256": "0ea91376820be4a343f9f21117730681b841c6971a3702dad844d1330b429f46",
+      "semanticSha256": "061a4ef02da3314d88276b243c18bb92da3f095c2f659bc7a775ecc7b5d3cc71",
+      "sha256": "7588ccf6efb2ef8e2e512250e2f382ea4582332ef7283078847bdced619d2242"
+    },
+    {
+      "path": "data/qualification-staging/lq4c-biru-kan/2025-am-021-022-030-032.json",
+      "originals": 5,
+      "questionIds": [
+        "biru-kan-2025-am-021",
+        "biru-kan-2025-am-022",
+        "biru-kan-2025-am-030",
+        "biru-kan-2025-am-031",
+        "biru-kan-2025-am-032"
+      ],
+      "status": "PASS",
+      "model": "gpt-6-astra",
+      "report": "reports/lq4c-20261104/independent-review18.md",
+      "reportSha256": "98dc53b383e6eb8c699dbd9bc548bb8cc24aca2c9752738eaf2806249d838366",
+      "reviewedSnapshot": "reports/lq4c-20261104/reviewed-manuscripts/lq4c-biru-kan--2025-am-021-022-030-032.json",
+      "reviewedFileSha256": "435017e91eaf54db6fc0a0402bd8056224658b56f3e183d5f727b3d86dc25ef9",
+      "semanticSha256": "fc9d77428e2ef96b668153aab24af717c64ab40b638f9de042c69efd4c523a83",
+      "sha256": "bb27b6dfbe08d4534b96a62129c817f4eaed0bdb94fdaa0c8529b278c8e16721"
     }
   ],
-  "accepted": 64,
-  "remaining": 456
+  "accepted": 75,
+  "remaining": 445
 }
