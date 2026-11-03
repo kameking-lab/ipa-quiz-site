@@ -64,3 +64,9 @@
 既存のPython監査は成功。Vitestは読み取り専用環境で一時ディレクトリを作成できず未実行でしたが、メモリ内でTypeScriptを実行し、資格別件数・公開制御・環濃問3の採点は別途検証しました。
 
 **判定：FAIL**
+---
+## レビュー経過（追記）
+1〜6回目はFAIL（各回の指摘と修正は reports/cloud-keiryoshi-review-round2〜6.md、*-fixes.md）。
+7回目（gpt-6-astra, read-only, 全200原問・全1,000肢・全73画像を全数照合）で **PASS**。詳細は reports/cloud-keiryoshi-review-round7-PASS.md。
+残る制約: 47問の斜体は平文データ形式で再現不可（意味・正答への影響なし、レビュー判定は許容範囲）。
+未収録: 第75回(令和6年12月)・第74回は公式PDFが未取得（第75回は全件HTTP 202、第74回は未取得）のため収録していない。
