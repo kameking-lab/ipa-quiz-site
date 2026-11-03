@@ -1,9 +1,9 @@
 {
   "slug": "kenki",
   "checkedAt": "2026-11-03",
-  "status": "level1-staged-level2-in-progress",
+  "status": "staged-awaiting-independent-review",
   "ownerRightsConfirmed": true,
-  "addedQuestionCount": 112,
+  "addedQuestionCount": 416,
   "officialIndexUrl": "https://jcmanet.or.jp/kentei/",
   "officialNotices": [
     {
@@ -273,5 +273,21 @@
     "failed_pdf_urls": 0,
     "complete_two_sessions": true
   },
-  "independentReview": "監督側で別プロセス実施予定（補足指示）。未合格。"
+  "independentReview": "監督側で別プロセス実施予定（補足指示）。未合格。",
+  "questionCounts": {
+    "kenki1": {
+      "2026": 56,
+      "2025": 56,
+      "total": 112
+    },
+    "kenki2": {
+      "2026": 152,
+      "2025": 152,
+      "total": 304
+    }
+  },
+  "excludedQuestionCount": 0,
+  "figureCount": 7,
+  "choiceExplanationCount": 1664,
+  "gitDelivery": "git add/commit failed: .git/index.lock is read-only. No workaround. Supervisor must commit and push."
 }

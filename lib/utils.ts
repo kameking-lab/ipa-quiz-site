@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  kenki2: "2級建設機械施工管理（第一次）",
   kenki1: "1級建設機械施工管理（第一次）",
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",

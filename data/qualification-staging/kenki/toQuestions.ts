@@ -1,4 +1,4 @@
-import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, Question, Session } from "@/lib/questions/types";
 
 export interface KenkiPaper {
   year: number;
@@ -23,7 +23,8 @@ export interface KenkiPaper {
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 /** Official numeric option numbers are retained; only presentation keys are converted. */
-export function toKenkiQuestions(source: KenkiPaper, exam: ExamCode): Question[] {
+export function toKenkiQuestions(source: KenkiPaper, exam: ExamCode, session: Session = "gakka"): Question[] {
+  const paperTitle = exam === "kenki1" ? "第一次検定" : `第一次検定（${source.paper}）`;
   return source.questions.map((item): Question => {
     const answer = keys[item.officialAnswerNumber - 1];
     if (!answer || item.choices.length !== 4 || item.choiceExplanations.length !== 4) {
@@ -31,7 +32,7 @@ export function toKenkiQuestions(source: KenkiPaper, exam: ExamCode): Question[]
     }
     return {
       id: `${exam}-${source.year}-annual-${source.paper}-q${item.number}`,
-      exam, session: "gakka", year: source.year, season: "annual", qNumber: item.number,
+      exam, session, year: source.year, season: "annual", qNumber: item.number,
       type: "multiple-choice", category: item.category, topicTags: [item.topic], difficulty: 3,
       question: item.question,
       choices: Object.fromEntries(keys.map((key, i) => [key, item.choices[i]])),
@@ -43,7 +44,7 @@ export function toKenkiQuestions(source: KenkiPaper, exam: ExamCode): Question[]
       hasImage: Boolean(item.imageUrl), imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
       imageAltTexts: item.imageAlt ? [item.imageAlt] : undefined,
       sourcePdfUrl: `${source.questionUrl}#page=${item.pdfPage}`, sourceAnswerUrl: source.answerUrl,
-      sourceAttribution: `出典：一般社団法人日本建設機械施工協会 令和${source.year - 2018}年度 建設機械施工管理技術検定 ${source.paper} No.${item.number}。ルビ・空白・改行を整理し、数字の選択肢をア〜エへ変換。解説は過去問AIの独自作成。`,
+      sourceAttribution: `出典：一般社団法人日本建設機械施工協会 令和${source.year - 2018}年度 ${exam === "kenki1" ? "1級" : "2級"}建設機械施工管理技術検定 ${paperTitle} No.${item.number}。ルビ・空白・改行を整理し、数字の選択肢をア〜エへ変換。解説は過去問AIの独自作成。`,
       license: "JCM-authorized-reuse", lastUpdated: "2026-11-03",
     };
   });

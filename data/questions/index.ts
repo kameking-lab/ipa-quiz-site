@@ -1,3 +1,4 @@
+import { KENKI2_QUESTIONS } from "./kenki2";
 import { KENKI1_QUESTIONS } from "./kenki1";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -98,6 +99,7 @@ import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("kenki2") ? { kenki2: KENKI2_QUESTIONS } : {}),
   ...(isExamPublished("kenki1") ? { kenki1: KENKI1_QUESTIONS } : {}),
   ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
