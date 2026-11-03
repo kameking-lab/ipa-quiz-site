@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-11-03",
-  "auditSha256": "906e2d2a0928b511071331c65dd79c230df99e133fa9f8d565a734ba17eb1988",
+  "auditSha256": "fa569f308f5db42b1921e65d25c8ed842f230be60dfb251ec72383451587c526",
   "baselineSha256": "d9cff605a3110eacfcee7c1de30f7b7589f88550032147aa9afcdca8222e7277",
   "scope": "200 questions + 1000 choices; every field has a source region and is compared, including empty text for structural drawings",
   "limits": "Raw normalized text equality is not claimed. All residual differences are explicit; PDF mapping/reading-order artifacts and intentional display conversions are retained as annotated differences. This is not an automatic semantic proof of formulas or explanations.",
@@ -8,7 +8,7 @@
     "fieldsCompared": 1200,
     "beforeDifferentFields": 506,
     "afterDifferentFields": 506,
-    "changedFields": 8,
+    "changedFields": 13,
     "changedQuestions": 7,
     "unparsedFields": 0
   },
@@ -60,7 +60,42 @@
       "qNumber": 19,
       "field": "question",
       "before": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか、次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
-      "after": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。"
+      "after": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、M_Sは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "field": "ア",
+      "before": "Mₛ＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
+      "after": "M_S＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "field": "イ",
+      "before": "Mₛ＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
+      "after": "M_S＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "field": "ウ",
+      "before": "Mₛ＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
+      "after": "M_S＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "field": "エ",
+      "before": "Mₛ＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
+      "after": "M_S＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "field": "オ",
+      "before": "Mₛ＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
+      "after": "M_S＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}"
     },
     {
       "subject": "計質",
@@ -28413,7 +28448,7 @@
       "pdfPage": 20,
       "source": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料\n を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試\n 料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n      ただし、MS は求める試料の質量、Mr は校正された分銅の質量、ρ a は空気の密度、\n ρ s は試料の密度、ρ r は校正された分銅の密度である。\n",
       "before": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか、次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
-      "after": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
+      "after": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、M_Sは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
       "beforeDifferences": [
         {
           "operation": "replace",
@@ -28460,9 +28495,9 @@
       ],
       "afterDifferences": [
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 106,
           "dataOffset": 106
         },
@@ -28471,33 +28506,33 @@
           "source": "r",
           "data": "ᵣ",
           "sourceOffset": 118,
-          "dataOffset": 118
+          "dataOffset": 119
         },
         {
           "operation": "replace",
           "source": "a",
           "data": "ₐ",
           "sourceOffset": 132,
-          "dataOffset": 132
+          "dataOffset": 133
         },
         {
           "operation": "replace",
           "source": "s",
           "data": "ₛ",
           "sourceOffset": 141,
-          "dataOffset": 141
+          "dataOffset": 142
         },
         {
           "operation": "replace",
           "source": "r",
           "data": "ᵣ",
           "sourceOffset": 150,
-          "dataOffset": 150
+          "dataOffset": 151
         }
       ],
       "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -28508,7 +28543,7 @@
       "pdfPage": 20,
       "source": "          ⎧     ⎧1\n                           ⎩\n                           ⎩\n\n    MS＝M r⎨1－ρ a⎜ ρ － ρ\n                           ⎨\n                           ⎜\n1\n         ⎩     ⎩   r   s\n                           ⎧\n                           ⎧\n",
       "before": "Mₛ＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
-      "after": "Mₛ＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
+      "after": "M_S＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
       "beforeDifferences": [
         {
           "operation": "delete",
@@ -28569,9 +28604,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 6,
           "dataOffset": 1
         },
@@ -28580,40 +28615,40 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 9,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 14,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ᵣ",
           "sourceOffset": 17,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 18,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜1⎩⎩rs⎧⎧",
           "data": "ₛ)}",
           "sourceOffset": 19,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -28624,7 +28659,7 @@
       "pdfPage": 20,
       "source": "          ⎧     ⎧1\n                         ⎩\n                         ⎩\n                     1\n    MS＝M r⎨1－ρ a⎜ρ － ρ\n                         ⎨\n                         ⎜\n\n         ⎩    ⎩ s    r\n                         ⎧\n                         ⎧\n",
       "before": "Mₛ＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
-      "after": "Mₛ＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
+      "after": "M_S＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
       "beforeDifferences": [
         {
           "operation": "delete",
@@ -28685,9 +28720,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -28696,40 +28731,40 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 15,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ₛ",
           "sourceOffset": 18,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 19,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩sr⎧⎧",
           "data": "ᵣ)}",
           "sourceOffset": 20,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -28740,7 +28775,7 @@
       "pdfPage": 20,
       "source": "          ⎧     ⎧1\n                           ⎩\n                           ⎩\n                      1\n    MS＝M r⎨1＋ρ a⎜ ρ ＋ ρ\n                           ⎨\n                           ⎜\n\n         ⎩     ⎩   r   s\n                           ⎧\n                           ⎧\n",
       "before": "Mₛ＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
-      "after": "Mₛ＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
+      "after": "M_S＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
       "beforeDifferences": [
         {
           "operation": "delete",
@@ -28801,9 +28836,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -28812,40 +28847,40 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 15,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ᵣ",
           "sourceOffset": 18,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 19,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩rs⎧⎧",
           "data": "ₛ)}",
           "sourceOffset": 20,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -28856,7 +28891,7 @@
       "pdfPage": 20,
       "source": "          ⎧ ⎧1\n                       ⎩ ⎩\n                    1\n    MS＝M r⎨ρ a⎜ ρ － ρ －1\n                       ⎨ ⎜\n\n         ⎩ ⎩   r   s\n                       ⎧ ⎧\n",
       "before": "Mₛ＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
-      "after": "Mₛ＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
+      "after": "M_S＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
       "beforeDifferences": [
         {
           "operation": "delete",
@@ -28910,9 +28945,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -28921,33 +28956,33 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 13,
-          "dataOffset": 7
+          "dataOffset": 8
         },
         {
           "operation": "replace",
           "source": "-ρ",
           "data": "ᵣ",
           "sourceOffset": 16,
-          "dataOffset": 12
+          "dataOffset": 13
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩rs⎧⎧",
           "data": "/ρₛ)-1}",
           "sourceOffset": 20,
-          "dataOffset": 15
+          "dataOffset": 16
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },
@@ -28958,7 +28993,7 @@
       "pdfPage": 20,
       "source": "          ⎧ ⎧1\n                      ⎩ ⎩\n                   1\n    MS＝M r⎨ρ a⎜ρ － ρ －1\n                      ⎨ ⎜\n\n         ⎩ ⎩ s    r\n                      ⎧ ⎧\n",
       "before": "Mₛ＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
-      "after": "Mₛ＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
+      "after": "M_S＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
       "beforeDifferences": [
         {
           "operation": "delete",
@@ -29012,9 +29047,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -29023,33 +29058,33 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 13,
-          "dataOffset": 7
+          "dataOffset": 8
         },
         {
           "operation": "replace",
           "source": "-ρ",
           "data": "ₛ",
           "sourceOffset": 16,
-          "dataOffset": 12
+          "dataOffset": 13
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩sr⎧⎧",
           "data": "/ρᵣ)-1}",
           "sourceOffset": 20,
-          "dataOffset": 15
+          "dataOffset": 16
         }
       ],
-      "disposition": "documented-representation-or-extraction",
+      "disposition": "corrected",
       "notes": [
-        "質量・密度の添字（Mₛ・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。PDFの分数や大型括弧は文字対応・読み順が崩れる。今回「式はどれか。」の句点を復元。",
+        "質量・密度の添字（M_S・Mᵣ・ρₐ・ρₛ・ρᵣ）と分数・括弧を表示可能な線形記法で転記。公式20ページの試料質量は大文字S、密度は小文字s。第6回で本文と全5肢のMₛをM_Sに訂正。PDFの分数や大型括弧は文字対応・読み順が崩れる。",
         "数学・化学の文字対応崩れ、重複字形、上下位置と2次元式の読み順を、Unicode上下付き・_添字・/分数・括弧・根号等の線形表記に復元。これらは一次差分の正規化では吸収せず全て列記する。"
       ]
     },

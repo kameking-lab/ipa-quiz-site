@@ -26114,14 +26114,14 @@
       "qNumber": 19,
       "field": "question",
       "source": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料\n を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試\n 料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n      ただし、MS は求める試料の質量、Mr は校正された分銅の質量、ρ a は空気の密度、\n ρ s は試料の密度、ρ r は校正された分銅の密度である。\n",
-      "data": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
+      "data": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。\n\nただし、M_Sは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
       "normalizedSource": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。ただし、MSは求める試料の質量、Mrは校正された分銅の質量、ρaは空気の密度、ρsは試料の密度、ρrは校正された分銅の密度である。",
-      "normalizedData": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。ただし、Mₛは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
+      "normalizedData": "空気中で電子天びんを用いて置換ひょう量法により試料の測定を行った。試料を載せたときの表示値が、校正された分銅を載せたときの表示値に等しいとき、試料の質量を最も正しく求める式はどれか。次の中から一つ選べ。ただし、M_Sは求める試料の質量、Mᵣは校正された分銅の質量、ρₐは空気の密度、ρₛは試料の密度、ρᵣは校正された分銅の密度である。",
       "differences": [
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 106,
           "dataOffset": 106
         },
@@ -26130,28 +26130,28 @@
           "source": "r",
           "data": "ᵣ",
           "sourceOffset": 118,
-          "dataOffset": 118
+          "dataOffset": 119
         },
         {
           "operation": "replace",
           "source": "a",
           "data": "ₐ",
           "sourceOffset": 132,
-          "dataOffset": 132
+          "dataOffset": 133
         },
         {
           "operation": "replace",
           "source": "s",
           "data": "ₛ",
           "sourceOffset": 141,
-          "dataOffset": 141
+          "dataOffset": 142
         },
         {
           "operation": "replace",
           "source": "r",
           "data": "ᵣ",
           "sourceOffset": 150,
-          "dataOffset": 150
+          "dataOffset": 151
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -26161,9 +26161,9 @@
       "qNumber": 19,
       "field": "ア",
       "source": "          ⎧     ⎧1\n                           ⎩\n                           ⎩\n\n    MS＝M r⎨1－ρ a⎜ ρ － ρ\n                           ⎨\n                           ⎜\n1\n         ⎩     ⎩   r   s\n                           ⎧\n                           ⎧\n",
-      "data": "Mₛ＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
+      "data": "M_S＝Mᵣ{1−ρₐ(1/ρᵣ−1/ρₛ)}",
       "normalizedSource": "⎧⎧1⎩⎩MS=Mr⎨1-ρa⎜ρ-ρ⎨⎜1⎩⎩rs⎧⎧",
-      "normalizedData": "Mₛ=Mᵣ{1-ρₐ(1/ρᵣ-1/ρₛ)}",
+      "normalizedData": "M_S=Mᵣ{1-ρₐ(1/ρᵣ-1/ρₛ)}",
       "differences": [
         {
           "operation": "delete",
@@ -26173,9 +26173,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 6,
           "dataOffset": 1
         },
@@ -26184,35 +26184,35 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 9,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 14,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ᵣ",
           "sourceOffset": 17,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 18,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜1⎩⎩rs⎧⎧",
           "data": "ₛ)}",
           "sourceOffset": 19,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -26222,9 +26222,9 @@
       "qNumber": 19,
       "field": "イ",
       "source": "          ⎧     ⎧1\n                         ⎩\n                         ⎩\n                     1\n    MS＝M r⎨1－ρ a⎜ρ － ρ\n                         ⎨\n                         ⎜\n\n         ⎩    ⎩ s    r\n                         ⎧\n                         ⎧\n",
-      "data": "Mₛ＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
+      "data": "M_S＝Mᵣ{1−ρₐ(1/ρₛ−1/ρᵣ)}",
       "normalizedSource": "⎧⎧1⎩⎩1MS=Mr⎨1-ρa⎜ρ-ρ⎨⎜⎩⎩sr⎧⎧",
-      "normalizedData": "Mₛ=Mᵣ{1-ρₐ(1/ρₛ-1/ρᵣ)}",
+      "normalizedData": "M_S=Mᵣ{1-ρₐ(1/ρₛ-1/ρᵣ)}",
       "differences": [
         {
           "operation": "delete",
@@ -26234,9 +26234,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -26245,35 +26245,35 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 15,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ₛ",
           "sourceOffset": 18,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 19,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩sr⎧⎧",
           "data": "ᵣ)}",
           "sourceOffset": 20,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -26283,9 +26283,9 @@
       "qNumber": 19,
       "field": "ウ",
       "source": "          ⎧     ⎧1\n                           ⎩\n                           ⎩\n                      1\n    MS＝M r⎨1＋ρ a⎜ ρ ＋ ρ\n                           ⎨\n                           ⎜\n\n         ⎩     ⎩   r   s\n                           ⎧\n                           ⎧\n",
-      "data": "Mₛ＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
+      "data": "M_S＝Mᵣ{1＋ρₐ(1/ρᵣ＋1/ρₛ)}",
       "normalizedSource": "⎧⎧1⎩⎩1MS=Mr⎨1+ρa⎜ρ+ρ⎨⎜⎩⎩rs⎧⎧",
-      "normalizedData": "Mₛ=Mᵣ{1+ρₐ(1/ρᵣ+1/ρₛ)}",
+      "normalizedData": "M_S=Mᵣ{1+ρₐ(1/ρᵣ+1/ρₛ)}",
       "differences": [
         {
           "operation": "delete",
@@ -26295,9 +26295,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -26306,35 +26306,35 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 15,
-          "dataOffset": 9
+          "dataOffset": 10
         },
         {
           "operation": "insert",
           "source": "",
           "data": "ᵣ",
           "sourceOffset": 18,
-          "dataOffset": 14
+          "dataOffset": 15
         },
         {
           "operation": "insert",
           "source": "",
           "data": "1/",
           "sourceOffset": 19,
-          "dataOffset": 16
+          "dataOffset": 17
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩rs⎧⎧",
           "data": "ₛ)}",
           "sourceOffset": 20,
-          "dataOffset": 19
+          "dataOffset": 20
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -26344,9 +26344,9 @@
       "qNumber": 19,
       "field": "エ",
       "source": "          ⎧ ⎧1\n                       ⎩ ⎩\n                    1\n    MS＝M r⎨ρ a⎜ ρ － ρ －1\n                       ⎨ ⎜\n\n         ⎩ ⎩   r   s\n                       ⎧ ⎧\n",
-      "data": "Mₛ＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
+      "data": "M_S＝Mᵣ{ρₐ(1/ρᵣ−1/ρₛ)−1}",
       "normalizedSource": "⎧⎧1⎩⎩1MS=Mr⎨ρa⎜ρ-ρ-1⎨⎜⎩⎩rs⎧⎧",
-      "normalizedData": "Mₛ=Mᵣ{ρₐ(1/ρᵣ-1/ρₛ)-1}",
+      "normalizedData": "M_S=Mᵣ{ρₐ(1/ρᵣ-1/ρₛ)-1}",
       "differences": [
         {
           "operation": "delete",
@@ -26356,9 +26356,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -26367,28 +26367,28 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 13,
-          "dataOffset": 7
+          "dataOffset": 8
         },
         {
           "operation": "replace",
           "source": "-ρ",
           "data": "ᵣ",
           "sourceOffset": 16,
-          "dataOffset": 12
+          "dataOffset": 13
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩rs⎧⎧",
           "data": "/ρₛ)-1}",
           "sourceOffset": 20,
-          "dataOffset": 15
+          "dataOffset": 16
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -26398,9 +26398,9 @@
       "qNumber": 19,
       "field": "オ",
       "source": "          ⎧ ⎧1\n                      ⎩ ⎩\n                   1\n    MS＝M r⎨ρ a⎜ρ － ρ －1\n                      ⎨ ⎜\n\n         ⎩ ⎩ s    r\n                      ⎧ ⎧\n",
-      "data": "Mₛ＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
+      "data": "M_S＝Mᵣ{ρₐ(1/ρₛ−1/ρᵣ)−1}",
       "normalizedSource": "⎧⎧1⎩⎩1MS=Mr⎨ρa⎜ρ-ρ-1⎨⎜⎩⎩sr⎧⎧",
-      "normalizedData": "Mₛ=Mᵣ{ρₐ(1/ρₛ-1/ρᵣ)-1}",
+      "normalizedData": "M_S=Mᵣ{ρₐ(1/ρₛ-1/ρᵣ)-1}",
       "differences": [
         {
           "operation": "delete",
@@ -26410,9 +26410,9 @@
           "dataOffset": 0
         },
         {
-          "operation": "replace",
-          "source": "S",
-          "data": "ₛ",
+          "operation": "insert",
+          "source": "",
+          "data": "_",
           "sourceOffset": 7,
           "dataOffset": 1
         },
@@ -26421,28 +26421,28 @@
           "source": "r⎨",
           "data": "ᵣ{",
           "sourceOffset": 10,
-          "dataOffset": 4
+          "dataOffset": 5
         },
         {
           "operation": "replace",
           "source": "a⎜",
           "data": "ₐ(1/",
           "sourceOffset": 13,
-          "dataOffset": 7
+          "dataOffset": 8
         },
         {
           "operation": "replace",
           "source": "-ρ",
           "data": "ₛ",
           "sourceOffset": 16,
-          "dataOffset": 12
+          "dataOffset": 13
         },
         {
           "operation": "replace",
           "source": "⎨⎜⎩⎩sr⎧⎧",
           "data": "/ρᵣ)-1}",
           "sourceOffset": 20,
-          "dataOffset": 15
+          "dataOffset": 16
         }
       ],
       "splitMethod": "pdftotext bbox label positions; independent field rectangles"
@@ -27766,12 +27766,12 @@
   ],
   "dataHashes": {
     "data/questions/keiryoshi/2025-houki.json": "045514ddbd2876d220d5664edf58584514cbdb4ceb5b6f11cceedc6774eea125",
-    "data/questions/keiryoshi/2025-ichiki.json": "136f1a1974d881cde0af1aff21b58b381d067d57c1d7d15ba2c83bc72e0f33d7",
+    "data/questions/keiryoshi/2025-ichiki.json": "b3956d486d1a30020f9885563e234215a7499845c745849b7bf8096fa7c38f87",
     "data/questions/keiryoshi/2025-kanbutsu.json": "732861208eadcb2a57225dad29ca1d35445ba406a7921dc79268f92c5d699fd2",
     "data/questions/keiryoshi/2025-kanka.json": "a29edca7f84a1cad867e5f9a518bc51fe1f1e3afb37605ae0d2f71dc20889165",
     "data/questions/keiryoshi/2025-kanno.json": "95204b3e627eb9a666d46390b392bcf933dd574ed9e05c964b5e3a2431be0363",
     "data/questions/keiryoshi/2025-kanon.json": "d038bfe4af0cedcbb64bf3e933dc8856b12695645593fd1e2f8a36baf765f268",
-    "data/questions/keiryoshi/2025-kanri.json": "3fc040740f465caca461dac7bcb03052fe1766465e073fb01f019e441edb9e96",
-    "data/questions/keiryoshi/2025-keishitsu.json": "15400d248a8662c7e88de4555f9c50151d74c5b467117c6d08fe26a0f58c95f9"
+    "data/questions/keiryoshi/2025-kanri.json": "48c83822f178c66e53db81c84a582871deeffa3a67fc72e43764af053c23ab10",
+    "data/questions/keiryoshi/2025-keishitsu.json": "aae24f04f27c1b3e053e3ebeaa674bcb6d521603c8149ff37a1c281e9608a5b6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-11-03",
   "scope": "公式200問を再走査。全問の文字位置・サイズ・基線差と本文・全肢・解説の平文候補はround4-script-audit.json。管理問19の9か所を添字記法N_cへ復元。",
-  "sourceScanSha256": "e9d170ec933e1ce18964aef3ce0d157908d9357e63b4a507fe6643650d843234",
+  "sourceScanSha256": "338f678d1cf4ab4fae250959b4d19f52abb9ce375d930f6709c69e07ff31a0f6",
   "correctedQuestions": [
     "環物10",
     "環物11",
@@ -1382,7 +1382,7 @@
       "qNumber": 19,
       "pdfPage": 20,
       "result": "corrected",
-      "note": "公式PDF20ページのM_r・ρ_rを本文・全5肢・解説（肢アの解説を含む）でMᵣ・ρᵣに復元。"
+      "note": "公式PDF20ページのMの添字Sは大文字・直立、ρの添字sは小文字・直立。第6回でMₛの全10か所をM_Sに訂正。Mᵣ・ρᵣは維持。字体の平文表現の限界はround6-glyph-audit.jsonを参照。"
     },
     {
       "subject": "計質",
@@ -1427,5 +1427,6 @@
       "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
     }
   ],
-  "round3Refresh": "公式PDFの幾何走査結果は保持。今回6問の修正に合わせ全200問のdataText・データファイルハッシュを更新。本文・全肢の厳密差分はfull-text-audit.json参照。管理15のMᵢはPDF16ページのレンダリングでも下付きを確認。"
+  "round3Refresh": "公式PDFの幾何走査結果は保持。今回6問の修正に合わせ全200問のdataText・データファイルハッシュを更新。本文・全肢の厳密差分はfull-text-audit.json参照。管理15のMᵢはPDF16ページのレンダリングでも下付きを確認。",
+  "round6Refresh": "全200問のデータ・ハッシュを更新。今回は大小文字と字体属性を別途round6-glyph-audit.json(.gz)に全件保存し、単純な文字存在確認を字体一致の根拠にしない。"
 }

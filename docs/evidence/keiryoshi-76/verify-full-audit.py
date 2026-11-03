@@ -23,7 +23,7 @@ for f in a['fields']:
   saved=expected[key]
   assert f['source']==saved['source'] and f['data']==saved['after'] and f['differences']==saved['afterDifferences'],key
   assert saved['notes'],key
-assert len(r['corrections'])==8 and r['summary']['changedQuestions']==7
+assert len(r['corrections'])==13 and r['summary']['changedQuestions']==7
 scan=read(E/'typography-scan.json');review=read(E/'typography-review.json')
 assert review['sourceScanSha256']==sha(E/'typography-scan.json')
 questions={}
