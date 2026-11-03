@@ -1,3 +1,4 @@
+import { KHK_HANBAI_QUESTIONS } from "./khk-hanbai";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -177,6 +178,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
   ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
   ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),
+  ...(isExamPublished("khk-hanbai") ? { "khk-hanbai": KHK_HANBAI_QUESTIONS } : {}),
   ...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
   ...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
   ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),

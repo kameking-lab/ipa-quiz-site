@@ -903,6 +903,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2026 },
   },
+  "khk-hanbai": {
+    code: "khk-hanbai", nameFull: "高圧ガス販売主任者試験（第一種販売）", urlSlug: "khk-hanbai", level: "advanced",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
+      { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 20, label: "保安管理技術", categories: ["保安管理技術"] },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+  },
   "gas-kou": {
     code: "gas-kou", nameFull: "ガス主任技術者試験（甲種）", urlSlug: "gas-kou", level: "advanced",
     sessions: [
@@ -1154,7 +1161,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei", "khk-hanbai"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
