@@ -1,0 +1,2316 @@
+{
+  "status": "PREPARATION_ONLY_NOT_IMPORTED_NOT_ACCEPTED_IN_TARGET_BRANCH",
+  "at": "2026-11-03T04:30:33.592Z",
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "branch": "qual/qkensetsu-20261103",
+  "blocker": "Requested branch already assigned to existing worktree C:/Users/kanet/20260522/ipa-qkensetsu-20261103; locked initializing, existing deletions left untouched. Await ownership/recovery clarification.",
+  "scope": "First examination 2025 and 2026, 105 questions each. Second examination not included.",
+  "materials": 210,
+  "choiceReasons": 840,
+  "fixedFiles": [
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-am1.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-am1.json",
+      "sha256": "c35b325528c2f952293428a59ca22cb3db16599500ac355441980fe12a9f873d",
+      "expectedSha256": "c35b325528c2f952293428a59ca22cb3db16599500ac355441980fe12a9f873d",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-am2.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-am2.json",
+      "sha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "expectedSha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-pm.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-pm.json",
+      "sha256": "6c912b576a2f94c5db1f39bc914ac065b72f12cffb9e8395189e0d0fe22f5811",
+      "expectedSha256": "6c912b576a2f94c5db1f39bc914ac065b72f12cffb9e8395189e0d0fe22f5811",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-am1.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-am1.json",
+      "sha256": "9923e25e575136186d1f25b2d861832ca8f665469c4f50ed95cabd94e6b6196e",
+      "expectedSha256": "9923e25e575136186d1f25b2d861832ca8f665469c4f50ed95cabd94e6b6196e",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-am2.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-am2.json",
+      "sha256": "37d5be6bc6400e6b6f8e781bba6206c2283ddc96a8b6232d7feaadd6b655d55b",
+      "expectedSha256": "37d5be6bc6400e6b6f8e781bba6206c2283ddc96a8b6232d7feaadd6b655d55b",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-pm.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-pm.json",
+      "sha256": "5058b2f3efa2325c37d0e0d19cabb40b47d1271dba86fa7799d2867668ad1975",
+      "expectedSha256": "5058b2f3efa2325c37d0e0d19cabb40b47d1271dba86fa7799d2867668ad1975",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/index.ts",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\index.ts",
+      "sha256": "72122cbeffb3f3073f5d7c2ab41a02bf7235178626fedb1206e9e5a66d9839b2",
+      "expectedSha256": "72122cbeffb3f3073f5d7c2ab41a02bf7235178626fedb1206e9e5a66d9839b2",
+      "hashMatches": true
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/saved-source-reader.ts",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\saved-source-reader.ts",
+      "sha256": "3f05bea4bb176d45b21ca8fc6bc8b9fb198d7b7b247d9175b24fe1e6d6822527",
+      "expectedSha256": "3f05bea4bb176d45b21ca8fc6bc8b9fb198d7b7b247d9175b24fe1e6d6822527",
+      "hashMatches": true
+    }
+  ],
+  "packets": [
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-am1.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-am1.json",
+      "sha256": "c35b325528c2f952293428a59ca22cb3db16599500ac355441980fe12a9f873d",
+      "expectedSha256": "c35b325528c2f952293428a59ca22cb3db16599500ac355441980fe12a9f873d",
+      "hashMatches": true,
+      "count": 27,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "choiceReasons": 108,
+      "allChoicesExplained": true,
+      "referenceOnly": [],
+      "needsReview": [],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "fa087e881c75fa650f04ab8ba38fc8b9c9ebee83376eb6dc015e4dd545beeaba"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "6c20c7e9d7f9df47116fcfce5ea83136d168b31cea4f963fa0459840054e6853"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "269d1e8cb2f31fb6324645edd1b0cd8dc609d12de51ef9727b049f07bec8bfaf"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "93b317a672fd73f9c5e71d95958deaee1ad68d97298296cd5c87d87471a04bc6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "91f96bfe2f63589d10f7ebbc9cf81d42a9906e72e31c4991931b9a6c87525272"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2d6e42c46813728f34a6648e55eaefe3c3d69885fb133cf60135bc360f223a29"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a933b99a564a247f388685d849e333ee238eb5b42e555d28530c58a3f6100e59"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "5caf9a38bb1b26b6eadfd46649a951db1a3aee9490da72d9bb575719a2a80106"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e1384a2b87c6045824496e04a05c9bf8ca6a4009a518970db5aea10d384112c5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "5e7893cd4c01ad5a1b36e19f7419bc74e44034971c58a33382e21237fd243e47"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "3a3daf2018249861c2cf103b09a2730dec0e1554ee590843df9bda754d796f4b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a1f07ee3aa67a69a67d31fa562dd2d0f50a582e43c8fe323818be03292ce5cf8"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "d853327726dbff5bb5e4045af4ebf8edeae1b8d683856f7e92750afb46ca2511"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "41a09116477997bac680517b4705be3e7d22fce91318013984bbd6ac14adf04e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "9487d7a8032777733daf5fe7a24c9bc7bb0ec5c33db93875c9bfcfc213da3ba5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "ca24200aa4fed6833dce8cd7951137d1e827549a6631a0967032c059215a13ba"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "888f11f1db0855fc83f26f7edb2b5a57bb0ae332e4f5955fbd585d7c93cb9486"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "bd5e1440ddddc93db222f61f5761271b1a5e7fb64df87c31fd514c5e6736c856"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q19",
+          "qNumber": 19,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "21e452c5b8c1f3eb04164da99b7d71f9a2df89e304f269d6c0e6955998f6315d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q20",
+          "qNumber": 20,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c1a06f2a9ac8f6a33c41f219a2390a0bb5d48d16ca0e34249cbe2e881c27bf41"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q21",
+          "qNumber": 21,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "934dff30c2b23c526ea70465e3706759f30d9f267ec7d27c3925b7beba2becf9"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q22",
+          "qNumber": 22,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "9fb6fdbc0cef6e7e3b9df92872b5b3601df1134d91e6b770774017133639688c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q23",
+          "qNumber": 23,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "d70ca4fd04929969418b5757c481e9948595e84b71a7ccab5e77ac810d12bdfb"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q24",
+          "qNumber": 24,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "79f0f7582efdb9f8696388f853acaf591dca2280b4ea369036d091c8e897b363"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q25",
+          "qNumber": 25,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "5856534ebf83e6f219695b8bb27ab69b9b849afbf9b346c8c083348173b2b8cd"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q26",
+          "qNumber": 26,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "0a79f9e990750445666d539506e075265acfeb44ec44e6ab44aa16180bbc445d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am1-q27",
+          "qNumber": 27,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "8dc340b638e769a9ca882c0e759082270b72e64ab87e2543e71595c87faa5563"
+        }
+      ]
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-am2.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-am2.json",
+      "sha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "expectedSha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "hashMatches": true,
+      "count": 18,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "choiceReasons": 72,
+      "allChoicesExplained": true,
+      "referenceOnly": [],
+      "needsReview": [],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "7a3313a4d31623530f14c6e0fb37c3dbd34584bf28f9280ee625d689bb41f329"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "fbac3e068ef3684e8729ef7c1283f0199276e0daf3fd6f1d281a2008f7ecb737"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "ca5de9bbaa5e38e1c559e51c5c6086ee55096c571128bb7f6dc1342c16a4f145"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "fd0033fd8a982251de034d1da180ce69bc9e25d8a9836e8c07faf22d75fcc5a6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "0ca5a14032d8053b31258c38ec843c988ed9b70df249296f0d7e374af743b9c5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a04dc246dd7ccc8415a5daf31ef3b17fa47d1ff71a5d45cddc8cbb677a7b93b8"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "b1ecfe81807adfe831e6488f37af9d00f2e8befd3509dbd72e5f998455c71142"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "906784d466e9c324178b18458790b8af541236154d615b50bd010a40231faed7"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2418f34859c3162ce916934828abf5889ed5c1a24612ed5eec09d599b00542ad"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "3454d126304c3499451e69f7f9c006d8da596516b37590e1de938704cc88ce11"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "813c42b75e9617868b215d9209eea2e3075cb8cb524fbf6fa3ab1c018051e978"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a49bd8683272fe9e35bf95285acde3aa6e043cf2049374d332008cd5e400045b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c3c3ae4930e09d60aa126e531b56d87a2215fcf0a528c3f0c50b938eb83e9e2f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e2acf1993290e99acf58daa6c6b7bb79602eb75df2c072d8b86d7a21637b5662"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "78b2b781bb109ac267652a74e7e6df552a49ec5fde750b1e292240e4e020dbe6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "80619009503e7a24c245c596cfb1f745977c2a9037d3c99d3a270720fa8b1584"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "dabd9b5552a59cf0988c59df6a5f30d13277af3af9bc74e046255eaa5aa341c1"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-am2-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "182472180bc162485f3d5f290f164a084c77d251ae6bfef9f4f74080967116bc"
+        }
+      ]
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-pm.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2025-pm.json",
+      "sha256": "6c912b576a2f94c5db1f39bc914ac065b72f12cffb9e8395189e0d0fe22f5811",
+      "expectedSha256": "6c912b576a2f94c5db1f39bc914ac065b72f12cffb9e8395189e0d0fe22f5811",
+      "hashMatches": true,
+      "count": 60,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "choiceReasons": 240,
+      "allChoicesExplained": true,
+      "referenceOnly": [],
+      "needsReview": [],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "bd2431f0e1b8bb0f5ba3003ae2c10742ee3f1ac4539c683342c0cf70026acda5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "b1aab2ab949542db3d017ed7a23b4df05c1692b39fc44624b033f839d0d9d765"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "aa66e3e8063910fad018a22444aa33cf0a34aa29a264fab27e67699fd201f514"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "4d577ca28a2a05a2bc11a584e27167404e30971ac76323e389fad226fedb43e1"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "fc975eb90b4a61507864bbddeea5fb4076c99339b0e522d5e30a75022f79949e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e3f6726c47c4d0aee3df48fad44210d2cff04c5e983f204fe69cc53126391a7f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "daa8cc831233d58916ffcd77a9910ac3c8624849913fbf331d65e6ce583f9f13"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "acd112928d281bd02f5d9561626c84f7300f6a210b093e10797ffcd114bf11fb"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "d8f5b2ceaed32bd196bcb604fb7234212102ccd484f3316958e08b5ffac64540"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a9a02feb5dd2c74a563d8d00d00b725e59934799744fe071017501f57a229dbc"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c105d62f5efb1571f9674015e8ad80fbfba7ea6aa9ef3d7cf5866fd57cc09108"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "7d685b2196bd119f659364f19ad3d8ab2b658de9c4ae2248e8c56f3294fc3228"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "712746788536ebb4eba549d6d139f9996343f60e74aa2c2acb3ad1ba41b75c7f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "3e18ab271aec830fa13d34de971245987e3ffa4627709572c3bbe821e86145f3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "03a63ad1f70bbce57a0f4fc60d3cf97ae4abe01d90d3269ebefe7a3ca842b548"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "6f050065bc510e4d365f67eb8ba600f8b64ea590f8f296a1cacb950cd84b9dbf"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "d2d2ac16bf734b586bef02c1014ac5c21d95bea1ec15784b21426cba272c2874"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2a39a352e7cc81b47ca657437a9986e81986da226efc52c8bf31a6bdbe4fba66"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q19",
+          "qNumber": 19,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "d94bd5e0e61e9b680257110c1e88f9d547f608d58446fd9d29b3548eef4050ee"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q20",
+          "qNumber": 20,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "98e5d91f483d5292fc715a26fb253c05997753ecbbfb524caa7383922baa3333"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q21",
+          "qNumber": 21,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2cb24ea855ea77182203d6e5ed5197590cc0781eeac3882d8a659a10cd1898f5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q22",
+          "qNumber": 22,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "f63994af25b15c370856ed96ca00ace4876a1d90774203b524a9468b22386d60"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q23",
+          "qNumber": 23,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "1efcbf52a35de915d1667883124548c66be814d3cd8cd071102e00812d33e428"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q24",
+          "qNumber": 24,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "72bd39f4d5e475ba3816555a55b50f69aa3bd1f5127d0d65e47c7f553a7b9960"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q25",
+          "qNumber": 25,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a1982ac914a957cdb5320a0eca734fbe565e28004b3f33fa20d4c7fa16b50b0f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q26",
+          "qNumber": 26,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c4a24396b5cdae28588a14f875d36300f00260c9e2a76c4a8ebe522f7e9da7dc"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q27",
+          "qNumber": 27,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "9d9f0f090d96af8b03706c008104b1f5c30bdec89b24be8cbff590dcdb8cd8ff"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q28",
+          "qNumber": 28,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "7a6f9b01a35f4abb7480e8cf2f0f90535c4a0af828aa35557bff8ef8e60a2e52"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q29",
+          "qNumber": 29,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "a897ac968e6cfb8352f8c8c7e56f48997e11461643aa736042fec238f8695abc"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q30",
+          "qNumber": 30,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "65f040566d2da5db31a3b6d11b40da239c28041ad7716eb1587605b92c7a4c8e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q31",
+          "qNumber": 31,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2ff303477e77daa1a7523f6de95fc9f71c44a016056deb7e63b1d5429ae086d9"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q32",
+          "qNumber": 32,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "37430ecbab4c5d794648e34660e35704a21437a0156a20cf35b10ba6b4a706b8"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q33",
+          "qNumber": 33,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "32aa27b0a304dc76b14c3eca83213800a6e3fe9f8a1644d4453d6a2717f452e5"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q34",
+          "qNumber": 34,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "37a6823c27f56e5cecd86ec6d90e2c8a3d1a78c0f0b23e663affb466c0b3bd66"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q35",
+          "qNumber": 35,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "bc531a65ec9143257d81386e48f0193981728cce0afe860fb321e50d4eb80399"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q36",
+          "qNumber": 36,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "52d448beb09ff06cae9cd3063a2a6d0a6a9ce66548d88eb63d94f925669e0420"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q37",
+          "qNumber": 37,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "02929ba5ee59144e53fae1b6ed9b9274bd331ca1fece7e6a3e03dd6fa19b01a0"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q38",
+          "qNumber": 38,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "9aa9dc1cf01f965869f85d50f62ac77e96b1508f052271f2e2e7122207dda5d7"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q39",
+          "qNumber": 39,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "8efce64383a195c920073d626e57a015253f2b9778394840e906c1c4a1783936"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q40",
+          "qNumber": 40,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "103f7daf31a6b8336b156f733433752a4a1840cd38b05476310bb7ce84eb2118"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q41",
+          "qNumber": 41,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e803f55da6a74c6fe9a3bda4f0fb9f30d6d9e1b76334e7e628bce76e65c7a89e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q42",
+          "qNumber": 42,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "1ade7e4c625ea78467b687d555bcadaebed3b36740630f3af84a1d8ca2939e86"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q43",
+          "qNumber": 43,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "65c1f04b1cfaa2791949d3cfff43b6fe0375ca30f8a03761a0fe8c019b64c015"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q44",
+          "qNumber": 44,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e34a86a475ce8224fa94376857d498cc2b747b756ac5625a09862203cd9f856f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q45",
+          "qNumber": 45,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "8859d655b906e0cc3cdd0dd39a19bd37561d56511a2774f16c124a0a8b6c924e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q46",
+          "qNumber": 46,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c3b80e7287922c7a9907d496c59e245a12170c94023fd3c48f4d58c33042bc10"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q47",
+          "qNumber": 47,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "7962731265e8288bf8d4bc40eb3307dec5a7124943fb02eef6d2735bfd6b0f1e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q48",
+          "qNumber": 48,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "0272f1850d8c1596280cc975dfa47e0158db82f0edaf5d61ab2f296e5ac438ad"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q49",
+          "qNumber": 49,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "64a294cc9948272c5c8d91ea228e27137bb7f7dd0f402342f197704c681f1283"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q50",
+          "qNumber": 50,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=20",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "1a08d850756edae1e39eafa3a2549ca04fdfb5886e12fcbdda8cdbabc31ad1c0"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q51",
+          "qNumber": 51,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=20",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "8e6d8a96873bebc4fa62f4af2b6b12a58581a5297b09c6c7c89bc88a22c82755"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q52",
+          "qNumber": 52,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "5a04516f7c3a02e298c7cddc0dfbd57b784f86874bb9de4ce42ce39e8bbbbe6a"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q53",
+          "qNumber": 53,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "ef29046193778368bc3c859c7003d4f6b0b1f4a490b72fdede7cb2aa12873591"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q54",
+          "qNumber": 54,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "8e95dbe09b5de8fef9a1826934943bc1c56d3e09bf2844561dfd0669c6cfd123"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q55",
+          "qNumber": 55,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "ec4f267136cb9972f02dbf401eeed4919a8d323f8655470acf775a3801ae2f92"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q56",
+          "qNumber": 56,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "f57a41de2b79a1c241b0f410541396384d1471364ce426ff9ba663e0dc6b5b2c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q57",
+          "qNumber": 57,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "c35247e33e194e84882f858ba8c6aaa93f9405f43f2b9c0f0f359b0ff22fc04d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q58",
+          "qNumber": 58,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "016360155c0327893948c39a5e87608d5d59f89cbd074316e98c3244c91d1758"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q59",
+          "qNumber": 59,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "e5987627736b788c3c27d68efe4c9a508b0b301567136fc4303f63b617f6ed56"
+        },
+        {
+          "id": "kenchiku-setsubishi-2025-annual-pm-q60",
+          "qNumber": 60,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
+          "contentSha256": "2d7bd72186f0a9351d7d60aaa3316f7acffc04392fedf1092bbfa408693e292f"
+        }
+      ]
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-am1.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-am1.json",
+      "sha256": "9923e25e575136186d1f25b2d861832ca8f665469c4f50ed95cabd94e6b6196e",
+      "expectedSha256": "9923e25e575136186d1f25b2d861832ca8f665469c4f50ed95cabd94e6b6196e",
+      "hashMatches": true,
+      "count": 27,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "choiceReasons": 108,
+      "allChoicesExplained": true,
+      "referenceOnly": [],
+      "needsReview": [],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "759da41afb870c5769e71a8f0aa4ceafbf2879a271e64062c533b8c361b28b09"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "76209bc6fc0d2e6883185421cec3b080947d906bf59146faa150b7b2cccfacea"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "1c4b9720a8e157a0f32495ccea367949ad34addd1a774ccbb387790e5f6f8bd1"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f3d348732a2067a6e9d488c6ab0fac2c87c64d39ad0b678a183f7b44a43bc269"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "61ae5cdad6b571b72be2ae23b5209c5f8ce0bb913643c088469761a9e720070f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "19864eaea75db04c0c3ee38e98b675108f09908cf4f89e11fd6131cbd6d1d5e7"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e6951ed7a0621f18bd4d5afbcac09e8bc790cabb28ecd457d204946b6a079682"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "be145ec40d5cd63f00f9fdef3ab7b7031f8296c8fe2200a76d8de8e9c0bb59b7"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f15ecbf56a061ada4e14e8bee67032e4f4b52565a1ebe4f855d56ac938b4e39d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "7061f73223cf87be1834200fd0fb9b3ec05fd5a9e0b7b28aaf8be16945c85e06"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "bb91374417053c2996cd3773c794799108c8f69cdaee68d1739f0fa7270f5a6d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "58dff0f1a4b55e5096ab48e7c779702827a7d3dc2b41c9bd5bceb0cd915ed9b8"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "ea245c24932bbf3cdfb7a0297e9aabdbf1d8e8924067d99a99fa9d5f206d367b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "4ad7b4e429508f520cc2323c8e894bf70a748e84af0013f8fbcc84eab7f091b9"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "af4358143f854a7c9a9a1ca5ff93efabb2fac1e19391d96c9362fa3f255a005f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "669de982140632914f1158d02a47996b1b11a441a37c8daf505f3790bac1215a"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "faffa7750c758c4e2831f920d9cf79db48cf1186822dc1bef85379fcfca53d70"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "553f7c515a123e829eeae598306b105bb81d58dfdc117a9cce83958d95ce3b63"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q19",
+          "qNumber": 19,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "6bd78baa5e8ce30f284ce78b220c246816d25fa6a674addf70599e8586d78ee0"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q20",
+          "qNumber": 20,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "544451830fe2c33ea8eb3ae0bd8ac9d711ed1092a912384f9028974f5b06a505"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q21",
+          "qNumber": 21,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "b615df5964ae191daf435c0603ac886c535e767eb3ac0ccffed7800e8757e852"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q22",
+          "qNumber": 22,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "3a14675e5b2e46c14333d6eb79946dfb07fbb29b979fa1502821ed9217941bd8"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q23",
+          "qNumber": 23,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "060fad919eeea969ec6a32c98075339418017c89435d0ddbc3b0b82770eff2d6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q24",
+          "qNumber": 24,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f13273b3fed035efab77538cb05e5240827b1b74b86307b6e92ea1a9b68dcb3e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q25",
+          "qNumber": 25,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "fd8c81fcd96f6dccbdc2eb7a4b38f82b176802b3cf1b7e6077b3db654294e890"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q26",
+          "qNumber": 26,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "02adbb4cfaa4911a0cc1a406afceecce243a1c5b207fd2dc3cfc16e262b5a44e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am1-q27",
+          "qNumber": 27,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "53eb61f858ac47006e5e8fdf3b5eba1cabded75dee1a3c95536e7dd69d91b9cd"
+        }
+      ]
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-am2.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-am2.json",
+      "sha256": "37d5be6bc6400e6b6f8e781bba6206c2283ddc96a8b6232d7feaadd6b655d55b",
+      "expectedSha256": "37d5be6bc6400e6b6f8e781bba6206c2283ddc96a8b6232d7feaadd6b655d55b",
+      "hashMatches": true,
+      "count": 18,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "choiceReasons": 72,
+      "allChoicesExplained": true,
+      "referenceOnly": [
+        "kenchiku-setsubishi-2026-annual-am2-q18"
+      ],
+      "needsReview": [
+        "kenchiku-setsubishi-2026-annual-am2-q18"
+      ],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "9ef94be9e2890bb795ecba0c8739d847931ccab7fc99527280238eef855c15f9"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "089a982266eaf980955e8e916de9b7b66f39ce2d75b950de39b0ae7b14209c0b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "62a6767527ae31a2d39ea8aab8407cffafde3a6d0d398132d422e54e53ab41e0"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f96da131e67e7d016f04be77a723f79713621765e5d89dcddec82c6bca5d58b6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f0994230631fdcc40be42452aeccff98e6606daf480483459e2304e83a4716ef"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "21add207aec72a657172b05eb7686b70a44666faee2ecbac97040efcaabba7e3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "016562a869cd6e0c3ea706d705295d6ac61755e8cab402559b088a881141a133"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e799f3697c291bf0c48406ffe92571a7d6bc14c8fac58d577a929dc8839ea894"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f4e60dcf91b0dbd3ce65e9066316e901c783fc638904d5c3be03c1c6bc63db21"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "05c5903135676c4c82facd1e1e2f17d5cc41b02d4622808daa1e4377af306ac3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "43bf676c10ce3c4899fddbac3d93ee1be46ed3e7d173f99552bc17ba24e8284b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "32343ced1a7d08160da9f5dce1fc7bf3174b80d2165e662b88a40a3161180b2f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "688c085aff5d974a6e0aa2e805f1bda5a237c474bbce40e0b3d1d09e058c1312"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "4656223926b891f6933f9e4944d5fa14dc3691210af66da694da18ecf08fdd0f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "d376a494317debc1663ad77b06ded37f2b2e2f28c6607cc8a6fe4b23473e5373"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "18930ac40a70c206d8c689f20d40783521d4446a719122a7a6bcf8b4962fc528"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "6abf4a285c512724341ac1ce7d40d27fab81dcf0279a7d5da785cad8c11d2526"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-am2-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai1.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "0234539ede42c53c7618e334a68e305480c893c6a9c5e0f20760c01699845510"
+        }
+      ]
+    },
+    {
+      "path": "data/questions/kenchiku-setsubishi/2026-pm.json",
+      "sourcePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual70-private-finish\\outputs\\qual70\\fixed\\data\\questions\\kenchiku-setsubishi\\2026-pm.json",
+      "sha256": "5058b2f3efa2325c37d0e0d19cabb40b47d1271dba86fa7799d2867668ad1975",
+      "expectedSha256": "5058b2f3efa2325c37d0e0d19cabb40b47d1271dba86fa7799d2867668ad1975",
+      "hashMatches": true,
+      "count": 60,
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "choiceReasons": 240,
+      "allChoicesExplained": true,
+      "referenceOnly": [],
+      "needsReview": [],
+      "sourcePdfUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf"
+      ],
+      "sourceAnswerUrls": [
+        "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf"
+      ],
+      "items": [
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q1",
+          "qNumber": 1,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "4121b80347a778b931b734362ea9dd456090338b02202971d4c5bb2391560632"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q2",
+          "qNumber": 2,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "885241c263e5a8e631e68677d6ecb77cc28547c997d68a28c0741dd2b7780c0b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q3",
+          "qNumber": 3,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=2",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "2c9884914b9467ac99e44b6b47061ca7b859bca1e858f97b55acd877387c78a2"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q4",
+          "qNumber": 4,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f0a91323428f3dc811f28beb8b6dfa729e6b38eef79a9328f26444cecc68600c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q5",
+          "qNumber": 5,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=3",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "96ba505d53424804fb05f221284a3bfbd17136bff7488e74d277ccd91f881572"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q6",
+          "qNumber": 6,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "24f26ce4de4136fd5c9ab60b503b2322565a50ae43bb3c023d58ed5176cb8ca4"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q7",
+          "qNumber": 7,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "6a8151bc9d3c51684d7d66a204438fa29a79b4efce59ff1cf353f57145354cef"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q8",
+          "qNumber": 8,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=4",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "19121662ac6c6d0eca324c52834658f39060eb247c450fa42ba8316155ac3810"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q9",
+          "qNumber": 9,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e94e70f46a66b493a8f56fb7d71f80eb5c7009dcbd8d9cc818f85835b2de2892"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q10",
+          "qNumber": 10,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=5",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "d7228c1b68d8277650a499d8677006d1bec3da18824229059c69766c7f49be5b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q11",
+          "qNumber": 11,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "2d0164ca6cdd9a10b6b03476f3183bb2705189bef4f6f5d76a9a5bd42bc7c969"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q12",
+          "qNumber": 12,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "ce323bae32286effb20857795d2aaa4fccc6959928f685445165675ace53fc80"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q13",
+          "qNumber": 13,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=6",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e2786ca256aa2f098f1180ccaadba95d804474e19fff6e706a3f904fc8230bae"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q14",
+          "qNumber": 14,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "a834eace2d0c6ce5a0e0bf4c5aa4f6f1e517dfd7565e680e72b956b819be8e6c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q15",
+          "qNumber": 15,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "5fd1a11fbbc5909e66c6478dddecfa09d95b6acc107d26a820e2993302d6971d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q16",
+          "qNumber": 16,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=7",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "7422d2ea0f6e87ca79e16e8a7da007355798f27441e2cd4b86e74bb6a995fffb"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q17",
+          "qNumber": 17,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "fb9afadab9da912d74705426f26dc419cafc55d9a71ab12287c5f51112792a18"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q18",
+          "qNumber": 18,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f8e7be04028e575238800e22687909f30aa2cc2eec57053f4ee3ec145928f73b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q19",
+          "qNumber": 19,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=8",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "156379f70b3c0e2b72d5487cd0f39cc05bec82e27379d10f035a416b91c5835d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q20",
+          "qNumber": 20,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=9",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e3370841179c166935df40df45dc90f29fec6f606bca77ddec9b347aa070830f"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q21",
+          "qNumber": 21,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "689fcda3b5da45ec85eed9976d3c2a004c2644cb30460d3e64a3b9cd2169af63"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q22",
+          "qNumber": 22,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "616d74d6ed26ed2d90b635ac4dbf180cc10cc7fc8bf7ba205747c30097c140be"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q23",
+          "qNumber": 23,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=10",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e201d344402b7aaaa24ae96c03ce082bd343629495d728a3f1ad3e32804c88e6"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q24",
+          "qNumber": 24,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=11",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "52503e3c2bb6c73e65e1299b70a84e2d1b4904c9368498c3eba30d8dc5cdbe36"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q25",
+          "qNumber": 25,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "507c483a6353c1aff06c7e0d2bb3dce96465a7b3332788917834de96176f59c9"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q26",
+          "qNumber": 26,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "ac1d7de394dd66d89e1c5e4d4fe3688658ea399ccba1aaa6a2ebc8f5fc000c58"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q27",
+          "qNumber": 27,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=12",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "1ef1132bbc3138f4030003a53460652922116c3f179d186f1cbf1985dbf13df1"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q28",
+          "qNumber": 28,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "a24e8491c17deb5862c15406fd541727f8e7a460ab6f72cdf31ce91e63b98845"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q29",
+          "qNumber": 29,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "9bc22711a9259ce89a8c077ca4d2c99dfdf245e4493b5db9798dd429fc3666aa"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q30",
+          "qNumber": 30,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=13",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "8b39ccfb70dba268d415e074588f6bd79ff8603c81b6a5d0bddf76c17e1b2602"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q31",
+          "qNumber": 31,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "3477e4a673ef06eec5ddfb7c3a3844ede14b4411ebc0ae5e14086a24f99a3e8c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q32",
+          "qNumber": 32,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "5354099afa52c4fdb2ff81ffeceb85d689b4b44f5c0501258503c239e44209dd"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q33",
+          "qNumber": 33,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=14",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f7bcc84b9b6a2b9cb998143b76e5721157cb8da930b487c3e07c534b1eef28c2"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q34",
+          "qNumber": 34,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "f630ac8937092ee5fc6596501f14543ac1fb57318592cd8892b92301d62200bd"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q35",
+          "qNumber": 35,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "543da9128e01aefbbbbdd0974f8ebd14a0577e10506e7ac3d16c391c5ddcac1c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q36",
+          "qNumber": 36,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=15",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "6473156f9bad0eb68e831df35c166fc00d3b6b238d44dc9832bb445c5a8853a2"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q37",
+          "qNumber": 37,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "05547353af1d6f86f8ce6555df5333b905ebf8c60d88ad31d236ad7768b28bd3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q38",
+          "qNumber": 38,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "554efa2661edc00cfe8625a99154c5d525234fcb662b505d75cbdf604072004a"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q39",
+          "qNumber": 39,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=16",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "eff9a1f84d812e1427ae9ce173d9498a7380f91c9956b81d5ec956cfb2574d09"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q40",
+          "qNumber": 40,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e9bdddddd45763acc8387f5bc438efbb087683fc26e3566ddcab5393bfd9d9a3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q41",
+          "qNumber": 41,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "bd8d6a0a80990a3f59f90c7bf7024d1c53751389ffed9be71be661cfa1da9d74"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q42",
+          "qNumber": 42,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=17",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "474ab969d5f1d461ed2477a5adeb2469ea93b89eec2e7edc8745e144fa3b5e00"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q43",
+          "qNumber": 43,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "b4357c91c73dc5e68558ddd1af55405b7c32f7bcd9a9e9b12287078d99c0888b"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q44",
+          "qNumber": 44,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "590e7b87fed3fa08520d3758f66f0349162f7b014f1af867c1fd9c22ec73f25c"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q45",
+          "qNumber": 45,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=18",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "393f9e60778ca8fd3b386c41153164e3c7a695cbf0dc882b136fd6e5b1aa0b73"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q46",
+          "qNumber": 46,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "258547a338c99037af1ca7d2e273e280df48c50f48bdb7515c108e6ec91bb417"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q47",
+          "qNumber": 47,
+          "officialAnswerNumber": "4",
+          "answer": "エ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "539a5640585f34bb47d15c234a2e79e73c4c97a10d9116f3307b1144871f14e3"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q48",
+          "qNumber": 48,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=19",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "e3f91cf90e0b144d48ecc82a51cf232a6b01b5599ef90f73764845903b6ee318"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q49",
+          "qNumber": 49,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=20",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "3a65024e5b3af235a9535a2553257558bb82662834280b4767893538937eb43e"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q50",
+          "qNumber": 50,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=20",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "50fc15b839eb16c832186c2029e47f42fa9241dc4cb5323b577b06f41ca0f092"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q51",
+          "qNumber": 51,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=20",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "528f332833aa7b37399563d8e937030123fb83176340986ec8ebc86f00609477"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q52",
+          "qNumber": 52,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "63ec8fdd01239a995022d69ca966ff2aa83bc222ef431f2a86889b945d8c6d34"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q53",
+          "qNumber": 53,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "724dfede4a39d069bbe169734b0b56d51ecaf21c1e0af4467776a698bfb001ff"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q54",
+          "qNumber": 54,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=21",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "9b0fed06a3db1fac430d1d836aad9877a4b3883671e5f8695a7108e8de2bfc1d"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q55",
+          "qNumber": 55,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "9d2b8f547c065d7471b1c8d02d3a496e0d406727ffe654d7f29979e4ec9e6844"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q56",
+          "qNumber": 56,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "4095300ba5680a20f3789d06f6dcb1efaff2bf94d0a6375cba287813005f0110"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q57",
+          "qNumber": 57,
+          "officialAnswerNumber": "2",
+          "answer": "イ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=22",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "d34683b58c061bee81f589042f49ba9ef7941731578ce3d300bb9ed6820fe2c2"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q58",
+          "qNumber": 58,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "4598bc435eb0981a4cbecc552c3344e383a5657988c6501085fea667e759c9bc"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q59",
+          "qNumber": 59,
+          "officialAnswerNumber": "3",
+          "answer": "ウ",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "ccfed627977264c9f746c3187eaddef4a5d427ab4c8c71bc29671b28d14b4144"
+        },
+        {
+          "id": "kenchiku-setsubishi-2026-annual-pm-q60",
+          "qNumber": 60,
+          "officialAnswerNumber": "1",
+          "answer": "ア",
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-mondai2.pdf#page=23",
+          "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/bmee-2026-1st-kijyun.pdf",
+          "contentSha256": "ece137d29df422e77e33f7adac441a41a5d0bc8a69a3882c28614286c07b5687"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "hashes": true,
+    "allChoicesExplained": true,
+    "targetSchema": "NOT_RUN",
+    "typecheck": "NOT_RUN",
+    "tests": "NOT_RUN",
+    "build": "NOT_RUN",
+    "commit": "NOT_CREATED"
+  },
+  "officialIndex": "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html"
+}
