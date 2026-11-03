@@ -8,6 +8,7 @@ full coverage. Official-summary is not an appropriate label for partial reasons.
 """
 
 import argparse
+import copy
 import json
 import re
 from pathlib import Path
@@ -58,13 +59,14 @@ def reference_laws(q):
     return laws
 
 
-def render():
+def render(questions_by_year=None):
     sources = json.loads((EDITORIAL / "legal-sources.json").read_text())["sources"]
     urls = {(s["law"], s["assessmentDate"]): s["url"] for s in sources}
     outputs = {}
     holds = {}
     for year in (2025, 2026):
-        questions = json.loads((DATA / f"{year}.json").read_text())
+        questions = (json.loads((DATA / f"{year}.json").read_text())
+                     if questions_by_year is None else copy.deepcopy(questions_by_year[year]))
         for session in ("am", "pm"):
             drafts = json.loads((EDITORIAL / f"{year}-{session}.json").read_text())
             records = [q for q in questions if q["session"] == session]
@@ -86,7 +88,7 @@ def render():
                             assert (k in q["choices"][q["answer"]]) == r.startswith(target), (q["id"], k)
                 if year == 2025:
                     q.pop("lawReferenceDate", None)
-                    date_note = "出題時点の法令を対象とする（2025年度の公式基準日は未確認。解説の暫定検討日は2025年4月1日）。"
+                    date_note = "出題年度の法令についての解説（2025年度の公式冊子に基準日の記載なし。法令資料の暫定検討日は2025年4月1日であり、公式基準日を示すものではない）。"
                 else:
                     q["lawReferenceDate"] = "2026-04-01"
                     date_note = "出題時点の法令（2026年4月1日現在）に基づく。"

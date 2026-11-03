@@ -29,6 +29,71 @@ class ExactSourceAudit(unittest.TestCase):
     def test_baseline(self):
         self.assertTrue(audit.audit(self.questions, self.excluded)["localChecksPassed"])
 
+    def test_empty_choice_explanations(self):
+        for held in (False, True):
+            with self.subTest(held=held):
+                records = copy.deepcopy(self.questions)
+                q = next(q for q in records if bool(q.get("needsReview")) == held)
+                q["choiceExplanations"] = dict.fromkeys(audit.KEYS, "")
+                result = audit.audit(records, self.excluded)
+                self.assertFalse(result["localChecksPassed"])
+                self.assertTrue(any(": empty choice explanation" in e for e in result["errors"]))
+                self.assertIn(f'{q["id"]}: renderer output differs', result["errors"])
+
+    def test_releasing_one_held_question(self):
+        records = copy.deepcopy(self.questions)
+        q = next(q for q in records if q.get("needsReview"))
+        q.pop("needsReview")
+        q["explanationCoverage"] = "full"
+        result = audit.audit(records, self.excluded)
+        self.assertFalse(result["localChecksPassed"])
+        self.assertEqual(result["needsReview"], 9)
+        self.assertEqual(result["fullExplanations"], 130)
+        self.assertIn("holds.json: needsReview IDs/count differ", result["errors"])
+        self.assertIn("holds.json: full count differs", result["errors"])
+        self.assertIn(f'{q["id"]}: renderer output differs', result["errors"])
+
+    def test_released_question_requires_full_and_substantive_reasons(self):
+        for kind in ("missing-full", "short", "boilerplate", "short-combination"):
+            with self.subTest(kind=kind):
+                records = copy.deepcopy(self.questions)
+                q = next(q for q in records if not q.get("needsReview"))
+                if kind == "missing-full":
+                    q.pop("explanationCoverage")
+                else:
+                    q["choiceExplanations"]["ア"] = {
+                        "short": "正しい。法令による。",
+                        "boilerplate": "正しい。公式正答の組合せと一致するため、この選択肢が正しいと判断できる。",
+                        "short-combination": "記述ア：正しい。法令による。\n記述イ：誤り。法令による。",
+                    }[kind]
+                result = audit.audit(records, self.excluded)
+                self.assertFalse(result["localChecksPassed"])
+                suffix = "released question must be full" if kind == "missing-full" else "released explanations must be substantive"
+                self.assertIn(f'{q["id"]}: {suffix}', result["errors"])
+
+    def test_substantive_but_changed_explanation_requires_renderer_parity(self):
+        records = copy.deepcopy(self.questions)
+        q = records[0]
+        q["choiceExplanations"]["ア"] += "生成後に説明を書き換えたため原稿とは一致しない。"
+        result = audit.audit(records, self.excluded)
+        self.assertFalse(result["localChecksPassed"])
+        self.assertIn(f'{q["id"]}: renderer output differs', result["errors"])
+
+    def test_changed_holds_file_is_rejected(self):
+        original = Path.read_text
+        path = audit.DATA / "editorial/holds.json"
+        holds = json.loads(original(path))
+        holds.pop(next(iter(holds)))
+
+        def read_text(p, *args, **kwargs):
+            return json.dumps(holds) if p == path else original(p, *args, **kwargs)
+
+        with patch.object(Path, "read_text", read_text):
+            result = audit.audit(self.questions, self.excluded)
+        self.assertFalse(result["localChecksPassed"])
+        self.assertIn("holds.json: needsReview IDs/count differ", result["errors"])
+        self.assertIn("holds.json: renderer output differs", result["errors"])
+
     def test_missing_first_ten_characters(self):
         for year in (2025, 2026):
             with self.subTest(year=year):

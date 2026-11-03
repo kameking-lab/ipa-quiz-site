@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Audit saved source text only; this cannot certify PDF fidelity or legal explanations.
+"""Audit saved source text and generated editorial data, including renderer parity.
 
 Run from any directory with Python 3 (no package installation or network needed).
-The JSON output deliberately distinguishes local checks from publication review.
+Formal explanation checks cannot certify PDF fidelity or legal correctness.
 """
 
+import importlib.util
 import json
 import re
 import unicodedata
@@ -19,6 +20,68 @@ PREMISES = (
     "以下の試験問題については、国際物品売買契約に関する国際連合条約（ウィーン売買条約）の適用は考慮しないものとして、解答してください。\n",
     "問題文に明記されている場合を除き、定款に法令の規定と異なる別段の定めがないものとして、解答してください。\n",
 )
+RENDER_SPEC = importlib.util.spec_from_file_location(
+    "shihoshoshi_renderer", Path(__file__).with_name("apply-shihoshoshi-explanations.py"))
+RENDERER = importlib.util.module_from_spec(RENDER_SPEC)
+RENDER_SPEC.loader.exec_module(RENDERER)
+
+
+def substantive_explanation(value):
+    """A formal minimum per statement, not a legal accuracy assessment.
+
+    Combination choices must explain both statements; labels, whitespace and
+    judgments do not count towards the 20-character minimum for each reason.
+    Renderer parity separately rejects any other drift from the authored draft.
+    """
+    if not isinstance(value, str) or not value.strip():
+        return False
+    lines = value.splitlines()
+    for line in lines:
+        reason = re.sub(r"^記述[アイウエオ]：", "", line.strip())
+        match = re.fullmatch(r"(?:正しい|誤り)。(.+)", reason)
+        if not match or len(normalize(match[1])) < 20:
+            return False
+        if any(phrase in reason for phrase in (
+                "正答の組合せ", "公式正答の組合せ", "正答と一致", "一致しません",
+                "解説を準備中", "詳細は確認中")):
+            return False
+    return bool(lines)
+
+
+def check_generated(questions, check):
+    holds = json.loads((DATA / "editorial/holds.json").read_text())
+    pending_ids = {q["id"] for q in questions if q.get("needsReview")}
+    full_ids = {q["id"] for q in questions if q.get("explanationCoverage") == "full"}
+    all_ids = {q["id"] for q in questions}
+    check(set(holds) == pending_ids, "holds.json: needsReview IDs/count differ")
+    check(len(full_ids) == len(questions) - len(holds), "holds.json: full count differs")
+    check(full_ids == all_ids - set(holds), "holds.json: full IDs differ")
+    for q in questions:
+        label = q["id"]
+        explanations = q.get("choiceExplanations", {})
+        check(set(explanations) == set(KEYS), f"{label}: explanation keys")
+        for key in KEYS:
+            value = explanations.get(key)
+            check(isinstance(value, str) and bool(value.strip()), f"{label}: empty choice explanation {key}")
+        if not q.get("needsReview"):
+            check(q.get("explanationCoverage") == "full", f"{label}: released question must be full")
+            check(all(substantive_explanation(explanations.get(k)) for k in KEYS),
+                  f"{label}: released explanations must be substantive")
+            check(len({str(explanations.get(k)) for k in KEYS}) == 5,
+                  f"{label}: repeated choice explanations")
+
+    # Use the exact render function used by --write/--check, with deep-copied
+    # candidates, so audit(questions=...) also detects in-memory tampering.
+    try:
+        candidates = {year: [q for q in questions if q["year"] == year] for year in (2025, 2026)}
+        outputs, rendered_holds = RENDERER.render(candidates)
+        for year, records in candidates.items():
+            expected = json.loads(outputs[DATA / f"{year}.json"])
+            for actual, rendered in zip(records, expected):
+                check(actual == rendered, f'{actual["id"]}: renderer output differs')
+        check(holds == rendered_holds, "holds.json: renderer output differs")
+    except (AssertionError, KeyError, TypeError, ValueError) as exc:
+        check(False, f"renderer consistency failed: {exc}")
 
 
 def normalize(text):
@@ -94,6 +157,7 @@ def audit(questions=None, excluded=None):
     check(len(questions) == 139, "Expected 139 scorable questions")
     check(len({q["id"] for q in questions}) == 139, "Duplicate question IDs")
     check(len(excluded) == 1, "Expected one officially unscorable question")
+    check_generated(questions, check)
     for year in (2025, 2026):
         for session in ("am", "pm"):
             records = [q for q in questions + excluded if q["year"] == year and q["session"] == session]
@@ -114,8 +178,8 @@ def audit(questions=None, excluded=None):
                     check(q.get("lawReferenceDate") == "2026-04-01", f"{label}: historical law date")
                     check("出題時点の法令（2026年4月1日現在）" in q["explanation"], f"{label}: law explanation date")
                 else:
-                    check("lawReferenceDate" not in q and "公式基準日は未確認" in q["explanation"], f"{label}: unverified law date")
-                check(set(q["choiceExplanations"]) == set(KEYS), f"{label}: explanation keys")
+                    check("lawReferenceDate" not in q and "出題年度の法令" in q["explanation"]
+                          and "2025年度の公式冊子に基準日の記載なし" in q["explanation"], f"{label}: no official law date in booklet")
                 for image in q.get("imageUrls", []):
                     check((ROOT / "public" / image.lstrip("/")).is_file(), f"{label}: missing image")
 
@@ -131,7 +195,7 @@ def audit(questions=None, excluded=None):
                     check(len(found) == 1 and found[0]["officialAnswerNumber"] == answer and found[0]["answer"] == KEYS[int(answer) - 1], f"{year}-{session}-{number}: answer")
 
     return {
-        "scope": "saved extracted source text; no fresh PDF or independent legal review",
+        "scope": "saved extracted source text and formal editorial/renderer consistency; no fresh PDF or independent legal review",
         "localChecksPassed": not errors,
         "publicationApproved": False,
         "scorableQuestions": len(questions),

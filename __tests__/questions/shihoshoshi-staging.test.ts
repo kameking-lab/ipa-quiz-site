@@ -51,8 +51,8 @@ describe("司法書士公式2回分の未公開登録", () => {
         expect(q.explanation).toContain("出題時点の法令（2026年4月1日現在）");
       } else {
         expect(q.lawReferenceDate).toBeUndefined();
-        expect(q.explanation).toContain("2025年度の公式基準日は未確認");
-        expect(q.explanation).toContain("解説の暫定検討日は2025年4月1日");
+        expect(q.explanation).toContain("2025年度の公式冊子に基準日の記載なし");
+        expect(q.explanation).toContain("法令資料の暫定検討日は2025年4月1日");
       }
       expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
       expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.moj\.go\.jp\/content\/\d+\.pdf$/);
@@ -66,7 +66,7 @@ describe("司法書士公式2回分の未公開登録", () => {
     expect(blank.choices?.イ).toBe("ア 総議員\nエ 天皇");
   });
 
-  it("distinguishes complete legal explanations from explicitly unresolved statements", () => {
+  it("distinguishes formal explanation coverage from explicitly unresolved statements", () => {
     const pending = holds as Record<string, Record<string, string>>;
     expect(Object.keys(pending)).toHaveLength(10);
     expect(Object.values(pending).flatMap(Object.keys)).toHaveLength(17);
