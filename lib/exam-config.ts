@@ -604,7 +604,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "am", urlSlug: "am", expectedQuestions: 77, label: "午前", categories: ["公認心理師"] },
       { session: "pm", urlSlug: "pm", expectedQuestions: 77, label: "午後", categories: ["公認心理師"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
   seishin: {
     code: "seishin",

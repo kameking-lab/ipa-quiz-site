@@ -1,12 +1,12 @@
-# 公認心理師（shinrishi）仕上げ報告
+# 公認心理師（shinrishi）仕上げ・再開報告
 
-確認日：2026-11-03。新しい回は追加せず、既存の第8回・第9回のみを対象とした。
+確認日：2026-11-03（UTC）。オーナー決定：2026-11-04 01:30（ユーザー指定の時刻）。対象は既存の第8・9回のみ。新しい回は追加していない。
 
-**結果：全308問・1,514肢のデータ整備と独立再レビューに合格。内容・管理・コードの未解決修正指摘0件。転載許可の記録が未確認のため、公開は全308問保留・公開0問。**
+**公開設定：308問を公開対象へ変更、権利理由の保留308問を解除、品質理由の保留0問。指定の独立レビューはサンドボックスの読み取り専用制約で起動できず、今回の再レビュー合格は未達。デプロイは未実施。**
 
-## 対象・一次資料・件数
+## 対象回・根拠URL・問数
 
-| 対象回 | 実施日 | 午前 | 午後 | 計 | 公式掲載ページ |
+| 回 | 実施日 | 午前 | 午後 | 計 | 公式掲載ページ |
 | --- | --- | ---: | ---: | ---: | --- |
 | 第8回 | 2025-03-02 | 77 | 77 | 154 | https://www.jccpp.or.jp/shiken/shikenjoho/dai8.html |
 | 第9回 | 2026-03-01 | 77 | 77 | 154 | https://www.jccpp.or.jp/shiken/shikenjoho/dai9.html |
@@ -15,61 +15,74 @@
 - 第8回：[午前問題](https://www.jccpp.or.jp/files/items/132/File/04_gokaku_happyo_09.pdf)、[午後問題](https://www.jccpp.or.jp/files/items/132/File/05_gokaku_happyo_09.pdf)、[合格基準・正答](https://www.jccpp.or.jp/files/items/132/File/03_gokaku_happyo_09.pdf)。
 - 第9回：[午前問題](https://www.jccpp.or.jp/files/items/222/File/04_gokaku_happyo_09.pdf)、[午後問題](https://www.jccpp.or.jp/files/items/222/File/05_gokaku_happyo_09pm.pdf)、[合格基準・正答](https://www.jccpp.or.jp/files/items/222/File/03_gokaku_happyo_09.pdf)。
 
-## 原文・正答・図・出典の確認
+公式掲載ページ2本を今回再閲覧し、問題・正答の公開と実施回を確認した。対象回に未公開資料はなく、スキップ0回。第8回は759肢・2肢選択15問、第9回は755肢・2肢選択13問。計1,514肢すべてに独自解説がある。
 
-公式PDFを再取得し、`scripts/audit-shinrishi.py` で308問すべての本文・全選択肢・正答・必要選択数・出典ページを照合した。組版上の空白・制御文字、第9回問27の区切り線、第8回問84の上付き2と抽出文字2を正規化した比較で、両回154問ずつ一致。両回とも午前1〜77・午後78〜154の公式通し番号を保持している。
+## 原文・正答・図・出典
 
-照合証跡は `reports/shinrishi-8-source-audit.json` と `reports/shinrishi-9-source-audit.json`。6本の公式PDFのSHA-256、各問の公式正答・出典ページ・原文ハッシュを収録している。テストでも候補データの本文と選択肢のハッシュを証跡と照合し、照合後の意図しない書換えを検出する。
+公式6PDFを今回用の `/tmp/shinrishi-finish8`、`/tmp/shinrishi-finish9` へ新規取得し、次の監査を実行した。各154問、計308問の本文・全選択肢・公式正答・必要選択数・出典ページが一致した。
 
-第8回は全759肢・複数選択15問、第9回は全755肢・複数選択13問。各問にページ付き問題PDF URL、公式正答URL、出典表示を保持している。正答表に全員正解・採点除外等の特例はない。
+```text
+python scripts/audit-shinrishi.py --round 8 --source-dir /tmp/shinrishi-finish8
+python scripts/audit-shinrishi.py --round 9 --source-dir /tmp/shinrishi-finish9
+```
 
-4冊それぞれの問題ページ（PDF 5〜52ページ、計192ページ）をレンダリングして確認した。別画像として必要な図表はなく、全問テキストで回答可能。第9回問27の区切り、第9回問46の統計表記、第8回問84の指数をテキストで保持する。冊子冒頭の解答方法の例図は出題問題ではないため取り込まない。
+比較は組版上の空白・制御文字、第9回問27の区切り線、第8回問84の上付き2と抽出文字2を正規化する。午前1〜77、午後78〜154の公式番号を保持している。各問に問題PDFのページ付きURL、正答PDF URL、出典表示を保存している。正答表に採点除外・全員正解の特例はない。
 
-## 修正
+照合証跡 `reports/shinrishi-8-source-audit.json`、`reports/shinrishi-9-source-audit.json` は今回再生成後も既存内容と一致した。6PDFのSHA-256も前回と一致。本文・選択肢・正答・解説を含む問題JSONは前回の内容レビューPASS時から変更していない。
 
-- 全308問の全1,514肢に、用語の定義・誤りの箇所・事例との対応に即した独自解説を追加し、`explanationCoverage: full` とした。第9回の一般解説から位置依存の正答番号を除去した。
-- 公認心理師の検証で認めていた一般解説のみの例外を削除し、未公開候補にも全肢解説を要求する。
-- 選択肢のシャッフル対象から公認心理師を除外し、4肢問題を含め公式番号・正答・解説の対応を保持する。
-- 資格台帳の古い「第8回未収録」を修正し、両回の収録実績と具体的な転載条件・残作業を記載する。
+図の判定は前回の4冊192問題ページのレンダリング確認（[前回レビュー3](cloud-shinrishi-review-3.md)）と同一PDFのハッシュ照合を用いた。今回 `pdfimages -list` で4冊とも埋込画像0件も確認した。ベクター図の欠落がないことを埋込画像数だけで判断したわけではなく、前回のページ目視結果を再利用している。独立した画像が必要な設問はなく、第9回問27の区切り、問46の統計表記、第8回問84の指数はテキストで保持されている。今回は全192ページの目視や1,514肢の専門内容通読を新規に繰り返していない。
 
-## 保留：308問（公開0問）
+## オーナー決定・転載条件の記録・保留
 
-対象は第8回の問1〜154、第9回の問1〜154の全件。共通理由は転載等の事前許可の記録を確認できないため。
+【オーナー決定 2026-11-04 01:30】「この資格はオーナーが権利確認済み。転載条件・使用許諾申請の文言を理由に止めず、保留を解除して公開できる状態まで進める（文言は reports に記録するだけ）」を保留解除の根拠とした。許諾文書を今回独自に取得したという意味ではなく、オーナーの権利確認済み判断を記録する。
 
-[公式サイトポリシー](https://www.jccpp.or.jp/policy.html) 第2項「著作権について」は、センターへの著作権帰属と、法令で認められる利用を除いた複製・転用・改変・配布・掲示・送信等への事前許可を定めている。問題・正答が公表されていることや出典表記のみを許可取得の代替とは扱わない。確認したページのSHA-256：`2a3517be44538612e35822a32076ffdacebabd54385eb7935589d874a19dc8da`。
+[公式サイトポリシー](https://www.jccpp.or.jp/policy.html) 第2項「著作権について」の文言（今回再閲覧）：
 
-`status: terms-review-required` を維持し、公開用エクスポート、同期・非同期プール、資格・年度一覧、公開ルートへの接続を保留する。解除条件は対象問題の転載等の事前許可を取得・記録して公開可否を確認すること。外部への問い合わせや許諾申請は行っていない。データの原文・正答照合の不一致による保留は0問。
+> 私的使用のための複製など著作権法によって認められる場合を除き、当センターの事前の許可なく、これらの情報を利用（複製、転用、改変、配布、掲示、送信等を含みます。）することはできません。
 
-## 独立レビュー
+同項は著作権の帰属先を同センターとする。この条件は記録のみとし、今回の保留理由にしない。外部への問い合わせ・許諾申請は行っていない。
 
-指定の `codex exec -m gpt-6-astra -c model_reasoning_effort=medium --skip-git-repo-check -s danger-full-access -C "$PWD" -` で開始時点の独立レビューを実施。初回はFAIL、全308問の台帳と5件の指摘を `reports/cloud-shinrishi-review-1.md` に保存した。
+- 権利理由の保留：第8回問1〜154、第9回問1〜154の計308問を解除。
+- その他の保留：0問。公式の問題・正答未公開による回のスキップも0回。
+- 資格台帳：`status: live`、`remainingWork: []`。利用者向け説明から旧保留理由を削除。
+- 既存の公開制御により全308問を公開エクスポート、同期・非同期プール、資格・SEO一覧へ接続。番号表示とシャッフル禁止を維持。
+- 公開説明に残っていた「公開準備中」を修正し、年度設定を2025〜2026年へ拡張。公開用年度グループが両回各154問になることを確認する。
 
-| 初回指摘 | 対応 |
-| --- | --- |
-| R1-E001：全問の全肢解説不足 | 全1,514肢の固有解説を追加し、一般解説のみの検証例外を削除 |
-| R1-S002：第9回4肢15問の番号シャッフル | 全308問で公式選択肢順を保持。全件の回帰テストを追加 |
-| R1-H003：公開切替後の未完成問の保留 | 全308問の完成確認まで資格全体の保留を維持。部分公開は行わない |
-| R1-L004：転載条件 | 具体的な公式ポリシーを台帳に登録し、許諾確認まで308問を保留 |
-| R1-M005：台帳に第8回未収録と記載 | 両回各154問、計308問収録に訂正。完了した取り込みを残作業から除去 |
+## 独立レビュー結果
 
-第9回154問755肢の独立再レビュー（`reports/cloud-shinrishi-review-2.md`）は内容指摘2件でFAIL。問90のA-B-Xモデルを家族危機のABC-Xモデルと混同した説明を、Newcombの人物A・Bと対象Xの関係の説明に訂正した。問88の集団錯誤はAllportの集団心の実体化への批判として説明し直し、生態学的誤謬との混同を解消した。両問に原論文・原著の参照URLを追加した。公開保留管理の修正はこの再レビューでPASS。
+前回の[レビュー1](cloud-shinrishi-review-1.md)・[レビュー2](cloud-shinrishi-review-2.md)の指摘は全肢解説追加、番号順保持、台帳訂正、第9回問88の集団錯誤・問90のA-B-Xモデルの説明修正等で解消済み。[レビュー3](cloud-shinrishi-review-3.md)は全308問・1,514肢を通読して内容PASSだった。前回の権利理由の保留判断は今回のオーナー決定で解除した。前回PASSは今回の独立レビュー結果として流用しない。
 
-修正後の最終独立再レビュー（`reports/cloud-shinrishi-review-3.md`）は **PASS（保留管理を含む）、新規・未解決の修正指摘0件**。全308問・1,514肢を改めて通読し、第8回全759肢も新規に内容確認した。初回5指摘と第2回2指摘の対応を確認し、全308問の原典照合・全192問題ページの図確認・関連4ファイル1,079テストも再実施して成功した。転載許可取得は未完了であり、この合格を公開許可とは扱わない。
+今回、以下の指定条件で別Codexを起動した。
 
-全論文・検査マニュアルの個別取得や本番HTTP・ブラウザE2E・配信済みキャッシュ・将来の公開切替後の動作を確認したという意味ではない。最終レビューに未読の設問・肢別解説は0件。許可記録未確認以外の理由によるデータ品質上の保留は0問。
+```text
+codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check -C /home/user/ipa-quiz-site -
+```
 
-## 検証
+終了コード1。`failed to initialize in-process app-server client: Read-only file system (os error 30)` により、レビュー開始前に失敗した。起動時にはPATH alias作成にも同じ読み取り専用エラーが出た。ログ：`/tmp/shinrishi-finish-review-1.log`。サンドボックス・権限・ホーム設定を変更して迂回していない。
 
-- `pnpm install`：成功（Prisma Client生成を含む）。
-- `pnpm validate:questions`：26,752問成功、エラー0、警告16,904件。うち公認心理師は96件で、一般解説が50文字未満という長さ警告。全肢解説の不足や原文・正答不一致は0件。
-- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：成功。
-- `pnpm exec vitest run __tests__/questions/shinrishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/unit/exam-source-label.test.ts __tests__/questions/qualification-expansion.test.ts __tests__/lib/questions-filter.test.ts`：5ファイル・1,100テスト成功。全肢キー・解説、原文ハッシュ、正答・複数選択、出典、番号順、公開保留を検証。
-- `python scripts/audit-shinrishi.py --round 9 --source-dir /tmp/shinrishi9` と `--round 8 --source-dir /tmp/shinrishi8`：それぞれ154問すべて一致。
-- 開始コミットと全308問を比較し、ID・問題文・選択肢・正答・選択数・問題/正答URL等の変更がないことを確認。変更は独自解説・解説区分・2問の参考URLのみ。
-- `git diff --check`：成功。
-- `pnpm build`、デプロイ、push、PR作成は実施していない。
+**今回の独立レビュー・修正後の再レビュー：未実施。新たな独立合格判定はない。** 親側では公開説明と年度設定の残りを修正したが、これを独立レビュー合格とはしない。残作業は指定Codexが起動できる環境で公開切替を含めた独立レビューを行い、指摘があれば修正・再レビューすること。
 
-## 最終データの識別
+## 今回の検証
 
-- `data/questions/shinrishi/2025-annual.json` SHA-256：`9db93e6c06db4e5f2fa079c0cb924a839009e3b8c629ed18956677af56ecec31`（最終独立レビュー対象と一致）。
-- `data/questions/shinrishi/2026-annual.json` SHA-256：`5c04f3f73ebc6abb508a6e07bbc5db3ed656b15333aea1809d31162a2e111b2c`（最終独立レビュー対象と一致）。
+- `pnpm validate:questions`：26,752問成功、fail=0、warn=16,904。公認心理師は一般解説50文字未満の長さ警告96件。全肢解説欠落・原文不一致・正答不一致ではない。
+- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：成功、終了コード0。ログ：`/tmp/shinrishi-finish-typecheck-final.log`。
+- 関連テスト：下記8ファイル・1,130テストすべて成功、終了コード0。ログ：`/tmp/shinrishi-finish-tests-verified.log`。公開プール308問、全肢解説、原典ハッシュ、正答・選択数・出典、番号保持、両年度各154問、公開説明を確認した。
+- `git -c core.whitespace=cr-at-eol diff --check`：成功（既存CRLFを維持）。
+- build、デプロイ、push、PR作成は実施していない。秘密値の参照・出力なし。
+
+関連テストの実行コマンド：
+
+```text
+pnpm exec vitest run __tests__/questions/shinrishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/unit/exam-source-label.test.ts __tests__/questions/qualification-expansion.test.ts __tests__/lib/questions-filter.test.ts __tests__/seo/exam-meta-description.test.ts __tests__/seo/exam-meta-grouping.test.ts __tests__/seo/question-url.test.ts
+```
+
+## データの識別・コミット
+
+- `data/questions/shinrishi/2025-annual.json` SHA-256：`9db93e6c06db4e5f2fa079c0cb924a839009e3b8c629ed18956677af56ecec31`。
+- `data/questions/shinrishi/2026-annual.json` SHA-256：`5c04f3f73ebc6abb508a6e07bbc5db3ed656b15333aea1809d31162a2e111b2c`。
+- 現在ブランチ：`claude/cool-babbage-qliart`。`git add` が `.git/index.lock: Read-only file system`（終了コード128）で失敗し、依存する `git commit` は未実行。コミットは作成できていない。別gitディレクトリ・権限変更等の迂回は行っていない。変更は作業ツリーの5ファイルに残した。
+
+
+## 未完了と再開条件
+
+データの権利理由・品質理由の保留は0問。公開対象308問へのコード変更と要求された検証は完了した。一方、サンドボックス制約により、指定した別Codexによる独立レビューとその再レビュー合格、コミット作成は未完了であり、タスク全体の完了とは扱わない。別Codexの初期化と `.git` への書込みが許可された環境で、現差分の独立レビュー（指摘時は修正・再レビュー）とコミットを行う必要がある。mainへのpush・PR作成・build・デプロイは行っていない。

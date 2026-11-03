@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { createHash } from "node:crypto";
 import { SHINRISHI_CANDIDATES, SHINRISHI_QUESTIONS } from "@/data/questions/shinrishi";
-import { getAvailableExams } from "@/lib/seo/exam-meta";
+import { EXAM_DESCRIPTIONS, examMetaDescription, getAvailableExams, getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 import audit9 from "@/reports/shinrishi-9-source-audit.json";
 import audit8 from "@/reports/shinrishi-8-source-audit.json";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -13,7 +13,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { shuffleChoices } from "@/lib/questions/filter";
 
-describe("公認心理師第8・9回の公式原問と公開前ステージング", () => {
+describe("公認心理師第8・9回の公式原問と公開", () => {
   it("2回分308問を公式通し番号・午前午後・4/5肢のまま保存する", () => {
     expect(SHINRISHI_CANDIDATES).toHaveLength(308);
     for (const audit of [audit9, audit8]) {
@@ -47,7 +47,7 @@ describe("公認心理師第8・9回の公式原問と公開前ステージン�
     }
   });
 
-  it("保留中も全308問の全選択肢に独自解説を保持する", () => {
+  it("公開する全308問の全選択肢に独自解説を保持する", () => {
     for (const q of SHINRISHI_CANDIDATES) {
       expect(q.explanationCoverage, q.id).toBe("full");
       expect(Object.keys(q.choiceExplanations ?? {}).sort(), q.id).toEqual(Object.keys(q.choices ?? {}).sort());
@@ -61,18 +61,36 @@ describe("公認心理師第8・9回の公式原問と公開前ステージン�
     for (const q of SHINRISHI_CANDIDATES) expect(shuffleChoices(q)).toBe(q);
   });
 
-  it("登録済みでも公開一覧・同期/非同期問題プールへ出さない", async () => {
+  it("権利確認済みの全308問を公開一覧・同期/非同期問題プールへ出す", async () => {
     expect(choiceDisplayLabel("shinrishi", "ア")).toBe("1");
     expect(EXAM_CONFIGS.shinrishi.sessions).toHaveLength(2);
-    expect(getQualificationByExamCode("shinrishi")?.status).toBe("terms-review-required");
+    expect(getQualificationByExamCode("shinrishi")?.status).toBe("live");
     expect(getQualificationByExamCode("shinrishi")?.officialReuseTermsUrl).toBe("https://www.jccpp.or.jp/policy.html");
-    expect(getQualificationByExamCode("shinrishi")?.reuseSummary).toContain("全308問");
-    expect(isExamPublished("shinrishi")).toBe(false);
+    expect(getQualificationByExamCode("shinrishi")?.reuseSummary).toContain("全308原問");
+    expect(getQualificationByExamCode("shinrishi")?.remainingWork).toEqual([]);
+    expect(isExamPublished("shinrishi")).toBe(true);
+    // ALL_EXAM_CODES はIPAの取込ツール専用。外部資格の公開一覧は ALL_QUIZ_EXAM_CODES。
     expect(ALL_EXAM_CODES).not.toContain("shinrishi");
-    expect(ALL_QUIZ_EXAM_CODES).not.toContain("shinrishi");
-    expect(getAvailableExams()).not.toContain("shinrishi");
-    expect(QUESTIONS_BY_EXAM.shinrishi).toBeUndefined();
-    expect(SHINRISHI_QUESTIONS).toEqual([]);
-    expect(await getQuestionsForExam("shinrishi")).toEqual([]);
+    expect(ALL_QUIZ_EXAM_CODES).toContain("shinrishi");
+    expect(getAvailableExams()).toContain("shinrishi");
+    expect(SHINRISHI_QUESTIONS).toHaveLength(308);
+    expect(SHINRISHI_QUESTIONS.every(q => !q.needsReview)).toBe(true);
+    expect(QUESTIONS_BY_EXAM.shinrishi).toEqual(SHINRISHI_CANDIDATES);
+    expect(SHINRISHI_QUESTIONS).toEqual(SHINRISHI_CANDIDATES);
+    expect(await getQuestionsForExam("shinrishi")).toEqual(SHINRISHI_CANDIDATES);
+  });
+
+  it("演習可能な両回を年度一覧と公開説明へ反映する", () => {
+    const published = getQuestionsByExamStrict("shinrishi");
+    expect(published).toHaveLength(308);
+    expect(groupByYearSeason(published)).toEqual([
+      { year: 2026, season: "annual", key: "2026-annual", label: "第9回（2026年3月1日実施）", count: 154 },
+      { year: 2025, season: "annual", key: "2025-annual", label: "第8回（2025年3月2日実施）", count: 154 },
+    ]);
+    expect(EXAM_CONFIGS.shinrishi.yearRange).toEqual({ start: 2025, end: 2026 });
+    expect(EXAM_DESCRIPTIONS.shinrishi).toContain("308原問");
+    expect(examMetaDescription("shinrishi", published.length)).toContain("308原問");
+    expect(EXAM_DESCRIPTIONS.shinrishi).not.toContain("準備中");
+    expect(examMetaDescription("shinrishi", published.length)).not.toContain("準備中");
   });
 });
