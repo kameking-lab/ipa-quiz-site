@@ -12,10 +12,12 @@ export class Downloads {
   constructor(private trustedPublicKey = pinned.leasePublicKey) {}
   private memory = new Map<string,{revision:string;questions:Question[]}>();
   private queue: Promise<unknown> = Promise.resolve();
+  private rightsQueue: Promise<unknown> = Promise.resolve();
   private serialize<T>(fn: () => Promise<T>): Promise<T> { const p = this.queue.then(fn); this.queue = p.catch(()=>{}); return p; }
+  private serializeRights<T>(fn: () => Promise<T>): Promise<T> { const p = this.rightsQueue.then(fn); this.rightsQueue = p.catch(()=>{}); return p; }
   list() { return read<DownloadIndex>(INDEX, {}); }
   async rights() { return read<Rights | null>(RIGHTS, null); }
-  async authorize() {
+  authorize() { return this.serializeRights(async () => {
     const r = await this.rights();
     if (!r?.access.userId || !r.access.entitled) throw new Error("事前ダウンロードは有料会員専用です。");
     try {
@@ -23,21 +25,28 @@ export class Downloads {
       const lease=await verifyLease(r.access.lease, this.trustedPublicKey, r.access.userId, Date.now(), r.lastSeen);
       r.validatedUntil=lease.expiresAt;
     }
-    catch (error) { await this.invalidate(); throw error; }
+    catch (error) { await this.clearRights(); throw error; }
     r.lastSeen = Math.max(Date.now(), r.lastSeen);
     await Preferences.set({ key: RIGHTS, value: JSON.stringify(r) });
     return r;
-  }
-  async updateRights(access: MobileEntitlement, publicKey: string) {
+  }); }
+  updateRights(access: MobileEntitlement, publicKey: string) { return this.serializeRights(async () => {
     const old = await this.rights();
-    if (!access.entitled || old?.access.userId && old.access.userId !== access.userId) await this.invalidate();
+    if (!access.entitled || old?.access.userId && old.access.userId !== access.userId) await this.clearRights();
     if (access.entitled && access.userId) {
-      if (!this.trustedPublicKey || publicKey !== this.trustedPublicKey) throw new Error("配布用の権利検証キーが未設定です。");
-      await verifyLease(access.lease, this.trustedPublicKey, access.userId);
+      try {
+        if (!this.trustedPublicKey || publicKey !== this.trustedPublicKey) throw new Error("配布用の権利検証キーが未設定です。");
+        await verifyLease(access.lease, this.trustedPublicKey, access.userId);
+      } catch (error) { await this.clearRights(); throw error; }
       await Preferences.set({ key: RIGHTS, value: JSON.stringify({ access, publicKey, lastSeen: Date.now() }) });
     }
+  }); }
+  private async clearRights() {
+    this.memory.clear();
+    await Preferences.remove({ key: RIGHTS });
+    if (typeof window !== "undefined") window.dispatchEvent(new Event("mobile:offline-rights-changed"));
   }
-  async invalidate() { this.memory.clear();await Preferences.remove({ key: RIGHTS }); }
+  invalidate() { return this.serializeRights(() => this.clearRights()); }
   async load<T = Question>(code: string): Promise<T[]> {
     const r = await this.authorize(), entry = (await this.list())[code];
     if (!entry || entry.owner !== r.access.userId) throw new Error("この資格を先にダウンロードしてください。");
@@ -46,6 +55,7 @@ export class Downloads {
     const hash = hex(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.data)));
     if (hash !== entry.entry.revision) throw new Error("保存内容が壊れています。再ダウンロードしてください。");
     const questions=JSON.parse(data.data) as T[];
+    if ((await this.authorize()).access.userId !== r.access.userId) throw new Error("アカウントが変更されました。問題を選び直してください。");
     if(!code.startsWith("library.")&&!code.startsWith("material."))this.memory.set(code,{revision:entry.entry.revision,questions:questions as Question[]});
     return questions;
   }
@@ -60,6 +70,7 @@ export class Downloads {
   }
   remove(code: string) { return this.serialize(async () => {
     const index = await this.list(), entry = index[code];
+    this.memory.delete(code);
     delete index[code]; await Preferences.set({ key: INDEX, value: JSON.stringify(index) });
     if (entry) await Filesystem.deleteFile({ directory: Directory.Data, path: entry.path }).catch(()=>{});
   }); }
@@ -91,7 +102,7 @@ export class Downloads {
       try {
         await Filesystem.writeFile({ directory: Directory.Data, path, data, encoding: Encoding.UTF8, recursive: true });
         signal.throwIfAborted();
-        await this.authorize(); // Expiry during the write cannot publish usable content.
+        if ((await this.authorize()).access.userId !== rights.access.userId) throw new Error("アカウントが変更されました。保存をやり直してください。");
         const index = await this.list(), previous = index[code];
         index[code] = { path, entry, owner: rights.access.userId! };
         await Preferences.set({ key: INDEX, value: JSON.stringify(index) });

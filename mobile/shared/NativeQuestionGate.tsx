@@ -9,7 +9,12 @@ interface Permission { id: string; allowed: boolean; error: string }
 export function useNativeQuestionGrant(id?: string, paper?: string) {
   const [permission,setPermission]=useState<Permission>({ id:"",allowed:false,error:"" });
   const [attempt,setAttempt]=useState(0);
-  useEffect(()=>{ const refresh=()=>setAttempt(n=>n+1);window.addEventListener("mobile:entitlement-changed",refresh);return()=>window.removeEventListener("mobile:entitlement-changed",refresh); },[]);
+  useEffect(()=>{
+    const refresh=()=>{setPermission({id:"",allowed:false,error:""});setAttempt(n=>n+1);};
+    window.addEventListener("mobile:entitlement-changed",refresh);
+    window.addEventListener("mobile:offline-rights-changed",refresh);
+    return()=>{window.removeEventListener("mobile:entitlement-changed",refresh);window.removeEventListener("mobile:offline-rights-changed",refresh);};
+  },[]);
   useEffect(()=>{
     if (!nativeClient() || !id) return;
     setPermission({id,allowed:false,error:""});

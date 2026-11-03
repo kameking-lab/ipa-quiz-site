@@ -14,12 +14,18 @@ export function cachedImage(raw: string): Promise<string> {
   if (pending.has(url)) return pending.get(url)!;
   const job=queue.then(async()=>{
     const index=JSON.parse((await Preferences.get({ key:KEY })).value ?? "{}") as Record<string,Cached>;
-    let entry=index[url];
+    let entry:Cached|undefined=index[url];
+    // iOS may purge Directory.Cache without removing the Preferences index.
+    if(entry) {
+      try { await Filesystem.stat({directory:Directory.Cache,path:entry.path}); }
+      catch { delete index[url];entry=undefined; }
+    }
     if (!entry) {
       if (!Capacitor.isNativePlatform()) return url;
       const result=await CapacitorHttp.get({ url,responseType:"arraybuffer",disableRedirects:true,connectTimeout:10000,readTimeout:20000 });
       if (result.status!==200 || typeof result.data!=="string" || result.data.length>8*1048576) throw new Error("画像を取得できません。");
-      const path=`images/${hex(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(url)))}`;
+      const extension=new URL(url).pathname.match(/\.(png|jpe?g|webp|gif|svg)$/i)![1].toLowerCase();
+      const path=`images/${hex(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(url)))}.${extension}`;
       await Filesystem.writeFile({ directory:Directory.Cache,path,data:result.data,recursive:true });
       entry={ path,bytes:Math.ceil(result.data.length*3/4),at:Date.now() }; index[url]=entry;
     }

@@ -3,6 +3,7 @@ import { generateKeyPairSync, sign, webcrypto } from "node:crypto";
 import { verifyLease } from "../src/lease";
 import { Downloads, hex } from "../src/downloads";
 import type { MobileEntitlement, CatalogEntry } from "../shared/contracts";
+import { Preferences } from "@capacitor/preferences";
 const memory=vi.hoisted(()=>({ preferences:new Map<string,string>(),files:new Map<string,string>(),failWrite:false }));
 vi.mock("@capacitor/preferences",()=>({ Preferences:{ get:async({key}:{key:string})=>({value:memory.preferences.get(key)??null}),set:async({key,value}:{key:string;value:string})=>{memory.preferences.set(key,value);},remove:async({key}:{key:string})=>{memory.preferences.delete(key);} } }));
 vi.mock("@capacitor/filesystem",()=>({ Directory:{Data:"DATA"},Encoding:{UTF8:"utf8"},Filesystem:{ readFile:async({path}:{path:string})=>({data:memory.files.get(path)}),writeFile:async({path,data}:{path:string;data:string})=>{if(memory.failWrite)throw new Error("disk full");memory.files.set(path,data);},deleteFile:async({path}:{path:string})=>{memory.files.delete(path);} } }));
@@ -48,4 +49,27 @@ it("expiry, sign-out and an online 403 disable already downloaded questions",asy
   await d.updateRights({...rights(),entitled:false,lease:null},publicKey);await expect(d.load("ip")).rejects.toThrow();
   await d.updateRights(rights(),publicKey);await expect(d.download("ip",async()=>new Response(null,{status:403}),()=>{},new AbortController().signal)).rejects.toThrow();await expect(d.load("ip")).rejects.toThrow();
   await d.updateRights(rights(),publicKey);vi.spyOn(Date,"now").mockReturnValue(Date.now()+7200000);await expect(d.load("ip")).rejects.toThrow("期限");vi.restoreAllMocks();
+});
+it("invalidation wins over an authorization write already in flight",async()=>{
+  const {d}=await fixture();
+  let release!:()=>void,started!:()=>void;
+  const blocked=new Promise<void>(resolve=>{release=resolve;});
+  const writing=new Promise<void>(resolve=>{started=resolve;});
+  const original=Preferences.set;
+  const spy=vi.spyOn(Preferences,"set").mockImplementation(async options=>{
+    if(options.key==="kakomon:rights:v2"){started();await blocked;}
+    return original(options);
+  });
+  try {
+    const authorizing=d.authorize();await writing;
+    const invalidating=d.invalidate();release();
+    await authorizing;await invalidating;
+    expect(await d.rights()).toBeNull();
+    await expect(d.authorize()).rejects.toThrow("有料会員専用");
+  }finally{release();spy.mockRestore();}
+});
+it("a rejected refreshed lease revokes a previously valid download permit",async()=>{
+  const {d,request}=await fixture();await d.download("ip",request,()=>{},new AbortController().signal);
+  await expect(d.updateRights(rights(token()+"tampered"),publicKey)).rejects.toThrow();
+  await expect(d.load("ip")).rejects.toThrow("有料会員専用");
 });
