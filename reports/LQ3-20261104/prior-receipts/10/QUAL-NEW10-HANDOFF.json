@@ -1,0 +1,111 @@
+{
+  "scope": "qual-new:10",
+  "title": "技術士第一次・農業",
+  "asOfUtc": "2026-11-01T09:58:07.791920+00:00",
+  "classification": "PRIVATE_CONTENT_ACCEPTED_READY_FOR_MAIN_ADOPTION",
+  "ownerThread": "01a19657-557c-7123-a47f-4ba02e929f3d",
+  "sharedApplicationOwner": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "target": "令和7年度技術士第一次試験 専門科目 農業部門 Ⅲ－1～35",
+  "targetManifest": {
+    "path": "TARGET-MANIFEST.json",
+    "sha256": "375589b2187483336bba929c23366fe819a84269d87952448d54adf41c5c9841",
+    "bytes": 2158
+  },
+  "counts": {
+    "actualPastQuestions": 35,
+    "authoredExplanations": 35,
+    "choiceReasons": 175,
+    "sourceQuestionImages": 35,
+    "requiredFigureQuestions": 1,
+    "inventedQuestions": 0,
+    "sampleQuestions": 0
+  },
+  "deliverables": [
+    {
+      "path": "QUESTIONS.json",
+      "sha256": "524cf04e555032a9c80b427c6fb05dd0f7dd3cf9bfae9f9fdc573f0aa9a37556",
+      "bytes": 141745
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "662acfc1e6a1648697b2241655bac15f581b82c0dbc7d22cc54b12892c7391e5",
+      "bytes": 2945
+    },
+    {
+      "path": "INDEPENDENT-ACCEPTANCE.json",
+      "sha256": "b357def12e3879dc902dcbffbb256acf2806b0c9ab65b9f3e86504fea0cf25cb",
+      "bytes": 14094
+    },
+    {
+      "path": "VALIDATION.json",
+      "sha256": "7d49f512f059bc4c6b7080f93e7305529382e6dfc2e4418a2a39ca929b43313c",
+      "bytes": 871
+    },
+    {
+      "path": "OFFICIAL-ANSWER.png",
+      "sha256": "45c0957902fe34189c85b99e862201b8ded858d4cadea08fd16c410e5ad5765b",
+      "bytes": 51531
+    }
+  ],
+  "acceptance": {
+    "officialAnswersMatched": 35,
+    "originalPagesCompared": 17,
+    "imagesVisuallyAccepted": 35,
+    "independentVerdict": "PASS_PRIVATE_CONTENT",
+    "openFindings": 0,
+    "fixes": [
+      "欠落8画像を修正",
+      "隣接設問断片の混入4画像を修正",
+      "q18の動物名誤読2箇所を訂正",
+      "q4の旧アカザ科と現ヒユ科の関係を補足"
+    ],
+    "reviewBinding": "最終の原問画像・全肢理由に対する独立受入票とハッシュを同梱"
+  },
+  "mainAdoptionContract": {
+    "type": "原問画像を本文とする教材packet。共有schema/routeの変更を含まない。",
+    "requiredDisplay": "questionImageを必ず表示し、番号1～5で回答。採点後にsummary/explanationと各reasonを表示。",
+    "originalText": "設問全文・全選択肢は公式PDFを忠実にレンダリングした画像内にある。年度と問番号は原典確定。",
+    "editorialOnly": "choices.labelとtitleは編集者用の識別要約。これらだけを原問として出題・採用することは禁止。要約を問題原文へ変換する場合はHOLD。",
+    "mapping": "各レコードのnumber/correctChoiceは1始まり。isAnswerは設問で選ぶ正答であり文の真偽ではない。",
+    "assets": "question-images全35枚を保持。q20は図と図中の出典表示を省略しない。",
+    "sourceLinks": "各問の公式問題・公式正答・ページと画像SHA256を保持。",
+    "soleWriter": "共有catalog/data/route等への接続はmainのみ。ここでは一切適用していない。",
+    "integrationVerification": "mainが実際の採用差分に対して必要な表示/採点接続受入を実施。既存受入済内容を同版で再制作しない。"
+  },
+  "limits": [
+    "画像を主表現とするため、検索可能な原問全文テキストとスクリーンリーダー用全文は未提供。",
+    "固定入力との限定重複照合。実runtimeとの全同一は主張しない。",
+    "既存共有型へ無変更で読み込めると保証したpacketではない。接続変更はmainの担当。",
+    "私有教材内容受入と公開・本番受入を区別。"
+  ],
+  "states": {
+    "receipt": true,
+    "sourceVerified": true,
+    "contentProduced": true,
+    "independentContentAccepted": true,
+    "mainPacketPrepared": true,
+    "sharedApplied": false,
+    "runtimeAccepted": false,
+    "published": false
+  },
+  "remainingPrivateContentOperations": [],
+  "remainingMainOperations": [
+    "原問画像表示を保持した採用adapter/資産配置の確定",
+    "実際の共有採用差分に対する必要な表示・採点接続検収"
+  ],
+  "excludedOperations": [
+    "公開・本番・課金API・Vercel API/CLI",
+    "preview/build/deploy/redeploy/merge/publicpush",
+    "共有repo直接編集",
+    "新キー・設定・権限変更",
+    "既拒否/STOP/HOLD/UNKNOWNの再送・別経路回避"
+  ],
+  "timestamps": {
+    "receiptJST": "2026-11-01T18:01:28+09:00",
+    "contentProductionStartedUtc": "2026-11-01T09:33:51.491278+00:00",
+    "independentContentAcceptedUtc": "2026-11-01T09:42:24.206395+00:00",
+    "packetPreparedUtc": "2026-11-01T09:58:07.791920+00:00"
+  },
+  "previousDecision": "年度未指定のみを本人入力待ちとした旧票はSUPERSEDED-INPUT-GATE.jsonとして保全し撤回。note稿を新資格原稿として扱わない。",
+  "publication": "未実施。本人担当の権利調査を私有教材制作の待ち条件にしていない。"
+}

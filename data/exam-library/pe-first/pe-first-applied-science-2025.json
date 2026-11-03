@@ -1,0 +1,3222 @@
+[
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q01",
+    "number": 1,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/ad11d19650f5eec6a1cf.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "滑り出し角から静止摩擦係数μs=tan45°=1。上へ動く直前は摩擦力が下向きなので、F=mg sin30°+μs mg cos30°=49(0.5+√3/2)≒66.9 N。",
+    "presentation": {
+      "sourceHash": "975c1da0bff8bcca2e0d15dc34c8feaf3cc6430890e27af4ebe8e71d464c6b63",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/ad11d19650f5eec6a1cf.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－1の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 234
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "975c1da0bff8bcca2e0d15dc34c8feaf3cc6430890e27af4ebe8e71d464c6b63",
+      "correctChoice": 3,
+      "summary": "滑り出し角から静止摩擦係数μs=tan45°=1。上へ動く直前は摩擦力が下向きなので、F=mg sin30°+μs mg cos30°=49(0.5+√3/2)≒66.9 N。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "15 Nでは重力の斜面成分24.5 Nにも足りず、上向きの滑り出し条件を満たさない。摩擦抵抗も加える。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "33 Nでは上向き移動を妨げる重力24.5 Nと最大静止摩擦約42.4 Nの合計に届かない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。重力の斜面成分と、下向きに作用する最大静止摩擦力を足すと約67 Nとなる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "130 Nは必要な力約66.9 Nの約2倍。垂直抗力はmg cos30°であり、重量全体を二重に加えない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "200 Nは滑り出しに必要な力より大きすぎる。限界条件F=mg(sin30°+cos30°)から67 Nを選ぶ。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q02",
+    "number": 2,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/4895db3d13b2890986b9.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "静的つり合いkΔl=mgからk=160 N/m。T=2π√(m/k)=2π√(0.049/9.8)≒0.444 s。",
+    "presentation": {
+      "sourceHash": "d8752b097ece31f8d8869cc9cf27913e2a4211cd71de2417eb0f37b5e16b4e27",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/4895db3d13b2890986b9.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－2の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 242
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d8752b097ece31f8d8869cc9cf27913e2a4211cd71de2417eb0f37b5e16b4e27",
+      "correctChoice": 1,
+      "summary": "静的つり合いkΔl=mgからk=160 N/m。T=2π√(m/k)=2π√(0.049/9.8)≒0.444 s。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。伸びを0.049 mへ換算してT=2π√(Δl/g)を使うと約0.44 s。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "0.89 sは正しい周期のほぼ2倍。Tの式に含まれる2πはすでに1往復分を表す。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "1.0 sはT≒0.444 sと一致しない。質量と伸びからばね定数を求めて計算する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1.8 sでは周期を約4倍に見積もっている。Tはm/kの平方根に比例する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "2.0 sは求めた周期と一致しない。cmのまま代入せずSI単位にそろえる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q03",
+    "number": 3,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/d752afe1cf6d92c039ad.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "C=εS/d、Q=CVを使って判断する。誘電率が大きくなると電気容量は増えるため③が不適切。",
+    "presentation": {
+      "sourceHash": "fad302389cdbd603cbb026a9c0afac98645208a97265ee04a5a3fe17373951f8",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/d752afe1cf6d92c039ad.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－3の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 358
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "fad302389cdbd603cbb026a9c0afac98645208a97265ee04a5a3fe17373951f8",
+      "correctChoice": 3,
+      "summary": "C=εS/d、Q=CVを使って判断する。誘電率が大きくなると電気容量は増えるため③が不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。端効果を無視すればC=εS/dなので面積Sに比例する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。Cは極板間隔dに反比例する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「減る」が誤り。ε=ε0εrが増すので電気容量は増える。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。直列接続の中間導体の正味電荷が保存され、各容量に蓄積される電荷の大きさは等しい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。V=Q/Cより一定QではCが小さいほどVは大きい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q04",
+    "number": 4,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/e90017f28504f7c7171c.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "長いソレノイドの近似B=μ0μr(N/L)Iを用いる。4π×10⁻⁷×100×(150/0.40)×1.5=0.0707 T=70.7 mT。",
+    "presentation": {
+      "sourceHash": "21fcec59895f1f99aaeb583be99cd7899f5712fefc99f28e349c7d01c2c8bdca",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－4。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/e90017f28504f7c7171c.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－4の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 361
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "21fcec59895f1f99aaeb583be99cd7899f5712fefc99f28e349c7d01c2c8bdca",
+      "correctChoice": 4,
+      "summary": "長いソレノイドの近似B=μ0μr(N/L)Iを用いる。4π×10⁻⁷×100×(150/0.40)×1.5=0.0707 T=70.7 mT。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.0028 mTは小さすぎる。巻き数密度N/Lと比透磁率100をともに掛ける。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "0.14 mTは正しい70.7 mTと一致しない。長さを0.40 mへ換算し、B=μ0μrNI/Lを使う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "11 mTは計算結果と一致しない。μ0の4πと電流1.5 Aを省略せず代入する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。0.0707 TをmTへ直すと70.7 mTとなり7.1×10¹ mTに最も近い。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "110 mTは大きすぎる。電流や巻き数を重複して掛けず、NI/L=562.5 A/mとする。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q05",
+    "number": 5,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/fffab280cc39669d8d6f.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "位相一定の条件t/T−x/λ=一定よりv=dx/dt=λ/T。時間に掛かる係数が角振動数なのでω=2π/T。",
+    "presentation": {
+      "sourceHash": "c4df0262c27102988f718d24ef48bfa53ae4d311dcfec6af79ff163586e809e9",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/fffab280cc39669d8d6f.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－5の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 597
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c4df0262c27102988f718d24ef48bfa53ae4d311dcfec6af79ff163586e809e9",
+      "correctChoice": 4,
+      "summary": "位相一定の条件t/T−x/λ=一定よりv=dx/dt=λ/T。時間に掛かる係数が角振動数なのでω=2π/T。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "両方誤り。2π/λは波数であって速さではなく、λ/Tは速さであって角振動数ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "両方誤り。速さはλをTで割る。2π/λは空間の波数でありωではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "vだけ誤り。速さに余分な2πがある。v=ω/k=(2π/T)/(2π/λ)=λ/T。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。周期Tの間に波形は1波長λ進み、位相は2π変化する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ωが誤り。角振動数は周期に反比例し、波長を掛けない。正しくは2π/T。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q06",
+    "number": 6,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/acb194febb12358aa239.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "温度を約300→500→300→200 Kとする。(1)後V=200 m³、(2)後p=3000 Pa。(3)後V=200×200/300≒133.3 m³。気体がされる仕事は−pΔV=3000×(200−133.3)=2.0×10⁵ J。",
+    "presentation": {
+      "sourceHash": "eaebe676c6f026c1740299d8a4bace4fd73d4d6dd6eaef3ce24843c421d2b8d8",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/acb194febb12358aa239.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－6の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 402
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "eaebe676c6f026c1740299d8a4bace4fd73d4d6dd6eaef3ce24843c421d2b8d8",
+      "correctChoice": 1,
+      "summary": "温度を約300→500→300→200 Kとする。(1)後V=200 m³、(2)後p=3000 Pa。(3)後V=200×200/300≒133.3 m³。気体がされる仕事は−pΔV=3000×(200−133.3)=2.0×10⁵ J。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。圧縮のため気体がされる仕事は正となり、p(V前−V後)=2×10⁵ J。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "5×10⁵ Jは定圧圧縮のpΔVと一致しない。(3)の圧力は初期の5000 Paでなく約3000 Pa。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "10⁶ Jでは仕事を過大評価している。熱量全体ではなく(3)の境界仕事だけを求める。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "2×10⁶ Jは約10倍大きい。体積減少約66.7 m³に3000 Paを掛ける。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "5×10⁶ Jは一致しない。温度比には摂氏値でなく絶対温度を使い、定積過程の仕事は0とする。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q07",
+    "number": 7,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/2de9410c929bf37d700e.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "強誘電体は外部電場で反転できる自発分極を持つ。圧電体のすべてが強誘電体ではない。",
+    "presentation": {
+      "sourceHash": "8b7190fbfaec9f5b9c6bff578add88d810da3d149997f898690a592b5ff9edea",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－7。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/2de9410c929bf37d700e.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－7の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 315
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "8b7190fbfaec9f5b9c6bff578add88d810da3d149997f898690a592b5ff9edea",
+      "correctChoice": 3,
+      "summary": "強誘電体は外部電場で反転できる自発分極を持つ。圧電体のすべてが強誘電体ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。強誘電体の各分域には自発分極がある。試料全体では分域の向きが相殺する場合がある。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。通常はキュリー温度を超えると強誘電性を失い常誘電相へ移る。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「すべて」が誤り。石英のように圧電性があっても強誘電性を持たない結晶がある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。一次相転移では分極などの秩序変数が転移点で跳ぶ。連続的な変化と区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。原子の位置や配向秩序の変化を伴うため構造相転移に分類される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q08",
+    "number": 8,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/f6ab7f393d0a7d5c2033.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "三次元のブラヴェ格子は14種類である。7つの結晶系や二次元の5種類の格子と混同しない。",
+    "presentation": {
+      "sourceHash": "bea9fc89dab971f39be9442a0165ecfffced1cbd71added31e0e738725ef070f",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/f6ab7f393d0a7d5c2033.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－8の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 271
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bea9fc89dab971f39be9442a0165ecfffced1cbd71added31e0e738725ef070f",
+      "correctChoice": 2,
+      "summary": "三次元のブラヴェ格子は14種類である。7つの結晶系や二次元の5種類の格子と混同しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。格子ベクトルの整数倍だけ平行移動しても格子は重なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「8種類」が誤りで、三次元ブラヴェ格子は14種類。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。逆格子の原点を中心に作るウィグナー・ザイツ胞は第一ブリュアンゾーンに対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。ダイヤモンド構造では最近接4個が正四面体状に配置され、次の隣接殻に12個ある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。NaCl構造は面心立方ブラヴェ格子に2種類のイオンを基底として置いた構造。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q09",
+    "number": 9,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/5d41234d56fdd7b38ca9.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "現行SIで質量の定義に用いるのはプランク定数hであり、万有引力定数Gではない。",
+    "presentation": {
+      "sourceHash": "0d270deae02cef2e00a03058861b2e97dda4398638e515c7b56b3700389f61e6",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－9。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/5d41234d56fdd7b38ca9.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－9の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 321
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0d270deae02cef2e00a03058861b2e97dda4398638e515c7b56b3700389f61e6",
+      "correctChoice": 3,
+      "summary": "現行SIで質量の定義に用いるのはプランク定数hであり、万有引力定数Gではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。真空中の光速度cの数値を固定し、秒の定義と組み合わせて長さを定める。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。素電荷eの数値を固定することで電荷と電流の単位を定める。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「重力定数」が誤り。キログラムはプランク定数hの固定値に基づく。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。アボガドロ定数NAの数値を固定し、1 molに含まれる要素粒子数を定める。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。周波数540×10¹² Hzの単色放射の視感効果度Kcd=683 lm/Wを固定して定義する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q10",
+    "number": 10,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/5df80bd2dbdc4e769935.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "可逆電池の起電力Eと反応ギブズエネルギーにはΔrG=−nFEの関係がある。",
+    "presentation": {
+      "sourceHash": "361f6397af6038014c4056f3db2b7b466c0dabb969a68c4f0e93ef2f0be10502",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/5df80bd2dbdc4e769935.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－10の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 280
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "361f6397af6038014c4056f3db2b7b466c0dabb969a68c4f0e93ef2f0be10502",
+      "correctChoice": 1,
+      "summary": "可逆電池の起電力Eと反応ギブズエネルギーにはΔrG=−nFEの関係がある。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「無関係」が誤り。電子移動数nとファラデー定数Fを用いてΔrG=−nFEと結び付く。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。反応が平衡ならΔrG=0なので、その反応の可逆起電力Eも0。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。アノード・カソードは正負の符号でなく、酸化・還元の起こる場所で定義する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。標準水素電極の標準電極電位を0 Vとして、他の電極を相対表示する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。標準還元電位で統一すればE°電池=E°カソード−E°アノード。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q11",
+    "number": 11,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/720d4b03ce9aa9a65c35.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "OH基が多いことだけで水溶性は決まらない。セルロースでは鎖内・鎖間の水素結合と結晶性が強く、通常の水に溶けにくい。",
+    "presentation": {
+      "sourceHash": "2641428faa214457b640cfae7872792fc119c3456b02b21bce54088650142878",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－11。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/720d4b03ce9aa9a65c35.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－11の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 270
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2641428faa214457b640cfae7872792fc119c3456b02b21bce54088650142878",
+      "correctChoice": 5,
+      "summary": "OH基が多いことだけで水溶性は決まらない。セルロースでは鎖内・鎖間の水素結合と結晶性が強く、通常の水に溶けにくい。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。ポリエチレンは加熱で軟化・融解し、冷却で固まる熱可塑性樹脂。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。ナイロンは人工的に合成されるポリアミドに属する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。異なるモノマー単位を同じ高分子鎖に取り込む重合が共重合。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。アミノ基とカルボキシ基から生じるアミド結合を、タンパク質ではペプチド結合と呼ぶ。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「水によく溶ける」が誤り。多数のOH基が作る強固な水素結合網などのためセルロースは通常水に不溶。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q12",
+    "number": 12,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/8dab8d42d3c1b2fafe12.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "Cは132×12/44=36 mg、Hは27×2/18=3 mg、Oは47−36−3=8 mg。原子の物質量比C:H:O=3:3:0.5=6:6:1なので組成式C₆H₆Oに対応するフェノール。",
+    "presentation": {
+      "sourceHash": "e7738558c6a12d1760f99eb2e62dd91c8639a17e913df1879193c6ce14fcbea9",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－12。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/8dab8d42d3c1b2fafe12.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－12の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 364
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "e7738558c6a12d1760f99eb2e62dd91c8639a17e913df1879193c6ce14fcbea9",
+      "correctChoice": 2,
+      "summary": "Cは132×12/44=36 mg、Hは27×2/18=3 mg、Oは47−36−3=8 mg。原子の物質量比C:H:O=3:3:0.5=6:6:1なので組成式C₆H₆Oに対応するフェノール。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "トルエンC₇H₈には酸素がない。試料中の酸素8 mgという質量収支と合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。フェノールC₆H₆OはC:H:O=6:6:1を満たす。47 mgは0.5 mmolで、CO₂ 3 mmolとH₂O 1.5 mmolを生じる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "安息香酸C₇H₆O₂では酸素が2個で、得られた6:6:1の元素比と合わない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "テレフタル酸C₈H₆O₄は酸素の比率が大きく、元素分析の組成式と異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "サリチル酸C₇H₆O₃も炭素・酸素の比が異なる。芳香族という条件だけで選ばず元素比で絞る。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q13",
+    "number": 13,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/7f6c66d8b1a0628ee339.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "不活性なN₂の追加は、体積と温度が一定なら反応成分の分圧を変えない。全圧が増しても反応商Qp=p(NO₂)²/p(N₂O₄)は不変で、平衡は移動しない。",
+    "presentation": {
+      "sourceHash": "c2bf49bfdd1573551cb7b49cc2af398f2a81480073d008cb2c2a39c741ac9d1b",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/7f6c66d8b1a0628ee339.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－13の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 450
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c2bf49bfdd1573551cb7b49cc2af398f2a81480073d008cb2c2a39c741ac9d1b",
+      "correctChoice": 3,
+      "summary": "不活性なN₂の追加は、体積と温度が一定なら反応成分の分圧を変えない。全圧が増しても反応商Qp=p(NO₂)²/p(N₂O₄)は不変で、平衡は移動しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。N₂O₄の分圧が増えるとQpがKpより小さくなり、右向きに進んで平衡を回復する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。NO₂の分圧が減ってQpが小さくなるので、NO₂を生成する右向きに進む。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「左へ移動」が誤り。定容で不活性ガスを加えても反応成分の分圧は変わらず移動しない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。膨張で全反応成分の分圧が下がり、気体の物質量が多い右側が有利となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。触媒は正逆反応をともに速めるが、一定温度の平衡定数や平衡組成は変えない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q14",
+    "number": 14,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/1464a55babc22616c03a.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "赤外吸収には伸縮振動だけでなく変角振動なども寄与する。赤外活性の条件は振動によって双極子モーメントが変化すること。",
+    "presentation": {
+      "sourceHash": "dcc739a375514e2a140129632e969b9beadfb1df00af2c28f08124e71c00205b",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－14。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/1464a55babc22616c03a.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－14の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 402
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "dcc739a375514e2a140129632e969b9beadfb1df00af2c28f08124e71c00205b",
+      "correctChoice": 4,
+      "summary": "赤外吸収には伸縮振動だけでなく変角振動なども寄与する。赤外活性の条件は振動によって双極子モーメントが変化すること。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。静磁場中で核スピンの準位を分裂させ、ラジオ波との共鳴を観測する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。紫外・可視の光子による電子の励起を吸収として観測する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。吸光度A=εclのεは波長と分子構造等に依存する。濃度・光路長にも注意する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「伸縮運動…だけ」が誤り。変角振動などの吸収も観測される。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。官能基の特徴的な振動が概ね一定の波数領域に現れ、官能基の推定に利用できる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q15",
+    "number": 15,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/99a6a6f836d4811afbae.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "トリウムThはアクチノイドである。他の4元素はランタノイドに属する。",
+    "presentation": {
+      "sourceHash": "eba008361297afc5e28142647d5843e8eff11c61d23dd2b4eb76633886ad6a69",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/99a6a6f836d4811afbae.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－15の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 265
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "eba008361297afc5e28142647d5843e8eff11c61d23dd2b4eb76633886ad6a69",
+      "correctChoice": 2,
+      "summary": "トリウムThはアクチノイドである。他の4元素はランタノイドに属する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "サマリウムSm（原子番号62）はランタノイドであり、不適切な元素ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。トリウムTh（原子番号90）はアクチノイド。ランタノイドと系列を取り違えない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ネオジムNd（原子番号60）はランタノイド。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "プロメチウムPm（原子番号61）はランタノイド。安定同位体がないことは系列の分類を変えない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ホルミウムHo（原子番号67）はランタノイド。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q16",
+    "number": 16,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/ddda96f08380642738fb.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "ハロゲンやO・Sなどは水素より電気陰性度が大きいため、それらとの結合では水素は正に分極する。",
+    "presentation": {
+      "sourceHash": "54dea68ea983594246fc045cea9aa38673b22f591da3a578ebb35e3d38cccd92",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/ddda96f08380642738fb.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－16の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 543
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "54dea68ea983594246fc045cea9aa38673b22f591da3a578ebb35e3d38cccd92",
+      "correctChoice": 5,
+      "summary": "ハロゲンやO・Sなどは水素より電気陰性度が大きいため、それらとの結合では水素は正に分極する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。Hの1s¹配置は電子を1個失うことも、1個受け取ってHe型配置になることも考えられる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。NaHやCaH₂はH⁻を含む塩型の水素化物として扱う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。侵入型の金属水素化物では格子間を占める水素量に幅があり、不定比になり得る。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。ジボランB₂H₆の架橋B−H−B結合は三中心二電子結合で表される。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「水素が負に分極」が誤り。ハロゲン化水素や水などでは水素はδ⁺、相手元素がδ⁻となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q17",
+    "number": 17,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/54738fcd6bab504ced0c.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "HFの水溶液は弱酸であり、ハロゲン化水素酸をすべて強酸とすることはできない。弱酸でも毒性や腐食性が弱いという意味ではない。",
+    "presentation": {
+      "sourceHash": "2a10763edb370bc54c5a563c7ef60fc743544b42c84b215548d20e40ebb9bdf5",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－17。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/54738fcd6bab504ced0c.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－17の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 279
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2a10763edb370bc54c5a563c7ef60fc743544b42c84b215548d20e40ebb9bdf5",
+      "correctChoice": 3,
+      "summary": "HFの水溶液は弱酸であり、ハロゲン化水素酸をすべて強酸とすることはできない。弱酸でも毒性や腐食性が弱いという意味ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。常温での状態は分子間力が強くなる順に気体、液体、固体へ変わる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。通常の水溶液での標準電極電位に対応し、フッ素の酸化力が最も強い。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「すべて強酸」が誤り。HFは弱酸、HCl・HBr・HIは通常強酸として扱う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。F₂は水を酸化して激しく反応する。I₂は非極性分子で水への溶解度が小さい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。挙げられた単体は二原子分子であり、いずれも有害性を持つ。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q18",
+    "number": 18,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/4b5b7764ec2e3b6dc627.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "この設問では、蒸留装置・操作・分離性能に直接結び付く他の4語に比べ、一般的な化学反応の平衡定数を関係が薄いものとする。気液平衡比をK値と呼ぶ用法まで否定する設問ではない。",
+    "presentation": {
+      "sourceHash": "c784b6078034928a7c29f25fa3201dbff1a044719c6b0367181f1442d60be2c4",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/4b5b7764ec2e3b6dc627.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－18の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 272
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c784b6078034928a7c29f25fa3201dbff1a044719c6b0367181f1442d60be2c4",
+      "correctChoice": 4,
+      "summary": "この設問では、蒸留装置・操作・分離性能に直接結び付く他の4語に比べ、一般的な化学反応の平衡定数を関係が薄いものとする。気液平衡比をK値と呼ぶ用法まで否定する設問ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "還流は凝縮液の一部を塔へ戻す操作であり、気液接触と分離性能を改善する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "充填塔は充填物の表面で気液を接触させる装置で、蒸留に用いられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "相対揮発度は2成分の揮発しやすさの比で、蒸留による分離の難易度を表す。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。一般的な反応平衡定数は他の4語ほど蒸留に直接固有ではない。ただし蒸留でも気液平衡比K=y/xを使うため「平衡と無関係」と説明してはいけない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "理論段数は各段で気液平衡が成立するとしたときの分離に必要な段数で、蒸留塔設計に直結する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q19",
+    "number": 19,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/0fb9639401d1a883e81b.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "貯留係数Sと比貯留率Ssが逆転している。比貯留率は単位体積・単位水頭低下当たりの放出水量で、均質な被圧帯水層ではS=Ss b。",
+    "presentation": {
+      "sourceHash": "d79edbb152bef8ce3b7840a2b976ee7c25e4343c3797b2f7a1d8611b00a272cb",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/0fb9639401d1a883e81b.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－19の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 491
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d79edbb152bef8ce3b7840a2b976ee7c25e4343c3797b2f7a1d8611b00a272cb",
+      "correctChoice": 4,
+      "summary": "貯留係数Sと比貯留率Ssが逆転している。比貯留率は単位体積・単位水頭低下当たりの放出水量で、均質な被圧帯水層ではS=Ss b。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。空気侵入時の負圧を圧力水頭で表す記述。吸引圧の正の大きさで示す表記もあるため符号の定義を確認する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。透水係数K=kρg/μは媒体の固有透過度kだけでなく流体の密度ρや粘度μにも依存する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。分母は湿潤土の全質量ではなく乾燥した固相の質量であり、w=M水/M乾燥土×100%。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。単位体積に対する量は比貯留率Ss。厚さbを掛けると貯留係数Sになるので、名称と掛け算の向きが逆。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。均質帯水層ではT=Kb。Kの単位はm/s、Tの単位はm²/s。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q20",
+    "number": 20,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/f11ea81f8a3f753737f7.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "指定された高温の玄武岩質マグマの火山ガスでは、メタンCH₄は主要成分としにくい。火山ガスの組成は温度・圧力・酸化還元状態に依存するため、この条件での比較として理解する。",
+    "presentation": {
+      "sourceHash": "233e118ff409f024821122e53ffdb945886f1b8405d1c977e153eeaeee0b0a2e",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－20。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/f11ea81f8a3f753737f7.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－20の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 195
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "233e118ff409f024821122e53ffdb945886f1b8405d1c977e153eeaeee0b0a2e",
+      "correctChoice": 2,
+      "summary": "指定された高温の玄武岩質マグマの火山ガスでは、メタンCH₄は主要成分としにくい。火山ガスの組成は温度・圧力・酸化還元状態に依存するため、この条件での比較として理解する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "CO₂は火山ガスの主要な炭素成分として挙げられる。炭素を含むからといってCH₄と同じ挙動にはならない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。CH₄はこの高温火山ガスの代表的な主要成分ではない。低温・還元的な別条件での生成可能性と区別する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "H₂は高温の火山ガス中に含まれ、酸化還元平衡に関与する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "HClは火山ガス中の代表的な塩素成分。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "SO₂は火山ガスの代表的な硫黄成分であり、指定条件の主要成分として不適切ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q21",
+    "number": 21,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/eef28a21ecb6c51cc631.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "対流圏界面は一般に暖かい低緯度で高く、寒い高緯度で低い。②はその関係が逆。①の密度は粗い概数としての原問表現で、標準大気の厳密値と区別する。",
+    "presentation": {
+      "sourceHash": "2f1be43619408e614f8a1c2a8d11bbc559abf7337979525c6c19687f57d6b528",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/eef28a21ecb6c51cc631.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－21の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 369
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2f1be43619408e614f8a1c2a8d11bbc559abf7337979525c6c19687f57d6b528",
+      "correctChoice": 2,
+      "summary": "対流圏界面は一般に暖かい低緯度で高く、寒い高緯度で低い。②はその関係が逆。①の密度は粗い概数としての原問表現で、標準大気の厳密値と区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "公式の単一正答では選ばない肢。密度が高度とともに大きく減少する点を述べるが、標準大気の10 kmでは地表の約0.34倍で「4分の1」は粗い表現。約4分の1を厳密な標準値として暗記しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「極域の方が高い」が逆。対流圏界面は赤道付近で概ね16〜18 km、極付近で概ね8〜10 kmと低くなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。下層の均質圏では乱流などでよく混合され、主要気体の混合比は概ね一定。密度自体が一定という意味ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。オゾンの大部分は成層圏にあり、対流圏には全体のおよそ1割がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。温度が高度とともに低下・上昇する傾向を基にした熱的な区分。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q22",
+    "number": 22,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/a0449f209f63da23d42b.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "石灰岩の表面露出・削剥の評価に用いる原位置宇宙線生成³⁶Clでは、カルサイトの主成分Caを標的とする生成が重要。「カルサイトに含まれるCl」をその代表的標的とする④が不適切。³⁵Clの中性子捕獲による³⁶Cl生成という別経路は存在する。",
+    "presentation": {
+      "sourceHash": "f4ffa3dfb5ea895b5990209042ab402b259b3c21842fb093824fd55943a3fffc",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/a0449f209f63da23d42b.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－22の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 497
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f4ffa3dfb5ea895b5990209042ab402b259b3c21842fb093824fd55943a3fffc",
+      "correctChoice": 4,
+      "summary": "石灰岩の表面露出・削剥の評価に用いる原位置宇宙線生成³⁶Clでは、カルサイトの主成分Caを標的とする生成が重要。「カルサイトに含まれるCl」をその代表的標的とする④が不適切。³⁵Clの中性子捕獲による³⁶Cl生成という別経路は存在する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。親核種³Hの減少と娘核種³Heの蓄積を組み合わせる。初期Heやガス交換などの補正・閉鎖条件が必要。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。古い炭酸塩の溶解などが溶存無機炭素の¹⁴Cを希釈するため、放射壊変だけとみなさず補正する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。大気生成¹⁰Beは粒子へ吸着して沈着し、堆積物中の分布を堆積過程の推定に利用できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。カルサイトCaCO₃の主成分はCaであり、石灰岩で用いる代表的な原位置生成経路はCaの核破砕等。Clはカルサイトの主構成元素ではない。ただし³⁵Clの中性子捕獲経路そのものを否定しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。放射起源⁴Heの蓄積を利用する。ただし外部からのHe流入や損失・供給率を考慮しない単純な時計ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q23",
+    "number": 23,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/a9b5841d93301188467a.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "沈み込み帯では冷たいプレートが深く運ばれる海溝側が低温高圧型、マグマの熱の影響がある陸側が高温低圧型となる。④は位置と型が逆。",
+    "presentation": {
+      "sourceHash": "5ea444469d0576b46574c5a21ae7db62dd58b17bebfce7d38f64c4615274aa1a",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－23。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/a9b5841d93301188467a.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－23の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 493
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "5ea444469d0576b46574c5a21ae7db62dd58b17bebfce7d38f64c4615274aa1a",
+      "correctChoice": 4,
+      "summary": "沈み込み帯では冷たいプレートが深く運ばれる海溝側が低温高圧型、マグマの熱の影響がある陸側が高温低圧型となる。④は位置と型が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。全体が溶けてマグマになる作用と区別して、基本的に固体状態での再結晶や組織変化を扱う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。マグマから供給される熱が主要因となり、貫入体周囲に接触変成帯ができる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。造山運動などに伴い広域に生じる変成を指す。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。海溝側を低温高圧型、陸側を高温低圧型へ訂正する。冷たい沈み込むプレートと熱いマグマの位置を対応させる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。石灰岩が再結晶して大理石となる。接触変成は代表的な形成過程で、広域変成でも形成され得る。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q24",
+    "number": 24,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/67c3a1cf10ce7bde7fbc.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "モホ面は地殻とマントルの境界。リソスフェアとアセノスフェアは力学的性質による区分で、モホ面とは別の境界である。",
+    "presentation": {
+      "sourceHash": "b0947290f01df1e0ae2bb46557d058681c8e7368171238cdaa09ff33b72d37e0",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/67c3a1cf10ce7bde7fbc.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－24の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 449
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b0947290f01df1e0ae2bb46557d058681c8e7368171238cdaa09ff33b72d37e0",
+      "correctChoice": 4,
+      "summary": "モホ面は地殻とマントルの境界。リソスフェアとアセノスフェアは力学的性質による区分で、モホ面とは別の境界である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。深部は高温であり、中心温度の代表的な推定範囲を述べている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。アセノスフェアは上部マントルの比較的弱く、長時間では変形しやすい部分。全体が液体という意味ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。リソスフェアは地殻と最上部マントルを含む、比較的剛性の高い層。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。モホ面は地殻とマントルの境界。リソスフェア・アセノスフェア境界とは区分原理も深さも異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。プレートの実体はリソスフェア。枚数は小プレートをどこまで区別するかに依存する概数。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q25",
+    "number": 25,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/ee68d89c8e36e05bae87.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "黒鉱鉱床は海底の熱水活動に由来するが、代表的には新第三紀の珪長質火山岩類、特に流紋岩等の活動に伴う。「閃緑岩中」が不適切。",
+    "presentation": {
+      "sourceHash": "0bf7ded79e0cc65ec3400d1b1b69d953a1407169cc6f21b4e673118b27429524",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/ee68d89c8e36e05bae87.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－25の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 626
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0bf7ded79e0cc65ec3400d1b1b69d953a1407169cc6f21b4e673118b27429524",
+      "correctChoice": 3,
+      "summary": "黒鉱鉱床は海底の熱水活動に由来するが、代表的には新第三紀の珪長質火山岩類、特に流紋岩等の活動に伴う。「閃緑岩中」が不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。金属元素などが地質作用によって局所的に濃集した部分を指す。採掘対象となるかは経済条件にも依存する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。分別結晶作用や結晶の集積により、クロマイト等を含む層状の集積体が生じる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「閃緑岩」が誤り。黒鉱は流紋岩・デイサイトなどの珪長質海底火山活動に関係する火山性塊状硫化物鉱床。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。別子型に代表され、海底熱水起源の硫化物鉱床が付加・変成過程を経たものとして理解する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。炭酸塩岩と貫入岩由来流体の交代作用でスカルン鉱物と鉱石鉱物が形成される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q26",
+    "number": 26,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/29408fc7362be35ccf34.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "中央海嶺では上昇する高温マントルが減圧されて部分融解する。ホットスポットでも高温マントルの上昇・減圧が重要であり、「低温物質の急加熱」という説明は不適切。",
+    "presentation": {
+      "sourceHash": "8db306c9242e0a51d1b91afe9631bb83a89b0b8010c49ac305aac4fe827bf776",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/29408fc7362be35ccf34.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－26の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 537
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "8db306c9242e0a51d1b91afe9631bb83a89b0b8010c49ac305aac4fe827bf776",
+      "correctChoice": 2,
+      "summary": "中央海嶺では上昇する高温マントルが減圧されて部分融解する。ホットスポットでも高温マントルの上昇・減圧が重要であり、「低温物質の急加熱」という説明は不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。基本的な融解の説明。ただし岩石は多成分系なので通常は単一の融点で一斉に溶けず、固相線から液相線までの温度範囲を持つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「低温…温度が急上昇」が誤り。すでに高温のマントルが上昇し、圧力低下により固相線を越える減圧融解で説明する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。水の添加により固相線温度が下がり、既存温度でも融解しやすくなる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。溶けやすい成分から液相に移り、液相と未融解の固相が共存する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。密度差による浮力が上昇の主要因の一つ。滞留位置には密度差のほか周囲の応力や構造も影響する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q27",
+    "number": 27,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/301e468a563a8ee03011.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "ヘリンボーン構造は逆向きの流れを示す斜交層理の組合せで、上げ潮・下げ潮が反転する潮汐環境が代表的。蛇行河川の主要構造とする③が不適切。",
+    "presentation": {
+      "sourceHash": "cb6864d81e5d72b7ead4e5321c0e9192949c6c441a6f5f062186e647f83f5623",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/301e468a563a8ee03011.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－27の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 314
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "cb6864d81e5d72b7ead4e5321c0e9192949c6c441a6f5f062186e647f83f5623",
+      "correctChoice": 3,
+      "summary": "ヘリンボーン構造は逆向きの流れを示す斜交層理の組合せで、上げ潮・下げ潮が反転する潮汐環境が代表的。蛇行河川の主要構造とする③が不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。流れによる底面の侵食痕などが堆積面に保存され、古流向の推定に使われる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。砂丘状のベッドフォームが移動する際の下流側斜面への堆積を記録する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「蛇行河川の主な構造」が不適切。典型的には潮流の反転する潮汐堆積物と対応させる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。混濁流が減衰すると粗粒から細粒へ沈降し、上方細粒化する級化が生じやすい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。暴風時の波浪・流れによる複合流で形成される特徴的な低角度の斜交層理。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q28",
+    "number": 28,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/7f882a577d1392864a4c.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "不整合面は堆積の中断や侵食・削剥による時間間隙を示す。下位層が堆積した直後の地形面とする①は不適切。",
+    "presentation": {
+      "sourceHash": "2a590b4324c0214b1edb12b032a3dc65d6bc28a435dc6b79054cb0f4c6a080bb",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－28。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/7f882a577d1392864a4c.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－28の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 493
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "2a590b4324c0214b1edb12b032a3dc65d6bc28a435dc6b79054cb0f4c6a080bb",
+      "correctChoice": 1,
+      "summary": "不整合面は堆積の中断や侵食・削剥による時間間隙を示す。下位層が堆積した直後の地形面とする①は不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「堆積した直後」が誤り。堆積休止や隆起・侵食を経て形成され、下位層と上位層の間に時間間隙を持つ面である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。堆積岩が結晶質の基盤岩を覆う不整合を無整合と呼ぶ。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。上下が平行でも侵食面や欠如する年代があれば連続堆積とは限らない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。下位層の傾動・褶曲と侵食後に上位層が堆積し、上下の姿勢に角度差が生じる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。地層がほぼ連続的に堆積した層序関係を指す。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q29",
+    "number": 29,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/0234bffa17302c18ff0d.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "正断層に挟まれ周囲より落ち込んだブロックは地溝。周囲より相対的に高いブロックが地塁であり④は逆。",
+    "presentation": {
+      "sourceHash": "11f1fb851665f32b2e6bd359b68a592b0262a1fc9a1e72081a53664d5ade7b07",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/0234bffa17302c18ff0d.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－29の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 406
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "11f1fb851665f32b2e6bd359b68a592b0262a1fc9a1e72081a53664d5ade7b07",
+      "correctChoice": 4,
+      "summary": "正断層に挟まれ周囲より落ち込んだブロックは地溝。周囲より相対的に高いブロックが地塁であり④は逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。上盤の上下動や断層面に沿う水平移動などの変位方向で分類する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。地層が階段状に曲がる構造を示す。断層が必ず地表に達するとは限らない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。過去の活動履歴と将来の活動可能性を含む定義。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「地塁」を「地溝」へ訂正する。地塁は相対的に高い側、地溝は低い側。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。震源断層のずれなどが地表に達し、変位として現れたものをいう。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q30",
+    "number": 30,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/b1301b5b694b6dfb96f9.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "ダイアピールは塩・泥・マグマなどが密度差や延性変形によって上昇・貫入する構造。他の4語は断層の運動や破砕作用に直接関連する。",
+    "presentation": {
+      "sourceHash": "d256a04304919fdb35f976ba28aa4ca4a6f225b0c870841f8e9c08931ceac831",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/b1301b5b694b6dfb96f9.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－30の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 272
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "d256a04304919fdb35f976ba28aa4ca4a6f225b0c870841f8e9c08931ceac831",
+      "correctChoice": 5,
+      "summary": "ダイアピールは塩・泥・マグマなどが密度差や延性変形によって上昇・貫入する構造。他の4語は断層の運動や破砕作用に直接関連する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "横ずれ断層が伸張性にステップする場所等で形成される沈降・引張構造で、断層と直接関連する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "断層面上の擦痕で、すべり方向の手掛かりとなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "断層運動に伴う脆性的な破砕・粉砕でできる断層岩であり、断層と直接関連する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "断層面がすべりで磨かれた面で、条線を伴うことがある。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答。主として密度差等による流動・貫入構造。断層との相互作用はあり得るが、他の4語ほど直接的ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q31",
+    "number": 31,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/949245262674638e1b3f.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "地下モデルから観測値を予測するのが順問題、観測データから地下モデルを推定するのが逆問題。計測そのものを逆問題と呼ぶ①が不適切。",
+    "presentation": {
+      "sourceHash": "30abc189d3a86695bbdce63576c0de594e988f40a2fdd6b04eb8edb26dfab399",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/949245262674638e1b3f.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－31の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 665
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "30abc189d3a86695bbdce63576c0de594e988f40a2fdd6b04eb8edb26dfab399",
+      "correctChoice": 1,
+      "summary": "地下モデルから観測値を予測するのが順問題、観測データから地下モデルを推定するのが逆問題。計測そのものを逆問題と呼ぶ①が不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「解析が順問題、計測が逆問題」が誤り。観測データから地下構造を推定する解析は逆問題。順問題は既知の構造から応答を計算すること。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。ノイズかどうかは目的にも依存する。反射波を目的とする解析では表面波はコヒーレントノイズとなり得る。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "標本化定理の趣旨として適切。帯域制限と理想的な復元を仮定する。厳密には上限周波数のちょうど2倍では位相によって情報を失う場合があり、実用上は余裕を持って2倍を超える周波数を用いる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。50 Hzや60 Hz等の狭い周波数帯を抑える。目的信号も同帯域にあれば影響する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。同じ信号はNに比例して加算され、独立・零平均のノイズ振幅は√Nに比例するためS/Nは√N倍になる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q32",
+    "number": 32,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/285aac3af0f79540aa31.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "レンツの法則は電磁誘導における誘導電流の向きを定める。残る4つは波面、線形な波の合成、屈折、伝播経路に直接関係する。",
+    "presentation": {
+      "sourceHash": "fb096d84d331927275d24c8e069d14c6045a000ceb8e4b488aa58e61e58788b4",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/285aac3af0f79540aa31.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－32の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 321
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "fb096d84d331927275d24c8e069d14c6045a000ceb8e4b488aa58e61e58788b4",
+      "correctChoice": 3,
+      "summary": "レンツの法則は電磁誘導における誘導電流の向きを定める。残る4つは波面、線形な波の合成、屈折、伝播経路に直接関係する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "各点からの二次波の包絡面として次の波面を構成する原理で、波動伝播と直接関係する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "線形範囲では複数の波の変位を足し合わせられ、干渉や波動場の合成に用いる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。磁束変化を妨げる方向に誘導電流が流れるという電磁誘導の法則であり、ここでの地震波伝播との関係は最も薄い。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "境界面での入射角・屈折角と速度の関係を与え、地震波の屈折にも適用する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "伝播時間が停留する経路を波線が取る原理で、屈折や波線追跡の基礎となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q33",
+    "number": 33,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/35305b7b982aa97593ad.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "他の条件が同じなら高密度の地下物体は重力を増やし正の異常、低密度物体は負の異常を生む。⑤の密度と異常の符号が逆。",
+    "presentation": {
+      "sourceHash": "adf6e417faf6bf04b7f56df21dbee8f0461de48bd273e38dd83552b7ef9a1160",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/35305b7b982aa97593ad.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－33の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 447
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "adf6e417faf6bf04b7f56df21dbee8f0461de48bd273e38dd83552b7ef9a1160",
+      "correctChoice": 5,
+      "summary": "他の条件が同じなら高密度の地下物体は重力を増やし正の異常、低密度物体は負の異常を生む。⑤の密度と異常の符号が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。基準楕円体に対する理論的な重力で、緯度に依存する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。地形や層の密度を仮定して、基準面より上の物質による引力を取り除く。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。地球自転と移動速度に関連するエトベス効果があり、移動体測定では補正する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。観測高度による地球中心からの距離の変化を補正し、間にある物質の質量効果とは区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答（不適切）。大小が逆。周囲より高密度なら通常は正のブーゲー異常、低密度なら負の異常となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q34",
+    "number": 34,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/8d2d1ab382afc77a52c2.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "密度検層で利用する代表的な放射線相互作用はガンマ線のコンプトン散乱。④は放射線の種類と散乱の種類がともに誤っている。",
+    "presentation": {
+      "sourceHash": "9b57adbc3468916556c0d481e76af3149e3fea1ee9f817dcb5168b08a51861f6",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/8d2d1ab382afc77a52c2.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－34の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 623
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "9b57adbc3468916556c0d481e76af3149e3fea1ee9f817dcb5168b08a51861f6",
+      "correctChoice": 4,
+      "summary": "密度検層で利用する代表的な放射線相互作用はガンマ線のコンプトン散乱。④は放射線の種類と散乱の種類がともに誤っている。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。電極を用いる通常の電気検層では孔内水による電気的接触を必要とする。別原理の誘導検層と混同しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。地表震源と孔内受振点の距離・到達時間から速度を推定する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。通常のVSPは地表震源・孔内受振器を使い、逆配置もある。深度の分かる孔内記録と反射イベントを対応付けられる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「ベータ線」を「ガンマ線」、「レイリー散乱」を主に「コンプトン散乱」へ訂正する。電子密度に依存する散乱・減衰から地層密度を推定する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。孔内に下ろした起振・受振装置で孔壁沿いを伝わるP波・S波等の速度を測定する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2025-annual-senmon-q35",
+    "number": 35,
+    "text": "2025年度 応用理学部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-applied-science-2025/205f90c3d0bfe96969c5.png"
+    ],
+    "sourcePages": [],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19",
+    "explanation": "レイリー波の位相速度は一般にS波速度に強く支配される。この性質から表面波の分散を用いて地下のS波速度構造を推定する。",
+    "presentation": {
+      "sourceHash": "f1c13f6ef204b55dfbcf6c65c1a120919fefb8d1a5332991abb61c01d1269b47",
+      "prompt": "2025年度 応用理学部門 専門科目 Ⅲ－35。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-applied-science-2025/205f90c3d0bfe96969c5.png",
+          "alt": "2025年度 応用理学部門 Ⅲ－35の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 950,
+          "height": 533
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f1c13f6ef204b55dfbcf6c65c1a120919fefb8d1a5332991abb61c01d1269b47",
+      "correctChoice": 2,
+      "summary": "レイリー波の位相速度は一般にS波速度に強く支配される。この性質から表面波の分散を用いて地下のS波速度構造を推定する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。速度が深さによって異なる成層地盤では、周波数・波長ごとに感じる深さが違うため分散する。均質半無限体の非分散的な場合とは区別する。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答（不適切）。「P波速度の方が大きい」が逆。一般にS波速度への感度が大きく、P波速度や密度への感度はそれより小さい。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。分散曲線の残差を指標にモデルを更新する。解が一意とは限らず拘束条件や感度も考える。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切。長波長ほど深部を反映し、短波長は浅部の細かな構造の把握に重要。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。微動探査を組み合わせることで、人工震源だけでは得にくい長周期・長波長の情報を補える。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_8.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=19"
+        }
+      ]
+    }
+  }
+]

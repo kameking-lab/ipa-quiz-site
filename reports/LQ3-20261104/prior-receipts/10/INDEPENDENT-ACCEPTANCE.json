@@ -1,0 +1,344 @@
+{
+  "scope": "qual-new:10",
+  "reviewer": "/root/independent_acceptance",
+  "role": "独立受入担当・原稿authorではない",
+  "reviewedAtUtc": "2026-11-01T09:40:24.059664+00:00",
+  "verdict": "PASS_PRIVATE_CONTENT",
+  "adoptable": true,
+  "inputQuestionsSha256": "b07f1e0cb157bbab44625e10662d1ffaa00c46212b8d8b9fac88cbe4cc4a30ea",
+  "targetManifestSha256": "375589b2187483336bba929c23366fe819a84269d87952448d54adf41c5c9841",
+  "coverage": {
+    "questions": 35,
+    "choiceReasons": 175,
+    "questionImagesVisuallyInspected": 35,
+    "sourcePagesCompared": 17,
+    "officialAnswers": 35,
+    "answerMatches": 35,
+    "requiredFigureQ20": "牛肉部位図A〜Dと出典表示を含み、全5組合せも保持。PASS"
+  },
+  "findings": [
+    {
+      "id": "R1",
+      "priority": "P1",
+      "scope": "question-images",
+      "questions": [
+        16,
+        22,
+        23,
+        24,
+        25,
+        29,
+        34,
+        35
+      ],
+      "finding": "原問画像に内容欠落がある。q16設問文/番号、q22第五選択肢、q23第五選択肢の大半、q24第五選択肢末尾、q25第五選択肢後半、q29設問文/番号、q34設問文と第一選択肢冒頭、q35設問文冒頭が切れている。",
+      "requiredChange": "原典ページの内容境界に合わせて該当8画像を再切り出しし、各画像に設問番号・問い方・全5選択肢が含まれることを目視する。",
+      "evidence": [
+        "work/review-contact-16.png",
+        "work/review-contact-21.png",
+        "work/review-contact-26.png",
+        "work/review-contact-31.png"
+      ],
+      "resolution": "RESOLVED",
+      "recheckedAtUtc": "2026-11-01T09:42:24.206395+00:00"
+    },
+    {
+      "id": "R2",
+      "priority": "P2",
+      "scope": "question-images",
+      "questions": [
+        23,
+        28,
+        33,
+        34
+      ],
+      "finding": "隣接設問の断片が混入。q23先頭にq22第五選択肢、q28末尾にq29見出し、q33末尾にq34見出し、q34末尾にq35見出し。",
+      "requiredChange": "切り出しを当該設問のみへ調整。R1と同時修正可能。",
+      "resolution": "RESOLVED",
+      "recheckedAtUtc": "2026-11-01T09:42:24.206395+00:00"
+    },
+    {
+      "id": "R3",
+      "priority": "P1",
+      "scope": "questions[17].choices[1,3].reason",
+      "questions": [
+        18
+      ],
+      "finding": "②は原問の子ブタを子猫と誤読。④は原問の雌ウシ・雄ウシを豚としており、指摘対象の動物が変わっている。",
+      "requiredChange": "②を「ブルセラ病は細菌性。原虫・ネコ科・子ブタの説明はトキソプラズマ病の説明」と正す。④を「トキソプラズマ病は原虫性。細菌性・雌ウシの流産・雄ウシの精巣炎はブルセラ病の説明」と正す。",
+      "evidence": [
+        "work/sources/page-07.png",
+        "outputs/question-images/q18.png"
+      ],
+      "source": "https://www.naro.go.jp/laboratory/niah/disease_fact/kachiku/151643.html",
+      "resolution": "RESOLVED",
+      "recheckedAtUtc": "2026-11-01T09:42:24.206395+00:00"
+    },
+    {
+      "id": "R4",
+      "priority": "P2",
+      "scope": "questions[3].choices[4].reason",
+      "questions": [
+        4
+      ],
+      "finding": "原問がアカザ科としている箇所を、理由では適切としつつヒユ科へ置き換えており、分類体系の違いが説明されない。",
+      "requiredChange": "原問のアカザ科は従来の分類名で、現在の分類ではヒユ科に含まれることを短く補足。原問の選択肢⑤を誤答扱いにしない。",
+      "source": "https://www.alic.go.jp/joho-s/joho07_000465.html",
+      "resolution": "RESOLVED",
+      "recheckedAtUtc": "2026-11-01T09:42:24.206395+00:00"
+    }
+  ],
+  "passes": [
+    "全35の正答番号は日本技術士会公式正答の農業部門p14と一致。",
+    "適切/不適切/組合せの判定形式とisAnswerを取り違えていない。",
+    "各選択肢に理由がある。特に組合せ問題で差分欄を指摘。",
+    "q6こまつなは指定野菜でない。令和7年時点と後年の変更を区別している。",
+    "q25太陽熱の日射変動に対する訂正は妥当。",
+    "q28畑利用は原則無湛水とする基準に対応しており、24時間許容の流用を正している。",
+    "q33潤辺πd・径深d/4、ピエゾ水頭の構成、経験式の区別の説明は妥当。"
+  ],
+  "sources": [
+    {
+      "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
+      "use": "農業部門35正答p14を独立に閲覧照合"
+    },
+    {
+      "url": "https://www.maff.go.jp/j/tokei/kouhyou/sakumotu/sakkyou_yasai/gaiyou/index.html",
+      "use": "令和7年指定14品目とこまつなの別区分を確認"
+    },
+    {
+      "url": "https://www.maff.go.jp/j/council/seisaku/nousin/bukai/R0604/attach/pdf/siryou-7.pdf",
+      "use": "排水基準、畑利用の無湛水原則を確認"
+    },
+    {
+      "url": "https://www.naro.go.jp/laboratory/niah/disease_fact/kachiku/151643.html",
+      "use": "ブルセラ症の病原体と症状の照合"
+    },
+    {
+      "url": "https://www.alic.go.jp/joho-s/joho07_000465.html",
+      "use": "ヒユ科（旧アカザ科）の対応"
+    },
+    {
+      "url": "https://www.nilim.go.jp/lab/bcg/sokuhou/file/120810.pdf",
+      "use": "ピエゾ水頭=圧力水頭+位置水頭を照合"
+    }
+  ],
+  "limits": [
+    "固定原稿・画像に対する内容受入のみ。実runtime接続・共有適用・公開の受入ではない。",
+    "資料の全主張を独立一次資料で再調査したとの主張はしない。公式原問・正答全件と、内容上の判定・重点箇所一次資料を照合。"
+  ],
+  "nextAcceptance": "私有内容受入は完了。mainの採用・UI接続等はこの票の検証範囲外で、共有適用はmainのみ。",
+  "initialVerdict": "CHANGES_REQUIRED",
+  "acceptedAtUtc": "2026-11-01T09:42:24.206395+00:00",
+  "openFindings": 0,
+  "inputQuestionsSha256AfterFix": "b07f1e0cb157bbab44625e10662d1ffaa00c46212b8d8b9fac88cbe4cc4a30ea",
+  "acceptedQuestionsSemanticSha256": "e93d66d65078655ad9bff604adcf16534549f3467e7b4b0d05face6921fa0b57",
+  "imageBindings": [
+    {
+      "path": "question-images/q01.png",
+      "sha256": "2af4fcbe8aaba2a25f09525d299f11fceca192b4f6cbd1cb014d300b28547180"
+    },
+    {
+      "path": "question-images/q02.png",
+      "sha256": "96d0746168f77f02a5c7bde7f083bf2fbf38cd2299def78f48516648bb7696a9"
+    },
+    {
+      "path": "question-images/q03.png",
+      "sha256": "6101441bacea99aef89340b64c34ca791ff93ad08c7d40072a44de9083a4221d"
+    },
+    {
+      "path": "question-images/q04.png",
+      "sha256": "6151ff10350ca284d53f8d3db0d48155091294c25fb5e301bb902b9a9c50ca37"
+    },
+    {
+      "path": "question-images/q05.png",
+      "sha256": "baa04fdfc0a8ecc904e8e3a3972d12898e989c3d82a05a0cb109f1f1067e91a3"
+    },
+    {
+      "path": "question-images/q06.png",
+      "sha256": "dfa5d7e5a3fc0d7e3726e24d585441e6ac2162deb3b2aa76d1c5f0d14d706c5f"
+    },
+    {
+      "path": "question-images/q07.png",
+      "sha256": "7267114ebb3e3f050168d53e5b12e1dd1dbcaba23050f68f0753e6573466ea0c"
+    },
+    {
+      "path": "question-images/q08.png",
+      "sha256": "9d26306db51efdffb7f309c4e3dca1e5142d8245896d11b931bade7dd33812fa"
+    },
+    {
+      "path": "question-images/q09.png",
+      "sha256": "11673a5b9aaec8846784aa79222e1984917a87994b46b70bbeb2e5165a6718bc"
+    },
+    {
+      "path": "question-images/q10.png",
+      "sha256": "4037ea99b869b865844c0dcdfb4e18737bea1b6df84611093349933beb60ab07"
+    },
+    {
+      "path": "question-images/q11.png",
+      "sha256": "9b68027f1501ec224c19251abae8ce1a2b4246bfc896519a8a8621d78e1eb56a"
+    },
+    {
+      "path": "question-images/q12.png",
+      "sha256": "2e35c981a3efee329c59c92670642283ae97ff6c359e25aa5d78c4014420f00c"
+    },
+    {
+      "path": "question-images/q13.png",
+      "sha256": "0ac24d288f1dd438d1b06e508dcbe97f65bacbeff65a2796082816d11d77d113"
+    },
+    {
+      "path": "question-images/q14.png",
+      "sha256": "f28e627b557852513ec943e11a99353a4c08e370e59c1e9a970126aa659f3ca9"
+    },
+    {
+      "path": "question-images/q15.png",
+      "sha256": "b3fd725259f145eff78900bf7a256707dc9c2b6249f322be7c52749325492a1d"
+    },
+    {
+      "path": "question-images/q16.png",
+      "sha256": "bc0e82e80c1d7bbd02293395d120b81f1909cbbaa5ea56e89bad19f66a55746d"
+    },
+    {
+      "path": "question-images/q17.png",
+      "sha256": "931cd28d605b57b6a228f6b219ea38294d1f85376cb0e5025f94e45edd6588a2"
+    },
+    {
+      "path": "question-images/q18.png",
+      "sha256": "6bd73794d70baf58ecc1de332aae7cc1ad062b64c248e4b6bbd8e3f7635c7a83"
+    },
+    {
+      "path": "question-images/q19.png",
+      "sha256": "410afdade4eabe65fe8f7de6abe899bd8cdf2662482f2bd7b89b970743a0579b"
+    },
+    {
+      "path": "question-images/q20.png",
+      "sha256": "1597d369bb5516e7bcc88c31d52aaa9ebfd5d77dca88364832a05772fd019f21"
+    },
+    {
+      "path": "question-images/q21.png",
+      "sha256": "438373fb5db41d13d73dff339a7d7e9683dfa65c10a0a3cf3bf34e89fe54642f"
+    },
+    {
+      "path": "question-images/q22.png",
+      "sha256": "9c0b3ffce6fa9c82707f67002d98034eb4027c8576754011d9914e7027e7dd5a"
+    },
+    {
+      "path": "question-images/q23.png",
+      "sha256": "001aa41aceb36b42da1727fc7bbe97c4dfe1bbe18a41de23fe9076a3bcbe279c"
+    },
+    {
+      "path": "question-images/q24.png",
+      "sha256": "92d3386bacef6692ad4c2b75b9a8df835d509d806129b814ef61fd4824f8b4a5"
+    },
+    {
+      "path": "question-images/q25.png",
+      "sha256": "32ae4b4c11a85c1f03884be729ad15be17be69b0503ca20d5ae91978406a4bb6"
+    },
+    {
+      "path": "question-images/q26.png",
+      "sha256": "c294fabfaaa862539b5f6b2a4f25c2b70d3911824ab006fce1890d88968d3510"
+    },
+    {
+      "path": "question-images/q27.png",
+      "sha256": "d5f35847bc3c611e30ff6196b71464571282ac39cb710ae3739ccf8c16f2ab9e"
+    },
+    {
+      "path": "question-images/q28.png",
+      "sha256": "88b4b0458834adda73998ae5f540508d772dad46f4ecab341e75ef1fe51449a0"
+    },
+    {
+      "path": "question-images/q29.png",
+      "sha256": "94ea4789a1e52a00d383937d1fd0e3cc8e5fd5cfb19aa865f389c002e989ab55"
+    },
+    {
+      "path": "question-images/q30.png",
+      "sha256": "ec39b98645d09ffcb0b695a1305f5d5c832a892eef43ade7c8130c7db9a7cc48"
+    },
+    {
+      "path": "question-images/q31.png",
+      "sha256": "2efb902f1faa2e4539fae110c4ecd1908d0e2388e5c15f1125ae94861fc4e147"
+    },
+    {
+      "path": "question-images/q32.png",
+      "sha256": "d13b77bae1182ba174ffe73fc0e6e2302e47545ccf45e28da241dae5b47114c7"
+    },
+    {
+      "path": "question-images/q33.png",
+      "sha256": "6b4cb8181a8e628beed07bb12d3c607ca1d0c4172cd3d160dbe411e6099463b8"
+    },
+    {
+      "path": "question-images/q34.png",
+      "sha256": "1eab6090ed7a0d8167d896418117d3dd0ccaf42bc7827b1a16dfccb1e2c0e474"
+    },
+    {
+      "path": "question-images/q35.png",
+      "sha256": "a8579f51b9c45753bd936736d27e8df670479d3e44feeb29d14f6a4fd7a9d578"
+    }
+  ],
+  "deltaAcceptance": {
+    "imagesVisuallyRechecked": [
+      16,
+      22,
+      23,
+      24,
+      25,
+      28,
+      29,
+      33,
+      34,
+      35
+    ],
+    "reasonsRechecked": [
+      "q4-choice5",
+      "q18-choice2",
+      "q18-choice4"
+    ],
+    "result": "欠落した設問文・選択肢末尾を確認、隣問断片を除去。誤読した動物名と科の分類体系の対応を訂正。全4指摘解消。",
+    "evidence": [
+      "work/review-fixed-0.png",
+      "work/review-fixed-5.png"
+    ],
+    "unchangedCoverage": "初回全35問175理由と35画像の確認を再利用。全件の重複再監査なし。"
+  },
+  "semanticHashDefinition": {
+    "algorithm": "SHA-256",
+    "encoding": "UTF-8 without BOM",
+    "serialization": "Python json.dumps(projected_questions, ensure_ascii=False, sort_keys=True, separators=(\",\",\":\"))",
+    "orderedArray": "questions in existing order 1..35; choices order retained",
+    "projectionKeys": [
+      "id",
+      "number",
+      "title",
+      "selectionRule",
+      "correctChoice",
+      "choices",
+      "explanation",
+      "sourceQuestion",
+      "questionRepresentation",
+      "timeBasis",
+      "questionImage",
+      "sourcePage",
+      "sourceUrl",
+      "figureRequired",
+      "figureNote"
+    ],
+    "nestedValues": "retain complete values, including all choices fields and full 175 reasons",
+    "excludes": "outer metadata and question-level metadata added after initial acceptance",
+    "observedMatchAfterMetadataOnlyChange": true
+  },
+  "finalFileBinding": {
+    "path": "QUESTIONS.json",
+    "sha256": "524cf04e555032a9c80b427c6fb05dd0f7dd3cf9bfae9f9fdc573f0aa9a37556",
+    "status": "PASS_PRIVATE_CONTENT",
+    "boundAtUtc": "2026-11-01T09:56:22.288294+00:00",
+    "contentReReview": false,
+    "method": "Previously accepted semantic projection hash and all 35 accepted image file hashes matched; metadata-only additions retained. Final status changed by independent reviewer."
+  },
+  "adoptionConditions": [
+    "Only the actual 2025 official Agriculture section questions III-1 through III-35 are accepted.",
+    "The official question images, including complete choices, are the authoritative question representation.",
+    "choices.label is an editor summary only and must not substitute for or be adopted as original question text. Using these summaries as the presented original questions is HOLD.",
+    "learnerChoiceLabels must identify numbers 1-5 while the original question image remains visible.",
+    "No newly invented, analogous, or sample questions are accepted; no claim of shared adoption or runtime acceptance."
+  ]
+}

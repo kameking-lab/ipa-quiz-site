@@ -1,0 +1,49 @@
+{
+  "atJST": "2026-11-01T19:16:23.932809+09:00",
+  "scope": "qual-new:17 技術士第一次・環境",
+  "owner": "01a1965a-27f6-7561-9fb2-27e3a00a7c29",
+  "sharedIntegrator": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "classification": "PRIVATE_CONTENT_READY_SHARED_INTEGRATION_PENDING_PUBLICATION_HELD",
+  "privateContentComplete": true,
+  "candidate": "questions-original.json",
+  "candidateSha256": "46358388d50022344ab56818959361173a6e75d36b9e421ef35f43c0aa3cc8aa",
+  "count": {
+    "actualOriginals": 35,
+    "explanations": 35,
+    "choiceReasons": 175,
+    "sourceTables": 2,
+    "requiredFiguresMissing": 0
+  },
+  "selection": "公式最新公表の令和7年度環境専門35問。受験時の解答数25と教材母数35を区別。基礎/適性/他年度/他部門は対象外。",
+  "review": "原文親独立照合、175肢理由を2担当独立受入。公式正答35件・表・計算の機械検証。",
+  "integrationContract": {
+    "format": "既存Questionに沿うJSON配列。①②③④⑤を内部キーアイウエオへ順序対応。",
+    "proposedExamCode": "gijutsushi1-environment",
+    "session": "senmon",
+    "season": "annual",
+    "sourceTables": "originalContent.tablesを正規表示データとし、sourceTablesは監査用の重複メタデータ。Q2はquestionにも同じ表をテキスト保持。Q30はquestionに事例全文、choicesに組合せを保持。",
+    "mainActions": [
+      "新examコードを共有型・catalog・load経路へ登録する必要がある（固定入力の型に未登録）。その共有変更はmainのみ。",
+      "本候補35問だけを取り込み、metadata/独立受入hashを結び付ける。",
+      "通常学習への接続が別途許可内で行われる際に、5肢採点・表2件・長文Q30・出典の表示を確認する。今回UI/build/本番の実行証拠はない。"
+    ],
+    "runtimeCompatibility": "現行型へそのまま登録済みとは主張しない。新資格登録が必要。共通schemaを本ownerは編集しない。"
+  },
+  "notAdopt": [
+    "../questions.json",
+    "../excluded-paraphrase/questions.json",
+    "../handoff.json（旧年度入力待ち票。今回の継続で失効）"
+  ],
+  "remainingOwnerContentOperations": [],
+  "remainingSharedOperations": [
+    "mainによる内容採用・新資格の共有接続（このownerは実行しない）"
+  ],
+  "publication": "未公開。公開/本番/build/deploy/merge/publicpushを実行しない。",
+  "rights": "本人担当。追加の権利調査や承認を制作gateにしていない。",
+  "inheritedBoundaries": [
+    "Q24指定改正版URLの403取得は再送・別client迂回なし。別に公開されている公式解説を内容根拠に使用。",
+    "旧shadowアクセス拒否へ再接続なし。固定7ファイルだけで対象catalog/記事の重複を限定照合。",
+    "外部Max/Opus送信0、課金API0、共有書込0。"
+  ],
+  "supersedes": "以前の未指定年度による停止票を今回の明示委譲で解消。旧要約候補は別途非採用HOLDのまま。"
+}

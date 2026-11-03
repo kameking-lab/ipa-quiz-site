@@ -1,0 +1,423 @@
+{
+  "scope": "qual-new:7 / 令和7年度 技術士第一次試験 専門科目 資源工学 III-1〜III-35",
+  "reviewer": "/root/independent_acceptance",
+  "reviewDate": "2026-11-01",
+  "status": "accepted",
+  "acceptanceScope": "私有候補packetの原問画像・公式正答・学習用解説の内容受入。共有反映、公開、本番、UI実行、外部モデル採用の受入ではない。",
+  "questionsSha256": "c258882b5a959d318ce9493e0a137ecd5204e4bf78d063d6c41c9443ac1ba974",
+  "imageMapSha256": "adb6eb80dbc977d108ea44bfa15131ef557feced3de45f271a2d5c2ec66a485d",
+  "officialSourceHashes": {
+    "2025-resource.pdf": "50f50f25e817eeb37e81054f49b6816c091d4b1637724091390643d1115777d7",
+    "2025-answers.pdf": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311"
+  },
+  "officialAnswers": [
+    1,
+    3,
+    1,
+    2,
+    4,
+    3,
+    5,
+    1,
+    4,
+    5,
+    5,
+    3,
+    2,
+    4,
+    3,
+    1,
+    4,
+    5,
+    5,
+    2,
+    3,
+    4,
+    4,
+    3,
+    2,
+    2,
+    3,
+    2,
+    5,
+    1,
+    3,
+    5,
+    1,
+    4,
+    4
+  ],
+  "coverage": {
+    "questions": 35,
+    "choicesReviewed": 175,
+    "questionExplanationsReviewed": 35,
+    "cropImagesVisuallyReviewed": 35,
+    "officialAnswerPage": 10,
+    "fullSourcePagesReviewed": 15
+  },
+  "checks": {
+    "officialKeys": "35問の正答を公式正答PDF p10から独立対照し一致。",
+    "originalWording": "問題本文と肢は公式PDF切出画像。要約stem/choice.textが採用JSONに存在しない。原問に含まれる誤記・不整合も改変せず、解説側で区別。",
+    "imageCompleteness": "q01〜q35を個別視認。各問の番号・設問冒頭から⑤の末尾まで完整。Q9/Q32組合せ表、Q17全式、Q29数式・数表も欠落なし。隣問の本文混入なし。",
+    "reasonReview": "全175理由・35解説を読み、公式画像と照合。指摘事項の最終訂正を再確認。",
+    "calculations": {
+      "7": "1000000 t x 24.2 GJ/t x 0.0242 tC/GJ x (44/12) = 2147346.6667 tCO2 = 214.7347 万t; option 5",
+      "12": "Q=0.75 x (10 x 10000) x (25/1000)/3600 = 0.5208333 m3/s; option 3",
+      "17": "Ff=Cc+(F-C)t; C/F=(f-t)/(c-t); recovery=Cc/(Ff)=c(f-t)/[f(c-t)]; option 4",
+      "29": "p_i/z_i=28/0.80=35; p/z=20.3/0.70=29; G=40e6/(1-29/35)=233.3333e6 m3; middle point gives same result; option 5"
+    }
+  },
+  "resolvedFindings": [
+    {
+      "question": 1,
+      "resolution": "原問①の2000年86億t/2022年46億tの逆転を正しく指摘。正しい規模46億t/86億t。旧転記38・別統計系列88の断定を解消。"
+    },
+    {
+      "question": 2,
+      "resolution": "原料炭第2位の訂正先をカナダからインドネシアへ訂正。DBJ掲載の財務省貿易統計2022年度表で独立確認。"
+    },
+    {
+      "question": 17,
+      "resolution": "⑤分母の原典大文字Cと小文字cの区別を注記し、③の代入形との無条件な同一視を解消。公式④維持。"
+    },
+    {
+      "question": 18,
+      "resolution": "⑤の重液選別とジグ選別の両側の原理取り違えを説明。"
+    },
+    {
+      "question": 19,
+      "resolution": "④原問の乾式分級に対応する理由へ訂正。①広義の分類/狭義の粒度分級の注意を維持。"
+    },
+    {
+      "question": 28,
+      "resolution": "③47%/36%/おおむね2割という原典・出典の算術不整合を明記。約30.6%・11ポイントと区別し、公式正答②を維持。"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "question": 14,
+      "url": "https://www.jogmec.go.jp/news/release/release_00786.html",
+      "finding": "2017-09-26 announcement: Okinawa, about 1600m, continuous lifting pilot succeeded. Corrects Hawaii/5000m."
+    },
+    {
+      "question": 28,
+      "url": "https://www.env.go.jp/policy/hakusyo/r06/html/hj24020301.html",
+      "finding": "2021 top three industrial waste sectors: utilities, agriculture/forestry, construction; about 70%. Corrects mining."
+    },
+    {
+      "question": 23,
+      "url": "https://www.jcassoc.or.jp/cement/1jpn/jd1.html",
+      "finding": "Cement Association identifies eco-cement as actual cement category. Ordinary eco-cement has properties similar to ordinary Portland cement."
+    },
+    {
+      "question": 22,
+      "url": "https://www.pwmi.or.jp/flow_pdf/flow2023.pdf",
+      "finding": "2023 flow, published December2024, PDF p5 tables: domestic resin-product consumption1980=552万t,2023=843万t; material recycling2000=139,2010=217,2023=171万t; thermal2023=491万t. PDF p2: municipal387,industrial382万t."
+    },
+    {
+      "question": 27,
+      "url": "https://www.env.go.jp/policy/hakusyo/r06/html/hj24020304.html",
+      "finding": "Search extraction identifies gold about340kg versus silver about3700kg. Full find extraction did not expose passage; this is a locator/support lead, not a full-body verification claim."
+    },
+    {
+      "question": 1,
+      "url": "https://coal.jogmec.go.jp/content/300388944.pdf",
+      "finding": "2000年46億3830万t、2022年86億930万tという規模を独立資料で確認。"
+    },
+    {
+      "question": 2,
+      "url": "https://www.dbj.jp/investigate/dataplatform/data/pdf/gdata.pdf",
+      "finding": "印刷p175/PDF index174の財務省貿易統計表: 2022年度原料炭 豪州34311、インドネシア13783、米国6370、カナダ5401千t。"
+    }
+  ],
+  "caveats": [
+    "受入は画像原文を問題本体として表示する前提。title/imageAlt等を原問の代用にしない。",
+    "Q17⑤の原典表記、Q19①の用語の幅、Q28③の算術不整合、Q30⑤のR/P解釈は注記付きで保持。",
+    "175肢すべてに個別の外部一次資料を追加取得したという意味ではない。原典・公式キー照合と内容レビューを全件実施し、数値・争点を追加検証。",
+    "親のアクセス拒否2 URLへの再取得・別経路取得は行っていない。",
+    "この受入票は記録されたquestions/image-map/原典ハッシュの版に限る。以後の本文・画像変更は再確認が必要。"
+  ],
+  "unresolvedBlockingFindings": [],
+  "perQuestion": [
+    {
+      "number": 1,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "bbec408c165a173c062947ba9643b92d1245cf862e85099dfce71a91e5e70fd5"
+    },
+    {
+      "number": 2,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "5f700f1d6136464c0a648ca53c98a0ca99631a3a625515ec78231d55ebf68981"
+    },
+    {
+      "number": 3,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "52d3c91024da0b5a713814060b728922de18919d5b5e2d10cc2781ef4bbd2e7f"
+    },
+    {
+      "number": 4,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "77827043738f9f803512c36c464b5363c20682ec1b0d8722ff5ed33d1484ed80"
+    },
+    {
+      "number": 5,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "b0b34b7d74c44959b46b14c8de23b4d017fa44b154809ef5a6ef29051ebfadcb"
+    },
+    {
+      "number": 6,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "0065ead8a0db2586178000d0c647b9e055dac7ccc2f2c94dbbe5a27c789ab48b"
+    },
+    {
+      "number": 7,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "9b1bb7f3522715e1b0b444e9ccfc0354dd50e314acdff5c060d75a9ea6086edf"
+    },
+    {
+      "number": 8,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "7323225b92ac8ede3411491034c4582c1cbcd7d1bced7686523d3a17dd32c0e4"
+    },
+    {
+      "number": 9,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "976dae5432f67f5fdfba2782416f497a200bbf2341f21dd58dc864b24b9d6215"
+    },
+    {
+      "number": 10,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "8da6b48724586f5fe4352e917155ea974047af666437f73b72ba84489acdc2ad"
+    },
+    {
+      "number": 11,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "64fbfe5dbed1ccf4db54699fc1fdb21af05b6e2db61f4b6b29a7513ea7bf317e"
+    },
+    {
+      "number": 12,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "07d9d5b7527d0338636e0a3d183e418fb4d23d66aa138a526be50627b38b017d"
+    },
+    {
+      "number": 13,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "8ad53a8c1d81198314a8ed7930af2c83a8fa70cbb9512699c062b691996ec3f8"
+    },
+    {
+      "number": 14,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "ce8d0f7f9e4b0860f97bef260117270c4872437f2687bf81f412d535458fc973"
+    },
+    {
+      "number": 15,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "a015c3803194d199fe7f3f5c46f0b312950edf4c67078aef77421943c5905670"
+    },
+    {
+      "number": 16,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "7ca4e83896ff3c23532e22bfab1ddb10c385573d7e15d6984ffdace1d3f55940"
+    },
+    {
+      "number": 17,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "445f446e600c6c16aa2a722305bfe9309fc156297abaf47a4af51fbddb7d9bfd"
+    },
+    {
+      "number": 18,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "76c7fe0bc55784e3aa38a125b82dcd8a08f19c28697015f062fe778bef1ec88a"
+    },
+    {
+      "number": 19,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "55357dbdd6f5e0eafc77687b9919fbdf71a2f0ba0c90bffbf61aab01b40da537"
+    },
+    {
+      "number": 20,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "733b62743fc52295cd60a2d444ec447866250e70669a153086ab69a1ca713ebb"
+    },
+    {
+      "number": 21,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "e58b0d42df8a21381f36a0ebca8e60b2f3d35550d76db03f598e01cae1dc37b1"
+    },
+    {
+      "number": 22,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "d7b5c643f32f0d3e78a3a1956406c94c06a23f05517317f36a5ac40ed530e89e"
+    },
+    {
+      "number": 23,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "f43c77fffa541ffa1f239d26dfa9b21c20799325d0800714966e87371bac59ed"
+    },
+    {
+      "number": 24,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "f99e1633c8f6b9e5b415be2796d906b89e62ab457c495b10d9d72d8872458970"
+    },
+    {
+      "number": 25,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "2e6f6dd70447c6698ca08b5010654efd9e137d59b0d2a2f31196bc4a3b861e2d"
+    },
+    {
+      "number": 26,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "46d818f11e958179bb12c0ee0937913f1956780a694b6a471fa3bdc2ee4bf06d"
+    },
+    {
+      "number": 27,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "3452f366f385999531b76100f171175ada9c9d9f191cc6171615624cedefb753"
+    },
+    {
+      "number": 28,
+      "officialAnswer": 2,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "6d148f75a8ba715bfb23828408b09be3b749c16cfd76efaf49413491b14ab275"
+    },
+    {
+      "number": 29,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "a23c7bdb47c97bea1bb471dd1ec33ec7105701712ccf3453c9ec34ecceb3aa9f"
+    },
+    {
+      "number": 30,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "29557e0a1010c4388565b5057015ee53a0e28a134ff0124c14ba68f4924bad74"
+    },
+    {
+      "number": 31,
+      "officialAnswer": 3,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "c6e5b396c888ef20c3c12b4c16054652b484017c0f2e8bcd488ec68ca1604326"
+    },
+    {
+      "number": 32,
+      "officialAnswer": 5,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "429f57a7226aa01e89b432902df29c9004b4346d115424f8e2fb06564163355f"
+    },
+    {
+      "number": 33,
+      "officialAnswer": 1,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "6fb3f80e599a208073612d054fa817fed0ab41f8d73507f49c3af82da2f556a7"
+    },
+    {
+      "number": 34,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "610645c907f1880b1ab15077e065e53f9db75e7c32fe3db35c686dfc9f3cbb64"
+    },
+    {
+      "number": 35,
+      "officialAnswer": 4,
+      "fiveReasonsReviewed": true,
+      "imageComplete": true,
+      "status": "accepted",
+      "imageSha256": "9ae0c8d803e52df4c6c2deda5ba0941fb0c2232c24e9a7f120da8dedcc3bf175"
+    }
+  ]
+}

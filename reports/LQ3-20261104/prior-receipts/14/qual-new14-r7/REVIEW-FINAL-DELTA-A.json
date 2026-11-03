@@ -1,0 +1,154 @@
+{
+  "scopeId": "qual-new:14",
+  "reviewer": "/root/review_01_18",
+  "atJst": "2026-11-01T19:07:47.012629+09:00",
+  "reviewType": "FINAL_NECESSARY_DELTA_ACCEPTANCE",
+  "verdict": "PASS",
+  "inputPins": [
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\QUESTIONS-35.json",
+      "sha256": "1952c0d7a45d6db52f16cd055d438ab3d49b7da6ff543492036a09bcbee137d0",
+      "bytes": 140624
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\ASSET-MANIFEST.json",
+      "sha256": "45cf9372ce63ac2e53b954416c7eafc3d88ea2976b1a6957a22b56d93c2a6025",
+      "bytes": 4403
+    },
+    {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\work\\sources\\r7-information.pdf",
+      "sha256": "57f2154974ae426542b09a0a96c6f8e3b90a43096c9eced4a6a43fea6ea1339b",
+      "bytes": 662751
+    }
+  ],
+  "q10": {
+    "verdict": "PASS_CORRECTION_CLOSED",
+    "officialBits": "01110101₂＋00001100₂",
+    "arithmetic": "117+12=129",
+    "wrappedBits": "10000001",
+    "signedResult": -127,
+    "answer": "ア（公式①）不変",
+    "checkedFields": [
+      "choices.ウ",
+      "originalContent.choices.ウ",
+      "explanation",
+      "choiceExplanations.ウ"
+    ],
+    "supersedes": "REVIEW-01-18.jsonのq10訂正要は、この最終JSON版の対象フィールドについて解消。旧要旨ファイル自体は変更していない。"
+  },
+  "assets": [
+    {
+      "qNumber": 2,
+      "file": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q02.png",
+        "sha256": "9b0a989a3a410f39e7cf235eaed2cfd7fb6e083c53469a09ba7f31650b91c744",
+        "bytes": 24759
+      },
+      "sourcePage": 1,
+      "alt": "PERT図。節点1から3へA=6、1から2へB=5、2から3へd1=0、3から4へC=4、2から5へD=3、4から5へd2=0、4から6へE=2、5から6へF=1、6から7へG=7。",
+      "finalImageUrls": [
+        "/images/questions/gijutsushi1-information/2025/q02.png"
+      ],
+      "finalImageAltTexts": [
+        "PERT図。節点1から3へA=6、1から2へB=5、2から3へd1=0、3から4へC=4、2から5へD=3、4から5へd2=0、4から6へE=2、5から6へF=1、6から7へG=7。"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "qNumber": 6,
+      "file": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q06.png",
+        "sha256": "446f1d5585121a6377e2b22fc55135a8578868beef86a41004dbcc27a7d43999",
+        "bytes": 6868
+      },
+      "sourcePage": 4,
+      "alt": "二分木。根Aの左の子B・右の子C。Bの左の子D・右の子E。Cの左の子F・右の子G。D、E、F、Gは葉。",
+      "finalImageUrls": [
+        "/images/questions/gijutsushi1-information/2025/q06.png"
+      ],
+      "finalImageAltTexts": [
+        "二分木。根Aの左の子B・右の子C。Bの左の子D・右の子E。Cの左の子F・右の子G。D、E、F、Gは葉。"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "qNumber": 15,
+      "file": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q15.png",
+        "sha256": "db9f8a06565968db12632af099b42cbf146d651e80e1155d5e359e7005e81f5c",
+        "bytes": 103842
+      },
+      "sourcePage": 8,
+      "alt": "機能の個数と重み付け係数の2表。各行の順は外部入力、外部出力、外部照会、内部論理ファイル、外部インタフェースファイル。列は単純、普通、複雑。個数は[3,0,1],[0,0,1],[0,0,2],[2,1,0],[0,0,1]、重みは[1,3,5],[2,3,8],[1,2,3],[2,4,6],[2,5,10]。",
+      "finalImageUrls": [
+        "/images/questions/gijutsushi1-information/2025/q15.png"
+      ],
+      "finalImageAltTexts": [
+        "機能の個数と重み付け係数の2表。各行の順は外部入力、外部出力、外部照会、内部論理ファイル、外部インタフェースファイル。列は単純、普通、複雑。個数は[3,0,1],[0,0,1],[0,0,2],[2,1,0],[0,0,1]、重みは[1,3,5],[2,3,8],[1,2,3],[2,4,6],[2,5,10]。"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "qNumber": 24,
+      "file": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q24.png",
+        "sha256": "b01be257c3cc1479fe1654b65bf09fbbcc56c4636c519853f6d940e00b1589de",
+        "bytes": 13763
+      },
+      "sourcePage": 12,
+      "alt": "Chen記法のE-R図。長方形の組織とひし形の管理を2本の線で結ぶ。左の役割が子、右の役割が親。線に個数や全参加の指定はない。",
+      "finalImageUrls": [
+        "/images/questions/gijutsushi1-information/2025/q24.png"
+      ],
+      "finalImageAltTexts": [
+        "Chen記法のE-R図。長方形の組織とひし形の管理を2本の線で結ぶ。左の役割が子、右の役割が親。線に個数や全参加の指定はない。"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "qNumber": 31,
+      "file": {
+        "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new14-private-20261101\\outputs\\qual-new14-r7\\assets\\q31.png",
+        "sha256": "370d803ebf198ce589ddc87496675c139b7286dfb3f2cf746ce8b4a43e386caa",
+        "bytes": 106430
+      },
+      "sourcePage": 16,
+      "alt": "呼損率表。列0.001,0.005,0.01,0.05,0.1、行必要回線数1〜5。各行の呼量は[0.001,0.005,0.0101,0.0526,0.111],[0.0458,0.105,0.153,0.381,0.595],[0.194,0.349,0.455,0.899,1.27],[0.439,0.701,0.869,1.52,2.05],[0.762,1.13,1.36,2.22,2.88]アーラン。",
+      "finalImageUrls": [
+        "/images/questions/gijutsushi1-information/2025/q31.png"
+      ],
+      "finalImageAltTexts": [
+        "呼損率表。列0.001,0.005,0.01,0.05,0.1、行必要回線数1〜5。各行の呼量は[0.001,0.005,0.0101,0.0526,0.111],[0.0458,0.105,0.153,0.381,0.595],[0.194,0.349,0.455,0.899,1.27],[0.439,0.701,0.869,1.52,2.05],[0.762,1.13,1.36,2.22,2.88]アーラン。"
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "visualChecks": {
+    "q02": "9枝、7節点、A〜G/d1/d2、各時間、矢印方向を原本page1と照合。切れなし。",
+    "q06": "A〜Gのラベルと全6枝・左右位置を原本page4と照合。切れなし。",
+    "q15": "2表の見出し、5行名、3列名、全30数値セルを原本page8と照合。切れなし。",
+    "q24": "組織/管理、長方形/ひし形、左右の親/子と2本の関係線を原本page12と照合。切れなし。",
+    "q31": "列5見出し、行1〜5、全25数値セルを原本page16と照合。切れなし。"
+  },
+  "unchangedBindings": {
+    "transcription01to18": "original-01-10.jsonとoriginal-11-18.jsonはREVIEW-TRANSCRIPTION-01-18.jsonの固定ハッシュのまま。最終JSONのoriginalContent.body/choicesと18問とも一致。",
+    "explanations01to18": "work/content-01-10.jsonとcontent-11-18.jsonは旧固定ハッシュのまま。最終JSONへの差分はq10のみ。既受入解説の全面再QAなし。",
+    "explanations27to34": "work/content-27-34.jsonはREVIEW-27-34.jsonの固定ハッシュのまま。最終JSONのexplanation/choiceExplanationsと全8問一致。再QAなし。"
+  },
+  "recordPins": {
+    "2": "b61b41ae0823f8fac864e3d10e56b1e600933dd4561d7107031ea0be60c51198",
+    "6": "b11bb31f6ed0308ca45cdda5a3c0eba3aeaf12b84c988bff8a52a79bf05929d7",
+    "10": "4703718d686cd5ade14647577b0df0282900b4b54543f49658cd3afb906b2f24",
+    "15": "37991a74e5c414f614e93796686ca21c01ef865d721c3ebbde2ccf588d9e9d58",
+    "24": "ff3d851823cb25ddb105d14a1785a43dcd52f56e6547e6150924ea232ab7428f",
+    "31": "f4f9491ea99a62e919029a6688e35b9c75d312069f8e66d67728b5e3aae11b78"
+  },
+  "recordPinAlgorithm": "UTF-8 JSON, ensure_ascii=False, sort_keys=True, separators=(comma,colon)",
+  "blockingFindings": [],
+  "limits": [
+    "画像URLは採用予定パスとローカル資産の対応受入。実サーバ配信/画面表示/公開は確認していない。",
+    "q25/q26の図資産は担当外でこの票に含まない。",
+    "要旨の採用可を認める票ではない。原文レイヤーと独自解説の差分のみ。"
+  ],
+  "editsMade": "REVIEW-FINAL-DELTA-A.jsonのみ。問題本文・図資産は未変更。"
+}

@@ -1,0 +1,759 @@
+{
+  "reviewer": "/root/independent_acceptance",
+  "reviewedAt": "2026-11-01T18:58:19.497306+09:00",
+  "status": "ACCEPTED_PRIVATE_CONTENT_PACKET",
+  "scope": "令和7年度 航空・宇宙部門 専門科目全35問の原紙対応、正答、極性、解説、全175肢理由",
+  "reviewedQuestionsSha256": "c7d7a7c1d63f187db407c2bf1fd2855ea9384b96ff170f6f6809c49ba70fb14d",
+  "counts": {
+    "questions": 35,
+    "choiceReasons": 175,
+    "officialPages": 17
+  },
+  "method": [
+    "原紙と全選択肢・全35問解説・全175肢理由を独立読解。最終候補では指摘箇所と構造差分を再確認。",
+    "公式正答PDFの航空・宇宙欄（5頁）と全35問を照合。",
+    "全17画像は公式PDFからフルページ再描画し画素単位で一致。元ページ画像ともバイト一致。",
+    "計算は独立計算し、紛らわしい論点は一次資料を参照。"
+  ],
+  "resolvedFindings": [
+    {
+      "question": 3,
+      "resolution": "公式正答5へ修正、解説冒頭も5へ一致。"
+    },
+    {
+      "question": 25,
+      "resolution": "原肢の「急速に逃げる」を誤り箇所とし、対称な拡散場と輸送速度を区別。"
+    },
+    {
+      "scope": "original representation",
+      "resolution": "全頁正本に統一。question/choicesを除去しinstruction/answerButtonsへ分離、対象問番号明示。欠落cropは不採用。"
+    }
+  ],
+  "calculations": {
+    "4": "closed cylinder axial pr/(2t), hoop pr/t; choice2",
+    "16": "0.5AU/c=250s,2.5AU/c=1250s; approximately4,20min choice3; one-way",
+    "17": "r=p/(1+e cos nu), dA/dt=h/2 for specific angular momentum, constant, P=2pi*a^(3/2)/sqrt(mu);choice4",
+    "29": "Pr proportional G(theta)^2/r^4; r=h/sin(theta), G proportional csc(theta)^2;choice4"
+  },
+  "primaryEvidence": [
+    {
+      "q": 2,
+      "note": "幾何MACの積分式自体を否定しない。厳密な力ベクトル等価性は空力分布にも依存し、幾何のみから正確に求まるという断定に留保。",
+      "url": "https://ntrs.nasa.gov/api/citations/19930091829/downloads/19930091829.pdf"
+    },
+    {
+      "q": 10,
+      "note": "最も不適切を選ぶ。公式1。小型HF120の一体削出しチタンファン・遠心高圧圧縮機は製造者資料で裏付け。",
+      "url": "https://www.honda.co.jp/aeroengine/spirit/technology.html"
+    },
+    {
+      "q": 12,
+      "note": "最も不適切を選ぶ。公式2。環状燃焼器の容積が大きくなるという一般化を避け、同流量では空間有効利用でコンパクト化する。",
+      "url": "https://www.mlit.go.jp/common/001211011.pdf"
+    },
+    {
+      "q": 18,
+      "note": "残留加速度は環境で変化。ISSの代表値をJAXAは10^-4～10^-6 Gと掲示。10^-9 G固定とする原肢1を退けるが普遍的単一値も置かない。",
+      "url": "https://iss.jaxa.jp/en/kiboexp/seu/means/"
+    },
+    {
+      "q": 23,
+      "note": "開頭前は加熱されたフェアリング内面からの輻射、開頭後は希薄気体の自由分子流加熱等。プルームを一般的打上げ熱環境とする肢4の説明を訂正。",
+      "url": "https://sma.jaxa.jp/TechDoc/Docs/JAXA-JERG-2-310_N3.pdf",
+      "locator": "5.1.3"
+    },
+    {
+      "q": 26,
+      "note": "ワッフルは外板一体の軸周方向リブ補強殻。芯材を表板で挟むサンドイッチとは別。",
+      "url": "https://www.jstage.jst.go.jp/article/jjsass1953/11/114/11_114_205/_pdf/-char/ja",
+      "locator": "誌面213"
+    },
+    {
+      "q": 32,
+      "note": "左側設置でやや高い場合、操縦席から左→右に白白白赤。",
+      "url": "https://www.faa.gov/documentLibrary/media/Order/8200_1D_USSFIM_%2804_15_15%29.pdf",
+      "locator": "Figure7-9"
+    },
+    {
+      "q": 34,
+      "note": "送受信所独立の理由は混変調・相互変調等の混信防止。空港内という設置場所は誤りではない。",
+      "author": "運輸省航空局 管制保安部無線課規格第二係長 加藤敏",
+      "title": "航空無線施設の現状と将来",
+      "locator": "Airport Review 1984年51号 p44",
+      "url": "https://archiveservier-airportreview-s3.s3.ap-northeast-1.amazonaws.com/target/target2/1984%E5%B9%B451%E5%8F%B7/1984%E5%B9%B4_051%E5%8F%B7_%E3%80%8C%E8%88%AA%E7%A9%BA%E4%BF%9D%E5%AE%89%E7%84%A1%E7%B7%9A%E6%96%BD%E8%A8%AD%E3%81%AE%E7%8F%BE%E7%8A%B6%E3%81%A8%E5%B0%86%E6%9D%A5%E3%80%8D.pdf"
+    }
+  ],
+  "questions": [
+    {
+      "question": 1,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 1,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 2,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 1,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 3,
+      "officialAnswer": 5,
+      "selection": "不適切",
+      "officialPage": 2,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 4,
+      "officialAnswer": 2,
+      "selection": "適切",
+      "officialPage": 2,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 5,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 3,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 6,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 3,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 7,
+      "officialAnswer": 2,
+      "selection": "不適切",
+      "officialPage": 4,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 8,
+      "officialAnswer": 3,
+      "selection": "不適切",
+      "officialPage": 4,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 9,
+      "officialAnswer": 4,
+      "selection": "不適切",
+      "officialPage": 4,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 10,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 5,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 11,
+      "officialAnswer": 5,
+      "selection": "不適切",
+      "officialPage": 5,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 12,
+      "officialAnswer": 2,
+      "selection": "不適切",
+      "officialPage": 6,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 13,
+      "officialAnswer": 4,
+      "selection": "不適切",
+      "officialPage": 6,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 14,
+      "officialAnswer": 5,
+      "selection": "適切",
+      "officialPage": 7,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 15,
+      "officialAnswer": 3,
+      "selection": "適切",
+      "officialPage": 7,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 16,
+      "officialAnswer": 3,
+      "selection": "適切",
+      "officialPage": 8,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 17,
+      "officialAnswer": 4,
+      "selection": "適切",
+      "officialPage": 9,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": true
+    },
+    {
+      "question": 18,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 10,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 19,
+      "officialAnswer": 5,
+      "selection": "不適切",
+      "officialPage": 10,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 20,
+      "officialAnswer": 2,
+      "selection": "不適切",
+      "officialPage": 11,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 21,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 11,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 22,
+      "officialAnswer": 3,
+      "selection": "不適切",
+      "officialPage": 12,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 23,
+      "officialAnswer": 4,
+      "selection": "不適切",
+      "officialPage": 12,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 24,
+      "officialAnswer": 3,
+      "selection": "不適切",
+      "officialPage": 13,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 25,
+      "officialAnswer": 3,
+      "selection": "不適切",
+      "officialPage": 13,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 26,
+      "officialAnswer": 2,
+      "selection": "適切",
+      "officialPage": 13,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 27,
+      "officialAnswer": 5,
+      "selection": "適切",
+      "officialPage": 14,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 28,
+      "officialAnswer": 4,
+      "selection": "適切",
+      "officialPage": 14,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 29,
+      "officialAnswer": 4,
+      "selection": "適切",
+      "officialPage": 15,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": true
+    },
+    {
+      "question": 30,
+      "officialAnswer": 5,
+      "selection": "不適切",
+      "officialPage": 15,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 31,
+      "officialAnswer": 1,
+      "selection": "不適切",
+      "officialPage": 16,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 32,
+      "officialAnswer": 4,
+      "selection": "適切",
+      "officialPage": 16,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": true
+    },
+    {
+      "question": 33,
+      "officialAnswer": 4,
+      "selection": "不適切",
+      "officialPage": 16,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 34,
+      "officialAnswer": 5,
+      "selection": "不適切",
+      "officialPage": 17,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    },
+    {
+      "question": 35,
+      "officialAnswer": 3,
+      "selection": "不適切",
+      "officialPage": 17,
+      "originalTextAndFiveOptions": "PASS: official full page",
+      "explanation": "PASS",
+      "choiceReasonsReviewed": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "requiredFigurePreserved": false
+    }
+  ],
+  "pageAssets": [
+    {
+      "page": 1,
+      "sha256": "ccfb10f74dd6b980b3bbc69078d6d6fdee5d7c24a0afcecf008bb2cad28cddc9",
+      "renderScale": 1.4,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 2,
+      "sha256": "96b014d3a39e4e69839cc1ea011754dc7bed3764af23cf96d3d7f5b6de6eea99",
+      "renderScale": 1.4,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 3,
+      "sha256": "77c2511e9751a9ce8fcddb8e1380ca66c8b5e452c342bb3b62977871f433fef4",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 4,
+      "sha256": "0419435bf8918cbaabe825283b6d9b7a2587d1ff4fa0241c0c4075eddcc33914",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 5,
+      "sha256": "d23491aca0120eae0a94e7bf00925554db85d6bf4be59c4af587d12958f7a83d",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 6,
+      "sha256": "ff10e8e074679443decebca7d4469cb35f1de5ce5374d3538b452f369160b57c",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 7,
+      "sha256": "c0da7367862f7040e6f58fc82f447043949b7e4a73942d12c6b67c1ec5f5e7fc",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 8,
+      "sha256": "655a87c35a4f9faaba1789099b4055b3c9143057791b6d421da1932d94e417f6",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 9,
+      "sha256": "206e85c68da102f7706686427b8d4a6fcc22a128f2b939c55864098a978a8d8d",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 10,
+      "sha256": "25484900b63f4b271520717cff1f2eba6fe2288c51ae98a5cf4ebcbf43e46f0d",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 11,
+      "sha256": "c1c3f31b52f4dd0aa325b24a854450be97478f42381e9b641433e5ff7006019d",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 12,
+      "sha256": "45da100707337b6d5affb5b030df8da82cd76927b65b943be96423a096829775",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 13,
+      "sha256": "8e3525dd36175957bc5354ecd664ee359c90c6a5505424051de8cda8014253e7",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 14,
+      "sha256": "fa9ad7775fe7249f64496bcb29eb8f6d89f245a5120e4e71a8ee1bf1054488f2",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 15,
+      "sha256": "5578ad4749b0afc751aaabc987ca1f704a9d47f83ebbf1581bcf5a1e96bb8365",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 16,
+      "sha256": "daa8c59c3e0396d91f95cddb775dfb8c1b71eeb765888024b9225fdeb8b46fd3",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    },
+    {
+      "page": 17,
+      "sha256": "1b1c93b8289080f692156bdb6ea9dd5e3fb3aaa4de9b61cbb27a8198095276b7",
+      "renderScale": 1.5,
+      "officialPdfFullPageRasterExactMatch": true
+    }
+  ],
+  "unresolvedContentFindings": [],
+  "limitations": [
+    "私有教材データのみの受入。サイト実装・操作画面・ビルド・公開・共有repo統合は対象外。",
+    "原問は画像方式で原文テキスト転記未提供。同頁に別問が含まれるため対象番号を明示して使用する。",
+    "旧cropは不採用。欠落検出後に全頁へ差替えたため、旧crop全35枚を受入済みとはしない。",
+    "本担当による独立レビューであり、外部有償レビューや別モデル名での検査を主張しない。"
+  ]
+}

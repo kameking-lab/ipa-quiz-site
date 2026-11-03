@@ -1,0 +1,55 @@
+{
+  "scope": "qual-new:11",
+  "qualification": "技術士第一次・森林",
+  "targetSite": "過去問AI",
+  "owner": "01a19658-a4bd-7d53-95b2-5f6aeab70275",
+  "main": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "status": "PRIVATE_CONTENT_COMPLETE_READY_FOR_MAIN_INTEGRATION",
+  "createdAtUtc": "2026-11-01T18:42:37.279688+00:00",
+  "clientDate": "2026-11-02",
+  "counts": {
+    "realPastQuestions": 70,
+    "years": [
+      2025,
+      2024
+    ],
+    "questionsPerYear": 35,
+    "choiceReasons": 350,
+    "originalPageImages": 37,
+    "officialPdfFiles": 4,
+    "inventedQuestions": 0,
+    "unresolvedFindings": 0
+  },
+  "acceptance": {
+    "content2025": "PASS",
+    "content2024": "PASS",
+    "privatePacketIntegration": "PASS",
+    "pixelComparison": "37/37原紙PDFレンダーと同一",
+    "reasonTransfer": "350/350受入済み原稿と一致",
+    "officialAnswerKeys": "70/70公式正答表より取得",
+    "sharedRuntime": "NOT_RUN"
+  },
+  "entryFiles": [
+    "packet/data/forest-2025.json",
+    "packet/data/forest-2024.json"
+  ],
+  "integrationInstructions": "packet/INTEGRATION.json",
+  "originalFormat": "原紙ページ画像を正本とする。全問題文・選択肢・式を保持。本文文字起こし未実施。",
+  "sharedAdoption": 0,
+  "published": 0,
+  "externalModelApi": {
+    "sends": 0,
+    "cost": 0,
+    "decision": "直接執筆と必要独立査読で完成。API利用の追加利点なし。"
+  },
+  "firstCompletedUnit": "FIRST-COMPLETED-UNIT.json",
+  "supersedes": [
+    "HANDOFF.jsonの年度入力待ち状態",
+    "MANIFEST.jsonの旧成果一覧"
+  ],
+  "preservedRestrictions": [
+    "work/ocr.ps1のAuthorizationManager拒否。再送・回避なし",
+    "共有編集・本番操作・公開・build・deploy・preview・merge・push・DB・鍵・認証・契約・設定変更なし"
+  ],
+  "remainingMainWork": "登録先group/catalogおよびengineer.or.jp公式URL対応、画像・解説アダプターと実装後UI結合受入。私有内容制作に未完なし。"
+}

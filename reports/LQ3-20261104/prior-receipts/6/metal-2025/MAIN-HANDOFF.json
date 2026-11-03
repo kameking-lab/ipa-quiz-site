@@ -1,0 +1,35 @@
+{
+  "atUtc": "2026-11-01T09:42:37.108812+00:00",
+  "scope": "qual-new:6 技術士第一次・金属",
+  "target": "2025 専門科目 金属35原問・175全肢理由・必須図5問・36原問画像",
+  "status": "PRIVATE_CONTENT_PACKET_READY_FOR_MAIN_REVIEW",
+  "authoritativeContent": "questions.json",
+  "applicationShapeCandidate": "2025-annual.candidate.json",
+  "independentReceipt": "INDEPENDENT-REVIEW.json",
+  "independentReceiptPresent": true,
+  "mainOnly": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "suggestedNewFiles": [
+    "data/questions/gijutsushi1-metal/2025-annual.json",
+    "public/images/questions/gijutsushi1-metal/2025/q01-1.png〜q35-1.png（q05のみ2分割）"
+  ],
+  "mapping": "candidateは既存Question形に合わせた参考データ。session=senmon、season=annual、公式①〜⑤を内部ア〜オへ一対一対応。画像を先に示し、選択ボタンには公式番号を残す。画像に解答は含まない。",
+  "integrationRequired": [
+    "mainがExamCodeにgijutsushi1-metalを登録し、資格カタログ・出題プール・年度フィルタへ接続する。共有schema等は本owner未変更。",
+    "mainが画像を指定配置へ移し、35問すべての表示・公式番号と内部キー・採点・全肢理由が対応することを確認する。Q5は2画像を順に表示する。",
+    "candidateのneedsReview=trueは未統合で出題プールへ入れないため。独立受入の固定hashとの同一性と統合受入後、mainだけが解除判断する。"
+  ],
+  "limits": [
+    "画像原問方式。スクリーンリーダー向け原問全文テキストは含まない。これは今回の教材画像方式の限界として明示し、アクセシブルな全文転記済みとは主張しない。",
+    "現runtimeとの同一性・main採用・通常学習UI・履歴保存・公開は未実施。",
+    "権利調査は本人担当。IPEJ-attributedは既存データ形式上の出典分類であり、新たな法的許諾判断ではない。"
+  ],
+  "notGates": [
+    "年度未指定",
+    "未指示のOpus必須",
+    "既存ゼロの完全証明",
+    "本人担当の権利調査"
+  ],
+  "publication": "HELD",
+  "sharedFilesChanged": [],
+  "previousScopeReceipt": "../QUAL-NEW6-SCOPE-AND-HANDOFF.jsonは旧判断。年度未指定による停止を撤回し、本packetが現在の対象・進捗を置き換える。"
+}

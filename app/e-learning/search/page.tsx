@@ -20,7 +20,7 @@ export default async function SafetySearchPage({ searchParams }: { searchParams:
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q.trim().slice(0,100) : "";
   const healthSubjects = new Set(["労働衛生一般", "労働衛生関係法令", "健康管理", "労働衛生工学"]);
-  const family = (group: string, subject: string) => group === "lckohyo" ? "免許試験" : group === "emkohyo" ? "作業環境測定士" : healthSubjects.has(subject) ? "労働衛生コンサルタント" : "労働安全コンサルタント";
+  const family = (group: string, subject: string) => group === "pe-first" ? "技術士第一次試験" : group === "survey-assistant" ? "測量士補試験" : group === "lckohyo" ? "免許試験" : group === "emkohyo" ? "作業環境測定士" : healthSubjects.has(subject) ? "労働衛生コンサルタント" : "労働安全コンサルタント";
   const subjects = [...new Map(EXAM_CATALOG.map(p => [`${p.group}:${p.subject}`, { value: `${p.group}:${p.subject}`, label: p.group === "lckohyo" ? p.subject : `${family(p.group,p.subject)}｜${p.subject}` }])).values()];
   const subject = subjects.some(s => s.value === params.subject) ? params.subject! : "";
   const words = q.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);

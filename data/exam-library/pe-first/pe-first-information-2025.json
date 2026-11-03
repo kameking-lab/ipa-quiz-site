@@ -1,0 +1,3058 @@
+[
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q1",
+    "number": 1,
+    "text": "次の文字列のうち，正規表現（a＊（ab）＊｜c）＊ad＊で表すものとして，最も不適切なものはどれか。ただし，記号＊は直前の要素の0回以上の繰り返しを，記号｜は選択を表すものとする。",
+    "images": [
+      "/exam-library/pe-first-information-2025/c0ee9c8021ea2291ddec.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "式の前半で生成できる文字はa・b・cだけで、dは末尾のad*にしか現れない。③は途中のdの後にaがあるので一致しない。",
+    "presentation": {
+      "sourceHash": "d133d55fb78515257b248c21c54a3b246e2e8d908c95c622217c0e47acdbad77",
+      "prompt": "次の文字列のうち，正規表現（a＊（ab）＊｜c）＊ad＊で表すものとして，最も不適切なものはどれか。ただし，記号＊は直前の要素の0回以上の繰り返しを，記号｜は選択を表すものとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ccaaabaa"
+        },
+        {
+          "number": 2,
+          "text": "cabaacad"
+        },
+        {
+          "number": 3,
+          "text": "aabcadad"
+        },
+        {
+          "number": 4,
+          "text": "abcadddd"
+        },
+        {
+          "number": 5,
+          "text": "abcabcad"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "d133d55fb78515257b248c21c54a3b246e2e8d908c95c622217c0e47acdbad77",
+      "correctChoice": 3,
+      "summary": "式の前半で生成できる文字はa・b・cだけで、dは末尾のad*にしか現れない。③は途中のdの後にaがあるので一致しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "一致する。cc・aaab・aを前半の反復とし、最後のaを末尾のaに割り当てればよい。aaabはa*をaa、(ab)*をabとして生成できる。dの回数は0でもよい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "一致する。c・ab・aa・cを前半、adを末尾と分解できる。a*のみのブロックも許される。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "不一致なので正答。最初のdの後にaが続く点が誤りの位置。dを含む部分は末尾のad*だけなので、dが始まった後にはd以外を置けない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "一致する。ab・cを前半、addddを末尾と分解できる。d*はdを4回繰り返してよい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "一致する。ab・c・ab・cを前半、adを末尾と分解できる。前半全体も*で反復可能である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q2",
+    "number": 2,
+    "text": "以下に示すアロー・ダイアグラム（PERT図）で表されるプロジェクトを考える。このプロジェクトを最早で完了するために，作業時間を延長できない作業の系列（クリティカルパス）として，最も適切なものはどれか。ただし，図中のd1及びd2は所要時間が0のダミー作業である。",
+    "images": [
+      "/exam-library/pe-first-information-2025/e9a8b9e5cb2c2b1b8800.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "各結合点では到着時刻の最大を取る。最早時刻は節点1から順に0,5,6,10,10,12,19。所要時間19のA→C→E→Gが全体の完了を制約する。",
+    "presentation": {
+      "sourceHash": "baa96ea04b692b6160587918ff676875d47a32717efae091886f0b1e9dfeece9",
+      "prompt": "以下に示すアロー・ダイアグラム（PERT図）で表されるプロジェクトを考える。このプロジェクトを最早で完了するために，作業時間を延長できない作業の系列（クリティカルパス）として，最も適切なものはどれか。ただし，図中のd1及びd2は所要時間が0のダミー作業である。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "A→C（→d2）→F→G"
+        },
+        {
+          "number": 2,
+          "text": "A→C→E→G"
+        },
+        {
+          "number": 3,
+          "text": "B→D→F→G"
+        },
+        {
+          "number": 4,
+          "text": "B（→d1）→C→E→G"
+        },
+        {
+          "number": 5,
+          "text": "B（→d1）→C（→d2）→F→G"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/e9a8b9e5cb2c2b1b8800.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－2の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 686
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "baa96ea04b692b6160587918ff676875d47a32717efae091886f0b1e9dfeece9",
+      "correctChoice": 2,
+      "summary": "各結合点では到着時刻の最大を取る。最早時刻は節点1から順に0,5,6,10,10,12,19。所要時間19のA→C→E→Gが全体の完了を制約する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "合計は6+4+0+1+7=18。Eを通る19の経路より短く、これを全体の所要時間とするのが誤り。節点6はEの終了まで待つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "合計6+4+2+7=19で最長。A、C、E、Gの遅延はそのまま完了時刻を遅らせるため正答。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "合計5+3+1+7=16。節点5はDの終了時刻8だけでなくd2側の時刻10も待つ。短い枝の和をクリティカルパスとしない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "合計5+0+4+2+7=18。節点3はB側の時刻5よりA側の時刻6に支配される。d1を加えてもA経路を上回らない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "合計5+0+4+0+1+7=17。節点3でA、節点6でEの経路がより遅い。ダミーを通ること自体はクリティカルの条件ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q3",
+    "number": 3,
+    "text": "ディープラーニングにおける拡散モデルの説明として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/a1b8008147df6b71609c.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "拡散モデルはデータを徐々にノイズ化する過程に対応した逆過程を学習し、生成時にはノイズから段階的にデータを得る。",
+    "presentation": {
+      "sourceHash": "8d93558a20293bc6712ef10e7295ff6ce93fbdde839c23126191bcfa57575dd0",
+      "prompt": "ディープラーニングにおける拡散モデルの説明として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "教師ラベルのないデータに対して，データの復元などの人工的なタスクを設定することで，機械的に生成した教師信号を用いて教師あり学習を行う学習方法である。"
+        },
+        {
+          "number": 2,
+          "text": "系列データを順次ではなく一括して読み込み，アテンションと呼ばれる系列内のすべての要素間の関係を計算するモデルである。"
+        },
+        {
+          "number": 3,
+          "text": "データ集合の確率分布を表現する生成ネットワークと，生成ネットワークが出力した生成データが本物か偽物かを見分ける判別ネットワークとを，敵対的に競わせて学習するモデルである。"
+        },
+        {
+          "number": 4,
+          "text": "入力データに変化を加えることで，データの多様性を増大させて学習を行う方法である。"
+        },
+        {
+          "number": 5,
+          "text": "データからノイズを除去していく過程をニューラルネットワークで推定することで，ノイズからデータを生成するモデルである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "8d93558a20293bc6712ef10e7295ff6ce93fbdde839c23126191bcfa57575dd0",
+      "correctChoice": 5,
+      "summary": "拡散モデルはデータを徐々にノイズ化する過程に対応した逆過程を学習し、生成時にはノイズから段階的にデータを得る。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "人工的な教師信号で学習する点は自己教師あり学習の説明。拡散モデルを特徴付けるノイズ付加と逆向きの除去過程が示されていない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "アテンションによる系列の関係計算はTransformerの特徴。拡散モデルでも部品として利用できるが、拡散という生成の仕組みそのものの定義ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "生成器と識別器の敵対的学習はGANの特徴。拡散モデルではこの2者の競争が必須ではなく、ノイズ除去過程の学習が中心。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "これはデータ拡張。入力を変形して学習例を増やす操作と、ノイズから新しいデータを生成するモデルを区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答。学習したノイズ除去の逆過程を用いて生成する点が拡散モデルの特徴を表す。単に入力のノイズを一度だけ消す処理とは異なる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q4",
+    "number": 4,
+    "text": "次のラムダ式をβ簡約することによって得られるβ正規形として，最も適切なものはどれか。\n((λxy.xy(λxy.y)) (λxy.y) (λxy.x))",
+    "images": [
+      "/exam-library/pe-first-information-2025/5e27e6f1e64b2b083cf3.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "F=λx.λy.y、T=λx.λy.xとおく。元の式は(λx.λy.(x y)F) F T。外側を代入すると(F T)Fとなり、F T=λy.yなので最終的にF=λx.λy.yとなる。",
+    "presentation": {
+      "sourceHash": "62507cdfc671a63c5b0e86217e6c6e3fe370baf63627299a965755afdf047891",
+      "prompt": "次のラムダ式をβ簡約することによって得られるβ正規形として，最も適切なものはどれか。\n((λxy.xy(λxy.y)) (λxy.y) (λxy.x))",
+      "choices": [
+        {
+          "number": 1,
+          "text": "x"
+        },
+        {
+          "number": 2,
+          "text": "y"
+        },
+        {
+          "number": 3,
+          "text": "λxy.x"
+        },
+        {
+          "number": 4,
+          "text": "λxy.y"
+        },
+        {
+          "number": 5,
+          "text": "λxy.xy"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "62507cdfc671a63c5b0e86217e6c6e3fe370baf63627299a965755afdf047891",
+      "correctChoice": 4,
+      "summary": "F=λx.λy.y、T=λx.λy.xとおく。元の式は(λx.λy.(x y)F) F T。外側を代入すると(F T)Fとなり、F T=λy.yなので最終的にF=λx.λy.yとなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "自由変数xだけにはならない。元の式は閉じた式であり、束縛変数を外に取り出す簡約は誤り。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "F Tが恒等関数λy.yとなる中間段階で、束縛のλを落としてyだけにするのが誤り。さらにFへの適用が残っている。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "λxy.xはT、すなわち第1引数を返す関数。Fは第2引数を返すので(F T)Fの結果はTではなくF。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。外側2引数の代入で(F T)Fとなり、F T=λy.y、これをFに適用するとFが残る。Fにはβ簡約できる適用がない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "元の外側関数の一部xyだけを残すのが誤り。与えられたFとTを代入して適用を最後まで計算するとλxy.yになる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q5",
+    "number": 5,
+    "text": "計算量に関する（ア）〜（エ）の記述のうち，正しいものの組合せはどれか。\n（ア）2025年7月において，クラスNPに属するがクラスPには属さない問題が存在することが示されているが，クラスPに属するがクラスNPには属さない問題は存在しない。\n（イ）クラスNPに属する問題とは，決定性単一テープチューリングマシンにより，問題のサイズの多項式時間で解くことができない問題である。\n（ウ）クラスNPに属する問題とは，答えが与えられたとき，その答えが正しいかを，問題のサイズの多項式時間で検証できるアルゴリズムが存在する問題である。\n（エ）クラスNPに属する問題とは，非決定性チューリングマシンにより，問題のサイズの非決定性多項式時間で解くことができる問題である。",
+    "images": [
+      "/exam-library/pe-first-information-2025/5832fd867d399b027222.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "アとイは誤り、ウとエは正しい。P⊆NPであり、NPを『多項式時間では解けない問題』と定義することはできない。P≠NPが証明済みという設問中の主張も成立しない。ここでNPの検証は多項式長の証拠を用いる決定問題として理解する。",
+    "presentation": {
+      "sourceHash": "aaf41ef4d5accc6e2877e28046f137dc2919ad93aa8f0a12dba94614b617946d",
+      "prompt": "計算量に関する（ア）〜（エ）の記述のうち，正しいものの組合せはどれか。\n（ア）2025年7月において，クラスNPに属するがクラスPには属さない問題が存在することが示されているが，クラスPに属するがクラスNPには属さない問題は存在しない。\n（イ）クラスNPに属する問題とは，決定性単一テープチューリングマシンにより，問題のサイズの多項式時間で解くことができない問題である。\n（ウ）クラスNPに属する問題とは，答えが与えられたとき，その答えが正しいかを，問題のサイズの多項式時間で検証できるアルゴリズムが存在する問題である。\n（エ）クラスNPに属する問題とは，非決定性チューリングマシンにより，問題のサイズの非決定性多項式時間で解くことができる問題である。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "（ア），（イ）"
+        },
+        {
+          "number": 2,
+          "text": "（ア），（ウ）"
+        },
+        {
+          "number": 3,
+          "text": "（イ），（ウ）"
+        },
+        {
+          "number": 4,
+          "text": "（イ），（エ）"
+        },
+        {
+          "number": 5,
+          "text": "（ウ），（エ）"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "aaf41ef4d5accc6e2877e28046f137dc2919ad93aa8f0a12dba94614b617946d",
+      "correctChoice": 5,
+      "summary": "アとイは誤り、ウとエは正しい。P⊆NPであり、NPを『多項式時間では解けない問題』と定義することはできない。P≠NPが証明済みという設問中の主張も成立しない。ここでNPの検証は多項式長の証拠を用いる決定問題として理解する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "アは『NPかつ非Pの存在が証明済み』の箇所が誤り。イもPがNPに含まれることを無視している。両方とも正しい組合せには入らない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ウは検証可能性によるNPの説明として正しいが、アのP≠NPを既証明とする前半が誤り。アの後半P⊆NPだけは正しい。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ウは正しいがイが誤り。NPには決定性多項式時間で解けるPの問題も含まれ、非決定性という語を『決定性で解けない』と読み替えてはいけない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "エは非決定性計算によるNPの説明として正しいが、イの全称的な解けないという断定が誤り。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答。ウの多項式時間検証とエの非決定性多項式時間計算はNPの対応する特徴付け。ア・イの誤った断定を含まない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q6",
+    "number": 6,
+    "text": "次に示す2分木のノードを，前順（preorder），間順（inorder），後順（postorder）の3通りの方法で列挙した。\n次の（ア）〜（ウ）は，これら3通りの方法によるノードの列挙を，順不同で並べたものである。最も適切な組合せはどれか。\n（ア）ABDECFG　（イ）DBEAFCG　（ウ）DEBFGCA",
+    "images": [
+      "/exam-library/pe-first-information-2025/7c8bcf9145cc103f0658.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "前順は根→左→右、間順は左→根→右、後順は左→右→根を各部分木で再帰的に行う。根Aの位置だけでも、先頭のアが前順、中央のイが間順、末尾のウが後順と分かる。",
+    "presentation": {
+      "sourceHash": "062ff9ba3eb392e2b8a77a299289bd62a78e234f1442e37599ddeebb7c1bcb28",
+      "prompt": "次に示す2分木のノードを，前順（preorder），間順（inorder），後順（postorder）の3通りの方法で列挙した。\n次の（ア）〜（ウ）は，これら3通りの方法によるノードの列挙を，順不同で並べたものである。最も適切な組合せはどれか。\n（ア）ABDECFG　（イ）DBEAFCG　（ウ）DEBFGCA",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ア：前順　イ：間順　ウ：後順"
+        },
+        {
+          "number": 2,
+          "text": "ア：間順　イ：後順　ウ：前順"
+        },
+        {
+          "number": 3,
+          "text": "ア：間順　イ：前順　ウ：後順"
+        },
+        {
+          "number": 4,
+          "text": "ア：後順　イ：前順　ウ：間順"
+        },
+        {
+          "number": 5,
+          "text": "ア：前順　イ：後順　ウ：間順"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/7c8bcf9145cc103f0658.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－6の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 751
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "062ff9ba3eb392e2b8a77a299289bd62a78e234f1442e37599ddeebb7c1bcb28",
+      "correctChoice": 1,
+      "summary": "前順は根→左→右、間順は左→根→右、後順は左→右→根を各部分木で再帰的に行う。根Aの位置だけでも、先頭のアが前順、中央のイが間順、末尾のウが後順と分かる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。前順ABDECFG、間順DBEAFCG、後順DEBFGCAとすべて一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "アはAが先頭なので間順ではなく前順。イはAが中央なので後順ではなく間順。ウはAが末尾なので前順ではなく後順。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ウの後順は正しいがアとイが逆。間順では左部分木DBEを先に訪れるのでABDECFGにはならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ア・イ・ウの対応がすべて異なる。後順の根Aは末尾、前順のAは先頭、間順のAは左右の部分木の間になる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "アは正しいがイとウが逆。イのAは中央なので間順、ウのAは末尾なので後順である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q7",
+    "number": 7,
+    "text": "Pythonで関数fを次のように定義するとき，関数呼び出しf(1,3)の返す値として，最も適切なものはどれか。\n\ndef f(m, n):\n    if m == 0:\n        return n + 1\n    elif n == 0:\n        return f(m - 1, 1)\n    else:\n        return f(m - 1, f(m, n - 1))",
+    "images": [
+      "/exam-library/pe-first-information-2025/20c6100e99ddda521ab3.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "f(0,n)=n+1。f(1,0)=f(0,1)=2であり、f(1,n)=f(0,f(1,n−1))=f(1,n−1)+1。したがってf(1,1)=3、f(1,2)=4、f(1,3)=5。",
+    "presentation": {
+      "sourceHash": "e2d417730aeeccf7b8e4ea1bea84b23cf3b411d6ec6285877aa6f25644133d44",
+      "prompt": "Pythonで関数fを次のように定義するとき，関数呼び出しf(1,3)の返す値として，最も適切なものはどれか。\n\ndef f(m, n):\n    if m == 0:\n        return n + 1\n    elif n == 0:\n        return f(m - 1, 1)\n    else:\n        return f(m - 1, f(m, n - 1))",
+      "choices": [
+        {
+          "number": 1,
+          "text": "5"
+        },
+        {
+          "number": 2,
+          "text": "6"
+        },
+        {
+          "number": 3,
+          "text": "7"
+        },
+        {
+          "number": 4,
+          "text": "8"
+        },
+        {
+          "number": 5,
+          "text": "9"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "e2d417730aeeccf7b8e4ea1bea84b23cf3b411d6ec6285877aa6f25644133d44",
+      "correctChoice": 1,
+      "summary": "f(0,n)=n+1。f(1,0)=f(0,1)=2であり、f(1,n)=f(0,f(1,n−1))=f(1,n−1)+1。したがってf(1,1)=3、f(1,2)=4、f(1,3)=5。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。基底値2にn=3の再帰による増分1を3回加えて5になる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "6は1大きい。n=0の時点で2になっているため、n=0から3までを4回の増分として数えない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "7にはならない。外側f(0,x)はx+1だけであり、再帰のたびに2を加える関数ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "8にはならない。f(1,n)の増加は加算1で、2の累乗のような倍増ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "9にはならない。内側のfを先に評価してからf(0,値)を1度適用する。呼出しが入れ子でも増分を重複計上しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q8",
+    "number": 8,
+    "text": "組合せ回路及び順序回路の簡単化，最適化に関する記述として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/d22cee5d78da369f5c51.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "状態最小化は回路削減の基本となる。④が設問の最適化の説明に合う。ただし実装では状態符号化などにも依存し、状態数を1つ減らすたび必ずビット数や論理段数が減るという一般定理ではない。",
+    "presentation": {
+      "sourceHash": "cef38a3a0b44253d0f2327f8a6a6342a0e55645f16f88b94b1cd7d7a96660fa0",
+      "prompt": "組合せ回路及び順序回路の簡単化，最適化に関する記述として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "加法標準形の組合せ回路において，AND素子の入力数を減らしても，回路の遅延時間を小さくすることはできない。"
+        },
+        {
+          "number": 2,
+          "text": "加法標準形の組合せ回路において，NOT素子の数を減らしても，回路の規模を小さくすることはできない。"
+        },
+        {
+          "number": 3,
+          "text": "組合せ回路において，ドントケア出力がどのような値を取るものとして回路を設計しても，回路の規模を小さくすることはできない。"
+        },
+        {
+          "number": 4,
+          "text": "同期式順序回路において状態数が少なければ，状態レジスタを構成するフリップフロップの数が少なくなり，また，次状態や出力を生成する組合せ回路の段数が少なくなって，回路全体の規模が小さくなる。"
+        },
+        {
+          "number": 5,
+          "text": "同期式順序回路の状態の数を少なくする方法は，回路の状態遷移を表すミーリーグラフにおいて，すべての入力値に対して同じ出力値であるが異なる次状態を生成する状態同士の統合を繰り返すことである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "cef38a3a0b44253d0f2327f8a6a6342a0e55645f16f88b94b1cd7d7a96660fa0",
+      "correctChoice": 4,
+      "summary": "状態最小化は回路削減の基本となる。④が設問の最適化の説明に合う。ただし実装では状態符号化などにも依存し、状態数を1つ減らすたび必ずビット数や論理段数が減るという一般定理ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "『小さくできない』という否定が誤り。ファンインを抑えることはゲート実装・負荷条件により遅延低減に役立つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "NOT素子を不要にできれば素子数や配線を減らせるため、規模を小さくできないという断定が誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ドントケアは0/1のうち式を簡単化できる方を選べる。未使用入力等の自由度を利用することで論理規模を減らせる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。状態最小化によって必要な記憶素子や状態遷移論理を削減できるという説明。具体的な削減量は符号化・実装によって異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "現在の出力が同じだけでは不十分。将来の入力列に対する出力も同じになるよう、遷移先が同じ同値類に属することを含めて等価状態を判定する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q9",
+    "number": 9,
+    "text": "キャッシュメモリの書き込み方式には，ライトスルーとライトバックがある。次のうちライトバックと比較したときのライトスルーの特徴として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/84913947db6a5c4c5ca4.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "ライトスルーは更新をキャッシュと下位の記憶へ反映する。ライトバックはキャッシュを更新し、変更済みを記録して追い出し等の時点で下位へ書く。書込みバッファの一時的な待機と方式の基本的な区別を混同しない。",
+    "presentation": {
+      "sourceHash": "8c99800c353fd8192c846750a36e514a8c5f71320ff80f9391ff82ac54ba2440",
+      "prompt": "キャッシュメモリの書き込み方式には，ライトスルーとライトバックがある。次のうちライトバックと比較したときのライトスルーの特徴として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "主記憶よりもキャッシュメモリの書き込みが高速である特性を活かすことができる。"
+        },
+        {
+          "number": 2,
+          "text": "高速なキャッシュメモリにだけ書き込みを行い，主記憶にはすぐに書き込まない。"
+        },
+        {
+          "number": 3,
+          "text": "キャッシュメモリと主記憶の内容の一貫性が保たれる。"
+        },
+        {
+          "number": 4,
+          "text": "キャッシュメモリと主記憶の内容を一致させないため，ダーティビットにより制御する。"
+        },
+        {
+          "number": 5,
+          "text": "主記憶への書き込みを減らすことができるため，書き込み待ちを少なくできる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "8c99800c353fd8192c846750a36e514a8c5f71320ff80f9391ff82ac54ba2440",
+      "correctChoice": 3,
+      "summary": "ライトスルーは更新をキャッシュと下位の記憶へ反映する。ライトバックはキャッシュを更新し、変更済みを記録して追い出し等の時点で下位へ書く。書込みバッファの一時的な待機と方式の基本的な区別を混同しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "高速なキャッシュへの更新だけで主記憶への書込みを遅らせられる点はライトバック側の利点。ライトスルー固有の比較上の特徴としては③が適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "『主記憶にはすぐ書かない』はライトバックの説明。ライトスルーでは下位への更新も行う。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。更新を主記憶にも反映するため、ライトバックのように変更済みデータをキャッシュだけに長く残さない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ダーティビットで後の書戻しが必要なブロックを管理するのはライトバックの基本。わざと不一致にすることがライトスルーの目的ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "同じブロックへの複数更新をまとめて主記憶への書込み回数を減らせるのはライトバック。ライトスルーは原則として更新ごとに下位へ伝える。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q10",
+    "number": 10,
+    "text": "整数を8ビットの，2の補数表現で表しているとする。次のうち最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/dc2c377ebc44fc9b65a6.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "8ビット2の補数の範囲は−128〜127。負数化はビット反転後に1を足す。01110101₂=117と00001100₂=12の和129は最大127を超える。",
+    "presentation": {
+      "sourceHash": "b2cb5b2da9d990dbc909dd32b4fcecc8b75dbc947302debb2e3c14dab1d4d9b1",
+      "prompt": "整数を8ビットの，2の補数表現で表しているとする。次のうち最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "値を2倍にするのに，オーバーフローが起こらない限り，1ビット左シフトで実現できる。"
+        },
+        {
+          "number": 2,
+          "text": "21と−21の2の補数表現は，全ビットの0と1を交換したものである。"
+        },
+        {
+          "number": 3,
+          "text": "01110101₂＋00001100₂はオーバーフローしないで計算できる。"
+        },
+        {
+          "number": 4,
+          "text": "表現できる範囲は，−128から128までである。"
+        },
+        {
+          "number": 5,
+          "text": "最も小さい値は11111111₂である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b2cb5b2da9d990dbc909dd32b4fcecc8b75dbc947302debb2e3c14dab1d4d9b1",
+      "correctChoice": 1,
+      "summary": "8ビット2の補数の範囲は−128〜127。負数化はビット反転後に1を足す。01110101₂=117と00001100₂=12の和129は最大127を超える。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。範囲内に収まるときは、左シフトで各ビットの重みが2倍になる。オーバーフローしないという条件が重要。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "反転だけなのが誤り。21=00010101、反転は11101010=−22、そこへ1を足した11101011が−21。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "117+12=129なので範囲外。結果ビット10000001を符号付きで読むと−127となり、正の数同士の加算で符号が変わるオーバーフローが起こる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "上限128が誤り。符号込みの8ビットでは負側に0相当の余分な1値があり、−128〜127となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "11111111₂は−1。最小値−128の表現は10000000₂である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q11",
+    "number": 11,
+    "text": "信号処理に関する次の定理について，最も適切な記述はどれか。\n定理：信号の帯域の少なくとも2倍以上の周波数で標本化を行えば，離散信号値から元の連続信号を正確に復元できる。",
+    "images": [
+      "/exam-library/pe-first-information-2025/3162fe2fd4495c5383d4.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "標本化は時間方向の離散化、量子化は振幅方向の離散化。標本化周波数fsに対しfs/2を超える成分が低い周波数に折り返して見えるのがエイリアシングである。理想復元は帯域制限等の仮定を伴い、実用上は境界に余裕を設ける。",
+    "presentation": {
+      "sourceHash": "ff5c4865610ac55fce9a02a2b494676c6ac1cf3311e6441fb2a788beca81d921",
+      "prompt": "信号処理に関する次の定理について，最も適切な記述はどれか。\n定理：信号の帯域の少なくとも2倍以上の周波数で標本化を行えば，離散信号値から元の連続信号を正確に復元できる。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "標本化とは，離散信号の測定値をとびとびの値で表現することである。"
+        },
+        {
+          "number": 2,
+          "text": "アナログ信号から離散信号の測定値に変換することを量子化と呼ぶ。"
+        },
+        {
+          "number": 3,
+          "text": "この定理を満たさない標本化を行ったときに元の信号に含まれない信号が現れる現象をエイリアシング（aliasing）と呼ぶ。"
+        },
+        {
+          "number": 4,
+          "text": "この定理を満たす最大の周波数をナイキスト周波数と呼ぶ。"
+        },
+        {
+          "number": 5,
+          "text": "この定理を満たさない場合の連続信号の読みとりには，周波数を制約するため，ハイパスフィルタを使用するとよい。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ff5c4865610ac55fce9a02a2b494676c6ac1cf3311e6441fb2a788beca81d921",
+      "correctChoice": 3,
+      "summary": "標本化は時間方向の離散化、量子化は振幅方向の離散化。標本化周波数fsに対しfs/2を超える成分が低い周波数に折り返して見えるのがエイリアシングである。理想復元は帯域制限等の仮定を伴い、実用上は境界に余裕を設ける。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "測定値を離散的な振幅値にするのは量子化。標本化は時刻を離散化して信号の値を取り出す操作である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "標本化と量子化を取り違えている。一定間隔の時点で測定値を得る操作が標本化、その値を有限の段階へ丸める操作が量子化。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。標本化周波数に対して高すぎる成分が低周波数側に折り返し、別の周波数の信号として見える。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "『定理を満たす最大の周波数』という説明が不適切。ナイキスト周波数は与えた標本化周波数の半分fs/2である。信号に必要な最小標本化レート（ナイキストレート）とも区別する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ハイパスが誤り。標本化前にローパスのアンチエイリアシングフィルタで高周波成分を除く。標本化後に折返し成分だけを一般に取り除いて元に戻すことはできない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q12",
+    "number": 12,
+    "text": "次のうち，無線通信についての説明として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/6ecd51bc124670ebbb96.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "CSMA/CAは媒体が使用中かを確認し、待機やランダムバックオフ等で衝突を避ける方式で、無線LANで用いられる。QPSK、CDMA、QAM、OFDMはそれぞれ区別して覚える。",
+    "presentation": {
+      "sourceHash": "6366684c93f089ef5935241f688bb9d387ea82a8e2db6b31413975acb9af6781",
+      "prompt": "次のうち，無線通信についての説明として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "QPSKは8値の位相を用いて変調する位相変調方式である。"
+        },
+        {
+          "number": 2,
+          "text": "CDMAは異なる無線周波数に発信者を割り当てて多重化するアクセス方式である。"
+        },
+        {
+          "number": 3,
+          "text": "QAMは直交振幅変調方式であり，フェージングに強い。"
+        },
+        {
+          "number": 4,
+          "text": "OFDMは多数の高速デジタル信号を用いる二次変調方式である。"
+        },
+        {
+          "number": 5,
+          "text": "CSMA／CAは無線LANに用いられる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "6366684c93f089ef5935241f688bb9d387ea82a8e2db6b31413975acb9af6781",
+      "correctChoice": 5,
+      "summary": "CSMA/CAは媒体が使用中かを確認し、待機やランダムバックオフ等で衝突を避ける方式で、無線LANで用いられる。QPSK、CDMA、QAM、OFDMはそれぞれ区別して覚える。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "8値が誤り。QPSKは4つの位相状態で1シンボルに2ビットを表す。8位相なら8PSKである。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "異なる周波数の割当てはFDMA。CDMAは異なる符号で利用者を分離する符号分割多元接続である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "QAMが直交振幅変調なのは正しいが、振幅も情報に用いるため振幅変動を伴うフェージングの影響を受ける。『強い』という無条件の評価が不適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "高速信号を多数並べるという箇所が不適切。OFDMは高速データ列を複数の低速系列に分け、互いに直交するサブキャリアで並列伝送する。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答。無線では送信しながら衝突を直接検出しにくいため、CSMA/CAによる衝突回避を用いる。CSMA/CDとの混同を避ける。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q13",
+    "number": 13,
+    "text": "Domain-based Message Authentication Reporting and Conformance（DMARC）に関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/5fe11be6365a4ed46cf4.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "DMARCはSPFやDKIMの結果とFromドメインとの整合性を用い、失敗したメールの扱いを送信ドメインが受信側に示す仕組み。p=quarantineは隔離等の不審なメールとしての扱いを要求する。",
+    "presentation": {
+      "sourceHash": "1ea3559777dd370fd22a7deffbaa939076d53a566d295af85d1dc5109ac9ba85",
+      "prompt": "Domain-based Message Authentication Reporting and Conformance（DMARC）に関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "TLSを用いてクライアントとメールサーバ間での通信の暗号化を行うことにより，第三者からメールサーバのパスワード等の傍受を防ぐことである。"
+        },
+        {
+          "number": 2,
+          "text": "受信側に要求するポリシーを隔離（p=quarantine）に設定することにより，チェックに失敗したメールを不審なものとして処理することを求めることができる。"
+        },
+        {
+          "number": 3,
+          "text": "自ドメインのDNSサーバ上に，自ドメインの送信者がメールを外部に向けて送出する可能性のあるメールサーバのIPアドレスなどの一覧を公開しておくことである。"
+        },
+        {
+          "number": 4,
+          "text": "送信側のメールサーバで電子署名を作成して付与し，受信側のメールサーバでその電子署名を検証するという方法で送信者のドメイン名認証を行うものである。"
+        },
+        {
+          "number": 5,
+          "text": "メール送信者とメール受信者との間のようなEnd-to-Endで使用される電子署名・暗号化技術である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "1ea3559777dd370fd22a7deffbaa939076d53a566d295af85d1dc5109ac9ba85",
+      "correctChoice": 2,
+      "summary": "DMARCはSPFやDKIMの結果とFromドメインとの整合性を用い、失敗したメールの扱いを送信ドメインが受信側に示す仕組み。p=quarantineは隔離等の不審なメールとしての扱いを要求する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "これはSMTP等でTLSを使う通信路保護の説明。DMARCは通信路やパスワードを暗号化する方式ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。quarantineは認証失敗メールを迷惑メール領域へ入れる等の扱いを求める。受信側へ示す要求であって、受信側の処理を絶対に強制する機能ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "DNSで正規送信元を指定する説明はSPF。DMARCはSPF単独のIPリストではなく、認証結果・ドメイン整合性・処理ポリシーを組み合わせる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "電子署名を付け検証する説明はDKIM。DMARCはDKIM等の結果を利用する側であり、DMARC自身がその署名を生成するわけではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "End-to-Endの内容署名・暗号化はS/MIME等の役割。DMARCはメール本文の秘匿を提供しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q14",
+    "number": 14,
+    "text": "コンピュータの仮想化に関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/f25d547a5b10fc36e635.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "仮想マシンのイメージや構成を適切にバックアップしておけば、障害・災害時に別環境で復旧する手段として利用できる。CPUの割当て、ゲストOS、移行の用語を区別する。",
+    "presentation": {
+      "sourceHash": "c1fb2706140ed9863504401b253ab229e29395dbd68818a8e3f313d58d1664c2",
+      "prompt": "コンピュータの仮想化に関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "サーバを仮想システム上で稼働させる場合，その仮想システムのバックアップイメージはディザスタリカバリに活用することができる。"
+        },
+        {
+          "number": 2,
+          "text": "ホストOS方式における仮想化システムのオペレーティングシステムは，ホストOSと同じでなければならない。"
+        },
+        {
+          "number": 3,
+          "text": "仮想化用ソフトウェアによるコンピュータの仮想化では，CPUの命令をすべてエミュレーション又はシミュレーションにより処理している。"
+        },
+        {
+          "number": 4,
+          "text": "12コアで24Gバイトのメインメモリのコンピュータを用いて，2コアと2Gバイトのメインメモリを有する仮想システムは6台までしか動作させることはできない。"
+        },
+        {
+          "number": 5,
+          "text": "ライブマイグレーションとは稼働中の仮想システムを停止させることなく，仮想システムにハードウェアを増設することである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c1fb2706140ed9863504401b253ab229e29395dbd68818a8e3f313d58d1664c2",
+      "correctChoice": 1,
+      "summary": "仮想マシンのイメージや構成を適切にバックアップしておけば、障害・災害時に別環境で復旧する手段として利用できる。CPUの割当て、ゲストOS、移行の用語を区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。バックアップイメージは復旧の材料となる。ただしバックアップ時点の整合性や必要なデータの保全、復元先との互換性も考慮する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "同一OSである必要はない。ハイパーバイザが対応する範囲で、ホストと異なるOSをゲストとして動かせる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "『すべて』が誤り。CPUの仮想化支援や直接実行を利用でき、すべての命令をソフトウェアで模擬するわけではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "物理コア数を仮想CPU数の絶対上限とするのが誤り。スケジューリングによって物理CPUを共有できる。実際の台数上限は負荷・メモリ・仮想化方式等に依存する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "これはホットアド等との混同。ライブマイグレーションは稼働中の仮想マシンを停止時間を抑えて別の物理ホスト等へ移動する技術である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q15",
+    "number": 15,
+    "text": "Allan J. Albrechtによって提唱されたファンクションポイント法（FP法）において，下表のFP値はどれか。ただし，調整用係数は1.20とし，小数点第1位を切り捨てる。",
+    "images": [
+      "/exam-library/pe-first-information-2025/eac9f3ffd9ee065270a8.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "問題に示された重みを用いる。外部入力8、外部出力8、外部照会6、内部論理ファイル8、外部インタフェースファイル10で合計40。調整後は40×1.20=48で、端数はない。一般的な重みの暗記値に差し替えない。",
+    "presentation": {
+      "sourceHash": "97e71ee2a6b65833217a6bf5fab50e1ef3025ceeba759603fad8203130b8222a",
+      "prompt": "Allan J. Albrechtによって提唱されたファンクションポイント法（FP法）において，下表のFP値はどれか。ただし，調整用係数は1.20とし，小数点第1位を切り捨てる。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "40"
+        },
+        {
+          "number": 2,
+          "text": "42"
+        },
+        {
+          "number": 3,
+          "text": "44"
+        },
+        {
+          "number": 4,
+          "text": "48"
+        },
+        {
+          "number": 5,
+          "text": "50"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/eac9f3ffd9ee065270a8.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－15の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 944
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "97e71ee2a6b65833217a6bf5fab50e1ef3025ceeba759603fad8203130b8222a",
+      "correctChoice": 4,
+      "summary": "問題に示された重みを用いる。外部入力8、外部出力8、外部照会6、内部論理ファイル8、外部インタフェースファイル10で合計40。調整後は40×1.20=48で、端数はない。一般的な重みの暗記値に差し替えない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "40は未調整の合計。調整係数1.20を掛ける工程を落としている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "42は指定の加重合計40に1.20を掛けた結果ではない。個数と重みを行・列対応で積算し直すと48となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "44は40×1.10の値であり、指定された1.20に一致しない。調整係数の読み違いを避ける。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。3×1+1×5+1×8+2×3+2×2+1×4+1×10=40、40×1.20=48。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "50にはならない。小数点第1位の切捨ては計算結果48.0を50へ丸める操作ではない。結果は48のままである。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q16",
+    "number": 16,
+    "text": "ソフトウェアのテストの中で，ホワイトボックステストとして，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/e3b50ac91dc5c76afcef.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "ホワイトボックステストは内部構造を使ってテストを設計する。制御パステストはプログラムの分岐や経路を対象とする。",
+    "presentation": {
+      "sourceHash": "853fab6918b576197a75a472b4b053f1f74f984de58b19dafeb5109a6674626c",
+      "prompt": "ソフトウェアのテストの中で，ホワイトボックステストとして，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "組合せテスト"
+        },
+        {
+          "number": 2,
+          "text": "同値クラステスト"
+        },
+        {
+          "number": 3,
+          "text": "負荷テスト"
+        },
+        {
+          "number": 4,
+          "text": "制御パステスト"
+        },
+        {
+          "number": 5,
+          "text": "アドホックテスト"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "853fab6918b576197a75a472b4b053f1f74f984de58b19dafeb5109a6674626c",
+      "correctChoice": 4,
+      "summary": "ホワイトボックステストは内部構造を使ってテストを設計する。制御パステストはプログラムの分岐や経路を対象とする。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "入力条件の組合せに着目する方法であり、内部の制御構造を必須としない。ホワイトボックスの代表として選ぶべきものは④。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "入力領域を同じ振舞いが期待されるクラスに分ける仕様ベースの方法。コード内部の経路を基準とする手法ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "処理量・応答時間等を負荷の下で確かめるテスト。負荷という目的だけでは内部構造に基づくホワイトボックスとはならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。コードや制御フローから経路を定め、その経路を通す入力を用意するため、内部構造に基づくテストである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "計画・体系に厳密に従わない探索的な実施を指す。内部構造の網羅に基づく方法であるとは限らない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q17",
+    "number": 17,
+    "text": "ISO／IEC 25010:2011（JIS X 25010：2013，システム及びソフトウェア製品の品質要求及び評価（SQuaRE）―システム及びソフトウェア品質モデル）で規定されている製品の品質モデルの品質特性「性能効率性」，「使用性」，「信頼性」に対する，説明文（a）〜（e）の最も適切な組合せはどれか。\n（a）明示された時間帯で，明示された条件下に，システム，製品又は構成要素が明示された機能を実行する度合い。\n（b）明示された目標を利用者が達成するうえでの正確さ及び完全さの度合い。\n（c）明示された状況で使用するとき，明示的ニーズ及び暗黙のニーズを満足させる機能を，製品又はシステムが提供する度合い。\n（d）明示された利用状況において，有効性，効率性及び満足性をもって明示された目標を達成するために，明示された利用者が製品又はシステムを利用することができる度合い。\n（e）明記された状態（条件）で使用する資源量に関係する性能の度合い。",
+    "images": [
+      "/exam-library/pe-first-information-2025/85c89cd7c9428851e7ac.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "指定された2011年版の製品品質モデルでは、資源量と性能の関係eが性能効率性、利用者が目標を達成するため利用できる度合いdが使用性、一定条件・期間で機能を果たすaが信頼性。bは利用時の有効性、cは機能適合性に対応する。新しい版の名称へ置き換えない。",
+    "presentation": {
+      "sourceHash": "a826616aa8800a23ca2a20295ce11cab136c457983c4ba8f1df8f79a90744a40",
+      "prompt": "ISO／IEC 25010:2011（JIS X 25010：2013，システム及びソフトウェア製品の品質要求及び評価（SQuaRE）―システム及びソフトウェア品質モデル）で規定されている製品の品質モデルの品質特性「性能効率性」，「使用性」，「信頼性」に対する，説明文（a）〜（e）の最も適切な組合せはどれか。\n（a）明示された時間帯で，明示された条件下に，システム，製品又は構成要素が明示された機能を実行する度合い。\n（b）明示された目標を利用者が達成するうえでの正確さ及び完全さの度合い。\n（c）明示された状況で使用するとき，明示的ニーズ及び暗黙のニーズを満足させる機能を，製品又はシステムが提供する度合い。\n（d）明示された利用状況において，有効性，効率性及び満足性をもって明示された目標を達成するために，明示された利用者が製品又はシステムを利用することができる度合い。\n（e）明記された状態（条件）で使用する資源量に関係する性能の度合い。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "性能効率性：（e），使用性：（d），信頼性：（b）"
+        },
+        {
+          "number": 2,
+          "text": "性能効率性：（e），使用性：（c），信頼性：（a）"
+        },
+        {
+          "number": 3,
+          "text": "性能効率性：（e），使用性：（d），信頼性：（a）"
+        },
+        {
+          "number": 4,
+          "text": "性能効率性：（a），使用性：（c），信頼性：（d）"
+        },
+        {
+          "number": 5,
+          "text": "性能効率性：（a），使用性：（b），信頼性：（d）"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a826616aa8800a23ca2a20295ce11cab136c457983c4ba8f1df8f79a90744a40",
+      "correctChoice": 3,
+      "summary": "指定された2011年版の製品品質モデルでは、資源量と性能の関係eが性能効率性、利用者が目標を達成するため利用できる度合いdが使用性、一定条件・期間で機能を果たすaが信頼性。bは利用時の有効性、cは機能適合性に対応する。新しい版の名称へ置き換えない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "eとdは正しいが信頼性:bが誤り。目標の正確さと完全さは有効性を示す。信頼性は期間・条件下で機能を果たすa。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "eとaは正しいが使用性:cが誤り。cは必要な機能を提供する機能適合性。使用性は利用者・利用状況を含むd。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。性能効率性=e、使用性=d、信頼性=aで、3特性とも指定版の意味に対応する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "3箇所とも異なる。aは信頼性、cは機能適合性、dは使用性なので、正しい対応はe・d・a。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "3箇所とも異なる。aは信頼性、bは利用時の有効性、dは使用性。性能効率性には資源量への言及eが必要。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q18",
+    "number": 18,
+    "text": "大きなソフトウェアをいくつかのモジュールに分割して実装したい。次のモジュール分割の方針のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/7d15737273bd9daa7ec4.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "役割のまとまりが強い高凝集と、他モジュールへの依存が小さい低結合を目指す。内部表現を隠し、必要なインタフェースだけを公開すると変更の波及を抑えやすい。",
+    "presentation": {
+      "sourceHash": "e263f3ebafccbf9ebd8bd19bf66a764fb095d4a3e22799b9f51f52c346b9e707",
+      "prompt": "大きなソフトウェアをいくつかのモジュールに分割して実装したい。次のモジュール分割の方針のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "個々のモジュールの凝集度（cohesion）をできるだけ低くする。"
+        },
+        {
+          "number": 2,
+          "text": "参照するモジュール内部にあるデータを外部から直接読み書きできるようにする。"
+        },
+        {
+          "number": 3,
+          "text": "機能的な関連は弱いが，実行する時点が近い機能群を1つのモジュールにまとめる。"
+        },
+        {
+          "number": 4,
+          "text": "モジュール間で共通にアクセスするデータを一定の形式に編集して公開する。"
+        },
+        {
+          "number": 5,
+          "text": "モジュール間の結合度（coupling）をできるだけ低くする。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "e263f3ebafccbf9ebd8bd19bf66a764fb095d4a3e22799b9f51f52c346b9e707",
+      "correctChoice": 5,
+      "summary": "役割のまとまりが強い高凝集と、他モジュールへの依存が小さい低結合を目指す。内部表現を隠し、必要なインタフェースだけを公開すると変更の波及を抑えやすい。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "低くする対象を取り違えている。凝集度はモジュール内部の機能的まとまりなので、高い方を目指す。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "内部データを直接操作させると実装詳細への依存が増える。公開操作を介してアクセスし、内部表現を隠す方がよい。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "実行時点だけが近い時間的凝集は、共通目的を持つ機能的なまとまりより弱い。機能の関連を重視して分割する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "形式を統一しても共有データへの依存自体は残る。共通データ公開を分割の基本方針とするのでなく、必要な受渡しを明示して依存を抑える。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "正答。モジュール間の依存を減らせば、一部の変更や障害が他へ波及しにくく、独立した理解・試験・保守がしやすくなる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q19",
+    "number": 19,
+    "text": "アジャイル開発プロジェクトの初期段階で，チームメンバー全員がプロジェクトの目標や開発するシステムの目的などの共通認識を持つために作成されるものとして，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/95fa7ae473621d8e6ddd.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "インセプションデッキは、何のために作るか、何を作るか、実現方法やリスク等について関係者の認識をそろえるための資料であり、設問の初期段階での目的共有に対応する。",
+    "presentation": {
+      "sourceHash": "ca87694e13ac49255e4c103b9d9877521b0a861fb1a397a2185ea07042adf859",
+      "prompt": "アジャイル開発プロジェクトの初期段階で，チームメンバー全員がプロジェクトの目標や開発するシステムの目的などの共通認識を持つために作成されるものとして，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "スプリント・バックログ"
+        },
+        {
+          "number": 2,
+          "text": "インセプションデッキ"
+        },
+        {
+          "number": 3,
+          "text": "バリュー・ストリーム・マップ"
+        },
+        {
+          "number": 4,
+          "text": "リリースボード"
+        },
+        {
+          "number": 5,
+          "text": "ストーリーボード"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ca87694e13ac49255e4c103b9d9877521b0a861fb1a397a2185ea07042adf859",
+      "correctChoice": 2,
+      "summary": "インセプションデッキは、何のために作るか、何を作るか、実現方法やリスク等について関係者の認識をそろえるための資料であり、設問の初期段階での目的共有に対応する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "スプリント・バックログは当該スプリントで達成する目標や選択した作業・計画を扱う。プロジェクト開始時の全体的な目的の共通認識を作る資料とは役割が異なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。プロジェクトの目的・目標・範囲や重要な前提を関係者で確認し、認識のずれを明らかにするために使う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "バリュー・ストリーム・マップは価値を届けるまでの作業・情報の流れを可視化し、待ち時間や無駄を改善する手段。設問が求める初期の共通認識形成とは目的が異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "リリースボードはリリースに向けた機能や進行状況等を可視化するもの。なぜ作るかを含むプロジェクト全体の認識を初期にそろえる手段としては②が適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ストーリーボードは利用場面や操作の流れ等を連続した図で表すもの。シナリオ共有には役立つが、設問のプロジェクト全体の目的・目標共有を代表する資料は②。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q20",
+    "number": 20,
+    "text": "ソフトウェア開発におけるプロセスモデルについて，業務背景と適用するモデルの説明として，最も不適切な事例はどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/a6069f596eabdfd0055f.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "UIが未確定なら、プロトタイプを作り利用者と確認する方法が適する。コードアンドフィックスは十分な設計・検証計画を持たず作って直す進め方であり、要求確認のための体系的なモデルとして選ぶのは不適切。",
+    "presentation": {
+      "sourceHash": "c2a3637f9214793b0f1d41207e3ddb953aee558af313174c8ee3207757574d91",
+      "prompt": "ソフトウェア開発におけるプロセスモデルについて，業務背景と適用するモデルの説明として，最も不適切な事例はどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "産学合同プロジェクトへソフトウェア開発担当として参加する。研究的側面があり，成果をシミュレーションシステムとする以外，詳細な仕様，アーキテクチャ，開発体制等が明確でない。本プロジェクトには，スパイラルモデルを適用する。"
+        },
+        {
+          "number": 2,
+          "text": "システムで実現するビジネスルールは整理されているものの，具体的なユーザインタフェースについて，委託元の担当者も決めかねている。初期に確認しつつ進めたほうがよさそうだ。本プロジェクトには，コードアンドフィックスモデルを適用する。"
+        },
+        {
+          "number": 3,
+          "text": "新たにパッケージ商品を開発し，販売を計画している。基盤となるアーキテクチャを検討した後，機能については戦略的に順位付けをし，早期にリリースしていきたい。本プロジェクトには，インクリメンタルモデルを適用する。"
+        },
+        {
+          "number": 4,
+          "text": "万が一の不具合が，多数の人命に関わる制御システムを開発する。安全性確保のためには，期間とコストは十分な支援が期待できる状況である。欠陥の防止に，最大限の対策を行いたい。本プロジェクトには，フォーマルメソッドを適用する。"
+        },
+        {
+          "number": 5,
+          "text": "当社の得意とする分野の業務システムであり，取引の長い顧客から明確な要求も伝えられている。打ち合わせの結果，要求仕様の途中変更の可能性も低いと判断された。本プロジェクトには，ウォーターフォールモデルを適用する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c2a3637f9214793b0f1d41207e3ddb953aee558af313174c8ee3207757574d91",
+      "correctChoice": 2,
+      "summary": "UIが未確定なら、プロトタイプを作り利用者と確認する方法が適する。コードアンドフィックスは十分な設計・検証計画を持たず作って直す進め方であり、要求確認のための体系的なモデルとして選ぶのは不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切な対応。スパイラルはリスクを評価しながら反復して詳細化できるため、不確実性の高い研究的開発に適用しやすい。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "不適切なので正答。誤りはUIの確認手段としてコードアンドフィックスを選ぶ点。要求の妥当性を早期確認するプロトタイピング等と区別する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切な対応。インクリメンタルは優先する機能から段階的に追加・提供するため、早期リリースの目的と合う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "適切な対応。形式的な仕様記述や検証で重要な性質を厳密に扱うフォーマルメソッドは、高い安全性が必要な場面で有用。ただし無条件に全欠陥を消せるという意味ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切な対応。要求が安定し工程を順に計画しやすい条件はウォーターフォールと整合する。途中変更が多い状況との対比で判断する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q21",
+    "number": 21,
+    "text": "オブジェクト指向の概念で，情報隠蔽を実現するための仕組みに該当し，システムの機能やデータを他の部分から分離し，その部分の仕様（公開操作）を定義するためのソフトウェア開発手段として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/a6c1956550093c655891.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "カプセル化により状態と操作をまとめ、外部から利用できるインタフェースと内部実装を分離する。内部データの直接操作を制限することで情報隠蔽を実現しやすくする。",
+    "presentation": {
+      "sourceHash": "5bcfbfab422917d3032077268abb78765d1b2b39af7704c2a59e8cd2985d89eb",
+      "prompt": "オブジェクト指向の概念で，情報隠蔽を実現するための仕組みに該当し，システムの機能やデータを他の部分から分離し，その部分の仕様（公開操作）を定義するためのソフトウェア開発手段として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "継承"
+        },
+        {
+          "number": 2,
+          "text": "ポリモルフィズム"
+        },
+        {
+          "number": 3,
+          "text": "カプセル化"
+        },
+        {
+          "number": 4,
+          "text": "委譲"
+        },
+        {
+          "number": 5,
+          "text": "抽象化"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "5bcfbfab422917d3032077268abb78765d1b2b39af7704c2a59e8cd2985d89eb",
+      "correctChoice": 3,
+      "summary": "カプセル化により状態と操作をまとめ、外部から利用できるインタフェースと内部実装を分離する。内部データの直接操作を制限することで情報隠蔽を実現しやすくする。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "継承は既存の型・クラスから性質や操作を受け継ぐ仕組み。公開操作と内部データを分離する手段そのものを指す語ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ポリモルフィズムは共通インタフェースで異なる実装を扱う性質。内部情報を隠す仕組みを直接表すのはカプセル化。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。データとその操作をひとまとまりにし、外部には定義した操作だけを公開するという説明に合う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "委譲はある処理を別のオブジェクトへ任せること。情報隠蔽の実現手段という定義とは異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "抽象化は重要な性質を取り出し詳細を捨象する考え方。設問の具体的な公開操作と内部実装の分離はカプセル化に対応する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q22",
+    "number": 22,
+    "text": "プログラムの論理，制御，データ構造の捉え方や表現を示すプログラミングパラダイムにおいて，論理型プログラミングの説明文として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/d87cf7f73ead4e4ccef0.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "論理型では事実・規則を宣言し、問い合わせに対する推論で答えを得る。手続きとしてどう実行するかを列挙する命令型とは異なる。",
+    "presentation": {
+      "sourceHash": "2acad9ac10b860eeab74296ac78b3ed2aab28cd233f8991f7ad77f2c7627ff5f",
+      "prompt": "プログラムの論理，制御，データ構造の捉え方や表現を示すプログラミングパラダイムにおいて，論理型プログラミングの説明文として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "コンピュータの処理手順を命令文で記述する。"
+        },
+        {
+          "number": 2,
+          "text": "入出力関係を表現する関数とその呼び出しで記述する。"
+        },
+        {
+          "number": 3,
+          "text": "データとその操作をカプセル化したものとその間のメッセージ通信で記述する。"
+        },
+        {
+          "number": 4,
+          "text": "入出力関係を事実と規則で記述する。"
+        },
+        {
+          "number": 5,
+          "text": "開発者でペアを組んで同一の端末でプログラムを記述する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "2acad9ac10b860eeab74296ac78b3ed2aab28cd233f8991f7ad77f2c7627ff5f",
+      "correctChoice": 4,
+      "summary": "論理型では事実・規則を宣言し、問い合わせに対する推論で答えを得る。手続きとしてどう実行するかを列挙する命令型とは異なる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "これは命令型・手続き型の説明。論理型は実行順の命令列よりも、成立する関係や規則を記述する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "関数と適用を中心に据えるのは関数型。論理型の中心となる事実・規則による推論とは区別する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "カプセル化されたオブジェクト間のメッセージはオブジェクト指向の説明。論理型の定義ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。事実と規則を記述し、問い合わせに合う関係を推論するのが論理型の特徴。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "これはペアプログラミングという共同作業の方法。プログラムの論理・制御・データの表現を規定するパラダイムではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q23",
+    "number": 23,
+    "text": "継続的デリバリ（Continuous Delivery）の説明として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/56b7184eb72eb623c019.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "継続的デリバリは変更を検証し、必要な時にリリースできる状態を継続的に保つこと。すべての変更を自動で本番に出す継続的デプロイメントと同一ではない。",
+    "presentation": {
+      "sourceHash": "beedc11c7887d024942a9fe9e6542e886fbb5f4e01a8b003bb57a8fefcc38fe1",
+      "prompt": "継続的デリバリ（Continuous Delivery）の説明として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ドメインエキスパートや開発者がそれぞれ考えている概念を共有し合い，ドメインエキスパートと開発者が共同で設計を進める手法。"
+        },
+        {
+          "number": 2,
+          "text": "開発者や開発チームが，ソフトウェアの開発だけでなく運用も同時並行して実施すること。"
+        },
+        {
+          "number": 3,
+          "text": "実行可能なプログラムの受け入れテストや性能テストを行い，プログラムをいつでも本番環境で実行可能な状態にしておくこと。"
+        },
+        {
+          "number": 4,
+          "text": "ソフトウェアの外部から見た振る舞いを変更せず，内部構造を再構成する活動。"
+        },
+        {
+          "number": 5,
+          "text": "ソフトウェアを機能単位で部品として分解し，それらを組み合わせることでソフトウェアを構築する枠組み。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "beedc11c7887d024942a9fe9e6542e886fbb5f4e01a8b003bb57a8fefcc38fe1",
+      "correctChoice": 3,
+      "summary": "継続的デリバリは変更を検証し、必要な時にリリースできる状態を継続的に保つこと。すべての変更を自動で本番に出す継続的デプロイメントと同一ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "ドメインの概念や用語を関係者で共有して設計する説明で、ドメイン駆動設計に対応する。リリース可能な状態を保つ工程の説明ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "開発と運用の連携というDevOpsに関連する説明。運用を同じチームが行うことだけで継続的デリバリが成立するわけではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。自動化されたビルドやテスト等を通じて変更の品質を確認し、リリース判断があれば提供可能な状態を保つ。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "これはリファクタリング。継続的デリバリの中で行うことはあるが、両者は定義が異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "これはコンポーネント指向の構築方法。部品化だけでは、変更を継続的に検証してリリース可能にする工程を表さない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q24",
+    "number": 24,
+    "text": "エンティティを長方形で，リレーションシップをひし形で表すひし形表記法（Peter Chen記法）を用いたE-R図の解釈として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/f246652da98c9cc397af.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "1つのエンティティ型『組織』が、親と子という異なる役割で同じ関連『管理』に参加している。同一エンティティ型の間に張られる再帰関連を示す。",
+    "presentation": {
+      "sourceHash": "86eea80e8c0d16d723ed7e4c87dfa162295dba4522bb81dfcd4e60d512e6243e",
+      "prompt": "エンティティを長方形で，リレーションシップをひし形で表すひし形表記法（Peter Chen記法）を用いたE-R図の解釈として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "親組織と子組織は，再帰リレーションシップの関係である。"
+        },
+        {
+          "number": 2,
+          "text": "組織と管理は，2段階の階層構造である。"
+        },
+        {
+          "number": 3,
+          "text": "親組織と子組織は，互いに従属のエンティティである。"
+        },
+        {
+          "number": 4,
+          "text": "すべての組織は，必ず親組織と子組織を管理する関係性を持つ。"
+        },
+        {
+          "number": 5,
+          "text": "親組織と子組織は，1対2の多重度を持つ。"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/f246652da98c9cc397af.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－24の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 723
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "86eea80e8c0d16d723ed7e4c87dfa162295dba4522bb81dfcd4e60d512e6243e",
+      "correctChoice": 1,
+      "summary": "1つのエンティティ型『組織』が、親と子という異なる役割で同じ関連『管理』に参加している。同一エンティティ型の間に張られる再帰関連を示す。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。同一の組織型が親役・子役として参加するので再帰リレーションシップである。親組織・子組織を別型と読む必要はない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ひし形の管理はエンティティ階層の下位型ではなく関連。図形の上下位置から2段階の階層と判断するのが誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "この図は弱エンティティや相互の存在従属を示していない。役割名が親・子であることだけでは存在依存は導けない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "『すべて』『必ず』が根拠不足。全参加を指定する表記等は示されていないため、全組織が両役割を持つと断定できない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "2本の線は親・子の役割の違いであり、子が2つという個数指定ではない。1対2の多重度はこの図から読み取れない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q25",
+    "number": 25,
+    "text": "次のクラス図に適合するオブジェクト図として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/609ca5a722242fa6bdec.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": null,
+    "choiceCount": 0,
+    "answerAuthority": "unconfirmed",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "公式正答は③。親役はカテゴリ、子役はカテゴリ要素であり、商品もカテゴリも子役になれる。③はこの型と多重度に合う。②はカテゴリ同士が互いの親となる循環を含むため、集約を非循環の全体・部分関係として読む場合は除外される。ただし設問はUMLの版を明示しておらず、共有集約を常に非循環と断定できるわけではない。ここは公式③と、版・意味付けに依存する説明上の留保を分けて読む。",
+    "presentation": {
+      "sourceHash": "50722e86bbe2439506c6733812b619c8b9ebd77879fb45f688fb2ff2c04977a1",
+      "prompt": "次のクラス図に適合するオブジェクト図として，最も適切なものはどれか。",
+      "choices": [],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/609ca5a722242fa6bdec.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－25の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 1023
+        }
+      ]
+    },
+    "referenceOnly": true,
+    "officialKey": 3,
+    "referenceNotice": "公式正答は③です。共有集約の循環に関する解釈はUMLの版・意味付けに依存するため、本教材では解説付き参考問題として保持し、通常採点の対象から除外します。公式が採点除外と発表したという意味ではありません。",
+    "referenceReasons": [
+      {
+        "number": 1,
+        "reason": "上側が単なるカテゴリ要素と表示されており、親役に必要なカテゴリ型を満たす図ではない。親側にはカテゴリのインスタンスを置く。"
+      },
+      {
+        "number": 2,
+        "reason": "②では上側カテゴリが下側カテゴリを子に持ち、追加リンクで下側カテゴリが上側の親にもなり、親子が循環する。非循環の集約という前提ではこの箇所が不適切で、追加の逆向き親子リンクを除いた③の形にする。ただしその前提は旧UML 1.5では根拠がある一方、UML 2系の共有集約で無条件の規則とはいえない。公式解答③は維持する。"
+      },
+      {
+        "number": 3,
+        "reason": "正答。親がカテゴリで、子が商品とカテゴリの2つである。子の型はいずれもカテゴリ要素に適合し、親が持つ子の数2は0..*に含まれる。図は全オブジェクトを網羅する宣言ではないので、上側カテゴリの親が省略されているだけで直ちに不適合とはしない。"
+      },
+      {
+        "number": 4,
+        "reason": "上側のカテゴリ要素が親側として商品等へつながる点で、親役に必要なカテゴリ型が明示されていない。加えて下側カテゴリとの逆向きリンクがあり、集約を非循環と読む前提では相互の親子関係も不適切になる。"
+      },
+      {
+        "number": 5,
+        "reason": "商品を親としている箇所が不適合。商品はカテゴリ要素なので子役にはなれるが、親役のカテゴリ型にはならない。"
+      }
+    ]
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q26",
+    "number": 26,
+    "text": "EVM（Earned Value Management）で進捗管理を行ったプロジェクトがある。当初は計画を上回るペースで開発が進んだが，途中問題が発生したため遅延状態となった。そこでリカバリを目的として計画より増員したため，費用が超過した。このプロジェクトを説明するEVM実績推移グラフとして，次のうち最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/308f4ffc859d7b4df216.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "ACは実コスト、PVは計画価値、EVは出来高。増員で費用が超過した状況は後半のACがPVを上回る①に整合する。進捗と費用は別指標であり、初期の進捗が速いという事実だけから初期ACの大小が必然的に決まるわけではない。",
+    "presentation": {
+      "sourceHash": "108af8088327197ceea4383e899ef3976bc1f9e8c00bbc44c0db8111958135e8",
+      "prompt": "EVM（Earned Value Management）で進捗管理を行ったプロジェクトがある。当初は計画を上回るペースで開発が進んだが，途中問題が発生したため遅延状態となった。そこでリカバリを目的として計画より増員したため，費用が超過した。このプロジェクトを説明するEVM実績推移グラフとして，次のうち最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/308f4ffc859d7b4df216.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－26の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 1058
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "108af8088327197ceea4383e899ef3976bc1f9e8c00bbc44c0db8111958135e8",
+      "correctChoice": 1,
+      "summary": "ACは実コスト、PVは計画価値、EVは出来高。増員で費用が超過した状況は後半のACがPVを上回る①に整合する。進捗と費用は別指標であり、初期の進捗が速いという事実だけから初期ACの大小が必然的に決まるわけではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。後半の実コストACが計画価値PVを上回り、増員による費用超過と整合する。グラフは費用推移であって、初期の速度をACそのものから断定するものではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "EVが初期PV未満なら計画より遅れ、後半PV超なら先行している。設問の『当初先行、その後遅延』と向きが逆。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "CPI=EV/AC。1超は費用効率がよく、1未満は費用超過側である。後半に1超へ改善する図は、増員で費用超過となった説明の代表として不適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "BACは完成時の予算、EACは完成時総コスト見積り。最後にEACがBAC未満となる図は最終費用が予算内という予測を示し、費用超過の説明と整合しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "SPI=EV/PV。初期1未満・後半1超は、遅れから先行へ移る推移。設問の初期先行から遅延への推移と逆である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q27",
+    "number": 27,
+    "text": "ソフトウェア要求仕様に対する国際規格ISO／IEC／IEEE 29148：2018に基づいた，ソフトウェア個別要求の特性に関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/7f1e9d0072b2025c7054.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "完全性は要求として必要な情報が十分に記載されている性質。非曖昧性は解釈が一意であること、実現可能性は与えられた制約内で実装できることをいう。",
+    "presentation": {
+      "sourceHash": "a93c6da25d43b8d5bacf305849a7d00e38973164132506e54ec3cc83cf74b1e3",
+      "prompt": "ソフトウェア要求仕様に対する国際規格ISO／IEC／IEEE 29148：2018に基づいた，ソフトウェア個別要求の特性に関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "要求仕様の検証可能性（Verifiable）が保証されているとは，ソフトウェア製品がその要求を満たしていることをチェックできるプロセスが存在することであり，費用対効果は問われない。"
+        },
+        {
+          "number": 2,
+          "text": "要求仕様の完全性（Complete）とは，要件が，ニーズを満たすために必要な能力，特性，制約又は品質要因を十分に記述していることである。"
+        },
+        {
+          "number": 3,
+          "text": "要求仕様の非曖昧性（Unambiguous）が保証されているとは，ある要求が何通りにも解釈できることである。"
+        },
+        {
+          "number": 4,
+          "text": "要求仕様に正確性（Correct）がないとは，開発するソフトウェアが満たすべきでない内容が要求仕様に含まれていないことである。"
+        },
+        {
+          "number": 5,
+          "text": "要求仕様の実現可能性（Feasible）とは，開発するソフトウェアが満たすべき内容が要求仕様に含まれていることである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a93c6da25d43b8d5bacf305849a7d00e38973164132506e54ec3cc83cf74b1e3",
+      "correctChoice": 2,
+      "summary": "完全性は要求として必要な情報が十分に記載されている性質。非曖昧性は解釈が一意であること、実現可能性は与えられた制約内で実装できることをいう。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "『費用対効果は問われない』が誤り。検証方法が抽象的に存在するだけでなく、現実的な費用で検証できることを考慮する。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "正答。必要な能力、特性、制約、品質要因などを十分に記述するという完全性の説明に合う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "『何通りにも』が逆。非曖昧な要求は、読み手によって異なる意味に取られず、一意に解釈できるように記述する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "否定の向きが不適切。正確性は本来満たすべきニーズや要求を正しく表すこと。満たすべきでない内容を含まない状態だけを『正確性がない』と定義しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "これは必要内容の記載にしか言及しておらず、実現できるかを述べていない。実現可能性は技術・費用・時間等の制約内で要求を達成できること。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q28",
+    "number": 28,
+    "text": "プロジェクトマネジメントにおけるクラッシングに関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/f87d433dcb80be9b8386.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "クラッシングは人員や設備等を追加投入して所要期間を短縮する方法。期間短縮効果と追加コストを比較し、クリティカルパス等を考慮して適用する。",
+    "presentation": {
+      "sourceHash": "9eb544ab939bb9b270aeebdfcc17102fe891d617621696e685462fd9545b7f9d",
+      "prompt": "プロジェクトマネジメントにおけるクラッシングに関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "プロジェクトの所要期間を短縮するために，追加資源を投入すること。"
+        },
+        {
+          "number": 2,
+          "text": "プロジェクトの所要期間を短縮するために，順番に行うべきアクティビティを並行して行うこと。"
+        },
+        {
+          "number": 3,
+          "text": "過去の類似プロジェクトの実コストを参考にコストを見積ること。"
+        },
+        {
+          "number": 4,
+          "text": "プロジェクトのスコープが管理できず拡大すること。"
+        },
+        {
+          "number": 5,
+          "text": "成果物を複数回デリバリーする場合の，その周期や頻度のこと。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "9eb544ab939bb9b270aeebdfcc17102fe891d617621696e685462fd9545b7f9d",
+      "correctChoice": 1,
+      "summary": "クラッシングは人員や設備等を追加投入して所要期間を短縮する方法。期間短縮効果と追加コストを比較し、クリティカルパス等を考慮して適用する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "正答。追加資源によって期間短縮を図るという説明。人員を増やせば必ず比例して短縮できるという意味ではなく、依存関係や作業特性を評価する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "順次の作業を重ねて並行化するのはファストトラッキング。クラッシングの追加資源投入と区別する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "類似案件を参考にするのは類推見積り。所要期間を短縮する手法そのものではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "管理されない範囲拡大はスコープクリープ。資源を追加して計画期間を短縮するクラッシングとは異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "提供の周期・頻度はデリバリのケイデンス等を指す。追加資源による期間短縮ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q29",
+    "number": 29,
+    "text": "ある会社ではクラスBのネットワークアドレスが割り当てられている。この会社には500の組織があり，各組織は100台の端末を接続する必要がある。割り当てられたネットワークアドレスを分割して，各組織に1つずつサブネットワークアドレスを割り当てるとき，サブネットマスクとして，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/bead153c4444bc03d5ae.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "クラスBの元のプレフィックスは/16。100台を収容するホスト部は7ビット必要（2^7−2=126）。残る9ビットをサブネットに用いれば2^9=512個あり500組織を満たす。よって/25=255.255.255.128。",
+    "presentation": {
+      "sourceHash": "61df3a2492c2707aff30abc854bb9ff8f4e55f5e30494b7f187f7a9b9bb765ef",
+      "prompt": "ある会社ではクラスBのネットワークアドレスが割り当てられている。この会社には500の組織があり，各組織は100台の端末を接続する必要がある。割り当てられたネットワークアドレスを分割して，各組織に1つずつサブネットワークアドレスを割り当てるとき，サブネットマスクとして，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "255.255.0.0"
+        },
+        {
+          "number": 2,
+          "text": "255.255.192.0"
+        },
+        {
+          "number": 3,
+          "text": "255.255.255.0"
+        },
+        {
+          "number": 4,
+          "text": "255.255.255.128"
+        },
+        {
+          "number": 5,
+          "text": "255.255.255.192"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "61df3a2492c2707aff30abc854bb9ff8f4e55f5e30494b7f187f7a9b9bb765ef",
+      "correctChoice": 4,
+      "summary": "クラスBの元のプレフィックスは/16。100台を収容するホスト部は7ビット必要（2^7−2=126）。残る9ビットをサブネットに用いれば2^9=512個あり500組織を満たす。よって/25=255.255.255.128。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "/16でサブネットに借りるビットがない。ホスト台数は十分でも、500組織を別サブネットに分けられない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "/18なので元の/16から2ビットしか借りず、4サブネットしか作れない。500組織に不足する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "/24では8ビットを借りるため256サブネット。1サブネット254ホストを収容できても、組織数500を満たさない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。/25で512サブネット、各126ホスト。サブネット数とホスト数の両条件を満たす。旧来のサブネット数の数え方で両端を除いても510で500以上。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "/26ではサブネット数1024は十分だが、ホスト部6ビットで2^6−2=62台しか収容できず、100台に不足する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q30",
+    "number": 30,
+    "text": "通信ネットワークを伝送されるデータは，様々なプロトコルのヘッダーが付加されている。このデータにはネットワークアーキテクチャの階層に注目した呼び方がある。このような呼び方として，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/d934a9d7a2c7029a063b.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "Ethernetはフレーム、IPはデータグラム、TCPはセグメント、UDPはデータグラム、HTTPはメッセージと呼ぶ。設問の慣用的な名称対応ではUDPセグメントが不適切。",
+    "presentation": {
+      "sourceHash": "9f269bc718cf14ff7e82abf1eb649886da6461fac5044600a42baa445cd8732e",
+      "prompt": "通信ネットワークを伝送されるデータは，様々なプロトコルのヘッダーが付加されている。このデータにはネットワークアーキテクチャの階層に注目した呼び方がある。このような呼び方として，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "イーサーネットフレーム"
+        },
+        {
+          "number": 2,
+          "text": "IPデータグラム"
+        },
+        {
+          "number": 3,
+          "text": "TCPセグメント"
+        },
+        {
+          "number": 4,
+          "text": "UDPセグメント"
+        },
+        {
+          "number": 5,
+          "text": "HTTPメッセージ"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "9f269bc718cf14ff7e82abf1eb649886da6461fac5044600a42baa445cd8732e",
+      "correctChoice": 4,
+      "summary": "Ethernetはフレーム、IPはデータグラム、TCPはセグメント、UDPはデータグラム、HTTPはメッセージと呼ぶ。設問の慣用的な名称対応ではUDPセグメントが不適切。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。Ethernetで転送するデータリンク層の単位はフレームと呼ぶ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。IP層の転送単位はIPデータグラム（IPパケット）と呼ばれる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。TCPの転送単位はセグメント。TCPヘッダとデータを含む。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "不適切なので正答。誤りはUDPにセグメントというTCPの慣用名称を対応させた点。UDPではユーザデータグラムと呼ぶ。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。HTTPの要求・応答はHTTPメッセージと呼ぶ。下位の転送単位の名称とは区別する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q31",
+    "number": 31,
+    "text": "電話機1台当たりの発着呼の発生頻度が1時間に8回，平均回線使用時間が3分のときに呼損率を1％以下にしたい。次の呼損率表（表中の数値は呼量であり，単位はアーラン）が与えられた場合に最低必要回線数として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/8c99aeab767ccbd58187.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "設問で与えられた電話機1台分の呼量は8×(3/60)=0.4アーラン。1%=0.01の列で、0.4以上の呼量を初めて収容できるのは3回線（0.455）である。電話機台数は追加指定されていないので勝手に台数を掛けない。",
+    "presentation": {
+      "sourceHash": "6eed623bfb6a9c9fa81eec51d553fa2a46e5c05060da23a31de8101108350410",
+      "prompt": "電話機1台当たりの発着呼の発生頻度が1時間に8回，平均回線使用時間が3分のときに呼損率を1％以下にしたい。次の呼損率表（表中の数値は呼量であり，単位はアーラン）が与えられた場合に最低必要回線数として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "1回線"
+        },
+        {
+          "number": 2,
+          "text": "2回線"
+        },
+        {
+          "number": 3,
+          "text": "3回線"
+        },
+        {
+          "number": 4,
+          "text": "4回線"
+        },
+        {
+          "number": 5,
+          "text": "5回線"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-information-2025/8c99aeab767ccbd58187.png",
+          "alt": "2025年度 情報工学部門 Ⅲ－31の公式原問。問題文・全選択肢・図表を確認してください。",
+          "width": 965,
+          "height": 601
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "6eed623bfb6a9c9fa81eec51d553fa2a46e5c05060da23a31de8101108350410",
+      "correctChoice": 3,
+      "summary": "設問で与えられた電話機1台分の呼量は8×(3/60)=0.4アーラン。1%=0.01の列で、0.4以上の呼量を初めて収容できるのは3回線（0.455）である。電話機台数は追加指定されていないので勝手に台数を掛けない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "1回線の上限0.0101アーランは0.4より小さく、呼損率1%以下を満たさない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "2回線の上限0.153アーランも0.4より小さいため不足する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。3回線の上限0.455が初めて0.4以上となるので、条件を満たす最小の回線数である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "4回線なら上限0.869で条件は満たすが、3回線でも満たせるため『最低』ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "5回線なら上限1.36で条件は満たすが、必要最小より2回線多い。呼損率条件だけでなく最小という指定も読む。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q32",
+    "number": 32,
+    "text": "生体認証に関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/28829cc53cb1cccd42cd.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "公式正答は①。雑音などで本人の音声特徴を取得しにくくなる点に注意する。FARは他人受入率、FRRは本人拒否率。しきい値を厳しくすると一般にFARは下がる一方、FRRが上がりやすい。①を、あらゆる音声認証実装が高安全という保証に読み替えない。",
+    "presentation": {
+      "sourceHash": "42caacae4212a70269038c9b1b65dec0a06d33bfd15a179c137f66997526fa4c",
+      "prompt": "生体認証に関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "音声認証では，雑音により本人を拒否することが起こるが他人を受入れることはまれである。"
+        },
+        {
+          "number": 2,
+          "text": "生体認証には音声や筆跡などの身体的特徴や指紋や顔などの行動的特徴を用いる。"
+        },
+        {
+          "number": 3,
+          "text": "指静脈認証は偽造が困難であり，認証精度も高いが，登録が不可能な人も多く，導入する際には十分な検討が必要である。"
+        },
+        {
+          "number": 4,
+          "text": "誤って他人を受け入れる確率を他人受入率：FARと呼び，本人拒否率と相対する関係にある。また，他人受入率が高い認証は安全性を重視しているといえる。"
+        },
+        {
+          "number": 5,
+          "text": "誤って本人を拒否する確率を本人拒否率：FRRと呼び，本人拒否率が高い認証は利便性を重視しているといえる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "42caacae4212a70269038c9b1b65dec0a06d33bfd15a179c137f66997526fa4c",
+      "correctChoice": 1,
+      "summary": "公式正答は①。雑音などで本人の音声特徴を取得しにくくなる点に注意する。FARは他人受入率、FRRは本人拒否率。しきい値を厳しくすると一般にFARは下がる一方、FRRが上がりやすい。①を、あらゆる音声認証実装が高安全という保証に読み替えない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "設問の比較では正答。雑音は本人認証を失敗させる要因になる。ただし他人受入れの頻度は方式・しきい値・攻撃条件にも依存し、録音や合成音声への耐性を含む一般保証ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "身体的特徴と行動的特徴の対応が逆。指紋や顔は身体的特徴、筆跡や話し方等は行動的特徴として扱う。音声は身体的要素も関与するが、設問の分類を逆にしてよいわけではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "『登録が不可能な人が多い』という一般的断定が不適切。個人差や撮像条件による失敗は考慮するが、多数が登録できないことを指静脈認証の基本特性とはしない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "FARの定義は正しいが、高いほど安全という後半が逆。FARが高いほど他人を誤って通しやすいため、安全性の観点では低くする。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "FRRの定義は正しいが、高いほど利便性重視という後半が逆。本人が拒否されやすい高FRRは利便性を損なう。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q33",
+    "number": 33,
+    "text": "スパニングツリープロトコルの目的について，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/d7e2bce88c8ce07e97ae.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "スパニングツリープロトコル（STP）は冗長なL2接続の一部を通常時に転送しない状態にして、ループのない論理トポロジーを形成する。障害時には代替経路へ切り替えられる。",
+    "presentation": {
+      "sourceHash": "ea8fe89990c39d9e4192255843dfb66ea661c5d5e8977eba6b584641019f704f",
+      "prompt": "スパニングツリープロトコルの目的について，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "LANスイッチ間を複数のリンクで接続することで，負荷分散を行う。"
+        },
+        {
+          "number": 2,
+          "text": "ネットワークにつながっている機器の情報を収集する仕組みで，ネットワーク機器の管理をするための枠組みを提供する。"
+        },
+        {
+          "number": 3,
+          "text": "冗長構成のネットワークにおいて，ループを防止し，ネットワークの耐障害性を高める。"
+        },
+        {
+          "number": 4,
+          "text": "距離ベクトル型のルーティングプロトコルで，最小ホップ数となるような経路を決定する。"
+        },
+        {
+          "number": 5,
+          "text": "ネットワークトポロジーの変更を，配線を変えることなく実現する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ea8fe89990c39d9e4192255843dfb66ea661c5d5e8977eba6b584641019f704f",
+      "correctChoice": 3,
+      "summary": "スパニングツリープロトコル（STP）は冗長なL2接続の一部を通常時に転送しない状態にして、ループのない論理トポロジーを形成する。障害時には代替経路へ切り替えられる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "複数リンクを束ねて負荷分散する説明はリンクアグリゲーション等。STPの主目的は並列リンクをすべて同時に使うことではなくループの防止。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "これはSNMP等のネットワーク管理の役割。STPは機器情報収集の管理枠組みではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "正答。物理的な冗長性を残しながら論理的なループを防止し、障害時に経路を再構成できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "最小ホップ数を用いる距離ベクトル型ルーティングはRIP等。STPはL2のブリッジ構成を制御するもので、このルーティング説明とは異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "配線を変えず論理構成を変えるという説明だけではSTP固有の目的にならない。VLAN等にも当てはまる一般的な効果ではなく、STPではループ防止が中心。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q34",
+    "number": 34,
+    "text": "OSI参照モデルにおいて，ネットワーク層でのデータの到達性を保証しないネットワークアーキテクチャについて「正しくデータを届ける処理」を任されている層として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/ba28795c1cabb152bf2a.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "エンドツーエンドの転送を担うのがトランスポート層。TCP等では確認応答・再送・順序制御などにより、下位のベストエフォート転送を補う。すべてのトランスポートプロトコルが信頼性を提供するという意味ではない。",
+    "presentation": {
+      "sourceHash": "991a8dd62fa8633976d9b4f568ecec8a5cc1897e8921f160488120fbbc1a01bc",
+      "prompt": "OSI参照モデルにおいて，ネットワーク層でのデータの到達性を保証しないネットワークアーキテクチャについて「正しくデータを届ける処理」を任されている層として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "アプリケーション層"
+        },
+        {
+          "number": 2,
+          "text": "プレゼンテーション層"
+        },
+        {
+          "number": 3,
+          "text": "セッション層"
+        },
+        {
+          "number": 4,
+          "text": "トランスポート層"
+        },
+        {
+          "number": 5,
+          "text": "データリンク層"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "991a8dd62fa8633976d9b4f568ecec8a5cc1897e8921f160488120fbbc1a01bc",
+      "correctChoice": 4,
+      "summary": "エンドツーエンドの転送を担うのがトランスポート層。TCP等では確認応答・再送・順序制御などにより、下位のベストエフォート転送を補う。すべてのトランスポートプロトコルが信頼性を提供するという意味ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "アプリケーション層はアプリケーションに通信サービスを提供する層。設問の層構造上の端点間転送機能はトランスポート層に位置付けられる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "プレゼンテーション層はデータ表現の変換等を扱う。配送の確認応答や再送を担う層として選ぶのは誤り。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "セッション層は通信の対話・セッション管理等を扱う。端点間の信頼性ある転送という役割とは異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "正答。TCPのようなプロトコルが確認応答や再送などで端点間の転送を制御する。ただしUDPのように到達を保証しない方式も同じ層に存在する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "データリンク層は隣接するノード間の転送を扱う。ネットワーク全体を通じたエンドツーエンドの到達性を補う層ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  },
+  {
+    "id": "gijutsushi1-information-2025-annual-senmon-q35",
+    "number": 35,
+    "text": "Ethernetで使用される次のケーブルとその長さの制限について，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-information-2025/48a156340a8ca00dfaa8.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18",
+    "explanation": "100BASE-TXの銅線による標準的な最大リンク長は100m。選択肢④の1000mは1桁大きく、不適切である。10BASE2は185m、10BASE5は500m、10BASE-Tと1000BASE-Tは100mという媒体別の上限を区別する。",
+    "presentation": {
+      "sourceHash": "c582ca64ff908c69b54a66c276157c3993f03c321a3d9c11ccfb74f8b69716d3",
+      "prompt": "Ethernetで使用される次のケーブルとその長さの制限について，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "10BASE2：185m"
+        },
+        {
+          "number": 2,
+          "text": "10BASE5：500m"
+        },
+        {
+          "number": 3,
+          "text": "10BASE-T：100m"
+        },
+        {
+          "number": 4,
+          "text": "100BASE-TX：1000m"
+        },
+        {
+          "number": 5,
+          "text": "1000BASE-T：100m"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c582ca64ff908c69b54a66c276157c3993f03c321a3d9c11ccfb74f8b69716d3",
+      "correctChoice": 4,
+      "summary": "100BASE-TXの銅線による標準的な最大リンク長は100m。選択肢④の1000mは1桁大きく、不適切である。10BASE2は185m、10BASE5は500m、10BASE-Tと1000BASE-Tは100mという媒体別の上限を区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "適切。10BASE2は細い同軸ケーブルを用い、1セグメントの最大長は185m。名称の2をそのまま200mという厳密な上限と読まない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "適切。10BASE5は太い同軸ケーブルを用い、1セグメントの最大長は500m。10BASE2の185mとの違いを押さえる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "適切。10BASE-Tはツイストペアを用い、標準的な最大リンク長は100m。複数の機器を経由したネットワーク全体の直径ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "不適切なので正答。誤りは1000mの箇所。100BASE-TXの標準的な最大リンク長は100mであり、光ファイバ等を使う別方式の距離と混同しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "適切。1000BASE-Tもツイストペアによる標準的な最大リンク長は100m。速度が10倍になれば距離も10倍になるわけではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_7.pdf"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=18"
+        }
+      ]
+    }
+  }
+]

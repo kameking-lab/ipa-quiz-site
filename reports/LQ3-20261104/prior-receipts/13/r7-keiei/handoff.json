@@ -1,0 +1,44 @@
+{
+  "atJst": "2026-11-01T18:50:05.647610+09:00",
+  "scope": "qual-new:13",
+  "status": "PRIVATE_COMPLETE_READY_FOR_MAIN_HANDOFF",
+  "recipient": "main 01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "target": "令和7年度技術士第一次試験 経営工学部門 専門35問",
+  "payload": "questions.json と assets/ の全35画像を同一パケットとして採用",
+  "questionsSha256": "b97e06d0cab2025f38d8586e1a6697dae5243550fc7968d16127d02478fe835b",
+  "independentReviewSha256": "325335e1cb6a2a31772a58730561a3d40eea69bfba06d48ea4e5934346f4c8c7",
+  "counts": {
+    "actualOriginals": 35,
+    "choices": 175,
+    "explanations": 35,
+    "choiceReasons": 175,
+    "requiredImages": 35,
+    "inventedQuestions": 0,
+    "sharedAdopted": 0
+  },
+  "contentModel": {
+    "questionFormat": "official-question-image",
+    "choiceNumbers": "1〜5は原問画像に記載された順序に固定",
+    "correctAnswer": "1始まり。main側が0始まりなら明示変換する",
+    "choiceReasons": "キー1〜5、正答だけでなく全肢表示",
+    "source": "公式問題URL・公式正答URL・原ページ・原問番号",
+    "imageRequirement": "原問全文・選択肢・図表を含むため画像省略不可。縦横比を保持し拡大閲覧可能にする。"
+  },
+  "adoptionSteps": [
+    "questions.jsonと35画像のhashをasset-manifest.json及び独立受入票と照合。",
+    "mainの既存問題型への変換・資格catalog/route/indexの接続はmainのみが行う。",
+    "35個のID重複がないこと、正答番号の基数、解説と原問画像の対応を確認。",
+    "結合後の必要な通常UI・採点・画像見読・履歴等をmainの許可範囲で受入。私有本文受入を実UI受入へ拡張しない。"
+  ],
+  "exclusions": [
+    "共通の基礎・適性科目",
+    "他年度",
+    "note商品・既有料教材",
+    "公開・build/deploy/merge等の禁止操作"
+  ],
+  "knownLimits": [
+    "画像原問方式のため、原文の機械可読本文や完全な読み上げ用代替文は収録していない。別途OCR本文を作る場合も原典一致を確認し、解説を原文に代入しない。",
+    "固定入力baseの限定重複照合であり、現行runtimeと同一とは主張しない。",
+    "Q22は独立・同一信頼度0<r<1、Q25は標準的な待ち行列モデルの前提を解説に明記。"
+  ]
+}

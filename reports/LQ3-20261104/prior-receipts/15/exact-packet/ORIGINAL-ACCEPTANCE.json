@@ -1,0 +1,680 @@
+{
+  "schema": "qual-new15-original-image-delta-acceptance/v1",
+  "reviewer": "/root/independent_acceptance",
+  "reviewedAtUTC": "2026-11-01T19:07:51.861677+00:00",
+  "verdict": "PASS_ORIGINAL_IMAGE_DELTA",
+  "input": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new15-private-20261101\\outputs\\exact-packet\\questions-2025-annual.json",
+    "sha256": "df82fd04eb75edb17170a91ef90767467621eac687b0011c8b14a0ffc7f6e430",
+    "bytes": 101437
+  },
+  "imageManifest": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new15-private-20261101\\outputs\\exact-packet\\ORIGINAL-IMAGE-MANIFEST.json",
+    "sha256": "4ae2e42d8767f5f7c1101159fe86549715bb81651abf35f77ed623c6c40a5b0d",
+    "bytes": 25154
+  },
+  "officialSource": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new15-private-20261101\\work\\sources\\r7-oyo.pdf",
+    "sha256": "a927f2cf2645208890cc672cc749178179f46a09e69ffd95c431dc35bf6c2cd7",
+    "bytes": 622904
+  },
+  "scope": {
+    "questions": 35,
+    "choices": 175,
+    "imagesVisuallyReviewed": 35,
+    "correctedImagesRechecked": [
+      28,
+      31
+    ],
+    "originalPages": 13,
+    "method": "保存済公式原本13頁と設問単位切出し35枚を照合。番号、上下左右端、本文・全5肢・数式・条件の欠落がないことを視認。manifest座標で公式PDFから独立再レンダしたRGB画素と比較。修正後はq28/q31だけ再視認・再画素照合。"
+  },
+  "corrections": [
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q28",
+      "initialFinding": "切出し下端で選択肢⑤の行が欠けた",
+      "resolution": "下端を拡張し、⑤の終端「整合と呼ぶ。」まで全行保持を再視認",
+      "status": "RESOLVED"
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q31",
+      "initialFinding": "選択肢⑤がS/Nの後で切れ、続く2行が欠けた",
+      "resolution": "下端を拡張し、⑤の終端「加算回数の平方根倍になる。」まで全行保持を再視認",
+      "status": "RESOLVED"
+    }
+  ],
+  "questions": [
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q01",
+      "number": 1,
+      "officialPage": 1,
+      "imageSHA256": "ad11d19650f5eec6a1cfb5fc9e24014ffef046165d4f637c5e3953a510539316",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        156.66666666666666,
+        541.3333333333334,
+        273.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q02",
+      "number": 2,
+      "officialPage": 1,
+      "imageSHA256": "4895db3d13b2890986b9132cf1cff5432242336a58e97963daac6f920230ec05",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        285.3333333333333,
+        541.3333333333334,
+        406.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q03",
+      "number": 3,
+      "officialPage": 1,
+      "imageSHA256": "d752afe1cf6d92c039ad7a84e3d258b322efdf2bde904ba6394b485731bd01cb",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        414.6666666666667,
+        541.3333333333334,
+        593.3333333333334
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q04",
+      "number": 4,
+      "officialPage": 2,
+      "imageSHA256": "e90017f28504f7c7171cb70b46e62adf5acbf5cef4ff6c23f37c2986d829a151",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        66.66666666666667,
+        541.3333333333334,
+        246.66666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q05",
+      "number": 5,
+      "officialPage": 2,
+      "imageSHA256": "fffab280cc39669d8d6f19a8651e61ae034c3ad2501c771164ce1530c142ae18",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        265.3333333333333,
+        541.3333333333334,
+        563.3333333333334
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q06",
+      "number": 6,
+      "officialPage": 3,
+      "imageSHA256": "acb194febb12358aa23955a4f7d4ea38b8a172ad115bee0176f472621dd5c2e3",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        66.66666666666667,
+        541.3333333333334,
+        267.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q07",
+      "number": 7,
+      "officialPage": 3,
+      "imageSHA256": "2de9410c929bf37d700edd4dc3110e4304e0bbb4b6b37982616bc69dcc7a0541",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        284.0,
+        541.3333333333334,
+        441.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q08",
+      "number": 8,
+      "officialPage": 3,
+      "imageSHA256": "f6ab7f393d0a7d5c2033297fb12e7e6581a650436aaf160548eef39042b4ab39",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        454.6666666666667,
+        541.3333333333334,
+        590.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q09",
+      "number": 9,
+      "officialPage": 3,
+      "imageSHA256": "5d41234d56fdd7b38ca924b9520f78e5f002b3a6a66b9d22092e22b91646dd57",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        603.3333333333334,
+        541.3333333333334,
+        763.3333333333334
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q10",
+      "number": 10,
+      "officialPage": 4,
+      "imageSHA256": "5df80bd2dbdc4e769935f4fee85e958537a99421b9e7f65eea9c8a9754f327f7",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        68.0,
+        541.3333333333334,
+        208.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q11",
+      "number": 11,
+      "officialPage": 4,
+      "imageSHA256": "720d4b03ce9aa9a65c35be512177e58b5ea6ced7ddb27e119951cfcef53fa86d",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        219.33333333333334,
+        541.3333333333334,
+        354.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q12",
+      "number": 12,
+      "officialPage": 4,
+      "imageSHA256": "8dab8d42d3c1b2fafe124b6a703a38ee61229025b055d07837d0bb86bee1786e",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        369.3333333333333,
+        541.3333333333334,
+        550.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q13",
+      "number": 13,
+      "officialPage": 5,
+      "imageSHA256": "7f6c66d8b1a0628ee3399c5aff84d7098fbbefaf908e01f617b1d600e54ab71d",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        67.33333333333333,
+        541.3333333333334,
+        292.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q14",
+      "number": 14,
+      "officialPage": 5,
+      "imageSHA256": "1464a55babc22616c03a5ab47838447672c9d65b56302532ba254c5f0a634ef1",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        305.3333333333333,
+        541.3333333333334,
+        506.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q15",
+      "number": 15,
+      "officialPage": 5,
+      "imageSHA256": "99a6a6f836d4811afbae06b4ce1d64ef97c5674557d863821acace7305bde1a1",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        521.3333333333334,
+        541.3333333333334,
+        653.3333333333334
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q16",
+      "number": 16,
+      "officialPage": 6,
+      "imageSHA256": "ddda96f08380642738fbaa46d136b074204d358661631b4e51389f66a5796762",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        70.0,
+        541.3333333333334,
+        341.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q17",
+      "number": 17,
+      "officialPage": 6,
+      "imageSHA256": "54738fcd6bab504ced0c036e45f171afaaa250b8e6aa592d96de022bda2d01fd",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        350.0,
+        541.3333333333334,
+        489.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q18",
+      "number": 18,
+      "officialPage": 6,
+      "imageSHA256": "4b5b7764ec2e3b6dc627b090e06f1caaf03f4c9ee06b1dc68e621800ab4fb588",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        501.3333333333333,
+        541.3333333333334,
+        636.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q19",
+      "number": 19,
+      "officialPage": 7,
+      "imageSHA256": "0fb9639401d1a883e81b8d4d934fd3ea0fcde6e83d8179b301319433599b5199",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        66.66666666666667,
+        541.3333333333334,
+        312.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q20",
+      "number": 20,
+      "officialPage": 7,
+      "imageSHA256": "f11ea81f8a3f753737f729885d66b5bd7d7e357a2bb6c322bdced2fde83ade84",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        324.0,
+        541.3333333333334,
+        421.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q21",
+      "number": 21,
+      "officialPage": 7,
+      "imageSHA256": "eef28a21ecb6c51cc631301f8af8db2c52a0963e668f2b44291638298513babe",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        432.6666666666667,
+        541.3333333333334,
+        616.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q22",
+      "number": 22,
+      "officialPage": 8,
+      "imageSHA256": "a0449f209f63da23d42b4683e3abb8241a21ba80e4e448af040b0055a07275f4",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        68.66666666666667,
+        541.3333333333334,
+        316.6666666666667
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q23",
+      "number": 23,
+      "officialPage": 8,
+      "imageSHA256": "a9b5841d93301188467a4e82d89f4de560d5f6f75f354efabbf0bbc26ccef2fa",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        328.6666666666667,
+        541.3333333333334,
+        574.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q24",
+      "number": 24,
+      "officialPage": 9,
+      "imageSHA256": "67c3a1cf10ce7bde7fbc0e397851f06ff1aed337608c19ec2919c1583a1b9fee",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        66.66666666666667,
+        541.3333333333334,
+        290.6666666666667
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q25",
+      "number": 25,
+      "officialPage": 9,
+      "imageSHA256": "ee68d89c8e36e05bae87e32e31e3dd4d8b2d23bd63074e39e00649bdda65ba97",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        307.3333333333333,
+        541.3333333333334,
+        620.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q26",
+      "number": 26,
+      "officialPage": 10,
+      "imageSHA256": "29408fc7362be35ccf342c077d505df62726c4b473a20421e2cfcad4a1fcaa85",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        68.66666666666667,
+        541.3333333333334,
+        336.6666666666667
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q27",
+      "number": 27,
+      "officialPage": 10,
+      "imageSHA256": "301e468a563a8ee03011a923ef7e7e5e22378e0564e792968341d150e34a9155",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        348.6666666666667,
+        541.3333333333334,
+        505.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q28",
+      "number": 28,
+      "officialPage": 10,
+      "imageSHA256": "7f882a577d1392864a4cb89fadc8dd61a57a0f4fe881955e09d6b8525575808b",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        520.6666666666666,
+        541.3333333333334,
+        766.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 2
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q29",
+      "number": 29,
+      "officialPage": 11,
+      "imageSHA256": "0234bffa17302c18ff0db0d7188f85b04a57f3d57c15b6daa29daa9faf4af4ce",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        68.0,
+        541.3333333333334,
+        270.6666666666667
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q30",
+      "number": 30,
+      "officialPage": 11,
+      "imageSHA256": "b1301b5b694b6dfb96f9c34f6faf975323c80acf8b1b72b88af901666df10a6d",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        286.0,
+        541.3333333333334,
+        422.0
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q31",
+      "number": 31,
+      "officialPage": 11,
+      "imageSHA256": "949245262674638e1b3fe6ac637981f770ae238efc1cc824bc9e8cd8a86a89b8",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        434.6666666666667,
+        541.3333333333334,
+        766.6666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 2
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q32",
+      "number": 32,
+      "officialPage": 12,
+      "imageSHA256": "285aac3af0f79540aa31c9d88ca5712038b38600de4ef4ce55c6f57965c3c928",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        68.66666666666667,
+        541.3333333333334,
+        228.66666666666666
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q33",
+      "number": 33,
+      "officialPage": 12,
+      "imageSHA256": "35305b7b982aa97593ade10dca4197a36064d4d266138e1d3cc7f2091443a3e2",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        246.0,
+        541.3333333333334,
+        469.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q34",
+      "number": 34,
+      "officialPage": 13,
+      "imageSHA256": "8d2d1ab382afc77a52c28f6952c45e685b04524becc661ded72d0749c5e231d7",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        70.0,
+        541.3333333333334,
+        381.3333333333333
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    },
+    {
+      "id": "gijutsushi1-oyo-2025-annual-senmon-q35",
+      "number": 35,
+      "officialPage": 13,
+      "imageSHA256": "205f90c3d0bfe96969c5b394467a4bc999ed094927d960934db2500fed3bc6b7",
+      "sourcePdfClipPoints": [
+        66.66666666666667,
+        393.3333333333333,
+        541.3333333333334,
+        659.3333333333334
+      ],
+      "imageComplete": "PASS",
+      "allFiveChoicesPresent": true,
+      "formulaAndConditionPreservation": "PASS",
+      "sourcePixelsMatch": true,
+      "reviewRound": 1
+    }
+  ],
+  "explanationAcceptanceInherited": {
+    "previousReceipt": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new15-private-20261101\\outputs\\packet\\INDEPENDENT-REVIEW.json",
+      "sha256": "fa3178ceab850c62510b224b650cd14b342f01a03d56a996c716ddda6a9d2eff",
+      "bytes": 22309
+    },
+    "previousInput": {
+      "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new15-private-20261101\\outputs\\packet\\questions-2025-annual.json",
+      "sha256": "1d15555ca3e25297243a1758538e06c7f4974b4125154752827ed162ff87358e",
+      "bytes": 92158
+    },
+    "explanations": 35,
+    "choiceReasons": 175,
+    "utf8StringsEqual": true,
+    "canonicalExplanationSHA256": "9ea72fb2ac5bb58adbd746d87e62772528c761e90b0e233abb29ad122574e970",
+    "canonicalization": "UTF-8 json of ordered id/explanation/choiceExplanations records; sorted object keys; separators comma/colon; ensure_ascii=False",
+    "newContentReQA": false,
+    "scope": "旧PASS_CONTENTの解説内容受入のみ継承。旧要約本文・要約選択肢の原文一致を認めるものではない。"
+  },
+  "q12": {
+    "originalPhrasePreserved": "芳香族炭化水素",
+    "notice": "原問の「芳香族炭化水素」は原文のまま保持しています。与条件は炭素・水素・酸素を含む化合物で、公式正答はフェノールです。用語上の不整合は解説と区別して扱います。",
+    "separation": "原文の画像を改変せず、用語不整合と公式正答を別注記として保持。"
+  },
+  "adoptionBoundary": {
+    "oldSummaryPacketEligible": false,
+    "oldPacketPreserved": true,
+    "sharedMainAppliedByReviewer": 0,
+    "runtimeVerified": false
+  },
+  "limits": [
+    "受入対象は35枚の公式原文画像と解説同版継承。question/choicesのテキストは番号参照のみで、原文の文字起こしではない。",
+    "画面上に画像が表示されない場合は原問が欠落するため、main統合でimageUrlsの表示・資産同梱が必要。この受入は実runtime表示を証明しない。",
+    "原文画像のみでは読み上げ用の全文テキストは提供されない。",
+    "共有適用、アプリ型検査、UI受入、公開、権利許諾はこの票の範囲外。"
+  ],
+  "blockingFindings": []
+}

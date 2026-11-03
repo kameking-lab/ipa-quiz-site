@@ -44,8 +44,11 @@ describe("official exam library integration", () => {
       .map((question) => [question.id, question.correctChoice, question.choiceCount])
       .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-"));
-    expect(answerSnapshot).toHaveLength(2209);
+    const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
+    const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
+    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)));
+    expect(answerSnapshot).toHaveLength(2803);
+    expect(peSnapshot).toHaveLength(594);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
     expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))

@@ -29,6 +29,7 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
   const groups = selectedGroupIds
     ? EXAM_GROUPS.filter((group) => selectedGroupIds.includes(group.id))
     : EXAM_GROUPS;
+  const peFirstOnly = groups.length === 1 && groups[0]?.id === "pe-first";
   return (
     <section
       aria-labelledby="exam-source-notes-title"
@@ -39,7 +40,7 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6">
         <li>
-          {surveyOnly ? "問題は国土地理院が公表した測量士補試験の原本PDFに基づきます。当サイトは国土地理院とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "survey-assistant") ? "問題は公益財団法人安全衛生技術試験協会および国土地理院の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。各演習ページから原本を確認できます。" : "問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。"}
+          {peFirstOnly ? "出典は公益社団法人日本技術士会の公式問題・公式正答PDFです。解説は当サイト独自の学習用で、日本技術士会の公式解説ではありません。画像の原問は指定されたⅢの番号を読んでください。" : surveyOnly ? "問題は国土地理院が公表した測量士補試験の原本PDFに基づきます。当サイトは国土地理院とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "pe-first") ? "問題は安全衛生技術試験協会・国土地理院・日本技術士会の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "survey-assistant") ? "問題は公益財団法人安全衛生技術試験協会および国土地理院の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。各演習ページから原本を確認できます。" : "問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。"}
         </li>
         {surveyOnly ? <li>原本PDFと図表は取得した原本の保存コピーです。原本の数値・式・公式解答は変更していません。2026年No.12は参照専用で、採点・成績・解答履歴・復習には含めません。</li> : entry?.sourceMode === "official-archive-copy" ? (
           <li>この回の旧公式PDFは公開を終了しているため、旧公式索引と照合した公開保存コピー（osh-lab.com）へリンクします。</li>
