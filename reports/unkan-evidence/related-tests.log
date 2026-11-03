@@ -1,0 +1,15 @@
+
+ RUN  v3.2.4 /home/user/ipa-quiz-site
+
+ ✓ __tests__/exam-qualification-hubs.test.ts (5 tests) 40ms
+ ✓ __tests__/exam-catalog-browser.test.tsx (2 tests) 431ms
+   ✓ consistent qualification selection > separates the two consultant qualifications without category tabs  378ms
+ ✓ __tests__/exam-library-integration.test.ts (5 tests) 1141ms
+   ✓ official exam library integration > requires every authored plain explanation to be substantive and preserves its answer-key snapshot  569ms
+   ✓ official exam library integration > loads only source-matched, five-choice, government-sourced structured overlays  508ms
+
+ Test Files  3 passed (3)
+      Tests  12 passed (12)
+   Start at  16:44:35
+   Duration  3.74s (transform 1.09s, setup 568ms, collect 2.12s, tests 1.61s, environment 2.45s, prepare 462ms)
+
