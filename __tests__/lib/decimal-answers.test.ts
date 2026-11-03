@@ -30,6 +30,18 @@ describe("original decimal BMI entry", () => {
     expect(numericQuestionIssue(invalid)).toBeTruthy();
     expect(isPracticeReadyQuestion(invalid)).toBe(false);
   });
+  it("supports original hundredths without rounding extra digits or accepting partial input", () => {
+    const hundredths: Question = { ...question, answer: "2.35", numericAnswer: { format: "decimal", precision: 2, unit: "m³ₙ/kg-f" } };
+    expect(numericQuestionIssue(hundredths)).toBeUndefined();
+    for (const input of ["2.35", "２．３５", "002.35"]) expect(isNumericAnswerCorrect(hundredths, input)).toBe(true);
+    for (const input of ["2.354", "2.350", "2.", ".35", "2.35foo", "2.35 m³ₙ/kg-f", "2,35", "+2.35", "-2.35", "2.35e0"]) expect(normalizeNumericAnswer(input, hundredths.numericAnswer)).toBeUndefined();
+    expect(isNumericAnswerCorrect(hundredths, "2.34")).toBe(false);
+    expect(normalizeNumericAnswer("2.3", hundredths.numericAnswer)).toBe("2.30");
+    expect(normalizeNumericAnswer("2", hundredths.numericAnswer)).toBe("2.00");
+    expect(normalizeNumericAnswer("9007199254740993.35", hundredths.numericAnswer)).toBe("9007199254740993.35");
+    const unsupported = { ...hundredths, numericAnswer: { format: "decimal", precision: 3, unit: "m³ₙ/kg-f" } } as unknown as Question;
+    expect(numericQuestionIssue(unsupported)).toBeTruthy();
+  });
   it("matches the preserved original height, weight, rounding instruction and final key", () => {
     expect(question.question).toContain(`${source.heightCm}cm`);
     expect(question.question).toContain(`${source.weightKg}kg`);

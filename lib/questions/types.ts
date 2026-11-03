@@ -199,7 +199,7 @@ export interface Question {
   type: QuestionType;
   /** 数値記入。answer は単位を除いた正規化済み非負数文字列。 */
   nativeB?: NativeBData;
-  numericAnswer?: ({ format: "integer"; unit: string } | { format: "decimal"; precision: 1; unit: string }) & {
+  numericAnswer?: ({ format: "integer"; unit: string } | { format: "decimal"; precision: 1 | 2; unit: string }) & {
     /** 原問の解答欄に印刷済みの負号。answerと入力値には記入する数値部分を保存する。 */
     fixedSign?: "negative";
   };

@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { ENERGY_KANRI_STAGED_QUESTIONS as questions } from "@/data/questions/energy-kanri";
 import sources from "@/data/qualification-staging/energy-kanri/sources.json";
 import tables from "@/data/qualification-staging/energy-kanri/official-answers.json";
+import { isNumericAnswerCorrect, numericQuestionIssue } from "@/lib/questions/numeric";
+import type { Question } from "@/lib/questions/types";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { existsSync } from "node:fs";
@@ -29,9 +31,9 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
-  it("収録済み42原問566公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
-    expect(questions).toHaveLength(562);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(562);
+  it("収録済み47原問639公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
+    expect(questions).toHaveLength(635);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(635);
     for (const q of questions) {
       const packet = Number(q.sourcePdfUrl!.match(/r0[78]_(\d)\.pdf/)![1]);
       const original = tables.find((t) => t.year === q.year && t.packet === packet)!
@@ -46,8 +48,17 @@ describe("エネルギー管理士の未公開収録", () => {
         expect("unorderedSlotGroups" in original && original.unorderedSlotGroups).toContainEqual(labels);
         expect(q.questionNotice).toContain("順序不問");
       } else expect(q.requiredSelections ?? 1).toBe(1);
-      expect(Object.keys(q.choiceExplanations!).sort()).toEqual(Object.keys(q.choices!).sort());
-      for (const reason of Object.values(q.choiceExplanations!)) expect(reason!.length).toBeGreaterThan(10);
+      if (q.type === "numeric") {
+        const numeric = q as unknown as Question;
+        expect(numericQuestionIssue(numeric)).toBeUndefined();
+        expect(isNumericAnswerCorrect(numeric, String(q.answer))).toBe(true);
+        expect(isNumericAnswerCorrect(numeric, `${q.answer}foo`)).toBe(false);
+        expect(q.explanation.length).toBeGreaterThan(20);
+        expect(q.choices).toBeUndefined();
+      } else {
+        expect(Object.keys(q.choiceExplanations!).sort()).toEqual(Object.keys(q.choices!).sort());
+        for (const reason of Object.values(q.choiceExplanations!)) expect(reason!.length).toBeGreaterThan(10);
+      }
       expect(q.originalContent?.sharedPassages?.[0].text).toContain(`問題${q.qNumber}`);
       if (q.session === "kyotsu" && q.qNumber === 3) {
         expect(q.originalContent?.sharedPassages?.[0].text).toContain(`${q.year === 2025 ? "令和7" : "令和8"}年4月1日`);
@@ -63,6 +74,7 @@ describe("エネルギー管理士の未公開収録", () => {
 
   it("原問ごとの全解答欄を過不足なく保持し、順序不問ペアを重複なく採点する", () => {
     const manifest = [
+      [2025, 3, 10], [2025, 4, 13], [2025, 4, 15], [2025, 7, 15], [2025, 6, 9],
       [2025, 7, 12], [2025, 1, 1], [2026, 1, 1], [2026, 3, 10], [2026, 7, 11], [2026, 7, 12],
       [2025, 6, 7], [2025, 6, 10], [2026, 6, 7], [2026, 6, 9], [2026, 6, 10],
       [2025, 7, 13], [2026, 7, 13],
@@ -82,7 +94,7 @@ describe("エネルギー管理士の未公開収録", () => {
       expect(new Set(labels).size).toBe(labels.length);
       slotCount += labels.length;
     }
-    expect(slotCount).toBe(566);
+    expect(slotCount).toBe(639);
     const pairs = questions.filter((q) => q.requiredSelections === 2);
     expect(pairs).toHaveLength(4);
     for (const q of pairs) {
@@ -279,10 +291,24 @@ describe("エネルギー管理士の未公開収録", () => {
     expect("scoring" in allCorrect && allCorrect.scoring).toBe("all-correct");
   });
 
+  it("数値記入24欄は原問の精度・倍率を保持して採点する", () => {
+    const entries = questions.filter((q) => q.type === "numeric");
+    expect(entries).toHaveLength(24);
+    expect(entries.filter((q) => q.numericAnswer?.format === "decimal" && q.numericAnswer.precision === 2)).toHaveLength(8);
+    const lighting = entries.filter((q) => q.category === "照明");
+    expect(lighting.map((q) => q.answer)).toEqual(["7.85", "5.0", "6.7", "38", "41"]);
+    expect(lighting.slice(0, 3).map((q) => q.numericAnswer?.unit)).toEqual(["×10³ lm/m²", "×10² lm", "×10⁻¹（照明率）"]);
+    expect(lighting.find((q) => q.officialAnswerNumber === "D")!.explanation).toContain("切り上げ");
+    const boiler = entries.find((q) => q.qNumber === 13 && q.officialAnswerNumber === "B")!;
+    expect(boiler.originalContent!.sharedPassages!.map((p) => p.text).join(" ")).toContain("17.2");
+    const water = entries.find((q) => q.category === "熱交換器・熱回収装置" && q.officialAnswerNumber === "C")!;
+    expect(water.originalContent!.sharedPassages!.map((p) => p.text).join(" ")).toContain("80℃");
+  });
+
   it("未完成資格を公開せず、残る原問を明記する", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
     expect(entry.status).toBe("ready-to-ingest");
     expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("20原問276解答欄");
+    expect(entry.remainingWork.join(" ")).toContain("15原問203解答欄");
   });
 });

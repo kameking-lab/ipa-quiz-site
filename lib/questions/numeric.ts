@@ -4,11 +4,11 @@ import type { Question } from "./types";
 export function normalizeNumericAnswer(input: string, specification?: Question["numericAnswer"]): string | undefined {
   let digits = input.trim().replace(/[０-９]/g, (digit) => String.fromCharCode(digit.charCodeAt(0) - 0xfee0));
   if (specification?.format === "decimal") {
-    if (specification.precision !== 1) return undefined;
+    if (![1, 2].includes(specification.precision)) return undefined;
     digits = digits.replace(/．/g, ".");
-    if (!/^[0-9]+(?:\.[0-9])?$/.test(digits)) return undefined;
-    const [whole, fraction = "0"] = digits.split(".");
-    return `${whole!.replace(/^0+(?=\d)/, "")}.${fraction}`;
+    if (!new RegExp(`^[0-9]+(?:\\.[0-9]{1,${specification.precision}})?$`).test(digits)) return undefined;
+    const [whole, fraction = ""] = digits.split(".");
+    return `${whole!.replace(/^0+(?=\d)/, "")}.${fraction.padEnd(specification.precision, "0")}`;
   }
   if (specification && specification.format !== "integer") return undefined;
   if (!/^[0-9]+$/.test(digits)) return undefined;
@@ -26,8 +26,8 @@ export function numericQuestionIssue(question: Question): string | undefined {
   if (specification.fixedSign !== undefined && specification.fixedSign !== "negative") {
     return "numeric fixedSign must be a supported printed sign";
   }
-  if (specification.format === "decimal" && specification.precision !== 1) {
-    return "decimal numeric requires precision1";
+  if (specification.format === "decimal" && ![1, 2].includes(specification.precision)) {
+    return "decimal numeric requires precision 1 or 2";
   }
   if (typeof question.answer !== "string" || normalizeNumericAnswer(question.answer, specification) !== question.answer) {
     return "numeric answer must be a canonical nonnegative string in the specified format";
