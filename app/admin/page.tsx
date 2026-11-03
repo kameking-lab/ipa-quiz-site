@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity }[] = [
+  { href: "/admin/feedback", title: "改善の意見", desc: "追加10問の意見・希望資格・選択肢集計", icon: Users },
   { href: "/admin/launch-monitoring", title: "ローンチ監視", desc: "稼働状況・初日監視ハブ", icon: Rocket },
   { href: "/admin/metrics", title: "メトリクス", desc: "主要 KPI ダッシュボード", icon: BarChart3 },
   { href: "/admin/stats", title: "統計", desc: "学習・利用統計", icon: LineChart },

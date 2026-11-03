@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { billingHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { useEffect } from "react";
+import { posthogCapture } from "@/lib/posthog";
+import dynamic from "next/dynamic";
+const FeedbackUnlock = dynamic(() => import("./FeedbackUnlock").then(m => m.FeedbackUnlock), { ssr: false });
 
 export function PracticeLoading({ index = 0, total = 0 }: { index?: number; total?: number }) {
   return <div className="mx-auto flex min-h-[100dvh] w-full max-w-2xl flex-col items-center gap-4 px-4 pt-10 text-center sm:pt-14" role="status" aria-live="polite">
@@ -14,7 +18,8 @@ export function PracticeLoading({ index = 0, total = 0 }: { index?: number; tota
   </div>;
 }
 
-export function PracticeDailyLimit({ reset, resumeHref, backHref, freeDaily }: { reset: string | null; resumeHref: string; backHref: string; freeDaily?: number }) {
+export function PracticeDailyLimit({ reset, resumeHref, backHref, freeDaily, onUnlocked }: { reset: string | null; resumeHref: string; backHref: string; freeDaily?: number; onUnlocked?: () => void }) {
+  useEffect(() => { posthogCapture("practice_limit_viewed", { freeDaily: freeDaily ?? 10 }); }, [freeDaily]);
   return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-2xl px-4 py-6 sm:py-10">
     <div className="space-y-5 rounded-3xl border border-sky-200 bg-gradient-to-b from-sky-50 via-card to-card p-5 text-center shadow-sm dark:border-sky-800 dark:from-sky-950 sm:p-8">
       <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={128} /></div>
@@ -29,6 +34,7 @@ export function PracticeDailyLimit({ reset, resumeHref, backHref, freeDaily }: {
         <p className="text-xs leading-relaxed text-muted-foreground">料金・自動更新の条件を確認する画面へ進みます。<br />このボタンだけで課金は始まりません。</p>
       </div>
       <div className="space-y-3 border-t border-border pt-5">
+        <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
         <Link href="/review" className="flex min-h-12 w-full items-center justify-center rounded-xl border border-border bg-background px-4 py-3 font-semibold hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">保存済みの履歴を無料で復習する</Link>
         <p className="text-sm leading-relaxed">{reset ? `${reset}に無料枠が更新されます。` : "次の日本時間0時に無料枠が更新されます。"}<br />履歴はそのまま。明日もここから続けられます。</p>
         <Link href={resumeHref} className="inline-flex min-h-11 items-center justify-center px-3 text-sm font-semibold underline underline-offset-4">明日、この問題から再開する</Link>

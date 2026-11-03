@@ -1,0 +1,20 @@
+import { cleanup, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+const capture = vi.hoisted(() => vi.fn());
+vi.mock("@/lib/posthog", () => ({ posthogCapture: capture }));
+import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
+beforeEach(() => { capture.mockClear(); sessionStorage.clear(); });
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+it.each([true, false])("tracks only confirmed purchases after feedback (%s), without a mutation request", async submitted => {
+  const fetcher = vi.fn(async () => Response.json({ entitled: true, feedbackSubmitted: submitted, purchase: { id: "order", status: "paid" } }));
+  vi.stubGlobal("fetch", fetcher);
+  const view = render(<PurchaseStatus order="order" />);
+  await screen.findByRole("heading", { name: "購入が完了しました" });
+  expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0);
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  expect(fetcher.mock.calls[0]).toEqual(["/api/billing/status?order=order", { cache: "no-store" }]);
+  view.unmount();
+  render(<PurchaseStatus order="order" />);
+  await screen.findByRole("heading", { name: "購入が完了しました" });
+  expect(capture).toHaveBeenCalledTimes(submitted ? 1 : 0);
+});

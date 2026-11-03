@@ -21,6 +21,7 @@ import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { NOTE_PROFILE_URL } from "@/lib/external-links";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { FeedbackAccountClaim } from "@/components/quiz/FeedbackAccountClaim";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -127,6 +128,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://us.i.posthog.com" />
       </head>
       <body className="min-h-[100dvh] antialiased">
+        {process.env.FEEDBACK_UNLOCK_ENABLED === "true" && <FeedbackAccountClaim />}
         <ThemeProvider>
           <MobileInstallProvider>
           <StudyPresence />

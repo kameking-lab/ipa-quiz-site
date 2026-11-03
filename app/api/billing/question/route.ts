@@ -8,6 +8,7 @@ import { BillingError, jstDay } from "@/lib/billing/domain";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
 import { cookieHeader, guestClaim, guestCookie, guestGrant, guestRealm, readGuestCookie, resetAt } from "@/lib/billing/guest-practice";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   const now = Date.now();
@@ -27,6 +28,12 @@ export async function POST(request: Request) {
       if (id === BILLING_SAMPLE_ID) access.kind = "sample";
       else {
         const userId = await optionalBillingIdentity();
+        let bonusClaimAvailable = true;
+        if (userId && process.env.FEEDBACK_UNLOCK_ENABLED === "true") {
+          try {
+            if (readFeedbackBrowser(request)) await feedbackStore().claim(unlockIdentity(request, userId));
+          } catch { bonusClaimAvailable = false; /* Existing paid and ordinary free rights stay independent. */ }
+        }
         const service = userId ? (monthly ? (await import("@/lib/billing/subscription/runtime")).monthlyRuntime().service : billingRuntime().service) : null;
         // Existing paid/grace rights do not depend on anonymous cookie or KV.
         if (userId && service && (await service.status(userId)).entitled) {
@@ -53,7 +60,17 @@ export async function POST(request: Request) {
             access.kind = "guest";
             if (result.status === "claimed") throw new BillingError("sign_in_required", 401);
             if (result.status === "rate") { access.retryAfter = result.retry ?? 60; throw new BillingError("guest_rate_limited", 429); }
-            if (result.status === "limit") { access.remaining = 0; throw new BillingError("daily_limit", 429); }
+            if (result.status === "limit") {
+              if (process.env.FEEDBACK_UNLOCK_ENABLED !== "true") { access.remaining = 0; throw new BillingError("daily_limit", 429); }
+              const bonus = await feedbackStore().grant(unlockIdentity(request, null, realm), jstDay(new Date(now)), question.id);
+              if (!bonus) { access.remaining = 0; throw new BillingError("daily_limit", 429); }
+              access.remaining = bonus.remaining;
+              access.feedbackBonus = bonus;
+              const response = json({ question: shuffle ? shuffleChoices(question) : question, access });
+              const browser = readFeedbackBrowser(request);
+              if (browser) response.headers.append("Set-Cookie", feedbackBrowserHeader(browser, new URL(request.url).protocol === "https:"));
+              return response;
+            }
             if (result.status !== "ok" || result.used === undefined) throw new BillingError("billing_unavailable", 503);
             access.remaining = Math.max(0, config.freeDaily - result.used);
           } else if (userId && service) {
@@ -63,13 +80,27 @@ export async function POST(request: Request) {
               try { snapshots = await guestClaim(realm, guest, userId, config.freeDaily, now); }
               catch { allowNew = false; }
             }
-            const grant = await service.grant(userId, question.id, snapshots, allowNew, jstDay(new Date(now)));
-            access = { ...access, ...grant };
+            try {
+              const grant = await service.grant(userId, question.id, snapshots, allowNew, jstDay(new Date(now)));
+              access = { ...access, ...grant };
+            } catch (error) {
+              if (!(error instanceof BillingError) || error.code !== "daily_limit" || !allowNew || !bonusClaimAvailable || process.env.FEEDBACK_UNLOCK_ENABLED !== "true") throw error;
+              const bonus = await feedbackStore().grant(unlockIdentity(request, userId, realm), jstDay(new Date(now)), question.id);
+              if (!bonus) throw error;
+              access = { ...access, kind: "trial", remaining: bonus.remaining, feedbackBonus: bonus };
+            }
           }
         }
       }
     }
-    return json({ question: shuffle ? shuffleChoices(question) : question, access });
+    const response = json({ question: shuffle ? shuffleChoices(question) : question, access });
+    if (process.env.FEEDBACK_UNLOCK_ENABLED === "true") {
+      try {
+        const browser = readFeedbackBrowser(request);
+        if (browser) response.headers.append("Set-Cookie", feedbackBrowserHeader(browser, new URL(request.url).protocol === "https:"));
+      } catch { /* Cookie renewal never revokes ordinary practice rights. */ }
+    }
+    return response;
   } catch (error) {
     const code = error instanceof BillingError ? error.code : "billing_unavailable";
     const status = error instanceof BillingError ? error.status : 503;

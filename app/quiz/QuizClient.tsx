@@ -11,6 +11,7 @@ import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeT
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
+import { posthogCapture } from "@/lib/posthog";
 
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -207,6 +208,7 @@ export function QuizClient({
       try {
         const result = await fetchQuestion(id, shuffle, setActive && requiresGrant, controller.signal);
         if (cancelled) return;
+        if (setActive && result.access?.feedbackBonus?.newlyUsed) posthogCapture("practice_feedback_bonus_used", { remaining: result.access.feedbackBonus.remaining });
         cache.current.set(id, result.question);
         if (setActive) { setCurrent(result.question); setAccess(result.access); setLoadError(false); setAccessError(null); }
       } catch (error) {
@@ -263,7 +265,7 @@ export function QuizClient({
     const loginHref = `/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search)}`;
     if (accessError === "daily_limit") {
       return <div ref={transitionHost} tabIndex={-1} aria-label="本日の無料演習の終了" className="min-h-[100dvh] scroll-mt-24 outline-none">
-        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} />
+        <PracticeDailyLimit reset={reset} resumeHref={window.location.pathname + window.location.search} backHref={backHref} freeDaily={access?.freeDaily} onUnlocked={() => setRetryCount(n => n + 1)} />
       </div>;
     }
     const message = accessError === "daily_limit"
@@ -293,6 +295,7 @@ export function QuizClient({
 
   return (
     <div ref={transitionHost} tabIndex={-1} aria-label={`${index + 1}問目 / ${sessionIds.length}問`} className="min-h-[100dvh] scroll-mt-24 outline-none">
+      {access?.feedbackBonus && <p role="status" className="mx-auto max-w-4xl px-4 py-3 text-sm">意見による追加10問を利用中です。追加枠は残り{access.feedbackBonus.remaining}問です。</p>}
       {access?.kind === "guest" ? (
         <aside aria-label="ログインなしの無料演習枠" className="mx-auto w-full max-w-4xl space-y-1 border-b border-border px-4 py-3 text-sm">
           <p role="status">ログインなしで無料の連続演習を利用中です。{access.remaining != null ? `今日あと${access.remaining}問（1日${access.freeDaily}問）。` : "残りの演習枠を確認できません。"}次の更新：{resetLabel(access)}</p>

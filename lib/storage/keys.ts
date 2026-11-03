@@ -15,6 +15,7 @@ export const LS_KEYS = {
   settings: "ipa-quiz:settings:v1",
   swipeHintShown: "ipa-quiz:swipe-hint-shown:v1",
   feedbackSubmitted: "ipa-quiz:feedback-submitted:v1",
+  feedbackUnlockPendingClaim: "ipa-quiz:feedback-unlock-pending-claim:v1",
   feedbackGateShown: "ipa-quiz:feedback-gate-shown:v1",
   questionFeedback: "ipa-quiz:question-feedback:v1",
   publicFeedback: "ipa-quiz:public-feedback:v1",
