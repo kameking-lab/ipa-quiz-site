@@ -47,8 +47,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
     officialReuseTermsUrl: "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
     status: "permission-required",
-    reuseSummary: "令和8・7年の学科5科目、各125問が対象。公式資料と最終正答の参照情報を確認済み。問題本文・選択肢・解説は未収録で、演習は未公開。公式は個人利用以外の無断転載・複製を禁止。",
-    remainingWork: ["転載可能な資料の提供・利用条件の確認", "2年分250問の本文・選択肢のテキスト収録と原本照合", "必要図の収録・hasImageの設定", "公式最終正答との照合と独自の全肢解説", "令和8年学科Ⅲ問29の全員加点の扱いを実装・検証", "法令基準日（令和7年の例外を含む）の各問への明記"],
+    reuseSummary: "令和8・7年の学科5科目、各125問が対象。公式PDF8件の取得・既存ハッシュとの一致と最終正答250件を再確認。問題本文・選択肢・解説は未収録で、演習は未公開。公式の無断転載・複製禁止表示と、2026-11-04 06:10のオーナーによる収録続行の判断を報告に記録。ステータスは既存の未公開ステージングを維持。",
+    remainingWork: ["2年分250問の本文・選択肢のテキスト収録と原本照合", "必要図の収録・hasImageの設定", "公式最終正答との照合と独自の全肢解説", "令和8年学科Ⅲ問29の全員加点の扱いを実装・検証", "法令基準日（令和7年の例外を含む）の各問への明記"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",

@@ -8,6 +8,25 @@ import { getQualificationByExamCode, isExamPublished } from "@/lib/qualification
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { defaultPracticeSession, parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 
+// Rechecked against the downloaded final-answer PDFs; x means no correct option.
+// These literals are independent of the manifest, which must not define its own oracle.
+const FINAL_ANSWERS = [
+  { year: 2026, rows: [
+    "44241122211322314334",
+    "21433414421422314323",
+    "2324413212224323313141324344x4",
+    "233112244324133242133141424343",
+    "3224311132241313414441322",
+  ] },
+  { year: 2025, rows: [
+    "42134223123441442213",
+    "12244411423332321434",
+    "323431342114232432432324113441",
+    "122342143441132134232214343133",
+    "2134241132244233424111331",
+  ] },
+];
+
 // Publication boundaries must keep working when real candidate questions are added.
 describe("一級建築士（学科）の公開前登録", () => {
   it("keeps synchronous and lazy registries and public navigation closed", async () => {
@@ -53,6 +72,30 @@ describe("一級建築士（学科）の公開前登録", () => {
     }
     expect(manifest.rounds[0].subjects[0].answers.map(a => a.officialAnswerNumber)).toEqual([4,4,2,4,1,1,2,2,2,1,1,3,2,2,3,1,4,3,3,4]);
     expect(manifest.rounds[1].lawReferenceNote).toContain("2025-04-01");
+  });
+
+  it.each(FINAL_ANSWERS)("pins all 125 final-answer metadata entries for $year", ({ year, rows }) => {
+    const round = manifest.rounds.find(r => r.year === year)!;
+    expect(round.subjects.map(s => s.session)).toEqual(["keikaku", "kankyo-setsubi", "houki", "kozo", "sekou"]);
+    expect(round.subjects.flatMap(s => s.answers)).toHaveLength(125);
+    round.subjects.forEach((subject, index) => {
+      expect(subject.answers.map(a => a.officialAnswerNumber)).toEqual(
+        [...rows[index]].map(value => value === "x" ? null : Number(value)),
+      );
+      expect(subject.answers.map(a => a.grading)).toEqual(
+        [...rows[index]].map(value => value === "x" ? "credit-for-all" : "single-choice"),
+      );
+    });
+  });
+
+  it("records successful retrieval without changing the staging publication boundary", () => {
+    expect(manifest.ownerDecision.recordedDecisionAt).toBe("2026-11-04T06:10");
+    expect(manifest.publicationGo).toBe(false);
+    for (const source of manifest.sources) {
+      expect(source.retrieval.httpStatus).toBe(200);
+      expect(source.retrieval.integrityVerified).toBe(true);
+      expect(source.retrieval.localPath).toMatch(/^ops\/source-pdfs-20261104\/1k-/);
+    }
   });
 
   it("routes five subjects independently without design drafting", () => {
