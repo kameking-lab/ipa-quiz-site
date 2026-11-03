@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "jken-katsuyo3": "情報検定（J検）情報活用3級",
   "jken-katsuyo2": "情報検定（J検）情報活用2級",
   "jken-katsuyo1": "情報検定（J検）情報活用1級",
   kanteishi: "不動産鑑定士試験（短答式）",
@@ -260,6 +261,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  "jken-katsuyo3": (c) => `J検 情報活用3級の令和8年度前期・令和7年度後期から${c}問。公式問題・正答と全選択肢の独自解説で学習できます。`,
   "jken-katsuyo2": (c) => `J検 情報活用2級の令和8年度前期・令和7年度後期から${c}問。公式問題・正答と全選択肢の独自解説で学習できます。`,
   "jken-katsuyo1": (c) => `J検 情報活用1級の令和8年度前期・令和7年度後期から${c}問。公式問題・正答と全選択肢の独自解説で学習できます。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,

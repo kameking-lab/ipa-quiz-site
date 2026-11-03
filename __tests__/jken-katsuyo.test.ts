@@ -12,9 +12,13 @@ import type { Question } from "@/lib/questions/types";
 import { JKEN_KATSUYO2_QUESTIONS } from "@/data/questions/jken-katsuyo2";
 import secondManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade2/manifest.json";
 
+import { JKEN_KATSUYO3_QUESTIONS } from "@/data/questions/jken-katsuyo3";
+import thirdManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade3/manifest.json";
+
 const pools: { questions: Question[]; manifest: typeof firstManifest }[] = [
   { questions: JKEN_KATSUYO1_QUESTIONS, manifest: firstManifest },
   { questions: JKEN_KATSUYO2_QUESTIONS, manifest: secondManifest },
+  { questions: JKEN_KATSUYO3_QUESTIONS, manifest: thirdManifest },
 ];
 describe("J検 official past questions in unpublished staging", () => {
   for (const { questions, manifest } of pools) {

@@ -12,6 +12,7 @@
 |---|---:|---:|---:|---:|---|
 | 1級 | 43 | 42 | 85 | 15 | 未公開ステージング |
 | 2級 | 50 | 51 | 101 | 18 | 未公開ステージング |
+| 3級 | 46 | 47 | 93 | 8 | 未公開ステージング |
 
 問題数は大問数とは区別し、公式正答表の解答欄を1レコードとして数える。大問・解答欄番号はsubjectとIDに保持し、ルーティング用qNumberは大問×100＋解答欄番号とする。共通問題文・全解答群はテキストとして保持し、図表部分だけ原PDFから切り出す。各問に問題・正答URL、独自の全肢解説を保持。
 
@@ -34,3 +35,11 @@
 - https://www.jken.sgec.or.jp/common/pdf/past_test/251221_kaitojk02.pdf
 
 2級は全101欄を収録し除外なし。`grade2/manifest.json` に全公式正答・原本ハッシュを保持。二分木・ヒープの図選択肢は親子関係・幅優先順のテキストと原図を併用。`pnpm validate:questions --exam=jken-katsuyo2` は101件成功、失敗0・警告0。
+
+3級の出典（4本とも取得・全欄照合済み）:
+- https://www.jken.sgec.or.jp/common/pdf/past_test/260621_mondaijk03.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/260621_kaitojk03.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/251221_mondaijk03.pdf
+- https://www.jken.sgec.or.jp/common/pdf/past_test/251221_kaitojk03.pdf
+
+3級は全93欄を収録し除外なし。`grade3/manifest.json` に全公式正答・原本ハッシュを保持。2025年後期問題7の二択（適切ア・不適切イ）も公式指示どおり収録。権利に関わる情報モラル説明には出題時点の日付を明記。3級の作成を終え、総計279解答欄（大問40題）、図表41点。公開はせず台帳のステージング状態を保持する。

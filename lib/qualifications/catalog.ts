@@ -42,6 +42,17 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
+    domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー権利確認済み（2026-11-04 01:30）。令和8年度前期・令和7年度後期の公式問題・正答を収録した未公開ステージング。解説は独自作成。",
+    attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
+    remainingWork: ["オーナーによる公開切替（現在は未公開）"],
+  },
+
+  {
     slug: "jken-katsuyo2", examCode: "jken-katsuyo2", shortName: "J検 情報活用2級", fullName: "情報検定（J検）情報活用2級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
