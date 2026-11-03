@@ -1,4 +1,10 @@
 import type { Question } from "@/lib/questions/types";
+import q2025_heat_q06 from "./2025-heat-q06.json";
+import q2025_heat_q07 from "./2025-heat-q07.json";
+import q2026_heat_q05 from "./2026-heat-q05.json";
+import q2026_heat_q06 from "./2026-heat-q06.json";
+import q2026_heat_q07 from "./2026-heat-q07.json";
+
 import q2025_common_q01 from "./2025-common-q01.json";
 import q2025_common_q02 from "./2025-common-q02.json";
 import q2025_common_q03 from "./2025-common-q03.json";
@@ -54,6 +60,6 @@ export type StagedEnergyKanriQuestion = Omit<Question, "exam" | "license"> & {
   license: "ECCJ-owner-approved";
 };
 
-/** 47原問・639公式解答欄・635演習設問。順序不問の4ペアは2肢選択に統合する。 */
+/** 52原問・713公式解答欄・709演習設問。順序不問の4ペアは2肢選択に統合する。 */
 export const ENERGY_KANRI_STAGED_QUESTIONS: readonly StagedEnergyKanriQuestion[] =
-  [...q2025_heat_q10, ...q2025_heat_q13, ...q2025_heat_q15, ...q2025_electric_q15, ...q2025_electric_q09, ...q2025_common_q01, ...q2025_common_q02, ...q2025_common_q03, ...q2025_electric_q06, ...q2025_electric_q07, ...q2025_electric_q10, ...q2025_electric_q12, ...q2025_electric_q13, ...q2025_electric_q14, ...q2025_electric_q16, ...q2025_heat_q08, ...q2025_heat_q09, ...q2025_heat_q11, ...q2025_heat_q12, ...q2025_heat_q14, ...q2025_heat_q16, ...q2025_heat_q17, ...q2025_heat_q18, ...q2026_common_q01, ...q2026_common_q02, ...q2026_common_q03, ...q2026_electric_q06, ...q2026_electric_q07, ...q2026_electric_q09, ...q2026_electric_q10, ...q2026_electric_q11, ...q2026_electric_q12, ...q2026_electric_q13, ...q2026_electric_q14, ...q2026_electric_q15, ...q2026_electric_q16, ...q2026_heat_q08, ...q2026_heat_q09, ...q2026_heat_q10, ...q2026_heat_q11, ...q2026_heat_q12, ...q2026_heat_q13, ...q2026_heat_q14, ...q2026_heat_q15, ...q2026_heat_q16, ...q2026_heat_q17, ...q2026_heat_q18] as StagedEnergyKanriQuestion[];
+  [...q2025_heat_q06, ...q2025_heat_q07, ...q2026_heat_q05, ...q2026_heat_q06, ...q2026_heat_q07, ...q2025_heat_q10, ...q2025_heat_q13, ...q2025_heat_q15, ...q2025_electric_q15, ...q2025_electric_q09, ...q2025_common_q01, ...q2025_common_q02, ...q2025_common_q03, ...q2025_electric_q06, ...q2025_electric_q07, ...q2025_electric_q10, ...q2025_electric_q12, ...q2025_electric_q13, ...q2025_electric_q14, ...q2025_electric_q16, ...q2025_heat_q08, ...q2025_heat_q09, ...q2025_heat_q11, ...q2025_heat_q12, ...q2025_heat_q14, ...q2025_heat_q16, ...q2025_heat_q17, ...q2025_heat_q18, ...q2026_common_q01, ...q2026_common_q02, ...q2026_common_q03, ...q2026_electric_q06, ...q2026_electric_q07, ...q2026_electric_q09, ...q2026_electric_q10, ...q2026_electric_q11, ...q2026_electric_q12, ...q2026_electric_q13, ...q2026_electric_q14, ...q2026_electric_q15, ...q2026_electric_q16, ...q2026_heat_q08, ...q2026_heat_q09, ...q2026_heat_q10, ...q2026_heat_q11, ...q2026_heat_q12, ...q2026_heat_q13, ...q2026_heat_q14, ...q2026_heat_q15, ...q2026_heat_q16, ...q2026_heat_q17, ...q2026_heat_q18] as StagedEnergyKanriQuestion[];
