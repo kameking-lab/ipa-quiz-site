@@ -42,6 +42,23 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kogai-boshi",
+    shortName: "公害防止管理者",
+    fullName: "公害防止管理者等国家試験（水質・大気ほか）",
+    domain: "safety",
+    administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.e-jemai.jp/guide/guide1.html",
+    status: "terms-review-required",
+    reuseSummary: "令和8・7年度を監査。令和7年度の公式問題・正答PDFが取得できず、直近2回分の全問照合ができないため全13区分の本文収録を見送り。関連サイトの転載禁止規定の適用範囲も要確認。監査結果は reports/cloud-kogai-boshi-latest2.md。",
+    remainingWork: [
+      "令和7年度の全科目の問題・正答を公式サイトから取得可能な状態で再確認",
+      "令和8年度正答の速報・確定状況を再確認",
+      "JEMAI CLUBの転載禁止規定と国家試験PDFへの適用範囲を確認",
+      "収録条件を満たした場合のみ区分ごとに原文・公式正答を照合し独自解説を作成",
+    ],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
