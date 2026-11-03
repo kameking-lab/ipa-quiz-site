@@ -54,9 +54,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "jidosha-2-gasoline", examCode: "jidosha-2-gasoline", shortName: "二級ガソリン自動車整備士", fullName: "二級ガソリン自動車整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
-    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中78問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
+    reuseSummary: "令和8年度第1回・令和7年度第2回の開催科目から、保存80原問中79問を部分収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。科目ごとの直近2回を揃えたものではありません。法令は各試験日時点です。解説は独自作成です。",
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
-    remainingWork: ["未収録1原問の内容照合", "公式全員正解1原問は通常採点対象外"],
+    remainingWork: ["公式全員正解1原問は通常採点対象外"],
   },
   {
     slug: "jidosha-2-diesel", examCode: "jidosha-2-diesel", shortName: "二級ジーゼル自動車整備士", fullName: "二級ジーゼル自動車整備士", domain: "automotive",

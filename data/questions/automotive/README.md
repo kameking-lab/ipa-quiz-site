@@ -4,7 +4,7 @@ LQ1B・LQ1C（2026-11-04）。Draft PR #731、`codex/automotive-acceptance-20261
 
 今回の対象は令和8年度第1回（2026-10-04）と令和7年度第2回（2026-03-22）に実施された17筆記科目。科目ごとの直近2回とは異なる。口述2問は筆記原問数から分離して保存する。
 
-607原問・2428肢解説を通常の問題レジストリ、遅延ローダー、11資格の一覧・年度別・問題詳細・演習に登録した。`qualifications.json` が資格ごとの保存数と今回の部分収録数を表す。残3原問は別の保存原稿に残し、採点対象に混ぜない。通常採点への未収録3問には公式全員正解1問を含む。全610原問が完成したとは主張しない。
+608原問・2432肢解説を通常の問題レジストリ、遅延ローダー、11資格の一覧・年度別・問題詳細・演習に登録した。`qualifications.json` が資格ごとの保存数と今回の部分収録数を表す。残2原問は別の保存原稿に残し、採点対象に混ぜない。通常採点への未収録2問には公式全員正解1問を含む。全610原問が完成したとは主張しない。
 
 ## 権利と旧記録
 
@@ -14,7 +14,7 @@ LQ1B・LQ1C（2026-11-04）。Draft PR #731、`codex/automotive-acceptance-20261
 
 ## 証拠と検証
 
-- `data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json`：現在の607 ID・候補ハッシュ・証拠ハッシュ・未収録3 ID。
+- `data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json`：現在の608 ID・候補ハッシュ・証拠ハッシュ・未収録2 ID。
 - 同 `lq1b-recovered-evidence/`：既存受入票の複製。根拠の変更や新規受入への水増しは行わない。
 - 同 `lq1b-source-verification.json`：公式PDFの取得結果と同一性。
 - `assets.json`：原問題ページ図の公開URL・ハッシュ・物理ページ。内容を生成せず既存図を利用する。

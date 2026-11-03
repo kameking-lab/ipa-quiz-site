@@ -1,11 +1,10 @@
 {
   "scopeOriginals": 85,
-  "newGradableOriginals": 82,
+  "newGradableOriginals": 83,
   "referenceIds": [
     "jidosha-2025-second-2-gasoline-q13"
   ],
   "remainingIds": [
-    "jidosha-2026-first-2-gasoline-q31",
     "jidosha-2026-first-body-q37"
   ],
   "rows": [
@@ -31,8 +30,8 @@
     },
     {
       "id": "jidosha-2026-first-2-gasoline-q31",
-      "candidateSha256": "1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
-      "verdict": "HOLD",
+      "candidateSha256": "350811a10cb5d4b9b84a6594caf679ba06861d786a72d88ddedb71523550bb16",
+      "verdict": "PASS",
       "sourcePagesChecked": [
         12
       ],
@@ -40,14 +39,44 @@
       "allFourExplanationsChecked": true,
       "findings": [
         {
-          "field": "technicalConflict",
-          "issue": "????(2)?????????????????????????????????????????????????????????????????????????????????????OCR?????????2???????NSK?????????????????????MT?QAT???????????????????????????????3??????????????????????????????",
-          "replacement": null,
-          "source": "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/ ; https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/ ; https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/bearings/1103_parta.pdf ???PDF??????????????????????????????; ??? 2026-first-2-gasoline p[12]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+          "field": "candidateSha256",
+          "issue": "Verified actual Q31 row SHA-256 using compact UTF-8 JSON in stored key order; matches binding and revision1 afterSha256. Every delta field matches the current candidate.",
+          "replacement": "None required; retain current candidate.",
+          "source": "data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json: writtenOriginals[id=jidosha-2026-first-2-gasoline-q31] and bindings; data/qualification-staging/automotive/latest-two/qa/lq1d-revision1-delta.json: Q31 afterSha256 and fields."
+        },
+        {
+          "field": "question; choices; answer",
+          "issue": "Original stem and all four choices agree. Official answer is (2), corresponding to candidate answer I (U+30A4).",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: physical/printed page 12, No.31, choices (1)-(4); tmp/lq1b-sources/jaspa-2026-first-answers-p1.png: physical page 1, leftmost 21 (2 gasoline) column, No.31 = 2."
+        },
+        {
+          "field": "explanation; choiceExplanations.U+30A4",
+          "issue": "Prior HOLD resolved by positive primary comparator. The publisher explicitly groups ball, needle roller and cylindrical roller under radial (016-05), ball and tapered roller under angular (016-08), and ball and needle roller under thrust (016-07). This establishes the exact tapered-to-cylindrical correction within the teaching taxonomy, without requiring a specific textbook edition. TSK independently corroborates angular ball/tapered grouping. The explanation correctly distinguishes this teaching convention from broader manufacturer classification and real transmission use; it does not deny tapered bearings radial load capacity.",
+          "replacement": "None required; retain current candidate.",
+          "source": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: publisher sample physical page 6, printed page 224, diagrams 016-05, 016-07, 016-08; data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png: physical page 18, printed page 16, Problem 13 choice (2), explanation (2) angular ball/tapered diagrams and explanation (3) ball/needle/cylindrical diagrams. NSK https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/ overview, radial and one-direction axial loads (lines 399-401); https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/ product list, QAT tapered roller bearings (lines 415-419)."
+        },
+        {
+          "field": "choiceExplanations.U+30A2",
+          "issue": "Correct and instructional: M denotes metric thread, 10 is nominal outside diameter in mm, and 1.25 is pitch in mm. Distinguishes diameter from pitch.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(1); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-01 metric screw diagram, external diameter and pitch labels."
+        },
+        {
+          "field": "choiceExplanations.U+30A6",
+          "issue": "Correct and instructional: the curved bearing surface supports radial load perpendicular to the shaft; the flange supports axial/thrust load parallel to it.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(3); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-06 flanged half bearing; data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png: physical page 18, printed 16, Problem 13(1) and explanation (1), plain and flanged half bearing illustrations."
+        },
+        {
+          "field": "choiceExplanations.U+30A8",
+          "issue": "Correct and instructional: integral resin or deformed-metal locking features resist loosening; accurately distinguishes these from a slotted nut secured with a split pin.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(4); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-03 self-locking nut resin and crimp features, contrasted with 016-02 slotted/castle nuts."
         }
       ],
-      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
-      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a5e05621e1f5-lq1d-review-q31.json",
+      "evidenceSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33"
     },
     {
       "id": "jidosha-2026-first-2-diesel-q01",

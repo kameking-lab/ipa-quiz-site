@@ -1847,6 +1847,71 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2026-first-2-gasoline-q31",
+    "qNumber": 31,
+    "question": "ねじとベアリングに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 「M10×1.25」と表されるおねじの外径は10mmである。",
+      "イ": "(2) ローリング・ベアリングのうち、ラジアル・ベアリングには、ボール型、ニードル・ローラ型、テーパ・ローラ型があり、トランスミッションなどに用いられている。",
+      "ウ": "(3) プレーン・ベアリングのうち、つば付き半割り形プレーン・ベアリングは、ラジアル方向（軸と直角方向）とスラスト方向（軸と同じ方向）の力を受ける構造になっている。",
+      "エ": "(4) 戻り止めナット（セルフロッキング・ナット）は、ナットの一部に戻り止めを施し、ナットが緩まないようにしている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正答は(2)。本問の整備士教材の3分類では、ラジアルはボール型・ニードル・ローラ型・シリンドリカル・ローラ型、アンギュラはボール型・テーパ・ローラ型に分ける。(2)はラジアルの例にテーパ型を入れた点が誤りで、シリンドリカル型に直す。公論出版の多言語用語集の図（印刷224ページ）でもこの対応を確認できる。一方、NSKなどの一般的な製品分類ではテーパ型もラジアル軸受に含まれ、径方向と一方向の軸方向の荷重を受け、変速機での採用例もある。教材の分類を、荷重を受けられない・変速機には使えないという意味に取り違えない。",
+    "choiceExplanations": {
+      "ア": "適切。Mはメートルねじ、10は呼び径（おねじの外径）10mm、1.25はピッチ1.25mmを表す。外径とピッチを混同しない。",
+      "イ": "不適切。本問のラジアル・スラスト・アンギュラという3分類では、テーパ・ローラ型は径方向と軸方向の荷重を受けるアンギュラに対応する。ラジアルの種類を列挙する本肢では「テーパ・ローラ型」を「シリンドリカル・ローラ型」に直す（公論出版の多言語用語集、印刷224ページ、016-05・016-08）。これは教材の分類の区別であり、NSKのラジアル軸受分類やテーパ型の変速機用途を否定するものではない。",
+      "ウ": "適切。半割り形の軸受面が軸と直角のラジアル荷重を受け、つば部が軸と平行なスラスト荷重を受けるため、両方向の力を支持できる。",
+      "エ": "適切。セルフロッキング・ナットは、樹脂部や金属部の変形など、ナット自体に設けた戻り止め構造で緩みを防ぐ。溝付きナットと割りピンを組み合わせる方式とは区別する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      12
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ベアリング",
+      "ねじ"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [
+      "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/eightlanguage2022.pdf#page=6",
+      "https://tsk.or.jp/image/multi/pdf/auto_mechanic_exam_preparation_anser%26comment.pdf#page=18",
+      "https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/",
+      "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/"
+    ],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-gasoline",
+    "category": "二級ガソリン自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ガソリン自動車 No.31",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2g.pdf#page=12",
+        "pdfSha256": "d4928e4405dd5933fc42eb31200b5ad6480cb2057474e04ee342b405b8ab9c33"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-2-gasoline-q32",
     "qNumber": 32,
     "question": "ガソリンに関する記述として、適切なものは次のうちどれか。",

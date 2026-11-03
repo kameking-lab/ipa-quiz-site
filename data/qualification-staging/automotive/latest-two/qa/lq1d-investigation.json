@@ -1,0 +1,140 @@
+{
+  "task": "LQ1D independent technical investigation",
+  "investigatedAt": "2026-11-03T18:09:06.806430+00:00",
+  "acceptancePerformed": false,
+  "authorization": "Owner rights verification 2026-11-04 01:30 acknowledged. Historical STOP and permission flags were not treated as blockers. Public resources only; no access restrictions bypassed.",
+  "scope": [
+    "jidosha-2026-first-2-gasoline-q31",
+    "jidosha-2026-first-body-q37"
+  ],
+  "method": "Read remaining register and existing local evidence; search public primary sources and publisher samples; extract PDFs in memory and visually inspect relevant diagrams. No source downloads saved.",
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "candidateSha256": "1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
+      "investigationStatus": "POSITIVE_TEACHING_GROUPING_FOUND_NOT_ACCEPTANCE",
+      "finding": "The three-way automotive teaching classification is positively illustrated in a publisher-hosted sample: radial = ball, needle roller, cylindrical roller; thrust = ball, needle roller; angular = ball, tapered roller. Thus replacing tapered with cylindrical in option 2 is supported within this teaching classification. This is a classification correction, not a claim that tapered rollers cannot carry radial loads or cannot be used in transmissions.",
+      "positiveEvidence": [
+        {
+          "url": "https://www.kouronpub-onlineshop.com/html//template/default/assets/pdf/eightlanguage2022.pdf",
+          "publisher": "Kouron Publishing",
+          "sourceType": "Publisher original educational illustration, public sample",
+          "location": "Physical PDF page 6 of 7, printed page 224, mechanical elements; diagrams 016-05 radial, 016-07 thrust, 016-08 angular. Physical page 1 introduction, dated January 2022, states Japanese terms were compiled from indexes in JASPA textbooks.",
+          "sha256": "9c408511167c442313bc156bb3b5b4cc9f030d35ea59654aa94c529386e7fb8d",
+          "bytes": 10105265,
+          "inspection": "Downloaded into memory; text extracted; page 6 rendered in memory and visually inspected.",
+          "supports": "All three positive groups and cylindrical-versus-tapered distinction.",
+          "limit": "This is a publisher sample drawing on JASPA terminology, not the original applicable JASPA textbook page or a 2026 official rationale."
+        },
+        {
+          "url": "https://www.air-autoclub.jp/storage/uploads/files/20230904-183234.pdf",
+          "sourceType": "Public original training handout",
+          "location": "Physical PDF page 10, printed page 9, Basic Automotive Engineering (4), rolling-bearing true/false item near bottom.",
+          "sha256": "28788390b2645dc0eef62fa3a505955f9c4a439cfd1210415b54ef3e0a4ff07e",
+          "inspection": "Direct public HTTP retrieval and PDF text extraction; web reader failed but normal public retrieval succeeded.",
+          "supports": "Explicitly corrects radial to angular for tapered roller type; supplies a positive replacement rather than merely marking the proposition false.",
+          "limit": "Training evidence, not the official 2026 worked answer."
+        }
+      ],
+      "classificationAndApplicationDistinction": [
+        {
+          "url": "https://www.nsk.com/content/dam/nsk/jp/ja/catalogs/pdf/bearings/1103_parta.pdf",
+          "location": "Physical PDF page 5, printed spread A008-A009, Figure 1.2, classification of rolling bearings.",
+          "inspection": "Public PDF retrieved in memory after web reader rejected its size; page 5 rendered and visually inspected.",
+          "finding": "NSK generic radial-type branch includes angular-contact ball bearings and tapered roller bearings. This taxonomy is different from the teaching three-way grouping. The generic classification is real and must not be dismissed as a source error."
+        },
+        {
+          "url": "https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/",
+          "location": "Product list: high-thrust-capacity cylindrical roller bearings; QAT tapered roller bearings. Web extracted lines 409-419.",
+          "inspection": "Primary manufacturer page opened and read.",
+          "finding": "Tapered rollers are actual manual-transmission products. Cylindrical rollers with thrust capacity are also listed. Teaching category labels must not be turned into exclusive application or load-capability rules."
+        }
+      ],
+      "localSourceLocations": [
+        "data/qualification-staging/automotive/latest-two/qa/lq1c-remaining-register.json rows[0]",
+        "data/qualification-staging/automotive/latest-two/figures/jaspa-2026-first-2-gasoline-p12.webp Q31, visually inspected",
+        "data/qualification-staging/automotive/latest-two/qa/lq1c-review-repaired-readable.json"
+      ],
+      "leadAudit": {
+        "url": "https://10648red.hatenablog.com/entry/2026/10/14/073533",
+        "location": "Article text around teaching classification table (web lines 112-143); article-content HTML images.",
+        "finding": "Secondary lead only. Its three embedded images were inspected and show product photographs of ball, needle and tapered bearings, not original textbook pages. No article-content source links were found. No original textbook edition/page is established by this blog."
+      },
+      "proposedTechnicalExplanation": "In the automotive teaching three-way grouping, radial bearings include ball, needle-roller and cylindrical-roller types; tapered rollers appear in the angular group. Option 2 substitutes tapered for cylindrical. Manufacturer catalogs may instead place tapered and angular-contact bearings under a broader radial category, and tapered bearings are used in real transmissions.",
+      "unsupportedGaps": [
+        "Original applicable JASPA textbook edition and page remain unverified.",
+        "Publisher sample establishes type grouping but does not establish the complete textbook sentence about example applications.",
+        "No acceptance decision, candidate edit, or release-state change was made."
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+      "investigationStatus": "POSITIVE_EXACT_GROUPING_NOT_FOUND",
+      "finding": "The exact correct machinery groups for polyester finishing putty (polipate) versus sheet-metal body filler (bankin pate) were not established. Do not close either explanation gap using repeated rejected options or by assigning exclusive uses to a sander.",
+      "correctPolyesterPuttyGroup": null,
+      "correctBodyFillerGroup": null,
+      "newPrimaryLocator": {
+        "url": "https://www.tact.ac.jp/cms/wp-content/themes/tsukuba_theme/common/pdf/2024/body_syllabus03_02.pdf",
+        "publisher": "Tsukuba automotive college, 2024 body-course syllabus",
+        "sha256": "754fc69b17070c12852f2f784f6cada69628dc52b9943bf43110617147eeace6",
+        "location": "Physical PDF page 12, lesson 64: sanding papers and sanding equipment (combinations of sanding work and equipment), textbook page 296. Lesson 63: putty sanding, page 295. Physical PDF page 11: sanding equipment, textbook page 286.",
+        "inspection": "Public PDF retrieved in memory; page 12 rendered and visually inspected.",
+        "supports": "Precise likely textbook lookup location, not the contents of the missing table.",
+        "limit": "Edition identification and original page 296 still required; syllabus page references may differ across editions."
+      },
+      "positiveButInsufficientEvidence": [
+        {
+          "url": "https://www.tact.ac.jp/cms/wp-content/themes/tsukuba_theme/common/pdf/2024/body_syllabus03_02.pdf",
+          "location": "Physical PDF page 37, practical lesson 29 body-filler sanding, lesson 30 DA-sander use, lesson 31 P80/P100. Physical page 38, lessons 51-53 polyester-putty sanding and P100/P120 selection.",
+          "inspection": "PDF text extracted.",
+          "supports": "Positive school teaching of DA sanding on body filler; polyester-putty stage is distinct.",
+          "limit": "Does not enumerate the full correct machinery group for either category; page 38 does not specify a machine."
+        }
+      ],
+      "localSourceLocations": [
+        "data/qualification-staging/automotive/latest-two/qa/lq1c-remaining-register.json rows[1]",
+        "data/qualification-staging/automotive/latest-two/figures/jaspa-2026-first-body-p12.webp Q37, visually inspected",
+        "data/qualification-staging/automotive/latest-two/qa/lq1c-supporting-sources.json",
+        "data/qualification-staging/automotive/latest-two/qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, recorded comparator"
+      ],
+      "rejectedAsClosureEvidence": [
+        {
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2021/20220320_bo.pdf",
+          "location": "Printed page 12 Q37",
+          "reason": "Repeats the rejected polyester-putty straight/orbital/DA and body-filler rotary/disc/DA combinations; no positive replacement."
+        },
+        {
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2024/20250323_bo.pdf",
+          "location": "Printed page 13 Q37",
+          "reason": "Repeats the same two rejected putty groups. Positive feather-edging/DA option does not solve putty groups."
+        },
+        {
+          "url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2025.pdf",
+          "location": "22-page public sample",
+          "reason": "Sample does not expose the required sanding machinery table."
+        },
+        {
+          "url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2023.pdf",
+          "location": "22-page public sample",
+          "reason": "No required sanding machinery table found."
+        },
+        {
+          "url": "https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/ss-2024.pdf",
+          "location": "16-page public sample, retrieved directly in memory",
+          "reason": "No sander term in extracted text; required table not obtained."
+        }
+      ],
+      "unsupportedGaps": [
+        "Which specific machine or category/stage assignment makes option 3 wrong.",
+        "Positive complete replacement group for polyester putty.",
+        "Which specific machine or category/stage assignment makes option 4 wrong.",
+        "Positive complete replacement group for body filler.",
+        "Cannot infer that straight, orbital, DA, rotary, or disc equipment is universally incapable of a putty operation."
+      ],
+      "nextSourceTarget": "Inspect the authorized applicable Shatai Seibi textbook, chapter 5, table of sanding work/equipment combinations, likely printed page 296 in the edition used by the 2024 syllabus; confirm edition and compare page 295 and equipment descriptions on page 286."
+    }
+  ],
+  "writeScope": "Only this investigation JSON was written. No product/candidate edits, commits, pushes, PRs, deployments, messages to others, or spawned agents.",
+  "encoding": "English ASCII JSON"
+}

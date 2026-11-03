@@ -3,10 +3,9 @@
   "ownerDecision": "2026-11-04 01:30: 今ダッシュボードに出ている資格は全て権利問題ないので止めるな",
   "storedOriginals": 610,
   "recoveredReviewedOriginals": 385,
-  "releaseOriginals": 607,
-  "newIndependentAcceptedOriginals": 222,
+  "releaseOriginals": 608,
+  "newIndependentAcceptedOriginals": 223,
   "notYetReleasedIds": [
-    "jidosha-2026-first-2-gasoline-q31",
     "jidosha-2026-first-body-q37",
     "jidosha-2025-second-2-gasoline-q13"
   ],
@@ -220,6 +219,27 @@
       "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/e77d31574580-ACCEPTED-ONLY.json",
       "evidenceSha256": "e77d3157458042f709a8fec3094ccd00fb52d5eee551d4f76f057fd22dedd1b5",
       "originalEvidencePath": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-18\\output\\gasoline-residual9-20261023\\ACCEPTED-ONLY.json"
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "candidateSha256": "350811a10cb5d4b9b84a6594caf679ba06861d786a72d88ddedb71523550bb16",
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a5e05621e1f5-lq1d-review-q31.json",
+      "evidenceSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33",
+      "originalEvidencePath": "C:\\Users\\kanet\\20260522\\wt-LQ1C\\data\\qualification-staging\\automotive\\latest-two\\qa\\lq1d-review-q31.json",
+      "supportingEvidence": [
+        {
+          "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources.json",
+          "sha256": "0134ddd27b37af007da669961dbad997b5bbd852605bf44e753cb69f4e9ecf65"
+        },
+        {
+          "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png",
+          "sha256": "7660d407bd2c8812d58543654ca5076c4eb5a0cad105f3cc117b22026a68d86f"
+        },
+        {
+          "path": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png",
+          "sha256": "874b5530285b3e9d78768f05ba0b21d089b4f9f6fccfa89e808c88d8e6a5978f"
+        }
+      ]
     },
     {
       "id": "jidosha-2026-first-2-gasoline-q32",
