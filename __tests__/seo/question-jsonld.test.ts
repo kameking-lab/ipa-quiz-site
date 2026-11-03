@@ -4,6 +4,8 @@ import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import type { Question, Session } from "@/lib/questions/types";
 import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
 import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
+import { SHINRISHI_QUESTIONS } from "@/data/questions/shinrishi";
+import { questionPagePath } from "@/lib/seo/question-url";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -73,6 +75,7 @@ describe("buildQuestionJsonLd", () => {
     expect(resource.publisher.url).toMatch(/^https?:\/\//);
     expect(resource.hasPart.author.name).toBe("情報処理推進機構 (IPA)");
     expect(resource.creator).toMatchObject({ name: "情報処理推進機構 (IPA)" });
+    expect(resource.license).toBe("https://www.ipa.go.jp/shiken/faq.html");
     expect(resource.hasPart).not.toHaveProperty("datePublished");
     expect(resource.hasPart).not.toHaveProperty("dateCreated");
     expect(answer.author.name).toBe("過去問AI");
@@ -136,6 +139,29 @@ describe("buildQuestionJsonLd", () => {
     });
     expect(resource.license).toBeUndefined();
     expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/shiken/faq.html");
+  });
+  it("attributes all 308 published shinrishi questions to JCCPP with its official terms", () => {
+    expect(SHINRISHI_QUESTIONS).toHaveLength(308);
+    const expectedAuthor = {
+      "@type": "Organization",
+      name: "一般財団法人公認心理師試験研修センター",
+      url: "https://www.jccpp.or.jp/",
+    };
+    for (const question of SHINRISHI_QUESTIONS) {
+      const jsonLd = buildQuestionJsonLd({
+        question,
+        pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(question)}`,
+        title: "公認心理師試験",
+      });
+      const resource = jsonLd["@graph"][0];
+      if (!("hasPart" in resource)) throw new Error(`Missing learning resource: ${question.id}`);
+      expect(resource.hasPart.author, question.id).toEqual(expectedAuthor);
+      expect(resource.creator, question.id).toEqual(expectedAuthor);
+      expect(resource.license, question.id).toBe("https://www.jccpp.or.jp/policy.html");
+      const serialized = JSON.stringify(jsonLd);
+      expect(serialized, question.id).not.toContain("ipa.go.jp");
+      expect(serialized, question.id).not.toContain("情報処理推進機構");
+    }
   });
   it("attributes a published judo question to ZAIJUSEI without inventing a license", () => {
     const judo = JUDO_SEIFUKUSHI_QUESTIONS[0];
