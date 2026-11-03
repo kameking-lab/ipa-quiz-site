@@ -1,26 +1,50 @@
 {
   "checkedAt": "2026-11-03",
+  "reviewRound": 3,
   "sourceAudit": "passed",
-  "sourceAuditCommand": "python scripts/verify-keiryoshi-source.py",
+  "sourceAuditCommand": "python3 scripts/verify-keiryoshi-source.py",
   "sourceAuditExitCode": 0,
   "sourceAuditResult": "source-audit-result.json",
-  "pnpmInstall": "not run; existing dependencies used",
   "validateQuestions": "passed: exit 0; 26744 questions; fail=0; warn=16956",
   "typecheck": "passed: exit 0; NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
-  "relatedTests": "passed: exit 0; npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo; 111 files, 597 tests",
-  "typecheckAttempts": "initial run exited 143; same command rerun and final run both exited 0",
-  "figure14CropPixelEquality": "passed: official page 15 MediaBox render 1462x2000, crop [248,550,1242,1000] equals current PNG",
+  "relatedTests": "passed: exit 0; 111 files, 597 tests",
+  "fullTextAudit": {
+    "questions": 200,
+    "choices": 1000,
+    "fields": 1200,
+    "unparsedFields": 0,
+    "changedQuestions": 6,
+    "changedFields": 7,
+    "rawDifferentFieldsAfter": 506,
+    "allResidualDifferencesDocumented": true,
+    "scan": "full-text-audit.json",
+    "review": "text-difference-review.json",
+    "register": "text-differences.md",
+    "baseline": "text-before-corrections.json",
+    "limitation": "Residual differences include intentional display conversions and PDF extraction artifacts; raw text equality and automatic semantic proof are not claimed."
+  },
+  "figurePixelAudit": {
+    "images": 36,
+    "recreated": 36,
+    "containedWithMargin": 36,
+    "allPixelsEqual": 36,
+    "originalKnownMissing": 5,
+    "originalCoordinatesUnknown": 3,
+    "result": "figure-pixel-audit.json"
+  },
   "typographyAudit": {
-    "scope": "all 200 questions and 1000 choices",
+    "scope": "200 questions and 1000 choices",
     "scan": "typography-scan.json",
     "review": "typography-review.json",
-    "correctedQuestions": 9,
-    "unresolvedReviewedCandidates": 0,
-    "limits": "heuristic candidates plus review; no OCR of raster text; not a semantic guarantee of all explanations"
+    "correctedQuestions": 10,
+    "note": "Prior official geometry scan retained; current data snapshots and hashes refreshed. Round 3 additionally restores Mᵢ in 管理15."
   },
+  "transcriptionHashes": "refreshed and verified for all 200 questions",
+  "checks": "round3-checks.json",
+  "report": "round3-full-audit.md",
   "gitDiffCheck": "passed",
-  "gitAdd": "not run: user requested no commit/push",
+  "gitAdd": "not run",
   "commitsCreated": 0,
   "pushesPerformed": 0,
-  "independentReview": "round 2 findings supplied by user; corrected in this task; no new independent reviewer invoked"
+  "independentReview": "round 3 findings supplied by user; no new independent reviewer invoked"
 }

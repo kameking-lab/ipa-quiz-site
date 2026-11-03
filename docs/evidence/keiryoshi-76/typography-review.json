@@ -1,7 +1,7 @@
 {
   "checkedAt": "2026-11-03",
   "scope": "公式8科目200問の本文・全5肢を機械走査し、強調・添字等の候補を点検。既存解説は修正記号に関係する範囲を更新。",
-  "sourceScanSha256": "15133a1f25e97006ee342ae4f12d8d050788fb146487f4c7547b5d4a884c6111",
+  "sourceScanSha256": "25c9113b5b720a7d27a2670b816ac7136b0cdc1e8f2106d8f447ce231b9132d6",
   "correctedQuestions": [
     "環物10",
     "環物11",
@@ -11,7 +11,8 @@
     "環濃16",
     "管理14",
     "管理24",
-    "計質19"
+    "計質19",
+    "管理15"
   ],
   "actualUnderlinedTextQuestions": [
     "環物12",
@@ -1176,8 +1177,8 @@
       "subject": "管理",
       "qNumber": 15,
       "pdfPage": 16,
-      "result": "reviewed-candidates",
-      "note": "抽出候補は罫線・空欄線・分数線・図表ラベルまたはデータに保持された記号として確認。"
+      "result": "corrected",
+      "note": "公式PDF16ページの本文・選択肢4のMᵢを復元。関連解説の同記号も統一。round3の全差分照合で確認。"
     },
     {
       "subject": "管理",
@@ -1424,5 +1425,6 @@
       "result": "no-machine-candidate",
       "note": "機械抽出で今回対象の候補なし。全本文・解説の意味的な正しさを自動保証するものではない。"
     }
-  ]
+  ],
+  "round3Refresh": "公式PDFの幾何走査結果は保持。今回6問の修正に合わせ全200問のdataText・データファイルハッシュを更新。本文・全肢の厳密差分はfull-text-audit.json参照。管理15のMᵢはPDF16ページのレンダリングでも下付きを確認。"
 }
