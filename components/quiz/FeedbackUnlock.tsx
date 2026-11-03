@@ -5,6 +5,9 @@ import { IMPROVEMENT_CHOICES, UnlockFeedbackSchema, type UnlockStatus } from "@/
 import { posthogCapture } from "@/lib/posthog";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
 
+const DRAFT_KEY = "feedback-unlock-draft:v1";
+const returnPath = () => window.location.pathname + window.location.search;
+
 export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
   const [status, setStatus] = useState<UnlockStatus | null>(null);
   const [open, setOpen] = useState(false);
@@ -24,6 +27,19 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
       if (active) {
         setStatus(value);
         if (value.eligible && window.location.hash === "#feedback-unlock") {
+          try {
+            const raw = sessionStorage.getItem(DRAFT_KEY);
+            if (raw) {
+              const draft = JSON.parse(raw);
+              if (draft.path === returnPath() && Date.now() - draft.savedAt < 30 * 60 * 1000
+                && Array.isArray(draft.choices) && draft.choices.every((c: unknown) => IMPROVEMENT_CHOICES.some(choice => choice.id === c))
+                && typeof draft.qualifications === "string" && draft.qualifications.length <= 809
+                && typeof draft.comment === "string" && draft.comment.length <= 1000) {
+                setChoices(draft.choices); setQualifications(draft.qualifications); setComment(draft.comment);
+              }
+            }
+            sessionStorage.removeItem(DRAFT_KEY);
+          } catch { /* Storage is optional for a new login, never for permissions. */ }
           setOpen(true);
           window.history.replaceState(null, "", window.location.pathname + window.location.search);
         }
@@ -40,6 +56,10 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     try {
       const res = await fetch("/api/feedback-unlock", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(parsed.data) });
       if (!res.ok) {
+        if (res.status === 401) {
+          setStatus({ submitted: false, eligible: false, remaining: 0, requiresLogin: true });
+          throw new Error("ログインの有効期限が切れました。入力を保って再ログインすると、続きから送信できます。");
+        }
         if (res.status === 409) {
           const state = await fetch("/api/feedback-unlock", { cache: "no-store" });
           if (state.ok) setStatus(await state.json());
@@ -48,6 +68,7 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
         }
         throw new Error(res.status === 429 ? "短時間に送信が集中しています。1分ほど待ってお試しください。" : "送信できませんでした。入力内容を残しています。もう一度お試しください。");
       }
+      try { sessionStorage.removeItem(DRAFT_KEY); } catch {}
       posthogCapture("practice_feedback_submitted", { choiceCount: choices.length, hasComment: !!comment.trim() });
       setStatus({ submitted: true, eligible: false, remaining: 10 });
       setOpen(false);
@@ -57,8 +78,29 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
       setToken(""); setCaptchaAttempt(n => n + 1);
     } finally { setBusy(false); }
   }
+  function saveDraft(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (!open) return;
+    try {
+      sessionStorage.setItem(DRAFT_KEY, JSON.stringify({ path: returnPath(), savedAt: Date.now(), choices, qualifications, comment }));
+    } catch {
+      e.preventDefault();
+      setError("入力の一時保存ができません。この画面を残し、別のタブでログインしてから送信してください。");
+    }
+  }
+  async function checkLogin() {
+    try {
+      const res = await fetch("/api/feedback-unlock", { cache: "no-store" });
+      if (!res.ok) return;
+      const value: UnlockStatus = await res.json();
+      setStatus(value);
+      if (!value.requiresLogin) setError("");
+      if (value.submitted) setOpen(false);
+    } catch { /* Keep the draft visible on connection failure. */ }
+  }
   return <div className="space-y-3 text-left">
-    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">ログインして意見を送ると、さらに10問</Link>}
+    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">ログインして意見を送ると、さらに10問</Link>}
+    {status?.requiresLogin && <p className="text-xs text-muted-foreground">追加10問は1アカウントにつき1回限りです。</p>}
+    {status?.requiresLogin && open && <button type="button" onClick={checkLogin} className="min-h-11 px-3 text-sm underline">別タブでログインした後に再確認</button>}
     {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送って、さらに10問無料で解く</button>}
     {status?.submitted && <div className="text-center text-sm"><p>意見による追加枠は受け取り済みです（残り{status.remaining}問）。</p>{status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 px-3 underline">追加枠で続きを解く</button>}</div>}
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-400">{error}</p>}
@@ -70,7 +112,7 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
       <label className="block text-sm">自由記述（任意・選択が0個なら必須／1000文字まで）<textarea value={comment} onChange={e => setComment(e.target.value)} maxLength={1000} required={!choices.length} disabled={busy} rows={4} className="mt-2 w-full rounded-lg border bg-background p-2" /><span className="text-xs text-muted-foreground">{comment.length}/1000文字</span></label>
       <p className="text-xs text-muted-foreground">氏名・住所・メールアドレスなどの個人情報は入力しないでください。意見は運営の管理画面・noteダッシュボードで改善のために利用します。追加10問はログイン済みの1アカウントにつき1回限り。通常の無料枠を使い切った後に消費し、未使用分は翌日以降も残ります。AIへの質問回数は増えません。</p>
       {siteKey && <TurnstileWidget key={captchaAttempt} siteKey={siteKey} onToken={setToken} onError={() => { setToken(""); setError("確認を読み込めませんでした。時間をおいて再度お試しください。"); }} />}
-      <button type="submit" disabled={busy || !!siteKey && !token} className="min-h-11 w-full rounded-lg border border-border px-4 py-3 font-semibold disabled:opacity-50">{busy ? "送信中…" : "意見を送信して10問追加"}</button>
+      <button type="submit" disabled={busy || !!status?.requiresLogin || !!siteKey && !token} className="min-h-11 w-full rounded-lg border border-border px-4 py-3 font-semibold disabled:opacity-50">{busy ? "送信中…" : "意見を送信して10問追加"}</button>
       <p role="status" aria-live="polite" className="sr-only">{busy ? "意見を送信しています" : ""}</p>
     </form>}
   </div>;

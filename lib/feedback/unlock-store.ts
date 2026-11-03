@@ -5,7 +5,7 @@ import type { SqlDatabase, SqlSession } from "@/lib/billing/postgres-store";
 import { FEEDBACK_BONUS, type FeedbackExport, type UnlockStatus } from "./unlock-contract";
 
 export interface UnlockIdentity { realm: string; account: string | null; browser: string | null }
-interface Row { event_id: string; account_hash: string | null; browser_hash: string | null; retired: boolean }
+interface Row { event_id: string; user_id: string | null; browser_hash: string | null; retired: boolean }
 export class FeedbackUnlockStore {
   constructor(private db: SqlDatabase) {}
   async consumeRate(key: string, now = new Date()) {
@@ -16,31 +16,43 @@ export class FeedbackUnlockStore {
     return rows[0].count <= 5;
   }
   private async rows(sql: SqlSession, i: UnlockIdentity, lock = false) {
-    return sql.query<Row>(`SELECT event_id,account_hash,browser_hash,retired FROM feedback_unlock
-      WHERE realm=$1 AND (account_hash=$2 OR browser_hash=$3) ORDER BY event_id${lock ? " FOR UPDATE" : ""}`, [i.realm, i.account, i.browser]);
+    return sql.query<Row>(`SELECT event_id,user_id,browser_hash,retired FROM feedback_unlock
+      WHERE user_id=$2 OR (realm=$1 AND browser_hash=$3) ORDER BY event_id${lock ? " FOR UPDATE" : ""}`, [i.realm, i.account, i.browser]);
   }
   private owner(rows: Row[], i: UnlockIdentity) {
-    return rows.find(r => i.account && r.account_hash === i.account)
-      ?? rows.find(r => r.browser_hash === i.browser && (!r.account_hash || r.account_hash === i.account));
+    return rows.find(r => i.account && r.user_id === i.account)
+      ?? rows.find(r => r.browser_hash === i.browser && (!r.user_id || r.user_id === i.account));
+  }
+  private async requireLegacyMigration(sql: SqlSession) {
+    // An old HMAC cannot be reversed after key rotation. Do not issue any new
+    // wallet until every legacy account has an explicitly migrated user ID.
+    const pending = await sql.query<{ event_id: string }>(
+      'SELECT event_id FROM feedback_unlock WHERE account_hash IS NOT NULL AND user_id IS NULL LIMIT 1', []);
+    if (pending.length) throw new BillingError("feedback_identity_migration_required", 503);
   }
   async status(i: UnlockIdentity): Promise<UnlockStatus> {
     if (!i.account) return { submitted: false, eligible: false, remaining: 0, requiresLogin: true };
     const rows = await this.rows(this.db, i);
     const row = this.owner(rows, i);
-    if (!row) return { submitted: false, eligible: rows.length === 0, remaining: 0 };
+    if (row && !row.user_id) await this.requireLegacyMigration(this.db);
+    if (!row) {
+      await this.requireLegacyMigration(this.db);
+      return { submitted: false, eligible: rows.length === 0, remaining: 0 };
+    }
     const count = await this.db.query<{ count: number }>('SELECT count(*)::int AS count FROM feedback_unlock_grant WHERE event_id=$1', [row.event_id]);
     return { submitted: true, eligible: false, remaining: row.retired ? 0 : Math.max(0, FEEDBACK_BONUS - count[0].count) };
   }
   async submit(i: UnlockIdentity, network: string | null, data: Pick<FeedbackExport, "choices" | "requestedQualifications" | "commentMasked">) {
     if (!i.account) throw new BillingError("sign_in_required", 401);
     return this.db.transaction(async sql => {
-      if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`${i.realm}:${i.account}`]);
+      if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`feedback-user:${i.account}`]);
       // Serialise publication so sequence cursors cannot skip an earlier uncommitted insert.
       await sql.query("SELECT pg_advisory_xact_lock(731103, 1)::text AS locked", []);
       if ((await this.rows(sql, i)).length) throw new BillingError("already_submitted", 409);
+      await this.requireLegacyMigration(sql);
       const eventId = randomUUID();
       const saved = await sql.query<{ event_id: string }>(`INSERT INTO feedback_unlock
-        (event_id,realm,account_hash,browser_hash,network_day_hash,anonymous_id,choices,requested_qualifications,comment_masked)
+        (event_id,realm,user_id,browser_hash,network_day_hash,anonymous_id,choices,requested_qualifications,comment_masked)
         VALUES($1,$2,$3,$4,$5,$6,$7::text[],$8::text[],$9) ON CONFLICT DO NOTHING RETURNING event_id`,
       [eventId, i.realm, i.account, i.browser, network, randomUUID(), data.choices, data.requestedQualifications, data.commentMasked]);
       if (!saved.length) throw new BillingError("duplicate_submission", 429);
@@ -52,14 +64,15 @@ export class FeedbackUnlockStore {
     if (!i.account) return null;
     return this.db.transaction(async sql => {
       // Account lock also serialises claims from different browsers.
-      if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`${i.realm}:${i.account}`]);
+      if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`feedback-user:${i.account}`]);
       const rows = await this.rows(sql, i, true);
       const row = this.owner(rows, i);
       if (!row || row.retired) return null;
       if (i.account) {
-        if (!row.account_hash) await sql.query('UPDATE feedback_unlock SET account_hash=$2 WHERE event_id=$1 RETURNING event_id', [row.event_id, i.account]);
+        if (!row.user_id) await this.requireLegacyMigration(sql);
+        if (!row.user_id) await sql.query('UPDATE feedback_unlock SET user_id=$2 WHERE event_id=$1 RETURNING event_id', [row.event_id, i.account]);
         // Two pre-existing wallets must never stack after account sign-in.
-        for (const other of rows) if (other.event_id !== row.event_id && !other.account_hash) {
+        for (const other of rows) if (other.event_id !== row.event_id && !other.user_id) {
           await sql.query('UPDATE feedback_unlock SET retired=true WHERE event_id=$1 RETURNING event_id', [other.event_id]);
         }
       }

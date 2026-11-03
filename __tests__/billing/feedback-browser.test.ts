@@ -13,7 +13,7 @@ it("keeps a dedicated stable ID through daily cookie expiration and renews it wi
   const original = unlockIdentity(request, null, "realm");
   const signedIn = unlockIdentity(request, "account-id", "realm");
   expect(signedIn.browser).toBe(original.browser);
-  expect(signedIn.account).not.toContain("account-id");
+  expect(signedIn.account).toBe("account-id");
 });
 it("rejects forged identifiers and separates browser identity from credential values", () => {
   const id = newFeedbackBrowser();
@@ -21,4 +21,11 @@ it("rejects forged identifiers and separates browser identity from credential va
   const forged = cookie.replace(id, newFeedbackBrowser());
   expect(readFeedbackBrowser(new Request("https://example.test", { headers: { cookie: forged } }))).toBeNull();
   expect(readFeedbackBrowser(new Request("https://example.test", { headers: { cookie: "practice_guest=old" } }))).toBeNull();
+});
+
+it("retains the user identity across credential rotation and session renewal", () => {
+  const request = new Request("https://example.test");
+  const first = unlockIdentity(request, "account-id", "before");
+  vi.stubEnv("AUTH_SECRET", "rotated-unit-test-key");
+  expect(unlockIdentity(request, "account-id", "after").account).toBe(first.account);
 });

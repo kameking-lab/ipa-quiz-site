@@ -31,7 +31,7 @@ export function feedbackBrowserHeader(id: string, secure: boolean) {
 }
 export function unlockIdentity(request: Request, userId: string | null, realm = feedbackRealm(), browserOverride?: string): UnlockIdentity {
   const browser = browserOverride ?? readFeedbackBrowser(request);
-  return { realm, account: userId ? feedbackHash("account", userId) : null, browser: browser ? feedbackHash("browser", browser) : null };
+  return { realm, account: userId, browser: browser ? feedbackHash("browser", browser) : null };
 }
 export function feedbackStore() {
   if (!process.env.DATABASE_URL) throw new BillingError("feedback_unavailable", 503);

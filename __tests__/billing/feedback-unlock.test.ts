@@ -57,13 +57,14 @@ it("does not issue a browser identity cookie for an authenticated status read", 
 describe("bonus wallet under its SQL transaction boundary", () => {
   const identity: UnlockIdentity = { realm: "test", account: "alice", browser: "b" };
   function fixture() {
-    const row = { event_id: "e", account_hash: "alice" as string | null, browser_hash: "b", retired: false };
+    const row = { event_id: "e", user_id: "alice" as string | null, browser_hash: "b", retired: false };
     const grants: { day: string; question_id: string }[] = [];
     let tail = Promise.resolve();
     const query = vi.fn(async (sql: string, values: unknown[]) => {
+      if (sql.startsWith("SELECT event_id FROM")) return [];
       if (sql.startsWith("SELECT event_id")) return [{ ...row }];
       if (sql.startsWith("SELECT day")) return grants.map(g => ({ ...g }));
-      if (sql.startsWith("UPDATE feedback_unlock SET account_hash")) row.account_hash = values[1] as string;
+      if (sql.startsWith("UPDATE feedback_unlock SET user_id")) row.user_id = values[1] as string;
       if (sql.startsWith("INSERT INTO feedback_unlock_grant")) grants.push({ day: values[1] as string, question_id: values[2] as string });
       return [];
     });
@@ -81,17 +82,17 @@ describe("bonus wallet under its SQL transaction boundary", () => {
   });
   it("binds an anonymous wallet to its account and denies later signed-out reuse", async () => {
     const { store, row, grants } = fixture();
-    row.account_hash = null;
+    row.user_id = null;
     await store.grant({ ...identity, account: "alice" }, "2026-11-03", "q1");
-    expect(row.account_hash).toBe("alice");
+    expect(row.user_id).toBe("alice");
     expect(await store.grant({ ...identity, account: null }, "2026-11-03", "q2")).toBeNull();
     expect(grants).toHaveLength(1);
     expect(await store.grant({ ...identity, account: "bob" }, "2026-11-03", "q2")).toBeNull();
   });
   it("keeps the same account wallet across browsers without granting another ten", async () => {
     const { store, row, grants } = fixture();
-    row.account_hash = "alice";
-    row.account_hash = null;
+    row.user_id = "alice";
+    row.user_id = null;
     await store.grant({ ...identity, account: "alice" }, "2026-11-03", "q1");
     await store.grant({ ...identity, account: "alice", browser: "another-browser" }, "2026-11-03", "q1");
     expect(grants).toHaveLength(1);

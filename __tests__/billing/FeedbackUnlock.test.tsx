@@ -4,7 +4,7 @@ const capture = vi.hoisted(() => vi.fn());
 vi.mock("@/lib/posthog", () => ({ posthogCapture: capture }));
 import { FeedbackUnlock } from "@/components/quiz/FeedbackUnlock";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
-beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); });
+beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 it("keeps purchase primary, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
@@ -63,4 +63,68 @@ it("never opens a form for a used account even with a forged return marker", asy
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
   await screen.findByText(/受け取り済み/);
   expect(screen.queryByRole("textbox")).toBeNull();
+});
+
+it("preserves all inputs through 401, login navigation and remount, requiring a fresh submission", async () => {
+  window.history.replaceState({}, "", "/quiz?mode=year&question=q11");
+  const resume = vi.fn();
+  const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST"
+    ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
+  vi.stubGlobal("fetch", fetcher);
+  const first = render(<FeedbackUnlock onUnlocked={resume} />);
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(screen.getByLabelText("資格の数を増やしてほしい"));
+  fireEvent.change(screen.getByRole("textbox", { name: /希望資格/ }), { target: { value: "行政書士" } });
+  fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "入力を保つ" } });
+  fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  expect(screen.getByRole("alert")).toHaveTextContent("有効期限");
+  expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeDisabled();
+  expect(link.getAttribute("href")).not.toContain("行政書士");
+  // Prevent jsdom navigation while still exercising the component click handler.
+  link.addEventListener("click", e => e.preventDefault());
+  fireEvent.click(link);
+  first.unmount();
+  window.history.replaceState({}, "", "/quiz?mode=year&question=q11#feedback-unlock");
+  render(<FeedbackUnlock onUnlocked={resume} />);
+  expect(await screen.findByRole("textbox", { name: /自由記述/ })).toHaveValue("入力を保つ");
+  expect(screen.getByRole("textbox", { name: /希望資格/ })).toHaveValue("行政書士");
+  expect(screen.getByLabelText("資格の数を増やしてほしい")).toBeChecked();
+  expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
+  expect(fetcher.mock.calls.filter(([, init]) => init?.method === "POST")).toHaveLength(1);
+  fetcher.mockImplementation(async () => Response.json({ remaining: 10 }));
+  fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+  await waitFor(() => expect(resume).toHaveBeenCalledOnce());
+});
+
+it("keeps inputs when storage is blocked and can continue after login in another tab", async () => {
+  const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST"
+    ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
+  vi.stubGlobal("fetch", fetcher);
+  render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "下書き" } });
+  fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const storage = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("blocked"); });
+  fireEvent.click(link);
+  expect(screen.getByRole("alert")).toHaveTextContent("別のタブ");
+  expect(screen.getByRole("textbox", { name: /自由記述/ })).toHaveValue("下書き");
+  fireEvent.click(screen.getByRole("button", { name: "別タブでログインした後に再確認" }));
+  await waitFor(() => expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeEnabled());
+  expect(screen.getByRole("textbox", { name: /自由記述/ })).toHaveValue("下書き");
+  storage.mockRestore();
+});
+
+it.each(["expired", "other-question"])("discards a %s draft on return", async reason => {
+  sessionStorage.setItem("feedback-unlock-draft:v1", JSON.stringify({
+    path: reason === "other-question" ? "/quiz?question=other" : "/quiz",
+    savedAt: Date.now() - (reason === "expired" ? 31 * 60 * 1000 : 0),
+    choices: ["mobile"], qualifications: "", comment: "old draft",
+  }));
+  window.history.replaceState({}, "", "/quiz#feedback-unlock");
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: true })));
+  render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+  expect(await screen.findByRole("textbox", { name: /自由記述/ })).toHaveValue("");
+  expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
 });
