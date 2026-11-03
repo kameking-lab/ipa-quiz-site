@@ -1,0 +1,810 @@
+{
+  "db-2024a-am2-q1": {
+    "question": "SQLのシーケンスに関する説明のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "現在基底値が0→1→2→0→1→2→0→…のように，周期的に繰り返すシーケンスを定義することはできない。",
+      "イ": "シーケンスの現在基底値を，最小値と最大値との間の任意の整数値に変更することはできない。",
+      "ウ": "シーケンスの増分を，負の整数値にすることはできない。",
+      "エ": "トランザクション開始後のシーケンスの値の取得による現在基底値の変更は，トランザクションのロールバックでその変更を取り消すことができない。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "シーケンスの値の取得はトランザクションのロールバックによって取り消されません。周期的な生成，現在基底値の変更，負の増分は設定できるので，取り消せないとするエが適切です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q2": {
+    "question": "クライアントサーバシステムにおけるストアドプロシージャに関する記述のうち，適切でないものはどれか。",
+    "choices": {
+      "ア": "機密性が高いデータに対する処理を特定のプロシージャ呼出しに限定することによって，セキュリティを向上させることができる。",
+      "イ": "システム全体に共通な処理をプロシージャとして格納しておくことによって，処理の標準化を行うことができる。",
+      "ウ": "データベースへのアクセスを細かい単位でプロシージャ化することによって，処理性能(スループット)を向上させることができる。",
+      "エ": "複数の SQL文から成る手続を1回のプロシージャ呼出しで実行することによって，クライアントとサーバの間の通信回数を減らすことができる。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "細かい単位で呼び出すと呼出し回数が増え，通信の負荷を減らす効果を得にくくなります。複数のSQL文をまとめてサーバ側で実行することが通信回数の削減につながるため，ウが適切でない記述です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q3": {
+    "question": "関係データベースのテーブルにレコードを1件追加したところ，インデックスとして使う，B⁺木のリーフノードCがノードC1とC2に分割された。ノード分割後のB⁺木構造はどれか。ここで，矢印はノードへのポインタとする。また，中間ノードAには十分な空きがあるものとする。",
+    "choices": {
+      "ア": "図を参照",
+      "イ": "図を参照",
+      "ウ": "図を参照",
+      "エ": "図を参照"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "リーフCの分割後，親AはC1とC2の両方へのポインタを持ちます。葉の順序もB，C1，C2，Dとなる必要があり，これらを満たすのはイです。Aに空きがあるので親の分割は不要です。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q3.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問3の原本。図表・SQL・選択肢の表記を含む。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/images/questions/db/2024-autumn-am2-q3-ア.webp",
+      "イ": "/images/questions/db/2024-autumn-am2-q3-イ.webp",
+      "ウ": "/images/questions/db/2024-autumn-am2-q3-ウ.webp",
+      "エ": "/images/questions/db/2024-autumn-am2-q3-エ.webp"
+    }
+  },
+  "db-2024a-am2-q4": {
+    "question": "転置インデックスに関する記述として，適切なものはどれか。",
+    "choices": {
+      "ア": "SQL 関数を評価した結果の値をインデックスとして使用する。",
+      "イ": "最上位のノードから，実データへのポインタを格納したリーフノードへと至るポインタをインデックスとして使用する。",
+      "ウ": "テキストに含まれる単語に対して，その単語を含むテキストへのポインタをインデックスとして使用する。",
+      "エ": "ヒープ領域を使用せずに実データを物理的に並べ替えたデータをインデックスとして使用する。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "転置インデックスは単語から，その単語を含むテキストへの参照を引く構造です。全文検索で文書を絞り込むために使います。関数の評価結果や木構造を説明する肢とは区別します。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q5": {
+    "question": "あるエンティティを関係データベース上に実装しようとしたとき，その主キーが多くの属性から構成される複合キーとなることが分かった。主キーとして扱う属性を少なくして扱いやすくしたい。この対応として，適切なものはどれか。",
+    "choices": {
+      "ア": "複合キーを構成する属性のうち，エンティティの性格を最もよく表している一つの属性を主キーとし，残りの属性を外部キー (foreign key)にする。",
+      "イ": "複合キーを構成する属性のうち，エンティティの性格を最もよく表している一つの属性を主キーとし，残りの属性を代替キー (alternate key)とする。",
+      "ウ": "連番などを値としてとる列を新たに設けて主キーとし，複合キーの代理キー(surrogate key)とする。",
+      "エ": "連番などを値としてとる列を新たに設けて主キーとし，複合キーを外部キー(foreign key)にする。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "連番などの代理キーを新設すれば，多数の属性からなる識別子を一つの列で扱えます。元の複合キーの一部だけでは一意性を保証できず，元のキーを外部キーと呼ぶこともできません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q6": {
+    "question": "階層構造をもつ組織と，従業員の組織への所属を表す UML のクラス図のうち，“従業員は組織階層中のどの組織にも所属できるが，兼務はしない”とするものはどれか。",
+    "choices": {
+      "ア": "図を参照",
+      "イ": "図を参照",
+      "ウ": "図を参照",
+      "エ": "図を参照"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "組織の自己関連で階層を表し，従業員から見た所属組織の多重度を1とするエが適切です。末端組織に所属先を限定せず，全ての階層の組織に所属でき，兼務を認めない条件を表せます。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q6.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問6の原本。図表・SQL・選択肢の表記を含む。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/images/questions/db/2024-autumn-am2-q6-ア.webp",
+      "イ": "/images/questions/db/2024-autumn-am2-q6-イ.webp",
+      "ウ": "/images/questions/db/2024-autumn-am2-q6-ウ.webp",
+      "エ": "/images/questions/db/2024-autumn-am2-q6-エ.webp"
+    }
+  },
+  "db-2024a-am2-q7": {
+    "question": "“商品”表と“商品別売上実績”表に対して，SQL文を実行して得られる売上平均金額はどれか。\n商品\n商品コード | 商品名 | 商品ランク\nS001 | PPP | A\nS002 | QQQ | A\nS003 | RRR | A\nS004 | SSS | B\nS005 | TTT | C\nS006 | UUU | C\n商品別売上実績\n商品コード | 売上合計金額\nS001 | 50\nS003 | 250\nS004 | 350\nS006 | 450\n〔SQL文〕\nSELECT AVG(売上合計金額) AS 売上平均金額\nFROM 商品 LEFT OUTER JOIN 商品別売上実績\nON 商品.商品コード = 商品別売上実績.商品コード\nWHERE 商品ランク = 'A'",
+    "choices": {
+      "ア": "100",
+      "イ": "150",
+      "ウ": "225",
+      "エ": "275"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "LEFT OUTER JOINにより実績のないS002も残りますが，売上合計金額はNULLです。ランクAの値は50，NULL，250となり，AVGはNULLを除くので，平均は(50+250)/2=150です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q8": {
+    "question": "図のツリー構造に対するデータを格納した“隣接リスト”表から，リーフノードを取得する SQL 文のaに入れる字句はどれか。ここで，図の丸はノードを表し，矢印は親ノードから子ノードへの関係を表す。",
+    "choices": {
+      "ア": "EXCEPT",
+      "イ": "INTERSECT",
+      "ウ": "UNION",
+      "エ": "UNION ALL"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "リーフは子を持たないノードです。子ノードの集合から親ノードとして現れる集合をEXCEPTで差し引くとD，E，Gが残ります。共通部分を得るINTERSECTや和集合では求められません。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q8.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問8の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2024a-am2-q9": {
+    "question": "“商品”表と“納品”表を商品番号で等結合した結果はどれか。",
+    "choices": {
+      "ア": "表を参照",
+      "イ": "表を参照",
+      "ウ": "表を参照",
+      "エ": "表を参照"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "商品番号が一致する全ての行の組合せを残すと5行になります。等結合では結合に用いた商品番号の列も両表分が残るためエです。ウのように商品番号を一列にするのは自然結合の形です。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q9.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問9の原本。図表・SQL・選択肢の表記を含む。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/images/questions/db/2024-autumn-am2-q9-ア.webp",
+      "イ": "/images/questions/db/2024-autumn-am2-q9-イ.webp",
+      "ウ": "/images/questions/db/2024-autumn-am2-q9-ウ.webp",
+      "エ": "/images/questions/db/2024-autumn-am2-q9-エ.webp"
+    }
+  },
+  "db-2024a-am2-q10": {
+    "question": "“従業員”表から，男女それぞれの最年長従業員を除く全ての従業員を取り出すSQL 文とするために，aに入れる字句はどれか。ここで，“従業員”表の構造は次のとおりであり，実線の下線は主キーを表す。",
+    "choices": {
+      "ア": "SELECT MIN(生年月日) FROM 従業員 AS S2\nGROUP BY S2.性別",
+      "イ": "SELECT MIN(生年月日) FROM 従業員 AS S2\nWHERE S1.生年月日 > S2.生年月日\nOR S1.性別 = S2.性別",
+      "ウ": "SELECT MIN(生年月日) FROM 従業員 AS S2\nWHERE S1.性別 = S2.性別",
+      "エ": "SELECT MIN(生年月日) FROM 従業員\nGROUP BY S2.性別"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "生年月日が最小の人が最年長です。外側の行と同じ性別に絞った相関副問合せでMINを求め，それより後の生年月日の人を選びます。ウなら性別ごとの最年長者を正しく除けます。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q10.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問10の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2024a-am2-q11": {
+    "question": "関係 R，Sに次の演算を行うとき，RとSが和両立である必要のないものはどれか。",
+    "choices": {
+      "ア": "共通集合",
+      "イ": "差集合",
+      "ウ": "直積",
+      "エ": "和集合"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "直積は各関係の全ての行の組合せを作る演算であり，両関係の列構成が同じである必要はありません。和集合，差集合，共通集合には列数と対応する列の型が整う和両立が必要です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q12": {
+    "question": "二つのトランザクションが，同じデータに対して，更新，参照を行うときに発生し得るダーティリードの事象を記述したものはどれか。",
+    "choices": {
+      "ア": "トランザクションAがある検索条件を満たす，ある表の行の集合を参照した。次に，トランザクションBがトランザクションAと同じ検索条件を満たす新しい行を挿入しコミットした。その後，トランザクションAが同じ検索条件で再度参照すると，以前には存在しなかった行が出現した。",
+      "イ": "トランザクションAがある表の行の列を参照した。次に，トランザクションBがその列の値を更新しコミットした。その後，トランザクションAがその列を再度参照すると，以前の値と異なった。",
+      "ウ": "二つのトランザクションがそれぞれ2相ロックをかけ，デッドロックを起こした。",
+      "エ": "まだコミットしていないトランザクションAの更新後データをトランザクションBが参照した。その後，更新後データはロールバックされた。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "ダーティリードは，他のトランザクションの未コミットの更新を読むことです。後で取り消された値を参照したエが該当します。アはファントム，イは反復不能読み取りを示しています。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q13": {
+    "question": "トランザクション A〜G の待ちグラフにおいて，永久待ちの状態になっているトランザクション全てを列挙したものはどれか。ここで，待ちグラフのX→Yは，トランザクションXはトランザクションYがロックしている資源のアンロックを待っていることを表す。",
+    "choices": {
+      "ア": "A，B，C，D",
+      "イ": "B，C，D",
+      "ウ": "B，C，D，F",
+      "エ": "C，D，E，F，G"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "B→D→C→Bの循環があるためB，C，Dは解除を待ち続けます。FもDの解除を待つので進めません。A，E，Gはこの循環に依存して待つ側ではなく，永久待ちはB，C，D，Fです。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2024-autumn-am2-q13.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2024年度秋期DB午前II 問13の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2024a-am2-q14": {
+    "question": "トランザクションPが資源Xの値を4から5に更新した後にトランザクションQが開始し，Pがコミットする前にQが資源Xを参照しようとした。Qの挙動のa，bに入れる字句の組みはどれか。ただし，隔離性水準は READ COMMITTED とする。\n\n〔Qの挙動〕\n同時実行制御が単版2相ロッキングプロトコルの場合Qは［a］，多版同時実行制御（MVCC）の場合Qは［b］。",
+    "choices": {
+      "ア": "a: P がコミット完了するまで待機した後，Xの値5を得る，b: Pのコミット完了を待機することなく，Xの値4を得る",
+      "イ": "a: P がコミット完了するまで待機した後，Xの値5を得る，b: Pのコミット完了を待機することなく，Xの値5を得る",
+      "ウ": "a: Pのコミット完了を待機することなく，Xの値4を得る，b: Pのコミット完了を待機することなく，Xの値5を得る",
+      "エ": "a: Pのコミット完了を待機することなく，Xの値5を得る，b: Pのコミット完了を待機することなく，Xの値4を得る"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "単版2相ロックではPの更新ロックが解放されるまでQは待機し，コミット後の5を読みます。MVCCでは待機せず更新前のコミット済みの版である4を読めるので，組合せはアです。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q15": {
+    "question": "トランザクション T₁と T₂の並行実行における不整合検索異状(inconsistent retrieval anomaly) の説明はどれか。",
+    "choices": {
+      "ア": "T₁がxを更新した後コミットする前に，T₂もxを更新すること",
+      "イ": "T₁ と T₂が同時にデータ xを読み，T₁はxを更新する。T₂は更新前のxの値に基づいてデータyを更新することによって，yの値がxの値に基づかなくなること",
+      "ウ": "先行する T₁ が更新したデータxを，後続のT₂が読んで処理を行うとき，T₁がロールバックすると，T₂もロールバックしなければならなくなること",
+      "エ": "先行する T₁が更新したデータxを，後続のT₂が読んで処理を行った後に，T₁がロールバックすることによって，T₂は結果的に誤った処理になること"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "イは同時に読んだ更新前のxを使ってyを更新し，xとyの対応が崩れる事象です。アは同じデータへの未確定の書込み，ウは連鎖ロールバック，エは取り消された更新に基づく処理の説明です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q16": {
+    "question": "ビッグデータの処理に使用される CEP (複合イベント処理)に関する記述として，適切なものはどれか。",
+    "choices": {
+      "ア": "多次元データベースを構築することによって，集計及び分析を行う方式である。",
+      "イ": "データ更新時に更新前のデータを保持することによって，同時実行制御を行う方式である。",
+      "ウ": "分散データベースシステムにおけるトランザクションを実現する方式である。",
+      "エ": "連続して発生するデータに対し，あらかじめ規定した条件に合致する場合に実行される処理を実装する方式である。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "CEPは連続するイベントを処理し，あらかじめ決めた条件に合うと対応する処理を実行します。多次元分析，版の保持による同時実行制御，分散トランザクションとは目的が異なります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q17": {
+    "question": "スタースキーマでモデル化し，一定期間内に発生した取引などを分析対象データとして格納するテーブルはどれか。",
+    "choices": {
+      "ア": "ディメンションテーブル",
+      "イ": "デシジョンテーブル",
+      "ウ": "ハッシュテーブル",
+      "エ": "ファクトテーブル"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "ファクトテーブルは取引などの分析対象の事実や数値を格納します。ディメンションテーブルは商品や時期などの分析軸を保持します。したがって取引を格納する表はエです。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q18": {
+    "question": "データウェアハウスのメタデータに関する記述のうち，データリネージはどれか。",
+    "choices": {
+      "ア": "誰がどのデータを見てよいかを示す情報であり，適切なアクセス制御を目的として設定される。",
+      "イ": "データが誰によって作られ管理されているかを示す情報であり，データ構造やデータ辞書を見ても意味が分からないときの問合せ先を表す。",
+      "ウ": "データがどこから発生し，どのような変換及び加工を経て，現在の形になったかを示す情報であり，データの生成源の特定又は障害時の影響調査に利用できる。",
+      "エ": "データ構造がどのように定義されているかを示す情報であり，Web サイトなどに公開して検索できるようにする。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "データリネージはデータの発生源と変換・加工の経路を追える情報です。生成源の特定や障害の影響調査に利用できます。閲覧権限，問合せ先，構造の定義そのものとは異なります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q19": {
+    "question": "システムで利用できるパスワードの仕様を，数字16桁から，英数字記号及び空白文字(計95種の文字とする)から成る決まった長さのものに変更する。このとき，利用できるパスワードの総数を変更前よりも多くするために必要な新しいパスワードの最小桁数はどれか。ここで，log₁₀ 95 = 1.98とする。",
+    "choices": {
+      "ア": "6",
+      "イ": "7",
+      "ウ": "8",
+      "エ": "9"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "従来の総数は10の16乗，新方式は95のn乗です。常用対数を取ると1.98n>16が必要なのでn>8.08…となり，最小の整数は9です。8桁では変更前より少なくなります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q20": {
+    "question": "迷惑メールの検知手法であるベイジアンフィルターの説明はどれか。",
+    "choices": {
+      "ア": "信頼できるメール送信元を許可リストに登録しておき，許可リストにないメール送信元からの電子メールは迷惑メールと判定する。",
+      "イ": "電子メールが正規のメールサーバから送信されていることを検証し，迷惑メールであるかどうかを判定する。",
+      "ウ": "電子メールの第三者中継を許可しているメールサーバを登録したデータベースの掲載情報を基に，迷惑メールであるかどうかを判定する。",
+      "エ": "利用者が振り分けた迷惑メールと正規のメールから特徴を学習し，迷惑メールであるかどうかを統計的に判定する。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "ベイジアンフィルターは迷惑メールと正規メールに現れる特徴を学習し，その特徴から迷惑メールらしさを統計的に判定します。許可リストや送信元認証だけで判定する方式ではありません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q21": {
+    "question": "ブロックチェーンに関する記述のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "RADIUS を必須の技術として，参加者の利用者認証を一元管理するために利用する。",
+      "イ": "SPF を必須の技術として，参加者間で電子メールを送受信するときに送信元の真正性を確認するために利用する。",
+      "ウ": "楕円曲線暗号を必須の技術として，参加者間の P2P (Peer to Peer) 通信を暗号化するために利用する。",
+      "エ": "ハッシュ関数を必須の技術として，参加者がデータの改ざんを検出するために利用する。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "ブロックチェーンではハッシュ値を使ってデータの連鎖を作り，改ざんを検出します。RADIUSやSPFはそれぞれ認証やメール送信元検証の技術であり，ブロックチェーンの必須技術ではありません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q22": {
+    "question": "複数組のRAID5 をストライピング動作させることによって，一組のRAID5 と比べて性能を改善させたものを RAID5+0と呼ぶ。このRAID5+0を一組の RAID5 と比較した記述として，適切なものはどれか。",
+    "choices": {
+      "ア": "RAID5+0の実効容量は一組のRAID5 と同様に，全体のHDD 台数より1台少ない台数分になる。",
+      "イ": "RAID5+0の耐障害性は一組の RAID5 よりも高く，故障台数が全体の HDD 台数の半分までならデータを復旧できる。",
+      "ウ": "一組の RAID5には最小3台，二組のRAID5には最小6台のHDDが必要だが，二組のRAID5をストライピング動作させる RAID5+0にすれば最小5台のHDDでシステムを構成できる。",
+      "エ": "一組のRAID5 の転送速度に比べて，複数組のRAID5をストライピング動作させたRAID5+0 は転送速度を高速にできる。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "RAID5+0は複数のRAID5群に処理を分散し，転送速度の向上を図れます。各群にパリティ相当の容量が必要で，耐障害性は故障するディスクの配置によって変わるので，アやイは不適切です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q23": {
+    "question": "Web アプリケーションサーバの可用性設計方式のうち，セッションを共有する負荷分散方式の説明はどれか。",
+    "choices": {
+      "ア": "CPUやメモリなどの各装置を二重化した1台のサーバを使用し，各装置が処理を分担する。故障時には故障が発生していない装置がセッションを処理するので，サービスは継続される。",
+      "イ": "稼働しているサーバと同一機能をもつサーバを待機系として用意し，故障時には待機系に手動で切り替えることによってセッションを引き継ぎ，サービスを復旧させる。",
+      "ウ": "同一機能と共通のディスク領域をもつ複数台のサーバでクラスタを構成することによって処理を分担し，故障時には故障が発生していない他のサーバがセッションを引き継ぎ，サービスを継続させる。",
+      "エ": "同一機能をもつ複数台のサーバで処理を分担し，故障時には故障が発生したサーバを切り離す。故障時に行っていた処理は消失するが，新規にセッションを開始して，サービスを復旧させる。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "共通ディスク領域を持つ複数サーバで処理を分担し，稼働中のセッションを他のサーバへ引き継げるウが該当します。新しいセッションを開始するだけのエは，セッションを共有する方式ではありません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q24": {
+    "question": "組込み機器のソフトウェア開発にプラットフォーム開発を適用する利点として，適切なものはどれか。",
+    "choices": {
+      "ア": "機器ごとにソフトウェアを新規に設計するので，最小のコードサイズで最大の性能を実現できる。",
+      "イ": "機器ごとのハードウェアとソフトウェアの結合テストを不要にできる。",
+      "ウ": "ソフトウェアを複数の異なる機器に共通して利用することが可能になるので，ソフトウェア開発効率を向上できる。",
+      "エ": "複数の機器に共通のバグが発生したとき，ソフトウェアのプラットフォーム部分をバグの原因から除外できる。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "プラットフォームの共通部分を複数機器で再利用できるため，ソフトウェアの開発効率が上がります。共通化しても機器ごとの結合テストは必要であり，共通部分にもバグが存在する可能性があります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2024a-am2-q25": {
+    "question": "エクストリームプログラミング (XP: Extreme Programming) における“テスト駆動開発”の特徴はどれか。",
+    "choices": {
+      "ア": "最初のテストで，なるべく多くのバグを摘出する。",
+      "イ": "テストケースの改善を繰り返す。",
+      "ウ": "テストでのカバレージを高めることを目的とする。",
+      "エ": "プログラムコードを書く前にテストコードを書く。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_am2_ans.pdf",
+    "explanation": "テスト駆動開発では，期待する振る舞いを表すテストコードを先に書き，そのテストを通す実装を作ります。その後の整理でもテストを実行し，振る舞いを保つことを確認します。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q1": {
+    "question": "グラフデータモデルの一つである，プロパティグラフに関する記述のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "グラフはノード，リレーションシップ，プロパティで示すことができる。",
+      "イ": "ノードはプロパティをもつことができるが，リレーションシップはプロパティをもつことができない。",
+      "ウ": "プロパティは，主語，述語，目的語のトリプルと呼ばれるデータ構造で表す。",
+      "エ": "リレーションシップは開始ノード，終了ノードともに複数のノードに接続することができる。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "プロパティグラフはノード，リレーションシップ，プロパティで構成されます。ノードだけでなくリレーションシップにもプロパティを付けられます。主語・述語・目的語の三つ組はRDFのモデルです。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q2": {
+    "question": "概念データモデルの説明として，最も適切なものはどれか。",
+    "choices": {
+      "ア": "階層モデル，ネットワークモデル，関係モデルがある。",
+      "イ": "業務プロセスを抽象化して表現したものである。",
+      "ウ": "集中型 DBMSを導入するか，分散型 DBMSを導入するかによって内容が変わる。",
+      "エ": "対象世界の情報構造を抽象化して表現したものである。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "概念データモデルは対象世界の情報構造を，実装技術に依存せず抽象化して表現します。業務プロセスのモデルとは異なり，集中型か分散型かというDBMSの実装方針によって決まるものでもありません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q3": {
+    "question": "UML を用いて表した商品と倉庫のデータモデルに関する記述のうち，適切なものはどれか。ここで，商品の倉庫間の移動はないものとする。",
+    "choices": {
+      "ア": "1種類の商品を二つの倉庫に初めて入庫すると，“在庫商品”データが2件追加される。",
+      "イ": "2種類の商品を一つの倉庫に入庫すると，“入庫”データが1件追加される。",
+      "ウ": "格納先となる倉庫が確定していない商品が存在する。",
+      "エ": "出庫の実績がない在庫商品は存在しない。"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "在庫商品は商品と倉庫の組合せに対応します。同じ商品を二つの倉庫に初めて入れると組合せが二つでき，在庫商品が2件増えます。図では在庫商品に対する出庫は0件でもよく，エの断定は誤りです。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q3.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問3の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q4": {
+    "question": "従業員の，従業員番号，氏名及び使用できるプログラム言語を管理するために，“従業員”表及び“プログラム言語”表を設計する。“プログラム言語を2種類以上使用できる従業員がいる。プログラム言語を全く使用できない従業員もいる。”という状況を管理する“プログラム言語”表の設計として，適切なものはどれか。ここで，実線の下線は主キーを表す。\n〔従業員表〕\n従業員(従業員番号，氏名)",
+    "choices": {
+      "ア": "プログラム言語(氏名，プログラム言語)",
+      "イ": "プログラム言語(従業員番号，プログラム言語)",
+      "ウ": "プログラム言語(従業員番号，プログラム言語)",
+      "エ": "プログラム言語(従業員番号，プログラム言語)"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "従業員番号とプログラム言語の組合せを主キーにすると，一人の従業員に複数言語を登録できます。使える言語がない従業員は従業員表だけに登録できます。両属性に主キーの下線があるエが適切です。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q4.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問4の原本。図表・SQL・選択肢の表記を含む。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/images/questions/db/2025-autumn-am2-q4-ア.webp",
+      "イ": "/images/questions/db/2025-autumn-am2-q4-イ.webp",
+      "ウ": "/images/questions/db/2025-autumn-am2-q4-ウ.webp",
+      "エ": "/images/questions/db/2025-autumn-am2-q4-エ.webp"
+    }
+  },
+  "db-2025a-am2-q5": {
+    "question": "関数従属に関する記述のうち，適切なものはどれか。ここで，A，B，Cはある関係の属性の集合とする。",
+    "choices": {
+      "ア": "BがAに関数従属し，CがAに関数従属すれば，CはBに関数従属する。",
+      "イ": "BがAの部分集合であり，CがAに関数従属すれば，CはBに関数従属する。",
+      "ウ": "BがAの部分集合であれば，AはBに関数従属する。",
+      "エ": "BとCの和集合がAに関数従属すれば，BとCはそれぞれがAに関数従属する。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "AからBとCの和集合が決定できれば，その一部であるBとCもそれぞれ決定できます。これは関数従属の分解則です。AからBとCが決まっても，BからCが決まるとは限りません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q6": {
+    "question": "次の表に対して，第3正規形まで正規化を行った場合，少なくとも幾つの表に分割されるか。ここで，顧客の1回の注文に対して一つの受注番号が割り当てられ，顧客は1回の注文で一つ以上の商品を注文できるものとする。",
+    "choices": {
+      "ア": "2",
+      "イ": "3",
+      "ウ": "4",
+      "エ": "5"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "受注番号から顧客コードと受注日，顧客コードから顧客名，商品コードから商品名と単価が決まります。顧客，商品，受注，受注明細の4表に分ければ部分関数従属と推移的関数従属を除けます。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q6.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問6の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q7": {
+    "question": "SQLの3値論理において，a，bに入る字句の組合せはどれか。\n“真AND 不定”は\na であり，“偽AND 不定”は\nb\nである。",
+    "choices": {
+      "ア": "a: 偽，b: 偽",
+      "イ": "a: 偽，b: 不定",
+      "ウ": "a: 不定，b: 偽",
+      "エ": "a: 不定，b: 不定"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "SQLの3値論理では真AND不定は不定です。偽AND不定は，もう一方がどの値でも全体が真にならないので偽です。したがってaが不定，bが偽となるウを選びます。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q8": {
+    "question": "表定義に基づいて作成された“システム担当者”表において，トランザクション Aの複合文内の SQL 文全てを正常終了させるためにaに入れる字句はどれか。ここで，実線の下線は主キーを表す。\n〔表定義〕\nCREATE TABLE システム担当者(\nシステム番号 INTEGER,担当者番号 INTEGER NOT NULL,CONSTRAINT PK_システム番号 PRIMARY KEY(システム番号),CONSTRAINT UK_担当者番号 UNIQUE(担当者番号)\nDEFERRABLE INITIALLY IMMEDIATE\n)\nシステム担当者\nシステム番号\n担当者番号\n1234\n111\n6789\n222\n〔トランザクションAの複合文内のSQL 文〕\nSET CONSTRAINTS\na\n;\nUPDATE システム担当者 SET 担当者番号 = 222 WHERE システム番号 = 1234;\nUPDATE システム担当者 SET 担当者番号 = 111 WHERE システム番号 = 6789;\nCOMMIT;",
+    "choices": {
+      "ア": "PK_システム番号 DEFERRED",
+      "イ": "PK_システム番号 IMMEDIATE",
+      "ウ": "UK_担当者番号 DEFERRED",
+      "エ": "UK_担当者番号 IMMEDIATE"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "最初のUPDATEの直後には担当者番号222が重複します。担当者番号の一意性制約をDEFERREDにすると検査をコミット時に遅らせられ，二つのUPDATEを終えた時点では重複が解消して正常終了します。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q8.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問8の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q9": {
+    "question": "“名簿1”表と“名簿 2” 表のそれぞれ対応する行が全て等しいかどうかを確認する SQL文の a，b，cに入れる適切な字句はどれか。\n名簿1\n名前\n住所\n性別\n年齢\n試験 太郎\n東京\n男\n22\n情報 花子\n大阪\n女\n24\n処理一郎\n京都\n男\n35\n名簿2\n名前\n住所\n性別\n年齢\n試験 太郎\n東京\n男\n22\n情報 花子\n大阪\n女\n24\n処理一郎\n京都\n男\n35\n〔SQL文〕\nSELECT CASE WHEN COUNT(*) = 0 THEN '等しい' ELSE '異なる' END AS 結果\nFROM ((SELECT * FROM 名簿1\na\nSELECT * FROM 名簿2)\nb\n(SELECT * FROM 名簿1\nc\nSELECT * FROM 名簿2)\n) COMPARE",
+    "choices": {
+      "ア": "a: EXCEPT，b: UNION ALL，c: INTERSECT",
+      "イ": "a: EXCEPT，b: UNION，c: INTERSECT",
+      "ウ": "a: UNION ALL，b: INTERSECT，c: UNION",
+      "エ": "a: UNION，b: EXCEPT，c: INTERSECT"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "両表の和集合から共通部分を引いた結果が空なら，両表に含まれる行の集合は等しいと判断できます。aにUNION，bにEXCEPT，cにINTERSECTを入れるエがこの式を表します。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q9.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問9の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q10": {
+    "question": "関係演算において，商演算と同等な結果が得られる演算の組合せはどれか。",
+    "choices": {
+      "ア": "直積演算と差演算と選択演算",
+      "イ": "直積演算と射影演算と差演算",
+      "ウ": "直積演算と射影演算と和演算",
+      "エ": "直積演算と選択演算と和演算"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "商演算は，除数の全ての行に対応する行を被除数から探します。候補を射影し，直積で必要な組合せを作り，差で不足を求めて不足のある候補を除けば，同等の結果を得られます。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q11": {
+    "question": "図のような関係データベースの“注文”表と“注文明細”表がある。“注文”表の行を削除すると，対応する“注文明細”表の行が，自動的に削除されるようにしたい。参照制約定義の削除規則 (ON DELETE) に指定する語句はどれか。ここで，図中の実線の下線は主キーを，破線の下線は外部キーを表す。",
+    "choices": {
+      "ア": "CASCADE",
+      "イ": "INTERSECT",
+      "ウ": "RESTRICT",
+      "エ": "UNIQUE"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "ON DELETE CASCADEを指定すると，参照先の親の行を削除した際に，それを参照する子の行も連動して削除されます。RESTRICTは参照する行が残っている場合に削除を制限する指定です。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q11.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問11の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q12": {
+    "question": "DBMS をシステム障害発生後に再立上げするとき，ロールフォワードすべきトランザクションとロールバックすべきトランザクションの組合せとして，適切なものはどれか。ここで，トランザクションの中で実行される処理内容は次のとおりとする。",
+    "choices": {
+      "ア": "ロールフォワード: T2，T5，ロールバック: T6",
+      "イ": "ロールフォワード: T2，T5，ロールバック: T3，T6",
+      "ウ": "ロールフォワード: T1，T2，T5，ロールバック: T6",
+      "エ": "ロールフォワード: T1，T2，T5，ロールバック: T3，T6"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "T2とT5はチェックポイント後にコミット済みなのでREDOの対象です。T6は未コミットで書込みがあるのでUNDOの対象です。T1はチェックポイント前に完了し，T3とT4は読取りだけなので対象から外れます。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q12.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問12の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q13": {
+    "question": "RDBMS のクラスタ化インデックスに関する記述のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "外部キーのインデックスはクラスタ化インデックスである。",
+      "イ": "クラスタ化インデックスは，一つのテーブルに複数作成できる。",
+      "ウ": "一つのテーブルには，クラスタ化インデックスか非クラスタ化インデックスのいずれか一方だけが作成できる。",
+      "エ": "レコードは，クラスタ化インデックスの対象列の値の順に並べられ，可能な限り物理的に連続してブロックに格納される。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "クラスタ化インデックスでは対象列の値の順にレコードを並べ，可能な限り連続したブロックに格納します。一つの表の物理的な並びは一つなので，その表に複数のクラスタ化インデックスは作れません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q14": {
+    "question": "データベースの REDO のべき等 (idempotent)の説明として，適切なものはどれか。",
+    "choices": {
+      "ア": "REDO による障害回復の時間を短縮するために，あるルールに従って整合性のとれたデータを記憶媒体に適宜反映すること。",
+      "イ": "REDO を繰り返し実行しても，正常終了するときには1回実行したときと同じデータの状態になること。",
+      "ウ": "事前に取得していたバックアップデータを記憶媒体に復旧し，そのデータに対してREDOを実行すること。",
+      "エ": "トランザクションをコミットする前に REDO に必要な情報を書き出し，データの更新はそのあとで行うこと。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "べき等性とは操作を繰り返しても一度行った場合と結果が変わらない性質です。REDOでこの性質を保てば，障害回復が中断され同じ更新を再適用しても，余分な更新が積み重なることを防げます。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q15": {
+    "question": "トランザクション T1，T2 を同時実行した際に，次の異状を防ぐことができるトランザクションの隔離性水準のうち，最も水準の低いものはどれか。\n〔異状〕\nT1 が同じデータを複数回読み込んでいる途中で，T2 がそのデータを更新してコミットしたことによって，T1 が更新していないのにもかかわらず T1 が読み込むデータが変わってしまう。",
+    "choices": {
+      "ア": "READ COMMITTED",
+      "イ": "READ UNCOMMITTED",
+      "ウ": "REPEATABLE READ",
+      "エ": "SERIALIZABLE"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "同じ行を再度読むと他のトランザクションのコミットした更新によって値が変わる現象は反復不能読み取りです。これを防ぐ最も低い水準はREPEATABLE READです。READ COMMITTEDでは防げません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q16": {
+    "question": "二つのトランザクションT1とT2を並列に実行した結果が，T1の完了後にT2を実行した結果，又はT2の完了後にT1を実行した結果と等しい場合，このトランザクションスケジュールの性質を何と呼ぶか。",
+    "choices": {
+      "ア": "一貫性",
+      "イ": "原子性",
+      "ウ": "耐久性",
+      "エ": "直列化可能"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "並行実行の結果がいずれかの直列実行と等価になる性質を直列化可能性といいます。原子性は全体を実行するか全体を取り消す性質，耐久性は確定した更新を保持する性質です。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q17": {
+    "question": "DBMS において，トランザクション間でデッドロックが発生していることを検出するために使用するものはどれか。",
+    "choices": {
+      "ア": "2相ロック",
+      "イ": "時刻印アルゴリズム",
+      "ウ": "チェックポイント",
+      "エ": "待ちグラフ"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "待ちグラフはトランザクションの待ち関係を有向辺で表します。待ち関係に循環ができると互いに解放を待つデッドロックを検出できます。チェックポイントは障害回復のための仕組みです。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q18": {
+    "question": "ブロックチェーンのデータ構造の特徴として，適切なものはどれか。",
+    "choices": {
+      "ア": "検索のための中間ノードと，実データへのポインタを格納する葉ノードをインデックスとしてもつ。",
+      "イ": "時刻印が付与された複数のバージョンから成るデータをスナップショットとしてもつ。",
+      "ウ": "実データから作成したビットマップをインデックスとしてもつ。",
+      "エ": "直前のトランザクションデータの正当性を検証するためのハッシュ値をもつ。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "直前のトランザクションデータの正当性を検証するハッシュ値を持つエが適切です。ハッシュによる連鎖は過去のデータの改ざん検出に使えます。木の索引やスナップショットの説明とは異なります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q19": {
+    "question": "暗号化処理時における暗号化装置の消費電力を測定するなどして，当該装置内部の秘密情報を推定する攻撃はどれか。",
+    "choices": {
+      "ア": "キーロガー",
+      "イ": "サイドチャネル攻撃",
+      "ウ": "スミッシング",
+      "エ": "中間者攻撃"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "サイドチャネル攻撃は消費電力，処理時間，電磁波など実装の外部に現れる情報から秘密情報を推定する攻撃です。暗号化装置の消費電力を測定する本問はこの攻撃に該当します。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q20": {
+    "question": "メッセージに RSA 方式のデジタル署名を付与して2者間で送受信する。そのときに使用するデジタル署名の検証鍵とその使用方法はどれか。",
+    "choices": {
+      "ア": "受信者の公開鍵であり，送信者がメッセージダイジェストからデジタル署名を作成する際に使用する。",
+      "イ": "受信者の秘密鍵であり，受信者がデジタル署名からメッセージダイジェストを取り出す際に使用する。",
+      "ウ": "送信者の公開鍵であり，受信者がデジタル署名からメッセージダイジェストを取り出す際に使用する。",
+      "エ": "送信者の秘密鍵であり，送信者がメッセージダイジェストからデジタル署名を作成する際に使用する。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "署名の検証に使うのは送信者の公開鍵です。受信者は署名から得たメッセージダイジェストと受信メッセージから計算したダイジェストを照合します。署名を作成する送信者の秘密鍵とは役割が異なります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q21": {
+    "question": "秘密鍵が漏えいした場合であっても，過去に通信した暗号文を復号することができないという暗号技術の性質はどれか。",
+    "choices": {
+      "ア": "一方向性",
+      "イ": "前方秘匿性",
+      "ウ": "第二原像計算困難性",
+      "エ": "等価安全性"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "前方秘匿性は，長期的な秘密鍵が後から漏えいしても，過去の通信のセッション鍵を復元されず，記録済みの暗号文を解読されない性質です。過去の通信の保護が鍵になります。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q22": {
+    "question": "容量がa Mバイトでアクセス時間がxナノ秒の命令キャッシュと，容量がb Mバイトでアクセス時間がy ナノ秒の主記憶をもつシステムにおいて，CPUからみた，主記憶と命令キャッシュとを合わせた平均アクセス時間を表す式はどれか。ここで，読み込みたい命令コードが命令キャッシュに存在しない確率をrとし，キャッシュ管理に関するオーバーヘッドは無視できるものとする。",
+    "choices": {
+      "ア": "(1-r)・a / (a + b)・x + r・b / (a + b)・y",
+      "イ": "(1-r)・x+r・y",
+      "ウ": "r・a / (a + b)・x + (1-r)・b / (a + b)・y",
+      "エ": "r・x+(1 - r)・y"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "命令キャッシュにある確率は1−r，存在しない確率はrです。それぞれのアクセス時間xとyをこの確率で加重平均すれば，(1−r)・x+r・yとなります。容量a，bを重みには使いません。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q23": {
+    "question": "4台の磁気ディスクで構成された RAID6 のディスクアレイシステムがあり，パリティの計算方法は次のとおりである。磁気ディスク2と磁気ディスク3が故障したとき，データブロック A1，A2 を復元するのに必要なデータブロックの組合せとして，適切なものはどれか。ここで，パリティの計算方法では“データブロック X”の内容を“X”で示し，⊕は排他的論理和を示す。",
+    "choices": {
+      "ア": "B1，Ap，Av",
+      "イ": "B1，Ap，Bv",
+      "ウ": "D1，Ap，Av",
+      "エ": "D1，Ap，Bv"
+    },
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "図の式Av=D1⊕A2からA2=D1⊕Avを得られます。続いてAp=A1⊕A2からA1=Ap⊕A2を求められるので，残存ディスクのD1，Ap，Avがあれば両方を復元できます。",
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/db/2025-autumn-am2-q23.webp"
+    ],
+    "imageAltTexts": [
+      "IPA公式 2025年度秋期DB午前II 問23の原本。図表・SQL・選択肢の表記を含む。"
+    ]
+  },
+  "db-2025a-am2-q24": {
+    "question": "オブジェクト指向における抽象クラスで，できないことはどれか。",
+    "choices": {
+      "ア": "インスタンスを生成すること",
+      "イ": "サブクラスをもつこと",
+      "ウ": "スーパークラスをもつこと",
+      "エ": "属性をもつこと"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "抽象クラスそのもののインスタンスは生成できません。サブクラスやスーパークラスを持つこと，属性を定義することは可能です。具象サブクラスを通して振る舞いを実装し利用します。",
+    "lastUpdated": "2026-11-03"
+  },
+  "db-2025a-am2-q25": {
+    "question": "エクストリームプログラミング (XP) のプラクティスとして，適切なものはどれか。",
+    "choices": {
+      "ア": "1週間の労働時間は，チームで相談して自由に決める。",
+      "イ": "ソースコードの再利用は，作成者だけが行う。",
+      "ウ": "単体テストを終えたプログラムは，すぐに結合して，結合テストを行う。",
+      "エ": "プログラミングは1人で行う。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_am2_ans.pdf",
+    "explanation": "単体テストを終えたコードをすぐに結合してテストするのは，XPの継続的インテグレーションに対応します。頻繁な統合で不整合を早期に発見します。コードの共同所有やペアプログラミングもXPの実践です。",
+    "lastUpdated": "2026-11-03"
+  }
+}
