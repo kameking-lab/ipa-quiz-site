@@ -505,6 +505,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
   },
   {
+    slug: "kyusui",
+    shortName: "給水装置工事主任技術者",
+    fullName: "給水装置工事主任技術者試験",
+    domain: "construction",
+    administrator: "公益財団法人給水工事技術振興財団",
+    officialQuestionsUrl: "https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html",
+    officialReuseTermsUrl: "https://www.kyuukou.or.jp/sitepolicy.html",
+    status: "permission-required",
+    reuseSummary: "令和8年度・令和7年度の公式問題・正答は公開されているが、サイトポリシーに記述・写真の無断転載禁止が明記されているため、問題本文は未収録。確認根拠は reports/cloud-kyusui-latest2.md。",
+    remainingWork: ["転載許諾を取得できない限り問題本文を収録しない", "許諾取得後に対象回・全問の正答・全肢解説・必要図を再確認（令和7年度問18は公式に全員正解）"],
+  },
+  {
     slug: "sekou-kenchiku1",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定",
