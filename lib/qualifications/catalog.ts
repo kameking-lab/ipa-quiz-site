@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "sogo-ryoko", shortName: "総合旅行業務取扱管理者", fullName: "総合旅行業務取扱管理者試験",
+    domain: "personal-services", administrator: "一般社団法人日本旅行業協会（JATA）",
+    officialQuestionsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/",
+    officialReuseTermsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/",
+    status: "permission-required",
+    reuseSummary: "公式公開一覧の最新2回は令和7・6年度。公式サイトに文章・データ等の無断転写・複製禁止が明記されているため本文は収録しない。",
+    remainingWork: ["転載条件が変わった場合に再監査するまで本文を収録しない"],
+  },
+  {
     slug: "kokunai-ryoko", shortName: "国内旅行業務取扱管理者", fullName: "国内旅行業務取扱管理者試験",
     domain: "personal-services", administrator: "一般社団法人全国旅行業協会（ANTA）",
     officialQuestionsUrl: "https://www.anta.or.jp/exam/shiken/annai.html",
