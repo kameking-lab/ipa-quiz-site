@@ -42,6 +42,14 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "sagyo-kankyo-sokuteishi", examCode: "sagyo-kankyo-sokuteishi", shortName: "作業環境測定士", fullName: "作業環境測定士試験（第一種・第二種）",
+    domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
+    officialQuestionsUrl: "https://www.exam.or.jp/emkohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/h_link/", status: "terms-review-required",
+    reuseSummary: "科目ごとの直近2回、全360問を未公開で準備。共通4科目は2026年8月19日・2月17日、第一種選択5科目は2026年8月20日・2025年8月21日。原文テキスト・公式正答・独自解説・必要図を保持。法令は出題時点。",
+    attributionTemplate: "出典：公益財団法人安全衛生技術試験協会 作業環境測定士試験（実施日・科目・問番号）。本文の表示を整形。解説は過去問AIの独自作成。",
+    remainingWork: ["ユーザー指定により未公開ステージング。公開は別途の明示指示後に判断"],
+  },
+  {
     slug: "rodo-eisei-consultant", shortName: "労働衛生コンサルタント", fullName: "労働衛生コンサルタント試験",
     domain: "safety", administrator: "公益財団法人安全衛生技術試験協会",
     officialQuestionsUrl: "https://www.exam.or.jp/cskohyo/", officialReuseTermsUrl: "https://www.exam.or.jp/h_link/",

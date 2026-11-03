@@ -31,3 +31,29 @@
 掲載科目は労働衛生一般・労働衛生関係法令・健康管理・労働衛生工学。PDF全8冊を取得確認。例: [2025年労働衛生一般](https://www.exam.or.jp/wp-content/uploads/2025/11/CS20251908.pdf)、[2024年労働衛生一般](https://www.exam.or.jp/wp-content/uploads/2024/12/CS20241908.pdf)。
 
 除外理由: 労働安全コンサルタントと同じく、筆記・口述のうち公表一覧にあるのは筆記問題だけで、口述問題の掲載はない。ユーザー指定の全問公開条件を資格全体に適用。健康管理・労働衛生工学の記述式には公式正答がなく、独自解答を公式正答として登録しない。筆記の択一問題自体が未公開という意味ではない。
+
+## 作業環境測定士（第一種・第二種）
+
+追加 **360問**（9科目×2掲載回×各20問）。資格台帳は `terms-review-required` とし未公開ステージング。除外問題0問。第一種の共通科目と第二種の問題を二重計上していない。第一種選択科目の5分野は各分野の原問として保存する。
+
+[公式公表一覧](https://www.exam.or.jp/emkohyo/)から実際のリンクを追跡。共通科目の直近2回は **令和8年8月19日・令和8年2月17日**。第一種選択科目の直近2回は **令和8年8月20日・令和7年8月21日**。2月のリンクは拡張子なしのURLからPDFが直接返る。全科目を同一年度・同一回と推定しない。
+
+| 科目 | 最新掲載分 | 一つ前の掲載分 | 追加問数 |
+| --- | --- | --- | ---: |
+| 労働衛生一般 | [2026-08-19](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261801.pdf) | [2026-02-17](https://www.exam.or.jp/20260217/) | 40 |
+| 労働衛生関係法令 | [2026-08-19](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261802.pdf) | [2026-02-17](https://www.exam.or.jp/20260217-2/) | 40 |
+| デザイン・サンプリング | [2026-08-19](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261803.pdf) | [2026-02-17](https://www.exam.or.jp/20260217-3/) | 40 |
+| 分析に関する概論 | [2026-08-19](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261804.pdf) | [2026-02-17](https://www.exam.or.jp/20260217-4/) | 40 |
+| 有機溶剤 | [2026-08-20](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261805.pdf) | [2025-08-21](https://www.exam.or.jp/wp-content/uploads/2025/08/EM20251805.pdf) | 40 |
+| 鉱物性粉じん | [2026-08-20](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261806.pdf) | [2025-08-21](https://www.exam.or.jp/wp-content/uploads/2025/08/EM20251806.pdf) | 40 |
+| 特定化学物質 | [2026-08-20](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261807.pdf) | [2025-08-21](https://www.exam.or.jp/wp-content/uploads/2025/08/EM20251807.pdf) | 40 |
+| 金属類 | [2026-08-20](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261808.pdf) | [2025-08-21](https://www.exam.or.jp/wp-content/uploads/2025/08/EM20251808.pdf) | 40 |
+| 放射性物質 | [2026-08-20](https://www.exam.or.jp/wp-content/uploads/2026/08/EM20261809.pdf) | [2025-08-21](https://www.exam.or.jp/wp-content/uploads/2025/08/EM20251809.pdf) | 40 |
+
+原本照合: 公式一覧から18冊を再取得し、全冊のSHA-256が既存 `official-catalog.json` と目視確認済み `reviewed-answer-keys.json` のハッシュに一致することを確認した。その原本に対応する既存 `papers`・`presentation` の原文、5肢、問番号・掲載ページ・正答を対応付けた。問題文・選択肢はテキストで保持し、図表が必要な15問のみ既存の必要部分の画像を併用して `hasImage: true`。原問全体の画像に置き換えない。図のみで印刷された選択肢は既存の説明テキストと原図を併用。
+
+出典と来歴は [source-audit.json](../data/questions/sagyo-kankyo-sokuteishi/source-audit.json) に18冊分の実施日・科目・取得URL・原本ハッシュ・公式正答列・各問の原文ハッシュ・原問ID・ページを記録。公式正答の○がベクター描画のPDFもあるため、テキスト抽出に○がないことを「正答非公表」と誤認せず、原本ハッシュが一致した目視確認済み正答表を使用した。
+
+解説は既存の過去問AI独自解説を利用し、349問は全肢解説、11問は公式正答に対応する一般解説を保持。一般解説を公式の解説とは表示しない。古い解説の「正答非公表」「参考解答」という記述は今回確認した公式正答の扱いに修正した。各問に出題時点の法令・制度である旨と実施日、問題・正答の公式URL、出典表記を付けた。類題・生成問題の追加は0問。
+
+通常の `QUESTIONS_BY_EXAM`、遅延ローダー、公開資格一覧からは除外し、検証スクリプトにはステージング360問を明示追加。既存の動的資格ルーティングと同じ公開ゲートを使用し、新しい公開ルートは作らない。全科目の通し `qNumber` と公式冊子内番号 `officialAnswerNumber` を分けて、同年同月の異科目でIDが衝突するのを防ぐ。
