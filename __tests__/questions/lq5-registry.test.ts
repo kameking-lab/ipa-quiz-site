@@ -6,7 +6,7 @@ import { QUESTIONS as OT1 } from "@/data/questions/kikenbutsu-otsu1";
 import { QUESTIONS as OT2 } from "@/data/questions/kikenbutsu-otsu2";
 import { QUESTIONS as OT6 } from "@/data/questions/kikenbutsu-otsu6";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
-import { filterQuestions } from "@/lib/questions/filter";
+import { filterQuestions, shuffleChoices } from "@/lib/questions/filter";
 import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
@@ -23,6 +23,8 @@ describe("LQ5 accepted packets in the public registries", () => {
     for (const hold of holds.filter(h => h.id.startsWith("biyoshi"))) expect(questions.some(q => q.id === hold.id)).toBe(false);
     expect(questionSourceEdition(questions[0])).toContain("第53回");
     expect(questionSourceEdition(questions.find(q => q.season === "second")!)).toContain("第54回");
+    // Authored explanations use official numeric labels, including question 1's (2).
+    for (const q of questions) expect(shuffleChoices(q)).toBe(q);
   });
   it.each([["kikenbutsu-otsu1", OT1], ["kikenbutsu-otsu2", OT2], ["kikenbutsu-otsu6", OT6]] as const)("%s keeps excerpt identity, five official keys and all accepted reasons", async (exam, expected) => {
     const qs = await getQuestionsForExam(exam);
