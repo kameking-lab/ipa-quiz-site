@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "crane-derrick": "クレーン・デリック運転士（限定なし）免許試験",
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
   "riku-tech2": "第二級陸上無線技術士試験",
