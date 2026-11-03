@@ -30,7 +30,6 @@ import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
-import { isExamPublished } from "@/lib/qualifications/catalog";
 import { SHINRISHI_CANDIDATES } from "@/data/questions/shinrishi";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 
@@ -329,8 +328,7 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        const officialSummary = q.explanationCoverage === "official-summary" &&
-          (q.exam === "denken3" || (q.exam === "shinrishi" && !isExamPublished(q.exam)));
+        const officialSummary = q.explanationCoverage === "official-summary" && q.exam === "denken3";
         if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;

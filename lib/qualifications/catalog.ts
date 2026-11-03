@@ -45,10 +45,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "shinrishi", examCode: "shinrishi", shortName: "公認心理師", fullName: "公認心理師試験",
     domain: "welfare", administrator: "一般財団法人公認心理師試験研修センター",
     officialQuestionsUrl: "https://www.jccpp.or.jp/shiken/shikenjoho/",
-    officialReuseTermsUrl: "https://www.jccpp.or.jp/", status: "terms-review-required",
-    reuseSummary: "第9回（2026年3月1日）の154原問を公開前候補として保存。第8回は未収録。転載条件と公開判断の確認が完了するまで演習には公開しません。",
+    officialReuseTermsUrl: "https://www.jccpp.or.jp/policy.html", status: "terms-review-required",
+    reuseSummary: "第8回（2025年3月2日）・第9回（2026年3月1日）の全308原問を公開前候補として保存。公式サイトポリシー第2項は転載等に事前許可を求めており、許諾取得の記録を確認できないため全308問の演習公開を保留しています。",
     attributionTemplate: "出典：一般財団法人公認心理師試験研修センター 公認心理師試験。解説は過去問AI独自作成。",
-    remainingWork: ["転載条件と公開可否の確認", "公開品質要件に合わせた全肢解説の追加", "第8回154問の原文・正答照合と独自解説の追加"],
+    remainingWork: ["公式サイトポリシー第2項に基づく転載等の事前許可の取得・記録と公開可否の確認"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
