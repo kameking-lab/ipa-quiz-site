@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-03",
+  "scope": "Bundled v1 only. Question text/choices checked against original PDFs; answer keys checked against official answer PDFs. Existing fixed explanations read for consistency; not IPA official explanations.",
+  "ip": {
+    "questionPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
+    "questionPdfSha256": "e6771ec9506f385c5a07d22e261535ee82ff285c95cbd9ad08c4e8b941892f55",
+    "answerPdf": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
+    "answerPdfSha256": "8dd5c1f2a3f98228781c1cd18b1d855455091852c1bd681b4b2e932290dc20ee",
+    "method": "Visual comparison of scanned question PDF pages 2-10 and the complete answer table. Punctuation and whitespace normalized in the existing transcription.",
+    "answers": { "1": "エ", "2": "イ", "3": "ウ", "4": "イ", "5": "イ", "6": "エ", "7": "イ", "9": "ア", "10": "イ", "11": "イ", "12": "ア", "13": "エ", "14": "ア", "15": "ウ", "16": "イ", "17": "エ", "18": "ウ", "19": "ウ", "20": "イ", "21": "ウ" }
+  },
+  "fe": {
+    "questionPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_qs.pdf",
+    "questionPdfSha256": "3c33fb495bfea51851d2202fca17adb325ce9cb2c216464a5f931725618dfadc",
+    "answerPdf": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_a_ans.pdf",
+    "answerPdfSha256": "6d6a14e7c346fe82c1848d2922ef0ea1325bcc3ff5f2224108baa1fe8f8912eb",
+    "method": "All included question and choice text matched PDF text after NFKC, whitespace and punctuation normalization; checked against the official answer table. Questions 3, 6, 14, 19 with figures/tables excluded.",
+    "answers": { "1": "エ", "2": "イ", "4": "ウ", "5": "ア", "7": "エ", "8": "エ", "9": "ウ", "10": "ア", "11": "ウ", "12": "エ", "13": "エ", "15": "ウ", "16": "エ", "17": "イ", "18": "エ", "20": "イ" }
+  },
+  "rights": "IPA-public metadata retained; original source attribution and separate learning-explanation attribution displayed. No third-party images bundled. Owner editorial and distribution review remains a release gate."
+}

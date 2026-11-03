@@ -1,0 +1,41 @@
+workflows:
+  ios1-unsigned:
+    name: Kakomon AI v1 - unsigned archive
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    environment:
+      node: "22"
+      xcode: "26.0"
+      cocoapods: default
+    scripts:
+      - name: Install isolated app dependencies
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          npm ci
+      - name: Typecheck, test and bundle local screens
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          npm run typecheck
+          npm test
+          npm run build
+      - name: Generate native project, plugins, privacy manifest and icon
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          npm run ios:prepare
+          plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
+      - name: Archive without signing
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          xcodebuild -workspace ios/App/App.xcworkspace -scheme App \
+            -configuration Release -destination 'generic/platform=iOS' \
+            -archivePath "$CM_BUILD_DIR/mobile/build/KakomonAI.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= \
+            archive
+    artifacts:
+      - mobile/build/*.xcarchive
+      - mobile/dist/**
+    # Intentionally no triggers, signing, ASC integration, publishing or upload.
