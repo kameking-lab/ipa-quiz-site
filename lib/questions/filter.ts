@@ -83,6 +83,8 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
+  // The stored key, explanations and shared figure banks use official numbers.
+  if (q.exam === "denki1") return q;
   // These explanations or answer metadata refer to the official choice numbers.
   // Preserve their order in shuffled quiz and API requests.
   if (q.exam === "kanteishi" || q.exam === "kaikeishi" || q.exam === "judo-seifukushi" || q.exam === "riku-toku-kokunai" || q.exam === "kai-toku2" || q.exam === "kai-toku3" || q.exam === "koku-toku" || q.exam === "land-special1" || q.exam === "riku-tech1" || q.exam === "maritime4" || q.exam === "aviation-comm" || q.exam === "amateur1" || q.exam === "maritime-special1" || q.exam === "riku-tech2" || q.exam === "amateur2" || q.exam === "maritime-radar" || q.exam === "maritime3" || q.exam === "maritime2" || q.exam === "maritime1" || q.exam === "general3" || q.exam === "general2" || q.exam === "general1" || q.exam === "land-special2" || q.exam === "land-special3") return q;
