@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "tsuyaku-annai", shortName: "全国通訳案内士（筆記）", fullName: "全国通訳案内士試験（筆記）",
+    domain: "personal-services", administrator: "日本政府観光局（JNTO）",
+    officialQuestionsUrl: "https://www.jnto.go.jp/projects/visitor-support/interpreter-guide-exams/past-exam-archives/",
+    officialReuseTermsUrl: "https://www.jnto.go.jp/site-info/site-policy.html",
+    status: "permission-required",
+    reuseSummary: "2026・2025年度を確認。公式公開は一部のみで、著作権に配慮した文章・画像の欠落があり、サイトポリシーにも無断複製等の制限があるため本文は収録しない。",
+    remainingWork: ["全問公開と利用条件が変わった場合に再監査するまで本文を収録しない"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
