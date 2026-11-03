@@ -1,0 +1,105 @@
+{
+  "task": "LQ1D",
+  "checkedAtUtc": "2026-11-03T18:24:07.405450+00:00",
+  "baselineCommit": "0a80989b0",
+  "baselineOriginalsPreserved": 607,
+  "releaseOriginals": 608,
+  "choiceExplanations": 2432,
+  "acceptedNewIds": [
+    "jidosha-2026-first-2-gasoline-q31"
+  ],
+  "remainingContentIds": [
+    "jidosha-2026-first-body-q37"
+  ],
+  "referenceExcludedIds": [
+    "jidosha-2025-second-2-gasoline-q13"
+  ],
+  "taskFullyComplete": false,
+  "distinctRawAndGitIndexEvidenceHashChecks": 43,
+  "commands": {
+    "pnpm validate:questions": {
+      "exitCode": 0,
+      "questions": 27052,
+      "errors": 0,
+      "warnings": 17133,
+      "log": "tmp/lq1d-wave1-validate.log",
+      "logSha256": "c8a98ebeb8e4520c16268ace646806c71817452f645e2d5444d16d16a4942d95"
+    },
+    "pnpm typecheck": {
+      "exitCode": 0,
+      "log": "tmp/lq1d-wave1-typecheck.log",
+      "logSha256": "6d1ec826c18a182b863486247163fd39cefb527606df2e469843aae09968180e"
+    },
+    "related Vitest batch1": {
+      "exitCode": 0,
+      "files": 5,
+      "tests": 1127,
+      "log": "tmp/lq1d-wave1-tests.log",
+      "logSha256": "680c1cb4b7b37549e945181afdd0b9124545cf4e26d3589ecdafc59bb6cd8e73"
+    },
+    "related Vitest batch2": {
+      "exitCode": 0,
+      "files": 4,
+      "tests": 39,
+      "log": "tmp/lq1d-wave1-extra-tests.log",
+      "logSha256": "b00a9fe4611e77979131917744edabd337b5fd3f9fc8d40559193bc74ea5fb14"
+    },
+    "Node automotive validator": {
+      "exitCode": 0,
+      "tests": 5,
+      "log": "tmp/lq1d-wave1-node.log",
+      "logSha256": "6a9615d137aeffe1b845c8f58735aebd389e023fc89e836ef0b24266bf7757d1"
+    },
+    "final automotive release Vitest": {
+      "exitCode": 0,
+      "files": 1,
+      "tests": 4,
+      "log": "tmp/lq1d-final-release-tests.log",
+      "logSha256": "e87cd7b8eb715cd61345e39467d266bee2ee66c30e6115cb674a8837aa631b2c"
+    }
+  },
+  "independentReviewCommand": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra",
+  "independentCliLogs": [
+    {
+      "path": "tmp/lq1d-investigation-cli.log",
+      "sha256": "3230713fbd76fdd4f4bd718e4b4d09baaa38a834a789f3a6440900bf25ed01de",
+      "encoding": "utf-16",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "path": "tmp/lq1d-q31-cli.log",
+      "sha256": "f762e19c30a65a2e966b708960aaafe0a070ae72aabff1b3875551a26408a27d",
+      "encoding": "utf-16",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "path": "tmp/lq1d-body-investigation2-cli.log",
+      "sha256": "6235fceeed64994897639eebcb8e5bfe445549aa6b9094c54555fb0efb9cb296",
+      "encoding": "utf-16",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "path": "tmp/lq1d-implementation1-cli.log",
+      "sha256": "06b2e8ef9912e7d8900ac0ec7fd36b4c00357cee171c7a6ccd03cfcf947dd80f",
+      "encoding": "utf-16",
+      "requestedModelHeaderVerified": true
+    },
+    {
+      "path": "tmp/lq1d-final-index-cli.log",
+      "sha256": "2e5dc2bcce71e6def0f2f91653777845034282b42179d3262c2cb55bd320d62d",
+      "encoding": "utf-16",
+      "requestedModelHeaderVerified": true
+    }
+  ],
+  "technicalPass": "lq1d-review-q31.json",
+  "implementationPass": "lq1d-review-implementation1.json",
+  "finalIndexReview": "lq1d-review-final-index.json",
+  "limitations": [
+    "Body Q37 exact explanation corrections unresolved; remains excluded.",
+    "No production build or live-browser click-through.",
+    "Raw CLI logs retained in local ignored tmp; committed judgments and hash-bound evidence retained."
+  ],
+  "push": false,
+  "pullRequestCreated": false,
+  "deployed": false
+}
