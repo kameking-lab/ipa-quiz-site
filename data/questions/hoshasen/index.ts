@@ -1,6 +1,7 @@
 import { z } from "zod";
 import first2026 from "./2026-1.json";
 import firstChemistry2026 from "./2026-1-kagaku.json";
+import firstBiology2026 from "./2026-1-seibutsu.json";
 import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
 import second2025 from "./2025-2.json";
@@ -27,7 +28,7 @@ export const HoshasenStagedQuestionSchema = z.object({
   topic: z.string().min(1),
   sourcePdfUrl: z.string().url().startsWith("https://www.nustec.or.jp/syunin/pdf/"),
   sourceAnswerUrl: z.string().url().startsWith("https://www.nustec.or.jp/syunin/pdf/"),
-  answerPdfPage: z.union([z.literal(2), z.literal(3), z.literal(4)]),
+  answerPdfPage: z.number().int().min(1).max(5),
   sourceAttribution: z.string().startsWith("出典：公益財団法人原子力安全技術センター"),
   hasImage: z.boolean(),
   imagePath: z.string().startsWith("data/questions/hoshasen/figures/").optional(),
@@ -40,4 +41,4 @@ export const HoshasenStagedQuestionSchema = z.object({
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026]);
