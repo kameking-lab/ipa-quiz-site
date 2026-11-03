@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { HOSHASEN_STAGED_QUESTIONS } from "@/data/questions/hoshasen";
+import { HOSHASEN_STAGED_QUESTIONS, HoshasenStagedQuestionSchema } from "@/data/questions/hoshasen";
 import audit from "@/data/questions/hoshasen/source-audit.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_QUESTIONS } from "@/data/questions";
@@ -8,8 +8,10 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 
 describe("hoshasen unpublished source staging", () => {
   it("retains the distinct source sessions without publishing candidates", () => {
-    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(379);
-    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(379);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part")).toHaveLength(379);
+    expect(HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part")).toHaveLength(14);
+    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(audit.stagedQuestions);
+    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(audit.stagedQuestions);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
     expect(entry?.status).toBe("ready-to-ingest");
     expect(entry?.examCode).toBeUndefined();
@@ -22,8 +24,9 @@ describe("hoshasen unpublished source staging", () => {
       const year = Number(yearText);
       const grade = Number(gradeText);
       const subject = subjectCode === "hourei" ? "法令" : subjectCode === "kagaku" ? "化学" : subjectCode === "seibutsu" ? "生物学" : subjectCode === "jitsumu" ? "実務" : "物理学";
-      const questions = HOSHASEN_STAGED_QUESTIONS.filter(q => q.year === year && q.grade === grade && q.subject === subject);
-      expect(questions.map(q => q.number)).toEqual(audit.stagedCoverage.find(c => c.year === year && c.grade === grade && c.subject === subject)?.numbers);
+      const questions = HOSHASEN_STAGED_QUESTIONS.filter(q => q.format !== "multi-part").filter(q => q.year === year && q.grade === grade && q.subject === subject);
+      const allNumbers = HOSHASEN_STAGED_QUESTIONS.filter(q => q.year === year && q.grade === grade && q.subject === subject).map(q => q.number).sort((a,b) => a-b);
+      expect(allNumbers).toEqual(audit.stagedCoverage.find(c => c.year === year && c.grade === grade && c.subject === subject)?.numbers);
       expect(questions.map(q => q.officialAnswerNumber)).toEqual(answers);
       for (const q of questions) {
         expect(q.sourcePdfUrl).toContain(`R0${year - 2018}_${grade}_`);
@@ -36,9 +39,31 @@ describe("hoshasen unpublished source staging", () => {
     expect(audit.files).toHaveLength(20);
     expect(audit.files.every(f => f.bytes > 0 && /^[a-f0-9]{64}$/.test(f.sha256))).toBe(true);
     expect(audit.stagedQuestions).toBe(HOSHASEN_STAGED_QUESTIONS.length);
-    expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+q.choiceExplanations.length,0));
+    expect(audit.stagedChoiceExplanations).toBe(HOSHASEN_STAGED_QUESTIONS.reduce((n,q) => n+(q.format === "multi-part" ? q.blanks.reduce((m,b) => m+b.choiceExplanations.length,0) : q.choiceExplanations.length),0));
     expect(audit.remainingPrimaryQuestions + audit.stagedQuestions).toBe(audit.officialPrimaryQuestions);
     expect(audit.unavailableRounds).toEqual([]);
+  });
+
+  it("preserves every multi-part blank and independently transcribed official key", () => {
+    const multi = HOSHASEN_STAGED_QUESTIONS.filter(q => q.format === "multi-part");
+    expect(multi.reduce((n,q) => n+q.blanks.length,0)).toBe(200);
+    expect(multi.map(q => q.id).sort()).toEqual(Object.keys(audit.multiPartAnswerKeys).sort());
+    for (const q of multi) {
+      const expected = audit.multiPartAnswerKeys[q.id as keyof typeof audit.multiPartAnswerKeys];
+      expect(Object.fromEntries(q.blanks.map(b => [b.id,b.officialAnswerNumber]))).toEqual(expected);
+      const labels = [...q.question.matchAll(/\[([A-Z]|[ア-ン])\]/g)].map(m => m[1]);
+      expect(new Set(labels)).toEqual(new Set(q.blanks.map(b => b.id)));
+      expect(new Set(q.blanks.map(b => b.groupId))).toEqual(new Set(q.answerGroups.map(g => g.id)));
+      const invalidKey = structuredClone(q);
+      invalidKey.blanks[0].officialAnswerNumber = 100;
+      expect(HoshasenStagedQuestionSchema.safeParse(invalidKey).success).toBe(false);
+      const missingExplanation = structuredClone(q);
+      missingExplanation.blanks[0].choiceExplanations.pop();
+      expect(HoshasenStagedQuestionSchema.safeParse(missingExplanation).success).toBe(false);
+      const missingGroup = structuredClone(q);
+      missingGroup.blanks[0].groupId = "missing-group";
+      expect(HoshasenStagedQuestionSchema.safeParse(missingGroup).success).toBe(false);
+    }
   });
 
   it("keeps the disputed source question out of candidates without changing its official key", () => {
