@@ -1,0 +1,249 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "basis",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-1",
+      "printedNumber": "Ⅰ－4－1",
+      "questionNumber": 19,
+      "questionText": "ハロゲンに関する次の（ア）～（エ）の記述について、正しいものの組合せとして、最も適切なものはどれか。\n（ア）ハロゲン原子の電気陰性度は、大きいものからF、Cl、Br、Iの順である。\n（イ）ハロゲン分子の酸化力は、強いものからF₂、Cl₂、Br₂、I₂の順である。\n（ウ）同濃度のハロゲン化水素の水溶液に含まれる水素イオンの濃度は、高いものからHF、HCl、HBr、HIの順である。\n（エ）ハロゲン化水素の沸点は、高いものからHF、HCl、HBr、HIの順である。",
+      "choices": {
+        "1": "ア、イ",
+        "2": "ア、ウ",
+        "3": "イ、ウ",
+        "4": "イ、エ",
+        "5": "ウ、エ"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。アの電気陰性度とイの酸化力の順は正しい記述です。ウはHFが弱酸であるため誤り、エはHF以外の沸点の順序が逆です。沸点はHF＞HI＞HBr＞HClです。",
+      "choiceExplanations": {
+        "1": "適切です。周期表で下に行くほど電気陰性度と単体の酸化力が低下する傾向に対応します。",
+        "2": "アは正しいですが、ウは誤りです。HFは水中で弱酸であり、同濃度の強酸より水素イオン濃度が高いとはいえません。",
+        "3": "イは正しいですが、ウはHFを最も高い水素イオン濃度とする点が誤りです。",
+        "4": "イは正しいですが、エは誤りです。HFは水素結合で高い沸点を持ち、残りはHI＞HBr＞HClです。",
+        "5": "ウとエはいずれも誤りです。酸の解離の性質と分子間相互作用をそれぞれ区別します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 15,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－1。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-2",
+      "printedNumber": "Ⅰ－4－2",
+      "questionNumber": 20,
+      "questionText": "2価の多原子イオンを含む化合物として、最も適切なものはどれか。",
+      "choices": {
+        "1": "硫化銀",
+        "2": "水酸化ナトリウム",
+        "3": "硫酸アンモニウム",
+        "4": "硝酸鉛（Ⅱ）",
+        "5": "リン酸カルシウム"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。硫酸アンモニウム(NH₄)₂SO₄は、2価の多原子イオンである硫酸イオンSO₄²⁻を含みます。2価であることと多原子であることの両方が必要です。",
+      "choiceExplanations": {
+        "1": "硫化物イオンS²⁻は2価ですが単原子イオンです。",
+        "2": "水酸化物イオンOH⁻は多原子ですが1価です。",
+        "3": "適切です。SO₄²⁻は硫黄1個と酸素4個からなり、電荷は−2です。",
+        "4": "鉛イオンPb²⁺は2価ですが単原子、硝酸イオンNO₃⁻は多原子ですが1価です。",
+        "5": "リン酸イオンPO₄³⁻は多原子ですが3価です。Ca²⁺は単原子です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 15,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－2。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-3",
+      "printedNumber": "Ⅰ－4－3",
+      "questionNumber": 21,
+      "questionText": "材料の結晶構造に関する次の記述の、［ ］に入る語句の組合せとして、最も適切なものはどれか。\n結晶は、単位構造の並進操作によって空間全体を埋めつくした構造を持っている。室温・大気圧下において、単体物質の結晶構造は、FeやNaでは［ア］構造、AlやCuでは［イ］構造、TiやZnでは［ウ］構造である。単位構造の中に属している原子の数は、［ア］構造では［エ］個、［イ］構造では4個、［ウ］構造では2個である。",
+      "choices": {
+        "1": "ア：面心立方／イ：六方最密充填／ウ：体心立方／エ：4",
+        "2": "ア：面心立方／イ：体心立方／ウ：六方最密充填／エ：2",
+        "3": "ア：体心立方／イ：面心立方／ウ：六方最密充填／エ：2",
+        "4": "ア：体心立方／イ：六方最密充填／ウ：面心立方／エ：4",
+        "5": "ア：六方最密充填／イ：面心立方／ウ：体心立方／エ：3"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。室温のFe（α鉄）とNaは体心立方、AlとCuは面心立方、Ti（αチタン）とZnは六方最密充填です。体心立方の立方単位胞では頂点の寄与1個と体心1個の合計2個です。本問の六方最密充填の「2個」は基本となる単位構造での数で、慣用の六角柱全体の6個とは数え方が異なります。",
+      "choiceExplanations": {
+        "1": "Fe・Naは面心立方ではなく体心立方であり、Al・CuとTi・Znの構造の対応も異なります。",
+        "2": "六方最密充填と原子数2は合っていますが、体心立方と面心立方の材料の対応が逆です。",
+        "3": "適切です。三つの材料群の結晶構造と体心立方単位胞内原子数2が正しく対応しています。",
+        "4": "アの体心立方だけが合っています。Al・CuとTi・Znの対応が逆で、体心立方の原子数は4でなく2です。",
+        "5": "Al・Cuの面心立方は合っていますが、他の材料の対応と原子数3は誤りです。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 15,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－3。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-4",
+      "printedNumber": "Ⅰ－4－4",
+      "questionNumber": 22,
+      "questionText": "材料に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": {
+        "1": "クロムの含有率が10%未満の鉄系合金はステンレス鋼ではない。",
+        "2": "比強度は、単位密度当たりの引張強度を表した数値であり、ヤング率を密度で除して求められる。",
+        "3": "室温において、純銅、純鉄、純金の電気抵抗率には、純銅＜純金＜純鉄の関係が成立する。",
+        "4": "ダイヤモンドは硬度が高く熱膨張率が小さいため、切削工具の素材として用いられる。",
+        "5": "水素の吸収によって金属材料の物性が変化する現象を水素脆化と呼ぶ。"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。比強度は引張強度を密度で割った値です。ヤング率を密度で割った値は比弾性率であり、区別が必要です。",
+      "choiceExplanations": {
+        "1": "適切です。ステンレス鋼は不動態皮膜を形成するのに十分なクロムを含む鉄系合金で、クロム10%未満という条件はそれに達しません。",
+        "2": "不適切です。前半の定義は比強度ですが、後半の計算式は比弾性率の説明です。",
+        "3": "適切です。室温での代表的な純金属の抵抗率の大小は銅、金、鉄の順です。",
+        "4": "適切です。ダイヤモンドの高硬度などを利用し、適した被削材に対する切削工具として使われます。",
+        "5": "本問の趣旨では適切です。水素脆化は、水素により延性・靭性などが低下して脆くなる現象を指します。原文の「物性が変化」は広い表現です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 16,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－4。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-5",
+      "printedNumber": "Ⅰ－4－5",
+      "questionNumber": 23,
+      "questionText": "DNAに関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": {
+        "1": "DNAの塩基は、アデニン、シトシン、グアニン、ウラシルである。",
+        "2": "互いに逆平行に並ぶ2本のDNA鎖を結び付けているのは、塩基間の水素結合である。",
+        "3": "DNAポリメラーゼによる新生鎖の合成では、鋳型となる一本鎖DNAが必要であり、新生鎖は合成により5′から3′方向に伸長する。",
+        "4": "DNAの塩基はすべて二重らせん構造の内側にあり、糖とリン酸よりなる主鎖は外側に出ている。",
+        "5": "脊椎動物の細胞では、DNAのメチル化は遺伝子発現パターンを子孫細胞に引き継ぐ機構となる。"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。DNAの標準的な4塩基はアデニンA、チミンT、グアニンG、シトシンCです。ウラシルUは通常RNAでチミンに代わって用いられます。",
+      "choiceExplanations": {
+        "1": "不適切です。DNAの標準塩基にはウラシルでなくチミンが含まれます。",
+        "2": "適切です。逆平行な二本鎖の相補塩基対を水素結合が結び付けます。",
+        "3": "適切です。DNAポリメラーゼは鋳型に従い、新生鎖の3′末端にヌクレオチドを付加します。",
+        "4": "適切です。標準的なDNA二重らせんでは塩基が内側、糖リン酸骨格が外側に位置します。",
+        "5": "適切です。DNAメチル化は、細胞分裂後にも維持され得るエピジェネティックな発現制御に関係します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 16,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－5。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-4-6",
+      "printedNumber": "Ⅰ－4－6",
+      "questionNumber": 24,
+      "questionText": "タンパク質の性質に関する次の記述のうち、最も適切なものはどれか。",
+      "choices": {
+        "1": "フェニルアラニン、ロイシン、バリンなどの非極性アミノ酸の側鎖は、タンパク質の表面に分布していることが多い。",
+        "2": "タンパク質を構成するアミノ酸は、ほとんどがD体である。",
+        "3": "タンパク質は、20種類のアミノ酸がペプチド結合という非共有結合によって結合した高分子である。",
+        "4": "タンパク質のアミノ酸配列は、核酸の塩基配列によって規定される。",
+        "5": "タンパク質の安定性には、静電相互作用、水素結合、疎水性相互作用、ジスルフィド結合などの非共有結合が重要である。"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。核酸の塩基配列の情報が遺伝暗号に従って翻訳され、タンパク質のアミノ酸配列を決めます。ペプチド結合とジスルフィド結合はいずれも共有結合です。",
+      "choiceExplanations": {
+        "1": "不適切です。水溶性の球状タンパク質では、非極性側鎖は水を避けて内部に埋もれる傾向があります。膜タンパク質などの環境による違いはあります。",
+        "2": "不適切です。通常のリボソームで合成されるタンパク質のアミノ酸は主としてL体です。グリシンにはD/Lの区別がありません。",
+        "3": "不適切です。アミノ酸をつなぐペプチド結合は共有結合であり、非共有結合ではありません。",
+        "4": "適切です。mRNAのコドン配列が翻訳を通じてアミノ酸配列を規定します。",
+        "5": "不適切です。列挙したうちジスルフィド結合は共有結合なので、全体を非共有結合とする記述は誤りです。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 16,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－4－6。改行・空白・句読点と化学式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF pages15-16 visually checked; printed group/item numbers retained, questionNumber is flattened across five groups of six.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review9.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}
