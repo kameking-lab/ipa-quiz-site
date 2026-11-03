@@ -90,3 +90,25 @@
 | `R7ACFZ-W.pdf` | [公式PDF](https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACFZ-W.pdf) | 6 | `b6a8f797f2828b37ee481b874684aa9a3fe8ab1375c59c9af36dde908ef06912` |
 | `R7fy_kaitou.pdf` | [公式PDF](https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7fy_kaitou.pdf) | 1 | `3de6b459e2639f352ca27f31d413d7bfc6ce6bcb467dbde9d40dd5c8b594c660` |
 | `R7fy_kaitourei_2.pdf` | [公式PDF](https://www.khk.or.jp/Portals/0/khk/exam/2025/1219/R7fy_kaitourei_2.pdf) | 5 | `1200bed576ebca2b8af2da7317941dc5614132989cf02c16d2466e89c2b4c0d0` |
+
+## 独立レビューFAIL指摘の修正（2026-11-03 UTC）
+
+`reports/cloud-khk-kikai-review.md` の3件を修正した。以下は作者による修正・再検証の記録であり、独立した再レビューの判定ではない。
+
+1. **令和7年度・乙種機械・学識問1「ロ」**：`khk-kikai-otsu/questions.json` の問題文を `kg・m²/s2` から **`kg・m²/s²`** に修正。[公式問題PDF・物理2ページ](https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACFZ-W.pdf#page=2)の指数表記に合わせた。
+2. **令和6年度・甲種機械・学識問5**：同梱の[公式問題PDF・物理8ページ](https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACEZ-W.pdf#page=8)から `figures/2024-gakushiki-q5-p8.png` を再切り出し。矩形を `[60, 30, 535, 730]` から **`[45, 30, 535, 730]`** に広げ、左縦軸ラベル **8ⁿ** 全体が余白付きで入ることを目視確認した。`figures.json` の矩形も更新した。
+3. **令和6年度・甲種機械・学識問1(1)**：同梱の[公式解答例 R6fy_02.pdf・物理1ページ](https://www.khk.or.jp/Portals/0/khk/exam/2024/R6fy_02.pdf#page=1)の解答図を矩形 `[90, 145, 420, 370]` で切り出し、`figures/2024-gakushiki-q1-answer-p1.png` として追加した。`khk-kikai-kou/questions.json` の `answerImageUrls`・`answerImageAltTexts` に接続し、出典表示と `figures.json` に原典・ページ・矩形・解答図の用途を記録した。`modelAnswer`・`answer`・`explanation` の小問(1)を、解答図への参照、左右端の油・冷却水の入口／出口、温度記号と値、互いに逆向きの流れを説明する文章に更新した。図の未知数 `t_s2` は小問(3)で約301 Kと求まることも明記した。
+
+入力図6点・独自解答SVG1点に公式解答図1点を加え、図は計8点。READMEの図一覧も更新した。
+
+### 修正後の再検証
+
+コマンド実行には `COREPACK_HOME=/tmp/khk-corepack` を使用した。
+
+- 専用validate：`pnpm exec tsx -e 'import { validateKhkKikai } from "./scripts/validate-khk-kikai"; validateKhkKikai();'`：**成功（終了コード0）**。未公開候補180問・公式正答170問・記述式10問・公式PDF16冊を検証。ログ：`/tmp/khk-failfix-validate.log`。
+- `pnpm validate:questions`：**成功（終了コード0）**。上記ステージング検証と、既存問題 `ok=26444 fail=0 warn=16808`。警告数は前回と同じ。ログ：`/tmp/khk-failfix-questions.log`。
+- `NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck`：**成功（終了コード0）**。ログ：`/tmp/khk-failfix-typecheck.log`。
+- `pnpm exec vitest run __tests__/questions/khk-kikai-staging.test.ts __tests__/questions/qualification-expansion.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/lib/home-directory.test.ts`：**4ファイル・1,092テスト成功（終了コード0）**。ログ：`/tmp/khk-failfix-tests.log`。
+- 画像2点を目視確認し、切れのない縦軸ラベル、解答図の流向・温度・全ラベルを確認した。両画像が記録した原本ページ・矩形からの2倍解像度再描画と画素単位で一致することも確認。単位表記、解答図参照、`modelAnswer` と `answer` の一致、`explanation` への反映を確認した。
+
+本修正ではcodexコマンドを起動せず、gitコマンドも一切実行せず、作業ツリーを直接編集した。
