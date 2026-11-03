@@ -1,0 +1,3047 @@
+[
+  {
+    "id": "pe-first-sanitary-2024-q01",
+    "number": 1,
+    "text": "間口5m，奥行き5m，天井高さ3m，吸音率0.1の内装で作られた直方体の室がある。この室の残響時間は1.1秒であった。次に，内装のうち壁のみを吸音率0.25の材料に変更した。変更後の室の残響時間として，最も近い値はどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。室表面積は110m²、壁面積は60m²。吸音力は11から20m²へ増え、残響時間は1.1×11/20=0.605秒となる。",
+    "presentation": {
+      "sourceHash": "a872e4b401acb6024a84346c8e119e803274ddeddaed775453c07565209e481b",
+      "prompt": "間口5m，奥行き5m，天井高さ3m，吸音率0.1の内装で作られた直方体の室がある。この室の残響時間は1.1秒であった。次に，内装のうち壁のみを吸音率0.25の材料に変更した。変更後の室の残響時間として，最も近い値はどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "3.8秒"
+        },
+        {
+          "number": 2,
+          "text": "2.4秒"
+        },
+        {
+          "number": 3,
+          "text": "0.8秒"
+        },
+        {
+          "number": 4,
+          "text": "0.6秒"
+        },
+        {
+          "number": 5,
+          "text": "0.4秒"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a872e4b401acb6024a84346c8e119e803274ddeddaed775453c07565209e481b",
+      "correctChoice": 4,
+      "summary": "正答④。室表面積は110m²、壁面積は60m²。吸音力は11から20m²へ増え、残響時間は1.1×11/20=0.605秒となる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の3.8秒は不適切。壁の吸音率を高めるので、残響時間は元の1.1秒より短くなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②の2.4秒は不適切。吸音力が増すと残響時間は減るため、元の残響時間より長い値にはならない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③の0.8秒は吸音力の比11/20を正しく反映していない。計算値は約0.605秒となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④の0.6秒が適切。変更後の吸音力は壁60×0.25と床・天井50×0.1の合計20m²。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の0.4秒は短すぎる。壁以外の吸音率は0.1のままで、全表面が0.25になるわけではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q02",
+    "number": 2,
+    "text": "湿気環境に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。冬季の二重サッシでは室内側の気密性を高め、暖かく湿った室内空気がサッシ間に入るのを防ぐ。",
+    "presentation": {
+      "sourceHash": "b062ea6531098d2f5a49be0da07b8e263e694c305b27ac57f338e80ca17a8004",
+      "prompt": "湿気環境に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "木材の含水率が20%を超すと腐朽菌が繁殖しやすくなるため，住宅の土台回りは高含水率になりやすいので，床下換気を十分にする必要がある。"
+        },
+        {
+          "number": 2,
+          "text": "環境温度20℃において，静座時に人体(成人男性)から放出される水蒸気量は，34g/(h・人)程度である。"
+        },
+        {
+          "number": 3,
+          "text": "結露を防ぐために二重サッシを使用する場合，外気側のサッシはできるだけ気密に，室内側は湿気が逃げやすい構造にする必要がある。"
+        },
+        {
+          "number": 4,
+          "text": "温度25℃，相対湿度95%が最もカビが発生しやすい条件であるといわれている。"
+        },
+        {
+          "number": 5,
+          "text": "アスマン通風乾湿計において，乾球及び湿球の周辺空気が飽和している状態では，乾球温度と湿球温度の示度は等しくなる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "b062ea6531098d2f5a49be0da07b8e263e694c305b27ac57f338e80ca17a8004",
+      "correctChoice": 3,
+      "summary": "正答③。冬季の二重サッシでは室内側の気密性を高め、暖かく湿った室内空気がサッシ間に入るのを防ぐ。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。木材が高含水率になると腐朽しやすいため、土台周辺や床下の湿気対策が必要である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。人体は不感蒸泄等により水蒸気を放出し、静座時には記述程度の発湿量がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③が不適切。気密性を高めるのは室内側である。外側だけを密閉すると室内の湿気が入り、間の低温部で結露しやすい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。カビは温暖・高湿な環境で生育しやすく、記述の条件はその代表である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。飽和空気では湿球の水が蒸発しないので、乾球温度と湿球温度が一致する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q03",
+    "number": 3,
+    "text": "温熱快適性に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。標準新有効温度SET*の基準条件は着衣量0.6clo等であり、記述の1.0cloが不適切である。",
+    "presentation": {
+      "sourceHash": "3664ac164370abc178e2a044b9172aca594b518348df03d3a2fca8179599b7d9",
+      "prompt": "温熱快適性に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "作用温度(OT)は，静穏な環境では気温と平均放射温度の平均値とみなせる。"
+        },
+        {
+          "number": 2,
+          "text": "生理的に快適な条件は，体温調節機構が無意識に最小限の努力で血管の収縮，拡張を行い，皮膚表面温度を約33℃に保てる熱中性域と呼ばれる状態にあることである。"
+        },
+        {
+          "number": 3,
+          "text": "環境適応モデル(アダプティブモデル)は，中央制御方式の空調を行う建物と，在室者自らが窓の開閉可能な自然換気方式の建物とでは，在室者の快適性が異なることを示したものである。"
+        },
+        {
+          "number": 4,
+          "text": "ドラフトを防ぐため，作用温度(OT)が22.5℃以下の場合で，予想平均温冷感申告(PMV)が±0.5の範囲では，建物や窓，空調システムに起因する気流は体周囲のどの高さにおいても0.15m/sを超えないことが望ましいとされる。"
+        },
+        {
+          "number": 5,
+          "text": "新有効温度（ET*）はGaggeらによる理論から導かれた体感温度で，椅座静位，着衣量1.0clo，静穏気流，平均放射温度＝空気温度という標準状態でのET*が標準新有効温度（SET*）とされる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3664ac164370abc178e2a044b9172aca594b518348df03d3a2fca8179599b7d9",
+      "correctChoice": 5,
+      "summary": "正答⑤。標準新有効温度SET*の基準条件は着衣量0.6clo等であり、記述の1.0cloが不適切である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。静穏時には対流と放射の寄与を近似して、作用温度を気温と平均放射温度の平均で扱える。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。熱中性域では体温調節の負担が小さく、無理なく熱収支を維持できる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。アダプティブモデルは、自然換気や在室者の調整行動などによって快適温度が変わることを扱う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。低い作用温度域では弱い気流もドラフトになりやすく、記述はその防止条件を述べている。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。SET*の標準着衣量は0.6cloであり、1.0cloという条件が誤っている。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q04",
+    "number": 4,
+    "text": "熱環境に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。建物全体の総合熱貫流率は外皮からの熱損失だけでなく、換気による熱損失も含めて扱う。",
+    "presentation": {
+      "sourceHash": "3b26b075869123300d6fb7de525927f1a7c4d67834f1d564579f683a9b114818",
+      "prompt": "熱環境に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "壁や窓の固体表面からは対流と放射で熱が移動するが，室内側の設計用の熱伝達率は自然対流熱伝達率に放射熱伝達率を加えた9W/(m²・K)が一般に用いられる。"
+        },
+        {
+          "number": 2,
+          "text": "建物全体の熱損失は，総合熱貫流率に室内外の温度差を乗じて求められるが，総合熱貫流率には換気熱損失の影響は考慮されていない。"
+        },
+        {
+          "number": 3,
+          "text": "日射が当たる外壁表面から流入する熱流は，相当外気温度と外壁表面温度の差に，屋外側熱伝達率を乗ずることで求められるが，建物外壁表面に日射を反射する塗料を用いると相当外気温が下がるため，室内への貫流熱流を小さく抑えることができる。"
+        },
+        {
+          "number": 4,
+          "text": "壁の熱貫流抵抗は，壁を構成する各要素の熱抵抗の和に室内側熱伝達抵抗と屋外側熱伝達抵抗を加えた値で求められる。"
+        },
+        {
+          "number": 5,
+          "text": "外気温度の変化が無視できる状態で，暖房運転開始・停止を同じ条件で行ったとき，断熱性の高い建物の方が低い建物より定常状態の室温は高くなり，熱容量の大きい建物は定常状態に達するまでの温度変化が緩慢になる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3b26b075869123300d6fb7de525927f1a7c4d67834f1d564579f683a9b114818",
+      "correctChoice": 2,
+      "summary": "正答②。建物全体の総合熱貫流率は外皮からの熱損失だけでなく、換気による熱損失も含めて扱う。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。室内側の総合熱伝達率は対流と放射を合わせた値で、設計では約9W/(m²・K)を用いる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②が不適切。建物全体の総合熱貫流率には換気熱損失も含む。壁単体の熱貫流率と混同しない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。日射反射率を高めると吸収日射が減り、相当外気温度と室内へ入る熱を低減できる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。多層壁の熱貫流抵抗は各層の熱抵抗と両側の表面熱伝達抵抗を足す。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。断熱性は定常時の熱損失、熱容量は温度変化の速さに影響する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q05",
+    "number": 5,
+    "text": "建物の自然換気に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。風力換気を生むのは二つの開口の風圧差である。風圧係数がともに負でも、その差があれば換気は生じる。",
+    "presentation": {
+      "sourceHash": "06c7143a266b99d0c0f59d5cb0fbaf860fdee72aab420b60084bb7e0e03ab13e",
+      "prompt": "建物の自然換気に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "2つの開口部があるとき，2つの開口部とも負の風圧係数となる場合，それらの風圧係数に差があっても風力換気は生じない。"
+        },
+        {
+          "number": 2,
+          "text": "窓を開放した場合などの開口部通過風量は，開口部面積に比例し，圧力差の平方根に比例する。"
+        },
+        {
+          "number": 3,
+          "text": "中性帯の位置は，定性的には開口部の大きい方に近づく。"
+        },
+        {
+          "number": 4,
+          "text": "高さの異なる2つの開口部があるときの温度差換気量は，直列合成した実効面積αAに比例するとともに，室内外温度差及び開口高さの差の平方根に比例して増加する。"
+        },
+        {
+          "number": 5,
+          "text": "実効面積αAにおけるαは流量係数であり，開口の形状や寸法で異なるが，通常端部が直角に整形された窓では0.6~0.7程度となる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "06c7143a266b99d0c0f59d5cb0fbaf860fdee72aab420b60084bb7e0e03ab13e",
+      "correctChoice": 1,
+      "summary": "正答①。風力換気を生むのは二つの開口の風圧差である。風圧係数がともに負でも、その差があれば換気は生じる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。風圧係数の正負が同じでも、値が異なれば開口間に圧力差ができ、換気が生じる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。開口風量は流量係数と面積に比例し、圧力差の平方根に比例する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。大きい開口では同じ風量を小さい圧力差で通せるため、中性帯はその開口側に近づく。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。温度差換気は合成実効面積に比例し、温度差と開口高さ差の積の平方根に比例する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。流量係数は開口形状等に依存し、通常の角のある窓開口では約0.6～0.7を用いる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q06",
+    "number": 6,
+    "text": "光環境・視環境に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。光沢面の正反射によって視対象が見えにくくなるのは反射グレアであり、直接グレアではない。",
+    "presentation": {
+      "sourceHash": "7c41f29a6fcf6c3dec60c1c612c126e98604b1ff3a138d5279f0adea63946ffd",
+      "prompt": "光環境・視環境に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "明視の4条件として，対象物の明るさ，視対象と背景の対比，対象物の大きさ，見る時間が挙げられるが，このうち照明が関わるものは「対象物の明るさ」である。"
+        },
+        {
+          "number": 2,
+          "text": "フリッカーは不快感を引き起こす要因となるが，人間は10Hzの光の点滅に対して最も反応し，60~70Hzで感じなくなるとされる。"
+        },
+        {
+          "number": 3,
+          "text": "視対象が高輝度ではなくても表面が光沢面で，視線と光源の位置によっては正反射した光によって視対象が見えにくくなる場合があり，これを直接グレアという。"
+        },
+        {
+          "number": 4,
+          "text": "昼光照明においては，最低照度の確保のために，設計用全天空照度として「暗い日」に当たる5000lxを用いるのが一般的である。"
+        },
+        {
+          "number": 5,
+          "text": "昼光照明の計算で用いる昼光率には直射日光が考慮されていないが，近年，光ダクトなど直射日光を活用する昼光利用システムがみられるようになっている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "7c41f29a6fcf6c3dec60c1c612c126e98604b1ff3a138d5279f0adea63946ffd",
+      "correctChoice": 3,
+      "summary": "正答③。光沢面の正反射によって視対象が見えにくくなるのは反射グレアであり、直接グレアではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。明視の基本条件は明るさ・対比・大きさ・時間で、照明は対象の明るさを確保する役割を持つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。低い周波数の光のちらつきは知覚されやすく、周波数が十分高くなると知覚しにくくなる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③が不適切。光源の直接視によるグレアではなく、光沢面で反射した光による反射グレアの説明である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。昼光設計では暗い日の全天空照度5000lxを用い、最低限の明るさを検討する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。通常の昼光率は直射日光を含まず、光ダクトなどの直射利用とは区別される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q07",
+    "number": 7,
+    "text": "全熱交換器に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。全熱交換器は外気を導入する換気系統に組み込めるため、別に外気取入用系統が必ず必要となるわけではない。",
+    "presentation": {
+      "sourceHash": "448a3dbe66cacddb276c615dcffc01743bedc41c3eb39383fcf037665532558c",
+      "prompt": "全熱交換器に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "回転型は，ロータの回転に伴って排気の一部が給気側に移行することがある。"
+        },
+        {
+          "number": 2,
+          "text": "静止型の給排気を隔てる仕切り板は，伝熱性と透湿性を持つ材料である。"
+        },
+        {
+          "number": 3,
+          "text": "静止型は，回転型よりも目詰まりを起こしやすい。"
+        },
+        {
+          "number": 4,
+          "text": "中間期の運転には注意が必要な場合もある。"
+        },
+        {
+          "number": 5,
+          "text": "空調システムに全熱交換器を使用する場合，別に外気取入用系統が必要である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "448a3dbe66cacddb276c615dcffc01743bedc41c3eb39383fcf037665532558c",
+      "correctChoice": 5,
+      "summary": "正答⑤。全熱交換器は外気を導入する換気系統に組み込めるため、別に外気取入用系統が必ず必要となるわけではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。回転型ではロータの回転に伴い、排気が給気へ持ち込まれるキャリーオーバーが起こり得る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。静止型の仕切り材は熱と水分を移動させ、顕熱と潜熱を回収する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。静止型では狭い流路などに粉じんがたまりやすいため、目詰まりへの配慮が必要になる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。中間期は外気冷房が有利なことがあり、不要な熱回収を避ける運転が必要となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。全熱交換器自体を外気導入系統に組み込めるため、別系統を必須とする説明は誤り。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q08",
+    "number": 8,
+    "text": "シャワーヘッドから給湯量（混合湯量）16 L/min，使用温度（混合湯温度）40℃のお湯を出す場合，給湯温度を60℃，給水温度を15℃とすると，給湯すべき給湯量として，最も近い値はどれか。ただし，配管などの熱損失はないものとする。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。混合時の熱収支より、60℃湯量=16×(40−15)/(60−15)=8.89L/minである。",
+    "presentation": {
+      "sourceHash": "ade39d139971e091e0051e770f627eeae7518716cf80f0299015ab3640fcf466",
+      "prompt": "シャワーヘッドから給湯量（混合湯量）16 L/min，使用温度（混合湯温度）40℃のお湯を出す場合，給湯温度を60℃，給水温度を15℃とすると，給湯すべき給湯量として，最も近い値はどれか。ただし，配管などの熱損失はないものとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "8.2L/min"
+        },
+        {
+          "number": 2,
+          "text": "8.9L/min"
+        },
+        {
+          "number": 3,
+          "text": "10.0L/min"
+        },
+        {
+          "number": 4,
+          "text": "10.7L/min"
+        },
+        {
+          "number": 5,
+          "text": "11.6L/min"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ade39d139971e091e0051e770f627eeae7518716cf80f0299015ab3640fcf466",
+      "correctChoice": 2,
+      "summary": "正答②。混合時の熱収支より、60℃湯量=16×(40−15)/(60−15)=8.89L/minである。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の8.2L/minでは混合後に40℃となるための熱量が不足する。正値は約8.89L/min。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②の8.9L/minが適切。60℃の湯と15℃の水を混合し、全量16L/minを40℃とする。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③の10.0L/minは熱収支16×25=湯量×45を満たさず、湯の割合が高すぎる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④の10.7L/minは混合に用いる温度差25℃と45℃の比を正しく反映していない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の11.6L/minでは湯の熱量が過大となり、指定の混合湯温度40℃を超える。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q09",
+    "number": 9,
+    "text": "防火ダンパに関する次の記述の，空欄に入る語句の組合せとして，最も適切なものはどれか。\nダクトに設置される防火ダンパの温度ヒューズ型の溶融温度は，一般換気用［ア］程度，排煙用［イ］程度であり，羽根及びケーシングは［ウ］以上の鋼板でつくる。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。温度ヒューズ型の代表的な溶融温度は一般換気用72℃、排煙用280℃で、羽根・ケーシングの鋼板は1.5mm以上。",
+    "presentation": {
+      "sourceHash": "e492a03f7675c15942e4fe6908b43a8ccaa0b4f46df5b57eb42a7d9ef0636e6a",
+      "prompt": "防火ダンパに関する次の記述の，空欄に入る語句の組合せとして，最も適切なものはどれか。\nダクトに設置される防火ダンパの温度ヒューズ型の溶融温度は，一般換気用［ア］程度，排煙用［イ］程度であり，羽根及びケーシングは［ウ］以上の鋼板でつくる。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ア：72℃／イ：270℃／ウ：1.2mm"
+        },
+        {
+          "number": 2,
+          "text": "ア：72℃／イ：280℃／ウ：1.2mm"
+        },
+        {
+          "number": 3,
+          "text": "ア：72℃／イ：280℃／ウ：1.5mm"
+        },
+        {
+          "number": 4,
+          "text": "ア：120℃／イ：270℃／ウ：1.5mm"
+        },
+        {
+          "number": 5,
+          "text": "ア：120℃／イ：280℃／ウ：1.5mm"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "e492a03f7675c15942e4fe6908b43a8ccaa0b4f46df5b57eb42a7d9ef0636e6a",
+      "correctChoice": 3,
+      "summary": "正答③。温度ヒューズ型の代表的な溶融温度は一般換気用72℃、排煙用280℃で、羽根・ケーシングの鋼板は1.5mm以上。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は不適切。一般換気用72℃は合うが、排煙用270℃と板厚1.2mmが条件と異なる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は不適切。一般換気用72℃・排煙用280℃は合うが、板厚は1.5mm以上が必要となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③が適切。ア72℃、イ280℃、ウ1.5mmの三条件がすべて一致する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は不適切。一般換気用120℃と排煙用270℃が、設問の代表的な温度ヒューズ条件と異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は不適切。排煙用280℃と板厚1.5mmは合うが、一般換気用は120℃ではなく72℃。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q10",
+    "number": 10,
+    "text": "給湯設備に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。ホテル等で給湯栓を開けてすぐ湯を得るには、一般に返湯管を備える循環式を用いる。単管式では配管内の冷水排出が必要になる。",
+    "presentation": {
+      "sourceHash": "c5cd6c7ec1617357cec547e36cf9cb3eb3331e9cb44bcf1b2fe851ada7673fa1",
+      "prompt": "給湯設備に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "スイベルジョイント工法とは，配管の分岐部に複数のエルボを組合せて用い，可とう性を持たせた配管工法である。"
+        },
+        {
+          "number": 2,
+          "text": "ベローズ型伸縮継手とは，波形状に加工した管が軸方向に伸縮する構造の継手である。"
+        },
+        {
+          "number": 3,
+          "text": "強制循環方式における循環ポンプは，一般に貯湯槽に近い返湯管部分に設置する。"
+        },
+        {
+          "number": 4,
+          "text": "給湯栓を開いて即座に湯が必要になるホテルなどでは，湯を供給する往管だけが設置された単管式が多く用いられる。"
+        },
+        {
+          "number": 5,
+          "text": "ガス給湯器では能力表示に「号」を用いるが，1号は流量1[L/min]の水の温度を25℃上昇させる能力である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c5cd6c7ec1617357cec547e36cf9cb3eb3331e9cb44bcf1b2fe851ada7673fa1",
+      "correctChoice": 4,
+      "summary": "正答④。ホテル等で給湯栓を開けてすぐ湯を得るには、一般に返湯管を備える循環式を用いる。単管式では配管内の冷水排出が必要になる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。複数のエルボによる回転・変形を利用して、配管の伸縮を吸収する工法である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。ベローズの波形部分が軸方向に変形し、熱伸縮を吸収する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。循環ポンプは一般に貯湯槽へ戻る返湯管側に設置する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④が不適切。即時給湯が求められる場合は循環式が適し、往管だけの単管式が多いという説明は逆である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。給湯器1号は毎分1Lの水を25℃上昇させる能力を表す。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q11",
+    "number": 11,
+    "text": "空気調和設備に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。デシカント除湿は吸着剤・吸収剤によって水分を取り除く方式で、空気を露点以下に冷やす冷却除湿とは異なる。",
+    "presentation": {
+      "sourceHash": "6e2debddb80478fc86f0f36f1057723f9efda42db665a3d955c44a6993b02868",
+      "prompt": "空気調和設備に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "デシカント空調における除湿は，空気を冷却することで，水を凝縮して分離している。"
+        },
+        {
+          "number": 2,
+          "text": "エアフローウインドウは，従来のファンコイルユニット方式と異なり，水損リスクを減らし，保守管理の省力化が可能となる。"
+        },
+        {
+          "number": 3,
+          "text": "熱源によって生成された冷温熱を蓄える蓄熱槽のうち，氷蓄熱では，同じ熱量なら水蓄熱より容積が小さくてすむ。"
+        },
+        {
+          "number": 4,
+          "text": "スクリュー式冷凍機は，中規模の建物用空調及び産業用に用いられる。"
+        },
+        {
+          "number": 5,
+          "text": "パッケージ型空調機方式では，特殊なユニットを除き，通常は外気処理機能を持たないため，室内空気質確保のための対策が必要である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "6e2debddb80478fc86f0f36f1057723f9efda42db665a3d955c44a6993b02868",
+      "correctChoice": 1,
+      "summary": "正答①。デシカント除湿は吸着剤・吸収剤によって水分を取り除く方式で、空気を露点以下に冷やす冷却除湿とは異なる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。デシカントは水分の吸着・吸収を利用し、記述は冷却除湿の説明になっている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。窓内空間に空気を流す方式では、窓際への水配管等を減らして水損リスクを抑えられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。氷の融解潜熱を利用するので、同じ蓄熱量なら顕熱だけの水蓄熱より小容積となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。スクリュー式冷凍機は中規模空調や産業用途で使われる容積式冷凍機である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。通常のパッケージ空調機だけでは十分な外気処理ができず、別途換気等を確保する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q12",
+    "number": 12,
+    "text": "除湿装置に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。液体吸収剤を使う吸収式除湿は主に産業・業務用途で、一般家庭に幅広く使われる方式という説明は誤り。",
+    "presentation": {
+      "sourceHash": "51923b6ca1461f4d85416acbd96c741fe49ca74571f89e7f8d6dd5f5a6ab527e",
+      "prompt": "除湿装置に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "吸収式除湿装置は，家庭用途向けであり，幅広く使用されている。"
+        },
+        {
+          "number": 2,
+          "text": "冷却式除湿装置は，処理空気の温度低下と相対湿度の上昇を伴うため，これらが問題となる場合は，冷却除湿後の空気を加熱（再熱）する必要がある。"
+        },
+        {
+          "number": 3,
+          "text": "吸着式除湿装置は，水分を吸着する性質を持つシリカゲル，活性アルミナ，合成ゼオライト，活性炭などの吸着剤を利用したものである。"
+        },
+        {
+          "number": 4,
+          "text": "圧縮式除湿装置は，空気を圧縮することによって水蒸気の分圧を増加させ，水蒸気の飽和点を超えさせて凝縮分離する方式であり，設備費及び運転費が高くなる。"
+        },
+        {
+          "number": 5,
+          "text": "冷却式除湿装置は，機構が簡単で，設備費が安く，空気の露点温度が高い場合に有利である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "51923b6ca1461f4d85416acbd96c741fe49ca74571f89e7f8d6dd5f5a6ab527e",
+      "correctChoice": 1,
+      "summary": "正答①。液体吸収剤を使う吸収式除湿は主に産業・業務用途で、一般家庭に幅広く使われる方式という説明は誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。家庭用で一般的なのは冷却式や固体吸着剤を使う方式で、液体吸収式を家庭用の代表とはしない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。露点以下に冷やすと低温・高相対湿度の空気になるため、用途により再熱して調整する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。吸着式はシリカゲルやゼオライト等の固体表面に水蒸気を吸着させる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。圧縮で水蒸気分圧を高めて凝縮分離するが、圧縮動力や設備の費用がかかる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。冷却式は構造が比較的簡単で、露点温度が高い空気では凝縮させやすい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q13",
+    "number": 13,
+    "text": "臭気に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。臭気濃度は臭いを感じなくなるまで無臭空気で薄めた希釈倍数であり、におい物質の質量濃度ではない。",
+    "presentation": {
+      "sourceHash": "a6d252530556e6ba65aba5966ec0df113c4430c0997a24ca7fe65e33a24634b0",
+      "prompt": "臭気に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "におい物質は，揮発性や化学反応性に富む比較的低分子の有機化合物である。"
+        },
+        {
+          "number": 2,
+          "text": "室内で発生する代表的な臭気には，体臭，喫煙臭，燃焼排気臭，台所臭，トイレ臭等がある。"
+        },
+        {
+          "number": 3,
+          "text": "嗅覚測定法では，臭気の状態を「無臭」を0，「強烈なにおい」を5とする6段階臭気強度表示法が使用されている。"
+        },
+        {
+          "number": 4,
+          "text": "臭気濃度は，臭気を数量化する方法の1つであり，対象臭気のにおい物質の質量濃度で表される。"
+        },
+        {
+          "number": 5,
+          "text": "臭気物質の濃度と人間の感覚量の関係については，「ウェーバー・フェヒナーの法則」の関係があることが知られている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a6d252530556e6ba65aba5966ec0df113c4430c0997a24ca7fe65e33a24634b0",
+      "correctChoice": 4,
+      "summary": "正答④。臭気濃度は臭いを感じなくなるまで無臭空気で薄めた希釈倍数であり、におい物質の質量濃度ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。においとして知覚される物質には、揮発して嗅覚に届く比較的低分子の化合物が多い。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。人体、たばこ、燃焼、調理、便所などは室内での代表的な臭気発生源である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。6段階臭気強度表示法は、無臭0から強烈なにおい5までで強度を表す。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④が不適切。臭気濃度は無臭になるまでの希釈倍数。mg/m³等で表す物質濃度とは異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。感覚の強さは刺激濃度の対数におおむね比例するという関係で説明される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q14",
+    "number": 14,
+    "text": "WBGT(Wet-Bulb Globe Temperature:湿球黒球温度，暑さ指数)に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-06.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。WBGTに用いる自然湿球温度・黒球温度は気流の影響も受けるため、気流が考慮されないという説明は誤り。",
+    "presentation": {
+      "sourceHash": "22ed5a47d3cc2bd3fc34fa65389db2a6d63eb7605543e2e8ac11bf9c432d2fab",
+      "prompt": "WBGT(Wet-Bulb Globe Temperature:湿球黒球温度，暑さ指数)に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "WBGTは，熱中症の発生と関連性が高く，熱中症の指標として広く用いられている。"
+        },
+        {
+          "number": 2,
+          "text": "熱中症の発症には身体側の要因も影響するため，衣類に応じたWBGT補正値や身体作業強度，暑熱順化の有無を考慮したWBGT基準値が厚生労働省により提示されている。"
+        },
+        {
+          "number": 3,
+          "text": "屋内に用いる場合のWBGTは，湿球温度と黒球温度を重みづけ平均して算出される。"
+        },
+        {
+          "number": 4,
+          "text": "屋外に用いる場合のWBGTは，乾球温度，湿球温度，黒球温度を重みづけ平均して算出される。"
+        },
+        {
+          "number": 5,
+          "text": "WBGTは，人体の熱収支にかかわる環境側の気温，湿度，気流，輻射(放射)熱の4要素のうち，気流の影響は考慮していない。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "22ed5a47d3cc2bd3fc34fa65389db2a6d63eb7605543e2e8ac11bf9c432d2fab",
+      "correctChoice": 5,
+      "summary": "正答⑤。WBGTに用いる自然湿球温度・黒球温度は気流の影響も受けるため、気流が考慮されないという説明は誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。WBGTは気温だけでなく湿度や放射等を取り入れた、熱中症予防の指標である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。着衣・作業強度・暑熱順化の有無によって、同じ環境でも熱負担は異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。日射のない屋内では、通常0.7×自然湿球温度+0.3×黒球温度で求める。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。日射のある屋外では、自然湿球・黒球・乾球の三温度を重み付けする。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。気流は自然湿球の蒸発や黒球の熱伝達に作用し、WBGTにも反映される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=6"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q15",
+    "number": 15,
+    "text": "室内環境と健康影響に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-06.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。1500ppmや10000ppmのCO₂で記述のような代謝障害・数分以内の昏倒が必ず起きるという濃度と影響の対応が誤り。",
+    "presentation": {
+      "sourceHash": "cf0c786980a21f7590195875627bd0d403bf568d896874ff03324eff33357f37",
+      "prompt": "室内環境と健康影響に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "PM2.5の曝露による健康影響として，呼吸器系及び循環器系への影響が指摘されており，日本では大気環境基準が定められているが，室内環境の基準値はまだない。"
+        },
+        {
+          "number": 2,
+          "text": "シックハウス症候群対策として，居住環境におけるホルムアルデヒド濃度の低減が重要である。このため，ホルムアルデヒド発散建材に関わる規制基準がJIS及びJASにより制定されている。"
+        },
+        {
+          "number": 3,
+          "text": "厚生労働省は室内空気汚染対策に取組むに当たっての参考値として，TVOC(Total Volatile Organic Compounds)については，室内濃度の暫定目標値を400μg/m³と定めている。"
+        },
+        {
+          "number": 4,
+          "text": "健康な人が1500ppmの二酸化炭素(CO₂)に暴露されると軽度の代謝障害を起こし，10000ppmでは数分以内に昏倒する。"
+        },
+        {
+          "number": 5,
+          "text": "有機リン系殺虫剤であるクロルピリホスは，健康影響への懸念から，2003年建築基準法の改正により，居室のある建物への使用が禁じられた。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "cf0c786980a21f7590195875627bd0d403bf568d896874ff03324eff33357f37",
+      "correctChoice": 4,
+      "summary": "正答④。1500ppmや10000ppmのCO₂で記述のような代謝障害・数分以内の昏倒が必ず起きるという濃度と影響の対応が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。設問当時、PM2.5には大気環境基準がある一方、同じ形での室内基準値は定められていない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。ホルムアルデヒドの発散を抑える建材区分等が、シックハウス対策に用いられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。TVOCの室内濃度暫定目標値は400μg/m³で、個別物質の指針値とは位置付けが異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④が不適切。記述の濃度を、重い急性影響が生じる高濃度曝露の説明と混同している。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。2003年施行のシックハウス対策により、居室のある建築物でクロルピリホス使用が禁止された。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=6"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q16",
+    "number": 16,
+    "text": "現在の建築物における衛生的環境の確保に関する法律(建築物衛生法)施行令に規定されている建築物環境衛生管理基準における，空気調和設備を設けている場合の空気環境の調整に係る基準値に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-07.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。2022年4月施行の改正後、空調設備を設けた特定建築物の温度基準は18℃以上28℃以下。17℃は改正前の下限である。",
+    "presentation": {
+      "sourceHash": "3332bcdbfba85ff8d9425f957cf56ab7c0c430b27410713a6db83d76fbe5a850",
+      "prompt": "現在の建築物における衛生的環境の確保に関する法律(建築物衛生法)施行令に規定されている建築物環境衛生管理基準における，空気調和設備を設けている場合の空気環境の調整に係る基準値に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "一酸化炭素の含有率6ppm以下"
+        },
+        {
+          "number": 2,
+          "text": "二酸化炭素の含有率1000ppm以下"
+        },
+        {
+          "number": 3,
+          "text": "温度17℃以上28℃以下"
+        },
+        {
+          "number": 4,
+          "text": "相対湿度40%以上70%以下"
+        },
+        {
+          "number": 5,
+          "text": "ホルムアルデヒドの量0.1mg/m³以下(=0.08ppm以下)"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3332bcdbfba85ff8d9425f957cf56ab7c0c430b27410713a6db83d76fbe5a850",
+      "correctChoice": 3,
+      "summary": "正答③。2022年4月施行の改正後、空調設備を設けた特定建築物の温度基準は18℃以上28℃以下。17℃は改正前の下限である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。一酸化炭素の含有率は2022年4月から6ppm以下となっており、設問の値と一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。二酸化炭素の含有率の基準は1000ppm以下である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③が不適切。温度の下限は18℃であり、17℃以上という記述は改正前の基準を使っている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。相対湿度の範囲は40％以上70％以下とされている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。ホルムアルデヒドは0.1mg/m³以下で、約0.08ppmに相当する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=7"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q17",
+    "number": 17,
+    "text": "室内空気中の感染性を保った病原体を含む浮遊粒子を対象として，室内空気を室内循環機器や可搬式空気清浄機に循環させてエアフィルタで除去することで，対象の汚染質を含まない新鮮外気によって5ACH（Air change per hour）の換気を行う場合と同程度の効果を得るために必要となるエアフィルタの性能と循環空気風量の組合せとして，最も適切なものはどれか。\nただし，室容積は80m³，室内空気は完全混合されているものとし，エアフィルタによる対象浮遊粒子のワンパス除去効率は以下の表に基づいて計算すること。\n表：フィルタ性能 — 除去効率\n＜ePM₂.₅ 50％ — 0％\nePM₂.₅ 50％ — 60％\nePM₂.₅ 65％ — 71％\nePM₁ 50％ — 77％\nePM₁ 70％ — 88％\nePM₁ 85％ — 91％\nePM₁ 95％ — 95％",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。目標清浄空気量は80×5=400m³/h。ePM₁50％の除去効率77％と循環風量520m³/hで400.4m³/hとなる。",
+    "presentation": {
+      "sourceHash": "70d3fc904caad23c036bbfaa5fb47856070ff09109e187156f0bbd9719f3a2e7",
+      "prompt": "室内空気中の感染性を保った病原体を含む浮遊粒子を対象として，室内空気を室内循環機器や可搬式空気清浄機に循環させてエアフィルタで除去することで，対象の汚染質を含まない新鮮外気によって5ACH（Air change per hour）の換気を行う場合と同程度の効果を得るために必要となるエアフィルタの性能と循環空気風量の組合せとして，最も適切なものはどれか。\nただし，室容積は80m³，室内空気は完全混合されているものとし，エアフィルタによる対象浮遊粒子のワンパス除去効率は以下の表に基づいて計算すること。\n表：フィルタ性能 — 除去効率\n＜ePM₂.₅ 50％ — 0％\nePM₂.₅ 50％ — 60％\nePM₂.₅ 65％ — 71％\nePM₁ 50％ — 77％\nePM₁ 70％ — 88％\nePM₁ 85％ — 91％\nePM₁ 95％ — 95％",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ePM₂.₅ 50％ — 400m³/h"
+        },
+        {
+          "number": 2,
+          "text": "ePM₂.₅ 50％ — 520m³/h"
+        },
+        {
+          "number": 3,
+          "text": "ePM₁ 50％ — 400m³/h"
+        },
+        {
+          "number": 4,
+          "text": "ePM₁ 50％ — 520m³/h"
+        },
+        {
+          "number": 5,
+          "text": "ePM₁ 85％ — 520m³/h"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "70d3fc904caad23c036bbfaa5fb47856070ff09109e187156f0bbd9719f3a2e7",
+      "correctChoice": 4,
+      "summary": "正答④。目標清浄空気量は80×5=400m³/h。ePM₁50％の除去効率77％と循環風量520m³/hで400.4m³/hとなる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は不適切。除去効率60％×400m³/h=240m³/hで、必要な400m³/hを下回る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は不適切。除去効率60％×520m³/h=312m³/hで、必要な400m³/hに届かない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は不適切。除去効率77％×400m³/h=308m³/hで、必要な400m³/hに不足する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④が適切。除去効率77％×520m³/h=400.4m³/hで、目標5ACHにほぼ一致する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は不適切。除去効率91％×520m³/h=473.2m³/hで、目標と同程度になる組合せは④である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q18",
+    "number": 18,
+    "text": "空気調和設備の冷却塔を発生源とするレジオネラ症を予防する対策に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。一般的な開放式角形冷却塔は水と空気が直交するクロスフロー方式が多く、逆方向のカウンターフローが多いという説明が誤り。",
+    "presentation": {
+      "sourceHash": "cc6605558d55a51886f3d2267ddff55c0421d928efbbf5369f127b4f1583d5cb",
+      "prompt": "空気調和設備の冷却塔を発生源とするレジオネラ症を予防する対策に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "冷却塔からの排気に含まれるエアロゾルは，外気取入口や窓を介して屋内に侵入し，又は，地上に飛散することから，エアロゾルの飛散を抑制するための措置を講ずる必要がある。"
+        },
+        {
+          "number": 2,
+          "text": "開放式の角形冷却塔は，散水方向と空気の流れが逆方向となるカウンターフローが多く採用されているため，エアロゾルを上方に飛散させやすい。"
+        },
+        {
+          "number": 3,
+          "text": "冷却塔を設置する際には，風向き等を考慮して，外気取入口，居室の窓及び人が活動する場所から十分距離を置くようにする。"
+        },
+        {
+          "number": 4,
+          "text": "冷却水内のレジオネラ属菌を減少させるために，物理的清掃を行うとともに化学的洗浄と殺菌剤添加とを併用することが望ましい。"
+        },
+        {
+          "number": 5,
+          "text": "冷却塔や冷却水の維持管理状況の定期的な点検やレジオネラ属菌の定期検査の実施は，レジオネラ属菌抑制対策の効果の確認とともに冷却水系の適切な管理を行うために必要である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "cc6605558d55a51886f3d2267ddff55c0421d928efbbf5369f127b4f1583d5cb",
+      "correctChoice": 2,
+      "summary": "正答②。一般的な開放式角形冷却塔は水と空気が直交するクロスフロー方式が多く、逆方向のカウンターフローが多いという説明が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。冷却塔水を含むエアロゾルの屋内流入や周辺飛散を防ぐ対策が必要となる。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②が不適切。角形の開放式冷却塔ではクロスフローが多く、散水と気流が逆方向という説明とは異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。風向と周囲の利用状況を考え、取入口・窓・人の活動場所から離して設置する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。付着物や生物膜を除く清掃と、化学洗浄・殺菌を組み合わせて管理する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。設備・水質の点検と菌検査は、対策効果を確認し適切な管理を続けるために必要である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q19",
+    "number": 19,
+    "text": "以下に示す条件で運転されている浄化槽の汚泥発生量として，最も近い値はどれか。\n流入汚水量：250m³/日，流入水BOD濃度：200mg/L\n放流水BOD濃度：20mg/L，汚泥転換率：70％\n汚泥の含水率：98％，汚泥の比重：1.0",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。除去BODは250×(200−20)/1000=45kg/日。乾燥汚泥31.5kg/日を固形分率2％で割ると1.575m³/日。",
+    "presentation": {
+      "sourceHash": "4377fb4bf2892fca3db45095bd68279e99237803ec224ed1947fa788554a5a7f",
+      "prompt": "以下に示す条件で運転されている浄化槽の汚泥発生量として，最も近い値はどれか。\n流入汚水量：250m³/日，流入水BOD濃度：200mg/L\n放流水BOD濃度：20mg/L，汚泥転換率：70％\n汚泥の含水率：98％，汚泥の比重：1.0",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.18m³/日"
+        },
+        {
+          "number": 2,
+          "text": "1.58m³/日"
+        },
+        {
+          "number": 3,
+          "text": "1.75m³/日"
+        },
+        {
+          "number": 4,
+          "text": "1.93m³/日"
+        },
+        {
+          "number": 5,
+          "text": "2.25m³/日"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "4377fb4bf2892fca3db45095bd68279e99237803ec224ed1947fa788554a5a7f",
+      "correctChoice": 2,
+      "summary": "正答②。除去BODは250×(200−20)/1000=45kg/日。乾燥汚泥31.5kg/日を固形分率2％で割ると1.575m³/日。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の0.18m³/日は不適切。汚泥転換率と含水率を用いた乾燥固形分からの体積換算に一致しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②の1.58m³/日が適切。45×0.70/(1000×0.02)=1.575m³/日となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③の1.75m³/日は流入BOD全量50kg/日に0.7を掛けた値で、放流水中のBODを差し引いていない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④の1.93m³/日は除去BOD45kg/日と転換率70％・固形分率2％の収支に一致しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の2.25m³/日は除去BOD45kg/日をそのまま汚泥固形分としており、転換率70％を考慮していない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q20",
+    "number": 20,
+    "text": "次のうち，沈殿槽の処理機能に影響を与える因子として，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。BOD面積負荷は生物処理などの負荷指標であり、沈殿槽の固液分離を直接設計する代表的因子ではない。",
+    "presentation": {
+      "sourceHash": "c31f4b3cb9382176aa30d891e99acdc8096e4cafd933e480d4736db83206208b",
+      "prompt": "次のうち，沈殿槽の処理機能に影響を与える因子として，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "有効水深"
+        },
+        {
+          "number": 2,
+          "text": "水面積負荷"
+        },
+        {
+          "number": 3,
+          "text": "越流負荷"
+        },
+        {
+          "number": 4,
+          "text": "BOD面積負荷"
+        },
+        {
+          "number": 5,
+          "text": "有効容量"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "c31f4b3cb9382176aa30d891e99acdc8096e4cafd933e480d4736db83206208b",
+      "correctChoice": 4,
+      "summary": "正答④。BOD面積負荷は生物処理などの負荷指標であり、沈殿槽の固液分離を直接設計する代表的因子ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の有効水深は沈降に必要な深さや汚泥貯留に関わり、沈殿槽の機能に影響する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②の水面積負荷は流量を水面積で割った値で、粒子が分離できるかを決める重要な指標である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③の越流負荷は堰長当たりの流量で、出口での流速や汚泥流出に影響する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④のBOD面積負荷が不適切。主に有機物を分解する生物処理の負荷を表し、沈殿分離の代表因子ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の有効容量は滞留時間や貯留能力に関係するため、沈殿槽の処理機能に影響する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q21",
+    "number": 21,
+    "text": "浄化槽におけるばっ気の目的に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。ばっ気は酸素供給・混合等を行うが、脱窒に必要な水素供与体となる有機物を供給する操作ではない。",
+    "presentation": {
+      "sourceHash": "3da6fbcfe4b4504130ac5724dab127a87572eab41e37e3cadd12c770bb1fcd40",
+      "prompt": "浄化槽におけるばっ気の目的に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "生物処理に必要な酸素を供給する。"
+        },
+        {
+          "number": 2,
+          "text": "汚水と生物膜とを循環接触させる。"
+        },
+        {
+          "number": 3,
+          "text": "汚水と活性汚泥とを混合撹拌する。"
+        },
+        {
+          "number": 4,
+          "text": "臭気物質の発生を抑制する。"
+        },
+        {
+          "number": 5,
+          "text": "脱窒に必要な水素供与体を供給する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3da6fbcfe4b4504130ac5724dab127a87572eab41e37e3cadd12c770bb1fcd40",
+      "correctChoice": 5,
+      "summary": "正答⑤。ばっ気は酸素供給・混合等を行うが、脱窒に必要な水素供与体となる有機物を供給する操作ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。好気性微生物による有機物分解や硝化に必要な溶存酸素を供給する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。空気の上昇による水流で、汚水と付着生物膜との接触を促進する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。ばっ気による攪拌は、汚水と活性汚泥を均一に接触させる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。嫌気化を抑えることにより、硫化水素等の悪臭成分の生成を抑制する。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。脱窒の水素供与体は有機物やメタノールなどで、ばっ気による空気供給とは異なる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q22",
+    "number": 22,
+    "text": "浄化槽の構造基準(昭和55年建設省告示第1292号最終改正平成18年国土交通省告示第154号に定める構造方法)に規定されている次の処理方式のうち，活性汚泥法が導入されている方式として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。長時間ばっ気方式は浮遊する活性汚泥を利用する。他の選択肢は主に付着生物膜を利用する方式である。",
+    "presentation": {
+      "sourceHash": "e61f02bfd8f345b49828425daec41873231143a2ab69fb72396e5f6ecbfd338f",
+      "prompt": "浄化槽の構造基準(昭和55年建設省告示第1292号最終改正平成18年国土交通省告示第154号に定める構造方法)に規定されている次の処理方式のうち，活性汚泥法が導入されている方式として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "分離接触ばっ気方式"
+        },
+        {
+          "number": 2,
+          "text": "散水ろ床方式"
+        },
+        {
+          "number": 3,
+          "text": "長時間ばっ気方式"
+        },
+        {
+          "number": 4,
+          "text": "接触ばっ気方式"
+        },
+        {
+          "number": 5,
+          "text": "回転板接触方式"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "e61f02bfd8f345b49828425daec41873231143a2ab69fb72396e5f6ecbfd338f",
+      "correctChoice": 3,
+      "summary": "正答③。長時間ばっ気方式は浮遊する活性汚泥を利用する。他の選択肢は主に付着生物膜を利用する方式である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の分離接触ばっ気方式は接触材に付着した生物膜を利用し、活性汚泥法の選択肢ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②の散水ろ床方式はろ材表面の生物膜に汚水を接触させる方式である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③の長時間ばっ気方式が適切。ばっ気槽内に浮遊する活性汚泥を長時間ばっ気して処理する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④の接触ばっ気方式は接触材の生物膜を利用し、浮遊活性汚泥法とは区別される。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の回転板接触方式は回転円板に付着した生物膜を利用し、活性汚泥法ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q23",
+    "number": 23,
+    "text": "ばっ気槽のMLSS(活性汚泥浮遊物質)が2500mg/L，SV(活性汚泥容量率)を測定したときの沈殿汚泥体積は400mLであった。このときのSVI(汚泥容量指標)の値として，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。MLSS2500mg/Lは2.5g/L。1Lの混合液の沈殿汚泥体積400mLを2.5gで割り、SVI=160mL/g。",
+    "presentation": {
+      "sourceHash": "a7d2086477ec9f45fc1790ae813ad8434661ab274cdc0370eae2393566de43aa",
+      "prompt": "ばっ気槽のMLSS(活性汚泥浮遊物質)が2500mg/L，SV(活性汚泥容量率)を測定したときの沈殿汚泥体積は400mLであった。このときのSVI(汚泥容量指標)の値として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "16"
+        },
+        {
+          "number": 2,
+          "text": "63"
+        },
+        {
+          "number": 3,
+          "text": "160"
+        },
+        {
+          "number": 4,
+          "text": "630"
+        },
+        {
+          "number": 5,
+          "text": "1600"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a7d2086477ec9f45fc1790ae813ad8434661ab274cdc0370eae2393566de43aa",
+      "correctChoice": 3,
+      "summary": "正答③。MLSS2500mg/Lは2.5g/L。1Lの混合液の沈殿汚泥体積400mLを2.5gで割り、SVI=160mL/g。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①の16は不適切。400mLをMLSS2.5gで割るので160となり、桁が一つ違う。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②の63はMLSSと沈殿体積の比を逆に扱うなどした値で、SVIの定義mL/gと一致しない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③の160が適切。SVIは1gの活性汚泥が占める沈殿体積で、400/2.5=160mL/g。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④の630は沈殿体積400mLと固形分2.5gから得られる比に一致しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤の1600は不適切。MLSSをmg/Lからg/Lへ正しく換算すると2.5g/Lであり、160mL/g。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q24",
+    "number": 24,
+    "text": "「工場排水試験法(JIS K 0102－1:2021)17.2酸性過マンガン酸カリウムによる酸素消費量」の測定方法で，最も不適切な操作はどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。COD測定では添加した過マンガン酸カリウムが一定量残る試料量にする。完全に消費されると酸化剤不足で適切に測定できない。",
+    "presentation": {
+      "sourceHash": "acbd0a4189d2f8bfded7dd8187c532fb5a1cc1e18747b037804dcc10e43008df",
+      "prompt": "「工場排水試験法(JIS K 0102－1:2021)17.2酸性過マンガン酸カリウムによる酸素消費量」の測定方法で，最も不適切な操作はどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "加えた過マンガン酸カリウム溶液が完全に消費される量の試料を計り取り，水を加えて100mLとする。"
+        },
+        {
+          "number": 2,
+          "text": "硫酸(1＋2)を10mL加え，振り混ぜながら硝酸銀を加え塩化物イオンを除去する。"
+        },
+        {
+          "number": 3,
+          "text": "5mmol/L過マンガン酸カリウム溶液を10mL加え，沸騰水浴中で30分間加熱する。"
+        },
+        {
+          "number": 4,
+          "text": "水浴から取り出し，12.5mmol/Lシュウ酸ナトリウム溶液を10mL加える。"
+        },
+        {
+          "number": 5,
+          "text": "液温を50~60℃で5mmol/L過マンガン酸カリウム溶液で僅かに赤色を呈するまで滴定する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "acbd0a4189d2f8bfded7dd8187c532fb5a1cc1e18747b037804dcc10e43008df",
+      "correctChoice": 1,
+      "summary": "正答①。COD測定では添加した過マンガン酸カリウムが一定量残る試料量にする。完全に消費されると酸化剤不足で適切に測定できない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。酸化剤を完全消費する試料量では不足を検出できず、十分な酸化剤が残るように試料を調整する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。硫酸酸性とし、塩化物イオンの妨害を硝酸銀によって抑える操作である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。所定量の過マンガン酸カリウムを加え、沸騰水浴で30分加熱して酸化する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。残った酸化剤に所定量のシュウ酸ナトリウムを加えて反応させる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。温かい状態で過マンガン酸カリウムにより逆滴定し、薄い赤色を終点とする。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q25",
+    "number": 25,
+    "text": "下水の高度処理法の1つであるA2O方式に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。A2Oの嫌気タンクではリン蓄積細菌がリンを放出し、後段の好気タンクで過剰に取り込む。",
+    "presentation": {
+      "sourceHash": "722466941edb72b66cbfbd59fbffdd952141f799e6a9e03e19200709125e98e7",
+      "prompt": "下水の高度処理法の1つであるA2O方式に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "1段目の嫌気タンクでは，リン蓄積細菌にリンを吸収させる。"
+        },
+        {
+          "number": 2,
+          "text": "2段目の無酸素タンクでは，脱窒細菌により硝酸性窒素を窒素ガスに変換する。"
+        },
+        {
+          "number": 3,
+          "text": "3段目の好気タンクでは，リン蓄積細菌にリンを吸収させる。"
+        },
+        {
+          "number": 4,
+          "text": "3段目の好気タンクでは，硝化細菌によりアンモニア性窒素を硝酸性窒素へ変換する。"
+        },
+        {
+          "number": 5,
+          "text": "最終沈殿池では，余剰汚泥としてリンを回収する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "722466941edb72b66cbfbd59fbffdd952141f799e6a9e03e19200709125e98e7",
+      "correctChoice": 1,
+      "summary": "正答①。A2Oの嫌気タンクではリン蓄積細菌がリンを放出し、後段の好気タンクで過剰に取り込む。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。最初の嫌気タンクではリンの吸収ではなく放出が起こり、後段での過剰摂取につながる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。無酸素タンクでは硝酸性窒素を還元して窒素ガスにする脱窒を行う。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。好気タンクでリン蓄積細菌にリンを過剰摂取させ、汚泥中に蓄える。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。好気条件では硝化菌がアンモニア性窒素を酸化して硝酸性窒素へ変える。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。リンを多く含む汚泥を余剰汚泥として引き抜き、系外へリンを除去する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q26",
+    "number": 26,
+    "text": "「工場排水試験法(JIS K 0102－1:2021)21.2よう素滴定法」による溶存酸素の測定で用いる試薬として，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答③。よう素滴定法の溶存酸素測定ではマンガンで酸素を固定してよう素を遊離させ、チオ硫酸ナトリウムで滴定する。過マンガン酸カリウムは用いない。",
+    "presentation": {
+      "sourceHash": "3ac379bef8d5e0fcfb98612e9ce45e6cd8714f52b2c14353145dd4e59f965e15",
+      "prompt": "「工場排水試験法(JIS K 0102－1:2021)21.2よう素滴定法」による溶存酸素の測定で用いる試薬として，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "硫酸マンガン(Ⅱ)溶液"
+        },
+        {
+          "number": 2,
+          "text": "アルカリ性よう化カリウムーアジ化ナトリウム溶液"
+        },
+        {
+          "number": 3,
+          "text": "過マンガン酸カリウム溶液"
+        },
+        {
+          "number": 4,
+          "text": "でんぷん溶液"
+        },
+        {
+          "number": 5,
+          "text": "チオ硫酸ナトリウム溶液"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3ac379bef8d5e0fcfb98612e9ce45e6cd8714f52b2c14353145dd4e59f965e15",
+      "correctChoice": 3,
+      "summary": "正答③。よう素滴定法の溶存酸素測定ではマンガンで酸素を固定してよう素を遊離させ、チオ硫酸ナトリウムで滴定する。過マンガン酸カリウムは用いない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。硫酸マンガン(II)は試料中の酸素をマンガン化合物として固定するための試薬である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。アルカリ条件とよう化物を与え、アジ化ナトリウムは亜硝酸の妨害を抑える。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "③の過マンガン酸カリウムが不適切。COD測定などの酸化剤であり、この溶存酸素測定の所定試薬ではない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。でんぷんはよう素の呈色を利用する滴定終点の指示薬である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。遊離したよう素をチオ硫酸ナトリウムで滴定して、溶存酸素量を求める。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q27",
+    "number": 27,
+    "text": "2021年度の我が国の公共用水域における生活環境項目の環境基準（BOD又はCOD）の達成率を高い順に並べた組合せとして，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。設問が指定する2021年度の生活環境項目の環境基準達成率は、河川が最も高く、海域、湖沼の順である。",
+    "presentation": {
+      "sourceHash": "1e756880742ce7b6830920ac95c47ab728524bf4001a345e3196cedbb83ab178",
+      "prompt": "2021年度の我が国の公共用水域における生活環境項目の環境基準（BOD又はCOD）の達成率を高い順に並べた組合せとして，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "河川 ＞ 湖沼 ＞ 海域"
+        },
+        {
+          "number": 2,
+          "text": "河川 ＞ 海域 ＞ 湖沼"
+        },
+        {
+          "number": 3,
+          "text": "湖沼 ＞ 河川 ＞ 海域"
+        },
+        {
+          "number": 4,
+          "text": "海域 ＞ 河川 ＞ 湖沼"
+        },
+        {
+          "number": 5,
+          "text": "海域 ＞ 湖沼 ＞ 河川"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "1e756880742ce7b6830920ac95c47ab728524bf4001a345e3196cedbb83ab178",
+      "correctChoice": 2,
+      "summary": "正答②。設問が指定する2021年度の生活環境項目の環境基準達成率は、河川が最も高く、海域、湖沼の順である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は不適切。河川が最上位なのは合うが、海域と湖沼の順序が逆である。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②が適切。2021年度の達成率の高い順は河川、海域、湖沼である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は不適切。湖沼を最上位としており、湖沼の達成率が最も低いという実績と逆になる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は不適切。海域ではなく河川の達成率が最も高いため、最上位が異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は不適切。河川を最下位としており、指定年度で河川の達成率が最も高いことに反する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q28",
+    "number": 28,
+    "text": "廃棄物処理法に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。産業廃棄物処理業の許可権者を、単に市町村の区域内か複数市町村かで分けるのは誤り。原則は都道府県知事等の許可である。",
+    "presentation": {
+      "sourceHash": "8d0668386ebe12a676622f97b8c17335e05f22436fa88dbae421201ee6572431",
+      "prompt": "廃棄物処理法に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "廃棄物とは，ごみ，粗大ごみ，燃え殻，汚泥，ふん尿，廃油，廃酸，廃アルカリ，動物の死体その他の汚物又は不要物であって固形状又は液状のものをいう。"
+        },
+        {
+          "number": 2,
+          "text": "一般廃棄物は市町村に処理責任があり，産業廃棄物はそれを排出する事業者に処理責任がある。"
+        },
+        {
+          "number": 3,
+          "text": "廃棄物の処理計画として，市町村が一般廃棄物の処理計画を定め，都道府県が産業廃棄物と一般廃棄物の処理計画を定める。"
+        },
+        {
+          "number": 4,
+          "text": "産業廃棄物を委託処理する場合には，マニフェストの交付が必要であるが，一般廃棄物の委託処理の場合には，その必要はない。"
+        },
+        {
+          "number": 5,
+          "text": "産業廃棄物処理業を行う場合には，処理業を行う区域が市町村の場合は当該市町村長，複数市町村にまたがる場合は都道府県知事の許可が必要である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "8d0668386ebe12a676622f97b8c17335e05f22436fa88dbae421201ee6572431",
+      "correctChoice": 5,
+      "summary": "正答⑤。産業廃棄物処理業の許可権者を、単に市町村の区域内か複数市町村かで分けるのは誤り。原則は都道府県知事等の許可である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。廃棄物処理法の廃棄物は固形状・液状の汚物又は不要物として定義される。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。一般廃棄物は市町村、産業廃棄物は排出事業者が処理責任を負うことが基本となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。市町村の一般廃棄物処理計画と、都道府県の廃棄物処理計画を区別している。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。法定の産業廃棄物マニフェスト制度は産業廃棄物の委託処理を対象とする。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。産業廃棄物処理業は原則都道府県知事等の許可で、区域が一市町村というだけで市町村長の許可にはならない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q29",
+    "number": 29,
+    "text": "廃棄物の焼却処理に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。通常のストーカ焼却は乾燥・燃焼・後燃焼を行うが、必ず灰の溶融まで行う方式ではない。",
+    "presentation": {
+      "sourceHash": "013d0a6d6c7fd83a181d1024bfc092c40e43e07d01df17f2eb5aaeb925a0b2c3",
+      "prompt": "廃棄物の焼却処理に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ごみの焼却方式には，連続的にごみを投入する連続式と，回分的にごみを投入するバッチ式があるが，近年，バッチ式は減少している。"
+        },
+        {
+          "number": 2,
+          "text": "ストーカ炉では，ごみはホッパーに投入された後，階段状の火格子（ストーカ）上で乾燥，燃焼，後燃焼，溶融のプロセスを経て，完全に燃焼される。"
+        },
+        {
+          "number": 3,
+          "text": "流動床炉では，ごみはホッパーに投入された後，破袋・破砕されてから，固形加熱粒子を含む流動床に入れられる。"
+        },
+        {
+          "number": 4,
+          "text": "集じん器に流入する燃焼ガスの温度は，おおむね200℃以下に冷却することが必要である。"
+        },
+        {
+          "number": 5,
+          "text": "集じん器で集められたばいじんは，特別管理一般廃棄物に指定されており，溶融固化，焼成，セメント固化，薬剤処理，酸などの溶媒による安定化のいずれかの処理を行う必要がある。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "013d0a6d6c7fd83a181d1024bfc092c40e43e07d01df17f2eb5aaeb925a0b2c3",
+      "correctChoice": 2,
+      "summary": "正答②。通常のストーカ焼却は乾燥・燃焼・後燃焼を行うが、必ず灰の溶融まで行う方式ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。連続式とバッチ式があり、安定燃焼や排ガス管理の観点からバッチ式は減少してきた。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②が不適切。ストーカ炉での通常の焼却工程に溶融を必須として含めている。灰溶融は別の高温処理である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。流動床炉では破砕したごみを、高温の砂などが流動する層に投入する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。集じん前の排ガスをおおむね200℃以下に冷やし、ダイオキシン類の再合成等を抑制する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。ばいじんは特別管理一般廃棄物として、溶融固化や薬剤処理等の適切な処理を行う。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q30",
+    "number": 30,
+    "text": "日本のごみ処理の状況に関する次の記述のうち，最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答④。令和4年度のごみ最終処分量は約340万トンで減少傾向。排出量・リサイクル率・施設数の傾向を混同しない。",
+    "presentation": {
+      "sourceHash": "748047b4edbb790af0ec8b220b04ae9231ae65f6df5c7141ac88e62788026be8",
+      "prompt": "日本のごみ処理の状況に関する次の記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "総排出量は年間約4千万トン(令和4年度)であり，経済活動や生活水準の停滞に伴い，近年は横ばいの状況にある。"
+        },
+        {
+          "number": 2,
+          "text": "焼却率は約8割(令和4年度)であり，ヨーロッパ諸国と同程度の水準にある。"
+        },
+        {
+          "number": 3,
+          "text": "リサイクル率は約2割(令和4年度)であり，環境意識の高まりに伴い，近年も上昇を続けている。"
+        },
+        {
+          "number": 4,
+          "text": "最終処分量は年間約340万トン(令和4年度)であり，近年は減少傾向にある。"
+        },
+        {
+          "number": 5,
+          "text": "ごみエネルギーの有効活用のため，焼却施設数と焼却施設における総発電電力量は，ともに増加の傾向にある。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "748047b4edbb790af0ec8b220b04ae9231ae65f6df5c7141ac88e62788026be8",
+      "correctChoice": 4,
+      "summary": "正答④。令和4年度のごみ最終処分量は約340万トンで減少傾向。排出量・リサイクル率・施設数の傾向を混同しない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は不適切。総排出量は約4034万トンだが、横ばいではなく減少傾向にある。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は不適切。日本の高い焼却依存率を、ヨーロッパ諸国と一律に同程度とすることはできない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は不適切。リサイクル率は約2割だが、近年も上昇し続けているという傾向の説明が誤り。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "④が適切。令和4年度の最終処分量は約340万トンで、長期的には減少している。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は不適切。発電量の増加と、集約化等による焼却施設数の減少を区別する必要がある。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q31",
+    "number": 31,
+    "text": "ごみ焼却によるダイオキシン類に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。ダイオキシン類は飛灰に集まりやすく、一般に主灰の濃度は飛灰より低い。記述は比較が逆である。",
+    "presentation": {
+      "sourceHash": "e3127ae08ef39a3b8fdeb56417e079c8abba3c9ce48b35fc34751179ed4ede49",
+      "prompt": "ごみ焼却によるダイオキシン類に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "発生を抑制するには，燃焼ガスの温度を高温に維持すること，燃焼ガスの滞留時間を十分に確保することなどが重要である。"
+        },
+        {
+          "number": 2,
+          "text": "発生の抑制のためごみを安定燃焼させるには，ごみの撹拌，定量供給，適正負荷運転が重要である。"
+        },
+        {
+          "number": 3,
+          "text": "排ガスの冷却過程で前駆物質などの有機物がダイオキシン類に変わるデノボ合成の防止には，燃焼ガスの急冷及び低温化が有効である。"
+        },
+        {
+          "number": 4,
+          "text": "バグフィルターは，排ガス中のダイオキシン類の除去に有効である。"
+        },
+        {
+          "number": 5,
+          "text": "ストーカ式焼却炉の焼却灰(主灰)に含まれるダイオキシン類の濃度は，飛灰中の濃度より高い。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "e3127ae08ef39a3b8fdeb56417e079c8abba3c9ce48b35fc34751179ed4ede49",
+      "correctChoice": 5,
+      "summary": "正答⑤。ダイオキシン類は飛灰に集まりやすく、一般に主灰の濃度は飛灰より低い。記述は比較が逆である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。高温・十分な滞留時間・混合による完全燃焼は、ダイオキシン類の抑制に重要である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。ごみ質や供給量を均一化し、過負荷や不完全燃焼を避けると生成を抑えられる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。排ガスを急冷・低温化し、冷却過程でダイオキシン類が再生成しやすい温度域の滞留を短くする。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。バグフィルターは、ばいじん等に付着したダイオキシン類の捕集に有効である。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。一般には飛灰中の濃度の方が高い。主灰の方が高いという大小関係は逆である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q32",
+    "number": 32,
+    "text": "一般廃棄物処理施設における施設整備と運営の事業方式に関する次の記述のうち，最も不適切なものはどれか。なお，PFIは，Private Finance Initiative，DBOは，Design Build Operateである。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。DBOは公共が資金調達し、民間に設計・建設・運営を一体委託する方式。民間資金を活用するPFIと区別する。",
+    "presentation": {
+      "sourceHash": "f6737f847a81bab81db5f0349474dc888eccdf6b9a37846531acd6105767d236",
+      "prompt": "一般廃棄物処理施設における施設整備と運営の事業方式に関する次の記述のうち，最も不適切なものはどれか。なお，PFIは，Private Finance Initiative，DBOは，Design Build Operateである。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "廃棄物処理施設の運営を長期にわたって民間事業者に委ねる包括的民間委託などの方法が採用されてきている。"
+        },
+        {
+          "number": 2,
+          "text": "廃棄物焼却施設を民間事業者が運営する場合，民間事業者が余剰電力の売却により収入を得ることがある。"
+        },
+        {
+          "number": 3,
+          "text": "施設整備と運営を一体の事業として進める方式に，PFI方式，DBO方式等がある。"
+        },
+        {
+          "number": 4,
+          "text": "PFI方式は，「民間資金等の活用による公共施設等の整備等の促進に関する法律」に基づいて実施する方式である。"
+        },
+        {
+          "number": 5,
+          "text": "DBO方式は，民間事業者が自ら資金調達を行い，設計・建設・運営をする方式である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "f6737f847a81bab81db5f0349474dc888eccdf6b9a37846531acd6105767d236",
+      "correctChoice": 5,
+      "summary": "正答⑤。DBOは公共が資金調達し、民間に設計・建設・運営を一体委託する方式。民間資金を活用するPFIと区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。施設の維持管理を長期かつ包括的に民間へ委託する方式が採用されている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。契約の内容によって、民間運営者が余剰電力を売って収入を得る場合がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。PFIやDBOは、施設整備と運営を一体として発注する事業方式である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。PFIは民間資金等活用による公共施設等整備促進法に基づく仕組みである。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。DBOでは原則公共が資金調達する。民間自らの資金調達を必須とする説明はPFIとの混同である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q33",
+    "number": 33,
+    "text": "災害廃棄物に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答②。災害廃棄物は自然災害に直接起因し、生活環境保全上の支障に対処するため自治体等が処理する。自然環境保全という語が誤り。",
+    "presentation": {
+      "sourceHash": "f7222feadcb533781543e7b5db482ce560abb1b15a2b7a158b7fbbdb1f80c928",
+      "prompt": "災害廃棄物に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "災害廃棄物処理支援ネットワークは，我が国の災害廃棄物対応力を向上させるため，災害廃棄物対策のエキスパートで構成される組織である。"
+        },
+        {
+          "number": 2,
+          "text": "災害廃棄物は，自然災害に直接起因して発生する廃棄物のうち，自然環境保全上の支障へ対処するため，市区町村等がその処理を実施するものである。"
+        },
+        {
+          "number": 3,
+          "text": "災害廃棄物対策指針は，災害廃棄物処理計画の策定及び災害廃棄物対策を実施する際の参考となる災害廃棄物対策の基本的事項を環境省がとりまとめたものである。"
+        },
+        {
+          "number": 4,
+          "text": "災害廃棄物処理計画は，災害廃棄物を適正かつ円滑・迅速に処理するために必要な事項を平時において地方公共団体が整理したものである。"
+        },
+        {
+          "number": 5,
+          "text": "災害廃棄物処理実行計画は，発生した災害廃棄物を適正かつ円滑・迅速に処理するため，発災後において地方公共団体が策定するものである。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "f7222feadcb533781543e7b5db482ce560abb1b15a2b7a158b7fbbdb1f80c928",
+      "correctChoice": 2,
+      "summary": "正答②。災害廃棄物は自然災害に直接起因し、生活環境保全上の支障に対処するため自治体等が処理する。自然環境保全という語が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。D.Waste-Netは災害廃棄物対策に関する専門的支援を行うネットワークである。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "②が不適切。定義で対処するのは生活環境保全上の支障であり、自然環境保全上の支障とする点が異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。環境省の対策指針は、自治体の計画策定や災害時の対応に関する基本事項をまとめている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。災害廃棄物処理計画は平時に体制や処理方針などを事前に整理する計画である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。実行計画は発災後の実際の発生量・被害状況等を踏まえて具体的に策定する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q34",
+    "number": 34,
+    "text": "一般廃棄物最終処分場及び産業廃棄物管理型最終処分場に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答①。一般廃棄物・管理型処分場をすべて送風機を使う好気性埋立構造とする義務はない。準好気性などの構造も用いられる。",
+    "presentation": {
+      "sourceHash": "39184a312d65d9f01008698d332d66772913458b1be8edcd5940f9621b639597",
+      "prompt": "一般廃棄物最終処分場及び産業廃棄物管理型最終処分場に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "送風機などにより空気流通を促進して埋立地内を好気的状態に保つ好気性埋立構造とする必要がある。"
+        },
+        {
+          "number": 2,
+          "text": "埋立地の地下全面に不透水性地層がある場合は，表面遮水工ではなく鉛直遮水工とすることが認められている。"
+        },
+        {
+          "number": 3,
+          "text": "雨水集排水施設は，埋立地内への雨水の流入を防止することにより浸出水の削減を図り，浸出水処理施設及び遮水工の負担を軽減する役割を有する。"
+        },
+        {
+          "number": 4,
+          "text": "豪雨時には，浸出水処理施設の能力が小さいと埋立地内部に浸出水が貯水され，浸出水質の悪化とともに，地下への漏水の危険性が高まる。"
+        },
+        {
+          "number": 5,
+          "text": "覆土は，悪臭の発散防止，廃棄物の飛散・流出防止，衛生害虫獣の繁殖防止，火災の発生・延焼防止並びに景観の向上など周辺環境保全上の対策として大きな効果を有する。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "39184a312d65d9f01008698d332d66772913458b1be8edcd5940f9621b639597",
+      "correctChoice": 1,
+      "summary": "正答①。一般廃棄物・管理型処分場をすべて送風機を使う好気性埋立構造とする義務はない。準好気性などの構造も用いられる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "①が不適切。送風機による強制通気の好気性構造だけに限定されておらず、準好気性構造等もある。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。地下の不透水性地層を利用できる条件では、鉛直遮水工による遮水が認められる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。場外からの雨水流入を防げば浸出水量が減り、処理設備や遮水工への負担を軽減する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。浸出水が内部にたまると水圧が増し、漏水リスクや処理上の問題を高める。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "⑤は適切。覆土は悪臭・飛散・害虫・火災の防止や、景観改善など複数の効果を持つ。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2024-q35",
+    "number": 35,
+    "text": "一般廃棄物最終処分場及び産業廃棄物管理型最終処分場の廃止に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13",
+    "explanation": "正答⑤。廃止は浸出水の継続処理を要しない安定状態等を確認して行う。浸出液処理施設の定期点検は廃止前の維持管理事項である。",
+    "presentation": {
+      "sourceHash": "0a3763614e83ce0106f2194f12dcc1e62d36a3f2c6e51fcb39ad785da4129ca4",
+      "prompt": "一般廃棄物最終処分場及び産業廃棄物管理型最終処分場の廃止に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "廃止の基準として，埋立地からガスの発生がほとんど認められないこと又はガスの発生量の増加が2年以上にわたり認められないことが定められている。"
+        },
+        {
+          "number": 2,
+          "text": "廃止の基準として，埋立地の内部が周辺の地中の温度に比して異常な高温になっていないことが定められている。"
+        },
+        {
+          "number": 3,
+          "text": "廃止の基準として，最終処分場の外に悪臭が発散しないように必要な措置が講じられていることが定められている。"
+        },
+        {
+          "number": 4,
+          "text": "廃止後は，廃棄物が地下にある土地であって土地の形質の変更により生活環境保全上の支障が生じるおそれがある区域として，指定区域に指定される。"
+        },
+        {
+          "number": 5,
+          "text": "廃止後は，浸出液処理施設の機能の状態を定期的に点検し，異常を認めた場合には，速やかに必要な措置を講ずる必要がある。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "0a3763614e83ce0106f2194f12dcc1e62d36a3f2c6e51fcb39ad785da4129ca4",
+      "correctChoice": 5,
+      "summary": "正答⑤。廃止は浸出水の継続処理を要しない安定状態等を確認して行う。浸出液処理施設の定期点検は廃止前の維持管理事項である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "①は適切。ガスの発生がほとんどないこと、又は発生量の増加が2年以上認められないことが廃止判断の条件となる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "②は適切。周囲の地温に比べた異常な高温がないことは、埋立物の安定性を確認する条件である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "③は適切。場外への悪臭発散を防ぐ措置が講じられていることも廃止基準に含まれる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "④は適切。廃止後も地下に廃棄物があるため、土地の形質変更による支障を防ぐ指定区域制度の対象となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "⑤が不適切。浸出液処理施設の機能点検は廃止前の維持管理基準であり、そのまま廃止後の義務とする説明は異なる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_2.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=13"
+        }
+      ]
+    }
+  }
+]
