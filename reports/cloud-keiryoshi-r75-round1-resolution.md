@@ -19,7 +19,7 @@
 
 - **法令：200問を分類し、法令・委任規格に関係する46問を再点検。** 条文、主体、数値、基準日をe-Govの当時の条文と照合した。既存の法令11資料は再取得したハッシュが一致。追加のe-Gov資料5件と環境省告示2件も保存した。法規問22以外に追加修正は見つからなかった。[条文・所見の記録](../docs/evidence/keiryoshi-75/round1-resolution/legal-audit.json)、[再取得記録](../docs/evidence/keiryoshi-75/round1-resolution/historical-law-refetch.json)、[追加資料](../docs/evidence/keiryoshi-75/round1-resolution/additional-sources.json)。
 - **解説：1,000肢すべてを選択肢本文と対置して再読。** 数値と選択肢参照を機械抽出し、参照先の本文・各肢に現れる数値を付記した。単一の数値を選ぶ39問は独立計算値から実データの5肢への対応を検査。既存の計算・記号検算81件も再実行した。「近い」等の対象13箇所（数値11、定性的記述2）を確認し、質量分率と切片を無視した回帰の誤答モデル2件も最寄りの選択肢を検査した。環化問15以外に追加修正は見つからなかった。[1,000肢の対応表](../docs/evidence/keiryoshi-75/round1-resolution/choice-correspondence.json)、[計算値との対応](../docs/evidence/keiryoshi-75/round1-resolution/numeric-correspondence.json)。字句抽出だけで自然言語の正しさを証明したとは扱っていない。
-- **原文の式：200問すべての公式PDF描画を本文・5肢と照合。** 符号、指数、添字、分母・分子を確認した。無注記の原本補正は見つからなかった。計質問7の原本「非接地型型」は既存注記とともに保持。[全200問の記録](../docs/evidence/keiryoshi-75/round1-resolution/formula-visual-audit.json)。
+- **原文の式：200問すべての公式PDF描画を本文・5肢と照合。** 符号、指数、添字、分母・分子を確認した。無注記の原本補正は見つからなかった。計質問7は第2回対応で訂正。432 dpiの再描画では原本は「非接地型」であり、重複した「型」と誤った原文保持注記を削除した。[全200問の記録](../docs/evidence/keiryoshi-75/round1-resolution/formula-visual-audit.json)。
 - **画像：200問すべてでimageUrlsとimageAltTextsの件数を機械検査。** 図のある55問は実画像を目視し、表の見出し、構造式、配線、軸、ラベルとの内容の対応を確認。画像URLの年度・科目・問題番号・ファイル存在を検査し、図から拾った特徴語も代替テキストと機械照合した。[55図の記録](../docs/evidence/keiryoshi-75/round1-resolution/image-alt-audit.json)。
 
 再実行用の[対応検査スクリプト](../docs/evidence/keiryoshi-75/round1-resolution/audit.py)と[法令証跡生成スクリプト](../docs/evidence/keiryoshi-75/round1-resolution/legal-audit.py)を保存した。これらは既存の目視確認・条文読解を置き換えるものではない。

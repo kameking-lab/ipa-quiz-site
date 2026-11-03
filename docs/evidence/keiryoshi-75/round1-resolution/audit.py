@@ -1,5 +1,7 @@
 """Round 75 review follow-up: repeatable coverage and correspondence checks.
 
+Historical runner for the original round-1 baseline (including its original HEAD).
+For current records use ../round2-resolution/audit.py.
 Run from the repository root with Python 3. The lexical scan covers all 1,000
 choices; it does not claim to prove natural-language explanations. Numerical
 models below, the existing 81 recalculations, and recorded visual/legal review
@@ -134,7 +136,7 @@ for path in sorted(Path('data/questions/keiryoshi').glob('2024-*.json')):
                              visualReview='PDF描画画像と本文・5肢を照合。式・符号・指数・添字の無注記補正なし',
                              note=('選択肢1はyᵢ。拡大描画はkanri-q9-numerator.png参照。'
                                    if (slug, n) == ('kanri', 9) else
-                                   '原本の「非接地型型」も既存の注記とともに保持。'
+                                   '第2回対応で訂正。432 dpi再描画の原本は「非接地型」。重複文字と誤った原文保持注記を削除。'
                                    if (slug, n) == ('keishitsu', 7) else '')))
 
 assert len(questions) == len(formulas) == 200
