@@ -61,9 +61,15 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
-  webpack(config) {
+  webpack(config, { webpack }) {
     if (process.env.MOBILE_IAP_ENABLED === "true") {
       config.resolve.alias["@/lib/exam-library/survey-assistant-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
+      // Next's TS-path resolver can resolve the import before the exact alias.
+      // Replace both the original request and its resolved absolute resource.
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /(?:^|[\\/])survey-assistant-grading-index(?:\.ts)?$/,
+        resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts"),
+      ));
     }
     return config;
   },
