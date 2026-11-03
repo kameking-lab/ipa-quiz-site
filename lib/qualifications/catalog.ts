@@ -42,6 +42,39 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    "slug": "shohi-sodan",
+    "examCode": "shohi-sodan",
+    "shortName": "消費生活相談員",
+    "fullName": "消費生活相談員資格試験",
+    "domain": "legal",
+    "administrator": "独立行政法人国民生活センター",
+    "officialQuestionsUrl": "https://www.kokusen.go.jp/shikaku/exam.html",
+    "officialReuseTermsUrl": "https://www.kokusen.go.jp/shikaku/exam.html",
+    "status": "ready-to-ingest",
+    "reuseSummary": "未公開ステージング。直近公開２回を対象に公式の全320小問を保存し、全320小問の原文・正答・全肢解説を収録。問題・正答は公式PDF、全肢解説は独自作成。オーナーが2026-11-04に権利確認済み。2024年度大問15①の口頭申立ては旧制度と確認し、出題当時の改正後条文に基づき解説。",
+    "remainingWork": [
+      "法令・統計の時点情報および次回公式公表分の継続確認",
+      "独立レビューおよび公開前の最終検収"
+    ]
+  },
+  {
+    "slug": "reform-mgr",
+    "examCode": "reform-mgr",
+    "shortName": "マンションリフォームマネジャー",
+    "fullName": "マンションリフォームマネジャー学科試験",
+    "domain": "construction",
+    "administrator": "公益財団法人住宅リフォーム・紛争処理支援センター",
+    "officialQuestionsUrl": "https://www.chord.or.jp/course/reform_manager/index.html",
+    "officialReuseTermsUrl": "https://www.chord.or.jp/course/reform_manager/index.html",
+    "status": "ready-to-ingest",
+    "reuseSummary": "未公開ステージング。直近公開２回を対象に公式問題100問を保存し、原文・公式正答・全肢解説を収録。問題・正答は公式PDF、全肢解説は独自作成。オーナーが2026-11-04に権利確認済み。学科以外の設計製図試験は対象外。",
+    "remainingWork": [
+      "全問の独立レビューおよび原本との最終検収",
+      "独立レビューおよび公開前の最終検収"
+    ]
+  },
+
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",

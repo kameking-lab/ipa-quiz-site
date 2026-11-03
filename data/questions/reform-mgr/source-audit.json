@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-11-04",
+  "publication": "unpublished staging",
+  "authorization": "Owner decision 2026-11-04 01:30 JST; rights confirmed by owner",
+  "files": [
+    {
+      "name": "reform-2026",
+      "url": "https://www.chord.or.jp/course/pdf/%E7%AC%AC35%E5%9B%9E2026%E5%B9%B4%E5%BA%A6%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93_%E5%95%8F%E9%A1%8C.pdf",
+      "sha256": "320f940a357fb0157c958eb644f40f35dd81a8cc0899c7a48cfbc0ae466d56fd",
+      "pages": 16
+    },
+    {
+      "name": "reform-2026-answer",
+      "url": "https://www.chord.or.jp/course/pdf/%E7%AC%AC35%E5%9B%9E2026%E5%B9%B4%E5%BA%A6%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93_%E6%AD%A3%E7%AD%94.pdf",
+      "sha256": "6ccf7fa2112fadc98a0f4300a7a1040b12a607c5d4232675f83fc30b9b79cddf",
+      "pages": 1
+    },
+    {
+      "name": "reform-2025",
+      "url": "https://www.chord.or.jp/course/reform_manager/acquire/pdf/mrm_exam2025.pdf",
+      "sha256": "238c09e1421c9df8fa6f22a11b585f766be53ee828ae9c44b23fdf30abe49a0a",
+      "pages": 16
+    },
+    {
+      "name": "reform-2025-answer",
+      "url": "https://www.chord.or.jp/course/reform_manager/acquire/pdf/mrm_ans2025.pdf",
+      "sha256": "1cd8d105fae3f86f2faa9519d2e08ae0817fa2f471299f320b8e7e7755869489",
+      "pages": 1
+    }
+  ],
+  "transcription": "Text extracted from official PDFs; adopted questions checked separately. Layout whitespace removed. Remaining extraction is not certified transcription.",
+  "independentReview": "review1/review2 findings corrected; gpt-6-astra read-only final review pending",
+  "questions": 100,
+  "choiceExplanations": 400,
+  "rounds": [
+    2026,
+    2025
+  ],
+  "readyQuestions": 100,
+  "heldQuestions": 0,
+  "verification": {
+    "officialAnswers": "All 100 official keys compared with original PDF tables",
+    "text": "All 100 stems and options compared with source extraction after declared whitespace/ruby normalization; zero mismatches",
+    "publication": "No public question registry, lazy loader, IPA-only list or static public image asset",
+    "lawReferenceDate": "April 1 of each examination year"
+  },
+  "figures": [
+    {
+      "question": "2025-3",
+      "privatePath": "data/qualification-staging/reform-mgr/assets/2025-q3.webp",
+      "pdfPage": 2,
+      "cropPoints": [
+        68,
+        425,
+        540,
+        778
+      ],
+      "sha256": "8d990484a349a385daffffeb0ace2f8695abb5e3ab829a02629dd2374737a1d8",
+      "presentation": "Same bytes embedded as a data URI in unpublished candidate JSON; no public static asset."
+    }
+  ]
+}
