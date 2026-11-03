@@ -1,8 +1,8 @@
 **FAIL — Q33の肢④・⑤の解説に必須修正があります。** 指定の gpt-6-astra で、公式PDF全28ページと全175肢の理由を read-only レビューしました。
 
-- **肢④**：[採用データ3084行](C:/Users/kanet/20260522/wt-LQ3/data/exam-library/pe-first/pe-first-marine-2025.json:3084)  
+- **肢④**：[採用データ3084行](C:/Users/kanet/20260522/wt-LQ3/data/exam-library/pe-first/pe-first-marine-2025.json:3084)
   分子は正しいのに、仕事の符号も誤りと説明しています。誤りは分母の再熱受熱量・ポンプ仕事の符号です。正しい分母は `(h1−h5)+(h3−h2)−(h6−h5)`。
-- **肢⑤**：[採用データ3089行](C:/Users/kanet/20260522/wt-LQ3/data/exam-library/pe-first/pe-first-marine-2025.json:3089)  
+- **肢⑤**：[採用データ3089行](C:/Users/kanet/20260522/wt-LQ3/data/exam-library/pe-first/pe-first-marine-2025.json:3089)
   「分子は合う」は誤りです。低圧タービン仕事を引き、ポンプ仕事を足しており、分子・分母とも符号が誤っています。
 
 原稿427・428行にも同じ修正が必要です。**正答①と総括の式は正しい**ため、採点への影響はありません。

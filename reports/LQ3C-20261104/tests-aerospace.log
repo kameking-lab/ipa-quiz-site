@@ -1,0 +1,21 @@
+RUN  v3.2.4 C:/Users/kanet/20260522/wt-LQ3
+
+ ✓ __tests__/exam-library-choices.test.ts (11 tests) 4ms
+ ✓ __tests__/exam-library-presentation.test.ts (6 tests) 473ms
+   ✓ safety text presentation > has a complete source-matched transcription for every question and all five choices  437ms
+ ✓ __tests__/exam-library-integration.test.ts (5 tests) 1541ms
+   ✓ official exam library integration > requires every authored plain explanation to be substantive and preserves its answer-key snapshot  805ms
+   ✓ official exam library integration > loads only source-matched, five-choice, government-sourced structured overlays  600ms
+ ✓ __tests__/pe-first-continuation.test.tsx (3 tests) 691ms
+   ✓ LQ3B complete-paper continuation > renders the transcribed sanitary problem and its required diagram, then explains all five choices  387ms
+ ✓ __tests__/pe-first-integration.test.tsx (5 tests) 2444ms
+   ✓ LQ3 existing manuscript adoption > preserves all 17 accepted sets and adds only complete continuation papers  1024ms
+   ✓ LQ3 existing manuscript adoption > keeps each accepted image byte-identical and all 2,975 choice reasons accessible  734ms
+   ✓ LQ3 existing manuscript adoption > shows an original-image question, grades it, exposes every reason, and restores its saved answer  397ms
+
+ Test Files  5 passed (5)
+      Tests  30 passed (30)
+   Start at  02:46:22
+   Duration  7.17s (transform 1.28s, setup 1.56s, collect 5.32s, tests 5.15s, environment 8.36s, prepare 948ms)
+
+exitCode=0

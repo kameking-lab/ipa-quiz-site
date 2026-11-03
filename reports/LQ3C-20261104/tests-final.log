@@ -1,28 +1,24 @@
+RUN  v3.2.4 C:/Users/kanet/20260522/wt-LQ3
 
- RUN  v3.2.4 C:/Users/kanet/20260522/wt-LQ3
-
- ✓ __tests__/exam-library-choices.test.ts (11 tests) 4ms
- ✓ __tests__/exam-library-choice-explanations.test.ts (15 tests) 8ms
- ✓ __tests__/exam-library-model.test.ts (11 tests) 6ms
- ✓ __tests__/exam-library-navigation.test.ts (3 tests) 14ms
- ✓ __tests__/exam-library-progress.test.ts (6 tests) 27ms
- ✓ __tests__/exam-library-session.test.ts (4 tests) 17ms
- ✓ __tests__/exam-library-presentation.test.ts (6 tests) 746ms
-   ✓ safety text presentation > has a complete source-matched transcription for every question and all five choices  710ms
- ✓ __tests__/exam-library-integration.test.ts (5 tests) 1588ms
-   ✓ official exam library integration > requires every authored plain explanation to be substantive and preserves its answer-key snapshot  822ms
-   ✓ official exam library integration > loads only source-matched, five-choice, government-sourced structured overlays  621ms
- ✓ __tests__/pe-first-continuation.test.tsx (3 tests) 763ms
-   ✓ LQ3B complete-paper continuation > binds every new question and all choice reasons to the official yearly key  338ms
-   ✓ LQ3B complete-paper continuation > renders the transcribed sanitary problem and its required diagram, then explains all five choices  375ms
- ✓ __tests__/pe-first-integration.test.tsx (5 tests) 2531ms
-   ✓ LQ3 existing manuscript adoption > preserves all 17 accepted sets and adds only complete continuation papers  1063ms
-   ✓ LQ3 existing manuscript adoption > keeps each accepted image byte-identical and all 2,975 choice reasons accessible  743ms
-   ✓ LQ3 existing manuscript adoption > shows an original-image question, grades it, exposes every reason, and restores its saved answer  409ms
+ ✓ __tests__/exam-library-choices.test.ts (11 tests) 5ms
+ ✓ __tests__/exam-library-model.test.ts (11 tests) 7ms
+ ✓ __tests__/exam-library-navigation.test.ts (3 tests) 4ms
+ ✓ __tests__/exam-library-choice-explanations.test.ts (15 tests) 11ms
+ ✓ __tests__/exam-library-progress.test.ts (6 tests) 8ms
+ ✓ __tests__/exam-library-session.test.ts (4 tests) 8ms
+ ✓ __tests__/exam-library-presentation.test.ts (6 tests) 377ms
+   ✓ safety text presentation > has a complete source-matched transcription for every question and all five choices  356ms
+ ✓ __tests__/exam-library-integration.test.ts (5 tests) 553ms
+   ✓ official exam library integration > requires every authored plain explanation to be substantive and preserves its answer-key snapshot  340ms
+ ✓ __tests__/pe-first-continuation.test.tsx (3 tests) 239ms
+ ✓ __tests__/pe-first-integration.test.tsx (5 tests) 1948ms
+   ✓ LQ3 existing manuscript adoption > preserves all 17 accepted sets and adds only complete continuation papers  916ms
+   ✓ LQ3 existing manuscript adoption > keeps each accepted image byte-identical and all 2,975 choice reasons accessible  445ms
+   ✓ LQ3 existing manuscript adoption > shows an original-image question, grades it, exposes every reason, and restores its saved answer  463ms
 
  Test Files  10 passed (10)
       Tests  69 passed (69)
-   Start at  02:54:23
-   Duration  8.34s (transform 3.00s, setup 2.67s, collect 9.68s, tests 5.70s, environment 19.94s, prepare 1.76s)
+   Start at  02:56:51
+   Duration  4.93s (transform 874ms, setup 1.98s, collect 3.56s, tests 3.16s, environment 10.14s, prepare 1.68s)
 
 exitCode=0
