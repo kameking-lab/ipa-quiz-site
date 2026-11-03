@@ -2696,6 +2696,70 @@
     ]
   },
   {
+    "id": "jidosha-2026-first-2-diesel-q08",
+    "qNumber": 8,
+    "question": "図に示すコモンレール式高圧燃料噴射装置のECUに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ECU内のAは、演算処理を行うCPU（セントラル・プロセッシング・ユニット）に該当し、Bはデータ記憶部となるRAM（ランダム・アクセス・メモリ）に該当する。",
+      "イ": "(2) インジェクタには製造公差があり、各気筒間で噴射量のバラツキが生じてしまうため、インジェクタ交換時には、外部診断器（スキャン・ツール）によるインジェクタ補正値登録を行わなければならない。",
+      "ウ": "(3) 噴射量制御は、インジェクション・ポンプで用いられるガバナの機能に代わるもので、基本的にエンジン回転速度とアクセル開度の信号をもとに、最適な噴射量となるようにインジェクタを制御する。",
+      "エ": "(4) 噴射圧力制御（コモンレール圧力制御）は、コモンレール内の圧力を制御することにより噴射圧力を制御するもので、コモンレール圧力センサの値が、エンジン回転速度とアクセル開度から算出される目標値に等しくなるようにECUが制御している。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "噴射圧力の目標値は回転速度と燃料噴射量などの運転条件で設定し、圧力センサの実測値をフィードバックして一致させる。選択肢(4)のアクセル開度から算出とする部分が不適切。",
+    "choiceExplanations": {
+      "ア": "適切。図中のAはCPU、BはRAM、ROMは別の記憶部。",
+      "イ": "適切。交換後は個体ごとの補正値をECUに登録する。",
+      "ウ": "適切。回転速度とアクセル開度を基本入力として噴射量を決める。",
+      "エ": "不適切。目標レール圧の基本設定は回転速度と噴射量などに基づく。圧力センサは実圧のフィードバックに使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "コモンレールECU"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-diesel",
+    "category": "二級ジーゼル自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級ジーゼル自動車 No.8",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2d.pdf#page=4",
+        "pdfSha256": "0fd6a40925b281f48735a3d40c89c3631514ab20b44644e6ea642cf0aed5c8bd"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "relativePath": "figures/jaspa-2026-first-2-diesel-p04.webp"
+      }
+    ]
+  },
+  {
     "id": "jidosha-2026-first-2-diesel-q09",
     "qNumber": 9,
     "question": "コモンレール式高圧燃料噴射装置のセンサに関する記述として、不適切なものはどれか。",
@@ -5047,6 +5111,65 @@
     "year": 2026
   },
   {
+    "id": "jidosha-2026-first-2-motorcycle-q12",
+    "qNumber": 12,
+    "question": "エンジンの電子制御装置に用いられるセンサに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) クランク角センサの信号は、点火時期や燃料噴射タイミングの制御に用いられている。",
+      "イ": "(2) 転倒センサ（傾斜角センサ）は、車両の傾斜を検出するもので、車両が設定角度以上傾くとエンジン・ストップ・リレーへの通電がONとなり、フューエル・ポンプなどの電子制御装置の電源がOFFとなる。",
+      "ウ": "(3) バキューム・センサの出力電圧は、インテーク・マニホールド内の圧力が低くなるほど高くなる。",
+      "エ": "(4) コントロール・ユニットは、スロットル・ポジション・センサの信号により、加速増量補正とアイドル開度の判定は行うが、基本噴射量の決定は行っていない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答。クランク角信号は点火時期と噴射タイミングの制御に用いる。",
+    "choiceExplanations": {
+      "ア": "正答。クランク角信号は点火時期と噴射タイミングの制御に用いる。",
+      "イ": "不適切。設定角度以上に傾いたときは、エンジン・ストップ・リレーへの通電をOFFにして、フューエル・ポンプなどへの電源を遮断する。『通電がON』が誤り。",
+      "ウ": "バキューム・センサはマニホールド圧力を電圧で示し、圧力が低いほど出力が高いとは限らない。",
+      "エ": "スロットル位置は基本噴射量の決定にも使われ、決定しないという記述が誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "工ンジンの電子制御装置に用いられるセンサ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-motorcycle",
+    "category": "二級２輪自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.12",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=5",
+        "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "answer": "イ",
     "category": "二級２輪自動車",
     "choiceExplanations": {
@@ -5524,6 +5647,65 @@
     "year": 2026
   },
   {
+    "id": "jidosha-2026-first-2-motorcycle-q21",
+    "qNumber": 21,
+    "question": "キャスタ及びトレ ー ル等に関する記述として、 適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ハンドル回転軸の延長線が地面と交わる点から車輪の接地面の中心までの距離をキャスタという。",
+      "イ": "(2) オンロード車はオフロード車と比較して、キャスタ及びトレールともに、やや大きい値を設定する傾向がある。",
+      "ウ": "(3) キャスタ角を変えないで、トレールだけを大きくすると、安定性は増す傾向にあるが、ハンドル操舵が重くなる。",
+      "エ": "(4) 一般的に、キャスタを小さくするとトレールが大きくなり、走行時の安定性が向上する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正答。キャスタ角を一定にしてトレールを増すと直進安定性が高まる一方、操舵は重くなる。",
+    "choiceExplanations": {
+      "ア": "キャスタは操舵軸の延長線と接地面との交点からタイヤ接地点までの距離ではなく、操舵軸の後傾角である。",
+      "イ": "不適切。設問で扱う一般的な設定傾向では、オンロード車はオフロード車と比べ、キャスタ及びトレールをやや小さくする。",
+      "ウ": "正答。キャスタ角を一定にしてトレールを増すと直進安定性が高まる一方、操舵は重くなる。",
+      "エ": "キャスタを小さくすれば必ずトレールが大きくなる関係ではなく、安定性が上がるともいえない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "キャスタ及びトレ ー ル等"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-motorcycle",
+    "category": "二級２輪自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.21",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=8",
+        "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "answer": "エ",
     "category": "二級２輪自動車",
     "choiceExplanations": {
@@ -5763,6 +5945,70 @@
     ],
     "type": "multiple-choice",
     "year": 2026
+  },
+  {
+    "id": "jidosha-2026-first-2-motorcycle-q26",
+    "qNumber": 26,
+    "question": "図に示すシャフト駆動の駆動装置に関する記述として、 適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ドリブン・ベベル・ギヤの形状にはスパイラル・ベベル・ギヤが用いられ、トランスミッションからの動力をプロペラ・シャフトに伝えている。",
+      "イ": "(2) ダンパ機構は、変速時の急激なトルク変動や後輪からのショックを吸収するため、ドライブ・ピニオン部に設けられている。",
+      "ウ": "(3) リヤ・ホイールの上下運動によるシャフトの角度変化に対しては、カップリングが用いられている。",
+      "エ": "(4) プロペラ・シャフトの前端にはスプリングがあり、シャフトを常時後方に押すことによって軸方向のがたを防いでいる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "適切。図のドリブン・ベベル・ギヤにはスパイラル・ベベル・ギヤが用いられ、トランスミッションからの動力をプロペラ・シャフトに伝える。",
+    "choiceExplanations": {
+      "ア": "適切。図のドリブン・ベベル・ギヤにはスパイラル・ベベル・ギヤが用いられ、トランスミッションからの動力をプロペラ・シャフトに伝える。",
+      "イ": "変速時や後輪からのショックを吸収するダンパ機構は、設問の記述の位置とは異なる。",
+      "ウ": "不適切。リヤ・ホイールの上下運動に伴うシャフトの角度変化は、ユニバーサル・ジョイントで吸収する。",
+      "エ": "スプリングの作用・位置は設問の前端で常時後方へ押す説明ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      10
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "図に示すシャフト駆動の駆動装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "2-motorcycle",
+    "category": "二級２輪自動車",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 二級２輪自動車 No.26",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_2n.pdf#page=10",
+        "pdfSha256": "b529ce8b8bbd6e4682272bef69ffae8c2ee7c73c1d086b22ccf402b3b5819c9d"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 10,
+        "relativePath": "figures/jaspa-2026-first-2-motorcycle-p10.webp"
+      }
+    ]
   },
   {
     "answer": "ア",
@@ -8545,6 +8791,65 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3g.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3g.pdf#page=2",
+        "pdfSha256": "38073edc731ea38abe1b2a988e8a6625bd18f0f7905dca42adb0b01fb75bc633"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-3-gasoline-q04",
+    "qNumber": 4,
+    "question": "フライホイールの振れを測定するときに用いられるものとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) プラスチ・ゲージ",
+      "イ": "(2) コンプレッション・ゲージ",
+      "ウ": "(3) シックネス・ゲージ",
+      "エ": "(4) ダイヤル・ゲージ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "フライホイールを回転させ、端面の軸方向の振れをダイヤル・ゲージで測定する。",
+    "choiceExplanations": {
+      "ア": "プラスチ・ゲージは軸受隙間測定用。",
+      "イ": "コンプレッション・ゲージは圧縮圧力測定用。",
+      "ウ": "シックネス・ゲージは狭い隙間測定用。",
+      "エ": "ダイヤル・ゲージが振れ測定用。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "測定器"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.4",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -11826,6 +12131,124 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2026-first-body-q02",
+    "qNumber": 2,
+    "question": "次の合成樹脂のうち、ほとんどの溶剤に対し耐性があるものの組み合わせとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1)ポリプロピレン、ポリウレタン、ポリブチレンテレフタレート",
+      "イ": "(2)ポリカーボネート、ポリアミド（ナイロン）、ポリエチレン",
+      "ウ": "(3)ポリウレタン、ポリエチレン、ポリブチレンテレフタレート",
+      "エ": "(4)ポリエチレン、ポリプロピレン、ポリブチレンテレフタレート"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "適切なのは(4)。ポリエチレン、ポリプロピレン、ポリブチレンテレフタレートは多くの溶剤に対して耐性が高い。ポリウレタンやポリカーボネートを含む肢を除く。",
+    "choiceExplanations": {
+      "ア": "誤り。ポリウレタンは溶剤による膨潤・劣化に注意を要する。",
+      "イ": "誤り。ポリカーボネートは有機溶剤による応力割れなどを生じ得る。",
+      "ウ": "誤り。ポリウレタンを含むため、三者ともほとんどの溶剤に耐性がある組み合わせではない。",
+      "エ": "正しい。ポリエチレン、ポリプロピレン、ポリブチレンテレフタレートの組み合わせ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "車体材料"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.2",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=2",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q03",
+    "qNumber": 3,
+    "question": "アルミニウムに関する記述として、次の（イ）から（ニ）のうち、適切なものはいくつあるか。\n（イ）比重が2.7と軽く、塑性に富み耐食性がよく、熱伝導性や電導性に優れている。\n（ロ）溶融点は約660℃であり、加熱すると引っ張り強さは急激に減少する。\n（ハ）海水、バッテリ液などの酸及びアルカリには浸食されにくい。\n（ニ）一般に伸びが小さくヘミング加工性に劣る。",
+    "choices": {
+      "ア": "(1)1つ",
+      "イ": "(2)2つ",
+      "ウ": "(3)3つ",
+      "エ": "(4)4つ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切なのは(3)。比重・塑性・伝導性の（イ）、融点と加熱時の強度低下の（ロ）、伸び・ヘミング加工性の（ニ）が正しい。酸やアルカリによる浸食を受けるため（ハ）は誤り。",
+    "choiceExplanations": {
+      "ア": "誤り。（イ）（ロ）（ニ）の3文が正しいため、1つではない。",
+      "イ": "誤り。（イ）（ロ）に加えて（ニ）も正しいため、2つではない。",
+      "ウ": "正しい。（イ）（ロ）（ニ）が正しく、（ハ）だけが誤り。",
+      "エ": "誤り。（ハ）は酸・アルカリによる浸食を受けるため、4つすべては正しくない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "車体材料"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=2",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q04",
     "qNumber": 4,
     "question": "熱処理に関する記述として、不適切なものは次のうちどれか。",
@@ -11885,6 +12308,125 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2026-first-body-q05",
+    "qNumber": 5,
+    "question": "モノコック・ボデーのプレス加工に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。\n平板あるいは形成された材料の一部に補強と装飾の目的で、ひも状の隆起又はくぼみをつけるプレス加工を（イ）といい、平板をほぼ直角に折り曲げるプレス加工を（ロ）という。",
+    "choices": {
+      "ア": "(1)（イ）バーリング・（ロ）クラウン",
+      "イ": "(2)（イ）ヘミング・（ロ）バーリング",
+      "ウ": "(3)（イ）ビーディング・（ロ）クラウン",
+      "エ": "(4)（イ）ビーディング・（ロ）フランジング"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "適切なのは(4)。ひも状の隆起やくぼみを付けるのはビーディング、板の縁をほぼ直角に折り曲げるのはフランジング。",
+    "choiceExplanations": {
+      "ア": "誤り。バーリングは穴の縁を立ち上げる加工で、（イ）のビーディングとは違う。",
+      "イ": "誤り。ヘミングは板端を折り返す加工で、（イ）には当たらない。",
+      "ウ": "誤り。（イ）のビーディングは合うが、（ロ）はクラウンでなくフランジング。",
+      "エ": "正しい。（イ）ビーディング、（ロ）フランジング。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "プレス加工"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.5",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=2",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q06",
+    "qNumber": 6,
+    "question": "金属材料の機械的性質に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 材料が荷重を受けて材料内部に生じる抵抗力を内力という。",
+      "イ": "(2) 引っ張り強さが大きく粘り強さも大きい性質を靭性という。",
+      "ウ": "(3) 鉄鋼材料では、一般に硬さと引っ張り強さが大体比例する。",
+      "エ": "(4) 材料の塑性又は脆性の度合は、硬さによって比較する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。塑性・脆性は変形・破壊時の性質であり、硬さだけで比較できない。",
+    "choiceExplanations": {
+      "ア": "適切。外力に釣り合う内部の抵抗が内力である。",
+      "イ": "適切。強さと粘りを兼ね備える性質が靭性である。",
+      "ウ": "適切。一般的な鋼材では硬さと引張強さに相関がある。",
+      "エ": "不適切。塑性・脆性は伸び、絞り、衝撃値等も含めて評価する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "材料",
+      "機械的性質"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.6",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=3",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q07",
     "qNumber": 7,
     "question": "980MPa～1,500MPa級の超高張力鋼板部品の補修に関する記述として、次の（イ）から（ニ）のうち、適切なものはいくつあるか。（イ）材料の熱感受性が非常に高いことから、加熱修正及び半裁交換を行っても、車体の衝突安全性能には影響がない。（ロ）超高張力鋼板部品の交換を行う際の補修溶接については、熱影響が一番少ないスポット溶接が一般に推奨されている。（ハ）適切なスペックの溶接機・溶接条件でスポット溶接を行わないと、溶接強度が不足する。（ニ）自動車メーカが修理書で示した以外の方法による加熱修正及び半裁交換を原則的に行ってはならない。",
@@ -11931,6 +12473,66 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.7",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=3",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q09",
+    "qNumber": 9,
+    "question": "モノコック・ボデーの構造に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) FF方式のリヤ・ボデーには駆動系がなく、燃料タンクがリヤ・シート下部に装着されるなどの関係から、リヤ・サイド・メンバの位置はFR車より高い位置にある。",
+      "イ": "(2) スリー・ボックス・ボデーには、パーセル・シェルフ・サイド・パネル（両サイド）とアッパ・バック・パネルを通して、左右が連結されるような構造のものが主流となっている。",
+      "ウ": "(3) フロント・ピラーやセンタ・ピラーは、フロントやサイドからの衝突時にキャビンの変形が最小限となるように、断面を大きくとるなどして剛性を高めている。",
+      "エ": "(4) サイド・ボデーの下部は、走行中に生じるボデーの上下方向の曲げやねじり荷重に抵抗するとともに、メーン・フロア下部に受けた負荷をボデー上部に分散させている。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。FF車リヤのサイドメンバ位置をこの理由でFR車より高いと一律にはいえず、原典の構造説明と逆である。",
+    "choiceExplanations": {
+      "ア": "不適切。FFの駆動系配置とリヤサイドメンバ高さを誤って結び付けている。",
+      "イ": "適切。パーセルシェルフ周りの部材が左右を連結し剛性を作る。",
+      "ウ": "適切。ピラー断面を確保し客室変形を抑える。",
+      "エ": "適切。サイド下部は曲げ・ねじりに抵抗し負荷を分散する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "モノコック",
+      "車体構造"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.9",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -12010,6 +12612,66 @@
     ]
   },
   {
+    "id": "jidosha-2026-first-body-q12",
+    "qNumber": 12,
+    "question": "乗用車のモノコック・ボデーをフレーム付きボデーと比較したときの特徴に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 車体質量が軽く、剛性が高い。",
+      "イ": "(2) 騒音、振動などの影響を受けにくい。",
+      "ウ": "(3) 車高を低くし、車体重心を下げることができる。",
+      "エ": "(4) 一体構造のため、高速衝突の際には損傷が複雑になる傾向がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。フレームを介した絶縁が少ない一体構造は、騒音・振動の影響を受けやすい側面がある。",
+    "choiceExplanations": {
+      "ア": "適切。独立フレームが不要で軽く、高い全体剛性を得やすい。",
+      "イ": "不適切。モノコックは音・振動の伝達を受けやすい。",
+      "ウ": "適切。床面と重心を低く設計しやすい。",
+      "エ": "適切。衝撃が一体構造に広く伝わり損傷が複雑化する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "モノコック",
+      "車体構造"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.12",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=4",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q13",
     "qNumber": 13,
     "question": "図は鋼板をプレス加工して曲げたときの加工度と機械的性質の関係を表したものであるが、図中の（イ）から（ハ）の曲線の意味の組み合わせとして、適切なものは次のうちどれか。",
@@ -12075,6 +12737,246 @@
     ]
   },
   {
+    "id": "jidosha-2026-first-body-q14",
+    "qNumber": 14,
+    "question": "モノコック・ボデーのメーン・フロアに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) フロア・パンには、剛性向上のため、多数のビーディングを施すことで防振、防音効果が期待でき、剛性が高くなる分、相当量の制振材（アスファルト・シート）が削減できる。",
+      "イ": "(2) フロント・サイド・メンバ及びリヤ・サイド・メンバに種々の負荷が伝播されることから、曲げやねじりに対して十分耐え得る構造でなくてはならない。",
+      "ウ": "(3) 「ビード・レス」フロアとは、制振材の質量低減による車両軽量化をバランスよく解決するように考えられたものである。",
+      "エ": "(4) フロント・サイド・メンバ及びリヤ・サイド・メンバに伝播される種々の負荷が、サイド・ボデーに効率よく分散できるものでなくてはならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。ビーディングによる剛性向上だけで制振材を大幅削減できるという説明は成り立たず、防振・防音との最適化が必要である。",
+    "choiceExplanations": {
+      "ア": "不適切。ビードを増やせば制振材を相当量削れるという単純な関係ではない。",
+      "イ": "適切。床は前後メンバからの曲げ・ねじり荷重を負担する。",
+      "ウ": "適切。ビードレス構造は制振材量と重量を考慮した設計。",
+      "エ": "適切。荷重をサイドボデーへ分散する構造が必要。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "メーンフロア",
+      "車体構造"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.14",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=5",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q15",
+    "qNumber": 15,
+    "question": "トラックのキャブ構造に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ティルト・キャブのキャブを傾けるための補助装置には、コイル・スプリングやトーション・スプリングが採用されている。",
+      "イ": "(2) ティルト・キャブのアンダ・ボデーの強度・剛性は、主としてシャシ・フレームによって確保されている。",
+      "ウ": "(3) ティルト・キャブのキャブ・フック機構には、走行中にフックが外れないように、セーフティ・ロックが設けられている。",
+      "エ": "(4) フル・フローティング式キャブ・サスペンションは、キャブとシャシ・フレームの間にスプリングを設けて、浮動状態にしたものである。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。ティルトキャブのアンダボデーはキャブ自体の構造で必要な強度・剛性を確保する。シャシフレーム任せではない。",
+    "choiceExplanations": {
+      "ア": "適切。傾動を補助するばねを用いる。",
+      "イ": "不適切。キャブのアンダボデーの強度をシャシフレームが主として確保するわけではない。",
+      "ウ": "適切。走行中の誤解放を防ぐ安全ロックがある。",
+      "エ": "適切。キャブをばねで支持し振動を緩和する方式。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "トラック",
+      "キャブ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.15",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=5",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q16",
+    "qNumber": 16,
+    "question": "ハンマリングに関する記述として、（イ）から（ハ）の文章の正誤の組み合わせとして、適切なものは(1)から(4)のうちどれか。（イ）ほぼ修正を完了した後、損傷面に残っている細かい凹凸を平滑に仕上げる作業をハンマ・オン・ドリー作業という。（ロ）ハンマ・オフ・ドリー作業では、ハンマでたたく面とドリーをあてがう適切な位置を、目視と手の感覚で瞬間的に判断することが要求される。（ハ）ハンマは、小指に力を入れて柄の端のほうを握り、中指と薬指は軽く支える程度に握り、親指と人差し指はハンマの横ぶれを防ぐため、柄の側面に軽く押し当てる。",
+    "choices": {
+      "ア": "(1) （イ）正／（ロ）正／（ハ）正",
+      "イ": "(2) （イ）誤／（ロ）正／（ハ）正",
+      "ウ": "(3) （イ）正／（ロ）誤／（ハ）正",
+      "エ": "(4) （イ）正／（ロ）正／（ハ）誤"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "適切なのは(1)。細かな仕上げのオン・ドリー、成形時のオフ・ドリーの位置判断、柄の保持方法の3記述はいずれも正しい。",
+    "choiceExplanations": {
+      "ア": "適切。三記述ともハンマリング作業の要点に合う。",
+      "イ": "不適切。（イ）の仕上げ作業はオン・ドリーである。",
+      "ウ": "不適切。（ロ）のハンマとドリーの位置判断は必要。",
+      "エ": "不適切。（ハ）の小指側を主に使う保持方法も適切。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "板金",
+      "ハンマリング"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.16",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=6",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q17",
+    "qNumber": 17,
+    "question": "揉み出し板金に関する記述として、次の（イ）から（ニ）のうち、適切なものはいくつあるか。（イ）パネル同士のすき間に特殊な形状のデントツール（ロッド）を差し込んで、てこの原理で裏側からへこみを揉み出すように修正する方法である。（ロ）ひょう害などの小さなへこみに有効な手段である。（ハ）高張力鋼板採用で薄くなった外板の修復には不向きである。（ニ）塗膜をはく離することなしに、へこみを修正する技術である。",
+    "choices": {
+      "ア": "(1) 1つ",
+      "イ": "(2) 2つ",
+      "ウ": "(3) 3つ",
+      "エ": "(4) 4つ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切なのは（イ）（ロ）（ニ）の3つ。塗膜を残して小へこみを裏から押し出す方法で、高張力薄板を一律に不向きとはいえない。",
+    "choiceExplanations": {
+      "ア": "不適切。適切な記述は3つある。",
+      "イ": "不適切。（イ）（ロ）（ニ）の3つを数える。",
+      "ウ": "適切。（ハ）だけが誤り。",
+      "エ": "不適切。薄い外板に不向きとする（ハ）は誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "板金",
+      "デントリペア"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.17",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=6",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q18",
     "qNumber": 18,
     "question": "防錆、防水作業に関する記述として、不適切なものは次のうちどれか。",
@@ -12129,6 +13031,431 @@
       {
         "physicalPage": 6,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=6",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q19",
+    "qNumber": 19,
+    "question": "加熱と冷却による絞りに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 加熱と冷却の原理を応用して絞る方法では、電気絞りが一般的である。",
+      "イ": "(2) 電気絞りを行う場合、鋼板を電気で瞬間的に加熱して膨張させ、次にエア・ダスタ・ガンで急冷して収縮させる。",
+      "ウ": "(3) 加熱に時間がかかると広い範囲に熱が伝わり、全体が膨張するため、加熱時はできるだけ狭い範囲を高温にする。",
+      "エ": "(4) 灸すえにより絞りを行う場合の加熱温度は、900～950℃程度がよいとされている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。灸すえではそのような高温まで加熱すると鋼板の材質を損ないやすく、より低温で局所的に行う。",
+    "choiceExplanations": {
+      "ア": "適切。電気絞りは局所加熱・冷却を利用する。",
+      "イ": "適切。瞬間加熱と冷却で伸びた板を収縮させる。",
+      "ウ": "適切。熱影響を広げないため短時間・狭い範囲で加熱する。",
+      "エ": "不適切。900～950℃は高すぎ、材質変化を招く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "板金",
+      "絞り"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.19",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q20",
+    "qNumber": 20,
+    "question": "トラック・フレームに関する次の文章の（イ）から（ハ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。フレームに生じるき裂のうち、（イ）はフレームの（ロ）端から発生し、負荷が増すにつれて（ロ）部を横切って（ハ）まで進んでいく。",
+    "choices": {
+      "ア": "(1) （イ）花火状き裂／（ロ）ウェブ・セクション／（ハ）フランジ",
+      "イ": "(2) （イ）花火状き裂／（ロ）フランジ／（ハ）ウェブ・セクション",
+      "ウ": "(3) （イ）直線き裂／（ロ）フランジ／（ハ）ウェブ・セクション",
+      "エ": "(4) （イ）直線き裂／（ロ）ウェブ・セクション／（ハ）フランジ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切なのは(3)。直線き裂はフランジ端から生じ、フランジを横切ってウェブ・セクションへ進展する。",
+    "choiceExplanations": {
+      "ア": "不適切。き裂形状・発生部位の双方が異なる。",
+      "イ": "不適切。進展経路は合うが花火状き裂ではない。",
+      "ウ": "適切。直線き裂、フランジ、ウェブ・セクションの順。",
+      "エ": "不適切。フランジとウェブの発生・到達位置が逆。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "トラックフレーム",
+      "き裂"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.20",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q21",
+    "qNumber": 21,
+    "question": "図のように、トラック・フレームのコ型（チャンネル型）断面をロ型（箱型）断面に補強する場合の、次の文章の（a）に当てはまるものとして、適切なものは次のうちどれか。補強材取り付け時の溶接は、フランジ部の端から（a）以上内側で行うこと。",
+    "choices": {
+      "ア": "(1) 6mm",
+      "イ": "(2) 8mm",
+      "ウ": "(3) 10mm",
+      "エ": "(4) 12mm"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "適切なのは(4)。図の補強材を溶接する位置はフランジ端から12mm以上内側とする。",
+    "choiceExplanations": {
+      "ア": "不適切。端部から6mmでは近すぎる。",
+      "イ": "不適切。8mmでは基準の12mmに足りない。",
+      "ウ": "不適切。10mmでも基準より内側への距離が不足する。",
+      "エ": "適切。フランジ端から12mm以上を確保する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "トラックフレーム",
+      "補強"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.21",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 7,
+        "relativePath": "figures/jaspa-2026-first-body-p07.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2026-first-body-q23",
+    "qNumber": 23,
+    "question": "トラック・フレームの整備に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) サイド・メンバの下側フランジ、上側フランジには、付属品取り付けのために穴を開けてはならない。",
+      "イ": "(2) リベットの大きさは、接合する板の厚みによって決めるが、原則として、接合する板の厚さと同じか、それよりも細いものを使用する。",
+      "ウ": "(3) フレームの菱曲がりの修正後は、クロス・メンバとサイド・メンバとの結合部のリベットがゆるんでいる場合が多いので、必ずリベットの点検を行う。",
+      "エ": "(4) ほとんどのフレーム材質は、引っ張り強さ540MPa級の高張力鋼板を使用しているので、加熱修理を必要とする場合は加熱温度に留意し、A1変態点（723℃）以下で行うこと。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。リベット径を接合板厚と同じか細くするという原則はなく、必要なせん断強度を確保する径を選ぶ。",
+    "choiceExplanations": {
+      "ア": "適切。フランジの追加穴は強度低下を招く。",
+      "イ": "不適切。板厚以下の細いリベットを一律に選ぶ基準ではない。",
+      "ウ": "適切。菱曲がり修正後は結合部の緩みを確認する。",
+      "エ": "適切。高張力鋼板の加熱は材質変化に注意して温度を管理する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "トラックフレーム",
+      "整備"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.23",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q25",
+    "qNumber": 25,
+    "question": "ガス溶接に使用する装置等に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ボンベの口金は、酸素用は左ねじ、アセチレン用は右ねじと決められている。",
+      "イ": "(2) ホース・チェック・バルブは、ホースと溶接トーチの接合部に取り付ける安全装置（逆流防止弁）で、酸素、アセチレンの両方に取り付けられている。",
+      "ウ": "(3) 溶接棒の太さは、溶接する母材の厚さによって使い分ける。",
+      "エ": "(4) 自動逆流防止装置（アレスタ）は、高圧ガスに対する自動安全バルブで、酸素及びアセチレン・ガスのいずれのボンベにも用いることができる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。ねじ方向は酸素が右ねじ、アセチレンが左ねじであり、記述は逆。",
+    "choiceExplanations": {
+      "ア": "不適切。酸素と可燃性ガスの口金のねじ方向を取り違えている。",
+      "イ": "適切。両ガス系に逆流防止装置を設ける。",
+      "ウ": "適切。母材厚さに応じた溶接棒径を選ぶ。",
+      "エ": "適切。逆流・逆火の危険に対する安全装置を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ガス溶接",
+      "安全装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.25",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q26",
+    "qNumber": 26,
+    "question": "電気抵抗スポット溶接の溶接ガンに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) トランス内蔵式ガンに用いるための変圧器は、作業者が手で持って作業するため、小型軽量で十分な二次出力容量があることが必要である。",
+      "イ": "(2) トランス分離式ガンは、溶接機本体から取り出された2本の二次ケーブルの先端に取り付ける構造となっている。",
+      "ウ": "(3) トランス内蔵式ガンには、トランス本体の前部に二次電流を通電する溶接アーム・ホルダがあり、この部分に種々の交換アームを装着して使用する。",
+      "エ": "(4) 動力形式には、サーボモータ式、エア式、手加圧式などの種類があるが、現在車体整備事業者に幅広く使用されているのは、主にサーボモータ式である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。車体整備の現場で広く使われる加圧方式をサーボモータ式が主流とするのは誤りで、エア式などが一般的である。",
+    "choiceExplanations": {
+      "ア": "適切。手持ちガンには軽量かつ十分な溶接出力が要る。",
+      "イ": "適切。分離式は本体からの二次ケーブル先端にガンを置く。",
+      "ウ": "適切。交換アームを取り付けて各部の接合に対応する。",
+      "エ": "不適切。サーボモータ式が現場の主流という説明は合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "スポット溶接",
+      "溶接ガン"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.26",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q27",
+    "qNumber": 27,
+    "question": "電気アーク溶接の欠陥に関する記述として、次の（イ）から（ニ）のうち、適切なものはいくつあるか。（イ）溶接電流が高過ぎると起きる現象で、過剰な電流が母材のビードに沿って溝を残し、著しく溶接強度が落ちることをアンダ・カットという。（ロ）オーバ・ラップは、溶接電流が低過ぎると起きる現象である。（ハ）母材が十分に溶け込まないところに、溶接メタルが盛り込まれ、外側に流れ出してしまい、溶け込み不足になる現象をアンダ・カットという。（ニ）溶接棒が湿気をもっていると、溶接時の高熱で水蒸気が発生し、ブロー・ホール（巣穴）発生の原因となる。",
+    "choices": {
+      "ア": "(1) 1つ",
+      "イ": "(2) 2つ",
+      "ウ": "(3) 3つ",
+      "エ": "(4) 4つ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切なのは（イ）（ロ）（ニ）の3つ。（ハ）はアンダカットではなくオーバラップを説明している。",
+    "choiceExplanations": {
+      "ア": "不適切。正しい記述は3つある。",
+      "イ": "不適切。（イ）（ロ）（ニ）を数える。",
+      "ウ": "適切。アンダカット、オーバラップ、ブローホールの説明を区別する。",
+      "エ": "不適切。（ハ）は欠陥名を取り違えている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      9
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "アーク溶接",
+      "溶接欠陥"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.27",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=9",
         "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
       }
     ],
@@ -12315,6 +13642,66 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2026-first-body-q31",
+    "qNumber": 31,
+    "question": "大型車用平行H型（はしご型）フレームを使用した自動車の車体整備に使用する計測器に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) トラム・トラッキング・ゲージは、フレーム下面のサスペンションや伝動装置をまたいだ2点間の測定、ボデーの対角線の測定、ホイール・ベースの測定などができる。",
+      "イ": "(2) トラム・トラッキング・ゲージを用いて、クロス・メンバごとの対角線を測定し、対角線の長さに差があることでフレームの左右曲がりが確認できる。",
+      "ウ": "(3) フレーム・センタリング・ゲージの中央部にダイヤモンド・アタッチメントを直角に取り付け、センタ・ピンとダイヤモンド・アタッチメントのサイト・ピンのずれを見て左右曲がりが確認できる。",
+      "エ": "(4) フレーム・センタリング・ゲージは、左右の幅が調節できる水平バーの中心にセンタ・ピンがあり、伸縮するバーの端にはハンガ・ロッドが備えられている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "不適切なのは(3)。ダイヤモンド・アタッチメントによるサイト・ピンずれは菱曲がりの確認に使うのであり、左右曲がりの確認という説明が誤り。",
+    "choiceExplanations": {
+      "ア": "適切。トラムゲージは離れた基準点間の寸法を測る。",
+      "イ": "適切。対角線の差はフレーム変形の確認に用いる。",
+      "ウ": "不適切。ダイヤモンドアタッチメントは菱曲がりの検出に用いる。",
+      "エ": "適切。センタリングゲージの基本構成を述べている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      10
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "トラックフレーム",
+      "計測器"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.31",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=10",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q32",
     "qNumber": 32,
     "question": "塗装材料に関する記述として、不適切なものは次のうちどれか。",
@@ -12375,6 +13762,66 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2026-first-body-q33",
+    "qNumber": 33,
+    "question": "下塗り塗料のプライマ類に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 樹脂用プライマは、樹脂バンパやスポイラ等に使用される専用プライマで、樹脂素材と中塗り塗料や上塗り塗料との付着性を高める。",
+      "イ": "(2) エポキシ系プライマの主成分は、エポキシ樹脂、防錆顔料、ポリアミド樹脂などで、一般鋼板、アルミ合金などへの付着性には優れるが、防錆力と耐薬品性は維持できない。",
+      "ウ": "(3) ラッカ・プライマの主成分は、ニトロセルロース（硝化綿）とアルキド樹脂で、ラッカ補修用として使用される。",
+      "エ": "(4) ウォッシュ・プライマは、特にアルミ素材に対する付着力がよく、ステンレスや亜鉛鋼板にも効果がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。エポキシ系プライマは付着性に加え防錆性・耐薬品性にも優れる。",
+    "choiceExplanations": {
+      "ア": "適切。樹脂表面への塗膜密着を助ける。",
+      "イ": "不適切。エポキシ系は防錆力と耐薬品性を備える。",
+      "ウ": "適切。ラッカ補修用プライマの組成を示す。",
+      "エ": "適切。ウォッシュプライマは難付着金属の下地に使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      11
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "塗装",
+      "プライマ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.33",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=11",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2026-first-body-q34",
     "qNumber": 34,
     "question": "労働災害を防止するための安全対策として、作業者が注意する事項に関する記述として、不適切なものは次のうちどれか。",
@@ -12423,6 +13870,126 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.34",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=11",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q35",
+    "qNumber": 35,
+    "question": "下塗り塗料のパテ類のうち、「ポリエステル・パテ」に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 速乾性のラッカ・パテで、上塗り塗装前に0.2mm以下の浅い傷などを充てんする場合に使用するもので、グレージング・パテとも呼ばれる。",
+      "イ": "(2) 不飽和ポリエステル樹脂を主剤とし、有機過酸化物を硬化剤とする2液タイプのパテで、3mm以上の深い凹みを充てんする場合に使用する。",
+      "ウ": "(3) 油変性不飽和ポリエステル樹脂を主剤とし、有機過酸化物を硬化剤とする2液タイプのパテで、2mm以下の浅い凹みやペーパー目を充てんする場合に使用する。",
+      "エ": "(4) 不飽和ポリエステル樹脂と顔料を主成分とする2液タイプのパテで、パテ付けの困難な部位や1mm程度のスクラッチ傷の補修に有効である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "適切なのは(3)。油変性不飽和ポリエステル樹脂系の2液パテを浅い凹みやペーパー目の充てんに用いる。",
+    "choiceExplanations": {
+      "ア": "不適切。これはラッカのグレージングパテ。",
+      "イ": "不適切。深い凹み用の厚付けパテの説明である。",
+      "ウ": "適切。油変性ポリエステル系の薄付け用途を示す。",
+      "エ": "不適切。困難部位・小傷に使う別種のパテの説明。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      11
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "塗装",
+      "パテ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.35",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=11",
+        "pdfSha256": "8e824d5f4c06d0db087383868ffd2996e331e28246d42ca4dcb02bf576f91f24"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2026-first-body-q36",
+    "qNumber": 36,
+    "question": "パテに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 不飽和ポリエステル樹脂を主成分とする重合乾燥型のパテ類は、5℃以下の気温では硬化が促進できない状態になるので、強制乾燥が必要である。",
+      "イ": "(2) パテ付け後は、いきなり強制乾燥せず、必ず適切なセッティング時間（予備乾燥時間）をとる。",
+      "ウ": "(3) パテの硬化剤は、その量の過不足があると、付着性不良や硬度不足の原因となる。",
+      "エ": "(4) パテの乾燥状態の確認は、パテの塗膜の薄い箇所のほうが反応が早く進むため、パテの塗膜の厚い箇所で行う。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。パテは薄い部分ほど反応熱が逃げ硬化が遅れやすく、乾燥確認を厚い箇所だけで行うのは危険。",
+    "choiceExplanations": {
+      "ア": "適切。低温では硬化が進みにくく温度管理が必要。",
+      "イ": "適切。強制乾燥前のセッティングを確保する。",
+      "ウ": "適切。硬化剤量の誤りは物性不良を招く。",
+      "エ": "不適切。厚い箇所だけでなく硬化が遅れ得る薄い箇所も確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      11
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "塗装",
+      "パテ乾燥"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "term": "first",
+    "subject": "body",
+    "category": "自動車車体",
+    "examDate": "2026-10-04",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和8年度第1回自動車整備技能登録試験 自動車車体 No.36",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -13200,6 +14767,66 @@
     ],
     "type": "multiple-choice",
     "year": 2025
+  },
+  {
+    "id": "jidosha-2025-second-1-small-written-q11",
+    "qNumber": 11,
+    "question": "圧縮天然ガス（CNG）自動車に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ガソリン・エンジンをベースにした天然ガス専用車では、CNG燃料のためフューエル・ポンプ駆動制御は行われていないが、ガソリン自動車同様にキャニスタ・パージ制御が行われている。",
+      "イ": "(2) 燃温センサは、CNG容器（ボンベ）側か、もしくはエンジン側のどちらか片方に設けられており、いずれの場合も燃料温度検出方法にはサーミスタを用いているのが一般的である。",
+      "ウ": "(3) エンジンが始動すると、CNG容器（ボンベ）側とエンジン側の燃料遮断弁が開き、CNG燃料は低圧のまま5ウェイ・コネクタを通り、手動燃料遮断弁（通常は開）、更に、燃料フィルタを通過し、CNGレギュレータでインジェクタ噴射圧力まで増圧され、各気筒のCNGインジェクタから燃焼室に噴射される。",
+      "エ": "(4) 燃圧センサのうち、容器（ボンベ）側の燃圧センサは、CNG燃料が大量に漏えいしたときに、CNG警告灯を点滅させるとともにCNG容器（ボンベ）側の燃料遮断弁をOFF（閉）にさせる。また、エンジン側の燃圧センサは、CNG燃料の噴射量の制御用としてCNG燃料の圧力を検出している。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "公式正答は(4)。容器側燃圧の監視は大量漏えい時の警告と遮断、エンジン側燃圧は噴射量制御に使われる。",
+    "choiceExplanations": {
+      "ア": "天然ガス専用車にはガソリン蒸発ガスを回収するキャニスタ・パージ制御は不要である。",
+      "イ": "燃温の検出位置は容器側かエンジン側のどちらか片方に限定されるという記述が誤り。",
+      "ウ": "容器のCNGは高圧で供給され、レギュレータは増圧でなく減圧する。さらにCNGは吸気系に噴射される。",
+      "エ": "容器側で漏えいを監視し、エンジン側の圧力で噴射量を補正する説明である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      9
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "CNG",
+      "燃料供給"
+    ],
+    "difficulty": 4,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.11",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=9",
+        "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+      }
+    ],
+    "sourceFigureAssets": []
   },
   {
     "answer": "ア",
@@ -14943,6 +16570,65 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-1-small-written-q44",
+    "qNumber": 44,
+    "question": "防火・防災に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 液体の燃焼のうち蒸発燃焼とは、蒸発によって液面から発生した可燃性気体と空気とが混ざり合った状態のところに火を近づけると燃焼することをいい、燃焼する下限界に達したときの温度を引火点という。",
+      "イ": "(2) 消火器のラベルで黄色のものは、適応火災が普通火災（A火災用）であることを示し、青色のものは、適応火災が電気火災（C火災用）であることを示している。",
+      "ウ": "(3) 消防法によると、アルコールは第1石油類に、重油は第2石油類に、エチレングリコール（不凍液）は第3石油類に、塗料類は第4石油類に分類される。",
+      "エ": "(4) 指定数量の異なる二つ以上の危険物を同一の場所で保管又は取り扱う場合、保管するそれぞれの危険物の数量をその指定数量で割り、それらの数値の合計が1.5未満であれば、指定数量未満として市町村で定める条例に従う。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正答は（1）。液面から蒸発した可燃性蒸気が空気と混合して着火するのが蒸発燃焼であり、着火可能となる最低温度が引火点。",
+    "choiceExplanations": {
+      "ア": "液面からの可燃性蒸気が空気と混ざって火源で燃える説明である。",
+      "イ": "消火器の適応火災表示はA普通火災が白、B油火災が黄、C電気火災が青。黄はAではない。",
+      "ウ": "アルコール類は独立した区分であり、重油は第3石油類など、列挙の分類が一致しない。",
+      "エ": "異なる危険物の指定数量の倍数の合計が1以上なら指定数量以上となる。基準は1.5ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      30
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "法令・安全・環境"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.44",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 30,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=30",
+        "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-1-small-written-q45",
     "qNumber": 45,
     "question": "自動車に関わる環境問題と環境保全への取り組みに関して述べた（イ）から（ハ）の文章の正誤の組み合わせとして、適切なものは(1)から(4)のうちどれか。\n（イ）pH4以上の降雨を酸性雨といい、pH5.6という強酸性雨によって、森林の立ち枯れ、湖沼の生物への影響に加えて、自動車の塗面を侵すなど、自動車にも被害が生じるため、燃料の改良、排出ガスの浄化及び工場排煙のクリーン化などが行われている。\n（ロ）化石燃料の燃焼によって発生する物質の中で、特にNOx、PM、光化学オキシダントなどは、大都市を中心に大気汚染の原因となっており、また、ジーゼル黒煙やアスベストなどの粉じんを吸い込むことによる健康被害も発生していることから、ジーゼル排出ガスの浄化、アスベスト材の使用撤廃などが行われている。\n（ハ）地球温暖化に対応するため、自動車の燃料消費率の向上、クリーン・エネルギ車の開発、エコ・ドライブの励行、使用済自動車解体時やカー・エアコン修理時のフロン大気放出の抑止（回収、再生及び破壊）、R1234yf（HFO-1234yf）への移行などが行われている。",
@@ -15005,6 +16691,65 @@
         "relativePath": "figures/jaspa-2025-second-1-small-written-p30.webp"
       }
     ]
+  },
+  {
+    "id": "jidosha-2025-second-1-small-written-q46",
+    "qNumber": 46,
+    "question": "「道路運送車両法」及び「自動車点検基準」に照らし、別表第5（自家用貨物自動車等の定期点検基準）で点検しなければならない自動車として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 乗車定員11人以上の自家用バス",
+      "イ": "(2) 貨物運送用の検査対象軽自動車のレンタカー",
+      "ウ": "(3) 貨物運送用の普通・小型自動車のレンタカー",
+      "エ": "(4) 貨物軽自動車運送事業用検査対象軽自動車"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "別表第5は自家用貨物自動車等の定期点検基準。貨物運送用の検査対象軽自動車のレンタカーはここに該当する（2）。",
+    "choiceExplanations": {
+      "ア": "定員11人以上の自家用バスは旅客用の区分で、別表第5の貨物車等ではない。",
+      "イ": "貨物運送用の検査対象軽自動車のレンタカーは別表第5の対象。",
+      "ウ": "普通・小型貨物車のレンタカーは別表第5ではなく、別区分の定期点検基準に従う。",
+      "エ": "貨物軽自動車運送事業用の車両は事業用区分に従い、ここでいう自家用貨物車等の別表第5ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      30
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.46",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 30,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=30",
+        "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+      }
+    ],
+    "sourceFigureAssets": []
   },
   {
     "id": "jidosha-2025-second-1-small-written-q47",
@@ -15123,6 +16868,65 @@
       {
         "physicalPage": 31,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=31",
+        "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-1-small-written-q50",
+    "qNumber": 50,
+    "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、四輪の小型自動車の座席ベルト等の基準に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。\n運転者席その他の座席であって、座席の種類が前向きのもの（容易に折り畳むことができる座席で通路に設けられるものを除く。）の座席ベルトには（イ）を備えなければならない。また、（イ）とは、（ロ）座席ベルト等少なくとも乗車人員の腰部の移動を拘束し、かつ、上半身が前方に倒れることを防止することのできるものをいう。",
+    "choices": {
+      "ア": "(1) （イ）第一種座席ベルト／（ロ）二点式",
+      "イ": "(2) （イ）第二種座席ベルト／（ロ）二点式",
+      "ウ": "(3) （イ）第一種座席ベルト／（ロ）三点式",
+      "エ": "(4) （イ）第二種座席ベルト／（ロ）三点式"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "前向き座席に求める第二種座席ベルトは、腰部と上半身を拘束できる三点式座席ベルト等を指す。（4）が適切。",
+    "choiceExplanations": {
+      "ア": "第一種は腰部拘束を基本とし、上半身の前倒れ防止の定義に合わない。",
+      "イ": "二点式では上半身が前方に倒れるのを防げない。",
+      "ウ": "三点式は上半身も拘束するが、その区分は第二種である。",
+      "エ": "第二種と三点式の組み合わせが両方の空欄に合う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      32
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "1-small-written",
+    "category": "一級小型自動車（筆記）",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 一級小型自動車（筆記） No.50",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 32,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=32",
         "pdfSha256": "9f617d58b464c075aafc9bc042b60ac5b41798654846757490f1a7c7d2102b30"
       }
     ],
@@ -21893,6 +23697,70 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-3-chassis-q07",
+    "qNumber": 7,
+    "question": "図に示す車軸懸架式リヤ・アクスル・シャフトに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 半浮動式で、小型のトラックに用いられている。",
+      "イ": "(2) ベアリング・カラーは、リヤ・アクスル・シャフトに圧入されている。",
+      "ウ": "(3) ベアリング・カラーの面取り部は、ホイール側に向けて組み立てる。",
+      "エ": "(4) 半浮動式で、リヤ・アクスル・シャフトはホイールに動力を伝えるとともに、荷重を受ける。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "不適切なのは(3)。図のベアリング・カラーの面取り部は、ホイール側ではなく、デファレンシャル側へ向けて組み付ける。",
+    "choiceExplanations": {
+      "ア": "図の構造は半浮動式で、小型トラックなどで用いられる。",
+      "イ": "カラーはシャフトに圧入してベアリングを保持する。",
+      "ウ": "面取り部はホイール側ではなく、デファレンシャル側へ向ける。",
+      "エ": "半浮動式のシャフトは駆動トルクと車輪荷重を受け持つ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "図に示す車軸懸架式リヤ・アクスル・シャフト"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-chassis",
+    "category": "三級自動車シャシ",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3c.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車シャシ No.7",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3c.pdf#page=3",
+        "pdfSha256": "e7198c0291f5d0b73aa27fe468b7c262fa4ddf1342c031cdf0144c595d03db33"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 3,
+        "relativePath": "figures/jaspa-2025-second-3-chassis-p03.webp"
+      }
+    ]
+  },
+  {
     "id": "jidosha-2025-second-3-chassis-q08",
     "qNumber": 8,
     "question": "車軸懸架式サスペンションと比較した、独立懸架式サスペンションの特徴に関する記述として、不適切なものは次のうちどれか。",
@@ -23334,6 +25202,65 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-3-gasoline-q03",
+    "qNumber": 3,
+    "question": "フライホイール及びリング・ギヤに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) リング・ギヤには、一般に炭素鋼製のスパー・ギヤが用いられる。",
+      "イ": "(2) フライホイールの振れの点検は、ダイヤル・ゲージを用いて測定する。",
+      "ウ": "(3) フライホイールは、燃焼（膨張）によって変化するクランクシャフトの回転力を平均化する働きをする。",
+      "エ": "(4) リング・ギヤは、フライホイールの外周にボルトで固定されている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。リング・ギヤは通常、加熱してフライホイール外周に焼きばめする。",
+    "choiceExplanations": {
+      "ア": "炭素鋼製の平歯車が用いられる。",
+      "イ": "振れはダイヤル・ゲージで測る。",
+      "ウ": "慣性で回転変動を平滑化する。",
+      "エ": "ボルト固定ではなく焼きばめが一般的。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "フライホイール"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=2",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-3-gasoline-q04",
     "qNumber": 4,
     "question": "図に示すクランクシャフトのAからDのうち、クランク・ピンを表すものとして、適切なものは次のうちどれか。",
@@ -23396,6 +25323,66 @@
         "relativePath": "figures/jaspa-2025-second-3-gasoline-p02.webp"
       }
     ]
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q05",
+    "qNumber": 5,
+    "question": "ガソリン・エンジンに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 熱勘定とは、有効な仕事に変えられた熱量と、供給された燃料の発熱量との比をいう。",
+      "イ": "(2) ノッキングの害の一つに、異音の発生がある。",
+      "ウ": "(3) 燃料蒸発ガスとは、フューエル・タンクなどの燃料装置から燃料が蒸発し、大気中に放出されるガスをいう。",
+      "エ": "(4) 一般に始動時、高負荷時などには、理論空燃比より濃い混合気が必要となる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。有効仕事への変換熱量を燃料発熱量で割るのは熱効率。熱勘定は供給熱量の使途を配分して表す。",
+    "choiceExplanations": {
+      "ア": "この比率は熱効率の定義。",
+      "イ": "ノッキングは金属的な異音を伴う。",
+      "ウ": "燃料装置からの蒸発成分を指す。",
+      "エ": "始動時や高負荷時は濃い混合気が必要。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "熱効率",
+      "燃焼"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.5",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=3",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
   },
   {
     "id": "jidosha-2025-second-3-gasoline-q06",
@@ -23511,6 +25498,242 @@
       {
         "physicalPage": 3,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=3",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q08",
+    "qNumber": 8,
+    "question": "全流ろ過圧送式潤滑装置に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) オイル・パン内部のバッフル・プレートは、オイル・パン底部にたまった鉄粉を吸着する働きがある。",
+      "イ": "(2) トロコイド式オイル・ポンプのアウタ・ロータの山とインナ・ロータの山とのすき間をサイド・クリアランスという。",
+      "ウ": "(3) オイル・ポンプのリリーフ・バルブは、ポンプから圧送されるオイルの圧力が規定値以上になると余分なオイルをオイル・パンなどに戻す。",
+      "エ": "(4) オイル・プレッシャ・スイッチは、油圧が規定値以上になると、コンビネーション・メータ内のオイル・プレッシャ・ランプを点灯させる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正しいのは(3)。リリーフ・バルブは過大な油圧を逃がす。",
+    "choiceExplanations": {
+      "ア": "バッフルは油面の揺動を抑える。",
+      "イ": "そのすき間はチップ・クリアランス。",
+      "ウ": "規定圧以上で余剰油を戻す。",
+      "エ": "油圧低下時に警告ランプを点灯させる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "潤滑装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.8",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=3",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q09",
+    "qNumber": 9,
+    "question": "ワックス・ペレット型サーモスタットに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) サーモスタットの取り付け位置による水温制御の方法には、出口制御式と入口制御式とがある。",
+      "イ": "(2) 冷却水温度が低いときは、スプリングのばね力によってバルブは開いている。",
+      "ウ": "(3) 冷却水温度が低くなると、液体のワックスが固体となって収縮し、圧縮されていた合成ゴムは元の状態に戻る。",
+      "エ": "(4) ジグル・バルブは、冷却水の循環系統内に残留している空気がない場合、浮力と水圧により閉じている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。低温時、サーモスタットの主バルブはばね力で閉じ、ラジエータへの流れを抑える。",
+    "choiceExplanations": {
+      "ア": "入口・出口制御式がある。",
+      "イ": "低温時は主バルブが閉じる。",
+      "ウ": "冷えるとワックスが収縮する。",
+      "エ": "ジグル・バルブはエア抜きに用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "冷却装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.9",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=3",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q10",
+    "qNumber": 10,
+    "question": "エア・クリーナに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エレメントが汚れて目詰まりを起こすと吸入空気量が減少し、有害排気ガスが発生する原因になる。",
+      "イ": "(2) 吸気経路の途中に設けられたレゾネータは、共鳴効果を利用して吸気騒音を小さくする。",
+      "ウ": "(3) エンジンに吸入される空気は、エレメントを通過することによってごみなどが取り除かれる。",
+      "エ": "(4) ビスカス式エレメントの清掃は、エレメントの内側（空気の流れの下流側）から圧縮空気を吹き付けて行う。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。ビスカス式エレメントは圧縮空気で清掃せず、交換する。",
+    "choiceExplanations": {
+      "ア": "目詰まりによる空気不足は排気を悪化させる。",
+      "イ": "レゾネータは吸気騒音を下げる。",
+      "ウ": "エレメントが吸気中のごみを除く。",
+      "エ": "ビスカス式は圧縮空気清掃の対象ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "吸気系"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.10",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=4",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q11",
+    "qNumber": 11,
+    "question": "電子制御式燃料噴射装置に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) チャコール・キャニスタは、燃料蒸発ガスが大気中に放出されるのを防止している。",
+      "イ": "(2) プレッシャ・レギュレータは、インジェクタのソレノイド・コイルへの通電時間を制御している。",
+      "ウ": "(3) インジェクタのソレノイド・コイルに電流が流れると、ニードル・バルブが全開位置に移動し、燃料が噴射される。",
+      "エ": "(4) くら型のフューエル・タンクでは、ジェット・ポンプによりサブ室からメーン室に燃料を移送している。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。レギュレータは燃料圧を調整し、通電時間はECUが制御する。",
+    "choiceExplanations": {
+      "ア": "蒸発ガスを吸着して大気放出を防ぐ。",
+      "イ": "燃圧調整用であり通電時間を制御しない。",
+      "ウ": "通電でニードルが開き噴射する。",
+      "エ": "ジェット・ポンプでサブ室から移送する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "燃料噴射"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.11",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=4",
         "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
       }
     ],
@@ -23876,6 +26099,124 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-3-gasoline-q19",
+    "qNumber": 19,
+    "question": "電子制御装置に用いられるセンサに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 電子制御式スロットル装置のスロットル・ポジション・センサは、アクセル・ペダルの踏み込み角度を検出している。",
+      "イ": "(2) 熱線式エア・フロー・メータの出力電圧は、吸入空気量が少ないほど高くなる。",
+      "ウ": "(3) バキューム・センサの圧力信号の電圧特性は、インテーク・マニホールド圧力が真空から大気圧に近付くほど出力電圧が大きくなる。",
+      "エ": "(4) 空燃比センサは、インテーク・マニホールドに取り付けられている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "正しいのは(3)。圧力センサの出力はマニホールド圧が高くなると上がる。",
+    "choiceExplanations": {
+      "ア": "スロットル・ポジション・センサは弁開度を検出する。",
+      "イ": "吸気量が増えるほど出力が高くなる。",
+      "ウ": "真空から大気圧へ近付くと出力電圧が上がる。",
+      "エ": "空燃比センサは排気系に取り付ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "センサ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.19",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=6",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q20",
+    "qNumber": 20,
+    "question": "半導体に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 真性半導体は、シリコンやゲルマニウムに他の原子をごく少量加えたものである。",
+      "イ": "(2) 発光ダイオードは、順方向の電圧を加えて電流を流すと発光するものである。",
+      "ウ": "(3) IC（集積回路）は、「はんだ付けによる故障が少ない」、「超小型化が可能になる」、「消費電力が少ない」などの特長がある。",
+      "エ": "(4) N型半導体は、自由電子が多くあるようにつくられた不純物半導体である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。真性半導体は意図的に不純物を加えていない高純度の半導体である。",
+    "choiceExplanations": {
+      "ア": "不純物を加えたものは不純物半導体。",
+      "イ": "LEDは順方向通電で発光する。",
+      "ウ": "集積化で小型・低消費電力化できる。",
+      "エ": "N型は自由電子を主な担体とする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "半導体"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.20",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=6",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-3-gasoline-q21",
     "qNumber": 21,
     "question": "図に示すベルト伝達機構において、Aのプーリが600min⁻¹で回転しているとき、Bのプーリの回転速度として、適切なものは次のうちどれか。ただし、滑り及び機械損失はないものとして計算しなさい。なお、図中の（　）内の数値はプーリの有効半径を示します。A：60mm、B：90mm、C：75mm。",
@@ -23994,6 +26335,65 @@
       {
         "physicalPage": 6,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=6",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-gasoline-q23",
+    "qNumber": 23,
+    "question": "潤滑剤に用いられるグリースに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) グリースは、常温では半固体状であるが、潤滑部が作動し始めると摩擦熱で徐々に柔らかくなる。",
+      "イ": "(2) リチウム石けんグリースは、ウォータ・ポンプなどに用いられ、耐水性に優れていることが第一条件である。",
+      "ウ": "(3) カルシウム石けんグリースは、マルチパーパス・グリースともいわれている。",
+      "エ": "(4) 石けん系のグリースには、ベントン・グリースやシリカゲル・グリースなどがある。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しいのは(1)。グリースは半固体状で、作動・温度上昇により流動性が増す。",
+    "choiceExplanations": {
+      "ア": "作動で柔らかくなり潤滑面に広がる。",
+      "イ": "ウォータ・ポンプ用など耐水性重視はカルシウム石けん系が代表。",
+      "ウ": "マルチパーパスはリチウム石けん系が代表。",
+      "エ": "ベントン・シリカゲルは非石けん系増ちょう剤。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "グリース"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.23",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=7",
         "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
       }
     ],
@@ -24183,6 +26583,65 @@
     ]
   },
   {
+    "id": "jidosha-2025-second-3-gasoline-q27",
+    "qNumber": 27,
+    "question": "鉛バッテリの充電に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 急速充電時の最大電流値は、充電しようとするバッテリの定格容量（Ah）の数値にアンペア（A）をつけた値である。",
+      "イ": "(2) 充電中は、電解液の温度が45℃（急速充電の場合は55℃）を超えないように注意する。",
+      "ウ": "(3) 定電流充電法では、一般に定格容量の1/10程度の電流で充電を行う。",
+      "エ": "(4) 補充電とは、放電状態にあるバッテリを、短時間でその放電量の幾らかを補うために、大電流（定電流充電の数倍～十倍程度）で充電を行う方法である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。大電流で短時間充電するのは急速充電の説明。補充電とは使用で失われた電気量を補う充電。",
+    "choiceExplanations": {
+      "ア": "急速充電時の最大電流の目安。",
+      "イ": "充電中の液温上昇に注意する。",
+      "ウ": "定電流は容量の約1/10を目安とする。",
+      "エ": "大電流短時間の説明は急速充電。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "バッテリ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-gasoline",
+    "category": "三級自動車ガソリン・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ガソリン・エンジン No.27",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=8",
+        "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-3-gasoline-q28",
     "qNumber": 28,
     "question": "「道路運送車両法」に照らし、次の文章の（　）に当てはまるものとして、適切なものはどれか。自動車の使用者は、自動車検査証記録事項について変更があったときは、その事由があった日から（　）以内に、当該変更について、国土交通大臣が行う自動車検査証の変更記録を受けなければならない。",
@@ -24361,6 +26820,66 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-3-diesel-q01",
+    "qNumber": 1,
+    "question": "ディーゼル・エンジンの燃焼に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ディーゼル・エンジンの熱効率は、約20％～25％である。",
+      "イ": "(2) ガソリン・エンジンと比較して、圧縮比は大きい（高い）。",
+      "ウ": "(3) 1kgの軽油を完全燃焼させるのに必要な空気の質量は、理論上約15kgである。",
+      "エ": "(4) エンジン自体の吸気の吸い込み状況の良否を比較する尺度として、体積効率がある。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。ディーゼルは高い圧縮比で膨張比も大きく、一般にガソリンより高い熱効率を得る。約20～25％はディーゼルの値として低すぎる。",
+    "choiceExplanations": {
+      "ア": "高圧縮比による高い熱効率と合わず、約20～25％は低すぎる。",
+      "イ": "自己着火に必要な高温を得るため圧縮比が高い。",
+      "ウ": "軽油1kgの理論空気量はおよそ15kg。",
+      "エ": "体積効率は吸気充填の良否を示す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "燃焼",
+      "熱効率"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.1",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=2",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-3-diesel-q02",
     "qNumber": 2,
     "question": "着火順序が1－3－4－2の4サイクル直列4シリンダ・エンジンにおいて、第4シリンダが圧縮行程の上死点であり、この位置からクランクシャフトを回転方向に1回転させたときに、吸入行程の下死点になるシリンダとして、適切なものは次のうちどれか。",
@@ -24407,6 +26926,124 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.2",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=2",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q03",
+    "qNumber": 3,
+    "question": "ディーゼル・ノックが発生する原因として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 燃料の噴射時期が早過ぎるとき。",
+      "イ": "(2) エンジンの圧縮圧力が高いとき。",
+      "ウ": "(3) 燃料が噴射されてから着火するまでに噴射された燃料の気化が悪いとき。",
+      "エ": "(4) 噴射始めにできた可燃混合気が、燃焼時において急激に燃焼し、異常に圧力が上昇したとき。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。圧縮圧力が高いと着火遅れが短くなり、ディーゼル・ノックを抑える方向に働く。",
+    "choiceExplanations": {
+      "ア": "噴射時期が早すぎると着火遅れ中の燃料が増え、ノックの要因となる。",
+      "イ": "高い圧縮圧力は着火を促進し、着火遅れを短くする。",
+      "ウ": "気化不良は着火遅れを長くし、ノックの要因となる。",
+      "エ": "予混合燃料の急激な燃焼と圧力上昇がノックの本態。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ディーゼルノック"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=2",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q04",
+    "qNumber": 4,
+    "question": "ディーゼル・エンジンの排出ガスに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) PM（粒子状物質）は、黒煙を主成分とする混合物である。",
+      "イ": "(2) DPF（ディーゼル微粒子除去装置）は、NOx（窒素酸化物）を減少させる。",
+      "ウ": "(3) ブローバイ・ガスに含まれる主な有害物質は、CO（一酸化炭素）である。",
+      "エ": "(4) 尿素SCRシステム（排気ガス後処理装置）は、PMを減少させる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しいのは(1)。DPFはPM、尿素SCRはNOxをそれぞれ主な対象とする。",
+    "choiceExplanations": {
+      "ア": "適切。PMはすすなどの黒煙成分を主体とする。",
+      "イ": "不適切。DPFの主な除去対象はPM。",
+      "ウ": "不適切。ブローバイ・ガスには未燃炭化水素などが含まれる。",
+      "エ": "不適切。尿素SCRの主な低減対象はNOx。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "排出ガス"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.4",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -24609,6 +27246,124 @@
     "sourceFigureAssets": []
   },
   {
+    "id": "jidosha-2025-second-3-diesel-q08",
+    "qNumber": 8,
+    "question": "シリンダ・ブロック及びシリンダ・ライナに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 湿式ライナの外周面下部には、冷却水漏れ防止用のリング状のゴム・パッキンが取り付けられている。",
+      "イ": "(2) 乾式ライナは、特殊鋳鉄製の薄い円筒状のもので、シリンダに圧入または挿入されている。",
+      "ウ": "(3) 一般にシリンダ・ライナ上面は、シリンダ・ブロック上面と同じ高さに組み付ける。",
+      "エ": "(4) シリンダ・ブロックには、一般に特殊鋳鉄が用いられる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "不適切なのは(3)。ライナ上面の突出量には指定があり、単純にブロック上面と同じ高さにはしない。",
+    "choiceExplanations": {
+      "ア": "湿式ライナ下部のシールが冷却水漏れを防ぐ。",
+      "イ": "乾式ライナは薄い鋳鉄製円筒をブロックに組み込む。",
+      "ウ": "上面は規定の突出量で組み付け、同じ高さとは限らない。",
+      "エ": "ブロックには鋳鉄が一般的に用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "シリンダライナ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.8",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=3",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q09",
+    "qNumber": 9,
+    "question": "エア・クリーナに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エア・クリーナは、エンジンの吸入空気騒音を低減する役目もしている。",
+      "イ": "(2) ビスカス式エレメントは、定期的に圧縮空気を吹き付けて清掃を行う必要がある。",
+      "ウ": "(3) エア・クリーナのエレメントが目詰まりを起こすと、ブローバイ・ガス発生の原因となる。",
+      "エ": "(4) ダスト・アンローダ・バルブは、排気ガスの圧力を利用して自動的にごみや水を排出する装置である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "正しいのは(1)。エア・クリーナは異物除去に加え吸気騒音の低減にも寄与する。",
+    "choiceExplanations": {
+      "ア": "吸気騒音の低減作用がある。",
+      "イ": "ビスカス式は圧縮空気による清掃を行わず交換する。",
+      "ウ": "目詰まりは吸気抵抗を増やすが、ブローバイ・ガスの直接原因ではない。",
+      "エ": "ダスト・アンローダは吸気系のごみ・水を排出し、排気圧で動くものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "吸気系"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.9",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=3",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
     "id": "jidosha-2025-second-3-diesel-q10",
     "qNumber": 10,
     "question": "ピストン及びピストン・リングの組み付けに関する記述として、不適切なものは次のうちどれか。",
@@ -24667,6 +27422,71 @@
       }
     ],
     "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q11",
+    "qNumber": 11,
+    "question": "図に示すギヤ式オイル・ポンプに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) リリーフ・バルブは、オイル・ストレーナが詰まると作動する。",
+      "イ": "(2) ギヤの歯先とポンプ・ボデーとの隙間の点検には、シックネス・ゲージを用いる。",
+      "ウ": "(3) ドライブ・ギヤとドリブン・ギヤの回転により、ギヤの吸入口に発生する負圧によってオイルを吸入する。",
+      "エ": "(4) ドライブ・ギヤ及びドリブン・ギヤの側面とポンプ・カバーとの隙間が大きくなると、ポンプの性能が著しく低下する。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "不適切なのは(1)。リリーフ・バルブは吐出圧力が規定を超えた際に開くもので、ストレーナの詰まりで作動するものではない。",
+    "choiceExplanations": {
+      "ア": "リリーフ・バルブは過大な油圧を逃がす。",
+      "イ": "歯先とボデーの隙間測定にはシックネス・ゲージを使う。",
+      "ウ": "ギヤ回転による吸入口の負圧でオイルを吸い込む。",
+      "エ": "側面隙間の拡大は内部漏れを増やし吐出性能を下げる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "潤滑",
+      "オイルポンプ"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.11",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=4",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "relativePath": "figures/jaspa-2025-second-3-diesel-p04.webp"
+      }
+    ]
   },
   {
     "id": "jidosha-2025-second-3-diesel-q12",
@@ -24733,6 +27553,129 @@
     ]
   },
   {
+    "id": "jidosha-2025-second-3-diesel-q13",
+    "qNumber": 13,
+    "question": "4サイクル直列4シリンダ・エンジン用の分配型インジェクション・ポンプに関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。エンジンの（イ）が2回転すると、ドライブ・シャフトは1回転し、プランジャは（ロ）往復運動する。",
+    "choices": {
+      "ア": "(1) （イ）クランクシャフト／（ロ）4回",
+      "イ": "(2) （イ）クランクシャフト／（ロ）8回",
+      "ウ": "(3) （イ）カムシャフト／（ロ）4回",
+      "エ": "(4) （イ）カムシャフト／（ロ）8回"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "4サイクルではクランクシャフト2回転に対しポンプ駆動軸は1回転し、4シリンダ分の噴射のためプランジャは4往復する。",
+    "choiceExplanations": {
+      "ア": "クランクシャフト2回転、プランジャ4往復で正しい。",
+      "イ": "駆動軸1回転で8回ではなく4回往復する。",
+      "ウ": "基準はカムシャフト2回転ではなくクランクシャフト2回転。",
+      "エ": "基準軸と往復回数の両方が誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "分配型噴射ポンプ"
+    ],
+    "difficulty": 3,
+    "isCalculation": true,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.13",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=5",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q14",
+    "qNumber": 14,
+    "question": "図に示す列型インジェクション・ポンプのデリバリ・バルブに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) シート部は、燃料の吸い戻しを行う働きをする。",
+      "イ": "(2) 図のaをピストン部による吸い戻しストロークと呼ぶ。",
+      "ウ": "(3) デリバリ・バルブは、プランジャで加圧された燃料の圧力が17MPa～23MPa程度に達すると開く。",
+      "エ": "(4) デリバリ・バルブは、デリバリ・バルブ・スプリングのばね力により開く。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正しいのは(2)。図のaはバルブ着座前にピストン部が燃料を引き戻す移動量を示す。",
+    "choiceExplanations": {
+      "ア": "吸い戻しはシート部ではなくピストン部による。",
+      "イ": "aはピストン部による吸い戻しストローク。",
+      "ウ": "17～23MPaはここでいうデリバリ・バルブの開弁圧ではない。",
+      "エ": "開弁は燃料圧による。ばね力は閉弁方向に働く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "列型噴射ポンプ"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.14",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=5",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 5,
+        "relativePath": "figures/jaspa-2025-second-3-diesel-p05.webp"
+      }
+    ]
+  },
+  {
     "id": "jidosha-2025-second-3-diesel-q15",
     "qNumber": 15,
     "question": "コモンレール式高圧燃料噴射装置のコモンレールに関する記述として、不適切なものは次のうちどれか。",
@@ -24786,6 +27729,124 @@
       {
         "physicalPage": 5,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=5",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q16",
+    "qNumber": 16,
+    "question": "Vベルトと比べたときの、Vリブド・ベルトの特徴に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 張力低下が少ない。",
+      "イ": "(2) 耐屈曲性に優れているが、耐疲労性は劣る。",
+      "ウ": "(3) 伝達効率が高い。",
+      "エ": "(4) ベルト断面が薄い。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。Vリブド・ベルトは薄く柔軟で、耐屈曲性に加え耐疲労性にも優れる。",
+    "choiceExplanations": {
+      "ア": "Vリブド・ベルトは張力低下が比較的少ない。",
+      "イ": "耐疲労性も優れ、劣るという説明は誤り。",
+      "ウ": "複数リブで接触し、伝達効率が高い。",
+      "エ": "薄い断面により小径プーリにも対応する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ベルト"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.16",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=5",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q17",
+    "qNumber": 17,
+    "question": "鉛バッテリに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 自己放電の程度は、電解液の比重及び温度が高いほど多くなる。",
+      "イ": "(2) 電解液は、硫酸と水を混合した希硫酸である。",
+      "ウ": "(3) 電解液の不足は、極板のサルフェーションやセパレータの劣化の原因となる。",
+      "エ": "(4) 完全充電状態のときの電解液の比重は、液温20℃に換算して1.220である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "不適切なのは(4)。完全充電時の電解液比重は20℃換算で約1.280が目安で、1.220は低い。",
+    "choiceExplanations": {
+      "ア": "高比重・高温ほど自己放電が増える。",
+      "イ": "鉛バッテリの電解液は希硫酸。",
+      "ウ": "液不足は極板露出などによる劣化を招く。",
+      "エ": "完全充電の比重は約1.280で、1.220ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "バッテリ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.17",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=6",
         "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
       }
     ],
@@ -24896,6 +27957,65 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.19",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=6",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q20",
+    "qNumber": 20,
+    "question": "予熱装置に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) インテーク・エア・ヒータ式予熱装置は、吸入空気を暖めて始動を容易にするものである。",
+      "イ": "(2) 電熱式インテーク・エア・ヒータでは、吸入空気の温度に応じて、予熱時間を制御している。",
+      "ウ": "(3) グロー・プラグは、燃焼室に向かってシリンダ・ヘッドに取り付けられており、寒冷時の始動を容易にしている。",
+      "エ": "(4) グロー・プラグの点検において、抵抗を測定したときに抵抗値が無限大であれば断線しているので、グロー・プラグの交換が必要である。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。予熱時間は冷却水温など始動時のエンジン状態に応じて制御され、吸入空気温度だけで決める説明は誤り。",
+    "choiceExplanations": {
+      "ア": "吸気を加熱して低温始動を助ける。",
+      "イ": "予熱時間を単純に吸入空気温度で制御するという説明が誤り。",
+      "ウ": "グロー・プラグは燃焼室付近を加熱する。",
+      "エ": "抵抗無限大は断線を示し交換対象となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "予熱装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.20",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -25144,6 +28264,65 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.24",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=7",
+        "pdfSha256": "d8aa5a5f348ac2e09e8b1c41948dac27d04c0718bece57931e44495464d9264a"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-diesel-q26",
+    "qNumber": 26,
+    "question": "燃料（軽油）に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 一般に軽油は、着火点が250℃～350℃で、やや黄色味を帯びている。",
+      "イ": "(2) 寒冷地では、一般に流動点の低い3号又は特3号が用いられている。",
+      "ウ": "(3) 軽油は、揮発性に優れ、引火点が低く、オクタン価が高いことが要求される。",
+      "エ": "(4) 流動点とは、軽油を静止させ冷却したときに流動し得る最低の温度のことである。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "不適切なのは(3)。軽油にはディーゼル燃料として着火性を示すセタン価が重要で、オクタン価はガソリンの耐ノック性指標。",
+    "choiceExplanations": {
+      "ア": "軽油の着火点と外観についての説明。",
+      "イ": "低温で流れる3号・特3号を寒冷地で用いる。",
+      "ウ": "軽油に要求されるのは高いセタン価などで、高オクタン価ではない。",
+      "エ": "流動点は冷却時に流動できる最低温度。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "軽油"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.26",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -25560,6 +28739,65 @@
     "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
     "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
     "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=2",
+        "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-3-motorcycle-q04",
+    "qNumber": 4,
+    "question": "トロコイド式（ロータリ式）オイル・ポンプの構成部品として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ポンプ・ボデー",
+      "イ": "(2) ポンプ・シャフト",
+      "ウ": "(3) バイパス・バルブ",
+      "エ": "(4) インナ・ロータ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "トロコイド式ポンプの基本部品はボデー、シャフト、インナ・ロータなどで、バイパス・バルブは構成部品ではない。",
+    "choiceExplanations": {
+      "ア": "ポンプ・ボデーはロータを収める。",
+      "イ": "ポンプ・シャフトはロータを駆動する。",
+      "ウ": "バイパス・バルブはオイル・フィルタの目詰まり等による差圧上昇時に油を迂回させるための弁で、トロコイド式ポンプの基本構成部品ではない。",
+      "エ": "インナ・ロータはトロコイド式の要部である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "トロコイド式（ロータリ式）オイル・ポンプの構成部品として"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "3-motorcycle",
+    "category": "三級２輪自動車",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.4",
     "officialQuestionStatus": "normal",
     "lastUpdated": "2026-10-11",
     "permissionVerified": false,
@@ -27122,6 +30360,65 @@
         "physicalPage": 8,
         "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=8",
         "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2025-second-electrical-q01",
+    "qNumber": 1,
+    "question": "原子に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1)原子は、1個の原子核と複数の電子で構成されている。",
+      "イ": "(2)原子核は（－）電気を、電子は（＋）電気をもっている。",
+      "ウ": "(3)中性の物質から電子が飛び出すと物質は（＋）となり、反対に電子が飛び込めば（－）となる。",
+      "エ": "(4)自由電子とは、原子を構成している電子のうち、一番外側の軌道を回っている電子をいう。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "不適切なのは(2)。原子核は陽子に由来する正の電荷をもち、電子は負の電荷をもつ。電子の出入りによる帯電もこの符号で説明できる。",
+    "choiceExplanations": {
+      "ア": "試験では原子核と電子から成る構造を述べた適切な記述として扱われている。ただし電子数は元素によって異なり、中性の水素原子の電子は1個なので、すべての原子が複数の電子を持つわけではない。",
+      "イ": "不適切。電荷の符号が逆で、原子核は正、電子は負である。",
+      "ウ": "正しい。負電荷の電子を失うと正、受け取ると負に帯電する。",
+      "エ": "試験では適切な記述として扱われている。ただし厳密には、最外殻の電子は価電子であり、そのうち原子への束縛を離れて物質中などを自由に移動できる電子を自由電子という。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "電気基礎"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "electrical",
+    "category": "自動車電気装置",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_el.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 自動車電気装置 No.1",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_el.pdf#page=2",
+        "pdfSha256": "8dc166f772be0d0ecda89cca7f999b886c7fe27cca80ccdb9f0f64f8820b0e0b"
       }
     ],
     "sourceFigureAssets": []

@@ -8,6 +8,9 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
+import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
+import continuationCandidates from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json";
+import continuationScope from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-remaining-register.json";
 import official from "@/data/qualification-staging/automotive/latest-two/official-answers.json";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -21,6 +24,28 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
 
 describe("recovered automotive release", () => {
+  it("admits the exact continuation candidates only with matching independent PASS receipts", () => {
+    const scope = new Set(continuationScope.rows.map((row) => row.id));
+    expect(scope.size).toBe(85);
+    expect(new Set(continuationCandidates.expectedIds)).toEqual(scope);
+    expect(new Set(continuationCandidates.writtenOriginals.map((q) => q.id))).toEqual(scope);
+    const admitted = reviewed.filter((q) => scope.has(q.id));
+    expect(admitted).toHaveLength(continuation.newGradableOriginals);
+    for (const q of admitted) {
+      const binding = recovery.rows.find((row) => row.id === q.id)!;
+      const receipt = JSON.parse(fs.readFileSync(path.join(process.cwd(), binding.evidencePath), "utf8"));
+      expect(receipt.model, q.id).toBe("gpt-6-astra");
+      const decision = receipt.rows.find((row: { id: string }) => row.id === q.id);
+      expect(decision.verdict, q.id).toBe("PASS");
+      expect(decision.candidateSha256, q.id).toBe(binding.candidateSha256);
+      expect(decision.answerChecked && decision.allFourExplanationsChecked, q.id).toBe(true);
+      expect(decision.sourcePagesChecked, q.id).toEqual(expect.arrayContaining(q.sourcePages));
+    }
+    for (const id of [...continuation.remainingIds, ...continuation.referenceIds]) {
+      expect(admitted.some((q) => q.id === id), id).toBe(false);
+    }
+    expect(admitted.length + continuation.remainingIds.length + continuation.referenceIds.length).toBe(85);
+  });
   it("connects all 11 separate qualifications through eager and lazy registries", async () => {
     expect(metadata).toHaveLength(11);
     const directory = getHomeDirectory().find((domain) => domain.id === "automotive")!;

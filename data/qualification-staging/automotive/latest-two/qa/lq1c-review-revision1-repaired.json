@@ -1,0 +1,105 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent revision-1 review of ONLY the five IDs in lq1c-revision1-repaired-ids.json against the NEW lq1c-candidates.json and revision delta. Verdicts apply to supplied candidates, not proposed replacements.",
+  "limitations": [
+    "All five original source PNG pages and the 2026 official answer-sheet PNG were visually checked in this follow-up. Supplementary scanned JASPA PDFs were rendered in memory and visually checked; no source files were modified.",
+    "sourcePagesChecked identifies pages of the target examination; supplementary document pages are identified in findings.source. All prose is English ASCII and choice labels are JSON Unicode escapes.",
+    "These are non-calculation questions. Quantitative assertions about coolant concentration and ignition temperature were checked against product data, not treated as universal constants."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-diesel-q01",
+      "candidateSha256": "0d198d65731f5ceb01ef5be8fccf15ea7156ddf0e6afc9334030c88ea0ac1318",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        2,
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation,choiceExplanations.\u30a8",
+          "issue": "Official target answer 1 and all four source options agree. Explanations 1-3 correctly distinguish CO, SOF and NOx. The repair correctly locates pre-injection close to the main injection and avoids a universal denial of HC effects. However, it newly asserts PM reduction. JASPA 2024-second 2-diesel Q11(2), printed p6, uses the same ignition-delay/PM/noise statement; its official answer is 2 in an incorrect-statement question. Therefore the new PM assertion cannot be accepted as the intended textbook distinction. Remove PM rather than silently substituting another unverified pollutant.",
+          "replacement": {
+            "explanation": "Option 1 is appropriate. With excess air, a diesel engine produces relatively little CO. SOF comprises soluble organic material derived from unburned fuel and lubricating oil. NOx forms mainly through reactions of nitrogen and oxygen at high combustion temperatures. In the split-injection terminology used here, pre-injection closely precedes the main injection, shortens its ignition delay and helps reduce combustion noise.",
+            "choiceExplanations.\u30a8": "Officially incorrect. In the terminology used by this examination, pre-injection closely precedes the main injection and shortens its ignition delay; distinguish it from the earlier pilot injection. Describe its ignition-delay and combustion-noise roles rather than defining it as HC reduction. This does not deny operating-condition-dependent effects on HC. Do not add a PM-reduction claim: the corresponding JASPA March 2025 question identifies that statement as incorrect."
+          },
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2024/20250323_2d.pdf p6 Q11 diagram and option 2; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2024/20250323_kai.pdf p1 column 22 Q11=2; https://kiroku.bufsiz.jp/gijyu/H25/gat/25-11fuso.pdf (Mitsubishi Fuso manufacturer material, public mirror; pre-injection noise-reduction purpose)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q12",
+      "candidateSha256": "a0e674ebe0bf923cdfb3600cdcd8ddec443e509e766e87ccf360a2948354b6c8",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanations distinguish radial journal support from axial thrust restraint and expressly acknowledge coexistence. They no longer insert only into the original option or deny all thrust bearings. This is supportable for the conventional bearing arrangement addressed here, not a claim that every turbo uses journal bearings. Intercooler density increase, wastegate bypass and low-flow variable-nozzle control in the other three explanations agree.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbocharger-bearing-systems/ (journal, thrust and ball-bearing distinctions)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q15",
+      "candidateSha256": "3591670d2d313ccc7558d50da83841ff175da86fa2fad6d381e816718c63a840",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The added qualification makes the general explanation specific to the examination system. Visual inspection of JASPA 2025-first 3-diesel Q15(2), p5, explicitly confirms coolant-temperature-controlled preheat time; its official answer is 2. JASPA 2019-first 2-diesel Q15(1), p8, additionally describes ECU control using starting coolant temperature and an intake-passage heater. The revised caveat correctly allows other designs to use intake temperature. The other three explanations agree with the textbook vehicle-size tendency, increasing resistance/current regulation, and series metal-glow-plug coil construction. Coolant temperature does not mean the coolant must be cold as a separate input category.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p07.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_3d.pdf p5 Q15(2); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_kai.pdf p1 column 33 Q15=2; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2019/20191006_2d.pdf p8 Q15(1); https://www.ngkntk.com/products/glow-plugs; https://www.international.com/-/media/project/tratongroup/international/international/vehicles/resources/tem-body-builder/engine-media/epa-21-international-a26/a26_engine_cold_start_assist_pdf.pdf?rev=e23fedbd33b64aa2a7912dc5b7205919"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-gasoline-q05",
+      "candidateSha256": "03501ff22d7f423f2e3c0d292aa90d5f14ba660f9ee570db9e813f93c9b564c8",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The replacement explicitly separates the exam treatment from an exact universal minimum at 60 percent, and identifies formulation and concentration-definition dependence. BASF G48 specifies volume concentration and reports below -50 C at 60 vol percent, without establishing an exact universal minimum. Cap pressure/vacuum regulation, shroud airflow guidance and coolant oxidation/additive deterioration explanations are consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q15",
+      "candidateSha256": "f0b6ccb04046383ff434b5e914b97838a06697651ff31559443f29d193d96812",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanation clearly treats 250-350 C as the examination description rather than a guaranteed range for all diesel fuel, and accurately states the ENEOS SDS example of approximately 240 C autoignition. It does not confuse autoignition with flash point. Cold-weather grades 3/special 3, viscosity/ignition quality and the elementary pour-point explanation remain consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p05.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf section 9 p7, revised 2024-02-01"
+        }
+      ]
+    }
+  ]
+}

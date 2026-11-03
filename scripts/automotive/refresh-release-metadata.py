@@ -28,8 +28,10 @@ p = ROOT/'data/questions/automotive/README.md'
 s = p.read_text(encoding='utf-8')
 s = re.sub(r'\d+原問・\d+肢解説を通常', f'{count}原問・{count*4}肢解説を通常', s)
 s = re.sub(r'残\d+原問は別の保存原稿', f'残{610-count}原問は別の保存原稿', s)
-s = re.sub(r'このうち通常原問は\d+、技術確認3', f'このうち通常原問は{606-count}、技術確認3', s)
-s = re.sub(r'最終\d+ ID・候補ハッシュ・証拠ハッシュ・未収録\d+ ID',
+s = re.sub(r'このうち通常原問は\d+、技術確認3、公式全員正解1。',
+           f'通常採点への未収録{610-count}問には公式全員正解1問を含む。', s)
+s = re.sub(r'通常採点への未収録\d+問', f'通常採点への未収録{610-count}問', s)
+s = re.sub(r'(?:現在の|最終)\d+ ID・候補ハッシュ・証拠ハッシュ・未収録\d+ ID',
            f'現在の{count} ID・候補ハッシュ・証拠ハッシュ・未収録{610-count} ID', s)
 p.write_text(s, encoding='utf-8', newline='\n')
 print(json.dumps({'releaseOriginals': count, 'remaining':610-count}))
