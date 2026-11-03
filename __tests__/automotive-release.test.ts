@@ -2,7 +2,8 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+vi.mock("server-only", () => ({}));
 import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/automotive";
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
@@ -15,6 +16,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
+import { findQuestionById, getPoolIds } from "@/lib/questions/pool-server";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
 
 describe("recovered automotive release", () => {
@@ -31,6 +33,8 @@ describe("recovered automotive release", () => {
       expect(await getQuestionsForExam(exam), exam).toEqual(questions);
       expect(questions.every(isPracticeReadyQuestion), exam).toBe(true);
       expect(defaultPracticeSession(exam), exam).toBe("gakka");
+      expect(await getPoolIds({ exam, mode: "random", session: defaultPracticeSession(exam) }), exam).toEqual(questions.map((q) => q.id));
+      expect(await findQuestionById(questions[0].id), exam).toEqual(questions[0]);
     }
   });
 
