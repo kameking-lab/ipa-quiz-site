@@ -17,6 +17,10 @@ async function routeLocal(context:BrowserContext,access?:MobileEntitlement,confi
     if(url.origin!==ORIGIN&&url.hostname!=="127.0.0.1"){await route.abort();return;}
     if(url.pathname==="/api/mobile/entitlement") {await route.fulfill({json:{entitlement:access??{userId:null,appUserId:null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null},configuration:{sdkKey:"",productId:"",offeringId:"",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:"",...configuration}}});return;}
     if(url.pathname==="/api/mobile/catalog"){await route.fulfill({json:{exams:[entry]}});return;}
+    if(url.pathname==="/api/mobile/paper-results") {
+      const {answers}=route.request().postDataJSON();
+      await route.fulfill({json:{results:answers.map((a:{id:string;choice:number|null})=>({id:a.id,choice:a.choice,result:a.choice===null?"unscored":a.choice===2?"correct":"incorrect"}))}});return;
+    }
     if(url.pathname.startsWith("/api/")){await route.fulfill({status:503,json:{error:"mock_offline"}});return;}
     const path=fileURLToPath(new URL(`../../dist${url.pathname==="/"?"/index.html":url.pathname}`,import.meta.url));
     try {await stat(path);await route.fulfill({path});}catch{await route.abort();}
@@ -246,4 +250,63 @@ for(const paid of [false,true])for(const save of [false,true])test(`cold restart
   if(save){await restarted.getByRole("button",{name:"間違えた1問を解き直す",exact:true}).click();await expect(restarted.getByText("解き直し 1問目／1問",{exact:true})).toBeVisible();}
   else await expect(restarted.getByRole("button",{name:"間違えた1問を解き直す",exact:true})).toHaveCount(0);
   expect([...ids]).toEqual(paperRows.slice(0,2).map(q=>q.id));
+});
+
+for(const initiallyPaid of [false,true])for(const save of [false,true])for(const used of [4,10])test(`11-answer history crosses JST midnight: paid-to-free=${initiallyPaid}, save=${save}, used=${used}`,async({page,context})=>{
+  test.setTimeout(60000);
+  await routeLocal(context);
+  const rows=[...paperRows,{...paperRows[0],id:"lckohyo-TEST01-q12",number:12,text:"許可本文12"}];
+  const index=rows.map(({id,number,choiceCount,answerAuthority})=>({id,number,choiceCount,answerAuthority,scorable:true}));
+  let paid=initiallyPaid,day="2026-11-03";
+  const daily=new Map<string,Set<string>>(),history=new Set<string>(),bodies:string[]=[];
+  await context.route("**/api/billing/question",async route=>{
+    const {id}=route.request().postDataJSON();bodies.push(id);
+    const today=daily.get(day)??new Set<string>();daily.set(day,today);
+    if(!paid&&!today.has(id)&&today.size>=10){await route.fulfill({status:429,json:{error:"daily_limit"}});return;}
+    if(!paid)today.add(id);history.add(id);
+    await route.fulfill({json:{question:{...rows.find(q=>q.id===id),reviewProof:"a".repeat(64)}}});
+  });
+  await context.route("**/api/mobile/paper-results",async route=>{
+    const {answers}=route.request().postDataJSON();
+    expect(answers.every((a:{id:string})=>history.has(a.id))).toBe(true);
+    expect(answers.every((a:Record<string,unknown>)=>!("memo" in a))).toBe(true);
+    await route.fulfill({json:{results:answers.map((a:{id:string;choice:number})=>({id:a.id,choice:a.choice,result:a.choice===2?"correct":"incorrect"}))}});
+  });
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.paperTest);
+  await page.clock.setFixedTime(new Date("2026-11-03T14:59:59Z"));
+  await page.evaluate(index=>window.paperTest.show(index),index);
+  if(save)await page.getByRole("checkbox",{name:"この端末に保存する"}).check();
+  for(let n=1;n<=10;n++) {
+    await expect(page.getByText(`許可本文${n}`,{exact:true})).toBeVisible();
+    await page.getByRole("radio",{name:new RegExp(`^選択肢 ${n%2?1:2}:`)}).click();
+    if(n<10)await page.getByRole("button",{name:"次の問題へ",exact:true}).click();
+  }
+  // Ten bodies on the first JST day, then a new permitted question after midnight.
+  if(!paid)expect(daily.get(day)?.size).toBe(10);
+  day="2026-11-04";await page.clock.setFixedTime(new Date("2026-11-03T15:00:00Z"));
+  await page.getByRole("button",{name:"次の問題へ",exact:true}).click();await expect(page.getByText("許可本文11",{exact:true})).toBeVisible();
+  await page.getByRole("radio",{name:/^選択肢 1:/}).click();await page.getByRole("button",{name:"結果を見る",exact:true}).click();
+  daily.set(day,new Set([rows[10].id,...Array.from({length:used-1},(_,i)=>`other-exam-${i}`)]));paid=false;
+  await page.evaluate(()=>window.dispatchEvent(new Event("mobile:entitlement-changed")));
+  const previousBodies=bodies.length;
+  let current=page;
+  if(save){await page.close();current=await context.newPage();await current.goto(ORIGIN+"/tests/e2e/harness.html");}
+  else await current.reload();
+  await current.waitForFunction(()=>!!window.paperTest);await current.evaluate(index=>window.paperTest.show(index,undefined,"summary"),index);
+  await expect(current.getByText("11／12問",{exact:true})).toBeVisible();
+  await expect(current.getByRole("button",{name:"間違えた6問を解き直す",exact:true})).toBeVisible();
+  expect(bodies.length).toBe(previousBodies);expect(daily.get(day)?.size).toBe(used);
+  await current.getByRole("button",{name:"問11を開く",exact:true}).click();await expect(current.getByText("許可本文11",{exact:true})).toBeVisible();
+  await current.getByRole("button",{name:"この問題をもう一度解く",exact:true}).click();
+  await current.getByRole("radio",{name:/^選択肢 1:/}).click();
+  await current.getByRole("button",{name:"結果を見る",exact:true}).click();
+  await current.getByRole("button",{name:"間違えた6問を解き直す",exact:true}).click();
+  if(used===10) {
+    await expect(current.getByRole("alert")).toContainText("無料10問");
+    await current.getByRole("button",{name:"結果を見る",exact:true}).click();
+    await expect(current.getByText("11／12問",{exact:true})).toBeVisible();
+  } else await expect(current.getByText("許可本文1",{exact:true})).toBeVisible();
+  // Reopening history only charges bodies deliberately opened by the learner.
+  expect(bodies.slice(previousBodies)).toEqual([rows[10].id,rows[0].id]);
+  expect(await current.getByText("許可本文12",{exact:true}).count()).toBe(0);
 });

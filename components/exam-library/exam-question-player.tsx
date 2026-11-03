@@ -219,18 +219,22 @@ export function ExamQuestionPlayer({
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
-  const resultFor = (question: ExamQuestion): AnswerStatus => {
-    const answer = answers[question.id];
+  const resultFor = useCallback((question: ExamQuestion, source = answers): AnswerStatus => {
+    const answer = source[question.id];
     if (!resolveQuestion || granted[question.id] || !answer?.submitted) return answerResult(question, answer);
     const result = reviewResults[question.id];
     return result && result.choice === answer.choice ? result.result : "pending";
-  };
-  const summary = {...summarizeExamProgress(questions, {}), pending:0};
-  if (questionIndex) summary.scorable = questionIndex.filter(q=>q.scorable).length;
-  for (const question of practiceQuestions) {
-    const result = resultFor(question);
-    if (result !== "unanswered") { summary.answered++; summary[result]++; }
-  }
+  }, [answers, granted, resolveQuestion, reviewResults]);
+  const summaryFor = useCallback((source: ExamSessionAnswers) => {
+    const next = {...summarizeExamProgress(questions, {}), pending:0};
+    if (questionIndex) next.scorable = questionIndex.filter(q=>q.scorable).length;
+    for (const question of practiceQuestions) {
+      const result = resultFor(question, source);
+      if (result !== "unanswered") { next.answered++; next[result]++; }
+    }
+    return next;
+  }, [questions, questionIndex, practiceQuestions, resultFor]);
+  const summary = summaryFor(answers);
   const wrongIds = practiceQuestions.filter(q=>resultFor(q)==="incorrect").map(q=>q.id);
   const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
 
@@ -298,18 +302,19 @@ export function ExamQuestionPlayer({
     (next: ExamSessionAnswers, lastQuestionId: string | null) => {
       next = excludeSurveyAssistantReferenceAnswers(next);
       setAnswers(next);
-      writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle);
+      const nextSummary = summaryFor(next);
+      writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle, nextSummary);
       if (!saveEnabled) return;
       const storage = getBrowserStorage();
       const ok =
         storage !== null &&
-        saveExamProgress(storage, { ...createExamProgress(examId, next, lastQuestionId), summary: { ...summarizeExamProgress(questions, next), examTitle } });
+        saveExamProgress(storage, { ...createExamProgress(examId, next, lastQuestionId), summary: { ...nextSummary, examTitle } });
       if (!ok) {
         setSaveEnabled(false);
         setSaveStatus("端末への保存に失敗したため、保存をオフにしました。回答はこの画面では続けられます。");
       }
     },
-    [examId, examTitle, questions, saveEnabled],
+    [examId, examTitle, questions, saveEnabled, summaryFor],
   );
 
   const showQuestion = useCallback(
@@ -454,7 +459,7 @@ export function ExamQuestionPlayer({
     const unanswered = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !saved.answers[id]?.submitted);
     const startIndex = lastIndex >= 0 ? lastIndex : Math.max(unanswered, 0);
     setAnswers(saved.answers);
-    writeExamTabProgress(saved, questions, examTitle);
+    writeExamTabProgress(saved, questions, examTitle, summaryFor(saved.answers));
     setSaveEnabled(true);
     setRestoreHandled(true);
     setSaveStatus("保存した進捗を読み込みました。以降の回答もこの端末に保存します。");

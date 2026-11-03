@@ -16,6 +16,7 @@ vi.mock("@/lib/billing/guest-practice",()=>({readGuestCookie:()=>"same-web-cooki
 vi.mock("@/lib/feedback/unlock-runtime",()=>({readFeedbackBrowser:()=>null,feedbackBrowserHeader:()=>"",unlockIdentity:()=>({account:m.user}),feedbackStore:()=>({grant:m.bonus})}));
 import { POST } from "@/app/api/billing/question/route";
 import { GET } from "@/app/api/questions/next/route";
+import {validPaperReviewProof} from "@/mobile/server/paper-review";
 const req=(id:string,headers:Record<string,string>={})=>new Request("https://site.test/api/billing/question",{method:"POST",headers:{"X-Kakomon-Native":"ios",...headers},body:JSON.stringify({id})});
 beforeEach(()=>{vi.resetAllMocks();m.user=null;m.webPaid=false;m.enabled=false;m.ids.clear();m.rc.mockResolvedValue(null);vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","false");vi.stubEnv("MOBILE_IAP_ENABLED","false");});
 it("gates native starts even with sales off, across every qualification, and counts unique IDs just like web",async()=>{
@@ -45,4 +46,14 @@ it("enforces one server quota without native headers, including direct GET, and 
   expect((await GET(new Request("https://site.test/api/questions/next?id=ip-0"))).status).toBe(200);
   vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","true");m.bonus.mockResolvedValue({remaining:10});
   expect((await POST(web("ip-12"))).status).toBe(429);expect(m.bonus).not.toHaveBeenCalled();
+});
+it("issues an owner-bound result-only proof only after a successful paper body grant",async()=>{
+  m.user="u";vi.stubEnv("AUTH_SECRET","local-test-only-proof-secret");
+  const response=await POST(req("library-q1",{"X-Kakomon-Paper":"test"}));
+  const body=await response.json();expect(response.status).toBe(200);
+  expect(validPaperReviewProof(body.question.reviewProof,"u","test","library-q1")).toBe(true);
+  expect(validPaperReviewProof(body.question.reviewProof,"other","test","library-q1")).toBe(false);
+  m.ids.clear();for(let n=0;n<10;n++)m.ids.add(`other-${n}`);
+  const blocked=await POST(req("library-q1",{"X-Kakomon-Paper":"test"}));
+  expect(blocked.status).toBe(429);expect(await blocked.text()).not.toContain("reviewProof");
 });

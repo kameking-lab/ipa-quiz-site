@@ -27,8 +27,8 @@ it("covers each non-paper renderer's own image and required-PDF input fields",as
     const rows=(await getQuestionsForExam(code)).filter(isPracticeReadyQuestion);
     // QuizPlayer -> question figure / ChoiceButton / Markdown renderer inputs.
     const refs=rows.flatMap(q=>{
-      const markdown=[q.question,q.explanation,...Object.values(q.choices??{})].flatMap(text=>Array.from((text??"").matchAll(/!\[[^\]]*\]\(([^\s)]+)\)/g),m=>m[1]));
-      return [...q.imageUrls??[],...Object.values(q.choiceImageUrls??{}),...markdown];
+      const markdown=[q.question,q.explanation,q.modelAnswer,q.scoringCriteria,...Object.values(q.choices??{})].flatMap(text=>Array.from((text??"").matchAll(/!\[[^\]]*\]\(([^\s)]+)\)/g),m=>m[1]));
+      return [...q.imageUrls??[],...Object.values(q.choiceImageUrls??{}),...q.nativeB?.bankImageUrls??[],...q.nativeB?.candidates.map(c=>c.imageUrl)??[],...markdown];
     });
     assertCovered(rows,refs);
   }
@@ -43,7 +43,8 @@ it("covers each non-paper renderer's own image and required-PDF input fields",as
       case "fp2":assertCovered(m,[...m.q.panels,...m.q.sharedContext?.panels??[]].map(p=>p.url));break;
       case "fp3":assertCovered(m,m.q.panels.map(p=>p.url));break;
       // The remaining readers render text/forms and do not reference bitmap/PDF assets.
-      case "essay-example":case "fp1":case "fp1-extension":case "sentaku":case "chusho":case "essay":break;
+      case "chusho":assertCovered(m,m.paper.sourcePages.map(p=>p.url));break;
+      case "essay-example":case "fp1":case "fp1-extension":case "sentaku":case "essay":break;
       default: {const exhaustive:never=m;throw new Error(String(exhaustive));}
     }
   }

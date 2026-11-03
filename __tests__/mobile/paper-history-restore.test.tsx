@@ -1,5 +1,5 @@
 import {afterEach,beforeEach,expect,it,vi} from "vitest";
-import {act,cleanup,fireEvent,render,screen,within} from "@testing-library/react";
+import {act,cleanup,fireEvent,render,screen,waitFor,within} from "@testing-library/react";
 import {AuthorizedContent} from "@/mobile/shared/AuthorizedContent";
 import {createExamProgress,examProgressKey} from "@/lib/exam-library-progress";
 import type {ExamQuestion} from "@/lib/exam-library-model";
@@ -35,7 +35,7 @@ for(const used of [0,4,10])for(const save of [false,true])it(`restores 11 answer
     fireEvent.click(screen.getByRole("button",{name:"間違えた6問を解き直す"}));
     await screen.findByRole("alert");fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
     expect(screen.getByText("11／12問")).toBeVisible();
-    if(save)expect(Object.values(JSON.parse(localStorage.getItem(examProgressKey(paper))!).answers).filter((a:any)=>a.submitted)).toHaveLength(11);
+    if(save)expect(Object.values(JSON.parse(localStorage.getItem(examProgressKey(paper))!).answers).filter(a=>(a as {submitted:boolean}).submitted)).toHaveLength(11);
   } else {
     await screen.findByText("境界本文11");
     fireEvent.click(screen.getByRole("button",{name:"結果を見る"}));
@@ -56,4 +56,17 @@ it("keeps an allowed current question interactive when historic grading fails or
   await act(async()=>finish(Response.json({error:"billing_unavailable"},{status:503})));
   expect(screen.getByText("境界本文12")).toBeVisible();
   expect(fetcher.mock.calls.filter(([url])=>String(url).endsWith("/question"))).toHaveLength(1);
+});
+it("keeps dashboard summaries graded when historical bodies are absent",async()=>{
+  const answers=Object.fromEntries(rows.slice(0,11).map((q,i)=>[q.id,{choice:i%2?2:1,memo:"",submitted:true}]));
+  localStorage.setItem(examProgressKey(paper),JSON.stringify(createExamProgress(paper,answers,rows[10].id)));
+  vi.stubGlobal("fetch",vi.fn(async(url:unknown,init?:RequestInit)=>{
+    const body=JSON.parse(String(init?.body));
+    return String(url).endsWith("/paper-results")?Response.json({results:body.answers.map((a:{id:string;choice:number})=>({...a,result:a.choice===2?"correct":"incorrect"}))}):Response.json({question:rows.find(q=>q.id===body.id)});
+  }));
+  mount();await screen.findByRole("button",{name:"間違えた6問を解き直す"});
+  fireEvent.click(screen.getByRole("button",{name:"問11を開く"}));await screen.findByText("境界本文11");
+  fireEvent.click(screen.getByRole("button",{name:"前へ"}));await screen.findByText("境界本文10");
+  await waitFor(()=>expect(JSON.parse(localStorage.getItem(examProgressKey(paper))!).summary).toMatchObject({answered:11,correct:5,incorrect:6,unscored:0}));
+  expect(JSON.parse(sessionStorage.getItem(`${LS_KEYS.examLibrarySessionPrefix}${paper}`)!).summary).toMatchObject({answered:11,correct:5,incorrect:6,unscored:0});
 });

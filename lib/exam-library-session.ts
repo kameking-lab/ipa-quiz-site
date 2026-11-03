@@ -25,9 +25,9 @@ export function readExamTabProgress(examId: string, questions: readonly ExamQues
 }
 
 /** Keeps navigation/reload progress in this tab; never opts into localStorage. */
-export function writeExamTabProgress(progress: ExamProgress, questions: readonly ExamQuestion[], examTitle: string): void {
+export function writeExamTabProgress(progress: ExamProgress, questions: readonly ExamQuestion[], examTitle: string, verifiedSummary?: ExamProgressSummary): void {
   progress = sanitizeExamProgressForStorage(progress);
-  const summary: ExamTabSummary = { ...summarizeExamProgress(questions, progress.answers), examId: progress.examId, examTitle, lastQuestionId: progress.lastQuestionId, updatedAt: progress.updatedAt };
+  const summary: ExamTabSummary = { ...(verifiedSummary ?? summarizeExamProgress(questions, progress.answers)), examId: progress.examId, examTitle, lastQuestionId: progress.lastQuestionId, updatedAt: progress.updatedAt };
   try {
     tabStorage()?.setItem(`${LS_KEYS.examLibrarySessionPrefix}${progress.examId}`, JSON.stringify({ progress, summary }));
     window.dispatchEvent(new Event(EXAM_PROGRESS_CHANGE_EVENT));
