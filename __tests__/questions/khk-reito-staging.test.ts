@@ -31,6 +31,48 @@ for (const rank of [1, 2, 3]) {
   const code = `khk-reito-${rank}` as ExamCode;
   const questions = JSON.parse(readFileSync(join(process.cwd(), `data/questions/${code}/latest-two.json`), "utf8")) as Question[];
   describe(`${code} latest two official sittings, unpublished`, () => {
+    if (rank === 1 || rank === 2) {
+      it("explains why the R6 law q1 gas at 0.9 MPa is outside the compressed-gas definition", () => {
+        const q = questions.find(q => q.year === 2024 && q.session === "houki" && q.qNumber === 1)!;
+        expect(q.officialAnswerNumber).toBe("3");
+        expect(q.answer).toBe("ウ");
+        expect(q.choices?.ウ).toBe("イ、ロ");
+        for (const text of [q.explanation, ...Object.values(q.choiceExplanations ?? {})]) {
+          expect(text).toContain("ロも正しい");
+          expect(text).toContain("かつ現に1MPa以上");
+          expect(text).toContain("35℃では1MPa未満");
+          expect(text).toContain("したがって高圧ガスではない");
+          expect(text).toContain("ハは誤り");
+          expect(text).toContain("30℃なので、常用温度で0.15MPaでも高圧ガスである");
+        }
+      });
+    }
+
+    if (rank === 1) {
+      it.each([
+        { year: 2025, number: 6, answer: "1", facts: ["ハは誤り", "同じ汚れ係数の増分", "低下は次第に緩やか", "1/K＝1/K₀＋f", "清浄時からの累積低下率とは区別", "並流より向流のほうが大きい"] },
+        { year: 2024, number: 2, answer: "1", facts: ["ロは誤り", "取付け位置よりも下流側（圧縮機側）", "調整弁の上流側（蒸発器側）", "蒸発器出口の温度と圧力", "消費動力は減少ではなく増加"] },
+      ])("explains the incorrect statements in $year safety q$number in every choice", ({ year, number, answer, facts }) => {
+        const q = questions.find(q => q.year === year && q.session === "hoan" && q.qNumber === number)!;
+        expect(q.officialAnswerNumber).toBe(answer);
+        expect(q.explanationCoverage).toBe("full");
+        for (const text of [q.explanation, ...Object.values(q.choiceExplanations ?? {})]) {
+          for (const fact of facts) expect(text).toContain(fact);
+        }
+      });
+    }
+
+    if (rank === 2) {
+      it("preserves the fourth power and squared units in the R7 radiation formula", () => {
+        const q = questions.find(q => q.year === 2025 && q.session === "kogaku" && q.qNumber === 4)!;
+        expect(q.question).toContain("Ｅ＝σＴ⁴");
+        expect(q.question).toContain("ｋＷ/ｍ²");
+        expect(q.question).toContain("ｍ²・Ｋ⁴");
+        expect(q.question).not.toMatch(/Ｔ\s*４/);
+        expect(q.officialAnswerNumber).toBe("4");
+      });
+    }
+
     it("contains complete consecutive papers and official answer sequences", () => {
       expect(questions).toHaveLength(rank === 3 ? 70 : 80);
       for (const year of [2025, 2024]) {

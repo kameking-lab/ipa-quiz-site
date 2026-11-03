@@ -70,6 +70,14 @@ for year in [2025, 2024]:
         for row in rows:
             number = row["qNumber"]
             text = clean(row["question"])
+            if (rank, year, kind, number) == (2, 2025, "Z", 4):
+                # PDF body p.3: the exponent and unit powers are superscripts.
+                # Text extraction flattens them; retain their mathematical meaning.
+                for original, corrected in [("Ｅ＝σ Ｔ ４", "Ｅ＝σＴ⁴"),
+                                            ("ｋＷ/ｍ２", "ｋＷ/ｍ²"),
+                                            ("ｍ２・Ｋ４", "ｍ²・Ｋ⁴")]:
+                    assert text.count(original) == 1, (paper, number, original)
+                    text = text.replace(original, corrected)
             if (rank, year, kind, number) == (3, 2025, "X", 6):
                 # PDF p.2: the horizontal fraction bar is not a minus sign.
                 assert "Ｇ＝－Ｖ\nＣ" in text

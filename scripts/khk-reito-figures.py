@@ -16,7 +16,8 @@ figures = {
         ("R7ACGZ-W.pdf", 2, (95, 265, 505, 435), "2025-gakushiki-q2-diagram"),
         ("R7ACGZ-W.pdf", 4, (70, 145, 535, 325), "2025-gakushiki-q4-table"),
         ("R6fy_03.pdf", 1, (120, 125, 490, 310), "2024-gakushiki-q2-answer-diagram"),
-        ("R6ACGZK-W.pdf", 4, (205, 220, 540, 435), "2024-gakushiki-q2-blank-chart"),
+        # Include the entire h axis label and whitespace below it.
+        ("R6ACGZK-W.pdf", 4, (205, 220, 540, 460), "2024-gakushiki-q2-blank-chart"),
     ],
     2: [
         ("R6ACHZ-W.pdf", 1, (175, 225, 535, 500), "2024-second-gakushiki-q1-chart"),
