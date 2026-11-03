@@ -1,0 +1,34 @@
+{
+  "status": "COMPLETE",
+  "manifestSha256": "5e7eeee5468af7958e5c12256ef730d223285431ab3ad6dfd36f023404e9ea05",
+  "inputSha256": "248ca1507f7c0961b8b9a49853310916e035d199feb5eb921c1ba257650d7ee3",
+  "items": [
+    {"key":"2025-A32","choiceUpdates":[
+      {"choice":2,"verdict":"SUPPORTED_WITH_SCOPE","sources":[{"url":"https://www.rinya.maff.go.jp/tohoku/apply/publicsale/koukoku_kyoku/pdf/rindoukoujihyoujunsiyousyo.pdf","page":"PDF p86（1始まり）／印刷p83","section":"第3章 第14節 地盤改良工・第358条7","evidence":"林道の路床安定処理工で、安定材の散布・混合時の粉塵対策としてシート設置を明記する。","sourceType":"government_original_specification","publicationDate":"2012-03","scopeNote":"林野庁の林道仕様書。セメント系の明記はこの項単独ではなく、既確認の長野県資料の防塵型安定材と併せて肢の二つの対策を照合する。"}],"remainingGap":null,"proposedExplanation":"適当。安定材を散布・混合する際、粉塵の飛散を抑える対策としてシート設置が林野庁の原著仕様書に明記されている。防塵型安定材の使用も既確認の長野県資料と整合する。"},
+      {"choice":4,"verdict":"PARTIAL","sources":[],"remainingGap":"上層施工まで長期間ある場合の路床面保護、仮排水、工事車両による荒れ、降雨による軟弱化・流出防止を一連で定める原著資料の本文・版・頁が未確認。","proposedExplanation":null}
+    ],"questionTechnicallyResolved":false},
+    {"key":"2025-A37","choiceUpdates":[
+      {"choice":1,"verdict":"PARTIAL","sources":[{"url":"https://www.rinya.maff.go.jp/tohoku/apply/publicsale/koukoku_kyoku/pdf/rindoukoujihyoujunsiyousyo.pdf","page":"PDF p103（1始まり）／印刷p100","section":"第4章 第4節 レディーミクストコンクリート・第414条","evidence":"荷卸し地点で目視検査と必要な品質検査を行い、品質条件を満たす必要があると定める。","sourceType":"government_original_specification","publicationDate":"2012-03","scopeNote":"林道の一般コンクリート。受入れの品質判定を支えるが、セットフォーム舗装の不良生コン廃棄処分を定めない。"}],"remainingGap":"セットフォーム工法の普通コンクリート舗装で、荷下ろし前の受入れ検査後に不良な生コンクリートを廃棄処分すると直接定める原著施工基準の本文・版・頁が未確認。","proposedExplanation":null}
+    ],"questionTechnicallyResolved":false},
+    {"key":"2025-A38","choiceUpdates":[
+      {"choice":2,"verdict":"PARTIAL","sources":[{"url":"https://www.pref.miyazaki.lg.jp/documents/9256/9256_20180319171730-1.pdf","page":"PDF p100（1始まり）／印刷14-2-2","section":"第14編 第2章 グラウト工・2-4-7(10)","evidence":"ステージ工法の次の再掘または注入は12時間以上経過後と定め、削孔と注入を段階で反復する施工を裏付ける。","sourceType":"prefectural_original_specification","publicationDate":"2018-04","scopeNote":"農業土木のグラウト工。ステージの標高順序は記さない。"}],"remainingGap":"ダム基礎グラウチングのステージ注入を上位から下位へ行う標高方向を明記した原著本文が未確認。","proposedExplanation":null},
+      {"choice":3,"verdict":"PARTIAL","sources":[],"remainingGap":"ルジオン値による初期配合、地盤透水性と切替基準、薄い配合から濃い配合への順序を同一適用範囲で明記した原著本文が未確認。","proposedExplanation":null},
+      {"choice":4,"verdict":"PARTIAL_WITH_DIRECT_MIX_EVIDENCE","sources":[{"url":"https://www.pref.miyazaki.lg.jp/documents/9256/9256_20180319171730-1.pdf","page":"PDF p99（1始まり）／印刷14-2-1","section":"第14編 第2章 グラウト工・2-4-6","evidence":"注入前の水押しで岩盤の透水性を調べ、グラウト配合等の決定に必要なルジオンマップを作成すると明記する。","sourceType":"prefectural_original_specification","publicationDate":"2018-04","scopeNote":"農業土木のグラウト工。注入前配合の決定には直接つながるが、『初期濃度』という語とダム基礎への一般適用は別途確認を要する。"},{"url":"https://www.pref.miyazaki.lg.jp/documents/9256/9256_20180319171730-1.pdf","page":"PDF p100（1始まり）／印刷14-2-2","section":"第14編 第2章 グラウト工・2-4-8(1)","evidence":"施工効果確認のためチェック孔のコア採取と透水テストを行うと定める。","sourceType":"prefectural_original_specification","publicationDate":"2018-04","scopeNote":"施工後の遮水性確認と注入前の水押しは別段階。単一の試験で両方を行うとの解釈には使わない。"}],"remainingGap":"ダム基礎への適用範囲において、水押し値を当該ステージの『初期濃度』に結び付ける原著本文と、遮水性改良の前後比較の手順を一体で示す原著本文が未確認。","proposedExplanation":"水押しで得る透水性は注入前の配合決定に用いられ、改良効果は施工後のチェック孔で透水テストを行って確認する。二つの試験時点を区別して説明する。"}
+    ],"questionTechnicallyResolved":false},
+    {"key":"2025-A39","choiceUpdates":[
+      {"choice":1,"verdict":"UNVERIFIED_NUMERIC","sources":[],"remainingGap":"細骨材の上屋と3～4日以上の水切り時間を併記した、2025年以前に適用可能なダム原著施工基準の本文・頁が未確認。","proposedExplanation":null},
+      {"choice":2,"verdict":"PARTIAL_CONTRADICTION","sources":[],"remainingGap":"柱状ブロック工法の標準リフト高を直接示す原著資料が未確認。既確認の関東地整仕様書はリフト高さを設計図書によるとし、0.3～0.5mを一般標準とする根拠にはならない。","proposedExplanation":null},
+      {"choice":3,"verdict":"PROJECT_EXAMPLES_ONLY","sources":[],"remainingGap":"RCDの0.75m=3層、1m=4層を一般標準とする原著基準が未確認。既確認例は個別ダムの施工事例で一般性を立証しない。","proposedExplanation":null},
+      {"choice":4,"verdict":"PARTIAL","sources":[],"remainingGap":"越流部・導流部・減勢部の局部不陸許容値を6mm以下と定める原著基準の本文・版・頁が未確認。関東地整仕様書は平滑仕上げのみ。","proposedExplanation":null}
+    ],"questionTechnicallyResolved":false}
+  ],
+  "researchLog": [
+    {"target":"2025-A32 choice 2","queries":["安定材 シート 設置 粉塵 路床 PDF","林道工事標準仕様書 第358条 シート"],"url":"https://www.rinya.maff.go.jp/tohoku/apply/publicsale/koukoku_kyoku/pdf/rindoukoujihyoujunsiyousyo.pdf","pages":"PDF p1 cover: 2012-03; PDF p86/印刷p83 第358条7","finding":"散布・混合時にシート設置と明記。新規採用。"},
+    {"target":"2025-A32 choice 4","queries":["構築路床面 仮排水 長期間","路床 施工後 舗装まで 多雨期 保護"],"url":"https://www.hrr.mlit.go.jp/gijyutu/kaitei/sekkei_r/02Split/08syuusei.pdf","pages":"検索索引は路床施工後の多雨・降雪期にプライムコート等で保護を示すが、PDF本文は10MB超で直接閲覧不可、物理頁未確認","finding":"局所保護の関連記述はあるが、車両荒れ・仮排水を含む肢全体の直接根拠に採用しない。"},
+    {"target":"2025-A37 choice 1","queries":["コンクリート 荷卸し前 廃棄 舗装","不良 レディーミクストコンクリート 廃棄処分"],"url":"https://www.rinya.maff.go.jp/tohoku/apply/publicsale/koukoku_kyoku/pdf/rindoukoujihyoujunsiyousyo.pdf","pages":"PDF p103/印刷p100 第413-414条","finding":"荷卸し地点で目視・品質検査を規定。ただし不良品の廃棄処分規定は非該当。"},
+    {"target":"2025-A38 choices 2-4","queries":["ステージ注入工法 上位 下位 原著","水押し グラウト配合 初期濃度 宮崎県","薄い濃い セメントミルク 配合切替え ダム"],"url":"https://www.pref.miyazaki.lg.jp/documents/9256/9256_20180319171730-1.pdf","pages":"PDF p1 cover: 2018-04; PDF p99/印刷14-2-1 第2-4-5～6節; PDF p100/印刷14-2-2 第2-4-7～8節","finding":"水押しで注入前の配合に必要な透水性を調べ、施工後チェック孔で透水性を検査。次のステージまで12時間以上。標高順序、薄→濃の配合順序、ダム初期濃度という語は非該当。"},
+    {"target":"2025-A39 choices 1-4","queries":["細骨材 水切り 3～4日 ダム 原著","RCD 0.75m 3層 1m 4層 原著","局部不陸 6mm 越流部 ダム 原著"],"url":"https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf","pages":"PDF p7-10/印刷9-4～9-7 第9編 第1章 第4節; PDF p14/印刷9-11 第6節は既確認","finding":"細骨材の水切り3～4日、RCDの一般的層数、流水部6mmはいずれも非該当。リフト高は設計図書による。"}
+  ],
+  "stoppedOperations": ["Aomori forest PDF HTTP403","Tokyo sewer PDF HTTP503","Internet Archive CDX inaccessible","Claude cloud attach disabled","JRTT R50401 civil specification PDF HTTP403","A28 JICE sheet-pile design manual proxy refusal","Rinya forest specification shell proxy refusal; no further shell request","Hokuriku pavement PDF exceeds web viewer size limit; no alternate fetch"],
+  "validation": {"scopeOnlyReservedChoices":true,"priorSupportedChoicesUnchanged":true,"sourcePdfSha256Verified":true,"global2025IdentityVerified":false,"independentAcceptance":false,"publicAcceptance":false,"repositoryEdits":0,"newlyResolvedChoices":1,"newlyResolvedQuestions":0,"note":"A32肢2のみ追加原著根拠で局所解消。全問の公開判定は依然HOLD。"}
+}

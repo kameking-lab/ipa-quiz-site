@@ -1,0 +1,1332 @@
+{
+  "status": "COMPLETED_TECHNICAL_ASSESSMENT",
+  "savedAt": "2026-10-11T04:24:57.356226+00:00",
+  "manifest": {
+    "savedAt": "2026-10-11T04:04:44.454540+00:00",
+    "status": "ACTIVE_SCOPE_HANDOFF",
+    "assignedBy": "01a0f41d-ad39-7670-a8a8-bbddc0dd9004",
+    "collector": "01a12864-232c-7720-aa58-0909185760b1",
+    "helperOwner": "01a12863-c02b-74a6-844b-ad96e86f50ad",
+    "qualification": "civil1",
+    "draftPr": "https://github.com/kameking-lab/ipa-quiz-site/pull/714",
+    "checkpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+    "assignedKeys": [
+      "2025-A32",
+      "2025-A35",
+      "2025-A37",
+      "2025-A38",
+      "2025-A39",
+      "2025-A42",
+      "2025-A43",
+      "2025-A44",
+      "2025-A45",
+      "2025-A46",
+      "2025-A47",
+      "2025-A49"
+    ],
+    "assignedCount": 12,
+    "scope": "2025 first-stage paperA only",
+    "readOnlyWorktree": "C:\\wt\\civil1-latest-two-20261011",
+    "outputOnly": "reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\peer-civil1-12\\peer-patch.json",
+    "forbiddenEdits": [
+      "Any existing patch/manuscript/owner lock/worktree Git edits",
+      "2025 question/choice/official answer core",
+      "Any question outside assignedKeys",
+      "2026-B7 or other 2026 records"
+    ],
+    "existingProducersStoppedScopes": {
+      "civil1_2025_a26_a50": [
+        "2025-A32",
+        "2025-A35",
+        "2025-A37",
+        "2025-A38",
+        "2025-A39"
+      ],
+      "civil1_2025_a51_b9": [
+        "2025-A42",
+        "2025-A43",
+        "2025-A44",
+        "2025-A45",
+        "2025-A46",
+        "2025-A47",
+        "2025-A49"
+      ]
+    },
+    "stopAcknowledged": true,
+    "collectorAndOtherProducerRetained": [
+      "2025-A11/A12/A17/A19/A25/A26/A27/A28/A29/A30/A31",
+      "2025-A33/A34/A36/A40/A41/A48/A50/A52/A53/A54/A62/B2/B4/B5",
+      "all 2026 records"
+    ],
+    "savedOriginalSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+    "separateGlobalHolds": [
+      "2025 official original/source identity all101",
+      "independent acceptance and publication all101"
+    ],
+    "existingStops": [
+      "Aomori original forest PDF HTTP403, no retry or alternate acquisition",
+      "Internet Archive CDX tool inaccessible, no alternate route",
+      "Claude cloud attach not enabled; no auth bypass",
+      "Tokyo sewer503 source remains unacquired, no alternate private access"
+    ],
+    "newPrimaryClue": {
+      "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+      "locators": {
+        "2025-A42": "PDF15 §4-4-1-7-6 inner stones smaller, waterline embedding/top widening",
+        "2025-A43": "PDF19–20 §4-4-3-2 roughness/openings; PDF22–23 §4-4-3-5/7 crest/sand foundation"
+      },
+      "sourceDateMustBeChecked": true
+    },
+    "outputContract": {
+      "rootField": "items",
+      "perQuestion": [
+        "key (2025-Axx)",
+        "decision TECHNICALLY_RESOLVED|HOLD",
+        "choiceChecks exactly4: choice,verdict,sources URL/page/section/evidence/sourceType,remainingGap",
+        "explanationPatch only if needed",
+        "choiceExplanationPatches [{choice,text}] only if needed",
+        "technicalRemaining concrete unresolved clauses"
+      ],
+      "resolvedRequires": "All4 have verified primary sources and remainingGap=null; qualified limits go in scopeNote. Never self-grant public/independent acceptance.",
+      "saveIncrementally": true,
+      "sourceTypes": "Official standards, original research, association self-published guides, original publisher documents allowed. Later revisions cannot be asserted identical to2025."
+    }
+  },
+  "globalHolds": [
+    "2025 official original/source identity all101",
+    "independent acceptance and publication all101"
+  ],
+  "items": [
+    {
+      "key": "2025-A32",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p144/本文133",
+              "section": "4.2.3.1(1)イ・ク",
+              "evidence": "土質に適した機械で締め固め、路床面の支持力を均一にする。",
+              "sourceType": "government_original_specification",
+              "versionNote": "東京都2022-04版。"
+            },
+            {
+              "url": "https://www.pwrc.or.jp/thesis_shouroku/thesis_pdf/1702-P026-031_fujita.pdf",
+              "page": "PDF p4/誌面29",
+              "section": "4.2",
+              "evidence": "実験で振動ローラ転圧8回以降に地盤反力係数が平衡又は減少。過転圧による表層の乱れの可能性を考察。",
+              "sourceType": "original_compaction_experiment",
+              "versionNote": "2017年原著。全土質で必ず強度低下すると一般化しない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/3-2hosou_1.pdf",
+              "page": "PDF p9/本文3-2-9",
+              "section": "5 路床の改良 1",
+              "evidence": "人家連担部の粉じん抑制に防塵型安定材を検討する。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "版年月未確認。"
+            }
+          ],
+          "remainingGap": "セメント系材料の散布・混合時にシート設置を対策とする原資料未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.maff.go.jp/j/nousin/attach/pdf/noudou-14.pdf",
+              "page": "PDF p24/本文397",
+              "section": "7.5.5(2)施工①",
+              "evidence": "置換時は掘削面以下の層を乱さず掘削する。",
+              "sourceType": "government_original_specification",
+              "versionNote": "章の版年未確認。2025同一版としない。"
+            },
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p144/本文133",
+              "section": "4.2.3.1(1)エ・カ・ク",
+              "evidence": "乱すと支持力が低下する土を損なわず、不良箇所を良質土に置換する。",
+              "sourceType": "government_original_specification",
+              "versionNote": "東京都2022-04版。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p144/本文133",
+              "section": "4.2.3.1(1)ウ・ク",
+              "evidence": "降雨等で転圧に不適なら中止し均一な支持力を得る。",
+              "sourceType": "government_original_specification",
+              "versionNote": "東京都2022-04版。"
+            },
+            {
+              "url": "https://www.maff.go.jp/j/nousin/attach/pdf/noudou-14.pdf",
+              "page": "PDF p24/本文398",
+              "section": "7.5.5(5)②",
+              "evidence": "下層路盤施工後に工事車両等へ限定的に交通開放する段階施工例。",
+              "sourceType": "government_original_specification",
+              "versionNote": "章の版年未確認。仮排水の明文はない。"
+            }
+          ],
+          "remainingGap": "上層施工まで長期間ある場合の路床面保護、仮排水、車両による荒れ・降雨軟弱化・流出防止を直接定める原資料未確認。"
+        }
+      ],
+      "explanationPatch": "正答は3。置換工法では掘削面以下の層を乱さず、良質土で置換して締め固める。掘削面を十分にかきほぐすと路床支持力を損なうおそれがある。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "適当。土質に合う機械で均一な支持力を得るよう締め固める。過転圧によって支持力が低下する場合もあり、転圧回数は土質や施工条件に応じて管理する。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢2のシート対策",
+        "肢4の長い施工間隔中の仮排水・車両・降雨への路床保護"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A35",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/65609.pdf",
+              "page": "PDF pp96–97/本文91–92",
+              "section": "3-3-1(2),表3.3.1",
+              "evidence": "事前に舗装構造を調べ局部不良を打ち換え、著しい破損を覆うだけで短期に再破損させない。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "平成30年1月版。根拠頁本文をメモリ内で再確認。"
+            },
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF pp51–53/本文6-49–50",
+              "section": "表6-43,6-7-6",
+              "evidence": "路床・路盤の不適を構造損傷原因とし、著しい局部破損には路盤から打換える。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "PDF metadata作成2023-11-29。本文発行日と2025同一版は未断定。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF p62/本文6-59",
+              "section": "6-7-12(4)5",
+              "evidence": "シックリフト等を即日交通開放する場合は冷却等に留意する。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "metadata作成2023-11-29。本文頁を再確認。"
+            },
+            {
+              "url": "https://shizuokahosou.com/2020/06/05/paper03-h28/",
+              "page": "HTML",
+              "section": "平成28年度技術発表 鈴与建設 §3",
+              "evidence": "厚い日施工層で開放温度未達の初期わだちを懸念し中温化を併用した。",
+              "sourceType": "contractor_original_case_report",
+              "versionNote": "平成28年度報告、2020-06-05公開。一般値を事例から創作しない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.saitama.lg.jp/documents/175249/06_hosoukou1129.pdf",
+              "page": "PDF p57/本文6-54",
+              "section": "6-7-8(4)3",
+              "evidence": "新規混合物が少ないと気象影響・温度低下が大きく、保温、十分な加熱、早期締固めを要する。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "metadata作成2023-11-29。原文『温度効果』表記の文脈を保温・放冷と照合。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.hit.or.jp/aboutus/pdf/paper_2021_24_taishin.pdf",
+              "page": "PDF p1",
+              "section": "要約,1 はじめに",
+              "evidence": "舗装切削時の床版過切削は厚さ・疲労耐久性を損ない、微細亀裂等により防水層の付着にも影響する。",
+              "sourceType": "road_operator_original_experiment",
+              "versionNote": "2021年原著発表。該当頁を再確認。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は4。切削オーバーレイでは既設アスファルト舗装を切削する。床版の不陸を消すためにコンクリート床版自体を切削する記述は不適切で、過切削は床版厚・疲労耐久性と防水層の接着を損なう。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "適当。舗装構造と破損を事前に調べ、局部不良はオーバーレイ前に打ち換える。路床・路盤由来の破損を覆うだけでは短期に再破損し得る。"
+        },
+        {
+          "choice": 2,
+          "text": "適当。シックリフト等の厚い舗設層を即日開放する場合、開放時の高温による初期わだちを防ぐため冷却等に留意する。"
+        },
+        {
+          "choice": 4,
+          "text": "不適当。床版まで過切削すると床版厚・疲労耐久性を低下させ、微細亀裂等により防水層の接着にも影響する。床版の不陸解消を目的に切削対象を広げない。"
+        }
+      ],
+      "technicalRemaining": [],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A37",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.cgr.mlit.go.jp/ctc/pdf/technology/concrete/check.pdf",
+              "page": "PDF pp23–27/本文20–24",
+              "section": "6.1,6.3,納入書",
+              "evidence": "納入書と打込み前の検査、排出時の全車目視で種類、材料分離、品質を確認する。",
+              "sourceType": "government_original_supervision_manual",
+              "versionNote": "令和2年2月改訂。全試験を荷下ろし前に済ませる意味へ拡張しない。"
+            }
+          ],
+          "remainingGap": "不良な普通舗装コンクリートを『廃棄処分』する直接の原規程未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p21/本文16",
+              "section": "4-1 初期・後期養生",
+              "evidence": "初期養生は日射・風による急激な乾燥を防ぎ、シート可能時は速やかに後期養生へ移る。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "2013-03-29初版。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p21/本文16",
+              "section": "4-1 横収縮目地",
+              "evidence": "角欠けしない時点で直ちに切削し、所定位置・幅・深さまで垂直に切る。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "2013-03-29初版。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.cgr.mlit.go.jp/chiki/doyroj/top_main_data/pdf/katuyou_manual.pdf",
+              "page": "PDF p20/本文15",
+              "section": "4-1 敷き均し",
+              "evidence": "スプレッダで全体の密度を均等にし、適切な余盛りを設ける。",
+              "sourceType": "road_manager_original_manual",
+              "versionNote": "2013-03-29初版。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は2。初期養生は日射や風による表面の急激な乾燥を防ぐために行い、シート養生が可能になれば後期養生へ速やかに移る。乾燥を速めるという記述は目的が逆である。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 2,
+          "text": "不適当。仕上げ直後の表面を日射・風による急激な乾燥から守るために初期養生を行う。シート養生が可能になれば後期養生へ速やかに移る。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の不良生コン廃棄処分の直接条項"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A38",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.furutakogyo.co.jp/tech_item/",
+              "page": "HTML",
+              "section": "技術・工法 グラウト",
+              "evidence": "コンソリデーションをコンクリートダム着岩部、ブランケットをロックフィルのコア・基礎接触部として区別する。",
+              "sourceType": "contractor_original_technical_description",
+              "versionNote": "掲載日未確認。例外適用を全面否定する資料ではない。"
+            },
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p1",
+              "section": "2(1)",
+              "evidence": "コンソリデーションは着岩部の遮水改善と弱部補強を図る。",
+              "sourceType": "government_operator_original_report",
+              "versionNote": "令和4年研究報告、立野ダム事例。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p2",
+              "section": "2(2),図4",
+              "evidence": "第1ステージ削孔・水押し・注入の順序を示す。",
+              "sourceType": "government_operator_original_report",
+              "versionNote": "令和4年。事例図に上位→下位の工法定義はない。"
+            }
+          ],
+          "remainingGap": "ダム基礎のステージ注入を上位から下位へ削孔・注入を交互に行うと定義する原規程未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p28/本文9-25",
+              "section": "9-3-4-6",
+              "evidence": "ミルク配合と切替は設計図書による。",
+              "sourceType": "government_original_specification",
+              "versionNote": "適用年度未確認。"
+            },
+            {
+              "url": "https://thesis.pwri.go.jp/public_detail/116176",
+              "page": "HTML abstract",
+              "section": "グラウチング施工データを用いた注入過程の分析",
+              "evidence": "ルジオン値に応じた初期配合・切替基準を検討する。",
+              "sourceType": "national_research_original_abstract",
+              "versionNote": "2008年研究。抄録の範囲のみ。"
+            }
+          ],
+          "remainingGap": "薄い配合から濃い配合へ切替える具体的順序の一次本文未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/site_files/file/n-shiryo/r4kenkyu/5-08.pdf",
+              "page": "PDF p2",
+              "section": "2(2)(3)",
+              "evidence": "水押しで各ステージのルジオン値を測り、後続孔で先行注入効果を確認する。",
+              "sourceType": "government_operator_original_report",
+              "versionNote": "令和4年、個別事例。"
+            },
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF pp27,29/本文9-24,26",
+              "section": "9-3-3-5,9-3-4-8",
+              "evidence": "注入前の水押し試験とチェック孔透水試験を規定する。",
+              "sourceType": "government_original_specification",
+              "versionNote": "適用年度未確認。"
+            }
+          ],
+          "remainingGap": "水押し値を初期グラウト濃度決定へ結び付ける直接の規定未確認。"
+        }
+      ],
+      "explanationPatch": "正答は1。一般的な工法区分では、コンクリートダム着岩部の補強・遮水改善をコンソリデーショングラウチング、ロックフィルのコアと基礎接触部の遮水改善をブランケットグラウチングと呼ぶ。対象ダムと工法名の区別が必要である。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "不適当。確認した工法区分では、着岩部の補強・遮水改善をコンソリデーション、ロックフィルのコア・基礎接触部の遮水改善をブランケットと呼ぶ。本設問はその対象と名称を取り違えている。例外的な適用まで否定する趣旨ではない。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢2の上位→下位のステージ工法定義",
+        "肢3の薄→濃の配合順序",
+        "肢4の初期濃度決定"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A39",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED_NUMERIC",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p7/本文9-4",
+              "section": "9-1-4-5",
+              "evidence": "細骨材表面水率の測定を規定するが、水切り3～4日の規定はない。",
+              "sourceType": "government_original_specification",
+              "versionNote": "適用年度未確認。"
+            }
+          ],
+          "remainingGap": "細骨材の上屋と3～4日以上の水切り日数の直接原規程未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL_CONTRADICTION",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p10/本文9-7",
+              "section": "9-1-4-9(4)(6)(7)",
+              "evidence": "1リフト高は設計図書による。リフト0.75～2.0mの区分と複数層の1層40～50cmを別に規定。",
+              "sourceType": "government_original_specification",
+              "versionNote": "適用年度未確認。全国一律標準値ではない。"
+            }
+          ],
+          "remainingGap": "柱状ブロックの標準リフト高を直接記す原資料未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PROJECT_EXAMPLES_ONLY",
+          "sources": [
+            {
+              "url": "https://www.hkd.mlit.go.jp/ob/obihiro_kasen/ctll1r0000004tux.html",
+              "page": "HTML",
+              "section": "札内川ダムRCD施工",
+              "evidence": "25cm×3層=0.75m、ブルドーザ敷均し・ローラ転圧の事例。",
+              "sourceType": "government_operator_original_case",
+              "versionNote": "個別現場。"
+            },
+            {
+              "url": "https://www.water.go.jp/kanto/arakawa/takizawa/doga.html",
+              "page": "HTML",
+              "section": "滝沢ダムRCD施工",
+              "evidence": "約25cm×4層=1mの転圧事例。",
+              "sourceType": "dam_operator_original_case",
+              "versionNote": "個別現場。"
+            }
+          ],
+          "remainingGap": "0.75m=3層、1m=4層を一般標準とする原規程未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.ktr.mlit.go.jp/ktr_content/content/000743001.pdf",
+              "page": "PDF p14/本文9-11",
+              "section": "9-1-6-2(3)",
+              "evidence": "越流・導流・減勢部は平滑で不陸なく仕上げる。6mm数値はない。",
+              "sourceType": "government_original_specification",
+              "versionNote": "適用年度未確認。"
+            }
+          ],
+          "remainingGap": "局部不陸6mm以下という数値の直接原規程未確認。"
+        }
+      ],
+      "explanationPatch": "正答は2。1リフトの高さと1層の打込み厚さを区別する必要がある。確認した仕様書はリフト高を設計図書により、数層施工時の1層を40～50cmとする。全国一律の柱状ブロック標準リフト高は、この資料だけから断定しない。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 2,
+          "text": "不適当。1リフトの高さと、そのリフトを数層で施工する場合の1層厚を混同している。確認した仕様書はリフト高を設計図書によるとし、1層厚を40～50cmと別に定める。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の3～4日",
+        "肢2の標準リフト高",
+        "肢3の一般性",
+        "肢4の6mm"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A42",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL_CONTRADICTION",
+          "sources": [
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF pp15–16/本文60–61",
+              "section": "4-4-1-7-6(2)①",
+              "evidence": "表面に所要質量を配置し、内部には小質量のものを用いることが多い。同質量の場合もある。内部ほど大きくする記述は逆。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": "表層の捨石を3個並び以上とする数値の原規程未確認。ブロック2個並びの値を捨石へ転用しない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF pp15–16/本文60–61",
+              "section": "4-4-1-7-6(2)①",
+              "evidence": "汀線付近は基礎を掘り込むか天端を広げる措置を規定する。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.hrr.mlit.go.jp/gijyutu/kaitei/sek_riv/data/004_kaigan.pdf",
+              "page": "PDF p18/本文Ⅱ-14",
+              "section": "2-6-5(2)(6)",
+              "evidence": "海底土砂の移動抑制と、沈下変形を防ぐ適当な根固基礎工を求める。",
+              "sourceType": "government_original_design_manual",
+              "versionNote": "本文2004等の参照は版日を確定しない。"
+            },
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF pp16,24/本文61,69",
+              "section": "4-4-1-7-6(3),4-4-3-7",
+              "evidence": "消波兼用根固は消波基準を準用。砂層の洗掘・沈下を防ぐ基礎として捨石等を示す。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": "砂地盤等の根固基礎を栗石・捨石等で施工する必要性を、消波兼用以外も含む原問条件で直接述べる規定未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.jstage.jst.go.jp/article/proce1955/16/0/16_0_269/_pdf/-char/ja",
+              "page": "PDF p1/誌面269",
+              "section": "1,2",
+              "evidence": "異形ブロックのみでは砂移動を抑えにくい。下部の捨石フィルターを有効とし、粒径比と隙間通過を実験的に検討する。",
+              "sourceType": "original_coastal_engineering_research",
+              "versionNote": "富永・坂本原著。電子PDF作成2010年。海浜全般が安定との前提、球形・単層モデルの粒径比を実物にそのまま転用しない。"
+            },
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF pp21,24/本文66,69",
+              "section": "4-4-3-2(6),4-4-3-7(2)",
+              "evidence": "異形ブロックは底質移動抑制が弱く基礎を必要とし、捨石基礎は下層を細粒として底質になじませる。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は1。根固工の表面には波力に対して所要質量の石を置き、内部には小質量のものを用いることが多い。内部ほど大きな石を置くという説明は逆である。同質量で施工する場合もある。表層の個数についてブロックの規定を捨石へ転用しない。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "不適当。表面は波力に対して所要質量を確保し、内部には小質量のものを用いることが多い。内部へ向かって大きくするという説明は逆である。表面・内部を同質量で施工する場合もある。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の表層3個並びの数値",
+        "肢3の原問条件を直接記す栗石・捨石基礎規定"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A43",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF p20/本文65",
+              "section": "4-4-3-2(1)②",
+              "evidence": "波の規模に応じた適度な空隙を効果的な消波工の条件とする。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.rinya.maff.go.jp/j/sekou/kizyun/attach/pdf/gijutu_kijun-32.pdf",
+              "page": "PDF p20/本文65",
+              "section": "4-4-3-2(1)①",
+              "evidence": "効果的な消波工は表面粗度を大きくする条件を示し、肢の大小が逆。",
+              "sourceType": "government_original_design_guideline",
+              "versionNote": "公式技術基準indexの2015-04-01改訂『防災林造成編』解説その2へのリンクと一致。ファイルmetadata作成2021-05-18。試験原本との同一性を意味しない。PDF頁は1始まり。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.miyagi.jp/documents/11795/287160.pdf",
+              "page": "PDF p3/本文9-3",
+              "section": "9.1 機能と構造 解説",
+              "evidence": "中詰石上に数層のブロックを置く形式と、全断面をブロックとする形式を明記する。",
+              "sourceType": "government_original_design_manual",
+              "versionNote": "metadata作成2014-11-24。本文は2004海岸基準を参照。宮城の高潮波浪設計、2025同一版は未主張。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.fudotetra.co.jp/wp-content/uploads/2019/04/tetrapod_fig07.pdf",
+              "page": "PDF p2/印刷1–2",
+              "section": "テトラポッドの特性",
+              "evidence": "かみ合わせが良く安定した断面を作れる。反転と天端凹凸は本文で確認できない。",
+              "sourceType": "manufacturer_original_brochure",
+              "versionNote": "2015.05印刷表示。"
+            },
+            {
+              "url": "https://www.scopenet.or.jp/main/gakkai/pdf/R5%E5%B9%B4%E5%BA%A6%E5%85%AC%E9%96%8B%E7%94%A8%E6%A0%B9%E6%8B%A0%EF%BC%88%E2%85%A1%E9%A1%9E%EF%BC%89.pdf",
+              "page": "PDF p2 問09③",
+              "section": "出典欄: 港湾工事施工ハンドブック(R4.4) 第2編第4章4.4.1概要",
+              "evidence": "天端の極端な凹凸を避け、噛合せのため反転据付けする場合がある、という同内容の肢を掲載している。設問は不適切な肢を選ぶ形式であり、本文と出典表示だけではこの肢の正誤を確定しない。",
+              "sourceType": "certification_body_original_question_basis",
+              "versionNote": "2023年度自刊資料。引用元2022年4月の書籍本文・公式正答を取得した扱いにしない。"
+            },
+            {
+              "url": "https://www.toyo-suiken.co.jp/download/GASSHO.pdf",
+              "page": "PDF p3/印刷3–4",
+              "section": "1.3(2)2 合掌ブロックの特長",
+              "evidence": "合掌ブロックは仮置きと同じ姿で吊上げ据付けでき、噛合せ目的の反転を要しないとする製品固有の説明。原問の一般的な天端処理を直接証明する資料ではない。",
+              "sourceType": "manufacturer_original_brochure",
+              "versionNote": "刊行年月未確認。製品と配列の条件を限定し、他の消波ブロックへ一般化しない。"
+            }
+          ],
+          "remainingGap": "同内容の肢と引用元の書誌・節は特定したが、その肢を適切と確認できる公式正答又は引用元『港湾工事施工ハンドブック(R4.4)』4.4.1の本文が未確認。書籍の正規閲覧には所持者向け登録が必要であり、登録・購入・URL推測を行わない。製品固有の反転不要例を一般的な天端処理の反証にはしない。"
+        }
+      ],
+      "explanationPatch": "正答は2。効果的な消波工には、大きな表面粗度と波の規模に応じた適度な空隙が必要である。表面粗度を小さくするという記述は逆である。中詰石上の数層のブロックと全断面ブロックのいずれの形式もある。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 2,
+          "text": "不適当。波のエネルギーを減らすには大きな表面粗度と適度な内部空隙が必要であり、表面粗度を小さくするという説明は逆である。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢4の正誤を確認できる公式正答又は引用元書籍4.4.1の本文"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A44",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.city.kitakyushu.lg.jp/files/001134819.pdf",
+              "page": "PDF p25/本文306",
+              "section": "3-4-3 6(17)(18)",
+              "evidence": "大廻しワイヤを二重にし浮心付近に固定する。",
+              "sourceType": "government_original_specification",
+              "versionNote": "版日未確認。"
+            },
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF p191/本文180",
+              "section": "4.7.4(3)エ(チ)(ツ)",
+              "evidence": "回航時の大回しワイヤを二重・浮心付近に固定。港内曳航は協議の例外あり。",
+              "sourceType": "government_original_specification",
+              "versionNote": "2022-04版。"
+            }
+          ],
+          "remainingGap": "吃水線以下と直接定める原規程未確認。浮心位置からの推論だけで全文照合としない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.city.kitakyushu.lg.jp/files/001134819.pdf",
+              "page": "PDF p26/本文307",
+              "section": "3-4-3 7(2)(3)",
+              "evidence": "注水時は隔室水位差1m以内に管理する。",
+              "sourceType": "government_original_specification",
+              "versionNote": "版日未確認。"
+            },
+            {
+              "url": "https://www.umeshunkyo.or.jp/marinevoice21/promenade/239/index.html",
+              "page": "HTML",
+              "section": "曳航から据付",
+              "evidence": "各隔室を均一に注水する。",
+              "sourceType": "industry_association_original_construction_explanation",
+              "versionNote": "掲載日未確認。"
+            },
+            {
+              "url": "https://penta-ocean-int.com/wp-content/uploads/2014/11/g38-04.pdf",
+              "page": "PDF pp4,6",
+              "section": "4,図14",
+              "evidence": "据付情報化施工で注排水を管理し、着底注水完了後に隔室通水孔を閉塞する手順を示す。",
+              "sourceType": "contractor_original_construction_report",
+              "versionNote": "原報告の取得・読解は局所担当。URL2014/11は転載日時であって工事日・版日ではない。個別事例の孔数を一般標準としない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://penta-ocean-int.com/wp-content/uploads/2014/11/g38-04.pdf",
+              "page": "PDF p4",
+              "section": "4",
+              "evidence": "据付作業で目地緩衝材を設置する。",
+              "sourceType": "contractor_original_construction_report",
+              "versionNote": "タイヤ材質は未確認。"
+            },
+            {
+              "url": "https://www.nihonsolid.co.jp/12-soring.html",
+              "page": "HTML",
+              "section": "タイヤ式仮設防舷材ソリング",
+              "evidence": "大型タイヤを重層した衝撃緩和材のケーソン用途を示す。",
+              "sourceType": "manufacturer_original_product_document",
+              "versionNote": "掲載日未確認。"
+            }
+          ],
+          "remainingGap": "波浪中の函相互間据付でゴムタイヤを使うという原問条件の直接原資料未確認。同一現場・同一材と結び付けない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.umeshunkyo.or.jp/marinevoice21/promenade/239/index.html",
+              "page": "HTML",
+              "section": "曳航から据付",
+              "evidence": "マウンド直上で一旦注水を中止し位置を確認、再注水して着底する。",
+              "sourceType": "industry_association_original_construction_explanation",
+              "versionNote": "掲載日未確認。示された10～20cmは説明例であり一般義務値としない。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は4。据付時には着底前に注水を一旦止め、最終位置を確認してから再注水する手順がある。注水開始後に中断せず一気に着底させるという説明は不適切である。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 4,
+          "text": "不適当。着底前に注水を一旦中止して位置を確認し、再開して着底させる据付手順がある。開始後に中断しないとする説明は適切でない。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の吃水線以下の直接規定",
+        "肢3の函間・波浪・タイヤ材という条件の直接根拠"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A45",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.hkd.mlit.go.jp/ky/jg/gijyutu/slo5pa0000012pku-att/slo5pa0000014wzl.pdf",
+              "page": "PDF pp5,7,12/本文港-5,6,11",
+              "section": "3-2-5表4-2-1,3-2-7(1),3-2-11",
+              "evidence": "港湾の採取・標準貫入・土質試験を規定し、粘性土の標準貫入は原則除く。",
+              "sourceType": "government_original_specification",
+              "versionNote": "版日未確認。"
+            }
+          ],
+          "remainingGap": "浚渫前の粒度分析・比重・標準貫入の3試験の一般性と各物性対応を直接記す原規程未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.dc.ogb.go.jp/ishigakikou/images/pdf/route/seki04_shiryou6.pdf",
+              "page": "PDF pp1,3–4",
+              "section": "平成23年度環境監視1(1)–(3),表1-1–3",
+              "evidence": "施工前・中の水質と背景地点を調べ、背景変動を踏まえてSS・濁度を比較する。",
+              "sourceType": "government_operator_original_monitoring_report",
+              "versionNote": "2012-03-15石西礁湖現場報告。全国一律数値としない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/013/336/r2_jikitansakaisetsu.pdf",
+              "page": "PDF p34/本文28",
+              "section": "3-4(2)3)",
+              "evidence": "危険な不発弾等は移動せず立入禁止措置をとり、発注者・警察へ直ちに連絡する。",
+              "sourceType": "government_original_magnetic_survey_guideline",
+              "versionNote": "令和2年1月版。Web PDFの0始まりP33に本文28・3-4(2)3)を実確認し、1始まりPDF p34へ訂正。海底工程全体は別途適用確認。"
+            },
+            {
+              "url": "https://www.hkd.mlit.go.jp/ky/jg/gijyutu/slo5pa0000012pku-att/slo5pa0000014wzl.pdf",
+              "page": "PDF p4/本文港-3",
+              "section": "3-1-7(8)",
+              "evidence": "港湾調査で機雷・爆弾等を発見したら直ちに監督職員等へ報告し指示を受ける。",
+              "sourceType": "government_original_specification",
+              "versionNote": "版日未確認。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL_WITH_MARINE_EVIDENCE",
+          "sources": [
+            {
+              "url": "https://www.scopenet.or.jp/main/gakkai/pdf/R5%E5%B9%B4%E5%BA%A6%E5%85%AC%E9%96%8B%E7%94%A8%E6%A0%B9%E6%8B%A0%EF%BC%88%E2%85%A0%E9%A1%9E%EF%BC%89.pdf",
+              "page": "PDF p1 問08③",
+              "section": "港湾設計・測量・調査等業務共通仕様書R5.3 5-1-4を出典表示",
+              "evidence": "浚渫土厚が有効探査層厚を超える場合、層別の磁気・潜水探査を行う経層探査を示す。",
+              "sourceType": "certification_body_original_question_basis",
+              "versionNote": "2023年度自刊出典資料。引用元R5.3の本文を取得した扱いにはしない。"
+            },
+            {
+              "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/013/336/r2_jikitansakaisetsu.pdf",
+              "page": "PDF pp31–33/本文25–27",
+              "section": "3-3 経層探査",
+              "evidence": "安全確認済み層を掘削し必要深度まで反復する陸上の工程を説明する。",
+              "sourceType": "government_original_magnetic_survey_guideline",
+              "versionNote": "令和2年1月。陸上の手順を海底へ直接転用しない。"
+            }
+          ],
+          "remainingGap": "海底の『探査→安全深度まで浚渫→再探査』の具体工程を直接示す原仕様本文未確認。2026版を2025同一としない。"
+        }
+      ],
+      "explanationPatch": "正答は3。不発弾等と判明した危険物を再埋没防止のため移動してはならない。立入禁止等の措置をとり、監督職員や関係官公庁へ直ちに報告して指示を受ける。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 3,
+          "text": "不適当。危険な不発弾等は移動せず、立入禁止措置と監督職員・警察等への報告を行い指示を受ける。再埋没防止を理由に作業員が移動させない。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の3試験と一般性・物性対応",
+        "肢4の海底での安全深度浚渫・再探査の直接手順"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A46",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jrtt.go.jp/procurement/01_dobokukouji-shihousyo-R50401.pdf",
+              "page": "PDF pp39,41/本文33,35–36",
+              "section": "2-10-(6)イ,3-3(1)エ,表3-1",
+              "evidence": "路盤版に第3章を適用し粒度条件等を定めるが、表の25mm行を目視確証できていない。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年4月1日版。取得済みWeb本文を使用。直接取得はHTTP403で停止、同資料を別経路で再取得しない。"
+            }
+          ],
+          "remainingGap": "路盤固有の粗骨材最大寸法25mmの表値・原規程未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.jrtt.go.jp/procurement/01_dobokukouji-shihousyo-R50401.pdf",
+              "page": "PDF pp39,43–44/本文34,38–39",
+              "section": "2-10-(6)イ→3-3-(3)カ,表3-2",
+              "evidence": "温度急変や乾燥等を避け、硬化後は濡れたマット・散水等で湿潤養生する。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年4月1日版。取得済みWeb本文を使用。直接取得はHTTP403で停止、同資料を別経路で再取得しない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jrtt.go.jp/procurement/01_dobokukouji-shihousyo-R50401.pdf",
+              "page": "PDF p38/本文33",
+              "section": "2-10-(6)ア(ア)",
+              "evidence": "盛土上のコンクリート路盤は施工開始時期の承諾を要する。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年4月1日版。取得済みWeb本文を使用。直接取得はHTTP403で停止、同資料を別経路で再取得しない。"
+            }
+          ],
+          "remainingGap": "残留沈下・路盤変状を考慮し施工開始を確認・延期する直接鉄道原規程未確認。承諾条項だけでは即時施工原則を論理的に反証できない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jrtt.go.jp/procurement/01_dobokukouji-shihousyo-R50401.pdf",
+              "page": "PDF p39/本文34",
+              "section": "2-10-(6)ア(カ)",
+              "evidence": "砕石層仕上げ後にプライムコートを速やかに施工する。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年4月1日版。取得済みWeb本文を使用。直接取得はHTTP403で停止、同資料を別経路で再取得しない。"
+            }
+          ],
+          "remainingGap": "鉄道路盤固有の散布量1～2L/m²とコンクリート水分の砕石吸収防止目的の直接原規程未確認。道路舗装量を転用しない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": [
+        {
+          "choice": 2,
+          "text": "適当。コンクリート版を温度急変や乾燥等から保護し、硬化後の露出面は濡れた養生マットや散水等で湿潤状態に保つ。"
+        }
+      ],
+      "technicalRemaining": [
+        "肢1の25mm",
+        "肢3の残留沈下等と施工開始時期",
+        "肢4の鉄道固有1～2L/m²・吸水防止目的"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A47",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.rtri.or.jp/rd/division/rd45/rd4520/rd45200105.html",
+              "page": "HTML",
+              "section": "スラブ軌道の維持管理",
+              "evidence": "保守省力化とスラブ・てん充層の補修課題を説明する。",
+              "sourceType": "railway_research_institute_original",
+              "versionNote": "公開/改訂日未確認。"
+            },
+            {
+              "url": "https://www.jrtt.go.jp/procurement/asset/05_kidou-shihousyo_202309.pdf",
+              "page": "PDF pp28–29/本文22–23",
+              "section": "4-6,4-7",
+              "evidence": "てん充層施工前の位置調整と保持、CAモルタル厚確認を規定する。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年9月版。施工後の位置変更難易度を直接述べない。"
+            }
+          ],
+          "remainingGap": "堅固な路盤上のプレキャスト構造と施工後スラブ位置変更が容易でないことの直接原著未確認。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jrtt.go.jp/procurement/asset/05_kidou-shihousyo_202309.pdf",
+              "page": "PDF p21/本文15",
+              "section": "2-6",
+              "evidence": "継目遊間の設定指示と設定記録・承諾を規定する。",
+              "sourceType": "railway_owner_original_specification",
+              "versionNote": "令和5年9月。"
+            },
+            {
+              "url": "https://www.jreast.co.jp/development/tech/pdf_17/Tech-17-13-18.pdf",
+              "page": "PDF pp1–2/誌面13–14",
+              "section": "1,2",
+              "evidence": "温度で伸縮し、夏は圧縮、冬は引張応力が増す。",
+              "sourceType": "railway_operator_original_research",
+              "versionNote": "JR EAST Technical Review No.17の旧稿。"
+            }
+          ],
+          "remainingGap": "夏期・冬期前に継目遊間を整正する具体的保守時期の原規程未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.rtri.or.jp/rd/division/rd45/rd4520/rd45200129.html",
+              "page": "HTML",
+              "section": "道床バラストの破砕・細粒化を抑制するハンドタイタンパ",
+              "evidence": "繰返し走行・つき固めで破砕細粒化して沈下を招き、噴泥箇所は交換が必要となる。",
+              "sourceType": "railway_research_institute_original",
+              "versionNote": "参考文献2021。ページ公開日未確認。"
+            }
+          ],
+          "remainingGap": "擦れによる石の丸みと順次交換を直接結び付ける原著未確認。破砕細粒化・噴泥の別条件を転用しない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jreast.co.jp/development/tech/pdf_17/Tech-17-13-18.pdf",
+              "page": "PDF pp1–3/誌面13–15",
+              "section": "1–4",
+              "evidence": "疲労、摩耗、腐食、電食、製造欠陥をレール損傷・交換原因として扱う。",
+              "sourceType": "railway_operator_original_research",
+              "versionNote": "JR EAST Technical Review No.17。"
+            }
+          ],
+          "remainingGap": "取扱い不良・軌道保守不良の機序と一般に複数原因が競合するという直接原著未確認。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": [],
+      "technicalRemaining": [
+        "肢1の敷設後位置変更難易度",
+        "肢2の夏冬前遊間整正時期",
+        "肢3の丸みと交換",
+        "肢4の取扱い・保守不良と複数原因の競合"
+      ],
+      "scopeNote": "原問・選択肢・公式正答を変更しない。根拠の版・適用条件を各出典で限定し、2025同一版・独立公開受入れを自称しない。全101問のglobalHOLDと既存STOPを維持。 既存JR西日本URLは現在無関係なバックナンバー一覧へ転移するため根拠から除外。",
+      "workStatus": "COMPLETED"
+    },
+    {
+      "key": "2025-A49",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://jcmanet.or.jp/kikaibukai/tunnel/b51.html",
+              "page": "HTML §し シールドジャッキ／§ろ ローリング",
+              "section": "シールド用語集",
+              "evidence": "片側ジャッキの推進を曲線施工・蛇行修正の操作として説明し、ローリングは機体中心軸回りの回転と定義する。",
+              "sourceType": "industry_association_original_glossary",
+              "versionNote": "Web版改訂日は表示なし。定義の照合に限定。"
+            },
+            {
+              "url": "https://patents.google.com/patent/JP3454443B2/ja",
+              "page": "HTML ¶0004–0006,0014",
+              "section": "シールド掘進機のローリング修正装置",
+              "evidence": "コマツ原明細書は、ジャッキを機軸に対し傾けて円周方向の分力を作ることで修正トルクを得ると説明。単なる軸方向推力の偏心と区別できる。",
+              "sourceType": "manufacturer_original_patent",
+              "versionNote": "1994-11-04出願、2003-10-06特許公報。特定装置の例。全機種の操作や法的有効性は評価しない。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001477789.pdf",
+              "page": "PDF pp19,22–24,26–28（本文14,17–19,21–23）",
+              "section": "3-2-1;4-1;4-2;4-3",
+              "evidence": "地質・土被りを考慮した形式選定、チャンバー土砂性状・切羽圧・排土量の管理により、付着閉塞と取込み過多を防ぎ切羽安定を図る。",
+              "sourceType": "government_original_guideline",
+              "versionNote": "令和3年12月。PDF頁は1始まり。2025試験以前。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001477789.pdf",
+              "page": "PDF p29（本文24）",
+              "section": "4-4 裏込め注入工",
+              "evidence": "初期の注入量・圧を試し効果と影響を確認して管理基準を設定し、一定区間ごとの充填結果を後続施工へ反映する。",
+              "sourceType": "government_original_guideline",
+              "versionNote": "令和3年12月。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001477789.pdf",
+              "page": "PDF p21（本文16）",
+              "section": "3-2-4 形状保持装置",
+              "evidence": "テール抜出し後の地盤荷重や自重によるリング変形に対し、裏込め注入で形状が固定されるまで保持装置を設ける有効性を説明する。",
+              "sourceType": "government_original_guideline",
+              "versionNote": "令和3年12月。締結力を持たないセグメント等では設置要否を慎重に判断。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は1。ローリングは機軸周りの回転である。軸方向のジャッキ推力を片側に偏らせる操作は曲線施工や蛇行修正に用いる。軸方向力だけでは機軸周りのモーメントを生じない。コマツ原明細書にはジャッキを傾け、円周方向の分力を作る修正装置の例がある。修正手段は機種・工法に応じて選ぶ。②は地質・土被りに応じて切羽圧、取込み量とチャンバー土砂性状を管理する。③は裏込め注入量・圧を初期に試し、区間ごとの結果を施工へ反映する。④は裏込めで形状が固定されるまで形状保持装置が有効である。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "誤り。片側ジャッキの軸方向推力は曲線・蛇行修正に用いる。ローリングは機軸周りの回転で、軸方向推力だけではその軸周りの修正トルクにならない。ジャッキを傾けて円周方向分力を生む専用装置の例はあるが、全機種共通の操作ではない。"
+        },
+        {
+          "choice": 2,
+          "text": "正しい。地質・土被りに応じて切羽圧、排土量、チャンバー土砂の塑性流動性と止水性を管理する。取込み過多による切羽の緩みや、土砂の付着・閉塞を防ぐ必要がある。"
+        },
+        {
+          "choice": 3,
+          "text": "正しい。裏込め注入量と圧を初期に試し、充填効果と地表・近接構造物への影響を確認して管理値を決める。一定区間ごとの充填結果を後続施工に反映する。"
+        },
+        {
+          "choice": 4,
+          "text": "正しい。テール抜出し後のリングは地盤荷重や自重で変形し得る。裏込め注入でリングの形状が固定されるまで形状保持装置を設けることは有効である。"
+        }
+      ],
+      "technicalRemaining": [],
+      "scopeNote": "4肢の技術照合だけ解消。①は軸方向力のモーメントについての力学的推論と原装置の説明を区別した。公式原本同一性・独立公開受入れの全問共通HOLDを維持。",
+      "workStatus": "COMPLETED"
+    }
+  ],
+  "inputSha256": "7966c3f9eaf61ab97d0f135f1a552a57236d77b6b10306501dbb57fc60d4e02b",
+  "additionalStops": [
+    {
+      "url": "https://www.jrtt.go.jp/procurement/01_dobokukouji-shihousyo-R50401.pdf",
+      "reason": "Direct HTTPS returned HTTP403 /179bytes; no retry or alternate acquisition",
+      "scope": "A46 table numeric visual confirmation"
+    }
+  ],
+  "summary": {
+    "technicallyResolved": [
+      "2025-A35",
+      "2025-A49"
+    ],
+    "hold": [
+      "2025-A32",
+      "2025-A37",
+      "2025-A38",
+      "2025-A39",
+      "2025-A42",
+      "2025-A43",
+      "2025-A44",
+      "2025-A45",
+      "2025-A46",
+      "2025-A47"
+    ],
+    "remainingByQuestion": {
+      "2025-A32": [
+        "肢2のシート対策",
+        "肢4の長い施工間隔中の仮排水・車両・降雨への路床保護"
+      ],
+      "2025-A37": [
+        "肢1の不良生コン廃棄処分の直接条項"
+      ],
+      "2025-A38": [
+        "肢2の上位→下位のステージ工法定義",
+        "肢3の薄→濃の配合順序",
+        "肢4の初期濃度決定"
+      ],
+      "2025-A39": [
+        "肢1の3～4日",
+        "肢2の標準リフト高",
+        "肢3の一般性",
+        "肢4の6mm"
+      ],
+      "2025-A42": [
+        "肢1の表層3個並びの数値",
+        "肢3の原問条件を直接記す栗石・捨石基礎規定"
+      ],
+      "2025-A43": [
+        "肢4の正誤を確認できる公式正答又は引用元書籍4.4.1の本文"
+      ],
+      "2025-A44": [
+        "肢1の吃水線以下の直接規定",
+        "肢3の函間・波浪・タイヤ材という条件の直接根拠"
+      ],
+      "2025-A45": [
+        "肢1の3試験と一般性・物性対応",
+        "肢4の海底での安全深度浚渫・再探査の直接手順"
+      ],
+      "2025-A46": [
+        "肢1の25mm",
+        "肢3の残留沈下等と施工開始時期",
+        "肢4の鉄道固有1～2L/m²・吸水防止目的"
+      ],
+      "2025-A47": [
+        "肢1の敷設後位置変更難易度",
+        "肢2の夏冬前遊間整正時期",
+        "肢3の丸みと交換",
+        "肢4の取扱い・保守不良と複数原因の競合"
+      ]
+    }
+  },
+  "validation": {
+    "status": "PASS",
+    "checkedAt": "2026-10-11T04:24:57.356226+00:00",
+    "questionCount": 12,
+    "choiceCheckCount": 48,
+    "sourceReferenceCount": 70,
+    "choiceExplanationPatchCount": 16,
+    "remainingChoiceCount": 24,
+    "technicallyResolvedCount": 2,
+    "holdCount": 10,
+    "assignedKeySetExact": true,
+    "duplicateQuestionKeys": 0,
+    "duplicateChoiceNumbers": 0,
+    "inputUnchangedSha256": "7966c3f9eaf61ab97d0f135f1a552a57236d77b6b10306501dbb57fc60d4e02b",
+    "savedOriginalSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+    "originalQuestionChoiceAnswerFieldsAbsentFromPatch": true,
+    "manifestPreserved": true,
+    "globalHoldsPreserved": true,
+    "existingStopsPreserved": true,
+    "newJrtt403StopPreserved": true,
+    "scope": "JSON consistency and input/source-copy integrity; not public acceptance or repository test execution"
+  }
+}

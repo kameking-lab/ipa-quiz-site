@@ -1,0 +1,738 @@
+{
+  "scope": "materials-earthworks",
+  "checkedAt": "2026-10-11",
+  "sourceCheckpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+  "workState": "IN_PROGRESS",
+  "originalQuestionsChoicesAndAnswersChanged": false,
+  "globalHolds": [
+    "2025公式ホスト原本・正答同一性全101問は未確認。",
+    "独立した公開受入れは未実施。技術根拠解消から公開PASSへ変更しない。"
+  ],
+  "acquisitionStops": [
+    {
+      "url": "https://www.pref.aomori.lg.jp/soshiki/nourin/rinsei/files/kyotusiyosyohonbun300401.pdf",
+      "status": "STOP",
+      "reason": "既存HTTP403。再取得・回避しない。"
+    }
+  ],
+  "patches": [
+    {
+      "key": "2025-A11",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "INCORRECT",
+          "sources": [
+            {
+              "url": "https://www.jsce-int.org/system/files/JGC16_Standard_Specifications_Materials_and_Construction_1.1.pdf",
+              "page": "PDF p.87（index86）／印刷p.51",
+              "section": "3.4.1(7)",
+              "evidence": "異種細骨材の品質は混合前にそれぞれ所定品質に適合。混合後評価の例外は塩化物と粒度であり、吸水率を平均だけで判定する肢は不適当。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.jsce-int.org/system/files/JGC16_Standard_Specifications_Materials_and_Construction_1.1.pdf",
+              "page": "PDF p.87（index86）／印刷p.51",
+              "section": "3.4.1(7)",
+              "evidence": "塩化物量と粒度は混合後の細骨材が規定に適合することを求める。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.jsce-int.org/system/files/JGC16_Standard_Specifications_Materials_and_Construction_1.1.pdf",
+              "page": "PDF p.90（index89）／印刷p.54",
+              "section": "3.4.1 解説(3)",
+              "evidence": "角ばりが小さく細長い・扁平な粒が少ない砕砂を選び、実積率で粒形を判断する旨を明記。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.jtccm.or.jp/sites/default/files/2023-12/kisokouza.pdf",
+              "page": "PDF p.16（index15）／印刷p.8",
+              "section": "骨材の密度および吸水率",
+              "evidence": "骨材中の空隙量が密度・吸水率を左右し、同一岩種で吸水率の大きい骨材は耐久性に悪影響。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            },
+            {
+              "url": "https://www.jtccm.or.jp/sites/default/files/2023-12/kisokouza.pdf",
+              "page": "PDF p.49（index48）／印刷p.41",
+              "section": "耐凍害性に影響を及ぼす要因1)骨材の品質",
+              "evidence": "高吸水率の軟石は凍結膨張・ポップアウトを生じ得る。密度の違いだけで耐凍害性を断定しない。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": [],
+      "temporalQualification": "土木学会2007示方書の英訳刊行物（2010）と建材試験センター自刊講座で、出題の技術上の区別を確認。2025年の規格全文が当該旧版と同一とは主張しない。"
+    },
+    {
+      "key": "2025-A12",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://acrac.org/wp-content/uploads/2025/01/2017%E5%B9%B4%E9%87%8E%E5%8F%A3%E5%85%88%E7%94%9FJIS-A-5021-%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E7%94%A8%E5%86%8D%E7%94%9F%E9%AA%A8%E6%9D%90H%E3%81%AEJIS%E6%94%B9%E6%AD%A3%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88.pdf",
+              "page": "PDF p.5（index4）",
+              "section": "品質表：再生粗骨材H",
+              "evidence": "JIS原案作成委員会委員長・野口貴文の2017改正解説で再生粗骨材Hの吸水率上限3.0％を確認。",
+              "sourceType": "standards-committee-author-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            },
+            {
+              "url": "https://www.jtccm.or.jp/sites/default/files/2023-12/kisokouza.pdf",
+              "page": "PDF p.15（index14）",
+              "section": "表1",
+              "evidence": "再生粗骨材Hの吸水率3.0％以下を掲載。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.jsce-int.org/system/files/JGC16_Standard_Specifications_Materials_and_Construction_1.1.pdf",
+              "page": "PDF p.90（index89）／印刷p.54",
+              "section": "3.4.1 解説(4)",
+              "evidence": "高炉スラグ細骨材は、粒度調整などのため山砂など他の細骨材と混ぜて用いることが多いと説明。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.jtccm.or.jp/sites/default/files/2023-12/kisokouza.pdf",
+              "page": "PDF p.49（index48）／印刷p.41",
+              "section": "骨材の耐凍害性試験",
+              "evidence": "硫酸ナトリウムの結晶圧により凍結膨張と同様の作用を与える安定性試験。凍結融解性能と完全に一致する試験とはしない。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            },
+            {
+              "url": "https://thesis.pwri.go.jp/public_detail/115532",
+              "page": "HTML 抄録",
+              "section": "片平博・渡辺博志（2009）安定性試験における結晶圧作用機構に関する基礎的研究",
+              "evidence": "著者所属機関の抄録で、硫酸ナトリウム溶液・乾燥反復中の結晶圧作用を実験確認。",
+              "sourceType": "original-author-research-abstract",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "INCORRECT",
+          "sources": [
+            {
+              "url": "https://www.jsce-int.org/system/files/JGC16_Standard_Specifications_Materials_and_Construction_1.1.pdf",
+              "page": "PDF p.86（index85）表3.4.1／p.88（index87）印刷p.52",
+              "section": "3.4.1 Fine aggregate 解説(2)",
+              "evidence": "粘土塊は付着を妨げ、乾湿・凍結融解で空洞化する有害物。量の上限を管理するため2％以上を要求する記述は逆。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": [],
+      "choiceExplanationPatches": [
+        {
+          "choice": 3,
+          "text": "適当。骨材の安定性試験は硫酸ナトリウムの結晶圧による破壊作用を利用し、気象作用に対する抵抗性を評価する。ただし、この結果だけでコンクリートの凍結融解性能を完全に判定できるわけではない。"
+        }
+      ],
+      "temporalQualification": "2017年JIS改正原案委員長の資料と、出題以前の土木学会・建材試験センター資料を使用。後年の改正版との全文同一性を主張しない。"
+    },
+    {
+      "key": "2025-A17",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1174pdf/ks1174.pdf",
+              "page": "PDF p.40（index39）／印刷p.33",
+              "section": "3.3.2(2)鉛直支持力",
+              "evidence": "沈設で周面地盤を乱す可能性を考慮し、長期鉛直荷重は原則底面地盤反力で抵抗させる。",
+              "sourceType": "official-government-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "INCORRECT",
+          "sources": [
+            {
+              "url": "https://www.maff.go.jp/j/nousin/pompjyo/attach/pdf/ponnpu-15.pdf",
+              "page": "PDF p.27（index26）／印刷p.731",
+              "section": "15.4 杭基礎 (iii)摩擦杭の取扱い",
+              "evidence": "長期支持力特性への配慮と、摩擦杭で杭先端支持力を原則考慮しない扱いを明記。資料の道路橋示方書注記も併読。物理的に先端抵抗が存在しないとはしない。",
+              "sourceType": "official-government-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CORRECT_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.maff.go.jp/j/nousin/pompjyo/attach/pdf/ponnpu-15.pdf",
+              "page": "PDF p.3・6（index2・5）／印刷p.707・710",
+              "section": "表15.1、15.2直接基礎の設計",
+              "evidence": "砂・砂礫と粘性土の支持地盤品質を区別し、支持力と沈下が上部構造に障害を与えないことを要求。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": "ポンプ場技術書の支持力・沈下確認は一致するが、道路橋の当該肢を直接述べる支持層選定条項の照合は未了。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.nilim.go.jp/lab/bcg/siryou/tnn/tnn1174pdf/ks1174.pdf",
+              "page": "PDF p.45・47（index44・46）／印刷p.38・40",
+              "section": "3.4.1、3.4.2",
+              "evidence": "打込み・中掘り施工、施工法別の杭支持力式、井筒の基礎底面の鉛直・せん断地盤反力を確認。",
+              "sourceType": "official-government-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": "支持層への根入れと井筒部下端拘束を明示する道路橋又は協会自刊の条項を未閲覧。"
+        }
+      ],
+      "technicalRemaining": [
+        "⑶道路橋の支持層選定条項、⑷支持層根入れ・井筒下端拘束の明示資料が不足。⑴と⑵の判定根拠は局所解消。"
+      ],
+      "temporalQualification": "国総研1174は2017までの道路橋基準変遷を記した出題以前の刊行物。MAFFポンプ場技術書の規定を2025道路橋示方書そのものと同一視しない。"
+    },
+    {
+      "key": "2025-A19",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        }
+      ],
+      "technicalRemaining": [
+        "一次技術資料の肢別照合を進行中。"
+      ]
+    },
+    {
+      "key": "2025-A25",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "NOT_SELECTED_PATTERN_COMPARISON",
+          "sources": [
+            {
+              "url": "https://www.to-gisi.com/magazine/54/doc01.pdf",
+              "page": "PDF p.1",
+              "section": "2 初期ひび割れとは／図1",
+              "evidence": "ブリーディングに伴う沈下量の差で早期の沈下ひび割れが発生。型枠面ではセパレータ位置に残ることを解説。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CORRECT",
+          "sources": [
+            {
+              "url": "https://www.to-gisi.com/magazine/54/doc01.pdf",
+              "page": "PDF p.1",
+              "section": "2 初期ひび割れとは／図1",
+              "evidence": "ブリーディングに伴う沈下量の差で早期の沈下ひび割れが発生。型枠面ではセパレータ位置に残ることを解説。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            },
+            {
+              "url": "https://www.jstage.jst.go.jp/article/jscej1984/1997/557/1997_557_101/_article/-char/ja/",
+              "page": "HTML 抄録（論文p.101–109）",
+              "section": "杉山隆文・辻幸和・橋本親典・黒岩俊之（1997）",
+              "evidence": "打込み後の沈下ひび割れはブリーディングの多い場合ほど顕著になるという実験報告。",
+              "sourceType": "original-author-research-abstract",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "NOT_SELECTED_PATTERN_COMPARISON",
+          "sources": [
+            {
+              "url": "https://www.to-gisi.com/magazine/54/doc01.pdf",
+              "page": "PDF p.1",
+              "section": "2 初期ひび割れとは／図1",
+              "evidence": "ブリーディングに伴う沈下量の差で早期の沈下ひび割れが発生。型枠面ではセパレータ位置に残ることを解説。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "NOT_SELECTED_PATTERN_COMPARISON",
+          "sources": [
+            {
+              "url": "https://www.to-gisi.com/magazine/54/doc01.pdf",
+              "page": "PDF p.1",
+              "section": "2 初期ひび割れとは／図1",
+              "evidence": "ブリーディングに伴う沈下量の差で早期の沈下ひび割れが発生。型枠面ではセパレータ位置に残ることを解説。",
+              "sourceType": "association-authored-technical-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary text read"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "technicalRemaining": null,
+      "explanationPatch": "正答は⑵。打込み後、ブリーディングに伴う沈下に差が生じ、型枠面のセパレータ等で沈下が拘束されると初期の沈下ひび割れが残ることがある。原図⑵は壁の中ほどを走る水平ひび割れで、この機構に合う。ほかの図のひび割れ原因を形だけで断定する必要はない。",
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "選択対象ではない。原図は壁に複数の鉛直ひび割れを示す。⑵の壁面を水平に走る沈下ひび割れの形と区別する。図だけで乾燥収縮や温度などの原因を断定しない。"
+        },
+        {
+          "choice": 2,
+          "text": "適当。原図は壁の中ほどを走る水平ひび割れ。ブリーディングに伴う沈下量の差や型枠面のセパレータ等による拘束で生じる初期の沈下ひび割れの機構に合う。"
+        },
+        {
+          "choice": 3,
+          "text": "選択対象ではない。原図は床版両側の壁状部材に鉛直ひび割れを示す。⑵の壁面を水平に走るひび割れとは形が異なる。250mmを床版の厚さと読まない。"
+        },
+        {
+          "choice": 4,
+          "text": "選択対象ではない。原図は床版下面に網状のひび割れを示す。⑵の壁面を水平に走るひび割れとは位置・形が異なる。図だけで表面収縮などの原因を断定しない。"
+        }
+      ],
+      "figureDescriptionPatch": "⑴厚さ800mmの壁の複数の鉛直ひび割れ。⑵厚さ800mmの壁の中ほどの水平ひび割れ。⑶床版両側の壁状部材の複数の鉛直ひび割れ（250mmの寸法線は左側壁状部材の厚さを指す）。⑷厚さ250mmの床版下面の網状ひび割れ。",
+      "sourceTranscriptionCorrectionProposal": {
+        "kind": "explicit-source-transcription-correction-proposal",
+        "status": "ROOT_VERIFIED_APPLY_BY_COLLECTOR",
+        "originalCoreEdited": false,
+        "scope": "元の画像選択肢から生成された独自文章の寸法・面位置の誤読のみ。元画像・問題文・公式正答番号は不変。",
+        "localSourceFigure": "C:/wt/civil1-latest-two-20261011/reports/civil1-2025-july/source-figures/a25-source-copy.png",
+        "accessMethod": "view_image original resolution, 2026-10-11",
+        "observations": [
+          "⑴⑵の800mm寸法線は壁の小口方向の厚さを示し、長手方向の幅ではない。",
+          "⑶の250mm寸法線は左奥の壁状部材の小口方向の厚さを示し、中央床版の厚さではない。",
+          "⑷は床版の下面を見上げる図で網状のひび割れがあり、250mmの寸法線は上方床版厚さを指す。"
+        ],
+        "proposedChoiceDescriptions": [
+          {
+            "choice": 1,
+            "text": "厚さ800mmの壁に鉛直方向のひび割れが複数生じた図"
+          },
+          {
+            "choice": 2,
+            "text": "厚さ800mmの壁の中ほどに水平方向のひび割れが生じた図"
+          },
+          {
+            "choice": 3,
+            "text": "床版の両側にある厚さ250mmの壁状部材に鉛直方向のひび割れが複数生じた図"
+          },
+          {
+            "choice": 4,
+            "text": "厚さ250mmの床版の下面に網目状のひび割れが生じた図"
+          }
+        ]
+      },
+      "temporalQualification": "1997の原著抄録・2013の技士会自刊の機構説明を使用。原図コピーは目視したが、公式ホスト同一性は別globalHOLD。",
+      "scopeNote": "rootが保存原図を目視し、a25-transcription-correction-receipt.jsonで独自文章化した図選択肢の寸法・面位置の訂正を承認済み。collectorが当該receiptにより図説明を適用する。元画像・問題文・公式正答番号は不変。⑵の沈下・ブリーディング機構と4図の位置・形の区別のみを採用し、⑴⑶⑷の固有の発生原因を図だけで断定しない。公式ホスト同一性と独立公開受入れは別globalHOLD。"
+    },
+    {
+      "key": "2025-A26",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_03.pdf",
+              "page": "PDF p.70（0起算69）／印刷p.128",
+              "section": "3.4.3 表3.4.4 拡築材料の選定",
+              "evidence": "砂挟在型は裏側に透水性良好な材料、表側に難透水性材料を選ぶ。川表で低透水材料を用いるという配置は肢1と逆。",
+              "sourceType": "technical-foundation-own-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_04.pdf",
+              "page": "PDF p.108（0起算107）／印刷p.241",
+              "section": "4.3 盛土／5)のり面仕上げ・図4.3.20",
+              "evidence": "降雨の集中による施工中の法面侵食を防ぐため、堤体横断方向へ3～5%の勾配をつける施工方法を記す。",
+              "sourceType": "technical-foundation-own-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_07.pdf",
+              "page": "PDF p.15（0起算14）／印刷p.327",
+              "section": "7.1断面拡大工法／3)盛土施工／(a)③既設堤防の段切り",
+              "evidence": "新旧堤体をなじませる段切り、転圧厚の倍数、最小高0.5m、まき出し30cmから高さ60cmを多用する目安を確認。",
+              "sourceType": "technical-foundation-own-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.jice.or.jp/cms/kokudo/pdf/tech/material/dokouh21_04.pdf",
+              "page": "PDF p.99（0起算98）／印刷p.232",
+              "section": "4.3 盛土／3)締固め／(a)ブルドーザによる締固め",
+              "evidence": "堤防法線に平行に締固め、締固め幅を重ねて施工する注意が直接記載される。",
+              "sourceType": "technical-foundation-own-publication",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "explanation": "不適当。表側には河川水の浸透を抑える難透水性材料、裏側には排水を妨げない透水性の良好な材料を選ぶ方向が基本となる。原問の配置は逆である。既設堤体の土質やドレーン等を踏まえて材料を選定する。"
+        }
+      ],
+      "technicalRemaining": [],
+      "temporalQualification": "JICE公開『河川土工マニュアル』平成21年版の技術内容を照合。2026年共通仕様書を2025年版と同一と扱わない。"
+    },
+    {
+      "key": "2025-A27",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        }
+      ],
+      "technicalRemaining": [
+        "一次技術資料の肢別照合を進行中。"
+      ]
+    },
+    {
+      "key": "2025-A28",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        }
+      ],
+      "technicalRemaining": [
+        "一次技術資料の肢別照合を進行中。"
+      ]
+    },
+    {
+      "key": "2025-A29",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        }
+      ],
+      "technicalRemaining": [
+        "一次技術資料の肢別照合を進行中。"
+      ]
+    },
+    {
+      "key": "2025-A30",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "一次技術資料の肢別照合を進行中。"
+        }
+      ],
+      "technicalRemaining": [
+        "一次技術資料の肢別照合を進行中。"
+      ]
+    },
+    {
+      "key": "2025-A31",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.pref.aichi.jp/uploaded/life/282879_1022947_misc.pdf",
+              "page": "PDF p.34（0起算33）／設4-3-24",
+              "section": "1.4.2構造物の裏込め部の排水",
+              "evidence": "急傾斜地の水抜き孔は約3°（5%）の傾斜をつけて設置する。水平という条件に反する。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.pref.aichi.jp/uploaded/life/282879_1022947_misc.pdf",
+              "page": "PDF p.105（0起算104）／設4-3-95",
+              "section": "6.3 表4.3-29 擁壁の種類（もたれ式）",
+              "evidence": "もたれ式は地山・裏込め土に支えられる形式。斜面から離して崩土を捕捉する配置は待受式の説明である。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            },
+            {
+              "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/8146.pdf",
+              "page": "PDF p.39（0起算38）／7-1",
+              "section": "7-1-2 擁壁工の種類",
+              "evidence": "背面のポケットで崩土を止めるものを待受式擁壁として分類する。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "CONTRADICTED",
+          "sources": [
+            {
+              "url": "https://www.pref.aichi.jp/uploaded/life/282879_1022947_misc.pdf",
+              "page": "PDF p.95～98（0起算94～97）／設4-3-85～88",
+              "section": "5.4吹付枠工、5.5.1プレキャスト枠工の設計",
+              "evidence": "金網型枠へモルタルを直接吹付ける形式は吹付枠工で、凹凸面への追随性を持つ。プレキャスト枠は製作済み製品。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.aichi.jp/uploaded/life/282879_1022947_misc.pdf",
+              "page": "PDF p.92,94（0起算91,93）／設4-3-82,84",
+              "section": "5.3.1現場打コンクリート枠工の設計、5.3.3梁の構造",
+              "evidence": "切土の安定勾配を確保できない、湧水を伴う等の条件に適用し、梁は一般に鉄筋コンクリートと記載。",
+              "sourceType": "official-government-technical-standard",
+              "accessedAt": "2026-10-11",
+              "accessMethod": "web primary PDF text read"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "explanation": "不適当。背面水を排除する水抜き孔は、排水側へ傾斜をつけて設置する。愛知県の急傾斜地設計編では3°（5%）程度の傾斜を示しており、水平設置という記述は適当でない。"
+        },
+        {
+          "choice": 2,
+          "explanation": "不適当。もたれ式擁壁は地山や裏込め土に支えられて自重で土圧に抵抗する。斜面脚部から離して背面に崩壊土砂の捕捉空間を設けるのは待受式擁壁であり、形式を取り違えている。"
+        }
+      ],
+      "technicalRemaining": [],
+      "temporalQualification": "2025年以前から公開された県の一次設計資料を使用。県基準の数値を全国一律の新規義務とは表現しない。"
+    }
+  ]
+}
