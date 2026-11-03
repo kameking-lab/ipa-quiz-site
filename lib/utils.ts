@@ -6,6 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "keiryoshi": "一般計量士",
+  "keiryoshi-nodo": "環境計量士（濃度関係）",
+  "keiryoshi-soon": "環境計量士（騒音・振動関係）",
+
   kanteishi: "不動産鑑定士",
   kaikeishi: "公認会計士",
   "riku-tech2": "第二級陸上無線技術士",

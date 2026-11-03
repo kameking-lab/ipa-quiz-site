@@ -163,6 +163,10 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "keiryoshi": "一般計量士国家試験",
+  "keiryoshi-nodo": "環境計量士（濃度関係）国家試験",
+  "keiryoshi-soon": "環境計量士（騒音・振動関係）国家試験",
+
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
   "riku-tech2": "第二級陸上無線技術士試験",

@@ -41,6 +41,10 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  {"slug": "keiryoshi", "examCode": "keiryoshi", "shortName": "一般計量士", "fullName": "一般計量士国家試験", "domain": "safety", "administrator": "経済産業省", "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html", "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html", "status": "ready-to-ingest", "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。", "remainingWork": ["未整備原問のテキスト・数式・図と全肢解説の確認", "環境制限のない環境で指定検証", "監督役による独立レビューと公開判断"]},
+  {"slug": "keiryoshi-nodo", "examCode": "keiryoshi-nodo", "shortName": "環境計量士（濃度関係）", "fullName": "環境計量士（濃度関係）国家試験", "domain": "safety", "administrator": "経済産業省", "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html", "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html", "status": "ready-to-ingest", "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。", "remainingWork": ["未整備原問のテキスト・数式・図と全肢解説の確認", "環境制限のない環境で指定検証", "監督役による独立レビューと公開判断"]},
+  {"slug": "keiryoshi-soon", "examCode": "keiryoshi-soon", "shortName": "環境計量士（騒音・振動関係）", "fullName": "環境計量士（騒音・振動関係）国家試験", "domain": "safety", "administrator": "経済産業省", "officialQuestionsUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/23_kakomon.html", "officialReuseTermsUrl": "https://www.meti.go.jp/main/rules.html", "status": "ready-to-ingest", "reuseSummary": "オーナー権利確認済み。第76回の公式問題・訂正版正答に基づく未公開ステージング。解説は独自作成。", "remainingWork": ["未整備原問のテキスト・数式・図と全肢解説の確認", "環境制限のない環境で指定検証", "監督役による独立レビューと公開判断"]},
+
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
