@@ -170,10 +170,10 @@
     2026,
     2025
   ],
-  "stagedQuestions": 80,
-  "stagedChoiceExplanations": 400,
+  "stagedQuestions": 139,
+  "stagedChoiceExplanations": 695,
   "officialPrimaryQuestions": 414,
-  "remainingPrimaryQuestions": 334,
+  "remainingPrimaryQuestions": 275,
   "counting": "第一種は各年132原問（法令30・実務6・物理32・化学32・生物32）。第二種は各年75原問（法令30・実務12・物理11・化学11・生物11）。多肢択一式の空欄は原問と別に数えない。",
   "unavailableRounds": [],
   "omissionReason": "40分の作業時間上限により、原本画像の文字起こし・全肢解説の確認を未完了。公式の公開欠落ではない。",
@@ -285,6 +285,107 @@
         9,
         10
       ]
+    },
+    {
+      "year": 2026,
+      "grade": 2,
+      "subject": "化学",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10
+      ]
+    },
+    {
+      "year": 2025,
+      "grade": 2,
+      "subject": "化学",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "year": 2026,
+      "grade": 2,
+      "subject": "生物学",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "year": 2025,
+      "grade": 2,
+      "subject": "生物学",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "year": 2026,
+      "grade": 2,
+      "subject": "実務",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "year": 2025,
+      "grade": 2,
+      "subject": "実務",
+      "numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
     }
   ],
   "answerKeys": {
@@ -375,9 +476,96 @@
       4,
       2,
       1
+    ],
+    "2026-2-kagaku": [
+      2,
+      2,
+      4,
+      2,
+      3,
+      2,
+      4,
+      4,
+      3
+    ],
+    "2025-2-kagaku": [
+      2,
+      1,
+      4,
+      5,
+      1,
+      5,
+      2,
+      3,
+      4,
+      2
+    ],
+    "2026-2-seibutsu": [
+      3,
+      4,
+      3,
+      2,
+      3,
+      2,
+      5,
+      3,
+      1,
+      5
+    ],
+    "2025-2-seibutsu": [
+      5,
+      3,
+      4,
+      1,
+      2,
+      5,
+      1,
+      3,
+      3,
+      1
+    ],
+    "2026-2-jitsumu": [
+      4,
+      1,
+      3,
+      4,
+      1,
+      2,
+      3,
+      2,
+      5,
+      1
+    ],
+    "2025-2-jitsumu": [
+      2,
+      1,
+      5,
+      4,
+      1,
+      4,
+      2,
+      3,
+      3,
+      5
     ]
   },
-  "transcription": "原本レンダリングで本文・全肢を目視照合。OCRは補助のみ。指数・核種・ギリシャ文字を原本から復元。組合せの空白を整理、表の列名を各肢に付記。令和8年度第一種物理学問19の原図のみprivateなfigures/に保存。",
+  "transcription": "原本レンダリングで本文・全肢を目視照合。OCRは補助のみ。指数・核種・ギリシャ文字を原本から復元。組合せの空白を整理、表の列名を各肢に付記。令和8年度第一種物理学問19・令和7年度第二種実務問6の原図のみprivateなfigures/に保存。",
   "errata": "令和8年度第一種実務・生物学、令和7年度第一種実務・化学は正誤票の添付あり。該当科目の収録時に反映する。今回の物理学問1〜10には影響なし。",
-  "independentReview": "Initial 40: PASS. Additional 2026 grade1 physics: CEMA definition corrected per review, re-review pending. Additional 2025 grade1 physics: pending."
+  "independentReview": "PASS for the current unpublished partial checkpoint: physics80, chemistry19 plus held1, biology20, practical20 after corrections. Executed with C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only. Evidence: reports/lq8-independent-review-40.md, -60.md (initial finding), -final.md (physics80 PASS), -chemistry.md, -biology.md, -practical.md (initial finding), -practical-fixed.md (139 integration PASS).",
+  "heldPrimaryQuestions": 1,
+  "heldQuestionIds": [
+    "hoshasen-2-2026-kagaku-q9"
+  ],
+  "heldEvidence": "held-2026-2-kagaku-q9.json",
+  "validation": {
+    "questions": "PASS; native139 schema validated, global26444 fail0 warn16808",
+    "typecheck": "PASS; pnpm typecheck exit0",
+    "relatedTests": "PASS; 2 files1071 tests including5 hoshasen staging checks",
+    "commands": [
+      "pnpm validate:questions",
+      "pnpm typecheck",
+      "corepack pnpm exec vitest run __tests__/questions/hoshasen-staging.test.ts __tests__/questions/qualification-expansion.test.ts"
+    ],
+    "scope": "Full-suite pass is not claimed. An inadvertently started full suite was stopped after a non-related /api/copilot durability test timed out; the corrected targeted command passed."
+  }
 }

@@ -3,13 +3,19 @@ import first2026 from "./2026-1.json";
 import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
 import second2025 from "./2025-2.json";
+import chemistry2026 from "./2026-2-kagaku.json";
+import chemistry2025 from "./2025-2-kagaku.json";
+import biology2026 from "./2026-2-seibutsu.json";
+import biology2025 from "./2025-2-seibutsu.json";
+import practical2026 from "./2026-2-jitsumu.json";
+import practical2025 from "./2025-2-jitsumu.json";
 
 /** Native source staging. Deliberately absent from public registries and loaders. */
 export const HoshasenStagedQuestionSchema = z.object({
-  id: z.string().regex(/^hoshasen-[12]-202[56]-butsuri-q\d+$/),
+  id: z.string().regex(/^hoshasen-[12]-202[56]-(?:butsuri|kagaku|seibutsu|jitsumu)-q\d+$/),
   grade: z.union([z.literal(1), z.literal(2)]),
   year: z.union([z.literal(2025), z.literal(2026)]),
-  subject: z.literal("物理学"),
+  subject: z.enum(["物理学", "化学", "生物学", "実務"]),
   number: z.number().int().min(1).max(30),
   pdfPage: z.number().int().positive(),
   question: z.string().min(10),
@@ -20,7 +26,7 @@ export const HoshasenStagedQuestionSchema = z.object({
   topic: z.string().min(1),
   sourcePdfUrl: z.string().url().startsWith("https://www.nustec.or.jp/syunin/pdf/"),
   sourceAnswerUrl: z.string().url().startsWith("https://www.nustec.or.jp/syunin/pdf/"),
-  answerPdfPage: z.literal(3),
+  answerPdfPage: z.union([z.literal(2), z.literal(3)]),
   sourceAttribution: z.string().startsWith("出典：公益財団法人原子力安全技術センター"),
   hasImage: z.boolean(),
   imagePath: z.string().startsWith("data/questions/hoshasen/figures/").optional(),
@@ -33,4 +39,4 @@ export const HoshasenStagedQuestionSchema = z.object({
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025]);

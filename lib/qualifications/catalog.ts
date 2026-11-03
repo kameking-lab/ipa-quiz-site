@@ -50,9 +50,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.nustec.or.jp/syunin/syunin05.html",
     officialReuseTermsUrl: "https://www.nustec.or.jp/syunin/syunin05.html",
     status: "ready-to-ingest",
-    reuseSummary: "2026-11-04 01:30のオーナー決定で権利確認済み。令和8・7年度、第一種・第二種の公式問題・正答PDF全20本を取得。第一種両年度の物理学問1〜30と第二種両年度の物理学問1〜10、計80問・400肢解説を未公開ステージングに部分収録。直近2回の全問収録は未完了です。",
+    reuseSummary: "2026-11-04 01:30のオーナー決定で権利確認済み。令和8・7年度、第一種・第二種の公式問題・正答PDF全20本を取得。第一種両年度の物理学問1〜30と第二種両年度の物理学問1〜10、加えて第二種化学19問・生物学20問・実務20問を含む計139問・695肢解説を未公開ステージングに部分収録。直近2回の全問収録は未完了です。",
     attributionTemplate: "出典：公益財団法人原子力安全技術センター 令和○年度 第○種放射線取扱主任者試験（科目・問番号）。問題・正答は公式PDF、解説は独自作成。",
-    remainingWork: ["残334原問の文字起こし・公式正答照合・全肢解説", "必要図版の切り出しと添付正誤票の反映", "公開用の試験区分・科目設定とローダーへの接続（別途公開指示が必要）"],
+    remainingWork: ["残275原問（第二種令和8年度化学問9の内容保留1問を含む）の文字起こし・公式正答照合・全肢解説", "必要図版の切り出しと添付正誤票の反映", "公開用の試験区分・科目設定とローダーへの接続（別途公開指示が必要）"],
   },
   {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
