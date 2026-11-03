@@ -126,8 +126,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["spring", "july"], yearRange: { start: 2026, end: 2026 },
   },
   kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", level: "specialist",
-    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "学科一般", categories: [] },
-      { session: "senmon", urlSlug: "senmon", expectedQuestions: 15, label: "学科専門", categories: [] }],
+    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "学科一般", categories: ["学科一般"] },
+      { session: "senmon", urlSlug: "senmon", expectedQuestions: 15, label: "学科専門", categories: ["学科専門"] }],
     seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
   kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",

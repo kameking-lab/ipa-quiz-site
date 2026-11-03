@@ -17,13 +17,10 @@ vi.mock("next/navigation", () => ({
 
 import QuizPage from "@/app/quiz/page";
 import StreamQuizPage from "@/app/quiz/stream/page";
-import YearModePage, { generateMetadata as yearMetadata } from "@/app/modes/year/page";
-import TopicModePage, { generateMetadata as topicMetadata } from "@/app/modes/topic/page";
+import YearModePage from "@/app/modes/year/page";
+import TopicModePage from "@/app/modes/topic/page";
 import { QuizClient } from "@/app/quiz/QuizClient";
-import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
-import { filterQuestions } from "@/lib/questions/filter";
-import { quizBackHref } from "@/lib/questions/practice-session";
 
 interface Props {
   children?: ReactNode;
@@ -71,8 +68,10 @@ describe("weather learning routes retain exam and official subject", () => {
   });
   it("retains all 60 academic originals through year and topic links", async () => {
     for (const Page of [YearModePage, TopicModePage]) {
-      const tree = await Page({ searchParams: Promise.resolve({ exam: "kisho" }) });
-      const links = quizLinks(tree);
+      const trees = Page === TopicModePage
+        ? await Promise.all(["ippan", "senmon"].map(session => Page({ searchParams: Promise.resolve({ exam: "kisho", session }) })))
+        : [await Page({ searchParams: Promise.resolve({ exam: "kisho" }) })];
+      const links = trees.flatMap(quizLinks);
       expect(links.length).toBeGreaterThan(0);
       const ids: string[] = [];
       for (const link of links) {
@@ -84,7 +83,7 @@ describe("weather learning routes retain exam and official subject", () => {
     }
     const year = await YearModePage({ searchParams: Promise.resolve({ exam: "kisho" }) });
     const html = renderToStaticMarkup(year);
-    expect(html).toContain("????");
-    expect(html).toContain("????");
+    expect(html).toContain("\u5b66\u79d1\u4e00\u822c");
+    expect(html).toContain("\u5b66\u79d1\u5c02\u9580");
   });
 });
