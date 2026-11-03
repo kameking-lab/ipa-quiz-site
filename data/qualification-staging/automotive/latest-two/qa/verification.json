@@ -1,0 +1,88 @@
+{
+  "qualification": "jidousha-seibishi-gakka",
+  "recordedAtUtc": "2026-10-11T02:30:52.264Z",
+  "baseCommit": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "initialContentCommit": "6f7fe537efee7aecfc7324aca90593ca885b446e",
+  "manuscripts": {
+    "status": "passed",
+    "originals": 610,
+    "choiceExplanations": 2440,
+    "figureQuestions": 123,
+    "figureAssets": 106,
+    "duplicates": 0,
+    "structuralIssues": 0,
+    "reviewedOriginals": 609,
+    "gradableOriginals": 608
+  },
+  "hashes": {
+    "status": "passed",
+    "figuresVerified": 106,
+    "normalizedQuestionSha256": "72c379b0f0942e4f881d1020fe2326d11c7e0a77aea2b9a08b093e77732cac68",
+    "initialCommittedBlobVerified": true
+  },
+  "typecheck": {
+    "command": "corepack pnpm typecheck",
+    "exitCode": 0
+  },
+  "lint": {
+    "command": "corepack pnpm lint",
+    "exitCode": 0,
+    "warnings": [
+      "One pre-existing unused variable in reports/civil2-2026-completion-20260926/parse-fenced-results.mjs. Automotive paths have no warnings."
+    ]
+  },
+  "nodeTests": {
+    "command": "node --test scripts/automotive/validate-automotive-drafts.test.mjs",
+    "passed": 5,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "explanationStrengthening": {
+    "questions": 15,
+    "choices": 36,
+    "originalAndOfficialAnswerRowsUnchanged": 610,
+    "evidence": "qa/explanation-delta-verification.json"
+  },
+  "vitest": {
+    "initial": {
+      "command": "corepack pnpm test --maxWorkers=2",
+      "files": 516,
+      "tests": 4771,
+      "passedFiles": 513,
+      "passedTests": 4766,
+      "failedFiles": 3,
+      "failedTests": 5,
+      "exitCode": 1,
+      "explanation": "Import/runtime timeouts under concurrent host load, followed by an unsettled-mock cascade in cost-record-durability."
+    },
+    "automotive": {
+      "files": 1,
+      "passedTests": 4,
+      "failedTests": 0
+    },
+    "finalAutomotiveRetest": {
+      "command": "corepack pnpm test __tests__/automotive-drafts.test.ts --maxWorkers=1",
+      "passedTests": 4,
+      "failedTests": 0,
+      "exitCode": 0
+    },
+    "isolatedRetest": {
+      "command": "corepack pnpm test __tests__/api/cost-record-durability.test.ts __tests__/seo/sitemap-static-indexable.test.ts __tests__/exam-library-integration.test.ts --maxWorkers=1 --testTimeout=60000",
+      "files": 3,
+      "passedTests": 18,
+      "failedTests": 0,
+      "exitCode": 0,
+      "sourceOrAssertionsChanged": false
+    }
+  },
+  "build": {
+    "command": "corepack pnpm build --webpack",
+    "exitCode": 0,
+    "status": "passed",
+    "staticPages": 11471,
+    "note": "Build passed before the final data-only wording refinement in the unregistered staging bundle. Final payload separately passed TypeScript and automotive tests; public runtime sources did not change."
+  },
+  "publicRegistryIncrement": 0,
+  "draftOriginalIncrement": 610,
+  "mergeAndDeployment": "Integration owner only; neither performed by this task."
+}
