@@ -7,8 +7,8 @@ import paper2026Am1 from "./2026-am1.json";
 import paper2026Am2 from "./2026-am2.json";
 import paper2026Pm from "./2026-pm.json";
 
-// The six saved packets are byte-identical copies of the fixed private 210-question candidate.
-// Data ingestion only: public catalog/loader activation is a separate release operation.
+// Originals include documented source corrections. Only the study export is public.
+// Q18 remains private until its official-answer/legal interpretation conflict is resolved.
 const materials = [paper2025Am1, paper2025Am2, paper2025Pm, paper2026Am1, paper2026Am2, paper2026Pm].flatMap(readKenchikuSavedSource);
 if (materials.length !== 210 || new Set(materials.map((q) => q.id)).size !== 210) {
   throw new Error("kenchiku-setsubishi material count or IDs mismatch");

@@ -13,7 +13,7 @@
   "imageQuestions": 23,
   "imageAssets": 32,
   "rights": "User confirms rights obtained; no new permission gate. Original license labels retained.",
-  "publication": "NOT_ACTIVATED_DATA_ONLY",
+  "publication": "LOCAL_PUBLIC_ROUTES_CONNECTED_Q18_EXCLUDED",
   "packets": [
     {
       "path": "data/questions/kenchiku-setsubishi/2025-am1.json",
@@ -305,7 +305,7 @@
     },
     {
       "path": "data/questions/kenchiku-setsubishi/2025-am2.json",
-      "sha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "sha256": "baf9c11364677e665b228ed467dd66589a1c18bdaee7a234fcaf49b9c75bbd83",
       "count": 18,
       "numbers": [
         1,
@@ -344,7 +344,7 @@
           "answer": "ウ",
           "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=12",
           "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
-          "contentSha256": "7a3313a4d31623530f14c6e0fb37c3dbd34584bf28f9280ee625d689bb41f329"
+          "contentSha256": "dc70b61f752d6b77f69c801a8a41ce13241232e7ed41f9e437f433f725cc7e66"
         },
         {
           "id": "kenchiku-setsubishi-2025-annual-am2-q2",
@@ -488,7 +488,7 @@
           "answer": "イ",
           "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-mondai1.pdf#page=18",
           "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2025-1st-kijyun.pdf",
-          "contentSha256": "dabd9b5552a59cf0988c59df6a5f30d13277af3af9bc74e046255eaa5aa341c1"
+          "contentSha256": "378004c52941d369179f5f542418186d56211abb8bedad535f2d854ee1c26bb4"
         },
         {
           "id": "kenchiku-setsubishi-2025-annual-am2-q18",
@@ -2232,162 +2232,194 @@
     {
       "url": "/questions/kenchiku-setsubishi/2025-am1-q11.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-am1-q11.png",
-      "sha256": "051fa6da744b002c189556e1007dd04563bacddff098280a9a6f6d1d352109bc"
+      "sha256": "051fa6da744b002c189556e1007dd04563bacddff098280a9a6f6d1d352109bc",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-am1-q11.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-am1-q12.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-am1-q12.png",
-      "sha256": "24cc713e2f28ab1825d42523f5d158a2d255cd8d060a15212e5c7e5e832f10c6"
+      "sha256": "24cc713e2f28ab1825d42523f5d158a2d255cd8d060a15212e5c7e5e832f10c6",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-am1-q12.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-am1-q19.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-am1-q19.png",
-      "sha256": "b427a846bc0d9540dd2c64fa3dad5a52973b55644b192009d960a308271f9a21"
+      "sha256": "b427a846bc0d9540dd2c64fa3dad5a52973b55644b192009d960a308271f9a21",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-am1-q19.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-am1-q4.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-am1-q4.png",
-      "sha256": "e39819396d2f52ffa2eaa71aedaed73e9457d378ac42f0d7c9b163ceb7408403"
+      "sha256": "e39819396d2f52ffa2eaa71aedaed73e9457d378ac42f0d7c9b163ceb7408403",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-am1-q4.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q19.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q19.png",
-      "sha256": "48f3d1e80b36f3b685e355d99da08017c8cd22a3c005c24f43d1159ad837d018"
+      "sha256": "48f3d1e80b36f3b685e355d99da08017c8cd22a3c005c24f43d1159ad837d018",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q19.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q23.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q23.png",
-      "sha256": "b12dc6ae8cab6d62fda9d4d36b748378d681aad35a2a866e76b28e6ea085f9a2"
+      "sha256": "b12dc6ae8cab6d62fda9d4d36b748378d681aad35a2a866e76b28e6ea085f9a2",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q23.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q32-a.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q32-a.png",
-      "sha256": "1c47f352209c931ba36494eb79dfbebbc016403bf77e30fd4f686b28c830aca3"
+      "sha256": "1c47f352209c931ba36494eb79dfbebbc016403bf77e30fd4f686b28c830aca3",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q32-a.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q32-b.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q32-b.png",
-      "sha256": "b6311acef8d7583dc3fe275fb7f58fefdcf4b99f6ea3be3b7e6884824bcf0516"
+      "sha256": "b6311acef8d7583dc3fe275fb7f58fefdcf4b99f6ea3be3b7e6884824bcf0516",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q32-b.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q32-c.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q32-c.png",
-      "sha256": "87818262ba59a4fde10d4c0b1cbdbc54793bc3c2959debc38f43cd13ee19f218"
+      "sha256": "87818262ba59a4fde10d4c0b1cbdbc54793bc3c2959debc38f43cd13ee19f218",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q32-c.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q32-d.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q32-d.png",
-      "sha256": "887cce1c552ff7d0dbe343674e5d515cb79e2d14ea00988b3f39526def50126b"
+      "sha256": "887cce1c552ff7d0dbe343674e5d515cb79e2d14ea00988b3f39526def50126b",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q32-d.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q33.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q33.png",
-      "sha256": "3ac0102637787c6c0405b3dd33e64a9989a1b80ac31f889361d6d606652bf460"
+      "sha256": "3ac0102637787c6c0405b3dd33e64a9989a1b80ac31f889361d6d606652bf460",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q33.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q37.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q37.png",
-      "sha256": "b1b68a09e2f7b749d683db19bce90a709110617411fee35600aa4f270f9f8243"
+      "sha256": "b1b68a09e2f7b749d683db19bce90a709110617411fee35600aa4f270f9f8243",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q37.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q41.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q41.png",
-      "sha256": "6c22e121fb0343191c22e0b8185ef265febffb898325b85a4c71d808e3075f2a"
+      "sha256": "6c22e121fb0343191c22e0b8185ef265febffb898325b85a4c71d808e3075f2a",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q41.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q42-a.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q42-a.png",
-      "sha256": "a19249b0e4ad598134b6048e0bd5c400f1b27ebecbc529f20768fa94ccc5b1fe"
+      "sha256": "a19249b0e4ad598134b6048e0bd5c400f1b27ebecbc529f20768fa94ccc5b1fe",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q42-a.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q42-b.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q42-b.png",
-      "sha256": "b5fb5e734088000fcf7da90352c0258003035d5961fbbf659743800b29fba454"
+      "sha256": "b5fb5e734088000fcf7da90352c0258003035d5961fbbf659743800b29fba454",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q42-b.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q42-c.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q42-c.png",
-      "sha256": "d9560ac7584bf60207c4b2bbf496d36304bd39e8bd20793cdc35492f6521c39a"
+      "sha256": "d9560ac7584bf60207c4b2bbf496d36304bd39e8bd20793cdc35492f6521c39a",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q42-c.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q42-d.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q42-d.png",
-      "sha256": "7e8b37cf35048e021fd34706b91bdbd66f800e0ebf3b295bdc66dbdfd6996912"
+      "sha256": "7e8b37cf35048e021fd34706b91bdbd66f800e0ebf3b295bdc66dbdfd6996912",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q42-d.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q5.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q5.png",
-      "sha256": "206f07117d0bb3d1eb174874d42b6ee3881cafd701a261a4c2aaf75f74018b80"
+      "sha256": "206f07117d0bb3d1eb174874d42b6ee3881cafd701a261a4c2aaf75f74018b80",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q5.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q50.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q50.png",
-      "sha256": "779dfa36d21351c6eee1274d03464dfe34fd5fcc2c9a542fe849119208c48e6f"
+      "sha256": "779dfa36d21351c6eee1274d03464dfe34fd5fcc2c9a542fe849119208c48e6f",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q50.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2025-pm-q7.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2025-pm-q7.png",
-      "sha256": "f45146fd38d55efbc453247c7a7063d775e488f2b4e17557be1cafed19a25103"
+      "sha256": "f45146fd38d55efbc453247c7a7063d775e488f2b4e17557be1cafed19a25103",
+      "publicPath": "public/questions/kenchiku-setsubishi/2025-pm-q7.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-am1-q12.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-am1-q12.png",
-      "sha256": "629a0fa456c00173501c3e2256e1a7baff8465424710c4bad28d9d37f2ba628f"
+      "sha256": "629a0fa456c00173501c3e2256e1a7baff8465424710c4bad28d9d37f2ba628f",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-am1-q12.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-am1-q19.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-am1-q19.png",
-      "sha256": "8c38d11ced321077aca4612c9c1ce62872bd1eb5aec0b82114b6c7fb5e208675"
+      "sha256": "8c38d11ced321077aca4612c9c1ce62872bd1eb5aec0b82114b6c7fb5e208675",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-am1-q19.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q10.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q10.png",
-      "sha256": "512c81601cd8c933c0de245859b50448323db7c6078aeef4fafa4e86d2915cab"
+      "sha256": "512c81601cd8c933c0de245859b50448323db7c6078aeef4fafa4e86d2915cab",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q10.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q20.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q20.png",
-      "sha256": "97af10eecbd466a602c803b73e4db6aa51efa6226ed940b4b35a6e9730269e59"
+      "sha256": "97af10eecbd466a602c803b73e4db6aa51efa6226ed940b4b35a6e9730269e59",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q20.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q24.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q24.png",
-      "sha256": "e67c5cfc6fa05c89d62a284e395c09dd2fc7806c65de164498192cb7c7be5e84"
+      "sha256": "e67c5cfc6fa05c89d62a284e395c09dd2fc7806c65de164498192cb7c7be5e84",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q24.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q32-a.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q32-a.png",
-      "sha256": "6615a10be5d36b96043aa77dc2b92e9f6e59e3f9856b7613db1d7ff872d8211f"
+      "sha256": "6615a10be5d36b96043aa77dc2b92e9f6e59e3f9856b7613db1d7ff872d8211f",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q32-a.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q32-b.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q32-b.png",
-      "sha256": "1488cf00cc9738a508decbdc7aa3f3be7dc5544b5355485c3743fd568b9352d4"
+      "sha256": "1488cf00cc9738a508decbdc7aa3f3be7dc5544b5355485c3743fd568b9352d4",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q32-b.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q32-c.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q32-c.png",
-      "sha256": "50c1499c4ec726872ee3ae7030de2b7bce645d80d680faec7b03a8a050aa7253"
+      "sha256": "50c1499c4ec726872ee3ae7030de2b7bce645d80d680faec7b03a8a050aa7253",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q32-c.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q32-d.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q32-d.png",
-      "sha256": "25145ed35e91b96fe7fdb66c1321fddb4656ca6986fa9f65c3e97007ace5482e"
+      "sha256": "25145ed35e91b96fe7fdb66c1321fddb4656ca6986fa9f65c3e97007ace5482e",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q32-d.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q33.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q33.png",
-      "sha256": "326d77edc0bb7b97eeb3e2c98eebfb04584944e2507a80b8ab174a8fe8b4115b"
+      "sha256": "326d77edc0bb7b97eeb3e2c98eebfb04584944e2507a80b8ab174a8fe8b4115b",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q33.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q5.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q5.png",
-      "sha256": "0c864dbb35133932fbd65dbe92cbcbbfdb29e48c569bc26332585c11b69e37ee"
+      "sha256": "0c864dbb35133932fbd65dbe92cbcbbfdb29e48c569bc26332585c11b69e37ee",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q5.png"
     },
     {
       "url": "/questions/kenchiku-setsubishi/2026-pm-q8.png",
       "path": "private-assets/questions/kenchiku-setsubishi/2026-pm-q8.png",
-      "sha256": "137b9e308ebc872da7cf0ee46c38c15eabffa9febfca2717b5ba302b46675dd1"
+      "sha256": "137b9e308ebc872da7cf0ee46c38c15eabffa9febfca2717b5ba302b46675dd1",
+      "publicPath": "public/questions/kenchiku-setsubishi/2026-pm-q8.png"
     }
   ],
   "evidence": [
@@ -2410,6 +2442,13 @@
       "file": "FINAL-DECISION.json",
       "sha256": "a70bbc1765682ed584d68e7def3cfebe845f06a03efa799e5df90929d5f753f5",
       "reuse": "Existing acceptance/source review; no regenerated manuscripts"
+    }
+  ],
+  "corrections": [
+    {
+      "path": "data/questions/kenchiku-setsubishi/2025-am2.json",
+      "previousSha256": "cc2f9a9c76cc3d0809f68209f8f190180d42a3bbce6976a2ba7e69baf386fcf8",
+      "sha256": "baf9c11364677e665b228ed467dd66589a1c18bdaee7a234fcaf49b9c75bbd83"
     }
   ]
 }

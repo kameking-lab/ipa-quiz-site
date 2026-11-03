@@ -23,7 +23,7 @@ function toJstDateTimeISO(iso: string): string {
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
-  if (parsed && (exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
+  if (parsed && (exam === "kenchiku-setsubishi" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
     am: "午前",

@@ -30,11 +30,12 @@ export function validateKenchikuIngestion() {
   for (const asset of manifest.assets) {
     check(urls.has(asset.url), `Orphan asset: ${asset.url}`);
     check(sha(readFileSync(path.join(root, asset.path))) === asset.sha256, `Asset hash: ${asset.url}`);
+    check(sha(readFileSync(path.join(root, asset.publicPath))) === asset.sha256, `Public asset hash: ${asset.url}`);
   }
   for (const evidence of manifest.evidence) {
     check(sha(readFileSync(path.join(root, "reports/qkensetsu-20261103", evidence.file))) === evidence.sha256, `Acceptance evidence: ${evidence.file}`);
   }
-  return { status: "PASS", materials: 210, perRound: { "2025-annual": 105, "2026-annual": 105 }, study: 209, referenceOnly: 1, choiceReasons: 840, imageQuestions: 23, imageAssets: 32, packetHashes: 6, questionHashes: 210, publication: "NOT_ACTIVATED_DATA_ONLY" };
+  return { status: "PASS", materials: 210, perRound: { "2025-annual": 105, "2026-annual": 105 }, study: 209, referenceOnly: 1, choiceReasons: 840, imageQuestions: 23, imageAssets: 32, packetHashes: 6, questionHashes: 210, publication: "LOCAL_PUBLIC_ROUTES_CONNECTED_Q18_EXCLUDED" };
 }
 if (process.argv[1]?.replaceAll("\\", "/").endsWith("/validate-qkensetsu.ts")) {
   const result = validateKenchikuIngestion();

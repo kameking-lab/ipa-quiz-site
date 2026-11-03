@@ -17,6 +17,7 @@ export interface ExamOfficialLinks {
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS = {
+  "kenchiku-setsubishi": { overview: "https://www.jaeic.or.jp/shiken/bmee/", syllabus: "https://www.jaeic.or.jp/shiken/bmee/", pastQuestions: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html" },
   "riku-tech2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "amateur2": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
   "maritime-radar": { overview: "https://www.nichimu.or.jp/kshiken/siken/index.html", syllabus: "https://www.nichimu.or.jp/kshiken/siken/index.html", pastQuestions: "https://www.nichimu.or.jp/kshiken/siken/index.html" },
