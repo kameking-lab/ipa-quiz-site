@@ -27,3 +27,8 @@ export function auditProtectedArtifact(text:string,samples:readonly string[],htm
     if(compact.includes(normalized(sample))||decoded.includes(JSON.stringify(sample).slice(1,-1)))throw new Error("Protected source fingerprint found");
   }
 }
+export function containsGradingIndex(text:string,ids:readonly string[],publicReferenceId:string):boolean {
+  // One ID is also a public non-scoring exclusion rule. Match whole string
+  // literals so q1 does not falsely match that rule's q12 suffix.
+  return ids.filter(id=>id!==publicReferenceId).some(id=>text.includes(JSON.stringify(id))||text.includes(JSON.stringify(JSON.stringify(id)).slice(1,-1)));
+}

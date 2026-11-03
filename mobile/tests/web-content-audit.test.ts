@@ -1,10 +1,15 @@
 import {expect,it} from "vitest";
-import {auditProtectedArtifact,fingerprints} from "../scripts/web-content-audit";
+import {auditProtectedArtifact,fingerprints,containsGradingIndex} from "../scripts/web-content-audit";
 const gate='<p role="status">利用枠を確認しています…</p>';
 it("rejects answers hidden inside escaped Flight frames even when the visible gate exists",()=>{
   const payload='0:["$","$L1",null,{"items":[{"id":"q1","correctChoice":2}]}]';
   const html=gate+`<script>self.__next_f.push(${JSON.stringify([1,payload])})</script>`;
   expect(()=>auditProtectedArtifact(html,[],true,false)).toThrow("Serialized protected");
+});
+it("distinguishes a public reference-only ID from the actual grading index, including escaped JSON",()=>{
+  const ids=["private-q1","private-q12","private-q2"];
+  expect(containsGradingIndex('return "private-q12"===id',ids,"private-q12")).toBe(false);
+  for(const text of ['[{"id":"private-q1","correctChoice":2}]',JSON.stringify('[{"id":"private-q2","correctChoice":3}]')])expect(containsGradingIndex(text,ids,"private-q12")).toBe(true);
 });
 it("rejects rendered source text with HTML entities and whitespace changes",()=>{
   const body='A & B: '+"未許可の問題本文を検証するための長い文章です。".repeat(4);

@@ -5,7 +5,8 @@ import {getAllQuestionsLazy} from "../../lib/questions/get-questions";
 import {questionPagePath} from "../../lib/seo/question-url";
 import {materialGroups} from "../shared/material-source";
 import {loadExamPaper} from "../../lib/exam-library-papers";
-import {auditProtectedArtifact,fingerprints} from "./web-content-audit";
+import {auditProtectedArtifact,fingerprints,containsGradingIndex} from "./web-content-audit";
+import {SURVEY_ASSISTANT_REFERENCE_ID} from "../../lib/exam-library/survey-assistant-reference-policy";
 const root=resolve(import.meta.dirname,"../..");
 async function files(dir:string):Promise<string[]>{const out:string[]=[];for(const d of await readdir(dir,{withFileTypes:true})){const p=resolve(dir,d.name);if(d.isDirectory())out.push(...await files(p));else out.push(p);}return out;}
 const app=resolve(root,".next/server/app");
@@ -44,7 +45,7 @@ const indexIds=index.flatMap(paper=>paper.questions.map(q=>q.id));
 const samples=[...new Set([...routeSources.values()].flatMap(source=>fingerprints(source)))];
 const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 const pattern=new RegExp([...new Set(samples.flatMap(s=>[s,JSON.stringify(s).slice(1,-1)]))].map(escape).join("|"));
-for(const path of chunks){const text=await readFile(path,"utf8");if(pattern.test(text))throw new Error(`Protected corpus in client chunk: ${relative(root,path)}`);if(indexIds.some(id=>text.includes(id)))throw new Error(`Bundled survey grading index: ${relative(root,path)}`);digest.update(relative(root,path).replace(/\\/g,"/")).update(text);}
+for(const path of chunks){const text=await readFile(path,"utf8");if(pattern.test(text))throw new Error(`Protected corpus in client chunk: ${relative(root,path)}`);if(containsGradingIndex(text,indexIds,SURVEY_ASSISTANT_REFERENCE_ID))throw new Error(`Bundled survey grading index: ${relative(root,path)}`);digest.update(relative(root,path).replace(/\\/g,"/")).update(text);}
 if(failures.length){await mkdir(resolve(root,"mobile/docs/evidence/ios1g"),{recursive:true});await writeFile(resolve(root,"mobile/docs/evidence/ios1g/web-audit-failures.json"),JSON.stringify({buildId,failures},null,2)+"\n");throw new Error(`${failures.length} protected artifacts failed; see web-audit-failures.json`);}
 const report={buildId,clientChunks:chunks.length,expectedProtectedRoutes:expected.length,protectedHtml,protectedRsc,htmlByFamily:counts,sourceFingerprints:samples.length,gradingIndexIds:indexIds.length,corpusLeaks:0,serializedAnswerLeaks:0,gradingIndexLeaks:0,artifactSha256:digest.digest("hex"),scope:"Generated HTML/RSC and browser chunks; dynamic on-demand routes and live services are outside this static audit."};
 await mkdir(resolve(root,"mobile/docs/evidence/ios1g"),{recursive:true});
