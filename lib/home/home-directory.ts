@@ -25,7 +25,7 @@ import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta
  *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
  */
 
-export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare";
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare" | "automotive";
 
 export interface HomeDirectoryItem {
   key: string;
@@ -272,6 +272,13 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
 
   const domains = [
+    domain(
+      { id: "automotive", title: "自動車整備", lead: "自動車整備技能登録試験の学科。資格別に確認済みの原問を部分収録。", allHref: "/qualifications", allLabel: "資格ごとの収録範囲を見る" },
+      QUALIFICATION_CATALOG.filter((item) => item.domain === "automotive" && item.status === "live" && item.examCode).map((item) => {
+        const exam = item.examCode!;
+        return { ...otherItem({ code: exam, name: item.shortName, sub: item.reuseSummary, domain: "automotive" }), periodLabel: `${examPeriodCount(exam)}回分` };
+      }),
+    ),
     domain(
       {
         id: "it",

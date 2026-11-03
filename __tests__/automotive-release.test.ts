@@ -17,11 +17,15 @@ import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { findQuestionById, getPoolIds } from "@/lib/questions/pool-server";
+import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
 
 describe("recovered automotive release", () => {
   it("connects all 11 separate qualifications through eager and lazy registries", async () => {
     expect(metadata).toHaveLength(11);
+    const directory = getHomeDirectory().find((domain) => domain.id === "automotive")!;
+    expect(directory.qualificationCount).toBe(11);
+    expect(directory.totalQuestions).toBe(recovery.releaseOriginals);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);

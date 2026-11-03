@@ -1,0 +1,501 @@
+{
+  "fourRepairedDiesel": [
+    {
+      "id": "jidosha-2025-second-2-diesel-q13",
+      "verdict": "PASS",
+      "candidateSha256": "fd056d9f9b7c02e06c3b92e9dc4cf79623560a55322236b7cc003c4c1d2b5253",
+      "findings": [
+        {
+          "field": "question,choices,answer,explanation,choiceExplanations",
+          "issue": "原本p7と照合。A＝パイロット、B＝プレ、C＝アフタ、D＝ポストへの修正と全解説を確認。公式解答3とも一致。",
+          "replacement": null,
+          "source": "[原本p7](https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=7); [DENSO技術資料p4・p6](https://www.denso.com/jp/ja/-/media/Global/business/innovation/review/11-1/11-1-doc-disseration03itp6-ja.pdf)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q17",
+      "verdict": "PASS",
+      "candidateSha256": "372ae808aaee2d1f156649af742a71454a79c3b0e3e916a62e2a64f2f92b881e",
+      "findings": [
+        {
+          "field": "sourcePages,sourcePageReferences,choiceExplanations",
+          "issue": "物理8ページへの修正、設問・4選択肢を確認。始動許可P/NとキーLOCK復帰Pのみを区別した解説は適切。公式解答2と一致。",
+          "replacement": null,
+          "source": "[原本p8](https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=8); [トヨタ取扱説明書](https://manual.toyota.jp/pdf/pixisvan/pixisvan_201405.pdf)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q30",
+      "verdict": "PASS",
+      "candidateSha256": "57718c711da7fe8fa5a26d60cf4b942fde585c2f735517115456e8af6451104d",
+      "findings": [
+        {
+          "field": "choiceExplanations.ウ,explanation",
+          "issue": "原本回路でヒューズ1はBからAND回路への枝にある。C−D＝2 V、D−E＝10 Vからライトスイッチ接点抵抗増大を導出でき、他の原因の除外も適切。",
+          "replacement": null,
+          "source": "[原本回路p13](https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=13)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-diesel-q40",
+      "verdict": "PASS",
+      "candidateSha256": "9715914cacc49468915222039f9d44161498d73cc77b1f81b8410250b0474d7a",
+      "findings": [
+        {
+          "field": "choiceExplanations.ウ,explanation",
+          "issue": "夜間200 m・赤色を一次法令で確認。ウの200 mは正しく、昼間・橙色が誤りという修正は適切。原本と公式解答4も一致。",
+          "replacement": null,
+          "source": "[原本p16](https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=16); [細目告示第220条](https://www.mlit.go.jp/jidosha/content/S220.pdf)"
+        }
+      ]
+    }
+  ],
+  "additional185": [
+    {"id":"jidosha-2026-first-2-gasoline-q21","verdict":"PASS","candidateSha256":"72d7dae04f9467aa680167c6d33509adef0c30413e0437e27a6f086d6848ae46","sourcePages":[8],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-gasoline-q29",
+      "verdict":"HOLD",
+      "candidateSha256":"6fdda1fd3977c91df3a67899f5e2b92cd96462dc45c51d5b493bfcb410e2a4f4",
+      "sourcePages":[11],
+      "findings":[{"field":"choiceExplanations.エ","issue":"原本・正解は一致。フロント・サンギヤ接続に関する機種固有の説明を独立に確定できなかった。","replacement":null,"source":"原本p11; 補強資料20141005_2g.pdfと対応公式解答の両方を確認できず。"}]
+    },
+    {
+      "id":"jidosha-2026-first-2-gasoline-q31",
+      "verdict":"HOLD",
+      "candidateSha256":"1fa3e960f73aba53058d37b5f829c57684f46be2a38411b013b9713ae1a57a2b",
+      "sourcePages":[12],
+      "findings":[{"field":"explanation","issue":"Technical H3未解決。テーパ・ローラ・ベアリングはラジアル荷重を支持でき、変速機用途もある。選択肢2のどの部分が誤りかを一次資料で確定できない。","replacement":null,"source":"原本p12、公式解答2; [NSK](https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/)"}]
+    },
+    {"id":"jidosha-2026-first-2-gasoline-q37","verdict":"PASS","candidateSha256":"d438b25490071c062830edd195f3a40a49fbbbf9587bc0d3e4db14eca627d371","sourcePages":[13],"findings":[]},
+    {"id":"jidosha-2026-first-2-gasoline-q39","verdict":"PASS","candidateSha256":"af40f19b65fbf9272bf49e7209623d2f5d81827117d571ff0d36e73e7d865a9b","sourcePages":[14],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-diesel-q01",
+      "verdict":"HOLD",
+      "candidateSha256":"a601f94cc6fc2296bfaab74ae3e7c0042d20fc45a51d5329cc895fcf7d61db37",
+      "sourcePages":[2],
+      "findings":[{"field":"explanation,choiceExplanations.エ","issue":"プレ噴射を大きく進角した予混合形成段階とする説明に、パイロット噴射との混同の疑い。同冊子q11の区分との整合を確定できない。","replacement":null,"source":"原本p2およびp6 q11図。"}]
+    },
+    {"id":"jidosha-2026-first-2-diesel-q02","verdict":"PASS","candidateSha256":"78be7756f172a9d6430f9bac0ddb712eb6fb2adb1cd001d13556914ac273a638","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q04","verdict":"PASS","candidateSha256":"23f0241f1edd4bf68c51de1e3302c605e7dd57711643560c17bb00674c1f3a3e","sourcePages":[3],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-diesel-q08",
+      "verdict":"FAIL",
+      "candidateSha256":"04e8667c7a0c1f13311da372746d3c498354f570b67bfa28283cd00828bb32d3",
+      "sourcePages":[4],
+      "findings":[{
+        "field":"choices",
+        "issue":"4選択肢が原文の短縮言い換え。CPU/RAMの正式名称、診断器の表現、噴射圧力制御の定義などが欠落。",
+        "replacement":{
+          "ア":"(1) ECU内のAは、演算処理を行うCPU（セントラル・プロセッシング・ユニット）に該当し、Bはデータ記憶部となるRAM（ランダム・アクセス・メモリ）に該当する。",
+          "イ":"(2) インジェクタには製造公差があり、各気筒間で噴射量のバラツキが生じてしまうため、インジェクタ交換時には、外部診断器（スキャン・ツール）によるインジェクタ補正値登録を行わなければならない。",
+          "ウ":"(3) 噴射量制御は、インジェクション・ポンプで用いられるガバナの機能に代わるもので、基本的にエンジン回転速度とアクセル開度の信号をもとに、最適な噴射量となるようにインジェクタを制御する。",
+          "エ":"(4) 噴射圧力制御（コモンレール圧力制御）は、コモンレール内の圧力を制御することにより噴射圧力を制御するもので、コモンレール圧力センサの値が、エンジン回転速度とアクセル開度から算出される目標値に等しくなるようにECUが制御している。"
+        },
+        "source":"tmp/lq1b-sources/jaspa-2026-first-2-diesel-p04.png"
+      }]
+    },
+    {
+      "id":"jidosha-2026-first-2-diesel-q12",
+      "verdict":"HOLD",
+      "candidateSha256":"90094fca0624a8f60c5f94e242c7211bbf2a627180baeba3b41513ff6237c22b",
+      "sourcePages":[6],
+      "findings":[{"field":"explanation,choiceExplanations.イ","issue":"原文にない『スラストだけ』を補って否定している。実際のターボにはジャーナル軸受とスラスト軸受が共存し得るため、原文を否定する正確な理由が未確定。","replacement":null,"source":"原本p6 q12、公式解答2。"}]
+    },
+    {"id":"jidosha-2026-first-2-diesel-q14","verdict":"PASS","candidateSha256":"a5ea5a708c36678eaebd62bf500c6c4a9b31fb47a36150b438eecc4648856337","sourcePages":[7],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-diesel-q15",
+      "verdict":"HOLD",
+      "candidateSha256":"30b7ddc1d645162d5734b8b5631731dd41af394b0765354339b57be792947ba5",
+      "sourcePages":[7],
+      "findings":[{"field":"choiceExplanations.イ","issue":"吸気温でなく冷却水温によると限定する説明について、対象機構の一次技術資料を確定できない。設計により温度入力が異なる。","replacement":null,"source":"原本p7 q15、公式解答4。"}]
+    },
+    {"id":"jidosha-2026-first-2-diesel-q19","verdict":"PASS","candidateSha256":"ee81e0fa694eb95a53e1d889bceeec023bfbf6f047d8c4aef4d3320242360c1a","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q20","verdict":"PASS","candidateSha256":"da27e2a18244557bf32ec9445865828a15355e4e923f9a5126040061497db3c3","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q23","verdict":"PASS","candidateSha256":"1f614e13ffce6093da1319add1e842d8e7f0c28f98acb30843f8d1754aa00aea","sourcePages":[10],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q24","verdict":"PASS","candidateSha256":"8667931ab1523351ea1149b48c199a44ce8270c54a6dbaf537fb301d6d276835","sourcePages":[11],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-diesel-q27",
+      "verdict":"HOLD",
+      "candidateSha256":"0a7d2b7de6b260c6cce93d34292a693213423a0b4a03e2ce6093a951772b3864",
+      "sourcePages":[12],
+      "findings":[{"field":"choiceExplanations.ウ","issue":"原文の『液状冷媒』を『液状冷媒のみ』に変えて否定している。図示感温室の封入冷媒の相状態を独立に確定できない。","replacement":null,"source":"原本p12 q27図・選択肢3、公式解答4。"}]
+    },
+    {"id":"jidosha-2026-first-2-diesel-q36","verdict":"PASS","candidateSha256":"3de65c296c7b9e301cf3033013733f9ec265f804c64b7b31e64dcf026fc07875","sourcePages":[15],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q37","verdict":"PASS","candidateSha256":"82e1c1bf4a23d004ae562b71341e3794a3de3c06019140a8bfd914d239ffd634","sourcePages":[15],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-diesel-q38",
+      "verdict":"HOLD",
+      "candidateSha256":"08696430979215967ed1fbc990f3805870956922f14157be08fdfbaa50366faa",
+      "sourcePages":[15],
+      "findings":[{"field":"explanation,legalApplicability","issue":"原本・解答1と空車状態の区別は確認。550 mm基準と後年の突入防止基準・製作年月区分との適用関係を確認し切れなかった。","replacement":null,"source":"[細目告示第180条](https://www.mlit.go.jp/jidosha/content/S180.pdf); [第102条資料](https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf)"}]
+    },
+    {"id":"jidosha-2026-first-2-diesel-q39","verdict":"PASS","candidateSha256":"cc917708dbd6c5f8cfc5d55aaa2d2f29ffb4085d9456048005d64eb241496f92","sourcePages":[16],"findings":[]},
+    {"id":"jidosha-2026-first-2-diesel-q40","verdict":"PASS","candidateSha256":"f51cf559d38c94be78e7de3bc20cbc28128646166ca9415eaf0b86442ac33e73","sourcePages":[16],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-motorcycle-q12",
+      "verdict":"FAIL",
+      "candidateSha256":"fccc222ef493bf6cbb7daa391a18bc8db3dbd5d2f3aca432b4d719def5190da7",
+      "sourcePages":[5],
+      "findings":[
+        {"field":"question","issue":"OCRでエが工に置換。","replacement":"エンジンの電子制御装置に用いられるセンサに関する記述として、適切なものは次のうちどれか。","source":"tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p05.png"},
+        {
+          "field":"choices",
+          "issue":"カタカナ誤認、選択肢3の末尾欠落、選択肢4への継続行・フッター混入。",
+          "replacement":{
+            "ア":"(1) クランク角センサの信号は、点火時期や燃料噴射タイミングの制御に用いられている。",
+            "イ":"(2) 転倒センサ（傾斜角センサ）は、車両の傾斜を検出するもので、車両が設定角度以上傾くとエンジン・ストップ・リレーへの通電がONとなり、フューエル・ポンプなどの電子制御装置の電源がOFFとなる。",
+            "ウ":"(3) バキューム・センサの出力電圧は、インテーク・マニホールド内の圧力が低くなるほど高くなる。",
+            "エ":"(4) コントロール・ユニットは、スロットル・ポジション・センサの信号により、加速増量補正とアイドル開度の判定は行うが、基本噴射量の決定は行っていない。"
+          },
+          "source":"tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p05.png"
+        },
+        {"field":"choiceExplanations.イ","issue":"原文は設定角度以上と明記しているのに、現解説は通常の傾斜で停止するという別の主張を否定している。","replacement":"不適切。設定角度以上に傾いたときは、エンジン・ストップ・リレーへの通電をOFFにして、フューエル・ポンプなどへの電源を遮断する。『通電がON』が誤り。","source":"原本p5 q12(2)。修正後は対象教材の停止回路との再照合が必要。"}
+      ]
+    },
+    {
+      "id":"jidosha-2026-first-2-motorcycle-q21",
+      "verdict":"FAIL",
+      "candidateSha256":"b1763f905c4603f09a99eba9722c133721966819c9761746e855c84fdc8a1b20",
+      "sourcePages":[8],
+      "findings":[
+        {
+          "field":"choices",
+          "issue":"選択肢1の末尾欠落、選択肢4のフッター混入とOCR誤認。",
+          "replacement":{
+            "ア":"(1) ハンドル回転軸の延長線が地面と交わる点から車輪の接地面の中心までの距離をキャスタという。",
+            "イ":"(2) オンロード車はオフロード車と比較して、キャスタ及びトレールともに、やや大きい値を設定する傾向がある。",
+            "ウ":"(3) キャスタ角を変えないで、トレールだけを大きくすると、安定性は増す傾向にあるが、ハンドル操舵が重くなる。",
+            "エ":"(4) 一般的に、キャスタを小さくするとトレールが大きくなり、走行時の安定性が向上する。"
+          },
+          "source":"tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p08.png"
+        },
+        {"field":"choiceExplanations.イ","issue":"現解説は原文の大小関係を逆に扱い、『傾向』を『必ず』に置き換えている。","replacement":"不適切。設問で扱う一般的な設定傾向では、オンロード車はオフロード車と比べ、キャスタ及びトレールをやや小さくする。","source":"原本p8 q21(2)。教材上の一般的設定傾向であり全車種への断定ではない。"}
+      ]
+    },
+    {"id":"jidosha-2026-first-2-motorcycle-q24","verdict":"PASS","candidateSha256":"7d073a46604a3d8cb236929b3ef6940d2462f76320c7590ba1ad3aa38e508a8f","sourcePages":[9],"findings":[]},
+    {
+      "id":"jidosha-2026-first-2-motorcycle-q26",
+      "verdict":"FAIL",
+      "candidateSha256":"751cd86f025739a09463703db228a17b041c39032c6f82bc1b36703bfe0f0cde",
+      "sourcePages":[10],
+      "findings":[
+        {
+          "field":"choices",
+          "issue":"OCR誤認と選択肢4の最終節欠落。",
+          "replacement":{
+            "ア":"(1) ドリブン・ベベル・ギヤの形状にはスパイラル・ベベル・ギヤが用いられ、トランスミッションからの動力をプロペラ・シャフトに伝えている。",
+            "イ":"(2) ダンパ機構は、変速時の急激なトルク変動や後輪からのショックを吸収するため、ドライブ・ピニオン部に設けられている。",
+            "ウ":"(3) リヤ・ホイールの上下運動によるシャフトの角度変化に対しては、カップリングが用いられている。",
+            "エ":"(4) プロペラ・シャフトの前端にはスプリングがあり、シャフトを常時後方に押すことによって軸方向のがたを防いでいる。"
+          },
+          "source":"tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p10.png"
+        },
+        {"field":"explanation,choiceExplanations.ア","issue":"正しい選択肢の動力伝達方向を現解説が逆転させている。","replacement":"適切。図のドリブン・ベベル・ギヤにはスパイラル・ベベル・ギヤが用いられ、トランスミッションからの動力をプロペラ・シャフトに伝える。","source":"原本p10 q26図・選択肢1。"},
+        {"field":"choiceExplanations.ウ","issue":"誤ったカップリングの記述を肯定している。","replacement":"不適切。リヤ・ホイールの上下運動に伴うシャフトの角度変化は、ユニバーサル・ジョイントで吸収する。","source":"原本p10 q26動力伝達図。"}
+      ]
+    },
+    {
+      "id":"jidosha-2026-first-3-chassis-q09",
+      "verdict":"HOLD",
+      "candidateSha256":"6adb0552730f0c64b9eef2d70ab71fe55e44cb041760cdaaed5d500a710339f1",
+      "sourcePages":[4],
+      "findings":[{"field":"choiceExplanations.イ","issue":"『指定された点検条件』だけではエンジン停止状態の記述を否定する理由が不明。適用される点検条件を確定できない。","replacement":null,"source":"原本p4 q9、公式解答4。"}]
+    },
+    {"id":"jidosha-2026-first-3-chassis-q29","verdict":"PASS","candidateSha256":"e74ad9fe820361d2bdc389816c56c6ee4038c6013bbf6eb4961288f961c981d7","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2026-first-3-chassis-q30","verdict":"PASS","candidateSha256":"e0bb6800c84fef81feaada2f3852a306244632171fa1adba0b3f7f69d483180e","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q01","verdict":"PASS","candidateSha256":"e5f673014561db76a399fc0b47ebb41b1f30b558b98a636fa68cc0d9a96455d9","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q02","verdict":"PASS","candidateSha256":"7d6add6e554bfb9c9ceee54c5c1ecc9b72cd2660c76e4ca36a4a4ae4849bdf73","sourcePages":[2],"findings":[]},
+    {
+      "id":"jidosha-2026-first-3-gasoline-q04",
+      "verdict":"FAIL",
+      "candidateSha256":"044c9e31623b79c0ac64fe0e262b12489933c849c8c3db151c1ea23715d7e3ce",
+      "sourcePages":[2],
+      "findings":[{"field":"explanation","issue":"『回転方向に沿う振れ』は端面振れの測定方向ではない。回転させながら軸方向変位を測る。","replacement":"フライホイールを回転させ、端面の軸方向の振れをダイヤル・ゲージで測定する。","source":"[Toyota Technical Training p14 Fig2-15](https://hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/t302ch2c.pdf)"}]
+    },
+    {
+      "id":"jidosha-2026-first-3-gasoline-q05",
+      "verdict":"HOLD",
+      "candidateSha256":"4969f507065c427a2ab753973738ae3db2452a1afe40472f88404d3b5525b544",
+      "sourcePages":[2],
+      "findings":[{"field":"choiceExplanations.イ","issue":"濃度60％で凝固点が最小となるという厳密な主張を確定できない。濃度基準・配合依存性が未解決。転記・公式解答4と他の解説は整合。","replacement":null,"source":"[BASF G48技術資料p2](https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf)"}]
+    },
+    {"id":"jidosha-2026-first-3-gasoline-q06","verdict":"PASS","candidateSha256":"f9c8c314625f7324b7afb67a1d37e7c740f95e68593f24cf5bac5f84c57a6743","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q08","verdict":"PASS","candidateSha256":"114f39961a80ac2f53dff377b59440a3fa1b86e893e77e1064e7a8df0a02e33b","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q09","verdict":"PASS","candidateSha256":"383000c0d4862197bacbea37366dc3309a576c1d6c376e52fc1317ae151057d0","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q12","verdict":"PASS","candidateSha256":"13eef8541178fd291fc0ae178dedb0b162c52313d400a7ca5fd9a28bc2aaf059","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q13","verdict":"PASS","candidateSha256":"2bd10f12c64abafb85653a3aa09de3c4da8beb6ed6976fdd4cb1c7baff60b349","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q14","verdict":"PASS","candidateSha256":"1081fc6c8a77d46653f899dd1f640654926a4508d92f54011630610a9a8cabfb","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q15","verdict":"PASS","candidateSha256":"0f3e55db93a90fcc57eb144adbc73f49a5383a76df36de9185f0ef88b711aa9e","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2026-first-3-gasoline-q21","verdict":"PASS","candidateSha256":"bbc4768ca11731d4b60a090fd406e8c320b0240b16320db3711731831ae37bc3","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q01","verdict":"PASS","candidateSha256":"2bf213faf3c3d57c44eaa0ba6a4620025015d8559f168ca6b4b7a4c7bc3da2bc","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q04","verdict":"PASS","candidateSha256":"f51ac694b45d6cf620a22ca11920c1ac889b1a2cea821399bedf8602546926e1","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q05","verdict":"PASS","candidateSha256":"6daf330d7ec3f12817eb6fab162c8ca348c1bc7ee6896aaadd8e9c9e824c1ea9","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q10","verdict":"PASS","candidateSha256":"b98be3f8c0a6dd71fe24e881cd5dd4b5f604882ed19b380fc2af6d90f01ea84d","sourcePages":[4],"findings":[]},
+    {
+      "id":"jidosha-2026-first-3-diesel-q11",
+      "verdict":"HOLD",
+      "candidateSha256":"5085c9931db8d1076be607c3c1e362d39448fc7b1facc641785f7b920a52be3d",
+      "sourcePages":[4],
+      "findings":[{"field":"choiceExplanations.ウ","issue":"出口制御82～88℃、入口より5～7℃高いという具体的校正範囲を独立に確定できない。","replacement":null,"source":"原本p4 q11; qa/lq1b-recovered-evidence/c47cae455cda-2026-first-3-diesel.receipt.json"}]
+    },
+    {
+      "id":"jidosha-2026-first-3-diesel-q15",
+      "verdict":"HOLD",
+      "candidateSha256":"2246a6b5718074da4475f12454d4e6e8e4d8a52ed24e8b6d83ba0c8c9bfeb294",
+      "sourcePages":[5],
+      "findings":[{"field":"choiceExplanations.ア","issue":"原文の自然発火温度250～350℃と先行一次SDSの約240℃について、燃料組成・測定条件の対応が未解決。正解2と寒冷地用燃料の説明は妥当。","replacement":null,"source":"原本p5 q15; qa/lq1b-recovered-evidence/c47cae455cda-2026-first-3-diesel.receipt.json"}]
+    },
+    {"id":"jidosha-2026-first-3-diesel-q16","verdict":"PASS","candidateSha256":"ef4639b5524b70b6f95ec42e384b5fbf567cd68479c0ffeb9ae71bb1ad846f18","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q17","verdict":"PASS","candidateSha256":"47aba30f7cdb4b10becd97beadbe63e3c11054669770c36b11c1852d7c7d7eca","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q18","verdict":"PASS","candidateSha256":"aa661fc3b71202a15add7dacca8a6f19e28ee88929ea12d658b177c7be5792bf","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q19","verdict":"PASS","candidateSha256":"a470f1af10dfb07579edabb0cfd6ec07c735eac138e13eb967d567bc98998bec","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q22","verdict":"PASS","candidateSha256":"53eddfaf768c83c8ae2b79338cf2c9e0c087f44d47df17ecaaa0f7086c413128","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2026-first-3-diesel-q26","verdict":"PASS","candidateSha256":"75b8f9485ae6f301f4ef7b4bba3deb92b76231cd84f4bf82a8d31faac7146846","sourcePages":[7],"findings":[]},
+    {
+      "id":"jidosha-2025-second-2-gasoline-q01",
+      "verdict":"HOLD",
+      "candidateSha256":"22f63fc3af160a2d52e540cbf3a094f572aa56cba3094d80e57c90f8e34fa26c",
+      "sourcePages":[2],
+      "findings":[{"field":"choiceExplanations.ウ","issue":"錫含有率と熱膨張の具体的比較について、対象合金の一次根拠を確定できない。過去の同一出題だけでは承認しない。","replacement":null,"source":"原本p2 q1; 関連JASPA20210322_2g.pdf。"}]
+    },
+    {"id":"jidosha-2025-second-2-gasoline-q04","verdict":"PASS","candidateSha256":"89b206d2525d72f7b4edb8aaa7763d6413147fec293df6da50b35c9f6a69c383","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q05","verdict":"PASS","candidateSha256":"fe2ab208a7a74754cf4b300436ba4f356c73fd3048e2a37cd926b18a9d2b6720","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q06","verdict":"PASS","candidateSha256":"de37d7d9e032fc00fcfb387cf8e151623a34c3053c29e8a03f2d753adaa8e0f2","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q08","verdict":"PASS","candidateSha256":"0141e7ce83d92115ded365453ce46bd49dc08045a95278be26551d989defeb56","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q11","verdict":"PASS","candidateSha256":"f86132da9cf9f600469e7fe5750713836c58203df3c018f8fb651f3a1b0b6e4a","sourcePages":[4],"findings":[]},
+    {
+      "id":"jidosha-2025-second-2-gasoline-q13",
+      "verdict":"REFERENCE",
+      "candidateSha256":"826b20228be88d3e3bb2aff722f9f62de78bf18ac75c1cb30eaf28dcb5af2347",
+      "sourcePages":[5],
+      "findings":[{"field":"officialQuestionStatus","issue":"全員正解扱いを公式解答脚注で確認。独立計算は2×3.14×1200×10/60＝1256 W＝1.256 kWだが印刷選択肢2は1.265 kW。通常採点対象としてPASSにしない。","replacement":null,"source":"原本p5 q13; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png"}]
+    },
+    {
+      "id":"jidosha-2025-second-2-gasoline-q15",
+      "verdict":"FAIL",
+      "candidateSha256":"c00b95a25f22bcfc97959f849ab7a3b7203f826f5be805471427a92e9d15d859",
+      "sourcePages":[5],
+      "findings":[
+        {"field":"explanation","issue":"凸部対向時に磁束が多く抵抗が小さいという説明が誤り。この位置では磁束成分と抵抗値がともに最小。","replacement":"磁気抵抗素子式では、ロータの凸部が対向すると素子を通る磁束成分が最も少なくなり、抵抗値は最小となる。(3)は磁束成分と抵抗値の両方が逆。","source":"[出版社技術解説・印刷p137](https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf)"},
+        {"field":"choiceExplanations.ウ","issue":"磁束と抵抗の説明が同様に誤り。","replacement":"不適切。凸部が対向すると素子を通る磁束成分が最も少なくなり、抵抗値は最小となる。","source":"同資料p137; [AKM技術背景](https://www.akm.com/jp/ja/products/hall-sensor/tutorial/faq/)"}
+      ]
+    },
+    {"id":"jidosha-2025-second-2-gasoline-q16","verdict":"PASS","candidateSha256":"27bc99e3768c31d494a44b697b2f4e2962503afb3fdb876c6d525f68b040ca4c","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q18","verdict":"PASS","candidateSha256":"d04a3c5cf193109f8d57c443dd3db88a0fedebe0f0cc7e14edf8943ba28f70a7","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q22","verdict":"PASS","candidateSha256":"8682868165be46fc0bc9c571da855aa2ddf027a0baf75dd2b0891bb0028f37fa","sourcePages":[7],"findings":[]},
+    {
+      "id":"jidosha-2025-second-2-gasoline-q23",
+      "verdict":"HOLD",
+      "candidateSha256":"82669d96d582487bba9d1b387f88447a38da8f4153f4ee186655dcd3a6aa5818",
+      "sourcePages":[7],
+      "findings":[{"field":"choiceExplanations.イ","issue":"リング式センサの磁性突起を出力軸に置くという補正説明を確定できない。別形式のセンサ構造との混同が未解決。","replacement":null,"source":"原本p7 q23; 国交省2019シャシ試験資料だけでは補正内容を立証できず。"}]
+    },
+    {"id":"jidosha-2025-second-2-gasoline-q26","verdict":"PASS","candidateSha256":"d34f44f0271f2431568157bb5d6cb8f97b3543235eecd9c04a4b043bd4e63cf6","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q28","verdict":"PASS","candidateSha256":"bebbef554448a28b09aa1a7d0bc7ba612e2c50dd3071abf73b85ad681fb57b95","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q29","verdict":"PASS","candidateSha256":"734d3c147cce7c483124bcb48c09e95892d456c3b71d69b1932f7894e7bd3f94","sourcePages":[10],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q36","verdict":"PASS","candidateSha256":"84d3cf3ab0c6bc16a3769d0f4fb1ca1d5cff7d1049ab4e496f8732918fca71da","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q37","verdict":"PASS","candidateSha256":"d1b414c7df5fdcd5f9f5c416951b2fbf46a1988a75a60c1a6bd8f9136f290354","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q38","verdict":"PASS","candidateSha256":"536e97701b3942cb2ceb6836c4eb3ccfc080d4e12aca788264c114f2d1079cc7","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q39","verdict":"PASS","candidateSha256":"71c6f226910e68a0a2d32245894cee681c702edb4d99c4ca608dde9476041445","sourcePages":[13],"findings":[]},
+    {"id":"jidosha-2025-second-2-gasoline-q40","verdict":"PASS","candidateSha256":"5ac7c8aa51de4b19430af6761a1a02b161e41440f0234d26bd37d59057454fb3","sourcePages":[13],"findings":[]},
+    {"id":"jidosha-2025-second-2-chassis-q26","verdict":"PASS","candidateSha256":"6ad1dba19c6e9671b8635b42fca556c8ff4a08ae3fe2fe9a049166b95bd01467","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-2-chassis-q27","verdict":"PASS","candidateSha256":"c4b587103b1d8844983eebfbed9d69bf9b47aa0da641d292307b1a586587f9f8","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-2-chassis-q28","verdict":"PASS","candidateSha256":"d7f3ac18722c29af10e827b32113e23b55420c78b64e44ddfa03efbfdcf5b043","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-2-chassis-q29","verdict":"PASS","candidateSha256":"4c1dce0bfb019de0934490633912accc1ddc94a9924bbad9695ba89c6ba233de","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-2-chassis-q30","verdict":"PASS","candidateSha256":"7800ea5b0a7046a42cdaf7cd11897449593559b5ad9771e5ab131811742d3053","sourcePages":[8],"findings":[]},
+    {
+      "id":"jidosha-2025-second-3-chassis-q07",
+      "verdict":"FAIL",
+      "candidateSha256":"7aa8a8caca40a8c0df5341bb87bd3768061204ccf15aa3c71569fba5ab73f47e",
+      "sourcePages":[3],
+      "findings":[
+        {"field":"explanation","issue":"図でベアリングはカラーのホイール側にある。『ベアリング側』への修正は不正解の向きを繰り返している。","replacement":"不適切なのは(3)。図のベアリング・カラーの面取り部は、ホイール側ではなく、デファレンシャル側へ向けて組み付ける。","source":"tmp/lq1b-sources/jaspa-2025-second-3-chassis-p03.png の組付け図。"},
+        {"field":"choiceExplanations.ウ","issue":"同じ方向誤り。","replacement":"面取り部はホイール側ではなく、デファレンシャル側へ向ける。","source":"原本p3 q7図。"}
+      ]
+    },
+    {"id":"jidosha-2025-second-3-chassis-q17","verdict":"PASS","candidateSha256":"fbb7c511d244d86b8dd490743d6ced0fdcc6a962123be0c85c6093eb49739934","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-3-chassis-q28","verdict":"PASS","candidateSha256":"58ceae2ee768424c86c1f65cacf510213779ae6fad041692c89735d168b296fd","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-3-chassis-q29","verdict":"PASS","candidateSha256":"2bbff60d3d893a3ec0efb11a642eaa245b1226435bc3deab12084821f0cd7f53","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-3-chassis-q30","verdict":"PASS","candidateSha256":"fe723e53c63c1e733bf4fe5e93d83ab3851482ef4791f1d6add50eb5b75e55c3","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q02","verdict":"PASS","candidateSha256":"2cd4818261d2a0a945a2fc62ee80a1deed4d330e299f5a65ac69e7a9d91dbed6","sourcePages":[2],"findings":[]},
+    {
+      "id":"jidosha-2025-second-3-motorcycle-q04",
+      "verdict":"FAIL",
+      "candidateSha256":"fbcfeee20bb7e4764ff648f0ff17a4181c9fe59ae1f1d38c5d35fd17833c384e",
+      "sourcePages":[2],
+      "findings":[{"field":"choiceExplanations.ウ","issue":"バイパス・バルブを単に油路の圧力調整用と説明し、リリーフ・バルブとの区別を誤らせる。転記・正解3は一致。","replacement":"バイパス・バルブはオイル・フィルタの目詰まり等による差圧上昇時に油を迂回させるための弁で、トロコイド式ポンプの基本構成部品ではない。","source":"[出光](https://www.idemitsu.com/jp/apollolink/carlife/mainte/e-oil/index.html); [小松技術資料](https://www.komatsu.jp/ja/-/media/home/aboutus/innovation/technology/techreport/2020/ja/173_j03.pdf)"}]
+    },
+    {"id":"jidosha-2025-second-3-motorcycle-q09","verdict":"PASS","candidateSha256":"70b7dc821b6e35714d271ecb20068f1d3119a409066e292eb3ad8a2c1c1acac3","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q10","verdict":"PASS","candidateSha256":"151a80f92e91959dc446dec0f2cf0d640731cedd3cd8402decfae189fe055807","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q11","verdict":"PASS","candidateSha256":"5e2965be9e72f69ae0d90b2e5618e38dd58d5ba0072fba6aeda93eb9cc8307bf","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q12","verdict":"PASS","candidateSha256":"ccc11304caf6db0ed7e74364a0e57355b531ea1b6b71f9ef7400d0c39c0b1158","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q13","verdict":"PASS","candidateSha256":"1cdcb53882a8fa492cc7be5d48b4047d0f684583f6a7300072b7846fb84f5877","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q14","verdict":"PASS","candidateSha256":"cb2130a03af93a9266c6d67b84f2bca6a3dd7c0f1a25f984bb54c48e012858e6","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q15","verdict":"PASS","candidateSha256":"1f852255ba9de414e24dd7a2dc483c77138585a441a34ab22e80eb14613684b6","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q17","verdict":"PASS","candidateSha256":"1b2aebc15b67eb797b720a2f90d2e47fa8c66e2cfa86e346be5022ba83d26e96","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q18","verdict":"PASS","candidateSha256":"e81f57c94e60f67715341877ab572cd124b47898feb669e225f58ccb3a0bb6ae","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q22","verdict":"PASS","candidateSha256":"c2bd3de7527fa03ea9c0fdc8423fe165a912f574bfaf419f281c57aaef489a66","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2025-second-3-motorcycle-q25","verdict":"PASS","candidateSha256":"8538ee08e30e9d1cbf656d72697fdc0f97bafdbf7f1564da14e8f3203b27be11","sourcePages":[7],"findings":[]},
+    {
+      "id":"jidosha-2025-second-electrical-q01",
+      "verdict":"FAIL",
+      "candidateSha256":"8d25e8b86130dc15510464ad662d3bee0aaad127ef63d751f7dc6c5cec74e8c8",
+      "sourcePages":[2],
+      "findings":[
+        {"field":"choiceExplanations.エ","issue":"最外殻電子を無条件に自由電子とみなす説明は不正確。原本と公式解答2は保持する。","replacement":"試験では適切な記述として扱われている。ただし厳密には、最外殻の電子は価電子であり、そのうち原子への束縛を離れて物質中などを自由に移動できる電子を自由電子という。","source":"[東芝・エネルギーバンド図](https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/e-learning/basics-of-schottky-barrier-diodes/chap1/chap1-2.html)"},
+        {"field":"choiceExplanations.ア","issue":"すべての原子が複数の電子を持つという説明は、中性水素原子の電子1個という例外と矛盾。","replacement":"試験では原子核と電子から成る構造を述べた適切な記述として扱われている。ただし電子数は元素によって異なり、中性の水素原子の電子は1個なので、すべての原子が複数の電子を持つわけではない。","source":"原本p2 q1と原子構造の定義。"}
+      ]
+    },
+    {"id":"jidosha-2025-second-electrical-q10","verdict":"PASS","candidateSha256":"b791365a6684c36d7569d9d0f151eae6e453f5d1d3454fa4c867474420f02d8c","sourcePages":[4],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q15","verdict":"PASS","candidateSha256":"fcab55b4c82d8904a427d4b46d36660ac028ffa8424397f652117f77633cea10","sourcePages":[6],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q21","verdict":"PASS","candidateSha256":"beb238c3e713e21d42725fd4d9f140465a01c86a66931458fd7cd92d25f67dd1","sourcePages":[8],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q23","verdict":"PASS","candidateSha256":"78792d8a677ed37df9508b8ba4eabbff80b3602db25679f71edb8b8dcee521d4","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q28","verdict":"PASS","candidateSha256":"956b7975950dcc1b287fa4c4f3c3df7042ff515b95e6159714b81e6da055f331","sourcePages":[10],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q31","verdict":"PASS","candidateSha256":"3352861de6a6c7954bfc5d8d798b8ef592eeeab1bd7260da51b1a558f2fc8bb6","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q36","verdict":"PASS","candidateSha256":"236155a7586e55e6aeff4aa259518d5ca3d22872a9226da7677375f90bbb6a94","sourcePages":[14],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q37","verdict":"PASS","candidateSha256":"dc8700f092c4e70d304ad6033432aa2e3592db5a91cda88ae069ee2facbad581","sourcePages":[14],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q38","verdict":"PASS","candidateSha256":"55e0e7e9de556e077f65a0078b17ac72146d755cd20af2a86793038ab7401648","sourcePages":[14],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q39","verdict":"PASS","candidateSha256":"0b873521eda79914ba47c59e6ba06f500ec0c922c07e87ebf22ea96c7b38bd2a","sourcePages":[15],"findings":[]},
+    {"id":"jidosha-2025-second-electrical-q40","verdict":"PASS","candidateSha256":"5fdceebe6fe62719a4730dd1224e6c90db863140cf2a4bdacbbb668d84efbe6b","sourcePages":[15],"findings":[]},
+    {"id":"jidosha-2025-second-body-q03","verdict":"PASS","candidateSha256":"261009106762be89277235c4a868d63be4b25d8d0c6c2ca23a58d6c28412921c","sourcePages":[2],"findings":[]},
+    {"id":"jidosha-2025-second-body-q06","verdict":"PASS","candidateSha256":"f9c59c927e8eeef4c4be91a9b5b08d2d914a23b3fd8ff7a1c35c9addf1732459","sourcePages":[3],"findings":[]},
+    {"id":"jidosha-2025-second-body-q12","verdict":"PASS","candidateSha256":"f086e510963204b32b7796133b73927bc36b05b1c4b77c69eda91e685106705f","sourcePages":[5],"findings":[]},
+    {"id":"jidosha-2025-second-body-q18","verdict":"PASS","candidateSha256":"0ac45b98f3e6c5a08fbee909e6c227e1691484421a03ea0a7bbd4bb10073b141","sourcePages":[7],"findings":[]},
+    {"id":"jidosha-2025-second-body-q23","verdict":"PASS","candidateSha256":"d45ffea8e23de70f97e997d6ea24e3ed08e6786bfb0bef73e0fe225a97d0a083","sourcePages":[8],"findings":[]},
+    {
+      "id":"jidosha-2025-second-body-q24",
+      "verdict":"FAIL",
+      "candidateSha256":"91c463fef82eb0a3fce0c9104980e462877719076a6a08f5c23f87f47608bd11",
+      "sourcePages":[8],
+      "findings":[{"field":"choiceExplanations.ア","issue":"母材と異なる材質の溶接棒が使用可能であることを一律に否定している。異材溶接・鋳鉄補修では異なる組成の専用溶接材料を使用する。原文・公式解答2は一致。","replacement":"試験では一般的な鋼板の金属アーク溶接を想定し、母材に適合する溶接棒を選ぶという基本から、この選択肢を不適切としている。ただし実務では、異材溶接や鋳鉄の補修などで母材と異なる組成の専用溶接棒を使用する場合があり、異なる材質の棒が一律に使用できないわけではない。","source":"[日鉄溶接工業・異材溶接](https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C); [鋳鉄補修棒メーカー仕様](https://www.tokoc.com/jp/products_files/ENi-CI.htm)"}]
+    },
+    {"id":"jidosha-2025-second-body-q26","verdict":"PASS","candidateSha256":"3fe669b5ec563b6fa43d41a3dfccc4a2a3300539f190e999461cb6d85f8aa0a2","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-body-q27","verdict":"PASS","candidateSha256":"6ddbf3fadf1befda8a866a802fd3d5b5c49fb149c3bee8da2189737cdc4e7187","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-body-q28","verdict":"PASS","candidateSha256":"d40eb795115c0a64c2d7a3a6d239be585729b6d6b19843273d56d68b5559d727","sourcePages":[9],"findings":[]},
+    {"id":"jidosha-2025-second-body-q31","verdict":"PASS","candidateSha256":"cb4da1848ec75a7e07366d1376847cc357a29a771234c2bc80c459a5b43fc90c","sourcePages":[10],"findings":[]},
+    {"id":"jidosha-2025-second-body-q34","verdict":"PASS","candidateSha256":"803737869c74cf73d073fb1ab9baa44c61096d8c06b1004d196cf967ef6a172e","sourcePages":[11],"findings":[]},
+    {"id":"jidosha-2025-second-body-q35","verdict":"PASS","candidateSha256":"e94c353aee92974f5484095e96175fcdaa9b5017946be237575008032101e33d","sourcePages":[11],"findings":[]},
+    {"id":"jidosha-2025-second-body-q36","verdict":"PASS","candidateSha256":"f69f97096ab4655d4893c5ec28b9ba305076b1344a7d9335261e3e9cf9f7a17e","sourcePages":[11],"findings":[]},
+    {"id":"jidosha-2025-second-body-q38","verdict":"PASS","candidateSha256":"3a5344a2f2ef025169ce1678a0f81e9a2b4f8239a6912835481f11cedc4204a4","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-body-q39","verdict":"PASS","candidateSha256":"c2c8d9bda1e3936c7538eecf17ffacfcf70ea89044d65f9014391af68e06f9ba","sourcePages":[12],"findings":[]},
+    {"id":"jidosha-2025-second-body-q40","verdict":"PASS","candidateSha256":"533f3a3b479b27f41cbb6bf96b130e6e06acb51a80080ae92eeff6101c4f611b","sourcePages":[13],"findings":[]}
+  ],
+  "coverageNotes": {
+    "reviewModels": "Substantive independent reviews performed by explicitly selected gpt-6-astra agents; root consolidated their decisions and independently checked release integrity.",
+    "fourRepairedDiesel": {"reviewed":4,"PASS":4},
+    "additional185": {"reviewed":124,"PASS":100,"FAIL":10,"HOLD":13,"REFERENCE":1,"notReviewed":61},
+    "notReviewedGroups": [
+      {"group":"2026-first-body","remainingIdsInInput":26},
+      {"group":"2025-second-1-small-written","remainingIdsInInput":10},
+      {"group":"2025-second-3-gasoline","remainingIdsInInput":12},
+      {"group":"2025-second-3-diesel","remainingIdsInInput":13}
+    ],
+    "limitations": [
+      "Full coverage of the additional185 was not achieved. The61 omitted IDs have no approval from this review.",
+      "Existing385 and previously accepted36 diesel decisions were not substantively repeated; current421 release integrity was checked.",
+      "FAIL replacements are proposed corrections, not approval of a subsequently changed candidate. Changed candidates require fresh hash-bound review.",
+      "HOLD denotes unresolved technical or applicability evidence, not a finding that missing textbook editions alone are defects.",
+      "No code/data mutation, push, PR, deployment or test-generated file writes were performed."
+    ],
+    "method": "For all128 substantively reviewed candidates, inspected original question pages, all four choices, official answer tables, explanations and relevant diagrams. Reviewed512 choice explanations. PASS decisions include technical/legal reasoning beyond key agreement. Equivalent whitespace and typography were normalized; material omissions were rejected.",
+    "hashContract": "candidateSha256 = SHA256 of UTF-8 JSON.stringify of the complete final reread writtenOriginals candidate, preserving property order.",
+    "stagingFileSha256": "46170561d00e095abb7dd46a48cfefff11cb7b89bf51459d1914f729d39ba16f",
+    "hashVerification": "All reviewed candidates matched the corresponding remaining225 snapshot on final reread. Full staging-file hash remained unchanged during review. Staging JSON and index.ts bundle objects matched.",
+    "originalEvidence": "Each listed sourcePages value refers to that candidate's sourcePdfUrl and matching tmp/lq1b-sources/jaspa-<year>-<season>-<subject>-pNN.png. All20 downloaded PDFs matched source-receipts.json hashes. Official answer-sheet images were separately inspected.",
+    "passEvidence": {
+      "2026-first-3-gasoline": {
+        "q01": "Ring construction/profile checked against [MAHLE p38](https://www.mahle-aftermarket.com/media/local-media-north-america/pdfs-%26-thumbnails/catalogs-and-literature/pistons-and-rings/pr-40-22.pdf) and Motorservice ring guidance.",
+        "q02": "Straightedge/thickness-gauge checks supported by Toyota RM449U EM47; reduced intake restriction explains volumetric-efficiency direction.",
+        "q06": "Pump marks and clearances checked against [Toyota RM823E](https://toyotamanuals.gitlab.io/RM01J1E/htmlweb/rm01j1e/rm/rm823e/m_17_0001.pdf); internal gearing establishes rotation direction.",
+        "q08": "Load/vacuum/PCV opening relationship checked against [Toyota PCV training](https://retrojdm.com/Scans/Toyota/Misc/Service%20Manuals/Emissions%20Control%20-%201975/PDF/02%20-%20PCV%20System.pdf).",
+        "q09": "Flywheel material and shrink-fit ring supported by Mitsubishi technical information11B-11; torque transfer follows clutch-face mechanics.",
+        "q12": "Small valve-spring pitch downward confirmed in Kubota V3300 workshop manual S33; cam ratio1:2 and lift geometry independently derived.",
+        "q13": "Wax-element operation checked against Isuzu4JH1 training and [Nippon Thermostat](https://www.ntcl.co.jp/en/products/thermo_element.html).",
+        "q14": "Cap vacuum valve/canister checked against [Toyota EVAP training](https://hungrypoint.com/misc/Scion%20Manuals/Technical%20Training/emission.pdf); jet transfer and injector operation independently assessed.",
+        "q15": "MAP-output and A/F-sensor behavior checked against [DENSO EMS catalogue](https://assets.denso-am.eu/production/attachments/Engine-Management-Systems-Product-Information-Catalogue.pdf) and DENSO A/F bulletin; NTC sign follows its definition.",
+        "q21": "Screwdriver constructions and functions checked against [KTC](https://ktc.jp/kiso/lesson/screwdriver.html)."
+      },
+      "2026-first-3-diesel": {
+        "q01": "Representative C12H26 stoichiometry gives approximately15kg air/kg fuel; four-stroke cycle720degrees; higher compression temperature shortens ignition delay.",
+        "q04": "Original piston labels and differential thermal expansion establish B>A and C<D; all four combinations checked.",
+        "q05": "Wet/dry liner distinction follows direct coolant contact; positive stand-proud supports fire-ring clamping within the question's general scope.",
+        "q10": "Viscous-element replacement/no-cleaning supported by [Honda manual p94](https://www.honda.co.jp/ownersmanual/pdf/motor/ps250/30KTB620_web.pdf); restriction indicator senses intake restriction.",
+        "q16": "Closed crankcase ventilation assessed using Toyota PCV primary material; distinguished blowby recirculation from EGR.",
+        "q17": "Brushless excitation, grounded-return disconnection, cable voltage-drop measurement and field-current regulation independently derived.",
+        "q18": "Temperature-dependent preheat timing supported by [Cummins installation guide p2-5](https://mart.cummins.com/imagelibrary/data/assetfiles/0042728.pdf); continuity follows open/infinite versus short/near-zero resistance.",
+        "q19": "Self-discharge/recharging supported by [GS Yuasa](https://gyb.gs-yuasa.com/faq/); water-layer freezing, electrolyte mixing and sulfation independently assessed.",
+        "q22": "Warm engine, all-cylinder decompression, adequate battery and repeated measurements control clearance, cranking-speed and random-error effects.",
+        "q26": "Metric60degree thread and M16×1.5 definitions checked; original qualified self-locking-nut replacement rule retained."
+      },
+      "2025-second-3-motorcycle": "All13 originals and52 choices visually checked. PASS explanations independently checked for piston/pin strength, impeller pump construction, starter overrun, clutch coupling, diagrammed fourth-gear path, kick-start transmission sequence, tire terminology, caster/trail, frame structure, meter sender/receiver, cast-iron properties and torque-wrench types.",
+      "2025-second-electrical": {
+        "q10": "Starter contact-drop threshold corroborated by [official technical exam No10](https://www.tossnet.or.jp/Portals/0/images/pdf/normal/20230327-042_42.pdf#page=4), with other starter explanations independently assessed.",
+        "q15": "Original waveform and four fault alternatives visually checked against rectifier behavior.",
+        "q21": "Glow-plug heat transfer and coil roles checked, including [NGK technical description](https://www.ngksparkplugs.ca/glow-plugsb612a98f).",
+        "q23": "Lead-acid discharge chemistry, electrolyte behavior and hybrid-grid construction independently assessed.",
+        "q28": "Representative discharge-lamp comparisons checked against [Koito technical/environmental report](https://www.koito.co.jp/news/docs/201411231335291347672801547164111d3e8.pdf).",
+        "q31": "Original crossed-coil diagram establishes resultant-field pointer alignment.",
+        "q36": "Recovery-cylinder weight monitoring supported by [TASCO](https://www.tascojapan.co.jp/product.php?prc=detail&sid=7123) and [refrigerant recovery standard](https://www.rrc-net.jp/wp-content/uploads/2019/07/190724FG.pdf).",
+        "q37": "Valve classifications and B-type female thread confirmed by [gas-equipment supplier](https://klchem.co.jp/blog/2012/10/post-1863.php).",
+        "q38": "Act article1 checked against [MLIT](https://www.mlit.go.jp/jidosha/content/001740686.pdf).",
+        "q39": "Two-year retention from entry date checked against [Transport Bureau legal material](https://wwwtb.mlit.go.jp/tohoku/fs/pdf-file/fs-731.pdf).",
+        "q40": "1440cd maximum, white, two lamps and non-flashing verified in [MLIT article202-2](https://www.mlit.go.jp/jidosha/content/S202-2.pdf)."
+      },
+      "2025-second-body": {
+        "q03": "Casting, refining and carbon-content/property relationships independently assessed within the original scope.",
+        "q06,q12": "High-strength-steel heat sensitivity and manufacturer repair limits checked against [Jiken Center](https://jikencenter.co.jp/wp-content/uploads/JKC2012_12.pdf).",
+        "q18": "Surface finishing and tactile inspection explanations checked against the original procedures.",
+        "q23,q26,q27,q28": "Shielding, wire conduction/feed, oxygen molecular mass, regulator operation and spot-versus-arc energy distinctions independently assessed.",
+        "q31": "Gauge types and diagonal distortion checked using original geometry and [official technical material](https://www.jamca.jp/yr03/2s.pdf).",
+        "q34": "General mica/titanium-oxide pearl pigment explanation retains glass-substrate exceptions; checked against [Kansai Paint](https://www.kansai.co.jp/rd/color-story/) and [NAGASE](https://www.nagase.com/jp/ja/products/special-effect-pigment).",
+        "q35": "More-than5%-by-weight definition and solvent classes checked against [MHLW regulation](https://www.mhlw.go.jp/web/t_doc?dataId=74090000) and [Labour Bureau list](https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/001883791.pdf).",
+        "q36": "Paint-defect distinctions checked against [Isamu Paint](https://www.isamu.co.jp/wp-content/uploads/2018/06/p-00000384_1.pdf).",
+        "q38": "Vehicle definitions checked against [Road Transport Vehicle Act article2](https://laws.e-gov.go.jp/law/326AC0000000185).",
+        "q39": "Daytime rear100m requirement checked against [MLIT article212](https://www.mlit.go.jp/jidosha/content/S212.pdf).",
+        "q40": "Record retention checked against [Transport Bureau legal material](https://wwwtb.mlit.go.jp/tohoku/fs/pdf-file/fs-731.pdf)."
+      },
+      "remaining59ReviewSharedSources": [
+        "[Backing lamps article214](https://www.mlit.go.jp/jidosha/content/S214.pdf)",
+        "[Inspection regulations](https://laws.e-gov.go.jp/law/326M50000800070?occasion_date=20251212)",
+        "[Six-month inspection table](https://wwwtb.mlit.go.jp/kyushu/content/000324858.pdf)",
+        "[Side slip article91](https://www.mlit.go.jp/jidosha/content/S091.pdf)",
+        "[Stability article164](https://www.mlit.go.jp/jidosha/content/S164.pdf)",
+        "[Turning radius article6](https://www.mlit.go.jp/jidosha/kijyun/hoankijyun/hoan_006_00.pdf)",
+        "[Vehicle classes and registration](https://laws.e-gov.go.jp/law/326AC0000000185?occasion_date=20220617)",
+        "[Daily inspection duty](https://www.mlit.go.jp/jidosha/content/001740686.pdf)",
+        "[Small-car dimensions](https://www.mlit.go.jp/report/press/content/001626358.pdf)",
+        "[Turn signals](https://wwwtb.mlit.go.jp/kyushu/content/000231912.pdf)",
+        "[Headlamp colour](https://www.mlit.go.jp/jidosha/kijyun/saimokubetten/saibet_052_00.pdf)",
+        "[Side reflectors](https://www.mlit.go.jp/jidosha/content/S204.pdf)",
+        "[Maintenance records](https://wwwtb.mlit.go.jp/tohoku/fs/pdf-file/fs-789.pdf)",
+        "[Roots blower manufacturer](https://www.taiko-kk.com/jp/roots_blower/)",
+        "[Honda squish explanation](https://global.honda/jp/tech/Engine_technology_eSP/)"
+      ]
+    }
+  },
+  "finalReleaseImplementationVerdict": {
+    "verdict": "PASS",
+    "scope": "Current421 released candidates and the category/source-label/originalJaspaTerm changes only. This is not approval of all185 additional originals.",
+    "verified": [
+      "All421 released candidate hashes, receipt hashes, supporting-evidence hashes and official answers matched.",
+      "All107 released image bindings matched their staged source bytes and hash-based public filenames.",
+      "All11 configured category strings matched released candidate categories.",
+      "Current JASPA edition labels matched the two actual year/season/examDate tuples.",
+      "originalJaspaTerm preserves the original term while runtime term remains undefined for the existing upper/lower type convention.",
+      "All20 local source PDFs matched recorded hashes.",
+      "Staging latest-two.json and index.ts represented identical bundle objects."
+    ],
+    "limitations": [
+      "No fresh build or test suite was run in this read-only review.",
+      "Implementation approval does not extend to subsequently appended or edited candidates.",
+      "Only the104 explicit PASS decisions in this response—four repaired diesel plus100 additional—are newly approved at their stated hashes."
+    ],
+    "reviewedJsonFileSha256": "9a29db3eeeeeb18109c8d14838cbc05e04cf9959d346fe894f7f651eead5be24",
+    "sourceLabelFileSha256": "3d4faefca5706663b9646bef16849843b815ec38b9ff8e693f401adebdade612",
+    "examConfigFileSha256": "21c5f4b28c424d8156bb602240a996fe9927e67a463c9e8454da81105a569db0",
+    "runtimeIndexFileSha256": "49cfc9e7748bb848342741cbc01c217cd6475f96fb6e163cd2c6a468299a9099"
+  }
+}
