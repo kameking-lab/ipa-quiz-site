@@ -17,7 +17,8 @@ import thirdManifest from "@/data/exam-library/source-packs/jken-katsuyo/grade3/
 
 import { questionNumberLabel } from "@/lib/questions/display";
 
-import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { buildQuestionJsonLd, questionBreadcrumbItems } from "@/lib/seo/question-jsonld";
+import { questionTitle } from "@/lib/seo/question-meta";
 
 import { questionSourceEdition } from "@/lib/questions/source-label";
 
@@ -38,7 +39,7 @@ describe("J検 official past questions in unpublished staging", () => {
           const q = qs.find(q => q.qNumber === row.problem * 100 + row.slot)!;
           expect(q.answer).toEqual(row.answer);
           expect(q.question).toContain(`問題${row.problem}`);
-          expect(questionNumberLabel(q)).toBe(`問題${row.problem}(${row.slot})`);
+          expect(questionNumberLabel(q)).toBe(`${row.problem}(${row.slot})`);
           expect(q.question.length).toBeGreaterThan(100);
           expect(q.choices).toBeDefined();
           expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
@@ -56,6 +57,9 @@ describe("J検 official past questions in unpublished staging", () => {
       const ld = buildQuestionJsonLd({ question: questions[0]!, pageUrlAbs: "https://example.com/source", title: "J検" });
       expect(ld["@graph"][0]).toMatchObject({ creator: { name: "一般財団法人職業教育・キャリア教育財団" } });
       expect(ld["@graph"][0]).not.toHaveProperty("license");
+      expect(questionBreadcrumbItems(questions[0]!).at(-1)?.name).toBe("問1(1)");
+      expect(questionTitle(questions[0]!)).toContain("問1(1)");
+      expect(questionTitle(questions[0]!)).not.toContain("問問題");
     });
     it(`${code}: blocks public routes, registries and IPA tools`, async () => {
       expect(isExamPublished(code)).toBe(false);
