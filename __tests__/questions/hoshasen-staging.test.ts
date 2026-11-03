@@ -8,8 +8,8 @@ import held from "@/data/questions/hoshasen/held-2026-2-kagaku-q9.json";
 
 describe("hoshasen unpublished source staging", () => {
   it("retains the distinct source sessions without publishing candidates", () => {
-    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(176);
-    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(176);
+    expect(HOSHASEN_STAGED_QUESTIONS).toHaveLength(206);
+    expect(new Set(HOSHASEN_STAGED_QUESTIONS.map(q => q.id)).size).toBe(206);
     const entry = QUALIFICATION_CATALOG.find(q => q.slug === "hoshasen");
     expect(entry?.status).toBe("ready-to-ingest");
     expect(entry?.examCode).toBeUndefined();
