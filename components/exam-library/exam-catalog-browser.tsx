@@ -44,6 +44,8 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
     title: string;
     filter: (name: string) => boolean;
   }[] = [
+    { id: "pe-first", group: "pe-first", title: "技術士第一次試験", filter: () => true },
+    { id: "survey-assistant", group: "survey-assistant", title: "測量士補試験", filter: () => true },
     { id: "licenses", group: "lckohyo", title: "免許試験", filter: () => true },
     { id: "measurement", group: "emkohyo", title: "作業環境測定士", filter: () => true },
     { id: "safety-consultant", group: "cskohyo", title: "労働安全コンサルタント", filter: (name: string) => !isHealthConsultantSubject(name) },
@@ -52,7 +54,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
   return <div className="space-y-6">
     {!subject ? <section aria-labelledby="safety-exam-select">
       <h2 id="safety-exam-select" className="mb-3 text-lg font-semibold">資格を選ぶ</h2>
-      <nav aria-label="安全の資格一覧" className="mb-6 flex flex-wrap gap-2">
+      <nav aria-label="資格一覧" className="mb-6 flex flex-wrap gap-2">
         {sections.map((section) => <Link key={section.id} href={`#${section.id}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-3 text-sm hover:bg-muted">{section.title}</Link>)}
       </nav>
       {sections.map((section) => {

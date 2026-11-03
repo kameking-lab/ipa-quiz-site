@@ -14,10 +14,11 @@ export function loadPeFirstPaper(id: string): readonly ExamQuestion[] | null {
   if (cache.has(id)) return cache.get(id) ?? null;
   let questions: readonly ExamQuestion[] | null = null;
   try {
-    const raw = readFileSync(join(process.cwd(), "data/exam-library/pe-first", `${id}.json`));
+    // Git may check out text with CRLF on Windows; pins use the authored LF form.
+    const raw = readFileSync(join(process.cwd(), "data/exam-library/pe-first", `${id}.json`), "utf8").replace(/\r\n/g, "\n");
     const pin = manifest.find(item => item.paperId === id);
     if (pin && createHash("sha256").update(raw).digest("hex") === pin.normalizedSha256) {
-      questions = JSON.parse(raw.toString("utf8")) as ExamQuestion[];
+      questions = JSON.parse(raw) as ExamQuestion[];
     }
   } catch { /* An absent or changed packet must not become a different exam. */ }
   cache.set(id, questions);

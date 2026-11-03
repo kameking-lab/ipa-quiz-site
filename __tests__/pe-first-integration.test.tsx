@@ -1,22 +1,31 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import manifest from "@/reports/LQ3-20261104/adoption-manifest.json";
 import { PE_FIRST_CATALOG } from "@/lib/exam-library/pe-first-catalog";
 import { loadPeFirstPaper } from "@/lib/exam-library/pe-first";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { loadExamPaper, listAvailableExamIds } from "@/lib/exam-library-papers";
-import { gradeExamAnswer, isScorableQuestion } from "@/lib/exam-library-model";
+import { EXAM_GROUPS, gradeExamAnswer, isScorableQuestion } from "@/lib/exam-library-model";
+import { ExamCatalogBrowser } from "@/components/exam-library/exam-catalog-browser";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
-import { createExamProgress, parseExamProgress, summarizeExamProgress } from "@/lib/exam-library-progress";
+import { createExamProgress, parseExamProgress, summarizeExamProgress, saveExamProgress, examProgressKey } from "@/lib/exam-library-progress";
+import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { PE_FIRST_REFERENCE_ID } from "@/lib/exam-library/survey-assistant-reference-policy";
 
 beforeEach(() => { localStorage.clear(); sessionStorage.clear(); });
 afterEach(cleanup);
 
 describe("LQ3 existing manuscript adoption", () => {
+  it("makes all sixteen departments reachable from the actual qualification selector", () => {
+    const items = PE_FIRST_CATALOG.map(entry => ({...entry,href:`/e-learning/exams/${entry.id}`,dateText:entry.date,questionCount:35,scoredCount:entry.scoredCount!}));
+    render(<ExamCatalogBrowser groups={EXAM_GROUPS} items={items} initialGroup="pe-first" initialSubject={null} />);
+    const group = screen.getByRole("region", {name:"技術士第一次試験"});
+    expect(within(group).getAllByRole("link")).toHaveLength(16);
+    expect(within(group).getByRole("link", {name:/技術士第一次・化学/})).toHaveAttribute("href", expect.stringContaining("group=pe-first"));
+  });
   it("connects exactly the 17 accepted sets without importing missing departments or independent practice questions", () => {
     expect(PE_FIRST_CATALOG).toHaveLength(17);
     expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595);
@@ -68,6 +77,8 @@ describe("LQ3 existing manuscript adoption", () => {
     expect(screen.getByAltText(q.presentation!.figures[0].alt)).toHaveAttribute("src", q.images[0]);
     fireEvent.click(screen.getByRole("radio", {name:new RegExp(`^選択肢 ${q.correctChoice}:`)}));
     expect(screen.getByRole("heading", {name:"正解"})).toBeInTheDocument();
+    expect(screen.getByRole("list", {name:"一次資料"})).toBeInTheDocument();
+    expect(screen.queryByText("確認した政府一次資料")).not.toBeInTheDocument();
     for (const reason of q.choiceExplanation!.choices) expect(screen.getByText(reason.reason)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("checkbox", {name:"この端末に保存する"}));
     view.unmount();
@@ -87,6 +98,10 @@ describe("LQ3 existing manuscript adoption", () => {
     expect(poisoned.answers).toEqual({});
     expect(parseExamProgress(JSON.stringify(poisoned), examId, questions)?.lastQuestionId).toBeNull();
     expect(summarizeExamProgress(questions, poisoned.answers)).toMatchObject({total:34,scorable:34,answered:0});
+    const stale = {...poisoned, answers:{[q.id]:{choice:3,submitted:true,memo:"old"}}, summary:{total:35,scorable:35,answered:1,correct:1,incorrect:0,unscored:0,examTitle:"情報工学"}};
+    expect(saveExamProgress(localStorage, stale)).toBe(true);
+    expect(JSON.parse(localStorage.getItem(examProgressKey(examId))!).summary).toMatchObject({total:34,scorable:34,answered:0});
+    expect(listExamLearningSummaries()[0]).toMatchObject({total:34,scorable:34,answered:0});
     render(<ExamQuestionPlayer examId={examId} examTitle="情報工学" pdfUrl={q.originalPdf!} indexUrl={PE_FIRST_CATALOG[0].indexUrl} questions={questions} initialQuestionId={q.id} />);
     expect(screen.getByRole("region", {name:"参照専用の問題と解説"})).toBeInTheDocument();
     expect(screen.queryAllByRole("radio")).toHaveLength(0);
