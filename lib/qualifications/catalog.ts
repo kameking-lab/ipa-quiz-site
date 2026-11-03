@@ -505,6 +505,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
   },
   {
+    slug: "sekou-kenchiku2",
+    shortName: "2級建築施工管理（第一次検定）",
+    fullName: "2級建築施工管理技術検定（第一次検定）",
+    domain: "construction",
+    administrator: "一般財団法人建設業振興基金",
+    officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
+    officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
+    status: "permission-required",
+    reuseSummary: "令和8年度前期・令和7年度後期の公式問題・正答肢の公開を確認。公式サイトに転載禁止の明記があるため、問題本文・選択肢・図版は収録しない。監査記録：reports/cloud-sekou-2kenchiku-latest2.md。",
+    remainingWork: ["試験実施機関からWeb問題集への転載許諾を取得", "許諾後に公式原文・全問の正答・全肢解説・必要図を照合し、公開前ステージングで検収"],
+  },
+  {
     slug: "sekou-kenchiku1",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定",
