@@ -31,3 +31,5 @@ node mobile/scripts/run-isolated-check.mjs mobile-release-measure-final mobile/s
 ```
 
 E2Eはdistをテストモードに作り直すため、終了後に製品ビルドへ戻す。実DB・実購入・署名付きIPAの検証証跡ではない。詳細は `../../ios1g-report.md` を参照。
+
+終了時：e7ae7c6ecは既存テストprops更新のみ。root-typecheck-verifiedは終了コード0。履歴修正後mobile-e2e-history-finalは34件成功、mobile-production-history-finalで製品配信物へ復帰済み。最終HEADのNext.js再ビルドと生成物再監査が残る。
