@@ -5,6 +5,7 @@ import firstBiology2026 from "./2026-1-seibutsu.json";
 import firstBiology2025 from "./2025-1-seibutsu.json";
 import firstChemistry2025 from "./2025-1-kagaku.json";
 import secondLaw2026 from "./2026-2-hourei.json";
+import secondLaw2025 from "./2025-2-hourei.json";
 import second2026 from "./2026-2.json";
 import first2025 from "./2025-1.json";
 import second2025 from "./2025-2.json";
@@ -44,4 +45,4 @@ export const HoshasenStagedQuestionSchema = z.object({
 export type HoshasenStagedQuestion = z.infer<typeof HoshasenStagedQuestionSchema>;
 export const HOSHASEN_STAGED_QUESTIONS: HoshasenStagedQuestion[] = z
   .array(HoshasenStagedQuestionSchema)
-  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026]);
+  .parse([...first2026, ...second2026, ...first2025, ...second2025, ...chemistry2026, ...chemistry2025, ...biology2026, ...biology2025, ...practical2026, ...practical2025, ...firstChemistry2026, ...firstBiology2026, ...firstBiology2025, ...firstChemistry2025, ...secondLaw2026, ...secondLaw2025]);
