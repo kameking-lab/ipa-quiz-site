@@ -45,3 +45,13 @@ node --test scripts/validate-lq4e-staging.test.mjs scripts/validate-lq4-staging.
 原典・OCR・ページPNGは既存の `C:/Users/kanet/AppData/Local/Temp/codex-work/lq4b-sources/` を継続使用。生ログバックアップは `C:/Users/kanet/Documents/Codex/2026-11-02/task-2/lq4g-review-evidence.zip`。収録一覧・復元先・SHAは `reports/lq4g-20261104/review-evidence-backup.json`。原稿・図・受入証跡を一括整形・再生成しない。
 
 権利はオーナー決定2026-11-04 01:30に従って確認済みとして扱った。アクセス制限の迂回、秘密値の表示、push・PR作成・デプロイは行っていない。
+
+## 最終監査
+
+指定CLIのreview23で最終監査PASS（監査対象HEAD `fe8445668267dbbd0c070cae9f2c2c66b5050590`）。36問の受入、160/160・残0、出典・受入・実行証跡・報告書・差分61ファイルの整合性を確認。現物は全件Git blobと一致。review23の実モデルヘッダー・最終回答を含む証跡検証もPASS。
+
+review22は内容監査PASSだったが、生ログへ引用された過去ログの集計行が既存の最終回答照合に干渉したため、最終根拠に採用せずreview23を再実行した。原稿・受入コードは変更していない。最終監査環境でのNodeテスト再実行はspawn EPERMにより起動不可だった。親環境での最終41件成功ログが実テストの証跡であり、監査側で再実行成功したとは扱っていない。
+
+最終監査時点ではZIP内の6生ログを照合し、監査完了後にreview22・23自身の生ログを追加して計8ログをバックアップした。最終SHAと収録一覧は `review-evidence-backup.json` を参照。
+
+2026-11-04 05:00 JST時点で制作・受入・指定検証・独立監査を完了。40分の区切り前に終了。原問制作の残り0、次工程は公開統合・アプリ検証。
