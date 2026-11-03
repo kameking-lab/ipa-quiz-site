@@ -184,6 +184,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "gas-kou", name: "ガス主任技術者 甲種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "gas-otsu", name: "ガス主任技術者 乙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "khk-hanbai2", name: "高圧ガス販売主任者 第二種販売", sub: "令和7・6年度 法令・保安管理技術", domain: "safety" },
+  { code: "khk-setsubishi", name: "液化石油ガス設備士（学科）", sub: "令和7・6年度 法令（配管理論等は原本取得待ち）", domain: "safety" },
   { code: "khk-hanbai", name: "高圧ガス販売主任者 第一種販売", sub: "令和7・6年度 法令・保安管理技術", domain: "safety" },
   { code: "gas-hei", name: "ガス主任技術者 丙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み220原問を部分収録", domain: "welfare" },

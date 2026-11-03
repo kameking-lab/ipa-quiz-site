@@ -83,6 +83,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "rinsho-kogishi": async () => isExamPublished("rinsho-kogishi") ? (await import("@/data/questions/rinsho-kogishi")).RINSHO_KOGISHI_QUESTIONS : [],
   "judo-seifukushi": async () => isExamPublished("judo-seifukushi") ? (await import("@/data/questions/judo-seifukushi")).JUDO_SEIFUKUSHI_QUESTIONS : [],
   "khk-hanbai2": async () => isExamPublished("khk-hanbai2") ? (await import("@/data/questions/khk-hanbai2")).KHK_HANBAI2_QUESTIONS : [],
+  "khk-setsubishi": async () => isExamPublished("khk-setsubishi") ? (await import("@/data/questions/khk-setsubishi")).KHK_SETSUBISHI_QUESTIONS : [],
   "khk-hanbai": async () => isExamPublished("khk-hanbai") ? (await import("@/data/questions/khk-hanbai")).KHK_HANBAI_QUESTIONS : [],
   "gas-kou": async () => isExamPublished("gas-kou") ? (await import("@/data/questions/gas/kou")).GAS_KOU_QUESTIONS : [],
   "gas-otsu": async () => isExamPublished("gas-otsu") ? (await import("@/data/questions/gas/otsu")).GAS_OTSU_QUESTIONS : [],

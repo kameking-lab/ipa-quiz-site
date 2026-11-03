@@ -947,6 +947,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["公開前ステージング（オーナー指定により未公開）"],
   },
   {
+    slug: "khk-setsubishi", examCode: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）",
+    fullName: "液化石油ガス設備士試験（学科）", domain: "safety", administrator: "高圧ガス保安協会",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "ready-to-ingest",
+    reuseSummary: "令和7・6年度30問を未公開で収録。転載・複製禁止の文言は監査に記録し、2026-11-04のオーナー判断により収録。許諾取得を意味しません。法令は各年4月1日時点です。",
+    attributionTemplate: "出典：高圧ガス保安協会 液化石油ガス設備士（学科）試験 問題・正答。解説は過去問AI独自作成。",
+    remainingWork: ["令和7・6年度 配管理論等の問題PDFを取得し各20問を収録・照合する（現時点は法令30問のみ）", "公開前ステージング（オーナー指定により未公開）"],
+  },
+  {
     slug: "khk-hanbai", examCode: "khk-hanbai", shortName: "高圧ガス販売主任者 第一種販売",
     fullName: "高圧ガス販売主任者試験（第一種販売）", domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
