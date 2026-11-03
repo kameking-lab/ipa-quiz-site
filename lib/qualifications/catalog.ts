@@ -949,6 +949,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "過去問は非公開。サンプル問題も無断転載・無断営利利用を禁止。",
     remainingWork: ["利用許諾を取得できない限り問題本文を収録しない"],
   },
+  {
+    slug: "energy-manager",
+    shortName: "エネルギー管理士",
+    fullName: "エネルギー管理士試験",
+    domain: "electrical",
+    administrator: "一般財団法人省エネルギーセンター",
+    officialQuestionsUrl: "https://www.eccj.or.jp/mgr1/test/answer.html",
+    officialReuseTermsUrl: "https://www.eccj.or.jp/mgr1/test_past/",
+    status: "permission-required",
+    reuseSummary: "第48回（令和8年度）・第47回（令和7年度）が監査対象。公式に無断複製・転写の禁止が明記されているため、問題本文は収録しない。",
+    remainingWork: ["Web問題集への転載許諾取得までは本文を収録しない", "許諾取得後に原文・公式正答・独自解説と必要図を照合"],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {
