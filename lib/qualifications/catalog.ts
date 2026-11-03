@@ -42,6 +42,18 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "biru-kan",
+    shortName: "ビル管理士",
+    fullName: "建築物環境衛生管理技術者試験",
+    domain: "safety",
+    administrator: "公益財団法人日本建築衛生管理教育センター",
+    officialQuestionsUrl: "https://www.jahmec.or.jp/kokka/",
+    officialReuseTermsUrl: "https://www.jahmec.or.jp/kokka/",
+    status: "terms-review-required",
+    reuseSummary: "第55回（令和7年度）・第54回（令和6年度）の問題・正答の公開を確認。公式サイトの権利留保表示（All rights reserved.）の扱いは確認中で、問題本文は未収録。転載・複製禁止の具体的文言を確認したという判断ではない。",
+    remainingWork: ["権利留保表示が収録除外条件に該当するかを確定", "収録可能と確定した場合にのみ、公式PDFとの本文・全選択肢・必要図・正答の照合と独自解説の作成を行う"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
