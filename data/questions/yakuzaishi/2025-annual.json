@@ -5822,5 +5822,773 @@
     "license": "MHLW-attributed",
     "needsReview": false,
     "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 95,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "放射性医薬品に汎用されるテクネチウム99mTcは、99Moから放射平衡を利用してジェネレーターにより得られる。このことに関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "放射平衡は、親核種の半減期が娘核種の半減期より十分長いときに成り立つ。",
+      "イ": "99Moと99mTcの間には永続平衡が成り立つ。",
+      "ウ": "99mTcの壊変形式は核異性体転移である。",
+      "エ": "カラムから未壊変の99Moを溶出する方法をミルキングという。",
+      "オ": "カラムの担体には微量のTlを含むNaIの単結晶を用いる。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "放射平衡は、親核種の半減期が娘核種より長いときに成り立つ。99Moの半減期は約66時間、99mTcの半減期は約6時間なので、両者の間には過渡平衡が成り立つ。99mTcは核異性体転移（IT）で壊変する。したがって1と3が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。親の半減期が娘より十分長いとき、放射平衡が成立する。",
+      "イ": "誤り。永続平衡は、親の半減期が娘に比べて極めて長い場合の平衡である。99Moと99mTcの間は、半減期の差が小さい過渡平衡である。",
+      "ウ": "正しい。99mTcは準安定な核異性体で、核異性体転移（IT）によりγ線を放出して99Tcになる。",
+      "エ": "誤り。ミルキングは、カラムに保持された親核種99Moから生じた娘核種99mTcを溶出する操作である。未壊変の99Moを溶出するのではない。",
+      "オ": "誤り。微量のTlを含むNaIの単結晶はシンチレーション検出器に用いられるものである。ジェネレーターのカラムの担体にはアルミナなどを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問95（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q96",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 96,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "28%アンモニア水を量り、水で全量500 mLとした後、その20 mLを正確に量り、さらに水で全量1000 mLとした。この水溶液のpHを測定したところ、11.0であった。28%アンモニア水の採取量に最も近いのはどれか。1つ選べ。\nただし、28%アンモニア水の比重d = 0.90、アンモニアの分子量NH3 = 17、アンモニアの塩基解離定数Kb = 1.7 × 10^−5 mol/L、水のイオン積[H+][OH−] = 1.0 × 10^−14 (mol/L)^2、√1.0から√1.1の範囲の値は1とし、温度は25℃とする。",
+    "choices": {
+      "ア": "10 mL",
+      "イ": "20 mL",
+      "ウ": "50 mL",
+      "エ": "100 mL",
+      "オ": "200 mL"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "1) pH 11.0より[OH−] = 1.0×10^−3 mol/L。\n2) Kb = [OH−]²/(C − [OH−])より、C − 1.0×10^−3 = (1.0×10^−3)²/(1.7×10^−5) ≒ 5.9×10^−2 mol/L。よってC ≒ 5.9×10^−2 + 0.1×10^−2 ≒ 6.0×10^−2 mol/L（最終液1000 mLのNH3濃度）。\n3) 20 mLを1000 mLにしたので50倍に希釈されている。500 mL液の濃度は6.0×10^−2 × 50 = 3.0 mol/L。\n4) 500 mL中のNH3は3.0 × 0.5 = 1.5 mol。質量は1.5 × 17 ≒ 25.5 g。\n5) 28%アンモニア水の質量は25.5/0.28 ≒ 91 g。体積は91/0.90 ≒ 101 mL ≒ 100 mL。\nよって選択肢4が最も近い。",
+    "choiceExplanations": {
+      "ア": "誤り。計算で求めた採取量は約101 mLであり、10 mLでは濃度が約1/10しかない。",
+      "イ": "誤り。20 mLでは必要量（約101 mL）の約1/5である。",
+      "ウ": "誤り。50 mLでは必要量の約半分である。",
+      "エ": "正しい。計算により約101 mLとなり、100 mLが最も近い。",
+      "オ": "誤り。200 mLでは必要量の約2倍である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問96（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q99",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 99,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方金チオリンゴ酸ナトリウムの定量法には原子吸光光度法が用いられる。このことに関する記述として正しいのはどれか。2つ選べ。なお、測定条件は以下のとおりである。\n測定条件\n使用ガス：可燃性ガス [ア]　支燃性ガス 空気\nランプ：[イ](波長242.8 nm)",
+    "choices": {
+      "ア": "[ア]に入るのは、アセチレンである。",
+      "イ": "[イ]に入るのは、重水素放電管である。",
+      "ウ": "原子化には冷蒸気方式が用いられる。",
+      "エ": "定量には、ランベルト・ベール(Lambert-Beer)の法則が適用される。",
+      "オ": "金の原子スペクトルは、連続スペクトルである。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "フレーム方式の原子吸光光度法では、アセチレン−空気フレームで試料を原子化し、測定元素の中空陰極ランプの輝線の吸収を測ります。正しいのは1と4です。吸光度は原子蒸気中の原子数(濃度)に比例し、ランベルト・ベールの法則に従います。",
+    "choiceExplanations": {
+      "ア": "正しい記述です。支燃性ガスが空気の場合、可燃性ガスにはアセチレンを用います。",
+      "イ": "誤りです。[イ]に入るのは金の中空陰極ランプです。重水素放電管は、バックグラウンド補正用の光源であり、測定元素の光源ではありません。",
+      "ウ": "誤りです。冷蒸気方式は水銀に特有の方法です。金の測定はフレーム(または電気加熱)で原子化します。",
+      "エ": "正しい記述です。原子蒸気による光の吸収は、ランベルト・ベールの法則に従い、吸光度が濃度に比例します。",
+      "オ": "誤りです。原子の吸収・発光スペクトルは、特定波長の線スペクトルです。連続スペクトルではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問99（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q100",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 100,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "フェノール、パラオキシ安息香酸及びトルエンを含む混合物試料を高速液体クロマトグラフィー(HPLC)により分析した。このことに関する記述として正しいのはどれか。2つ選べ。なお、HPLCの分析条件は以下のとおりである。\n分析条件\n検出器：紫外吸光光度計(測定波長：270 nm)\nカラム：内径4.6 mm、長さ15 cmのステンレス管に粒径5 μmの液体クロマトグラフィー用オクタデシルシリル化シリカゲルを充てんする。\nカラム温度：35 ℃付近の一定温度\n移動相：pH 7.0の0.1 mol/Lリン酸塩緩衝液／メタノール(3：1)混液",
+    "choices": {
+      "ア": "使用したHPLCは順相クロマトグラフィーである。",
+      "イ": "3つの化合物のうち、最後に溶出するのはトルエンである。",
+      "ウ": "カラム温度を高くするとピーク高さは大きくなり、ピーク面積は減少する。",
+      "エ": "パラオキシ安息香酸の保持時間を長くするには、移動相中の緩衝液のpHを低くする。",
+      "オ": "トルエンの保持時間を長くするには、移動相中のメタノールの比率を高くする。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "固定相がODS(無極性)で移動相が極性の水系なので、逆相クロマトグラフィーです。極性が低く疎水性が高い物質ほど遅く溶出します。pH 7.0ではパラオキシ安息香酸のカルボキシ基がイオン化して最も早く溶出し、次にフェノール、最後に無極性のトルエンが溶出します。正しいのは2と4です。",
+    "choiceExplanations": {
+      "ア": "誤りです。固定相がオクタデシルシリル化シリカゲルで、移動相が水系の緩衝液/メタノールなので、逆相クロマトグラフィーです。",
+      "イ": "正しい記述です。トルエンは最も疎水性が高く、ODSカラムに強く保持されるため、最後に溶出します。",
+      "ウ": "誤りです。カラム温度を高くすると保持時間が短くなり、ピークは鋭くなって高さは大きくなります。ただし注入量が同じなら、ピーク面積は変わりません。",
+      "エ": "正しい記述です。pHを下げるとカルボキシ基のイオン化が抑えられて分子形が増え、疎水性が高まるので保持時間が長くなります。",
+      "オ": "誤りです。メタノールの比率を高くすると移動相の溶出力が強まるため、トルエンの保持時間は短くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問100（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q151",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 151,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "細胞内情報伝達系に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "ドパミンD2 受容体が刺激されると、Gi タンパク質を介してアデニル酸シクラーゼ活性が抑制される。",
+      "イ": "グルタミン酸NMDA 受容体が刺激されると、Ca2+ の細胞膜透過性が亢進される。",
+      "ウ": "γ-アミノ酪酸GABAB 受容体が刺激されると、Cl- の細胞膜透過性が亢進される。",
+      "エ": "グルカゴン受容体が刺激されると、受容体型チロシンキナーゼが活性化される。",
+      "オ": "インスリン受容体が刺激されると、膜結合型グアニル酸シクラーゼが活性化される。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正解は1と2です。D2受容体はGi共役型で、アデニル酸シクラーゼを抑制してcAMPを減少させます。NMDA受容体はリガンド依存性イオンチャネルで、刺激によりCa2+(とNa+)の透過性が高まります。",
+    "choiceExplanations": {
+      "ア": "正しい。D2受容体はGiタンパク質と共役し、アデニル酸シクラーゼ活性を抑制します。",
+      "イ": "正しい。NMDA受容体はCa2+透過性の高いイオンチャネル型受容体で、刺激されるとCa2+の透過性が亢進します。",
+      "ウ": "誤り。GABAB受容体はGi/Go共役型で、主にK+チャネルの開口やCa2+チャネルの抑制を起こします。Cl-の透過性を亢進するのはイオンチャネル型のGABAA受容体です。",
+      "エ": "誤り。グルカゴン受容体はGs共役型で、アデニル酸シクラーゼを活性化してcAMPを増加させます。受容体型チロシンキナーゼではありません。",
+      "オ": "誤り。インスリン受容体は受容体型チロシンキナーゼです。膜結合型グアニル酸シクラーゼは、ナトリウム利尿ペプチド受容体などの機構です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問151（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q1",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図はダニエル電池（Zn|ZnSO4(aq)¦CuSO4(aq)|Cu）の模式図である。この電池の標準起電力として正しいのはどれか。1つ選べ。\nただし、Zn と Cu の半電池の標準電極電位はそれぞれ −0.763 V と +0.337 V とする。",
+    "choices": {
+      "ア": "+0.213 V",
+      "イ": "+0.426 V",
+      "ウ": "+1.100 V",
+      "エ": "−0.426 V",
+      "オ": "−1.100 V"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "標準起電力は、正極（還元が起こる側、電位が高い側）の標準電極電位から負極（酸化が起こる側、電位が低い側）の標準電極電位を引いて求める。Cu 半電池が +0.337 V で高く正極、Zn 半電池が −0.763 V で低く負極になる。したがって E° = (+0.337) − (−0.763) = +1.100 V。起電力は正の値で表すので、正解は 3。",
+    "choiceExplanations": {
+      "ア": "誤り。+0.213 V は 2 つの電位の和のようにも見えない値で、根拠のある計算では得られない。E° = 0.337 − (−0.763) = 1.100 V である。",
+      "イ": "誤り。+0.426 V は −0.763 と +0.337 の和（−0.426）の符号を変えた値で、電位差ではなく和をとった誤りである。起電力は差で求める。",
+      "ウ": "正しい。E° = 0.337 − (−0.763) = +1.100 V。Cu 側が正極、Zn 側が負極で、ダニエル電池の標準起電力として整合する。",
+      "エ": "誤り。−0.426 V は 2 つの電位の和（−0.763 + 0.337）であり、差ではない。また自発的に作動する電池の標準起電力は正の値になる。",
+      "オ": "誤り。大きさは正しいが符号が逆である。正極 − 負極の順に引けば正の値になる。電池は Zn が酸化され Cu2+ が還元される向きに自発的に進むので、起電力は正である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問1（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q001-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問1の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "難溶性塩である水酸化鉄（Ⅲ）（Fe(OH)3）の純水中での溶解度を S mol/L とすると、その溶解度積（Ksp）を正しく表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "3S³ (mol/L)³",
+      "イ": "4S³ (mol/L)³",
+      "ウ": "9S³ (mol/L)³",
+      "エ": "9S⁴ (mol/L)⁴",
+      "オ": "27S⁴ (mol/L)⁴"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Fe(OH)3 は Fe(OH)3 ⇌ Fe3+ + 3OH− と溶解する。溶解度を S mol/L とすると、[Fe3+] = S、[OH−] = 3S となる。したがって Ksp = [Fe3+][OH−]^3 = S × (3S)^3 = S × 27S^3 = 27S^4 (mol/L)^4。次元は濃度の 4 乗で (mol/L)^4。正解は 5。なお、純水中の水の自己電離による OH− は無視する前提である。",
+    "choiceExplanations": {
+      "ア": "誤り。3S^3 は係数 3 を掛けただけで、OH− 濃度 3S を 3 乗する操作が反映されていない。また単位も (mol/L)^4 になるはずで合わない。",
+      "イ": "誤り。4S^3 (mol/L)^3 は Ca(OH)2 のような AB2 型（Ksp = S × (2S)^2 = 4S^3）の式である。Fe(OH)3 は AB3 型で 4 乗になる。",
+      "ウ": "誤り。9S^3 は (3S)^2 のような扱いで、Fe(OH)3 の OH− の係数 3 を 2 乗にした誤りである。冪は 3 乗で、全体では 4 乗になる。",
+      "エ": "誤り。冪は 4 乗で合っているが、係数が 9 になっており、(3S)^3 = 27S^3 とすべきところを 9 としている。",
+      "オ": "正しい。Ksp = S·(3S)^3 = 27S^4 (mol/L)^4。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化合物のうち、最も酸性度が高いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "フェノール類の酸性度は、脱プロトン化で生じるフェノキシドアニオンの安定性で決まる。ニトロ基は強い電子求引性(-I、-M効果)をもつ。パラ位にあると、負電荷がベンゼン環を通ってニトロ基まで非局在化し、アニオンが大きく安定化する。そのため4-ニトロフェノールが最も酸性度が高い。",
+    "choiceExplanations": {
+      "ア": "シクロヘキサノールは普通のアルコールで、生じるアルコキシドは共鳴安定化されない。フェノール類より酸性度が低い。",
+      "イ": "フェノキシドは環への共鳴で安定化されるが、さらに電子求引基をもつ化合物には及ばない。",
+      "ウ": "アミノ基は電子供与性(+M効果)で、フェノキシドを不安定化する。フェノールより酸性度が低い。",
+      "エ": "塩素は電子求引性(-I効果)で酸性度をやや高めるが、ニトロ基のような共鳴による安定化はない。",
+      "オ": "正しい。ニトロ基の強い電子求引性と共鳴効果によりアニオンが最も安定化され、酸性度が最も高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化学種のうち、ベンジルカチオンが最も安定化されているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ベンジルカチオンの正電荷はベンゼン環のオルト位とパラ位に非局在化する。この位置にあるメトキシ基は、酸素の非共有電子対を共鳴で供与して強く安定化する(+M効果)。メタ位のメトキシ基は共鳴に関与できず、電子求引性の誘起効果(-I効果)が主になる。そのため、オルト位とパラ位の両方にメトキシ基をもつ2,4-ジメトキシ体が最も安定である。",
+    "choiceExplanations": {
+      "ア": "オルト位のメトキシ基1個だけが共鳴で安定化する。オルト位とパラ位の両方にある4より安定化が小さい。",
+      "イ": "メタ位のメトキシ基は共鳴で安定化せず、誘起効果で不安定化に働く。",
+      "ウ": "オルト位は共鳴で安定化するが、もう1個はメタ位で安定化に寄与しない。4には及ばない。",
+      "エ": "正しい。オルト位とパラ位の2個のメトキシ基が共鳴で正電荷を安定化し、最も安定である。",
+      "オ": "オルト位は有効だが、もう1個はCH2+に対してメタ位にあり、共鳴に寄与しない。4より安定化が小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q12",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "核酸に含まれるプリン塩基のヒトにおける最終代謝産物はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ヒトでは、プリン塩基の分解でヒポキサンチンがキサンチンになり、さらに尿酸になる(キサンチンオキシダーゼによる)。ヒトは尿酸をさらに分解するウリカーゼをもたないため、尿酸が最終代謝産物となる。図の5は、2,6,8位に酸素をもつ尿酸の構造である。",
+    "choiceExplanations": {
+      "ア": "ヒポキサンチンは、アデニンの代謝で生じる中間体である。さらにキサンチンを経て酸化される。",
+      "イ": "グアニンは核酸塩基で、代謝されてキサンチンに変わる。最終代謝産物ではない。",
+      "ウ": "アデニンは核酸塩基で、代謝されてヒポキサンチンなどに変わる。最終代謝産物ではない。",
+      "エ": "キサンチンは、尿酸の一段階手前の中間体である。キサンチンオキシダーゼでさらに酸化される。",
+      "オ": "正しい。ヒトのプリン塩基の最終代謝産物は尿酸である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問12（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q012-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問12の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q15",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ウイルスゲノムを中心としてその周囲を取り囲むタンパク質の殻はどれか。1つ選べ。",
+    "choices": {
+      "ア": "エンベロープ",
+      "イ": "カプシド",
+      "ウ": "コア",
+      "エ": "スパイク",
+      "オ": "ビリオン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ウイルスのゲノム（DNAまたはRNA）は、カプソメアというタンパク質サブユニットからなるカプシドに包まれています。カプシドはゲノムを囲むタンパク質の殻です。したがって正解は2です。",
+    "choiceExplanations": {
+      "ア": "エンベロープは一部のウイルスが持つ脂質二重膜の外被です。タンパク質の殻ではなく、カプシドのさらに外側にあります。",
+      "イ": "正しい。カプシドはウイルスゲノムを取り囲むタンパク質の殻です。",
+      "ウ": "コアは一般にゲノムとそれを包む内部構造を指す語です。ゲノムを囲むタンパク質の殻そのものを指す名称としては、カプシドが適切です。",
+      "エ": "スパイクはエンベロープなどの表面から突き出た糖タンパク質で、宿主細胞への吸着や侵入に関わります。ゲノムを囲む殻ではありません。",
+      "オ": "ビリオンは、感染性を持つ完全なウイルス粒子全体を指す語です。タンパク質の殻だけを指すのではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問15（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q46",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 46,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従う薬物を経口投与した場合、最高血中濃度到達時間が短縮する要因はどれか。1つ選べ。",
+    "choices": {
+      "ア": "投与量の減少",
+      "イ": "吸収率の上昇",
+      "ウ": "分布容積の増大",
+      "エ": "吸収速度定数の上昇",
+      "オ": "消失速度定数の低下"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "最高血中濃度到達時間は tmax = ln(ka/ke)/(ka−ke) で表され、吸収速度定数 ka と消失速度定数 ke だけで決まります。ka が大きくなると tmax は短くなります。投与量と吸収率は濃度の大きさに関わりますが、tmax の式には直接含まれません。分布容積についても、ka と ke が変わらなければ tmax は変化しません。",
+    "choiceExplanations": {
+      "ア": "投与量が変わっても tmax は変化しません。血中濃度が全体に比例して変わるだけです。",
+      "イ": "吸収率(バイオアベイラビリティ)は濃度の大きさに影響しますが、tmax の式には含まれません。",
+      "ウ": "分布容積は濃度の大きさに関わりますが、ka と ke が変わらなければ tmax は変化しません。",
+      "エ": "正解です。ka が上昇すると tmax は短縮します。",
+      "オ": "ke が低下すると tmax は延長します。短縮する要因ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問46（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q47",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 47,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、消失半減期が2時間である薬物を静脈内定速注入する。投与開始後、薬物の血中濃度が定常状態の血中濃度の75%に到達する時間(h)はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "静脈内定速注入では C(t) = Css(1−e^(−ke·t)) です。\n1) C/Css = 0.75 なので、e^(−ke·t) = 0.25 = (1/2)^2 です。\n2) (1/2)^(t/t1/2) = (1/2)^2 より、t/t1/2 = 2 となります。\n3) t1/2 = 2 時間なので、t = 2 × 2 = 4 時間です。",
+    "choiceExplanations": {
+      "ア": "1時間では 1−(1/2)^(1/2) ≒ 0.29 で、約29%にとどまります。",
+      "イ": "2時間は半減期1回分で、定常状態の50%に達する時間です。",
+      "ウ": "3時間では 1−(1/2)^1.5 ≒ 0.65 で、約65%です。",
+      "エ": "正解です。半減期2回分(2×2時間)で75%に達します。",
+      "オ": "5時間では 1−(1/2)^2.5 ≒ 0.82 で、約82%となり75%を超えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問47（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の肝固有クリアランス(CLint)が肝血流量(Qh)と比較して十分に小さい場合、その薬物の肝クリアランスはどのように近似できるか。1つ選べ。\nただし、fu は血漿タンパク質非結合形分率とする。",
+    "choices": {
+      "ア": "Qh",
+      "イ": "CLint",
+      "ウ": "fu・Qh",
+      "エ": "fu・CLint",
+      "オ": "CLint/fu"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "well-stirred model では CLh = Qh・fu・CLint / (Qh + fu・CLint) です。CLint が Qh より十分に小さければ、分母の Qh + fu・CLint は Qh と近似できます。したがって CLh ≒ Qh・fu・CLint / Qh = fu・CLint となります。",
+    "choiceExplanations": {
+      "ア": "Qh は CLint が Qh より十分に大きい場合の近似(血流律速)です。本問の条件とは逆です。",
+      "イ": "CLint だけでは血漿タンパク結合の影響が含まれていません。fu を掛ける必要があります。",
+      "ウ": "fu・Qh は肝クリアランスの近似として成り立ちません。",
+      "エ": "正解です。CLint が小さいとき CLh ≒ fu・CLint(代謝律速)です。",
+      "オ": "CLint/fu は結合の影響を逆に扱っており、誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q51",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 51,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "構造粘性を有する製剤でみられる、下図のレオグラムを示す現象はどれか。1つ選べ。",
+    "choices": {
+      "ア": "クリープ",
+      "イ": "チキソトロピー",
+      "ウ": "応力緩和",
+      "エ": "ダイラタンシー",
+      "オ": "コアセルベーション"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "図では、せん断応力を上げていく上昇曲線と、下げていく下降曲線が一致せず、ヒステリシスループを描いている。下降曲線は上昇曲線より左側(同じせん断応力でせん断速度が大きい側)にある。これは、せん断で構造が壊れて粘度が下がり、静置すると元に戻る性質で、チキソトロピーの典型的なレオグラムである。したがって正解は2である。",
+    "choiceExplanations": {
+      "ア": "クリープは、一定の応力を加え続けたときに変形が時間とともに増加する現象で、時間-ひずみ曲線で表す。図のヒステリシスループとは異なる。",
+      "イ": "チキソトロピーは、ずり応力で粘度が低下し、静置すると回復する現象である。上昇曲線と下降曲線が一致しないヒステリシスループを示す。これが正解。",
+      "ウ": "応力緩和は、一定のひずみを与えたときに応力が時間とともに減少する現象で、図のレオグラムとは異なる。",
+      "エ": "ダイラタンシーは、せん断速度の増加に伴って粘度が増大する現象で、上昇曲線は上に凸になる。図は下に凸の上昇曲線なので該当しない。",
+      "オ": "コアセルベーションは、親水コロイド溶液から濃厚なコロイド相が分離する現象で、マイクロカプセル調製などに利用される。レオグラムで表す流動現象ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問51（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q051-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問51の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q94",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 94,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "次の酵素反応の反応速度vはミカエリス・メンテンの式に従う。\nE + S ⇄ ES → P\nただし、Eは酵素、Sは基質、ESはEとSの複合体、Pは生成物を表し、ミカエリス定数をKm、最大反応速度をVmaxとする。この反応に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "vは、Pの生成速度（d[P]/dt）で表される。",
+      "イ": "vは、[ES]が一定（d[ES]/dt = 0）となる定常状態を仮定した場合の速度である。",
+      "ウ": "[S]がKmの2倍であるとき、vはVmaxの1/4となる。",
+      "エ": "Kmは反応温度に依存しない。",
+      "オ": "Kmが小さいほどEとSの親和性は低い。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ミカエリス・メンテンの式v = Vmax[S]/(Km + [S])における反応速度vは、生成物Pの生成速度d[P]/dtである。この式は、ESの濃度が一定とみなせる定常状態を仮定して導かれる。したがって1と2が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。vは生成物Pの生成速度d[P]/dtで表される。",
+      "イ": "正しい。d[ES]/dt = 0の定常状態近似から式が導かれる。",
+      "ウ": "誤り。[S] = 2Kmのとき、v = Vmax×2Km/(Km + 2Km) = (2/3)Vmaxである。1/4ではない。",
+      "エ": "誤り。Kmは各素過程の速度定数から決まるので、温度によって変化する。",
+      "オ": "誤り。Kmが小さいほど、少ない基質濃度で速度が上がるので、EとSの親和性は高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問94（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、生物学的半減期が1.4時間である薬物を、3種類の剤形で同用量を経口投与したとき、下表に示す血中濃度時間曲線下面積（AUC）と一次モーメント時間曲線下面積（AUMC）が得られた。この結果に関する記述として、正しいのはどれか。2つ選べ。\nただし、絶対的バイオアベイラビリティはいずれも100％とし、ln 2 = 0.693とする。",
+    "choices": {
+      "ア": "最高血中濃度が最も大きいのは経口液剤である。",
+      "イ": "投与量を増やすと平均滞留時間は長くなる。",
+      "ウ": "経口液剤を経口投与したときの平均吸収時間は約1.0 hである。",
+      "エ": "散剤の平均溶出時間は約0.5 hである。",
+      "オ": "錠剤の平均崩壊時間は約1.5 hである。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "MRT = AUMC/AUC より、経口液剤 3.0 h、散剤 4.5 h、錠剤 5.0 h。1-コンパートメントモデルの消失の平均滞留時間は 1/kel = t1/2/ln2 = 1.4/0.693 ≈ 2.0 h。平均吸収時間 MAT = MRT(経口) − 1/kel なので、経口液剤は 3.0−2.0 = 1.0 h、散剤は 2.5 h、錠剤は 3.0 h。AUCが同じで吸収が最も速い（MATが最小の）経口液剤が最高血中濃度も最大となる。正解は1と3。",
+    "choiceExplanations": {
+      "ア": "正しい。AUCは全剤形で同じ（吸収量が同じ）で、MATは経口液剤（1.0 h）が最小、つまり吸収が最も速いので、最高血中濃度は最大になる。",
+      "イ": "誤り。線形モデルでは平均滞留時間は投与量に依存せず一定であり、投与量を増やしても長くならない。",
+      "ウ": "正しい。MRT 3.0 h から 1/kel ≈ 2.0 h を引くと MAT ≈ 1.0 h となる。",
+      "エ": "誤り。散剤のMATは 4.5−2.0 = 2.5 h。溶出時間は散剤と経口液剤のMATの差で 2.5−1.0 = 1.5 h であり、0.5 hではない。",
+      "オ": "誤り。錠剤のMATは 3.0 h、散剤との差で求めた崩壊時間は 3.0−2.5 = 0.5 hであり、1.5 hではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455159.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図"
+    ]
   }
 ]
