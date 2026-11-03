@@ -4,21 +4,22 @@ import type { NativeBData, NativeBGrade, Question } from "./types";
 const text = z.string().refine((value) => value.trim().length > 0, "Empty text");
 const token = text.refine((value) => !["__proto__", "constructor", "prototype"].includes(value), "Unsafe identifier");
 export const NativeBDataSchema = z.object({
-  mode: z.enum(["binary", "shared-bank"]),
+  mode: z.enum(["binary", "shared-bank", "cloze"]),
   candidates: z.array(z.object({ id: token, label: text, explanation: text.optional(), imageUrl: text.optional() }).strict()),
   slots: z.array(z.object({
     label: token, prompt: text.optional(), answer: token, explanation: text,
     candidateExplanations: z.record(token, text).optional(),
-  }).strict()).length(5),
+  }).strict()).min(4).max(5),
   bankImageUrls: z.array(text).optional(), bankImageAltTexts: z.array(text).optional(),
   officialLabel: text.optional(),
   officialScoring: z.object({ maxPoints: z.number().nonnegative().optional(), pointsPerSlot: z.number().nonnegative().optional(), note: text.optional() }).strict().optional(),
 }).strict().superRefine((data, context) => {
   const issue = (message: string) => context.addIssue({ code: z.ZodIssueCode.custom, message });
-  if (data.candidates.length !== (data.mode === "binary" ? 2 : 10)) issue("Native B requires the printed 2 or 10 candidate bank");
+  if (data.candidates.length !== (data.mode === "binary" ? 2 : data.mode === "cloze" ? 20 : 10)) issue("Native B requires the printed candidate bank");
+  if (data.slots.length !== (data.mode === "cloze" ? 4 : 5)) issue("Invalid slot count");
   const ids = new Set(data.candidates.map((candidate) => candidate.id));
   if (ids.size !== data.candidates.length) issue("Duplicate candidate ID");
-  if (new Set(data.slots.map((slot) => slot.label)).size !== 5) issue("Duplicate slot label");
+  if (new Set(data.slots.map((slot) => slot.label)).size !== data.slots.length) issue("Duplicate slot label");
   for (const slot of data.slots) {
     if (!ids.has(slot.answer)) issue(`Unknown answer ID: ${slot.label}`);
     if (Object.keys(slot.candidateExplanations ?? {}).some((id) => !ids.has(id))) issue(`Unknown explanation candidate: ${slot.label}`);
@@ -76,7 +77,7 @@ export function gradeNativeB(data: NativeBData, selections: NativeBSelections): 
     return { label: slot.label, selectedCandidateId, correctCandidateId: slot.answer, status, isCorrect: status === "correct" };
   });
   const correctSlots = slotResults.filter((slot) => slot.isCorrect).length;
-  return { isCorrect: !unknownSlots && correctSlots === 5, correctSlots, totalSlots: 5, slotResults };
+  return { isCorrect: !unknownSlots && correctSlots === data.slots.length, correctSlots, totalSlots: data.slots.length, slotResults };
 }
 export function serializeNativeBSelections(data: NativeBData, selections: NativeBSelections): string {
   return JSON.stringify(Object.fromEntries(data.slots.map((slot) => [slot.label, selections[slot.label] === "" ? null : selections[slot.label] ?? null])));

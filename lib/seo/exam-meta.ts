@@ -229,6 +229,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   hoikushi: "保育士試験",
   mankan: "マンション管理士試験",
   kashikin: "貸金業務取扱主任者資格試験",
+  gyosei: "行政書士試験",
   sharoushi: "社会保険労務士試験",
   "chusho-kigyo-shindanshi": "中小企業診断士 第1次試験",
   kangoshi: "看護師国家試験",
@@ -258,6 +259,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  gyosei: (c) => `行政書士試験の公式過去問${c}問。出題時点の法令に基づく独自解説と公式正解例を確認できます。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
   "riku-toku-kokunai": (c) => `国内電信級陸上特殊無線技士の2026年2月・6月筆記法規から${c}問を収録。公式問題・正答と独自解説で無料演習できます。当時の法令に基づき、現在のCBT例題や独自問題は含みません。`,

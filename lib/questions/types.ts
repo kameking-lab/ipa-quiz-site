@@ -39,6 +39,7 @@ export type ExamCode =
   | "hoikushi"
   | "mankan"
   | "kashikin"
+  | "gyosei"
   | "sharoushi"
   | "kangoshi"
   | "yakuzaishi"
@@ -83,7 +84,7 @@ export type ExamCode =
   | "gas-hei";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "maritime1" | "general3" | "general2" | "general1" | "land-special2" | "land-special3" | "kanteishi" | "kaikeishi" | "gas-kou" | "gas-otsu" | "gas-hei">;
+export type IpaExamCode = Exclude<ExamCode, "gyosei" | "fp1" | "fp2" | "fp3" | "denken3" | "denken2" | "denken1" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "tsushin1" | "kaigo" | "shakai" | "seishin" | "tohan" | "kanri" | "eisei1" | "eisei2" | "soukan" | "hoikushi" | "mankan" | "kashikin" | "sharoushi" | "kangoshi" | "yakuzaishi" | "ahaki-anma" | "ahaki-hari-kyu" | "hokenshi" | "josanshi" | "rigaku-ryohoshi" | "sagyo-ryohoshi" | "shino-kunrenshi" | "rinsho-kensagishi" | "shinryo-hoshasengishi" | "rinsho-kogishi" | "riyoshi" | "chusho-kigyo-shindanshi" | "chosashi" | "shika-ishi" | "judo-seifukushi" | "riku-toku-kokunai" | "kai-toku2" | "kai-toku3" | "koku-toku" | "land-special1" | "riku-tech1" | "maritime4" | "aviation-comm" | "amateur1" | "maritime-special1" | "riku-tech2" | "amateur2" | "maritime-radar" | "maritime3" | "maritime2" | "maritime1" | "general3" | "general2" | "general1" | "land-special2" | "land-special3" | "kanteishi" | "kaikeishi" | "gas-kou" | "gas-otsu" | "gas-hei">;
 
 export type Session =
   | "am"
@@ -243,7 +244,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed";
+  license: "MLIT-PDL-1.0" | "CPAAOB-PDL-1.0" | "IPA-public" | "JAFP-reuse-with-attribution" | "KINZAI-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse" | "KANRIKYO-educational-reuse" | "EXAM-OR-JP-attributed" | "IPEJ-attributed" | "HOYOKYO-attributed" | "MANKAN-attributed" | "JFSA-attributed" | "SHAROSI-attributed" | "MHLW-attributed" | "AHK-attributed" | "JAAME-attributed" | "RBC-attributed" | "JF-CMCA-attributed" | "JCTC-attributed" | "MOJ-attributed" | "ZAIJUSEI-attributed" | "NICHIMU-educational-reuse" | "NICHIMU-past-question-study-use" | "JIA-attributed" | "GYOSEI-permission-pending";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;
@@ -273,7 +274,7 @@ export interface QuizFilter {
   excludeRecent?: boolean;
 }
 
-/** One original question, five independently graded slots sharing the printed bank. */
+/** One original question with independently graded slots sharing the printed bank. */
 export interface NativeBCandidate {
   id: string;
   label: string;
@@ -288,7 +289,7 @@ export interface NativeBSlot {
   candidateExplanations?: Record<string, string>;
 }
 export interface NativeBData {
-  mode: "binary" | "shared-bank";
+  mode: "binary" | "shared-bank" | "cloze";
   candidates: NativeBCandidate[];
   slots: NativeBSlot[];
   bankImageUrls?: string[];
@@ -299,7 +300,7 @@ export interface NativeBData {
 export interface NativeBGrade {
   isCorrect: boolean;
   correctSlots: number;
-  totalSlots: 5;
+  totalSlots: number;
   slotResults: {
     label: string;
     selectedCandidateId: string | null;
