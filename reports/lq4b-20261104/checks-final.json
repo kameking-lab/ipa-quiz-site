@@ -1,0 +1,80 @@
+{
+  "base": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+  "applicationCodeRef": "acfaec297",
+  "localBuildOnly": true,
+  "push": false,
+  "deploy": false,
+  "mainMerge": false,
+  "threeQualificationIntegration": "PASS",
+  "remainingTwoQualifications": "INCOMPLETE",
+  "checks": {
+    "validateQuestions": {
+      "exitCode": 0,
+      "questions": 26873,
+      "failures": 0,
+      "warnings": 16854,
+      "log": "validate-questions-final.log",
+      "logSha256": "ae88434203feb07fba0ac19946209512a9350a2027ac5cb1b9b0745d5edfd6c2"
+    },
+    "typecheck": {
+      "exitCode": 0,
+      "log": "typecheck-final.log",
+      "logSha256": "e4d9f9e26c4fa65386bba4d9419185a432c56fbbf0b7ade4fd72b19c84026058"
+    },
+    "relatedTests": {
+      "exitCode": 0,
+      "files": 25,
+      "tests": 282,
+      "log": "related-tests-final.log",
+      "logSha256": "3e4eae74d13b8984ee8a8caf195e0935b9d786a77d9a3ef9db83a896a983f83f"
+    },
+    "lint": {
+      "exitCode": 0,
+      "log": "lint-final.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "build": {
+      "exitCode": 0,
+      "staticPages": 13115,
+      "log": "build-final.log",
+      "logSha256": "4fb06519b6ba4eeb3ef5a403d633823d9f53d97186fddf96242a0b2408652576"
+    },
+    "qkensetsuValidator": {
+      "exitCode": 0,
+      "materials": 210,
+      "playable": 209,
+      "referenceOnly": 1,
+      "log": "qkensetsu-validation.log",
+      "logSha256": "8887b45a31cee33fcfb3695c869281ef274e16a70da63c01cb081a6dae750923"
+    },
+    "kishoSchema": {
+      "exitCode": 0,
+      "originals": 78,
+      "log": "kisho-validation.log",
+      "logSha256": "015187c339ed90252cbd1e71aed25e772dc36015a5e17598f425d1c512010f42"
+    },
+    "kishoAcceptance": {
+      "exitCode": 0,
+      "artifacts": 145,
+      "assets": 130,
+      "log": "kisho-acceptance.log",
+      "logSha256": "eb9df69ae0d2b7c399df5b32a7493c1189a73985dd4430605f0bd8ddbc3af4db"
+    },
+    "chizai2Intake": {
+      "exitCode": 0,
+      "originals": 160,
+      "actualPdfs": 4,
+      "choiceReasons": 651,
+      "log": "chizai2-intake.log",
+      "logSha256": "65460b63ac11bf446dd89d67ca666b3df75e02dbc9221c48b2b24c2d474e517c"
+    }
+  },
+  "review3": {
+    "model": "gpt-6-astra",
+    "exitCode": 0,
+    "integration": "PASS",
+    "sourceAnswerIndex": "PASS",
+    "remainingTwoQualifications": "INCOMPLETE"
+  },
+  "unregisteredPartialManuscript": "data/qualification-staging/lq4b-engineer-first/2024-aptitude-partial.json"
+}
