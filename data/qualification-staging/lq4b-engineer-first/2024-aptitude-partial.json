@@ -1,5 +1,5 @@
-﻿{
-  "status": "PARTIAL_STAGING_NOT_REGISTERED",
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
   "qualification": "gijutsushi1-kikai",
   "year": 2024,
   "subject": "aptitude",
@@ -37,8 +37,18 @@
         "https://laws.e-gov.go.jp/document?law_unique_id=415CO0000000507_20170530_428CO0000000324"
       ],
       "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
-      "needsIndependentReview": true,
-      "publicGo": false
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "reviewedCommit": "500496bd0",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4b-20261104/independent-review4.md",
+        "reviewedContentSha256": "7594bfb4a034fffb224f3318ee8b9e16847b002fc185fa306c6eb3e06bee6d4b",
+        "scope": "ONE_ORIGINAL_NOT_FULL_QUALIFICATION"
+      },
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14"
     }
   ]
 }

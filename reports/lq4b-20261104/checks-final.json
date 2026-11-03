@@ -76,5 +76,24 @@
     "sourceAnswerIndex": "PASS",
     "remainingTwoQualifications": "INCOMPLETE"
   },
-  "unregisteredPartialManuscript": "data/qualification-staging/lq4b-engineer-first/2024-aptitude-partial.json"
+  "unregisteredPartialManuscript": "data/qualification-staging/lq4b-engineer-first/2024-aptitude-partial.json",
+  "limitedManuscriptReviews": {
+    "model": "gpt-6-astra",
+    "runs": [
+      {
+        "review": 4,
+        "exitCode": 0,
+        "originals": 1,
+        "status": "PASS"
+      },
+      {
+        "review": 5,
+        "exitCode": 0,
+        "originals": 1,
+        "status": "PASS"
+      }
+    ],
+    "acceptedOriginals": 2,
+    "registeredOriginals": 0
+  }
 }

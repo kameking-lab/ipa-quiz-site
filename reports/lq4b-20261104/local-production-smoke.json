@@ -1,0 +1,35 @@
+{
+  "host": "127.0.0.1:49184",
+  "status": "PASS",
+  "routes": [
+    {
+      "path": "/kenchiku-setsubishi",
+      "status": 200,
+      "expected": 200,
+      "bytes": 94546,
+      "passed": true
+    },
+    {
+      "path": "/chizai2",
+      "status": 200,
+      "expected": 200,
+      "bytes": 93009,
+      "passed": true
+    },
+    {
+      "path": "/kisho",
+      "status": 200,
+      "expected": 200,
+      "bytes": 85868,
+      "passed": true
+    },
+    {
+      "path": "/q/kenchiku-setsubishi/2026-annual/am2/q18",
+      "status": 404,
+      "expected": 404,
+      "bytes": 40284,
+      "passed": true
+    }
+  ],
+  "scope": "anonymous HTTP route readback only; no authenticated DB or browser interaction"
+}

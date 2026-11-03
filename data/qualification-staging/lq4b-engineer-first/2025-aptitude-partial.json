@@ -1,5 +1,5 @@
-﻿{
-  "status": "PARTIAL_STAGING_NOT_REGISTERED",
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
   "qualification": "gijutsushi1-kikai",
   "year": 2025,
   "subject": "aptitude",
@@ -33,10 +33,22 @@
       "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf",
       "sourceAnswerPage": 2,
       "sourceAttribution": "出典：公益社団法人日本技術士会 令和7年度技術士第一次試験 適性科目 Ⅱ－9。改行・空白・句読点・空欄記号を整理し，組合せ表をテキスト化。解説は独自作成。",
-      "explanationReferenceUrls": ["https://www8.cao.go.jp/cstp/society5_0/"],
+      "explanationReferenceUrls": [
+        "https://www8.cao.go.jp/cstp/society5_0/"
+      ],
       "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; five table rows retain all five labelled columns",
-      "needsIndependentReview": true,
-      "publicGo": false
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "reviewedCommit": "974f21e03",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4b-20261104/independent-review5.md",
+        "reviewedContentSha256": "6dc220bbe6e6bbfad7b87cedd26fe9d71718441fe74dc3d0655dda9c9a74a72d",
+        "scope": "ONE_ORIGINAL_NOT_FULL_QUALIFICATION"
+      },
+      "sourceQuestionSha256": "d1f4732eb7aecad4dfe345ff06152ba2b6499dc7f74b33905f214d86e0686d7f",
+      "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311"
     }
   ]
 }
