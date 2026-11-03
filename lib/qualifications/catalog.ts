@@ -42,6 +42,15 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "jokaso", examCode: "jokaso", shortName: "浄化槽管理士", fullName: "浄化槽管理士試験",
+    domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
+    officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
+    officialReuseTermsUrl: "https://www.jeces.or.jp/pages/132/", status: "ready-to-ingest",
+    reuseSummary: "令和8・7年度の午前・午後各40問、計160問を全肢解説・公式正答・必要図付きで公開前ステージングに収録。オーナー権利確認済み。法令は出題時点。",
+    attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽管理士試験 問題・正答。解説は過去問AI作成。",
+    remainingWork: ["オーナーの公開タイミングに合わせて公開判定を変更（現在は未公開）"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",

@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+  jokaso: "浄化槽管理士試験の令和8・7年度、計160問。公式問題・正答、全選択肢の独自解説と必要図を収録。法令は出題時点の内容です。",
   kanteishi: "令和7・8年度の短答式160原問を無料・回数制限なしで演習。原文、公式正答、全肢解説と必要な原表を確認できます。令和7年度行政法規問19は原文用語の注記付きで公式正答5により採点します。",
   kaikeishi: "令和8年試験第I回・第II回の短答式186原問を無料・回数制限なしで演習。企業法・管理会計論・監査論・財務会計論の原文、公式正答、全肢解説と共通設例・図表を確認できます。",
   "riku-tech2": "2026年1月・7月の公表過去問190原問を保存し、189原問を無料で回数制限なく演習できます。確認中の1月無線工学B B5は演習対象外です。原問の番号・図・語群を保持し、B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
@@ -163,6 +164,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  jokaso: "浄化槽管理士試験",
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
   "riku-tech2": "第二級陸上無線技術士試験",
@@ -258,6 +260,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  jokaso: (c) => `浄化槽管理士の過去問${c}問。令和8・7年度の公式問題・正答、全肢解説と必要図を確認できます。法令は出題時点の内容です。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
   "riku-toku-kokunai": (c) => `国内電信級陸上特殊無線技士の2026年2月・6月筆記法規から${c}問を収録。公式問題・正答と独自解説で無料演習できます。当時の法令に基づき、現在のCBT例題や独自問題は含みません。`,
