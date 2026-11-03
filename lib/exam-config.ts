@@ -108,6 +108,11 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  kenki1: {
+    code: "kenki1", nameFull: "1級建設機械施工管理技術検定（第一次検定）", urlSlug: "kenki1", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "第一次検定", categories: ["土木一般", "施工管理", "建設機械", "法規"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
   kanteishi: {
     code: "kanteishi", nameFull: "不動産鑑定士試験（短答式）", urlSlug: "kanteishi", level: "specialist",
     sessions: [

@@ -1,84 +1,54 @@
-# kenki 直近2回 監査記録（未完了）
+# kenki 直近2回 監査記録（再開作業中・未公開）
 
 確認日：2026-11-03 UTC。対象：1級・2級建設機械施工管理技術検定（第一次検定）。
 
-## 結果
-
-**問題追加0問。資格追加・公開可能なステージングデータの完成には至っていない。** 公式問題・正答の公開は確認できたが、実行環境のネットワークプロキシが `jcmanet-shiken.jp` への通常のHTTPS接続を CONNECT 時点で403拒否する。Web閲覧ツールでは22件のPDFの存在・テキストを確認できた一方、原本ファイルを保存できず、全問題・全肢・原図の照合は未実施。拒否は迂回していない。公式が非公開・削除したという判断ではない。
-
-オーナー決定により本資格の権利確認は済んでいる。権利・転載条件・過去のSTOP記録を保留理由にしていない。告知ページには著作権表示（All Rights Reserved）があることのみ記録する。
-
 ## 対象回と根拠
 
-- [指定された協会の技術検定一覧](https://jcmanet.or.jp/kentei/)の最新の問題公表告知は令和8年度、2026-06-22付。通常のHTTP取得では一覧を取得でき、その告知リンクは同協会試験部の専用サイトへ転送される。Web閲覧ツールではこの一覧がメンテナンス表示に転送されたため、両方の取得経路の結果を区別した。
-- [令和8年度の公表告知](https://jcmanet-shiken.jp/2026/06/22/20260622/)：2026-06-22公表、2026-07-22更新。1級の問題PDFは末尾 `_260721.pdf` の現行リンクを採用。
-- [令和7年度の公表告知](https://jcmanet-shiken.jp/2025/06/16/r7_1_2kyusikennmondai_kohyo/)：2025-06-16公表。
-- [公式試験部トップ](https://jcmanet-shiken.jp/)と上記の公表告知を確認。第一次検定の最新2年度は令和8・7年度。2級の共通・第1〜第6種を対象とし、第二次検定や外国人技能実習評価試験を混ぜない。
+オーナー提供の `data/raw_pdfs/kenki/LISTINGS.json` の公式一覧本文・取得日時、`COVERAGE.json`、`MANIFEST.json` を確認した。今回、公式PDFのネットワーク取得はしていない。全22件のローカルPDFのSHA256がMANIFESTと一致し、FAILED.jsonは空。前回のプロキシ403による原本未保存状態は解消している。
 
-| 資格 | 令和8年度の原問 | 令和7年度の原問 | 追加数 | 未収録数 |
-| --- | ---: | ---: | ---: | ---: |
-| 1級 第一次検定 | 56 | 56 | 0 | 112 |
-| 2級 第一次検定（共通＋全6種） | 32＋20×6＝152 | 32＋20×6＝152 | 0 | 304 |
-| 合計 | 208 | 208 | 0 | 416 |
+- [協会技術検定一覧](https://jcmanet.or.jp/kentei/)
+- [過去試験問題の公式一覧](https://jcmanet-shiken.jp/kako-shiken-mondai/)
+- [公式履歴](https://jcmanet-shiken.jp/oshirase-ichiran/)の保存本文では、最新の第一次検定問題公表が令和8年度、次が令和7年度。
+- [令和8年度公表告知](https://jcmanet-shiken.jp/2026/06/22/20260622/)：2026-06-22公表、2026-07-22更新。1級は更新後の `_260721.pdf` を使用。
+- [令和7年度公表告知](https://jcmanet-shiken.jp/2025/06/16/r7_1_2kyusikennmondai_kohyo/)：2025-06-16公表。
 
-原問数は問題冊子の表紙および正答表の番号範囲に基づく。受検者が解答する1級50問・2級45問と、冊子の全出題数を区別する。2級の共通問題は種別ごとに重複加算しない。
+保存した公式一覧を `data/qualification-staging/kenki/official-listings.json` に保持。PDFごとの原URL・SHA256は `source-inventory.json`、1級の問題・正答PDFのSHA256は年度別データにも保持。
 
-## 既存成果・追加方式の調査
+権利はオーナー確認済み（2026-11-04 01:30の決定）。公式ページのAll Rights Reserved表示は記録のみとし、保留理由にしない。
 
-- 作業開始時の `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library` に `kenki` / `建設機械施工` の一致なし。既存の `data/qualification-staging` も確認。
-- origin の `claude/*`・`qual/*`・`codex/*` 計374ブランチを `git ls-remote --heads` で取得。読み取り専用の作業元 `.git` へfetchできないため、許可された `/tmp` に監査用bareリポジトリを作り、同じリモートの対象ブランチを取得して調査。全374ブランチの対象データ領域のファイル名に `kenki` / `kensetsu-kikai` / `kenkikai` の一致なし。
-- リモートの資格台帳 `lib/qualifications/catalog.ts` と公表試験カタログ `data/exam-library/official-catalog.json` について、374ブランチの重複を除いた146個のblob本文も照合し、`kenki` / `建設機械施工` の一致なし。ファイル名検索と本文検索の範囲を区別する。
-- 類似資格 `data/questions/civil1/index.ts` は公式問題・正答URL、全肢解説、必要図を持つJSONを `Question` に変換。`data/questions/index.ts` は `isExamPublished` で公開を制御し、`lib/qualifications/catalog.ts` の `status: live` が公開条件。`app/qualifications/page.tsx` もliveだけを表示。
-- 公表試験ライブラリは `lib/exam-library-catalog.ts` → `data/exam-library/official-catalog.json`、資格ハブは `lib/exam-qualification-hubs.ts` と対応するルートを参照。
-- 今回は取得状況だけを `data/qualification-staging/kenki/source-inventory.json` に保存した。問題未整備のため資格台帳・問題レジストリ・公開一覧・ルートへの登録は未実施。空の資格や生成問題を過去問として登録していない。
+## 重複・追加方式
 
-## 原本をローカル取得できないPDF一覧
+作業前に `data/questions`、`lib/qualifications/catalog.ts`、`data/exam-library` を検索し、既存のkenki問題・資格登録はなかった。前回の出典監査だけが存在する。
 
-以下の22件はすべてWeb閲覧ではPDFとして確認できた。ローカル取得欄はホスト単位のプロキシ拒否に基づく分類であり、22件それぞれの配信元HTTPステータスを取得できたという意味ではない。解答用紙は収録に必須でないため一覧から除く。
+originの `claude/*`・`qual/*`・`codex/*` は今回の再照会がタイムアウトしたため、最新状態の確認は未達。前回保存の374ブランチのツリー監査と146種の台帳・公式カタログblob監査には重複なし。再開時のネットワーク結果と前回監査を混同しない。
 
-| 年度 | 資料 | 公式PDF | ローカル取得 |
-| --- | --- | --- | --- |
-| 2026 | 1級 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/1_1kyu_1ji_shikenmondai_260721.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 共通 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/2_2kyu_1ji_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第1種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/3_2kyu_1ji_1shu_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第2種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/4_2kyu_1ji_2shu_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第3種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/5_2kyu_1ji_3sju_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第4種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/6_2kyu_1ji_4sju_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第5種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/7_2kyu_1ji_5shu_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第6種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/8_2kyu_1ji_6shu_shikenmondai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 1級 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/17_1kyu_1ji_seikai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 共通 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/18_2kyu_1ji_seikai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2026 | 2級 第1〜第6種 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2026/06/19_2kyu_1ji_seikai.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 1級 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A0%EF%BC%91%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 共通 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A1%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E5%85%B1%E9%80%9A%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第1種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A2%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%91%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第2種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A3%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%92%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第3種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A4%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%93%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第4種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A5%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%94%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第5種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A6%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%95%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第6種 問題 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%A7%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%E7%AC%AC%EF%BC%96%E7%A8%AE%EF%BC%89%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 1級 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B0%EF%BC%91%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 共通 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B1%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E5%85%B1%E9%80%9A%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf) | 未保存（接続先ホストのプロキシ403） |
-| 2025 | 2級 第1〜第6種 正答 | [PDF](https://jcmanet-shiken.jp/gijutsu-kentei-shiken/wp-content/uploads/2025/06/%E2%91%B2%EF%BC%92%E7%B4%9A%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%A4%9C%E5%AE%9A%EF%BC%88%E6%8A%9E%E4%B8%80%E5%BC%8F%E7%A8%AE%E5%88%A5%EF%BC%89%E6%AD%A3%E8%A7%A3.pdf) | 未保存（接続先ホストのプロキシ403） |
+類似の `data/questions/civil1/index.ts` と同様、公式の問題番号・選択肢番号・正答URLを保持したJSONからQuestionへ変換。`data/questions/kenki1/index.ts` がステージングJSONを読み、台帳の `ready-to-ingest` により同期レジストリ・遅延ローダー・公開資格一覧を非公開にする。既存の動的ルーティング設定と表示名にも登録し、独立レビュー前にliveへ変更しない。問題番号は冊子の原番号を維持する。
 
-## 除外・未完了の理由
+## 追加数と照合
 
-- 1級：令和8・7年度のNo.1〜56、計112問を未収録。原本・必要図・全肢解説・公式正答の全問照合が未完了。
-- 2級：両年度の共通No.1〜32と各種別No.1〜20、計304問を未収録。同じ取得制約によるもので、正答非公表や権利を理由とした除外ではない。
-- 第二次検定：依頼範囲外。
-- 法令問題の解説を作成する際は「出題時点の法令」と明記し、公式正答と照合する。今回は解説自体を作成していない。
+| 資格 | 令和8年度 | 令和7年度 | ステージング追加 | 公開追加 | 未整備 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 1級 第一次検定 | 56 | 56 | 112 | 0 | 0 |
+| 2級 第一次検定（共通＋第1〜6種） | 32＋20×6 | 32＋20×6 | 0 | 0 | 304 |
+| 合計 | 208 | 208 | 112 | 0 | 304 |
 
-## 検証・独立レビュー
+1級の全112問について、公式PDFの本文・四肢をテキスト化し、正答表全112番号と突合。解説448肢は独自作成。法令肢には「出題時点の法令」と明記した。ルビ・空白・改行・選択肢記号を整理し、指数・下付き数字・平均記号・抽出時の文字化けを補正した。問題は実際の出題だけで、生成問題はない。
 
-- `pnpm install`：成功。Corepack・pnpmのキャッシュとストアを許可された `/tmp` 配下へ指定。
-- `pnpm validate:questions`：既存26444問を検証しfail=0、warn=16808。kenkiは0問のため、この成功はkenkiの原本照合や品質合格を意味しない。
-- `pnpm typecheck`：成功、終了コード0（`NODE_OPTIONS=--max-old-space-size=8192`）。
-- 関連テスト：`pnpm exec vitest run __tests__/questions/qualification-expansion.test.ts __tests__/questions/live-qualification-coverage.test.ts __tests__/exam-qualification-hubs.test.ts __tests__/data/official-catalog-note-links.test.ts` は4ファイル1084テストすべて成功。
-- 指定の `codex exec -m gpt-6-astra -c model_reasoning_effort=medium -s workspace-write --skip-git-repo-check` を実行したが、`failed to initialize in-process app-server client: Read-only file system (os error 30)` によりモデルのレビュー開始前に終了コード1で失敗。`--ephemeral` と書き込み可能なログ・SQLite保存先を指定して再試行しても同じ失敗。独立レビュー・修正後の再レビュー合格は未達であり、本タスクを合格・完了とは扱わない。
-- 代替の独立レビュー：指定と同じ `gpt-6-astra` / 推論強度mediumの別エージェントを新規コンテキストで起動。報告書・出典JSON・保存ログ・公開コードの差分を独立レビューし、監査記録の内部整合性に限って合格（修正必須の指摘なし）。資格追加タスク全体は未達との判定。追記後の再レビューでも限定範囲で合格。保存した公式Web閲覧結果で両年の原問数・公表日・更新日も確認された。22件の原本およびCONNECT403のネットワーク再取得は実施せず、その点の独立検証は含まない。
-- 補足：最初の `pnpm test -- <対象ファイル>` はVitest側で絞り込みが適用されず全件実行になったため中断（終了コード130）。上記の `pnpm exec vitest run <対象ファイル>` で関連テストを明示して実行し直し、全1084テストが成功した。全件テストの合格は主張しない。
-- `pnpm build`・デプロイ：実施せず。
+必要図は令和8年度No.16、令和7年度No.16・35の3点を公式原図から切出し、hasImageと代替テキストを付与。本文・四肢は画像に置き換えていない。計算問題は毎時施工量と日量、ほぐし土量と地山土量、面積と体積を区別して解説した。1級の解答必要数50問と冊子全56問を区別し、選択問題も全問収録。
 
-## 再開時に必要な作業
+## 除外・残作業
 
-公式配信の原本を正常に取得できる環境で、最初に重複確認を更新する。1級の両年度全112問を原文・四肢・正答・必要図・全肢解説まで完成させ、非公開登録、検証、独立レビューを完了して資格ごとにコミット・pushする。その後2級の両年度全304問について同じ手順を行う。本報告や出典一覧の完成を資格追加完了と扱わない。
+- 第二次検定、解答用紙は依頼対象外。
+- 1級：内容上の除外0問。監督側の独立レビュー・指摘修正後の合格確認は未完了。
+- 2級：共通32問・第1〜6種各20問を両年度分、計304問の整備を継続する。権利やPDF取得を理由に除外していない。
+- originの最新ブランチ再確認は監督側で必要。
+
+## 検証
+
+- `pnpm install --frozen-lockfile`：成功（Corepack・ストアは/tmp配下）。
+- `pnpm validate:questions`：26556問、fail=0、warn=16808（既存分）。1級112問を非公開のまま検証対象に含めた。
+- 専用テスト：112原問の連番・公式正答・四肢・全肢解説・出典・必要図の存在・公開ゲートを検証、3テスト成功。
+- 既存関連テスト：qualification-expansion 1066件、live-qualification-coverage 7件成功。専用テストで初回にローダー関数名の誤りを検出し修正、再実行で3件成功。
+- 型チェック：新規試験を要求する設定・SEO台帳の不足を補正後、`NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck` 成功（終了0）。
+- 独立レビュー：補足指示に従い、こちらからcodexは起動しない。監督側の別プロセスへ引き継ぐ。合格は未主張。
+- `pnpm build`・デプロイは未実施。原本PDFはignore対象でコミットに含めない。

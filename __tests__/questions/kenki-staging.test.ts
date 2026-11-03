@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { KENKI1_QUESTIONS } from "@/data/questions/kenki1";
 import answers from "@/data/qualification-staging/kenki/level1/official-answers.json";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
-import { getQuestionsByExam } from "@/lib/questions/get-questions";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
 const keys = ["ア", "イ", "ウ", "エ"];
@@ -42,6 +42,6 @@ describe("kenki1 official two-year staging", () => {
   it("keeps both synchronous and lazy public loaders closed", async () => {
     expect(isExamPublished("kenki1")).toBe(false);
     expect(QUESTIONS_BY_EXAM.kenki1).toBeUndefined();
-    expect(await getQuestionsByExam("kenki1")).toEqual([]);
+    expect(await getQuestionsForExam("kenki1")).toEqual([]);
   });
 });
