@@ -1,6 +1,10 @@
 import {expect,it} from "vitest";
 import {auditProtectedArtifact,fingerprints,containsGradingIndex} from "../scripts/web-content-audit";
 const gate='<p role="status">利用枠を確認しています…</p>';
+it("treats official source links as public metadata while retaining long question text",()=>{
+  const question="未許可の本文を検出します。".repeat(8);
+  expect(fingerprints({accepted:{question,questionReference:"https://www.ipa.go.jp/"+"source".repeat(20)}})).toEqual([question.slice(0,80)]);
+});
 it("rejects answers hidden inside escaped Flight frames even when the visible gate exists",()=>{
   const payload='0:["$","$L1",null,{"items":[{"id":"q1","correctChoice":2}]}]';
   const html=gate+`<script>self.__next_f.push(${JSON.stringify([1,payload])})</script>`;

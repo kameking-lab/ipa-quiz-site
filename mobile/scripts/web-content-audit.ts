@@ -2,7 +2,7 @@ const contentKeys=new Set(["question","text","stem","body","prompt","explanation
 const forbiddenKeys=/"(answer|acceptedAnswer|correctChoice|correctAnswer|modelAnswer|scoringCriteria|conditionsText|instructionText|diagramNotesText|choiceExplanation|explanation|choices)"\s*:/;
 const publicKeys=new Set(["id","title","topic","href","url","label","name","source","sourceUrl","sourceAnswerUrl","sourceIndexUrl","originalPdf","answerPdf"]);
 export function fingerprints(value:unknown,protectedValue=false):string[] {
-  if(typeof value==="string")return protectedValue&&value.trim().length>=48?[value.trim().slice(0,80)]:[];
+  if(typeof value==="string")return protectedValue&&!/^https?:\/\//.test(value)&&value.trim().length>=48?[value.trim().slice(0,80)]:[];
   if(Array.isArray(value))return value.flatMap(item=>fingerprints(item,protectedValue));
   if(value&&typeof value==="object")return Object.entries(value).filter(([key])=>!publicKeys.has(key)).flatMap(([key,item])=>fingerprints(item,protectedValue||contentKeys.has(key)));
   return [];
