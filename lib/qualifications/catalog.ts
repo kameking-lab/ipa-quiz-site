@@ -41,6 +41,11 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+  { slug: "gamma", examCode: "gamma", shortName: "ガンマ線透過写真撮影作業主任者", fullName: "ガンマ線透過写真撮影作業主任者免許試験", domain: "safety",
+    administrator: "公益財団法人安全衛生技術試験協会", officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/",
+    officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/", status: "ready-to-ingest",
+    reuseSummary: "2026年10月・4月公表の各40問を未公開ステージングに保存。問題・正答は公式PDF、解説は独自作成。法令は出題時点。",
+    remainingWork: ["公開前レビューと公開判断"] },
   { slug: "xray", examCode: "xray", shortName: "エックス線作業主任者", fullName: "エックス線作業主任者免許試験", domain: "safety",
     administrator: "公益財団法人安全衛生技術試験協会", officialQuestionsUrl: "https://www.exam.or.jp/lckohyo/",
     officialReuseTermsUrl: "https://www.exam.or.jp/lckohyo/", status: "ready-to-ingest",

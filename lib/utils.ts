@@ -66,6 +66,7 @@ export const EXAM_LABELS: Record<string, string> = {
   tohan: "登録販売者",
   kanri: "管理業務主任者",
   "xray": "エックス線作業主任者",
+  "gamma": "ガンマ線透過写真撮影作業主任者",
   eisei1: "第一種衛生管理者",
   eisei2: "第二種衛生管理者",
   soukan: "技術士 総合技術監理部門",

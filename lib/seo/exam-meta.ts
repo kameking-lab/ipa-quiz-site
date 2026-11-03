@@ -163,6 +163,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  "gamma": "ガンマ線透過写真撮影作業主任者免許試験",
   "xray": "エックス線作業主任者免許試験",
   kanteishi: "不動産鑑定士試験（短答式）",
   kaikeishi: "公認会計士試験（短答式）",
@@ -259,6 +260,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   ExamCode,
   (c: string, y: number, k: number) => string
 > = {
+  gamma: (c) => `ガンマ線透過写真撮影作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
   xray: (c) => `エックス線作業主任者の2026年10月・4月公表問題${c}問。法令は出題時点。`,
   kanteishi: (c) => `不動産鑑定士の短答式過去問${c}問を無料・回数制限なしで演習。令和7・8年度の原文・公式正答・全肢解説・原表と原文用語の注記を確認できます。`,
   kaikeishi: (c) => `公認会計士の短答式過去問${c}問を無料・回数制限なしで演習。令和8年試験第I回・第II回の原文・公式正答・全肢解説・共通設例・図表を確認できます。`,
