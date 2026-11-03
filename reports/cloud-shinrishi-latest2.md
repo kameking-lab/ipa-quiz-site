@@ -1,4 +1,4 @@
-# 公認心理師：直近2回の公式資料調査・第9回取り込み監査
+# 公認心理師：直近2回の公式資料調査・第8・9回取り込み監査
 
 確認日：2026-11-03。資格コード・URL slug：`shinrishi`。
 
@@ -9,7 +9,7 @@
 | 回 | 実施日 | 公式掲載ページ | 今回追加 |
 | --- | --- | --- | --- |
 | 第9回 | 2026-03-01 | https://www.jccpp.or.jp/shiken/shikenjoho/dai9.html | 午前77問＋午後77問＝154問 |
-| 第8回 | 2025-03-02 | https://www.jccpp.or.jp/shiken/shikenjoho/dai8.html | 0問（次回作業） |
+| 第8回 | 2025-03-02 | https://www.jccpp.or.jp/shiken/shikenjoho/dai8.html | 午前77問（午後77問は作業中） |
 
 第10回は公式サイト上で試験概要・申込みを案内している段階で、合格発表一覧の最新公表問題は第9回であった。
 
@@ -19,7 +19,7 @@
 - 午後問題：https://www.jccpp.or.jp/files/items/222/File/05_gokaku_happyo_09pm.pdf
 - 合格基準・正答：https://www.jccpp.or.jp/files/items/222/File/03_gokaku_happyo_09.pdf
 
-### 第8回の一次資料（残作業用）
+### 第8回の一次資料
 
 - 午前問題：https://www.jccpp.or.jp/files/items/132/File/04_gokaku_happyo_09.pdf
 - 午後問題：https://www.jccpp.or.jp/files/items/132/File/05_gokaku_happyo_09.pdf
@@ -46,7 +46,7 @@
 ## 除外と残作業
 
 - 第9回：除外0問。全154問をステージングに保存した。公開演習への掲載は154問とも保留。
-- 第8回：問1〜154の全154問は未収録。作業量を考慮して、ユーザー指定の「直近1回を完了して残りを報告」に従い第9回を優先した。原文・正答・必要な図表の照合と独自解説の作成が残る。
+- 第8回：午前の問1〜77をステージングに保存。午後の問78〜154は作業中。
 - 公開判断：転載条件・必要な手続の確認、および既存の公開品質要件に合わせた全肢解説の追加が残る。台帳をliveに変更していない。
 
 ## 検証
@@ -58,3 +58,11 @@
 - `git -c core.whitespace=cr-at-eol diff --check`：成功（既存ファイルのCRLFを維持）。
 - `pnpm build` とデプロイは実施していない。
 - `pnpm exec vitest run __tests__/questions/shinrishi-staging.test.ts __tests__/lib/exam-config-integrity.test.ts __tests__/unit/exam-source-label.test.ts __tests__/questions/qualification-expansion.test.ts`：4ファイル・1,077テスト成功。保存範囲、原問の4/5肢、公式正答、複数選択の採点、回次表示、公開台帳、同期・非同期プールからの除外を検証した。
+
+## 第8回の追加（午前完了）
+
+`data/questions/shinrishi/2025-annual.json` に午前77問を追加した。本文・選択肢は公式PDFの文字層から取得し、組版用の空白を整理したテキストで保存。問題ページ（PDF 5〜52ページ）の表示も確認し、画像を必要とする図表はなかった。全問に独自の一般解説（`official-summary`）、実施日、問題ページURL、公式正答表URLを付けた。午前の4肢問題は問50〜54・74、2肢選択は問55〜58・75〜77。正答表の特例はない。
+
+監査を `--round 8 --session am` に対応させ、77問の本文・全選択肢・公式正答・選択数・出典ページの一致を確認。証跡は `reports/shinrishi-8-source-audit.json` に保存した。第9回の監査方式と公開制御を維持し、第8回も公開プールから除外した。
+
+午前追加時の検証：`pnpm validate:questions` は26,675問成功・エラー0・既存警告16,832件（第8回の追加警告0件）。typecheck・関連4ファイルのテストも成功。build・デプロイ・PR作成は実施しない。
