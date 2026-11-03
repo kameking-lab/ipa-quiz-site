@@ -1,0 +1,312 @@
+[
+  {
+    "id": "hoshasen-2-2026-butsuri-q1",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 1,
+    "pdfPage": 3,
+    "question": "光速の12/13となる速度の電子の運動エネルギー [MeV] として、最も近い値は次のうちどれか。",
+    "choices": [
+      "0.20",
+      "0.45",
+      "0.51",
+      "0.82",
+      "1.2"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "相対論的なK=(γ−1)mc²で計算する。β=12/13からγ=13/5と直ちに求まり、K≈0.818 MeVとなる。",
+    "choiceExplanations": [
+      "非相対論的な式では不足する。β=12/13よりγ=13/5を用いる必要がある。",
+      "K=(2.6−1)×0.511≈0.818 MeVであり、0.45 MeVでは小さい。",
+      "0.511 MeVは電子の静止エネルギーであり、ここでの運動エネルギーではない。",
+      "正しい。γ=1/√(1−144/169)=13/5、K=(13/5−1)×0.511≈0.82 MeV。",
+      "全エネルギーは約1.33 MeVだが、運動エネルギーでは静止エネルギーを引く。"
+    ],
+    "topic": "相対論",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問1（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q2",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 2,
+    "pdfPage": 3,
+    "question": "次の記述のうち、正しいものの組合せはどれか。\nA 原子番号50以上の安定な原子核では陽子数が中性子数より少ない。\nB 同位体は互いに陽子の数が等しい。\nC 同重体は互いに原子核の質量が等しい。\nD ¹⁴Cと¹⁸Oは同中性子体である。",
+    "choices": [
+      "AとB",
+      "AとC",
+      "BとC",
+      "BとD",
+      "CとD"
+    ],
+    "officialAnswerNumber": 1,
+    "explanation": "正しい記述はA・B。A：重い安定核ではクーロン反発に対して中性子過剰が必要である。 B：同位体は原子番号すなわち陽子数が同じである。 C：同重体で等しいのは質量数であり、実際の質量は結合エネルギーの差で異なる。 D：中性子数は¹⁴Cで8、¹⁸Oで10となり一致しない。",
+    "choiceExplanations": [
+      "正しい。A：重い安定核ではクーロン反発に対して中性子過剰が必要である。 B：同位体は原子番号すなわち陽子数が同じである。",
+      "誤り。A：重い安定核ではクーロン反発に対して中性子過剰が必要である。 C：同重体で等しいのは質量数であり、実際の質量は結合エネルギーの差で異なる。 正しいBを含まない。",
+      "誤り。B：同位体は原子番号すなわち陽子数が同じである。 C：同重体で等しいのは質量数であり、実際の質量は結合エネルギーの差で異なる。 正しいAを含まない。",
+      "誤り。B：同位体は原子番号すなわち陽子数が同じである。 D：中性子数は¹⁴Cで8、¹⁸Oで10となり一致しない。 正しいAを含まない。",
+      "誤り。C：同重体で等しいのは質量数であり、実際の質量は結合エネルギーの差で異なる。 D：中性子数は¹⁴Cで8、¹⁸Oで10となり一致しない。 正しいA・Bを含まない。"
+    ],
+    "topic": "核種の分類",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問2（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q3",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 3,
+    "pdfPage": 3,
+    "question": "次の記述のうち、正しいものの組合せはどれか。\nA α壊変が起きると陽子数が1つ減少する。\nB β⁺壊変が起きると中性子数が1つ増加する。\nC β⁻壊変が起きると原子番号が1つ増加する。\nD 軌道電子捕獲が起きると質量数が1つ減少する。\nE 内部転換が起きると中性子数が1つ減少する。",
+    "choices": [
+      "AとD",
+      "AとE",
+      "BとC",
+      "BとE",
+      "CとD"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "正しい記述はB・C。A：α粒子は陽子2個と中性子2個なので陽子数は2減る。 B：陽子が中性子になるので中性子数は1増える。 C：中性子が陽子になるので原子番号は1増える。 D：電子捕獲では陽子が中性子となり質量数は変わらない。 E：内部転換は核の励起エネルギーを電子へ渡す過程で、核子数は変化しない。",
+    "choiceExplanations": [
+      "誤り。A：α粒子は陽子2個と中性子2個なので陽子数は2減る。 D：電子捕獲では陽子が中性子となり質量数は変わらない。 正しいB・Cを含まない。",
+      "誤り。A：α粒子は陽子2個と中性子2個なので陽子数は2減る。 E：内部転換は核の励起エネルギーを電子へ渡す過程で、核子数は変化しない。 正しいB・Cを含まない。",
+      "正しい。B：陽子が中性子になるので中性子数は1増える。 C：中性子が陽子になるので原子番号は1増える。",
+      "誤り。B：陽子が中性子になるので中性子数は1増える。 E：内部転換は核の励起エネルギーを電子へ渡す過程で、核子数は変化しない。 正しいCを含まない。",
+      "誤り。C：中性子が陽子になるので原子番号は1増える。 D：電子捕獲では陽子が中性子となり質量数は変わらない。 正しいBを含まない。"
+    ],
+    "topic": "壊変と核子数",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問3（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q4",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 4,
+    "pdfPage": 3,
+    "question": "放射性核種の壊変定数をλ、半減期をT、平均寿命をτとしたとき、正しいものは次のうちどれか。",
+    "choices": [
+      "λ・T=ln2",
+      "T・τ=ln2",
+      "λ・τ=ln2",
+      "λ=T⁻¹",
+      "τ=T⁻¹"
+    ],
+    "officialAnswerNumber": 1,
+    "explanation": "指数減衰N=N₀e^(−λt)から半減期T=ln2/λ、平均寿命τ=1/λ。したがってλT=ln2、λτ=1である。",
+    "choiceExplanations": [
+      "正しい。N(T)=N₀/2=N₀e^(−λT)よりλT=ln2。",
+      "Tτは時間の2乗で、無次元のln2と等しくならない。",
+      "平均寿命はτ=1/λなのでλτ=1である。",
+      "λ=(ln2)/Tであり、係数ln2が必要。",
+      "τ=T/ln2であり、時間の逆数ではない。"
+    ],
+    "topic": "半減期・平均寿命",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問4（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q5",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 5,
+    "pdfPage": 4,
+    "question": "次の核種又は混合物のうち、中性子の線源に用いることができるものの組合せとして正しいものはどれか。\nA ²²⁶Ra-Be\nB ²⁴¹Am-Be\nC ²⁴⁴Cm\nD ²⁵²Cf",
+    "choices": [
+      "ACDのみ",
+      "AとB",
+      "BとC",
+      "D",
+      "ABCDすべて"
+    ],
+    "officialAnswerNumber": 5,
+    "explanation": "正しい記述はA・B・C・D。A：Raのα線とBeとの(α,n)反応を使う。 B：Amのα線とBeとの(α,n)反応を使う。 C：²⁴⁴Cmは自発核分裂による中性子を放出する。 D：²⁵²Cfは自発核分裂中性子源として利用される。",
+    "choiceExplanations": [
+      "誤り。A：Raのα線とBeとの(α,n)反応を使う。 C：²⁴⁴Cmは自発核分裂による中性子を放出する。 D：²⁵²Cfは自発核分裂中性子源として利用される。 正しいBを含まない。",
+      "誤り。A：Raのα線とBeとの(α,n)反応を使う。 B：Amのα線とBeとの(α,n)反応を使う。 正しいC・Dを含まない。",
+      "誤り。B：Amのα線とBeとの(α,n)反応を使う。 C：²⁴⁴Cmは自発核分裂による中性子を放出する。 正しいA・Dを含まない。",
+      "誤り。D：²⁵²Cfは自発核分裂中性子源として利用される。 正しいA・B・Cを含まない。",
+      "正しい。A：Raのα線とBeとの(α,n)反応を使う。 B：Amのα線とBeとの(α,n)反応を使う。 C：²⁴⁴Cmは自発核分裂による中性子を放出する。 D：²⁵²Cfは自発核分裂中性子源として利用される。"
+    ],
+    "topic": "中性子源",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問5（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q6",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 6,
+    "pdfPage": 4,
+    "question": "エネルギー1 MeVのγ線に対する鉄の半価層が1.5 cmであった。鉄の質量減弱係数 [cm²・g⁻¹] の値として正しいものは、次のうちどれか。ただし、鉄の密度は7.9 g・cm⁻³とする。",
+    "choices": [
+      "0.058",
+      "0.093",
+      "0.17",
+      "0.25",
+      "1.5"
+    ],
+    "officialAnswerNumber": 1,
+    "explanation": "半価層x₁/₂はμx₁/₂=ln2を満たす。線減弱係数μを求めて密度ρで割ると、質量減弱係数μ/ρ≈0.0585 cm²/gとなる。",
+    "choiceExplanations": [
+      "正しい。μ/ρ=ln2/(1.5×7.9)≈0.0585 cm²/g。",
+      "半価層だけでなく密度で割り、μ/ρを求めると約0.0585になる。",
+      "質量減弱係数は半価層の逆数だけではなくln2と密度を含む。",
+      "μ≈0.462 cm⁻¹を密度7.9で割るので0.25にはならない。",
+      "1.5は半価層の数値であり、係数ではない。"
+    ],
+    "topic": "γ線の減弱",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問6（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q7",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 7,
+    "pdfPage": 4,
+    "question": "コンプトン散乱に関する次の記述のうち、正しいものの組合せはどれか。\nA 物質の単位体積当たりに起こる確率は物質の電子密度に比例する。\nB 光子の散乱角が大きいほど散乱光子の波長が短くなる。\nC 散乱前後で運動量の保存則は成り立たない。\nD 光子エネルギーが1 MeVのとき、主な相互作用となる。",
+    "choices": [
+      "ABCのみ",
+      "AとB",
+      "AとD",
+      "CとD",
+      "BCDのみ"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "正しい記述はA・D。A：電子との散乱なので単位体積当たりでは電子密度に比例する。 B：Δλ=(h/m_ec)(1−cosθ)より散乱角が大きいほど波長は長くなる。 C：光子と電子を合わせた全運動量は保存される。 D：1 MeV付近では多くの物質でコンプトン散乱が主となる。",
+    "choiceExplanations": [
+      "誤り。A：電子との散乱なので単位体積当たりでは電子密度に比例する。 B：Δλ=(h/m_ec)(1−cosθ)より散乱角が大きいほど波長は長くなる。 C：光子と電子を合わせた全運動量は保存される。 正しいDを含まない。",
+      "誤り。A：電子との散乱なので単位体積当たりでは電子密度に比例する。 B：Δλ=(h/m_ec)(1−cosθ)より散乱角が大きいほど波長は長くなる。 正しいDを含まない。",
+      "正しい。A：電子との散乱なので単位体積当たりでは電子密度に比例する。 D：1 MeV付近では多くの物質でコンプトン散乱が主となる。",
+      "誤り。C：光子と電子を合わせた全運動量は保存される。 D：1 MeV付近では多くの物質でコンプトン散乱が主となる。 正しいAを含まない。",
+      "誤り。B：Δλ=(h/m_ec)(1−cosθ)より散乱角が大きいほど波長は長くなる。 C：光子と電子を合わせた全運動量は保存される。 D：1 MeV付近では多くの物質でコンプトン散乱が主となる。 正しいAを含まない。"
+    ],
+    "topic": "コンプトン散乱",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問7（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q8",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 8,
+    "pdfPage": 4,
+    "question": "長さの次元を[L]、質量の次元を[M]、時間の次元を[T]としたとき、プランク定数の次元として正しいものは次のうちどれか。",
+    "choices": [
+      "L²・M⁻²・T⁻²",
+      "L²・M⁻¹・T⁻¹",
+      "L²・M・T⁻¹",
+      "L²・M・T⁻²",
+      "L・M・T"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "E=hν、[E]=ML²T⁻²、[ν]=T⁻¹なので[h]=ML²T⁻¹。単位J・sからも確認できる。",
+    "choiceExplanations": [
+      "エネルギーはML²T⁻²であり、質量の指数は−2ではない。",
+      "プランク定数h=E/νなので質量の指数は+1である。",
+      "正しい。hの単位J・sからML²T⁻¹となる。",
+      "これはエネルギーの次元であり、時間を1回掛ける必要がある。",
+      "長さと時間の指数が異なる。hはエネルギー×時間である。"
+    ],
+    "topic": "次元解析",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問8（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q9",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 9,
+    "pdfPage": 5,
+    "question": "次のシンチレータのうち、662 keV γ線の光電ピークを観測するために適しているものの組合せはどれか。\nA CsI(Tl)シンチレータ\nB プラスチックシンチレータ\nC 有機液体シンチレータ\nD NaI(Tl)シンチレータ\nE ZnS(Ag)シンチレータ",
+    "choices": [
+      "AとC",
+      "AとD",
+      "BとC",
+      "BとE",
+      "DとE"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "正しい記述はA・D。A：高原子番号の無機結晶で光電吸収を利用したエネルギー分析に適する。 B：低原子番号の有機材料でコンプトン成分が主となり明瞭な光電ピークに適さない。 C：低原子番号の有機液体は明瞭なγ線光電ピークの測定に適さない。 D：高原子番号の無機結晶でγ線スペクトロメトリに広く使う。 E：通常は薄い蛍光層としてα線検出に用い、662 keV γ線の光電ピーク測定には適さない。",
+    "choiceExplanations": [
+      "誤り。A：高原子番号の無機結晶で光電吸収を利用したエネルギー分析に適する。 C：低原子番号の有機液体は明瞭なγ線光電ピークの測定に適さない。 正しいDを含まない。",
+      "正しい。A：高原子番号の無機結晶で光電吸収を利用したエネルギー分析に適する。 D：高原子番号の無機結晶でγ線スペクトロメトリに広く使う。",
+      "誤り。B：低原子番号の有機材料でコンプトン成分が主となり明瞭な光電ピークに適さない。 C：低原子番号の有機液体は明瞭なγ線光電ピークの測定に適さない。 正しいA・Dを含まない。",
+      "誤り。B：低原子番号の有機材料でコンプトン成分が主となり明瞭な光電ピークに適さない。 E：通常は薄い蛍光層としてα線検出に用い、662 keV γ線の光電ピーク測定には適さない。 正しいA・Dを含まない。",
+      "誤り。D：高原子番号の無機結晶でγ線スペクトロメトリに広く使う。 E：通常は薄い蛍光層としてα線検出に用い、662 keV γ線の光電ピーク測定には適さない。 正しいAを含まない。"
+    ],
+    "topic": "シンチレータ",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問9（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-2-2026-butsuri-q10",
+    "grade": 2,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 10,
+    "pdfPage": 5,
+    "question": "試料からの放射線を100秒間測定したところ、3.6×10⁴カウントが得られた。一方、バックグラウンドは200秒間の測定で1.6×10⁴カウントであった。正味の計数率の不確かさ（標準偏差）[cps] として最も近い値は、次のうちどれか。",
+    "choices": [
+      "0.5",
+      "0.75",
+      "1.0",
+      "2.0",
+      "3.0"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "ポアソン計数では計数Nの分散はN。独立な試料・背景を時間で割って差し引く場合、分散はN_s/t_s²+N_b/t_b²を足し合わせる。",
+    "choiceExplanations": [
+      "正味計数率の分散は3.6+0.4=4.0なので標準偏差0.5ではない。",
+      "試料と背景の独立な計数変動をともに含めると2.0 cpsとなる。",
+      "計数率を差し引いても分散は加算するため、1.0 cpsでは小さい。",
+      "正しい。σ=√(36000/100²+16000/200²)=√4=2 cps。",
+      "分散4.0の平方根は2.0であり3.0ではない。"
+    ],
+    "topic": "計数統計",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 物理学 問10（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  }
+]

@@ -1,0 +1,312 @@
+[
+  {
+    "id": "hoshasen-1-2026-butsuri-q1",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 1,
+    "pdfPage": 2,
+    "question": "次の記述のうち、相対論的立場から正しいものの組合せはどれか。\nA 光子の波長は、エネルギーに逆比例する。\nB 光子の運動量は、エネルギーに比例する。\nC 質量をもつ粒子の速度は、運動量に比例する。\nD 質量をもつ粒子の運動量は、ドブロイ波長に逆比例する。\nE 質量をもつ粒子のエネルギーは、運動量に比例する。",
+    "choices": [
+      "ABDのみ",
+      "ABEのみ",
+      "ACDのみ",
+      "BCEのみ",
+      "CDEのみ"
+    ],
+    "officialAnswerNumber": 1,
+    "explanation": "正しい記述はA・B・D。A：E=hc/λより波長はエネルギーに逆比例する。 B：p=E/cなので比例する。 C：p=γmvでγも速度に依存するため、相対論では単純な比例でない。 D：p=h/λである。 E：E²=p²c²+m²c⁴であり、質量がある粒子では単純な比例でない。",
+    "choiceExplanations": [
+      "正しい。A：E=hc/λより波長はエネルギーに逆比例する。 B：p=E/cなので比例する。 D：p=h/λである。",
+      "誤り。A：E=hc/λより波長はエネルギーに逆比例する。 B：p=E/cなので比例する。 E：E²=p²c²+m²c⁴であり、質量がある粒子では単純な比例でない。 正しいDを含まない。",
+      "誤り。A：E=hc/λより波長はエネルギーに逆比例する。 C：p=γmvでγも速度に依存するため、相対論では単純な比例でない。 D：p=h/λである。 正しいBを含まない。",
+      "誤り。B：p=E/cなので比例する。 C：p=γmvでγも速度に依存するため、相対論では単純な比例でない。 E：E²=p²c²+m²c⁴であり、質量がある粒子では単純な比例でない。 正しいA・Dを含まない。",
+      "誤り。C：p=γmvでγも速度に依存するため、相対論では単純な比例でない。 D：p=h/λである。 E：E²=p²c²+m²c⁴であり、質量がある粒子では単純な比例でない。 正しいA・Bを含まない。"
+    ],
+    "topic": "相対論",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問1（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q2",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 2,
+    "pdfPage": 2,
+    "question": "電子が2.86×10⁸ m・s⁻¹の速度をもつとき、運動エネルギー [J] として最も近い値は、次のうちどれか。",
+    "choices": [
+      "1.85×10⁻¹⁴",
+      "3.70×10⁻¹⁴",
+      "9.50×10⁻¹⁴",
+      "1.90×10⁻¹³",
+      "2.72×10⁻¹³"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "v/c≈0.953であるため、K=(1/√(1−v²/c²)−1)mc²を用いる。静止エネルギーmc²≈8.19×10⁻¹⁴ Jを差し引くと約1.9×10⁻¹³ J。",
+    "choiceExplanations": [
+      "非相対論的なmv²/2でも約3.73×10⁻¹⁴ Jとなり、この値では不足する。",
+      "mv²/2に近いが、光速に近いため相対論補正が必要である。",
+      "相対論的な運動エネルギー約1.9×10⁻¹³ Jの半分程度で小さすぎる。",
+      "正しい。γ≈3.3、K=(γ−1)mc²≈1.9×10⁻¹³ Jとなる。",
+      "全エネルギーγmc²に近い値であり、運動エネルギーでは静止エネルギーを引く。"
+    ],
+    "topic": "相対論的運動エネルギー",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問2（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q3",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 3,
+    "pdfPage": 2,
+    "question": "次の粒子のうち、運動エネルギーの最も高いものはどれか。ただし、電子、中性子、ヘリウム原子核の質量を、それぞれ9.11×10⁻³¹ kg、1.67×10⁻²⁷ kg、6.64×10⁻²⁷ kgとする。",
+    "choices": [
+      "50 keVのX線で生ずる光電子",
+      "速度2200 km・s⁻¹の中性子",
+      "速度1550 km・s⁻¹のα粒子",
+      "50 kVの電圧で加速された電子",
+      "30 kVの電圧で加速されたヘリウムの原子核"
+    ],
+    "officialAnswerNumber": 5,
+    "explanation": "加速電圧によるエネルギーはqV、低速粒子の運動エネルギーはmv²/2。順に50 keV以下、約25、約50、50、60 keVとなる。",
+    "choiceExplanations": [
+      "光電子の運動エネルギーは光子エネルギーから結合エネルギーを引くので50 keV以下。",
+      "mv²/2≈4.04×10⁻¹⁵ J≈25 keV。",
+      "mv²/2≈7.98×10⁻¹⁵ J≈50 keV。",
+      "電荷の大きさがeなのでeV=50 keV。",
+      "正しい。ヘリウム原子核の電荷は2eであり、2e×30 kV=60 keV。"
+    ],
+    "topic": "運動エネルギー",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問3（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q4",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 4,
+    "pdfPage": 3,
+    "question": "次の記述のうち、正しいものの組合せはどれか。\nA 原子の角運動量は不連続な値をとる。\nB 原子の電子軌道のうち、最も内側の軌道はK軌道である。\nC 水素原子の電子の結合エネルギーは13.6 keVである。\nD 特性X線の振動数と原子番号とが直線関係にある。",
+    "choices": [
+      "ABCのみ",
+      "AとB",
+      "AとD",
+      "CとD",
+      "BCDのみ"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "正しい記述はA・B。A：角運動量は量子化されている。 B：K殻は主量子数n=1の最内殻である。 C：基底状態水素の結合エネルギーは13.6 eVであり、keVではない。 D：モーズリーの法則で原子番号と直線関係になるのは振動数の平方根である。",
+    "choiceExplanations": [
+      "誤り。A：角運動量は量子化されている。 B：K殻は主量子数n=1の最内殻である。 C：基底状態水素の結合エネルギーは13.6 eVであり、keVではない。",
+      "正しい。A：角運動量は量子化されている。 B：K殻は主量子数n=1の最内殻である。",
+      "誤り。A：角運動量は量子化されている。 D：モーズリーの法則で原子番号と直線関係になるのは振動数の平方根である。 正しいBを含まない。",
+      "誤り。C：基底状態水素の結合エネルギーは13.6 eVであり、keVではない。 D：モーズリーの法則で原子番号と直線関係になるのは振動数の平方根である。 正しいA・Bを含まない。",
+      "誤り。B：K殻は主量子数n=1の最内殻である。 C：基底状態水素の結合エネルギーは13.6 eVであり、keVではない。 D：モーズリーの法則で原子番号と直線関係になるのは振動数の平方根である。 正しいAを含まない。"
+    ],
+    "topic": "原子構造",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問4（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q5",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 5,
+    "pdfPage": 3,
+    "question": "⁵⁹Co原子核の核子1個当たりの結合エネルギーは、水素原子における電子の結合エネルギーの何倍の大きさに当たるかについて、最も近い値は次のうちどれか。",
+    "choices": [
+      "10²",
+      "10⁴",
+      "10⁶",
+      "10⁸",
+      "10¹²"
+    ],
+    "officialAnswerNumber": 3,
+    "explanation": "⁵⁹Co付近の核子当たり結合エネルギーは約8〜9 MeV。水素基底状態の13.6 eVで割ると約6.5×10⁵となる。",
+    "choiceExplanations": [
+      "核子の結合はMeV程度であり、電子のeV程度との差は100倍よりはるかに大きい。",
+      "約8.8×10⁶/13.6≈6.5×10⁵であり、10⁴では小さすぎる。",
+      "正しい。核子当たり約8.8 MeVと13.6 eVの比は約6.5×10⁵なので10⁶に最も近い。",
+      "比は約6.5×10⁵であり10⁸ほど大きくない。",
+      "MeVとeVの換算は10⁶倍であり、10¹²倍ではない。"
+    ],
+    "topic": "結合エネルギー",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問5（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q6",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 6,
+    "pdfPage": 3,
+    "question": "放射線と原子の相互作用でK殻電子軌道に空孔が生じたのち、L殻軌道電子がK殻へ遷移するのに伴って発生する特性X線のエネルギー、あるいはL殻の軌道電子がオージェ効果で放出される場合のオージェ電子のエネルギーを示す正しい組合せは次のうちどれか。ただし、K殻軌道電子及びL殻軌道電子の結合エネルギーをそれぞれE_K、E_Lとする。",
+    "choices": [
+      "特性X線：E_K＋E_L／オージェ電子：E_K−E_L",
+      "特性X線：E_K＋E_L／オージェ電子：E_K−2E_L",
+      "特性X線：E_K−E_L／オージェ電子：E_K−E_L",
+      "特性X線：E_K−E_L／オージェ電子：E_K−2E_L",
+      "特性X線：E_K−2E_L／オージェ電子：E_K−E_L"
+    ],
+    "officialAnswerNumber": 4,
+    "explanation": "殻間遷移のエネルギーはE_K−E_L。光子として放出すれば特性X線、L殻電子へ渡して放出する場合は結合分E_Lをさらに差し引く。表の列見出しを各肢の文字列に明記した。",
+    "choiceExplanations": [
+      "遷移エネルギーは結合エネルギーの和でなく差。オージェ電子では放出電子の結合分も差し引く。",
+      "オージェ電子の式は正しいが、特性X線はE_K−E_Lである。",
+      "特性X線は正しいが、オージェ電子をL殻から外すためさらにE_Lが必要。",
+      "正しい。光子は殻間差E_K−E_Lを持ち、オージェ電子はそこから自分の結合分E_Lを失う。",
+      "特性X線とオージェ電子の式が逆になっている。"
+    ],
+    "topic": "特性X線・オージェ効果",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問6（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q7",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 7,
+    "pdfPage": 4,
+    "question": "次の原子に関する記述のうち、正しいものの組合せはどれか。\nA 4つの量子数で決まる一つの電子状態の軌道には1個の電子しか入ることができない。\nB 軌道電子と原子核の結合エネルギーは電子の属する電子軌道によって決まり、原子番号に関係しない。\nC 元素を原子番号順に並べると類似した化学的性質が周期的に現れる。\nD 主量子数が1から3までの殻に収容可能な電子の総数は24である。",
+    "choices": [
+      "AとB",
+      "AとC",
+      "AとD",
+      "BとC",
+      "BとD"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "正しい記述はA・C。A：パウリの排他原理より4量子数が同一の状態を複数の電子は占有できない。 B：結合エネルギーは原子番号や遮蔽にも依存する。 C：電子配置の周期性により化学的性質も周期的に変化する。 D：最大収容数は2n²なので2+8+18=28個である。",
+    "choiceExplanations": [
+      "誤り。A：パウリの排他原理より4量子数が同一の状態を複数の電子は占有できない。 B：結合エネルギーは原子番号や遮蔽にも依存する。 正しいCを含まない。",
+      "正しい。A：パウリの排他原理より4量子数が同一の状態を複数の電子は占有できない。 C：電子配置の周期性により化学的性質も周期的に変化する。",
+      "誤り。A：パウリの排他原理より4量子数が同一の状態を複数の電子は占有できない。 D：最大収容数は2n²なので2+8+18=28個である。 正しいCを含まない。",
+      "誤り。B：結合エネルギーは原子番号や遮蔽にも依存する。 C：電子配置の周期性により化学的性質も周期的に変化する。 正しいAを含まない。",
+      "誤り。B：結合エネルギーは原子番号や遮蔽にも依存する。 D：最大収容数は2n²なので2+8+18=28個である。 正しいA・Cを含まない。"
+    ],
+    "topic": "原子構造",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問7（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q8",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 8,
+    "pdfPage": 4,
+    "question": "⁹⁰Sr（半減期29年）2.0 mgと放射平衡にある⁹⁰Y（半減期64時間）の質量 [mg] として最も近い値は、次のうちどれか。",
+    "choices": [
+      "2.8×10⁻⁵",
+      "5.0×10⁻⁴",
+      "1.0×10⁻²",
+      "6.4×10⁻²",
+      "2.0"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "放射平衡ではλ_Sr N_Sr=λ_Y N_Y。両核種の質量数は同じ90なので質量比は半減期比となり、年を時間に換算する。",
+    "choiceExplanations": [
+      "平衡時の質量比は半減期比64/(29×365×24)≈2.5×10⁻⁴であり、この質量は小さすぎる。",
+      "正しい。同程度の原子質量なので2.0×64/(29×365×24)≈5.0×10⁻⁴ mg。",
+      "放射能が等しくても短寿命の⁹⁰Yの原子数は少なく、この値は約20倍大きい。",
+      "時間と年を同じ単位に換算する必要があり、質量は約5.0×10⁻⁴ mgとなる。",
+      "放射平衡で等しいのは放射能であり、質量ではない。"
+    ],
+    "topic": "放射平衡",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問8（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q9",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 9,
+    "pdfPage": 4,
+    "question": "ニュートリノに関する次の記述のうち、正しいものはどれか。",
+    "choices": [
+      "内部転換では、ニュートリノが放出される。",
+      "軌道電子捕獲では、ニュートリノが放出される。",
+      "β⁺壊変では、ニュートリノは放出されない。",
+      "特性X線が発生するとニュートリノも同時に放出される。",
+      "オージェ電子が発生するとニュートリノも同時に放出される。"
+    ],
+    "officialAnswerNumber": 2,
+    "explanation": "電子捕獲とβ⁺壊変は電子ニュートリノを放出する。内部転換、特性X線、オージェ効果はこれとは異なる電磁的なエネルギー移行である。",
+    "choiceExplanations": [
+      "内部転換は核の励起エネルギーを軌道電子へ直接渡す過程であり、ニュートリノを伴わない。",
+      "正しい。p+e⁻→n+ν_eの弱い相互作用で電子ニュートリノが出る。",
+      "β⁺壊変はp→n+e⁺+ν_eであり、ニュートリノを放出する。",
+      "特性X線は電子殻の遷移による電磁過程であり、ニュートリノを必要としない。",
+      "オージェ効果も電子殻の緩和過程であり、ニュートリノ放出を伴う過程ではない。"
+    ],
+    "topic": "ニュートリノ",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問9（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  },
+  {
+    "id": "hoshasen-1-2026-butsuri-q10",
+    "grade": 1,
+    "year": 2026,
+    "subject": "物理学",
+    "number": 10,
+    "pdfPage": 4,
+    "question": "核異性体に関する次の記述のうち、正しいものの組合せはどれか。\nA 半減期が1日を超えるものもある。\nB β⁻壊変するものもある。\nC EC壊変するものもある。\nD 遷移の結果生じた核種はすべて安定である。",
+    "choices": [
+      "ABCのみ",
+      "ABDのみ",
+      "ACDのみ",
+      "BCDのみ",
+      "ABCDすべて"
+    ],
+    "officialAnswerNumber": 1,
+    "explanation": "正しい記述はA・B・C。A：長寿命の準安定核も存在する。 B：核異性体は異性体転移だけでなくβ⁻壊変する場合もある。 C：電子捕獲で壊変する核異性体もある。 D：異性体転移後の基底状態核がさらに放射性の場合もあり、すべて安定ではない。",
+    "choiceExplanations": [
+      "正しい。A：長寿命の準安定核も存在する。 B：核異性体は異性体転移だけでなくβ⁻壊変する場合もある。 C：電子捕獲で壊変する核異性体もある。",
+      "誤り。A：長寿命の準安定核も存在する。 B：核異性体は異性体転移だけでなくβ⁻壊変する場合もある。 D：異性体転移後の基底状態核がさらに放射性の場合もあり、すべて安定ではない。 正しいCを含まない。",
+      "誤り。A：長寿命の準安定核も存在する。 C：電子捕獲で壊変する核異性体もある。 D：異性体転移後の基底状態核がさらに放射性の場合もあり、すべて安定ではない。 正しいBを含まない。",
+      "誤り。B：核異性体は異性体転移だけでなくβ⁻壊変する場合もある。 C：電子捕獲で壊変する核異性体もある。 D：異性体転移後の基底状態核がさらに放射性の場合もあり、すべて安定ではない。 正しいAを含まない。",
+      "誤り。A：長寿命の準安定核も存在する。 B：核異性体は異性体転移だけでなくβ⁻壊変する場合もある。 C：電子捕獲で壊変する核異性体もある。 D：異性体転移後の基底状態核がさらに放射性の場合もあり、すべて安定ではない。"
+    ],
+    "topic": "核異性体",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1_butsuri.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_1seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第1種放射線取扱主任者試験 物理学 問10（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false
+  }
+]
