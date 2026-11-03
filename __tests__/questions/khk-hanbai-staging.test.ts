@@ -26,6 +26,39 @@ describe("KHK first sales: official source and staging", () => {
       }
     }
   });
+  it.each([
+    {
+      id: "khk-hanbai-2025-houki-q19",
+      answer: "イ",
+      combination: "ロ",
+      required: [
+        "周知対象になるのはロのアセチレンのみである。",
+        "イの水素とハの二酸化炭素は、この用途に係る周知対象ガスではない。",
+      ],
+      rejected: "水素とアセチレンは周知対象である",
+    },
+    {
+      id: "khk-hanbai-2024-gas-technology-q19",
+      answer: "ウ",
+      combination: "イ、ニ",
+      required: [
+        "クロルメチル（塩化メチル）の除害に大量の水を使用するニは正しい。",
+        "正しい記述はイ・ニである。",
+      ],
+      rejected: "大量の水での除害に適さない",
+    },
+  ])("keeps the explanation and every choice consistent with the official answer: $id", ({ id, answer, combination, required, rejected }) => {
+    const q = KHK_HANBAI_QUESTIONS.find(q => q.id === id)!;
+    expect(q.answer).toBe(answer);
+    expect(q.choices![q.answer as keyof typeof q.choices]).toBe(combination);
+    for (const explanation of [q.explanation, ...Object.values(q.choiceExplanations!)]) {
+      for (const fact of required) expect(explanation).toContain(fact);
+      expect(explanation).not.toContain(rejected);
+    }
+    for (const [choice, explanation] of Object.entries(q.choiceExplanations!)) {
+      expect(explanation.startsWith(choice === answer ? "正しい。" : "誤り。")).toBe(true);
+    }
+  });
   it("registers the route configuration while excluding the pilot from every public question registry", async () => {
     expect(EXAM_CONFIGS["khk-hanbai"].urlSlug).toBe("khk-hanbai");
     expect(isExamPublished("khk-hanbai")).toBe(false);
