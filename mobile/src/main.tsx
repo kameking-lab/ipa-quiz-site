@@ -57,12 +57,13 @@ function App() {
     }
     const home=()=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);};window.addEventListener("mobile:home",home);
     window.addEventListener("mobile:offline-rights-changed",home);
+    const deleted=()=>{readyRef.current=false;ownerRef.current=null;home();};window.addEventListener("mobile:account-deleted",deleted);
     const timer=setInterval(()=>{
       if(!readyRef.current)return;
       void persistStudy(ownerRef.current).catch(e=>setNotice(String(e)));
       if(reading.current) void downloads.authorize().catch(e=>{home();setNotice(String(e));});
     },15000);
-    return()=>{disposed=true;disposers.forEach(d=>d());clearInterval(timer);window.removeEventListener("mobile:home",home);window.removeEventListener("mobile:offline-rights-changed",home);};
+    return()=>{window.removeEventListener("mobile:account-deleted",deleted);disposed=true;disposers.forEach(d=>d());clearInterval(timer);window.removeEventListener("mobile:home",home);window.removeEventListener("mobile:offline-rights-changed",home);};
   },[]);
   useEffect(()=>{
     if(online&&ready)void refreshDeviceRights().catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
@@ -81,11 +82,11 @@ function App() {
   async function begin(code:string) {
     await refreshDeviceRights();
     if(code.startsWith("material.")) {
-      setMaterials(await downloads.load<Material>(code));setMaterialIndex(0);return;
+      setMaterials(await hydrateImages(await downloads.load<Material>(code)));setMaterialIndex(0);return;
     }
     if(code.startsWith("library.")) {
       const entry=(catalog.exams as CatalogEntry[]).find(e=>e.code===code)!;
-      const questions=await downloads.load<ExamQuestion>(code);
+      const questions=await hydrateImages(await downloads.load<ExamQuestion>(code));
       setLibrary({entry,questions});return;
     }
     const questions=await downloads.load(code);
@@ -103,7 +104,7 @@ function App() {
     {materials.length?<div className="native-shell"><label>保存した問題<select value={materialIndex} onChange={e=>setMaterialIndex(Number(e.target.value))}>{materials.map((m,i)=><option key={m.id} value={i}>{m.title}</option>)}</select></label><Suspense fallback={<p>表示を準備しています…</p>}><MaterialReader material={materials[materialIndex]}/></Suspense></div>:library?.entry.paper ? <div className="native-shell"><ExamQuestionPlayer examId={library.entry.paper.id} examTitle={library.entry.name} pdfUrl={library.entry.paper.pdfUrl} indexUrl={library.entry.paper.indexUrl} questions={library.questions}/></div> : pool.length ? <><p className="native-shell">有料会員の保存済み問題を使用中。AI・クラウド同期はオンライン画面で利用できます。</p><QuizPlayer question={question} index={index} total={pool.length} mode={mode} exam={pool[index]?.exam} backHref="/" onNext={()=>{
       void run(async()=>{await downloads.authorize();await persistStudy(owner);if(index+1>=pool.length){setPool([]);setQuestion(null);setNotice("演習が終わりました。");}else setIndex(i=>i+1);});
     }}/></> : <main className="native-shell space-y-5">
-      <h1>全資格の過去問を、いつでも。</h1><p>オンラインではウェブと同じ全ページ・全モードを利用できます。無料は全問題から1日10問、意見送信による追加枠もウェブと共通です。有料会員は回数無制限です。</p>
+      <h1>全資格の過去問を、いつでも。</h1><p>オンラインではウェブと同じ全ページ・全モードを利用できます。無料はログインして全問題から1日10問、ウェブとアプリで枠を共有します。有料会員は回数無制限です。</p>
       <div className="flex flex-wrap gap-3">{[["/quiz?mode=random","ランダム"],["/modes/year","年度別"],["/modes/topic","分野別"],["/mock-exam","模試"],["/quiz?mode=unanswered","未回答"],["/review","復習"],["/bookmarks","ブックマーク"],["/account/dashboard","学習履歴・統計"],["/quiz?mode=random&exam=ap","AIコパイロット"],["/essay","記述・論述採点"],["/settings","設定・同期"],["/billing","有料会員・ダウンロード"]].map(([path,label])=><button key={path} onClick={()=>void run(()=>openOnline(path))}>{label}</button>)}</div>
       <h2>保存済みの問題を解く</h2><p>資格別の事前ダウンロードは有料会員専用です。オンライン画面の「iPhone設定・会員・保存」から保存してください。失効後は保存問題を利用できません。</p>
       <div className="native-grid"><label>モード<select value={mode} onChange={e=>setMode(e.target.value as QuizMode)}>{[["random","ランダム"],["year","年度別"],["topic","分野別"],["review","復習"],["unanswered","未回答"],["weakness","苦手"]].map(([v,n])=><option key={v} value={v}>{n}</option>)}</select></label><label>年度<input inputMode="numeric" placeholder="すべて" value={year} onChange={e=>setYear(e.target.value)}/></label><label>分野<input placeholder="すべて" value={category} onChange={e=>setCategory(e.target.value)}/></label><label>科目<input placeholder="すべて（例 am / pm / kamoku-a）" value={session} onChange={e=>setSession(e.target.value)}/></label></div>

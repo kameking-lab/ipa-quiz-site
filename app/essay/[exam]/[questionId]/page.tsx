@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -76,6 +78,8 @@ export default async function EssayEditorPage({
 }: {
   params: Promise<RouteParams>;
 }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/essay/${gatedParams.exam}/${gatedParams.questionId}`}/>; }
+
   const { exam, questionId } = await params;
   if (!ESSAY_EXAM_CODES.includes(exam as EssayExamCode)) notFound();
 

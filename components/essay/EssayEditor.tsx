@@ -113,7 +113,7 @@ function EssayEditorBody({ question }: Props) {
     try {
       const res = await fetch("/api/essay-grade", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
         body: JSON.stringify({ questionId: question.id, industry, answers }),
       });
       if (!res.ok) {

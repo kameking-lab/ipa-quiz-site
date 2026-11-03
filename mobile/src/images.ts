@@ -1,7 +1,8 @@
 import { Capacitor, CapacitorHttp } from "@capacitor/core";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { Preferences } from "@capacitor/preferences";
-import { hex } from "./downloads";
+import { downloads, hex } from "./downloads";
+import { localAssetSrc } from "./offline-assets";
 const ORIGIN = "https://www.kakomon-ai.jp", KEY="kakomon:image-cache:v1", MAX_BYTES=100*1048576;
 interface Cached { path: string; bytes: number; at: number }
 let queue: Promise<unknown>=Promise.resolve();
@@ -11,6 +12,15 @@ export function imageUrl(raw: string): string | null {
 }
 export function cachedImage(raw: string): Promise<string> {
   const url=imageUrl(raw); if (!url) return Promise.resolve(raw);
+  return offlineOrCached(url, raw);
+}
+async function offlineOrCached(url: string, raw: string): Promise<string> {
+  const index = await downloads.list();
+  const asset = Object.values(index).flatMap(e=>Object.entries(e.assets ?? {})).find(([key])=>key===url)?.[1];
+  if (asset) {
+    await downloads.authorize();
+    return localAssetSrc(asset);
+  }
   if (pending.has(url)) return pending.get(url)!;
   const job=queue.then(async()=>{
     const index=JSON.parse((await Preferences.get({ key:KEY })).value ?? "{}") as Record<string,Cached>;
@@ -42,8 +52,19 @@ export function cachedImage(raw: string): Promise<string> {
   queue=job.catch(()=>{}); pending.set(url,job); void job.finally(()=>pending.delete(url)); return job;
 }
 export async function hydrateImages<T>(value: T): Promise<T> {
-  if (typeof value==="string") return (imageUrl(value) ? await cachedImage(value) : value) as T;
-  if (Array.isArray(value)) return await Promise.all(value.map(v=>hydrateImages(v))) as T;
-  if (value && typeof value==="object") return Object.fromEntries(await Promise.all(Object.entries(value).map(async([k,v])=>[k,await hydrateImages(v)]))) as T;
-  return value;
+  const entries=await downloads.list();
+  const assets=new Map(Object.values(entries).flatMap(e=>Object.entries(e.assets??{})));
+  if(assets.size)await downloads.authorize();
+  async function visit(v:unknown):Promise<unknown>{
+    if(typeof v==="string") {
+      let url:string;try{url=new URL(v,ORIGIN).href;}catch{return v;}
+      const asset=assets.get(url);
+      if(asset)return localAssetSrc(asset);
+      return imageUrl(v)?await cachedImage(v):v;
+    }
+    if(Array.isArray(v))return Promise.all(v.map(visit));
+    if(v&&typeof v==="object")return Object.fromEntries(await Promise.all(Object.entries(v).map(async([k,w])=>[k,await visit(w)])));
+    return v;
+  }
+  return await visit(value) as T;
 }

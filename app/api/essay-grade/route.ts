@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { essayContentSchema, gradingUnavailable } from "@/lib/ai/grading-contract";
@@ -224,6 +226,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
+  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,payload.questionId);if(!grant.ok)return grant;}
   const question = findEssayQuestion(payload.questionId);
   if (!question) {
     return NextResponse.json(

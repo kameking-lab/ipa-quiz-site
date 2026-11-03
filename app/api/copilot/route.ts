@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -74,6 +76,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 400 },
     );
   }
+  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
   const selectedKeys = payload.selectedChoice?.split("・") ?? [];
   const selectedChoice = selectedKeys.length > 0 &&
     selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)

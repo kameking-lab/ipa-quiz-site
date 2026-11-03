@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -110,6 +112,8 @@ export default async function EssayPm2DetailPage({
 }: {
   params: Promise<RouteParams>;
 }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/essays/${gatedParams.exam}/${gatedParams.yearSeason}/${gatedParams.section}/${gatedParams.qnum}`}/>; }
+
   const resolved = await params;
   const question = resolveQuestion(resolved);
   if (!question) notFound();

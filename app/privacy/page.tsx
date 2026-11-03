@@ -245,6 +245,12 @@ export default function PrivacyPage() {
             </p>
           </Section>
 
+          <section className="space-y-3 rounded-xl border p-5" aria-label="iPhoneの保存情報とAI送信">
+            <h2 className="font-bold">iPhoneアプリの保存・購入情報・AI送信</h2>
+            <p>Google Geminiへ質問、会話履歴、問題と解答状況、入力答案・業種を送る前に、送信先・内容・目的を示して許可を確認します。拒否すると送信しません。氏名・連絡先・勤務先の秘密は入力しないでください。入力内の個人情報も送信対象です。iPhone設定の「AI送信の許可を取り消す」で次回送信前の確認に戻せます。</p>
+            <p>購入の検証・復元にはRevenueCatとAppleを利用し、サーバー生成の匿名化した会員識別子、商品・取引・購読の状態と有効期限を処理します。決済カード情報は当サイトで保存しません。審査・TestFlightのSandbox記録は本番ストア記録と分けて保持します。</p>
+            <p>端末には学習履歴・下書き・保存教材・必須画像・署名済みオフライン権利を保存します。資格ごとの保存削除、または<Link href="/account/delete" className="underline">アカウントとデータの削除</Link>で消去できます。サーバーの会員情報と同期データは削除処理時に削除します。購入・返金・会計記録はプロフィール・学習履歴から切り離して7年間保持します。Apple認証トークンも失効させます。購読解約は別手続きです。</p>
+          </section>
           <Section
             number="4"
             icon={<Trash2 className="h-5 w-5" />}
@@ -269,8 +275,7 @@ export default function PrivacyPage() {
               >
                 アカウント設定
               </Link>
-              {" "}よりサインアウト・履歴削除が可能です。アカウント自体の削除をご希望の場合は、
-              GitHub Issues よりご連絡ください。
+              {" "}からアカウントと同期データを削除できます。削除前には再ログインで本人確認します。
             </p>
           </Section>
 

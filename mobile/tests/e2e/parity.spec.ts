@@ -126,3 +126,33 @@ test("unconfirmed dates have no add button and an installed target app avoids br
   await page.getByRole("button",{name:"カレンダーに追加"}).first().click();
   await expect(page.getByRole("status")).toHaveText("保存をキャンセルしました。");
 });
+
+test("server denial never renders the eleventh question and AI refusal sends nothing",async({page,context})=>{
+  await routeLocal(context);const used=new Set<string>();
+  await context.route("**/api/billing/question",async route=>{
+    const body=route.request().postDataJSON() as {id:string};
+    if(!used.has(body.id)&&used.size>=10){await route.fulfill({status:429,json:{error:"daily_limit"}});return;}
+    used.add(body.id);await route.fulfill({json:{question:{...qs[0],id:body.id,question:`許可された本文${used.size}`},access:{kind:"trial",remaining:10-used.size,freeDaily:10,resetAt:"2099-01-01",retryAfter:null}}});
+  });
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showContent());
+  for(let i=1;i<=10;i++){await page.getByLabel("問題を選択").selectOption(`mock-${i}`);await expect(page.getByRole("radiogroup")).toBeVisible();}
+  await page.getByLabel("問題を選択").selectOption("mock-11");await expect(page.getByRole("alert")).toContainText("無料10問");await expect(page.getByRole("radiogroup")).toHaveCount(0);expect(used.size).toBe(10);
+  page.once("dialog",dialog=>dialog.dismiss());expect(await page.evaluate(()=>window.mobileTest.aiConsent())).toBe(false);
+});
+test("unviewed diagram survives save, restart and airplane mode",async({page,context})=>{
+  await routeLocal(context);
+  await context.route("**/images/e2e-unviewed.svg",route=>route.fulfill({contentType:"image/svg+xml",body:'<svg xmlns="http://www.w3.org/2000/svg" width="80" height="40"><rect width="80" height="40" fill="blue"/></svg>'}));
+  const questions=[{...qs[0],hasImage:true,imageUrls:["/images/e2e-unviewed.svg"]}];
+  const metadata={...entry,count:1,revision:createHash("sha256").update(JSON.stringify(questions)).digest("hex")};
+  await seed(page,questions,metadata);await context.setOffline(true);await page.goto(ORIGIN+"/index.html");
+  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).getByRole("button",{name:"保存問題で学習"}).click();
+  const image=page.locator('img[src^="data:image/svg+xml"]').first();await expect(image).toBeVisible();expect(await image.evaluate((img:HTMLImageElement)=>img.naturalWidth)).toBeGreaterThan(0);
+});
+test("account deletion requires explicit confirmation and recent login",async({page,context})=>{
+  await routeLocal(context);let calls=0;
+  await context.route("**/api/account/delete",async route=>{calls++;await route.fulfill({status:401,json:{error:"reauthentication_required"}});});
+  await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showDeletion());
+  await expect(page.getByRole("button",{name:"アカウントとデータを完全に削除"})).toBeDisabled();
+  await page.getByRole("textbox").fill("DELETE");await page.getByRole("button",{name:"アカウントとデータを完全に削除"}).click();
+  await expect(page.getByRole("button",{name:"再ログインして本人確認"})).toBeVisible();expect(calls).toBe(1);
+});

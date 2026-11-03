@@ -1,3 +1,7 @@
+import { ESSAY_EXAM_CODES as EXAMPLE_EXAMS, getEssayQuestionsByExam } from "@/lib/essays/load";
+import { DENKO2_SKILL_PROBLEMS, getSkillDefectChecks, skillDateLabel } from "@/lib/denko2/skills";
+import { getAnnotatedNotes, annotatedNotePath, LEARNING_NOTICE } from "@/lib/st-annotated-notes/catalog";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 // Server/tooling entry only. Mobile renderers import material-types (type-only).
 import {DENKEN1_NATIVE_PARTS,denken1NativeQuestionPath} from "@/lib/denken1/native";
 import {NATIVE_EDITIONS,NATIVE_QUESTIONS,nativeQuestionPath} from "@/lib/denken2/native";
@@ -31,8 +35,11 @@ export function materialGroups():MaterialGroup[] {
     return items;
   }));
   add("sharoushi-sentaku","社労士 選択式","sharoushi",PUBLISHED_SENTAKU.map(question=>({id:question.id,title:question.subject,href:sentakuPath(question.year,question.questionNumber),kind:"sentaku",question})));
-  add("chusho-secondary","中小企業診断士 二次","chusho-kigyo-shindanshi",CHUSHO_SECONDARY_CASES.flatMap(paper=>paper.questions.map(question=>({id:question.id,title:question.topic,href:chushoQuestionPath(paper.year,paper.case,question.number),kind:"chusho" as const,paper,question}))));
+  add("chusho-secondary","中小企業診断士 二次","chusho-kigyo-shindanshi",CHUSHO_SECONDARY_CASES.flatMap(paper=>paper.questions.map(question=>({id:question.id,title:question.topic,href:chushoQuestionPath(paper.year,paper.case,question.number),kind:"chusho" as const,paper:{...paper,questions:[question]},question}))));
   for(const exam of ["st","sa","pm","sm","au"])add(`essay-${exam}`,`${exam.toUpperCase()} 論述練習`,exam,getAllEssayQuestions().filter(q=>q.exam===exam).map(question=>({id:question.id,title:question.title,href:`/essay/${question.exam}/${question.id}`,kind:"essay",question})));
+  if(isExamPublished("denko2"))add("denko2-skill","電工二種 技能（自己点検）","denko2",DENKO2_SKILL_PROBLEMS.map(problem=>({id:problem.id,title:`${skillDateLabel(problem)} No.${problem.number}`,href:`/denko2/skill/${problem.id}`,kind:"denko2-skill",problem,checks:getSkillDefectChecks(problem)})));
+  add("st-annotated-notes","ST 注記付・非採点教材","st",getAnnotatedNotes().map(note=>({id:`note.${note.id}`,title:note.title,href:annotatedNotePath(note.id),kind:"annotated-note",note,learningNotice:LEARNING_NOTICE})));
+  for(const exam of EXAMPLE_EXAMS)add(`essay-examples-${exam}`,`${exam.toUpperCase()} 業種別参考答案（独自練習）`,exam,getEssayQuestionsByExam(exam).map(question=>({id:`example.${question.id}`,title:question.theme,href:`/essays/${exam}/${question.year}-${question.season}/pm2/q${question.qNumber}`,kind:"essay-example",question})));
   memo=groups;return groups;
 }
 export function findMaterial(id:string){return materialGroups().flatMap(g=>g.items).find(q=>q.id===id);}

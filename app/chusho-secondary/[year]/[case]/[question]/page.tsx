@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import {CaseQuestionView} from "@/components/chusho-secondary/CaseQuestionView";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -19,6 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: `${p.year}年度 中小企業診断士二次 ${p.caseTitle} 第${q.number}問｜独自解答例`, description: `${q.topic}。公式原問・出題趣旨と独自解答例・考え方を確認し、記述練習できます。`, alternates: { canonical: chushoQuestionPath(p.year, p.case, q.number) } };
 }
 export default async function ChushoQuestionPage({ params }: Props) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/chusho-secondary/${gatedParams.year}/${gatedParams.case}/${gatedParams.question}`}/>; }
+
   const { paper: p, question: q } = await resolve(params);
   return <CaseQuestionView paper={p} question={q}/>;
 }

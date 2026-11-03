@@ -48,7 +48,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
     try {
       const response = await fetch("/api/copilot/exam-library", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
         body: JSON.stringify({ examId, questionId, selectedChoice, messages: history }),
         signal: controller.signal,
       });

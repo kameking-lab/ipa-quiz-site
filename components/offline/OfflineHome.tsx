@@ -1,31 +1,19 @@
 "use client";
-import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 
 
 import * as React from "react";
 import Link from "next/link";
 import { WifiOff, BookmarkCheck, History, Sparkles } from "lucide-react";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
-import { questionPagePath } from "@/lib/seo/question-url";
-import type { Question } from "@/lib/questions/types";
 
-interface OfflineQuestionLink {
+export interface OfflineQuestionLink {
   id: string;
   href: string;
   label: string;
 }
 
-function toLink(q: Question): OfflineQuestionLink {
-  return {
-    id: q.id,
-    href: questionPagePath(q),
-    label: `${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber}`,
-  };
-}
-
-export function OfflineHome() {
+export function OfflineHome({catalog=[]}:{catalog?:OfflineQuestionLink[]}) {
   const [online, setOnline] = React.useState<boolean>(true);
   const [bookmarked, setBookmarked] = React.useState<OfflineQuestionLink[]>([]);
   const [recent, setRecent] = React.useState<OfflineQuestionLink[]>([]);
@@ -39,15 +27,14 @@ export function OfflineHome() {
     window.addEventListener("offline", off);
 
     const store = createHistoryStore();
-    const byId = new Map(ALL_QUESTIONS.map((q) => [q.id, q]));
+    const byId = new Map(catalog.map((q) => [q.id, q]));
 
     const starredIds = store.getStarredIds();
     setBookmarked(
       starredIds
         .map((id) => byId.get(id))
-        .filter((q): q is Question => Boolean(q))
-        .slice(0, 30)
-        .map(toLink),
+        .filter((q): q is OfflineQuestionLink => Boolean(q))
+        .slice(0, 30),
     );
 
     const recentIds = store.getRecentIds(20);
@@ -57,7 +44,7 @@ export function OfflineHome() {
       if (seen.has(id)) continue;
       seen.add(id);
       const q = byId.get(id);
-      if (q) recentLinks.push(toLink(q));
+      if (q) recentLinks.push(q);
       if (recentLinks.length >= 20) break;
     }
     setRecent(recentLinks);
@@ -73,7 +60,7 @@ export function OfflineHome() {
       window.removeEventListener("online", on);
       window.removeEventListener("offline", off);
     };
-  }, []);
+  }, [catalog]);
 
   return (
     <div className="space-y-6">

@@ -1,4 +1,5 @@
 "use client";
+import { requestAiConsent } from "@/lib/ai/consent";
 
 import { isGradedAfternoon } from "@/lib/ai/grading-contract";
 
@@ -65,6 +66,7 @@ export function AfternoonPlayer({ questions }: Props) {
   };
 
   const handleSubmit = async () => {
+    if (!requestAiConsent()) return;
     setErrors((e) => ({ ...e, [active.id]: "" }));
     setSubmitting(active.id);
     try {
@@ -77,7 +79,7 @@ export function AfternoonPlayer({ questions }: Props) {
       };
       const res = await fetch("/api/scoring", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-Kakomon-AI-Consent": "20261103" },
         body: JSON.stringify(payload),
       });
 

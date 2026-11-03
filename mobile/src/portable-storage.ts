@@ -4,6 +4,7 @@ const LEGACY = "kakomon:portable-study:v1";
 const PREFIX = "kakomon:portable-study:v2:";
 const ACTIVE = "kakomon:portable-study:active:v2";
 const LOCAL_OWNER = "kakomon:portable-study:owner:v2";
+const DELETION_EPOCH = "kakomon:deletion-epoch:v1";
 // Only study data moves between the site's origin and the bundled origin.
 // Purchase flags, API credentials, cookies and server quota are never imported.
 const keys: string[] = [LS_KEYS.history, LS_KEYS.bookmarks, LS_KEYS.starred, LS_KEYS.spacedRepetition, LS_KEYS.lastQuestion,
@@ -60,6 +61,13 @@ export async function studyOwner(fallback:string|null=null):Promise<string|null>
   return raw ? parseOwner(raw) : fallback;
 }
 export function restoreStudy(owner:string|null) { return serialize(async()=>{
+  const epoch=(await Preferences.get({key:DELETION_EPOCH})).value;
+  // Both WKWebView origins share Preferences but have separate localStorage.
+  // The other origin must discard its old snapshot before saving anything.
+  if(epoch && localStorage.getItem(DELETION_EPOCH)!==epoch){
+    studyKeys().forEach(key=>localStorage.removeItem(key));localStorage.removeItem(LOCAL_OWNER);
+    localStorage.setItem(DELETION_EPOCH,epoch);
+  }
   const previous=localOwner();
   let raw=(await Preferences.get({key:snapshotKey(owner)})).value;
   const legacy=(await Preferences.get({key:LEGACY})).value;
@@ -85,3 +93,11 @@ export function persistStudy(owner:string|null) {
   const snapshot=capture(owner);
   return serialize(()=>save(snapshot));
 }
+/** Queued after in-flight snapshots; deletion cannot race a mirror write. */
+export function deleteStudy() { return serialize(async()=>{
+  const epoch=String(Date.now());await Preferences.set({key:DELETION_EPOCH,value:epoch});localStorage.setItem(DELETION_EPOCH,epoch);
+  studyKeys().forEach(key=>localStorage.removeItem(key));
+  localStorage.removeItem(LOCAL_OWNER);
+  const {keys:stored}=await Preferences.keys();
+  for(const key of stored)if(key.startsWith(PREFIX)||[LEGACY,ACTIVE].includes(key))await Preferences.remove({key});
+}); }

@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -72,6 +74,8 @@ export async function generateMetadata({ params }: ExamPageProps): Promise<Metad
 }
 
 export default async function ExamPage({ params, searchParams }: ExamPageProps) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/e-learning/exams/${gatedParams.id}`}/>; }
+
   const { id } = await params;
   const resolved = resolveExam(id);
   if (!resolved) notFound();

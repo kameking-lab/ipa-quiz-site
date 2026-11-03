@@ -1,3 +1,6 @@
+import type { SCpm2Question } from "@/lib/essays/types";
+import type { Denko2SkillProblem } from "@/lib/denko2/skills";
+import type { AnnotatedNote } from "@/lib/st-annotated-notes/catalog";
 import type {ElectricalNativeQuestion,ElectricalNativeReaderConfig} from "@/lib/electrical/native-types";
 import type {SecondaryQuestion} from "@/lib/denken2/secondary";
 import type {PracticalQuestion as Fp2Question,getPracticalEdition as fp2} from "@/lib/fp2/practical";
@@ -9,7 +12,10 @@ import type {ChushoCase,ChushoQuestion} from "@/lib/chusho-secondary/data";
 import type {EssayQuestion} from "@/lib/essay/types";
 type Base={id:string;title:string;href:string};
 export type Material = Base & (
-  {kind:"native";question:ElectricalNativeQuestion;readerConfig:ElectricalNativeReaderConfig}
+  {kind:"essay-example";question:SCpm2Question}
+  | {kind:"denko2-skill";problem:Denko2SkillProblem;checks:string[]}
+  | {kind:"annotated-note";note:AnnotatedNote;learningNotice:string}
+  | {kind:"native";question:ElectricalNativeQuestion;readerConfig:ElectricalNativeReaderConfig}
   | {kind:"secondary";question:SecondaryQuestion}
   | {kind:"fp2";edition:string;data:Omit<NonNullable<ReturnType<typeof fp2>>,"questions">;q:Fp2Question;source:{question:string;answer:string}}
   | {kind:"fp3";edition:string;data:Omit<NonNullable<ReturnType<typeof fp3>>,"questions">;q:Fp3Question;source:{question:string;answer:string}}

@@ -82,6 +82,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(String(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
     const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(String(e))); },60000);
+    const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
+    window.addEventListener("mobile:account-deleted",deleted);
     const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(String(e)));},5000);
     const cacheVisibleImages=()=>document.querySelectorAll<HTMLImageElement>("img").forEach(img=>{if(img.complete && img.naturalWidth>0)void cachedImage(img.currentSrc||img.src);});
     const imageObserver=new MutationObserver(cacheVisibleImages); imageObserver.observe(document.body,{childList:true,subtree:true});
@@ -100,7 +102,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
-    return ()=>{ disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
+    return ()=>{ window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
   },[inSite,refresh,run]);
   useEffect(()=>{ if (open && inSite) void run(async()=>{
     const r = await refresh(true); setOffer(null);
@@ -132,7 +134,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         <div className="flex gap-4"><button disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true); setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。"); })}>購入を復元</button>
           <button onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
         <p><Link href="/terms">利用規約</Link> · <Link href="/privacy">プライバシーポリシー</Link> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a></p>
-        <h2 className="font-bold">資格ごとの事前ダウンロード（有料会員限定）</h2><p>画像は表示時に取得してキャッシュします。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
+        <h2 className="font-bold">資格ごとの事前ダウンロード（有料会員限定）</h2><p>必要な図表も事前に取得・検証し、すべて保存できた資格のみ保存済みになります。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
         {catalog.map(e=><div key={e.code} className="flex flex-wrap items-center justify-between gap-2 border-b py-2"><span>{e.name} · {e.count}問 · {(e.bytes/1048576).toFixed(1)}MB {saved[e.code] ? "保存済み" : ""}</span>
           <button disabled={busy} onClick={()=>void run(async()=>{
             if (!access.entitled) { setNotice("事前ダウンロードは有料会員の特典です。無料でもオンラインで全資格から1日10問使えます。"); return; }
@@ -146,6 +148,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           {saved[e.code] && <button disabled={busy} onClick={()=>void run(async()=>{ await downloads.remove(e.code); setSaved(await downloads.list()); })}>削除</button>}</div>)}
         {downloading && <button onClick={()=>abort.current?.abort()}>ダウンロード中止</button>}
       </>}
+      <p><Link href="/account/delete">アカウント・学習データを削除</Link></p>
+      <button onClick={()=>{localStorage.removeItem("kakomon:ai-consent:20261103");setNotice("AI送信の許可を取り消しました。次の送信前に再確認します。");}}>AI送信の許可を取り消す</button>
       <h2 className="font-bold">毎日の学習通知</h2><label>時刻 <input type="time" value={time} onChange={e=>setTime(e.target.value)} /></label><button disabled={busy} onClick={()=>void run(async()=>{ await setReminder(time); setNotice("通知を設定しました。"); })}>通知を設定</button><button disabled={busy} onClick={()=>void run(async()=>{ await setReminder(null); setNotice("通知を停止しました。"); })}>通知を停止</button>
     </section>}
   </aside>;

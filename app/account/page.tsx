@@ -44,6 +44,7 @@ export default async function AccountPage() {
 
   return (
     <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 pb-20 pt-8 sm:px-6 sm:pt-12">
+      <p className="mb-4"><Link href="/account/delete">アカウントとデータを削除</Link></p>
       {/* Spotlight background */}
       <div
         aria-hidden="true"

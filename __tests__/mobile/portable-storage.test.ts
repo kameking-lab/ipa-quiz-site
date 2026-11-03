@@ -4,8 +4,10 @@ const m=vi.hoisted(()=>({preferences:new Map<string,string>()}));
 vi.mock("@/mobile/node_modules/@capacitor/preferences",()=>({Preferences:{
   get:async({key}:{key:string})=>({value:m.preferences.get(key)??null}),
   set:async({key,value}:{key:string;value:string})=>{m.preferences.set(key,value);},
+  keys:async()=>({keys:[...m.preferences.keys()]}),
+  remove:async({key}:{key:string})=>{m.preferences.delete(key);},
 }}));
-import {persistStudy,restoreStudy,studyOwner} from "@/mobile/src/portable-storage";
+import {persistStudy,restoreStudy,studyOwner,deleteStudy} from "@/mobile/src/portable-storage";
 const WEB="https://www.kakomon-ai.jp",LOCAL="capacitor://localhost";
 const ownerKey="kakomon:portable-study:owner:v2";
 const history=(value:string)=>localStorage.setItem(LS_KEYS.history,value);
@@ -66,4 +68,12 @@ it("does not assign an old legacy member's unlabelled data to the next signed-in
 it("recovers the current origin's snapshot after WebView local storage was purged",async()=>{
   await restoreStudy("u1");history("preserved");await persistStudy("u1");localStorage.clear();
   await restoreStudy("u1");expect(localStorage.getItem(LS_KEYS.history)).toBe("preserved");
+});
+it("deletes queued snapshots and prevents the other WKWebView origin restoring deleted data",async()=>{
+  await restoreStudy("u1");history("private");await persistStudy("u1");
+  const staleLocal=Object.fromEntries(Object.keys(localStorage).map(k=>[k,localStorage.getItem(k)!]));
+  await deleteStudy();expect(m.preferences.has("kakomon:portable-study:v2:user:u1")).toBe(false);
+  localStorage.clear();for(const [key,value] of Object.entries(staleLocal))localStorage.setItem(key,value);origin(LOCAL);
+  await restoreStudy(null);expect(localStorage.getItem(LS_KEYS.history)).toBeNull();
+  expect(m.preferences.has("kakomon:portable-study:v2:user:u1")).toBe(false);
 });

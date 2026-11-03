@@ -3,9 +3,10 @@ import { Preferences } from "@capacitor/preferences";
 import type { Question } from "@/lib/questions/types";
 import type { CatalogEntry, MobileEntitlement } from "../shared/contracts";
 import { verifyLease } from "./lease";
+import { saveAssets, checkAssets, removeAssets, type SavedAsset } from "./offline-assets";
 import pinned from "../config/public.json";
 const INDEX = "kakomon:downloads:v2", RIGHTS = "kakomon:rights:v2";
-export interface DownloadIndex { [code: string]: { path: string; entry: CatalogEntry; owner: string } }
+export interface DownloadIndex { [code: string]: { path: string; entry: CatalogEntry; owner: string; assets?: Record<string, SavedAsset> } }
 export interface Rights { access: MobileEntitlement; publicKey: string; lastSeen: number;validatedUntil?:number }
 async function read<T>(key: string, fallback: T): Promise<T> { return JSON.parse((await Preferences.get({ key })).value ?? JSON.stringify(fallback)) as T; }
 export class Downloads {
@@ -55,6 +56,7 @@ export class Downloads {
     const hash = hex(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(data.data)));
     if (hash !== entry.entry.revision) throw new Error("保存内容が壊れています。再ダウンロードしてください。");
     const questions=JSON.parse(data.data) as T[];
+    await checkAssets(questions, entry.assets ?? {});
     if ((await this.authorize()).access.userId !== r.access.userId) throw new Error("アカウントが変更されました。問題を選び直してください。");
     if(!code.startsWith("library.")&&!code.startsWith("material."))this.memory.set(code,{revision:entry.entry.revision,questions:questions as Question[]});
     return questions;
@@ -72,6 +74,7 @@ export class Downloads {
     const index = await this.list(), entry = index[code];
     this.memory.delete(code);
     delete index[code]; await Preferences.set({ key: INDEX, value: JSON.stringify(index) });
+    if (entry) await removeAssets(entry.assets ?? {});
     if (entry) await Filesystem.deleteFile({ directory: Directory.Data, path: entry.path }).catch(()=>{});
   }); }
   download(code: string, request: (path: string) => Promise<Response>, progress: (count: number,total: number)=>void, signal: AbortSignal) {
@@ -99,16 +102,20 @@ export class Downloads {
       // Even a same-version re-download must not overwrite the committed file.
       const suffix=hex(crypto.getRandomValues(new Uint8Array(8)).buffer);
       const path = `exams/${code}-${entry.revision}-${suffix}.json`;
+      let assets: Record<string, SavedAsset> = {};
       try {
+        assets = await saveAssets(questions, `offline-assets/${code}-${suffix}`, signal);
         await Filesystem.writeFile({ directory: Directory.Data, path, data, encoding: Encoding.UTF8, recursive: true });
         signal.throwIfAborted();
         if ((await this.authorize()).access.userId !== rights.access.userId) throw new Error("アカウントが変更されました。保存をやり直してください。");
         const index = await this.list(), previous = index[code];
-        index[code] = { path, entry, owner: rights.access.userId! };
+        index[code] = { path, entry, owner: rights.access.userId!, assets };
         await Preferences.set({ key: INDEX, value: JSON.stringify(index) });
+        if (previous && previous.path !== path) await removeAssets(previous.assets ?? {});
         if (previous && previous.path !== path) await Filesystem.deleteFile({ directory: Directory.Data, path: previous.path }).catch(()=>{});
       }catch(error){
         const current=await this.list().catch(()=>null);
+        if(current&&current[code]?.path!==path)await removeAssets(assets);
         if(current&&current[code]?.path!==path)await Filesystem.deleteFile({directory:Directory.Data,path}).catch(()=>{});
         throw error;
       }

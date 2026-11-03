@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { questionReferenceLabel } from "@/lib/questions/reference-label";
@@ -154,6 +156,8 @@ export default async function QuestionPage({
 }: {
   params: Promise<QuestionRouteParams>;
 }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/q/${gatedParams.exam}/${gatedParams.yearSeason}/${gatedParams.section}/${gatedParams.qnum}`}/>; }
+
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
   if (!q) {

@@ -1,3 +1,6 @@
+import { AuthorizedContent } from "../../shared/AuthorizedContent";
+import { AccountDeletionClient } from "../../../app/account/delete/AccountDeletionClient";
+import { requestAiConsent } from "../../../lib/ai/consent";
 import {createRoot} from "react-dom/client";
 import {downloads} from "../../src/downloads";
 import {NativeTools} from "../../src/NativeTools";
@@ -10,7 +13,7 @@ import {confirmedSchedules,qualificationTargets} from "../../shared/qualificatio
 import {addQualificationEvent,openQualificationUrl} from "../../src/qualification-platform";
 import "../../src/native.css";
 type StoreScenario="cancelled"|"pending"|"changed-price"|"no-restorable-purchase";
-declare global { interface Window {mobileTest:{seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
+declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;aiConsent:()=>boolean;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
 const calls={purchases:0,restores:0};
 let storeScenario:StoreScenario="no-restorable-purchase",offerings=0;
 function mockStore(scenario:StoreScenario) {
@@ -41,4 +44,4 @@ function showQualification(scenario:"saved"|"cancelled"|"unconfirmed"|"app-insta
   const browser={open:async({url}:{url:string})=>{qualificationCalls.browser.push(url);}} as unknown as Parameters<typeof openQualificationUrl>[2];
   createRoot(document.getElementById("root")!).render(<QualificationActions target={target} service={{fetch:request,add:(event,t)=>addQualificationEvent(event,t,request,native),open:url=>openQualificationUrl(url,native,browser),source:async url=>{qualificationCalls.browser.push(url);}}}/>);
 }
-window.mobileTest={async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership}/>),mockStore,storeCalls:()=>({...calls}),showQualification,qualificationCalls:()=>({...qualificationCalls})};
+window.mobileTest={showContent:()=>createRoot(document.getElementById("root")!).render(<AuthorizedContent items={Array.from({length:11},(_,i)=>({id:`mock-${i+1}`,title:`??${i+1}`}))}/>),showDeletion:()=>createRoot(document.getElementById("root")!).render(<AccountDeletionClient/>),aiConsent:requestAiConsent,async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership}/>),mockStore,storeCalls:()=>({...calls}),showQualification,qualificationCalls:()=>({...qualificationCalls})};

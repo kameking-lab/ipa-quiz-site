@@ -17,6 +17,17 @@ const adapter = process.env.DATABASE_URL ? PrismaAdapter(prisma) : undefined;
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   adapter,
+  callbacks: {
+    ...authConfig.callbacks,
+    async jwt(args) {
+      const token = await authConfig.callbacks!.jwt!(args);
+      if (!token) return null;
+      // Deletion revokes every JWT, including devices retaining an old cookie.
+      if (process.env.DATABASE_URL && typeof token.id === "string" &&
+          (token.id.startsWith("deleted-billing-") || !await prisma.user.findUnique({where:{id:token.id},select:{id:true}}))) return null;
+      return token;
+    },
+  },
 });
 
 export { isAuthConfigured };

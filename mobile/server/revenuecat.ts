@@ -18,6 +18,7 @@ const subscriberSchema = z.object({ subscriber: z.object({
   subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional() })),
 }) });
 export function verifiedExpiration(body: unknown, config: { entitlement: string; productId: string; environment: string }, now: number): string | null {
+  if (!["PRODUCTION","SANDBOX","APP_STORE"].includes(config.environment)) return null;
   const { subscriber } = subscriberSchema.parse(body);
   const e = subscriber.entitlements[config.entitlement], sub = subscriber.subscriptions[config.productId];
   if (!e || !sub || e.product_identifier !== config.productId || sub.store !== "app_store" || sub.refunded_at
@@ -51,8 +52,13 @@ export async function refreshRevenueCat(appUserId: string, transport: typeof fet
       headers: { Authorization: `Bearer ${c.apiKey}`, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8000), redirect: "error",
     });
     if (!response.ok && response.status !== 404) throw new BillingError("mobile_verification_unavailable", 503);
-    const now = Date.now(), expiresAt = response.status === 404 ? null : verifiedExpiration(await response.json(), c, now);
-    await tx.$executeRawUnsafe('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$2, "checkedAt"=$3 WHERE "appUserId"=$1', appUserId, expiresAt ? new Date(expiresAt) : null, new Date(now));
+    const now = Date.now(), body = response.status === 404 ? null : await response.json();
+    const productionExpiresAt = body ? verifiedExpiration(body,{...c,environment:"PRODUCTION"},now) : null;
+    const sandboxExpiresAt = body ? verifiedExpiration(body,{...c,environment:"SANDBOX"},now) : null;
+    const expiresAt = body ? verifiedExpiration(body,c,now) : null;
+    // Store separate verified snapshots. Sandbox never writes production rights.
+    // Every refresh replaces both snapshots; webhook/client timestamps grant nothing.
+    await tx.$executeRawUnsafe('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5 WHERE "appUserId"=$1', appUserId, expiresAt ? new Date(expiresAt) : null, new Date(now), productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null);
     return { ...rows[0], expiresAt: expiresAt ? new Date(expiresAt) : null, checkedAt: new Date(now) };
   }, { maxWait: 5000, timeout: 15000 });
 }

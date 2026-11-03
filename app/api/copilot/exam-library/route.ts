@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -42,6 +44,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return NextResponse.json({ error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" }, { status: 400 });
   }
 
+  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,question.id,examId);if(!grant.ok)return grant;}
   const selectedChoice = parsed.data.selectedChoice !== null &&
     parsed.data.selectedChoice !== undefined &&
     parsed.data.selectedChoice <= question.choiceCount

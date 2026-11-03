@@ -12,6 +12,7 @@ import { revenueCatAccess } from "@/mobile/server/revenuecat";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createHash } from "node:crypto";
 import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   const now = Date.now();
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     const { id, shuffle } = z.object({ id: z.string().min(1).max(160), shuffle: z.boolean().default(false) }).strict().parse(await request.json());
     const paper = request.headers.get("X-Kakomon-Paper");
     const libraryQuestion = paper ? loadExamPaper(paper)?.find(q=>q.id === id) : undefined;
-    const ordinaryQuestion = paper ? undefined : await findQuestionById(id);
+    const ordinaryQuestion = paper || request.headers.get("X-Kakomon-Material") === "1" ? undefined : await findQuestionById(id);
     const material = !paper && !ordinaryQuestion ? (await import("@/mobile/shared/material-source")).findMaterial(id) : undefined;
     const question = libraryQuestion ?? ordinaryQuestion ?? material;
     if (!question) throw new BillingError("not_found", 404);
@@ -28,15 +29,18 @@ export async function POST(request: Request) {
     const monthly = monthlySelected();
     const config = monthly ? monthlyConfig() : billingConfig();
     const native = request.headers.get("X-Kakomon-Native") === "ios";
-    const enabled = native || (monthly ? monthlyConfig().enabled : gateReady(billingConfig()));
-    if (native && config.freeDaily !== 10) throw new BillingError("mobile_quota_configuration", 503);
+    const strict = strictContentGateEnabled();
+    const enabled = strict || native || (monthly ? monthlyConfig().enabled : gateReady(billingConfig()));
+    if ((strict || native) && config.freeDaily !== 10) throw new BillingError("mobile_quota_configuration", 503);
     access.freeDaily = config.freeDaily;
     if (!enabled) access.kind = "free";
     else {
       sameOrigin(request);
-      if (!native && id === BILLING_SAMPLE_ID) access.kind = "sample";
+      if (!strict && !native && id === BILLING_SAMPLE_ID) access.kind = "sample";
       else {
         const userId = await optionalBillingIdentity();
+        // A reinstall or cookie deletion cannot issue a new free identity.
+        if (strict && !userId) throw new BillingError("sign_in_required", 401);
         let bonusClaimAvailable = true;
         if (userId && process.env.FEEDBACK_UNLOCK_ENABLED === "true") {
           try {
@@ -88,7 +92,7 @@ export async function POST(request: Request) {
               const grant = await service.grant(userId, question.id, snapshots, allowNew, jstDay(new Date(now)));
               access = { ...access, ...grant };
             } catch (error) {
-              if (!(error instanceof BillingError) || error.code !== "daily_limit" || !allowNew || !bonusClaimAvailable || process.env.FEEDBACK_UNLOCK_ENABLED !== "true") throw error;
+              if (strict || !(error instanceof BillingError) || error.code !== "daily_limit" || !allowNew || !bonusClaimAvailable || process.env.FEEDBACK_UNLOCK_ENABLED !== "true") throw error;
               const bonus = await feedbackStore().grant(unlockIdentity(request, userId, realm), jstDay(new Date(now)), question.id);
               if (!bonus) throw error;
               access = { ...access, kind: "trial", remaining: bonus.remaining, feedbackBonus: bonus };

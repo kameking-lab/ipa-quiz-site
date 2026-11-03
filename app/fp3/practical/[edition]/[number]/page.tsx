@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import { Fp3PracticalView } from "@/components/quiz/Fp3PracticalView";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -17,6 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ edition: 
 }
 
 export default async function Fp3PracticalQuestion({ params }: { params: Promise<{ edition: string; number: string }> }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/fp3/practical/${gatedParams.edition}/${gatedParams.number}`}/>; }
+
   const { edition, number } = await params;
   const data = getPracticalEdition(edition);
   const q = data?.questions.find((item) => item.number === Number(number));

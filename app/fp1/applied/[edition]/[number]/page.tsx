@@ -1,3 +1,5 @@
+import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { ContentPage } from "@/mobile/server/ContentPage";
 import {Fp1AppliedView} from "@/components/quiz/Fp1AppliedView";
 import { getFp1ExtensionQuestions, getFp1PublishedExtension } from "@/lib/fp1/published-extension";
 import { AppliedExtensionPage } from "@/app/fp1/applied/_components/extension-page";
@@ -22,6 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
 }
 
 export default async function Fp1AppliedQuestionPage({ params }: { params: Promise<RouteParams> }) {
+  if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/fp1/applied/${gatedParams.edition}/${gatedParams.number}`}/>; }
+
   const { edition, number } = await params;
   const extension = getFp1PublishedExtension(edition);
   const extensionQuestion = getFp1ExtensionQuestions(edition).find((q) => String(q.number) === number);
