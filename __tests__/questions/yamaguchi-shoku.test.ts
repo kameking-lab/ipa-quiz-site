@@ -79,6 +79,9 @@ describe("ふぐ処理師: 原大問を保持した解答欄別演習", () => {
     for (const q of qs) {
       const group = groups.find(g => g.slots.includes(q.qNumber))!;
       expect(q.originalContent?.body).toBe(group.body);
+      // 表の見出し「Ａ群」が指示文にも現れるため、表の整形時に指示文を切り落とさない。
+      const officialInstruction = group.body.split("\n\n")[0].replace(/\s+/g, "");
+      expect(q.question.replace(/\s+/g, "")).toContain(officialInstruction);
       expect(q.question).toContain(`解答する欄は（${q.qNumber}）`);
       const official = q.officialAnswerNumber!;
       expect(q.answer).toBe(official === "○" ? "ア" : official === "×" ? "イ" : official);
