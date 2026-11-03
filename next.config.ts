@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { resolve } from "node:path";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
@@ -60,6 +61,17 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  webpack(config) {
+    if (process.env.MOBILE_IAP_ENABLED === "true") {
+      config.resolve.alias["@/lib/exam-library/survey-assistant-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
+    }
+    return config;
+  },
+  turbopack: {
+    resolveAlias: process.env.MOBILE_IAP_ENABLED === "true" ? {
+      "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+    } : {},
+  },
   outputFileTracingIncludes: {
     "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
     "/api/mobile/download": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],

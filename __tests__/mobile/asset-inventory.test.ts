@@ -19,7 +19,7 @@ it("covers image references independently read from every paper renderer input a
   }
 },60000);
 it("covers each non-paper renderer's own image and required-PDF input fields",async()=>{
-  const assertCovered=(data:unknown,refs:(string|undefined)[])=>{
+  const assertCovered=(data:unknown,refs:(string|null|undefined)[])=>{
     const inventory=learningAssetUrls(data);
     for(const ref of refs.filter((r):r is string=>!!r))expect(inventory,ref).toContain(new URL(ref,"https://www.kakomon-ai.jp").href);
   };

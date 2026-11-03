@@ -5,8 +5,9 @@ import { readFileSync } from "node:fs";
 const at=(p:string)=>fileURLToPath(new URL(p,import.meta.url));
 export default defineConfig(({mode})=>({
   base: "./",
-  plugins: [tailwindcss(),{name:"no-question-bundles",generateBundle(){const forbidden=[...this.getModuleIds()].map(id=>id.replace(/\\/g,"/")).filter(path=>(path.includes("/data/questions/")&&!path.endsWith("/corrections/official-sources.json"))||path.includes("/data/exam-library/papers/"));if(forbidden.length)throw new Error("Question sources entered native app bundle:\n"+forbidden.join("\n"));}},...(mode==="e2e"?[{name:"test-only-lease-key",enforce:"pre" as const,resolveId(id:string){if(id.replace(/\\/g,"/").endsWith("/config/public.json"))return "\0mock-lease-key";},load(id:string){if(id==="\0mock-lease-key")return `export default ${JSON.stringify({leasePublicKey:JSON.parse(readFileSync(at("./.cache/e2e-key.json"),"utf8")).publicKey})}`;}}]:[])],
+  plugins: [tailwindcss(),{name:"no-question-bundles",generateBundle(){const forbidden=[...this.getModuleIds()].map(id=>id.replace(/\\/g,"/")).filter(path=>(path.includes("/data/questions/")&&!path.endsWith("/corrections/official-sources.json"))||path.includes("/data/exam-library/papers/")||path.endsWith("/survey-assistant/grading-index.json"));if(forbidden.length)throw new Error("Question sources entered native app bundle:\n"+forbidden.join("\n"));}},...(mode==="e2e"?[{name:"test-only-lease-key",enforce:"pre" as const,resolveId(id:string){if(id.replace(/\\/g,"/").endsWith("/config/public.json"))return "\0mock-lease-key";},load(id:string){if(id==="\0mock-lease-key")return `export default ${JSON.stringify({leasePublicKey:JSON.parse(readFileSync(at("./.cache/e2e-key.json"),"utf8")).publicKey})}`;}}]:[])],
   resolve: { dedupe:["react","react-dom"], alias: {
+    "@/lib/exam-library/survey-assistant-grading-index":at("./shared/granted-paper-grading.ts"),
     "next/link":at("./src/shims/link.tsx"),"next/navigation":at("./src/shims/navigation.ts"),
     "next/dynamic":at("./src/shims/dynamic.tsx"),"next/image":at("./src/shims/image.tsx"),
     "@":at("../"),
