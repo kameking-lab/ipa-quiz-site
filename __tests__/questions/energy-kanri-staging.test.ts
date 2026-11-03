@@ -29,9 +29,9 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
-  it("収録済み24原問319公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
-    expect(questions).toHaveLength(315);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(315);
+  it("収録済み31原問410公式解答欄を照合し、全肢解説・原問指示・図を保持する", () => {
+    expect(questions).toHaveLength(406);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(406);
     for (const q of questions) {
       const packet = Number(q.sourcePdfUrl!.match(/r0[78]_(\d)\.pdf/)![1]);
       const original = tables.find((t) => t.year === q.year && t.packet === packet)!
@@ -63,6 +63,8 @@ describe("エネルギー管理士の未公開収録", () => {
 
   it("原問ごとの全解答欄を過不足なく保持し、順序不問ペアを重複なく採点する", () => {
     const manifest = [
+      [2025, 7, 13], [2026, 7, 13],
+      [2025, 4, 16], [2025, 4, 18], [2026, 4, 15], [2026, 4, 16], [2026, 4, 18],
       [2025, 4, 12], [2025, 7, 14], [2025, 7, 16],
       [2026, 4, 12], [2026, 4, 13], [2026, 7, 14], [2026, 7, 15], [2026, 7, 16],
       [2025, 4, 11], [2025, 4, 14], [2025, 4, 17], [2025, 1, 2], [2025, 1, 3], [2025, 3, 8], [2025, 3, 9], [2025, 5, 6],
@@ -78,7 +80,7 @@ describe("エネルギー管理士の未公開収録", () => {
       expect(new Set(labels).size).toBe(labels.length);
       slotCount += labels.length;
     }
-    expect(slotCount).toBe(319);
+    expect(slotCount).toBe(410);
     const pairs = questions.filter((q) => q.requiredSelections === 2);
     expect(pairs).toHaveLength(4);
     for (const q of pairs) {
@@ -144,6 +146,57 @@ describe("エネルギー管理士の未公開収録", () => {
     }
   });
 
+  it("冷凍・空調・蒸留・乾燥の図と計算条件を保持する", () => {
+    for (const [year, number, slots] of [
+      [2025, 16, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]],
+      [2025, 18, [6, 7, 8, 9, 10]],
+      [2026, 16, [8, 9, 10]],
+      [2026, 18, [3, 4, 5, 6, 7, 8, 9, 10, 11]],
+    ] as const) {
+      const records = questions.filter((q) => q.year === year && q.qNumber === number && q.sourcePdfUrl?.includes("_4.pdf#"));
+      expect(records.filter((q) => q.hasImage).map((q) => Number(q.officialAnswerNumber))).toEqual(slots);
+      for (const q of records) {
+        const shared = q.originalContent!.sharedPassages!;
+        expect(shared.find((p) => p.label === "課目Ⅳ 選択問題の指示")!.text).toContain("4問題中2問題");
+      }
+    }
+    const dryer = questions.filter((q) => q.year === 2026 && q.qNumber === 18 && Number(q.officialAnswerNumber) >= 7 && Number(q.officialAnswerNumber) <= 11);
+    expect(dryer).toHaveLength(5);
+    for (const q of dryer) {
+      const premises = q.originalContent!.sharedPassages!.map((p) => p.text).join(" ");
+      expect(premises).toContain("5000 kg/h");
+      expect(premises).toContain("500 kg-無水材料/h");
+      expect(q.isCalculation).toBe(true);
+      if (Number(q.officialAnswerNumber) >= 9) expect(premises).toContain("200 kg-水/h");
+      if (q.officialAnswerNumber === "11") expect(premises).toContain("2400 kJ/kg");
+    }
+  });
+
+  it("電気加熱の計算で全電気効率と電力区間の前提を保持する", () => {
+    const heating = questions.filter((q) => q.qNumber === 13 && q.category === "電気加熱");
+    expect(heating).toHaveLength(29);
+    for (const q of heating) {
+      expect(q.originalContent!.sharedPassages!.find((p) => p.label === "課目Ⅳ 選択問題の指示")!.text).toContain("問題13から問題16");
+      if (Number(q.officialAnswerNumber) >= 11) {
+        expect(q.question).toContain("全電気効率");
+        expect(q.isCalculation).toBe(true);
+      }
+    }
+    const melting = heating.filter((q) => q.year === 2026 && Number(q.officialAnswerNumber) >= 11);
+    expect(melting).toHaveLength(4);
+    for (const q of melting) {
+      expect(q.hasImage).toBe(true);
+      expect(q.question).toContain("0.792");
+      expect(q.question).toContain("214 kJ/kg");
+      const premises = q.originalContent!.sharedPassages!.map((p) => p.text).join(" ");
+      expect(premises).toContain("1650 kWで10分");
+      expect(premises).toContain("1800 kWで15分");
+      expect(premises).toContain("1500 kWで10分");
+      expect(premises).toContain("1800 kWで20分");
+      if (q.officialAnswerNumber === "14") expect(premises).toContain("110 kW");
+    }
+  });
+
   it("公式の複数正答と全員正解を区別する", () => {
     expect(questions.find((q) => q.year === 2025 && q.session === "kyotsu" && q.qNumber === 3 && q.officialAnswerNumber === "2")!.answer).toEqual(["ア", "カ"]);
     const allCorrect = tables.find((t) => t.year === 2026 && t.packet === 6)!
@@ -156,6 +209,6 @@ describe("エネルギー管理士の未公開収録", () => {
     const entry = QUALIFICATION_CATALOG.find((q) => q.slug === "energy-kanri")!;
     expect(entry.status).toBe("ready-to-ingest");
     expect(entry.examCode).toBeUndefined();
-    expect(entry.remainingWork.join(" ")).toContain("38原問523解答欄");
+    expect(entry.remainingWork.join(" ")).toContain("31原問432解答欄");
   });
 });
