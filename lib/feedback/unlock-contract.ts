@@ -22,7 +22,7 @@ export const UnlockFeedbackSchema = z.object({
   if (!v.choices.includes("qualifications") && v.requestedQualifications.length) ctx.addIssue({ code: "custom", message: "資格の選択肢を選んでください。" });
 });
 
-export interface UnlockStatus { submitted: boolean; eligible: boolean; remaining: number }
+export interface UnlockStatus { requiresLogin?: boolean; submitted: boolean; eligible: boolean; remaining: number }
 export interface FeedbackExport {
   schemaVersion: 1; eventId: string; source: "kakomon-ai"; receivedAt: string;
   anonymousId: string; choices: string[]; requestedQualifications: string[]; commentMasked: string;

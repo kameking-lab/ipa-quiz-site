@@ -1,17 +1,18 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { UnlockFeedbackSchema } from "@/lib/feedback/unlock-contract";
 import { FeedbackUnlockStore, type UnlockIdentity } from "@/lib/feedback/unlock-store";
 import type { SqlDatabase } from "@/lib/billing/postgres-store";
 
-const m = vi.hoisted(() => ({ submit: vi.fn(), status: vi.fn(), origin: vi.fn(), rate: vi.fn(), bot: vi.fn() }));
-vi.mock("@/lib/feedback/unlock-runtime", () => ({ feedbackStore: () => ({ submit: m.submit, status: m.status, consumeRate: m.rate }), unlockIdentity: () => ({ realm: "test", account: null, browser: "browser" }), feedbackHash: () => "network-hash" }));
-vi.mock("@/lib/billing/runtime", () => ({ sameOrigin: m.origin, optionalBillingIdentity: async () => null, json: (v: unknown, status = 200) => Response.json(v, { status }) }));
+const m = vi.hoisted(() => ({ submit: vi.fn(), status: vi.fn(), origin: vi.fn(), rate: vi.fn(), bot: vi.fn(), user: "alice" as string | null, claim: vi.fn() }));
+vi.mock("@/lib/feedback/unlock-runtime", () => ({ feedbackStore: () => ({ submit: m.submit, status: m.status, consumeRate: m.rate, claim: m.claim }), unlockIdentity: () => ({ realm: "test", account: m.user, browser: "browser" }), feedbackHash: () => "network-hash", readFeedbackBrowser: () => "browser", newFeedbackBrowser: () => "browser", feedbackBrowserHeader: () => "feedback_browser=test" }));
+vi.mock("@/lib/billing/runtime", () => ({ sameOrigin: m.origin, optionalBillingIdentity: async () => m.user, json: (v: unknown, status = 200) => Response.json(v, { status }) }));
 vi.mock("@/lib/billing/practice-access", () => ({ practiceGateEnabled: () => true }));
 vi.mock("@/lib/rate-limit/server", () => ({ getClientIp: () => "192.0.2.1", checkRateLimit: m.rate }));
 vi.mock("@/lib/turnstile", () => ({ verifyTurnstileToken: m.bot }));
-import { POST } from "@/app/api/feedback-unlock/route";
+import { GET, POST } from "@/app/api/feedback-unlock/route";
 
-beforeEach(() => { vi.clearAllMocks(); vi.stubEnv("FEEDBACK_UNLOCK_ENABLED", "true"); m.rate.mockResolvedValue(true); m.bot.mockResolvedValue({ ok: true }); m.submit.mockResolvedValue({ eventId: "event", remaining: 10 }); });
+beforeEach(() => { vi.clearAllMocks(); vi.stubEnv("FEEDBACK_UNLOCK_ENABLED", "true"); m.user = "alice"; vi.stubEnv("TURNSTILE_SECRET_KEY", "test-only"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", "test-only"); m.rate.mockResolvedValue(true); m.bot.mockResolvedValue({ ok: true }); m.submit.mockResolvedValue({ eventId: "event", remaining: 10 }); });
+afterEach(() => vi.unstubAllEnvs());
 const payload = { choices: ["explanations", "mobile"], comment: "連絡 test@example.jp 090-1234-5678" };
 const request = (body: unknown) => new Request("https://example.test/api/feedback-unlock", { method: "POST", body: JSON.stringify(body) });
 describe("feedback acceptance", () => {
@@ -46,9 +47,9 @@ describe("feedback acceptance", () => {
 });
 
 describe("bonus wallet under its SQL transaction boundary", () => {
-  const identity: UnlockIdentity = { realm: "test", account: null, browser: "b" };
+  const identity: UnlockIdentity = { realm: "test", account: "alice", browser: "b" };
   function fixture() {
-    const row = { event_id: "e", account_hash: null as string | null, browser_hash: "b", retired: false };
+    const row = { event_id: "e", account_hash: "alice" as string | null, browser_hash: "b", retired: false };
     const grants: { day: string; question_id: string }[] = [];
     let tail = Promise.resolve();
     const query = vi.fn(async (sql: string, values: unknown[]) => {
@@ -72,15 +73,17 @@ describe("bonus wallet under its SQL transaction boundary", () => {
   });
   it("binds an anonymous wallet to its account and denies later signed-out reuse", async () => {
     const { store, row, grants } = fixture();
+    row.account_hash = null;
     await store.grant({ ...identity, account: "alice" }, "2026-11-03", "q1");
     expect(row.account_hash).toBe("alice");
-    expect(await store.grant(identity, "2026-11-03", "q2")).toBeNull();
+    expect(await store.grant({ ...identity, account: null }, "2026-11-03", "q2")).toBeNull();
     expect(grants).toHaveLength(1);
     expect(await store.grant({ ...identity, account: "bob" }, "2026-11-03", "q2")).toBeNull();
   });
   it("keeps the same account wallet across browsers without granting another ten", async () => {
     const { store, row, grants } = fixture();
     row.account_hash = "alice";
+    row.account_hash = null;
     await store.grant({ ...identity, account: "alice" }, "2026-11-03", "q1");
     await store.grant({ ...identity, account: "alice", browser: "another-browser" }, "2026-11-03", "q1");
     expect(grants).toHaveLength(1);
@@ -93,4 +96,27 @@ describe("bonus wallet under its SQL transaction boundary", () => {
     expect(query.mock.calls.some(([sql]) => sql.startsWith("INSERT INTO feedback_unlock\n"))).toBe(false);
     expect(await store.grant(identity, "2026-11-03", "q1")).toBeNull();
   });
+});
+
+it("rejects anonymous acquisition before touching DB or bot, including new cookies and days", async () => {
+  m.user = null;
+  for (let n = 0; n < 2; n++) {
+    expect((await GET(request(payload))).status).toBe(200);
+    expect(await (await GET(request(payload))).json()).toMatchObject({ eligible: false, requiresLogin: true });
+    expect((await POST(request(payload))).status).toBe(401);
+  }
+  expect(m.submit).not.toHaveBeenCalled(); expect(m.rate).not.toHaveBeenCalled(); expect(m.bot).not.toHaveBeenCalled();
+});
+it.each(["TURNSTILE_SECRET_KEY", "NEXT_PUBLIC_TURNSTILE_SITE_KEY"])("fails closed before DB writes when %s is absent", async key => {
+  vi.stubEnv(key, "");
+  expect(await (await GET(request(payload))).json()).toMatchObject({ eligible: false });
+  expect((await POST(request(payload))).status).toBe(503);
+  expect(m.submit).not.toHaveBeenCalled(); expect(m.rate).not.toHaveBeenCalled();
+});
+it("rejects skipped bot verification and limits Retry-After to short-term rate failures", async () => {
+  m.bot.mockResolvedValueOnce({ ok: true, skipped: true });
+  expect((await POST(request(payload))).status).toBe(403);
+  expect(m.submit).not.toHaveBeenCalled();
+  m.rate.mockResolvedValueOnce(false);
+  expect((await POST(request(payload))).headers.get("Retry-After")).toBe("60");
 });

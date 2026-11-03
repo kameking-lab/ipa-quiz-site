@@ -28,7 +28,7 @@ export type PostHogEventName =
   | "practice_limit_viewed"
   | "practice_feedback_submitted"
   | "practice_feedback_bonus_used"
-  | "practice_feedback_purchase_completed"
+  | "practice_feedback_customer_confirmation_viewed"
   | "page_view"
   | "question_answered"
   | "ai_query_sent"

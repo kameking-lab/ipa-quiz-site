@@ -24,6 +24,7 @@ export class FeedbackUnlockStore {
       ?? rows.find(r => r.browser_hash === i.browser && (!r.account_hash || r.account_hash === i.account));
   }
   async status(i: UnlockIdentity): Promise<UnlockStatus> {
+    if (!i.account) return { submitted: false, eligible: false, remaining: 0, requiresLogin: true };
     const rows = await this.rows(this.db, i);
     const row = this.owner(rows, i);
     if (!row) return { submitted: false, eligible: rows.length === 0, remaining: 0 };
@@ -31,6 +32,7 @@ export class FeedbackUnlockStore {
     return { submitted: true, eligible: false, remaining: row.retired ? 0 : Math.max(0, FEEDBACK_BONUS - count[0].count) };
   }
   async submit(i: UnlockIdentity, network: string | null, data: Pick<FeedbackExport, "choices" | "requestedQualifications" | "commentMasked">) {
+    if (!i.account) throw new BillingError("sign_in_required", 401);
     return this.db.transaction(async sql => {
       if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`${i.realm}:${i.account}`]);
       // Serialise publication so sequence cursors cannot skip an earlier uncommitted insert.
@@ -47,6 +49,7 @@ export class FeedbackUnlockStore {
   }
   async claim(i: UnlockIdentity) { return this.grant(i, "", null); }
   async grant(i: UnlockIdentity, day: string, questionId: string | null) {
+    if (!i.account) return null;
     return this.db.transaction(async sql => {
       // Account lock also serialises claims from different browsers.
       if (i.account) await sql.query("SELECT pg_advisory_xact_lock(hashtextextended($1, 731103))::text AS locked", [`${i.realm}:${i.account}`]);

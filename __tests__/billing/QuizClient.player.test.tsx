@@ -113,3 +113,47 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(screen.queryByText(/本日の無料連続演習枠を使い切りました/)).toBeNull();
   });
 });
+it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload", async () => {
+  const pool = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 21);
+  const questions = new Map(pool.map(q => [q.id, q]));
+  const ordinary = new Set(pool.slice(0, 10).map(q => q.id));
+  const bonus = new Set<string>();
+  let submitted = false;
+  const fetcher = vi.fn(async (url: string, init?: RequestInit) => {
+    if (url === "/api/feedback-unlock") {
+      if (init?.method === "POST") { submitted = true; return Response.json({ ok: true, remaining: 10 }); }
+      return Response.json({ eligible: !submitted, submitted, remaining: submitted ? 10 - bonus.size : 0 });
+    }
+    if (url.startsWith("/api/questions/next?")) return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
+    if (url !== "/api/billing/question") throw new Error(`Unexpected request: ${url}`);
+    const { id } = JSON.parse(init!.body as string);
+    if (ordinary.has(id)) return Response.json({ question: questions.get(id), access: { ...baseAccess, kind: "trial", remaining: 0 } });
+    if (!submitted || (!bonus.has(id) && bonus.size >= 10)) return Response.json({ error: "daily_limit", access: { ...baseAccess, kind: "trial", remaining: 0 } }, { status: 429 });
+    const newlyUsed = !bonus.has(id); bonus.add(id);
+    return Response.json({ question: questions.get(id), access: { ...baseAccess, kind: "trial", remaining: 10 - bonus.size, feedbackBonus: { remaining: 10 - bonus.size, newlyUsed } } });
+  });
+  vi.stubGlobal("fetch", fetcher);
+  const first = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
+  fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+  for (let n = 0; n < 10; n++) {
+    await waitFor(() => {
+      expect(screen.getByText(`意見による追加10問を利用中です。追加枠は残り${9 - n}問です。`)).toBeInTheDocument();
+      expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
+    });
+    expect(screen.queryByText(/今日あと/)).toBeNull();
+    fireEvent.click(screen.getAllByRole("radio")[0]);
+    expect(createHistoryStore().getAllEntries()).toHaveLength(n + 1);
+    fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
+  }
+  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  expect(bonus.size).toBe(10);
+  const saved = localStorage.getItem(LS_KEYS.history);
+  first.unmount();
+  render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[20].id} mode="year" exam="fe" backHref="/fe" />);
+  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  expect(screen.queryByRole("radiogroup")).toBeNull();
+  expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
+  expect(bonus.size).toBe(10);
+});

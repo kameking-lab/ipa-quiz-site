@@ -61,15 +61,8 @@ export async function POST(request: Request) {
             if (result.status === "claimed") throw new BillingError("sign_in_required", 401);
             if (result.status === "rate") { access.retryAfter = result.retry ?? 60; throw new BillingError("guest_rate_limited", 429); }
             if (result.status === "limit") {
-              if (process.env.FEEDBACK_UNLOCK_ENABLED !== "true") { access.remaining = 0; throw new BillingError("daily_limit", 429); }
-              const bonus = await feedbackStore().grant(unlockIdentity(request, null, realm), jstDay(new Date(now)), question.id);
-              if (!bonus) { access.remaining = 0; throw new BillingError("daily_limit", 429); }
-              access.remaining = bonus.remaining;
-              access.feedbackBonus = bonus;
-              const response = json({ question: shuffle ? shuffleChoices(question) : question, access });
-              const browser = readFeedbackBrowser(request);
-              if (browser) response.headers.append("Set-Cookie", feedbackBrowserHeader(browser, new URL(request.url).protocol === "https:"));
-              return response;
+              access.remaining = 0;
+              throw new BillingError("daily_limit", 429);
             }
             if (result.status !== "ok" || result.used === undefined) throw new BillingError("billing_unavailable", 503);
             access.remaining = Math.max(0, config.freeDaily - result.used);

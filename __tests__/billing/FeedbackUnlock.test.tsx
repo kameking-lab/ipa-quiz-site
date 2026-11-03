@@ -37,3 +37,12 @@ it("preserves the form and never grants a reward on failure", async () => {
   expect(screen.getByRole("textbox", { name: /自由記述/ })).toHaveValue("資格を増やしてほしい");
   expect(resume).not.toHaveBeenCalled(); expect(capture).not.toHaveBeenCalled();
 });
+
+it("offers login with the current question as return URL and hides anonymous submission", async () => {
+  window.history.replaceState({}, "", "/quiz?question=q11");
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, requiresLogin: true })));
+  render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+  const link = await screen.findByRole("link", { name: "無料ログインして、意見を送りさらに10問" });
+  expect(link).toHaveAttribute("href", "/auth/signin?callbackUrl=" + encodeURIComponent("/quiz?question=q11"));
+  expect(screen.queryByRole("button", { name: "意見を送って、さらに10問無料で解く" })).toBeNull();
+});

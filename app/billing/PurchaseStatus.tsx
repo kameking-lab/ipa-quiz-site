@@ -50,10 +50,11 @@ export function PurchaseStatus({ order, canceled = false }: { order: string; can
   const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
   useEffect(() => {
     if (!complete || !status?.feedbackSubmitted) return;
-    // Only confirmed payment; a return URL or checkout click is insufficient.
+    // Confirmation views by customers with feedback history, not purchase conversions.
+    // Feedback can postdate this order; a new session can count another view.
     const key = `kakomon-feedback-purchase:${order}`;
     try { if (sessionStorage.getItem(key)) return; sessionStorage.setItem(key, "1"); } catch { /* Analytics remains best effort. */ }
-    posthogCapture("practice_feedback_purchase_completed", { billingModel: status?.billingModel ?? "pass" });
+    posthogCapture("practice_feedback_customer_confirmation_viewed", { billingModel: status?.billingModel ?? "pass" });
   }, [complete, order, status?.billingModel, status?.feedbackSubmitted]);
   const pending = status?.purchase?.status === "pending";
   const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
