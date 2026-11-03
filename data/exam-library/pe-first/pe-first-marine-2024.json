@@ -1,0 +1,3236 @@
+[
+  {
+    "id": "pe-first-marine-2024-q01",
+    "number": 1,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-01.png"
+    ],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "傾斜面積はA/cosφ、軸荷重の法線成分はP cosφ、図のせん断正方向への成分は−P sinφ。σ=(P/A)cos^2φ、τ=−(P/A)sinφ cosφで③。",
+    "presentation": {
+      "sourceHash": "4a6e79408b12229dd68d839134f8a1c7b823f4173cf6bc8035eb1aa53580bbfa",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－1。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-01.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－1の公式原問（PDF 1ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "4a6e79408b12229dd68d839134f8a1c7b823f4173cf6bc8035eb1aa53580bbfa",
+      "correctChoice": 3,
+      "summary": "傾斜面積はA/cosφ、軸荷重の法線成分はP cosφ、図のせん断正方向への成分は−P sinφ。σ=(P/A)cos^2φ、τ=−(P/A)sinφ cosφで③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "斜面には接線方向の荷重成分も生じるためτ=0ではなく、垂直応力にもcosφがもう一つ必要。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "法線・接線荷重を斜面積A/cosφで割る必要があり、両応力ともcosφの因子が不足している。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "斜面積と荷重の射影を両方考慮し、せん断の符号を図の矢印に合わせた組合せである。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "垂直応力はsinφ cosφでなくcos^2φ。接線成分を法線成分と取り違えている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "垂直応力もせん断応力も角度依存が違う。φ=0ならσ=P/A、τ=0となる必要がある。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q02",
+    "number": 2,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-02.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "反力の和はR1+R2=P+Q。全伸びゼロより{R1+(R1−P)+(R1−P−Q)}L/(EA)=0。R1=(2P+Q)/3、R2=(P+2Q)/3で④。",
+    "presentation": {
+      "sourceHash": "a44a440c6dc12d419393379af09eca7fef425729296c757b63e5955f7e595993",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－2。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-02.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－2の公式原問（PDF 2ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "a44a440c6dc12d419393379af09eca7fef425729296c757b63e5955f7e595993",
+      "correctChoice": 4,
+      "summary": "反力の和はR1+R2=P+Q。全伸びゼロより{R1+(R1−P)+(R1−P−Q)}L/(EA)=0。R1=(2P+Q)/3、R2=(P+2Q)/3で④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "各荷重を直近の壁がそのまま負担すると考えると、固定端間の全伸びゼロの条件を満たさない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "力の和の条件だけでなく変形の適合条件が必要。2Q−P、2P−Qは一般にその条件を満たさない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "荷重位置が対称でもPとQが異なれば左右反力は等しくならず、一律に半分にはできない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "三つの区間の伸縮の総和ゼロと全体の力の釣合いを満たす反力の組合せである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "反力の単位は力であるべきところ、分母3Lによって力/長さとなっており不適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q03",
+    "number": 3,
+    "text": "下図に示す、直径dの円形断面の円の中心Gを通り紙面に垂直な軸に関する断面二次極モーメントIpと、この軸に直交するx軸に関する断面二次モーメントIxの組合せとして、最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-03.png"
+    ],
+    "sourcePages": [
+      3
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "円断面の図心軸まわりIx=πd^4/64、極二次モーメントIp=Ix+Iy=2Ix=πd^4/32。両者の係数が一致する①。",
+    "presentation": {
+      "sourceHash": "b40f84fc4a5797458691638fa66d83ed4685bbed7a4ba4d7ba0e56dea3c1e536",
+      "prompt": "下図に示す、直径dの円形断面の円の中心Gを通り紙面に垂直な軸に関する断面二次極モーメントIpと、この軸に直交するx軸に関する断面二次モーメントIxの組合せとして、最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "Ip=πd^4/32、Ix=πd^4/64"
+        },
+        {
+          "number": 2,
+          "text": "Ip=3πd^4/32、Ix=3πd^4/64"
+        },
+        {
+          "number": 3,
+          "text": "Ip=πd^4/12、Ix=πd^4/36"
+        },
+        {
+          "number": 4,
+          "text": "Ip=πd^4/6、Ix=πd^4/12"
+        },
+        {
+          "number": 5,
+          "text": "Ip=πd^4/12、Ix=πd^4/24"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-03.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－3の公式原問（PDF 3ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b40f84fc4a5797458691638fa66d83ed4685bbed7a4ba4d7ba0e56dea3c1e536",
+      "correctChoice": 1,
+      "summary": "円断面の図心軸まわりIx=πd^4/64、極二次モーメントIp=Ix+Iy=2Ix=πd^4/32。両者の係数が一致する①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "円の図心軸まわりの断面二次モーメントと、直交軸の和としての極二次モーメントが正しい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "両値が正しい円断面の値の3倍になっており、円面積の積分結果と一致しない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "πd^4/12、πd^4/36は円の図心軸まわりの二次モーメントではなく、Ip=2Ixにもならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "Ip=2Ixの関係だけは合うが、両値とも正しい値に比べて過大な係数となっている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "極と図心軸の比は合うが、πd^4/12とπd^4/24は円の面積積分で得られる係数ではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q04",
+    "number": 4,
+    "text": "下図に示す長さLの片持ち梁の自由端をバネ定数kのバネで支持したうえで、荷重Pを作用させた。この梁の自由端の変位δとして、最も適切なものはどれか。ただし、梁の曲げ剛性をEIとする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-04.png"
+    ],
+    "sourcePages": [
+      4
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "自由端変位δに対するばね反力はkδ。片持ち梁の変位はδ=(P−kδ)L^3/(3EI)なのでδ=PL^3/(3EI+kL^3)。②。",
+    "presentation": {
+      "sourceHash": "eba76e9c396f654ff46605362a87499e951a959c629a5ada174ee8c08a17289b",
+      "prompt": "下図に示す長さLの片持ち梁の自由端をバネ定数kのバネで支持したうえで、荷重Pを作用させた。この梁の自由端の変位δとして、最も適切なものはどれか。ただし、梁の曲げ剛性をEIとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "δ=(L^3/(3EI)+1/k)P"
+        },
+        {
+          "number": 2,
+          "text": "δ=PL^3/(3EI+kL^3)"
+        },
+        {
+          "number": 3,
+          "text": "δ=(L^3/EI+1/k)P"
+        },
+        {
+          "number": 4,
+          "text": "δ=PL^3/(6EI−kL^3)"
+        },
+        {
+          "number": 5,
+          "text": "δ=(EI/L^3+1/k)P"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-04.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－4の公式原問（PDF 4ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "eba76e9c396f654ff46605362a87499e951a959c629a5ada174ee8c08a17289b",
+      "correctChoice": 2,
+      "summary": "自由端変位δに対するばね反力はkδ。片持ち梁の変位はδ=(P−kδ)L^3/(3EI)なのでδ=PL^3/(3EI+kL^3)。②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "梁とばねは同じ変位で荷重を分担する並列系であり、たわみやすさを直列のように加算しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "梁の等価ばね定数3EI/L^3と支持ばねkを足した合成剛性で荷重Pを割る式である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "片持ち梁の剛性には係数3が必要であり、ばねと梁のコンプライアンスを単純には加えない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "支持ばねは剛性を増すので分母は正の加算。6EI−kL^3という分母は境界条件に合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "EI/L^3は剛性、1/kはコンプライアンスで、足し合わせること自体が次元的に不適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q05",
+    "number": 5,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-05.png"
+    ],
+    "sourcePages": [
+      5
+    ],
+    "sourceQuestionNumber": 5,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "対称な2荷重より支点反力は各P、荷重間の一定曲げモーメントはPa。矩形断面係数bh^2/6よりσmax=6Pa/(bh^2)となり④。",
+    "presentation": {
+      "sourceHash": "0b7bd07ec4f7d58dfc12194e0ad1b2631df2aea32bbc741b88efa7307bac8e14",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－5。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-05.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－5の公式原問（PDF 5ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "0b7bd07ec4f7d58dfc12194e0ad1b2631df2aea32bbc741b88efa7307bac8e14",
+      "correctChoice": 4,
+      "summary": "対称な2荷重より支点反力は各P、荷重間の一定曲げモーメントはPa。矩形断面係数bh^2/6よりσmax=6Pa/(bh^2)となり④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "3P/(2bh)は矩形断面の最大せん断応力に対応する形で、曲げ応力ではない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "bh^2/(6Pa)は曲げ応力の逆数に相当し、応力の次元になっていない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "荷重間の最大モーメントはPaであってPLではなく、Lとhの次数を含むこの式は異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "最大モーメントPaを矩形断面係数bh^2/6で割った値であり、荷重間全域で同じ最大応力。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "曲げ応力はPaに比例しbh^2に反比例する。Lとhの次数および係数が一致しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=5"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q06",
+    "number": 6,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-06.png"
+    ],
+    "sourcePages": [
+      6
+    ],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "2部材の水平成分が釣り合うため一方が引張、他方が同じ大きさの圧縮となる。各軸力の大きさP、鉛直剛性EA/(2L)よりδz=2PL/(EA)、対称性からδx=0。①。",
+    "presentation": {
+      "sourceHash": "23dde23445094db3f01370743870130cd56cfca7b52c90be805163f465e94bba",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－6。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-06.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－6の公式原問（PDF 6ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "23dde23445094db3f01370743870130cd56cfca7b52c90be805163f465e94bba",
+      "correctChoice": 1,
+      "summary": "2部材の水平成分が釣り合うため一方が引張、他方が同じ大きさの圧縮となる。各軸力の大きさP、鉛直剛性EA/(2L)よりδz=2PL/(EA)、対称性からδx=0。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "上下材の軸伸縮を鉛直へ射影すると合成剛性EA/(2L)、水平変位ゼロとなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "60度は鉛直との角なので鉛直への射影は1/2。√3 PL/(4EA)という変位にはならない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "鉛直変位は合うが、2本の同長・同剛性材の配置では水平変位は相殺されてゼロ。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "PL/(EA)は単一本の軸変位の尺度であり、斜材の角度を含めた鉛直変位はその2倍。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "鉛直変位の係数と非ゼロの水平変位の両方が、部材の変形適合条件と合わない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=6"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q07",
+    "number": 7,
+    "text": "下図に示す、長さLの中空丸棒（内半径r1、外半径r2）にねじりモーメントMTが作用している。この中空丸棒に生じるねじれ角θとして、最も適切なものはどれか。ここで、せん断弾性係数をGとする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-07.png"
+    ],
+    "sourcePages": [
+      7
+    ],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "中空円の極二次モーメントIp=π(r2^4−r1^4)/2。ねじれ角θ=MT L/(GIp)=2MT L/[πG(r2^4−r1^4)]となり②。",
+    "presentation": {
+      "sourceHash": "3dd140e442eabb96e3de078951e7b57692f5e3f3e6cb1d3e47b60fb1f4718643",
+      "prompt": "下図に示す、長さLの中空丸棒（内半径r1、外半径r2）にねじりモーメントMTが作用している。この中空丸棒に生じるねじれ角θとして、最も適切なものはどれか。ここで、せん断弾性係数をGとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "θ=MT(r2−r1)/(πL(r2^3−r1^3)G)"
+        },
+        {
+          "number": 2,
+          "text": "θ=2MT L/(π(r2^4−r1^4)G)"
+        },
+        {
+          "number": 3,
+          "text": "θ=2MT/(πL(r2^3−r1^3)G)"
+        },
+        {
+          "number": 4,
+          "text": "θ=32(r2−r1)MT/(π(r2^4−r1^4)G)"
+        },
+        {
+          "number": 5,
+          "text": "θ=32MT L/(π(r2^4−r1^4)G)"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-07.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－7の公式原問（PDF 7ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "3dd140e442eabb96e3de078951e7b57692f5e3f3e6cb1d3e47b60fb1f4718643",
+      "correctChoice": 2,
+      "summary": "中空円の極二次モーメントIp=π(r2^4−r1^4)/2。ねじれ角θ=MT L/(GIp)=2MT L/[πG(r2^4−r1^4)]となり②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "半径差や三乗差を使っており、中空円の極二次モーメントπ(r2^4−r1^4)/2に対応しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "ねじりモーメント×長さをせん断弾性係数×極二次モーメントで割った式に一致する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "極二次モーメントには半径の四乗差が必要で、長さLも分子に必要となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "極二次モーメントに不要な半径差が入り、ねじられる長さLが反映されていない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "係数32は直径を用いた式。ここでr1、r2は半径なので正しい係数は2である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=7"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q08",
+    "number": 8,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 8,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "船体全体は両端自由で、断面力を釣合いから求める静定構造とみなす。一本の梁の曲げは縦強度、軸としての捩りは捩り強度であり③。",
+    "presentation": {
+      "sourceHash": "daf36cd83f35e5ce1df0552c693eab5c5afe8fd7935dc86c0f8bbf160e92c730",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－8。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-08.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－8の公式原問（PDF 8ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "daf36cd83f35e5ce1df0552c693eab5c5afe8fd7935dc86c0f8bbf160e92c730",
+      "correctChoice": 3,
+      "summary": "船体全体は両端自由で、断面力を釣合いから求める静定構造とみなす。一本の梁の曲げは縦強度、軸としての捩りは捩り強度であり③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "船体を両端固定にする地上の支持は存在せず、両端自由というモデルに合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "両端固定・不静定というモデルは違い、船長方向の曲げは横強度、軸の作用は引張ともいわない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "自由・静定構造・縦・捩りの組合せが、船体全体の強度の説明に一致する。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "自由端は合うが、全体断面力を求めるモデルは静定であり、横強度・引張の組合せも違う。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "縦強度と捩りは合うが、船体全体をここでは不静定でなく静定の梁・軸とみなす。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q09",
+    "number": 9,
+    "text": "直径1.0×10^−2 m、長さ1.0 mの円柱がある。両端固定条件のとき、オイラーの座屈荷重として、最も近い値はどれか。ただし、この柱の縦弾性係数（ヤング率）をE=2.0×10^2 GPaとする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-08.png"
+    ],
+    "sourcePages": [
+      8
+    ],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "両端固定柱の有効長はL/2。I=πd^4/64よりPcr=4π^2EI/L^2≒3.876×10^3 Nとなり、①の3.9×10^3 Nが最も近い。",
+    "presentation": {
+      "sourceHash": "9514e9ab82717d04d9c3b16be67846cf40ab009d4d76da19f8166f859eb21319",
+      "prompt": "直径1.0×10^−2 m、長さ1.0 mの円柱がある。両端固定条件のとき、オイラーの座屈荷重として、最も近い値はどれか。ただし、この柱の縦弾性係数（ヤング率）をE=2.0×10^2 GPaとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "3.9×10^3 N"
+        },
+        {
+          "number": 2,
+          "text": "9.7×10^2 N"
+        },
+        {
+          "number": 3,
+          "text": "2.4×10^2 N"
+        },
+        {
+          "number": 4,
+          "text": "1.9×10^3 N"
+        },
+        {
+          "number": 5,
+          "text": "4.8×10^3 N"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "9514e9ab82717d04d9c3b16be67846cf40ab009d4d76da19f8166f859eb21319",
+      "correctChoice": 1,
+      "summary": "両端固定柱の有効長はL/2。I=πd^4/64よりPcr=4π^2EI/L^2≒3.876×10^3 Nとなり、①の3.9×10^3 Nが最も近い。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "E=2×10^11 Pa、d=0.01 m、I=πd^4/64を両端固定のEuler式へ代入した値。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "約9.7×10^2 Nは両端ピン支持の座屈荷重で、両端固定の荷重はその4倍。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "約2.4×10^2 Nは固定−自由の有効長2Lに対応する値で、支持条件が異なる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1.9×10^3 Nは本問の有効長L/2による結果の約半分で、固定条件の係数と合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "4.8×10^3 NはEIと有効長を代入した結果と一致せず、最も近い候補は3.9×10^3 N。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=8"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q10",
+    "number": 10,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-09.png"
+    ],
+    "sourcePages": [
+      9
+    ],
+    "sourceQuestionNumber": 10,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "全重量と浮力から貨物の線荷重12.25 MN/m、浮力7.35 MN/m。積載区画の正味下向き4.90 MN/mを50 m積分して最大せん断力245 MN。次の空倉でせん断力ゼロとなる位置83.3 mが最大曲げ、ホギングなので⑤。",
+    "presentation": {
+      "sourceHash": "f4851949dce6ea4e69c155e1b0b78dd4a6036837cd64509226614859c1693f26",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－10。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-09.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－10の公式原問（PDF 9ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f4851949dce6ea4e69c155e1b0b78dd4a6036837cd64509226614859c1693f26",
+      "correctChoice": 5,
+      "summary": "全重量と浮力から貨物の線荷重12.25 MN/m、浮力7.35 MN/m。積載区画の正味下向き4.90 MN/mを50 m積分して最大せん断力245 MN。次の空倉でせん断力ゼロとなる位置83.3 mが最大曲げ、ホギングなので⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "245 MNは合うが、最大曲げ位置は中央125 mでなく左右端から約83.3 mであり、状態もホギング。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "最大せん断力は50 MNでなく245 MN。最大曲げ位置とサギングという判定も合わない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "せん断力とホギングは合うが、最大曲げはせん断力がゼロになる約83.3 mの位置にある。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "83.3 mとホギングは合うが、最大せん断力は正味線荷重4.90 MN/m×50 m=245 MN。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "最大せん断245 MN、最大曲げの位置83.3 m、中央が上向きに凸になるホギングの組合せが正しい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=9"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q11",
+    "number": 11,
+    "text": "半径r、肉厚tの薄肉円筒形の密閉容器がある。この容器が内圧pを受ける場合、この円筒部分に生じる円周方向の引張応力と、円筒長手軸方向の引張応力の近似式の組合せとして、最も適切なものは次のうちどれか。ただし、t≪rである。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "薄肉円筒の周方向応力は直径面の釣合いからpr/t。閉端の長手方向応力は端面圧力pπr^2を円筒断面積2πrtで割ってpr/(2t)。④。",
+    "presentation": {
+      "sourceHash": "3cc9d550029e5723d0f530c74015ba1fcd65d63cd11e8b60e45256e7d9741d4d",
+      "prompt": "半径r、肉厚tの薄肉円筒形の密閉容器がある。この容器が内圧pを受ける場合、この円筒部分に生じる円周方向の引張応力と、円筒長手軸方向の引張応力の近似式の組合せとして、最も適切なものは次のうちどれか。ただし、t≪rである。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "円周方向=2pr/t、軸方向=πpr/(2t)"
+        },
+        {
+          "number": 2,
+          "text": "円周方向=pr/(2t)、軸方向=pr/(2t)"
+        },
+        {
+          "number": 3,
+          "text": "円周方向=pr/t、軸方向=πpr/(2t)"
+        },
+        {
+          "number": 4,
+          "text": "円周方向=pr/t、軸方向=pr/(2t)"
+        },
+        {
+          "number": 5,
+          "text": "円周方向=pr/(2t)、軸方向=pr/t"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "3cc9d550029e5723d0f530c74015ba1fcd65d63cd11e8b60e45256e7d9741d4d",
+      "correctChoice": 4,
+      "summary": "薄肉円筒の周方向応力は直径面の釣合いからpr/t。閉端の長手方向応力は端面圧力pπr^2を円筒断面積2πrtで割ってpr/(2t)。④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "周方向応力は2pr/tでなくpr/t。軸応力にπが残ることも面積の釣合いと合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "軸応力pr/(2t)は合うが、周方向応力はその2倍のpr/tである。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "周方向応力は合うが、軸応力では圧力面積と抵抗面積のπが打ち消される。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "周方向pr/t、軸方向pr/(2t)という閉じた薄肉円筒の膜応力の組合せである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "周方向と軸方向を逆にしている。周方向応力の方が軸方向応力の2倍大きい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q12",
+    "number": 12,
+    "text": "ある鋼材に応力振幅300 MPaで2000回、400 MPaで400回の繰り返し応力を与えた。さらに、応力振幅を500 MPaまで上げて繰り返し応力を加えたとき、破断に至るまでの繰り返し数として、最も適切なものはどれか。ただし、応力振幅をS、破断に至るまでの繰り返し数をNとして、S−N曲線はS=−100 log10 N+700で表され、鋼材の累積損傷による破断は、マイナー則に従うものとする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-10.png"
+    ],
+    "sourcePages": [
+      10
+    ],
+    "sourceQuestionNumber": 12,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "S=−100log10N+700より寿命は300 MPaで10000回、400 MPaで1000回、500 MPaで100回。既損傷0.2+0.4=0.6、残り0.4×100=40回なので②。",
+    "presentation": {
+      "sourceHash": "42a83cc3f821dd5f734bb4a6543453df77cdb3c554b861031e8c9769360a2f05",
+      "prompt": "ある鋼材に応力振幅300 MPaで2000回、400 MPaで400回の繰り返し応力を与えた。さらに、応力振幅を500 MPaまで上げて繰り返し応力を加えたとき、破断に至るまでの繰り返し数として、最も適切なものはどれか。ただし、応力振幅をS、破断に至るまでの繰り返し数をNとして、S−N曲線はS=−100 log10 N+700で表され、鋼材の累積損傷による破断は、マイナー則に従うものとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "20"
+        },
+        {
+          "number": 2,
+          "text": "40"
+        },
+        {
+          "number": 3,
+          "text": "100"
+        },
+        {
+          "number": 4,
+          "text": "250"
+        },
+        {
+          "number": 5,
+          "text": "600"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "42a83cc3f821dd5f734bb4a6543453df77cdb3c554b861031e8c9769360a2f05",
+      "correctChoice": 2,
+      "summary": "S=−100log10N+700より寿命は300 MPaで10000回、400 MPaで1000回、500 MPaで100回。既損傷0.2+0.4=0.6、残り0.4×100=40回なので②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "20回ではない。先行損傷は2000/10000+400/1000=0.6で、500 MPa寿命の40%が残る。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "Miner則の損傷和を1とすると、2000/10000+400/1000+n/100=1よりn=40。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "100回は500 MPaだけを最初から負荷した寿命であり、先行した累積損傷を含まない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "250回は500 MPaの単独寿命100回を超え、先行損傷を受けた材料の残寿命にはならない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "600回は500 MPaでの単独寿命100回より大きく、Miner則の損傷和1と矛盾する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=10"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q13",
+    "number": 13,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 13,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは③。減衰のある定常強制振動では、外力が1周期に供給するエネルギーとダッシュポットの散逸が釣り合う。双方がゼロになるわけではない。",
+    "presentation": {
+      "sourceHash": "dc3e2702b85a0cfbd85815296f575018639894b62716c0c0ca6c8be17048d4ef",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－13。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-11.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－13の公式原問（PDF 11ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "dc3e2702b85a0cfbd85815296f575018639894b62716c0c0ca6c8be17048d4ef",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。減衰のある定常強制振動では、外力が1周期に供給するエネルギーとダッシュポットの散逸が釣り合う。双方がゼロになるわけではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "弱い減衰では固有角振動数の近くで応答振幅が増大する共振が見られるという基本的説明である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "変位応答に共振ピークがある場合、ωp=√(k/m−c^2/(2m^2))で無減衰固有角振動数より小さい。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "定常状態でも減衰による散逸は続き、それを外力が補う。「供給されず」「ゼロ」が誤り。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "同じ励振周波数での定常振幅A/√((k−mω^2)^2+c^2ω^2)は、減衰cの増大で小さくなる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "過渡解の減衰自由振動が消えた後、調和外力に対応する一定振幅の定常振動が残る。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q14",
+    "number": 14,
+    "text": "図のように曲げ剛性EI、長さLの両端固定はりの中央に荷重Pが作用しているとき、荷重点のたわみとして、最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-11.png"
+    ],
+    "sourcePages": [
+      11
+    ],
+    "sourceQuestionNumber": 14,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "両端固定梁の中央集中荷重による中央たわみはPL^3/(192EI)。端部回転もゼロにする拘束で、同じ単純支持梁の中央たわみの1/4となる。①。",
+    "presentation": {
+      "sourceHash": "801d08e822367f7adac7b88cc8accf7cd04d5541f323e433bb8f41d41e145feb",
+      "prompt": "図のように曲げ剛性EI、長さLの両端固定はりの中央に荷重Pが作用しているとき、荷重点のたわみとして、最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "PL^3/(192EI)"
+        },
+        {
+          "number": 2,
+          "text": "PL^3/(96EI)"
+        },
+        {
+          "number": 3,
+          "text": "PL^3/(48EI)"
+        },
+        {
+          "number": 4,
+          "text": "PL^3/(24EI)"
+        },
+        {
+          "number": 5,
+          "text": "PL^3/(12EI)"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-11.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－14の公式原問（PDF 11ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "801d08e822367f7adac7b88cc8accf7cd04d5541f323e433bb8f41d41e145feb",
+      "correctChoice": 1,
+      "summary": "両端固定梁の中央集中荷重による中央たわみはPL^3/(192EI)。端部回転もゼロにする拘束で、同じ単純支持梁の中央たわみの1/4となる。①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "両端の変位と回転をゼロにする固定条件を満たした中央たわみの公式に一致する。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "PL^3/(96EI)は本問のたわみの2倍で、両端固定の境界条件から得られない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "PL^3/(48EI)は単純支持梁の中央集中荷重のたわみで、固定端の回転拘束を含まない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "PL^3/(24EI)は両端固定の中央たわみの8倍となり、固定条件に合わない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "PL^3/(12EI)は両端固定中央荷重の公式とは異なり、正しい係数1/192に比べ過大。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=11"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q15",
+    "number": 15,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 15,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "最も適切なのは①。中央横断面係数CMの増大で船体が肥大になると、粘性圧力抵抗を含む形状影響係数が大きくなる傾向がある。他の肢は一般的傾向の向きが逆。",
+    "presentation": {
+      "sourceHash": "c6a1adfcbeaad23bc5acb4b70256aa3426c09f61729db5e2fd181d11b7cc9736",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－15。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-12.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－15の公式原問（PDF 12ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c6a1adfcbeaad23bc5acb4b70256aa3426c09f61729db5e2fd181d11b7cc9736",
+      "correctChoice": 1,
+      "summary": "最も適切なのは①。中央横断面係数CMの増大で船体が肥大になると、粘性圧力抵抗を含む形状影響係数が大きくなる傾向がある。他の肢は一般的傾向の向きが逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "中央横断面の肥大化により形状に起因する粘性抵抗の増加傾向を述べており、適切である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "一般的な船型の傾向として幅喫水比が大きいほど形状影響係数も大きいとする方向は適切でない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "方形係数が大きく肥大になるほど形状影響係数も大きくなる傾向があり、「小さい」が逆。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "長さ幅比が大きい細長い船型ほど、形状に起因する粘性抵抗の増加は小さくなる傾向がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "排水容積長さ比が大きい肥大な船型ほど形状影響係数は大きくなる傾向であり、記述が逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q16",
+    "number": 16,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-12.png"
+    ],
+    "sourcePages": [
+      12
+    ],
+    "sourceQuestionNumber": 16,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "4円の水線面二次モーメントは4{πa^4/64+(πa^2/4)a^2}=17πa^4/16。排水容積は4(πa^2/4)(a/2)=πa^3/2。BM=I/∇=17a/8で④。",
+    "presentation": {
+      "sourceHash": "36ac9aa54be990f61da9fdb7337007de115605beee8a7a6d752b3271f8568e42",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-12.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－16の公式原問（PDF 12ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "36ac9aa54be990f61da9fdb7337007de115605beee8a7a6d752b3271f8568e42",
+      "correctChoice": 4,
+      "summary": "4円の水線面二次モーメントは4{πa^4/64+(πa^2/4)a^2}=17πa^4/16。排水容積は4(πa^2/4)(a/2)=πa^3/2。BM=I/∇=17a/8で④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "a/8は円柱自身の図心まわりの水線面二次モーメントだけを含み、各円柱の軸からの距離aが未考慮。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "17a/32は、水線面二次モーメントと排水容積を4円すべてについて評価した比と合わない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "2aは平行軸項だけに相当し、各円の自身の二次モーメントによるa/8が不足する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "図心軸の二次モーメントと平行軸項を足し、喫水a/2の4円柱の排水容積で割ると17a/8。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "17a/2は正しい値の4倍。4円柱分の排水容積で割る必要がある。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=12"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q17",
+    "number": 17,
+    "text": "船体の6自由度の運動のうち、静水圧による復原力を有するものの組合せとして、最も適切なものはどれか。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 17,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "静水圧による復原力は上下変位による排水量変化と横・縦傾斜による浮心移動で生じる。ヒービング・ローリング・ピッチングの⑤。",
+    "presentation": {
+      "sourceHash": "d8142733586e0548c16e6e5eff4212a1495e47bfc6e4e662ca58ed65f1c343a9",
+      "prompt": "船体の6自由度の運動のうち、静水圧による復原力を有するものの組合せとして、最も適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "スウェイング、ローリング、ピッチング"
+        },
+        {
+          "number": 2,
+          "text": "ヒービング、ピッチング、ヨーイング"
+        },
+        {
+          "number": 3,
+          "text": "サージング、ヒービング、ローリング"
+        },
+        {
+          "number": 4,
+          "text": "サージング、ローリング、ヨーイング"
+        },
+        {
+          "number": 5,
+          "text": "ヒービング、ローリング、ピッチング"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "d8142733586e0548c16e6e5eff4212a1495e47bfc6e4e662ca58ed65f1c343a9",
+      "correctChoice": 5,
+      "summary": "静水圧による復原力は上下変位による排水量変化と横・縦傾斜による浮心移動で生じる。ヒービング・ローリング・ピッチングの⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "左右平行移動のスウェイングには、無係留の静水中で静水圧の復原力は生じない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "上下揺れと縦揺れは合うが、鉛直軸まわりのヨーイングには静水圧による復原力はない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "前後平行移動のサージングには静水圧の復原力がなく、ピッチングが抜けている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "サージングとヨーイングには静水圧の復原力がなく、上下・縦揺れを含む組合せではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "上下揺れ・横揺れ・縦揺れが排水量や浮心位置の変化によって静水圧の復原力を持つ。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q18",
+    "number": 18,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-13.png"
+    ],
+    "sourcePages": [
+      13
+    ],
+    "sourceQuestionNumber": 18,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "密度比から喫水4h/5、BG=h/10。円水線のBM=(πr^4/4)/(πr^2×4h/5)=h/5なのでGM=BM−BG=h/10。④。",
+    "presentation": {
+      "sourceHash": "b1c0abc93180e77118428b0925eafb4b740c19b09983eb1bcecadbe6d7ab7ad9",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－18。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-13.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－18の公式原問（PDF 13ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "b1c0abc93180e77118428b0925eafb4b740c19b09983eb1bcecadbe6d7ab7ad9",
+      "correctChoice": 4,
+      "summary": "密度比から喫水4h/5、BG=h/10。円水線のBM=(πr^4/4)/(πr^2×4h/5)=h/5なのでGM=BM−BG=h/10。④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "7h/10ではない。浮心と重心の差h/10をBM=h/5から差し引いて求める。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "−7h/80ではない。r=4h/5と喫水4h/5を使うとGMは正になる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "BM=h/5はBG=h/10より大きく、中立ではなく正の復原性がある。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "GM=r^2/(4×4h/5)−h/10=h/5−h/10=h/10となる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "11h/10はメタセンターと基準位置の取り違えなどによる過大な値で、重心からの高さではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=13"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q19",
+    "number": 19,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-14.png"
+    ],
+    "sourcePages": [
+      14
+    ],
+    "sourceQuestionNumber": 19,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "深水波の水粒子軌道半径はA exp(ky0)。深さλ/2ではy0=−λ/2、k=2π/λより、表面の半径Aとの比はexp(−π)で③。",
+    "presentation": {
+      "sourceHash": "60a0d0568b92fa637c0a55d323f6693b94910519f15ab05c476a7c7aace562b4",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－19。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-14.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－19の公式原問（PDF 14ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "60a0d0568b92fa637c0a55d323f6693b94910519f15ab05c476a7c7aace562b4",
+      "correctChoice": 3,
+      "summary": "深水波の水粒子軌道半径はA exp(ky0)。深さλ/2ではy0=−λ/2、k=2π/λより、表面の半径Aとの比はexp(−π)で③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "有限の深さでは指数関数的に小さくなるがゼロにはならない。無限深でゼロに近づく。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "exp(−2π)は深さλに対応し、本問の半波長の深さではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "k y0=(2π/λ)(−λ/2)=−πより、円軌道半径の比はexp(−π)。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "exp(−π/2)は深さλ/4に対応する減衰率で、本問の深さと異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "exp(−π/4)では指数の大きさが足りず、k=2π/λと深さλ/2の積に一致しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=14"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q20",
+    "number": 20,
+    "text": "横揺れに対するGM（重心GからメタセンターMまでの距離）が3.0 mである船の横揺れ固有周期が10秒であった。この船の付加慣性モーメントを含んだ場合の慣動半径に最も近い値はどれか。ただし、重力加速度gは9.8 m/s^2、円周率は3.14とする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 20,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "横揺れ周期T=2πk/√(gGM)。付加慣性を含む慣動半径k=10√(9.8×3)/(2×3.14)≒8.63 mとなり③。",
+    "presentation": {
+      "sourceHash": "a1c04ccc836ae81965971515ef8a9a80d8379661f2af9dcb3ef12941e66696f1",
+      "prompt": "横揺れに対するGM（重心GからメタセンターMまでの距離）が3.0 mである船の横揺れ固有周期が10秒であった。この船の付加慣性モーメントを含んだ場合の慣動半径に最も近い値はどれか。ただし、重力加速度gは9.8 m/s^2、円周率は3.14とする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "3.4 m"
+        },
+        {
+          "number": 2,
+          "text": "6.8 m"
+        },
+        {
+          "number": 3,
+          "text": "8.6 m"
+        },
+        {
+          "number": 4,
+          "text": "13.7 m"
+        },
+        {
+          "number": 5,
+          "text": "17.3 m"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a1c04ccc836ae81965971515ef8a9a80d8379661f2af9dcb3ef12941e66696f1",
+      "correctChoice": 3,
+      "summary": "横揺れ周期T=2πk/√(gGM)。付加慣性を含む慣動半径k=10√(9.8×3)/(2×3.14)≒8.63 mとなり③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "3.4 mではなく、周期式を慣動半径について解くと約8.63 mとなる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "6.8 mはT=2πk/√(gGM)を与えられた数値で満たす値ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "k=T√(gGM)/(2π)に代入した値8.63 mに最も近い8.6 mである。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "13.7 mは周期式で慣性と復原力の関係を正しく整理した値ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "17.3 mは正しい値のほぼ2倍であり、周期式の2πをπとした値に相当する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q21",
+    "number": 21,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 21,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは②。船体と舵の干渉で生じる舵力増加を、両者の間隔を大きくすることで増大させるとはいえない。舵面積、揚力特性、流入速度の増加は旋回力を高める。",
+    "presentation": {
+      "sourceHash": "c1ffb4b7c0e02c92b2998383ea12638aa4bf12a8ab9dfab2c30143ef9fed0d9a",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－21。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-15.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－21の公式原問（PDF 15ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c1ffb4b7c0e02c92b2998383ea12638aa4bf12a8ab9dfab2c30143ef9fed0d9a",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。船体と舵の干渉で生じる舵力増加を、両者の間隔を大きくすることで増大させるとはいえない。舵面積、揚力特性、流入速度の増加は旋回力を高める。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "船長×喫水に対する舵面積を大きくすると、舵による旋回モーメントを増す方向に働く。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "船体と舵の間隔を増やせば船体干渉による舵力増加係数が増えるとする因果が逆である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "アスペクト比や端板は誘導損失を減らし、舵の直圧力勾配を増大させる対策となる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "舵面の動圧は流入速度の二乗に比例するので、流入速度を増すと操舵力が増大する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "針路安定性を弱める方向は、一般に旋回応答を良くする方向であり、本問では適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q22",
+    "number": 22,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-15.png"
+    ],
+    "sourcePages": [
+      15
+    ],
+    "sourceQuestionNumber": 22,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは③。1次翼振動成分には主にシートキャビテーションの非定常体積変化が影響し、チップボルテックスは高次成分への寄与が問題になる。",
+    "presentation": {
+      "sourceHash": "40ea35798b698fdf2687b119ec3ac6fa759b78eeaa45d0d664f13beff259fde6",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－22。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-15.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－22の公式原問（PDF 15ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "40ea35798b698fdf2687b119ec3ac6fa759b78eeaa45d0d664f13beff259fde6",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。1次翼振動成分には主にシートキャビテーションの非定常体積変化が影響し、チップボルテックスは高次成分への寄与が問題になる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "各翼の通過に伴う周期性から、翼数×回転数の整数倍の周波数で圧力変動が現れる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "放射される圧力変動は空洞の量だけでなく、非定常の体積変化に強く依存するので適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "チップボルテックスの影響を特に1次成分に結び付けた点が不適切で、シート型との特徴を取り違えている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ハイスキューは翼通過時の荷重変動を分散するが、条件によって高次成分を増す場合もある。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "翼端と船体の距離を大きくすると、近接に伴う船体表面の圧力変動を軽減できる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=15"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q23",
+    "number": 23,
+    "text": "直径0.200 mのプロペラを用いてプロペラ単独試験を行い、スラスト係数KTが前進係数Jの2次関数を用いて次のように表された。\nKT=−0.1J^2−0.2J+0.4\nまた、同じプロペラを用いて自航試験を行った結果、下記のようなデータを得た。\n回転数：10.0 rps\nスラスト係数：0.200\n船速：2.092 m/s\nこのとき、スラスト一致法を用いて求めた有効伴流率に最も近い値はどれか。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-16.png"
+    ],
+    "sourcePages": [
+      16
+    ],
+    "sourceQuestionNumber": 23,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "KT=0.2を単独特性へ代入するとJ^2+2J−2=0、正根J=√3−1≒0.732。前進速度JnD≒1.464 m/s、伴流率1−1.464/2.092≒0.30で②。",
+    "presentation": {
+      "sourceHash": "a064b7365206367124b623ebb6a25b24e8ce521faee84c47a42032ac750c1ac7",
+      "prompt": "直径0.200 mのプロペラを用いてプロペラ単独試験を行い、スラスト係数KTが前進係数Jの2次関数を用いて次のように表された。\nKT=−0.1J^2−0.2J+0.4\nまた、同じプロペラを用いて自航試験を行った結果、下記のようなデータを得た。\n回転数：10.0 rps\nスラスト係数：0.200\n船速：2.092 m/s\nこのとき、スラスト一致法を用いて求めた有効伴流率に最も近い値はどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.25"
+        },
+        {
+          "number": 2,
+          "text": "0.30"
+        },
+        {
+          "number": 3,
+          "text": "0.35"
+        },
+        {
+          "number": 4,
+          "text": "0.40"
+        },
+        {
+          "number": 5,
+          "text": "0.45"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "a064b7365206367124b623ebb6a25b24e8ce521faee84c47a42032ac750c1ac7",
+      "correctChoice": 2,
+      "summary": "KT=0.2を単独特性へ代入するとJ^2+2J−2=0、正根J=√3−1≒0.732。前進速度JnD≒1.464 m/s、伴流率1−1.464/2.092≒0.30で②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.25ではない。スラスト一致の前進係数はJ≒0.732であり、自航船速から伴流率を求める。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "同じKTに対応する前進速度を単独曲線から求め、w=1−JnD/Vに代入すると約0.30。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "0.35は二次式の正根と回転数・直径を用いた前進速度比の結果と一致しない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "0.40ではない。船速2.092 m/sに対する有効前進速度は約1.464 m/sである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "0.45は本問の単独特性に基づくスラスト一致法の有効伴流率より大きい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=16"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q24",
+    "number": 24,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-17.png"
+    ],
+    "sourcePages": [
+      17
+    ],
+    "sourceQuestionNumber": 24,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "μu''=dp/dxを二重積分し、u(0)=0、u(h)=Uを使うとu=(dp/dx)y^2/(2μ)+{U/h−h(dp/dx)/(2μ)}y。④。",
+    "presentation": {
+      "sourceHash": "c1ecd7e89445c39ffd6f86605b5a83a82070d9e61750ba1d9f674ecb29ac9bf0",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－24。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-17.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－24の公式原問（PDF 17ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "c1ecd7e89445c39ffd6f86605b5a83a82070d9e61750ba1d9f674ecb29ac9bf0",
+      "correctChoice": 4,
+      "summary": "μu''=dp/dxを二重積分し、u(0)=0、u(h)=Uを使うとu=(dp/dx)y^2/(2μ)+{U/h−h(dp/dx)/(2μ)}y。④。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "Uy/hは圧力勾配ゼロの純粋なCouette流れだけの式で、圧力による流れを含まない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "二次項だけでは移動壁でu(h)=Uとなる境界条件を満たさない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "圧力勾配による流れだけの形で、移動壁の速度Uを反映した項がない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "運動方程式を満たす二次項と、両壁の速度境界条件を満たす一次項の組合せである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "一次項の圧力勾配の符号が逆であり、y=hの壁面速度がUに一致しない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=17"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q25",
+    "number": 25,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-18.png"
+    ],
+    "sourcePages": [
+      18
+    ],
+    "sourceQuestionNumber": 25,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "円盤の上流はp1+ρ(V+v)^2/2、下流はp1+Δp+ρ(V+v)^2/2。運動量よりT=ρA(V+v)u、圧力差と比較してv=u/2。T=ρ(V+u/2)Auとなり②。",
+    "presentation": {
+      "sourceHash": "40f96599ceecc1ec2ad4f04fec8f517324d1e263a4c4ee1c7bffa449e52ab5c8",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－25。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-18.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－25の公式原問（PDF 18ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "40f96599ceecc1ec2ad4f04fec8f517324d1e263a4c4ee1c7bffa449e52ab5c8",
+      "correctChoice": 2,
+      "summary": "円盤の上流はp1+ρ(V+v)^2/2、下流はp1+Δp+ρ(V+v)^2/2。運動量よりT=ρA(V+v)u、圧力差と比較してv=u/2。T=ρ(V+u/2)Auとなり②。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "Bernoulli式の上流側と下流側は合うが、円盤速度はV−u/2でなくV+u/2、またv=u/2である。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "円盤前後の圧力差、流管の運動量増加、円盤の誘導速度が後流増速の半分という関係すべてに一致。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "円盤上流側へ圧力増分Δpを入れており、上流・下流のBernoulli式が逆になっている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "誘導速度の比2はv=u/2に反するうえ、円盤前後の圧力の対応も逆になっている。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "上流側にも圧力跳躍Δpを足しており、円盤による圧力差の存在を正しく表していない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=18"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q26",
+    "number": 26,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-19.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 26,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは③。揚力面理論は翼の面内の循環分布を扱い、非一様伴流中の非定常プロペラ解析にも拡張される。「解析はできない」という断定が誤り。",
+    "presentation": {
+      "sourceHash": "df164306ea04c9d8891876a9fa1948ddbbccb110259907d202187f23e2979fde",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－26。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-19.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－26の公式原問（PDF 19ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "df164306ea04c9d8891876a9fa1948ddbbccb110259907d202187f23e2979fde",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。揚力面理論は翼の面内の循環分布を扱い、非一様伴流中の非定常プロペラ解析にも拡張される。「解析はできない」という断定が誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "無限翼数モデルは細かな翼形状を平均化するが、推進性能の平均流場解析に役立つ。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "揚力線は翼弦方向を代表線へ縮約するため、翼弦方向の詳細な圧力分布の解析に限界がある。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "揚力面理論で伴流中の非定常解析は可能であり、不能とする部分が不適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "実表面をパネルに分割する揚力体理論・境界要素法では表面圧力分布を直接求められる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "CFDは粘性や尺度、実形状を扱え、キャビテーションの数値シミュレーションも行われる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=19"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q27",
+    "number": 27,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-19.png"
+    ],
+    "sourcePages": [
+      19
+    ],
+    "sourceQuestionNumber": 27,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "液面差は130 mm=0.130 m。差圧Δp=(1000−1.30)g×0.130、動圧ρV^2/2に等しいのでV≒44.2 m/s。最も近い⑤。",
+    "presentation": {
+      "sourceHash": "694363e8139cf6910a57c802844555cf7c83fdbd4677943ebf680a26d4536c0c",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－27。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-19.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－27の公式原問（PDF 19ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "694363e8139cf6910a57c802844555cf7c83fdbd4677943ebf680a26d4536c0c",
+      "correctChoice": 5,
+      "summary": "液面差は130 mm=0.130 m。差圧Δp=(1000−1.30)g×0.130、動圧ρV^2/2に等しいのでV≒44.2 m/s。最も近い⑤。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.06 m/sは液柱差の単位換算と動圧の関係から得られる値より桁違いに小さい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "1.60 m/sではない。130 mmを0.130 mへ換算し、液体と空気の密度差で差圧を求める。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "22.1 m/sは正しい値の約半分で、動圧から速度を解く係数と合わない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "31.3 m/sは動圧の係数1/2を反映しない値に近く、Bernoulli式の結果と異なる。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "V=√{2(1000−1.30)×9.8×0.130/1.30}≒44.2 m/sであり44.3 m/sが最も近い。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=19"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q28",
+    "number": 28,
+    "text": "抵抗試験の解析法である3次元外挿法によると、全抵抗係数Ctm、平板の摩擦抵抗係数Cfm、形状影響係数K、造波抵抗係数Cwの関係は次式で表される。\nCtm=(1+K)Cfm+Cw\n造波抵抗係数Cwがフルード数Fnの4乗に比例する（Cw=aFn^4）と仮定して、形状影響係数Kを求めることを考える。抵抗試験を行った結果、仮定が成り立つことが確認できたので、代表的な値として下表の結果を取り上げた。この結果を用いたとき、Kの値として、最も適切なものはどれか。\nFn^4/Cfm | Ctm/Cfm\n0.23 | 1.246\n0.41 | 1.282",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-20.png"
+    ],
+    "sourcePages": [
+      20
+    ],
+    "sourceQuestionNumber": 28,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "Ctm/Cfm=(1+K)+a(Fn^4/Cfm)。2点から傾きa=(1.282−1.246)/(0.41−0.23)=0.2、切片1.246−0.2×0.23=1.2。K=0.20なので③。",
+    "presentation": {
+      "sourceHash": "cdf8bc478f060e2b9448b2157e43cfed02d711bf4ce8eee40c5746f5b0749535",
+      "prompt": "抵抗試験の解析法である3次元外挿法によると、全抵抗係数Ctm、平板の摩擦抵抗係数Cfm、形状影響係数K、造波抵抗係数Cwの関係は次式で表される。\nCtm=(1+K)Cfm+Cw\n造波抵抗係数Cwがフルード数Fnの4乗に比例する（Cw=aFn^4）と仮定して、形状影響係数Kを求めることを考える。抵抗試験を行った結果、仮定が成り立つことが確認できたので、代表的な値として下表の結果を取り上げた。この結果を用いたとき、Kの値として、最も適切なものはどれか。\nFn^4/Cfm | Ctm/Cfm\n0.23 | 1.246\n0.41 | 1.282",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.16"
+        },
+        {
+          "number": 2,
+          "text": "0.18"
+        },
+        {
+          "number": 3,
+          "text": "0.20"
+        },
+        {
+          "number": 4,
+          "text": "0.22"
+        },
+        {
+          "number": 5,
+          "text": "0.24"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "cdf8bc478f060e2b9448b2157e43cfed02d711bf4ce8eee40c5746f5b0749535",
+      "correctChoice": 3,
+      "summary": "Ctm/Cfm=(1+K)+a(Fn^4/Cfm)。2点から傾きa=(1.282−1.246)/(0.41−0.23)=0.2、切片1.246−0.2×0.23=1.2。K=0.20なので③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "K=0.16は2点で定める直線の切片1.2から1を引いた値にならない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "K=0.18では表の両点と同時に整合する切片・傾きが得られない。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "切片は1+K=1.20。したがって形状影響係数はK=0.20である。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "0.22は横軸値0.23などとの混同であり、求めるのは直線の傾きでなく切片から1を引いた値。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "0.24ではなく、表の直線を横軸ゼロへ外挿すると1.20となるためK=0.20。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=20"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q29",
+    "number": 29,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-21.png"
+    ],
+    "sourcePages": [
+      21
+    ],
+    "sourceQuestionNumber": 29,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは②。操作部に指令するのは検出部でなく調節部。検出値を目標値と比較し、制御偏差から調節部が操作部への信号を計算する。",
+    "presentation": {
+      "sourceHash": "53e20d78cdfb4818a15c26082da8f9b74cf20bfa99d94436e547fae316fd10d8",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－29。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-21.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－29の公式原問（PDF 21ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "53e20d78cdfb4818a15c26082da8f9b74cf20bfa99d94436e547fae316fd10d8",
+      "correctChoice": 2,
+      "summary": "不適切なのは②。操作部に指令するのは検出部でなく調節部。検出値を目標値と比較し、制御偏差から調節部が操作部への信号を計算する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "目標値と検出値の偏差に応じた信号を出す調節部の役割を正しく説明している。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "弁・送風機などの操作部は調節部の出力で動くため、「検出部からの信号」が誤りである。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "ボイラが制御対象、ボイラ圧力が制御量という対応はフィードバック制御系の説明に合う。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "負荷変化が蒸気圧を変える外乱となるので、制御対象に対する外的作用の説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "蒸気圧を検出して電気信号に変換する検出部の働きを適切に説明している。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=21"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q30",
+    "number": 30,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-22.png"
+    ],
+    "sourcePages": [
+      22
+    ],
+    "sourceQuestionNumber": 30,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは③。剥離損失を抑えBernoulli式に近い扱いがしやすいのは滑らかな絞りと拡大部を持つVenturi管。オリフィスだけで成立するとする説明は誤り。",
+    "presentation": {
+      "sourceHash": "ae61e0dd610560f9c5563be72a3b569623fed9473ca24b92b7e7bb30a23ef8dd",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－30。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-22.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－30の公式原問（PDF 22ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "ae61e0dd610560f9c5563be72a3b569623fed9473ca24b92b7e7bb30a23ef8dd",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。剥離損失を抑えBernoulli式に近い扱いがしやすいのは滑らかな絞りと拡大部を持つVenturi管。オリフィスだけで成立するとする説明は誤り。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "熱膨張率の異なる金属を貼り合わせたバイメタルの曲がりを利用する原理と用途は正しい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "液柱の静水圧と測る圧力を釣り合わせる液柱式の原理で、U字管は代表例である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "オリフィスは急な絞りで剥離・損失を伴い、滑らかな拡大部で剥離を抑えたVenturi管と取り違えている。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "導電性のロータ表面との距離変化を渦電流の変化で検出する非接触振動計の説明は適切。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "予測値、ばらつき、繰返し性・再現性、既知入力との比較は測定の妥当性の確認に役立つ。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=22"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q31",
+    "number": 31,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-23.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 31,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "管径が等しく速度水頭差はゼロ。水動力はQ{p2−p1+ρg(z2−z1)}=0.1(650000+19600)=66.96 kW。軸出力は66.96/0.8=83.7 kWで、最も近い①。",
+    "presentation": {
+      "sourceHash": "f5fc8660d8b0d764fbf3bc8b16f85b39a10e1ce736b1cb430901f43df89c47cb",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－31。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-23.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－31の公式原問（PDF 23ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "f5fc8660d8b0d764fbf3bc8b16f85b39a10e1ce736b1cb430901f43df89c47cb",
+      "correctChoice": 1,
+      "summary": "管径が等しく速度水頭差はゼロ。水動力はQ{p2−p1+ρg(z2−z1)}=0.1(650000+19600)=66.96 kW。軸出力は66.96/0.8=83.7 kWで、最も近い①。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "差圧650 kPaと位置差2 mの水頭を加算し、効率0.8で割った83.7 kWに最も近い83.6 kW。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "81.3 kWはほぼ差圧分だけを効率で割った値。吐出側が2 m高い位置水頭も必要である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "77.4 kWは位置水頭を逆符号に扱うなどした値で、吐出側の高さを加算するエネルギー式と合わない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "71.1 kWは水動力66.96 kWを効率0.8で割った軸出力に一致しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "66.9 kWは流体に与えられる水動力に近い。軸出力は効率損失を含むためそれより大きい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=23"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q32",
+    "number": 32,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-23.png"
+    ],
+    "sourcePages": [
+      23
+    ],
+    "sourceQuestionNumber": 32,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは⑤。ガスタービンは往復機関より摺動部が少なく、摩耗や保守の点で利点がある。摺動部が少ないのに摩耗が多く保守が容易でないとする一般論が逆。",
+    "presentation": {
+      "sourceHash": "3f22b6864e5774404a7106edce5f73f2fef9564fc4f0e83b08b47825c06137fd",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－32。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-23.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－32の公式原問（PDF 23ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "3f22b6864e5774404a7106edce5f73f2fef9564fc4f0e83b08b47825c06137fd",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。ガスタービンは往復機関より摺動部が少なく、摩耗や保守の点で利点がある。摺動部が少ないのに摩耗が多く保守が容易でないとする一般論が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "燃焼器を缶形・カンニュラ形・アンニュラ形に分類する説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "連続流で大きなガス流量を扱えるので、大出力化に有利という特徴は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "高温耐熱材料や高度な加工を要し、小中出力域の価格が高くなりやすいという説明は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "高速の連続流を利用するため、単位出力当たりの重量・容積が小さいという特徴は正しい。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "往復摺動部が少ないことは摩耗を減らし保守を容易にする側の特徴であり、本肢の結論が逆。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=23"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q33",
+    "number": 33,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-24.png"
+    ],
+    "sourcePages": [
+      24
+    ],
+    "sourceQuestionNumber": 33,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは⑤。入口温度一定で入口圧力だけを上げても比仕事が単調に増えるとは限らない。高圧化による効率の変化と、熱落差・湿り度・材料制約を区別する。",
+    "presentation": {
+      "sourceHash": "08378de0e3b8e5c1342f2d191263407e3768d1cb5de40571b0b71ce8c508e941",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－33。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-24.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－33の公式原問（PDF 24ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "08378de0e3b8e5c1342f2d191263407e3768d1cb5de40571b0b71ce8c508e941",
+      "correctChoice": 5,
+      "summary": "不適切なのは⑤。入口温度一定で入口圧力だけを上げても比仕事が単調に増えるとは限らない。高圧化による効率の変化と、熱落差・湿り度・材料制約を区別する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "復水圧を下げるには凝縮温度も下がり、利用可能な冷却水温度が下限を制約するという説明は適切。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "初圧のみ上げると耐圧設計が必要となり、出口湿り度の増大による低圧翼の壊食が問題となる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "初温上昇は平均受熱温度を高め、同条件での出口湿り度低下にも寄与するという傾向は適切。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "低圧側で終圧を下げるとタービンの利用できる断熱熱落差が増し、仕事を増やす効果がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "初圧だけを際限なく高くすれば比仕事も必ず増えるという単調な関係はなく、この断定が不適切。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=24"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q34",
+    "number": 34,
+    "text": "2024年度 船舶・海洋部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-24.png"
+    ],
+    "sourcePages": [
+      24
+    ],
+    "sourceQuestionNumber": 34,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "不適切なのは③。過給は空気充填量を増やし対応する燃料を燃やすことで、機関の単位重量当たり出力を増すために行う。「低下」が逆。",
+    "presentation": {
+      "sourceHash": "07da7b3019e55af3ac19011818b6834d87fdd07cd7a70d2dfcb3ed77c6e14dfc",
+      "prompt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－34。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "①"
+        },
+        {
+          "number": 2,
+          "text": "②"
+        },
+        {
+          "number": 3,
+          "text": "③"
+        },
+        {
+          "number": 4,
+          "text": "④"
+        },
+        {
+          "number": 5,
+          "text": "⑤"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-marine-2024/page-24.png",
+          "width": 1073,
+          "height": 1517,
+          "alt": "2024年度 船舶・海洋部門 専門科目 Ⅲ－34の公式原問（PDF 24ページ）。当該番号の問題文・全選択肢・図表を確認してください。"
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "07da7b3019e55af3ac19011818b6834d87fdd07cd7a70d2dfcb3ed77c6e14dfc",
+      "correctChoice": 3,
+      "summary": "不適切なのは③。過給は空気充填量を増やし対応する燃料を燃やすことで、機関の単位重量当たり出力を増すために行う。「低下」が逆。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "4ストロークが2往復、2ストロークが1往復で1サイクルを行うという分類は正しい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "2ストロークが2行程で各過程を行い、吸気と排気の重なる過程を掃気と呼ぶ説明は適切。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "過給による空気・燃料の増量は出力密度を増す方向で、単位重量当たり出力が低下するとする点が誤り。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "重油を用いる大型舶用機関や、ガス燃料・パイロット着火などを使うLNG燃料機関は存在する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "大型舶用低速の2ストローク圧縮点火機関という用途の説明は適切である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=24"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pe-first-marine-2024-q35",
+    "number": 35,
+    "text": "燃料の燃焼に関し空気過剰率λを求める問題である。重量比率で炭素（C）84.0[%]、水素（H）12.0[%]、酸素（O）3.5[%]、硫黄（S）0.5[%]の燃料1.0[kg]を燃焼させるために、16.0[kg]の空気を投入した。このときの空気過剰率の値はどれか。\nただし、この空気には水分を含まない。空気中の酸素の重量比率は23.3[%]とする。また、原子量は炭素12、水素1、硫黄32、及び酸素16とする。",
+    "images": [
+      "/exam-library/pe-first-marine-2024/page-25.png"
+    ],
+    "sourcePages": [
+      25
+    ],
+    "sourceQuestionNumber": 35,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4",
+    "explanation": "必要酸素は(32/12)×0.84+8×0.12+0.005−0.035=3.17 kg。理論空気量3.17/0.233≒13.605 kg、空気過剰率16/13.605≒1.176で③。",
+    "presentation": {
+      "sourceHash": "68a9d169747c145216d50c1e1580e7dccf762bc02ef187ef775638c315c95f50",
+      "prompt": "燃料の燃焼に関し空気過剰率λを求める問題である。重量比率で炭素（C）84.0[%]、水素（H）12.0[%]、酸素（O）3.5[%]、硫黄（S）0.5[%]の燃料1.0[kg]を燃焼させるために、16.0[kg]の空気を投入した。このときの空気過剰率の値はどれか。\nただし、この空気には水分を含まない。空気中の酸素の重量比率は23.3[%]とする。また、原子量は炭素12、水素1、硫黄32、及び酸素16とする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.68"
+        },
+        {
+          "number": 2,
+          "text": "1.06"
+        },
+        {
+          "number": 3,
+          "text": "1.18"
+        },
+        {
+          "number": 4,
+          "text": "1.51"
+        },
+        {
+          "number": 5,
+          "text": "7.21"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "68a9d169747c145216d50c1e1580e7dccf762bc02ef187ef775638c315c95f50",
+      "correctChoice": 3,
+      "summary": "必要酸素は(32/12)×0.84+8×0.12+0.005−0.035=3.17 kg。理論空気量3.17/0.233≒13.605 kg、空気過剰率16/13.605≒1.176で③。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.68は元素の酸素収支から得た理論空気量約13.605 kgと供給量16 kgの比に合わない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "1.06ではない。炭素だけでなく水素・硫黄の酸素消費と、燃料中酸素の寄与も含めて計算する。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "炭素・水素・硫黄に必要な酸素から含有酸素を引き、理論空気量を求めた比は約1.18。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1.51は理論酸素量3.17 kgを酸素質量分率0.233で空気量に直した結果と一致しない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "7.21は供給空気量と理論空気量の比ではなく、空気と酸素の換算を正しく行っていない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_4.pdf#page=25"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=4"
+        }
+      ]
+    }
+  }
+]
