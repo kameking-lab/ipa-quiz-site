@@ -1,0 +1,458 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "biru-kan",
+  "year": 2025,
+  "subject": "am",
+  "expectedFullQualificationCount": 360,
+  "questions": [
+    {
+      "id": "biru-kan-2025-am-023",
+      "printedNumber": "23",
+      "questionNumber": 23,
+      "questionText": "一般環境、労働環境に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "一般環境の大気、水質、騒音、土壌等に対して、環境基準が定められている。",
+        "2": "学校における環境衛生の基準は、学校保健安全法で定められている。",
+        "3": "許容濃度における曝露濃度とは、呼吸用保護具を装着している状態で、労働者が作業中に吸入するであろう空気中の当該物質の濃度である。",
+        "4": "最大許容濃度とは、作業中のどの時間をとっても曝露濃度がこの数値以下であれば、ほとんど全ての労働者に健康上の悪い影響がみられないと判断される濃度である。",
+        "5": "労働環境においては、曝露時間が短い、あるいは労働強度が弱い場合でも、許容濃度を超える曝露は避けるべきである。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。許容濃度の定義と、保護具着用後の吸気濃度を扱う別の制度を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。環境基本法に基づいて環境基準が設定されます。",
+        "2": "適当です。学校保健安全法第6条を根拠として学校環境衛生基準が定められています。",
+        "3": "不適当です。日本産業衛生学会の許容濃度の定義では、呼吸用保護具を装着していない状態で吸入する空気中の濃度を指します。",
+        "4": "適当です。最大許容濃度は、時間加重平均ではなく作業中のどの時点でも超えないことを想定する値です。",
+        "5": "適当です。短時間や軽作業であることを理由に、許容濃度超過を容認するものではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 11,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題23。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-024",
+      "printedNumber": "24",
+      "questionNumber": 24,
+      "questionText": "体温調節に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "寒冷環境では、温暖環境に比較して、体内と身体表層部との温度差が小さくなる。",
+        "2": "平均皮膚温の算出式であるHardy-DuBoisの7点法で、皮膚温の重みづけが一番大きいのは、腹である。",
+        "3": "皮膚の血管の収縮・拡張や発汗、ふるえは、自律性体温調節である。",
+        "4": "低温の環境では、熱産生量は増加する。",
+        "5": "核心温は、身体表面の温度に比べて、外気温の影響を受けにくい。"
+      },
+      "officialAnswer": 1,
+      "explanation": "正答は1です。寒冷下では身体の表層から熱を逃がさない調節と産熱の増加が起こります。",
+      "choiceExplanations": {
+        "1": "不適当です。寒冷下では皮膚血管が収縮して表層部の温度が下がり、核心部との温度差は大きくなります。",
+        "2": "適当です。7点法の重みは腹が0.35で最大です。",
+        "3": "適当です。意識的に衣服を調整する行動性調節に対し、生理反応による自律性調節に当たります。",
+        "4": "適当です。ふるえや代謝の増進等によって産熱が増えます。",
+        "5": "適当です。核心温は恒常性によって比較的安定に保たれ、皮膚温ほど外気に左右されません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 11,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題24。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-025",
+      "printedNumber": "25",
+      "questionNumber": 25,
+      "questionText": "温熱環境指数に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "黒球温度は、熱放射と対流に関わる温度の測定に用いられる。",
+        "2": "湿球黒球温度（WBGT）は、屋内外における暑熱作業時の暑熱ストレスを評価するために使用されている。",
+        "3": "有効温度は、湿度100%で無風の部屋の気温に等価な環境として表す主観的経験指数である。",
+        "4": "標準新有効温度は、気温、湿度、風速、熱放射、着衣量、代謝量の6要素を含んだ温熱環境の指標である。",
+        "5": "不快指数は、気温に関係なく用いられる指標である。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。温熱指標によって取り込む要素が異なります。不快指数にも気温が用いられます。",
+      "choiceExplanations": {
+        "1": "適当です。黒球は周囲の放射と空気との対流の両方の影響を受けます。",
+        "2": "適当です。WBGTは暑熱環境による熱ストレスの評価に用いる指標です。",
+        "3": "適当です。有効温度は等しい温冷感を与える標準状態の気温として表す指標です。",
+        "4": "適当です。SET*は環境4要素に人体側の着衣・代謝の2要素を加味します。",
+        "5": "不適当です。不快指数は気温と湿度から計算されるため、気温に関係しない指標ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題25。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.wbgt.env.go.jp/sp/doc_observation.php"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-026",
+      "printedNumber": "26",
+      "questionNumber": 26,
+      "questionText": "体温調節に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "快適温度は、一般的に男性に比べて女性で数度高い。",
+        "2": "高齢者における、寒冷による血圧の変動は若年者と比較して少ない。",
+        "3": "着衣の保温性を表す量として、クロ値（clo）がある。",
+        "4": "蒸発は、水分が皮膚より気化するときに潜熱で皮膚表面の熱を奪う現象である。",
+        "5": "女性の核心温は、ホルモンによって周期的に影響を受ける。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。高齢者では寒冷への循環調節の負担が大きくなります。保温性のcloと代謝量のmetは別の指標です。",
+      "choiceExplanations": {
+        "1": "適当です。一般に女性の温冷感では男性より高めの温度が好まれる傾向があります。着衣や活動量などの条件にも左右されます。",
+        "2": "不適当です。高齢者は寒冷に伴う血圧変動が大きくなりやすく、循環器への負担に注意します。",
+        "3": "適当です。cloは衣服の熱抵抗を表す単位です。",
+        "4": "適当です。汗が蒸発するときの気化熱により、身体から熱が失われます。",
+        "5": "適当です。排卵後の黄体ホルモン等の作用で基礎体温に周期的な変動が生じます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題26。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-027",
+      "printedNumber": "27",
+      "questionNumber": 27,
+      "questionText": "アレルギーに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "学校保健安全法において、ダニ又はダニアレルゲンに関する基準が定められている。",
+        "2": "建築物衛生の観点から、換気や清掃等の対策が重要である。",
+        "3": "アレルゲンの同定は、症状発生の予防、治療の上で重要である。",
+        "4": "アレルゲンは、免疫グロブリンと呼ばれるたん白質である。",
+        "5": "国民の5割程度が、何らかのアレルギー疾患に罹患しているとされる。"
+      },
+      "officialAnswer": 4,
+      "explanation": "正答は4です。アレルゲンである抗原と、それに反応するIgE等の抗体を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。同法に基づく学校環境衛生基準にダニ等の項目があります。",
+        "2": "適当です。換気や清掃等で室内の抗原への曝露を減らすことが重要です。",
+        "3": "適当です。原因となる抗原を把握することが回避や治療方針に役立ちます。",
+        "4": "不適当です。アレルゲンは反応を引き起こす抗原です。免疫グロブリンは抗体であり、両者を同一視できません。",
+        "5": "適当です。試験当時のアレルギー疾患対策の資料では、約2人に1人とされます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題27。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mext.go.jp/a_menu/kenko/hoken/1353625.htm"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-028",
+      "printedNumber": "28",
+      "questionNumber": 28,
+      "questionText": "ヒトの発がんに関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "ヒトのがんの3分の2以上は、食事や喫煙等の生活環境に関わる要因が原因とされる。",
+        "2": "日光を浴びることが、発がんの原因となることがある。",
+        "3": "細胞の増殖を促進する物質は、イニシエータである。",
+        "4": "発がん促進因子を減らし、抑制因子を増やすことにより、発がんリスクを低下させることができる。",
+        "5": "建築物の空気中に存在しうる発がん物質からの曝露を抑えることは、がんの一次予防となる。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。多段階発がんでは開始に関わるイニシエーションと、変異細胞の増殖を促すプロモーションを区別します。",
+      "choiceExplanations": {
+        "1": "適当です。本問では食事や喫煙等を含む広い生活環境要因が発がんに大きく関与するという説明です。割合は集団や要因の定義で変わります。",
+        "2": "適当です。日光に含まれる紫外線は皮膚がん等のリスク因子です。",
+        "3": "不適当です。増殖を促すのはプロモータです。イニシエータはDNAの損傷等により発がんの開始に関わります。",
+        "4": "適当です。喫煙などのリスク因子を減らすことが予防につながります。",
+        "5": "適当です。発がん因子への曝露低減により発症自体を防ぐ対策は一次予防です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題28。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.fsc.go.jp/yougoshu/kensaku_dokusei.html"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-029",
+      "printedNumber": "29",
+      "questionNumber": 29,
+      "questionText": "シックビル症候群に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "仕事のストレスは、発症の危険因子である。",
+        "2": "症状とその原因の因果関係は、必ずしも明確でない。",
+        "3": "特異的な症状はなく、多様な症状を呈する。",
+        "4": "アトピー体質は、発症の危険因子である。",
+        "5": "目やのどの刺激やくしゃみ等の症状は、加湿により増加する。"
+      },
+      "officialAnswer": 5,
+      "explanation": "正答は5です。シックビル症候群では空気環境と個人・心理的要因が複合して関わります。加湿により一律に症状が増えるという説明は誤りです。",
+      "choiceExplanations": {
+        "1": "適当です。心理社会的な要因も症状の発現に関係します。",
+        "2": "適当です。単一の原因物質と症状の因果関係が特定できない場合があります。",
+        "3": "適当です。眼・鼻・喉の刺激、頭痛、疲労感等、多様な非特異的症状が見られます。",
+        "4": "適当です。アレルギー素因は症状が起きやすくなる要因の一つです。",
+        "5": "不適当です。乾燥による粘膜刺激等には適切な加湿が軽減につながります。ただし過剰な加湿や汚染した加湿器は別の問題を生じるため、適正な管理が必要です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 13,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題29。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-033",
+      "printedNumber": "33",
+      "questionNumber": 33,
+      "questionText": "騒音とその影響に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "騒音による健康影響は、年齢や生活習慣等による複合的な要因によっても変化する。",
+        "2": "夜間騒音レベルが20dB程度で、実質的な生理学的影響が生じる。",
+        "3": "騒音によって起こる4,000Hz付近の聴力低下を、C⁵ディップという。",
+        "4": "一定時間内の騒音レベルは、等価騒音レベル（騒音レベルの測定時間内における平均値）によって評価する。",
+        "5": "騒音性難聴では、次第に高周波域から低周波域へ聴力低下が広がっていく。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。夜間騒音の影響と、職場の騒音による聴力障害を区別します。等価騒音レベルの平均はエネルギー平均です。",
+      "choiceExplanations": {
+        "1": "適当です。騒音のレベルだけでなく、年齢や背景因子等が影響します。",
+        "2": "不適当です。20dB程度で実質的な生理学的影響が生じるとする説明は、夜間騒音の一般的な評価に合いません。個人差を無視した絶対的な無影響の保証ではありません。",
+        "3": "適当です。4kHz付近に特徴的な聴力低下が現れます。",
+        "4": "適当です。ただし等価騒音レベルはdB値の単純な算術平均ではなく、音のエネルギーを時間平均して表します。",
+        "5": "適当です。初期の高い周波数の障害から、進行すると会話域など低い周波数にも影響が広がります。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題33。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-034",
+      "printedNumber": "34",
+      "questionNumber": 34,
+      "questionText": "振動に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "都市部における全身振動の振動源には、建設機械、道路交通、工場等がある。",
+        "2": "バスやフォークリフトで知覚される振動は局所振動である。",
+        "3": "ヒトにおける振動の知覚は、全身に分布する知覚神経末端受容器によってなされる。",
+        "4": "1秒間の振動回数を周波数といい、単位はHzである。",
+        "5": "局所振動による末梢の循環障害の誘因の一つに寒冷がある。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。手腕に伝わる局所振動と、座席・床から身体全体に伝わる全身振動を区別します。",
+      "choiceExplanations": {
+        "1": "適当です。これらの振動が地盤や建物、座席等を通して全身に伝わります。",
+        "2": "不適当です。車両の座席等から身体全体へ伝わる振動は全身振動です。工具を握る手などに伝わる局所振動と区別します。",
+        "3": "適当です。皮膚等にある機械的刺激の受容器を通じて振動を知覚します。",
+        "4": "適当です。毎秒1回の振動が1Hzです。",
+        "5": "適当です。寒冷による血管収縮が白指等の症状を誘発しやすくします。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題34。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-035",
+      "printedNumber": "35",
+      "questionNumber": 35,
+      "questionText": "光の色の知覚と色の感覚の効果に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "目が受け取った刺激によって生じる感覚が、視覚である。",
+        "2": "視細胞のうち、錐体細胞は角膜に、杆体細胞は網膜に、それぞれ存在する。",
+        "3": "暗い場所や明るい場所に合わせて目の感度が変化することを、順応という。",
+        "4": "暗順応に要する時間は明順応よりも長い。",
+        "5": "危険・注意等の警告のために実施される配色を、識別配色という。"
+      },
+      "officialAnswer": 2,
+      "explanation": "正答は2です。色覚に関与する錐体と、暗所での視覚に重要な杆体は、どちらも網膜の視細胞です。",
+      "choiceExplanations": {
+        "1": "適当です。眼に入った光の刺激が神経系で処理され、視覚が生じます。",
+        "2": "不適当です。錐体細胞も杆体細胞も網膜にあります。角膜は光を通し屈折させる部分です。",
+        "3": "適当です。周囲の明るさに応じて感度が変化するのが順応です。",
+        "4": "適当です。暗所で十分な感度を得るまでには明順応より長い時間が必要です。",
+        "5": "適当です。危険や注意などの情報を色で識別しやすくする配色です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題35。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "biru-kan-2025-am-036",
+      "printedNumber": "36",
+      "questionNumber": 36,
+      "questionText": "情報機器作業と健康に関する次の記述のうち、最も不適当なものはどれか。",
+      "choices": {
+        "1": "情報機器作業とは、パソコン等情報機器を使用して行う作業をいう。",
+        "2": "パソコンを使用する際の姿勢は、頭の位置と手の位置が極端に制限され、これを「拘束性」という。",
+        "3": "情報機器作業者が訴える自覚症状で、最も多いのは首や肩のこりである。",
+        "4": "情報機器作業において、最も重要な健康障害因子は作業時間である。",
+        "5": "ディスプレイを用いる場合の書類上及びキーボード上における照度は、300lx以上とする。"
+      },
+      "officialAnswer": 3,
+      "explanation": "正答は3です。眼の疲労や筋骨格系への負担を防ぐため、照明・姿勢・作業時間を合わせて管理します。",
+      "choiceExplanations": {
+        "1": "適当です。パソコン、タブレット等を使用する作業が対象です。",
+        "2": "適当です。画面と入力機器の配置により姿勢が制約される特徴があります。",
+        "3": "不適当です。代表的な調査では眼の疲れ・痛みが最も多く、首や肩の症状がそれに続きます。",
+        "4": "適当です。長時間・連続した作業が負担を増やすため、作業時間の管理と休止が重要です。",
+        "5": "適当です。情報機器作業のガイドラインは書類・キーボード上を300lx以上とする目安を示します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025shiken_am.pdf",
+      "sourceQuestionPage": 14,
+      "sourceAnswerUrl": "https://www.jahmec.or.jp/kokka/shiken_pdf/2025/2025kizyun_seitou.pdf",
+      "sourceAnswerPage": 1,
+      "sourceQuestionSha256": "0947f24245ec6ebd75654824605f426429634c17b4ca8f9d0e7d92388752ba40",
+      "sourceAnswerSha256": "587f114205af05d4776f241af9a822bff5caa70bae5178f13ad6c948d8ac4088",
+      "sourceAttribution": "出典：公益財団法人日本建築衛生管理教育センター 第55回（2025年）建築物環境衛生管理技術者試験 問題36。改行・空白・句読点及び単位表記を整理。組合せ表は列名付きテキストで表現。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/anzen/08/02.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00tc6314&dataType=1"
+      ],
+      "transcription": "Two saved OCR passes compared against rendered official page; line wraps, spacing and punctuation normalized; combination tables preserved as labeled text; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4d-20261104/independent-review3.md",
+        "scope": "PARTIAL_BATCH_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}
