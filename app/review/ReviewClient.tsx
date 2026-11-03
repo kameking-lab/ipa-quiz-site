@@ -2,7 +2,8 @@
 import { NativeBReview } from "./NativeBReview";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
-import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -13,7 +14,7 @@ import { readLastQuestion } from "@/lib/storage/last-question";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
-import type { Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { quizBackHref } from "@/lib/questions/practice-session";
 import { LS_KEYS } from "@/lib/storage/keys";
 
@@ -343,8 +344,12 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               onClick={() => setShowAnswer(true)}
               className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-left text-sm hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-700 dark:hover:border-sky-600 dark:hover:bg-sky-950/30"
             >
-              <span className="font-medium">{key}</span>
+              <span className="font-medium">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</span>
               <span className="ml-2">{value}</span>
+              {q.choiceImageUrls?.[key as ChoiceKey] && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={q.choiceImageUrls[key as ChoiceKey]} alt={choiceImageAlt(q.exam, key as ChoiceKey) ?? `${value}の図`} className="mt-3 h-auto max-h-44 max-w-full rounded border border-border bg-white p-2" loading="lazy" />
+              )}
             </button>
           ))}
         </div>
@@ -362,7 +367,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
                 正解: {correctAnswer}
               </div>
               <p className="text-sm leading-relaxed text-emerald-700 dark:text-emerald-400">
-                {q.explanation}
+                {displayQuestionExplanation(q.exam, q.explanation)}
               </p>
               {nextInterval && (
                 <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-500">
