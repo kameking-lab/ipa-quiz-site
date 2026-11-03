@@ -203,7 +203,7 @@
     "answerAuthority": "official",
     "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_8.pdf",
     "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=19",
-    "explanation": "公式正答は1。直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10−6Fより約3183Hz。",
+    "explanation": "公式正答は1。直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10^(-6)Fより約3183Hz。",
     "presentation": {
       "sourceHash": "0c4c68c6ea558a8899d39e31e606dbe933898c7d4575e78bd9294450c96af2c3",
       "prompt": "2024年度 応用理学部門 専門科目 Ⅲ－3。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
@@ -241,17 +241,17 @@
     "choiceExplanation": {
       "sourceHash": "0c4c68c6ea558a8899d39e31e606dbe933898c7d4575e78bd9294450c96af2c3",
       "correctChoice": 1,
-      "summary": "公式正答は1。直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10−6Fより約3183Hz。",
+      "summary": "公式正答は1。直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10^(-6)Fより約3183Hz。",
       "choices": [
         {
           "number": 1,
           "verdict": "correct",
-          "reason": "直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10−6Fより約3183Hz。"
+          "reason": "直列共振はf=1/(2π√LC)で、L=0.005H、C=0.5×10^(-6)Fより約3183Hz。"
         },
         {
           "number": 2,
           "verdict": "incorrect",
-          "reason": "LCの平方根は5×10−5秒で、2πを含めると約3.2kHzになる。"
+          "reason": "LCの平方根は5×10^(-5)秒で、2πを含めると約3.2kHzになる。"
         },
         {
           "number": 3,
@@ -1425,7 +1425,7 @@
     "answerAuthority": "official",
     "originalPdf": "https://www.engineer.or.jp/c_topics/010/attached/attach_10607_8.pdf",
     "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf#page=19",
-    "explanation": "公式正答は3。1kgf/cm²=9.80665/(10−4)Pa=9.80665×10⁴Paで、原文は二桁小さい。",
+    "explanation": "公式正答は3。1kgf/cm²=9.80665/(10^(-4))Pa=9.80665×10⁴Paで、原文は二桁小さい。",
     "presentation": {
       "sourceHash": "c252bd417bf91ab8d86bd2e5a42c7e79c5dfab83ed68c46c9c75e571934d49c3",
       "prompt": "2024年度 応用理学部門 専門科目 Ⅲ－16。下の公式原問画像の当該番号に解答してください。同じページにある別の設問は対象外です。",
@@ -1463,7 +1463,7 @@
     "choiceExplanation": {
       "sourceHash": "c252bd417bf91ab8d86bd2e5a42c7e79c5dfab83ed68c46c9c75e571934d49c3",
       "correctChoice": 3,
-      "summary": "公式正答は3。1kgf/cm²=9.80665/(10−4)Pa=9.80665×10⁴Paで、原文は二桁小さい。",
+      "summary": "公式正答は3。1kgf/cm²=9.80665/(10^(-4))Pa=9.80665×10⁴Paで、原文は二桁小さい。",
       "choices": [
         {
           "number": 1,
@@ -1478,7 +1478,7 @@
         {
           "number": 3,
           "verdict": "correct",
-          "reason": "1kgf/cm²=9.80665/(10−4)Pa=9.80665×10⁴Paで、原文は二桁小さい。"
+          "reason": "1kgf/cm²=9.80665/(10^(-4))Pa=9.80665×10⁴Paで、原文は二桁小さい。"
         },
         {
           "number": 4,

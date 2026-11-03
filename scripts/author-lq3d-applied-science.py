@@ -1,5 +1,6 @@
 """Page-checked applied-science explanations."""
 import json
+import re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 ROWS='''
@@ -46,5 +47,8 @@ for line in ROWS.strip().splitlines():
     assert len(reasons)==5 and min(map(len,reasons))>=15,(n,reasons)
     out.append(dict(number=n,page=int(p),answer=a,summary=f'公式正答は{a}。'+reasons[a-1],reasons=reasons))
 assert len(out)==35
+for q in out:
+    q['reasons']=[re.sub(r'10−(\d+)',r'10^(-\1)',r) for r in q['reasons']]
+    q['summary']=f"公式正答は{q['answer']}。"+q['reasons'][q['answer']-1]
 dest=ROOT/'reports/LQ3D-20261104/manuscripts/pe-first-applied-science-2024.json'
 dest.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
