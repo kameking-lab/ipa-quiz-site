@@ -42,6 +42,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "khk-kagaku",
+    shortName: "高圧ガス製造保安責任者（化学）",
+    fullName: "高圧ガス製造保安責任者 甲種化学・乙種化学・丙種化学（液石）・丙種化学（特別）",
+    domain: "safety",
+    administrator: "高圧ガス保安協会 試験センター",
+    officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
+    officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
+    status: "ready-to-ingest",
+    reuseSummary: "オーナー決定2026-11-04 06:10に基づき収録対象。直近の実施済み令和7・6年度について、公式28PDFとSHA256、422原問の機械抽出下書き、択一410問の公式正答番号を未公開資料として保存。本文・数式・共通設例・図の原本照合と独自解説は未完了。演習問題の登録・公開は未実施。",
+    attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
+    remainingWork: ["422原問の問題文・全選択肢・数式・共通設例の原本照合", "択一410問の全選択肢解説と記述12問の独自解説", "必要図の切り出し・hasImageの設定", "演習用データ・登録・ルーティングの実装と非公開確認"],
+  },
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
