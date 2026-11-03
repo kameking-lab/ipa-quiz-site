@@ -74,5 +74,6 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: true
+        # Upload only. No TestFlight beta distribution; the owner tests on device after release.
+        submit_to_testflight: false
         submit_to_app_store: false
