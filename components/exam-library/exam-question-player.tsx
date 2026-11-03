@@ -61,7 +61,6 @@ import {
   saveExamProgress,
   subscribeExamProgress,
   summarizeExamProgress,
-  wrongQuestionIds,
   type ExamSessionAnswers,
 } from "@/lib/exam-library-progress";
 
@@ -76,13 +75,15 @@ interface ExamQuestionPlayerProps {
   questions: readonly ExamQuestion[];
   questionIndex?: readonly PaperQuestionIndex[];
   resolveQuestion?: (id: string, signal: AbortSignal) => Promise<ExamQuestion>;
+  resolveResults?: (answers: {id:string;choice:number|null;proof?:string}[], signal:AbortSignal) => Promise<{id:string;choice:number|null;result:"correct"|"incorrect"|"unscored"}[]>;
   /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
   noteLinks?: readonly ExamNoteLink[];
 }
 
-type AnswerStatus = ReturnType<typeof answerResult>;
+type AnswerStatus = ReturnType<typeof answerResult> | "pending";
 
 const STATUS_LABEL: Record<AnswerStatus, string> = {
+  pending: "採点確認待ち",
   correct: "正解",
   incorrect: "不正解",
   unscored: "回答済み・採点なし",
@@ -90,6 +91,7 @@ const STATUS_LABEL: Record<AnswerStatus, string> = {
 };
 
 const STATUS_MARK: Record<AnswerStatus, string> = {
+  pending: "待",
   correct: "正",
   incorrect: "誤",
   unscored: "済",
@@ -97,6 +99,7 @@ const STATUS_MARK: Record<AnswerStatus, string> = {
 };
 
 const STATUS_CELL_CLASS: Record<AnswerStatus, string> = {
+  pending: "border-slate-400 bg-slate-50 text-slate-700",
   correct:
     "border-emerald-800 bg-emerald-50 text-emerald-950 dark:border-emerald-300 dark:bg-emerald-950/50 dark:text-emerald-50",
   incorrect:
@@ -148,6 +151,7 @@ export function ExamQuestionPlayer({
   questions: sourceQuestions,
   questionIndex,
   resolveQuestion,
+  resolveResults,
   noteLinks,
 }: ExamQuestionPlayerProps) {
   // The paper's complete ID set owns progress; granted bodies are a separate cache.
@@ -156,6 +160,8 @@ export function ExamQuestionPlayer({
   const contentGeneration = useRef(0);
   const [contentError, setContentError] = useState("");
   const [contentAttempt, setContentAttempt] = useState(0);
+  const [reviewResults, setReviewResults] = useState<Record<string, {choice:number|null;result:"correct"|"incorrect"|"unscored"}>>({});
+  const [reviewError, setReviewError] = useState("");
   const questions = useMemo(() => questionIndex
     ? questionIndex.map(item => granted[item.id] ?? paperPlaceholder(item))
     : sourceQuestions, [questionIndex, granted, sourceQuestions]);
@@ -168,6 +174,7 @@ export function ExamQuestionPlayer({
   const [answers, setAnswers] = useState<ExamSessionAnswers>({});
   const [roundIds, setRoundIds] = useState<string[]>(allIds);
   const [retryRound, setRetryRound] = useState(false);
+  const [pendingRetries, setPendingRetries] = useState<string[]>([]);
   const [index, setIndex] = useState(Math.max(0, allIds.indexOf(initialQuestionId ?? "")));
   const [view, setView] = useState<"question" | "summary">(initialView);
   const [draftChoice, setDraftChoice] = useState<number | null>(null);
@@ -178,6 +185,7 @@ export function ExamQuestionPlayer({
   const feedbackRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLHeadingElement>(null);
   const tabRestoredRef = useRef(false);
+  const [tabRestoreReady, setTabRestoreReady] = useState(false);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
 
   // admin/exam-usage の資格別集計キー。ハブが未対応のカタログ項目は null のまま送る
@@ -211,15 +219,24 @@ export function ExamQuestionPlayer({
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
-  const summary = useMemo(() => ({...summarizeExamProgress(questions, answers),
-    ...(questionIndex ? {scorable:questionIndex.filter(q=>q.scorable).length} : {})}), [answers, questions, questionIndex]);
-  const wrongIds = useMemo(() => wrongQuestionIds(questions, answers), [answers, questions]);
+  const resultFor = (question: ExamQuestion): AnswerStatus => {
+    const answer = answers[question.id];
+    if (!resolveQuestion || granted[question.id] || !answer?.submitted) return answerResult(question, answer);
+    const result = reviewResults[question.id];
+    return result && result.choice === answer.choice ? result.result : "pending";
+  };
+  const summary = {...summarizeExamProgress(questions, {}), pending:0};
+  if (questionIndex) summary.scorable = questionIndex.filter(q=>q.scorable).length;
+  for (const question of practiceQuestions) {
+    const result = resultFor(question);
+    if (result !== "unanswered") { summary.answered++; summary[result]++; }
+  }
+  const wrongIds = practiceQuestions.filter(q=>resultFor(q)==="incorrect").map(q=>q.id);
   const firstUnansweredIndex = allIds.findIndex((id) => !isExamReferenceOnly(byId.get(id)!) && !answers[id]?.submitted);
 
-  // Results revalidate only previously answered questions, through the same grant API.
-  const neededIds = resolveQuestion ? [...new Set([
+  // Only an explicitly opened current body consumes the daily quota.
+  const neededIds = resolveQuestion && tabRestoreReady ? [...new Set([
     ...(view === "question" && currentId ? [currentId] : []),
-    ...Object.keys(answers).filter(id=>answers[id].submitted),
   ])] : [];
   const neededKey = neededIds.join("|");
   const contentPending = neededIds.some(id=>!granted[id]);
@@ -238,9 +255,23 @@ export function ExamQuestionPlayer({
     })).catch(error => {if (!controller.signal.aborted) setContentError(error instanceof Error ? error.message : "利用枠を確認できません。");});
     return () => controller.abort();
   }, [neededKey, resolveQuestion, contentAttempt]);
+  const reviewKey = JSON.stringify(Object.entries(answers).filter(([id,a])=>a.submitted && !granted[id])
+    .map(([id,a])=>({id,choice:a.choice,...(a.reviewProof?{proof:a.reviewProof}:{})})));
+  useEffect(() => {
+    if (!resolveResults || reviewKey === "[]") return;
+    const controller = new AbortController();
+    setReviewError("");
+    void resolveResults(JSON.parse(reviewKey), controller.signal).then(rows => {
+      if (!controller.signal.aborted) {
+        setReviewResults(Object.fromEntries(rows.map(r=>[r.id,r])));
+        if (rows.length < JSON.parse(reviewKey).length) setReviewError("unverified_answers");
+      }
+    }).catch(error => {if (!controller.signal.aborted) setReviewError(error instanceof Error ? error.message : "結果を確認できません。");});
+    return () => controller.abort();
+  }, [reviewKey, resolveResults, contentAttempt]);
   useEffect(() => {
     if (!resolveQuestion) return;
-    const clear = () => {contentGeneration.current++;grantedRef.current={};setGranted({});setContentAttempt(n=>n+1);};
+    const clear = () => {contentGeneration.current++;grantedRef.current={};setGranted({});setReviewResults({});setContentAttempt(n=>n+1);};
     window.addEventListener("mobile:entitlement-changed", clear);
     window.addEventListener("mobile:account-deleted", clear);
     return () => {window.removeEventListener("mobile:entitlement-changed", clear);window.removeEventListener("mobile:account-deleted", clear);};
@@ -249,6 +280,7 @@ export function ExamQuestionPlayer({
   useEffect(() => {
     if (tabRestoredRef.current) return;
     tabRestoredRef.current = true;
+    setTabRestoreReady(true);
     const disk = getBrowserStorage();
     const diskProgress = disk ? parseExamProgress(readExamProgressRaw(disk, examId), examId, questions) : null;
     const progress = readExamTabProgress(examId, questions) ?? (initialView === "summary" ? diskProgress : null);
@@ -318,7 +350,7 @@ export function ExamQuestionPlayer({
       setDraftChoice(choice);
       commit({
         ...answers,
-        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true },
+        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
       }, current.id);
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
       focusLater(feedbackRef);
@@ -344,6 +376,7 @@ export function ExamQuestionPlayer({
           choice: current.choiceCount > 0 ? draftChoice : null,
           memo: currentAnswer?.memo ?? "",
           submitted: true,
+          reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof,
         },
       },
       current.id,
@@ -369,6 +402,7 @@ export function ExamQuestionPlayer({
           choice: currentAnswer?.choice ?? null,
           memo: value.slice(0, EXAM_PROGRESS_MEMO_MAX_LENGTH),
           submitted: currentAnswer?.submitted ?? false,
+          reviewProof: currentAnswer?.reviewProof,
         },
       },
       current.id,
@@ -376,6 +410,7 @@ export function ExamQuestionPlayer({
   };
 
   const startRound = (ids: string[], retry: boolean, source: ExamSessionAnswers, startIndex = 0) => {
+    if (!retry) setPendingRetries([]);
     setRoundIds(ids);
     setRetryRound(retry);
     showQuestion(startIndex, ids, source);
@@ -383,10 +418,20 @@ export function ExamQuestionPlayer({
 
   const retryWrong = () => {
     if (wrongIds.length === 0) return;
-    const next = resetAnswers(answers, wrongIds);
+    // A refused review body must not erase the learner's historical answers.
+    // Gated rounds clear each answer only after its body has been permitted.
+    const next = resolveQuestion ? answers : resetAnswers(answers, wrongIds);
+    setPendingRetries(resolveQuestion ? wrongIds : []);
     commit(next, wrongIds[0] ?? null);
     startRound(wrongIds, true, next);
   };
+
+  useEffect(() => {
+    if (!retryRound || view !== "question" || !currentId || !granted[currentId] || !pendingRetries.includes(currentId)) return;
+    commit(resetAnswers(answers, [currentId]), currentId);
+    setDraftChoice(null);
+    setPendingRetries(ids=>ids.filter(id=>id!==currentId));
+  }, [retryRound, view, currentId, granted, pendingRetries, answers, commit]);
 
   const continueUnanswered = () => {
     if (firstUnansweredIndex < 0) return;
@@ -542,6 +587,7 @@ export function ExamQuestionPlayer({
             >
               {retryRound ? "解き直しの結果" : "結果と見直し"}
             </h2>
+            {summary.pending > 0 && <p role="status">{reviewError ? `${summary.pending}問の採点を確認できません。問題を開くと再確認できます。` : `${summary.pending}問の採点を確認しています。`}<button type="button" onClick={()=>setContentAttempt(n=>n+1)}>結果を再確認</button></p>}
             <dl className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
                 ["回答", `${summary.answered}／${summary.total}問`],
@@ -559,7 +605,8 @@ export function ExamQuestionPlayer({
               ))}
             </dl>
             <p className="mt-3 text-sm font-bold leading-6">
-              {scoredAnswered > 0
+              {summary.pending > 0 ? "確認済みの回答だけを集計しています。"
+                : scoredAnswered > 0
                 ? `公式正答で採点した${scoredAnswered}問のうち${summary.correct}問が正解（${Math.round((summary.correct / scoredAnswered) * 100)}%）。`
                 : "公式正答で採点した問題はまだありません。"}
               {summary.scorable < summary.total
@@ -592,7 +639,7 @@ export function ExamQuestionPlayer({
             <ol className="mt-3 divide-y divide-slate-200 rounded-2xl border-2 border-slate-300 dark:divide-slate-700 dark:border-slate-600 forced-colors:border-[CanvasText]">
               {practiceQuestions.map((question) => {
                 const answer = answers[question.id];
-                const itemStatus = answerResult(question, answer);
+                const itemStatus = resultFor(question);
                 return (
                   <li
                     key={question.id}
@@ -931,7 +978,7 @@ export function ExamQuestionPlayer({
             {roundIds.map((id, position) => {
               const question = byId.get(id);
               if (!question) return null;
-              const cellStatus = answerResult(question, answers[id]);
+              const cellStatus = resultFor(question);
               const active = view === "question" && position === index;
               return (
                 <li key={id}>

@@ -14,6 +14,10 @@ function mount(initialId?:string,initialView?:"question"|"summary") {
 function mockGrants(paid:boolean) {
   const granted=new Set<string>();
   const fetcher=vi.fn(async (_url:unknown,init?:RequestInit)=>{
+    if(String(_url).endsWith("/paper-results")) {
+      const {answers}=JSON.parse(String(init?.body));
+      return Response.json({results:answers.map((a:{id:string;choice:number})=>({...a,result:a.choice===2?"correct":"incorrect"}))});
+    }
     const {id}=JSON.parse(String(init?.body));
     const q=questions.find(q=>q.id===id);
     if(!q)throw Error("Unexpected content request");
@@ -47,11 +51,11 @@ for(const paid of [false,true])for(const save of [false,true]) {
     await screen.findByRole("heading",{name:"結果と見直し"});
     expect(screen.getByText("2／11問")).toBeVisible();
     const summary=screen.getByRole("heading",{name:"結果と見直し"}).closest("section")!;
-    expect(within(summary).getByText("正解",{selector:"dt"}).nextElementSibling).toHaveTextContent("1問");
-    expect(within(summary).getByText("不正解",{selector:"dt"}).nextElementSibling).toHaveTextContent("1問");
+    await waitFor(()=>expect(within(summary).getByText("正解",{selector:"dt"}).nextElementSibling).toHaveTextContent("1問"));
+    await waitFor(()=>expect(within(summary).getByText("不正解",{selector:"dt"}).nextElementSibling).toHaveTextContent("1問"));
     fireEvent.click(screen.getByRole("button",{name:"間違えた1問を解き直す"}));
     await screen.findByText("許可本文1");expect(screen.getByText(/解き直し 1問目／1問/)).toBeVisible();
-    expect(fetcher.mock.calls.every(([,init])=>questions.slice(0,2).some(q=>JSON.parse(String(init?.body)).id===q.id))).toBe(true);
+    expect(fetcher.mock.calls.filter(([url])=>String(url).endsWith("/question")).every(([,init])=>questions.slice(0,2).some(q=>JSON.parse(String(init?.body)).id===q.id))).toBe(true);
   });
 }
 it("restores an opted-in save on a fresh tab without losing either answer",async()=>{
@@ -61,7 +65,7 @@ it("restores an opted-in save on a fresh tab without losing either answer",async
   fireEvent.click(screen.getByRole("button",{name:"次の問題へ"}));await screen.findByText("許可本文2");
   fireEvent.click(screen.getByRole("radio",{name:/^選択肢 2:/}));first.unmount();sessionStorage.clear();mount(undefined,"summary");
   await screen.findByRole("heading",{name:"結果と見直し"});expect(screen.getByText("2／11問")).toBeVisible();
-  expect(screen.getByRole("button",{name:"間違えた1問を解き直す"})).toBeVisible();
+  expect(await screen.findByRole("button",{name:"間違えた1問を解き直す"})).toBeVisible();
 });
 it("keeps the free eleventh body and key behind the server denial",async()=>{
   const {granted}=mockGrants(false);mount();

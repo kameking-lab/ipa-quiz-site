@@ -12,6 +12,13 @@ export function AuthorizedContent(props: Props) {
   return props.paper ? <AuthorizedPaper key={props.paper} {...props} paper={props.paper}/> : <AuthorizedSingleContent {...props}/>;
 }
 function AuthorizedPaper({paper,paperIndex=[],paperTitle=paper,initialId,initialView,pdfUrl="",indexUrl=""}: Props & {paper:string}) {
+  const resolveResults = useCallback(async (answers: {id:string;choice:number|null;proof?:string}[], signal:AbortSignal) => {
+    const response = await fetch("/api/mobile/paper-results", {method:"POST",credentials:"same-origin",cache:"no-store",signal,
+      headers:{"Content-Type":"application/json"},body:JSON.stringify({paper,answers})});
+    const body = await response.json();
+    if (!response.ok) throw new Error(body.error);
+    return body.results as {id:string;choice:number|null;result:"correct"|"incorrect"|"unscored"}[];
+  }, [paper]);
   const resolveQuestion = useCallback(async (id:string,signal:AbortSignal) => {
     if (!paperIndex.some(q=>q.id===id)) throw new Error("この試験紙にない問題です。");
     const response = await fetch("/api/billing/question", {method:"POST",credentials:"same-origin",cache:"no-store",signal,
@@ -22,7 +29,7 @@ function AuthorizedPaper({paper,paperIndex=[],paperTitle=paper,initialId,initial
   }, [paper,paperIndex]);
   return <main className="mx-auto max-w-4xl space-y-5 p-5"><h1>{paperTitle}</h1>
     <p>ウェブとアプリで共通の1日10問です。有料会員は無制限です。</p>
-    <ExamQuestionPlayer examId={paper} examTitle={paperTitle} questions={[]} questionIndex={paperIndex} resolveQuestion={resolveQuestion}
+    <ExamQuestionPlayer examId={paper} examTitle={paperTitle} questions={[]} questionIndex={paperIndex} resolveQuestion={resolveQuestion} resolveResults={resolveResults}
       initialQuestionId={initialId} initialView={initialView} pdfUrl={pdfUrl} indexUrl={indexUrl}/>
   </main>;
 }

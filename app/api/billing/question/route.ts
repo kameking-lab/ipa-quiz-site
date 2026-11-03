@@ -13,6 +13,7 @@ import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createHash } from "node:crypto";
 import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { paperReviewProof } from "@/mobile/server/paper-review";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   const now = Date.now();
@@ -102,7 +103,8 @@ export async function POST(request: Request) {
       }
     }
     const cached = native && !libraryQuestion && !material && request.headers.get("X-Kakomon-Question-Hash") === createHash("sha256").update(JSON.stringify(question)).digest("hex");
-    const response = json({ question: cached ? {id:question.id} : libraryQuestion ?? material ?? (shuffle ? shuffleChoices(question as import("@/lib/questions/types").Question) : question), access,...(cached?{cached:true}:{}) });
+    const reviewOwner = libraryQuestion ? await optionalBillingIdentity() : null;
+    const response = json({ question: cached ? {id:question.id} : libraryQuestion ? {...libraryQuestion, reviewProof: reviewOwner ? paperReviewProof(reviewOwner, paper!, id) : undefined} : material ?? (shuffle ? shuffleChoices(question as import("@/lib/questions/types").Question) : question), access,...(cached?{cached:true}:{}) });
     if (process.env.FEEDBACK_UNLOCK_ENABLED === "true") {
       try {
         const browser = readFeedbackBrowser(request);
