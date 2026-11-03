@@ -1,3 +1,4 @@
+import { CLOUD_AP_FE_LATEST2 } from "./cloud-ap-fe-latest2";
 import { SG_FE_DISPLAY_FOLLOWUP } from "./sg-fe-display-followup-20261020";
 import { FE_2024_PUBLIC_SET_COMPLETIONS } from "./fe-2024-public-set-20261020";
 import { SG_FE_PUBLIC_SET_COMPLETIONS } from "./sg-fe-public-sets-20261020";
@@ -40,6 +41,7 @@ export function applyIpaCorrections(exam: ExamCode, questions: Question[]): Ques
       ...(selectedPublicSet ? {
         sourceAttribution: `出典：IPA「${q.year}年度公開問題」${q.exam === "sg" ? "情報セキュリティマネジメント" : "基本情報技術者"}試験 ${q.session === "kamoku-b" ? "科目B" : "科目A"} 問${q.qNumber}。Web掲載のため、改行・表記の整形や図表の文章・表への置換など、一部改変しています。解説は当サイトが独自に作成したもので、IPAの公式解説ではありません。`,
       } : {}),
+      ...CLOUD_AP_FE_LATEST2[q.id],
     };
   });
 }

@@ -76,3 +76,13 @@ it("ストリームの記述だけを完了しても択一の0/1成績へ変換�
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   } finally { cleanup(); vi.useRealTimers(); }
 });
+
+const apQuestion: Question = { ...question, id: "ap-2025a-pm-q1", exam: "ap", session: "pm", license: "IPA-public", modelAnswer: "設問１ a ク", sourcePdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_qs.pdf" };
+it.each(["normal", "stream"])("AP午後を%sでも公式解答例で自己確認し，自動採点しない", mode => {
+  if (mode === "normal") render(<QuizPlayer question={apQuestion} index={0} total={2} mode="random" onNext={() => {}} />);
+  else render(<StreamQuizPlayer questions={[apQuestion]} />);
+  expect(screen.getByText("IPA公式解答例")).toBeTruthy();
+  expect(screen.queryByRole("radiogroup")).toBeNull();
+  fireEvent.keyDown(window, { key: "1" });
+  expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+});

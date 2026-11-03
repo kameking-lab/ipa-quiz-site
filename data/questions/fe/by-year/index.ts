@@ -1,3 +1,5 @@
+import { FE_QUESTIONS_2026_CBT_KAMOKU_A } from "./2026-cbt-kamoku-a";
+import { FE_QUESTIONS_2026_CBT_KAMOKU_B } from "./2026-cbt-kamoku-b";
 // Auto-generated barrel — do not edit manually.
 import type { Question } from "@/lib/questions/types";
 import { FE_QUESTIONS_2009_AUTUMN_AM } from "./2009-autumn-am";
@@ -28,6 +30,9 @@ import { FE_QUESTIONS_2025_CBT_KAMOKU_A } from "./2025-cbt-kamoku-a";
 import { FE_QUESTIONS_2025_CBT_KAMOKU_B } from "./2025-cbt-kamoku-b";
 
 export const BY_YEAR_QUESTIONS: Question[] = [
+  ...FE_QUESTIONS_2026_CBT_KAMOKU_A,
+  ...FE_QUESTIONS_2026_CBT_KAMOKU_B,
+
   ...FE_QUESTIONS_2009_AUTUMN_AM,
   ...FE_QUESTIONS_2009_SPRING_AM,
   ...FE_QUESTIONS_2010_AUTUMN_AM,

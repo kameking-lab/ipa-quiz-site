@@ -43,8 +43,8 @@ describe("IPA paper listing and quiz pool parity", () => {
       /^正解は[アイウエ]です[。.]/.test(q.explanation),
     );
 
-    // ST A2 adds 200 ordinary IDs; Q23 moves to its non-scoring reader.
-    expect(ipaQuestions).toHaveLength(14_611);
+    // Latest-two audit adds 26 FE questions and 22 AP afternoon self-review records.
+    expect(ipaQuestions).toHaveLength(14_659);
     expect(ipaQuestions.some((q) => q.id === "st-2009a-am2-q23")).toBe(false);
     expect(legacyPrefixMatches).toHaveLength(1_455);
     expect(legacyPrefixMatches.every((q) => q.explanation.trim().length > 30)).toBe(true);

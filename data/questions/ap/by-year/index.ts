@@ -1,3 +1,5 @@
+import { AP_QUESTIONS_2025_AUTUMN_PM } from "./2025-autumn-pm";
+import { AP_QUESTIONS_2025_SPRING_PM } from "./2025-spring-pm";
 // Auto-generated barrel — do not edit manually.
 // Run: pnpm tsx scripts/generate-ap-all.ts
 import type { Question } from "@/lib/questions/types";
@@ -36,6 +38,9 @@ import { AP_QUESTIONS_2025_AUTUMN } from "./2025-autumn";
 import { AP_QUESTIONS_2025_SPRING } from "./2025-spring";
 
 export const AP_BY_YEAR_QUESTIONS: Question[] = [
+  ...AP_QUESTIONS_2025_AUTUMN_PM,
+  ...AP_QUESTIONS_2025_SPRING_PM,
+
   ...AP_QUESTIONS_2009_AUTUMN,
   ...AP_QUESTIONS_2009_SPRING,
   ...AP_QUESTIONS_2010_AUTUMN,
